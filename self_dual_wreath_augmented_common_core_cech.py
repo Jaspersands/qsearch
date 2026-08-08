@@ -480,9 +480,9 @@ def run_augmented_common_core_cech() -> AugmentedCommonCoreCechReport:
                 "resolution": "The augmented complex now audits the dependency quotient omitted by a pair-core-only complex.",
             },
             {
-                "obligation": "universal_pair_generation",
-                "resolved": False,
-                "resolution": "W3 has exact emergent H0; selected n>=5 controls are exact but do not establish an all-n theorem.",
+                "obligation": "decide_universal_pair_generation",
+                "resolved": True,
+                "resolution": "The augmented-H0 dimension theorem falsifies it asymptotically: pair-core rank is too small to span the leaf synthesis kernel. Recursive child-span relations remain possible.",
             },
             {
                 "obligation": "all_depth_augmented_hodge_gap",
@@ -513,20 +513,23 @@ def run_augmented_common_core_cech() -> AugmentedCommonCoreCechReport:
                 w5.augmented_cech_exact and cube.augmented_cech_exact
             ),
             "all_n_augmented_cech_exactness_proved": False,
+            "all_n_pair_generation_falsified": True,
+            "hierarchical_span_relations_may_resolve_h0": True,
             "all_depth_phase_sensitive_hodge_gap_proved": False,
             "coherent_sparse_augmented_cech_transform_compiled": False,
             "speedup_claim_allowed": False,
-            "reason": "The missing H0 gate is now explicit: finite n>=5 controls pass, but universal pair generation and noncommuting all-depth Hodge conditioning remain open.",
+            "reason": "Direct pair-common generation is asymptotically false. Recursive child-span relations are information-theoretically complete, but their natural graded conditioning and coherent transform remain open.",
         },
-        status="augmented-h0-gate-added-all-n-pair-generation-open",
+        status="direct-pair-cech-incomplete-hierarchical-span-resolution-required",
         summary=(
             "Augmented the common-core complex with leaf synthesis, recovered "
-            "the known W3 emergent dependency as H0, and separated that gate "
-            "from positive-degree pair-cycle exactness."
+            "the known W3 emergent dependency as H0, and identified direct "
+            "pair-common generation as asymptotically incomplete."
         ),
         falsifiers_triggered=[
             "Vanishing H1 in the pair-core complex does not imply vanishing H0 in the augmented dependency complex.",
             "A full depth-three commuting cube is not evidence for noncommuting all-depth recoupling exactness.",
+            "Selected exact n>=5 common-core complexes are not evidence for asymptotic H0 vanishing.",
         ],
     )
 

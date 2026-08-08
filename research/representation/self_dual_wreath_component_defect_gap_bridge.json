@@ -1,0 +1,406 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Exponentially many tiny-trace outcomes force an exponentially small aggregate nonscalarity defect.",
+      "resolution": "False when positive edges stay constant and traces are balanced: the aggregate gap is delta-1/q, which tends to delta.",
+      "resolved": true
+    },
+    {
+      "objection": "A positive average effect edge is enough for equation (2).",
+      "resolution": "False. The theorem needs the minimum positive eigenvalue over retained components; one tiny-edge component can make the stated global bound vacuous.",
+      "resolved": true
+    },
+    {
+      "objection": "A separate natural concentration theorem for every normalized component trace is required.",
+      "resolution": "Not for coordinate compressions. Rank(H_e)<=b_e and H_e<=I give h_e<=b_e/r deterministically, and Cauchy supplies the aggregate lower term.",
+      "resolved": true
+    },
+    {
+      "objection": "The Jacobi benchmark closes the natural central-support problem.",
+      "resolution": "Natural edge rigidity and trace balance are precisely the unproved premises; arithmetic outliers or rare tiny-edge blocks may dominate source support.",
+      "resolved": false
+    },
+    {
+      "objection": "A full-rank defect gap compiles the component POVM.",
+      "resolution": "It controls a mass observable only. Coherent support SELECT, component amplitudes, GPE transport, endpoint mixing, holonomy, and decoding remain.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "balanced_many_outcome_trace_dilutes_aggregate_defect_gap": false,
+    "coordinate_block_dimensions_replace_trace_balance_premise": true,
+    "haar_jacobi_sparse_support_predicts_constant_defect_gap": true,
+    "natural_component_block_to_fiber_aspects_controlled": false,
+    "natural_component_defect_full_rank_on_positive_mass_proved": false,
+    "natural_component_positive_edge_proved": false,
+    "natural_component_support_select_compiled": false,
+    "positive_component_edge_implies_aggregate_defect_gap": true,
+    "reason": "A positive natural component edge plus sparse block-to-fiber aspects would remove central-support rank dilution, but neither premise is proved on positive Plancherel/Racah mass.",
+    "recursive_orientation_polar_proved": false,
+    "regular_master_central_support_controlled": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-08T07:44:53.756503+00:00",
+  "falsifiers_triggered": [
+    "Many tiny-trace outcomes do not dilute the aggregate defect when their positive edges stay bounded.",
+    "Coordinate block rank accounting removes the need to concentrate every component trace separately.",
+    "An average edge or small trace is not a substitute for a uniform retained positive edge.",
+    "The Haar/Jacobi prediction is not a natural Plancherel/Racah edge theorem.",
+    "A defect gap is a mass-analysis bridge, not a component-POVM circuit."
+  ],
+  "finite_controls": [
+    {
+      "component_traces_balanced": true,
+      "control_id": "FOUR-OUTCOME-ORTHOGONAL-PROJECTIVE-POVM",
+      "defect_bound_residual": 0.0,
+      "effect_sum_identity_residual": 0.0,
+      "exact_defect_gap_bound_verified": true,
+      "fiber_dimension": 12,
+      "maximum_normalized_component_trace": 0.25,
+      "minimum_positive_component_eigenvalue": 1.0,
+      "observed_defect_maximum_eigenvalue": 0.75,
+      "observed_defect_minimum_eigenvalue": 0.75,
+      "outcome_count": 4,
+      "positive_full_rank_defect_certified": true,
+      "status": "full-rank-component-defect-gap-certified",
+      "sum_squared_normalized_component_traces": 0.25,
+      "theorem_defect_gap_lower_bound": 0.75
+    },
+    {
+      "component_traces_balanced": true,
+      "control_id": "THREE-OUTCOME-NONCOMMUTING-TRINE-POVM",
+      "defect_bound_residual": 0.0,
+      "effect_sum_identity_residual": 5.579939934300072e-16,
+      "exact_defect_gap_bound_verified": true,
+      "fiber_dimension": 2,
+      "maximum_normalized_component_trace": 0.3333333333333333,
+      "minimum_positive_component_eigenvalue": 0.6666666666666665,
+      "observed_defect_maximum_eigenvalue": 0.33333333333333326,
+      "observed_defect_minimum_eigenvalue": 0.33333333333333326,
+      "outcome_count": 3,
+      "positive_full_rank_defect_certified": true,
+      "status": "full-rank-component-defect-gap-certified",
+      "sum_squared_normalized_component_traces": 0.33333333333333326,
+      "theorem_defect_gap_lower_bound": 0.33333333333333315
+    },
+    {
+      "component_traces_balanced": false,
+      "control_id": "UNEQUAL-TRACE-POSITIVE-GAP-CONTROL",
+      "defect_bound_residual": 0.0,
+      "effect_sum_identity_residual": 0.0,
+      "exact_defect_gap_bound_verified": true,
+      "fiber_dimension": 10,
+      "maximum_normalized_component_trace": 0.1,
+      "minimum_positive_component_eigenvalue": 0.4,
+      "observed_defect_maximum_eigenvalue": 0.8952000000000001,
+      "observed_defect_minimum_eigenvalue": 0.5112000000000001,
+      "outcome_count": 11,
+      "positive_full_rank_defect_certified": true,
+      "status": "full-rank-component-defect-gap-certified",
+      "sum_squared_normalized_component_traces": 0.09520000000000002,
+      "theorem_defect_gap_lower_bound": 0.2952
+    },
+    {
+      "component_traces_balanced": false,
+      "control_id": "SMALL-POSITIVE-EDGE-UNCERTIFIED-CONTROL",
+      "defect_bound_residual": 0.0,
+      "effect_sum_identity_residual": 0.0,
+      "exact_defect_gap_bound_verified": true,
+      "fiber_dimension": 2,
+      "maximum_normalized_component_trace": 0.74995,
+      "minimum_positive_component_eigenvalue": 0.0001,
+      "observed_defect_maximum_eigenvalue": 0.124950005,
+      "observed_defect_minimum_eigenvalue": 0.124950005,
+      "outcome_count": 2,
+      "positive_full_rank_defect_certified": false,
+      "status": "component-defect-bound-valid-but-nonpositive",
+      "sum_squared_normalized_component_traces": 0.6249500050000001,
+      "theorem_defect_gap_lower_bound": -0.8748499949999999
+    }
+  ],
+  "headline_metrics": {
+    "balanced_trace_defect_gap_corollary_count": 1,
+    "coordinate_block_trace_free_defect_gap_corollary_count": 1,
+    "failed_premise_control_count": 1,
+    "finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "jacobi_scaling_record_count": 18,
+    "natural_component_defect_central_support_bound_count": 0,
+    "natural_positive_component_edge_theorem_count": 0,
+    "natural_trace_balance_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "positive_edge_to_full_rank_defect_bridge_theorem_count": 1,
+    "positive_gap_control_count": 3,
+    "recursive_orientation_polar_sampler_count": 0,
+    "tail_minimum_coordinate_cauchy_defect_gap": 0.5460716063813263,
+    "tail_minimum_predicted_defect_gap": 0.5460965753088831
+  },
+  "jacobi_scaling_records": [
+    {
+      "balanced_defect_gap_lower_bound": -0.15584219849035216,
+      "component_trace": 0.25,
+      "coordinate_cauchy_defect_gap_lower_bound": -0.5649331075812613,
+      "coordinate_rank_trace_upper_bound": 0.45454545454545453,
+      "fiber_aspect": 0.55,
+      "jacobi_positive_edge_lower": 0.09415780150964784,
+      "jacobi_positive_edge_upper": 0.955842198490352,
+      "natural_jacobi_edge_transfer_proved": false,
+      "outcome_count": 4,
+      "positive_full_rank_defect_predicted": false,
+      "status": "jacobi-defect-gap-preasymptotic-or-hard-edge"
+    },
+    {
+      "balanced_defect_gap_lower_bound": 0.2404018891500288,
+      "component_trace": 0.0625,
+      "coordinate_cauchy_defect_gap_lower_bound": 0.13812916187730154,
+      "coordinate_rank_trace_upper_bound": 0.11363636363636363,
+      "fiber_aspect": 0.55,
+      "jacobi_positive_edge_lower": 0.3029018891500288,
+      "jacobi_positive_edge_upper": 0.7845981108499712,
+      "natural_jacobi_edge_transfer_proved": false,
+      "outcome_count": 16,
+      "positive_full_rank_defect_predicted": true,
+      "status": "jacobi-positive-full-rank-defect-gap-predicted"
+    },
+    {
+      "balanced_defect_gap_lower_bound": 0.4094145633022984,
+      "component_trace": 0.015625,
+      "coordinate_cauchy_defect_gap_lower_bound": 0.3838463814841166,
+      "coordinate_rank_trace_upper_bound": 0.028409090909090908,
+      "fiber_aspect": 0.55,
+      "jacobi_positive_edge_lower": 0.4250395633022984,
+      "jacobi_positive_edge_upper": 0.6718354366977017,
+      "natural_jacobi_edge_transfer_proved": false,
+      "outcome_count": 64,
+      "positive_full_rank_defect_predicted": true,
+      "status": "jacobi-positive-full-rank-defect-gap-predicted"
+    },
+    {
+      "balanced_defect_gap_lower_bound": 0.4836379874521936,
+      "component_trace": 0.00390625,
+      "coordinate_cauchy_defect_gap_lower_bound": 0.47724594199764814,
+      "coordinate_rank_trace_upper_bound": 0.007102272727272727,
+      "fiber_aspect": 0.55,
+      "jacobi_positive_edge_lower": 0.4875442374521936,
+      "jacobi_positive_edge_upper": 0.6116745125478062,
+      "natural_jacobi_edge_transfer_proved": false,
+      "outcome_count": 256,
+      "positive_full_rank_defect_predicted": true,
+      "status": "jacobi-positive-full-rank-defect-gap-predicted"
+    },
+    {
+      "balanced_defect_gap_lower_bound": 0.5341866645114827,
+      "component_trace": 0.000244140625,
+      "coordinate_cauchy_defect_gap_lower_bound": 0.5337871616705736,
+      "coordinate_rank_trace_upper_bound": 0.00044389204545454544,
+      "fiber_aspect": 0.55,
+      "jacobi_positive_edge_lower": 0.5344308051364827,
+      "jacobi_positive_edge_upper": 0.5655203667385172,
+      "natural_jacobi_edge_transfer_proved": false,
+      "outcome_count": 4096,
+      "positive_full_rank_defect_predicted": true,
+      "status": "jacobi-positive-full-rank-defect-gap-predicted"
+    },
+    {
+      "balanced_defect_gap_lower_bound": 0.5460965753088831,
+      "component_trace": 1.52587890625e-05,
+      "coordinate_cauchy_defect_gap_lower_bound": 0.5460716063813263,
+      "coordinate_rank_trace_upper_bound": 2.774325284090909e-05,
+      "fiber_aspect": 0.55,
+      "jacobi_positive_edge_lower": 0.5461118340979456,
+      "jacobi_positive_edge_upper": 0.553885114144242,
+      "natural_jacobi_edge_transfer_proved": false,
+      "outcome_count": 65536,
+      "positive_full_rank_defect_predicted": true,
+      "status": "jacobi-positive-full-rank-defect-gap-predicted"
+    },
+    {
+      "balanced_defect_gap_lower_bound": -0.10676274578121053,
+      "component_trace": 0.25,
+      "coordinate_cauchy_defect_gap_lower_bound": -0.40676274578121063,
+      "coordinate_rank_trace_upper_bound": 0.4,
+      "fiber_aspect": 0.625,
+      "jacobi_positive_edge_lower": 0.14323725421878947,
+      "jacobi_positive_edge_upper": 0.9817627457812105,
+      "natural_jacobi_edge_transfer_proved": false,
+      "outcome_count": 4,
+      "positive_full_rank_defect_predicted": false,
+      "status": "jacobi-defect-gap-preasymptotic-or-hard-edge"
+    },
+    {
+      "balanced_defect_gap_lower_bound": 0.31249999999999994,
+      "component_trace": 0.0625,
+      "coordinate_cauchy_defect_gap_lower_bound": 0.23749999999999993,
+      "coordinate_rank_trace_upper_bound": 0.1,
+      "fiber_aspect": 0.625,
+      "jacobi_positive_edge_lower": 0.37499999999999994,
+      "jacobi_positive_edge_upper": 0.84375,
+      "natural_jacobi_edge_transfer_proved": false,
+      "outcome_count": 16,
+      "positive_full_rank_defect_predicted": true,
+      "status": "jacobi-positive-full-rank-defect-gap-predicted"
+    },
+    {
+      "balanced_defect_gap_lower_bound": 0.4853872957114108,
+      "component_trace": 0.015625,
+      "coordinate_cauchy_defect_gap_lower_bound": 0.4666372957114108,
+      "coordinate_rank_trace_upper_bound": 0.025,
+      "fiber_aspect": 0.625,
+      "jacobi_positive_edge_lower": 0.5010122957114108,
+      "jacobi_positive_edge_upper": 0.741175204288589,
+      "natural_jacobi_edge_transfer_proved": false,
+      "outcome_count": 64,
+      "positive_full_rank_defect_predicted": true,
+      "status": "jacobi-positive-full-rank-defect-gap-predicted"
+    },
+    {
+      "balanced_defect_gap_lower_bound": 0.5597201324372413,
+      "component_trace": 0.00390625,
+      "coordinate_cauchy_defect_gap_lower_bound": 0.5550326324372413,
+      "coordinate_rank_trace_upper_bound": 0.00625,
+      "fiber_aspect": 0.625,
+      "jacobi_positive_edge_lower": 0.5636263824372413,
+      "jacobi_positive_edge_upper": 0.6844204925627587,
+      "natural_jacobi_edge_transfer_proved": false,
+      "outcome_count": 256,
+      "positive_full_rank_defect_predicted": true,
+      "status": "jacobi-positive-full-rank-defect-gap-predicted"
+    },
+    {
+      "balanced_defect_gap_lower_bound": 0.6095678299177322,
+      "component_trace": 0.000244140625,
+      "coordinate_cauchy_defect_gap_lower_bound": 0.6092748611677322,
+      "coordinate_rank_trace_upper_bound": 0.000390625,
+      "fiber_aspect": 0.625,
+      "jacobi_positive_edge_lower": 0.6098119705427322,
+      "jacobi_positive_edge_upper": 0.6400659591447678,
+      "natural_jacobi_edge_transfer_proved": false,
+      "outcome_count": 4096,
+      "positive_full_rank_defect_predicted": true,
+      "status": "jacobi-positive-full-rank-defect-gap-predicted"
+    },
+    {
+      "balanced_defect_gap_lower_bound": 0.6211987450707259,
+      "component_trace": 1.52587890625e-05,
+      "coordinate_cauchy_defect_gap_lower_bound": 0.621180434523851,
+      "coordinate_rank_trace_upper_bound": 2.44140625e-05,
+      "fiber_aspect": 0.625,
+      "jacobi_positive_edge_lower": 0.6212140038597884,
+      "jacobi_positive_edge_upper": 0.6287783667456804,
+      "natural_jacobi_edge_transfer_proved": false,
+      "outcome_count": 65536,
+      "positive_full_rank_defect_predicted": true,
+      "status": "jacobi-positive-full-rank-defect-gap-predicted"
+    },
+    {
+      "balanced_defect_gap_lower_bound": 0.0,
+      "component_trace": 0.25,
+      "coordinate_cauchy_defect_gap_lower_bound": -0.16666666666666663,
+      "coordinate_rank_trace_upper_bound": 0.3333333333333333,
+      "fiber_aspect": 0.75,
+      "jacobi_positive_edge_lower": 0.25,
+      "jacobi_positive_edge_upper": 1.0,
+      "natural_jacobi_edge_transfer_proved": false,
+      "outcome_count": 4,
+      "positive_full_rank_defect_predicted": false,
+      "status": "jacobi-defect-gap-preasymptotic-or-hard-edge"
+    },
+    {
+      "balanced_defect_gap_lower_bound": 0.4466186271093948,
+      "component_trace": 0.0625,
+      "coordinate_cauchy_defect_gap_lower_bound": 0.4049519604427282,
+      "coordinate_rank_trace_upper_bound": 0.08333333333333333,
+      "fiber_aspect": 0.75,
+      "jacobi_positive_edge_lower": 0.5091186271093948,
+      "jacobi_positive_edge_upper": 0.9283813728906054,
+      "natural_jacobi_edge_transfer_proved": false,
+      "outcome_count": 16,
+      "positive_full_rank_defect_predicted": true,
+      "status": "jacobi-positive-full-rank-defect-gap-predicted"
+    },
+    {
+      "balanced_defect_gap_lower_bound": 0.6191583821494725,
+      "component_trace": 0.015625,
+      "coordinate_cauchy_defect_gap_lower_bound": 0.6087417154828059,
+      "coordinate_rank_trace_upper_bound": 0.020833333333333332,
+      "fiber_aspect": 0.75,
+      "jacobi_positive_edge_lower": 0.6347833821494725,
+      "jacobi_positive_edge_upper": 0.8495916178505275,
+      "natural_jacobi_edge_transfer_proved": false,
+      "outcome_count": 64,
+      "positive_full_rank_defect_predicted": true,
+      "status": "jacobi-positive-full-rank-defect-gap-predicted"
+    },
+    {
+      "balanced_defect_gap_lower_bound": 0.6901198566955494,
+      "component_trace": 0.00390625,
+      "coordinate_cauchy_defect_gap_lower_bound": 0.6875156900288828,
+      "coordinate_rank_trace_upper_bound": 0.005208333333333333,
+      "fiber_aspect": 0.75,
+      "jacobi_positive_edge_lower": 0.6940261066955494,
+      "jacobi_positive_edge_upper": 0.8020676433044505,
+      "natural_jacobi_edge_transfer_proved": false,
+      "outcome_count": 256,
+      "positive_full_rank_defect_predicted": true,
+      "status": "jacobi-positive-full-rank-defect-gap-predicted"
+    },
+    {
+      "balanced_defect_gap_lower_bound": 0.7361037940415689,
+      "component_trace": 0.000244140625,
+      "coordinate_cauchy_defect_gap_lower_bound": 0.7359410336249023,
+      "coordinate_rank_trace_upper_bound": 0.0003255208333333333,
+      "fiber_aspect": 0.75,
+      "jacobi_positive_edge_lower": 0.7363479346665689,
+      "jacobi_positive_edge_upper": 0.763407924708431,
+      "natural_jacobi_edge_transfer_proved": false,
+      "outcome_count": 4096,
+      "positive_full_rank_defect_predicted": true,
+      "status": "jacobi-positive-full-rank-defect-gap-predicted"
+    },
+    {
+      "balanced_defect_gap_lower_bound": 0.74659422589254,
+      "component_trace": 1.52587890625e-05,
+      "coordinate_cauchy_defect_gap_lower_bound": 0.7465840533664984,
+      "coordinate_rank_trace_upper_bound": 2.0345052083333332e-05,
+      "fiber_aspect": 0.75,
+      "jacobi_positive_edge_lower": 0.7466094846816025,
+      "jacobi_positive_edge_upper": 0.7533752565293349,
+      "natural_jacobi_edge_transfer_proved": false,
+      "outcome_count": 65536,
+      "positive_full_rank_defect_predicted": true,
+      "status": "jacobi-positive-full-rank-defect-gap-predicted"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_positive_component_edge_to_full_rank_defect_bridge",
+      "resolution": "Functional calculus gives H_e^2>=delta H_e and summing the centered squares gives equation (2); projective, trine, unequal-trace, and failed-premise controls all respect it.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_natural_uniform_positive_component_edge_on_accepted_mass",
+      "resolution": "Transfer a Jacobi-type nonzero edge or representation-specific lower bound after any necessary mass-preserving outcome trim.",
+      "resolved": false
+    },
+    {
+      "obligation": "control_natural_component_block_to_fiber_aspects",
+      "resolution": "Trace balance is unnecessary: identify b_max/r on positive mass and use the coordinate rank/Cauchy corollary. Equal sparse blocks make this term O(1/q).",
+      "resolved": false
+    },
+    {
+      "obligation": "use_defect_gap_to_bound_regular_master_central_support",
+      "resolution": "Combine the natural premises with the regular-master defect operator and collision-free conditioning; the deterministic bridge alone supplies no source probability.",
+      "resolved": false
+    }
+  ],
+  "status": "component-defect-gap-bridge-proved-natural-edge-and-balance-open",
+  "summary": "Proved that a uniform positive component edge and coordinate-block rank accounting convert the entire many-outcome POVM into a full-rank aggregate nonscalarity defect without assuming trace balance, linking the Jacobi edge target directly to the regular-master central-support problem.",
+  "theorem_contract": {
+    "aggregate_defect_gap": "For h_e=tr(H_e)/r and D=sum_e(H_e-h_eI)^2, D>=(delta-2max_e h_e+sum_e h_e^2)I.",
+    "balanced_trace_corollary": "For q equal-trace outcomes, D>=(delta-1/q)I; a positive right-hand side makes the defect full rank in every bad block.",
+    "coordinate_block_corollary": "For H_e=W*P_eW with block dimensions b_e, rank and positivity give h_e<=b_e/r while Cauchy gives sum h_e^2>=1/q, hence D>=(delta-2b_max/r+1/q)I without trace balance.",
+    "jacobi_bridge": "Under the unproved equal-block natural Jacobi transfer, delta tends to alpha while 1/q tends to zero, predicting a constant full-rank defect gap.",
+    "positive_edge_operator_bound": "If every nonzero component eigenvalue is at least delta, then H_e^2>=delta H_e.",
+    "scope": "No natural positive component edge, balanced trace law, mass-preserving tiny-edge trim, support SELECT, or algorithm is proved."
+  }
+}

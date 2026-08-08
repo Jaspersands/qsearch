@@ -1,0 +1,118 @@
+{
+  "created_at": "2026-08-08T02:26:25.742280+00:00",
+  "theorem_contract": {
+    "covering_transition": "Sellke's fixed k_cov covering theorem implies common ranges with probability 1-o(1) at every fixed h>=k_cov with K-h>=k_cov.",
+    "global_distinct_transfer": "The conclusion survives conditioning because P_cf(n,K)=1-o(1).",
+    "hamming_three_boundary": "At h=3, each exclusive trivial sector is an ordinary Kronecker coefficient; independent Plancherel positivity is proved by the later variance module, while stronger laws remain open.",
+    "finite_witness": "Three disjoint globally distinct S7 triples each cover all irreps and give common ranges for all targets.",
+    "scope": "Pair-common recurrence does not prove a large frame norm, a failed local law, or the absence/presence of a speedup."
+  },
+  "finite_controls": [
+    {
+      "n": 7,
+      "copy_count": 6,
+      "hamming_distance": 3,
+      "globally_distinct_source_count": 12,
+      "partition_count": 15,
+      "left_only_cluster_covers_all_irreps": true,
+      "right_only_cluster_covers_all_irreps": true,
+      "shared_source_cluster_covers_all_irreps": true,
+      "target_count": 15,
+      "target_with_common_range_count": 15,
+      "target_with_trivial_contribution_count": 15,
+      "target_with_sign_contribution_count": 15,
+      "minimum_common_range_dimension": 1890,
+      "exact_covering_to_common_range_verified": true,
+      "status": "exact-globally-distinct-covering-common-range-verified"
+    }
+  ],
+  "asymptotic_transition": {
+    "hamming_one_natural_common_range_probability": "o(1)",
+    "hamming_two_natural_common_range_probability": "o(1)",
+    "hamming_three_natural_common_range_probability": "1-o(1) for independent Plancherel sources; arbitrary coupling open",
+    "some_fixed_hamming_radius_common_range_probability": "1-o(1)",
+    "sellke_covering_constant_explicitly_needed_for_logic": false,
+    "all_fixed_radius_pair_products_small": false
+  },
+  "proof_obligations": [
+    {
+      "obligation": "show_pair_common_ranges_return_at_constant_hamming_radius",
+      "resolved": true,
+      "resolution": "Apply Sellke covering independently to left-only, right-only, and a fixed-size subproduct of the shared source cluster."
+    },
+    {
+      "obligation": "identify_the_first_unresolved_hamming_stratum",
+      "resolved": true,
+      "resolution": "Distance three is governed by positivity of ordinary Kronecker coefficients for random Plancherel triples."
+    },
+    {
+      "obligation": "resolve_independent_plancherel_ordinary_kronecker_positivity",
+      "resolved": true,
+      "resolution": "The later Plancherel Kronecker module bounds zero probability by a vanishing reciprocal conjugacy-class sum."
+    },
+    {
+      "obligation": "extend_hamming_three_positivity_to_arbitrary_coupling_or_uniform_partitions",
+      "resolved": false,
+      "resolution": "The variance proof requires independent Plancherel character moments."
+    },
+    {
+      "obligation": "control_rank_and_incidence_of_returning_pair_common_sectors",
+      "resolved": false,
+      "resolution": "Need multiplicity/rank distributions and higher-order overlap geometry, not merely support positivity."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Radius-two transversality should extend to every fixed radius.",
+      "resolved": true,
+      "resolution": "False: Sellke covering forces common ranges by some fixed radius."
+    },
+    {
+      "objection": "Sellke alone proves typical Hamming-three common ranges.",
+      "resolved": true,
+      "resolution": "False: the independent Plancherel case needs the later variance theorem; stronger coupling laws remain open."
+    },
+    {
+      "objection": "Common pair ranges imply the average projector has a macroscopic edge.",
+      "resolved": false,
+      "resolution": "No: support, rank, alignment across pairs, and higher incidence determine the frame edge."
+    }
+  ],
+  "literature_links": [
+    {
+      "paper": "Sellke, Covering Irrep(S_n) With Tensor Products and Powers",
+      "url": "https://arxiv.org/abs/2004.05283",
+      "directly_applies": true,
+      "reason": "Theorem 1.2 supplies a fixed covering radius; the paper also explicitly identifies ordinary typical Kronecker positivity as open."
+    }
+  ],
+  "headline_metrics": {
+    "sellke_constant_covering_transition_theorem_count": 1,
+    "hamming_three_kronecker_positivity_reduction_theorem_count": 1,
+    "finite_covering_control_count": 1,
+    "finite_covering_control_failure_count": 0,
+    "finite_target_with_common_range_count": 15,
+    "independent_plancherel_hamming_three_positivity_theorem_count": 1,
+    "arbitrarily_coupled_hamming_three_positivity_theorem_count": 0,
+    "natural_node_frame_edge_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "constant_hamming_pair_common_recurrence_proved": true,
+    "hamming_three_reduced_to_typical_kronecker_positivity": true,
+    "independent_plancherel_hamming_three_common_range_proved": true,
+    "arbitrarily_coupled_hamming_three_common_range_proved": false,
+    "pair_common_rank_distribution_proved": false,
+    "higher_order_incidence_controlled": false,
+    "natural_all_depth_node_edge_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "Pair support undergoes a constant-radius transition, but its rank and coherent higher-order incidence remain unknown."
+  },
+  "status": "independent-plancherel-hamming-three-and-constant-radius-common-proved",
+  "summary": "Proved that pair-common ranges return at a fixed Hamming radius; the later variance theorem resolves distance three for independent Plancherel sources.",
+  "falsifiers_triggered": [
+    "Natural pairwise transversality cannot hold through every fixed Hamming radius.",
+    "Sellke's theorem alone does not resolve ordinary three-factor Kronecker positivity; the independent Plancherel variance theorem does.",
+    "Pair-common support alone is not a spectral-edge obstruction."
+  ]
+}

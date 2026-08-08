@@ -1,0 +1,2682 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The unequal-source cube is exactly translation covariant.",
+      "resolution": "Rejected: a finite W6 control has orientation ranks from 0 to 2025, so bit translation cannot be unitary covariance.",
+      "resolved": true
+    },
+    {
+      "objection": "A concentration bound for one orientation cannot cover 2^k masks.",
+      "resolution": "The relative variance decays as m_n^(2-k), which beats the 2^k union by a factor 2^-Theta(n(log n)^2).",
+      "resolved": true
+    },
+    {
+      "objection": "Conditioning all sources distinct destroys independence and invalidates the theorem.",
+      "resolution": "The conditional bad-event probability is at most the independent bad-event probability divided by P_cf; asymptotically P_cf=1-o(1). The n=12 finite bound is correctly left vacuous because its collision-free mass is extremely small.",
+      "resolved": true
+    },
+    {
+      "objection": "Nearly equal orientation ranks imply a graded endpoint gap.",
+      "resolution": "Equal-dimensional subspaces can have arbitrarily different overlap kernels and shorted boundary effects.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "all_orientation_all_target_rank_concentration_proved": true,
+    "collision_free_conditioned_rank_concentration_proved": true,
+    "exact_multiplicity_second_moment_proved": true,
+    "exact_unequal_source_translation_covariance": false,
+    "natural_pgm_endpoint_gap_proved": false,
+    "natural_shorted_endpoint_comparability_proved": false,
+    "pair_core_operator_concentration_proved": false,
+    "rank_imbalance_is_asymptotic_obstruction": false,
+    "reason": "Every orientation rank is simultaneously typical at natural depth, but the matrix-valued pair-core geometry is uncontrolled.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-07T23:30:44.380220+00:00",
+  "falsifiers_triggered": [
+    "Unequal-source orientation projectors are not exactly translation covariant at finite n.",
+    "Sellke support covering is not needed for rank concentration; the exact second moment is much stronger at natural block size.",
+    "Rank concentration cannot substitute for matrix endpoint-kernel concentration."
+  ],
+  "headline_metrics": {
+    "all_orientation_all_target_asymptotic_concentration_theorem_count": 1,
+    "exact_multiplicity_second_moment_theorem_count": 1,
+    "finite_unequal_rank_control_count": 1,
+    "natural_endpoint_comparability_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "operator_covariance_theorem_count": 0,
+    "physical_rank_identity_control_count": 1,
+    "second_moment_control_count": 123,
+    "second_moment_control_failure_count": 0,
+    "tail_copy_count": 203,
+    "tail_log2_conditioned_failure_upper_bound": -1772.2034860113665,
+    "tail_n": 48,
+    "uniform_concentration_certified_row_count": 9,
+    "uniform_concentration_preasymptotic_vacuous_row_count": 1,
+    "uniform_concentration_scaling_row_count": 10
+  },
+  "physical_rank_identity_controls": [
+    {
+      "exact_rank_identity_failure_count": 0,
+      "exact_rank_identity_verified": true,
+      "finite_orientation_ranks_equal": false,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_orientation_rank": 2025,
+      "minimum_orientation_rank": 0,
+      "n": 6,
+      "orientation_count": 16,
+      "status": "physical-orientation-rank-identity-verified",
+      "target_partition": [
+        6
+      ],
+      "total_source_dimension": 50625
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_plancherel_multiplicity_second_moment",
+      "resolution": "Character column orthogonality gives the exact conjugacy-class formula, checked by direct tuple enumeration at S3.",
+      "resolved": true
+    },
+    {
+      "obligation": "control_all_exponentially_many_orientation_ranks",
+      "resolution": "The class-size variance exponent beats the 2^k orientation count and all p(n) targets at natural k.",
+      "resolved": true
+    },
+    {
+      "obligation": "transfer_to_globally_distinct_sources",
+      "resolution": "Divide the independent-source failure bound by the exact collision-free mass, which tends to one asymptotically.",
+      "resolved": true
+    },
+    {
+      "obligation": "upgrade_rank_concentration_to_endpoint_short_comparability",
+      "resolution": "Requires matrix concentration or representation-level control of pair-core overlap kernels, not scalar multiplicities alone.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "conditioned_failure_upper_bound": 1.0,
+      "information_threshold_copy_count": 29,
+      "log2_all_orientation_all_target_failure_upper_bound": -119.68392716853977,
+      "log2_all_orientation_fixed_target_failure_upper_bound": -125.95071370923466,
+      "log2_collision_free_conditioned_failure_upper_bound": 25.0132387970704,
+      "log2_global_collision_free_probability": -144.69716596561017,
+      "log2_single_target_relative_variance_upper_bound": -156.95071370923466,
+      "n": 12,
+      "orientation_count_decimal": "536870912",
+      "partition_count": 77,
+      "relative_error_tolerance": 0.5,
+      "smallest_nonidentity_class_size": 66,
+      "status": "finite-uniform-rank-bound-not-yet-nontrivial",
+      "target_count": 77,
+      "uniform_all_orientation_all_target_concentration_certified": false
+    },
+    {
+      "conditioned_failure_upper_bound": 1.0397756772526364e-33,
+      "information_threshold_copy_count": 45,
+      "log2_all_orientation_all_target_failure_upper_bound": -234.29905651880588,
+      "log2_all_orientation_fixed_target_failure_upper_bound": -242.15080556022195,
+      "log2_collision_free_conditioned_failure_upper_bound": -109.56735481851544,
+      "log2_global_collision_free_probability": -124.73170170029044,
+      "log2_single_target_relative_variance_upper_bound": -289.15080556022195,
+      "n": 16,
+      "orientation_count_decimal": "35184372088832",
+      "partition_count": 231,
+      "relative_error_tolerance": 0.5,
+      "smallest_nonidentity_class_size": 120,
+      "status": "uniform-orientation-rank-concentration-after-distinct-conditioning",
+      "target_count": 231,
+      "uniform_all_orientation_all_target_concentration_certified": true
+    },
+    {
+      "conditioned_failure_upper_bound": 4.775752408981952e-80,
+      "information_threshold_copy_count": 62,
+      "log2_all_orientation_all_target_failure_upper_bound": -371.60899602012216,
+      "log2_all_orientation_fixed_target_failure_upper_bound": -380.9013176529242,
+      "log2_collision_free_conditioned_failure_upper_bound": -263.49851954659584,
+      "log2_global_collision_free_probability": -108.11047647352635,
+      "log2_single_target_relative_variance_upper_bound": -444.9013176529242,
+      "n": 20,
+      "orientation_count_decimal": "4611686018427387904",
+      "partition_count": 627,
+      "relative_error_tolerance": 0.5,
+      "smallest_nonidentity_class_size": 190,
+      "status": "uniform-orientation-rank-concentration-after-distinct-conditioning",
+      "target_count": 627,
+      "uniform_all_orientation_all_target_concentration_certified": true
+    },
+    {
+      "conditioned_failure_upper_bound": 1.276887362144909e-132,
+      "information_threshold_copy_count": 80,
+      "log2_all_orientation_all_target_failure_upper_bound": -529.2235516899151,
+      "log2_all_orientation_fixed_target_failure_upper_bound": -539.8446878031897,
+      "log2_collision_free_conditioned_failure_upper_bound": -438.14187725869897,
+      "log2_global_collision_free_probability": -91.08167443121611,
+      "log2_single_target_relative_variance_upper_bound": -621.8446878031897,
+      "n": 24,
+      "orientation_count_decimal": "1208925819614629174706176",
+      "partition_count": 1575,
+      "relative_error_tolerance": 0.5,
+      "smallest_nonidentity_class_size": 276,
+      "status": "uniform-orientation-rank-concentration-after-distinct-conditioning",
+      "target_count": 1575,
+      "uniform_all_orientation_all_target_concentration_certified": true
+    },
+    {
+      "conditioned_failure_upper_bound": 3.0748168536645035e-188,
+      "information_threshold_copy_count": 98,
+      "log2_all_orientation_all_target_failure_upper_bound": -698.2550386974416,
+      "log2_all_orientation_fixed_target_failure_upper_bound": -710.1153497523611,
+      "log2_collision_free_conditioned_failure_upper_bound": -622.9019813575361,
+      "log2_global_collision_free_probability": -75.35305733990545,
+      "log2_single_target_relative_variance_upper_bound": -810.1153497523611,
+      "n": 28,
+      "orientation_count_decimal": "316912650057057350374175801344",
+      "partition_count": 3718,
+      "relative_error_tolerance": 0.5,
+      "smallest_nonidentity_class_size": 378,
+      "status": "uniform-orientation-rank-concentration-after-distinct-conditioning",
+      "target_count": 3718,
+      "uniform_all_orientation_all_target_concentration_certified": true
+    },
+    {
+      "conditioned_failure_upper_bound": 1.3918962523960489e-250,
+      "information_threshold_copy_count": 118,
+      "log2_all_orientation_all_target_failure_upper_bound": -892.6321694256649,
+      "log2_all_orientation_fixed_target_failure_upper_bound": -905.6595571197176,
+      "log2_collision_free_conditioned_failure_upper_bound": -830.0049720406337,
+      "log2_global_collision_free_probability": -62.62719738503115,
+      "log2_single_target_relative_variance_upper_bound": -1025.6595571197176,
+      "n": 32,
+      "orientation_count_decimal": "332306998946228968225951765070086144",
+      "partition_count": 8349,
+      "relative_error_tolerance": 0.5,
+      "smallest_nonidentity_class_size": 496,
+      "status": "uniform-orientation-rank-concentration-after-distinct-conditioning",
+      "target_count": 8349,
+      "uniform_all_orientation_all_target_concentration_certified": true
+    },
+    {
+      "conditioned_failure_upper_bound": 9.8537e-318,
+      "information_threshold_copy_count": 139,
+      "log2_all_orientation_all_target_failure_upper_bound": -1104.7238494461963,
+      "log2_all_orientation_fixed_target_failure_upper_bound": -1118.8577141098774,
+      "log2_collision_free_conditioned_failure_upper_bound": -1053.0724683705027,
+      "log2_global_collision_free_probability": -51.65138107569346,
+      "log2_single_target_relative_variance_upper_bound": -1259.8577141098774,
+      "n": 36,
+      "orientation_count_decimal": "696898287454081973172991196020261297061888",
+      "partition_count": 17977,
+      "relative_error_tolerance": 0.5,
+      "smallest_nonidentity_class_size": 630,
+      "status": "uniform-orientation-rank-concentration-after-distinct-conditioning",
+      "target_count": 17977,
+      "uniform_all_orientation_all_target_concentration_certified": true
+    },
+    {
+      "conditioned_failure_upper_bound": 0.0,
+      "information_threshold_copy_count": 160,
+      "log2_all_orientation_all_target_failure_upper_bound": -1325.5815141485261,
+      "log2_all_orientation_fixed_target_failure_upper_bound": -1340.7698711801347,
+      "log2_collision_free_conditioned_failure_upper_bound": -1283.800155492473,
+      "log2_global_collision_free_probability": -41.78135865605296,
+      "log2_single_target_relative_variance_upper_bound": -1502.7698711801347,
+      "n": 40,
+      "orientation_count_decimal": "1461501637330902918203684832716283019655932542976",
+      "partition_count": 37338,
+      "relative_error_tolerance": 0.5,
+      "smallest_nonidentity_class_size": 780,
+      "status": "uniform-orientation-rank-concentration-after-distinct-conditioning",
+      "target_count": 37338,
+      "uniform_all_orientation_all_target_concentration_certified": true
+    },
+    {
+      "conditioned_failure_upper_bound": 0.0,
+      "information_threshold_copy_count": 181,
+      "log2_all_orientation_all_target_failure_upper_bound": -1554.1437393343363,
+      "log2_all_orientation_fixed_target_failure_upper_bound": -1570.341704676685,
+      "log2_collision_free_conditioned_failure_upper_bound": -1520.518881213954,
+      "log2_global_collision_free_probability": -33.6248581203821,
+      "log2_single_target_relative_variance_upper_bound": -1753.341704676685,
+      "n": 44,
+      "orientation_count_decimal": "3064991081731777716716694054300618367237478244367204352",
+      "partition_count": 75175,
+      "relative_error_tolerance": 0.5,
+      "smallest_nonidentity_class_size": 946,
+      "status": "uniform-orientation-rank-concentration-after-distinct-conditioning",
+      "target_count": 75175,
+      "uniform_all_orientation_all_target_concentration_certified": true
+    },
+    {
+      "conditioned_failure_upper_bound": 0.0,
+      "information_threshold_copy_count": 203,
+      "log2_all_orientation_all_target_failure_upper_bound": -1798.7135647573464,
+      "log2_all_orientation_fixed_target_failure_upper_bound": -1815.8816981927982,
+      "log2_collision_free_conditioned_failure_upper_bound": -1772.2034860113665,
+      "log2_global_collision_free_probability": -26.510078745979804,
+      "log2_single_target_relative_variance_upper_bound": -2020.8816981927982,
+      "n": 48,
+      "orientation_count_decimal": "12855504354071922204335696738729300820177623950262342682411008",
+      "partition_count": 147273,
+      "relative_error_tolerance": 0.5,
+      "smallest_nonidentity_class_size": 1128,
+      "status": "uniform-orientation-rank-concentration-after-distinct-conditioning",
+      "target_count": 147273,
+      "uniform_all_orientation_all_target_concentration_certified": true
+    }
+  ],
+  "second_moment_controls": [
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2",
+      "direct_formula_match": true,
+      "direct_second_moment": "1/12",
+      "direct_tuple_expectation_checked": true,
+      "exact_relative_variance": "2",
+      "exact_second_moment": "1/12",
+      "expected_normalized_multiplicity": "1/6",
+      "n": 3,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        3
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2",
+      "direct_formula_match": true,
+      "direct_second_moment": "5/36",
+      "direct_tuple_expectation_checked": true,
+      "exact_relative_variance": "1/4",
+      "exact_second_moment": "5/36",
+      "expected_normalized_multiplicity": "1/3",
+      "n": 3,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 2,
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2",
+      "direct_formula_match": true,
+      "direct_second_moment": "1/12",
+      "direct_tuple_expectation_checked": true,
+      "exact_relative_variance": "2",
+      "exact_second_moment": "1/12",
+      "expected_normalized_multiplicity": "1/6",
+      "n": 3,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "1",
+      "direct_formula_match": true,
+      "direct_second_moment": "11/216",
+      "direct_tuple_expectation_checked": true,
+      "exact_relative_variance": "5/6",
+      "exact_second_moment": "11/216",
+      "expected_normalized_multiplicity": "1/6",
+      "n": 3,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        3
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "1",
+      "direct_formula_match": true,
+      "direct_second_moment": "1/8",
+      "direct_tuple_expectation_checked": true,
+      "exact_relative_variance": "1/8",
+      "exact_second_moment": "1/8",
+      "expected_normalized_multiplicity": "1/3",
+      "n": 3,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 2,
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "1",
+      "direct_formula_match": true,
+      "direct_second_moment": "11/216",
+      "direct_tuple_expectation_checked": true,
+      "exact_relative_variance": "5/6",
+      "exact_second_moment": "11/216",
+      "expected_normalized_multiplicity": "1/6",
+      "n": 3,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "1/4",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "35/216",
+      "exact_second_moment": "251/7776",
+      "expected_normalized_multiplicity": "1/6",
+      "n": 3,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        3
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "1/4",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "1/32",
+      "exact_second_moment": "11/96",
+      "expected_normalized_multiplicity": "1/3",
+      "n": 3,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 2,
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "1/4",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "35/216",
+      "exact_second_moment": "251/7776",
+      "expected_normalized_multiplicity": "1/6",
+      "n": 3,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "4",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "4",
+      "exact_second_moment": "5/576",
+      "expected_normalized_multiplicity": "1/24",
+      "n": 4,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "4",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "1/3",
+      "exact_second_moment": "1/48",
+      "expected_normalized_multiplicity": "1/8",
+      "n": 4,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 3,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "4",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "5/4",
+      "exact_second_moment": "1/64",
+      "expected_normalized_multiplicity": "1/12",
+      "n": 4,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 2,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "4",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "1/3",
+      "exact_second_moment": "1/48",
+      "expected_normalized_multiplicity": "1/8",
+      "n": 4,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 3,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "4",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "4",
+      "exact_second_moment": "5/576",
+      "expected_normalized_multiplicity": "1/24",
+      "n": 4,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "4/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "19/24",
+      "exact_second_moment": "43/13824",
+      "expected_normalized_multiplicity": "1/24",
+      "n": 4,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "4/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "2/27",
+      "exact_second_moment": "29/1728",
+      "expected_normalized_multiplicity": "1/8",
+      "n": 4,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 3,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "4/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "35/96",
+      "exact_second_moment": "131/13824",
+      "expected_normalized_multiplicity": "1/12",
+      "n": 4,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 2,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "4/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "2/27",
+      "exact_second_moment": "29/1728",
+      "expected_normalized_multiplicity": "1/8",
+      "n": 4,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 3,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "4/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "19/24",
+      "exact_second_moment": "43/13824",
+      "expected_normalized_multiplicity": "1/24",
+      "n": 4,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "4/27",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "667/13824",
+      "exact_second_moment": "14491/7962624",
+      "expected_normalized_multiplicity": "1/24",
+      "n": 4,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "4/27",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "5/972",
+      "exact_second_moment": "977/62208",
+      "expected_normalized_multiplicity": "1/8",
+      "n": 4,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 3,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "4/27",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "2075/55296",
+      "exact_second_moment": "57371/7962624",
+      "expected_normalized_multiplicity": "1/12",
+      "n": 4,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 2,
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "4/27",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "5/972",
+      "exact_second_moment": "977/62208",
+      "expected_normalized_multiplicity": "1/8",
+      "n": 4,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 3,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "4/27",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "667/13824",
+      "exact_second_moment": "14491/7962624",
+      "expected_normalized_multiplicity": "1/24",
+      "n": 4,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "6",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "6",
+      "exact_second_moment": "7/14400",
+      "expected_normalized_multiplicity": "1/120",
+      "n": 5,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        5
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "6",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "7/16",
+      "exact_second_moment": "23/14400",
+      "expected_normalized_multiplicity": "1/30",
+      "n": 5,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 4,
+      "target_partition": [
+        4,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "6",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "1/5",
+      "exact_second_moment": "1/480",
+      "expected_normalized_multiplicity": "1/24",
+      "n": 5,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 5,
+      "target_partition": [
+        3,
+        2
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "6",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "5/36",
+      "exact_second_moment": "41/14400",
+      "expected_normalized_multiplicity": "1/20",
+      "n": 5,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 6,
+      "target_partition": [
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "6",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "1/5",
+      "exact_second_moment": "1/480",
+      "expected_normalized_multiplicity": "1/24",
+      "n": 5,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 5,
+      "target_partition": [
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "6",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "7/16",
+      "exact_second_moment": "23/14400",
+      "expected_normalized_multiplicity": "1/30",
+      "n": 5,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 4,
+      "target_partition": [
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "6",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "6",
+      "exact_second_moment": "7/14400",
+      "expected_normalized_multiplicity": "1/120",
+      "n": 5,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "3/5",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "41/120",
+      "exact_second_moment": "161/1728000",
+      "expected_normalized_multiplicity": "1/120",
+      "n": 5,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        5
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "3/5",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "13/384",
+      "exact_second_moment": "397/345600",
+      "expected_normalized_multiplicity": "1/30",
+      "n": 5,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 4,
+      "target_partition": [
+        4,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "3/5",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "3/250",
+      "exact_second_moment": "253/144000",
+      "expected_normalized_multiplicity": "1/24",
+      "n": 5,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 5,
+      "target_partition": [
+        3,
+        2
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "3/5",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "37/4320",
+      "exact_second_moment": "4357/1728000",
+      "expected_normalized_multiplicity": "1/20",
+      "n": 5,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 6,
+      "target_partition": [
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "3/5",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "3/250",
+      "exact_second_moment": "253/144000",
+      "expected_normalized_multiplicity": "1/24",
+      "n": 5,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 5,
+      "target_partition": [
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "3/5",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "13/384",
+      "exact_second_moment": "397/345600",
+      "expected_normalized_multiplicity": "1/30",
+      "n": 5,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 4,
+      "target_partition": [
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "3/5",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "41/120",
+      "exact_second_moment": "161/1728000",
+      "expected_normalized_multiplicity": "1/120",
+      "n": 5,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "3/500",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "2861/1728000",
+      "exact_second_moment": "1730861/24883200000",
+      "expected_normalized_multiplicity": "1/120",
+      "n": 5,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        5
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "3/500",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "7469/27648000",
+      "exact_second_moment": "27655469/24883200000",
+      "expected_normalized_multiplicity": "1/30",
+      "n": 5,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 4,
+      "target_partition": [
+        4,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "3/500",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "19/300000",
+      "exact_second_moment": "300019/172800000",
+      "expected_normalized_multiplicity": "1/24",
+      "n": 5,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 5,
+      "target_partition": [
+        3,
+        2
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "3/500",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "2173/62208000",
+      "exact_second_moment": "62210173/24883200000",
+      "expected_normalized_multiplicity": "1/20",
+      "n": 5,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 6,
+      "target_partition": [
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "3/500",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "19/300000",
+      "exact_second_moment": "300019/172800000",
+      "expected_normalized_multiplicity": "1/24",
+      "n": 5,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 5,
+      "target_partition": [
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "3/500",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "7469/27648000",
+      "exact_second_moment": "27655469/24883200000",
+      "expected_normalized_multiplicity": "1/30",
+      "n": 5,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 4,
+      "target_partition": [
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "3/500",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "2861/1728000",
+      "exact_second_moment": "1730861/24883200000",
+      "expected_normalized_multiplicity": "1/120",
+      "n": 5,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "10",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "10",
+      "exact_second_moment": "11/518400",
+      "expected_normalized_multiplicity": "1/720",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        6
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "10",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "19/25",
+      "exact_second_moment": "11/129600",
+      "expected_normalized_multiplicity": "1/144",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 5,
+      "target_partition": [
+        5,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "10",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "22/81",
+      "exact_second_moment": "103/518400",
+      "expected_normalized_multiplicity": "1/80",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 9,
+      "target_partition": [
+        4,
+        2
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "10",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "4/25",
+      "exact_second_moment": "29/129600",
+      "expected_normalized_multiplicity": "1/72",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 10,
+      "target_partition": [
+        4,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "10",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "19/25",
+      "exact_second_moment": "11/129600",
+      "expected_normalized_multiplicity": "1/144",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 5,
+      "target_partition": [
+        3,
+        3
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "10",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "9/256",
+      "exact_second_moment": "53/103680",
+      "expected_normalized_multiplicity": "1/45",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 16,
+      "target_partition": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "10",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "4/25",
+      "exact_second_moment": "29/129600",
+      "expected_normalized_multiplicity": "1/72",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 10,
+      "target_partition": [
+        3,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "10",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "19/25",
+      "exact_second_moment": "11/129600",
+      "expected_normalized_multiplicity": "1/144",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 5,
+      "target_partition": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "10",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "22/81",
+      "exact_second_moment": "103/518400",
+      "expected_normalized_multiplicity": "1/80",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 9,
+      "target_partition": [
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "10",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "19/25",
+      "exact_second_moment": "11/129600",
+      "expected_normalized_multiplicity": "1/144",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 5,
+      "target_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "10",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "10",
+      "exact_second_moment": "11/518400",
+      "expected_normalized_multiplicity": "1/720",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "181/720",
+      "exact_second_moment": "901/373248000",
+      "expected_normalized_multiplicity": "1/720",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        6
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "38/1125",
+      "exact_second_moment": "1163/23328000",
+      "expected_normalized_multiplicity": "1/144",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 5,
+      "target_partition": [
+        5,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "901/58320",
+      "exact_second_moment": "59221/373248000",
+      "expected_normalized_multiplicity": "1/80",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 9,
+      "target_partition": [
+        4,
+        2
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "31/4500",
+      "exact_second_moment": "4531/23328000",
+      "expected_normalized_multiplicity": "1/72",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 10,
+      "target_partition": [
+        4,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "38/1125",
+      "exact_second_moment": "1163/23328000",
+      "expected_normalized_multiplicity": "1/144",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 5,
+      "target_partition": [
+        3,
+        3
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "149/184320",
+      "exact_second_moment": "184469/373248000",
+      "expected_normalized_multiplicity": "1/45",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 16,
+      "target_partition": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "31/4500",
+      "exact_second_moment": "4531/23328000",
+      "expected_normalized_multiplicity": "1/72",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 10,
+      "target_partition": [
+        3,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "38/1125",
+      "exact_second_moment": "1163/23328000",
+      "expected_normalized_multiplicity": "1/144",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 5,
+      "target_partition": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "901/58320",
+      "exact_second_moment": "59221/373248000",
+      "expected_normalized_multiplicity": "1/80",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 9,
+      "target_partition": [
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "38/1125",
+      "exact_second_moment": "1163/23328000",
+      "expected_normalized_multiplicity": "1/144",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 5,
+      "target_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "181/720",
+      "exact_second_moment": "901/373248000",
+      "expected_normalized_multiplicity": "1/720",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/675",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "9541/14929920",
+      "exact_second_moment": "14939461/7739670528000",
+      "expected_normalized_multiplicity": "1/720",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        6
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/675",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "17819/145800000",
+      "exact_second_moment": "145817819/3023308800000",
+      "expected_normalized_multiplicity": "1/144",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 5,
+      "target_partition": [
+        5,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/675",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "1995901/30233088000",
+      "exact_second_moment": "30235083901/193491763200000",
+      "expected_normalized_multiplicity": "1/80",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 9,
+      "target_partition": [
+        4,
+        2
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/675",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "14269/583200000",
+      "exact_second_moment": "583214269/3023308800000",
+      "expected_normalized_multiplicity": "1/72",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 10,
+      "target_partition": [
+        4,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/675",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "17819/145800000",
+      "exact_second_moment": "145817819/3023308800000",
+      "expected_normalized_multiplicity": "1/144",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 5,
+      "target_partition": [
+        3,
+        3
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/675",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "46781/95551488000",
+      "exact_second_moment": "95551534781/193491763200000",
+      "expected_normalized_multiplicity": "1/45",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 16,
+      "target_partition": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/675",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "14269/583200000",
+      "exact_second_moment": "583214269/3023308800000",
+      "expected_normalized_multiplicity": "1/72",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 10,
+      "target_partition": [
+        3,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/675",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "17819/145800000",
+      "exact_second_moment": "145817819/3023308800000",
+      "expected_normalized_multiplicity": "1/144",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 5,
+      "target_partition": [
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/675",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "1995901/30233088000",
+      "exact_second_moment": "30235083901/193491763200000",
+      "expected_normalized_multiplicity": "1/80",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 9,
+      "target_partition": [
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/675",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "17819/145800000",
+      "exact_second_moment": "145817819/3023308800000",
+      "expected_normalized_multiplicity": "1/144",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 5,
+      "target_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/675",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "9541/14929920",
+      "exact_second_moment": "14939461/7739670528000",
+      "expected_normalized_multiplicity": "1/720",
+      "n": 6,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "14",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "14",
+      "exact_second_moment": "1/1693440",
+      "expected_normalized_multiplicity": "1/5040",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        7
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "14",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "13/12",
+      "exact_second_moment": "1/338688",
+      "expected_normalized_multiplicity": "1/840",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 6,
+      "target_partition": [
+        6,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "14",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "2/7",
+      "exact_second_moment": "1/100800",
+      "expected_normalized_multiplicity": "1/360",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 14,
+      "target_partition": [
+        5,
+        2
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "14",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "2/9",
+      "exact_second_moment": "11/1016064",
+      "expected_normalized_multiplicity": "1/336",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 15,
+      "target_partition": [
+        5,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "14",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "17/98",
+      "exact_second_moment": "23/2540160",
+      "expected_normalized_multiplicity": "1/360",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 14,
+      "target_partition": [
+        4,
+        3
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "14",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "1/35",
+      "exact_second_moment": "1/20160",
+      "expected_normalized_multiplicity": "1/144",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 35,
+      "target_partition": [
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "14",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "29/400",
+      "exact_second_moment": "143/8467200",
+      "expected_normalized_multiplicity": "1/252",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 20,
+      "target_partition": [
+        4,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "14",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "3/49",
+      "exact_second_moment": "13/705600",
+      "expected_normalized_multiplicity": "1/240",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 21,
+      "target_partition": [
+        3,
+        3,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "14",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "3/49",
+      "exact_second_moment": "13/705600",
+      "expected_normalized_multiplicity": "1/240",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 21,
+      "target_partition": [
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "14",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "1/35",
+      "exact_second_moment": "1/20160",
+      "expected_normalized_multiplicity": "1/144",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 35,
+      "target_partition": [
+        3,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "14",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "2/9",
+      "exact_second_moment": "11/1016064",
+      "expected_normalized_multiplicity": "1/336",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 15,
+      "target_partition": [
+        3,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "14",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "17/98",
+      "exact_second_moment": "23/2540160",
+      "expected_normalized_multiplicity": "1/360",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 14,
+      "target_partition": [
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "14",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "2/7",
+      "exact_second_moment": "1/100800",
+      "expected_normalized_multiplicity": "1/360",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 14,
+      "target_partition": [
+        2,
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "14",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "13/12",
+      "exact_second_moment": "1/338688",
+      "expected_normalized_multiplicity": "1/840",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 6,
+      "target_partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 2,
+      "bound_respected": true,
+      "conjugacy_class_bound": "14",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "14",
+      "exact_second_moment": "1/1693440",
+      "expected_normalized_multiplicity": "1/5040",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "77/720",
+      "exact_second_moment": "797/18289152000",
+      "expected_normalized_multiplicity": "1/5040",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        7
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "77/2880",
+      "exact_second_moment": "2957/2032128000",
+      "expected_normalized_multiplicity": "1/840",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 6,
+      "target_partition": [
+        6,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "2363/246960",
+      "exact_second_moment": "249323/32006016000",
+      "expected_normalized_multiplicity": "1/360",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 14,
+      "target_partition": [
+        5,
+        2
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "481/75600",
+      "exact_second_moment": "76081/8534937600",
+      "expected_normalized_multiplicity": "1/336",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 15,
+      "target_partition": [
+        5,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "31/7056",
+      "exact_second_moment": "7087/914457600",
+      "expected_normalized_multiplicity": "1/360",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 14,
+      "target_partition": [
+        4,
+        3
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "8/7875",
+      "exact_second_moment": "7883/163296000",
+      "expected_normalized_multiplicity": "1/144",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 35,
+      "target_partition": [
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "1231/2016000",
+      "exact_second_moment": "2017231/128024064000",
+      "expected_normalized_multiplicity": "1/252",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 20,
+      "target_partition": [
+        4,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "367/555660",
+      "exact_second_moment": "556027/32006016000",
+      "expected_normalized_multiplicity": "1/240",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 21,
+      "target_partition": [
+        3,
+        3,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "367/555660",
+      "exact_second_moment": "556027/32006016000",
+      "expected_normalized_multiplicity": "1/240",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 21,
+      "target_partition": [
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "8/7875",
+      "exact_second_moment": "7883/163296000",
+      "expected_normalized_multiplicity": "1/144",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 35,
+      "target_partition": [
+        3,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "481/75600",
+      "exact_second_moment": "76081/8534937600",
+      "expected_normalized_multiplicity": "1/336",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 15,
+      "target_partition": [
+        3,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "31/7056",
+      "exact_second_moment": "7087/914457600",
+      "expected_normalized_multiplicity": "1/360",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 14,
+      "target_partition": [
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "2363/246960",
+      "exact_second_moment": "249323/32006016000",
+      "expected_normalized_multiplicity": "1/360",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 14,
+      "target_partition": [
+        2,
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "77/2880",
+      "exact_second_moment": "2957/2032128000",
+      "expected_normalized_multiplicity": "1/840",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 6,
+      "target_partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 3,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/3",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "77/720",
+      "exact_second_moment": "797/18289152000",
+      "expected_normalized_multiplicity": "1/5040",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/1323",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "14458439/128024064000",
+      "exact_second_moment": "128038522439/3252016064102400000",
+      "expected_normalized_multiplicity": "1/5040",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        7
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/1323",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "75020173/1536288768000",
+      "exact_second_moment": "1536363788173/1084005354700800000",
+      "expected_normalized_multiplicity": "1/840",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 6,
+      "target_partition": [
+        6,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/1323",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "31256567/1568294784000",
+      "exact_second_moment": "1568326040567/203251004006400000",
+      "expected_normalized_multiplicity": "1/360",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 14,
+      "target_partition": [
+        5,
+        2
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/1323",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "793871/65318400000",
+      "exact_second_moment": "65319193871/7374186086400000",
+      "expected_normalized_multiplicity": "1/336",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 15,
+      "target_partition": [
+        5,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/1323",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "2776219/313658956800",
+      "exact_second_moment": "313661733019/40650200801280000",
+      "expected_normalized_multiplicity": "1/360",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 14,
+      "target_partition": [
+        4,
+        3
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/1323",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "1545679/700131600000",
+      "exact_second_moment": "700133145679/14517928857600000",
+      "expected_normalized_multiplicity": "1/144",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 35,
+      "target_partition": [
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/1323",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "3341431/51209625600000",
+      "exact_second_moment": "51209628941431/3252016064102400000",
+      "expected_normalized_multiplicity": "1/252",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 20,
+      "target_partition": [
+        4,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/1323",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "1145173/3528663264000",
+      "exact_second_moment": "3528664409173/203251004006400000",
+      "expected_normalized_multiplicity": "1/240",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 21,
+      "target_partition": [
+        3,
+        3,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/1323",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "1145173/3528663264000",
+      "exact_second_moment": "3528664409173/203251004006400000",
+      "expected_normalized_multiplicity": "1/240",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 21,
+      "target_partition": [
+        3,
+        2,
+        2
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/1323",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "1545679/700131600000",
+      "exact_second_moment": "700133145679/14517928857600000",
+      "expected_normalized_multiplicity": "1/144",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 35,
+      "target_partition": [
+        3,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/1323",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "793871/65318400000",
+      "exact_second_moment": "65319193871/7374186086400000",
+      "expected_normalized_multiplicity": "1/336",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 15,
+      "target_partition": [
+        3,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/1323",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "2776219/313658956800",
+      "exact_second_moment": "313661733019/40650200801280000",
+      "expected_normalized_multiplicity": "1/360",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 14,
+      "target_partition": [
+        2,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/1323",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "31256567/1568294784000",
+      "exact_second_moment": "1568326040567/203251004006400000",
+      "expected_normalized_multiplicity": "1/360",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 14,
+      "target_partition": [
+        2,
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/1323",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "75020173/1536288768000",
+      "exact_second_moment": "1536363788173/1084005354700800000",
+      "expected_normalized_multiplicity": "1/840",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 6,
+      "target_partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "block_size": 5,
+      "bound_respected": true,
+      "conjugacy_class_bound": "2/1323",
+      "direct_formula_match": true,
+      "direct_second_moment": null,
+      "direct_tuple_expectation_checked": false,
+      "exact_relative_variance": "14458439/128024064000",
+      "exact_second_moment": "128038522439/3252016064102400000",
+      "expected_normalized_multiplicity": "1/5040",
+      "n": 7,
+      "status": "exact-plancherel-multiplicity-second-moment-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "status": "uniform-orientation-rank-concentration-proved-operator-comparability-open",
+  "summary": "Proved exact Plancherel multiplicity second moments and uniform rank concentration over all natural-depth orientations and targets, including after global-distinctness conditioning.",
+  "theorem_contract": {
+    "asymptotic_rate": "At k=Theta(n log n), p(n)=exp(O(sqrt n)) and m_n=Theta(n^2), so the simultaneous failure is 2^-Theta(n(log n)^2).",
+    "collision_free_transfer": "Conditioning all 2k sources distinct divides by P_cf(n,k)=1-o(1).",
+    "exact_second_moment": "E[X_nu^2]=|S_n|^-2 sum_K chi_nu(K)^2 |K|^(2-C), from Plancherel weighting and character column orthogonality.",
+    "physical_rank_identity": "rank(U_e)/D_all equals the normalized multiplicity of the target in the k source irreps selected by e.",
+    "relative_variance": "Var(X_nu)/E[X_nu]^2=sum_{K!=1} r_nu(K)^2 |K|^(2-C).",
+    "scope": "This proves rank concentration only. It does not identify or compare the physical endpoint-kernel operators.",
+    "uniform_union_bound": "Chebyshev plus a union over 2^k orientations and p(n) targets gives 2^k p(n)(p(n)-1)m_n^(2-k)/epsilon^2."
+  }
+}

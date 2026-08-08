@@ -1,0 +1,1028 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The three-edge star was an artifact of a hand-selected scalar model.",
+      "resolution": "It is reconstructed directly from dense physical pair-core bases and normalized overlap atoms.",
+      "resolved": true
+    },
+    {
+      "objection": "All endpoint support projections may fail to commute even when each vertex passes locally.",
+      "resolution": "They commute below numerical tolerance in both controls, but no all-n theorem follows.",
+      "resolved": true
+    },
+    {
+      "objection": "Finite affine stars establish a uniform natural endpoint gap.",
+      "resolution": "A growing bipartite or lopsided channel on positive natural mass could still close the gap.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "affine_support_sufficient_for_complete_internal_closure": false,
+    "finite_extracted_star_endpoint_gaps_constant": true,
+    "finite_w6_affine_channels_are_incomplete_stars": true,
+    "finite_w6_nonstar_residual_channel_found": false,
+    "natural_channel_resolvent_comparability_proved": false,
+    "natural_pgm_endpoint_gap_proved": false,
+    "natural_threshold_channel_family_classified": false,
+    "physical_global_channel_extractor_verified": true,
+    "reason": "The finite physical channel graphs are now extractable and well conditioned, but their natural all-depth graph family and resolvent balance remain unproved.",
+    "speedup_claim_allowed": false
+  },
+  "controls": [
+    {
+      "affine_but_incomplete_channel_count": 1,
+      "ambient_dimension": 50625,
+      "channels": [
+        {
+          "channel_edge_support_is_complete": false,
+          "channel_id": "CHANNEL-0",
+          "coefficient_multiplicity": 9,
+          "complete_graph_edge_count": 6,
+          "crossing_bit_split_count": 4,
+          "edge_count": 3,
+          "edge_support": [
+            [
+              2,
+              12
+            ],
+            [
+              5,
+              12
+            ],
+            [
+              11,
+              12
+            ]
+          ],
+          "every_crossing_bit_split_is_vertex_balanced": true,
+          "maximum_crossing_split_vertex_imbalance": 0,
+          "maximum_grading_defect_norm": 0.0588235294117648,
+          "maximum_link_unitarity_residual": 2.7755575615628914e-15,
+          "minimum_endpoint_gap": 0.4705882352941176,
+          "missing_complete_graph_edge_count": 3,
+          "orientation_support": [
+            2,
+            5,
+            11,
+            12
+          ],
+          "orientation_support_is_affine": true,
+          "status": "affine-incomplete-flat-carrier-channel"
+        }
+      ],
+      "coefficient_atom_count": 4,
+      "complete_affine_channel_count": 0,
+      "control_id": "W6-CARRIER-9-AFFINE-PLANE-PHYSICAL-EXTRACTION",
+      "exact_common_coefficient_dimension_removed": 0,
+      "extraction_audit_verified": true,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "live_pair_core_count": 3,
+      "maximum_all_endpoint_support_commutator_norm": 1.4824143740462784e-15,
+      "maximum_extracted_channel_grading_defect": 0.0588235294117648,
+      "maximum_partial_isometry_residual": 6.0485995824776344e-15,
+      "minimum_extracted_channel_endpoint_gap": 0.4705882352941176,
+      "n": 6,
+      "nontrivial_channel_count": 1,
+      "nonzero_normalized_cross_map_count": 6,
+      "normalized_cross_map_count": 6,
+      "orientation_family": [
+        2,
+        5,
+        11,
+        12
+      ],
+      "residual_correlation": 0.11111111111111133,
+      "residual_pair_core_count": 3,
+      "status": "physical-global-carrier-channels-extracted",
+      "target_partition": [
+        6
+      ]
+    },
+    {
+      "affine_but_incomplete_channel_count": 1,
+      "ambient_dimension": 50625,
+      "channels": [
+        {
+          "channel_edge_support_is_complete": false,
+          "channel_id": "CHANNEL-1",
+          "coefficient_multiplicity": 5,
+          "complete_graph_edge_count": 6,
+          "crossing_bit_split_count": 4,
+          "edge_count": 3,
+          "edge_support": [
+            [
+              2,
+              12
+            ],
+            [
+              5,
+              12
+            ],
+            [
+              11,
+              12
+            ]
+          ],
+          "every_crossing_bit_split_is_vertex_balanced": true,
+          "maximum_crossing_split_vertex_imbalance": 0,
+          "maximum_grading_defect_norm": 0.11111111111111119,
+          "maximum_link_unitarity_residual": 2.9976021664879227e-15,
+          "minimum_endpoint_gap": 0.4444444444444444,
+          "missing_complete_graph_edge_count": 3,
+          "orientation_support": [
+            2,
+            5,
+            11,
+            12
+          ],
+          "orientation_support_is_affine": true,
+          "status": "affine-incomplete-flat-carrier-channel"
+        }
+      ],
+      "coefficient_atom_count": 10,
+      "complete_affine_channel_count": 0,
+      "control_id": "W6-CARRIER-5-FULL-FAMILY-PHYSICAL-EXTRACTION",
+      "exact_common_coefficient_dimension_removed": 6,
+      "extraction_audit_verified": true,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "live_pair_core_count": 10,
+      "maximum_all_endpoint_support_commutator_norm": 2.2956986485770054e-15,
+      "maximum_extracted_channel_grading_defect": 0.11111111111111119,
+      "maximum_partial_isometry_residual": 6.43737022952334e-15,
+      "minimum_extracted_channel_endpoint_gap": 0.4444444444444444,
+      "n": 6,
+      "nontrivial_channel_count": 1,
+      "nonzero_normalized_cross_map_count": 6,
+      "normalized_cross_map_count": 30,
+      "orientation_family": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "residual_correlation": 0.20000000000000032,
+      "residual_pair_core_count": 9,
+      "status": "physical-global-carrier-channels-extracted",
+      "target_partition": [
+        6
+      ]
+    },
+    {
+      "affine_but_incomplete_channel_count": 1,
+      "ambient_dimension": 62500,
+      "channels": [
+        {
+          "channel_edge_support_is_complete": false,
+          "channel_id": "CHANNEL-0",
+          "coefficient_multiplicity": 10,
+          "complete_graph_edge_count": 6,
+          "crossing_bit_split_count": 4,
+          "edge_count": 3,
+          "edge_support": [
+            [
+              3,
+              10
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              10,
+              13
+            ]
+          ],
+          "every_crossing_bit_split_is_vertex_balanced": true,
+          "maximum_crossing_split_vertex_imbalance": 0,
+          "maximum_grading_defect_norm": 0.05263157894736867,
+          "maximum_link_unitarity_residual": 6.661338147750939e-15,
+          "minimum_endpoint_gap": 0.47368421052631565,
+          "missing_complete_graph_edge_count": 3,
+          "orientation_support": [
+            3,
+            4,
+            10,
+            13
+          ],
+          "orientation_support_is_affine": true,
+          "status": "affine-incomplete-flat-carrier-channel"
+        }
+      ],
+      "coefficient_atom_count": 8,
+      "complete_affine_channel_count": 0,
+      "control_id": "W6-INDEPENDENT-CARRIER-10-PHYSICAL-EXTRACTION",
+      "exact_common_coefficient_dimension_removed": 6,
+      "extraction_audit_verified": true,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            3,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            1,
+            1
+          ],
+          [
+            6
+          ]
+        ]
+      ],
+      "live_pair_core_count": 8,
+      "maximum_all_endpoint_support_commutator_norm": 2.2645952686474363e-15,
+      "maximum_extracted_channel_grading_defect": 0.05263157894736867,
+      "maximum_partial_isometry_residual": 1.07508313158004e-14,
+      "minimum_extracted_channel_endpoint_gap": 0.47368421052631565,
+      "n": 6,
+      "nontrivial_channel_count": 1,
+      "nonzero_normalized_cross_map_count": 6,
+      "normalized_cross_map_count": 30,
+      "orientation_family": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "residual_correlation": 0.1000000000000004,
+      "residual_pair_core_count": 7,
+      "status": "physical-global-carrier-channels-extracted",
+      "target_partition": [
+        6
+      ]
+    },
+    {
+      "affine_but_incomplete_channel_count": 1,
+      "ambient_dimension": 100000,
+      "channels": [
+        {
+          "channel_edge_support_is_complete": false,
+          "channel_id": "CHANNEL-0",
+          "coefficient_multiplicity": 5,
+          "complete_graph_edge_count": 6,
+          "crossing_bit_split_count": 4,
+          "edge_count": 3,
+          "edge_support": [
+            [
+              4,
+              10
+            ],
+            [
+              7,
+              10
+            ],
+            [
+              9,
+              10
+            ]
+          ],
+          "every_crossing_bit_split_is_vertex_balanced": true,
+          "maximum_crossing_split_vertex_imbalance": 0,
+          "maximum_grading_defect_norm": 0.11111111111111117,
+          "maximum_link_unitarity_residual": 2.886579864025407e-15,
+          "minimum_endpoint_gap": 0.4444444444444444,
+          "missing_complete_graph_edge_count": 3,
+          "orientation_support": [
+            4,
+            7,
+            9,
+            10
+          ],
+          "orientation_support_is_affine": true,
+          "status": "affine-incomplete-flat-carrier-channel"
+        }
+      ],
+      "coefficient_atom_count": 5,
+      "complete_affine_channel_count": 0,
+      "control_id": "W6-INDEPENDENT-CARRIER-5A-PHYSICAL-EXTRACTION",
+      "exact_common_coefficient_dimension_removed": 0,
+      "extraction_audit_verified": true,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            6
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            3,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1,
+            1
+          ],
+          [
+            3,
+            3
+          ]
+        ]
+      ],
+      "live_pair_core_count": 4,
+      "maximum_all_endpoint_support_commutator_norm": 1.2763829312788004e-15,
+      "maximum_extracted_channel_grading_defect": 0.11111111111111117,
+      "maximum_partial_isometry_residual": 5.600026177073139e-15,
+      "minimum_extracted_channel_endpoint_gap": 0.4444444444444444,
+      "n": 6,
+      "nontrivial_channel_count": 1,
+      "nonzero_normalized_cross_map_count": 6,
+      "normalized_cross_map_count": 12,
+      "orientation_family": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "residual_correlation": 0.2000000000000003,
+      "residual_pair_core_count": 4,
+      "status": "physical-global-carrier-channels-extracted",
+      "target_partition": [
+        6
+      ]
+    },
+    {
+      "affine_but_incomplete_channel_count": 1,
+      "ambient_dimension": 112500,
+      "channels": [
+        {
+          "channel_edge_support_is_complete": false,
+          "channel_id": "CHANNEL-1",
+          "coefficient_multiplicity": 5,
+          "complete_graph_edge_count": 6,
+          "crossing_bit_split_count": 4,
+          "edge_count": 3,
+          "edge_support": [
+            [
+              3,
+              10
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              10,
+              13
+            ]
+          ],
+          "every_crossing_bit_split_is_vertex_balanced": true,
+          "maximum_crossing_split_vertex_imbalance": 0,
+          "maximum_grading_defect_norm": 0.11111111111111126,
+          "maximum_link_unitarity_residual": 3.4416913763379853e-15,
+          "minimum_endpoint_gap": 0.44444444444444436,
+          "missing_complete_graph_edge_count": 3,
+          "orientation_support": [
+            3,
+            4,
+            10,
+            13
+          ],
+          "orientation_support_is_affine": true,
+          "status": "affine-incomplete-flat-carrier-channel"
+        }
+      ],
+      "coefficient_atom_count": 7,
+      "complete_affine_channel_count": 0,
+      "control_id": "W6-INDEPENDENT-CARRIER-5B-PHYSICAL-EXTRACTION",
+      "exact_common_coefficient_dimension_removed": 0,
+      "extraction_audit_verified": true,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            4,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            1,
+            1,
+            1
+          ],
+          [
+            5,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            6
+          ]
+        ]
+      ],
+      "live_pair_core_count": 6,
+      "maximum_all_endpoint_support_commutator_norm": 2.985215408862707e-15,
+      "maximum_extracted_channel_grading_defect": 0.11111111111111126,
+      "maximum_partial_isometry_residual": 7.495146811652281e-15,
+      "minimum_extracted_channel_endpoint_gap": 0.44444444444444436,
+      "n": 6,
+      "nontrivial_channel_count": 1,
+      "nonzero_normalized_cross_map_count": 6,
+      "normalized_cross_map_count": 16,
+      "orientation_family": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "residual_correlation": 0.20000000000000046,
+      "residual_pair_core_count": 6,
+      "status": "physical-global-carrier-channels-extracted",
+      "target_partition": [
+        6
+      ]
+    },
+    {
+      "affine_but_incomplete_channel_count": 1,
+      "ambient_dimension": 162000,
+      "channels": [
+        {
+          "channel_edge_support_is_complete": false,
+          "channel_id": "CHANNEL-0",
+          "coefficient_multiplicity": 9,
+          "complete_graph_edge_count": 6,
+          "crossing_bit_split_count": 4,
+          "edge_count": 3,
+          "edge_support": [
+            [
+              1,
+              2
+            ],
+            [
+              2,
+              12
+            ],
+            [
+              2,
+              15
+            ]
+          ],
+          "every_crossing_bit_split_is_vertex_balanced": true,
+          "maximum_crossing_split_vertex_imbalance": 0,
+          "maximum_grading_defect_norm": 0.058823529411764705,
+          "maximum_link_unitarity_residual": 1.9984014443252818e-15,
+          "minimum_endpoint_gap": 0.47058823529411764,
+          "missing_complete_graph_edge_count": 3,
+          "orientation_support": [
+            1,
+            2,
+            12,
+            15
+          ],
+          "orientation_support_is_affine": true,
+          "status": "affine-incomplete-flat-carrier-channel"
+        }
+      ],
+      "coefficient_atom_count": 5,
+      "complete_affine_channel_count": 0,
+      "control_id": "W6-INDEPENDENT-CARRIER-9A-PHYSICAL-EXTRACTION",
+      "exact_common_coefficient_dimension_removed": 0,
+      "extraction_audit_verified": true,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            6
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            3,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            5,
+            1
+          ]
+        ]
+      ],
+      "live_pair_core_count": 4,
+      "maximum_all_endpoint_support_commutator_norm": 2.019220876971091e-15,
+      "maximum_extracted_channel_grading_defect": 0.058823529411764705,
+      "maximum_partial_isometry_residual": 4.937317233225563e-15,
+      "minimum_extracted_channel_endpoint_gap": 0.47058823529411764,
+      "n": 6,
+      "nontrivial_channel_count": 1,
+      "nonzero_normalized_cross_map_count": 6,
+      "normalized_cross_map_count": 12,
+      "orientation_family": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "residual_correlation": 0.11111111111111122,
+      "residual_pair_core_count": 4,
+      "status": "physical-global-carrier-channels-extracted",
+      "target_partition": [
+        6
+      ]
+    },
+    {
+      "affine_but_incomplete_channel_count": 2,
+      "ambient_dimension": 202500,
+      "channels": [
+        {
+          "channel_edge_support_is_complete": false,
+          "channel_id": "CHANNEL-2",
+          "coefficient_multiplicity": 18,
+          "complete_graph_edge_count": 6,
+          "crossing_bit_split_count": 4,
+          "edge_count": 3,
+          "edge_support": [
+            [
+              1,
+              8
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              8,
+              15
+            ]
+          ],
+          "every_crossing_bit_split_is_vertex_balanced": true,
+          "maximum_crossing_split_vertex_imbalance": 0,
+          "maximum_grading_defect_norm": 0.0588235294117648,
+          "maximum_link_unitarity_residual": 3.1086244689504383e-15,
+          "minimum_endpoint_gap": 0.4705882352941176,
+          "missing_complete_graph_edge_count": 3,
+          "orientation_support": [
+            1,
+            6,
+            8,
+            15
+          ],
+          "orientation_support_is_affine": true,
+          "status": "affine-incomplete-flat-carrier-channel"
+        },
+        {
+          "channel_edge_support_is_complete": false,
+          "channel_id": "CHANNEL-0",
+          "coefficient_multiplicity": 9,
+          "complete_graph_edge_count": 6,
+          "crossing_bit_split_count": 4,
+          "edge_count": 3,
+          "edge_support": [
+            [
+              0,
+              14
+            ],
+            [
+              7,
+              14
+            ],
+            [
+              9,
+              14
+            ]
+          ],
+          "every_crossing_bit_split_is_vertex_balanced": true,
+          "maximum_crossing_split_vertex_imbalance": 0,
+          "maximum_grading_defect_norm": 0.058823529411764795,
+          "maximum_link_unitarity_residual": 3.552713678800501e-15,
+          "minimum_endpoint_gap": 0.4705882352941176,
+          "missing_complete_graph_edge_count": 3,
+          "orientation_support": [
+            0,
+            7,
+            9,
+            14
+          ],
+          "orientation_support_is_affine": true,
+          "status": "affine-incomplete-flat-carrier-channel"
+        }
+      ],
+      "coefficient_atom_count": 15,
+      "complete_affine_channel_count": 0,
+      "control_id": "W6-INDEPENDENT-CARRIER-9B-PHYSICAL-EXTRACTION",
+      "exact_common_coefficient_dimension_removed": 6,
+      "extraction_audit_verified": true,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            2
+          ],
+          [
+            3,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            4,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            6
+          ]
+        ]
+      ],
+      "live_pair_core_count": 14,
+      "maximum_all_endpoint_support_commutator_norm": 2.7116809640149748e-15,
+      "maximum_extracted_channel_grading_defect": 0.0588235294117648,
+      "maximum_partial_isometry_residual": 8.550416204397494e-15,
+      "minimum_extracted_channel_endpoint_gap": 0.4705882352941176,
+      "n": 6,
+      "nontrivial_channel_count": 2,
+      "nonzero_normalized_cross_map_count": 12,
+      "normalized_cross_map_count": 52,
+      "orientation_family": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "residual_correlation": 0.11111111111111131,
+      "residual_pair_core_count": 13,
+      "status": "physical-global-carrier-channels-extracted",
+      "target_partition": [
+        6
+      ]
+    }
+  ],
+  "created_at": "2026-08-07T23:08:13.159585+00:00",
+  "falsifiers_triggered": [
+    "Affine orientation support does not force a complete residual channel graph.",
+    "Vertex-local carrier groupoids must be glued through both endpoint projection algebras before assigning a global channel.",
+    "Natural progress requires scaling the extracted channel graph family, not extrapolating from selected affine stars."
+  ],
+  "headline_metrics": {
+    "extracted_affine_incomplete_channel_count": 8,
+    "extracted_complete_affine_channel_count": 0,
+    "extracted_nonstar_channel_count": 0,
+    "extracted_nontrivial_channel_count": 8,
+    "extracted_three_edge_star_channel_count": 8,
+    "maximum_extracted_channel_edge_count": 3,
+    "maximum_extracted_channel_grading_defect": 0.11111111111111126,
+    "maximum_extracted_channel_multiplicity": 18,
+    "minimum_extracted_channel_endpoint_gap": 0.44444444444444436,
+    "natural_threshold_channel_scaling_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "physical_extraction_control_count": 7,
+    "physical_extraction_failure_count": 0,
+    "physical_global_channel_extraction_algorithm_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "reconstruct_global_carrier_channels_from_physical_cores",
+      "resolution": "Implemented and validated common-sector removal, all-endpoint atomization, map gluing, and graph-level grading.",
+      "resolved": true
+    },
+    {
+      "obligation": "affine_orientation_support_implies_complete_channel_edges",
+      "resolution": "Rejected physically: both extracted W6 channels are affine on four vertices but contain only a three-edge star.",
+      "resolved": true
+    },
+    {
+      "obligation": "natural_threshold_channel_graphs_have_uniform_resolvent_balance",
+      "resolution": "Need a sparse/coefficient-level extractor or representation theorem at k=Theta(n log n), followed by scaling bounds on extracted graph families.",
+      "resolved": false
+    }
+  ],
+  "status": "physical-global-channel-extraction-verified-affine-stars-found-natural-scaling-open",
+  "summary": "Extracted physical W6 carrier channels as affine incomplete stars, reproducing the 1/17 and 1/9 graded defects and rejecting affine-to-complete closure.",
+  "theorem_contract": {
+    "finite_defects": "Extracted support graphs reproduce defects 1/17 and 1/9 under their crossing bit splits.",
+    "finite_structure": "Across seven W6 physical controls, every extracted residual channel is an affine four-vertex star with three of six complete-graph edges.",
+    "physical_extraction": "Exact common-sector removal, simultaneous all-endpoint support-projection atoms, partial-isometry gluing, and direct graded graph evaluation.",
+    "scope": "Dense finite extraction is exact for the controls. It does not classify natural threshold channels asymptotically."
+  }
+}

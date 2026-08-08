@@ -50,6 +50,12 @@ def test_balanced_repeated_control_is_not_an_affine_bundle() -> None:
     assert not control.exact_flat_fiber_transport_verified
     assert not control.affine_recoupling_bundle_certificate
     assert report.claim_gate["balanced_nonaffine_support_falsifier_present"]
+    assert report.claim_gate[
+        "selected_finite_generator_transports_compiled_by_gpe"
+    ]
+    assert report.claim_gate[
+        "natural_collision_free_scalar_affine_falsifier_present"
+    ]
     assert not report.claim_gate[
         "generator_transports_identified_as_racah_maps"
     ]

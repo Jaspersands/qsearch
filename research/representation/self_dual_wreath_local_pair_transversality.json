@@ -1,0 +1,173 @@
+{
+  "created_at": "2026-08-08T02:02:58.835668+00:00",
+  "theorem_contract": {
+    "hamming_one": "Global-distinct common range forces the varying pair to be the ordered trivial/sign labels; all-coordinate numerator <=2K/|S_n|^2.",
+    "hamming_two": "Global-distinct common range forces two conjugate matchings; all-coordinate numerator <=2 binom(K,2) C_n^2.",
+    "asymptotic": "C_n<=exp(-Theta(sqrt(n))), K=Theta(n log n), and P_cf=1-o(1) give simultaneous radius-two transversality with probability 1-o(1).",
+    "pair_norm": "On that event the exact noncommon pair-angle theorem gives ||E_e E_f||<=1/(n-1) for Hamming distance at most two.",
+    "scope": "No distant-pair, higher-order incidence, full-frame edge, center-valued local law, or speedup theorem follows."
+  },
+  "finite_controls": [
+    {
+      "n": 4,
+      "globally_distinct_label_tuple_count": 15,
+      "target_count": 5,
+      "orientation_pair_count": 450,
+      "hamming_one_pair_count": 300,
+      "hamming_two_pair_count": 150,
+      "common_hamming_one_pair_count": 0,
+      "common_hamming_two_pair_count": 2,
+      "hamming_one_necessity_violation_count": 0,
+      "hamming_two_necessity_violation_count": 0,
+      "exact_local_necessity_verified": true,
+      "status": "exact-radius-two-common-range-necessity-verified"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 5,
+      "group_order_log2": 6.90689059560852,
+      "information_threshold_copy_count": 7,
+      "plancherel_collision_probability": 0.2125,
+      "hamming_one_any_coordinate_numerator_upper_bound": 0.0009722222222222206,
+      "hamming_one_any_coordinate_numerator_log2": -10.006426269159435,
+      "hamming_two_any_coordinate_numerator_upper_bound": 1.8965624999999997,
+      "hamming_two_any_coordinate_numerator_log2": 0.9233869155047142,
+      "conditioned_union_bound_formula": "[2K/|S_n|^2 + 2 binom(K,2) C_n^2] / P_cf(n,K)",
+      "asymptotic_hamming_radius_two_transversality": true,
+      "noncommon_pair_product_norm_upper_bound": 0.25,
+      "full_node_frame_edge_proved": false,
+      "status": "radius-two-natural-transversality-proved-global-edge-open"
+    },
+    {
+      "n": 8,
+      "group_order_log2": 15.29920801838728,
+      "information_threshold_copy_count": 16,
+      "plancherel_collision_probability": 0.10763733878968254,
+      "hamming_one_any_coordinate_numerator_upper_bound": 1.9683799445704192e-08,
+      "hamming_one_any_coordinate_numerator_log2": -25.59841603677456,
+      "hamming_two_any_coordinate_numerator_upper_bound": 2.7805912084139752,
+      "hamming_two_any_coordinate_numerator_log2": 1.4753916609219224,
+      "conditioned_union_bound_formula": "[2K/|S_n|^2 + 2 binom(K,2) C_n^2] / P_cf(n,K)",
+      "asymptotic_hamming_radius_two_transversality": true,
+      "noncommon_pair_product_norm_upper_bound": 0.14285714285714285,
+      "full_node_frame_edge_proved": false,
+      "status": "radius-two-natural-transversality-proved-global-edge-open"
+    },
+    {
+      "n": 12,
+      "group_order_log2": 28.835455234075408,
+      "information_threshold_copy_count": 29,
+      "plancherel_collision_probability": 0.047530278695833164,
+      "hamming_one_any_coordinate_numerator_upper_bound": 2.52786609751689e-16,
+      "hamming_one_any_coordinate_numerator_log2": -51.812929473023246,
+      "hamming_two_any_coordinate_numerator_upper_bound": 1.8344114430377003,
+      "hamming_two_any_coordinate_numerator_log2": 0.8753172595746563,
+      "conditioned_union_bound_formula": "[2K/|S_n|^2 + 2 binom(K,2) C_n^2] / P_cf(n,K)",
+      "asymptotic_hamming_radius_two_transversality": true,
+      "noncommon_pair_product_norm_upper_bound": 0.09090909090909091,
+      "full_node_frame_edge_proved": false,
+      "status": "radius-two-natural-transversality-proved-global-edge-open"
+    },
+    {
+      "n": 16,
+      "group_order_log2": 44.25014046988262,
+      "information_threshold_copy_count": 45,
+      "plancherel_collision_probability": 0.021580705579990426,
+      "hamming_one_any_coordinate_numerator_upper_bound": 2.0559063213724342e-25,
+      "hamming_one_any_coordinate_numerator_log2": -82.00842784343557,
+      "hamming_two_any_coordinate_numerator_upper_bound": 0.9221391695938552,
+      "hamming_two_any_coordinate_numerator_log2": -0.11694359571724756,
+      "conditioned_union_bound_formula": "[2K/|S_n|^2 + 2 binom(K,2) C_n^2] / P_cf(n,K)",
+      "asymptotic_hamming_radius_two_transversality": true,
+      "noncommon_pair_product_norm_upper_bound": 0.06666666666666667,
+      "full_node_frame_edge_proved": false,
+      "status": "radius-two-natural-transversality-proved-global-edge-open"
+    },
+    {
+      "n": 20,
+      "group_order_log2": 61.07738392090622,
+      "information_threshold_copy_count": 62,
+      "plancherel_collision_probability": 0.010237706029929823,
+      "hamming_one_any_coordinate_numerator_upper_bound": 2.094944159599311e-35,
+      "hamming_one_any_coordinate_numerator_log2": -115.20057153142557,
+      "hamming_two_any_coordinate_numerator_upper_bound": 0.39639378282439885,
+      "hamming_two_any_coordinate_numerator_log2": -1.3349937599077342,
+      "conditioned_union_bound_formula": "[2K/|S_n|^2 + 2 binom(K,2) C_n^2] / P_cf(n,K)",
+      "asymptotic_hamming_radius_two_transversality": true,
+      "noncommon_pair_product_norm_upper_bound": 0.05263157894736842,
+      "full_node_frame_edge_proved": false,
+      "status": "radius-two-natural-transversality-proved-global-edge-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "classify_global_distinct_common_ranges_at_hamming_one_and_two",
+      "resolved": true,
+      "resolution": "One-factor invariants force trivial/sign; two-factor invariants force equality or conjugacy, and distinctness removes equality."
+    },
+    {
+      "obligation": "prove_simultaneous_natural_radius_two_transversality",
+      "resolved": true,
+      "resolution": "Union over source coordinates, not orientation pairs, gives the stated factorial and collision-probability bounds."
+    },
+    {
+      "obligation": "convert_local_transversality_to_natural_full_frame_edge",
+      "resolved": false,
+      "resolution": "Need a higher-order/nonbacktracking theorem that uses the specific tensor representation and controls distant common sectors."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "There are exponentially many orientation pairs, so the union bound is useless.",
+      "resolved": true,
+      "resolution": "The bad conditions are source-coordinate relations shared by all such pairs; only K and binom(K,2) events are unioned."
+    },
+    {
+      "objection": "Radius-two transversality proves the full average-projector norm.",
+      "resolved": false,
+      "resolution": "False: distant pairs are uncontrolled, and local overlap graphs alone admit macroscopic coherent sectors."
+    },
+    {
+      "objection": "The finite S4 formula screen proves the asymptotic probability bound.",
+      "resolved": true,
+      "resolution": "The probability theorem is analytic from Plancherel weights, conjugacy, the maximal-dimension bound, and P_cf=1-o(1)."
+    }
+  ],
+  "literature_links": [
+    {
+      "paper_id": "aggarwal-elboim-maximal-dimension-2026",
+      "url": "https://arxiv.org/abs/2605.25995",
+      "directly_applies": true,
+      "reason": "Its maximal Plancherel atom bound implies C_n is exp(-Theta(sqrt(n))), making the Hamming-two union vanish."
+    }
+  ],
+  "headline_metrics": {
+    "hamming_one_common_range_necessity_theorem_count": 1,
+    "hamming_two_common_range_necessity_theorem_count": 1,
+    "asymptotic_radius_two_transversality_theorem_count": 1,
+    "finite_control_count": 1,
+    "finite_control_failure_count": 0,
+    "maximum_scaling_n": 20,
+    "higher_order_incidence_theorem_count": 0,
+    "natural_node_frame_edge_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "radius_two_common_range_conditions_classified": true,
+    "natural_global_distinct_radius_two_transversality_proved": true,
+    "radius_two_noncommon_pair_norm_bound_proved": true,
+    "distant_pair_common_support_controlled": false,
+    "higher_order_incidence_expansion_proved": false,
+    "natural_all_depth_node_edge_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "Natural blocks are locally transverse through radius two, but the exponentially large distant-pair geometry remains open."
+  },
+  "status": "natural-radius-two-transversality-proved-global-edge-open",
+  "summary": "Proved that globally distinct natural source blocks are simultaneously transverse through Hamming radius two with high probability.",
+  "falsifiers_triggered": [
+    "Unioning over orientation pairs ignores that common-range conditions are shared source-label relations.",
+    "The full regular pair-common obstruction is not typical at Hamming radii one and two.",
+    "Local transversality alone does not control the full orientation-frame edge."
+  ]
+}

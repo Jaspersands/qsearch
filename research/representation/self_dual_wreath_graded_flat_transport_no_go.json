@@ -1,0 +1,305 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A constant lower bound on M controls every relative eigenvalue.",
+      "resolution": "False: the graded form grows on row/column modes while M retains a constant private baseline.",
+      "resolved": true
+    },
+    {
+      "objection": "Flat clique transport removes the dangerous modes.",
+      "resolution": "False without internal quotienting; K_p,p is flat at every vertex and still has defect tending to one.",
+      "resolved": true
+    },
+    {
+      "objection": "The no-go proves the natural wreath hierarchy fails.",
+      "resolution": "It does not include internal edges or higher relations, which may cancel the row/column modes.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "constant_metric_floor_sufficient_for_endpoint_gap": false,
+    "flat_transport_spectrum_proved": true,
+    "flat_vertex_groupoid_sufficient_for_endpoint_gap": false,
+    "internal_cech_row_column_mode_elimination_proved": false,
+    "natural_pgm_graded_gap_proved": false,
+    "natural_width_unquotiented_endpoint_gap_inverse_polynomial": false,
+    "reason": "The best metric hypothesis still permits a Theta(1/p) graded endpoint gap. Only a full internal/Cech quotient theorem can remove the dangerous modes.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-07T22:51:37.067146+00:00",
+  "falsifiers_triggered": [
+    "A width-independent relation-metric floor is not a width-independent relative-polar gap.",
+    "A flat partial-isometry carrier groupoid still supports dangerous row and column modes.",
+    "The next proof must quotient internal pair/Cech relations before bounding the grading defect."
+  ],
+  "finite_controls": [
+    {
+      "constant_metric_but_width_closing_endpoint_gap": true,
+      "correlation": 0.2,
+      "crossing_edge_count": 4,
+      "endpoint_gap_residual": 0.0,
+      "exact_audit": true,
+      "flat_vertex_groupoid_verified": true,
+      "grading_defect_residual": 2.7755575615628914e-17,
+      "left_vertex_normalized_gram_minimum_eigenvalue": 0.0,
+      "metric_floor_residual": 0.0,
+      "observed_endpoint_gap": 0.4,
+      "observed_grading_defect_norm": 0.19999999999999998,
+      "observed_metric_minimum_eigenvalue": 1.6,
+      "predicted_endpoint_gap": 0.4,
+      "predicted_grading_defect_norm": 0.2,
+      "predicted_metric_minimum_eigenvalue": 1.6,
+      "side_width": 2,
+      "status": "flat-groupoid-metric-constant-graded-gap-width-closing"
+    },
+    {
+      "constant_metric_but_width_closing_endpoint_gap": false,
+      "correlation": 0.2,
+      "crossing_edge_count": 9,
+      "endpoint_gap_residual": 0.0,
+      "exact_audit": true,
+      "flat_vertex_groupoid_verified": true,
+      "grading_defect_residual": 1.1102230246251565e-16,
+      "left_vertex_normalized_gram_minimum_eigenvalue": -3.3306690738754696e-16,
+      "metric_floor_residual": 6.661338147750939e-16,
+      "observed_endpoint_gap": 0.36363636363636365,
+      "observed_grading_defect_norm": 0.27272727272727265,
+      "observed_metric_minimum_eigenvalue": 1.5999999999999994,
+      "predicted_endpoint_gap": 0.36363636363636365,
+      "predicted_grading_defect_norm": 0.27272727272727276,
+      "predicted_metric_minimum_eigenvalue": 1.6,
+      "side_width": 3,
+      "status": "flat-groupoid-metric-constant-graded-gap-width-closing"
+    },
+    {
+      "constant_metric_but_width_closing_endpoint_gap": false,
+      "correlation": 0.2,
+      "crossing_edge_count": 16,
+      "endpoint_gap_residual": 2.7755575615628914e-16,
+      "exact_audit": true,
+      "flat_vertex_groupoid_verified": true,
+      "grading_defect_residual": 5.551115123125783e-16,
+      "left_vertex_normalized_gram_minimum_eigenvalue": -3.3852247620062295e-16,
+      "metric_floor_residual": 1.3322676295501878e-15,
+      "observed_endpoint_gap": 0.33333333333333304,
+      "observed_grading_defect_norm": 0.33333333333333387,
+      "observed_metric_minimum_eigenvalue": 1.5999999999999988,
+      "predicted_endpoint_gap": 0.3333333333333333,
+      "predicted_grading_defect_norm": 0.3333333333333333,
+      "predicted_metric_minimum_eigenvalue": 1.6,
+      "side_width": 4,
+      "status": "flat-groupoid-metric-constant-graded-gap-width-closing"
+    },
+    {
+      "constant_metric_but_width_closing_endpoint_gap": false,
+      "correlation": 0.2,
+      "crossing_edge_count": 36,
+      "endpoint_gap_residual": 0.0,
+      "exact_audit": true,
+      "flat_vertex_groupoid_verified": true,
+      "grading_defect_residual": 5.551115123125783e-17,
+      "left_vertex_normalized_gram_minimum_eigenvalue": -4.988902410223664e-16,
+      "metric_floor_residual": 1.7763568394002505e-15,
+      "observed_endpoint_gap": 0.2857142857142857,
+      "observed_grading_defect_norm": 0.42857142857142855,
+      "observed_metric_minimum_eigenvalue": 1.5999999999999983,
+      "predicted_endpoint_gap": 0.2857142857142857,
+      "predicted_grading_defect_norm": 0.4285714285714286,
+      "predicted_metric_minimum_eigenvalue": 1.6,
+      "side_width": 6,
+      "status": "flat-groupoid-metric-constant-graded-gap-width-closing"
+    },
+    {
+      "constant_metric_but_width_closing_endpoint_gap": false,
+      "correlation": 0.2,
+      "crossing_edge_count": 64,
+      "endpoint_gap_residual": 2.7755575615628914e-16,
+      "exact_audit": true,
+      "flat_vertex_groupoid_verified": true,
+      "grading_defect_residual": 5.551115123125783e-16,
+      "left_vertex_normalized_gram_minimum_eigenvalue": -2.6699065429051586e-16,
+      "metric_floor_residual": 2.220446049250313e-15,
+      "observed_endpoint_gap": 0.24999999999999972,
+      "observed_grading_defect_norm": 0.5000000000000006,
+      "observed_metric_minimum_eigenvalue": 1.5999999999999979,
+      "predicted_endpoint_gap": 0.25,
+      "predicted_grading_defect_norm": 0.5,
+      "predicted_metric_minimum_eigenvalue": 1.6,
+      "side_width": 8,
+      "status": "flat-groupoid-metric-constant-graded-gap-width-closing"
+    },
+    {
+      "constant_metric_but_width_closing_endpoint_gap": false,
+      "correlation": 0.2,
+      "crossing_edge_count": 144,
+      "endpoint_gap_residual": 3.3306690738754696e-16,
+      "exact_audit": true,
+      "flat_vertex_groupoid_verified": true,
+      "grading_defect_residual": 5.551115123125783e-16,
+      "left_vertex_normalized_gram_minimum_eigenvalue": -1.958105786630422e-15,
+      "metric_floor_residual": 3.552713678800501e-15,
+      "observed_endpoint_gap": 0.19999999999999968,
+      "observed_grading_defect_norm": 0.6000000000000006,
+      "observed_metric_minimum_eigenvalue": 1.5999999999999965,
+      "predicted_endpoint_gap": 0.2,
+      "predicted_grading_defect_norm": 0.6000000000000001,
+      "predicted_metric_minimum_eigenvalue": 1.6,
+      "side_width": 12,
+      "status": "flat-groupoid-metric-constant-graded-gap-width-closing"
+    }
+  ],
+  "headline_metrics": {
+    "finite_constant_metric_width_closing_gap_count": 1,
+    "finite_flat_transport_control_count": 6,
+    "finite_flat_transport_control_failure_count": 0,
+    "flat_transport_exact_spectrum_theorem_count": 1,
+    "full_internal_cech_mode_elimination_theorem_count": 0,
+    "metric_floor_not_graded_gap_no_go_theorem_count": 1,
+    "natural_width_inverse_polynomial_endpoint_gap_row_count": 0,
+    "natural_width_scaling_row_count": 11,
+    "new_quantum_algorithm_count": 0,
+    "tail_copy_count": 1684,
+    "tail_log2_endpoint_gap": -1675.011315313228,
+    "tail_metric_floor": 1.992156862745098,
+    "tail_n": 256
+  },
+  "proof_obligations": [
+    {
+      "obligation": "flat_vertex_transport_implies_graded_endpoint_gap",
+      "resolution": "Rejected: the exact K_p,p channel has constant metric floor and endpoint gap Theta(1/p).",
+      "resolved": true
+    },
+    {
+      "obligation": "full_internal_relation_quotient_removes_row_column_modes",
+      "resolution": "Must analyze the graded Schur complement of internal pair relations and higher Cech cells; vertex-local PSD does not see it.",
+      "resolved": false
+    },
+    {
+      "obligation": "natural_positive_mass_realizes_unquotiented_flat_counterfamily",
+      "resolution": "No such natural realization is claimed; the counterfamily isolates the missing theorem rather than proving failure of the PGM route.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "child_width_log2": 9,
+      "endpoint_gap_inverse_polynomial": false,
+      "information_threshold_copy_count": 10,
+      "log2_endpoint_gap": -7.022367813028455,
+      "metric_floor": 1.6,
+      "n": 6,
+      "reciprocal_correlation": 0.2,
+      "status": "natural-width-flat-transport-graded-gap-superpolynomially-small"
+    },
+    {
+      "child_width_log2": 15,
+      "endpoint_gap_inverse_polynomial": false,
+      "information_threshold_copy_count": 16,
+      "log2_endpoint_gap": -12.415565733265666,
+      "metric_floor": 1.7142857142857144,
+      "n": 8,
+      "reciprocal_correlation": 0.14285714285714285,
+      "status": "natural-width-flat-transport-graded-gap-superpolynomially-small"
+    },
+    {
+      "child_width_log2": 21,
+      "endpoint_gap_inverse_polynomial": false,
+      "information_threshold_copy_count": 22,
+      "log2_endpoint_gap": -18.000011006847668,
+      "metric_floor": 1.7777777777777777,
+      "n": 10,
+      "reciprocal_correlation": 0.1111111111111111,
+      "status": "natural-width-flat-transport-graded-gap-superpolynomially-small"
+    },
+    {
+      "child_width_log2": 28,
+      "endpoint_gap_inverse_polynomial": false,
+      "information_threshold_copy_count": 29,
+      "log2_endpoint_gap": -24.678072012601792,
+      "metric_floor": 1.8181818181818181,
+      "n": 12,
+      "reciprocal_correlation": 0.09090909090909091,
+      "status": "natural-width-flat-transport-graded-gap-superpolynomially-small"
+    },
+    {
+      "child_width_log2": 44,
+      "endpoint_gap_inverse_polynomial": false,
+      "information_threshold_copy_count": 45,
+      "log2_endpoint_gap": -40.1926450779447,
+      "metric_floor": 1.8666666666666667,
+      "n": 16,
+      "reciprocal_correlation": 0.06666666666666667,
+      "status": "natural-width-flat-transport-graded-gap-superpolynomially-small"
+    },
+    {
+      "child_width_log2": 79,
+      "endpoint_gap_inverse_polynomial": false,
+      "information_threshold_copy_count": 80,
+      "log2_endpoint_gap": -74.5405683813627,
+      "metric_floor": 1.9130434782608696,
+      "n": 24,
+      "reciprocal_correlation": 0.043478260869565216,
+      "status": "natural-width-flat-transport-graded-gap-superpolynomially-small"
+    },
+    {
+      "child_width_log2": 117,
+      "endpoint_gap_inverse_polynomial": false,
+      "information_threshold_copy_count": 118,
+      "log2_endpoint_gap": -112.09310940439148,
+      "metric_floor": 1.935483870967742,
+      "n": 32,
+      "reciprocal_correlation": 0.03225806451612903,
+      "status": "natural-width-flat-transport-graded-gap-superpolynomially-small"
+    },
+    {
+      "child_width_log2": 202,
+      "endpoint_gap_inverse_polynomial": false,
+      "information_threshold_copy_count": 203,
+      "log2_endpoint_gap": -196.47643804394298,
+      "metric_floor": 1.9574468085106382,
+      "n": 48,
+      "reciprocal_correlation": 0.02127659574468085,
+      "status": "natural-width-flat-transport-graded-gap-superpolynomially-small"
+    },
+    {
+      "child_width_log2": 295,
+      "endpoint_gap_inverse_polynomial": false,
+      "information_threshold_copy_count": 296,
+      "log2_endpoint_gap": -289.04580368961314,
+      "metric_floor": 1.9682539682539684,
+      "n": 64,
+      "reciprocal_correlation": 0.015873015873015872,
+      "status": "natural-width-flat-transport-graded-gap-superpolynomially-small"
+    },
+    {
+      "child_width_log2": 716,
+      "endpoint_gap_inverse_polynomial": false,
+      "information_threshold_copy_count": 717,
+      "log2_endpoint_gap": -709.0227200765,
+      "metric_floor": 1.984251968503937,
+      "n": 128,
+      "reciprocal_correlation": 0.007874015748031496,
+      "status": "natural-width-flat-transport-graded-gap-superpolynomially-small"
+    },
+    {
+      "child_width_log2": 1683,
+      "endpoint_gap_inverse_polynomial": false,
+      "information_threshold_copy_count": 1684,
+      "log2_endpoint_gap": -1675.011315313228,
+      "metric_floor": 1.992156862745098,
+      "n": 256,
+      "reciprocal_correlation": 0.00392156862745098,
+      "status": "natural-width-flat-transport-graded-gap-superpolynomially-small"
+    }
+  ],
+  "status": "flat-metric-floor-proved-insufficient-for-grading-internal-cech-mode-elimination-open",
+  "summary": "Proved an exact flat-transport counterfamily with constant metric floor but endpoint gap Theta(1/p); at natural width the tail model has log2 gap -1675.011.",
+  "theorem_contract": {
+    "endpoint_gap": "gap=(1-gamma)/[2(1-gamma)+gamma p].",
+    "flat_crossing_grading": "J=gamma(I_p tensor J_p-J_p tensor I_p).",
+    "flat_crossing_metric": "M=2(1-gamma)I+gamma(I_p tensor J_p+J_p tensor I_p).",
+    "grading_defect": "||M^-1/2 J M^-1/2||=gamma p/[2(1-gamma)+gamma p].",
+    "metric_floor": "lambda_min(M)=2(1-gamma), independent of p.",
+    "scope": "The model has exact flat vertex clique channels but omits internal child relations and higher Cech cells."
+  }
+}

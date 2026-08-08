@@ -1,0 +1,5216 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The maximum correlation 1/(n-1) describes a typical residual coefficient.",
+      "resolution": "Rank weighting is fourth-power in carrier dimensions; low-dimensional maximum-correlation carriers have factorially small q-mass.",
+      "resolved": true
+    },
+    {
+      "objection": "Unconditioned annealed row expectations transfer to the globally distinct sector because P_cf tends to one.",
+      "resolution": "Generic additive transfer is too weak at the tiny row scale. The module instead transfers a high-probability simultaneous relative-concentration event.",
+      "resolved": true
+    },
+    {
+      "objection": "Small channel-rank mass proves negligible quantum state mass.",
+      "resolution": "The PGM can reweight coefficient sectors; an explicit trace/normalization theorem is still missing.",
+      "resolved": false
+    }
+  ],
+  "annealed_carrier_controls": [
+    {
+      "cluster_carrier": [
+        2,
+        1
+      ],
+      "cluster_carrier_dimension": 2,
+      "companion_carrier": [
+        2,
+        1
+      ],
+      "companion_carrier_dimension": 2,
+      "correlation": "1/4",
+      "exact_carrier_law_normalized": true,
+      "expected_normalized_single_isotype_row_rank": "2/2187",
+      "fourth_power_mean_correlation": 0.308641975308642,
+      "fourth_power_probability": "64/81",
+      "fourth_power_root_mean_square_correlation": 0.3333333333333333,
+      "n": 3,
+      "status": "annealed-fourth-power-star-carrier-law-verified",
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "cluster_carrier": [
+        3
+      ],
+      "cluster_carrier_dimension": 1,
+      "companion_carrier": [
+        2,
+        1
+      ],
+      "companion_carrier_dimension": 2,
+      "correlation": "1/2",
+      "exact_carrier_law_normalized": true,
+      "expected_normalized_single_isotype_row_rank": "1/17496",
+      "fourth_power_mean_correlation": 0.308641975308642,
+      "fourth_power_probability": "4/81",
+      "fourth_power_root_mean_square_correlation": 0.3333333333333333,
+      "n": 3,
+      "status": "annealed-fourth-power-star-carrier-law-verified",
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "cluster_carrier": [
+        3,
+        1
+      ],
+      "cluster_carrier_dimension": 3,
+      "companion_carrier": [
+        3,
+        1
+      ],
+      "companion_carrier_dimension": 3,
+      "correlation": "1/9",
+      "exact_carrier_law_normalized": true,
+      "expected_normalized_single_isotype_row_rank": "3/2097152",
+      "fourth_power_mean_correlation": 0.12641975308641976,
+      "fourth_power_probability": "81/400",
+      "fourth_power_root_mean_square_correlation": 0.13333333333333333,
+      "n": 4,
+      "status": "annealed-fourth-power-star-carrier-law-verified",
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "cluster_carrier": [
+        4
+      ],
+      "cluster_carrier_dimension": 1,
+      "companion_carrier": [
+        3,
+        1
+      ],
+      "companion_carrier_dimension": 3,
+      "correlation": "1/3",
+      "exact_carrier_law_normalized": true,
+      "expected_normalized_single_isotype_row_rank": "1/56623104",
+      "fourth_power_mean_correlation": 0.12641975308641976,
+      "fourth_power_probability": "1/400",
+      "fourth_power_root_mean_square_correlation": 0.13333333333333333,
+      "n": 4,
+      "status": "annealed-fourth-power-star-carrier-law-verified",
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "cluster_carrier": [
+        3,
+        1,
+        1
+      ],
+      "cluster_carrier_dimension": 6,
+      "companion_carrier": [
+        3,
+        1,
+        1
+      ],
+      "companion_carrier_dimension": 6,
+      "correlation": "1/36",
+      "exact_carrier_law_normalized": true,
+      "expected_normalized_single_isotype_row_rank": "3/640000000",
+      "fourth_power_mean_correlation": 0.037935836644025805,
+      "fourth_power_probability": "1296/7225",
+      "fourth_power_root_mean_square_correlation": 0.0392156862745098,
+      "n": 5,
+      "status": "annealed-fourth-power-star-carrier-law-verified",
+      "target_partition": [
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "cluster_carrier": [
+        5
+      ],
+      "cluster_carrier_dimension": 1,
+      "companion_carrier": [
+        3,
+        1,
+        1
+      ],
+      "companion_carrier_dimension": 6,
+      "correlation": "1/6",
+      "exact_carrier_law_normalized": true,
+      "expected_normalized_single_isotype_row_rank": "1/276480000000",
+      "fourth_power_mean_correlation": 0.037935836644025805,
+      "fourth_power_probability": "1/7225",
+      "fourth_power_root_mean_square_correlation": 0.0392156862745098,
+      "n": 5,
+      "status": "annealed-fourth-power-star-carrier-law-verified",
+      "target_partition": [
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "cluster_carrier": [
+        3,
+        2,
+        1
+      ],
+      "cluster_carrier_dimension": 16,
+      "companion_carrier": [
+        3,
+        2,
+        1
+      ],
+      "companion_carrier_dimension": 16,
+      "correlation": "1/256",
+      "exact_carrier_law_normalized": true,
+      "expected_normalized_single_isotype_row_rank": "16/373669453125",
+      "fourth_power_mean_correlation": 0.006341927511956598,
+      "fourth_power_probability": "67108864/159896025",
+      "fourth_power_root_mean_square_correlation": 0.0071174377224199285,
+      "n": 6,
+      "status": "annealed-fourth-power-star-carrier-law-verified",
+      "target_partition": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "cluster_carrier": [
+        6
+      ],
+      "cluster_carrier_dimension": 1,
+      "companion_carrier": [
+        3,
+        2,
+        1
+      ],
+      "companion_carrier_dimension": 16,
+      "correlation": "1/16",
+      "exact_carrier_law_normalized": true,
+      "expected_normalized_single_isotype_row_rank": "1/1530550080000000",
+      "fourth_power_mean_correlation": 0.006341927511956598,
+      "fourth_power_probability": "1024/159896025",
+      "fourth_power_root_mean_square_correlation": 0.0071174377224199285,
+      "n": 6,
+      "status": "annealed-fourth-power-star-carrier-law-verified",
+      "target_partition": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "cluster_carrier": [
+        4,
+        2,
+        1
+      ],
+      "cluster_carrier_dimension": 35,
+      "companion_carrier": [
+        4,
+        2,
+        1
+      ],
+      "companion_carrier_dimension": 35,
+      "correlation": "1/1225",
+      "exact_carrier_law_normalized": true,
+      "expected_normalized_single_isotype_row_rank": "35/1283918464548864",
+      "fourth_power_mean_correlation": 0.001173378961362207,
+      "fourth_power_probability": "1838265625/11835699264",
+      "fourth_power_root_mean_square_correlation": 0.0013236267372600927,
+      "n": 7,
+      "status": "annealed-fourth-power-star-carrier-law-verified",
+      "target_partition": [
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "cluster_carrier": [
+        7
+      ],
+      "cluster_carrier_dimension": 1,
+      "companion_carrier": [
+        4,
+        2,
+        1
+      ],
+      "companion_carrier_dimension": 35,
+      "correlation": "1/35",
+      "exact_carrier_law_normalized": true,
+      "expected_normalized_single_isotype_row_rank": "1/55048004167532544000",
+      "fourth_power_mean_correlation": 0.001173378961362207,
+      "fourth_power_probability": "1225/11835699264",
+      "fourth_power_root_mean_square_correlation": 0.0013236267372600927,
+      "n": 7,
+      "status": "annealed-fourth-power-star-carrier-law-verified",
+      "target_partition": [
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "cluster_carrier": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "cluster_carrier_dimension": 90,
+      "companion_carrier": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "companion_carrier_dimension": 90,
+      "correlation": "1/8100",
+      "exact_carrier_law_normalized": true,
+      "expected_normalized_single_isotype_row_rank": "45/1810990208947060736",
+      "fourth_power_mean_correlation": 0.00020986220148203728,
+      "fourth_power_probability": "33215062500/236266961329",
+      "fourth_power_root_mean_square_correlation": 0.00023041806477627847,
+      "n": 8,
+      "status": "annealed-fourth-power-star-carrier-law-verified",
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "cluster_carrier": [
+        8
+      ],
+      "cluster_carrier_dimension": 1,
+      "companion_carrier": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "companion_carrier_dimension": 90,
+      "correlation": "1/90",
+      "exact_carrier_law_normalized": true,
+      "expected_normalized_single_isotype_row_rank": "1/2640423724644814553088000",
+      "fourth_power_mean_correlation": 0.00020986220148203728,
+      "fourth_power_probability": "2025/945067845316",
+      "fourth_power_root_mean_square_correlation": 0.00023041806477627847,
+      "n": 8,
+      "status": "annealed-fourth-power-star-carrier-law-verified",
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ]
+    }
+  ],
+  "claim_gate": {
+    "channel_rank_mass_equals_pgm_state_mass_proved": false,
+    "collision_free_conditioning_handled_by_relative_event": true,
+    "high_correlation_channel_rank_mass_factorially_small_proved": true,
+    "natural_pgm_endpoint_gap_proved": false,
+    "natural_shorted_endpoint_comparability_proved": false,
+    "reason": "Typical coefficient rank is concentrated on factorially weak overlaps, but the PGM weighting and endpoint-short transfer are open.",
+    "speedup_claim_allowed": false,
+    "typical_triple_fourth_power_carrier_law_proved": true,
+    "worst_case_gamma_represents_typical_channel_mass": false
+  },
+  "created_at": "2026-08-07T23:40:17.961962+00:00",
+  "falsifiers_triggered": [
+    "Worst-case residual correlation is not a representative mass statistic.",
+    "Total-variation conditioning cannot transfer a factorially small annealed row expectation relatively.",
+    "Coefficient-rank typicality is not yet accepted-state or PGM-effect typicality."
+  ],
+  "fixed_factor_controls": [
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2",
+      "exact_second_moment": "1/12",
+      "expected_normalized_multiplicity": "1/6",
+      "fixed_partition": [
+        3
+      ],
+      "n": 3,
+      "output_partition": [
+        3
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/4",
+      "exact_second_moment": "5/36",
+      "expected_normalized_multiplicity": "1/3",
+      "fixed_partition": [
+        3
+      ],
+      "n": 3,
+      "output_partition": [
+        2,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2",
+      "exact_second_moment": "1/12",
+      "expected_normalized_multiplicity": "1/6",
+      "fixed_partition": [
+        3
+      ],
+      "n": 3,
+      "output_partition": [
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/4",
+      "exact_second_moment": "5/144",
+      "expected_normalized_multiplicity": "1/6",
+      "fixed_partition": [
+        2,
+        1
+      ],
+      "n": 3,
+      "output_partition": [
+        3
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/16",
+      "exact_second_moment": "17/144",
+      "expected_normalized_multiplicity": "1/3",
+      "fixed_partition": [
+        2,
+        1
+      ],
+      "n": 3,
+      "output_partition": [
+        2,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/4",
+      "exact_second_moment": "5/144",
+      "expected_normalized_multiplicity": "1/6",
+      "fixed_partition": [
+        2,
+        1
+      ],
+      "n": 3,
+      "output_partition": [
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "5/6",
+      "exact_second_moment": "11/216",
+      "expected_normalized_multiplicity": "1/6",
+      "fixed_partition": [
+        3
+      ],
+      "n": 3,
+      "output_partition": [
+        3
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "1"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/8",
+      "exact_second_moment": "1/8",
+      "expected_normalized_multiplicity": "1/3",
+      "fixed_partition": [
+        3
+      ],
+      "n": 3,
+      "output_partition": [
+        2,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "1"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "5/6",
+      "exact_second_moment": "11/216",
+      "expected_normalized_multiplicity": "1/6",
+      "fixed_partition": [
+        3
+      ],
+      "n": 3,
+      "output_partition": [
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "1"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/8",
+      "exact_second_moment": "1/32",
+      "expected_normalized_multiplicity": "1/6",
+      "fixed_partition": [
+        2,
+        1
+      ],
+      "n": 3,
+      "output_partition": [
+        3
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "1"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/32",
+      "exact_second_moment": "11/96",
+      "expected_normalized_multiplicity": "1/3",
+      "fixed_partition": [
+        2,
+        1
+      ],
+      "n": 3,
+      "output_partition": [
+        2,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "1"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/8",
+      "exact_second_moment": "1/32",
+      "expected_normalized_multiplicity": "1/6",
+      "fixed_partition": [
+        2,
+        1
+      ],
+      "n": 3,
+      "output_partition": [
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "1"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "35/216",
+      "exact_second_moment": "251/7776",
+      "expected_normalized_multiplicity": "1/6",
+      "fixed_partition": [
+        3
+      ],
+      "n": 3,
+      "output_partition": [
+        3
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "1/4"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/32",
+      "exact_second_moment": "11/96",
+      "expected_normalized_multiplicity": "1/3",
+      "fixed_partition": [
+        3
+      ],
+      "n": 3,
+      "output_partition": [
+        2,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "1/4"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "35/216",
+      "exact_second_moment": "251/7776",
+      "expected_normalized_multiplicity": "1/6",
+      "fixed_partition": [
+        3
+      ],
+      "n": 3,
+      "output_partition": [
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "1/4"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/32",
+      "exact_second_moment": "11/384",
+      "expected_normalized_multiplicity": "1/6",
+      "fixed_partition": [
+        2,
+        1
+      ],
+      "n": 3,
+      "output_partition": [
+        3
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "1/4"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/128",
+      "exact_second_moment": "43/384",
+      "expected_normalized_multiplicity": "1/3",
+      "fixed_partition": [
+        2,
+        1
+      ],
+      "n": 3,
+      "output_partition": [
+        2,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "1/4"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/32",
+      "exact_second_moment": "11/384",
+      "expected_normalized_multiplicity": "1/6",
+      "fixed_partition": [
+        2,
+        1
+      ],
+      "n": 3,
+      "output_partition": [
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "1/4"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "4",
+      "exact_second_moment": "5/576",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        4
+      ],
+      "n": 4,
+      "output_partition": [
+        4
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/3",
+      "exact_second_moment": "1/48",
+      "expected_normalized_multiplicity": "1/8",
+      "fixed_partition": [
+        4
+      ],
+      "n": 4,
+      "output_partition": [
+        3,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "5/4",
+      "exact_second_moment": "1/64",
+      "expected_normalized_multiplicity": "1/12",
+      "fixed_partition": [
+        4
+      ],
+      "n": 4,
+      "output_partition": [
+        2,
+        2
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/3",
+      "exact_second_moment": "1/48",
+      "expected_normalized_multiplicity": "1/8",
+      "fixed_partition": [
+        4
+      ],
+      "n": 4,
+      "output_partition": [
+        2,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "4",
+      "exact_second_moment": "5/576",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        4
+      ],
+      "n": 4,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/3",
+      "exact_second_moment": "1/432",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "output_partition": [
+        4
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/27",
+      "exact_second_moment": "7/432",
+      "expected_normalized_multiplicity": "1/8",
+      "fixed_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "output_partition": [
+        3,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/9",
+      "exact_second_moment": "5/648",
+      "expected_normalized_multiplicity": "1/12",
+      "fixed_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "output_partition": [
+        2,
+        2
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/27",
+      "exact_second_moment": "7/432",
+      "expected_normalized_multiplicity": "1/8",
+      "fixed_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "output_partition": [
+        2,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/3",
+      "exact_second_moment": "1/432",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "19/24",
+      "exact_second_moment": "43/13824",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        4
+      ],
+      "n": 4,
+      "output_partition": [
+        4
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2/27",
+      "exact_second_moment": "29/1728",
+      "expected_normalized_multiplicity": "1/8",
+      "fixed_partition": [
+        4
+      ],
+      "n": 4,
+      "output_partition": [
+        3,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "35/96",
+      "exact_second_moment": "131/13824",
+      "expected_normalized_multiplicity": "1/12",
+      "fixed_partition": [
+        4
+      ],
+      "n": 4,
+      "output_partition": [
+        2,
+        2
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2/27",
+      "exact_second_moment": "29/1728",
+      "expected_normalized_multiplicity": "1/8",
+      "fixed_partition": [
+        4
+      ],
+      "n": 4,
+      "output_partition": [
+        2,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "19/24",
+      "exact_second_moment": "43/13824",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        4
+      ],
+      "n": 4,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2/27",
+      "exact_second_moment": "29/15552",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "output_partition": [
+        4
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2/243",
+      "exact_second_moment": "245/15552",
+      "expected_normalized_multiplicity": "1/8",
+      "fixed_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "output_partition": [
+        3,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/27",
+      "exact_second_moment": "7/972",
+      "expected_normalized_multiplicity": "1/12",
+      "fixed_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "output_partition": [
+        2,
+        2
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2/243",
+      "exact_second_moment": "245/15552",
+      "expected_normalized_multiplicity": "1/8",
+      "fixed_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "output_partition": [
+        2,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2/27",
+      "exact_second_moment": "29/15552",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "667/13824",
+      "exact_second_moment": "14491/7962624",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        4
+      ],
+      "n": 4,
+      "output_partition": [
+        4
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4/27"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "5/972",
+      "exact_second_moment": "977/62208",
+      "expected_normalized_multiplicity": "1/8",
+      "fixed_partition": [
+        4
+      ],
+      "n": 4,
+      "output_partition": [
+        3,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4/27"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2075/55296",
+      "exact_second_moment": "57371/7962624",
+      "expected_normalized_multiplicity": "1/12",
+      "fixed_partition": [
+        4
+      ],
+      "n": 4,
+      "output_partition": [
+        2,
+        2
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4/27"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "5/972",
+      "exact_second_moment": "977/62208",
+      "expected_normalized_multiplicity": "1/8",
+      "fixed_partition": [
+        4
+      ],
+      "n": 4,
+      "output_partition": [
+        2,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4/27"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "667/13824",
+      "exact_second_moment": "14491/7962624",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        4
+      ],
+      "n": 4,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4/27"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "5/972",
+      "exact_second_moment": "977/559872",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "output_partition": [
+        4
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4/27"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "5/8748",
+      "exact_second_moment": "8753/559872",
+      "expected_normalized_multiplicity": "1/8",
+      "fixed_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "output_partition": [
+        3,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4/27"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/243",
+      "exact_second_moment": "61/8748",
+      "expected_normalized_multiplicity": "1/12",
+      "fixed_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "output_partition": [
+        2,
+        2
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4/27"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "5/8748",
+      "exact_second_moment": "8753/559872",
+      "expected_normalized_multiplicity": "1/8",
+      "fixed_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "output_partition": [
+        2,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4/27"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "5/972",
+      "exact_second_moment": "977/559872",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "4/27"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "6",
+      "exact_second_moment": "7/14400",
+      "expected_normalized_multiplicity": "1/120",
+      "fixed_partition": [
+        5
+      ],
+      "n": 5,
+      "output_partition": [
+        5
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "6"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "7/16",
+      "exact_second_moment": "23/14400",
+      "expected_normalized_multiplicity": "1/30",
+      "fixed_partition": [
+        5
+      ],
+      "n": 5,
+      "output_partition": [
+        4,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "6"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/5",
+      "exact_second_moment": "1/480",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        5
+      ],
+      "n": 5,
+      "output_partition": [
+        3,
+        2
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "6"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "5/36",
+      "exact_second_moment": "41/14400",
+      "expected_normalized_multiplicity": "1/20",
+      "fixed_partition": [
+        5
+      ],
+      "n": 5,
+      "output_partition": [
+        3,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "6"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/5",
+      "exact_second_moment": "1/480",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        5
+      ],
+      "n": 5,
+      "output_partition": [
+        2,
+        2,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "6"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "7/16",
+      "exact_second_moment": "23/14400",
+      "expected_normalized_multiplicity": "1/30",
+      "fixed_partition": [
+        5
+      ],
+      "n": 5,
+      "output_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "6"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "6",
+      "exact_second_moment": "7/14400",
+      "expected_normalized_multiplicity": "1/120",
+      "fixed_partition": [
+        5
+      ],
+      "n": 5,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "6"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "7/16",
+      "exact_second_moment": "23/230400",
+      "expected_normalized_multiplicity": "1/120",
+      "fixed_partition": [
+        4,
+        1
+      ],
+      "n": 5,
+      "output_partition": [
+        5
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "6"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "19/256",
+      "exact_second_moment": "11/9216",
+      "expected_normalized_multiplicity": "1/30",
+      "fixed_partition": [
+        4,
+        1
+      ],
+      "n": 5,
+      "output_partition": [
+        4,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "6"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "3/200",
+      "exact_second_moment": "203/115200",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        4,
+        1
+      ],
+      "n": 5,
+      "output_partition": [
+        3,
+        2
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "6"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/576",
+      "exact_second_moment": "577/230400",
+      "expected_normalized_multiplicity": "1/20",
+      "fixed_partition": [
+        4,
+        1
+      ],
+      "n": 5,
+      "output_partition": [
+        3,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "6"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "3/200",
+      "exact_second_moment": "203/115200",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        4,
+        1
+      ],
+      "n": 5,
+      "output_partition": [
+        2,
+        2,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "6"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "19/256",
+      "exact_second_moment": "11/9216",
+      "expected_normalized_multiplicity": "1/30",
+      "fixed_partition": [
+        4,
+        1
+      ],
+      "n": 5,
+      "output_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "6"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "7/16",
+      "exact_second_moment": "23/230400",
+      "expected_normalized_multiplicity": "1/120",
+      "fixed_partition": [
+        4,
+        1
+      ],
+      "n": 5,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "6"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "41/120",
+      "exact_second_moment": "161/1728000",
+      "expected_normalized_multiplicity": "1/120",
+      "fixed_partition": [
+        5
+      ],
+      "n": 5,
+      "output_partition": [
+        5
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/5"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "13/384",
+      "exact_second_moment": "397/345600",
+      "expected_normalized_multiplicity": "1/30",
+      "fixed_partition": [
+        5
+      ],
+      "n": 5,
+      "output_partition": [
+        4,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/5"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "3/250",
+      "exact_second_moment": "253/144000",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        5
+      ],
+      "n": 5,
+      "output_partition": [
+        3,
+        2
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/5"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "37/4320",
+      "exact_second_moment": "4357/1728000",
+      "expected_normalized_multiplicity": "1/20",
+      "fixed_partition": [
+        5
+      ],
+      "n": 5,
+      "output_partition": [
+        3,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/5"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "3/250",
+      "exact_second_moment": "253/144000",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        5
+      ],
+      "n": 5,
+      "output_partition": [
+        2,
+        2,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/5"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "13/384",
+      "exact_second_moment": "397/345600",
+      "expected_normalized_multiplicity": "1/30",
+      "fixed_partition": [
+        5
+      ],
+      "n": 5,
+      "output_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/5"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "41/120",
+      "exact_second_moment": "161/1728000",
+      "expected_normalized_multiplicity": "1/120",
+      "fixed_partition": [
+        5
+      ],
+      "n": 5,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/5"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "13/384",
+      "exact_second_moment": "397/5529600",
+      "expected_normalized_multiplicity": "1/120",
+      "fixed_partition": [
+        4,
+        1
+      ],
+      "n": 5,
+      "output_partition": [
+        5
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/5"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "209/30720",
+      "exact_second_moment": "30929/27648000",
+      "expected_normalized_multiplicity": "1/30",
+      "fixed_partition": [
+        4,
+        1
+      ],
+      "n": 5,
+      "output_partition": [
+        4,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/5"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/800",
+      "exact_second_moment": "89/51200",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        4,
+        1
+      ],
+      "n": 5,
+      "output_partition": [
+        3,
+        2
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/5"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/13824",
+      "exact_second_moment": "553/221184",
+      "expected_normalized_multiplicity": "1/20",
+      "fixed_partition": [
+        4,
+        1
+      ],
+      "n": 5,
+      "output_partition": [
+        3,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/5"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/800",
+      "exact_second_moment": "89/51200",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        4,
+        1
+      ],
+      "n": 5,
+      "output_partition": [
+        2,
+        2,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/5"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "209/30720",
+      "exact_second_moment": "30929/27648000",
+      "expected_normalized_multiplicity": "1/30",
+      "fixed_partition": [
+        4,
+        1
+      ],
+      "n": 5,
+      "output_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/5"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "13/384",
+      "exact_second_moment": "397/5529600",
+      "expected_normalized_multiplicity": "1/120",
+      "fixed_partition": [
+        4,
+        1
+      ],
+      "n": 5,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/5"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2861/1728000",
+      "exact_second_moment": "1730861/24883200000",
+      "expected_normalized_multiplicity": "1/120",
+      "fixed_partition": [
+        5
+      ],
+      "n": 5,
+      "output_partition": [
+        5
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/500"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "7469/27648000",
+      "exact_second_moment": "27655469/24883200000",
+      "expected_normalized_multiplicity": "1/30",
+      "fixed_partition": [
+        5
+      ],
+      "n": 5,
+      "output_partition": [
+        4,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/500"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "19/300000",
+      "exact_second_moment": "300019/172800000",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        5
+      ],
+      "n": 5,
+      "output_partition": [
+        3,
+        2
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/500"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2173/62208000",
+      "exact_second_moment": "62210173/24883200000",
+      "expected_normalized_multiplicity": "1/20",
+      "fixed_partition": [
+        5
+      ],
+      "n": 5,
+      "output_partition": [
+        3,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/500"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "19/300000",
+      "exact_second_moment": "300019/172800000",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        5
+      ],
+      "n": 5,
+      "output_partition": [
+        2,
+        2,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/500"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "7469/27648000",
+      "exact_second_moment": "27655469/24883200000",
+      "expected_normalized_multiplicity": "1/30",
+      "fixed_partition": [
+        5
+      ],
+      "n": 5,
+      "output_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/500"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2861/1728000",
+      "exact_second_moment": "1730861/24883200000",
+      "expected_normalized_multiplicity": "1/120",
+      "fixed_partition": [
+        5
+      ],
+      "n": 5,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/500"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "7469/27648000",
+      "exact_second_moment": "27655469/398131200000",
+      "expected_normalized_multiplicity": "1/120",
+      "fixed_partition": [
+        4,
+        1
+      ],
+      "n": 5,
+      "output_partition": [
+        5
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/500"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "5641/88473600",
+      "exact_second_moment": "88479241/79626240000",
+      "expected_normalized_multiplicity": "1/30",
+      "fixed_partition": [
+        4,
+        1
+      ],
+      "n": 5,
+      "output_partition": [
+        4,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/500"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "17/1600000",
+      "exact_second_moment": "533339/307200000",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        4,
+        1
+      ],
+      "n": 5,
+      "output_partition": [
+        3,
+        2
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/500"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/7962624",
+      "exact_second_moment": "318505/127401984",
+      "expected_normalized_multiplicity": "1/20",
+      "fixed_partition": [
+        4,
+        1
+      ],
+      "n": 5,
+      "output_partition": [
+        3,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/500"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "17/1600000",
+      "exact_second_moment": "533339/307200000",
+      "expected_normalized_multiplicity": "1/24",
+      "fixed_partition": [
+        4,
+        1
+      ],
+      "n": 5,
+      "output_partition": [
+        2,
+        2,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/500"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "5641/88473600",
+      "exact_second_moment": "88479241/79626240000",
+      "expected_normalized_multiplicity": "1/30",
+      "fixed_partition": [
+        4,
+        1
+      ],
+      "n": 5,
+      "output_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/500"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "7469/27648000",
+      "exact_second_moment": "27655469/398131200000",
+      "expected_normalized_multiplicity": "1/120",
+      "fixed_partition": [
+        4,
+        1
+      ],
+      "n": 5,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "3/500"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "10",
+      "exact_second_moment": "11/518400",
+      "expected_normalized_multiplicity": "1/720",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        6
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "10"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "19/25",
+      "exact_second_moment": "11/129600",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        5,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "10"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "22/81",
+      "exact_second_moment": "103/518400",
+      "expected_normalized_multiplicity": "1/80",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        4,
+        2
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "10"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "4/25",
+      "exact_second_moment": "29/129600",
+      "expected_normalized_multiplicity": "1/72",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        4,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "10"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "19/25",
+      "exact_second_moment": "11/129600",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        3,
+        3
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "10"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "9/256",
+      "exact_second_moment": "53/103680",
+      "expected_normalized_multiplicity": "1/45",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        3,
+        2,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "10"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "4/25",
+      "exact_second_moment": "29/129600",
+      "expected_normalized_multiplicity": "1/72",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "10"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "19/25",
+      "exact_second_moment": "11/129600",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        2,
+        2,
+        2
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "10"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "22/81",
+      "exact_second_moment": "103/518400",
+      "expected_normalized_multiplicity": "1/80",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "10"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "19/25",
+      "exact_second_moment": "11/129600",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "10"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "10",
+      "exact_second_moment": "11/518400",
+      "expected_normalized_multiplicity": "1/720",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "10"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "19/25",
+      "exact_second_moment": "11/3240000",
+      "expected_normalized_multiplicity": "1/720",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        6
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "10"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "103/625",
+      "exact_second_moment": "91/1620000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        5,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "10"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "31/675",
+      "exact_second_moment": "353/2160000",
+      "expected_normalized_multiplicity": "1/80",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        4,
+        2
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "10"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/50",
+      "exact_second_moment": "17/86400",
+      "expected_normalized_multiplicity": "1/72",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        4,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "10"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "29/625",
+      "exact_second_moment": "109/2160000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        3,
+        3
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "10"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/320",
+      "exact_second_moment": "107/216000",
+      "expected_normalized_multiplicity": "1/45",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        3,
+        2,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "10"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/50",
+      "exact_second_moment": "17/86400",
+      "expected_normalized_multiplicity": "1/72",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "10"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "29/625",
+      "exact_second_moment": "109/2160000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        2,
+        2,
+        2
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "10"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "31/675",
+      "exact_second_moment": "353/2160000",
+      "expected_normalized_multiplicity": "1/80",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "10"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "103/625",
+      "exact_second_moment": "91/1620000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "10"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "19/25",
+      "exact_second_moment": "11/3240000",
+      "expected_normalized_multiplicity": "1/720",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "10"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "181/720",
+      "exact_second_moment": "901/373248000",
+      "expected_normalized_multiplicity": "1/720",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        6
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "38/1125",
+      "exact_second_moment": "1163/23328000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        5,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "901/58320",
+      "exact_second_moment": "59221/373248000",
+      "expected_normalized_multiplicity": "1/80",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        4,
+        2
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "31/4500",
+      "exact_second_moment": "4531/23328000",
+      "expected_normalized_multiplicity": "1/72",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        4,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "38/1125",
+      "exact_second_moment": "1163/23328000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        3,
+        3
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "149/184320",
+      "exact_second_moment": "184469/373248000",
+      "expected_normalized_multiplicity": "1/45",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        3,
+        2,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "31/4500",
+      "exact_second_moment": "4531/23328000",
+      "expected_normalized_multiplicity": "1/72",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "38/1125",
+      "exact_second_moment": "1163/23328000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        2,
+        2,
+        2
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "901/58320",
+      "exact_second_moment": "59221/373248000",
+      "expected_normalized_multiplicity": "1/80",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "38/1125",
+      "exact_second_moment": "1163/23328000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "181/720",
+      "exact_second_moment": "901/373248000",
+      "expected_normalized_multiplicity": "1/720",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "38/1125",
+      "exact_second_moment": "1163/583200000",
+      "expected_normalized_multiplicity": "1/720",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        6
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "107/11250",
+      "exact_second_moment": "11357/233280000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        5,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "272/91125",
+      "exact_second_moment": "91397/583200000",
+      "expected_normalized_multiplicity": "1/80",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        4,
+        2
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "13/11250",
+      "exact_second_moment": "11263/58320000",
+      "expected_normalized_multiplicity": "1/72",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        4,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "13/5625",
+      "exact_second_moment": "2819/58320000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        3,
+        3
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/12800",
+      "exact_second_moment": "4267/8640000",
+      "expected_normalized_multiplicity": "1/45",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        3,
+        2,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "13/11250",
+      "exact_second_moment": "11263/58320000",
+      "expected_normalized_multiplicity": "1/72",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "13/5625",
+      "exact_second_moment": "2819/58320000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        2,
+        2,
+        2
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "272/91125",
+      "exact_second_moment": "91397/583200000",
+      "expected_normalized_multiplicity": "1/80",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "107/11250",
+      "exact_second_moment": "11357/233280000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "38/1125",
+      "exact_second_moment": "1163/583200000",
+      "expected_normalized_multiplicity": "1/720",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "9541/14929920",
+      "exact_second_moment": "14939461/7739670528000",
+      "expected_normalized_multiplicity": "1/720",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        6
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/675"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "17819/145800000",
+      "exact_second_moment": "145817819/3023308800000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        5,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/675"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1995901/30233088000",
+      "exact_second_moment": "30235083901/193491763200000",
+      "expected_normalized_multiplicity": "1/80",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        4,
+        2
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/675"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "14269/583200000",
+      "exact_second_moment": "583214269/3023308800000",
+      "expected_normalized_multiplicity": "1/72",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        4,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/675"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "17819/145800000",
+      "exact_second_moment": "145817819/3023308800000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        3,
+        3
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/675"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "46781/95551488000",
+      "exact_second_moment": "95551534781/193491763200000",
+      "expected_normalized_multiplicity": "1/45",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        3,
+        2,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/675"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "14269/583200000",
+      "exact_second_moment": "583214269/3023308800000",
+      "expected_normalized_multiplicity": "1/72",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/675"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "17819/145800000",
+      "exact_second_moment": "145817819/3023308800000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        2,
+        2,
+        2
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/675"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1995901/30233088000",
+      "exact_second_moment": "30235083901/193491763200000",
+      "expected_normalized_multiplicity": "1/80",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/675"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "17819/145800000",
+      "exact_second_moment": "145817819/3023308800000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/675"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "9541/14929920",
+      "exact_second_moment": "14939461/7739670528000",
+      "expected_normalized_multiplicity": "1/720",
+      "fixed_partition": [
+        6
+      ],
+      "n": 6,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/675"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "17819/145800000",
+      "exact_second_moment": "145817819/75582720000000",
+      "expected_normalized_multiplicity": "1/720",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        6
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/675"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "286657/7290000000",
+      "exact_second_moment": "7290286657/151165440000000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        5,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/675"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "389/29524500",
+      "exact_second_moment": "29524889/188956800000",
+      "expected_normalized_multiplicity": "1/80",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        4,
+        2
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/675"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "13967/2916000000",
+      "exact_second_moment": "2916013967/15116544000000",
+      "expected_normalized_multiplicity": "1/72",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        4,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/675"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "31913/3645000000",
+      "exact_second_moment": "3645031913/75582720000000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        3,
+        3
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/675"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/20480000",
+      "exact_second_moment": "6826667/13824000000",
+      "expected_normalized_multiplicity": "1/45",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        3,
+        2,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/675"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "13967/2916000000",
+      "exact_second_moment": "2916013967/15116544000000",
+      "expected_normalized_multiplicity": "1/72",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/675"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "31913/3645000000",
+      "exact_second_moment": "3645031913/75582720000000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        2,
+        2,
+        2
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/675"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "389/29524500",
+      "exact_second_moment": "29524889/188956800000",
+      "expected_normalized_multiplicity": "1/80",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/675"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "286657/7290000000",
+      "exact_second_moment": "7290286657/151165440000000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/675"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "17819/145800000",
+      "exact_second_moment": "145817819/75582720000000",
+      "expected_normalized_multiplicity": "1/720",
+      "fixed_partition": [
+        5,
+        1
+      ],
+      "n": 6,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/675"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "14",
+      "exact_second_moment": "1/1693440",
+      "expected_normalized_multiplicity": "1/5040",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        7
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "13/12",
+      "exact_second_moment": "1/338688",
+      "expected_normalized_multiplicity": "1/840",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        6,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2/7",
+      "exact_second_moment": "1/100800",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        5,
+        2
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2/9",
+      "exact_second_moment": "11/1016064",
+      "expected_normalized_multiplicity": "1/336",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        5,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "17/98",
+      "exact_second_moment": "23/2540160",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        4,
+        3
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/35",
+      "exact_second_moment": "1/20160",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        4,
+        2,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "29/400",
+      "exact_second_moment": "143/8467200",
+      "expected_normalized_multiplicity": "1/252",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        4,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "3/49",
+      "exact_second_moment": "13/705600",
+      "expected_normalized_multiplicity": "1/240",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        3,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "3/49",
+      "exact_second_moment": "13/705600",
+      "expected_normalized_multiplicity": "1/240",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        2,
+        2
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/35",
+      "exact_second_moment": "1/20160",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2/9",
+      "exact_second_moment": "11/1016064",
+      "expected_normalized_multiplicity": "1/336",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "17/98",
+      "exact_second_moment": "23/2540160",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2/7",
+      "exact_second_moment": "1/100800",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "13/12",
+      "exact_second_moment": "1/338688",
+      "expected_normalized_multiplicity": "1/840",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "14",
+      "exact_second_moment": "1/1693440",
+      "expected_normalized_multiplicity": "1/5040",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "13/12",
+      "exact_second_moment": "1/12192768",
+      "expected_normalized_multiplicity": "1/5040",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        7
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "125/432",
+      "exact_second_moment": "557/304819200",
+      "expected_normalized_multiplicity": "1/840",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        6,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "317/3528",
+      "exact_second_moment": "769/91445760",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        5,
+        2
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "493/8100",
+      "exact_second_moment": "8593/914457600",
+      "expected_normalized_multiplicity": "1/336",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        5,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "151/3528",
+      "exact_second_moment": "3679/457228800",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        4,
+        3
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/105",
+      "exact_second_moment": "53/1088640",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        4,
+        2,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "7/960",
+      "exact_second_moment": "967/60963840",
+      "expected_normalized_multiplicity": "1/252",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        4,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "55/7938",
+      "exact_second_moment": "7993/457228800",
+      "expected_normalized_multiplicity": "1/240",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        3,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "55/7938",
+      "exact_second_moment": "7993/457228800",
+      "expected_normalized_multiplicity": "1/240",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        2,
+        2
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1/105",
+      "exact_second_moment": "53/1088640",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "493/8100",
+      "exact_second_moment": "8593/914457600",
+      "expected_normalized_multiplicity": "1/336",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "151/3528",
+      "exact_second_moment": "3679/457228800",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "317/3528",
+      "exact_second_moment": "769/91445760",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "125/432",
+      "exact_second_moment": "557/304819200",
+      "expected_normalized_multiplicity": "1/840",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "13/12",
+      "exact_second_moment": "1/12192768",
+      "expected_normalized_multiplicity": "1/5040",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 2,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "14"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "77/720",
+      "exact_second_moment": "797/18289152000",
+      "expected_normalized_multiplicity": "1/5040",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        7
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "77/2880",
+      "exact_second_moment": "2957/2032128000",
+      "expected_normalized_multiplicity": "1/840",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        6,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2363/246960",
+      "exact_second_moment": "249323/32006016000",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        5,
+        2
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "481/75600",
+      "exact_second_moment": "76081/8534937600",
+      "expected_normalized_multiplicity": "1/336",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        5,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "31/7056",
+      "exact_second_moment": "7087/914457600",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        4,
+        3
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "8/7875",
+      "exact_second_moment": "7883/163296000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        4,
+        2,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1231/2016000",
+      "exact_second_moment": "2017231/128024064000",
+      "expected_normalized_multiplicity": "1/252",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        4,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "367/555660",
+      "exact_second_moment": "556027/32006016000",
+      "expected_normalized_multiplicity": "1/240",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        3,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "367/555660",
+      "exact_second_moment": "556027/32006016000",
+      "expected_normalized_multiplicity": "1/240",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        2,
+        2
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "8/7875",
+      "exact_second_moment": "7883/163296000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "481/75600",
+      "exact_second_moment": "76081/8534937600",
+      "expected_normalized_multiplicity": "1/336",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "31/7056",
+      "exact_second_moment": "7087/914457600",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2363/246960",
+      "exact_second_moment": "249323/32006016000",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "77/2880",
+      "exact_second_moment": "2957/2032128000",
+      "expected_normalized_multiplicity": "1/840",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "77/720",
+      "exact_second_moment": "797/18289152000",
+      "expected_normalized_multiplicity": "1/5040",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "77/2880",
+      "exact_second_moment": "2957/73156608000",
+      "expected_normalized_multiplicity": "1/5040",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        7
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2537/241920",
+      "exact_second_moment": "244457/170698752000",
+      "expected_normalized_multiplicity": "1/840",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        6,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "35429/8890560",
+      "exact_second_moment": "8925989/1152216576000",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        5,
+        2
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "4087/1632960",
+      "exact_second_moment": "1637047/184354652160",
+      "expected_normalized_multiplicity": "1/336",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        5,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "323/181440",
+      "exact_second_moment": "181763/23514624000",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        4,
+        3
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "449/1029000",
+      "exact_second_moment": "1029449/21337344000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        4,
+        2,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "5767/72576000",
+      "exact_second_moment": "72581767/4608866304000",
+      "expected_normalized_multiplicity": "1/252",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        4,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2507/20003760",
+      "exact_second_moment": "20006267/1152216576000",
+      "expected_normalized_multiplicity": "1/240",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        3,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2507/20003760",
+      "exact_second_moment": "20006267/1152216576000",
+      "expected_normalized_multiplicity": "1/240",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        2,
+        2
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "449/1029000",
+      "exact_second_moment": "1029449/21337344000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "4087/1632960",
+      "exact_second_moment": "1637047/184354652160",
+      "expected_normalized_multiplicity": "1/336",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "323/181440",
+      "exact_second_moment": "181763/23514624000",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "35429/8890560",
+      "exact_second_moment": "8925989/1152216576000",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2537/241920",
+      "exact_second_moment": "244457/170698752000",
+      "expected_normalized_multiplicity": "1/840",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "77/2880",
+      "exact_second_moment": "2957/73156608000",
+      "expected_normalized_multiplicity": "1/5040",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 3,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/3"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "14458439/128024064000",
+      "exact_second_moment": "128038522439/3252016064102400000",
+      "expected_normalized_multiplicity": "1/5040",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        7
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "75020173/1536288768000",
+      "exact_second_moment": "1536363788173/1084005354700800000",
+      "expected_normalized_multiplicity": "1/840",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        6,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "31256567/1568294784000",
+      "exact_second_moment": "1568326040567/203251004006400000",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        5,
+        2
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "793871/65318400000",
+      "exact_second_moment": "65319193871/7374186086400000",
+      "expected_normalized_multiplicity": "1/336",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        5,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2776219/313658956800",
+      "exact_second_moment": "313661733019/40650200801280000",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        4,
+        3
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1545679/700131600000",
+      "exact_second_moment": "700133145679/14517928857600000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        4,
+        2,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "3341431/51209625600000",
+      "exact_second_moment": "51209628941431/3252016064102400000",
+      "expected_normalized_multiplicity": "1/252",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        4,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1145173/3528663264000",
+      "exact_second_moment": "3528664409173/203251004006400000",
+      "expected_normalized_multiplicity": "1/240",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        3,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1145173/3528663264000",
+      "exact_second_moment": "3528664409173/203251004006400000",
+      "expected_normalized_multiplicity": "1/240",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        2,
+        2
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1545679/700131600000",
+      "exact_second_moment": "700133145679/14517928857600000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "793871/65318400000",
+      "exact_second_moment": "65319193871/7374186086400000",
+      "expected_normalized_multiplicity": "1/336",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2776219/313658956800",
+      "exact_second_moment": "313661733019/40650200801280000",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "31256567/1568294784000",
+      "exact_second_moment": "1568326040567/203251004006400000",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "75020173/1536288768000",
+      "exact_second_moment": "1536363788173/1084005354700800000",
+      "expected_normalized_multiplicity": "1/840",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "14458439/128024064000",
+      "exact_second_moment": "128038522439/3252016064102400000",
+      "expected_normalized_multiplicity": "1/5040",
+      "fixed_partition": [
+        7
+      ],
+      "n": 7,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "75020173/1536288768000",
+      "exact_second_moment": "1536363788173/39024192769228800000",
+      "expected_normalized_multiplicity": "1/5040",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        7
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1190395789/55306395648000",
+      "exact_second_moment": "55307586043789/39024192769228800000",
+      "expected_normalized_multiplicity": "1/840",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        6,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "498617981/56458612224000",
+      "exact_second_moment": "56459110841981/7317036144230400000",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        5,
+        2
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "44482787/8295959347200",
+      "exact_second_moment": "8296003829987/936580626461491200",
+      "expected_normalized_multiplicity": "1/336",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        5,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "221519573/56458612224000",
+      "exact_second_moment": "56458833743573/7317036144230400000",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        4,
+        3
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "533707/544546800000",
+      "exact_second_moment": "544547333707/11291722444800000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        4,
+        2,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "4114091/368709304320000",
+      "exact_second_moment": "368709308434091/23414515661537280000",
+      "expected_normalized_multiplicity": "1/252",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        4,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2249411/18147411072000",
+      "exact_second_moment": "18147413321411/1045290877747200000",
+      "expected_normalized_multiplicity": "1/240",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        3,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "2249411/18147411072000",
+      "exact_second_moment": "18147413321411/1045290877747200000",
+      "expected_normalized_multiplicity": "1/240",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        2,
+        2
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "533707/544546800000",
+      "exact_second_moment": "544547333707/11291722444800000",
+      "expected_normalized_multiplicity": "1/144",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        2,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "44482787/8295959347200",
+      "exact_second_moment": "8296003829987/936580626461491200",
+      "expected_normalized_multiplicity": "1/336",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        3,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "221519573/56458612224000",
+      "exact_second_moment": "56458833743573/7317036144230400000",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "498617981/56458612224000",
+      "exact_second_moment": "56459110841981/7317036144230400000",
+      "expected_normalized_multiplicity": "1/360",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        2,
+        2,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "1190395789/55306395648000",
+      "exact_second_moment": "55307586043789/39024192769228800000",
+      "expected_normalized_multiplicity": "1/840",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    },
+    {
+      "bound_respected": true,
+      "exact_relative_variance": "75020173/1536288768000",
+      "exact_second_moment": "1536363788173/39024192769228800000",
+      "expected_normalized_multiplicity": "1/5040",
+      "fixed_partition": [
+        6,
+        1
+      ],
+      "n": 7,
+      "output_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "random_block_size": 5,
+      "status": "fixed-factor-multiplicity-concentration-bound-verified",
+      "universal_class_size_bound": "2/1323"
+    }
+  ],
+  "headline_metrics": {
+    "annealed_carrier_control_count": 12,
+    "annealed_fourth_power_carrier_law_theorem_count": 1,
+    "channel_rank_to_pgm_state_mass_transfer_theorem_count": 0,
+    "control_failure_count": 0,
+    "finite_collision_free_typicality_certified_row_count": 1,
+    "finite_collision_free_typicality_onset_n": 48,
+    "fixed_factor_control_count": 246,
+    "fixed_factor_second_moment_bound_theorem_count": 1,
+    "natural_endpoint_comparability_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "scaling_row_count": 10,
+    "tail_fourth_power_low_dimension_mass_log2": -79.74065811212489,
+    "tail_high_correlation_mass_log2_upper_bound": -76.71411179176,
+    "tail_log2_conditioned_joint_failure_upper_bound": -14.006234866139003,
+    "tail_n": 48,
+    "tail_optimized_pattern_block_size": 12,
+    "typical_triple_factorial_correlation_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "derive_rank_weighted_star_carrier_distribution",
+      "resolution": "Seven concentrated block multiplicities give the exact fourth-power carrier law on typical triples.",
+      "resolved": true
+    },
+    {
+      "obligation": "avoid_invalid_tiny_expectation_tv_transfer",
+      "resolution": "The proof conditions a simultaneous multiplicity event, then divides its failure probability by P_cf; it does not transfer the tiny row mass additively.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_high_correlation_channel_rank_mass_factorially_small",
+      "resolution": "The fourth-power law plus the maximal-dimension lower bound on Z4 gives the factorial tail.",
+      "resolved": true
+    },
+    {
+      "obligation": "transfer_channel_rank_mass_to_pgm_accepted_state_mass",
+      "resolution": "Need a trace identity linking carrier row multiplicities through the global distinct kernel, endpoint shorts, and PGM normalization.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "conditioned_joint_failure_upper_bound": 1.0,
+      "distorted_high_correlation_channel_mass_log2_upper_bound": -4.402668481794716,
+      "distorted_high_correlation_channel_mass_upper_bound": 0.04727861286241268,
+      "finite_collision_free_typicality_certified": false,
+      "fourth_power_low_dimension_mass": 0.0058020771635842105,
+      "fourth_power_low_dimension_mass_log2": -7.429214802159612,
+      "fourth_power_mean_correlation_log2": -24.670252790703486,
+      "fourth_power_normalization_log2": 53.27590113934556,
+      "fourth_power_rms_correlation_log2": -24.44044590527015,
+      "high_correlation_threshold_log2": -21.626591425556555,
+      "information_threshold_copy_count": 29,
+      "log2_all_carrier_multiplicity_failure_upper_bound": 25.533609675260134,
+      "log2_conditioned_joint_failure_upper_bound": 144.69716596561017,
+      "log2_global_collision_free_probability": -144.69716596561017,
+      "log2_joint_source_triple_failure_upper_bound": 0.0,
+      "log2_pattern_richness_failure_upper_bound": -6.621049979807627,
+      "n": 12,
+      "optimized_minimum_pattern_block_size": 2,
+      "partition_count": 77,
+      "portfolio_bad_fraction_upper_bound": 1.0,
+      "portfolio_failure_probability_upper_bound": 1.0,
+      "status": "finite-collision-free-triple-typicality-bound-vacuous"
+    },
+    {
+      "conditioned_joint_failure_upper_bound": 1.0,
+      "distorted_high_correlation_channel_mass_log2_upper_bound": -10.125098926693775,
+      "distorted_high_correlation_channel_mass_upper_bound": 0.0008954503571263116,
+      "finite_collision_free_typicality_certified": false,
+      "fourth_power_low_dimension_mass": 0.00010989053514165998,
+      "fourth_power_low_dimension_mass_log2": -13.15164524705867,
+      "fourth_power_mean_correlation_log2": -38.98374185782495,
+      "fourth_power_normalization_log2": 82.96616678442314,
+      "fourth_power_rms_correlation_log2": -38.716026314540514,
+      "high_correlation_threshold_log2": -33.187605352411964,
+      "information_threshold_copy_count": 45,
+      "log2_all_carrier_multiplicity_failure_upper_bound": -4.30461444700918,
+      "log2_conditioned_joint_failure_upper_bound": 122.6053296797274,
+      "log2_global_collision_free_probability": -124.73170170029044,
+      "log2_joint_source_triple_failure_upper_bound": -2.1263720205630365,
+      "log2_pattern_richness_failure_upper_bound": -2.4865744737241102,
+      "n": 16,
+      "optimized_minimum_pattern_block_size": 7,
+      "partition_count": 231,
+      "portfolio_bad_fraction_upper_bound": 1.0,
+      "portfolio_failure_probability_upper_bound": 1.0,
+      "status": "finite-collision-free-triple-typicality-bound-vacuous"
+    },
+    {
+      "conditioned_joint_failure_upper_bound": 1.0,
+      "distorted_high_correlation_channel_mass_log2_upper_bound": -16.451994301246486,
+      "distorted_high_correlation_channel_mass_upper_bound": 1.115465716284114e-05,
+      "finite_collision_free_typicality_certified": false,
+      "fourth_power_low_dimension_mass": 1.368910331199359e-06,
+      "fourth_power_low_dimension_mass_log2": -19.47854062161138,
+      "fourth_power_mean_correlation_log2": -54.72833023875785,
+      "fourth_power_normalization_log2": 115.5448041378837,
+      "fourth_power_rms_correlation_log2": -54.46742021697748,
+      "high_correlation_threshold_log2": -45.80803794067967,
+      "information_threshold_copy_count": 62,
+      "log2_all_carrier_multiplicity_failure_upper_bound": -10.886875291047968,
+      "log2_conditioned_joint_failure_upper_bound": 102.8021726447121,
+      "log2_global_collision_free_probability": -108.11047647352635,
+      "log2_joint_source_triple_failure_upper_bound": -5.308303828814241,
+      "log2_pattern_richness_failure_upper_bound": -5.3388137654724,
+      "n": 20,
+      "optimized_minimum_pattern_block_size": 8,
+      "partition_count": 627,
+      "portfolio_bad_fraction_upper_bound": 1.0,
+      "portfolio_failure_probability_upper_bound": 1.0,
+      "status": "finite-collision-free-triple-typicality-bound-vacuous"
+    },
+    {
+      "conditioned_joint_failure_upper_bound": 1.0,
+      "distorted_high_correlation_channel_mass_log2_upper_bound": -24.14724327676497,
+      "distorted_high_correlation_channel_mass_upper_bound": 5.382145832986355e-08,
+      "finite_collision_free_typicality_certified": false,
+      "fourth_power_low_dimension_mass": 6.605021496617671e-09,
+      "fourth_power_low_dimension_mass_log2": -27.17378959712987,
+      "fourth_power_mean_correlation_log2": -71.93818547539729,
+      "fourth_power_normalization_log2": 150.62624967540535,
+      "fourth_power_rms_correlation_log2": -71.5885922563049,
+      "high_correlation_threshold_log2": -59.27824306432533,
+      "information_threshold_copy_count": 80,
+      "log2_all_carrier_multiplicity_failure_upper_bound": -10.13931295975378,
+      "log2_conditioned_joint_failure_upper_bound": 81.8732057348919,
+      "log2_global_collision_free_probability": -91.08167443121611,
+      "log2_joint_source_triple_failure_upper_bound": -9.208468696324221,
+      "log2_pattern_richness_failure_upper_bound": -10.281107060792552,
+      "n": 24,
+      "optimized_minimum_pattern_block_size": 8,
+      "partition_count": 1575,
+      "portfolio_bad_fraction_upper_bound": 1.0,
+      "portfolio_failure_probability_upper_bound": 1.0,
+      "status": "finite-collision-free-triple-typicality-bound-vacuous"
+    },
+    {
+      "conditioned_joint_failure_upper_bound": 1.0,
+      "distorted_high_correlation_channel_mass_log2_upper_bound": -31.6269032122134,
+      "distorted_high_correlation_channel_mass_upper_bound": 3.015459244718058e-10,
+      "finite_collision_free_typicality_certified": false,
+      "fourth_power_low_dimension_mass": 3.7006007922468264e-11,
+      "fourth_power_low_dimension_mass_log2": -34.65344953257829,
+      "fourth_power_mean_correlation_log2": -89.88216166908353,
+      "fourth_power_normalization_log2": 187.4967069971188,
+      "fourth_power_rms_correlation_log2": -89.55251124588146,
+      "high_correlation_threshold_log2": -73.458146813428,
+      "information_threshold_copy_count": 98,
+      "log2_all_carrier_multiplicity_failure_upper_bound": -17.70896939443275,
+      "log2_conditioned_joint_failure_upper_bound": 61.703984187202806,
+      "log2_global_collision_free_probability": -75.35305733990545,
+      "log2_joint_source_triple_failure_upper_bound": -13.649073152702645,
+      "log2_pattern_richness_failure_upper_bound": -13.738276521723565,
+      "n": 28,
+      "optimized_minimum_pattern_block_size": 9,
+      "partition_count": 3718,
+      "portfolio_bad_fraction_upper_bound": 1.0,
+      "portfolio_failure_probability_upper_bound": 1.0,
+      "status": "finite-collision-free-triple-typicality-bound-vacuous"
+    },
+    {
+      "conditioned_joint_failure_upper_bound": 1.0,
+      "distorted_high_correlation_channel_mass_log2_upper_bound": -39.8674402887906,
+      "distorted_high_correlation_channel_mass_upper_bound": 9.970217274905262e-13,
+      "finite_collision_free_typicality_certified": false,
+      "fourth_power_low_dimension_mass": 1.22355472092733e-13,
+      "fourth_power_low_dimension_mass_log2": -42.89398660915549,
+      "fourth_power_mean_correlation_log2": -108.9345718170162,
+      "fourth_power_normalization_log2": 226.19288330973353,
+      "fourth_power_rms_correlation_log2": -108.52961965737323,
+      "high_correlation_threshold_log2": -88.24744773927023,
+      "information_threshold_copy_count": 118,
+      "log2_all_carrier_multiplicity_failure_upper_bound": -25.906687601159128,
+      "log2_conditioned_joint_failure_upper_bound": 44.806863529438274,
+      "log2_global_collision_free_probability": -62.62719738503115,
+      "log2_joint_source_triple_failure_upper_bound": -17.82033385559288,
+      "log2_pattern_richness_failure_upper_bound": -17.82565174967269,
+      "n": 32,
+      "optimized_minimum_pattern_block_size": 10,
+      "partition_count": 8349,
+      "portfolio_bad_fraction_upper_bound": 1.0,
+      "portfolio_failure_probability_upper_bound": 1.0,
+      "status": "finite-collision-free-triple-typicality-bound-vacuous"
+    },
+    {
+      "conditioned_joint_failure_upper_bound": 1.0,
+      "distorted_high_correlation_channel_mass_log2_upper_bound": -48.61078622410099,
+      "distorted_high_correlation_channel_mass_upper_bound": 2.3264580921332214e-15,
+      "finite_collision_free_typicality_certified": false,
+      "fourth_power_low_dimension_mass": 2.8550519042687966e-16,
+      "fourth_power_low_dimension_mass_log2": -51.63733254446589,
+      "fourth_power_mean_correlation_log2": -128.5421177683413,
+      "fourth_power_normalization_log2": 266.2380213413701,
+      "fourth_power_rms_correlation_log2": -128.1436927100137,
+      "high_correlation_threshold_log2": -103.57074647351729,
+      "information_threshold_copy_count": 139,
+      "log2_all_carrier_multiplicity_failure_upper_bound": -25.34781278750405,
+      "log2_conditioned_joint_failure_upper_bound": 27.84562093390226,
+      "log2_global_collision_free_probability": -51.65138107569346,
+      "log2_joint_source_triple_failure_upper_bound": -23.805760141791197,
+      "log2_pattern_richness_failure_upper_bound": -24.41266585620985,
+      "n": 36,
+      "optimized_minimum_pattern_block_size": 10,
+      "partition_count": 17977,
+      "portfolio_bad_fraction_upper_bound": 1.0,
+      "portfolio_failure_probability_upper_bound": 1.0,
+      "status": "finite-collision-free-triple-typicality-bound-vacuous"
+    },
+    {
+      "conditioned_joint_failure_upper_bound": 1.0,
+      "distorted_high_correlation_channel_mass_log2_upper_bound": -57.550292521089574,
+      "distorted_high_correlation_channel_mass_upper_bound": 4.738443340063172e-18,
+      "finite_collision_free_typicality_certified": false,
+      "fourth_power_low_dimension_mass": 5.815063562530086e-19,
+      "fourth_power_low_dimension_mass_log2": -60.57683884145447,
+      "fourth_power_mean_correlation_log2": -148.94029689513695,
+      "fourth_power_normalization_log2": 307.6580141593676,
+      "fourth_power_rms_correlation_log2": -148.4989743351891,
+      "high_correlation_threshold_log2": -119.36927986813387,
+      "information_threshold_copy_count": 160,
+      "log2_all_carrier_multiplicity_failure_upper_bound": -34.25685236435211,
+      "log2_conditioned_joint_failure_upper_bound": 12.886191186138113,
+      "log2_global_collision_free_probability": -41.78135865605296,
+      "log2_joint_source_triple_failure_upper_bound": -28.895167469914846,
+      "log2_pattern_richness_failure_upper_bound": -28.93068820894162,
+      "n": 40,
+      "optimized_minimum_pattern_block_size": 11,
+      "partition_count": 37338,
+      "portfolio_bad_fraction_upper_bound": 1.0,
+      "portfolio_failure_probability_upper_bound": 1.0,
+      "status": "finite-collision-free-triple-typicality-bound-vacuous"
+    },
+    {
+      "conditioned_joint_failure_upper_bound": 1.0,
+      "distorted_high_correlation_channel_mass_log2_upper_bound": -67.00983412972944,
+      "distorted_high_correlation_channel_mass_upper_bound": 6.73023025343624e-21,
+      "finite_collision_free_typicality_certified": false,
+      "fourth_power_low_dimension_mass": 8.259403754667021e-22,
+      "fourth_power_low_dimension_mass_log2": -70.03638045009434,
+      "fourth_power_mean_correlation_log2": -169.92142418065976,
+      "fourth_power_normalization_log2": 350.2428406140213,
+      "fourth_power_rms_correlation_log2": -169.44823498910654,
+      "high_correlation_threshold_log2": -135.59595421868607,
+      "information_threshold_copy_count": 181,
+      "log2_all_carrier_multiplicity_failure_upper_bound": -43.619115565523,
+      "log2_conditioned_joint_failure_upper_bound": 0.17227306425810696,
+      "log2_global_collision_free_probability": -33.6248581203821,
+      "log2_joint_source_triple_failure_upper_bound": -33.45258505612399,
+      "log2_pattern_richness_failure_upper_bound": -33.45384089207706,
+      "n": 44,
+      "optimized_minimum_pattern_block_size": 12,
+      "partition_count": 75175,
+      "portfolio_bad_fraction_upper_bound": 1.0,
+      "portfolio_failure_probability_upper_bound": 1.0,
+      "status": "finite-collision-free-triple-typicality-bound-vacuous"
+    },
+    {
+      "conditioned_joint_failure_upper_bound": 6.077195099700987e-05,
+      "distorted_high_correlation_channel_mass_log2_upper_bound": -76.71411179176,
+      "distorted_high_correlation_channel_mass_upper_bound": 8.067728227109294e-24,
+      "finite_collision_free_typicality_certified": true,
+      "fourth_power_low_dimension_mass": 9.90079422269366e-25,
+      "fourth_power_low_dimension_mass_log2": -79.74065811212489,
+      "fourth_power_mean_correlation_log2": -191.35964502596084,
+      "fourth_power_normalization_log2": 393.8399638938414,
+      "fourth_power_rms_correlation_log2": -190.89039186414115,
+      "high_correlation_threshold_log2": -152.2121790222752,
+      "information_threshold_copy_count": 203,
+      "log2_all_carrier_multiplicity_failure_upper_bound": -43.24720804879189,
+      "log2_conditioned_joint_failure_upper_bound": -14.006234866139003,
+      "log2_global_collision_free_probability": -26.510078745979804,
+      "log2_joint_source_triple_failure_upper_bound": -40.51631361211881,
+      "log2_pattern_richness_failure_upper_bound": -40.75185290364401,
+      "n": 48,
+      "optimized_minimum_pattern_block_size": 12,
+      "partition_count": 147273,
+      "portfolio_bad_fraction_upper_bound": 0.007795636663994152,
+      "portfolio_failure_probability_upper_bound": 0.007795636663994152,
+      "status": "collision-free-typical-triple-fourth-power-carrier-law-certified"
+    }
+  ],
+  "status": "typical-star-fourth-power-carrier-law-proved-pgm-mass-transfer-open",
+  "summary": "Replaced worst-case reciprocal correlation by the typical rank-weighted d^4 carrier law and proved its high-correlation tail factorially small on density-one collision-free triples.",
+  "theorem_contract": {
+    "correlation_tail": "Outside (n!)^-1/2 exp(O(sqrt n)) q-mass, both carrier dimensions exceed (n!)^(3/8), so gamma<=(n!)^-3/4.",
+    "fixed_factor_variance": "A fixed target tensor factor inserts r_nu(K)^2<=1 into the same exact class-size second moment, so the universal variance bound survives.",
+    "fourth_power_law": "Each star row then has rank within (1+/-eta)^7 of d_beta^4 d_p^4/(n!)^7, inducing q(alpha)=d_alpha^4/Z4.",
+    "portfolio_conversion": "If the conditioned joint source/triple bad probability is delta, then with probability at least 1-sqrt(delta), a source portfolio has at most sqrt(delta) bad triples.",
+    "scope": "The measure is coefficient-channel rank. Its relation to accepted PGM state mass and shorted endpoint spectra is unproved.",
+    "typical_pattern_blocks": "Three random orientations distribute source pairs among four complement-pattern classes; an optimized multinomial tail bounds small blocks.",
+    "uniform_carrier_multiplicities": "On a high-probability event, every output carrier in every active pattern block has normalized multiplicity within 1+/-eta of d_alpha/n!."
+  }
+}

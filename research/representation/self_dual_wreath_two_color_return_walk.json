@@ -1,0 +1,357 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The q_p^K coloring sum still requires 2^(pK) enumeration.",
+      "resolution": "It is exactly one convolution power; Fourier or Markov methods can access it without listing colorings.",
+      "resolved": true
+    },
+    {
+      "objection": "Any constant global spectral gap proves the natural edge.",
+      "resolution": "False. The S3 return walk has eigenvalue 3/4 while the natural block scale is 1/6; rare Fourier blocks dominate.",
+      "resolved": true
+    },
+    {
+      "objection": "Stationary return mass is automatically accepted PGM mass.",
+      "resolution": "Stationary mass is regular scalar mass; physical central support and source conditioning still have to be tracked.",
+      "resolved": false
+    },
+    {
+      "objection": "The stationary mass is too small to affect the required moments.",
+      "resolution": "Multiplication by the orientation width to the pth power makes it order one at p about 2K and enormous thereafter.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_order_two_color_return_walk_identity_proved": true,
+    "collision_free_central_return_bound_proved": false,
+    "global_coarse_gap_suffices_for_natural_edge": false,
+    "global_distinctness_removes_exact_stationary_support": true,
+    "growing_order_natural_frame_moment_bound_proved": false,
+    "natural_complete_node_frame_edge_proved": false,
+    "reason": "The exponential coloring sum is now one subgroup-walk return problem, but its collision-free central Fourier support is open.",
+    "source_only_generated_subgroup_order_proved": true,
+    "speedup_claim_allowed": false,
+    "unconditioned_regular_growing_moment_route_falsified": true
+  },
+  "created_at": "2026-08-08T02:57:15.262346+00:00",
+  "falsifiers_triggered": [
+    "Explicit 2^(pK) coloring enumeration is not intrinsic to the all-word moment problem.",
+    "A constant global return-walk gap is far too coarse to prove the inverse-factorial natural Fourier-block edge.",
+    "Unconditioned regular growing moments are dominated by exact stationary Fourier outliers from degree about 2K onward.",
+    "Regular stationary mass and collision-free physical state mass must not be conflated."
+  ],
+  "headline_metrics": {
+    "all_order_two_color_return_reduction_theorem_count": 1,
+    "collision_free_central_return_bound_count": 0,
+    "exact_return_identity_control_count": 4,
+    "exact_spectrum_control_count": 2,
+    "finite_control_failure_count": 0,
+    "largest_control_nonstationary_eigenvalue": 0.7500000000000018,
+    "natural_node_frame_edge_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "source_only_generated_subgroup_order_theorem_count": 1,
+    "source_only_subgroup_control_count": 4,
+    "stationary_moment_obstruction_scaling_count": 9,
+    "tail_stationary_critical_degree": 405,
+    "tail_stationary_critical_degree_to_copy_count_ratio": 1.975609756097561
+  },
+  "proof_obligations": [
+    {
+      "obligation": "remove_explicit_two_color_word_enumeration",
+      "resolution": "Transpose the K coloring rows into p orientation columns and recognize one convolution return event.",
+      "resolved": true
+    },
+    {
+      "obligation": "identify_stationary_subgroup_and_mass",
+      "resolution": "The membership blocks supply A_n^(2K); the sign incidence span has rank K+1 and fixes the subgroup index.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_collision_free_central_return_at_growing_order",
+      "resolution": "Need to remove repeated-label and other atypical Fourier blocks before a return estimate can imply a natural edge.",
+      "resolved": false
+    },
+    {
+      "obligation": "remove_stationary_outliers_before_growing_moments",
+      "resolution": "The exact stationary lower bound reaches one near degree 2K. Global distinctness removes stationary support, so any viable growing-moment proof must be central or injective.",
+      "resolved": true
+    },
+    {
+      "obligation": "transfer_return_bound_to_full_node_spectral_edge",
+      "resolution": "The required operator-valued/central-support estimate is not supplied by the scalar global return probability.",
+      "resolved": false
+    }
+  ],
+  "return_identity_controls": [
+    {
+      "coloring_count_per_sequence": 16,
+      "copy_count": 1,
+      "exact_return_identity_verified": true,
+      "exact_walk_return_probability": "9/32",
+      "exact_word_count_moment": "9/32",
+      "group_sequence_count": 16,
+      "moment_order": 4,
+      "n": 2,
+      "status": "exact-two-color-return-identity-verified"
+    },
+    {
+      "coloring_count_per_sequence": 256,
+      "copy_count": 2,
+      "exact_return_identity_verified": true,
+      "exact_walk_return_probability": "11/64",
+      "exact_word_count_moment": "11/64",
+      "group_sequence_count": 16,
+      "moment_order": 4,
+      "n": 2,
+      "status": "exact-two-color-return-identity-verified"
+    },
+    {
+      "coloring_count_per_sequence": 64,
+      "copy_count": 2,
+      "exact_return_identity_verified": true,
+      "exact_walk_return_probability": "1/36",
+      "exact_word_count_moment": "1/36",
+      "group_sequence_count": 216,
+      "moment_order": 3,
+      "n": 3,
+      "status": "exact-two-color-return-identity-verified"
+    },
+    {
+      "coloring_count_per_sequence": 256,
+      "copy_count": 2,
+      "exact_return_identity_verified": true,
+      "exact_walk_return_probability": "11/768",
+      "exact_word_count_moment": "11/768",
+      "group_sequence_count": 1296,
+      "moment_order": 4,
+      "n": 3,
+      "status": "exact-two-color-return-identity-verified"
+    }
+  ],
+  "spectrum_controls": [
+    {
+      "ambient_dimension": 16,
+      "copy_count": 2,
+      "exact_spectrum_control_verified": true,
+      "global_gap_is_natural_scale_edge": false,
+      "largest_nonstationary_eigenvalue": 0.5000000000000004,
+      "n": 2,
+      "natural_inverse_group_scale": 0.5,
+      "predicted_stationary_eigenvalue_multiplicity": 2,
+      "stationary_eigenvalue_multiplicity": 2,
+      "status": "exact-return-walk-spectrum-verified-global-gap-too-coarse"
+    },
+    {
+      "ambient_dimension": 1296,
+      "copy_count": 2,
+      "exact_spectrum_control_verified": true,
+      "global_gap_is_natural_scale_edge": false,
+      "largest_nonstationary_eigenvalue": 0.7500000000000018,
+      "n": 3,
+      "natural_inverse_group_scale": 0.16666666666666666,
+      "predicted_stationary_eigenvalue_multiplicity": 2,
+      "stationary_eigenvalue_multiplicity": 2,
+      "status": "exact-return-walk-spectrum-verified-global-gap-too-coarse"
+    }
+  ],
+  "stationary_moment_obstructions": [
+    {
+      "collision_free_central_return_bound_proved": false,
+      "critical_degree_to_copy_count_ratio": 1.6666666666666667,
+      "first_order_one_stationary_moment_degree": 30,
+      "generated_subgroup_order_log2": 533.771488661942,
+      "globally_distinct_stationary_support_is_empty": true,
+      "group_order_log2": 15.29920801838728,
+      "log2_stationary_lower_bound_at_copy_degree": -209.77148866194204,
+      "log2_stationary_lower_bound_at_four_times_copy_degree": 762.228511338058,
+      "log2_stationary_lower_bound_at_twice_copy_degree": 114.22851133805796,
+      "n": 8,
+      "orientation_count_log2": 18,
+      "selected_copy_count": 18,
+      "status": "regular-growing-moments-stationary-dominated-central-trim-required",
+      "unconditioned_regular_growing_moments_avoid_stationary_outliers": false
+    },
+    {
+      "collision_free_central_return_bound_proved": false,
+      "critical_degree_to_copy_count_ratio": 1.8387096774193548,
+      "first_order_one_stationary_moment_degree": 57,
+      "generated_subgroup_order_log2": 1757.7982245126752,
+      "globally_distinct_stationary_support_is_empty": true,
+      "group_order_log2": 28.835455234075408,
+      "log2_stationary_lower_bound_at_copy_degree": -796.7982245126752,
+      "log2_stationary_lower_bound_at_four_times_copy_degree": 2086.201775487325,
+      "log2_stationary_lower_bound_at_twice_copy_degree": 164.20177548732477,
+      "n": 12,
+      "orientation_count_log2": 31,
+      "selected_copy_count": 31,
+      "status": "regular-growing-moments-stationary-dominated-central-trim-required",
+      "unconditioned_regular_growing_moments_avoid_stationary_outliers": false
+    },
+    {
+      "collision_free_central_return_bound_proved": false,
+      "critical_degree_to_copy_count_ratio": 1.872340425531915,
+      "first_order_one_stationary_moment_degree": 88,
+      "generated_subgroup_order_log2": 4113.513204168967,
+      "globally_distinct_stationary_support_is_empty": true,
+      "group_order_log2": 44.25014046988262,
+      "log2_stationary_lower_bound_at_copy_degree": -1904.5132041689667,
+      "log2_stationary_lower_bound_at_four_times_copy_degree": 4722.486795831033,
+      "log2_stationary_lower_bound_at_twice_copy_degree": 304.4867958310333,
+      "n": 16,
+      "orientation_count_log2": 47,
+      "selected_copy_count": 47,
+      "status": "regular-growing-moments-stationary-dominated-central-trim-required",
+      "unconditioned_regular_growing_moments_avoid_stationary_outliers": false
+    },
+    {
+      "collision_free_central_return_bound_proved": false,
+      "critical_degree_to_copy_count_ratio": 1.90625,
+      "first_order_one_stationary_moment_degree": 122,
+      "generated_subgroup_order_log2": 7754.905141875996,
+      "globally_distinct_stationary_support_is_empty": true,
+      "group_order_log2": 61.07738392090622,
+      "log2_stationary_lower_bound_at_copy_degree": -3658.9051418759964,
+      "log2_stationary_lower_bound_at_four_times_copy_degree": 8629.094858124005,
+      "log2_stationary_lower_bound_at_twice_copy_degree": 437.0948581240036,
+      "n": 20,
+      "orientation_count_log2": 64,
+      "selected_copy_count": 64,
+      "status": "regular-growing-moments-stationary-dominated-central-trim-required",
+      "unconditioned_regular_growing_moments_avoid_stationary_outliers": false
+    },
+    {
+      "collision_free_central_return_bound_proved": false,
+      "critical_degree_to_copy_count_ratio": 1.9268292682926829,
+      "first_order_one_stationary_moment_degree": 158,
+      "generated_subgroup_order_log2": 12881.175816732475,
+      "globally_distinct_stationary_support_is_empty": true,
+      "group_order_log2": 79.03765741910046,
+      "log2_stationary_lower_bound_at_copy_degree": -6157.175816732475,
+      "log2_stationary_lower_bound_at_four_times_copy_degree": 14014.824183267525,
+      "log2_stationary_lower_bound_at_twice_copy_degree": 566.8241832675249,
+      "n": 24,
+      "orientation_count_log2": 82,
+      "selected_copy_count": 82,
+      "status": "regular-growing-moments-stationary-dominated-central-trim-required",
+      "unconditioned_regular_growing_moments_avoid_stationary_outliers": false
+    },
+    {
+      "collision_free_central_return_bound_proved": false,
+      "critical_degree_to_copy_count_ratio": 1.95,
+      "first_order_one_stationary_moment_degree": 195,
+      "generated_subgroup_order_log2": 19489.83915024747,
+      "globally_distinct_stationary_support_is_empty": true,
+      "group_order_log2": 97.94419575123734,
+      "log2_stationary_lower_bound_at_copy_degree": -9489.83915024747,
+      "log2_stationary_lower_bound_at_four_times_copy_degree": 20510.16084975253,
+      "log2_stationary_lower_bound_at_twice_copy_degree": 510.16084975253034,
+      "n": 28,
+      "orientation_count_log2": 100,
+      "selected_copy_count": 100,
+      "status": "regular-growing-moments-stationary-dominated-central-trim-required",
+      "unconditioned_regular_growing_moments_avoid_stationary_outliers": false
+    },
+    {
+      "collision_free_central_return_bound_proved": false,
+      "critical_degree_to_copy_count_ratio": 1.9583333333333333,
+      "first_order_one_stationary_moment_degree": 235,
+      "generated_subgroup_order_log2": 28120.183276566473,
+      "globally_distinct_stationary_support_is_empty": true,
+      "group_order_log2": 117.6632636523603,
+      "log2_stationary_lower_bound_at_copy_degree": -13720.183276566473,
+      "log2_stationary_lower_bound_at_four_times_copy_degree": 29479.816723433527,
+      "log2_stationary_lower_bound_at_twice_copy_degree": 679.8167234335269,
+      "n": 32,
+      "orientation_count_log2": 120,
+      "selected_copy_count": 120,
+      "status": "regular-growing-moments-stationary-dominated-central-trim-required",
+      "unconditioned_regular_growing_moments_avoid_stationary_outliers": false
+    },
+    {
+      "collision_free_central_return_bound_proved": false,
+      "critical_degree_to_copy_count_ratio": 1.962962962962963,
+      "first_order_one_stationary_moment_degree": 318,
+      "generated_subgroup_order_log2": 51406.52890303384,
+      "globally_distinct_stationary_support_is_empty": true,
+      "group_order_log2": 159.1590398241785,
+      "log2_stationary_lower_bound_at_copy_degree": -25162.52890303384,
+      "log2_stationary_lower_bound_at_four_times_copy_degree": 53569.47109696616,
+      "log2_stationary_lower_bound_at_twice_copy_degree": 1081.471096966161,
+      "n": 40,
+      "orientation_count_log2": 162,
+      "selected_copy_count": 162,
+      "status": "regular-growing-moments-stationary-dominated-central-trim-required",
+      "unconditioned_regular_growing_moments_avoid_stationary_outliers": false
+    },
+    {
+      "collision_free_central_return_bound_proved": false,
+      "critical_degree_to_copy_count_ratio": 1.975609756097561,
+      "first_order_one_stationary_moment_degree": 405,
+      "generated_subgroup_order_log2": 83005.3245321771,
+      "globally_distinct_stationary_support_is_empty": true,
+      "group_order_log2": 202.94957202970025,
+      "log2_stationary_lower_bound_at_copy_degree": -40980.324532177096,
+      "log2_stationary_lower_bound_at_four_times_copy_degree": 85094.6754678229,
+      "log2_stationary_lower_bound_at_twice_copy_degree": 1044.6754678229045,
+      "n": 48,
+      "orientation_count_log2": 205,
+      "selected_copy_count": 205,
+      "status": "regular-growing-moments-stationary-dominated-central-trim-required",
+      "unconditioned_regular_growing_moments_avoid_stationary_outliers": false
+    }
+  ],
+  "status": "two-color-return-walk-reduction-proved-central-return-open",
+  "subgroup_controls": [
+    {
+      "ambient_product_group_order": 4,
+      "copy_count": 1,
+      "exact_generated_subgroup_formula_verified": true,
+      "exact_generated_subgroup_order": 4,
+      "incidence_rank_over_f2": 2,
+      "n": 2,
+      "predicted_generated_subgroup_order": 4,
+      "predicted_stationary_return_probability": "1/4",
+      "status": "exact-source-only-generated-subgroup-formula-verified"
+    },
+    {
+      "ambient_product_group_order": 16,
+      "copy_count": 2,
+      "exact_generated_subgroup_formula_verified": true,
+      "exact_generated_subgroup_order": 8,
+      "incidence_rank_over_f2": 3,
+      "n": 2,
+      "predicted_generated_subgroup_order": 8,
+      "predicted_stationary_return_probability": "1/8",
+      "status": "exact-source-only-generated-subgroup-formula-verified"
+    },
+    {
+      "ambient_product_group_order": 36,
+      "copy_count": 1,
+      "exact_generated_subgroup_formula_verified": true,
+      "exact_generated_subgroup_order": 36,
+      "incidence_rank_over_f2": 2,
+      "n": 3,
+      "predicted_generated_subgroup_order": 36,
+      "predicted_stationary_return_probability": "1/36",
+      "status": "exact-source-only-generated-subgroup-formula-verified"
+    },
+    {
+      "ambient_product_group_order": 1296,
+      "copy_count": 2,
+      "exact_generated_subgroup_formula_verified": true,
+      "exact_generated_subgroup_order": 648,
+      "incidence_rank_over_f2": 3,
+      "n": 3,
+      "predicted_generated_subgroup_order": 648,
+      "predicted_stationary_return_probability": "1/648",
+      "status": "exact-source-only-generated-subgroup-formula-verified"
+    }
+  ],
+  "summary": "Converted every two-color identity-count moment into a fixed subgroup-walk return probability and identified its stationary subgroup.",
+  "theorem_contract": {
+    "generated_subgroup": "For S_n,n>=5, independent A_n membership blocks and a K+1-dimensional sign span give |L_K|=|S_n|^(2K)/2^(K-1).",
+    "harmonic_reduction": "Growing two-color word moments are convolution powers of one fixed self-adjoint probability measure on G^(2K).",
+    "return_identity": "E_x(q_p(x)/2^p)^K equals the p-step identity return probability of the source-only orientation subgroup walk.",
+    "scope_exclusion": "A coarse global gap is not a collision-free central-support bound and does not establish the natural 1/|S_n| frame edge."
+  }
+}

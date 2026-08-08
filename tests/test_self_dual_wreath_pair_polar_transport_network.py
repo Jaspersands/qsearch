@@ -47,6 +47,7 @@ def test_asymptotic_pair_transport_correlation_gate_stays_open() -> None:
     )
     assert large.smallest_possible_nonzero_pair_correlation_can_be_exponential
     assert not large.inverse_polynomial_used_edge_correlation_proved
+    assert large.gpe_direct_pair_polar_bypasses_edge_correlation
     assert not large.polynomial_transport_graph_diameter_proved
     assert not large.polynomial_coherent_path_finder_proved
 
@@ -61,6 +62,9 @@ def test_report_does_not_confuse_stacked_pair_conditioning_with_transport() -> N
     assert report.claim_gate["w5_anchor_transport_is_direct_common_range"]
     assert not report.claim_gate[
         "all_n_inverse_polynomial_used_edge_correlation_proved"
+    ]
+    assert report.claim_gate[
+        "gpe_direct_pair_polar_bypasses_edge_correlation"
     ]
     assert not report.claim_gate[
         "all_n_polynomial_transport_graph_diameter_proved"

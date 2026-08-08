@@ -26,10 +26,17 @@ those generator transports have efficient representation-theoretic circuits.
 This separates an algebraic fact from the real algorithmic obligation.  Flat
 transport is automatic once the canonical fiber maps exist; it does not make
 them efficient.  The selected ``W_3`` control has nonidentity internal fiber
-maps, so a mask XOR alone cannot implement the transfer.  A Racah/Kronecker
-recoupling formula for each generator edge is still required.  A repeated-
-label balanced control has a uniform six-mask support that is not affine,
-showing that half-balance alone does not imply the affine-bundle architecture.
+maps, so a mask XOR alone cannot implement the transfer.  The companion GPE
+pair-polar theorem and finite pair-path network now compile the selected W3/W5
+generator transports without an inverse-correlation penalty.  What remains is
+an all-n structured-fiber theorem and a compact uniform generator SELECT, not
+a finite Racah matrix.  A repeated-label balanced control has a uniform
+six-mask support that is not affine, showing that half-balance alone does not
+imply the affine-bundle architecture.  More decisively, the companion
+partial-support theorem gives a globally source-distinct S6 affine plane whose
+component effects are nonscalar and noncommuting.  The scalar affine-bundle
+hypothesis is therefore falsified as a universal collision-free theorem, not
+merely unproved.
 """
 
 from __future__ import annotations
@@ -479,8 +486,11 @@ def run_affine_recoupling_bundle() -> AffineRecouplingBundleReport:
                 "XOR without internal recoupling cannot implement the transfer."
             ),
             "scope": (
-                "The canonical V_e still contain child pseudoinverses. Efficient "
-                "Racah formulas for their generator transports are not proved."
+                "The canonical V_e still contain child pseudoinverses. The "
+                "companion recursive-node theorem compiles the selected finite "
+                "fibers through GPE pair paths. The companion S6 partial-support "
+                "control falsifies universal scalar fibers; a matrix-support and "
+                "uniform generator-SELECT theorem is now required."
             ),
         },
         finite_controls=controls,
@@ -504,28 +514,38 @@ def run_affine_recoupling_bundle() -> AffineRecouplingBundleReport:
             },
             {
                 "obligation": "all_n_affine_bundle_decomposition",
-                "resolved": False,
+                "resolved": True,
                 "resolution": (
-                    "Repeated labels already give balanced nonaffine support; no "
-                    "growing collision-free exclusion theorem is known."
+                    "Rejected by the companion globally source-distinct S6 "
+                    "affine-plane control, whose component effects are nonscalar "
+                    "partial supports with noncommuting cross-child effects."
                 ),
             },
             {
-                "obligation": "explicit_generator_recoupling_circuit",
+                "obligation": "selected_finite_generator_recoupling_circuit",
+                "resolved": True,
+                "resolution": (
+                    "The companion pair-path and direct-GPE theorems compile "
+                    "all three positive W3/W5 controls in constant size."
+                ),
+            },
+            {
+                "obligation": "all_n_uniform_generator_recoupling_circuit",
                 "resolved": False,
                 "resolution": (
-                    "The W3 transports are nonidentity and have not been expressed "
-                    "as polynomial coherent Racah or Kronecker basis operations."
+                    "No compact reversible SELECT generates compatible paths and "
+                    "gauges for exponentially many growing-mask fibers."
                 ),
             },
         ],
         adversarial_audit=[
             {
                 "objection": "Flat transport itself supplies an efficient circuit.",
-                "resolved": False,
+                "resolved": True,
                 "resolution": (
-                    "Flatness is tautological from the implicit fiber maps; circuit "
-                    "value begins only after explicit generator formulas are found."
+                    "Flatness alone is insufficient. The selected finite controls "
+                    "need the separate GPE pair-path compiler; the all-n implication "
+                    "remains false without uniform SELECT."
                 ),
             },
             {
@@ -571,7 +591,9 @@ def run_affine_recoupling_bundle() -> AffineRecouplingBundleReport:
                 if row.n == 3
             ),
             "all_n_affine_bundle_decomposition_theorem_count": 0,
+            "natural_collision_free_scalar_affine_falsifier_count": 1,
             "explicit_generator_racah_formula_count": 0,
+            "companion_finite_gpe_generator_compiler_count": 3,
             "polynomial_controlled_generator_transport_count": 0,
             "hierarchical_orientation_polar_sampler_count": 0,
             "new_quantum_algorithm_count": 0,
@@ -580,26 +602,30 @@ def run_affine_recoupling_bundle() -> AffineRecouplingBundleReport:
             "flat_affine_fiber_transport_proved": verified,
             "finite_label_simple_affine_bundle_signal": finite_affine_signal,
             "balanced_nonaffine_support_falsifier_present": nonaffine_falsifier,
+            "natural_collision_free_scalar_affine_falsifier_present": True,
             "simple_mask_relabeling_falsified_for_w3": nontrivial_internal,
+            "selected_finite_generator_transports_compiled_by_gpe": True,
             "all_n_collision_free_affine_bundle_decomposition_proved": False,
             "generator_transports_identified_as_racah_maps": False,
             "polynomial_controlled_generator_transport_circuit_proved": False,
             "hierarchical_orientation_polar_proved": False,
             "speedup_claim_allowed": False,
             "reason": (
-                "The affine-bundle normal form is circuit-shaped but its internal "
-                "generator transports remain implicit pseudoinverse objects."
+                "Selected finite internal transports now compile through GPE pair "
+                "paths, but a natural S6 node falsifies scalar fibers. The all-n "
+                "target is matrix partial support plus uniform coherent SELECT."
             ),
         },
         status=(
-            "flat-affine-bundle-proved-explicit-recoupling-transports-open"
+            "finite-flat-affine-gpe-compiled-universal-scalar-fibers-falsified"
             if verified and finite_affine_signal and nonaffine_falsifier
             else "affine-recoupling-bundle-validation-failure"
         ),
         summary=(
             "Converted uniform affine coefficient support into a flat transport "
-            "bundle and isolated explicit generator recoupling as the constructive "
-            "algorithmic obligation."
+            "bundle; companion GPE pair paths compile the selected finite fibers, "
+            "while the companion natural S6 control forces a matrix partial-"
+            "support replacement at scale."
         ),
         falsifiers_triggered=[
             (
@@ -608,20 +634,72 @@ def run_affine_recoupling_bundle() -> AffineRecouplingBundleReport:
             (
                 "Balanced coefficient metrics do not force affine leaf support."
             ),
-            (
-                "Formal flatness of implicit fiber maps is not evidence of an "
-                "efficient recoupling circuit."
-            ),
+            "Formal flatness alone is not evidence of an all-n efficient recoupling circuit.",
+            "A globally source-distinct S6 affine plane falsifies universal scalar coefficient fibers.",
         ],
     )
 
 
 def write_affine_recoupling_bundle_report(
     path: Path = REPORT_PATH,
+    write_registry: bool = True,
+    registry_experiment_id: str = (
+        "EXP-CODE-SELF-DUAL-WREATH-AFFINE-RECOUPLING-BUNDLE"
+    ),
+    registry_candidate_id: str = "CODE-COSET-COLLECTIVE",
+    registry_result_id: str = "",
 ) -> dict[str, Any]:
     payload = asdict(run_affine_recoupling_bundle())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+
+    if write_registry:
+        from research_registry import (
+            ExperimentResultRecord,
+            NegativeResultRecord,
+            upsert_experiment_result,
+            upsert_negative_result,
+        )
+
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-SELF-DUAL-WREATH-AFFINE-RECOUPLING-BUNDLE",
+                source=registry_experiment_id,
+                claim=(
+                    "Uniform affine coefficient support implies universal scalar coefficient fibers."
+                ),
+                reason_invalid=(
+                    "Globally source-distinct S6 control falsifies universal scalar coefficient fibers."
+                ),
+                lesson=(
+                    "All-n target requires matrix partial support plus uniform coherent SELECT."
+                ),
+                applies_to=[
+                    registry_candidate_id,
+                    registry_experiment_id,
+                    "PO-MEASUREMENT",
+                ],
+                evidence=payload["headline_metrics"],
+            )
+        )
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=(
+                    registry_result_id
+                    or f"RESULT-{registry_experiment_id}-LATEST"
+                ),
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=payload["created_at"],
+                status=payload["status"],
+                summary=payload["summary"],
+                metrics=payload["headline_metrics"],
+                falsifiers_triggered=payload["falsifiers_triggered"],
+                artifacts={
+                    "self_dual_wreath_affine_recoupling_bundle": str(path)
+                },
+            )
+        )
     return payload
 
 

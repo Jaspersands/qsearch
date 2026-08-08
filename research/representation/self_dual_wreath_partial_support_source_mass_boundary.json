@@ -1,0 +1,255 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The natural S6 counterexample proves matrix partial supports have positive asymptotic PGM mass.",
+      "resolution": "False for its direct mechanism: trivial and sign anchors are factorially rare under the source law.",
+      "resolved": true
+    },
+    {
+      "objection": "Collision-free conditioning can amplify the rare source event to constant mass.",
+      "resolution": "The conditioning probability tends to one; the exact transfer is division by that probability only.",
+      "resolved": true
+    },
+    {
+      "objection": "Rarity of low-dimensional anchors restores universal scalar affine fibers.",
+      "resolution": "High-dimensional recoupling multiplicities can still create matrix partial supports; no scalar-on-bulk theorem follows.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "all_polynomial_dimension_anchor_mechanisms_have_vanishing_natural_mass": true,
+    "direct_s6_low_dimension_mechanism_has_vanishing_natural_mass": true,
+    "finite_s6_falsifies_universal_scalar_affinity": true,
+    "high_dimension_matrix_partial_support_mass_controlled": false,
+    "matrix_partial_support_gpe_compiler_proved": false,
+    "reason": "The known S6 mechanism is physically negligible because of its one-dimensional anchors, but no theorem controls matrix partial supports generated entirely by typical high-dimensional sources.",
+    "recursive_orientation_polar_proved": false,
+    "scalar_affine_behavior_holds_on_positive_native_bulk": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-08T06:52:57.206644+00:00",
+  "exact_controls": [
+    {
+      "dimension_cutoff": 1,
+      "exact_probability_below_bound": true,
+      "exact_single_draw_low_dimension_probability": 0.002777777777777778,
+      "exact_single_draw_low_dimension_probability_log2": -8.491853096329674,
+      "n": 6,
+      "partition_count_bound": 0.015277777777777777,
+      "partition_count_bound_log2": -6.0324214776923775,
+      "status": "exact-plancherel-low-dimension-mass-below-counting-bound"
+    },
+    {
+      "dimension_cutoff": 8,
+      "exact_probability_below_bound": true,
+      "exact_single_draw_low_dimension_probability": 0.00248015873015873,
+      "exact_single_draw_low_dimension_probability_log2": -8.655351828612554,
+      "n": 8,
+      "partition_count_bound": 0.03492063492063492,
+      "partition_count_bound_log2": -4.839776399749981,
+      "status": "exact-plancherel-low-dimension-mass-below-counting-bound"
+    },
+    {
+      "dimension_cutoff": 100,
+      "exact_probability_below_bound": true,
+      "exact_single_draw_low_dimension_probability": 0.013860229276895944,
+      "exact_single_draw_low_dimension_probability_log2": -6.172905066938495,
+      "n": 10,
+      "partition_count_bound": 0.11574074074074074,
+      "partition_count_bound_log2": -3.111031312388744,
+      "status": "exact-plancherel-low-dimension-mass-below-counting-bound"
+    },
+    {
+      "dimension_cutoff": 144,
+      "exact_probability_below_bound": true,
+      "exact_single_draw_low_dimension_probability": 9.80664782748116e-05,
+      "exact_single_draw_low_dimension_probability_log2": -13.315880405182853,
+      "n": 12,
+      "partition_count_bound": 0.0033333333333333335,
+      "partition_count_bound_log2": -8.228818690495881,
+      "status": "exact-plancherel-low-dimension-mass-below-counting-bound"
+    }
+  ],
+  "falsifiers_triggered": [
+    "A finite natural counterexample need not have positive asymptotic source mass.",
+    "The direct S6 matrix-support mechanism is anchored by factorially rare one-dimensional irreps.",
+    "Collision-free conditioning cannot rescue a source event when its own probability tends to one.",
+    "Low-dimensional-anchor exclusion is not a scalar-on-bulk theorem for typical high-dimensional recoupling."
+  ],
+  "headline_metrics": {
+    "direct_s6_trivial_sign_mass_boundary_theorem_count": 1,
+    "exact_control_count": 4,
+    "exact_control_failure_count": 0,
+    "finite_direct_s6_n12_benchmark_certified_row_count": 3,
+    "finite_polynomial_anchor_n12_benchmark_certified_row_count": 1,
+    "high_dimension_partial_support_mass_theorem_count": 0,
+    "low_dimension_plancherel_counting_bound_theorem_count": 1,
+    "matrix_partial_support_gpe_compiler_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_dimension_anchor_mass_boundary_theorem_count": 1,
+    "tail_log2_conditioned_direct_s6_mass_upper_bound": -362.06195129854717,
+    "tail_log2_conditioned_polynomial_anchor_mass_upper_bound": -105.9263239253979,
+    "tail_n": 48
+  },
+  "proof_obligations": [
+    {
+      "obligation": "transfer_direct_s6_partial_support_pattern_to_natural_source_mass",
+      "resolution": "Its required trivial/sign pair has factorially vanishing probability before and after collision-free conditioning.",
+      "resolved": true
+    },
+    {
+      "obligation": "exclude_all_polynomial_dimension_anchor_mechanisms",
+      "resolution": "The partition-count union bound is exp(O(sqrt(n))) times polynomial over n!, hence superpolynomially small at threshold copies.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_high_dimension_matrix_partial_support_mass",
+      "resolution": "Need a carrier/Gram classification for nonscalar effects generated without any low-dimensional source labels.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "direct_s6_mechanism_conditioned_mass_superpolynomially_small": false,
+      "global_collision_free_probability": 2.765748953793903e-44,
+      "group_order_decimal": "479001600",
+      "information_threshold_copy_count": 29,
+      "log2_collision_free_conditioned_any_one_dimensional_upper_bound": 0.0,
+      "log2_collision_free_conditioned_any_polynomial_dimension_upper_bound": 0.0,
+      "log2_collision_free_conditioned_trivial_and_sign_upper_bound": 0.0,
+      "log2_global_collision_free_probability": -144.69716596561037,
+      "log2_unconditioned_any_one_dimensional_upper_bound": -21.977474238947835,
+      "log2_unconditioned_any_polynomial_dimension_upper_bound": 0.0,
+      "log2_unconditioned_trivial_and_sign_upper_bound": -45.9800394588585,
+      "n": 12,
+      "partition_count": 77,
+      "polynomial_dimension_anchor_conditioned_mass_superpolynomially_small": false,
+      "polynomial_dimension_cutoff": 20736,
+      "source_draw_count": 58,
+      "status": "asymptotic-source-mass-bound-not-yet-below-benchmark"
+    },
+    {
+      "direct_s6_mechanism_conditioned_mass_superpolynomially_small": false,
+      "global_collision_free_probability": 2.8314987745312115e-38,
+      "group_order_decimal": "20922789888000",
+      "information_threshold_copy_count": 45,
+      "log2_collision_free_conditioned_any_one_dimensional_upper_bound": 0.0,
+      "log2_collision_free_conditioned_any_polynomial_dimension_upper_bound": 0.0,
+      "log2_collision_free_conditioned_trivial_and_sign_upper_bound": 0.0,
+      "log2_global_collision_free_probability": -124.73170170029057,
+      "log2_unconditioned_any_one_dimensional_upper_bound": -36.758287373552946,
+      "log2_unconditioned_any_polynomial_dimension_upper_bound": 0.0,
+      "log2_unconditioned_trivial_and_sign_upper_bound": -75.53269441246917,
+      "n": 16,
+      "partition_count": 231,
+      "polynomial_dimension_anchor_conditioned_mass_superpolynomially_small": false,
+      "polynomial_dimension_cutoff": 65536,
+      "source_draw_count": 90,
+      "status": "asymptotic-source-mass-bound-not-yet-below-benchmark"
+    },
+    {
+      "direct_s6_mechanism_conditioned_mass_superpolynomially_small": false,
+      "global_collision_free_probability": 2.854327067536636e-33,
+      "group_order_decimal": "2432902008176640000",
+      "information_threshold_copy_count": 62,
+      "log2_collision_free_conditioned_any_one_dimensional_upper_bound": 0.0,
+      "log2_collision_free_conditioned_any_polynomial_dimension_upper_bound": 0.0,
+      "log2_collision_free_conditioned_trivial_and_sign_upper_bound": -0.14758055255950353,
+      "log2_global_collision_free_probability": -108.11047647352683,
+      "log2_unconditioned_any_one_dimensional_upper_bound": -53.123187610519345,
+      "log2_unconditioned_any_polynomial_dimension_upper_bound": -10.255441218618408,
+      "log2_unconditioned_trivial_and_sign_upper_bound": -108.25805702608633,
+      "n": 20,
+      "partition_count": 627,
+      "polynomial_dimension_anchor_conditioned_mass_superpolynomially_small": false,
+      "polynomial_dimension_cutoff": 160000,
+      "source_draw_count": 124,
+      "status": "asymptotic-source-mass-bound-not-yet-below-benchmark"
+    },
+    {
+      "direct_s6_mechanism_conditioned_mass_superpolynomially_small": false,
+      "global_collision_free_probability": 3.8166641088344836e-28,
+      "group_order_decimal": "620448401733239439360000",
+      "information_threshold_copy_count": 80,
+      "log2_collision_free_conditioned_any_one_dimensional_upper_bound": 0.0,
+      "log2_collision_free_conditioned_any_polynomial_dimension_upper_bound": 0.0,
+      "log2_collision_free_conditioned_trivial_and_sign_upper_bound": -52.3588293568139,
+      "log2_global_collision_free_probability": -91.08167443121529,
+      "log2_unconditioned_any_one_dimensional_upper_bound": -70.71572932421309,
+      "log2_unconditioned_any_polynomial_dimension_upper_bound": -24.414893205169196,
+      "log2_unconditioned_trivial_and_sign_upper_bound": -143.4405037880292,
+      "n": 24,
+      "partition_count": 1575,
+      "polynomial_dimension_anchor_conditioned_mass_superpolynomially_small": false,
+      "polynomial_dimension_cutoff": 331776,
+      "source_draw_count": 160,
+      "status": "asymptotic-source-mass-bound-not-yet-below-benchmark"
+    },
+    {
+      "direct_s6_mechanism_conditioned_mass_superpolynomially_small": true,
+      "global_collision_free_probability": 1.4038963429645325e-19,
+      "group_order_decimal": "263130836933693530167218012160000000",
+      "information_threshold_copy_count": 118,
+      "log2_collision_free_conditioned_any_one_dimensional_upper_bound": -46.15342321796642,
+      "log2_collision_free_conditioned_any_polynomial_dimension_upper_bound": 0.0,
+      "log2_collision_free_conditioned_trivial_and_sign_upper_bound": -156.94016992376172,
+      "log2_global_collision_free_probability": -62.62719738503205,
+      "log2_unconditioned_any_one_dimensional_upper_bound": -108.78062060299847,
+      "log2_unconditioned_any_polynomial_dimension_upper_bound": -56.7532329089457,
+      "log2_unconditioned_trivial_and_sign_upper_bound": -219.56736730879376,
+      "n": 32,
+      "partition_count": 8349,
+      "polynomial_dimension_anchor_conditioned_mass_superpolynomially_small": false,
+      "polynomial_dimension_cutoff": 1048576,
+      "source_draw_count": 236,
+      "status": "asymptotic-source-mass-bound-not-yet-below-benchmark"
+    },
+    {
+      "direct_s6_mechanism_conditioned_mass_superpolynomially_small": true,
+      "global_collision_free_probability": 2.6458047081568414e-13,
+      "group_order_decimal": "815915283247897734345611269596115894272000000000",
+      "information_threshold_copy_count": 160,
+      "log2_collision_free_conditioned_any_one_dimensional_upper_bound": -108.05575307325583,
+      "log2_collision_free_conditioned_any_polynomial_dimension_upper_bound": -51.29197128254838,
+      "log2_collision_free_conditioned_trivial_and_sign_upper_bound": -259.89738028366946,
+      "log2_global_collision_free_probability": -41.781358656035344,
+      "log2_unconditioned_any_one_dimensional_upper_bound": -149.83711172929117,
+      "log2_unconditioned_any_polynomial_dimension_upper_bound": -93.07332993858373,
+      "log2_unconditioned_trivial_and_sign_upper_bound": -301.67873893970483,
+      "n": 40,
+      "partition_count": 37338,
+      "polynomial_dimension_anchor_conditioned_mass_superpolynomially_small": false,
+      "polynomial_dimension_cutoff": 2560000,
+      "source_draw_count": 320,
+      "status": "asymptotic-source-mass-bound-not-yet-below-benchmark"
+    },
+    {
+      "direct_s6_mechanism_conditioned_mass_superpolynomially_small": true,
+      "global_collision_free_probability": 1.04633586088077e-08,
+      "group_order_decimal": "12413915592536072670862289047373375038521486354677760000000000",
+      "information_threshold_copy_count": 203,
+      "log2_collision_free_conditioned_any_one_dimensional_upper_bound": -166.77415736661894,
+      "log2_collision_free_conditioned_any_polynomial_dimension_upper_bound": -105.9263239253979,
+      "log2_collision_free_conditioned_trivial_and_sign_upper_bound": -362.06195129854717,
+      "log2_global_collision_free_probability": -26.510078745896127,
+      "log2_unconditioned_any_one_dimensional_upper_bound": -193.28423611251506,
+      "log2_unconditioned_any_polynomial_dimension_upper_bound": -132.43640267129402,
+      "log2_unconditioned_trivial_and_sign_upper_bound": -388.5720300444433,
+      "n": 48,
+      "partition_count": 147273,
+      "polynomial_dimension_anchor_conditioned_mass_superpolynomially_small": true,
+      "polynomial_dimension_cutoff": 5308416,
+      "source_draw_count": 406,
+      "status": "direct-s6-and-polynomial-anchor-source-mass-superpolynomially-small"
+    }
+  ],
+  "status": "low-dimension-partial-support-mass-excluded-high-dimension-route-open",
+  "summary": "Proved that the direct S6 scalar-affine falsifier and every polynomial-dimensional-anchor variant have factorially vanishing natural source mass, leaving high-dimensional matrix supports as the only relevant obstruction.",
+  "theorem_contract": {
+    "conditioning_transfer": "Conditioning on globally distinct sources divides each upper bound by the exact collision-free probability, which tends to one at m=2 ceil(log2 n!).",
+    "direct_s6_pattern": "The direct conjugate-chain S6 mechanism requires both trivial and sign sources, whose joint occurrence is at most m(m-1)/(n!)^2.",
+    "low_dimension_plancherel_bound": "For one Plancherel partition, Pr[d_lambda<=L] is exactly n!^-1 sum_(d_lambda<=L)d_lambda^2 and at most p(n)L^2/n!.",
+    "multiple_source_union": "For m independent source labels, any dimension-at-most-L anchor has probability at most m p(n)L^2/n!.",
+    "scope": "This excludes low-dimensional-anchor mechanisms from positive natural source mass. It does not bound matrix partial supports formed entirely from typical high-dimensional sources."
+  }
+}

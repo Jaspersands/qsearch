@@ -1,5 +1,284 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
+> **Binding model-allocation goal clause.** While high-capability Codex usage
+> remains, spend it on theorem derivation, counterexample construction,
+> asymptotic analysis, mechanism selection, and other decisions whose quality
+> materially depends on deep mathematical judgment. Defer routine CLI and
+> registry wiring, artifact refreshes, repetitive validation, formatting, and
+> similarly mechanical work to Gemini 3.6 Flash through Antigravity. When Codex
+> usage is exhausted, Gemini must continue this plan from the recorded theorem
+> scopes and claim gates; it must not reconstruct or broaden the mathematics,
+> restore toy circuit search, or promote passing tests or finite evidence into
+> a speedup claim. Codex must leave exact assumptions, falsifiers, unresolved
+> obligations, and acceptance checks before handoff. Exhausting one model's
+> usage is a handoff event, not completion of the research goal.
+
+> **Current user policy overrides older commit instructions below.** Do not
+> commit each task or subsystem. Batch the mechanical backlog into one large,
+> coherent checkpoint, and push only after that checkpoint passes focused
+> validation. Leave all user-owned `ag-remote/` deletions untouched.
+
+> **Newest unwired theorem modules:** also inventory and mechanically wire
+> `EXP-CODE-SELF-DUAL-WREATH-RELATION-COKERNEL-TRANSFER`,
+> `EXP-CODE-SELF-DUAL-WREATH-AUGMENTED-H0-DIMENSION-OBSTRUCTION`,
+> `EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-COKERNEL-RESOLUTION`,
+> `EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-MP-MOMENTS`, and
+> `EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-JACOBI-SURROGATE`,
+> `EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-JOINT-FREENESS`,
+> `EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-JOINT-CONDITIONING-SURROGATE`,
+> `EXP-CODE-SELF-DUAL-WREATH-SIBLING-WORD-MAP-NORMAL-FORM`,
+> `EXP-CODE-SELF-DUAL-WREATH-COLLISION-FREE-EVENT-TRANSFER`,
+> `EXP-CODE-SELF-DUAL-WREATH-MULTISCALE-POLAR-SCHEDULE`, and
+> `EXP-CODE-SELF-DUAL-WREATH-TRACE-POLYNOMIAL-EDGE-BURDEN`, and
+> `EXP-CODE-SELF-DUAL-WREATH-REGULAR-MASTER-CENTRAL-SUPPORT`, and
+> `EXP-CODE-SELF-DUAL-WREATH-CENTRAL-SUPPORT-RANK-BRIDGE`,
+> `EXP-CODE-SELF-DUAL-WREATH-SUBGROUP-PROJECTION-WALK`,
+> `EXP-CODE-SELF-DUAL-WREATH-AFFINE-NODE-COMMON-OUTLIER`, and
+> `EXP-CODE-SELF-DUAL-WREATH-SUBGROUP-PAIR-ANGLE-NO-GO`,
+> `EXP-CODE-SELF-DUAL-WREATH-LOCAL-PAIR-TRANSVERSALITY`,
+> `EXP-CODE-SELF-DUAL-WREATH-PAIR-COMMON-COVERING-TRANSITION`,
+> `EXP-CODE-SELF-DUAL-WREATH-FIXED-FAMILY-COMMON-RANK-DILUTION`,
+> `EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-KRONECKER-POSITIVITY`,
+> `EXP-CODE-SELF-DUAL-WREATH-EXTENDED-KRONECKER-THRESHOLD`,
+> `EXP-CODE-SELF-DUAL-WREATH-HAMMING-STRATUM-RANK-TRANSITION`, and
+> `EXP-CODE-SELF-DUAL-WREATH-NATURAL-PAIR-CARRIER-LAW`, and
+> `EXP-CODE-SELF-DUAL-WREATH-TWO-COLOR-RETURN-WALK`, and
+> `EXP-CODE-SELF-DUAL-WREATH-HIERARCHY-PAIR-COMMON-RANK-BUDGET`, and
+> `EXP-CODE-SELF-DUAL-WREATH-HIERARCHY-LOW-CARRIER-TRIM`,
+> `EXP-CODE-SELF-DUAL-WREATH-COMPLETE-S6-VERTEX-CHANNEL-AUDIT`,
+> `EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SCALAR-HOLONOMY`, and
+> `EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SUPPORT-PRESSURE-NO-GO` by copying an
+> existing theorem-report dispatch pattern. Do not alter their mathematics,
+> claim gates, control parameters, or artifacts. The Jacobi module is only a
+> Gaussian surrogate: never describe it as natural-frame conditioning or an
+> algorithm. The affine common-outlier theorem excludes only exact
+> width-sized eigenvalues, not near-outliers or the natural edge. The
+> pair-angle module refutes only an unrefined full-regular angle criterion; it
+> is not a physical typical-block no-go. The Kronecker positivity and
+> multiplicity theorems require independent Plancherel factors and are
+> pointwise in a fixed target or fixed pair; never rewrite them as arbitrary
+> coupling, uniform-partition, all-target, or all-pair theorems. The Hamming
+> result is a density-one stratum theorem, not simultaneous control of every
+> pair. None of these results proves coherent incidence or a node-frame edge.
+> The natural pair-carrier module proves an exact multiplicity-weighted
+> `d_alpha^4` law and asymptotic quenched convergence, but its basic Markov/TV
+> finite bound is loose. Do not convert its tiny low-dimensional carrier mass
+> into a PGM state-mass, full-frame-edge, or algorithm claim.
+> The return-walk module removes explicit coloring enumeration but does not
+> prove a growing-order collision-free return bound. Preserve its negative
+> conclusion that a coarse global gap is insufficient.
+> The hierarchy pair-common rank module proves only a probabilistic
+> ambient-relative rank trim for exact singular-value-one common directions.
+> Its all-target quantity is an unweighted Markov/union budget, not PGM mass,
+> a naturally weighted direct-sum rank, an operator-norm bound, a noncommon
+> edge theorem, or an algorithm. Preserve the root antipodal target exception
+> and keep every noncommon/near-outlier/speedup gate closed.
+> The hierarchy low-carrier module proves a rank--correlation tradeoff after
+> trimming both endpoint singular spaces. Its conditioned all-target trim is
+> an unweighted Markov/union budget, not accepted state mass. The residual
+> pair bound does not prove a row-sum, frame-edge, Racah-incidence, decoder,
+> or algorithm theorem; preserve all of those open gates and the statement
+> that the elementary quarter exponent is not known optimal.
+> The complete S6 audit is finite and restricted to the eight source irreps
+> of dimension at most nine. The scalar holonomy theorem applies only to one
+> multiplicity-scalar affine-plane channel. The support-pressure theorem then
+> falsifies extrapolating those finite disjoint triangles into orthogonal
+> all-depth atoms. Do not describe the pressure no-go as a bad-frame theorem:
+> overlapping positive channels may remain well conditioned. Keep matrix
+> traffic, association-scheme, frame-edge, PGM-mass, decoder, and speedup gates
+> closed.
+
+> **Newest high-reasoning handoff delta (2026-08-08):** inventory and wire the
+> following five modules after regenerating the stale unwired count in this
+> plan:
+> `EXP-CODE-SELF-DUAL-WREATH-TRACE-WEIGHTED-PGM-BRIDGE`,
+> `EXP-CODE-SELF-DUAL-WREATH-NATIVE-FRAME-ACCESS-BOUNDARY`,
+> `EXP-CODE-SELF-DUAL-WREATH-PAIR-TRANSPORT-NATIVE-MASS-BOUNDARY`,
+> `EXP-CODE-SELF-DUAL-WREATH-GPE-PAIR-POLAR-TRANSPORT`, and
+> `EXP-CODE-SELF-DUAL-WREATH-GPE-HOLONOMY-RESOLVER-REDUCTION`.
+> Their scripts, focused tests, and live JSON artifacts already exist. Copy
+> dispatch/registry patterns only; do not edit their mathematics. Preserve
+> these scope rules exactly:
+>
+> - A rescaled orientation-frame cutoff `tau` corresponds to raw physical PGM
+>   cutoff `tau/2^k`. Never apply the same absolute cutoff to both frames.
+> - The flat-frame `Theta(sqrt(2^k))` result is a generic normalized-access
+>   boundary, not an arbitrary quantum-circuit lower bound.
+> - The `d_alpha^4` law is exactly native trace mass only after conditioning on
+>   the active pair node. It is not complete many-orientation PGM mass.
+> - Normalized cross-overlap QSVT is superpolynomial on natural active pair
+>   mass, but coherent GPE implements the pair polar directly and polynomially.
+>   Do not report inverse carrier dimension or a full Kronecker transform as a
+>   surviving pair-transport requirement.
+> - The GPE theorem proves pair transport, not a complete PGM polar or hidden
+>   permutation decoder. Different edge decompositions retain nontrivial Racah
+>   holonomy.
+> - The holonomy theorem is an exact flat equal-rank fixed-space reduction. A
+>   polynomial resolver is conditional on coherent generator SELECT and an
+>   inverse-polynomial natural frustration gap. Partial supports, emergent
+>   child-span dependencies, the complete relative polar, decoder, and speedup
+>   remain open.
+>
+> Suggested CLI names are `code-wreath-trace-weighted-pgm-bridge`,
+> `code-wreath-native-frame-access-boundary`,
+> `code-wreath-pair-transport-native-mass`,
+> `code-wreath-gpe-pair-polar`, and `code-wreath-gpe-holonomy-resolver`.
+> Add clean dispatch tests, preserve `speedup_claim_allowed=false`, refresh
+> downstream workflows, and batch all five into the next large checkpoint.
+
+> **Recursive-node compiler handoff delta (2026-08-08):** also inventory and
+> wire `EXP-CODE-SELF-DUAL-WREATH-GPE-RECURSIVE-NODE-COMPILER` with suggested
+> CLI name `code-wreath-gpe-recursive-node-compiler`. Its script, focused test,
+> and live JSON artifact already exist. Preserve these scope rules exactly:
+>
+> - The exact recursive relation factorization separates normalized
+>   minimum-energy child embeddings from a short-metric endpoint mixer.
+> - Equal short metrics give an exact signed Hadamard. Noncommuting metrics can
+>   require a matrix-valued mixer, and exponentially imbalanced metrics can
+>   retain an exponentially small endpoint gap even when pair GPE is available.
+> - A flat affine child embedding needs only affine dimension many controlled
+>   transport stages and no square-root support-size amplification.
+> - The selected W3/W5 controls have finite GPE compiler certificates because
+>   the existing affine-bundle and pair-path controls match. This is not an
+>   all-n affine decomposition or uniform coherent path/SELECT theorem.
+> - Keep `all_n_structured_child_embedding_proved`,
+>   `polynomial_uniform_generator_select_proved`,
+>   `natural_recursive_endpoint_gap_proved`,
+>   `recursive_orientation_polar_proved`, and `speedup_claim_allowed` false.
+>
+> Add only copied registry/runner/CLI dispatch and clean dispatch tests. Do not
+> alter the theorem, counterfamilies, finite controls, or claim gates.
+
+> **Partial-support falsifier handoff delta (2026-08-08):** also inventory and
+> wire `EXP-CODE-SELF-DUAL-WREATH-PARTIAL-SUPPORT-CHILD-EMBEDDING` with
+> suggested CLI name `code-wreath-partial-support-child-embedding`. Preserve
+> these scope rules exactly:
+>
+> - Sparse leaf block Grams exactly reconstruct the finite normalized child
+>   embeddings and their component POVMs; this avoids dense ambient projectors.
+> - The globally source-distinct S6 control retains affine masks but falsifies
+>   scalar full-fiber effects. It requires matrix partial support and has a
+>   nonzero cross-child effect commutator.
+> - This falsifies a universal scalar coefficient-affine theorem. It does not
+>   prove that matrix partial-support nodes have positive asymptotic native PGM
+>   mass and does not kill the collective PGM architecture.
+> - Keep `matrix_partial_support_gpe_compiler_proved`,
+>   `positive_native_mass_partial_support_obstruction_proved`,
+>   `recursive_orientation_polar_proved`, and `speedup_claim_allowed` false.
+>
+> Wire by copying dispatch patterns only. Do not soften the S6 negative result
+> and do not promote its finite spectrum into an asymptotic no-go.
+
+> **Partial-support source-mass handoff delta (2026-08-08):** also inventory
+> and wire `EXP-CODE-SELF-DUAL-WREATH-PARTIAL-SUPPORT-SOURCE-MASS-BOUNDARY`
+> with suggested CLI name `code-wreath-partial-support-source-mass`. Preserve
+> these scope rules exactly:
+>
+> - The direct S6 mechanism requires trivial and sign source irreps and has
+>   conditioned mass at most `m(m-1)/(n!)^2/P_cf`.
+> - Any polynomial-dimensional source anchor has conditioned union mass at
+>   most `m p(n)L^2/(n! P_cf)`, hence is superpolynomially small.
+> - This makes the known S6 mechanism asymptotically negligible but does not
+>   restore universal scalar affine fibers. Matrix partial supports formed
+>   entirely from typical high-dimensional sources remain uncontrolled.
+> - Keep `scalar_affine_behavior_holds_on_positive_native_bulk`,
+>   `high_dimension_matrix_partial_support_mass_controlled`,
+>   `matrix_partial_support_gpe_compiler_proved`,
+>   `recursive_orientation_polar_proved`, and `speedup_claim_allowed` false.
+>
+> Wire only dispatch/registry/CLI and focused clean-dispatch tests. Do not
+> change the asymptotic theorem or reinterpret finite benchmark crossings as
+> premises of the proof.
+
+> **Matrix-POVM compiler handoff delta (2026-08-08):** also inventory and wire
+> `EXP-CODE-SELF-DUAL-WREATH-MATRIX-POVM-RECURSIVE-COMPILER` with suggested CLI
+> name `code-wreath-matrix-povm-recursive-compiler`. Preserve these scope rules:
+>
+> - Every normalized child embedding has an exact component-POVM Naimark
+>   factorization followed by component partial isometries, even when effects
+>   do not commute.
+> - The parent relation is the composition of endpoint and child POVM
+>   dilations followed by support transport. This has no intrinsic square-root
+>   outcome-count loss.
+> - This is an algebraic compiler normal form, not a natural circuit. Pair GPE
+>   can supply compatible support polars but does not prepare `sqrt(H_e)`.
+> - The `Omega(delta^-1/4)` degree statement is a generic bounded-polynomial
+>   block-encoding boundary, not an arbitrary quantum-circuit lower bound.
+> - Keep `natural_component_povm_dilation_compiled`,
+>   `all_n_component_support_polars_gpe_compatible`,
+>   `high_dimension_partial_support_native_mass_controlled`,
+>   `recursive_orientation_polar_proved`, and `speedup_claim_allowed` false.
+>
+> Add copied dispatch/registry/CLI wiring only. Do not claim that the Naimark
+> factorization itself is an efficient implementation.
+
+> **MRS model-scope handoff delta (2026-08-08):** also inventory and wire
+> `EXP-CODE-SELF-DUAL-WREATH-MRS-COHERENCE-ESCAPE-CRITERION` with suggested CLI
+> name `code-wreath-mrs-coherence-escape`. Preserve these scope rules exactly:
+>
+> - The primary-source MRS sieve measures an irrep at every pairwise combine
+>   step and uses the classical irrep-labeled forest transcript.
+> - `M=Delta(M)` characterizes invariance under early measurement, not
+>   simulation from the classical transcript. For a fixed projective
+>   transcript, transcript-only simulation requires the block-scalar condition
+>   `M=C(M)`. Off-diagonal coherence is sufficient but not necessary.
+> - For the full adaptive transcript POVM `{E_t}`, the physical effect must be
+>   separated from `{sum_t f_t E_t:0<=f_t<=1}` on positive accepted mass.
+>   Deferred measurement alone is insufficient.
+> - Pair GPE is carrier-label block diagonal and does not alone prove escape.
+> - The finite abstract coherence controls and S6 noncommutativity are not a
+>   physical PGM witness. Keep `current_physical_pgm_outside_mrs_transcript_postprocessing`,
+>   `complete_recursive_compiler_outside_mrs_class_proved`,
+>   `mrs_lower_bound_avoided`, and `speedup_claim_allowed` false.
+>
+> Wire only copied dispatch/registry/CLI paths and focused tests. Do not change
+> the literature scope or paraphrase the criterion as a lower-bound escape.
+
+> **Newest component-effect theorem deltas (2026-08-08):** inventory and wire
+> these reports by copying an existing theorem-report dispatch pattern:
+>
+> - `EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-SPARSE-SUPPORT-BOUNDARY`, suggested
+>   CLI name `code-wreath-component-sparse-support`;
+> - `EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POVM-REGULAR-MASTER-REDUCTION`, suggested
+>   CLI name `code-wreath-component-regular-master`;
+> - `EXP-CODE-SELF-DUAL-WREATH-MRS-TRANSCRIPT-POVM-SEPARATION`, suggested CLI
+>   name `code-wreath-mrs-transcript-povm`.
+>
+> Preserve these gates exactly. The Jacobi module is a Haar benchmark, not a
+> natural-frame theorem. Small component trace does not prove a small positive
+> edge. The regular-master module identifies center-valued source/common mass
+> observables but proves no high-dimensional bound; its S3 control has repeated
+> sources. The MRS zonotope solver proves separation only from one specified
+> transcript POVM, not from every adaptive policy in the MRS class. Keep all
+> natural-universality, support-SELECT, physical-PGM, all-policy MRS, decoder,
+> and speedup gates false. Routine registry/dequantization/proof/frontier/CLI
+> wiring and artifact refreshes belong to Gemini 3.6 Flash.
+
+> **Additional theorem artifacts from the signed-Steiner/coverage pass:**
+> mechanically wire these without changing their claim gates:
+> `EXP-CODE-SELF-DUAL-WREATH-SIGNED-STEINER-INCIDENCE-BOUNDARY`,
+> `EXP-CODE-SELF-DUAL-WREATH-INTERPLANE-GAUGE-HOMOLOGY`,
+> `EXP-CODE-SELF-DUAL-WREATH-RANDOM-STEINER-GAUGE-EDGE`,
+> `EXP-CODE-SELF-DUAL-WREATH-SIGNED-STEINER-NULLITY-THEOREM`,
+> `EXP-CODE-SELF-DUAL-WREATH-SIGNED-STEINER-BULK-EDGE`,
+> `EXP-CODE-SELF-DUAL-WREATH-OPERATOR-STEINER-BULK-REDUCTION`, and
+> `EXP-CODE-SELF-DUAL-WREATH-COVERAGE-WELCH-PRESSURE`, and
+> `EXP-CODE-SELF-DUAL-WREATH-AFFINE-RELATION-WEIGHTED-BULK`. The random-gauge module
+> is only an independent surrogate. The deterministic bulk theorem supersedes
+> any suggestion that scalar gauge randomness is needed for a vanishing
+> outlier-rank fraction. The nullity theorem controls exact scalar zero modes,
+> and the bulk theorem controls per-channel coefficient rank, not PGM state
+> mass. The operator theorem is conditional on diagonal coverage; the Welch
+> module proves pressure forces overlap but does **not** prove tight natural
+> coverage. Preserve `speedup_claim_allowed=false` throughout.
+> The weighted-relation module includes every rich and non-rich orientation
+> signature class and proves only a collision-free coefficient-rank bulk edge
+> around relation eigenvalue two. Preserve its exact use of the prior
+> relation-cokernel theorem: trimming relation image has zero ideal PGM signal
+> loss, but retained relations are not proved to exhaust the synthesis
+> cokernel. Do not advertise an untrimmed edge, complete projector, coherent
+> decoder, or speedup.
+
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
 **Goal:** Wire the new theorem module

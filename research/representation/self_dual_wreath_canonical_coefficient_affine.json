@@ -17,8 +17,8 @@
     },
     {
       "objection": "Collision-free labels prevent all recoupling collisions.",
-      "resolution": "Distinct external irreps do not imply multiplicity-free internal Kronecker paths at growing n and k.",
-      "resolved": false
+      "resolution": "The companion S6 control has eight globally distinct source partitions and still exhibits matrix partial-support traffic.",
+      "resolved": true
     }
   ],
   "claim_gate": {
@@ -28,15 +28,16 @@
     "finite_label_simple_coefficient_affine_signal": true,
     "hierarchical_orientation_polar_proved": false,
     "multiplicity_free_recoupling_formula_proved": false,
-    "reason": "The finite coefficient-space normal form is exact, but no growing-depth recoupling theorem or coherent synthesis exists.",
+    "natural_collision_free_scalar_affinity_falsified": true,
+    "reason": "The finite scalar coefficient-space controls are exact, but a natural S6 node falsifies their universal extension. A matrix partial-support compiler and mass theorem are required.",
     "repeated_labels_falsify_universal_coefficient_affinity": true,
     "speedup_claim_allowed": false
   },
-  "created_at": "2026-08-06T03:20:19.142943+00:00",
+  "created_at": "2026-08-08T06:47:32.957758+00:00",
   "falsifiers_triggered": [
     "Affine carrier-core exhaustion is the wrong necessary condition; canonical coefficient affinity survives emergent intersections.",
     "Balanced shorted metrics do not force affine coefficient support.",
-    "External label distinctness does not by itself prove internal multiplicity-free recoupling at growing scale."
+    "External label distinctness does not by itself prove internal multiplicity-free recoupling; S6 already supplies a counterexample."
   ],
   "finite_controls": [
     {
@@ -3106,6 +3107,7 @@
     "label_simple_coefficient_affine_certificate_failure_count": 0,
     "label_simple_control_count": 2,
     "label_simple_fractional_merge_count": 20,
+    "natural_collision_free_scalar_affine_falsifier_count": 1,
     "new_quantum_algorithm_count": 0,
     "repeated_label_coefficient_affine_failure_count": 10,
     "repeated_label_nonscalar_or_unequal_metric_count": 9
@@ -3123,8 +3125,8 @@
     },
     {
       "obligation": "all_n_collision_free_coefficient_affine_theorem",
-      "resolution": "Only W3/W5 controls are accessible. Growing-depth fusion multiplicities may destroy scalarity or affine support.",
-      "resolved": false
+      "resolution": "Rejected by the companion globally source-distinct S6 control: affine masks coexist with nonscalar component effects and noncommuting cross-child supports.",
+      "resolved": true
     },
     {
       "obligation": "explicit_recoupling_synthesis_maps",
@@ -3222,13 +3224,13 @@
       "status": "finite-coefficient-affine-signal-all-n-recoupling-proof-open"
     }
   ],
-  "status": "finite-coefficient-affine-normal-form-all-n-recoupling-proof-open",
-  "summary": "Moved the affine mechanism into minimum-norm coefficient space, where every label-simple finite overlap has an affine uniform scalar certificate and repeated labels supply explicit countercontrols.",
+  "status": "finite-scalar-affine-normal-form-natural-s6-universal-falsifier",
+  "summary": "Moved the affine mechanism into minimum-norm coefficient space, where W3/W5 have scalar certificates but a globally distinct S6 affine node forces matrix-valued partial supports.",
   "theorem_contract": {
     "coefficient_affine_normal_form": "Finite label-simple controls have scalar equal component weights supported on an affine mask set.",
     "coefficient_transfer": "For isometric child decompositions, D_B D_A^* is a partial isometry between their coefficient images.",
     "isometric_balance": "If G_A=G_B=gI, the two stacked coefficient maps become isometries after common normalization and every fractional relative channel is 1/2.",
     "minimum_norm_synthesis": "D_(A,e)=E_e A^+U sums to U and its component Gram operators sum to G_A=U^*A^+U.",
-    "scope": "The canonical maps use child pseudoinverses. A useful all-n theorem must derive them from explicit recoupling data rather than assume the polar transform being constructed."
+    "scope": "The canonical maps use child pseudoinverses. The companion sparse-Gram S6 control falsifies scalar component effects even with globally distinct sources and affine masks, so the all-n target must be matrix-valued partial support."
   }
 }

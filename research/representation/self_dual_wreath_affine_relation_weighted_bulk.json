@@ -1,0 +1,1833 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Non-rich triples can dominate the weighted burden.",
+      "resolution": "Three-signature triples retain exactly 4/g^5. The only 2/g^4 term has only 3(N-2) ordered occurrences and only one-dimensional targets, leaving total ratio O(1/g).",
+      "resolved": true
+    },
+    {
+      "objection": "A per-vertex Markov bound cannot survive a union over N vertices.",
+      "resolution": "Apply Markov once to the complete global relation Gram; global burden and global domain both acquire the same N factor.",
+      "resolved": true
+    },
+    {
+      "objection": "Heavy support pressure contradicts a relation bulk edge.",
+      "resolution": "Support pressure ignores principal-correlation squares. Fourth-power carrier rank weighting changes Z4^2/g^7 to g^2/g^7.",
+      "resolved": true
+    },
+    {
+      "objection": "Vanishing relation outlier rank alone proves a complete PGM sampler.",
+      "resolution": "Relation trim has exactly zero ideal signal loss, but an unrepresented relation image can leave spurious cokernel directions. Recursive completeness and coherent access remain open.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "coherent_decoder_proved": false,
+    "collision_free_global_coefficient_bulk_edge_proved": true,
+    "exact_all_signature_star_burden_proved": true,
+    "natural_shorted_endpoint_comparability_proved": false,
+    "nonrich_orientation_triples_included": true,
+    "reason": "The complete pair-relation Gram has a vanishing coefficient-rank outlier sector and relation trim is signal-free, but recursive cokernel completeness, endpoint shorts, and coherent decoding remain unresolved.",
+    "relation_trim_zero_ideal_pgm_state_loss_proved": true,
+    "retained_relations_exhaust_synthesis_cokernel_proved": false,
+    "speedup_claim_allowed": false,
+    "support_pressure_blocks_weighted_bulk_edge": false,
+    "untrimmed_relation_minimum_edge_proved": false
+  },
+  "created_at": "2026-08-08T05:06:05.520768+00:00",
+  "falsifiers_triggered": [
+    "Raw support overlap is not the correct spectral burden statistic.",
+    "Non-rich orientation triples do not restore a macroscopic weighted burden.",
+    "A global first-moment argument suffices for bulk rank but not for an untrimmed edge.",
+    "Signal-free relation trimming does not by itself compile the full synthesis cokernel projector."
+  ],
+  "headline_metrics": {
+    "exact_signature_support_star_burden_theorem_count": 1,
+    "finite_collision_free_bulk_certified_row_count": 5,
+    "finite_collision_free_bulk_onset_n": 32,
+    "finite_scaling_row_count": 10,
+    "global_coefficient_bulk_edge_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "orientation_signature_count_control_count": 7,
+    "orientation_signature_count_failure_count": 0,
+    "relation_trim_zero_pgm_state_loss_theorem_count": 1,
+    "residual_cokernel_output_error_theorem_count": 0,
+    "signature_support_control_count": 80,
+    "signature_support_control_failure_count": 0,
+    "tail_conditional_markov_failure_upper_bound": 1.845040906368646e-26,
+    "tail_log2_conditioned_burden_to_capacity_ratio": -170.97295532893088,
+    "tail_n": 48,
+    "tail_spectral_outlier_rank_fraction_upper_bound": 7.380163625474584e-26,
+    "untrimmed_relation_edge_theorem_count": 0
+  },
+  "orientation_count_controls": [
+    {
+      "copy_count": 2,
+      "enumerated_three_or_four_signature_ordered_pair_count": 0,
+      "enumerated_total_ordered_pair_count": 6,
+      "enumerated_two_signature_ordered_pair_count": 6,
+      "exact_signature_count_verified": true,
+      "orientation_count": 4,
+      "predicted_three_or_four_signature_ordered_pair_count": 0,
+      "predicted_total_ordered_pair_count": 6,
+      "predicted_two_signature_ordered_pair_count": 6,
+      "status": "exact-orientation-signature-count-verified"
+    },
+    {
+      "copy_count": 3,
+      "enumerated_three_or_four_signature_ordered_pair_count": 24,
+      "enumerated_total_ordered_pair_count": 42,
+      "enumerated_two_signature_ordered_pair_count": 18,
+      "exact_signature_count_verified": true,
+      "orientation_count": 8,
+      "predicted_three_or_four_signature_ordered_pair_count": 24,
+      "predicted_total_ordered_pair_count": 42,
+      "predicted_two_signature_ordered_pair_count": 18,
+      "status": "exact-orientation-signature-count-verified"
+    },
+    {
+      "copy_count": 4,
+      "enumerated_three_or_four_signature_ordered_pair_count": 168,
+      "enumerated_total_ordered_pair_count": 210,
+      "enumerated_two_signature_ordered_pair_count": 42,
+      "exact_signature_count_verified": true,
+      "orientation_count": 16,
+      "predicted_three_or_four_signature_ordered_pair_count": 168,
+      "predicted_total_ordered_pair_count": 210,
+      "predicted_two_signature_ordered_pair_count": 42,
+      "status": "exact-orientation-signature-count-verified"
+    },
+    {
+      "copy_count": 5,
+      "enumerated_three_or_four_signature_ordered_pair_count": 840,
+      "enumerated_total_ordered_pair_count": 930,
+      "enumerated_two_signature_ordered_pair_count": 90,
+      "exact_signature_count_verified": true,
+      "orientation_count": 32,
+      "predicted_three_or_four_signature_ordered_pair_count": 840,
+      "predicted_total_ordered_pair_count": 930,
+      "predicted_two_signature_ordered_pair_count": 90,
+      "status": "exact-orientation-signature-count-verified"
+    },
+    {
+      "copy_count": 6,
+      "enumerated_three_or_four_signature_ordered_pair_count": 3720,
+      "enumerated_total_ordered_pair_count": 3906,
+      "enumerated_two_signature_ordered_pair_count": 186,
+      "exact_signature_count_verified": true,
+      "orientation_count": 64,
+      "predicted_three_or_four_signature_ordered_pair_count": 3720,
+      "predicted_total_ordered_pair_count": 3906,
+      "predicted_two_signature_ordered_pair_count": 186,
+      "status": "exact-orientation-signature-count-verified"
+    },
+    {
+      "copy_count": 7,
+      "enumerated_three_or_four_signature_ordered_pair_count": 15624,
+      "enumerated_total_ordered_pair_count": 16002,
+      "enumerated_two_signature_ordered_pair_count": 378,
+      "exact_signature_count_verified": true,
+      "orientation_count": 128,
+      "predicted_three_or_four_signature_ordered_pair_count": 15624,
+      "predicted_total_ordered_pair_count": 16002,
+      "predicted_two_signature_ordered_pair_count": 378,
+      "status": "exact-orientation-signature-count-verified"
+    },
+    {
+      "copy_count": 8,
+      "enumerated_three_or_four_signature_ordered_pair_count": 64008,
+      "enumerated_total_ordered_pair_count": 64770,
+      "enumerated_two_signature_ordered_pair_count": 762,
+      "exact_signature_count_verified": true,
+      "orientation_count": 256,
+      "predicted_three_or_four_signature_ordered_pair_count": 64008,
+      "predicted_total_ordered_pair_count": 64770,
+      "predicted_two_signature_ordered_pair_count": 762,
+      "status": "exact-orientation-signature-count-verified"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "sum_star_correlations_with_exact_rank_weights",
+      "resolution": "The carrier sums factor by membership block; exhaustive small-n controls match 4/g^5 and the two-signature exception.",
+      "resolved": true
+    },
+    {
+      "obligation": "include_nonrich_orientation_triples",
+      "resolution": "All valid signature supports are counted. The only larger per-star term occurs on 3(N-2) ordered pairs and remains O(1/g).",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_collision_free_global_coefficient_bulk_edge",
+      "resolution": "Pair-rank concentration supplies the denominator; a single conditioned Markov inequality controls the global burden.",
+      "resolved": true
+    },
+    {
+      "obligation": "transfer_relation_trim_to_ideal_pgm_state_loss",
+      "resolution": "The exact relation-cokernel theorem gives D_0 D_1=0, so every retained or removed relation-image subspace has exactly zero ideal PGM polar amplitude.",
+      "resolved": true
+    },
+    {
+      "obligation": "control_residual_cokernel_and_compile_decoder",
+      "resolution": "Frobenius control permits a vanishing-rank outlier sector; dropping its image can leave unresolved synthesis-kernel directions unless recursive completeness is compiled.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "balanced_distance_cutoff": 10,
+      "balanced_domain_relative_lower_factor": 0.7290000000000001,
+      "balanced_neighbor_count_decimal": "2084241600",
+      "balanced_neighbor_fraction": 0.9705506265163422,
+      "conditional_markov_failure_upper_bound": 1.0,
+      "conditional_spectral_outlier_rank_fraction_upper_bound": 1.0,
+      "conditional_total_failure_upper_bound": 1.0,
+      "conditioned_uniform_pair_rank_failure_upper_bound": 1.0,
+      "finite_collision_free_bulk_edge_certified": false,
+      "group_order_decimal": "479001600",
+      "log2_balanced_global_domain_capacity_lower_bound": -25.005499607715265,
+      "log2_conditioned_burden_to_capacity_ratio": 149.4066578204044,
+      "log2_conditioned_uniform_pair_rank_failure_upper_bound": 208.55042973581735,
+      "log2_global_collision_free_probability": -173.16204994605062,
+      "log2_worst_target_expected_node_frobenius_burden": -79.76089173336146,
+      "multiplicity_relative_error_tolerance": 0.1,
+      "n": 12,
+      "orientation_count_decimal": "2147483648",
+      "partition_count": 77,
+      "relation_edge_window_delta": 0.5,
+      "selected_copy_count": 31,
+      "status": "finite-collision-free-weighted-bulk-bound-vacuous"
+    },
+    {
+      "balanced_distance_cutoff": 15,
+      "balanced_domain_relative_lower_factor": 0.7290000000000001,
+      "balanced_neighbor_count_decimal": "139619648975690",
+      "balanced_neighbor_fraction": 0.9920572734905164,
+      "conditional_markov_failure_upper_bound": 1.0,
+      "conditional_spectral_outlier_rank_fraction_upper_bound": 1.0,
+      "conditional_total_failure_upper_bound": 1.0,
+      "conditioned_uniform_pair_rank_failure_upper_bound": 1.0,
+      "finite_collision_free_bulk_edge_certified": false,
+      "group_order_decimal": "20922789888000",
+      "log2_balanced_global_domain_capacity_lower_bound": -39.21793537212561,
+      "log2_conditioned_burden_to_capacity_ratio": 98.10975872449563,
+      "log2_conditioned_uniform_pair_rank_failure_upper_bound": 165.98858364346268,
+      "log2_global_collision_free_probability": -136.8521036035171,
+      "log2_worst_target_expected_node_frobenius_burden": -124.96028025114708,
+      "multiplicity_relative_error_tolerance": 0.1,
+      "n": 16,
+      "orientation_count_decimal": "140737488355328",
+      "partition_count": 231,
+      "relation_edge_window_delta": 0.5,
+      "selected_copy_count": 47,
+      "status": "finite-collision-free-weighted-bulk-bound-vacuous"
+    },
+    {
+      "balanced_distance_cutoff": 21,
+      "balanced_domain_relative_lower_factor": 0.7290000000000001,
+      "balanced_neighbor_count_decimal": "18378676247059086518",
+      "balanced_neighbor_fraction": 0.99631003572346,
+      "conditional_markov_failure_upper_bound": 1.0,
+      "conditional_spectral_outlier_rank_fraction_upper_bound": 1.0,
+      "conditional_total_failure_upper_bound": 1.0,
+      "conditioned_uniform_pair_rank_failure_upper_bound": 1.0,
+      "finite_collision_free_bulk_edge_certified": false,
+      "group_order_decimal": "2432902008176640000",
+      "log2_balanced_global_domain_capacity_lower_bound": -55.69349438219477,
+      "log2_conditioned_burden_to_capacity_ratio": 59.73258242557132,
+      "log2_conditioned_uniform_pair_rank_failure_upper_bound": 127.14948489334496,
+      "log2_global_collision_free_probability": -115.16558228140244,
+      "log2_worst_target_expected_node_frobenius_burden": -175.12649423802588,
+      "multiplicity_relative_error_tolerance": 0.1,
+      "n": 20,
+      "orientation_count_decimal": "18446744073709551616",
+      "partition_count": 627,
+      "relation_edge_window_delta": 0.5,
+      "selected_copy_count": 64,
+      "status": "finite-collision-free-weighted-bulk-bound-vacuous"
+    },
+    {
+      "balanced_distance_cutoff": 27,
+      "balanced_domain_relative_lower_factor": 0.7290000000000001,
+      "balanced_neighbor_count_decimal": "4829801872888040679769440",
+      "balanced_neighbor_fraction": 0.9987796179313224,
+      "conditional_markov_failure_upper_bound": 1.0,
+      "conditional_spectral_outlier_rank_fraction_upper_bound": 1.0,
+      "conditional_total_failure_upper_bound": 1.0,
+      "conditioned_uniform_pair_rank_failure_upper_bound": 1.0,
+      "finite_collision_free_bulk_edge_certified": false,
+      "group_order_decimal": "620448401733239439360000",
+      "log2_balanced_global_domain_capacity_lower_bound": -73.57074325199602,
+      "log2_conditioned_burden_to_capacity_ratio": 22.197367575521525,
+      "log2_conditioned_uniform_pair_rank_failure_upper_bound": 87.31803546961896,
+      "log2_global_collision_free_probability": -95.56097225979515,
+      "log2_worst_target_expected_node_frobenius_burden": -228.9343479362697,
+      "multiplicity_relative_error_tolerance": 0.1,
+      "n": 24,
+      "orientation_count_decimal": "4835703278458516698824704",
+      "partition_count": 1575,
+      "relation_edge_window_delta": 0.5,
+      "selected_copy_count": 82,
+      "status": "finite-collision-free-weighted-bulk-bound-vacuous"
+    },
+    {
+      "balanced_distance_cutoff": 33,
+      "balanced_domain_relative_lower_factor": 0.7290000000000001,
+      "balanced_neighbor_count_decimal": "1267132413606581203780723700706",
+      "balanced_neighbor_fraction": 0.9995912228325732,
+      "conditional_markov_failure_upper_bound": 0.0062860559035359375,
+      "conditional_spectral_outlier_rank_fraction_upper_bound": 0.02514422361414375,
+      "conditional_total_failure_upper_bound": 1.0,
+      "conditioned_uniform_pair_rank_failure_upper_bound": 1.0,
+      "finite_collision_free_bulk_edge_certified": false,
+      "group_order_decimal": "304888344611713860501504000000",
+      "log2_balanced_global_domain_capacity_lower_bound": -94.28918639540856,
+      "log2_conditioned_burden_to_capacity_ratio": -14.6272583644096,
+      "log2_conditioned_uniform_pair_rank_failure_upper_bound": 45.87964647523974,
+      "log2_global_collision_free_probability": -78.3601089078158,
+      "log2_worst_target_expected_node_frobenius_burden": -287.276553667634,
+      "multiplicity_relative_error_tolerance": 0.1,
+      "n": 28,
+      "orientation_count_decimal": "1267650600228229401496703205376",
+      "partition_count": 3718,
+      "relation_edge_window_delta": 0.5,
+      "selected_copy_count": 100,
+      "status": "finite-collision-free-weighted-bulk-bound-vacuous"
+    },
+    {
+      "balanced_distance_cutoff": 40,
+      "balanced_domain_relative_lower_factor": 0.7290000000000001,
+      "balanced_neighbor_count_decimal": "1329017932527152208697007517585263226",
+      "balanced_neighbor_fraction": 0.9998419659693975,
+      "conditional_markov_failure_upper_bound": 6.357383515705555e-08,
+      "conditional_spectral_outlier_rank_fraction_upper_bound": 2.542953406282222e-07,
+      "conditional_total_failure_upper_bound": 0.8151630295576863,
+      "conditioned_uniform_pair_rank_failure_upper_bound": 0.8151629659838511,
+      "finite_collision_free_bulk_edge_certified": true,
+      "group_order_decimal": "263130836933693530167218012160000000",
+      "log2_balanced_global_domain_capacity_lower_bound": -113.44602825034565,
+      "log2_conditioned_burden_to_capacity_ratio": -47.813983271957596,
+      "log2_conditioned_uniform_pair_rank_failure_upper_bound": -0.2948395855881216,
+      "log2_global_collision_free_probability": -64.6811989394046,
+      "log2_worst_target_expected_node_frobenius_burden": -345.9412104617079,
+      "multiplicity_relative_error_tolerance": 0.1,
+      "n": 32,
+      "orientation_count_decimal": "1329227995784915872903807060280344576",
+      "partition_count": 8349,
+      "relation_edge_window_delta": 0.5,
+      "selected_copy_count": 120,
+      "status": "collision-free-weighted-relation-bulk-edge-certified"
+    },
+    {
+      "balanced_distance_cutoff": 47,
+      "balanced_domain_relative_lower_factor": 0.7290000000000001,
+      "balanced_neighbor_count_decimal": "2787467936613939805359839298576228589329920",
+      "balanced_neighbor_fraction": 0.9999550819665358,
+      "conditional_markov_failure_upper_bound": 1.1313740396785415e-12,
+      "conditional_spectral_outlier_rank_fraction_upper_bound": 4.525496158714166e-12,
+      "conditional_total_failure_upper_bound": 1.1469392322768148e-12,
+      "conditioned_uniform_pair_rank_failure_upper_bound": 1.5565192598273317e-14,
+      "finite_collision_free_bulk_edge_certified": true,
+      "group_order_decimal": "371993326789901217467999448150835200000000",
+      "log2_balanced_global_domain_capacity_lower_bound": -132.73905997888392,
+      "log2_conditioned_burden_to_capacity_ratio": -79.37012233203171,
+      "log2_conditioned_uniform_pair_rank_failure_upper_bound": -45.868669900099455,
+      "log2_global_collision_free_probability": -53.099223163971224,
+      "log2_worst_target_expected_node_frobenius_burden": -406.2084054748868,
+      "multiplicity_relative_error_tolerance": 0.1,
+      "n": 36,
+      "orientation_count_decimal": "2787593149816327892691964784081045188247552",
+      "partition_count": 17977,
+      "relation_edge_window_delta": 0.5,
+      "selected_copy_count": 141,
+      "status": "collision-free-weighted-relation-bulk-edge-certified"
+    },
+    {
+      "balanced_distance_cutoff": 54,
+      "balanced_domain_relative_lower_factor": 0.7290000000000001,
+      "balanced_neighbor_count_decimal": "5845931285944416888398248114614570977469126646880",
+      "balanced_neighbor_fraction": 0.999987125676552,
+      "conditional_markov_failure_upper_bound": 2.1113153166578074e-17,
+      "conditional_spectral_outlier_rank_fraction_upper_bound": 8.44526126663123e-17,
+      "conditional_total_failure_upper_bound": 2.1113153166667382e-17,
+      "conditioned_uniform_pair_rank_failure_upper_bound": 8.930735874157051e-29,
+      "finite_collision_free_bulk_edge_certified": true,
+      "group_order_decimal": "815915283247897734345611269596115894272000000000",
+      "log2_balanced_global_domain_capacity_lower_bound": -153.9331473267128,
+      "log2_conditioned_burden_to_capacity_ratio": -110.78927111493222,
+      "log2_conditioned_uniform_pair_rank_failure_upper_bound": -93.17713569640298,
+      "log2_global_collision_free_probability": -42.79854650416863,
+      "log2_worst_target_expected_node_frobenius_burden": -469.52096494581366,
+      "multiplicity_relative_error_tolerance": 0.1,
+      "n": 40,
+      "orientation_count_decimal": "5846006549323611672814739330865132078623730171904",
+      "partition_count": 37338,
+      "relation_edge_window_delta": 0.5,
+      "selected_copy_count": 162,
+      "status": "collision-free-weighted-relation-bulk-edge-certified"
+    },
+    {
+      "balanced_distance_cutoff": 61,
+      "balanced_domain_relative_lower_factor": 0.7290000000000001,
+      "balanced_neighbor_count_decimal": "12259918790665515256280607967264613364967406507161201120",
+      "balanced_neighbor_fraction": 0.9999962857753594,
+      "conditional_markov_failure_upper_bound": 5.255798324528839e-22,
+      "conditional_spectral_outlier_rank_fraction_upper_bound": 2.1023193298115356e-21,
+      "conditional_total_failure_upper_bound": 5.255798324528839e-22,
+      "conditioned_uniform_pair_rank_failure_upper_bound": 2.951566680460997e-43,
+      "finite_collision_free_bulk_edge_certified": true,
+      "group_order_decimal": "2658271574788448768043625811014615890319638528000000000",
+      "log2_balanced_global_domain_capacity_lower_bound": -176.83983151358285,
+      "log2_conditioned_burden_to_capacity_ratio": -141.37701633977534,
+      "log2_conditioned_uniform_pair_rank_failure_upper_bound": -141.28142714528835,
+      "log2_global_collision_free_probability": -34.349928697824765,
+      "log2_worst_target_expected_node_frobenius_burden": -535.566776551183,
+      "multiplicity_relative_error_tolerance": 0.1,
+      "n": 44,
+      "orientation_count_decimal": "12259964326927110866866776217202473468949912977468817408",
+      "partition_count": 75175,
+      "relation_edge_window_delta": 0.5,
+      "selected_copy_count": 183,
+      "status": "collision-free-weighted-relation-bulk-edge-certified"
+    },
+    {
+      "balanced_distance_cutoff": 68,
+      "balanced_domain_relative_lower_factor": 0.7290000000000001,
+      "balanced_neighbor_count_decimal": "51421976531086322413669229137671849741725557769728465401924244",
+      "balanced_neighbor_fraction": 0.9999992049086477,
+      "conditional_markov_failure_upper_bound": 1.845040906368646e-26,
+      "conditional_spectral_outlier_rank_fraction_upper_bound": 7.380163625474584e-26,
+      "conditional_total_failure_upper_bound": 1.845040906368646e-26,
+      "conditioned_uniform_pair_rank_failure_upper_bound": 1.657390781192678e-57,
+      "finite_collision_free_bulk_edge_certified": true,
+      "group_order_decimal": "12413915592536072670862289047373375038521486354677760000000000",
+      "log2_balanced_global_domain_capacity_lower_bound": -199.30472651651075,
+      "log2_conditioned_burden_to_capacity_ratio": -170.97295532893088,
+      "log2_conditioned_uniform_pair_rank_failure_upper_bound": -188.62098760588785,
+      "log2_global_collision_free_probability": -27.024325887125578,
+      "log2_worst_target_expected_node_frobenius_burden": -602.3020077325672,
+      "multiplicity_relative_error_tolerance": 0.1,
+      "n": 48,
+      "orientation_count_decimal": "51422017416287688817342786954917203280710495801049370729644032",
+      "partition_count": 147273,
+      "relation_edge_window_delta": 0.5,
+      "selected_copy_count": 205,
+      "status": "collision-free-weighted-relation-bulk-edge-certified"
+    }
+  ],
+  "signature_support_controls": [
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/648",
+      "n": 3,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/648",
+      "signature_support": [
+        "10",
+        "01"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        3
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/648",
+      "n": 3,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/648",
+      "signature_support": [
+        "10",
+        "11"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        3
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/648",
+      "n": 3,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/648",
+      "signature_support": [
+        "01",
+        "11"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        3
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/1944",
+      "n": 3,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/1944",
+      "signature_support": [
+        "00",
+        "10",
+        "01"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        3
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/1944",
+      "n": 3,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/1944",
+      "signature_support": [
+        "00",
+        "10",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        3
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/1944",
+      "n": 3,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/1944",
+      "signature_support": [
+        "00",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        3
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/1944",
+      "n": 3,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/1944",
+      "signature_support": [
+        "10",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        3
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/1944",
+      "n": 3,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/1944",
+      "signature_support": [
+        "00",
+        "10",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 4,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        3
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "0",
+      "n": 3,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "0",
+      "signature_support": [
+        "10",
+        "01"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 2,
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "0",
+      "n": 3,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "0",
+      "signature_support": [
+        "10",
+        "11"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 2,
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "0",
+      "n": 3,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "0",
+      "signature_support": [
+        "01",
+        "11"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 2,
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/1944",
+      "n": 3,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/1944",
+      "signature_support": [
+        "00",
+        "10",
+        "01"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 2,
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/1944",
+      "n": 3,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/1944",
+      "signature_support": [
+        "00",
+        "10",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 2,
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/1944",
+      "n": 3,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/1944",
+      "signature_support": [
+        "00",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 2,
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/1944",
+      "n": 3,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/1944",
+      "signature_support": [
+        "10",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 2,
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/1944",
+      "n": 3,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/1944",
+      "signature_support": [
+        "00",
+        "10",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 4,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 2,
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/165888",
+      "n": 4,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/165888",
+      "signature_support": [
+        "10",
+        "01"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/165888",
+      "n": 4,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/165888",
+      "signature_support": [
+        "10",
+        "11"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/165888",
+      "n": 4,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/165888",
+      "signature_support": [
+        "01",
+        "11"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/1990656",
+      "n": 4,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/1990656",
+      "signature_support": [
+        "00",
+        "10",
+        "01"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/1990656",
+      "n": 4,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/1990656",
+      "signature_support": [
+        "00",
+        "10",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/1990656",
+      "n": 4,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/1990656",
+      "signature_support": [
+        "00",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/1990656",
+      "n": 4,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/1990656",
+      "signature_support": [
+        "10",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/1990656",
+      "n": 4,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/1990656",
+      "signature_support": [
+        "00",
+        "10",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 4,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        4
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "0",
+      "n": 4,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "0",
+      "signature_support": [
+        "10",
+        "01"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 3,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "0",
+      "n": 4,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "0",
+      "signature_support": [
+        "10",
+        "11"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 3,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "0",
+      "n": 4,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "0",
+      "signature_support": [
+        "01",
+        "11"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 3,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/1990656",
+      "n": 4,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/1990656",
+      "signature_support": [
+        "00",
+        "10",
+        "01"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 3,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/1990656",
+      "n": 4,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/1990656",
+      "signature_support": [
+        "00",
+        "10",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 3,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/1990656",
+      "n": 4,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/1990656",
+      "signature_support": [
+        "00",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 3,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/1990656",
+      "n": 4,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/1990656",
+      "signature_support": [
+        "10",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 3,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/1990656",
+      "n": 4,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/1990656",
+      "signature_support": [
+        "00",
+        "10",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 4,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 3,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/103680000",
+      "n": 5,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/103680000",
+      "signature_support": [
+        "10",
+        "01"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        5
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/103680000",
+      "n": 5,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/103680000",
+      "signature_support": [
+        "10",
+        "11"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        5
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/103680000",
+      "n": 5,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/103680000",
+      "signature_support": [
+        "01",
+        "11"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        5
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/6220800000",
+      "n": 5,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/6220800000",
+      "signature_support": [
+        "00",
+        "10",
+        "01"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        5
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/6220800000",
+      "n": 5,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/6220800000",
+      "signature_support": [
+        "00",
+        "10",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        5
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/6220800000",
+      "n": 5,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/6220800000",
+      "signature_support": [
+        "00",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        5
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/6220800000",
+      "n": 5,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/6220800000",
+      "signature_support": [
+        "10",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        5
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/6220800000",
+      "n": 5,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/6220800000",
+      "signature_support": [
+        "00",
+        "10",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 4,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        5
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "0",
+      "n": 5,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "0",
+      "signature_support": [
+        "10",
+        "01"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 6,
+      "target_partition": [
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "0",
+      "n": 5,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "0",
+      "signature_support": [
+        "10",
+        "11"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 6,
+      "target_partition": [
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "0",
+      "n": 5,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "0",
+      "signature_support": [
+        "01",
+        "11"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 6,
+      "target_partition": [
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/6220800000",
+      "n": 5,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/6220800000",
+      "signature_support": [
+        "00",
+        "10",
+        "01"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 6,
+      "target_partition": [
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/6220800000",
+      "n": 5,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/6220800000",
+      "signature_support": [
+        "00",
+        "10",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 6,
+      "target_partition": [
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/6220800000",
+      "n": 5,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/6220800000",
+      "signature_support": [
+        "00",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 6,
+      "target_partition": [
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/6220800000",
+      "n": 5,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/6220800000",
+      "signature_support": [
+        "10",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 6,
+      "target_partition": [
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/6220800000",
+      "n": 5,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/6220800000",
+      "signature_support": [
+        "00",
+        "10",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 4,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 6,
+      "target_partition": [
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/134369280000",
+      "n": 6,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/134369280000",
+      "signature_support": [
+        "10",
+        "01"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        6
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/134369280000",
+      "n": 6,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/134369280000",
+      "signature_support": [
+        "10",
+        "11"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        6
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/134369280000",
+      "n": 6,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/134369280000",
+      "signature_support": [
+        "01",
+        "11"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        6
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/48372940800000",
+      "n": 6,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/48372940800000",
+      "signature_support": [
+        "00",
+        "10",
+        "01"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        6
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/48372940800000",
+      "n": 6,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/48372940800000",
+      "signature_support": [
+        "00",
+        "10",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        6
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/48372940800000",
+      "n": 6,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/48372940800000",
+      "signature_support": [
+        "00",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        6
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/48372940800000",
+      "n": 6,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/48372940800000",
+      "signature_support": [
+        "10",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        6
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/48372940800000",
+      "n": 6,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/48372940800000",
+      "signature_support": [
+        "00",
+        "10",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 4,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        6
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "0",
+      "n": 6,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "0",
+      "signature_support": [
+        "10",
+        "01"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 16,
+      "target_partition": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "0",
+      "n": 6,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "0",
+      "signature_support": [
+        "10",
+        "11"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 16,
+      "target_partition": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "0",
+      "n": 6,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "0",
+      "signature_support": [
+        "01",
+        "11"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 16,
+      "target_partition": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/48372940800000",
+      "n": 6,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/48372940800000",
+      "signature_support": [
+        "00",
+        "10",
+        "01"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 16,
+      "target_partition": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/48372940800000",
+      "n": 6,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/48372940800000",
+      "signature_support": [
+        "00",
+        "10",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 16,
+      "target_partition": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/48372940800000",
+      "n": 6,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/48372940800000",
+      "signature_support": [
+        "00",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 16,
+      "target_partition": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/48372940800000",
+      "n": 6,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/48372940800000",
+      "signature_support": [
+        "10",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 16,
+      "target_partition": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/48372940800000",
+      "n": 6,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/48372940800000",
+      "signature_support": [
+        "00",
+        "10",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 4,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 16,
+      "target_partition": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/322620641280000",
+      "n": 7,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/322620641280000",
+      "signature_support": [
+        "10",
+        "01"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        7
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/322620641280000",
+      "n": 7,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/322620641280000",
+      "signature_support": [
+        "10",
+        "11"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        7
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/322620641280000",
+      "n": 7,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/322620641280000",
+      "signature_support": [
+        "01",
+        "11"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        7
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/813004016025600000",
+      "n": 7,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/813004016025600000",
+      "signature_support": [
+        "00",
+        "10",
+        "01"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        7
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/813004016025600000",
+      "n": 7,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/813004016025600000",
+      "signature_support": [
+        "00",
+        "10",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        7
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/813004016025600000",
+      "n": 7,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/813004016025600000",
+      "signature_support": [
+        "00",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        7
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/813004016025600000",
+      "n": 7,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/813004016025600000",
+      "signature_support": [
+        "10",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        7
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/813004016025600000",
+      "n": 7,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/813004016025600000",
+      "signature_support": [
+        "00",
+        "10",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 4,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        7
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "0",
+      "n": 7,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "0",
+      "signature_support": [
+        "10",
+        "01"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 35,
+      "target_partition": [
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "0",
+      "n": 7,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "0",
+      "signature_support": [
+        "10",
+        "11"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 35,
+      "target_partition": [
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "0",
+      "n": 7,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "0",
+      "signature_support": [
+        "01",
+        "11"
+      ],
+      "signature_support_size": 2,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 35,
+      "target_partition": [
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/813004016025600000",
+      "n": 7,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/813004016025600000",
+      "signature_support": [
+        "00",
+        "10",
+        "01"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 35,
+      "target_partition": [
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/813004016025600000",
+      "n": 7,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/813004016025600000",
+      "signature_support": [
+        "00",
+        "10",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 35,
+      "target_partition": [
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/813004016025600000",
+      "n": 7,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/813004016025600000",
+      "signature_support": [
+        "00",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 35,
+      "target_partition": [
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/813004016025600000",
+      "n": 7,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/813004016025600000",
+      "signature_support": [
+        "10",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 3,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 35,
+      "target_partition": [
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "closed_form_verified": true,
+      "exact_expected_normalized_hilbert_schmidt_squared": "1/813004016025600000",
+      "n": 7,
+      "predicted_expected_normalized_hilbert_schmidt_squared": "1/813004016025600000",
+      "signature_support": [
+        "00",
+        "10",
+        "01",
+        "11"
+      ],
+      "signature_support_size": 4,
+      "status": "signature-support-star-hs-closed-form-verified",
+      "target_dimension": 35,
+      "target_partition": [
+        4,
+        2,
+        1
+      ]
+    }
+  ],
+  "status": "collision-free-weighted-relation-coefficient-bulk-edge-proved-constraint-completeness-open",
+  "summary": "Proved that exact carrier-correlation weights overcome the divergent affine support pressure: the complete collision-free pair-relation Gram has only a vanishing coefficient-rank outlier sector, whose relation image is exactly signal-free.",
+  "theorem_contract": {
+    "balanced_domain_floor": "Uniform pair-core multiplicity concentration lower-bounds the global coefficient domain by N B_K(1-eta)^3/|S_n|^3 times physical ambient dimension.",
+    "collision_free_bulk_edge": "One global Markov bound after collision-free conditioning gives O(|S_n|^-1/2) failure and relative outlier rank for the fixed window around relation eigenvalue 2.",
+    "global_relation_gram_identity": "For the complete pair-common boundary Gram G, every diagonal block is 2I and E||G-2I||_F^2/dim(H_phys)=N mu_nu.",
+    "scope": "This is a coefficient-rank bulk theorem, not an untrimmed minimum edge, complete-cokernel projector, decoder, or speedup.",
+    "signature_conditioned_star_burden": "Every valid three- or four-signature orientation star has exact expected normalized squared Hilbert-Schmidt overlap 4/|S_n|^5; a two-signature star contributes 2/|S_n|^4 only for a one-dimensional target."
+  }
+}

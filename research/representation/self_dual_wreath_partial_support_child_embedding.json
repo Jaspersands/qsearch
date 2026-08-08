@@ -1,0 +1,427 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Affine active masks imply the flat scalar affine compiler.",
+      "resolution": "False. The S6 masks form an affine plane while component effects split the common fiber into unequal partial supports.",
+      "resolved": true
+    },
+    {
+      "objection": "Globally distinct source partitions prevent matrix recoupling traffic.",
+      "resolution": "False at n=6: every source partition is distinct and cross-child component effects still fail to commute.",
+      "resolved": true
+    },
+    {
+      "objection": "Commuting short metrics make the entire child embedding scalar.",
+      "resolution": "The S6 short metrics commute, but their mask-resolved component effects do not. Endpoint diagonalization and support routing are separate gates.",
+      "resolved": true
+    },
+    {
+      "objection": "A finite partial-support counterexample kills the collective PGM route.",
+      "resolution": "Only a positive frame-weighted asymptotic mass theorem or a uniform compiler/no-go can decide that.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "collision_free_affine_support_suffices_for_scalar_fibers": false,
+    "direct_s6_trivial_sign_mechanism_has_vanishing_natural_mass": true,
+    "globally_distinct_sources_prevent_matrix_recoupling": false,
+    "gram_only_normalized_child_embedding_reconstruction_proved": true,
+    "matrix_partial_support_gpe_compiler_proved": false,
+    "natural_s6_requires_matrix_partial_support": true,
+    "positive_native_mass_partial_support_obstruction_proved": false,
+    "reason": "A natural collision-free affine node already falsifies scalar fibers, but its trivial/sign mechanism is factorially rare. The surviving risk is matrix support generated entirely by typical high-dimensional sources; its GPE compiler and mass are open.",
+    "recursive_orientation_polar_proved": false,
+    "selected_w3_scalar_affine_control_passes": true,
+    "speedup_claim_allowed": false
+  },
+  "controls": [
+    {
+      "active_orientation_masks": [
+        0,
+        2,
+        5,
+        7
+      ],
+      "active_support_is_affine": true,
+      "ambient_physical_dimension": 8,
+      "child_dependency_coefficient_dimension": 8,
+      "common_image_cross_gram_residual": 2.377115465593326e-16,
+      "common_image_left_gram_residual": 1.5748052013688396e-16,
+      "common_image_right_gram_residual": 3.809809157708481e-16,
+      "common_span_dimension": 2,
+      "component_effects": [
+        {
+          "coefficient_block_dimension": 2,
+          "exact_full_fiber_scalar": true,
+          "exact_scalar_on_support": true,
+          "full_fiber_scalar_residual": 2.8035425507889386e-16,
+          "maximum_eigenvalue": 0.5000000000000002,
+          "minimum_positive_eigenvalue": 0.4999999999999997,
+          "orientation_mask": 0,
+          "side": "left",
+          "status": "scalar-full-fiber-component",
+          "support_rank": 2,
+          "support_scalar_residual": 2.8035425507889386e-16,
+          "trace_weight": 1.0
+        },
+        {
+          "coefficient_block_dimension": 2,
+          "exact_full_fiber_scalar": true,
+          "exact_scalar_on_support": true,
+          "full_fiber_scalar_residual": 3.5566642472997954e-16,
+          "maximum_eigenvalue": 0.5000000000000003,
+          "minimum_positive_eigenvalue": 0.4999999999999997,
+          "orientation_mask": 2,
+          "side": "left",
+          "status": "scalar-full-fiber-component",
+          "support_rank": 2,
+          "support_scalar_residual": 3.077556998750619e-16,
+          "trace_weight": 1.0
+        },
+        {
+          "coefficient_block_dimension": 2,
+          "exact_full_fiber_scalar": true,
+          "exact_scalar_on_support": true,
+          "full_fiber_scalar_residual": 1.5466837904424746e-16,
+          "maximum_eigenvalue": 0.4999999999999998,
+          "minimum_positive_eigenvalue": 0.4999999999999995,
+          "orientation_mask": 5,
+          "side": "right",
+          "status": "scalar-full-fiber-component",
+          "support_rank": 2,
+          "support_scalar_residual": 1.515191240698763e-16,
+          "trace_weight": 0.9999999999999993
+        },
+        {
+          "coefficient_block_dimension": 2,
+          "exact_full_fiber_scalar": true,
+          "exact_scalar_on_support": true,
+          "full_fiber_scalar_residual": 1.6749825947134006e-16,
+          "maximum_eigenvalue": 0.49999999999999994,
+          "minimum_positive_eigenvalue": 0.49999999999999967,
+          "orientation_mask": 7,
+          "side": "right",
+          "status": "scalar-full-fiber-component",
+          "support_rank": 2,
+          "support_scalar_residual": 2.1963314224933171e-16,
+          "trace_weight": 0.9999999999999996
+        }
+      ],
+      "control_id": "W3-DISTINCT-SCALAR-AFFINE-CONTROL",
+      "endpoint_left_weight_spectrum": [
+        [
+          "1/2",
+          2
+        ]
+      ],
+      "endpoint_right_weight_spectrum": [
+        [
+          "1/2",
+          2
+        ]
+      ],
+      "exact_gram_reconstruction_verified": true,
+      "globally_distinct_source_partitions": false,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_effect_sum_residual": 8.213039881128672e-17,
+      "left_embedding_isometry_residual": 8.146265105659831e-17,
+      "left_orientation_masks": [
+        0,
+        2
+      ],
+      "left_short_metric_maximum_eigenvalue": 1.0,
+      "left_short_metric_minimum_eigenvalue": 1.0,
+      "matrix_partial_support_required": false,
+      "maximum_component_full_fiber_scalar_residual": 3.5566642472997954e-16,
+      "maximum_component_support_scalar_residual": 3.077556998750619e-16,
+      "maximum_cross_child_effect_commutator_norm": 9.860761315262648e-32,
+      "maximum_leaf_isometry_residual": 2.220446049250313e-16,
+      "n": 3,
+      "right_effect_sum_residual": 5.715590371781618e-16,
+      "right_embedding_isometry_residual": 5.701929745589636e-16,
+      "right_orientation_masks": [
+        5,
+        7
+      ],
+      "right_short_metric_maximum_eigenvalue": 0.9999999999999999,
+      "right_short_metric_minimum_eigenvalue": 0.9999999999999997,
+      "scalar_flat_affine_child_embedding_certificate": true,
+      "short_metric_commutator_norm": 0.0,
+      "short_metric_equality_residual": 4.629441777208494e-16,
+      "status": "exact-scalar-flat-affine-child-embedding",
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "active_orientation_masks": [
+        2,
+        5,
+        11,
+        12
+      ],
+      "active_support_is_affine": true,
+      "ambient_physical_dimension": 50625,
+      "child_dependency_coefficient_dimension": 2600,
+      "common_image_cross_gram_residual": 4.49430786238365e-15,
+      "common_image_left_gram_residual": 3.92729244308688e-15,
+      "common_image_right_gram_residual": 4.511479526453674e-15,
+      "common_span_dimension": 34,
+      "component_effects": [
+        {
+          "coefficient_block_dimension": 225,
+          "exact_full_fiber_scalar": false,
+          "exact_scalar_on_support": true,
+          "full_fiber_scalar_residual": 0.7352941176470591,
+          "maximum_eigenvalue": 1.0000000000000013,
+          "minimum_positive_eigenvalue": 0.999999999999998,
+          "orientation_mask": 2,
+          "side": "left",
+          "status": "scalar-partial-support-component",
+          "support_rank": 9,
+          "support_scalar_residual": 1.861934129766173e-15,
+          "trace_weight": 8.999999999999996
+        },
+        {
+          "coefficient_block_dimension": 125,
+          "exact_full_fiber_scalar": false,
+          "exact_scalar_on_support": true,
+          "full_fiber_scalar_residual": 0.7352941176470593,
+          "maximum_eigenvalue": 1.0000000000000027,
+          "minimum_positive_eigenvalue": 0.9999999999999967,
+          "orientation_mask": 5,
+          "side": "left",
+          "status": "scalar-partial-support-component",
+          "support_rank": 25,
+          "support_scalar_residual": 3.817894299040128e-15,
+          "trace_weight": 24.999999999999996
+        },
+        {
+          "coefficient_block_dimension": 225,
+          "exact_full_fiber_scalar": false,
+          "exact_scalar_on_support": true,
+          "full_fiber_scalar_residual": 0.004130865829477881,
+          "maximum_eigenvalue": 0.005617977528089932,
+          "minimum_positive_eigenvalue": 0.005617977528089855,
+          "orientation_mask": 11,
+          "side": "right",
+          "status": "scalar-partial-support-component",
+          "support_rank": 9,
+          "support_scalar_residual": 4.277171800535845e-17,
+          "trace_weight": 0.05056179775280903
+        },
+        {
+          "coefficient_block_dimension": 2025,
+          "exact_full_fiber_scalar": false,
+          "exact_scalar_on_support": false,
+          "full_fiber_scalar_residual": 0.004130865829480644,
+          "maximum_eigenvalue": 1.0000000000000053,
+          "minimum_positive_eigenvalue": 0.9943820224719073,
+          "orientation_mask": 12,
+          "side": "right",
+          "status": "matrix-valued-partial-support-component",
+          "support_rank": 34,
+          "support_scalar_residual": 0.00413086582948026,
+          "trace_weight": 33.949438202247194
+        }
+      ],
+      "control_id": "W6-COLLISION-FREE-NONCOMMUTING-PARTIAL-SUPPORT",
+      "endpoint_left_weight_spectrum": [
+        [
+          "81/170",
+          9
+        ],
+        [
+          "1/2",
+          16
+        ],
+        [
+          "9/17",
+          9
+        ]
+      ],
+      "endpoint_right_weight_spectrum": [
+        [
+          "8/17",
+          9
+        ],
+        [
+          "1/2",
+          16
+        ],
+        [
+          "89/170",
+          9
+        ]
+      ],
+      "exact_gram_reconstruction_verified": true,
+      "globally_distinct_source_partitions": true,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_effect_sum_residual": 3.543805555011298e-15,
+      "left_embedding_isometry_residual": 3.5119585152717932e-15,
+      "left_orientation_masks": [
+        2,
+        5
+      ],
+      "left_short_metric_maximum_eigenvalue": 1.1250000000000018,
+      "left_short_metric_minimum_eigenvalue": 0.899999999999998,
+      "matrix_partial_support_required": true,
+      "maximum_component_full_fiber_scalar_residual": 0.7352941176470593,
+      "maximum_component_support_scalar_residual": 0.00413086582948026,
+      "maximum_cross_child_effect_commutator_norm": 0.0028089887640464074,
+      "maximum_leaf_isometry_residual": 1.3724700824387238e-15,
+      "n": 6,
+      "right_effect_sum_residual": 6.694146976582123e-15,
+      "right_embedding_isometry_residual": 6.489782559770782e-15,
+      "right_orientation_masks": [
+        11,
+        12
+      ],
+      "right_short_metric_maximum_eigenvalue": 1.0000000000000042,
+      "right_short_metric_minimum_eigenvalue": 0.9888888888888855,
+      "scalar_flat_affine_child_embedding_certificate": false,
+      "short_metric_commutator_norm": 4.481599604325401e-16,
+      "short_metric_equality_residual": 0.1250000000000015,
+      "status": "exact-affine-mask-matrix-partial-support-child-embedding",
+      "target_partition": [
+        6
+      ]
+    }
+  ],
+  "created_at": "2026-08-08T07:38:58.485004+00:00",
+  "falsifiers_triggered": [
+    "Affine orientation support does not imply scalar coefficient fibers.",
+    "Global source distinctness does not remove noncommuting recoupling effects.",
+    "Commuting short metrics do not imply commuting mask-resolved component effects.",
+    "The finite W3/W5 scalar affine compiler cannot be extrapolated as the all-depth mechanism.",
+    "The direct S6 trivial/sign pattern cannot supply positive asymptotic natural mass."
+  ],
+  "headline_metrics": {
+    "companion_direct_s6_source_mass_no_go_count": 1,
+    "finite_control_count": 2,
+    "finite_control_failure_count": 0,
+    "gram_only_child_embedding_reconstruction_theorem_count": 1,
+    "matrix_partial_support_gpe_compiler_count": 0,
+    "natural_collision_free_scalar_affine_falsifier_count": 1,
+    "natural_partial_support_common_dimension": 34,
+    "natural_partial_support_cross_effect_commutator_norm": 0.0028089887640464074,
+    "natural_partial_support_maximum_full_scalar_residual": 0.7352941176470593,
+    "new_quantum_algorithm_count": 0,
+    "positive_native_mass_partial_support_theorem_count": 0,
+    "recursive_orientation_polar_sampler_count": 0,
+    "scalar_affine_positive_control_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "gram_only_normalized_child_embedding_reconstruction",
+      "resolution": "Both controls reconstruct common images, short metrics, isometric child embeddings, and component POVMs from block Grams.",
+      "resolved": true
+    },
+    {
+      "obligation": "collision_free_affine_support_implies_scalar_fibers",
+      "resolution": "Rejected by the globally source-distinct S6 affine-plane control with nonscalar partial supports and nonzero cross-effect commutator.",
+      "resolved": true
+    },
+    {
+      "obligation": "compile_matrix_partial_support_sheaf_with_gpe",
+      "resolution": "Need coherent support/eigenchannel SELECT, compatible GPE transports, matrix endpoint mixing, and holonomy filtering without width normalization.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_positive_native_pgm_mass_of_partial_support_obstruction",
+      "resolution": "The S6 control is natural and collision-free but finite; its frame-weighted asymptotic mass is unknown.",
+      "resolved": false
+    }
+  ],
+  "status": "universal-scalar-affine-falsified-direct-s6-mass-negligible-high-dimensional-route-open",
+  "summary": "Reconstructed child embeddings from sparse leaf Grams and used a globally distinct S6 affine node to falsify the scalar-fiber compiler, replacing it with a matrix partial-support target.",
+  "theorem_contract": {
+    "component_povm": "For each child, H_(s,e)=W_(s,e)^*W_(s,e) is positive and the component effects sum exactly to identity.",
+    "gram_reconstruction": "The leaf block Gram determines the cross dependency, the orthonormal physical common image, both short metrics, and every normalized child component effect without ambient projectors.",
+    "natural_s6_falsifier": "A globally source-distinct S6 affine plane has nonscalar partial-support effects and noncommuting cross-child effects, while reproducing the known nonhalf endpoint spectrum.",
+    "scalar_affine_boundary": "The flat scalar affine compiler requires every active effect to be scalar on the full common fiber; affine mask support alone is insufficient.",
+    "scope": "This redirects the compiler to matrix-valued partial supports. The companion source-mass theorem makes the direct trivial/sign mechanism factorially rare. No uniform GPE support SELECT or high-dimensional-source mass theorem is established."
+  }
+}

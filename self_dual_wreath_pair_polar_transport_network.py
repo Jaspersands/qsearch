@@ -13,14 +13,13 @@ two.  The two tested coefficient normalizations produce only ``+I`` or
 ``-I`` endpoint gauges.  The ``W_5`` isolated anchor line uses one common-
 range edge.
 
-This does not yet scale.  The nonzero singular values of ``E_jE_i`` are
-``1/d_alpha`` in the wreath pair-angle theorem.  Implementing its polar factor
-by singular-value transformation costs inverse polynomial in the smallest
-used correlation; an exponentially dimensional intermediary irrep causes
-exponential amplification.  This differs from the well-conditioned stacked
-pair sampler based on ``E_i+E_j``.  A useful all-n transport network must have
-polynomial diameter, inverse-polynomial edge correlations, efficiently
-computable paths, and controlled internal gauges.
+The normalized-cross-overlap implementation in this module does not scale:
+its singular values are ``1/d_alpha``.  The later GPE pair-polar theorem
+bypasses that access model and implements every active edge polar directly,
+independent of ``d_alpha``.  The surviving all-n requirements are polynomial
+coherent path selection, active-fiber coverage, and controlled nonabelian
+gauge/holonomy.  Small pair correlation is still a valid QSVT obstruction,
+but no longer a fundamental transport obstruction.
 """
 
 from __future__ import annotations
@@ -91,6 +90,7 @@ class PairPolarTransportScalingRecord:
     smallest_possible_nonzero_pair_correlation_can_be_exponential: bool
     polynomial_transport_graph_diameter_proved: bool
     inverse_polynomial_used_edge_correlation_proved: bool
+    gpe_direct_pair_polar_bypasses_edge_correlation: bool
     polynomial_coherent_path_finder_proved: bool
     efficiently_correctable_internal_gauge_proved: bool
     hierarchical_orientation_polar_proved: bool
@@ -338,10 +338,11 @@ def pair_polar_transport_scaling_record(n: int) -> PairPolarTransportScalingReco
         smallest_possible_nonzero_pair_correlation_can_be_exponential=True,
         polynomial_transport_graph_diameter_proved=False,
         inverse_polynomial_used_edge_correlation_proved=False,
+        gpe_direct_pair_polar_bypasses_edge_correlation=True,
         polynomial_coherent_path_finder_proved=False,
         efficiently_correctable_internal_gauge_proved=False,
         hierarchical_orientation_polar_proved=False,
-        status="finite-transport-network-edge-correlation-lower-bound-open",
+        status="gpe-edge-polar-polynomial-path-and-holonomy-open",
     )
 
 
@@ -406,13 +407,14 @@ def run_pair_polar_transport_network() -> PairPolarTransportNetworkReport:
                 "gauges; the W5 anchor line is one common-range edge."
             ),
             "conditioning_boundary": (
-                "Polarizing E_jE_i costs inverse in its used correlation "
-                "1/d_alpha, which may be exponential even though the stacked "
-                "pair sampler remains constant-conditioned."
+                "Generic normalized-access QSVT costs inverse in correlation "
+                "1/d_alpha, but the companion coherent-GPE construction "
+                "implements the pair polar directly and bypasses that scalar."
             ),
             "all_n_target": (
-                "Find a polynomial-diameter transport graph using only inverse-"
-                "polynomial correlations and efficiently correctable gauges."
+                "Find a polynomial coherent path/generator selector with "
+                "nonnegligible active-fiber coverage and efficiently resolvable "
+                "gauge/holonomy."
             ),
         },
         finite_controls=controls,
@@ -435,11 +437,12 @@ def run_pair_polar_transport_network() -> PairPolarTransportNetworkReport:
                 ),
             },
             {
-                "obligation": "all_n_inverse_polynomial_edge_correlation",
-                "resolved": False,
+                "obligation": "audit_normalized_qsvt_edge_correlation",
+                "resolved": True,
                 "resolution": (
                     "Pair correlations are 1/d_alpha and natural S_n dimensions "
-                    "can be exponential."
+                    "can be exponential. This remains a normalized-QSVT fact but "
+                    "is not required by the direct GPE pair polar."
                 ),
             },
             {
@@ -457,8 +460,8 @@ def run_pair_polar_transport_network() -> PairPolarTransportNetworkReport:
                 "resolved": True,
                 "resolution": (
                     "The stacked sampler inverts singular values near one, while "
-                    "transport polarizes E_jE_i and must resolve correlation "
-                    "1/d_alpha. Their conditioning is different."
+                    "transport polarizes E_jE_i. The stacked sampler does not "
+                    "compile it, but the separate coherent-GPE circuit does."
                 ),
             },
             {
@@ -489,7 +492,7 @@ def run_pair_polar_transport_network() -> PairPolarTransportNetworkReport:
         headline_metrics={
             "finite_pair_polar_transport_network_count": len(controls) - failures,
             "finite_transport_validation_failure_count": failures,
-            "finite_correlation_gate_failure_count": finite_correlation_failures,
+            "finite_qsvt_correlation_control_failure_count": finite_correlation_failures,
             "maximum_finite_transport_graph_diameter": max(
                 row.transport_graph_diameter or 0 for row in controls
             ),
@@ -508,6 +511,7 @@ def run_pair_polar_transport_network() -> PairPolarTransportNetworkReport:
             ),
             "all_n_polynomial_transport_diameter_theorem_count": 0,
             "all_n_inverse_polynomial_transport_correlation_theorem_count": 0,
+            "gpe_direct_pair_correlation_bypass_theorem_count": 1,
             "coherent_transport_path_compiler_count": 0,
             "hierarchical_orientation_polar_sampler_count": 0,
             "new_quantum_algorithm_count": 0,
@@ -522,25 +526,26 @@ def run_pair_polar_transport_network() -> PairPolarTransportNetworkReport:
             ),
             "all_n_polynomial_transport_graph_diameter_proved": False,
             "all_n_inverse_polynomial_used_edge_correlation_proved": False,
+            "gpe_direct_pair_polar_bypasses_edge_correlation": True,
             "polynomial_coherent_path_finder_proved": False,
             "efficient_internal_gauge_correction_proved": False,
             "hierarchical_orientation_polar_proved": False,
             "speedup_claim_allowed": False,
             "reason": (
-                "Finite fibers have short pair-polar paths, but asymptotic edge "
-                "correlations may be exponentially small and no coherent path "
-                "or gauge compiler is known."
+                "Finite fibers have short pair-polar paths and GPE removes the "
+                "inverse-correlation cost, but no all-n coherent path, active-"
+                "coverage, or holonomy resolver is known."
             ),
         },
         status=(
-            "finite-pair-polar-transports-compiled-asymptotic-correlation-gate-open"
+            "finite-pair-polar-transports-gpe-edge-bypass-path-holonomy-open"
             if verified
             else "pair-polar-transport-network-validation-failure"
         ),
         summary=(
             "Compiled all finite affine fiber transports through paths of at most "
-            "two pair polars and exposed inverse edge correlation as the decisive "
-            "asymptotic conditioning gate."
+            "two pair polars; coherent GPE removes the edge-correlation barrier, "
+            "leaving path selection, coverage, and holonomy."
         ),
         falsifiers_triggered=[
             (
@@ -548,8 +553,9 @@ def run_pair_polar_transport_network() -> PairPolarTransportNetworkReport:
                 "overlap path can transport the fiber."
             ),
             (
-                "The stacked pair sampler's constant condition number does not "
-                "bound the cost of pair-overlap polar transport."
+                "The stacked pair sampler does not compile pair-overlap transport, "
+                "but coherent GPE implements that polar without inverse-dimension "
+                "amplification."
             ),
             (
                 "Fixed W3 diameter and sign gauges do not imply polynomial "

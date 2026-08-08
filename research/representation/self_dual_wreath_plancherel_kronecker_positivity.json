@@ -1,0 +1,250 @@
+{
+  "created_at": "2026-08-08T02:26:29.611413+00:00",
+  "theorem_contract": {
+    "normalized_remainder": "g(lambda,mu,nu)/(d_lambda d_mu d_nu)=(1+X)/|S_n|.",
+    "exact_variance": "Independent Plancherel sampling and character-column orthogonality give E X^2=sum_(C!=1)1/|C|.",
+    "positivity": "Nonnegativity plus Chebyshev gives Pr[g=0]<=sum_(C!=1)1/|C|.",
+    "class_sum_asymptotic": "Support decomposition and z_rho<=k^(k/2) prove the reciprocal class sum tends to zero.",
+    "hamming_three": "A fixed globally distinct natural Hamming-three pair has left/right trivial exclusive sectors with probability 1-o(1).",
+    "scope": "The theorem assumes independent Plancherel partitions before global-distinct conditioning; arbitrary coupling and uniform partition sampling remain open."
+  },
+  "finite_controls": [
+    {
+      "n": 3,
+      "partition_count": 3,
+      "partition_triple_count": 27,
+      "exact_zero_probability": "13/54",
+      "exact_normalized_remainder_mean": "0",
+      "exact_normalized_remainder_second_moment": "5/6",
+      "exact_reciprocal_nonidentity_class_sum": "5/6",
+      "zero_probability_upper_bound_residual": "16/27",
+      "exact_variance_identity_verified": true,
+      "zero_probability_bound_verified": true,
+      "status": "exact-plancherel-kronecker-variance-and-positivity-bound-verified"
+    },
+    {
+      "n": 4,
+      "partition_count": 5,
+      "partition_triple_count": 125,
+      "exact_zero_probability": "371/1728",
+      "exact_normalized_remainder_mean": "0",
+      "exact_normalized_remainder_second_moment": "19/24",
+      "exact_reciprocal_nonidentity_class_sum": "19/24",
+      "zero_probability_upper_bound_residual": "997/1728",
+      "exact_variance_identity_verified": true,
+      "zero_probability_bound_verified": true,
+      "status": "exact-plancherel-kronecker-variance-and-positivity-bound-verified"
+    },
+    {
+      "n": 5,
+      "partition_count": 7,
+      "partition_triple_count": 343,
+      "exact_zero_probability": "799/8640",
+      "exact_normalized_remainder_mean": "0",
+      "exact_normalized_remainder_second_moment": "41/120",
+      "exact_reciprocal_nonidentity_class_sum": "41/120",
+      "zero_probability_upper_bound_residual": "2153/8640",
+      "exact_variance_identity_verified": true,
+      "zero_probability_bound_verified": true,
+      "status": "exact-plancherel-kronecker-variance-and-positivity-bound-verified"
+    },
+    {
+      "n": 6,
+      "partition_count": 11,
+      "partition_triple_count": 1331,
+      "exact_zero_probability": "498703/6220800",
+      "exact_normalized_remainder_mean": "0",
+      "exact_normalized_remainder_second_moment": "181/720",
+      "exact_reciprocal_nonidentity_class_sum": "181/720",
+      "zero_probability_upper_bound_residual": "1065137/6220800",
+      "exact_variance_identity_verified": true,
+      "zero_probability_bound_verified": true,
+      "status": "exact-plancherel-kronecker-variance-and-positivity-bound-verified"
+    },
+    {
+      "n": 7,
+      "partition_count": 15,
+      "partition_triple_count": 3375,
+      "exact_zero_probability": "152549441/4572288000",
+      "exact_normalized_remainder_mean": "0",
+      "exact_normalized_remainder_second_moment": "77/720",
+      "exact_reciprocal_nonidentity_class_sum": "77/720",
+      "zero_probability_upper_bound_residual": "336431359/4572288000",
+      "exact_variance_identity_verified": true,
+      "zero_probability_bound_verified": true,
+      "status": "exact-plancherel-kronecker-variance-and-positivity-bound-verified"
+    },
+    {
+      "n": 8,
+      "partition_count": 22,
+      "partition_triple_count": 10648,
+      "exact_zero_probability": "294361541/18289152000",
+      "exact_normalized_remainder_mean": "0",
+      "exact_normalized_remainder_second_moment": "481/6720",
+      "exact_reciprocal_nonidentity_class_sum": "481/6720",
+      "zero_probability_upper_bound_residual": "1014728059/18289152000",
+      "exact_variance_identity_verified": true,
+      "zero_probability_bound_verified": true,
+      "status": "exact-plancherel-kronecker-variance-and-positivity-bound-verified"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 10,
+      "conjugacy_class_count": 42,
+      "reciprocal_nonidentity_class_sum": 0.03139825837742504,
+      "reciprocal_nonidentity_class_sum_log2": -4.993171652948808,
+      "n_squared_scaled_sum": 3.139825837742504,
+      "transposition_term": 0.022222222222222223,
+      "transposition_fraction_of_sum": 0.707753339535537,
+      "independent_plancherel_zero_probability_upper_bound": 0.03139825837742504,
+      "asymptotic_bound_proved": true,
+      "status": "reciprocal-class-variance-bound-vanishing"
+    },
+    {
+      "n": 20,
+      "conjugacy_class_count": 627,
+      "reciprocal_nonidentity_class_sum": 0.005813987578874729,
+      "reciprocal_nonidentity_class_sum_log2": -7.426256295388654,
+      "n_squared_scaled_sum": 2.3255950315498914,
+      "transposition_term": 0.005263157894736842,
+      "transposition_fraction_of_sum": 0.9052578498551768,
+      "independent_plancherel_zero_probability_upper_bound": 0.005813987578874729,
+      "asymptotic_bound_proved": true,
+      "status": "reciprocal-class-variance-bound-vanishing"
+    },
+    {
+      "n": 30,
+      "conjugacy_class_count": 5604,
+      "reciprocal_nonidentity_class_sum": 0.00244108599578005,
+      "reciprocal_nonidentity_class_sum_log2": -8.678261164676135,
+      "n_squared_scaled_sum": 2.196977396202045,
+      "transposition_term": 0.0022988505747126436,
+      "transposition_fraction_of_sum": 0.9417327282556652,
+      "independent_plancherel_zero_probability_upper_bound": 0.00244108599578005,
+      "asymptotic_bound_proved": true,
+      "status": "reciprocal-class-variance-bound-vanishing"
+    },
+    {
+      "n": 40,
+      "conjugacy_class_count": 37338,
+      "reciprocal_nonidentity_class_sum": 0.0013382986216299493,
+      "reciprocal_nonidentity_class_sum_log2": -9.545384216608355,
+      "n_squared_scaled_sum": 2.1412777946079187,
+      "transposition_term": 0.001282051282051282,
+      "transposition_fraction_of_sum": 0.9579710098556613,
+      "independent_plancherel_zero_probability_upper_bound": 0.0013382986216299493,
+      "asymptotic_bound_proved": true,
+      "status": "reciprocal-class-variance-bound-vanishing"
+    },
+    {
+      "n": 50,
+      "conjugacy_class_count": 204226,
+      "reciprocal_nonidentity_class_sum": 0.0008440582022551307,
+      "reciprocal_nonidentity_class_sum_log2": -10.210369895771304,
+      "n_squared_scaled_sum": 2.110145505637827,
+      "transposition_term": 0.0008163265306122449,
+      "transposition_fraction_of_sum": 0.967144834836279,
+      "independent_plancherel_zero_probability_upper_bound": 0.0008440582022551307,
+      "asymptotic_bound_proved": true,
+      "status": "reciprocal-class-variance-bound-vanishing"
+    }
+  ],
+  "asymptotic_proof": {
+    "support_decomposition": "sum_(C!=1)1/|C|=sum_(k=2)^n T_k/binom(n,k)",
+    "transposition_term": "T_2/binom(n,2)=1/binom(n,2)",
+    "fixed_point_free_centralizer_bound": "z_rho<=k^(k/2)",
+    "fixed_point_free_type_count_bound": "q(k)<=2^k",
+    "tail_bound": "T_k<=(2e/sqrt(k))^k",
+    "split_scale": "L=floor(log_2(n)/4)",
+    "small_support_bound": "L 2^L/binom(n,3)=o(1)",
+    "large_support_bound": "sum_(k>L)(2e/sqrt(k))^k=o(1)",
+    "reciprocal_class_sum_tends_to_zero": true
+  },
+  "proof_obligations": [
+    {
+      "obligation": "derive_exact_independent_plancherel_variance",
+      "resolved": true,
+      "resolution": "Column orthogonality leaves one reciprocal class-size term per nonidentity conjugacy class."
+    },
+    {
+      "obligation": "prove_reciprocal_symmetric_group_class_sum_vanishes",
+      "resolved": true,
+      "resolution": "Moved-support decomposition, an elementary centralizer bound, and a logarithmic support split prove o(1)."
+    },
+    {
+      "obligation": "prove_independent_plancherel_typical_ordinary_kronecker_positivity",
+      "resolved": true,
+      "resolution": "Pr[g=0] is bounded by the vanishing exact variance."
+    },
+    {
+      "obligation": "extend_to_arbitrarily_coupled_or_uniform_random_partitions",
+      "resolved": false,
+      "resolution": "Independence and Plancherel character moments are essential to the present proof."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The identity term in the character sum may be cancelled with nonvanishing probability.",
+      "resolved": true,
+      "resolution": "The normalized nonidentity remainder has variance o(1), so the probability of reaching -1 is o(1)."
+    },
+    {
+      "objection": "There are exp(Theta(sqrt(n))) conjugacy classes, so reciprocal sizes need not vanish.",
+      "resolved": true,
+      "resolution": "Moved-support classes have binomial suppression; large supports also have superexponentially small reciprocal size."
+    },
+    {
+      "objection": "This resolves Sellke's full typical-positivity question.",
+      "resolved": false,
+      "resolution": "Only independent Plancherel sampling is proved, not arbitrary coupling or uniformly random partitions."
+    },
+    {
+      "objection": "Typical Kronecker positivity proves the orientation-frame edge.",
+      "resolved": false,
+      "resolution": "It controls support of Hamming-three intersections, not their coherent incidence or the full projector sum."
+    }
+  ],
+  "literature_links": [
+    {
+      "paper": "Sellke, Covering Irrep(S_n) With Tensor Products and Powers",
+      "url": "https://arxiv.org/abs/2004.05283",
+      "directly_proves_this_result": false,
+      "reason": "It identifies typical ordinary Kronecker positivity as an open stronger arbitrary-coupling boundary; the present proof resolves the independent Plancherel case only."
+    }
+  ],
+  "headline_metrics": {
+    "exact_plancherel_kronecker_variance_theorem_count": 1,
+    "independent_plancherel_typical_positivity_theorem_count": 1,
+    "hamming_three_common_support_corollary_count": 1,
+    "finite_control_count": 6,
+    "finite_control_failure_count": 0,
+    "maximum_exact_control_n": 8,
+    "tail_scaling_n": 50,
+    "tail_zero_probability_upper_bound": 0.0008440582022551307,
+    "tail_n_squared_scaled_bound": 2.110145505637827,
+    "arbitrarily_coupled_positivity_theorem_count": 0,
+    "uniform_partition_positivity_theorem_count": 0,
+    "natural_node_frame_edge_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "exact_independent_plancherel_variance_identity_proved": true,
+    "independent_plancherel_ordinary_kronecker_positive_aas_proved": true,
+    "global_distinct_fixed_triple_transfer_valid": true,
+    "natural_hamming_three_common_support_aas_proved": true,
+    "arbitrarily_coupled_plancherel_positivity_proved": false,
+    "uniform_partition_positivity_proved": false,
+    "hamming_three_incidence_rank_or_edge_controlled": false,
+    "natural_all_depth_node_edge_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "Independent natural Hamming-three support is resolved, but higher-order incidence and the complete frame spectrum are not."
+  },
+  "status": "independent-plancherel-kronecker-positivity-proved-frame-edge-open",
+  "summary": "Proved that ordinary Kronecker coefficients of three independent Plancherel partitions are positive with probability 1-o(1).",
+  "falsifiers_triggered": [
+    "Exponential conjugacy-class count does not prevent the reciprocal class-size variance from vanishing.",
+    "The independent Plancherel theorem must not be stated for arbitrary couplings or uniform partitions.",
+    "Typical Hamming-three support does not determine the natural frame edge."
+  ]
+}

@@ -1,0 +1,324 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The information-threshold copy count can make the component common-fiber aspect arbitrarily small.",
+      "resolution": "True for a poorly selected threshold binary node, but false at the existing K+2 final root: alpha is always in (1/4,1/2].",
+      "resolved": true
+    },
+    {
+      "objection": "A marginal constant mean leverage controls the minimum over exponentially many outcomes.",
+      "resolution": "Mean alone does not. The beta Chernoff exponent is Omega(N), strong enough to survive the union over N outcomes in the Haar model.",
+      "resolved": true
+    },
+    {
+      "objection": "The Haar leverage theorem proves the natural orientation components have a positive edge.",
+      "resolution": "No. Natural blocks are structured invariant ranges, not independent Haar rows; representation arithmetic may create tiny-edge central sectors.",
+      "resolved": false
+    },
+    {
+      "objection": "A final-root edge theorem resolves all recursive component POVMs.",
+      "resolution": "Earlier relation-bearing nodes, multiway component geometry, center-valued mass, support SELECT, transport, and holonomy remain.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "existing_k_plus_two_schedule_bounds_final_root_component_aspect": true,
+    "haar_final_root_aggregate_defect_has_constant_gap": true,
+    "haar_final_root_minimum_component_edge_is_constant_with_high_probability": true,
+    "natural_all_relation_node_component_edges_proved": false,
+    "natural_component_support_select_compiled": false,
+    "natural_final_root_component_edge_proved": false,
+    "reason": "The existing copy schedule supplies the right final-root aspect and the Haar model has overwhelming leverage/defect gaps, but no natural representation-theoretic transfer exists.",
+    "recursive_orientation_polar_proved": false,
+    "regular_master_central_support_controlled": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-08T07:49:13.946267+00:00",
+  "falsifiers_triggered": [
+    "The existing K+2 final root does not suffer a vanishing common-fiber aspect in the surrogate.",
+    "Marginal mean leverage alone is insufficient; the uniform result needs the beta large-deviation exponent.",
+    "Haar rank-one leverage concentration is not a natural wreath-frame theorem.",
+    "A final-root surrogate edge does not resolve earlier relation nodes or compile the PGM."
+  ],
+  "finite_controls": [
+    {
+      "aggregate_defect_minimum_eigenvalue": 0.3057329092836814,
+      "aggregate_defect_theorem_lower_bound": 0.1863354331956564,
+      "coefficient_dimension": 64,
+      "common_fiber_aspect": 0.375,
+      "common_fiber_dimension": 24,
+      "component_effect_sum_identity_residual": 1.141557601262796e-15,
+      "control_id": "HAAR-RANK24-IN-64-COORDINATES",
+      "every_component_above_half_mean": true,
+      "exact_component_povm_verified": true,
+      "half_mean_edge_threshold": 0.1875,
+      "maximum_row_leverage": 0.5113398244970883,
+      "minimum_row_leverage": 0.21296664336023596,
+      "random_seed": 301,
+      "status": "finite-haar-leverage-edge-and-defect-control-passed"
+    },
+    {
+      "aggregate_defect_minimum_eigenvalue": 0.2774999894943239,
+      "aggregate_defect_theorem_lower_bound": 0.17415785493363106,
+      "coefficient_dimension": 96,
+      "common_fiber_aspect": 0.3333333333333333,
+      "common_fiber_dimension": 32,
+      "component_effect_sum_identity_residual": 1.0846104196912773e-15,
+      "control_id": "HAAR-RANK32-IN-96-COORDINATES",
+      "every_component_above_half_mean": true,
+      "exact_component_povm_verified": true,
+      "half_mean_edge_threshold": 0.16666666666666666,
+      "maximum_row_leverage": 0.46692220117290134,
+      "minimum_row_leverage": 0.19265484081153975,
+      "random_seed": 302,
+      "status": "finite-haar-leverage-edge-and-defect-control-passed"
+    },
+    {
+      "aggregate_defect_minimum_eigenvalue": 0.3289044797963043,
+      "aggregate_defect_theorem_lower_bound": 0.2794038984529434,
+      "coefficient_dimension": 128,
+      "common_fiber_aspect": 0.375,
+      "common_fiber_dimension": 48,
+      "component_effect_sum_identity_residual": 1.8142592330013792e-15,
+      "control_id": "HAAR-RANK48-IN-128-COORDINATES",
+      "every_component_above_half_mean": true,
+      "exact_component_povm_verified": true,
+      "half_mean_edge_threshold": 0.1875,
+      "maximum_row_leverage": 0.48825348120764855,
+      "minimum_row_leverage": 0.2918425209589882,
+      "random_seed": 303,
+      "status": "finite-haar-leverage-edge-and-defect-control-passed"
+    }
+  ],
+  "headline_metrics": {
+    "all_relation_node_component_edge_theorem_count": 0,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "finite_half_mean_edge_miss_count": 0,
+    "haar_edge_to_defect_gap_bridge_count": 1,
+    "haar_uniform_rank_one_leverage_edge_theorem_count": 1,
+    "k_plus_two_final_root_component_aspect_theorem_count": 1,
+    "natural_component_support_select_circuit_count": 0,
+    "natural_final_root_leverage_edge_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "positive_finite_scaling_defect_gap_row_count": 11,
+    "scaling_record_count": 12,
+    "tail_common_fiber_aspect": 0.4828249149401914,
+    "tail_coordinate_defect_gap_lower_bound": 0.2414124574700957,
+    "tail_log2_union_edge_failure_upper_bound": -5.065105482028432e+60,
+    "tail_n": 48
+  },
+  "proof_obligations": [
+    {
+      "obligation": "show_existing_k_plus_two_schedule_bounds_final_root_component_aspect",
+      "resolution": "The exact dyadic ratio puts every recorded final-root child aspect in [2,4) and common-fiber aspect in (1/4,1/2].",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_uniform_haar_rank_one_component_edge",
+      "resolution": "Each leverage is Beta(r,N-r); the exact beta/binomial identity plus Chernoff and a coordinate union gives exp(-Omega(N)) failure at threshold alpha/2.",
+      "resolved": true
+    },
+    {
+      "obligation": "transfer_final_root_leverage_edge_to_natural_plancherel_racah_blocks",
+      "resolution": "Need a regular-master row/block leverage concentration theorem, including nonuniform leaf ranks and collision-free conditioning, on physical accepted mass.",
+      "resolved": false
+    },
+    {
+      "obligation": "extend_component_edge_control_to_every_relation_bearing_multiscale_node",
+      "resolution": "The final root is solved only in the surrogate. Classify which earlier binary/eight-way nodes carry nonzero dependency fibers and prove corresponding block/fiber aspect bounds.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "common_fiber_aspect": 0.375,
+      "coordinate_defect_gap_lower_bound_on_edge_event": -0.08333333333333331,
+      "final_child_coefficient_dimension_decimal": "16",
+      "final_child_coefficient_to_physical_aspect": 2.6666666666666665,
+      "group_order_decimal": "6",
+      "half_mean_edge_threshold": 0.1875,
+      "information_threshold_copy_count": 3,
+      "log2_union_lower_edge_failure_upper_bound": 0.0,
+      "n": 3,
+      "natural_leverage_edge_transfer_proved": false,
+      "positive_defect_gap_on_edge_event": false,
+      "selected_copy_count": 5,
+      "status": "small-finite-final-root-defect-bound-not-positive"
+    },
+    {
+      "common_fiber_aspect": 0.375,
+      "coordinate_defect_gap_lower_bound_on_edge_event": 0.11979166666666667,
+      "final_child_coefficient_dimension_decimal": "64",
+      "final_child_coefficient_to_physical_aspect": 2.6666666666666665,
+      "group_order_decimal": "24",
+      "half_mean_edge_threshold": 0.1875,
+      "information_threshold_copy_count": 5,
+      "log2_union_lower_edge_failure_upper_bound": -3.244902347630358,
+      "n": 4,
+      "natural_leverage_edge_transfer_proved": false,
+      "positive_defect_gap_on_edge_event": true,
+      "selected_copy_count": 7,
+      "status": "final-root-haar-uniform-leverage-and-defect-gap-certified"
+    },
+    {
+      "common_fiber_aspect": 0.3515625,
+      "coordinate_defect_gap_lower_bound_on_edge_event": 0.17349175347222223,
+      "final_child_coefficient_dimension_decimal": "2048",
+      "final_child_coefficient_to_physical_aspect": 2.8444444444444446,
+      "group_order_decimal": "720",
+      "half_mean_edge_threshold": 0.17578125,
+      "information_threshold_copy_count": 10,
+      "log2_union_lower_edge_failure_upper_bound": -249.7788930248903,
+      "n": 6,
+      "natural_leverage_edge_transfer_proved": false,
+      "positive_defect_gap_on_edge_event": true,
+      "selected_copy_count": 12,
+      "status": "final-root-haar-uniform-leverage-and-defect-gap-certified"
+    },
+    {
+      "common_fiber_aspect": 0.3076171875,
+      "coordinate_defect_gap_lower_bound_on_edge_event": 0.15376661996992808,
+      "final_child_coefficient_dimension_decimal": "131072",
+      "final_child_coefficient_to_physical_aspect": 3.250793650793651,
+      "group_order_decimal": "40320",
+      "half_mean_edge_threshold": 0.15380859375,
+      "information_threshold_copy_count": 16,
+      "log2_union_lower_edge_failure_upper_bound": -14038.379024023907,
+      "n": 8,
+      "natural_leverage_edge_transfer_proved": false,
+      "positive_defect_gap_on_edge_event": true,
+      "selected_copy_count": 18,
+      "status": "final-root-haar-uniform-leverage-and-defect-gap-certified"
+    },
+    {
+      "common_fiber_aspect": 0.432586669921875,
+      "coordinate_defect_gap_lower_bound_on_edge_event": 0.21629290302384258,
+      "final_child_coefficient_dimension_decimal": "8388608",
+      "final_child_coefficient_to_physical_aspect": 2.311675485008818,
+      "group_order_decimal": "3628800",
+      "half_mean_edge_threshold": 0.2162933349609375,
+      "information_threshold_copy_count": 22,
+      "log2_union_lower_edge_failure_upper_bound": -1411117.6015329063,
+      "n": 10,
+      "natural_leverage_edge_transfer_proved": false,
+      "positive_defect_gap_on_edge_event": true,
+      "selected_copy_count": 24,
+      "status": "final-root-haar-uniform-leverage-and-defect-gap-certified"
+    },
+    {
+      "common_fiber_aspect": 0.4461050033569336,
+      "coordinate_defect_gap_lower_bound_on_edge_event": 0.22305249843443797,
+      "final_child_coefficient_dimension_decimal": "1073741824",
+      "final_child_coefficient_to_physical_aspect": 2.241624712735824,
+      "group_order_decimal": "479001600",
+      "half_mean_edge_threshold": 0.2230525016784668,
+      "information_threshold_copy_count": 29,
+      "log2_union_lower_edge_failure_upper_bound": -188646653.64285603,
+      "n": 12,
+      "natural_leverage_edge_transfer_proved": false,
+      "positive_defect_gap_on_edge_event": true,
+      "selected_copy_count": 31,
+      "status": "final-root-haar-uniform-leverage-and-defect-gap-certified"
+    },
+    {
+      "common_fiber_aspect": 0.2973307273350656,
+      "coordinate_defect_gap_lower_bound_on_edge_event": 0.14866536366745142,
+      "final_child_coefficient_dimension_decimal": "70368744177664",
+      "final_child_coefficient_to_physical_aspect": 3.363258177057119,
+      "group_order_decimal": "20922789888000",
+      "half_mean_edge_threshold": 0.1486653636675328,
+      "information_threshold_copy_count": 45,
+      "log2_union_lower_edge_failure_upper_bound": -7232168569189.16,
+      "n": 16,
+      "natural_leverage_edge_transfer_proved": false,
+      "positive_defect_gap_on_edge_event": true,
+      "selected_copy_count": 47,
+      "status": "final-root-haar-uniform-leverage-and-defect-gap-certified"
+    },
+    {
+      "common_fiber_aspect": 0.26377576427094596,
+      "coordinate_defect_gap_lower_bound_on_edge_event": 0.13188788213547298,
+      "final_child_coefficient_dimension_decimal": "9223372036854775808",
+      "final_child_coefficient_to_physical_aspect": 3.7910988629448803,
+      "group_order_decimal": "2432902008176640000",
+      "half_mean_edge_threshold": 0.13188788213547298,
+      "information_threshold_copy_count": 62,
+      "log2_union_lower_edge_failure_upper_bound": -8.185618868202323e+17,
+      "n": 20,
+      "natural_leverage_edge_transfer_proved": false,
+      "positive_defect_gap_on_edge_event": true,
+      "selected_copy_count": 64,
+      "status": "final-root-haar-uniform-leverage-and-defect-gap-certified"
+    },
+    {
+      "common_fiber_aspect": 0.256611444501624,
+      "coordinate_defect_gap_lower_bound_on_edge_event": 0.128305722250812,
+      "final_child_coefficient_dimension_decimal": "2417851639229258349412352",
+      "final_child_coefficient_to_physical_aspect": 3.896942328282133,
+      "group_order_decimal": "620448401733239439360000",
+      "half_mean_edge_threshold": 0.128305722250812,
+      "information_threshold_copy_count": 80,
+      "log2_union_lower_edge_failure_upper_bound": -2.0757452325855953e+23,
+      "n": 24,
+      "natural_leverage_edge_transfer_proved": false,
+      "positive_defect_gap_on_edge_event": true,
+      "selected_copy_count": 82,
+      "status": "final-root-haar-uniform-leverage-and-defect-gap-certified"
+    },
+    {
+      "common_fiber_aspect": 0.3959152797986525,
+      "coordinate_defect_gap_lower_bound_on_edge_event": 0.19795763989932624,
+      "final_child_coefficient_dimension_decimal": "664613997892457936451903530140172288",
+      "final_child_coefficient_to_physical_aspect": 2.525792893137547,
+      "group_order_decimal": "263130836933693530167218012160000000",
+      "half_mean_edge_threshold": 0.19795763989932624,
+      "information_threshold_copy_count": 118,
+      "log2_union_lower_edge_failure_upper_bound": -9.895331567830857e+34,
+      "n": 32,
+      "natural_leverage_edge_transfer_proved": false,
+      "positive_defect_gap_on_edge_event": true,
+      "selected_copy_count": 120,
+      "status": "final-root-haar-uniform-leverage-and-defect-gap-certified"
+    },
+    {
+      "common_fiber_aspect": 0.27913594566270195,
+      "coordinate_defect_gap_lower_bound_on_edge_event": 0.13956797283135097,
+      "final_child_coefficient_dimension_decimal": "2923003274661805836407369665432566039311865085952",
+      "final_child_coefficient_to_physical_aspect": 3.5824837880548883,
+      "group_order_decimal": "815915283247897734345611269596115894272000000000",
+      "half_mean_edge_threshold": 0.13956797283135097,
+      "information_threshold_copy_count": 160,
+      "log2_union_lower_edge_failure_upper_bound": -2.7790404729494447e+47,
+      "n": 40,
+      "natural_leverage_edge_transfer_proved": false,
+      "positive_defect_gap_on_edge_event": true,
+      "selected_copy_count": 162,
+      "status": "final-root-haar-uniform-leverage-and-defect-gap-certified"
+    },
+    {
+      "common_fiber_aspect": 0.4828249149401914,
+      "coordinate_defect_gap_lower_bound_on_edge_event": 0.2414124574700957,
+      "final_child_coefficient_dimension_decimal": "25711008708143844408671393477458601640355247900524685364822016",
+      "final_child_coefficient_to_physical_aspect": 2.071144154033294,
+      "group_order_decimal": "12413915592536072670862289047373375038521486354677760000000000",
+      "half_mean_edge_threshold": 0.2414124574700957,
+      "information_threshold_copy_count": 203,
+      "log2_union_lower_edge_failure_upper_bound": -5.065105482028432e+60,
+      "n": 48,
+      "natural_leverage_edge_transfer_proved": false,
+      "positive_defect_gap_on_edge_event": true,
+      "selected_copy_count": 205,
+      "status": "final-root-haar-uniform-leverage-and-defect-gap-certified"
+    }
+  ],
+  "status": "final-root-haar-leverage-and-defect-gap-proved-natural-transfer-open",
+  "summary": "Showed that the existing K+2 schedule already prevents a vanishing final-root component aspect and proved an all-coordinate constant edge plus aggregate defect gap in the Haar surrogate.",
+  "theorem_contract": {
+    "defect_bridge": "On the uniform edge event, coordinate rank accounting gives D>=(alpha/2-2/r+1/N)I, asymptotically at least 1/8.",
+    "haar_coordinate_effect": "A rank-one coordinate component of a Haar isometry has one positive eigenvalue L_i distributed as Beta(r,N-r).",
+    "k_plus_two_final_root_aspect": "With K=ceil(log2|G|), one final-root child has N=2^(K+1) coefficients and r=|G|, so N/r is in [2,4) and alpha=r/N is in (1/4,1/2].",
+    "scope": "This is exact for the Haar/Gaussian final-root surrogate. Natural representation-valued block ranks, leverage tails, central-support mass, and coherent SELECT are unproved.",
+    "uniform_edge_tail": "The beta/binomial identity, Chernoff, and a union over all N coordinates bound Pr[min_i L_i<=alpha/2] by N exp(-(N-1)KL(r/(N-1)||alpha/2))."
+  }
+}

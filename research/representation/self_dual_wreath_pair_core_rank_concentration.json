@@ -1,0 +1,352 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Sparse W6 live graphs indicate natural channels are sparse stars.",
+      "resolution": "At natural k, balanced orientation pairs comprise density 1-o(1) and all have positive, concentrated pair-core rank with high collision-free conditional probability.",
+      "resolved": true
+    },
+    {
+      "objection": "Near-neighbor orientation pairs remain structurally absent.",
+      "resolution": "They may; the theorem excludes Hamming tails. Their fraction is exp(-Theta(k)) and cannot keep the full live graph sparse.",
+      "resolved": true
+    },
+    {
+      "objection": "Dense live pair-core support proves complete internal residual closure.",
+      "resolution": "Common-sector quotienting and coefficient-channel decomposition can turn a dense live graph into sparse residual channels.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "exact_pair_core_rank_factorization_proved": true,
+    "finite_w6_sparse_graph_asymptotically_representative": false,
+    "natural_live_pair_core_graph_density_one_proved": true,
+    "natural_pgm_endpoint_gap_proved": false,
+    "natural_residual_channels_affine_stars_proved": false,
+    "natural_residual_channels_dense_proved": false,
+    "natural_shorted_endpoint_comparability_proved": false,
+    "reason": "Natural pair cores are dense before coefficient quotienting, but residual channel gluing and matrix endpoint effects remain open.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-07T23:34:34.037764+00:00",
+  "exact_rank_controls": [
+    {
+      "control_id": "W6-SPARSE-LIVE-GRAPH-RANK-FACTORIZATION",
+      "exact_factorization_failure_count": 0,
+      "exact_pair_core_rank_factorization_verified": true,
+      "finite_live_graph_is_sparse": true,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "live_pair_core_count": 10,
+      "live_pair_core_fraction": 0.08333333333333333,
+      "maximum_pair_core_rank": 81,
+      "minimum_positive_pair_core_rank": 1,
+      "n": 6,
+      "orientation_count": 16,
+      "orientation_pair_count": 120,
+      "status": "exact-pair-core-three-block-rank-factorization-verified",
+      "target_partition": [
+        6
+      ]
+    }
+  ],
+  "falsifiers_triggered": [
+    "Sparse W6 live pair-core support is pre-asymptotic and cannot justify an all-depth star classification.",
+    "Near-Hamming orientation edges may be absent but have asymptotically negligible pair density.",
+    "Dense pair-core ranks still do not identify residual carrier-channel topology."
+  ],
+  "headline_metrics": {
+    "conditioned_concentration_certified_row_count": 4,
+    "dense_residual_channel_theorem_count": 0,
+    "density_scaling_row_count": 10,
+    "exact_pair_core_rank_factorization_theorem_count": 1,
+    "exact_rank_control_count": 1,
+    "exact_rank_control_failure_count": 0,
+    "finite_conditioned_concentration_onset_n": 36,
+    "finite_sparse_live_graph_control_count": 1,
+    "natural_endpoint_comparability_theorem_count": 0,
+    "natural_live_pair_core_density_one_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "tail_balanced_pair_fraction": 0.9999993017083386,
+    "tail_copy_count": 203,
+    "tail_log2_conditioned_failure_upper_bound": -182.9956833946349,
+    "tail_n": 48
+  },
+  "proof_obligations": [
+    {
+      "obligation": "factor_pair_core_rank_into_three_plancherel_blocks",
+      "resolution": "The two-orientation parity kernel has exactly the all-trivial and all-sign assignments; 120 W6 pairs match the factorization exactly.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_natural_live_pair_core_density_one",
+      "resolution": "Balanced Hamming differences have density 1-o(1), and every balanced pair rank is positive with conditional probability 1-o(1).",
+      "resolved": true
+    },
+    {
+      "obligation": "classify_dense_pair_cores_after_common_sector_removal",
+      "resolution": "Need matrix-valued channel or endpoint-short analysis; rank alone does not track which coefficient atoms survive or glue.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "asymptotic_live_pair_core_density_lower_bound": 0.9758804552257061,
+      "balanced_distance_cutoff": 9,
+      "balanced_ordered_pair_fraction": 0.9758804552257061,
+      "conditioned_balanced_pair_failure_upper_bound": 1.0,
+      "expected_normalized_pair_core_rank_formula": "2*7700/(479001600)^3",
+      "information_threshold_copy_count": 29,
+      "log2_balanced_pair_all_target_failure_upper_bound": 37.43277390912519,
+      "log2_conditioned_balanced_pair_failure_upper_bound": 182.12993987473536,
+      "log2_global_collision_free_probability": -144.69716596561017,
+      "log2_unbalanced_ordered_pair_fraction": -5.373653511312279,
+      "n": 12,
+      "pair_rank_relative_lower_factor": 0.7290000000000001,
+      "pair_rank_relative_upper_factor": 1.3310000000000004,
+      "partition_count": 77,
+      "per_factor_relative_error_tolerance": 0.1,
+      "smallest_nonidentity_class_size": 66,
+      "status": "finite-balanced-pair-conditioning-bound-vacuous",
+      "uniform_balanced_pair_rank_concentration_certified": false
+    },
+    {
+      "asymptotic_live_pair_core_density_lower_bound": 0.9839056399687252,
+      "balanced_distance_cutoff": 15,
+      "balanced_ordered_pair_fraction": 0.9839056399687252,
+      "conditioned_balanced_pair_failure_upper_bound": 1.0,
+      "expected_normalized_pair_core_rank_formula": "2*1153152/(20922789888000)^3",
+      "information_threshold_copy_count": 45,
+      "log2_balanced_pair_all_target_failure_upper_bound": 25.13648003994558,
+      "log2_conditioned_balanced_pair_failure_upper_bound": 149.86818174023603,
+      "log2_global_collision_free_probability": -124.73170170029044,
+      "log2_unbalanced_ordered_pair_fraction": -5.957300978480245,
+      "n": 16,
+      "pair_rank_relative_lower_factor": 0.7290000000000001,
+      "pair_rank_relative_upper_factor": 1.3310000000000004,
+      "partition_count": 231,
+      "per_factor_relative_error_tolerance": 0.1,
+      "smallest_nonidentity_class_size": 120,
+      "status": "finite-balanced-pair-conditioning-bound-vacuous",
+      "uniform_balanced_pair_rank_concentration_certified": false
+    },
+    {
+      "asymptotic_live_pair_core_density_lower_bound": 0.9968439397489789,
+      "balanced_distance_cutoff": 20,
+      "balanced_ordered_pair_fraction": 0.9968439397489789,
+      "conditioned_balanced_pair_failure_upper_bound": 1.0,
+      "expected_normalized_pair_core_rank_formula": "2*249420600/(2432902008176640000)^3",
+      "information_threshold_copy_count": 62,
+      "log2_balanced_pair_all_target_failure_upper_bound": 15.55375822027348,
+      "log2_conditioned_balanced_pair_failure_upper_bound": 123.66423469379983,
+      "log2_global_collision_free_probability": -108.11047647352635,
+      "log2_unbalanced_ordered_pair_fraction": -8.30765953716254,
+      "n": 20,
+      "pair_rank_relative_lower_factor": 0.7290000000000001,
+      "pair_rank_relative_upper_factor": 1.3310000000000004,
+      "partition_count": 627,
+      "per_factor_relative_error_tolerance": 0.1,
+      "smallest_nonidentity_class_size": 190,
+      "status": "finite-balanced-pair-conditioning-bound-vacuous",
+      "uniform_balanced_pair_rank_concentration_certified": false
+    },
+    {
+      "asymptotic_live_pair_core_density_lower_bound": 0.9989472651426466,
+      "balanced_distance_cutoff": 26,
+      "balanced_ordered_pair_fraction": 0.9989472651426466,
+      "conditioned_balanced_pair_failure_upper_bound": 1.0,
+      "expected_normalized_pair_core_rank_formula": "2*117487079424/(620448401733239439360000)^3",
+      "information_threshold_copy_count": 80,
+      "log2_balanced_pair_all_target_failure_upper_bound": -4.134412333398031,
+      "log2_conditioned_balanced_pair_failure_upper_bound": 86.94726209781808,
+      "log2_global_collision_free_probability": -91.08167443121611,
+      "log2_unbalanced_ordered_pair_fraction": -9.891642160879934,
+      "n": 24,
+      "pair_rank_relative_lower_factor": 0.7290000000000001,
+      "pair_rank_relative_upper_factor": 1.3310000000000004,
+      "partition_count": 1575,
+      "per_factor_relative_error_tolerance": 0.1,
+      "smallest_nonidentity_class_size": 276,
+      "status": "finite-balanced-pair-conditioning-bound-vacuous",
+      "uniform_balanced_pair_rank_concentration_certified": false
+    },
+    {
+      "asymptotic_live_pair_core_density_lower_bound": 0.9996454661440132,
+      "balanced_distance_cutoff": 32,
+      "balanced_ordered_pair_fraction": 0.9996454661440132,
+      "conditioned_balanced_pair_failure_upper_bound": 1.0,
+      "expected_normalized_pair_core_rank_formula": "2*57424104738000/(304888344611713860501504000000)^3",
+      "information_threshold_copy_count": 98,
+      "log2_balanced_pair_all_target_failure_upper_bound": -27.91822000835505,
+      "log2_conditioned_balanced_pair_failure_upper_bound": 47.4348373315504,
+      "log2_global_collision_free_probability": -75.35305733990545,
+      "log2_unbalanced_ordered_pair_fraction": -11.461788976253716,
+      "n": 28,
+      "pair_rank_relative_lower_factor": 0.7290000000000001,
+      "pair_rank_relative_upper_factor": 1.3310000000000004,
+      "partition_count": 3718,
+      "per_factor_relative_error_tolerance": 0.1,
+      "smallest_nonidentity_class_size": 378,
+      "status": "finite-balanced-pair-conditioning-bound-vacuous",
+      "uniform_balanced_pair_rank_concentration_certified": false
+    },
+    {
+      "asymptotic_live_pair_core_density_lower_bound": 0.999861761503009,
+      "balanced_distance_cutoff": 39,
+      "balanced_ordered_pair_fraction": 0.999861761503009,
+      "conditioned_balanced_pair_failure_upper_bound": 1.0,
+      "expected_normalized_pair_core_rank_formula": "2*50385731994259200/(263130836933693530167218012160000000)^3",
+      "information_threshold_copy_count": 118,
+      "log2_balanced_pair_all_target_failure_upper_bound": -60.02184221460588,
+      "log2_conditioned_balanced_pair_failure_upper_bound": 2.6053551704252698,
+      "log2_global_collision_free_probability": -62.62719738503115,
+      "log2_unbalanced_ordered_pair_fraction": -12.820552942666005,
+      "n": 32,
+      "pair_rank_relative_lower_factor": 0.7290000000000001,
+      "pair_rank_relative_upper_factor": 1.3310000000000004,
+      "partition_count": 8349,
+      "per_factor_relative_error_tolerance": 0.1,
+      "smallest_nonidentity_class_size": 496,
+      "status": "finite-balanced-pair-conditioning-bound-vacuous",
+      "uniform_balanced_pair_rank_concentration_certified": false
+    },
+    {
+      "asymptotic_live_pair_core_density_lower_bound": 0.9999606164652745,
+      "balanced_distance_cutoff": 46,
+      "balanced_ordered_pair_fraction": 0.9999606164652745,
+      "conditioned_balanced_pair_failure_upper_bound": 2.2466280044222565e-13,
+      "expected_normalized_pair_core_rank_formula": "2*40971642983700000000/(371993326789901217467999448150835200000000)^3",
+      "information_threshold_copy_count": 139,
+      "log2_balanced_pair_all_target_failure_upper_bound": -93.66868504568335,
+      "log2_conditioned_balanced_pair_failure_upper_bound": -42.01730396998989,
+      "log2_global_collision_free_probability": -51.65138107569346,
+      "log2_unbalanced_ordered_pair_fraction": -14.632047873553777,
+      "n": 36,
+      "pair_rank_relative_lower_factor": 0.7290000000000001,
+      "pair_rank_relative_upper_factor": 1.3310000000000004,
+      "partition_count": 17977,
+      "per_factor_relative_error_tolerance": 0.1,
+      "smallest_nonidentity_class_size": 630,
+      "status": "balanced-pair-ranks-uniform-after-distinct-conditioning",
+      "uniform_balanced_pair_rank_concentration_certified": true
+    },
+    {
+      "asymptotic_live_pair_core_density_lower_bound": 0.9999886923082328,
+      "balanced_distance_cutoff": 53,
+      "balanced_ordered_pair_fraction": 0.9999886923082328,
+      "conditioned_balanced_pair_failure_upper_bound": 2.1510861887758034e-27,
+      "expected_normalized_pair_core_rank_formula": "2*58965081685061803130880/(815915283247897734345611269596115894272000000000)^3",
+      "information_threshold_copy_count": 160,
+      "log2_balanced_pair_all_target_failure_upper_bound": -130.36835188682198,
+      "log2_conditioned_balanced_pair_failure_upper_bound": -88.58699323076902,
+      "log2_global_collision_free_probability": -41.78135865605296,
+      "log2_unbalanced_ordered_pair_fraction": -16.43233601159293,
+      "n": 40,
+      "pair_rank_relative_lower_factor": 0.7290000000000001,
+      "pair_rank_relative_upper_factor": 1.3310000000000004,
+      "partition_count": 37338,
+      "per_factor_relative_error_tolerance": 0.1,
+      "smallest_nonidentity_class_size": 780,
+      "status": "balanced-pair-ranks-uniform-after-distinct-conditioning",
+      "uniform_balanced_pair_rank_concentration_certified": true
+    },
+    {
+      "asymptotic_live_pair_core_density_lower_bound": 0.9999967333532043,
+      "balanced_distance_cutoff": 60,
+      "balanced_ordered_pair_fraction": 0.9999967333532043,
+      "conditioned_balanced_pair_failure_upper_bound": 1.0557370428943392e-41,
+      "expected_normalized_pair_core_rank_formula": "2*82628724406182220050744960/(2658271574788448768043625811014615890319638528000000000)^3",
+      "information_threshold_copy_count": 181,
+      "log2_balanced_pair_all_target_failure_upper_bound": -169.74565946977373,
+      "log2_conditioned_balanced_pair_failure_upper_bound": -136.12080134939163,
+      "log2_global_collision_free_probability": -33.6248581203821,
+      "log2_unbalanced_ordered_pair_fraction": -18.223758096671318,
+      "n": 44,
+      "pair_rank_relative_lower_factor": 0.7290000000000001,
+      "pair_rank_relative_upper_factor": 1.3310000000000004,
+      "partition_count": 75175,
+      "per_factor_relative_error_tolerance": 0.1,
+      "smallest_nonidentity_class_size": 946,
+      "status": "balanced-pair-ranks-uniform-after-distinct-conditioning",
+      "uniform_balanced_pair_rank_concentration_certified": true
+    },
+    {
+      "asymptotic_live_pair_core_density_lower_bound": 0.9999993017083386,
+      "balanced_distance_cutoff": 67,
+      "balanced_ordered_pair_fraction": 0.9999993017083386,
+      "conditioned_balanced_pair_failure_upper_bound": 8.181072119951268e-56,
+      "expected_normalized_pair_core_rank_formula": "2*139108709149402516499579535360/(12413915592536072670862289047373375038521486354677760000000000)^3",
+      "information_threshold_copy_count": 203,
+      "log2_balanced_pair_all_target_failure_upper_bound": -209.5057621406147,
+      "log2_conditioned_balanced_pair_failure_upper_bound": -182.9956833946349,
+      "log2_global_collision_free_probability": -26.510078745979804,
+      "log2_unbalanced_ordered_pair_fraction": -20.449666919261617,
+      "n": 48,
+      "pair_rank_relative_lower_factor": 0.7290000000000001,
+      "pair_rank_relative_upper_factor": 1.3310000000000004,
+      "partition_count": 147273,
+      "per_factor_relative_error_tolerance": 0.1,
+      "smallest_nonidentity_class_size": 1128,
+      "status": "balanced-pair-ranks-uniform-after-distinct-conditioning",
+      "uniform_balanced_pair_rank_concentration_certified": true
+    }
+  ],
+  "status": "natural-live-pair-core-density-one-proved-residual-channel-gluing-open",
+  "summary": "Proved that balanced natural pair cores have uniformly concentrated positive rank and occupy density 1-o(1), invalidating extrapolation from sparse finite live graphs.",
+  "theorem_contract": {
+    "balanced_pair_concentration": "For floor(k/3)<=h<=k-floor(k/3), all six block multiplicities concentrate simultaneously over every pair and target.",
+    "balanced_pair_mass": "The excluded Hamming-distance tail is exp(-Theta(k)), so balanced orientation pairs have density 1-o(1).",
+    "collision_free_transfer": "The independent-source failure bound is divided by the exact global collision-free mass, asymptotically 1-o(1).",
+    "exact_pair_rank": "rank(K_ef)/D_all=X_1+X_2+X_3nu + X_1-X_2-X_3(nu^T), over independent blocks h,h,k-h.",
+    "expected_normalized_rank": "E[rank(K_ef)/D_all]=2 d_nu/(n!)^3.",
+    "scope": "Dense live pair cores do not imply dense residual carrier channels or comparable child endpoint shorts."
+  }
+}

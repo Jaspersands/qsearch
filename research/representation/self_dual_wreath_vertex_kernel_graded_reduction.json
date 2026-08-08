@@ -1,0 +1,349 @@
+{
+  "abstract_controls": [
+    {
+      "control_id": "UNIFORM-SCALAR-AFFINE-STAR",
+      "crossing_coefficient_dimension": 2,
+      "crossing_edge_count": 2,
+      "direct_to_shorted_grading_residual": 1.3877787807814457e-17,
+      "direct_to_shorted_metric_residual": 0.0,
+      "edge_count": 3,
+      "endpoint_gap": 0.4444444444444445,
+      "exact_vertex_kernel_reduction_verified": true,
+      "generalized_ratio_defect_residual": 4.163336342344337e-17,
+      "generalized_ratio_maximum": 1.2499999999999998,
+      "generalized_ratio_minimum": 0.8620689655172411,
+      "generalized_ratio_predicted_defect": 0.11111111111111101,
+      "grading_defect_norm": 0.11111111111111105,
+      "left_endpoint_effect_minimum_eigenvalue": 1.0,
+      "left_internal_edge_count": 0,
+      "maximum_local_identity_diagonal_residual": 0.0,
+      "minimum_local_kernel_eigenvalue": 0.7999999999999998,
+      "quotient_metric_minimum_eigenvalue": 1.7999999999999998,
+      "right_endpoint_effect_minimum_eigenvalue": 0.8,
+      "right_internal_edge_count": 1,
+      "status": "vertex-kernel-graded-reduction-verified",
+      "total_coefficient_dimension": 3,
+      "vertex_count": 4
+    },
+    {
+      "control_id": "NONUNIFORM-SCALAR-AFFINE-STAR",
+      "crossing_coefficient_dimension": 2,
+      "crossing_edge_count": 2,
+      "direct_to_shorted_grading_residual": 6.938893903907228e-18,
+      "direct_to_shorted_metric_residual": 0.0,
+      "edge_count": 3,
+      "endpoint_gap": 0.421410115870236,
+      "exact_vertex_kernel_reduction_verified": true,
+      "generalized_ratio_defect_residual": 5.551115123125783e-17,
+      "generalized_ratio_maximum": 1.2504600697157648,
+      "generalized_ratio_minimum": 0.7283399302842352,
+      "generalized_ratio_predicted_defect": 0.157179768259528,
+      "grading_defect_norm": 0.15717976825952795,
+      "left_endpoint_effect_minimum_eigenvalue": 0.7283399302842352,
+      "left_internal_edge_count": 1,
+      "maximum_local_identity_diagonal_residual": 0.0,
+      "minimum_local_kernel_eigenvalue": 0.7150672160668823,
+      "quotient_metric_minimum_eigenvalue": 1.728339930284235,
+      "right_endpoint_effect_minimum_eigenvalue": 1.0,
+      "right_internal_edge_count": 0,
+      "status": "vertex-kernel-graded-reduction-verified",
+      "total_coefficient_dimension": 3,
+      "vertex_count": 4
+    },
+    {
+      "control_id": "MATRIX-VALUED-NONUNIFORM-SHEAF",
+      "crossing_coefficient_dimension": 4,
+      "crossing_edge_count": 2,
+      "direct_to_shorted_grading_residual": 6.935735323960077e-17,
+      "direct_to_shorted_metric_residual": 4.441733373550907e-16,
+      "edge_count": 8,
+      "endpoint_gap": 0.4888044293063534,
+      "exact_vertex_kernel_reduction_verified": true,
+      "generalized_ratio_defect_residual": 1.8735013540549517e-16,
+      "generalized_ratio_maximum": 1.0196601844204634,
+      "generalized_ratio_minimum": 0.9561984831814749,
+      "generalized_ratio_predicted_defect": 0.022391141387293284,
+      "grading_defect_norm": 0.022391141387293097,
+      "left_endpoint_effect_minimum_eigenvalue": 0.9355516889083174,
+      "left_internal_edge_count": 3,
+      "maximum_local_identity_diagonal_residual": 2.8654601520821483e-16,
+      "minimum_local_kernel_eigenvalue": 0.7283598494436263,
+      "quotient_metric_minimum_eigenvalue": 1.9049135358053755,
+      "right_endpoint_effect_minimum_eigenvalue": 0.9516879271146933,
+      "right_internal_edge_count": 3,
+      "status": "vertex-kernel-graded-reduction-verified",
+      "total_coefficient_dimension": 16,
+      "vertex_count": 6
+    },
+    {
+      "control_id": "CROSSING-ONLY-K4-4-MATRIX-FRAMEWORK-NO-GO",
+      "crossing_coefficient_dimension": 16,
+      "crossing_edge_count": 16,
+      "direct_to_shorted_grading_residual": 0.0,
+      "direct_to_shorted_metric_residual": 0.0,
+      "edge_count": 16,
+      "endpoint_gap": 0.3333333333333329,
+      "exact_vertex_kernel_reduction_verified": true,
+      "generalized_ratio_defect_residual": 1.6653345369377348e-16,
+      "generalized_ratio_maximum": 2.0000000000000027,
+      "generalized_ratio_minimum": 0.4999999999999993,
+      "generalized_ratio_predicted_defect": 0.3333333333333339,
+      "grading_defect_norm": 0.3333333333333341,
+      "left_endpoint_effect_minimum_eigenvalue": 0.7999999999999999,
+      "left_internal_edge_count": 0,
+      "maximum_local_identity_diagonal_residual": 0.0,
+      "minimum_local_kernel_eigenvalue": 0.7999999999999999,
+      "quotient_metric_minimum_eigenvalue": 1.5999999999999988,
+      "right_endpoint_effect_minimum_eigenvalue": 0.7999999999999995,
+      "right_internal_edge_count": 0,
+      "status": "vertex-kernel-graded-reduction-verified",
+      "total_coefficient_dimension": 16,
+      "vertex_count": 8
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Different reciprocal carrier scales invalidate the graph reduction.",
+      "resolution": "They enter the local PSD kernels directly; no common gamma is used in the side-short theorem.",
+      "resolved": true
+    },
+    {
+      "objection": "Noncommuting multiplicity maps cannot be scalar-channel atomized.",
+      "resolution": "Scalar atomization is unnecessary for equations (1)-(2); full matrix endpoint kernels are retained.",
+      "resolved": true
+    },
+    {
+      "objection": "The general theorem itself forces a constant endpoint gap.",
+      "resolution": "The crossing-only K4,4 control remains poorly conditioned and scales to zero gap.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "arbitrary_psd_vertex_kernel_reduction_proved": true,
+    "matrix_valued_multiplicity_sheaves_supported": true,
+    "natural_pgm_endpoint_gap_proved": false,
+    "natural_shorted_endpoint_comparability_proved": false,
+    "nonuniform_correlations_supported": true,
+    "physical_w6_direct_short_identity_verified": true,
+    "reason": "The exact graded target now covers the full physical matrix sheaf, but no natural-mass theorem compares its two child shorts.",
+    "scalar_channelization_required_for_reduction": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-07T23:23:34.451202+00:00",
+  "falsifiers_triggered": [
+    "A common residual correlation is not required to define the exact graded quotient.",
+    "Failure of commuting support-projector atomization no longer blocks finite physical evaluation.",
+    "The crossing-only bipartite family still proves that endpoint comparability is substantive, not automatic."
+  ],
+  "headline_metrics": {
+    "abstract_control_count": 4,
+    "arbitrary_psd_vertex_kernel_reduction_theorem_count": 1,
+    "control_failure_count": 0,
+    "crossing_bipartite_endpoint_gap": 0.3333333333333329,
+    "matrix_valued_sheaf_reduction_theorem_count": 1,
+    "maximum_direct_to_shorted_residual": 4.441733373550907e-16,
+    "natural_endpoint_comparability_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "nonuniform_correlation_reduction_theorem_count": 1,
+    "physical_control_count": 1,
+    "physical_split_control_count": 4
+  },
+  "physical_controls": [
+    {
+      "all_splits_verified": true,
+      "audited_split_count": 4,
+      "control_id": "W6-CARRIER-5-PHYSICAL-VERTEX-KERNEL",
+      "exact_common_dimension_removed": 6,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "live_pair_core_count": 10,
+      "maximum_direct_to_shorted_residual": 2.2564443104139766e-16,
+      "maximum_grading_defect_norm": 0.11111111111111066,
+      "minimum_endpoint_gap": 0.44444444444444464,
+      "n": 6,
+      "orientation_count": 16,
+      "residual_pair_core_count": 9,
+      "split_controls": [
+        {
+          "control_id": "W6-CARRIER-5-PHYSICAL-VERTEX-KERNEL-BIT-0",
+          "crossing_coefficient_dimension": 116,
+          "crossing_edge_count": 7,
+          "direct_to_shorted_grading_residual": 9.34862843315798e-17,
+          "direct_to_shorted_metric_residual": 2.2265509909136605e-16,
+          "edge_count": 9,
+          "endpoint_gap": 0.4444444444444448,
+          "exact_vertex_kernel_reduction_verified": true,
+          "generalized_ratio_defect_residual": 2.0816681711721685e-16,
+          "generalized_ratio_maximum": 1.160000000000003,
+          "generalized_ratio_minimum": 0.8000000000000008,
+          "generalized_ratio_predicted_defect": 0.1111111111111106,
+          "grading_defect_norm": 0.1111111111111104,
+          "left_endpoint_effect_minimum_eigenvalue": 0.7999999999999999,
+          "left_internal_edge_count": 2,
+          "maximum_local_identity_diagonal_residual": 8.684327297785173e-15,
+          "minimum_local_kernel_eigenvalue": 0.7999999999999987,
+          "quotient_metric_minimum_eigenvalue": 1.7999999999999978,
+          "right_endpoint_effect_minimum_eigenvalue": 0.9999999999999915,
+          "right_internal_edge_count": 0,
+          "status": "vertex-kernel-graded-reduction-verified",
+          "total_coefficient_dimension": 145,
+          "vertex_count": 10
+        },
+        {
+          "control_id": "W6-CARRIER-5-PHYSICAL-VERTEX-KERNEL-BIT-1",
+          "crossing_coefficient_dimension": 41,
+          "crossing_edge_count": 7,
+          "direct_to_shorted_grading_residual": 7.599576850048116e-17,
+          "direct_to_shorted_metric_residual": 2.2269818667953164e-16,
+          "edge_count": 9,
+          "endpoint_gap": 0.44444444444444525,
+          "exact_vertex_kernel_reduction_verified": true,
+          "generalized_ratio_defect_residual": 9.71445146547012e-17,
+          "generalized_ratio_maximum": 1.1600000000000046,
+          "generalized_ratio_minimum": 0.8000000000000027,
+          "generalized_ratio_predicted_defect": 0.11111111111110944,
+          "grading_defect_norm": 0.11111111111110954,
+          "left_endpoint_effect_minimum_eigenvalue": 0.7999999999999993,
+          "left_internal_edge_count": 1,
+          "maximum_local_identity_diagonal_residual": 8.684327297785173e-15,
+          "minimum_local_kernel_eigenvalue": 0.7999999999999987,
+          "quotient_metric_minimum_eigenvalue": 1.7999999999999947,
+          "right_endpoint_effect_minimum_eigenvalue": 0.9999999999999919,
+          "right_internal_edge_count": 1,
+          "status": "vertex-kernel-graded-reduction-verified",
+          "total_coefficient_dimension": 145,
+          "vertex_count": 10
+        },
+        {
+          "control_id": "W6-CARRIER-5-PHYSICAL-VERTEX-KERNEL-BIT-2",
+          "crossing_coefficient_dimension": 41,
+          "crossing_edge_count": 7,
+          "direct_to_shorted_grading_residual": 7.843865864091615e-17,
+          "direct_to_shorted_metric_residual": 2.2564443104139766e-16,
+          "edge_count": 9,
+          "endpoint_gap": 0.44444444444444525,
+          "exact_vertex_kernel_reduction_verified": true,
+          "generalized_ratio_defect_residual": 9.71445146547012e-16,
+          "generalized_ratio_maximum": 1.2499999999999984,
+          "generalized_ratio_minimum": 0.8620689655172376,
+          "generalized_ratio_predicted_defect": 0.11111111111111051,
+          "grading_defect_norm": 0.11111111111110954,
+          "left_endpoint_effect_minimum_eigenvalue": 0.9999999999999919,
+          "left_internal_edge_count": 1,
+          "maximum_local_identity_diagonal_residual": 8.684327297785173e-15,
+          "minimum_local_kernel_eigenvalue": 0.7999999999999987,
+          "quotient_metric_minimum_eigenvalue": 1.7999999999999947,
+          "right_endpoint_effect_minimum_eigenvalue": 0.7999999999999993,
+          "right_internal_edge_count": 1,
+          "status": "vertex-kernel-graded-reduction-verified",
+          "total_coefficient_dimension": 145,
+          "vertex_count": 10
+        },
+        {
+          "control_id": "W6-CARRIER-5-PHYSICAL-VERTEX-KERNEL-BIT-3",
+          "crossing_coefficient_dimension": 116,
+          "crossing_edge_count": 7,
+          "direct_to_shorted_grading_residual": 7.369518004844247e-17,
+          "direct_to_shorted_metric_residual": 2.2256077909466143e-16,
+          "edge_count": 9,
+          "endpoint_gap": 0.44444444444444464,
+          "exact_vertex_kernel_reduction_verified": true,
+          "generalized_ratio_defect_residual": 0.0,
+          "generalized_ratio_maximum": 1.249999999999999,
+          "generalized_ratio_minimum": 0.8620689655172388,
+          "generalized_ratio_predicted_defect": 0.11111111111111066,
+          "grading_defect_norm": 0.11111111111111066,
+          "left_endpoint_effect_minimum_eigenvalue": 0.9999999999999925,
+          "left_internal_edge_count": 0,
+          "maximum_local_identity_diagonal_residual": 8.684327297785173e-15,
+          "minimum_local_kernel_eigenvalue": 0.7999999999999987,
+          "quotient_metric_minimum_eigenvalue": 1.7999999999999972,
+          "right_endpoint_effect_minimum_eigenvalue": 0.7999999999999993,
+          "right_internal_edge_count": 2,
+          "status": "vertex-kernel-graded-reduction-verified",
+          "total_coefficient_dimension": 145,
+          "vertex_count": 10
+        }
+      ],
+      "status": "physical-vertex-kernel-splits-verified",
+      "target_partition": [
+        6
+      ]
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "remove_uniform_scalar_channel_assumption",
+      "resolution": "The side-short identity is algebraic for arbitrary PSD vertex kernels and variable edge fibers.",
+      "resolved": true
+    },
+    {
+      "obligation": "admit_noncommuting_matrix_multiplicity_sheaves",
+      "resolution": "A two-dimensional nonuniform matrix-fiber control matches the direct graded quotient.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_natural_shorted_endpoint_comparability",
+      "resolution": "Need representation-theoretic control of the physical child shorts on globally distinct Plancherel portfolios.",
+      "resolved": false
+    }
+  ],
+  "status": "arbitrary-vertex-kernel-graded-reduction-verified-natural-comparability-open",
+  "summary": "Extended the graded endpoint-effect theorem from one uniform scalar gamma to arbitrary PSD, nonuniform, matrix-valued physical kernels.",
+  "theorem_contract": {
+    "comparability": "Generalized eigenvalue t of E_L relative to E_R contributes grading defect (t-1)/(t+1).",
+    "full_relation": "M=A_L+A_R and J=A_L-A_R after incidence signs.",
+    "physical_input": "Each orientation vertex supplies an arbitrary PSD block Gram kernel on its incident pair-core coefficient fibers.",
+    "scope": "The reduction permits unequal dimensions, varying correlations, and matrix fibers. It does not prove natural endpoint comparability.",
+    "shorted_endpoint_identity": "After eliminating all same-child edge variables, M_q=E_L+E_R and J_q=E_L-E_R for the two child shorted endpoint kernels."
+  }
+}

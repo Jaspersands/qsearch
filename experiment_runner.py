@@ -189,8 +189,68 @@ from self_dual_wreath_common_core_atomization import (
 from self_dual_wreath_common_core_cech_laplacian import (
     write_common_core_cech_laplacian_report,
 )
+from self_dual_wreath_affine_core_flag_theorem import (
+    write_affine_core_flag_report,
+)
+from self_dual_wreath_affine_node_common_outlier import (
+    write_affine_node_common_outlier_report,
+)
+from self_dual_wreath_affine_plane_scalar_holonomy import (
+    write_affine_plane_scalar_holonomy_report,
+)
+from self_dual_wreath_affine_plane_support_pressure_no_go import (
+    write_affine_plane_support_pressure_no_go_report,
+)
+from self_dual_wreath_affine_recoupling_bundle import (
+    write_affine_recoupling_bundle_report,
+)
+from self_dual_wreath_block_common_core_quotient import (
+    write_block_common_core_quotient_report,
+)
+from self_dual_wreath_branch_controlled_invariant_filter import (
+    write_branch_controlled_invariant_filter_report,
+)
+from self_dual_wreath_cluster_locality_no_go import (
+    write_cluster_locality_no_go_report,
+)
+from self_dual_wreath_local_isotypic_filter_no_go import (
+    write_local_isotypic_filter_no_go_report,
+)
+from self_dual_wreath_orientation_block_common_core import (
+    write_orientation_block_common_core_report,
+)
+from self_dual_wreath_orientation_common_range import (
+    write_orientation_common_range_report,
+)
+from self_dual_wreath_orientation_covariant_quotient_obstruction import (
+    write_orientation_covariant_quotient_obstruction_report,
+)
 from self_dual_wreath_orientation_laplacian_gap import (
     write_orientation_laplacian_gap_report,
+)
+from self_dual_wreath_orientation_pair_angle_spectrum import (
+    write_orientation_pair_angle_spectrum_report,
+)
+from self_dual_wreath_orientation_triple_range import (
+    write_orientation_triple_range_report,
+)
+from self_dual_wreath_paired_block_filter_bypass import (
+    write_paired_block_filter_bypass_report,
+)
+from self_dual_wreath_plancherel_block_mass import (
+    write_plancherel_block_mass_report,
+)
+from self_dual_wreath_plancherel_block_obstruction import (
+    write_plancherel_block_obstruction_report,
+)
+from self_dual_wreath_spectral_filter_degree_obstruction import (
+    write_spectral_filter_degree_obstruction_report,
+)
+from self_dual_wreath_spectral_filter_query_lower_bound import (
+    write_spectral_filter_query_lower_bound_report,
+)
+from self_dual_wreath_spectral_trimmed_subpovm import (
+    write_spectral_trimmed_subpovm_report,
 )
 from self_dual_wreath_pair_core_recoupling_boundary import (
     write_pair_core_recoupling_boundary_report,
@@ -896,6 +956,26 @@ COSET_EXPERIMENTS = {
     "EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-RECOUPLING-BOUNDARY",
     "EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-ATOMIZATION",
     "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP",
+    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-COMMON-RANGE",
+    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-TRIPLE-RANGE",
+    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-PAIR-ANGLES",
+    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-BLOCK-COMMON-CORE",
+    "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-BLOCK-OBSTRUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-SPECTRAL-TRIMMED-SUBPOVM",
+    "EXP-CODE-SELF-DUAL-WREATH-SPECTRAL-FILTER-DEGREE-OBSTRUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-BLOCK-MASS",
+    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-COVARIANT-QUOTIENT-OBSTRUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CONTROLLED-INVARIANT-FILTER",
+    "EXP-CODE-SELF-DUAL-WREATH-BLOCK-COMMON-CORE-QUOTIENT",
+    "EXP-CODE-SELF-DUAL-WREATH-PAIRED-BLOCK-FILTER-BYPASS",
+    "EXP-CODE-SELF-DUAL-WREATH-LOCAL-ISOTYPIC-FILTER-NO-GO",
+    "EXP-CODE-SELF-DUAL-WREATH-CLUSTER-LOCALITY-NO-GO",
+    "EXP-CODE-SELF-DUAL-WREATH-SPECTRAL-FILTER-QUERY-LOWER-BOUND",
+    "EXP-CODE-SELF-DUAL-WREATH-AFFINE-CORE-FLAG-THEOREM",
+    "EXP-CODE-SELF-DUAL-WREATH-AFFINE-NODE-COMMON-OUTLIER",
+    "EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SCALAR-HOLONOMY",
+    "EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SUPPORT-PRESSURE-NO-GO",
+    "EXP-CODE-SELF-DUAL-WREATH-AFFINE-RECOUPLING-BUNDLE",
     "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING",
     "EXP-COSET-ENTANGLEMENT-WIDTH-GATE",
     "EXP-COSET-GROWING-WIDTH-ARCHITECTURE",
@@ -2090,6 +2170,26 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-RECOUPLING-BOUNDARY": 125,
         "EXP-CODE-SELF-DUAL-WREATH-COMMON-CORE-ATOMIZATION": 126,
         "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP": 127,
+        "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-COMMON-RANGE": 128,
+        "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-TRIPLE-RANGE": 129,
+        "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-PAIR-ANGLES": 130,
+        "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-BLOCK-COMMON-CORE": 131,
+        "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-BLOCK-OBSTRUCTION": 132,
+        "EXP-CODE-SELF-DUAL-WREATH-SPECTRAL-TRIMMED-SUBPOVM": 133,
+        "EXP-CODE-SELF-DUAL-WREATH-SPECTRAL-FILTER-DEGREE-OBSTRUCTION": 134,
+        "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-BLOCK-MASS": 135,
+        "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-COVARIANT-QUOTIENT-OBSTRUCTION": 136,
+        "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CONTROLLED-INVARIANT-FILTER": 137,
+        "EXP-CODE-SELF-DUAL-WREATH-BLOCK-COMMON-CORE-QUOTIENT": 138,
+        "EXP-CODE-SELF-DUAL-WREATH-PAIRED-BLOCK-FILTER-BYPASS": 139,
+        "EXP-CODE-SELF-DUAL-WREATH-LOCAL-ISOTYPIC-FILTER-NO-GO": 140,
+        "EXP-CODE-SELF-DUAL-WREATH-CLUSTER-LOCALITY-NO-GO": 141,
+        "EXP-CODE-SELF-DUAL-WREATH-SPECTRAL-FILTER-QUERY-LOWER-BOUND": 142,
+        "EXP-CODE-SELF-DUAL-WREATH-AFFINE-CORE-FLAG-THEOREM": 143,
+        "EXP-CODE-SELF-DUAL-WREATH-AFFINE-NODE-COMMON-OUTLIER": 144,
+        "EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SCALAR-HOLONOMY": 145,
+        "EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SUPPORT-PRESSURE-NO-GO": 146,
+        "EXP-CODE-SELF-DUAL-WREATH-AFFINE-RECOUPLING-BUNDLE": 147,
         "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING": 80,
         "EXP-COSET-ENTANGLEMENT-WIDTH-GATE": 81,
         "EXP-COSET-GROWING-WIDTH-ARCHITECTURE": 82,
@@ -4031,6 +4131,206 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP"
         ):
             payload = write_orientation_laplacian_gap_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-COMMON-RANGE"
+        ):
+            payload = write_orientation_common_range_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-TRIPLE-RANGE"
+        ):
+            payload = write_orientation_triple_range_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-PAIR-ANGLES"
+        ):
+            payload = write_orientation_pair_angle_spectrum_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-BLOCK-COMMON-CORE"
+        ):
+            payload = write_orientation_block_common_core_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-BLOCK-OBSTRUCTION"
+        ):
+            payload = write_plancherel_block_obstruction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SPECTRAL-TRIMMED-SUBPOVM"
+        ):
+            payload = write_spectral_trimmed_subpovm_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SPECTRAL-FILTER-DEGREE-OBSTRUCTION"
+        ):
+            payload = write_spectral_filter_degree_obstruction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-BLOCK-MASS"
+        ):
+            payload = write_plancherel_block_mass_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-COVARIANT-QUOTIENT-OBSTRUCTION"
+        ):
+            payload = write_orientation_covariant_quotient_obstruction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CONTROLLED-INVARIANT-FILTER"
+        ):
+            payload = write_branch_controlled_invariant_filter_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-BLOCK-COMMON-CORE-QUOTIENT"
+        ):
+            payload = write_block_common_core_quotient_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PAIRED-BLOCK-FILTER-BYPASS"
+        ):
+            payload = write_paired_block_filter_bypass_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-LOCAL-ISOTYPIC-FILTER-NO-GO"
+        ):
+            payload = write_local_isotypic_filter_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-CLUSTER-LOCALITY-NO-GO"
+        ):
+            payload = write_cluster_locality_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SPECTRAL-FILTER-QUERY-LOWER-BOUND"
+        ):
+            payload = write_spectral_filter_query_lower_bound_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-AFFINE-CORE-FLAG-THEOREM"
+        ):
+            payload = write_affine_core_flag_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-AFFINE-NODE-COMMON-OUTLIER"
+        ):
+            payload = write_affine_node_common_outlier_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SCALAR-HOLONOMY"
+        ):
+            payload = write_affine_plane_scalar_holonomy_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SUPPORT-PRESSURE-NO-GO"
+        ):
+            payload = write_affine_plane_support_pressure_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-AFFINE-RECOUPLING-BUNDLE"
+        ):
+            payload = write_affine_recoupling_bundle_report(
                 write_registry=True,
                 registry_experiment_id=experiment_id,
                 registry_candidate_id=experiment["candidate_id"],

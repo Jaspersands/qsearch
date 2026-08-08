@@ -1,0 +1,238 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Natural planes should have factorially small pairwise overlap.",
+      "resolution": "Impossible at the proved redundancy: the aggregate overlap must exceed (R-1)T.",
+      "resolved": true
+    },
+    {
+      "objection": "Support pressure alone implies uniform coverage.",
+      "resolution": "False: repeated aligned projectors have arbitrary redundancy and large fusion-potential excess.",
+      "resolved": true
+    },
+    {
+      "objection": "Large raw overlap is evidence against conditioning.",
+      "resolution": "Not by itself; a tight fusion frame has the minimum forced overlap and perfect coverage.",
+      "resolved": true
+    },
+    {
+      "objection": "Finite random projectors establish the natural excess law.",
+      "resolution": "They only demonstrate the criterion; natural carrier projectors are structured and dependent.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "collision_free_noncommon_frame_edge_proved": false,
+    "fusion_potential_excess_is_correct_coverage_target": true,
+    "natural_diagonal_coverage_edge_proved": false,
+    "natural_excess_fusion_potential_vanishes": false,
+    "pgm_bad_state_mass_controlled": false,
+    "raw_interplane_overlap_must_be_large": true,
+    "reason": "Pressure forces overlap but only a vanishing excess above the Welch floor would prove uniform natural coverage.",
+    "speedup_claim_allowed": false,
+    "support_pressure_implies_tight_coverage": false
+  },
+  "created_at": "2026-08-08T04:33:00.645617+00:00",
+  "falsifiers_triggered": [
+    "Distinct-plane overlaps cannot remain factorially weak once their total rank demand exceeds pair-core capacity.",
+    "Neither large support demand nor large raw overlap certifies a coverage edge.",
+    "The next natural calculation must be a four-orientation projector second moment and report excess above the Welch floor."
+  ],
+  "finite_controls": [
+    {
+      "ambient_dimension": 8,
+      "control_id": "TIGHT-COORDINATE-Q8-R4",
+      "coverage_tail_bound_respected": true,
+      "forced_offdiagonal_floor": 96.0,
+      "fusion_potential": 128.0,
+      "normalized_excess_fusion_potential": 0.0,
+      "observed_high_coverage_fraction": 0.0,
+      "observed_low_coverage_fraction": 0.0,
+      "offdiagonal_fusion_potential": 96.0,
+      "projector_count": 32,
+      "proved_each_tail_fraction_bound": 0.0,
+      "redundancy": 4.0,
+      "relative_window_delta": 0.5,
+      "status": "fusion-coverage-welch-and-tail-verified",
+      "total_projector_rank": 32,
+      "welch_floor": 128.0,
+      "welch_floor_respected": true
+    },
+    {
+      "ambient_dimension": 8,
+      "control_id": "ALIGNED-Q8-M32-R1",
+      "coverage_tail_bound_respected": true,
+      "forced_offdiagonal_floor": 96.0,
+      "fusion_potential": 1024.0,
+      "normalized_excess_fusion_potential": 7.0,
+      "observed_high_coverage_fraction": 0.125,
+      "observed_low_coverage_fraction": 0.875,
+      "offdiagonal_fusion_potential": 992.0,
+      "projector_count": 32,
+      "proved_each_tail_fraction_bound": 28.0,
+      "redundancy": 4.0,
+      "relative_window_delta": 0.5,
+      "status": "fusion-coverage-welch-and-tail-verified",
+      "total_projector_rank": 32,
+      "welch_floor": 128.0,
+      "welch_floor_respected": true
+    },
+    {
+      "ambient_dimension": 12,
+      "control_id": "RANDOM-Q12-M48-R3",
+      "coverage_tail_bound_respected": true,
+      "forced_offdiagonal_floor": 1584.0,
+      "fusion_potential": 1798.2695322682314,
+      "normalized_excess_fusion_potential": 0.04066523858115256,
+      "observed_high_coverage_fraction": 0.0,
+      "observed_low_coverage_fraction": 0.0,
+      "offdiagonal_fusion_potential": 1654.2695322682314,
+      "projector_count": 48,
+      "proved_each_tail_fraction_bound": 0.16266095432461025,
+      "redundancy": 12.0,
+      "relative_window_delta": 0.5,
+      "status": "fusion-coverage-welch-and-tail-verified",
+      "total_projector_rank": 144,
+      "welch_floor": 1728.0,
+      "welch_floor_respected": true
+    }
+  ],
+  "headline_metrics": {
+    "aligned_control_excess": 7.0,
+    "coverage_tail_criterion_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "fusion_welch_pressure_theorem_count": 1,
+    "natural_tight_coverage_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "tail_forced_overlap_over_trace_log2_lower_bound": 84.45718123751135,
+    "tail_n": 48,
+    "tight_control_excess": 0.0
+  },
+  "literature_links": [
+    {
+      "direct_natural_wreath_theorem": false,
+      "id": "bachoc-ehler-tight-p-fusion-frames-2012",
+      "relevance": "Primary fusion-frame-potential framework; the present second-moment inequality is the p=1 tightness boundary.",
+      "url": "https://arxiv.org/abs/1201.1798"
+    }
+  ],
+  "natural_scaling_targets": [
+    {
+      "collision_free_redundancy_lower_bound_log2": 8.364074638364023,
+      "copy_count": 31,
+      "forced_offdiagonal_over_trace_lower_bound_log2": 8.359689360975421,
+      "n": 12,
+      "natural_excess_fusion_potential_upper_bound": null,
+      "natural_tight_fusion_frame_proved": false,
+      "raw_overlap_is_perturbative": false,
+      "status": "divergent-redundancy-forces-overlap-tightness-excess-open"
+    },
+    {
+      "collision_free_redundancy_lower_bound_log2": 14.80404542849135,
+      "copy_count": 47,
+      "forced_offdiagonal_over_trace_lower_bound_log2": 14.80399499484151,
+      "n": 16,
+      "natural_excess_fusion_potential_upper_bound": null,
+      "natural_tight_fusion_frame_proved": false,
+      "raw_overlap_is_perturbative": false,
+      "status": "divergent-redundancy-forces-overlap-tightness-excess-open"
+    },
+    {
+      "collision_free_redundancy_lower_bound_log2": 21.869131303978236,
+      "copy_count": 64,
+      "forced_offdiagonal_over_trace_lower_bound_log2": 21.869130927352412,
+      "n": 20,
+      "natural_excess_fusion_potential_upper_bound": null,
+      "natural_tight_fusion_frame_proved": false,
+      "raw_overlap_is_perturbative": false,
+      "status": "divergent-redundancy-forces-overlap-tightness-excess-open"
+    },
+    {
+      "collision_free_redundancy_lower_bound_log2": 29.541529934771887,
+      "copy_count": 82,
+      "forced_offdiagonal_over_trace_lower_bound_log2": 29.54152993292565,
+      "n": 24,
+      "natural_excess_fusion_potential_upper_bound": null,
+      "natural_tight_fusion_frame_proved": false,
+      "raw_overlap_is_perturbative": false,
+      "status": "divergent-redundancy-forces-overlap-tightness-excess-open"
+    },
+    {
+      "collision_free_redundancy_lower_bound_log2": 37.26529266453568,
+      "copy_count": 100,
+      "forced_offdiagonal_over_trace_lower_bound_log2": 37.265292664526946,
+      "n": 28,
+      "natural_excess_fusion_potential_upper_bound": null,
+      "natural_tight_fusion_frame_proved": false,
+      "raw_overlap_is_perturbative": false,
+      "status": "divergent-redundancy-forces-overlap-tightness-excess-open"
+    },
+    {
+      "collision_free_redundancy_lower_bound_log2": 46.11204926446675,
+      "copy_count": 120,
+      "forced_offdiagonal_over_trace_lower_bound_log2": 46.11204926446673,
+      "n": 32,
+      "natural_excess_fusion_potential_upper_bound": null,
+      "natural_tight_fusion_frame_proved": false,
+      "raw_overlap_is_perturbative": false,
+      "status": "divergent-redundancy-forces-overlap-tightness-excess-open"
+    },
+    {
+      "collision_free_redundancy_lower_bound_log2": 64.97050196139458,
+      "copy_count": 162,
+      "forced_offdiagonal_over_trace_lower_bound_log2": 64.97050196139458,
+      "n": 40,
+      "natural_excess_fusion_potential_upper_bound": null,
+      "natural_tight_fusion_frame_proved": false,
+      "raw_overlap_is_perturbative": false,
+      "status": "divergent-redundancy-forces-overlap-tightness-excess-open"
+    },
+    {
+      "collision_free_redundancy_lower_bound_log2": 84.45718123751135,
+      "copy_count": 205,
+      "forced_offdiagonal_over_trace_lower_bound_log2": 84.45718123751135,
+      "n": 48,
+      "natural_excess_fusion_potential_upper_bound": null,
+      "natural_tight_fusion_frame_proved": false,
+      "raw_overlap_is_perturbative": false,
+      "status": "divergent-redundancy-forces-overlap-tightness-excess-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "identify_correct_interplane_overlap_baseline",
+      "resolution": "Fusion-frame Welch pressure proves that raw overlap must be large whenever support redundancy is large.",
+      "resolved": true
+    },
+    {
+      "obligation": "derive_coverage_tail_from_fusion_potential_excess",
+      "resolution": "The exact centered second moment is epsilon R T, giving the relative-rank tail bound by Markov on eigenvalue squares.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_natural_excess_fusion_potential_vanishes",
+      "resolution": "Need a four-orientation/inter-plane recoupling second moment under the collision-free source law.",
+      "resolved": false
+    },
+    {
+      "obligation": "compute_center_valued_coverage_second_moment",
+      "resolution": "The target statistic is sum_{a,b} tr(P_aP_b), resolved by pair-core carrier and multiplicity sectors.",
+      "resolved": false
+    },
+    {
+      "obligation": "transfer_tight_coverage_to_pgm_state_mass",
+      "resolution": "Even a rank-tight coefficient fusion frame needs physical state-weight normalization.",
+      "resolved": false
+    }
+  ],
+  "status": "coverage-target-reduced-to-natural-fusion-potential-excess",
+  "summary": "Proved that divergent support pressure forces divergent aggregate inter-plane overlap and isolated the normalized excess fusion potential as the exact natural coverage statistic.",
+  "theorem_contract": {
+    "coverage_tail": "Each lower or upper relative-delta coverage tail has rank fraction at most epsilon/delta^2.",
+    "forced_overlap": "At redundancy R=T/Q, total off-diagonal projector overlap is at least (R-1)T.",
+    "fusion_welch_floor": "For D=sum P_a in Q dimensions with total rank T, tr(D^2)>=T^2/Q.",
+    "natural_target": "The collision-free pressure theorem makes R diverge but leaves epsilon uncontrolled.",
+    "tightness_excess": "epsilon=Q tr(D^2)/T^2-1 is nonnegative and vanishes exactly when D=RI."
+  }
+}

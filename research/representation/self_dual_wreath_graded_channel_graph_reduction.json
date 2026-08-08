@@ -1,0 +1,185 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Affine orientation support implies complete channel-edge support.",
+      "resolution": "False at W6: {2,5,11,12} is affine but the residual carrier channel is only the star centered at 12.",
+      "resolved": true
+    },
+    {
+      "objection": "Internal edge count alone determines the endpoint gap.",
+      "resolution": "The exact object is the full child Laplacian resolvent sampled at crossing endpoints.",
+      "resolved": true
+    },
+    {
+      "objection": "The scalar graph reduction proves the natural matrix-valued channel theorem.",
+      "resolution": "Varying carrier scales and multiplicity-space Racah blocks require an operator-valued extension.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "affine_vertex_support_implies_complete_channel_closure": false,
+    "endpoint_effect_comparability_is_exact_target": true,
+    "flat_channel_graph_resolvent_reduction_proved": true,
+    "matrix_valued_channel_extension_proved": false,
+    "natural_channel_resolvent_comparability_proved": false,
+    "natural_pgm_endpoint_gap_proved": false,
+    "reason": "The graded problem is reduced exactly to child endpoint resolvents for each flat channel, but natural global channel graphs and their operator-valued comparability remain open.",
+    "speedup_claim_allowed": false,
+    "w6_affine_star_defects_explained": true
+  },
+  "controls": [
+    {
+      "control_id": "W6-CARRIER-9-AFFINE-STAR",
+      "correlation": 0.1111111111111111,
+      "crossing_edge_count": 2,
+      "direct_to_resolvent_grading_residual": 2.7755575615628914e-17,
+      "direct_to_resolvent_metric_residual": 0.0,
+      "edge_count": 3,
+      "endpoint_effect_generalized_ratio_maximum": 1.1249999999999993,
+      "endpoint_effect_generalized_ratio_minimum": 0.9101123595505615,
+      "endpoint_gap": 0.47058823529411764,
+      "exact_graph_reduction_verified": true,
+      "expected_defect": 0.058823529411764705,
+      "expected_defect_residual": 6.938893903907228e-18,
+      "generalized_ratio_defect_residual": 2.8449465006019636e-16,
+      "generalized_ratio_predicted_defect": 0.058823529411764414,
+      "grading_defect_norm": 0.0588235294117647,
+      "left_internal_component_count": 2,
+      "left_internal_edge_count": 0,
+      "left_vertex_count": 2,
+      "quotient_metric_dimension": 2,
+      "quotient_metric_minimum_eigenvalue": 1.8888888888888888,
+      "right_internal_component_count": 1,
+      "right_internal_edge_count": 1,
+      "right_vertex_count": 2,
+      "status": "graded-channel-resolvent-reduction-verified",
+      "vertex_count": 4
+    },
+    {
+      "control_id": "W6-CARRIER-5-AFFINE-STAR",
+      "correlation": 0.2,
+      "crossing_edge_count": 2,
+      "direct_to_resolvent_grading_residual": 1.2490009027033014e-16,
+      "direct_to_resolvent_metric_residual": 2.7755575615628914e-17,
+      "edge_count": 3,
+      "endpoint_effect_generalized_ratio_maximum": 1.2499999999999996,
+      "endpoint_effect_generalized_ratio_minimum": 0.8620689655172404,
+      "endpoint_gap": 0.4444444444444445,
+      "exact_graph_reduction_verified": true,
+      "expected_defect": 0.1111111111111111,
+      "expected_defect_residual": 8.326672684688674e-17,
+      "generalized_ratio_defect_residual": 8.326672684688674e-17,
+      "generalized_ratio_predicted_defect": 0.11111111111111094,
+      "grading_defect_norm": 0.11111111111111102,
+      "left_internal_component_count": 2,
+      "left_internal_edge_count": 0,
+      "left_vertex_count": 2,
+      "quotient_metric_dimension": 2,
+      "quotient_metric_minimum_eigenvalue": 1.7999999999999998,
+      "right_internal_component_count": 1,
+      "right_internal_edge_count": 1,
+      "right_vertex_count": 2,
+      "status": "graded-channel-resolvent-reduction-verified",
+      "vertex_count": 4
+    },
+    {
+      "control_id": "COMPLETE-K8-INTERNAL-CLOSURE",
+      "correlation": 0.2,
+      "crossing_edge_count": 16,
+      "direct_to_resolvent_grading_residual": 1.8462217450441077e-16,
+      "direct_to_resolvent_metric_residual": 3.2711347736660537e-16,
+      "edge_count": 28,
+      "endpoint_effect_generalized_ratio_maximum": 1.666666666666667,
+      "endpoint_effect_generalized_ratio_minimum": 0.5999999999999999,
+      "endpoint_gap": 0.3749999999999999,
+      "exact_graph_reduction_verified": true,
+      "expected_defect": 0.25,
+      "expected_defect_residual": 2.220446049250313e-16,
+      "generalized_ratio_defect_residual": 1.1102230246251565e-16,
+      "generalized_ratio_predicted_defect": 0.2500000000000001,
+      "grading_defect_norm": 0.2500000000000002,
+      "left_internal_component_count": 1,
+      "left_internal_edge_count": 6,
+      "left_vertex_count": 4,
+      "quotient_metric_dimension": 16,
+      "quotient_metric_minimum_eigenvalue": 1.599999999999998,
+      "right_internal_component_count": 1,
+      "right_internal_edge_count": 6,
+      "right_vertex_count": 4,
+      "status": "graded-channel-resolvent-reduction-verified",
+      "vertex_count": 8
+    },
+    {
+      "control_id": "CROSSING-ONLY-K4-4",
+      "correlation": 0.2,
+      "crossing_edge_count": 16,
+      "direct_to_resolvent_grading_residual": 0.0,
+      "direct_to_resolvent_metric_residual": 0.0,
+      "edge_count": 16,
+      "endpoint_effect_generalized_ratio_maximum": 2.000000000000002,
+      "endpoint_effect_generalized_ratio_minimum": 0.49999999999999967,
+      "endpoint_gap": 0.33333333333333304,
+      "exact_graph_reduction_verified": true,
+      "expected_defect": 0.3333333333333333,
+      "expected_defect_residual": 6.106226635438361e-16,
+      "generalized_ratio_defect_residual": 1.1102230246251565e-16,
+      "generalized_ratio_predicted_defect": 0.3333333333333338,
+      "grading_defect_norm": 0.3333333333333339,
+      "left_internal_component_count": 4,
+      "left_internal_edge_count": 0,
+      "left_vertex_count": 4,
+      "quotient_metric_dimension": 16,
+      "quotient_metric_minimum_eigenvalue": 1.5999999999999988,
+      "right_internal_component_count": 4,
+      "right_internal_edge_count": 0,
+      "right_vertex_count": 4,
+      "status": "graded-channel-resolvent-reduction-verified",
+      "vertex_count": 8
+    }
+  ],
+  "created_at": "2026-08-07T23:00:22.610044+00:00",
+  "falsifiers_triggered": [
+    "Affine orientation vertices do not force complete residual channel-edge support.",
+    "The graded gap depends on child Laplacian resolvents, not the ungraded metric floor or raw degree.",
+    "The natural all-depth target is two-sided endpoint-effect comparability for global carrier channels."
+  ],
+  "headline_metrics": {
+    "arbitrary_flat_channel_resolvent_reduction_theorem_count": 1,
+    "complete_internal_rescue_reproduction_count": 1,
+    "crossing_no_go_reproduction_count": 1,
+    "endpoint_effect_comparability_criterion_theorem_count": 1,
+    "finite_graph_control_count": 4,
+    "finite_graph_control_failure_count": 0,
+    "maximum_direct_to_resolvent_grading_residual": 1.8462217450441077e-16,
+    "maximum_direct_to_resolvent_metric_residual": 3.2711347736660537e-16,
+    "natural_channel_resolvent_comparability_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "w6_affine_star_defect_reproduction_count": 2
+  },
+  "proof_obligations": [
+    {
+      "obligation": "arbitrary_flat_channel_graded_graph_reduction",
+      "resolution": "Direct edge-space Schur complements equal the child-Laplacian resolvent endpoint effects on every control.",
+      "resolved": true
+    },
+    {
+      "obligation": "explain_finite_w6_noncommuting_grading_defect",
+      "resolution": "The affine three-edge star support graph gives exactly 1/17 at gamma=1/9 and 1/9 at gamma=1/5.",
+      "resolved": true
+    },
+    {
+      "obligation": "natural_channel_endpoint_effects_uniformly_comparable",
+      "resolution": "Need global carrier-channel reconstruction plus all-depth bounds on both induced child Laplacian resolvents.",
+      "resolved": false
+    }
+  ],
+  "status": "graded-flat-channel-resolvent-reduction-proved-natural-operator-valued-comparability-open",
+  "summary": "Reduced every flat carrier support graph to two child Laplacian resolvents, reproducing the W6 1/17 and 1/9 defects and unifying the crossing obstruction with the complete-closure rescue.",
+  "theorem_contract": {
+    "child_resolvent": "Q_s=2(1-gamma)[2(1-gamma)I+gamma L_s]^-1.",
+    "comparability_criterion": "For generalized endpoint-effect ratio t, defect eigenvalue is (t-1)/(t+1); a uniform endpoint gap is equivalent to two-sided spectral comparability of E_L and E_R.",
+    "endpoint_effect": "E_s=(1-gamma)I+gamma B_s^*Q_sB_s.",
+    "graded_schur_quotient": "M_q=E_L+E_R and J_q=E_L-E_R.",
+    "scope": "Exact for one flat scalar channel support graph. Natural channels, nonuniform correlations, and matrix sheaves must still be reconstructed and decomposed."
+  }
+}

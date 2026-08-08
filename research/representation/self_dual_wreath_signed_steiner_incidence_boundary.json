@@ -1,0 +1,247 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Positive holonomy on every Steiner triangle permits a global all-positive gauge.",
+      "resolution": "False. Independent line gauges have longer incidence-cycle invariants; the explicit positive-line construction is singular.",
+      "resolved": true
+    },
+    {
+      "objection": "The unsigned condition number proves the natural frame is conditioned.",
+      "resolution": "False without a theorem identifying natural inter-plane transport with the unsigned gauge.",
+      "resolved": true
+    },
+    {
+      "objection": "A two-dimensional adversarial kernel proves natural PGM failure.",
+      "resolution": "It does not: the signing is not derived from S_n recoupling, and two modes may carry negligible physical mass.",
+      "resolved": false
+    },
+    {
+      "objection": "Scalar signed incidence covers matrix multiplicity channels.",
+      "resolution": "Matrix-valued transports can be better or worse and require a separate operator-valued traffic theorem.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "collision_free_noncommon_frame_edge_proved": false,
+    "local_positive_holonomy_sufficient_for_frame_edge": false,
+    "matrix_valued_overlap_traffic_controlled": false,
+    "natural_inter_plane_gauge_controlled": false,
+    "natural_recoupling_realizes_adversarial_signing": false,
+    "physical_bad_mode_mass_controlled": false,
+    "positive_local_holonomy_can_have_global_kernel": true,
+    "reason": "The unsigned model is benign but local positivity alone is insufficient; natural gauge and matrix-valued overlap laws remain the decisive missing inputs.",
+    "speedup_claim_allowed": false,
+    "unsigned_steiner_surrogate_uniformly_conditioned": true
+  },
+  "created_at": "2026-08-08T04:04:13.592087+00:00",
+  "falsifiers_triggered": [
+    "Disjoint affine-plane atomization already fails by support pressure, and unsigned Steiner conditioning cannot replace it without inter-plane gauge control.",
+    "Positive scalar holonomy on each local affine plane is not a sufficient certificate for any global lower spectral edge.",
+    "Any surviving proof must use natural recoupling structure, matrix-valued traffic, or a weighted bad-mass estimate."
+  ],
+  "headline_metrics": {
+    "finite_control_failure_count": 0,
+    "matrix_valued_overlap_traffic_theorem_count": 0,
+    "minimum_signed_incidence_nullity": 2,
+    "natural_inter_plane_gauge_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "positive_local_holonomy_sufficiency_no_go_count": 1,
+    "signed_counterfamily_control_count": 6,
+    "unsigned_control_count": 5,
+    "unsigned_uniform_conditioning_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "compute_unsigned_steiner_incidence_spectrum",
+      "resolution": "Every point has degree r and every point pair shares one line, giving (r-1)I+J exactly.",
+      "resolved": true
+    },
+    {
+      "obligation": "test_local_positive_holonomy_sufficiency",
+      "resolution": "The F_2^2 quotient witness gives a legal all-depth counterfamily with C_s^T U=0.",
+      "resolved": true
+    },
+    {
+      "obligation": "derive_natural_inter_plane_gauge_law",
+      "resolution": "The scalar cup/cap calculation fixes each plane but not cycle gauges between distinct overlapping planes.",
+      "resolved": false
+    },
+    {
+      "obligation": "control_matrix_valued_recoupling_weights",
+      "resolution": "High Kronecker multiplicities replace scalar signs by orthogonal 6j transports with nonuniform weights.",
+      "resolved": false
+    },
+    {
+      "obligation": "bound_physical_mass_of_global_bad_modes",
+      "resolution": "The explicit scalar counterfamily has two null modes; their relevance to PGM success depends on natural weights.",
+      "resolved": false
+    }
+  ],
+  "signed_controls": [
+    {
+      "copy_count": 2,
+      "kernel_residual": 0.0,
+      "line_count": 1,
+      "local_positive_holonomy_verified": true,
+      "maximum_line_sign_product_residual": 0.0,
+      "maximum_triangle_holonomy_residual": 0.0,
+      "point_count": 3,
+      "point_degree": 1,
+      "signed_incidence_nullity": 2,
+      "signed_incidence_rank": 1,
+      "status": "positive-local-holonomy-with-global-kernel",
+      "two_dimensional_exact_kernel_verified": true,
+      "witness_rank": 2
+    },
+    {
+      "copy_count": 3,
+      "kernel_residual": 0.0,
+      "line_count": 7,
+      "local_positive_holonomy_verified": true,
+      "maximum_line_sign_product_residual": 0.0,
+      "maximum_triangle_holonomy_residual": 0.0,
+      "point_count": 7,
+      "point_degree": 3,
+      "signed_incidence_nullity": 2,
+      "signed_incidence_rank": 5,
+      "status": "positive-local-holonomy-with-global-kernel",
+      "two_dimensional_exact_kernel_verified": true,
+      "witness_rank": 2
+    },
+    {
+      "copy_count": 4,
+      "kernel_residual": 0.0,
+      "line_count": 35,
+      "local_positive_holonomy_verified": true,
+      "maximum_line_sign_product_residual": 0.0,
+      "maximum_triangle_holonomy_residual": 0.0,
+      "point_count": 15,
+      "point_degree": 7,
+      "signed_incidence_nullity": 2,
+      "signed_incidence_rank": 13,
+      "status": "positive-local-holonomy-with-global-kernel",
+      "two_dimensional_exact_kernel_verified": true,
+      "witness_rank": 2
+    },
+    {
+      "copy_count": 5,
+      "kernel_residual": 0.0,
+      "line_count": 155,
+      "local_positive_holonomy_verified": true,
+      "maximum_line_sign_product_residual": 0.0,
+      "maximum_triangle_holonomy_residual": 0.0,
+      "point_count": 31,
+      "point_degree": 15,
+      "signed_incidence_nullity": 2,
+      "signed_incidence_rank": 29,
+      "status": "positive-local-holonomy-with-global-kernel",
+      "two_dimensional_exact_kernel_verified": true,
+      "witness_rank": 2
+    },
+    {
+      "copy_count": 6,
+      "kernel_residual": 0.0,
+      "line_count": 651,
+      "local_positive_holonomy_verified": true,
+      "maximum_line_sign_product_residual": 0.0,
+      "maximum_triangle_holonomy_residual": 0.0,
+      "point_count": 63,
+      "point_degree": 31,
+      "signed_incidence_nullity": 2,
+      "signed_incidence_rank": 61,
+      "status": "positive-local-holonomy-with-global-kernel",
+      "two_dimensional_exact_kernel_verified": true,
+      "witness_rank": 2
+    },
+    {
+      "copy_count": 7,
+      "kernel_residual": 0.0,
+      "line_count": 2667,
+      "local_positive_holonomy_verified": true,
+      "maximum_line_sign_product_residual": 0.0,
+      "maximum_triangle_holonomy_residual": 0.0,
+      "point_count": 127,
+      "point_degree": 63,
+      "signed_incidence_nullity": 2,
+      "signed_incidence_rank": 125,
+      "status": "positive-local-holonomy-with-global-kernel",
+      "two_dimensional_exact_kernel_verified": true,
+      "witness_rank": 2
+    }
+  ],
+  "status": "local-positive-holonomy-sufficiency-falsified-natural-gauge-open",
+  "summary": "Proved an exact all-depth signed Steiner counterfamily: every local plane has positive scalar holonomy while the global incidence frame has a two-dimensional kernel.",
+  "theorem_contract": {
+    "logical_boundary": "Steiner regularity plus local positive scalar holonomy does not imply a global incidence-frame lower edge.",
+    "projective_steiner_geometry": "The nonzero vectors of F_2^K form an STS(2^K-1), with lines {x,y,x xor y}, point degree (2^K-2)/2, and (2^K-1)(2^K-2)/6 lines.",
+    "signed_counterfamily": "Two independent binary functionals construct legal signed line columns with positive triangle holonomy and an exact two-dimensional kernel for every K>=2.",
+    "unsigned_frame": "C_+ C_+^T=((2^K-4)/2)I+J, with condition number 3(2^K-2)/(2^K-4) for K>=3."
+  },
+  "unsigned_controls": [
+    {
+      "copy_count": 3,
+      "exact_unsigned_gram_verified": true,
+      "line_count": 7,
+      "observed_large_eigenvalue": 9.000000000000004,
+      "observed_small_eigenvalue": 1.9999999999999987,
+      "point_count": 7,
+      "point_degree": 3,
+      "predicted_condition_number": 4.5,
+      "predicted_large_eigenvalue": 9.0,
+      "predicted_small_eigenvalue": 2.0,
+      "status": "unsigned-steiner-frame-exactly-conditioned"
+    },
+    {
+      "copy_count": 4,
+      "exact_unsigned_gram_verified": true,
+      "line_count": 35,
+      "observed_large_eigenvalue": 21.000000000000004,
+      "observed_small_eigenvalue": 5.999999999999997,
+      "point_count": 15,
+      "point_degree": 7,
+      "predicted_condition_number": 3.5,
+      "predicted_large_eigenvalue": 21.0,
+      "predicted_small_eigenvalue": 6.0,
+      "status": "unsigned-steiner-frame-exactly-conditioned"
+    },
+    {
+      "copy_count": 5,
+      "exact_unsigned_gram_verified": true,
+      "line_count": 155,
+      "observed_large_eigenvalue": 45.00000000000002,
+      "observed_small_eigenvalue": 13.999999999999988,
+      "point_count": 31,
+      "point_degree": 15,
+      "predicted_condition_number": 3.2142857142857144,
+      "predicted_large_eigenvalue": 45.0,
+      "predicted_small_eigenvalue": 14.0,
+      "status": "unsigned-steiner-frame-exactly-conditioned"
+    },
+    {
+      "copy_count": 6,
+      "exact_unsigned_gram_verified": true,
+      "line_count": 651,
+      "observed_large_eigenvalue": 93.0,
+      "observed_small_eigenvalue": 29.99999999999995,
+      "point_count": 63,
+      "point_degree": 31,
+      "predicted_condition_number": 3.1,
+      "predicted_large_eigenvalue": 93.0,
+      "predicted_small_eigenvalue": 30.0,
+      "status": "unsigned-steiner-frame-exactly-conditioned"
+    },
+    {
+      "copy_count": 7,
+      "exact_unsigned_gram_verified": true,
+      "line_count": 2667,
+      "observed_large_eigenvalue": 188.9999999999999,
+      "observed_small_eigenvalue": 61.99999999999987,
+      "point_count": 127,
+      "point_degree": 63,
+      "predicted_condition_number": 3.0483870967741935,
+      "predicted_large_eigenvalue": 189.0,
+      "predicted_small_eigenvalue": 62.0,
+      "status": "unsigned-steiner-frame-exactly-conditioned"
+    }
+  ]
+}

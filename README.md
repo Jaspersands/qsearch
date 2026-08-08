@@ -2331,6 +2331,146 @@ python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP
 
 The signed incidence structure yields a metric floor `2 - 2 gamma_max` independent of merge width, respecting all 270 screened full-graph controls.
 
+Analyze trivial/sign common-range multiplicities:
+
+```bash
+python qsearch.py code-wreath-orientation-common-ranges
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-COMMON-RANGE
+```
+
+Analyze fixed-family triple-range multi-way incidence:
+
+```bash
+python qsearch.py code-wreath-orientation-family-ranges
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-TRIPLE-RANGE
+```
+
+Analyze orientation pair principal-angle spectrum:
+
+```bash
+python qsearch.py code-wreath-orientation-pair-angles
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-PAIR-ANGLES
+```
+
+Analyze orientation block common-core witness structures:
+
+```bash
+python qsearch.py code-wreath-orientation-block-core
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-BLOCK-COMMON-CORE
+```
+
+Evaluate Sellke covering and Plancherel block norm obstruction:
+
+```bash
+python qsearch.py code-wreath-plancherel-block-obstruction
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-BLOCK-OBSTRUCTION
+```
+
+Analyze spectral-trimmed sub-POVM hidden label recovery:
+
+```bash
+python qsearch.py code-wreath-spectral-trim
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-SPECTRAL-TRIMMED-SUBPOVM
+```
+
+Analyze low-pass filter polynomial degree obstructions:
+
+```bash
+python qsearch.py code-wreath-spectral-filter-degree
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-SPECTRAL-FILTER-DEGREE-OBSTRUCTION
+```
+
+Analyze Plancherel tensor stationarity and expected block mass:
+
+```bash
+python qsearch.py code-wreath-plancherel-block-mass
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-BLOCK-MASS
+```
+
+Analyze orientation-covariant quotient scalar-commutant obstructions:
+
+```bash
+python qsearch.py code-wreath-orientation-covariant-quotient
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-COVARIANT-QUOTIENT-OBSTRUCTION
+```
+
+Analyze branch-controlled physical invariant filter performance:
+
+```bash
+python qsearch.py code-wreath-branch-controlled-invariant-filter
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-BRANCH-CONTROLLED-INVARIANT-FILTER
+```
+
+Analyze block common-core algebraic quotient annihilation:
+
+```bash
+python qsearch.py code-wreath-block-core-quotient
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-BLOCK-COMMON-CORE-QUOTIENT
+```
+
+Analyze paired-block self-dual irrep filter bypass:
+
+```bash
+python qsearch.py code-wreath-paired-block-filter-bypass
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PAIRED-BLOCK-FILTER-BYPASS
+```
+
+Analyze Plancherel-incidence no-go for block-local isotypic filters:
+
+```bash
+python qsearch.py code-wreath-local-isotypic-filter-no-go
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-LOCAL-ISOTYPIC-FILTER-NO-GO
+```
+
+Analyze cluster-locality lower bounds for disjoint product filters:
+
+```bash
+python qsearch.py code-wreath-cluster-locality-no-go
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-CLUSTER-LOCALITY-NO-GO
+```
+
+Analyze search reduction query lower bounds for low-pass filters:
+
+```bash
+python qsearch.py code-wreath-spectral-filter-query-bound
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-SPECTRAL-FILTER-QUERY-LOWER-BOUND
+```
+
+Analyze affine core flag balance and linear routing:
+
+```bash
+python qsearch.py code-wreath-affine-core-flag
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-AFFINE-CORE-FLAG-THEOREM
+```
+
+Analyze affine node generated subgroups and common outlier rarity:
+
+```bash
+python qsearch.py code-wreath-affine-node-common-outlier
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-AFFINE-NODE-COMMON-OUTLIER
+```
+
+Analyze scalar affine-plane J3 holonomy positivity:
+
+```bash
+python qsearch.py code-wreath-affine-plane-scalar-holonomy
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SCALAR-HOLONOMY
+```
+
+Analyze affine plane support demand versus capacity pressure:
+
+```bash
+python qsearch.py code-wreath-affine-plane-support-pressure-no-go
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SUPPORT-PRESSURE-NO-GO
+```
+
+Analyze affine recoupling flat transport bundle structures:
+
+```bash
+python qsearch.py code-wreath-affine-recoupling-bundle
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-AFFINE-RECOUPLING-BUNDLE
+```
+
 Isolate the solvable and unresolved equal-pair commutator terms:
 
 ```bash

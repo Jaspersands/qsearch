@@ -1,0 +1,430 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Partial-isometry overlap blocks automatically form a positive normalized Gram.",
+      "resolution": "False: the regular simplex has scalar partial isometries -1 and an indefinite normalized Gram.",
+      "resolved": true
+    },
+    {
+      "objection": "Commuting range projections eliminate cycle frustration.",
+      "resolution": "False without the path law; simplex supports are all identity and still have negative triangle holonomy.",
+      "resolved": true
+    },
+    {
+      "objection": "Integer clique spectra in three W6 controls prove the all-n carrier law.",
+      "resolution": "Finite exact controls identify the conjecture but cannot replace a multiplicity-index proof or natural counterexample.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "all_depth_natural_carrier_groupoid_proved": false,
+    "clique_atom_gram_decomposition_proved": true,
+    "commuting_supports_alone_sufficient": false,
+    "flat_groupoid_suffices_for_vertex_trivialization": true,
+    "graded_defect_bound_proved": false,
+    "partial_isometries_alone_sufficient": false,
+    "reason": "The exact algebraic law that would prove the missing vertex factorization is identified and passes W6 controls, but it has not been derived for arbitrary natural carrier indices.",
+    "selected_natural_finite_groupoids_verified": true,
+    "speedup_claim_allowed": false,
+    "unconditional_width_independent_laplacian_floor_proved": false
+  },
+  "created_at": "2026-08-07T22:46:40.922356+00:00",
+  "falsifiers_triggered": [
+    "Uniform reciprocal singular values do not determine cycle phase.",
+    "Partial isometries and commuting support projections still permit an indefinite normalized Gram.",
+    "Natural all-depth progress now requires the carrier path law A_ef A_fg=A_eg P_gf or a natural violation."
+  ],
+  "headline_metrics": {
+    "all_depth_natural_carrier_groupoid_theorem_count": 0,
+    "clique_atom_normalized_gram_decomposition_theorem_count": 1,
+    "flat_partial_isometry_groupoid_sufficiency_theorem_count": 1,
+    "maximum_natural_integer_spectrum_residual": 1.0436096431476471e-14,
+    "maximum_natural_partial_isometry_residual": 6.7776967896764655e-15,
+    "maximum_natural_path_composition_residual": 4.1441050271376706e-15,
+    "maximum_natural_support_commutator_norm": 2.2340654398231706e-15,
+    "maximum_natural_triangle_holonomy_residual": 8.03229993355716e-15,
+    "natural_finite_groupoid_control_count": 3,
+    "natural_finite_groupoid_control_failure_count": 0,
+    "natural_finite_psd_certification_failure_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "simplex_path_law_failure_count": 5
+  },
+  "natural_finite_controls": [
+    {
+      "control_id": "W6-CARRIER-9-THREE-EDGE-GROUPOID",
+      "flat_partial_isometry_groupoid_verified": true,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_partial_isometry_residual": 5.213284130989143e-15,
+      "maximum_path_composition_residual": 4.070574771043736e-15,
+      "maximum_residual_correlation": 0.11111111111111129,
+      "maximum_support_projection_commutator_norm": 1.4721347586705336e-15,
+      "maximum_support_projection_residual": 5.197621127209474e-15,
+      "maximum_triangle_holonomy_projection_residual": 6.908007490895274e-15,
+      "n": 6,
+      "nonzero_normalized_cross_block_count": 6,
+      "normalized_cross_block_count": 6,
+      "normalized_gram_distinct_eigenvalues": [
+        0.0,
+        1.0,
+        3.0
+      ],
+      "normalized_gram_integer_spectrum_residual": 8.389158492652606e-15,
+      "normalized_gram_minimum_eigenvalue": 7.610372623999305e-16,
+      "normalized_gram_negative_eigenvalue_count": 0,
+      "residual_edge_dimensions": [
+        9,
+        25,
+        9
+      ],
+      "residual_edges": [
+        [
+          2,
+          12
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          11,
+          12
+        ]
+      ],
+      "status": "finite-natural-flat-carrier-groupoid-verified",
+      "target_partition": [
+        6
+      ],
+      "vertex": 12,
+      "vertex_trivialization_certified": true
+    },
+    {
+      "control_id": "W6-CARRIER-5-TWO-EDGE-GROUPOID",
+      "flat_partial_isometry_groupoid_verified": true,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            4,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            3,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_partial_isometry_residual": 4.473025310343968e-15,
+      "maximum_path_composition_residual": 0.0,
+      "maximum_residual_correlation": 0.2000000000000003,
+      "maximum_support_projection_commutator_norm": 0.0,
+      "maximum_support_projection_residual": 4.463566805975945e-15,
+      "maximum_triangle_holonomy_projection_residual": 0.0,
+      "n": 6,
+      "nonzero_normalized_cross_block_count": 2,
+      "normalized_cross_block_count": 2,
+      "normalized_gram_distinct_eigenvalues": [
+        0.0,
+        1.0,
+        2.0
+      ],
+      "normalized_gram_integer_spectrum_residual": 3.981481021390411e-15,
+      "normalized_gram_minimum_eigenvalue": 9.927713719562568e-16,
+      "normalized_gram_negative_eigenvalue_count": 0,
+      "residual_edge_dimensions": [
+        5,
+        45
+      ],
+      "residual_edges": [
+        [
+          0,
+          14
+        ],
+        [
+          7,
+          14
+        ]
+      ],
+      "status": "finite-natural-flat-carrier-groupoid-verified",
+      "target_partition": [
+        6
+      ],
+      "vertex": 14,
+      "vertex_trivialization_certified": true
+    },
+    {
+      "control_id": "W6-CARRIER-5-FULL-LIVE-FIVE-EDGE-GROUPOID",
+      "flat_partial_isometry_groupoid_verified": true,
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_partial_isometry_residual": 6.7776967896764655e-15,
+      "maximum_path_composition_residual": 4.1441050271376706e-15,
+      "maximum_residual_correlation": 0.20000000000000032,
+      "maximum_support_projection_commutator_norm": 2.2340654398231706e-15,
+      "maximum_support_projection_residual": 6.775692672890015e-15,
+      "maximum_triangle_holonomy_projection_residual": 8.03229993355716e-15,
+      "n": 6,
+      "nonzero_normalized_cross_block_count": 6,
+      "normalized_cross_block_count": 20,
+      "normalized_gram_distinct_eigenvalues": [
+        -0.0,
+        1.0,
+        3.0
+      ],
+      "normalized_gram_integer_spectrum_residual": 1.0436096431476471e-14,
+      "normalized_gram_minimum_eigenvalue": -8.792346236840771e-16,
+      "normalized_gram_negative_eigenvalue_count": 0,
+      "residual_edge_dimensions": [
+        5,
+        4,
+        80,
+        24,
+        5
+      ],
+      "residual_edges": [
+        [
+          2,
+          12
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          5,
+          12
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          11,
+          12
+        ]
+      ],
+      "status": "finite-natural-flat-carrier-groupoid-verified",
+      "target_partition": [
+        6
+      ],
+      "vertex": 12,
+      "vertex_trivialization_certified": true
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "flat_groupoid_implies_vertex_trivialization",
+      "resolution": "Commuting support atoms and the path law construct a direct sum of positive clique Grams.",
+      "resolved": true
+    },
+    {
+      "obligation": "natural_carrier_maps_obey_flat_groupoid_all_depth",
+      "resolution": "Need to derive the partial-isometry, support-commutation, and path laws from explicit Kronecker multiplicity indices for arbitrary natural labels.",
+      "resolved": false
+    },
+    {
+      "obligation": "natural_signed_holonomy_counterexample",
+      "resolution": "No natural violation is known; the regular simplex only proves that magnitude data cannot settle the question.",
+      "resolved": false
+    }
+  ],
+  "simplex_failures": [
+    {
+      "normalized_gram_minimum_eigenvalue": -1.0,
+      "normalized_pair_map": -1.0,
+      "partial_isometry_residual": 0.0,
+      "path_composition_residual": 2.0,
+      "path_law_is_essential": true,
+      "status": "partial-isometries-commute-but-flat-path-law-fails",
+      "support_projection_commutator_norm": 0.0,
+      "triangle_holonomy": -1.0,
+      "width": 3
+    },
+    {
+      "normalized_gram_minimum_eigenvalue": -2.0,
+      "normalized_pair_map": -1.0,
+      "partial_isometry_residual": 0.0,
+      "path_composition_residual": 2.0,
+      "path_law_is_essential": true,
+      "status": "partial-isometries-commute-but-flat-path-law-fails",
+      "support_projection_commutator_norm": 0.0,
+      "triangle_holonomy": -1.0,
+      "width": 4
+    },
+    {
+      "normalized_gram_minimum_eigenvalue": -3.0,
+      "normalized_pair_map": -1.0,
+      "partial_isometry_residual": 0.0,
+      "path_composition_residual": 2.0,
+      "path_law_is_essential": true,
+      "status": "partial-isometries-commute-but-flat-path-law-fails",
+      "support_projection_commutator_norm": 0.0,
+      "triangle_holonomy": -1.0,
+      "width": 5
+    },
+    {
+      "normalized_gram_minimum_eigenvalue": -6.0,
+      "normalized_pair_map": -1.0,
+      "partial_isometry_residual": 0.0,
+      "path_composition_residual": 2.0,
+      "path_law_is_essential": true,
+      "status": "partial-isometries-commute-but-flat-path-law-fails",
+      "support_projection_commutator_norm": 0.0,
+      "triangle_holonomy": -1.0,
+      "width": 8
+    },
+    {
+      "normalized_gram_minimum_eigenvalue": -10.0,
+      "normalized_pair_map": -1.0,
+      "partial_isometry_residual": 0.0,
+      "path_composition_residual": 2.0,
+      "path_law_is_essential": true,
+      "status": "partial-isometries-commute-but-flat-path-law-fails",
+      "support_projection_commutator_norm": 0.0,
+      "triangle_holonomy": -1.0,
+      "width": 12
+    }
+  ],
+  "status": "flat-carrier-groupoid-sufficient-finite-natural-controls-pass-all-depth-index-law-open",
+  "summary": "Identified a flat partial-isometry groupoid whose clique atoms construct the vertex isometries. Three W6 controls obey it to 1e-14; the simplex no-go shows the path law is indispensable.",
+  "theorem_contract": {
+    "clique_atom_consequence": "Coefficient spaces split into commuting support atoms; on an atom supported by S edges the normalized Gram is J_|S| tensor I and is PSD.",
+    "flat_groupoid_conditions": "A_ef partial isometries; commuting P_ef=A_ef A_fe; A_ef A_fg=A_eg P_gf for every distinct triple.",
+    "simplex_boundary": "Partial isometries plus commuting supports are insufficient: normalized simplex maps -1 violate the path law by 2.",
+    "vertex_trivialization_consequence": "The clique-atom Gram factor gives common vertex isometries and validates the conditional width-independent metric floor."
+  }
+}

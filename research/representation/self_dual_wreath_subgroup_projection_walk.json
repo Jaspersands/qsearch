@@ -1,0 +1,102 @@
+{
+  "created_at": "2026-08-08T01:58:47.899862+00:00",
+  "theorem_contract": {
+    "subgroup_projectors": "Each lifted orientation projector is convolution by the uniform measure on one diagonal subgroup H_e of G^(2K+1).",
+    "walk": "A normalized node frame is a positive self-adjoint Markov operator obtained by averaging the subgroup projections.",
+    "fourier_blocks": "Product-group Fourier decomposition yields every physical target/source node frame divided by node width, with regular multiplicity.",
+    "gauge_normal_form": "After a_i=t^-1x_i and b_i=t^-1y_i, one common uniform multiplier updates every unselected relative coordinate.",
+    "scope": "No block-restricted expansion, center-valued local law, natural frame edge, or circuit implementation is proved."
+  },
+  "finite_controls": [
+    {
+      "n": 3,
+      "copy_count": 1,
+      "orientation_count": 2,
+      "ambient_product_group_dimension": 216,
+      "fourier_block_dimension_sum": 216,
+      "maximum_subgroup_projector_idempotence_residual": 1.6653345369377353e-16,
+      "maximum_fourier_block_spectrum_residual": 6.661338147750939e-16,
+      "gauge_transition_count": 2592,
+      "gauge_transition_failure_count": 0,
+      "normalized_walk_minimum_eigenvalue": -3.7856812007946363e-16,
+      "normalized_walk_maximum_eigenvalue": 1.0000000000000002,
+      "exact_subgroup_projection_walk_verified": true,
+      "exact_gauge_normal_form_verified": true,
+      "status": "exact-subgroup-walk-and-gauge-normal-form-verified"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "identify_orientation_frame_as_subgroup_projection_walk",
+      "resolved": true,
+      "resolution": "The convolution, Fourier-block, and gauge identities are exact and pass the complete S3 one-pair control."
+    },
+    {
+      "obligation": "prove_high_plancherel_mass_fourier_block_expansion",
+      "resolved": false,
+      "resolution": "Need a block-restricted subgroup-angle, coset-complex, or center-valued local spectral theorem."
+    },
+    {
+      "obligation": "connect_walk_edge_to_mixed_arity_node_schedule",
+      "resolved": false,
+      "resolution": "Every retained node is an affine subcube of orientations, but no uniform natural block edge is established."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "A global spectral gap of the product-group walk proves the natural edge.",
+      "resolved": true,
+      "resolution": "False: constants and rare low-dimensional Fourier blocks can determine the global norm. The theorem must be Plancherel-block restricted."
+    },
+    {
+      "objection": "The walk normalization preserves the physical node-frame scale.",
+      "resolved": true,
+      "resolution": "False: physical A_T is |T| M_T, and natural eigenvalues of M_T are at scale 1/|G|."
+    },
+    {
+      "objection": "The product-group lift is unrelated to circuit access.",
+      "resolved": false,
+      "resolution": "It gives explicit controlled group actions, but avoiding the width normalization in a coherent frame analysis operator remains open."
+    }
+  ],
+  "literature_links": [
+    {
+      "paper": "Oppenheim, Local spectral expansion approach to high dimensional expanders I",
+      "url": "https://arxiv.org/abs/1709.04431",
+      "directly_applies": false,
+      "relevance": "Supplies local-to-global spectral methodology for complexes; the present source-block-restricted subgroup system does not yet satisfy its hypotheses."
+    }
+  ],
+  "headline_metrics": {
+    "subgroup_projection_walk_theorem_count": 1,
+    "regular_fourier_block_decomposition_theorem_count": 1,
+    "one_common_multiplier_gauge_normal_form_theorem_count": 1,
+    "finite_control_count": 1,
+    "finite_control_failure_count": 0,
+    "maximum_fourier_block_spectrum_residual": 6.661338147750939e-16,
+    "gauge_transition_count": 2592,
+    "gauge_transition_failure_count": 0,
+    "block_restricted_local_spectral_expansion_theorem_count": 0,
+    "center_valued_walk_local_law_theorem_count": 0,
+    "natural_all_depth_frame_edge_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "subgroup_projection_walk_lift_proved": true,
+    "one_common_multiplier_gauge_normal_form_proved": true,
+    "global_walk_gap_controls_typical_plancherel_blocks": false,
+    "block_restricted_local_spectral_expansion_proved": false,
+    "center_valued_walk_local_law_proved": false,
+    "natural_all_depth_frame_edge_proved": false,
+    "tight_coherent_node_frame_access_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "The orientation frame is now an explicit subgroup walk, but its high-Plancherel-mass Fourier-block expansion is open."
+  },
+  "status": "subgroup-walk-normal-form-proved-block-expansion-open",
+  "summary": "Recast the natural frame as a product-group subgroup-projection walk and derived its exact one-common-multiplier gauge dynamics.",
+  "falsifiers_triggered": [
+    "A global product-group walk gap is not a typical Plancherel-block edge theorem.",
+    "Markov normalization divides away the physical node-frame scale.",
+    "Coset-complex literature is a proof toolkit, not evidence that its hypotheses hold here."
+  ]
+}

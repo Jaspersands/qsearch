@@ -545,8 +545,68 @@ from self_dual_wreath_augmented_common_core_cech import (
 from self_dual_wreath_common_core_atomization import (
     write_common_core_atomization_report,
 )
+from self_dual_wreath_affine_core_flag_theorem import (
+    write_affine_core_flag_report,
+)
+from self_dual_wreath_affine_node_common_outlier import (
+    write_affine_node_common_outlier_report,
+)
+from self_dual_wreath_affine_plane_scalar_holonomy import (
+    write_affine_plane_scalar_holonomy_report,
+)
+from self_dual_wreath_affine_plane_support_pressure_no_go import (
+    write_affine_plane_support_pressure_no_go_report,
+)
+from self_dual_wreath_affine_recoupling_bundle import (
+    write_affine_recoupling_bundle_report,
+)
+from self_dual_wreath_block_common_core_quotient import (
+    write_block_common_core_quotient_report,
+)
+from self_dual_wreath_branch_controlled_invariant_filter import (
+    write_branch_controlled_invariant_filter_report,
+)
+from self_dual_wreath_cluster_locality_no_go import (
+    write_cluster_locality_no_go_report,
+)
+from self_dual_wreath_local_isotypic_filter_no_go import (
+    write_local_isotypic_filter_no_go_report,
+)
+from self_dual_wreath_orientation_block_common_core import (
+    write_orientation_block_common_core_report,
+)
+from self_dual_wreath_orientation_common_range import (
+    write_orientation_common_range_report,
+)
+from self_dual_wreath_orientation_covariant_quotient_obstruction import (
+    write_orientation_covariant_quotient_obstruction_report,
+)
 from self_dual_wreath_orientation_laplacian_gap import (
     write_orientation_laplacian_gap_report,
+)
+from self_dual_wreath_orientation_pair_angle_spectrum import (
+    write_orientation_pair_angle_spectrum_report,
+)
+from self_dual_wreath_orientation_triple_range import (
+    write_orientation_triple_range_report,
+)
+from self_dual_wreath_paired_block_filter_bypass import (
+    write_paired_block_filter_bypass_report,
+)
+from self_dual_wreath_plancherel_block_mass import (
+    write_plancherel_block_mass_report,
+)
+from self_dual_wreath_plancherel_block_obstruction import (
+    write_plancherel_block_obstruction_report,
+)
+from self_dual_wreath_spectral_filter_degree_obstruction import (
+    write_spectral_filter_degree_obstruction_report,
+)
+from self_dual_wreath_spectral_filter_query_lower_bound import (
+    write_spectral_filter_query_lower_bound_report,
+)
+from self_dual_wreath_spectral_trimmed_subpovm import (
+    write_spectral_trimmed_subpovm_report,
 )
 from self_dual_wreath_common_core_cech_laplacian import (
     write_common_core_cech_laplacian_report,
@@ -7271,6 +7331,628 @@ def command_code_wreath_orientation_laplacian_gap(
     return 0
 
 
+def command_code_wreath_orientation_common_ranges(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_orientation_common_range_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Orientation common-range analysis complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_orientation_common_range.json"
+    )
+    print(
+        "Validation count / failures / scaling records: "
+        f"{metrics['common_range_formula_validation_count']}/"
+        f"{metrics['finite_common_range_validation_failure_count']}/"
+        f"{metrics['scaling_record_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_orientation_family_ranges(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_orientation_triple_range_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Orientation triple-range analysis complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_orientation_triple_range.json"
+    )
+    print(
+        "Formula validations / failures / sampling records: "
+        f"{metrics['finite_formula_validation_count']}/"
+        f"{metrics['finite_formula_validation_failure_count']}/"
+        f"{metrics['sampling_record_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_orientation_pair_angles(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_orientation_pair_angle_spectrum_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Orientation pair principal-angle analysis complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_orientation_pair_angle_spectrum.json"
+    )
+    print(
+        "W4 validations / failures / W5 controls: "
+        f"{metrics['complete_w4_pair_angle_validation_count']}/"
+        f"{metrics['finite_pair_angle_validation_failure_count']}/"
+        f"{metrics['w5_pair_angle_control_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_orientation_block_core(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_orientation_block_common_core_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Orientation block common-core analysis complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_orientation_block_common_core.json"
+    )
+    print(
+        "Witnesses / scaling records / max block rate: "
+        f"{metrics['exact_finite_block_common_core_witness_count']}/"
+        f"{metrics['scaling_record_count']}/"
+        f"{metrics['maximum_observed_block_rate']:.6g}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_plancherel_block_obstruction(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_plancherel_block_obstruction_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Plancherel block norm obstruction analysis complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_plancherel_block_obstruction.json"
+    )
+    print(
+        "Target controls / failures / Sellke theorem count: "
+        f"{metrics['residual_target_control_count']}/"
+        f"{metrics['residual_target_control_failure_count']}/"
+        f"{metrics['sellke_covering_literature_theorem_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_spectral_trim(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_spectral_trimmed_subpovm_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Spectral-trimmed sub-POVM analysis complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_spectral_trimmed_subpovm.json"
+    )
+    print(
+        "Trimmed sub-POVM controls / failures / min success bound: "
+        f"{metrics['finite_trimmed_subpovm_control_count']}/"
+        f"{metrics['finite_trimmed_subpovm_validation_failure_count']}/"
+        f"{metrics['minimum_finite_correct_label_success_probability']:.6g}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_spectral_filter_degree(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_spectral_filter_degree_obstruction_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Spectral filter degree obstruction analysis complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_spectral_filter_degree_obstruction.json"
+    )
+    print(
+        "Scaling records / eval superpoly rows / singular superpoly rows: "
+        f"{metrics['scaling_record_count']}/"
+        f"{metrics['eigenvalue_encoding_superpolynomial_row_count']}/"
+        f"{metrics['singular_value_encoding_superpolynomial_row_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_plancherel_block_mass(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_plancherel_block_mass_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Plancherel block mass analysis complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_plancherel_block_mass.json"
+    )
+    print(
+        "Stationarity controls / failures / scaling records: "
+        f"{metrics['exact_stationarity_control_count']}/"
+        f"{metrics['exact_stationarity_failure_count']}/"
+        f"{metrics['scaling_record_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_orientation_covariant_quotient(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_orientation_covariant_quotient_obstruction_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Orientation covariant quotient obstruction analysis complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_orientation_covariant_quotient_obstruction.json"
+    )
+    print(
+        "Orbit closure controls / failures / max closure fraction: "
+        f"{metrics['finite_orbit_closure_control_count']}/"
+        f"{metrics['finite_orbit_closure_validation_failure_count']}/"
+        f"{metrics['maximum_finite_orbit_closure_fraction']:.6g}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_branch_controlled_invariant_filter(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_branch_controlled_invariant_filter_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Branch-controlled invariant filter analysis complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_branch_controlled_invariant_filter.json"
+    )
+    print(
+        "Physical filter controls / failures / min trace retention: "
+        f"{metrics['finite_physical_filter_control_count']}/"
+        f"{metrics['finite_physical_filter_validation_failure_count']}/"
+        f"{metrics['minimum_finite_filtered_trace_retention']:.6g}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_block_core_quotient(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_block_common_core_quotient_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Block common-core quotient analysis complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_block_common_core_quotient.json"
+    )
+    print(
+        "Quotient controls / failures / scaling records: "
+        f"{metrics['finite_quotient_control_count']}/"
+        f"{metrics['finite_quotient_validation_failure_count']}/"
+        f"{metrics['scaling_record_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_paired_block_filter_bypass(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_paired_block_filter_bypass_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Paired-block filter bypass analysis complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_paired_block_filter_bypass.json"
+    )
+    print(
+        "Paired-block witnesses / scaling records / target violations: "
+        f"{metrics['exact_filtered_paired_block_witness_count']}/"
+        f"{metrics['scaling_record_count']}/"
+        f"{metrics['finite_target_violation_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_local_isotypic_filter_no_go(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_local_isotypic_filter_no_go_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Local isotypic filter no-go analysis complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_local_isotypic_filter_no_go.json"
+    )
+    print(
+        "Incidence controls / failures / scaling records: "
+        f"{metrics['finite_incidence_control_count']}/"
+        f"{metrics['finite_incidence_validation_failure_count']}/"
+        f"{metrics['scaling_record_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_cluster_locality_no_go(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_cluster_locality_no_go_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Cluster locality no-go analysis complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_cluster_locality_no_go.json"
+    )
+    print(
+        "Locality thresholds / falsifications / scaling records: "
+        f"{metrics['finite_locality_threshold_count']}/"
+        f"{metrics['finite_degree_d_falsification_count']}/"
+        f"{metrics['finite_scaling_record_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_spectral_filter_query_bound(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_spectral_filter_query_lower_bound_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Spectral filter query lower bound analysis complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_spectral_filter_query_lower_bound.json"
+    )
+    print(
+        "Search encoding controls / failures / superpoly rows: "
+        f"{metrics['finite_search_encoding_control_count']}/"
+        f"{metrics['finite_search_encoding_failure_count']}/"
+        f"{metrics['superpolynomial_black_box_lower_bound_row_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_affine_core_flag(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_affine_core_flag_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Affine core flag analysis complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_affine_core_flag_theorem.json"
+    )
+    print(
+        "Incidence controls / matrix controls / matrix failures / block records: "
+        f"{metrics['incidence_control_count']}/"
+        f"{metrics['matrix_control_count']}/"
+        f"{metrics['matrix_validation_failure_count']}/"
+        f"{metrics['block_affine_core_record_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_affine_node_common_outlier(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_affine_node_common_outlier_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Affine node common outlier analysis complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_affine_node_common_outlier.json"
+    )
+    print(
+        "Subgroup controls / failures / physical controls / failures: "
+        f"{metrics['subgroup_control_count']}/"
+        f"{metrics['subgroup_control_failure_count']}/"
+        f"{metrics['physical_control_count']}/"
+        f"{metrics['physical_control_failure_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_affine_plane_scalar_holonomy(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_affine_plane_scalar_holonomy_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Affine plane scalar holonomy analysis complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_affine_plane_scalar_holonomy.json"
+    )
+    print(
+        "Scalar plane controls / failures / canonical controls: "
+        f"{metrics['scalar_affine_plane_channel_control_count']}/"
+        f"{metrics['finite_control_failure_count']}/"
+        f"{metrics['canonical_pairing_control_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_affine_plane_support_pressure_no_go(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_affine_plane_support_pressure_no_go_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Affine plane support pressure no-go analysis complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_affine_plane_support_pressure_no_go.json"
+    )
+    print(
+        "Plane controls / failures / pressure capacity failures: "
+        f"{metrics['exact_rich_plane_count_control_count']}/"
+        f"{metrics['finite_plane_count_control_failure_count']}/"
+        f"{metrics['finite_pressure_capacity_failure_count']}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_affine_recoupling_bundle(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_affine_recoupling_bundle_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Affine recoupling bundle analysis complete")
+    print(
+        "Artifact: research/representation/"
+        "self_dual_wreath_affine_recoupling_bundle.json"
+    )
+    print(
+        "Finite controls / failures / scaling records: "
+        f"{metrics['finite_control_count']}/"
+        f"{metrics['finite_flat_transport_validation_failure_count']}/"
+        f"{len(payload['scaling_records'])}"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
 def command_coset_strong_fourier_information(
     args: argparse.Namespace,
 ) -> int:
@@ -13497,6 +14179,246 @@ def build_parser() -> argparse.ArgumentParser:
     )
     code_wreath_orientation_laplacian_gap.set_defaults(
         func=command_code_wreath_orientation_laplacian_gap
+    )
+
+    code_wreath_orientation_common_ranges = subparsers.add_parser(
+        "code-wreath-orientation-common-ranges",
+        help="Analyze trivial/sign common-range multiplicities.",
+    )
+    code_wreath_orientation_common_ranges.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_orientation_common_ranges.set_defaults(
+        func=command_code_wreath_orientation_common_ranges
+    )
+
+    code_wreath_orientation_family_ranges = subparsers.add_parser(
+        "code-wreath-orientation-family-ranges",
+        help="Analyze fixed-family triple-range multi-way incidence.",
+    )
+    code_wreath_orientation_family_ranges.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_orientation_family_ranges.set_defaults(
+        func=command_code_wreath_orientation_family_ranges
+    )
+
+    code_wreath_orientation_pair_angles = subparsers.add_parser(
+        "code-wreath-orientation-pair-angles",
+        help="Analyze orientation pair principal-angle spectrum.",
+    )
+    code_wreath_orientation_pair_angles.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_orientation_pair_angles.set_defaults(
+        func=command_code_wreath_orientation_pair_angles
+    )
+
+    code_wreath_orientation_block_core = subparsers.add_parser(
+        "code-wreath-orientation-block-core",
+        help="Analyze orientation block common-core witness structures.",
+    )
+    code_wreath_orientation_block_core.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_orientation_block_core.set_defaults(
+        func=command_code_wreath_orientation_block_core
+    )
+
+    code_wreath_plancherel_block_obstruction = subparsers.add_parser(
+        "code-wreath-plancherel-block-obstruction",
+        help="Evaluate Sellke covering and Plancherel block norm obstruction.",
+    )
+    code_wreath_plancherel_block_obstruction.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_plancherel_block_obstruction.set_defaults(
+        func=command_code_wreath_plancherel_block_obstruction
+    )
+
+    code_wreath_spectral_trim = subparsers.add_parser(
+        "code-wreath-spectral-trim",
+        help="Analyze spectral-trimmed sub-POVM hidden label recovery.",
+    )
+    code_wreath_spectral_trim.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_spectral_trim.set_defaults(
+        func=command_code_wreath_spectral_trim
+    )
+
+    code_wreath_spectral_filter_degree = subparsers.add_parser(
+        "code-wreath-spectral-filter-degree",
+        help="Analyze low-pass filter polynomial degree obstructions.",
+    )
+    code_wreath_spectral_filter_degree.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_spectral_filter_degree.set_defaults(
+        func=command_code_wreath_spectral_filter_degree
+    )
+
+    code_wreath_plancherel_block_mass = subparsers.add_parser(
+        "code-wreath-plancherel-block-mass",
+        help="Analyze Plancherel tensor stationarity and expected block mass.",
+    )
+    code_wreath_plancherel_block_mass.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_plancherel_block_mass.set_defaults(
+        func=command_code_wreath_plancherel_block_mass
+    )
+
+    code_wreath_orientation_covariant_quotient = subparsers.add_parser(
+        "code-wreath-orientation-covariant-quotient",
+        help="Analyze orientation-covariant quotient scalar-commutant obstructions.",
+    )
+    code_wreath_orientation_covariant_quotient.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_orientation_covariant_quotient.set_defaults(
+        func=command_code_wreath_orientation_covariant_quotient
+    )
+
+    code_wreath_branch_controlled_invariant_filter = subparsers.add_parser(
+        "code-wreath-branch-controlled-invariant-filter",
+        help="Analyze branch-controlled physical invariant filter performance.",
+    )
+    code_wreath_branch_controlled_invariant_filter.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_branch_controlled_invariant_filter.set_defaults(
+        func=command_code_wreath_branch_controlled_invariant_filter
+    )
+
+    code_wreath_block_core_quotient = subparsers.add_parser(
+        "code-wreath-block-core-quotient",
+        help="Analyze block common-core algebraic quotient annihilation.",
+    )
+    code_wreath_block_core_quotient.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_block_core_quotient.set_defaults(
+        func=command_code_wreath_block_core_quotient
+    )
+
+    code_wreath_paired_block_filter_bypass = subparsers.add_parser(
+        "code-wreath-paired-block-filter-bypass",
+        help="Analyze paired-block self-dual irrep filter bypass.",
+    )
+    code_wreath_paired_block_filter_bypass.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_paired_block_filter_bypass.set_defaults(
+        func=command_code_wreath_paired_block_filter_bypass
+    )
+
+    code_wreath_local_isotypic_filter_no_go = subparsers.add_parser(
+        "code-wreath-local-isotypic-filter-no-go",
+        help="Analyze Plancherel-incidence no-go for block-local isotypic filters.",
+    )
+    code_wreath_local_isotypic_filter_no_go.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_local_isotypic_filter_no_go.set_defaults(
+        func=command_code_wreath_local_isotypic_filter_no_go
+    )
+
+    code_wreath_cluster_locality_no_go = subparsers.add_parser(
+        "code-wreath-cluster-locality-no-go",
+        help="Analyze cluster-locality lower bounds for disjoint product filters.",
+    )
+    code_wreath_cluster_locality_no_go.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_cluster_locality_no_go.set_defaults(
+        func=command_code_wreath_cluster_locality_no_go
+    )
+
+    code_wreath_spectral_filter_query_bound = subparsers.add_parser(
+        "code-wreath-spectral-filter-query-bound",
+        help="Analyze search reduction query lower bounds for low-pass filters.",
+    )
+    code_wreath_spectral_filter_query_bound.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_spectral_filter_query_bound.set_defaults(
+        func=command_code_wreath_spectral_filter_query_bound
+    )
+
+    code_wreath_affine_core_flag = subparsers.add_parser(
+        "code-wreath-affine-core-flag",
+        help="Analyze affine core flag balance and linear routing.",
+    )
+    code_wreath_affine_core_flag.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_affine_core_flag.set_defaults(
+        func=command_code_wreath_affine_core_flag
+    )
+
+    code_wreath_affine_node_common_outlier = subparsers.add_parser(
+        "code-wreath-affine-node-common-outlier",
+        help="Analyze affine node generated subgroups and common outlier rarity.",
+    )
+    code_wreath_affine_node_common_outlier.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_affine_node_common_outlier.set_defaults(
+        func=command_code_wreath_affine_node_common_outlier
+    )
+
+    code_wreath_affine_plane_scalar_holonomy = subparsers.add_parser(
+        "code-wreath-affine-plane-scalar-holonomy",
+        help="Analyze scalar affine-plane J3 holonomy positivity.",
+    )
+    code_wreath_affine_plane_scalar_holonomy.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_affine_plane_scalar_holonomy.set_defaults(
+        func=command_code_wreath_affine_plane_scalar_holonomy
+    )
+
+    code_wreath_affine_plane_support_pressure_no_go = subparsers.add_parser(
+        "code-wreath-affine-plane-support-pressure-no-go",
+        help="Analyze affine plane support demand versus capacity pressure.",
+    )
+    code_wreath_affine_plane_support_pressure_no_go.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_affine_plane_support_pressure_no_go.set_defaults(
+        func=command_code_wreath_affine_plane_support_pressure_no_go
+    )
+
+    code_wreath_affine_recoupling_bundle = subparsers.add_parser(
+        "code-wreath-affine-recoupling-bundle",
+        help="Analyze affine recoupling flat transport bundle structures.",
+    )
+    code_wreath_affine_recoupling_bundle.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_affine_recoupling_bundle.set_defaults(
+        func=command_code_wreath_affine_recoupling_bundle
     )
 
     coset_strong_fourier_information = subparsers.add_parser(

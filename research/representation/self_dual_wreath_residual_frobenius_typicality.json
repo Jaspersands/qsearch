@@ -1,0 +1,1757 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Rare deficient membership patterns can dominate the global Frobenius sum.",
+      "resolution": "They cannot: missing arm classes are exact common only, and the target-only full-pattern case still gives exactly 4/(n!)^5.",
+      "resolved": true
+    },
+    {
+      "objection": "A small average correlation controls the relation operator norm.",
+      "resolution": "Not on the full space. It controls operator norm only after an explicit information-theoretic spectral deletion whose dimension loss is quantified.",
+      "resolved": true
+    },
+    {
+      "objection": "The spectral deletion proves an implementable endpoint sampler.",
+      "resolution": "No grading-compatible projector or coherent circuit is constructed, and PGM state-mass preservation is unproved.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "coefficient_trace_equals_pgm_state_trace_proved": false,
+    "coherent_trim_implementation_proved": false,
+    "grading_compatible_trim_proved": false,
+    "natural_relation_frobenius_density_vanishes_proved": true,
+    "natural_shorted_endpoint_comparability_proved": false,
+    "reason": "Residual relation geometry is spectrally benign on almost all coefficient dimensions, but the required physical, graded, state-mass-preserving trim is not constructed.",
+    "speedup_claim_allowed": false,
+    "universal_residual_star_frobenius_bound_proved": true,
+    "vanishing_coefficient_fraction_spectral_trim_exists": true,
+    "worst_case_gamma_controls_typical_relation_spectrum": false
+  },
+  "created_at": "2026-08-07T23:48:18.597788+00:00",
+  "falsifiers_triggered": [
+    "Rare empty membership blocks do not amplify noncommon residual Frobenius energy.",
+    "Small Frobenius density is an existence theorem for trimming, not a full-space operator-norm theorem.",
+    "A low-dimensional coefficient obstruction may still carry disproportionate PGM state mass until a trace transfer is proved."
+  ],
+  "headline_metrics": {
+    "coefficient_to_pgm_state_mass_transfer_theorem_count": 0,
+    "coherent_trim_circuit_count": 0,
+    "finite_trim_certification_onset_n": 36,
+    "finite_trim_certified_row_count": 4,
+    "grading_compatible_trim_theorem_count": 0,
+    "missing_arm_residual_vanishing_control_count": 56,
+    "natural_vanishing_coefficient_fraction_trim_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "occupancy_control_count": 64,
+    "occupancy_control_failure_count": 0,
+    "scaling_row_count": 10,
+    "spectral_trim_control_count": 2,
+    "tail_combined_failure_probability_upper_bound": 6.614036692400916e-27,
+    "tail_frobenius_density_threshold_log2": -86.96652751283163,
+    "tail_n": 48,
+    "tail_removed_fraction_upper_bound": 2.116491741568293e-25,
+    "two_operator_spectral_trim_theorem_count": 1,
+    "universal_occupancy_residual_frobenius_theorem_count": 1
+  },
+  "occupancy_controls": [
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 5,
+      "positive_complement_classes": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/6220800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/120",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 5,
+      "positive_complement_classes": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/6220800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 5,
+      "positive_complement_classes": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/6220800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/864000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 5,
+      "positive_complement_classes": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/6220800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 5,
+      "positive_complement_classes": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/6220800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/864000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 5,
+      "positive_complement_classes": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/6220800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 5,
+      "positive_complement_classes": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/6220800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/6220800000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 5,
+      "positive_complement_classes": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/6220800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 5,
+      "positive_complement_classes": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/6220800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/864000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 5,
+      "positive_complement_classes": [
+        true,
+        false,
+        false,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/6220800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 5,
+      "positive_complement_classes": [
+        false,
+        true,
+        false,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/6220800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/6220800000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 5,
+      "positive_complement_classes": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/6220800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 5,
+      "positive_complement_classes": [
+        false,
+        false,
+        true,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/6220800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/6220800000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 5,
+      "positive_complement_classes": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/6220800000"
+    },
+    {
+      "arm_class_missing": false,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "1/6220800000",
+      "n": 5,
+      "positive_complement_classes": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "residual_to_bound_ratio": 1.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/6220800000"
+    },
+    {
+      "arm_class_missing": false,
+      "expected_exact_common_squared_overlap_fraction": "1/22394880000000",
+      "expected_residual_squared_overlap_fraction": "3599/22394880000000",
+      "n": 5,
+      "positive_complement_classes": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "residual_to_bound_ratio": 0.9997222222222222,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/6220800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 6,
+      "positive_complement_classes": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/48372940800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/720",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 6,
+      "positive_complement_classes": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/48372940800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 6,
+      "positive_complement_classes": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/48372940800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/186624000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 6,
+      "positive_complement_classes": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/48372940800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 6,
+      "positive_complement_classes": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/48372940800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/186624000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 6,
+      "positive_complement_classes": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/48372940800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 6,
+      "positive_complement_classes": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/48372940800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/48372940800000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 6,
+      "positive_complement_classes": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/48372940800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 6,
+      "positive_complement_classes": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/48372940800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/186624000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 6,
+      "positive_complement_classes": [
+        true,
+        false,
+        false,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/48372940800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 6,
+      "positive_complement_classes": [
+        false,
+        true,
+        false,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/48372940800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/48372940800000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 6,
+      "positive_complement_classes": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/48372940800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 6,
+      "positive_complement_classes": [
+        false,
+        false,
+        true,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/48372940800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/48372940800000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 6,
+      "positive_complement_classes": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/48372940800000"
+    },
+    {
+      "arm_class_missing": false,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "1/48372940800000",
+      "n": 6,
+      "positive_complement_classes": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "residual_to_bound_ratio": 1.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/48372940800000"
+    },
+    {
+      "arm_class_missing": false,
+      "expected_exact_common_squared_overlap_fraction": "1/6269133127680000000",
+      "expected_residual_squared_overlap_fraction": "129599/6269133127680000000",
+      "n": 6,
+      "positive_complement_classes": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "residual_to_bound_ratio": 0.9999922839506172,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        3,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/48372940800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 7,
+      "positive_complement_classes": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/813004016025600000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/5040",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 7,
+      "positive_complement_classes": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/813004016025600000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 7,
+      "positive_complement_classes": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/813004016025600000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/64012032000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 7,
+      "positive_complement_classes": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/813004016025600000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 7,
+      "positive_complement_classes": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/813004016025600000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/64012032000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 7,
+      "positive_complement_classes": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/813004016025600000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 7,
+      "positive_complement_classes": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/813004016025600000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/813004016025600000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 7,
+      "positive_complement_classes": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/813004016025600000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 7,
+      "positive_complement_classes": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/813004016025600000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/64012032000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 7,
+      "positive_complement_classes": [
+        true,
+        false,
+        false,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/813004016025600000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 7,
+      "positive_complement_classes": [
+        false,
+        true,
+        false,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/813004016025600000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/813004016025600000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 7,
+      "positive_complement_classes": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/813004016025600000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 7,
+      "positive_complement_classes": [
+        false,
+        false,
+        true,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/813004016025600000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/813004016025600000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 7,
+      "positive_complement_classes": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/813004016025600000"
+    },
+    {
+      "arm_class_missing": false,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "1/813004016025600000",
+      "n": 7,
+      "positive_complement_classes": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "residual_to_bound_ratio": 1.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/813004016025600000"
+    },
+    {
+      "arm_class_missing": false,
+      "expected_exact_common_squared_overlap_fraction": "1/5162900703368970240000000",
+      "expected_residual_squared_overlap_fraction": "6350399/5162900703368970240000000",
+      "n": 7,
+      "positive_complement_classes": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "residual_to_bound_ratio": 0.9999998425296044,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/813004016025600000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 8,
+      "positive_complement_classes": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/26640515597126860800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/40320",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 8,
+      "positive_complement_classes": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/26640515597126860800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 8,
+      "positive_complement_classes": [
+        false,
+        true,
+        false,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/26640515597126860800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/32774160384000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 8,
+      "positive_complement_classes": [
+        true,
+        true,
+        false,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/26640515597126860800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 8,
+      "positive_complement_classes": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/26640515597126860800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/32774160384000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 8,
+      "positive_complement_classes": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/26640515597126860800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 8,
+      "positive_complement_classes": [
+        false,
+        true,
+        true,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/26640515597126860800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/26640515597126860800000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 8,
+      "positive_complement_classes": [
+        true,
+        true,
+        true,
+        false
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/26640515597126860800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 8,
+      "positive_complement_classes": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/26640515597126860800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/32774160384000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 8,
+      "positive_complement_classes": [
+        true,
+        false,
+        false,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/26640515597126860800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 8,
+      "positive_complement_classes": [
+        false,
+        true,
+        false,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/26640515597126860800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/26640515597126860800000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 8,
+      "positive_complement_classes": [
+        true,
+        true,
+        false,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/26640515597126860800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 8,
+      "positive_complement_classes": [
+        false,
+        false,
+        true,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/26640515597126860800000"
+    },
+    {
+      "arm_class_missing": true,
+      "expected_exact_common_squared_overlap_fraction": "1/26640515597126860800000",
+      "expected_residual_squared_overlap_fraction": "0",
+      "n": 8,
+      "positive_complement_classes": [
+        true,
+        false,
+        true,
+        true
+      ],
+      "residual_to_bound_ratio": 0.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/26640515597126860800000"
+    },
+    {
+      "arm_class_missing": false,
+      "expected_exact_common_squared_overlap_fraction": "0",
+      "expected_residual_squared_overlap_fraction": "1/26640515597126860800000",
+      "n": 8,
+      "positive_complement_classes": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "residual_to_bound_ratio": 1.0,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/26640515597126860800000"
+    },
+    {
+      "arm_class_missing": false,
+      "expected_exact_common_squared_overlap_fraction": "1/10827387535871642676756480000000",
+      "expected_residual_squared_overlap_fraction": "406425599/10827387535871642676756480000000",
+      "n": 8,
+      "positive_complement_classes": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "residual_to_bound_ratio": 0.9999999975395251,
+      "residual_vanishes_when_arm_class_missing": true,
+      "status": "universal-residual-star-frobenius-bound-verified",
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "universal_bound_respected": true,
+      "universal_residual_bound": "1/26640515597126860800000"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "bound_every_pattern_stratum_not_only_typical_triples",
+      "resolution": "All 16 occupancy strata are handled algebraically; missing arms contribute only exact common channels.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_residual_relation_energy_vanishes_per_coefficient",
+      "resolution": "The O((n!)^-2) aggregate energy is divided by the Omega((n!)^-1) concentrated pair coefficient dimension and Markov-optimized.",
+      "resolved": true
+    },
+    {
+      "obligation": "construct_grading_compatible_low_energy_trim",
+      "resolution": "The intersection of metric and graded low-energy spaces may mix internal and crossing edge variables.",
+      "resolved": false
+    },
+    {
+      "obligation": "transfer_coefficient_fraction_to_pgm_state_trace",
+      "resolution": "Need a trace identity through the hierarchical polar frames and accepted source-state normalization.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "combined_structural_failure_probability_upper_bound": 1.0,
+      "conditioned_expected_offdiagonal_frobenius_fraction": 8.875075054490696e+26,
+      "conditioned_expected_offdiagonal_frobenius_fraction_log2": 89.51988978717145,
+      "finite_vanishing_fraction_trim_certified": false,
+      "frobenius_density_threshold": 6.896988713533544e+17,
+      "frobenius_density_threshold_log2": 59.2587442189892,
+      "group_order_decimal": "479001600",
+      "information_threshold_copy_count": 29,
+      "markov_failure_probability_upper_bound": 6.896988713533544e+17,
+      "metric_and_graded_removed_fraction_upper_bound": 1.0,
+      "n": 12,
+      "orientation_count_decimal": "536870912",
+      "pair_coefficient_dimension_lower_fraction": 1.8657480821990504e-09,
+      "pair_coefficient_dimension_lower_fraction_log2": -28.997598650806957,
+      "pair_rank_event_failure_probability_upper_bound": 1.0,
+      "retained_relation_metric_eigenvalue_lower_bound": 1.75,
+      "retained_relation_metric_eigenvalue_upper_bound": 2.25,
+      "spectral_trim_tolerance": 0.25,
+      "status": "finite-frobenius-trim-conditioning-bound-vacuous"
+    },
+    {
+      "combined_structural_failure_probability_upper_bound": 1.0,
+      "conditioned_expected_offdiagonal_frobenius_fraction": 1534599523690.2192,
+      "conditioned_expected_offdiagonal_frobenius_fraction_log2": 40.48099935087721,
+      "finite_vanishing_fraction_trim_certified": false,
+      "frobenius_density_threshold": 3978658153433.273,
+      "frobenius_density_threshold_log2": 41.85541908655333,
+      "group_order_decimal": "20922789888000",
+      "information_threshold_copy_count": 45,
+      "markov_failure_probability_upper_bound": 3978658153433.273,
+      "metric_and_graded_removed_fraction_upper_bound": 1.0,
+      "n": 16,
+      "orientation_count_decimal": "35184372088832",
+      "pair_coefficient_dimension_lower_fraction": 9.694419456862947e-14,
+      "pair_coefficient_dimension_lower_fraction_log2": -43.22983882222945,
+      "pair_rank_event_failure_probability_upper_bound": 1.0,
+      "retained_relation_metric_eigenvalue_lower_bound": 1.75,
+      "retained_relation_metric_eigenvalue_upper_bound": 2.25,
+      "spectral_trim_tolerance": 0.25,
+      "status": "finite-frobenius-trim-conditioning-bound-vacuous"
+    },
+    {
+      "combined_structural_failure_probability_upper_bound": 1.0,
+      "conditioned_expected_offdiagonal_frobenius_fraction": 0.0016125469363877283,
+      "conditioned_expected_offdiagonal_frobenius_fraction_log2": -9.27644313100476,
+      "finite_vanishing_fraction_trim_certified": false,
+      "frobenius_density_threshold": 38761986.48267256,
+      "frobenius_density_threshold_log2": 25.208139172406828,
+      "group_order_decimal": "2432902008176640000",
+      "information_threshold_copy_count": 62,
+      "markov_failure_probability_upper_bound": 38761986.48267256,
+      "metric_and_graded_removed_fraction_upper_bound": 1.0,
+      "n": 20,
+      "orientation_count_decimal": "4611686018427387904",
+      "pair_coefficient_dimension_lower_fraction": 1.0732485563258797e-18,
+      "pair_coefficient_dimension_lower_fraction_log2": -59.692721475818416,
+      "pair_rank_event_failure_probability_upper_bound": 1.0,
+      "retained_relation_metric_eigenvalue_lower_bound": 1.75,
+      "retained_relation_metric_eigenvalue_upper_bound": 2.25,
+      "spectral_trim_tolerance": 0.25,
+      "status": "finite-frobenius-trim-conditioning-bound-vacuous"
+    },
+    {
+      "combined_structural_failure_probability_upper_bound": 1.0,
+      "conditioned_expected_offdiagonal_frobenius_fraction": 2.0139406084426477e-19,
+      "conditioned_expected_offdiagonal_frobenius_fraction_log2": -62.106612664286125,
+      "finite_vanishing_fraction_trim_certified": false,
+      "frobenius_density_threshold": 212.5921070416573,
+      "frobenius_density_threshold_log2": 7.731944224351913,
+      "group_order_decimal": "620448401733239439360000",
+      "information_threshold_copy_count": 80,
+      "markov_failure_probability_upper_bound": 212.5921070416573,
+      "metric_and_graded_removed_fraction_upper_bound": 1.0,
+      "n": 24,
+      "orientation_count_decimal": "1208925819614629174706176",
+      "pair_coefficient_dimension_lower_fraction": 4.4560739173694954e-24,
+      "pair_coefficient_dimension_lower_fraction_log2": -77.57050111298996,
+      "pair_rank_event_failure_probability_upper_bound": 1.0,
+      "retained_relation_metric_eigenvalue_lower_bound": 1.75,
+      "retained_relation_metric_eigenvalue_upper_bound": 2.25,
+      "spectral_trim_tolerance": 0.25,
+      "status": "finite-frobenius-trim-conditioning-bound-vacuous"
+    },
+    {
+      "combined_structural_failure_probability_upper_bound": 1.0,
+      "conditioned_expected_offdiagonal_frobenius_fraction": 2.3318742639574127e-36,
+      "conditioned_expected_offdiagonal_frobenius_fraction_log2": -118.36792141628123,
+      "finite_vanishing_fraction_trim_certified": false,
+      "frobenius_density_threshold": 0.0009502490816978951,
+      "frobenius_density_threshold_log2": -10.039406653653772,
+      "group_order_decimal": "304888344611713860501504000000",
+      "information_threshold_copy_count": 98,
+      "markov_failure_probability_upper_bound": 0.0009502490816978951,
+      "metric_and_graded_removed_fraction_upper_bound": 0.030407970614332643,
+      "n": 28,
+      "orientation_count_decimal": "316912650057057350374175801344",
+      "pair_coefficient_dimension_lower_fraction": 2.5824398344498497e-30,
+      "pair_coefficient_dimension_lower_fraction_log2": -98.28910810897369,
+      "pair_rank_event_failure_probability_upper_bound": 1.0,
+      "retained_relation_metric_eigenvalue_lower_bound": 1.75,
+      "retained_relation_metric_eigenvalue_upper_bound": 2.25,
+      "spectral_trim_tolerance": 0.25,
+      "status": "finite-frobenius-trim-conditioning-bound-vacuous"
+    },
+    {
+      "combined_structural_failure_probability_upper_bound": 1.0,
+      "conditioned_expected_offdiagonal_frobenius_fraction": 8.288666736279919e-52,
+      "conditioned_expected_offdiagonal_frobenius_fraction_log2": -169.68912087677037,
+      "finite_vanishing_fraction_trim_certified": false,
+      "frobenius_density_threshold": 1.3697040106125467e-08,
+      "frobenius_density_threshold_log2": -26.12156059478705,
+      "group_order_decimal": "263130836933693530167218012160000000",
+      "information_threshold_copy_count": 118,
+      "markov_failure_probability_upper_bound": 1.3697040106125467e-08,
+      "metric_and_graded_removed_fraction_upper_bound": 4.3830528339601496e-07,
+      "n": 32,
+      "orientation_count_decimal": "332306998946228968225951765070086144",
+      "pair_coefficient_dimension_lower_fraction": 4.41805607168296e-36,
+      "pair_coefficient_dimension_lower_fraction_log2": -117.44599968719626,
+      "pair_rank_event_failure_probability_upper_bound": 1.0,
+      "retained_relation_metric_eigenvalue_lower_bound": 1.75,
+      "retained_relation_metric_eigenvalue_upper_bound": 2.25,
+      "spectral_trim_tolerance": 0.25,
+      "status": "finite-frobenius-trim-conditioning-bound-vacuous"
+    },
+    {
+      "combined_structural_failure_probability_upper_bound": 5.37293659405328e-13,
+      "conditioned_expected_offdiagonal_frobenius_fraction": 6.722138540795347e-67,
+      "conditioned_expected_offdiagonal_frobenius_fraction_log2": -219.82026208108843,
+      "finite_vanishing_fraction_trim_certified": true,
+      "frobenius_density_threshold": 3.1263085896310237e-13,
+      "frobenius_density_threshold_log2": -41.54060504356751,
+      "group_order_decimal": "371993326789901217467999448150835200000000",
+      "information_threshold_copy_count": 139,
+      "markov_failure_probability_upper_bound": 3.1263085896310237e-13,
+      "metric_and_graded_removed_fraction_upper_bound": 1.0004187486819276e-11,
+      "n": 36,
+      "orientation_count_decimal": "696898287454081973172991196020261297061888",
+      "pair_coefficient_dimension_lower_fraction": 6.877708596945772e-42,
+      "pair_coefficient_dimension_lower_fraction_log2": -136.7390519939534,
+      "pair_rank_event_failure_probability_upper_bound": 2.2466280044222565e-13,
+      "retained_relation_metric_eigenvalue_lower_bound": 1.75,
+      "retained_relation_metric_eigenvalue_upper_bound": 2.25,
+      "spectral_trim_tolerance": 0.25,
+      "status": "vanishing-coefficient-fraction-relation-trim-certified"
+    },
+    {
+      "combined_structural_failure_probability_upper_bound": 6.747523093141315e-18,
+      "conditioned_expected_offdiagonal_frobenius_fraction": 1.3051931454839582e-82,
+      "conditioned_expected_offdiagonal_frobenius_fraction_log2": -272.01384046483963,
+      "finite_vanishing_fraction_trim_certified": true,
+      "frobenius_density_threshold": 6.747523090990228e-18,
+      "frobenius_density_threshold_log2": -57.04034769916293,
+      "group_order_decimal": "815915283247897734345611269596115894272000000000",
+      "information_threshold_copy_count": 160,
+      "markov_failure_probability_upper_bound": 6.747523090990228e-18,
+      "metric_and_graded_removed_fraction_upper_bound": 2.159207389116873e-16,
+      "n": 40,
+      "orientation_count_decimal": "1461501637330902918203684832716283019655932542976",
+      "pair_coefficient_dimension_lower_fraction": 2.866724944597101e-48,
+      "pair_coefficient_dimension_lower_fraction_log2": -157.9331450665138,
+      "pair_rank_event_failure_probability_upper_bound": 2.1510861887758034e-27,
+      "retained_relation_metric_eigenvalue_lower_bound": 1.75,
+      "retained_relation_metric_eigenvalue_upper_bound": 2.25,
+      "spectral_trim_tolerance": 0.25,
+      "status": "vanishing-coefficient-fraction-relation-trim-certified"
+    },
+    {
+      "combined_structural_failure_probability_upper_bound": 1.7755285016101593e-22,
+      "conditioned_expected_offdiagonal_frobenius_fraction": 1.1493221969678032e-98,
+      "conditioned_expected_offdiagonal_frobenius_fraction_log2": -325.3481700041917,
+      "finite_vanishing_fraction_trim_certified": true,
+      "frobenius_density_threshold": 1.7755285016101593e-22,
+      "frobenius_density_threshold_log2": -72.25416956816473,
+      "group_order_decimal": "2658271574788448768043625811014615890319638528000000000",
+      "information_threshold_copy_count": 181,
+      "markov_failure_probability_upper_bound": 1.7755285016101593e-22,
+      "metric_and_graded_removed_fraction_upper_bound": 5.68169120515251e-21,
+      "n": 44,
+      "orientation_count_decimal": "3064991081731777716716694054300618367237478244367204352",
+      "pair_coefficient_dimension_lower_fraction": 3.645746755520486e-55,
+      "pair_coefficient_dimension_lower_fraction_log2": -180.83983086786225,
+      "pair_rank_event_failure_probability_upper_bound": 1.0557370428943392e-41,
+      "retained_relation_metric_eigenvalue_lower_bound": 1.75,
+      "retained_relation_metric_eigenvalue_upper_bound": 2.25,
+      "spectral_trim_tolerance": 0.25,
+      "status": "vanishing-coefficient-fraction-relation-trim-certified"
+    },
+    {
+      "combined_structural_failure_probability_upper_bound": 6.614036692400916e-27,
+      "conditioned_expected_offdiagonal_frobenius_fraction": 2.7549409854179653e-114,
+      "conditioned_expected_offdiagonal_frobenius_fraction_log2": -377.2377814025214,
+      "finite_vanishing_fraction_trim_certified": true,
+      "frobenius_density_threshold": 6.614036692400916e-27,
+      "frobenius_density_threshold_log2": -86.96652751283163,
+      "group_order_decimal": "12413915592536072670862289047373375038521486354677760000000000",
+      "information_threshold_copy_count": 203,
+      "markov_failure_probability_upper_bound": 6.614036692400916e-27,
+      "metric_and_graded_removed_fraction_upper_bound": 2.116491741568293e-25,
+      "n": 48,
+      "orientation_count_decimal": "12855504354071922204335696738729300820177623950262342682411008",
+      "pair_coefficient_dimension_lower_fraction": 6.297658407769655e-62,
+      "pair_coefficient_dimension_lower_fraction_log2": -203.30472637685816,
+      "pair_rank_event_failure_probability_upper_bound": 8.181072119951268e-56,
+      "retained_relation_metric_eigenvalue_lower_bound": 1.75,
+      "retained_relation_metric_eigenvalue_upper_bound": 2.25,
+      "spectral_trim_tolerance": 0.25,
+      "status": "vanishing-coefficient-fraction-relation-trim-certified"
+    }
+  ],
+  "spectral_trim_controls": [
+    {
+      "dimension": 20,
+      "frobenius_markov_bound_respected": true,
+      "graded_frobenius_density": 0.05685640682196409,
+      "graded_removed_dimension": 2,
+      "graded_retained_norm": 8.45248062703289e-17,
+      "joint_removed_fraction_upper_bound": 1.0,
+      "joint_retained_dimension_lower_bound": 16,
+      "metric_frobenius_density": 0.07062836881713068,
+      "metric_removed_dimension": 2,
+      "metric_retained_norm": 8.857709786281998e-17,
+      "status": "two-operator-frobenius-spectral-trim-verified",
+      "tolerance": 0.25
+    },
+    {
+      "dimension": 32,
+      "frobenius_markov_bound_respected": true,
+      "graded_frobenius_density": 0.024275064853527574,
+      "graded_removed_dimension": 3,
+      "graded_retained_norm": 0.2399180521778352,
+      "joint_removed_fraction_upper_bound": 0.6796234575905208,
+      "joint_retained_dimension_lower_bound": 25,
+      "metric_frobenius_density": 0.018201401245879975,
+      "metric_removed_dimension": 4,
+      "metric_retained_norm": 3.629606609174988e-17,
+      "status": "two-operator-frobenius-spectral-trim-verified",
+      "tolerance": 0.25
+    }
+  ],
+  "status": "residual-relation-frobenius-density-vanishes-physical-graded-trim-open",
+  "summary": "Proved a universal 4/(n!)^5 residual star-energy bound and a vanishing-coefficient-fraction joint spectral trim for the natural relation metric and grading perturbations.",
+  "theorem_contract": {
+    "coefficient_dimension": "Uniform balanced pair-rank concentration supplies total coefficient dimension Omega(ambient/n!).",
+    "deficient_patterns": "A missing arm complement class forces all surviving carriers one-dimensional, hence correlation-one exact common directions.",
+    "global_relation_energy": "There are N*binom(N-1,2) centered unordered stars and both matrix directions, yielding E||O||_F^2/ambient <=4N(N-1)(N-2)/(n!)^5.",
+    "per_star_energy": "For every complement-pattern occupancy stratum, expected noncommon ||B_ab^*B_ac||_F^2/ambient <=4/(n!)^5.",
+    "scope": "The common retained space need not preserve internal/crossing grading and coefficient trace is not yet accepted-state trace.",
+    "spectral_trim": "Frobenius density delta permits epsilon-norm compression after deleting at most delta/epsilon^2 dimension; metric and graded trims together cost at most twice this."
+  }
+}

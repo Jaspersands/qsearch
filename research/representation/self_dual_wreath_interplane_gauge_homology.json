@@ -1,0 +1,4945 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Positive triangle holonomy removes every sign gauge.",
+      "resolution": "A line has no cycle in the bipartite incidence graph; all nontrivial invariants run through several planes.",
+      "resolved": true
+    },
+    {
+      "objection": "Restricting to rich planes makes the gauge debt sparse.",
+      "resolution": "False: only 2K+1 points become isolated and the rich cycle rank remains Theta(4^K).",
+      "resolved": true
+    },
+    {
+      "objection": "Every cohomology class is naturally realizable.",
+      "resolution": "The combinatorial classification supplies possibilities, not the distribution induced by symmetric-group recoupling.",
+      "resolved": false
+    },
+    {
+      "objection": "A nontrivial scalar cycle forces poor PGM success.",
+      "resolution": "Conditioning depends on weighted matrix traffic and bad-mode mass, not merely existence of one frustrated cycle.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "collision_free_noncommon_frame_edge_proved": false,
+    "local_plane_holonomy_controls_global_gauge": false,
+    "natural_cycle_holonomy_law_derived": false,
+    "natural_gauge_flat_or_concentrated": false,
+    "operator_valued_overlap_traffic_controlled": false,
+    "reason": "The missing natural theorem concerns a quadratic family of long inter-plane cycles and their matrix-valued extensions.",
+    "rich_cycle_rank_quadratic": true,
+    "scalar_interplane_gauges_classified": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-08T04:11:11.154594+00:00",
+  "falsifiers_triggered": [
+    "Single-plane positive-holonomy audits cannot establish a global gauge or frame edge, even on the rich support family.",
+    "The all-positive Steiner surrogate is one gauge class among 2^Theta(4^K) combinatorially admissible classes.",
+    "Future finite audits must include multi-plane incidence cycles and report gauge-invariant cycle products."
+  ],
+  "full_controls": [
+    {
+      "connected_component_count": 1,
+      "copy_count": 3,
+      "cycle_rank": 8,
+      "exact_component_and_cycle_count_verified": true,
+      "gauge_class_count_log2": 8,
+      "incidence_edge_count": 21,
+      "isolated_point_count": 0,
+      "line_count": 7,
+      "line_family": "all",
+      "negative_six_cycle_lines": [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          5,
+          7
+        ],
+        [
+          1,
+          4,
+          5
+        ]
+      ],
+      "negative_six_cycle_points": [
+        1,
+        2,
+        5
+      ],
+      "negative_six_cycle_product": -1,
+      "nontrivial_signed_cycle_class_verified": true,
+      "point_count": 7,
+      "predicted_connected_component_count": 1,
+      "predicted_cycle_rank": 8,
+      "status": "quadratic-interplane-gauge-space-with-negative-cycle"
+    },
+    {
+      "connected_component_count": 1,
+      "copy_count": 4,
+      "cycle_rank": 56,
+      "exact_component_and_cycle_count_verified": true,
+      "gauge_class_count_log2": 56,
+      "incidence_edge_count": 105,
+      "isolated_point_count": 0,
+      "line_count": 35,
+      "line_family": "all",
+      "negative_six_cycle_lines": [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          5,
+          7
+        ],
+        [
+          1,
+          4,
+          5
+        ]
+      ],
+      "negative_six_cycle_points": [
+        1,
+        2,
+        5
+      ],
+      "negative_six_cycle_product": -1,
+      "nontrivial_signed_cycle_class_verified": true,
+      "point_count": 15,
+      "predicted_connected_component_count": 1,
+      "predicted_cycle_rank": 56,
+      "status": "quadratic-interplane-gauge-space-with-negative-cycle"
+    },
+    {
+      "connected_component_count": 1,
+      "copy_count": 5,
+      "cycle_rank": 280,
+      "exact_component_and_cycle_count_verified": true,
+      "gauge_class_count_log2": 280,
+      "incidence_edge_count": 465,
+      "isolated_point_count": 0,
+      "line_count": 155,
+      "line_family": "all",
+      "negative_six_cycle_lines": [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          5,
+          7
+        ],
+        [
+          1,
+          4,
+          5
+        ]
+      ],
+      "negative_six_cycle_points": [
+        1,
+        2,
+        5
+      ],
+      "negative_six_cycle_product": -1,
+      "nontrivial_signed_cycle_class_verified": true,
+      "point_count": 31,
+      "predicted_connected_component_count": 1,
+      "predicted_cycle_rank": 280,
+      "status": "quadratic-interplane-gauge-space-with-negative-cycle"
+    },
+    {
+      "connected_component_count": 1,
+      "copy_count": 6,
+      "cycle_rank": 1240,
+      "exact_component_and_cycle_count_verified": true,
+      "gauge_class_count_log2": 1240,
+      "incidence_edge_count": 1953,
+      "isolated_point_count": 0,
+      "line_count": 651,
+      "line_family": "all",
+      "negative_six_cycle_lines": [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          5,
+          7
+        ],
+        [
+          1,
+          4,
+          5
+        ]
+      ],
+      "negative_six_cycle_points": [
+        1,
+        2,
+        5
+      ],
+      "negative_six_cycle_product": -1,
+      "nontrivial_signed_cycle_class_verified": true,
+      "point_count": 63,
+      "predicted_connected_component_count": 1,
+      "predicted_cycle_rank": 1240,
+      "status": "quadratic-interplane-gauge-space-with-negative-cycle"
+    },
+    {
+      "connected_component_count": 1,
+      "copy_count": 7,
+      "cycle_rank": 5208,
+      "exact_component_and_cycle_count_verified": true,
+      "gauge_class_count_log2": 5208,
+      "incidence_edge_count": 8001,
+      "isolated_point_count": 0,
+      "line_count": 2667,
+      "line_family": "all",
+      "negative_six_cycle_lines": [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          5,
+          7
+        ],
+        [
+          1,
+          4,
+          5
+        ]
+      ],
+      "negative_six_cycle_points": [
+        1,
+        2,
+        5
+      ],
+      "negative_six_cycle_product": -1,
+      "nontrivial_signed_cycle_class_verified": true,
+      "point_count": 127,
+      "predicted_connected_component_count": 1,
+      "predicted_cycle_rank": 5208,
+      "status": "quadratic-interplane-gauge-space-with-negative-cycle"
+    },
+    {
+      "connected_component_count": 1,
+      "copy_count": 8,
+      "cycle_rank": 21336,
+      "exact_component_and_cycle_count_verified": true,
+      "gauge_class_count_log2": 21336,
+      "incidence_edge_count": 32385,
+      "isolated_point_count": 0,
+      "line_count": 10795,
+      "line_family": "all",
+      "negative_six_cycle_lines": [
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          2,
+          5,
+          7
+        ],
+        [
+          1,
+          4,
+          5
+        ]
+      ],
+      "negative_six_cycle_points": [
+        1,
+        2,
+        5
+      ],
+      "negative_six_cycle_product": -1,
+      "nontrivial_signed_cycle_class_verified": true,
+      "point_count": 255,
+      "predicted_connected_component_count": 1,
+      "predicted_cycle_rank": 21336,
+      "status": "quadratic-interplane-gauge-space-with-negative-cycle"
+    }
+  ],
+  "headline_metrics": {
+    "finite_control_failure_count": 0,
+    "full_homology_control_count": 6,
+    "natural_cycle_holonomy_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "operator_valued_connection_theorem_count": 0,
+    "rich_cycle_rank_theorem_count": 1,
+    "rich_homology_control_count": 5,
+    "rich_point_degree_control_count": 491,
+    "scalar_interplane_gauge_classification_theorem_count": 1,
+    "tail_rich_copy_count": 8,
+    "tail_rich_cycle_rank": 13371
+  },
+  "proof_obligations": [
+    {
+      "obligation": "classify_scalar_interplane_sign_gauges",
+      "resolution": "Standard graph cohomology gives one independent bit per incidence cycle after point and line gauges.",
+      "resolved": true
+    },
+    {
+      "obligation": "count_pattern_rich_cycle_debt",
+      "resolution": "Exact point degrees and crossing-graph connectivity give the rich component and cycle-rank formula.",
+      "resolved": true
+    },
+    {
+      "obligation": "derive_natural_cycle_holonomy_law",
+      "resolution": "No theorem yet evaluates the longer cycle products of natural S_n cup/cap and Racah contractions.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_natural_gauge_concentration_or_flatness",
+      "resolution": "The admissible gauge space has Theta(4^K) dimensions; a local-plane argument cannot control it.",
+      "resolved": false
+    },
+    {
+      "obligation": "extend_scalar_cohomology_to_orthogonal_transport",
+      "resolution": "Multiplicity spaces require nonabelian O(m) connection holonomies and operator-valued cycle moments.",
+      "resolved": false
+    }
+  ],
+  "rich_controls": [
+    {
+      "connected_component_count": 10,
+      "copy_count": 4,
+      "cycle_rank": 3,
+      "exact_component_and_cycle_count_verified": true,
+      "gauge_class_count_log2": 3,
+      "incidence_edge_count": 12,
+      "isolated_point_count": 9,
+      "line_count": 4,
+      "line_family": "pattern-rich",
+      "negative_six_cycle_lines": [
+        [
+          3,
+          5,
+          6
+        ],
+        [
+          5,
+          9,
+          12
+        ],
+        [
+          3,
+          9,
+          10
+        ]
+      ],
+      "negative_six_cycle_points": [
+        3,
+        5,
+        9
+      ],
+      "negative_six_cycle_product": -1,
+      "nontrivial_signed_cycle_class_verified": true,
+      "point_count": 15,
+      "predicted_connected_component_count": 10,
+      "predicted_cycle_rank": 3,
+      "status": "quadratic-interplane-gauge-space-with-negative-cycle"
+    },
+    {
+      "connected_component_count": 12,
+      "copy_count": 5,
+      "cycle_rank": 61,
+      "exact_component_and_cycle_count_verified": true,
+      "gauge_class_count_log2": 61,
+      "incidence_edge_count": 120,
+      "isolated_point_count": 11,
+      "line_count": 40,
+      "line_family": "pattern-rich",
+      "negative_six_cycle_lines": [
+        [
+          3,
+          5,
+          6
+        ],
+        [
+          5,
+          9,
+          12
+        ],
+        [
+          3,
+          9,
+          10
+        ]
+      ],
+      "negative_six_cycle_points": [
+        3,
+        5,
+        9
+      ],
+      "negative_six_cycle_product": -1,
+      "nontrivial_signed_cycle_class_verified": true,
+      "point_count": 31,
+      "predicted_connected_component_count": 12,
+      "predicted_cycle_rank": 61,
+      "status": "quadratic-interplane-gauge-space-with-negative-cycle"
+    },
+    {
+      "connected_component_count": 14,
+      "copy_count": 6,
+      "cycle_rank": 471,
+      "exact_component_and_cycle_count_verified": true,
+      "gauge_class_count_log2": 471,
+      "incidence_edge_count": 780,
+      "isolated_point_count": 13,
+      "line_count": 260,
+      "line_family": "pattern-rich",
+      "negative_six_cycle_lines": [
+        [
+          3,
+          5,
+          6
+        ],
+        [
+          5,
+          9,
+          12
+        ],
+        [
+          3,
+          9,
+          10
+        ]
+      ],
+      "negative_six_cycle_points": [
+        3,
+        5,
+        9
+      ],
+      "negative_six_cycle_product": -1,
+      "nontrivial_signed_cycle_class_verified": true,
+      "point_count": 63,
+      "predicted_connected_component_count": 14,
+      "predicted_cycle_rank": 471,
+      "status": "quadratic-interplane-gauge-space-with-negative-cycle"
+    },
+    {
+      "connected_component_count": 16,
+      "copy_count": 7,
+      "cycle_rank": 2689,
+      "exact_component_and_cycle_count_verified": true,
+      "gauge_class_count_log2": 2689,
+      "incidence_edge_count": 4200,
+      "isolated_point_count": 15,
+      "line_count": 1400,
+      "line_family": "pattern-rich",
+      "negative_six_cycle_lines": [
+        [
+          3,
+          5,
+          6
+        ],
+        [
+          5,
+          9,
+          12
+        ],
+        [
+          3,
+          9,
+          10
+        ]
+      ],
+      "negative_six_cycle_points": [
+        3,
+        5,
+        9
+      ],
+      "negative_six_cycle_product": -1,
+      "nontrivial_signed_cycle_class_verified": true,
+      "point_count": 127,
+      "predicted_connected_component_count": 16,
+      "predicted_cycle_rank": 2689,
+      "status": "quadratic-interplane-gauge-space-with-negative-cycle"
+    },
+    {
+      "connected_component_count": 18,
+      "copy_count": 8,
+      "cycle_rank": 13371,
+      "exact_component_and_cycle_count_verified": true,
+      "gauge_class_count_log2": 13371,
+      "incidence_edge_count": 20412,
+      "isolated_point_count": 17,
+      "line_count": 6804,
+      "line_family": "pattern-rich",
+      "negative_six_cycle_lines": [
+        [
+          3,
+          5,
+          6
+        ],
+        [
+          5,
+          9,
+          12
+        ],
+        [
+          3,
+          9,
+          10
+        ]
+      ],
+      "negative_six_cycle_points": [
+        3,
+        5,
+        9
+      ],
+      "negative_six_cycle_product": -1,
+      "nontrivial_signed_cycle_class_verified": true,
+      "point_count": 255,
+      "predicted_connected_component_count": 18,
+      "predicted_cycle_rank": 13371,
+      "status": "quadratic-interplane-gauge-space-with-negative-cycle"
+    }
+  ],
+  "rich_degree_controls": [
+    {
+      "copy_count": 4,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 1,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 4,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 2,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 4,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 2,
+      "point": 3,
+      "predicted_rich_degree": 2,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 4,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 4,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 4,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 2,
+      "point": 5,
+      "predicted_rich_degree": 2,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 4,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 2,
+      "point": 6,
+      "predicted_rich_degree": 2,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 4,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 0,
+      "point": 7,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 4,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 8,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 4,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 2,
+      "point": 9,
+      "predicted_rich_degree": 2,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 4,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 2,
+      "point": 10,
+      "predicted_rich_degree": 2,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 4,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 0,
+      "point": 11,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 4,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 2,
+      "point": 12,
+      "predicted_rich_degree": 2,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 4,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 0,
+      "point": 13,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 4,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 0,
+      "point": 14,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 4,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 0,
+      "point": 15,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 1,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 2,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 6,
+      "point": 3,
+      "predicted_rich_degree": 6,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 4,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 6,
+      "point": 5,
+      "predicted_rich_degree": 6,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 6,
+      "point": 6,
+      "predicted_rich_degree": 6,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 6,
+      "point": 7,
+      "predicted_rich_degree": 6,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 8,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 6,
+      "point": 9,
+      "predicted_rich_degree": 6,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 6,
+      "point": 10,
+      "predicted_rich_degree": 6,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 6,
+      "point": 11,
+      "predicted_rich_degree": 6,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 6,
+      "point": 12,
+      "predicted_rich_degree": 6,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 6,
+      "point": 13,
+      "predicted_rich_degree": 6,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 6,
+      "point": 14,
+      "predicted_rich_degree": 6,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 0,
+      "point": 15,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 16,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 6,
+      "point": 17,
+      "predicted_rich_degree": 6,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 6,
+      "point": 18,
+      "predicted_rich_degree": 6,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 6,
+      "point": 19,
+      "predicted_rich_degree": 6,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 6,
+      "point": 20,
+      "predicted_rich_degree": 6,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 6,
+      "point": 21,
+      "predicted_rich_degree": 6,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 6,
+      "point": 22,
+      "predicted_rich_degree": 6,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 0,
+      "point": 23,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 6,
+      "point": 24,
+      "predicted_rich_degree": 6,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 6,
+      "point": 25,
+      "predicted_rich_degree": 6,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 6,
+      "point": 26,
+      "predicted_rich_degree": 6,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 0,
+      "point": 27,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 6,
+      "point": 28,
+      "predicted_rich_degree": 6,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 0,
+      "point": 29,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 0,
+      "point": 30,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 5,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 0,
+      "point": 31,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 1,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 2,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 14,
+      "point": 3,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 4,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 14,
+      "point": 5,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 14,
+      "point": 6,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 18,
+      "point": 7,
+      "predicted_rich_degree": 18,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 8,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 14,
+      "point": 9,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 14,
+      "point": 10,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 18,
+      "point": 11,
+      "predicted_rich_degree": 18,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 14,
+      "point": 12,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 18,
+      "point": 13,
+      "predicted_rich_degree": 18,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 18,
+      "point": 14,
+      "predicted_rich_degree": 18,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 14,
+      "point": 15,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 16,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 14,
+      "point": 17,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 14,
+      "point": 18,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 18,
+      "point": 19,
+      "predicted_rich_degree": 18,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 14,
+      "point": 20,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 18,
+      "point": 21,
+      "predicted_rich_degree": 18,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 18,
+      "point": 22,
+      "predicted_rich_degree": 18,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 14,
+      "point": 23,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 14,
+      "point": 24,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 18,
+      "point": 25,
+      "predicted_rich_degree": 18,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 18,
+      "point": 26,
+      "predicted_rich_degree": 18,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 14,
+      "point": 27,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 18,
+      "point": 28,
+      "predicted_rich_degree": 18,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 14,
+      "point": 29,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 14,
+      "point": 30,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 0,
+      "point": 31,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 32,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 14,
+      "point": 33,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 14,
+      "point": 34,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 18,
+      "point": 35,
+      "predicted_rich_degree": 18,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 14,
+      "point": 36,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 18,
+      "point": 37,
+      "predicted_rich_degree": 18,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 18,
+      "point": 38,
+      "predicted_rich_degree": 18,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 14,
+      "point": 39,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 14,
+      "point": 40,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 18,
+      "point": 41,
+      "predicted_rich_degree": 18,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 18,
+      "point": 42,
+      "predicted_rich_degree": 18,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 14,
+      "point": 43,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 18,
+      "point": 44,
+      "predicted_rich_degree": 18,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 14,
+      "point": 45,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 14,
+      "point": 46,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 0,
+      "point": 47,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 14,
+      "point": 48,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 18,
+      "point": 49,
+      "predicted_rich_degree": 18,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 18,
+      "point": 50,
+      "predicted_rich_degree": 18,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 14,
+      "point": 51,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 18,
+      "point": 52,
+      "predicted_rich_degree": 18,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 14,
+      "point": 53,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 14,
+      "point": 54,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 0,
+      "point": 55,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 18,
+      "point": 56,
+      "predicted_rich_degree": 18,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 14,
+      "point": 57,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 14,
+      "point": 58,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 0,
+      "point": 59,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 14,
+      "point": 60,
+      "predicted_rich_degree": 14,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 0,
+      "point": 61,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 0,
+      "point": 62,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 6,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 0,
+      "point": 63,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 1,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 2,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 30,
+      "point": 3,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 4,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 30,
+      "point": 5,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 30,
+      "point": 6,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 7,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 8,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 30,
+      "point": 9,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 30,
+      "point": 10,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 11,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 30,
+      "point": 12,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 13,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 14,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 15,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 16,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 30,
+      "point": 17,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 30,
+      "point": 18,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 19,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 30,
+      "point": 20,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 21,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 22,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 23,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 30,
+      "point": 24,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 25,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 26,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 27,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 28,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 29,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 30,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 30,
+      "point": 31,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 32,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 30,
+      "point": 33,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 30,
+      "point": 34,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 35,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 30,
+      "point": 36,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 37,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 38,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 39,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 30,
+      "point": 40,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 41,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 42,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 43,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 44,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 45,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 46,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 30,
+      "point": 47,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 30,
+      "point": 48,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 49,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 50,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 51,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 52,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 53,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 54,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 30,
+      "point": 55,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 56,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 57,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 58,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 30,
+      "point": 59,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 60,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 30,
+      "point": 61,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 30,
+      "point": 62,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 0,
+      "point": 63,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 64,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 30,
+      "point": 65,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 30,
+      "point": 66,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 67,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 30,
+      "point": 68,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 69,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 70,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 71,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 30,
+      "point": 72,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 73,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 74,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 75,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 76,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 77,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 78,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 30,
+      "point": 79,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 30,
+      "point": 80,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 81,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 82,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 83,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 84,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 85,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 86,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 30,
+      "point": 87,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 88,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 89,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 90,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 30,
+      "point": 91,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 92,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 30,
+      "point": 93,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 30,
+      "point": 94,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 0,
+      "point": 95,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 30,
+      "point": 96,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 97,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 98,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 99,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 100,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 101,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 102,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 30,
+      "point": 103,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 104,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 105,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 106,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 30,
+      "point": 107,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 108,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 30,
+      "point": 109,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 30,
+      "point": 110,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 0,
+      "point": 111,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 42,
+      "point": 112,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 113,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 114,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 30,
+      "point": 115,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 116,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 30,
+      "point": 117,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 30,
+      "point": 118,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 0,
+      "point": 119,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 42,
+      "point": 120,
+      "predicted_rich_degree": 42,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 30,
+      "point": 121,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 30,
+      "point": 122,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 0,
+      "point": 123,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 30,
+      "point": 124,
+      "predicted_rich_degree": 30,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 0,
+      "point": 125,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 0,
+      "point": 126,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 7,
+      "exact_degree_verified": true,
+      "hamming_weight": 7,
+      "observed_rich_degree": 0,
+      "point": 127,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 1,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 2,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 3,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 4,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 5,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 6,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 7,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 8,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 9,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 10,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 11,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 12,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 13,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 14,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 15,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 16,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 17,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 18,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 19,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 20,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 21,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 22,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 23,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 24,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 25,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 26,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 27,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 28,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 29,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 30,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 31,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 32,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 33,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 34,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 35,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 36,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 37,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 38,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 39,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 40,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 41,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 42,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 43,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 44,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 45,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 46,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 47,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 48,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 49,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 50,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 51,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 52,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 53,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 54,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 55,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 56,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 57,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 58,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 59,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 60,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 61,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 62,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 63,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 64,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 65,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 66,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 67,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 68,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 69,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 70,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 71,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 72,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 73,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 74,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 75,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 76,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 77,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 78,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 79,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 80,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 81,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 82,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 83,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 84,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 85,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 86,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 87,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 88,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 89,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 90,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 91,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 92,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 93,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 94,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 95,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 96,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 97,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 98,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 99,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 100,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 101,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 102,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 103,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 104,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 105,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 106,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 107,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 108,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 109,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 110,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 111,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 112,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 113,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 114,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 115,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 116,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 117,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 118,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 119,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 120,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 121,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 122,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 123,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 124,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 125,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 126,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 7,
+      "observed_rich_degree": 0,
+      "point": 127,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 1,
+      "observed_rich_degree": 0,
+      "point": 128,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 129,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 130,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 131,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 132,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 133,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 134,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 135,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 136,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 137,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 138,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 139,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 140,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 141,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 142,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 143,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 144,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 145,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 146,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 147,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 148,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 149,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 150,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 151,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 152,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 153,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 154,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 155,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 156,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 157,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 158,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 159,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 160,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 161,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 162,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 163,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 164,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 165,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 166,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 167,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 168,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 169,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 170,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 171,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 172,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 173,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 174,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 175,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 176,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 177,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 178,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 179,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 180,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 181,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 182,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 183,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 184,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 185,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 186,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 187,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 188,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 189,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 190,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 7,
+      "observed_rich_degree": 0,
+      "point": 191,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 2,
+      "observed_rich_degree": 62,
+      "point": 192,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 193,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 194,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 195,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 196,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 197,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 198,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 199,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 200,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 201,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 202,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 203,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 204,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 205,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 206,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 207,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 208,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 209,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 210,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 211,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 212,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 213,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 214,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 215,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 216,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 217,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 218,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 219,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 220,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 221,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 222,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 7,
+      "observed_rich_degree": 0,
+      "point": 223,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 3,
+      "observed_rich_degree": 90,
+      "point": 224,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 225,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 226,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 227,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 228,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 229,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 230,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 231,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 232,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 233,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 234,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 235,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 236,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 237,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 238,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 7,
+      "observed_rich_degree": 0,
+      "point": 239,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 4,
+      "observed_rich_degree": 98,
+      "point": 240,
+      "predicted_rich_degree": 98,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 241,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 242,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 243,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 244,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 245,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 246,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 7,
+      "observed_rich_degree": 0,
+      "point": 247,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 5,
+      "observed_rich_degree": 90,
+      "point": 248,
+      "predicted_rich_degree": 90,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 249,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 250,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 7,
+      "observed_rich_degree": 0,
+      "point": 251,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 6,
+      "observed_rich_degree": 62,
+      "point": 252,
+      "predicted_rich_degree": 62,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 7,
+      "observed_rich_degree": 0,
+      "point": 253,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 7,
+      "observed_rich_degree": 0,
+      "point": 254,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    },
+    {
+      "copy_count": 8,
+      "exact_degree_verified": true,
+      "hamming_weight": 8,
+      "observed_rich_degree": 0,
+      "point": 255,
+      "predicted_rich_degree": 0,
+      "status": "exact-rich-point-degree-verified"
+    }
+  ],
+  "status": "interplane-gauge-space-classified-natural-cycle-law-open",
+  "summary": "Classified the scalar inter-plane gauge obstruction and proved that the pattern-rich hierarchy retains Theta(4^K) independent cycle bits despite every local plane being positive.",
+  "theorem_contract": {
+    "full_cycle_rank": "For all PG(K-1,2) lines, beta_1=(2^K-2)(2^K-4)/3.",
+    "gauge_classification": "Incidence-edge signs modulo point and line basis signs form H^1 of the bipartite point-line graph, of dimension E-V+c.",
+    "negative_cycle_witness": "The F_2^2 quotient signing has a negative six-cycle on the embedded four-coordinate rich subsystem at every K>=4.",
+    "rich_connectivity": "Weights 2 through K-2 form one component: each such subset crosses a two-subset, and the two-subsets form connected Johnson graph J(K,2).",
+    "rich_cycle_rank": "For pattern-rich lines, beta_1=2R_K-2^K+2K+3=Theta(4^K).",
+    "rich_point_degree": "For 1<=w<=K-1, a weight-w point has rich degree (2^w-2)(2^(K-w)-2)/2; the all-ones point has degree zero."
+  }
+}

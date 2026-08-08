@@ -1,0 +1,333 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "There are many partitions, so polynomially many labels are automatically distinct.",
+      "resolution": "Plancherel weights are highly nonuniform; the exact event is zero at n=5,8 and remains about 2^-26.4 at n=48.",
+      "resolved": true
+    },
+    {
+      "objection": "Finite tiny mass proves collision freedom is asymptotically negligible.",
+      "resolution": "The maximal-dimension theorem proves the opposite: the collision-free mass tends to one. The n<=48 values are pre-asymptotic.",
+      "resolved": true
+    },
+    {
+      "objection": "Typical source mass makes finite collision-free spectral gaps representative.",
+      "resolution": "Typicality transfers only a theorem uniform over the collision-free event; selected finite portfolios do not establish that theorem.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "asymptotic_collision_free_mass_inverse_polynomial_proved": true,
+    "asymptotic_collision_free_mass_tends_to_one_proved": true,
+    "collision_free_block_spectral_theorem_proved": false,
+    "collision_free_spectral_results_transferred_to_natural_average": false,
+    "exact_global_collision_free_mass_formula_proved": true,
+    "mass_gate_for_uniform_collision_free_theorem_resolved": true,
+    "reason": "Global collision freedom is asymptotically typical, but the required uniform collision-free signed/Racah spectral theorem and decoder remain unproved.",
+    "selected_finite_collision_free_controls_are_uniform": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-07T22:29:26.908405+00:00",
+  "exact_validations": [
+    {
+      "conditioned_formula_residual": "0",
+      "copy_count": 1,
+      "direct_probability": "1/2",
+      "draw_count": 2,
+      "elementary_symmetric_probability": "1/2",
+      "exact_match": true,
+      "n": 3,
+      "within_pair_unequal_conditioned_probability": "1"
+    },
+    {
+      "conditioned_formula_residual": "0",
+      "copy_count": 1,
+      "direct_probability": "11/16",
+      "draw_count": 2,
+      "elementary_symmetric_probability": "11/16",
+      "exact_match": true,
+      "n": 4,
+      "within_pair_unequal_conditioned_probability": "1"
+    },
+    {
+      "conditioned_formula_residual": "0",
+      "copy_count": 2,
+      "direct_probability": "89/1536",
+      "draw_count": 4,
+      "elementary_symmetric_probability": "89/1536",
+      "exact_match": true,
+      "n": 4,
+      "within_pair_unequal_conditioned_probability": "89/726"
+    },
+    {
+      "conditioned_formula_residual": "0",
+      "copy_count": 2,
+      "direct_probability": "106031/576000",
+      "draw_count": 4,
+      "elementary_symmetric_probability": "106031/576000",
+      "exact_match": true,
+      "n": 5,
+      "within_pair_unequal_conditioned_probability": "106031/357210"
+    },
+    {
+      "conditioned_formula_residual": "0",
+      "copy_count": 3,
+      "direct_probability": "4019/1296000",
+      "draw_count": 6,
+      "elementary_symmetric_probability": "4019/1296000",
+      "exact_match": true,
+      "n": 5,
+      "within_pair_unequal_conditioned_probability": "128608/20253807"
+    }
+  ],
+  "falsifiers_triggered": [
+    "Finite n<=48 collision-free mass is strongly pre-asymptotic and cannot falsify asymptotic typicality.",
+    "Within-pair unequal conditioning is not the same as collision freedom across copies.",
+    "Finite low-n spectral gaps are not a uniform theorem over the asymptotically typical collision-free event."
+  ],
+  "headline_metrics": {
+    "asymptotic_global_collision_free_mass_tends_to_one_theorem_count": 1,
+    "asymptotic_inverse_polynomial_mass_theorem_count": 1,
+    "combinatorially_impossible_threshold_row_count": 2,
+    "exact_validation_count": 5,
+    "exact_validation_failure_count": 0,
+    "finite_scaling_row_count": 12,
+    "global_collision_free_mass_formula_count": 1,
+    "inverse_polynomial_mass_row_count": 0,
+    "minimum_finite_log2_collision_free_mass": -144.69716596561017,
+    "new_quantum_algorithm_count": 0,
+    "tail_copy_count": 203,
+    "tail_log2_collision_free_mass": -26.510078745979804,
+    "tail_n": 48,
+    "tail_partition_count": 147273,
+    "tail_plancherel_collision_probability": 0.0002343284646871179
+  },
+  "proof_obligations": [
+    {
+      "obligation": "exact_global_collision_free_mass",
+      "resolution": "Ordered distinct Plancherel draws are counted exactly by the elementary symmetric polynomial.",
+      "resolved": true
+    },
+    {
+      "obligation": "asymptotic_plancherel_collision_bound",
+      "resolution": "Aggarwal--Elboim's maximal-dimension asymptotic gives C_n<=max p_lambda=exp(-Theta(sqrt(n))), which beats k(n)^2=Theta(n^2 log^2 n).",
+      "resolved": true
+    },
+    {
+      "obligation": "positive_mass_transfer_of_collision_free_spectral_theorems",
+      "resolution": "Any uniform asymptotic theorem on globally collision-free blocks loses only o(1) natural source mass. No such spectral theorem is supplied here.",
+      "resolved": true
+    },
+    {
+      "obligation": "collision_free_block_spectral_theorem",
+      "resolution": "Global distinctness is typical, but a uniform signed/Racah residual-quotient or PGM contraction theorem remains open.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "birthday_union_collision_upper_bound": 19.337499999999967,
+      "enough_distinct_partitions_exist": false,
+      "global_collision_free_mass_inverse_polynomial": false,
+      "information_threshold_copy_count": 7,
+      "log2_unconditioned_global_collision_free_probability": -Infinity,
+      "log2_within_pair_unequal_conditioned_global_collision_free_probability": -Infinity,
+      "n": 5,
+      "partition_count": 7,
+      "plancherel_collision_probability": 0.21249999999999963,
+      "required_distinct_partition_count": 14,
+      "stable_log_domain_evaluation": true,
+      "status": "collision-free-event-combinatorially-impossible",
+      "unconditioned_global_collision_free_probability": 0.0,
+      "within_pair_unequal_conditioned_global_collision_free_probability": 0.0
+    },
+    {
+      "birthday_union_collision_upper_bound": 53.388120039682484,
+      "enough_distinct_partitions_exist": false,
+      "global_collision_free_mass_inverse_polynomial": false,
+      "information_threshold_copy_count": 16,
+      "log2_unconditioned_global_collision_free_probability": -Infinity,
+      "log2_within_pair_unequal_conditioned_global_collision_free_probability": -Infinity,
+      "n": 8,
+      "partition_count": 22,
+      "plancherel_collision_probability": 0.10763733878968243,
+      "required_distinct_partition_count": 32,
+      "stable_log_domain_evaluation": true,
+      "status": "collision-free-event-combinatorially-impossible",
+      "unconditioned_global_collision_free_probability": 0.0,
+      "within_pair_unequal_conditioned_global_collision_free_probability": 0.0
+    },
+    {
+      "birthday_union_collision_upper_bound": 78.56755068421248,
+      "enough_distinct_partitions_exist": true,
+      "global_collision_free_mass_inverse_polynomial": false,
+      "information_threshold_copy_count": 29,
+      "log2_unconditioned_global_collision_free_probability": -144.69716596561017,
+      "log2_within_pair_unequal_conditioned_global_collision_free_probability": -142.65977489951163,
+      "n": 12,
+      "partition_count": 77,
+      "plancherel_collision_probability": 0.047530278695833324,
+      "required_distinct_partition_count": 58,
+      "stable_log_domain_evaluation": true,
+      "status": "collision-free-mass-subinverse-polynomial-finite-row",
+      "unconditioned_global_collision_free_probability": 2.7657489537942955e-44,
+      "within_pair_unequal_conditioned_global_collision_free_probability": 1.1353469054827563e-43
+    },
+    {
+      "birthday_union_collision_upper_bound": 86.43072584786172,
+      "enough_distinct_partitions_exist": true,
+      "global_collision_free_mass_inverse_polynomial": false,
+      "information_threshold_copy_count": 45,
+      "log2_unconditioned_global_collision_free_probability": -124.73170170029044,
+      "log2_within_pair_unequal_conditioned_global_collision_free_probability": -123.31531586393787,
+      "n": 16,
+      "partition_count": 231,
+      "plancherel_collision_probability": 0.021580705579990443,
+      "required_distinct_partition_count": 90,
+      "stable_log_domain_evaluation": true,
+      "status": "collision-free-mass-subinverse-polynomial-finite-row",
+      "unconditioned_global_collision_free_probability": 2.831498774531487e-38,
+      "within_pair_unequal_conditioned_global_collision_free_probability": 7.55772351753641e-38
+    },
+    {
+      "birthday_union_collision_upper_bound": 78.07274618424485,
+      "enough_distinct_partitions_exist": true,
+      "global_collision_free_mass_inverse_polynomial": false,
+      "information_threshold_copy_count": 62,
+      "log2_unconditioned_global_collision_free_probability": -108.11047647352635,
+      "log2_within_pair_unequal_conditioned_global_collision_free_probability": -107.19002369156442,
+      "n": 20,
+      "partition_count": 627,
+      "plancherel_collision_probability": 0.010237706029929825,
+      "required_distinct_partition_count": 124,
+      "stable_log_domain_evaluation": true,
+      "status": "collision-free-mass-subinverse-polynomial-finite-row",
+      "unconditioned_global_collision_free_probability": 2.8543270675375876e-33,
+      "within_pair_unequal_conditioned_global_collision_free_probability": 5.402411148206419e-33
+    },
+    {
+      "birthday_union_collision_upper_bound": 72.79391172068487,
+      "enough_distinct_partitions_exist": true,
+      "global_collision_free_mass_inverse_polynomial": false,
+      "information_threshold_copy_count": 80,
+      "log2_unconditioned_global_collision_free_probability": -91.08167443121611,
+      "log2_within_pair_unequal_conditioned_global_collision_free_probability": -90.41927777090984,
+      "n": 24,
+      "partition_count": 1575,
+      "plancherel_collision_probability": 0.005722791801940635,
+      "required_distinct_partition_count": 160,
+      "stable_log_domain_evaluation": true,
+      "status": "collision-free-mass-subinverse-polynomial-finite-row",
+      "unconditioned_global_collision_free_probability": 3.8166641088323164e-28,
+      "within_pair_unequal_conditioned_global_collision_free_probability": 6.040671303054264e-28
+    },
+    {
+      "birthday_union_collision_upper_bound": 56.8999568166721,
+      "enough_distinct_partitions_exist": true,
+      "global_collision_free_mass_inverse_polynomial": false,
+      "information_threshold_copy_count": 98,
+      "log2_unconditioned_global_collision_free_probability": -75.35305733990545,
+      "log2_within_pair_unequal_conditioned_global_collision_free_probability": -74.93145867870689,
+      "n": 28,
+      "partition_count": 3718,
+      "plancherel_collision_probability": 0.0029774964320602878,
+      "required_distinct_partition_count": 196,
+      "stable_log_domain_evaluation": true,
+      "status": "collision-free-mass-subinverse-polynomial-finite-row",
+      "unconditioned_global_collision_free_probability": 2.0723803976283355e-23,
+      "within_pair_unequal_conditioned_global_collision_free_probability": 2.7757689848655995e-23
+    },
+    {
+      "birthday_union_collision_upper_bound": 49.36840058480936,
+      "enough_distinct_partitions_exist": true,
+      "global_collision_free_mass_inverse_polynomial": false,
+      "information_threshold_copy_count": 118,
+      "log2_unconditioned_global_collision_free_probability": -62.62719738503115,
+      "log2_within_pair_unequal_conditioned_global_collision_free_probability": -62.323848352838176,
+      "n": 32,
+      "partition_count": 8349,
+      "plancherel_collision_probability": 0.0017803245793295837,
+      "required_distinct_partition_count": 236,
+      "stable_log_domain_evaluation": true,
+      "status": "collision-free-mass-subinverse-polynomial-finite-row",
+      "unconditioned_global_collision_free_probability": 1.4038963429654028e-19,
+      "within_pair_unequal_conditioned_global_collision_free_probability": 1.732416057886063e-19
+    },
+    {
+      "birthday_union_collision_upper_bound": 38.90941318965567,
+      "enough_distinct_partitions_exist": true,
+      "global_collision_free_mass_inverse_polynomial": false,
+      "information_threshold_copy_count": 139,
+      "log2_unconditioned_global_collision_free_probability": -51.65138107569346,
+      "log2_within_pair_unequal_conditioned_global_collision_free_probability": -51.448627284920825,
+      "n": 36,
+      "partition_count": 17977,
+      "plancherel_collision_probability": 0.0010105553642483877,
+      "required_distinct_partition_count": 278,
+      "stable_log_domain_evaluation": true,
+      "status": "collision-free-mass-subinverse-polynomial-finite-row",
+      "unconditioned_global_collision_free_probability": 2.8273851895795454e-16,
+      "within_pair_unequal_conditioned_global_collision_free_probability": 3.254018004059356e-16
+    },
+    {
+      "birthday_union_collision_upper_bound": 31.543595708378234,
+      "enough_distinct_partitions_exist": true,
+      "global_collision_free_mass_inverse_polynomial": false,
+      "information_threshold_copy_count": 160,
+      "log2_unconditioned_global_collision_free_probability": -41.78135865605296,
+      "log2_within_pair_unequal_conditioned_global_collision_free_probability": -41.63865690936323,
+      "n": 40,
+      "partition_count": 37338,
+      "plancherel_collision_probability": 0.0006180171572958118,
+      "required_distinct_partition_count": 320,
+      "stable_log_domain_evaluation": true,
+      "status": "collision-free-mass-subinverse-polynomial-finite-row",
+      "unconditioned_global_collision_free_probability": 2.6458047081245347e-13,
+      "within_pair_unequal_conditioned_global_collision_free_probability": 2.9208906003430403e-13
+    },
+    {
+      "birthday_union_collision_upper_bound": 25.09503891467604,
+      "enough_distinct_partitions_exist": true,
+      "global_collision_free_mass_inverse_polynomial": false,
+      "information_threshold_copy_count": 181,
+      "log2_unconditioned_global_collision_free_probability": -33.6248581203821,
+      "log2_within_pair_unequal_conditioned_global_collision_free_probability": -33.52454941575625,
+      "n": 44,
+      "partition_count": 75175,
+      "plancherel_collision_probability": 0.0003840626699113273,
+      "required_distinct_partition_count": 362,
+      "stable_log_domain_evaluation": true,
+      "status": "collision-free-mass-subinverse-polynomial-finite-row",
+      "unconditioned_global_collision_free_probability": 7.549342097525416e-11,
+      "within_pair_unequal_conditioned_global_collision_free_probability": 8.092916038368289e-11
+    },
+    {
+      "birthday_union_collision_upper_bound": 19.265314724251397,
+      "enough_distinct_partitions_exist": true,
+      "global_collision_free_mass_inverse_polynomial": false,
+      "information_threshold_copy_count": 203,
+      "log2_unconditioned_global_collision_free_probability": -26.510078745979804,
+      "log2_within_pair_unequal_conditioned_global_collision_free_probability": -26.441443607751946,
+      "n": 48,
+      "partition_count": 147273,
+      "plancherel_collision_probability": 0.0002343284646871179,
+      "required_distinct_partition_count": 406,
+      "stable_log_domain_evaluation": true,
+      "status": "collision-free-mass-subinverse-polynomial-finite-row",
+      "unconditioned_global_collision_free_probability": 1.0463358608200828e-08,
+      "within_pair_unequal_conditioned_global_collision_free_probability": 1.097317601151052e-08
+    }
+  ],
+  "status": "global-collision-free-mass-asymptotically-typical-spectral-theorem-open",
+  "summary": "Derived the exact Plancherel mass of globally distinct source partitions; at n=48 and k=203 the finite mass is about 2^-26.510, while the maximal-dimension theorem proves that it tends to one asymptotically.",
+  "theorem_contract": {
+    "asymptotic_consequence": "C_n<=max_lambda p_lambda=exp(-Theta(sqrt(n))); at k=Theta(n log n), binom(2k,2)C_n=o(1), so P_cf=1-o(1).",
+    "birthday_union_bound": "1-P_cf<=binom(2k,2) C_n.",
+    "literature_id": "aggarwal-elboim-maximal-dimension-2026",
+    "literature_url": "https://arxiv.org/abs/2605.25995",
+    "maximal_dimension_input": "Aggarwal--Elboim: max_lambda d_lambda=sqrt(n!) exp(-(d+o(1))sqrt(n)), d>0.",
+    "scope": "The mass theorem is asymptotic and does not transfer any unproved collision-free spectral or decoding claim.",
+    "unconditioned_mass": "P_cf=(2k)! e_(2k)({d_lambda^2/n!}).",
+    "within_pair_unequal_conditioning": "P_cf|unequal=P_cf/(1-C_n)^k, C_n=sum_lambda(d_lambda^2/n!)^2."
+  }
+}

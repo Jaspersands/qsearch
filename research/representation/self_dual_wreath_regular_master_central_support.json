@@ -1,0 +1,189 @@
+{
+  "created_at": "2026-08-08T01:43:14.263686+00:00",
+  "theorem_contract": {
+    "regular_master_lift": "Replacing every source slot by the left regular representation gives one deterministic invariant-projector frame.",
+    "fourier_block_decomposition": "Regular Fourier decomposition restricts the master frame to each physical source tuple tensored with its regular multiplicity identity.",
+    "annealed_trace_identity": "Normalized master trace equals product-Plancherel expectation of normalized physical-block trace for every polynomial.",
+    "central_support_identity": "Bad-block probability is the normalized trace of the source-center support of the master bad spectral projection.",
+    "scope": "The lift identifies the correct operator-valued problem but does not bound central support, natural edges, or circuit cost."
+  },
+  "decomposition_controls": [
+    {
+      "n": 3,
+      "target_partition": [
+        3
+      ],
+      "copy_count": 1,
+      "source_block_count": 9,
+      "regular_master_dimension": 36,
+      "fourier_block_dimension_sum": 36,
+      "maximum_master_projector_idempotence_residual": 1.6653345369377356e-16,
+      "maximum_spectral_decomposition_residual": 6.661338147750939e-16,
+      "maximum_normalized_moment_residual": 2.220446049250313e-16,
+      "highest_checked_moment_order": 4,
+      "exact_regular_master_decomposition_verified": true,
+      "status": "exact-regular-master-fourier-block-decomposition-verified"
+    },
+    {
+      "n": 3,
+      "target_partition": [
+        2,
+        1
+      ],
+      "copy_count": 1,
+      "source_block_count": 9,
+      "regular_master_dimension": 72,
+      "fourier_block_dimension_sum": 72,
+      "maximum_master_projector_idempotence_residual": 9.125561449893857e-17,
+      "maximum_spectral_decomposition_residual": 1.3322676295501878e-15,
+      "maximum_normalized_moment_residual": 2.220446049250313e-16,
+      "highest_checked_moment_order": 4,
+      "exact_regular_master_decomposition_verified": true,
+      "status": "exact-regular-master-fourier-block-decomposition-verified"
+    },
+    {
+      "n": 3,
+      "target_partition": [
+        1,
+        1,
+        1
+      ],
+      "copy_count": 1,
+      "source_block_count": 9,
+      "regular_master_dimension": 36,
+      "fourier_block_dimension_sum": 36,
+      "maximum_master_projector_idempotence_residual": 1.6653345369377356e-16,
+      "maximum_spectral_decomposition_residual": 6.661338147750939e-16,
+      "maximum_normalized_moment_residual": 2.220446049250313e-16,
+      "highest_checked_moment_order": 4,
+      "exact_regular_master_decomposition_verified": true,
+      "status": "exact-regular-master-fourier-block-decomposition-verified"
+    }
+  ],
+  "central_support_controls": [
+    {
+      "n": 3,
+      "target_partition": [
+        2,
+        1
+      ],
+      "copy_count": 1,
+      "bad_eigenvalue_threshold": 1.4,
+      "source_block_count": 9,
+      "bad_source_block_count": 1,
+      "bad_block_plancherel_probability": 0.4444444444444444,
+      "scalar_bad_spectral_mass_from_blocks": 0.1111111111111111,
+      "scalar_bad_spectral_mass_from_master": 0.1111111111111111,
+      "central_support_to_scalar_spectral_mass_ratio": 4.0,
+      "maximum_bad_block_dimension": 8,
+      "central_support_event_identity_verified": true,
+      "scalar_spectral_mass_is_strictly_smaller": true,
+      "status": "central-support-block-event-dilution-verified"
+    }
+  ],
+  "collision_free_central_support_controls": [
+    {
+      "n": 4,
+      "target_partition": [
+        3,
+        1
+      ],
+      "copy_count": 2,
+      "node_orientation_count": 4,
+      "bad_eigenvalue_threshold": 1.3,
+      "globally_distinct_source_tuple_count": 120,
+      "globally_distinct_plancherel_probability": "89/1536",
+      "bad_block_unconditioned_probability": "9/256",
+      "scalar_bad_spectral_mass_unconditioned": "5/2304",
+      "bad_block_conditional_probability": "54/89",
+      "scalar_bad_spectral_mass_conditional": "10/267",
+      "central_support_to_scalar_spectral_mass_ratio": "81/5",
+      "minimum_bad_projection_relative_rank": "1/18",
+      "maximum_bad_projection_relative_rank": "1/9",
+      "every_source_tuple_globally_distinct": true,
+      "scalar_spectral_mass_is_strictly_smaller": true,
+      "status": "collision-free-central-support-dilution-verified"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "lift_random_source_frames_to_one_regular_master",
+      "resolved": true,
+      "resolution": "Equations (1)-(3) follow from regular Fourier decomposition and pass complete S3 target spectral controls."
+    },
+    {
+      "obligation": "control_bad_spectral_central_support",
+      "resolved": false,
+      "resolution": "Need a center-valued local law or direct high-probability block-norm theorem; scalar spectral mass is insufficient."
+    },
+    {
+      "obligation": "prove_bad_projection_has_large_relative_rank",
+      "resolved": false,
+      "resolution": "Such a theorem would convert scalar spectral mass into block-event probability but is currently absent."
+    },
+    {
+      "obligation": "construct_tightly_normalized_coherent_master_access",
+      "resolved": false,
+      "resolution": "Individual subgroup projectors have normalized access, but a width-normalized sum loses the physical frame scale."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The regular master norm is the typical source-block norm.",
+      "resolved": true,
+      "resolution": "False: it is the maximum over every Fourier block and can be set by a negligible Plancherel sector."
+    },
+    {
+      "objection": "A small scalar bad spectral projection proves few source blocks are bad.",
+      "resolved": true,
+      "resolution": "False without relative-rank control. The globally distinct S4 control has block-event mass 81/5 times spectral mass."
+    },
+    {
+      "objection": "The master lift itself removes the carrier-dimension penalty.",
+      "resolved": true,
+      "resolution": "It exposes the penalty as central support versus scalar rank; controlling that support is the new theorem target."
+    },
+    {
+      "objection": "A regular-register formula is already a polynomial quantum implementation.",
+      "resolved": true,
+      "resolution": "No tight node-frame normalization or recursive root access has been constructed."
+    }
+  ],
+  "headline_metrics": {
+    "regular_master_decomposition_theorem_count": 1,
+    "plancherel_annealed_trace_identity_theorem_count": 1,
+    "central_support_block_event_identity_theorem_count": 1,
+    "decomposition_control_count": 3,
+    "central_support_control_count": 1,
+    "collision_free_central_support_control_count": 1,
+    "finite_control_failure_count": 0,
+    "maximum_spectral_decomposition_residual": 1.3322676295501878e-15,
+    "maximum_normalized_moment_residual": 2.220446049250313e-16,
+    "finite_central_support_to_scalar_mass_ratio": 4.0,
+    "collision_free_central_support_to_scalar_mass_ratio": 16.2,
+    "center_valued_local_law_theorem_count": 0,
+    "bad_projection_relative_rank_lower_bound_count": 0,
+    "tight_coherent_master_node_frame_encoding_count": 0,
+    "natural_all_depth_frame_edge_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "regular_master_fourier_block_lift_proved": true,
+    "plancherel_annealed_trace_identity_proved": true,
+    "bad_block_probability_is_central_support_trace": true,
+    "scalar_bad_spectral_mass_controls_bad_block_probability_without_dimension": false,
+    "center_valued_local_law_proved": false,
+    "bad_projection_relative_rank_lower_bound_proved": false,
+    "tight_coherent_master_node_frame_encoding_proved": false,
+    "natural_all_depth_frame_edge_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "The correct central-support observable is identified exactly, but no theorem yet bounds it on natural source blocks."
+  },
+  "status": "regular-master-lift-proved-central-support-local-law-open",
+  "summary": "Lifted every Plancherel source frame into one regular master operator and identified bad-block probability as central support, not ordinary spectral mass.",
+  "falsifiers_triggered": [
+    "Scalar spectral mass is not source-block event probability.",
+    "The regular master operator norm is a worst-block quantity, not a typical norm.",
+    "A deterministic regular lift does not by itself provide tight coherent frame access."
+  ]
+}

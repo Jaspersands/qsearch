@@ -1,0 +1,3113 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Eliminating low-dimensional source labels eliminates low-dimensional internal carriers.",
+      "resolution": "False. Tensor products of high-dimensional source irreps can contain trivial, sign, or other low-dimensional internal carriers; the cut must be imposed in the master center/carrier decomposition itself.",
+      "resolved": true
+    },
+    {
+      "objection": "A small normalized trace of the nonscalarity defect proves matrix effects occur on negligible source probability.",
+      "resolution": "False without a lower relative-rank theorem. Central support can exceed both common-span mass and ordinary defect trace mass, as the exact finite control demonstrates.",
+      "resolved": true
+    },
+    {
+      "objection": "The regular master automatically supplies a coherent circuit for the component POVM.",
+      "resolution": "It supplies a deterministic operator and exact mass observable, not an efficient block encoding, center-support test, support SELECT, or Naimark dilation.",
+      "resolved": false
+    },
+    {
+      "objection": "The repeated-source S3 matrix block is evidence for positive collision-free asymptotic mass.",
+      "resolution": "False. Its globally distinct matrix-block count is zero; it validates only the reduction and the distinction among masses.",
+      "resolved": true
+    }
+  ],
+  "canonical_effect_controls": [
+    {
+      "ambient_physical_dimension": 16,
+      "canonical_full_domain_effects_verified": true,
+      "common_span_dimension": 5,
+      "component_effect_spectra": [
+        [
+          1.425568492314083e-16,
+          0.4999999999999992,
+          0.5000000000000002,
+          0.5000000000000024,
+          0.9999999999999991
+        ],
+        [
+          0.0,
+          0.4999999999999972,
+          0.4999999999999999,
+          0.5000000000000001,
+          1.0
+        ],
+        [
+          9.586835157858588e-18,
+          0.4999999999999998,
+          0.5,
+          0.5000000000000009,
+          0.9999999999999998
+        ],
+        [
+          1.6653345368942444e-16,
+          0.4999999999999991,
+          0.5000000000000002,
+          0.5000000000000004,
+          1.0000000000000002
+        ]
+      ],
+      "control_id": "S3-REPEATED-STANDARD-MATRIX-EFFECT-CONTROL",
+      "labels": [
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "left_effect_sum_identity_residual": 1.6612721060496399e-15,
+      "left_orientation_masks": [
+        0,
+        1
+      ],
+      "matrix_partial_support_required": true,
+      "maximum_full_fiber_scalar_residual": 0.5000000000000002,
+      "n": 3,
+      "nonscalarity_defect_trace": 1.9999999999999996,
+      "right_effect_sum_identity_residual": 1.391271023555403e-15,
+      "right_orientation_masks": [
+        2,
+        3
+      ],
+      "status": "canonical-full-domain-matrix-component-effects-verified",
+      "target_partition": [
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "claim_gate": {
+    "canonical_component_effects_are_regular_master_decomposable": true,
+    "globally_distinct_high_dimension_matrix_effect_mass_controlled": false,
+    "low_dimension_source_cut_removes_all_low_internal_carriers": false,
+    "matrix_effect_physical_common_mass_is_common_cutdown_trace": true,
+    "matrix_effect_source_probability_is_central_support_trace": true,
+    "natural_component_support_select_compiled": false,
+    "natural_sparse_support_jacobi_edge_proved": false,
+    "ordinary_scalar_moments_control_bad_block_probability": false,
+    "reason": "The exact natural-mass observable is now identified as a center-valued support problem, but no high-dimensional collision-free bound or coherent compiler is established.",
+    "recursive_orientation_polar_proved": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-08T07:31:46.276006+00:00",
+  "falsifiers_triggered": [
+    "Low-dimensional source exclusion does not exclude low-dimensional internal carriers.",
+    "Scalar defect moments do not control the probability of a bad source block without relative-rank information.",
+    "The regular-master reduction is an analysis tool, not a component-POVM circuit.",
+    "The finite repeated-source control is not collision-free asymptotic evidence."
+  ],
+  "headline_metrics": {
+    "canonical_full_domain_component_effect_theorem_count": 1,
+    "central_support_mass_observable_theorem_count": 1,
+    "finite_globally_distinct_matrix_effect_source_block_count": 0,
+    "finite_matrix_common_to_scalar_defect_mass_ratio": 2.500000000000001,
+    "finite_matrix_effect_source_block_count": 1,
+    "finite_matrix_source_to_common_mass_ratio": 3.2,
+    "finite_source_block_count": 81,
+    "high_dimension_central_support_bound_count": 0,
+    "natural_component_support_select_circuit_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "recursive_orientation_polar_sampler_count": 0,
+    "regular_master_component_defect_reduction_theorem_count": 1,
+    "scalar_moment_dilution_control_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "lift_canonical_matrix_component_effects_to_regular_master",
+      "resolution": "The construction is a central-decomposable spectral-calculus expression in the regular-master orientation projectors; exact S3 Fourier dimension and Plancherel weights close the finite control.",
+      "resolved": true
+    },
+    {
+      "obligation": "identify_correct_matrix_effect_mass_observable",
+      "resolution": "Use source-center support for source probability and its common-space cutdown for physical relative-rank mass, not ordinary scalar moments alone.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_high_dimensional_globally_distinct_matrix_effect_central_support",
+      "resolution": "Prove a center-valued local law for the defect after excluding low-dimensional source and internal-carrier central sectors; unconditioned scalar trace moments are insufficient.",
+      "resolved": false
+    },
+    {
+      "obligation": "transfer_sparse_support_jacobi_edge_to_natural_blocks",
+      "resolution": "Show that on positive central-support mass the nonzero effect edge is inverse polynomial and the support-scalar error composes through the recursive depth.",
+      "resolved": false
+    }
+  ],
+  "regular_master_mass_control": {
+    "exact_central_support_mass_accounting_verified": true,
+    "exact_regular_dimension_accounting_verified": true,
+    "fourier_block_dimension_sum": 1296,
+    "globally_distinct_matrix_effect_source_block_count": 0,
+    "live_common_source_probability": "205/648",
+    "matrix_effect_physical_common_span_mass": "5/81",
+    "matrix_effect_source_block_count": 1,
+    "matrix_effect_source_probability": "16/81",
+    "matrix_physical_common_to_scalar_defect_mass_ratio": 2.500000000000001,
+    "matrix_source_to_physical_common_mass_ratio": 3.2,
+    "n": 3,
+    "ordinary_scalar_defect_trace_mass": 0.02469135802469135,
+    "regular_master_dimension": 1296,
+    "source_block_count": 81,
+    "source_slot_count": 4,
+    "status": "exact-regular-master-component-defect-mass-accounting",
+    "target_partition": [
+      1,
+      1,
+      1
+    ],
+    "total_physical_common_span_mass": "23/216",
+    "total_source_probability": "1"
+  },
+  "source_block_records": [
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 1,
+      "plancherel_probability": "1/1296",
+      "regular_fourier_multiplicity": 1,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 1,
+      "plancherel_probability": "1/1296",
+      "regular_fourier_multiplicity": 1,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 1,
+      "plancherel_probability": "1/1296",
+      "regular_fourier_multiplicity": 1,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 1,
+      "common_span_relative_rank": "1",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 1,
+      "plancherel_probability": "1/1296",
+      "regular_fourier_multiplicity": 1,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "scalar-component-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 8,
+      "plancherel_probability": "4/81",
+      "regular_fourier_multiplicity": 8,
+      "source_dimensions": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 1,
+      "common_span_relative_rank": "1/4",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "scalar-component-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 1,
+      "common_span_relative_rank": "1/4",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "scalar-component-source-block"
+    },
+    {
+      "common_span_dimension": 2,
+      "common_span_relative_rank": "1",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "scalar-component-source-block"
+    },
+    {
+      "common_span_dimension": 1,
+      "common_span_relative_rank": "1",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 1,
+      "plancherel_probability": "1/1296",
+      "regular_fourier_multiplicity": 1,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "scalar-component-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 1,
+      "common_span_relative_rank": "1",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 1,
+      "plancherel_probability": "1/1296",
+      "regular_fourier_multiplicity": 1,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "scalar-component-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 1,
+      "common_span_relative_rank": "1",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 1,
+      "plancherel_probability": "1/1296",
+      "regular_fourier_multiplicity": 1,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "scalar-component-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 1,
+      "common_span_relative_rank": "1",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 1,
+      "plancherel_probability": "1/1296",
+      "regular_fourier_multiplicity": 1,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "scalar-component-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        2,
+        1,
+        1,
+        2
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 8,
+      "plancherel_probability": "4/81",
+      "regular_fourier_multiplicity": 8,
+      "source_dimensions": [
+        2,
+        1,
+        2,
+        2
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 1,
+      "common_span_relative_rank": "1/4",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "scalar-component-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 1,
+      "common_span_relative_rank": "1/4",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        2,
+        1,
+        1,
+        2
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "scalar-component-source-block"
+    },
+    {
+      "common_span_dimension": 2,
+      "common_span_relative_rank": "1",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "scalar-component-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 8,
+      "plancherel_probability": "4/81",
+      "regular_fourier_multiplicity": 8,
+      "source_dimensions": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 8,
+      "plancherel_probability": "4/81",
+      "regular_fourier_multiplicity": 8,
+      "source_dimensions": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 5,
+      "common_span_relative_rank": "5/16",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": true,
+      "maximum_full_fiber_scalar_residual": 0.5000000000000002,
+      "nonscalarity_defect_trace": 1.9999999999999996,
+      "physical_block_dimension": 16,
+      "plancherel_probability": "16/81",
+      "regular_fourier_multiplicity": 16,
+      "source_dimensions": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "matrix-component-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 8,
+      "plancherel_probability": "4/81",
+      "regular_fourier_multiplicity": 8,
+      "source_dimensions": [
+        2,
+        2,
+        2,
+        1
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 8,
+      "plancherel_probability": "4/81",
+      "regular_fourier_multiplicity": 8,
+      "source_dimensions": [
+        2,
+        2,
+        1,
+        2
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 2,
+      "common_span_relative_rank": "1",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "scalar-component-source-block"
+    },
+    {
+      "common_span_dimension": 1,
+      "common_span_relative_rank": "1/4",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        2,
+        1,
+        1,
+        2
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "scalar-component-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 1,
+      "common_span_relative_rank": "1/4",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "scalar-component-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 8,
+      "plancherel_probability": "4/81",
+      "regular_fourier_multiplicity": 8,
+      "source_dimensions": [
+        2,
+        1,
+        2,
+        2
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        2,
+        1,
+        2,
+        1
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        2,
+        1,
+        1,
+        2
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 1,
+      "common_span_relative_rank": "1",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 1,
+      "plancherel_probability": "1/1296",
+      "regular_fourier_multiplicity": 1,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "scalar-component-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 1,
+      "common_span_relative_rank": "1",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 1,
+      "plancherel_probability": "1/1296",
+      "regular_fourier_multiplicity": 1,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "scalar-component-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 1,
+      "common_span_relative_rank": "1",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 1,
+      "plancherel_probability": "1/1296",
+      "regular_fourier_multiplicity": 1,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "scalar-component-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 1,
+      "common_span_relative_rank": "1",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 1,
+      "plancherel_probability": "1/1296",
+      "regular_fourier_multiplicity": 1,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "scalar-component-source-block"
+    },
+    {
+      "common_span_dimension": 2,
+      "common_span_relative_rank": "1",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "scalar-component-source-block"
+    },
+    {
+      "common_span_dimension": 1,
+      "common_span_relative_rank": "1/4",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "scalar-component-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 1,
+      "common_span_relative_rank": "1/4",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "scalar-component-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 8,
+      "plancherel_probability": "4/81",
+      "regular_fourier_multiplicity": 8,
+      "source_dimensions": [
+        1,
+        2,
+        2,
+        2
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        1,
+        2,
+        2,
+        1
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        2,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 1,
+      "common_span_relative_rank": "1",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 1,
+      "plancherel_probability": "1/1296",
+      "regular_fourier_multiplicity": 1,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "scalar-component-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 1,
+      "plancherel_probability": "1/1296",
+      "regular_fourier_multiplicity": 1,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 4,
+      "plancherel_probability": "1/81",
+      "regular_fourier_multiplicity": 4,
+      "source_dimensions": [
+        1,
+        1,
+        2,
+        2
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        1,
+        2,
+        1
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 1,
+      "plancherel_probability": "1/1296",
+      "regular_fourier_multiplicity": 1,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 2,
+      "plancherel_probability": "1/324",
+      "regular_fourier_multiplicity": 2,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        2
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    },
+    {
+      "common_span_dimension": 0,
+      "common_span_relative_rank": "0",
+      "globally_distinct_sources": false,
+      "matrix_partial_support_required": false,
+      "maximum_full_fiber_scalar_residual": 0.0,
+      "nonscalarity_defect_trace": 0.0,
+      "physical_block_dimension": 1,
+      "plancherel_probability": "1/1296",
+      "regular_fourier_multiplicity": 1,
+      "source_dimensions": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "source_partitions": [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "status": "zero-common-span-source-block"
+    }
+  ],
+  "status": "component-defect-regular-master-reduction-proved-high-dimensional-central-support-open",
+  "summary": "Lifted canonical matrix component effects to the regular master and separated source probability, physical common-span mass, and ordinary defect trace, exposing a center-valued local law as the next natural theorem.",
+  "theorem_contract": {
+    "canonical_effect_formula": "Using the full-domain synthesis [E_e], the canonical component effects are equation (2) and equal the isometric leaf-basis component effects up to coefficient-space isometry.",
+    "central_support_identity": "The Plancherel probability of matrix effects is normalized regular trace of the source-center support of the positive nonscalarity defect. Cutting that support by the common-space projection gives physical common-span mass.",
+    "moment_boundary": "Ordinary defect trace is relative-rank weighted and cannot upper-bound source-block probability without a minimum bad-rank or center-valued local law.",
+    "regular_master_functoriality": "Central direct sums are preserved by the sums, products, support/intersection spectral projections, pseudoinverses, and compressed inverse square roots in the child-effect construction.",
+    "scope": "The S3 control has repeated sources and is only an exact decomposition check. No globally distinct high-dimensional central-support bound, natural Jacobi law, compiler, or speedup is proved."
+  }
+}

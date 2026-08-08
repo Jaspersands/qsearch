@@ -1,0 +1,225 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Not measuring intermediate irrep labels automatically avoids the MRS theorem.",
+      "resolution": "False whenever the final effect is a classical postprocessing of the transcript POVM. Dephasing invariance alone is necessary but not sufficient for that simulation.",
+      "resolved": true
+    },
+    {
+      "objection": "Any noncommuting recoupling projector proves a useful model escape.",
+      "resolution": "It is only a candidate witness. Separation from the complete adaptive transcript-POVM postprocessing set must survive on nonnegligible accepted-state mass.",
+      "resolved": false
+    },
+    {
+      "objection": "The finite S6 component-effect commutator is already an MRS transcript witness.",
+      "resolution": "Those component effects have not been identified with the paper's internal isotypic transcript projectors, and their direct source mechanism is asymptotically negligible.",
+      "resolved": false
+    },
+    {
+      "objection": "Dephasing invariance proves classical transcript-only simulation.",
+      "resolution": "False for blocks of dimension greater than one. The within-isotype control is block diagonal but nonscalar, so early label measurement preserves it while the classical label alone does not simulate it.",
+      "resolved": true
+    },
+    {
+      "objection": "A dephasing witness proves a speedup.",
+      "resolution": "False. It only proves that one lower-bound model does not simulate the measurement; efficiency, correctness, and classical hardness remain separate.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "complete_recursive_compiler_outside_mrs_class_proved": false,
+    "current_physical_pgm_outside_mrs_transcript_postprocessing": false,
+    "deferred_measurement_alone_escapes_mrs": false,
+    "exact_projective_transcript_only_criterion_proved": true,
+    "exact_transcript_dephasing_criterion_proved": true,
+    "measured_projective_transcript_control_is_classical": true,
+    "mrs_lower_bound_avoided": false,
+    "noncommuting_recoupling_can_create_abstract_witness": true,
+    "offdiagonal_coherence_is_sufficient_not_necessary": true,
+    "pair_gpe_alone_proves_mrs_escape": false,
+    "reason": "The fixed-projective criteria are exact, but the physical PGM effect has not been separated from classical postprocessings of the full adaptive MRS transcript POVM on nonnegligible mass.",
+    "speedup_claim_allowed": false
+  },
+  "controls": [
+    {
+      "coherent_decision_probability": 0.4999999999999999,
+      "control_id": "MEASURED-TRANSCRIPT-DIAGONAL-EFFECT",
+      "decision_effect_dephasing_residual": 0.0,
+      "decision_effect_maximum_offdiagonal_block_norm": 0.0,
+      "decision_effect_transcript_algebra_residual": 0.0,
+      "decision_probability_difference": 0.0,
+      "exact_dephasing_identity_verified": true,
+      "hilbert_dimension": 2,
+      "status": "exact-classical-transcript-only-control",
+      "trace_identity_residual": 0.0,
+      "transcript_block_dimensions": [
+        1,
+        1
+      ],
+      "transcript_classicalized_decision_probability": 0.4999999999999999,
+      "transcript_dephased_decision_probability": 0.4999999999999999,
+      "transcript_measurement_changes_statistics": false,
+      "transcript_measurement_preserves_statistics_for_all_inputs": true,
+      "transcript_only_probability_difference": 0.0,
+      "transcript_only_simulation_valid_for_all_inputs": true
+    },
+    {
+      "coherent_decision_probability": 0.9999999999999996,
+      "control_id": "COHERENT-HADAMARD-RECOMBINATION-WITNESS",
+      "decision_effect_dephasing_residual": 0.4999999999999999,
+      "decision_effect_maximum_offdiagonal_block_norm": 0.4999999999999999,
+      "decision_effect_transcript_algebra_residual": 0.4999999999999999,
+      "decision_probability_difference": 0.4999999999999998,
+      "exact_dephasing_identity_verified": true,
+      "hilbert_dimension": 2,
+      "status": "exact-offdiagonal-transcript-coherence-witness",
+      "trace_identity_residual": 0.0,
+      "transcript_block_dimensions": [
+        1,
+        1
+      ],
+      "transcript_classicalized_decision_probability": 0.4999999999999998,
+      "transcript_dephased_decision_probability": 0.4999999999999998,
+      "transcript_measurement_changes_statistics": true,
+      "transcript_measurement_preserves_statistics_for_all_inputs": false,
+      "transcript_only_probability_difference": 0.4999999999999998,
+      "transcript_only_simulation_valid_for_all_inputs": false
+    },
+    {
+      "coherent_decision_probability": 0.4999999999999999,
+      "control_id": "UNMEASURED-LABEL-CONTROL-WITHOUT-RECOMBINATION",
+      "decision_effect_dephasing_residual": 0.0,
+      "decision_effect_maximum_offdiagonal_block_norm": 0.0,
+      "decision_effect_transcript_algebra_residual": 0.0,
+      "decision_probability_difference": 0.0,
+      "exact_dephasing_identity_verified": true,
+      "hilbert_dimension": 2,
+      "status": "exact-classical-transcript-only-control",
+      "trace_identity_residual": 0.0,
+      "transcript_block_dimensions": [
+        1,
+        1
+      ],
+      "transcript_classicalized_decision_probability": 0.4999999999999999,
+      "transcript_dephased_decision_probability": 0.4999999999999999,
+      "transcript_measurement_changes_statistics": false,
+      "transcript_measurement_preserves_statistics_for_all_inputs": true,
+      "transcript_only_probability_difference": 0.0,
+      "transcript_only_simulation_valid_for_all_inputs": true
+    },
+    {
+      "coherent_decision_probability": 0.9330127018922192,
+      "control_id": "NONCOMMUTING-RECOUPLED-ISOTYPIC-EFFECT",
+      "decision_effect_dephasing_residual": 0.4330127018922193,
+      "decision_effect_maximum_offdiagonal_block_norm": 0.4330127018922193,
+      "decision_effect_transcript_algebra_residual": 0.4330127018922193,
+      "decision_probability_difference": 0.4330127018922193,
+      "exact_dephasing_identity_verified": true,
+      "hilbert_dimension": 2,
+      "status": "exact-offdiagonal-transcript-coherence-witness",
+      "trace_identity_residual": 0.0,
+      "transcript_block_dimensions": [
+        1,
+        1
+      ],
+      "transcript_classicalized_decision_probability": 0.4999999999999999,
+      "transcript_dephased_decision_probability": 0.4999999999999999,
+      "transcript_measurement_changes_statistics": true,
+      "transcript_measurement_preserves_statistics_for_all_inputs": false,
+      "transcript_only_probability_difference": 0.4330127018922193,
+      "transcript_only_simulation_valid_for_all_inputs": false
+    },
+    {
+      "coherent_decision_probability": 1.0,
+      "control_id": "BLOCK-DIAGONAL-WITHIN-ISOTYPE-QUANTUM-WITNESS",
+      "decision_effect_dephasing_residual": 0.0,
+      "decision_effect_maximum_offdiagonal_block_norm": 0.0,
+      "decision_effect_transcript_algebra_residual": 0.5,
+      "decision_probability_difference": 0.0,
+      "exact_dephasing_identity_verified": true,
+      "hilbert_dimension": 4,
+      "status": "exact-within-block-quantum-information-witness",
+      "trace_identity_residual": 0.0,
+      "transcript_block_dimensions": [
+        2,
+        2
+      ],
+      "transcript_classicalized_decision_probability": 0.5,
+      "transcript_dephased_decision_probability": 1.0,
+      "transcript_measurement_changes_statistics": false,
+      "transcript_measurement_preserves_statistics_for_all_inputs": true,
+      "transcript_only_probability_difference": 0.5,
+      "transcript_only_simulation_valid_for_all_inputs": false
+    }
+  ],
+  "created_at": "2026-08-08T07:38:41.704846+00:00",
+  "falsifiers_triggered": [
+    "Leaving intermediate irrep labels unmeasured is not by itself outside the measured-sieve model.",
+    "Label-controlled coherent computation with a label-diagonal final effect is transcript-dephasing invariant.",
+    "Dephasing invariance does not imply transcript-only simulation when an isotypic transcript block has dimension greater than one.",
+    "Pair GPE is carrier-block diagonal and cannot alone witness cross-transcript interference.",
+    "A finite noncommuting effect is not a useful escape until it changes the physical decision probability on positive mass.",
+    "Avoiding the MRS model would not prove an efficient algorithm or quantum speedup."
+  ],
+  "headline_metrics": {
+    "current_physical_pgm_transcript_povm_separation_count": 0,
+    "deferred_measurement_non_escape_control_count": 1,
+    "finite_control_count": 5,
+    "finite_control_failure_count": 0,
+    "hadamard_witness_probability_difference": 0.4999999999999998,
+    "mrs_model_escape_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "offdiagonal_coherence_witness_control_count": 2,
+    "projective_transcript_only_criterion_count": 1,
+    "recoupled_witness_probability_difference": 0.4330127018922193,
+    "transcript_dephasing_identity_theorem_count": 1,
+    "universal_measured_transcript_invariance_criterion_count": 1,
+    "within_block_quantum_witness_control_count": 1,
+    "within_block_transcript_only_probability_difference": 0.5
+  },
+  "primary_literature": [
+    {
+      "id": "MRS-2007-QUANTUM-SIEVE-NO-GO",
+      "scope": "Section 3 defines adaptive pairwise combine-and-isotypic-measure sieves whose usable output is the classical irrep-labeled forest transcript.",
+      "title": "On the impossibility of a quantum sieve algorithm for graph isomorphism: unconditional results",
+      "url": "https://arxiv.org/abs/quant-ph/0612089"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "exact_measured_transcript_dephasing_criterion",
+      "resolution": "Self-adjointness of block dephasing gives the trace identity, and invariance for all states is equivalent to zero off-diagonal effect blocks.",
+      "resolved": true
+    },
+    {
+      "obligation": "exact_projective_transcript_only_effect_criterion",
+      "resolution": "Dependence only on block probabilities is equivalent by trace duality to a scalar decision coefficient on every transcript block.",
+      "resolved": true
+    },
+    {
+      "obligation": "show_current_physical_pgm_effect_outside_mrs_transcript_povm_postprocessing",
+      "resolution": "Construct the allowed adaptive transcript POVM {E_t} and lower-bound the distance of the physical decision effect from {sum_t f_t E_t:0<=f_t<=1} on positive accepted-state mass.",
+      "resolved": false
+    },
+    {
+      "obligation": "show_pair_gpe_alone_escapes_mrs_sieve",
+      "resolution": "Rejected as a sufficient argument: pair GPE is carrier-label block diagonal. It is not an off-diagonal witness, and no within-block or full transcript-POVM separation is proved.",
+      "resolved": true
+    },
+    {
+      "obligation": "separate_complete_recursive_compiler_from_mrs_formal_algorithm_class",
+      "resolution": "Need an explicit complete circuit first, then separate its decision POVM from all classical postprocessings of an allowed MRS transcript POVM or give a simulation.",
+      "resolved": false
+    }
+  ],
+  "status": "projective-transcript-criteria-proved-adaptive-mrs-separation-open",
+  "summary": "Corrected the MRS audit: dephasing invariance characterizes only whether early projective transcript measurement changes statistics; classical transcript-only simulation requires block-scalar effects, and full adaptive MRS separation remains open.",
+  "theorem_contract": {
+    "dephasing_duality": "For transcript dephasing Delta, tr(M rho)-tr(M Delta(rho)) equals tr((M-Delta(M))rho).",
+    "escape_witness": "A nonnegligible off-diagonal internal-label block is sufficient but not necessary: a nonscalar within-block effect also uses quantum information absent from a projective transcript.",
+    "mrs_model_boundary": "The MRS sieve measures every internal isotypic label and uses only the resulting classical forest transcript for its guess. For the full sequential process, simulable effects are classical postprocessings sum_t f_t E_t of the transcript POVM.",
+    "projective_transcript_only_criterion": "For orthogonal transcript blocks, a decision depends only on the classical block probabilities for every input iff M equals its block-scalar conditional expectation C(M).",
+    "scope": "The block tests are exact for one projective transcript. A full MRS audit must construct the adaptive sequential transcript POVM. The companion zonotope solver tests any specified POVM, but no physical GPE/POVM or all-policy separation is proved.",
+    "universal_invariance_criterion": "Transcript measurement preserves the decision distribution for every input iff the pulled-back decision effect satisfies M=Delta(M)."
+  }
+}

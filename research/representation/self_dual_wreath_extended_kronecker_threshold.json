@@ -1,0 +1,294 @@
+{
+  "created_at": "2026-08-08T02:26:35.004016+00:00",
+  "theorem_contract": {
+    "exact_variance": "E X_(tau,q)^2=sum_(C!=1)|C|^(2-q)r_tau(C)^2.",
+    "uniform_fixed_target_bound": "For q>=3 this is at most sum_(C!=1)1/|C|=o(1), uniformly in the fixed target tau.",
+    "positivity": "Every fixed target occurs in q>=3 independent Plancherel factors with probability 1-o(1).",
+    "normalized_multiplicity": "|S_n| m_tau/(d_tau product d_lambda) converges in probability to one for every fixed target and q>=3.",
+    "orientation_transition": "Together with radius-two transversality, independent natural pair-common support transitions exactly at Hamming distance three.",
+    "fixed_pair_rank": "For a fixed pair with 3<=h<=K-3, the common relative rank concentrates at 2/|S_n|^3.",
+    "scope": "Pointwise normalized multiplicity is not simultaneous covering, simultaneous all-pair control, incidence control, or a frame edge."
+  },
+  "finite_controls": [
+    {
+      "n": 5,
+      "factor_count": 3,
+      "target_count": 7,
+      "source_tuple_count_per_target": 343,
+      "maximum_exact_mean_residual": "0",
+      "maximum_exact_variance_formula_residual": "0",
+      "maximum_zero_probability_bound_residual": "2153/8640",
+      "maximum_target_zero_probability": 0.09247685185185185,
+      "maximum_target_variance_bound": 0.3416666666666667,
+      "exact_fixed_target_variance_identity_verified": true,
+      "fixed_target_zero_probability_bound_verified": true,
+      "status": "exact-fixed-target-extended-kronecker-variance-verified"
+    },
+    {
+      "n": 4,
+      "factor_count": 4,
+      "target_count": 5,
+      "source_tuple_count_per_target": 625,
+      "maximum_exact_mean_residual": "0",
+      "maximum_exact_variance_formula_residual": "0",
+      "maximum_zero_probability_bound_residual": "5113/41472",
+      "maximum_target_zero_probability": 0.05900366512345679,
+      "maximum_target_variance_bound": 0.18229166666666666,
+      "exact_fixed_target_variance_identity_verified": true,
+      "fixed_target_zero_probability_bound_verified": true,
+      "status": "exact-fixed-target-extended-kronecker-variance-verified"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 10,
+      "factor_count": 3,
+      "worst_target_variance_upper_bound": 0.03139825837742504,
+      "worst_target_variance_upper_bound_log2": -4.993171652948808,
+      "transposition_contribution_upper_bound": 0.022222222222222223,
+      "fixed_target_positivity_probability_tends_to_one": true,
+      "simultaneous_all_target_covering_proved": false,
+      "multiplicity_concentration_proved": true,
+      "status": "fixed-target-normalized-multiplicity-concentrated-simultaneous-covering-open"
+    },
+    {
+      "n": 10,
+      "factor_count": 4,
+      "worst_target_variance_upper_bound": 0.0005157012426759255,
+      "worst_target_variance_upper_bound_log2": -10.921176857572073,
+      "transposition_contribution_upper_bound": 0.0004938271604938272,
+      "fixed_target_positivity_probability_tends_to_one": true,
+      "simultaneous_all_target_covering_proved": false,
+      "multiplicity_concentration_proved": true,
+      "status": "fixed-target-normalized-multiplicity-concentrated-simultaneous-covering-open"
+    },
+    {
+      "n": 10,
+      "factor_count": 5,
+      "worst_target_variance_upper_bound": 1.1052015161712365e-05,
+      "worst_target_variance_upper_bound_log2": -16.46533102801052,
+      "transposition_contribution_upper_bound": 1.0973936899862826e-05,
+      "fixed_target_positivity_probability_tends_to_one": true,
+      "simultaneous_all_target_covering_proved": false,
+      "multiplicity_concentration_proved": true,
+      "status": "fixed-target-normalized-multiplicity-concentrated-simultaneous-covering-open"
+    },
+    {
+      "n": 20,
+      "factor_count": 3,
+      "worst_target_variance_upper_bound": 0.005813987578874729,
+      "worst_target_variance_upper_bound_log2": -7.426256295388654,
+      "transposition_contribution_upper_bound": 0.005263157894736842,
+      "fixed_target_positivity_probability_tends_to_one": true,
+      "simultaneous_all_target_covering_proved": false,
+      "multiplicity_concentration_proved": true,
+      "status": "fixed-target-normalized-multiplicity-concentrated-simultaneous-covering-open"
+    },
+    {
+      "n": 20,
+      "factor_count": 4,
+      "worst_target_variance_upper_bound": 2.789913574975638e-05,
+      "worst_target_variance_upper_bound_log2": -15.129420043022227,
+      "transposition_contribution_upper_bound": 2.7700831024930747e-05,
+      "fixed_target_positivity_probability_tends_to_one": true,
+      "simultaneous_all_target_covering_proved": false,
+      "multiplicity_concentration_proved": true,
+      "status": "fixed-target-normalized-multiplicity-concentrated-simultaneous-covering-open"
+    },
+    {
+      "n": 20,
+      "factor_count": 5,
+      "worst_target_variance_upper_bound": 1.4587858535696656e-07,
+      "worst_target_variance_upper_bound_log2": -22.708728549748322,
+      "transposition_contribution_upper_bound": 1.457938474996355e-07,
+      "fixed_target_positivity_probability_tends_to_one": true,
+      "simultaneous_all_target_covering_proved": false,
+      "multiplicity_concentration_proved": true,
+      "status": "fixed-target-normalized-multiplicity-concentrated-simultaneous-covering-open"
+    },
+    {
+      "n": 30,
+      "factor_count": 3,
+      "worst_target_variance_upper_bound": 0.00244108599578005,
+      "worst_target_variance_upper_bound_log2": -8.678261164676135,
+      "transposition_contribution_upper_bound": 0.0022988505747126436,
+      "fixed_target_positivity_probability_tends_to_one": true,
+      "simultaneous_all_target_covering_proved": false,
+      "multiplicity_concentration_proved": true,
+      "status": "fixed-target-normalized-multiplicity-concentrated-simultaneous-covering-open"
+    },
+    {
+      "n": 30,
+      "factor_count": 4,
+      "worst_target_variance_upper_bound": 5.3000657084314845e-06,
+      "worst_target_variance_upper_bound_log2": -17.52555832348973,
+      "transposition_contribution_upper_bound": 5.2847139648566525e-06,
+      "fixed_target_positivity_probability_tends_to_one": true,
+      "simultaneous_all_target_covering_proved": false,
+      "multiplicity_concentration_proved": true,
+      "status": "fixed-target-normalized-multiplicity-concentrated-simultaneous-covering-open"
+    },
+    {
+      "n": 30,
+      "factor_count": 5,
+      "worst_target_variance_upper_bound": 1.2150637566414769e-08,
+      "worst_target_variance_upper_bound_log2": -26.29439274240593,
+      "transposition_contribution_upper_bound": 1.2148767735302648e-08,
+      "fixed_target_positivity_probability_tends_to_one": true,
+      "simultaneous_all_target_covering_proved": false,
+      "multiplicity_concentration_proved": true,
+      "status": "fixed-target-normalized-multiplicity-concentrated-simultaneous-covering-open"
+    },
+    {
+      "n": 40,
+      "factor_count": 3,
+      "worst_target_variance_upper_bound": 0.0013382986216299493,
+      "worst_target_variance_upper_bound_log2": -9.545384216608355,
+      "transposition_contribution_upper_bound": 0.001282051282051282,
+      "fixed_target_positivity_probability_tends_to_one": true,
+      "simultaneous_all_target_covering_proved": false,
+      "multiplicity_concentration_proved": true,
+      "status": "fixed-target-normalized-multiplicity-concentrated-simultaneous-covering-open"
+    },
+    {
+      "n": 40,
+      "factor_count": 4,
+      "worst_target_variance_upper_bound": 1.6462332266471116e-06,
+      "worst_target_variance_upper_bound_log2": -19.212399828284333,
+      "transposition_contribution_upper_bound": 1.643655489809336e-06,
+      "fixed_target_positivity_probability_tends_to_one": true,
+      "simultaneous_all_target_covering_proved": false,
+      "multiplicity_concentration_proved": true,
+      "status": "fixed-target-normalized-multiplicity-concentrated-simultaneous-covering-open"
+    },
+    {
+      "n": 40,
+      "factor_count": 5,
+      "worst_target_variance_upper_bound": 2.107380292748369e-09,
+      "worst_target_variance_upper_bound_log2": -28.821902171081412,
+      "transposition_contribution_upper_bound": 2.107250627960687e-09,
+      "fixed_target_positivity_probability_tends_to_one": true,
+      "simultaneous_all_target_covering_proved": false,
+      "multiplicity_concentration_proved": true,
+      "status": "fixed-target-normalized-multiplicity-concentrated-simultaneous-covering-open"
+    },
+    {
+      "n": 50,
+      "factor_count": 3,
+      "worst_target_variance_upper_bound": 0.0008440582022551307,
+      "worst_target_variance_upper_bound_log2": -10.210369895771304,
+      "transposition_contribution_upper_bound": 0.0008163265306122449,
+      "fixed_target_positivity_probability_tends_to_one": true,
+      "simultaneous_all_target_covering_proved": false,
+      "multiplicity_concentration_proved": true,
+      "status": "fixed-target-normalized-multiplicity-concentrated-simultaneous-covering-open"
+    },
+    {
+      "n": 50,
+      "factor_count": 4,
+      "worst_target_variance_upper_bound": 6.670423947212836e-07,
+      "worst_target_variance_upper_bound_log2": -20.515718207583564,
+      "transposition_contribution_upper_bound": 6.663890045814244e-07,
+      "fixed_target_positivity_probability_tends_to_one": true,
+      "simultaneous_all_target_covering_proved": false,
+      "multiplicity_concentration_proved": true,
+      "status": "fixed-target-normalized-multiplicity-concentrated-simultaneous-covering-open"
+    },
+    {
+      "n": 50,
+      "factor_count": 5,
+      "worst_target_variance_upper_bound": 5.440076288478993e-10,
+      "worst_target_variance_upper_bound_log2": -30.7756540657365,
+      "transposition_contribution_upper_bound": 5.439910241481016e-10,
+      "fixed_target_positivity_probability_tends_to_one": true,
+      "simultaneous_all_target_covering_proved": false,
+      "multiplicity_concentration_proved": true,
+      "status": "fixed-target-normalized-multiplicity-concentrated-simultaneous-covering-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_fixed_target_extended_kronecker_variance",
+      "resolved": true,
+      "resolution": "Column orthogonality contributes |C|^(2-q) and the fixed target contributes its squared normalized character ratio."
+    },
+    {
+      "obligation": "locate_independent_plancherel_support_threshold",
+      "resolved": true,
+      "resolution": "Distances one and two are transverse; three factors contain every fixed required sector with probability 1-o(1)."
+    },
+    {
+      "obligation": "upgrade_pointwise_target_occurrence_to_simultaneous_covering",
+      "resolved": false,
+      "resolution": "The p(n)-target union is not controlled by the reciprocal class-size bound."
+    },
+    {
+      "obligation": "derive_fixed_pair_common_rank_concentration",
+      "resolved": true,
+      "resolution": "Apply the normalized multiplicity law to the three independent membership blocks and both parity assignments."
+    },
+    {
+      "obligation": "derive_simultaneous_many_pair_incidence_local_law",
+      "resolved": false,
+      "resolution": "The o(1) pointwise failure is not small enough to union over exponentially many pairs, and coherent alignment is unbounded."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Sellke's unspecified covering constant is needed to locate the first common-support radius.",
+      "resolved": true,
+      "resolution": "Not for independent Plancherel sources: the exact variance puts the pointwise support threshold at three."
+    },
+    {
+      "objection": "A target-uniform probability bound proves all targets occur simultaneously.",
+      "resolved": false,
+      "resolution": "Uniform in tau means one bound valid for each fixed tau; it does not pay the p(n)-sized union."
+    },
+    {
+      "objection": "Typical fixed-target support controls the full orientation frame.",
+      "resolved": false,
+      "resolution": "Individual normalized ranks are controlled, but channel decomposition and higher-order incidence remain open."
+    }
+  ],
+  "literature_links": [
+    {
+      "paper": "Sellke, Covering Irrep(S_n) With Tensor Products and Powers",
+      "url": "https://arxiv.org/abs/2004.05283",
+      "directly_proves_pointwise_three_factor_threshold": false,
+      "reason": "Sellke proves simultaneous covering with some fixed number of factors; the present pointwise q=3 result uses exact independent Plancherel variance instead."
+    }
+  ],
+  "headline_metrics": {
+    "exact_fixed_target_variance_theorem_count": 1,
+    "three_factor_fixed_target_positivity_theorem_count": 1,
+    "hamming_three_support_transition_theorem_count": 1,
+    "finite_control_count": 2,
+    "finite_control_failure_count": 0,
+    "n50_q4_worst_target_variance_upper_bound": 6.670423947212836e-07,
+    "simultaneous_all_target_covering_theorem_count": 0,
+    "fixed_target_normalized_multiplicity_concentration_theorem_count": 1,
+    "fixed_hamming_pair_common_rank_concentration_theorem_count": 1,
+    "natural_node_frame_edge_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "exact_fixed_target_extended_variance_proved": true,
+    "three_independent_plancherel_factors_contain_fixed_target_aas": true,
+    "independent_natural_hamming_three_support_transition_proved": true,
+    "fixed_target_normalized_multiplicity_concentration_proved": true,
+    "fixed_hamming_pair_common_rank_concentration_proved": true,
+    "simultaneous_all_irrep_covering_with_three_factors_proved": false,
+    "simultaneous_all_pair_rank_concentration_proved": false,
+    "higher_order_incidence_edge_proved": false,
+    "natural_all_depth_node_edge_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "The independent support threshold and each fixed pair's rank are controlled, but simultaneous incidence and full-frame spectral geometry remain open."
+  },
+  "status": "three-factor-multiplicity-and-fixed-pair-rank-proved-incidence-open",
+  "summary": "Proved normalized fixed-target multiplicity concentration for three or more independent Plancherel irreps.",
+  "falsifiers_triggered": [
+    "The independent pointwise support transition occurs at three factors, not an unknown larger covering radius.",
+    "Pointwise target-uniform bounds do not imply simultaneous covering of all irreps.",
+    "Pointwise multiplicity concentration does not provide simultaneous incidence or frame-edge control."
+  ]
+}

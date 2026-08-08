@@ -8083,6 +8083,943 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             ],
         ),
         ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-COMMON-RANGE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Orientation common-range analysis",
+            status="planned",
+            hypothesis=(
+                "Proved and validated the trivial/sign common-range multiplicity "
+                "formula on 15 W4 tuples, then counted exact common-range support "
+                "across 7 scalable portfolios."
+            ),
+            protocol=(
+                "Compute trivial/sign common-range multiplicities and measure merged "
+                "support state counts across target portfolios."
+            ),
+            positive_signal=(
+                "Exact common-range multiplicity formulas match finite tuple validations "
+                "with zero residual."
+            ),
+            falsifiers=[
+                "Global source distinctness does not make orientation projector ranges pairwise transverse.",
+                "A bounded averaged second moment does not imply that most projector pairs have zero intersection.",
+                "Near-universal pairwise intersections do not by themselves prove a large norm; the intersecting directions may vary.",
+            ],
+            metrics=[
+                "collision_free_polynomial_factor_norm_theorem_count",
+                "common_range_above_99_percent_all_target_record_count",
+                "common_range_above_half_all_target_record_count",
+                "common_range_formula_validation_count",
+                "common_range_incidence_norm_theorem_count",
+                "commutator_common_range_multiplicity_theorem_count",
+                "complete_w4_common_range_tuple_validation_count",
+                "finite_common_range_validation_failure_count",
+                "information_threshold_scaling_record_count",
+                "maximum_common_range_dimension_residual",
+                "pairwise_transversality_theorem_count",
+                "scaling_record_count",
+                "tail_copy_count",
+                "tail_maximum_distinct_common_range_pair_fraction",
+                "tail_maximum_merged_support_state_count",
+                "tail_minimum_distinct_common_range_pair_fraction",
+                "tail_n",
+                "uniform_projector_sum_norm_theorem_count",
+                "w4_distinct_common_range_pair_count",
+                "w4_sign_mediated_common_range_pair_count",
+                "w4_trivial_mediated_common_range_pair_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_orientation_common_range.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-orientation-common-ranges.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-TRIPLE-RANGE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Orientation triple-range family analysis",
+            status="planned",
+            hypothesis=(
+                "Proved the fixed-family trivial/sign parity-kernel formula, validated "
+                "140 finite triple intersections, and sampled threshold-family orientation "
+                "families across incidence depths three through six."
+            ),
+            protocol=(
+                "Validate fixed-family parity-kernel formula and estimate multi-way incidence "
+                "fractions via Wilson confidence intervals."
+            ),
+            positive_signal=(
+                "Triple intersections are statistically prevalent while higher four/five-way "
+                "intersections remain rare or absent."
+            ),
+            falsifiers=[
+                "Pairwise common ranges are not merely isolated accidents: triple common ranges are statistically prevalent on the declared n=12 threshold targets.",
+                "The naive exact seven-support dynamic program is not a scalable counting architecture.",
+                "Prevalent triple intersections do not form a persistent exact core: sampled four-way incidence is rare and five-way incidence is absent on the declared controls.",
+                "Absence of exact five-way intersections does not bound near-common angles or the projector-sum norm.",
+            ],
+            metrics=[
+                "all_triple_incidence_exact_count_theorem_count",
+                "collision_free_polynomial_factor_norm_theorem_count",
+                "exact_support_dynamic_program_record_count",
+                "finite_formula_validation_count",
+                "finite_formula_validation_failure_count",
+                "fixed_family_common_range_multiplicity_theorem_count",
+                "maximum_common_range_dimension_residual",
+                "maximum_triple_support_merged_state_count",
+                "sample_count_per_target",
+                "sampled_prevalent_family_range_record_count",
+                "sampling_record_count",
+                "support_dynamic_program_state_cap_record_count",
+                "tail_copy_count",
+                "tail_first_family_size_with_zero_observed_common_ranges",
+                "tail_maximum_estimated_five_common_range_fraction",
+                "tail_maximum_estimated_four_common_range_fraction",
+                "tail_maximum_estimated_six_common_range_fraction",
+                "tail_maximum_five_wilson_95_upper_bound",
+                "tail_maximum_four_wilson_95_upper_bound",
+                "tail_maximum_wilson_95_upper_bound",
+                "tail_minimum_estimated_triple_common_range_fraction",
+                "tail_minimum_wilson_95_lower_bound",
+                "tail_n",
+                "triple_incidence_norm_theorem_count",
+                "uniform_projector_sum_norm_theorem_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_orientation_triple_range.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-orientation-family-ranges.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-PAIR-ANGLES",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Orientation pair principal-angle spectrum",
+            status="planned",
+            hypothesis=(
+                "Proved the complete pair principal-angle spectrum and validated 56 active "
+                "finite pair sectors across all collision-free W4 tuples and curated W5 controls."
+            ),
+            protocol=(
+                "Measure exact pair principal angles and compare noncommon principal correlations "
+                "against reciprocal irrep dimensions."
+            ),
+            positive_signal=(
+                "Noncommon singular values strictly match reciprocal irrep dimensions 1/d_alpha."
+            ),
+            falsifiers=[
+                "Non-common orientation-projector overlaps are not arbitrary: their singular values are reciprocal irrep dimensions.",
+                "Hilbert--Schmidt pair overlap loses the exact principal-angle spectrum and the inverse-dimension contraction mechanism.",
+                "Pairwise inverse-dimension contraction does not control trivial/sign common-range directions across many projectors.",
+            ],
+            metrics=[
+                "collision_free_polynomial_factor_norm_theorem_count",
+                "common_range_incidence_resolution_theorem_count",
+                "complete_w4_pair_angle_validation_count",
+                "exact_pair_principal_angle_spectrum_theorem_count",
+                "finite_pair_angle_validation_failure_count",
+                "maximum_pair_angle_spectrum_residual",
+                "maximum_w4_noncommon_principal_correlation",
+                "maximum_w5_noncommon_principal_correlation",
+                "noncommon_inverse_minimum_irrep_dimension_bound_theorem_count",
+                "noncommon_inverse_n_minus_one_bound_theorem_count",
+                "pair_angle_spectrum_validation_count",
+                "pair_angle_spectrum_validation_record_count",
+                "uniform_projector_sum_norm_theorem_count",
+                "w5_noncommon_dimension_bound",
+                "w5_pair_angle_control_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_orientation_pair_angle_spectrum.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-orientation-pair-angles.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-BLOCK-COMMON-CORE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Orientation block common-core analysis",
+            status="planned",
+            hypothesis=(
+                "Constructed exact block common-core witnesses on 6/6 portfolios; the tail "
+                "n=12, k=29 witness contains 512 orientation projectors sharing a nonzero vector."
+            ),
+            protocol=(
+                "Construct exact block common-core witnesses and measure common orientation family "
+                "sizes and core dimensions."
+            ),
+            positive_signal=(
+                "Structured orientation families yield exponentially large common cores with "
+                "nonzero common-range vector."
+            ),
+            falsifiers=[
+                "Random-family disappearance at depth five does not preclude exponentially large structured orientation families with an exact common core.",
+                "Pairwise 1/(n-1) contraction off common ranges cannot bound a structured family that remains entirely in common ranges.",
+                "Finite linear-looking block rates do not prove asymptotic or natural-mass persistence.",
+            ],
+            metrics=[
+                "asymptotic_linear_block_rate_theorem_count",
+                "block_common_core_construction_theorem_count",
+                "collision_free_polynomial_factor_norm_theorem_count",
+                "exact_finite_block_common_core_witness_count",
+                "finite_exact_target_violation_count",
+                "information_threshold_witness_count",
+                "maximum_observed_block_rate",
+                "minimum_observed_block_rate",
+                "natural_constant_mass_block_packing_theorem_count",
+                "scaling_record_count",
+                "tail_averaged_fourier_norm_lower_bound",
+                "tail_block_count",
+                "tail_common_orientation_family_size",
+                "tail_copy_count",
+                "tail_log2_common_core_dimension_lower_bound",
+                "tail_n",
+                "tail_norm_lower_bound_to_target_ratio",
+                "tail_projector_sum_norm_lower_bound",
+                "uniform_polynomial_factor_norm_counterexample_theorem_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_orientation_block_common_core.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-orientation-block-core.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-BLOCK-OBSTRUCTION",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Plancherel block norm obstruction",
+            status="planned",
+            hypothesis=(
+                "Combined the natural Plancherel source law, Sellke's constant-block "
+                "tensor-covering theorem, a rate-free bad-block argument, and the exact "
+                "common-core construction. The desired uniform poly(n)2^-k norm bound fails "
+                "with high probability."
+            ),
+            protocol=(
+                "Evaluate Sellke tensor covering, bad-block density, and common-core "
+                "family norm bounds."
+            ),
+            positive_signal=(
+                "Sellke covering and bad-block density prove uniform poly(n)2^-k norm bound "
+                "is false with high probability."
+            ),
+            falsifiers=[
+                "Global source distinctness does not force orientation projectors toward transversality; typical constant-size tensor-covering blocks create exact shared invariants.",
+                "The unknown convergence rate in Sellke's theorem is not an escape hatch: Markov controls the bad-block fraction from q_n=o(1) alone.",
+                "Finite random-family disappearance at depth five misses correlated block-code families of exponential size.",
+                "The obstruction does not imply that the code-equivalence HSP, all covariant measurements, or all decoders fail.",
+            ],
+            metrics=[
+                "all_collective_measurement_no_go_theorem_count",
+                "asymptotic_global_all_distinct_theorem_count",
+                "asymptotic_linear_good_block_density_theorem_count",
+                "block_common_core_construction_theorem_count",
+                "classical_code_equivalence_separation_count",
+                "natural_iid_plancherel_pair_law_theorem_count",
+                "new_quantum_algorithm_count",
+                "polynomial_hidden_permutation_decoder_count",
+                "residual_target_control_count",
+                "residual_target_control_failure_count",
+                "sellke_covering_literature_theorem_count",
+                "threshold_all_unequal_theorem_count",
+                "typical_exponential_common_orientation_family_theorem_count",
+                "uniform_collision_free_polynomial_factor_norm_counterexample_theorem_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_plancherel_block_obstruction.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-plancherel-block-obstruction.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-SPECTRAL-TRIMMED-SUBPOVM",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Spectral-trimmed sub-POVM analysis",
+            status="planned",
+            hypothesis=(
+                "Proved a generic second-moment spectral-trimming theorem. At the wreath "
+                "information threshold it retains exact hidden-label success at least 1/16 "
+                "despite the typical common-core norm spike."
+            ),
+            protocol=(
+                "Evaluate trimmed sub-POVM effect completeness and measure retained trace "
+                "fractions and success probability bounds."
+            ),
+            positive_signal=(
+                "Retains exact hidden-label success probability of at least 1/16 under "
+                "spectral cutoff."
+            ),
+            falsifiers=[
+                "The typical exponential common core kills the uniform norm normalization, but not information-theoretic recovery after discarding the high-frame spectrum.",
+                "The exact first and second moments suffice for a constant success lower bound; higher moments are not needed for information-theoretic existence.",
+                "The result does not reduce the absolute spectral cutoff, measurement-outcome count, or decoding complexity.",
+            ],
+            metrics=[
+                "exact_spectral_projector_circuit_count",
+                "finite_control_with_nonempty_clipped_spectrum_count",
+                "finite_trimmed_subpovm_control_count",
+                "finite_trimmed_subpovm_validation_failure_count",
+                "information_threshold_scaling_record_count",
+                "maximum_correct_success_bound_residual",
+                "maximum_effect_completeness_violation",
+                "minimum_finite_correct_label_success_probability",
+                "minimum_finite_retained_trace_fraction",
+                "minimum_scaling_correct_success_lower_bound",
+                "new_quantum_algorithm_count",
+                "polynomial_hidden_permutation_decoder_count",
+                "polynomial_outcome_transform_count",
+                "rank_cauchy_correct_success_theorem_count",
+                "spectral_trimmed_subpovm_theorem_count",
+                "tail_correct_label_success_lower_bound",
+                "tail_hidden_count_times_second_moment_scale",
+                "tail_n",
+                "universal_one_sixteenth_scaling_row_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_spectral_trimmed_subpovm.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-spectral-trim.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-SPECTRAL-FILTER-DEGREE-OBSTRUCTION",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Spectral filter degree obstruction analysis",
+            status="planned",
+            hypothesis=(
+                "Proved that a uniform low-pass realization of the trimmed sub-POVM from the "
+                "normalization-one frame encoding needs degree Omega(n!) on eigenvalues or "
+                "Omega(sqrt(n!)) on singular values."
+            ),
+            protocol=(
+                "Evaluate polynomial filter degree lower bounds on frame block encodings."
+            ),
+            positive_signal=(
+                "Factorial degree lower bounds prove generic QSVT low-pass filter is superpolynomial."
+            ),
+            falsifiers=[
+                "Generic QSVT does not turn the information-theoretic trimmed measurement into an efficient algorithm.",
+                "Square-root singular-value access weakens but does not remove the factorial spectral-resolution barrier.",
+                "No instance-specific gap or all-circuit lower bound is claimed; a structured transform is now the decisive target.",
+            ],
+            metrics=[
+                "asymptotic_eigenvalue_filter_superpolynomial_theorem_count",
+                "asymptotic_singular_filter_superpolynomial_theorem_count",
+                "better_scaled_frame_block_encoding_count",
+                "bounded_polynomial_bernstein_theorem_count",
+                "bounded_polynomial_markov_theorem_count",
+                "eigenvalue_encoding_superpolynomial_row_count",
+                "eigenvalue_filter_degree_obstruction_theorem_count",
+                "general_quantum_circuit_lower_bound_count",
+                "maximum_n",
+                "new_quantum_algorithm_count",
+                "polynomial_hidden_permutation_decoder_count",
+                "promised_inverse_polynomial_relative_gap_theorem_count",
+                "representation_structured_low_pass_transform_count",
+                "scaling_record_count",
+                "singular_filter_degree_obstruction_theorem_count",
+                "singular_value_encoding_superpolynomial_row_count",
+                "tail_eigenvalue_degree_lower_bound_log2",
+                "tail_log2_hidden_label_count",
+                "tail_singular_degree_lower_bound_log2",
+            ],
+            dependencies=[
+                "self_dual_wreath_spectral_filter_degree_obstruction.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-spectral-filter-degree.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-BLOCK-MASS",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Plancherel block mass analysis",
+            status="planned",
+            hypothesis=(
+                "Proved exact Plancherel tensor stationarity and its invariant-sector corollary: "
+                "trivial/sign block sectors have expected mass 1/n! despite typical support."
+            ),
+            protocol=(
+                "Measure expected mass on target isotypic and multiplicity sectors under "
+                "Plancherel tensor states."
+            ),
+            positive_signal=(
+                "Plancherel tensor stationarity proves trivial/sign block sectors have expected mass 1/n!."
+            ),
+            falsifiers=[
+                "Irrep support positivity is not evidence of usable quantum state mass.",
+                "The Sellke blocks explain the frame-norm spike through many projectors sharing extremely thin sectors, consistent with constant-success spectral trimming.",
+                "Any proposed block-local exploitation must account for factorial postselection probability or implement the complement without postselection.",
+            ],
+            metrics=[
+                "efficient_invariant_complement_projection_count",
+                "exact_stationarity_control_count",
+                "exact_stationarity_failure_count",
+                "independent_matched_one_dimensional_joint_mass_theorem_count",
+                "inverse_polynomial_direct_invariant_postselection_count",
+                "maximum_nonidentity_regular_character_average_numerator",
+                "new_quantum_algorithm_count",
+                "normalized_target_isotypic_expectation_theorem_count",
+                "normalized_target_multiplicity_expectation_theorem_count",
+                "plancherel_tensor_stationarity_theorem_count",
+                "polynomial_hidden_permutation_decoder_count",
+                "polynomial_inflation_markov_typical_upper_bound_theorem_count",
+                "scaling_record_count",
+                "sellke_support_without_mass_separation_theorem_count",
+                "sign_invariant_expected_mass_theorem_count",
+                "tail_matched_joint_mass_log2",
+                "tail_n",
+                "tail_single_invariant_mass_log2",
+                "trivial_invariant_expected_mass_theorem_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_plancherel_block_mass.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-plancherel-block-mass.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-COVARIANT-QUOTIENT-OBSTRUCTION",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Orientation covariant quotient obstruction analysis",
+            status="planned",
+            hypothesis=(
+                "Proved a scalar-commutant obstruction to nontrivial local quotients commuting "
+                "with every orientation action in the non-self-conjugate sector."
+            ),
+            protocol=(
+                "Test orbit closure and scalar commutant conditions on non-self-conjugate sectors."
+            ),
+            positive_signal=(
+                "Scalar commutant theorem proves branchwise covariant nontrivial projector is obstructed in non-self-conjugate regime."
+            ),
+            falsifiers=[
+                "The algebraic common-core quotient cannot be lifted by a simple branchwise-covariant projector in the irreducible A_n-restriction regime.",
+                "A finite common vector that is one-dimensional before orbit closure generates the entire carrier under mixed branches.",
+                "No typical-natural or all-physical-transform no-go is claimed because self-conjugate restrictions and coherent branch mixing remain unresolved.",
+            ],
+            metrics=[
+                "asymptotic_natural_tuple_non_self_conjugate_theorem_count",
+                "branchwise_covariant_nontrivial_projector_no_go_theorem_count",
+                "finite_orbit_closure_control_count",
+                "finite_orbit_closure_validation_failure_count",
+                "independent_alternating_factor_action_theorem_count",
+                "maximum_finite_closure_sweep_count",
+                "maximum_finite_orbit_closure_fraction",
+                "new_quantum_algorithm_count",
+                "non_self_conjugate_scalar_commutant_theorem_count",
+                "orientation_branch_mixing_physical_transform_count",
+                "polynomial_hidden_permutation_decoder_count",
+                "residual_polynomial_frame_norm_theorem_count",
+                "self_conjugate_mass_record_count",
+                "tail_n",
+                "tail_probability_no_self_conjugate_source_draw",
+                "tail_self_conjugate_plancherel_mass",
+            ],
+            dependencies=[
+                "self_dual_wreath_orientation_covariant_quotient_obstruction.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-orientation-covariant-quotient.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-BRANCH-CONTROLLED-INVARIANT-FILTER",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Branch-controlled invariant filter analysis",
+            status="planned",
+            hypothesis=(
+                "Constructed an exact orientation-controlled projector on the physical induced "
+                "carrier. It commutes with hidden conjugation, removes selected one-dimensional "
+                "sectors at expected 1-o(1) retention, and lowers the finite frame spike."
+            ),
+            protocol=(
+                "Construct branch-controlled physical filter, test idempotence and hidden-conjugation "
+                "covariance, and measure frame top eigenvalue reduction."
+            ),
+            positive_signal=(
+                "Branch-controlled physical filter removes thin invariant channels with 1-o(1) retention."
+            ),
+            falsifiers=[
+                "The scalar compressed-commutant obstruction does not block orientation-controlled physical direct sums.",
+                "A covariant physical filter can remove the known thin invariant channels without factorial postselection onto them.",
+                "Finite spectral reduction is not an asymptotic norm theorem or a hidden-permutation algorithm.",
+            ],
+            metrics=[
+                "branch_controlled_physical_filter_theorem_count",
+                "compressed_covariant_outcome_transform_count",
+                "controlled_group_average_filter_schema_count",
+                "fault_tolerant_filter_circuit_count",
+                "finite_physical_filter_control_count",
+                "finite_physical_filter_validation_failure_count",
+                "hidden_conjugation_covariance_theorem_count",
+                "maximum_hidden_conjugation_commutator_residual",
+                "maximum_physical_filter_idempotence_residual",
+                "minimum_finite_filtered_trace_retention",
+                "minimum_finite_frame_top_eigenvalue_reduction",
+                "new_quantum_algorithm_count",
+                "orientation_selected_one_dimensional_projector_theorem_count",
+                "plancherel_expected_retention_one_minus_o_one_theorem_count",
+                "polynomial_hidden_permutation_decoder_count",
+                "residual_polynomial_frame_norm_theorem_count",
+                "scaling_record_count",
+                "tail_expected_removed_state_fraction_upper_bound",
+                "tail_n",
+            ],
+            dependencies=[
+                "self_dual_wreath_branch_controlled_invariant_filter.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-branch-controlled-invariant-filter.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-BLOCK-COMMON-CORE-QUOTIENT",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Block common-core quotient analysis",
+            status="planned",
+            hypothesis=(
+                "Constructed an exact block-local quotient that annihilates the known "
+                "replicated-orientation common cores while retaining expected Plancherel carrier "
+                "fraction 1-o(1)."
+            ),
+            protocol=(
+                "Construct exact block-local quotient and measure common-core annihilation and "
+                "retained carrier fraction."
+            ),
+            positive_signal=(
+                "Exact block-local quotient annihilates replicated-orientation common cores with 1-o(1) expected carrier retention."
+            ),
+            falsifiers=[
+                "The typical frame-norm counterexample is not robust to deleting its explicitly characterized one-dimensional block channels.",
+                "Support-rich common cores can be algebraically removed with negligible expected dimension loss, but this is not yet a measurement circuit.",
+                "The naive branchwise physical lift fails covariance: mixed orientation actions have norm-one commutators with the algebraic quotient.",
+                "Residual high-dimensional and near-common channels must be audited before any restored norm or success claim.",
+            ],
+            metrics=[
+                "block_common_core_annihilation_theorem_count",
+                "block_one_dimensional_isotypic_projector_theorem_count",
+                "compressed_covariant_outcome_transform_count",
+                "finite_quotient_control_count",
+                "finite_quotient_validation_failure_count",
+                "maximum_common_range_annihilation_residual",
+                "maximum_mixed_orientation_action_commutator_norm",
+                "maximum_quotient_projector_idempotence_residual",
+                "maximum_replicated_orientation_action_commutator_norm",
+                "naive_branchwise_physical_lift_covariance_count",
+                "new_quantum_algorithm_count",
+                "physical_carrier_quotient_circuit_count",
+                "plancherel_expected_retained_fraction_one_minus_o_one_theorem_count",
+                "polynomial_hidden_permutation_decoder_count",
+                "residual_polynomial_frame_norm_theorem_count",
+                "scaling_record_count",
+                "tail_complete_block_count",
+                "tail_expected_removed_fraction_upper_bound",
+                "tail_n",
+            ],
+            dependencies=[
+                "self_dual_wreath_block_common_core_quotient.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-block-core-quotient.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-PAIRED-BLOCK-FILTER-BYPASS",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Paired-block filter bypass analysis",
+            status="planned",
+            hypothesis=(
+                "Proved that pairing Sellke-good blocks through a retained nontrivial self-dual "
+                "irrep recreates a 2^Theta(k) common family after one-dimensional branch filtering."
+            ),
+            protocol=(
+                "Measure paired-block common-core dimensions after one-dimensional branch filtering."
+            ),
+            positive_signal=(
+                "Paired self-dual irrep common-core theorem proves 2^Theta(k) common family persists after local filtering."
+            ),
+            falsifiers=[
+                "Deleting trivial/sign sectors independently in each block does not eliminate exact common cores; nontrivial sectors pair back to trivial globally.",
+                "The finite frame-spike reduction is preasymptotic and cannot support a residual norm claim.",
+                "The surviving research target must be nonlocal across blocks or avoid frame-norm normalization entirely.",
+            ],
+            metrics=[
+                "abstract_spectral_trimmed_subpovm_circuit_count",
+                "exact_filtered_paired_block_witness_count",
+                "filtered_exponential_common_orientation_family_theorem_count",
+                "finite_target_violation_count",
+                "new_quantum_algorithm_count",
+                "nonlocal_block_filter_count",
+                "one_dimensional_branch_filter_norm_restoration_counterexample_theorem_count",
+                "paired_self_dual_irrep_common_core_theorem_count",
+                "polynomial_hidden_permutation_decoder_count",
+                "scaling_record_count",
+                "sellke_typical_linear_paired_block_density_theorem_count",
+                "tail_common_orientation_family_size",
+                "tail_copy_count",
+                "tail_log2_common_core_dimension_lower_bound",
+                "tail_n",
+                "tail_norm_lower_bound_to_target_ratio",
+                "tail_original_block_count",
+                "tail_paired_bit_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_paired_block_filter_bypass.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-paired-block-filter-bypass.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-LOCAL-ISOTYPIC-FILTER-NO-GO",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Local isotypic filter no-go analysis",
+            status="planned",
+            hypothesis=(
+                "Proved a Plancherel-incidence no-go for all high-retention block-local isotypic "
+                "filters. A recurring self-dual retained irrep pairs linearly many good blocks and "
+                "restores a 2^Theta(k) common family."
+            ),
+            protocol=(
+                "Test Plancherel-incidence no-go theorem on constant-mass block-local isotypic filters."
+            ),
+            positive_signal=(
+                "No-go theorem proves all block-local isotypic filters leave 2^Theta(k) common-core spikes."
+            ),
+            falsifiers=[
+                "Changing which irreps are removed independently in each constant block cannot evade the common-core obstruction while retaining constant Plancherel support.",
+                "Finite local frame improvements are structurally incapable of restoring the asymptotic uniform norm target.",
+                "Research should move to growing-block/nonlocal transforms or efficient global spectral trimming, not more local filters.",
+            ],
+            metrics=[
+                "constant_mass_block_local_filter_no_go_theorem_count",
+                "finite_incidence_control_count",
+                "finite_incidence_validation_failure_count",
+                "global_spectral_trim_circuit_count",
+                "growing_block_nonlocal_filter_count",
+                "minimum_finite_paired_common_bit_count",
+                "minimum_finite_retained_plancherel_mass",
+                "new_quantum_algorithm_count",
+                "plancherel_retained_incidence_double_counting_theorem_count",
+                "polynomial_hidden_permutation_decoder_count",
+                "positive_paired_bit_rate_scaling_row_count",
+                "scaling_record_count",
+                "self_dual_paired_block_bypass_theorem_count",
+                "tail_common_orientation_family_size_lower_bound_decimal",
+                "tail_n",
+                "tail_paired_common_bit_count_lower_bound",
+                "tail_retained_mass",
+            ],
+            dependencies=[
+                "self_dual_wreath_local_isotypic_filter_no_go.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-local-isotypic-filter-no-go.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-CLUSTER-LOCALITY-NO-GO",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Cluster locality no-go analysis",
+            status="planned",
+            hypothesis=(
+                "Upgraded the constant-block obstruction to a quantitative locality lower bound: "
+                "at constant retained Plancherel mass, any disjoint product isotypic filter acting "
+                "on o(n) source labels per cluster leaves a superpolynomial common-family spike."
+            ),
+            protocol=(
+                "Evaluate cluster locality lower bounds for disjoint product isotypic filters."
+            ),
+            positive_signal=(
+                "Cluster locality no-go proves filters must act on Omega(n) labels per cluster."
+            ),
+            falsifiers=[
+                "Increasing independent filter blocks from constant size to any sublinear size does not remove the obstruction.",
+                "A viable high-retention filter must use linear-scale, overlapping, or genuinely global coordination.",
+                "Finite attenuation without an asymptotic locality analysis cannot support a polynomial frame-bound claim.",
+            ],
+            metrics=[
+                "asymptotic_retention_locality_boundary",
+                "cluster_locality_no_go_theorem_count",
+                "constant_mass_minimum_viable_source_label_locality",
+                "efficient_nonlocal_filter_count",
+                "finite_degree_d_falsification_count",
+                "finite_locality_threshold_count",
+                "finite_scaling_record_count",
+                "new_quantum_algorithm_count",
+                "overlapping_filter_lower_bound_count",
+                "polynomial_hidden_permutation_decoder_count",
+                "resolved_proof_obligation_count",
+                "unresolved_proof_obligation_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_cluster_locality_no_go.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-cluster-locality-no-go.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-SPECTRAL-FILTER-QUERY-LOWER-BOUND",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Spectral filter query lower bound analysis",
+            status="planned",
+            hypothesis=(
+                "Reduced factorial-scale low-pass filtering of equal-rank projector averages to "
+                "unstructured search, proving an Omega(sqrt(n!)) black-box query lower bound."
+            ),
+            protocol=(
+                "Evaluate search reduction and black-box query lower bounds for low-pass filtering."
+            ),
+            positive_signal=(
+                "Query lower bound proves PREPARE/SELECT generic filtering requires Omega(sqrt(n!)) queries."
+            ),
+            falsifiers=[
+                "A generic PREPARE/SELECT implementation cannot exploit the existence of the trimmed sub-POVM at polynomial cost.",
+                "Equal projector rank does not evade the search reduction.",
+                "Future filter proposals must identify the exact additional representation structure used to beat black-box search.",
+            ],
+            metrics=[
+                "black_box_spectral_filter_query_lower_bound_theorem_count",
+                "equal_rank_search_reduction_theorem_count",
+                "finite_search_encoding_control_count",
+                "finite_search_encoding_failure_count",
+                "general_wreath_circuit_lower_bound_count",
+                "new_quantum_algorithm_count",
+                "polynomial_hidden_permutation_decoder_count",
+                "representation_structured_filter_count",
+                "scaling_record_count",
+                "superpolynomial_black_box_lower_bound_row_count",
+                "tail_n",
+                "tail_quantum_query_lower_bound_log2",
+            ],
+            dependencies=[
+                "self_dual_wreath_spectral_filter_query_lower_bound.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-spectral-filter-query-bound.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-AFFINE-CORE-FLAG-THEOREM",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Affine core flag theorem analysis",
+            status="planned",
+            hypothesis=(
+                "Proved that every affine core is routed by any linear flag with only endpoint "
+                "or half weights, validated robustness to noncommuting complements, and isolated "
+                "affine exhaustion as the missing wreath representation theorem."
+            ),
+            protocol=(
+                "Audit affine core flag balance and test noncommuting complement matrix controls."
+            ),
+            positive_signal=(
+                "Affine core flag theorem proves aligned linear flags fully balance affine block-common incidence."
+            ),
+            falsifiers=[
+                "The old exponential block-common incidence witness is fully balanced by an aligned affine flag and is not a polar no-go.",
+                "Balanced tree cardinality does not prevent 1/3 or 2/3 channels when core membership is nonaffine.",
+                "A fixed-family common-range formula is weaker than an affine exhaustion theorem for all child-span intersections.",
+            ],
+            metrics=[
+                "affine_flag_balance_theorem_count",
+                "affine_intersection_exhaustion_conditional_theorem_count",
+                "all_child_intersection_affine_exhaustion_theorem_count",
+                "block_affine_core_failure_count",
+                "block_affine_core_record_count",
+                "coherent_affine_core_projector_count",
+                "hierarchical_orientation_polar_sampler_count",
+                "incidence_control_count",
+                "matrix_control_count",
+                "matrix_validation_failure_count",
+                "new_quantum_algorithm_count",
+                "nonaffine_unbalanced_counterexample_count",
+                "noncommuting_affine_matrix_control_count",
+                "tail_block_affine_family_size",
+            ],
+            dependencies=[
+                "self_dual_wreath_affine_core_flag_theorem.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-affine-core-flag.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-AFFINE-NODE-COMMON-OUTLIER",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Affine node common outlier analysis",
+            status="planned",
+            hypothesis=(
+                "Classified affine-node generated subgroups and proved that exact width-sized "
+                "outliers are factorially rare under natural sources."
+            ),
+            protocol=(
+                "Classify affine-node generated subgroups and test physical outlier occurrence under natural sources."
+            ),
+            positive_signal=(
+                "Classification theorem proves exact width-sized outliers are factorially rare under natural source distributions."
+            ),
+            falsifiers=[
+                "The global regular-master eigenvalue one is supported on atypical one-dimensional source labels.",
+                "Exact absence of a common range is not a quantitative upper-edge theorem.",
+                "A gap below one is on the wrong scale for the natural node-frame edge.",
+            ],
+            metrics=[
+                "affine_generated_subgroup_theorem_count",
+                "global_distinct_all_level_outlier_bound_theorem_count",
+                "maximal_physical_outlier_necessity_theorem_count",
+                "maximum_n_scaling_record",
+                "natural_node_edge_theorem_count",
+                "near_maximal_outlier_theorem_count",
+                "new_quantum_algorithm_count",
+                "physical_control_count",
+                "physical_control_failure_count",
+                "subgroup_control_count",
+                "subgroup_control_failure_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_affine_node_common_outlier.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-affine-node-common-outlier.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SCALAR-HOLONOMY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Affine plane scalar holonomy analysis",
+            status="planned",
+            hypothesis=(
+                "Proved that every multiplicity-scalar affine-plane carrier channel has positive "
+                "flat J3 holonomy and isolated matrix 6j recoupling as the possible failure mechanism."
+            ),
+            protocol=(
+                "Audit scalar affine plane channels and test J3 holonomy positivity."
+            ),
+            positive_signal=(
+                "Theorem proves every multiplicity-scalar affine-plane carrier channel has positive flat J3 holonomy."
+            ),
+            falsifiers=[
+                "Negative simplex holonomy cannot arise inside one canonical multiplicity-scalar affine-plane channel.",
+                "A counterexample to the finite affine-triangle pattern must use overlapping plane supports, matrix multiplicity recoupling, or disjoint pair cores.",
+                "Positive local holonomy alone is not a global frame-edge theorem.",
+            ],
+            metrics=[
+                "canonical_pairing_control_count",
+                "distinct_plane_support_commutation_theorem_count",
+                "finite_control_failure_count",
+                "global_carrier_groupoid_theorem_count",
+                "matrix_multiplicity_holonomy_theorem_count",
+                "negative_scalar_simplex_phase_exclusion_theorem_count",
+                "new_quantum_algorithm_count",
+                "positive_scalar_affine_plane_holonomy_theorem_count",
+                "scalar_affine_plane_channel_control_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_affine_plane_scalar_holonomy.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-affine-plane-scalar-holonomy.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SUPPORT-PRESSURE-NO-GO",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Affine plane support pressure no-go analysis",
+            status="planned",
+            hypothesis=(
+                "Proved that affine-plane channel support demand exceeds incident pair-core "
+                "capacity by a factorially divergent factor, forcing extensive overlap in the "
+                "collision-free natural law."
+            ),
+            protocol=(
+                "Measure affine-plane channel support demand and incident pair-core capacity ratio."
+            ),
+            positive_signal=(
+                "Support pressure theorem proves affine-plane channel support demand exceeds pair-core capacity by factorially divergent ratio."
+            ),
+            falsifiers=[
+                "The complete S6 and sampled S7 disjoint affine triangles do not extrapolate to threshold-scale orthogonal atoms.",
+                "A global proof cannot allocate a separate coefficient subspace to every positive affine-plane triangle.",
+                "The remaining mechanism must exploit structured overlap, matrix recoupling, association-scheme spectra, or traffic cancellation.",
+                "Support-pressure failure is not itself evidence of a bad frame edge or against a quantum speedup.",
+            ],
+            metrics=[
+                "collision_free_pressure_transfer_theorem_count",
+                "exact_rich_plane_count_control_count",
+                "finite_plane_count_control_failure_count",
+                "finite_pressure_capacity_failure_count",
+                "natural_node_frame_edge_theorem_count",
+                "new_quantum_algorithm_count",
+                "orthogonal_affine_plane_atomization_no_go_theorem_count",
+                "overlapping_plane_traffic_theorem_count",
+                "scaling_record_count",
+                "tail_elementary_pressure_lower_bound_log2",
+                "tail_exact_pressure_ratio_log2",
+                "tail_n",
+                "tail_residual_pressure_after_markov_slack_log2",
+            ],
+            dependencies=[
+                "self_dual_wreath_affine_plane_support_pressure_no_go.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-affine-plane-support-pressure-no-go.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-AFFINE-RECOUPLING-BUNDLE",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Affine recoupling bundle analysis",
+            status="planned",
+            hypothesis=(
+                "Converted uniform affine coefficient support into a flat transport bundle; "
+                "companion GPE pair paths compile the selected finite fibers, while the companion "
+                "natural S6 control forces a matrix partial-support replacement at scale."
+            ),
+            protocol=(
+                "Audit affine recoupling bundles and test flat transport fiber balance."
+            ),
+            positive_signal=(
+                "Flat transport fiber theorem converts uniform affine coefficient support into flat transport bundle."
+            ),
+            falsifiers=[
+                "Affine mask relabeling alone cannot move the W3 internal fibers.",
+                "Balanced coefficient metrics do not force affine leaf support.",
+                "Formal flatness alone is not evidence of an all-n efficient recoupling circuit.",
+                "A globally source-distinct S6 affine plane falsifies universal scalar coefficient fibers.",
+            ],
+            metrics=[
+                "all_n_affine_bundle_decomposition_theorem_count",
+                "balanced_nonaffine_bundle_falsifier_count",
+                "companion_finite_gpe_generator_compiler_count",
+                "explicit_generator_racah_formula_count",
+                "finite_control_count",
+                "finite_flat_transport_validation_failure_count",
+                "flat_fiber_transport_theorem_count",
+                "hierarchical_orientation_polar_sampler_count",
+                "label_simple_affine_bundle_control_count",
+                "maximum_w3_generator_fiber_difference",
+                "natural_collision_free_scalar_affine_falsifier_count",
+                "new_quantum_algorithm_count",
+                "nontrivial_internal_transport_control_count",
+                "polynomial_controlled_generator_transport_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_affine_recoupling_bundle.py",
+            ],
+            next_actions=[
+                "Run qsearch.py code-wreath-affine-recoupling-bundle.",
+            ],
+        ),
+        ExperimentRecord(
             id="EXP-CODE-SELF-DUAL-WREATH-EQUAL-COMMUTATOR-AUDIT",
             candidate_id="CODE-COSET-COLLECTIVE",
             title="Equal-pair commutator recoupling audit",

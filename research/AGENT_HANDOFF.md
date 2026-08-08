@@ -1,6 +1,6 @@
 # Research Agent Handoff
 
-Last updated: 2026-08-06
+Last updated: 2026-08-08
 
 ## Objective And Operating Policy
 
@@ -28,6 +28,20 @@ Flash without requiring it to reconstruct the mathematical reasoning. Gemini
 must preserve theorem scope, claim gates, negative results, and the ban on toy
 oracle/circuit search; it should not promote an artifact merely because tests
 pass.
+
+**Goal addendum: use the strongest model where it changes the research.** Codex
+must preferentially spend its remaining usage on difficult theorem-level work,
+counterexample construction, asymptotic analysis, mechanism selection, and
+research decisions with high downside if reasoned about incorrectly. It should
+deliberately defer low-judgment implementation work to Gemini 3.6 Flash through
+Antigravity. When Codex usage ends, Gemini should continue from this file and
+`research/MECHANICAL_FOLLOW_UP_PLAN.md`, executing the specified plumbing,
+artifact generation, repetitive tests, validation, documentation, and other
+mechanical follow-up without changing mathematical claims. Before exhaustion,
+Codex must record the current theorem, exact assumptions, known falsifiers,
+unresolved proof obligations, next high-value derivations, and concrete
+success/failure checks here. Running out of Codex usage is a model handoff, not
+the end of the repository's research goal.
 
 ## Authoritative Current State
 
@@ -59,6 +73,168 @@ pass.
 - Latest carrier-factorization check: 10 tests passed in 2.72 seconds.
 - Latest multistar-degree check: 8 tests passed in 16.37 seconds.
 - Latest orientation-Laplacian-gap check: 10 tests passed in 14.92 seconds.
+- Latest global-source mass/kernel check: 16 tests passed in 17.23 seconds.
+- Latest vertex trivialization/groupoid check: 14 tests passed in 3.17
+  seconds; the broader vertex/Laplacian/carrier regression passed 28 tests in
+  23.21 seconds.
+- Latest graded flat-transport obstruction/rescue check: 20 tests passed in
+  0.19 seconds; the combined vertex/graded focused chain passed 22 tests in
+  3.13 seconds before the rescue module was added.
+- Latest relation-cokernel/augmented-H0/hierarchical-cokernel/graded-trim
+  regression: 25 tests passed in 68.80 seconds.
+- Latest sibling-frame/word-map/event-transfer/trace-burden regression: 26
+  tests passed in 14.67 seconds. The new trace-burden artifact was then
+  generated successfully with zero exact-control failures.
+- Latest regular-master/trace-burden regression: 11 tests passed in 5.16
+  seconds. The regular-master artifact has maximum spectral residual
+  `1.34e-15` and zero finite-control failures.
+- Latest central-support/rank-bridge chain: 17 tests passed in 8.18 seconds;
+  both live artifacts regenerated with zero finite-control failures.
+- Latest subgroup-walk/affine-outlier/pair-angle/central-support chain: 31 tests
+  passed in 8.98 seconds. The subgroup-walk Fourier spectrum matches its full
+  `S_3` regular control, all 2,592 gauge transitions pass, and both new affine
+  subgroup artifacts have zero finite-control failures.
+- Latest local-transversality/Kronecker/Hamming-rank chain: 25 tests passed in
+  13.81 seconds. It proves the independent-Plancherel Hamming-three support
+  transition and fixed-pair rank scale, while leaving coherent incidence and
+  the complete node-frame edge explicitly open.
+- Latest natural pair-carrier law check: 5 tests passed in 1.03 seconds. The
+  exact annealed carrier law, all even overlap moments, weighted-L1 quenched
+  concentration argument, and low-dimensional mass bounds pass; the live
+  artifact's `n=32` quadratic-dimension mass is about `2^-188.75`. The simple
+  three-factor Markov/TV bound remains numerically loose at `n=32`, so it is
+  an asymptotic theorem rather than a strong finite guarantee.
+- Latest pair-carrier/return-walk chain: 10 tests passed in 1.37 seconds. The
+  all-order two-color count is now an exact convolution return probability,
+  the source-only generated-subgroup formula passes complete `S_2/S_3`
+  controls, and the regular `S_3,K=2` walk has a verified nonstationary
+  eigenvalue `3/4`, explicitly falsifying a coarse-global-gap route.
+- Latest pair-support/carrier/return/hierarchy-rank theorem chain: 41 tests
+  passed in 18.83 seconds. The new hierarchy exact-common rank module passed
+  its 5 focused tests in 4.90 seconds.
+- Latest hierarchy low-carrier trim check: 5 tests passed in 10.16 seconds.
+  At `n=48` it trims all pair carriers through dimension about `2^33.57`
+  with conditioned all-target rank budget about `2^-16.91`; surviving pair
+  correlations are at most `2^-33.57`.
+- Latest complete low-dimensional S6 vertex-channel audit: 3 tests passed in
+  17.39 seconds. It exhausts 1,155 globally distinct portfolios and 64
+  high-degree vertices; all 16 nonorthogonal components are positive flat
+  affine triangles.
+- Latest scalar affine-plane holonomy check: 3 tests passed in 0.13 seconds.
+  Latest affine-plane support-pressure no-go check: 4 tests passed in 5.29
+  seconds. At `n=48` the exact support-demand/capacity ratio is about
+  `2^179.13`, so orthogonal plane atomization is asymptotically impossible.
+- Latest signed-Steiner theorem chain: 31 focused tests passed across the
+  incidence boundary, gauge homology, random-gauge surrogate, sharp nullity,
+  deterministic scalar bulk edge, operator bulk reduction, and coverage
+  Welch-pressure modules. Individual checks passed 4, 4, 5, 4, 5, 4, and 5
+  tests respectively.
+- Latest physical trace-weighted PGM bridge/access-boundary chain: 18 focused
+  tests passed in 0.85 seconds. The physical sector average is exactly the
+  rescaled orientation-frame trace state; raw PGM eigenvalues are smaller by
+  the orientation width, so a cutoff `tau` on the orientation frame means
+  `tau/2^k` on the raw physical frame. The flat-frame control proves generic
+  normalized analysis still costs `Theta(sqrt(2^k))` even with no hard edge.
+- Latest conditional native pair-mass check: 5 tests passed in 5.93 seconds;
+  the broader pair/access regression passed 21 tests. The natural `d_alpha^4`
+  multiplicity law is exactly conditional active pair-frame trace mass, but
+  normalized cross-overlap QSVT remains superpolynomial on that mass.
+- Latest GPE direct pair-polar and holonomy reduction check: 15 focused tests
+  passed in 6.04 seconds. Coherent generalized phase estimation exports the
+  canonical carrier row while preserving unknown Kronecker multiplicities,
+  giving a polynomial exact pair-polar transport. Fundamental-cycle products
+  are therefore executable without dense Racah matrices; a natural
+  inverse-polynomial holonomy gap and recursive child-span coverage remain
+  open.
+- Latest recursive-node GPE compiler check: 28 focused tests passed in 13.45
+  seconds. The normalized parent relation now has an exact two-part circuit
+  normal form: normalized minimum-energy child embeddings plus a short-metric
+  endpoint mixer. Equal child short metrics make the mixer exactly a signed
+  Hadamard. Flat affine child embeddings prepare in affine dimension many GPE
+  transport stages with no square-root width penalty. All three selected
+  W3/W5 affine controls compile through the finite pair-path/GPE chain, while
+  a noncommuting metric control requires a genuine matrix-valued mixer and a
+  metric-ratio counterfamily keeps an exponentially small endpoint gap even
+  when pair GPE is available.
+- Latest partial-support child-embedding check: 27 affected focused tests
+  passed in 47.41 seconds. A sparse leaf-Gram reconstruction exposes a
+  globally source-distinct S6 affine plane with a 34-dimensional common span
+  but nonscalar component effects. The left child splits into rank-9 and
+  rank-25 projector channels; the right has a rank-9 `1/178` effect and a
+  full-rank complement. Cross-child effect commutator norm is exactly
+  `1/356`, and endpoint spectra are `81/170,1/2,9/17` versus
+  `8/17,1/2,89/170`. This falsifies universal scalar affine fibers. The
+  surviving recursive target is a matrix-valued partial-support sheaf, whose
+  coherent GPE compiler and positive native-mass theorem are open.
+- Latest partial-support source-mass check: 13 focused tests passed in 21.31
+  seconds. The direct S6 conjugate-chain mechanism requires both trivial and
+  sign source irreps. For `m=2 ceil(log2 n!)` independent Plancherel sources,
+  its probability is at most `m(m-1)/(n!)^2`; any source of dimension at most
+  `L` has union mass at most `m p(n)L^2/n!`. Global-distinct conditioning only
+  divides by a probability tending to one. At `n=48`, the conditioned direct
+  S6 bound is about `2^-362.06`, and the bound for any `n^4`-dimensional anchor
+  is about `2^-105.93`. The known S6 mechanism is physically negligible; only
+  high-dimensional-source matrix partial supports remain relevant.
+- Latest matrix-POVM recursive compiler check: 18 focused tests passed in
+  21.50 seconds. Every normalized child embedding factors exactly as a
+  component POVM Naimark dilation `sum_e |e>sqrt(H_e)` followed by component
+  partial isometries. The parent relation is an endpoint two-outcome POVM,
+  then the child POVM, then GPE-compatible support transport. Noncommuting
+  trine effects pass exactly, and no intrinsic square-root outcome-count loss
+  appears. Generic bounded-polynomial access to `sqrt(H_e)` has degree
+  `Omega(delta^-1/4)` at minimum effect eigenvalue `delta`; at `delta=2^-512`
+  the recorded lower-bound log degree is `127.21`. This premise cannot be
+  inferred from a small component trace: the sparse-support companion below
+  gives rare low-rank effects with a constant positive edge. Natural effect-
+  POVM dilation, all-depth GPE support compatibility, and high-dimensional
+  native mass remain open.
+- Latest component-POVM sparse-support boundary: 5 focused tests passed in
+  0.15 seconds. For a Haar isometry `W:C^r->C^N` and coordinate block of
+  aspect `beta`, the exact generic zero/one atoms and free-Jacobi edges show
+  that as `beta->0` at fixed `alpha=r/N`, positive eigenvalues converge to
+  `alpha` while support-rank and trace fractions are `beta/alpha` and `beta`.
+  Therefore rare outcomes do not by themselves trigger the generic square-
+  root-QSVT obstruction. Natural Jacobi universality and coherent support
+  SELECT remain unproved.
+- Latest component-effect regular-master reduction: 4 focused tests passed in
+  0.70 seconds. Canonical child effects are spectral-calculus expressions in
+  regular-master orientation projectors. Matrix-effect source probability is
+  a source-center support trace; physical common-span mass is its common-space
+  cutdown; ordinary defect trace can be smaller still. The S3 control gives
+  exact masses `16/81`, `5/81`, and `2/81`, respectively, but has repeated
+  sources and no asymptotic force. A high-dimensional center-valued local law
+  is now the precise missing mass theorem.
+- Latest corrected MRS model-scope check: 5 focused tests passed in 0.11
+  seconds. `M=Delta(M)` characterizes only invariance under early projective
+  transcript measurement. Classical use of a projective transcript requires
+  the stronger block-scalar condition `M=C(M)`. A four-dimensional control is
+  dephasing invariant but violates the latter, proving that off-diagonal
+  coherence is sufficient but not necessary for transcript-only separation.
+  The full adaptive MRS transcript is a sequential POVM `{E_t}`; a physical
+  separation must put the PGM effect outside `{sum_t f_t E_t: 0<=f_t<=1}` on
+  nonnegligible accepted mass. No such separation is proved, so the MRS gate
+  remains closed.
+- Latest MRS transcript-POVM separation check: 5 focused tests passed in 0.65
+  seconds. For any specified adaptive transcript POVM `{E_t}`, transcript-only
+  binary effects form the zonotope `{sum_t f_t E_t:0<=f_t<=1}`. Box-constrained
+  projection gives an exact membership test and its normalized residual gives
+  a dual separation witness. A two-stage adaptive Kraus control compiles
+  exactly. The physical PGM effect, its transcript POVM, and separation from
+  every allowed MRS policy are still absent.
+- Latest weighted affine-relation bulk check: 7 focused tests passed in 6.44
+  seconds, including exact comparison with the physical star-spectrum engine.
+  The combined weighted-bulk/relation-cokernel regression passed 12 tests.
+  Five finite collision-free rows certify beginning at `n=32`; at `n=48`
+  the conditioned burden/capacity ratio is below `2^-170.97` and the fixed
+  relation-window coefficient outlier-rank bound is below `7.4e-26`.
+- The relation-cokernel theorem resolves the old state-mass-transfer gate:
+  every pair-relation direction has exactly zero ideal PGM polar amplitude.
+- Direct pair-common Cech completeness is asymptotically falsified, but
+  recursive child-span relations are information-theoretically complete. An
+  exact constant-arity polar chain now bypasses pairwise pseudoinverse-frame
+  comparability as a mandatory identity. The active gates are a natural
+  independent-source all-depth node-frame spectral event and tightly
+  normalized coherent node-frame/root access.
 - The carrier-factorization and multistar-degree modules are now fully wired
   (registry seed, `qsearch.py` subcommand, runner dispatch, clean-registry
   dispatch tests, README, Sellke literature record). The Laplacian-gap module
@@ -78,6 +254,1342 @@ pass.
   `site/progress.js`, and `node --check site/progress.js` passes.
 
 ## Latest Mathematical Results
+
+### Physical PGM Bridge, Generic Access Boundary, And Direct GPE Escape
+
+Files:
+
+- `self_dual_wreath_trace_weighted_pgm_bridge.py`
+- `self_dual_wreath_native_frame_access_boundary.py`
+- `self_dual_wreath_pair_transport_native_mass_boundary.py`
+- `self_dual_wreath_gpe_pair_polar_transport.py`
+- `self_dual_wreath_gpe_holonomy_resolver_reduction.py`
+- matching JSON artifacts and focused tests.
+
+For one physical Fourier sector, let `R` be the stacked orientation analysis,
+`S=R^*R`, `w=2^k`, and let `C` be the row-copy intertwiner. The physical
+analysis is `A=w^-1/2 R^* C` and `CC^*R=R`, hence
+
+`AA^*=S/w`.
+
+The exact physical PGM coisometry is `Q^*C`, where `Q=R S^-1/2`. Truncating
+the rescaled orientation frame at `tau` gives physical average failure exactly
+
+`tr[S 1_(0,tau)(S)]/tr(S)`.
+
+This closes the old state-mass-transfer caveat: normalized trace weighting is
+the physical PGM sector average, not an abstract surrogate. It also enforces a
+scale correction that must not be lost: the corresponding raw PGM cutoff is
+`tau/w`, not `tau`.
+
+The bridge does not supply tight access. For retained frame eigenvalues
+`lambda_i`, generic normalized analysis has good probability
+
+`a^2=sum_i lambda_i^2/(w sum_i lambda_i)`.
+
+Ozols--Roetteler--Roland water filling gives exact-fidelity conversion scale
+`sqrt(w/lambda_min)`, while the variable-time RMS inverse-singular scale is
+`sqrt(w rank(S)/tr(S))`. The flat control `S=I` has no low mode to trim but
+still costs `Theta(sqrt(w))`. Therefore hard-edge control and trace truncation
+cannot make generic PREPARE/SELECT/QSVT access polynomial. This is an access-
+model boundary, not an arbitrary-circuit lower bound.
+
+For two orientation projectors `E,F`, each active Jordan channel has
+`tr((E+F)|channel)=2`, including a common channel. Conditional active
+pair-frame trace mass is therefore exactly principal-angle multiplicity mass.
+The natural law transfers to `q4(alpha)=d_alpha^4/Z4`, and
+
+`q4[d_alpha<=L] <= p(n)^2 L^4/(n!)^2`.
+
+Since the pair correlation is `1/d_alpha`, normalized cross-overlap QSVT has
+superpolynomial branchwise degree on natural active mass. This obstruction is
+real but not fundamental.
+
+The direct polar is entanglement reassociation. In a carrier `alpha`,
+
+`E F = (1/d_alpha) U_alpha`,
+
+where `U_alpha` maps
+`|i>_a |Omega_alpha>_(0,b)` to
+`|Omega_alpha>_(0,a) |i>_b` and preserves every multiplicity label.
+Coherent generalized nonabelian phase estimation acts as
+
+`|alpha,j,i> -> d_alpha^-1/2 sum_t |alpha,i,t> |alpha,j,t>`.
+
+Apply this GPE to blocks `0,a,b`, equality-control on their irrep labels, swap
+the exported row registers of `a,b`, and uncompute. Beals' `S_n` QFT plus
+sparse Young-orthogonal adjacent-transposition actions makes the circuit
+polynomial with no `1/d_alpha` amplification and no full Kronecker transform.
+Pair transport is therefore resolved and must not be listed as the main
+bottleneck again.
+
+Different pair edges regroup tensor factors differently, so GPE does not kill
+Racah holonomy. It makes it executable. On one flat equal-rank channel, choose
+a spanning tree with root transports `T_v`; each non-tree edge gives
+
+`H_e=T_v^* U_(v<-u) T_u`.
+
+The connection-Laplacian kernel is exactly the simultaneous `+1` fixed space
+of these fundamental holonomies. Hence a coherently selectable generator
+family with inverse-polynomial frustration gap would yield a polynomial
+fixed-space resolver. A succinct near-identity rotation has exponentially
+small gap, so efficient edge circuits alone do not prove this. Partial
+supports, emergent child-span dependencies, and complete relative-frame
+whitening remain outside the theorem. No decoder or speedup is claimed.
+
+### Recursive Child-Span Compiler Normal Form
+
+Files:
+
+- `self_dual_wreath_gpe_recursive_node_compiler.py`
+- `research/representation/self_dual_wreath_gpe_recursive_node_compiler.json`
+- `tests/test_self_dual_wreath_gpe_recursive_node_compiler.py`
+
+For a parent common-span isometry `X`, child syntheses `S_L,S_R`, and
+
+`A_s=X^*(S_sS_s^*)^+X`, `M=A_L+A_R`,
+
+define the normalized minimum-energy child embeddings
+
+`W_s=S_s^+X A_s^-1/2`.
+
+The normalized recursive relation is exactly
+
+`[W_L A_L^1/2 M^-1/2; -W_R A_R^1/2 M^-1/2]`.
+
+This separates child-fiber preparation from endpoint conditioning. If
+`A_L=A_R`, the endpoint mixer is exactly `I/sqrt(2)` on each side. If the
+metrics do not commute, even constant spectral comparability can require a
+matrix-valued rotation. Pair GPE does not remove that operation. If the
+normalized child embedding instead has a flat affine form
+
+`|A|^-1/2 sum_(x in A)|x>V_x`,
+
+affine Hadamards plus the transports `V_(x+g)V_x^*` prepare it in `dim(A)`
+transport stages. The companion direct-GPE theorem compiles compatible pair
+polar edges without inverse carrier-dimension amplification. This closes the
+finite W3/W5 generator-transport objection, not the all-n theorem: structured
+child fibers, compact reversible generator SELECT, matrix holonomy, and a
+natural endpoint gap on positive PGM mass remain open.
+
+### Natural Scalar-Affine Falsifier And Partial Supports
+
+Files:
+
+- `self_dual_wreath_partial_support_child_embedding.py`
+- `research/representation/self_dual_wreath_partial_support_child_embedding.json`
+- `tests/test_self_dual_wreath_partial_support_child_embedding.py`
+
+The child embeddings can be reconstructed from the sparse leaf block Gram.
+If `Z=(Z_L,Z_R)` is an orthonormal cross-dependency basis, orthonormalize the
+common physical image and form the normalized minimum-energy embeddings
+`W_L,W_R`. Their mask effects
+
+`H_(s,e)=W_(s,e)^*W_(s,e)`
+
+are positive and sum to identity for each child. The scalar affine compiler
+requires each active `H_(s,e)=w_e I` on the full common fiber.
+
+The globally source-distinct S6 node with masks `{2,5,11,12}` falsifies this
+condition while retaining affine mask support. Its 34-dimensional left child
+effects are complementary rank-9/rank-25 projections. The right mask-11
+effect is `1/178` on a rank-9 support; mask 12 is full rank with eigenvalues
+`177/178` and `1`. A cross-child effect commutator has norm `1/356`. The short
+metrics themselves commute, proving that endpoint diagonalization does not
+remove mask-resolved matrix traffic.
+
+Do not pursue a universal scalar coefficient-affine theorem again. The live
+target is a matrix partial-support sheaf: coherent support/eigenchannel SELECT,
+compatible GPE transports, the matrix endpoint mixer, and holonomy filtering.
+The finite S6 obstruction is not yet known to carry positive asymptotic native
+PGM mass, so it does not kill the collective route.
+
+### Low-Dimensional Partial-Support Source Mass Is Negligible
+
+Files:
+
+- `self_dual_wreath_partial_support_source_mass_boundary.py`
+- `research/representation/self_dual_wreath_partial_support_source_mass_boundary.json`
+- `tests/test_self_dual_wreath_partial_support_source_mass_boundary.py`
+
+For `m` independent Plancherel source partitions,
+
+`Pr[min_i d_(lambda_i)<=L] <= m p(n)L^2/n!`.
+
+The direct S6 conjugate-chain construction specifically needs both trivial and
+sign, so its probability is at most
+
+`m(m-1)/(n!)^2`.
+
+After conditioning on global distinctness, divide by `P_cf`; the exact
+collision-free theorem has `P_cf->1` at information-threshold copy count.
+Stirling plus Hardy--Ramanujan therefore makes every polynomial-dimensional
+anchor event `n^-omega(1)`. The direct S6 mechanism cannot have positive
+natural source mass despite being a valid universal counterexample.
+
+This does not establish scalar affine behavior on the physical bulk. The only
+relevant unresolved obstruction is a nonscalar component POVM generated
+entirely by typical high-dimensional source irreps. Future screens or theorems
+must exclude low-dimensional anchors before being treated as evidence.
+
+### Matrix-POVM Recursive Compiler Normal Form
+
+Files:
+
+- `self_dual_wreath_matrix_povm_recursive_compiler.py`
+- `research/representation/self_dual_wreath_matrix_povm_recursive_compiler.json`
+- `tests/test_self_dual_wreath_matrix_povm_recursive_compiler.py`
+
+For any normalized child embedding `W` with components `W_e`, define
+
+`H_e=W_e^*W_e`, so `sum_e H_e=I`.
+
+Component polar decomposition gives `W_e=V_e sqrt(H_e)`. Therefore the exact
+child compiler is a coherent POVM Naimark dilation
+
+`|psi> -> sum_e |e>sqrt(H_e)|psi>`
+
+followed by controlled partial isometries `V_e`. The recursive endpoint mixer
+is itself a two-outcome POVM with Kraus operators
+`C_s=A_s^1/2(A_L+A_R)^-1/2`. An arbitrary parent relation is therefore:
+
+1. endpoint POVM dilation;
+2. selected child component-POVM dilation;
+3. controlled support polar, using GPE when the support channel is compatible.
+
+This works algebraically for noncommuting effects and has no intrinsic
+`sqrt(number of outcomes)` loss. It does not give a generic circuit. If a
+bounded polynomial approximates `sqrt(x)` down to effect edge `delta`, the
+mean-value theorem plus Markov inequality gives degree
+`Omega(delta^-1/4)`. Thus a representation-specific direct Naimark transform
+or inverse-polynomial natural effect edge is required only if the positive
+edge is actually small. Component trace and outcome probability do not prove
+that premise. Pair GPE solves only step 3.
+
+### Sparse-Support Component-POVM Boundary
+
+Files:
+
+- `self_dual_wreath_component_povm_sparse_support_boundary.py`
+- `research/representation/self_dual_wreath_component_povm_sparse_support_boundary.json`
+- `tests/test_self_dual_wreath_component_povm_sparse_support_boundary.py`
+
+For a Haar isometry `W:C^r->C^N`, coordinate projector `P_e` of rank `b`,
+`alpha=r/N`, and `beta=b/N`, the component effect `H_e=W^*P_eW` has generic
+atom multiplicities
+
+`mult_0=max(r-b,0)`, `mult_1=max(r+b-N,0)`
+
+and free-Jacobi fractional edges
+
+`lambda_+-=(sqrt((1-alpha)beta) +- sqrt(alpha(1-beta)))^2`.
+
+As `beta->0` at fixed `alpha`, both edges converge to `alpha`, their width is
+exactly `4sqrt(alpha(1-alpha)beta(1-beta))`, support-rank fraction is
+`beta/alpha`, and trace fraction is `beta`. Thus a many-outcome effect may be
+approximately `alpha` times a tiny-rank support projector. The plausible
+natural compiler target is coherent support-projector SELECT plus GPE support
+transport, not generic approximation of `sqrt(x)` at an assumed exponentially
+small positive eigenvalue.
+
+This is a Haar benchmark only. The natural Plancherel/Racah child embedding
+may have arithmetic outliers, non-Haar alignment, or hard edges. Required
+theorems are natural block-aspect identification, mixed trace/Jacobi
+universality, operator-norm edge rigidity on positive accepted mass, and
+all-depth error composition.
+
+### Component-Effect Regular-Master Reduction
+
+Files:
+
+- `self_dual_wreath_component_povm_regular_master_reduction.py`
+- `research/representation/self_dual_wreath_component_povm_regular_master_reduction.json`
+- `tests/test_self_dual_wreath_component_povm_regular_master_reduction.py`
+
+The canonical full-domain synthesis gives, on a common-span isometry `X`,
+
+`A_s=X^*F_s^+X`,
+
+`H_(s,e)=A_s^-1/2 X^*F_s^+ E_e F_s^+ X A_s^-1/2`.
+
+This equals the leaf-coefficient effect and is built entirely from sums,
+products, support/intersection spectral projections, pseudoinverses, and
+compressed inverse square roots. It therefore preserves the regular-master
+source decomposition. For the positive nonscalarity defect
+
+`D_Lambda=sum_(s,e)(H_(s,e)-tr(H_(s,e))/r_Lambda I)^2`,
+
+three measures are different: source-center support probability, its physical
+common-span cutdown, and ordinary normalized defect trace. The exact repeated-
+source S3 control gives `16/81`, `5/81`, and `2/81`. Consequently scalar
+moments cannot prove negligible matrix-effect block probability without a
+relative-rank theorem or center-valued local law.
+
+Do not infer that removing low-dimensional source labels removes low-
+dimensional internal carriers; tensor products of high-dimensional sources
+can contain trivial/sign sectors. The required asymptotic cut and estimate
+must occur in the master center/internal-carrier decomposition itself.
+
+### Exact MRS Transcript Criteria
+
+Files:
+
+- `self_dual_wreath_mrs_coherence_escape_criterion.py`
+- `research/representation/self_dual_wreath_mrs_coherence_escape_criterion.json`
+- `tests/test_self_dual_wreath_mrs_coherence_escape_criterion.py`
+
+Primary source: Moore, Russell, and Sniady,
+`https://arxiv.org/abs/quant-ph/0612089`, especially Section 3.
+
+Their sieve weakly Fourier samples every source and repeatedly measures an
+irrep in a selected pair's tensor-product decomposition. Inputs are destroyed,
+and the classical irrep-labeled forest transcript is the algorithm's usable
+information. For transcript projectors `{P_t}`, define
+
+`Delta(X)=sum_t P_t X P_t`.
+
+For final decision effect `M` and state `rho`,
+
+`tr(M rho)-tr(M Delta(rho))=tr((M-Delta(M))rho)`.
+
+Thus deferring measurements changes nothing for every input iff
+`M=Delta(M)`. This is not the criterion for simulation from the classical
+transcript. Define the block-scalar conditional expectation
+
+`C(M)=sum_t tr(P_t M)/tr(P_t) P_t`.
+
+For a projective transcript, the output depends only on the classical block
+probabilities for every input iff `M=C(M)`. Hence an off-diagonal block is a
+sufficient but not necessary separation witness: a block-diagonal effect that
+is nonscalar within one isotypic block also uses information absent from the
+classical label. The exact finite control has `M=Delta(M)` but
+`||M-C(M)||=1/2` and changes the transcript-only probability by `1/2`.
+
+The adaptive MRS process is more general than one fixed projective transcript.
+If `{E_t}` is its complete sequential transcript POVM, every binary decision
+obtainable by classical transcript postprocessing has effect
+`sum_t f_t E_t`, `0<=f_t<=1`. A formal physical escape must separate the PGM
+decision effect from this entire set on nonnegligible accepted-state mass.
+Pair GPE alone is carrier-label block diagonal and proves neither an
+off-diagonal nor a within-block/full-POVM witness.
+
+The companion files
+`self_dual_wreath_mrs_transcript_povm_separation.py` and
+`research/representation/self_dual_wreath_mrs_transcript_povm_separation.json`
+make this criterion executable for any specified `{E_t}`. The effect set is a
+box-constrained zonotope; Hilbert--Schmidt projection supplies exact membership
+and the normalized residual supplies a support-function dual witness. The
+module also compiles two-stage adaptive Kraus trees into terminal transcript
+effects. It does not optimize over all allowed MRS policies.
+
+Do not claim the architecture is outside MRS merely because it is described as
+globally coherent. Either produce the transcript-dephasing witness after the
+complete circuit is specified, produce a within-block witness, or directly
+separate the decision effect from all classical postprocessings of the adaptive
+transcript POVM. Otherwise prove a simulation into the measured sieve class.
+Even a valid separation would avoid only this lower-bound model; it would not
+prove efficiency, correctness, classical hardness, or speedup.
+
+### Sibling Frames, Mixed-Arity Polar Schedule, And Trace Burden
+
+Files:
+
+- `self_dual_wreath_sibling_frame_mp_moments.py`
+- `self_dual_wreath_sibling_frame_jacobi_surrogate.py`
+- `self_dual_wreath_sibling_frame_joint_freeness.py`
+- `self_dual_wreath_sibling_frame_joint_conditioning_surrogate.py`
+- `self_dual_wreath_sibling_word_map_normal_form.py`
+- `self_dual_wreath_multiscale_polar_schedule.py`
+- `self_dual_wreath_trace_polynomial_edge_burden.py`
+- matching JSON artifacts and focused tests.
+
+For independent Plancherel source labels, the sibling child frame
+`A=sum_(e:e_j=0) E_e` has exact normalized moments through order four. They
+converge to the first four Marchenko--Pastur moments at aspect
+`alpha=2^(K-1)/|G|`. The exact identities also falsify scalar concentration:
+
+`E||A-alpha I||_F^2/D=alpha(1-1/|G|)` and
+`E||A-B||_F^2/D=2alpha(1-1/|G|)`.
+
+Sibling exchangeability therefore does not make the frames samplewise equal.
+Exact mixed moments prove independent-source freeness through total degree
+four, uniformly in the target dimension. More generally, every mixed binary
+word `w` has the exact normal form
+
+`E tr(w(A,B))/D = |G|^-p sum_x I_w(x)[chi_nu(prod x)/d_nu]q_p(x)^(K-1)`.
+
+The two split constraints reduce exact enumeration from `|G|^p` to
+`|G|^(p-2)`. This is the right growing-word object, but finite screens through
+degree six are not asymptotic evidence.
+
+For the Gaussian benchmark `A=XX*`, `B=YY*`, with `X,Y` of size `D x m` and
+`alpha=m/D>1/2`, the finite row-projector reduction is exact. When
+`alpha<1`, there are `D-m` zero eigenvalues, `D-m` one eigenvalues, and
+`2m-D` fractional eigenvalues. Passing to the row-space complement gives the
+effective full-rank Jacobi parameter `alpha/(2alpha-1)`. In both singular and
+full-rank regimes the limiting fractional support is
+
+`lambda_+-=(1+-sqrt(2alpha-1))^2/(4alpha)`.
+
+This corrects the tempting but wrong direct substitution of `alpha<1` into a
+full-rank MANOVA law. The adaptive `K/K+1` schedule gives only a relative
+top-split Jacobi gap, uniformly at least
+
+`(3-2sqrt(2))/6 = 0.0285954792...`.
+
+It does not control the parent hard edge. `K+2` copies put the selected top
+split at child aspect `[2,4)`, but a binary all-depth tree still crosses the MP
+hard edge. The exact multiway polar identity
+
+`Q_T=(direct_sum_i Q_i) col_i(S_i^(1/2)) S_T^(-1/2)`
+
+allows a mixed schedule: binary levels through `K-2`, one eight-way merge to
+`K+1`, and one final binary merge to `K+2`. Its Gaussian-surrogate aspects are
+`<=1/2`, `[2,4)`, and `[4,8)`, giving all-depth nonzero edge floor
+`3/2-sqrt(2)` and support condition upper `17+12sqrt(2)`. This proves neither
+the natural edge nor coherent access; naive width-normalized LCU can erase the
+physical gap.
+
+The normalized-trace route is much harder than the old handoff stated. With
+probability at least one half, the natural target carrier obeys
+`log D = Theta((log |G|)^2)` by an elementary Plancherel dimension tail.
+Chebyshev extremality therefore forces interval-uniform trace-polynomial
+degree `Theta((log |G|)^2)` to detect one outlier. At `n=48`, `K=205`, and 25
+percent slack, the typical-carrier burden is at least 13,094 degrees for the
+upper edge and 72,449 for the lower edge, even optimistically assuming the
+positive support is known. Fixed words and `O(log |G|)` words are cut as
+generic edge-proof strategies. This is not a natural-frame no-go: a
+law-specific local law, operator-valued concentration, deterministic
+no-outlier theorem, or exact multiplicity reduction could bypass the
+interval-uniform trace penalty.
+
+### Regular Master Lift And Central-Support Local-Law Target
+
+Files:
+
+- `self_dual_wreath_regular_master_central_support.py`
+- matching JSON artifact and focused tests.
+
+Replace every source slot by the left regular representation and define the
+same orientation invariant projectors. Fourier decomposition gives the exact
+block identity
+
+`A_reg = direct_sum_Lambda A_Lambda tensor I_(product_j d_Lambda_j)`.
+
+Therefore normalized regular trace is exactly product-Plancherel expectation
+of normalized physical-block trace for every polynomial. This is a fixed
+group-register operator, not another surrogate.
+
+The desired edge event is not its ordinary bad spectral mass. If
+`Q_B=1_B(A_reg)` and `c_Z` is central support in the source-label block center,
+then
+
+`Pr_Lambda[spec(A_Lambda) intersects B] = tr_reg c_Z(Q_B)`.
+
+Ordinary moments see only
+`tr_reg Q_B=E rank(Q_(B,Lambda))/dim(H_Lambda)`. The exact `S_3`
+standard-target control has bad-block probability `4/9` but scalar bad
+spectral mass `1/9`. More importantly, dilution survives the physical source
+condition: an exact globally distinct `S_4`, two-copy root control has
+conditional bad-block probability `54/89`, scalar mass `10/267`, and ratio
+`81/5`.
+This makes the missing theorem precise: prove a center-valued local law, bound
+the Plancherel trace of bad central support directly, or prove every bad
+projection has nonnegligible relative rank. The regular master norm itself is
+a worst-block norm and can be set by negligible sectors. The lift does not
+provide tightly normalized coherent access to a width-`w` node sum.
+
+### Relative-Rank Bridge And Symmetry No-Go
+
+Files:
+
+- `self_dual_wreath_central_support_rank_bridge.py`
+- matching JSON artifact and focused tests.
+
+If every nonzero bad block projection has relative rank at least `r_min`, then
+
+`Pr[bad block] <= scalar bad spectral mass/r_min`.
+
+This is the highest-leverage possible bypass currently visible. A natural
+bound `r_min>=|G|^-c` for fixed `c` changes the interval-uniform polynomial
+degree from `Theta((log |G|)^2)` to `O(log |G|)`. At `n=48`, `c=1`, the
+upper/lower burdens become 167/921 instead of 13,094/72,449.
+
+The premise is not proved. Every node frame commutes with the global diagonal
+`S_n` action, but Schur form is only
+
+`A=direct_sum_alpha I_(d_alpha) tensor M_alpha`.
+
+Trivial and sign sectors have `d_alpha=1`, while their multiplicity operators
+can be large. A globally distinct `S_4` control has trivial and sign
+multiplicity two and admits rank-one commutant projections of relative rank
+`1/54<1/24`. Thus global covariance cannot prove even a `1/|G|` floor.
+Pursue a natural relative-rank theorem only through the specific
+subgroup-projector sum or source typicality; otherwise attack central support
+directly.
+
+### Subgroup-Projection Walk And Affine Common-Outlier Exclusion
+
+Files:
+
+- `self_dual_wreath_subgroup_projection_walk.py`
+- `self_dual_wreath_affine_node_common_outlier.py`
+- matching JSON artifacts and focused tests.
+
+After lifting target and sources to regular representations, every orientation
+projector is uniform averaging over a diagonal subgroup `H_e` of
+`S_n^(2K+1)`. A normalized node frame is therefore the exact
+subgroup-projection Markov operator
+
+`M_T=|T|^-1 sum_(e in T) P_(H_e)`.
+
+Product Fourier decomposition yields every physical target/source node frame
+divided by `|T|`, with regular multiplicity. In gauge coordinates
+`a_i=t^-1x_i`, `b_i=t^-1y_i`, one common uniform multiplier updates every
+unselected relative coordinate while each selected coordinate is fixed. The
+complete `S_3`, one-pair control matches all 216 regular eigenvalues to the
+physical Fourier blocks and verifies all 2,592 gauge transitions.
+
+For a coordinate-aligned affine node of dimension `d`, the orientation
+membership system has exactly `2d+1` distinct nonempty patterns and binary
+incidence rank `d+1`. For `n>=5`, subdirect-product simplicity of `A_n` and
+the sign quotient give the exact generated subgroup order
+
+`|L_T|=|S_n|^(2d+1)/2^d`.
+
+The regular walk's eigenvalue one has scalar mass `1/|L_T|`. More importantly,
+a physical frame can have eigenvalue `|T|` only if all `2d` source irreps on
+the varying coordinates are trivial or sign. Independent Plancherel failure
+at a fixed node is at most `(2/|S_n|)^(2d)`. Under global source distinctness,
+the event is impossible for every `d>=2`; over every bottom node its
+unconditioned numerator is exactly bounded by
+
+`2^K/|S_n|^2 < 2/|S_n|`.
+
+After conditioning, divide by `P_cf(n,K)=1-o(1)`. Thus exact width-sized
+outliers disappear simultaneously over the natural hierarchy with factorially
+small failure probability. This is not a near-outlier or natural-edge theorem:
+eigenvalues below but close to `|T|` remain uncontrolled, and the required
+normalized edge is `Theta(1/|S_n|)` rather than merely a gap below one.
+
+### Full-Regular Pairwise Subgroup-Angle Route Is Refuted
+
+Files:
+
+- `self_dual_wreath_subgroup_pair_angle_no_go.py`
+- matching JSON artifact and focused tests.
+
+For any two distinct orientations, their generated subgroup has three
+nonempty membership patterns, parity rank two, and exact order
+
+`|<H_e,H_f>|=|S_n|^3/2`.
+
+For every affine node with `d>=2`, this is strictly smaller than `|L_T|`.
+Consequently, in the full regular representation, pair-common invariants
+strictly contain all-node invariants. After removing only the all-node common
+space, **every pairwise cosine is exactly one**. The complete cosine matrix
+has spectral radius `|T|-1`. The dense `S_2` two-cube control verifies all six
+pairs exactly: ambient dimension 32, pair-common dimension eight,
+all-node-common dimension four, and cosine residual below `1e-12`.
+
+This cuts unrefined pairwise subspace-arrangement/Kazhdan-angle proofs on the
+regular master. It does not refute a physical typical-block theorem: the
+extra pair-common sectors may be carried by atypical Fourier blocks. A viable
+angle route must prove a source-center quotient, show pair-common central
+support is negligible on the relevant physical blocks, or use genuinely
+higher-order incidence information. Do not cite the small noncommon
+two-projector angle after quotienting each pair's own intersection as a
+full-family expansion bound; those are different quotients.
+
+### Sharp Pair-Support And Rank Transition
+
+Files:
+
+- `self_dual_wreath_local_pair_transversality.py`
+- `self_dual_wreath_pair_common_covering_transition.py`
+- `self_dual_wreath_fixed_family_common_rank_dilution.py`
+- `self_dual_wreath_plancherel_kronecker_positivity.py`
+- `self_dual_wreath_extended_kronecker_threshold.py`
+- `self_dual_wreath_hamming_stratum_rank_transition.py`
+- matching JSON artifacts and focused tests.
+
+For three independent Plancherel irreps of `S_n`, character column
+orthogonality gives the exact identity
+
+`g(lambda,mu,nu)/(d_lambda d_mu d_nu)=(1+X)/|S_n|`,
+
+`E[X]=0`, and
+
+`E[X^2]=sum_(nonidentity conjugacy classes C) 1/|C|=o(1)`.
+
+Nonnegativity of the Kronecker coefficient therefore proves
+`Pr[g(lambda,mu,nu)=0]=o(1)`. The same calculation with fixed target `tau`
+and `q>=3` independent Plancherel factors proves the stronger normalized
+multiplicity law
+
+`|S_n| m_tau/(d_tau product_j d_(lambda_j)) -> 1`
+
+in probability, uniformly for each fixed target. This is an
+**independent-Plancherel pointwise theorem**. It does not prove arbitrary
+couplings, uniform-partition positivity, or simultaneous covering of every
+target irrep.
+
+Consequently the natural pair geometry has a sharp rank-density transition.
+Hamming-one and Hamming-two orientation pairs are simultaneously transverse
+with probability `1-o(1)` under global source distinctness. For every fixed
+`h>=3` with `K-h>=3`, a density `1-o(1)` of the Hamming-`h` stratum is live,
+and each fixed pair has relative common rank
+
+`R_(e,f)=(2+o(1))/|S_n|^3`.
+
+The density conclusion uses an average bad-pair indicator and Markov, not an
+invalid union bound over the exponential Hamming stratum. Fixed orientation
+families also show a decisive support/rank separation: all target supports
+may be present while their scalar common rank is factorially tiny. These
+results settle pair support and pointwise pair rank; they do **not** settle
+the alignment of noncommon carrier directions around triples/cycles or the
+complete node-frame spectral edge. The next mathematical object is the
+multiplicity-weighted natural carrier law and its coherent higher-order
+incidence, not another support screen.
+
+### Natural Pair-Carrier Law Is Solved
+
+Files:
+
+- `self_dual_wreath_natural_pair_carrier_law.py`
+- `research/representation/self_dual_wreath_natural_pair_carrier_law.json`
+- `tests/test_self_dual_wreath_natural_pair_carrier_law.py`
+
+For a fixed orientation pair, let `alpha` be the exact pair-angle carrier and
+let the shared, left-only, and right-only source blocks be independent
+Plancherel tensors. The shared block may contain any fixed target. Exact
+character orthogonality and block independence give
+
+`E[A_alpha]=d_alpha^4/|S_n|^3`.
+
+After rank normalization the annealed carrier distribution is exactly
+
+`q4(alpha)=d_alpha^4/Z4`, `Z4=sum_alpha d_alpha^4`.
+
+Every even overlap moment follows:
+
+`E[Tr |B_e^*B_f|^(2p)]/D`
+`=|S_n|^-3 sum_alpha d_alpha^(4-2p)`.
+
+In particular, active pair rank is `Z4/|S_n|^3`, Hilbert--Schmidt overlap is
+`1/|S_n|^2`, and the fourth moment is `p(n)/|S_n|^3`. If all three random
+blocks have at least three factors, the fixed-target variance theorem can be
+averaged under `q4`; this proves quenched total-variation convergence without
+unioning over all irreps. Also
+
+`q4[d_alpha<=L] <= p(n)^2 L^4/|S_n|^2`
+
+and the `q4` RMS pair correlation is at most `sqrt(p(n)/|S_n|)`. Thus the
+worst-case `1/(n-1)` pair correlation and the mere presence of low-dimensional
+carriers are radically unrepresentative of natural multiplicity mass.
+
+This is still not a node-frame edge. The unresolved object is coherent
+alignment of the overwhelmingly high-dimensional carrier multiplicity spaces
+around orientation triangles and longer closed walks. Existing exact
+sibling-frame moments through degree four and the all-word normal form remain
+the correct bridge. A useful reformulation found during this pass is that the
+`K`th moment of the two-color identity count is a return probability for the
+fixed subgroup measure on `G^(2K)` obtained by choosing an orientation and one
+uniform common multiplier. Coarse global gaps are insufficient because rare
+Fourier blocks survive; seek a collision-free central-support or
+operator-valued return bound. Small regular controls have nontrivial global
+eigenvalues `3/4` for `S_3,K=2,3` and `S_4,K=2`, while the complete globally
+distinct physical `S_4,K=2` screen has no nontrivial normalized-frame
+eigenvalue above `1/2`. This is a target-selection clue, not a theorem.
+
+### Two-Color Moments Are One Return Walk
+
+Files:
+
+- `self_dual_wreath_two_color_return_walk.py`
+- `research/representation/self_dual_wreath_two_color_return_walk.json`
+- `tests/test_self_dual_wreath_two_color_return_walk.py`
+
+For `q_p(x)` equal to the number of two-colorings whose two ordered subwords
+both multiply to identity, transpose the `K` coloring rows into `p`
+orientation columns. If `mu_K` is the probability measure on `G^(2K)` that
+chooses an orientation `e`, a uniform common multiplier `x`, and applies `x`
+to the selected slot of every pair, then exactly
+
+`E_(x in G^p) (q_p(x)/2^p)^K = mu_K^(*p)(1)`.
+
+Thus the exponential `2^(pK)` coloring sum is not intrinsic: the growing-word
+problem is a convolution-power/return problem for the source-only version of
+the subgroup walk. For `S_n`, `n>=5`, its generated subgroup contains
+`A_n^(2K)` and has sign-incidence rank `K+1`, hence
+
+`|L_K|=|S_n|^(2K)/2^(K-1)`.
+
+This does not make the global return probability sufficient. Complete dense
+controls give largest nonstationary eigenvalue `1/2` for `S_2,K=2` and `3/4`
+for `S_3,K=2`, while the natural scale is `1/|S_n|`. Those eigenvalues live in
+atypical Fourier support. The precise successor is a growing-order return
+bound after collision-free central projection, or an operator-valued return
+bound that tracks physical source blocks. Do not spend time proving only a
+constant global gap.
+
+There is an exact regular-moment obstruction. For the unnormalized
+source-only frame `F_K=2^K M_K`, stationarity forces
+
+`tr_reg(F_K^p) >= 2^(Kp)/|L_K|`.
+
+At information threshold this reaches one at `p=(2+o(1))K` and then grows
+exponentially. Thus unconditioned regular growing moments are dominated by
+rare common-invariant Fourier blocks long before the generic trace-method
+degree. Global source distinctness removes exact stationary support for
+`K>=2`, but growing moments cannot be transferred by ordinary total
+variation. A collision-free central/injective return theorem is mandatory.
+
+### All Pair-Common Hierarchy Directions Have Factorially Small Rank
+
+Files:
+
+- `self_dual_wreath_hierarchy_pair_common_rank_budget.py`
+- `research/representation/self_dual_wreath_hierarchy_pair_common_rank_budget.json`
+- `tests/test_self_dual_wreath_hierarchy_pair_common_rank_budget.py`
+
+For the coordinate dyadic hierarchy on `F_2^K`, write `N=2^K`. Direct level
+counting gives exactly
+
+`N(2N-K-3)/2`
+
+non-antipodal pair incidences and `N/2` root antipodal pairs. For every
+non-antipodal pair, all three source blocks are nonempty, so the exact natural
+pair-carrier law gives expected ambient-relative common rank `2/|S_n|^3`.
+The span of pair-common ranges has rank at most their rank sum regardless of
+triangle/cycle coherence. At a root antipodal pair the shared block contains
+only the target, contributing `1/|S_n|^2` exactly for a trivial or sign target
+and zero for a higher-dimensional target. Therefore the fixed-target bound is
+
+`N(2N-K-3)/|S_n|^3 + 1[dim(tau)=1]N/(2|S_n|^2)`.
+
+The unweighted sum over all targets, used only for a simultaneous Markov
+bound, is
+
+`p(n)N(2N-K-3)/|S_n|^3 + N/|S_n|^2`.
+
+With `K=ceil(log2 |S_n|)+2`, this is `O(p(n)/|S_n|)`. Conditioning on all
+source labels being distinct divides by `P_cf(n,K)=1-o(1)`, so all exact
+pair-common hierarchy sectors occupy factorially small relative rank with
+high probability. The finite conditioned bound is pre-asymptotically
+vacuous at `n=20,24`, becomes nonvacuous at `n=28`, and is about `2^-153.66`
+at `n=48`.
+
+This resolves the scalar-rank trimming of singular-value-one pair-common
+directions, including arbitrary coherent alignment among them. It does not
+bound their exceptional eigenvalues, near-common carriers, noncommon
+recoupling traffic, the complete node-frame edge, PGM state mass, or any
+algorithm. The active object is now the collision-free noncommon return
+operator after this exact-common sector is removed.
+
+### Low Carriers Admit A Quarter-Factorial Hierarchy Trim
+
+Files:
+
+- `self_dual_wreath_hierarchy_low_carrier_trim.py`
+- `research/representation/self_dual_wreath_hierarchy_low_carrier_trim.json`
+- `tests/test_self_dual_wreath_hierarchy_low_carrier_trim.py`
+
+The exact-common rank theorem extends to every pair carrier below a dimension
+cutoff. Let `Z4(L)=sum_[d_alpha<=L] d_alpha^4`, let
+`C_non=N(2N-K-3)/2`, and let `C_anti=N/2`. Trimming both endpoint singular
+spaces for all carriers with `d_alpha<=L` costs expected unweighted
+all-target relative rank at most
+
+`B_L=2p(n)C_non Z4(L)/|S_n|^3`
+`    +2C_anti sum_[d_tau<=L] d_tau^2/|S_n|^2`.
+
+The second term is the root-antipodal target exception. Rank subadditivity
+makes this valid for arbitrary coherent alignment and repeated incidence
+across hierarchy levels. On the surviving leaf subspaces, the exact
+pair-angle theorem gives every pair cross-map norm at most `1/(L+1)`.
+
+The canonical choice
+
+`L=floor(|S_n|^(1/4)/p(n))`
+
+gives
+
+`B_L <= 128/p(n)^2 + 8/(p(n)sqrt(|S_n|)) = o(1)`
+
+before conditioning, and residual pair correlation
+`O(p(n)/|S_n|^(1/4))`. Global-distinct conditioning divides by
+`P_cf(n,K)=1-o(1)`. The exact finite bound becomes nonvacuous at `n=44`; at
+`n=48`, `L` is about `2^33.57`, 130 low carriers are removed, the conditioned
+all-target trim budget is about `2^-16.91`, and the residual pair bound is
+about `2^-33.57`.
+
+This kills the idea that polynomial-size worst-case carriers are the active
+edge obstruction. It still does not prove an edge: multiplying the residual
+pair magnitude by `Theta(|S_n|)` leaves a divergent row-sum bound. The
+remaining task is signed/phase-sensitive Racah traffic or a center-valued
+return theorem on the high-carrier complement. The quarter exponent comes
+from the elementary fourth-power tail bound and is not known optimal.
+
+### Finite Vertex Channels Are Positive Affine Triangles
+
+Files:
+
+- `self_dual_wreath_complete_s6_vertex_channel_audit.py`
+- `research/representation/self_dual_wreath_complete_s6_vertex_channel_audit.json`
+- `tests/test_self_dual_wreath_complete_s6_vertex_channel_audit.py`
+- `self_dual_wreath_affine_plane_scalar_holonomy.py`
+- `research/representation/self_dual_wreath_affine_plane_scalar_holonomy.json`
+- `tests/test_self_dual_wreath_affine_plane_scalar_holonomy.py`
+
+The complete S6 boundary uses all eight irreps of dimension at most nine, all
+105 perfect matchings, and all eleven targets: 1,155 globally distinct
+physical portfolios. Every one of the 64 vertices incident to at least three
+live pair cores was audited after exact common directions were removed.
+Sixteen have nonorthogonal traffic. Each has exactly one three-core connected
+component; all sixteen are cliques, and their three opposite endpoints close
+with the shared vertex to one affine plane. Normalized Grams have spectrum
+`{0,1,3}` and no path/holonomy residual above `1.1e-14`.
+
+An adversarial S6 stress search then included dimension-10 and dimension-16
+source irreps under an ambient cap: 55 source sets, 5,775 matchings, 14,700
+target portfolios, 1,208 high-degree vertices, and 236 nonorthogonal controls.
+No violation appeared; worst holonomy residual was `2.14e-14`. A first dense
+S7 control at ambient dimension 1,382,976 also produced one positive affine
+triangle, with residual below `1e-13`. These two stress searches are recorded
+here as live research observations, not default test artifacts.
+
+The local algebraic explanation is exact. For a real carrier `V` of dimension
+`d`, the three canonical pairings of four copies have diagonal Gram one and
+positive off-diagonal Gram `1/d`. Tensoring cluster and companion carriers
+gives `gamma=1/(d_beta d_p)`. Any multiplicity-scalar affine-plane channel
+therefore normalizes to `J_3 tensor I`, has identity path maps, and positive
+triangle holonomy. Negative-simplex phase is impossible inside one such
+channel. This does not control matrix-valued recoupling or simultaneous
+supports from different affine planes.
+
+### Orthogonal Affine-Plane Atomization Is Falsified
+
+Files:
+
+- `self_dual_wreath_affine_plane_support_pressure_no_go.py`
+- `research/representation/self_dual_wreath_affine_plane_support_pressure_no_go.json`
+- `tests/test_self_dual_wreath_affine_plane_support_pressure_no_go.py`
+
+The finite disjoint-triangle pattern cannot persist at threshold width. The
+exact number of pattern-rich affine planes through one vertex is
+
+`R_K=(4^K-4*3^K+6*2^K-4)/6`.
+
+One rich vertex-plane star overlap has independent-Plancherel expected
+noncommon support rank
+
+`4(Z4^2-4)/|S_n|^7`
+
+relative to ambient. Across all `N R_K` vertex-planes this is the support
+demand. The worst-target expected total incident pair-core capacity is at
+most
+
+`2N(N-2)/|S_n|^3 + N/|S_n|^2`.
+
+Their exact ratio is
+
+`4R_K(Z4^2-4) / [|S_n|^4(2(N-2)+|S_n|)]`.
+
+Since `Z4/|S_n|^2>=1/p(n)` and `N=Theta(|S_n|)`, this is
+`Omega(|S_n|/p(n)^2)` and diverges factorially. Existing star multiplicity
+relative concentration supplies a density-one lower demand after
+global-distinct conditioning; a one-sided conditional Markov bound controls
+capacity. Square-root pressure slack still diverges. Thus supports assigned
+to distinct affine planes must overlap extensively with probability tending
+to one in the natural collision-free law.
+
+This is a no-go for disjoint clique atoms, not for the algorithmic direction.
+Overlapping positive planes could form a well-conditioned association scheme,
+expander, or approximately free traffic law. The active object is now the
+matrix-valued incidence algebra of those overlapping channels.
+
+### Signed Steiner Geometry: Local Positivity Is Not A Global Gauge
+
+Files:
+
+- `self_dual_wreath_signed_steiner_incidence_boundary.py`
+- `self_dual_wreath_interplane_gauge_homology.py`
+- corresponding JSON artifacts and focused tests.
+
+At one orientation vertex, nonzero displacements are the `v=2^K-1` points of
+`PG(K-1,2)` and affine planes are Steiner triples `{x,y,x xor y}`. The
+unsigned point-line incidence matrix has
+
+`C_+ C_+^T=((2^K-4)/2)I+J`,
+
+so its condition number tends to three. Local positive line holonomy does not
+force this gauge. Two independent binary functionals give legal signed line
+columns with product `+1` and an exact two-dimensional kernel at every depth.
+This is adversarial and does not assert that natural `S_n` recoupling realizes
+the signing.
+
+The remaining scalar gauges are classified by the first cohomology of the
+bipartite point-line incidence graph. For all lines its dimension is
+
+`beta_1=(2^K-2)(2^K-4)/3`.
+
+For the pattern-rich lines used in the pressure theorem, a weight-`w` point,
+`1<=w<=K-1`, has degree
+
+`(2^w-2)(2^(K-w)-2)/2`,
+
+the all-ones point has degree zero, exactly `2K+1` point vertices are
+isolated, and all weights `2,...,K-2` form one giant component. Hence
+
+`beta_1^rich=2R_K-2^K+2K+3=Theta(4^K)`.
+
+The quotient signing has a negative six-cycle already on an embedded
+four-coordinate rich subsystem. Single-plane positive-holonomy audits
+therefore leave a quadratic-dimensional longer-cycle gauge debt.
+
+### Scalar Gauge Singularities Are Rank-Rigid
+
+Files:
+
+- `self_dual_wreath_signed_steiner_nullity_theorem.py`
+- `self_dual_wreath_signed_steiner_bulk_edge.py`
+- `self_dual_wreath_random_steiner_gauge_edge.py`
+- corresponding JSON artifacts and focused tests.
+
+The adversarial kernel cannot become extensive in one full scalar channel.
+Every real signed incidence matrix of `PG(K-1,2)` has left nullity at most
+two for every `K>=3`, and the quotient construction attains two. The proof is
+an exact Fano restriction: three independent kernel evaluations force the
+seven signed Fano relations to imply both `cef=-abd` and `cef=abd`.
+Exhausting all `4^7=16,384` positive-gauge Fano signings gives nullity
+histogram `{0:5632,1:8960,2:1792}` and universal third-eigenvalue floor
+`3-sqrt(5)`.
+
+More strongly, every signing has a deterministic bulk edge. For the full
+line family, with point degree `r=(v-1)/2`,
+
+`||CC^T-rI||_F^2=v(v-1)`.
+
+Thus at relative window `delta`, at most
+
+`4v/[delta^2(v-1)]`
+
+eigenvalues lie outside `r[1-delta,1+delta]`; the trimmed rank fraction is
+`O(1/v)`. On the active pattern-rich component, degree normalization gives
+
+`||D^-1/2 CC^T D^-1/2-I||_F^2 <= 6R_K/d_min^2 -> 16`,
+
+so it also has only constantly many relative outliers for every signing.
+No gauge randomness is needed. The independent balanced-gauge matrix
+Bernstein theorem remains a stronger untrimmed surrogate, with condition
+tending one, but its independence hypothesis is not natural and is no longer
+needed for scalar bulk rank control.
+
+These are per equal-weight scalar-channel theorems. They do not justify
+adding the constant trims over all natural carrier sectors, and rank is not
+yet PGM state mass.
+
+### Matrix Holonomy Reduces To Diagonal Coverage
+
+Files:
+
+- `self_dual_wreath_operator_steiner_bulk_reduction.py`
+- `self_dual_wreath_coverage_welch_pressure.py`
+- corresponding JSON artifacts and focused tests.
+
+Let a line `L` carry coefficient fiber `E_L` and let
+`W_(x,L):E_L -> H_x` be arbitrary isometries at its three points. For the
+global operator incidence map, set
+
+`D_x=sum_(L contains x) W_(x,L)W_(x,L)^*`.
+
+Unique-line incidence gives the exact holonomy-blind identity
+
+`||CC^*-D||_F^2=6 sum_L dim(E_L)`.
+
+If `D>=d_0 I` on a retained fiber, whitening gives
+
+`||D^-1/2 CC^*D^-1/2-I||_F^2`
+` <=6 sum_L dim(E_L)/d_0^2`.
+
+For uniform `m`-dimensional unitary fibers the relative outlier trim is
+`4/[delta^2(v-1)]`, independent of `m` and all nonabelian holonomy. Matrix
+multiplicity and cycle transport are therefore not intrinsically fatal; the
+active representation-theoretic object is the natural diagonal coverage
+operator.
+
+Support pressure does not prove coverage. If `P_a` are the incident support
+projectors, `D=sum_a P_a`, `Q` is capacity, `T=tr D`, and `R=T/Q`, the fusion
+Welch inequality gives
+
+`tr(D^2)>=T^2/Q=RT`,
+`sum_(a!=b)tr(P_aP_b)>=(R-1)T`.
+
+So the divergent collision-free pressure forces enormous inter-plane
+overlap; treating it as a perturbation is impossible. Define the normalized
+excess fusion potential
+
+`epsilon=Q tr(D^2)/T^2-1`.
+
+The fraction of coverage eigenvalues below `(1-delta)R` is at most
+`epsilon/delta^2`, and `epsilon=0` exactly for tight coverage `D=RI`. At
+`n=48`, even the square-root-slack redundancy lower bound has log2 about
+`84.46`, so raw overlap is necessarily nonperturbative. Pressure gives no
+bound on `epsilon`.
+
+This unweighted coverage target has now been bypassed for the actual weighted
+pair-relation Gram. The natural collision-free four-orientation coverage
+second moment
+
+`sum_(a,b) tr(P_a P_b)`
+
+in carrier/multiplicity variables remains open and relevant only if a
+normalized support-incidence implementation specifically requires it. It is
+no longer the leading spectral gate for the true relation coefficients.
+
+### Exact Weighted Pair-Relation Bulk Edge
+
+Files:
+
+- `self_dual_wreath_affine_relation_weighted_bulk.py`
+- `research/representation/self_dual_wreath_affine_relation_weighted_bulk.json`
+- `tests/test_self_dual_wreath_affine_relation_weighted_bulk.py`
+
+For an orientation star with coordinate-signature support `S`, exact
+Plancherel averaging of the carrier-factorized physical overlap gives
+
+`E ||B_ex^*B_ey||_F^2/dim(H_phys)=4/|S_n|^5`
+
+whenever `|S|=3` or `4`. The only two-signature exception is
+`2/|S_n|^4` for one-dimensional targets and zero otherwise. This was checked
+both symbolically over all valid supports through `S_7` and directly against
+the exact physical star-spectrum engine by summing every `S_5` Plancherel
+label assignment.
+
+Writing `g=|S_n|`, `N=2^K`, the exact ordered-pair counts at one orientation
+vertex are `A_K=N^2-6N+8` for three/four signatures and `3(N-2)` for two
+signatures. For the complete pair-common boundary `D_1`, its coefficient Gram
+`G=D_1^*D_1` has diagonal `2I` and
+
+`E ||G-2I||_F^2/dim(H_phys)=N[4A_K/g^5`
+` + 6(N-2)1_(d_nu=1)/g^4]`.
+
+Uniform balanced pair-core rank concentration lower-bounds the global domain
+by `N B_K(1-eta)^3/g^3` times physical ambient dimension. Applying Markov
+once to the whole relation Gram after exact collision-free conditioning gives
+a burden/capacity ratio `O(1/g)`. With square-root slack, both conditional
+failure and fixed-window relative outlier rank are `O(g^-1/2)` uniformly in
+the target. This proves a collision-free **coefficient-rank bulk edge** despite
+the factorially divergent unweighted support pressure.
+
+The exact relation-cokernel identity `D_0D_1=0` means every trimmed relation
+image has zero ideal PGM polar amplitude. Do not describe PGM state-mass
+transfer as open for this trim; it is exactly resolved. The real open gate is
+whether retained pair relations plus recursive child-span constraints compile
+the full synthesis-cokernel projector without leaving spurious H0, and whether
+that projector and the subsequent polar chain have efficient coherent access.
+No untrimmed minimum edge, full cokernel projector, decoder, or speedup is
+proved.
+
+### Global Collision-Free Mass And Injective Source Kernel
+
+Files:
+
+- `self_dual_wreath_global_collision_free_mass.py`
+- `self_dual_wreath_global_distinct_joint_kernel.py`
+- matching JSON artifacts and focused tests.
+
+The exact natural mass of globally distinct source partitions is
+
+`P_cf=(2k)! e_(2k)({d_lambda^2/n!})`.
+
+At threshold it is zero for small `n` and still about `2^-26.51` at `n=48`,
+but this is pre-asymptotic. Aggarwal--Elboim's maximal-dimension theorem gives
+`C_n<=max p_lambda=exp(-Theta(sqrt(n)))`; with `k=Theta(n log n)`, the birthday
+bound proves `P_cf=1-o(1)`. The physical-mass gate is resolved. No spectral
+claim follows merely from that typicality.
+
+Global distinctness destroys independence. The correct `2k`-slot source law
+is the injective Plancherel transform
+
+`I_n(f_1,...,f_r)=sum_(nu_1,...,nu_r distinct) prod_j p_(nu_j)f_j(nu_j)`.
+
+Unequal characters and projector words have exact rank-one slot expansions,
+so their joint conditioned kernel is `I_n/P_cf`. Direct and subset-DP values
+match exactly; `n=4,5` controls have nonzero rational factorization defects.
+Moreover
+
+`TV(pairwise-unequal, globally-distinct)=1-P_cf/(1-C_n)^k`
+
+is `exp(-Theta(sqrt(n)))`, much larger than the required
+`exp(-Theta(n log n))` PGM moment scale. Generic total-variation transfer from
+the independent all-unequal kernel is inadequate for transferring the large
+moment observable directly. It is not mandatory for event transfer. If each
+independent-source node event fails with probability `delta`, conditioning and
+a union bound give full hierarchy failure at most `M delta/P_cf`, with
+`M<16 n! p(n)`. Thus the active independent per-node target is
+`delta=o(1/(n!p(n)))`; the signed injective observable is only an optional
+direct-moment route.
+
+### Vertex Trivialization Criterion And Flat Carrier Groupoid
+
+Files:
+
+- `self_dual_wreath_vertex_trivialization_criterion.py`
+- `self_dual_wreath_vertex_channel_groupoid.py`
+- matching JSON artifacts and focused tests.
+
+After exact common directions are removed, let `G` be the block Gram of all
+residual cores incident to one vertex and let `gamma` bound their cross maps.
+The missing vertex isometries exist exactly when
+
+`T_gamma=I+(G-I)/gamma >= 0`, equivalently `lambda_min(G)>=1-gamma`.
+
+This is constructive: any Gram factor of `T_gamma` supplies the isometries.
+A regular simplex is the decisive abstract counterfamily. At width `p`, every
+pair correlation has the uniform reciprocal magnitude `1/(p-1)`, but the
+normalized Gram has minimum eigenvalue `2-p`; its signed triangle holonomy is
+`-1`. Therefore the old observation of a single residual correlation value
+is not evidence for vertex trivialization.
+
+The natural W6 controls satisfy a stronger flat partial-isometry groupoid. For
+normalized maps `A_ef`, their support projections commute and
+
+`A_ef A_fg = A_eg P_gf`.
+
+This splits the normalized Gram into positive clique atoms `J_|S|`. Three
+selected controls, including a five-edge residual vertex, pass below `1e-14`
+with spectra `{0,1,3}`. The simplex fails the path law by exactly two. The
+all-depth theorem is now precise: derive this path law from arbitrary natural
+Kronecker/Racah multiplicity indices, or find a natural negative cycle.
+
+### Graded Flat-Transport Boundary And Internal-Closure Rescue
+
+Files:
+
+- `self_dual_wreath_graded_flat_transport_no_go.py`
+- `self_dual_wreath_internal_closure_graded_rescue.py`
+- matching JSON artifacts and focused tests.
+
+Vertex groupoids and a constant metric floor are still insufficient for the
+relative polar. On a flat crossing-only `K_(p,p)` channel,
+
+`M=2(1-gamma)I+gamma(A+B)`, `J=gamma(A-B)`,
+
+and the exact defect is
+
+`gamma p/[2(1-gamma)+gamma p]`.
+
+It tends to one, so the endpoint gap is `Theta(1/p)` and is exponentially
+small at natural width. This kills any inference from the Laplacian metric to
+the graded endpoint gap without internal quotienting.
+
+The full internal closure changes the answer. Add every same-child pair edge
+on both sides and take the exact graded Schur quotient. The defect becomes
+
+`gamma p/[2(1-gamma)+2 gamma p] <= 1/2`,
+
+so every endpoint gap is at least `1/4`, independent of width. Ten exact
+controls pass for `gamma=1/5,1/9`, and natural-width scaling tends to the
+quarter gap.
+
+This channel theorem remains valid, but it is no longer the complete polar
+mechanism. Direct leaf pair relations fail to span the natural synthesis
+kernel asymptotically. Its endpoint gap applies to a signal-free subset of
+known constraints, not to every hierarchical constraint.
+
+### Natural Rank, Residual Energy, And Graded Trim
+
+Files:
+
+- `self_dual_wreath_uniform_orientation_rank_concentration.py`
+- `self_dual_wreath_pair_core_rank_concentration.py`
+- `self_dual_wreath_star_channel_mass_typicality.py`
+- `self_dual_wreath_residual_frobenius_typicality.py`
+- `self_dual_wreath_graded_frobenius_trim.py`
+- matching artifacts and focused tests.
+
+For independent Plancherel factors and target `nu`, normalized multiplicity
+`X_nu` obeys
+
+`E X_nu=d_nu/G`,
+
+`Var(X_nu)/E[X_nu]^2=sum_(K!=1) r_nu(K)^2 |K|^(2-C)`.
+
+At natural copy depth, every orientation rank and every balanced pair-core
+rank concentrates simultaneously after global-distinct conditioning. The
+finite W6 sparse star graph is pre-asymptotic: natural live pair-core density
+is `1-o(1)`. Exact pair rank relative to the full target carrier has mean
+`2/G^3`.
+
+On typical seven-pattern star channels, rank-normalized carrier law is
+`q(alpha)=d_alpha^4/Z_4`, and high-correlation low-dimensional carriers have
+factorially small rank mass. More generally, all 16 complement-pattern
+occupancy strata satisfy expected residual squared overlap at most `4/G^5`
+per centered star. This gives full relation-Gram off-diagonal Frobenius
+density `O(G^-1/2)` with failure `O(G^-1/2)`.
+
+Pinching `K=O^2+O_J^2` into left-internal, right-internal, and crossing sectors
+and retaining eigenvalues at most `epsilon^2/3` deletes at most
+`6 delta/epsilon^2` coefficient fraction while preserving the grading. At
+`epsilon=1/4`, the retained pair-relation quotient has endpoint gap at least
+`0.392857...`; the n48 removed fraction bound is `6.35e-25`. This is an
+information-theoretic conditioning theorem. The low-energy projector still
+has no coherent polynomial implementation.
+
+### Relation Cokernel, Augmented H0, And Recursive Resolution
+
+Files:
+
+- `self_dual_wreath_relation_cokernel_transfer.py`
+- `self_dual_wreath_augmented_h0_dimension_obstruction.py`
+- `self_dual_wreath_hierarchical_cokernel_resolution.py`
+- updated augmented-Cech and graded-trim modules, artifacts, and tests.
+
+For leaf isometries `Q_e`, let `D_0=[Q_1 ... Q_N]` and let `T` embed each
+coefficient fiber into its own physical leaf copy. The orientation PGM
+analysis and polar satisfy
+
+`R=T D_0^*`,
+
+`range(polar)=T range(D_0^*)=T ker(D_0)^perp`.
+
+Every pair boundary obeys `D_0 D_1=0`. Therefore every retained or deleted
+pair-relation mode is exactly orthogonal to the ideal PGM output. The old
+coefficient-to-state-mass comparison was misposed: relation trimming has
+exactly zero ideal state loss. The complement of pair relations equals the
+polar support iff augmented
+
+`H_0=ker(D_0)/im(D_1)`
+
+vanishes. Three lines in a plane are the generic counterexample; the physical
+W3 control has H0 dimension two, while the selected W5 control is exact.
+
+Pair completeness fails asymptotically. Put `G=n!`,
+`K=ceil(log2 G)`, `N=2^K`, `c=N/G`, and `g=c-1`. Uniform leaf-rank
+concentration gives `dim ker D_0 >= 3gD/4` at relative tolerance `g/(4c)`.
+The expected total pair-core budget is at most
+
+`D [N(N-2)/G^3 + N/(2G^2)]`.
+
+Since `g>=(2^v2(n!))/n!`, Markov plus the rank theorem proves with conditioned
+probability `1-o(1)` that `dim H0>=gD/2>0`. With one extra copy,
+`dim H0>=D/2`. At n48 the finite conditioned bounds certify relative H0 at
+least `0.017786` at minimal copies and `0.535572` with one extra copy, with
+failure upper bounds about `2^-168.96` and `2^-171.87` respectively.
+
+This does **not** kill hierarchical polar sampling. For every binary node
+`T=L union R`, with child syntheses `S_L,S_R` and common child span `K`,
+
+`ker[S_L S_R] = ker S_L direct_sum ker S_R direct_sum`
+
+`{S_L^+x direct_sum -S_R^+x : x in K}`.
+
+Recursing this identity exactly resolves the full synthesis cokernel for any
+finite subspace family, including the three-lines control. The remaining
+node metric and grading on an orthonormal basis `X` of `K` are exactly
+
+`M=X^*(F_L^+ + F_R^+)X`,
+
+`J=X^*(F_L^+ - F_R^+)X`, where `F_s=S_s S_s^*`.
+
+Binary common-span synthesis would require natural pseudoinverse-frame
+comparability. A complete abstract hierarchy with `p` repeated left copies
+and one matching right copy has endpoint gap `1/(p+1)`, so exact completeness
+alone gives no conditioning. However, the later constant-arity polar identity
+shows this binary shorted-metric route is one implementation, not a mandatory
+mathematical gate. The mixed-arity frame-root chain is exact; its natural
+spectral edges and coherent implementation remain open.
+
+### Revised Highest-Value Derivations
+
+1. Prove a **center-valued natural mass law for the component nonscalarity
+   defect**. The regular-master reduction identifies source probability as
+   central support of `D_Lambda` and physical common-span mass as its common-
+   space cutdown. Cut away both low-dimensional source labels and low internal
+   carriers; the former alone is insufficient. Then prove a relative-rank
+   bridge or center-valued local law on globally distinct Plancherel blocks.
+   Ordinary scalar moments cannot settle block probability.
+2. Compile the **natural sparse-support component-POVM dilation**. First
+   identify natural `alpha=r/N` and block aspects `beta_e=b_e/N`, then prove or
+   kill Jacobi-type nonzero-edge rigidity on positive central-support mass.
+   If sparse-block support-scalarity survives, compile coherent support-
+   projector SELECT and GPE transport; generic square-root QSVT is relevant
+   only on sectors with an actually small positive edge. A compact coherent
+   support SELECT, not another formal polar decomposition, is the target.
+3. Establish or refute a **physical MRS transcript-POVM separation**. Construct
+   the sequential transcript POVM `{E_t}` for a fixed adaptive sieve policy and
+   separate the pulled-back PGM effect from
+   `{sum_t f_t E_t:0<=f_t<=1}` on positive accepted-state mass. For one fixed
+   projective tree, test both `||M-Delta(M)||` and the stronger
+   `||M-C(M)||`; vanishing of the first does not imply classical transcript-only
+   simulation when blocks have dimension greater than one. Use the implemented
+   zonotope projection/dual-witness engine once the effects exist, then prove a
+   policy-independent obstruction or exhibit an allowed simulation. Do not use
+   “globally coherent” as a substitute for this calculation.
+4. Build a **uniform coherent GPE generator and holonomy theorem**. Give a
+   polynomial reversible SELECT for partial-support transports,
+   including path and gauge data, rather than an exponential classical table.
+   Then give a polynomial-depth spanning structure for the fundamental
+   GPE/Racah cycle operators on positive native PGM mass and prove an
+   inverse-polynomial frustration gap, or find a natural near-flat
+   counterfamily. Abstract efficient edge transport is insufficient.
+5. Prove a **natural short-metric endpoint theorem** for the recursive normal
+   form. Equal metrics give an exact Hadamard, proportional metrics give a
+   scalar rotation, and noncommuting metrics require an operator-valued mixer.
+   Bound the grading defect on positive native mass or construct a natural
+   exponentially imbalanced/noncommuting counterfamily. Pair GPE availability
+   alone says nothing about this gap.
+6. Use the **collision-free weighted pair-relation bulk edge** only as input to
+   the recursive resolver in item 2. Relation directions have exactly zero
+   ideal PGM amplitude. The risk is incomplete removal of emergent relations,
+   partial support normalization, or a small holonomy gap, not pair carrier
+   dimension. Do not spend more work on low-carrier pair trimming as an access
+   strategy; GPE bypasses that barrier directly.
+7. In parallel, prove or falsify an **independent-Plancherel all-depth
+   noncommon node-frame spectral event** for the mixed-arity schedule with
+   per-node failure `o(1/(n!p(n)))`. This remains necessary if the recursive
+   GPE/holonomy route still uses frame-root whitening.
+8. Work on the exact subgroup-projection regular master and bound the
+   **central support of bad spectral projections**, not ordinary scalar
+   spectral mass. Seek a center-valued local law or deterministic no-outlier
+   theorem. The interval-uniform scalar route needs
+   `Theta((log n!)^2)` degree and is not competitive.
+9. Use the exact word-map normal form only if it can prove item 7 at growing
+   word length or derive a resolvent/gap identity for item 4. More fixed-degree
+   moment screens are cut.
+10. Apply event-level global-distinct conditioning only after an independent
+   node/holonomy event is proved. `o(1)` total variation is too weak for the
+   required exponentially small union-bound scale.
+11. Once items 1--8 yield a complete polar, compose the physical row-copy,
+    GPE/relative polar, and inverse `S_n` QFT. Audit total copies, gates,
+    memory, approximation error, and classical dequantization.
+12. Only after the transcript criterion in item 3 and a complete circuit,
+    state precisely whether the architecture lies outside MRS and make any
+    end-to-end decoder claim.
+
+Do not revert to the old priority “observe one gamma and assume a common
+isometry.” Do not use an ungraded Laplacian floor as a polar endpoint gap. Do
+not use `o(1)` total-variation closeness to transfer an exponentially small
+moment. Do not use fixed normalized moments as a spectral edge theorem. Do not
+claim direct pair-common completeness; it is falsified. Do not treat augmented
+H0 as a no-go for recursion; hierarchical span relations resolve it exactly.
+Do not restore binary pseudoinverse comparability as a mandatory gate after
+the exact mixed-arity polar factorization. Do not list inverse carrier
+dimension, pair-polar QSVT degree, or a full Kronecker transform as the active
+pair-transport bottleneck: coherent GPE now bypasses all three. The unresolved
+objects are higher-order support coverage, holonomy gap, and complete
+relative-frame composition.
+Do not revive universal scalar coefficient-affine fibers: the globally
+source-distinct S6 partial-support control falsifies them while preserving
+affine masks. Any bulk scalar approximation must first prove that matrix
+partial-support channels have vanishing physical frame weight.
+Do not claim an MRS escape from deferred measurement, unmeasured GPE labels,
+or generic noncommutativity. The required object is a positive-mass separation
+of the pulled-back physical decision effect from the classical postprocessing
+set of the full adaptive transcript POVM. Off-diagonal blocks are only one
+sufficient fixed-projective witness; within-block nonscalarity is another.
 
 ### Orientation Fourier Reduction
 
@@ -1350,16 +2862,17 @@ registers at a time, applies Clebsch-Gordan, and measures or discards between
 combination steps.
 
 The hierarchical polar tree superficially looks like such a sieve because it
-recurses on sibling merges. The degree obstruction above is the argument that
-it is not: at natural depth the crossing graph of a single merge is complete
-bipartite with saturated weights, so no bounded-arity, locally measured
-combination reproduces one level. The architecture needs one globally coherent
-`Theta(n log n)`-register transform with no intermediate label measurement.
-That is outside the stated class.
+recurses on sibling merges. Complete-bipartite crossing structure and a
+globally coherent `Theta(n log n)`-register description suggest a mismatch
+with locally measured pairwise combination, but they do not prove one. Early
+measurement can preserve a decision effect, and a sequential transcript POVM
+can encode more than one fixed projective block decomposition.
 
-This is a structural argument, not a formal separation. Before any speedup
-claim, the polar tree must be written in MRS's own formal algorithm model and
-shown either to violate their locality hypothesis or to be simulable by it.
+Before any speedup claim, the complete polar tree must be written in MRS's own
+formal algorithm model and its physical decision effect must be separated from
+all classical postprocessings of the allowed adaptive transcript POVM, or a
+simulation must be given. The existing degree obstruction is not that
+separation.
 Do not infer the separation from naming, and do not mutate the current filter
 into a pairwise or small-register Clebsch-Gordan sieve.
 
@@ -1451,7 +2964,12 @@ and the holonomy of the residual transport bundle is untested. Nothing here
 bounds the graded form, so endpoint gaps for the relative polar are still
 open, and no circuit follows.
 
-## Highest-Value Open Derivation
+## Superseded Pre-2026-08-08 Priority List
+
+This list is retained only as provenance. The vertex PSD criterion, simplex
+holonomy counterfamily, flat carrier groupoid, graded crossing no-go, and
+internal-closure quarter-gap theorem above supersede its ordering. Follow
+`Revised Highest-Value Derivations`, not this section.
 
 The PGM still has constant information-theoretic success and physical
 transfer. The pair-core overlap operator is now exact, and the sign-blind
@@ -1652,6 +3170,60 @@ These tasks are useful but should not consume the scarce high-reasoning pass:
    The orientation Laplacian gap experiment ID is
    `EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP`, with suggested CLI
    `code-wreath-orientation-laplacian-gap`. This one is not wired yet.
+   The exact global collision-free mass experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-GLOBAL-COLLISION-FREE-MASS`.
+   The injective conditioned source-kernel experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-GLOBAL-DISTINCT-JOINT-KERNEL`.
+   The exact vertex PSD criterion experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-VERTEX-TRIVIALIZATION-CRITERION`.
+   The flat carrier-groupoid experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-VERTEX-CHANNEL-GROUPOID`.
+   The graded crossing-only no-go experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-GRADED-FLAT-TRANSPORT-NO-GO`.
+   The complete internal-closure rescue experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-INTERNAL-CLOSURE-GRADED-RESCUE`.
+   The exact relation-cokernel transfer experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-RELATION-COKERNEL-TRANSFER`.
+   The augmented-H0 dimension obstruction experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-AUGMENTED-H0-DIMENSION-OBSTRUCTION`.
+   The hierarchical cokernel resolution experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-COKERNEL-RESOLUTION`.
+   The exact independent-Plancherel sibling moment experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-MP-MOMENTS`.
+   The Gaussian Jacobi benchmark experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-JACOBI-SURROGATE`.
+   The exact degree-four joint-freeness experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-JOINT-FREENESS`.
+   The Gaussian top-split conditioning experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-JOINT-CONDITIONING-SURROGATE`.
+   The exact arbitrary-word normal-form experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-SIBLING-WORD-MAP-NORMAL-FORM`.
+   The event-level conditioning bypass experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-COLLISION-FREE-EVENT-TRANSFER`.
+   The exact mixed-arity polar schedule experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-MULTISCALE-POLAR-SCHEDULE`.
+   The interval-uniform trace-polynomial burden experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-TRACE-POLYNOMIAL-EDGE-BURDEN`.
+   The regular master/central-support experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-REGULAR-MASTER-CENTRAL-SUPPORT`.
+   The relative-rank bridge/symmetry-boundary experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-CENTRAL-SUPPORT-RANK-BRIDGE`.
+   The exact subgroup-projection walk experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-SUBGROUP-PROJECTION-WALK`.
+   The affine-node exact common-outlier experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-AFFINE-NODE-COMMON-OUTLIER`.
+   The full-regular pairwise-angle no-go experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-SUBGROUP-PAIR-ANGLE-NO-GO`.
+   The physical trace-weighted PGM bridge experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-TRACE-WEIGHTED-PGM-BRIDGE`.
+   The generic native-frame access-boundary experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-NATIVE-FRAME-ACCESS-BOUNDARY`.
+   The conditional native pair-mass experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-PAIR-TRANSPORT-NATIVE-MASS-BOUNDARY`.
+   The direct generalized-phase-estimation pair-polar experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-GPE-PAIR-POLAR-TRANSPORT`.
+   The executable holonomy fixed-space reduction experiment ID is
+   `EXP-CODE-SELF-DUAL-WREATH-GPE-HOLONOMY-RESOLVER-REDUCTION`.
 3. Add Sellke's paper to `research/literature_index.json` and
    `research/literature_records.json`, preserving the precise mechanism,
    theorem, reuse, and no-overclaim fields.
@@ -1687,6 +3259,41 @@ python self_dual_wreath_pair_quotient_overlap.py
 python self_dual_wreath_pair_core_carrier_factorization.py
 python self_dual_wreath_multistar_degree_obstruction.py
 python self_dual_wreath_orientation_laplacian_gap.py
+python self_dual_wreath_global_collision_free_mass.py
+python self_dual_wreath_global_distinct_joint_kernel.py
+python self_dual_wreath_vertex_trivialization_criterion.py
+python self_dual_wreath_vertex_channel_groupoid.py
+python self_dual_wreath_graded_flat_transport_no_go.py
+python self_dual_wreath_internal_closure_graded_rescue.py
+python self_dual_wreath_sibling_frame_joint_freeness.py
+python self_dual_wreath_sibling_frame_joint_conditioning_surrogate.py
+python self_dual_wreath_sibling_word_map_normal_form.py
+python self_dual_wreath_collision_free_event_transfer.py
+python self_dual_wreath_multiscale_polar_schedule.py
+python self_dual_wreath_trace_polynomial_edge_burden.py
+python self_dual_wreath_regular_master_central_support.py
+python self_dual_wreath_central_support_rank_bridge.py
+python self_dual_wreath_subgroup_projection_walk.py
+python self_dual_wreath_affine_node_common_outlier.py
+python self_dual_wreath_subgroup_pair_angle_no_go.py
+python self_dual_wreath_local_pair_transversality.py
+python self_dual_wreath_pair_common_covering_transition.py
+python self_dual_wreath_fixed_family_common_rank_dilution.py
+python self_dual_wreath_plancherel_kronecker_positivity.py
+python self_dual_wreath_extended_kronecker_threshold.py
+python self_dual_wreath_hamming_stratum_rank_transition.py
+python self_dual_wreath_natural_pair_carrier_law.py
+python self_dual_wreath_two_color_return_walk.py
+python self_dual_wreath_hierarchy_pair_common_rank_budget.py
+python self_dual_wreath_hierarchy_low_carrier_trim.py
+python self_dual_wreath_complete_s6_vertex_channel_audit.py
+python self_dual_wreath_affine_plane_scalar_holonomy.py
+python self_dual_wreath_affine_plane_support_pressure_no_go.py
+python self_dual_wreath_trace_weighted_pgm_bridge.py
+python self_dual_wreath_native_frame_access_boundary.py
+python self_dual_wreath_pair_transport_native_mass_boundary.py
+python self_dual_wreath_gpe_pair_polar_transport.py
+python self_dual_wreath_gpe_holonomy_resolver_reduction.py
 python qsearch.py code-wreath-subpovm-moments
 python qsearch.py validate
 ```

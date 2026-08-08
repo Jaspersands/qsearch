@@ -85,6 +85,9 @@ def test_report_keeps_recoupling_and_algorithm_claims_open() -> None:
     assert report.claim_gate[
         "repeated_labels_falsify_universal_coefficient_affinity"
     ]
+    assert report.claim_gate[
+        "natural_collision_free_scalar_affinity_falsified"
+    ]
     assert not report.claim_gate[
         "all_n_collision_free_coefficient_affine_theorem_proved"
     ]

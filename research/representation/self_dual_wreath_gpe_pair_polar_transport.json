@@ -1,0 +1,294 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "GPE performs only weak irrep measurement.",
+      "resolution": "Do not measure or discard its Fourier registers. The coherent Bacon-Chuang-Harrow output explicitly exports the carrier row.",
+      "resolved": true
+    },
+    {
+      "objection": "Unknown Kronecker multiplicity bases prevent transport.",
+      "resolution": "The group action and GPE are identity on multiplicity spaces, so the circuit preserves them without naming a basis.",
+      "resolved": true
+    },
+    {
+      "objection": "The inverse carrier correlation still requires amplitude amplification.",
+      "resolution": "The scalar 1/d belongs to E F, not to its polar U. The GPE circuit implements U directly.",
+      "resolved": true
+    },
+    {
+      "objection": "A fast S_n QFT automatically gives a full Kronecker transform.",
+      "resolution": "GPE gives the narrower carrier-export isometry needed here; it does not provide explicit multiplicity coordinates or general recoupling matrices.",
+      "resolved": false
+    },
+    {
+      "objection": "Efficient pair polar transport solves the full decoder.",
+      "resolution": "The complete frame contains exponentially many coherently incident projectors. Higher-order relative polar structure remains unproved.",
+      "resolved": false
+    }
+  ],
+  "circuit_contract": [
+    {
+      "operation": "Use inverse S_n QFT on the trivial Fourier basis state to prepare uniform permutation registers.",
+      "polynomial": true,
+      "step": "prepare_three_group_ancillas"
+    },
+    {
+      "operation": "Apply controlled diagonal S_n actions on R_0,R_a,R_b and the forward QFT, retaining irrep, row, and column registers.",
+      "polynomial": true,
+      "step": "coherent_gpe"
+    },
+    {
+      "operation": "Check alpha_0=alpha_a=alpha_b and swap row_a with row_b only on that equality sector.",
+      "polynomial": true,
+      "step": "active_support_transport"
+    },
+    {
+      "operation": "Invert all three GPE transforms; multiplicity registers were never measured or modified.",
+      "polynomial": true,
+      "step": "uncompute_gpe"
+    }
+  ],
+  "claim_gate": {
+    "coherent_gpe_carrier_export_proved": true,
+    "complete_many_orientation_pgm_polar_proved": false,
+    "exact_pair_cross_overlap_polar_factorization_proved": true,
+    "full_kronecker_transform_required": false,
+    "hidden_permutation_decoder_proved": false,
+    "higher_level_relative_polar_circuit_proved": false,
+    "pair_polar_avoids_inverse_carrier_dimension": true,
+    "reason": "Generalized phase estimation gives an explicit polynomial direct pair-polar transport and defeats the normalized-access barrier. The research bottleneck moves to coherent higher-order frame composition, not pair carrier conditioning.",
+    "speedup_claim_allowed": false,
+    "uniform_polynomial_pair_polar_circuit_proved": true
+  },
+  "created_at": "2026-08-08T06:01:31.168235+00:00",
+  "falsifiers_triggered": [
+    "High-dimensional natural carrier mass blocks normalized cross-overlap QSVT but does not block direct pair polar transport.",
+    "A complete symmetric-group Kronecker transform is stronger than necessary for pair transport; coherent GPE row access suffices.",
+    "Pair transport is no longer a defensible main bottleneck. Future work must attack higher-order relative-frame composition."
+  ],
+  "finite_controls": [
+    {
+      "carrier_dimension": 1,
+      "cross_overlap_factorization_residual": 0.0,
+      "cross_overlap_scale": 1.0,
+      "exact_pair_polar_reassociation_verified": true,
+      "gpe_norm_residual": 0.0,
+      "gpe_row_swap_reassociation_residual": 0.0,
+      "polar_reassociation_residual": 0.0,
+      "status": "exact-gpe-pair-polar-reassociation"
+    },
+    {
+      "carrier_dimension": 2,
+      "cross_overlap_factorization_residual": 1.1102230246251565e-16,
+      "cross_overlap_scale": 0.5,
+      "exact_pair_polar_reassociation_verified": true,
+      "gpe_norm_residual": 0.0,
+      "gpe_row_swap_reassociation_residual": 2.0253964504621835e-16,
+      "polar_reassociation_residual": 2.220446049250313e-16,
+      "status": "exact-gpe-pair-polar-reassociation"
+    },
+    {
+      "carrier_dimension": 3,
+      "cross_overlap_factorization_residual": 1.2490009027033016e-16,
+      "cross_overlap_scale": 0.3333333333333333,
+      "exact_pair_polar_reassociation_verified": true,
+      "gpe_norm_residual": 2.220446049250313e-16,
+      "gpe_row_swap_reassociation_residual": 3.6947981154067924e-16,
+      "polar_reassociation_residual": 4.0792198665315547e-16,
+      "status": "exact-gpe-pair-polar-reassociation"
+    },
+    {
+      "carrier_dimension": 4,
+      "cross_overlap_factorization_residual": 0.0,
+      "cross_overlap_scale": 0.25,
+      "exact_pair_polar_reassociation_verified": true,
+      "gpe_norm_residual": 3.1086244689504383e-15,
+      "gpe_row_swap_reassociation_residual": 8.083308833783432e-16,
+      "polar_reassociation_residual": 5.231800216000537e-16,
+      "status": "exact-gpe-pair-polar-reassociation"
+    }
+  ],
+  "headline_metrics": {
+    "finite_carrier_control_count": 4,
+    "finite_carrier_control_failure_count": 0,
+    "full_kronecker_transform_dependency_count": 0,
+    "gpe_pair_polar_reassociation_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "normalized_cross_overlap_dimension_barrier_bypass_count": 1,
+    "polynomial_complete_orientation_polar_circuit_count": 0,
+    "polynomial_higher_level_relative_polar_circuit_count": 0,
+    "polynomial_pair_transport_circuit_count": 1
+  },
+  "literature_links": [
+    {
+      "id": "ARXIV-QUANT-PH-0407082",
+      "supports_complete_decoder": false,
+      "url": "https://arxiv.org/abs/quant-ph/0407082",
+      "use": "Generalized nonabelian phase-estimation circuit and its coherent irrep-row-column output normal form."
+    },
+    {
+      "id": "ARXIV-2302.11454",
+      "supports_complete_decoder": false,
+      "url": "https://arxiv.org/abs/2302.11454",
+      "use": "Efficient S_n generalized phase estimation for arbitrary implemented representations and Kronecker isotypic projectors."
+    },
+    {
+      "id": "ARXIV-QUANT-PH-0612107",
+      "supports_complete_decoder": false,
+      "url": "https://arxiv.org/abs/quant-ph/0612107",
+      "use": "Precedent that direct Clebsch-Gordan structure can turn a pretty-good measurement into an efficient HSP algorithm."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "exact_pair_polar_reassociation",
+      "resolution": "Direct contraction gives E F=U/d on every carrier, and all finite normal-form controls match the SVD polar.",
+      "resolved": true
+    },
+    {
+      "obligation": "avoid_full_kronecker_transform",
+      "resolution": "GPE exports the carrier coordinate while preserving the unknown multiplicity label; no multiplicity basis is exposed.",
+      "resolved": true
+    },
+    {
+      "obligation": "uniform_polynomial_controlled_block_action",
+      "resolution": "Reversibly decompose a permutation into O(n^2) adjacent transpositions and apply their sparse Young-orthogonal action to every one of O(log n!) tensor factors.",
+      "resolved": true
+    },
+    {
+      "obligation": "compose_pair_transport_into_global_pgm_polar",
+      "resolution": "A pairwise carrier swap does not determine higher-level relative effects, coherent incidence, or a complete frame factorization.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "adjacent_transposition_count_upper_bound": 28,
+      "complete_orientation_polar_polynomial": false,
+      "controlled_irrep_factor_action_count_upper_bound": 476,
+      "dependence_on_carrier_dimension": "poly(log d_alpha, log(1/error)); no 1/c_alpha amplification",
+      "direct_pair_polar_polynomial": true,
+      "equality_controlled_carrier_swap_count": 1,
+      "full_kronecker_transform_required": false,
+      "generalized_phase_estimation_call_count": 3,
+      "generalized_phase_estimation_inverse_call_count": 3,
+      "group_register_qubit_count_upper_bound": 16,
+      "information_threshold_copy_count": 16,
+      "maximum_tensor_block_factor_count": 17,
+      "n": 8,
+      "normalized_cross_overlap_qsvt_required": false,
+      "status": "polynomial-gpe-pair-polar-complete-frame-open"
+    },
+    {
+      "adjacent_transposition_count_upper_bound": 120,
+      "complete_orientation_polar_polynomial": false,
+      "controlled_irrep_factor_action_count_upper_bound": 5520,
+      "dependence_on_carrier_dimension": "poly(log d_alpha, log(1/error)); no 1/c_alpha amplification",
+      "direct_pair_polar_polynomial": true,
+      "equality_controlled_carrier_swap_count": 1,
+      "full_kronecker_transform_required": false,
+      "generalized_phase_estimation_call_count": 3,
+      "generalized_phase_estimation_inverse_call_count": 3,
+      "group_register_qubit_count_upper_bound": 45,
+      "information_threshold_copy_count": 45,
+      "maximum_tensor_block_factor_count": 46,
+      "n": 16,
+      "normalized_cross_overlap_qsvt_required": false,
+      "status": "polynomial-gpe-pair-polar-complete-frame-open"
+    },
+    {
+      "adjacent_transposition_count_upper_bound": 496,
+      "complete_orientation_polar_polynomial": false,
+      "controlled_irrep_factor_action_count_upper_bound": 59024,
+      "dependence_on_carrier_dimension": "poly(log d_alpha, log(1/error)); no 1/c_alpha amplification",
+      "direct_pair_polar_polynomial": true,
+      "equality_controlled_carrier_swap_count": 1,
+      "full_kronecker_transform_required": false,
+      "generalized_phase_estimation_call_count": 3,
+      "generalized_phase_estimation_inverse_call_count": 3,
+      "group_register_qubit_count_upper_bound": 118,
+      "information_threshold_copy_count": 118,
+      "maximum_tensor_block_factor_count": 119,
+      "n": 32,
+      "normalized_cross_overlap_qsvt_required": false,
+      "status": "polynomial-gpe-pair-polar-complete-frame-open"
+    },
+    {
+      "adjacent_transposition_count_upper_bound": 2016,
+      "complete_orientation_polar_polynomial": false,
+      "controlled_irrep_factor_action_count_upper_bound": 598752,
+      "dependence_on_carrier_dimension": "poly(log d_alpha, log(1/error)); no 1/c_alpha amplification",
+      "direct_pair_polar_polynomial": true,
+      "equality_controlled_carrier_swap_count": 1,
+      "full_kronecker_transform_required": false,
+      "generalized_phase_estimation_call_count": 3,
+      "generalized_phase_estimation_inverse_call_count": 3,
+      "group_register_qubit_count_upper_bound": 296,
+      "information_threshold_copy_count": 296,
+      "maximum_tensor_block_factor_count": 297,
+      "n": 64,
+      "normalized_cross_overlap_qsvt_required": false,
+      "status": "polynomial-gpe-pair-polar-complete-frame-open"
+    },
+    {
+      "adjacent_transposition_count_upper_bound": 8128,
+      "complete_orientation_polar_polynomial": false,
+      "controlled_irrep_factor_action_count_upper_bound": 5835904,
+      "dependence_on_carrier_dimension": "poly(log d_alpha, log(1/error)); no 1/c_alpha amplification",
+      "direct_pair_polar_polynomial": true,
+      "equality_controlled_carrier_swap_count": 1,
+      "full_kronecker_transform_required": false,
+      "generalized_phase_estimation_call_count": 3,
+      "generalized_phase_estimation_inverse_call_count": 3,
+      "group_register_qubit_count_upper_bound": 717,
+      "information_threshold_copy_count": 717,
+      "maximum_tensor_block_factor_count": 718,
+      "n": 128,
+      "normalized_cross_overlap_qsvt_required": false,
+      "status": "polynomial-gpe-pair-polar-complete-frame-open"
+    },
+    {
+      "adjacent_transposition_count_upper_bound": 32640,
+      "complete_orientation_polar_polynomial": false,
+      "controlled_irrep_factor_action_count_upper_bound": 54998400,
+      "dependence_on_carrier_dimension": "poly(log d_alpha, log(1/error)); no 1/c_alpha amplification",
+      "direct_pair_polar_polynomial": true,
+      "equality_controlled_carrier_swap_count": 1,
+      "full_kronecker_transform_required": false,
+      "generalized_phase_estimation_call_count": 3,
+      "generalized_phase_estimation_inverse_call_count": 3,
+      "group_register_qubit_count_upper_bound": 1684,
+      "information_threshold_copy_count": 1684,
+      "maximum_tensor_block_factor_count": 1685,
+      "n": 256,
+      "normalized_cross_overlap_qsvt_required": false,
+      "status": "polynomial-gpe-pair-polar-complete-frame-open"
+    },
+    {
+      "adjacent_transposition_count_upper_bound": 130816,
+      "complete_orientation_polar_polynomial": false,
+      "controlled_irrep_factor_action_count_upper_bound": 507173632,
+      "dependence_on_carrier_dimension": "poly(log d_alpha, log(1/error)); no 1/c_alpha amplification",
+      "direct_pair_polar_polynomial": true,
+      "equality_controlled_carrier_swap_count": 1,
+      "full_kronecker_transform_required": false,
+      "generalized_phase_estimation_call_count": 3,
+      "generalized_phase_estimation_inverse_call_count": 3,
+      "group_register_qubit_count_upper_bound": 3876,
+      "information_threshold_copy_count": 3876,
+      "maximum_tensor_block_factor_count": 3877,
+      "n": 512,
+      "normalized_cross_overlap_qsvt_required": false,
+      "status": "polynomial-gpe-pair-polar-complete-frame-open"
+    }
+  ],
+  "status": "polynomial-gpe-pair-polar-proved-higher-order-frame-open",
+  "summary": "Derived a polynomial generalized-phase-estimation circuit for exact orientation-pair polar transport that preserves unknown Kronecker multiplicity labels and avoids inverse-dimension amplification.",
+  "theorem_contract": {
+    "carrier_block_polar": "On fixed alpha and multiplicity labels, E F=(1/d_alpha)U_alpha, where U_alpha maps |i>_a|Omega>_0b to |Omega>_0a|i>_b and preserves all multiplicity labels.",
+    "direct_circuit": "Apply GPE to blocks 0,a,b; on equal irrep labels swap the a,b QFT row registers; invert all GPE calls. This equals the pair cross-overlap polar on its support.",
+    "gpe_normal_form": "For R(g)=direct_sum_alpha I_M tensor rho_alpha(g), coherent generalized phase estimation maps |alpha,j,i> to d_alpha^-1/2 sum_t |alpha,i,t>|alpha,j,t>.",
+    "scope_exclusion": "The theorem supplies pair transport only. It does not construct higher-level relative-frame isometries or the complete many-orientation PGM polar.",
+    "symmetric_group_complexity": "S_n QFT, uniform-group preparation, equality tests, and controlled tensor products of sparse Young-orthogonal adjacent-transposition gates all have polynomial-size uniform circuits."
+  }
+}

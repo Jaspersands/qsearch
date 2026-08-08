@@ -1,0 +1,218 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Nonscalar or noncommuting component effects prevent an exact recursive normal form.",
+      "resolution": "False: they define a POVM, and its Naimark dilation followed by component polars is exact without commutativity.",
+      "resolved": true
+    },
+    {
+      "objection": "A matrix POVM necessarily costs square root of the number of masks.",
+      "resolution": "The target map is already an isometry because the effects sum to identity. Width loss is an access-construction defect, not an algebraic necessity.",
+      "resolved": true
+    },
+    {
+      "objection": "The exact Naimark normal form supplies a polynomial circuit.",
+      "resolution": "False in generic block-encoding access: exponentially small effect eigenvalues force a superpolynomial square-root polynomial degree signal.",
+      "resolved": true
+    },
+    {
+      "objection": "An exponentially small component trace activates the generic square-root degree obstruction.",
+      "resolution": "False without a small positive eigenvalue. The companion Haar/Jacobi sparse-block limit has exponentially small trace from low rank while its positive edge converges to a constant fiber aspect.",
+      "resolved": true
+    },
+    {
+      "objection": "The S6 1/178 channel itself proves an asymptotic degree obstruction.",
+      "resolution": "It is constant-size and its trivial/sign source mechanism has factorially vanishing mass. A high-dimensional natural effect edge is still needed.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_n_component_support_polars_gpe_compatible": false,
+    "exact_matrix_component_povm_normal_form_proved": true,
+    "exact_nested_recursive_povm_normal_form_proved": true,
+    "generic_square_root_block_encoding_can_be_superpolynomial": true,
+    "high_dimension_partial_support_native_mass_controlled": false,
+    "intrinsic_square_root_outcome_count_loss_required": false,
+    "natural_component_povm_dilation_compiled": false,
+    "noncommuting_component_effects_algebraically_supported": true,
+    "reason": "Matrix partial supports admit an exact width-free Naimark/GPE normal form, but the natural square-root POVM dilation, support classification, effect edge, and high-dimensional mass are open.",
+    "recursive_orientation_polar_proved": false,
+    "small_component_trace_proves_small_positive_effect_edge": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-08T07:38:37.621081+00:00",
+  "degree_boundary": [
+    {
+      "generic_block_encoding_degree_superpolynomial_signal": false,
+      "input_size": 16,
+      "markov_degree_lower_bound": 9.237604307034012,
+      "markov_degree_lower_bound_log2": 3.207518749639422,
+      "minimum_nonzero_effect_eigenvalue_log2": -16.0,
+      "polynomial_degree_benchmark_log2": 48.0,
+      "relative_approximation_error": 0.125,
+      "representation_specific_direct_dilation_proved": false,
+      "status": "finite-square-root-degree-below-n12-benchmark"
+    },
+    {
+      "generic_block_encoding_degree_superpolynomial_signal": false,
+      "input_size": 32,
+      "markov_degree_lower_bound": 147.8016689125442,
+      "markov_degree_lower_bound_log2": 7.207518749639422,
+      "minimum_nonzero_effect_eigenvalue_log2": -32.0,
+      "polynomial_degree_benchmark_log2": 60.0,
+      "relative_approximation_error": 0.125,
+      "representation_specific_direct_dilation_proved": false,
+      "status": "finite-square-root-degree-below-n12-benchmark"
+    },
+    {
+      "generic_block_encoding_degree_superpolynomial_signal": false,
+      "input_size": 64,
+      "markov_degree_lower_bound": 37837.22724161129,
+      "markov_degree_lower_bound_log2": 15.207518749639421,
+      "minimum_nonzero_effect_eigenvalue_log2": -64.0,
+      "polynomial_degree_benchmark_log2": 72.0,
+      "relative_approximation_error": 0.125,
+      "representation_specific_direct_dilation_proved": false,
+      "status": "finite-square-root-degree-below-n12-benchmark"
+    },
+    {
+      "generic_block_encoding_degree_superpolynomial_signal": false,
+      "input_size": 128,
+      "markov_degree_lower_bound": 2479700524.506241,
+      "markov_degree_lower_bound_log2": 31.207518749639423,
+      "minimum_nonzero_effect_eigenvalue_log2": -128.0,
+      "polynomial_degree_benchmark_log2": 84.0,
+      "relative_approximation_error": 0.125,
+      "representation_specific_direct_dilation_proved": false,
+      "status": "finite-square-root-degree-below-n12-benchmark"
+    },
+    {
+      "generic_block_encoding_degree_superpolynomial_signal": false,
+      "input_size": 256,
+      "markov_degree_lower_bound": 1.0650232656628324e+19,
+      "markov_degree_lower_bound_log2": 63.20751874963942,
+      "minimum_nonzero_effect_eigenvalue_log2": -256.0,
+      "polynomial_degree_benchmark_log2": 96.0,
+      "relative_approximation_error": 0.125,
+      "representation_specific_direct_dilation_proved": false,
+      "status": "finite-square-root-degree-below-n12-benchmark"
+    },
+    {
+      "generic_block_encoding_degree_superpolynomial_signal": true,
+      "input_size": 512,
+      "markov_degree_lower_bound": 1.9646211614228648e+38,
+      "markov_degree_lower_bound_log2": 127.20751874963942,
+      "minimum_nonzero_effect_eigenvalue_log2": -512.0,
+      "polynomial_degree_benchmark_log2": 108.0,
+      "relative_approximation_error": 0.125,
+      "representation_specific_direct_dilation_proved": false,
+      "status": "generic-square-root-block-encoding-superpolynomial-signal"
+    }
+  ],
+  "falsifiers_triggered": [
+    "Noncommuting component effects do not obstruct an exact algebraic compiler normal form.",
+    "Outcome count alone does not impose square-root amplitude amplification on a normalized child embedding.",
+    "Pair GPE transport does not prepare matrix POVM square-root amplitudes.",
+    "Generic block-encoding access can still be superpolynomial at an exponentially small effect edge.",
+    "Small component trace or outcome probability does not prove that the positive effect edge is small.",
+    "The finite S6 effect edge is not asymptotic evidence because its source mechanism is negligible."
+  ],
+  "headline_metrics": {
+    "all_depth_gpe_support_transport_count": 0,
+    "companion_direct_s6_source_mass_no_go_count": 1,
+    "companion_natural_s6_partial_support_control_count": 1,
+    "generic_square_root_degree_boundary_theorem_count": 1,
+    "matrix_component_povm_normal_form_theorem_count": 1,
+    "natural_component_povm_dilation_circuit_count": 0,
+    "nested_recursive_povm_normal_form_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "noncommuting_povm_control_count": 1,
+    "povm_control_count": 2,
+    "povm_control_failure_count": 0,
+    "recursive_orientation_polar_sampler_count": 0,
+    "tail_effect_edge_log2": -512.0,
+    "tail_input_size": 512,
+    "tail_markov_degree_lower_bound_log2": 127.20751874963942,
+    "tail_polynomial_benchmark_log2": 108.0
+  },
+  "povm_controls": [
+    {
+      "component_effects_commute": true,
+      "control_id": "TWO-OUTCOME-PROJECTIVE-PARTIAL-SUPPORT",
+      "effect_sum_identity_residual": 0.0,
+      "exact_matrix_povm_normal_form_verified": true,
+      "fiber_dimension": 2,
+      "maximum_component_polar_reconstruction_residual": 0.0,
+      "maximum_effect_commutator_norm": 0.0,
+      "maximum_effect_eigenvalue": 1.0,
+      "maximum_partial_isometry_initial_projection_residual": 0.0,
+      "minimum_positive_effect_eigenvalue": 1.0,
+      "outcome_count": 2,
+      "output_coefficient_dimension": 4,
+      "stacked_embedding_isometry_residual": 0.0,
+      "status": "exact-commuting-matrix-povm-normal-form"
+    },
+    {
+      "component_effects_commute": false,
+      "control_id": "THREE-OUTCOME-NONCOMMUTING-TRINE",
+      "effect_sum_identity_residual": 5.820500400676482e-16,
+      "exact_matrix_povm_normal_form_verified": true,
+      "fiber_dimension": 2,
+      "maximum_component_polar_reconstruction_residual": 3.604170765390605e-16,
+      "maximum_effect_commutator_norm": 0.19245008972987537,
+      "maximum_effect_eigenvalue": 0.6666666666666667,
+      "maximum_partial_isometry_initial_projection_residual": 5.551115123125783e-16,
+      "minimum_positive_effect_eigenvalue": 0.6666666666666664,
+      "outcome_count": 3,
+      "output_coefficient_dimension": 6,
+      "stacked_embedding_isometry_residual": 5.810874233568016e-16,
+      "status": "exact-noncommuting-matrix-povm-normal-form"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "exact_matrix_component_povm_normal_form",
+      "resolution": "Polar decomposition proves it for arbitrary components; projective and noncommuting trine controls validate the identities.",
+      "resolved": true
+    },
+    {
+      "obligation": "exact_nested_recursive_povm_factorization",
+      "resolution": "Endpoint and child POVM isometries compose exactly even when child effects and short metrics are matrix valued.",
+      "resolved": true
+    },
+    {
+      "obligation": "compile_natural_component_povm_square_root_dilation",
+      "resolution": "Need a representation-specific coherent effect algebra or direct Naimark transform; generic QSVT can be superpolynomial at an exponentially small effect edge.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_component_support_polars_are_uniform_gpe_transports",
+      "resolution": "Pair GPE implements compatible invariant support polars, but no all-depth channel classification covers every W_e support.",
+      "resolved": false
+    }
+  ],
+  "recursive_control": {
+    "control_id": "NONCOMMUTING-CHILD-POVM-AND-MATRIX-ENDPOINT-MIXER",
+    "direct_recursive_relation_isometry_residual": 2.373446732708545e-16,
+    "endpoint_effect_commutator_norm": 4.445228907190568e-17,
+    "endpoint_effect_sum_residual": 3.191891195797325e-16,
+    "exact_nested_matrix_povm_compiler_normal_form_verified": true,
+    "fiber_dimension": 2,
+    "left_child_effect_sum_residual": 5.820500400676482e-16,
+    "left_outcome_count": 3,
+    "maximum_child_effect_commutator_norm": 0.19245008972987537,
+    "nested_povm_factorization_residual": 2.926355950696302e-16,
+    "right_child_effect_sum_residual": 0.0,
+    "right_outcome_count": 2,
+    "status": "exact-nested-endpoint-and-child-matrix-povm-normal-form"
+  },
+  "status": "matrix-povm-recursive-normal-form-proved-natural-dilation-and-support-gpe-open",
+  "summary": "Replaced the dead scalar-affine extension with an exact nested matrix-POVM compiler normal form and isolated square-root POVM dilation as the new access bottleneck.",
+  "theorem_contract": {
+    "child_nondegenerate_normal_form": "Every isometric child embedding W has component POVM effects H_e=W_e^*W_e and exact factorization W_e=V_e sqrt(H_e).",
+    "generic_degree_boundary": "Bounded-polynomial square-root approximation down to delta has degree Omega(delta^-1/4) by mean value plus Markov inequality; trace weight alone does not imply such a delta.",
+    "recursive_nested_dilation": "The parent relation is endpoint POVM dilation C_L,C_R followed by the selected child component POVM dilation and controlled support partial isometries.",
+    "scope": "This is a compiler normal form and generic block-encoding boundary. It does not construct the natural component-POVM dilation, prove GPE compatibility of every support polar, or bound high-dimensional-source native mass.",
+    "width_boundary": "The exact Naimark isometry has no intrinsic sqrt(outcome-count) loss; any such loss belongs to the chosen access implementation."
+  }
+}

@@ -1,0 +1,199 @@
+{
+  "adaptive_control": {
+    "compiled_transcript_povm_completeness_residual": 4.440892098500626e-16,
+    "control_id": "TWO-STAGE-WEAK-Z-THEN-ADAPTIVE-X-TRANSCRIPT",
+    "exact_adaptive_transcript_povm_compilation_verified": true,
+    "first_stage_completeness_residual": 1.1102230246251565e-16,
+    "first_stage_outcome_count": 2,
+    "hilbert_dimension": 2,
+    "maximum_conditional_povm_completeness_residual": 2.220446049250313e-16,
+    "second_stage_outcome_counts": [
+      2,
+      2
+    ],
+    "status": "exact-two-stage-adaptive-transcript-povm-compiled",
+    "transcript_outcome_count": 4
+  },
+  "adversarial_audit": [
+    {
+      "objection": "A nonzero off-diagonal block is the only possible MRS transcript separation witness.",
+      "resolution": "False. The within-block projective control has no cross-block coherence but lies a positive distance from the block-scalar transcript zonotope.",
+      "resolved": true
+    },
+    {
+      "objection": "Projective block tests cover adaptive nonprojective transcripts.",
+      "resolution": "False in general. The sequential Kraus pullback produces a nonprojective POVM, whose postprocessing zonotope must be tested directly.",
+      "resolved": true
+    },
+    {
+      "objection": "Separation from one selected adaptive transcript proves escape from the MRS theorem.",
+      "resolution": "A different allowed sieve policy may realize the same decision effect. Full model separation needs a policy-independent obstruction.",
+      "resolved": false
+    },
+    {
+      "objection": "Effect-space separation proves an efficient quantum algorithm.",
+      "resolution": "False. It addresses only simulation by one classical transcript POVM, not implementation, correctness, accepted mass, decoding, or classical hardness.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "adaptive_transcript_povm_compilation_proved": true,
+    "current_physical_pgm_effect_constructed": false,
+    "current_physical_pgm_outside_full_mrs_algorithm_class": false,
+    "current_physical_pgm_outside_one_fixed_mrs_policy": false,
+    "exact_fixed_transcript_postprocessing_separation_test_proved": true,
+    "mrs_lower_bound_avoided": false,
+    "offdiagonal_coherence_required_for_separation": false,
+    "projective_dephasing_test_sufficient_for_general_adaptive_mrs": false,
+    "reason": "The exact convex test now exists, but neither the complete physical decision effect nor a policy-independent separation from the adaptive MRS class has been supplied.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-08T07:35:55.229415+00:00",
+  "falsifiers_triggered": [
+    "Off-diagonal coherence is sufficient but not necessary for transcript-only separation.",
+    "A fixed projective dephasing test is not the full adaptive MRS criterion.",
+    "Separation from one fixed transcript policy is not separation from the whole MRS algorithm class.",
+    "Effect-space separation would not itself prove an efficient algorithm or speedup."
+  ],
+  "headline_metrics": {
+    "adaptive_nonprojective_separation_control_count": 1,
+    "adaptive_transcript_povm_compiler_theorem_count": 1,
+    "classical_simulable_control_count": 1,
+    "dual_separation_witness_theorem_count": 1,
+    "finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "fixed_transcript_zonotope_criterion_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "offdiagonal_separation_control_count": 1,
+    "physical_pgm_fixed_policy_separation_count": 0,
+    "physical_pgm_full_mrs_model_separation_count": 0,
+    "within_block_separation_control_count": 1
+  },
+  "primary_literature": [
+    {
+      "id": "MRS-2007-QUANTUM-SIEVE-NO-GO",
+      "scope": "Section 3 defines the adaptive measured pair-combination sieve whose complete irrep-labeled forest is a classical transcript.",
+      "title": "On the impossibility of a quantum sieve algorithm for graph isomorphism: unconditional results",
+      "url": "https://arxiv.org/abs/quant-ph/0612089"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "exact_fixed_transcript_postprocessing_criterion",
+      "resolution": "Classical randomized decisions give the effect zonotope exactly; convex projection and its support-function dual certify membership or separation.",
+      "resolved": true
+    },
+    {
+      "obligation": "compile_adaptive_measurement_tree_to_transcript_povm",
+      "resolution": "The Kraus pullback formula compiles every terminal branch and the finite weak-Z/X control sums to identity.",
+      "resolved": true
+    },
+    {
+      "obligation": "construct_physical_recursive_pgm_decision_effect_and_mrs_transcript_povm",
+      "resolution": "Specify one complete physical compiler and an allowed measured-sieve policy on the same input space before running the separation optimization.",
+      "resolved": false
+    },
+    {
+      "obligation": "separate_physical_effect_from_all_allowed_mrs_policies_on_positive_mass",
+      "resolution": "One fixed-policy witness is insufficient; need a structural invariant or optimization over the full adaptive policy class, with accepted-state weighting.",
+      "resolved": false
+    }
+  ],
+  "separation_controls": [
+    {
+      "candidate_effect_validity_residual": 0.0,
+      "candidate_in_fixed_transcript_postprocessing_zonotope": true,
+      "coefficient_maximum": 0.7999999999999996,
+      "coefficient_minimum": 0.19999999999999998,
+      "control_id": "PROJECTIVE-BLOCK-SCALAR-CLASSICAL-CONTROL",
+      "dual_witness_distance_identity_residual": 6.292624226552987e-16,
+      "dual_witness_support_gap": 0.0,
+      "exact_convex_separation_certificate_verified": true,
+      "extremal_state_decision_probability_difference": 4.440892098500626e-16,
+      "hilbert_dimension": 4,
+      "hilbert_schmidt_separation_distance": 6.292624226552987e-16,
+      "operator_norm_separation_from_hs_projection": 4.440892098500626e-16,
+      "optimal_postprocessing_coefficients": [
+        0.7999999999999996,
+        0.19999999999999998
+      ],
+      "status": "exact-fixed-transcript-postprocessing-simulation",
+      "transcript_outcome_count": 2,
+      "transcript_povm_completeness_residual": 0.0
+    },
+    {
+      "candidate_effect_validity_residual": 0.0,
+      "candidate_in_fixed_transcript_postprocessing_zonotope": false,
+      "coefficient_maximum": 0.4999999999999999,
+      "coefficient_minimum": 0.4999999999999998,
+      "control_id": "PROJECTIVE-WITHIN-BLOCK-QUANTUM-WITNESS",
+      "dual_witness_distance_identity_residual": 6.661338147750939e-16,
+      "dual_witness_support_gap": 0.7071067811865469,
+      "exact_convex_separation_certificate_verified": true,
+      "extremal_state_decision_probability_difference": 0.5000000000000002,
+      "hilbert_dimension": 4,
+      "hilbert_schmidt_separation_distance": 0.7071067811865476,
+      "operator_norm_separation_from_hs_projection": 0.5000000000000002,
+      "optimal_postprocessing_coefficients": [
+        0.4999999999999998,
+        0.4999999999999999
+      ],
+      "status": "exact-fixed-transcript-povm-separation-witness",
+      "transcript_outcome_count": 2,
+      "transcript_povm_completeness_residual": 0.0
+    },
+    {
+      "candidate_effect_validity_residual": 0.0,
+      "candidate_in_fixed_transcript_postprocessing_zonotope": false,
+      "coefficient_maximum": 0.4999999999999999,
+      "coefficient_minimum": 0.4999999999999999,
+      "control_id": "PROJECTIVE-OFFDIAGONAL-COHERENCE-WITNESS",
+      "dual_witness_distance_identity_residual": 1.1102230246251565e-16,
+      "dual_witness_support_gap": 0.7071067811865475,
+      "exact_convex_separation_certificate_verified": true,
+      "extremal_state_decision_probability_difference": 0.4999999999999999,
+      "hilbert_dimension": 2,
+      "hilbert_schmidt_separation_distance": 0.7071067811865474,
+      "operator_norm_separation_from_hs_projection": 0.4999999999999999,
+      "optimal_postprocessing_coefficients": [
+        0.4999999999999999,
+        0.4999999999999999
+      ],
+      "status": "exact-fixed-transcript-povm-separation-witness",
+      "transcript_outcome_count": 2,
+      "transcript_povm_completeness_residual": 0.0
+    },
+    {
+      "candidate_effect_validity_residual": 0.0,
+      "candidate_in_fixed_transcript_postprocessing_zonotope": false,
+      "coefficient_maximum": 0.5000000000000003,
+      "coefficient_minimum": 0.5000000000000002,
+      "control_id": "ADAPTIVE-REAL-TRANSCRIPT-VERSUS-Y-EFFECT",
+      "dual_witness_distance_identity_residual": 2.220446049250313e-16,
+      "dual_witness_support_gap": 0.7071067811865474,
+      "exact_convex_separation_certificate_verified": true,
+      "extremal_state_decision_probability_difference": 0.5000000000000001,
+      "hilbert_dimension": 2,
+      "hilbert_schmidt_separation_distance": 0.7071067811865476,
+      "operator_norm_separation_from_hs_projection": 0.5000000000000001,
+      "optimal_postprocessing_coefficients": [
+        0.5000000000000003,
+        0.5000000000000002,
+        0.5000000000000003,
+        0.5000000000000002
+      ],
+      "status": "exact-fixed-transcript-povm-separation-witness",
+      "transcript_outcome_count": 4,
+      "transcript_povm_completeness_residual": 4.440892098500626e-16
+    }
+  ],
+  "status": "mrs-transcript-povm-zonotope-separation-proved-physical-model-separation-open",
+  "summary": "Converted the MRS model boundary into an executable convex effect-space separation problem with exact dual witnesses and adaptive transcript-POVM compilation, while keeping every physical escape claim closed.",
+  "theorem_contract": {
+    "adaptive_transcript_compilation": "A two-stage adaptive measurement with first Kraus K_a and conditional effects F_(b|a) has transcript effects E_(a,b)=K_a^*F_(b|a)K_a.",
+    "convex_projection_test": "Membership is equivalent to zero box-constrained least-squares distance in Hermitian effect space.",
+    "dual_witness": "The normalized projection residual has support-function gap equal to the Hilbert--Schmidt distance and is an exact separating witness.",
+    "fixed_transcript_effect_set": "All binary decisions obtained from a fixed transcript POVM are exactly the zonotope {sum_t f_t E_t:0<=f_t<=1}.",
+    "scope": "The criterion is exact for one specified transcript POVM. The physical PGM transcript effect and separation from every allowed adaptive MRS policy remain unconstructed."
+  }
+}

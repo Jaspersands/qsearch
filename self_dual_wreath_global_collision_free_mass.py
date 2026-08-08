@@ -16,10 +16,19 @@ label on being unequal divides (1) by ``(1-C_n)^k``, where
 
 Equation (1) is a necessary physical-mass gate for every theorem restricted
 to globally distinct source partitions.  At the information threshold the
-event is absent for small n and remains tiny through the exact finite range
-below, despite trending upward.  An asymptotic claim requires a quantitative
-upper bound on Plancherel collision probability strong enough to beat
-``k^2``; finite collision-free recoupling controls do not supply that bound.
+event is absent for small n and remains tiny through the finite range below,
+despite trending upward.  This is a severe pre-asymptotic effect, not an
+asymptotic obstruction: Aggarwal--Elboim's maximal-dimension theorem gives
+
+    max_lambda p_lambda = exp(-Theta(sqrt(n))).
+
+Therefore ``C_n <= max_lambda p_lambda`` and, for
+``k=ceil(log_2(n!))=Theta(n log n)``,
+
+    Pr[any source collision] <= binom(2k,2) C_n = o(1).
+
+Thus (1) tends to one.  This resolves the natural-mass gate but does not prove
+that the collision-free blocks have the required spectral behavior.
 """
 
 from __future__ import annotations
@@ -39,6 +48,10 @@ from representation_obstruction import (
     integer_partitions,
 )
 from research_registry import utc_now
+from self_dual_wreath_natural_unequal_dominance import (
+    MAXIMAL_DIMENSION_PAPER_ID,
+    MAXIMAL_DIMENSION_PAPER_URL,
+)
 
 
 REPORT_PATH = Path(
@@ -65,7 +78,7 @@ class GlobalCollisionFreeMassRecord:
     birthday_union_collision_upper_bound: float
     enough_distinct_partitions_exist: bool
     global_collision_free_mass_inverse_polynomial: bool
-    exact_elementary_symmetric_evaluation: bool
+    stable_log_domain_evaluation: bool
     status: str
 
 
@@ -195,7 +208,7 @@ def global_collision_free_mass_record(n: int) -> GlobalCollisionFreeMassRecord:
         birthday_union_collision_upper_bound=math.comb(degree, 2) * collision,
         enough_distinct_partitions_exist=degree <= len(partitions),
         global_collision_free_mass_inverse_polynomial=inverse_polynomial,
-        exact_elementary_symmetric_evaluation=True,
+        stable_log_domain_evaluation=True,
         status=(
             "collision-free-event-combinatorially-impossible"
             if degree > len(partitions)
@@ -281,7 +294,8 @@ def run_global_collision_free_mass() -> GlobalCollisionFreeMassReport:
         "tail_copy_count": tail.information_threshold_copy_count,
         "tail_log2_collision_free_mass": tail.log2_unconditioned_global_collision_free_probability,
         "tail_plancherel_collision_probability": tail.plancherel_collision_probability,
-        "asymptotic_inverse_polynomial_mass_theorem_count": 0,
+        "asymptotic_global_collision_free_mass_tends_to_one_theorem_count": 1,
+        "asymptotic_inverse_polynomial_mass_theorem_count": 1,
         "new_quantum_algorithm_count": 0,
     }
     return GlobalCollisionFreeMassReport(
@@ -289,8 +303,21 @@ def run_global_collision_free_mass() -> GlobalCollisionFreeMassReport:
         theorem_contract={
             "unconditioned_mass": "P_cf=(2k)! e_(2k)({d_lambda^2/n!}).",
             "within_pair_unequal_conditioning": "P_cf|unequal=P_cf/(1-C_n)^k, C_n=sum_lambda(d_lambda^2/n!)^2.",
-            "birthday_sufficient_condition": "If k^2 C_n=o(1), a union bound makes global collision freedom typical.",
-            "scope": "The elementary-symmetric formula is exact; no asymptotic upper bound on C_n is proved here.",
+            "birthday_union_bound": "1-P_cf<=binom(2k,2) C_n.",
+            "maximal_dimension_input": (
+                "Aggarwal--Elboim: max_lambda d_lambda="
+                "sqrt(n!) exp(-(d+o(1))sqrt(n)), d>0."
+            ),
+            "asymptotic_consequence": (
+                "C_n<=max_lambda p_lambda=exp(-Theta(sqrt(n))); "
+                "at k=Theta(n log n), binom(2k,2)C_n=o(1), so P_cf=1-o(1)."
+            ),
+            "literature_id": MAXIMAL_DIMENSION_PAPER_ID,
+            "literature_url": MAXIMAL_DIMENSION_PAPER_URL,
+            "scope": (
+                "The mass theorem is asymptotic and does not transfer any "
+                "unproved collision-free spectral or decoding claim."
+            ),
         },
         exact_validations=validations,
         scaling_records=scaling,
@@ -302,13 +329,29 @@ def run_global_collision_free_mass() -> GlobalCollisionFreeMassReport:
             },
             {
                 "obligation": "asymptotic_plancherel_collision_bound",
-                "resolved": False,
-                "resolution": "Need a cited quantitative bound making k(n)^2 C_n vanish at k=ceil(log2 n!).",
+                "resolved": True,
+                "resolution": (
+                    "Aggarwal--Elboim's maximal-dimension asymptotic gives "
+                    "C_n<=max p_lambda=exp(-Theta(sqrt(n))), which beats "
+                    "k(n)^2=Theta(n^2 log^2 n)."
+                ),
             },
             {
                 "obligation": "positive_mass_transfer_of_collision_free_spectral_theorems",
+                "resolved": True,
+                "resolution": (
+                    "Any uniform asymptotic theorem on globally collision-free "
+                    "blocks loses only o(1) natural source mass. No such "
+                    "spectral theorem is supplied here."
+                ),
+            },
+            {
+                "obligation": "collision_free_block_spectral_theorem",
                 "resolved": False,
-                "resolution": "The exact finite mass is tiny through n=48; no natural-average performance theorem follows from collision-free blocks alone.",
+                "resolution": (
+                    "Global distinctness is typical, but a uniform signed/Racah "
+                    "residual-quotient or PGM contraction theorem remains open."
+                ),
             },
         ],
         adversarial_audit=[
@@ -319,29 +362,50 @@ def run_global_collision_free_mass() -> GlobalCollisionFreeMassReport:
             },
             {
                 "objection": "Finite tiny mass proves collision freedom is asymptotically negligible.",
+                "resolved": True,
+                "resolution": (
+                    "The maximal-dimension theorem proves the opposite: the "
+                    "collision-free mass tends to one. The n<=48 values are "
+                    "pre-asymptotic."
+                ),
+            },
+            {
+                "objection": "Typical source mass makes finite collision-free spectral gaps representative.",
                 "resolved": False,
-                "resolution": "Collision probability decreases rapidly and the exact mass trends upward; a quantitative asymptotic theorem is required.",
+                "resolution": (
+                    "Typicality transfers only a theorem uniform over the "
+                    "collision-free event; selected finite portfolios do not "
+                    "establish that theorem."
+                ),
             },
         ],
         headline_metrics=metrics,
         claim_gate={
             "exact_global_collision_free_mass_formula_proved": failures == 0,
-            "finite_collision_free_controls_represent_natural_mass": False,
-            "asymptotic_collision_free_mass_inverse_polynomial_proved": False,
+            "asymptotic_collision_free_mass_tends_to_one_proved": True,
+            "asymptotic_collision_free_mass_inverse_polynomial_proved": True,
+            "mass_gate_for_uniform_collision_free_theorem_resolved": True,
+            "selected_finite_collision_free_controls_are_uniform": False,
+            "collision_free_block_spectral_theorem_proved": False,
             "collision_free_spectral_results_transferred_to_natural_average": False,
             "speedup_claim_allowed": False,
-            "reason": "The exact source mass is now computable, but its asymptotic scale and transfer to the natural PGM remain unproved.",
+            "reason": (
+                "Global collision freedom is asymptotically typical, but the "
+                "required uniform collision-free signed/Racah spectral theorem "
+                "and decoder remain unproved."
+            ),
         },
-        status="global-collision-free-mass-exact-asymptotic-transfer-open",
+        status="global-collision-free-mass-asymptotically-typical-spectral-theorem-open",
         summary=(
             "Derived the exact Plancherel mass of globally distinct source "
             f"partitions; at n={tail.n} and k={tail.information_threshold_copy_count} "
-            f"the finite mass is about 2^{tail.log2_unconditioned_global_collision_free_probability:.3f}."
+            f"the finite mass is about 2^{tail.log2_unconditioned_global_collision_free_probability:.3f}, "
+            "while the maximal-dimension theorem proves that it tends to one asymptotically."
         ),
         falsifiers_triggered=[
-            "Globally collision-free finite recoupling controls need a separate physical-mass theorem.",
+            "Finite n<=48 collision-free mass is strongly pre-asymptotic and cannot falsify asymptotic typicality.",
             "Within-pair unequal conditioning is not the same as collision freedom across copies.",
-            "Finite low-n spectral gaps cannot be weighted as representative natural behavior without source-mass accounting.",
+            "Finite low-n spectral gaps are not a uniform theorem over the asymptotically typical collision-free event.",
         ],
     )
 

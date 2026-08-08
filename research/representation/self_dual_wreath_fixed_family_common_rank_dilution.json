@@ -1,0 +1,234 @@
+{
+  "created_at": "2026-08-08T02:26:26.803543+00:00",
+  "theorem_contract": {
+    "balanced_membership_family": "m orientations realize every nonzero F_2^m membership pattern q times, with r=2^m-1 blocks and incidence rank m.",
+    "exact_expectation": "Independent Plancherel orthogonality gives expected relative common rank 2^(r-m)/|S_n|^r.",
+    "support": "For fixed m and q->infinity, Sellke covering makes every pattern multiplicity positive with probability 1-o(1).",
+    "concentration": "Tensor-multiplicity second moments concentrate every fixed pattern factor, so relative rank concentrates at its expectation.",
+    "scope": "No spectral projection of the full exponentially large node frame is identified or bounded."
+  },
+  "finite_controls": [
+    {
+      "n": 5,
+      "family_size": 2,
+      "source_pair_count": 2,
+      "target_count": 7,
+      "source_tuple_count_per_target": 2401,
+      "nonempty_membership_pattern_count": 3,
+      "incidence_rank": 2,
+      "parity_kernel_dimension": 1,
+      "predicted_expected_relative_common_rank": "1/864000",
+      "maximum_exact_expectation_residual": "0",
+      "exact_plancherel_expectation_verified": true,
+      "status": "exact-fixed-family-plancherel-rank-expectation-verified"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 16,
+      "family_size": 2,
+      "group_order_log2": 44.25014046988262,
+      "nonempty_membership_pattern_count": 3,
+      "parity_kernel_dimension": 1,
+      "balanced_pattern_multiplicity": 22,
+      "source_pair_count": 44,
+      "expected_relative_common_rank_log2": -131.75042140964786,
+      "asymptotic_common_support_probability": "1-o(1)",
+      "asymptotic_relative_rank_concentration": true,
+      "global_distinct_transfer_valid": true,
+      "full_node_bad_spectral_projection_dilution_proved": false,
+      "status": "fixed-family-support-ubiquitous-rank-dilute"
+    },
+    {
+      "n": 16,
+      "family_size": 3,
+      "group_order_log2": 44.25014046988262,
+      "nonempty_membership_pattern_count": 7,
+      "parity_kernel_dimension": 4,
+      "balanced_pattern_multiplicity": 11,
+      "source_pair_count": 44,
+      "expected_relative_common_rank_log2": -305.75098328917835,
+      "asymptotic_common_support_probability": "1-o(1)",
+      "asymptotic_relative_rank_concentration": true,
+      "global_distinct_transfer_valid": true,
+      "full_node_bad_spectral_projection_dilution_proved": false,
+      "status": "fixed-family-support-ubiquitous-rank-dilute"
+    },
+    {
+      "n": 16,
+      "family_size": 4,
+      "group_order_log2": 44.25014046988262,
+      "nonempty_membership_pattern_count": 15,
+      "parity_kernel_dimension": 11,
+      "balanced_pattern_multiplicity": 5,
+      "source_pair_count": 40,
+      "expected_relative_common_rank_log2": -652.7521070482394,
+      "asymptotic_common_support_probability": "1-o(1)",
+      "asymptotic_relative_rank_concentration": true,
+      "global_distinct_transfer_valid": true,
+      "full_node_bad_spectral_projection_dilution_proved": false,
+      "status": "fixed-family-support-ubiquitous-rank-dilute"
+    },
+    {
+      "n": 32,
+      "family_size": 2,
+      "group_order_log2": 117.6632636523603,
+      "nonempty_membership_pattern_count": 3,
+      "parity_kernel_dimension": 1,
+      "balanced_pattern_multiplicity": 59,
+      "source_pair_count": 118,
+      "expected_relative_common_rank_log2": -351.9897909570809,
+      "asymptotic_common_support_probability": "1-o(1)",
+      "asymptotic_relative_rank_concentration": true,
+      "global_distinct_transfer_valid": true,
+      "full_node_bad_spectral_projection_dilution_proved": false,
+      "status": "fixed-family-support-ubiquitous-rank-dilute"
+    },
+    {
+      "n": 32,
+      "family_size": 3,
+      "group_order_log2": 117.6632636523603,
+      "nonempty_membership_pattern_count": 7,
+      "parity_kernel_dimension": 4,
+      "balanced_pattern_multiplicity": 29,
+      "source_pair_count": 116,
+      "expected_relative_common_rank_log2": -819.642845566522,
+      "asymptotic_common_support_probability": "1-o(1)",
+      "asymptotic_relative_rank_concentration": true,
+      "global_distinct_transfer_valid": true,
+      "full_node_bad_spectral_projection_dilution_proved": false,
+      "status": "fixed-family-support-ubiquitous-rank-dilute"
+    },
+    {
+      "n": 32,
+      "family_size": 4,
+      "group_order_log2": 117.6632636523603,
+      "nonempty_membership_pattern_count": 15,
+      "parity_kernel_dimension": 11,
+      "balanced_pattern_multiplicity": 14,
+      "source_pair_count": 112,
+      "expected_relative_common_rank_log2": -1753.9489547854046,
+      "asymptotic_common_support_probability": "1-o(1)",
+      "asymptotic_relative_rank_concentration": true,
+      "global_distinct_transfer_valid": true,
+      "full_node_bad_spectral_projection_dilution_proved": false,
+      "status": "fixed-family-support-ubiquitous-rank-dilute"
+    },
+    {
+      "n": 48,
+      "family_size": 2,
+      "group_order_log2": 202.94957202970025,
+      "nonempty_membership_pattern_count": 3,
+      "parity_kernel_dimension": 1,
+      "balanced_pattern_multiplicity": 101,
+      "source_pair_count": 202,
+      "expected_relative_common_rank_log2": -607.8487160891008,
+      "asymptotic_common_support_probability": "1-o(1)",
+      "asymptotic_relative_rank_concentration": true,
+      "global_distinct_transfer_valid": true,
+      "full_node_bad_spectral_projection_dilution_proved": false,
+      "status": "fixed-family-support-ubiquitous-rank-dilute"
+    },
+    {
+      "n": 48,
+      "family_size": 3,
+      "group_order_log2": 202.94957202970025,
+      "nonempty_membership_pattern_count": 7,
+      "parity_kernel_dimension": 4,
+      "balanced_pattern_multiplicity": 50,
+      "source_pair_count": 200,
+      "expected_relative_common_rank_log2": -1416.6470042079018,
+      "asymptotic_common_support_probability": "1-o(1)",
+      "asymptotic_relative_rank_concentration": true,
+      "global_distinct_transfer_valid": true,
+      "full_node_bad_spectral_projection_dilution_proved": false,
+      "status": "fixed-family-support-ubiquitous-rank-dilute"
+    },
+    {
+      "n": 48,
+      "family_size": 4,
+      "group_order_log2": 202.94957202970025,
+      "nonempty_membership_pattern_count": 15,
+      "parity_kernel_dimension": 11,
+      "balanced_pattern_multiplicity": 25,
+      "source_pair_count": 200,
+      "expected_relative_common_rank_log2": -3033.2435804455035,
+      "asymptotic_common_support_probability": "1-o(1)",
+      "asymptotic_relative_rank_concentration": true,
+      "global_distinct_transfer_valid": true,
+      "full_node_bad_spectral_projection_dilution_proved": false,
+      "status": "fixed-family-support-ubiquitous-rank-dilute"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_fixed_family_common_rank_expectation",
+      "resolved": true,
+      "resolution": "The parity kernel has 2^(r-m) assignments and every independent normalized block multiplicity has mean 1/|S_n|."
+    },
+    {
+      "obligation": "separate_common_support_probability_from_scalar_rank_mass",
+      "resolved": true,
+      "resolution": "Sellke covering gives support probability 1-o(1), while the exact scalar rank mass is factorial to power r."
+    },
+    {
+      "obligation": "lift_fixed_family_dilution_to_bad_full_node_spectral_projections",
+      "resolved": false,
+      "resolution": "The remaining projectors need not preserve a fixed-family intersection; a center-valued higher-order local law is needed."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Nearly complete fixed-order Cech support implies a large spectral obstruction.",
+      "resolved": true,
+      "resolution": "False: support tends to one while relative rank is 2^(r-m)/|S_n|^r."
+    },
+    {
+      "objection": "Tiny scalar common-rank mass implies common support is rare.",
+      "resolved": true,
+      "resolution": "False: tensor covering makes support ubiquitous; this is the exact scalar-versus-central dilution phenomenon."
+    },
+    {
+      "objection": "The fixed-family theorem proves central dilution for a full-node bad eigenspace.",
+      "resolved": false,
+      "resolution": "It does not identify an invariant eigenspace after all remaining orientations are included."
+    }
+  ],
+  "literature_links": [
+    {
+      "paper": "Sellke, Covering Irrep(S_n) With Tensor Products and Powers",
+      "url": "https://arxiv.org/abs/2004.05283",
+      "directly_applies": true,
+      "reason": "Its fixed-factor covering theorem makes every balanced membership block support all trivial/sign assignments."
+    }
+  ],
+  "headline_metrics": {
+    "fixed_family_exact_expectation_theorem_count": 1,
+    "fixed_family_support_covering_theorem_count": 1,
+    "fixed_family_relative_rank_concentration_theorem_count": 1,
+    "finite_control_count": 1,
+    "finite_control_failure_count": 0,
+    "maximum_family_size_scaling_record": 4,
+    "n48_m4_expected_relative_rank_log2": -3033.2435804455035,
+    "full_node_bad_projection_dilution_theorem_count": 0,
+    "natural_node_frame_edge_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "fixed_family_common_rank_expectation_proved": true,
+    "fixed_family_common_support_probability_one_proved": true,
+    "fixed_family_relative_rank_dilution_proved": true,
+    "support_only_higher_order_incidence_sufficient_for_edge": false,
+    "full_node_bad_projection_central_support_controlled": false,
+    "natural_all_depth_node_edge_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "Fixed-order common support is ubiquitous but rank-dilute; its interaction with the complete node frame is still unknown."
+  },
+  "status": "fixed-family-central-dilution-proved-full-node-law-open",
+  "summary": "Proved an exact support-versus-rank dilution law for every fixed balanced orientation family.",
+  "falsifiers_triggered": [
+    "Common-support probability and scalar relative rank can differ by factorial powers.",
+    "A dense fixed-order intersection nerve is not a spectral-edge theorem.",
+    "Fixed-family intersections are not automatically eigenspaces of the full node frame."
+  ]
+}

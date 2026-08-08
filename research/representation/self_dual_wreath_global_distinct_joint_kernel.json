@@ -1,0 +1,397 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Global distinctness is asymptotically typical, so independent unequal labels are interchangeable in high moments.",
+      "resolution": "Typicality is only exp(-Theta(sqrt(n))) accurate, exponentially too coarse for a 2^{-Theta(n log n)} target.",
+      "resolved": true
+    },
+    {
+      "objection": "The finite joint law might nevertheless factor exactly for projector words.",
+      "resolution": "Exact n=4 and n=5 controls have nonzero rational factorization defects.",
+      "resolved": true
+    },
+    {
+      "objection": "A nonzero factorization defect proves the desired contraction fails.",
+      "resolution": "It only invalidates product-kernel substitution; signed observable-specific cancellation may still succeed.",
+      "resolved": false
+    },
+    {
+      "objection": "Signed injective contraction is mandatory before proving a collision-free spectral event.",
+      "resolution": "False: a sufficiently strong independent-source good event transfers by dividing its failure probability by P_cf.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "conditioning_distance_scale_separation_proved": true,
+    "conditioning_tv_identity_and_bounds_proved": true,
+    "event_level_conditioning_bypass_proved": true,
+    "global_distinct_joint_character_kernel_proved": true,
+    "global_distinct_joint_word_kernel_proved": true,
+    "globally_distinct_source_law_factorizes": false,
+    "independent_all_unequal_kernel_transfer_sufficient": false,
+    "independent_uniform_spectral_event_proved": false,
+    "injective_plancherel_transform_proved": true,
+    "injective_signed_contraction_is_mandatory": false,
+    "polynomial_hidden_permutation_decoder_proved": false,
+    "reason": "The injective source kernel is explicit and direct moment transfer remains open. Event-level conditioning bypasses that gate, but the independent uniform spectral event is unproved.",
+    "speedup_claim_allowed": false,
+    "structured_maximal_effect_dilation_proved": false,
+    "uniform_collision_free_signed_contraction_proved": false
+  },
+  "conditioning_scaling": [
+    {
+      "conditioning_total_variation": 1.0,
+      "copy_count": 7,
+      "cross_pair_single_slot_collision_probability": 0.20212153448484976,
+      "finite_bound_audit": true,
+      "generic_total_variation_transfer_conclusive": false,
+      "log2_conditioning_total_variation": 0.0,
+      "log2_required_second_moment_scale": -6,
+      "log2_tv_to_required_scale_gap": 6.0,
+      "n": 5,
+      "pairwise_unequal_conditioned_global_distinct_probability": 0.0,
+      "partition_count": 7,
+      "status": "generic-tv-transfer-finite-row-inconclusive",
+      "union_bound_conditioning_total_variation": 1.0
+    },
+    {
+      "conditioning_total_variation": 1.0,
+      "copy_count": 16,
+      "cross_pair_single_slot_collision_probability": 0.10072119792408828,
+      "finite_bound_audit": true,
+      "generic_total_variation_transfer_conclusive": false,
+      "log2_conditioning_total_variation": 0.0,
+      "log2_required_second_moment_scale": -15,
+      "log2_tv_to_required_scale_gap": 15.0,
+      "n": 8,
+      "pairwise_unequal_conditioned_global_distinct_probability": 0.0,
+      "partition_count": 22,
+      "status": "generic-tv-transfer-finite-row-inconclusive",
+      "union_bound_conditioning_total_variation": 1.0
+    },
+    {
+      "conditioning_total_variation": 1.0,
+      "copy_count": 29,
+      "cross_pair_single_slot_collision_probability": 0.044922826278562054,
+      "finite_bound_audit": true,
+      "generic_total_variation_transfer_conclusive": false,
+      "log2_conditioning_total_variation": 0.0,
+      "log2_required_second_moment_scale": -28,
+      "log2_tv_to_required_scale_gap": 28.0,
+      "n": 12,
+      "pairwise_unequal_conditioned_global_distinct_probability": 1.1353469054827563e-43,
+      "partition_count": 77,
+      "status": "generic-tv-transfer-finite-row-inconclusive",
+      "union_bound_conditioning_total_variation": 1.0
+    },
+    {
+      "conditioning_total_variation": 1.0,
+      "copy_count": 45,
+      "cross_pair_single_slot_collision_probability": 0.020893068873356437,
+      "finite_bound_audit": true,
+      "generic_total_variation_transfer_conclusive": false,
+      "log2_conditioning_total_variation": 0.0,
+      "log2_required_second_moment_scale": -44,
+      "log2_tv_to_required_scale_gap": 44.0,
+      "n": 16,
+      "pairwise_unequal_conditioned_global_distinct_probability": 7.55772351753641e-38,
+      "partition_count": 231,
+      "status": "generic-tv-transfer-finite-row-inconclusive",
+      "union_bound_conditioning_total_variation": 1.0
+    },
+    {
+      "conditioning_total_variation": 1.0,
+      "copy_count": 62,
+      "cross_pair_single_slot_collision_probability": 0.010115742728594808,
+      "finite_bound_audit": true,
+      "generic_total_variation_transfer_conclusive": false,
+      "log2_conditioning_total_variation": 0.0,
+      "log2_required_second_moment_scale": -61,
+      "log2_tv_to_required_scale_gap": 61.0,
+      "n": 20,
+      "pairwise_unequal_conditioned_global_distinct_probability": 5.402411148206419e-33,
+      "partition_count": 627,
+      "status": "generic-tv-transfer-finite-row-inconclusive",
+      "union_bound_conditioning_total_variation": 1.0
+    },
+    {
+      "conditioning_total_variation": 1.0,
+      "copy_count": 80,
+      "cross_pair_single_slot_collision_probability": 0.005655319176575853,
+      "finite_bound_audit": true,
+      "generic_total_variation_transfer_conclusive": false,
+      "log2_conditioning_total_variation": 0.0,
+      "log2_required_second_moment_scale": -79,
+      "log2_tv_to_required_scale_gap": 79.0,
+      "n": 24,
+      "pairwise_unequal_conditioned_global_distinct_probability": 6.040671303054264e-28,
+      "partition_count": 1575,
+      "status": "generic-tv-transfer-finite-row-inconclusive",
+      "union_bound_conditioning_total_variation": 1.0
+    },
+    {
+      "conditioning_total_variation": 1.0,
+      "copy_count": 98,
+      "cross_pair_single_slot_collision_probability": 0.002963462865414392,
+      "finite_bound_audit": true,
+      "generic_total_variation_transfer_conclusive": false,
+      "log2_conditioning_total_variation": 0.0,
+      "log2_required_second_moment_scale": -97,
+      "log2_tv_to_required_scale_gap": 97.0,
+      "n": 28,
+      "pairwise_unequal_conditioned_global_distinct_probability": 2.77576898486558e-23,
+      "partition_count": 3718,
+      "status": "generic-tv-transfer-finite-row-inconclusive",
+      "union_bound_conditioning_total_variation": 1.0
+    },
+    {
+      "conditioning_total_variation": 1.0,
+      "copy_count": 118,
+      "cross_pair_single_slot_collision_probability": 0.0017723088391928253,
+      "finite_bound_audit": true,
+      "generic_total_variation_transfer_conclusive": false,
+      "log2_conditioning_total_variation": 0.0,
+      "log2_required_second_moment_scale": -117,
+      "log2_tv_to_required_scale_gap": 117.0,
+      "n": 32,
+      "pairwise_unequal_conditioned_global_distinct_probability": 1.732416057886063e-19,
+      "partition_count": 8349,
+      "status": "generic-tv-transfer-finite-row-inconclusive",
+      "union_bound_conditioning_total_variation": 1.0
+    },
+    {
+      "conditioning_total_variation": 0.9999999999999997,
+      "copy_count": 139,
+      "cross_pair_single_slot_collision_probability": 0.0010083790516685496,
+      "finite_bound_audit": true,
+      "generic_total_variation_transfer_conclusive": false,
+      "log2_conditioning_total_variation": -4.805139755722377e-16,
+      "log2_required_second_moment_scale": -138,
+      "log2_tv_to_required_scale_gap": 138.0,
+      "n": 36,
+      "pairwise_unequal_conditioned_global_distinct_probability": 3.254018004059356e-16,
+      "partition_count": 17977,
+      "status": "generic-tv-transfer-finite-row-inconclusive",
+      "union_bound_conditioning_total_variation": 1.0
+    },
+    {
+      "conditioning_total_variation": 0.9999999999997079,
+      "copy_count": 160,
+      "cross_pair_single_slot_collision_probability": 0.0006169620874806164,
+      "finite_bound_audit": true,
+      "generic_total_variation_transfer_conclusive": false,
+      "log2_conditioning_total_variation": -4.2141075657691396e-13,
+      "log2_required_second_moment_scale": -159,
+      "log2_tv_to_required_scale_gap": 158.99999999999957,
+      "n": 40,
+      "pairwise_unequal_conditioned_global_distinct_probability": 2.92089060034303e-13,
+      "partition_count": 37338,
+      "status": "generic-tv-transfer-finite-row-inconclusive",
+      "union_bound_conditioning_total_variation": 1.0
+    },
+    {
+      "conditioning_total_variation": 0.9999999999190708,
+      "copy_count": 181,
+      "cross_pair_single_slot_collision_probability": 0.0003836211146354247,
+      "finite_bound_audit": true,
+      "generic_total_variation_transfer_conclusive": false,
+      "log2_conditioning_total_variation": -1.1675608664589273e-10,
+      "log2_required_second_moment_scale": -180,
+      "log2_tv_to_required_scale_gap": 179.99999999988324,
+      "n": 44,
+      "pairwise_unequal_conditioned_global_distinct_probability": 8.092916038368259e-11,
+      "partition_count": 75175,
+      "status": "generic-tv-transfer-finite-row-inconclusive",
+      "union_bound_conditioning_total_variation": 1.0
+    },
+    {
+      "conditioning_total_variation": 0.999999989026824,
+      "copy_count": 203,
+      "cross_pair_single_slot_collision_probability": 0.00023418080949682348,
+      "finite_bound_audit": true,
+      "generic_total_variation_transfer_conclusive": false,
+      "log2_conditioning_total_variation": -1.583094673461822e-08,
+      "log2_required_second_moment_scale": -202,
+      "log2_tv_to_required_scale_gap": 201.99999998416905,
+      "n": 48,
+      "pairwise_unequal_conditioned_global_distinct_probability": 1.097317601151052e-08,
+      "partition_count": 147273,
+      "status": "generic-tv-transfer-finite-row-inconclusive",
+      "union_bound_conditioning_total_variation": 1.0
+    }
+  ],
+  "created_at": "2026-08-08T01:06:29.230814+00:00",
+  "falsifiers_triggered": [
+    "Global source distinctness does not preserve independence across physical labels.",
+    "Pairwise-unequal product kernels have exact nonzero finite factorization defects after global conditioning.",
+    "An o(1) source-conditioning error is not enough for an exp(-Theta(n log n)) PGM moment target.",
+    "Direct moment transfer needs signed injective control, but event-level conditioning can bypass moment transfer."
+  ],
+  "headline_metrics": {
+    "conditioning_distance_asymptotic_scale_theorem_count": 1,
+    "conditioning_total_variation_identity_theorem_count": 1,
+    "conditioning_tv_finite_bound_failure_count": 0,
+    "event_level_conditioning_bypass_theorem_count": 1,
+    "generic_tv_transfer_no_go_theorem_count": 1,
+    "global_distinct_joint_character_kernel_theorem_count": 1,
+    "injective_plancherel_transform_theorem_count": 1,
+    "injective_transform_validation_count": 2,
+    "injective_transform_validation_failure_count": 0,
+    "joint_word_kernel_control_count": 2,
+    "joint_word_kernel_structure_failure_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "nonfactorizing_joint_word_control_count": 2,
+    "tail_copy_count": 203,
+    "tail_log2_conditioning_total_variation": -1.583094673461822e-08,
+    "tail_log2_required_second_moment_scale": -202,
+    "tail_log2_tv_to_required_scale_gap": 201.99999998416905,
+    "tail_n": 48,
+    "uniform_collision_free_signed_contraction_theorem_count": 0
+  },
+  "injective_transform_validations": [
+    {
+      "direct_value": "0",
+      "exact_match": true,
+      "n": 3,
+      "partition_count": 3,
+      "slot_count": 2,
+      "subset_dp_value": "0"
+    },
+    {
+      "direct_value": "0",
+      "exact_match": true,
+      "n": 4,
+      "partition_count": 5,
+      "slot_count": 3,
+      "subset_dp_value": "0"
+    }
+  ],
+  "joint_word_controls": [
+    {
+      "conditioning_total_variation": "637/726",
+      "copy_count": 2,
+      "cross_pair_single_slot_collision_probability": "3659/13068",
+      "direct_joint_word_factor": "71/1068",
+      "exact_factorization_defect": "479/32307",
+      "exact_structure_residual": "0",
+      "factorization_defect_bounded_by_twice_total_variation": true,
+      "global_distinct_given_pairwise_unequal_probability": "89/726",
+      "global_distinct_probability": "89/1536",
+      "globally_distinct_source_law_nonfactorizing": true,
+      "independent_pairwise_unequal_word_factor": "25/484",
+      "moment_order": 2,
+      "n": 4,
+      "partition_count": 5,
+      "sequence_cycle_types": [
+        [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            2
+          ]
+        ]
+      ],
+      "status": "injective-joint-word-kernel-exact-nonfactorizing",
+      "structured_joint_word_factor": "71/1068"
+    },
+    {
+      "conditioning_total_variation": "251179/357210",
+      "copy_count": 2,
+      "cross_pair_single_slot_collision_probability": "433199/2143260",
+      "direct_joint_word_factor": "129871/2120620",
+      "exact_factorization_defect": "15371131/17391734775",
+      "exact_structure_residual": "0",
+      "factorization_defect_bounded_by_twice_total_variation": true,
+      "global_distinct_given_pairwise_unequal_probability": "106031/357210",
+      "global_distinct_probability": "106031/576000",
+      "globally_distinct_source_law_nonfactorizing": true,
+      "independent_pairwise_unequal_word_factor": "39601/656100",
+      "moment_order": 2,
+      "n": 5,
+      "partition_count": 7,
+      "sequence_cycle_types": [
+        [
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            2,
+            2,
+            1
+          ]
+        ]
+      ],
+      "status": "injective-joint-word-kernel-exact-nonfactorizing",
+      "structured_joint_word_factor": "129871/2120620"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "exact_global_distinct_joint_source_kernel",
+      "resolution": "Rank-one expansion plus injective subset DP is exact and matches direct enumeration.",
+      "resolved": true
+    },
+    {
+      "obligation": "independent_all_unequal_replacement_at_pgm_scale",
+      "resolution": "Rejected: its generic total-variation error is exp(-Theta(sqrt(n))), not exp(-Theta(n log n)).",
+      "resolved": true
+    },
+    {
+      "obligation": "observable_specific_injective_kernel_contraction",
+      "resolution": "Open as a direct moment-transfer route, but not mandatory: an independent high-probability good event transfers by conditional probability.",
+      "resolved": false
+    },
+    {
+      "obligation": "event_level_conditioning_bypass",
+      "resolution": "An independent good event with failure delta has conditioned failure at most delta/P_cf; union bounds can be applied before conditioning.",
+      "resolved": true
+    }
+  ],
+  "status": "global-distinct-injective-kernel-proved-event-bypass-independent-uniform-edge-open",
+  "summary": "Derived and exactly validated the nonfactorizing injective Plancherel kernel for globally distinct sources. Generic moment transfer is too coarse, but high-probability spectral events can instead be conditioned directly once proved independently.",
+  "theorem_contract": {
+    "asymptotic_scale": "Aggarwal--Elboim implies C_n,D_n=exp(-Theta(sqrt(n))); for k=Theta(n log n), TV=exp(-Theta(sqrt(n))).",
+    "conditioning_tv_identity": "TV(Law(.|pairwise unequal),Law(.|globally distinct))=1-P_cf/(1-C_n)^k.",
+    "cross_collision_bounds": "D_n<=TV<=(binom(2k,2)-k)D_n, where D_n=sum_lambda[p_lambda(1-p_lambda)/(1-C_n)]^2.",
+    "global_distinct_joint_kernel": "Expand every unequal character or projector-word factor into rank-one source features and divide the resulting injective transform by P_cf=(2k)!e_(2k)(p).",
+    "injective_transform": "I_n(f_1,...,f_r)=sum_distinct(nu_1,...,nu_r) prod_j p_(nu_j)f_j(nu_j), computed by subset DP.",
+    "literature_id": "aggarwal-elboim-maximal-dimension-2026",
+    "literature_url": "https://arxiv.org/abs/2605.25995",
+    "moment_scale_separation": "The required 2^{1-k}=exp(-Theta(n log n)) scale is far below the generic conditioning error."
+  }
+}

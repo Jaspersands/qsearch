@@ -39389,6 +39389,73 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-BLOCK-COMMON-CORE-QUOTIENT",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY"
+    ],
+    "claim": "The explicit Sellke-generated one-dimensional block common cores cannot be removed without deleting a constant fraction of the natural Fourier carrier.",
+    "evidence": {
+      "block_common_core_annihilation_theorem_count": 1,
+      "block_one_dimensional_isotypic_projector_theorem_count": 1,
+      "compressed_covariant_outcome_transform_count": 0,
+      "finite_quotient_control_count": 1,
+      "finite_quotient_validation_failure_count": 0,
+      "maximum_common_range_annihilation_residual": 2.355460076494959e-16,
+      "maximum_mixed_orientation_action_commutator_norm": 1.0000000000000009,
+      "maximum_quotient_projector_idempotence_residual": 1.4720247458127448e-15,
+      "maximum_replicated_orientation_action_commutator_norm": 1.3414743772740449e-15,
+      "naive_branchwise_physical_lift_covariance_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "physical_carrier_quotient_circuit_count": 0,
+      "plancherel_expected_retained_fraction_one_minus_o_one_theorem_count": 1,
+      "polynomial_hidden_permutation_decoder_count": 0,
+      "residual_polynomial_frame_norm_theorem_count": 0,
+      "scaling_record_count": 11,
+      "tail_complete_block_count": 89,
+      "tail_expected_removed_fraction_upper_bound": 9.231874765025326e-214,
+      "tail_n": 128
+    },
+    "id": "NEG-CODE-WREATH-BLOCK-COMMON-CORE-IS-UNQUOTIENTABLE",
+    "lesson": "Pursue a physical lift of the block quotient and audit the residual high-dimensional spectrum; do not resume the unquotiented uniform norm proof.",
+    "reason_invalid": "Exact side isotypic projectors annihilate those common cores, while Plancherel stationarity bounds expected dimension loss by 4b/n! for b blocks.",
+    "source": "research/representation/self_dual_wreath_block_common_core_quotient.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-PAIRED-BLOCK-FILTER-BYPASS",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY"
+    ],
+    "claim": "Removing trivial/sign selected sectors independently in each orientation block restores a uniform poly(n)2^-k residual frame norm.",
+    "evidence": {
+      "abstract_spectral_trimmed_subpovm_circuit_count": 0,
+      "exact_filtered_paired_block_witness_count": 6,
+      "filtered_exponential_common_orientation_family_theorem_count": 1,
+      "finite_target_violation_count": 4,
+      "new_quantum_algorithm_count": 0,
+      "nonlocal_block_filter_count": 0,
+      "one_dimensional_branch_filter_norm_restoration_counterexample_theorem_count": 1,
+      "paired_self_dual_irrep_common_core_theorem_count": 1,
+      "polynomial_hidden_permutation_decoder_count": 0,
+      "scaling_record_count": 6,
+      "sellke_typical_linear_paired_block_density_theorem_count": 1,
+      "tail_common_orientation_family_size": 16,
+      "tail_copy_count": 29,
+      "tail_log2_common_core_dimension_lower_bound": 322.79778577843655,
+      "tail_n": 12,
+      "tail_norm_lower_bound_to_target_ratio": 8.0,
+      "tail_original_block_count": 9,
+      "tail_paired_bit_count": 4
+    },
+    "id": "NEG-CODE-WREATH-BRANCH-CONTROLLED-LOCAL-FILTER-NORM-RESTORATION",
+    "lesson": "Do not extend the local one-dimensional filter. Search for a genuinely nonlocal block transform or an efficient implementation of the global spectral-trimming theorem.",
+    "reason_invalid": "Pairs of Sellke-good blocks share retained nontrivial self-dual irreps. Assigning one bit per pair recreates 2^Theta(k) filtered projectors with a common vector.",
+    "source": "research/representation/self_dual_wreath_paired_block_filter_bypass.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-CODE-SELF-DUAL-WREATH-COLLISION-FREE-FRAME-PROBE",
       "PO-COMPLEXITY",
       "PO-SUCCESS"
@@ -39415,6 +39482,38 @@
     "lesson": "Target the sufficient and more plausible bound ||B||<=poly(n)2^-k using character ratios, overlap graphs, or Fourier-level contraction.",
     "reason_invalid": "Complete finite W5 collision-free probes contain top eigenvalues slightly above 2^{1-k}.",
     "source": "research/representation/self_dual_wreath_collision_free_frame_probe.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-LOCAL-ISOTYPIC-FILTER-NO-GO",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY"
+    ],
+    "claim": "A product of constant-block isotypic filters can retain nonvanishing natural mass per block while eliminating all exponential common-core families.",
+    "evidence": {
+      "constant_mass_block_local_filter_no_go_theorem_count": 1,
+      "finite_incidence_control_count": 3,
+      "finite_incidence_validation_failure_count": 0,
+      "global_spectral_trim_circuit_count": 0,
+      "growing_block_nonlocal_filter_count": 0,
+      "minimum_finite_paired_common_bit_count": 5,
+      "minimum_finite_retained_plancherel_mass": 0.8784226190476191,
+      "new_quantum_algorithm_count": 0,
+      "plancherel_retained_incidence_double_counting_theorem_count": 1,
+      "polynomial_hidden_permutation_decoder_count": 0,
+      "positive_paired_bit_rate_scaling_row_count": 14,
+      "scaling_record_count": 15,
+      "self_dual_paired_block_bypass_theorem_count": 1,
+      "tail_common_orientation_family_size_lower_bound_decimal": "210624583337114373395836055367340864637790190801098222508621955072",
+      "tail_n": 512,
+      "tail_paired_common_bit_count_lower_bound": 217,
+      "tail_retained_mass": 0.9
+    },
+    "id": "NEG-CODE-WREATH-CONSTANT-MASS-BLOCK-LOCAL-ISOTYPIC-FILTER",
+    "lesson": "Stop searching constant-block local deletions. Require a growing-block/nonlocal transform or implement global spectral trimming through new structured access.",
+    "reason_invalid": "Plancherel incidence forces one self-dual retained irrep to recur on a linear number of good blocks; pairing those blocks recreates 2^Theta(k) common orientations.",
+    "source": "research/representation/self_dual_wreath_local_isotypic_filter_no_go.json"
   },
   {
     "applies_to": [
@@ -39546,6 +39645,40 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-SPECTRAL-FILTER-DEGREE-OBSTRUCTION",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY"
+    ],
+    "claim": "A generic bounded-polynomial transform of the normalization-one average-frame encoding implements the constant-success spectral trimming in polynomial degree.",
+    "evidence": {
+      "asymptotic_eigenvalue_filter_superpolynomial_theorem_count": 1,
+      "asymptotic_singular_filter_superpolynomial_theorem_count": 1,
+      "better_scaled_frame_block_encoding_count": 0,
+      "bounded_polynomial_bernstein_theorem_count": 1,
+      "bounded_polynomial_markov_theorem_count": 0,
+      "eigenvalue_encoding_superpolynomial_row_count": 10,
+      "eigenvalue_filter_degree_obstruction_theorem_count": 1,
+      "general_quantum_circuit_lower_bound_count": 0,
+      "maximum_n": 512,
+      "new_quantum_algorithm_count": 0,
+      "polynomial_hidden_permutation_decoder_count": 0,
+      "promised_inverse_polynomial_relative_gap_theorem_count": 0,
+      "representation_structured_low_pass_transform_count": 0,
+      "scaling_record_count": 11,
+      "singular_filter_degree_obstruction_theorem_count": 1,
+      "singular_value_encoding_superpolynomial_row_count": 8,
+      "tail_eigenvalue_degree_lower_bound_log2": 3873.3309886218376,
+      "tail_log2_hidden_label_count": 3875.166121943203,
+      "tail_singular_degree_lower_bound_log2": 1937.840725075111
+    },
+    "id": "NEG-CODE-WREATH-GENERIC-SPECTRAL-TRIM-QSVT",
+    "lesson": "Search for an exact representation-basis classifier, a better-scaled block encoding, or an intrinsic quotient; do not apply generic QSVT to B.",
+    "reason_invalid": "The cutoff is Theta(1/n!). Bernstein's inequality forces Omega(n!) eigenvalue-polynomial degree or Omega(sqrt(n!)) singular-value-polynomial degree.",
+    "source": "research/representation/self_dual_wreath_spectral_filter_degree_obstruction.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-CODE-SELF-DUAL-WREATH-MASK-HYPERGRAPH-REDUCTION",
       "PO-COMPLEXITY",
       "PO-SUCCESS"
@@ -39569,6 +39702,41 @@
     "lesson": "Use private-column elimination first, then prove anti-concentration on the surviving dense two-core mask incidence hypergraphs.",
     "reason_invalid": "Exact collision-free W5 triangle mask families have nonzero character products despite having no repeated source partition.",
     "source": "research/representation/self_dual_wreath_mask_hypergraph_reduction.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-SPECTRAL-TRIMMED-SUBPOVM",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY",
+      "PO-SUCCESS"
+    ],
+    "claim": "The typical exponential common-core frame spike makes constant-success hidden-permutation recovery information-theoretically impossible.",
+    "evidence": {
+      "exact_spectral_projector_circuit_count": 0,
+      "finite_control_with_nonempty_clipped_spectrum_count": 1,
+      "finite_trimmed_subpovm_control_count": 3,
+      "finite_trimmed_subpovm_validation_failure_count": 0,
+      "information_threshold_scaling_record_count": 13,
+      "maximum_correct_success_bound_residual": 0.0,
+      "maximum_effect_completeness_violation": 0.0,
+      "minimum_finite_correct_label_success_probability": 0.11940298507462689,
+      "minimum_finite_retained_trace_fraction": 0.8333333333333335,
+      "minimum_scaling_correct_success_lower_bound": 0.0626051862476459,
+      "new_quantum_algorithm_count": 0,
+      "polynomial_hidden_permutation_decoder_count": 0,
+      "polynomial_outcome_transform_count": 0,
+      "rank_cauchy_correct_success_theorem_count": 1,
+      "spectral_trimmed_subpovm_theorem_count": 1,
+      "tail_correct_label_success_lower_bound": 0.08016362119964149,
+      "tail_hidden_count_times_second_moment_scale": 1.5593107962113746,
+      "tail_n": 128,
+      "universal_one_sixteenth_scaling_row_count": 13
+    },
+    "id": "NEG-CODE-WREATH-LARGE-NORM-IS-NOT-INFORMATION-NOGO",
+    "lesson": "Move the critical path from frame-norm existence to an efficient low-spectrum filter, compressed covariant outcome transform, and decoder.",
+    "reason_invalid": "A second-moment spectral cutoff removes at most half the average trace and yields a valid sub-POVM with exact-label success at least 1/16 at k=ceil(log2(n!)).",
+    "source": "research/representation/self_dual_wreath_spectral_trimmed_subpovm.json"
   },
   {
     "applies_to": [
@@ -39598,6 +39766,74 @@
     "lesson": "Classify joint word maps by mask incidence rank or overlap hypergraph and prove product mixing on every non-diagonal class.",
     "reason_invalid": "Different subset masks reuse the same bridge generators. Mask inequality removes only the diagonal and does not bound non-diagonal word correlations or character signs.",
     "source": "research/representation/self_dual_wreath_short_word_profile.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-COVARIANT-QUOTIENT-OBSTRUCTION",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY"
+    ],
+    "claim": "The thin algebraic common-core quotient lifts to a nontrivial local projector commuting with every physical orientation branch.",
+    "evidence": {
+      "asymptotic_natural_tuple_non_self_conjugate_theorem_count": 0,
+      "branchwise_covariant_nontrivial_projector_no_go_theorem_count": 1,
+      "finite_orbit_closure_control_count": 1,
+      "finite_orbit_closure_validation_failure_count": 0,
+      "independent_alternating_factor_action_theorem_count": 1,
+      "maximum_finite_closure_sweep_count": 2,
+      "maximum_finite_orbit_closure_fraction": 1.0,
+      "new_quantum_algorithm_count": 0,
+      "non_self_conjugate_scalar_commutant_theorem_count": 1,
+      "orientation_branch_mixing_physical_transform_count": 0,
+      "polynomial_hidden_permutation_decoder_count": 0,
+      "residual_polynomial_frame_norm_theorem_count": 0,
+      "self_conjugate_mass_record_count": 13,
+      "tail_n": 48,
+      "tail_probability_no_self_conjugate_source_draw": 0.08073249064394256,
+      "tail_self_conjugate_plancherel_mass": 0.006179385657338149
+    },
+    "id": "NEG-CODE-WREATH-NAIVE-BRANCHWISE-COMMON-CORE-QUOTIENT",
+    "lesson": "Any physical bypass must coherently mix induced orientation branches or exploit self-conjugate splitting; do not implement the compressed quotient branchwise.",
+    "reason_invalid": "All orientation actions generate independent A_n factors. For non-self-conjugate sources the carrier is irreducible, so its branchwise commutant contains only scalars.",
+    "source": "research/representation/self_dual_wreath_orientation_covariant_quotient_obstruction.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-COMMON-RANGE",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY",
+      "PO-SUCCESS"
+    ],
+    "claim": "Globally distinct source partitions make almost all orientation-projector ranges transverse.",
+    "evidence": {
+      "collision_free_polynomial_factor_norm_theorem_count": 0,
+      "common_range_above_99_percent_all_target_record_count": 3,
+      "common_range_above_half_all_target_record_count": 5,
+      "common_range_formula_validation_count": 750,
+      "common_range_incidence_norm_theorem_count": 0,
+      "commutator_common_range_multiplicity_theorem_count": 1,
+      "complete_w4_common_range_tuple_validation_count": 15,
+      "finite_common_range_validation_failure_count": 0,
+      "information_threshold_scaling_record_count": 2,
+      "maximum_common_range_dimension_residual": 0.0,
+      "pairwise_transversality_theorem_count": 0,
+      "scaling_record_count": 7,
+      "tail_copy_count": 29,
+      "tail_maximum_distinct_common_range_pair_fraction": 0.9999986789189255,
+      "tail_maximum_merged_support_state_count": 2194,
+      "tail_minimum_distinct_common_range_pair_fraction": 0.9999977811239619,
+      "tail_n": 12,
+      "uniform_projector_sum_norm_theorem_count": 0,
+      "w4_distinct_common_range_pair_count": 2,
+      "w4_sign_mediated_common_range_pair_count": 2,
+      "w4_trivial_mediated_common_range_pair_count": 0
+    },
+    "id": "NEG-CODE-WREATH-ORIENTATION-PAIRWISE-TRANSVERSALITY",
+    "lesson": "Measure whether common directions recur across triples and larger orientation families, or directly control the operator-valued Gram norm; pairwise zero-intersection arguments cannot work.",
+    "reason_invalid": "The exact trivial/sign multiplicity criterion and Kronecker-support dynamic program find near-universal nonzero pairwise common ranges at threshold.",
+    "source": "research/representation/self_dual_wreath_orientation_common_range.json"
   },
   {
     "applies_to": [
@@ -39639,6 +39875,78 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-TRIPLE-RANGE",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY",
+      "PO-SUCCESS"
+    ],
+    "claim": "Although pairwise intersections proliferate, common ranges of three distinct orientations are rare on the declared threshold portfolios.",
+    "evidence": {
+      "all_triple_incidence_exact_count_theorem_count": 0,
+      "collision_free_polynomial_factor_norm_theorem_count": 0,
+      "exact_support_dynamic_program_record_count": 2,
+      "finite_formula_validation_count": 140,
+      "finite_formula_validation_failure_count": 0,
+      "fixed_family_common_range_multiplicity_theorem_count": 1,
+      "maximum_common_range_dimension_residual": 0.0,
+      "maximum_triple_support_merged_state_count": 600001,
+      "sample_count_per_target": 2048,
+      "sampled_prevalent_family_range_record_count": 6,
+      "sampling_record_count": 18,
+      "support_dynamic_program_state_cap_record_count": 1,
+      "tail_copy_count": 29,
+      "tail_first_family_size_with_zero_observed_common_ranges": 5,
+      "tail_maximum_estimated_five_common_range_fraction": 0.0,
+      "tail_maximum_estimated_four_common_range_fraction": 0.05078125,
+      "tail_maximum_estimated_six_common_range_fraction": 0.0,
+      "tail_maximum_five_wilson_95_upper_bound": 0.0018722006050613785,
+      "tail_maximum_four_wilson_95_upper_bound": 0.06115915889511432,
+      "tail_maximum_wilson_95_upper_bound": 0.9579146036640045,
+      "tail_minimum_estimated_triple_common_range_fraction": 0.9306640625,
+      "tail_minimum_wilson_95_lower_bound": 0.9188368685490544,
+      "tail_n": 12,
+      "triple_incidence_norm_theorem_count": 0,
+      "uniform_projector_sum_norm_theorem_count": 0
+    },
+    "id": "NEG-CODE-WREATH-ORIENTATION-TRIPLE-RARITY-HEURISTIC",
+    "lesson": "Track the multiplicity directions recurring across large orientation families or compress exact higher-incidence counts; zero-intersection heuristics are exhausted.",
+    "reason_invalid": "The exact fixed-family formula passes all finite controls, and deterministic uniform sampling gives a lower 95% confidence bound above one half for every declared n=12 target control. This rejects the rarity heuristic on that sampled scope, not for all targets or all triples.",
+    "source": "research/representation/self_dual_wreath_orientation_triple_range.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-PAIR-ANGLES",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY",
+      "PO-SUCCESS"
+    ],
+    "claim": "Pairwise Hilbert--Schmidt overlaps are the strongest available local geometric description of orientation ranges.",
+    "evidence": {
+      "collision_free_polynomial_factor_norm_theorem_count": 0,
+      "common_range_incidence_resolution_theorem_count": 0,
+      "complete_w4_pair_angle_validation_count": 15,
+      "exact_pair_principal_angle_spectrum_theorem_count": 1,
+      "finite_pair_angle_validation_failure_count": 0,
+      "maximum_pair_angle_spectrum_residual": 4.440892098500626e-16,
+      "maximum_w4_noncommon_principal_correlation": 0.5000000000000001,
+      "maximum_w5_noncommon_principal_correlation": 0.25000000000000017,
+      "noncommon_inverse_minimum_irrep_dimension_bound_theorem_count": 1,
+      "noncommon_inverse_n_minus_one_bound_theorem_count": 1,
+      "pair_angle_spectrum_validation_count": 56,
+      "pair_angle_spectrum_validation_record_count": 18,
+      "uniform_projector_sum_norm_theorem_count": 0,
+      "w5_noncommon_dimension_bound": 0.25,
+      "w5_pair_angle_control_count": 3
+    },
+    "id": "NEG-CODE-WREATH-PAIR-HS-OVERLAP-LOSES-ANGLE-SPECTRUM",
+    "lesson": "Work on the quotient by trivial/sign common ranges and their higher-family incidence; do not discard the exact principal-angle spectrum into a scalar frame potential.",
+    "reason_invalid": "The exact recoupling decomposition gives every principal correlation as a reciprocal symmetric-group irrep dimension and proves 1/(n-1) contraction off common ranges.",
+    "source": "research/representation/self_dual_wreath_orientation_pair_angle_spectrum.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "EXP-CODE-SELF-DUAL-WREATH-CHARACTER-RATIO-CONTRACT",
       "PO-COMPLEXITY",
       "PO-SUCCESS"
@@ -39664,6 +39972,75 @@
     "lesson": "Build a short-word profile and prove aggregate product mixing across all globally distinct source partitions.",
     "reason_invalid": "The moment expansion contains correlated subset words; their low-transposition-length contribution and aligned signs require a separate joint anti-concentration theorem.",
     "source": "research/representation/self_dual_wreath_character_ratio_contract.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-BLOCK-COMMON-CORE",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY",
+      "PO-SUCCESS"
+    ],
+    "claim": "The disappearance of common ranges in random five-orientation families rules out large exact common cores.",
+    "evidence": {
+      "asymptotic_linear_block_rate_theorem_count": 0,
+      "block_common_core_construction_theorem_count": 1,
+      "collision_free_polynomial_factor_norm_theorem_count": 0,
+      "exact_finite_block_common_core_witness_count": 6,
+      "finite_exact_target_violation_count": 6,
+      "information_threshold_witness_count": 2,
+      "maximum_observed_block_rate": 0.3103448275862069,
+      "minimum_observed_block_rate": 0.26666666666666666,
+      "natural_constant_mass_block_packing_theorem_count": 0,
+      "scaling_record_count": 6,
+      "tail_averaged_fourier_norm_lower_bound": 9.5367431640625e-07,
+      "tail_block_count": 9,
+      "tail_common_orientation_family_size": 512,
+      "tail_copy_count": 29,
+      "tail_log2_common_core_dimension_lower_bound": 107.7938607954299,
+      "tail_n": 12,
+      "tail_norm_lower_bound_to_target_ratio": 256.0,
+      "tail_projector_sum_norm_lower_bound": 512,
+      "uniform_polynomial_factor_norm_counterexample_theorem_count": 0
+    },
+    "id": "NEG-CODE-WREATH-RANDOM-INCIDENCE-MISSES-BLOCK-COMMON-CORE",
+    "lesson": "Search structured incidence codes and prove or disprove linear-rate packing persistence under the natural label law; random fixed-depth samples miss this mechanism.",
+    "reason_invalid": "Exact block packings construct 2^r carefully correlated orientations with a shared vector; at n=12,k=29 the finite witness has r=9 and family size 512.",
+    "source": "research/representation/self_dual_wreath_orientation_block_common_core.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CONTROLLED-INVARIANT-FILTER",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY"
+    ],
+    "claim": "The scalar compressed orientation commutant rules out every nontrivial covariant physical common-channel filter.",
+    "evidence": {
+      "branch_controlled_physical_filter_theorem_count": 1,
+      "compressed_covariant_outcome_transform_count": 0,
+      "controlled_group_average_filter_schema_count": 1,
+      "fault_tolerant_filter_circuit_count": 0,
+      "finite_physical_filter_control_count": 1,
+      "finite_physical_filter_validation_failure_count": 0,
+      "hidden_conjugation_covariance_theorem_count": 1,
+      "maximum_hidden_conjugation_commutator_residual": 3.680083885147336e-16,
+      "maximum_physical_filter_idempotence_residual": 2.6549755865101237e-16,
+      "minimum_finite_filtered_trace_retention": 0.8472222222222222,
+      "minimum_finite_frame_top_eigenvalue_reduction": 0.12499999999999978,
+      "new_quantum_algorithm_count": 0,
+      "orientation_selected_one_dimensional_projector_theorem_count": 1,
+      "plancherel_expected_retention_one_minus_o_one_theorem_count": 1,
+      "polynomial_hidden_permutation_decoder_count": 0,
+      "residual_polynomial_frame_norm_theorem_count": 0,
+      "scaling_record_count": 12,
+      "tail_expected_removed_state_fraction_upper_bound": 4.615937382512663e-214,
+      "tail_n": 128
+    },
+    "id": "NEG-CODE-WREATH-SCALAR-COMMUTANT-BLOCKS-ALL-PHYSICAL-FILTERS",
+    "lesson": "Analyze the residual spectrum of the branch-controlled filter rather than one compressed quotient or generic spectral QSVT.",
+    "reason_invalid": "The induced carrier has orthogonal orientation branches. A direct sum of branch-dependent central complements is a nontrivial projector commuting with physical R(s).",
+    "source": "research/representation/self_dual_wreath_branch_controlled_invariant_filter.json"
   },
   {
     "applies_to": [
@@ -39704,6 +40081,41 @@
     "lesson": "Develop growing orientation moments, an operator-valued Gram contraction, or a direct recoupling/fusion-frame norm theorem before making a conclusive-rate claim.",
     "reason_invalid": "The exact class-algebra calculation controls only Tr(F^2)/Tr(F), a lower bound on the top eigenvalue; it cannot exclude a small high-eigenvalue subspace.",
     "source": "research/representation/self_dual_wreath_orientation_fusion_moment.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-BLOCK-MASS",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY",
+      "PO-SUCCESS"
+    ],
+    "claim": "Typical constant-block tensor covering makes direct postselection onto matched trivial/sign common-core sectors inverse-polynomially likely.",
+    "evidence": {
+      "efficient_invariant_complement_projection_count": 0,
+      "exact_stationarity_control_count": 540,
+      "exact_stationarity_failure_count": 0,
+      "independent_matched_one_dimensional_joint_mass_theorem_count": 1,
+      "inverse_polynomial_direct_invariant_postselection_count": 0,
+      "maximum_nonidentity_regular_character_average_numerator": 0,
+      "new_quantum_algorithm_count": 0,
+      "normalized_target_isotypic_expectation_theorem_count": 1,
+      "normalized_target_multiplicity_expectation_theorem_count": 1,
+      "plancherel_tensor_stationarity_theorem_count": 1,
+      "polynomial_hidden_permutation_decoder_count": 0,
+      "polynomial_inflation_markov_typical_upper_bound_theorem_count": 1,
+      "scaling_record_count": 11,
+      "sellke_support_without_mass_separation_theorem_count": 1,
+      "sign_invariant_expected_mass_theorem_count": 1,
+      "tail_matched_joint_mass_log2": -1431.3234441672437,
+      "tail_n": 128,
+      "tail_single_invariant_mass_log2": -716.1617220836218,
+      "trivial_invariant_expected_mass_theorem_count": 1
+    },
+    "id": "NEG-CODE-WREATH-SELLKE-SUPPORT-IS-USABLE-MASS",
+    "lesson": "Use support theorems to identify obstructions, not as success-probability estimates. Seek a high-success complement projection or high-dimensional channel.",
+    "reason_invalid": "Exact Plancherel stationarity gives expected single-side invariant fraction 1/n! and matched two-side fraction 2/(n!)^2, independent of block size.",
+    "source": "research/representation/self_dual_wreath_plancherel_block_mass.json"
   },
   {
     "applies_to": [
@@ -39840,6 +40252,36 @@
     "lesson": "Target the normalized partial trace of the base tensor projector inside each isotypic multiplicity block, using recoupling, character bounds, or a counterexample search.",
     "reason_invalid": "Schur averaging transfers the problem to positive operators on diagonal-S_n multiplicity spaces; the largest tested threshold stress has multiplicity dimension exponential in n.",
     "source": "research/representation/self_dual_wreath_subgroup_twirl_reduction.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-BLOCK-OBSTRUCTION",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY",
+      "PO-SUCCESS"
+    ],
+    "claim": "Every naturally occupied globally collision-free orientation frame satisfies ||F_nu|| <= poly(n)2^-k uniformly over target irreps.",
+    "evidence": {
+      "all_collective_measurement_no_go_theorem_count": 0,
+      "asymptotic_global_all_distinct_theorem_count": 1,
+      "asymptotic_linear_good_block_density_theorem_count": 1,
+      "block_common_core_construction_theorem_count": 1,
+      "classical_code_equivalence_separation_count": 0,
+      "natural_iid_plancherel_pair_law_theorem_count": 1,
+      "new_quantum_algorithm_count": 0,
+      "polynomial_hidden_permutation_decoder_count": 0,
+      "residual_target_control_count": 3,
+      "residual_target_control_failure_count": 0,
+      "sellke_covering_literature_theorem_count": 1,
+      "threshold_all_unequal_theorem_count": 1,
+      "typical_exponential_common_orientation_family_theorem_count": 1,
+      "uniform_collision_free_polynomial_factor_norm_counterexample_theorem_count": 1
+    },
+    "id": "NEG-CODE-WREATH-UNIFORM-COLLISION-FREE-NORM-BOUND",
+    "lesson": "Stop spending research effort on the uniform frame-norm upper bound. Test alternative whitening, quotienting of the exact common channels, or different measurements.",
+    "reason_invalid": "Sellke-typical tensor-covering blocks yield r=Theta(k) independently switchable blocks whose 2^r orientation projectors share a vector, so some target has ||F_nu||>=2^(r-k).",
+    "source": "research/representation/self_dual_wreath_plancherel_block_obstruction.json"
   },
   {
     "applies_to": [
@@ -45071,6 +45513,191 @@
     "lesson": "Mutations must repair the exact state interface before proof-gate promotion.",
     "reason_invalid": "The exact upstream theorem contract does not supply the coherent evaluator or stronger oracle access required by this mutation.",
     "source": "research/reductions/interface_audit.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-AFFINE-CORE-FLAG-THEOREM",
+      "PO-MEASUREMENT"
+    ],
+    "claim": "Exponential block-common incidence acts as an insurmountable polar no-go.",
+    "evidence": {
+      "affine_flag_balance_theorem_count": 1,
+      "affine_intersection_exhaustion_conditional_theorem_count": 1,
+      "all_child_intersection_affine_exhaustion_theorem_count": 0,
+      "block_affine_core_failure_count": 0,
+      "block_affine_core_record_count": 6,
+      "coherent_affine_core_projector_count": 0,
+      "hierarchical_orientation_polar_sampler_count": 0,
+      "incidence_control_count": 2,
+      "matrix_control_count": 2,
+      "matrix_validation_failure_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "nonaffine_unbalanced_counterexample_count": 1,
+      "noncommuting_affine_matrix_control_count": 1,
+      "tail_block_affine_family_size": 512
+    },
+    "id": "NEG-SELF-DUAL-WREATH-AFFINE-CORE-FLAG-THEOREM",
+    "lesson": "Focus research on verifying all-child-span affine exhaustion rather than static common incidence.",
+    "reason_invalid": "Affine core flag theorem proves aligned linear flags fully balance affine block-common incidence.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-AFFINE-CORE-FLAG-THEOREM"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-AFFINE-NODE-COMMON-OUTLIER",
+      "PO-MEASUREMENT"
+    ],
+    "claim": "Global regular-master eigenvalue one implies width-sized outliers persist on natural sources.",
+    "evidence": {
+      "affine_generated_subgroup_theorem_count": 1,
+      "global_distinct_all_level_outlier_bound_theorem_count": 1,
+      "maximal_physical_outlier_necessity_theorem_count": 1,
+      "maximum_n_scaling_record": 64,
+      "natural_node_edge_theorem_count": 0,
+      "near_maximal_outlier_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "physical_control_count": 2,
+      "physical_control_failure_count": 0,
+      "subgroup_control_count": 3,
+      "subgroup_control_failure_count": 0
+    },
+    "id": "NEG-SELF-DUAL-WREATH-AFFINE-NODE-COMMON-OUTLIER",
+    "lesson": "Absence of exact common invariants does not bound the near-common noncommon spectrum at scale 1/|S_n|.",
+    "reason_invalid": "Classification theorem proves exact width-sized outliers are factorially rare under natural source distributions.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-AFFINE-NODE-COMMON-OUTLIER"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SCALAR-HOLONOMY",
+      "PO-MEASUREMENT"
+    ],
+    "claim": "Negative simplex holonomy causes local destructive interference within a single multiplicity-scalar affine plane channel.",
+    "evidence": {
+      "canonical_pairing_control_count": 6,
+      "distinct_plane_support_commutation_theorem_count": 0,
+      "finite_control_failure_count": 0,
+      "global_carrier_groupoid_theorem_count": 0,
+      "matrix_multiplicity_holonomy_theorem_count": 0,
+      "negative_scalar_simplex_phase_exclusion_theorem_count": 1,
+      "new_quantum_algorithm_count": 0,
+      "positive_scalar_affine_plane_holonomy_theorem_count": 1,
+      "scalar_affine_plane_channel_control_count": 5
+    },
+    "id": "NEG-SELF-DUAL-WREATH-AFFINE-PLANE-SCALAR-HOLONOMY",
+    "lesson": "Multiplicity-scalar affine-plane holonomy is strictly positive; counterexamples must use matrix recoupling or overlapping supports.",
+    "reason_invalid": "Theorem proves every multiplicity-scalar affine-plane carrier channel has positive flat J3 holonomy.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SCALAR-HOLONOMY"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SUPPORT-PRESSURE-NO-GO",
+      "PO-MEASUREMENT"
+    ],
+    "claim": "Disjoint affine triangles extrapolate to threshold-scale orthogonal atoms.",
+    "evidence": {
+      "collision_free_pressure_transfer_theorem_count": 1,
+      "exact_rich_plane_count_control_count": 7,
+      "finite_plane_count_control_failure_count": 0,
+      "finite_pressure_capacity_failure_count": 0,
+      "natural_node_frame_edge_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "orthogonal_affine_plane_atomization_no_go_theorem_count": 1,
+      "overlapping_plane_traffic_theorem_count": 0,
+      "scaling_record_count": 13,
+      "tail_elementary_pressure_lower_bound_log2": 168.9143624750227,
+      "tail_exact_pressure_ratio_log2": 179.13226901480834,
+      "tail_n": 48,
+      "tail_residual_pressure_after_markov_slack_log2": 84.45718123751135
+    },
+    "id": "NEG-SELF-DUAL-WREATH-AFFINE-PLANE-SUPPORT-PRESSURE-NO-GO",
+    "lesson": "Orthogonal affine-plane atomization is asymptotically impossible; future mechanisms must use structured overlap, matrix recoupling, or traffic cancellation.",
+    "reason_invalid": "Support pressure theorem proves affine-plane channel support demand exceeds pair-core capacity by a factorially divergent factor.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-AFFINE-PLANE-SUPPORT-PRESSURE-NO-GO"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-AFFINE-RECOUPLING-BUNDLE",
+      "PO-MEASUREMENT"
+    ],
+    "claim": "Uniform affine coefficient support implies universal scalar coefficient fibers.",
+    "evidence": {
+      "all_n_affine_bundle_decomposition_theorem_count": 0,
+      "balanced_nonaffine_bundle_falsifier_count": 1,
+      "companion_finite_gpe_generator_compiler_count": 3,
+      "explicit_generator_racah_formula_count": 0,
+      "finite_control_count": 4,
+      "finite_flat_transport_validation_failure_count": 0,
+      "flat_fiber_transport_theorem_count": 1,
+      "hierarchical_orientation_polar_sampler_count": 0,
+      "label_simple_affine_bundle_control_count": 3,
+      "maximum_w3_generator_fiber_difference": 1.7320508075688787,
+      "natural_collision_free_scalar_affine_falsifier_count": 1,
+      "new_quantum_algorithm_count": 0,
+      "nontrivial_internal_transport_control_count": 1,
+      "polynomial_controlled_generator_transport_count": 0
+    },
+    "id": "NEG-SELF-DUAL-WREATH-AFFINE-RECOUPLING-BUNDLE",
+    "lesson": "All-n target requires matrix partial support plus uniform coherent SELECT.",
+    "reason_invalid": "Globally source-distinct S6 control falsifies universal scalar coefficient fibers.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-AFFINE-RECOUPLING-BUNDLE"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-CLUSTER-LOCALITY-NO-GO",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY"
+    ],
+    "claim": "Disjoint product isotypic filters acting on sublinear source labels per cluster can restore polynomial frame bounds.",
+    "evidence": {
+      "asymptotic_retention_locality_boundary": "q_n*n/L_n",
+      "cluster_locality_no_go_theorem_count": 1,
+      "constant_mass_minimum_viable_source_label_locality": "Omega(n)",
+      "efficient_nonlocal_filter_count": 0,
+      "finite_degree_d_falsification_count": 7,
+      "finite_locality_threshold_count": 9,
+      "finite_scaling_record_count": 12,
+      "new_quantum_algorithm_count": 0,
+      "overlapping_filter_lower_bound_count": 0,
+      "polynomial_hidden_permutation_decoder_count": 0,
+      "resolved_proof_obligation_count": 4,
+      "unresolved_proof_obligation_count": 0
+    },
+    "id": "NEG-SELF-DUAL-WREATH-CLUSTER-LOCALITY-NO-GO",
+    "lesson": "High-retention filters must use linear-scale, overlapping, or genuinely global coordination.",
+    "reason_invalid": "Quantitative locality lower bounds prove sublinear disjoint cluster filters leave a superpolynomial common-family spike.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-CLUSTER-LOCALITY-NO-GO"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "EXP-CODE-SELF-DUAL-WREATH-SPECTRAL-FILTER-QUERY-LOWER-BOUND",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY"
+    ],
+    "claim": "Generic PREPARE/SELECT low-pass filtering can exploit trimmed sub-POVM existence at polynomial cost.",
+    "evidence": {
+      "black_box_spectral_filter_query_lower_bound_theorem_count": 1,
+      "equal_rank_search_reduction_theorem_count": 1,
+      "finite_search_encoding_control_count": 4,
+      "finite_search_encoding_failure_count": 0,
+      "general_wreath_circuit_lower_bound_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "polynomial_hidden_permutation_decoder_count": 0,
+      "representation_structured_filter_count": 0,
+      "scaling_record_count": 11,
+      "superpolynomial_black_box_lower_bound_row_count": 3,
+      "tail_n": 512,
+      "tail_quantum_query_lower_bound_log2": 1936.0830609716015
+    },
+    "id": "NEG-SELF-DUAL-WREATH-SPECTRAL-FILTER-QUERY-LOWER-BOUND",
+    "lesson": "Future filter proposals must identify representation structure beyond black-box search.",
+    "reason_invalid": "Search reduction proves Omega(sqrt(n!)) quantum query lower bound for generic low-pass filtering.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-SPECTRAL-FILTER-QUERY-LOWER-BOUND"
   },
   {
     "applies_to": [

@@ -27,9 +27,12 @@ intersection itself need not reduce any leaf projector.  Repeated labels
 break scalarity, uniformity, or affine support and produce nonhalf channels.
 
 The maps in (1) contain ``A^+`` and therefore do not yet constitute a circuit.
-The research target is to derive these maps directly from multiplicity-free
-recoupling data, or to find a growing collision-free counterexample to the
-coefficient-affine normal form.
+The companion sparse-Gram partial-support audit supplies the missing
+collision-free counterexample already at ``S_6``: the masks remain affine but
+the component effects are nonscalar and cross-child effects do not commute.
+The universal scalar coefficient-affine route is therefore dead.  The
+research target is a matrix-valued partial-support compiler and a theorem for
+its physical asymptotic mass.
 """
 
 from __future__ import annotations
@@ -499,9 +502,10 @@ def run_canonical_coefficient_affine() -> CanonicalCoefficientAffineReport:
                 "isometry between their coefficient images."
             ),
             "scope": (
-                "The canonical maps use child pseudoinverses. A useful all-n "
-                "theorem must derive them from explicit recoupling data rather "
-                "than assume the polar transform being constructed."
+                "The canonical maps use child pseudoinverses. The companion "
+                "sparse-Gram S6 control falsifies scalar component effects even "
+                "with globally distinct sources and affine masks, so the all-n "
+                "target must be matrix-valued partial support."
             ),
         },
         finite_controls=controls,
@@ -525,10 +529,11 @@ def run_canonical_coefficient_affine() -> CanonicalCoefficientAffineReport:
             },
             {
                 "obligation": "all_n_collision_free_coefficient_affine_theorem",
-                "resolved": False,
+                "resolved": True,
                 "resolution": (
-                    "Only W3/W5 controls are accessible. Growing-depth fusion "
-                    "multiplicities may destroy scalarity or affine support."
+                    "Rejected by the companion globally source-distinct S6 "
+                    "control: affine masks coexist with nonscalar component "
+                    "effects and noncommuting cross-child supports."
                 ),
             },
             {
@@ -567,10 +572,10 @@ def run_canonical_coefficient_affine() -> CanonicalCoefficientAffineReport:
             },
             {
                 "objection": "Collision-free labels prevent all recoupling collisions.",
-                "resolved": False,
+                "resolved": True,
                 "resolution": (
-                    "Distinct external irreps do not imply multiplicity-free internal "
-                    "Kronecker paths at growing n and k."
+                    "The companion S6 control has eight globally distinct source "
+                    "partitions and still exhibits matrix partial-support traffic."
                 ),
             },
         ],
@@ -595,6 +600,7 @@ def run_canonical_coefficient_affine() -> CanonicalCoefficientAffineReport:
                 for row in repeated_controls
             ),
             "all_n_coefficient_affine_theorem_count": 0,
+            "natural_collision_free_scalar_affine_falsifier_count": 1,
             "explicit_recoupling_synthesis_map_count": 0,
             "coherent_coefficient_transfer_count": 0,
             "hierarchical_orientation_polar_sampler_count": 0,
@@ -606,25 +612,27 @@ def run_canonical_coefficient_affine() -> CanonicalCoefficientAffineReport:
             "repeated_labels_falsify_universal_coefficient_affinity": (
                 repeated_falsifier
             ),
+            "natural_collision_free_scalar_affinity_falsified": True,
             "all_n_collision_free_coefficient_affine_theorem_proved": False,
             "multiplicity_free_recoupling_formula_proved": False,
             "coherent_minimum_norm_synthesis_compiled": False,
             "hierarchical_orientation_polar_proved": False,
             "speedup_claim_allowed": False,
             "reason": (
-                "The finite coefficient-space normal form is exact, but no "
-                "growing-depth recoupling theorem or coherent synthesis exists."
+                "The finite scalar coefficient-space controls are exact, but a "
+                "natural S6 node falsifies their universal extension. A matrix "
+                "partial-support compiler and mass theorem are required."
             ),
         },
         status=(
-            "finite-coefficient-affine-normal-form-all-n-recoupling-proof-open"
+            "finite-scalar-affine-normal-form-natural-s6-universal-falsifier"
             if verified and finite_signal and repeated_falsifier
             else "canonical-coefficient-affine-validation-failure"
         ),
         summary=(
             "Moved the affine mechanism into minimum-norm coefficient space, "
-            "where every label-simple finite overlap has an affine uniform scalar "
-            "certificate and repeated labels supply explicit countercontrols."
+            "where W3/W5 have scalar certificates but a globally distinct S6 "
+            "affine node forces matrix-valued partial supports."
         ),
         falsifiers_triggered=[
             (
@@ -636,7 +644,7 @@ def run_canonical_coefficient_affine() -> CanonicalCoefficientAffineReport:
             ),
             (
                 "External label distinctness does not by itself prove internal "
-                "multiplicity-free recoupling at growing scale."
+                "multiplicity-free recoupling; S6 already supplies a counterexample."
             ),
         ],
     )

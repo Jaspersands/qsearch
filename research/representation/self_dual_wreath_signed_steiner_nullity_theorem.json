@@ -1,0 +1,214 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The signed quotient counterexample can have extensive scalar nullity.",
+      "resolution": "False for the full projective line family: two is the exact maximum at every depth.",
+      "resolved": true
+    },
+    {
+      "objection": "The theorem is only a K=3 enumeration.",
+      "resolution": "Every three global evaluation vectors lie in a line or an embedded Fano plane, which globalizes the analytic contradiction.",
+      "resolved": true
+    },
+    {
+      "objection": "Vanishing exact null fraction proves a spectral edge.",
+      "resolution": "It does not control near-zero eigenvalues or weighted PGM mass and therefore is not a condition-number theorem.",
+      "resolved": false
+    },
+    {
+      "objection": "The rich subfamily inherits the nullity-two bound.",
+      "resolution": "Deleting non-rich lines creates isolated points and removes the embedded-Fano constraints used by the proof.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "collision_free_noncommon_frame_edge_proved": false,
+    "exact_scalar_null_rank_fraction_vanishes": true,
+    "matrix_valued_flat_sections_controlled": false,
+    "natural_weighted_channel_sum_controlled": false,
+    "near_null_scalar_mass_controlled": false,
+    "reason": "Exact scalar kernels are rigid and negligible per channel, but near-kernel and matrix-valued weighted traffic remain open.",
+    "scalar_full_line_nullity_at_most_two": true,
+    "scalar_nullity_bound_sharp": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-08T04:20:01.195951+00:00",
+  "falsifiers_triggered": [
+    "The adversarial scalar kernel cannot occupy a constant fraction of one full-line carrier channel.",
+    "Exact scalar singularity is too low-rank by itself to establish a macroscopic PGM obstruction.",
+    "The next obstruction must use near-zero spectral mass, omitted lines, nonuniform weights, or matrix-valued flat sections."
+  ],
+  "fano_exhaustive_control": {
+    "gauge_class_upper_count": 256,
+    "maximum_nullity": 2,
+    "maximum_nullity_bound_verified": true,
+    "minimum_third_eigenvalue": 0.7639320225002098,
+    "nullity_histogram": {
+      "0": 5632,
+      "1": 8960,
+      "2": 1792
+    },
+    "sharp_two_dimensional_example_count": 1792,
+    "signing_count": 16384,
+    "status": "fano-signed-nullity-at-most-two-exhausted"
+  },
+  "headline_metrics": {
+    "fano_maximum_nullity": 2,
+    "fano_signing_count": 16384,
+    "finite_control_failure_count": 0,
+    "matrix_transport_nullity_theorem_count": 0,
+    "near_null_spectral_edge_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "random_control_count": 4,
+    "scaling_control_count": 6,
+    "sharp_scalar_nullity_theorem_count": 1,
+    "tail_copy_count": 8,
+    "tail_maximum_exact_null_rank_fraction": 0.00784313725490196
+  },
+  "proof_obligations": [
+    {
+      "obligation": "classify_exact_scalar_nullity_all_depth",
+      "resolution": "The Fano sign contradiction proves the universal upper bound and the F_2^2 quotient attains it.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_exact_scalar_bad_rank_mass",
+      "resolution": "A single full-line scalar channel loses at most two of 2^K-1 point directions.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_near_null_scalar_spectrum",
+      "resolution": "Rank rigidity does not exclude a growing collection of small positive eigenvalues.",
+      "resolved": false
+    },
+    {
+      "obligation": "sum_bad_rank_over_natural_carrier_channels",
+      "resolution": "Overlapping carrier sectors and nonuniform physical weights prevent multiplying the per-channel bound naively.",
+      "resolved": false
+    },
+    {
+      "obligation": "extend_nullity_rigidity_to_matrix_transport",
+      "resolution": "Orthogonal multiplicity transports can support higher-rank flat sections not covered by the scalar Fano argument.",
+      "resolved": false
+    }
+  ],
+  "random_controls": [
+    {
+      "copy_count": 4,
+      "line_count": 35,
+      "observed_nullity": 0,
+      "observed_rank": 15,
+      "point_count": 15,
+      "seed": 304,
+      "status": "random-signing-nullity-bound-respected",
+      "theorem_bound_respected": true
+    },
+    {
+      "copy_count": 5,
+      "line_count": 155,
+      "observed_nullity": 0,
+      "observed_rank": 31,
+      "point_count": 31,
+      "seed": 305,
+      "status": "random-signing-nullity-bound-respected",
+      "theorem_bound_respected": true
+    },
+    {
+      "copy_count": 6,
+      "line_count": 651,
+      "observed_nullity": 0,
+      "observed_rank": 63,
+      "point_count": 63,
+      "seed": 306,
+      "status": "random-signing-nullity-bound-respected",
+      "theorem_bound_respected": true
+    },
+    {
+      "copy_count": 7,
+      "line_count": 2667,
+      "observed_nullity": 0,
+      "observed_rank": 127,
+      "point_count": 127,
+      "seed": 307,
+      "status": "random-signing-nullity-bound-respected",
+      "theorem_bound_respected": true
+    }
+  ],
+  "scaling_records": [
+    {
+      "copy_count": 3,
+      "line_count": 7,
+      "point_count": 7,
+      "proved_maximum_exact_null_rank_fraction": 0.2857142857142857,
+      "proved_maximum_nullity": 2,
+      "quotient_signing_nullity": 2,
+      "quotient_witness_rank": 2,
+      "status": "sharp-two-dimensional-nullity-bound-attained",
+      "upper_bound_attained": true
+    },
+    {
+      "copy_count": 4,
+      "line_count": 35,
+      "point_count": 15,
+      "proved_maximum_exact_null_rank_fraction": 0.13333333333333333,
+      "proved_maximum_nullity": 2,
+      "quotient_signing_nullity": 2,
+      "quotient_witness_rank": 2,
+      "status": "sharp-two-dimensional-nullity-bound-attained",
+      "upper_bound_attained": true
+    },
+    {
+      "copy_count": 5,
+      "line_count": 155,
+      "point_count": 31,
+      "proved_maximum_exact_null_rank_fraction": 0.06451612903225806,
+      "proved_maximum_nullity": 2,
+      "quotient_signing_nullity": 2,
+      "quotient_witness_rank": 2,
+      "status": "sharp-two-dimensional-nullity-bound-attained",
+      "upper_bound_attained": true
+    },
+    {
+      "copy_count": 6,
+      "line_count": 651,
+      "point_count": 63,
+      "proved_maximum_exact_null_rank_fraction": 0.031746031746031744,
+      "proved_maximum_nullity": 2,
+      "quotient_signing_nullity": 2,
+      "quotient_witness_rank": 2,
+      "status": "sharp-two-dimensional-nullity-bound-attained",
+      "upper_bound_attained": true
+    },
+    {
+      "copy_count": 7,
+      "line_count": 2667,
+      "point_count": 127,
+      "proved_maximum_exact_null_rank_fraction": 0.015748031496062992,
+      "proved_maximum_nullity": 2,
+      "quotient_signing_nullity": 2,
+      "quotient_witness_rank": 2,
+      "status": "sharp-two-dimensional-nullity-bound-attained",
+      "upper_bound_attained": true
+    },
+    {
+      "copy_count": 8,
+      "line_count": 10795,
+      "point_count": 255,
+      "proved_maximum_exact_null_rank_fraction": 0.00784313725490196,
+      "proved_maximum_nullity": 2,
+      "quotient_signing_nullity": 2,
+      "quotient_witness_rank": 2,
+      "status": "sharp-two-dimensional-nullity-bound-attained",
+      "upper_bound_attained": true
+    }
+  ],
+  "status": "sharp-scalar-nullity-two-proved-near-kernel-open",
+  "summary": "Proved that every positive-holonomy scalar signing of the full projective-Steiner frame has at most two exact null modes, with the quotient construction attaining the bound.",
+  "theorem_contract": {
+    "fano_local_proof": "Three independent kernel evaluations would span a Fano plane; its seven signed line equations force simultaneously cef=-abd and cef=abd.",
+    "globalization": "Any three binary labels are collinear or lie in a Fano subspace, so every three kernel evaluation vectors are real-dependent and the global evaluation rank is at most two.",
+    "rank_mass_consequence": "For one equal-weight scalar full-line frame, exact null rank fraction is at most 2/(2^K-1).",
+    "sharp_nullity_bound": "Every real signed point-line incidence matrix of PG(K-1,2) has left nullity at most two for K>=3.",
+    "sharpness": "The first-two-bit quotient construction has an exact rank-two kernel at every depth."
+  }
+}

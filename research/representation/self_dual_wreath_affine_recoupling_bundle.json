@@ -2,8 +2,8 @@
   "adversarial_audit": [
     {
       "objection": "Flat transport itself supplies an efficient circuit.",
-      "resolution": "Flatness is tautological from the implicit fiber maps; circuit value begins only after explicit generator formulas are found.",
-      "resolved": false
+      "resolution": "Flatness alone is insufficient. The selected finite controls need the separate GPE pair-path compiler; the all-n implication remains false without uniform SELECT.",
+      "resolved": true
     },
     {
       "objection": "Mask translation implements every affine bundle.",
@@ -28,16 +28,19 @@
     "flat_affine_fiber_transport_proved": true,
     "generator_transports_identified_as_racah_maps": false,
     "hierarchical_orientation_polar_proved": false,
+    "natural_collision_free_scalar_affine_falsifier_present": true,
     "polynomial_controlled_generator_transport_circuit_proved": false,
-    "reason": "The affine-bundle normal form is circuit-shaped but its internal generator transports remain implicit pseudoinverse objects.",
+    "reason": "Selected finite internal transports now compile through GPE pair paths, but a natural S6 node falsifies scalar fibers. The all-n target is matrix partial support plus uniform coherent SELECT.",
+    "selected_finite_generator_transports_compiled_by_gpe": true,
     "simple_mask_relabeling_falsified_for_w3": true,
     "speedup_claim_allowed": false
   },
-  "created_at": "2026-08-06T03:35:25.314524+00:00",
+  "created_at": "2026-08-08T13:45:24.815595+00:00",
   "falsifiers_triggered": [
     "Affine mask relabeling alone cannot move the W3 internal fibers.",
     "Balanced coefficient metrics do not force affine leaf support.",
-    "Formal flatness of implicit fiber maps is not evidence of an efficient recoupling circuit."
+    "Formal flatness alone is not evidence of an all-n efficient recoupling circuit.",
+    "A globally source-distinct S6 affine plane falsifies universal scalar coefficient fibers."
   ],
   "finite_controls": [
     {
@@ -374,6 +377,7 @@
   "headline_metrics": {
     "all_n_affine_bundle_decomposition_theorem_count": 0,
     "balanced_nonaffine_bundle_falsifier_count": 1,
+    "companion_finite_gpe_generator_compiler_count": 3,
     "explicit_generator_racah_formula_count": 0,
     "finite_control_count": 4,
     "finite_flat_transport_validation_failure_count": 0,
@@ -381,6 +385,7 @@
     "hierarchical_orientation_polar_sampler_count": 0,
     "label_simple_affine_bundle_control_count": 3,
     "maximum_w3_generator_fiber_difference": 1.7320508075688787,
+    "natural_collision_free_scalar_affine_falsifier_count": 1,
     "new_quantum_algorithm_count": 0,
     "nontrivial_internal_transport_control_count": 1,
     "polynomial_controlled_generator_transport_count": 0
@@ -398,12 +403,17 @@
     },
     {
       "obligation": "all_n_affine_bundle_decomposition",
-      "resolution": "Repeated labels already give balanced nonaffine support; no growing collision-free exclusion theorem is known.",
-      "resolved": false
+      "resolution": "Rejected by the companion globally source-distinct S6 affine-plane control, whose component effects are nonscalar partial supports with noncommuting cross-child effects.",
+      "resolved": true
     },
     {
-      "obligation": "explicit_generator_recoupling_circuit",
-      "resolution": "The W3 transports are nonidentity and have not been expressed as polynomial coherent Racah or Kronecker basis operations.",
+      "obligation": "selected_finite_generator_recoupling_circuit",
+      "resolution": "The companion pair-path and direct-GPE theorems compile all three positive W3/W5 controls in constant size.",
+      "resolved": true
+    },
+    {
+      "obligation": "all_n_uniform_generator_recoupling_circuit",
+      "resolution": "No compact reversible SELECT generates compatible paths and gauges for exponentially many growing-mask fibers.",
       "resolved": false
     }
   ],
@@ -497,13 +507,13 @@
       "status": "flat-bundle-identity-explicit-generator-recoupling-open"
     }
   ],
-  "status": "flat-affine-bundle-proved-explicit-recoupling-transports-open",
-  "summary": "Converted uniform affine coefficient support into a flat transport bundle and isolated explicit generator recoupling as the constructive algorithmic obligation.",
+  "status": "finite-flat-affine-gpe-compiled-universal-scalar-fibers-falsified",
+  "summary": "Converted uniform affine coefficient support into a flat transport bundle; companion GPE pair paths compile the selected finite fibers, while the companion natural S6 control forces a matrix partial-support replacement at scale.",
   "theorem_contract": {
     "affine_compilation_normal_form": "An affine active support reduces leaf preparation to Hadamards on affine coordinates plus controlled generator transports.",
     "fiber_isometries": "Uniform scalar component effects define normalized isometries V_e from one common overlap fiber.",
     "flat_transport": "T_(f,e)=V_f V_e^* is a partial isometry and obeys the exact transport cocycle on fiber images.",
     "nontrivial_internal_transport": "W3 generator fibers differ by constant operator norm, so mask XOR without internal recoupling cannot implement the transfer.",
-    "scope": "The canonical V_e still contain child pseudoinverses. Efficient Racah formulas for their generator transports are not proved."
+    "scope": "The canonical V_e still contain child pseudoinverses. The companion recursive-node theorem compiles the selected finite fibers through GPE pair paths. The companion S6 partial-support control falsifies universal scalar fibers; a matrix-support and uniform generator-SELECT theorem is now required."
   }
 }

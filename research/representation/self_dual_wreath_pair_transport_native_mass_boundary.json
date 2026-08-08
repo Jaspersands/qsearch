@@ -1,0 +1,325 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The q4 law was only coefficient rank, not physical mass.",
+      "resolution": "For the conditional active pair node, physical native trace is exactly twice coefficient multiplicity carrier by carrier.",
+      "resolved": true
+    },
+    {
+      "objection": "The theorem contradicts the constant-gap pair sampler.",
+      "resolution": "The pair sampler polarizes the stacked analysis of E+F; this boundary concerns the different cross-overlap map E F.",
+      "resolved": true
+    },
+    {
+      "objection": "Annealed normalization commutes with expectation.",
+      "resolution": "Only the ratio of expected traces is exact. Actual normalized laws use the separate quenched concentration theorem.",
+      "resolved": true
+    },
+    {
+      "objection": "Natural source blocks cover every candidate input.",
+      "resolution": "Adversarially selected labels may concentrate on exceptional low-dimensional carriers and require candidate-specific audit.",
+      "resolved": false
+    },
+    {
+      "objection": "Normalized cross-overlap QSVT lower-bounds all circuits.",
+      "resolution": "Representation-specific direct polar or recoupling circuits are outside the normalized-access model and remain the main constructive route.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "arbitrary_quantum_circuit_lower_bound_proved": false,
+    "branchwise_normalized_cross_overlap_qsvt_polynomial_on_q4_mass": false,
+    "companion_gpe_pair_transport_proved": true,
+    "complete_many_orientation_pgm_mass_transfer_proved": false,
+    "conditional_active_pair_native_mass_bridge_proved": true,
+    "direct_representation_specific_transport_ruled_out": false,
+    "natural_q4_law_is_conditional_native_pair_mass_proved": true,
+    "polynomial_dimension_carriers_retain_nonnegligible_q4_mass": false,
+    "reason": "The old carrier-rank caveat is resolved only for conditional active pair nodes. Generic cross-overlap amplification is then too costly on natural mass. The companion GPE construction bypasses this pair-level primitive directly; higher-order frame composition remains open.",
+    "speedup_claim_allowed": false,
+    "stacked_pair_polar_sampler_remains_polynomial": true
+  },
+  "created_at": "2026-08-08T06:20:03.313268+00:00",
+  "falsifiers_triggered": [
+    "The natural carrier distribution is not merely an unrelated rank proxy at a conditional active pair node.",
+    "Trace weighting does not rescue normalized cross-overlap access: it emphasizes the high-dimensional, low-correlation carriers.",
+    "This obstruction cannot be promoted to the stacked pair sampler or the complete PGM without changing the operator or proving a global incidence-weight identity."
+  ],
+  "finite_controls": [
+    {
+      "active_principal_channel_count": 2,
+      "control_id": "W4-carrier-d2",
+      "correlation_sector_count": 1,
+      "exact_native_trace_multiplicity_bridge_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "maximum_channel_trace_residual": 4.440892098500626e-16,
+      "maximum_normalized_carrier_mass_residual": 0.0,
+      "n": 4,
+      "observed_active_pair_frame_trace": 3.9999999999999996,
+      "predicted_active_pair_frame_trace": 4.0,
+      "right_orientation_mask": 3,
+      "status": "exact-native-pair-trace-multiplicity-bridge",
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "active_principal_channel_count": 3,
+      "control_id": "W4-carrier-d3",
+      "correlation_sector_count": 1,
+      "exact_native_trace_multiplicity_bridge_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 1,
+      "maximum_channel_trace_residual": 1.7763568394002505e-15,
+      "maximum_normalized_carrier_mass_residual": 0.0,
+      "n": 4,
+      "observed_active_pair_frame_trace": 5.999999999999998,
+      "predicted_active_pair_frame_trace": 6.0,
+      "right_orientation_mask": 2,
+      "status": "exact-native-pair-trace-multiplicity-bridge",
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    }
+  ],
+  "headline_metrics": {
+    "branchwise_normalized_qsvt_boundary_theorem_count": 1,
+    "companion_gpe_pair_transport_theorem_count": 1,
+    "complete_pgm_pair_mass_transfer_theorem_count": 0,
+    "direct_recoupling_transport_theorem_count": 0,
+    "finite_native_trace_control_count": 2,
+    "finite_native_trace_control_failure_count": 0,
+    "fixed_pair_native_trace_theorem_count": 1,
+    "natural_q4_native_pair_law_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_carrier_mass_bound_theorem_count": 1,
+    "quadratic_cheap_mass_decreasing_trend_count": 1,
+    "tail_branchwise_degree_lower_bound_log2": 92.62569737357671,
+    "tail_n": 48,
+    "tail_quadratic_dimension_mass_log2": -351.53002603032905
+  },
+  "proof_obligations": [
+    {
+      "obligation": "transfer_pair_multiplicity_to_native_trace_mass",
+      "resolution": "The two-projector Jordan theorem gives trace two per active cross-Gram singular vector; both W4 carrier controls agree.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_polynomial_carrier_native_mass",
+      "resolution": "Cauchy-Schwarz gives Z4>=(n!)^2/p(n), yielding the exact q4 low-dimension bound.",
+      "resolved": true
+    },
+    {
+      "obligation": "construct_direct_representation_specific_transport",
+      "resolution": "A symmetric-group recoupling transform may implement the polar partial isometry without amplifying 1/d_alpha.",
+      "resolved": false
+    },
+    {
+      "obligation": "transfer_pair_active_mass_to_complete_pgm_mass",
+      "resolution": "The active pair space can be a small or coherently reused part of the full orientation frame; its global trace weight has not been composed.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "branchwise_average_degree_superpolynomial_signal": false,
+      "branchwise_expected_bernstein_degree_lower_bound_log2": 5.112865520174837,
+      "exact_mean_carrier_dimension_log2": 6.1928799552038285,
+      "exact_q4_median_carrier_dimension": 70,
+      "exact_rms_carrier_dimension_log2": 6.222936519118768,
+      "fourth_power_normalization_log2": 27.382666569431258,
+      "mass_at_or_below_theorem_threshold": 0.028694592513195893,
+      "n": 8,
+      "partition_count": 22,
+      "polynomial_degree_benchmark_log2": 36.0,
+      "quadratic_dimension_mass": 0.35063480405435216,
+      "quadratic_dimension_mass_theorem_upper_bound": 1.0,
+      "status": "finite-n-branchwise-bound-below-polynomial-benchmark",
+      "theorem_half_mass_dimension_threshold": 35
+    },
+    {
+      "branchwise_average_degree_superpolynomial_signal": false,
+      "branchwise_expected_bernstein_degree_lower_bound_log2": 10.999571250282873,
+      "exact_mean_carrier_dimension_log2": 12.492102626118786,
+      "exact_q4_median_carrier_dimension": 5775,
+      "exact_rms_carrier_dimension_log2": 12.547246770624934,
+      "fourth_power_normalization_log2": 53.27590113934556,
+      "mass_at_or_below_theorem_threshold": 0.014264819438784654,
+      "n": 12,
+      "partition_count": 77,
+      "polynomial_degree_benchmark_log2": 43.01955000865387,
+      "quadratic_dimension_mass": 5.8917987358555046e-08,
+      "quadratic_dimension_mass_theorem_upper_bound": 1.1111111111111112e-05,
+      "status": "finite-n-branchwise-bound-below-polynomial-benchmark",
+      "theorem_half_mass_dimension_threshold": 2097
+    },
+    {
+      "branchwise_average_degree_superpolynomial_signal": false,
+      "branchwise_expected_bernstein_degree_lower_bound_log2": 17.925558408088435,
+      "exact_mean_carrier_dimension_log2": 19.685751340657703,
+      "exact_q4_median_carrier_dimension": 819000,
+      "exact_rms_carrier_dimension_log2": 19.757343123887395,
+      "fourth_power_normalization_log2": 82.96616678442314,
+      "mass_at_or_below_theorem_threshold": 0.006316574704323965,
+      "n": 16,
+      "partition_count": 231,
+      "polynomial_degree_benchmark_log2": 48.0,
+      "quadratic_dimension_mass": 5.0509391843472926e-17,
+      "quadratic_dimension_mass_theorem_upper_bound": 5.235336890421632e-13,
+      "status": "finite-n-branchwise-bound-below-polynomial-benchmark",
+      "theorem_half_mass_dimension_threshold": 253073
+    },
+    {
+      "branchwise_average_degree_superpolynomial_signal": false,
+      "branchwise_expected_bernstein_degree_lower_bound_log2": 25.620535840289957,
+      "exact_mean_carrier_dimension_log2": 27.51627873768875,
+      "exact_q4_median_carrier_dimension": 203693490,
+      "exact_rms_carrier_dimension_log2": 27.563768585808027,
+      "fourth_power_normalization_log2": 115.5448041378837,
+      "mass_at_or_below_theorem_threshold": 0.0051821769779526045,
+      "n": 20,
+      "partition_count": 627,
+      "polynomial_degree_benchmark_log2": 51.863137138648355,
+      "quadratic_dimension_mass": 5.579066378038946e-26,
+      "quadratic_dimension_mass_theorem_upper_bound": 1.7003010116523706e-21,
+      "status": "finite-n-branchwise-bound-below-polynomial-benchmark",
+      "theorem_half_mass_dimension_threshold": 52380668
+    },
+    {
+      "branchwise_average_degree_superpolynomial_signal": false,
+      "branchwise_expected_bernstein_degree_lower_bound_log2": 33.93984885479214,
+      "exact_mean_carrier_dimension_log2": 36.217092798569894,
+      "exact_q4_median_carrier_dimension": 73012212000,
+      "exact_rms_carrier_dimension_log2": 36.30583033397615,
+      "fourth_power_normalization_log2": 150.62624967540535,
+      "mass_at_or_below_theorem_threshold": 0.00270807664420692,
+      "n": 24,
+      "partition_count": 1575,
+      "polynomial_degree_benchmark_log2": 55.01955000865387,
+      "quadratic_dimension_mass": 7.380935340478929e-36,
+      "quadratic_dimension_mass_theorem_upper_bound": 7.093159237324095e-31,
+      "status": "finite-n-branchwise-bound-below-polynomial-benchmark",
+      "theorem_half_mass_dimension_threshold": 16689950825
+    },
+    {
+      "branchwise_average_degree_superpolynomial_signal": false,
+      "branchwise_expected_bernstein_degree_lower_bound_log2": 42.77431277999002,
+      "exact_mean_carrier_dimension_log2": 45.13542363113609,
+      "exact_q4_median_carrier_dimension": 41003658259200,
+      "exact_rms_carrier_dimension_log2": 45.19678750271365,
+      "fourth_power_normalization_log2": 187.4967069971188,
+      "mass_at_or_below_theorem_threshold": 0.002167197845589535,
+      "n": 28,
+      "partition_count": 3718,
+      "polynomial_degree_benchmark_log2": 57.688259064691245,
+      "quadratic_dimension_mass": 2.18118315558549e-46,
+      "quadratic_dimension_mass_theorem_upper_bound": 5.618254094825071e-41,
+      "status": "finite-n-branchwise-bound-below-polynomial-benchmark",
+      "theorem_half_mass_dimension_threshold": 7614795060524
+    },
+    {
+      "branchwise_average_degree_superpolynomial_signal": false,
+      "branchwise_expected_bernstein_degree_lower_bound_log2": 52.05159414858605,
+      "exact_mean_carrier_dimension_log2": 54.751431372313334,
+      "exact_q4_median_carrier_dimension": 28341974246770800,
+      "exact_rms_carrier_dimension_log2": 54.85490308474641,
+      "fourth_power_normalization_log2": 226.19288330973353,
+      "mass_at_or_below_theorem_threshold": 0.0012775274901423918,
+      "n": 32,
+      "partition_count": 8349,
+      "polynomial_degree_benchmark_log2": 60.0,
+      "quadratic_dimension_mass": 1.5106627126530448e-57,
+      "quadratic_dimension_mass_theorem_upper_bound": 1.1069429904428271e-51,
+      "status": "finite-n-branchwise-bound-below-polynomial-benchmark",
+      "theorem_half_mass_dimension_threshold": 4720751546660967
+    },
+    {
+      "branchwise_average_degree_superpolynomial_signal": true,
+      "branchwise_expected_bernstein_degree_lower_bound_log2": 71.71989156942982,
+      "exact_mean_carrier_dimension_log2": 74.7670908425473,
+      "exact_q4_median_carrier_dimension": 30936220012740193866000,
+      "exact_rms_carrier_dimension_log2": 74.8755575207598,
+      "fourth_power_normalization_log2": 307.6580141593676,
+      "mass_at_or_below_theorem_threshold": 0.000658451197102796,
+      "n": 40,
+      "partition_count": 37338,
+      "polynomial_degree_benchmark_log2": 63.863137138648355,
+      "quadratic_dimension_mass": 2.9232935823412334e-81,
+      "quadratic_dimension_mass_theorem_upper_bound": 1.3724353542320882e-74,
+      "status": "natural-active-pair-cross-transport-superpolynomial-signal",
+      "theorem_half_mass_dimension_threshold": 3930877496324664066048
+    },
+    {
+      "branchwise_average_degree_superpolynomial_signal": true,
+      "branchwise_expected_bernstein_degree_lower_bound_log2": 92.62569737357671,
+      "exact_mean_carrier_dimension_log2": 95.96661246174841,
+      "exact_q4_median_carrier_dimension": 77282616194112509166433075200,
+      "exact_rms_carrier_dimension_log2": 96.05990059876018,
+      "fourth_power_normalization_log2": 393.8399638938414,
+      "mass_at_or_below_theorem_threshold": 0.00036200256129038607,
+      "n": 48,
+      "partition_count": 147273,
+      "polynomial_degree_benchmark_log2": 67.01955000865388,
+      "quadratic_dimension_mass": 1.5097943240062013e-106,
+      "quadratic_dimension_mass_theorem_upper_bound": 3.9660536985289455e-99,
+      "status": "natural-active-pair-cross-transport-superpolynomial-signal",
+      "theorem_half_mass_dimension_threshold": 7720320471347993375435390976
+    }
+  ],
+  "status": "conditional-native-pair-mass-proved-generic-access-blocked-gpe-bypass",
+  "summary": "Transferred the natural d_alpha^4 carrier law exactly to conditional native pair-frame mass and proved that normalized cross-overlap QSVT remains superpolynomial on that mass.",
+  "theorem_contract": {
+    "annealed_native_carrier_law": "The ratio of expected native trace masses for independent Plancherel source blocks is exactly q4(alpha)=d_alpha^4/Z4. This is a ratio of expectations, not an assertion that an expectation of normalized random ratios is identical.",
+    "branchwise_qsvt_boundary": "Even if the carrier label is supplied for free, a separate bounded QSVT sign polynomial on correlation 1/d_alpha has Bernstein degree Omega(d_alpha). At least half the q4 mass lies above a factorially growing dimension threshold.",
+    "cheap_mass_bound": "q4[d_alpha<=L] <= p(n)^2 L^4/(n!)^2. Thus retaining only polynomial-dimensional carriers preserves factorially vanishing conditional active-pair mass.",
+    "fixed_pair_trace_identity": "For every nonzero principal singular vector of E F, the corresponding active Jordan channel has Tr(E+F)=2, including the c=1 common channel. Conditional native pair-frame mass is therefore exactly principal-angle multiplicity mass.",
+    "quenched_native_carrier_law": "When the shared and exclusive random blocks each have at least three factors, the existing weighted-L1 theorem and the fixed-pair trace identity give convergence in probability of the conditional native carrier law to q4.",
+    "scope_exclusion": "This is not a lower bound for arbitrary quantum circuits, the constant-gap stacked pair polar, direct Racah/recoupling transforms, or the complete many-orientation PGM state."
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "created_at": "2026-08-08T13:45:00.274610+00:00",
+  "theorem_contract": {
+    "affine_membership_geometry": "A coordinate d-subcube has 2d+1 distinct nonempty membership blocks and binary incidence rank d+1.",
+    "generated_subgroup": "For S_n, n>=5, independent A_n factors on those blocks plus the incidence sign code give order |S_n|^(2d+1)/2^d.",
+    "maximal_outlier": "A_T has eigenvalue |T| exactly on the common range; every varying singleton source factor must be trivial or sign.",
+    "global_distinct_bound": "Distinctness makes common ranges impossible for d>=2; the all-bottom-node unconditioned numerator is 2^K/|S_n|^2.",
+    "scope": "No robust almost-invariance estimate, near-outlier bound, natural O(|T|/|S_n|) edge, or quantum speedup is proved."
+  },
+  "subgroup_controls": [
+    {
+      "n": 3,
+      "affine_dimension": 0,
+      "orientation_count": 1,
+      "distinct_nonempty_membership_pattern_count": 1,
+      "incidence_rank_over_f2": 1,
+      "predicted_generated_subgroup_order": 6,
+      "exact_generated_subgroup_order": 6,
+      "generated_subgroup_formula_verified": true,
+      "status": "exact-affine-generated-subgroup-formula-verified"
+    },
+    {
+      "n": 3,
+      "affine_dimension": 1,
+      "orientation_count": 2,
+      "distinct_nonempty_membership_pattern_count": 3,
+      "incidence_rank_over_f2": 2,
+      "predicted_generated_subgroup_order": 108,
+      "exact_generated_subgroup_order": 108,
+      "generated_subgroup_formula_verified": true,
+      "status": "exact-affine-generated-subgroup-formula-verified"
+    },
+    {
+      "n": 3,
+      "affine_dimension": 2,
+      "orientation_count": 4,
+      "distinct_nonempty_membership_pattern_count": 5,
+      "incidence_rank_over_f2": 3,
+      "predicted_generated_subgroup_order": 1944,
+      "exact_generated_subgroup_order": 1944,
+      "generated_subgroup_formula_verified": true,
+      "status": "exact-affine-generated-subgroup-formula-verified"
+    }
+  ],
+  "physical_controls": [
+    {
+      "n": 3,
+      "copy_count": 2,
+      "varying_pair_index": 0,
+      "physical_block_count": 243,
+      "common_outlier_block_count": 18,
+      "singleton_one_dimensional_necessity_violation_count": 0,
+      "maximum_projector_sum_eigenvalue_residual": 0.0,
+      "exact_singleton_necessity_verified": true,
+      "status": "exact-singleton-membership-necessity-verified"
+    },
+    {
+      "n": 3,
+      "copy_count": 2,
+      "varying_pair_index": 1,
+      "physical_block_count": 243,
+      "common_outlier_block_count": 18,
+      "singleton_one_dimensional_necessity_violation_count": 0,
+      "maximum_projector_sum_eigenvalue_residual": 0.0,
+      "exact_singleton_necessity_verified": true,
+      "status": "exact-singleton-membership-necessity-verified"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 5,
+      "group_order_log2": 6.90689059560852,
+      "information_threshold_copy_count": 7,
+      "independent_all_dimension_union_upper_bound": 0.017780247256563412,
+      "independent_all_dimension_union_upper_bound_log2": -5.813580802989631,
+      "globally_distinct_event_numerator_upper_bound": 0.008888888888888875,
+      "globally_distinct_event_numerator_upper_bound_log2": -6.813781191217039,
+      "conditioned_bound_formula": "2^K/(|S_n|^2 P_cf(n,K))",
+      "dimensions_at_least_two_impossible_under_global_distinctness": true,
+      "exact_maximal_outlier_excluded_with_high_probability": true,
+      "near_maximal_outlier_excluded": false,
+      "natural_edge_proved": false,
+      "status": "exact-common-outlier-rare-near-outlier-open"
+    },
+    {
+      "n": 8,
+      "group_order_log2": 15.29920801838728,
+      "information_threshold_copy_count": 16,
+      "independent_all_dimension_union_upper_bound": 8.062484262879215e-05,
+      "independent_all_dimension_union_upper_bound_log2": -13.5984160349997,
+      "globally_distinct_event_numerator_upper_bound": 4.0312421264802186e-05,
+      "globally_distinct_event_numerator_upper_bound_log2": -14.598416036774559,
+      "conditioned_bound_formula": "2^K/(|S_n|^2 P_cf(n,K))",
+      "dimensions_at_least_two_impossible_under_global_distinctness": true,
+      "exact_maximal_outlier_excluded_with_high_probability": true,
+      "near_maximal_outlier_excluded": false,
+      "natural_edge_proved": false,
+      "status": "exact-common-outlier-rare-near-outlier-open"
+    },
+    {
+      "n": 16,
+      "group_order_log2": 44.25014046988262,
+      "information_threshold_copy_count": 45,
+      "independent_all_dimension_union_upper_bound": 1.607461622021102e-13,
+      "independent_all_dimension_union_upper_bound_log2": -42.50028093976524,
+      "globally_distinct_event_numerator_upper_bound": 8.03730811010549e-14,
+      "globally_distinct_event_numerator_upper_bound_log2": -43.50028093976525,
+      "conditioned_bound_formula": "2^K/(|S_n|^2 P_cf(n,K))",
+      "dimensions_at_least_two_impossible_under_global_distinctness": true,
+      "exact_maximal_outlier_excluded_with_high_probability": true,
+      "near_maximal_outlier_excluded": false,
+      "natural_edge_proved": false,
+      "status": "exact-common-outlier-rare-near-outlier-open"
+    },
+    {
+      "n": 32,
+      "group_order_log2": 117.6632636523603,
+      "information_threshold_copy_count": 118,
+      "independent_all_dimension_union_upper_bound": 9.598999959757749e-36,
+      "independent_all_dimension_union_upper_bound_log2": -116.32652730472061,
+      "globally_distinct_event_numerator_upper_bound": 4.799499979878899e-36,
+      "globally_distinct_event_numerator_upper_bound_log2": -117.3265273047206,
+      "conditioned_bound_formula": "2^K/(|S_n|^2 P_cf(n,K))",
+      "dimensions_at_least_two_impossible_under_global_distinctness": true,
+      "exact_maximal_outlier_excluded_with_high_probability": true,
+      "near_maximal_outlier_excluded": false,
+      "natural_edge_proved": false,
+      "status": "exact-common-outlier-rare-near-outlier-open"
+    },
+    {
+      "n": 48,
+      "group_order_log2": 202.94957202970025,
+      "information_threshold_copy_count": 203,
+      "independent_all_dimension_union_upper_bound": 1.6684052171891513e-61,
+      "independent_all_dimension_union_upper_bound_log2": -201.89914405940047,
+      "globally_distinct_event_numerator_upper_bound": 8.342026085945667e-62,
+      "globally_distinct_event_numerator_upper_bound_log2": -202.8991440594005,
+      "conditioned_bound_formula": "2^K/(|S_n|^2 P_cf(n,K))",
+      "dimensions_at_least_two_impossible_under_global_distinctness": true,
+      "exact_maximal_outlier_excluded_with_high_probability": true,
+      "near_maximal_outlier_excluded": false,
+      "natural_edge_proved": false,
+      "status": "exact-common-outlier-rare-near-outlier-open"
+    },
+    {
+      "n": 64,
+      "group_order_log2": 295.9951439417241,
+      "information_threshold_copy_count": 296,
+      "independent_all_dimension_union_upper_bound": 1.5815208343878426e-89,
+      "independent_all_dimension_union_upper_bound_log2": -294.9902878834481,
+      "globally_distinct_event_numerator_upper_bound": 7.907604171938508e-90,
+      "globally_distinct_event_numerator_upper_bound_log2": -295.9902878834482,
+      "conditioned_bound_formula": "2^K/(|S_n|^2 P_cf(n,K))",
+      "dimensions_at_least_two_impossible_under_global_distinctness": true,
+      "exact_maximal_outlier_excluded_with_high_probability": true,
+      "near_maximal_outlier_excluded": false,
+      "natural_edge_proved": false,
+      "status": "exact-common-outlier-rare-near-outlier-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "classify_affine_node_generated_subgroup",
+      "resolved": true,
+      "resolution": "Distinct membership columns split the A_n subdirect product, while signs give the incidence row span."
+    },
+    {
+      "obligation": "exclude_exact_maximal_outliers_over_natural_hierarchy",
+      "resolved": true,
+      "resolution": "Singleton membership factors force one-dimensional labels; global distinctness leaves only a factorially rare d=1 event."
+    },
+    {
+      "obligation": "upgrade_exact_common_invariance_to_robust_almost_invariance",
+      "resolved": false,
+      "resolution": "Need a block-restricted stability or local-law theorem at the 1/|S_n| spectral scale, not merely a gap below one."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The global regular walk's eigenvalue one refutes every natural block edge.",
+      "resolved": true,
+      "resolution": "Its affine-node common sector requires singleton variable labels to be trivial/sign and is absent with high natural probability."
+    },
+    {
+      "objection": "Absence of eigenvalue one bounds the physical top edge.",
+      "resolved": false,
+      "resolution": "False without quantitative stability: eigenvalues can be arbitrarily close to one while the exact common range is zero."
+    },
+    {
+      "objection": "A conventional subgroup-walk spectral gap is enough.",
+      "resolved": false,
+      "resolution": "The required normalized edge is Theta(1/|S_n|), far below a statement of the form lambda<=1-1/poly(n)."
+    }
+  ],
+  "headline_metrics": {
+    "affine_generated_subgroup_theorem_count": 1,
+    "maximal_physical_outlier_necessity_theorem_count": 1,
+    "global_distinct_all_level_outlier_bound_theorem_count": 1,
+    "subgroup_control_count": 3,
+    "subgroup_control_failure_count": 0,
+    "physical_control_count": 2,
+    "physical_control_failure_count": 0,
+    "maximum_n_scaling_record": 64,
+    "near_maximal_outlier_theorem_count": 0,
+    "natural_node_edge_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "affine_generated_subgroup_classified": true,
+    "exact_maximal_outlier_rare_over_natural_hierarchy": true,
+    "global_regular_eigenvalue_one_is_typical_block_obstruction": false,
+    "near_maximal_outliers_excluded": false,
+    "block_restricted_natural_edge_proved": false,
+    "center_valued_local_law_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "Exact common invariants are now controlled, but the full noncommon spectrum at scale 1/|S_n| remains open."
+  },
+  "status": "exact-common-outlier-removed-robust-edge-open",
+  "summary": "Classified affine-node generated subgroups and proved that exact width-sized outliers are factorially rare under natural sources.",
+  "falsifiers_triggered": [
+    "The global regular-master eigenvalue one is supported on atypical one-dimensional source labels.",
+    "Exact absence of a common range is not a quantitative upper-edge theorem.",
+    "A gap below one is on the wrong scale for the natural node-frame edge."
+  ]
+}

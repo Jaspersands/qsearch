@@ -1,0 +1,257 @@
+{
+  "created_at": "2026-08-08T01:06:19.085096+00:00",
+  "theorem_contract": {
+    "conditional_event_bound": "For any good event E and conditioning event D, Pr(E^c|D)<=Pr(E^c)/Pr(D).",
+    "hierarchy_union": "For M node/target events with failure at most delta, the conditional union failure is at most M delta/P_cf.",
+    "rejection_success": "Rejecting collision portfolios leaves accepted-good mass at least P_cf-M delta.",
+    "two_extra_copy_node_count": "With K+2 copies, all binary-tree nodes and targets number less than 16 n! p(n).",
+    "scope": "This theorem transfers good events only. It does not prove the independent-label spectral event or any algorithm."
+  },
+  "generic_controls": [
+    {
+      "conditioning_event_probability": 0.9,
+      "event_count": 100,
+      "per_event_failure_upper_bound": 1e-05,
+      "unconditioned_union_failure_upper_bound": 0.001,
+      "conditioned_union_failure_upper_bound": 0.0011111111111111111,
+      "accepted_good_probability_lower_bound": 0.899,
+      "exact_event_transfer_inequality_verified": true,
+      "status": "event-level-conditioning-union-bound-proved"
+    },
+    {
+      "conditioning_event_probability": 0.5,
+      "event_count": 10000,
+      "per_event_failure_upper_bound": 1e-08,
+      "unconditioned_union_failure_upper_bound": 0.0001,
+      "conditioned_union_failure_upper_bound": 0.0002,
+      "accepted_good_probability_lower_bound": 0.4999,
+      "exact_event_transfer_inequality_verified": true,
+      "status": "event-level-conditioning-union-bound-proved"
+    },
+    {
+      "conditioning_event_probability": 0.001,
+      "event_count": 100,
+      "per_event_failure_upper_bound": 1e-08,
+      "unconditioned_union_failure_upper_bound": 1e-06,
+      "conditioned_union_failure_upper_bound": 0.001,
+      "accepted_good_probability_lower_bound": 0.000999,
+      "exact_event_transfer_inequality_verified": true,
+      "status": "event-level-conditioning-union-bound-proved"
+    }
+  ],
+  "hierarchy_scaling": [
+    {
+      "n": 20,
+      "group_order_decimal": "2432902008176640000",
+      "information_threshold_copy_count": 62,
+      "selected_copy_count": 64,
+      "orientation_leaf_count_decimal": "18446744073709551616",
+      "target_count": 627,
+      "hierarchy_node_target_count_upper_decimal": "23132217068431777726464",
+      "global_distinct_probability": 2.1463733392242715e-35,
+      "log2_global_distinct_probability": -115.16558228140244,
+      "target_total_conditional_failure": 0.01,
+      "required_per_node_failure_upper_bound": 9.278718649728555e-60,
+      "log2_required_per_node_failure_upper_bound": -196.10176010397922,
+      "asymptotic_collision_free_mass_tends_to_one": true,
+      "event_level_conditioning_transfer_available": true,
+      "independent_uniform_spectral_event_proved": false,
+      "status": "finite-event-transfer-target-computed-independent-edge-open"
+    },
+    {
+      "n": 24,
+      "group_order_decimal": "620448401733239439360000",
+      "information_threshold_copy_count": 80,
+      "selected_copy_count": 82,
+      "orientation_leaf_count_decimal": "4835703278458516698824704",
+      "target_count": 1575,
+      "hierarchy_node_target_count_upper_decimal": "15232465327144327601297817600",
+      "global_distinct_probability": 1.711121842035547e-29,
+      "log2_global_distinct_probability": -95.56097225979515,
+      "target_total_conditional_failure": 0.01,
+      "required_per_node_failure_upper_bound": 1.1233387408316104e-59,
+      "log2_required_per_node_failure_upper_bound": -195.82596456284455,
+      "asymptotic_collision_free_mass_tends_to_one": true,
+      "event_level_conditioning_transfer_available": true,
+      "independent_uniform_spectral_event_proved": false,
+      "status": "finite-event-transfer-target-computed-independent-edge-open"
+    },
+    {
+      "n": 28,
+      "group_order_decimal": "304888344611713860501504000000",
+      "information_threshold_copy_count": 98,
+      "selected_copy_count": 100,
+      "orientation_leaf_count_decimal": "1267650600228229401496703205376",
+      "target_count": 3718,
+      "hierarchy_node_target_count_upper_decimal": "9426249863297113829529485035175936",
+      "global_distinct_probability": 2.577844730491689e-24,
+      "log2_global_distinct_probability": -78.3601089078158,
+      "target_total_conditional_failure": 0.01,
+      "required_per_node_failure_upper_bound": 2.734751112983982e-60,
+      "log2_required_per_node_failure_upper_bound": -197.86427615251,
+      "asymptotic_collision_free_mass_tends_to_one": true,
+      "event_level_conditioning_transfer_available": true,
+      "independent_uniform_spectral_event_proved": false,
+      "status": "finite-event-transfer-target-computed-independent-edge-open"
+    },
+    {
+      "n": 32,
+      "group_order_decimal": "263130836933693530167218012160000000",
+      "information_threshold_copy_count": 118,
+      "selected_copy_count": 120,
+      "orientation_leaf_count_decimal": "1329227995784915872903807060280344576",
+      "target_count": 8349,
+      "hierarchy_node_target_count_upper_decimal": "22195449073616525245747770292561193730048",
+      "global_distinct_probability": 3.3807959833281233e-20,
+      "log2_global_distinct_probability": -64.6811989394046,
+      "target_total_conditional_failure": 0.01,
+      "required_per_node_failure_upper_bound": 1.5231933231514726e-62,
+      "log2_required_per_node_failure_upper_bound": -205.3524428232321,
+      "asymptotic_collision_free_mass_tends_to_one": true,
+      "event_level_conditioning_transfer_available": true,
+      "independent_uniform_spectral_event_proved": false,
+      "status": "finite-event-transfer-target-computed-independent-edge-open"
+    },
+    {
+      "n": 36,
+      "group_order_decimal": "371993326789901217467999448150835200000000",
+      "information_threshold_copy_count": 139,
+      "selected_copy_count": 141,
+      "orientation_leaf_count_decimal": "2787593149816327892691964784081045188247552",
+      "target_count": 17977,
+      "hierarchy_node_target_count_upper_decimal": "100225124108496253053846901846849898698252484608",
+      "global_distinct_probability": 1.0364326389978007e-16,
+      "log2_global_distinct_probability": -53.099223163971224,
+      "target_total_conditional_failure": 0.01,
+      "required_per_node_failure_upper_bound": 1.0341046201906779e-65,
+      "log2_required_per_node_failure_upper_bound": -215.8769440174271,
+      "asymptotic_collision_free_mass_tends_to_one": true,
+      "event_level_conditioning_transfer_available": true,
+      "independent_uniform_spectral_event_proved": false,
+      "status": "finite-event-transfer-target-computed-independent-edge-open"
+    },
+    {
+      "n": 40,
+      "group_order_decimal": "815915283247897734345611269596115894272000000000",
+      "information_threshold_copy_count": 160,
+      "selected_copy_count": 162,
+      "orientation_leaf_count_decimal": "5846006549323611672814739330865132078623730171904",
+      "target_count": 37338,
+      "hierarchy_node_target_count_upper_decimal": "436556385077290025279113474271684603103305674317103104",
+      "global_distinct_probability": 1.3072351933968575e-13,
+      "log2_global_distinct_probability": -42.79854650416863,
+      "target_total_conditional_failure": 0.01,
+      "required_per_node_failure_upper_bound": 2.9944246335222386e-69,
+      "log2_required_per_node_failure_upper_bound": -227.63075972555188,
+      "asymptotic_collision_free_mass_tends_to_one": true,
+      "event_level_conditioning_transfer_available": true,
+      "independent_uniform_spectral_event_proved": false,
+      "status": "finite-event-transfer-target-computed-independent-edge-open"
+    },
+    {
+      "n": 44,
+      "group_order_decimal": "2658271574788448768043625811014615890319638528000000000",
+      "information_threshold_copy_count": 181,
+      "selected_copy_count": 183,
+      "orientation_leaf_count_decimal": "12259964326927110866866776217202473468949912977468817408",
+      "target_count": 75175,
+      "hierarchy_node_target_count_upper_decimal": "1843285636553491118833419804256391886056619416162436697292800",
+      "global_distinct_probability": 4.567106226911769e-11,
+      "log2_global_distinct_probability": -34.349928697824765,
+      "target_total_conditional_failure": 0.01,
+      "required_per_node_failure_upper_bound": 2.4776985923088834e-73,
+      "log2_required_per_node_failure_upper_bound": -241.19175022994824,
+      "asymptotic_collision_free_mass_tends_to_one": true,
+      "event_level_conditioning_transfer_available": true,
+      "independent_uniform_spectral_event_proved": false,
+      "status": "finite-event-transfer-target-computed-independent-edge-open"
+    },
+    {
+      "n": 48,
+      "group_order_decimal": "12413915592536072670862289047373375038521486354677760000000000",
+      "information_threshold_copy_count": 203,
+      "selected_copy_count": 205,
+      "orientation_leaf_count_decimal": "51422017416287688817342786954917203280710495801049370729644032",
+      "target_count": 147273,
+      "hierarchy_node_target_count_upper_decimal": "15146149541897873590393048526423042557520153696215887950933731049472",
+      "global_distinct_probability": 7.326006427802632e-09,
+      "log2_global_distinct_probability": -27.024325887125578,
+      "target_total_conditional_failure": 0.01,
+      "required_per_node_failure_upper_bound": 4.836877126782055e-78,
+      "log2_required_per_node_failure_upper_bound": -256.8363155123521,
+      "asymptotic_collision_free_mass_tends_to_one": true,
+      "event_level_conditioning_transfer_available": true,
+      "independent_uniform_spectral_event_proved": false,
+      "status": "finite-event-transfer-target-computed-independent-edge-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "transfer_independent_good_events_to_collision_free_law",
+      "resolved": true,
+      "resolution": "Conditional probability plus a union bound gives the exact M delta/P_cf transfer without injective moments."
+    },
+    {
+      "obligation": "prove_uniform_independent_spectral_edges_over_all_nodes_targets",
+      "resolved": false,
+      "resolution": "Need per-node failure o(1/(n!p(n))), likely from growing moments, resolvents, or a structural frame theorem."
+    },
+    {
+      "obligation": "construct_coherent_hierarchical_merge",
+      "resolved": false,
+      "resolution": "Event transfer has no circuit content."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The injective source kernel must be controlled before any spectral theorem can transfer.",
+      "resolved": true,
+      "resolution": "False for high-probability events: prove the event under independent labels and condition it using equation (1)."
+    },
+    {
+      "objection": "An o(1) per-node failure is enough for the full hierarchy.",
+      "resolved": true,
+      "resolution": "False: there are O(n!p(n)) nodes/targets, so the required per-node tail is exponentially smaller."
+    },
+    {
+      "objection": "The finite n<=48 collision-free mass is already close to one.",
+      "resolved": true,
+      "resolution": "False: the finite regime is strongly preasymptotic, and the exact mass is retained in every bound."
+    },
+    {
+      "objection": "Event-level transfer proves the independent spectral event.",
+      "resolved": false,
+      "resolution": "It only removes the conditioning step after that much harder theorem has been established."
+    }
+  ],
+  "headline_metrics": {
+    "event_level_conditioning_transfer_theorem_count": 1,
+    "hierarchy_union_bound_theorem_count": 1,
+    "generic_control_count": 3,
+    "generic_control_failure_count": 0,
+    "hierarchy_scaling_row_count": 8,
+    "tail_n": 48,
+    "tail_log2_global_distinct_probability": -27.024325887125578,
+    "tail_log2_required_per_node_failure": -256.8363155123521,
+    "injective_moment_transfer_required_for_event_conditioning": 0,
+    "independent_uniform_spectral_event_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "event_level_collision_free_transfer_proved": true,
+    "full_hierarchy_union_cost_quantified": true,
+    "injective_signed_moment_contraction_mandatory": false,
+    "independent_uniform_spectral_event_proved": false,
+    "globally_distinct_uniform_spectral_event_proved": false,
+    "coherent_hierarchical_merge_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "Conditioning is no longer a separate moment theorem, but the independent per-node edge tail must beat 1/(n!p(n))."
+  },
+  "status": "event-conditioning-transfer-proved-independent-uniform-edge-open",
+  "summary": "Replaced mandatory injective moment transfer by an exact event-level conditioning route and quantified the full hierarchy union cost.",
+  "falsifiers_triggered": [
+    "Injective observable contraction is not mandatory for conditioning a pre-proved good event.",
+    "Per-node o(1) tails are insufficient across an exponential orientation hierarchy.",
+    "Finite collision-free mass cannot be replaced by its asymptotic limit in numerical rows."
+  ]
+}

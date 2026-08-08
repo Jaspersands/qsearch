@@ -2,7 +2,7 @@
   "adversarial_audit": [
     {
       "objection": "The constant-conditioned pair sampler compiles pair polar transport.",
-      "resolution": "The stacked sampler inverts singular values near one, while transport polarizes E_jE_i and must resolve correlation 1/d_alpha. Their conditioning is different.",
+      "resolution": "The stacked sampler inverts singular values near one, while transport polarizes E_jE_i. The stacked sampler does not compile it, but the separate coherent-GPE circuit does.",
       "resolved": true
     },
     {
@@ -26,17 +26,18 @@
     "all_n_polynomial_transport_graph_diameter_proved": false,
     "efficient_internal_gauge_correction_proved": false,
     "finite_affine_fiber_pair_transport_compiled": true,
+    "gpe_direct_pair_polar_bypasses_edge_correlation": true,
     "hierarchical_orientation_polar_proved": false,
     "polynomial_coherent_path_finder_proved": false,
-    "reason": "Finite fibers have short pair-polar paths, but asymptotic edge correlations may be exponentially small and no coherent path or gauge compiler is known.",
+    "reason": "Finite fibers have short pair-polar paths and GPE removes the inverse-correlation cost, but no all-n coherent path, active-coverage, or holonomy resolver is known.",
     "speedup_claim_allowed": false,
     "w3_orthogonal_generator_transport_resolved_by_two_edges": true,
     "w5_anchor_transport_is_direct_common_range": true
   },
-  "created_at": "2026-08-06T03:41:01.072277+00:00",
+  "created_at": "2026-08-08T06:20:12.601443+00:00",
   "falsifiers_triggered": [
     "Direct affine-generator overlap is not necessary; a short pair-overlap path can transport the fiber.",
-    "The stacked pair sampler's constant condition number does not bound the cost of pair-overlap polar transport.",
+    "The stacked pair sampler does not compile pair-overlap transport, but coherent GPE implements that polar without inverse-dimension amplification.",
     "Fixed W3 diameter and sign gauges do not imply polynomial diameter or abelian gauges at growing multiplicity."
   ],
   "finite_controls": [
@@ -265,9 +266,10 @@
     "all_n_inverse_polynomial_transport_correlation_theorem_count": 0,
     "all_n_polynomial_transport_diameter_theorem_count": 0,
     "coherent_transport_path_compiler_count": 0,
-    "finite_correlation_gate_failure_count": 0,
     "finite_pair_polar_transport_network_count": 3,
+    "finite_qsvt_correlation_control_failure_count": 0,
     "finite_transport_validation_failure_count": 0,
+    "gpe_direct_pair_correlation_bypass_theorem_count": 1,
     "hierarchical_orientation_polar_sampler_count": 0,
     "maximum_finite_transport_graph_diameter": 2,
     "minimum_finite_used_edge_correlation": 0.4999999999999994,
@@ -288,9 +290,9 @@
       "resolved": false
     },
     {
-      "obligation": "all_n_inverse_polynomial_edge_correlation",
-      "resolution": "Pair correlations are 1/d_alpha and natural S_n dimensions can be exponential.",
-      "resolved": false
+      "obligation": "audit_normalized_qsvt_edge_correlation",
+      "resolution": "Pair correlations are 1/d_alpha and natural S_n dimensions can be exponential. This remains a normalized-QSVT fact but is not required by the direct GPE pair polar.",
+      "resolved": true
     },
     {
       "obligation": "coherent_transport_path_and_gauge_compiler",
@@ -301,6 +303,7 @@
   "scaling_records": [
     {
       "efficiently_correctable_internal_gauge_proved": false,
+      "gpe_direct_pair_polar_bypasses_edge_correlation": true,
       "hierarchical_orientation_polar_proved": false,
       "information_threshold_copy_count": 7,
       "inverse_polynomial_used_edge_correlation_proved": false,
@@ -310,10 +313,11 @@
       "polynomial_transport_graph_diameter_proved": false,
       "smallest_possible_nonzero_pair_correlation_can_be_exponential": true,
       "smallest_possible_nonzero_pair_correlation_log2_lower_bound": -3.45344529780426,
-      "status": "finite-transport-network-edge-correlation-lower-bound-open"
+      "status": "gpe-edge-polar-polynomial-path-and-holonomy-open"
     },
     {
       "efficiently_correctable_internal_gauge_proved": false,
+      "gpe_direct_pair_polar_bypasses_edge_correlation": true,
       "hierarchical_orientation_polar_proved": false,
       "information_threshold_copy_count": 16,
       "inverse_polynomial_used_edge_correlation_proved": false,
@@ -323,10 +327,11 @@
       "polynomial_transport_graph_diameter_proved": false,
       "smallest_possible_nonzero_pair_correlation_can_be_exponential": true,
       "smallest_possible_nonzero_pair_correlation_log2_lower_bound": -7.64960400919364,
-      "status": "finite-transport-network-edge-correlation-lower-bound-open"
+      "status": "gpe-edge-polar-polynomial-path-and-holonomy-open"
     },
     {
       "efficiently_correctable_internal_gauge_proved": false,
+      "gpe_direct_pair_polar_bypasses_edge_correlation": true,
       "hierarchical_orientation_polar_proved": false,
       "information_threshold_copy_count": 45,
       "inverse_polynomial_used_edge_correlation_proved": false,
@@ -336,10 +341,11 @@
       "polynomial_transport_graph_diameter_proved": false,
       "smallest_possible_nonzero_pair_correlation_can_be_exponential": true,
       "smallest_possible_nonzero_pair_correlation_log2_lower_bound": -22.12507023494131,
-      "status": "finite-transport-network-edge-correlation-lower-bound-open"
+      "status": "gpe-edge-polar-polynomial-path-and-holonomy-open"
     },
     {
       "efficiently_correctable_internal_gauge_proved": false,
+      "gpe_direct_pair_polar_bypasses_edge_correlation": true,
       "hierarchical_orientation_polar_proved": false,
       "information_threshold_copy_count": 118,
       "inverse_polynomial_used_edge_correlation_proved": false,
@@ -349,10 +355,11 @@
       "polynomial_transport_graph_diameter_proved": false,
       "smallest_possible_nonzero_pair_correlation_can_be_exponential": true,
       "smallest_possible_nonzero_pair_correlation_log2_lower_bound": -58.83163182618015,
-      "status": "finite-transport-network-edge-correlation-lower-bound-open"
+      "status": "gpe-edge-polar-polynomial-path-and-holonomy-open"
     },
     {
       "efficiently_correctable_internal_gauge_proved": false,
+      "gpe_direct_pair_polar_bypasses_edge_correlation": true,
       "hierarchical_orientation_polar_proved": false,
       "information_threshold_copy_count": 296,
       "inverse_polynomial_used_edge_correlation_proved": false,
@@ -362,10 +369,11 @@
       "polynomial_transport_graph_diameter_proved": false,
       "smallest_possible_nonzero_pair_correlation_can_be_exponential": true,
       "smallest_possible_nonzero_pair_correlation_log2_lower_bound": -147.99757197086205,
-      "status": "finite-transport-network-edge-correlation-lower-bound-open"
+      "status": "gpe-edge-polar-polynomial-path-and-holonomy-open"
     },
     {
       "efficiently_correctable_internal_gauge_proved": false,
+      "gpe_direct_pair_polar_bypasses_edge_correlation": true,
       "hierarchical_orientation_polar_proved": false,
       "information_threshold_copy_count": 717,
       "inverse_polynomial_used_edge_correlation_proved": false,
@@ -375,10 +383,11 @@
       "polynomial_transport_graph_diameter_proved": false,
       "smallest_possible_nonzero_pair_correlation_can_be_exponential": true,
       "smallest_possible_nonzero_pair_correlation_log2_lower_bound": -358.080861041811,
-      "status": "finite-transport-network-edge-correlation-lower-bound-open"
+      "status": "gpe-edge-polar-polynomial-path-and-holonomy-open"
     },
     {
       "efficiently_correctable_internal_gauge_proved": false,
+      "gpe_direct_pair_polar_bypasses_edge_correlation": true,
       "hierarchical_orientation_polar_proved": false,
       "information_threshold_copy_count": 1684,
       "inverse_polynomial_used_edge_correlation_proved": false,
@@ -388,10 +397,11 @@
       "polynomial_transport_graph_diameter_proved": false,
       "smallest_possible_nonzero_pair_correlation_can_be_exponential": true,
       "smallest_possible_nonzero_pair_correlation_log2_lower_bound": -841.9981436121074,
-      "status": "finite-transport-network-edge-correlation-lower-bound-open"
+      "status": "gpe-edge-polar-polynomial-path-and-holonomy-open"
     },
     {
       "efficiently_correctable_internal_gauge_proved": false,
+      "gpe_direct_pair_polar_bypasses_edge_correlation": true,
       "hierarchical_orientation_polar_proved": false,
       "information_threshold_copy_count": 3876,
       "inverse_polynomial_used_edge_correlation_proved": false,
@@ -401,14 +411,14 @@
       "polynomial_transport_graph_diameter_proved": false,
       "smallest_possible_nonzero_pair_correlation_can_be_exponential": true,
       "smallest_possible_nonzero_pair_correlation_log2_lower_bound": -1937.5830609716015,
-      "status": "finite-transport-network-edge-correlation-lower-bound-open"
+      "status": "gpe-edge-polar-polynomial-path-and-holonomy-open"
     }
   ],
-  "status": "finite-pair-polar-transports-compiled-asymptotic-correlation-gate-open",
-  "summary": "Compiled all finite affine fiber transports through paths of at most two pair polars and exposed inverse edge correlation as the decisive asymptotic conditioning gate.",
+  "status": "finite-pair-polar-transports-gpe-edge-bypass-path-holonomy-open",
+  "summary": "Compiled all finite affine fiber transports through paths of at most two pair polars; coherent GPE removes the edge-correlation barrier, leaving path selection, coverage, and holonomy.",
   "theorem_contract": {
-    "all_n_target": "Find a polynomial-diameter transport graph using only inverse-polynomial correlations and efficiently correctable gauges.",
-    "conditioning_boundary": "Polarizing E_jE_i costs inverse in its used correlation 1/d_alpha, which may be exponential even though the stacked pair sampler remains constant-conditioned.",
+    "all_n_target": "Find a polynomial coherent path/generator selector with nonnegligible active-fiber coverage and efficiently resolvable gauge/holonomy.",
+    "conditioning_boundary": "Generic normalized-access QSVT costs inverse in correlation 1/d_alpha, but the companion coherent-GPE construction implements the pair polar directly and bypasses that scalar.",
     "edge_transport": "The polar factor of E_jE_i transports the relevant fiber when that fiber occupies a nonzero principal-angle block.",
     "finite_network": "The W3 active graph is K_(2,2) with diameter two and sign-only gauges; the W5 anchor line is one common-range edge.",
     "path_transport": "Products of edge polars transport along graph paths; endpoint gauges must be computed and corrected coherently."

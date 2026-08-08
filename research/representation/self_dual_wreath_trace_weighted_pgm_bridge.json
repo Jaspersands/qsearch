@@ -1,0 +1,781 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The native S/tr(S) state is unrelated to the physical PGM input.",
+      "resolution": "It is exactly the pullback of A^*A/tr(A^*A) through the physical row-copy intertwiner, sector by sector.",
+      "resolved": true
+    },
+    {
+      "objection": "An inverse-polynomial cutoff can be applied directly to the raw PGM frame.",
+      "resolution": "False: the raw frame is S/w. The corresponding raw cutoff is tau/w, which is factorially small at information threshold.",
+      "resolved": true
+    },
+    {
+      "objection": "The bridge itself supplies a polynomial PGM circuit.",
+      "resolution": "No tightly normalized implementation of Q_R or its tree relative isometries is supplied.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "physical_average_state_bridge_proved": true,
+    "pointwise_fourier_sector_bridge_proved": true,
+    "polynomial_physical_pgm_circuit_proved": false,
+    "reason": "Trace-weighted truncation now transfers exactly to the physical PGM average state, but efficient normalized orientation-polar access remains open.",
+    "rescaled_orientation_cutoff_is_the_correct_cutoff": true,
+    "same_absolute_cutoff_on_raw_pgm_frame_allowed": false,
+    "speedup_claim_allowed": false,
+    "tightly_normalized_orientation_polar_access_proved": false
+  },
+  "created_at": "2026-08-08T06:13:18.498860+00:00",
+  "falsifiers_triggered": [
+    "The trace-weighted native frame is not an artificial surrogate; it is the physical sector average under the exact intertwiner.",
+    "The same inverse-polynomial absolute cutoff cannot be applied to the raw averaged PGM frame.",
+    "The remaining obstacle is normalized structured access, not a missing average-state bridge."
+  ],
+  "finite_controls": [
+    {
+      "control_id": "W3-COLLISION-FREE-3-ROW-0",
+      "corresponding_raw_frame_threshold": 0.1875,
+      "discarded_rescaled_frame_mass": 0.33333333333333326,
+      "exact_physical_trace_weighted_bridge_verified": true,
+      "fourier_row_index": 0,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_raw_frame_eigenvalue": 0.12499999999999997,
+      "minimum_positive_rescaled_frame_eigenvalue": 1.0,
+      "n": 3,
+      "orientation_count": 8,
+      "physical_analysis_factorization_residual": 7.96131396188659e-17,
+      "physical_average_failure_probability": 0.3333333333333335,
+      "physical_average_polar_error": 0.33333333333333337,
+      "physical_failure_identity_residual": 2.220446049250313e-16,
+      "physical_sector_dimension": 32,
+      "physical_weighted_error_identity_residual": 1.1102230246251565e-16,
+      "raw_to_rescaled_frame_spectrum_residual": 6.661338147750939e-16,
+      "rescaled_frame_dimension": 4,
+      "rescaled_frame_rank": 4,
+      "rescaled_frame_trace": 6.0,
+      "row_copy_range_identity_residual": 4.577566798522236e-16,
+      "single_sector_trace_distance_upper_bound": 0.8164965809277259,
+      "status": "exact-physical-trace-weighted-pgm-bridge",
+      "target_partition": [
+        3
+      ],
+      "truncation_threshold": 1.5
+    },
+    {
+      "control_id": "W3-COLLISION-FREE-2-1-ROW-0",
+      "corresponding_raw_frame_threshold": 0.1875,
+      "discarded_rescaled_frame_mass": 0.6,
+      "exact_physical_trace_weighted_bridge_verified": true,
+      "fourier_row_index": 0,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_raw_frame_eigenvalue": 0.12499999999999993,
+      "minimum_positive_rescaled_frame_eigenvalue": 0.9999999999999993,
+      "n": 3,
+      "orientation_count": 8,
+      "physical_analysis_factorization_residual": 8.987267519410496e-17,
+      "physical_average_failure_probability": 0.6000000000000003,
+      "physical_average_polar_error": 0.6000000000000001,
+      "physical_failure_identity_residual": 3.3306690738754696e-16,
+      "physical_sector_dimension": 32,
+      "physical_weighted_error_identity_residual": 1.1102230246251565e-16,
+      "raw_to_rescaled_frame_spectrum_residual": 1.1102230246251565e-15,
+      "rescaled_frame_dimension": 8,
+      "rescaled_frame_rank": 8,
+      "rescaled_frame_trace": 10.0,
+      "row_copy_range_identity_residual": 2.968105625062625e-16,
+      "single_sector_trace_distance_upper_bound": 1.0954451150103321,
+      "status": "exact-physical-trace-weighted-pgm-bridge",
+      "target_partition": [
+        2,
+        1
+      ],
+      "truncation_threshold": 1.5
+    },
+    {
+      "control_id": "W3-COLLISION-FREE-2-1-ROW-1",
+      "corresponding_raw_frame_threshold": 0.1875,
+      "discarded_rescaled_frame_mass": 0.6,
+      "exact_physical_trace_weighted_bridge_verified": true,
+      "fourier_row_index": 1,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_raw_frame_eigenvalue": 0.12499999999999986,
+      "minimum_positive_rescaled_frame_eigenvalue": 0.9999999999999993,
+      "n": 3,
+      "orientation_count": 8,
+      "physical_analysis_factorization_residual": 8.95458097718637e-17,
+      "physical_average_failure_probability": 0.6000000000000002,
+      "physical_average_polar_error": 0.6000000000000001,
+      "physical_failure_identity_residual": 2.220446049250313e-16,
+      "physical_sector_dimension": 32,
+      "physical_weighted_error_identity_residual": 1.1102230246251565e-16,
+      "raw_to_rescaled_frame_spectrum_residual": 1.1102230246251565e-15,
+      "rescaled_frame_dimension": 8,
+      "rescaled_frame_rank": 8,
+      "rescaled_frame_trace": 10.0,
+      "row_copy_range_identity_residual": 2.9817824193319433e-16,
+      "single_sector_trace_distance_upper_bound": 1.0954451150103321,
+      "status": "exact-physical-trace-weighted-pgm-bridge",
+      "target_partition": [
+        2,
+        1
+      ],
+      "truncation_threshold": 1.5
+    },
+    {
+      "control_id": "W3-COLLISION-FREE-1-1-1-ROW-0",
+      "corresponding_raw_frame_threshold": 0.1875,
+      "discarded_rescaled_frame_mass": 0.33333333333333326,
+      "exact_physical_trace_weighted_bridge_verified": true,
+      "fourier_row_index": 0,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_raw_frame_eigenvalue": 0.12499999999999997,
+      "minimum_positive_rescaled_frame_eigenvalue": 1.0,
+      "n": 3,
+      "orientation_count": 8,
+      "physical_analysis_factorization_residual": 7.96131396188659e-17,
+      "physical_average_failure_probability": 0.3333333333333335,
+      "physical_average_polar_error": 0.33333333333333337,
+      "physical_failure_identity_residual": 2.220446049250313e-16,
+      "physical_sector_dimension": 32,
+      "physical_weighted_error_identity_residual": 1.1102230246251565e-16,
+      "raw_to_rescaled_frame_spectrum_residual": 6.661338147750939e-16,
+      "rescaled_frame_dimension": 4,
+      "rescaled_frame_rank": 4,
+      "rescaled_frame_trace": 6.0,
+      "row_copy_range_identity_residual": 4.577566798522236e-16,
+      "single_sector_trace_distance_upper_bound": 0.8164965809277259,
+      "status": "exact-physical-trace-weighted-pgm-bridge",
+      "target_partition": [
+        1,
+        1,
+        1
+      ],
+      "truncation_threshold": 1.5
+    },
+    {
+      "control_id": "W4-PAIR-3-1-ROW-0",
+      "corresponding_raw_frame_threshold": 0.1875,
+      "discarded_rescaled_frame_mass": 0.0,
+      "exact_physical_trace_weighted_bridge_verified": true,
+      "fourier_row_index": 0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_raw_frame_eigenvalue": 0.24999999999999997,
+      "minimum_positive_rescaled_frame_eigenvalue": 0.9999999999999989,
+      "n": 4,
+      "orientation_count": 4,
+      "physical_analysis_factorization_residual": 1.4569253003777122e-16,
+      "physical_average_failure_probability": 0.0,
+      "physical_average_polar_error": 0.0,
+      "physical_failure_identity_residual": 0.0,
+      "physical_sector_dimension": 72,
+      "physical_weighted_error_identity_residual": 0.0,
+      "raw_to_rescaled_frame_spectrum_residual": 9.992007221626409e-16,
+      "rescaled_frame_dimension": 54,
+      "rescaled_frame_rank": 5,
+      "rescaled_frame_trace": 4.999999999999998,
+      "row_copy_range_identity_residual": 2.127190342789712e-16,
+      "single_sector_trace_distance_upper_bound": 0.0,
+      "status": "exact-physical-trace-weighted-pgm-bridge",
+      "target_partition": [
+        3,
+        1
+      ],
+      "truncation_threshold": 0.75
+    },
+    {
+      "control_id": "W4-PAIR-3-1-ROW-1",
+      "corresponding_raw_frame_threshold": 0.1875,
+      "discarded_rescaled_frame_mass": 0.0,
+      "exact_physical_trace_weighted_bridge_verified": true,
+      "fourier_row_index": 1,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_raw_frame_eigenvalue": 0.2499999999999999,
+      "minimum_positive_rescaled_frame_eigenvalue": 0.9999999999999989,
+      "n": 4,
+      "orientation_count": 4,
+      "physical_analysis_factorization_residual": 1.1045221532667186e-16,
+      "physical_average_failure_probability": 0.0,
+      "physical_average_polar_error": 0.0,
+      "physical_failure_identity_residual": 0.0,
+      "physical_sector_dimension": 72,
+      "physical_weighted_error_identity_residual": 0.0,
+      "raw_to_rescaled_frame_spectrum_residual": 8.881784197001252e-16,
+      "rescaled_frame_dimension": 54,
+      "rescaled_frame_rank": 5,
+      "rescaled_frame_trace": 4.999999999999998,
+      "row_copy_range_identity_residual": 1.9918155538410094e-16,
+      "single_sector_trace_distance_upper_bound": 0.0,
+      "status": "exact-physical-trace-weighted-pgm-bridge",
+      "target_partition": [
+        3,
+        1
+      ],
+      "truncation_threshold": 0.75
+    },
+    {
+      "control_id": "W4-PAIR-3-1-ROW-2",
+      "corresponding_raw_frame_threshold": 0.1875,
+      "discarded_rescaled_frame_mass": 0.0,
+      "exact_physical_trace_weighted_bridge_verified": true,
+      "fourier_row_index": 2,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_raw_frame_eigenvalue": 0.2499999999999998,
+      "minimum_positive_rescaled_frame_eigenvalue": 0.9999999999999989,
+      "n": 4,
+      "orientation_count": 4,
+      "physical_analysis_factorization_residual": 1.3612295632001852e-16,
+      "physical_average_failure_probability": 0.0,
+      "physical_average_polar_error": 0.0,
+      "physical_failure_identity_residual": 0.0,
+      "physical_sector_dimension": 72,
+      "physical_weighted_error_identity_residual": 0.0,
+      "raw_to_rescaled_frame_spectrum_residual": 8.881784197001252e-16,
+      "rescaled_frame_dimension": 54,
+      "rescaled_frame_rank": 5,
+      "rescaled_frame_trace": 4.999999999999998,
+      "row_copy_range_identity_residual": 2.4238223644027645e-16,
+      "single_sector_trace_distance_upper_bound": 0.0,
+      "status": "exact-physical-trace-weighted-pgm-bridge",
+      "target_partition": [
+        3,
+        1
+      ],
+      "truncation_threshold": 0.75
+    },
+    {
+      "control_id": "W4-PAIR-2-2-ROW-0",
+      "corresponding_raw_frame_threshold": 0.1875,
+      "discarded_rescaled_frame_mass": 0.09090909090909084,
+      "exact_physical_trace_weighted_bridge_verified": true,
+      "fourier_row_index": 0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_raw_frame_eigenvalue": 0.12499999999999997,
+      "minimum_positive_rescaled_frame_eigenvalue": 0.49999999999999956,
+      "n": 4,
+      "orientation_count": 4,
+      "physical_analysis_factorization_residual": 1.704132122713331e-16,
+      "physical_average_failure_probability": 0.09090909090909072,
+      "physical_average_polar_error": 0.09090909090909079,
+      "physical_failure_identity_residual": 1.249000902703301e-16,
+      "physical_sector_dimension": 72,
+      "physical_weighted_error_identity_residual": 5.551115123125783e-17,
+      "raw_to_rescaled_frame_spectrum_residual": 6.661338147750939e-16,
+      "rescaled_frame_dimension": 36,
+      "rescaled_frame_rank": 11,
+      "rescaled_frame_trace": 10.999999999999996,
+      "row_copy_range_identity_residual": 4.801277457648832e-16,
+      "single_sector_trace_distance_upper_bound": 0.4264014327112207,
+      "status": "exact-physical-trace-weighted-pgm-bridge",
+      "target_partition": [
+        2,
+        2
+      ],
+      "truncation_threshold": 0.75
+    },
+    {
+      "control_id": "W4-PAIR-2-2-ROW-1",
+      "corresponding_raw_frame_threshold": 0.1875,
+      "discarded_rescaled_frame_mass": 0.09090909090909084,
+      "exact_physical_trace_weighted_bridge_verified": true,
+      "fourier_row_index": 1,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_raw_frame_eigenvalue": 0.12499999999999985,
+      "minimum_positive_rescaled_frame_eigenvalue": 0.49999999999999956,
+      "n": 4,
+      "orientation_count": 4,
+      "physical_analysis_factorization_residual": 1.4800086833106199e-16,
+      "physical_average_failure_probability": 0.09090909090909075,
+      "physical_average_polar_error": 0.09090909090909077,
+      "physical_failure_identity_residual": 9.71445146547012e-17,
+      "physical_sector_dimension": 72,
+      "physical_weighted_error_identity_residual": 6.938893903907228e-17,
+      "raw_to_rescaled_frame_spectrum_residual": 6.661338147750939e-16,
+      "rescaled_frame_dimension": 36,
+      "rescaled_frame_rank": 11,
+      "rescaled_frame_trace": 10.999999999999996,
+      "row_copy_range_identity_residual": 3.2944428870024546e-16,
+      "single_sector_trace_distance_upper_bound": 0.4264014327112207,
+      "status": "exact-physical-trace-weighted-pgm-bridge",
+      "target_partition": [
+        2,
+        2
+      ],
+      "truncation_threshold": 0.75
+    },
+    {
+      "control_id": "W4-PAIR-2-1-1-ROW-0",
+      "corresponding_raw_frame_threshold": 0.1875,
+      "discarded_rescaled_frame_mass": 0.18181818181818182,
+      "exact_physical_trace_weighted_bridge_verified": true,
+      "fourier_row_index": 0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_raw_frame_eigenvalue": 0.16666666666666657,
+      "minimum_positive_rescaled_frame_eigenvalue": 0.6666666666666663,
+      "n": 4,
+      "orientation_count": 4,
+      "physical_analysis_factorization_residual": 3.147472707407423e-16,
+      "physical_average_failure_probability": 0.1818181818181818,
+      "physical_average_polar_error": 0.18181818181818182,
+      "physical_failure_identity_residual": 2.7755575615628914e-17,
+      "physical_sector_dimension": 72,
+      "physical_weighted_error_identity_residual": 0.0,
+      "raw_to_rescaled_frame_spectrum_residual": 7.771561172376096e-16,
+      "rescaled_frame_dimension": 54,
+      "rescaled_frame_rank": 11,
+      "rescaled_frame_trace": 10.999999999999995,
+      "row_copy_range_identity_residual": 5.003010434512935e-16,
+      "single_sector_trace_distance_upper_bound": 0.6030226891555273,
+      "status": "exact-physical-trace-weighted-pgm-bridge",
+      "target_partition": [
+        2,
+        1,
+        1
+      ],
+      "truncation_threshold": 0.75
+    },
+    {
+      "control_id": "W4-PAIR-2-1-1-ROW-1",
+      "corresponding_raw_frame_threshold": 0.1875,
+      "discarded_rescaled_frame_mass": 0.18181818181818182,
+      "exact_physical_trace_weighted_bridge_verified": true,
+      "fourier_row_index": 1,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_raw_frame_eigenvalue": 0.16666666666666669,
+      "minimum_positive_rescaled_frame_eigenvalue": 0.6666666666666663,
+      "n": 4,
+      "orientation_count": 4,
+      "physical_analysis_factorization_residual": 2.196211887303697e-16,
+      "physical_average_failure_probability": 0.18181818181818177,
+      "physical_average_polar_error": 0.18181818181818177,
+      "physical_failure_identity_residual": 5.551115123125783e-17,
+      "physical_sector_dimension": 72,
+      "physical_weighted_error_identity_residual": 5.551115123125783e-17,
+      "raw_to_rescaled_frame_spectrum_residual": 1.1102230246251565e-15,
+      "rescaled_frame_dimension": 54,
+      "rescaled_frame_rank": 11,
+      "rescaled_frame_trace": 10.999999999999995,
+      "row_copy_range_identity_residual": 3.3756812111374146e-16,
+      "single_sector_trace_distance_upper_bound": 0.6030226891555273,
+      "status": "exact-physical-trace-weighted-pgm-bridge",
+      "target_partition": [
+        2,
+        1,
+        1
+      ],
+      "truncation_threshold": 0.75
+    },
+    {
+      "control_id": "W4-PAIR-2-1-1-ROW-2",
+      "corresponding_raw_frame_threshold": 0.1875,
+      "discarded_rescaled_frame_mass": 0.18181818181818182,
+      "exact_physical_trace_weighted_bridge_verified": true,
+      "fourier_row_index": 2,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_raw_frame_eigenvalue": 0.16666666666666663,
+      "minimum_positive_rescaled_frame_eigenvalue": 0.6666666666666663,
+      "n": 4,
+      "orientation_count": 4,
+      "physical_analysis_factorization_residual": 2.295438013463341e-16,
+      "physical_average_failure_probability": 0.18181818181818174,
+      "physical_average_polar_error": 0.18181818181818177,
+      "physical_failure_identity_residual": 8.326672684688674e-17,
+      "physical_sector_dimension": 72,
+      "physical_weighted_error_identity_residual": 5.551115123125783e-17,
+      "raw_to_rescaled_frame_spectrum_residual": 8.881784197001252e-16,
+      "rescaled_frame_dimension": 54,
+      "rescaled_frame_rank": 11,
+      "rescaled_frame_trace": 10.999999999999995,
+      "row_copy_range_identity_residual": 3.2748045657273415e-16,
+      "single_sector_trace_distance_upper_bound": 0.6030226891555273,
+      "status": "exact-physical-trace-weighted-pgm-bridge",
+      "target_partition": [
+        2,
+        1,
+        1
+      ],
+      "truncation_threshold": 0.75
+    },
+    {
+      "control_id": "W4-PAIR-1-1-1-1-ROW-0",
+      "corresponding_raw_frame_threshold": 0.1875,
+      "discarded_rescaled_frame_mass": 0.0,
+      "exact_physical_trace_weighted_bridge_verified": true,
+      "fourier_row_index": 0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_raw_frame_eigenvalue": 0.24999999999999994,
+      "minimum_positive_rescaled_frame_eigenvalue": 0.9999999999999997,
+      "n": 4,
+      "orientation_count": 4,
+      "physical_analysis_factorization_residual": 1.9088019197961188e-16,
+      "physical_average_failure_probability": 0.0,
+      "physical_average_polar_error": 0.0,
+      "physical_failure_identity_residual": 0.0,
+      "physical_sector_dimension": 72,
+      "physical_weighted_error_identity_residual": 0.0,
+      "raw_to_rescaled_frame_spectrum_residual": 1.1102230246251565e-16,
+      "rescaled_frame_dimension": 18,
+      "rescaled_frame_rank": 2,
+      "rescaled_frame_trace": 1.9999999999999991,
+      "row_copy_range_identity_residual": 2.9805085692063726e-16,
+      "single_sector_trace_distance_upper_bound": 0.0,
+      "status": "exact-physical-trace-weighted-pgm-bridge",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "truncation_threshold": 0.75
+    }
+  ],
+  "headline_metrics": {
+    "finite_nonzero_discard_control_count": 9,
+    "finite_sector_row_control_count": 13,
+    "finite_validation_failure_count": 0,
+    "maximum_identity_residual": 1.1102230246251565e-15,
+    "new_quantum_algorithm_count": 0,
+    "physical_trace_weighted_bridge_theorem_count": 1,
+    "polynomial_pgm_circuit_count": 0,
+    "tight_orientation_polar_access_theorem_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "physical_average_state_matches_native_frame_weighting",
+      "resolution": "Cyclic trace and CC^*R=R reduce the physical sector error exactly to the discarded S_nu trace mass.",
+      "resolved": true
+    },
+    {
+      "obligation": "rescaled_vs_raw_cutoff_accounting",
+      "resolution": "The nonzero spectrum of AA^* is the spectrum of S_nu divided by the orientation count w.",
+      "resolved": true
+    },
+    {
+      "obligation": "tightly_normalized_orientation_polar_access",
+      "resolution": "The bridge proves the correct error measure but does not construct access to the rescaled polar without sqrt(w) cost.",
+      "resolved": false
+    }
+  ],
+  "status": "physical-trace-weighted-bridge-proved-tight-access-open",
+  "summary": "Proved that discarded rescaled orientation-frame trace mass is exactly the physical PGM average failure, while isolating the factorial raw-frame rescaling that an implementation must bypass.",
+  "theorem_contract": {
+    "physical_average_identity": "On rho_(nu,a)=A^*A/tr(A^*A), replacing Q_R^*C by Q_(R,tau)^*C has mean-square error and failure probability tr(S_nu 1_(0,tau)(S_nu))/tr(S_nu).",
+    "physical_sector_factorization": "A_(nu,a)=w^(-1/2)R_nu^*C_(nu,a), with C_(nu,a)C_(nu,a)^*R_nu=R_nu.",
+    "raw_frame_scale": "A_(nu,a)A_(nu,a)^*=S_nu/w.",
+    "scale_warning": "The rescaled-frame cutoff tau corresponds to tau/w on the raw averaged frame; the same absolute cutoff cannot be transferred.",
+    "sector_averaging": "The identity is pointwise in every active Fourier sector and row, so its upper bound survives the natural sector mixture."
+  }
+}
