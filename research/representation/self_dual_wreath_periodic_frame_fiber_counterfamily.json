@@ -1,0 +1,717 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Only identity padding can make the target margin vanish.",
+      "resolution": "False: every frame value in the periodic block is nonidentity.",
+      "resolved": true
+    },
+    {
+      "objection": "An exponentially large finite-group fiber proves leading S_n mass.",
+      "resolution": "False. Support cardinality is over Boolean assignments; the full group presentation may still collapse to bounded rank.",
+      "resolved": true
+    },
+    {
+      "objection": "The first finite reductions already saturate the support bound.",
+      "resolution": "False: one- through four-period presentations retain substantial extra certified pressure loss.",
+      "resolved": true
+    },
+    {
+      "objection": "The finite reductions might reverse at larger period count.",
+      "resolution": "The suffix-branch witness catalog and neutral concatenation prove a three-frame-generator upper bound for every k=6m+1.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "leading_Sn_homomorphism_mass_proved": false,
+    "natural_component_M4_positive": false,
+    "nonidentity_periodic_counterfamily_constructed": true,
+    "nonvanishing_normalized_Sn_target_character_proved": false,
+    "periodic_family_survives": false,
+    "periodic_family_uniformly_subleading_in_Sn": true,
+    "reason": "The finite-state support mechanism is exact, but suffix-branch rank collapse proves it cannot carry leading S_n mass.",
+    "speedup_claim_allowed": false,
+    "uniform_support_certificate_gap_falsified_without_identity_padding": true
+  },
+  "created_at": "2026-08-09T05:43:44.256012+00:00",
+  "falsifiers_triggered": [
+    "Identity padding is not the only nonuniform-margin mechanism.",
+    "Boolean support growth does not establish group-solution growth.",
+    "Finite S3 target survival does not establish normalized S_n signal.",
+    "The first four full presentations have stronger loss than the support bound.",
+    "The entire k=6m+1 family has at most three frame generators."
+  ],
+  "headline_metrics": {
+    "all_period_frame_rank_collapse_theorem_count": 1,
+    "asymptotic_Sn_mass_theorem_count": 0,
+    "exact_periodic_transfer_theorem_count": 1,
+    "infinite_nonidentity_margin_vanishing_counterfamily_count": 1,
+    "materialized_presentation_control_count": 4,
+    "minimum_stored_scalar_certificate_margin": 3.5189599089874626e-19,
+    "new_quantum_algorithm_count": 0,
+    "nonvanishing_Sn_target_character_theorem_count": 0,
+    "stored_period_scaling_count": 13,
+    "stored_vanishing_margin_period_count": 7,
+    "support_bound_tight_presentation_count": 0,
+    "uniform_subleading_Sn_mass_theorem_count": 1
+  },
+  "presentation_controls": [
+    {
+      "certified_extra_pressure_loss": 1.415037499278844,
+      "different_fiber_state": [
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          2
+        ]
+      ],
+      "different_support_size": 3,
+      "eliminated_generator_count": 5,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 324,
+      "exact_S3_standard_normalized_character_average": 0.5,
+      "exponent_certificate_source": "single-orientable-surface-genus-1",
+      "frame_position_count": 5,
+      "period_count": 1,
+      "remaining_generator_count": 4,
+      "residual_relation_count": 3,
+      "residual_target_word": [
+        -8,
+        -9,
+        -7,
+        5,
+        5,
+        -9,
+        -7,
+        -5,
+        -5,
+        7,
+        9,
+        7,
+        8,
+        9
+      ],
+      "same_fiber_state": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          0,
+          1
+        ]
+      ],
+      "same_support_size": 2,
+      "status": "periodic-presentation-has-extra-pressure-loss",
+      "support_size_bound_is_tight": false,
+      "support_size_solution_exponent_upper_bound": 4.415037499278844,
+      "symmetric_group_solution_exponent_upper_bound": 3.0
+    },
+    {
+      "certified_extra_pressure_loss": 1.5405683813627027,
+      "different_fiber_state": [
+        [
+          2,
+          0,
+          1
+        ],
+        [
+          2,
+          0,
+          1
+        ]
+      ],
+      "different_support_size": 44,
+      "eliminated_generator_count": 9,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 396,
+      "exact_S3_standard_normalized_character_average": 0.5909090909090909,
+      "exponent_certificate_source": "single-nonorientable-surface-genus-2",
+      "frame_position_count": 10,
+      "period_count": 2,
+      "remaining_generator_count": 5,
+      "residual_relation_count": 24,
+      "residual_target_word": [
+        -14,
+        -13,
+        -12,
+        10,
+        -11,
+        -10,
+        -10,
+        -10,
+        -10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "same_fiber_state": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          1,
+          2,
+          0
+        ]
+      ],
+      "same_support_size": 43,
+      "status": "periodic-presentation-has-extra-pressure-loss",
+      "support_size_bound_is_tight": false,
+      "support_size_solution_exponent_upper_bound": 5.540568381362703,
+      "symmetric_group_solution_exponent_upper_bound": 4.0
+    },
+    {
+      "certified_extra_pressure_loss": 2.083202472393941,
+      "different_fiber_state": [
+        [
+          2,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          2
+        ]
+      ],
+      "different_support_size": 1367,
+      "eliminated_generator_count": 15,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 342,
+      "exact_S3_standard_normalized_character_average": 1.0,
+      "exponent_certificate_source": "whitehead-nonorientable-surface-genus-1",
+      "frame_position_count": 15,
+      "period_count": 3,
+      "remaining_generator_count": 4,
+      "residual_relation_count": 192,
+      "residual_target_word": [
+        -19,
+        -18,
+        -17,
+        -16,
+        17,
+        18,
+        19,
+        -18,
+        16,
+        -19,
+        -17,
+        -16,
+        17,
+        18,
+        19,
+        -18,
+        16,
+        -19,
+        -17,
+        -16,
+        17,
+        18,
+        19,
+        -18,
+        16,
+        -19,
+        -17,
+        -16,
+        17,
+        18,
+        19,
+        -18,
+        16,
+        -19,
+        -17,
+        -16,
+        17,
+        18,
+        19,
+        -18,
+        16,
+        -19,
+        -17,
+        -16,
+        17,
+        18,
+        19,
+        -18,
+        16,
+        -19,
+        18,
+        19
+      ],
+      "same_fiber_state": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "same_support_size": 1366,
+      "status": "periodic-presentation-has-extra-pressure-loss",
+      "support_size_bound_is_tight": false,
+      "support_size_solution_exponent_upper_bound": 5.583202472393941,
+      "symmetric_group_solution_exponent_upper_bound": 3.5
+    },
+    {
+      "certified_extra_pressure_loss": 2.2630960457326434,
+      "different_fiber_state": [
+        [
+          2,
+          0,
+          1
+        ],
+        [
+          2,
+          0,
+          1
+        ]
+      ],
+      "different_support_size": 54611,
+      "eliminated_generator_count": 21,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 126,
+      "exact_S3_standard_normalized_character_average": 0.35714285714285715,
+      "exponent_certificate_source": "trivial-remaining-generator-bound",
+      "frame_position_count": 20,
+      "period_count": 4,
+      "remaining_generator_count": 3,
+      "residual_relation_count": 1249,
+      "residual_target_word": [
+        -24,
+        -23,
+        24,
+        -21,
+        23,
+        -24,
+        -23,
+        24,
+        23,
+        -24,
+        -23,
+        24,
+        -21,
+        -24,
+        23,
+        24,
+        -23,
+        21,
+        23,
+        -24,
+        -23,
+        24,
+        21,
+        -24,
+        23,
+        24,
+        -23,
+        21,
+        23,
+        -24,
+        -23,
+        24,
+        -21,
+        -21,
+        23,
+        -24,
+        -23,
+        24,
+        23,
+        -24,
+        -23,
+        24,
+        21,
+        23
+      ],
+      "same_fiber_state": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          2,
+          0,
+          1
+        ]
+      ],
+      "same_support_size": 54610,
+      "status": "periodic-presentation-has-extra-pressure-loss",
+      "support_size_bound_is_tight": false,
+      "support_size_solution_exponent_upper_bound": 5.2630960457326434,
+      "symmetric_group_solution_exponent_upper_bound": 3.0
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "construct_nonidentity_periodic_vanishing_margin_family",
+      "resolution": "The exact transfer polynomial, projector, and k=6m+1 fiber recurrence give an infinite family.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_or_falsify_leading_Sn_homomorphism_mass_for_periodic_family",
+      "resolution": "Falsified by the all-period suffix-branch theorem: at most three frame generators and |S_n|^(4+o(1)) full solutions.",
+      "resolved": true
+    },
+    {
+      "obligation": "determine_whether_target_character_can_rescue_family",
+      "resolution": "No normalized character exceeds one, so the uniform unsigned mass loss makes the target-character law irrelevant to survival.",
+      "resolved": true
+    }
+  ],
+  "rank_collapse_certificate": {
+    "frame_generator_upper_bound": 3,
+    "full_Sn_solution_exponent_upper_bound": 4,
+    "periodic_family_uniformly_subleading": true,
+    "report_path": "research/representation/self_dual_wreath_periodic_frame_rank_collapse.json",
+    "uniform_scalar_pressure_margin_lower_bound": 0.707518749639422
+  },
+  "scaling_records": [
+    {
+      "frame_position_count": 5,
+      "maximum_outer_valid_different_fiber_size": 3,
+      "outer_valid_fiber_exists": true,
+      "period_count": 1,
+      "same_fiber_density": 0.0625,
+      "same_fiber_size": 2,
+      "scalar_certificate_pressure_margin": 0.2924812503605781,
+      "selected_different_support_size": 3,
+      "status": "nonidentity-periodic-target-margin-vanishing-control",
+      "target_is_nonidentity": true,
+      "target_permutation": [
+        2,
+        0,
+        1
+      ],
+      "vanishing_margin_support_pair_exists": true
+    },
+    {
+      "frame_position_count": 10,
+      "maximum_outer_valid_different_fiber_size": 86,
+      "outer_valid_fiber_exists": true,
+      "period_count": 2,
+      "same_fiber_density": 0.0419921875,
+      "same_fiber_size": 43,
+      "scalar_certificate_pressure_margin": 0.01658343196759966,
+      "selected_different_support_size": 44,
+      "status": "nonidentity-periodic-target-margin-vanishing-control",
+      "target_is_nonidentity": true,
+      "target_permutation": [
+        1,
+        2,
+        0
+      ],
+      "vanishing_margin_support_pair_exists": true
+    },
+    {
+      "frame_position_count": 15,
+      "maximum_outer_valid_different_fiber_size": 2049,
+      "outer_valid_fiber_exists": true,
+      "period_count": 3,
+      "same_fiber_density": 0.04168701171875,
+      "same_fiber_size": 1366,
+      "scalar_certificate_pressure_margin": null,
+      "selected_different_support_size": null,
+      "status": "periodic-residue-without-selected-counterfamily",
+      "target_is_nonidentity": false,
+      "target_permutation": [
+        0,
+        1,
+        2
+      ],
+      "vanishing_margin_support_pair_exists": false
+    },
+    {
+      "frame_position_count": 20,
+      "maximum_outer_valid_different_fiber_size": 65538,
+      "outer_valid_fiber_exists": true,
+      "period_count": 4,
+      "same_fiber_density": 0.05208015441894531,
+      "same_fiber_size": 54610,
+      "scalar_certificate_pressure_margin": 1.3208952865559517e-05,
+      "selected_different_support_size": 54611,
+      "status": "nonidentity-periodic-target-margin-vanishing-control",
+      "target_is_nonidentity": true,
+      "target_permutation": [
+        2,
+        0,
+        1
+      ],
+      "vanishing_margin_support_pair_exists": true
+    },
+    {
+      "frame_position_count": 25,
+      "maximum_outer_valid_different_fiber_size": 1922393,
+      "outer_valid_fiber_exists": true,
+      "period_count": 5,
+      "same_fiber_density": 0.057291775941848755,
+      "same_fiber_size": 1922393,
+      "scalar_certificate_pressure_margin": null,
+      "selected_different_support_size": null,
+      "status": "periodic-residue-without-selected-counterfamily",
+      "target_is_nonidentity": true,
+      "target_permutation": [
+        1,
+        2,
+        0
+      ],
+      "vanishing_margin_support_pair_exists": false
+    },
+    {
+      "frame_position_count": 30,
+      "maximum_outer_valid_different_fiber_size": 61516466,
+      "outer_valid_fiber_exists": true,
+      "period_count": 6,
+      "same_fiber_density": 0.05729167349636555,
+      "same_fiber_size": 61516466,
+      "scalar_certificate_pressure_margin": null,
+      "selected_different_support_size": null,
+      "status": "periodic-residue-without-selected-counterfamily",
+      "target_is_nonidentity": false,
+      "target_permutation": [
+        0,
+        1,
+        2
+      ],
+      "vanishing_margin_support_pair_exists": false
+    },
+    {
+      "frame_position_count": 35,
+      "maximum_outer_valid_different_fiber_size": 1923787449,
+      "outer_valid_fiber_exists": true,
+      "period_count": 7,
+      "same_fiber_density": 0.05598958249902353,
+      "same_fiber_size": 1923787406,
+      "scalar_certificate_pressure_margin": 3.749621803361574e-10,
+      "selected_different_support_size": 1923787407,
+      "status": "nonidentity-periodic-target-margin-vanishing-control",
+      "target_is_nonidentity": true,
+      "target_permutation": [
+        2,
+        0,
+        1
+      ],
+      "vanishing_margin_support_pair_exists": true
+    },
+    {
+      "frame_position_count": 40,
+      "maximum_outer_valid_different_fiber_size": 61561197938,
+      "outer_valid_fiber_exists": true,
+      "period_count": 8,
+      "same_fiber_density": 0.05533854169243568,
+      "same_fiber_size": 60845370055,
+      "scalar_certificate_pressure_margin": 1.1855421699079253e-11,
+      "selected_different_support_size": 60845370056,
+      "status": "nonidentity-periodic-target-margin-vanishing-control",
+      "target_is_nonidentity": true,
+      "target_permutation": [
+        1,
+        2,
+        0
+      ],
+      "vanishing_margin_support_pair_exists": true
+    },
+    {
+      "frame_position_count": 45,
+      "maximum_outer_valid_different_fiber_size": 1958505087033,
+      "outer_valid_fiber_exists": true,
+      "period_count": 9,
+      "same_fiber_density": 0.05533854166827723,
+      "same_fiber_size": 1947051840910,
+      "scalar_certificate_pressure_margin": null,
+      "selected_different_support_size": null,
+      "status": "periodic-residue-without-selected-counterfamily",
+      "target_is_nonidentity": false,
+      "target_permutation": [
+        0,
+        1,
+        2
+      ],
+      "vanishing_margin_support_pair_exists": false
+    },
+    {
+      "frame_position_count": 50,
+      "maximum_outer_valid_different_fiber_size": 62672162783346,
+      "outer_valid_fiber_exists": true,
+      "period_count": 10,
+      "same_fiber_density": 0.05550130208313142,
+      "same_fiber_size": 62488910845042,
+      "scalar_certificate_pressure_margin": 1.1543608468920997e-14,
+      "selected_different_support_size": 62488910845043,
+      "status": "nonidentity-periodic-target-margin-vanishing-control",
+      "target_is_nonidentity": true,
+      "target_permutation": [
+        2,
+        0,
+        1
+      ],
+      "vanishing_margin_support_pair_exists": true
+    },
+    {
+      "frame_position_count": 55,
+      "maximum_outer_valid_different_fiber_size": 2002577178056249,
+      "outer_valid_fiber_exists": true,
+      "period_count": 11,
+      "same_fiber_density": 0.055582682291672986,
+      "same_fiber_size": 2002577178056249,
+      "scalar_certificate_pressure_margin": null,
+      "selected_different_support_size": null,
+      "status": "periodic-residue-without-selected-counterfamily",
+      "target_is_nonidentity": true,
+      "target_permutation": [
+        1,
+        2,
+        0
+      ],
+      "vanishing_margin_support_pair_exists": false
+    },
+    {
+      "frame_position_count": 60,
+      "maximum_outer_valid_different_fiber_size": 64082469697793138,
+      "outer_valid_fiber_exists": true,
+      "period_count": 12,
+      "same_fiber_density": 0.05558268229166706,
+      "same_fiber_size": 64082469697793138,
+      "scalar_certificate_pressure_margin": null,
+      "selected_different_support_size": null,
+      "status": "periodic-residue-without-selected-counterfamily",
+      "target_is_nonidentity": false,
+      "target_permutation": [
+        0,
+        1,
+        2
+      ],
+      "vanishing_margin_support_pair_exists": false
+    },
+    {
+      "frame_position_count": 65,
+      "maximum_outer_valid_different_fiber_size": 2049888430391471673,
+      "outer_valid_fiber_exists": true,
+      "period_count": 13,
+      "same_fiber_density": 0.05556233723958329,
+      "same_fiber_size": 2049888430391468942,
+      "scalar_certificate_pressure_margin": 3.5189599089874626e-19,
+      "selected_different_support_size": 2049888430391468943,
+      "status": "nonidentity-periodic-target-margin-vanishing-control",
+      "target_is_nonidentity": true,
+      "target_permutation": [
+        2,
+        0,
+        1
+      ],
+      "vanishing_margin_support_pair_exists": true
+    }
+  ],
+  "status": "periodic-support-counterfamily-falsified-by-rank-collapse",
+  "subsequence_certificate": {
+    "asymptotic_margin": "0.5*log2(1+1/|S_(6m+1)|)=Theta(32^-(6m+1))",
+    "checked_fiber_excesses": [
+      1,
+      43,
+      2731,
+      174763,
+      11184811,
+      715827883,
+      45812984491
+    ],
+    "checked_m_values": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "exact_closed_form_verified": true,
+    "exact_krylov_recurrence_verified": true,
+    "nonidentity_target_verified": true,
+    "outer_valid_different_state_verified": true,
+    "period_residue_class": "k=6m+1",
+    "predicted_fiber_excesses": [
+      1,
+      43,
+      2731,
+      174763,
+      11184811,
+      715827883,
+      45812984491
+    ],
+    "recurrence": "Delta_(m+1)=64*Delta_m-21, Delta_0=1",
+    "status": "exact-infinite-nonidentity-periodic-counterfamily"
+  },
+  "summary": "Constructed an exact nonidentity periodic frame family with vanishing support-only margin, then proved its full infinite subsequence uniformly subleading by suffix-branch rank collapse.",
+  "theorem_contract": {
+    "fiber_density": "The relevant same fiber has density 1/18+O(2^-k).",
+    "finite_state_transfer": "Ordered subword/complement fibers evolve by an exact 36-state integer transfer matrix with roots 32,-16,2,-1,0.",
+    "infinite_subsequence": "At k=6m+1 a fixed outer-valid different fiber exceeds the same fiber by (2*64^m+1)/3, while the target is nonidentity.",
+    "margin_falsifier": "Choosing |D|=|S|+1 gives an exact S3 full-solution witness and support-certificate margin Theta(32^-k) without identity frames.",
+    "scope": "The support counterfamily is exact, but the companion suffix-branch theorem proves it is uniformly subleading in S_n."
+  },
+  "transfer_certificate": {
+    "annihilating_polynomial_roots": [
+      0,
+      32,
+      -16,
+      2,
+      -1
+    ],
+    "exact_annihilating_polynomial_verified": true,
+    "exact_leading_projector_verified": true,
+    "frame_block": [
+      [
+        0,
+        2,
+        1
+      ],
+      [
+        1,
+        2,
+        0
+      ],
+      [
+        1,
+        2,
+        0
+      ],
+      [
+        2,
+        0,
+        1
+      ],
+      [
+        1,
+        0,
+        2
+      ]
+    ],
+    "frame_types": [
+      "B",
+      "A",
+      "A",
+      "B",
+      "B"
+    ],
+    "leading_projector_nonzero_entry": "1/18",
+    "leading_projector_nonzero_entry_count": 18,
+    "same_fiber_asymptotic_density": "1/18+O(2^-k)",
+    "state_count": 36,
+    "status": "exact-periodic-transfer-spectrum-and-density",
+    "transition_column_sum": 32,
+    "transition_rank": 18,
+    "transition_row_sum": 32
+  }
+}

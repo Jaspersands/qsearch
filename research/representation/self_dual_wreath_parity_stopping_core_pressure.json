@@ -1,0 +1,658 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Peeling is necessary to rule out a lift.",
+      "resolution": "False: this family is fully nonpeelable but its code relations force an involution and a uniform pressure gap.",
+      "resolved": true
+    },
+    {
+      "objection": "Persistent S3 character bias indicates leading mass.",
+      "resolution": "False: the standard average is 1/2 at every stored width while the all-depth scalar mass loses at least half an exponent.",
+      "resolved": true
+    },
+    {
+      "objection": "The generic vanishing margin is an actual escape.",
+      "resolution": "False for this family: the uncounted involution relation restores a uniform positive margin.",
+      "resolved": true
+    }
+  ],
+  "all_depth_certificate": {
+    "core_generators_reduce_to_one_involution": true,
+    "different_support_size_formula": "2^(k-1)",
+    "every_single_fiber_maximum_stopping_core_is_a_parity_coset": true,
+    "exact_core_generator_relations": [
+      "D_0 gives b d = 1.",
+      "D_{e_i+e_j} together with D_0 gives z_i z_j = 1.",
+      "Relations 12,13,23 imply z_1^2=1 and z_2=z_3=z_1.",
+      "Relations 1j eliminate every z_j with j>3."
+    ],
+    "generic_margin_formula": "0.5*log2(2^(k-1)/(2^(k-1)-1))",
+    "generic_margin_tends_to_zero": true,
+    "maximum_independent_set_rigidity": "The connected regular bipartite cube Q_k has only its two parity classes as independent sets of size 2^(k-1): equality in the perfect-matching/Hall bound would otherwise disconnect Q_k.",
+    "minimum_core_width": 3,
+    "nonpeelable_code_property": "Every nonzero difference of even-parity rows has Hamming weight at least two, so the full k-coordinate set is a stopping core.",
+    "same_support_size_formula": "2^(k-1)-1",
+    "status": "all-depth-parity-stopping-core-pressure-no-go",
+    "symmetric_group_involution_exponent": 0.5,
+    "symmetric_group_solution_exponent_upper_bound": 5.5,
+    "total_remaining_generator_upper_bound": 6,
+    "true_margin_lower_bound_formula": "0.5 + 0.5*log2(2^(k-1)/(2^(k-1)-1))",
+    "true_margin_uniformly_positive": true,
+    "uniform_true_margin_lower_bound": 0.5,
+    "universal_all_depth_pressure_no_go_verified": true
+  },
+  "claim_gate": {
+    "all_nonlinear_stopping_cores_controlled": false,
+    "all_single_fiber_maximum_density_stopping_cores_controlled": true,
+    "finite_S3_target_signal_survives": true,
+    "generic_integer_margin_uniformly_positive": false,
+    "natural_component_M4_positive": false,
+    "nonpeelable_power_boundary_family_constructed": true,
+    "parity_stopping_core_actual_pressure_survives": false,
+    "parity_stopping_core_uniformly_subleading": true,
+    "reason": "The adversarial parity core preserves finite target bias but its involution relation restores at least half an exponent of loss.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-09T05:43:02.974678+00:00",
+  "extremal_parity_coset_controls": [
+    {
+      "core_width": 3,
+      "different_parity": 0,
+      "different_support_size": 3,
+      "exact_control_verified": true,
+      "exact_reducer_certificate_source": "single-nonorientable-surface-genus-5",
+      "exact_reducer_remaining_generator_count": 6,
+      "exact_reducer_solution_exponent_upper_bound": 5.0,
+      "forced_core_normal_form": "at-most-one-core-involution",
+      "full_support_kind": "same",
+      "full_support_parity": 0,
+      "pressure_margin_lower_bound": 0.707518749639422,
+      "same_parity": 0,
+      "same_support_size": 4,
+      "solution_exponent_upper_bound": 5.5,
+      "status": "extremal-parity-coset-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true,
+      "total_remaining_generator_upper_bound": 6
+    },
+    {
+      "core_width": 3,
+      "different_parity": 0,
+      "different_support_size": 4,
+      "exact_control_verified": true,
+      "exact_reducer_certificate_source": "single-orientable-surface-genus-2",
+      "exact_reducer_remaining_generator_count": 6,
+      "exact_reducer_solution_exponent_upper_bound": 5.0,
+      "forced_core_normal_form": "at-most-one-core-involution",
+      "full_support_kind": "different",
+      "full_support_parity": 0,
+      "pressure_margin_lower_bound": 0.707518749639422,
+      "same_parity": 0,
+      "same_support_size": 3,
+      "solution_exponent_upper_bound": 5.5,
+      "status": "extremal-parity-coset-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true,
+      "total_remaining_generator_upper_bound": 6
+    },
+    {
+      "core_width": 3,
+      "different_parity": 1,
+      "different_support_size": 3,
+      "exact_control_verified": true,
+      "exact_reducer_certificate_source": "single-orientable-surface-genus-2",
+      "exact_reducer_remaining_generator_count": 6,
+      "exact_reducer_solution_exponent_upper_bound": 5.0,
+      "forced_core_normal_form": "at-most-one-core-involution",
+      "full_support_kind": "same",
+      "full_support_parity": 0,
+      "pressure_margin_lower_bound": 0.707518749639422,
+      "same_parity": 0,
+      "same_support_size": 4,
+      "solution_exponent_upper_bound": 5.5,
+      "status": "extremal-parity-coset-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true,
+      "total_remaining_generator_upper_bound": 6
+    },
+    {
+      "core_width": 3,
+      "different_parity": 1,
+      "different_support_size": 4,
+      "exact_control_verified": true,
+      "exact_reducer_certificate_source": "single-nonorientable-surface-genus-5",
+      "exact_reducer_remaining_generator_count": 6,
+      "exact_reducer_solution_exponent_upper_bound": 5.0,
+      "forced_core_normal_form": "at-most-one-core-involution",
+      "full_support_kind": "different",
+      "full_support_parity": 1,
+      "pressure_margin_lower_bound": 0.707518749639422,
+      "same_parity": 0,
+      "same_support_size": 3,
+      "solution_exponent_upper_bound": 5.5,
+      "status": "extremal-parity-coset-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true,
+      "total_remaining_generator_upper_bound": 6
+    },
+    {
+      "core_width": 3,
+      "different_parity": 0,
+      "different_support_size": 3,
+      "exact_control_verified": true,
+      "exact_reducer_certificate_source": "single-orientable-surface-genus-2",
+      "exact_reducer_remaining_generator_count": 5,
+      "exact_reducer_solution_exponent_upper_bound": 4.0,
+      "forced_core_normal_form": "all-core-generators-identity",
+      "full_support_kind": "same",
+      "full_support_parity": 1,
+      "pressure_margin_lower_bound": 1.207518749639422,
+      "same_parity": 1,
+      "same_support_size": 4,
+      "solution_exponent_upper_bound": 5.0,
+      "status": "extremal-parity-coset-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true,
+      "total_remaining_generator_upper_bound": 5
+    },
+    {
+      "core_width": 3,
+      "different_parity": 0,
+      "different_support_size": 4,
+      "exact_control_verified": true,
+      "exact_reducer_certificate_source": "single-orientable-surface-genus-2",
+      "exact_reducer_remaining_generator_count": 5,
+      "exact_reducer_solution_exponent_upper_bound": 4.0,
+      "forced_core_normal_form": "at-most-one-core-involution",
+      "full_support_kind": "different",
+      "full_support_parity": 0,
+      "pressure_margin_lower_bound": 0.707518749639422,
+      "same_parity": 1,
+      "same_support_size": 3,
+      "solution_exponent_upper_bound": 5.5,
+      "status": "extremal-parity-coset-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true,
+      "total_remaining_generator_upper_bound": 6
+    },
+    {
+      "core_width": 3,
+      "different_parity": 1,
+      "different_support_size": 3,
+      "exact_control_verified": true,
+      "exact_reducer_certificate_source": "single-orientable-surface-genus-2",
+      "exact_reducer_remaining_generator_count": 5,
+      "exact_reducer_solution_exponent_upper_bound": 4.0,
+      "forced_core_normal_form": "all-core-generators-identity",
+      "full_support_kind": "same",
+      "full_support_parity": 1,
+      "pressure_margin_lower_bound": 1.207518749639422,
+      "same_parity": 1,
+      "same_support_size": 4,
+      "solution_exponent_upper_bound": 5.0,
+      "status": "extremal-parity-coset-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true,
+      "total_remaining_generator_upper_bound": 5
+    },
+    {
+      "core_width": 3,
+      "different_parity": 1,
+      "different_support_size": 4,
+      "exact_control_verified": true,
+      "exact_reducer_certificate_source": "single-orientable-surface-genus-2",
+      "exact_reducer_remaining_generator_count": 5,
+      "exact_reducer_solution_exponent_upper_bound": 4.0,
+      "forced_core_normal_form": "at-most-one-core-involution",
+      "full_support_kind": "different",
+      "full_support_parity": 1,
+      "pressure_margin_lower_bound": 0.707518749639422,
+      "same_parity": 1,
+      "same_support_size": 3,
+      "solution_exponent_upper_bound": 5.5,
+      "status": "extremal-parity-coset-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true,
+      "total_remaining_generator_upper_bound": 6
+    }
+  ],
+  "falsifiers_triggered": [
+    "Avoiding support-difference peeling is not enough.",
+    "Near-zero generic pressure margin is not an actual presentation escape.",
+    "Persistent S3 standard bias does not imply asymptotic leading mass.",
+    "Maximal even-parity stopping cores collapse to one involution.",
+    "Odd-parity and support-swapped extremal cores do not escape.",
+    "Every single-fiber maximum-density stopping core is a parity coset."
+  ],
+  "finite_controls": [
+    {
+      "core_width": 2,
+      "different_support_size": 2,
+      "even_code_contains_required_weight_two_rows": false,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 17496,
+      "exact_S3_standard_normalized_character_average": 0.5,
+      "exact_control_verified": true,
+      "exact_involution_forcing_subpresentation_verified": false,
+      "finite_nontrivial_target_signal_survives": true,
+      "generic_integer_certificate_margin": 0.5,
+      "generic_suffix_branch_solution_exponent_upper_bound": 6.0,
+      "involution_pressure_margin": 1.5,
+      "involution_solution_exponent_upper_bound": 5.0,
+      "pattern": "EBABAAAFEF",
+      "peeling_core_coordinates_one_based": [
+        5,
+        6
+      ],
+      "reducer_certificate_source": "single-orientable-surface-genus-2",
+      "reducer_pressure_margin": 1.5,
+      "reducer_solution_exponent_upper_bound": 5.0,
+      "remaining_generator_count": 6,
+      "removed_even_assignment": [
+        1,
+        1
+      ],
+      "residual_involution_relation_present": false,
+      "residual_relation_count": 1,
+      "residual_relation_length_profile": [
+        10
+      ],
+      "residual_target_word": [
+        -10,
+        -9,
+        10,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -10,
+        9,
+        10
+      ],
+      "same_support_size": 1,
+      "status": "nonpeelable-parity-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true,
+      "support_entropy_bits": 0.5
+    },
+    {
+      "core_width": 3,
+      "different_support_size": 4,
+      "even_code_contains_required_weight_two_rows": true,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 11664,
+      "exact_S3_standard_normalized_character_average": 0.5,
+      "exact_control_verified": true,
+      "exact_involution_forcing_subpresentation_verified": true,
+      "finite_nontrivial_target_signal_survives": true,
+      "generic_integer_certificate_margin": 0.20751874963942196,
+      "generic_suffix_branch_solution_exponent_upper_bound": 6.0,
+      "involution_pressure_margin": 0.707518749639422,
+      "involution_solution_exponent_upper_bound": 5.5,
+      "pattern": "EBABAAAAFEF",
+      "peeling_core_coordinates_one_based": [
+        5,
+        6,
+        7
+      ],
+      "reducer_certificate_source": "single-orientable-surface-genus-2",
+      "reducer_pressure_margin": 1.207518749639422,
+      "reducer_solution_exponent_upper_bound": 5.0,
+      "remaining_generator_count": 6,
+      "removed_even_assignment": [
+        1,
+        1,
+        0
+      ],
+      "residual_involution_relation_present": true,
+      "residual_relation_count": 3,
+      "residual_relation_length_profile": [
+        2,
+        12,
+        12
+      ],
+      "residual_target_word": [
+        -11,
+        -10,
+        11,
+        8,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -8,
+        -11,
+        10,
+        11
+      ],
+      "same_support_size": 3,
+      "status": "nonpeelable-parity-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true,
+      "support_entropy_bits": 1.792481250360578
+    },
+    {
+      "core_width": 4,
+      "different_support_size": 8,
+      "even_code_contains_required_weight_two_rows": true,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 11664,
+      "exact_S3_standard_normalized_character_average": 0.5,
+      "exact_control_verified": true,
+      "exact_involution_forcing_subpresentation_verified": true,
+      "finite_nontrivial_target_signal_survives": true,
+      "generic_integer_certificate_margin": 0.09632253897119725,
+      "generic_suffix_branch_solution_exponent_upper_bound": 6.0,
+      "involution_pressure_margin": 0.5963225389711972,
+      "involution_solution_exponent_upper_bound": 5.5,
+      "pattern": "EBABAAAAAFEF",
+      "peeling_core_coordinates_one_based": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "reducer_certificate_source": "single-orientable-surface-genus-2",
+      "reducer_pressure_margin": 1.0963225389711981,
+      "reducer_solution_exponent_upper_bound": 5.0,
+      "remaining_generator_count": 6,
+      "removed_even_assignment": [
+        1,
+        1,
+        0,
+        0
+      ],
+      "residual_involution_relation_present": true,
+      "residual_relation_count": 3,
+      "residual_relation_length_profile": [
+        2,
+        10,
+        12
+      ],
+      "residual_target_word": [
+        -12,
+        -11,
+        12,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -9,
+        -9,
+        -12,
+        11,
+        12
+      ],
+      "same_support_size": 7,
+      "status": "nonpeelable-parity-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true,
+      "support_entropy_bits": 2.903677461028802
+    },
+    {
+      "core_width": 5,
+      "different_support_size": 16,
+      "even_code_contains_required_weight_two_rows": true,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 11664,
+      "exact_S3_standard_normalized_character_average": 0.5,
+      "exact_control_verified": true,
+      "exact_involution_forcing_subpresentation_verified": true,
+      "finite_nontrivial_target_signal_survives": true,
+      "generic_integer_certificate_margin": 0.046554702195740205,
+      "generic_suffix_branch_solution_exponent_upper_bound": 6.0,
+      "involution_pressure_margin": 0.5465547021957402,
+      "involution_solution_exponent_upper_bound": 5.5,
+      "pattern": "EBABAAAAAAFEF",
+      "peeling_core_coordinates_one_based": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "reducer_certificate_source": "single-nonorientable-surface-genus-5",
+      "reducer_pressure_margin": 1.0465547021957402,
+      "reducer_solution_exponent_upper_bound": 5.0,
+      "remaining_generator_count": 6,
+      "removed_even_assignment": [
+        1,
+        1,
+        0,
+        0,
+        0
+      ],
+      "residual_involution_relation_present": true,
+      "residual_relation_count": 5,
+      "residual_relation_length_profile": [
+        2,
+        4,
+        12,
+        12,
+        14
+      ],
+      "residual_target_word": [
+        -13,
+        -12,
+        13,
+        -10,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -10,
+        -10,
+        -10,
+        -13,
+        12,
+        13
+      ],
+      "same_support_size": 15,
+      "status": "nonpeelable-parity-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true,
+      "support_entropy_bits": 3.9534452978042594
+    },
+    {
+      "core_width": 6,
+      "different_support_size": 32,
+      "even_code_contains_required_weight_two_rows": true,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 11664,
+      "exact_S3_standard_normalized_character_average": 0.5,
+      "exact_control_verified": true,
+      "exact_involution_forcing_subpresentation_verified": true,
+      "finite_nontrivial_target_signal_survives": true,
+      "generic_integer_certificate_margin": 0.022901844806561655,
+      "generic_suffix_branch_solution_exponent_upper_bound": 6.0,
+      "involution_pressure_margin": 0.5229018448065617,
+      "involution_solution_exponent_upper_bound": 5.5,
+      "pattern": "EBABAAAAAAAFEF",
+      "peeling_core_coordinates_one_based": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "reducer_certificate_source": "single-orientable-surface-genus-2",
+      "reducer_pressure_margin": 1.0229018448065617,
+      "reducer_solution_exponent_upper_bound": 5.0,
+      "remaining_generator_count": 6,
+      "removed_even_assignment": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "residual_involution_relation_present": true,
+      "residual_relation_count": 5,
+      "residual_relation_length_profile": [
+        2,
+        4,
+        10,
+        12,
+        14
+      ],
+      "residual_target_word": [
+        -14,
+        -13,
+        14,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -11,
+        -11,
+        -11,
+        -11,
+        -14,
+        13,
+        14
+      ],
+      "same_support_size": 31,
+      "status": "nonpeelable-parity-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true,
+      "support_entropy_bits": 4.9770981551934375
+    }
+  ],
+  "headline_metrics": {
+    "all_depth_parity_stopping_core_no_go_theorem_count": 1,
+    "control_failure_count": 0,
+    "finite_S3_standard_bias_control_count": 5,
+    "hypercube_rigidity_control_count": 4,
+    "maximum_independent_set_rigidity_failure_count": 0,
+    "maximum_stored_core_width": 6,
+    "minimum_stored_generic_integer_margin": 0.022901844806561655,
+    "minimum_stored_involution_pressure_margin": 0.5229018448065617,
+    "new_quantum_algorithm_count": 0,
+    "stored_extremal_parity_coset_control_count": 8,
+    "stored_nonpeelable_core_control_count": 5,
+    "uniform_true_pressure_margin_lower_bound": 0.5
+  },
+  "hypercube_rigidity_controls": [
+    {
+      "checked_maximum_size_subset_count": 2,
+      "every_maximum_independent_set_is_a_parity_class": true,
+      "independent_maximum_set_count": 2,
+      "maximum_independent_set_size": 1,
+      "status": "maximum-hypercube-independent-sets-are-parity-classes",
+      "width": 1
+    },
+    {
+      "checked_maximum_size_subset_count": 6,
+      "every_maximum_independent_set_is_a_parity_class": true,
+      "independent_maximum_set_count": 2,
+      "maximum_independent_set_size": 2,
+      "status": "maximum-hypercube-independent-sets-are-parity-classes",
+      "width": 2
+    },
+    {
+      "checked_maximum_size_subset_count": 70,
+      "every_maximum_independent_set_is_a_parity_class": true,
+      "independent_maximum_set_count": 2,
+      "maximum_independent_set_size": 4,
+      "status": "maximum-hypercube-independent-sets-are-parity-classes",
+      "width": 3
+    },
+    {
+      "checked_maximum_size_subset_count": 12870,
+      "every_maximum_independent_set_is_a_parity_class": true,
+      "independent_maximum_set_count": 2,
+      "maximum_independent_set_size": 8,
+      "status": "maximum-hypercube-independent-sets-are-parity-classes",
+      "width": 4
+    }
+  ],
+  "involution_scaling": [
+    {
+      "asymptotic_target_exponent": 0.5,
+      "involution_count": 4,
+      "log_group_exponent": 0.7737056144690831,
+      "status": "finite-involution-count-consistent-with-half-exponent",
+      "symmetric_group_degree": 3
+    },
+    {
+      "asymptotic_target_exponent": 0.5,
+      "involution_count": 10,
+      "log_group_exponent": 0.7245267751622539,
+      "status": "finite-involution-count-consistent-with-half-exponent",
+      "symmetric_group_degree": 4
+    },
+    {
+      "asymptotic_target_exponent": 0.5,
+      "involution_count": 26,
+      "log_group_exponent": 0.6805435315755091,
+      "status": "finite-involution-count-consistent-with-half-exponent",
+      "symmetric_group_degree": 5
+    },
+    {
+      "asymptotic_target_exponent": 0.5,
+      "involution_count": 764,
+      "log_group_exponent": 0.6260081447696614,
+      "status": "finite-involution-count-consistent-with-half-exponent",
+      "symmetric_group_degree": 8
+    },
+    {
+      "asymptotic_target_exponent": 0.5,
+      "involution_count": 140152,
+      "log_group_exponent": 0.5929031696481638,
+      "status": "finite-involution-count-consistent-with-half-exponent",
+      "symmetric_group_degree": 12
+    },
+    {
+      "asymptotic_target_exponent": 0.5,
+      "involution_count": 23758664096,
+      "log_group_exponent": 0.5643289292147735,
+      "status": "finite-involution-count-consistent-with-half-exponent",
+      "symmetric_group_degree": 20
+    },
+    {
+      "asymptotic_target_exponent": 0.5,
+      "involution_count": 72682301192087742711233536,
+      "log_group_exponent": 0.5397733397016341,
+      "status": "finite-involution-count-consistent-with-half-exponent",
+      "symmetric_group_degree": 40
+    },
+    {
+      "asymptotic_target_exponent": 0.5,
+      "involution_count": 245789798368839780414239398545880224872312250090845785136562176,
+      "log_group_exponent": 0.524931275758578,
+      "status": "finite-involution-count-consistent-with-half-exponent",
+      "symmetric_group_degree": 80
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "construct_nonpeelable_power_boundary_falsifier",
+      "resolution": "Stored widths 2-6 retain a nonzero finite target signal and drive the generic margin toward zero.",
+      "resolved": true
+    },
+    {
+      "obligation": "classify_actual_parity_core_presentation_all_depths",
+      "resolution": "Weight-two code relations leave one involution among six generators, proving a uniform half-exponent pressure loss.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_maximum_density_stopping_cores_are_parity_cosets",
+      "resolution": "The hypercube matching bound and connectedness classify the equality case; exhaustive controls cover widths one through four.",
+      "resolved": true
+    },
+    {
+      "obligation": "classify_nonlinear_nonpeelable_stopping_cores",
+      "resolution": "Search cores not reducible to affine parity codes, especially families whose residual word-map loss could approach zero.",
+      "resolved": false
+    }
+  ],
+  "status": "nonpeelable-parity-stopping-core-falsified-by-involution-pressure",
+  "summary": "Constructed the maximal-density nonpeelable parity core, preserved its finite target signal, and proved it uniformly subleading.",
+  "theorem_contract": {
+    "adversarial_family": "Maximum-density even/odd parity stopping cores with one row removed make the generic integer margin tend to zero.",
+    "hypercube_rigidity": "Every independent set of Q_k has size at most 2^(k-1), and equality in the connected regular bipartite graph forces one of the two parity classes.",
+    "involution_reduction": "For every k>=3 and every extremal parity-coset choice, the full support reduces the core to at most one involution (odd same support can force identity) and leaves at most six generators.",
+    "pressure_conclusion": "The true crossing-pressure margin is uniformly greater than one half although finite S3 target bias remains 1/2.",
+    "scope": "This controls every single-base-fiber maximum-density stopping core with one-row pruning, not submaximal nonlinear codes or multi-base-fiber parity functions.",
+    "symmetric_group_bound": "The number of involutions in S_n is |S_n|^(1/2+o(1)), so the presentation has solution exponent at most 5.5."
+  }
+}

@@ -1,0 +1,441 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Large support entropy requires equally many ad hoc surfaces.",
+      "resolution": "False at the linear level: affine rank already pays all but at most one required crossing exponent.",
+      "resolved": true
+    },
+    {
+      "objection": "Abelian rank proves the nonabelian solution exponent.",
+      "resolution": "False: x^k has rank one but can have a weaker root-count loss; a proof-carrying word-topology lift is still required.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "growing_degree_pressure_separation_proved": false,
+    "natural_component_M4_positive": false,
+    "reason": "The entropy bottleneck is reduced to one nonabelian exponent, but relation rank has not been lifted to S_n solution counts.",
+    "speedup_claim_allowed": false,
+    "support_entropy_paid_in_abelian_rank": true,
+    "symmetric_group_rank_lift_proved": false,
+    "unpaid_crossing_debt_at_most_one_exponent": true
+  },
+  "created_at": "2026-08-09T01:24:23.647342+00:00",
+  "falsifiers_triggered": [
+    "Singleton all-A supports attain the one-exponent crossing debt, so rank alone cannot finish the theorem.",
+    "Large Smith torsion or nonprimitive relators could prevent rational rank from becoming equal S_n exponent loss."
+  ],
+  "headline_metrics": {
+    "checked_support_profile_count": 918,
+    "maximum_unpaid_crossing_exponent": 1.0,
+    "minimum_rank_margin_above_entropy_bound": 0.0,
+    "new_quantum_algorithm_count": 0,
+    "rank_entropy_failure_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "pay_support_entropy_in_abelian_relation_rank",
+      "resolution": "R>=2+0.5log|S|+0.5log|D| for every nonempty cube support pair.",
+      "resolved": true
+    },
+    {
+      "obligation": "lift_relation_rank_to_symmetric_group_solution_loss",
+      "resolution": "Prove a primitive/surface/power decomposition whose total leading S_n loss matches rank up to o(1).",
+      "resolved": false
+    },
+    {
+      "obligation": "supply_final_crossing_surface_exponent",
+      "resolution": "When rank is entropy-tight, prove that the E/F crossing boundary contributes the remaining one exponent.",
+      "resolved": false
+    }
+  ],
+  "representative_controls": [
+    {
+      "control_id": "SINGLETON-ONE-EXPONENT-DEBT",
+      "crossing": true,
+      "crossing_extra_exponent_debt_upper_bound": 1.0,
+      "different_support": [
+        [
+          0
+        ]
+      ],
+      "different_support_affine_dimension": 0,
+      "entropy_rank_lower_bound": 2.0,
+      "exact_rank_entropy_inequality_verified": true,
+      "frame_position_count": 1,
+      "frame_types": [
+        "A"
+      ],
+      "rank_margin_above_entropy_bound": 0.0,
+      "relation_exponent_matrix_rank": 2,
+      "same_support": [
+        [
+          0
+        ]
+      ],
+      "same_support_affine_dimension": 0,
+      "status": "exact-support-affine-rank-entropy-bound-verified",
+      "support_entropy_bits": 0.0
+    },
+    {
+      "control_id": "FULL-CUBE-ENTROPY-TIGHT",
+      "crossing": true,
+      "crossing_extra_exponent_debt_upper_bound": 1.0,
+      "different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "different_support_affine_dimension": 4,
+      "entropy_rank_lower_bound": 6.0,
+      "exact_rank_entropy_inequality_verified": true,
+      "frame_position_count": 4,
+      "frame_types": [
+        "A",
+        "B",
+        "A",
+        "B"
+      ],
+      "rank_margin_above_entropy_bound": 0.0,
+      "relation_exponent_matrix_rank": 6,
+      "same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "same_support_affine_dimension": 4,
+      "status": "exact-support-affine-rank-entropy-bound-verified",
+      "support_entropy_bits": 4.0
+    },
+    {
+      "control_id": "PARITY-SUPPORT",
+      "crossing": true,
+      "crossing_extra_exponent_debt_upper_bound": 0.0,
+      "different_support": [
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "different_support_affine_dimension": 4,
+      "entropy_rank_lower_bound": 5.0,
+      "exact_rank_entropy_inequality_verified": true,
+      "frame_position_count": 4,
+      "frame_types": [
+        "B",
+        "A",
+        "B",
+        "A"
+      ],
+      "rank_margin_above_entropy_bound": 1.0,
+      "relation_exponent_matrix_rank": 6,
+      "same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "same_support_affine_dimension": 4,
+      "status": "exact-support-affine-rank-entropy-bound-verified",
+      "support_entropy_bits": 3.0
+    }
+  ],
+  "scaling_records": [
+    {
+      "checked_support_profile_count": 18,
+      "frame_position_count": 1,
+      "minimum_rank_margin": 0.0,
+      "rank_entropy_failure_count": 0,
+      "status": "exhaustive-rank-entropy-control-passed"
+    },
+    {
+      "checked_support_profile_count": 900,
+      "frame_position_count": 2,
+      "minimum_rank_margin": 0.0,
+      "rank_entropy_failure_count": 0,
+      "status": "exhaustive-rank-entropy-control-passed"
+    }
+  ],
+  "status": "support-entropy-abelian-rank-theorem-proved",
+  "summary": "Paid marked-support entropy in affine relation rank and isolated one remaining nonabelian crossing exponent.",
+  "theorem_contract": {
+    "cube_affine_dimension": "A real affine d-plane contains at most 2^d vertices of a hypercube, so affdim(S)>=log2|S|.",
+    "entropy_payment": "Therefore rational relation rank is at least two plus the average logarithmic support size.",
+    "relation_span": "The relation span contains the larger support direction space, the independent differing-leaf offset, and the all-ones row.",
+    "scope_boundary": "Rational exponent-sum rank is not an S_n solution-count bound; power words and nonprimitive relators require separate control."
+  }
+}

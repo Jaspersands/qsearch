@@ -1,0 +1,283 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A high-power residual can make the exponent loss vanish.",
+      "resolution": "Impossible for a local face word: proper-power degree is at most three.",
+      "resolved": true
+    },
+    {
+      "objection": "Nonempty local words automatically give uniform loss.",
+      "resolution": "This is proved for singleton/quadratic incidence only; cubic overlap remains genuine proof debt.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "all_growing_width_cubic_overlap_words_controlled": false,
+    "all_high_codimension_local_words_controlled": false,
+    "empty_face_words_exactly_classified": true,
+    "growing_power_degree_face_escape_possible": false,
+    "natural_component_M4_positive": false,
+    "reason": "The local-word frontier excludes empty, singleton, quadratic, and high-power mechanisms; only cubic overlap remains unresolved.",
+    "singleton_and_quadratic_face_words_controlled": true,
+    "speedup_claim_allowed": false,
+    "width_three_cubic_words_have_uniform_finite_certificates": true
+  },
+  "created_at": "2026-08-09T05:46:45.163137+00:00",
+  "falsifiers_triggered": [
+    "Growing primitive-power degree cannot arise from one face.",
+    "Reverse block-union is the only freely trivial face mechanism.",
+    "Singleton and quadratic incidence are already uniformly subleading."
+  ],
+  "headline_metrics": {
+    "certificate_failure_count": 0,
+    "high_power_escape_exclusion_theorem_count": 1,
+    "maximum_exhaustive_check_width": 3,
+    "maximum_face_word_generator_occurrence": 3,
+    "maximum_possible_proper_power_degree": 3,
+    "new_quantum_algorithm_count": 0,
+    "stored_cubic_overlap_representative_count": 4,
+    "stored_scaling_width_count": 3,
+    "width_three_cubic_finite_control_failure_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "exclude_growing_primitive_power_degree_in_face_words",
+      "resolution": "The universal three-occurrence bound forces power degree at most three.",
+      "resolved": true
+    },
+    {
+      "obligation": "classify_empty_singleton_and_quadratic_face_words",
+      "resolution": "Exact free-word cancellation, Tietze, and quadratic-surface certificates cover all three classes.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_uniform_Sn_loss_for_cubic_overlap_face_words",
+      "resolution": "Width-three representatives are Whitehead primitive, but no uniform theorem over growing check width has been proved.",
+      "resolved": false
+    }
+  ],
+  "representative_cubic_controls": [
+    {
+      "check_width": 3,
+      "cubic_overlap_frontier": true,
+      "elementary_class": "cubic-overlap-frontier",
+      "elementary_solution_exponent_loss_lower_bound": 0.0,
+      "exact_reverse_block_union_cancellation_verified": true,
+      "finite_control_certificate_source": "single-whitehead-primitive",
+      "finite_control_solution_exponent_loss": 1.0,
+      "first_color": [
+        1,
+        1,
+        0
+      ],
+      "freely_trivial": false,
+      "growing_power_degree_excluded": true,
+      "maximum_generator_occurrence": 3,
+      "occurrence_profile": [
+        2,
+        2,
+        3
+      ],
+      "opposite_color": [
+        1,
+        1,
+        1
+      ],
+      "primitive_power_degree": null,
+      "residual_word": [
+        -3,
+        -2,
+        -1,
+        2,
+        3,
+        1,
+        2
+      ],
+      "second_color": [
+        0,
+        1,
+        1
+      ],
+      "status": "exact-high-codimension-face-frontier-classification"
+    },
+    {
+      "check_width": 3,
+      "cubic_overlap_frontier": true,
+      "elementary_class": "cubic-overlap-frontier",
+      "elementary_solution_exponent_loss_lower_bound": 0.0,
+      "exact_reverse_block_union_cancellation_verified": true,
+      "finite_control_certificate_source": "single-whitehead-primitive",
+      "finite_control_solution_exponent_loss": 1.0,
+      "first_color": [
+        1,
+        1,
+        0
+      ],
+      "freely_trivial": false,
+      "growing_power_degree_excluded": true,
+      "maximum_generator_occurrence": 3,
+      "occurrence_profile": [
+        2,
+        2,
+        3
+      ],
+      "opposite_color": [
+        0,
+        1,
+        1
+      ],
+      "primitive_power_degree": null,
+      "residual_word": [
+        -3,
+        -2,
+        -1,
+        2,
+        3,
+        -2,
+        -1
+      ],
+      "second_color": [
+        1,
+        1,
+        1
+      ],
+      "status": "exact-high-codimension-face-frontier-classification"
+    },
+    {
+      "check_width": 3,
+      "cubic_overlap_frontier": true,
+      "elementary_class": "cubic-overlap-frontier",
+      "elementary_solution_exponent_loss_lower_bound": 0.0,
+      "exact_reverse_block_union_cancellation_verified": true,
+      "finite_control_certificate_source": "single-whitehead-primitive",
+      "finite_control_solution_exponent_loss": 1.0,
+      "first_color": [
+        1,
+        1,
+        1
+      ],
+      "freely_trivial": false,
+      "growing_power_degree_excluded": true,
+      "maximum_generator_occurrence": 3,
+      "occurrence_profile": [
+        2,
+        2,
+        3
+      ],
+      "opposite_color": [
+        1,
+        1,
+        0
+      ],
+      "primitive_power_degree": null,
+      "residual_word": [
+        -3,
+        -2,
+        -1,
+        -3,
+        -2,
+        1,
+        2
+      ],
+      "second_color": [
+        0,
+        1,
+        1
+      ],
+      "status": "exact-high-codimension-face-frontier-classification"
+    },
+    {
+      "check_width": 3,
+      "cubic_overlap_frontier": true,
+      "elementary_class": "cubic-overlap-frontier",
+      "elementary_solution_exponent_loss_lower_bound": 0.0,
+      "exact_reverse_block_union_cancellation_verified": true,
+      "finite_control_certificate_source": "single-whitehead-primitive",
+      "finite_control_solution_exponent_loss": 1.0,
+      "first_color": [
+        1,
+        1,
+        1
+      ],
+      "freely_trivial": false,
+      "growing_power_degree_excluded": true,
+      "maximum_generator_occurrence": 3,
+      "occurrence_profile": [
+        2,
+        2,
+        3
+      ],
+      "opposite_color": [
+        0,
+        1,
+        0
+      ],
+      "primitive_power_degree": null,
+      "residual_word": [
+        -3,
+        -2,
+        -1,
+        -3,
+        -2,
+        -1,
+        2
+      ],
+      "second_color": [
+        1,
+        1,
+        1
+      ],
+      "status": "exact-high-codimension-face-frontier-classification"
+    }
+  ],
+  "scaling_records": [
+    {
+      "canonical_residual_word_count": 1,
+      "certificate_failure_count": 0,
+      "check_width": 1,
+      "cubic_overlap_word_count": 0,
+      "freely_trivial_word_count": 0,
+      "maximum_observed_primitive_power_degree": 2,
+      "minimum_finite_control_solution_exponent_loss": 0.5,
+      "quadratic_word_count": 1,
+      "singleton_elimination_word_count": 0,
+      "status": "exact-small-width-face-frontier-census",
+      "valid_color_triple_count": 1
+    },
+    {
+      "canonical_residual_word_count": 13,
+      "certificate_failure_count": 0,
+      "check_width": 2,
+      "cubic_overlap_word_count": 0,
+      "freely_trivial_word_count": 1,
+      "maximum_observed_primitive_power_degree": 2,
+      "minimum_finite_control_solution_exponent_loss": 0.5,
+      "quadratic_word_count": 6,
+      "singleton_elimination_word_count": 6,
+      "status": "exact-small-width-face-frontier-census",
+      "valid_color_triple_count": 21
+    },
+    {
+      "canonical_residual_word_count": 141,
+      "certificate_failure_count": 0,
+      "check_width": 3,
+      "cubic_overlap_word_count": 4,
+      "freely_trivial_word_count": 1,
+      "maximum_observed_primitive_power_degree": 2,
+      "minimum_finite_control_solution_exponent_loss": 0.5,
+      "quadratic_word_count": 27,
+      "singleton_elimination_word_count": 109,
+      "status": "exact-small-width-face-frontier-census",
+      "valid_color_triple_count": 301
+    }
+  ],
+  "status": "high-codimension-face-frontier-reduced-to-cubic-overlap",
+  "summary": "Reduced high-codimension systematic stopping-code proof debt to uniform S_n control of cubic-overlap face words.",
+  "theorem_contract": {
+    "cancellation_criterion": "R is empty iff A,B are disjoint reverse-ordered blocks and C is their union.",
+    "elementary_loss": "A once-occurring generator gives full Tietze loss; a purely quadratic word gives at least half an exponent by surface formulas.",
+    "frontier": "Only nonempty words with no singleton occurrence and at least one triple-overlap coordinate still need a growing-width word-map bound.",
+    "occurrence_bound": "Every check generator appears at most once in each of the three ordered subwords, hence at most three times total.",
+    "proper_power_bound": "If R=V^m is nontrivial, every active occurrence count is divisible by m and at most three, so m<=3."
+  }
+}

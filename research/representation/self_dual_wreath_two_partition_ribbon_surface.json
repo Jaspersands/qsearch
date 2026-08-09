@@ -1,0 +1,416 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A finite Tietze search is needed to recognize each surface.",
+      "resolution": "False: face cycles and Euler characteristics give the topology directly for arbitrary position count.",
+      "resolved": true
+    },
+    {
+      "objection": "One support assignment controls high-entropy supports.",
+      "resolution": "False: a one-pair upper bound can leave too many free generators; large supports require simultaneous cells.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "full_support_profile_ribbon_complex_theorem_proved": false,
+    "growing_degree_pressure_separation_proved": false,
+    "natural_component_M4_positive": false,
+    "reason": "One split/support pair is classified exactly, but full support entropy requires a multi-partition complex theorem.",
+    "speedup_claim_allowed": false,
+    "two_partition_ribbon_surface_theorem_proved": true,
+    "two_partition_symmetric_group_exponent_formula_proved": true
+  },
+  "created_at": "2026-08-09T01:12:46.169047+00:00",
+  "falsifiers_triggered": [
+    "Duplicate partition relations create sphere 2-cells and free loops rather than independent exponent losses.",
+    "Single-pair surface loss cannot by itself dominate exponential support entropy."
+  ],
+  "headline_metrics": {
+    "checked_partition_pair_count": 87380,
+    "finite_S3_partition_pair_control_count": 340,
+    "finite_S3_solution_formula_failure_count": 0,
+    "maximum_verified_component_genus": 3,
+    "new_quantum_algorithm_count": 0,
+    "ribbon_topology_failure_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "classify_two_partition_relation_topology",
+      "resolution": "The ribbon permutation gives every surface genus, free factor, finite-group count, and leading S_n exponent.",
+      "resolved": true
+    },
+    {
+      "obligation": "extend_ribbon_topology_to_full_support_profiles",
+      "resolution": "Choose and glue enough support-assignment 2-cells to trade their entropy against independent surface/rank losses.",
+      "resolved": false
+    },
+    {
+      "obligation": "track_target_boundary_on_multi_partition_complex",
+      "resolution": "Add the full-product curve to the ribbon complex and classify whether added support cells kill or separate its handles.",
+      "resolved": false
+    }
+  ],
+  "representative_controls": [
+    {
+      "components": [
+        {
+          "component_index": 1,
+          "edge_indices": [
+            1,
+            2
+          ],
+          "euler_characteristic": 2,
+          "exact_closed_orientable_surface_verified": true,
+          "free_rank_contribution": 1,
+          "orientable_genus": 0,
+          "relation_vertex_count": 2,
+          "status": "exact-closed-orientable-ribbon-surface",
+          "surface_vertex_count": 2,
+          "symmetric_group_leading_exponent_contribution": 1
+        },
+        {
+          "component_index": 2,
+          "edge_indices": [
+            3,
+            4
+          ],
+          "euler_characteristic": 2,
+          "exact_closed_orientable_surface_verified": true,
+          "free_rank_contribution": 1,
+          "orientable_genus": 0,
+          "relation_vertex_count": 2,
+          "status": "exact-closed-orientable-ribbon-surface",
+          "surface_vertex_count": 2,
+          "symmetric_group_leading_exponent_contribution": 1
+        }
+      ],
+      "control_id": "IDENTICAL-PARTITIONS-SPHERES",
+      "exact_finite_solution_formula_verified": true,
+      "exact_ribbon_surface_decomposition_verified": true,
+      "exact_solution_count": 36,
+      "first_partition_bits": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "free_group_rank": 2,
+      "positive_genus_component_count": 0,
+      "predicted_solution_count": 36,
+      "ribbon_face_cycles": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        [
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      ],
+      "second_partition_bits": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "status": "exact-two-partition-ribbon-surface-verified",
+      "symmetric_group_control_degree": 3,
+      "symmetric_group_leading_solution_exponent": 2
+    },
+    {
+      "components": [
+        {
+          "component_index": 1,
+          "edge_indices": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "euler_characteristic": 2,
+          "exact_closed_orientable_surface_verified": true,
+          "free_rank_contribution": 1,
+          "orientable_genus": 0,
+          "relation_vertex_count": 4,
+          "status": "exact-closed-orientable-ribbon-surface",
+          "surface_vertex_count": 2,
+          "symmetric_group_leading_exponent_contribution": 1
+        }
+      ],
+      "control_id": "TRANSVERSE-GENUS-ZERO",
+      "exact_finite_solution_formula_verified": true,
+      "exact_ribbon_surface_decomposition_verified": true,
+      "exact_solution_count": 6,
+      "first_partition_bits": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "free_group_rank": 1,
+      "positive_genus_component_count": 0,
+      "predicted_solution_count": 6,
+      "ribbon_face_cycles": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            0
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            3
+          ]
+        ]
+      ],
+      "second_partition_bits": [
+        0,
+        0,
+        1,
+        1
+      ],
+      "status": "exact-two-partition-ribbon-surface-verified",
+      "symmetric_group_control_degree": 3,
+      "symmetric_group_leading_solution_exponent": 1
+    },
+    {
+      "components": [
+        {
+          "component_index": 1,
+          "edge_indices": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "euler_characteristic": 0,
+          "exact_closed_orientable_surface_verified": true,
+          "free_rank_contribution": 2,
+          "orientable_genus": 1,
+          "relation_vertex_count": 4,
+          "status": "exact-closed-orientable-ribbon-surface",
+          "surface_vertex_count": 3,
+          "symmetric_group_leading_exponent_contribution": 3
+        }
+      ],
+      "control_id": "EFBEBFB-SUPPORT-TORUS",
+      "exact_finite_solution_formula_verified": true,
+      "exact_ribbon_surface_decomposition_verified": true,
+      "exact_solution_count": 648,
+      "first_partition_bits": [
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "free_group_rank": 2,
+      "positive_genus_component_count": 1,
+      "predicted_solution_count": 648,
+      "ribbon_face_cycles": [
+        [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            3
+          ],
+          [
+            0,
+            5
+          ],
+          [
+            1,
+            4
+          ],
+          [
+            0,
+            6
+          ],
+          [
+            1,
+            5
+          ]
+        ],
+        [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0,
+            3
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            4
+          ],
+          [
+            1,
+            2
+          ]
+        ]
+      ],
+      "second_partition_bits": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1
+      ],
+      "status": "exact-two-partition-ribbon-surface-verified",
+      "symmetric_group_control_degree": 3,
+      "symmetric_group_leading_solution_exponent": 3
+    }
+  ],
+  "scaling_records": [
+    {
+      "checked_partition_pair_count": 4,
+      "maximum_component_genus": 0,
+      "position_count": 1,
+      "status": "exhaustive-ribbon-topology-control-passed",
+      "topology_failure_count": 0
+    },
+    {
+      "checked_partition_pair_count": 16,
+      "maximum_component_genus": 0,
+      "position_count": 2,
+      "status": "exhaustive-ribbon-topology-control-passed",
+      "topology_failure_count": 0
+    },
+    {
+      "checked_partition_pair_count": 64,
+      "maximum_component_genus": 0,
+      "position_count": 3,
+      "status": "exhaustive-ribbon-topology-control-passed",
+      "topology_failure_count": 0
+    },
+    {
+      "checked_partition_pair_count": 256,
+      "maximum_component_genus": 1,
+      "position_count": 4,
+      "status": "exhaustive-ribbon-topology-control-passed",
+      "topology_failure_count": 0
+    },
+    {
+      "checked_partition_pair_count": 1024,
+      "maximum_component_genus": 1,
+      "position_count": 5,
+      "status": "exhaustive-ribbon-topology-control-passed",
+      "topology_failure_count": 0
+    },
+    {
+      "checked_partition_pair_count": 4096,
+      "maximum_component_genus": 2,
+      "position_count": 6,
+      "status": "exhaustive-ribbon-topology-control-passed",
+      "topology_failure_count": 0
+    },
+    {
+      "checked_partition_pair_count": 16384,
+      "maximum_component_genus": 2,
+      "position_count": 7,
+      "status": "exhaustive-ribbon-topology-control-passed",
+      "topology_failure_count": 0
+    },
+    {
+      "checked_partition_pair_count": 65536,
+      "maximum_component_genus": 3,
+      "position_count": 8,
+      "status": "exhaustive-ribbon-topology-control-passed",
+      "topology_failure_count": 0
+    }
+  ],
+  "status": "exact-two-partition-ribbon-surface-theorem-proved",
+  "summary": "Replaced bounded relation-topology search for partition pairs by an exact ribbon-surface decomposition.",
+  "theorem_contract": {
+    "finite_group_count": "Solution counts factor into free assignments and Frobenius surface homomorphism counts.",
+    "group_decomposition": "Identifying the f_j surface vertices gives pi_1(Sigma_gj) free-product F_(sum(f_j-1)).",
+    "polygon_gluing": "Invert the second partition relators and glue equal generator edges. Opposite edge orientations produce closed orientable ribbon-surface components.",
+    "symmetric_group_exponent": "Using p(n)=|S_n|^o(1) and Witten-zeta convergence, each positive-genus component contributes 2g-1 leading exponents."
+  }
+}

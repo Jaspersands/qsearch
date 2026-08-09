@@ -1,0 +1,216 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Aggregate subgroup-walk return probabilities determine component M4.",
+      "resolution": "False without leaf marks; identical aggregate frames can have zero or constant component gap.",
+      "resolved": true
+    },
+    {
+      "objection": "The pseudoinverse can be omitted because the child frame is well conditioned on average.",
+      "resolution": "The exact effects contain K. No natural edge or state-weighted replacement has justified removing it.",
+      "resolved": false
+    },
+    {
+      "objection": "The Green normal form itself proves a positive gap.",
+      "resolution": "It only identifies the signed AABB-minus-ABAB correlation whose positivity remains open.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "aggregate_sibling_words_suffice_for_component_M4": false,
+    "coherent_green_or_component_compiler_proved": false,
+    "global_distinct_green_gap_transfer_proved": false,
+    "leaf_resolved_green_normal_form_proved": true,
+    "natural_leaf_marked_green_gap_positive": false,
+    "natural_noncommutative_component_physical_mass_proved": false,
+    "reason": "The exact missing Green correlation is now explicit, but no natural lower bound or coherent implementation is known.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-09T05:37:47.520537+00:00",
+  "falsifiers_triggered": [
+    "Aggregate frame moments and resolvents omit the leaf labels required by component M4.",
+    "The sibling common projection and child pseudoinverse remain inside the exact Green kernel.",
+    "A positive Haar gap does not evaluate the natural leaf-marked Green word.",
+    "No natural gap, globally distinct transfer, compiler, decoder, or speedup is proved."
+  ],
+  "finite_controls": [
+    {
+      "ambient_dimension": 2,
+      "child_frame_maximum_eigenvalue": 1.4999999999999998,
+      "child_frame_minimum_positive_eigenvalue": 1.4999999999999993,
+      "child_frame_rank": 2,
+      "common_fiber_dimension": 2,
+      "commutator_trace_residual": 1.1102230246251565e-16,
+      "component_effect_sum_residual": 8.921925545255587e-16,
+      "control_id": "TRINE-FULL-COMMON",
+      "direct_component_commutator_trace": 0.22222222222222165,
+      "exact_green_normal_form_verified": true,
+      "green_reflexive_inverse_residual": 4.544005407955337e-16,
+      "leaf_count": 3,
+      "leaf_resolved_green_commutator_trace": 0.22222222222222177,
+      "maximum_leaf_word_trace_residual": 3.3306690738754696e-16,
+      "maximum_leaf_word_trace_residual_through_degree": 4,
+      "regularized_pseudoinverse_residual": 8.888887981391735e-08,
+      "status": "exact-leaf-resolved-green-component-M4-normal-form",
+      "whitened_green_projection_residual": 1.6812201449547276e-15
+    },
+    {
+      "ambient_dimension": 3,
+      "child_frame_maximum_eigenvalue": 2.000000000000001,
+      "child_frame_minimum_positive_eigenvalue": 1.9999999999999993,
+      "child_frame_rank": 3,
+      "common_fiber_dimension": 3,
+      "commutator_trace_residual": 5.551115123125783e-17,
+      "component_effect_sum_residual": 1.6819536250833126e-15,
+      "control_id": "MUB-D3-FULL-COMMON",
+      "direct_component_commutator_trace": 0.2500000000000004,
+      "exact_green_normal_form_verified": true,
+      "green_reflexive_inverse_residual": 5.169824035588733e-16,
+      "leaf_count": 6,
+      "leaf_resolved_green_commutator_trace": 0.25000000000000033,
+      "maximum_leaf_word_trace_residual": 2.220446049250313e-16,
+      "maximum_leaf_word_trace_residual_through_degree": 4,
+      "regularized_pseudoinverse_residual": 4.9999996352008413e-08,
+      "status": "exact-leaf-resolved-green-component-M4-normal-form",
+      "whitened_green_projection_residual": 2.7001926860259117e-15
+    }
+  ],
+  "headline_metrics": {
+    "component_M4_green_AABB_minus_ABAB_identity_theorem_count": 1,
+    "finite_control_count": 2,
+    "finite_control_failure_count": 0,
+    "leaf_resolved_green_word_normal_form_theorem_count": 1,
+    "natural_compressed_component_M4_lower_bound_theorem_count": 0,
+    "natural_leaf_marked_green_gap_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "regular_master_subgroup_walk_green_reduction_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "derive_exact_leaf_resolved_ambient_normal_form_for_component_M4",
+      "resolution": "Equations (1)-(4) follow by cyclic trace contraction of Y^*E_eY and pass complete degree-four controls.",
+      "resolved": true
+    },
+    {
+      "obligation": "identify_the_regular_master_random_walk_quantity",
+      "resolution": "After natural scaling A=(g/q)F, the inserted kernel is a sibling-compressed Green operator of the subgroup-projection walk.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_natural_leaf_marked_green_AABB_minus_ABAB",
+      "resolution": "Need representation-theoretic multi-return estimates that retain orientation labels and the sibling common projection.",
+      "resolved": false
+    },
+    {
+      "obligation": "transfer_independent_plancherel_green_gap_to_global_distinct_sources",
+      "resolution": "A positive independent-source result must have a quantitative error stable under collision-free conditioning.",
+      "resolved": false
+    }
+  ],
+  "regular_master_reduction": {
+    "aggregate_sibling_word_moments_sufficient": false,
+    "globally_distinct_conditioning_transferred": false,
+    "independent_plancherel_M4": "normalized regular trace of sum_(e,f)(E_e K E_e K E_f K E_f K-E_e K E_f K E_e K E_f K)",
+    "leaf_marked_green_return_bound_proved": false,
+    "natural_M4_lower_bound_proved": false
+  },
+  "scaling_records": [
+    {
+      "aggregate_frame_words_sufficient": false,
+      "child_leaf_count_decimal": "131072",
+      "green_prefactor": 0.3076171875,
+      "group_order_decimal": "40320",
+      "group_order_to_child_leaf_ratio": 0.3076171875,
+      "leaf_resolved_fourth_word_required": true,
+      "natural_green_moment_bound_proved": false,
+      "normalized_walk_scale": 0.3076171875,
+      "status": "natural-leaf-resolved-green-correlation-open"
+    },
+    {
+      "aggregate_frame_words_sufficient": false,
+      "child_leaf_count_decimal": "1073741824",
+      "green_prefactor": 0.4461050033569336,
+      "group_order_decimal": "479001600",
+      "group_order_to_child_leaf_ratio": 0.4461050033569336,
+      "leaf_resolved_fourth_word_required": true,
+      "natural_green_moment_bound_proved": false,
+      "normalized_walk_scale": 0.4461050033569336,
+      "status": "natural-leaf-resolved-green-correlation-open"
+    },
+    {
+      "aggregate_frame_words_sufficient": false,
+      "child_leaf_count_decimal": "70368744177664",
+      "green_prefactor": 0.2973307273350656,
+      "group_order_decimal": "20922789888000",
+      "group_order_to_child_leaf_ratio": 0.2973307273350656,
+      "leaf_resolved_fourth_word_required": true,
+      "natural_green_moment_bound_proved": false,
+      "normalized_walk_scale": 0.2973307273350656,
+      "status": "natural-leaf-resolved-green-correlation-open"
+    },
+    {
+      "aggregate_frame_words_sufficient": false,
+      "child_leaf_count_decimal": "2417851639229258349412352",
+      "green_prefactor": 0.256611444501624,
+      "group_order_decimal": "620448401733239439360000",
+      "group_order_to_child_leaf_ratio": 0.256611444501624,
+      "leaf_resolved_fourth_word_required": true,
+      "natural_green_moment_bound_proved": false,
+      "normalized_walk_scale": 0.256611444501624,
+      "status": "natural-leaf-resolved-green-correlation-open"
+    },
+    {
+      "aggregate_frame_words_sufficient": false,
+      "child_leaf_count_decimal": "664613997892457936451903530140172288",
+      "green_prefactor": 0.3959152797986525,
+      "group_order_decimal": "263130836933693530167218012160000000",
+      "group_order_to_child_leaf_ratio": 0.3959152797986525,
+      "leaf_resolved_fourth_word_required": true,
+      "natural_green_moment_bound_proved": false,
+      "normalized_walk_scale": 0.3959152797986525,
+      "status": "natural-leaf-resolved-green-correlation-open"
+    },
+    {
+      "aggregate_frame_words_sufficient": false,
+      "child_leaf_count_decimal": "25711008708143844408671393477458601640355247900524685364822016",
+      "green_prefactor": 0.4828249149401914,
+      "group_order_decimal": "12413915592536072670862289047373375038521486354677760000000000",
+      "group_order_to_child_leaf_ratio": 0.4828249149401914,
+      "leaf_resolved_fourth_word_required": true,
+      "natural_green_moment_bound_proved": false,
+      "normalized_walk_scale": 0.4828249149401914,
+      "status": "natural-leaf-resolved-green-correlation-open"
+    },
+    {
+      "aggregate_frame_words_sufficient": false,
+      "child_leaf_count_decimal": "254629497041810760783555711051172270131433549208242031329517556169297662470417088272924672",
+      "green_prefactor": 0.4983198477003198,
+      "group_order_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "group_order_to_child_leaf_ratio": 0.4983198477003198,
+      "leaf_resolved_fourth_word_required": true,
+      "natural_green_moment_bound_proved": false,
+      "normalized_walk_scale": 0.4983198477003198,
+      "status": "natural-leaf-resolved-green-correlation-open"
+    },
+    {
+      "aggregate_frame_words_sufficient": false,
+      "child_leaf_count_decimal": "3273390607896141870013189696827599152216642046043064789483291368096133796404674554883270092325904157150886684127560071009217256545885393053328527589376",
+      "green_prefactor": 0.3029512984117457,
+      "group_order_decimal": "991677934870949689209571401541893801158183648651267795444376054838492222809091499987689476037000748982075094738965754305639874560000000000000000000000",
+      "group_order_to_child_leaf_ratio": 0.3029512984117457,
+      "leaf_resolved_fourth_word_required": true,
+      "natural_green_moment_bound_proved": false,
+      "normalized_walk_scale": 0.3029512984117457,
+      "status": "natural-leaf-resolved-green-correlation-open"
+    }
+  ],
+  "status": "exact-leaf-resolved-green-target-derived-natural-gap-open",
+  "summary": "Derived the exact leaf-marked Green-function trace word whose natural AABB-minus-ABAB gap would prove component noncommutative mass.",
+  "theorem_contract": {
+    "commutator_word": "Tr(D_com) is exactly the sum of AABB-minus-ABAB leaf-resolved four-words in equation (4).",
+    "green_kernel": "K=F^+X(X^*F^+X)^-1X^*F^+ obeys KFK=K and has F^(1/2)KF^(1/2) equal to a projection.",
+    "leaf_word_identity": "Every component word trace equals the ambient leaf-resolved word with K inserted after every leaf.",
+    "regular_master_green_walk": "With A=(g/q)F, K=(g/q)A^+X(X^*A^+X)^-1X^*A^+. A^+ is the Green operator of the one-common-multiplier subgroup walk.",
+    "scope": "This is an exact normal form. No natural Green correlation bound, globally distinct transfer, compiler, or speedup is proved."
+  }
+}

@@ -1,0 +1,1023 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Vanishing real-entropy certificate margin preserves the seed signal.",
+      "resolution": "False for the natural standard target: the exact normalized average is asymptotic to 2/n^2.",
+      "resolved": true
+    },
+    {
+      "objection": "Appending identity frames creates growing presentation freedom.",
+      "resolution": "False: paired support rows force every appended generator to identity and the solution distribution is unchanged.",
+      "resolved": true
+    },
+    {
+      "objection": "Pruning to support sizes 2^k-1 and 2^k creates leading mass.",
+      "resolution": "False: it adds exactly one free generator to the fixed genus-two surface law, leaving more than one exponent of true scalar pressure margin.",
+      "resolved": true
+    },
+    {
+      "objection": "The sign character is evidence of a natural component signal.",
+      "resolution": "False: commutators always have sign one; this one-dimensional sector does not rescue the natural standard component.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_nontrivial_nonsign_seed_targets_vanish": true,
+    "identity_frame_lift_presentation_classified": true,
+    "natural_component_M4_positive": false,
+    "natural_standard_target_average_exactly_reduced": true,
+    "natural_standard_target_signal_asymptotically_nonzero": false,
+    "nonidentity_frame_lifts_controlled": false,
+    "power_boundary_actual_presentation_gap_falsified": false,
+    "power_boundary_generic_certificate_gap_falsified": true,
+    "power_boundary_identity_lift_classified": true,
+    "reason": "Both the original and power-boundary identity-frame escapes collapse to fixed genus-two laws; the natural standard signal decays as 2/n^2.",
+    "speedup_claim_allowed": false,
+    "trivial_and_sign_seed_targets_equal_one": true
+  },
+  "created_at": "2026-08-09T04:32:58.048768+00:00",
+  "falsifiers_triggered": [
+    "The obsolete real entropy pressure margin substantially overstates the lift.",
+    "Identity-frame padding creates no new presentation degrees of freedom.",
+    "Power-boundary pruning adds only one free generator and no leading mass.",
+    "The exact S3 standard average 1/2 decays to zero in growing S_n.",
+    "Every nontrivial nonsign seed target vanishes uniformly by total variation.",
+    "One-dimensional sign behavior is not a natural-component rescue."
+  ],
+  "headline_metrics": {
+    "all_depth_power_boundary_reduction_theorem_count": 1,
+    "degree_30_n_squared_scaled_standard_average": 2.1860355325406546,
+    "degree_30_uniform_nonsign_character_upper_bound": 0.07163911879988685,
+    "exact_genus_two_surface_seed_theorem_count": 1,
+    "exact_identity_frame_presentation_lift_count": 7,
+    "exact_power_boundary_lift_count": 8,
+    "maximum_standard_character_degree": 30,
+    "minimum_power_boundary_integer_certificate_margin": 0.002823281570570657,
+    "minimum_power_boundary_true_pressure_margin": 1.0028232815705707,
+    "new_quantum_algorithm_count": 0,
+    "power_boundary_lift_failure_count": 0,
+    "presentation_lift_failure_count": 0,
+    "standard_character_quadratic_decay_theorem_count": 1,
+    "standard_character_scaling_degree_count": 20,
+    "uniform_nonsign_irrep_decay_theorem_count": 1
+  },
+  "power_boundary_all_depth_certificate": {
+    "appended_generator_forcing_relations": "The zero and e_i different-support suffix rows give z_i=1 for every appended coordinate i.",
+    "appended_generators_forced_to_identity": true,
+    "base_different_support": [
+      [
+        0,
+        0,
+        0,
+        0
+      ]
+    ],
+    "base_exact_S3_solution_count": 2916,
+    "base_exact_S3_standard_normalized_character_average": 0.5,
+    "base_pattern": "EBABAFEF",
+    "base_remaining_generator_count": 5,
+    "base_residual_relation": [
+      -8,
+      -7,
+      8,
+      -5,
+      -3,
+      -4,
+      3,
+      4,
+      5,
+      7
+    ],
+    "base_residual_target_word": [
+      -8,
+      -7,
+      8,
+      -5,
+      -3,
+      -4,
+      3,
+      4,
+      5,
+      -8,
+      7,
+      8
+    ],
+    "base_same_support": [
+      [
+        1,
+        0,
+        1,
+        0
+      ]
+    ],
+    "base_solution_exponent": 4.0,
+    "base_surface_free_product_factorization_verified": true,
+    "base_target_modulo_relator_verified": true,
+    "checked_lift_depths": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "checked_lifts_match_base": true,
+    "different_support_formula": "{0000} x {0,1}^k",
+    "projected_different_support_equals_base": true,
+    "projected_same_support_equals_base": true,
+    "same_support_formula": "{1010} x ({0,1}^k minus {1^k})",
+    "status": "exact-all-depth-power-boundary-reduction-to-fixed-seed",
+    "universal_all_depth_reduction_verified": true
+  },
+  "power_boundary_lifts": [
+    {
+      "different_support_size": 2,
+      "eliminated_generator_count": 4,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 2916,
+      "exact_S3_standard_normalized_character_average": 0.5,
+      "exact_power_boundary_lift_classified": true,
+      "exact_surface_free_product_factorization_verified": true,
+      "exact_target_modulo_relator_verified": true,
+      "integer_suffix_branch_certificate_margin": 0.5,
+      "lift_depth": 1,
+      "pattern": "EBABAAFEF",
+      "quotient_handle_target_word": [
+        -8,
+        -9,
+        8,
+        9
+      ],
+      "remaining_generators": [
+        3,
+        4,
+        5,
+        8,
+        9
+      ],
+      "residual_orientable_genus": 2,
+      "residual_relation": [
+        -9,
+        -8,
+        9,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        8
+      ],
+      "residual_target_word": [
+        -9,
+        -8,
+        9,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -9,
+        8,
+        9
+      ],
+      "same_support_size": 1,
+      "status": "exact-power-boundary-genus-two-free-generator-collapse",
+      "symmetric_group_solution_exponent": 4.0,
+      "true_scalar_crossing_pressure_margin": 1.5
+    },
+    {
+      "different_support_size": 4,
+      "eliminated_generator_count": 5,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 2916,
+      "exact_S3_standard_normalized_character_average": 0.5,
+      "exact_power_boundary_lift_classified": true,
+      "exact_surface_free_product_factorization_verified": true,
+      "exact_target_modulo_relator_verified": true,
+      "integer_suffix_branch_certificate_margin": 0.20751874963942196,
+      "lift_depth": 2,
+      "pattern": "EBABAAAFEF",
+      "quotient_handle_target_word": [
+        -9,
+        -10,
+        9,
+        10
+      ],
+      "remaining_generators": [
+        3,
+        4,
+        5,
+        9,
+        10
+      ],
+      "residual_orientable_genus": 2,
+      "residual_relation": [
+        -10,
+        -9,
+        10,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        9
+      ],
+      "residual_target_word": [
+        -10,
+        -9,
+        10,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -10,
+        9,
+        10
+      ],
+      "same_support_size": 3,
+      "status": "exact-power-boundary-genus-two-free-generator-collapse",
+      "symmetric_group_solution_exponent": 4.0,
+      "true_scalar_crossing_pressure_margin": 1.207518749639422
+    },
+    {
+      "different_support_size": 8,
+      "eliminated_generator_count": 6,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 2916,
+      "exact_S3_standard_normalized_character_average": 0.5,
+      "exact_power_boundary_lift_classified": true,
+      "exact_surface_free_product_factorization_verified": true,
+      "exact_target_modulo_relator_verified": true,
+      "integer_suffix_branch_certificate_margin": 0.09632253897119814,
+      "lift_depth": 3,
+      "pattern": "EBABAAAAFEF",
+      "quotient_handle_target_word": [
+        -10,
+        -11,
+        10,
+        11
+      ],
+      "remaining_generators": [
+        3,
+        4,
+        5,
+        10,
+        11
+      ],
+      "residual_orientable_genus": 2,
+      "residual_relation": [
+        -11,
+        -10,
+        11,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        10
+      ],
+      "residual_target_word": [
+        -11,
+        -10,
+        11,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -11,
+        10,
+        11
+      ],
+      "same_support_size": 7,
+      "status": "exact-power-boundary-genus-two-free-generator-collapse",
+      "symmetric_group_solution_exponent": 4.0,
+      "true_scalar_crossing_pressure_margin": 1.0963225389711981
+    },
+    {
+      "different_support_size": 16,
+      "eliminated_generator_count": 7,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 2916,
+      "exact_S3_standard_normalized_character_average": 0.5,
+      "exact_power_boundary_lift_classified": true,
+      "exact_surface_free_product_factorization_verified": true,
+      "exact_target_modulo_relator_verified": true,
+      "integer_suffix_branch_certificate_margin": 0.04655470219574065,
+      "lift_depth": 4,
+      "pattern": "EBABAAAAAFEF",
+      "quotient_handle_target_word": [
+        -11,
+        -12,
+        11,
+        12
+      ],
+      "remaining_generators": [
+        3,
+        4,
+        5,
+        11,
+        12
+      ],
+      "residual_orientable_genus": 2,
+      "residual_relation": [
+        -12,
+        -11,
+        12,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        11
+      ],
+      "residual_target_word": [
+        -12,
+        -11,
+        12,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -12,
+        11,
+        12
+      ],
+      "same_support_size": 15,
+      "status": "exact-power-boundary-genus-two-free-generator-collapse",
+      "symmetric_group_solution_exponent": 4.0,
+      "true_scalar_crossing_pressure_margin": 1.0465547021957406
+    },
+    {
+      "different_support_size": 32,
+      "eliminated_generator_count": 8,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 2916,
+      "exact_S3_standard_normalized_character_average": 0.5,
+      "exact_power_boundary_lift_classified": true,
+      "exact_surface_free_product_factorization_verified": true,
+      "exact_target_modulo_relator_verified": true,
+      "integer_suffix_branch_certificate_margin": 0.022901844806562544,
+      "lift_depth": 5,
+      "pattern": "EBABAAAAAAFEF",
+      "quotient_handle_target_word": [
+        -12,
+        -13,
+        12,
+        13
+      ],
+      "remaining_generators": [
+        3,
+        4,
+        5,
+        12,
+        13
+      ],
+      "residual_orientable_genus": 2,
+      "residual_relation": [
+        -13,
+        -12,
+        13,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        12
+      ],
+      "residual_target_word": [
+        -13,
+        -12,
+        13,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -13,
+        12,
+        13
+      ],
+      "same_support_size": 31,
+      "status": "exact-power-boundary-genus-two-free-generator-collapse",
+      "symmetric_group_solution_exponent": 4.0,
+      "true_scalar_crossing_pressure_margin": 1.0229018448065625
+    },
+    {
+      "different_support_size": 64,
+      "eliminated_generator_count": 9,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 2916,
+      "exact_S3_standard_normalized_character_average": 0.5,
+      "exact_power_boundary_lift_classified": true,
+      "exact_surface_free_product_factorization_verified": true,
+      "exact_target_modulo_relator_verified": true,
+      "integer_suffix_branch_certificate_margin": 0.01136003825004206,
+      "lift_depth": 6,
+      "pattern": "EBABAAAAAAAFEF",
+      "quotient_handle_target_word": [
+        -13,
+        -14,
+        13,
+        14
+      ],
+      "remaining_generators": [
+        3,
+        4,
+        5,
+        13,
+        14
+      ],
+      "residual_orientable_genus": 2,
+      "residual_relation": [
+        -14,
+        -13,
+        14,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        13
+      ],
+      "residual_target_word": [
+        -14,
+        -13,
+        14,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -14,
+        13,
+        14
+      ],
+      "same_support_size": 63,
+      "status": "exact-power-boundary-genus-two-free-generator-collapse",
+      "symmetric_group_solution_exponent": 4.0,
+      "true_scalar_crossing_pressure_margin": 1.011360038250042
+    },
+    {
+      "different_support_size": 128,
+      "eliminated_generator_count": 10,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 2916,
+      "exact_S3_standard_normalized_character_average": 0.5,
+      "exact_power_boundary_lift_classified": true,
+      "exact_surface_free_product_factorization_verified": true,
+      "exact_target_modulo_relator_verified": true,
+      "integer_suffix_branch_certificate_margin": 0.005657656613917261,
+      "lift_depth": 7,
+      "pattern": "EBABAAAAAAAAFEF",
+      "quotient_handle_target_word": [
+        -14,
+        -15,
+        14,
+        15
+      ],
+      "remaining_generators": [
+        3,
+        4,
+        5,
+        14,
+        15
+      ],
+      "residual_orientable_genus": 2,
+      "residual_relation": [
+        -15,
+        -14,
+        15,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        14
+      ],
+      "residual_target_word": [
+        -15,
+        -14,
+        15,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -15,
+        14,
+        15
+      ],
+      "same_support_size": 127,
+      "status": "exact-power-boundary-genus-two-free-generator-collapse",
+      "symmetric_group_solution_exponent": 4.0,
+      "true_scalar_crossing_pressure_margin": 1.0056576566139173
+    },
+    {
+      "different_support_size": 256,
+      "eliminated_generator_count": 11,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 2916,
+      "exact_S3_standard_normalized_character_average": 0.5,
+      "exact_power_boundary_lift_classified": true,
+      "exact_surface_free_product_factorization_verified": true,
+      "exact_target_modulo_relator_verified": true,
+      "integer_suffix_branch_certificate_margin": 0.002823281570570657,
+      "lift_depth": 8,
+      "pattern": "EBABAAAAAAAAAFEF",
+      "quotient_handle_target_word": [
+        -15,
+        -16,
+        15,
+        16
+      ],
+      "remaining_generators": [
+        3,
+        4,
+        5,
+        15,
+        16
+      ],
+      "residual_orientable_genus": 2,
+      "residual_relation": [
+        -16,
+        -15,
+        16,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        15
+      ],
+      "residual_target_word": [
+        -16,
+        -15,
+        16,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -16,
+        15,
+        16
+      ],
+      "same_support_size": 255,
+      "status": "exact-power-boundary-genus-two-free-generator-collapse",
+      "symmetric_group_solution_exponent": 4.0,
+      "true_scalar_crossing_pressure_margin": 1.0028232815705707
+    }
+  ],
+  "presentation_lifts": [
+    {
+      "different_support_size": 2,
+      "eliminated_generator_count": 4,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 486,
+      "exact_S3_standard_normalized_character_average": 0.5,
+      "exact_seed_distribution_preserved": true,
+      "lift_depth": 0,
+      "pattern": "EBABAFEF",
+      "remaining_generator_count": 4,
+      "residual_orientable_genus": 2,
+      "same_support_size": 1,
+      "status": "exact-seed-presentation-and-target-law-preserved",
+      "symmetric_group_solution_exponent": 3.0
+    },
+    {
+      "different_support_size": 3,
+      "eliminated_generator_count": 5,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 486,
+      "exact_S3_standard_normalized_character_average": 0.5,
+      "exact_seed_distribution_preserved": true,
+      "lift_depth": 1,
+      "pattern": "EBABAAFEF",
+      "remaining_generator_count": 4,
+      "residual_orientable_genus": 2,
+      "same_support_size": 2,
+      "status": "exact-seed-presentation-and-target-law-preserved",
+      "symmetric_group_solution_exponent": 3.0
+    },
+    {
+      "different_support_size": 5,
+      "eliminated_generator_count": 6,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 486,
+      "exact_S3_standard_normalized_character_average": 0.5,
+      "exact_seed_distribution_preserved": true,
+      "lift_depth": 2,
+      "pattern": "EBABAAAFEF",
+      "remaining_generator_count": 4,
+      "residual_orientable_genus": 2,
+      "same_support_size": 4,
+      "status": "exact-seed-presentation-and-target-law-preserved",
+      "symmetric_group_solution_exponent": 3.0
+    },
+    {
+      "different_support_size": 9,
+      "eliminated_generator_count": 7,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 486,
+      "exact_S3_standard_normalized_character_average": 0.5,
+      "exact_seed_distribution_preserved": true,
+      "lift_depth": 3,
+      "pattern": "EBABAAAAFEF",
+      "remaining_generator_count": 4,
+      "residual_orientable_genus": 2,
+      "same_support_size": 8,
+      "status": "exact-seed-presentation-and-target-law-preserved",
+      "symmetric_group_solution_exponent": 3.0
+    },
+    {
+      "different_support_size": 17,
+      "eliminated_generator_count": 8,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 486,
+      "exact_S3_standard_normalized_character_average": 0.5,
+      "exact_seed_distribution_preserved": true,
+      "lift_depth": 4,
+      "pattern": "EBABAAAAAFEF",
+      "remaining_generator_count": 4,
+      "residual_orientable_genus": 2,
+      "same_support_size": 16,
+      "status": "exact-seed-presentation-and-target-law-preserved",
+      "symmetric_group_solution_exponent": 3.0
+    },
+    {
+      "different_support_size": 33,
+      "eliminated_generator_count": 9,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 486,
+      "exact_S3_standard_normalized_character_average": 0.5,
+      "exact_seed_distribution_preserved": true,
+      "lift_depth": 5,
+      "pattern": "EBABAAAAAAFEF",
+      "remaining_generator_count": 4,
+      "residual_orientable_genus": 2,
+      "same_support_size": 32,
+      "status": "exact-seed-presentation-and-target-law-preserved",
+      "symmetric_group_solution_exponent": 3.0
+    },
+    {
+      "different_support_size": 65,
+      "eliminated_generator_count": 10,
+      "exact_S3_sign_character_average": 1.0,
+      "exact_S3_solution_count": 486,
+      "exact_S3_standard_normalized_character_average": 0.5,
+      "exact_seed_distribution_preserved": true,
+      "lift_depth": 6,
+      "pattern": "EBABAAAAAAAFEF",
+      "remaining_generator_count": 4,
+      "residual_orientable_genus": 2,
+      "same_support_size": 64,
+      "status": "exact-seed-presentation-and-target-law-preserved",
+      "symmetric_group_solution_exponent": 3.0
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "classify_former_real_entropy_margin_identity_frame_lift_presentation",
+      "resolution": "Every appended generator is Tietze-eliminated and all stored lifts retain the four-generator genus-two seed.",
+      "resolved": true
+    },
+    {
+      "obligation": "derive_exact_natural_standard_target_average",
+      "resolution": "The standard Kronecker branching rule gives the exact partition-cover formula.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_natural_standard_signal_vanishes_for_seed_lift",
+      "resolution": "The Witten-zeta/corner estimate gives quadratic decay.",
+      "resolved": true
+    },
+    {
+      "obligation": "control_every_nontrivial_nonsign_irrep_for_seed_lift",
+      "resolution": "The Witten-zeta L2 remainder makes the handle law O(1/n) in total variation from uniform A_n.",
+      "resolved": true
+    },
+    {
+      "obligation": "control_nonidentity_frame_lifts_and_non_surface_seeds",
+      "resolution": "Analyze lifts whose new frame variables are not forced to identity and target-surviving presentations not equivalent to this genus-two surface seed.",
+      "resolved": false
+    },
+    {
+      "obligation": "classify_power_boundary_pruning_of_identity_lift",
+      "resolution": "The vanishing integer-certificate family is exactly a genus-two surface group with one free generator; its target is the same handle commutator and its true pressure margin stays above one.",
+      "resolved": true
+    }
+  ],
+  "standard_character_scaling": [
+    {
+      "alternating_uniform_total_variation_upper_bound": 0.4253807916384656,
+      "asymptotic_prediction": 0.5,
+      "n_squared_scaled_average": 4.5,
+      "normalized_standard_character_average": 0.5,
+      "partition_count": 3,
+      "relative_prediction_error": 0.0,
+      "symmetric_group_degree": 3,
+      "uniform_nonsign_character_expectation_upper_bound": 0.8507615832769312,
+      "witten_zeta_two": 2.25
+    },
+    {
+      "alternating_uniform_total_variation_upper_bound": 0.5841091165064248,
+      "asymptotic_prediction": 0.2222222222222222,
+      "n_squared_scaled_average": 5.273408239700373,
+      "normalized_standard_character_average": 0.3295880149812733,
+      "partition_count": 5,
+      "relative_prediction_error": 0.48314606741573,
+      "symmetric_group_degree": 4,
+      "uniform_nonsign_character_expectation_upper_bound": 1.1682182330128497,
+      "witten_zeta_two": 2.4722222222222223
+    },
+    {
+      "alternating_uniform_total_variation_upper_bound": 0.40984557587149123,
+      "asymptotic_prediction": 0.125,
+      "n_squared_scaled_average": 5.074334411545161,
+      "normalized_standard_character_average": 0.20297337646180644,
+      "partition_count": 7,
+      "relative_prediction_error": 0.6237870116944515,
+      "symmetric_group_degree": 5,
+      "uniform_nonsign_character_expectation_upper_bound": 0.8196911517429825,
+      "witten_zeta_two": 2.2327777777777778
+    },
+    {
+      "alternating_uniform_total_variation_upper_bound": 0.38689895892518045,
+      "asymptotic_prediction": 0.08,
+      "n_squared_scaled_average": 4.425445242838689,
+      "normalized_standard_character_average": 0.12292903452329691,
+      "partition_count": 11,
+      "relative_prediction_error": 0.5366129315412114,
+      "symmetric_group_degree": 6,
+      "uniform_nonsign_character_expectation_upper_bound": 0.7737979178503609,
+      "witten_zeta_two": 2.208597608024691
+    },
+    {
+      "alternating_uniform_total_variation_upper_bound": 0.25125265717358064,
+      "asymptotic_prediction": 0.05555555555555555,
+      "n_squared_scaled_average": 3.7721549322090375,
+      "normalized_standard_character_average": 0.07698275371855179,
+      "partition_count": 15,
+      "relative_prediction_error": 0.38568956693393225,
+      "symmetric_group_degree": 7,
+      "uniform_nonsign_character_expectation_upper_bound": 0.5025053143471613,
+      "witten_zeta_two": 2.0935204081632652
+    },
+    {
+      "alternating_uniform_total_variation_upper_bound": 0.2094496892682697,
+      "asymptotic_prediction": 0.04081632653061224,
+      "n_squared_scaled_average": 3.2983927633208343,
+      "normalized_standard_character_average": 0.051537386926888036,
+      "partition_count": 22,
+      "relative_prediction_error": 0.262665979708757,
+      "symmetric_group_degree": 8,
+      "uniform_nonsign_character_expectation_upper_bound": 0.4188993785365394,
+      "witten_zeta_two": 2.06696377885645
+    },
+    {
+      "alternating_uniform_total_variation_upper_bound": 0.15997536848792554,
+      "asymptotic_prediction": 0.03125,
+      "n_squared_scaled_average": 2.986527852606482,
+      "normalized_standard_character_average": 0.03687071422970965,
+      "partition_count": 30,
+      "relative_prediction_error": 0.1798628553507089,
+      "symmetric_group_degree": 9,
+      "uniform_nonsign_character_expectation_upper_bound": 0.3199507369758511,
+      "witten_zeta_two": 2.0408047446802224
+    },
+    {
+      "alternating_uniform_total_variation_upper_bound": 0.13622139203656494,
+      "asymptotic_prediction": 0.024691358024691357,
+      "n_squared_scaled_average": 2.79888967538136,
+      "normalized_standard_character_average": 0.0279888967538136,
+      "partition_count": 42,
+      "relative_prediction_error": 0.1335503185294509,
+      "symmetric_group_degree": 10,
+      "uniform_nonsign_character_expectation_upper_bound": 0.2724427840731299,
+      "witten_zeta_two": 2.0303202260329116
+    },
+    {
+      "alternating_uniform_total_variation_upper_bound": 0.11653825559168378,
+      "asymptotic_prediction": 0.02,
+      "n_squared_scaled_average": 2.6732367246613093,
+      "normalized_standard_character_average": 0.022092865493068672,
+      "partition_count": 56,
+      "relative_prediction_error": 0.1046432746534336,
+      "symmetric_group_degree": 11,
+      "uniform_nonsign_character_expectation_upper_bound": 0.23307651118336756,
+      "witten_zeta_two": 2.022690886420378
+    },
+    {
+      "alternating_uniform_total_variation_upper_bound": 0.10377808609161011,
+      "asymptotic_prediction": 0.01652892561983471,
+      "n_squared_scaled_average": 2.5860787555517417,
+      "normalized_standard_character_average": 0.017958880246887094,
+      "partition_count": 77,
+      "relative_prediction_error": 0.08651225493666916,
+      "symmetric_group_degree": 12,
+      "uniform_nonsign_character_expectation_upper_bound": 0.20755617218322023,
+      "witten_zeta_two": 2.018274538717682
+    },
+    {
+      "alternating_uniform_total_variation_upper_bound": 0.09329787211515156,
+      "asymptotic_prediction": 0.013888888888888888,
+      "n_squared_scaled_average": 2.520508582030345,
+      "normalized_standard_character_average": 0.014914251964676597,
+      "partition_count": 101,
+      "relative_prediction_error": 0.07382614145671505,
+      "symmetric_group_degree": 13,
+      "uniform_nonsign_character_expectation_upper_bound": 0.18659574423030312,
+      "witten_zeta_two": 2.014968597750604
+    },
+    {
+      "alternating_uniform_total_variation_upper_bound": 0.08508817619171552,
+      "asymptotic_prediction": 0.011834319526627219,
+      "n_squared_scaled_average": 2.469209919348205,
+      "normalized_standard_character_average": 0.012598009792592882,
+      "partition_count": 135,
+      "relative_prediction_error": 0.06453182747409858,
+      "symmetric_group_degree": 14,
+      "uniform_nonsign_character_expectation_upper_bound": 0.17017635238343104,
+      "witten_zeta_two": 2.012586610956233
+    },
+    {
+      "alternating_uniform_total_variation_upper_bound": 0.07821749187470356,
+      "asymptotic_prediction": 0.01020408163265306,
+      "n_squared_scaled_average": 2.427563657508643,
+      "normalized_standard_character_average": 0.010789171811149523,
+      "partition_count": 176,
+      "relative_prediction_error": 0.05733883749265331,
+      "symmetric_group_degree": 15,
+      "uniform_nonsign_character_expectation_upper_bound": 0.15643498374940712,
+      "witten_zeta_two": 2.0107367041090036
+    },
+    {
+      "alternating_uniform_total_variation_upper_bound": 0.07243232913686762,
+      "asymptotic_prediction": 0.008888888888888889,
+      "n_squared_scaled_average": 2.392982848446674,
+      "normalized_standard_character_average": 0.009347589251744821,
+      "partition_count": 231,
+      "relative_prediction_error": 0.05160379082129237,
+      "symmetric_group_degree": 16,
+      "uniform_nonsign_character_expectation_upper_bound": 0.14486465827373524,
+      "witten_zeta_two": 2.0092826295597566
+    },
+    {
+      "alternating_uniform_total_variation_upper_bound": 0.0674581957531595,
+      "asymptotic_prediction": 0.0078125,
+      "n_squared_scaled_average": 2.3637220217925585,
+      "normalized_standard_character_average": 0.008178968933538264,
+      "partition_count": 297,
+      "relative_prediction_error": 0.0469080234928978,
+      "symmetric_group_degree": 17,
+      "uniform_nonsign_character_expectation_upper_bound": 0.134916391506319,
+      "witten_zeta_two": 2.008109512061246
+    },
+    {
+      "alternating_uniform_total_variation_upper_bound": 0.06313818137695804,
+      "asymptotic_prediction": 0.006920415224913495,
+      "n_squared_scaled_average": 2.3386099375500518,
+      "normalized_standard_character_average": 0.007217931906018678,
+      "partition_count": 385,
+      "relative_prediction_error": 0.042991160419698936,
+      "symmetric_group_degree": 18,
+      "uniform_nonsign_character_expectation_upper_bound": 0.12627636275391607,
+      "witten_zeta_two": 2.007149483121151
+    },
+    {
+      "alternating_uniform_total_variation_upper_bound": 0.05934554140071318,
+      "asymptotic_prediction": 0.006172839506172839,
+      "n_squared_scaled_average": 2.316800637149612,
+      "normalized_standard_character_average": 0.006417730296813329,
+      "partition_count": 490,
+      "relative_prediction_error": 0.03967230808375937,
+      "symmetric_group_degree": 19,
+      "uniform_nonsign_character_expectation_upper_bound": 0.11869108280142636,
+      "witten_zeta_two": 2.0063524100054058
+    },
+    {
+      "alternating_uniform_total_variation_upper_bound": 0.05598841750955154,
+      "asymptotic_prediction": 0.00554016620498615,
+      "n_squared_scaled_average": 2.297671517334842,
+      "normalized_standard_character_average": 0.005744178793337104,
+      "partition_count": 627,
+      "relative_prediction_error": 0.036824272197347324,
+      "symmetric_group_degree": 20,
+      "uniform_nonsign_character_expectation_upper_bound": 0.11197683501910308,
+      "witten_zeta_two": 2.005683055517804
+    },
+    {
+      "alternating_uniform_total_variation_upper_bound": 0.043674629258032525,
+      "asymptotic_prediction": 0.003472222222222222,
+      "n_squared_scaled_average": 2.228867661171755,
+      "normalized_standard_character_average": 0.0035661882578748075,
+      "partition_count": 1958,
+      "relative_prediction_error": 0.027062218267944624,
+      "symmetric_group_degree": 25,
+      "uniform_nonsign_character_expectation_upper_bound": 0.08734925851606505,
+      "witten_zeta_two": 2.003526083032131
+    },
+    {
+      "alternating_uniform_total_variation_upper_bound": 0.035819559399943426,
+      "asymptotic_prediction": 0.0023781212841854932,
+      "n_squared_scaled_average": 2.1860355325406546,
+      "normalized_standard_character_average": 0.0024289283694896163,
+      "partition_count": 5604,
+      "relative_prediction_error": 0.021364379370383754,
+      "symmetric_group_degree": 30,
+      "uniform_nonsign_character_expectation_upper_bound": 0.07163911879988685,
+      "witten_zeta_two": 2.0024027968157774
+    }
+  ],
+  "status": "identity-frame-lift-natural-standard-signal-dequantized",
+  "summary": "Classified both identity-frame support lifts as fixed genus-two surface laws and proved quadratic decay of their natural standard target character.",
+  "surface_seed": {
+    "different_support": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        1,
+        1
+      ]
+    ],
+    "exact_S3_sign_character_average": 1.0,
+    "exact_S3_solution_count": 486,
+    "exact_S3_standard_normalized_character_average": 0.5,
+    "exact_surface_seed_verified": true,
+    "exponent_certificate_source": "single-orientable-surface-genus-2",
+    "pattern": "EBABAFEF",
+    "remaining_generators": [
+      4,
+      5,
+      7,
+      8
+    ],
+    "residual_orientable_genus": 2,
+    "residual_relations": [
+      [
+        -8,
+        -7,
+        8,
+        -5,
+        4,
+        5,
+        -4,
+        7
+      ]
+    ],
+    "residual_target_word": [
+      -7,
+      -8,
+      7,
+      8
+    ],
+    "same_support": [
+      [
+        1,
+        0,
+        1,
+        0
+      ]
+    ],
+    "status": "exact-genus-two-handle-target-seed",
+    "symmetric_group_solution_exponent": 3.0,
+    "target_orientable_genus": 1
+  },
+  "theorem_contract": {
+    "identity_frame_lift": "Paired lifted same-support rows force each appended A-frame generator to identity, leaving the seed presentation and target distribution unchanged over every finite group.",
+    "literature_basis": "Liebeck-Shalev/Gamburd Witten-zeta asymptotics; see also Teyssier-Thevenin, arXiv:2411.04347, for sharp bounds.",
+    "power_boundary_lift": "Deleting one same row and one different row moves the generic integer certificate margin to zero, but every depth is exactly a genus-two surface group free-product one free generator. The true scalar pressure margin is greater than one.",
+    "scope": "This closes the natural standard target only for this exact surface-seed lift. Other irreps and structural lifts remain open.",
+    "standard_character_asymptotic": "Using zeta_Sn(1)=2+O(n^-1), zeta_Sn(2)=2+O(n^-2), and O(sqrt n) corners, the average is 2/(n-1)^2+O(n^-5/2).",
+    "standard_character_formula": "Ind-Res for the standard representation gives equation (1), an exact positive partition/branching formula.",
+    "surface_seed": "The width-four full presentation is an orientable genus-two surface group with S_n solution exponent three; the target is one handle commutator.",
+    "uniform_irrep_decay": "Writing the commutator density f=1+sgn+h gives E|h|^2=zeta_Sn(2)-2=O(n^-2). The genus-two target density f^2/zeta_Sn(2) is O(n^-1) in total variation from uniform A_n, so every normalized irrep other than trivial/sign has expectation O(n^-1)."
+  }
+}

@@ -1,6 +1,6 @@
 # Research Agent Handoff
 
-Last updated: 2026-08-08
+Last updated: 2026-08-09
 
 ## Objective And Operating Policy
 
@@ -128,6 +128,22 @@ the end of the repository's research goal.
   edge `1/3`, and nonscalarity edge tending to `5/9`, yet its compressed
   components commute and contain the non-reciprocal eigenvalue `2/3`. This is
   a generic no-go, not a natural wreath commutativity theorem.
+- Latest component commutator trace-mass bridge check: 10 tests passed in
+  0.24 seconds. For one child POVM,
+  `Tr(D_com)=Tr((sum_e H_e^2)^2)-sum_(e,f)Tr(H_eH_fH_eH_f)` exactly,
+  `Tr(D_com)<=r`, and `D_com<=2I`. Hence a physically normalized regular-
+  master scalar fourth-moment mass `M_4` implies both physical commutator-
+  support mass and source-block noncommutativity probability at least `M_4/2`,
+  without a component edge or center-valued rank law. Positivity of natural
+  compressed `M_4` remains unproved.
+- Latest component commutator Haar benchmark check: 10 tests passed in 0.13
+  seconds. The complete `S_4` unitary-Weingarten contraction gives
+  `E Tr(D_com)/r=(N-b)(N-2b)(N-r)(r^2-1)/[N(N-2)(N-1)(N+1)(N+2)]`.
+  At `r/N->alpha` and sparse `b/N->0`, this tends to
+  `alpha^2(1-alpha)`. At `alpha=19/520` the benchmark is about `0.0012863`;
+  after the proved event/common-rank constants it suggests physical support
+  around `1.06e-5`. This is explicitly Haar/Jacobi surrogate scale, not
+  natural wreath evidence.
 - Latest central-support/rank-bridge chain: 17 tests passed in 8.18 seconds;
   both live artifacts regenerated with zero finite-control failures.
 - Latest subgroup-walk/affine-outlier/pair-angle/central-support chain: 31 tests
@@ -1562,9 +1578,16 @@ spectral edges and coherent implementation remain open.
    after proper sibling common-span compression: every POVM can arise there,
    and the structured counterfamily matches all currently proved coarse
    natural analogues while commuting. Directly analyze `D_com` from the
-   compressed regular-master formula on natural source/common mass. If it
-   vanishes, derive the natural simultaneous eigenbasis from representation
-   structure; if it does not, prove positive central and physical support.
+   compressed regular-master formula on natural source/common mass. The exact
+   scalar target is now
+   `M_4=E[Tr((sum H_e^2)^2)-sum_(e,f)Tr(H_eH_fH_eH_f)]/D_phys`.
+   Any lower bound `M_4>=eta` gives physical and source support at least
+   `eta/2`; no center-valued local law or positive edge is needed. Compute
+   this first under independent Plancherel sources, then transfer it to the
+   globally distinct law. The exact Haar benchmark predicts the blockwise
+   normalized scale `alpha^2(1-alpha)` in the sparse-outcome limit; use it as a
+   falsifier, not as an assumption. If the natural gap vanishes, derive the simultaneous
+   eigenbasis; if it is positive, compile the noncommuting component branch.
 2. Compile or kill the **natural final component-POVM dilation**. Its dimension
    and center-valued mass gates are solved: on `1/9-o(1)` globally distinct
    natural mass, `r/D>=19/128-o(1)`, `r/N>=19/520-o(1)`,
@@ -3348,6 +3371,647 @@ coarse quantities. It does not prove natural wreath effects commute. The only
 valid leading gate is now direct natural analysis of compressed `D_com` or an
 explicit natural simultaneous-eigenbasis construction.
 
+## Commutator Mass Is A Scalar Fourth-Moment Problem
+
+Files:
+
+- `self_dual_wreath_component_commutator_trace_mass_bridge.py`
+- `research/representation/self_dual_wreath_component_commutator_trace_mass_bridge.json`
+- `tests/test_self_dual_wreath_component_commutator_trace_mass_bridge.py`
+
+For one child component POVM `{H_e}`, write `S_2=sum_e H_e^2`. The exact
+identity
+
+`Tr(D_com)=Tr(S_2^2)-sum_(e,f)Tr(H_eH_fH_eH_f)`
+
+turns noncommutative support into a noncrossing-versus-crossing degree-four
+moment gap. Every POVM obeys
+
+`0<=Tr(D_com)<=r`, `0<=D_com<=2I`.
+
+If `Q=supp(D_com)`, then `D_com<=2Q`; for every input state,
+`Tr(rho Q)>=Tr(rho D_com)/2`. In the regular master, define
+
+`M_4=E_Plancherel Tr(D_com,Lambda)/D_Lambda`.
+
+Then both physical support mass and source-block noncommutativity probability
+are at least `M_4/2`. Ordinary scalar trace is sufficient in this lower-bound
+direction because the commutator defect has a universal operator upper bound.
+No component edge, relative-rank theorem, or center-valued local law is needed.
+
+The module does not prove natural `M_4>0`. Existing independent-Plancherel
+sibling-frame degree-four moments concern uncompressed frames and cannot be
+substituted for this calculation. The next theorem must evaluate the same two
+moments after common-span pseudoinverse normalization, with physical carrier
+normalization and globally distinct conditioning kept explicit.
+
+## Exact Haar Scale For The Missing Moment
+
+Files:
+
+- `self_dual_wreath_component_commutator_haar_benchmark.py`
+- `research/representation/self_dual_wreath_component_commutator_haar_benchmark.json`
+- `tests/test_self_dual_wreath_component_commutator_haar_benchmark.py`
+
+For a complex-Haar isometry `W:C^r -> C^N`, split into `q=N/b` coordinate
+blocks and set `H_e=W^*P_eW`. A complete fourth-order unitary-Weingarten
+contraction proves
+
+`E Tr(D_com)/r`
+
+`=(N-b)(N-2b)(N-r)(r^2-1)`
+
+` / [N(N-2)(N-1)(N+1)(N+2)]`.
+
+The factors `r^2-1` and `N-2b` correctly force zero for one-dimensional and
+two-outcome POVMs. If `r/N->alpha` and `b/N->beta`, the limit is
+
+`alpha^2(1-alpha)(1-beta)(1-2beta)`.
+
+For sparse blocks `beta=1/q->0`, this remains
+`alpha^2(1-alpha)`: a superpolynomial outcome count and vanishing block-rank
+fraction do not suppress the Haar commutator signal. At the proved natural
+aspect lower bound `19/520`, the blockwise benchmark is about `0.0012863`.
+Combining it only as a scale estimate with source event `1/9` and common
+physical rank `19/128` gives `M_4≈2.12e-5` and support `≈1.06e-5`.
+
+This is not a natural theorem. The sibling-generated common span and
+representation-theoretic dependencies may collapse the crossing gap. A
+natural result must reproduce a positive scale or exhibit the exact
+recoupling identity responsible for a zero/smaller gap.
+
+## Natural Component-Commutator Gate Is Now A Pinned Growing-Word Problem
+
+Newest files:
+
+- `self_dual_wreath_component_commutator_collision_free_transfer.py`
+- `self_dual_wreath_component_green_ridge_stability.py`
+- `self_dual_wreath_component_hamming_orbit_reduction.py`
+- `self_dual_wreath_natural_leaf_commutator_trace_profile.py`
+- `self_dual_wreath_leaf_marked_green_word_normal_form.py`
+- matching tests under `tests/`
+- matching live artifacts under `research/representation/`
+
+The collision-free conditioning issue is solved sharply for this observable.
+For `Z=Tr(D_com,Lambda)/D_phys,Lambda in [0,1]` and conditioning event `C`
+of mass `p`,
+
+`E[Z|C] >= max(0,(E Z-(1-p))/p)` and
+`|E[Z|C]-E Z| <= 1-p`.
+
+Both inequalities are sharp. At the information-threshold schedule,
+`1-p_cf=n^{-omega(1)}`, so any constant or inverse-polynomial independent
+component `M4` survives global source distinctness. Finite rows through
+`n=48` are deliberately reported as preasymptotic and vacuous for the
+illustrative `1e-3` signal; do not reinterpret them as contrary evidence.
+
+The Green/ridge transfer is also outcome-count free. For two `r`-dimensional
+POVMs `{H_e},{J_e}`,
+
+`|M4(H)-M4(J)| <= 4 sqrt(2 sum_e ||H_e-J_e||_F^2/r)`.
+
+For the exact and ridge syntheses, the trace-weighted polar ratio
+
+`R_eta=||U-U_eta||_F^2/[r(sigma_min(U)+sigma_min(U_eta))^2]`
+
+gives `|M4-M4_eta|<=16 sqrt(2 R_eta)`. Thus an average ridge gap `zeta`
+transfers if `E R_eta=o(zeta^2)`, without a leaf-count factor or uniform frame
+edge. That natural average ratio and a positive natural ridge gap remain
+unproved.
+
+Source-pair flips and permutations reduce the annealed final-child pair sum
+to `K-1` Hamming strata exactly:
+
+`M4=(1/2) E_[W~Bin(K-1,1/2)] [q^2 c_W]`.
+
+It is enough to lower-bound one typical-Hamming `q^2`-rescaled pair gap; the
+exponential pair enumeration is no longer the bottleneck.
+
+The natural uncompressed pair trace is now exact and quenched. For every
+nonzero final-child orientation difference under independent Plancherel,
+
+`E Tr([E_e,E_f]^*[E_e,E_f])/D_phys`
+
+`=2(|S_n|-p(n))/|S_n|^3=Theta(q^-2)`.
+
+Uniform relative multiplicity variance gives this scale on a density-one
+fraction of balanced pairs with high probability, and collision-free
+conditioning preserves the event. Hence one child has constant aggregate
+**uncompressed** leaf commutator trace. This result does not imply component
+`M4`; the generic whitening and common-span universality counterfamilies
+remain valid.
+
+The newest normal form removes the common span as an external random object.
+For sibling frames `A,B`, support projections `P_A,P_B`, and common projection
+`P`,
+
+`P=s-lim_t (P_A P_B P_A)^t`,
+
+`K=A^+ P (P A^+ P)^+ P A^+`.
+
+Therefore the exact left-child Green kernel lies in `W*(A,B)`. Every
+polynomial/ridge approximation to its pair moment is a linear combination of
+words in frame tokens `A,B` and marked leaves `E,F`. Under independent
+Plancherel, an exact word of length `p` at child Hamming distance `w` is
+
+`g^-p sum_x I_split(x) [chi_nu(prod x)/d_nu]`
+
+`    Q_0(x)^(K-1-w) Q_1(x)^w`,
+
+where `Q_0,Q_1` are partially pinned two-color identity counts. If no `B`
+token occurs, `I_split` forces `prod x=1`, so the target character cancels
+exactly. The `EEFF-EFEF` specialization recovers the uncompressed trace above
+for every target and tested distance.
+
+This is the current highest-value theorem target:
+
+1. Prove or refute a growing-degree rigidity/genus theorem for the signed
+   `Q_0,Q_1` strata generated by polynomial approximants to `P` and `K`.
+2. The theorem must cover degree growing with `n` (at least the degree needed
+   for trace-weighted spectral approximation), typical
+   `w=K/2+O(sqrt(K))`, and mixed `A/B` terms.
+3. Bound arbitrary target characters in the mixed terms, or prove a
+   cancellation that removes them. All-left target cancellation alone is not
+   enough for the sibling common projection.
+4. Show the signed AABB-minus-ABAB functional retains a constant or
+   inverse-polynomial `q^2`-rescaled gap, or exhibit the exact natural
+   recoupling identity that cancels it.
+
+Primary-literature audit on 2026-08-09 found no theorem covering this regime.
+Cassidy's new `arXiv:2608.02210` treats fixed surface relations and stable
+characters. Hanany--Puder `arXiv:2009.00897` and Magee--Puder
+`arXiv:1902.04873` are also fixed-word/stable-character inputs. Schneider--
+Thom `arXiv:2206.11956` gives metric image results for words with constants,
+not the required signed moment. These are useful structural tools, but none
+allows the growing-degree gate to be marked resolved.
+
+Latest focused checks before this handoff:
+
+- collision-free transfer: 13 tests passed;
+- Green/ridge stability: 6 tests passed;
+- Hamming-orbit reduction: 5 tests passed;
+- exact natural leaf trace profile: 9 tests passed after the exact-rational
+  and cancellation-stable variance patch;
+- leaf-marked Green word normal form: 7 tests passed;
+- all five scripts generated live artifacts with zero focused-control
+  failures.
+
+No natural positive Green pair gap, component `M4`, component compiler,
+decoder, MRS separation, or speedup is proved. The sole natural trace-mass
+gate is now the growing marked-word theorem above.
+
+## Marked Relation Pressure Is Closed Through Degree Two
+
+Newest files:
+
+- `self_dual_wreath_marked_relation_topology.py`
+- `tests/test_self_dual_wreath_marked_relation_topology.py`
+- `research/representation/self_dual_wreath_marked_relation_topology.json`
+
+Experiment ID:
+`EXP-CODE-SELF-DUAL-WREATH-MARKED-RELATION-TOPOLOGY`.
+
+The copy-depth part of the pinned-word expansion is now exact. For an
+assignment alphabet `Omega={0,1}^u`,
+
+`Q(x)^r = sum_(S subset Omega) onto(r,|S|) 1[all constraints in S hold]`.
+
+Thus a fixed `u` needs support subsets, not ordered source-coordinate
+assignment sequences. This removes all dependence on copy depth `K` at fixed
+word degree, but leaves `2^(2^(u+1))` profile pairs as `u` grows.
+
+Each support pair gives an exact finite-group presentation. Single-occurrence
+Tietze elimination is solution preserving over every finite group. For the
+uncompressed controls, `EEFF` reduces to a free rank-two group (`g^2`
+solutions) and `EFEF` to one commutator (`g p(n)` solutions). S3 gives 36 and
+18 exactly.
+
+The leading typical-Hamming pressure certificate for a profile is
+
+`d + 0.5 log2|S0| + 0.5 log2|S1| - p + 2`,
+
+where `d` is an upper bound on the leading `log_|S_n|` solution exponent.
+Dropping all but one residual relator gives a rigorous upper bound. The
+certificate engine now recognizes:
+
+- orientable quadratic surface words: loss one group exponent;
+- nonorientable quadratic words: loss one half for crosscap one and one for
+  higher crosscap;
+- explicit commutators whose two factors extend to a verified free basis:
+  loss one;
+- primitive powers `x^k`: loss `1/k`, by the cycle-index count of
+  permutations whose cycle lengths divide `k`;
+- hidden surface or power words reached by a recorded chain of elementary
+  Nielsen automorphisms.
+
+Every one of the 4,500 support profiles with exactly two frame tokens now has
+certified noncrossing pressure at most zero and crossing pressure at most
+minus one. Full residual group topology remains unclassified for 116 of those
+profiles, but that classification is not needed for the pressure upper bound.
+The finite theorem is exact at the leading `log_|S_n|` exponent; partition,
+Witten-zeta, and involution prefactors are `|S_n|^o(1)` and must not be silently
+treated as uniform constants.
+
+A deterministic degree-three probe found four entropy-heavy profiles that
+defeated literal surface recognition. All four are now killed by exact
+certificates:
+
+- two become orientable genus-two relators after the Nielsen move
+  `x4 -> x4 x6^-1`;
+- one is an explicit free-basis commutator;
+- one contains `x5^3`, whose one-third exponent loss moves pressure from
+  `-0.7075...` to `-1.04085...`.
+
+These four controls are **not** an exhaustive degree-three theorem. The next
+high-reasoning task is to replace degree-by-degree enumeration with an
+entropy-versus-relator theorem: for every support pair generated by a crossing
+marked word, prove enough independent surface/torsion/word-map loss to offset
+`0.5 log2(|S0||S1|)`, uniformly for growing `u`; or construct a profile family
+whose presentation solution exponent violates that balance. After that,
+mixed target-character observables still require a separate signed bound.
+
+The counterexample-directed continuation is now implemented in:
+
+- `self_dual_wreath_marked_pressure_obstruction_search.py`;
+- `tests/test_self_dual_wreath_marked_pressure_obstruction_search.py`;
+- `research/representation/self_dual_wreath_marked_pressure_obstruction_search.json`.
+
+Experiment ID:
+`EXP-CODE-SELF-DUAL-WREATH-MARKED-PRESSURE-OBSTRUCTION-SEARCH`.
+
+Best-first support mutation ranks profiles by literal pressure proof debt,
+then reserves Whitehead, Nielsen, and free-basis searches for finalists. The
+live deterministic run now visits more than 7,500 profiles: all-`A` beams
+through frame degree six plus mixed `A/B` beams at degrees three and four.
+Every current scalar-pressure finalist receives an upper-bound certificate,
+but this is not exhaustive coverage and the growing-degree theorem flag
+remains false.
+
+Two new exact certificate families emerged from the search.
+
+First, a relator `y x^a y^-1 x^b` with `min(|a|,|b|)=1` says that a permutation
+is conjugate to a fixed nonzero power of itself. Equality of cycle type forces
+every cycle length to be coprime to the nonunit power. Every admissible
+conjugacy class contributes exactly `|S_n|` pairs, so the pair count is
+`|S_n| p_allowed(n)=|S_n|^(1+o(1))`; this removes one group exponent. This
+killed the degree-three power-conjugacy survivors.
+
+Second, a full Whitehead automorphism search reduces the hardest degree-four
+relator from length seven to one basis generator in four moves. Every move
+stores generator images and a verified two-sided inverse basis. A primitive
+relator removes exactly one free variable over every finite group. This killed
+the last degree-four survivor and its degree-five lifts.
+
+Whitehead minimization now retains nonprimitive minima as well. It reduces a
+balanced rank-six length-16 relator to an orientable genus-two word of length
+eight in three verified moves. This closes the all-`A` degree-five scalar row
+that the earlier bounded Nielsen search missed.
+
+Most importantly, degree growth itself is now proved not to dilute hard
+cores. Append a trailing frame token `z` whose assignment bit is zero on both
+supports. The first marked `E` generator `x1` and `z` occur in exactly the same
+split/color-zero relators, at the first and last positions, and neither occurs
+in color-one relators. The basis change
+
+`y1 = z x1`  (equivalently `x1 = z^-1 y1`)
+
+turns every lifted relator into the old relator and leaves `z` free. Therefore
+the lifted group is the old presentation free-product `<z>`, `d` and word
+length both increase by one, and pressure is exactly invariant at every
+degree. All 2,287 profiles through degree two plus the 14 live degree-four
+finalists passed the exact relation-isomorphism/free-generator controls.
+
+This changes the next proof target. Do not argue that large degree suppresses
+fixed obstructions. Quotient constant-zero trailing coordinates first, then
+classify **irreducible support cores**: coordinates that cannot be removed by
+a free-product/Nielsen gauge. Prove an entropy-versus-word-measure bound for
+those cores, or find an irreducible family with a matching asymptotic lower
+bound above the crossing threshold. Constant-one and interior-coordinate
+lifts are not covered by the theorem. Mixed target characters remain a
+separate gate even after scalar pressure is controlled.
+
+The search now enforces this quotient rule at degrees five and six. Every
+reported finalist there has zero constant-zero lift depth. Degree six found
+no positive literal pressure debt at all; its worst visited row is exactly at
+the crossing threshold under the trivial assignment bound. This is finite
+search evidence only, not a universal irreducible-core theorem.
+
+The critical new frontier is mixed `A/B` words. Their split relations do not
+alone force `prod(x)=1`, so the normalized target character cannot be dropped
+from the Green-word normal form. Separate mixed beams currently have no
+unresolved **scalar** pressure finalists. The runner transports the full
+product through every Tietze replacement, reconstructs exact `S3` solutions,
+and records sign and standard normalized-character averages.
+
+Most visited mixed finalists cancel symbolically: the transported target is
+freely trivial or is itself a residual relator. The retained adversarial
+presentation from pattern `EFAEFBBB` is now resolved exactly. Its fourth
+residual relator is
+
+`r4 = (-8,-7,4,-8,-7,8,-5,-4,-8,-7,8,5)`.
+
+Set `q=(-5,-8,7,8,4,5)`. The inverse relator factors as `r4^-1=q s`, and
+the retained target is the cyclic shift `s q`. Therefore
+
+`target = q^-1 r4^-1 q`.
+
+This is a one-relator normal-closure certificate valid over every group. The
+previous finite-residual interpretation was a false lead. The finite screens
+remain useful exact regression fingerprints:
+
+- 66 solutions in `S3`, all with identity target;
+- 960 solutions in `S4`, all with identity target;
+- 11,040 solutions in `S5`, all with identity target.
+
+KBMAG independently reduced the target to identity using a valid but
+nonconfluent completion; inspecting the words exposed the much shorter cyclic
+certificate above. Do not retain a finite-residual conjecture for this row.
+
+The old mixed beam was nevertheless searching the wrong boundary: it ranked
+scalar pressure without preferring a surviving target, so it repeatedly chose
+genus-zero or support-killed rows. This has been corrected by the exact
+split-target theorem in
+`self_dual_wreath_mixed_split_target_genus.py`. If the B positions form `r`
+cyclic runs, imposing only the two split relations turns the full product into
+an orientable quadratic boundary of genus `r-1`. For an irrep of dimension
+`d_nu`, its exact split-only normalized character average is
+`d_nu^(-2(r-1))`. The proof Nielsen-collapses each monochromatic run to one
+block and applies the surface commutator formula. All 8,190 binary patterns
+through length 12 and exact `S3` genus-one/two character controls pass. Extra
+support relations condition the surface variables, so this is not yet the
+needed relative theorem.
+
+Mixed beams through frame degree six now require positive split genus and
+prioritize support-uncancelled boundaries. They find genuine surviving target
+words rather than cancellations. Every current finalist nevertheless has a
+surface/free-basis certificate at least one full `|S_n|` exponent stronger
+than the crossing threshold. This is finite counterexample-directed evidence,
+not a growing-degree theorem.
+
+The leading degree-three row has an exact stronger certificate in
+`self_dual_wreath_relative_surface_factorization.py`. For pattern `EFBEBFB`,
+write the residual generators as `a,b,c,d` and set
+
+`A=a, H=bcda, C=c, K=da`.
+
+The stored two-sided free-basis map sends the sole relation to
+`A[K,C]A^-1` and the target to `H^-1 A H A^-1`; the relation and target use
+disjoint generator pairs. Hence over every finite group `G` the exact solution
+count is `|G|^3 k(G)` and the normalized target-character average is
+`d_nu^-2`. For `S_n`, this is `|S_n|^(3+o(1))`, one exponent below the old
+early-stopped bound. The exact `S3` controls are 648 solutions and standard
+character average `1/4`.
+
+The repeated surface certificates now have a uniform topological source in
+`self_dual_wreath_two_partition_ribbon_surface.py`. Pair the split partition
+with any one support assignment, invert the support color relators, and glue
+equally labelled polygon edges. The components are closed orientable ribbon
+surfaces. If component `j` has genus `g_j` and `f_j` ribbon faces, the original
+one-vertex presentation is exactly
+
+`(*_j pi_1(Sigma_{g_j})) * F_(sum_j(f_j-1))`.
+
+Consequently its leading `S_n` solution exponent is
+
+`sum_j(f_j-1) + sum_(g_j>0)(2g_j-1)`.
+
+This replaces bounded Tietze/Nielsen discovery for every two-partition pair
+with a direct face-permutation calculation. All 87,380 binary partition pairs
+through length eight have valid orientable topology, and all 340 pairs through
+length four match exact `S3` solution counts. The exponent is now used in
+pressure beam scoring. It is only a one-support-cell upper bound: dropping all
+other support relations can leave large support entropy unpaid.
+
+The support-entropy side now has an exact abelian theorem in
+`self_dual_wreath_support_affine_rank_entropy.py`. For nonempty cube supports
+`S,D subset {0,1}^u`, the rational exponent-sum relation rank satisfies
+
+`R >= 2 + 0.5 log2|S| + 0.5 log2|D|`.
+
+A real affine `d`-plane contains at most `2^d` cube vertices; support
+differences supply the larger affine-direction space, while the differing-leaf
+offset and all-ones row supply two independent directions. Exhaustive `u=1,2`
+controls cover 918 support profiles with zero failures. Thus abelian rank pays
+all support entropy except at most one crossing exponent. **Do not convert this
+to an `S_n` homomorphism-count theorem.** Nonprimitive and power relators show
+that rational rank need not cost one permutation exponent per row. The missing
+rank-to-nonabelian lift and final crossing surface loss remain the decisive
+obligations.
+
+The degree-three primitive-cube adversarial row has also been sharpened, after
+falsifying an incorrect coprime-collapse interpretation. Its exact residual
+relations are equivalent to
+
+`<x,y,z | x^3, [x,z], [y,z]> = (C_3 * Z) x Z`.
+
+Nonidentity 3-cycles survive; the exact `S3` solution count is 42, not 36. For
+every finite group `G`, the solution count is `|G|` times the sum over
+conjugacy classes `[z]` of the number of cube roots of identity in `C_G(z)`.
+For `S_n`, comparison with the identity centralizer and the subexponential
+partition count gives leading exponent `2-1/3=5/3`. The certificate uses an
+exact alternating normal form in `(C_3 x Z) * F`, and the focused topology and
+pressure suites pass. Never restore the discarded claim that these relations
+force `x=1`; its derivation misread the sign of the fourth relator.
+
+A separate coprime statement is valid and now has a deliberately narrow
+certificate: literal pure-power relators `x^a=1` with degree gcd one force
+`x=1` by Bezout. The topology classifier applies this only when every selected
+relator is a one-generator pure power, for example `x^2=x^3=1`. It must never
+be generalized back to equal-context or sign-sensitive relations.
+
+A first genuine growing-degree subclass is now closed in
+`self_dual_wreath_linear_code_support_pressure.py`. For the contiguous
+crossing family
+
+`E A^u F E F`
+
+with same and different supports binary linear codes `S,D <= F_2^u`, let
+`s=dim S`, `d=dim D`, and `r=max(s,d)`. The all-A split plus the zero cell of
+`D` is exactly `F_u * Z^2`: eliminate the last E/F leaves and use the free
+basis change `A=a(x_1...x_u)`. An RREF basis of the larger code is contained
+in that support and supplies `r` actual relators, each with one unique pivot
+frame generator. Selecting those relators gives
+
+`F_(u-r) * Z^2`.
+
+Hence the full presentation has at most `|G|^(u-r+1) k(G)` solutions over
+every finite group. For `S_n`, the support-weighted crossing pressure is at
+most
+
+`-1 - |s-d|/2`.
+
+This is symbolic and uniform in `u`, not a finite-beam extrapolation. All
+4,774 linear-code pairs through width four and two exact `S3` full-presentation
+controls pass. The theorem does **not** cover affine cosets, arbitrary
+supports, interleaved leaves, B frames, or mixed target characters. Affine
+cosets through width three showed no finite pressure violation, but they do
+not contain the RREF combinations used by this proof; no affine claim is
+allowed without a new relative-partition basis theorem.
+
+The all-A zero-based problem has since been solved in
+`self_dual_wreath_frame_subword_entropy.py`. For arbitrary supports in the
+same contiguous family, assume `0 in D`, put `U=S union D`, and define
+
+`P(U)=<x_1,...,x_u | product_(i:v_i=1) x_i=1, v in U>`.
+
+The split and zero different cell make the selected full presentation exactly
+`P(U) * Z^2`. If `e(U)` is a certified leading `S_n` solution exponent for
+`P(U)`, the crossing pressure is at most
+
+`e(U) + H(S,D) - u - 1`,  `H=(log2|S|+log2|D|)/2`.
+
+Because `H<=log2|U|`, the single-support inequality
+
+`e(U)+log2|U| <= u`
+
+closes every pair with union `U`. This inequality is now an exact all-width
+theorem. For `a in U`, the triangular automorphism
+
+`x_i -> A_i x_i^((-1)^a_i) A_i^-1`,
+`A_i=product_(j<i) x_j^a_j`,
+
+sends `w_b` to `w_(a xor b) w_a^-1`, so `P(U)` is invariant under re-rooting
+at `a`. Re-root at an element of the larger last-coordinate half. If the one
+half is empty the last generator is free; otherwise a one-half relation
+determines it and leaves a quotient of the zero-half presentation. Induction
+proves for every finite group `G`
+
+`#Hom(P(U),G) <= |G|^(u-log2|U|)`.
+
+All 32,906 width-at-most-four supports, 16,948 width-five stress supports,
+every re-rooting base through width eight, 20,000 random induction controls
+through width ten, and exact `S3` counts through width three agree. These are
+code controls; the displayed automorphism and induction are the proof.
+Nonabelian Littlewood-Offord bounds do not supply this result: Tiep--Vu treats
+`{A_i,A_i^-1}` products and polynomial concentration regimes, whereas these
+lazy `{1,g_i}` fibers can be exponentially small.
+
+The frame-subword result is now strictly stronger. For uniform `X in U`, let
+a coordinate branch when both bit values occur conditional on the strict
+suffix of `X`. The entropy chain rule gives
+
+`log2|U| <= E[number of branching coordinates]`.
+
+Hence some anchor has at most `floor(u-log2|U|)` suffix-forced coordinates.
+After XOR re-rooting at that anchor, every branching-coordinate witness is a
+triangular relator that eliminates its generator. Therefore, for every
+nonempty support (zero is no longer required for this strengthening),
+
+`#Hom(P(U),G) <= |G|^floor(u-log2|U|)`.
+
+`frame_subword_suffix_branch_certificate` stores the anchor, every witness,
+the entropy-chain audit, and the integer generator bound. This supersedes the
+real entropy exponent whenever `|U|` is not a power of two.
+
+`self_dual_wreath_contiguous_all_a_support_pressure.py` removes the zero-base
+and linear-support restrictions entirely. Same-coordinate color-one cells
+form `P(S union {0})`; choosing `q in D`, different-coordinate color-one cells
+form the re-rooted presentation `P(D xor q)`. The stronger fiber pays
+
+`max(log2|S union {0}|, log2|D|) >= H(S,D)`.
+
+The integer theorem further improves the frame exponent to
+`u-ceil(log2 max(|S union {0}|,|D|))`.
+
+For fixed frame values, the split and base-cell equations reduce the four
+outer variables to `A(bT)A^-1=w_q b`. Summing possible conjugators gives at
+most `sum_g |C_G(g)|=|G|k(G)` outer assignments. Hence every nonempty
+arbitrary support pair for `E A^u F E F` has scalar `S_n` crossing pressure at
+most `-1`, uniformly in `u`. Structural controls cover all 65,259 support
+pairs through width three and exact full `S3` controls pass. This is an
+unsigned obstruction, not a component signal.
+
+`self_dual_wreath_contiguous_frame_target_factorization.py` extends the same
+scalar theorem to every contiguous A/B frame pattern `E T_1...T_u F E F`.
+Put `w_A` for the A-frame subword, `X=x_1...x_u`, and `R=w_A^-1 X`. Exact
+elimination gives the same outer conjugacy equation and reduces the full
+target on every solution to `A R A^-1`. Thus its normalized character is
+exactly `chi(R)/d`; the unresolved measure on frames carries the explicit
+weight
+
+`sum_b 1[bT conjugate w_q b] |C_G(bT)|`.
+
+All 87,380 frame-type/base pairs through width eight pass the symbolic outer
+and target factorizations. Restoring both colors of every support cell yields
+a sharp fixed-width tradeoff. Under the integer strengthening, scalar pressure
+saturates exactly when `0 in S` and `|S|=|D|` is a power of two; the zero same
+cell contributes `R` itself as a relator, so every saturating profile forces
+target identity.
+
+The old real entropy certificate did **not** have a uniform gap. An
+exact `S3` seed with frame types `BABA`, nonidentity target, `|S|=1`, and
+`|D|=2` has an identity-A-frame lift of every depth `k`. Its supports have
+sizes `2^k` and `2^k+1`, every full marked relation remains satisfied, the
+target stays nonidentity, and the old real entropy margin is exactly
+`0.5 log2(1+2^-k) -> 0`.
+
+This no longer falsifies the strongest certificate. Because `2^k+1` crosses a
+power-of-two boundary, the integer suffix-branch margin tends to `1`, and the
+lift is uniformly subleading already at the scalar level. A genuine global
+uniform-gap counterexample would need a target-surviving profile near the
+opposite side of a power-of-two boundary. That question remains open.
+
+That opposite-side generic counterexample now exists but also collapses.
+Delete one same row and one different row, giving support sizes `2^k-1` and
+`2^k`. The integer suffix-branch certificate margin becomes
+`0.5 log2(2^k/(2^k-1)) -> 0`, and the same nonidentity `S3` assignment remains
+a solution. Exact Tietze reduction at every depth gives five generators and
+one genus-two relator. A Nielsen change identifies the group as the genus-two
+surface group free-product one free generator; the target modulo the relator
+is one handle commutator. Exact `S3` count is `2916`, sign average `1`, and
+standard normalized average `1/2`. The true `S_n` solution exponent is `4`,
+so its scalar pressure margin is
+`1+0.5 log2(2^k/(2^k-1))>1`. This falsifies the strongest *generic
+certificate* gap, not the actual-presentation gap.
+
+Independently, that exact lift is classified in
+`self_dual_wreath_target_survival_surface_seed.py`. Paired same-support rows
+force every appended A-frame generator to identity, so every lift is
+Tietze-equivalent to the width-four seed. The seed is a four-generator,
+genus-two surface presentation with `S_n` solution exponent `3`; the target is
+one handle commutator. Exact `S3` fingerprints are 486 solutions, sign average
+`1`, and normalized standard average `1/2` at every stored lift depth.
+
+For `Z_n=sum_(lambda|-n)d_lambda^-2` and
+`C_alpha=sum_(lambda covers alpha)d_lambda^-1`, standard Ind--Res gives the
+exact normalized handle average
+
+`(sum_(alpha|-n-1) C_alpha^2 - Z_n) / ((n-1) Z_n)`.
+
+The Witten-zeta bounds `zeta_Sn(1)=2+O(n^-1)` and
+`zeta_Sn(2)=2+O(n^-2)`, plus the `O(sqrt n)` removable-corner bound, give
+
+`2/(n-1)^2 + O(n^-5/2)`.
+
+More generally, write the commutator density as `1+sgn+h`. Orthogonality gives
+`E|h|^2=zeta_Sn(2)-2=O(n^-2)`, so the genus-two handle law is `O(1/n)` in total
+variation from uniform measure on `A_n`. Every normalized irreducible target
+except trivial/sign therefore vanishes uniformly; trivial and sign equal one.
+The degree-30 exact partition sum gives `n^2`-scaled standard average
+`2.1860`, approaching the proved constant `2`.
+
+The next high-value theorem is either a global target-survival gap across the
+remaining power-of-two boundary profiles or a centralizer-weighted `S_n` frame-character
+upper/lower bound for target-surviving presentations **not** equivalent to
+this identity-frame genus-two seed, coupled to the growing-degree partially
+pinned `Q_0,Q_1` regime. A valid positive result needs matching leading
+homomorphism mass and nonvanishing normalized character. Interleaved leaves
+remain a separate multi-boundary problem.
+
+Latest focused validation: the linear-code and topology suites pass 25 tests
+in 28.54 seconds; the topology and pressure-obstruction suites pass
+25 tests in 91.62 seconds after the centralized-torsion correction; the
+split-target genus and relative-surface suites each passed 4 tests, in 0.86
+and 0.55 seconds respectively; the ribbon-surface suite passed 4 tests in 3.11
+seconds, and the affine-rank suite passed 5 tests in 0.16 seconds. Their live
+artifacts have zero
+split-genus, finite-character, relative-factorization, ribbon-topology,
+residual-target, lift, or adversarial-pressure control failures. No exhaustive
+degree-three theorem,
+growing-degree pressure theorem, universal mixed-character cancellation,
+asymptotic counterexample, positive Green pair gap, component `M4`, or speedup
+is claimed.
+
 ## Superseded Pre-2026-08-08 Priority List
 
 This list is retained only as provenance. The vertex PSD criterion, simplex
@@ -3450,7 +4114,11 @@ These tasks are useful but should not consume the scarce high-reasoning pass:
    `EXP-CODE-SELF-DUAL-WREATH-LEAF-WHITENING-COMMUTATOR-NO-GO` with suggested
    CLI `code-wreath-leaf-whitening-no-go`, and
    `EXP-CODE-SELF-DUAL-WREATH-COMMON-SPAN-COMPONENT-UNIVERSALITY-NO-GO` with
-   suggested CLI `code-wreath-common-span-component-universality`. Copy the existing
+   suggested CLI `code-wreath-common-span-component-universality`, and
+   `EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COMMUTATOR-TRACE-MASS-BRIDGE` with
+   suggested CLI `code-wreath-component-commutator-trace-mass`, and
+   `EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COMMUTATOR-HAAR-BENCHMARK` with
+   suggested CLI `code-wreath-component-commutator-haar`. Copy the existing
    theorem-module registry/runner/CLI pattern; do not alter the mathematics.
    Preserve these gates exactly: positive natural common-span mass and final
    block/fiber aspects are true; natural positive component edge, coherent
@@ -3469,7 +4137,12 @@ These tasks are useful but should not consume the scarce high-reasoning pass:
    compression and gives a stronger all-coarse-data counterfamily. It does not
    prove natural wreath commutativity. Keep direct natural compressed
    commutator mass, simultaneous-basis/compiler, MRS, decoder, and speedup
-   claims false. Add clean dispatch tests, regenerate downstream registry
+   claims false. The trace-mass bridge makes a scalar natural `M_4` lower
+   bound sufficient for support, but proves no such lower bound; do not report
+   uncompressed sibling moments as that missing result. The exact Haar formula
+   is also surrogate-only and must never be presented as natural transfer.
+   Add clean dispatch
+   tests, regenerate downstream registry
    workflows, and include the artifact in the progress summary without calling
    the finite `S_48` rows evidence for the asymptotic edge.
 1. Re-run and record the standard downstream workflows after any new module:
@@ -3661,6 +4334,60 @@ These tasks are useful but should not consume the scarce high-reasoning pass:
 7. Do not commit or push each subsystem. Make one intentional checkpoint only
    after several coherent research passes or when the user requests it.
 
+## Periodic Frame Rank Collapse (2026-08-09)
+
+`self_dual_wreath_periodic_frame_fiber_counterfamily.py` constructs an exact
+nonidentity `S3` frame family with exponentially vanishing old real-entropy margin.
+That family is now **falsified as an asymptotic channel**, not left open.
+
+`self_dual_wreath_periodic_frame_rank_collapse.py` proves the missing all-period
+statement. Let
+
+```text
+P = 001110100010111010000011101000
+Q = 10011
+```
+
+for the repeated `BAABB` frame values. Both selected/complement products of
+`P` and of the all-zero six-period block are identity; `Q` reaches the same
+fiber state. The exact suffix-branch lemma says that a support row agreeing
+with an anchor after coordinate `i` and flipping bit `i` gives, after XOR
+re-rooting, a relator that determines `x_i` from lower generators. The finite
+witness catalog proves:
+
+- first `P`: every coordinate branches except `1,2,5`;
+- every later `P`: all coordinates branch using a `PP` witness;
+- terminal `Q`: all coordinates branch using a `PQ` witness;
+- the single `Q` case separately leaves at most three generators.
+
+Therefore every `k=6m+1` same-fiber frame presentation has at most three
+generators over every finite group. The exact fiber size is
+
+```text
+S_m = (16*2^(30m) + 8*2^(24m) - 4*2^(6m) - 2)/9,
+D_m = S_m + 1.
+```
+
+The existing mixed-frame outer conjugacy theorem contributes at most
+`|G| k(G)`, so the full presentation has at most `|G|^4 k(G)` solutions. For
+`S_n`, the scalar pressure margin is uniformly at least
+`1-0.5*log2(3/2) = 0.707518...`. A target character cannot rescue this missing
+unsigned mass. Keep every speedup/positive-M4 gate false.
+
+The four materialized controls now have remaining generator counts `4,5,4,3`
+and exact `S3` counts `324,396,342,126`; they are regressions, not the proof.
+The all-period proof is the suffix-witness/neutral-concatenation certificate.
+
+**Next high-reasoning task:** determine whether every dense constant-state
+ordered-subword automaton fiber admits an `O(1)` suffix-branch generator bound.
+A positive theorem would eliminate a broad class of finite-group frame-fiber
+escapes and redirect search toward growing-state algebra or interleaved leaves.
+A useful counterexample must have growing suffix-branch dimension and survive
+the outer conjugacy pressure accounting. Do not spend Codex reasoning on CLI,
+registry, or README plumbing for these modules; that is explicitly assigned to
+Gemini 3.6 Flash through Antigravity in
+`research/MECHANICAL_FOLLOW_UP_PLAN.md`.
+
 ## Resume Commands
 
 ```bash
@@ -3721,6 +4448,8 @@ python self_dual_wreath_component_effect_algebra_boundary.py
 python self_dual_wreath_natural_leaf_commutator_mass.py
 python self_dual_wreath_leaf_whitening_commutator_no_go.py
 python self_dual_wreath_common_span_component_universality_no_go.py
+python self_dual_wreath_component_commutator_trace_mass_bridge.py
+python self_dual_wreath_component_commutator_haar_benchmark.py
 python qsearch.py code-wreath-subpovm-moments
 python qsearch.py validate
 ```

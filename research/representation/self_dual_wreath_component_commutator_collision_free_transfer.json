@@ -1,0 +1,256 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Conditioning can destroy a positive independent expectation even when P_cf tends to one.",
+      "resolution": "Only if the positive scale is no larger than 1-P_cf. Every inverse-polynomial scale dominates the proved superpolynomially small collision error.",
+      "resolved": true
+    },
+    {
+      "objection": "A multiplicative E[Z|C]>=E[Z]/P_cf bound follows from nonnegativity.",
+      "resolution": "False direction. The sharp lower bound must subtract the worst-case off-event mass 1-P_cf.",
+      "resolved": true
+    },
+    {
+      "objection": "Current finite n collision-free masses numerically certify the transfer.",
+      "resolution": "False through n=48 for the illustrative 1e-3 scale; the asymptotic theorem is strongly preasymptotic.",
+      "resolved": true
+    },
+    {
+      "objection": "Closing conditioning proves positive natural component mass.",
+      "resolution": "No independent-Plancherel M4 lower bound has been proved.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "coherent_component_algebra_compiler_proved": false,
+    "globally_distinct_natural_component_M4_positive": false,
+    "inverse_polynomial_independent_M4_survives_conditioning": true,
+    "natural_independent_plancherel_M4_positive": false,
+    "natural_noncommutative_component_physical_mass_proved": false,
+    "reason": "Global-distinct conditioning is no longer a gate at any inverse-polynomial moment scale, but the independent natural leaf-resolved Green gap remains unproved.",
+    "sharp_component_M4_conditioning_transfer_proved": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-09T05:37:47.406582+00:00",
+  "falsifiers_triggered": [
+    "A positive expectation cannot be transferred by dividing by collision-free mass; the sharp lower bound subtracts off-event mass.",
+    "Finite n<=48 collision-free rows remain too preasymptotic to certify the illustrative moment scale.",
+    "Any constant or inverse-polynomial independent M4 does survive asymptotically because the collision error is n^{-omega(1)}.",
+    "No independent natural M4, compiler, decoder, or speedup is proved."
+  ],
+  "finite_scaling": [
+    {
+      "asymptotic_collision_probability_superpolynomially_small": true,
+      "finite_transfer_nonvacuous": false,
+      "global_distinct_probability": 2.1463733392242715e-35,
+      "illustrative_independent_moment_lower_bound": 0.001,
+      "information_threshold_copy_count": 62,
+      "inverse_polynomial_independent_moment_transfers_asymptotically": true,
+      "n": 20,
+      "natural_independent_moment_lower_bound_proved": false,
+      "selected_copy_count": 64,
+      "sharp_conditioned_moment_lower_bound": 0.0,
+      "source_collision_probability": 1.0,
+      "status": "finite-preasymptotic-transfer-vacuous-asymptotic-transfer-proved"
+    },
+    {
+      "asymptotic_collision_probability_superpolynomially_small": true,
+      "finite_transfer_nonvacuous": false,
+      "global_distinct_probability": 1.711121842035547e-29,
+      "illustrative_independent_moment_lower_bound": 0.001,
+      "information_threshold_copy_count": 80,
+      "inverse_polynomial_independent_moment_transfers_asymptotically": true,
+      "n": 24,
+      "natural_independent_moment_lower_bound_proved": false,
+      "selected_copy_count": 82,
+      "sharp_conditioned_moment_lower_bound": 0.0,
+      "source_collision_probability": 1.0,
+      "status": "finite-preasymptotic-transfer-vacuous-asymptotic-transfer-proved"
+    },
+    {
+      "asymptotic_collision_probability_superpolynomially_small": true,
+      "finite_transfer_nonvacuous": false,
+      "global_distinct_probability": 2.577844730491689e-24,
+      "illustrative_independent_moment_lower_bound": 0.001,
+      "information_threshold_copy_count": 98,
+      "inverse_polynomial_independent_moment_transfers_asymptotically": true,
+      "n": 28,
+      "natural_independent_moment_lower_bound_proved": false,
+      "selected_copy_count": 100,
+      "sharp_conditioned_moment_lower_bound": 0.0,
+      "source_collision_probability": 1.0,
+      "status": "finite-preasymptotic-transfer-vacuous-asymptotic-transfer-proved"
+    },
+    {
+      "asymptotic_collision_probability_superpolynomially_small": true,
+      "finite_transfer_nonvacuous": false,
+      "global_distinct_probability": 3.3807959833281233e-20,
+      "illustrative_independent_moment_lower_bound": 0.001,
+      "information_threshold_copy_count": 118,
+      "inverse_polynomial_independent_moment_transfers_asymptotically": true,
+      "n": 32,
+      "natural_independent_moment_lower_bound_proved": false,
+      "selected_copy_count": 120,
+      "sharp_conditioned_moment_lower_bound": 0.0,
+      "source_collision_probability": 1.0,
+      "status": "finite-preasymptotic-transfer-vacuous-asymptotic-transfer-proved"
+    },
+    {
+      "asymptotic_collision_probability_superpolynomially_small": true,
+      "finite_transfer_nonvacuous": false,
+      "global_distinct_probability": 1.0364326389978007e-16,
+      "illustrative_independent_moment_lower_bound": 0.001,
+      "information_threshold_copy_count": 139,
+      "inverse_polynomial_independent_moment_transfers_asymptotically": true,
+      "n": 36,
+      "natural_independent_moment_lower_bound_proved": false,
+      "selected_copy_count": 141,
+      "sharp_conditioned_moment_lower_bound": 0.0,
+      "source_collision_probability": 0.9999999999999999,
+      "status": "finite-preasymptotic-transfer-vacuous-asymptotic-transfer-proved"
+    },
+    {
+      "asymptotic_collision_probability_superpolynomially_small": true,
+      "finite_transfer_nonvacuous": false,
+      "global_distinct_probability": 1.3072351933968575e-13,
+      "illustrative_independent_moment_lower_bound": 0.001,
+      "information_threshold_copy_count": 160,
+      "inverse_polynomial_independent_moment_transfers_asymptotically": true,
+      "n": 40,
+      "natural_independent_moment_lower_bound_proved": false,
+      "selected_copy_count": 162,
+      "sharp_conditioned_moment_lower_bound": 0.0,
+      "source_collision_probability": 0.9999999999998693,
+      "status": "finite-preasymptotic-transfer-vacuous-asymptotic-transfer-proved"
+    },
+    {
+      "asymptotic_collision_probability_superpolynomially_small": true,
+      "finite_transfer_nonvacuous": false,
+      "global_distinct_probability": 4.567106226911769e-11,
+      "illustrative_independent_moment_lower_bound": 0.001,
+      "information_threshold_copy_count": 181,
+      "inverse_polynomial_independent_moment_transfers_asymptotically": true,
+      "n": 44,
+      "natural_independent_moment_lower_bound_proved": false,
+      "selected_copy_count": 183,
+      "sharp_conditioned_moment_lower_bound": 0.0,
+      "source_collision_probability": 0.999999999954329,
+      "status": "finite-preasymptotic-transfer-vacuous-asymptotic-transfer-proved"
+    },
+    {
+      "asymptotic_collision_probability_superpolynomially_small": true,
+      "finite_transfer_nonvacuous": false,
+      "global_distinct_probability": 7.326006427802632e-09,
+      "illustrative_independent_moment_lower_bound": 0.001,
+      "information_threshold_copy_count": 203,
+      "inverse_polynomial_independent_moment_transfers_asymptotically": true,
+      "n": 48,
+      "natural_independent_moment_lower_bound_proved": false,
+      "selected_copy_count": 205,
+      "sharp_conditioned_moment_lower_bound": 0.0,
+      "source_collision_probability": 0.9999999926739935,
+      "status": "finite-preasymptotic-transfer-vacuous-asymptotic-transfer-proved"
+    }
+  ],
+  "headline_metrics": {
+    "finite_nonvacuous_transfer_row_count": 0,
+    "finite_scaling_row_count": 8,
+    "inverse_polynomial_M4_collision_free_transfer_theorem_count": 1,
+    "natural_independent_plancherel_M4_lower_bound_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "sharp_bounded_variable_conditioning_theorem_count": 1,
+    "sharpness_control_count": 4,
+    "sharpness_control_failure_count": 0,
+    "tail_global_distinct_probability": 7.326006427802632e-09,
+    "tail_n": 48
+  },
+  "proof_obligations": [
+    {
+      "obligation": "transfer_bounded_component_M4_through_global_distinct_conditioning",
+      "resolution": "The sharp conditional-expectation inequality uses only 0<=Z<=1.",
+      "resolved": true
+    },
+    {
+      "obligation": "show_inverse_polynomial_M4_scale_dominates_collision_error",
+      "resolution": "The Plancherel birthday error is n^{-omega(1)} at information-threshold copy count.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_positive_independent_plancherel_leaf_resolved_green_gap",
+      "resolution": "The leaf-marked Green AABB-minus-ABAB expectation remains the sole natural mass gate.",
+      "resolved": false
+    },
+    {
+      "obligation": "construct_coherent_component_algebra_measurement",
+      "resolution": "Conditioning and support mass have no circuit or decoder content.",
+      "resolved": false
+    }
+  ],
+  "sharpness_controls": [
+    {
+      "absolute_conditional_mean_change": 0.2,
+      "additive_bound_saturated": false,
+      "additive_change_upper_bound": 0.4,
+      "conditioning_probability": 0.6,
+      "control_id": "VACUOUS-BRANCH-SATURATION",
+      "lower_bound_saturated": true,
+      "reconstructed_unconditioned_mean": 0.2,
+      "sharp_lower_bound": 0.0,
+      "status": "sharp-bounded-variable-conditioning-control-verified",
+      "target_unconditioned_mean": 0.2,
+      "value_off_conditioning_event": 0.5,
+      "value_on_conditioning_event": 0.0
+    },
+    {
+      "absolute_conditional_mean_change": 0.16666666666666663,
+      "additive_bound_saturated": false,
+      "additive_change_upper_bound": 0.4,
+      "conditioning_probability": 0.6,
+      "control_id": "POSITIVE-BRANCH-SATURATION",
+      "lower_bound_saturated": true,
+      "reconstructed_unconditioned_mean": 0.75,
+      "sharp_lower_bound": 0.5833333333333334,
+      "status": "sharp-bounded-variable-conditioning-control-verified",
+      "target_unconditioned_mean": 0.75,
+      "value_off_conditioning_event": 1.0,
+      "value_on_conditioning_event": 0.5833333333333334
+    },
+    {
+      "absolute_conditional_mean_change": 0.4,
+      "additive_bound_saturated": true,
+      "additive_change_upper_bound": 0.4,
+      "conditioning_probability": 0.6,
+      "control_id": "ADDITIVE-BOUND-SATURATION",
+      "lower_bound_saturated": false,
+      "reconstructed_unconditioned_mean": 0.6,
+      "sharp_lower_bound": 0.33333333333333326,
+      "status": "sharp-additive-conditioning-control-verified",
+      "target_unconditioned_mean": 0.6,
+      "value_off_conditioning_event": 0.0,
+      "value_on_conditioning_event": 1.0
+    },
+    {
+      "absolute_conditional_mean_change": 0.0,
+      "additive_bound_saturated": true,
+      "additive_change_upper_bound": 0.0,
+      "conditioning_probability": 1.0,
+      "control_id": "UNIT-CONDITIONING",
+      "lower_bound_saturated": true,
+      "reconstructed_unconditioned_mean": 0.37,
+      "sharp_lower_bound": 0.37,
+      "status": "sharp-bounded-variable-conditioning-control-verified",
+      "target_unconditioned_mean": 0.37,
+      "value_off_conditioning_event": 1.0,
+      "value_on_conditioning_event": 0.37
+    }
+  ],
+  "status": "collision-free-component-M4-transfer-proved-independent-gap-open",
+  "summary": "Proved the sharp bounded-variable transfer of component M4 through global-distinct conditioning and reduced the natural mass problem to the independent-Plancherel Green gap alone.",
+  "theorem_contract": {
+    "additive_stability": "The exact decomposition E[Z]=pE[Z|C]+(1-p)E[Z|not C] implies |E[Z|C]-E[Z]|<=1-p.",
+    "plancherel_asymptotic_transfer": "At K=Theta(n log n), 1-P_cf<=binom(2K,2)C_n=n^{-omega(1)}. Hence every inverse-polynomial independent M4 lower bound survives globally distinct conditioning.",
+    "scope": "The theorem closes conditioning only. It does not prove a positive independent-Plancherel component M4 or a compiler.",
+    "sharp_conditional_expectation_bound": "For 0<=Z<=1 and Pr(C)=p, E[Z|C]>=max(0,(E[Z]-(1-p))/p), and this lower envelope is attained by a two-atom law.",
+    "support_mass_consequence": "Conditioned physical commutator-support mass and conditioned source-block noncommutativity probability are each at least half the transferred component M4 lower bound."
+  }
+}

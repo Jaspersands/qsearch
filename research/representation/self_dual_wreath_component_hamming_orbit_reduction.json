@@ -1,0 +1,386 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A generic unequal-source block is exactly translation covariant.",
+      "resolution": "False. Covariance maps the block to a relabeled source block; only the iid or all-distinct conditioned ensemble is invariant.",
+      "resolved": true
+    },
+    {
+      "objection": "The q^2 leaf pairs make direct natural M4 analysis intrinsically exponential.",
+      "resolution": "False at the scalar annealed level: equation (2) has only K-1 Hamming strata and is dominated by typical binomial distance.",
+      "resolved": true
+    },
+    {
+      "objection": "A fixed pair gap of order q^-2 is too small to matter.",
+      "resolution": "False when it holds on typical Hamming mass; the q^2 pair multiplicity makes the total M4 constant-scale.",
+      "resolved": true
+    },
+    {
+      "objection": "Hamming symmetry itself proves the rescaled pair gap is positive.",
+      "resolution": "Commuting ensemble-covariant POVMs exist. Positivity requires the natural recoupling/return calculation.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "annealed_pair_gap_depends_only_on_hamming_distance": true,
+    "exponential_pair_sum_reduced_to_binomial_profile": true,
+    "natural_independent_plancherel_M4_positive": false,
+    "natural_typical_hamming_ridge_pair_gap_positive": false,
+    "q_inverse_two_typical_pair_scale_suffices_for_M4": true,
+    "reason": "The natural M4 calculation now needs one typical-Hamming rescaled ridge pair profile rather than all leaf pairs, but that profile has not been evaluated or lower-bounded.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-09T05:37:47.498132+00:00",
+  "falsifiers_triggered": [
+    "Blockwise orientation translation covariance is false and is not needed for the annealed scalar reduction.",
+    "The exponential leaf-pair count collapses to K-1 Hamming strata under the natural source law.",
+    "The decisive individual pair scale is q^-2, not constant or q^-1.",
+    "No positive typical-pair gap, exact natural M4, compiler, decoder, or speedup is proved."
+  ],
+  "headline_metrics": {
+    "annealed_component_hamming_orbit_reduction_theorem_count": 1,
+    "binomial_rescaled_pair_M4_identity_theorem_count": 1,
+    "global_distinct_hamming_profile_transfer_theorem_count": 1,
+    "natural_typical_hamming_pair_gap_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "physical_control_count": 2,
+    "physical_control_failure_count": 0,
+    "relabeling_control_count": 1,
+    "relabeling_control_failure_count": 0
+  },
+  "physical_controls": [
+    {
+      "ambient_physical_dimension": 64,
+      "binomial_rescaled_profile_component_M4": 0.01757812499999996,
+      "child_cube_dimension": 2,
+      "child_leaf_count": 4,
+      "common_fiber_dimension": 17,
+      "control_id": "S3-REPEATED-STANDARD-TRIVIAL-TARGET",
+      "copy_count": 3,
+      "direct_normalized_component_M4": 0.017578124999999955,
+      "exact_hamming_orbit_counting_verified": true,
+      "hamming_profile_component_M4": 0.01757812499999996,
+      "labels": [
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "maximum_M4_identity_residual": 3.469446951953614e-18,
+      "maximum_within_hamming_orbit_residual": 7.806255641895632e-18,
+      "n": 3,
+      "normalized_pair_gap_by_hamming_weight": {
+        "1": 0.0029296874999999935,
+        "2": 0.0029296874999999913
+      },
+      "status": "exact-physical-component-hamming-profile-counting-verified",
+      "target_partition": [
+        3
+      ]
+    },
+    {
+      "ambient_physical_dimension": 128,
+      "binomial_rescaled_profile_component_M4": 0.024956597222222234,
+      "child_cube_dimension": 2,
+      "child_leaf_count": 4,
+      "common_fiber_dimension": 52,
+      "control_id": "S3-REPEATED-STANDARD-STANDARD-TARGET",
+      "copy_count": 3,
+      "direct_normalized_component_M4": 0.02495659722222223,
+      "exact_hamming_orbit_counting_verified": true,
+      "hamming_profile_component_M4": 0.024956597222222234,
+      "labels": [
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "maximum_M4_identity_residual": 3.469446951953614e-18,
+      "maximum_within_hamming_orbit_residual": 3.469446951953614e-18,
+      "n": 3,
+      "normalized_pair_gap_by_hamming_weight": {
+        "1": 0.004123263888888888,
+        "2": 0.004231770833333341
+      },
+      "status": "exact-physical-component-hamming-profile-counting-verified",
+      "target_partition": [
+        2,
+        1
+      ]
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "reduce_annealed_component_pair_sum_to_hamming_orbits",
+      "resolution": "Source-pair flips and coordinate permutations preserve both source laws and collapse all pair expectations to K-1 strata.",
+      "resolved": true
+    },
+    {
+      "obligation": "identify_the_pair_gap_scale_needed_for_nonvanishing_M4",
+      "resolution": "Equation (2) shows the exact scale is c_w=q^-2 times a nonnegligible rescaled profile at typical Hamming distance.",
+      "resolved": true
+    },
+    {
+      "obligation": "evaluate_typical_hamming_ridge_pair_gap_under_independent_plancherel",
+      "resolution": "Need a leaf-marked bounded Green/heat-kernel calculation for one pair with distance K/2+O(sqrt K).",
+      "resolved": false
+    },
+    {
+      "obligation": "transfer_ridge_pair_profile_to_exact_green_profile",
+      "resolution": "Use the trace-weighted polar ratio from the Green-ridge stability theorem.",
+      "resolved": false
+    }
+  ],
+  "regular_master_reduction": {
+    "applies_to_exact_green_effects": true,
+    "applies_to_normalized_ridge_effects": true,
+    "decisive_pair_distance": "W~Bin(K-1,1/2)",
+    "decisive_rescaling": "q^2 times normalized pair commutator trace",
+    "exponential_leaf_pair_enumeration_required": false,
+    "natural_typical_pair_gap_proved": false,
+    "number_of_annealed_hamming_strata": "K-1",
+    "survives_global_distinct_conditioning": true
+  },
+  "relabeling_controls": [
+    {
+      "base_labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "base_pair": [
+        0,
+        1
+      ],
+      "control_id": "S3-NONIDENTICAL-SOURCE-ORBIT",
+      "exact_scalar_component_pair_equivariance_verified": true,
+      "maximum_flip_equivariance_residual": 2.7755575615628914e-17,
+      "maximum_permutation_equivariance_residual": 3.122502256758253e-17,
+      "n": 3,
+      "source_pair_flip_count": 4,
+      "source_pair_permutation_count": 2,
+      "status": "exact-source-relabeling-component-pair-equivariance-verified",
+      "target_partition": [
+        2,
+        1
+      ]
+    }
+  ],
+  "scaling_records": [
+    {
+      "child_cube_dimension": 46,
+      "child_leaf_count_log2": 46,
+      "equivalent_pair_gap_log2_lower_bound": -100.0,
+      "information_threshold_copy_count": 45,
+      "n": 16,
+      "natural_typical_ridge_pair_gap_proved": false,
+      "resulting_M4_lower_bound": 0.0019528194976395907,
+      "status": "typical-hamming-rescaled-pair-gap-target-quantified",
+      "target_rescaled_pair_gap_lower_bound": 0.00390625,
+      "target_rescaled_pair_gap_polynomial_degree": 2,
+      "typical_hamming_profile_suffices_for_M4": true,
+      "typical_window_binomial_mass": 0.9998435827914705,
+      "typical_window_lower_weight": 11,
+      "typical_window_upper_weight": 35
+    },
+    {
+      "child_cube_dimension": 81,
+      "child_leaf_count_log2": 81,
+      "equivalent_pair_gap_log2_lower_bound": -171.16992500144232,
+      "information_threshold_copy_count": 80,
+      "n": 24,
+      "natural_typical_ridge_pair_gap_proved": false,
+      "resulting_M4_lower_bound": 0.0008680141506760573,
+      "status": "typical-hamming-rescaled-pair-gap-target-quantified",
+      "target_rescaled_pair_gap_lower_bound": 0.001736111111111111,
+      "target_rescaled_pair_gap_polynomial_degree": 2,
+      "typical_hamming_profile_suffices_for_M4": true,
+      "typical_window_binomial_mass": 0.9999523015788181,
+      "typical_window_lower_weight": 23,
+      "typical_window_upper_weight": 58
+    },
+    {
+      "child_cube_dimension": 119,
+      "child_leaf_count_log2": 119,
+      "equivalent_pair_gap_log2_lower_bound": -248.0,
+      "information_threshold_copy_count": 118,
+      "n": 32,
+      "natural_typical_ridge_pair_gap_proved": false,
+      "resulting_M4_lower_bound": 0.0004882591546156081,
+      "status": "typical-hamming-rescaled-pair-gap-target-quantified",
+      "target_rescaled_pair_gap_lower_bound": 0.0009765625,
+      "target_rescaled_pair_gap_polynomial_degree": 2,
+      "typical_hamming_profile_suffices_for_M4": true,
+      "typical_window_binomial_mass": 0.9999547486527653,
+      "typical_window_lower_weight": 38,
+      "typical_window_upper_weight": 81
+    },
+    {
+      "child_cube_dimension": 204,
+      "child_leaf_count_log2": 204,
+      "equivalent_pair_gap_log2_lower_bound": -419.1699250014423,
+      "information_threshold_copy_count": 203,
+      "n": 48,
+      "natural_typical_ridge_pair_gap_proved": false,
+      "resulting_M4_lower_bound": 0.00021700694571993487,
+      "status": "typical-hamming-rescaled-pair-gap-target-quantified",
+      "target_rescaled_pair_gap_lower_bound": 0.00043402777777777775,
+      "target_rescaled_pair_gap_polynomial_degree": 2,
+      "typical_hamming_profile_suffices_for_M4": true,
+      "typical_window_binomial_mass": 0.9999680058774599,
+      "typical_window_lower_weight": 73,
+      "typical_window_upper_weight": 131
+    },
+    {
+      "child_cube_dimension": 297,
+      "child_leaf_count_log2": 297,
+      "equivalent_pair_gap_log2_lower_bound": -606.0,
+      "information_threshold_copy_count": 296,
+      "n": 64,
+      "natural_typical_ridge_pair_gap_proved": false,
+      "resulting_M4_lower_bound": 0.00012206836784300887,
+      "status": "typical-hamming-rescaled-pair-gap-target-quantified",
+      "target_rescaled_pair_gap_lower_bound": 0.000244140625,
+      "target_rescaled_pair_gap_polynomial_degree": 2,
+      "typical_hamming_profile_suffices_for_M4": true,
+      "typical_window_binomial_mass": 0.9999840693699287,
+      "typical_window_lower_weight": 112,
+      "typical_window_upper_weight": 185
+    },
+    {
+      "child_cube_dimension": 500,
+      "child_leaf_count_log2": 500,
+      "equivalent_pair_gap_log2_lower_bound": -1013.1699250014423,
+      "information_threshold_copy_count": 499,
+      "n": 96,
+      "natural_typical_ridge_pair_gap_proved": false,
+      "resulting_M4_lower_bound": 5.425273709944696e-05,
+      "status": "typical-hamming-rescaled-pair-gap-target-quantified",
+      "target_rescaled_pair_gap_lower_bound": 0.00010850694444444444,
+      "target_rescaled_pair_gap_polynomial_degree": 2,
+      "typical_hamming_profile_suffices_for_M4": true,
+      "typical_window_binomial_mass": 0.9999864502170064,
+      "typical_window_lower_weight": 202,
+      "typical_window_upper_weight": 298
+    },
+    {
+      "child_cube_dimension": 718,
+      "child_leaf_count_log2": 718,
+      "equivalent_pair_gap_log2_lower_bound": -1450.0,
+      "information_threshold_copy_count": 717,
+      "n": 128,
+      "natural_typical_ridge_pair_gap_proved": false,
+      "resulting_M4_lower_bound": 3.0517394637619552e-05,
+      "status": "typical-hamming-rescaled-pair-gap-target-quantified",
+      "target_rescaled_pair_gap_lower_bound": 6.103515625e-05,
+      "target_rescaled_pair_gap_polynomial_degree": 2,
+      "typical_hamming_profile_suffices_for_M4": true,
+      "typical_window_binomial_mass": 0.9999939874855175,
+      "typical_window_lower_weight": 299,
+      "typical_window_upper_weight": 419
+    },
+    {
+      "child_cube_dimension": 1685,
+      "child_leaf_count_log2": 1685,
+      "equivalent_pair_gap_log2_lower_bound": -3386.0,
+      "information_threshold_copy_count": 1684,
+      "n": 256,
+      "natural_typical_ridge_pair_gap_proved": false,
+      "resulting_M4_lower_bound": 7.629381156172586e-06,
+      "status": "typical-hamming-rescaled-pair-gap-target-quantified",
+      "target_rescaled_pair_gap_lower_bound": 1.52587890625e-05,
+      "target_rescaled_pair_gap_polynomial_degree": 2,
+      "typical_hamming_profile_suffices_for_M4": true,
+      "typical_window_binomial_mass": 0.9999982469018532,
+      "typical_window_lower_weight": 745,
+      "typical_window_upper_weight": 940
+    }
+  ],
+  "status": "component-M4-reduced-to-typical-hamming-ridge-pair-gap",
+  "summary": "Used exact source-relabeling symmetry to collapse the annealed final-root component M4 to a binomial average of q^2-rescaled typical-Hamming pair commutators.",
+  "theorem_contract": {
+    "annealed_hamming_profile": "The iid Plancherel and globally-distinct conditioned laws are invariant under those relabelings, so expected pair gaps in a final-root child depend only on Hamming distance.",
+    "binomial_M4_identity": "For q=2^m child leaves, M4=(q/2)sum_w binom(m,w)c_w=(1/2)E_W[q^2 c_W] exactly.",
+    "scope": "The reduction does not prove a nonzero natural typical-pair gap. Blockwise Hamming covariance is neither assumed nor true.",
+    "source_relabeling_covariance": "Pair flips and copy-pair permutations conjugate orientation projectors, child frames, common spans, exact/ridge component effects, and their pair commutators as in equation (1).",
+    "typical_pair_sufficiency": "If q^2 c_w>=kappa on Hamming weights of binomial mass rho, then M4>=rho*kappa/2."
+  }
+}

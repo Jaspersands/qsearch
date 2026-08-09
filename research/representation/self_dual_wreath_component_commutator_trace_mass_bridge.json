@@ -1,0 +1,222 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Scalar commutator trace can be diluted relative to physical support just like nonscalarity source mass.",
+      "resolution": "The direction needed here is protected by D_com<=2Q, so M_4/2 is already a physical support lower bound.",
+      "resolved": true
+    },
+    {
+      "objection": "A positive component edge is needed before a commutator trace can certify support.",
+      "resolution": "False. The universal operator upper bound, not a positive lower edge, gives the support implication.",
+      "resolved": true
+    },
+    {
+      "objection": "Full-rank nonscalarity or non-reciprocal spectra make the fourth-moment gap positive.",
+      "resolution": "The orthogonal and cyclic commuting controls have zero gap despite those properties.",
+      "resolved": true
+    },
+    {
+      "objection": "Independent-Plancherel sibling frame moments already prove the compressed component gap.",
+      "resolution": "Those moments concern uncompressed sibling frames, not pseudoinverse-normalized common-span effects. A new calculation is required.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "center_valued_local_law_required_for_support_bridge": false,
+    "coherent_component_algebra_compiler_proved": false,
+    "component_commutator_trace_is_fourth_moment_gap": true,
+    "minimum_component_edge_required_for_support_bridge": false,
+    "natural_compressed_component_M4_positive": false,
+    "natural_noncommutative_component_physical_mass_proved": false,
+    "physical_pgm_outside_mrs_transcript_postprocessing_proved": false,
+    "reason": "The support problem is reduced to a scalar fourth-order gap, but that gap has not been evaluated for natural compressed final-root effects.",
+    "scalar_M4_lower_bound_implies_physical_support_mass": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-09T05:37:47.421672+00:00",
+  "falsifiers_triggered": [
+    "Nonscalarity and non-reciprocal spectra do not force a positive commutator moment gap.",
+    "A scalar commutator fourth-moment lower bound is not diluted away from physical support; half of it transfers universally.",
+    "Uncompressed sibling-frame degree-four freeness is not the missing compressed-component calculation.",
+    "No natural M_4 lower bound, component compiler, MRS separation, decoder, or speedup is proved."
+  ],
+  "finite_controls": [
+    {
+      "commutator_defect_maximum_eigenvalue": 0.0,
+      "commutator_defect_rank": 0,
+      "commutator_defect_trace": 0.0,
+      "commutator_support_fraction": 0.0,
+      "control_id": "GLOBAL-SCALAR",
+      "crossing_fourth_moment": 0.43320000000000003,
+      "effects_pairwise_commute": true,
+      "exact_trace_identity_verified": true,
+      "fiber_dimension": 3,
+      "fourth_moment_gap": 0.0,
+      "maximum_pair_commutator_norm": 0.0,
+      "noncrossing_fourth_moment": 0.43320000000000003,
+      "normalized_commutator_trace": 0.0,
+      "outcome_count": 3,
+      "status": "commuting-zero-fourth-moment-gap-verified",
+      "support_mass_bridge_verified": true,
+      "trace_half_support_lower_bound": 0.0,
+      "universal_operator_bound_verified": true,
+      "universal_trace_bound_verified": true
+    },
+    {
+      "commutator_defect_maximum_eigenvalue": 0.0,
+      "commutator_defect_rank": 0,
+      "commutator_defect_trace": 0.0,
+      "commutator_support_fraction": 0.0,
+      "control_id": "ORTHOGONAL-PVM",
+      "crossing_fourth_moment": 4.0,
+      "effects_pairwise_commute": true,
+      "exact_trace_identity_verified": true,
+      "fiber_dimension": 4,
+      "fourth_moment_gap": 0.0,
+      "maximum_pair_commutator_norm": 0.0,
+      "noncrossing_fourth_moment": 4.0,
+      "normalized_commutator_trace": 0.0,
+      "outcome_count": 4,
+      "status": "commuting-zero-fourth-moment-gap-verified",
+      "support_mass_bridge_verified": true,
+      "trace_half_support_lower_bound": 0.0,
+      "universal_operator_bound_verified": true,
+      "universal_trace_bound_verified": true
+    },
+    {
+      "commutator_defect_maximum_eigenvalue": 0.0,
+      "commutator_defect_rank": 0,
+      "commutator_defect_trace": 0.0,
+      "commutator_support_fraction": 0.0,
+      "control_id": "COMMUTING-NONRECIPROCAL-CYCLIC",
+      "crossing_fourth_moment": 2.1604938271604945,
+      "effects_pairwise_commute": true,
+      "exact_trace_identity_verified": true,
+      "fiber_dimension": 7,
+      "fourth_moment_gap": -4.440892098500626e-16,
+      "maximum_pair_commutator_norm": 0.0,
+      "noncrossing_fourth_moment": 2.160493827160494,
+      "normalized_commutator_trace": 0.0,
+      "outcome_count": 7,
+      "status": "commuting-zero-fourth-moment-gap-verified",
+      "support_mass_bridge_verified": true,
+      "trace_half_support_lower_bound": 0.0,
+      "universal_operator_bound_verified": true,
+      "universal_trace_bound_verified": true
+    },
+    {
+      "commutator_defect_maximum_eigenvalue": 0.11111111111111097,
+      "commutator_defect_rank": 2,
+      "commutator_defect_trace": 0.22222222222222193,
+      "commutator_support_fraction": 1.0,
+      "control_id": "TRINE-NONCOMMUTATIVE",
+      "crossing_fourth_moment": 0.6666666666666661,
+      "effects_pairwise_commute": false,
+      "exact_trace_identity_verified": true,
+      "fiber_dimension": 2,
+      "fourth_moment_gap": 0.22222222222222188,
+      "maximum_pair_commutator_norm": 0.19245008972987515,
+      "noncrossing_fourth_moment": 0.888888888888888,
+      "normalized_commutator_trace": 0.11111111111111097,
+      "outcome_count": 3,
+      "status": "noncommutative-fourth-moment-support-bridge-verified",
+      "support_mass_bridge_verified": true,
+      "trace_half_support_lower_bound": 0.05555555555555548,
+      "universal_operator_bound_verified": true,
+      "universal_trace_bound_verified": true
+    }
+  ],
+  "headline_metrics": {
+    "exact_component_commutator_fourth_moment_identity_theorem_count": 1,
+    "finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "natural_compressed_component_M4_lower_bound_theorem_count": 0,
+    "natural_noncommutative_component_physical_mass_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "scalar_moment_to_physical_support_bridge_theorem_count": 1,
+    "trine_normalized_fourth_moment_gap": 0.11111111111111097,
+    "universal_commutator_operator_bound_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "reduce_component_commutator_support_to_scalar_fourth_moment_gap",
+      "resolution": "The exact trace identity and D_com<=2Q transfer M_4/2 directly to physical and central support mass.",
+      "resolved": true
+    },
+    {
+      "obligation": "evaluate_natural_compressed_non_crossing_and_crossing_component_moments",
+      "resolution": "Compute equation (2) from the compressed regular-master pseudoinverse formula under independent then globally distinct Plancherel sources.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_positive_natural_M4_at_constant_or_inverse_polynomial_scale",
+      "resolution": "Finite S6 and Haar/free surrogates cannot establish the required natural physical normalization.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_the_detected_component_algebra_branch",
+      "resolution": "Positive support still needs a coherent matrix dilation; zero gap would instead require a coherent simultaneous eigenbasis.",
+      "resolved": false
+    }
+  ],
+  "regular_master_reduction": {
+    "center_valued_local_law_required": false,
+    "globally_distinct_conditioning_transferred": false,
+    "incoming_state_support_bound": "Tr(rho Q)>=Tr(rho D_com)/2 blockwise",
+    "minimum_positive_component_edge_required": false,
+    "moment_mass": "M_4=E_Plancherel Tr(D_com,Lambda)/D_Lambda",
+    "natural_M4_lower_bound_proved": false,
+    "physical_support_mass_lower_bound": "M_4/2",
+    "source_block_probability_lower_bound": "M_4/2"
+  },
+  "scaling_records": [
+    {
+      "center_valued_rank_law_required": false,
+      "fourth_moment_mass_lower_bound": 1.0,
+      "minimum_component_edge_required": false,
+      "physical_support_mass_lower_bound": 0.5,
+      "source_block_probability_lower_bound": 0.5,
+      "status": "scalar-fourth-moment-gap-transfers-directly-to-support-mass"
+    },
+    {
+      "center_valued_rank_law_required": false,
+      "fourth_moment_mass_lower_bound": 0.5,
+      "minimum_component_edge_required": false,
+      "physical_support_mass_lower_bound": 0.25,
+      "source_block_probability_lower_bound": 0.25,
+      "status": "scalar-fourth-moment-gap-transfers-directly-to-support-mass"
+    },
+    {
+      "center_valued_rank_law_required": false,
+      "fourth_moment_mass_lower_bound": 0.1,
+      "minimum_component_edge_required": false,
+      "physical_support_mass_lower_bound": 0.05,
+      "source_block_probability_lower_bound": 0.05,
+      "status": "scalar-fourth-moment-gap-transfers-directly-to-support-mass"
+    },
+    {
+      "center_valued_rank_law_required": false,
+      "fourth_moment_mass_lower_bound": 0.01,
+      "minimum_component_edge_required": false,
+      "physical_support_mass_lower_bound": 0.005,
+      "source_block_probability_lower_bound": 0.005,
+      "status": "scalar-fourth-moment-gap-transfers-directly-to-support-mass"
+    },
+    {
+      "center_valued_rank_law_required": false,
+      "fourth_moment_mass_lower_bound": 0.001,
+      "minimum_component_edge_required": false,
+      "physical_support_mass_lower_bound": 0.0005,
+      "source_block_probability_lower_bound": 0.0005,
+      "status": "scalar-fourth-moment-gap-transfers-directly-to-support-mass"
+    }
+  ],
+  "status": "commutator-support-reduced-to-natural-compressed-fourth-moment-gap",
+  "summary": "Reduced natural noncommutative component support to one physically normalized scalar fourth-moment gap with no edge or center-valued rank premise.",
+  "theorem_contract": {
+    "fourth_moment_identity": "Tr(D_com)=Tr((sum_e H_e^2)^2)-sum_(e,f)Tr(H_eH_fH_eH_f) exactly.",
+    "physical_support_bridge": "For Q=supp(D_com), D_com<=2Q. Therefore ordinary regular-master scalar moment mass M_4 lower-bounds physical and central support mass by M_4/2, and Tr(rho Q)>=Tr(rho D_com)/2.",
+    "scope": "The theorem reduces natural noncommutative mass to a scalar degree-four gap but does not prove that the natural gap is positive.",
+    "universal_bounds": "Every POVM obeys 0<=Tr(D_com)<=r and 0<=D_com<=2I."
+  }
+}

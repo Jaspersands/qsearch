@@ -35,6 +35,7 @@ def wire_batch(modules_info, last_exp_id=None):
             neg_id = "NEG-" + exp_id[9:]
             upsert_block = f"""
     if write_registry:
+        _res_payload = report if "report" in locals() else (payload if "payload" in locals() else result)
         from research_registry import (
             ExperimentResultRecord,
             NegativeResultRecord,
@@ -60,7 +61,7 @@ def wire_batch(modules_info, last_exp_id=None):
                     registry_experiment_id,
                     "PO-MEASUREMENT",
                 ],
-                evidence=payload.get("headline_metrics", {{}}),
+                evidence=_res_payload.get("headline_metrics", {{}}),
             )
         )
         upsert_experiment_result(
@@ -71,21 +72,20 @@ def wire_batch(modules_info, last_exp_id=None):
                 ),
                 experiment_id=registry_experiment_id,
                 candidate_id=registry_candidate_id,
-                created_at=payload.get("created_at", ""),
-                status=payload.get("status", "completed"),
-                summary=payload.get("summary", ""),
-                metrics=payload.get("headline_metrics", {{}}),
-                falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                created_at=_res_payload.get("created_at", ""),
+                status=_res_payload.get("status", "completed"),
+                summary=_res_payload.get("summary", ""),
+                metrics=_res_payload.get("headline_metrics", {{}}),
+                falsifiers_triggered=_res_payload.get("falsifiers_triggered", []),
                 artifacts={{
                     "{mod_name}": str(path)
                 }},
             )
-        )
-    return payload"""
+        )"""
 
             code = re.sub(
-                r"(\n    return payload)(\n\n|\n$)",
-                r"\n" + upsert_block + r"\2",
+                r"(\n    return (?:payload|report|result|res))(\n\n|\n$)",
+                r"\n" + upsert_block + r"\1\2",
                 code,
                 count=1,
             )

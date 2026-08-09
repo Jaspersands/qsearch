@@ -1,0 +1,1716 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "High algebraic degree can evade affine-code no-go theorems.",
+      "resolution": "Not in this graph family: an arbitrary high-degree g still has one of the same eight bounded two-face relators.",
+      "resolved": true
+    },
+    {
+      "objection": "A nonlinear global code requires a growing-word analysis.",
+      "resolution": "False here: a single constant-size face already supplies the uniform half-exponent loss.",
+      "resolved": true
+    },
+    {
+      "objection": "Removing the explicit parity check evades the face proof.",
+      "resolution": "False for systematic codes: the complete proper-square census has one exceptional orientation, impossible on all pairs for r>=3.",
+      "resolved": true
+    },
+    {
+      "objection": "The near-zero generic margin survives actual reduction.",
+      "resolution": "False for every C_g: the local face raises the true margin by at least one half.",
+      "resolved": true
+    }
+  ],
+  "all_depth_certificate": {
+    "arbitrary_boolean_function_controlled": true,
+    "arbitrary_proper_four_coloring_controlled": true,
+    "code_formula": "C_g={(x,parity(x),g(x)):x in F_2^r}, g(0)=0",
+    "code_size_formula": "2^r",
+    "exceptional_case_cannot_cover_all_pairs_for_width_at_least_three": true,
+    "exceptional_face_case_count": 1,
+    "generic_margin_formula": "0.5*log2(2^r/(2^r-1))",
+    "local_face_case_count": 8,
+    "maximum_two_check_solution_exponent": 1.5,
+    "minimum_distance_lower_bound": 2,
+    "minimum_information_width": 2,
+    "normalized_proper_four_coloring_face_case_count": 21,
+    "status": "all-depth-boolean-graph-stopping-core-pressure-no-go",
+    "total_solution_exponent_upper_bound": 6.5,
+    "true_margin_lower_bound_formula": "0.5 + 0.5*log2(2^r/(2^r-1))",
+    "uniform_true_margin_lower_bound": 0.5,
+    "universal_all_depth_pressure_no_go_verified": true
+  },
+  "claim_gate": {
+    "all_codimension_two_stopping_codes_controlled": false,
+    "all_eight_local_face_words_controlled": true,
+    "all_nonlinear_stopping_cores_controlled": false,
+    "all_proper_four_color_face_words_classified": true,
+    "all_systematic_codimension_two_stopping_codes_controlled": true,
+    "arbitrary_boolean_graph_function_controlled": true,
+    "boolean_graph_core_actual_pressure_survives": false,
+    "generic_integer_margin_uniformly_positive": false,
+    "natural_component_M4_positive": false,
+    "nonlinear_nonpeelable_graph_codes_constructed": true,
+    "reason": "Every systematic codimension-two stopping code of width at least three contains a nonexceptional square word with at least half an exponent of S_n solution loss.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-09T05:37:44.129862+00:00",
+  "face_certificates": [
+    {
+      "exact_case_classification_verified": true,
+      "g_e_i": 0,
+      "g_e_i_plus_e_j": 0,
+      "g_e_j": 0,
+      "normal_form_description": "p^2=1; q is free",
+      "normal_form_kind": "involution",
+      "residual_word": [
+        -1,
+        -1
+      ],
+      "status": "exact-bounded-local-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.5
+    },
+    {
+      "exact_case_classification_verified": true,
+      "g_e_i": 0,
+      "g_e_i_plus_e_j": 1,
+      "g_e_j": 0,
+      "normal_form_description": "q=p^2",
+      "normal_form_kind": "solve-generator",
+      "residual_word": [
+        -1,
+        -1,
+        2
+      ],
+      "status": "exact-bounded-local-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.0
+    },
+    {
+      "exact_case_classification_verified": true,
+      "g_e_i": 0,
+      "g_e_i_plus_e_j": 0,
+      "g_e_j": 1,
+      "normal_form_description": "q=p^-2",
+      "normal_form_kind": "solve-generator",
+      "residual_word": [
+        -1,
+        -2,
+        -1
+      ],
+      "status": "exact-bounded-local-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.0
+    },
+    {
+      "exact_case_classification_verified": true,
+      "g_e_i": 0,
+      "g_e_i_plus_e_j": 1,
+      "g_e_j": 1,
+      "normal_form_description": "q conjugates p to p^-1; |solutions|=|G|k(G) for S_n",
+      "normal_form_kind": "inverse-conjugacy",
+      "residual_word": [
+        -1,
+        -2,
+        -1,
+        2
+      ],
+      "status": "exact-bounded-local-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.0
+    },
+    {
+      "exact_case_classification_verified": true,
+      "g_e_i": 1,
+      "g_e_i_plus_e_j": 0,
+      "g_e_j": 0,
+      "normal_form_description": "q=p^-2",
+      "normal_form_kind": "solve-generator",
+      "residual_word": [
+        -2,
+        -1,
+        -1
+      ],
+      "status": "exact-bounded-local-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.0
+    },
+    {
+      "exact_case_classification_verified": true,
+      "g_e_i": 1,
+      "g_e_i_plus_e_j": 1,
+      "g_e_j": 0,
+      "normal_form_description": "p^2=1 after conjugating the relator by q",
+      "normal_form_kind": "involution",
+      "residual_word": [
+        -2,
+        -1,
+        -1,
+        2
+      ],
+      "status": "exact-bounded-local-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.5
+    },
+    {
+      "exact_case_classification_verified": true,
+      "g_e_i": 1,
+      "g_e_i_plus_e_j": 0,
+      "g_e_j": 1,
+      "normal_form_description": "(q^-1 p^-1)^2=1",
+      "normal_form_kind": "involution-after-nielsen",
+      "residual_word": [
+        -2,
+        -1,
+        -2,
+        -1
+      ],
+      "status": "exact-bounded-local-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.5
+    },
+    {
+      "exact_case_classification_verified": true,
+      "g_e_i": 1,
+      "g_e_i_plus_e_j": 1,
+      "g_e_j": 1,
+      "normal_form_description": "with r=q^-1 p^-1, the relation is r^2 q=1",
+      "normal_form_kind": "solve-after-nielsen",
+      "residual_word": [
+        -2,
+        -1,
+        -2,
+        -1,
+        2
+      ],
+      "status": "exact-bounded-local-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.0
+    }
+  ],
+  "falsifiers_triggered": [
+    "Nonlinearity alone does not evade bounded local word obstructions.",
+    "Growing algebraic degree does not force a growing residual word.",
+    "Codimension-two graph-code density does not preserve leading mass.",
+    "A single Boolean face can dequantize an entire scalable family.",
+    "Removing the explicit parity check does not remove every local obstruction."
+  ],
+  "headline_metrics": {
+    "all_depth_boolean_graph_core_no_go_theorem_count": 1,
+    "classified_boolean_face_case_count": 8,
+    "classified_proper_four_color_face_case_count": 21,
+    "control_failure_count": 0,
+    "exceptional_proper_four_color_face_case_count": 1,
+    "face_case_failure_count": 0,
+    "maximum_stored_algebraic_degree": 4,
+    "maximum_stored_information_width": 4,
+    "minimum_stored_local_face_pressure_margin": 0.5465547021957402,
+    "new_quantum_algorithm_count": 0,
+    "proper_four_color_face_failure_count": 0,
+    "stored_graph_code_control_count": 12,
+    "stored_non_parity_factor_coloring_control_count": 3,
+    "stored_nonlinear_graph_code_control_count": 8,
+    "stored_proper_four_coloring_control_count": 5,
+    "uniform_true_pressure_margin_lower_bound": 0.5
+  },
+  "proof_obligations": [
+    {
+      "obligation": "classify_all_local_boolean_face_relators",
+      "resolution": "All eight truth triples have explicit bounded-loss normal forms.",
+      "resolved": true
+    },
+    {
+      "obligation": "control_arbitrary_nonlinear_boolean_graph_codes",
+      "resolution": "The proof uses only one two-dimensional face and is independent of the degree or global truth table of g.",
+      "resolved": true
+    },
+    {
+      "obligation": "classify_all_systematic_codimension_two_stopping_codes",
+      "resolution": "Twenty-one proper square cases have one exceptional ordering, which cannot occur on every origin face once r>=3.",
+      "resolved": true
+    },
+    {
+      "obligation": "classify_non_systematic_codimension_two_stopping_codes",
+      "resolution": "Prove an information-set theorem or construct codes of size 2^(k-2) whose every coordinate projection has collisions.",
+      "resolved": false
+    }
+  ],
+  "proper_four_color_face_certificates": [
+    {
+      "exact_case_classification_verified": true,
+      "exceptional_ordered_linear_cancellation": false,
+      "first_singleton_color": [
+        0,
+        1
+      ],
+      "opposite_corner_color": [
+        0,
+        0
+      ],
+      "proper_square_coloring_verified": true,
+      "residual_word": [
+        -2,
+        -2
+      ],
+      "second_singleton_color": [
+        0,
+        1
+      ],
+      "status": "exact-proper-four-color-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.5
+    },
+    {
+      "exact_case_classification_verified": true,
+      "exceptional_ordered_linear_cancellation": false,
+      "first_singleton_color": [
+        0,
+        1
+      ],
+      "opposite_corner_color": [
+        1,
+        0
+      ],
+      "proper_square_coloring_verified": true,
+      "residual_word": [
+        -2,
+        -2,
+        1
+      ],
+      "second_singleton_color": [
+        0,
+        1
+      ],
+      "status": "exact-proper-four-color-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.0
+    },
+    {
+      "exact_case_classification_verified": true,
+      "exceptional_ordered_linear_cancellation": false,
+      "first_singleton_color": [
+        0,
+        1
+      ],
+      "opposite_corner_color": [
+        1,
+        1
+      ],
+      "proper_square_coloring_verified": true,
+      "residual_word": [
+        -2,
+        1
+      ],
+      "second_singleton_color": [
+        0,
+        1
+      ],
+      "status": "exact-proper-four-color-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.0
+    },
+    {
+      "exact_case_classification_verified": true,
+      "exceptional_ordered_linear_cancellation": false,
+      "first_singleton_color": [
+        0,
+        1
+      ],
+      "opposite_corner_color": [
+        0,
+        0
+      ],
+      "proper_square_coloring_verified": true,
+      "residual_word": [
+        -2,
+        -1
+      ],
+      "second_singleton_color": [
+        1,
+        0
+      ],
+      "status": "exact-proper-four-color-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.0
+    },
+    {
+      "exact_case_classification_verified": true,
+      "exceptional_ordered_linear_cancellation": true,
+      "first_singleton_color": [
+        0,
+        1
+      ],
+      "opposite_corner_color": [
+        1,
+        1
+      ],
+      "proper_square_coloring_verified": true,
+      "residual_word": [],
+      "second_singleton_color": [
+        1,
+        0
+      ],
+      "status": "exceptional-ordered-linear-face-cancellation",
+      "two_generator_solution_exponent_upper_bound": 2.0
+    },
+    {
+      "exact_case_classification_verified": true,
+      "exceptional_ordered_linear_cancellation": false,
+      "first_singleton_color": [
+        0,
+        1
+      ],
+      "opposite_corner_color": [
+        0,
+        0
+      ],
+      "proper_square_coloring_verified": true,
+      "residual_word": [
+        -2,
+        -2,
+        -1
+      ],
+      "second_singleton_color": [
+        1,
+        1
+      ],
+      "status": "exact-proper-four-color-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.0
+    },
+    {
+      "exact_case_classification_verified": true,
+      "exceptional_ordered_linear_cancellation": false,
+      "first_singleton_color": [
+        0,
+        1
+      ],
+      "opposite_corner_color": [
+        1,
+        0
+      ],
+      "proper_square_coloring_verified": true,
+      "residual_word": [
+        -2,
+        -2
+      ],
+      "second_singleton_color": [
+        1,
+        1
+      ],
+      "status": "exact-proper-four-color-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.5
+    },
+    {
+      "exact_case_classification_verified": true,
+      "exceptional_ordered_linear_cancellation": false,
+      "first_singleton_color": [
+        1,
+        0
+      ],
+      "opposite_corner_color": [
+        0,
+        0
+      ],
+      "proper_square_coloring_verified": true,
+      "residual_word": [
+        -2,
+        -1
+      ],
+      "second_singleton_color": [
+        0,
+        1
+      ],
+      "status": "exact-proper-four-color-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.0
+    },
+    {
+      "exact_case_classification_verified": true,
+      "exceptional_ordered_linear_cancellation": false,
+      "first_singleton_color": [
+        1,
+        0
+      ],
+      "opposite_corner_color": [
+        1,
+        1
+      ],
+      "proper_square_coloring_verified": true,
+      "residual_word": [
+        -2,
+        -1,
+        2,
+        1
+      ],
+      "second_singleton_color": [
+        0,
+        1
+      ],
+      "status": "exact-proper-four-color-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.0
+    },
+    {
+      "exact_case_classification_verified": true,
+      "exceptional_ordered_linear_cancellation": false,
+      "first_singleton_color": [
+        1,
+        0
+      ],
+      "opposite_corner_color": [
+        0,
+        0
+      ],
+      "proper_square_coloring_verified": true,
+      "residual_word": [
+        -1,
+        -1
+      ],
+      "second_singleton_color": [
+        1,
+        0
+      ],
+      "status": "exact-proper-four-color-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.5
+    },
+    {
+      "exact_case_classification_verified": true,
+      "exceptional_ordered_linear_cancellation": false,
+      "first_singleton_color": [
+        1,
+        0
+      ],
+      "opposite_corner_color": [
+        0,
+        1
+      ],
+      "proper_square_coloring_verified": true,
+      "residual_word": [
+        -2,
+        1,
+        1
+      ],
+      "second_singleton_color": [
+        1,
+        0
+      ],
+      "status": "exact-proper-four-color-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.0
+    },
+    {
+      "exact_case_classification_verified": true,
+      "exceptional_ordered_linear_cancellation": false,
+      "first_singleton_color": [
+        1,
+        0
+      ],
+      "opposite_corner_color": [
+        1,
+        1
+      ],
+      "proper_square_coloring_verified": true,
+      "residual_word": [
+        -2,
+        1
+      ],
+      "second_singleton_color": [
+        1,
+        0
+      ],
+      "status": "exact-proper-four-color-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.0
+    },
+    {
+      "exact_case_classification_verified": true,
+      "exceptional_ordered_linear_cancellation": false,
+      "first_singleton_color": [
+        1,
+        0
+      ],
+      "opposite_corner_color": [
+        0,
+        0
+      ],
+      "proper_square_coloring_verified": true,
+      "residual_word": [
+        -2,
+        -1,
+        -1
+      ],
+      "second_singleton_color": [
+        1,
+        1
+      ],
+      "status": "exact-proper-four-color-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.0
+    },
+    {
+      "exact_case_classification_verified": true,
+      "exceptional_ordered_linear_cancellation": false,
+      "first_singleton_color": [
+        1,
+        0
+      ],
+      "opposite_corner_color": [
+        0,
+        1
+      ],
+      "proper_square_coloring_verified": true,
+      "residual_word": [
+        -2,
+        -1,
+        2,
+        -1
+      ],
+      "second_singleton_color": [
+        1,
+        1
+      ],
+      "status": "exact-proper-four-color-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.0
+    },
+    {
+      "exact_case_classification_verified": true,
+      "exceptional_ordered_linear_cancellation": false,
+      "first_singleton_color": [
+        1,
+        1
+      ],
+      "opposite_corner_color": [
+        0,
+        0
+      ],
+      "proper_square_coloring_verified": true,
+      "residual_word": [
+        -2,
+        -2,
+        -1
+      ],
+      "second_singleton_color": [
+        0,
+        1
+      ],
+      "status": "exact-proper-four-color-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.0
+    },
+    {
+      "exact_case_classification_verified": true,
+      "exceptional_ordered_linear_cancellation": false,
+      "first_singleton_color": [
+        1,
+        1
+      ],
+      "opposite_corner_color": [
+        1,
+        0
+      ],
+      "proper_square_coloring_verified": true,
+      "residual_word": [
+        -2,
+        -1,
+        -2,
+        1
+      ],
+      "second_singleton_color": [
+        0,
+        1
+      ],
+      "status": "exact-proper-four-color-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.0
+    },
+    {
+      "exact_case_classification_verified": true,
+      "exceptional_ordered_linear_cancellation": false,
+      "first_singleton_color": [
+        1,
+        1
+      ],
+      "opposite_corner_color": [
+        0,
+        0
+      ],
+      "proper_square_coloring_verified": true,
+      "residual_word": [
+        -2,
+        -1,
+        -1
+      ],
+      "second_singleton_color": [
+        1,
+        0
+      ],
+      "status": "exact-proper-four-color-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.0
+    },
+    {
+      "exact_case_classification_verified": true,
+      "exceptional_ordered_linear_cancellation": false,
+      "first_singleton_color": [
+        1,
+        1
+      ],
+      "opposite_corner_color": [
+        0,
+        1
+      ],
+      "proper_square_coloring_verified": true,
+      "residual_word": [
+        -1,
+        -1
+      ],
+      "second_singleton_color": [
+        1,
+        0
+      ],
+      "status": "exact-proper-four-color-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.5
+    },
+    {
+      "exact_case_classification_verified": true,
+      "exceptional_ordered_linear_cancellation": false,
+      "first_singleton_color": [
+        1,
+        1
+      ],
+      "opposite_corner_color": [
+        0,
+        0
+      ],
+      "proper_square_coloring_verified": true,
+      "residual_word": [
+        -2,
+        -1,
+        -2,
+        -1
+      ],
+      "second_singleton_color": [
+        1,
+        1
+      ],
+      "status": "exact-proper-four-color-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.5
+    },
+    {
+      "exact_case_classification_verified": true,
+      "exceptional_ordered_linear_cancellation": false,
+      "first_singleton_color": [
+        1,
+        1
+      ],
+      "opposite_corner_color": [
+        0,
+        1
+      ],
+      "proper_square_coloring_verified": true,
+      "residual_word": [
+        -2,
+        -1,
+        -1
+      ],
+      "second_singleton_color": [
+        1,
+        1
+      ],
+      "status": "exact-proper-four-color-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.0
+    },
+    {
+      "exact_case_classification_verified": true,
+      "exceptional_ordered_linear_cancellation": false,
+      "first_singleton_color": [
+        1,
+        1
+      ],
+      "opposite_corner_color": [
+        1,
+        0
+      ],
+      "proper_square_coloring_verified": true,
+      "residual_word": [
+        -2,
+        -2,
+        -1
+      ],
+      "second_singleton_color": [
+        1,
+        1
+      ],
+      "status": "exact-proper-four-color-face-obstruction",
+      "two_generator_solution_exponent_upper_bound": 1.0
+    }
+  ],
+  "proper_four_coloring_controls": [
+    {
+      "code_size": 8,
+      "coloring_family": "nonfactor_width_three",
+      "exact_control_verified": true,
+      "exceptional_origin_face_count": 0,
+      "has_linear_parity_factor": false,
+      "information_width": 3,
+      "local_face_pressure_margin": 0.5963225389711972,
+      "minimum_code_distance": 2,
+      "origin_face_count": 3,
+      "reducer_certificate_source": "single-orientable-surface-genus-2",
+      "reducer_pressure_margin": 3.096322538971198,
+      "reducer_solution_exponent_upper_bound": 4.0,
+      "remaining_generator_count": 5,
+      "selected_nonexceptional_face": {
+        "exact_case_classification_verified": true,
+        "exceptional_ordered_linear_cancellation": false,
+        "first_singleton_color": [
+          1,
+          0
+        ],
+        "opposite_corner_color": [
+          1,
+          1
+        ],
+        "proper_square_coloring_verified": true,
+        "residual_word": [
+          -2,
+          1
+        ],
+        "second_singleton_color": [
+          1,
+          0
+        ],
+        "status": "exact-proper-four-color-face-obstruction",
+        "two_generator_solution_exponent_upper_bound": 1.0
+      },
+      "status": "proper-four-color-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true
+    },
+    {
+      "code_size": 8,
+      "coloring_family": "linear_cycle",
+      "exact_control_verified": true,
+      "exceptional_origin_face_count": 1,
+      "has_linear_parity_factor": false,
+      "information_width": 3,
+      "local_face_pressure_margin": 0.5963225389711972,
+      "minimum_code_distance": 2,
+      "origin_face_count": 3,
+      "reducer_certificate_source": "single-nonorientable-surface-genus-2",
+      "reducer_pressure_margin": 1.0963225389711972,
+      "reducer_solution_exponent_upper_bound": 6.0,
+      "remaining_generator_count": 7,
+      "selected_nonexceptional_face": {
+        "exact_case_classification_verified": true,
+        "exceptional_ordered_linear_cancellation": false,
+        "first_singleton_color": [
+          1,
+          0
+        ],
+        "opposite_corner_color": [
+          0,
+          1
+        ],
+        "proper_square_coloring_verified": true,
+        "residual_word": [
+          -2,
+          -1,
+          2,
+          -1
+        ],
+        "second_singleton_color": [
+          1,
+          1
+        ],
+        "status": "exact-proper-four-color-face-obstruction",
+        "two_generator_solution_exponent_upper_bound": 1.0
+      },
+      "status": "proper-four-color-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true
+    },
+    {
+      "code_size": 8,
+      "coloring_family": "parity_random",
+      "exact_control_verified": true,
+      "exceptional_origin_face_count": 0,
+      "has_linear_parity_factor": true,
+      "information_width": 3,
+      "local_face_pressure_margin": 0.5963225389711972,
+      "minimum_code_distance": 2,
+      "origin_face_count": 3,
+      "reducer_certificate_source": "single-orientable-surface-genus-2",
+      "reducer_pressure_margin": 2.096322538971198,
+      "reducer_solution_exponent_upper_bound": 5.0,
+      "remaining_generator_count": 6,
+      "selected_nonexceptional_face": {
+        "exact_case_classification_verified": true,
+        "exceptional_ordered_linear_cancellation": false,
+        "first_singleton_color": [
+          1,
+          0
+        ],
+        "opposite_corner_color": [
+          0,
+          0
+        ],
+        "proper_square_coloring_verified": true,
+        "residual_word": [
+          -2,
+          -1,
+          -1
+        ],
+        "second_singleton_color": [
+          1,
+          1
+        ],
+        "status": "exact-proper-four-color-face-obstruction",
+        "two_generator_solution_exponent_upper_bound": 1.0
+      },
+      "status": "proper-four-color-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true
+    },
+    {
+      "code_size": 16,
+      "coloring_family": "linear_cycle",
+      "exact_control_verified": true,
+      "exceptional_origin_face_count": 1,
+      "has_linear_parity_factor": false,
+      "information_width": 4,
+      "local_face_pressure_margin": 0.5465547021957402,
+      "minimum_code_distance": 2,
+      "origin_face_count": 6,
+      "reducer_certificate_source": "single-nonorientable-surface-genus-2",
+      "reducer_pressure_margin": 1.0465547021957402,
+      "reducer_solution_exponent_upper_bound": 6.0,
+      "remaining_generator_count": 7,
+      "selected_nonexceptional_face": {
+        "exact_case_classification_verified": true,
+        "exceptional_ordered_linear_cancellation": false,
+        "first_singleton_color": [
+          1,
+          1
+        ],
+        "opposite_corner_color": [
+          1,
+          0
+        ],
+        "proper_square_coloring_verified": true,
+        "residual_word": [
+          -2,
+          -1,
+          -2,
+          1
+        ],
+        "second_singleton_color": [
+          0,
+          1
+        ],
+        "status": "exact-proper-four-color-face-obstruction",
+        "two_generator_solution_exponent_upper_bound": 1.0
+      },
+      "status": "proper-four-color-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true
+    },
+    {
+      "code_size": 16,
+      "coloring_family": "parity_random",
+      "exact_control_verified": true,
+      "exceptional_origin_face_count": 0,
+      "has_linear_parity_factor": true,
+      "information_width": 4,
+      "local_face_pressure_margin": 0.5465547021957402,
+      "minimum_code_distance": 2,
+      "origin_face_count": 6,
+      "reducer_certificate_source": "single-nonorientable-surface-genus-5",
+      "reducer_pressure_margin": 2.04655470219574,
+      "reducer_solution_exponent_upper_bound": 5.0,
+      "remaining_generator_count": 6,
+      "selected_nonexceptional_face": {
+        "exact_case_classification_verified": true,
+        "exceptional_ordered_linear_cancellation": false,
+        "first_singleton_color": [
+          1,
+          0
+        ],
+        "opposite_corner_color": [
+          0,
+          0
+        ],
+        "proper_square_coloring_verified": true,
+        "residual_word": [
+          -2,
+          -1,
+          -1
+        ],
+        "second_singleton_color": [
+          1,
+          1
+        ],
+        "status": "exact-proper-four-color-face-obstruction",
+        "two_generator_solution_exponent_upper_bound": 1.0
+      },
+      "status": "proper-four-color-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true
+    }
+  ],
+  "representative_controls": [
+    {
+      "algebraic_degree": 0,
+      "code_size": 4,
+      "core_width": 4,
+      "different_support_size": 4,
+      "exact_control_verified": true,
+      "function_family": "zero",
+      "function_is_affine": true,
+      "generic_integer_certificate_margin": 0.20751874963942285,
+      "generic_solution_exponent_upper_bound": 7.0,
+      "information_width": 2,
+      "local_face_pressure_margin": 0.7075187496394229,
+      "local_face_solution_exponent_upper_bound": 6.5,
+      "minimum_code_distance": 2,
+      "reducer_certificate_source": "single-nonorientable-surface-genus-5",
+      "reducer_pressure_margin": 1.207518749639422,
+      "reducer_solution_exponent_upper_bound": 6.0,
+      "remaining_generator_count": 7,
+      "residual_relation_count": 3,
+      "residual_relation_length_profile": [
+        2,
+        14,
+        14
+      ],
+      "residual_target_word": [
+        -12,
+        -11,
+        12,
+        -9,
+        -8,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -8,
+        9,
+        -12,
+        11,
+        12
+      ],
+      "same_support_size": 3,
+      "selected_face_certificate": {
+        "exact_case_classification_verified": true,
+        "g_e_i": 0,
+        "g_e_i_plus_e_j": 0,
+        "g_e_j": 0,
+        "normal_form_description": "p^2=1; q is free",
+        "normal_form_kind": "involution",
+        "residual_word": [
+          -1,
+          -1
+        ],
+        "status": "exact-bounded-local-face-obstruction",
+        "two_generator_solution_exponent_upper_bound": 1.5
+      },
+      "selected_face_values": [
+        0,
+        0,
+        0
+      ],
+      "status": "nonlinear-boolean-graph-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true
+    },
+    {
+      "algebraic_degree": 2,
+      "code_size": 4,
+      "core_width": 4,
+      "different_support_size": 4,
+      "exact_control_verified": true,
+      "function_family": "and",
+      "function_is_affine": false,
+      "generic_integer_certificate_margin": 0.20751874963942285,
+      "generic_solution_exponent_upper_bound": 7.0,
+      "information_width": 2,
+      "local_face_pressure_margin": 0.7075187496394229,
+      "local_face_solution_exponent_upper_bound": 6.5,
+      "minimum_code_distance": 2,
+      "reducer_certificate_source": "single-orientable-surface-genus-2",
+      "reducer_pressure_margin": 2.207518749639422,
+      "reducer_solution_exponent_upper_bound": 5.0,
+      "remaining_generator_count": 6,
+      "residual_relation_count": 1,
+      "residual_relation_length_profile": [
+        12
+      ],
+      "residual_target_word": [
+        -12,
+        -11,
+        12,
+        -8,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        8,
+        -12,
+        11,
+        12
+      ],
+      "same_support_size": 3,
+      "selected_face_certificate": {
+        "exact_case_classification_verified": true,
+        "g_e_i": 0,
+        "g_e_i_plus_e_j": 1,
+        "g_e_j": 0,
+        "normal_form_description": "q=p^2",
+        "normal_form_kind": "solve-generator",
+        "residual_word": [
+          -1,
+          -1,
+          2
+        ],
+        "status": "exact-bounded-local-face-obstruction",
+        "two_generator_solution_exponent_upper_bound": 1.0
+      },
+      "selected_face_values": [
+        0,
+        0,
+        1
+      ],
+      "status": "nonlinear-boolean-graph-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true
+    },
+    {
+      "algebraic_degree": 0,
+      "code_size": 4,
+      "core_width": 4,
+      "different_support_size": 4,
+      "exact_control_verified": true,
+      "function_family": "quadratic_cycle",
+      "function_is_affine": true,
+      "generic_integer_certificate_margin": 0.20751874963942285,
+      "generic_solution_exponent_upper_bound": 7.0,
+      "information_width": 2,
+      "local_face_pressure_margin": 0.7075187496394229,
+      "local_face_solution_exponent_upper_bound": 6.5,
+      "minimum_code_distance": 2,
+      "reducer_certificate_source": "single-nonorientable-surface-genus-5",
+      "reducer_pressure_margin": 1.207518749639422,
+      "reducer_solution_exponent_upper_bound": 6.0,
+      "remaining_generator_count": 7,
+      "residual_relation_count": 3,
+      "residual_relation_length_profile": [
+        2,
+        14,
+        14
+      ],
+      "residual_target_word": [
+        -12,
+        -11,
+        12,
+        -9,
+        -8,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -8,
+        9,
+        -12,
+        11,
+        12
+      ],
+      "same_support_size": 3,
+      "selected_face_certificate": {
+        "exact_case_classification_verified": true,
+        "g_e_i": 0,
+        "g_e_i_plus_e_j": 0,
+        "g_e_j": 0,
+        "normal_form_description": "p^2=1; q is free",
+        "normal_form_kind": "involution",
+        "residual_word": [
+          -1,
+          -1
+        ],
+        "status": "exact-bounded-local-face-obstruction",
+        "two_generator_solution_exponent_upper_bound": 1.5
+      },
+      "selected_face_values": [
+        0,
+        0,
+        0
+      ],
+      "status": "nonlinear-boolean-graph-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true
+    },
+    {
+      "algebraic_degree": 2,
+      "code_size": 4,
+      "core_width": 4,
+      "different_support_size": 4,
+      "exact_control_verified": true,
+      "function_family": "random",
+      "function_is_affine": false,
+      "generic_integer_certificate_margin": 0.20751874963942285,
+      "generic_solution_exponent_upper_bound": 7.0,
+      "information_width": 2,
+      "local_face_pressure_margin": 0.7075187496394229,
+      "local_face_solution_exponent_upper_bound": 6.5,
+      "minimum_code_distance": 2,
+      "reducer_certificate_source": "single-orientable-surface-genus-2",
+      "reducer_pressure_margin": 2.207518749639422,
+      "reducer_solution_exponent_upper_bound": 5.0,
+      "remaining_generator_count": 6,
+      "residual_relation_count": 1,
+      "residual_relation_length_profile": [
+        12
+      ],
+      "residual_target_word": [
+        -12,
+        -11,
+        12,
+        8,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -8,
+        -12,
+        11,
+        12
+      ],
+      "same_support_size": 3,
+      "selected_face_certificate": {
+        "exact_case_classification_verified": true,
+        "g_e_i": 0,
+        "g_e_i_plus_e_j": 0,
+        "g_e_j": 1,
+        "normal_form_description": "q=p^-2",
+        "normal_form_kind": "solve-generator",
+        "residual_word": [
+          -1,
+          -2,
+          -1
+        ],
+        "status": "exact-bounded-local-face-obstruction",
+        "two_generator_solution_exponent_upper_bound": 1.0
+      },
+      "selected_face_values": [
+        0,
+        1,
+        0
+      ],
+      "status": "nonlinear-boolean-graph-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true
+    },
+    {
+      "algebraic_degree": 0,
+      "code_size": 8,
+      "core_width": 5,
+      "different_support_size": 8,
+      "exact_control_verified": true,
+      "function_family": "zero",
+      "function_is_affine": true,
+      "generic_integer_certificate_margin": 0.09632253897119725,
+      "generic_solution_exponent_upper_bound": 7.0,
+      "information_width": 3,
+      "local_face_pressure_margin": 0.5963225389711972,
+      "local_face_solution_exponent_upper_bound": 6.5,
+      "minimum_code_distance": 2,
+      "reducer_certificate_source": "single-orientable-surface-genus-2",
+      "reducer_pressure_margin": 1.0963225389711972,
+      "reducer_solution_exponent_upper_bound": 6.0,
+      "remaining_generator_count": 7,
+      "residual_relation_count": 3,
+      "residual_relation_length_profile": [
+        2,
+        12,
+        14
+      ],
+      "residual_target_word": [
+        -13,
+        -12,
+        13,
+        -10,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -9,
+        -9,
+        10,
+        -13,
+        12,
+        13
+      ],
+      "same_support_size": 7,
+      "selected_face_certificate": {
+        "exact_case_classification_verified": true,
+        "g_e_i": 0,
+        "g_e_i_plus_e_j": 0,
+        "g_e_j": 0,
+        "normal_form_description": "p^2=1; q is free",
+        "normal_form_kind": "involution",
+        "residual_word": [
+          -1,
+          -1
+        ],
+        "status": "exact-bounded-local-face-obstruction",
+        "two_generator_solution_exponent_upper_bound": 1.5
+      },
+      "selected_face_values": [
+        0,
+        0,
+        0
+      ],
+      "status": "nonlinear-boolean-graph-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true
+    },
+    {
+      "algebraic_degree": 3,
+      "code_size": 8,
+      "core_width": 5,
+      "different_support_size": 8,
+      "exact_control_verified": true,
+      "function_family": "and",
+      "function_is_affine": false,
+      "generic_integer_certificate_margin": 0.09632253897119725,
+      "generic_solution_exponent_upper_bound": 7.0,
+      "information_width": 3,
+      "local_face_pressure_margin": 0.5963225389711972,
+      "local_face_solution_exponent_upper_bound": 6.5,
+      "minimum_code_distance": 2,
+      "reducer_certificate_source": "single-orientable-surface-genus-2",
+      "reducer_pressure_margin": 2.096322538971198,
+      "reducer_solution_exponent_upper_bound": 5.0,
+      "remaining_generator_count": 6,
+      "residual_relation_count": 3,
+      "residual_relation_length_profile": [
+        2,
+        10,
+        12
+      ],
+      "residual_target_word": [
+        -13,
+        -12,
+        13,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -13,
+        12,
+        13
+      ],
+      "same_support_size": 7,
+      "selected_face_certificate": {
+        "exact_case_classification_verified": true,
+        "g_e_i": 0,
+        "g_e_i_plus_e_j": 0,
+        "g_e_j": 0,
+        "normal_form_description": "p^2=1; q is free",
+        "normal_form_kind": "involution",
+        "residual_word": [
+          -1,
+          -1
+        ],
+        "status": "exact-bounded-local-face-obstruction",
+        "two_generator_solution_exponent_upper_bound": 1.5
+      },
+      "selected_face_values": [
+        0,
+        0,
+        0
+      ],
+      "status": "nonlinear-boolean-graph-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true
+    },
+    {
+      "algebraic_degree": 2,
+      "code_size": 8,
+      "core_width": 5,
+      "different_support_size": 8,
+      "exact_control_verified": true,
+      "function_family": "quadratic_cycle",
+      "function_is_affine": false,
+      "generic_integer_certificate_margin": 0.09632253897119725,
+      "generic_solution_exponent_upper_bound": 7.0,
+      "information_width": 3,
+      "local_face_pressure_margin": 0.5963225389711972,
+      "local_face_solution_exponent_upper_bound": 6.5,
+      "minimum_code_distance": 2,
+      "reducer_certificate_source": "single-orientable-surface-genus-2",
+      "reducer_pressure_margin": 2.096322538971198,
+      "reducer_solution_exponent_upper_bound": 5.0,
+      "remaining_generator_count": 6,
+      "residual_relation_count": 1,
+      "residual_relation_length_profile": [
+        10
+      ],
+      "residual_target_word": [
+        -13,
+        -12,
+        13,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -13,
+        12,
+        13
+      ],
+      "same_support_size": 7,
+      "selected_face_certificate": {
+        "exact_case_classification_verified": true,
+        "g_e_i": 0,
+        "g_e_i_plus_e_j": 1,
+        "g_e_j": 0,
+        "normal_form_description": "q=p^2",
+        "normal_form_kind": "solve-generator",
+        "residual_word": [
+          -1,
+          -1,
+          2
+        ],
+        "status": "exact-bounded-local-face-obstruction",
+        "two_generator_solution_exponent_upper_bound": 1.0
+      },
+      "selected_face_values": [
+        0,
+        0,
+        1
+      ],
+      "status": "nonlinear-boolean-graph-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true
+    },
+    {
+      "algebraic_degree": 2,
+      "code_size": 8,
+      "core_width": 5,
+      "different_support_size": 8,
+      "exact_control_verified": true,
+      "function_family": "random",
+      "function_is_affine": false,
+      "generic_integer_certificate_margin": 0.09632253897119725,
+      "generic_solution_exponent_upper_bound": 7.0,
+      "information_width": 3,
+      "local_face_pressure_margin": 0.5963225389711972,
+      "local_face_solution_exponent_upper_bound": 6.5,
+      "minimum_code_distance": 2,
+      "reducer_certificate_source": "single-orientable-surface-genus-2",
+      "reducer_pressure_margin": 2.096322538971198,
+      "reducer_solution_exponent_upper_bound": 5.0,
+      "remaining_generator_count": 6,
+      "residual_relation_count": 4,
+      "residual_relation_length_profile": [
+        2,
+        10,
+        12,
+        12
+      ],
+      "residual_target_word": [
+        -13,
+        -12,
+        13,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -13,
+        12,
+        13
+      ],
+      "same_support_size": 7,
+      "selected_face_certificate": {
+        "exact_case_classification_verified": true,
+        "g_e_i": 0,
+        "g_e_i_plus_e_j": 0,
+        "g_e_j": 1,
+        "normal_form_description": "q=p^-2",
+        "normal_form_kind": "solve-generator",
+        "residual_word": [
+          -1,
+          -2,
+          -1
+        ],
+        "status": "exact-bounded-local-face-obstruction",
+        "two_generator_solution_exponent_upper_bound": 1.0
+      },
+      "selected_face_values": [
+        0,
+        1,
+        0
+      ],
+      "status": "nonlinear-boolean-graph-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true
+    },
+    {
+      "algebraic_degree": 0,
+      "code_size": 16,
+      "core_width": 6,
+      "different_support_size": 16,
+      "exact_control_verified": true,
+      "function_family": "zero",
+      "function_is_affine": true,
+      "generic_integer_certificate_margin": 0.046554702195740205,
+      "generic_solution_exponent_upper_bound": 7.0,
+      "information_width": 4,
+      "local_face_pressure_margin": 0.5465547021957402,
+      "local_face_solution_exponent_upper_bound": 6.5,
+      "minimum_code_distance": 2,
+      "reducer_certificate_source": "single-nonorientable-surface-genus-5",
+      "reducer_pressure_margin": 1.0465547021957402,
+      "reducer_solution_exponent_upper_bound": 6.0,
+      "remaining_generator_count": 7,
+      "residual_relation_count": 5,
+      "residual_relation_length_profile": [
+        2,
+        4,
+        14,
+        14,
+        16
+      ],
+      "residual_target_word": [
+        -14,
+        -13,
+        14,
+        -11,
+        -10,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -10,
+        -10,
+        -10,
+        11,
+        -14,
+        13,
+        14
+      ],
+      "same_support_size": 15,
+      "selected_face_certificate": {
+        "exact_case_classification_verified": true,
+        "g_e_i": 0,
+        "g_e_i_plus_e_j": 0,
+        "g_e_j": 0,
+        "normal_form_description": "p^2=1; q is free",
+        "normal_form_kind": "involution",
+        "residual_word": [
+          -1,
+          -1
+        ],
+        "status": "exact-bounded-local-face-obstruction",
+        "two_generator_solution_exponent_upper_bound": 1.5
+      },
+      "selected_face_values": [
+        0,
+        0,
+        0
+      ],
+      "status": "nonlinear-boolean-graph-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true
+    },
+    {
+      "algebraic_degree": 4,
+      "code_size": 16,
+      "core_width": 6,
+      "different_support_size": 16,
+      "exact_control_verified": true,
+      "function_family": "and",
+      "function_is_affine": false,
+      "generic_integer_certificate_margin": 0.046554702195740205,
+      "generic_solution_exponent_upper_bound": 7.0,
+      "information_width": 4,
+      "local_face_pressure_margin": 0.5465547021957402,
+      "local_face_solution_exponent_upper_bound": 6.5,
+      "minimum_code_distance": 2,
+      "reducer_certificate_source": "single-orientable-surface-genus-2",
+      "reducer_pressure_margin": 2.04655470219574,
+      "reducer_solution_exponent_upper_bound": 5.0,
+      "remaining_generator_count": 6,
+      "residual_relation_count": 3,
+      "residual_relation_length_profile": [
+        2,
+        12,
+        14
+      ],
+      "residual_target_word": [
+        -14,
+        -13,
+        14,
+        -10,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        10,
+        -14,
+        13,
+        14
+      ],
+      "same_support_size": 15,
+      "selected_face_certificate": {
+        "exact_case_classification_verified": true,
+        "g_e_i": 0,
+        "g_e_i_plus_e_j": 0,
+        "g_e_j": 0,
+        "normal_form_description": "p^2=1; q is free",
+        "normal_form_kind": "involution",
+        "residual_word": [
+          -1,
+          -1
+        ],
+        "status": "exact-bounded-local-face-obstruction",
+        "two_generator_solution_exponent_upper_bound": 1.5
+      },
+      "selected_face_values": [
+        0,
+        0,
+        0
+      ],
+      "status": "nonlinear-boolean-graph-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true
+    },
+    {
+      "algebraic_degree": 2,
+      "code_size": 16,
+      "core_width": 6,
+      "different_support_size": 16,
+      "exact_control_verified": true,
+      "function_family": "quadratic_cycle",
+      "function_is_affine": false,
+      "generic_integer_certificate_margin": 0.046554702195740205,
+      "generic_solution_exponent_upper_bound": 7.0,
+      "information_width": 4,
+      "local_face_pressure_margin": 0.5465547021957402,
+      "local_face_solution_exponent_upper_bound": 6.5,
+      "minimum_code_distance": 2,
+      "reducer_certificate_source": "single-nonorientable-surface-genus-5",
+      "reducer_pressure_margin": 2.04655470219574,
+      "reducer_solution_exponent_upper_bound": 5.0,
+      "remaining_generator_count": 6,
+      "residual_relation_count": 5,
+      "residual_relation_length_profile": [
+        2,
+        4,
+        12,
+        12,
+        14
+      ],
+      "residual_target_word": [
+        -14,
+        -13,
+        14,
+        -10,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -10,
+        -14,
+        13,
+        14
+      ],
+      "same_support_size": 15,
+      "selected_face_certificate": {
+        "exact_case_classification_verified": true,
+        "g_e_i": 0,
+        "g_e_i_plus_e_j": 1,
+        "g_e_j": 0,
+        "normal_form_description": "q=p^2",
+        "normal_form_kind": "solve-generator",
+        "residual_word": [
+          -1,
+          -1,
+          2
+        ],
+        "status": "exact-bounded-local-face-obstruction",
+        "two_generator_solution_exponent_upper_bound": 1.0
+      },
+      "selected_face_values": [
+        0,
+        0,
+        1
+      ],
+      "status": "nonlinear-boolean-graph-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true
+    },
+    {
+      "algebraic_degree": 3,
+      "code_size": 16,
+      "core_width": 6,
+      "different_support_size": 16,
+      "exact_control_verified": true,
+      "function_family": "random",
+      "function_is_affine": false,
+      "generic_integer_certificate_margin": 0.046554702195740205,
+      "generic_solution_exponent_upper_bound": 7.0,
+      "information_width": 4,
+      "local_face_pressure_margin": 0.5465547021957402,
+      "local_face_solution_exponent_upper_bound": 6.5,
+      "minimum_code_distance": 2,
+      "reducer_certificate_source": "single-nonorientable-surface-genus-5",
+      "reducer_pressure_margin": 2.04655470219574,
+      "reducer_solution_exponent_upper_bound": 5.0,
+      "remaining_generator_count": 6,
+      "residual_relation_count": 5,
+      "residual_relation_length_profile": [
+        2,
+        4,
+        12,
+        12,
+        14
+      ],
+      "residual_target_word": [
+        -14,
+        -13,
+        14,
+        -10,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -10,
+        -14,
+        13,
+        14
+      ],
+      "same_support_size": 15,
+      "selected_face_certificate": {
+        "exact_case_classification_verified": true,
+        "g_e_i": 0,
+        "g_e_i_plus_e_j": 0,
+        "g_e_j": 1,
+        "normal_form_description": "q=p^-2",
+        "normal_form_kind": "solve-generator",
+        "residual_word": [
+          -1,
+          -2,
+          -1
+        ],
+        "status": "exact-bounded-local-face-obstruction",
+        "two_generator_solution_exponent_upper_bound": 1.0
+      },
+      "selected_face_values": [
+        0,
+        1,
+        0
+      ],
+      "status": "nonlinear-boolean-graph-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true
+    }
+  ],
+  "status": "nonlinear-boolean-graph-cores-falsified-by-local-face-words",
+  "summary": "Proved a uniform local-face pressure no-go for every systematic codimension-two stopping core, including arbitrary nonlinear proper four-colorings without a parity factor.",
+  "theorem_contract": {
+    "exceptional_face_exclusion": "The sole cancelling face requires the earlier singleton color q and later singleton color p. For width at least three, all pairs cannot have this orientation, so some bounded-loss face exists.",
+    "graph_code": "The explicit parity check makes C_g distance at least two for every normalized Boolean function g, including nonlinear g.",
+    "local_face_reduction": "Rows 0,e_i,e_j,e_i+e_j reduce a two-dimensional face to one of eight fixed words in the two check generators.",
+    "pressure_conclusion": "Five base generators plus the local two-check bound give total exponent at most 6.5 and uniform pressure margin at least 1/2.",
+    "scope": "The theorem covers every normalized systematic codimension-two stopping code, equivalently every proper four-coloring graph code. Non-systematic and higher-codimension stopping codes remain open.",
+    "word_map_bound": "Among 21 normalized proper four-color square patterns, 20 solve a generator, force an involution after a Nielsen change, or give a surface/conjugacy word. Their S_n pair exponent is at most 3/2."
+  }
+}

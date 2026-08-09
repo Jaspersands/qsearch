@@ -1,0 +1,159 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A threshold scalar bound makes this row dangerous.",
+      "resolution": "The threshold came from stopping proof search early. The surface relation lowers the exact S_n exponent by one.",
+      "resolved": true
+    },
+    {
+      "objection": "The finite S3 character average proves the factorization.",
+      "resolution": "False: the two-sided basis certificate proves it for every finite group; S3 is only an independent regression control.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_positive_genus_support_profiles_classified": false,
+    "growing_degree_relative_surface_theorem_proved": false,
+    "leading_relative_surface_factorization_proved": true,
+    "natural_component_M4_positive": false,
+    "reason": "One leading obstruction factorizes exactly, but no uniform growing-degree relative-surface theorem is proved.",
+    "speedup_claim_allowed": false
+  },
+  "controls": [
+    {
+      "canonical_transformed_relation": [
+        -7,
+        -6,
+        7,
+        6
+      ],
+      "control_id": "EFBEBFB-DISJOINT-COMMUTATOR-FACTORIZATION",
+      "disjoint_generator_pairs": true,
+      "exact_finite_control_verified": true,
+      "exact_relative_surface_factorization_verified": true,
+      "exact_solution_count": 648,
+      "exact_two_sided_basis_inverse_verified": true,
+      "generators": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "new_to_old_basis_images": {
+        "4": [
+          4
+        ],
+        "5": [
+          5,
+          6,
+          7,
+          4
+        ],
+        "6": [
+          6
+        ],
+        "7": [
+          7,
+          4
+        ]
+      },
+      "normalized_character_dimension_exponent": 2,
+      "old_to_new_basis_images": {
+        "4": [
+          4
+        ],
+        "5": [
+          5,
+          -7,
+          -6
+        ],
+        "6": [
+          6
+        ],
+        "7": [
+          7,
+          -4
+        ]
+      },
+      "predicted_solution_count": 648,
+      "predicted_standard_normalized_character_average": "1/4",
+      "relation_generator_pair": [
+        6,
+        7
+      ],
+      "source_pattern": "EFBEBFB",
+      "source_relation": [
+        -7,
+        -6,
+        7,
+        4,
+        6,
+        -4
+      ],
+      "source_target": [
+        -4,
+        -7,
+        -6,
+        -5,
+        4,
+        5,
+        6,
+        7
+      ],
+      "standard_normalized_character_average": "1/4",
+      "status": "exact-relative-surface-factorization-proved",
+      "symmetric_group_control_degree": 3,
+      "symmetric_group_solution_exponent": 3,
+      "target_generator_pair": [
+        4,
+        5
+      ],
+      "transformed_relation": [
+        4,
+        -7,
+        -6,
+        7,
+        6,
+        -4
+      ],
+      "transformed_target": [
+        -5,
+        4,
+        5,
+        -4
+      ]
+    }
+  ],
+  "created_at": "2026-08-09T01:02:12.301751+00:00",
+  "falsifiers_triggered": [
+    "Early stopping at the required pressure threshold hid a stronger surface certificate.",
+    "A nontrivial residual target need not remain coupled to the support relation after a free-basis change."
+  ],
+  "headline_metrics": {
+    "new_quantum_algorithm_count": 0,
+    "normalized_character_dimension_exponent": 2,
+    "relative_surface_factorization_control_count": 1,
+    "relative_surface_factorization_failure_count": 0,
+    "symmetric_group_solution_exponent_improvement": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "factor_the_leading_degree_three_relative_surface",
+      "resolution": "Relation and boundary are disjoint commutators under an explicit verified free-basis automorphism.",
+      "resolved": true
+    },
+    {
+      "obligation": "classify_all_positive_genus_support_profiles",
+      "resolution": "Search for simultaneous relation/boundary Nielsen forms and prove a uniform handle-loss alternative at growing degree.",
+      "resolved": false
+    }
+  ],
+  "status": "leading-relative-surface-obstruction-resolved",
+  "summary": "Removed the leading degree-three mixed target obstruction by a disjoint commutator factorization.",
+  "theorem_contract": {
+    "basis_change": "With A=a, H=bcd a, C=c, K=da, the explicit old/new word maps are two-sided free-basis inverses.",
+    "relation_factor": "The sole support relation becomes A[K,C]A^-1, so its solutions are two free variables times a commuting pair.",
+    "symmetric_group_asymptotic": "The exact count is |S_n|^3 p(n)=|S_n|^(3+o(1)), one exponent below the previous trivial four-generator bound.",
+    "target_factor": "The target becomes H^-1 A H A^-1 on the disjoint free pair (A,H), giving normalized character average d_nu^-2."
+  }
+}

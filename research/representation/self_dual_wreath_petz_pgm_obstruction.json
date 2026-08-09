@@ -22,29 +22,31 @@
     }
   ],
   "claim_gate": {
-    "covariance_compressed_stinespring_factorization_proved": false,
+    "algebraic_covariance_compressed_factorization_proved": true,
     "generic_complementary_rank_variant_removes_factorial_charge": false,
     "generic_petz_implementation_is_polynomial_for_wreath_ensemble": false,
     "generic_petz_pgm_baseline_mapped": true,
-    "reason": "The general Petz/PGM algorithm pays sqrt(n!) through its label environment even before condition number. Only a symmetry-specific coherent factorization could avoid this baseline.",
+    "polynomial_covariance_compressed_stinespring_circuit_proved": false,
+    "reason": "The general Petz/PGM algorithm pays sqrt(n!) through its label environment even before condition number. The symmetry-specific factorization now cancels that explicit charge algebraically, but its multiplicity inverse has no polynomial implementation.",
     "specific_covariant_pgm_lower_bound_proved": false,
     "speedup_claim_allowed": false,
     "structured_multiplicity_whitening_proved": false
   },
-  "created_at": "2026-08-06T00:55:21.455413+00:00",
+  "created_at": "2026-08-09T05:46:53.676419+00:00",
   "falsifiers_triggered": [
     "A generic Petz implementation does not turn constant PGM success into a polynomial algorithm for n! hypotheses.",
     "The factorial charge is not caused by label storage: it arises from generic Stinespring normalization/amplification.",
     "The primary theorem leaves group-covariant factorization open, so it cannot be cited as a structured impossibility result."
   ],
   "headline_metrics": {
+    "algebraic_covariance_compressed_factorization_count": 1,
     "complementary_rank_bypass_failure_count": 1,
-    "covariance_compressed_stinespring_factorization_count": 0,
     "generic_environment_dimension_obstruction_count": 1,
     "generic_pgm_to_petz_reduction_count": 1,
     "maximum_log2_generic_environment_sqrt_charge": 1937.5830609716015,
     "maximum_n": 512,
     "new_quantum_algorithm_count": 0,
+    "polynomial_covariance_compressed_stinespring_circuit_count": 0,
     "scaling_record_count": 12,
     "structured_multiplicity_whitening_count": 0,
     "superpolynomial_generic_charge_record_count": 8
@@ -74,8 +76,13 @@
       "resolved": false
     },
     {
-      "obligation": "covariance_compressed_stinespring_factorization",
-      "resolution": "No circuit replaces generic environment amplification by coherent irrep-row/multiplicity tight-frame synthesis.",
+      "obligation": "algebraic_covariance_compressed_factorization",
+      "resolution": "The separate Fourier-factorization theorem cancels the explicit sqrt(n!) environment normalization exactly.",
+      "resolved": true
+    },
+    {
+      "obligation": "polynomial_covariance_compressed_stinespring_circuit",
+      "resolution": "The algebraic factorization still requires coherent controlled multiplicity inverse square roots D_nu^-1/2.",
       "resolved": false
     }
   ],
@@ -89,9 +96,9 @@
   },
   "scaling_records": [
     {
+      "algebraic_covariance_compressed_factorization_proved": true,
       "complementary_state_rank_decimal": "6",
       "condition_number_charge_included": false,
-      "covariance_compressed_stinespring_factorization_proved": false,
       "efficient_symmetric_group_qft_available": true,
       "generic_environment_charge_superpolynomial": false,
       "generic_environment_dimension_decimal": "6",
@@ -99,13 +106,14 @@
       "hidden_label_qubit_count": 3,
       "log2_generic_environment_sqrt_charge": 1.292481250360578,
       "n": 3,
+      "polynomial_covariance_compressed_stinespring_circuit_proved": false,
       "status": "generic-petz-factorial-dimension-charge-covariant-factorization-open",
       "structured_multiplicity_whitening_proved": false
     },
     {
+      "algebraic_covariance_compressed_factorization_proved": true,
       "complementary_state_rank_decimal": "24",
       "condition_number_charge_included": false,
-      "covariance_compressed_stinespring_factorization_proved": false,
       "efficient_symmetric_group_qft_available": true,
       "generic_environment_charge_superpolynomial": false,
       "generic_environment_dimension_decimal": "24",
@@ -113,13 +121,14 @@
       "hidden_label_qubit_count": 5,
       "log2_generic_environment_sqrt_charge": 2.292481250360577,
       "n": 4,
+      "polynomial_covariance_compressed_stinespring_circuit_proved": false,
       "status": "generic-petz-factorial-dimension-charge-covariant-factorization-open",
       "structured_multiplicity_whitening_proved": false
     },
     {
+      "algebraic_covariance_compressed_factorization_proved": true,
       "complementary_state_rank_decimal": "120",
       "condition_number_charge_included": false,
-      "covariance_compressed_stinespring_factorization_proved": false,
       "efficient_symmetric_group_qft_available": true,
       "generic_environment_charge_superpolynomial": false,
       "generic_environment_dimension_decimal": "120",
@@ -127,13 +136,14 @@
       "hidden_label_qubit_count": 7,
       "log2_generic_environment_sqrt_charge": 3.45344529780426,
       "n": 5,
+      "polynomial_covariance_compressed_stinespring_circuit_proved": false,
       "status": "generic-petz-factorial-dimension-charge-covariant-factorization-open",
       "structured_multiplicity_whitening_proved": false
     },
     {
+      "algebraic_covariance_compressed_factorization_proved": true,
       "complementary_state_rank_decimal": "40320",
       "condition_number_charge_included": false,
-      "covariance_compressed_stinespring_factorization_proved": false,
       "efficient_symmetric_group_qft_available": true,
       "generic_environment_charge_superpolynomial": false,
       "generic_environment_dimension_decimal": "40320",
@@ -141,13 +151,14 @@
       "hidden_label_qubit_count": 16,
       "log2_generic_environment_sqrt_charge": 7.64960400919364,
       "n": 8,
+      "polynomial_covariance_compressed_stinespring_circuit_proved": false,
       "status": "generic-petz-factorial-dimension-charge-covariant-factorization-open",
       "structured_multiplicity_whitening_proved": false
     },
     {
+      "algebraic_covariance_compressed_factorization_proved": true,
       "complementary_state_rank_decimal": "479001600",
       "condition_number_charge_included": false,
-      "covariance_compressed_stinespring_factorization_proved": false,
       "efficient_symmetric_group_qft_available": true,
       "generic_environment_charge_superpolynomial": true,
       "generic_environment_dimension_decimal": "479001600",
@@ -155,13 +166,14 @@
       "hidden_label_qubit_count": 29,
       "log2_generic_environment_sqrt_charge": 14.417727617037704,
       "n": 12,
+      "polynomial_covariance_compressed_stinespring_circuit_proved": false,
       "status": "generic-petz-factorial-dimension-charge-covariant-factorization-open",
       "structured_multiplicity_whitening_proved": false
     },
     {
+      "algebraic_covariance_compressed_factorization_proved": true,
       "complementary_state_rank_decimal": "20922789888000",
       "condition_number_charge_included": false,
-      "covariance_compressed_stinespring_factorization_proved": false,
       "efficient_symmetric_group_qft_available": true,
       "generic_environment_charge_superpolynomial": true,
       "generic_environment_dimension_decimal": "20922789888000",
@@ -169,13 +181,14 @@
       "hidden_label_qubit_count": 45,
       "log2_generic_environment_sqrt_charge": 22.12507023494131,
       "n": 16,
+      "polynomial_covariance_compressed_stinespring_circuit_proved": false,
       "status": "generic-petz-factorial-dimension-charge-covariant-factorization-open",
       "structured_multiplicity_whitening_proved": false
     },
     {
+      "algebraic_covariance_compressed_factorization_proved": true,
       "complementary_state_rank_decimal": "620448401733239439360000",
       "condition_number_charge_included": false,
-      "covariance_compressed_stinespring_factorization_proved": false,
       "efficient_symmetric_group_qft_available": true,
       "generic_environment_charge_superpolynomial": true,
       "generic_environment_dimension_decimal": "620448401733239439360000",
@@ -183,13 +196,14 @@
       "hidden_label_qubit_count": 80,
       "log2_generic_environment_sqrt_charge": 39.51882870955023,
       "n": 24,
+      "polynomial_covariance_compressed_stinespring_circuit_proved": false,
       "status": "generic-petz-factorial-dimension-charge-covariant-factorization-open",
       "structured_multiplicity_whitening_proved": false
     },
     {
+      "algebraic_covariance_compressed_factorization_proved": true,
       "complementary_state_rank_decimal": "263130836933693530167218012160000000",
       "condition_number_charge_included": false,
-      "covariance_compressed_stinespring_factorization_proved": false,
       "efficient_symmetric_group_qft_available": true,
       "generic_environment_charge_superpolynomial": true,
       "generic_environment_dimension_decimal": "263130836933693530167218012160000000",
@@ -197,13 +211,14 @@
       "hidden_label_qubit_count": 118,
       "log2_generic_environment_sqrt_charge": 58.83163182618015,
       "n": 32,
+      "polynomial_covariance_compressed_stinespring_circuit_proved": false,
       "status": "generic-petz-factorial-dimension-charge-covariant-factorization-open",
       "structured_multiplicity_whitening_proved": false
     },
     {
+      "algebraic_covariance_compressed_factorization_proved": true,
       "complementary_state_rank_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
       "condition_number_charge_included": false,
-      "covariance_compressed_stinespring_factorization_proved": false,
       "efficient_symmetric_group_qft_available": true,
       "generic_environment_charge_superpolynomial": true,
       "generic_environment_dimension_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
@@ -211,13 +226,14 @@
       "hidden_label_qubit_count": 296,
       "log2_generic_environment_sqrt_charge": 147.99757197086205,
       "n": 64,
+      "polynomial_covariance_compressed_stinespring_circuit_proved": false,
       "status": "generic-petz-factorial-dimension-charge-covariant-factorization-open",
       "structured_multiplicity_whitening_proved": false
     },
     {
+      "algebraic_covariance_compressed_factorization_proved": true,
       "complementary_state_rank_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
       "condition_number_charge_included": false,
-      "covariance_compressed_stinespring_factorization_proved": false,
       "efficient_symmetric_group_qft_available": true,
       "generic_environment_charge_superpolynomial": true,
       "generic_environment_dimension_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
@@ -225,13 +241,14 @@
       "hidden_label_qubit_count": 717,
       "log2_generic_environment_sqrt_charge": 358.080861041811,
       "n": 128,
+      "polynomial_covariance_compressed_stinespring_circuit_proved": false,
       "status": "generic-petz-factorial-dimension-charge-covariant-factorization-open",
       "structured_multiplicity_whitening_proved": false
     },
     {
+      "algebraic_covariance_compressed_factorization_proved": true,
       "complementary_state_rank_decimal": "857817775342842654119082271681232625157781520279485619859655650377269452553147589377440291360451408450375885342336584306157196834693696475322289288497426025679637332563368786442675207626794560187968867971521143307702077526646451464709187326100832876325702818980773671781454170250523018608495319068138257481070252817559459476987034665712738139286205234756808218860701203611083152093501947437109101726968262861606263662435022840944191408424615936000000000000000000000000000000000000000000000000000000000000000",
       "condition_number_charge_included": false,
-      "covariance_compressed_stinespring_factorization_proved": false,
       "efficient_symmetric_group_qft_available": true,
       "generic_environment_charge_superpolynomial": true,
       "generic_environment_dimension_decimal": "857817775342842654119082271681232625157781520279485619859655650377269452553147589377440291360451408450375885342336584306157196834693696475322289288497426025679637332563368786442675207626794560187968867971521143307702077526646451464709187326100832876325702818980773671781454170250523018608495319068138257481070252817559459476987034665712738139286205234756808218860701203611083152093501947437109101726968262861606263662435022840944191408424615936000000000000000000000000000000000000000000000000000000000000000",
@@ -239,13 +256,14 @@
       "hidden_label_qubit_count": 1684,
       "log2_generic_environment_sqrt_charge": 841.9981436121074,
       "n": 256,
+      "polynomial_covariance_compressed_stinespring_circuit_proved": false,
       "status": "generic-petz-factorial-dimension-charge-covariant-factorization-open",
       "structured_multiplicity_whitening_proved": false
     },
     {
+      "algebraic_covariance_compressed_factorization_proved": true,
       "complementary_state_rank_decimal": "347728979313260536328304591754560471199225065564351457034247483155161041206635254347320985033950225364432243311021394545295001702070069013264153113260937941358711864044716186861040899557497361427588282356254968425012480396855239725120562512065555822121708786443620799246550959187232026838081415178588172535280020786313470076859739980965720873849904291373826841584712798618430387338042329771801724767691095019545758986942732515033551529595009876999279553931070378592917099002397061907147143424113252117585950817850896618433994140232823316432187410356341262386332496954319973130407342567282027398579382543048456876800862349928140411905431276197435674603281842530744177527365885721629512253872386613118821540847897493107398381956081763695236422795880296204301770808809477147632428639299038833046264585834888158847387737841843413664892833586209196366979775748895821826924040057845140287522238675082137570315954526727437094904914796782641000740777897919134093393530422760955140211387173650047358347353379234387609261306673773281412893026941927424000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
       "condition_number_charge_included": false,
-      "covariance_compressed_stinespring_factorization_proved": false,
       "efficient_symmetric_group_qft_available": true,
       "generic_environment_charge_superpolynomial": true,
       "generic_environment_dimension_decimal": "347728979313260536328304591754560471199225065564351457034247483155161041206635254347320985033950225364432243311021394545295001702070069013264153113260937941358711864044716186861040899557497361427588282356254968425012480396855239725120562512065555822121708786443620799246550959187232026838081415178588172535280020786313470076859739980965720873849904291373826841584712798618430387338042329771801724767691095019545758986942732515033551529595009876999279553931070378592917099002397061907147143424113252117585950817850896618433994140232823316432187410356341262386332496954319973130407342567282027398579382543048456876800862349928140411905431276197435674603281842530744177527365885721629512253872386613118821540847897493107398381956081763695236422795880296204301770808809477147632428639299038833046264585834888158847387737841843413664892833586209196366979775748895821826924040057845140287522238675082137570315954526727437094904914796782641000740777897919134093393530422760955140211387173650047358347353379234387609261306673773281412893026941927424000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
@@ -253,10 +271,11 @@
       "hidden_label_qubit_count": 3876,
       "log2_generic_environment_sqrt_charge": 1937.5830609716015,
       "n": 512,
+      "polynomial_covariance_compressed_stinespring_circuit_proved": false,
       "status": "generic-petz-factorial-dimension-charge-covariant-factorization-open",
       "structured_multiplicity_whitening_proved": false
     }
   ],
-  "status": "generic-petz-baseline-closed-covariant-stinespring-open",
+  "status": "generic-petz-baseline-evaded-algebraically-multiplicity-circuit-open",
   "summary": "Mapped the standard PGM-to-Petz implementation to the wreath ensemble and isolated its independent sqrt(n!) environment-dimension charge."
 }

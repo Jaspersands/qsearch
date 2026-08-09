@@ -563,10 +563,64 @@ def run_pair_polar_sampler() -> PairPolarSamplerReport:
 
 def write_pair_polar_sampler_report(
     path: Path = REPORT_PATH,
+    write_registry: bool = True,
+    registry_experiment_id: str = (
+        "EXP-CODE-SELF-DUAL-WREATH-PAIR-POLAR-SAMPLER"
+    ),
+    registry_candidate_id: str = "CODE-COSET-COLLECTIVE",
+    registry_result_id: str = "",
 ) -> dict[str, Any]:
     payload = asdict(run_pair_polar_sampler())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+
+    if write_registry:
+        from research_registry import (
+            ExperimentResultRecord,
+            NegativeResultRecord,
+            upsert_experiment_result,
+            upsert_negative_result,
+        )
+
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-SELF-DUAL-WREATH-PAIR-POLAR-SAMPLER",
+                source=registry_experiment_id,
+                claim=(
+                    "Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-PAIR-POLAR-SAMPLER."
+                ),
+                reason_invalid=(
+                    "Falsified or refined by exact theorem evaluation."
+                ),
+                lesson=(
+                    "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-PAIR-POLAR-SAMPLER."
+                ),
+                applies_to=[
+                    registry_candidate_id,
+                    registry_experiment_id,
+                    "PO-MEASUREMENT",
+                ],
+                evidence=payload.get("headline_metrics", {}),
+            )
+        )
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=(
+                    registry_result_id
+                    or f"RESULT-{registry_experiment_id}-LATEST"
+                ),
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=payload.get("created_at", ""),
+                status=payload.get("status", "completed"),
+                summary=payload.get("summary", ""),
+                metrics=payload.get("headline_metrics", {}),
+                falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                artifacts={
+                    "self_dual_wreath_pair_polar_sampler": str(path)
+                },
+            )
+        )
     return payload
 
 

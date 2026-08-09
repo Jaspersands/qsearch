@@ -1,0 +1,354 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The known leaf operator-norm witness may occupy negligible trace rank.",
+      "resolution": "The full carrier sum gives exact pair trace Theta(g^-2), and relative concentration puts that scale on density-one balanced pairs.",
+      "resolved": true
+    },
+    {
+      "objection": "An expectation of order g^-2 could be supported only on rare colliding source tuples.",
+      "resolution": "The relative quenched estimate is proved before conditioning; its high-probability density event then survives the all-distinct condition.",
+      "resolved": true
+    },
+    {
+      "objection": "A g^-2 pair trace is too small to influence the full child.",
+      "resolution": "There are Theta(q^2)=Theta(g^2) balanced leaf pairs, yielding constant aggregate uncompressed trace mass.",
+      "resolved": true
+    },
+    {
+      "objection": "Constant uncompressed leaf trace forces constant component M4.",
+      "resolution": "False generically by the whitening and common-span universality counterfamilies; natural normalization still requires direct analysis.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "global_distinct_leaf_trace_profile_proved": true,
+    "natural_Green_ridge_preserves_leaf_pair_trace_scale": false,
+    "natural_aggregate_uncompressed_leaf_trace_constant": true,
+    "natural_independent_plancherel_component_M4_positive": false,
+    "natural_leaf_pair_trace_has_q_inverse_two_scale": true,
+    "natural_leaf_trace_profile_holds_on_density_one_balanced_pairs": true,
+    "reason": "The natural leaves already have the exact trace scale needed for component M4, but direct preservation through normalized Green/ridge common-span compression is still unproved.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-09T05:42:44.717075+00:00",
+  "exact_controls": [
+    {
+      "carrier_sum_commutator_trace": "1/36",
+      "closed_form_commutator_trace": "6/216",
+      "exact_carrier_trace_formula_verified": true,
+      "formula_residual": "0/216",
+      "group_order": 6,
+      "n": 3,
+      "partition_count": 3,
+      "status": "exact-natural-leaf-pair-commutator-trace-formula-verified",
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "carrier_sum_commutator_trace": "19/6912",
+      "closed_form_commutator_trace": "38/13824",
+      "exact_carrier_trace_formula_verified": true,
+      "formula_residual": "0/13824",
+      "group_order": 24,
+      "n": 4,
+      "partition_count": 5,
+      "status": "exact-natural-leaf-pair-commutator-trace-formula-verified",
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "carrier_sum_commutator_trace": "113/864000",
+      "closed_form_commutator_trace": "226/1728000",
+      "exact_carrier_trace_formula_verified": true,
+      "formula_residual": "0/1728000",
+      "group_order": 120,
+      "n": 5,
+      "partition_count": 7,
+      "status": "exact-natural-leaf-pair-commutator-trace-formula-verified",
+      "target_partition": [
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "carrier_sum_commutator_trace": "709/186624000",
+      "closed_form_commutator_trace": "1418/373248000",
+      "exact_carrier_trace_formula_verified": true,
+      "formula_residual": "0/373248000",
+      "group_order": 720,
+      "n": 6,
+      "partition_count": 11,
+      "status": "exact-natural-leaf-pair-commutator-trace-formula-verified",
+      "target_partition": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "carrier_sum_commutator_trace": "67/853493760",
+      "closed_form_commutator_trace": "10050/128024064000",
+      "exact_carrier_trace_formula_verified": true,
+      "formula_residual": "0/128024064000",
+      "group_order": 5040,
+      "n": 7,
+      "partition_count": 15,
+      "status": "exact-natural-leaf-pair-commutator-trace-formula-verified",
+      "target_partition": [
+        4,
+        2,
+        1
+      ]
+    }
+  ],
+  "falsifiers_triggered": [
+    "The natural leaf commutator witness is not confined to negligible trace rank.",
+    "The tiny annealed pair expectation is not supported only on rare source collisions.",
+    "The pair trace exactly matches the q^-2 scale required by the Hamming component reduction.",
+    "No generic or natural Green-normalization transfer, component M4, compiler, decoder, or speedup is proved."
+  ],
+  "headline_metrics": {
+    "constant_aggregate_uncompressed_leaf_trace_theorem_count": 1,
+    "exact_control_count": 5,
+    "exact_control_failure_count": 0,
+    "exact_natural_leaf_pair_trace_formula_theorem_count": 1,
+    "global_distinct_leaf_trace_density_transfer_theorem_count": 1,
+    "natural_component_M4_lower_bound_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "quenched_density_one_leaf_trace_profile_theorem_count": 1,
+    "tail_aggregate_leaf_trace_lower_bound": 6.378621540421581,
+    "tail_n": 32,
+    "tail_q_squared_rescaled_pair_trace": 12.759259478048282
+  },
+  "proof_obligations": [
+    {
+      "obligation": "compute_natural_leaf_pair_commutator_trace_scale",
+      "resolution": "The fourth-power carrier multiplicities and reciprocal principal angles telescope to 2(g-p(n))/g^3.",
+      "resolved": true
+    },
+    {
+      "obligation": "upgrade_annealed_tiny_pair_trace_to_quenched_density_one_profile",
+      "resolution": "Uniform block multiplicity variance applies under the d_alpha^2-1 probability weights, giving relative rather than merely additive concentration.",
+      "resolved": true
+    },
+    {
+      "obligation": "show_leaf_trace_profile_has_the_component_Hamming_scale",
+      "resolution": "Since 2g<=q<4g, q^2 c_n is bounded away from zero and infinity asymptotically.",
+      "resolved": true
+    },
+    {
+      "obligation": "transfer_leaf_trace_profile_through_natural_Green_whitening",
+      "resolution": "Use the bounded-ridge Hamming pair profile plus the trace-weighted polar ratio; no generic implication is valid.",
+      "resolved": false
+    }
+  ],
+  "relation_to_component_M4": {
+    "aggregate_uncompressed_leaf_trace_constant": true,
+    "density_one_trace_scale_proved": true,
+    "generic_leaf_to_component_transfer_false": true,
+    "natural_green_ridge_preservation_proved": false,
+    "natural_leaf_pair_scale_proved": "2(|S_n|-p(n))/|S_n|^3=Theta(q^-2)",
+    "next_target": "lower-bound the q^2-rescaled normalized ridge pair gap at typical Hamming distance",
+    "required_hamming_pair_scale": "q^-2"
+  },
+  "scaling_records": [
+    {
+      "aggregate_balanced_leaf_commutator_trace_lower_bound": 7.1213688193784455,
+      "balanced_hamming_distance_lower": 6,
+      "balanced_hamming_distance_upper": 12,
+      "balanced_pair_fraction": 0.90374755859375,
+      "canonical_component_trace_transfer_proved": false,
+      "child_leaf_count_log2": 17,
+      "density_bad_pair_fraction_upper_bound": 0.2170525391104185,
+      "density_failure_probability_upper_bound": 0.2170525391104185,
+      "density_one_balanced_pair_trace_profile_proved": true,
+      "fixed_pair_failure_probability_upper_bound": 0.047111804734279755,
+      "fixed_pair_relative_error_tolerance": 0.047111804734279755,
+      "global_distinct_density_transfer_proved": true,
+      "group_order_log2": 15.29920801838728,
+      "independent_pair_commutator_trace": 1.229566204834741e-09,
+      "independent_pair_commutator_trace_log2": -29.5992034364046,
+      "information_threshold_copy_count": 16,
+      "minimum_exclusive_random_block_size": 6,
+      "minimum_shared_random_block_size": 6,
+      "n": 8,
+      "partition_count": 22,
+      "q_squared_rescaled_pair_commutator_trace": 21.1237865521282,
+      "relative_L1_error_expectation_upper_bound": 0.0022195221453209044,
+      "selected_copy_count": 18,
+      "status": "density-one-natural-leaf-trace-profile-proved-component-transfer-open"
+    },
+    {
+      "aggregate_balanced_leaf_commutator_trace_lower_bound": 4.620778668196524,
+      "balanced_hamming_distance_lower": 11,
+      "balanced_hamming_distance_upper": 20,
+      "balanced_pair_fraction": 0.9292444540187716,
+      "canonical_component_trace_transfer_proved": false,
+      "child_leaf_count_log2": 30,
+      "density_bad_pair_fraction_upper_bound": 0.010295637224747368,
+      "density_failure_probability_upper_bound": 0.010295637224747368,
+      "density_one_balanced_pair_trace_profile_proved": true,
+      "fixed_pair_failure_probability_upper_bound": 0.00010600014586360368,
+      "fixed_pair_relative_error_tolerance": 0.00010600014586360368,
+      "global_distinct_density_transfer_proved": true,
+      "group_order_log2": 28.835455234075408,
+      "independent_pair_commutator_trace": 8.716778245378694e-18,
+      "independent_pair_commutator_trace_log2": -56.67091070006555,
+      "information_threshold_copy_count": 29,
+      "minimum_exclusive_random_block_size": 11,
+      "minimum_shared_random_block_size": 11,
+      "n": 12,
+      "partition_count": 77,
+      "q_squared_rescaled_pair_commutator_trace": 10.049761089986236,
+      "relative_L1_error_expectation_upper_bound": 1.1236030923105256e-08,
+      "selected_copy_count": 31,
+      "status": "density-one-natural-leaf-trace-profile-proved-component-transfer-open"
+    },
+    {
+      "aggregate_balanced_leaf_commutator_trace_lower_bound": 11.097914120704047,
+      "balanced_hamming_distance_lower": 16,
+      "balanced_hamming_distance_upper": 31,
+      "balanced_pair_fraction": 0.9813761633849936,
+      "canonical_component_trace_transfer_proved": false,
+      "child_leaf_count_log2": 46,
+      "density_bad_pair_fraction_upper_bound": 0.00026367744164616406,
+      "density_failure_probability_upper_bound": 0.00026367744164616406,
+      "density_one_balanced_pair_trace_profile_proved": true,
+      "fixed_pair_failure_probability_upper_bound": 6.952579323306626e-08,
+      "fixed_pair_relative_error_tolerance": 6.952579323306626e-08,
+      "global_distinct_density_transfer_proved": true,
+      "group_order_log2": 44.25014046988262,
+      "independent_pair_commutator_trace": 4.568680714110526e-27,
+      "independent_pair_commutator_trace_log2": -87.50028093978118,
+      "information_threshold_copy_count": 45,
+      "minimum_exclusive_random_block_size": 16,
+      "minimum_shared_random_block_size": 16,
+      "n": 16,
+      "partition_count": 231,
+      "q_squared_rescaled_pair_commutator_trace": 22.623011130833376,
+      "relative_L1_error_expectation_upper_bound": 4.833835924687083e-15,
+      "selected_copy_count": 47,
+      "status": "density-one-natural-leaf-trace-profile-proved-component-transfer-open"
+    },
+    {
+      "aggregate_balanced_leaf_commutator_trace_lower_bound": 14.255306936744987,
+      "balanced_hamming_distance_lower": 22,
+      "balanced_hamming_distance_upper": 42,
+      "balanced_pair_fraction": 0.9918530977713015,
+      "canonical_component_trace_transfer_proved": false,
+      "child_leaf_count_log2": 63,
+      "density_bad_pair_fraction_upper_bound": 2.3054523711258686e-06,
+      "density_failure_probability_upper_bound": 2.3054523711258686e-06,
+      "density_one_balanced_pair_trace_profile_proved": true,
+      "fixed_pair_failure_probability_upper_bound": 5.3151106355298896e-12,
+      "fixed_pair_relative_error_tolerance": 5.3151106355298896e-12,
+      "global_distinct_density_transfer_proved": true,
+      "group_order_log2": 61.07738392090622,
+      "independent_pair_commutator_trace": 3.378942192902112e-37,
+      "independent_pair_commutator_trace_log2": -121.15476784181244,
+      "information_threshold_copy_count": 62,
+      "minimum_exclusive_random_block_size": 22,
+      "minimum_shared_random_block_size": 22,
+      "n": 20,
+      "partition_count": 627,
+      "q_squared_rescaled_pair_commutator_trace": 28.744861177243923,
+      "relative_L1_error_expectation_upper_bound": 2.8250401067922947e-23,
+      "selected_copy_count": 64,
+      "status": "density-one-natural-leaf-trace-profile-proved-component-transfer-open"
+    },
+    {
+      "aggregate_balanced_leaf_commutator_trace_lower_bound": 15.146029988576824,
+      "balanced_hamming_distance_lower": 28,
+      "balanced_hamming_distance_upper": 54,
+      "balanced_pair_fraction": 0.9973575071042274,
+      "canonical_component_trace_transfer_proved": false,
+      "child_leaf_count_log2": 81,
+      "density_bad_pair_fraction_upper_bound": 1.3387073262504797e-08,
+      "density_failure_probability_upper_bound": 1.3387073262504797e-08,
+      "density_one_balanced_pair_trace_profile_proved": true,
+      "fixed_pair_failure_probability_upper_bound": 1.7921373053567082e-16,
+      "fixed_pair_relative_error_tolerance": 1.7921373053567082e-16,
+      "global_distinct_density_transfer_proved": true,
+      "group_order_log2": 79.03765741910044,
+      "independent_pair_commutator_trace": 5.1953959961656304e-48,
+      "independent_pair_commutator_trace_log2": -157.0753148382009,
+      "information_threshold_copy_count": 80,
+      "minimum_exclusive_random_block_size": 28,
+      "minimum_shared_random_block_size": 28,
+      "n": 24,
+      "partition_count": 1575,
+      "q_squared_rescaled_pair_commutator_trace": 30.372319019913945,
+      "relative_L1_error_expectation_upper_bound": 3.211756121251203e-32,
+      "selected_copy_count": 82,
+      "status": "density-one-natural-leaf-trace-profile-proved-component-transfer-open"
+    },
+    {
+      "aggregate_balanced_leaf_commutator_trace_lower_bound": 4.317952686226445,
+      "balanced_hamming_distance_lower": 34,
+      "balanced_hamming_distance_upper": 66,
+      "balanced_pair_fraction": 0.9991262801630876,
+      "canonical_component_trace_transfer_proved": false,
+      "child_leaf_count_log2": 99,
+      "density_bad_pair_fraction_upper_bound": 5.619180172806118e-11,
+      "density_failure_probability_upper_bound": 5.619180172806118e-11,
+      "density_one_balanced_pair_trace_profile_proved": true,
+      "fixed_pair_failure_probability_upper_bound": 3.15751858144574e-21,
+      "fixed_pair_relative_error_tolerance": 3.15751858144574e-21,
+      "global_distinct_density_transfer_proved": true,
+      "group_order_log2": 97.94419575123733,
+      "independent_pair_commutator_trace": 2.1515346814893128e-59,
+      "independent_pair_commutator_trace_log2": -194.88839150247466,
+      "information_threshold_copy_count": 98,
+      "minimum_exclusive_random_block_size": 34,
+      "minimum_shared_random_block_size": 34,
+      "n": 28,
+      "partition_count": 3718,
+      "q_squared_rescaled_pair_commutator_trace": 8.643457333069565,
+      "relative_L1_error_expectation_upper_bound": 9.969923592175119e-42,
+      "selected_copy_count": 100,
+      "status": "density-one-natural-leaf-trace-profile-proved-component-transfer-open"
+    },
+    {
+      "aggregate_balanced_leaf_commutator_trace_lower_bound": 6.378621540421581,
+      "balanced_hamming_distance_lower": 40,
+      "balanced_hamming_distance_upper": 80,
+      "balanced_pair_fraction": 0.9998419659693975,
+      "canonical_component_trace_transfer_proved": false,
+      "child_leaf_count_log2": 119,
+      "density_bad_pair_fraction_upper_bound": 1.8034420575439974e-13,
+      "density_failure_probability_upper_bound": 1.8034420575439974e-13,
+      "density_one_balanced_pair_trace_profile_proved": true,
+      "fixed_pair_failure_probability_upper_bound": 3.2524032549185266e-26,
+      "fixed_pair_relative_error_tolerance": 3.2524032549185266e-26,
+      "global_distinct_density_transfer_proved": true,
+      "group_order_log2": 117.6632636523603,
+      "independent_pair_commutator_trace": 2.8885939779170816e-71,
+      "independent_pair_commutator_trace_log2": -234.3265273047206,
+      "information_threshold_copy_count": 118,
+      "minimum_exclusive_random_block_size": 40,
+      "minimum_shared_random_block_size": 40,
+      "n": 32,
+      "partition_count": 8349,
+      "q_squared_rescaled_pair_commutator_trace": 12.759259478048282,
+      "relative_L1_error_expectation_upper_bound": 1.0578126932604626e-51,
+      "selected_copy_count": 120,
+      "status": "density-one-natural-leaf-trace-profile-proved-component-transfer-open"
+    }
+  ],
+  "status": "natural-leaf-trace-scale-and-density-proved-Green-transfer-open",
+  "summary": "Proved the exact Theta(q^-2) natural leaf-pair commutator trace, its quenched density-one balanced-pair profile, and constant aggregate all-distinct leaf trace mass.",
+  "theorem_contract": {
+    "aggregate_scale": "At q=2^(K-1), q^2 times the pair trace is 2(q/|S_n|)^2(1-p(n)/|S_n|)=Theta(1).",
+    "annealed_pair_trace": "Every nonzero final-child orientation difference has exact iid-Plancherel expected normalized squared commutator trace 2(|S_n|-p(n))/|S_n|^3.",
+    "density_one_transfer": "Two Markov steps and binomial concentration give the trace profile on a density-one fraction of balanced pairs with high probability.",
+    "global_distinct_transfer": "The high-probability density event survives conditioning on all sources distinct because P_cf tends to one.",
+    "relative_concentration": "The trace divided by its mean is a probability-weighted sum of Y_0(alpha)Y_L(alpha)Y_R(alpha); equation (2) gives its uniform relative L1 error bound.",
+    "scope": "This proves uncompressed leaf trace mass only. Generic Green whitening/common compression can cancel it."
+  }
+}

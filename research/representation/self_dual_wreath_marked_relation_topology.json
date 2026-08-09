@@ -1,0 +1,923 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Growing copy count alone makes every fixed-degree marked moment intractable.",
+      "resolution": "False: repeated coordinate types impose duplicate equations; the exact support-profile sum is independent of K.",
+      "resolved": true
+    },
+    {
+      "objection": "Abelian relation rank is enough to identify crossing suppression.",
+      "resolution": "False: the EFEF residual has zero abelian obstruction but a nontrivial commutator relation detected by free-group reduction.",
+      "resolved": true
+    },
+    {
+      "objection": "Fixed-degree support compression closes the Green problem.",
+      "resolution": "The polynomial degree needed for the exact common projection and pseudoinverse grows; the profile alphabet then grows exponentially.",
+      "resolved": false
+    }
+  ],
+  "adversarial_pressure_controls": [
+    {
+      "certified_rescaled_pressure_upper_bound": -1.5,
+      "certified_solution_exponent_upper_bound": 3.0,
+      "control_id": "DEGREE-THREE-HIDDEN-GENUS-TWO-LEFT",
+      "crossing": true,
+      "different_assignment_support": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "exact_certificate_verified": true,
+      "exponent_certificate_source": "whitehead-orientable-surface-genus-2",
+      "frame_position_count": 3,
+      "pattern": "EFEFAAA",
+      "remaining_generators": [
+        3,
+        4,
+        6,
+        7
+      ],
+      "required_pressure_upper_bound": -1.0,
+      "residual_relations": [
+        [
+          -7,
+          -6,
+          7,
+          -6,
+          -4,
+          -3,
+          4,
+          6,
+          3,
+          6
+        ]
+      ],
+      "same_assignment_support": [
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "status": "adversarial-profile-pressure-certified",
+      "trivial_rescaled_pressure": -0.5,
+      "trivial_solution_exponent": 4.0
+    },
+    {
+      "certified_rescaled_pressure_upper_bound": -1.5,
+      "certified_solution_exponent_upper_bound": 3.0,
+      "control_id": "DEGREE-THREE-HIDDEN-GENUS-TWO-RIGHT",
+      "crossing": true,
+      "different_assignment_support": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "exact_certificate_verified": true,
+      "exponent_certificate_source": "whitehead-orientable-surface-genus-2",
+      "frame_position_count": 3,
+      "pattern": "EFEAAAF",
+      "remaining_generators": [
+        3,
+        4,
+        6,
+        7
+      ],
+      "required_pressure_upper_bound": -1.0,
+      "residual_relations": [
+        [
+          -7,
+          -6,
+          -6,
+          -4,
+          -3,
+          4,
+          6,
+          7,
+          3,
+          6
+        ]
+      ],
+      "same_assignment_support": [
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "status": "adversarial-profile-pressure-certified",
+      "trivial_rescaled_pressure": -0.5,
+      "trivial_solution_exponent": 4.0
+    },
+    {
+      "certified_rescaled_pressure_upper_bound": -1.5,
+      "certified_solution_exponent_upper_bound": 3.0,
+      "control_id": "DEGREE-THREE-FREE-BASIS-COMMUTATOR",
+      "crossing": true,
+      "different_assignment_support": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "exact_certificate_verified": true,
+      "exponent_certificate_source": "single-free-basis-commutator",
+      "frame_position_count": 3,
+      "pattern": "EAFEAAF",
+      "remaining_generators": [
+        3,
+        4,
+        6,
+        7
+      ],
+      "required_pressure_upper_bound": -1.0,
+      "residual_relations": [
+        [
+          -7,
+          -6,
+          -6,
+          -4,
+          6,
+          7,
+          4,
+          6
+        ]
+      ],
+      "same_assignment_support": [
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "status": "adversarial-profile-pressure-certified",
+      "trivial_rescaled_pressure": -0.5,
+      "trivial_solution_exponent": 4.0
+    },
+    {
+      "certified_rescaled_pressure_upper_bound": -2.040852082972755,
+      "certified_solution_exponent_upper_bound": 1.6666666666666667,
+      "control_id": "DEGREE-THREE-PRIMITIVE-CUBE",
+      "crossing": true,
+      "different_assignment_support": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ]
+      ],
+      "exact_certificate_verified": true,
+      "exponent_certificate_source": "multi-relator-centralized-primitive-power-degree-3",
+      "frame_position_count": 3,
+      "pattern": "EAFAAEF",
+      "remaining_generators": [
+        5,
+        6,
+        7
+      ],
+      "required_pressure_upper_bound": -1.0,
+      "residual_relations": [
+        [
+          -5,
+          -5,
+          -5
+        ],
+        [
+          -7,
+          -5,
+          -5,
+          7,
+          -5
+        ],
+        [
+          -7,
+          -6,
+          -5,
+          -5,
+          7,
+          -5,
+          6
+        ],
+        [
+          -7,
+          -6,
+          -5,
+          7,
+          -5,
+          -5,
+          6
+        ]
+      ],
+      "same_assignment_support": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "status": "adversarial-profile-pressure-certified",
+      "trivial_rescaled_pressure": -0.707518749639422,
+      "trivial_solution_exponent": 3.0
+    }
+  ],
+  "claim_gate": {
+    "crossing_commutator_topology_recovered": true,
+    "degree_three_adversarial_obstructions_resolved": true,
+    "degree_three_complete_pressure_separation_proved": false,
+    "fixed_degree_copy_depth_growth_removed": true,
+    "growing_degree_profile_classification_proved": false,
+    "mixed_target_character_control_proved": false,
+    "natural_component_M4_positive": false,
+    "natural_typical_hamming_green_pair_gap_positive": false,
+    "one_frame_token_pressure_separation_proved": true,
+    "reason": "Pressure separation is certified through two frame tokens, but the Green approximation requires growing degree and a growing assignment alphabet whose dominant profiles and target-character observables remain uncontrolled.",
+    "speedup_claim_allowed": false,
+    "support_profiles_have_exact_group_presentations": true,
+    "tietze_reduction_preserves_finite_group_solution_counts": true,
+    "two_frame_token_pressure_separation_proved": true
+  },
+  "created_at": "2026-08-09T05:42:36.437376+00:00",
+  "falsifiers_triggered": [
+    "Copy-depth growth is not the remaining combinatorial bottleneck at fixed marked-word degree.",
+    "The crossing correction is nonabelian: abelianized relation rank misses its commutator residual.",
+    "Support-profile compression remains double exponential in growing frame-token degree.",
+    "The first degree-three literal-classifier failures are hidden surface, commutator, or centralized-torsion presentations, not pressure counterexamples.",
+    "Those four degree-three controls are adversarial witnesses, not an exhaustive degree-three theorem.",
+    "No positive Green pair gap, component M4, compiler, decoder, or speedup is proved."
+  ],
+  "fixed_degree_pressure_controls": [
+    {
+      "assignment_type_count": 1,
+      "classified_support_profile_count": 2,
+      "every_profile_pressure_certified": true,
+      "every_profile_topologically_classified": true,
+      "expected_crossing_pressure": -1.0,
+      "expected_noncrossing_pressure": 0.0,
+      "expected_pressure_separation_verified": true,
+      "finite_degree_only": true,
+      "frame_position_count": 0,
+      "free_basis_commutator_bound_profile_count": 0,
+      "marked_word_placement_count": 1,
+      "maximum_crossing_rescaled_pressure": -1.0,
+      "maximum_noncrossing_rescaled_pressure": 0.0,
+      "nielsen_surface_bound_profile_count": 0,
+      "pressure_certified_support_profile_count": 2,
+      "pressure_uncertified_support_profile_count": 0,
+      "primitive_power_bound_profile_count": 0,
+      "single_relator_surface_bound_profile_count": 1,
+      "status": "complete-fixed-degree-certified-pressure-separation",
+      "total_support_profile_count": 2,
+      "unclassified_support_profile_count": 0
+    },
+    {
+      "assignment_type_count": 2,
+      "classified_support_profile_count": 72,
+      "every_profile_pressure_certified": true,
+      "every_profile_topologically_classified": true,
+      "expected_crossing_pressure": -1.0,
+      "expected_noncrossing_pressure": 0.0,
+      "expected_pressure_separation_verified": true,
+      "finite_degree_only": true,
+      "frame_position_count": 1,
+      "free_basis_commutator_bound_profile_count": 0,
+      "marked_word_placement_count": 4,
+      "maximum_crossing_rescaled_pressure": -1.0,
+      "maximum_noncrossing_rescaled_pressure": 0.0,
+      "nielsen_surface_bound_profile_count": 0,
+      "pressure_certified_support_profile_count": 72,
+      "pressure_uncertified_support_profile_count": 0,
+      "primitive_power_bound_profile_count": 0,
+      "single_relator_surface_bound_profile_count": 28,
+      "status": "complete-fixed-degree-certified-pressure-separation",
+      "total_support_profile_count": 72,
+      "unclassified_support_profile_count": 0
+    },
+    {
+      "assignment_type_count": 4,
+      "classified_support_profile_count": 4384,
+      "every_profile_pressure_certified": true,
+      "every_profile_topologically_classified": false,
+      "expected_crossing_pressure": -1.0,
+      "expected_noncrossing_pressure": 0.0,
+      "expected_pressure_separation_verified": true,
+      "finite_degree_only": true,
+      "frame_position_count": 2,
+      "free_basis_commutator_bound_profile_count": 1,
+      "marked_word_placement_count": 10,
+      "maximum_crossing_rescaled_pressure": -1.0,
+      "maximum_noncrossing_rescaled_pressure": 0.0,
+      "nielsen_surface_bound_profile_count": 0,
+      "pressure_certified_support_profile_count": 4500,
+      "pressure_uncertified_support_profile_count": 0,
+      "primitive_power_bound_profile_count": 0,
+      "single_relator_surface_bound_profile_count": 1189,
+      "status": "complete-fixed-degree-certified-pressure-separation",
+      "total_support_profile_count": 4500,
+      "unclassified_support_profile_count": 116
+    }
+  ],
+  "headline_metrics": {
+    "centralized_primitive_cube_presentation_theorem_count": 1,
+    "crossing_S3_solution_count": 18,
+    "degree_three_adversarial_pressure_control_count": 4,
+    "degree_three_adversarial_pressure_failure_count": 0,
+    "exact_support_profile_expansion_theorem_count": 1,
+    "fixed_degree_copy_depth_compression_theorem_count": 1,
+    "fixed_degree_pressure_control_count": 3,
+    "growing_degree_profile_classification_theorem_count": 0,
+    "natural_positive_green_pair_gap_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "noncrossing_S3_solution_count": 36,
+    "one_frame_token_complete_pressure_separation_theorem_count": 1,
+    "relation_topology_control_count": 6,
+    "relation_topology_control_failure_count": 0,
+    "solution_preserving_tietze_reduction_theorem_count": 1,
+    "support_expansion_control_count": 5,
+    "support_expansion_control_failure_count": 0,
+    "two_frame_token_free_basis_commutator_certificate_count": 1,
+    "two_frame_token_pressure_separation_theorem_count": 1,
+    "two_frame_token_pressure_uncertified_profile_count": 0,
+    "two_frame_token_unclassified_profile_count": 116,
+    "uncompressed_crossing_commutator_topology_theorem_count": 1,
+    "uncompressed_noncrossing_free_pair_topology_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "remove_copy_depth_from_fixed_degree_marked_word_expansion",
+      "resolution": "Onto-function coefficients group repeated coordinate assignment types exactly by support.",
+      "resolved": true
+    },
+    {
+      "obligation": "extract_and_reduce_group_presentations_for_support_profiles",
+      "resolution": "The presentation builder and Tietze moves preserve every complete S3 solution count in the controls.",
+      "resolved": true
+    },
+    {
+      "obligation": "recover_crossing_commutator_topology",
+      "resolution": "The crossing leaf order leaves one commutator relator and therefore g p(n), rather than g^2, S_n solutions.",
+      "resolved": true
+    },
+    {
+      "obligation": "classify_dominant_support_profiles_at_growing_green_degree",
+      "resolution": "The profile bound is independent of K but double exponential in u; exploit topology, symmetry, or a transfer matrix as u grows.",
+      "resolved": false
+    },
+    {
+      "obligation": "identify_the_first_fixed_degree_pressure_separation",
+      "resolution": "For every placement of zero or one frame token and every typical-Hamming support profile, Tietze reduction gives noncrossing pressure zero and crossing pressure minus one.",
+      "resolved": true
+    },
+    {
+      "obligation": "certify_two_frame_token_pressure_separation",
+      "resolution": "Every two-token profile is bounded by the trivial count, one retained surface relator, or an explicitly certified free-basis commutator. Exact classification of the full 116 residual systems is unnecessary for this bound.",
+      "resolved": true
+    },
+    {
+      "obligation": "kill_first_degree_three_literal_classifier_obstructions",
+      "resolution": "The four entropy-heavy profiles found by the deterministic degree-three probe reduce to hidden genus-two, free-basis commutator, or an exact centralized primitive-cube presentation. This is not an exhaustive degree-three census.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_mixed_profile_target_character_observables",
+      "resolution": "Track the full-product observable through Tietze elimination and prove uniform character suppression or cancellation.",
+      "resolved": false
+    }
+  ],
+  "relation_topology_controls": [
+    {
+      "classified_solution_exponent": 2,
+      "control_id": "UNCOMPRESSED-NONCROSSING-FREE-PAIR",
+      "different_assignment_support": [
+        []
+      ],
+      "eliminated_generator_count": 2,
+      "exact_solution_preservation_verified": true,
+      "expected_solution_count": 36,
+      "expected_topology_verified": true,
+      "free_generator_count": 2,
+      "initial_generator_count": 4,
+      "initial_presentation_solution_count": 36,
+      "initial_relations": [
+        [
+          -4,
+          -3
+        ],
+        [
+          -2,
+          -1
+        ],
+        [
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "nonorientable_surface_genus": null,
+      "orientable_surface_genus": null,
+      "pattern": "EEFF",
+      "reduced_presentation_solution_count": 36,
+      "remaining_generators": [
+        2,
+        4
+      ],
+      "residual_relations": [],
+      "residual_topology": "free-group",
+      "same_assignment_support": [],
+      "status": "exact-marked-relation-topology-control-verified",
+      "symmetric_group_degree": 3
+    },
+    {
+      "classified_solution_exponent": 1,
+      "control_id": "UNCOMPRESSED-CROSSING-COMMUTING-PAIR",
+      "different_assignment_support": [
+        []
+      ],
+      "eliminated_generator_count": 2,
+      "exact_solution_preservation_verified": true,
+      "expected_solution_count": 18,
+      "expected_topology_verified": true,
+      "free_generator_count": 0,
+      "initial_generator_count": 4,
+      "initial_presentation_solution_count": 18,
+      "initial_relations": [
+        [
+          -4,
+          -2
+        ],
+        [
+          -3,
+          -1
+        ],
+        [
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "nonorientable_surface_genus": null,
+      "orientable_surface_genus": 1,
+      "pattern": "EFEF",
+      "reduced_presentation_solution_count": 18,
+      "remaining_generators": [
+        3,
+        4
+      ],
+      "residual_relations": [
+        [
+          -4,
+          -3,
+          4,
+          3
+        ]
+      ],
+      "residual_topology": "rank-two-torus-commutator",
+      "same_assignment_support": [],
+      "status": "exact-marked-relation-topology-control-verified",
+      "symmetric_group_degree": 3
+    },
+    {
+      "classified_solution_exponent": 1,
+      "control_id": "MIXED-EAFB-DIFFERING-00",
+      "different_assignment_support": [
+        [
+          0,
+          0
+        ]
+      ],
+      "eliminated_generator_count": 3,
+      "exact_solution_preservation_verified": true,
+      "expected_solution_count": null,
+      "expected_topology_verified": true,
+      "free_generator_count": 1,
+      "initial_generator_count": 4,
+      "initial_presentation_solution_count": 6,
+      "initial_relations": [
+        [
+          -4
+        ],
+        [
+          -3
+        ],
+        [
+          -4,
+          -2,
+          -1
+        ],
+        [
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "nonorientable_surface_genus": null,
+      "orientable_surface_genus": null,
+      "pattern": "EAFB",
+      "reduced_presentation_solution_count": 6,
+      "remaining_generators": [
+        2
+      ],
+      "residual_relations": [],
+      "residual_topology": "free-group",
+      "same_assignment_support": [],
+      "status": "exact-marked-relation-topology-control-verified",
+      "symmetric_group_degree": 3
+    },
+    {
+      "classified_solution_exponent": 1,
+      "control_id": "MIXED-EAFB-DIFFERING-01",
+      "different_assignment_support": [
+        [
+          0,
+          1
+        ]
+      ],
+      "eliminated_generator_count": 3,
+      "exact_solution_preservation_verified": true,
+      "expected_solution_count": null,
+      "expected_topology_verified": true,
+      "free_generator_count": 1,
+      "initial_generator_count": 4,
+      "initial_presentation_solution_count": 6,
+      "initial_relations": [
+        [
+          -4
+        ],
+        [
+          -4,
+          -3
+        ],
+        [
+          -2,
+          -1
+        ],
+        [
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "nonorientable_surface_genus": null,
+      "orientable_surface_genus": null,
+      "pattern": "EAFB",
+      "reduced_presentation_solution_count": 6,
+      "remaining_generators": [
+        2
+      ],
+      "residual_relations": [],
+      "residual_topology": "free-group",
+      "same_assignment_support": [],
+      "status": "exact-marked-relation-topology-control-verified",
+      "symmetric_group_degree": 3
+    },
+    {
+      "classified_solution_exponent": 1,
+      "control_id": "MIXED-EAFB-DIFFERING-10",
+      "different_assignment_support": [
+        [
+          1,
+          0
+        ]
+      ],
+      "eliminated_generator_count": 3,
+      "exact_solution_preservation_verified": true,
+      "expected_solution_count": null,
+      "expected_topology_verified": true,
+      "free_generator_count": 1,
+      "initial_generator_count": 4,
+      "initial_presentation_solution_count": 6,
+      "initial_relations": [
+        [
+          -4
+        ],
+        [
+          -4,
+          -1
+        ],
+        [
+          -3,
+          -2
+        ],
+        [
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "nonorientable_surface_genus": null,
+      "orientable_surface_genus": null,
+      "pattern": "EAFB",
+      "reduced_presentation_solution_count": 6,
+      "remaining_generators": [
+        3
+      ],
+      "residual_relations": [],
+      "residual_topology": "free-group",
+      "same_assignment_support": [],
+      "status": "exact-marked-relation-topology-control-verified",
+      "symmetric_group_degree": 3
+    },
+    {
+      "classified_solution_exponent": 1,
+      "control_id": "MIXED-EAFB-DIFFERING-11",
+      "different_assignment_support": [
+        [
+          1,
+          1
+        ]
+      ],
+      "eliminated_generator_count": 3,
+      "exact_solution_preservation_verified": true,
+      "expected_solution_count": null,
+      "expected_topology_verified": true,
+      "free_generator_count": 1,
+      "initial_generator_count": 4,
+      "initial_presentation_solution_count": 6,
+      "initial_relations": [
+        [
+          -4
+        ],
+        [
+          -1
+        ],
+        [
+          -4,
+          -3,
+          -2
+        ],
+        [
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "nonorientable_surface_genus": null,
+      "orientable_surface_genus": null,
+      "pattern": "EAFB",
+      "reduced_presentation_solution_count": 6,
+      "remaining_generators": [
+        3
+      ],
+      "residual_relations": [],
+      "residual_topology": "free-group",
+      "same_assignment_support": [],
+      "status": "exact-marked-relation-topology-control-verified",
+      "symmetric_group_degree": 3
+    }
+  ],
+  "scaling_records": [
+    {
+      "assignment_type_count": 4,
+      "fixed_degree_copy_depth_growth_removed": true,
+      "frame_position_count": 2,
+      "growing_degree_profile_classification_proved": false,
+      "log2_raw_coordinate_assignment_terms": 34,
+      "log2_support_profile_upper_bound": 8,
+      "n": 8,
+      "remaining_source_coordinate_count": 17,
+      "selected_copy_count": 18,
+      "status": "fixed-degree-copy-growth-compressed-growing-degree-open",
+      "support_profile_bound_independent_of_copy_count": true
+    },
+    {
+      "assignment_type_count": 16,
+      "fixed_degree_copy_depth_growth_removed": true,
+      "frame_position_count": 4,
+      "growing_degree_profile_classification_proved": false,
+      "log2_raw_coordinate_assignment_terms": 68,
+      "log2_support_profile_upper_bound": 32,
+      "n": 8,
+      "remaining_source_coordinate_count": 17,
+      "selected_copy_count": 18,
+      "status": "fixed-degree-copy-growth-compressed-growing-degree-open",
+      "support_profile_bound_independent_of_copy_count": true
+    },
+    {
+      "assignment_type_count": 256,
+      "fixed_degree_copy_depth_growth_removed": true,
+      "frame_position_count": 8,
+      "growing_degree_profile_classification_proved": false,
+      "log2_raw_coordinate_assignment_terms": 136,
+      "log2_support_profile_upper_bound": 512,
+      "n": 8,
+      "remaining_source_coordinate_count": 17,
+      "selected_copy_count": 18,
+      "status": "fixed-degree-copy-growth-compressed-growing-degree-open",
+      "support_profile_bound_independent_of_copy_count": true
+    },
+    {
+      "assignment_type_count": 4,
+      "fixed_degree_copy_depth_growth_removed": true,
+      "frame_position_count": 2,
+      "growing_degree_profile_classification_proved": false,
+      "log2_raw_coordinate_assignment_terms": 92,
+      "log2_support_profile_upper_bound": 8,
+      "n": 16,
+      "remaining_source_coordinate_count": 46,
+      "selected_copy_count": 47,
+      "status": "fixed-degree-copy-growth-compressed-growing-degree-open",
+      "support_profile_bound_independent_of_copy_count": true
+    },
+    {
+      "assignment_type_count": 16,
+      "fixed_degree_copy_depth_growth_removed": true,
+      "frame_position_count": 4,
+      "growing_degree_profile_classification_proved": false,
+      "log2_raw_coordinate_assignment_terms": 184,
+      "log2_support_profile_upper_bound": 32,
+      "n": 16,
+      "remaining_source_coordinate_count": 46,
+      "selected_copy_count": 47,
+      "status": "fixed-degree-copy-growth-compressed-growing-degree-open",
+      "support_profile_bound_independent_of_copy_count": true
+    },
+    {
+      "assignment_type_count": 256,
+      "fixed_degree_copy_depth_growth_removed": true,
+      "frame_position_count": 8,
+      "growing_degree_profile_classification_proved": false,
+      "log2_raw_coordinate_assignment_terms": 368,
+      "log2_support_profile_upper_bound": 512,
+      "n": 16,
+      "remaining_source_coordinate_count": 46,
+      "selected_copy_count": 47,
+      "status": "fixed-degree-copy-growth-compressed-growing-degree-open",
+      "support_profile_bound_independent_of_copy_count": true
+    },
+    {
+      "assignment_type_count": 4,
+      "fixed_degree_copy_depth_growth_removed": true,
+      "frame_position_count": 2,
+      "growing_degree_profile_classification_proved": false,
+      "log2_raw_coordinate_assignment_terms": 238,
+      "log2_support_profile_upper_bound": 8,
+      "n": 32,
+      "remaining_source_coordinate_count": 119,
+      "selected_copy_count": 120,
+      "status": "fixed-degree-copy-growth-compressed-growing-degree-open",
+      "support_profile_bound_independent_of_copy_count": true
+    },
+    {
+      "assignment_type_count": 16,
+      "fixed_degree_copy_depth_growth_removed": true,
+      "frame_position_count": 4,
+      "growing_degree_profile_classification_proved": false,
+      "log2_raw_coordinate_assignment_terms": 476,
+      "log2_support_profile_upper_bound": 32,
+      "n": 32,
+      "remaining_source_coordinate_count": 119,
+      "selected_copy_count": 120,
+      "status": "fixed-degree-copy-growth-compressed-growing-degree-open",
+      "support_profile_bound_independent_of_copy_count": true
+    },
+    {
+      "assignment_type_count": 256,
+      "fixed_degree_copy_depth_growth_removed": true,
+      "frame_position_count": 8,
+      "growing_degree_profile_classification_proved": false,
+      "log2_raw_coordinate_assignment_terms": 952,
+      "log2_support_profile_upper_bound": 512,
+      "n": 32,
+      "remaining_source_coordinate_count": 119,
+      "selected_copy_count": 120,
+      "status": "fixed-degree-copy-growth-compressed-growing-degree-open",
+      "support_profile_bound_independent_of_copy_count": true
+    },
+    {
+      "assignment_type_count": 4,
+      "fixed_degree_copy_depth_growth_removed": true,
+      "frame_position_count": 2,
+      "growing_degree_profile_classification_proved": false,
+      "log2_raw_coordinate_assignment_terms": 594,
+      "log2_support_profile_upper_bound": 8,
+      "n": 64,
+      "remaining_source_coordinate_count": 297,
+      "selected_copy_count": 298,
+      "status": "fixed-degree-copy-growth-compressed-growing-degree-open",
+      "support_profile_bound_independent_of_copy_count": true
+    },
+    {
+      "assignment_type_count": 16,
+      "fixed_degree_copy_depth_growth_removed": true,
+      "frame_position_count": 4,
+      "growing_degree_profile_classification_proved": false,
+      "log2_raw_coordinate_assignment_terms": 1188,
+      "log2_support_profile_upper_bound": 32,
+      "n": 64,
+      "remaining_source_coordinate_count": 297,
+      "selected_copy_count": 298,
+      "status": "fixed-degree-copy-growth-compressed-growing-degree-open",
+      "support_profile_bound_independent_of_copy_count": true
+    },
+    {
+      "assignment_type_count": 256,
+      "fixed_degree_copy_depth_growth_removed": true,
+      "frame_position_count": 8,
+      "growing_degree_profile_classification_proved": false,
+      "log2_raw_coordinate_assignment_terms": 2376,
+      "log2_support_profile_upper_bound": 512,
+      "n": 64,
+      "remaining_source_coordinate_count": 297,
+      "selected_copy_count": 298,
+      "status": "fixed-degree-copy-growth-compressed-growing-degree-open",
+      "support_profile_bound_independent_of_copy_count": true
+    }
+  ],
+  "status": "fixed-degree-marked-topology-compressed-growing-degree-open",
+  "summary": "Compressed fixed-degree marked moments from source-coordinate sequences to support-profile group presentations, recovered the free-versus-commutator crossing topology exactly, and certified the expected pressure gap for every profile through degree two.",
+  "support_expansion_controls": [
+    {
+      "assignment_type_count": 1,
+      "checked_valid_assignment_counts": 14,
+      "exact_support_profile_expansion_verified": true,
+      "frame_position_count": 0,
+      "maximum_coordinate_power": 6,
+      "maximum_identity_residual": 0,
+      "status": "exact-onto-support-profile-expansion-verified"
+    },
+    {
+      "assignment_type_count": 2,
+      "checked_valid_assignment_counts": 21,
+      "exact_support_profile_expansion_verified": true,
+      "frame_position_count": 1,
+      "maximum_coordinate_power": 6,
+      "maximum_identity_residual": 0,
+      "status": "exact-onto-support-profile-expansion-verified"
+    },
+    {
+      "assignment_type_count": 4,
+      "checked_valid_assignment_counts": 35,
+      "exact_support_profile_expansion_verified": true,
+      "frame_position_count": 2,
+      "maximum_coordinate_power": 6,
+      "maximum_identity_residual": 0,
+      "status": "exact-onto-support-profile-expansion-verified"
+    },
+    {
+      "assignment_type_count": 8,
+      "checked_valid_assignment_counts": 63,
+      "exact_support_profile_expansion_verified": true,
+      "frame_position_count": 3,
+      "maximum_coordinate_power": 6,
+      "maximum_identity_residual": 0,
+      "status": "exact-onto-support-profile-expansion-verified"
+    },
+    {
+      "assignment_type_count": 16,
+      "checked_valid_assignment_counts": 119,
+      "exact_support_profile_expansion_verified": true,
+      "frame_position_count": 4,
+      "maximum_coordinate_power": 6,
+      "maximum_identity_residual": 0,
+      "status": "exact-onto-support-profile-expansion-verified"
+    }
+  ],
+  "theorem_contract": {
+    "centralized_primitive_power_count": "The residual presentation <x,y,z | x^k,[x,z],[y,z]> is (C_k * Z) x Z. Its exact finite-group solution count is |G| times the sum, over conjugacy classes [z], of the k-torsion count in C_G(z); for S_n its exponent is 2-1/k.",
+    "copy_depth_compression": "For u frame positions the two Q powers require at most 2^(2^(u+1)) support profiles, independent of K.",
+    "nielsen_and_power_certificates": "A bounded chain of elementary Nielsen automorphisms can expose a hidden surface relator without changing its solution count. A primitive x^k relator costs 1/k of a leading |S_n| exponent, from the cycle-index count for permutations with cycle lengths dividing k.",
+    "one_relator_pressure_bound": "Dropping residual equations gives a rigorous upper bound. A retained orientable surface or free-basis commutator relator loses one leading |S_n| exponent; a projective-plane relator loses one half via the involution asymptotic.",
+    "presentation_extraction": "Each support profile gives an exact finite-group presentation whose relators are the split and two-color ordered products.",
+    "primary_surface_count_reference": "https://arxiv.org/abs/2106.11089",
+    "scope": "Growing-degree support-profile classification, mixed target character sums, positive Green M4, and speedup remain open.",
+    "support_profile_expansion": "Equation (1) groups source-coordinate assignment sequences by their exact support with coefficient onto(r,|S|).",
+    "tietze_preservation": "Eliminating a generator that occurs once in a relator is a solution-preserving bijection over every finite group.",
+    "uncompressed_topology": "EEFF reduces to a free rank-two presentation; EFEF reduces to one rank-two commutator relation."
+  }
+}

@@ -405,6 +405,134 @@ from self_dual_wreath_orientation_rank_budget import (
 )
 
 
+from self_dual_wreath_orientation_retention_theorem import (
+    write_orientation_retention_theorem_report,
+)
+from self_dual_wreath_orientation_subspace_filter import (
+    write_orientation_subspace_filter_report,
+)
+from self_dual_wreath_pair_common_covering_transition import (
+    write_pair_common_covering_transition_report,
+)
+from self_dual_wreath_pair_core_rank_concentration import (
+    write_pair_core_rank_concentration_report,
+)
+from self_dual_wreath_pair_polar_sampler import (
+    write_pair_polar_sampler_report,
+)
+from self_dual_wreath_pair_polar_transport_network import (
+    write_pair_polar_transport_network_report,
+)
+from self_dual_wreath_pair_transport_degree_obstruction import (
+    write_pair_transport_degree_obstruction_report,
+)
+from self_dual_wreath_pair_transport_native_mass_boundary import (
+    write_pair_transport_native_mass_boundary_report,
+)
+from self_dual_wreath_partial_support_child_embedding import (
+    write_partial_support_child_embedding_report,
+)
+from self_dual_wreath_partial_support_source_mass_boundary import (
+    write_partial_support_source_mass_boundary_report,
+)
+
+
+from self_dual_wreath_boolean_graph_stopping_core_pressure import (
+    write_boolean_graph_stopping_core_pressure_report,
+)
+from self_dual_wreath_component_aggregate_frame_indeterminacy import (
+    write_component_aggregate_frame_indeterminacy_report,
+)
+from self_dual_wreath_component_commutator_collision_free_transfer import (
+    write_component_commutator_collision_free_transfer_report,
+)
+from self_dual_wreath_component_commutator_haar_benchmark import (
+    write_component_commutator_haar_benchmark_report,
+)
+from self_dual_wreath_component_commutator_trace_mass_bridge import (
+    write_component_commutator_trace_mass_bridge_report,
+)
+from self_dual_wreath_component_green_ridge_stability import (
+    write_component_green_ridge_stability_report,
+)
+from self_dual_wreath_component_hamming_orbit_reduction import (
+    write_component_hamming_orbit_reduction_report,
+)
+from self_dual_wreath_component_leaf_resolved_green_normal_form import (
+    write_component_leaf_resolved_green_normal_form_report,
+)
+from self_dual_wreath_contiguous_all_a_support_pressure import (
+    write_contiguous_all_a_support_pressure_report,
+)
+from self_dual_wreath_contiguous_frame_target_factorization import (
+    write_contiguous_frame_target_factorization_report,
+)
+
+
+from self_dual_wreath_exceptional_block_graph_core_pressure import (
+    write_exceptional_block_graph_core_pressure_report,
+)
+from self_dual_wreath_frame_subword_entropy import (
+    write_frame_subword_entropy_report,
+)
+from self_dual_wreath_leaf_marked_green_word_normal_form import (
+    write_leaf_marked_green_word_normal_form_report,
+)
+from self_dual_wreath_linear_code_support_pressure import (
+    write_linear_code_support_pressure_report,
+)
+from self_dual_wreath_marked_pressure_obstruction_search import (
+    write_marked_pressure_obstruction_search_report,
+)
+from self_dual_wreath_marked_relation_topology import (
+    write_marked_relation_topology_report,
+)
+from self_dual_wreath_mixed_split_target_genus import (
+    write_mixed_split_target_genus_report,
+)
+from self_dual_wreath_natural_leaf_commutator_trace_profile import (
+    write_natural_leaf_commutator_trace_profile_report,
+)
+from self_dual_wreath_parity_stopping_core_pressure import (
+    write_parity_stopping_core_pressure_report,
+)
+from self_dual_wreath_periodic_frame_fiber_counterfamily import (
+    write_periodic_frame_fiber_counterfamily_report,
+)
+
+
+from self_dual_wreath_high_codimension_face_word_frontier import (
+    write_high_codimension_face_word_frontier_report,
+)
+from self_dual_wreath_periodic_frame_rank_collapse import (
+    write_periodic_frame_rank_collapse_report,
+)
+from self_dual_wreath_petz_pgm_obstruction import (
+    write_petz_pgm_obstruction_report,
+)
+from self_dual_wreath_pgm_quantum_sampling_reduction import (
+    write_pgm_quantum_sampling_reduction_report,
+)
+from self_dual_wreath_pgm_spectral_window import (
+    write_pgm_spectral_window_report,
+)
+from self_dual_wreath_pgm_success_theorem import (
+    write_pgm_success_theorem_report,
+)
+from self_dual_wreath_pgm_truncation_robustness import (
+    write_pgm_truncation_robustness_report,
+)
+from self_dual_wreath_physical_orientation_interference import (
+    write_physical_orientation_interference_report,
+)
+from self_dual_wreath_physical_pgm_intertwiner import (
+    write_physical_pgm_intertwiner_report,
+)
+from self_dual_wreath_plancherel_kronecker_positivity import (
+    write_plancherel_kronecker_positivity_report,
+)
+
+
 from blocker_taxonomy import write_blocker_taxonomy
 from affine_geometry_code_search import AffineGeometrySearchSpec, write_affine_geometry_code_search
 from bch_code_search import BCHSearchSpec, write_bch_code_search
@@ -9583,6 +9711,966 @@ def command_code_wreath_orientation_rank_budget(
     return 0
 
 
+def command_code_wreath_orientation_retention_theorem(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_orientation_retention_theorem_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Orientation Retention Theorem analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_orientation_retention_theorem.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_orientation_subspace_filter(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_orientation_subspace_filter_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Orientation Subspace Filter analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_orientation_subspace_filter.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_pair_common_covering_transition(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_pair_common_covering_transition_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Pair Common Covering Transition analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_pair_common_covering_transition.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_pair_core_rank_concentration(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_pair_core_rank_concentration_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Pair Core Rank Concentration analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_pair_core_rank_concentration.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_pair_polar_sampler(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_pair_polar_sampler_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Pair Polar Sampler analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_pair_polar_sampler.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_pair_polar_transport_network(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_pair_polar_transport_network_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Pair Polar Transport Network analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_pair_polar_transport_network.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_pair_transport_degree_obstruction(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_pair_transport_degree_obstruction_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Pair Transport Degree Obstruction analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_pair_transport_degree_obstruction.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_pair_transport_native_mass_boundary(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_pair_transport_native_mass_boundary_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Pair Transport Native Mass Boundary analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_pair_transport_native_mass_boundary.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_partial_support_child_embedding(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_partial_support_child_embedding_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Partial Support Child Embedding analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_partial_support_child_embedding.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_partial_support_source_mass_boundary(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_partial_support_source_mass_boundary_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Partial Support Source Mass Boundary analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_partial_support_source_mass_boundary.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_boolean_graph_stopping_core_pressure(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_boolean_graph_stopping_core_pressure_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Boolean Graph Stopping Core Pressure analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_boolean_graph_stopping_core_pressure.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_component_aggregate_frame_indeterminacy(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_component_aggregate_frame_indeterminacy_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Component Aggregate Frame Indeterminacy analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_component_aggregate_frame_indeterminacy.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_component_commutator_collision_free_transfer(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_component_commutator_collision_free_transfer_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Component Commutator Collision Free Transfer analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_component_commutator_collision_free_transfer.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_component_commutator_haar_benchmark(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_component_commutator_haar_benchmark_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Component Commutator Haar Benchmark analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_component_commutator_haar_benchmark.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_component_commutator_trace_mass_bridge(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_component_commutator_trace_mass_bridge_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Component Commutator Trace Mass Bridge analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_component_commutator_trace_mass_bridge.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_component_green_ridge_stability(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_component_green_ridge_stability_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Component Green Ridge Stability analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_component_green_ridge_stability.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_component_hamming_orbit_reduction(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_component_hamming_orbit_reduction_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Component Hamming Orbit Reduction analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_component_hamming_orbit_reduction.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_component_leaf_resolved_green_normal_form(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_component_leaf_resolved_green_normal_form_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Component Leaf Resolved Green Normal Form analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_component_leaf_resolved_green_normal_form.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_contiguous_all_a_support_pressure(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_contiguous_all_a_support_pressure_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Contiguous All A Support Pressure analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_contiguous_all_a_support_pressure.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_contiguous_frame_target_factorization(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_contiguous_frame_target_factorization_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Contiguous Frame Target Factorization analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_contiguous_frame_target_factorization.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_exceptional_block_graph_core_pressure(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_exceptional_block_graph_core_pressure_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Exceptional Block Graph Core Pressure analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_exceptional_block_graph_core_pressure.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_frame_subword_entropy(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_frame_subword_entropy_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Frame Subword Entropy analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_frame_subword_entropy.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_leaf_marked_green_word_normal_form(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_leaf_marked_green_word_normal_form_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Leaf Marked Green Word Normal Form analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_leaf_marked_green_word_normal_form.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_linear_code_support_pressure(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_linear_code_support_pressure_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Linear Code Support Pressure analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_linear_code_support_pressure.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_marked_pressure_obstruction_search(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_marked_pressure_obstruction_search_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Marked Pressure Obstruction Search analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_marked_pressure_obstruction_search.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_marked_relation_topology(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_marked_relation_topology_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Marked Relation Topology analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_marked_relation_topology.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_mixed_split_target_genus(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_mixed_split_target_genus_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Mixed Split Target Genus analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_mixed_split_target_genus.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_natural_leaf_commutator_trace_profile(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_natural_leaf_commutator_trace_profile_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Natural Leaf Commutator Trace Profile analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_natural_leaf_commutator_trace_profile.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_parity_stopping_core_pressure(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_parity_stopping_core_pressure_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Parity Stopping Core Pressure analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_parity_stopping_core_pressure.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_periodic_frame_fiber_counterfamily(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_periodic_frame_fiber_counterfamily_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Periodic Frame Fiber Counterfamily analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_periodic_frame_fiber_counterfamily.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_high_codimension_face_word_frontier(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_high_codimension_face_word_frontier_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath High Codimension Face Word Frontier analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_high_codimension_face_word_frontier.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_periodic_frame_rank_collapse(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_periodic_frame_rank_collapse_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Periodic Frame Rank Collapse analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_periodic_frame_rank_collapse.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_petz_pgm_obstruction(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_petz_pgm_obstruction_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Petz Pgm Obstruction analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_petz_pgm_obstruction.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_pgm_quantum_sampling_reduction(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_pgm_quantum_sampling_reduction_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Pgm Quantum Sampling Reduction analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_pgm_quantum_sampling_reduction.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_pgm_spectral_window(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_pgm_spectral_window_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Pgm Spectral Window analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_pgm_spectral_window.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_pgm_success_theorem(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_pgm_success_theorem_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Pgm Success Theorem analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_pgm_success_theorem.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_pgm_truncation_robustness(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_pgm_truncation_robustness_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Pgm Truncation Robustness analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_pgm_truncation_robustness.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_physical_orientation_interference(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_physical_orientation_interference_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Physical Orientation Interference analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_physical_orientation_interference.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_physical_pgm_intertwiner(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_physical_pgm_intertwiner_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Physical Pgm Intertwiner analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_physical_pgm_intertwiner.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_code_wreath_plancherel_kronecker_positivity(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_plancherel_kronecker_positivity_report(
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("Code Wreath Plancherel Kronecker Positivity analysis complete")
+    print(
+        "Artifact: research/representation/self_dual_wreath_plancherel_kronecker_positivity.json"
+    )
+    print(
+        f"Speedup claim allowed: "
+        f"{payload['claim_gate']['speedup_claim_allowed']}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
 def command_coset_strong_fourier_information(
     args: argparse.Namespace,
 ) -> int:
@@ -16769,6 +17857,486 @@ def build_parser() -> argparse.ArgumentParser:
     )
     code_wreath_orientation_rank_budget.set_defaults(
         func=command_code_wreath_orientation_rank_budget
+    )
+
+    code_wreath_orientation_retention_theorem = subparsers.add_parser(
+        "code-wreath-orientation-retention-theorem",
+        help="Analyze code wreath orientation retention theorem theorem performance.",
+    )
+    code_wreath_orientation_retention_theorem.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_orientation_retention_theorem.set_defaults(
+        func=command_code_wreath_orientation_retention_theorem
+    )
+
+    code_wreath_orientation_subspace_filter = subparsers.add_parser(
+        "code-wreath-orientation-subspace-filter",
+        help="Analyze code wreath orientation subspace filter theorem performance.",
+    )
+    code_wreath_orientation_subspace_filter.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_orientation_subspace_filter.set_defaults(
+        func=command_code_wreath_orientation_subspace_filter
+    )
+
+    code_wreath_pair_common_covering_transition = subparsers.add_parser(
+        "code-wreath-pair-common-covering-transition",
+        help="Analyze code wreath pair common covering transition theorem performance.",
+    )
+    code_wreath_pair_common_covering_transition.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_pair_common_covering_transition.set_defaults(
+        func=command_code_wreath_pair_common_covering_transition
+    )
+
+    code_wreath_pair_core_rank_concentration = subparsers.add_parser(
+        "code-wreath-pair-core-rank-concentration",
+        help="Analyze code wreath pair core rank concentration theorem performance.",
+    )
+    code_wreath_pair_core_rank_concentration.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_pair_core_rank_concentration.set_defaults(
+        func=command_code_wreath_pair_core_rank_concentration
+    )
+
+    code_wreath_pair_polar_sampler = subparsers.add_parser(
+        "code-wreath-pair-polar-sampler",
+        help="Analyze code wreath pair polar sampler theorem performance.",
+    )
+    code_wreath_pair_polar_sampler.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_pair_polar_sampler.set_defaults(
+        func=command_code_wreath_pair_polar_sampler
+    )
+
+    code_wreath_pair_polar_transport_network = subparsers.add_parser(
+        "code-wreath-pair-polar-transport-network",
+        help="Analyze code wreath pair polar transport network theorem performance.",
+    )
+    code_wreath_pair_polar_transport_network.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_pair_polar_transport_network.set_defaults(
+        func=command_code_wreath_pair_polar_transport_network
+    )
+
+    code_wreath_pair_transport_degree_obstruction = subparsers.add_parser(
+        "code-wreath-pair-transport-degree-obstruction",
+        help="Analyze code wreath pair transport degree obstruction theorem performance.",
+    )
+    code_wreath_pair_transport_degree_obstruction.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_pair_transport_degree_obstruction.set_defaults(
+        func=command_code_wreath_pair_transport_degree_obstruction
+    )
+
+    code_wreath_pair_transport_native_mass_boundary = subparsers.add_parser(
+        "code-wreath-pair-transport-native-mass-boundary",
+        help="Analyze code wreath pair transport native mass boundary theorem performance.",
+    )
+    code_wreath_pair_transport_native_mass_boundary.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_pair_transport_native_mass_boundary.set_defaults(
+        func=command_code_wreath_pair_transport_native_mass_boundary
+    )
+
+    code_wreath_partial_support_child_embedding = subparsers.add_parser(
+        "code-wreath-partial-support-child-embedding",
+        help="Analyze code wreath partial support child embedding theorem performance.",
+    )
+    code_wreath_partial_support_child_embedding.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_partial_support_child_embedding.set_defaults(
+        func=command_code_wreath_partial_support_child_embedding
+    )
+
+    code_wreath_partial_support_source_mass_boundary = subparsers.add_parser(
+        "code-wreath-partial-support-source-mass-boundary",
+        help="Analyze code wreath partial support source mass boundary theorem performance.",
+    )
+    code_wreath_partial_support_source_mass_boundary.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_partial_support_source_mass_boundary.set_defaults(
+        func=command_code_wreath_partial_support_source_mass_boundary
+    )
+
+    code_wreath_boolean_graph_stopping_core_pressure = subparsers.add_parser(
+        "code-wreath-boolean-graph-stopping-core-pressure",
+        help="Analyze code wreath boolean graph stopping core pressure theorem performance.",
+    )
+    code_wreath_boolean_graph_stopping_core_pressure.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_boolean_graph_stopping_core_pressure.set_defaults(
+        func=command_code_wreath_boolean_graph_stopping_core_pressure
+    )
+
+    code_wreath_component_aggregate_frame_indeterminacy = subparsers.add_parser(
+        "code-wreath-component-aggregate-frame-indeterminacy",
+        help="Analyze code wreath component aggregate frame indeterminacy theorem performance.",
+    )
+    code_wreath_component_aggregate_frame_indeterminacy.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_component_aggregate_frame_indeterminacy.set_defaults(
+        func=command_code_wreath_component_aggregate_frame_indeterminacy
+    )
+
+    code_wreath_component_commutator_collision_free_transfer = subparsers.add_parser(
+        "code-wreath-component-commutator-collision-free-transfer",
+        help="Analyze code wreath component commutator collision free transfer theorem performance.",
+    )
+    code_wreath_component_commutator_collision_free_transfer.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_component_commutator_collision_free_transfer.set_defaults(
+        func=command_code_wreath_component_commutator_collision_free_transfer
+    )
+
+    code_wreath_component_commutator_haar_benchmark = subparsers.add_parser(
+        "code-wreath-component-commutator-haar-benchmark",
+        help="Analyze code wreath component commutator haar benchmark theorem performance.",
+    )
+    code_wreath_component_commutator_haar_benchmark.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_component_commutator_haar_benchmark.set_defaults(
+        func=command_code_wreath_component_commutator_haar_benchmark
+    )
+
+    code_wreath_component_commutator_trace_mass_bridge = subparsers.add_parser(
+        "code-wreath-component-commutator-trace-mass-bridge",
+        help="Analyze code wreath component commutator trace mass bridge theorem performance.",
+    )
+    code_wreath_component_commutator_trace_mass_bridge.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_component_commutator_trace_mass_bridge.set_defaults(
+        func=command_code_wreath_component_commutator_trace_mass_bridge
+    )
+
+    code_wreath_component_green_ridge_stability = subparsers.add_parser(
+        "code-wreath-component-green-ridge-stability",
+        help="Analyze code wreath component green ridge stability theorem performance.",
+    )
+    code_wreath_component_green_ridge_stability.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_component_green_ridge_stability.set_defaults(
+        func=command_code_wreath_component_green_ridge_stability
+    )
+
+    code_wreath_component_hamming_orbit_reduction = subparsers.add_parser(
+        "code-wreath-component-hamming-orbit-reduction",
+        help="Analyze code wreath component hamming orbit reduction theorem performance.",
+    )
+    code_wreath_component_hamming_orbit_reduction.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_component_hamming_orbit_reduction.set_defaults(
+        func=command_code_wreath_component_hamming_orbit_reduction
+    )
+
+    code_wreath_component_leaf_resolved_green_normal_form = subparsers.add_parser(
+        "code-wreath-component-leaf-resolved-green-normal-form",
+        help="Analyze code wreath component leaf resolved green normal form theorem performance.",
+    )
+    code_wreath_component_leaf_resolved_green_normal_form.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_component_leaf_resolved_green_normal_form.set_defaults(
+        func=command_code_wreath_component_leaf_resolved_green_normal_form
+    )
+
+    code_wreath_contiguous_all_a_support_pressure = subparsers.add_parser(
+        "code-wreath-contiguous-all-a-support-pressure",
+        help="Analyze code wreath contiguous all a support pressure theorem performance.",
+    )
+    code_wreath_contiguous_all_a_support_pressure.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_contiguous_all_a_support_pressure.set_defaults(
+        func=command_code_wreath_contiguous_all_a_support_pressure
+    )
+
+    code_wreath_contiguous_frame_target_factorization = subparsers.add_parser(
+        "code-wreath-contiguous-frame-target-factorization",
+        help="Analyze code wreath contiguous frame target factorization theorem performance.",
+    )
+    code_wreath_contiguous_frame_target_factorization.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_contiguous_frame_target_factorization.set_defaults(
+        func=command_code_wreath_contiguous_frame_target_factorization
+    )
+
+    code_wreath_exceptional_block_graph_core_pressure = subparsers.add_parser(
+        "code-wreath-exceptional-block-graph-core-pressure",
+        help="Analyze code wreath exceptional block graph core pressure theorem performance.",
+    )
+    code_wreath_exceptional_block_graph_core_pressure.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_exceptional_block_graph_core_pressure.set_defaults(
+        func=command_code_wreath_exceptional_block_graph_core_pressure
+    )
+
+    code_wreath_frame_subword_entropy = subparsers.add_parser(
+        "code-wreath-frame-subword-entropy",
+        help="Analyze code wreath frame subword entropy theorem performance.",
+    )
+    code_wreath_frame_subword_entropy.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_frame_subword_entropy.set_defaults(
+        func=command_code_wreath_frame_subword_entropy
+    )
+
+    code_wreath_leaf_marked_green_word_normal_form = subparsers.add_parser(
+        "code-wreath-leaf-marked-green-word-normal-form",
+        help="Analyze code wreath leaf marked green word normal form theorem performance.",
+    )
+    code_wreath_leaf_marked_green_word_normal_form.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_leaf_marked_green_word_normal_form.set_defaults(
+        func=command_code_wreath_leaf_marked_green_word_normal_form
+    )
+
+    code_wreath_linear_code_support_pressure = subparsers.add_parser(
+        "code-wreath-linear-code-support-pressure",
+        help="Analyze code wreath linear code support pressure theorem performance.",
+    )
+    code_wreath_linear_code_support_pressure.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_linear_code_support_pressure.set_defaults(
+        func=command_code_wreath_linear_code_support_pressure
+    )
+
+    code_wreath_marked_pressure_obstruction_search = subparsers.add_parser(
+        "code-wreath-marked-pressure-obstruction-search",
+        help="Analyze code wreath marked pressure obstruction search theorem performance.",
+    )
+    code_wreath_marked_pressure_obstruction_search.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_marked_pressure_obstruction_search.set_defaults(
+        func=command_code_wreath_marked_pressure_obstruction_search
+    )
+
+    code_wreath_marked_relation_topology = subparsers.add_parser(
+        "code-wreath-marked-relation-topology",
+        help="Analyze code wreath marked relation topology theorem performance.",
+    )
+    code_wreath_marked_relation_topology.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_marked_relation_topology.set_defaults(
+        func=command_code_wreath_marked_relation_topology
+    )
+
+    code_wreath_mixed_split_target_genus = subparsers.add_parser(
+        "code-wreath-mixed-split-target-genus",
+        help="Analyze code wreath mixed split target genus theorem performance.",
+    )
+    code_wreath_mixed_split_target_genus.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_mixed_split_target_genus.set_defaults(
+        func=command_code_wreath_mixed_split_target_genus
+    )
+
+    code_wreath_natural_leaf_commutator_trace_profile = subparsers.add_parser(
+        "code-wreath-natural-leaf-commutator-trace-profile",
+        help="Analyze code wreath natural leaf commutator trace profile theorem performance.",
+    )
+    code_wreath_natural_leaf_commutator_trace_profile.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_natural_leaf_commutator_trace_profile.set_defaults(
+        func=command_code_wreath_natural_leaf_commutator_trace_profile
+    )
+
+    code_wreath_parity_stopping_core_pressure = subparsers.add_parser(
+        "code-wreath-parity-stopping-core-pressure",
+        help="Analyze code wreath parity stopping core pressure theorem performance.",
+    )
+    code_wreath_parity_stopping_core_pressure.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_parity_stopping_core_pressure.set_defaults(
+        func=command_code_wreath_parity_stopping_core_pressure
+    )
+
+    code_wreath_periodic_frame_fiber_counterfamily = subparsers.add_parser(
+        "code-wreath-periodic-frame-fiber-counterfamily",
+        help="Analyze code wreath periodic frame fiber counterfamily theorem performance.",
+    )
+    code_wreath_periodic_frame_fiber_counterfamily.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_periodic_frame_fiber_counterfamily.set_defaults(
+        func=command_code_wreath_periodic_frame_fiber_counterfamily
+    )
+
+    code_wreath_high_codimension_face_word_frontier = subparsers.add_parser(
+        "code-wreath-high-codimension-face-word-frontier",
+        help="Analyze code wreath high codimension face word frontier theorem performance.",
+    )
+    code_wreath_high_codimension_face_word_frontier.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_high_codimension_face_word_frontier.set_defaults(
+        func=command_code_wreath_high_codimension_face_word_frontier
+    )
+
+    code_wreath_periodic_frame_rank_collapse = subparsers.add_parser(
+        "code-wreath-periodic-frame-rank-collapse",
+        help="Analyze code wreath periodic frame rank collapse theorem performance.",
+    )
+    code_wreath_periodic_frame_rank_collapse.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_periodic_frame_rank_collapse.set_defaults(
+        func=command_code_wreath_periodic_frame_rank_collapse
+    )
+
+    code_wreath_petz_pgm_obstruction = subparsers.add_parser(
+        "code-wreath-petz-pgm-obstruction",
+        help="Analyze code wreath petz pgm obstruction theorem performance.",
+    )
+    code_wreath_petz_pgm_obstruction.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_petz_pgm_obstruction.set_defaults(
+        func=command_code_wreath_petz_pgm_obstruction
+    )
+
+    code_wreath_pgm_quantum_sampling_reduction = subparsers.add_parser(
+        "code-wreath-pgm-quantum-sampling-reduction",
+        help="Analyze code wreath pgm quantum sampling reduction theorem performance.",
+    )
+    code_wreath_pgm_quantum_sampling_reduction.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_pgm_quantum_sampling_reduction.set_defaults(
+        func=command_code_wreath_pgm_quantum_sampling_reduction
+    )
+
+    code_wreath_pgm_spectral_window = subparsers.add_parser(
+        "code-wreath-pgm-spectral-window",
+        help="Analyze code wreath pgm spectral window theorem performance.",
+    )
+    code_wreath_pgm_spectral_window.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_pgm_spectral_window.set_defaults(
+        func=command_code_wreath_pgm_spectral_window
+    )
+
+    code_wreath_pgm_success_theorem = subparsers.add_parser(
+        "code-wreath-pgm-success-theorem",
+        help="Analyze code wreath pgm success theorem theorem performance.",
+    )
+    code_wreath_pgm_success_theorem.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_pgm_success_theorem.set_defaults(
+        func=command_code_wreath_pgm_success_theorem
+    )
+
+    code_wreath_pgm_truncation_robustness = subparsers.add_parser(
+        "code-wreath-pgm-truncation-robustness",
+        help="Analyze code wreath pgm truncation robustness theorem performance.",
+    )
+    code_wreath_pgm_truncation_robustness.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_pgm_truncation_robustness.set_defaults(
+        func=command_code_wreath_pgm_truncation_robustness
+    )
+
+    code_wreath_physical_orientation_interference = subparsers.add_parser(
+        "code-wreath-physical-orientation-interference",
+        help="Analyze code wreath physical orientation interference theorem performance.",
+    )
+    code_wreath_physical_orientation_interference.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_physical_orientation_interference.set_defaults(
+        func=command_code_wreath_physical_orientation_interference
+    )
+
+    code_wreath_physical_pgm_intertwiner = subparsers.add_parser(
+        "code-wreath-physical-pgm-intertwiner",
+        help="Analyze code wreath physical pgm intertwiner theorem performance.",
+    )
+    code_wreath_physical_pgm_intertwiner.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_physical_pgm_intertwiner.set_defaults(
+        func=command_code_wreath_physical_pgm_intertwiner
+    )
+
+    code_wreath_plancherel_kronecker_positivity = subparsers.add_parser(
+        "code-wreath-plancherel-kronecker-positivity",
+        help="Analyze code wreath plancherel kronecker positivity theorem performance.",
+    )
+    code_wreath_plancherel_kronecker_positivity.add_argument(
+        "--no-registry",
+        action="store_true",
+    )
+    code_wreath_plancherel_kronecker_positivity.set_defaults(
+        func=command_code_wreath_plancherel_kronecker_positivity
     )
 
     coset_strong_fourier_information = subparsers.add_parser(

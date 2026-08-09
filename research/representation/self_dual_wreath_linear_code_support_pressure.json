@@ -1,0 +1,363 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Rational affine rank automatically lifts to S_n loss.",
+      "resolution": "False in general. The lift here uses actual RREF codewords present because the supports are linear subspaces.",
+      "resolved": false
+    },
+    {
+      "objection": "Finite linear-code screens prove arbitrary-support rigidity.",
+      "resolution": "No. The proof is symbolic and all-u, but its support-closure assumption is essential.",
+      "resolved": false
+    },
+    {
+      "objection": "The F_u*Z^2 base factorization extends unchanged to affine translates.",
+      "resolution": "False: at u=4 the singleton affine base assignment 1010 has a genus-three ribbon surface with free rank zero, not a torus with free rank four. Its leading exponent happens to agree, but the proof mechanism does not.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "affine_coset_pressure_proved": false,
+    "arbitrary_support_pressure_proved": false,
+    "linear_code_finite_group_elimination_proved": true,
+    "linear_code_growing_degree_crossing_pressure_proved": true,
+    "mixed_target_character_control_proved": false,
+    "natural_component_M4_positive": false,
+    "reason": "A scalable linear-code support class is closed, but arbitrary support profiles and mixed target observables remain open.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-09T05:41:35.645068+00:00",
+  "falsifiers_triggered": [
+    "The theorem does not justify a rank-to-S_n lift for arbitrary supports.",
+    "Affine translates need not contain linear RREF codewords.",
+    "B frames and surviving mixed target characters are outside scope.",
+    "No positive component moment, decoder, or quantum speedup follows."
+  ],
+  "finite_controls": [
+    {
+      "control_id": "S3-PARITY-U2",
+      "different_code": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "exact_count_below_bound_verified": true,
+      "exact_full_presentation_solution_count": 108,
+      "finite_group_upper_bound": 108,
+      "frame_position_count": 2,
+      "same_code": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "status": "exact-full-presentation-count-below-code-bound",
+      "symmetric_group_degree": 3
+    },
+    {
+      "control_id": "S3-PARITY-U3",
+      "different_code": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "exact_count_below_bound_verified": true,
+      "exact_full_presentation_solution_count": 72,
+      "finite_group_upper_bound": 108,
+      "frame_position_count": 3,
+      "same_code": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "status": "exact-full-presentation-count-below-code-bound",
+      "symmetric_group_degree": 3
+    }
+  ],
+  "headline_metrics": {
+    "arbitrary_support_pressure_theorem_count": 0,
+    "checked_linear_code_pair_count": 4774,
+    "finite_S3_control_count": 2,
+    "finite_S3_control_failure_count": 0,
+    "growing_degree_linear_code_pressure_theorem_count": 1,
+    "linear_code_pair_certificate_failure_count": 0,
+    "minimum_crossing_pressure_margin": 0.0,
+    "mixed_target_character_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "lift_linear_code_support_entropy_to_finite_group_loss",
+      "resolution": "A selected RREF basis Tietze-eliminates max(dim S,dim D) frame generators over every finite group.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_growing_degree_crossing_pressure_for_linear_codes",
+      "resolution": "The F_(u-r)*Z^2 upper presentation yields pressure <=-1 uniformly in u.",
+      "resolved": true
+    },
+    {
+      "obligation": "extend_nonabelian_entropy_lift_to_arbitrary_supports",
+      "resolution": "Arbitrary supports need not contain the RREF combinations of their affine span.",
+      "resolved": false
+    },
+    {
+      "obligation": "control_mixed_B_boundaries_and_target_characters",
+      "resolution": "The theorem uses an all-A split whose full-product target is already an imposed relation.",
+      "resolved": false
+    }
+  ],
+  "representative_controls": [
+    {
+      "control_id": "PARITY-CODE-DIMENSION-TWO",
+      "crossing_pressure_margin": 0.0,
+      "crossing_pressure_upper_bound": -1.0,
+      "different_code": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "different_code_dimension": 2,
+      "exact_finite_group_upper_bound_verified": true,
+      "exact_rref_pivot_elimination_verified": true,
+      "frame_position_count": 3,
+      "same_code": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "same_code_dimension": 2,
+      "selected_code": "same",
+      "selected_dimension": 2,
+      "selected_pivot_positions": [
+        1,
+        2
+      ],
+      "selected_rref_basis": [
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "selected_subpresentation_free_rank": 1,
+      "selected_subpresentation_surface_factor": "Z^2",
+      "status": "linear-code-growing-degree-crossing-pressure-certified",
+      "support_entropy_exponent": 2.0,
+      "symmetric_group_solution_exponent_upper_bound": 2.0
+    },
+    {
+      "control_id": "UNEQUAL-CODE-DIMENSIONS",
+      "crossing_pressure_margin": 1.5,
+      "crossing_pressure_upper_bound": -2.5,
+      "different_code": [
+        [
+          0,
+          0,
+          0
+        ]
+      ],
+      "different_code_dimension": 0,
+      "exact_finite_group_upper_bound_verified": true,
+      "exact_rref_pivot_elimination_verified": true,
+      "frame_position_count": 3,
+      "same_code": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "same_code_dimension": 3,
+      "selected_code": "same",
+      "selected_dimension": 3,
+      "selected_pivot_positions": [
+        1,
+        2,
+        3
+      ],
+      "selected_rref_basis": [
+        [
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1
+        ]
+      ],
+      "selected_subpresentation_free_rank": 0,
+      "selected_subpresentation_surface_factor": "Z^2",
+      "status": "linear-code-growing-degree-crossing-pressure-certified",
+      "support_entropy_exponent": 1.5,
+      "symmetric_group_solution_exponent_upper_bound": 1.0
+    }
+  ],
+  "scaling_records": [
+    {
+      "certificate_failure_count": 0,
+      "checked_code_pair_count": 4,
+      "frame_position_count": 1,
+      "linear_subspace_count": 2,
+      "minimum_crossing_pressure_margin": 0.0,
+      "status": "all-linear-code-pairs-certified"
+    },
+    {
+      "certificate_failure_count": 0,
+      "checked_code_pair_count": 25,
+      "frame_position_count": 2,
+      "linear_subspace_count": 5,
+      "minimum_crossing_pressure_margin": 0.0,
+      "status": "all-linear-code-pairs-certified"
+    },
+    {
+      "certificate_failure_count": 0,
+      "checked_code_pair_count": 256,
+      "frame_position_count": 3,
+      "linear_subspace_count": 16,
+      "minimum_crossing_pressure_margin": 0.0,
+      "status": "all-linear-code-pairs-certified"
+    },
+    {
+      "certificate_failure_count": 0,
+      "checked_code_pair_count": 4489,
+      "frame_position_count": 4,
+      "linear_subspace_count": 67,
+      "minimum_crossing_pressure_margin": 0.0,
+      "status": "all-linear-code-pairs-certified"
+    }
+  ],
+  "status": "growing-degree-linear-code-pressure-proved-arbitrary-support-open",
+  "summary": "Proved an exact all-degree crossing-pressure bound for contiguous all-A words with binary linear-code supports by RREF Tietze elimination and an F_(u-r)*Z^2 factorization.",
+  "theorem_contract": {
+    "finite_group_bound": "Selecting the larger code gives F_(u-r)*Z^2, hence the full presentation has at most |G|^(u-r+1)k(G) solutions.",
+    "linear_code_pivot_elimination": "RREF codewords are present in a linear support; each selected word contains one distinct pivot frame and no other pivot.",
+    "scope": "Only binary linear subspace supports and the contiguous all-A crossing family are proved; affine cosets and arbitrary supports do not inherit the RREF-word closure.",
+    "selected_partition_factorization": "For E A^u F E F, the split and zero different-support cell are exactly F_u*Z^2 after two Tietze eliminations and the basis change A=a(x_1...x_u).",
+    "symmetric_group_pressure": "For S_n, k(S_n)=p(n)=|S_n|^o(1), and pressure is exactly at most -1-|dim(S)-dim(D)|/2."
+  }
+}

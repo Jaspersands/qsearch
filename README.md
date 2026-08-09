@@ -50,6 +50,38 @@ It ranks hypotheses by:
 - Explicit positive signals and kill criteria.
 - Clear path from finite experiments to asymptotic proof obligations.
 
+## Current Research Frontier
+
+- No new quantum algorithm or speedup has been found.
+- An exact XOR re-rooting induction now controls every ordered frame-subword
+  support at arbitrary width and over every finite group.
+- For contiguous A/B frame words, arbitrary support profiles have scalar
+  crossing pressure at most the obstruction threshold; the surviving target
+  character reduces exactly to one centralizer-weighted frame word.
+- Scalar-pressure saturation forces target identity. An exact `S3`
+  identity-frame lift once made the real entropy certificate margin tend to
+  zero, but the stronger suffix-branch generator theorem restores a uniform
+  gap on that lift. Independently, exact surface reduction forces every
+  appended frame to identity and makes every nontrivial nonsign target vanish
+  in growing `S_n` (the standard target is asymptotic to `2/n^2`).
+- Pruning that lift to support sizes `2^k-1` and `2^k` does make the strongest
+  generic integer-certificate margin tend to zero. Exact reduction still kills
+  it: every depth is a genus-two surface group with one free generator, the
+  target remains one handle commutator, and the true scalar pressure margin is
+  greater than one. Generic certificate failure is therefore not a surviving
+  asymptotic channel.
+- The active theorem target is a growing-width `S_n` bound for weighted frame
+  presentations outside that genus-two seed, followed by the interleaved-leaf
+  multi-boundary case.
+- A nonidentity periodic `S3` frame assignment initially looked more dangerous:
+  its older real entropy pressure margin vanishes exponentially without identity
+  padding. That mechanism is now closed. An exact suffix-branch theorem leaves
+  at most three frame generators for every `k=6m+1`; the full presentation has
+  at most `|S_n|^(4+o(1))` solutions and a uniform pressure margin of at least
+  `1-0.5*log2(3/2)`. The next structural question is whether comparable rank
+  collapse holds for every dense fixed-state frame automaton. If so, viable
+  constructions must use growing-state algebra or genuinely interleaved leaves.
+
 ## High-Upside Search Areas
 
 The first agenda focuses on:
@@ -2889,6 +2921,286 @@ Analyze code wreath orientation rank budget theorem performance:
 ```bash
 python qsearch.py code-wreath-orientation-rank-budget
 python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-RANK-BUDGET
+```
+
+Analyze code wreath orientation retention theorem theorem performance:
+
+```bash
+python qsearch.py code-wreath-orientation-retention-theorem
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-RETENTION-THEOREM
+```
+
+Analyze code wreath orientation subspace filter theorem performance:
+
+```bash
+python qsearch.py code-wreath-orientation-subspace-filter
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-SUBSPACE-FILTER
+```
+
+Analyze code wreath pair common covering transition theorem performance:
+
+```bash
+python qsearch.py code-wreath-pair-common-covering-transition
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PAIR-COMMON-COVERING-TRANSITION
+```
+
+Analyze code wreath pair core rank concentration theorem performance:
+
+```bash
+python qsearch.py code-wreath-pair-core-rank-concentration
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-RANK-CONCENTRATION
+```
+
+Analyze code wreath pair polar sampler theorem performance:
+
+```bash
+python qsearch.py code-wreath-pair-polar-sampler
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PAIR-POLAR-SAMPLER
+```
+
+Analyze code wreath pair polar transport network theorem performance:
+
+```bash
+python qsearch.py code-wreath-pair-polar-transport-network
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PAIR-POLAR-TRANSPORT-NETWORK
+```
+
+Analyze code wreath pair transport degree obstruction theorem performance:
+
+```bash
+python qsearch.py code-wreath-pair-transport-degree-obstruction
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PAIR-TRANSPORT-DEGREE-OBSTRUCTION
+```
+
+Analyze code wreath pair transport native mass boundary theorem performance:
+
+```bash
+python qsearch.py code-wreath-pair-transport-native-mass-boundary
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PAIR-TRANSPORT-NATIVE-MASS-BOUNDARY
+```
+
+Analyze code wreath partial support child embedding theorem performance:
+
+```bash
+python qsearch.py code-wreath-partial-support-child-embedding
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PARTIAL-SUPPORT-CHILD-EMBEDDING
+```
+
+Analyze code wreath partial support source mass boundary theorem performance:
+
+```bash
+python qsearch.py code-wreath-partial-support-source-mass-boundary
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PARTIAL-SUPPORT-SOURCE-MASS-BOUNDARY
+```
+
+Analyze code wreath boolean graph stopping core pressure theorem performance:
+
+```bash
+python qsearch.py code-wreath-boolean-graph-stopping-core-pressure
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-BOOLEAN-GRAPH-STOPPING-CORE-PRESSURE
+```
+
+Analyze code wreath component aggregate frame indeterminacy theorem performance:
+
+```bash
+python qsearch.py code-wreath-component-aggregate-frame-indeterminacy
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COMPONENT-AGGREGATE-FRAME-INDETERMINACY
+```
+
+Analyze code wreath component commutator collision free transfer theorem performance:
+
+```bash
+python qsearch.py code-wreath-component-commutator-collision-free-transfer
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COMMUTATOR-COLLISION-FREE-TRANSFER
+```
+
+Analyze code wreath component commutator haar benchmark theorem performance:
+
+```bash
+python qsearch.py code-wreath-component-commutator-haar-benchmark
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COMMUTATOR-HAAR-BENCHMARK
+```
+
+Analyze code wreath component commutator trace mass bridge theorem performance:
+
+```bash
+python qsearch.py code-wreath-component-commutator-trace-mass-bridge
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COMMUTATOR-TRACE-MASS-BRIDGE
+```
+
+Analyze code wreath component green ridge stability theorem performance:
+
+```bash
+python qsearch.py code-wreath-component-green-ridge-stability
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COMPONENT-GREEN-RIDGE-STABILITY
+```
+
+Analyze code wreath component hamming orbit reduction theorem performance:
+
+```bash
+python qsearch.py code-wreath-component-hamming-orbit-reduction
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COMPONENT-HAMMING-ORBIT-REDUCTION
+```
+
+Analyze code wreath component leaf resolved green normal form theorem performance:
+
+```bash
+python qsearch.py code-wreath-component-leaf-resolved-green-normal-form
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-COMPONENT-LEAF-RESOLVED-GREEN-NORMAL-FORM
+```
+
+Analyze code wreath contiguous all a support pressure theorem performance:
+
+```bash
+python qsearch.py code-wreath-contiguous-all-a-support-pressure
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-CONTIGUOUS-ALL-A-SUPPORT-PRESSURE
+```
+
+Analyze code wreath contiguous frame target factorization theorem performance:
+
+```bash
+python qsearch.py code-wreath-contiguous-frame-target-factorization
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-CONTIGUOUS-FRAME-TARGET-FACTORIZATION
+```
+
+Analyze code wreath exceptional block graph core pressure theorem performance:
+
+```bash
+python qsearch.py code-wreath-exceptional-block-graph-core-pressure
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-EXCEPTIONAL-BLOCK-GRAPH-CORE-PRESSURE
+```
+
+Analyze code wreath frame subword entropy theorem performance:
+
+```bash
+python qsearch.py code-wreath-frame-subword-entropy
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-FRAME-SUBWORD-ENTROPY
+```
+
+Analyze code wreath leaf marked green word normal form theorem performance:
+
+```bash
+python qsearch.py code-wreath-leaf-marked-green-word-normal-form
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-LEAF-MARKED-GREEN-WORD-NORMAL-FORM
+```
+
+Analyze code wreath linear code support pressure theorem performance:
+
+```bash
+python qsearch.py code-wreath-linear-code-support-pressure
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-LINEAR-CODE-SUPPORT-PRESSURE
+```
+
+Analyze code wreath marked pressure obstruction search theorem performance:
+
+```bash
+python qsearch.py code-wreath-marked-pressure-obstruction-search
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-MARKED-PRESSURE-OBSTRUCTION-SEARCH
+```
+
+Analyze code wreath marked relation topology theorem performance:
+
+```bash
+python qsearch.py code-wreath-marked-relation-topology
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-MARKED-RELATION-TOPOLOGY
+```
+
+Analyze code wreath mixed split target genus theorem performance:
+
+```bash
+python qsearch.py code-wreath-mixed-split-target-genus
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-MIXED-SPLIT-TARGET-GENUS
+```
+
+Analyze code wreath natural leaf commutator trace profile theorem performance:
+
+```bash
+python qsearch.py code-wreath-natural-leaf-commutator-trace-profile
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-NATURAL-LEAF-COMMUTATOR-TRACE-PROFILE
+```
+
+Analyze code wreath parity stopping core pressure theorem performance:
+
+```bash
+python qsearch.py code-wreath-parity-stopping-core-pressure
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PARITY-STOPPING-CORE-PRESSURE
+```
+
+Analyze code wreath periodic frame fiber counterfamily theorem performance:
+
+```bash
+python qsearch.py code-wreath-periodic-frame-fiber-counterfamily
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-FIBER-COUNTERFAMILY
+```
+
+Analyze code wreath high codimension face word frontier theorem performance:
+
+```bash
+python qsearch.py code-wreath-high-codimension-face-word-frontier
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-HIGH-CODIMENSION-FACE-WORD-FRONTIER
+```
+
+Analyze code wreath periodic frame rank collapse theorem performance:
+
+```bash
+python qsearch.py code-wreath-periodic-frame-rank-collapse
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-RANK-COLLAPSE
+```
+
+Analyze code wreath petz pgm obstruction theorem performance:
+
+```bash
+python qsearch.py code-wreath-petz-pgm-obstruction
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PETZ-PGM-OBSTRUCTION
+```
+
+Analyze code wreath pgm quantum sampling reduction theorem performance:
+
+```bash
+python qsearch.py code-wreath-pgm-quantum-sampling-reduction
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PGM-QUANTUM-SAMPLING-REDUCTION
+```
+
+Analyze code wreath pgm spectral window theorem performance:
+
+```bash
+python qsearch.py code-wreath-pgm-spectral-window
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PGM-SPECTRAL-WINDOW
+```
+
+Analyze code wreath pgm success theorem theorem performance:
+
+```bash
+python qsearch.py code-wreath-pgm-success-theorem
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PGM-SUCCESS-THEOREM
+```
+
+Analyze code wreath pgm truncation robustness theorem performance:
+
+```bash
+python qsearch.py code-wreath-pgm-truncation-robustness
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PGM-TRUNCATION-ROBUSTNESS
+```
+
+Analyze code wreath physical orientation interference theorem performance:
+
+```bash
+python qsearch.py code-wreath-physical-orientation-interference
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-ORIENTATION-INTERFERENCE
+```
+
+Analyze code wreath physical pgm intertwiner theorem performance:
+
+```bash
+python qsearch.py code-wreath-physical-pgm-intertwiner
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-PGM-INTERTWINER
+```
+
+Analyze code wreath plancherel kronecker positivity theorem performance:
+
+```bash
+python qsearch.py code-wreath-plancherel-kronecker-positivity
+python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-KRONECKER-POSITIVITY
 ```
 
 Isolate the solvable and unresolved equal-pair commutator terms:

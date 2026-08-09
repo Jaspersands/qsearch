@@ -1,0 +1,653 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A nonzero base must be converted to the zero-base Z^2 topology.",
+      "resolution": "False and unnecessary. The singleton base can have high ribbon genus; its outer variables still obey a uniform conjugacy-fiber bound.",
+      "resolved": true
+    },
+    {
+      "objection": "Both support fibers must be paid independently.",
+      "resolution": "The pressure entropy is their average, so the stronger of the two exact fiber bounds is sufficient.",
+      "resolved": true
+    },
+    {
+      "objection": "Scalar pressure control proves a useful target component.",
+      "resolution": "False. The bound is unsigned and can coexist with complete target cancellation.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "arbitrary_supports_certified": true,
+    "growing_width_scalar_pressure_proved": true,
+    "mixed_target_character_control_proved": false,
+    "natural_component_M4_positive": false,
+    "nonzero_different_bases_certified": true,
+    "other_word_families_certified": false,
+    "reason": "The contiguous all-A scalar pressure obstruction is complete, but the signed component observable and structurally different word families remain unresolved.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-09T05:37:55.088602+00:00",
+  "falsifiers_triggered": [
+    "Nonzero bases need not preserve the zero-base presentation topology.",
+    "The maximum fiber entropy, not the sum, is the available scalar loss.",
+    "Unsigned homomorphism counts do not certify target-character signal.",
+    "No conclusion transfers automatically to B or interleaved word families."
+  ],
+  "finite_controls": [
+    {
+      "control_id": "S3-NONZERO-SINGLETON-BASE",
+      "different_support": [
+        [
+          1,
+          0
+        ]
+      ],
+      "exact_count_below_theorem_bound": true,
+      "exact_full_presentation_solution_count": 108,
+      "frame_position_count": 2,
+      "same_support": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "status": "exact-full-count-below-all-support-bound",
+      "symmetric_group_degree": 3,
+      "theorem_solution_count_upper_bound": 108.0
+    },
+    {
+      "control_id": "S3-TWO-NONTRIVIAL-FIBERS",
+      "different_support": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "exact_count_below_theorem_bound": true,
+      "exact_full_presentation_solution_count": 18,
+      "frame_position_count": 2,
+      "same_support": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "status": "exact-full-count-below-all-support-bound",
+      "symmetric_group_degree": 3,
+      "theorem_solution_count_upper_bound": 18.0
+    }
+  ],
+  "headline_metrics": {
+    "arbitrary_support_pair_control_failure_count": 0,
+    "checked_arbitrary_support_pair_count_through_width_three": 65259,
+    "finite_S3_control_count": 2,
+    "finite_S3_control_failure_count": 0,
+    "growing_width_arbitrary_support_scalar_pressure_theorem_count": 1,
+    "integer_suffix_branch_pressure_strengthening_theorem_count": 1,
+    "minimum_crossing_pressure_margin": 0.0,
+    "mixed_target_character_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "remove_zero_base_and_linear_support_restrictions",
+      "resolution": "Two-fiber decomposition, XOR re-rooting, and the outer conjugacy equation cover every nonempty support pair.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_uniform_scalar_crossing_pressure_for_contiguous_all_A",
+      "resolution": "The exact finite-group entropy and integer generator bounds imply S_n pressure <=-1 at every frame width.",
+      "resolved": true
+    },
+    {
+      "obligation": "control_signed_target_character_after_support_conditioning",
+      "resolution": "The conjugacy count discards the target character and does not establish cancellation or a surviving component moment.",
+      "resolved": false
+    },
+    {
+      "obligation": "extend_beyond_contiguous_all_A_words",
+      "resolution": "B frames and interleaved E/F leaves change both the subword fibers and outer conjugacy normal form.",
+      "resolved": false
+    }
+  ],
+  "representative_controls": [
+    {
+      "augmented_same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "control_id": "NONZERO-ALTERNATING-BASE",
+      "crossing_pressure_margin": 1.207518749639422,
+      "crossing_pressure_upper_bound": -2.207518749639422,
+      "different_base_assignment": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "different_fiber_induction_verified": true,
+      "different_fiber_rerooting_verified": true,
+      "different_fiber_suffix_branch_verified": true,
+      "different_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "different_support_entropy_bits": 0.0,
+      "dominant_fiber": "same-identity-fiber",
+      "dominant_fiber_entropy_bits": 1.584962500721156,
+      "entropy_frame_solution_exponent_upper_bound": 2.415037499278844,
+      "exact_all_support_pressure_theorem_verified": true,
+      "frame_position_count": 4,
+      "frame_solution_exponent_upper_bound": 2,
+      "full_solution_exponent_upper_bound_before_conjugacy_classes": 3.0,
+      "outer_conjugacy_bound_verified": true,
+      "rerooted_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "same_fiber_induction_verified": true,
+      "same_fiber_suffix_branch_verified": true,
+      "same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "same_support_entropy_bits": 1.584962500721156,
+      "status": "arbitrary-support-scalar-crossing-pressure-certified",
+      "suffix_branch_frame_generator_upper_bound": 2,
+      "support_entropy_exponent": 0.792481250360578
+    },
+    {
+      "augmented_same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "control_id": "DIFFERENT-FULL-CUBE-DOMINATES",
+      "crossing_pressure_margin": 2.0,
+      "crossing_pressure_upper_bound": -3.0,
+      "different_base_assignment": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "different_fiber_induction_verified": true,
+      "different_fiber_rerooting_verified": true,
+      "different_fiber_suffix_branch_verified": true,
+      "different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "different_support_entropy_bits": 4.0,
+      "dominant_fiber": "different-common-value-fiber",
+      "dominant_fiber_entropy_bits": 4.0,
+      "entropy_frame_solution_exponent_upper_bound": 0.0,
+      "exact_all_support_pressure_theorem_verified": true,
+      "frame_position_count": 4,
+      "frame_solution_exponent_upper_bound": 0.0,
+      "full_solution_exponent_upper_bound_before_conjugacy_classes": 1.0,
+      "outer_conjugacy_bound_verified": true,
+      "rerooted_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "same_fiber_induction_verified": true,
+      "same_fiber_suffix_branch_verified": true,
+      "same_support": [
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "same_support_entropy_bits": 0.0,
+      "status": "arbitrary-support-scalar-crossing-pressure-certified",
+      "suffix_branch_frame_generator_upper_bound": 0,
+      "support_entropy_exponent": 2.0
+    },
+    {
+      "augmented_same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "control_id": "SAME-PARITY-FIBER-DOMINATES",
+      "crossing_pressure_margin": 1.0,
+      "crossing_pressure_upper_bound": -2.0,
+      "different_base_assignment": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "different_fiber_induction_verified": true,
+      "different_fiber_rerooting_verified": true,
+      "different_fiber_suffix_branch_verified": true,
+      "different_support": [
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "different_support_entropy_bits": 1.0,
+      "dominant_fiber": "same-identity-fiber",
+      "dominant_fiber_entropy_bits": 3.0,
+      "entropy_frame_solution_exponent_upper_bound": 1.0,
+      "exact_all_support_pressure_theorem_verified": true,
+      "frame_position_count": 4,
+      "frame_solution_exponent_upper_bound": 1.0,
+      "full_solution_exponent_upper_bound_before_conjugacy_classes": 2.0,
+      "outer_conjugacy_bound_verified": true,
+      "rerooted_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "same_fiber_induction_verified": true,
+      "same_fiber_suffix_branch_verified": true,
+      "same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "same_support_entropy_bits": 3.0,
+      "status": "arbitrary-support-scalar-crossing-pressure-certified",
+      "suffix_branch_frame_generator_upper_bound": 1,
+      "support_entropy_exponent": 2.0
+    }
+  ],
+  "scaling_records": [
+    {
+      "checked_support_pair_count": 9,
+      "frame_position_count": 1,
+      "minimum_crossing_pressure_margin": 0.0,
+      "nonempty_cube_support_count": 3,
+      "status": "all-support-pair-controls-passed",
+      "theorem_failure_count": 0
+    },
+    {
+      "checked_support_pair_count": 225,
+      "frame_position_count": 2,
+      "minimum_crossing_pressure_margin": 0.0,
+      "nonempty_cube_support_count": 15,
+      "status": "all-support-pair-controls-passed",
+      "theorem_failure_count": 0
+    },
+    {
+      "checked_support_pair_count": 65025,
+      "frame_position_count": 3,
+      "minimum_crossing_pressure_margin": 0.0,
+      "nonempty_cube_support_count": 255,
+      "status": "all-support-pair-controls-passed",
+      "theorem_failure_count": 0
+    }
+  ],
+  "status": "contiguous-all-A-arbitrary-support-scalar-pressure-complete",
+  "summary": "Removed the zero-base and linear-support restrictions for scalar pressure by combining exact two-fiber entropy and integer generator bounds with a uniform outer conjugacy-fiber count.",
+  "theorem_contract": {
+    "different_common_value_fiber": "Choosing q in D turns the equations w_d=w_q into the XOR-rerooted presentation P(D xor q), costing log2|D| exponents.",
+    "entropy_payment": "The stronger fiber costs max(log2|S union {0}|,log2|D|), which dominates the average support entropy H(S,D).",
+    "integer_generator_strengthening": "Suffix-branch anchors improve the frame exponent to u-ceil(log2 max(|S union {0}|,|D|)) for every finite group.",
+    "outer_conjugacy_bound": "For every fixed frame assignment the remaining outer equation is A(bT)A^-1=w_q b and has at most |G|k(G) solutions.",
+    "same_identity_fiber": "Same-coordinate color-one cells give P(S union {0}); the all-width subword induction costs log2|S union {0}| exponents.",
+    "scope": "Only the contiguous all-A word E A^u F E F and scalar solution counts are covered. Mixed targets, B frames, and interleaved leaves remain open.",
+    "symmetric_group_pressure": "Since k(S_n)=p(n)=|S_n|^o(1), every arbitrary nonempty S,D has scalar crossing pressure at most -1, uniformly in u."
+  }
+}

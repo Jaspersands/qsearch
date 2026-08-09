@@ -18,6 +18,195 @@
 > coherent checkpoint, and push only after that checkpoint passes focused
 > validation. Leave all user-owned `ag-remote/` deletions untouched.
 
+> **Newest natural component-commutator handoff delta (2026-08-09):** inventory
+> and mechanically wire these eighteen completed theorem reports:
+>
+> - `EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COMMUTATOR-COLLISION-FREE-TRANSFER`
+>   from `self_dual_wreath_component_commutator_collision_free_transfer.py`;
+> - `EXP-CODE-SELF-DUAL-WREATH-COMPONENT-GREEN-RIDGE-STABILITY`
+>   from `self_dual_wreath_component_green_ridge_stability.py`;
+> - `EXP-CODE-SELF-DUAL-WREATH-COMPONENT-HAMMING-ORBIT-REDUCTION`
+>   from `self_dual_wreath_component_hamming_orbit_reduction.py`;
+> - `EXP-CODE-SELF-DUAL-WREATH-NATURAL-LEAF-COMMUTATOR-TRACE-PROFILE`
+>   from `self_dual_wreath_natural_leaf_commutator_trace_profile.py`;
+> - `EXP-CODE-SELF-DUAL-WREATH-LEAF-MARKED-GREEN-WORD-NORMAL-FORM`
+>   from `self_dual_wreath_leaf_marked_green_word_normal_form.py`.
+> - `EXP-CODE-SELF-DUAL-WREATH-MARKED-RELATION-TOPOLOGY`
+>   from `self_dual_wreath_marked_relation_topology.py`.
+> - `EXP-CODE-SELF-DUAL-WREATH-MARKED-PRESSURE-OBSTRUCTION-SEARCH`
+>   from `self_dual_wreath_marked_pressure_obstruction_search.py`.
+> - `EXP-CODE-SELF-DUAL-WREATH-MIXED-SPLIT-TARGET-GENUS`
+>   from `self_dual_wreath_mixed_split_target_genus.py`.
+> - `EXP-CODE-SELF-DUAL-WREATH-RELATIVE-SURFACE-FACTORIZATION`
+>   from `self_dual_wreath_relative_surface_factorization.py`.
+> - `EXP-CODE-SELF-DUAL-WREATH-TWO-PARTITION-RIBBON-SURFACE`
+>   from `self_dual_wreath_two_partition_ribbon_surface.py`.
+> - `EXP-CODE-SELF-DUAL-WREATH-SUPPORT-AFFINE-RANK-ENTROPY`
+>   from `self_dual_wreath_support_affine_rank_entropy.py`.
+> - `EXP-CODE-SELF-DUAL-WREATH-LINEAR-CODE-SUPPORT-PRESSURE`
+>   from `self_dual_wreath_linear_code_support_pressure.py`.
+> - `EXP-CODE-SELF-DUAL-WREATH-FRAME-SUBWORD-ENTROPY`
+>   from `self_dual_wreath_frame_subword_entropy.py`.
+> - `EXP-CODE-SELF-DUAL-WREATH-CONTIGUOUS-ALL-A-SUPPORT-PRESSURE`
+>   from `self_dual_wreath_contiguous_all_a_support_pressure.py`.
+> - `EXP-CODE-SELF-DUAL-WREATH-CONTIGUOUS-FRAME-TARGET-FACTORIZATION`
+>   from `self_dual_wreath_contiguous_frame_target_factorization.py`.
+> - `EXP-CODE-SELF-DUAL-WREATH-TARGET-SURVIVAL-SURFACE-SEED`
+>   from `self_dual_wreath_target_survival_surface_seed.py`.
+> - `EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-FIBER-COUNTERFAMILY`
+>   from `self_dual_wreath_periodic_frame_fiber_counterfamily.py`.
+> - `EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-RANK-COLLAPSE`
+>   from `self_dual_wreath_periodic_frame_rank_collapse.py`.
+>
+> Suggested CLI names are respectively
+> `code-wreath-component-commutator-conditioning`,
+> `code-wreath-component-green-ridge`,
+> `code-wreath-component-hamming-profile`,
+> `code-wreath-natural-leaf-trace-profile`,
+> `code-wreath-leaf-marked-green-words`,
+> `code-wreath-marked-relation-topology`,
+> `code-wreath-marked-pressure-obstructions`,
+> `code-wreath-mixed-split-target-genus`, and
+> `code-wreath-relative-surface-factorization`, and
+> `code-wreath-two-partition-ribbon-surface`, and
+> `code-wreath-support-affine-rank-entropy`, and
+> `code-wreath-linear-code-support-pressure`, and
+> `code-wreath-frame-subword-entropy`,
+> `code-wreath-contiguous-all-a-support-pressure`, and
+> `code-wreath-contiguous-frame-target-factorization`, and
+> `code-wreath-target-survival-surface-seed`,
+> `code-wreath-periodic-frame-fibers`, and
+> `code-wreath-periodic-frame-rank-collapse`. Copy an existing theorem-report
+> dispatch/runner/registry pattern, add clean dispatch tests, and expose the
+> artifacts without altering formulas or claim gates. Run the eighteen scripts
+> first, then their focused tests. Preserve these scope rules exactly:
+>
+> - Sharp conditioning transfer preserves a separately proved independent
+>   inverse-polynomial `M4`; it does not prove that signal exists. Its finite
+>   `P_cf` rows are preasymptotic.
+> - Green/ridge stability is conditional on a positive ridge gap and a small
+>   average trace-weighted polar ratio. Neither natural premise is proved.
+> - The Hamming theorem reduces pair enumeration; symmetry does not make a
+>   typical pair gap positive.
+> - The natural leaf trace profile is uncompressed. Generic Green whitening
+>   and common compression can erase it.
+> - The leaf-marked theorem is an exact word-map and sibling-frame-algebra
+>   reduction. It does not prove growing-word rigidity or a positive Green
+>   pair gap. The literature entries explicitly say no cited paper covers the
+>   required regime.
+> - The marked-relation theorem removes copy-depth growth at fixed degree and
+>   certifies every pressure profile through two frame tokens. Its four
+>   degree-three rows are selected adversarial controls, not an exhaustive
+>   degree-three or growing-degree theorem. Preserve the 116 unclassified
+>   two-token residual topologies, the false
+>   `degree_three_complete_pressure_separation_proved` flag, and all mixed
+>   target-character gates. Do not replace leading `|S_n|` exponents by
+>   finite uniform constants.
+> - The pressure-obstruction search visits deterministic all-`A` beams through
+>   degree six plus positive-genus, support-uncancelled mixed `A/B` beams
+>   through degree six and stores exact finalist presentations. All current
+>   scalar-pressure finalists are certified with at least one extra exponent
+>   of margin, but beam coverage is not a theorem. Preserve
+>   `asymptotic_counterexample_count=0`,
+>   `growing_degree_pressure_theorem_count=0`, and the false universal claim
+>   gate. The constant-zero trailing lift is an exact free-product theorem;
+>   constant-one/interior lifts and irreducible support cores remain open.
+>   The `EFAEFBBB` target control is resolved exactly, not by extrapolating
+>   its `S3`-`S5` screens. The target is `q^-1*r4^-1*q` for the fourth
+>   residual relator and `q=(-5,-8,7,8,4,5)`. Preserve the exact cyclic-word
+>   verifier and the finite fingerprints, but remove the obsolete
+>   finite-residual conjecture. This proves only that retained row; it must
+>   not flip the universal mixed target-character claim gate.
+> - The split-target theorem proves genus `r-1` and character factor
+>   `d_nu^-2(r-1)` only under the two split relations. Additional support
+>   relations remain the open relative-surface problem.
+> - The `EFBEBFB` relative-surface factorization proves one exact disjoint
+>   commutator row, with count `|G|^3 k(G)` and character factor `d_nu^-2`.
+>   It does not classify all positive-genus profiles or prove the growing-word
+>   component moment.
+> - The two-partition ribbon theorem classifies one split/support assignment
+>   pair exactly and is used in pressure scoring. It does not pay for the
+>   entropy of a full multi-assignment support; preserve the false
+>   `full_support_profile_ribbon_complex_theorem_proved` gate.
+> - The affine-rank theorem proves
+>   `R>=2+0.5log2|S|+0.5log2|D|` only for rational exponent-sum rank. It does
+>   not lift rank to `S_n` solution loss. Preserve the false nonabelian-lift
+>   and final-crossing gates. The marked primitive-cube row is exactly
+>   `(C_3*Z)xZ`, has `S3` count 42 and leading `S_n` exponent `5/3`; it does
+>   not force the cube generator to identity.
+> - The linear-code theorem proves growing-degree crossing pressure only for
+>   `E A^u F E F` with both supports binary linear subspaces. Preserve the
+>   exact `F_(u-r)*Z^2` selected-presentation proof and pressure
+>   `-1-|dim(S)-dim(D)|/2`. Do not extend it to affine cosets, arbitrary
+>   supports, B frames, interleaved leaves, or mixed target characters.
+> - The frame-subword theorem gives the exact conditional reduction
+>   `P(S union D)*Z^2` for `E A^u F E F` with `0 in D`, and now proves for
+>   every zero-containing `U` and every finite group `G` that
+>   `#Hom(P(U),G)<=|G|^(u-log2|U|)`. It now also proves the stronger integer
+>   generator bound `floor(u-log2|U|)` using suffix-branch anchors and the
+>   conditional-entropy chain rule. The proofs are the explicit triangular XOR
+>   re-rooting automorphism plus last-coordinate/suffix elimination. Preserve the true
+>   `growing_width_frame_subword_entropy_proved` gate. Width-four exhaustion
+>   and width-five stress are implementation controls, not the proof.
+> - The contiguous all-A theorem removes the zero-base and linear-support
+>   restrictions. Same cells form an identity fiber, different cells a common-
+>   value fiber, and fixed frame assignments leave at most `|G|k(G)` outer
+>   solutions. Preserve the exact arbitrary-support scalar pressure `<=-1`,
+>   but keep every target-character and speedup gate false.
+> - The contiguous mixed-frame theorem extends scalar pressure to arbitrary
+>   A/B frame types and reduces the full target exactly to the frame character
+>   of `R=w_A^-1(x_1...x_u)` under a centralizer-weighted measure. Pressure
+>   saturation under the strengthened bound requires equal power-of-two support
+>   sizes and forces target identity. The exact identity-frame `S3` lift only
+>   makes the obsolete real entropy margin tend to zero; the integer suffix-
+>   branch bound raises its actual certified margin toward one. Preserve the
+>   false weighted-character theorem, false asymptotic `S_n` lower-bound gate,
+>   false global uniform-gap gate, and false speedup gate. A genuine uniform-gap
+>   falsifier now needs a structurally valid target-surviving profile on the
+>   opposite side of a power-of-two boundary.
+> - The surface-seed theorem closes that exact identity-frame lift. Every
+>   appended generator is forced to identity, leaving a four-generator genus-
+>   two surface presentation and one handle-commutator target. Preserve the
+>   exact standard-character formula, its
+>   `2/(n-1)^2+O(n^-5/2)` asymptotic, and the `O(1/n)` uniform decay for every
+>   nontrivial nonsign irrep. Trivial/sign targets equal one. Do not extend the
+>   result to nonidentity-frame lifts or other surface seeds. The same module
+>   now classifies the pruned power-boundary supports `2^k-1,2^k`: the generic
+>   integer-certificate margin tends to zero, but the exact presentation is a
+>   genus-two surface group with one free generator, has `S3` count `2916`,
+>   preserves the handle target law, and has true scalar pressure margin above
+>   one. Preserve the distinction between generic-certificate falsification and
+>   actual-presentation survival.
+> - The periodic-fiber report proves an exact nonidentity `S3` support family
+>   with support-only margin `Theta(32^-k)`. Its companion rank-collapse theorem
+>   now closes, rather than promotes, the family. The neutral six-period block
+>   and exact suffix witnesses leave at most three frame generators for every
+>   `k=6m+1`; the mixed outer equation gives at most `|G|^4 k(G)` full solutions.
+>   Preserve the exact fiber formula
+>   `(16*2^(30m)+8*2^(24m)-4*2^(6m)-2)/9`, the uniform pressure-margin lower
+>   bound `1-0.5*log2(3/2)`, the false leading-mass and speedup gates, and the
+>   distinction between falsifying a support-only certificate gap and finding
+>   a surviving channel. The four materialized presentations are controls, not
+>   the all-period proof; the suffix-branch concatenation certificate is the
+>   proof.
+> - Keep `natural_positive_green_pair_gap_theorem_count`,
+>   `natural_component_M4_positive`, `new_quantum_algorithm_count`, and every
+>   speedup gate false.
+>
+> The next mathematical task is **not** mechanical and must not be attempted
+> by changing a flag after finite screens: generalize the suffix-branch rank
+> argument to dense fixed-state frame automata, or construct a precise
+> counterexample with growing suffix-branch dimension. Then bound or construct
+> asymptotic `S_n` mass for the centralizer-weighted frame character problem in
+> `self_dual_wreath_contiguous_frame_target_factorization.py` outside the now-
+> closed identity-frame genus-two seed and the now-closed periodic `S3` family,
+> then connect it
+> to the growing-degree partially pinned `Q_0,Q_1` rigidity problem in
+> `research/AGENT_HANDOFF.md`. The exact `S3` identity-frame lift no longer
+> proves the strongest scalar margin nonuniform. Gemini may add plumbing,
+> refresh downstream registries, and run repetitive validation, but must leave
+> the weighted-character and `S_n` asymptotic gates unresolved.
+
 > **Newest unwired theorem modules:** also inventory and mechanically wire
 > `EXP-CODE-SELF-DUAL-WREATH-RELATION-COKERNEL-TRANSFER`,
 > `EXP-CODE-SELF-DUAL-WREATH-AUGMENTED-H0-DIMENSION-OBSTRUCTION`,
@@ -274,7 +463,11 @@
 > - `EXP-CODE-SELF-DUAL-WREATH-LEAF-WHITENING-COMMUTATOR-NO-GO`, suggested CLI
 >   `code-wreath-leaf-whitening-no-go`;
 > - `EXP-CODE-SELF-DUAL-WREATH-COMMON-SPAN-COMPONENT-UNIVERSALITY-NO-GO`,
->   suggested CLI `code-wreath-common-span-component-universality`.
+>   suggested CLI `code-wreath-common-span-component-universality`;
+> - `EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COMMUTATOR-TRACE-MASS-BRIDGE`,
+>   suggested CLI `code-wreath-component-commutator-trace-mass`;
+> - `EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COMMUTATOR-HAAR-BENCHMARK`,
+>   suggested CLI `code-wreath-component-commutator-haar`.
 >
 > Preserve the theorem scopes exactly. The defect bridge is deterministic and
 > conditional on an actual retained minimum positive component edge. Coordinate
@@ -310,6 +503,15 @@
 > Neither module is a natural wreath commutativity theorem. Keep direct natural
 > compressed `D_com` support, coherent simultaneous-basis/component
 > compilation, MRS separation, decoder, and speedup gates false.
+> The trace-mass bridge proves the exact noncrossing-minus-crossing fourth-
+> moment identity and `D_com<=2I`, so a natural physically normalized scalar
+> gap `M_4` would imply physical and central support at scale `M_4/2`. It does
+> not prove `M_4>0`; never substitute uncompressed sibling-frame moments, Haar
+> surrogates, finite S6 evidence, or nonscalarity rank for that missing result.
+> The Haar benchmark has an exact finite Weingarten formula and sparse-block
+> limit `alpha^2(1-alpha)`, but remains a surrogate. Preserve every
+> `natural_*_proved=false` gate and the one-dimensional/two-outcome boundary
+> controls.
 > The finite rows through `S_48` are deliberately vacuous for common-span rank
 > because the exact global-distinct probability is tiny; do not call them
 > finite confirmation or contradiction of the asymptotic theorem.

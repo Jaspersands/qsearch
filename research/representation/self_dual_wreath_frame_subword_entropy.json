@@ -1,0 +1,1170 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Cube edges and private pivots are the complete loss mechanism.",
+      "resolution": "False: the nested three-point support has neither enough edges nor pivots, but two cumulative subword relators Tietze-eliminate two frame generators.",
+      "resolved": true
+    },
+    {
+      "objection": "Width-five stress proves the all-u inequality.",
+      "resolution": "No finite stress run proves it. The all-u result instead comes from the exact XOR re-rooting automorphism and last-coordinate induction; stress remains only a code control.",
+      "resolved": true
+    },
+    {
+      "objection": "XOR translation is invalid for ordered noncommutative subwords.",
+      "resolution": "Direct XOR is not a generator permutation. The triangular automorphism x_i->A_i*x_i^((-1)^a_i)*A_i^-1 sends w_b exactly to w_(a xor b)*w_a^-1 and preserves the relevant normal closure because 0 and a are support vertices.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_zero_based_supports_through_width_four_certified": true,
+    "exact_frame_subword_reduction_proved": true,
+    "growing_width_frame_subword_entropy_proved": true,
+    "growing_width_suffix_branch_generator_bound_proved": true,
+    "mixed_target_character_control_proved": false,
+    "natural_component_M4_positive": false,
+    "nonzero_base_assignments_certified": false,
+    "reason": "The all-degree reduction, entropy induction, and stronger integer suffix-branch generator theorem are exact for ordered subword supports, but mixed target observables remain open.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-09T05:41:26.981994+00:00",
+  "exhaustive_scaling": [
+    {
+      "checked_zero_containing_support_count": 2,
+      "frame_position_count": 1,
+      "maximum_frame_solution_exponent": 1.0,
+      "minimum_entropy_margin": 0.0,
+      "pressure_uncertified_support_count": 0,
+      "status": "exhaustive-all-supports-certified"
+    },
+    {
+      "checked_zero_containing_support_count": 8,
+      "frame_position_count": 2,
+      "maximum_frame_solution_exponent": 2.0,
+      "minimum_entropy_margin": 0.0,
+      "pressure_uncertified_support_count": 0,
+      "status": "exhaustive-all-supports-certified"
+    },
+    {
+      "checked_zero_containing_support_count": 128,
+      "frame_position_count": 3,
+      "maximum_frame_solution_exponent": 3.0,
+      "minimum_entropy_margin": 0.0,
+      "pressure_uncertified_support_count": 0,
+      "status": "exhaustive-all-supports-certified"
+    },
+    {
+      "checked_zero_containing_support_count": 32768,
+      "frame_position_count": 4,
+      "maximum_frame_solution_exponent": 4.0,
+      "minimum_entropy_margin": 0.0,
+      "pressure_uncertified_support_count": 0,
+      "status": "exhaustive-all-supports-certified"
+    }
+  ],
+  "falsifiers_triggered": [
+    "Edge/private-pivot metrics are incomplete even when pressure is safe.",
+    "Finite coverage is not the all-u proof; the re-rooting induction is.",
+    "The real entropy exponent is not optimal for non-power-of-two supports.",
+    "The reduction requires zero in the different-coordinate support.",
+    "Mixed B boundaries and target characters remain outside scope."
+  ],
+  "headline_metrics": {
+    "complete_width_four_zero_based_pressure_theorem_count": 1,
+    "conditional_frame_subword_pressure_theorem_count": 1,
+    "exhaustive_pressure_failure_count_through_width_four": 0,
+    "exhaustively_checked_zero_support_count_through_width_four": 32906,
+    "growing_width_frame_subword_entropy_theorem_count": 1,
+    "growing_width_suffix_branch_generator_theorem_count": 1,
+    "mixed_target_character_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "nonzero_base_pressure_theorem_count": 0,
+    "width_five_stress_failure_count": 0,
+    "width_five_stress_support_count": 16948
+  },
+  "method_falsifiers": [
+    {
+      "control_id": "EDGE-PIVOT-METRICS-INCOMPLETE",
+      "cube_edge_direction_count": 0,
+      "edge_pivot_entropy_debt": 0.5849625007211561,
+      "edge_pivot_failure_is_pressure_counterexample": false,
+      "frame_subword_entropy_margin": 0.4150374992788439,
+      "frame_subword_exponent": 2.0,
+      "private_pivot_count": 1,
+      "status": "simplified-certificate-fails-full-subword-bound-passes",
+      "support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ]
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "reduce_zero_based_all_A_profiles_to_frame_subword_groups",
+      "resolution": "The zero different cell produces the exact Z^2 crossing factor and converts every color-one cell to w_v.",
+      "resolved": true
+    },
+    {
+      "obligation": "classify_every_zero_based_support_through_width_four",
+      "resolution": "All 32,906 supports pass the certified exponent-entropy inequality.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_frame_subword_entropy_inequality_for_all_widths",
+      "resolution": "A triangular Nielsen automorphism implements XOR re-rooting exactly. The larger zero half has size at least |U|/2, and an occupied one half determines the last generator, closing the induction over every finite group.",
+      "resolved": true
+    },
+    {
+      "obligation": "strengthen_entropy_exponent_to_integer_generator_bound",
+      "resolution": "Conditional entropy is at most the suffix-branch indicator. Averaging over anchors leaves one anchor with at most floor(u-log2|U|) forced coordinates, and explicit triangular witness relators eliminate every other generator.",
+      "resolved": true
+    },
+    {
+      "obligation": "remove_zero_base_and_all_A_contiguity",
+      "resolution": "Nonzero base partitions can trade free factors for higher surface genus; mixed B words retain target boundaries.",
+      "resolved": false
+    }
+  ],
+  "representative_controls": [
+    {
+      "classifier_solution_exponent_upper_bound": 0.0,
+      "control_id": "MONOTONE-CHAIN",
+      "eliminated_generator_count": 8,
+      "entropy_induction_verified": true,
+      "entropy_margin": 4.830074998557688,
+      "exact_subword_presentation_verified": true,
+      "exponent_certificate_source": "trivial-assignment-bound",
+      "frame_position_count": 8,
+      "frame_relations": [
+        [
+          -8
+        ],
+        [
+          -8,
+          -7
+        ],
+        [
+          -8,
+          -7,
+          -6
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -4
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -4,
+          -3,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "frame_solution_exponent_upper_bound": 0.0,
+      "pressure_inequality_certified": true,
+      "remaining_generators": [],
+      "rerooting_step_count": 7,
+      "residual_relations": [],
+      "status": "frame-subword-entropy-pressure-certified",
+      "suffix_branch_certificate": {
+        "anchor": [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "average_forced_bound_verified": true,
+        "average_suffix_forced_coordinate_count": 3.111111111111111,
+        "entropy_chain_rule_value": 3.169925001442312,
+        "entropy_chain_rule_verified": true,
+        "entropy_codimension": 4.830074998557688,
+        "exact_suffix_branch_elimination_verified": true,
+        "explicit_anchor_bound_verified": true,
+        "frame_position_count": 8,
+        "status": "exact-integer-suffix-branch-generator-bound",
+        "suffix_branch_coordinates": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8
+        ],
+        "suffix_branch_witnesses": [
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "suffix_forced_coordinates": [],
+        "suffix_forced_incidence_count": 28,
+        "support": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "support_size": 9,
+        "universal_finite_group_generator_upper_bound": 4
+      },
+      "suffix_branch_generator_bound_verified": true,
+      "support": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "support_entropy_bits": 3.169925001442312,
+      "support_size": 9,
+      "universal_finite_group_generator_upper_bound": 4,
+      "universal_finite_group_solution_exponent_upper_bound": 4.830074998557688
+    },
+    {
+      "classifier_solution_exponent_upper_bound": 0.5,
+      "control_id": "EVEN-PARITY-CODE",
+      "eliminated_generator_count": 4,
+      "entropy_induction_verified": true,
+      "entropy_margin": 0.5,
+      "exact_subword_presentation_verified": true,
+      "exponent_certificate_source": "single-nonorientable-surface-genus-1",
+      "frame_position_count": 5,
+      "frame_relations": [
+        [
+          -5,
+          -4
+        ],
+        [
+          -5,
+          -3
+        ],
+        [
+          -5,
+          -2
+        ],
+        [
+          -5,
+          -1
+        ],
+        [
+          -4,
+          -3
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -4,
+          -1
+        ],
+        [
+          -3,
+          -2
+        ],
+        [
+          -3,
+          -1
+        ],
+        [
+          -2,
+          -1
+        ],
+        [
+          -5,
+          -4,
+          -3,
+          -2
+        ],
+        [
+          -5,
+          -4,
+          -3,
+          -1
+        ],
+        [
+          -5,
+          -4,
+          -2,
+          -1
+        ],
+        [
+          -5,
+          -3,
+          -2,
+          -1
+        ],
+        [
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "frame_solution_exponent_upper_bound": 0.5,
+      "pressure_inequality_certified": true,
+      "remaining_generators": [
+        5
+      ],
+      "rerooting_step_count": 0,
+      "residual_relations": [
+        [
+          -5,
+          -5
+        ],
+        [
+          -5,
+          -5,
+          -5,
+          -5
+        ]
+      ],
+      "status": "frame-subword-entropy-pressure-certified",
+      "suffix_branch_certificate": {
+        "anchor": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "average_forced_bound_verified": true,
+        "average_suffix_forced_coordinate_count": 1.0,
+        "entropy_chain_rule_value": 4.0,
+        "entropy_chain_rule_verified": true,
+        "entropy_codimension": 1.0,
+        "exact_suffix_branch_elimination_verified": true,
+        "explicit_anchor_bound_verified": true,
+        "frame_position_count": 5,
+        "status": "exact-integer-suffix-branch-generator-bound",
+        "suffix_branch_coordinates": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "suffix_branch_witnesses": [
+          [
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "suffix_forced_coordinates": [
+          1
+        ],
+        "suffix_forced_incidence_count": 16,
+        "support": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        ],
+        "support_size": 16,
+        "universal_finite_group_generator_upper_bound": 1
+      },
+      "suffix_branch_generator_bound_verified": true,
+      "support": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          0
+        ]
+      ],
+      "support_entropy_bits": 4.0,
+      "support_size": 16,
+      "universal_finite_group_generator_upper_bound": 1,
+      "universal_finite_group_solution_exponent_upper_bound": 1.0
+    },
+    {
+      "classifier_solution_exponent_upper_bound": 0.0,
+      "control_id": "COPRIME-TORSION-RESIDUAL",
+      "eliminated_generator_count": 3,
+      "entropy_induction_verified": true,
+      "entropy_margin": 0.8300749985576878,
+      "exact_subword_presentation_verified": true,
+      "exponent_certificate_source": "multi-relator-coprime-pure-power-collapse",
+      "frame_position_count": 4,
+      "frame_relations": [
+        [
+          -4,
+          -3
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -4,
+          -1
+        ],
+        [
+          -3,
+          -2
+        ],
+        [
+          -3,
+          -1
+        ],
+        [
+          -2,
+          -1
+        ],
+        [
+          -3,
+          -2,
+          -1
+        ],
+        [
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "frame_solution_exponent_upper_bound": 0.0,
+      "pressure_inequality_certified": true,
+      "remaining_generators": [
+        4
+      ],
+      "rerooting_step_count": 1,
+      "residual_relations": [
+        [
+          -4,
+          -4
+        ],
+        [
+          -4,
+          -4,
+          -4
+        ]
+      ],
+      "status": "frame-subword-entropy-pressure-certified",
+      "suffix_branch_certificate": {
+        "anchor": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "average_forced_bound_verified": true,
+        "average_suffix_forced_coordinate_count": 0.7777777777777778,
+        "entropy_chain_rule_value": 3.169925001442312,
+        "entropy_chain_rule_verified": true,
+        "entropy_codimension": 0.8300749985576878,
+        "exact_suffix_branch_elimination_verified": true,
+        "explicit_anchor_bound_verified": true,
+        "frame_position_count": 4,
+        "status": "exact-integer-suffix-branch-generator-bound",
+        "suffix_branch_coordinates": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "suffix_branch_witnesses": [
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "suffix_forced_coordinates": [],
+        "suffix_forced_incidence_count": 7,
+        "support": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "support_size": 9,
+        "universal_finite_group_generator_upper_bound": 0
+      },
+      "suffix_branch_generator_bound_verified": true,
+      "support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "support_entropy_bits": 3.169925001442312,
+      "support_size": 9,
+      "universal_finite_group_generator_upper_bound": 0,
+      "universal_finite_group_solution_exponent_upper_bound": 0.8300749985576878
+    }
+  ],
+  "status": "zero-based-contiguous-all-A-frame-subword-pressure-complete",
+  "summary": "Reduced zero-based contiguous all-A support profiles to ordered frame-subword groups and proved the entropy bound at every width by exact XOR re-rooting, entropy induction, and an explicit integer suffix-branch generator theorem.",
+  "theorem_contract": {
+    "all_width_result": "For every zero-containing U and every finite group G, XOR re-rooting plus last-generator elimination proves #Hom(P(U),G)<=|G|^(u-log2|U|).",
+    "fixed_width_result": "Every zero-containing U through width four satisfies (1) under exact Tietze and certified surface/power bounds.",
+    "frame_subword_reduction": "For E A^u F E F with zero in D, selected split/support relations give P(S union D)*Z^2 exactly.",
+    "integer_generator_strengthening": "For every nonempty U, an entropy-chain anchor has at most floor(u-log2|U|) suffix-forced coordinates. Triangular suffix witnesses therefore generate P(U) with at most that many generators over every finite group.",
+    "pressure_transfer": "A certified P(U) exponent e gives crossing pressure e+H-u-1, so e+H<=u is sufficient.",
+    "scope": "Nonzero base cells, interleaved leaves, B frames, and mixed targets remain open; the all-u zero-based contiguous all-A subword entropy inequality is closed.",
+    "single_support_sufficiency": "H(S,D)<=log2|S union D|; inequality (1) for the union closes every corresponding support pair."
+  },
+  "width_five_stress": {
+    "checked_zero_containing_support_count": 16948,
+    "frame_position_count": 5,
+    "maximum_frame_solution_exponent": 5.0,
+    "minimum_entropy_margin": 0.0,
+    "pressure_uncertified_support_count": 0,
+    "status": "deterministic-width-five-stress-all-supports-certified"
+  }
+}

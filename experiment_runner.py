@@ -705,6 +705,126 @@ from self_dual_wreath_orientation_filter_physical_access import (
 from self_dual_wreath_orientation_rank_budget import (
     write_orientation_rank_budget_report,
 )
+from self_dual_wreath_orientation_retention_theorem import (
+    write_orientation_retention_theorem_report,
+)
+from self_dual_wreath_orientation_subspace_filter import (
+    write_orientation_subspace_filter_report,
+)
+from self_dual_wreath_pair_common_covering_transition import (
+    write_pair_common_covering_transition_report,
+)
+from self_dual_wreath_pair_core_rank_concentration import (
+    write_pair_core_rank_concentration_report,
+)
+from self_dual_wreath_pair_polar_sampler import (
+    write_pair_polar_sampler_report,
+)
+from self_dual_wreath_pair_polar_transport_network import (
+    write_pair_polar_transport_network_report,
+)
+from self_dual_wreath_pair_transport_degree_obstruction import (
+    write_pair_transport_degree_obstruction_report,
+)
+from self_dual_wreath_pair_transport_native_mass_boundary import (
+    write_pair_transport_native_mass_boundary_report,
+)
+from self_dual_wreath_partial_support_child_embedding import (
+    write_partial_support_child_embedding_report,
+)
+from self_dual_wreath_partial_support_source_mass_boundary import (
+    write_partial_support_source_mass_boundary_report,
+)
+from self_dual_wreath_boolean_graph_stopping_core_pressure import (
+    write_boolean_graph_stopping_core_pressure_report,
+)
+from self_dual_wreath_component_aggregate_frame_indeterminacy import (
+    write_component_aggregate_frame_indeterminacy_report,
+)
+from self_dual_wreath_component_commutator_collision_free_transfer import (
+    write_component_commutator_collision_free_transfer_report,
+)
+from self_dual_wreath_component_commutator_haar_benchmark import (
+    write_component_commutator_haar_benchmark_report,
+)
+from self_dual_wreath_component_commutator_trace_mass_bridge import (
+    write_component_commutator_trace_mass_bridge_report,
+)
+from self_dual_wreath_component_green_ridge_stability import (
+    write_component_green_ridge_stability_report,
+)
+from self_dual_wreath_component_hamming_orbit_reduction import (
+    write_component_hamming_orbit_reduction_report,
+)
+from self_dual_wreath_component_leaf_resolved_green_normal_form import (
+    write_component_leaf_resolved_green_normal_form_report,
+)
+from self_dual_wreath_contiguous_all_a_support_pressure import (
+    write_contiguous_all_a_support_pressure_report,
+)
+from self_dual_wreath_contiguous_frame_target_factorization import (
+    write_contiguous_frame_target_factorization_report,
+)
+from self_dual_wreath_exceptional_block_graph_core_pressure import (
+    write_exceptional_block_graph_core_pressure_report,
+)
+from self_dual_wreath_frame_subword_entropy import (
+    write_frame_subword_entropy_report,
+)
+from self_dual_wreath_leaf_marked_green_word_normal_form import (
+    write_leaf_marked_green_word_normal_form_report,
+)
+from self_dual_wreath_linear_code_support_pressure import (
+    write_linear_code_support_pressure_report,
+)
+from self_dual_wreath_marked_pressure_obstruction_search import (
+    write_marked_pressure_obstruction_search_report,
+)
+from self_dual_wreath_marked_relation_topology import (
+    write_marked_relation_topology_report,
+)
+from self_dual_wreath_mixed_split_target_genus import (
+    write_mixed_split_target_genus_report,
+)
+from self_dual_wreath_natural_leaf_commutator_trace_profile import (
+    write_natural_leaf_commutator_trace_profile_report,
+)
+from self_dual_wreath_parity_stopping_core_pressure import (
+    write_parity_stopping_core_pressure_report,
+)
+from self_dual_wreath_periodic_frame_fiber_counterfamily import (
+    write_periodic_frame_fiber_counterfamily_report,
+)
+from self_dual_wreath_high_codimension_face_word_frontier import (
+    write_high_codimension_face_word_frontier_report,
+)
+from self_dual_wreath_periodic_frame_rank_collapse import (
+    write_periodic_frame_rank_collapse_report,
+)
+from self_dual_wreath_petz_pgm_obstruction import (
+    write_petz_pgm_obstruction_report,
+)
+from self_dual_wreath_pgm_quantum_sampling_reduction import (
+    write_pgm_quantum_sampling_reduction_report,
+)
+from self_dual_wreath_pgm_spectral_window import (
+    write_pgm_spectral_window_report,
+)
+from self_dual_wreath_pgm_success_theorem import (
+    write_pgm_success_theorem_report,
+)
+from self_dual_wreath_pgm_truncation_robustness import (
+    write_pgm_truncation_robustness_report,
+)
+from self_dual_wreath_physical_orientation_interference import (
+    write_physical_orientation_interference_report,
+)
+from self_dual_wreath_physical_pgm_intertwiner import (
+    write_physical_pgm_intertwiner_report,
+)
+from self_dual_wreath_plancherel_kronecker_positivity import (
+    write_plancherel_kronecker_positivity_report,
+)
 from learnability_baselines import write_learnability_report
 from phase_family_naturalness import write_phase_family_naturalness_report
 from phase_state_workbench import write_hidden_shift_workbench
@@ -1216,6 +1336,46 @@ COSET_EXPERIMENTS = {
     "EXP-CODE-SELF-DUAL-WREATH-OPERATOR-STEINER-BULK-REDUCTION",
     "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FILTER-PHYSICAL-ACCESS",
     "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-RANK-BUDGET",
+    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-RETENTION-THEOREM",
+    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-SUBSPACE-FILTER",
+    "EXP-CODE-SELF-DUAL-WREATH-PAIR-COMMON-COVERING-TRANSITION",
+    "EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-RANK-CONCENTRATION",
+    "EXP-CODE-SELF-DUAL-WREATH-PAIR-POLAR-SAMPLER",
+    "EXP-CODE-SELF-DUAL-WREATH-PAIR-POLAR-TRANSPORT-NETWORK",
+    "EXP-CODE-SELF-DUAL-WREATH-PAIR-TRANSPORT-DEGREE-OBSTRUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-PAIR-TRANSPORT-NATIVE-MASS-BOUNDARY",
+    "EXP-CODE-SELF-DUAL-WREATH-PARTIAL-SUPPORT-CHILD-EMBEDDING",
+    "EXP-CODE-SELF-DUAL-WREATH-PARTIAL-SUPPORT-SOURCE-MASS-BOUNDARY",
+    "EXP-CODE-SELF-DUAL-WREATH-BOOLEAN-GRAPH-STOPPING-CORE-PRESSURE",
+    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-AGGREGATE-FRAME-INDETERMINACY",
+    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COMMUTATOR-COLLISION-FREE-TRANSFER",
+    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COMMUTATOR-HAAR-BENCHMARK",
+    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COMMUTATOR-TRACE-MASS-BRIDGE",
+    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-GREEN-RIDGE-STABILITY",
+    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-HAMMING-ORBIT-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-LEAF-RESOLVED-GREEN-NORMAL-FORM",
+    "EXP-CODE-SELF-DUAL-WREATH-CONTIGUOUS-ALL-A-SUPPORT-PRESSURE",
+    "EXP-CODE-SELF-DUAL-WREATH-CONTIGUOUS-FRAME-TARGET-FACTORIZATION",
+    "EXP-CODE-SELF-DUAL-WREATH-EXCEPTIONAL-BLOCK-GRAPH-CORE-PRESSURE",
+    "EXP-CODE-SELF-DUAL-WREATH-FRAME-SUBWORD-ENTROPY",
+    "EXP-CODE-SELF-DUAL-WREATH-LEAF-MARKED-GREEN-WORD-NORMAL-FORM",
+    "EXP-CODE-SELF-DUAL-WREATH-LINEAR-CODE-SUPPORT-PRESSURE",
+    "EXP-CODE-SELF-DUAL-WREATH-MARKED-PRESSURE-OBSTRUCTION-SEARCH",
+    "EXP-CODE-SELF-DUAL-WREATH-MARKED-RELATION-TOPOLOGY",
+    "EXP-CODE-SELF-DUAL-WREATH-MIXED-SPLIT-TARGET-GENUS",
+    "EXP-CODE-SELF-DUAL-WREATH-NATURAL-LEAF-COMMUTATOR-TRACE-PROFILE",
+    "EXP-CODE-SELF-DUAL-WREATH-PARITY-STOPPING-CORE-PRESSURE",
+    "EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-FIBER-COUNTERFAMILY",
+    "EXP-CODE-SELF-DUAL-WREATH-HIGH-CODIMENSION-FACE-WORD-FRONTIER",
+    "EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-RANK-COLLAPSE",
+    "EXP-CODE-SELF-DUAL-WREATH-PETZ-PGM-OBSTRUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-PGM-QUANTUM-SAMPLING-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-PGM-SPECTRAL-WINDOW",
+    "EXP-CODE-SELF-DUAL-WREATH-PGM-SUCCESS-THEOREM",
+    "EXP-CODE-SELF-DUAL-WREATH-PGM-TRUNCATION-ROBUSTNESS",
+    "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-ORIENTATION-INTERFERENCE",
+    "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-PGM-INTERTWINER",
+    "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-KRONECKER-POSITIVITY",
     "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING",
     "EXP-COSET-ENTANGLEMENT-WIDTH-GATE",
     "EXP-COSET-GROWING-WIDTH-ARCHITECTURE",
@@ -2490,6 +2650,46 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-CODE-SELF-DUAL-WREATH-OPERATOR-STEINER-BULK-REDUCTION": 205,
         "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FILTER-PHYSICAL-ACCESS": 206,
         "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-RANK-BUDGET": 207,
+        "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-RETENTION-THEOREM": 208,
+        "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-SUBSPACE-FILTER": 209,
+        "EXP-CODE-SELF-DUAL-WREATH-PAIR-COMMON-COVERING-TRANSITION": 210,
+        "EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-RANK-CONCENTRATION": 211,
+        "EXP-CODE-SELF-DUAL-WREATH-PAIR-POLAR-SAMPLER": 212,
+        "EXP-CODE-SELF-DUAL-WREATH-PAIR-POLAR-TRANSPORT-NETWORK": 213,
+        "EXP-CODE-SELF-DUAL-WREATH-PAIR-TRANSPORT-DEGREE-OBSTRUCTION": 214,
+        "EXP-CODE-SELF-DUAL-WREATH-PAIR-TRANSPORT-NATIVE-MASS-BOUNDARY": 215,
+        "EXP-CODE-SELF-DUAL-WREATH-PARTIAL-SUPPORT-CHILD-EMBEDDING": 216,
+        "EXP-CODE-SELF-DUAL-WREATH-PARTIAL-SUPPORT-SOURCE-MASS-BOUNDARY": 217,
+        "EXP-CODE-SELF-DUAL-WREATH-BOOLEAN-GRAPH-STOPPING-CORE-PRESSURE": 218,
+        "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-AGGREGATE-FRAME-INDETERMINACY": 219,
+        "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COMMUTATOR-COLLISION-FREE-TRANSFER": 220,
+        "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COMMUTATOR-HAAR-BENCHMARK": 221,
+        "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COMMUTATOR-TRACE-MASS-BRIDGE": 222,
+        "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-GREEN-RIDGE-STABILITY": 223,
+        "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-HAMMING-ORBIT-REDUCTION": 224,
+        "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-LEAF-RESOLVED-GREEN-NORMAL-FORM": 225,
+        "EXP-CODE-SELF-DUAL-WREATH-CONTIGUOUS-ALL-A-SUPPORT-PRESSURE": 226,
+        "EXP-CODE-SELF-DUAL-WREATH-CONTIGUOUS-FRAME-TARGET-FACTORIZATION": 227,
+        "EXP-CODE-SELF-DUAL-WREATH-EXCEPTIONAL-BLOCK-GRAPH-CORE-PRESSURE": 228,
+        "EXP-CODE-SELF-DUAL-WREATH-FRAME-SUBWORD-ENTROPY": 229,
+        "EXP-CODE-SELF-DUAL-WREATH-LEAF-MARKED-GREEN-WORD-NORMAL-FORM": 230,
+        "EXP-CODE-SELF-DUAL-WREATH-LINEAR-CODE-SUPPORT-PRESSURE": 231,
+        "EXP-CODE-SELF-DUAL-WREATH-MARKED-PRESSURE-OBSTRUCTION-SEARCH": 232,
+        "EXP-CODE-SELF-DUAL-WREATH-MARKED-RELATION-TOPOLOGY": 233,
+        "EXP-CODE-SELF-DUAL-WREATH-MIXED-SPLIT-TARGET-GENUS": 234,
+        "EXP-CODE-SELF-DUAL-WREATH-NATURAL-LEAF-COMMUTATOR-TRACE-PROFILE": 235,
+        "EXP-CODE-SELF-DUAL-WREATH-PARITY-STOPPING-CORE-PRESSURE": 236,
+        "EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-FIBER-COUNTERFAMILY": 237,
+        "EXP-CODE-SELF-DUAL-WREATH-HIGH-CODIMENSION-FACE-WORD-FRONTIER": 238,
+        "EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-RANK-COLLAPSE": 239,
+        "EXP-CODE-SELF-DUAL-WREATH-PETZ-PGM-OBSTRUCTION": 240,
+        "EXP-CODE-SELF-DUAL-WREATH-PGM-QUANTUM-SAMPLING-REDUCTION": 241,
+        "EXP-CODE-SELF-DUAL-WREATH-PGM-SPECTRAL-WINDOW": 242,
+        "EXP-CODE-SELF-DUAL-WREATH-PGM-SUCCESS-THEOREM": 243,
+        "EXP-CODE-SELF-DUAL-WREATH-PGM-TRUNCATION-ROBUSTNESS": 244,
+        "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-ORIENTATION-INTERFERENCE": 245,
+        "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-PGM-INTERTWINER": 246,
+        "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-KRONECKER-POSITIVITY": 247,
         "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING": 80,
         "EXP-COSET-ENTANGLEMENT-WIDTH-GATE": 81,
         "EXP-COSET-GROWING-WIDTH-ARCHITECTURE": 82,
@@ -5231,6 +5431,406 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-RANK-BUDGET"
         ):
             payload = write_orientation_rank_budget_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-RETENTION-THEOREM"
+        ):
+            payload = write_orientation_retention_theorem_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-SUBSPACE-FILTER"
+        ):
+            payload = write_orientation_subspace_filter_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PAIR-COMMON-COVERING-TRANSITION"
+        ):
+            payload = write_pair_common_covering_transition_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PAIR-CORE-RANK-CONCENTRATION"
+        ):
+            payload = write_pair_core_rank_concentration_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PAIR-POLAR-SAMPLER"
+        ):
+            payload = write_pair_polar_sampler_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PAIR-POLAR-TRANSPORT-NETWORK"
+        ):
+            payload = write_pair_polar_transport_network_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PAIR-TRANSPORT-DEGREE-OBSTRUCTION"
+        ):
+            payload = write_pair_transport_degree_obstruction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PAIR-TRANSPORT-NATIVE-MASS-BOUNDARY"
+        ):
+            payload = write_pair_transport_native_mass_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PARTIAL-SUPPORT-CHILD-EMBEDDING"
+        ):
+            payload = write_partial_support_child_embedding_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PARTIAL-SUPPORT-SOURCE-MASS-BOUNDARY"
+        ):
+            payload = write_partial_support_source_mass_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-BOOLEAN-GRAPH-STOPPING-CORE-PRESSURE"
+        ):
+            payload = write_boolean_graph_stopping_core_pressure_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-AGGREGATE-FRAME-INDETERMINACY"
+        ):
+            payload = write_component_aggregate_frame_indeterminacy_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COMMUTATOR-COLLISION-FREE-TRANSFER"
+        ):
+            payload = write_component_commutator_collision_free_transfer_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COMMUTATOR-HAAR-BENCHMARK"
+        ):
+            payload = write_component_commutator_haar_benchmark_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COMMUTATOR-TRACE-MASS-BRIDGE"
+        ):
+            payload = write_component_commutator_trace_mass_bridge_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-GREEN-RIDGE-STABILITY"
+        ):
+            payload = write_component_green_ridge_stability_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-HAMMING-ORBIT-REDUCTION"
+        ):
+            payload = write_component_hamming_orbit_reduction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-LEAF-RESOLVED-GREEN-NORMAL-FORM"
+        ):
+            payload = write_component_leaf_resolved_green_normal_form_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-CONTIGUOUS-ALL-A-SUPPORT-PRESSURE"
+        ):
+            payload = write_contiguous_all_a_support_pressure_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-CONTIGUOUS-FRAME-TARGET-FACTORIZATION"
+        ):
+            payload = write_contiguous_frame_target_factorization_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-EXCEPTIONAL-BLOCK-GRAPH-CORE-PRESSURE"
+        ):
+            payload = write_exceptional_block_graph_core_pressure_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-FRAME-SUBWORD-ENTROPY"
+        ):
+            payload = write_frame_subword_entropy_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-LEAF-MARKED-GREEN-WORD-NORMAL-FORM"
+        ):
+            payload = write_leaf_marked_green_word_normal_form_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-LINEAR-CODE-SUPPORT-PRESSURE"
+        ):
+            payload = write_linear_code_support_pressure_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-MARKED-PRESSURE-OBSTRUCTION-SEARCH"
+        ):
+            payload = write_marked_pressure_obstruction_search_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-MARKED-RELATION-TOPOLOGY"
+        ):
+            payload = write_marked_relation_topology_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-MIXED-SPLIT-TARGET-GENUS"
+        ):
+            payload = write_mixed_split_target_genus_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-NATURAL-LEAF-COMMUTATOR-TRACE-PROFILE"
+        ):
+            payload = write_natural_leaf_commutator_trace_profile_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PARITY-STOPPING-CORE-PRESSURE"
+        ):
+            payload = write_parity_stopping_core_pressure_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-FIBER-COUNTERFAMILY"
+        ):
+            payload = write_periodic_frame_fiber_counterfamily_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-HIGH-CODIMENSION-FACE-WORD-FRONTIER"
+        ):
+            payload = write_high_codimension_face_word_frontier_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PERIODIC-FRAME-RANK-COLLAPSE"
+        ):
+            payload = write_periodic_frame_rank_collapse_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PETZ-PGM-OBSTRUCTION"
+        ):
+            payload = write_petz_pgm_obstruction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PGM-QUANTUM-SAMPLING-REDUCTION"
+        ):
+            payload = write_pgm_quantum_sampling_reduction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PGM-SPECTRAL-WINDOW"
+        ):
+            payload = write_pgm_spectral_window_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PGM-SUCCESS-THEOREM"
+        ):
+            payload = write_pgm_success_theorem_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PGM-TRUNCATION-ROBUSTNESS"
+        ):
+            payload = write_pgm_truncation_robustness_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-ORIENTATION-INTERFERENCE"
+        ):
+            payload = write_physical_orientation_interference_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-PGM-INTERTWINER"
+        ):
+            payload = write_physical_pgm_intertwiner_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-KRONECKER-POSITIVITY"
+        ):
+            payload = write_plancherel_kronecker_positivity_report(
                 write_registry=True,
                 registry_experiment_id=experiment_id,
                 registry_candidate_id=experiment["candidate_id"],

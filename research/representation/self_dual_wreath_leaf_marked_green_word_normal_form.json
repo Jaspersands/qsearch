@@ -1,0 +1,350 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The sibling common span requires a separate random-subspace model.",
+      "resolution": "False: its projection and Green kernel are exact spectral functions of the two physical sibling frames.",
+      "resolved": true
+    },
+    {
+      "objection": "Leaf marking destroys the word-map reduction exponentially.",
+      "resolution": "Only two pinned counts remain, raised to the equal- and different-coordinate multiplicities.",
+      "resolved": true
+    },
+    {
+      "objection": "Arbitrary high-dimensional target characters obstruct every leaf term.",
+      "resolution": "They cancel exactly for all-left words, but can return in the mixed A/B approximants required by the common projection.",
+      "resolved": true
+    },
+    {
+      "objection": "The exact normal form proves a positive Green gap.",
+      "resolution": "It only identifies the signed marked strata whose growing-degree asymptotics must still be controlled.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "common_span_requires_external_random_model": false,
+    "exact_common_green_is_sibling_frame_algebra_function": true,
+    "exact_leaf_marked_independent_word_normal_form_proved": true,
+    "growing_marked_word_rigidity_proved": false,
+    "natural_component_M4_positive": false,
+    "natural_typical_hamming_green_pair_gap_positive": false,
+    "reason": "The Green transfer is now an explicit partially pinned growing-word problem, but its signed asymptotics remain unproved.",
+    "speedup_claim_allowed": false,
+    "uncompressed_pair_trace_recovered": true
+  },
+  "created_at": "2026-08-09T05:41:31.263520+00:00",
+  "direct_moment_controls": [
+    {
+      "constrained_group_assignment_count": 216,
+      "control_id": "S3-STANDARD-UNCOMPRESSED-NONCROSSING",
+      "copy_count": 2,
+      "direct_projector_moment": 0.02777777777777777,
+      "exact_direct_validation": true,
+      "formula_residual": 6.938893903907228e-18,
+      "hamming_distance": 1,
+      "marked_word_normal_form_moment": 0.027777777777777776,
+      "n": 3,
+      "pattern": "EEFF",
+      "source_tuple_count": 81,
+      "status": "exact-leaf-marked-word-normal-form-verified",
+      "stratum_count": 2,
+      "target_character_forced_trivial": true,
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "constrained_group_assignment_count": 216,
+      "control_id": "S3-STANDARD-UNCOMPRESSED-CROSSING",
+      "copy_count": 2,
+      "direct_projector_moment": 0.013888888888888885,
+      "exact_direct_validation": true,
+      "formula_residual": 3.469446951953614e-18,
+      "hamming_distance": 1,
+      "marked_word_normal_form_moment": 0.013888888888888888,
+      "n": 3,
+      "pattern": "EFEF",
+      "source_tuple_count": 81,
+      "status": "exact-leaf-marked-word-normal-form-verified",
+      "stratum_count": 2,
+      "target_character_forced_trivial": true,
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "constrained_group_assignment_count": 36,
+      "control_id": "S3-STANDARD-MIXED-FRAME-MARKED-WORD",
+      "copy_count": 2,
+      "direct_projector_moment": 0.018518518518518514,
+      "exact_direct_validation": true,
+      "formula_residual": 3.469446951953614e-18,
+      "hamming_distance": 1,
+      "marked_word_normal_form_moment": 0.018518518518518517,
+      "n": 3,
+      "pattern": "EAFB",
+      "source_tuple_count": 81,
+      "status": "exact-leaf-marked-word-normal-form-verified",
+      "stratum_count": 4,
+      "target_character_forced_trivial": false,
+      "target_partition": [
+        2,
+        1
+      ]
+    }
+  ],
+  "falsifiers_triggered": [
+    "The exact common span is not an independent random object beyond the sibling frames.",
+    "Leaf marking does not require enumerating all q leaves; Hamming distance leaves two coordinate counts.",
+    "All-left marked words are exactly target independent.",
+    "No positive normalized Green pair gap or component M4 follows without growing-word control."
+  ],
+  "green_algebra_controls": [
+    {
+      "alternating_projection_iteration_count": 32,
+      "ambient_dimension": 128,
+      "basis_free_green_formula_residual": 5.968046397349741e-15,
+      "common_span_rank": 52,
+      "control_id": "S3-REPEATED-STANDARD-FINAL-SIBLINGS",
+      "exact_basis_free_green_formula_verified": true,
+      "exact_common_projection_limit_verified": true,
+      "green_reflexive_inverse_residual": 6.53784455191598e-15,
+      "largest_noncommon_alternating_eigenvalue": 0.25000000000000067,
+      "left_support_rank": 72,
+      "observed_alternating_projection_residual": 1.9194705352506132e-13,
+      "predicted_alternating_projection_residual": 5.421010862427984e-20,
+      "right_support_rank": 72,
+      "sibling_frame_algebra_contains_green_kernel": true,
+      "status": "exact-sibling-frame-algebra-green-kernel-verified"
+    }
+  ],
+  "headline_metrics": {
+    "all_left_target_character_cancellation_theorem_count": 1,
+    "basis_free_common_green_algebra_theorem_count": 1,
+    "direct_moment_control_count": 3,
+    "direct_moment_control_failure_count": 0,
+    "exact_hamming_two_count_reduction_theorem_count": 1,
+    "exact_leaf_marked_word_normal_form_theorem_count": 1,
+    "green_algebra_control_count": 1,
+    "green_algebra_control_failure_count": 0,
+    "growing_marked_word_rigidity_theorem_count": 0,
+    "natural_positive_green_pair_gap_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "tail_n": 32,
+    "tail_uncompressed_q_squared_rescaled_pair_trace": 12.759259478048282,
+    "uncompressed_pair_control_count": 3,
+    "uncompressed_pair_control_failure_count": 0
+  },
+  "literature_links": [
+    {
+      "covers_required_regime": false,
+      "paper": "Cassidy, Word maps and surface relations in symmetric groups (2026)",
+      "reason": "The new result treats fixed surface relations and stable characters; the marked Green problem has growing systems and arbitrary high-dimensional target characters.",
+      "url": "https://arxiv.org/abs/2608.02210"
+    },
+    {
+      "covers_required_regime": false,
+      "paper": "Hanany--Puder, Word Measures on Symmetric Groups",
+      "reason": "Its Stallings-core expansion is for a fixed word and stable characters, not a family of partially pinned constraint systems of degree growing with n.",
+      "url": "https://arxiv.org/abs/2009.00897"
+    },
+    {
+      "covers_required_regime": false,
+      "paper": "Magee--Puder, Surface Words are Determined by Word Measures on Groups",
+      "reason": "Surface-word character formulas motivate a genus expansion, but do not supply uniform growing-word estimates.",
+      "url": "https://arxiv.org/abs/1902.04873"
+    },
+    {
+      "covers_required_regime": false,
+      "paper": "Schneider--Thom, Word maps with constants on symmetric groups",
+      "reason": "Metric image-diameter bounds for short words with constants do not control the signed marked moment or its character weights.",
+      "url": "https://arxiv.org/abs/2206.11956"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_exact_leaf_marked_sibling_word_normal_form",
+      "resolution": "Independent Plancherel orthogonality leaves one fixed split constraint and two partially pinned nonsplit coordinate counts.",
+      "resolved": true
+    },
+    {
+      "obligation": "recover_natural_uncompressed_q_inverse_two_pair_trace",
+      "resolution": "The EEFF-EFEF specialization is target independent and equals 2(|S_n|-p(n))/|S_n|^3 exactly in every control.",
+      "resolved": true
+    },
+    {
+      "obligation": "eliminate_common_span_as_an_external_random_variable",
+      "resolution": "Alternating support projections and compressed pseudoinverse functional calculus express the exact Green kernel inside W*(A,B).",
+      "resolved": true
+    },
+    {
+      "obligation": "classify_high_count_partially_pinned_strata_for_growing_words",
+      "resolution": "Prove a genus/rigidity bound for the Q_0,Q_1 strata at the degree needed to approximate support projections and pseudoinverses.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_positive_typical_hamming_green_pair_gap",
+      "resolution": "Evaluate the AABB-minus-ABAB marked Green functional after the growing-word approximation and show its q^2 rescaling survives.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "child_leaf_count_log2": 17,
+      "exact_green_is_sibling_frame_algebra_function": true,
+      "exact_hamming_dependence_dimension": 2,
+      "group_order_log2": 15.29920801838728,
+      "growing_marked_word_rigidity_proved": false,
+      "n": 8,
+      "natural_green_pair_gap_proved": false,
+      "remaining_cube_dimension": 17,
+      "selected_copy_count": 18,
+      "status": "exact-marked-word-reduction-growing-rigidity-open",
+      "target_character_absent_for_all_left_words": true,
+      "typical_hamming_distance": 8,
+      "uncompressed_rescaled_pair_trace": 21.1237865521282
+    },
+    {
+      "child_leaf_count_log2": 30,
+      "exact_green_is_sibling_frame_algebra_function": true,
+      "exact_hamming_dependence_dimension": 2,
+      "group_order_log2": 28.835455234075408,
+      "growing_marked_word_rigidity_proved": false,
+      "n": 12,
+      "natural_green_pair_gap_proved": false,
+      "remaining_cube_dimension": 30,
+      "selected_copy_count": 31,
+      "status": "exact-marked-word-reduction-growing-rigidity-open",
+      "target_character_absent_for_all_left_words": true,
+      "typical_hamming_distance": 15,
+      "uncompressed_rescaled_pair_trace": 10.049761089986236
+    },
+    {
+      "child_leaf_count_log2": 46,
+      "exact_green_is_sibling_frame_algebra_function": true,
+      "exact_hamming_dependence_dimension": 2,
+      "group_order_log2": 44.25014046988262,
+      "growing_marked_word_rigidity_proved": false,
+      "n": 16,
+      "natural_green_pair_gap_proved": false,
+      "remaining_cube_dimension": 46,
+      "selected_copy_count": 47,
+      "status": "exact-marked-word-reduction-growing-rigidity-open",
+      "target_character_absent_for_all_left_words": true,
+      "typical_hamming_distance": 23,
+      "uncompressed_rescaled_pair_trace": 22.623011130833376
+    },
+    {
+      "child_leaf_count_log2": 63,
+      "exact_green_is_sibling_frame_algebra_function": true,
+      "exact_hamming_dependence_dimension": 2,
+      "group_order_log2": 61.07738392090622,
+      "growing_marked_word_rigidity_proved": false,
+      "n": 20,
+      "natural_green_pair_gap_proved": false,
+      "remaining_cube_dimension": 63,
+      "selected_copy_count": 64,
+      "status": "exact-marked-word-reduction-growing-rigidity-open",
+      "target_character_absent_for_all_left_words": true,
+      "typical_hamming_distance": 31,
+      "uncompressed_rescaled_pair_trace": 28.744861177243923
+    },
+    {
+      "child_leaf_count_log2": 81,
+      "exact_green_is_sibling_frame_algebra_function": true,
+      "exact_hamming_dependence_dimension": 2,
+      "group_order_log2": 79.03765741910044,
+      "growing_marked_word_rigidity_proved": false,
+      "n": 24,
+      "natural_green_pair_gap_proved": false,
+      "remaining_cube_dimension": 81,
+      "selected_copy_count": 82,
+      "status": "exact-marked-word-reduction-growing-rigidity-open",
+      "target_character_absent_for_all_left_words": true,
+      "typical_hamming_distance": 40,
+      "uncompressed_rescaled_pair_trace": 30.372319019913945
+    },
+    {
+      "child_leaf_count_log2": 99,
+      "exact_green_is_sibling_frame_algebra_function": true,
+      "exact_hamming_dependence_dimension": 2,
+      "group_order_log2": 97.94419575123733,
+      "growing_marked_word_rigidity_proved": false,
+      "n": 28,
+      "natural_green_pair_gap_proved": false,
+      "remaining_cube_dimension": 99,
+      "selected_copy_count": 100,
+      "status": "exact-marked-word-reduction-growing-rigidity-open",
+      "target_character_absent_for_all_left_words": true,
+      "typical_hamming_distance": 49,
+      "uncompressed_rescaled_pair_trace": 8.643457333069565
+    },
+    {
+      "child_leaf_count_log2": 119,
+      "exact_green_is_sibling_frame_algebra_function": true,
+      "exact_hamming_dependence_dimension": 2,
+      "group_order_log2": 117.6632636523603,
+      "growing_marked_word_rigidity_proved": false,
+      "n": 32,
+      "natural_green_pair_gap_proved": false,
+      "remaining_cube_dimension": 119,
+      "selected_copy_count": 120,
+      "status": "exact-marked-word-reduction-growing-rigidity-open",
+      "target_character_absent_for_all_left_words": true,
+      "typical_hamming_distance": 59,
+      "uncompressed_rescaled_pair_trace": 12.759259478048282
+    }
+  ],
+  "status": "exact-leaf-marked-green-word-reduction-growing-rigidity-open",
+  "summary": "Reduced the exact natural sibling-common Green pair functional to partially pinned A/B word-map strata and removed the common span as a separate probabilistic input.",
+  "theorem_contract": {
+    "all_left_target_cancellation": "If no B token occurs, the split-source constraint forces the full group product to one and removes the target character exactly.",
+    "basis_free_common_green": "The exact sibling-common Green kernel is equation (1), with P obtained by alternating support projections; hence K lies in the algebra generated by A and B.",
+    "hamming_reduction": "After source relabeling, all equal coordinates contribute Q_0 and all differing coordinates contribute Q_1, so Hamming distance enters only as Q_0^(K-1-w)Q_1^w.",
+    "leaf_marked_word_map": "Equation (2) exactly evaluates every independent-Plancherel A/B/E/F trace word by two partially pinned identity counts.",
+    "scope": "No growing-degree marked-word rigidity, positive normalized Green pair gap, component M4, compiler, decoder, or speedup is proved."
+  },
+  "uncompressed_pair_controls": [
+    {
+      "closed_pair_commutator_trace": "1/36",
+      "copy_count": 2,
+      "crossing_moment": "1/72",
+      "exact_target_independent_pair_formula_verified": true,
+      "hamming_distance": 1,
+      "maximum_target_residual": "0",
+      "n": 3,
+      "noncrossing_moment": "1/36",
+      "pair_commutator_trace": "1/36",
+      "status": "exact-target-independent-uncompressed-pair-formula-recovered",
+      "target_count": 3
+    },
+    {
+      "closed_pair_commutator_trace": "19/6912",
+      "copy_count": 3,
+      "crossing_moment": "5/13824",
+      "exact_target_independent_pair_formula_verified": true,
+      "hamming_distance": 1,
+      "maximum_target_residual": "0",
+      "n": 4,
+      "noncrossing_moment": "1/576",
+      "pair_commutator_trace": "19/6912",
+      "status": "exact-target-independent-uncompressed-pair-formula-recovered",
+      "target_count": 5
+    },
+    {
+      "closed_pair_commutator_trace": "19/6912",
+      "copy_count": 3,
+      "crossing_moment": "5/13824",
+      "exact_target_independent_pair_formula_verified": true,
+      "hamming_distance": 2,
+      "maximum_target_residual": "0",
+      "n": 4,
+      "noncrossing_moment": "1/576",
+      "pair_commutator_trace": "19/6912",
+      "status": "exact-target-independent-uncompressed-pair-formula-recovered",
+      "target_count": 5
+    }
+  ]
+}

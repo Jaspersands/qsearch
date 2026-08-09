@@ -1,0 +1,354 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Superpolynomially many tiny-rank outcomes make the commutator gap vanish automatically.",
+      "resolution": "False in the exact Haar model; the q(q-1) pair count compensates the rank fraction and leaves alpha^2(1-alpha).",
+      "resolved": true
+    },
+    {
+      "objection": "The formula must vanish for every two-outcome POVM and one-dimensional fiber.",
+      "resolution": "The factors N-2b and r^2-1 enforce both exact boundaries.",
+      "resolved": true
+    },
+    {
+      "objection": "The positive Haar constant proves natural noncommutative mass.",
+      "resolution": "It does not; natural dependencies and sibling-generated common compression are precisely the unproved step.",
+      "resolved": false
+    },
+    {
+      "objection": "Existing uncompressed sibling degree-four freeness supplies the transfer.",
+      "resolution": "No. The component effects contain pseudoinverse normalization and common-span compression.",
+      "resolved": false
+    }
+  ],
+  "asymptotic_records": [
+    {
+      "asymptotic_normalized_commutator_trace": 0.0012862781634046428,
+      "block_aspect": 0.0,
+      "fiber_aspect": 0.03653846153846154,
+      "natural_frame_transfer_proved": false,
+      "positive_surrogate_signal": true,
+      "sparse_block_limit": 0.0012862781634046428,
+      "status": "positive-haar-surrogate-commutator-gap-natural-transfer-open"
+    },
+    {
+      "asymptotic_normalized_commutator_trace": 0.0012479470741351842,
+      "block_aspect": 0.01,
+      "fiber_aspect": 0.03653846153846154,
+      "natural_frame_transfer_proved": false,
+      "positive_surrogate_signal": true,
+      "sparse_block_limit": 0.0012862781634046428,
+      "status": "positive-haar-surrogate-commutator-gap-natural-transfer-open"
+    },
+    {
+      "asymptotic_normalized_commutator_trace": 0.0009261202776513428,
+      "block_aspect": 0.1,
+      "fiber_aspect": 0.03653846153846154,
+      "natural_frame_transfer_proved": false,
+      "positive_surrogate_signal": true,
+      "sparse_block_limit": 0.0012862781634046428,
+      "status": "positive-haar-surrogate-commutator-gap-natural-transfer-open"
+    },
+    {
+      "asymptotic_normalized_commutator_trace": 0.0023750000000000004,
+      "block_aspect": 0.0,
+      "fiber_aspect": 0.05,
+      "natural_frame_transfer_proved": false,
+      "positive_surrogate_signal": true,
+      "sparse_block_limit": 0.0023750000000000004,
+      "status": "positive-haar-surrogate-commutator-gap-natural-transfer-open"
+    },
+    {
+      "asymptotic_normalized_commutator_trace": 0.0023042250000000005,
+      "block_aspect": 0.01,
+      "fiber_aspect": 0.05,
+      "natural_frame_transfer_proved": false,
+      "positive_surrogate_signal": true,
+      "sparse_block_limit": 0.0023750000000000004,
+      "status": "positive-haar-surrogate-commutator-gap-natural-transfer-open"
+    },
+    {
+      "asymptotic_normalized_commutator_trace": 0.0017100000000000006,
+      "block_aspect": 0.1,
+      "fiber_aspect": 0.05,
+      "natural_frame_transfer_proved": false,
+      "positive_surrogate_signal": true,
+      "sparse_block_limit": 0.0023750000000000004,
+      "status": "positive-haar-surrogate-commutator-gap-natural-transfer-open"
+    },
+    {
+      "asymptotic_normalized_commutator_trace": 0.009000000000000003,
+      "block_aspect": 0.0,
+      "fiber_aspect": 0.1,
+      "natural_frame_transfer_proved": false,
+      "positive_surrogate_signal": true,
+      "sparse_block_limit": 0.009000000000000003,
+      "status": "positive-haar-surrogate-commutator-gap-natural-transfer-open"
+    },
+    {
+      "asymptotic_normalized_commutator_trace": 0.008731800000000003,
+      "block_aspect": 0.01,
+      "fiber_aspect": 0.1,
+      "natural_frame_transfer_proved": false,
+      "positive_surrogate_signal": true,
+      "sparse_block_limit": 0.009000000000000003,
+      "status": "positive-haar-surrogate-commutator-gap-natural-transfer-open"
+    },
+    {
+      "asymptotic_normalized_commutator_trace": 0.006480000000000003,
+      "block_aspect": 0.1,
+      "fiber_aspect": 0.1,
+      "natural_frame_transfer_proved": false,
+      "positive_surrogate_signal": true,
+      "sparse_block_limit": 0.009000000000000003,
+      "status": "positive-haar-surrogate-commutator-gap-natural-transfer-open"
+    },
+    {
+      "asymptotic_normalized_commutator_trace": 0.046875,
+      "block_aspect": 0.0,
+      "fiber_aspect": 0.25,
+      "natural_frame_transfer_proved": false,
+      "positive_surrogate_signal": true,
+      "sparse_block_limit": 0.046875,
+      "status": "positive-haar-surrogate-commutator-gap-natural-transfer-open"
+    },
+    {
+      "asymptotic_normalized_commutator_trace": 0.045478124999999994,
+      "block_aspect": 0.01,
+      "fiber_aspect": 0.25,
+      "natural_frame_transfer_proved": false,
+      "positive_surrogate_signal": true,
+      "sparse_block_limit": 0.046875,
+      "status": "positive-haar-surrogate-commutator-gap-natural-transfer-open"
+    },
+    {
+      "asymptotic_normalized_commutator_trace": 0.03375,
+      "block_aspect": 0.1,
+      "fiber_aspect": 0.25,
+      "natural_frame_transfer_proved": false,
+      "positive_surrogate_signal": true,
+      "sparse_block_limit": 0.046875,
+      "status": "positive-haar-surrogate-commutator-gap-natural-transfer-open"
+    },
+    {
+      "asymptotic_normalized_commutator_trace": 0.125,
+      "block_aspect": 0.0,
+      "fiber_aspect": 0.5,
+      "natural_frame_transfer_proved": false,
+      "positive_surrogate_signal": true,
+      "sparse_block_limit": 0.125,
+      "status": "positive-haar-surrogate-commutator-gap-natural-transfer-open"
+    },
+    {
+      "asymptotic_normalized_commutator_trace": 0.121275,
+      "block_aspect": 0.01,
+      "fiber_aspect": 0.5,
+      "natural_frame_transfer_proved": false,
+      "positive_surrogate_signal": true,
+      "sparse_block_limit": 0.125,
+      "status": "positive-haar-surrogate-commutator-gap-natural-transfer-open"
+    },
+    {
+      "asymptotic_normalized_commutator_trace": 0.09000000000000001,
+      "block_aspect": 0.1,
+      "fiber_aspect": 0.5,
+      "natural_frame_transfer_proved": false,
+      "positive_surrogate_signal": true,
+      "sparse_block_limit": 0.125,
+      "status": "positive-haar-surrogate-commutator-gap-natural-transfer-open"
+    },
+    {
+      "asymptotic_normalized_commutator_trace": 0.140625,
+      "block_aspect": 0.0,
+      "fiber_aspect": 0.75,
+      "natural_frame_transfer_proved": false,
+      "positive_surrogate_signal": true,
+      "sparse_block_limit": 0.140625,
+      "status": "positive-haar-surrogate-commutator-gap-natural-transfer-open"
+    },
+    {
+      "asymptotic_normalized_commutator_trace": 0.136434375,
+      "block_aspect": 0.01,
+      "fiber_aspect": 0.75,
+      "natural_frame_transfer_proved": false,
+      "positive_surrogate_signal": true,
+      "sparse_block_limit": 0.140625,
+      "status": "positive-haar-surrogate-commutator-gap-natural-transfer-open"
+    },
+    {
+      "asymptotic_normalized_commutator_trace": 0.10125,
+      "block_aspect": 0.1,
+      "fiber_aspect": 0.75,
+      "natural_frame_transfer_proved": false,
+      "positive_surrogate_signal": true,
+      "sparse_block_limit": 0.140625,
+      "status": "positive-haar-surrogate-commutator-gap-natural-transfer-open"
+    }
+  ],
+  "claim_gate": {
+    "coherent_component_algebra_compiler_proved": false,
+    "exact_complex_haar_component_commutator_gap_proved": true,
+    "haar_jacobi_model_is_natural_wreath_theorem": false,
+    "natural_compressed_component_M4_positive": false,
+    "natural_noncommutative_component_physical_mass_proved": false,
+    "reason": "The exact Haar benchmark predicts a constant positive gap, but no transfer to natural compressed representation frames has been proved.",
+    "sparse_haar_outcome_limit_positive": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-09T05:37:47.420106+00:00",
+  "exact_controls": [
+    {
+      "ambient_dimension": 8,
+      "block_dimension": 2,
+      "control_id": "R-ONE-COMMUTING-BOUNDARY",
+      "enumerated_normalized_commutator_trace": "0",
+      "exact_normalized_commutator_trace_formula": "0",
+      "exact_ordered_pair_moment_gap": "0",
+      "exact_weingarten_formula_verified": true,
+      "fiber_dimension": 1,
+      "formula_residual": "0",
+      "normalized_commutator_trace_float": 0.0,
+      "one_dimensional_boundary": true,
+      "outcome_count": 4,
+      "status": "exact-complex-haar-component-commutator-formula-verified",
+      "two_outcome_boundary": false
+    },
+    {
+      "ambient_dimension": 8,
+      "block_dimension": 4,
+      "control_id": "TWO-OUTCOME-COMMUTING-BOUNDARY",
+      "enumerated_normalized_commutator_trace": "0",
+      "exact_normalized_commutator_trace_formula": "0",
+      "exact_ordered_pair_moment_gap": "0",
+      "exact_weingarten_formula_verified": true,
+      "fiber_dimension": 4,
+      "formula_residual": "0",
+      "normalized_commutator_trace_float": 0.0,
+      "one_dimensional_boundary": false,
+      "outcome_count": 2,
+      "status": "exact-complex-haar-component-commutator-formula-verified",
+      "two_outcome_boundary": true
+    },
+    {
+      "ambient_dimension": 8,
+      "block_dimension": 2,
+      "control_id": "N8-R4-B2",
+      "enumerated_normalized_commutator_trace": "1/21",
+      "exact_normalized_commutator_trace_formula": "1/21",
+      "exact_ordered_pair_moment_gap": "1/63",
+      "exact_weingarten_formula_verified": true,
+      "fiber_dimension": 4,
+      "formula_residual": "0",
+      "normalized_commutator_trace_float": 0.047619047619047616,
+      "one_dimensional_boundary": false,
+      "outcome_count": 4,
+      "status": "exact-complex-haar-component-commutator-formula-verified",
+      "two_outcome_boundary": false
+    },
+    {
+      "ambient_dimension": 12,
+      "block_dimension": 3,
+      "control_id": "N12-R6-B3",
+      "enumerated_normalized_commutator_trace": "27/572",
+      "exact_normalized_commutator_trace_formula": "27/572",
+      "exact_ordered_pair_moment_gap": "27/1144",
+      "exact_weingarten_formula_verified": true,
+      "fiber_dimension": 6,
+      "formula_residual": "0",
+      "normalized_commutator_trace_float": 0.0472027972027972,
+      "one_dimensional_boundary": false,
+      "outcome_count": 4,
+      "status": "exact-complex-haar-component-commutator-formula-verified",
+      "two_outcome_boundary": false
+    },
+    {
+      "ambient_dimension": 20,
+      "block_dimension": 2,
+      "control_id": "N20-R10-B2",
+      "enumerated_normalized_commutator_trace": "12/133",
+      "exact_normalized_commutator_trace_formula": "12/133",
+      "exact_ordered_pair_moment_gap": "4/399",
+      "exact_weingarten_formula_verified": true,
+      "fiber_dimension": 10,
+      "formula_residual": "0",
+      "normalized_commutator_trace_float": 0.09022556390977443,
+      "one_dimensional_boundary": false,
+      "outcome_count": 10,
+      "status": "exact-complex-haar-component-commutator-formula-verified",
+      "two_outcome_boundary": false
+    },
+    {
+      "ambient_dimension": 30,
+      "block_dimension": 3,
+      "control_id": "N30-R12-B3",
+      "enumerated_normalized_commutator_trace": "34749/503440",
+      "exact_normalized_commutator_trace_formula": "34749/503440",
+      "exact_ordered_pair_moment_gap": "11583/1258600",
+      "exact_weingarten_formula_verified": true,
+      "fiber_dimension": 12,
+      "formula_residual": "0",
+      "normalized_commutator_trace_float": 0.06902312092801526,
+      "one_dimensional_boundary": false,
+      "outcome_count": 10,
+      "status": "exact-complex-haar-component-commutator-formula-verified",
+      "two_outcome_boundary": false
+    }
+  ],
+  "falsifiers_triggered": [
+    "Outcome-count growth alone does not suppress the component commutator gap in the Haar model.",
+    "The exact formula respects the one-dimensional and two-outcome commuting boundaries.",
+    "The positive Haar constant is a quantitative benchmark, not natural wreath evidence.",
+    "A natural zero gap would require a representation-specific crossing-moment collapse that must be exhibited explicitly."
+  ],
+  "headline_metrics": {
+    "exact_complex_haar_commutator_formula_theorem_count": 1,
+    "exact_control_count": 6,
+    "exact_control_failure_count": 0,
+    "natural_aspect_sparse_haar_normalized_gap": 0.0012862781634046428,
+    "natural_compressed_component_M4_lower_bound_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "sparse_block_positive_haar_limit_theorem_count": 1,
+    "surrogate_physical_support_scale": 1.060732860446537e-05,
+    "surrogate_total_regular_master_M4_scale": 2.121465720893074e-05
+  },
+  "natural_aspect_benchmark": {
+    "natural_M4_lower_bound_proved": false,
+    "proved_common_physical_rank_lower_bound": "19/128-o(1)",
+    "proved_natural_fiber_aspect_lower_bound": "19/520-o(1)",
+    "proved_source_event_mass_lower_bound": "1/9-o(1)",
+    "sparse_haar_normalized_commutator_trace_at_19_over_520": "180861/140608000",
+    "sparse_haar_normalized_commutator_trace_float": 0.0012862781634046428,
+    "surrogate_physical_support_scale_via_trace_bridge": 1.060732860446537e-05,
+    "surrogate_total_regular_master_M4_scale": 2.121465720893074e-05
+  },
+  "proof_obligations": [
+    {
+      "obligation": "derive_exact_haar_component_commutator_gap",
+      "resolution": "The S4 character Weingarten sum gives equations (2)-(3), including r=1 and q=2 commuting boundaries.",
+      "resolved": true
+    },
+    {
+      "obligation": "determine_whether_sparse_outcomes_suppress_the_null_model_gap",
+      "resolution": "They do not in the Haar model: beta->0 leaves alpha^2(1-alpha).",
+      "resolved": true
+    },
+    {
+      "obligation": "transfer_positive_gap_to_natural_compressed_wreath_effects",
+      "resolution": "Need a direct regular-master calculation or growing-word/resolvent theorem after common-span pseudoinverse normalization.",
+      "resolved": false
+    },
+    {
+      "obligation": "identify_natural_crossing_gap_collapse_if_haar_prediction_fails",
+      "resolution": "A zero natural M_4 would require an exact recoupling/commuting mechanism absent from the surrogate.",
+      "resolved": false
+    }
+  ],
+  "status": "exact-positive-haar-commutator-benchmark-natural-transfer-open",
+  "summary": "Derived the exact finite complex-Haar component commutator gap and showed its sparse-outcome limit remains constant at fixed aspect.",
+  "theorem_contract": {
+    "aspect_limit": "At r/N->alpha and b/N->beta the exact formula tends to alpha^2(1-alpha)(1-beta)(1-2beta).",
+    "exact_complex_haar_formula": "For an N-by-r Haar isometry with q=N/b equal coordinate blocks, E Tr(D_com)/r is equation (3), proved by the complete S4 unitary-Weingarten contraction.",
+    "scope": "This is a complex-Haar/Jacobi surrogate. It is not a theorem about natural Plancherel/Racah component effects or their globally distinct source conditioning.",
+    "sparse_block_limit": "When q grows and beta=1/q->0, the normalized commutator gap tends to alpha^2(1-alpha), not zero."
+  }
+}

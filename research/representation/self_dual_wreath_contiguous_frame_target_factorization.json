@@ -1,0 +1,1216 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A scalar pressure theorem automatically controls the target.",
+      "resolution": "False. Scalar counting only localizes the target to R; it gives no sign or cancellation estimate for chi(R).",
+      "resolved": true
+    },
+    {
+      "objection": "Eliminating the outer variables makes frame assignments uniform.",
+      "resolution": "False. Each frame assignment retains a conjugacy indicator and centralizer-size weight depending on bT and w_q b.",
+      "resolved": true
+    },
+    {
+      "objection": "Every mixed frame pattern has a surviving target.",
+      "resolution": "False. Zero or one cyclic B-run gives genus zero, and support relations can kill targets that survive the split alone.",
+      "resolved": true
+    },
+    {
+      "objection": "A profile can both saturate scalar pressure and retain a nonidentity target.",
+      "resolution": "Impossible in this family: saturation requires 0 in S, and that same-coordinate cell contributes R as an exact relator.",
+      "resolved": true
+    },
+    {
+      "objection": "The strict fixed-width target margin can be upgraded to a uniform constant.",
+      "resolution": "No generic certificate can do this: the pruned power-boundary lift has vanishing integer-certificate margin. Its exact surface-times-free presentation is nevertheless uniformly subleading, so the actual-presentation theorem remains open.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "asymptotic_Sn_target_survival_lower_bound_proved": false,
+    "contiguous_mixed_frame_scalar_pressure_proved": true,
+    "fixed_width_nontrivial_target_strictly_subthreshold": true,
+    "growing_width_uniform_target_survival_gap_proved": false,
+    "identity_lift_closed_by_integer_suffix_branch_bound": true,
+    "interleaved_leaf_patterns_certified": false,
+    "natural_component_M4_positive": false,
+    "power_boundary_actual_presentation_survives": false,
+    "power_boundary_integer_certificate_gap_falsified": true,
+    "pressure_saturation_forces_target_identity": true,
+    "real_entropy_certificate_gap_falsified": true,
+    "reason": "The target value is now a frame-only character, but its support-conditioned centralizer-weighted average and a growing-width S_n lower/upper bound are open. The previous identity-lift gap falsifier is closed by the stronger integer suffix-branch theorem. A pruned power-boundary lift defeats the generic certificate but itself collapses to surface-times-free.",
+    "speedup_claim_allowed": false,
+    "target_character_value_reduced_to_frame_word": true,
+    "uniform_certificate_pressure_gap_falsified": false,
+    "weighted_frame_character_average_controlled": false
+  },
+  "created_at": "2026-08-09T05:38:31.277532+00:00",
+  "falsifiers_triggered": [
+    "Outer elimination preserves a nonuniform centralizer weight.",
+    "Genus-zero split patterns cannot carry a nontrivial target.",
+    "Additional support relations can erase split-only target topology.",
+    "Identity-frame lifts only make the obsolete real entropy margin vanish.",
+    "The integer suffix-branch bound restores a uniform gap on that lift.",
+    "Power-boundary pruning defeats the generic bound but not the true presentation.",
+    "The S3 lift does not establish asymptotic S_n solution mass.",
+    "No result here supplies a positive component moment or decoder."
+  ],
+  "headline_metrics": {
+    "checked_frame_type_base_pair_count": 87380,
+    "exact_S3_target_survival_identity_frame_lift_count": 13,
+    "exact_target_to_frame_character_reduction_theorem_count": 1,
+    "growing_width_mixed_frame_scalar_pressure_theorem_count": 1,
+    "growing_width_uniform_target_survival_pressure_gap_theorem_count": 0,
+    "integer_suffix_branch_identity_lift_gap_closed_count": 1,
+    "maximum_split_target_genus": 3,
+    "minimum_real_entropy_lift_certificate_margin": 0.00017608874015051363,
+    "minimum_target_survival_lift_pressure_margin": 0.5,
+    "new_quantum_algorithm_count": 0,
+    "outer_factorization_failure_count": 0,
+    "power_boundary_actual_presentation_escape_count": 0,
+    "power_boundary_integer_certificate_gap_falsified_count": 1,
+    "real_entropy_certificate_gap_falsified_count": 1,
+    "representative_selected_target_survival_count": 2,
+    "target_factorization_failure_count": 0,
+    "target_survival_lift_failure_count": 0,
+    "target_survival_strict_pressure_tradeoff_theorem_count": 1,
+    "uniform_certificate_pressure_gap_falsified_count": 0,
+    "weighted_frame_character_theorem_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "extend_scalar_support_pressure_to_contiguous_B_frames",
+      "resolution": "The two support fibers and outer conjugacy count are unchanged except for the explicit twist T=w_barq^-1*w_A.",
+      "resolved": true
+    },
+    {
+      "obligation": "remove_outer_variables_from_target_character_value",
+      "resolution": "The target equals A*R*A^-1 modulo the exact outer equation.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_weighted_support_conditioned_frame_character",
+      "resolution": "Control the character of R under split/support equations with the nonuniform centralizer/conjugacy weight from the outer fiber.",
+      "resolved": false
+    },
+    {
+      "obligation": "separate_nontrivial_targets_from_scalar_pressure_saturation",
+      "resolution": "The exact equality condition requires the zero same cell, which inserts R as a frame relator. Nontrivial targets have a strictly positive fixed-width scalar margin.",
+      "resolved": true
+    },
+    {
+      "obligation": "make_target_survival_pressure_gap_uniform_at_growing_width",
+      "resolution": "Pruning the identity lift to sizes 2^k-1 and 2^k makes the strongest generic integer-certificate margin tend to zero. However, its exact presentation is genus two with one free generator and has true pressure margin greater than one. A surviving actual-presentation counterexample remains open.",
+      "resolved": false
+    },
+    {
+      "obligation": "extend_to_interleaved_leaf_patterns",
+      "resolution": "Interleaved E/F leaves break the single two-variable outer conjugacy equation and require a multi-boundary analogue.",
+      "resolved": false
+    }
+  ],
+  "representative_controls": [
+    {
+      "a_frame_subword": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "b_frame_subword": [],
+      "control_id": "ALL-A-TARGET-CANCELS",
+      "different_base_assignment": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "exact_mixed_frame_scalar_pressure_verified": true,
+      "exact_outer_conjugacy_factorization_verified": true,
+      "exact_target_conjugacy_factorization_verified": true,
+      "frame_types": [
+        "A",
+        "A",
+        "A",
+        "A"
+      ],
+      "full_frame_word": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "full_presentation_freely_kills_target": false,
+      "full_presentation_symbolically_kills_target": true,
+      "full_presentation_target_residual": [
+        -7,
+        -8,
+        7,
+        8
+      ],
+      "full_reduced_frame_relations": [],
+      "full_reduced_frame_target_is_relator": false,
+      "full_reduced_frame_target_orientable_genus": 0,
+      "full_reduced_frame_target_residual": [],
+      "nonzero_target_pressure_margin_lower_bound": 0.0,
+      "outer_conjugacy_twist_word": [],
+      "same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "scalar_crossing_pressure_margin": 0.0,
+      "scalar_crossing_pressure_upper_bound": -1.0,
+      "scalar_pressure_saturation_condition_verified": true,
+      "selected_frame_relations": [],
+      "selected_frame_target_orientable_genus": 0,
+      "selected_frame_target_residual": [],
+      "split_b_run_count": 0,
+      "split_target_genus": 0,
+      "status": "target-reduced-to-weighted-frame-character",
+      "target_after_outer_relation": [],
+      "target_frame_word": [],
+      "target_survival_pressure_tradeoff_verified": true,
+      "transformed_outer_relation": [
+        5,
+        6,
+        -5,
+        -6
+      ],
+      "transformed_target_word": [
+        5,
+        6,
+        -5,
+        -6
+      ],
+      "weighted_frame_character_bound_proved": false,
+      "zero_same_assignment_present": true,
+      "zero_same_cell_forces_target_identity": true
+    },
+    {
+      "a_frame_subword": [
+        1,
+        2
+      ],
+      "b_frame_subword": [
+        3,
+        4
+      ],
+      "control_id": "ONE-B-RUN-TARGET-CANCELS",
+      "different_base_assignment": [
+        1,
+        0,
+        1,
+        0
+      ],
+      "different_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "exact_mixed_frame_scalar_pressure_verified": true,
+      "exact_outer_conjugacy_factorization_verified": true,
+      "exact_target_conjugacy_factorization_verified": true,
+      "frame_types": [
+        "A",
+        "A",
+        "B",
+        "B"
+      ],
+      "full_frame_word": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "full_presentation_freely_kills_target": false,
+      "full_presentation_symbolically_kills_target": true,
+      "full_presentation_target_residual": [
+        -7,
+        -5,
+        -3,
+        -8,
+        -6,
+        5,
+        3,
+        6,
+        7,
+        8
+      ],
+      "full_reduced_frame_relations": [
+        [
+          -4,
+          -3
+        ]
+      ],
+      "full_reduced_frame_target_is_relator": false,
+      "full_reduced_frame_target_orientable_genus": 0,
+      "full_reduced_frame_target_residual": [],
+      "nonzero_target_pressure_margin_lower_bound": 0.0,
+      "outer_conjugacy_twist_word": [
+        -4,
+        -2,
+        1,
+        2
+      ],
+      "same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "scalar_crossing_pressure_margin": 0.0,
+      "scalar_crossing_pressure_upper_bound": -1.0,
+      "scalar_pressure_saturation_condition_verified": true,
+      "selected_frame_relations": [
+        [
+          -4,
+          -3
+        ]
+      ],
+      "selected_frame_target_orientable_genus": 0,
+      "selected_frame_target_residual": [],
+      "split_b_run_count": 1,
+      "split_target_genus": 0,
+      "status": "target-reduced-to-weighted-frame-character",
+      "target_after_outer_relation": [
+        5,
+        3,
+        4,
+        -5
+      ],
+      "target_frame_word": [
+        3,
+        4
+      ],
+      "target_survival_pressure_tradeoff_verified": true,
+      "transformed_outer_relation": [
+        5,
+        6,
+        -4,
+        -2,
+        1,
+        2,
+        -5,
+        -6,
+        -3,
+        -1
+      ],
+      "transformed_target_word": [
+        5,
+        3,
+        4,
+        6,
+        -4,
+        -2,
+        1,
+        2,
+        -5,
+        -6,
+        -3,
+        -1
+      ],
+      "weighted_frame_character_bound_proved": false,
+      "zero_same_assignment_present": true,
+      "zero_same_cell_forces_target_identity": true
+    },
+    {
+      "a_frame_subword": [
+        1,
+        3
+      ],
+      "b_frame_subword": [
+        2,
+        4
+      ],
+      "control_id": "ALTERNATING-GENUS-ONE-SURVIVES-SELECTED-RELATIONS",
+      "different_base_assignment": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "exact_mixed_frame_scalar_pressure_verified": true,
+      "exact_outer_conjugacy_factorization_verified": true,
+      "exact_target_conjugacy_factorization_verified": true,
+      "frame_types": [
+        "A",
+        "B",
+        "A",
+        "B"
+      ],
+      "full_frame_word": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "full_presentation_freely_kills_target": false,
+      "full_presentation_symbolically_kills_target": false,
+      "full_presentation_target_residual": [
+        -8,
+        -7,
+        8,
+        -4,
+        -5,
+        4,
+        5,
+        -8,
+        7,
+        8
+      ],
+      "full_reduced_frame_relations": [
+        [
+          -4,
+          -2
+        ]
+      ],
+      "full_reduced_frame_target_is_relator": false,
+      "full_reduced_frame_target_orientable_genus": 1,
+      "full_reduced_frame_target_residual": [
+        -3,
+        -4,
+        3,
+        4
+      ],
+      "nonzero_target_pressure_margin_lower_bound": 1.0,
+      "outer_conjugacy_twist_word": [
+        -4,
+        -3,
+        -2,
+        3
+      ],
+      "same_support": [
+        [
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "scalar_crossing_pressure_margin": 1.0,
+      "scalar_crossing_pressure_upper_bound": -2.0,
+      "scalar_pressure_saturation_condition_verified": true,
+      "selected_frame_relations": [
+        [
+          -4,
+          -2
+        ]
+      ],
+      "selected_frame_target_orientable_genus": 1,
+      "selected_frame_target_residual": [
+        -3,
+        -4,
+        3,
+        4
+      ],
+      "split_b_run_count": 2,
+      "split_target_genus": 1,
+      "status": "target-reduced-to-weighted-frame-character",
+      "target_after_outer_relation": [
+        5,
+        -3,
+        2,
+        3,
+        4,
+        -5
+      ],
+      "target_frame_word": [
+        -3,
+        2,
+        3,
+        4
+      ],
+      "target_survival_pressure_tradeoff_verified": true,
+      "transformed_outer_relation": [
+        5,
+        6,
+        -4,
+        -3,
+        -2,
+        3,
+        -5,
+        -6
+      ],
+      "transformed_target_word": [
+        5,
+        -3,
+        2,
+        3,
+        4,
+        6,
+        -4,
+        -3,
+        -2,
+        3,
+        -5,
+        -6
+      ],
+      "weighted_frame_character_bound_proved": false,
+      "zero_same_assignment_present": false,
+      "zero_same_cell_forces_target_identity": true
+    },
+    {
+      "a_frame_subword": [
+        1,
+        3,
+        5
+      ],
+      "b_frame_subword": [
+        2,
+        4,
+        6
+      ],
+      "control_id": "ALTERNATING-SUPPORT-CONDITIONED",
+      "different_base_assignment": [
+        0,
+        1,
+        1,
+        0,
+        1,
+        0
+      ],
+      "different_support": [
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1,
+          0,
+          1
+        ]
+      ],
+      "exact_mixed_frame_scalar_pressure_verified": true,
+      "exact_outer_conjugacy_factorization_verified": true,
+      "exact_target_conjugacy_factorization_verified": true,
+      "frame_types": [
+        "A",
+        "B",
+        "A",
+        "B",
+        "A",
+        "B"
+      ],
+      "full_frame_word": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "full_presentation_freely_kills_target": false,
+      "full_presentation_symbolically_kills_target": true,
+      "full_presentation_target_residual": [
+        -10,
+        -9,
+        10,
+        -7,
+        -5,
+        8,
+        10,
+        -7,
+        5,
+        7,
+        -10,
+        -8,
+        -10,
+        -8,
+        7,
+        8,
+        9,
+        10
+      ],
+      "full_reduced_frame_relations": [
+        [
+          -6,
+          -4,
+          -2
+        ],
+        [
+          -6,
+          -3,
+          -1
+        ],
+        [
+          -4,
+          -2,
+          1,
+          3
+        ],
+        [
+          -6,
+          -4,
+          -1,
+          2,
+          3,
+          5
+        ],
+        [
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          3,
+          5
+        ]
+      ],
+      "full_reduced_frame_target_is_relator": true,
+      "full_reduced_frame_target_orientable_genus": null,
+      "full_reduced_frame_target_residual": [
+        -6,
+        -4,
+        3,
+        -4,
+        -6,
+        -4,
+        3,
+        4,
+        -3,
+        4,
+        -3,
+        4,
+        6,
+        6
+      ],
+      "nonzero_target_pressure_margin_lower_bound": 0.0,
+      "outer_conjugacy_twist_word": [
+        -6,
+        -4,
+        3,
+        5
+      ],
+      "same_support": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "scalar_crossing_pressure_margin": 0.0,
+      "scalar_crossing_pressure_upper_bound": -1.0,
+      "scalar_pressure_saturation_condition_verified": true,
+      "selected_frame_relations": [
+        [
+          -6,
+          -4,
+          -2
+        ],
+        [
+          -6,
+          -3,
+          -1
+        ],
+        [
+          -6,
+          -4,
+          -1,
+          2,
+          3,
+          5
+        ]
+      ],
+      "selected_frame_target_orientable_genus": null,
+      "selected_frame_target_residual": [
+        -6,
+        -4,
+        3,
+        -4,
+        -6,
+        -4,
+        3,
+        4,
+        -3,
+        4,
+        -3,
+        4,
+        6,
+        6
+      ],
+      "split_b_run_count": 3,
+      "split_target_genus": 2,
+      "status": "target-reduced-to-weighted-frame-character",
+      "target_after_outer_relation": [
+        7,
+        -5,
+        -3,
+        2,
+        3,
+        4,
+        5,
+        6,
+        -7
+      ],
+      "target_frame_word": [
+        -5,
+        -3,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "target_survival_pressure_tradeoff_verified": true,
+      "transformed_outer_relation": [
+        7,
+        8,
+        -6,
+        -4,
+        3,
+        5,
+        -7,
+        -8,
+        -5,
+        -3,
+        -2
+      ],
+      "transformed_target_word": [
+        7,
+        -5,
+        -3,
+        2,
+        3,
+        4,
+        5,
+        6,
+        8,
+        -6,
+        -4,
+        3,
+        5,
+        -7,
+        -8,
+        -5,
+        -3,
+        -2
+      ],
+      "weighted_frame_character_bound_proved": false,
+      "zero_same_assignment_present": true,
+      "zero_same_cell_forces_target_identity": true
+    }
+  ],
+  "scaling_records": [
+    {
+      "checked_frame_type_base_pair_count": 4,
+      "frame_position_count": 1,
+      "maximum_split_target_genus": 0,
+      "outer_factorization_failure_count": 0,
+      "status": "all-symbolic-factorizations-passed",
+      "target_factorization_failure_count": 0
+    },
+    {
+      "checked_frame_type_base_pair_count": 16,
+      "frame_position_count": 2,
+      "maximum_split_target_genus": 0,
+      "outer_factorization_failure_count": 0,
+      "status": "all-symbolic-factorizations-passed",
+      "target_factorization_failure_count": 0
+    },
+    {
+      "checked_frame_type_base_pair_count": 64,
+      "frame_position_count": 3,
+      "maximum_split_target_genus": 0,
+      "outer_factorization_failure_count": 0,
+      "status": "all-symbolic-factorizations-passed",
+      "target_factorization_failure_count": 0
+    },
+    {
+      "checked_frame_type_base_pair_count": 256,
+      "frame_position_count": 4,
+      "maximum_split_target_genus": 1,
+      "outer_factorization_failure_count": 0,
+      "status": "all-symbolic-factorizations-passed",
+      "target_factorization_failure_count": 0
+    },
+    {
+      "checked_frame_type_base_pair_count": 1024,
+      "frame_position_count": 5,
+      "maximum_split_target_genus": 1,
+      "outer_factorization_failure_count": 0,
+      "status": "all-symbolic-factorizations-passed",
+      "target_factorization_failure_count": 0
+    },
+    {
+      "checked_frame_type_base_pair_count": 4096,
+      "frame_position_count": 6,
+      "maximum_split_target_genus": 2,
+      "outer_factorization_failure_count": 0,
+      "status": "all-symbolic-factorizations-passed",
+      "target_factorization_failure_count": 0
+    },
+    {
+      "checked_frame_type_base_pair_count": 16384,
+      "frame_position_count": 7,
+      "maximum_split_target_genus": 2,
+      "outer_factorization_failure_count": 0,
+      "status": "all-symbolic-factorizations-passed",
+      "target_factorization_failure_count": 0
+    },
+    {
+      "checked_frame_type_base_pair_count": 65536,
+      "frame_position_count": 8,
+      "maximum_split_target_genus": 3,
+      "outer_factorization_failure_count": 0,
+      "status": "all-symbolic-factorizations-passed",
+      "target_factorization_failure_count": 0
+    }
+  ],
+  "status": "contiguous-frame-target-reduced-weighted-character-open",
+  "summary": "Extended arbitrary-support scalar pressure to mixed contiguous frames and reduced every surviving target character exactly to a weighted frame-word character problem; scalar saturation itself now provably forces target identity.",
+  "target_survival_lift_controls": [
+    {
+      "all_full_presentation_relations_satisfied": true,
+      "different_support_size": 2,
+      "exact_identity_frame_lift_verified": true,
+      "frame_position_count": 4,
+      "frame_types": [
+        "B",
+        "A",
+        "B",
+        "A"
+      ],
+      "lift_depth": 0,
+      "predicted_margin": 0.5,
+      "real_entropy_certificate_margin": 0.5,
+      "same_support_size": 1,
+      "scalar_crossing_pressure_margin": 0.5,
+      "status": "exact-identity-lift-closed-by-integer-generator-gap",
+      "symmetric_group_degree": 3,
+      "target_is_nonidentity": true,
+      "target_permutation": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "all_full_presentation_relations_satisfied": true,
+      "different_support_size": 3,
+      "exact_identity_frame_lift_verified": true,
+      "frame_position_count": 5,
+      "frame_types": [
+        "B",
+        "A",
+        "B",
+        "A",
+        "A"
+      ],
+      "lift_depth": 1,
+      "predicted_margin": 0.707518749639422,
+      "real_entropy_certificate_margin": 0.2924812503605781,
+      "same_support_size": 2,
+      "scalar_crossing_pressure_margin": 0.707518749639422,
+      "status": "exact-identity-lift-closed-by-integer-generator-gap",
+      "symmetric_group_degree": 3,
+      "target_is_nonidentity": true,
+      "target_permutation": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "all_full_presentation_relations_satisfied": true,
+      "different_support_size": 5,
+      "exact_identity_frame_lift_verified": true,
+      "frame_position_count": 6,
+      "frame_types": [
+        "B",
+        "A",
+        "B",
+        "A",
+        "A",
+        "A"
+      ],
+      "lift_depth": 2,
+      "predicted_margin": 0.8390359525563187,
+      "real_entropy_certificate_margin": 0.16096404744368117,
+      "same_support_size": 4,
+      "scalar_crossing_pressure_margin": 0.8390359525563191,
+      "status": "exact-identity-lift-closed-by-integer-generator-gap",
+      "symmetric_group_degree": 3,
+      "target_is_nonidentity": true,
+      "target_permutation": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "all_full_presentation_relations_satisfied": true,
+      "different_support_size": 9,
+      "exact_identity_frame_lift_verified": true,
+      "frame_position_count": 7,
+      "frame_types": [
+        "B",
+        "A",
+        "B",
+        "A",
+        "A",
+        "A",
+        "A"
+      ],
+      "lift_depth": 3,
+      "predicted_margin": 0.9150374992788439,
+      "real_entropy_certificate_margin": 0.08496250072115619,
+      "same_support_size": 8,
+      "scalar_crossing_pressure_margin": 0.9150374992788439,
+      "status": "exact-identity-lift-closed-by-integer-generator-gap",
+      "symmetric_group_degree": 3,
+      "target_is_nonidentity": true,
+      "target_permutation": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "all_full_presentation_relations_satisfied": true,
+      "different_support_size": 17,
+      "exact_identity_frame_lift_verified": true,
+      "frame_position_count": 8,
+      "frame_types": [
+        "B",
+        "A",
+        "B",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A"
+      ],
+      "lift_depth": 4,
+      "predicted_margin": 0.9562685793748305,
+      "real_entropy_certificate_margin": 0.0437314206251697,
+      "same_support_size": 16,
+      "scalar_crossing_pressure_margin": 0.9562685793748305,
+      "status": "exact-identity-lift-closed-by-integer-generator-gap",
+      "symmetric_group_degree": 3,
+      "target_is_nonidentity": true,
+      "target_permutation": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "all_full_presentation_relations_satisfied": true,
+      "different_support_size": 33,
+      "exact_identity_frame_lift_verified": true,
+      "frame_position_count": 9,
+      "frame_types": [
+        "B",
+        "A",
+        "B",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A"
+      ],
+      "lift_depth": 5,
+      "predicted_margin": 0.9778029403207729,
+      "real_entropy_certificate_margin": 0.022197059679226718,
+      "same_support_size": 32,
+      "scalar_crossing_pressure_margin": 0.9778029403207729,
+      "status": "exact-identity-lift-closed-by-integer-generator-gap",
+      "symmetric_group_degree": 3,
+      "target_is_nonidentity": true,
+      "target_permutation": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "all_full_presentation_relations_satisfied": true,
+      "different_support_size": 65,
+      "exact_identity_frame_lift_verified": true,
+      "frame_position_count": 10,
+      "frame_types": [
+        "B",
+        "A",
+        "B",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A"
+      ],
+      "lift_depth": 6,
+      "predicted_margin": 0.9888160934857728,
+      "real_entropy_certificate_margin": 0.011183906514227255,
+      "same_support_size": 64,
+      "scalar_crossing_pressure_margin": 0.9888160934857737,
+      "status": "exact-identity-lift-closed-by-integer-generator-gap",
+      "symmetric_group_degree": 3,
+      "target_is_nonidentity": true,
+      "target_permutation": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "all_full_presentation_relations_satisfied": true,
+      "different_support_size": 129,
+      "exact_identity_frame_lift_verified": true,
+      "frame_position_count": 11,
+      "frame_types": [
+        "B",
+        "A",
+        "B",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A"
+      ],
+      "lift_depth": 7,
+      "predicted_margin": 0.994386372288373,
+      "real_entropy_certificate_margin": 0.00561362771162706,
+      "same_support_size": 128,
+      "scalar_crossing_pressure_margin": 0.994386372288373,
+      "status": "exact-identity-lift-closed-by-integer-generator-gap",
+      "symmetric_group_degree": 3,
+      "target_is_nonidentity": true,
+      "target_permutation": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "all_full_presentation_relations_satisfied": true,
+      "different_support_size": 257,
+      "exact_identity_frame_lift_verified": true,
+      "frame_position_count": 12,
+      "frame_types": [
+        "B",
+        "A",
+        "B",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A"
+      ],
+      "lift_depth": 8,
+      "predicted_margin": 0.9971877254030606,
+      "real_entropy_certificate_margin": 0.0028122745969390533,
+      "same_support_size": 256,
+      "scalar_crossing_pressure_margin": 0.9971877254030606,
+      "status": "exact-identity-lift-closed-by-integer-generator-gap",
+      "symmetric_group_degree": 3,
+      "target_is_nonidentity": true,
+      "target_permutation": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "all_full_presentation_relations_satisfied": true,
+      "different_support_size": 513,
+      "exact_identity_frame_lift_verified": true,
+      "frame_position_count": 13,
+      "frame_types": [
+        "B",
+        "A",
+        "B",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A"
+      ],
+      "lift_depth": 9,
+      "predicted_margin": 0.9985924921964724,
+      "real_entropy_certificate_margin": 0.0014075078035270191,
+      "same_support_size": 512,
+      "scalar_crossing_pressure_margin": 0.9985924921964724,
+      "status": "exact-identity-lift-closed-by-integer-generator-gap",
+      "symmetric_group_degree": 3,
+      "target_is_nonidentity": true,
+      "target_permutation": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "all_full_presentation_relations_satisfied": true,
+      "different_support_size": 1025,
+      "exact_identity_frame_lift_verified": true,
+      "frame_position_count": 14,
+      "frame_types": [
+        "B",
+        "A",
+        "B",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A"
+      ],
+      "lift_depth": 10,
+      "predicted_margin": 0.9992959028035955,
+      "real_entropy_certificate_margin": 0.0007040971964041944,
+      "same_support_size": 1024,
+      "scalar_crossing_pressure_margin": 0.9992959028035955,
+      "status": "exact-identity-lift-closed-by-integer-generator-gap",
+      "symmetric_group_degree": 3,
+      "target_is_nonidentity": true,
+      "target_permutation": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "all_full_presentation_relations_satisfied": true,
+      "different_support_size": 2049,
+      "exact_identity_frame_lift_verified": true,
+      "frame_position_count": 15,
+      "frame_types": [
+        "B",
+        "A",
+        "B",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A"
+      ],
+      "lift_depth": 11,
+      "predicted_margin": 0.9996478654943761,
+      "real_entropy_certificate_margin": 0.0003521345056233216,
+      "same_support_size": 2048,
+      "scalar_crossing_pressure_margin": 0.9996478654943779,
+      "status": "exact-identity-lift-closed-by-integer-generator-gap",
+      "symmetric_group_degree": 3,
+      "target_is_nonidentity": true,
+      "target_permutation": [
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "all_full_presentation_relations_satisfied": true,
+      "different_support_size": 4097,
+      "exact_identity_frame_lift_verified": true,
+      "frame_position_count": 16,
+      "frame_types": [
+        "B",
+        "A",
+        "B",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A",
+        "A"
+      ],
+      "lift_depth": 12,
+      "predicted_margin": 0.999823911259849,
+      "real_entropy_certificate_margin": 0.00017608874015051363,
+      "same_support_size": 4096,
+      "scalar_crossing_pressure_margin": 0.999823911259849,
+      "status": "exact-identity-lift-closed-by-integer-generator-gap",
+      "symmetric_group_degree": 3,
+      "target_is_nonidentity": true,
+      "target_permutation": [
+        1,
+        2,
+        0
+      ]
+    }
+  ],
+  "theorem_contract": {
+    "mixed_frame_scalar_pressure": "Support color-one fibers do not depend on A/B types, and the split color-zero equation retains the |G|k(G) conjugacy bound.",
+    "remaining_weight": "Frame assignments are weighted by the conjugator count 1[bT conjugate w_q b]*|C_G(bT)| summed over b.",
+    "scope": "The word must have contiguous A/B frames between the first E and F. No signed weighted-frame character bound is proved.",
+    "target_factorization": "On every solution the full target is conjugate to R=w_A^-1(x_1...x_u), so normalized characters equal chi(R)/d.",
+    "target_survival_pressure_tradeoff": "Under the integer suffix-branch bound, pressure saturation occurs exactly when 0 is in S and |S|=|D| is a power of two. The zero same cell contributes R itself, so every saturating profile forces target identity."
+  }
+}
