@@ -33,7 +33,7 @@
     "speedup_claim_allowed": false,
     "unconditioned_regular_growing_moment_route_falsified": true
   },
-  "created_at": "2026-08-08T02:57:15.262346+00:00",
+  "created_at": "2026-08-10T22:06:05.539613+00:00",
   "falsifiers_triggered": [
     "Explicit 2^(pK) coloring enumeration is not intrinsic to the all-word moment problem.",
     "A constant global return-walk gap is far too coarse to prove the inverse-factorial natural Fourier-block edge.",
@@ -347,11 +347,12 @@
       "status": "exact-source-only-generated-subgroup-formula-verified"
     }
   ],
-  "summary": "Converted every two-color identity-count moment into a fixed subgroup-walk return probability and identified its stationary subgroup.",
+  "summary": "Converted every two-color identity-count moment into a fixed subgroup-walk return probability, identified its stationary subgroup, and proved the unconditioned growing-moment obstruction.",
   "theorem_contract": {
     "generated_subgroup": "For S_n,n>=5, independent A_n membership blocks and a K+1-dimensional sign span give |L_K|=|S_n|^(2K)/2^(K-1).",
     "harmonic_reduction": "Growing two-color word moments are convolution powers of one fixed self-adjoint probability measure on G^(2K).",
     "return_identity": "E_x(q_p(x)/2^p)^K equals the p-step identity return probability of the source-only orientation subgroup walk.",
-    "scope_exclusion": "A coarse global gap is not a collision-free central-support bound and does not establish the natural 1/|S_n| frame edge."
+    "scope_exclusion": "A coarse global gap is not a collision-free central-support bound and does not establish the natural 1/|S_n| frame edge.",
+    "stationary_moment_obstruction": "For the unnormalized orientation frame, stationary regular mass contributes at least 2^(Kp)/|L_K| and becomes order one at p=(2+o(1))K."
   }
 }

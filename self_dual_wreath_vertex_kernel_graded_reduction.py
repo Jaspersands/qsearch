@@ -842,10 +842,65 @@ def run_vertex_kernel_graded_reduction() -> VertexKernelGradedReductionReport:
 
 def write_vertex_kernel_graded_reduction_report(
     path: Path = REPORT_PATH,
+    write_registry: bool = True,
+    registry_experiment_id: str = (
+        "EXP-CODE-SELF-DUAL-WREATH-VERTEX-KERNEL-GRADED-REDUCTION"
+    ),
+    registry_candidate_id: str = "CODE-COSET-COLLECTIVE",
+    registry_result_id: str = "",
 ) -> dict[str, Any]:
     payload = asdict(run_vertex_kernel_graded_reduction())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+
+    if write_registry:
+        _res_payload = report if "report" in locals() else (payload if "payload" in locals() else result)
+        from research_registry import (
+            ExperimentResultRecord,
+            NegativeResultRecord,
+            upsert_experiment_result,
+            upsert_negative_result,
+        )
+
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-SELF-DUAL-WREATH-VERTEX-KERNEL-GRADED-REDUCTION",
+                source=registry_experiment_id,
+                claim=(
+                    "Initial negative claim for EXP-CODE-SELF-DUAL-WREATH-VERTEX-KERNEL-GRADED-REDUCTION."
+                ),
+                reason_invalid=(
+                    "Falsified or refined by exact theorem evaluation."
+                ),
+                lesson=(
+                    "Lesson from exact theorem analysis for EXP-CODE-SELF-DUAL-WREATH-VERTEX-KERNEL-GRADED-REDUCTION."
+                ),
+                applies_to=[
+                    registry_candidate_id,
+                    registry_experiment_id,
+                    "PO-MEASUREMENT",
+                ],
+                evidence=_res_payload.get("headline_metrics", {}),
+            )
+        )
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=(
+                    registry_result_id
+                    or f"RESULT-{registry_experiment_id}-LATEST"
+                ),
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=_res_payload.get("created_at", ""),
+                status=_res_payload.get("status", "completed"),
+                summary=_res_payload.get("summary", ""),
+                metrics=_res_payload.get("headline_metrics", {}),
+                falsifiers_triggered=_res_payload.get("falsifiers_triggered", []),
+                artifacts={
+                    "self_dual_wreath_vertex_kernel_graded_reduction": str(path)
+                },
+            )
+        )
     return payload
 
 

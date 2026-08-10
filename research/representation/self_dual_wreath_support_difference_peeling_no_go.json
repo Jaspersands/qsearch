@@ -1,0 +1,9706 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Exponential support growth creates new rank.",
+      "resolution": "False whenever difference peeling covers the new variables; only k+1 rows in a star already kill k inserted generators.",
+      "resolved": true
+    },
+    {
+      "objection": "Every killed direction needs a literal cube edge.",
+      "resolution": "False: the chained control kills its last two directions from two-coordinate differences after earlier identities are used.",
+      "resolved": true
+    },
+    {
+      "objection": "Interleaving prevents the two-relator quotient.",
+      "resolution": "False: common suffix factors cancel before the conjugating prefix, independently of the inserted token's position.",
+      "resolved": true
+    },
+    {
+      "objection": "The group collapses but the target retains inserts.",
+      "resolution": "False: the full-product word deletes the same identity generators and becomes the projected target exactly.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_interleaved_lifts_controlled": false,
+    "all_partial_suffix_lifts_controlled": false,
+    "arbitrary_lift_reduces_to_canonical_peeling_core": true,
+    "coordinate_edge_covered_lifts_reduce_to_projection": true,
+    "full_suffix_cube_lifts_reduce_to_projection": true,
+    "interleaved_peelable_lifts_controlled": true,
+    "multi_difference_peeling_controlled": true,
+    "natural_component_M4_positive": false,
+    "nonempty_stopping_core_requires_one_codensity_bit": true,
+    "nonpeelable_core_exactly_identified_as_stopping_set": true,
+    "nonpeelable_difference_core_lifts_controlled": false,
+    "partial_suffix_peelable_lifts_controlled": true,
+    "peeling_padding_can_improve_scalar_pressure": false,
+    "reason": "Every support-difference-peelable lift is marked Tietze padding of its projection. Only nonpeelable coupled cores remain.",
+    "speedup_claim_allowed": false,
+    "support_difference_peelable_lifts_reduce_to_projection": true
+  },
+  "created_at": "2026-08-10T22:04:07.122716+00:00",
+  "falsifiers_triggered": [
+    "Full suffix cubes create no new marked presentation or target law.",
+    "Sparse star fibers already kill every inserted direction.",
+    "Multi-coordinate differences can continue the identity cascade.",
+    "Interleaving alone does not evade support-difference peeling.",
+    "A viable lift must retain a nonempty nonpeelable difference core."
+  ],
+  "headline_metrics": {
+    "all_pattern_support_difference_peeling_no_go_theorem_count": 1,
+    "canonical_peeling_core_projection_theorem_count": 1,
+    "chained_multi_difference_control_count": 1,
+    "chained_multi_difference_witness_count": 2,
+    "full_suffix_cube_corollary_control_count": 13,
+    "interleaved_peeling_control_count": 1,
+    "lift_control_failure_count": 0,
+    "maximum_stored_inserted_frame_count": 6,
+    "new_quantum_algorithm_count": 0,
+    "nonpeelable_core_half_cube_bound_theorem_count": 1,
+    "peeling_scalar_pressure_monotonicity_theorem_count": 1,
+    "sparse_partial_suffix_peeling_control_count": 1,
+    "stopping_set_boundary_theorem_count": 1,
+    "stored_lift_control_count": 16,
+    "stored_nonpeelable_boundary_control_count": 1,
+    "stored_nonpeelable_boundary_core_size": 2
+  },
+  "nonpeelable_boundary_controls": [
+    {
+      "appended_frame_coordinates_one_based": [
+        2,
+        3
+      ],
+      "appended_pattern_generators": [
+        3,
+        4
+      ],
+      "collapsed_lifted_relations": [
+        [
+          -2
+        ],
+        [
+          -5,
+          -4,
+          -3,
+          -1
+        ],
+        [
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "collapsed_lifted_target": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "control_id": "TWO-VARIABLE-NONPEELABLE-STOPPING-CORE",
+      "direct_coordinate_edge_witness_count": 0,
+      "every_appended_generator_forced_to_identity": false,
+      "exact_marked_tietze_reduction_verified": false,
+      "exact_peeling_core_relation_projection_verified": true,
+      "exact_peeling_core_target_projection_verified": true,
+      "exact_peeling_core_tietze_reduction_verified": true,
+      "exact_relation_projection_verified": true,
+      "exact_target_projection_verified": true,
+      "forcing_witnesses": [],
+      "frame_coordinate_count": 3,
+      "insertions_interleaved": false,
+      "lifted_different_support_size": 0,
+      "lifted_pattern": "EBAAFEF",
+      "lifted_same_support_size": 2,
+      "multi_difference_peeling_witness_count": 0,
+      "nonpeelable_core_half_cube_bound_verified": true,
+      "nonpeelable_core_support_size_upper_bound": 4,
+      "original_support_entropy_bits": null,
+      "peeled_coordinate_count": 0,
+      "peeling_core_different_support": [],
+      "peeling_core_frame_coordinate_count": 3,
+      "peeling_core_inserted_coordinate_count": 2,
+      "peeling_core_pattern": "EBAAFEF",
+      "peeling_core_relations": [
+        [
+          -2
+        ],
+        [
+          -4,
+          -3
+        ],
+        [
+          -7,
+          -6,
+          -5,
+          -2,
+          -1
+        ],
+        [
+          -7,
+          -6,
+          -5,
+          -4,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "peeling_core_same_support": [
+        [
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1
+        ]
+      ],
+      "peeling_core_support_entropy_bits": null,
+      "peeling_core_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "peeling_round_count": 0,
+      "projected_different_support": [],
+      "projected_pattern": "EBFEF",
+      "projected_relations": [
+        [
+          -2
+        ],
+        [
+          -5,
+          -4,
+          -3,
+          -1
+        ],
+        [
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          0
+        ]
+      ],
+      "projected_target": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "relations_modulo_forced_identities": [
+        [
+          -2
+        ],
+        [
+          -4,
+          -3
+        ],
+        [
+          -7,
+          -6,
+          -5,
+          -2,
+          -1
+        ],
+        [
+          -7,
+          -6,
+          -5,
+          -4,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "residual_core_is_stopping_set": true,
+      "scalar_pressure_cannot_increase_under_peeling": true,
+      "status": "exact-nonpeelable-support-difference-core-isolated",
+      "support_difference_hyperedges_one_based": [
+        [
+          2,
+          3
+        ]
+      ],
+      "support_entropy_padding_slack": null,
+      "target_modulo_forced_identities": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "uncovered_appended_coordinates_one_based": [
+        2,
+        3
+      ]
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "prove_support_difference_peeling_lift_trivialization",
+      "resolution": "Inductive identity substitution turns each peeling pair into an exact conjugated singleton; projection then recovers the marked presentation and target.",
+      "resolved": true
+    },
+    {
+      "obligation": "remove_complete_cube_direct_edge_and_contiguity_assumptions",
+      "resolution": "Sparse, interleaved, and chained controls show that full cubes, direct edges in every direction, and suffix placement are all unnecessary.",
+      "resolved": true
+    },
+    {
+      "obligation": "classify_nonpeelable_support_difference_cores",
+      "resolution": "After peeling closure stalls, every same-fiber pair differs in zero or at least two core variables. Their residual group rank, word-map pressure, and target survival remain open.",
+      "resolved": false
+    },
+    {
+      "obligation": "characterize_the_exact_peeling_stopping_boundary",
+      "resolution": "The residual core is exactly a stopping set of the pair-difference hypergraph; the stored two-variable boundary has one size-two hyperedge and no legal singleton peel.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_canonical_projection_to_nonpeelable_core",
+      "resolution": "Sequential witness substitutions followed by exact relation/target projection produce the stopping-core instance.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_peeling_padding_cannot_improve_scalar_pressure",
+      "resolution": "The support-fiber multiplicity bound pays exactly for every deleted pattern coordinate; stopping-core fibers are Boolean-cube independent sets.",
+      "resolved": true
+    }
+  ],
+  "representative_controls": [
+    {
+      "appended_frame_coordinates_one_based": [
+        5
+      ],
+      "appended_pattern_generators": [
+        6
+      ],
+      "collapsed_lifted_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "collapsed_lifted_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "control_id": "ORIGINAL-IDENTITY-LIFT",
+      "direct_coordinate_edge_witness_count": 1,
+      "every_appended_generator_forced_to_identity": true,
+      "exact_marked_tietze_reduction_verified": true,
+      "exact_peeling_core_relation_projection_verified": true,
+      "exact_peeling_core_target_projection_verified": true,
+      "exact_peeling_core_tietze_reduction_verified": true,
+      "exact_relation_projection_verified": true,
+      "exact_target_projection_verified": true,
+      "forcing_witnesses": [
+        {
+          "appended_frame_coordinate_one_based": 5,
+          "appended_pattern_generator": 6,
+          "assumed_identity_coordinates_one_based": [],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            6
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            7,
+            9
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            7,
+            9
+          ],
+          "pair_difference_coordinates_one_based": [
+            5
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            6
+          ],
+          "residual_difference_coordinates_one_based": [
+            5
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "upper_color_one_relation": [
+            6,
+            7,
+            9
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            6,
+            7,
+            9
+          ]
+        }
+      ],
+      "frame_coordinate_count": 5,
+      "insertions_interleaved": false,
+      "lifted_different_support_size": 3,
+      "lifted_pattern": "EBABAAFEF",
+      "lifted_same_support_size": 2,
+      "multi_difference_peeling_witness_count": 0,
+      "nonpeelable_core_half_cube_bound_verified": true,
+      "nonpeelable_core_support_size_upper_bound": null,
+      "original_support_entropy_bits": 1.292481250360578,
+      "peeled_coordinate_count": 1,
+      "peeling_core_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "peeling_core_frame_coordinate_count": 4,
+      "peeling_core_inserted_coordinate_count": 0,
+      "peeling_core_pattern": "EBABAFEF",
+      "peeling_core_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "peeling_core_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "peeling_core_support_entropy_bits": 0.5,
+      "peeling_core_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "peeling_round_count": 1,
+      "projected_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "projected_pattern": "EBABAFEF",
+      "projected_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "projected_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "relations_modulo_forced_identities": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "residual_core_is_stopping_set": true,
+      "scalar_pressure_cannot_increase_under_peeling": true,
+      "status": "exact-support-difference-peeling-reduces-to-projection",
+      "support_difference_hyperedges_one_based": [
+        [
+          5
+        ]
+      ],
+      "support_entropy_padding_slack": 0.20751874963942196,
+      "target_modulo_forced_identities": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "uncovered_appended_coordinates_one_based": []
+    },
+    {
+      "appended_frame_coordinates_one_based": [
+        5
+      ],
+      "appended_pattern_generators": [
+        6
+      ],
+      "collapsed_lifted_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "collapsed_lifted_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "control_id": "POWER-BOUNDARY-PRUNED-LIFT",
+      "direct_coordinate_edge_witness_count": 1,
+      "every_appended_generator_forced_to_identity": true,
+      "exact_marked_tietze_reduction_verified": true,
+      "exact_peeling_core_relation_projection_verified": true,
+      "exact_peeling_core_target_projection_verified": true,
+      "exact_peeling_core_tietze_reduction_verified": true,
+      "exact_relation_projection_verified": true,
+      "exact_target_projection_verified": true,
+      "forcing_witnesses": [
+        {
+          "appended_frame_coordinate_one_based": 5,
+          "appended_pattern_generator": 6,
+          "assumed_identity_coordinates_one_based": [],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            6
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            7,
+            9
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            7,
+            9
+          ],
+          "pair_difference_coordinates_one_based": [
+            5
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            6
+          ],
+          "residual_difference_coordinates_one_based": [
+            5
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "upper_color_one_relation": [
+            6,
+            7,
+            9
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            6,
+            7,
+            9
+          ]
+        }
+      ],
+      "frame_coordinate_count": 5,
+      "insertions_interleaved": false,
+      "lifted_different_support_size": 2,
+      "lifted_pattern": "EBABAAFEF",
+      "lifted_same_support_size": 1,
+      "multi_difference_peeling_witness_count": 0,
+      "nonpeelable_core_half_cube_bound_verified": true,
+      "nonpeelable_core_support_size_upper_bound": null,
+      "original_support_entropy_bits": 0.5,
+      "peeled_coordinate_count": 1,
+      "peeling_core_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "peeling_core_frame_coordinate_count": 4,
+      "peeling_core_inserted_coordinate_count": 0,
+      "peeling_core_pattern": "EBABAFEF",
+      "peeling_core_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "peeling_core_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "peeling_core_support_entropy_bits": 0.0,
+      "peeling_core_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "peeling_round_count": 1,
+      "projected_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "projected_pattern": "EBABAFEF",
+      "projected_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "projected_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "relations_modulo_forced_identities": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "residual_core_is_stopping_set": true,
+      "scalar_pressure_cannot_increase_under_peeling": true,
+      "status": "exact-support-difference-peeling-reduces-to-projection",
+      "support_difference_hyperedges_one_based": [
+        [
+          5
+        ]
+      ],
+      "support_entropy_padding_slack": 0.5,
+      "target_modulo_forced_identities": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "uncovered_appended_coordinates_one_based": []
+    },
+    {
+      "appended_frame_coordinates_one_based": [
+        5,
+        6
+      ],
+      "appended_pattern_generators": [
+        6,
+        7
+      ],
+      "collapsed_lifted_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "collapsed_lifted_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "control_id": "ORIGINAL-IDENTITY-LIFT",
+      "direct_coordinate_edge_witness_count": 2,
+      "every_appended_generator_forced_to_identity": true,
+      "exact_marked_tietze_reduction_verified": true,
+      "exact_peeling_core_relation_projection_verified": true,
+      "exact_peeling_core_target_projection_verified": true,
+      "exact_peeling_core_tietze_reduction_verified": true,
+      "exact_relation_projection_verified": true,
+      "exact_target_projection_verified": true,
+      "forcing_witnesses": [
+        {
+          "appended_frame_coordinate_one_based": 6,
+          "appended_pattern_generator": 7,
+          "assumed_identity_coordinates_one_based": [],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            7
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            8,
+            10
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            8,
+            10
+          ],
+          "pair_difference_coordinates_one_based": [
+            6
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            7
+          ],
+          "residual_difference_coordinates_one_based": [
+            6
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "upper_color_one_relation": [
+            7,
+            8,
+            10
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            7,
+            8,
+            10
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 5,
+          "appended_pattern_generator": 6,
+          "assumed_identity_coordinates_one_based": [
+            6
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            6
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            8,
+            10
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            8,
+            10
+          ],
+          "pair_difference_coordinates_one_based": [
+            5
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            6
+          ],
+          "residual_difference_coordinates_one_based": [
+            5
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "upper_color_one_relation": [
+            6,
+            8,
+            10
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            6,
+            8,
+            10
+          ]
+        }
+      ],
+      "frame_coordinate_count": 6,
+      "insertions_interleaved": false,
+      "lifted_different_support_size": 5,
+      "lifted_pattern": "EBABAAAFEF",
+      "lifted_same_support_size": 4,
+      "multi_difference_peeling_witness_count": 0,
+      "nonpeelable_core_half_cube_bound_verified": true,
+      "nonpeelable_core_support_size_upper_bound": null,
+      "original_support_entropy_bits": 2.160964047443681,
+      "peeled_coordinate_count": 2,
+      "peeling_core_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "peeling_core_frame_coordinate_count": 4,
+      "peeling_core_inserted_coordinate_count": 0,
+      "peeling_core_pattern": "EBABAFEF",
+      "peeling_core_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "peeling_core_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "peeling_core_support_entropy_bits": 0.5,
+      "peeling_core_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "peeling_round_count": 2,
+      "projected_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "projected_pattern": "EBABAFEF",
+      "projected_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "projected_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "relations_modulo_forced_identities": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "residual_core_is_stopping_set": true,
+      "scalar_pressure_cannot_increase_under_peeling": true,
+      "status": "exact-support-difference-peeling-reduces-to-projection",
+      "support_difference_hyperedges_one_based": [
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "support_entropy_padding_slack": 0.33903595255631913,
+      "target_modulo_forced_identities": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "uncovered_appended_coordinates_one_based": []
+    },
+    {
+      "appended_frame_coordinates_one_based": [
+        5,
+        6
+      ],
+      "appended_pattern_generators": [
+        6,
+        7
+      ],
+      "collapsed_lifted_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "collapsed_lifted_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "control_id": "POWER-BOUNDARY-PRUNED-LIFT",
+      "direct_coordinate_edge_witness_count": 2,
+      "every_appended_generator_forced_to_identity": true,
+      "exact_marked_tietze_reduction_verified": true,
+      "exact_peeling_core_relation_projection_verified": true,
+      "exact_peeling_core_target_projection_verified": true,
+      "exact_peeling_core_tietze_reduction_verified": true,
+      "exact_relation_projection_verified": true,
+      "exact_target_projection_verified": true,
+      "forcing_witnesses": [
+        {
+          "appended_frame_coordinate_one_based": 6,
+          "appended_pattern_generator": 7,
+          "assumed_identity_coordinates_one_based": [],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            7
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            8,
+            10
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            8,
+            10
+          ],
+          "pair_difference_coordinates_one_based": [
+            6
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            7
+          ],
+          "residual_difference_coordinates_one_based": [
+            6
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "upper_color_one_relation": [
+            7,
+            8,
+            10
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            7,
+            8,
+            10
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 5,
+          "appended_pattern_generator": 6,
+          "assumed_identity_coordinates_one_based": [
+            6
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            6
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            8,
+            10
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            8,
+            10
+          ],
+          "pair_difference_coordinates_one_based": [
+            5
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            6
+          ],
+          "residual_difference_coordinates_one_based": [
+            5
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "upper_color_one_relation": [
+            6,
+            8,
+            10
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            6,
+            8,
+            10
+          ]
+        }
+      ],
+      "frame_coordinate_count": 6,
+      "insertions_interleaved": false,
+      "lifted_different_support_size": 4,
+      "lifted_pattern": "EBABAAAFEF",
+      "lifted_same_support_size": 3,
+      "multi_difference_peeling_witness_count": 0,
+      "nonpeelable_core_half_cube_bound_verified": true,
+      "nonpeelable_core_support_size_upper_bound": null,
+      "original_support_entropy_bits": 1.792481250360578,
+      "peeled_coordinate_count": 2,
+      "peeling_core_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "peeling_core_frame_coordinate_count": 4,
+      "peeling_core_inserted_coordinate_count": 0,
+      "peeling_core_pattern": "EBABAFEF",
+      "peeling_core_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "peeling_core_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "peeling_core_support_entropy_bits": 0.0,
+      "peeling_core_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "peeling_round_count": 2,
+      "projected_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "projected_pattern": "EBABAFEF",
+      "projected_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "projected_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "relations_modulo_forced_identities": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "residual_core_is_stopping_set": true,
+      "scalar_pressure_cannot_increase_under_peeling": true,
+      "status": "exact-support-difference-peeling-reduces-to-projection",
+      "support_difference_hyperedges_one_based": [
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          5,
+          6
+        ]
+      ],
+      "support_entropy_padding_slack": 0.20751874963942196,
+      "target_modulo_forced_identities": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "uncovered_appended_coordinates_one_based": []
+    },
+    {
+      "appended_frame_coordinates_one_based": [
+        5,
+        6,
+        7
+      ],
+      "appended_pattern_generators": [
+        6,
+        7,
+        8
+      ],
+      "collapsed_lifted_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "collapsed_lifted_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "control_id": "ORIGINAL-IDENTITY-LIFT",
+      "direct_coordinate_edge_witness_count": 3,
+      "every_appended_generator_forced_to_identity": true,
+      "exact_marked_tietze_reduction_verified": true,
+      "exact_peeling_core_relation_projection_verified": true,
+      "exact_peeling_core_target_projection_verified": true,
+      "exact_peeling_core_tietze_reduction_verified": true,
+      "exact_relation_projection_verified": true,
+      "exact_target_projection_verified": true,
+      "forcing_witnesses": [
+        {
+          "appended_frame_coordinate_one_based": 7,
+          "appended_pattern_generator": 8,
+          "assumed_identity_coordinates_one_based": [],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            8
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            9,
+            11
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            9,
+            11
+          ],
+          "pair_difference_coordinates_one_based": [
+            7
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            8
+          ],
+          "residual_difference_coordinates_one_based": [
+            7
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "upper_color_one_relation": [
+            8,
+            9,
+            11
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            8,
+            9,
+            11
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 6,
+          "appended_pattern_generator": 7,
+          "assumed_identity_coordinates_one_based": [
+            7
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            7
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            9,
+            11
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            9,
+            11
+          ],
+          "pair_difference_coordinates_one_based": [
+            6
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            7
+          ],
+          "residual_difference_coordinates_one_based": [
+            6
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "upper_color_one_relation": [
+            7,
+            9,
+            11
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            7,
+            9,
+            11
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 5,
+          "appended_pattern_generator": 6,
+          "assumed_identity_coordinates_one_based": [
+            6,
+            7
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            6
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            9,
+            11
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            9,
+            11
+          ],
+          "pair_difference_coordinates_one_based": [
+            5
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            6
+          ],
+          "residual_difference_coordinates_one_based": [
+            5
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            6,
+            9,
+            11
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            6,
+            9,
+            11
+          ]
+        }
+      ],
+      "frame_coordinate_count": 7,
+      "insertions_interleaved": false,
+      "lifted_different_support_size": 9,
+      "lifted_pattern": "EBABAAAAFEF",
+      "lifted_same_support_size": 8,
+      "multi_difference_peeling_witness_count": 0,
+      "nonpeelable_core_half_cube_bound_verified": true,
+      "nonpeelable_core_support_size_upper_bound": null,
+      "original_support_entropy_bits": 3.084962500721156,
+      "peeled_coordinate_count": 3,
+      "peeling_core_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "peeling_core_frame_coordinate_count": 4,
+      "peeling_core_inserted_coordinate_count": 0,
+      "peeling_core_pattern": "EBABAFEF",
+      "peeling_core_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "peeling_core_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "peeling_core_support_entropy_bits": 0.5,
+      "peeling_core_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "peeling_round_count": 3,
+      "projected_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "projected_pattern": "EBABAFEF",
+      "projected_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "projected_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "relations_modulo_forced_identities": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "residual_core_is_stopping_set": true,
+      "scalar_pressure_cannot_increase_under_peeling": true,
+      "status": "exact-support-difference-peeling-reduces-to-projection",
+      "support_difference_hyperedges_one_based": [
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          5,
+          6,
+          7
+        ]
+      ],
+      "support_entropy_padding_slack": 0.4150374992788439,
+      "target_modulo_forced_identities": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "uncovered_appended_coordinates_one_based": []
+    },
+    {
+      "appended_frame_coordinates_one_based": [
+        5,
+        6,
+        7
+      ],
+      "appended_pattern_generators": [
+        6,
+        7,
+        8
+      ],
+      "collapsed_lifted_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "collapsed_lifted_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "control_id": "POWER-BOUNDARY-PRUNED-LIFT",
+      "direct_coordinate_edge_witness_count": 3,
+      "every_appended_generator_forced_to_identity": true,
+      "exact_marked_tietze_reduction_verified": true,
+      "exact_peeling_core_relation_projection_verified": true,
+      "exact_peeling_core_target_projection_verified": true,
+      "exact_peeling_core_tietze_reduction_verified": true,
+      "exact_relation_projection_verified": true,
+      "exact_target_projection_verified": true,
+      "forcing_witnesses": [
+        {
+          "appended_frame_coordinate_one_based": 7,
+          "appended_pattern_generator": 8,
+          "assumed_identity_coordinates_one_based": [],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            8
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            9,
+            11
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            9,
+            11
+          ],
+          "pair_difference_coordinates_one_based": [
+            7
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            8
+          ],
+          "residual_difference_coordinates_one_based": [
+            7
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "upper_color_one_relation": [
+            8,
+            9,
+            11
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            8,
+            9,
+            11
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 6,
+          "appended_pattern_generator": 7,
+          "assumed_identity_coordinates_one_based": [
+            7
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            7
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            9,
+            11
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            9,
+            11
+          ],
+          "pair_difference_coordinates_one_based": [
+            6
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            7
+          ],
+          "residual_difference_coordinates_one_based": [
+            6
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "upper_color_one_relation": [
+            7,
+            9,
+            11
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            7,
+            9,
+            11
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 5,
+          "appended_pattern_generator": 6,
+          "assumed_identity_coordinates_one_based": [
+            6,
+            7
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            6
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            9,
+            11
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            9,
+            11
+          ],
+          "pair_difference_coordinates_one_based": [
+            5
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            6
+          ],
+          "residual_difference_coordinates_one_based": [
+            5
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            6,
+            9,
+            11
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            6,
+            9,
+            11
+          ]
+        }
+      ],
+      "frame_coordinate_count": 7,
+      "insertions_interleaved": false,
+      "lifted_different_support_size": 8,
+      "lifted_pattern": "EBABAAAAFEF",
+      "lifted_same_support_size": 7,
+      "multi_difference_peeling_witness_count": 0,
+      "nonpeelable_core_half_cube_bound_verified": true,
+      "nonpeelable_core_support_size_upper_bound": null,
+      "original_support_entropy_bits": 2.903677461028802,
+      "peeled_coordinate_count": 3,
+      "peeling_core_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "peeling_core_frame_coordinate_count": 4,
+      "peeling_core_inserted_coordinate_count": 0,
+      "peeling_core_pattern": "EBABAFEF",
+      "peeling_core_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "peeling_core_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "peeling_core_support_entropy_bits": 0.0,
+      "peeling_core_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "peeling_round_count": 3,
+      "projected_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "projected_pattern": "EBABAFEF",
+      "projected_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "projected_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "relations_modulo_forced_identities": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "residual_core_is_stopping_set": true,
+      "scalar_pressure_cannot_increase_under_peeling": true,
+      "status": "exact-support-difference-peeling-reduces-to-projection",
+      "support_difference_hyperedges_one_based": [
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          5,
+          6,
+          7
+        ]
+      ],
+      "support_entropy_padding_slack": 0.09632253897119814,
+      "target_modulo_forced_identities": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "uncovered_appended_coordinates_one_based": []
+    },
+    {
+      "appended_frame_coordinates_one_based": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "appended_pattern_generators": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "collapsed_lifted_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "collapsed_lifted_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "control_id": "ORIGINAL-IDENTITY-LIFT",
+      "direct_coordinate_edge_witness_count": 4,
+      "every_appended_generator_forced_to_identity": true,
+      "exact_marked_tietze_reduction_verified": true,
+      "exact_peeling_core_relation_projection_verified": true,
+      "exact_peeling_core_target_projection_verified": true,
+      "exact_peeling_core_tietze_reduction_verified": true,
+      "exact_relation_projection_verified": true,
+      "exact_target_projection_verified": true,
+      "forcing_witnesses": [
+        {
+          "appended_frame_coordinate_one_based": 8,
+          "appended_pattern_generator": 9,
+          "assumed_identity_coordinates_one_based": [],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            9
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            10,
+            12
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            10,
+            12
+          ],
+          "pair_difference_coordinates_one_based": [
+            8
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            9
+          ],
+          "residual_difference_coordinates_one_based": [
+            8
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "upper_color_one_relation": [
+            9,
+            10,
+            12
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            9,
+            10,
+            12
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 7,
+          "appended_pattern_generator": 8,
+          "assumed_identity_coordinates_one_based": [
+            8
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            8
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            10,
+            12
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            10,
+            12
+          ],
+          "pair_difference_coordinates_one_based": [
+            7
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            8
+          ],
+          "residual_difference_coordinates_one_based": [
+            7
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "upper_color_one_relation": [
+            8,
+            10,
+            12
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            8,
+            10,
+            12
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 6,
+          "appended_pattern_generator": 7,
+          "assumed_identity_coordinates_one_based": [
+            7,
+            8
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            7
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            10,
+            12
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            10,
+            12
+          ],
+          "pair_difference_coordinates_one_based": [
+            6
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            7
+          ],
+          "residual_difference_coordinates_one_based": [
+            6
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            7,
+            10,
+            12
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            7,
+            10,
+            12
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 5,
+          "appended_pattern_generator": 6,
+          "assumed_identity_coordinates_one_based": [
+            6,
+            7,
+            8
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            6
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            10,
+            12
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            10,
+            12
+          ],
+          "pair_difference_coordinates_one_based": [
+            5
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            6
+          ],
+          "residual_difference_coordinates_one_based": [
+            5
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            6,
+            10,
+            12
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            6,
+            10,
+            12
+          ]
+        }
+      ],
+      "frame_coordinate_count": 8,
+      "insertions_interleaved": false,
+      "lifted_different_support_size": 17,
+      "lifted_pattern": "EBABAAAAAFEF",
+      "lifted_same_support_size": 16,
+      "multi_difference_peeling_witness_count": 0,
+      "nonpeelable_core_half_cube_bound_verified": true,
+      "nonpeelable_core_support_size_upper_bound": null,
+      "original_support_entropy_bits": 4.0437314206251695,
+      "peeled_coordinate_count": 4,
+      "peeling_core_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "peeling_core_frame_coordinate_count": 4,
+      "peeling_core_inserted_coordinate_count": 0,
+      "peeling_core_pattern": "EBABAFEF",
+      "peeling_core_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "peeling_core_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "peeling_core_support_entropy_bits": 0.5,
+      "peeling_core_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "peeling_round_count": 4,
+      "projected_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "projected_pattern": "EBABAFEF",
+      "projected_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "projected_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "relations_modulo_forced_identities": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "residual_core_is_stopping_set": true,
+      "scalar_pressure_cannot_increase_under_peeling": true,
+      "status": "exact-support-difference-peeling-reduces-to-projection",
+      "support_difference_hyperedges_one_based": [
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          5,
+          7,
+          8
+        ],
+        [
+          6,
+          7,
+          8
+        ],
+        [
+          5,
+          6,
+          7,
+          8
+        ]
+      ],
+      "support_entropy_padding_slack": 0.45626857937483045,
+      "target_modulo_forced_identities": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "uncovered_appended_coordinates_one_based": []
+    },
+    {
+      "appended_frame_coordinates_one_based": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "appended_pattern_generators": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "collapsed_lifted_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "collapsed_lifted_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "control_id": "POWER-BOUNDARY-PRUNED-LIFT",
+      "direct_coordinate_edge_witness_count": 4,
+      "every_appended_generator_forced_to_identity": true,
+      "exact_marked_tietze_reduction_verified": true,
+      "exact_peeling_core_relation_projection_verified": true,
+      "exact_peeling_core_target_projection_verified": true,
+      "exact_peeling_core_tietze_reduction_verified": true,
+      "exact_relation_projection_verified": true,
+      "exact_target_projection_verified": true,
+      "forcing_witnesses": [
+        {
+          "appended_frame_coordinate_one_based": 8,
+          "appended_pattern_generator": 9,
+          "assumed_identity_coordinates_one_based": [],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            9
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            10,
+            12
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            10,
+            12
+          ],
+          "pair_difference_coordinates_one_based": [
+            8
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            9
+          ],
+          "residual_difference_coordinates_one_based": [
+            8
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "upper_color_one_relation": [
+            9,
+            10,
+            12
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            9,
+            10,
+            12
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 7,
+          "appended_pattern_generator": 8,
+          "assumed_identity_coordinates_one_based": [
+            8
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            8
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            10,
+            12
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            10,
+            12
+          ],
+          "pair_difference_coordinates_one_based": [
+            7
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            8
+          ],
+          "residual_difference_coordinates_one_based": [
+            7
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "upper_color_one_relation": [
+            8,
+            10,
+            12
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            8,
+            10,
+            12
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 6,
+          "appended_pattern_generator": 7,
+          "assumed_identity_coordinates_one_based": [
+            7,
+            8
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            7
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            10,
+            12
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            10,
+            12
+          ],
+          "pair_difference_coordinates_one_based": [
+            6
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            7
+          ],
+          "residual_difference_coordinates_one_based": [
+            6
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            7,
+            10,
+            12
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            7,
+            10,
+            12
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 5,
+          "appended_pattern_generator": 6,
+          "assumed_identity_coordinates_one_based": [
+            6,
+            7,
+            8
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            6
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            10,
+            12
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            10,
+            12
+          ],
+          "pair_difference_coordinates_one_based": [
+            5
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            6
+          ],
+          "residual_difference_coordinates_one_based": [
+            5
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            6,
+            10,
+            12
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            6,
+            10,
+            12
+          ]
+        }
+      ],
+      "frame_coordinate_count": 8,
+      "insertions_interleaved": false,
+      "lifted_different_support_size": 16,
+      "lifted_pattern": "EBABAAAAAFEF",
+      "lifted_same_support_size": 15,
+      "multi_difference_peeling_witness_count": 0,
+      "nonpeelable_core_half_cube_bound_verified": true,
+      "nonpeelable_core_support_size_upper_bound": null,
+      "original_support_entropy_bits": 3.9534452978042594,
+      "peeled_coordinate_count": 4,
+      "peeling_core_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "peeling_core_frame_coordinate_count": 4,
+      "peeling_core_inserted_coordinate_count": 0,
+      "peeling_core_pattern": "EBABAFEF",
+      "peeling_core_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "peeling_core_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "peeling_core_support_entropy_bits": 0.0,
+      "peeling_core_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "peeling_round_count": 4,
+      "projected_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "projected_pattern": "EBABAFEF",
+      "projected_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "projected_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "relations_modulo_forced_identities": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "residual_core_is_stopping_set": true,
+      "scalar_pressure_cannot_increase_under_peeling": true,
+      "status": "exact-support-difference-peeling-reduces-to-projection",
+      "support_difference_hyperedges_one_based": [
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          5,
+          7,
+          8
+        ],
+        [
+          6,
+          7,
+          8
+        ],
+        [
+          5,
+          6,
+          7,
+          8
+        ]
+      ],
+      "support_entropy_padding_slack": 0.04655470219574065,
+      "target_modulo_forced_identities": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "uncovered_appended_coordinates_one_based": []
+    },
+    {
+      "appended_frame_coordinates_one_based": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "appended_pattern_generators": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "collapsed_lifted_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "collapsed_lifted_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "control_id": "ORIGINAL-IDENTITY-LIFT",
+      "direct_coordinate_edge_witness_count": 5,
+      "every_appended_generator_forced_to_identity": true,
+      "exact_marked_tietze_reduction_verified": true,
+      "exact_peeling_core_relation_projection_verified": true,
+      "exact_peeling_core_target_projection_verified": true,
+      "exact_peeling_core_tietze_reduction_verified": true,
+      "exact_relation_projection_verified": true,
+      "exact_target_projection_verified": true,
+      "forcing_witnesses": [
+        {
+          "appended_frame_coordinate_one_based": 9,
+          "appended_pattern_generator": 10,
+          "assumed_identity_coordinates_one_based": [],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            10
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            11,
+            13
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            11,
+            13
+          ],
+          "pair_difference_coordinates_one_based": [
+            9
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            10
+          ],
+          "residual_difference_coordinates_one_based": [
+            9
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "upper_color_one_relation": [
+            10,
+            11,
+            13
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            10,
+            11,
+            13
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 8,
+          "appended_pattern_generator": 9,
+          "assumed_identity_coordinates_one_based": [
+            9
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            9
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            11,
+            13
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            11,
+            13
+          ],
+          "pair_difference_coordinates_one_based": [
+            8
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            9
+          ],
+          "residual_difference_coordinates_one_based": [
+            8
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "upper_color_one_relation": [
+            9,
+            11,
+            13
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            9,
+            11,
+            13
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 7,
+          "appended_pattern_generator": 8,
+          "assumed_identity_coordinates_one_based": [
+            8,
+            9
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            8
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            11,
+            13
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            11,
+            13
+          ],
+          "pair_difference_coordinates_one_based": [
+            7
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            8
+          ],
+          "residual_difference_coordinates_one_based": [
+            7
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            8,
+            11,
+            13
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            8,
+            11,
+            13
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 6,
+          "appended_pattern_generator": 7,
+          "assumed_identity_coordinates_one_based": [
+            7,
+            8,
+            9
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            7
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            11,
+            13
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            11,
+            13
+          ],
+          "pair_difference_coordinates_one_based": [
+            6
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            7
+          ],
+          "residual_difference_coordinates_one_based": [
+            6
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            7,
+            11,
+            13
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            7,
+            11,
+            13
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 5,
+          "appended_pattern_generator": 6,
+          "assumed_identity_coordinates_one_based": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            6
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            11,
+            13
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            11,
+            13
+          ],
+          "pair_difference_coordinates_one_based": [
+            5
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            6
+          ],
+          "residual_difference_coordinates_one_based": [
+            5
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            6,
+            11,
+            13
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            6,
+            11,
+            13
+          ]
+        }
+      ],
+      "frame_coordinate_count": 9,
+      "insertions_interleaved": false,
+      "lifted_different_support_size": 33,
+      "lifted_pattern": "EBABAAAAAAFEF",
+      "lifted_same_support_size": 32,
+      "multi_difference_peeling_witness_count": 0,
+      "nonpeelable_core_half_cube_bound_verified": true,
+      "nonpeelable_core_support_size_upper_bound": null,
+      "original_support_entropy_bits": 5.022197059679227,
+      "peeled_coordinate_count": 5,
+      "peeling_core_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "peeling_core_frame_coordinate_count": 4,
+      "peeling_core_inserted_coordinate_count": 0,
+      "peeling_core_pattern": "EBABAFEF",
+      "peeling_core_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "peeling_core_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "peeling_core_support_entropy_bits": 0.5,
+      "peeling_core_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "peeling_round_count": 5,
+      "projected_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "projected_pattern": "EBABAFEF",
+      "projected_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "projected_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "relations_modulo_forced_identities": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "residual_core_is_stopping_set": true,
+      "scalar_pressure_cannot_increase_under_peeling": true,
+      "status": "exact-support-difference-peeling-reduces-to-projection",
+      "support_difference_hyperedges_one_based": [
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          5,
+          6,
+          9
+        ],
+        [
+          5,
+          7,
+          8
+        ],
+        [
+          5,
+          7,
+          9
+        ],
+        [
+          5,
+          8,
+          9
+        ],
+        [
+          6,
+          7,
+          8
+        ],
+        [
+          6,
+          7,
+          9
+        ],
+        [
+          6,
+          8,
+          9
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          5,
+          6,
+          7,
+          9
+        ],
+        [
+          5,
+          6,
+          8,
+          9
+        ],
+        [
+          5,
+          7,
+          8,
+          9
+        ],
+        [
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      ],
+      "support_entropy_padding_slack": 0.47780294032077286,
+      "target_modulo_forced_identities": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "uncovered_appended_coordinates_one_based": []
+    },
+    {
+      "appended_frame_coordinates_one_based": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "appended_pattern_generators": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "collapsed_lifted_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "collapsed_lifted_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "control_id": "POWER-BOUNDARY-PRUNED-LIFT",
+      "direct_coordinate_edge_witness_count": 5,
+      "every_appended_generator_forced_to_identity": true,
+      "exact_marked_tietze_reduction_verified": true,
+      "exact_peeling_core_relation_projection_verified": true,
+      "exact_peeling_core_target_projection_verified": true,
+      "exact_peeling_core_tietze_reduction_verified": true,
+      "exact_relation_projection_verified": true,
+      "exact_target_projection_verified": true,
+      "forcing_witnesses": [
+        {
+          "appended_frame_coordinate_one_based": 9,
+          "appended_pattern_generator": 10,
+          "assumed_identity_coordinates_one_based": [],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            10
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            11,
+            13
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            11,
+            13
+          ],
+          "pair_difference_coordinates_one_based": [
+            9
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            10
+          ],
+          "residual_difference_coordinates_one_based": [
+            9
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "upper_color_one_relation": [
+            10,
+            11,
+            13
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            10,
+            11,
+            13
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 8,
+          "appended_pattern_generator": 9,
+          "assumed_identity_coordinates_one_based": [
+            9
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            9
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            11,
+            13
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            11,
+            13
+          ],
+          "pair_difference_coordinates_one_based": [
+            8
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            9
+          ],
+          "residual_difference_coordinates_one_based": [
+            8
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "upper_color_one_relation": [
+            9,
+            11,
+            13
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            9,
+            11,
+            13
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 7,
+          "appended_pattern_generator": 8,
+          "assumed_identity_coordinates_one_based": [
+            8,
+            9
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            8
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            11,
+            13
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            11,
+            13
+          ],
+          "pair_difference_coordinates_one_based": [
+            7
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            8
+          ],
+          "residual_difference_coordinates_one_based": [
+            7
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            8,
+            11,
+            13
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            8,
+            11,
+            13
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 6,
+          "appended_pattern_generator": 7,
+          "assumed_identity_coordinates_one_based": [
+            7,
+            8,
+            9
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            7
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            11,
+            13
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            11,
+            13
+          ],
+          "pair_difference_coordinates_one_based": [
+            6
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            7
+          ],
+          "residual_difference_coordinates_one_based": [
+            6
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            7,
+            11,
+            13
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            7,
+            11,
+            13
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 5,
+          "appended_pattern_generator": 6,
+          "assumed_identity_coordinates_one_based": [
+            6,
+            7,
+            8,
+            9
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            6
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            11,
+            13
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            11,
+            13
+          ],
+          "pair_difference_coordinates_one_based": [
+            5
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            6
+          ],
+          "residual_difference_coordinates_one_based": [
+            5
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            6,
+            11,
+            13
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            6,
+            11,
+            13
+          ]
+        }
+      ],
+      "frame_coordinate_count": 9,
+      "insertions_interleaved": false,
+      "lifted_different_support_size": 32,
+      "lifted_pattern": "EBABAAAAAAFEF",
+      "lifted_same_support_size": 31,
+      "multi_difference_peeling_witness_count": 0,
+      "nonpeelable_core_half_cube_bound_verified": true,
+      "nonpeelable_core_support_size_upper_bound": null,
+      "original_support_entropy_bits": 4.9770981551934375,
+      "peeled_coordinate_count": 5,
+      "peeling_core_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "peeling_core_frame_coordinate_count": 4,
+      "peeling_core_inserted_coordinate_count": 0,
+      "peeling_core_pattern": "EBABAFEF",
+      "peeling_core_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "peeling_core_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "peeling_core_support_entropy_bits": 0.0,
+      "peeling_core_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "peeling_round_count": 5,
+      "projected_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "projected_pattern": "EBABAFEF",
+      "projected_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "projected_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "relations_modulo_forced_identities": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "residual_core_is_stopping_set": true,
+      "scalar_pressure_cannot_increase_under_peeling": true,
+      "status": "exact-support-difference-peeling-reduces-to-projection",
+      "support_difference_hyperedges_one_based": [
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          5,
+          6,
+          9
+        ],
+        [
+          5,
+          7,
+          8
+        ],
+        [
+          5,
+          7,
+          9
+        ],
+        [
+          5,
+          8,
+          9
+        ],
+        [
+          6,
+          7,
+          8
+        ],
+        [
+          6,
+          7,
+          9
+        ],
+        [
+          6,
+          8,
+          9
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          5,
+          6,
+          7,
+          9
+        ],
+        [
+          5,
+          6,
+          8,
+          9
+        ],
+        [
+          5,
+          7,
+          8,
+          9
+        ],
+        [
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      ],
+      "support_entropy_padding_slack": 0.022901844806562544,
+      "target_modulo_forced_identities": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "uncovered_appended_coordinates_one_based": []
+    },
+    {
+      "appended_frame_coordinates_one_based": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "appended_pattern_generators": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "collapsed_lifted_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "collapsed_lifted_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "control_id": "ORIGINAL-IDENTITY-LIFT",
+      "direct_coordinate_edge_witness_count": 6,
+      "every_appended_generator_forced_to_identity": true,
+      "exact_marked_tietze_reduction_verified": true,
+      "exact_peeling_core_relation_projection_verified": true,
+      "exact_peeling_core_target_projection_verified": true,
+      "exact_peeling_core_tietze_reduction_verified": true,
+      "exact_relation_projection_verified": true,
+      "exact_target_projection_verified": true,
+      "forcing_witnesses": [
+        {
+          "appended_frame_coordinate_one_based": 10,
+          "appended_pattern_generator": 11,
+          "assumed_identity_coordinates_one_based": [],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            11
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            12,
+            14
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            12,
+            14
+          ],
+          "pair_difference_coordinates_one_based": [
+            10
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            11
+          ],
+          "residual_difference_coordinates_one_based": [
+            10
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "upper_color_one_relation": [
+            11,
+            12,
+            14
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            11,
+            12,
+            14
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 9,
+          "appended_pattern_generator": 10,
+          "assumed_identity_coordinates_one_based": [
+            10
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            10
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            12,
+            14
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            12,
+            14
+          ],
+          "pair_difference_coordinates_one_based": [
+            9
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            10
+          ],
+          "residual_difference_coordinates_one_based": [
+            9
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "upper_color_one_relation": [
+            10,
+            12,
+            14
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            10,
+            12,
+            14
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 8,
+          "appended_pattern_generator": 9,
+          "assumed_identity_coordinates_one_based": [
+            9,
+            10
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            9
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            12,
+            14
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            12,
+            14
+          ],
+          "pair_difference_coordinates_one_based": [
+            8
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            9
+          ],
+          "residual_difference_coordinates_one_based": [
+            8
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            9,
+            12,
+            14
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            9,
+            12,
+            14
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 7,
+          "appended_pattern_generator": 8,
+          "assumed_identity_coordinates_one_based": [
+            8,
+            9,
+            10
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            8
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            12,
+            14
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            12,
+            14
+          ],
+          "pair_difference_coordinates_one_based": [
+            7
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            8
+          ],
+          "residual_difference_coordinates_one_based": [
+            7
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            8,
+            12,
+            14
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            8,
+            12,
+            14
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 6,
+          "appended_pattern_generator": 7,
+          "assumed_identity_coordinates_one_based": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            7
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            12,
+            14
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            12,
+            14
+          ],
+          "pair_difference_coordinates_one_based": [
+            6
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            7
+          ],
+          "residual_difference_coordinates_one_based": [
+            6
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            7,
+            12,
+            14
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            7,
+            12,
+            14
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 5,
+          "appended_pattern_generator": 6,
+          "assumed_identity_coordinates_one_based": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            6
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            12,
+            14
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            12,
+            14
+          ],
+          "pair_difference_coordinates_one_based": [
+            5
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            6
+          ],
+          "residual_difference_coordinates_one_based": [
+            5
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            6,
+            12,
+            14
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            6,
+            12,
+            14
+          ]
+        }
+      ],
+      "frame_coordinate_count": 10,
+      "insertions_interleaved": false,
+      "lifted_different_support_size": 65,
+      "lifted_pattern": "EBABAAAAAAAFEF",
+      "lifted_same_support_size": 64,
+      "multi_difference_peeling_witness_count": 0,
+      "nonpeelable_core_half_cube_bound_verified": true,
+      "nonpeelable_core_support_size_upper_bound": null,
+      "original_support_entropy_bits": 6.011183906514227,
+      "peeled_coordinate_count": 6,
+      "peeling_core_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "peeling_core_frame_coordinate_count": 4,
+      "peeling_core_inserted_coordinate_count": 0,
+      "peeling_core_pattern": "EBABAFEF",
+      "peeling_core_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "peeling_core_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "peeling_core_support_entropy_bits": 0.5,
+      "peeling_core_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "peeling_round_count": 6,
+      "projected_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "projected_pattern": "EBABAFEF",
+      "projected_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "projected_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "relations_modulo_forced_identities": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -3
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "residual_core_is_stopping_set": true,
+      "scalar_pressure_cannot_increase_under_peeling": true,
+      "status": "exact-support-difference-peeling-reduces-to-projection",
+      "support_difference_hyperedges_one_based": [
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          5,
+          6,
+          9
+        ],
+        [
+          5,
+          6,
+          10
+        ],
+        [
+          5,
+          7,
+          8
+        ],
+        [
+          5,
+          7,
+          9
+        ],
+        [
+          5,
+          7,
+          10
+        ],
+        [
+          5,
+          8,
+          9
+        ],
+        [
+          5,
+          8,
+          10
+        ],
+        [
+          5,
+          9,
+          10
+        ],
+        [
+          6,
+          7,
+          8
+        ],
+        [
+          6,
+          7,
+          9
+        ],
+        [
+          6,
+          7,
+          10
+        ],
+        [
+          6,
+          8,
+          9
+        ],
+        [
+          6,
+          8,
+          10
+        ],
+        [
+          6,
+          9,
+          10
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          7,
+          8,
+          10
+        ],
+        [
+          7,
+          9,
+          10
+        ],
+        [
+          8,
+          9,
+          10
+        ],
+        [
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          5,
+          6,
+          7,
+          9
+        ],
+        [
+          5,
+          6,
+          7,
+          10
+        ],
+        [
+          5,
+          6,
+          8,
+          9
+        ],
+        [
+          5,
+          6,
+          8,
+          10
+        ],
+        [
+          5,
+          6,
+          9,
+          10
+        ],
+        [
+          5,
+          7,
+          8,
+          9
+        ],
+        [
+          5,
+          7,
+          8,
+          10
+        ],
+        [
+          5,
+          7,
+          9,
+          10
+        ],
+        [
+          5,
+          8,
+          9,
+          10
+        ],
+        [
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          6,
+          7,
+          8,
+          10
+        ],
+        [
+          6,
+          7,
+          9,
+          10
+        ],
+        [
+          6,
+          8,
+          9,
+          10
+        ],
+        [
+          7,
+          8,
+          9,
+          10
+        ],
+        [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          5,
+          6,
+          7,
+          8,
+          10
+        ],
+        [
+          5,
+          6,
+          7,
+          9,
+          10
+        ],
+        [
+          5,
+          6,
+          8,
+          9,
+          10
+        ],
+        [
+          5,
+          7,
+          8,
+          9,
+          10
+        ],
+        [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      ],
+      "support_entropy_padding_slack": 0.4888160934857728,
+      "target_modulo_forced_identities": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "uncovered_appended_coordinates_one_based": []
+    },
+    {
+      "appended_frame_coordinates_one_based": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "appended_pattern_generators": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "collapsed_lifted_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "collapsed_lifted_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "control_id": "POWER-BOUNDARY-PRUNED-LIFT",
+      "direct_coordinate_edge_witness_count": 6,
+      "every_appended_generator_forced_to_identity": true,
+      "exact_marked_tietze_reduction_verified": true,
+      "exact_peeling_core_relation_projection_verified": true,
+      "exact_peeling_core_target_projection_verified": true,
+      "exact_peeling_core_tietze_reduction_verified": true,
+      "exact_relation_projection_verified": true,
+      "exact_target_projection_verified": true,
+      "forcing_witnesses": [
+        {
+          "appended_frame_coordinate_one_based": 10,
+          "appended_pattern_generator": 11,
+          "assumed_identity_coordinates_one_based": [],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            11
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            12,
+            14
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            12,
+            14
+          ],
+          "pair_difference_coordinates_one_based": [
+            10
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            11
+          ],
+          "residual_difference_coordinates_one_based": [
+            10
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "upper_color_one_relation": [
+            11,
+            12,
+            14
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            11,
+            12,
+            14
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 9,
+          "appended_pattern_generator": 10,
+          "assumed_identity_coordinates_one_based": [
+            10
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            10
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            12,
+            14
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            12,
+            14
+          ],
+          "pair_difference_coordinates_one_based": [
+            9
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            10
+          ],
+          "residual_difference_coordinates_one_based": [
+            9
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "upper_color_one_relation": [
+            10,
+            12,
+            14
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            10,
+            12,
+            14
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 8,
+          "appended_pattern_generator": 9,
+          "assumed_identity_coordinates_one_based": [
+            9,
+            10
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            9
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            12,
+            14
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            12,
+            14
+          ],
+          "pair_difference_coordinates_one_based": [
+            8
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            9
+          ],
+          "residual_difference_coordinates_one_based": [
+            8
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            9,
+            12,
+            14
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            9,
+            12,
+            14
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 7,
+          "appended_pattern_generator": 8,
+          "assumed_identity_coordinates_one_based": [
+            8,
+            9,
+            10
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            8
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            12,
+            14
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            12,
+            14
+          ],
+          "pair_difference_coordinates_one_based": [
+            7
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            8
+          ],
+          "residual_difference_coordinates_one_based": [
+            7
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            8,
+            12,
+            14
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            8,
+            12,
+            14
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 6,
+          "appended_pattern_generator": 7,
+          "assumed_identity_coordinates_one_based": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            7
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            12,
+            14
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            12,
+            14
+          ],
+          "pair_difference_coordinates_one_based": [
+            6
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            7
+          ],
+          "residual_difference_coordinates_one_based": [
+            6
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            7,
+            12,
+            14
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            7,
+            12,
+            14
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 5,
+          "appended_pattern_generator": 6,
+          "assumed_identity_coordinates_one_based": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            6
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            12,
+            14
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            12,
+            14
+          ],
+          "pair_difference_coordinates_one_based": [
+            5
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            6
+          ],
+          "residual_difference_coordinates_one_based": [
+            5
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            6,
+            12,
+            14
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            6,
+            12,
+            14
+          ]
+        }
+      ],
+      "frame_coordinate_count": 10,
+      "insertions_interleaved": false,
+      "lifted_different_support_size": 64,
+      "lifted_pattern": "EBABAAAAAAAFEF",
+      "lifted_same_support_size": 63,
+      "multi_difference_peeling_witness_count": 0,
+      "nonpeelable_core_half_cube_bound_verified": true,
+      "nonpeelable_core_support_size_upper_bound": null,
+      "original_support_entropy_bits": 5.988639961749959,
+      "peeled_coordinate_count": 6,
+      "peeling_core_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "peeling_core_frame_coordinate_count": 4,
+      "peeling_core_inserted_coordinate_count": 0,
+      "peeling_core_pattern": "EBABAFEF",
+      "peeling_core_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "peeling_core_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "peeling_core_support_entropy_bits": 0.0,
+      "peeling_core_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "peeling_round_count": 6,
+      "projected_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "projected_pattern": "EBABAFEF",
+      "projected_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "projected_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "relations_modulo_forced_identities": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "residual_core_is_stopping_set": true,
+      "scalar_pressure_cannot_increase_under_peeling": true,
+      "status": "exact-support-difference-peeling-reduces-to-projection",
+      "support_difference_hyperedges_one_based": [
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          9,
+          10
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          5,
+          6,
+          8
+        ],
+        [
+          5,
+          6,
+          9
+        ],
+        [
+          5,
+          6,
+          10
+        ],
+        [
+          5,
+          7,
+          8
+        ],
+        [
+          5,
+          7,
+          9
+        ],
+        [
+          5,
+          7,
+          10
+        ],
+        [
+          5,
+          8,
+          9
+        ],
+        [
+          5,
+          8,
+          10
+        ],
+        [
+          5,
+          9,
+          10
+        ],
+        [
+          6,
+          7,
+          8
+        ],
+        [
+          6,
+          7,
+          9
+        ],
+        [
+          6,
+          7,
+          10
+        ],
+        [
+          6,
+          8,
+          9
+        ],
+        [
+          6,
+          8,
+          10
+        ],
+        [
+          6,
+          9,
+          10
+        ],
+        [
+          7,
+          8,
+          9
+        ],
+        [
+          7,
+          8,
+          10
+        ],
+        [
+          7,
+          9,
+          10
+        ],
+        [
+          8,
+          9,
+          10
+        ],
+        [
+          5,
+          6,
+          7,
+          8
+        ],
+        [
+          5,
+          6,
+          7,
+          9
+        ],
+        [
+          5,
+          6,
+          7,
+          10
+        ],
+        [
+          5,
+          6,
+          8,
+          9
+        ],
+        [
+          5,
+          6,
+          8,
+          10
+        ],
+        [
+          5,
+          6,
+          9,
+          10
+        ],
+        [
+          5,
+          7,
+          8,
+          9
+        ],
+        [
+          5,
+          7,
+          8,
+          10
+        ],
+        [
+          5,
+          7,
+          9,
+          10
+        ],
+        [
+          5,
+          8,
+          9,
+          10
+        ],
+        [
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          6,
+          7,
+          8,
+          10
+        ],
+        [
+          6,
+          7,
+          9,
+          10
+        ],
+        [
+          6,
+          8,
+          9,
+          10
+        ],
+        [
+          7,
+          8,
+          9,
+          10
+        ],
+        [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        [
+          5,
+          6,
+          7,
+          8,
+          10
+        ],
+        [
+          5,
+          6,
+          7,
+          9,
+          10
+        ],
+        [
+          5,
+          6,
+          8,
+          9,
+          10
+        ],
+        [
+          5,
+          7,
+          8,
+          9,
+          10
+        ],
+        [
+          6,
+          7,
+          8,
+          9,
+          10
+        ],
+        [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10
+        ]
+      ],
+      "support_entropy_padding_slack": 0.011360038250041171,
+      "target_modulo_forced_identities": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "uncovered_appended_coordinates_one_based": []
+    },
+    {
+      "appended_frame_coordinates_one_based": [
+        4,
+        5,
+        6
+      ],
+      "appended_pattern_generators": [
+        5,
+        6,
+        7
+      ],
+      "collapsed_lifted_relations": [
+        [
+          -3
+        ],
+        [
+          -4,
+          -3
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -5,
+          -4
+        ],
+        [
+          -6,
+          -4,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -3,
+          -2
+        ],
+        [
+          -6,
+          -3,
+          -2,
+          -1
+        ],
+        [
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -6,
+          -5,
+          -2,
+          -1
+        ],
+        [
+          -7,
+          -6,
+          -5,
+          -4,
+          -2,
+          -1
+        ]
+      ],
+      "collapsed_lifted_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "control_id": "GENERIC-MIXED-BASE-CONTROL",
+      "direct_coordinate_edge_witness_count": 3,
+      "every_appended_generator_forced_to_identity": true,
+      "exact_marked_tietze_reduction_verified": true,
+      "exact_peeling_core_relation_projection_verified": true,
+      "exact_peeling_core_target_projection_verified": true,
+      "exact_peeling_core_tietze_reduction_verified": true,
+      "exact_relation_projection_verified": true,
+      "exact_target_projection_verified": true,
+      "forcing_witnesses": [
+        {
+          "appended_frame_coordinate_one_based": 6,
+          "appended_pattern_generator": 7,
+          "assumed_identity_coordinates_one_based": [],
+          "conjugating_prefix": [
+            4
+          ],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            4,
+            7,
+            -4
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            4,
+            8,
+            10
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            4,
+            8,
+            10
+          ],
+          "pair_difference_coordinates_one_based": [
+            6
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            1
+          ],
+          "relation_quotient": [
+            4,
+            7,
+            -4
+          ],
+          "residual_difference_coordinates_one_based": [
+            6
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            1
+          ],
+          "upper_color_one_relation": [
+            4,
+            7,
+            8,
+            10
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            4,
+            7,
+            8,
+            10
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 5,
+          "appended_pattern_generator": 6,
+          "assumed_identity_coordinates_one_based": [
+            6
+          ],
+          "conjugating_prefix": [
+            4
+          ],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            4,
+            6,
+            -4
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            4,
+            8,
+            10
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            4,
+            8,
+            10
+          ],
+          "pair_difference_coordinates_one_based": [
+            5
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            1
+          ],
+          "relation_quotient": [
+            4,
+            6,
+            -4
+          ],
+          "residual_difference_coordinates_one_based": [
+            5
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          "upper_color_one_relation": [
+            4,
+            6,
+            8,
+            10
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            4,
+            6,
+            8,
+            10
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 4,
+          "appended_pattern_generator": 5,
+          "assumed_identity_coordinates_one_based": [
+            5,
+            6
+          ],
+          "conjugating_prefix": [
+            4
+          ],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            4,
+            5,
+            -4
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            4,
+            8,
+            10
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            4,
+            8,
+            10
+          ],
+          "pair_difference_coordinates_one_based": [
+            4
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            1
+          ],
+          "relation_quotient": [
+            4,
+            5,
+            -4
+          ],
+          "residual_difference_coordinates_one_based": [
+            4
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            4,
+            5,
+            8,
+            10
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            4,
+            5,
+            8,
+            10
+          ]
+        }
+      ],
+      "frame_coordinate_count": 6,
+      "insertions_interleaved": false,
+      "lifted_different_support_size": 16,
+      "lifted_pattern": "EABBAAAFEF",
+      "lifted_same_support_size": 15,
+      "multi_difference_peeling_witness_count": 0,
+      "nonpeelable_core_half_cube_bound_verified": true,
+      "nonpeelable_core_support_size_upper_bound": null,
+      "original_support_entropy_bits": 3.9534452978042594,
+      "peeled_coordinate_count": 3,
+      "peeling_core_different_support": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "peeling_core_frame_coordinate_count": 3,
+      "peeling_core_inserted_coordinate_count": 0,
+      "peeling_core_pattern": "EABBFEF",
+      "peeling_core_relations": [
+        [
+          -3
+        ],
+        [
+          -4,
+          -3
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -5,
+          -4
+        ],
+        [
+          -6,
+          -4,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -3,
+          -2
+        ],
+        [
+          -6,
+          -3,
+          -2,
+          -1
+        ],
+        [
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -6,
+          -5,
+          -2,
+          -1
+        ],
+        [
+          -7,
+          -6,
+          -5,
+          -4,
+          -2,
+          -1
+        ]
+      ],
+      "peeling_core_same_support": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "peeling_core_support_entropy_bits": 1.0,
+      "peeling_core_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "peeling_round_count": 3,
+      "projected_different_support": [
+        [
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          0
+        ]
+      ],
+      "projected_pattern": "EABBFEF",
+      "projected_relations": [
+        [
+          -3
+        ],
+        [
+          -4,
+          -3
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -5,
+          -4
+        ],
+        [
+          -6,
+          -4,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -3,
+          -2
+        ],
+        [
+          -6,
+          -3,
+          -2,
+          -1
+        ],
+        [
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -6,
+          -5,
+          -2,
+          -1
+        ],
+        [
+          -7,
+          -6,
+          -5,
+          -4,
+          -2,
+          -1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1
+        ]
+      ],
+      "projected_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "relations_modulo_forced_identities": [
+        [
+          -3
+        ],
+        [
+          -4,
+          -3
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -5,
+          -4
+        ],
+        [
+          -6,
+          -4,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -3,
+          -2
+        ],
+        [
+          -6,
+          -3,
+          -2,
+          -1
+        ],
+        [
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -6,
+          -5,
+          -2,
+          -1
+        ],
+        [
+          -7,
+          -6,
+          -5,
+          -4,
+          -2,
+          -1
+        ]
+      ],
+      "residual_core_is_stopping_set": true,
+      "scalar_pressure_cannot_increase_under_peeling": true,
+      "status": "exact-support-difference-peeling-reduces-to-projection",
+      "support_difference_hyperedges_one_based": [
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          4,
+          5,
+          6
+        ]
+      ],
+      "support_entropy_padding_slack": 0.04655470219574065,
+      "target_modulo_forced_identities": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "uncovered_appended_coordinates_one_based": []
+    },
+    {
+      "appended_frame_coordinates_one_based": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "appended_pattern_generators": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "collapsed_lifted_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "collapsed_lifted_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "control_id": "SPARSE-STAR-PARTIAL-SUFFIX-FIBER",
+      "direct_coordinate_edge_witness_count": 6,
+      "every_appended_generator_forced_to_identity": true,
+      "exact_marked_tietze_reduction_verified": true,
+      "exact_peeling_core_relation_projection_verified": true,
+      "exact_peeling_core_target_projection_verified": true,
+      "exact_peeling_core_tietze_reduction_verified": true,
+      "exact_relation_projection_verified": true,
+      "exact_target_projection_verified": true,
+      "forcing_witnesses": [
+        {
+          "appended_frame_coordinate_one_based": 10,
+          "appended_pattern_generator": 11,
+          "assumed_identity_coordinates_one_based": [],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            11
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            12,
+            14
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            12,
+            14
+          ],
+          "pair_difference_coordinates_one_based": [
+            10
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            11
+          ],
+          "residual_difference_coordinates_one_based": [
+            10
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "upper_color_one_relation": [
+            11,
+            12,
+            14
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            11,
+            12,
+            14
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 9,
+          "appended_pattern_generator": 10,
+          "assumed_identity_coordinates_one_based": [
+            10
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            10
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            12,
+            14
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            12,
+            14
+          ],
+          "pair_difference_coordinates_one_based": [
+            9
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            10
+          ],
+          "residual_difference_coordinates_one_based": [
+            9
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "upper_color_one_relation": [
+            10,
+            12,
+            14
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            10,
+            12,
+            14
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 8,
+          "appended_pattern_generator": 9,
+          "assumed_identity_coordinates_one_based": [
+            9,
+            10
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            9
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            12,
+            14
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            12,
+            14
+          ],
+          "pair_difference_coordinates_one_based": [
+            8
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            9
+          ],
+          "residual_difference_coordinates_one_based": [
+            8
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            9,
+            12,
+            14
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            9,
+            12,
+            14
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 7,
+          "appended_pattern_generator": 8,
+          "assumed_identity_coordinates_one_based": [
+            8,
+            9,
+            10
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            8
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            12,
+            14
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            12,
+            14
+          ],
+          "pair_difference_coordinates_one_based": [
+            7
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            8
+          ],
+          "residual_difference_coordinates_one_based": [
+            7
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            8,
+            12,
+            14
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            8,
+            12,
+            14
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 6,
+          "appended_pattern_generator": 7,
+          "assumed_identity_coordinates_one_based": [
+            7,
+            8,
+            9,
+            10
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            7
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            12,
+            14
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            12,
+            14
+          ],
+          "pair_difference_coordinates_one_based": [
+            6
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            7
+          ],
+          "residual_difference_coordinates_one_based": [
+            6
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            7,
+            12,
+            14
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            7,
+            12,
+            14
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 5,
+          "appended_pattern_generator": 6,
+          "assumed_identity_coordinates_one_based": [
+            6,
+            7,
+            8,
+            9,
+            10
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            6
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            12,
+            14
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            12,
+            14
+          ],
+          "pair_difference_coordinates_one_based": [
+            5
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            6
+          ],
+          "residual_difference_coordinates_one_based": [
+            5
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            6,
+            12,
+            14
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            6,
+            12,
+            14
+          ]
+        }
+      ],
+      "frame_coordinate_count": 10,
+      "insertions_interleaved": false,
+      "lifted_different_support_size": 7,
+      "lifted_pattern": "EBABAAAAAAAFEF",
+      "lifted_same_support_size": 1,
+      "multi_difference_peeling_witness_count": 0,
+      "nonpeelable_core_half_cube_bound_verified": true,
+      "nonpeelable_core_support_size_upper_bound": null,
+      "original_support_entropy_bits": 1.403677461028802,
+      "peeled_coordinate_count": 6,
+      "peeling_core_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "peeling_core_frame_coordinate_count": 4,
+      "peeling_core_inserted_coordinate_count": 0,
+      "peeling_core_pattern": "EBABAFEF",
+      "peeling_core_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "peeling_core_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "peeling_core_support_entropy_bits": 0.0,
+      "peeling_core_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "peeling_round_count": 6,
+      "projected_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "projected_pattern": "EBABAFEF",
+      "projected_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "projected_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "relations_modulo_forced_identities": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "residual_core_is_stopping_set": true,
+      "scalar_pressure_cannot_increase_under_peeling": true,
+      "status": "exact-support-difference-peeling-reduces-to-projection",
+      "support_difference_hyperedges_one_based": [
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ],
+        [
+          9
+        ],
+        [
+          10
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          5,
+          7
+        ],
+        [
+          5,
+          8
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          9
+        ],
+        [
+          6,
+          10
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          8,
+          10
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      "support_entropy_padding_slack": 4.596322538971198,
+      "target_modulo_forced_identities": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "uncovered_appended_coordinates_one_based": []
+    },
+    {
+      "appended_frame_coordinates_one_based": [
+        2,
+        5
+      ],
+      "appended_pattern_generators": [
+        3,
+        6
+      ],
+      "collapsed_lifted_relations": [
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -3,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "collapsed_lifted_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "control_id": "INTERLEAVED-SPLIT-SUPPORT-EDGE-COVER",
+      "direct_coordinate_edge_witness_count": 2,
+      "every_appended_generator_forced_to_identity": true,
+      "exact_marked_tietze_reduction_verified": true,
+      "exact_peeling_core_relation_projection_verified": true,
+      "exact_peeling_core_target_projection_verified": true,
+      "exact_peeling_core_tietze_reduction_verified": true,
+      "exact_relation_projection_verified": true,
+      "exact_target_projection_verified": true,
+      "forcing_witnesses": [
+        {
+          "appended_frame_coordinate_one_based": 5,
+          "appended_pattern_generator": 6,
+          "assumed_identity_coordinates_one_based": [],
+          "conjugating_prefix": [
+            2,
+            5
+          ],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            2,
+            5,
+            6,
+            -5,
+            -2
+          ],
+          "lower_assignment": [
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "lower_color_one_relation": [
+            2,
+            5,
+            7,
+            8,
+            10
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            2,
+            5,
+            7,
+            8,
+            10
+          ],
+          "pair_difference_coordinates_one_based": [
+            5
+          ],
+          "projected_base_assignment": [
+            1,
+            0,
+            1,
+            1
+          ],
+          "relation_quotient": [
+            2,
+            5,
+            6,
+            -5,
+            -2
+          ],
+          "residual_difference_coordinates_one_based": [
+            5
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            1,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "upper_color_one_relation": [
+            2,
+            5,
+            6,
+            7,
+            8,
+            10
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            2,
+            5,
+            6,
+            7,
+            8,
+            10
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 2,
+          "appended_pattern_generator": 3,
+          "assumed_identity_coordinates_one_based": [
+            5
+          ],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            3
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [],
+          "lower_relation_modulo_assumed_identities": [],
+          "pair_difference_coordinates_one_based": [
+            2
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            3
+          ],
+          "residual_difference_coordinates_one_based": [
+            2
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "same",
+          "upper_assignment": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            3
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            3
+          ]
+        }
+      ],
+      "frame_coordinate_count": 6,
+      "insertions_interleaved": true,
+      "lifted_different_support_size": 2,
+      "lifted_pattern": "EBAABAAFEF",
+      "lifted_same_support_size": 2,
+      "multi_difference_peeling_witness_count": 0,
+      "nonpeelable_core_half_cube_bound_verified": true,
+      "nonpeelable_core_support_size_upper_bound": null,
+      "original_support_entropy_bits": 1.0,
+      "peeled_coordinate_count": 2,
+      "peeling_core_different_support": [
+        [
+          1,
+          0,
+          1,
+          1
+        ]
+      ],
+      "peeling_core_frame_coordinate_count": 4,
+      "peeling_core_inserted_coordinate_count": 0,
+      "peeling_core_pattern": "EBABAFEF",
+      "peeling_core_relations": [
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -3,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "peeling_core_same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "peeling_core_support_entropy_bits": 0.0,
+      "peeling_core_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "peeling_round_count": 2,
+      "projected_different_support": [
+        [
+          1,
+          0,
+          1,
+          1
+        ]
+      ],
+      "projected_pattern": "EBABAFEF",
+      "projected_relations": [
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -3,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "projected_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "relations_modulo_forced_identities": [
+        [
+          -4,
+          -2
+        ],
+        [
+          -7,
+          -3,
+          -1
+        ],
+        [
+          -8,
+          -6,
+          -5,
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "residual_core_is_stopping_set": true,
+      "scalar_pressure_cannot_increase_under_peeling": true,
+      "status": "exact-support-difference-peeling-reduces-to-projection",
+      "support_difference_hyperedges_one_based": [
+        [
+          2
+        ],
+        [
+          5
+        ]
+      ],
+      "support_entropy_padding_slack": 1.0,
+      "target_modulo_forced_identities": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "uncovered_appended_coordinates_one_based": []
+    },
+    {
+      "appended_frame_coordinates_one_based": [
+        5,
+        6,
+        7
+      ],
+      "appended_pattern_generators": [
+        6,
+        7,
+        8
+      ],
+      "collapsed_lifted_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -6,
+          -5
+        ],
+        [
+          -8,
+          -6,
+          -4
+        ],
+        [
+          -7,
+          -5,
+          -3,
+          -2,
+          -1
+        ],
+        [
+          -7,
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "collapsed_lifted_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "control_id": "CHAINED-MULTI-DIFFERENCE-FIBERS",
+      "direct_coordinate_edge_witness_count": 1,
+      "every_appended_generator_forced_to_identity": true,
+      "exact_marked_tietze_reduction_verified": true,
+      "exact_peeling_core_relation_projection_verified": true,
+      "exact_peeling_core_target_projection_verified": true,
+      "exact_peeling_core_tietze_reduction_verified": true,
+      "exact_relation_projection_verified": true,
+      "exact_target_projection_verified": true,
+      "forcing_witnesses": [
+        {
+          "appended_frame_coordinate_one_based": 5,
+          "appended_pattern_generator": 6,
+          "assumed_identity_coordinates_one_based": [],
+          "conjugating_prefix": [],
+          "direct_coordinate_edge": true,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            6
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            9,
+            11
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            9,
+            11
+          ],
+          "pair_difference_coordinates_one_based": [
+            5
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "relation_quotient": [
+            6
+          ],
+          "residual_difference_coordinates_one_based": [
+            5
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "upper_color_one_relation": [
+            6,
+            9,
+            11
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            6,
+            9,
+            11
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 6,
+          "appended_pattern_generator": 7,
+          "assumed_identity_coordinates_one_based": [
+            5
+          ],
+          "conjugating_prefix": [
+            5
+          ],
+          "direct_coordinate_edge": false,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            5,
+            7,
+            -5
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            5,
+            9,
+            11
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            5,
+            9,
+            11
+          ],
+          "pair_difference_coordinates_one_based": [
+            5,
+            6
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "relation_quotient": [
+            5,
+            7,
+            -5
+          ],
+          "residual_difference_coordinates_one_based": [
+            6
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          "upper_color_one_relation": [
+            5,
+            6,
+            7,
+            9,
+            11
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            5,
+            7,
+            9,
+            11
+          ]
+        },
+        {
+          "appended_frame_coordinate_one_based": 7,
+          "appended_pattern_generator": 8,
+          "assumed_identity_coordinates_one_based": [
+            5,
+            6
+          ],
+          "conjugating_prefix": [
+            4
+          ],
+          "direct_coordinate_edge": false,
+          "exact_conjugate_identity_verified": true,
+          "expected_conjugated_generator": [
+            4,
+            8,
+            -4
+          ],
+          "lower_assignment": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "lower_color_one_relation": [
+            4,
+            9,
+            11
+          ],
+          "lower_relation_modulo_assumed_identities": [
+            4,
+            9,
+            11
+          ],
+          "pair_difference_coordinates_one_based": [
+            6,
+            7
+          ],
+          "projected_base_assignment": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "relation_quotient": [
+            4,
+            8,
+            -4
+          ],
+          "residual_difference_coordinates_one_based": [
+            7
+          ],
+          "status": "exact-support-difference-peeling-relator",
+          "support_kind": "different",
+          "upper_assignment": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            1
+          ],
+          "upper_color_one_relation": [
+            4,
+            7,
+            8,
+            9,
+            11
+          ],
+          "upper_relation_modulo_assumed_identities": [
+            4,
+            8,
+            9,
+            11
+          ]
+        }
+      ],
+      "frame_coordinate_count": 7,
+      "insertions_interleaved": false,
+      "lifted_different_support_size": 6,
+      "lifted_pattern": "EBABAAAAFEF",
+      "lifted_same_support_size": 1,
+      "multi_difference_peeling_witness_count": 2,
+      "nonpeelable_core_half_cube_bound_verified": true,
+      "nonpeelable_core_support_size_upper_bound": null,
+      "original_support_entropy_bits": 1.292481250360578,
+      "peeled_coordinate_count": 3,
+      "peeling_core_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "peeling_core_frame_coordinate_count": 4,
+      "peeling_core_inserted_coordinate_count": 0,
+      "peeling_core_pattern": "EBABAFEF",
+      "peeling_core_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -6,
+          -5
+        ],
+        [
+          -8,
+          -6,
+          -4
+        ],
+        [
+          -7,
+          -5,
+          -3,
+          -2,
+          -1
+        ],
+        [
+          -7,
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "peeling_core_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "peeling_core_support_entropy_bits": 0.792481250360578,
+      "peeling_core_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "peeling_round_count": 3,
+      "projected_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ]
+      ],
+      "projected_pattern": "EBABAFEF",
+      "projected_relations": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -6,
+          -5
+        ],
+        [
+          -8,
+          -6,
+          -4
+        ],
+        [
+          -7,
+          -5,
+          -3,
+          -2,
+          -1
+        ],
+        [
+          -7,
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "projected_target": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "relations_modulo_forced_identities": [
+        [
+          -8,
+          -6
+        ],
+        [
+          -4,
+          -2
+        ],
+        [
+          -8,
+          -6,
+          -5
+        ],
+        [
+          -8,
+          -6,
+          -4
+        ],
+        [
+          -7,
+          -5,
+          -3,
+          -2,
+          -1
+        ],
+        [
+          -7,
+          -4,
+          -3,
+          -2,
+          -1
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          -3,
+          -1
+        ],
+        [
+          -7,
+          -5,
+          -4,
+          -3,
+          -2,
+          -1
+        ]
+      ],
+      "residual_core_is_stopping_set": true,
+      "scalar_pressure_cannot_increase_under_peeling": true,
+      "status": "exact-support-difference-peeling-reduces-to-projection",
+      "support_difference_hyperedges_one_based": [
+        [
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "support_entropy_padding_slack": 2.5,
+      "target_modulo_forced_identities": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "uncovered_appended_coordinates_one_based": []
+    }
+  ],
+  "status": "support-difference-peelable-frame-lifts-trivialized",
+  "summary": "Proved that iterative support-difference peeling, not a complete cube, direct edge cover, or contiguous suffix, exactly trivializes every inserted frame in its closure.",
+  "theorem_contract": {
+    "canonical_core_projection": "Deleting all generators proved identity by peeling maps every relation and the target exactly to the projected support instance on the residual stopping core, even when that core is nonempty.",
+    "coordinate_edge_lemma": "For an edge x,x+e_i in either support class, the two color-one relators are PQ and Pz_iQ; their quotient is Pz_iP^-1.",
+    "full_cube_corollary": "A complete suffix cube contains the zero-to-e_i edges, but exponentially many rows are unnecessary; a k-edge star suffices.",
+    "marked_projection": "Deleting the forced generators maps all split/support relators and the full-product target exactly to the projected instance.",
+    "peeling_closure_reduction": "If iterated support-difference peeling reaches every designated coordinate, every inserted generator is identity in every group.",
+    "peeling_induction": "After generators in K are identity, a same-fiber pair whose inserted-coordinate difference has one element outside K reduces to a conjugate of that remaining generator.",
+    "pressure_monotonicity": "If k coordinates peel, each projected support row has at most 2^k preimages. Hence H(original)<=H(core)+k, while the pattern is longer by k and the group/target law is unchanged. Scalar pressure cannot increase under peeling padding.",
+    "scope": "Inserted positions may be contiguous or interleaved, and each peeling witness may use a different support class/base fiber. Nonpeelable difference cores remain open.",
+    "stopping_core_codensity": "Within every projected base fiber, either support projects to an independent set of the residual Boolean cube. A nonempty c-bit core therefore has at most 2^(b+c-1) rows per support: at least one full codensity bit is unavoidable.",
+    "stopping_set_boundary": "At the peeling fixed point, the uncovered coordinate set meets every same-fiber difference hyperedge in zero or at least two positions. Conversely, any singleton intersection is a valid next peeling step."
+  }
+}

@@ -825,6 +825,120 @@ from self_dual_wreath_physical_pgm_intertwiner import (
 from self_dual_wreath_plancherel_kronecker_positivity import (
     write_plancherel_kronecker_positivity_report,
 )
+from self_dual_wreath_polar_factor_transfer import (
+    write_polar_factor_transfer_report,
+)
+from self_dual_wreath_postfilter_frame_compression import (
+    write_postfilter_frame_compression_report,
+)
+from self_dual_wreath_random_steiner_gauge_edge import (
+    write_random_steiner_gauge_edge_report,
+)
+from self_dual_wreath_reciprocal_carrier_accumulation_no_go import (
+    write_reciprocal_carrier_accumulation_no_go_report,
+)
+from self_dual_wreath_regular_master_central_support import (
+    write_regular_master_central_support_report,
+)
+from self_dual_wreath_relation_cokernel_transfer import (
+    write_relation_cokernel_transfer_report,
+)
+from self_dual_wreath_relative_effect_intersection import (
+    write_relative_effect_intersection_report,
+)
+from self_dual_wreath_relative_surface_factorization import (
+    write_relative_surface_factorization_report,
+)
+from self_dual_wreath_residual_frobenius_typicality import (
+    write_residual_frobenius_typicality_report,
+)
+from self_dual_wreath_sector_weight_concentration import (
+    write_sector_weight_concentration_report,
+)
+from self_dual_wreath_shorted_overlap_balance import (
+    write_shorted_overlap_balance_report,
+)
+from self_dual_wreath_sibling_frame_jacobi_surrogate import (
+    write_sibling_frame_jacobi_surrogate_report,
+)
+from self_dual_wreath_sibling_frame_joint_conditioning_surrogate import (
+    write_sibling_frame_joint_conditioning_surrogate_report,
+)
+from self_dual_wreath_sibling_frame_joint_freeness import (
+    write_sibling_frame_joint_freeness_report,
+)
+from self_dual_wreath_sibling_frame_mp_moments import (
+    write_sibling_frame_mp_moment_report,
+)
+from self_dual_wreath_sibling_word_map_normal_form import (
+    write_sibling_word_map_normal_form_report,
+)
+from self_dual_wreath_signed_steiner_bulk_edge import (
+    write_signed_steiner_bulk_edge_report,
+)
+from self_dual_wreath_signed_steiner_incidence_boundary import (
+    write_signed_steiner_incidence_boundary_report,
+)
+from self_dual_wreath_signed_steiner_nullity_theorem import (
+    write_signed_steiner_nullity_theorem_report,
+)
+from self_dual_wreath_single_anchor_shorting import (
+    write_single_anchor_shorting_report,
+)
+from self_dual_wreath_sparse_invariant_dependency import (
+    write_sparse_invariant_dependency,
+)
+from self_dual_wreath_star_channel_mass_typicality import (
+    write_star_channel_mass_typicality_report,
+)
+from self_dual_wreath_subgroup_pair_angle_no_go import (
+    write_subgroup_pair_angle_no_go_report,
+)
+from self_dual_wreath_subgroup_projection_walk import (
+    write_subgroup_projection_walk_report,
+)
+from self_dual_wreath_support_affine_rank_entropy import (
+    write_support_affine_rank_entropy_report,
+)
+from self_dual_wreath_support_difference_peeling_no_go import (
+    write_support_difference_peeling_no_go_report,
+)
+from self_dual_wreath_target_survival_surface_seed import (
+    write_target_survival_surface_seed_report,
+)
+from self_dual_wreath_trace_polynomial_edge_burden import (
+    write_trace_polynomial_edge_burden_report,
+)
+from self_dual_wreath_trace_weighted_pgm_bridge import (
+    write_trace_weighted_pgm_bridge_report,
+)
+from self_dual_wreath_trace_weighted_polar_truncation import (
+    write_trace_weighted_polar_truncation_report,
+)
+from self_dual_wreath_transport_carrier_mass import (
+    write_transport_carrier_mass_report,
+)
+from self_dual_wreath_two_color_return_walk import (
+    write_two_color_return_walk_report,
+)
+from self_dual_wreath_two_partition_ribbon_surface import (
+    write_two_partition_ribbon_surface_report,
+)
+from self_dual_wreath_uniform_orientation_rank_concentration import (
+    write_uniform_orientation_rank_concentration_report,
+)
+from self_dual_wreath_vertex_channel_groupoid import (
+    write_vertex_channel_groupoid_report,
+)
+from self_dual_wreath_vertex_kernel_graded_reduction import (
+    write_vertex_kernel_graded_reduction_report,
+)
+from self_dual_wreath_vertex_trivialization_criterion import (
+    write_vertex_trivialization_criterion_report,
+)
+from self_dual_wreath_weighted_overlap_exclusion import (
+    write_weighted_overlap_exclusion,
+)
 from learnability_baselines import write_learnability_report
 from phase_family_naturalness import write_phase_family_naturalness_report
 from phase_state_workbench import write_hidden_shift_workbench
@@ -1376,6 +1490,44 @@ COSET_EXPERIMENTS = {
     "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-ORIENTATION-INTERFERENCE",
     "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-PGM-INTERTWINER",
     "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-KRONECKER-POSITIVITY",
+    "EXP-CODE-SELF-DUAL-WREATH-POLAR-FACTOR-TRANSFER",
+    "EXP-CODE-SELF-DUAL-WREATH-POSTFILTER-FRAME-COMPRESSION",
+    "EXP-CODE-SELF-DUAL-WREATH-RANDOM-STEINER-GAUGE-EDGE",
+    "EXP-CODE-SELF-DUAL-WREATH-RECIPROCAL-CARRIER-ACCUMULATION-NO-GO",
+    "EXP-CODE-SELF-DUAL-WREATH-REGULAR-MASTER-CENTRAL-SUPPORT",
+    "EXP-CODE-SELF-DUAL-WREATH-RELATION-COKERNEL-TRANSFER",
+    "EXP-CODE-SELF-DUAL-WREATH-RELATIVE-EFFECT-INTERSECTION",
+    "EXP-CODE-SELF-DUAL-WREATH-RELATIVE-SURFACE-FACTORIZATION",
+    "EXP-CODE-SELF-DUAL-WREATH-RESIDUAL-FROBENIUS-TYPICALITY",
+    "EXP-CODE-SELF-DUAL-WREATH-SECTOR-WEIGHT-CONCENTRATION",
+    "EXP-CODE-SELF-DUAL-WREATH-SHORTED-OVERLAP-BALANCE",
+    "EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-JACOBI-SURROGATE",
+    "EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-JOINT-CONDITIONING-SURROGATE",
+    "EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-JOINT-FREENESS",
+    "EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-MP-MOMENTS",
+    "EXP-CODE-SELF-DUAL-WREATH-SIBLING-WORD-MAP-NORMAL-FORM",
+    "EXP-CODE-SELF-DUAL-WREATH-SIGNED-STEINER-BULK-EDGE",
+    "EXP-CODE-SELF-DUAL-WREATH-SIGNED-STEINER-INCIDENCE-BOUNDARY",
+    "EXP-CODE-SELF-DUAL-WREATH-SIGNED-STEINER-NULLITY-THEOREM",
+    "EXP-CODE-SELF-DUAL-WREATH-SINGLE-ANCHOR-SHORTING",
+    "EXP-CODE-SELF-DUAL-WREATH-SPARSE-INVARIANT-DEPENDENCY",
+    "EXP-CODE-SELF-DUAL-WREATH-STAR-CHANNEL-MASS-TYPICALITY",
+    "EXP-CODE-SELF-DUAL-WREATH-SUBGROUP-PAIR-ANGLE-NO-GO",
+    "EXP-CODE-SELF-DUAL-WREATH-SUBGROUP-PROJECTION-WALK",
+    "EXP-CODE-SELF-DUAL-WREATH-SUPPORT-AFFINE-RANK-ENTROPY",
+    "EXP-CODE-SELF-DUAL-WREATH-SUPPORT-DIFFERENCE-PEELING-NO-GO",
+    "EXP-CODE-SELF-DUAL-WREATH-TARGET-SURVIVAL-SURFACE-SEED",
+    "EXP-CODE-SELF-DUAL-WREATH-TRACE-POLYNOMIAL-EDGE-BURDEN",
+    "EXP-CODE-SELF-DUAL-WREATH-TRACE-WEIGHTED-PGM-BRIDGE",
+    "EXP-CODE-SELF-DUAL-WREATH-TRACE-WEIGHTED-POLAR-TRUNCATION",
+    "EXP-CODE-SELF-DUAL-WREATH-TRANSPORT-CARRIER-MASS",
+    "EXP-CODE-SELF-DUAL-WREATH-TWO-COLOR-RETURN-WALK",
+    "EXP-CODE-SELF-DUAL-WREATH-TWO-PARTITION-RIBBON-SURFACE",
+    "EXP-CODE-SELF-DUAL-WREATH-UNIFORM-ORIENTATION-RANK-CONCENTRATION",
+    "EXP-CODE-SELF-DUAL-WREATH-VERTEX-CHANNEL-GROUPOID",
+    "EXP-CODE-SELF-DUAL-WREATH-VERTEX-KERNEL-GRADED-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-VERTEX-TRIVIALIZATION-CRITERION",
+    "EXP-CODE-SELF-DUAL-WREATH-WEIGHTED-OVERLAP-EXCLUSION",
     "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING",
     "EXP-COSET-ENTANGLEMENT-WIDTH-GATE",
     "EXP-COSET-GROWING-WIDTH-ARCHITECTURE",
@@ -2690,6 +2842,44 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-ORIENTATION-INTERFERENCE": 245,
         "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-PGM-INTERTWINER": 246,
         "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-KRONECKER-POSITIVITY": 247,
+        "EXP-CODE-SELF-DUAL-WREATH-POLAR-FACTOR-TRANSFER": 248,
+        "EXP-CODE-SELF-DUAL-WREATH-POSTFILTER-FRAME-COMPRESSION": 249,
+        "EXP-CODE-SELF-DUAL-WREATH-RANDOM-STEINER-GAUGE-EDGE": 250,
+        "EXP-CODE-SELF-DUAL-WREATH-RECIPROCAL-CARRIER-ACCUMULATION-NO-GO": 251,
+        "EXP-CODE-SELF-DUAL-WREATH-REGULAR-MASTER-CENTRAL-SUPPORT": 252,
+        "EXP-CODE-SELF-DUAL-WREATH-RELATION-COKERNEL-TRANSFER": 253,
+        "EXP-CODE-SELF-DUAL-WREATH-RELATIVE-EFFECT-INTERSECTION": 254,
+        "EXP-CODE-SELF-DUAL-WREATH-RELATIVE-SURFACE-FACTORIZATION": 255,
+        "EXP-CODE-SELF-DUAL-WREATH-RESIDUAL-FROBENIUS-TYPICALITY": 256,
+        "EXP-CODE-SELF-DUAL-WREATH-SECTOR-WEIGHT-CONCENTRATION": 257,
+        "EXP-CODE-SELF-DUAL-WREATH-SHORTED-OVERLAP-BALANCE": 258,
+        "EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-JACOBI-SURROGATE": 259,
+        "EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-JOINT-CONDITIONING-SURROGATE": 260,
+        "EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-JOINT-FREENESS": 261,
+        "EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-MP-MOMENTS": 262,
+        "EXP-CODE-SELF-DUAL-WREATH-SIBLING-WORD-MAP-NORMAL-FORM": 263,
+        "EXP-CODE-SELF-DUAL-WREATH-SIGNED-STEINER-BULK-EDGE": 264,
+        "EXP-CODE-SELF-DUAL-WREATH-SIGNED-STEINER-INCIDENCE-BOUNDARY": 265,
+        "EXP-CODE-SELF-DUAL-WREATH-SIGNED-STEINER-NULLITY-THEOREM": 266,
+        "EXP-CODE-SELF-DUAL-WREATH-SINGLE-ANCHOR-SHORTING": 267,
+        "EXP-CODE-SELF-DUAL-WREATH-SPARSE-INVARIANT-DEPENDENCY": 268,
+        "EXP-CODE-SELF-DUAL-WREATH-STAR-CHANNEL-MASS-TYPICALITY": 269,
+        "EXP-CODE-SELF-DUAL-WREATH-SUBGROUP-PAIR-ANGLE-NO-GO": 270,
+        "EXP-CODE-SELF-DUAL-WREATH-SUBGROUP-PROJECTION-WALK": 271,
+        "EXP-CODE-SELF-DUAL-WREATH-SUPPORT-AFFINE-RANK-ENTROPY": 272,
+        "EXP-CODE-SELF-DUAL-WREATH-SUPPORT-DIFFERENCE-PEELING-NO-GO": 273,
+        "EXP-CODE-SELF-DUAL-WREATH-TARGET-SURVIVAL-SURFACE-SEED": 274,
+        "EXP-CODE-SELF-DUAL-WREATH-TRACE-POLYNOMIAL-EDGE-BURDEN": 275,
+        "EXP-CODE-SELF-DUAL-WREATH-TRACE-WEIGHTED-PGM-BRIDGE": 276,
+        "EXP-CODE-SELF-DUAL-WREATH-TRACE-WEIGHTED-POLAR-TRUNCATION": 277,
+        "EXP-CODE-SELF-DUAL-WREATH-TRANSPORT-CARRIER-MASS": 278,
+        "EXP-CODE-SELF-DUAL-WREATH-TWO-COLOR-RETURN-WALK": 279,
+        "EXP-CODE-SELF-DUAL-WREATH-TWO-PARTITION-RIBBON-SURFACE": 280,
+        "EXP-CODE-SELF-DUAL-WREATH-UNIFORM-ORIENTATION-RANK-CONCENTRATION": 281,
+        "EXP-CODE-SELF-DUAL-WREATH-VERTEX-CHANNEL-GROUPOID": 282,
+        "EXP-CODE-SELF-DUAL-WREATH-VERTEX-KERNEL-GRADED-REDUCTION": 283,
+        "EXP-CODE-SELF-DUAL-WREATH-VERTEX-TRIVIALIZATION-CRITERION": 284,
+        "EXP-CODE-SELF-DUAL-WREATH-WEIGHTED-OVERLAP-EXCLUSION": 285,
         "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING": 80,
         "EXP-COSET-ENTANGLEMENT-WIDTH-GATE": 81,
         "EXP-COSET-GROWING-WIDTH-ARCHITECTURE": 82,
@@ -5831,6 +6021,386 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             == "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-KRONECKER-POSITIVITY"
         ):
             payload = write_plancherel_kronecker_positivity_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-POLAR-FACTOR-TRANSFER"
+        ):
+            payload = write_polar_factor_transfer_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-POSTFILTER-FRAME-COMPRESSION"
+        ):
+            payload = write_postfilter_frame_compression_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-RANDOM-STEINER-GAUGE-EDGE"
+        ):
+            payload = write_random_steiner_gauge_edge_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-RECIPROCAL-CARRIER-ACCUMULATION-NO-GO"
+        ):
+            payload = write_reciprocal_carrier_accumulation_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-REGULAR-MASTER-CENTRAL-SUPPORT"
+        ):
+            payload = write_regular_master_central_support_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-RELATION-COKERNEL-TRANSFER"
+        ):
+            payload = write_relation_cokernel_transfer_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-RELATIVE-EFFECT-INTERSECTION"
+        ):
+            payload = write_relative_effect_intersection_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-RELATIVE-SURFACE-FACTORIZATION"
+        ):
+            payload = write_relative_surface_factorization_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-RESIDUAL-FROBENIUS-TYPICALITY"
+        ):
+            payload = write_residual_frobenius_typicality_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SECTOR-WEIGHT-CONCENTRATION"
+        ):
+            payload = write_sector_weight_concentration_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SHORTED-OVERLAP-BALANCE"
+        ):
+            payload = write_shorted_overlap_balance_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-JACOBI-SURROGATE"
+        ):
+            payload = write_sibling_frame_jacobi_surrogate_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-JOINT-CONDITIONING-SURROGATE"
+        ):
+            payload = write_sibling_frame_joint_conditioning_surrogate_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-JOINT-FREENESS"
+        ):
+            payload = write_sibling_frame_joint_freeness_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-MP-MOMENTS"
+        ):
+            payload = write_sibling_frame_mp_moment_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SIBLING-WORD-MAP-NORMAL-FORM"
+        ):
+            payload = write_sibling_word_map_normal_form_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SIGNED-STEINER-BULK-EDGE"
+        ):
+            payload = write_signed_steiner_bulk_edge_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SIGNED-STEINER-INCIDENCE-BOUNDARY"
+        ):
+            payload = write_signed_steiner_incidence_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SIGNED-STEINER-NULLITY-THEOREM"
+        ):
+            payload = write_signed_steiner_nullity_theorem_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SINGLE-ANCHOR-SHORTING"
+        ):
+            payload = write_single_anchor_shorting_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SPARSE-INVARIANT-DEPENDENCY"
+        ):
+            payload = write_sparse_invariant_dependency(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-STAR-CHANNEL-MASS-TYPICALITY"
+        ):
+            payload = write_star_channel_mass_typicality_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SUBGROUP-PAIR-ANGLE-NO-GO"
+        ):
+            payload = write_subgroup_pair_angle_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SUBGROUP-PROJECTION-WALK"
+        ):
+            payload = write_subgroup_projection_walk_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SUPPORT-AFFINE-RANK-ENTROPY"
+        ):
+            payload = write_support_affine_rank_entropy_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SUPPORT-DIFFERENCE-PEELING-NO-GO"
+        ):
+            payload = write_support_difference_peeling_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-TARGET-SURVIVAL-SURFACE-SEED"
+        ):
+            payload = write_target_survival_surface_seed_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-TRACE-POLYNOMIAL-EDGE-BURDEN"
+        ):
+            payload = write_trace_polynomial_edge_burden_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-TRACE-WEIGHTED-PGM-BRIDGE"
+        ):
+            payload = write_trace_weighted_pgm_bridge_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-TRACE-WEIGHTED-POLAR-TRUNCATION"
+        ):
+            payload = write_trace_weighted_polar_truncation_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-TRANSPORT-CARRIER-MASS"
+        ):
+            payload = write_transport_carrier_mass_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-TWO-COLOR-RETURN-WALK"
+        ):
+            payload = write_two_color_return_walk_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-TWO-PARTITION-RIBBON-SURFACE"
+        ):
+            payload = write_two_partition_ribbon_surface_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-UNIFORM-ORIENTATION-RANK-CONCENTRATION"
+        ):
+            payload = write_uniform_orientation_rank_concentration_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-VERTEX-CHANNEL-GROUPOID"
+        ):
+            payload = write_vertex_channel_groupoid_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-VERTEX-KERNEL-GRADED-REDUCTION"
+        ):
+            payload = write_vertex_kernel_graded_reduction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-VERTEX-TRIVIALIZATION-CRITERION"
+        ):
+            payload = write_vertex_trivialization_criterion_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-WEIGHTED-OVERLAP-EXCLUSION"
+        ):
+            payload = write_weighted_overlap_exclusion(
                 write_registry=True,
                 registry_experiment_id=experiment_id,
                 registry_candidate_id=experiment["candidate_id"],

@@ -32,7 +32,7 @@
     "typical_large_n_overlap_cores_classified": false,
     "typical_overlap_weights_inverse_polynomially_balanced": false
   },
-  "created_at": "2026-08-06T01:49:11.950668+00:00",
+  "created_at": "2026-08-10T21:54:56.979379+00:00",
   "falsifiers_triggered": [
     "Do not use Euclidean near-parallelism of disjoint child ranges as a recursive-conditioning obstruction.",
     "Do not treat recurring common ranges only as spikes to reject; they are precisely the weighted channels the sampler must route.",
@@ -141,7 +141,7 @@
     },
     {
       "obligation": "finite_w4_overlap_balance",
-      "resolution": "All W4 fractional relative effects are exactly one half, including controls with noncommuting child frames.",
+      "resolution": "All W4 fractional relative effects are exactly one half. The noncommuting child-frame controls have disjoint ranges and therefore reduce entirely to endpoint routing.",
       "resolved": true
     },
     {
@@ -259,7 +259,7 @@
     }
   ],
   "status": "relative-polar-complexity-localized-to-overlap-cores",
-  "summary": "Proved that strictly weighted relative-frame channels are counted exactly by child-range intersection dimension. Complete W4 controls are balanced at one half. The next theorem must classify and resolve nested overlap cores at typical large n.",
+  "summary": "Proved that strictly weighted relative-frame channels are counted exactly by child-range intersection dimension. Complete W4 intersections are commuting and balanced at one half, while noncommuting controls have disjoint child ranges. The next theorem must classify and resolve nested overlap cores at typical large n.",
   "theorem_contract": {
     "fractional_localization": "The number of eigenvalues c in (0,1) is rank(A)+rank(B)-rank(S)=dim(range(A) intersection range(B)).",
     "new_asymptotic_target": "Classify nested orientation-frame intersections, bound their relative weights away from nonexact endpoints, and implement their coherent resolver.",
