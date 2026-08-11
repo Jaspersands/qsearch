@@ -1,0 +1,433 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "Not at constant-PGM-success width: the effective-rank lower bound plus maximal irrep dimension forces exp(Omega(sqrt(n))).",
+      "challenge": "The centralizer upper bound might hide polynomial actual rank.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It charges standalone or branchwise multiplicity inverse implementations, not a globally fused polar circuit.",
+      "challenge": "An exp(Theta(sqrt(n))) moment proves every PGM circuit is slow.",
+      "resolved": true
+    },
+    {
+      "answer": "False. The asymptotic step explicitly depends on the cited Aggarwal--Elboim theorem; finite rows are normalization controls.",
+      "challenge": "Finite d_max rows prove the asymptotic lower bound.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "actual_multiplicity_rank_polynomial_at_pgm_width": false,
+    "alternative_collective_measurement_ruled_out": false,
+    "exp_theta_sqrt_actual_rank_moment_proved": true,
+    "fused_pgm_polar_isometry_ruled_out": false,
+    "general_quantum_lower_bound_proved": false,
+    "polynomial_hidden_involution_decoder_proved": false,
+    "reason": "At the copy width where the standard PGM has constant success, the actual source-average multiplicity inverse moment is exp(Theta(sqrt(n))). A viable algorithm must avoid exposing that inverse or use a different measurement/copy regime.",
+    "speedup_claim_allowed": false,
+    "standalone_source_weighted_multiplicity_inverse_polynomial": false,
+    "standard_branchwise_variable_time_whitening_polynomial": false
+  },
+  "created_at": "2026-08-11T15:23:10.133430+00:00",
+  "falsifiers_triggered": [
+    "Actual multiplicity rank is not polynomial at the standard constant-success PGM copy width.",
+    "The centralizer exp(O(sqrt(n))) envelope is asymptotically tight in exponent for the natural source average.",
+    "Covariance removes factorial cost but does not make standalone multiplicity whitening polynomial.",
+    "The theorem cannot be promoted to a lower bound on globally fused PGM implementations or arbitrary quantum circuits."
+  ],
+  "finite_controls": [
+    {
+      "centralizer_upper_bound": 2.0,
+      "copy_count": 1,
+      "effective_rank_lower_bound": 0.75,
+      "finite_sandwich_verified": true,
+      "hidden_hypothesis_count": 3,
+      "lower_bound_residual": 0.0,
+      "maximum_irrep_dimension": 2,
+      "n": 3,
+      "observed_average_multiplicity_rank_ratio": 1.0,
+      "transposition_count": 1,
+      "upper_bound_residual": 0.0
+    },
+    {
+      "centralizer_upper_bound": 2.0,
+      "copy_count": 2,
+      "effective_rank_lower_bound": 1.0,
+      "finite_sandwich_verified": true,
+      "hidden_hypothesis_count": 3,
+      "lower_bound_residual": 0.0,
+      "maximum_irrep_dimension": 2,
+      "n": 3,
+      "observed_average_multiplicity_rank_ratio": 1.4444444444444444,
+      "transposition_count": 1,
+      "upper_bound_residual": 0.0
+    },
+    {
+      "centralizer_upper_bound": 2.0,
+      "copy_count": 3,
+      "effective_rank_lower_bound": 1.2,
+      "finite_sandwich_verified": true,
+      "hidden_hypothesis_count": 3,
+      "lower_bound_residual": 0.0,
+      "maximum_irrep_dimension": 2,
+      "n": 3,
+      "observed_average_multiplicity_rank_ratio": 1.7407407407407407,
+      "transposition_count": 1,
+      "upper_bound_residual": 0.0
+    },
+    {
+      "centralizer_upper_bound": 1.5,
+      "copy_count": 1,
+      "effective_rank_lower_bound": 0.5,
+      "finite_sandwich_verified": true,
+      "hidden_hypothesis_count": 3,
+      "lower_bound_residual": 0.0,
+      "maximum_irrep_dimension": 3,
+      "n": 4,
+      "observed_average_multiplicity_rank_ratio": 0.8333333333333333,
+      "transposition_count": 2,
+      "upper_bound_residual": 0.0
+    },
+    {
+      "centralizer_upper_bound": 1.5,
+      "copy_count": 2,
+      "effective_rank_lower_bound": 0.6666666666666666,
+      "finite_sandwich_verified": true,
+      "hidden_hypothesis_count": 3,
+      "lower_bound_residual": 0.0,
+      "maximum_irrep_dimension": 3,
+      "n": 4,
+      "observed_average_multiplicity_rank_ratio": 1.1666666666666665,
+      "transposition_count": 2,
+      "upper_bound_residual": 0.0
+    },
+    {
+      "centralizer_upper_bound": 1.5,
+      "copy_count": 3,
+      "effective_rank_lower_bound": 0.8,
+      "finite_sandwich_verified": true,
+      "hidden_hypothesis_count": 3,
+      "lower_bound_residual": 0.0,
+      "maximum_irrep_dimension": 3,
+      "n": 4,
+      "observed_average_multiplicity_rank_ratio": 1.3333333333333333,
+      "transposition_count": 2,
+      "upper_bound_residual": 0.0
+    },
+    {
+      "centralizer_upper_bound": 3.5,
+      "copy_count": 1,
+      "effective_rank_lower_bound": 0.3125,
+      "finite_sandwich_verified": true,
+      "hidden_hypothesis_count": 15,
+      "lower_bound_residual": 0.0,
+      "maximum_irrep_dimension": 6,
+      "n": 5,
+      "observed_average_multiplicity_rank_ratio": 0.43333333333333335,
+      "transposition_count": 2,
+      "upper_bound_residual": 0.0
+    },
+    {
+      "centralizer_upper_bound": 3.5,
+      "copy_count": 2,
+      "effective_rank_lower_bound": 0.5555555555555556,
+      "finite_sandwich_verified": true,
+      "hidden_hypothesis_count": 15,
+      "lower_bound_residual": 0.0,
+      "maximum_irrep_dimension": 6,
+      "n": 5,
+      "observed_average_multiplicity_rank_ratio": 0.8566666666666667,
+      "transposition_count": 2,
+      "upper_bound_residual": 0.0
+    },
+    {
+      "centralizer_upper_bound": 3.5,
+      "copy_count": 3,
+      "effective_rank_lower_bound": 0.9090909090909091,
+      "finite_sandwich_verified": true,
+      "hidden_hypothesis_count": 15,
+      "lower_bound_residual": 0.0,
+      "maximum_irrep_dimension": 6,
+      "n": 5,
+      "observed_average_multiplicity_rank_ratio": 1.6069629629629631,
+      "transposition_count": 2,
+      "upper_bound_residual": 0.0
+    }
+  ],
+  "headline_metrics": {
+    "alternative_collective_measurement_lower_bound_count": 0,
+    "effective_rank_lower_bound_theorem_count": 1,
+    "exp_theta_sqrt_actual_moment_theorem_count": 1,
+    "finite_sandwich_control_count": 9,
+    "finite_sandwich_control_failure_count": 0,
+    "fused_polar_isometry_lower_bound_count": 0,
+    "general_quantum_circuit_lower_bound_count": 0,
+    "maximal_dimension_asymptotic_loaded_count": 1,
+    "maximum_exact_scaling_lower_bound": 2.2863689614486318,
+    "maximum_finite_lower_bound_residual": 0.0,
+    "maximum_finite_upper_bound_residual": 0.0,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_standalone_multiplicity_whitening_count": 0,
+    "tail_exact_source_inverse_rms_lower_bound": 1.5120743901834433
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "aggarwal-elboim-maximal-dimension-2026",
+      "title": "On the maximal dimension of an irreducible representation of the symmetric group",
+      "url": "https://arxiv.org/abs/2605.25995",
+      "use": "Turns the exact M/d_max multiplicity-rank lower bound into exp(Omega(sqrt(n))) for fixed-point-free involutions."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-FUSED-POLAR-BEYOND-D-INVERSE",
+      "resolved": false,
+      "statement": "Construct or obstruct a coherent PGM polar isometry that does not expose D_nu^(-1/2) as a standalone operation."
+    },
+    {
+      "id": "PO-COSET-BELOW-PGM-THRESHOLD",
+      "resolved": false,
+      "statement": "Find a measurement with inverse-polynomial useful success at least Omega(sqrt(n)) copies below the standard PGM width."
+    },
+    {
+      "id": "PO-COSET-ALTERNATIVE-COVARIANT-DECODER",
+      "resolved": false,
+      "statement": "Exploit coherent cross-sector information using a measurement whose implementation cost is not this rank moment."
+    }
+  ],
+  "scaling_records": [
+    {
+      "constant_pgm_success_copy_count": 2,
+      "exact_centralizer_rank_upper_bound": 1.5,
+      "exact_effective_rank_lower_bound": 0.6666666666666666,
+      "exact_source_inverse_rms_lower_bound": 0.816496580927726,
+      "finite_lower_bound_exceeds_one": false,
+      "lower_below_upper": true,
+      "maximum_irrep_dimension_decimal": "3",
+      "maximum_irrep_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "perfect_matching_count_decimal": "3",
+      "pgm_success_lower_bound": 0.6666666666666666,
+      "status": "finite-rank-sandwich-control"
+    },
+    {
+      "constant_pgm_success_copy_count": 4,
+      "exact_centralizer_rank_upper_bound": 1.5833333333333333,
+      "exact_effective_rank_lower_bound": 0.5,
+      "exact_source_inverse_rms_lower_bound": 0.7071067811865476,
+      "finite_lower_bound_exceeds_one": false,
+      "lower_below_upper": true,
+      "maximum_irrep_dimension_decimal": "16",
+      "maximum_irrep_partition": [
+        3,
+        2,
+        1
+      ],
+      "n": 6,
+      "perfect_matching_count_decimal": "15",
+      "pgm_success_lower_bound": 0.5333333333333333,
+      "status": "finite-rank-sandwich-control"
+    },
+    {
+      "constant_pgm_success_copy_count": 7,
+      "exact_centralizer_rank_upper_bound": 2.0208333333333335,
+      "exact_effective_rank_lower_bound": 0.6436781609195402,
+      "exact_source_inverse_rms_lower_bound": 0.802295557085754,
+      "finite_lower_bound_exceeds_one": false,
+      "lower_below_upper": true,
+      "maximum_irrep_dimension_decimal": "90",
+      "maximum_irrep_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "n": 8,
+      "perfect_matching_count_decimal": "105",
+      "pgm_success_lower_bound": 0.5517241379310345,
+      "status": "finite-rank-sandwich-control"
+    },
+    {
+      "constant_pgm_success_copy_count": 10,
+      "exact_centralizer_rank_upper_bound": 2.472916666666667,
+      "exact_effective_rank_lower_bound": 0.6402439024390244,
+      "exact_source_inverse_rms_lower_bound": 0.8001524245036219,
+      "finite_lower_bound_exceeds_one": false,
+      "lower_below_upper": true,
+      "maximum_irrep_dimension_decimal": "768",
+      "maximum_irrep_partition": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "n": 10,
+      "perfect_matching_count_decimal": "945",
+      "pgm_success_lower_bound": 0.5203252032520326,
+      "status": "finite-rank-sandwich-control"
+    },
+    {
+      "constant_pgm_success_copy_count": 14,
+      "exact_centralizer_rank_upper_bound": 3.0440972222222222,
+      "exact_effective_rank_lower_bound": 0.8259914855478377,
+      "exact_source_inverse_rms_lower_bound": 0.908840737174472,
+      "finite_lower_bound_exceeds_one": false,
+      "lower_below_upper": true,
+      "maximum_irrep_dimension_decimal": "7700",
+      "maximum_irrep_partition": [
+        5,
+        3,
+        2,
+        1,
+        1
+      ],
+      "n": 12,
+      "perfect_matching_count_decimal": "10395",
+      "pgm_success_lower_bound": 0.6118455448502502,
+      "status": "finite-rank-sandwich-control"
+    },
+    {
+      "constant_pgm_success_copy_count": 21,
+      "exact_centralizer_rank_upper_bound": 4.476726810515873,
+      "exact_effective_rank_lower_bound": 0.8938512808376752,
+      "exact_source_inverse_rms_lower_bound": 0.9454370845474992,
+      "finite_lower_bound_exceeds_one": false,
+      "lower_below_upper": true,
+      "maximum_irrep_dimension_decimal": "1153152",
+      "maximum_irrep_partition": [
+        6,
+        4,
+        3,
+        2,
+        1
+      ],
+      "n": 16,
+      "perfect_matching_count_decimal": "2027025",
+      "pgm_success_lower_bound": 0.5085020619876552,
+      "status": "finite-rank-sandwich-control"
+    },
+    {
+      "constant_pgm_success_copy_count": 30,
+      "exact_centralizer_rank_upper_bound": 6.393807853147046,
+      "exact_effective_rank_lower_bound": 1.6306738466128343,
+      "exact_source_inverse_rms_lower_bound": 1.2769784049124848,
+      "finite_lower_bound_exceeds_one": true,
+      "lower_below_upper": true,
+      "maximum_irrep_dimension_decimal": "249420600",
+      "maximum_irrep_partition": [
+        7,
+        5,
+        3,
+        2,
+        2,
+        1
+      ],
+      "n": 20,
+      "perfect_matching_count_decimal": "654729075",
+      "pgm_success_lower_bound": 0.6212090844239369,
+      "status": "finite-rank-sandwich-control"
+    },
+    {
+      "constant_pgm_success_copy_count": 39,
+      "exact_centralizer_rank_upper_bound": 8.915532855540045,
+      "exact_effective_rank_lower_bound": 1.7087385818362573,
+      "exact_source_inverse_rms_lower_bound": 1.3071872787922385,
+      "finite_lower_bound_exceeds_one": true,
+      "lower_below_upper": true,
+      "maximum_irrep_dimension_decimal": "117487079424",
+      "maximum_irrep_partition": [
+        8,
+        5,
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "n": 24,
+      "perfect_matching_count_decimal": "316234143225",
+      "pgm_success_lower_bound": 0.6348293180227945,
+      "status": "finite-rank-sandwich-control"
+    },
+    {
+      "constant_pgm_success_copy_count": 48,
+      "exact_centralizer_rank_upper_bound": 12.189961756058679,
+      "exact_effective_rank_lower_bound": 2.1140324896918283,
+      "exact_source_inverse_rms_lower_bound": 1.4539712822789275,
+      "finite_lower_bound_exceeds_one": true,
+      "lower_below_upper": true,
+      "maximum_irrep_dimension_decimal": "57424104738000",
+      "maximum_irrep_partition": [
+        8,
+        6,
+        5,
+        3,
+        2,
+        2,
+        1,
+        1
+      ],
+      "n": 28,
+      "perfect_matching_count_decimal": "213458046676875",
+      "pgm_success_lower_bound": 0.5687132670681838,
+      "status": "finite-rank-sandwich-control"
+    },
+    {
+      "constant_pgm_success_copy_count": 58,
+      "exact_centralizer_rank_upper_bound": 16.395220021214993,
+      "exact_effective_rank_lower_bound": 2.2863689614486318,
+      "exact_source_inverse_rms_lower_bound": 1.5120743901834433,
+      "finite_lower_bound_exceeds_one": true,
+      "lower_below_upper": true,
+      "maximum_irrep_dimension_decimal": "50385731994259200",
+      "maximum_irrep_partition": [
+        9,
+        7,
+        5,
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "n": 32,
+      "perfect_matching_count_decimal": "191898783962510625",
+      "pgm_success_lower_bound": 0.6003184144931792,
+      "status": "finite-rank-sandwich-control"
+    }
+  ],
+  "status": "standalone-multiplicity-whitening-subexponential-no-go-fused-polar-open",
+  "summary": "Proved an exp(Theta(sqrt(n))) sandwich for the actual natural multiplicity-support moment at constant-PGM-success width. This closes standalone source-weighted whitening but leaves fused polar and alternative collective measurements open.",
+  "theorem": {
+    "alternative_collective_measurement_ruled_out": false,
+    "centralizer_upper_bound": "The separate restriction theorem gives E_source sum rank(D_nu)/R <=exp(O(sqrt(n))) for every k.",
+    "exact_finite_group_lower_bound_proved": true,
+    "exp_theta_sqrt_n_actual_moment_at_pgm_width_proved": true,
+    "frame_effective_rank": "rank(B)/r >= M/[1+(M-1)2^-k] by rank(B)>=Tr(B)^2/Tr(B^2).",
+    "fused_polar_isometry_ruled_out": false,
+    "general_quantum_circuit_lower_bound_proved": false,
+    "maximal_dimension_asymptotic": "Aggarwal--Elboim: d_max(S_n)=sqrt(n!) exp(-(mathfrak_d+o(1))sqrt(n)) for a constant mathfrak_d>0.",
+    "maximal_dimension_theorem_applied": true,
+    "multiplicity_rank_lower_bound": "Since d_nu<=d_max, E_source sum_nu rank(D_nu)/R >= M/[d_max(1+(M-1)2^-k)].",
+    "natural_fourier_decomposition": "rank(B)/r equals the natural-source average of sum_nu d_nu rank(D_nu)/R.",
+    "perfect_matching_ratio": "For M=(n-1)!!, M/sqrt(n!)=Theta(n^-1/4), from the central binomial asymptotic.",
+    "polynomial_standalone_multiplicity_whitening_possible": false,
+    "projector_overlap": "For distinct nonidentity involutions h,t in the regular representation, Tr(P_h^tensor k P_t^tensor k)/r=2^-k.",
+    "route_consequence": "Standalone D_nu inverse roots and standard source-weighted or branchwise variable-time whitening are superpolynomial at the constant-PGM-success width.",
+    "sandwich_consequence": "At k=ceil(log2 M)+O(1), the actual natural multiplicity moment is exp(Theta(sqrt(n))).",
+    "scope_limit": "The sandwich does not constrain a fused polar isometry that avoids standalone inversion, another collective POVM, a useful below-threshold decoder, or general quantum circuits.",
+    "status": "exp-sqrt-actual-whitening-rank-sandwich-proved",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "copy_width": "k=ceil(log2((n-1)!!))+O(1), where the equal-overlap PGM has constant information-theoretic success.",
+    "cost_quantity": "Natural-source actual multiplicity support-rank moment, which lower-bounds the clipped inverse-square whitening moment.",
+    "ensemble": "Uniform fixed-point-free involution class in S_n, represented by k same-hidden regular coset-state support projectors.",
+    "external_input": "Aggarwal--Elboim's 2026 maximal S_n irrep-dimension asymptotic.",
+    "non_claim": "No lower bound on fused PGM implementations or arbitrary measurements."
+  }
+}

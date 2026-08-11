@@ -1,0 +1,461 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False when it acts through the same diagonal representation: all subgroup actions remain identity on global multiplicity.",
+      "challenge": "A second subgroup QFT resolves the missing support.",
+      "resolved": true
+    },
+    {
+      "answer": "False in the S_3 controls, where its total variation is exactly zero, and incomplete in the S_4 threshold control.",
+      "challenge": "The symmetric-group irrep label already contains the binary signal.",
+      "resolved": true
+    },
+    {
+      "answer": "False. A scaling theorem for naturally occupied sectors is still missing, and a commutant compiler may exist.",
+      "challenge": "Finite proper support proves an asymptotic no-go.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Only carrier/group-algebra operations are blocked; the commutant and recoupling algebra is exactly the live route.",
+      "challenge": "All representation-theoretic routes are blocked.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "classical_association_scheme_dequantization_passed": false,
+    "commutant_side_support_compiler_constructed": false,
+    "diagonal_group_algebra_support_compiler_sufficient": false,
+    "finite_proper_multiplicity_support_verified": true,
+    "polynomial_time_hidden_involution_decision_algorithm": false,
+    "reason": "The binary support lives inside global multiplicity spaces where diagonal group and subgroup actions are identity. A new commutant-side primitive is necessary and remains unconstructed.",
+    "scalable_proper_multiplicity_support_proved": false,
+    "speedup_claim_allowed": false,
+    "stabilizer_subgroup_qft_alone_sufficient": false
+  },
+  "created_at": "2026-08-11T14:53:50.529476+00:00",
+  "falsifiers_triggered": [
+    "Diagonal symmetric-group irrep labels can carry zero binary signal despite constant full distinguishability.",
+    "A stabilizer-subgroup QFT acting through the same representation cannot resolve global multiplicity support.",
+    "Finite proper support is not an asymptotic lower bound against commutant-side algorithms."
+  ],
+  "finite_controls": [
+    {
+      "conjugacy_class_size": 3,
+      "copy_count": 1,
+      "data_dimension": 6,
+      "finite_control_verified": true,
+      "full_helstrom_trace_distance": 0.16666666666666666,
+      "full_support_sector_count": 2,
+      "group_algebra_only_support_compiler_refuted_finitely": true,
+      "irrep_label_signal_fraction": 0.0,
+      "irrep_label_total_variation": 0.0,
+      "irrep_sector_count": 3,
+      "isotypic_completeness_residual": 1.1102230246251565e-16,
+      "maximum_isotypic_idempotence_residual": 1.1102230246251565e-16,
+      "n": 3,
+      "proper_support_sector_count": 1,
+      "sectors": [
+        {
+          "alternative_irrep_probability": 0.4999999999999999,
+          "diagonal_multiplicity": 3,
+          "irrep_dimension": 1,
+          "isotypic_rank": 3,
+          "null_irrep_probability": 0.4999999999999999,
+          "partition": [
+            3
+          ],
+          "proper_nonzero_multiplicity_support": true,
+          "status": "proper-multiplicity-support-carrier-label-insufficient",
+          "support_fraction": 0.6666666666666666,
+          "support_intersection_rank": 2,
+          "support_multiplicity_rank": 2
+        },
+        {
+          "alternative_irrep_probability": 0.3333333333333333,
+          "diagonal_multiplicity": 1,
+          "irrep_dimension": 2,
+          "isotypic_rank": 2,
+          "null_irrep_probability": 0.3333333333333333,
+          "partition": [
+            2,
+            1
+          ],
+          "proper_nonzero_multiplicity_support": false,
+          "status": "full-multiplicity-support",
+          "support_fraction": 1.0,
+          "support_intersection_rank": 2,
+          "support_multiplicity_rank": 1
+        },
+        {
+          "alternative_irrep_probability": 0.16666666666666666,
+          "diagonal_multiplicity": 1,
+          "irrep_dimension": 1,
+          "isotypic_rank": 1,
+          "null_irrep_probability": 0.16666666666666666,
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "proper_nonzero_multiplicity_support": false,
+          "status": "full-multiplicity-support",
+          "support_fraction": 1.0,
+          "support_intersection_rank": 1,
+          "support_multiplicity_rank": 1
+        }
+      ],
+      "status": "proper-multiplicity-support-carrier-algebra-insufficient",
+      "support_rank": 5,
+      "transposition_count": 1,
+      "zero_support_sector_count": 0
+    },
+    {
+      "conjugacy_class_size": 3,
+      "copy_count": 2,
+      "data_dimension": 36,
+      "finite_control_verified": true,
+      "full_helstrom_trace_distance": 0.41666666666666674,
+      "full_support_sector_count": 0,
+      "group_algebra_only_support_compiler_refuted_finitely": true,
+      "irrep_label_signal_fraction": 0.0,
+      "irrep_label_total_variation": 0.0,
+      "irrep_sector_count": 3,
+      "isotypic_completeness_residual": 1.1102230246251565e-16,
+      "maximum_isotypic_idempotence_residual": 1.6653345369377353e-16,
+      "n": 3,
+      "proper_support_sector_count": 3,
+      "sectors": [
+        {
+          "alternative_irrep_probability": 0.3055555555555555,
+          "diagonal_multiplicity": 11,
+          "irrep_dimension": 1,
+          "isotypic_rank": 11,
+          "null_irrep_probability": 0.3055555555555555,
+          "partition": [
+            3
+          ],
+          "proper_nonzero_multiplicity_support": true,
+          "status": "proper-multiplicity-support-carrier-label-insufficient",
+          "support_fraction": 0.45454545454545453,
+          "support_intersection_rank": 5,
+          "support_multiplicity_rank": 5
+        },
+        {
+          "alternative_irrep_probability": 0.5,
+          "diagonal_multiplicity": 9,
+          "irrep_dimension": 2,
+          "isotypic_rank": 18,
+          "null_irrep_probability": 0.5,
+          "partition": [
+            2,
+            1
+          ],
+          "proper_nonzero_multiplicity_support": true,
+          "status": "proper-multiplicity-support-carrier-label-insufficient",
+          "support_fraction": 0.6666666666666666,
+          "support_intersection_rank": 12,
+          "support_multiplicity_rank": 6
+        },
+        {
+          "alternative_irrep_probability": 0.19444444444444442,
+          "diagonal_multiplicity": 7,
+          "irrep_dimension": 1,
+          "isotypic_rank": 7,
+          "null_irrep_probability": 0.19444444444444442,
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "proper_nonzero_multiplicity_support": true,
+          "status": "proper-multiplicity-support-carrier-label-insufficient",
+          "support_fraction": 0.5714285714285714,
+          "support_intersection_rank": 4,
+          "support_multiplicity_rank": 4
+        }
+      ],
+      "status": "proper-multiplicity-support-carrier-algebra-insufficient",
+      "support_rank": 21,
+      "transposition_count": 1,
+      "zero_support_sector_count": 0
+    },
+    {
+      "conjugacy_class_size": 3,
+      "copy_count": 3,
+      "data_dimension": 216,
+      "finite_control_verified": true,
+      "full_helstrom_trace_distance": 0.6620370370370371,
+      "full_support_sector_count": 0,
+      "group_algebra_only_support_compiler_refuted_finitely": true,
+      "irrep_label_signal_fraction": 0.0,
+      "irrep_label_total_variation": 0.0,
+      "irrep_sector_count": 3,
+      "isotypic_completeness_residual": 1.1102230246251565e-16,
+      "maximum_isotypic_idempotence_residual": 1.6653345369377356e-16,
+      "n": 3,
+      "proper_support_sector_count": 3,
+      "sectors": [
+        {
+          "alternative_irrep_probability": 0.22685185185185183,
+          "diagonal_multiplicity": 49,
+          "irrep_dimension": 1,
+          "isotypic_rank": 49,
+          "null_irrep_probability": 0.22685185185185183,
+          "partition": [
+            3
+          ],
+          "proper_nonzero_multiplicity_support": true,
+          "status": "proper-multiplicity-support-carrier-label-insufficient",
+          "support_fraction": 0.2857142857142857,
+          "support_intersection_rank": 14,
+          "support_multiplicity_rank": 14
+        },
+        {
+          "alternative_irrep_probability": 0.5833333333333333,
+          "diagonal_multiplicity": 63,
+          "irrep_dimension": 2,
+          "isotypic_rank": 126,
+          "null_irrep_probability": 0.5833333333333333,
+          "partition": [
+            2,
+            1
+          ],
+          "proper_nonzero_multiplicity_support": true,
+          "status": "proper-multiplicity-support-carrier-label-insufficient",
+          "support_fraction": 0.36507936507936506,
+          "support_intersection_rank": 46,
+          "support_multiplicity_rank": 23
+        },
+        {
+          "alternative_irrep_probability": 0.18981481481481483,
+          "diagonal_multiplicity": 41,
+          "irrep_dimension": 1,
+          "isotypic_rank": 41,
+          "null_irrep_probability": 0.18981481481481483,
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "proper_nonzero_multiplicity_support": true,
+          "status": "proper-multiplicity-support-carrier-label-insufficient",
+          "support_fraction": 0.3170731707317073,
+          "support_intersection_rank": 13,
+          "support_multiplicity_rank": 13
+        }
+      ],
+      "status": "proper-multiplicity-support-carrier-algebra-insufficient",
+      "support_rank": 73,
+      "transposition_count": 1,
+      "zero_support_sector_count": 0
+    },
+    {
+      "conjugacy_class_size": 3,
+      "copy_count": 2,
+      "data_dimension": 576,
+      "finite_control_verified": true,
+      "full_helstrom_trace_distance": 0.375,
+      "full_support_sector_count": 0,
+      "group_algebra_only_support_compiler_refuted_finitely": true,
+      "irrep_label_signal_fraction": 0.4444444444444445,
+      "irrep_label_total_variation": 0.16666666666666669,
+      "irrep_sector_count": 5,
+      "isotypic_completeness_residual": 4.440892098500626e-16,
+      "maximum_isotypic_idempotence_residual": 4.440892098500626e-16,
+      "n": 4,
+      "proper_support_sector_count": 5,
+      "sectors": [
+        {
+          "alternative_irrep_probability": 0.13194444444444445,
+          "diagonal_multiplicity": 43,
+          "irrep_dimension": 1,
+          "isotypic_rank": 43,
+          "null_irrep_probability": 0.07465277777777778,
+          "partition": [
+            4
+          ],
+          "proper_nonzero_multiplicity_support": true,
+          "status": "proper-multiplicity-support-carrier-label-insufficient",
+          "support_fraction": 0.813953488372093,
+          "support_intersection_rank": 35,
+          "support_multiplicity_rank": 35
+        },
+        {
+          "alternative_irrep_probability": 0.25,
+          "diagonal_multiplicity": 64,
+          "irrep_dimension": 3,
+          "isotypic_rank": 192,
+          "null_irrep_probability": 0.33333333333333326,
+          "partition": [
+            3,
+            1
+          ],
+          "proper_nonzero_multiplicity_support": true,
+          "status": "proper-multiplicity-support-carrier-label-insufficient",
+          "support_fraction": 0.5625,
+          "support_intersection_rank": 108,
+          "support_multiplicity_rank": 36
+        },
+        {
+          "alternative_irrep_probability": 0.2916666666666667,
+          "diagonal_multiplicity": 61,
+          "irrep_dimension": 2,
+          "isotypic_rank": 122,
+          "null_irrep_probability": 0.21180555555555552,
+          "partition": [
+            2,
+            2
+          ],
+          "proper_nonzero_multiplicity_support": true,
+          "status": "proper-multiplicity-support-carrier-label-insufficient",
+          "support_fraction": 0.7377049180327869,
+          "support_intersection_rank": 90,
+          "support_multiplicity_rank": 45
+        },
+        {
+          "alternative_irrep_probability": 0.25,
+          "diagonal_multiplicity": 64,
+          "irrep_dimension": 3,
+          "isotypic_rank": 192,
+          "null_irrep_probability": 0.33333333333333337,
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "proper_nonzero_multiplicity_support": true,
+          "status": "proper-multiplicity-support-carrier-label-insufficient",
+          "support_fraction": 0.5625,
+          "support_intersection_rank": 108,
+          "support_multiplicity_rank": 36
+        },
+        {
+          "alternative_irrep_probability": 0.0763888888888889,
+          "diagonal_multiplicity": 27,
+          "irrep_dimension": 1,
+          "isotypic_rank": 27,
+          "null_irrep_probability": 0.046875,
+          "partition": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "proper_nonzero_multiplicity_support": true,
+          "status": "proper-multiplicity-support-carrier-label-insufficient",
+          "support_fraction": 0.7037037037037037,
+          "support_intersection_rank": 19,
+          "support_multiplicity_rank": 19
+        }
+      ],
+      "status": "proper-multiplicity-support-carrier-algebra-insufficient",
+      "support_rank": 360,
+      "transposition_count": 2,
+      "zero_support_sector_count": 0
+    }
+  ],
+  "headline_metrics": {
+    "commutant_support_compiler_count": 0,
+    "finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "maximum_irrep_label_signal_fraction": 0.4444444444444445,
+    "new_quantum_algorithm_count": 0,
+    "proper_support_sector_count": 12,
+    "scalable_proper_support_theorem_count": 0,
+    "zero_irrep_signal_control_count": 3
+  },
+  "primary_literature": [
+    {
+      "id": "BEALS-1997-SYMMETRIC-QFT",
+      "scope": "Provides irrep-label access but not operations on the diagonal-action global multiplicity spaces isolated here.",
+      "title": "Quantum computation of Fourier transforms over symmetric groups",
+      "url": "https://doi.org/10.1145/258533.258548"
+    },
+    {
+      "id": "HAYASHI-KAWACHI-KOBAYASHI-2006-HSP-SAMPLE-COMPLEXITY",
+      "scope": "Supplies the support-span measurement whose multiplicity support must be compiled.",
+      "title": "Quantum Measurements for Hidden Subgroup Problems with Optimal Sample Complexity",
+      "url": "https://arxiv.org/abs/quant-ph/0604174"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-BINARY-SCALABLE-PROPER-SUPPORT",
+      "resolved": false,
+      "statement": "Prove whether naturally occupied threshold sectors retain proper S_nu support asymptotically for fixed-point-free S_n."
+    },
+    {
+      "id": "PO-COSET-BINARY-COMMUTANT-GENERATORS",
+      "resolved": false,
+      "statement": "Find polynomially implementable commutant generators whose joint invariant subspaces resolve supp(Q_nu)."
+    },
+    {
+      "id": "PO-COSET-BINARY-SUPPORT-CLASSICAL-INVARIANT",
+      "resolved": false,
+      "statement": "Test whether the same multiplicity-support decomposition is classically computable from matching association schemes."
+    }
+  ],
+  "scaling_boundaries": [
+    {
+      "carrier_only_compiler_sufficient": false,
+      "commutant_side_primitive_constructed": false,
+      "diagonal_group_algebra_action": "direct_sum_nu End(V_nu) tensor I_(M_nu)",
+      "n": 16,
+      "scalable_proper_support_sector_proved": false,
+      "status": "carrier-algebra-insufficient-scalable-support-structure-open",
+      "subgroup_action_on_global_multiplicity": "identity",
+      "threshold_copy_count": 25
+    },
+    {
+      "carrier_only_compiler_sufficient": false,
+      "commutant_side_primitive_constructed": false,
+      "diagonal_group_algebra_action": "direct_sum_nu End(V_nu) tensor I_(M_nu)",
+      "n": 32,
+      "scalable_proper_support_sector_proved": false,
+      "status": "carrier-algebra-insufficient-scalable-support-structure-open",
+      "subgroup_action_on_global_multiplicity": "identity",
+      "threshold_copy_count": 61
+    },
+    {
+      "carrier_only_compiler_sufficient": false,
+      "commutant_side_primitive_constructed": false,
+      "diagonal_group_algebra_action": "direct_sum_nu End(V_nu) tensor I_(M_nu)",
+      "n": 64,
+      "scalable_proper_support_sector_proved": false,
+      "status": "carrier-algebra-insufficient-scalable-support-structure-open",
+      "subgroup_action_on_global_multiplicity": "identity",
+      "threshold_copy_count": 150
+    },
+    {
+      "carrier_only_compiler_sufficient": false,
+      "commutant_side_primitive_constructed": false,
+      "diagonal_group_algebra_action": "direct_sum_nu End(V_nu) tensor I_(M_nu)",
+      "n": 128,
+      "scalable_proper_support_sector_proved": false,
+      "status": "carrier-algebra-insufficient-scalable-support-structure-open",
+      "subgroup_action_on_global_multiplicity": "identity",
+      "threshold_copy_count": 360
+    }
+  ],
+  "status": "carrier-and-subgroup-label-only-support-route-refuted-finitely",
+  "summary": "Proved the carrier-algebra obstruction and verified proper multiplicity support in every finite threshold sector tested. Ordinary group or hyperoctahedral isotypic labels cannot implement the binary support; a commutant/recoupling primitive is mandatory.",
+  "theorem": {
+    "commutant_support_compiler_constructed": false,
+    "conditional_obstruction": "If 0<S_nu<I on any sector, T is outside Alg(U(G)); diagonal group-action functional calculus cannot implement it.",
+    "diagonal_group_actions_are_identity_on_multiplicity": true,
+    "finite_proper_support_witnesses_verified": true,
+    "group_algebra_normal_form": "Alg(U(G))=direct_sum_nu End(V_nu) tensor I_(M_nu).",
+    "invariant_support_normal_form": "T=direct_sum_nu I_(V_nu) tensor S_nu.",
+    "proper_support_requires_commutant_side_operation": true,
+    "scalable_proper_support_theorem_proved": false,
+    "status": "carrier-and-subgroup-label-only-support-route-refuted-finitely",
+    "subgroup_consequence": "U(K) is contained in Alg(U(G)) and remains identity on M_nu, so a stabilizer-subgroup QFT alone cannot resolve S_nu.",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "asymptotic_scope": "The algebra theorem is general; proper support is verified only on finite controls and is not promoted to a scaling theorem.",
+    "obstruction_condition": "At least one diagonal irrep sector has proper nonzero S_nu.",
+    "operation_class": "Circuits/effects generated solely by the diagonal conjugation representation of G or any subgroup K, including their group-algebra functional calculus and isotypic labels.",
+    "outside_scope": "Commutant operators, relative-register transformations, copy permutations, recoupling networks, and arbitrary circuits."
+  }
+}

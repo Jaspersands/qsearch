@@ -1,0 +1,3871 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A dense no-information-set code may have many Smith factors.",
+      "resolution": "Pair coverage makes the entire quotient cyclic.",
+      "resolved": true
+    },
+    {
+      "objection": "The one Smith factor may grow with width.",
+      "resolution": "A modulus at least five has multilevel binomial mass below one quarter.",
+      "resolved": true
+    },
+    {
+      "objection": "A rank-deficient lattice evades the modular bound.",
+      "resolution": "Its exact signed layer is too small once n>=9.",
+      "resolved": true
+    },
+    {
+      "objection": "Bounded abelianization proves bounded full presentation.",
+      "resolution": "False as a general group-theoretic inference; nonabelian kernels can be large and remain the next proof obligation.",
+      "resolved": false
+    }
+  ],
+  "all_depth_certificate": {
+    "arbitrary_width_at_least_nine": true,
+    "cyclic_quotient_derivation": "All coordinate classes equal one generator up to sign, so Z^n/L is finite cyclic or infinite cyclic.",
+    "finite_quotient_signed_congruence": "For order D>2, unique signs sigma_i give every codeword signed weight zero modulo D.",
+    "full_rank_maximum_lattice_index": 4,
+    "growing_abelian_torsion_escape_excluded": true,
+    "infinite_quotient_layer_bound": "An infinite quotient places C in one exact signed-weight layer of size at most C(n,floor(n/2)), below 2^(n-2) for n>=9.",
+    "nine_bit_anticoncentration_bound": "Conditioning outside nine bits leaves binomial levels separated by at least five; their maximum mass is (C(9,0)+C(9,5))/2^9.",
+    "nine_bit_maximum_mass": 0.248046875,
+    "no_information_set_pair_coverage": "Failure after omitting {i,j} gives a collision supported exactly on {i,j}; hence e_i=+/-e_j in the incidence quotient.",
+    "nonabelian_residual_presentation_still_open": true,
+    "normalized_code_scope": "0 in C subset F_2^n, |C|=2^(n-2), minimum distance at least two, and no injective projection onto n-2 coordinates",
+    "rank_deficient_maximum_width": 8,
+    "small_width_direct_bound": "For widths 5,6,7,8 the maxima are respectively 2,7,22,57, all below 2^(n-2).",
+    "status": "all-depth-incidence-lattice-torsion-bound"
+  },
+  "anticoncentration_controls": [
+    {
+      "bit_width": 5,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 5,
+      "quarter_cube_size": 8,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 6,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 7,
+      "modulus": 5,
+      "quarter_cube_size": 16,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 6,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 6,
+      "quarter_cube_size": 16,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 7,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 22,
+      "modulus": 5,
+      "quarter_cube_size": 32,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 7,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 8,
+      "modulus": 6,
+      "quarter_cube_size": 32,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 7,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 7,
+      "quarter_cube_size": 32,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 8,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 57,
+      "modulus": 5,
+      "quarter_cube_size": 64,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 8,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 29,
+      "modulus": 6,
+      "quarter_cube_size": 64,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 8,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 9,
+      "modulus": 7,
+      "quarter_cube_size": 64,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 8,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 8,
+      "quarter_cube_size": 64,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 9,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 127,
+      "modulus": 5,
+      "quarter_cube_size": 128,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 9,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 85,
+      "modulus": 6,
+      "quarter_cube_size": 128,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 9,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 37,
+      "modulus": 7,
+      "quarter_cube_size": 128,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 9,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 10,
+      "modulus": 8,
+      "quarter_cube_size": 128,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 9,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 9,
+      "quarter_cube_size": 128,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 10,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 254,
+      "modulus": 5,
+      "quarter_cube_size": 256,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 10,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 211,
+      "modulus": 6,
+      "quarter_cube_size": 256,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 10,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 121,
+      "modulus": 7,
+      "quarter_cube_size": 256,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 10,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 46,
+      "modulus": 8,
+      "quarter_cube_size": 256,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 10,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 11,
+      "modulus": 9,
+      "quarter_cube_size": 256,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 10,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 10,
+      "quarter_cube_size": 256,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 11,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 474,
+      "modulus": 5,
+      "quarter_cube_size": 512,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 11,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 463,
+      "modulus": 6,
+      "quarter_cube_size": 512,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 11,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 331,
+      "modulus": 7,
+      "quarter_cube_size": 512,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 11,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 166,
+      "modulus": 8,
+      "quarter_cube_size": 512,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 11,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 56,
+      "modulus": 9,
+      "quarter_cube_size": 512,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 11,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 12,
+      "modulus": 10,
+      "quarter_cube_size": 512,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 11,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 11,
+      "quarter_cube_size": 512,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 12,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 948,
+      "modulus": 5,
+      "quarter_cube_size": 1024,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 12,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 926,
+      "modulus": 6,
+      "quarter_cube_size": 1024,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 12,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 793,
+      "modulus": 7,
+      "quarter_cube_size": 1024,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 12,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 496,
+      "modulus": 8,
+      "quarter_cube_size": 1024,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 12,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 221,
+      "modulus": 9,
+      "quarter_cube_size": 1024,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 12,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 67,
+      "modulus": 10,
+      "quarter_cube_size": 1024,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 12,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 13,
+      "modulus": 11,
+      "quarter_cube_size": 1024,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 12,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 12,
+      "quarter_cube_size": 1024,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 13,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 1807,
+      "modulus": 5,
+      "quarter_cube_size": 2048,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 13,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 1730,
+      "modulus": 6,
+      "quarter_cube_size": 2048,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 13,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 1717,
+      "modulus": 7,
+      "quarter_cube_size": 2048,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 13,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 1288,
+      "modulus": 8,
+      "quarter_cube_size": 2048,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 13,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 716,
+      "modulus": 9,
+      "quarter_cube_size": 2048,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 13,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 287,
+      "modulus": 10,
+      "quarter_cube_size": 2048,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 13,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 79,
+      "modulus": 11,
+      "quarter_cube_size": 2048,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 13,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 14,
+      "modulus": 12,
+      "quarter_cube_size": 2048,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 13,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 13,
+      "quarter_cube_size": 2048,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 14,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 3614,
+      "modulus": 5,
+      "quarter_cube_size": 4096,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 14,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 3460,
+      "modulus": 6,
+      "quarter_cube_size": 4096,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 14,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 3434,
+      "modulus": 7,
+      "quarter_cube_size": 4096,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 14,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 3004,
+      "modulus": 8,
+      "quarter_cube_size": 4096,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 14,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2003,
+      "modulus": 9,
+      "quarter_cube_size": 4096,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 14,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 1002,
+      "modulus": 10,
+      "quarter_cube_size": 4096,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 14,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 365,
+      "modulus": 11,
+      "quarter_cube_size": 4096,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 14,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 92,
+      "modulus": 12,
+      "quarter_cube_size": 4096,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 14,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 15,
+      "modulus": 13,
+      "quarter_cube_size": 4096,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 14,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 14,
+      "quarter_cube_size": 4096,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 15,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 6995,
+      "modulus": 5,
+      "quarter_cube_size": 8192,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 15,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 6555,
+      "modulus": 6,
+      "quarter_cube_size": 8192,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 15,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 6451,
+      "modulus": 7,
+      "quarter_cube_size": 8192,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 15,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 6436,
+      "modulus": 8,
+      "quarter_cube_size": 8192,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 15,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 5006,
+      "modulus": 9,
+      "quarter_cube_size": 8192,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 15,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 3004,
+      "modulus": 10,
+      "quarter_cube_size": 8192,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 15,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 1366,
+      "modulus": 11,
+      "quarter_cube_size": 8192,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 15,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 456,
+      "modulus": 12,
+      "quarter_cube_size": 8192,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 15,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 106,
+      "modulus": 13,
+      "quarter_cube_size": 8192,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 15,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 16,
+      "modulus": 14,
+      "quarter_cube_size": 8192,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 15,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 15,
+      "quarter_cube_size": 8192,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 16,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 3,
+      "maximum_multilevel_residue_sum": 13990,
+      "modulus": 5,
+      "quarter_cube_size": 16384,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 16,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 13110,
+      "modulus": 6,
+      "quarter_cube_size": 16384,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 16,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 12902,
+      "modulus": 7,
+      "quarter_cube_size": 16384,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 16,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 12872,
+      "modulus": 8,
+      "quarter_cube_size": 16384,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 16,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 11441,
+      "modulus": 9,
+      "quarter_cube_size": 16384,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 16,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 8009,
+      "modulus": 10,
+      "quarter_cube_size": 16384,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 16,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 4369,
+      "modulus": 11,
+      "quarter_cube_size": 16384,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 16,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 1821,
+      "modulus": 12,
+      "quarter_cube_size": 16384,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 16,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 561,
+      "modulus": 13,
+      "quarter_cube_size": 16384,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 16,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 121,
+      "modulus": 14,
+      "quarter_cube_size": 16384,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 16,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 17,
+      "modulus": 15,
+      "quarter_cube_size": 16384,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 16,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 16,
+      "quarter_cube_size": 16384,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 17,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 3,
+      "maximum_multilevel_residue_sum": 27370,
+      "modulus": 5,
+      "quarter_cube_size": 32768,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 17,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 25126,
+      "modulus": 6,
+      "quarter_cube_size": 32768,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 17,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 24463,
+      "modulus": 7,
+      "quarter_cube_size": 32768,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 17,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 24328,
+      "modulus": 8,
+      "quarter_cube_size": 32768,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 17,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 24311,
+      "modulus": 9,
+      "quarter_cube_size": 32768,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 17,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 19449,
+      "modulus": 10,
+      "quarter_cube_size": 32768,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 17,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 12377,
+      "modulus": 11,
+      "quarter_cube_size": 32768,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 17,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 6189,
+      "modulus": 12,
+      "quarter_cube_size": 32768,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 17,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2381,
+      "modulus": 13,
+      "quarter_cube_size": 32768,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 17,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 681,
+      "modulus": 14,
+      "quarter_cube_size": 32768,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 17,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 137,
+      "modulus": 15,
+      "quarter_cube_size": 32768,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 17,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 18,
+      "modulus": 16,
+      "quarter_cube_size": 32768,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 17,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 17,
+      "quarter_cube_size": 32768,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 18,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 4,
+      "maximum_multilevel_residue_sum": 54740,
+      "modulus": 5,
+      "quarter_cube_size": 65536,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 18,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 3,
+      "maximum_multilevel_residue_sum": 50252,
+      "modulus": 6,
+      "quarter_cube_size": 65536,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 18,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 48926,
+      "modulus": 7,
+      "quarter_cube_size": 65536,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 18,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 48656,
+      "modulus": 8,
+      "quarter_cube_size": 65536,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 18,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 48622,
+      "modulus": 9,
+      "quarter_cube_size": 65536,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 18,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 43759,
+      "modulus": 10,
+      "quarter_cube_size": 65536,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 18,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 31825,
+      "modulus": 11,
+      "quarter_cube_size": 65536,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 18,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 18565,
+      "modulus": 12,
+      "quarter_cube_size": 65536,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 18,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 8569,
+      "modulus": 13,
+      "quarter_cube_size": 65536,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 18,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 3061,
+      "modulus": 14,
+      "quarter_cube_size": 65536,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 18,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 817,
+      "modulus": 15,
+      "quarter_cube_size": 65536,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 18,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 154,
+      "modulus": 16,
+      "quarter_cube_size": 65536,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 18,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 19,
+      "modulus": 17,
+      "quarter_cube_size": 65536,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 18,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 18,
+      "quarter_cube_size": 65536,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 19,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 107883,
+      "modulus": 5,
+      "quarter_cube_size": 131072,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 19,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 3,
+      "maximum_multilevel_residue_sum": 97223,
+      "modulus": 6,
+      "quarter_cube_size": 131072,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 19,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 93518,
+      "modulus": 7,
+      "quarter_cube_size": 131072,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 19,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 92568,
+      "modulus": 8,
+      "quarter_cube_size": 131072,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 19,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 92398,
+      "modulus": 9,
+      "quarter_cube_size": 131072,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 19,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 92379,
+      "modulus": 10,
+      "quarter_cube_size": 131072,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 19,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 75583,
+      "modulus": 11,
+      "quarter_cube_size": 131072,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 19,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 50389,
+      "modulus": 12,
+      "quarter_cube_size": 131072,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 19,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 27133,
+      "modulus": 13,
+      "quarter_cube_size": 131072,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 19,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 11629,
+      "modulus": 14,
+      "quarter_cube_size": 131072,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 19,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 3877,
+      "modulus": 15,
+      "quarter_cube_size": 131072,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 19,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 970,
+      "modulus": 16,
+      "quarter_cube_size": 131072,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 19,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 172,
+      "modulus": 17,
+      "quarter_cube_size": 131072,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 19,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 20,
+      "modulus": 18,
+      "quarter_cube_size": 131072,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 19,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 19,
+      "quarter_cube_size": 131072,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 20,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 215766,
+      "modulus": 5,
+      "quarter_cube_size": 262144,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 20,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 4,
+      "maximum_multilevel_residue_sum": 194446,
+      "modulus": 6,
+      "quarter_cube_size": 262144,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 20,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 3,
+      "maximum_multilevel_residue_sum": 187036,
+      "modulus": 7,
+      "quarter_cube_size": 262144,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 20,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 185136,
+      "modulus": 8,
+      "quarter_cube_size": 262144,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 20,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 184796,
+      "modulus": 9,
+      "quarter_cube_size": 262144,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 20,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 184758,
+      "modulus": 10,
+      "quarter_cube_size": 262144,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 20,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 167961,
+      "modulus": 11,
+      "quarter_cube_size": 262144,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 20,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 125971,
+      "modulus": 12,
+      "quarter_cube_size": 262144,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 20,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 77521,
+      "modulus": 13,
+      "quarter_cube_size": 262144,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 20,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 38761,
+      "modulus": 14,
+      "quarter_cube_size": 262144,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 20,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 15505,
+      "modulus": 15,
+      "quarter_cube_size": 262144,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 20,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 4846,
+      "modulus": 16,
+      "quarter_cube_size": 262144,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 20,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 1141,
+      "modulus": 17,
+      "quarter_cube_size": 262144,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 20,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 191,
+      "modulus": 18,
+      "quarter_cube_size": 262144,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 20,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 21,
+      "modulus": 19,
+      "quarter_cube_size": 262144,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 20,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 20,
+      "quarter_cube_size": 262144,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 21,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 427351,
+      "modulus": 5,
+      "quarter_cube_size": 524288,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 21,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 4,
+      "maximum_multilevel_residue_sum": 379050,
+      "modulus": 6,
+      "quarter_cube_size": 524288,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 21,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 3,
+      "maximum_multilevel_residue_sum": 360031,
+      "modulus": 7,
+      "quarter_cube_size": 524288,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 21,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 354256,
+      "modulus": 8,
+      "quarter_cube_size": 524288,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 21,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 352947,
+      "modulus": 9,
+      "quarter_cube_size": 524288,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 21,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 352738,
+      "modulus": 10,
+      "quarter_cube_size": 524288,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 21,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 352717,
+      "modulus": 11,
+      "quarter_cube_size": 524288,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 21,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 293931,
+      "modulus": 12,
+      "quarter_cube_size": 524288,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 21,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 203491,
+      "modulus": 13,
+      "quarter_cube_size": 524288,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 21,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 116281,
+      "modulus": 14,
+      "quarter_cube_size": 524288,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 21,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 54265,
+      "modulus": 15,
+      "quarter_cube_size": 524288,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 21,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 20350,
+      "modulus": 16,
+      "quarter_cube_size": 524288,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 21,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 5986,
+      "modulus": 17,
+      "quarter_cube_size": 524288,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 21,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 1331,
+      "modulus": 18,
+      "quarter_cube_size": 524288,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 21,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 211,
+      "modulus": 19,
+      "quarter_cube_size": 524288,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 21,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 22,
+      "modulus": 20,
+      "quarter_cube_size": 524288,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 21,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 21,
+      "quarter_cube_size": 524288,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 22,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 854702,
+      "modulus": 5,
+      "quarter_cube_size": 1048576,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 22,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 5,
+      "maximum_multilevel_residue_sum": 758100,
+      "modulus": 6,
+      "quarter_cube_size": 1048576,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 22,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 4,
+      "maximum_multilevel_residue_sum": 720062,
+      "modulus": 7,
+      "quarter_cube_size": 1048576,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 22,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 3,
+      "maximum_multilevel_residue_sum": 708512,
+      "modulus": 8,
+      "quarter_cube_size": 1048576,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 22,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 705894,
+      "modulus": 9,
+      "quarter_cube_size": 1048576,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 22,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 705476,
+      "modulus": 10,
+      "quarter_cube_size": 1048576,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 22,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 705434,
+      "modulus": 11,
+      "quarter_cube_size": 1048576,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 22,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 646647,
+      "modulus": 12,
+      "quarter_cube_size": 1048576,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 22,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 497421,
+      "modulus": 13,
+      "quarter_cube_size": 1048576,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 22,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 319771,
+      "modulus": 14,
+      "quarter_cube_size": 1048576,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 22,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 170545,
+      "modulus": 15,
+      "quarter_cube_size": 1048576,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 22,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 74614,
+      "modulus": 16,
+      "quarter_cube_size": 1048576,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 22,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 26335,
+      "modulus": 17,
+      "quarter_cube_size": 1048576,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 22,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 7316,
+      "modulus": 18,
+      "quarter_cube_size": 1048576,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 22,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 1541,
+      "modulus": 19,
+      "quarter_cube_size": 1048576,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 22,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 232,
+      "modulus": 20,
+      "quarter_cube_size": 1048576,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 22,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 23,
+      "modulus": 21,
+      "quarter_cube_size": 1048576,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 22,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 22,
+      "quarter_cube_size": 1048576,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 23,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 1698458,
+      "modulus": 5,
+      "quarter_cube_size": 2097152,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 23,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 1486675,
+      "modulus": 6,
+      "quarter_cube_size": 2097152,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 23,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 4,
+      "maximum_multilevel_residue_sum": 1394582,
+      "modulus": 7,
+      "quarter_cube_size": 2097152,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 23,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 3,
+      "maximum_multilevel_residue_sum": 1362704,
+      "modulus": 8,
+      "quarter_cube_size": 2097152,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 23,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 1354102,
+      "modulus": 9,
+      "quarter_cube_size": 2097152,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 23,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 1352354,
+      "modulus": 10,
+      "quarter_cube_size": 2097152,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 23,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 1352102,
+      "modulus": 11,
+      "quarter_cube_size": 2097152,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 23,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 1352079,
+      "modulus": 12,
+      "quarter_cube_size": 2097152,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 23,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 1144067,
+      "modulus": 13,
+      "quarter_cube_size": 2097152,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 23,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 817191,
+      "modulus": 14,
+      "quarter_cube_size": 2097152,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 23,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 490315,
+      "modulus": 15,
+      "quarter_cube_size": 2097152,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 23,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 245158,
+      "modulus": 16,
+      "quarter_cube_size": 2097152,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 23,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 100948,
+      "modulus": 17,
+      "quarter_cube_size": 2097152,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 23,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 33650,
+      "modulus": 18,
+      "quarter_cube_size": 2097152,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 23,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 8856,
+      "modulus": 19,
+      "quarter_cube_size": 2097152,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 23,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 1772,
+      "modulus": 20,
+      "quarter_cube_size": 2097152,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 23,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 254,
+      "modulus": 21,
+      "quarter_cube_size": 2097152,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 23,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 24,
+      "modulus": 22,
+      "quarter_cube_size": 2097152,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 23,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 23,
+      "quarter_cube_size": 2097152,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 24,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 3396916,
+      "modulus": 5,
+      "quarter_cube_size": 4194304,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 24,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2973350,
+      "modulus": 6,
+      "quarter_cube_size": 4194304,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 24,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 5,
+      "maximum_multilevel_residue_sum": 2789164,
+      "modulus": 7,
+      "quarter_cube_size": 4194304,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 24,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 4,
+      "maximum_multilevel_residue_sum": 2725408,
+      "modulus": 8,
+      "quarter_cube_size": 4194304,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 24,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 3,
+      "maximum_multilevel_residue_sum": 2708204,
+      "modulus": 9,
+      "quarter_cube_size": 4194304,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 24,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 2704708,
+      "modulus": 10,
+      "quarter_cube_size": 4194304,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 24,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 2704204,
+      "modulus": 11,
+      "quarter_cube_size": 4194304,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 24,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2704158,
+      "modulus": 12,
+      "quarter_cube_size": 4194304,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 24,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2496145,
+      "modulus": 13,
+      "quarter_cube_size": 4194304,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 24,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 1961257,
+      "modulus": 14,
+      "quarter_cube_size": 4194304,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 24,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 1307505,
+      "modulus": 15,
+      "quarter_cube_size": 4194304,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 24,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 735472,
+      "modulus": 16,
+      "quarter_cube_size": 4194304,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 24,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 346105,
+      "modulus": 17,
+      "quarter_cube_size": 4194304,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 24,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 134597,
+      "modulus": 18,
+      "quarter_cube_size": 4194304,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 24,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 42505,
+      "modulus": 19,
+      "quarter_cube_size": 4194304,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 24,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 10627,
+      "modulus": 20,
+      "quarter_cube_size": 4194304,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 24,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2025,
+      "modulus": 21,
+      "quarter_cube_size": 4194304,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 24,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 277,
+      "modulus": 22,
+      "quarter_cube_size": 4194304,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 24,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 25,
+      "modulus": 23,
+      "quarter_cube_size": 4194304,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 24,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 24,
+      "quarter_cube_size": 4194304,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 25,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 6765175,
+      "modulus": 5,
+      "quarter_cube_size": 8388608,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 25,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 5858126,
+      "modulus": 6,
+      "quarter_cube_size": 8388608,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 25,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 5,
+      "maximum_multilevel_residue_sum": 5430530,
+      "modulus": 7,
+      "quarter_cube_size": 8388608,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 25,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 4,
+      "maximum_multilevel_residue_sum": 5266080,
+      "modulus": 8,
+      "quarter_cube_size": 8388608,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 25,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 3,
+      "maximum_multilevel_residue_sum": 5215250,
+      "modulus": 9,
+      "quarter_cube_size": 8388608,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 25,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 5202900,
+      "modulus": 10,
+      "quarter_cube_size": 8388608,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 25,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 5200625,
+      "modulus": 11,
+      "quarter_cube_size": 8388608,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 25,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 5200326,
+      "modulus": 12,
+      "quarter_cube_size": 8388608,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 25,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 5200301,
+      "modulus": 13,
+      "quarter_cube_size": 8388608,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 25,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 4457401,
+      "modulus": 14,
+      "quarter_cube_size": 8388608,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 25,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 3268761,
+      "modulus": 15,
+      "quarter_cube_size": 8388608,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 25,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2042976,
+      "modulus": 16,
+      "quarter_cube_size": 8388608,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 25,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 1081576,
+      "modulus": 17,
+      "quarter_cube_size": 8388608,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 25,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 480701,
+      "modulus": 18,
+      "quarter_cube_size": 8388608,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 25,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 177101,
+      "modulus": 19,
+      "quarter_cube_size": 8388608,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 25,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 53131,
+      "modulus": 20,
+      "quarter_cube_size": 8388608,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 25,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 12651,
+      "modulus": 21,
+      "quarter_cube_size": 8388608,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 25,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2301,
+      "modulus": 22,
+      "quarter_cube_size": 8388608,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 25,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 301,
+      "modulus": 23,
+      "quarter_cube_size": 8388608,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 25,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 26,
+      "modulus": 24,
+      "quarter_cube_size": 8388608,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 25,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 25,
+      "quarter_cube_size": 8388608,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 26,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 3,
+      "maximum_multilevel_residue_sum": 13530350,
+      "modulus": 5,
+      "quarter_cube_size": 16777216,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 26,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 11716252,
+      "modulus": 6,
+      "quarter_cube_size": 16777216,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 26,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 6,
+      "maximum_multilevel_residue_sum": 10861060,
+      "modulus": 7,
+      "quarter_cube_size": 16777216,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 26,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 5,
+      "maximum_multilevel_residue_sum": 10532160,
+      "modulus": 8,
+      "quarter_cube_size": 16777216,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 26,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 4,
+      "maximum_multilevel_residue_sum": 10430500,
+      "modulus": 9,
+      "quarter_cube_size": 16777216,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 26,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 3,
+      "maximum_multilevel_residue_sum": 10405800,
+      "modulus": 10,
+      "quarter_cube_size": 16777216,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 26,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 10401250,
+      "modulus": 11,
+      "quarter_cube_size": 16777216,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 26,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 10400652,
+      "modulus": 12,
+      "quarter_cube_size": 16777216,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 26,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 10400602,
+      "modulus": 13,
+      "quarter_cube_size": 16777216,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 26,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 9657701,
+      "modulus": 14,
+      "quarter_cube_size": 16777216,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 26,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 7726161,
+      "modulus": 15,
+      "quarter_cube_size": 16777216,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 26,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 5311736,
+      "modulus": 16,
+      "quarter_cube_size": 16777216,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 26,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 3124551,
+      "modulus": 17,
+      "quarter_cube_size": 16777216,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 26,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 1562276,
+      "modulus": 18,
+      "quarter_cube_size": 16777216,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 26,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 657801,
+      "modulus": 19,
+      "quarter_cube_size": 16777216,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 26,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 230231,
+      "modulus": 20,
+      "quarter_cube_size": 16777216,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 26,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 65781,
+      "modulus": 21,
+      "quarter_cube_size": 16777216,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 26,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 14951,
+      "modulus": 22,
+      "quarter_cube_size": 16777216,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 26,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2601,
+      "modulus": 23,
+      "quarter_cube_size": 16777216,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 26,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 326,
+      "modulus": 24,
+      "quarter_cube_size": 16777216,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 26,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 27,
+      "modulus": 25,
+      "quarter_cube_size": 16777216,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 26,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 26,
+      "quarter_cube_size": 16777216,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 3,
+      "maximum_multilevel_residue_sum": 26985675,
+      "modulus": 5,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 23166783,
+      "modulus": 6,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 21242341,
+      "modulus": 7,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 5,
+      "maximum_multilevel_residue_sum": 20435040,
+      "modulus": 8,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 4,
+      "maximum_multilevel_residue_sum": 20156580,
+      "modulus": 9,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 3,
+      "maximum_multilevel_residue_sum": 20078775,
+      "modulus": 10,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 20061576,
+      "modulus": 11,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 20058678,
+      "modulus": 12,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 20058328,
+      "modulus": 13,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 20058301,
+      "modulus": 14,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 17383861,
+      "modulus": 15,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 13037896,
+      "modulus": 16,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 8436286,
+      "modulus": 17,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 4686826,
+      "modulus": 18,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2220076,
+      "modulus": 19,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 888031,
+      "modulus": 20,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 296011,
+      "modulus": 21,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 80731,
+      "modulus": 22,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 17551,
+      "modulus": 23,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2926,
+      "modulus": 24,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 352,
+      "modulus": 25,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 28,
+      "modulus": 26,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 27,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 27,
+      "quarter_cube_size": 33554432,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 4,
+      "maximum_multilevel_residue_sum": 53971350,
+      "modulus": 5,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 46333566,
+      "modulus": 6,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 42484682,
+      "modulus": 7,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 6,
+      "maximum_multilevel_residue_sum": 40870080,
+      "modulus": 8,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 5,
+      "maximum_multilevel_residue_sum": 40313160,
+      "modulus": 9,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 4,
+      "maximum_multilevel_residue_sum": 40157550,
+      "modulus": 10,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 3,
+      "maximum_multilevel_residue_sum": 40123152,
+      "modulus": 11,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 40117356,
+      "modulus": 12,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 40116656,
+      "modulus": 13,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 40116602,
+      "modulus": 14,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 37442161,
+      "modulus": 15,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 30421756,
+      "modulus": 16,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 21474181,
+      "modulus": 17,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 13123111,
+      "modulus": 18,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 6906901,
+      "modulus": 19,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 3108106,
+      "modulus": 20,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 1184041,
+      "modulus": 21,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 376741,
+      "modulus": 22,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 98281,
+      "modulus": 23,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 20476,
+      "modulus": 24,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 3277,
+      "modulus": 25,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 379,
+      "modulus": 26,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 29,
+      "modulus": 27,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 28,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 28,
+      "quarter_cube_size": 67108864,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 107746282,
+      "modulus": 5,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 91869970,
+      "modulus": 6,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 83411715,
+      "modulus": 7,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 6,
+      "maximum_multilevel_residue_sum": 79594560,
+      "modulus": 8,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 5,
+      "maximum_multilevel_residue_sum": 78152535,
+      "modulus": 9,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 4,
+      "maximum_multilevel_residue_sum": 77701266,
+      "modulus": 10,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 3,
+      "maximum_multilevel_residue_sum": 77586165,
+      "modulus": 11,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 77562820,
+      "modulus": 12,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 77559195,
+      "modulus": 13,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 77558790,
+      "modulus": 14,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 77558761,
+      "modulus": 15,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 67863916,
+      "modulus": 16,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 51895936,
+      "modulus": 17,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 34597291,
+      "modulus": 18,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 20030011,
+      "modulus": 19,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 10015006,
+      "modulus": 20,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 4292146,
+      "modulus": 21,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 1560781,
+      "modulus": 22,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 475021,
+      "modulus": 23,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 118756,
+      "modulus": 24,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 23752,
+      "modulus": 25,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 3655,
+      "modulus": 26,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 407,
+      "modulus": 27,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 30,
+      "modulus": 28,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 29,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 29,
+      "quarter_cube_size": 134217728,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 215492564,
+      "modulus": 5,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 3,
+      "maximum_multilevel_residue_sum": 183739940,
+      "modulus": 6,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 166823430,
+      "modulus": 7,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 7,
+      "maximum_multilevel_residue_sum": 159189120,
+      "modulus": 8,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 6,
+      "maximum_multilevel_residue_sum": 156305070,
+      "modulus": 9,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 5,
+      "maximum_multilevel_residue_sum": 155402532,
+      "modulus": 10,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 4,
+      "maximum_multilevel_residue_sum": 155172330,
+      "modulus": 11,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 3,
+      "maximum_multilevel_residue_sum": 155125640,
+      "modulus": 12,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 155118390,
+      "modulus": 13,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 155117580,
+      "modulus": 14,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 155117522,
+      "modulus": 15,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 145422676,
+      "modulus": 16,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 119759851,
+      "modulus": 17,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 86493226,
+      "modulus": 18,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 54627301,
+      "modulus": 19,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 30045016,
+      "modulus": 20,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 14307151,
+      "modulus": 21,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 5852926,
+      "modulus": 22,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2035801,
+      "modulus": 23,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 593776,
+      "modulus": 24,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 142507,
+      "modulus": 25,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 27406,
+      "modulus": 26,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 4061,
+      "modulus": 27,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 436,
+      "modulus": 28,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 31,
+      "modulus": 29,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 30,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 30,
+      "quarter_cube_size": 268435456,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 430470899,
+      "modulus": 5,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 3,
+      "maximum_multilevel_residue_sum": 365088395,
+      "modulus": 6,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 328589491,
+      "modulus": 7,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 311058496,
+      "modulus": 8,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 6,
+      "maximum_multilevel_residue_sum": 303906051,
+      "modulus": 9,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 5,
+      "maximum_multilevel_residue_sum": 301446387,
+      "modulus": 10,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 4,
+      "maximum_multilevel_residue_sum": 300741571,
+      "modulus": 11,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 3,
+      "maximum_multilevel_residue_sum": 300576155,
+      "modulus": 12,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 300545155,
+      "modulus": 13,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 300540691,
+      "modulus": 14,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 300540227,
+      "modulus": 15,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 300540196,
+      "modulus": 16,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 265182526,
+      "modulus": 17,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 206253076,
+      "modulus": 18,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 141120526,
+      "modulus": 19,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 84672316,
+      "modulus": 20,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 44352166,
+      "modulus": 21,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 20160076,
+      "modulus": 22,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 7888726,
+      "modulus": 23,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2629576,
+      "modulus": 24,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 736282,
+      "modulus": 25,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 169912,
+      "modulus": 26,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 31466,
+      "modulus": 27,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 4496,
+      "modulus": 28,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 466,
+      "modulus": 29,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 32,
+      "modulus": 30,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 31,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 31,
+      "quarter_cube_size": 536870912,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 860941798,
+      "modulus": 5,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 4,
+      "maximum_multilevel_residue_sum": 730176790,
+      "modulus": 6,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 657178982,
+      "modulus": 7,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 622116992,
+      "modulus": 8,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 7,
+      "maximum_multilevel_residue_sum": 607812102,
+      "modulus": 9,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 6,
+      "maximum_multilevel_residue_sum": 602892774,
+      "modulus": 10,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 5,
+      "maximum_multilevel_residue_sum": 601483142,
+      "modulus": 11,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 4,
+      "maximum_multilevel_residue_sum": 601152310,
+      "modulus": 12,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 3,
+      "maximum_multilevel_residue_sum": 601090310,
+      "modulus": 13,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 2,
+      "maximum_multilevel_residue_sum": 601081382,
+      "modulus": 14,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 1,
+      "maximum_multilevel_residue_sum": 601080454,
+      "modulus": 15,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 601080392,
+      "modulus": 16,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 565722721,
+      "modulus": 17,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 471435601,
+      "modulus": 18,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 347373601,
+      "modulus": 19,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 225792841,
+      "modulus": 20,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 129024481,
+      "modulus": 21,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 64512241,
+      "modulus": 22,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 28048801,
+      "modulus": 23,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 10518301,
+      "modulus": 24,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 3365857,
+      "modulus": 25,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 906193,
+      "modulus": 26,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 201377,
+      "modulus": 27,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 35961,
+      "modulus": 28,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 4961,
+      "modulus": 29,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 497,
+      "modulus": 30,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 33,
+      "modulus": 31,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    },
+    {
+      "bit_width": 32,
+      "every_multilevel_residue_strictly_below_quarter": true,
+      "maximizing_residue": 0,
+      "maximum_multilevel_residue_sum": 2,
+      "modulus": 32,
+      "quarter_cube_size": 1073741824,
+      "status": "multilevel-binomial-residue-below-quarter"
+    }
+  ],
+  "claim_gate": {
+    "all_nonsystematic_stopping_codes_controlled": false,
+    "bounded_index_nonabelian_residual_escape_open": true,
+    "growing_abelian_smith_torsion_escape_survives": false,
+    "natural_component_M4_positive": false,
+    "no_information_set_forces_cyclic_incidence_quotient": true,
+    "rank_deficient_all_depth_escape_survives": false,
+    "reason": "The abelian incidence quotient is bounded, but its nonabelian ordered-presentation kernel is not yet classified.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:24:19.160343+00:00",
+  "falsifiers_triggered": [
+    "The incidence quotient cannot have multiple independent Smith factors.",
+    "Its finite order cannot grow beyond four asymptotically.",
+    "Rank-deficient normalized families cannot persist beyond width eight."
+  ],
+  "headline_metrics": {
+    "all_depth_incidence_lattice_bound_theorem_count": 1,
+    "anticoncentration_case_count": 406,
+    "anticoncentration_failure_count": 0,
+    "full_rank_maximum_lattice_index": 4,
+    "maximum_realized_finite_index": 4,
+    "new_quantum_algorithm_count": 0,
+    "rank_deficient_maximum_width": 8,
+    "representative_index_control_count": 4
+  },
+  "proof_obligations": [
+    {
+      "obligation": "bound_normalized_nonsystematic_incidence_torsion",
+      "resolution": "The cyclic quotient has order at most four for n>=9.",
+      "resolved": true
+    },
+    {
+      "obligation": "exclude_rank_deficient_all_depth_family",
+      "resolution": "Central-binomial anticoncentration confines infinite quotient controls to n<=8.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_nonabelian_ordered_presentation_rank",
+      "resolution": "Bound the commutator-subgroup kernel after the cyclic abelian quotient reduction, or construct a growing-rank family.",
+      "resolved": false
+    }
+  ],
+  "representative_controls": [
+    {
+      "all_coordinate_pairs_covered": true,
+      "code_size": 8,
+      "code_width": 5,
+      "control_id": "INDEX-TWO-TWISTED-STAR",
+      "distance_two_coordinate_pair_count": 10,
+      "exact_control_verified": true,
+      "finite_lattice_index": 2,
+      "has_dimension_sized_information_set": false,
+      "integer_incidence_rank": 5,
+      "minimum_distance": 2,
+      "nonzero_smith_invariants": [
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      "quotient_kind": "finite-cyclic",
+      "signed_congruence_modulus": 2,
+      "signed_congruence_vector": [
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "signed_relation_verified": true,
+      "status": "cyclic-incidence-quotient-verified"
+    },
+    {
+      "all_coordinate_pairs_covered": true,
+      "code_size": 8,
+      "code_width": 5,
+      "control_id": "INDEX-THREE",
+      "distance_two_coordinate_pair_count": 10,
+      "exact_control_verified": true,
+      "finite_lattice_index": 3,
+      "has_dimension_sized_information_set": false,
+      "integer_incidence_rank": 5,
+      "minimum_distance": 2,
+      "nonzero_smith_invariants": [
+        1,
+        1,
+        1,
+        1,
+        3
+      ],
+      "quotient_kind": "finite-cyclic",
+      "signed_congruence_modulus": 3,
+      "signed_congruence_vector": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "signed_relation_verified": true,
+      "status": "cyclic-incidence-quotient-verified"
+    },
+    {
+      "all_coordinate_pairs_covered": true,
+      "code_size": 16,
+      "code_width": 6,
+      "control_id": "INDEX-FOUR-MOD-FOUR",
+      "distance_two_coordinate_pair_count": 15,
+      "exact_control_verified": true,
+      "finite_lattice_index": 4,
+      "has_dimension_sized_information_set": false,
+      "integer_incidence_rank": 6,
+      "minimum_distance": 2,
+      "nonzero_smith_invariants": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        4
+      ],
+      "quotient_kind": "finite-cyclic",
+      "signed_congruence_modulus": 4,
+      "signed_congruence_vector": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "signed_relation_verified": true,
+      "status": "cyclic-incidence-quotient-verified"
+    },
+    {
+      "all_coordinate_pairs_covered": true,
+      "code_size": 8,
+      "code_width": 5,
+      "control_id": "RANK-DEFICIENT-SIGNED-LAYER",
+      "distance_two_coordinate_pair_count": 10,
+      "exact_control_verified": true,
+      "finite_lattice_index": null,
+      "has_dimension_sized_information_set": false,
+      "integer_incidence_rank": 4,
+      "minimum_distance": 2,
+      "nonzero_smith_invariants": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "quotient_kind": "infinite-cyclic",
+      "signed_congruence_modulus": null,
+      "signed_congruence_vector": [
+        1,
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "signed_relation_verified": true,
+      "status": "cyclic-incidence-quotient-verified"
+    }
+  ],
+  "status": "growing-incidence-torsion-escape-falsified",
+  "summary": "Proved that every all-depth normalized codimension-two no-information-set family has cyclic incidence torsion of order at most four.",
+  "theorem_contract": {
+    "asymptotic_bound": "For n>=9 the lattice has full rank and finite index at most four.",
+    "quotient_classification": "Pair coverage forces the incidence quotient to be cyclic.",
+    "research_consequence": "No all-depth candidate can obtain vanishing loss merely from a growing Smith invariant of the codeword incidence lattice.",
+    "scope": "0 in C subset F_2^n, |C|=2^(n-2), minimum distance at least two, and no injective projection onto n-2 coordinates",
+    "scope_limit": "Unnormalized supports and nonabelian residual presentation rank are not controlled by this abelian theorem."
+  }
+}

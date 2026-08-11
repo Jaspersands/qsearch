@@ -1,0 +1,423 @@
+{
+  "adversarial_audit": [
+    {
+      "challenge": "Scalar action is the missing property in DHSP.",
+      "response": "DHSP already has scalar action; it lacks a complement prime comparable to the Abelian exponent.",
+      "survives": false
+    },
+    {
+      "challenge": "k DCP copies automatically provide 2^k HMS shifts.",
+      "response": "They provide a weighted subset-sum phase state, but the multiplier is encoded through Boolean preimages. Forward computation without fiber compression leaves signal-killing garbage.",
+      "survives": false
+    },
+    {
+      "challenge": "Fresh multiplier sets prevent the HMS Fourier measurement.",
+      "response": "The proof is samplewise and tolerates known R_i varying. This removes a false blocker and isolates coherent fiber compression as the actual missing operation.",
+      "survives": false
+    },
+    {
+      "challenge": "Subset-sum collisions necessarily reduce phase information.",
+      "response": "The covariant PGM success depends on (sum_h sqrt(eta_h))^2/(q 2^k); uniform collision multiplicities can give perfect distinguishability.",
+      "survives": false
+    },
+    {
+      "challenge": "Large expected collision count proves every instance collides.",
+      "response": "Only the exact expectation is proved. No tail or worst-case claim is promoted from it.",
+      "survives": false
+    },
+    {
+      "challenge": "The new theorem proves no algorithm exists when E/p is large.",
+      "response": "Its expression is an upper bound and an efficient-regime certificate, not an optimality lower bound.",
+      "survives": false
+    },
+    {
+      "challenge": "Crossed isomorphism alone preserves HSP cosets.",
+      "response": "The cited transfer also needs every twist to be a subgroup-fixing power automorphism, plus efficient structured input.",
+      "survives": false
+    }
+  ],
+  "claim_gate": {
+    "coherent_dense_subset_sum_fiber_erasure_constructed": false,
+    "dcp_tensor_copies_form_fixed_hms_oracle": false,
+    "morales_theorem_directly_solves_dhsp": false,
+    "quasi_hamiltonian_transfer_applies_to_general_dhsp": false,
+    "reason": "The useful resource is a large coherent multiplier register. Varying known sets are allowed, but DCP copies expose them only through dense subset-sum fibers. Compressing those fibers is the unresolved PGM operation rather than a completed reduction.",
+    "scalarity_alone_is_sufficient": false,
+    "shift_multiplicity_candidate_passes_proof_gate": false,
+    "speedup_claim_allowed": false,
+    "state_level_subset_sum_phase_identity_proved": true,
+    "varying_R_fourier_sampling_transfer_proved": true
+  },
+  "created_at": "2026-08-11T15:26:07.266455+00:00",
+  "dcp_scaling_records": [
+    {
+      "apparent_branch_count_log2": 16,
+      "copy_count": 16,
+      "exact_frequency_reuse_cost_log2": 480,
+      "expected_collision_pairs_log2": -1.0000220139472624,
+      "free_hms_amplification_certified": false,
+      "hms_polylog_shift_count_target_met": false,
+      "input_bits": 32,
+      "low_collision_expectation": true,
+      "modulus_to_branch_ratio_log2": 16,
+      "status": "low-collision-but-exponential-ratio"
+    },
+    {
+      "apparent_branch_count_log2": 22,
+      "copy_count": 22,
+      "exact_frequency_reuse_cost_log2": 672,
+      "expected_collision_pairs_log2": 10.99999965603466,
+      "free_hms_amplification_certified": false,
+      "hms_polylog_shift_count_target_met": true,
+      "input_bits": 32,
+      "low_collision_expectation": false,
+      "modulus_to_branch_ratio_log2": 10,
+      "status": "polylog-ratio-but-high-collision-random-subset-sum"
+    },
+    {
+      "apparent_branch_count_log2": 32,
+      "copy_count": 32,
+      "exact_frequency_reuse_cost_log2": 1984,
+      "expected_collision_pairs_log2": -1.000000000335902,
+      "free_hms_amplification_certified": false,
+      "hms_polylog_shift_count_target_met": false,
+      "input_bits": 64,
+      "low_collision_expectation": true,
+      "modulus_to_branch_ratio_log2": 32,
+      "status": "low-collision-but-exponential-ratio"
+    },
+    {
+      "apparent_branch_count_log2": 52,
+      "copy_count": 52,
+      "exact_frequency_reuse_cost_log2": 3264,
+      "expected_collision_pairs_log2": 39.0,
+      "free_hms_amplification_certified": false,
+      "hms_polylog_shift_count_target_met": true,
+      "input_bits": 64,
+      "low_collision_expectation": false,
+      "modulus_to_branch_ratio_log2": 12,
+      "status": "polylog-ratio-but-high-collision-random-subset-sum"
+    },
+    {
+      "apparent_branch_count_log2": 64,
+      "copy_count": 64,
+      "exact_frequency_reuse_cost_log2": 8064,
+      "expected_collision_pairs_log2": -1.0,
+      "free_hms_amplification_certified": false,
+      "hms_polylog_shift_count_target_met": false,
+      "input_bits": 128,
+      "low_collision_expectation": true,
+      "modulus_to_branch_ratio_log2": 64,
+      "status": "low-collision-but-exponential-ratio"
+    },
+    {
+      "apparent_branch_count_log2": 114,
+      "copy_count": 114,
+      "exact_frequency_reuse_cost_log2": 14464,
+      "expected_collision_pairs_log2": 99.0,
+      "free_hms_amplification_certified": false,
+      "hms_polylog_shift_count_target_met": true,
+      "input_bits": 128,
+      "low_collision_expectation": false,
+      "modulus_to_branch_ratio_log2": 14,
+      "status": "polylog-ratio-but-high-collision-random-subset-sum"
+    }
+  ],
+  "dcp_tensor_controls": [
+    {
+      "branch_count": 16,
+      "coherent_forward_subset_sum_map_available": true,
+      "coherent_inverse_subset_sum_map_available": true,
+      "collision_expectation_log2": -1.0987339535853595,
+      "collision_pair_count": 0,
+      "control_id": "injective-powers-of-two",
+      "copy_count": 4,
+      "direct_product_oracle_branch_rank": 4,
+      "distinct_subset_sum_count": 16,
+      "exact_normalized_frequency_reuse_probability": 5.891157449253717e-08,
+      "expected_collision_pair_count_for_uniform_frequencies": 0.4669260700389105,
+      "fixed_shift_set_across_fresh_samples": false,
+      "frequencies": [
+        1,
+        2,
+        4,
+        8
+      ],
+      "modulus": 257,
+      "oracle_level_hms_lift_possible": false,
+      "relabelled_hms_phase_identity_verified": true,
+      "scalar_hms_oracle_branch_rank": 1,
+      "status": "state-level-hms-phase-relabeling-available",
+      "subset_sum_map_injective": true
+    },
+    {
+      "branch_count": 16,
+      "coherent_forward_subset_sum_map_available": true,
+      "coherent_inverse_subset_sum_map_available": false,
+      "collision_expectation_log2": 2.819427754358179,
+      "collision_pair_count": 3,
+      "control_id": "explicit-collision-fiber",
+      "copy_count": 4,
+      "direct_product_oracle_branch_rank": 4,
+      "distinct_subset_sum_count": 13,
+      "exact_normalized_frequency_reuse_probability": 0.0002035416242621616,
+      "expected_collision_pair_count_for_uniform_frequencies": 7.0588235294117645,
+      "fixed_shift_set_across_fresh_samples": false,
+      "frequencies": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "modulus": 17,
+      "oracle_level_hms_lift_possible": false,
+      "relabelled_hms_phase_identity_verified": false,
+      "scalar_hms_oracle_branch_rank": 1,
+      "status": "subset-sum-fiber-collisions-retain-garbage",
+      "subset_sum_map_injective": false
+    },
+    {
+      "branch_count": 16,
+      "coherent_forward_subset_sum_map_available": true,
+      "coherent_inverse_subset_sum_map_available": false,
+      "collision_expectation_log2": -1.0987339535853595,
+      "collision_pair_count": 0,
+      "control_id": "generic-low-density",
+      "copy_count": 4,
+      "direct_product_oracle_branch_rank": 4,
+      "distinct_subset_sum_count": 16,
+      "exact_normalized_frequency_reuse_probability": 5.891157449253717e-08,
+      "expected_collision_pair_count_for_uniform_frequencies": 0.4669260700389105,
+      "fixed_shift_set_across_fresh_samples": false,
+      "frequencies": [
+        13,
+        71,
+        104,
+        219
+      ],
+      "modulus": 257,
+      "oracle_level_hms_lift_possible": false,
+      "relabelled_hms_phase_identity_verified": true,
+      "scalar_hms_oracle_branch_rank": 1,
+      "status": "injective-phase-identity-without-efficient-inverse",
+      "subset_sum_map_injective": true
+    }
+  ],
+  "falsifiers_triggered": [
+    "DHSP already has scalar action but E/p=N/2.",
+    "Direct-product DCP oracle branches span rank k, not one scalar orbit.",
+    "Fresh multiplier sets are not a blocker for samplewise Fourier sampling.",
+    "Forward subset-sum computation retains orthogonal preimage garbage and yields only 1/N target probability.",
+    "The exact expected collision count becomes exponential in the polylog-ratio regime.",
+    "Coherent dense subset-sum fiber erasure has not been constructed.",
+    "General dihedral reflection subgroups need not be permutable.",
+    "The quasi-Hamiltonian algorithm assumes structured Sylow data and does not solve black-box recognition."
+  ],
+  "headline_metrics": {
+    "coherent_subset_sum_fiber_compression_count": 0,
+    "coset_preserving_crossed_transfer_mechanism_count": 1,
+    "dcp_polynomial_algorithm_count": 0,
+    "dcp_resource_controls_outside_explicit_envelope": 2,
+    "exact_tensor_control_failure_count": 0,
+    "hms_resource_control_count": 4,
+    "maximum_uniform_collision_expectation_log2": 99.0,
+    "new_quantum_algorithm_count": 0,
+    "polylog_ratio_high_collision_scaling_count": 3,
+    "tensor_phase_control_count": 3,
+    "varying_set_fourier_sampling_transfer_count": 1
+  },
+  "hms_resource_controls": [
+    {
+      "asymptotic_family_certificate_supplied": false,
+      "compatible_scalar_action_instance_constructed": true,
+      "control_id": "dcp-2-power-16",
+      "dominant_rank_factor_log2": 15.0,
+      "explicit_polylog_power": 2,
+      "exponent_to_shift_ratio": 32768.0,
+      "generator_rank": 1,
+      "input_size_proxy_bits": 17,
+      "interpretation": "Dihedral scalar action mu=-1; E/p=2^15, so the cited HMS theorem does not certify polynomial time.",
+      "modulus": 65536,
+      "paper_parameter_regime_satisfied": false,
+      "satisfies_explicit_polylog_envelope": false,
+      "scalar_action_alone_certifies_efficiency": false,
+      "shift_count": 2,
+      "status": "outside-or-uncertified-hms-efficient-envelope"
+    },
+    {
+      "asymptotic_family_certificate_supplied": false,
+      "compatible_scalar_action_instance_constructed": true,
+      "control_id": "dcp-2-power-32",
+      "dominant_rank_factor_log2": 31.0,
+      "explicit_polylog_power": 2,
+      "exponent_to_shift_ratio": 2147483648.0,
+      "generator_rank": 1,
+      "input_size_proxy_bits": 33,
+      "interpretation": "The dihedral ratio grows exponentially in the bit length despite bounded rank and scalarity.",
+      "modulus": 4294967296,
+      "paper_parameter_regime_satisfied": false,
+      "satisfies_explicit_polylog_envelope": false,
+      "scalar_action_alone_certifies_efficiency": false,
+      "shift_count": 2,
+      "status": "outside-or-uncertified-hms-efficient-envelope"
+    },
+    {
+      "asymptotic_family_certificate_supplied": false,
+      "compatible_scalar_action_instance_constructed": true,
+      "control_id": "safe-prime-cyclic-47-23",
+      "dominant_rank_factor_log2": 1.0310268956206246,
+      "explicit_polylog_power": 2,
+      "exponent_to_shift_ratio": 2.0434782608695654,
+      "generator_rank": 1,
+      "input_size_proxy_bits": 11,
+      "interpretation": "A finite cyclic scalar-action control with a prime-order automorphism and E/p close to two.",
+      "modulus": 47,
+      "paper_parameter_regime_satisfied": true,
+      "satisfies_explicit_polylog_envelope": true,
+      "scalar_action_alone_certifies_efficiency": false,
+      "shift_count": 23,
+      "status": "inside-explicit-hms-efficient-envelope"
+    },
+    {
+      "asymptotic_family_certificate_supplied": false,
+      "compatible_scalar_action_instance_constructed": false,
+      "control_id": "conditional-bounded-rank-polylog-envelope",
+      "dominant_rank_factor_log2": 27.509791514692914,
+      "explicit_polylog_power": 2,
+      "exponent_to_shift_ratio": 576.0021972740069,
+      "generator_rank": 3,
+      "input_size_proxy_bits": 87,
+      "interpretation": "Arithmetic envelope only: it illustrates the paper's ratio condition but does not assert existence of a matching group action.",
+      "modulus": 16777216,
+      "paper_parameter_regime_satisfied": false,
+      "satisfies_explicit_polylog_envelope": true,
+      "scalar_action_alone_certifies_efficiency": false,
+      "shift_count": 29127,
+      "status": "outside-or-uncertified-hms-efficient-envelope"
+    }
+  ],
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "MORALES-2026-SEMIDIRECT-QUASI-HAMILTONIAN",
+      "title": "The Hidden Subgroup Problem in Semidirect Products and Quasi-Hamiltonian Groups",
+      "url": "https://arxiv.org/abs/2608.05321",
+      "use": "Scalar-action HMS reduction, cyclic block measurement, and coset-preserving crossed-isomorphism mechanism"
+    },
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "IVANYOS-PRAKASH-SANTHA-2018-HMS",
+      "title": "On learning linear functions from subset and its applications in quantum computing",
+      "url": "https://arxiv.org/abs/1806.09660",
+      "use": "HMS(q,n,r) running-time theorem"
+    },
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "BACON-CHILDS-VAN-DAM-2005",
+      "title": "From optimal measurement to efficient quantum algorithms for the hidden subgroup problem over semidirect product groups",
+      "url": "https://arxiv.org/abs/quant-ph/0504083",
+      "use": "PGM/subset-sum origin of the cyclic semidirect boundary"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "separate_scalarity_from_shift_multiplicity",
+      "resolution": "The DCP specialization has scalar action but E/p=N/2, outside the cited efficient regime.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_tensor_phase_state_identity",
+      "resolution": "Tensor expansion gives the Boolean subset-sum phase map exactly.",
+      "resolved": true
+    },
+    {
+      "obligation": "quantify_random_subset_sum_fiber_pressure",
+      "resolution": "Pairwise conditioning proves exact expected collisions binom(2^k,2)/N; no unproved concentration claim is used.",
+      "resolved": true
+    },
+    {
+      "obligation": "construct_reusable_large_R_dcp_oracle_or_state_source",
+      "resolution": "Fresh Fourier labels change R, and dense relabeling retains the random subset-sum inversion/fiber bottleneck.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_varying_R_hms_algorithm",
+      "resolution": "The cited Fourier-sampling proof extends samplewise to arbitrary known R_i, with correct-equation probability |R_i|/q. The separate LFS reduction is not generalized here.",
+      "resolved": true
+    },
+    {
+      "obligation": "implement_weighted_subset_sum_fiber_compression",
+      "resolution": "Forward computation leaves the Boolean preimage register; the required polar/coisometry is the DCP PGM operation.",
+      "resolved": false
+    },
+    {
+      "obligation": "find_coset_preserving_transport_for_hard_hsp_family",
+      "resolution": "The quasi-Hamiltonian crossed map is valid under its promise, but general dihedral reflection subgroups fail permutability.",
+      "resolved": false
+    }
+  ],
+  "quasi_hamiltonian_controls": [
+    {
+      "abelian_target_group": true,
+      "arbitrary_black_box_recognition_solved": false,
+      "control_id": "paper-quasi-hamiltonian-structured-input",
+      "efficient_crossed_bijection_supplied": true,
+      "every_twist_fixes_every_subgroup": true,
+      "one_sided_cosets_preserved": true,
+      "status": "coset-preserving-crossed-transfer-certified-by-cited-theorem",
+      "structured_sylow_input_supplied": true,
+      "subgroup_lattice_preserved": true,
+      "transfer_to_abelian_hsp_certified": true
+    },
+    {
+      "abelian_target_group": false,
+      "arbitrary_black_box_recognition_solved": false,
+      "control_id": "general-dihedral-reflection-hsp",
+      "efficient_crossed_bijection_supplied": false,
+      "every_twist_fixes_every_subgroup": false,
+      "one_sided_cosets_preserved": false,
+      "status": "nonpermutable-reflection-control-blocks-quasi-hamiltonian-transfer",
+      "structured_sylow_input_supplied": false,
+      "subgroup_lattice_preserved": false,
+      "transfer_to_abelian_hsp_certified": false
+    }
+  ],
+  "replacement_hypothesis": {
+    "candidate_id": "HYP-SHIFT-MULTIPLICITY-AMPLIFICATION",
+    "falsifier": "The proposed extra shift labels retain an orthogonal subset-sum preimage register, require generic fiber ranking/unranking, or consume Omega(|R|) new oracle calls.",
+    "high_upside_reason": "It isolates the resource that separates currently efficient large-complement semidirect HSPs from DHSP.",
+    "hypothesis": "A natural hard hidden-shift/HSP family admits a coherent multiplier register of effective size E/polylog(E), with a source-aware fiber compression that avoids generic dense subset-sum inversion.",
+    "proof_gate_passed": false,
+    "required_experiment": "Construct the oracle transformation and audit every query, then prove inverse-polynomial success and compare against dense subset-sum and Kuperberg/Regev baselines."
+  },
+  "status": "semidirect-hms-transfer-boundary-active",
+  "summary": "Audited the newest scalar-action and quasi-Hamiltonian HSP mechanisms. They isolate shift multiplicity and coset-preserving crossed transport as high-upside resources, while exact controls show that neither is currently available for general DHSP.",
+  "theorem": {
+    "collision_expectation_proved": true,
+    "dcp_polynomial_algorithm_constructed": false,
+    "dcp_specialization_statement": "For D_N=Z_N semidirect Z_2, scalarity holds but p=2 and E_Q=N, so E_Q/p=N/2. The cited theorem therefore does not certify polynomial-time DHSP. This is not a lower bound on all DHSP algorithms or all measurements.",
+    "exact_collision_expectation": "For uniform independent x_i in Z_N, the expected number of unordered colliding Boolean pairs under L_x is exactly binom(2^k,2)/N. This expectation alone is not asserted as a tail bound.",
+    "hms_resource_statement": "The cited scalar-action reduction produces HMS(E_Q,m,p) with time poly(m,log E_Q)(E_Q/p)^(m+O(1)); bounded rank and a polylogarithmic E_Q/p ratio are separate hypotheses.",
+    "oracle_level_rank_obstruction": "The 2^k branches of the direct product of k DCP oracles translate k independent coordinates by Boolean vectors spanning rank k. A scalar HMS oracle translates one hidden vector by a cyclic rank-one multiplier set. For k>=2 the direct product is not an oracle-level scalar HMS instance.",
+    "oracle_level_rank_obstruction_proved": true,
+    "quasi_hamiltonian_transfer_statement": "Under the paper's structured Sylow input, a crossed bijection whose twists are power automorphisms induces a subgroup-lattice projectivity and preserves the required one-sided cosets, transporting the HSP to an efficiently coordinatized Abelian group.",
+    "status": "semidirect-hms-transfer-boundary-proved",
+    "tensor_phase_identity": "Conditioned on Fourier labels x_1,...,x_k, k DCP phase copies equal 2^(-k/2) sum_b omega^(s L_x(b))|b>, where L_x(b)=sum_i b_i x_i mod N. An injective coherently reversible L_x relabels this one state to an HMS phase state on im(L_x).",
+    "tensor_phase_identity_proved": true,
+    "theorem_scope_limit": "No optimality lower bound is claimed for HMS or DHSP. A future algorithm could exploit source fibers or a different coset-preserving transport. The varying-set Fourier step is available; the missing operation is an efficient source-to-fiber compression.",
+    "theorem_verified": true,
+    "varying_multiplier_set_statement": "The basic HMS Fourier-sampling proof is samplewise: for any known set R_i, inverse QFT returns the correct inner product with probability |R_i|/q. Therefore known multiplier sets may vary between samples. Exact normalized-frequency reuse has probability N^(-(k-1)) over prime N but is not required by this branch. DCP still needs coherent subset-sum fiber compression to expose the multiplier register without orthogonal preimage garbage.",
+    "varying_set_fourier_sampling_transfer_proved": true
+  },
+  "theorem_contract": {
+    "required_breakthrough": "coherently expose a large weighted multiplier register without solving the same dense subset-sum fiber-compression problem",
+    "resource_parameters": [
+      "Abelian quotient exponent E_Q",
+      "available shift count p",
+      "quotient generator rank m",
+      "oracle-level consistency of the shift labels"
+    ],
+    "source_result": "Morales 2026 scalar-action and quasi-Hamiltonian HSP algorithms",
+    "transfer_target": "dihedral hidden shift and other hard semidirect HSPs"
+  }
+}

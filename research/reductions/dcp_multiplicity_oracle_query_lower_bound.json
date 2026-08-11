@@ -1,0 +1,397 @@
+{
+  "adversarial_audit": [
+    {
+      "challenge": "Knowing one witness might make collision detection easy.",
+      "response": "After removing the known position, deciding whether another preimage exists is exactly OR on M unknown bits.",
+      "survives": true
+    },
+    {
+      "challenge": "A coherent filter is weaker than outputting the hidden preimage.",
+      "response": "Only bounded-error distinction is needed; a constant-gap filter followed by a flag measurement already solves OR.",
+      "survives": true
+    },
+    {
+      "challenge": "The lower bound proves DCP multiplicity hard.",
+      "response": "No. It proves only the generic oracle boundary. Modular linearity and two-adic carries may support a non-black-box algorithm.",
+      "survives": false
+    }
+  ],
+  "claim_gate": {
+    "explicit_subset_sum_query_lower_bound_proved": false,
+    "general_dcp_measurement_lower_bound_proved": false,
+    "generic_collision_walk_route_open": false,
+    "generic_equality_oracle_multiplicity_filter_polynomial": false,
+    "reason": "Singleton-versus-doubleton discrimination with only equality access contains unstructured search and needs exponential queries. A surviving proposal must name the arithmetic label structure it exploits.",
+    "source_aware_arithmetic_collision_route_open": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:23:10.806574+00:00",
+  "falsifiers_triggered": [
+    "A known witness does not make generic second-preimage detection polynomial.",
+    "A target-addressable constant-gap multiplicity filter already solves promised OR and inherits its query lower bound.",
+    "Generic equality-oracle collision walks cannot implement the multiplicity-stratum measurement in polynomial queries.",
+    "The theorem does not charge arithmetic operations on explicit modular subset-sum labels."
+  ],
+  "finite_controls": [
+    {
+      "extra_marked_count": 1,
+      "fiber_domain_size": 9,
+      "known_preimage_preserved": true,
+      "marked_case_fiber_multiplicity": 2,
+      "maximum_oracle_action_residual": 0.0,
+      "multiplicity_promise_separates_search_cases": true,
+      "one_query_search_to_equality_reduction": true,
+      "reduction_verified": true,
+      "search_domain_size": 8,
+      "status": "known-preimage-search-embedded-in-fiber-multiplicity",
+      "zero_case_fiber_multiplicity": 1
+    },
+    {
+      "extra_marked_count": 2,
+      "fiber_domain_size": 9,
+      "known_preimage_preserved": true,
+      "marked_case_fiber_multiplicity": 3,
+      "maximum_oracle_action_residual": 0.0,
+      "multiplicity_promise_separates_search_cases": true,
+      "one_query_search_to_equality_reduction": true,
+      "reduction_verified": true,
+      "search_domain_size": 8,
+      "status": "known-preimage-search-embedded-in-fiber-multiplicity",
+      "zero_case_fiber_multiplicity": 1
+    },
+    {
+      "extra_marked_count": 4,
+      "fiber_domain_size": 9,
+      "known_preimage_preserved": true,
+      "marked_case_fiber_multiplicity": 5,
+      "maximum_oracle_action_residual": 0.0,
+      "multiplicity_promise_separates_search_cases": true,
+      "one_query_search_to_equality_reduction": true,
+      "reduction_verified": true,
+      "search_domain_size": 8,
+      "status": "known-preimage-search-embedded-in-fiber-multiplicity",
+      "zero_case_fiber_multiplicity": 1
+    },
+    {
+      "extra_marked_count": 1,
+      "fiber_domain_size": 17,
+      "known_preimage_preserved": true,
+      "marked_case_fiber_multiplicity": 2,
+      "maximum_oracle_action_residual": 0.0,
+      "multiplicity_promise_separates_search_cases": true,
+      "one_query_search_to_equality_reduction": true,
+      "reduction_verified": true,
+      "search_domain_size": 16,
+      "status": "known-preimage-search-embedded-in-fiber-multiplicity",
+      "zero_case_fiber_multiplicity": 1
+    },
+    {
+      "extra_marked_count": 2,
+      "fiber_domain_size": 17,
+      "known_preimage_preserved": true,
+      "marked_case_fiber_multiplicity": 3,
+      "maximum_oracle_action_residual": 0.0,
+      "multiplicity_promise_separates_search_cases": true,
+      "one_query_search_to_equality_reduction": true,
+      "reduction_verified": true,
+      "search_domain_size": 16,
+      "status": "known-preimage-search-embedded-in-fiber-multiplicity",
+      "zero_case_fiber_multiplicity": 1
+    },
+    {
+      "extra_marked_count": 4,
+      "fiber_domain_size": 17,
+      "known_preimage_preserved": true,
+      "marked_case_fiber_multiplicity": 5,
+      "maximum_oracle_action_residual": 0.0,
+      "multiplicity_promise_separates_search_cases": true,
+      "one_query_search_to_equality_reduction": true,
+      "reduction_verified": true,
+      "search_domain_size": 16,
+      "status": "known-preimage-search-embedded-in-fiber-multiplicity",
+      "zero_case_fiber_multiplicity": 1
+    },
+    {
+      "extra_marked_count": 1,
+      "fiber_domain_size": 33,
+      "known_preimage_preserved": true,
+      "marked_case_fiber_multiplicity": 2,
+      "maximum_oracle_action_residual": 0.0,
+      "multiplicity_promise_separates_search_cases": true,
+      "one_query_search_to_equality_reduction": true,
+      "reduction_verified": true,
+      "search_domain_size": 32,
+      "status": "known-preimage-search-embedded-in-fiber-multiplicity",
+      "zero_case_fiber_multiplicity": 1
+    },
+    {
+      "extra_marked_count": 2,
+      "fiber_domain_size": 33,
+      "known_preimage_preserved": true,
+      "marked_case_fiber_multiplicity": 3,
+      "maximum_oracle_action_residual": 0.0,
+      "multiplicity_promise_separates_search_cases": true,
+      "one_query_search_to_equality_reduction": true,
+      "reduction_verified": true,
+      "search_domain_size": 32,
+      "status": "known-preimage-search-embedded-in-fiber-multiplicity",
+      "zero_case_fiber_multiplicity": 1
+    },
+    {
+      "extra_marked_count": 4,
+      "fiber_domain_size": 33,
+      "known_preimage_preserved": true,
+      "marked_case_fiber_multiplicity": 5,
+      "maximum_oracle_action_residual": 0.0,
+      "multiplicity_promise_separates_search_cases": true,
+      "one_query_search_to_equality_reduction": true,
+      "reduction_verified": true,
+      "search_domain_size": 32,
+      "status": "known-preimage-search-embedded-in-fiber-multiplicity",
+      "zero_case_fiber_multiplicity": 1
+    },
+    {
+      "extra_marked_count": 1,
+      "fiber_domain_size": 65,
+      "known_preimage_preserved": true,
+      "marked_case_fiber_multiplicity": 2,
+      "maximum_oracle_action_residual": 0.0,
+      "multiplicity_promise_separates_search_cases": true,
+      "one_query_search_to_equality_reduction": true,
+      "reduction_verified": true,
+      "search_domain_size": 64,
+      "status": "known-preimage-search-embedded-in-fiber-multiplicity",
+      "zero_case_fiber_multiplicity": 1
+    },
+    {
+      "extra_marked_count": 2,
+      "fiber_domain_size": 65,
+      "known_preimage_preserved": true,
+      "marked_case_fiber_multiplicity": 3,
+      "maximum_oracle_action_residual": 0.0,
+      "multiplicity_promise_separates_search_cases": true,
+      "one_query_search_to_equality_reduction": true,
+      "reduction_verified": true,
+      "search_domain_size": 64,
+      "status": "known-preimage-search-embedded-in-fiber-multiplicity",
+      "zero_case_fiber_multiplicity": 1
+    },
+    {
+      "extra_marked_count": 4,
+      "fiber_domain_size": 65,
+      "known_preimage_preserved": true,
+      "marked_case_fiber_multiplicity": 5,
+      "maximum_oracle_action_residual": 0.0,
+      "multiplicity_promise_separates_search_cases": true,
+      "one_query_search_to_equality_reduction": true,
+      "reduction_verified": true,
+      "search_domain_size": 64,
+      "status": "known-preimage-search-embedded-in-fiber-multiplicity",
+      "zero_case_fiber_multiplicity": 1
+    }
+  ],
+  "headline_metrics": {
+    "arithmetic_source_aware_multiplicity_filter_count": 0,
+    "finite_search_encoding_control_count": 12,
+    "finite_search_encoding_failure_count": 0,
+    "general_dcp_circuit_lower_bound_count": 0,
+    "known_preimage_search_reduction_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_generic_collision_walk_count": 0,
+    "scaling_record_count": 12,
+    "singleton_doubleton_query_lower_bound_theorem_count": 1,
+    "superpolynomial_query_lower_bound_row_count": 8,
+    "tail_assignment_bits": 1024,
+    "tail_singleton_doubleton_query_lower_bound_log2": 512.0
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "BBBV-1997",
+      "title": "Strengths and Weaknesses of Quantum Computing",
+      "url": "https://arxiv.org/abs/quant-ph/9701001",
+      "use": "quantum black-box lower bound for unstructured search"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "retain_one_known_preimage_in_both_promises",
+      "resolution": "Domain point zero is always a target preimage, so the promise is singleton versus singleton plus hidden marks.",
+      "resolved": true
+    },
+    {
+      "obligation": "simulate_target_equality_query_with_one_search_query",
+      "resolution": "Every unknown equality flag is exactly one search bit; the point-zero flag is a known fixed NOT.",
+      "resolved": true
+    },
+    {
+      "obligation": "invoke_bounded_error_quantum_search_lower_bound",
+      "resolution": "The BBBV hybrid bound is Omega(sqrt(M/t)) for zero versus t marked positions.",
+      "resolved": true
+    },
+    {
+      "obligation": "transfer_black_box_bound_to_explicit_modular_subset_sum",
+      "resolution": "Explicit labels expose arithmetic structure absent from the search oracle; exploiting that structure is the remaining route.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "assignment_bits": 32,
+      "assignment_domain_log2": 32,
+      "black_box_query_lower_bound_superpolynomial": false,
+      "extra_marked_count_promise": 1,
+      "polynomial_query_benchmark_log2": 40.0,
+      "polynomial_query_benchmark_power": 8,
+      "query_lower_bound_log2_without_constant": 15.999999999832049,
+      "query_lower_bound_order": "Omega(sqrt((2^m-1)/t))",
+      "status": "exponential-black-box-fiber-multiplicity-query-lower-bound"
+    },
+    {
+      "assignment_bits": 32,
+      "assignment_domain_log2": 32,
+      "black_box_query_lower_bound_superpolynomial": false,
+      "extra_marked_count_promise": 4,
+      "polynomial_query_benchmark_log2": 40.0,
+      "polynomial_query_benchmark_power": 8,
+      "query_lower_bound_log2_without_constant": 14.999999999832049,
+      "query_lower_bound_order": "Omega(sqrt((2^m-1)/t))",
+      "status": "exponential-black-box-fiber-multiplicity-query-lower-bound"
+    },
+    {
+      "assignment_bits": 64,
+      "assignment_domain_log2": 64,
+      "black_box_query_lower_bound_superpolynomial": false,
+      "extra_marked_count_promise": 1,
+      "polynomial_query_benchmark_log2": 48.0,
+      "polynomial_query_benchmark_power": 8,
+      "query_lower_bound_log2_without_constant": 32.0,
+      "query_lower_bound_order": "Omega(sqrt((2^m-1)/t))",
+      "status": "exponential-black-box-fiber-multiplicity-query-lower-bound"
+    },
+    {
+      "assignment_bits": 64,
+      "assignment_domain_log2": 64,
+      "black_box_query_lower_bound_superpolynomial": false,
+      "extra_marked_count_promise": 4,
+      "polynomial_query_benchmark_log2": 48.0,
+      "polynomial_query_benchmark_power": 8,
+      "query_lower_bound_log2_without_constant": 31.0,
+      "query_lower_bound_order": "Omega(sqrt((2^m-1)/t))",
+      "status": "exponential-black-box-fiber-multiplicity-query-lower-bound"
+    },
+    {
+      "assignment_bits": 128,
+      "assignment_domain_log2": 128,
+      "black_box_query_lower_bound_superpolynomial": true,
+      "extra_marked_count_promise": 1,
+      "polynomial_query_benchmark_log2": 56.0,
+      "polynomial_query_benchmark_power": 8,
+      "query_lower_bound_log2_without_constant": 64.0,
+      "query_lower_bound_order": "Omega(sqrt((2^m-1)/t))",
+      "status": "exponential-black-box-fiber-multiplicity-query-lower-bound"
+    },
+    {
+      "assignment_bits": 128,
+      "assignment_domain_log2": 128,
+      "black_box_query_lower_bound_superpolynomial": true,
+      "extra_marked_count_promise": 4,
+      "polynomial_query_benchmark_log2": 56.0,
+      "polynomial_query_benchmark_power": 8,
+      "query_lower_bound_log2_without_constant": 63.0,
+      "query_lower_bound_order": "Omega(sqrt((2^m-1)/t))",
+      "status": "exponential-black-box-fiber-multiplicity-query-lower-bound"
+    },
+    {
+      "assignment_bits": 256,
+      "assignment_domain_log2": 256,
+      "black_box_query_lower_bound_superpolynomial": true,
+      "extra_marked_count_promise": 1,
+      "polynomial_query_benchmark_log2": 64.0,
+      "polynomial_query_benchmark_power": 8,
+      "query_lower_bound_log2_without_constant": 128.0,
+      "query_lower_bound_order": "Omega(sqrt((2^m-1)/t))",
+      "status": "exponential-black-box-fiber-multiplicity-query-lower-bound"
+    },
+    {
+      "assignment_bits": 256,
+      "assignment_domain_log2": 256,
+      "black_box_query_lower_bound_superpolynomial": true,
+      "extra_marked_count_promise": 4,
+      "polynomial_query_benchmark_log2": 64.0,
+      "polynomial_query_benchmark_power": 8,
+      "query_lower_bound_log2_without_constant": 127.0,
+      "query_lower_bound_order": "Omega(sqrt((2^m-1)/t))",
+      "status": "exponential-black-box-fiber-multiplicity-query-lower-bound"
+    },
+    {
+      "assignment_bits": 512,
+      "assignment_domain_log2": 512,
+      "black_box_query_lower_bound_superpolynomial": true,
+      "extra_marked_count_promise": 1,
+      "polynomial_query_benchmark_log2": 72.0,
+      "polynomial_query_benchmark_power": 8,
+      "query_lower_bound_log2_without_constant": 256.0,
+      "query_lower_bound_order": "Omega(sqrt((2^m-1)/t))",
+      "status": "exponential-black-box-fiber-multiplicity-query-lower-bound"
+    },
+    {
+      "assignment_bits": 512,
+      "assignment_domain_log2": 512,
+      "black_box_query_lower_bound_superpolynomial": true,
+      "extra_marked_count_promise": 4,
+      "polynomial_query_benchmark_log2": 72.0,
+      "polynomial_query_benchmark_power": 8,
+      "query_lower_bound_log2_without_constant": 255.0,
+      "query_lower_bound_order": "Omega(sqrt((2^m-1)/t))",
+      "status": "exponential-black-box-fiber-multiplicity-query-lower-bound"
+    },
+    {
+      "assignment_bits": 1024,
+      "assignment_domain_log2": 1024,
+      "black_box_query_lower_bound_superpolynomial": true,
+      "extra_marked_count_promise": 1,
+      "polynomial_query_benchmark_log2": 80.0,
+      "polynomial_query_benchmark_power": 8,
+      "query_lower_bound_log2_without_constant": 512.0,
+      "query_lower_bound_order": "Omega(sqrt((2^m-1)/t))",
+      "status": "exponential-black-box-fiber-multiplicity-query-lower-bound"
+    },
+    {
+      "assignment_bits": 1024,
+      "assignment_domain_log2": 1024,
+      "black_box_query_lower_bound_superpolynomial": true,
+      "extra_marked_count_promise": 4,
+      "polynomial_query_benchmark_log2": 80.0,
+      "polynomial_query_benchmark_power": 8,
+      "query_lower_bound_log2_without_constant": 511.0,
+      "query_lower_bound_order": "Omega(sqrt((2^m-1)/t))",
+      "status": "exponential-black-box-fiber-multiplicity-query-lower-bound"
+    }
+  ],
+  "status": "generic-multiplicity-oracle-route-falsified-arithmetic-open",
+  "summary": "Reduced generic singleton/doubleton fiber discrimination to unstructured search with one known preimage, proving an Omega(2^(m/2)) equality-oracle query lower bound.",
+  "theorem": {
+    "arithmetic_subset_sum_structure_ruled_out": false,
+    "bbbv_consequence": "bounded-error distinction requires Omega(sqrt(M/t)) queries",
+    "dcp_consequence": "at M=2^m-1 and fixed t, a generic equality-oracle multiplicity filter or collision walk needs 2^Omega(m) queries",
+    "general_collective_measurement_lower_bound_proved": false,
+    "generic_equality_oracle_collision_walk_polynomial": false,
+    "multiplicity_promise": "c_s=1 versus c_s=1+t",
+    "oracle_model": "reversible target-equality access O_f:|x,b> maps to |x,b xor [f(x)=s]>",
+    "query_transfer": "one target-equality query and one search query are identical on the unknown positions; the known position is fixed",
+    "scope_limit": "The adversarial oracle has no modular-subset-sum arithmetic. The bound does not apply once a circuit proves and exploits additional structure of the public labels.",
+    "search_embedding": "input zero is a known preimage and the other equality flags are the promised unstructured search bits",
+    "singleton_doubleton_black_box_lower_bound_proved": true,
+    "status": "generic-fiber-multiplicity-query-route-reduced-to-search",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "dcp_substitution": "at M=2^m-1 and fixed t, a generic equality-oracle multiplicity filter or collision walk needs 2^Omega(m) queries",
+    "oracle": "reversible target-equality access O_f:|x,b> maps to |x,b xor [f(x)=s]>",
+    "promise": "c_s=1 versus c_s=1+t",
+    "query_lower_bound": "bounded-error distinction requires Omega(sqrt(M/t)) queries",
+    "reduction": "input zero is a known preimage and the other equality flags are the promised unstructured search bits",
+    "scope": "The adversarial oracle has no modular-subset-sum arithmetic. The bound does not apply once a circuit proves and exploits additional structure of the public labels."
+  }
+}

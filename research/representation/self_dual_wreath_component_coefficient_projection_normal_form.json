@@ -1,0 +1,185 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Equation (2) silently assumes a full-rank child synthesis.",
+      "resolution": "No. The support difference explicitly removes ker(R), and the rank-deficient controls have nonzero child kernels.",
+      "resolved": true
+    },
+    {
+      "objection": "Replacing the metric by Pi proves it is well conditioned.",
+      "resolution": "False. Pi is a support projection and hides all nonzero singular values; the identity is useful for moments, not an inverse compiler.",
+      "resolved": true
+    },
+    {
+      "objection": "A nonzero off-diagonal block Pi_ef proves a commutator gap.",
+      "resolution": "False. Equation (4) requires a strict separation between two fourth-order contractions; commuting compressions can have nonzero off-diagonal coefficient blocks.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "common_metric_inverse_eliminated_from_trace_target": true,
+    "natural_component_M4_positive": false,
+    "natural_dependency_projection_controlled": false,
+    "natural_distinct_pair_block_moments_separated": false,
+    "reason": "Canonical normalization is now an exact support projection problem; the natural projection's block fourth moments remain unbounded.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:24:05.053204+00:00",
+  "falsifiers_triggered": [
+    "A lower edge of the common metric is not mathematically required to state exact component trace moments.",
+    "Eliminating the inverse does not control the natural dependency projection or compile it.",
+    "The decisive natural target is block fourth-moment separation for Pi, not C_eta conditioning by itself."
+  ],
+  "finite_controls": [
+    {
+      "block_dimensions": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "block_projection_commutator_fourth_moment_gap": 0.059096277271615816,
+      "child_kernel_dimension": 6,
+      "child_synthesis_rank": 8,
+      "coefficient_dimension": 14,
+      "coefficient_embedding_isometry_residual": 2.0915251405643795e-15,
+      "common_containment_residual": 1.947003550964809e-15,
+      "common_fiber_dimension": 4,
+      "commutator_gap_residual": 5.065392549852277e-16,
+      "constrained_kernel_dimension": 10,
+      "control_id": "REDUNDANT-RANDOM-P8-N14-R4",
+      "direct_commutator_fourth_moment_gap": 0.05909627727161632,
+      "direct_to_support_difference_projection_residual": 3.4519490672973004e-15,
+      "effect_sum_identity_residual": 2.0793674596889338e-15,
+      "exact_coefficient_projection_normal_form_verified": true,
+      "maximum_pair_block_formula_residual": 1.942890293094024e-16,
+      "maximum_word_trace_residual": 2.6645361414262163e-15,
+      "maximum_word_trace_residual_through_degree": 4,
+      "outcome_count": 4,
+      "physical_dimension": 8,
+      "status": "exact-coefficient-projection-component-normal-form",
+      "support_difference_projection_residual": 1.540342546267294e-15,
+      "support_difference_rank": 4,
+      "support_projection_nesting_residual": 1.182928521693741e-15
+    },
+    {
+      "block_dimensions": [
+        3,
+        3,
+        4,
+        4,
+        4
+      ],
+      "block_projection_commutator_fourth_moment_gap": 0.09600850190933258,
+      "child_kernel_dimension": 8,
+      "child_synthesis_rank": 10,
+      "coefficient_dimension": 18,
+      "coefficient_embedding_isometry_residual": 2.8594676252267103e-15,
+      "common_containment_residual": 1.3093323847092427e-15,
+      "common_fiber_dimension": 5,
+      "commutator_gap_residual": 8.326672684688674e-16,
+      "constrained_kernel_dimension": 13,
+      "control_id": "RANK-DEFICIENT-P10-N18-R5",
+      "direct_commutator_fourth_moment_gap": 0.09600850190933174,
+      "direct_to_support_difference_projection_residual": 3.926415451915466e-15,
+      "effect_sum_identity_residual": 3.0513297354543396e-15,
+      "exact_coefficient_projection_normal_form_verified": true,
+      "maximum_pair_block_formula_residual": 2.2898349882893854e-16,
+      "maximum_word_trace_residual": 2.6645352591003757e-15,
+      "maximum_word_trace_residual_through_degree": 4,
+      "outcome_count": 5,
+      "physical_dimension": 10,
+      "status": "exact-coefficient-projection-component-normal-form",
+      "support_difference_projection_residual": 1.3113822226007393e-15,
+      "support_difference_rank": 5,
+      "support_projection_nesting_residual": 1.7181817876022156e-15
+    },
+    {
+      "block_dimensions": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "block_projection_commutator_fourth_moment_gap": 0.03534095928951099,
+      "child_kernel_dimension": 7,
+      "child_synthesis_rank": 9,
+      "coefficient_dimension": 16,
+      "coefficient_embedding_isometry_residual": 3.6185707710946445e-15,
+      "common_containment_residual": 1.0573791725781473e-15,
+      "common_fiber_dimension": 3,
+      "commutator_gap_residual": 9.71445146547012e-17,
+      "constrained_kernel_dimension": 10,
+      "control_id": "SPARSE-BLOCK-P9-N16-R3",
+      "direct_commutator_fourth_moment_gap": 0.03534095928951109,
+      "direct_to_support_difference_projection_residual": 4.024202099108926e-15,
+      "effect_sum_identity_residual": 3.59110019297982e-15,
+      "exact_coefficient_projection_normal_form_verified": true,
+      "maximum_pair_block_formula_residual": 9.020562075079397e-17,
+      "maximum_word_trace_residual": 1.27675647831893e-15,
+      "maximum_word_trace_residual_through_degree": 4,
+      "outcome_count": 8,
+      "physical_dimension": 9,
+      "status": "exact-coefficient-projection-component-normal-form",
+      "support_difference_projection_residual": 1.8390419510939746e-15,
+      "support_difference_rank": 3,
+      "support_projection_nesting_residual": 1.7321934635476988e-15
+    }
+  ],
+  "headline_metrics": {
+    "coefficient_projection_normal_form_theorem_count": 1,
+    "common_metric_inverse_elimination_theorem_count": 1,
+    "distinct_pair_block_formula_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "maximum_pair_block_formula_residual": 2.2898349882893854e-16,
+    "maximum_word_trace_residual": 2.6645361414262163e-15,
+    "natural_component_M4_lower_bound_theorem_count": 0,
+    "natural_dependency_projection_block_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "eliminate_common_metric_inverse_from_component_trace_words",
+      "resolution": "The range projection of normalized minimum preimages is the nested support difference in equation (2); trace words depend only on that projection and coordinate blocks.",
+      "resolved": true
+    },
+    {
+      "obligation": "identify_exact_distinct_pair_block_moments",
+      "resolution": "Equation (4) expresses noncrossing and crossing terms using diagonal and off-diagonal blocks of Pi.",
+      "resolved": true
+    },
+    {
+      "obligation": "control_natural_dependency_projection_block_incoherence",
+      "resolution": "Derive Pi from the natural child Gram and sibling common range, then prove positive distinct-pair noncrossing-minus-crossing mass.",
+      "resolved": false
+    }
+  ],
+  "status": "common-metric-reduced-to-natural-dependency-projection",
+  "summary": "Replaced the common-metric inverse in component trace moments by an exact nested support-difference projection and block fourth moments.",
+  "theorem": {
+    "arbitrary_common_subspace_inside_child_range": true,
+    "arbitrary_leaf_ranks": true,
+    "coefficient_fiber_projection": "WW*=supp(R*R)-supp(R*(I-XX*)R)",
+    "common_metric_inverse_eliminated_from_trace_target": true,
+    "component_word_trace": "Tr(product_j H_ej)=Tr(product_j(D_ej Pi))",
+    "kernel_inclusion": "ker(R*R)=ker(R) subset ker(R*(I-XX*)R)",
+    "natural_component_M4_positive": false,
+    "natural_dependency_projection_controlled": false,
+    "pair_crossing_block_formula": "Tr(H_e H_f H_e H_f)=Tr((Pi_ef Pi_fe)^2)",
+    "pair_noncrossing_block_formula": "Tr(H_e^2 H_f^2)=Tr(Pi_ee Pi_ef Pi_ff Pi_fe)",
+    "scope_limit": "The inverse metric is eliminated algebraically, but the natural dependency projection Pi, its distinct block moments, coherent SELECT, and a positive component-M4 gap remain unproved.",
+    "status": "common-metric-inverse-replaced-by-dependency-support-projection",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "coefficient_projection": "WW*=supp(R*R)-supp(R*(I-XX*)R)",
+    "distinct_pair_words": "Tr(H_e^2 H_f^2)=Tr(Pi_ee Pi_ef Pi_ff Pi_fe); Tr(H_e H_f H_e H_f)=Tr((Pi_ef Pi_fe)^2)",
+    "scope": "The inverse metric is eliminated algebraically, but the natural dependency projection Pi, its distinct block moments, coherent SELECT, and a positive component-M4 gap remain unproved.",
+    "word_trace": "Tr(product_j H_ej)=Tr(product_j(D_ej Pi))"
+  }
+}

@@ -1,0 +1,334 @@
+{
+  "adversarial_audit": [
+    {
+      "challenge": "Amplitude estimation makes every multiplicity efficient.",
+      "response": "Its query complexity depends on the target probability or required additive precision; exponentially rare mass remains exponential.",
+      "survives": false
+    },
+    {
+      "challenge": "#BQP membership is a BQP speedup claim.",
+      "response": "#BQP is a counting class and does not promise efficient numeric output of the multiplicity.",
+      "survives": false
+    },
+    {
+      "challenge": "The regular Brauer rare sectors rule out all modules.",
+      "response": "They are normalization controls only. A structured module may concentrate inverse-polynomial mass on informative sectors.",
+      "survives": false
+    },
+    {
+      "challenge": "Prior quantum multiplicity proposals establish a classical barrier.",
+      "response": "The 2025 classical results refuted broad advertised superpolynomial regimes, so every new promise needs fresh baselines.",
+      "survives": false
+    }
+  ],
+  "claim_gate": {
+    "counting_class_membership_implies_bqp_algorithm": false,
+    "diagram_module_spectral_candidate_passes_proof_gate": false,
+    "efficient_qft_implies_efficient_multiplicity_detection": false,
+    "inverse_polynomial_informative_source_mass_proved": false,
+    "natural_decision_reduction_proved": false,
+    "reason": "The new algebra QFT is useful infrastructure, but no natural diagram-module target yet has inverse-polynomial informative mass, a decision reduction, and a surviving classical barrier.",
+    "recent_classical_dequantization_baselines_passed": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:23:34.351838+00:00",
+  "falsifiers_triggered": [
+    "An efficient algebra QFT does not remove rare-sector sample complexity.",
+    "Coherent amplitude amplification gives only a quadratic improvement in inverse source mass.",
+    "#BQP membership is not an efficient BQP counting algorithm.",
+    "Many previously advertised efficient multiplicity regimes already have polynomial classical algorithms.",
+    "Regular Brauer sectors include exponentially rare one-dimensional labels.",
+    "No diagram-module candidate has yet passed source-mass, reduction, or dequantization gates."
+  ],
+  "finite_controls": [
+    {
+      "algebra_dimension_decimal": "105",
+      "algebra_dimension_log2": 6.714245517666122,
+      "coherent_queries_for_rarest_sector_log2": 3.357122758833061,
+      "diagram_order": 4,
+      "exact_regular_normalization_verified": true,
+      "irrep_sector_count": 8,
+      "maximum_sector_dimension_decimal": "6",
+      "maximum_sector_mass": 0.34285714285714286,
+      "minimum_positive_sector_mass": 0.009523809523809525,
+      "minimum_sector_dimension": 1,
+      "one_dimensional_sector_count": 2,
+      "polynomial_dimension_sector_count": 8,
+      "polynomial_dimension_sector_total_mass": 1.0,
+      "polynomial_dimension_threshold": 64,
+      "regular_mass_sum": 1.0,
+      "regular_mass_sum_residual": 0.0,
+      "sample_copies_for_rarest_sector_log2": 6.714245517666122,
+      "status": "exact-brauer-regular-source-mass-control"
+    },
+    {
+      "algebra_dimension_decimal": "2027025",
+      "algebra_dimension_log2": 20.950932451495344,
+      "coherent_queries_for_rarest_sector_log2": 10.475466225747672,
+      "diagram_order": 8,
+      "exact_regular_normalization_verified": true,
+      "irrep_sector_count": 41,
+      "maximum_sector_dimension_decimal": "630",
+      "maximum_sector_mass": 0.1958041958041958,
+      "minimum_positive_sector_mass": 4.9333382666716e-07,
+      "minimum_sector_dimension": 1,
+      "one_dimensional_sector_count": 2,
+      "polynomial_dimension_sector_count": 39,
+      "polynomial_dimension_sector_total_mass": 0.6083916083916083,
+      "polynomial_dimension_threshold": 512,
+      "regular_mass_sum": 1.0,
+      "regular_mass_sum_residual": 0.0,
+      "sample_copies_for_rarest_sector_log2": 20.950932451495344,
+      "status": "exact-brauer-regular-source-mass-control"
+    },
+    {
+      "algebra_dimension_decimal": "316234143225",
+      "algebra_dimension_log2": 38.202202185025044,
+      "coherent_queries_for_rarest_sector_log2": 19.101101092512522,
+      "diagram_order": 12,
+      "exact_regular_normalization_verified": true,
+      "irrep_sector_count": 160,
+      "maximum_sector_dimension_decimal": "221760",
+      "maximum_sector_mass": 0.15550976595531718,
+      "minimum_positive_sector_mass": 3.1622138893727926e-12,
+      "minimum_sector_dimension": 1,
+      "one_dimensional_sector_count": 2,
+      "polynomial_dimension_sector_count": 50,
+      "polynomial_dimension_sector_total_mass": 0.0001168616823696552,
+      "polynomial_dimension_threshold": 1728,
+      "regular_mass_sum": 1.0,
+      "regular_mass_sum_residual": 0.0,
+      "sample_copies_for_rarest_sector_log2": 38.202202185025044,
+      "status": "exact-brauer-regular-source-mass-control"
+    },
+    {
+      "algebra_dimension_decimal": "191898783962510625",
+      "algebra_dimension_log2": 57.41312318247768,
+      "coherent_queries_for_rarest_sector_log2": 28.70656159123884,
+      "diagram_order": 16,
+      "exact_regular_normalization_verified": true,
+      "irrep_sector_count": 526,
+      "maximum_sector_dimension_decimal": "121621500",
+      "maximum_sector_mass": 0.07708120373050267,
+      "minimum_positive_sector_mass": 5.211080442257311e-18,
+      "minimum_sector_dimension": 1,
+      "one_dimensional_sector_count": 2,
+      "polynomial_dimension_sector_count": 38,
+      "polynomial_dimension_sector_total_mass": 9.163099857597425e-10,
+      "polynomial_dimension_threshold": 4096,
+      "regular_mass_sum": 1.0,
+      "regular_mass_sum_residual": 0.0,
+      "sample_copies_for_rarest_sector_log2": 57.41312318247768,
+      "status": "exact-brauer-regular-source-mass-control"
+    }
+  ],
+  "headline_metrics": {
+    "finite_brauer_control_count": 4,
+    "finite_brauer_control_failure_count": 0,
+    "inverse_polynomial_source_mass_theorem_for_replacement_candidate_count": 0,
+    "matched_classical_baseline_survival_count": 0,
+    "maximum_rarest_sector_coherent_query_log2": 28.70656159123884,
+    "maximum_regular_mass_sum_residual": 0.0,
+    "minimum_tail_polynomial_dimension_sector_mass": 9.163099857597425e-10,
+    "new_quantum_algorithm_count": 0,
+    "rare_sector_coherent_obstruction_count": 5,
+    "scaling_record_count": 10,
+    "source_mass_query_gate_theorem_count": 1
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "LAROCCA-HAVLICEK-2024",
+      "title": "Quantum Algorithms for Representation-Theoretic Multiplicities",
+      "url": "https://arxiv.org/abs/2407.17649",
+      "use": "Dimension-ratio quantum multiplicity algorithms and sampling conditions"
+    },
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "PANOVA-2025",
+      "title": "Polynomial time classical versus quantum algorithms for representation theoretic multiplicities",
+      "url": "https://arxiv.org/abs/2502.20253",
+      "use": "Classical dequantization of many proposed efficient regimes"
+    },
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "CHRISTANDL-HARROW-PANOVA-POSTA-WALTER-2026",
+      "title": "Plethysm is in #BQP",
+      "url": "https://arxiv.org/abs/2602.08441",
+      "use": "Counting-class scope and fixed-parameter classical algorithms"
+    },
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "FOXMAN-NEHORAN-DING-2026",
+      "title": "Efficient Quantum Fourier Transforms For Semisimple Algebras",
+      "url": "https://arxiv.org/abs/2605.05337",
+      "use": "Potential extension of multiplicity methods to diagram algebras"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "prove_informative_module_sector_mass",
+      "resolution": "No natural diagram-module candidate currently has an inverse-polynomial YES/NO sector-mass gap.",
+      "resolved": false
+    },
+    {
+      "obligation": "separate_counting_class_membership_from_bqp_algorithm",
+      "resolution": "The report records #BQP only as a verifier/counting-class statement and applies the explicit probability-query gate.",
+      "resolved": true
+    },
+    {
+      "obligation": "rerun_recent_classical_multiplicity_algorithms",
+      "resolution": "Panova's dequantizations must be specialized to each diagram coefficient family and parameter promise.",
+      "resolved": false
+    },
+    {
+      "obligation": "derive_natural_decision_reduction",
+      "resolution": "A coefficient-estimation primitive is not yet tied to a natural decision problem with major algorithmic impact.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "ambient_module_dimension_log2": 64.0,
+      "coherent_detection_query_log2": 27.5,
+      "direct_sample_copy_log2": 55.0,
+      "input_parameter": 8,
+      "polynomial_coherent_detection": false,
+      "polynomial_direct_sampling": false,
+      "promised_multiplicity_log2": 0.0,
+      "status": "rare-sector-source-mass-obstruction",
+      "target_irrep_dimension_log2": 9.0,
+      "target_source_mass_log2": -55.0
+    },
+    {
+      "ambient_module_dimension_log2": 256.0,
+      "coherent_detection_query_log2": 122.0,
+      "direct_sample_copy_log2": 244.0,
+      "input_parameter": 16,
+      "polynomial_coherent_detection": false,
+      "polynomial_direct_sampling": false,
+      "promised_multiplicity_log2": 0.0,
+      "status": "rare-sector-source-mass-obstruction",
+      "target_irrep_dimension_log2": 12.0,
+      "target_source_mass_log2": -244.0
+    },
+    {
+      "ambient_module_dimension_log2": 1024.0,
+      "coherent_detection_query_log2": 504.5,
+      "direct_sample_copy_log2": 1009.0,
+      "input_parameter": 32,
+      "polynomial_coherent_detection": false,
+      "polynomial_direct_sampling": false,
+      "promised_multiplicity_log2": 0.0,
+      "status": "rare-sector-source-mass-obstruction",
+      "target_irrep_dimension_log2": 15.0,
+      "target_source_mass_log2": -1009.0
+    },
+    {
+      "ambient_module_dimension_log2": 4096.0,
+      "coherent_detection_query_log2": 2039.0,
+      "direct_sample_copy_log2": 4078.0,
+      "input_parameter": 64,
+      "polynomial_coherent_detection": false,
+      "polynomial_direct_sampling": false,
+      "promised_multiplicity_log2": 0.0,
+      "status": "rare-sector-source-mass-obstruction",
+      "target_irrep_dimension_log2": 18.0,
+      "target_source_mass_log2": -4078.0
+    },
+    {
+      "ambient_module_dimension_log2": 16384.0,
+      "coherent_detection_query_log2": 8181.5,
+      "direct_sample_copy_log2": 16363.0,
+      "input_parameter": 128,
+      "polynomial_coherent_detection": false,
+      "polynomial_direct_sampling": false,
+      "promised_multiplicity_log2": 0.0,
+      "status": "rare-sector-source-mass-obstruction",
+      "target_irrep_dimension_log2": 21.0,
+      "target_source_mass_log2": -16363.0
+    },
+    {
+      "ambient_module_dimension_log2": 24.0,
+      "coherent_detection_query_log2": 7.5,
+      "direct_sample_copy_log2": 15.0,
+      "input_parameter": 8,
+      "polynomial_coherent_detection": true,
+      "polynomial_direct_sampling": false,
+      "promised_multiplicity_log2": 0.0,
+      "status": "rare-sector-source-mass-obstruction",
+      "target_irrep_dimension_log2": 9.0,
+      "target_source_mass_log2": -15.0
+    },
+    {
+      "ambient_module_dimension_log2": 32.0,
+      "coherent_detection_query_log2": 10.0,
+      "direct_sample_copy_log2": 20.0,
+      "input_parameter": 16,
+      "polynomial_coherent_detection": true,
+      "polynomial_direct_sampling": false,
+      "promised_multiplicity_log2": 0.0,
+      "status": "rare-sector-source-mass-obstruction",
+      "target_irrep_dimension_log2": 12.0,
+      "target_source_mass_log2": -20.0
+    },
+    {
+      "ambient_module_dimension_log2": 40.0,
+      "coherent_detection_query_log2": 12.5,
+      "direct_sample_copy_log2": 25.0,
+      "input_parameter": 32,
+      "polynomial_coherent_detection": true,
+      "polynomial_direct_sampling": false,
+      "promised_multiplicity_log2": 0.0,
+      "status": "rare-sector-source-mass-obstruction",
+      "target_irrep_dimension_log2": 15.0,
+      "target_source_mass_log2": -25.0
+    },
+    {
+      "ambient_module_dimension_log2": 48.0,
+      "coherent_detection_query_log2": 15.0,
+      "direct_sample_copy_log2": 30.0,
+      "input_parameter": 64,
+      "polynomial_coherent_detection": true,
+      "polynomial_direct_sampling": false,
+      "promised_multiplicity_log2": 0.0,
+      "status": "rare-sector-source-mass-obstruction",
+      "target_irrep_dimension_log2": 18.0,
+      "target_source_mass_log2": -30.0
+    },
+    {
+      "ambient_module_dimension_log2": 56.0,
+      "coherent_detection_query_log2": 17.5,
+      "direct_sample_copy_log2": 35.0,
+      "input_parameter": 128,
+      "polynomial_coherent_detection": true,
+      "polynomial_direct_sampling": false,
+      "promised_multiplicity_log2": 0.0,
+      "status": "rare-sector-source-mass-obstruction",
+      "target_irrep_dimension_log2": 21.0,
+      "target_source_mass_log2": -35.0
+    }
+  ],
+  "status": "diagram-multiplicity-source-mass-gate-active",
+  "summary": "Added the missing probability/query gate for diagram-algebra multiplicity proposals and incorporated the 2025 dequantization evidence; the replacement direction remains open but unaccepted.",
+  "theorem": {
+    "coherent_query_complexity": "With coherent preparation, inverse preparation, and a target reflection, amplitude amplification detects the sector in Theta(1/sqrt(p)) queries, and unstructured search gives the matching black-box lower bound.",
+    "counting_class_scope": "Membership of a multiplicity in #BQP describes a quantum counting verifier; it does not assert a polynomial-time BQP algorithm that outputs the count.",
+    "dequantization_scope": "Recent classical algorithms cover many dimension-ratio/fixed-parameter regimes previously proposed for quantum Kronecker or plethysm advantages. A diagram analogue must rerun those baselines.",
+    "exact_counting_scope": "Resolving an exact multiplicity can require precision at the unit probability spacing dim(W_lambda)/dim(V), stronger than detecting nonzero mass.",
+    "inverse_polynomial_mass_required": true,
+    "qft_alone_removes_mass_cost": false,
+    "sample_complexity": "Zero versus p_lambda>=p needs Theta(1/p) independent measured samples in the worst case.",
+    "sector_probability": "For V=direct_sum_lambda W_lambda tensor C^(m_lambda), the maximally mixed module state yields label probability p_lambda=m_lambda dim(W_lambda)/dim(V).",
+    "sharp_black_box_detection_bound_proved": true,
+    "status": "multiplicity-source-mass-and-dequantization-gate-proved",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "access_model": "prepared module states, algebra Fourier transform, coherent inverse preparation, and target-sector marking",
+    "black_box_boundary": "Theta(1/sqrt(p)) coherent queries and Theta(1/p) measured copies",
+    "candidate": "DIAGRAM-MODULE-SPECTRAL",
+    "required_scaling": "inverse-polynomial informative source mass plus a decision observable and matched classical hardness",
+    "signal": "target irrep/multiplicity sector probability"
+  }
+}

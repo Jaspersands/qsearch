@@ -1,0 +1,679 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "Orbit symmetrization preserves average success and gives a covariant normal form, but the theorem does not claim the original circuit explicitly occupies the symmetrized support.",
+      "challenge": "A noncovariant POVM can have smaller support.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Their labels need only logarithmically many qubits; the theorem rules out explicit sparse enumeration, not implicit access.",
+      "challenge": "Exponentially many modes require exponential qubits.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It uses only positivity, POVM completeness, covariance normal form, and representation dimensions.",
+      "challenge": "The bound assumes the PGM.",
+      "resolved": true
+    },
+    {
+      "answer": "False. The asymptotic uses the cited maximal-dimension theorem; finite controls verify only the exact decomposition identities.",
+      "challenge": "Finite S_3 mode counts prove the asymptotic.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "bounded_mode_sparse_measurement_ansatz_possible": false,
+    "decision_problem_lower_bound_proved": false,
+    "exp_sqrt_covariant_multiplicity_width_proved": true,
+    "implicit_fused_polar_transform_ruled_out": false,
+    "polynomial_explicit_multiplicity_catalog_possible": false,
+    "polynomial_gate_lower_bound_proved": false,
+    "polynomial_hidden_involution_decoder_proved": false,
+    "polynomial_qubit_lower_bound_proved": false,
+    "reason": "Every covariant inverse-polynomial-success exact-label POVM has exp(Omega(sqrt(n))) normalized multiplicity width. This kills sparse explicit mode catalogs but leaves implicit fused transforms and structured collective circuits open.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T14:53:45.174970+00:00",
+  "falsifiers_triggered": [
+    "A polynomial catalog of multiplicity modes cannot support an inverse-polynomial-success covariant exact-label measurement.",
+    "The multiplicity-width obstruction is not specific to the PGM.",
+    "Mode count alone cannot be promoted to a gate, memory, qubit, decision-problem, or general quantum lower bound."
+  ],
+  "finite_controls": [
+    {
+      "conclusive_support_rank": 5,
+      "copy_count": 1,
+      "covariance_commutator_residual": 1.1916690919988326e-15,
+      "degree": 3,
+      "exact_multiplicity_mode_count": 4,
+      "hidden_hypothesis_count": 3,
+      "input_support_rank": 3,
+      "maximum_irrep_dimension": 2,
+      "multiplicity_divisibility_failure_count": 0,
+      "multiplicity_width_bound_verified": true,
+      "pgm_completeness_residual": 8.518509735076212e-16,
+      "pgm_success_probability": 0.5555555555555557,
+      "status": "covariant-measurement-multiplicity-width-control-passed",
+      "success_forced_multiplicity_mode_lower_bound": 2.5000000000000004,
+      "success_forced_support_rank_lower_bound": 5.000000000000001,
+      "support_dimension_bound_verified": true,
+      "support_rank_decomposition_residual": 0,
+      "theorem_control_passed": true
+    },
+    {
+      "conclusive_support_rank": 21,
+      "copy_count": 2,
+      "covariance_commutator_residual": 2.8274528032836234e-15,
+      "degree": 3,
+      "exact_multiplicity_mode_count": 15,
+      "hidden_hypothesis_count": 3,
+      "input_support_rank": 9,
+      "maximum_irrep_dimension": 2,
+      "multiplicity_divisibility_failure_count": 0,
+      "multiplicity_width_bound_verified": true,
+      "pgm_completeness_residual": 2.3737880201199544e-15,
+      "pgm_success_probability": 0.7650686759071252,
+      "status": "covariant-measurement-multiplicity-width-control-passed",
+      "success_forced_multiplicity_mode_lower_bound": 10.328427124746192,
+      "success_forced_support_rank_lower_bound": 20.656854249492383,
+      "support_dimension_bound_verified": true,
+      "support_rank_decomposition_residual": 0,
+      "theorem_control_passed": true
+    }
+  ],
+  "headline_metrics": {
+    "arbitrary_povm_support_rank_theorem_count": 1,
+    "covariant_multiplicity_width_theorem_count": 1,
+    "decision_problem_lower_bound_count": 0,
+    "exp_sqrt_multiplicity_width_theorem_count": 1,
+    "finite_control_failure_count": 0,
+    "finite_covariant_measurement_control_count": 2,
+    "fused_polar_isometry_lower_bound_count": 0,
+    "maximum_finite_normalized_mode_lower_bound": 2.5390625,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_explicit_mode_catalog_count": 0,
+    "polynomial_gate_lower_bound_count": 0,
+    "polynomial_qubit_lower_bound_count": 0,
+    "scaling_record_count": 24
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "aggarwal-elboim-maximal-dimension-2026",
+      "title": "On the maximal dimension of an irreducible representation of the symmetric group",
+      "url": "https://arxiv.org/abs/2605.25995",
+      "use": "Converts the exact pM/d_max width lower bound into exp(Omega(sqrt(n)))."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-IMPLICIT-WIDE-POLAR",
+      "resolved": false,
+      "statement": "Determine whether the exp(sqrt(n))-wide multiplicity support admits an implicit polynomial fused polar transform."
+    },
+    {
+      "id": "PO-COSET-MODE-WIDTH-TO-CIRCUIT",
+      "resolved": false,
+      "statement": "Prove a valid access-model lower bound before interpreting mode width as circuit complexity."
+    },
+    {
+      "id": "PO-COSET-DECISION-WIDTH-TRANSFER",
+      "resolved": false,
+      "statement": "Establish whether worst-case decision reductions require exact hidden-involution identification."
+    }
+  ],
+  "scaling_records": [
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": -0.36257007938470825,
+      "maximum_irrep_dimension_decimal": "90",
+      "maximum_irrep_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "n": 8,
+      "normalized_multiplicity_mode_lower_bound": 0.7777777777777778,
+      "perfect_matching_count_decimal": "105",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "bounded-error-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "bounded-error-two-thirds",
+      "target_success_polynomial_exponent": null,
+      "target_success_probability": 0.6666666666666666
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": -2.777607578663552,
+      "maximum_irrep_dimension_decimal": "90",
+      "maximum_irrep_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "n": 8,
+      "normalized_multiplicity_mode_lower_bound": 0.14583333333333334,
+      "perfect_matching_count_decimal": "105",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "inverse-polynomial-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "inverse-linear",
+      "target_success_polynomial_exponent": 1,
+      "target_success_probability": 0.125
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": -5.777607578663552,
+      "maximum_irrep_dimension_decimal": "90",
+      "maximum_irrep_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "n": 8,
+      "normalized_multiplicity_mode_lower_bound": 0.018229166666666668,
+      "perfect_matching_count_decimal": "105",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "inverse-polynomial-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "inverse-quadratic",
+      "target_success_polynomial_exponent": 2,
+      "target_success_probability": 0.015625
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": -0.28575448233387735,
+      "maximum_irrep_dimension_decimal": "768",
+      "maximum_irrep_partition": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "n": 10,
+      "normalized_multiplicity_mode_lower_bound": 0.8203125,
+      "perfect_matching_count_decimal": "945",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "bounded-error-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "bounded-error-two-thirds",
+      "target_success_polynomial_exponent": null,
+      "target_success_probability": 0.6666666666666666
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": -3.0227200765000837,
+      "maximum_irrep_dimension_decimal": "768",
+      "maximum_irrep_partition": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "n": 10,
+      "normalized_multiplicity_mode_lower_bound": 0.123046875,
+      "perfect_matching_count_decimal": "945",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "inverse-polynomial-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "inverse-linear",
+      "target_success_polynomial_exponent": 1,
+      "target_success_probability": 0.1
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": -6.344648171387446,
+      "maximum_irrep_dimension_decimal": "768",
+      "maximum_irrep_partition": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "n": 10,
+      "normalized_multiplicity_mode_lower_bound": 0.012304687500000001,
+      "perfect_matching_count_decimal": "945",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "inverse-polynomial-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "inverse-quadratic",
+      "target_success_polynomial_exponent": 2,
+      "target_success_probability": 0.01
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": -0.15200309344504995,
+      "maximum_irrep_dimension_decimal": "7700",
+      "maximum_irrep_partition": [
+        5,
+        3,
+        2,
+        1,
+        1
+      ],
+      "n": 12,
+      "normalized_multiplicity_mode_lower_bound": 0.9,
+      "perfect_matching_count_decimal": "10395",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "bounded-error-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "bounded-error-two-thirds",
+      "target_success_polynomial_exponent": null,
+      "target_success_probability": 0.6666666666666666
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": -3.15200309344505,
+      "maximum_irrep_dimension_decimal": "7700",
+      "maximum_irrep_partition": [
+        5,
+        3,
+        2,
+        1,
+        1
+      ],
+      "n": 12,
+      "normalized_multiplicity_mode_lower_bound": 0.1125,
+      "perfect_matching_count_decimal": "10395",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "inverse-polynomial-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "inverse-linear",
+      "target_success_polynomial_exponent": 1,
+      "target_success_probability": 0.08333333333333333
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": -6.7369655941662066,
+      "maximum_irrep_dimension_decimal": "7700",
+      "maximum_irrep_partition": [
+        5,
+        3,
+        2,
+        1,
+        1
+      ],
+      "n": 12,
+      "normalized_multiplicity_mode_lower_bound": 0.009375,
+      "perfect_matching_count_decimal": "10395",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "inverse-polynomial-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "inverse-quadratic",
+      "target_success_polynomial_exponent": 2,
+      "target_success_probability": 0.006944444444444444
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": 0.22881869049588088,
+      "maximum_irrep_dimension_decimal": "1153152",
+      "maximum_irrep_partition": [
+        6,
+        4,
+        3,
+        2,
+        1
+      ],
+      "n": 16,
+      "normalized_multiplicity_mode_lower_bound": 1.171875,
+      "perfect_matching_count_decimal": "2027025",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "bounded-error-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "bounded-error-two-thirds",
+      "target_success_polynomial_exponent": null,
+      "target_success_probability": 0.6666666666666666
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": -3.186218808782963,
+      "maximum_irrep_dimension_decimal": "1153152",
+      "maximum_irrep_partition": [
+        6,
+        4,
+        3,
+        2,
+        1
+      ],
+      "n": 16,
+      "normalized_multiplicity_mode_lower_bound": 0.10986328125,
+      "perfect_matching_count_decimal": "2027025",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "inverse-polynomial-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "inverse-linear",
+      "target_success_polynomial_exponent": 1,
+      "target_success_probability": 0.0625
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": -7.186218808782963,
+      "maximum_irrep_dimension_decimal": "1153152",
+      "maximum_irrep_partition": [
+        6,
+        4,
+        3,
+        2,
+        1
+      ],
+      "n": 16,
+      "normalized_multiplicity_mode_lower_bound": 0.006866455078125,
+      "perfect_matching_count_decimal": "2027025",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "inverse-polynomial-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "inverse-quadratic",
+      "target_success_polynomial_exponent": 2,
+      "target_success_probability": 0.00390625
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": 0.8073549220576041,
+      "maximum_irrep_dimension_decimal": "249420600",
+      "maximum_irrep_partition": [
+        7,
+        5,
+        3,
+        2,
+        2,
+        1
+      ],
+      "n": 20,
+      "normalized_multiplicity_mode_lower_bound": 1.75,
+      "perfect_matching_count_decimal": "654729075",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "bounded-error-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "bounded-error-two-thirds",
+      "target_success_polynomial_exponent": null,
+      "target_success_probability": 0.6666666666666666
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": -2.929610672108602,
+      "maximum_irrep_dimension_decimal": "249420600",
+      "maximum_irrep_partition": [
+        7,
+        5,
+        3,
+        2,
+        2,
+        1
+      ],
+      "n": 20,
+      "normalized_multiplicity_mode_lower_bound": 0.13125,
+      "perfect_matching_count_decimal": "654729075",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "inverse-polynomial-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "inverse-linear",
+      "target_success_polynomial_exponent": 1,
+      "target_success_probability": 0.05
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": -7.251538766995965,
+      "maximum_irrep_dimension_decimal": "249420600",
+      "maximum_irrep_partition": [
+        7,
+        5,
+        3,
+        2,
+        2,
+        1
+      ],
+      "n": 20,
+      "normalized_multiplicity_mode_lower_bound": 0.0065625,
+      "perfect_matching_count_decimal": "654729075",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "inverse-polynomial-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "inverse-quadratic",
+      "target_success_polynomial_exponent": 2,
+      "target_success_probability": 0.0025
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": 0.8435285346110891,
+      "maximum_irrep_dimension_decimal": "117487079424",
+      "maximum_irrep_partition": [
+        8,
+        5,
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "n": 24,
+      "normalized_multiplicity_mode_lower_bound": 1.79443359375,
+      "perfect_matching_count_decimal": "316234143225",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "bounded-error-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "bounded-error-two-thirds",
+      "target_success_polynomial_exponent": null,
+      "target_success_probability": 0.6666666666666666
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": -3.1564714653889108,
+      "maximum_irrep_dimension_decimal": "117487079424",
+      "maximum_irrep_partition": [
+        8,
+        5,
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "n": 24,
+      "normalized_multiplicity_mode_lower_bound": 0.112152099609375,
+      "perfect_matching_count_decimal": "316234143225",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "inverse-polynomial-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "inverse-linear",
+      "target_success_polynomial_exponent": 1,
+      "target_success_probability": 0.041666666666666664
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": -7.741433966110067,
+      "maximum_irrep_dimension_decimal": "117487079424",
+      "maximum_irrep_partition": [
+        8,
+        5,
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "n": 24,
+      "normalized_multiplicity_mode_lower_bound": 0.004673004150390625,
+      "perfect_matching_count_decimal": "316234143225",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "inverse-polynomial-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "inverse-quadratic",
+      "target_success_polynomial_exponent": 2,
+      "target_success_probability": 0.001736111111111111
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": 1.3092616830512018,
+      "maximum_irrep_dimension_decimal": "57424104738000",
+      "maximum_irrep_partition": [
+        8,
+        6,
+        5,
+        3,
+        2,
+        2,
+        1,
+        1
+      ],
+      "n": 28,
+      "normalized_multiplicity_mode_lower_bound": 2.4781468531468533,
+      "perfect_matching_count_decimal": "213458046676875",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "bounded-error-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "bounded-error-two-thirds",
+      "target_success_polynomial_exponent": null,
+      "target_success_probability": 0.6666666666666666
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": -2.913130738285246,
+      "maximum_irrep_dimension_decimal": "57424104738000",
+      "maximum_irrep_partition": [
+        8,
+        6,
+        5,
+        3,
+        2,
+        2,
+        1,
+        1
+      ],
+      "n": 28,
+      "normalized_multiplicity_mode_lower_bound": 0.13275786713286714,
+      "perfect_matching_count_decimal": "213458046676875",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "inverse-polynomial-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "inverse-linear",
+      "target_success_polynomial_exponent": 1,
+      "target_success_probability": 0.03571428571428571
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": -7.720485660342851,
+      "maximum_irrep_dimension_decimal": "57424104738000",
+      "maximum_irrep_partition": [
+        8,
+        6,
+        5,
+        3,
+        2,
+        2,
+        1,
+        1
+      ],
+      "n": 28,
+      "normalized_multiplicity_mode_lower_bound": 0.004741352397602397,
+      "perfect_matching_count_decimal": "213458046676875",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "inverse-polynomial-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "inverse-quadratic",
+      "target_success_polynomial_exponent": 2,
+      "target_success_probability": 0.0012755102040816326
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": 1.3442959079158168,
+      "maximum_irrep_dimension_decimal": "50385731994259200",
+      "maximum_irrep_partition": [
+        9,
+        7,
+        5,
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "n": 32,
+      "normalized_multiplicity_mode_lower_bound": 2.5390625,
+      "perfect_matching_count_decimal": "191898783962510625",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "bounded-error-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "bounded-error-two-thirds",
+      "target_success_polynomial_exponent": null,
+      "target_success_probability": 0.6666666666666666
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": -3.070741591363027,
+      "maximum_irrep_dimension_decimal": "50385731994259200",
+      "maximum_irrep_partition": [
+        9,
+        7,
+        5,
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "n": 32,
+      "normalized_multiplicity_mode_lower_bound": 0.1190185546875,
+      "perfect_matching_count_decimal": "191898783962510625",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "inverse-polynomial-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "inverse-linear",
+      "target_success_polynomial_exponent": 1,
+      "target_success_probability": 0.03125
+    },
+    {
+      "log2_normalized_multiplicity_mode_lower_bound": -8.070741591363028,
+      "maximum_irrep_dimension_decimal": "50385731994259200",
+      "maximum_irrep_partition": [
+        9,
+        7,
+        5,
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "n": 32,
+      "normalized_multiplicity_mode_lower_bound": 0.003719329833984375,
+      "perfect_matching_count_decimal": "191898783962510625",
+      "polynomial_explicit_mode_catalog_possible_asymptotically": false,
+      "polynomial_gate_lower_bound_proved": false,
+      "polynomial_qubit_lower_bound_proved": false,
+      "status": "inverse-polynomial-success-forces-exp-sqrt-multiplicity-width",
+      "success_requirement_id": "inverse-quadratic",
+      "target_success_polynomial_exponent": 2,
+      "target_success_probability": 0.0009765625
+    }
+  ],
+  "status": "sparse-multiplicity-measurements-closed-implicit-wide-polar-open",
+  "summary": "Proved an exp(Omega(sqrt(n))) multiplicity-width requirement for every covariant inverse-polynomial-success exact-involution POVM. Sparse explicit mode representations are closed; circuit complexity and implicit fused polar implementations remain open.",
+  "theorem": {
+    "arbitrary_povm_support_rank_bound_proved": true,
+    "conclusive_trace_bound": "For K=sum_h E_h<=I, p_id<=Tr(K)/(M r)<=rank(K)/(M r).",
+    "covariance_reduction": "Uniform orbit symmetrization preserves average success and makes the conclusive operator commute with the group action.",
+    "covariant_symmetrization_preserves_success_proved": true,
+    "decision_problem_lower_bound_proved": false,
+    "exp_sqrt_multiplicity_width_for_inverse_polynomial_success_proved": true,
+    "fused_polar_isometry_ruled_out": false,
+    "isotypic_support_decomposition": "supp(K)=direct_sum_nu V_nu tensor S_nu, so rank(K)=sum_nu d_nu ell_nu.",
+    "multiplicity_width_bound": "sum_nu ell_nu/r >= p_id M/d_max for every covariant conclusive POVM.",
+    "perfect_matching_asymptotic": "For M=(n-1)!! and p>=n^-a, M p/d_max(S_n)=exp(Omega(sqrt(n))) for every fixed a.",
+    "polynomial_explicit_mode_catalog_possible": false,
+    "polynomial_gate_lower_bound_proved": false,
+    "polynomial_qubit_lower_bound_proved": false,
+    "route_consequence": "Polynomial explicit multiplicity catalogs and bounded-mode sparse ansatze cannot realize inverse-polynomial-success exact identification.",
+    "scope_limit": "Multiplicity mode count is not gate complexity, memory, or qubit complexity; implicit fused transforms remain open.",
+    "status": "exp-sqrt-covariant-measurement-multiplicity-width-proved",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "ensemble": "Uniform fixed-point-free involution orbit in S_n with equal-rank regular coset-state projectors.",
+    "measurement": "Any exact-label POVM may first be symmetrized; a failure outcome is allowed.",
+    "non_claim": "No gate/qubit lower bound and no decision-only reduction theorem.",
+    "width_measure": "Sum of multiplicity-support dimensions of the invariant conclusive operator, normalized by input projector rank."
+  }
+}

@@ -1,0 +1,4829 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "It can reduce the generic dimension/rank factor, but the exact remaining moment rank(F)/R is exponential whenever the branch carries extensive Holevo information.",
+      "challenge": "Could source weighting remove the exponentially weak mean LCU scale?",
+      "route_killed": true
+    },
+    {
+      "answer": "No. The inverse may cancel inside a fused polar isometry; the theorem charges only implementations exposing it separately.",
+      "challenge": "Does this prove the PGM is computationally hard?",
+      "route_killed": false
+    },
+    {
+      "answer": "Not in mean-square accounting: hidden independence plus Jensen converts average conditional Holevo information into an average moment lower bound.",
+      "challenge": "Can rare source branches evade the tradeoff?",
+      "route_killed": true
+    }
+  ],
+  "claim_gate": {
+    "bounded_error_direct_projected_lcu_inverse_rescued": false,
+    "entropy_information_tradeoff_proved": true,
+    "exact_source_weighted_inverse_moment_proved": true,
+    "fused_source_specific_polar_transform_constructed": false,
+    "fused_source_specific_polar_transform_ruled_out": false,
+    "general_quantum_lower_bound_proved": false,
+    "polynomial_hidden_involution_decoder_proved": false,
+    "reason": "Source weighting cannot by itself repair the standalone projected-LCU inverse at decoding-scale information. The remaining high-upside route must fuse the polar transform or use a genuinely different collective measurement.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:23:00.368854+00:00",
+  "falsifiers_triggered": [
+    "Actual source weighting does not make the standalone direct average-frame inverse polynomial at decoding-scale information.",
+    "Finite low condition number is irrelevant to the exact rank-over-input-rank source moment.",
+    "Rare favorable source labels cannot remove the mean-square tradeoff while the total ensemble meets Fano.",
+    "The obstruction must not be promoted to a lower bound on a fused PGM isometry or arbitrary quantum measurement."
+  ],
+  "finite_controls": [
+    {
+      "average_frame_support_rank": 1,
+      "carrier_dimension": 1,
+      "conditional_holevo_bits": -0.0,
+      "control_id": "source-5",
+      "copy_count": 1,
+      "direct_lcu_mean_eigenvalue": 1.0,
+      "entropy_forced_second_moment_lower_bound": 1.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.0,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 1,
+      "n": 5,
+      "natural_source_probability": 0.016666666666666666,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.0,
+      "source_weighted_inverse_root_second_moment": 1.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 0.0
+    },
+    {
+      "average_frame_support_rank": 4,
+      "carrier_dimension": 4,
+      "conditional_holevo_bits": 1.0,
+      "control_id": "source-4.1",
+      "copy_count": 1,
+      "direct_lcu_mean_eigenvalue": 0.5,
+      "entropy_forced_second_moment_lower_bound": 2.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.4142135623730951,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 2,
+      "n": 5,
+      "natural_source_probability": 0.13333333333333333,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          4,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.4142135623730951,
+      "source_weighted_inverse_root_second_moment": 2.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.2349814900678376e-16
+    },
+    {
+      "average_frame_support_rank": 5,
+      "carrier_dimension": 5,
+      "conditional_holevo_bits": 0.7369655941662061,
+      "control_id": "source-3.2",
+      "copy_count": 1,
+      "direct_lcu_mean_eigenvalue": 0.6,
+      "entropy_forced_second_moment_lower_bound": 1.6666666666666665,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.2909944487358056,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 3,
+      "n": 5,
+      "natural_source_probability": 0.25,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 2.220446049250313e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.2909944487358056,
+      "source_weighted_inverse_root_second_moment": 1.6666666666666665,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.85580188337696e-16
+    },
+    {
+      "average_frame_support_rank": 6,
+      "carrier_dimension": 6,
+      "conditional_holevo_bits": 1.584962500721156,
+      "control_id": "source-3.1.1",
+      "copy_count": 1,
+      "direct_lcu_mean_eigenvalue": 0.3333333333333333,
+      "entropy_forced_second_moment_lower_bound": 3.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.7320508075688772,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 2,
+      "n": 5,
+      "natural_source_probability": 0.2,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.7320508075688772,
+      "source_weighted_inverse_root_second_moment": 3.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.464596592638431e-16
+    },
+    {
+      "average_frame_support_rank": 5,
+      "carrier_dimension": 5,
+      "conditional_holevo_bits": 0.7369655941662066,
+      "control_id": "source-2.2.1",
+      "copy_count": 1,
+      "direct_lcu_mean_eigenvalue": 0.6,
+      "entropy_forced_second_moment_lower_bound": 1.6666666666666672,
+      "entropy_rank_bound_residual": 4.440892098500626e-16,
+      "generic_mean_scale_inverse_root_factor": 1.2909944487358056,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 3,
+      "n": 5,
+      "natural_source_probability": 0.25,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.2909944487358056,
+      "source_weighted_inverse_root_second_moment": 1.6666666666666667,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.1524688212606829e-16
+    },
+    {
+      "average_frame_support_rank": 4,
+      "carrier_dimension": 4,
+      "conditional_holevo_bits": 1.0,
+      "control_id": "source-2.1.1.1",
+      "copy_count": 1,
+      "direct_lcu_mean_eigenvalue": 0.5,
+      "entropy_forced_second_moment_lower_bound": 2.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.4142135623730951,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 2,
+      "n": 5,
+      "natural_source_probability": 0.13333333333333333,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.4142135623730951,
+      "source_weighted_inverse_root_second_moment": 2.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.2251903831398111e-16
+    },
+    {
+      "average_frame_support_rank": 1,
+      "carrier_dimension": 1,
+      "conditional_holevo_bits": -0.0,
+      "control_id": "source-1.1.1.1.1",
+      "copy_count": 1,
+      "direct_lcu_mean_eigenvalue": 1.0,
+      "entropy_forced_second_moment_lower_bound": 1.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.0,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 1,
+      "n": 5,
+      "natural_source_probability": 0.016666666666666666,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.0,
+      "source_weighted_inverse_root_second_moment": 1.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 0.0
+    },
+    {
+      "average_frame_support_rank": 1,
+      "carrier_dimension": 1,
+      "conditional_holevo_bits": -0.0,
+      "control_id": "source-5-5",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 1.0,
+      "entropy_forced_second_moment_lower_bound": 1.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.0,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 1,
+      "n": 5,
+      "natural_source_probability": 0.0002777777777777778,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          5
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.0,
+      "source_weighted_inverse_root_second_moment": 1.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 0.0
+    },
+    {
+      "average_frame_support_rank": 4,
+      "carrier_dimension": 4,
+      "conditional_holevo_bits": 1.0,
+      "control_id": "source-5-4.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.5,
+      "entropy_forced_second_moment_lower_bound": 2.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.4142135623730951,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 2,
+      "n": 5,
+      "natural_source_probability": 0.0044444444444444444,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.4142135623730951,
+      "source_weighted_inverse_root_second_moment": 2.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.2349814900678376e-16
+    },
+    {
+      "average_frame_support_rank": 5,
+      "carrier_dimension": 5,
+      "conditional_holevo_bits": 0.7369655941662061,
+      "control_id": "source-5-3.2",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.6,
+      "entropy_forced_second_moment_lower_bound": 1.6666666666666665,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.2909944487358056,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 3,
+      "n": 5,
+      "natural_source_probability": 0.008333333333333333,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 2.220446049250313e-16,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.2909944487358056,
+      "source_weighted_inverse_root_second_moment": 1.6666666666666665,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.85580188337696e-16
+    },
+    {
+      "average_frame_support_rank": 6,
+      "carrier_dimension": 6,
+      "conditional_holevo_bits": 1.584962500721156,
+      "control_id": "source-5-3.1.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.3333333333333333,
+      "entropy_forced_second_moment_lower_bound": 3.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.7320508075688772,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 2,
+      "n": 5,
+      "natural_source_probability": 0.006666666666666667,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.7320508075688772,
+      "source_weighted_inverse_root_second_moment": 3.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.464596592638431e-16
+    },
+    {
+      "average_frame_support_rank": 5,
+      "carrier_dimension": 5,
+      "conditional_holevo_bits": 0.7369655941662066,
+      "control_id": "source-5-2.2.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.6,
+      "entropy_forced_second_moment_lower_bound": 1.6666666666666672,
+      "entropy_rank_bound_residual": 4.440892098500626e-16,
+      "generic_mean_scale_inverse_root_factor": 1.2909944487358056,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 3,
+      "n": 5,
+      "natural_source_probability": 0.008333333333333333,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.2909944487358056,
+      "source_weighted_inverse_root_second_moment": 1.6666666666666667,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.1524688212606829e-16
+    },
+    {
+      "average_frame_support_rank": 4,
+      "carrier_dimension": 4,
+      "conditional_holevo_bits": 1.0,
+      "control_id": "source-5-2.1.1.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.5,
+      "entropy_forced_second_moment_lower_bound": 2.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.4142135623730951,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 2,
+      "n": 5,
+      "natural_source_probability": 0.0044444444444444444,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.4142135623730951,
+      "source_weighted_inverse_root_second_moment": 2.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.2251903831398111e-16
+    },
+    {
+      "average_frame_support_rank": 1,
+      "carrier_dimension": 1,
+      "conditional_holevo_bits": -0.0,
+      "control_id": "source-5-1.1.1.1.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 1.0,
+      "entropy_forced_second_moment_lower_bound": 1.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.0,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 1,
+      "n": 5,
+      "natural_source_probability": 0.0005555555555555556,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.0,
+      "source_weighted_inverse_root_second_moment": 1.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 0.0
+    },
+    {
+      "average_frame_support_rank": 16,
+      "carrier_dimension": 16,
+      "conditional_holevo_bits": 1.9226027229926164,
+      "control_id": "source-4.1-4.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.25,
+      "entropy_forced_second_moment_lower_bound": 3.7910637660851036,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.0,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 4,
+      "n": 5,
+      "natural_source_probability": 0.017777777777777778,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.0,
+      "source_weighted_inverse_root_second_moment": 4.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.1418375336694477e-16
+    },
+    {
+      "average_frame_support_rank": 20,
+      "carrier_dimension": 20,
+      "conditional_holevo_bits": 1.7089584931018749,
+      "control_id": "source-4.1-3.2",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.3,
+      "entropy_forced_second_moment_lower_bound": 3.26924725508348,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.8257418583505538,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 6,
+      "n": 5,
+      "natural_source_probability": 0.06666666666666667,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 4.440892098500626e-16,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.8257418583505536,
+      "source_weighted_inverse_root_second_moment": 3.333333333333333,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.837878064479349e-16
+    },
+    {
+      "average_frame_support_rank": 24,
+      "carrier_dimension": 24,
+      "conditional_holevo_bits": 2.5049353714587195,
+      "control_id": "source-4.1-3.1.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.16666666666666666,
+      "entropy_forced_second_moment_lower_bound": 5.67623914010369,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.449489742783178,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 4,
+      "n": 5,
+      "natural_source_probability": 0.05333333333333334,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.449489742783178,
+      "source_weighted_inverse_root_second_moment": 6.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.1708611220676542e-16
+    },
+    {
+      "average_frame_support_rank": 20,
+      "carrier_dimension": 20,
+      "conditional_holevo_bits": 1.7089584931018758,
+      "control_id": "source-4.1-2.2.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.3,
+      "entropy_forced_second_moment_lower_bound": 3.269247255083482,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.8257418583505538,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 6,
+      "n": 5,
+      "natural_source_probability": 0.06666666666666667,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 4.440892098500626e-16,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.8257418583505536,
+      "source_weighted_inverse_root_second_moment": 3.333333333333333,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.401757887165374e-16
+    },
+    {
+      "average_frame_support_rank": 16,
+      "carrier_dimension": 16,
+      "conditional_holevo_bits": 1.9226027229926164,
+      "control_id": "source-4.1-2.1.1.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.25,
+      "entropy_forced_second_moment_lower_bound": 3.7910637660851036,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.0,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 4,
+      "n": 5,
+      "natural_source_probability": 0.035555555555555556,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.0,
+      "source_weighted_inverse_root_second_moment": 4.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.9338233376438357e-16
+    },
+    {
+      "average_frame_support_rank": 4,
+      "carrier_dimension": 4,
+      "conditional_holevo_bits": 1.0,
+      "control_id": "source-4.1-1.1.1.1.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.5,
+      "entropy_forced_second_moment_lower_bound": 2.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.4142135623730951,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 2,
+      "n": 5,
+      "natural_source_probability": 0.0044444444444444444,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.4142135623730951,
+      "source_weighted_inverse_root_second_moment": 2.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.2349814900678376e-16
+    },
+    {
+      "average_frame_support_rank": 25,
+      "carrier_dimension": 25,
+      "conditional_holevo_bits": 1.4468579525495704,
+      "control_id": "source-3.2-3.2",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.36,
+      "entropy_forced_second_moment_lower_bound": 2.726136786495661,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.6666666666666667,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 9,
+      "n": 5,
+      "natural_source_probability": 0.0625,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 4.440892098500626e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.6666666666666667,
+      "source_weighted_inverse_root_second_moment": 2.777777777777778,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.3801748641725476e-16
+    },
+    {
+      "average_frame_support_rank": 30,
+      "carrier_dimension": 30,
+      "conditional_holevo_bits": 2.2600968992566495,
+      "control_id": "source-3.2-3.1.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.2,
+      "entropy_forced_second_moment_lower_bound": 4.790236546047777,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.23606797749979,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 6,
+      "n": 5,
+      "natural_source_probability": 0.1,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 1.7763568394002505e-15,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.2360679774997902,
+      "source_weighted_inverse_root_second_moment": 5.000000000000002,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.1049867524609414e-16
+    },
+    {
+      "average_frame_support_rank": 25,
+      "carrier_dimension": 25,
+      "conditional_holevo_bits": 1.4468579525495704,
+      "control_id": "source-3.2-2.2.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.36,
+      "entropy_forced_second_moment_lower_bound": 2.726136786495661,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.6666666666666667,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 9,
+      "n": 5,
+      "natural_source_probability": 0.125,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 4.440892098500626e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.6666666666666667,
+      "source_weighted_inverse_root_second_moment": 2.777777777777778,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.933975302149688e-16
+    },
+    {
+      "average_frame_support_rank": 20,
+      "carrier_dimension": 20,
+      "conditional_holevo_bits": 1.7089584931018758,
+      "control_id": "source-3.2-2.1.1.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.3,
+      "entropy_forced_second_moment_lower_bound": 3.269247255083482,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.8257418583505538,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 6,
+      "n": 5,
+      "natural_source_probability": 0.06666666666666667,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 4.440892098500626e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.8257418583505536,
+      "source_weighted_inverse_root_second_moment": 3.333333333333333,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.647556687173568e-16
+    },
+    {
+      "average_frame_support_rank": 5,
+      "carrier_dimension": 5,
+      "conditional_holevo_bits": 0.7369655941662061,
+      "control_id": "source-3.2-1.1.1.1.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.6,
+      "entropy_forced_second_moment_lower_bound": 1.6666666666666665,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.2909944487358056,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 3,
+      "n": 5,
+      "natural_source_probability": 0.008333333333333333,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 2.220446049250313e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.2909944487358056,
+      "source_weighted_inverse_root_second_moment": 1.6666666666666665,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.85580188337696e-16
+    },
+    {
+      "average_frame_support_rank": 30,
+      "carrier_dimension": 36,
+      "conditional_holevo_bits": 2.7995812306460657,
+      "control_id": "source-3.1.1-3.1.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.1111111111111111,
+      "entropy_forced_second_moment_lower_bound": 6.962383250419174,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 3.0,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 4,
+      "n": 5,
+      "natural_source_probability": 0.04000000000000001,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.7386127875258306,
+      "source_weighted_inverse_root_second_moment": 7.5,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.9289690767893533e-16
+    },
+    {
+      "average_frame_support_rank": 30,
+      "carrier_dimension": 30,
+      "conditional_holevo_bits": 2.2600968992566486,
+      "control_id": "source-3.1.1-2.2.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.2,
+      "entropy_forced_second_moment_lower_bound": 4.790236546047774,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.23606797749979,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 6,
+      "n": 5,
+      "natural_source_probability": 0.1,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 1.7763568394002505e-15,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.2360679774997902,
+      "source_weighted_inverse_root_second_moment": 5.000000000000002,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.91347683185918e-16
+    },
+    {
+      "average_frame_support_rank": 24,
+      "carrier_dimension": 24,
+      "conditional_holevo_bits": 2.5049353714587195,
+      "control_id": "source-3.1.1-2.1.1.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.16666666666666666,
+      "entropy_forced_second_moment_lower_bound": 5.67623914010369,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.449489742783178,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 4,
+      "n": 5,
+      "natural_source_probability": 0.05333333333333334,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.449489742783178,
+      "source_weighted_inverse_root_second_moment": 6.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.30825946502016e-16
+    },
+    {
+      "average_frame_support_rank": 6,
+      "carrier_dimension": 6,
+      "conditional_holevo_bits": 1.584962500721156,
+      "control_id": "source-3.1.1-1.1.1.1.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.3333333333333333,
+      "entropy_forced_second_moment_lower_bound": 3.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.7320508075688772,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 2,
+      "n": 5,
+      "natural_source_probability": 0.006666666666666667,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.7320508075688772,
+      "source_weighted_inverse_root_second_moment": 3.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.464596592638431e-16
+    },
+    {
+      "average_frame_support_rank": 25,
+      "carrier_dimension": 25,
+      "conditional_holevo_bits": 1.4468579525495704,
+      "control_id": "source-2.2.1-2.2.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.36,
+      "entropy_forced_second_moment_lower_bound": 2.726136786495661,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.6666666666666667,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 9,
+      "n": 5,
+      "natural_source_probability": 0.0625,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 4.440892098500626e-16,
+      "source_partitions": [
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.6666666666666667,
+      "source_weighted_inverse_root_second_moment": 2.777777777777778,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 8.004665610762617e-16
+    },
+    {
+      "average_frame_support_rank": 20,
+      "carrier_dimension": 20,
+      "conditional_holevo_bits": 1.7089584931018758,
+      "control_id": "source-2.2.1-2.1.1.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.3,
+      "entropy_forced_second_moment_lower_bound": 3.269247255083482,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.8257418583505538,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 6,
+      "n": 5,
+      "natural_source_probability": 0.06666666666666667,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 4.440892098500626e-16,
+      "source_partitions": [
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.8257418583505536,
+      "source_weighted_inverse_root_second_moment": 3.333333333333333,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.44202494201286e-16
+    },
+    {
+      "average_frame_support_rank": 5,
+      "carrier_dimension": 5,
+      "conditional_holevo_bits": 0.7369655941662066,
+      "control_id": "source-2.2.1-1.1.1.1.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.6,
+      "entropy_forced_second_moment_lower_bound": 1.6666666666666672,
+      "entropy_rank_bound_residual": 4.440892098500626e-16,
+      "generic_mean_scale_inverse_root_factor": 1.2909944487358056,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 3,
+      "n": 5,
+      "natural_source_probability": 0.008333333333333333,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.2909944487358056,
+      "source_weighted_inverse_root_second_moment": 1.6666666666666667,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.1524688212606829e-16
+    },
+    {
+      "average_frame_support_rank": 16,
+      "carrier_dimension": 16,
+      "conditional_holevo_bits": 1.922602722992616,
+      "control_id": "source-2.1.1.1-2.1.1.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.25,
+      "entropy_forced_second_moment_lower_bound": 3.7910637660851023,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.0,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 4,
+      "n": 5,
+      "natural_source_probability": 0.017777777777777778,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.0,
+      "source_weighted_inverse_root_second_moment": 4.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.7508674273114625e-16
+    },
+    {
+      "average_frame_support_rank": 4,
+      "carrier_dimension": 4,
+      "conditional_holevo_bits": 1.0,
+      "control_id": "source-2.1.1.1-1.1.1.1.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 0.5,
+      "entropy_forced_second_moment_lower_bound": 2.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.4142135623730951,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 2,
+      "n": 5,
+      "natural_source_probability": 0.0044444444444444444,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.4142135623730951,
+      "source_weighted_inverse_root_second_moment": 2.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.2251903831398111e-16
+    },
+    {
+      "average_frame_support_rank": 1,
+      "carrier_dimension": 1,
+      "conditional_holevo_bits": -0.0,
+      "control_id": "source-1.1.1.1.1-1.1.1.1.1",
+      "copy_count": 2,
+      "direct_lcu_mean_eigenvalue": 1.0,
+      "entropy_forced_second_moment_lower_bound": 1.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.0,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 1,
+      "n": 5,
+      "natural_source_probability": 0.0002777777777777778,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.0,
+      "source_weighted_inverse_root_second_moment": 1.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 0.0
+    },
+    {
+      "average_frame_support_rank": 1,
+      "carrier_dimension": 1,
+      "conditional_holevo_bits": -0.0,
+      "control_id": "source-5-5-5",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 1.0,
+      "entropy_forced_second_moment_lower_bound": 1.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.0,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 1,
+      "n": 5,
+      "natural_source_probability": 4.6296296296296296e-06,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          5
+        ],
+        [
+          5
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.0,
+      "source_weighted_inverse_root_second_moment": 1.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 0.0
+    },
+    {
+      "average_frame_support_rank": 4,
+      "carrier_dimension": 4,
+      "conditional_holevo_bits": 1.0,
+      "control_id": "source-5-5-4.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.5,
+      "entropy_forced_second_moment_lower_bound": 2.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.4142135623730951,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 2,
+      "n": 5,
+      "natural_source_probability": 0.00011111111111111112,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          5
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.4142135623730951,
+      "source_weighted_inverse_root_second_moment": 2.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.2349814900678376e-16
+    },
+    {
+      "average_frame_support_rank": 5,
+      "carrier_dimension": 5,
+      "conditional_holevo_bits": 0.7369655941662061,
+      "control_id": "source-5-5-3.2",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.6,
+      "entropy_forced_second_moment_lower_bound": 1.6666666666666665,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.2909944487358056,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 3,
+      "n": 5,
+      "natural_source_probability": 0.00020833333333333335,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 2.220446049250313e-16,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          5
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.2909944487358056,
+      "source_weighted_inverse_root_second_moment": 1.6666666666666665,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.85580188337696e-16
+    },
+    {
+      "average_frame_support_rank": 6,
+      "carrier_dimension": 6,
+      "conditional_holevo_bits": 1.584962500721156,
+      "control_id": "source-5-5-3.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.3333333333333333,
+      "entropy_forced_second_moment_lower_bound": 3.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.7320508075688772,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 2,
+      "n": 5,
+      "natural_source_probability": 0.0001666666666666667,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          5
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.7320508075688772,
+      "source_weighted_inverse_root_second_moment": 3.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.464596592638431e-16
+    },
+    {
+      "average_frame_support_rank": 5,
+      "carrier_dimension": 5,
+      "conditional_holevo_bits": 0.7369655941662066,
+      "control_id": "source-5-5-2.2.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.6,
+      "entropy_forced_second_moment_lower_bound": 1.6666666666666672,
+      "entropy_rank_bound_residual": 4.440892098500626e-16,
+      "generic_mean_scale_inverse_root_factor": 1.2909944487358056,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 3,
+      "n": 5,
+      "natural_source_probability": 0.00020833333333333335,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          5
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.2909944487358056,
+      "source_weighted_inverse_root_second_moment": 1.6666666666666667,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.1524688212606829e-16
+    },
+    {
+      "average_frame_support_rank": 4,
+      "carrier_dimension": 4,
+      "conditional_holevo_bits": 1.0,
+      "control_id": "source-5-5-2.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.5,
+      "entropy_forced_second_moment_lower_bound": 2.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.4142135623730951,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 2,
+      "n": 5,
+      "natural_source_probability": 0.00011111111111111112,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          5
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.4142135623730951,
+      "source_weighted_inverse_root_second_moment": 2.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.2251903831398111e-16
+    },
+    {
+      "average_frame_support_rank": 1,
+      "carrier_dimension": 1,
+      "conditional_holevo_bits": -0.0,
+      "control_id": "source-5-5-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 1.0,
+      "entropy_forced_second_moment_lower_bound": 1.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.0,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 1,
+      "n": 5,
+      "natural_source_probability": 1.388888888888889e-05,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          5
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.0,
+      "source_weighted_inverse_root_second_moment": 1.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 0.0
+    },
+    {
+      "average_frame_support_rank": 16,
+      "carrier_dimension": 16,
+      "conditional_holevo_bits": 1.9226027229926164,
+      "control_id": "source-5-4.1-4.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.25,
+      "entropy_forced_second_moment_lower_bound": 3.7910637660851036,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.0,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 4,
+      "n": 5,
+      "natural_source_probability": 0.0008888888888888889,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.0,
+      "source_weighted_inverse_root_second_moment": 4.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.1418375336694477e-16
+    },
+    {
+      "average_frame_support_rank": 20,
+      "carrier_dimension": 20,
+      "conditional_holevo_bits": 1.7089584931018749,
+      "control_id": "source-5-4.1-3.2",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.3,
+      "entropy_forced_second_moment_lower_bound": 3.26924725508348,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.8257418583505538,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 6,
+      "n": 5,
+      "natural_source_probability": 0.0033333333333333335,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 4.440892098500626e-16,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.8257418583505536,
+      "source_weighted_inverse_root_second_moment": 3.333333333333333,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.837878064479349e-16
+    },
+    {
+      "average_frame_support_rank": 24,
+      "carrier_dimension": 24,
+      "conditional_holevo_bits": 2.5049353714587195,
+      "control_id": "source-5-4.1-3.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.16666666666666666,
+      "entropy_forced_second_moment_lower_bound": 5.67623914010369,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.449489742783178,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 4,
+      "n": 5,
+      "natural_source_probability": 0.002666666666666667,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.449489742783178,
+      "source_weighted_inverse_root_second_moment": 6.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.1708611220676542e-16
+    },
+    {
+      "average_frame_support_rank": 20,
+      "carrier_dimension": 20,
+      "conditional_holevo_bits": 1.7089584931018758,
+      "control_id": "source-5-4.1-2.2.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.3,
+      "entropy_forced_second_moment_lower_bound": 3.269247255083482,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.8257418583505538,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 6,
+      "n": 5,
+      "natural_source_probability": 0.0033333333333333335,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 4.440892098500626e-16,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.8257418583505536,
+      "source_weighted_inverse_root_second_moment": 3.333333333333333,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.401757887165374e-16
+    },
+    {
+      "average_frame_support_rank": 16,
+      "carrier_dimension": 16,
+      "conditional_holevo_bits": 1.9226027229926164,
+      "control_id": "source-5-4.1-2.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.25,
+      "entropy_forced_second_moment_lower_bound": 3.7910637660851036,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.0,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 4,
+      "n": 5,
+      "natural_source_probability": 0.0017777777777777779,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.0,
+      "source_weighted_inverse_root_second_moment": 4.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.9338233376438357e-16
+    },
+    {
+      "average_frame_support_rank": 4,
+      "carrier_dimension": 4,
+      "conditional_holevo_bits": 1.0,
+      "control_id": "source-5-4.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.5,
+      "entropy_forced_second_moment_lower_bound": 2.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.4142135623730951,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 2,
+      "n": 5,
+      "natural_source_probability": 0.00022222222222222223,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.4142135623730951,
+      "source_weighted_inverse_root_second_moment": 2.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.2349814900678376e-16
+    },
+    {
+      "average_frame_support_rank": 25,
+      "carrier_dimension": 25,
+      "conditional_holevo_bits": 1.4468579525495704,
+      "control_id": "source-5-3.2-3.2",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.36,
+      "entropy_forced_second_moment_lower_bound": 2.726136786495661,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.6666666666666667,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 9,
+      "n": 5,
+      "natural_source_probability": 0.003125,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 4.440892098500626e-16,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.6666666666666667,
+      "source_weighted_inverse_root_second_moment": 2.777777777777778,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.3801748641725476e-16
+    },
+    {
+      "average_frame_support_rank": 30,
+      "carrier_dimension": 30,
+      "conditional_holevo_bits": 2.2600968992566495,
+      "control_id": "source-5-3.2-3.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.2,
+      "entropy_forced_second_moment_lower_bound": 4.790236546047777,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.23606797749979,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 6,
+      "n": 5,
+      "natural_source_probability": 0.005000000000000001,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 1.7763568394002505e-15,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.2360679774997902,
+      "source_weighted_inverse_root_second_moment": 5.000000000000002,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.1049867524609414e-16
+    },
+    {
+      "average_frame_support_rank": 25,
+      "carrier_dimension": 25,
+      "conditional_holevo_bits": 1.4468579525495704,
+      "control_id": "source-5-3.2-2.2.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.36,
+      "entropy_forced_second_moment_lower_bound": 2.726136786495661,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.6666666666666667,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 9,
+      "n": 5,
+      "natural_source_probability": 0.00625,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 4.440892098500626e-16,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.6666666666666667,
+      "source_weighted_inverse_root_second_moment": 2.777777777777778,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.933975302149688e-16
+    },
+    {
+      "average_frame_support_rank": 20,
+      "carrier_dimension": 20,
+      "conditional_holevo_bits": 1.7089584931018758,
+      "control_id": "source-5-3.2-2.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.3,
+      "entropy_forced_second_moment_lower_bound": 3.269247255083482,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.8257418583505538,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 6,
+      "n": 5,
+      "natural_source_probability": 0.0033333333333333335,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 4.440892098500626e-16,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.8257418583505536,
+      "source_weighted_inverse_root_second_moment": 3.333333333333333,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.647556687173568e-16
+    },
+    {
+      "average_frame_support_rank": 5,
+      "carrier_dimension": 5,
+      "conditional_holevo_bits": 0.7369655941662061,
+      "control_id": "source-5-3.2-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.6,
+      "entropy_forced_second_moment_lower_bound": 1.6666666666666665,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.2909944487358056,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 3,
+      "n": 5,
+      "natural_source_probability": 0.0004166666666666667,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 2.220446049250313e-16,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.2909944487358056,
+      "source_weighted_inverse_root_second_moment": 1.6666666666666665,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.85580188337696e-16
+    },
+    {
+      "average_frame_support_rank": 30,
+      "carrier_dimension": 36,
+      "conditional_holevo_bits": 2.7995812306460657,
+      "control_id": "source-5-3.1.1-3.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.1111111111111111,
+      "entropy_forced_second_moment_lower_bound": 6.962383250419174,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 3.0,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 4,
+      "n": 5,
+      "natural_source_probability": 0.0020000000000000005,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.7386127875258306,
+      "source_weighted_inverse_root_second_moment": 7.5,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.9289690767893533e-16
+    },
+    {
+      "average_frame_support_rank": 30,
+      "carrier_dimension": 30,
+      "conditional_holevo_bits": 2.2600968992566486,
+      "control_id": "source-5-3.1.1-2.2.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.2,
+      "entropy_forced_second_moment_lower_bound": 4.790236546047774,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.23606797749979,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 6,
+      "n": 5,
+      "natural_source_probability": 0.005000000000000001,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 1.7763568394002505e-15,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.2360679774997902,
+      "source_weighted_inverse_root_second_moment": 5.000000000000002,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.91347683185918e-16
+    },
+    {
+      "average_frame_support_rank": 24,
+      "carrier_dimension": 24,
+      "conditional_holevo_bits": 2.5049353714587195,
+      "control_id": "source-5-3.1.1-2.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.16666666666666666,
+      "entropy_forced_second_moment_lower_bound": 5.67623914010369,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.449489742783178,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 4,
+      "n": 5,
+      "natural_source_probability": 0.002666666666666667,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.449489742783178,
+      "source_weighted_inverse_root_second_moment": 6.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.30825946502016e-16
+    },
+    {
+      "average_frame_support_rank": 6,
+      "carrier_dimension": 6,
+      "conditional_holevo_bits": 1.584962500721156,
+      "control_id": "source-5-3.1.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.3333333333333333,
+      "entropy_forced_second_moment_lower_bound": 3.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.7320508075688772,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 2,
+      "n": 5,
+      "natural_source_probability": 0.0003333333333333334,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.7320508075688772,
+      "source_weighted_inverse_root_second_moment": 3.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.464596592638431e-16
+    },
+    {
+      "average_frame_support_rank": 25,
+      "carrier_dimension": 25,
+      "conditional_holevo_bits": 1.4468579525495704,
+      "control_id": "source-5-2.2.1-2.2.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.36,
+      "entropy_forced_second_moment_lower_bound": 2.726136786495661,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.6666666666666667,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 9,
+      "n": 5,
+      "natural_source_probability": 0.003125,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 4.440892098500626e-16,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.6666666666666667,
+      "source_weighted_inverse_root_second_moment": 2.777777777777778,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 8.004665610762617e-16
+    },
+    {
+      "average_frame_support_rank": 20,
+      "carrier_dimension": 20,
+      "conditional_holevo_bits": 1.7089584931018758,
+      "control_id": "source-5-2.2.1-2.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.3,
+      "entropy_forced_second_moment_lower_bound": 3.269247255083482,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.8257418583505538,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 6,
+      "n": 5,
+      "natural_source_probability": 0.0033333333333333335,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 4.440892098500626e-16,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.8257418583505536,
+      "source_weighted_inverse_root_second_moment": 3.333333333333333,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.44202494201286e-16
+    },
+    {
+      "average_frame_support_rank": 5,
+      "carrier_dimension": 5,
+      "conditional_holevo_bits": 0.7369655941662066,
+      "control_id": "source-5-2.2.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.6,
+      "entropy_forced_second_moment_lower_bound": 1.6666666666666672,
+      "entropy_rank_bound_residual": 4.440892098500626e-16,
+      "generic_mean_scale_inverse_root_factor": 1.2909944487358056,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 3,
+      "n": 5,
+      "natural_source_probability": 0.0004166666666666667,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.2909944487358056,
+      "source_weighted_inverse_root_second_moment": 1.6666666666666667,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.1524688212606829e-16
+    },
+    {
+      "average_frame_support_rank": 16,
+      "carrier_dimension": 16,
+      "conditional_holevo_bits": 1.922602722992616,
+      "control_id": "source-5-2.1.1.1-2.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.25,
+      "entropy_forced_second_moment_lower_bound": 3.7910637660851023,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.0,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 4,
+      "n": 5,
+      "natural_source_probability": 0.0008888888888888889,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.0,
+      "source_weighted_inverse_root_second_moment": 4.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.7508674273114625e-16
+    },
+    {
+      "average_frame_support_rank": 4,
+      "carrier_dimension": 4,
+      "conditional_holevo_bits": 1.0,
+      "control_id": "source-5-2.1.1.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.5,
+      "entropy_forced_second_moment_lower_bound": 2.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.4142135623730951,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 2,
+      "n": 5,
+      "natural_source_probability": 0.00022222222222222223,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.4142135623730951,
+      "source_weighted_inverse_root_second_moment": 2.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.2251903831398111e-16
+    },
+    {
+      "average_frame_support_rank": 1,
+      "carrier_dimension": 1,
+      "conditional_holevo_bits": -0.0,
+      "control_id": "source-5-1.1.1.1.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 1.0,
+      "entropy_forced_second_moment_lower_bound": 1.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.0,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 1,
+      "n": 5,
+      "natural_source_probability": 1.388888888888889e-05,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          5
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.0,
+      "source_weighted_inverse_root_second_moment": 1.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 0.0
+    },
+    {
+      "average_frame_support_rank": 60,
+      "carrier_dimension": 64,
+      "conditional_holevo_bits": 2.6861842699153,
+      "control_id": "source-4.1-4.1-4.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.125,
+      "entropy_forced_second_moment_lower_bound": 6.436088972047137,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.8284271247461903,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 8,
+      "n": 5,
+      "natural_source_probability": 0.0023703703703703703,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.7386127875258306,
+      "source_weighted_inverse_root_second_moment": 7.5,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 4.1739270836320525e-16
+    },
+    {
+      "average_frame_support_rank": 80,
+      "carrier_dimension": 80,
+      "conditional_holevo_bits": 2.5658992955229527,
+      "control_id": "source-4.1-4.1-3.2",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.15,
+      "entropy_forced_second_moment_lower_bound": 5.921239857124511,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.581988897471611,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 12,
+      "n": 5,
+      "natural_source_probability": 0.013333333333333334,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 8.881784197001252e-16,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.5819888974716116,
+      "source_weighted_inverse_root_second_moment": 6.666666666666668,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 6.020109352080027e-16
+    },
+    {
+      "average_frame_support_rank": 90,
+      "carrier_dimension": 96,
+      "conditional_holevo_bits": 3.218227186344933,
+      "control_id": "source-4.1-4.1-3.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.08333333333333333,
+      "entropy_forced_second_moment_lower_bound": 9.3064257331244,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 3.4641016151377544,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 8,
+      "n": 5,
+      "natural_source_probability": 0.010666666666666668,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 3.3541019662496847,
+      "source_weighted_inverse_root_second_moment": 11.25,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 4.826833252405492e-16
+    },
+    {
+      "average_frame_support_rank": 80,
+      "carrier_dimension": 80,
+      "conditional_holevo_bits": 2.5658992955229536,
+      "control_id": "source-4.1-4.1-2.2.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.15,
+      "entropy_forced_second_moment_lower_bound": 5.921239857124514,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.581988897471611,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 12,
+      "n": 5,
+      "natural_source_probability": 0.013333333333333334,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 8.881784197001252e-16,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.5819888974716116,
+      "source_weighted_inverse_root_second_moment": 6.666666666666668,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 5.862036715628202e-16
+    },
+    {
+      "average_frame_support_rank": 60,
+      "carrier_dimension": 64,
+      "conditional_holevo_bits": 2.686184269915299,
+      "control_id": "source-4.1-4.1-2.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.125,
+      "entropy_forced_second_moment_lower_bound": 6.436088972047133,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.8284271247461903,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 8,
+      "n": 5,
+      "natural_source_probability": 0.0071111111111111115,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.7386127875258306,
+      "source_weighted_inverse_root_second_moment": 7.5,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 4.180967173016785e-16
+    },
+    {
+      "average_frame_support_rank": 16,
+      "carrier_dimension": 16,
+      "conditional_holevo_bits": 1.9226027229926164,
+      "control_id": "source-4.1-4.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.25,
+      "entropy_forced_second_moment_lower_bound": 3.7910637660851036,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.0,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 4,
+      "n": 5,
+      "natural_source_probability": 0.0008888888888888889,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.0,
+      "source_weighted_inverse_root_second_moment": 4.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.1418375336694477e-16
+    },
+    {
+      "average_frame_support_rank": 100,
+      "carrier_dimension": 100,
+      "conditional_holevo_bits": 2.3652847740783196,
+      "control_id": "source-4.1-3.2-3.2",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.18,
+      "entropy_forced_second_moment_lower_bound": 5.152543480025011,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.3570226039551585,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 18,
+      "n": 5,
+      "natural_source_probability": 0.025,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 8.881784197001252e-16,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.3570226039551585,
+      "source_weighted_inverse_root_second_moment": 5.555555555555556,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 7.136271994855043e-16
+    },
+    {
+      "average_frame_support_rank": 114,
+      "carrier_dimension": 120,
+      "conditional_holevo_bits": 3.048719045701179,
+      "control_id": "source-4.1-3.2-3.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.1,
+      "entropy_forced_second_moment_lower_bound": 8.274769044531082,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 3.1622776601683795,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 12,
+      "n": 5,
+      "natural_source_probability": 0.04000000000000001,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 3.082207001484488,
+      "source_weighted_inverse_root_second_moment": 9.5,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 4.989044284656179e-16
+    },
+    {
+      "average_frame_support_rank": 100,
+      "carrier_dimension": 100,
+      "conditional_holevo_bits": 2.3652847740783205,
+      "control_id": "source-4.1-3.2-2.2.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.18,
+      "entropy_forced_second_moment_lower_bound": 5.152543480025015,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.3570226039551585,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 18,
+      "n": 5,
+      "natural_source_probability": 0.05,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 8.881784197001252e-16,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.3570226039551585,
+      "source_weighted_inverse_root_second_moment": 5.555555555555556,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 7.29278873972796e-16
+    },
+    {
+      "average_frame_support_rank": 80,
+      "carrier_dimension": 80,
+      "conditional_holevo_bits": 2.5658992955229536,
+      "control_id": "source-4.1-3.2-2.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.15,
+      "entropy_forced_second_moment_lower_bound": 5.921239857124514,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.581988897471611,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 12,
+      "n": 5,
+      "natural_source_probability": 0.02666666666666667,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 8.881784197001252e-16,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.5819888974716116,
+      "source_weighted_inverse_root_second_moment": 6.666666666666668,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 4.626628754505574e-16
+    },
+    {
+      "average_frame_support_rank": 20,
+      "carrier_dimension": 20,
+      "conditional_holevo_bits": 1.7089584931018749,
+      "control_id": "source-4.1-3.2-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.3,
+      "entropy_forced_second_moment_lower_bound": 3.26924725508348,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.8257418583505538,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 6,
+      "n": 5,
+      "natural_source_probability": 0.0033333333333333335,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 4.440892098500626e-16,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.8257418583505536,
+      "source_weighted_inverse_root_second_moment": 3.333333333333333,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.837878064479349e-16
+    },
+    {
+      "average_frame_support_rank": 108,
+      "carrier_dimension": 144,
+      "conditional_holevo_bits": 3.4423104017112127,
+      "control_id": "source-4.1-3.1.1-3.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.05555555555555555,
+      "entropy_forced_second_moment_lower_bound": 10.870228798789645,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 4.242640687119285,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 8,
+      "n": 5,
+      "natural_source_probability": 0.016000000000000004,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 3.6742346141747673,
+      "source_weighted_inverse_root_second_moment": 13.5,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 4.732843052826087e-16
+    },
+    {
+      "average_frame_support_rank": 114,
+      "carrier_dimension": 120,
+      "conditional_holevo_bits": 3.048719045701181,
+      "control_id": "source-4.1-3.1.1-2.2.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.1,
+      "entropy_forced_second_moment_lower_bound": 8.274769044531093,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 3.1622776601683795,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 12,
+      "n": 5,
+      "natural_source_probability": 0.04000000000000001,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 3.082207001484488,
+      "source_weighted_inverse_root_second_moment": 9.5,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 4.234029786068797e-16
+    },
+    {
+      "average_frame_support_rank": 90,
+      "carrier_dimension": 96,
+      "conditional_holevo_bits": 3.218227186344933,
+      "control_id": "source-4.1-3.1.1-2.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.08333333333333333,
+      "entropy_forced_second_moment_lower_bound": 9.3064257331244,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 3.4641016151377544,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 8,
+      "n": 5,
+      "natural_source_probability": 0.021333333333333336,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 3.3541019662496847,
+      "source_weighted_inverse_root_second_moment": 11.25,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.99484729079256e-16
+    },
+    {
+      "average_frame_support_rank": 24,
+      "carrier_dimension": 24,
+      "conditional_holevo_bits": 2.5049353714587195,
+      "control_id": "source-4.1-3.1.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.16666666666666666,
+      "entropy_forced_second_moment_lower_bound": 5.67623914010369,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.449489742783178,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 4,
+      "n": 5,
+      "natural_source_probability": 0.002666666666666667,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.449489742783178,
+      "source_weighted_inverse_root_second_moment": 6.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.1708611220676542e-16
+    },
+    {
+      "average_frame_support_rank": 100,
+      "carrier_dimension": 100,
+      "conditional_holevo_bits": 2.3652847740783187,
+      "control_id": "source-4.1-2.2.1-2.2.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.18,
+      "entropy_forced_second_moment_lower_bound": 5.152543480025009,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.3570226039551585,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 18,
+      "n": 5,
+      "natural_source_probability": 0.025,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 8.881784197001252e-16,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.3570226039551585,
+      "source_weighted_inverse_root_second_moment": 5.555555555555556,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 7.677738566205559e-16
+    },
+    {
+      "average_frame_support_rank": 80,
+      "carrier_dimension": 80,
+      "conditional_holevo_bits": 2.5658992955229527,
+      "control_id": "source-4.1-2.2.1-2.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.15,
+      "entropy_forced_second_moment_lower_bound": 5.921239857124511,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.581988897471611,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 12,
+      "n": 5,
+      "natural_source_probability": 0.02666666666666667,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 8.881784197001252e-16,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.5819888974716116,
+      "source_weighted_inverse_root_second_moment": 6.666666666666668,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 5.773091406499293e-16
+    },
+    {
+      "average_frame_support_rank": 20,
+      "carrier_dimension": 20,
+      "conditional_holevo_bits": 1.7089584931018758,
+      "control_id": "source-4.1-2.2.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.3,
+      "entropy_forced_second_moment_lower_bound": 3.269247255083482,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.8257418583505538,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 6,
+      "n": 5,
+      "natural_source_probability": 0.0033333333333333335,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 4.440892098500626e-16,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.8257418583505536,
+      "source_weighted_inverse_root_second_moment": 3.333333333333333,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.401757887165374e-16
+    },
+    {
+      "average_frame_support_rank": 60,
+      "carrier_dimension": 64,
+      "conditional_holevo_bits": 2.686184269915299,
+      "control_id": "source-4.1-2.1.1.1-2.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.125,
+      "entropy_forced_second_moment_lower_bound": 6.436088972047133,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.8284271247461903,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 8,
+      "n": 5,
+      "natural_source_probability": 0.0071111111111111115,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.7386127875258306,
+      "source_weighted_inverse_root_second_moment": 7.5,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 5.043392538916636e-16
+    },
+    {
+      "average_frame_support_rank": 16,
+      "carrier_dimension": 16,
+      "conditional_holevo_bits": 1.9226027229926164,
+      "control_id": "source-4.1-2.1.1.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.25,
+      "entropy_forced_second_moment_lower_bound": 3.7910637660851036,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.0,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 4,
+      "n": 5,
+      "natural_source_probability": 0.0017777777777777779,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.0,
+      "source_weighted_inverse_root_second_moment": 4.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.9338233376438357e-16
+    },
+    {
+      "average_frame_support_rank": 4,
+      "carrier_dimension": 4,
+      "conditional_holevo_bits": 1.0,
+      "control_id": "source-4.1-1.1.1.1.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.5,
+      "entropy_forced_second_moment_lower_bound": 2.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.4142135623730951,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 2,
+      "n": 5,
+      "natural_source_probability": 0.00011111111111111112,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.4142135623730951,
+      "source_weighted_inverse_root_second_moment": 2.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.2349814900678376e-16
+    },
+    {
+      "average_frame_support_rank": 125,
+      "carrier_dimension": 125,
+      "conditional_holevo_bits": 2.1131677187360474,
+      "control_id": "source-3.2-3.2-3.2",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.216,
+      "entropy_forced_second_moment_lower_bound": 4.326401985237148,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.151657414559676,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 27,
+      "n": 5,
+      "natural_source_probability": 0.015625,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 8.881784197001252e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.151657414559676,
+      "source_weighted_inverse_root_second_moment": 4.629629629629631,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 9.89772963977864e-16
+    },
+    {
+      "average_frame_support_rank": 144,
+      "carrier_dimension": 150,
+      "conditional_holevo_bits": 2.843532064894023,
+      "control_id": "source-3.2-3.2-3.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.12,
+      "entropy_forced_second_moment_lower_bound": 7.177751938978148,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.886751345948129,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 18,
+      "n": 5,
+      "natural_source_probability": 0.037500000000000006,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 1.7763568394002505e-15,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.8284271247461903,
+      "source_weighted_inverse_root_second_moment": 8.000000000000002,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 7.205638579096186e-16
+    },
+    {
+      "average_frame_support_rank": 125,
+      "carrier_dimension": 125,
+      "conditional_holevo_bits": 2.113167718736049,
+      "control_id": "source-3.2-3.2-2.2.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.216,
+      "entropy_forced_second_moment_lower_bound": 4.326401985237153,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.151657414559676,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 27,
+      "n": 5,
+      "natural_source_probability": 0.046875,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 8.881784197001252e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.151657414559676,
+      "source_weighted_inverse_root_second_moment": 4.629629629629631,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 9.199710083221237e-16
+    },
+    {
+      "average_frame_support_rank": 100,
+      "carrier_dimension": 100,
+      "conditional_holevo_bits": 2.3652847740783205,
+      "control_id": "source-3.2-3.2-2.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.18,
+      "entropy_forced_second_moment_lower_bound": 5.152543480025015,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.3570226039551585,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 18,
+      "n": 5,
+      "natural_source_probability": 0.025,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 8.881784197001252e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.3570226039551585,
+      "source_weighted_inverse_root_second_moment": 5.555555555555556,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 7.349084024762881e-16
+    },
+    {
+      "average_frame_support_rank": 25,
+      "carrier_dimension": 25,
+      "conditional_holevo_bits": 1.4468579525495704,
+      "control_id": "source-3.2-3.2-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.36,
+      "entropy_forced_second_moment_lower_bound": 2.726136786495661,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.6666666666666667,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 9,
+      "n": 5,
+      "natural_source_probability": 0.003125,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 4.440892098500626e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.6666666666666667,
+      "source_weighted_inverse_root_second_moment": 2.777777777777778,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.3801748641725476e-16
+    },
+    {
+      "average_frame_support_rank": 132,
+      "carrier_dimension": 180,
+      "conditional_holevo_bits": 3.245801722296364,
+      "control_id": "source-3.2-3.1.1-3.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.06666666666666667,
+      "entropy_forced_second_moment_lower_bound": 9.486012189621698,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 3.872983346207417,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 12,
+      "n": 5,
+      "natural_source_probability": 0.030000000000000006,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 3.3166247903554,
+      "source_weighted_inverse_root_second_moment": 11.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 6.326707276692546e-16
+    },
+    {
+      "average_frame_support_rank": 144,
+      "carrier_dimension": 150,
+      "conditional_holevo_bits": 2.8435320648940223,
+      "control_id": "source-3.2-3.1.1-2.2.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.12,
+      "entropy_forced_second_moment_lower_bound": 7.177751938978144,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.886751345948129,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 18,
+      "n": 5,
+      "natural_source_probability": 0.07500000000000001,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 1.7763568394002505e-15,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.8284271247461903,
+      "source_weighted_inverse_root_second_moment": 8.000000000000002,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 6.715304701520316e-16
+    },
+    {
+      "average_frame_support_rank": 114,
+      "carrier_dimension": 120,
+      "conditional_holevo_bits": 3.048719045701181,
+      "control_id": "source-3.2-3.1.1-2.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.1,
+      "entropy_forced_second_moment_lower_bound": 8.274769044531093,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 3.1622776601683795,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 12,
+      "n": 5,
+      "natural_source_probability": 0.04000000000000001,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 3.082207001484488,
+      "source_weighted_inverse_root_second_moment": 9.5,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 5.505615183210659e-16
+    },
+    {
+      "average_frame_support_rank": 30,
+      "carrier_dimension": 30,
+      "conditional_holevo_bits": 2.2600968992566495,
+      "control_id": "source-3.2-3.1.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.2,
+      "entropy_forced_second_moment_lower_bound": 4.790236546047777,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.23606797749979,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 6,
+      "n": 5,
+      "natural_source_probability": 0.005000000000000001,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 1.7763568394002505e-15,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.2360679774997902,
+      "source_weighted_inverse_root_second_moment": 5.000000000000002,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.1049867524609414e-16
+    },
+    {
+      "average_frame_support_rank": 125,
+      "carrier_dimension": 125,
+      "conditional_holevo_bits": 2.1131677187360483,
+      "control_id": "source-3.2-2.2.1-2.2.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.216,
+      "entropy_forced_second_moment_lower_bound": 4.32640198523715,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.151657414559676,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 27,
+      "n": 5,
+      "natural_source_probability": 0.046875,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 8.881784197001252e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.151657414559676,
+      "source_weighted_inverse_root_second_moment": 4.629629629629631,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 9.804618186261676e-16
+    },
+    {
+      "average_frame_support_rank": 100,
+      "carrier_dimension": 100,
+      "conditional_holevo_bits": 2.3652847740783205,
+      "control_id": "source-3.2-2.2.1-2.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.18,
+      "entropy_forced_second_moment_lower_bound": 5.152543480025015,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.3570226039551585,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 18,
+      "n": 5,
+      "natural_source_probability": 0.05,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 8.881784197001252e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.3570226039551585,
+      "source_weighted_inverse_root_second_moment": 5.555555555555556,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 8.320133939986286e-16
+    },
+    {
+      "average_frame_support_rank": 25,
+      "carrier_dimension": 25,
+      "conditional_holevo_bits": 1.4468579525495704,
+      "control_id": "source-3.2-2.2.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.36,
+      "entropy_forced_second_moment_lower_bound": 2.726136786495661,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.6666666666666667,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 9,
+      "n": 5,
+      "natural_source_probability": 0.00625,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 4.440892098500626e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.6666666666666667,
+      "source_weighted_inverse_root_second_moment": 2.777777777777778,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.933975302149688e-16
+    },
+    {
+      "average_frame_support_rank": 80,
+      "carrier_dimension": 80,
+      "conditional_holevo_bits": 2.5658992955229536,
+      "control_id": "source-3.2-2.1.1.1-2.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.15,
+      "entropy_forced_second_moment_lower_bound": 5.921239857124514,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.581988897471611,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 12,
+      "n": 5,
+      "natural_source_probability": 0.013333333333333334,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 8.881784197001252e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.5819888974716116,
+      "source_weighted_inverse_root_second_moment": 6.666666666666668,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 4.383454803744781e-16
+    },
+    {
+      "average_frame_support_rank": 20,
+      "carrier_dimension": 20,
+      "conditional_holevo_bits": 1.7089584931018758,
+      "control_id": "source-3.2-2.1.1.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.3,
+      "entropy_forced_second_moment_lower_bound": 3.269247255083482,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.8257418583505538,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 6,
+      "n": 5,
+      "natural_source_probability": 0.0033333333333333335,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 4.440892098500626e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.8257418583505536,
+      "source_weighted_inverse_root_second_moment": 3.333333333333333,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.647556687173568e-16
+    },
+    {
+      "average_frame_support_rank": 5,
+      "carrier_dimension": 5,
+      "conditional_holevo_bits": 0.7369655941662061,
+      "control_id": "source-3.2-1.1.1.1.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.6,
+      "entropy_forced_second_moment_lower_bound": 1.6666666666666665,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.2909944487358056,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 3,
+      "n": 5,
+      "natural_source_probability": 0.00020833333333333335,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 2.220446049250313e-16,
+      "source_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.2909944487358056,
+      "source_weighted_inverse_root_second_moment": 1.6666666666666665,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.85580188337696e-16
+    },
+    {
+      "average_frame_support_rank": 110,
+      "carrier_dimension": 216,
+      "conditional_holevo_bits": 3.5438686486997506,
+      "control_id": "source-3.1.1-3.1.1-3.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.037037037037037035,
+      "entropy_forced_second_moment_lower_bound": 11.663013114025725,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 5.196152422706632,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 8,
+      "n": 5,
+      "natural_source_probability": 0.008000000000000002,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 3.7080992435478315,
+      "source_weighted_inverse_root_second_moment": 13.75,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 8.289346441548409e-16
+    },
+    {
+      "average_frame_support_rank": 132,
+      "carrier_dimension": 180,
+      "conditional_holevo_bits": 3.245801722296364,
+      "control_id": "source-3.1.1-3.1.1-2.2.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.06666666666666667,
+      "entropy_forced_second_moment_lower_bound": 9.486012189621698,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 3.872983346207417,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 12,
+      "n": 5,
+      "natural_source_probability": 0.030000000000000006,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 3.3166247903554,
+      "source_weighted_inverse_root_second_moment": 11.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 6.915716283272551e-16
+    },
+    {
+      "average_frame_support_rank": 108,
+      "carrier_dimension": 144,
+      "conditional_holevo_bits": 3.442310401711212,
+      "control_id": "source-3.1.1-3.1.1-2.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.05555555555555555,
+      "entropy_forced_second_moment_lower_bound": 10.870228798789638,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 4.242640687119285,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 8,
+      "n": 5,
+      "natural_source_probability": 0.016000000000000004,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 3.6742346141747673,
+      "source_weighted_inverse_root_second_moment": 13.5,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.4721654085610083e-16
+    },
+    {
+      "average_frame_support_rank": 30,
+      "carrier_dimension": 36,
+      "conditional_holevo_bits": 2.7995812306460657,
+      "control_id": "source-3.1.1-3.1.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.1111111111111111,
+      "entropy_forced_second_moment_lower_bound": 6.962383250419174,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 3.0,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 4,
+      "n": 5,
+      "natural_source_probability": 0.0020000000000000005,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.7386127875258306,
+      "source_weighted_inverse_root_second_moment": 7.5,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.9289690767893533e-16
+    },
+    {
+      "average_frame_support_rank": 144,
+      "carrier_dimension": 150,
+      "conditional_holevo_bits": 2.843532064894023,
+      "control_id": "source-3.1.1-2.2.1-2.2.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.12,
+      "entropy_forced_second_moment_lower_bound": 7.177751938978148,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.886751345948129,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 18,
+      "n": 5,
+      "natural_source_probability": 0.037500000000000006,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 1.7763568394002505e-15,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.8284271247461903,
+      "source_weighted_inverse_root_second_moment": 8.000000000000002,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 7.536394130728031e-16
+    },
+    {
+      "average_frame_support_rank": 114,
+      "carrier_dimension": 120,
+      "conditional_holevo_bits": 3.048719045701179,
+      "control_id": "source-3.1.1-2.2.1-2.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.1,
+      "entropy_forced_second_moment_lower_bound": 8.274769044531082,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 3.1622776601683795,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 12,
+      "n": 5,
+      "natural_source_probability": 0.04000000000000001,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 3.082207001484488,
+      "source_weighted_inverse_root_second_moment": 9.5,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 4.635300936210531e-16
+    },
+    {
+      "average_frame_support_rank": 30,
+      "carrier_dimension": 30,
+      "conditional_holevo_bits": 2.2600968992566486,
+      "control_id": "source-3.1.1-2.2.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.2,
+      "entropy_forced_second_moment_lower_bound": 4.790236546047774,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.23606797749979,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 6,
+      "n": 5,
+      "natural_source_probability": 0.005000000000000001,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 1.7763568394002505e-15,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.2360679774997902,
+      "source_weighted_inverse_root_second_moment": 5.000000000000002,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.91347683185918e-16
+    },
+    {
+      "average_frame_support_rank": 90,
+      "carrier_dimension": 96,
+      "conditional_holevo_bits": 3.218227186344932,
+      "control_id": "source-3.1.1-2.1.1.1-2.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.08333333333333333,
+      "entropy_forced_second_moment_lower_bound": 9.306425733124394,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 3.4641016151377544,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 8,
+      "n": 5,
+      "natural_source_probability": 0.010666666666666668,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 3.3541019662496847,
+      "source_weighted_inverse_root_second_moment": 11.25,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 6.89764317690948e-16
+    },
+    {
+      "average_frame_support_rank": 24,
+      "carrier_dimension": 24,
+      "conditional_holevo_bits": 2.5049353714587195,
+      "control_id": "source-3.1.1-2.1.1.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.16666666666666666,
+      "entropy_forced_second_moment_lower_bound": 5.67623914010369,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.449489742783178,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 4,
+      "n": 5,
+      "natural_source_probability": 0.002666666666666667,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.449489742783178,
+      "source_weighted_inverse_root_second_moment": 6.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.30825946502016e-16
+    },
+    {
+      "average_frame_support_rank": 6,
+      "carrier_dimension": 6,
+      "conditional_holevo_bits": 1.584962500721156,
+      "control_id": "source-3.1.1-1.1.1.1.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.3333333333333333,
+      "entropy_forced_second_moment_lower_bound": 3.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.7320508075688772,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 2,
+      "n": 5,
+      "natural_source_probability": 0.0001666666666666667,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.7320508075688772,
+      "source_weighted_inverse_root_second_moment": 3.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.464596592638431e-16
+    },
+    {
+      "average_frame_support_rank": 125,
+      "carrier_dimension": 125,
+      "conditional_holevo_bits": 2.1131677187360483,
+      "control_id": "source-2.2.1-2.2.1-2.2.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.216,
+      "entropy_forced_second_moment_lower_bound": 4.32640198523715,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.151657414559676,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 27,
+      "n": 5,
+      "natural_source_probability": 0.015625,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 8.881784197001252e-16,
+      "source_partitions": [
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.151657414559676,
+      "source_weighted_inverse_root_second_moment": 4.629629629629631,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.6893530090527392e-15
+    },
+    {
+      "average_frame_support_rank": 100,
+      "carrier_dimension": 100,
+      "conditional_holevo_bits": 2.3652847740783205,
+      "control_id": "source-2.2.1-2.2.1-2.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.18,
+      "entropy_forced_second_moment_lower_bound": 5.152543480025015,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.3570226039551585,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 18,
+      "n": 5,
+      "natural_source_probability": 0.025,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 8.881784197001252e-16,
+      "source_partitions": [
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.3570226039551585,
+      "source_weighted_inverse_root_second_moment": 5.555555555555556,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 9.360307291506106e-16
+    },
+    {
+      "average_frame_support_rank": 25,
+      "carrier_dimension": 25,
+      "conditional_holevo_bits": 1.4468579525495704,
+      "control_id": "source-2.2.1-2.2.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.36,
+      "entropy_forced_second_moment_lower_bound": 2.726136786495661,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.6666666666666667,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 9,
+      "n": 5,
+      "natural_source_probability": 0.003125,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 4.440892098500626e-16,
+      "source_partitions": [
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.6666666666666667,
+      "source_weighted_inverse_root_second_moment": 2.777777777777778,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 8.004665610762617e-16
+    },
+    {
+      "average_frame_support_rank": 80,
+      "carrier_dimension": 80,
+      "conditional_holevo_bits": 2.5658992955229527,
+      "control_id": "source-2.2.1-2.1.1.1-2.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.15,
+      "entropy_forced_second_moment_lower_bound": 5.921239857124511,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.581988897471611,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 12,
+      "n": 5,
+      "natural_source_probability": 0.013333333333333334,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 8.881784197001252e-16,
+      "source_partitions": [
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.5819888974716116,
+      "source_weighted_inverse_root_second_moment": 6.666666666666668,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 6.912053485640654e-16
+    },
+    {
+      "average_frame_support_rank": 20,
+      "carrier_dimension": 20,
+      "conditional_holevo_bits": 1.7089584931018758,
+      "control_id": "source-2.2.1-2.1.1.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.3,
+      "entropy_forced_second_moment_lower_bound": 3.269247255083482,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.8257418583505538,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 6,
+      "n": 5,
+      "natural_source_probability": 0.0033333333333333335,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 4.440892098500626e-16,
+      "source_partitions": [
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.8257418583505536,
+      "source_weighted_inverse_root_second_moment": 3.333333333333333,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 3.44202494201286e-16
+    },
+    {
+      "average_frame_support_rank": 5,
+      "carrier_dimension": 5,
+      "conditional_holevo_bits": 0.7369655941662066,
+      "control_id": "source-2.2.1-1.1.1.1.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.6,
+      "entropy_forced_second_moment_lower_bound": 1.6666666666666672,
+      "entropy_rank_bound_residual": 4.440892098500626e-16,
+      "generic_mean_scale_inverse_root_factor": 1.2909944487358056,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 3,
+      "n": 5,
+      "natural_source_probability": 0.00020833333333333335,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.2909944487358056,
+      "source_weighted_inverse_root_second_moment": 1.6666666666666667,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 2.1524688212606829e-16
+    },
+    {
+      "average_frame_support_rank": 60,
+      "carrier_dimension": 64,
+      "conditional_holevo_bits": 2.686184269915298,
+      "control_id": "source-2.1.1.1-2.1.1.1-2.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.125,
+      "entropy_forced_second_moment_lower_bound": 6.436088972047129,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.8284271247461903,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 8,
+      "n": 5,
+      "natural_source_probability": 0.0023703703703703703,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.7386127875258306,
+      "source_weighted_inverse_root_second_moment": 7.5,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 6.442040697960351e-16
+    },
+    {
+      "average_frame_support_rank": 16,
+      "carrier_dimension": 16,
+      "conditional_holevo_bits": 1.922602722992616,
+      "control_id": "source-2.1.1.1-2.1.1.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.25,
+      "entropy_forced_second_moment_lower_bound": 3.7910637660851023,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 2.0,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 4,
+      "n": 5,
+      "natural_source_probability": 0.0008888888888888889,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 2.0,
+      "source_weighted_inverse_root_second_moment": 4.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.7508674273114625e-16
+    },
+    {
+      "average_frame_support_rank": 4,
+      "carrier_dimension": 4,
+      "conditional_holevo_bits": 1.0,
+      "control_id": "source-2.1.1.1-1.1.1.1.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 0.5,
+      "entropy_forced_second_moment_lower_bound": 2.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.4142135623730951,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 2,
+      "n": 5,
+      "natural_source_probability": 0.00011111111111111112,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.4142135623730951,
+      "source_weighted_inverse_root_second_moment": 2.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 1.2251903831398111e-16
+    },
+    {
+      "average_frame_support_rank": 1,
+      "carrier_dimension": 1,
+      "conditional_holevo_bits": -0.0,
+      "control_id": "source-1.1.1.1.1-1.1.1.1.1-1.1.1.1.1",
+      "copy_count": 3,
+      "direct_lcu_mean_eigenvalue": 1.0,
+      "entropy_forced_second_moment_lower_bound": 1.0,
+      "entropy_rank_bound_residual": 0.0,
+      "generic_mean_scale_inverse_root_factor": 1.0,
+      "hidden_hypothesis_count": 15,
+      "hypothesis_span_bound_residual": 0.0,
+      "individual_projector_rank": 1,
+      "n": 5,
+      "natural_source_probability": 4.6296296296296296e-06,
+      "normalized_frame_spectral_upper_residual": 0.0,
+      "source_moment_identity_residual": 0.0,
+      "source_partitions": [
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "source_weighted_inverse_root_rms_factor": 1.0,
+      "source_weighted_inverse_root_second_moment": 1.0,
+      "status": "source-weighted-frame-identities-verified",
+      "theorem_control_passed": true,
+      "transposition_count": 2,
+      "uniform_projector_residual": 0.0
+    }
+  ],
+  "headline_metrics": {
+    "bounded_error_direct_inverse_obstruction_theorem_count": 1,
+    "finite_branch_control_count": 119,
+    "finite_control_failure_count": 0,
+    "fused_polar_isometry_lower_bound_count": 0,
+    "general_quantum_circuit_lower_bound_count": 0,
+    "maximum_entropy_rank_bound_residual": 4.440892098500626e-16,
+    "maximum_finite_average_holevo_bits": 2.628434623346469,
+    "maximum_finite_global_source_inverse_rms": 2.7078623522104146,
+    "maximum_jensen_bound_residual": 0.0,
+    "maximum_source_moment_identity_residual": 1.7763568394002505e-15,
+    "maximum_uniform_projector_residual": 1.6893530090527392e-15,
+    "natural_source_aggregate_count": 3,
+    "new_quantum_algorithm_count": 0
+  },
+  "natural_source_aggregates": [
+    {
+      "all_finite_controls_passed": true,
+      "average_conditional_holevo_bits": 0.9521419638940011,
+      "average_source_weighted_inverse_root_second_moment": 2.0,
+      "bounded_error": 0.3333333333333333,
+      "bounded_error_decoding_information_available": false,
+      "copy_count": 1,
+      "fano_required_information_bits": 1.7194764542014944,
+      "global_source_weighted_inverse_root_rms_factor": 1.4142135623730951,
+      "hidden_hypothesis_count": 15,
+      "jensen_bound_residual": 0.0,
+      "jensen_second_moment_lower_bound": 1.934743032199069,
+      "n": 5,
+      "source_branch_count": 7,
+      "status": "natural-source-moment-tradeoff-verified",
+      "total_natural_source_probability": 1.0,
+      "transposition_count": 2
+    },
+    {
+      "all_finite_controls_passed": true,
+      "average_conditional_holevo_bits": 1.8488270351141813,
+      "average_source_weighted_inverse_root_second_moment": 3.9400000000000004,
+      "bounded_error": 0.3333333333333333,
+      "bounded_error_decoding_information_available": true,
+      "copy_count": 2,
+      "fano_required_information_bits": 1.7194764542014944,
+      "global_source_weighted_inverse_root_rms_factor": 1.9849433241279208,
+      "hidden_hypothesis_count": 15,
+      "jensen_bound_residual": 0.0,
+      "jensen_second_moment_lower_bound": 3.6020720406434408,
+      "n": 5,
+      "source_branch_count": 28,
+      "status": "natural-source-moment-tradeoff-verified",
+      "total_natural_source_probability": 1.0,
+      "transposition_count": 2
+    },
+    {
+      "all_finite_controls_passed": true,
+      "average_conditional_holevo_bits": 2.628434623346469,
+      "average_source_weighted_inverse_root_second_moment": 7.33251851851852,
+      "bounded_error": 0.3333333333333333,
+      "bounded_error_decoding_information_available": true,
+      "copy_count": 3,
+      "fano_required_information_bits": 1.7194764542014944,
+      "global_source_weighted_inverse_root_rms_factor": 2.7078623522104146,
+      "hidden_hypothesis_count": 15,
+      "jensen_bound_residual": 0.0,
+      "jensen_second_moment_lower_bound": 6.183546959277428,
+      "n": 5,
+      "source_branch_count": 84,
+      "status": "natural-source-moment-tradeoff-verified",
+      "total_natural_source_probability": 1.0,
+      "transposition_count": 2
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-FUSED-POLAR-ISOMETRY",
+      "resolved": false,
+      "statement": "Construct or obstruct the source-specific polar isometry as one coherent transform without standalone frame inversion."
+    },
+    {
+      "id": "PO-COSET-MULTICOPY-COMMUTANT-QFT",
+      "resolved": false,
+      "statement": "Give a uniform polynomial circuit for the diagonal conjugation/centralizer commutant at k=Theta(n log n)."
+    },
+    {
+      "id": "PO-COSET-COMPRESSED-OUTCOME-DECODER",
+      "resolved": false,
+      "statement": "Decode the exponentially large involution orbit without an explicit outcome table."
+    }
+  ],
+  "scaling_records": [
+    {
+      "asymptotic_status": "finite-asymptotic-control",
+      "bounded_error": 0.3333333333333333,
+      "direct_inverse_rms_lower_bound_is_superpolynomial": false,
+      "elementary_log2_direct_inverse_rms_lower_bound": 0.8741854163060887,
+      "elementary_log2_hypothesis_lower_bound": 4.0,
+      "fano_forced_log2_direct_inverse_rms": 1.7812348887823015,
+      "fano_required_information_bits": 3.562469777564603,
+      "hidden_hypothesis_count": 105,
+      "log2_hidden_hypothesis_count": 6.714245517666122,
+      "n": 8
+    },
+    {
+      "asymptotic_status": "finite-asymptotic-control",
+      "bounded_error": 0.3333333333333333,
+      "direct_inverse_rms_lower_bound_is_superpolynomial": false,
+      "elementary_log2_direct_inverse_rms_lower_bound": 3.540852082972755,
+      "elementary_log2_hypothesis_lower_bound": 12.0,
+      "fano_forced_log2_direct_inverse_rms": 6.524496352092943,
+      "fano_required_information_bits": 13.048992704185887,
+      "hidden_hypothesis_count": 2027025,
+      "log2_hidden_hypothesis_count": 20.950932451495344,
+      "n": 16
+    },
+    {
+      "asymptotic_status": "finite-asymptotic-control",
+      "bounded_error": 0.3333333333333333,
+      "direct_inverse_rms_lower_bound_is_superpolynomial": false,
+      "elementary_log2_direct_inverse_rms_lower_bound": 10.207518749639423,
+      "elementary_log2_hypothesis_lower_bound": 32.0,
+      "fano_forced_log2_direct_inverse_rms": 18.678559810465316,
+      "fano_required_information_bits": 37.35711962093063,
+      "hidden_hypothesis_count": 191898783962510625,
+      "log2_hidden_hypothesis_count": 57.41312318247768,
+      "n": 32
+    },
+    {
+      "asymptotic_status": "bounded-error-direct-inverse-rms-superpolynomial",
+      "bounded_error": 0.3333333333333333,
+      "direct_inverse_rms_lower_bound_is_superpolynomial": true,
+      "elementary_log2_direct_inverse_rms_lower_bound": 26.207518749639426,
+      "elementary_log2_hypothesis_lower_bound": 80.0,
+      "fano_forced_log2_direct_inverse_rms": 48.31814551276068,
+      "fano_required_information_bits": 96.63629102552136,
+      "hidden_hypothesis_count": 112275575285571389562324404930670903477890625,
+      "log2_hidden_hypothesis_count": 146.33188028936374,
+      "n": 64
+    }
+  ],
+  "status": "coset-source-weighted-direct-inverse-closed-fused-polar-open",
+  "summary": "Verified the exact source-moment and entropy tradeoff on 119 natural S_5 carrier branches across 3 copy widths. Bounded-error perfect-matching decoding forces n^Omega(n) direct inverse-root RMS, while fused polar and alternative collective measurements remain open.",
+  "theorem": {
+    "arbitrary_collective_measurement_ruled_out": false,
+    "bounded_error_direct_inverse_obstruction_proved": true,
+    "direct_route_consequence": "Source weighting does not rescue the projected-LCU route once that route is required to carry enough information to decode.",
+    "ensemble": "Equiprobable normalized rank-R projector states rho_h=P_h/R; the direct normalized frame is B=E_h P_h=R F.",
+    "entropy_rank_tradeoff_proved": true,
+    "entropy_tradeoff": "chi=S(F)-log2 R and S(F)<=log2 rank(F), hence rank(F)/R>=2^chi.",
+    "exact_moment_identity": "For the spectral source law of F, E_F[1/b]=Tr(F B^+)=rank(F)/R, where b ranges over positive eigenvalues of B.",
+    "exact_source_moment_identity_proved": true,
+    "fano_consequence": "If any decoder has error epsilon, E_Z chi_Z is at least log2 M-h2(epsilon)-epsilon log2(M-1); the direct inverse-root RMS factor is therefore at least 2^(that quantity/2).",
+    "fused_polar_isometry_ruled_out": false,
+    "general_quantum_circuit_lower_bound_proved": false,
+    "hidden_independent_source_extension": "For a classical source Z independent of h, Jensen gives E_Z[rank(F_Z)/R_Z]>=2^(E_Z chi_Z).",
+    "perfect_matching_consequence": "For fixed-point-free involutions, M=(n-1)!! and M>=(n/2)^(n/4), so every constant-error direct source-weighted inverse schema carrying enough information has n^Omega(n) RMS.",
+    "scope_limit": "The theorem does not lower-bound a fused PGM polar isometry, a different frame factorization, an arbitrary covariant POVM, or general quantum circuits.",
+    "source_averaged_jensen_tradeoff_proved": true,
+    "status": "source-weighted-direct-frame-inversion-tradeoff-proved",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "cost_quantity": "The second moment of the standalone inverse-root factor under the actual source spectrum, not a worst-case condition number.",
+    "information_requirement": "Fano is used only conditionally: if bounded-error decoding is possible, the ensemble Holevo information must meet the bound.",
+    "non_claim": "No runtime lower bound is inferred for implementations that avoid a standalone B_Z^(-1/2) primitive.",
+    "operator": "B_Z=R_Z F_Z=E_h P_(h,Z)",
+    "source_law": "Natural weak-Fourier labels Z are retained with their exact hidden-independent probabilities; within a branch, spectral weight is the average state F_Z."
+  }
+}

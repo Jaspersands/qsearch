@@ -655,6 +655,72 @@ from self_dual_wreath_weighted_overlap_exclusion import (
 )
 
 
+from coset_arbitrary_covariant_measurement_reduction import write_arbitrary_covariant_measurement_reduction
+from coset_centralizer_whitening_rank_bound import write_coset_centralizer_whitening_rank_report
+from coset_covariant_measurement_multiplicity_width_no_go import write_coset_covariant_measurement_multiplicity_width_report
+from coset_covariant_multiplicity_whitening_escape import write_coset_covariant_multiplicity_whitening_report
+from coset_gelfand_row_orientation_no_go import write_gelfand_row_orientation_no_go
+from coset_hidden_involution_binary_decision_reduction import write_hidden_involution_binary_decision_report
+from coset_hidden_involution_fourth_moment_threshold import write_hidden_involution_fourth_moment_report
+from coset_hidden_involution_multiplicity_support_obstruction import write_multiplicity_support_obstruction_report
+from coset_hidden_involution_orbit_hull_twirl_reduction import write_hidden_involution_orbit_hull_report
+from coset_hidden_involution_query_separation_boundary import write_hidden_involution_query_separation_report
+from coset_hidden_involution_support_span_reduction import write_hidden_involution_support_span_report
+from coset_hidden_involution_threshold_compiler_boundary import write_hidden_involution_threshold_compiler_report
+from coset_hyperoctahedral_branching_polar_boundary import write_coset_hyperoctahedral_branching_polar_report
+from coset_kronecker_marginal_conservation import write_kronecker_marginal_conservation_report
+from coset_measurement_copy_width_whitening_tradeoff import write_coset_measurement_copy_width_whitening_report
+from coset_multiplicity_whitening_copy_window import write_coset_multiplicity_whitening_copy_window_report
+from coset_perfect_matching_spherical_boundary import write_perfect_matching_spherical_boundary
+from coset_prefix_polar_holonomy_reduction import write_coset_prefix_polar_holonomy_report
+from coset_prefix_relative_gap_inference_no_go import write_coset_prefix_relative_gap_inference_report
+from coset_restriction_principal_angle_polar_reduction import write_coset_restriction_principal_angle_polar_report
+from coset_sector_coherence_degree_no_go import write_sector_coherence_degree_no_go_report
+from coset_source_weighted_frame_inversion_tradeoff import write_coset_source_weighted_frame_inversion_report
+from coset_whitening_rank_sandwich_no_go import write_coset_whitening_rank_sandwich_report
+from dcp_adaptive_layout_uniform_entanglement_no_go import write_dcp_adaptive_layout_uniform_entanglement_report
+from dcp_arbitrary_measurement_witness_reduction import write_arbitrary_measurement_witness_reduction_report
+from dcp_canonical_pgm_erasure_equivalence import write_canonical_pgm_erasure_equivalence
+from dcp_covariant_rank_one_measurement_reduction import write_covariant_rank_one_measurement_reduction_report
+from dcp_four_block_ksum_noncollapse import write_four_block_ksum_noncollapse
+from dcp_linear_depth_fiber_walk_no_go import write_linear_depth_fiber_walk_no_go
+from dcp_low_bit_candidate_list_no_go import write_low_bit_candidate_list_no_go_report
+from dcp_multiplicity_oracle_query_lower_bound import write_multiplicity_oracle_query_lower_bound
+from dcp_per_target_stratum_obstruction import write_per_target_stratum_obstruction
+from dcp_pgm_bootstrap_perturbation_reduction import write_pgm_bootstrap_perturbation_reduction
+from dcp_pgm_garbage_bootstrap_reduction import write_pgm_garbage_bootstrap_reduction
+from dcp_polynomial_feature_contraction_no_go import write_polynomial_feature_contraction_no_go
+from dcp_source_weighted_inversion_tradeoff import write_dcp_source_weighted_inversion_tradeoff
+from dcp_subset_sum_cube_section_gap_theorem import write_cube_section_gap_theorem
+from dcp_subset_sum_sparse_character_obstruction import write_sparse_character_obstruction
+from dcp_uniform_legal_multiplicity_no_go import write_uniform_legal_multiplicity_no_go_report
+from dcp_varying_hms_fiber_normal_form import write_dcp_varying_hms_fiber_normal_form
+from diagram_hidden_subalgebra_coset_no_go import write_diagram_hidden_subalgebra_coset_no_go
+from diagram_multiplicity_source_mass_gate import write_diagram_multiplicity_source_mass_gate
+from self_dual_wreath_all_codimension_baba_no_go import write_all_codimension_baba_no_go_report
+from self_dual_wreath_class_uniform_commutator_moment import write_class_uniform_commutator_moment_report
+from self_dual_wreath_codimension_one_commuting_compression_no_go import write_codimension_one_commuting_compression_no_go_report
+from self_dual_wreath_codimension_two_universal_no_go import write_codimension_two_universal_no_go_report
+from self_dual_wreath_commutator_sector_filter_no_go import write_commutator_sector_filter_no_go_report
+from self_dual_wreath_component_block_coherence_boundary import write_component_block_coherence_boundary_report
+from self_dual_wreath_component_coefficient_projection_normal_form import write_component_coefficient_projection_normal_form_report
+from self_dual_wreath_component_noncrossing_lower_bound import write_component_noncrossing_lower_bound_report
+from self_dual_wreath_full_support_pair_budget_no_go import write_full_support_pair_budget_no_go_report
+from self_dual_wreath_information_set_universal_no_go import write_information_set_universal_no_go_report
+from self_dual_wreath_interleaved_even_parity_no_go import write_interleaved_even_parity_no_go_report
+from self_dual_wreath_interleaved_leaf_pressure_no_go import write_interleaved_leaf_pressure_no_go_report
+from self_dual_wreath_interleaved_product_lift_no_go import write_interleaved_product_lift_no_go_report
+from self_dual_wreath_nonsystematic_incidence_lattice_bound import write_nonsystematic_incidence_lattice_bound_report
+from self_dual_wreath_nonsystematic_mod_four_no_go import write_nonsystematic_mod_four_no_go_report
+from self_dual_wreath_nonsystematic_pair_witness_collapse import write_nonsystematic_pair_witness_collapse_report
+from self_dual_wreath_nonsystematic_twisted_star_no_go import write_nonsystematic_twisted_star_no_go_report
+from self_dual_wreath_plancherel_target_word_collapse import write_plancherel_target_word_collapse_report
+from self_dual_wreath_poisson_ridge_word_mixture import write_poisson_ridge_word_mixture_report
+from self_dual_wreath_same_support_triangle_target_no_go import write_same_support_triangle_target_no_go_report
+from self_dual_wreath_separator_defect_frontier import write_separator_defect_frontier_report
+from self_dual_wreath_systematic_stopping_core_no_go import write_systematic_stopping_core_no_go_report
+from self_dual_wreath_translated_parity_commutator_no_go import write_translated_parity_commutator_no_go_report
+from semidirect_hms_transfer_boundary import write_semidirect_hms_transfer_boundary
 from blocker_taxonomy import write_blocker_taxonomy
 from affine_geometry_code_search import AffineGeometrySearchSpec, write_affine_geometry_code_search
 from bch_code_search import BCHSearchSpec, write_bch_code_search
@@ -11705,6 +11771,468 @@ def command_code_wreath_weighted_overlap_exclusion(
     return 0
 
 
+def command_coset_arbitrary_covariant_measurement_reduction(args: argparse.Namespace) -> int:
+    report = write_arbitrary_covariant_measurement_reduction()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_coset_centralizer_whitening_rank_bound(args: argparse.Namespace) -> int:
+    report = write_coset_centralizer_whitening_rank_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_coset_covariant_measurement_multiplicity_width_no_go(args: argparse.Namespace) -> int:
+    report = write_coset_covariant_measurement_multiplicity_width_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_coset_covariant_multiplicity_whitening_escape(args: argparse.Namespace) -> int:
+    report = write_coset_covariant_multiplicity_whitening_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_coset_gelfand_row_orientation_no_go(args: argparse.Namespace) -> int:
+    report = write_gelfand_row_orientation_no_go()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_coset_hidden_involution_binary_decision_reduction(args: argparse.Namespace) -> int:
+    report = write_hidden_involution_binary_decision_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_coset_hidden_involution_fourth_moment_threshold(args: argparse.Namespace) -> int:
+    report = write_hidden_involution_fourth_moment_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_coset_hidden_involution_multiplicity_support_obstruction(args: argparse.Namespace) -> int:
+    report = write_multiplicity_support_obstruction_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_coset_hidden_involution_orbit_hull_twirl_reduction(args: argparse.Namespace) -> int:
+    report = write_hidden_involution_orbit_hull_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_coset_hidden_involution_query_separation_boundary(args: argparse.Namespace) -> int:
+    report = write_hidden_involution_query_separation_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_coset_hidden_involution_support_span_reduction(args: argparse.Namespace) -> int:
+    report = write_hidden_involution_support_span_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_coset_hidden_involution_threshold_compiler_boundary(args: argparse.Namespace) -> int:
+    report = write_hidden_involution_threshold_compiler_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_coset_hyperoctahedral_branching_polar_boundary(args: argparse.Namespace) -> int:
+    report = write_coset_hyperoctahedral_branching_polar_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_coset_kronecker_marginal_conservation(args: argparse.Namespace) -> int:
+    report = write_kronecker_marginal_conservation_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_coset_measurement_copy_width_whitening_tradeoff(args: argparse.Namespace) -> int:
+    report = write_coset_measurement_copy_width_whitening_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_coset_multiplicity_whitening_copy_window(args: argparse.Namespace) -> int:
+    report = write_coset_multiplicity_whitening_copy_window_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_coset_perfect_matching_spherical_boundary(args: argparse.Namespace) -> int:
+    report = write_perfect_matching_spherical_boundary()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_coset_prefix_polar_holonomy_reduction(args: argparse.Namespace) -> int:
+    report = write_coset_prefix_polar_holonomy_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_coset_prefix_relative_gap_inference_no_go(args: argparse.Namespace) -> int:
+    report = write_coset_prefix_relative_gap_inference_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_coset_restriction_principal_angle_polar_reduction(args: argparse.Namespace) -> int:
+    report = write_coset_restriction_principal_angle_polar_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_coset_sector_coherence_degree_no_go(args: argparse.Namespace) -> int:
+    report = write_sector_coherence_degree_no_go_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_coset_source_weighted_frame_inversion_tradeoff(args: argparse.Namespace) -> int:
+    report = write_coset_source_weighted_frame_inversion_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_coset_whitening_rank_sandwich_no_go(args: argparse.Namespace) -> int:
+    report = write_coset_whitening_rank_sandwich_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_dcp_adaptive_layout_uniform_entanglement_no_go(args: argparse.Namespace) -> int:
+    report = write_dcp_adaptive_layout_uniform_entanglement_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_dcp_arbitrary_measurement_witness_reduction(args: argparse.Namespace) -> int:
+    report = write_arbitrary_measurement_witness_reduction_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_dcp_canonical_pgm_erasure_equivalence(args: argparse.Namespace) -> int:
+    report = write_canonical_pgm_erasure_equivalence()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_dcp_covariant_rank_one_measurement_reduction(args: argparse.Namespace) -> int:
+    report = write_covariant_rank_one_measurement_reduction_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_dcp_four_block_ksum_noncollapse(args: argparse.Namespace) -> int:
+    report = write_four_block_ksum_noncollapse()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_dcp_linear_depth_fiber_walk_no_go(args: argparse.Namespace) -> int:
+    report = write_linear_depth_fiber_walk_no_go()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_dcp_low_bit_candidate_list_no_go(args: argparse.Namespace) -> int:
+    report = write_low_bit_candidate_list_no_go_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_dcp_multiplicity_oracle_query_lower_bound(args: argparse.Namespace) -> int:
+    report = write_multiplicity_oracle_query_lower_bound()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_dcp_per_target_stratum_obstruction(args: argparse.Namespace) -> int:
+    report = write_per_target_stratum_obstruction()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_dcp_pgm_bootstrap_perturbation_reduction(args: argparse.Namespace) -> int:
+    report = write_pgm_bootstrap_perturbation_reduction()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_dcp_pgm_garbage_bootstrap_reduction(args: argparse.Namespace) -> int:
+    report = write_pgm_garbage_bootstrap_reduction()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_dcp_polynomial_feature_contraction_no_go(args: argparse.Namespace) -> int:
+    report = write_polynomial_feature_contraction_no_go()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_dcp_source_weighted_inversion_tradeoff(args: argparse.Namespace) -> int:
+    report = write_dcp_source_weighted_inversion_tradeoff()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_dcp_subset_sum_cube_section_gap_theorem(args: argparse.Namespace) -> int:
+    report = write_cube_section_gap_theorem()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_dcp_subset_sum_sparse_character_obstruction(args: argparse.Namespace) -> int:
+    report = write_sparse_character_obstruction()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_dcp_uniform_legal_multiplicity_no_go(args: argparse.Namespace) -> int:
+    report = write_uniform_legal_multiplicity_no_go_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_dcp_varying_hms_fiber_normal_form(args: argparse.Namespace) -> int:
+    report = write_dcp_varying_hms_fiber_normal_form()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_diagram_hidden_subalgebra_coset_no_go(args: argparse.Namespace) -> int:
+    report = write_diagram_hidden_subalgebra_coset_no_go()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_diagram_multiplicity_source_mass_gate(args: argparse.Namespace) -> int:
+    report = write_diagram_multiplicity_source_mass_gate()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_all_codimension_baba_no_go(args: argparse.Namespace) -> int:
+    report = write_all_codimension_baba_no_go_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_class_uniform_commutator_moment(args: argparse.Namespace) -> int:
+    report = write_class_uniform_commutator_moment_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_codimension_one_commuting_compression_no_go(args: argparse.Namespace) -> int:
+    report = write_codimension_one_commuting_compression_no_go_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_codimension_two_universal_no_go(args: argparse.Namespace) -> int:
+    report = write_codimension_two_universal_no_go_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_commutator_sector_filter_no_go(args: argparse.Namespace) -> int:
+    report = write_commutator_sector_filter_no_go_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_component_block_coherence_boundary(args: argparse.Namespace) -> int:
+    report = write_component_block_coherence_boundary_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_component_coefficient_projection_normal_form(args: argparse.Namespace) -> int:
+    report = write_component_coefficient_projection_normal_form_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_component_noncrossing_lower_bound(args: argparse.Namespace) -> int:
+    report = write_component_noncrossing_lower_bound_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_full_support_pair_budget_no_go(args: argparse.Namespace) -> int:
+    report = write_full_support_pair_budget_no_go_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_information_set_universal_no_go(args: argparse.Namespace) -> int:
+    report = write_information_set_universal_no_go_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_interleaved_even_parity_no_go(args: argparse.Namespace) -> int:
+    report = write_interleaved_even_parity_no_go_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_interleaved_leaf_pressure_no_go(args: argparse.Namespace) -> int:
+    report = write_interleaved_leaf_pressure_no_go_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_interleaved_product_lift_no_go(args: argparse.Namespace) -> int:
+    report = write_interleaved_product_lift_no_go_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_nonsystematic_incidence_lattice_bound(args: argparse.Namespace) -> int:
+    report = write_nonsystematic_incidence_lattice_bound_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_nonsystematic_mod_four_no_go(args: argparse.Namespace) -> int:
+    report = write_nonsystematic_mod_four_no_go_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_nonsystematic_pair_witness_collapse(args: argparse.Namespace) -> int:
+    report = write_nonsystematic_pair_witness_collapse_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_nonsystematic_twisted_star_no_go(args: argparse.Namespace) -> int:
+    report = write_nonsystematic_twisted_star_no_go_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_plancherel_target_word_collapse(args: argparse.Namespace) -> int:
+    report = write_plancherel_target_word_collapse_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_poisson_ridge_word_mixture(args: argparse.Namespace) -> int:
+    report = write_poisson_ridge_word_mixture_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_same_support_triangle_target_no_go(args: argparse.Namespace) -> int:
+    report = write_same_support_triangle_target_no_go_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_separator_defect_frontier(args: argparse.Namespace) -> int:
+    report = write_separator_defect_frontier_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_systematic_stopping_core_no_go(args: argparse.Namespace) -> int:
+    report = write_systematic_stopping_core_no_go_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_translated_parity_commutator_no_go(args: argparse.Namespace) -> int:
+    report = write_translated_parity_commutator_no_go_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_semidirect_hms_transfer_boundary(args: argparse.Namespace) -> int:
+    report = write_semidirect_hms_transfer_boundary()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
 def command_coset_strong_fourier_information(
     args: argparse.Namespace,
 ) -> int:
@@ -19828,6 +20356,402 @@ def build_parser() -> argparse.ArgumentParser:
     code_wreath_weighted_overlap_exclusion.set_defaults(
         func=command_code_wreath_weighted_overlap_exclusion
     )
+
+    coset_arbitrary_covariant_measurement_reduction = subparsers.add_parser(
+        "coset-arbitrary-covariant-measurement-reduction",
+        help="Exp Coset Arbitrary Covariant Measurement Reduction",
+    )
+    coset_arbitrary_covariant_measurement_reduction.set_defaults(func=command_coset_arbitrary_covariant_measurement_reduction)
+
+    coset_centralizer_whitening_rank_bound = subparsers.add_parser(
+        "coset-centralizer-whitening-rank-bound",
+        help="Exp Coset Centralizer Whitening Rank Bound",
+    )
+    coset_centralizer_whitening_rank_bound.set_defaults(func=command_coset_centralizer_whitening_rank_bound)
+
+    coset_covariant_measurement_multiplicity_width_no_go = subparsers.add_parser(
+        "coset-covariant-measurement-multiplicity-width-no-go",
+        help="Exp Coset Covariant Measurement Multiplicity Width No Go",
+    )
+    coset_covariant_measurement_multiplicity_width_no_go.set_defaults(func=command_coset_covariant_measurement_multiplicity_width_no_go)
+
+    coset_covariant_multiplicity_whitening_escape = subparsers.add_parser(
+        "coset-covariant-multiplicity-whitening-escape",
+        help="Exp Coset Covariant Multiplicity Whitening Escape",
+    )
+    coset_covariant_multiplicity_whitening_escape.set_defaults(func=command_coset_covariant_multiplicity_whitening_escape)
+
+    coset_gelfand_row_orientation_no_go = subparsers.add_parser(
+        "coset-gelfand-row-orientation-no-go",
+        help="Exp Coset Gelfand Row Orientation No Go",
+    )
+    coset_gelfand_row_orientation_no_go.set_defaults(func=command_coset_gelfand_row_orientation_no_go)
+
+    coset_hidden_involution_binary_decision_reduction = subparsers.add_parser(
+        "coset-hidden-involution-binary-decision-reduction",
+        help="Exp Coset Hidden Involution Binary Decision Reduction",
+    )
+    coset_hidden_involution_binary_decision_reduction.set_defaults(func=command_coset_hidden_involution_binary_decision_reduction)
+
+    coset_hidden_involution_fourth_moment_threshold = subparsers.add_parser(
+        "coset-hidden-involution-fourth-moment-threshold",
+        help="Exp Coset Hidden Involution Fourth Moment Threshold",
+    )
+    coset_hidden_involution_fourth_moment_threshold.set_defaults(func=command_coset_hidden_involution_fourth_moment_threshold)
+
+    coset_hidden_involution_multiplicity_support_obstruction = subparsers.add_parser(
+        "coset-hidden-involution-multiplicity-support-obstruction",
+        help="Exp Coset Hidden Involution Multiplicity Support Obstruction",
+    )
+    coset_hidden_involution_multiplicity_support_obstruction.set_defaults(func=command_coset_hidden_involution_multiplicity_support_obstruction)
+
+    coset_hidden_involution_orbit_hull_twirl_reduction = subparsers.add_parser(
+        "coset-hidden-involution-orbit-hull-twirl-reduction",
+        help="Exp Coset Hidden Involution Orbit Hull Twirl Reduction",
+    )
+    coset_hidden_involution_orbit_hull_twirl_reduction.set_defaults(func=command_coset_hidden_involution_orbit_hull_twirl_reduction)
+
+    coset_hidden_involution_query_separation_boundary = subparsers.add_parser(
+        "coset-hidden-involution-query-separation-boundary",
+        help="Exp Coset Hidden Involution Query Separation Boundary",
+    )
+    coset_hidden_involution_query_separation_boundary.set_defaults(func=command_coset_hidden_involution_query_separation_boundary)
+
+    coset_hidden_involution_support_span_reduction = subparsers.add_parser(
+        "coset-hidden-involution-support-span-reduction",
+        help="Exp Coset Hidden Involution Support Span Reduction",
+    )
+    coset_hidden_involution_support_span_reduction.set_defaults(func=command_coset_hidden_involution_support_span_reduction)
+
+    coset_hidden_involution_threshold_compiler_boundary = subparsers.add_parser(
+        "coset-hidden-involution-threshold-compiler-boundary",
+        help="Exp Coset Hidden Involution Threshold Compiler Boundary",
+    )
+    coset_hidden_involution_threshold_compiler_boundary.set_defaults(func=command_coset_hidden_involution_threshold_compiler_boundary)
+
+    coset_hyperoctahedral_branching_polar_boundary = subparsers.add_parser(
+        "coset-hyperoctahedral-branching-polar-boundary",
+        help="Exp Coset Hyperoctahedral Branching Polar Boundary",
+    )
+    coset_hyperoctahedral_branching_polar_boundary.set_defaults(func=command_coset_hyperoctahedral_branching_polar_boundary)
+
+    coset_kronecker_marginal_conservation = subparsers.add_parser(
+        "coset-kronecker-marginal-conservation",
+        help="Exp Coset Kronecker Marginal Conservation",
+    )
+    coset_kronecker_marginal_conservation.set_defaults(func=command_coset_kronecker_marginal_conservation)
+
+    coset_measurement_copy_width_whitening_tradeoff = subparsers.add_parser(
+        "coset-measurement-copy-width-whitening-tradeoff",
+        help="Exp Coset Measurement Copy Width Whitening Tradeoff",
+    )
+    coset_measurement_copy_width_whitening_tradeoff.set_defaults(func=command_coset_measurement_copy_width_whitening_tradeoff)
+
+    coset_multiplicity_whitening_copy_window = subparsers.add_parser(
+        "coset-multiplicity-whitening-copy-window",
+        help="Exp Coset Multiplicity Whitening Copy Window",
+    )
+    coset_multiplicity_whitening_copy_window.set_defaults(func=command_coset_multiplicity_whitening_copy_window)
+
+    coset_perfect_matching_spherical_boundary = subparsers.add_parser(
+        "coset-perfect-matching-spherical-boundary",
+        help="Exp Coset Perfect Matching Spherical Boundary",
+    )
+    coset_perfect_matching_spherical_boundary.set_defaults(func=command_coset_perfect_matching_spherical_boundary)
+
+    coset_prefix_polar_holonomy_reduction = subparsers.add_parser(
+        "coset-prefix-polar-holonomy-reduction",
+        help="Exp Coset Prefix Polar Holonomy Reduction",
+    )
+    coset_prefix_polar_holonomy_reduction.set_defaults(func=command_coset_prefix_polar_holonomy_reduction)
+
+    coset_prefix_relative_gap_inference_no_go = subparsers.add_parser(
+        "coset-prefix-relative-gap-inference-no-go",
+        help="Exp Coset Prefix Relative Gap Inference No Go",
+    )
+    coset_prefix_relative_gap_inference_no_go.set_defaults(func=command_coset_prefix_relative_gap_inference_no_go)
+
+    coset_restriction_principal_angle_polar_reduction = subparsers.add_parser(
+        "coset-restriction-principal-angle-polar-reduction",
+        help="Exp Coset Restriction Principal Angle Polar Reduction",
+    )
+    coset_restriction_principal_angle_polar_reduction.set_defaults(func=command_coset_restriction_principal_angle_polar_reduction)
+
+    coset_sector_coherence_degree_no_go = subparsers.add_parser(
+        "coset-sector-coherence-degree-no-go",
+        help="Exp Coset Sector Coherence Degree No Go",
+    )
+    coset_sector_coherence_degree_no_go.set_defaults(func=command_coset_sector_coherence_degree_no_go)
+
+    coset_source_weighted_frame_inversion_tradeoff = subparsers.add_parser(
+        "coset-source-weighted-frame-inversion-tradeoff",
+        help="Exp Coset Source Weighted Frame Inversion Tradeoff",
+    )
+    coset_source_weighted_frame_inversion_tradeoff.set_defaults(func=command_coset_source_weighted_frame_inversion_tradeoff)
+
+    coset_whitening_rank_sandwich_no_go = subparsers.add_parser(
+        "coset-whitening-rank-sandwich-no-go",
+        help="Exp Coset Whitening Rank Sandwich No Go",
+    )
+    coset_whitening_rank_sandwich_no_go.set_defaults(func=command_coset_whitening_rank_sandwich_no_go)
+
+    dcp_adaptive_layout_uniform_entanglement_no_go = subparsers.add_parser(
+        "dcp-adaptive-layout-uniform-entanglement-no-go",
+        help="Exp Dhs Dcp Adaptive Layout Uniform Entanglement No Go",
+    )
+    dcp_adaptive_layout_uniform_entanglement_no_go.set_defaults(func=command_dcp_adaptive_layout_uniform_entanglement_no_go)
+
+    dcp_arbitrary_measurement_witness_reduction = subparsers.add_parser(
+        "dcp-arbitrary-measurement-witness-reduction",
+        help="Exp Dhs Dcp Arbitrary Measurement Witness Reduction",
+    )
+    dcp_arbitrary_measurement_witness_reduction.set_defaults(func=command_dcp_arbitrary_measurement_witness_reduction)
+
+    dcp_canonical_pgm_erasure_equivalence = subparsers.add_parser(
+        "dcp-canonical-pgm-erasure-equivalence",
+        help="Exp Dhs Dcp Canonical Pgm Erasure Equivalence",
+    )
+    dcp_canonical_pgm_erasure_equivalence.set_defaults(func=command_dcp_canonical_pgm_erasure_equivalence)
+
+    dcp_covariant_rank_one_measurement_reduction = subparsers.add_parser(
+        "dcp-covariant-rank-one-measurement-reduction",
+        help="Exp Dhs Dcp Covariant Rank One Measurement Reduction",
+    )
+    dcp_covariant_rank_one_measurement_reduction.set_defaults(func=command_dcp_covariant_rank_one_measurement_reduction)
+
+    dcp_four_block_ksum_noncollapse = subparsers.add_parser(
+        "dcp-four-block-ksum-noncollapse",
+        help="Exp Dhs Dcp Four Block Ksum Noncollapse",
+    )
+    dcp_four_block_ksum_noncollapse.set_defaults(func=command_dcp_four_block_ksum_noncollapse)
+
+    dcp_linear_depth_fiber_walk_no_go = subparsers.add_parser(
+        "dcp-linear-depth-fiber-walk-no-go",
+        help="Exp Dhs Dcp Linear Depth Fiber Walk No Go",
+    )
+    dcp_linear_depth_fiber_walk_no_go.set_defaults(func=command_dcp_linear_depth_fiber_walk_no_go)
+
+    dcp_low_bit_candidate_list_no_go = subparsers.add_parser(
+        "dcp-low-bit-candidate-list-no-go",
+        help="Exp Dhs Dcp Low Bit Candidate List No Go",
+    )
+    dcp_low_bit_candidate_list_no_go.set_defaults(func=command_dcp_low_bit_candidate_list_no_go)
+
+    dcp_multiplicity_oracle_query_lower_bound = subparsers.add_parser(
+        "dcp-multiplicity-oracle-query-lower-bound",
+        help="Exp Dhs Dcp Multiplicity Oracle Query Lower Bound",
+    )
+    dcp_multiplicity_oracle_query_lower_bound.set_defaults(func=command_dcp_multiplicity_oracle_query_lower_bound)
+
+    dcp_per_target_stratum_obstruction = subparsers.add_parser(
+        "dcp-per-target-stratum-obstruction",
+        help="Exp Dhs Dcp Per Target Stratum Obstruction",
+    )
+    dcp_per_target_stratum_obstruction.set_defaults(func=command_dcp_per_target_stratum_obstruction)
+
+    dcp_pgm_bootstrap_perturbation_reduction = subparsers.add_parser(
+        "dcp-pgm-bootstrap-perturbation-reduction",
+        help="Exp Dhs Dcp Pgm Bootstrap Perturbation Reduction",
+    )
+    dcp_pgm_bootstrap_perturbation_reduction.set_defaults(func=command_dcp_pgm_bootstrap_perturbation_reduction)
+
+    dcp_pgm_garbage_bootstrap_reduction = subparsers.add_parser(
+        "dcp-pgm-garbage-bootstrap-reduction",
+        help="Exp Dhs Dcp Pgm Garbage Bootstrap Reduction",
+    )
+    dcp_pgm_garbage_bootstrap_reduction.set_defaults(func=command_dcp_pgm_garbage_bootstrap_reduction)
+
+    dcp_polynomial_feature_contraction_no_go = subparsers.add_parser(
+        "dcp-polynomial-feature-contraction-no-go",
+        help="Exp Dhs Dcp Polynomial Feature Contraction No Go",
+    )
+    dcp_polynomial_feature_contraction_no_go.set_defaults(func=command_dcp_polynomial_feature_contraction_no_go)
+
+    dcp_source_weighted_inversion_tradeoff = subparsers.add_parser(
+        "dcp-source-weighted-inversion-tradeoff",
+        help="Exp Dhs Dcp Source Weighted Inversion Tradeoff",
+    )
+    dcp_source_weighted_inversion_tradeoff.set_defaults(func=command_dcp_source_weighted_inversion_tradeoff)
+
+    dcp_subset_sum_cube_section_gap_theorem = subparsers.add_parser(
+        "dcp-subset-sum-cube-section-gap-theorem",
+        help="Exp Dhs Dcp Subset Sum Cube Section Gap Theorem",
+    )
+    dcp_subset_sum_cube_section_gap_theorem.set_defaults(func=command_dcp_subset_sum_cube_section_gap_theorem)
+
+    dcp_subset_sum_sparse_character_obstruction = subparsers.add_parser(
+        "dcp-subset-sum-sparse-character-obstruction",
+        help="Exp Dhs Dcp Subset Sum Adaptive Sparse Character Obstruction",
+    )
+    dcp_subset_sum_sparse_character_obstruction.set_defaults(func=command_dcp_subset_sum_sparse_character_obstruction)
+
+    dcp_uniform_legal_multiplicity_no_go = subparsers.add_parser(
+        "dcp-uniform-legal-multiplicity-no-go",
+        help="Exp Dhs Dcp Uniform Legal Multiplicity No Go",
+    )
+    dcp_uniform_legal_multiplicity_no_go.set_defaults(func=command_dcp_uniform_legal_multiplicity_no_go)
+
+    dcp_varying_hms_fiber_normal_form = subparsers.add_parser(
+        "dcp-varying-hms-fiber-normal-form",
+        help="Exp Dhs Dcp Varying Hms Fiber Normal Form",
+    )
+    dcp_varying_hms_fiber_normal_form.set_defaults(func=command_dcp_varying_hms_fiber_normal_form)
+
+    diagram_hidden_subalgebra_coset_no_go = subparsers.add_parser(
+        "diagram-hidden-subalgebra-coset-no-go",
+        help="Exp Diagram Hidden Subalgebra Coset No Go",
+    )
+    diagram_hidden_subalgebra_coset_no_go.set_defaults(func=command_diagram_hidden_subalgebra_coset_no_go)
+
+    diagram_multiplicity_source_mass_gate = subparsers.add_parser(
+        "diagram-multiplicity-source-mass-gate",
+        help="Exp Diagram Multiplicity Source Mass Gate",
+    )
+    diagram_multiplicity_source_mass_gate.set_defaults(func=command_diagram_multiplicity_source_mass_gate)
+
+    all_codimension_baba_no_go = subparsers.add_parser(
+        "all-codimension-baba-no-go",
+        help="Exp Code Self Dual Wreath All Codimension Baba No Go",
+    )
+    all_codimension_baba_no_go.set_defaults(func=command_all_codimension_baba_no_go)
+
+    class_uniform_commutator_moment = subparsers.add_parser(
+        "class-uniform-commutator-moment",
+        help="Exp Code Self Dual Wreath Class Uniform Commutator Moment",
+    )
+    class_uniform_commutator_moment.set_defaults(func=command_class_uniform_commutator_moment)
+
+    codimension_one_commuting_compression_no_go = subparsers.add_parser(
+        "codimension-one-commuting-compression-no-go",
+        help="Exp Code Self Dual Wreath Codimension One Commuting Compression No Go",
+    )
+    codimension_one_commuting_compression_no_go.set_defaults(func=command_codimension_one_commuting_compression_no_go)
+
+    codimension_two_universal_no_go = subparsers.add_parser(
+        "codimension-two-universal-no-go",
+        help="Exp Code Self Dual Wreath Codimension Two Universal No Go",
+    )
+    codimension_two_universal_no_go.set_defaults(func=command_codimension_two_universal_no_go)
+
+    commutator_sector_filter_no_go = subparsers.add_parser(
+        "commutator-sector-filter-no-go",
+        help="Exp Code Self Dual Wreath Commutator Sector Filter No Go",
+    )
+    commutator_sector_filter_no_go.set_defaults(func=command_commutator_sector_filter_no_go)
+
+    component_block_coherence_boundary = subparsers.add_parser(
+        "component-block-coherence-boundary",
+        help="Exp Code Self Dual Wreath Component Block Coherence Boundary",
+    )
+    component_block_coherence_boundary.set_defaults(func=command_component_block_coherence_boundary)
+
+    component_coefficient_projection_normal_form = subparsers.add_parser(
+        "component-coefficient-projection-normal-form",
+        help="Exp Code Self Dual Wreath Component Coefficient Projection Normal Form",
+    )
+    component_coefficient_projection_normal_form.set_defaults(func=command_component_coefficient_projection_normal_form)
+
+    component_noncrossing_lower_bound = subparsers.add_parser(
+        "component-noncrossing-lower-bound",
+        help="Exp Code Self Dual Wreath Component Noncrossing Lower Bound",
+    )
+    component_noncrossing_lower_bound.set_defaults(func=command_component_noncrossing_lower_bound)
+
+    full_support_pair_budget_no_go = subparsers.add_parser(
+        "full-support-pair-budget-no-go",
+        help="Exp Code Self Dual Wreath Full Support Pair Budget No Go",
+    )
+    full_support_pair_budget_no_go.set_defaults(func=command_full_support_pair_budget_no_go)
+
+    information_set_universal_no_go = subparsers.add_parser(
+        "information-set-universal-no-go",
+        help="Exp Code Self Dual Wreath Information Set Universal No Go",
+    )
+    information_set_universal_no_go.set_defaults(func=command_information_set_universal_no_go)
+
+    interleaved_even_parity_no_go = subparsers.add_parser(
+        "interleaved-even-parity-no-go",
+        help="Exp Code Self Dual Wreath Interleaved Even Parity No Go",
+    )
+    interleaved_even_parity_no_go.set_defaults(func=command_interleaved_even_parity_no_go)
+
+    interleaved_leaf_pressure_no_go = subparsers.add_parser(
+        "interleaved-leaf-pressure-no-go",
+        help="Exp Code Self Dual Wreath Interleaved Leaf Pressure No Go",
+    )
+    interleaved_leaf_pressure_no_go.set_defaults(func=command_interleaved_leaf_pressure_no_go)
+
+    interleaved_product_lift_no_go = subparsers.add_parser(
+        "interleaved-product-lift-no-go",
+        help="Exp Code Self Dual Wreath Interleaved Product Lift No Go",
+    )
+    interleaved_product_lift_no_go.set_defaults(func=command_interleaved_product_lift_no_go)
+
+    nonsystematic_incidence_lattice_bound = subparsers.add_parser(
+        "nonsystematic-incidence-lattice-bound",
+        help="Exp Code Self Dual Wreath Nonsystematic Incidence Lattice Bound",
+    )
+    nonsystematic_incidence_lattice_bound.set_defaults(func=command_nonsystematic_incidence_lattice_bound)
+
+    nonsystematic_mod_four_no_go = subparsers.add_parser(
+        "nonsystematic-mod-four-no-go",
+        help="Exp Code Self Dual Wreath Nonsystematic Mod Four No Go",
+    )
+    nonsystematic_mod_four_no_go.set_defaults(func=command_nonsystematic_mod_four_no_go)
+
+    nonsystematic_pair_witness_collapse = subparsers.add_parser(
+        "nonsystematic-pair-witness-collapse",
+        help="Exp Code Self Dual Wreath Nonsystematic Pair Witness Collapse",
+    )
+    nonsystematic_pair_witness_collapse.set_defaults(func=command_nonsystematic_pair_witness_collapse)
+
+    nonsystematic_twisted_star_no_go = subparsers.add_parser(
+        "nonsystematic-twisted-star-no-go",
+        help="Exp Code Self Dual Wreath Nonsystematic Twisted Star No Go",
+    )
+    nonsystematic_twisted_star_no_go.set_defaults(func=command_nonsystematic_twisted_star_no_go)
+
+    plancherel_target_word_collapse = subparsers.add_parser(
+        "plancherel-target-word-collapse",
+        help="Exp Code Self Dual Wreath Plancherel Target Word Collapse",
+    )
+    plancherel_target_word_collapse.set_defaults(func=command_plancherel_target_word_collapse)
+
+    poisson_ridge_word_mixture = subparsers.add_parser(
+        "poisson-ridge-word-mixture",
+        help="Exp Code Self Dual Wreath Poisson Ridge Word Mixture",
+    )
+    poisson_ridge_word_mixture.set_defaults(func=command_poisson_ridge_word_mixture)
+
+    same_support_triangle_target_no_go = subparsers.add_parser(
+        "same-support-triangle-target-no-go",
+        help="Exp Code Self Dual Wreath Same Support Triangle Target No Go",
+    )
+    same_support_triangle_target_no_go.set_defaults(func=command_same_support_triangle_target_no_go)
+
+    separator_defect_frontier = subparsers.add_parser(
+        "separator-defect-frontier",
+        help="Exp Code Self Dual Wreath Separator Defect Frontier",
+    )
+    separator_defect_frontier.set_defaults(func=command_separator_defect_frontier)
+
+    systematic_stopping_core_no_go = subparsers.add_parser(
+        "systematic-stopping-core-no-go",
+        help="Exp Code Self Dual Wreath Systematic Stopping Core No Go",
+    )
+    systematic_stopping_core_no_go.set_defaults(func=command_systematic_stopping_core_no_go)
+
+    translated_parity_commutator_no_go = subparsers.add_parser(
+        "translated-parity-commutator-no-go",
+        help="Exp Code Self Dual Wreath Translated Parity Commutator No Go",
+    )
+    translated_parity_commutator_no_go.set_defaults(func=command_translated_parity_commutator_no_go)
+
+    semidirect_hms_transfer_boundary = subparsers.add_parser(
+        "semidirect-hms-transfer-boundary",
+        help="Exp Semidirect Hms Transfer Boundary",
+    )
+    semidirect_hms_transfer_boundary.set_defaults(func=command_semidirect_hms_transfer_boundary)
 
     coset_strong_fourier_information = subparsers.add_parser(
         "coset-strong-fourier-information",

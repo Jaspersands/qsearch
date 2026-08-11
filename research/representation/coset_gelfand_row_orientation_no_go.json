@@ -1,0 +1,255 @@
+{
+  "adversarial_audit": [
+    {
+      "challenge": "The full scalar Hecke spectrum identifies the physical row.",
+      "response": "Orthogonal rows give exactly the same scalar spectrum and all of its moments.",
+      "survives": false
+    },
+    {
+      "challenge": "Adding all singular values fixes the ambiguity.",
+      "response": "The singular spectrum is also independent of row orientation.",
+      "survives": false
+    },
+    {
+      "challenge": "Strong Fourier sampling or arbitrary group-action observables recover the row.",
+      "response": "The represented group algebra acts trivially on the multiplicity factor. Only commutant/source operations can distinguish row orientations.",
+      "survives": false
+    },
+    {
+      "challenge": "The theorem rules out a PGM-specific verifier.",
+      "response": "The natural PGM may constrain a_nu through its physical frame; that structure is explicitly outside this theorem.",
+      "survives": false
+    },
+    {
+      "challenge": "The large orientation manifold proves a gate lower bound.",
+      "response": "No circuit lower bound follows from Hilbert-space dimension.",
+      "survives": false
+    }
+  ],
+  "claim_gate": {
+    "commutant_or_source_specific_operation_required": true,
+    "group_action_algebra_can_verify_inverse_row_orientation": false,
+    "natural_pgm_row_orientation_classified": false,
+    "outcome_gram_can_determine_physical_row_orientation": false,
+    "polynomial_hidden_involution_decoder_constructed": false,
+    "reason": "All commutative outcome-side data are exactly blind to the physical row orientation, and the full represented group algebra is identity on multiplicity. Only commutant or source-specific structure can support the missing verifier.",
+    "row_state_verifier_constructed": false,
+    "source_specific_pgm_row_structure_still_open": true,
+    "speedup_claim_allowed": false,
+    "spherical_singular_data_can_verify_inverse_row_state": false
+  },
+  "created_at": "2026-08-11T14:53:47.147275+00:00",
+  "falsifiers_triggered": [
+    "Complete spherical eigenvalue data do not determine physical row orientation.",
+    "Complete singular-value data do not determine physical row orientation.",
+    "The full represented group-action algebra is blind to physical multiplicity-row orientation.",
+    "Orthogonal inverse row states can share identical outcome Gram and Hecke moments.",
+    "The orientation ambiguity is not by itself a circuit lower bound.",
+    "Only source-specific PGM or dilation structure remains a possible verifier route.",
+    "No hidden-involution decoder or speedup is implied."
+  ],
+  "finite_controls": [
+    {
+      "carrier_algebra_observable_residual": 0.0,
+      "carrier_dimension": 2,
+      "commutant_orientation_witness_gap": 1.9999999999999993,
+      "control_id": "STD-M2",
+      "intertwiner_residual_left": 0.0,
+      "intertwiner_residual_right": 0.0,
+      "inverse_row_overlap": 2.047511630233498e-16,
+      "orientation_blindness_verified": true,
+      "output_moment_residual": 0.0,
+      "physical_multiplicity": 2,
+      "physical_support_operator_distance": 0.7300000000000001,
+      "shared_output_gram_residual": 0.0,
+      "shared_singular_spectrum_residual": 1.1102230246251565e-16,
+      "singular_value_squared": 0.73,
+      "status": "identical-output-gram-orthogonal-physical-rows"
+    },
+    {
+      "carrier_algebra_observable_residual": 3.3422138886441676e-16,
+      "carrier_dimension": 2,
+      "commutant_orientation_witness_gap": 2.0000000000000004,
+      "control_id": "STD-M3",
+      "intertwiner_residual_left": 0.0,
+      "intertwiner_residual_right": 0.0,
+      "inverse_row_overlap": 1.0703760574928962e-16,
+      "orientation_blindness_verified": true,
+      "output_moment_residual": 3.3306690738754696e-16,
+      "physical_multiplicity": 3,
+      "physical_support_operator_distance": 0.41000000000000025,
+      "shared_output_gram_residual": 1.6653345369377348e-16,
+      "shared_singular_spectrum_residual": 2.220446049250313e-16,
+      "singular_value_squared": 0.41,
+      "status": "identical-output-gram-orthogonal-physical-rows"
+    },
+    {
+      "carrier_algebra_observable_residual": 2.237726045655905e-16,
+      "carrier_dimension": 3,
+      "commutant_orientation_witness_gap": 1.9999999999999996,
+      "control_id": "CARRIER3-M4",
+      "intertwiner_residual_left": 0.0,
+      "intertwiner_residual_right": 0.0,
+      "inverse_row_overlap": 3.898255002195072e-17,
+      "orientation_blindness_verified": true,
+      "output_moment_residual": 0.0,
+      "physical_multiplicity": 4,
+      "physical_support_operator_distance": 0.8900000000000002,
+      "shared_output_gram_residual": 0.0,
+      "shared_singular_spectrum_residual": 1.1102230246251565e-16,
+      "singular_value_squared": 0.89,
+      "status": "identical-output-gram-orthogonal-physical-rows"
+    }
+  ],
+  "headline_metrics": {
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "group_action_algebra_orientation_blindness_theorem_count": 1,
+    "maximum_carrier_algebra_observable_residual": 3.3422138886441676e-16,
+    "maximum_inverse_row_overlap": 2.047511630233498e-16,
+    "maximum_scaling_minimum_physical_multiplicity_log2": 716.161722083622,
+    "maximum_shared_output_gram_residual": 1.6653345369377348e-16,
+    "maximum_shared_singular_spectrum_residual": 2.220446049250313e-16,
+    "minimum_commutant_orientation_witness_gap": 1.9999999999999993,
+    "natural_pgm_orientation_classification_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "orthogonal_row_counterexample_count": 3,
+    "output_gram_orientation_blindness_theorem_count": 1,
+    "polynomial_hidden_involution_decoder_count": 0,
+    "row_state_verifier_count": 0,
+    "singular_spectrum_orientation_blindness_theorem_count": 1
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "MALEKI-RAZAFIMAHATRATRA-2023",
+      "title": "On cocliques in commutative Schurian association schemes of the symmetric group",
+      "url": "https://arxiv.org/abs/2307.02844",
+      "use": "Perfect-matching Gelfand-pair setting"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "classify_multiplicity_free_intertwiner_blocks",
+      "resolution": "Schur's lemma leaves one row vector a_nu for each live physical multiplicity block.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_output_gram_orientation_blindness",
+      "resolution": "Direct multiplication removes a_nu because it has unit norm.",
+      "resolved": true
+    },
+    {
+      "obligation": "construct_same_spectrum_orthogonal_rows",
+      "resolution": "Choose orthogonal unit vectors in any multiplicity space of dimension at least two.",
+      "resolved": true
+    },
+    {
+      "obligation": "test_full_group_action_algebra_as_row_verifier",
+      "resolution": "The group algebra is identity on physical multiplicity, while an explicit commutant projector separates the rows.",
+      "resolved": true
+    },
+    {
+      "obligation": "classify_natural_hidden_involution_pgm_rows",
+      "resolution": "This requires the source-specific k-copy frame or polar factor and is not implied by covariance.",
+      "resolved": false
+    },
+    {
+      "obligation": "derive_independent_row_state_verifier",
+      "resolution": "Outcome Hecke data are now proved insufficient; a physical source relation or observable is required.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "classically_checkable_row_observable_constructed": false,
+      "degree": 8,
+      "half_degree": 4,
+      "minimum_physical_multiplicity_decimal": "40320",
+      "minimum_physical_multiplicity_log2": 15.29920801838728,
+      "minimum_row_orientation_real_dimension_decimal": "80638",
+      "outcome_gram_determines_row_orientation": false,
+      "outcome_hecke_sector_count_upper_bound_decimal": "5",
+      "polynomial_hidden_involution_decoder_constructed": false,
+      "source_specific_row_constraint_derived": false,
+      "status": "outcome-spectrum-blind-source-specific-row-structure-open"
+    },
+    {
+      "classically_checkable_row_observable_constructed": false,
+      "degree": 16,
+      "half_degree": 8,
+      "minimum_physical_multiplicity_decimal": "20922789888000",
+      "minimum_physical_multiplicity_log2": 44.25014046988262,
+      "minimum_row_orientation_real_dimension_decimal": "41845579775998",
+      "outcome_gram_determines_row_orientation": false,
+      "outcome_hecke_sector_count_upper_bound_decimal": "22",
+      "polynomial_hidden_involution_decoder_constructed": false,
+      "source_specific_row_constraint_derived": false,
+      "status": "outcome-spectrum-blind-source-specific-row-structure-open"
+    },
+    {
+      "classically_checkable_row_observable_constructed": false,
+      "degree": 32,
+      "half_degree": 16,
+      "minimum_physical_multiplicity_decimal": "263130836933693530167218012160000000",
+      "minimum_physical_multiplicity_log2": 117.6632636523603,
+      "minimum_row_orientation_real_dimension_decimal": "526261673867387060334436024319999998",
+      "outcome_gram_determines_row_orientation": false,
+      "outcome_hecke_sector_count_upper_bound_decimal": "231",
+      "polynomial_hidden_involution_decoder_constructed": false,
+      "source_specific_row_constraint_derived": false,
+      "status": "outcome-spectrum-blind-source-specific-row-structure-open"
+    },
+    {
+      "classically_checkable_row_observable_constructed": false,
+      "degree": 64,
+      "half_degree": 32,
+      "minimum_physical_multiplicity_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "minimum_physical_multiplicity_log2": 295.9951439417241,
+      "minimum_row_orientation_real_dimension_decimal": "253773864371768328206866778670322961605731032349090384397603788750429408460799999999999998",
+      "outcome_gram_determines_row_orientation": false,
+      "outcome_hecke_sector_count_upper_bound_decimal": "8349",
+      "polynomial_hidden_involution_decoder_constructed": false,
+      "source_specific_row_constraint_derived": false,
+      "status": "outcome-spectrum-blind-source-specific-row-structure-open"
+    },
+    {
+      "classically_checkable_row_observable_constructed": false,
+      "degree": 128,
+      "half_degree": 64,
+      "minimum_physical_multiplicity_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "minimum_physical_multiplicity_log2": 716.161722083622,
+      "minimum_row_orientation_real_dimension_decimal": "771240964725160843471354131846927281234986219180447180557656806552746805150331087121372337177014723068060103666117832695184345864524997715532229910490078715520069289418558495384991170559999999999999999999999999999998",
+      "outcome_gram_determines_row_orientation": false,
+      "outcome_hecke_sector_count_upper_bound_decimal": "1741630",
+      "polynomial_hidden_involution_decoder_constructed": false,
+      "source_specific_row_constraint_derived": false,
+      "status": "outcome-spectrum-blind-source-specific-row-structure-open"
+    }
+  ],
+  "status": "gelfand-output-gram-row-blind-source-structure-open",
+  "summary": "Proved that multiplicity-free outcome spectra and all singular data cannot identify the inverse-prepared physical row; the remaining route must exploit the natural PGM/source frame rather than the perfect-matching association scheme alone.",
+  "theorem": {
+    "block_family": "K_nu=sqrt(alpha_nu) I_(V_nu) tensor <a_nu| for arbitrary unit a_nu in the physical multiplicity space",
+    "common_output_gram": "K K^*=direct_sum_nu alpha_nu I_(V_nu), independent of a_nu",
+    "common_singular_data": "Each alpha_nu occurs dim(V_nu) times, so all singular values, ranks, Schatten norms, and output Hecke moments are orientation blind.",
+    "group_action_algebra_blindness": "On V_nu tensor M_nu, every operator generated by the G action is in End(V_nu) tensor I_(M_nu), so all of its outcome statistics are independent of a_nu. Orientation-sensitive observables must come from the commutant or additional source structure.",
+    "group_action_algebra_orientation_blindness_proved": true,
+    "natural_pgm_orientation_classified": false,
+    "natural_source_scope_limit": "The theorem ranges over abstract intertwiners. It does not prove that all orientations arise from one fixed coset-state ensemble, the natural PGM, or a polynomial circuit family.",
+    "orthogonal_row_counterexample": "When dim(M_nu)>=2, orthogonal a_nu and b_nu produce orthogonal inverse row states but identical output Gram data.",
+    "output_gram_orientation_blindness_proved": true,
+    "polynomial_decoder_constructed": false,
+    "row_state_verifier_constructed": false,
+    "singular_value_orientation_blindness_proved": true,
+    "status": "gelfand-output-gram-row-orientation-blindness-proved",
+    "theorem_verified": true,
+    "universal_blindness_scope": "No statistic determined only by K K^*, its spherical spectrum, or singular values can recover or verify the physical row direction."
+  },
+  "theorem_contract": {
+    "data_declared_blind": "K K^*, spherical eigenvalues, singular values, ranks, and unitarily invariant output moments",
+    "data_not_declared_blind": "source-specific physical observables, circuit dilation, PGM polar factors, and K^*K in a known physical basis",
+    "outcome_representation": "multiplicity-free direct sum of finite-group irreps",
+    "physical_representation": "same carrier irreps with arbitrary multiplicity spaces"
+  }
+}

@@ -1,0 +1,236 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Exponentially many outcomes force the noncrossing term to vanish.",
+      "resolution": "The relevant ratio is r/N, already bounded below by 19/520; the number of coordinate blocks does not enter equation (1).",
+      "resolved": true
+    },
+    {
+      "objection": "A positive noncrossing term proves noncommutativity.",
+      "resolution": "False. Uniform scalar and orthogonal projective controls attain the lower bound while commuting; crossing equals noncrossing.",
+      "resolved": true
+    },
+    {
+      "objection": "Trace balance or a Jacobi edge is hidden in the proof.",
+      "resolution": "Weighted Cauchy uses only sum_e Tr(H_e)=r and sum_e b_e=N.",
+      "resolved": true
+    },
+    {
+      "objection": "The total lower bound automatically lower-bounds distinct pairs.",
+      "resolution": "False. The orthogonal projective control has zero distinct-pair noncrossing mass and puts the entire total moment on e=f.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "natural_component_M4_positive": false,
+    "natural_component_distinct_noncrossing_moment_lower_bounded": false,
+    "natural_component_total_noncrossing_moment_lower_bounded": true,
+    "natural_normalized_crossing_moment_controlled": false,
+    "positive_component_edge_required_for_noncrossing_bound": false,
+    "reason": "The total noncrossing term has a constant natural floor, but its same-outcome part cancels exactly and can contain the full floor.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:24:05.075322+00:00",
+  "falsifiers_triggered": [
+    "The natural total noncrossing scale is not an open spectral-edge problem.",
+    "A positive noncrossing lower bound alone cannot distinguish scalar or projective commuting POVMs.",
+    "Any remaining M4 proof must force distinct-pair noncrossing mass and control its crossing partner."
+  ],
+  "finite_controls": [
+    {
+      "block_dimensions": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "coefficient_dimension": 28,
+      "commutator_fourth_moment_gap": 0.0,
+      "control_id": "UNIFORM-SCALAR-Q7-R4",
+      "coordinate_noncrossing_fourth_moment_lower_bound": 0.08163265306122448,
+      "deterministic_chain_verified": true,
+      "diagonal_same_outcome_noncrossing_moment": 0.011661807580174917,
+      "distinct_outcome_noncrossing_moment": 0.0699708454810495,
+      "effect_sum_identity_residual": 3.3306690738754696e-16,
+      "effects_pairwise_commute": true,
+      "fiber_dimension": 4,
+      "lower_bound_tight": true,
+      "maximum_effect_rank_excess": 0,
+      "noncrossing_bound_residual": 6.938893903907228e-17,
+      "observed_noncrossing_fourth_moment": 0.08163265306122441,
+      "observed_second_power_trace": 0.5714285714285712,
+      "outcome_count": 7,
+      "rank_cauchy_second_power_trace_lower_bound": 0.5714285714285714,
+      "second_power_trace_bound_residual": 2.220446049250313e-16,
+      "status": "sharp-commuting-coordinate-noncrossing-bound"
+    },
+    {
+      "block_dimensions": [
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "coefficient_dimension": 15,
+      "commutator_fourth_moment_gap": 0.0,
+      "control_id": "ORTHOGONAL-PROJECTIVE-Q5-B3",
+      "coordinate_noncrossing_fourth_moment_lower_bound": 15.0,
+      "deterministic_chain_verified": true,
+      "diagonal_same_outcome_noncrossing_moment": 15.0,
+      "distinct_outcome_noncrossing_moment": 0.0,
+      "effect_sum_identity_residual": 0.0,
+      "effects_pairwise_commute": true,
+      "fiber_dimension": 15,
+      "lower_bound_tight": true,
+      "maximum_effect_rank_excess": 0,
+      "noncrossing_bound_residual": 0.0,
+      "observed_noncrossing_fourth_moment": 15.0,
+      "observed_second_power_trace": 15.0,
+      "outcome_count": 5,
+      "rank_cauchy_second_power_trace_lower_bound": 15.0,
+      "second_power_trace_bound_residual": 0.0,
+      "status": "sharp-commuting-coordinate-noncrossing-bound"
+    },
+    {
+      "block_dimensions": [
+        2,
+        3,
+        5,
+        7,
+        14
+      ],
+      "coefficient_dimension": 31,
+      "commutator_fourth_moment_gap": 0.35412714859446304,
+      "control_id": "HAAR-UNEQUAL-BLOCKS-N31-R11",
+      "coordinate_noncrossing_fourth_moment_lower_bound": 1.385015608740895,
+      "deterministic_chain_verified": true,
+      "diagonal_same_outcome_noncrossing_moment": 2.515421883369665,
+      "distinct_outcome_noncrossing_moment": 0.9392683868450638,
+      "effect_sum_identity_residual": 8.876498111689531e-16,
+      "effects_pairwise_commute": false,
+      "fiber_dimension": 11,
+      "lower_bound_tight": false,
+      "maximum_effect_rank_excess": 0,
+      "noncrossing_bound_residual": 0.0,
+      "observed_noncrossing_fourth_moment": 3.4546902702147286,
+      "observed_second_power_trace": 5.950151680820924,
+      "outcome_count": 5,
+      "rank_cauchy_second_power_trace_lower_bound": 3.903225806451613,
+      "second_power_trace_bound_residual": 0.0,
+      "status": "coordinate-noncrossing-bound-verified"
+    },
+    {
+      "block_dimensions": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "coefficient_dimension": 48,
+      "commutator_fourth_moment_gap": 1.119297855525614,
+      "control_id": "HAAR-SPARSE-BLOCKS-N48-R17",
+      "coordinate_noncrossing_fourth_moment_lower_bound": 2.1323784722222223,
+      "deterministic_chain_verified": true,
+      "diagonal_same_outcome_noncrossing_moment": 1.2268038845234837,
+      "distinct_outcome_noncrossing_moment": 1.4142300452301186,
+      "effect_sum_identity_residual": 1.3197972368687491e-15,
+      "effects_pairwise_commute": false,
+      "fiber_dimension": 17,
+      "lower_bound_tight": false,
+      "maximum_effect_rank_excess": 0,
+      "noncrossing_bound_residual": 0.0,
+      "observed_noncrossing_fourth_moment": 2.6410339297536023,
+      "observed_second_power_trace": 6.618247810002952,
+      "outcome_count": 16,
+      "rank_cauchy_second_power_trace_lower_bound": 6.020833333333333,
+      "second_power_trace_bound_residual": 0.0,
+      "status": "coordinate-noncrossing-bound-verified"
+    }
+  ],
+  "headline_metrics": {
+    "asymptotic_conditional_noncrossing_lower_bound": 0.00019817284578402367,
+    "asymptotic_expected_noncrossing_lower_bound": 2.201920508711374e-05,
+    "coordinate_noncrossing_lower_bound_theorem_count": 1,
+    "finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "natural_component_M4_lower_bound_theorem_count": 0,
+    "natural_crossing_upper_bound_theorem_count": 0,
+    "natural_distinct_noncrossing_lower_bound_theorem_count": 0,
+    "natural_noncrossing_lower_bound_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "sharp_commuting_control_count": 2
+  },
+  "natural_corollary": {
+    "common_fiber_to_child_coefficient_lower_bound": "19/520",
+    "common_fiber_to_physical_carrier_lower_bound": "19/128",
+    "conditional_noncrossing_physical_mass_lower_bound": "6859/34611200",
+    "conditioned_source_event_mass_lower_bound": "1/9",
+    "expected_noncrossing_physical_mass_lower_bound": "6859/311500800",
+    "natural_component_M4_positive": false,
+    "natural_crossing_upper_bound_proved": false,
+    "natural_distinct_outcome_noncrossing_lower_bound_proved": false,
+    "natural_noncrossing_lower_bound_proved": true,
+    "positive_component_edge_required": false,
+    "statement": "Conditioned on globally distinct sources, at least 1/9-o(1) mass has total noncrossing physical moment at least 6859/34611200-o(1); the unconditional conditioned-law expectation is at least 6859/311500800-o(1). Same-outcome mass may account for this entire floor and cancels from component M4.",
+    "trace_balance_required": false
+  },
+  "proof_obligations": [
+    {
+      "obligation": "lower_bound_natural_component_total_noncrossing_moment",
+      "resolution": "Coordinate rank plus two Cauchy inequalities and the proved final-root aspect event give a constant physical lower bound.",
+      "resolved": true
+    },
+    {
+      "obligation": "avoid_unproved_component_positive_edge",
+      "resolution": "The proof uses only ranks, total coefficient dimension, and common-fiber aspects; arbitrarily small positive eigenvalues are allowed.",
+      "resolved": true
+    },
+    {
+      "obligation": "lower_bound_distinct_outcome_noncrossing_mass",
+      "resolution": "The total floor can be entirely diagonal, as the sharp orthogonal-PVM control demonstrates. A natural incidence or overlap theorem must force off-diagonal mass.",
+      "resolved": false
+    },
+    {
+      "obligation": "separate_distinct_noncrossing_and_crossing_words",
+      "resolution": "After e=f cancellation, compare the two distinct-leaf word sums under canonical normalization.",
+      "resolved": false
+    }
+  ],
+  "status": "natural-total-noncrossing-scale-closed-distinct-pair-open",
+  "summary": "Proved a sharp total noncrossing scale and showed why dimensions alone cannot lower-bound the distinct-pair component-M4 contribution.",
+  "theorem": {
+    "arbitrary_block_dimensions": true,
+    "arbitrary_coordinate_compression": true,
+    "coordinate_rank_bound": "rank(H_e)<=b_e for H_e=W^*D_eW",
+    "edge_free": true,
+    "natural_consequence": "On the existing final-root event, total noncrossing/D_phys is at least (19/128)(19/520)^2-o(1).",
+    "noncrossing_fourth_moment_bound": "Tr((sum_e H_e^2)^2)>=r^3/N^2",
+    "remaining_gate": "Lower-bound the distinct-outcome noncrossing term and separate it from its crossing partner; diagonal e=f terms cancel exactly.",
+    "second_power_trace_bound": "Tr(sum_e H_e^2)>=r^2/N",
+    "sharpness": "Equality holds for uniform scalar coordinate compressions and orthogonal projective measurements.",
+    "status": "natural-total-noncrossing-scale-closed-distinct-pair-open",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "coordinate_compression": "H_e=W^*D_eW, W^*W=I_r, sum b_e=N",
+    "natural_final_root": "Conditioned on globally distinct sources, at least 1/9-o(1) mass has total noncrossing physical moment at least 6859/34611200-o(1); the unconditional conditioned-law expectation is at least 6859/311500800-o(1). Same-outcome mass may account for this entire floor and cancels from component M4.",
+    "rank_cauchy_chain": "rank(H_e)<=b_e implies Tr(S_2)>=r^2/N and Tr(S_2^2)>=r^3/N^2",
+    "scope": "Lower-bound the distinct-outcome noncrossing term and separate it from its crossing partner; diagonal e=f terms cancel exactly."
+  }
+}

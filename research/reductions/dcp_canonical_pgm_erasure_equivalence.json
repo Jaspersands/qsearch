@@ -1,0 +1,202 @@
+{
+  "adversarial_audit": [
+    {
+      "attack": "Implement the canonical analysis but claim it avoids fiber preparation.",
+      "reason": "its inverse after QFT prepares |F_s> exactly",
+      "survives": false
+    },
+    {
+      "attack": "Attach known outcome-dependent garbage.",
+      "reason": "controlled cleanup restores the canonical analysis map",
+      "survives": false
+    },
+    {
+      "attack": "Discard orthogonal outcome garbage in an inaccessible environment.",
+      "reason": "the classical PGM outcome probabilities remain correct while the coherent Fourier target probability drops to 1/N",
+      "survives": true
+    },
+    {
+      "attack": "Infer that no polynomial destructive PGM circuit can exist.",
+      "reason": "the theorem is an equivalence boundary, not a circuit lower bound",
+      "survives": true
+    }
+  ],
+  "canonical_controls": [
+    {
+      "analysis_isometry_residual": 6.788584834406176e-16,
+      "effect_completeness_residual": 6.788584834406176e-16,
+      "exact_equivalence_verified": true,
+      "inverse_fiber_preparation_residual": 6.788584834406176e-16,
+      "modulus": 8,
+      "qft_erasure_residual": 1.221948329916577e-15,
+      "status": "canonical-pgm-analysis-equals-fiber-erasure",
+      "support": [
+        0,
+        1,
+        3,
+        6
+      ],
+      "support_size": 4
+    },
+    {
+      "analysis_isometry_residual": 2.2422265383348053e-15,
+      "effect_completeness_residual": 2.2422265383348053e-15,
+      "exact_equivalence_verified": true,
+      "inverse_fiber_preparation_residual": 2.2422265383348053e-15,
+      "modulus": 16,
+      "qft_erasure_residual": 3.7457571508298076e-15,
+      "status": "canonical-pgm-analysis-equals-fiber-erasure",
+      "support": [
+        1,
+        2,
+        5,
+        7,
+        11,
+        14
+      ],
+      "support_size": 6
+    },
+    {
+      "analysis_isometry_residual": 2.4273216302546584e-14,
+      "effect_completeness_residual": 2.4273216302546584e-14,
+      "exact_equivalence_verified": true,
+      "inverse_fiber_preparation_residual": 2.4273216302546584e-14,
+      "modulus": 32,
+      "qft_erasure_residual": 2.680909494060632e-14,
+      "status": "canonical-pgm-analysis-equals-fiber-erasure",
+      "support": [
+        0,
+        4,
+        9,
+        13,
+        17,
+        25,
+        31
+      ],
+      "support_size": 7
+    }
+  ],
+  "claim_gate": {
+    "arbitrary_destructive_pgm_route_closed": false,
+    "canonical_coherent_pgm_route_is_solver_equivalent": true,
+    "cleanable_rank_one_pgm_route_is_solver_equivalent": true,
+    "inaccessible_environment_route_closed": false,
+    "polynomial_average_witness_solver_constructed": false,
+    "polynomial_canonical_pgm_constructed": false,
+    "reason": "A canonical or cleanable coherent PGM is not easier than normalized-fiber preparation. Only a concrete noncanonical destructive implementation with justified outcome extraction remains outside the witness reduction.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:23:10.461031+00:00",
+  "falsifiers_triggered": [
+    "A clean coherent implementation of the covariant PGM is not a weaker primitive than normalized-fiber preparation.",
+    "Rank-one PGM outcome garbage is input-independent on each outcome but may still block coherent Fourier recovery.",
+    "Known controlled-cleanable garbage does not provide a loophole.",
+    "Classical outcome correctness alone does not imply access to the canonical analysis isometry."
+  ],
+  "garbage_controls": [
+    {
+      "controlled_cleanup_available": true,
+      "garbage_class": "common",
+      "garbage_dimension": 1,
+      "ideal_target_residue_probability": 1.0,
+      "maximum_pairwise_garbage_overlap": 1.0,
+      "minimum_pairwise_garbage_overlap": 1.0,
+      "modulus": 8,
+      "status": "outcome-garbage-visibility-boundary-verified",
+      "support_residue": 3,
+      "target_probability_after_cleanup": 1.0,
+      "target_residue_probability_after_qft": 1.0
+    },
+    {
+      "controlled_cleanup_available": true,
+      "garbage_class": "two-cluster",
+      "garbage_dimension": 2,
+      "ideal_target_residue_probability": 1.0,
+      "maximum_pairwise_garbage_overlap": 1.0,
+      "minimum_pairwise_garbage_overlap": 0.0,
+      "modulus": 8,
+      "status": "outcome-garbage-visibility-boundary-verified",
+      "support_residue": 3,
+      "target_probability_after_cleanup": 1.0,
+      "target_residue_probability_after_qft": 0.4999999999999999
+    },
+    {
+      "controlled_cleanup_available": true,
+      "garbage_class": "orthogonal",
+      "garbage_dimension": 8,
+      "ideal_target_residue_probability": 1.0,
+      "maximum_pairwise_garbage_overlap": 0.0,
+      "minimum_pairwise_garbage_overlap": 0.0,
+      "modulus": 8,
+      "status": "outcome-garbage-visibility-boundary-verified",
+      "support_residue": 3,
+      "target_probability_after_cleanup": 1.0,
+      "target_residue_probability_after_qft": 0.12499999999999994
+    }
+  ],
+  "headline_metrics": {
+    "canonical_control_count": 3,
+    "canonical_pgm_erasure_equivalence_theorem_count": 1,
+    "cleanable_rank_one_dilation_equivalence_theorem_count": 1,
+    "finite_control_failure_count": 0,
+    "garbage_control_count": 3,
+    "maximum_canonical_qft_erasure_residual": 2.680909494060632e-14,
+    "orthogonal_garbage_cleanup_target_probability": 1.0,
+    "orthogonal_garbage_target_probability": 0.12499999999999994,
+    "polynomial_average_subset_sum_witness_solver_count": 0,
+    "polynomial_canonical_pgm_circuit_count": 0,
+    "proved_arbitrary_destructive_pgm_reduction_count": 0,
+    "proved_inaccessible_environment_recovery_count": 0
+  },
+  "proof_obligations": [
+    {
+      "description": "Prove the canonical PGM analysis columns are inverse Fourier states labeled by legal residues.",
+      "evidence": "character orthogonality gives QFT W|F_s>=|s>",
+      "id": "PO-DCP-CANONICAL-PGM-FOURIER-ERASURE",
+      "satisfied": true
+    },
+    {
+      "description": "Characterize every exact rank-one PGM instrument on support.",
+      "evidence": "K_d^dagger K_d=|mu_d><mu_d| and polar decomposition imply K_d=|g_d><mu_d|",
+      "id": "PO-DCP-RANK-ONE-NAIMARK-FACTOR",
+      "satisfied": true
+    },
+    {
+      "description": "Construct efficient controlled cleanup for the outcome garbage of a proposed PGM circuit.",
+      "evidence": "must be supplied by the concrete implementation",
+      "id": "PO-DCP-PGM-OUTCOME-GARBAGE-CLEANUP",
+      "satisfied": false
+    },
+    {
+      "description": "Reduce an arbitrary destructive PGM channel with discarded environment to average witness preparation.",
+      "evidence": "orthogonal garbage is an exact counterexample to automatic Fourier recovery",
+      "id": "PO-DCP-DESTRUCTIVE-PGM-TO-WITNESS",
+      "satisfied": false
+    }
+  ],
+  "status": "canonical-pgm-reduced-noncanonical-destructive-pgm-open",
+  "summary": "Proved that the canonical coherent DCP PGM analysis map, and every rank-one dilation with efficiently cleanable outcome garbage, is exactly coherent normalized-fiber erasure followed by Fourier transform. Orthogonal inaccessible garbage demonstrates why an arbitrary destructive PGM channel is not yet reduced.",
+  "theorem": {
+    "arbitrary_destructive_pgm_reduced": false,
+    "canonical_analysis": "W|psi>=sum_d |d><mu_d|psi> is an isometry on the legal fiber span",
+    "canonical_pgm_erasure_equivalence_proved": true,
+    "cleanability_condition": "common or efficiently controlled-cleanable |g_d> reduces the dilation to W",
+    "cleanable_rank_one_dilation_equivalence_proved": true,
+    "exact_erasure_identity": "QFT_N W|F_s>=|s> for every legal residue s",
+    "general_rank_one_dilation_form": "every exact instrument has K_d=|g_d><mu_d| on the legal support",
+    "inaccessible_environment_recovered": false,
+    "inaccessible_garbage_boundary": "orthogonal discarded |g_d> can reduce Fourier target probability to 1/N",
+    "inverse_preparation_identity": "W^dagger QFT_N^dagger|s>=|F_s>",
+    "pgm_effects": "E_d=|mu_d><mu_d| with |mu_d>=N^-1/2 sum_(s in S) omega^(ds)|F_s> and sum_d E_d=P_S",
+    "polynomial_witness_solver_constructed": false,
+    "status": "canonical-and-cleanable-pgm-dilations-erasure-equivalent",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "composition": "inverse analysis prepares normalized legal fibers and invokes the existing uniform-legal witness reduction",
+    "ensemble": "clean DCP covariant phase states with public labels",
+    "excluded": "destructive outcome-only channels, inaccessible environment, and noncanonical garbage without a cleanup circuit",
+    "measurement": "exact rank-one covariant PGM on the legal fiber span",
+    "proved": "canonical coherent analysis and every cleanable rank-one Naimark dilation are coherent fiber-erasure implementations"
+  }
+}

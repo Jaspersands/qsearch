@@ -1,0 +1,1075 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Minimum separator pivots always eliminate acyclically.",
+      "resolution": "False: the exact width-six crossing has minimum feedback two for its unique minimum separator.",
+      "resolved": true
+    },
+    {
+      "objection": "Crossing f>=k+1 is evidence of pressure survival.",
+      "resolution": "The globally optimized crossing exists, but its full codeword group is C2 and its marked exponent is five.",
+      "resolved": true
+    },
+    {
+      "objection": "Finite reducer success proves all cycle systems weak.",
+      "resolution": "Finite reduction alone would not suffice.  The independent all-width suffix-chain proof controls every support.",
+      "resolved": true
+    }
+  ],
+  "all_depth_certificate": {
+    "arbitrary_width_feedback_bound": true,
+    "counterfamily_group": "C_2 * Z",
+    "counterfamily_marked_exponent_upper_bound": 5.5,
+    "counterfamily_uniform_margin_lower_bound": 2.5,
+    "critical_pair_formula": "For each i in I, minimality supplies c_i,d_i with projections differing only at i; W(c_i)W(d_i)^-1 contains z_i once.",
+    "dependency_graph_formula": "i->j when the selected pivot-i quotient also contains separator z_j",
+    "feedback_elimination_formula": "Deleting f feedback vertices leaves a DAG; source-first Tietze moves eliminate s-f separator generators exactly.",
+    "feedback_rich_counterfamily_formula": "Rejected proposal ({011,101,110,111} x F_2^t, parity, 0): the obvious separator has f=2, but a parity-assisted separator has f=0",
+    "global_feedback_gate_crossing_constructed": true,
+    "marked_solution_exponent_formula": "d-k+f+4+o(1)",
+    "necessary_escape_condition": "Evading this separator certificate requires every separator/witness choice to have f>=k+1, but this is not sufficient for pressure survival.",
+    "pressure_margin_formula": "k-f+1+0.5*log2(2^r/(2^r-1))",
+    "residual_appended_generator_formula": "d-k+f",
+    "rigorous_no_go_condition": "f<=k",
+    "separator_formula": "s=r+k for a minimum coordinate separator I",
+    "status": "separator-feedback-crossing-found-but-full-relations-kill-it"
+  },
+  "claim_gate": {
+    "all_higher_codimension_separator_defect_codes_controlled": true,
+    "feedback_condition_sufficient_for_survival": false,
+    "feedback_gate_crossing_family_actual_pressure_survives": false,
+    "feedback_gate_crossing_family_constructed": true,
+    "feedback_rich_weak_relation_family_constructed": false,
+    "natural_component_M4_positive": false,
+    "reason": "The separator bound is not universal.  Its exact crossing is still killed, and the stronger suffix-chain theorem controls the entire single-fiber BABA family.",
+    "separator_feedback_pressure_bound_proved": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:26:06.244334+00:00",
+  "exhaustive_censuses": [
+    {
+      "candidate_code_count": 35960,
+      "code_width": 5,
+      "codimension": 3,
+      "exhaustive_census_verified": true,
+      "globally_acyclic_witness_code_count": 1920,
+      "information_dimension": 2,
+      "maximum_observed_feedback_vertex_count": 0,
+      "minimum_distance_two_no_information_set_code_count": 1920,
+      "positive_feedback_code_count": 0,
+      "status": "all-width-five-separator-defect-codes-globally-acyclic"
+    }
+  ],
+  "falsifiers_triggered": [
+    "A cyclic hand-picked separator does not imply a global feedback obstruction.",
+    "The upper-star parity proposal has an alternative acyclic separator.",
+    "The rejected proposal also reduces to C2*Z.",
+    "The universal conjecture f<=k is false at width six.",
+    "Crossing f>=k+1 does not imply pressure survival."
+  ],
+  "feedback_rich_family_controls": [
+    {
+      "alternative_acyclic_separator_found": true,
+      "appended_solution_exponent_upper_bound": 1.5,
+      "code_size": 4,
+      "code_width": 5,
+      "codeword_presentation_remaining_generator_count": 2,
+      "codeword_presentation_residual_relations": [
+        [
+          -4,
+          -4
+        ]
+      ],
+      "codimension": 3,
+      "exact_C2_free_Z_factorization_verified": true,
+      "exact_control_verified": true,
+      "feedback_exceeds_separator_defect": false,
+      "has_dimension_sized_information_set": false,
+      "information_dimension": 2,
+      "marked_pressure_margin_lower_bound": 2.707518749639422,
+      "marked_solution_exponent_upper_bound": 5.5,
+      "minimum_distance": 2,
+      "minimum_feedback_vertex_count": 0,
+      "minimum_separator_size": 3,
+      "obvious_projection_feedback_vertex_count": 2,
+      "separator_defect": 1,
+      "status": "apparent-feedback-cycle-removed-by-alternative-separator",
+      "tail_width": 0
+    },
+    {
+      "alternative_acyclic_separator_found": true,
+      "appended_solution_exponent_upper_bound": 1.5,
+      "code_size": 8,
+      "code_width": 6,
+      "codeword_presentation_remaining_generator_count": 2,
+      "codeword_presentation_residual_relations": [
+        [
+          -5,
+          -5
+        ]
+      ],
+      "codimension": 3,
+      "exact_C2_free_Z_factorization_verified": true,
+      "exact_control_verified": true,
+      "feedback_exceeds_separator_defect": false,
+      "has_dimension_sized_information_set": false,
+      "information_dimension": 3,
+      "marked_pressure_margin_lower_bound": 2.5963225389711972,
+      "marked_solution_exponent_upper_bound": 5.5,
+      "minimum_distance": 2,
+      "minimum_feedback_vertex_count": 0,
+      "minimum_separator_size": 4,
+      "obvious_projection_feedback_vertex_count": 2,
+      "separator_defect": 1,
+      "status": "apparent-feedback-cycle-removed-by-alternative-separator",
+      "tail_width": 1
+    },
+    {
+      "alternative_acyclic_separator_found": true,
+      "appended_solution_exponent_upper_bound": 1.5,
+      "code_size": 16,
+      "code_width": 7,
+      "codeword_presentation_remaining_generator_count": 2,
+      "codeword_presentation_residual_relations": [
+        [
+          -6,
+          -6
+        ],
+        [
+          -6,
+          -6,
+          -6,
+          -6
+        ]
+      ],
+      "codimension": 3,
+      "exact_C2_free_Z_factorization_verified": true,
+      "exact_control_verified": true,
+      "feedback_exceeds_separator_defect": false,
+      "has_dimension_sized_information_set": false,
+      "information_dimension": 4,
+      "marked_pressure_margin_lower_bound": 2.54655470219574,
+      "marked_solution_exponent_upper_bound": 5.5,
+      "minimum_distance": 2,
+      "minimum_feedback_vertex_count": 0,
+      "minimum_separator_size": 5,
+      "obvious_projection_feedback_vertex_count": 2,
+      "separator_defect": 1,
+      "status": "apparent-feedback-cycle-removed-by-alternative-separator",
+      "tail_width": 2
+    },
+    {
+      "alternative_acyclic_separator_found": true,
+      "appended_solution_exponent_upper_bound": 1.5,
+      "code_size": 32,
+      "code_width": 8,
+      "codeword_presentation_remaining_generator_count": 2,
+      "codeword_presentation_residual_relations": [
+        [
+          -7,
+          -7
+        ],
+        [
+          -7,
+          -7,
+          -7,
+          -7
+        ]
+      ],
+      "codimension": 3,
+      "exact_C2_free_Z_factorization_verified": true,
+      "exact_control_verified": true,
+      "feedback_exceeds_separator_defect": false,
+      "has_dimension_sized_information_set": false,
+      "information_dimension": 5,
+      "marked_pressure_margin_lower_bound": 2.5229018448065617,
+      "marked_solution_exponent_upper_bound": 5.5,
+      "minimum_distance": 2,
+      "minimum_feedback_vertex_count": 0,
+      "minimum_separator_size": 6,
+      "obvious_projection_feedback_vertex_count": 2,
+      "separator_defect": 1,
+      "status": "apparent-feedback-cycle-removed-by-alternative-separator",
+      "tail_width": 3
+    },
+    {
+      "alternative_acyclic_separator_found": true,
+      "appended_solution_exponent_upper_bound": 1.5,
+      "code_size": 64,
+      "code_width": 9,
+      "codeword_presentation_remaining_generator_count": 2,
+      "codeword_presentation_residual_relations": [
+        [
+          -8,
+          -8
+        ],
+        [
+          -8,
+          -8,
+          -8,
+          -8
+        ],
+        [
+          -8,
+          -8,
+          -8,
+          -8,
+          -8,
+          -8
+        ]
+      ],
+      "codimension": 3,
+      "exact_C2_free_Z_factorization_verified": true,
+      "exact_control_verified": true,
+      "feedback_exceeds_separator_defect": false,
+      "has_dimension_sized_information_set": false,
+      "information_dimension": 6,
+      "marked_pressure_margin_lower_bound": 2.511360038250041,
+      "marked_solution_exponent_upper_bound": 5.5,
+      "minimum_distance": 2,
+      "minimum_feedback_vertex_count": 0,
+      "minimum_separator_size": 7,
+      "obvious_projection_feedback_vertex_count": 2,
+      "separator_defect": 1,
+      "status": "apparent-feedback-cycle-removed-by-alternative-separator",
+      "tail_width": 4
+    }
+  ],
+  "headline_metrics": {
+    "control_failure_count": 0,
+    "exhaustive_positive_feedback_code_count": 0,
+    "exhaustive_width_five_separator_defect_code_count": 1920,
+    "exhaustively_checked_width_five_code_count": 35960,
+    "feedback_family_failure_count": 0,
+    "feedback_gate_crossing_family_count": 1,
+    "maximum_stored_feedback_minus_defect": 1,
+    "new_quantum_algorithm_count": 0,
+    "rejected_local_cycle_family_count": 1,
+    "separator_feedback_bound_theorem_count": 1,
+    "stored_feedback_family_width_count": 5,
+    "stored_separator_defect_control_count": 4
+  },
+  "proof_obligations": [
+    {
+      "obligation": "derive_separator_feedback_pressure_bound",
+      "resolution": "A feedback set of size f leaves d-k+f appended generators.",
+      "resolved": true
+    },
+    {
+      "obligation": "find_family_crossing_feedback_gate",
+      "resolution": "Exact SAT produced a width-six crossing with a unique minimum separator and globally optimized f=2>k=1.",
+      "resolved": true
+    },
+    {
+      "obligation": "find_feedback_rich_weak_relation_family",
+      "resolution": "Search f>=k+1 families whose residual cycle presentation avoids primitive powers, involutions, cyclic collapse, and bounded-genus surface laws.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_universal_residual_cycle_loss_or_counterexample",
+      "resolution": "The stronger suffix-chain theorem uses all codeword relators, leaves at most d appended generators, and makes cycle classification unnecessary.",
+      "resolved": true
+    }
+  ],
+  "representative_controls": [
+    {
+      "acyclic_elimination_order_one_based": [
+        1,
+        2,
+        6,
+        5
+      ],
+      "chosen_separator_coordinates_one_based": [
+        1,
+        2,
+        5,
+        6
+      ],
+      "code_size": 8,
+      "code_width": 6,
+      "codeword_reducer_certificate_source": "trivial-assignment-bound",
+      "codeword_reducer_remaining_generator_count": 2,
+      "codeword_reducer_solution_exponent_upper_bound": 2.0,
+      "codimension": 3,
+      "control_id": "SAT-CODIMENSION-THREE-ACYCLIC",
+      "dependency_edges_one_based": [
+        [
+          6,
+          5
+        ]
+      ],
+      "exact_acyclic_tietze_elimination_verified": true,
+      "exact_control_verified": true,
+      "feedback_no_go_criterion_satisfied": true,
+      "feedback_pressure_margin_lower_bound": 2.0963225389711972,
+      "information_dimension": 3,
+      "marked_reducer_certificate_source": "single-orientable-surface-genus-2",
+      "marked_reducer_solution_exponent_upper_bound": 5.0,
+      "marked_reducer_true_pressure_margin": 3.096322538971198,
+      "minimum_distance": 2,
+      "minimum_feedback_vertex_count": 0,
+      "minimum_feedback_vertex_set_one_based": [],
+      "minimum_separator_size": 4,
+      "residual_appended_generator_upper_bound": 2,
+      "residual_target_word": [
+        -14,
+        -13,
+        14,
+        10,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -10,
+        -14,
+        13,
+        14
+      ],
+      "selected_witnesses": [
+        {
+          "dependency_coordinates_one_based": [],
+          "exact_singleton_pivot_verified": true,
+          "first_codeword": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "pivot_coordinate_one_based": 1,
+          "pivot_occurrence_count": 1,
+          "raw_relation_quotient": [
+            3,
+            4,
+            -3,
+            -1
+          ],
+          "second_codeword": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          "status": "exact-minimal-separator-pivot-witness"
+        },
+        {
+          "dependency_coordinates_one_based": [],
+          "exact_singleton_pivot_verified": true,
+          "first_codeword": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          "pivot_coordinate_one_based": 2,
+          "pivot_occurrence_count": 1,
+          "raw_relation_quotient": [
+            3,
+            -4,
+            -2
+          ],
+          "second_codeword": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "status": "exact-minimal-separator-pivot-witness"
+        },
+        {
+          "dependency_coordinates_one_based": [],
+          "exact_singleton_pivot_verified": true,
+          "first_codeword": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "pivot_coordinate_one_based": 5,
+          "pivot_occurrence_count": 1,
+          "raw_relation_quotient": [
+            -5,
+            -3
+          ],
+          "second_codeword": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          "status": "exact-minimal-separator-pivot-witness"
+        },
+        {
+          "dependency_coordinates_one_based": [
+            5
+          ],
+          "exact_singleton_pivot_verified": true,
+          "first_codeword": [
+            0,
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          "pivot_coordinate_one_based": 6,
+          "pivot_occurrence_count": 1,
+          "raw_relation_quotient": [
+            3,
+            5,
+            -6,
+            -5,
+            -4,
+            -3
+          ],
+          "second_codeword": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          "status": "exact-minimal-separator-pivot-witness"
+        }
+      ],
+      "separator_defect": 1,
+      "status": "separator-feedback-no-go-certified",
+      "theoretical_marked_solution_exponent_upper_bound": 6.0,
+      "witness_option_count_by_pivot": [
+        2,
+        2,
+        1,
+        2
+      ]
+    },
+    {
+      "acyclic_elimination_order_one_based": [
+        4,
+        3,
+        1
+      ],
+      "chosen_separator_coordinates_one_based": [
+        1,
+        3,
+        4
+      ],
+      "code_size": 4,
+      "code_width": 5,
+      "codeword_reducer_certificate_source": "single-nonorientable-surface-genus-1",
+      "codeword_reducer_remaining_generator_count": 2,
+      "codeword_reducer_solution_exponent_upper_bound": 1.5,
+      "codimension": 3,
+      "control_id": "FEEDBACK-RICH-BASE",
+      "dependency_edges_one_based": [
+        [
+          3,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "exact_acyclic_tietze_elimination_verified": true,
+      "exact_control_verified": true,
+      "feedback_no_go_criterion_satisfied": true,
+      "feedback_pressure_margin_lower_bound": 2.207518749639422,
+      "information_dimension": 2,
+      "marked_reducer_certificate_source": "single-orientable-surface-genus-2",
+      "marked_reducer_solution_exponent_upper_bound": 6.0,
+      "marked_reducer_true_pressure_margin": 2.207518749639422,
+      "minimum_distance": 2,
+      "minimum_feedback_vertex_count": 0,
+      "minimum_feedback_vertex_set_one_based": [],
+      "minimum_separator_size": 3,
+      "residual_appended_generator_upper_bound": 2,
+      "residual_target_word": [
+        -13,
+        -12,
+        13,
+        -10,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        10,
+        -13,
+        12,
+        13
+      ],
+      "selected_witnesses": [
+        {
+          "dependency_coordinates_one_based": [],
+          "exact_singleton_pivot_verified": true,
+          "first_codeword": [
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          "pivot_coordinate_one_based": 1,
+          "pivot_occurrence_count": 1,
+          "raw_relation_quotient": [
+            2,
+            -1
+          ],
+          "second_codeword": [
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          "status": "exact-minimal-separator-pivot-witness"
+        },
+        {
+          "dependency_coordinates_one_based": [
+            1
+          ],
+          "exact_singleton_pivot_verified": true,
+          "first_codeword": [
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          "pivot_coordinate_one_based": 3,
+          "pivot_occurrence_count": 1,
+          "raw_relation_quotient": [
+            1,
+            3,
+            -2,
+            -1
+          ],
+          "second_codeword": [
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "status": "exact-minimal-separator-pivot-witness"
+        },
+        {
+          "dependency_coordinates_one_based": [
+            1,
+            3
+          ],
+          "exact_singleton_pivot_verified": true,
+          "first_codeword": [
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          "pivot_coordinate_one_based": 4,
+          "pivot_occurrence_count": 1,
+          "raw_relation_quotient": [
+            1,
+            3,
+            -4,
+            -3,
+            -2,
+            -1
+          ],
+          "second_codeword": [
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "status": "exact-minimal-separator-pivot-witness"
+        }
+      ],
+      "separator_defect": 1,
+      "status": "separator-feedback-no-go-certified",
+      "theoretical_marked_solution_exponent_upper_bound": 6.0,
+      "witness_option_count_by_pivot": [
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "acyclic_elimination_order_one_based": [
+        5,
+        2,
+        4
+      ],
+      "chosen_separator_coordinates_one_based": [
+        1,
+        2,
+        4,
+        5
+      ],
+      "code_size": 8,
+      "code_width": 6,
+      "codeword_reducer_certificate_source": "trivial-assignment-bound",
+      "codeword_reducer_remaining_generator_count": 0,
+      "codeword_reducer_solution_exponent_upper_bound": 0.0,
+      "codimension": 3,
+      "control_id": "SAT-SEPARATOR-BOUND-SHARP",
+      "dependency_edges_one_based": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          4
+        ]
+      ],
+      "exact_acyclic_tietze_elimination_verified": true,
+      "exact_control_verified": true,
+      "feedback_no_go_criterion_satisfied": true,
+      "feedback_pressure_margin_lower_bound": 1.0963225389711972,
+      "information_dimension": 3,
+      "marked_reducer_certificate_source": "single-orientable-surface-genus-2",
+      "marked_reducer_solution_exponent_upper_bound": 4.0,
+      "marked_reducer_true_pressure_margin": 4.096322538971198,
+      "minimum_distance": 2,
+      "minimum_feedback_vertex_count": 1,
+      "minimum_feedback_vertex_set_one_based": [
+        1
+      ],
+      "minimum_separator_size": 4,
+      "residual_appended_generator_upper_bound": 3,
+      "residual_target_word": [
+        -14,
+        -13,
+        14,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -14,
+        13,
+        14
+      ],
+      "selected_witnesses": [
+        {
+          "dependency_coordinates_one_based": [
+            2
+          ],
+          "exact_singleton_pivot_verified": true,
+          "first_codeword": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "pivot_coordinate_one_based": 1,
+          "pivot_occurrence_count": 1,
+          "raw_relation_quotient": [
+            2,
+            -3,
+            -2,
+            -1
+          ],
+          "second_codeword": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          "status": "exact-minimal-separator-pivot-witness"
+        },
+        {
+          "dependency_coordinates_one_based": [
+            1
+          ],
+          "exact_singleton_pivot_verified": true,
+          "first_codeword": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "pivot_coordinate_one_based": 2,
+          "pivot_occurrence_count": 1,
+          "raw_relation_quotient": [
+            1,
+            -3,
+            -2,
+            -1
+          ],
+          "second_codeword": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          "status": "exact-minimal-separator-pivot-witness"
+        },
+        {
+          "dependency_coordinates_one_based": [
+            1
+          ],
+          "exact_singleton_pivot_verified": true,
+          "first_codeword": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "pivot_coordinate_one_based": 4,
+          "pivot_occurrence_count": 1,
+          "raw_relation_quotient": [
+            1,
+            -4,
+            -3,
+            -1
+          ],
+          "second_codeword": [
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "status": "exact-minimal-separator-pivot-witness"
+        },
+        {
+          "dependency_coordinates_one_based": [
+            1,
+            2,
+            4
+          ],
+          "exact_singleton_pivot_verified": true,
+          "first_codeword": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "pivot_coordinate_one_based": 5,
+          "pivot_occurrence_count": 1,
+          "raw_relation_quotient": [
+            1,
+            2,
+            3,
+            4,
+            -6,
+            -5,
+            -4,
+            -3,
+            -2,
+            -1
+          ],
+          "second_codeword": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "status": "exact-minimal-separator-pivot-witness"
+        }
+      ],
+      "separator_defect": 1,
+      "status": "separator-feedback-no-go-certified",
+      "theoretical_marked_solution_exponent_upper_bound": 7.0,
+      "witness_option_count_by_pivot": [
+        2,
+        2,
+        3,
+        1
+      ]
+    },
+    {
+      "acyclic_elimination_order_one_based": [
+        5,
+        3
+      ],
+      "chosen_separator_coordinates_one_based": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "code_size": 8,
+      "code_width": 6,
+      "codeword_reducer_certificate_source": "single-nonorientable-surface-genus-1",
+      "codeword_reducer_remaining_generator_count": 1,
+      "codeword_reducer_solution_exponent_upper_bound": 0.5,
+      "codimension": 3,
+      "control_id": "SAT-FEEDBACK-GATE-CROSSING",
+      "dependency_edges_one_based": [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          3
+        ]
+      ],
+      "exact_acyclic_tietze_elimination_verified": true,
+      "exact_control_verified": true,
+      "feedback_no_go_criterion_satisfied": false,
+      "feedback_pressure_margin_lower_bound": 0.09632253897119725,
+      "information_dimension": 3,
+      "marked_reducer_certificate_source": "single-orientable-surface-genus-2",
+      "marked_reducer_solution_exponent_upper_bound": 5.0,
+      "marked_reducer_true_pressure_margin": 3.096322538971198,
+      "minimum_distance": 2,
+      "minimum_feedback_vertex_count": 2,
+      "minimum_feedback_vertex_set_one_based": [
+        1,
+        2
+      ],
+      "minimum_separator_size": 4,
+      "residual_appended_generator_upper_bound": 4,
+      "residual_target_word": [
+        -14,
+        -13,
+        14,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -14,
+        13,
+        14
+      ],
+      "selected_witnesses": [
+        {
+          "dependency_coordinates_one_based": [
+            2,
+            3
+          ],
+          "exact_singleton_pivot_verified": true,
+          "first_codeword": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "pivot_coordinate_one_based": 1,
+          "pivot_occurrence_count": 1,
+          "raw_relation_quotient": [
+            2,
+            3,
+            -6,
+            -3,
+            -2,
+            -1
+          ],
+          "second_codeword": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          "status": "exact-minimal-separator-pivot-witness"
+        },
+        {
+          "dependency_coordinates_one_based": [
+            1,
+            3
+          ],
+          "exact_singleton_pivot_verified": true,
+          "first_codeword": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          "pivot_coordinate_one_based": 2,
+          "pivot_occurrence_count": 1,
+          "raw_relation_quotient": [
+            1,
+            3,
+            -4,
+            -3,
+            -2,
+            -1
+          ],
+          "second_codeword": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "status": "exact-minimal-separator-pivot-witness"
+        },
+        {
+          "dependency_coordinates_one_based": [
+            1,
+            2
+          ],
+          "exact_singleton_pivot_verified": true,
+          "first_codeword": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            1
+          ],
+          "pivot_coordinate_one_based": 3,
+          "pivot_occurrence_count": 1,
+          "raw_relation_quotient": [
+            1,
+            2,
+            -4,
+            -3,
+            -2,
+            -1
+          ],
+          "second_codeword": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "status": "exact-minimal-separator-pivot-witness"
+        },
+        {
+          "dependency_coordinates_one_based": [
+            2,
+            3
+          ],
+          "exact_singleton_pivot_verified": true,
+          "first_codeword": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "pivot_coordinate_one_based": 5,
+          "pivot_occurrence_count": 1,
+          "raw_relation_quotient": [
+            2,
+            3,
+            -6,
+            -5,
+            -3,
+            -2
+          ],
+          "second_codeword": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          "status": "exact-minimal-separator-pivot-witness"
+        }
+      ],
+      "separator_defect": 1,
+      "status": "feedback-gate-crossed-but-stronger-relations-kill-control",
+      "theoretical_marked_solution_exponent_upper_bound": 8.0,
+      "witness_option_count_by_pivot": [
+        1,
+        2,
+        2,
+        2
+      ]
+    }
+  ],
+  "status": "separator-feedback-criterion-falsified-as-complete-frontier",
+  "summary": "Kept the valid separator-feedback bound, found an exact global crossing, and showed why full codeword relations still kill it.",
+  "theorem_contract": {
+    "counterexample_to_universality": "An exact width-six code has f=2>k=1, but its full marked presentation still has pressure margin greater than three.",
+    "kill_condition": "f<=k",
+    "rigorous_bound": "d-k+f+4+o(1)",
+    "scope": "Higher-codimension codes without a dimension-sized coordinate information set in the single-fiber BABA pattern.",
+    "survival_condition": "Evading this separator certificate requires every separator/witness choice to have f>=k+1, but this is not sufficient for pressure survival."
+  }
+}

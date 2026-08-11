@@ -1,0 +1,363 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "Only an upper envelope is proved. Actual ranks may be much smaller, which is precisely the constructive opportunity.",
+      "challenge": "The exact expectation proves multiplicity whitening is subexponential at the PGM threshold.",
+      "resolved": true
+    },
+    {
+      "answer": "False: coherent Kronecker access, D_nu block encoding, whitening, precision, and outcome decoding are absent.",
+      "challenge": "Constant PGM success and a subexponential normalization envelope constitute an algorithm.",
+      "resolved": true
+    },
+    {
+      "answer": "False at the algebraic source-average level: covariance reduces the crude threshold mismatch to exp(Theta(sqrt(n))).",
+      "challenge": "The remaining burden is still factorial.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "actual_rank_lower_bound_superpolynomial_at_pgm_width": false,
+    "actual_rank_upper_bound_polynomial_at_pgm_width": false,
+    "coherent_multiplicity_whitening_circuit_proved": false,
+    "exact_natural_multiplicity_dimension_expectation_proved": true,
+    "factorial_direct_normalization_is_remaining_boundary": false,
+    "polynomial_hidden_involution_decoder_proved": false,
+    "reason": "Covariance narrows the normalization question to a Theta(sqrt(n))-copy, exp(Theta(sqrt(n))) multiplicity-support window. The actual rank and every circuit obligation remain open.",
+    "speedup_claim_allowed": false,
+    "theta_sqrt_n_copy_window_proved": true
+  },
+  "created_at": "2026-08-11T15:22:00.005367+00:00",
+  "falsifiers_triggered": [
+    "The apparent factorial direct-frame burden does not survive covariance compression unchanged.",
+    "Natural source weighting yields an exact all-n rank envelope, not merely a finite numerical trend.",
+    "The envelope cannot be promoted to an actual-rank lower bound.",
+    "Constant information-theoretic PGM success still does not supply coherent whitening or decoding."
+  ],
+  "finite_natural_controls": [
+    {
+      "copy_count": 1,
+      "exact_expected_multiplicity_dimension_ratio": 0.43333333333333335,
+      "finite_bound_verified": true,
+      "n": 5,
+      "natural_source_branch_count": 7,
+      "observed_expected_multiplicity_support_rank_ratio": 0.43333333333333335,
+      "support_to_dimension_upper_bound_ratio": 1.0,
+      "transposition_count": 2,
+      "upper_bound_residual": 0.0
+    },
+    {
+      "copy_count": 2,
+      "exact_expected_multiplicity_dimension_ratio": 0.8666666666666667,
+      "finite_bound_verified": true,
+      "n": 5,
+      "natural_source_branch_count": 28,
+      "observed_expected_multiplicity_support_rank_ratio": 0.8566666666666667,
+      "support_to_dimension_upper_bound_ratio": 0.9884615384615385,
+      "transposition_count": 2,
+      "upper_bound_residual": 0.0
+    },
+    {
+      "copy_count": 3,
+      "exact_expected_multiplicity_dimension_ratio": 1.7333333333333334,
+      "finite_bound_verified": true,
+      "n": 5,
+      "natural_source_branch_count": 84,
+      "observed_expected_multiplicity_support_rank_ratio": 1.6069629629629631,
+      "support_to_dimension_upper_bound_ratio": 0.9270940170940172,
+      "transposition_count": 2,
+      "upper_bound_residual": 0.0
+    }
+  ],
+  "headline_metrics": {
+    "actual_multiplicity_rank_lower_bound_count": 0,
+    "actual_support_rank_upper_bound_theorem_count": 1,
+    "coherent_internal_kronecker_transform_count": 0,
+    "exact_expected_multiplicity_dimension_identity_count": 1,
+    "finite_natural_upper_bound_control_count": 3,
+    "finite_natural_upper_bound_failure_count": 0,
+    "maximum_balanced_resource_envelope": 9661.482758527152,
+    "maximum_finite_support_to_dimension_ratio": 1.0,
+    "maximum_log2_window_ratio": 26.475758808981936,
+    "maximum_scaling_copy_window_width": 28,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_hidden_involution_decoder_count": 0,
+    "polynomial_whitening_at_pgm_width_count": 0,
+    "robinson_schensted_control_count": 12,
+    "robinson_schensted_control_failure_count": 0,
+    "theta_sqrt_n_copy_window_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-D-RANK-DEFICIENCY",
+      "resolved": false,
+      "statement": "Prove or refute an exp(O(log n)) natural bound on actual sum_nu rank(D_nu)/R at k=ceil(log2((n-1)!!))+O(1)."
+    },
+    {
+      "id": "PO-COSET-BELOW-THRESHOLD-MEASUREMENT",
+      "resolved": false,
+      "statement": "Find a collective measurement with inverse-polynomial success inside the Theta(sqrt(n)) copy window."
+    },
+    {
+      "id": "PO-COSET-COHERENT-MULTIPLICITY-WHITENING",
+      "resolved": false,
+      "statement": "Turn the covariance-compressed algebraic factorization into a uniform circuit with source-sensitive precision."
+    }
+  ],
+  "robinson_schensted_controls": [
+    {
+      "identity_verified": true,
+      "involution_count": 1,
+      "n": 1,
+      "sum_irrep_dimensions": 1
+    },
+    {
+      "identity_verified": true,
+      "involution_count": 2,
+      "n": 2,
+      "sum_irrep_dimensions": 2
+    },
+    {
+      "identity_verified": true,
+      "involution_count": 4,
+      "n": 3,
+      "sum_irrep_dimensions": 4
+    },
+    {
+      "identity_verified": true,
+      "involution_count": 10,
+      "n": 4,
+      "sum_irrep_dimensions": 10
+    },
+    {
+      "identity_verified": true,
+      "involution_count": 26,
+      "n": 5,
+      "sum_irrep_dimensions": 26
+    },
+    {
+      "identity_verified": true,
+      "involution_count": 76,
+      "n": 6,
+      "sum_irrep_dimensions": 76
+    },
+    {
+      "identity_verified": true,
+      "involution_count": 232,
+      "n": 7,
+      "sum_irrep_dimensions": 232
+    },
+    {
+      "identity_verified": true,
+      "involution_count": 764,
+      "n": 8,
+      "sum_irrep_dimensions": 764
+    },
+    {
+      "identity_verified": true,
+      "involution_count": 2620,
+      "n": 9,
+      "sum_irrep_dimensions": 2620
+    },
+    {
+      "identity_verified": true,
+      "involution_count": 9496,
+      "n": 10,
+      "sum_irrep_dimensions": 9496
+    },
+    {
+      "identity_verified": true,
+      "involution_count": 35696,
+      "n": 11,
+      "sum_irrep_dimensions": 35696
+    },
+    {
+      "identity_verified": true,
+      "involution_count": 140152,
+      "n": 12,
+      "sum_irrep_dimensions": 140152
+    }
+  ],
+  "scaling_records": [
+    {
+      "balanced_copy_count": 20,
+      "balanced_success_whitening_resource_envelope": 3.1185579053294314,
+      "constant_pgm_success_copy_count": 21,
+      "copy_window_width": 3,
+      "cosh_log2_window_ratio_upper_bound": 4.771264052666713,
+      "elementary_log2_window_ratio_lower_bound": -4.087462841250339,
+      "exact_below_upper_bound": true,
+      "expected_raw_rank_upper_at_pgm_width": 4.631435355160215,
+      "expected_raw_rank_upper_at_safe_width": 0.5789294193950268,
+      "group_order_decimal": "20922789888000",
+      "involution_count_decimal": "46206736",
+      "log2_group_order": 44.25014046988262,
+      "log2_involution_count": 25.46159984670608,
+      "log2_perfect_matching_count": 20.950932451495344,
+      "log2_window_ratio": 2.1623918283188033,
+      "lower_bound_below_exact": true,
+      "multiplicity_rank_safe_copy_count": 18,
+      "n": 16,
+      "perfect_matching_count_decimal": "2027025",
+      "pgm_success_lower_bound_at_pgm_width": 0.5085020619876552,
+      "pgm_success_lower_bound_at_safe_width": 0.114514967883528,
+      "status": "theta-sqrt-n-whitening-success-copy-window",
+      "window_is_sqrt_n_asymptotically": false
+    },
+    {
+      "balanced_copy_count": 55,
+      "balanced_success_whitening_resource_envelope": 5.079337233281486,
+      "constant_pgm_success_copy_count": 58,
+      "copy_window_width": 5,
+      "cosh_log2_window_ratio_upper_bound": 7.161133179991361,
+      "elementary_log2_window_ratio_lower_bound": -3.0443941193584534,
+      "exact_below_upper_bound": true,
+      "expected_raw_rank_upper_at_pgm_width": 24.62548399795482,
+      "expected_raw_rank_upper_at_safe_width": 0.7695463749360881,
+      "group_order_decimal": "263130836933693530167218012160000000",
+      "involution_count_decimal": "22481059424730751232",
+      "log2_group_order": 117.6632636523603,
+      "log2_involution_count": 64.28534382733291,
+      "log2_perfect_matching_count": 57.41312318247768,
+      "log2_window_ratio": 4.0352033574503,
+      "lower_bound_below_exact": true,
+      "multiplicity_rank_safe_copy_count": 53,
+      "n": 32,
+      "perfect_matching_count_decimal": "191898783962510625",
+      "pgm_success_lower_bound_at_pgm_width": 0.6003184144931792,
+      "pgm_success_lower_bound_at_safe_width": 0.04483290696724035,
+      "status": "theta-sqrt-n-whitening-success-copy-window",
+      "window_is_sqrt_n_asymptotically": true
+    },
+    {
+      "balanced_copy_count": 143,
+      "balanced_success_whitening_resource_envelope": 11.934286900601935,
+      "constant_pgm_success_copy_count": 147,
+      "copy_window_width": 8,
+      "cosh_log2_window_ratio_upper_bound": 10.541560489465637,
+      "elementary_log2_window_ratio_lower_bound": -4.022367813028454,
+      "exact_below_upper_bound": true,
+      "expected_raw_rank_upper_at_pgm_width": 189.87131547565485,
+      "expected_raw_rank_upper_at_safe_width": 0.7416848260767768,
+      "group_order_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "involution_count_decimal": "135041388282796985771272553475002706667235246080",
+      "log2_group_order": 295.99514394172405,
+      "log2_involution_count": 156.56402210045746,
+      "log2_perfect_matching_count": 146.33188028936374,
+      "log2_window_ratio": 6.900758448097179,
+      "lower_bound_below_exact": true,
+      "multiplicity_rank_safe_copy_count": 139,
+      "n": 64,
+      "perfect_matching_count_decimal": "112275575285571389562324404930670903477890625",
+      "pgm_success_lower_bound_at_pgm_width": 0.6137505790940216,
+      "pgm_success_lower_bound_at_safe_width": 0.0061687441676100555,
+      "status": "theta-sqrt-n-whitening-success-copy-window",
+      "window_is_sqrt_n_asymptotically": true
+    },
+    {
+      "balanced_copy_count": 351,
+      "balanced_success_whitening_resource_envelope": 49.034384845124144,
+      "constant_pgm_success_copy_count": 357,
+      "copy_window_width": 13,
+      "cosh_log2_window_ratio_upper_bound": 15.32223114576352,
+      "elementary_log2_window_ratio_lower_bound": -3.011227255423254,
+      "exact_below_upper_bound": true,
+      "expected_raw_rank_upper_at_pgm_width": 4104.309488527762,
+      "expected_raw_rank_upper_at_safe_width": 0.5010143418612991,
+      "group_order_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "involution_count_decimal": "5391278204075391354568253023229655921370142671388586075937736698667444395805138812903649656844450530044101525504",
+      "log2_group_order": 716.1617220836218,
+      "log2_involution_count": 371.1646458908297,
+      "log2_perfect_matching_count": 356.16657814189784,
+      "log2_window_ratio": 11.169501949105666,
+      "lower_bound_below_exact": true,
+      "multiplicity_rank_safe_copy_count": 344,
+      "n": 128,
+      "perfect_matching_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "pgm_success_lower_bound_at_pgm_width": 0.6405343234077384,
+      "pgm_success_lower_bound_at_safe_width": 0.00021747061274471252,
+      "status": "theta-sqrt-n-whitening-success-copy-window",
+      "window_is_sqrt_n_asymptotically": true
+    },
+    {
+      "balanced_copy_count": 831,
+      "balanced_success_whitening_resource_envelope": 419.9501851135579,
+      "constant_pgm_success_copy_count": 840,
+      "copy_window_width": 18,
+      "cosh_log2_window_ratio_upper_bound": 22.083120654223432,
+      "elementary_log2_window_ratio_lower_bound": -4.005624549193879,
+      "exact_below_upper_bound": true,
+      "expected_raw_rank_upper_at_pgm_width": 196842.1005579768,
+      "expected_raw_rank_upper_at_safe_width": 0.7508930227583954,
+      "group_order_decimal": "857817775342842654119082271681232625157781520279485619859655650377269452553147589377440291360451408450375885342336584306157196834693696475322289288497426025679637332563368786442675207626794560187968867971521143307702077526646451464709187326100832876325702818980773671781454170250523018608495319068138257481070252817559459476987034665712738139286205234756808218860701203611083152093501947437109101726968262861606263662435022840944191408424615936000000000000000000000000000000000000000000000000000000000000000",
+      "involution_count_decimal": "23031205710807379704060114463657030755418537279654030730354769397676932367630824563952961698688826639219038629461551746033822826836374575769393087338541601756846347583086181270485459973423063249153720047744133613798758993805267184375214385147757757895935000576",
+      "log2_group_order": 1683.9962872242147,
+      "log2_involution_count": 861.5829665157231,
+      "log2_perfect_matching_count": 839.8345651405928,
+      "log2_window_ratio": 17.421244432101275,
+      "lower_bound_below_exact": true,
+      "multiplicity_rank_safe_copy_count": 822,
+      "n": 256,
+      "perfect_matching_count_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "pgm_success_lower_bound_at_pgm_width": 0.5286363043503037,
+      "pgm_success_lower_bound_at_safe_width": 4.2781802162576295e-06,
+      "status": "theta-sqrt-n-whitening-success-copy-window",
+      "window_is_sqrt_n_asymptotically": true
+    },
+    {
+      "balanced_copy_count": 1922,
+      "balanced_success_whitening_resource_envelope": 9661.482758527152,
+      "constant_pgm_success_copy_count": 1936,
+      "copy_window_width": 28,
+      "cosh_log2_window_ratio_upper_bound": 31.64446229109727,
+      "elementary_log2_window_ratio_lower_bound": -1.0028150156070534,
+      "exact_below_upper_bound": true,
+      "expected_raw_rank_upper_at_pgm_width": 165921326.22332314,
+      "expected_raw_rank_upper_at_safe_width": 0.6181051068876801,
+      "group_order_decimal": "347728979313260536328304591754560471199225065564351457034247483155161041206635254347320985033950225364432243311021394545295001702070069013264153113260937941358711864044716186861040899557497361427588282356254968425012480396855239725120562512065555822121708786443620799246550959187232026838081415178588172535280020786313470076859739980965720873849904291373826841584712798618430387338042329771801724767691095019545758986942732515033551529595009876999279553931070378592917099002397061907147143424113252117585950817850896618433994140232823316432187410356341262386332496954319973130407342567282027398579382543048456876800862349928140411905431276197435674603281842530744177527365885721629512253872386613118821540847897493107398381956081763695236422795880296204301770808809477147632428639299038833046264585834888158847387737841843413664892833586209196366979775748895821826924040057845140287522238675082137570315954526727437094904914796782641000740777897919134093393530422760955140211387173650047358347353379234387609261306673773281412893026941927424000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "involution_count_decimal": "9269824045930196155895569163746968589532028385096723366803037895635452246948074208471117599933584323496046198679448157725123090427300087101930261921686874496816207430611373321566869250238194476811538524588406914365924887416880208507993262845838886941196525296434434302193966589711211586596882383821333505424113217965049930289253273515229131594448575004425072960494779454023620934988427735797636918664711192776038872083699320088155632559885792360002860403522463618021417480191814354573199829976473652850688976199385452767205573412532626588302900131368650960625338902296966406747770575390769152",
+      "log2_group_order": 3875.166121943203,
+      "log2_involution_count": 1966.4720460331964,
+      "log2_perfect_matching_count": 1935.1698347189883,
+      "log2_window_ratio": 26.475758808981936,
+      "lower_bound_below_exact": true,
+      "multiplicity_rank_safe_copy_count": 1908,
+      "n": 512,
+      "perfect_matching_count_decimal": "3500797212601527945311188835604928985415461740919889354217764505357080396360998406091483003218728672644801916594739009357155247126876144691627054309744293857306604216733039930699855997627887399287546140236510911240627231189363279060378822843253015624610686680717952316550304464107615617448906048015587655768996105864260381049947531455557236610503889279665463833908304000148209455548787453670820143341389949801647285492388673498450158812613113366545959409498745510743189457819498892822692489318667853345863669937005801349364861955770908047967139575806783113876008428633213043212890625",
+      "pgm_success_lower_bound_at_pgm_width": 0.6400144180818178,
+      "pgm_success_lower_bound_at_safe_width": 6.6231527220072195e-09,
+      "status": "theta-sqrt-n-whitening-success-copy-window",
+      "window_is_sqrt_n_asymptotically": true
+    }
+  ],
+  "status": "covariant-whitening-copy-window-sharp-actual-rank-open",
+  "summary": "Proved the exact all-n natural multiplicity-dimension expectation and a Theta(sqrt(n)) gap between rank-safe whitening and constant equal-overlap PGM success. The remaining asymptotic target is actual D_nu rank deficiency or a below-threshold collective measurement.",
+  "theorem": {
+    "actual_multiplicity_rank_lower_bound_proved": false,
+    "actual_support_rank_upper_bound_proved": true,
+    "balanced_envelope": "Balancing the PGM repetition proxy M/2^k with the whitening upper proxy 2^k I_n/n! leaves exp(Theta(sqrt(n))) squared normalization burden, or exp(Theta(sqrt(n)/2)) amplitude scale.",
+    "copy_window": "For fixed-point-free involutions M=(n-1)!!, the gap between k=floor(log2(n!/I_n)) and k=ceil(log2 M) equals log2(M I_n/n!)+O(1).",
+    "equal_overlap_pgm_bound": "For M distinct order-two subgroups, normalized projector overlap is 2^-k and P_PGM>=1/[1+(M-1)2^-k].",
+    "exact_expected_multiplicity_dimension_identity_proved": true,
+    "expected_rank_upper_bound": "E_source[sum_nu rank(D_nu)/R] <= 2^k I_n/n!, with equality after replacing support ranks by full Kronecker multiplicities.",
+    "factorial_direct_burden_survives_covariance": false,
+    "involution_dimension_identity": "sum_(nu partition n) d_nu=I_n, since Robinson--Schensted maps involutions to pairs (T,T) of equal standard tableaux.",
+    "natural_source_identity": "p_h(lambda)=2 d_lambda R_lambda/|S_n|, so source weighting cancels every branch projector rank R_lambda.",
+    "polynomial_hidden_involution_algorithm_proved": false,
+    "polynomial_whitening_at_pgm_width_proved": false,
+    "regular_tensor_identity": "Under diagonal action, Reg(S_n)^tensor k is |S_n|^(k-1) copies of Reg(S_n), by the regular character.",
+    "scope_limit": "The expected multiplicity-dimension expression is an upper bound on actual support rank, not a lower bound. It supplies neither a coherent transform nor a decoder.",
+    "status": "theta-sqrt-n-covariant-whitening-window-proved",
+    "theorem_verified": true,
+    "theta_sqrt_n_copy_window_proved": true,
+    "window_lower_bound": "For j=floor(sqrt(n/2)/4), one involution term gives I_n/M>=4^j, while M^2/n!>=1/(n+1), proving an Omega(sqrt(n)) gap.",
+    "window_upper_bound": "I_n/M=sum_j 2^j (n/2)_j/(2j)! <= cosh(sqrt(n)); also M^2/n!<=1."
+  },
+  "theorem_contract": {
+    "asymptotic_boundary": "A Theta(sqrt(n))-copy interval between rank-safe source whitening and certified constant PGM success.",
+    "ensemble": "Natural weak-Fourier source labels of k same-hidden regular coset-state registers for an involution in S_n.",
+    "non_claim": "No lower bound on actual D_nu support rank or circuit runtime.",
+    "quantity": "Natural expectation of the covariance-compressed multiplicity support-rank ratio.",
+    "success_comparator": "The all-n equal-overlap mixed-state PGM lower bound, specialized to the perfect-matching conjugacy class."
+  }
+}

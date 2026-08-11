@@ -1,0 +1,2274 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Interleaved F markers destroy suffix cancellation.",
+      "resolution": "They are identical in both endpoint words and cancel with the common higher frame suffix.",
+      "resolved": true
+    },
+    {
+      "objection": "Four separated leaves leave two free outer generators.",
+      "resolution": "The residual quadratic equation is a conjugacy fiber, whose total size is only |G|k(G).",
+      "resolved": true
+    },
+    {
+      "objection": "A/B frame labels change the outer topology.",
+      "resolution": "They only change fixed coefficients A,B,C,D and the twist T.",
+      "resolved": true
+    },
+    {
+      "objection": "Scalar threshold saturation can retain a target.",
+      "resolution": "Exact saturation requires the zero same cell, whose color-zero relation is the full target word.",
+      "resolved": true
+    },
+    {
+      "objection": "Strict finite-width margin is automatically uniform.",
+      "resolution": "The 2^u-1 versus 2^u support pair makes the generic margin tend to zero.",
+      "resolved": false
+    }
+  ],
+  "all_depth_certificate": {
+    "arbitrary_frame_types": true,
+    "arbitrary_frame_width": true,
+    "arbitrary_leaf_placement": true,
+    "arbitrary_nonempty_supports": true,
+    "different_support_marker_cancellation": "Fixed F markers above a suffix pivot cancel in relative relators, so D leaves at most u-ceil(log2|D|) frame generators.",
+    "dominant_support_generator_formula": "u-ceil(log2 max(|S union {0}|,|D|))",
+    "outer_conjugacy_change_of_variables": "E=eA, T=BA, g=fT gives E g E^-1=D^-1 g T^-1 C^-1",
+    "outer_quadratic_relation": "e A f B e^-1 C f^-1 D=1",
+    "pattern_scope": "E T^a F T^b E T^c F T^d for arbitrary a,b,c,d>=0 and arbitrary T_i in {A,B}",
+    "same_support_elimination": "Same color-one relators give P(S union {0}) and leave at most u-ceil(log2|S union {0}|) frame generators.",
+    "saturation_condition": "0 in S, |S|=|D|, and the common size is a power of two",
+    "saturation_target_conclusion": "The zero same cell makes the full target product an exact relator.",
+    "status": "all-depth-interleaved-four-leaf-scalar-pressure-no-go",
+    "symmetric_group_scalar_pressure_bound": "at most -1+o(1)",
+    "uniform_finite_group_outer_bound": "|G|*k(G)",
+    "universal_interleaved_scalar_no_go_verified": true
+  },
+  "claim_gate": {
+    "all_four_leaf_pair_word_scalar_pressure_controlled": true,
+    "higher_multi_boundary_words_controlled": false,
+    "interleaved_F_marker_suffix_elimination_proved": true,
+    "interleaved_outer_conjugacy_bound_proved": true,
+    "natural_component_M4_positive": false,
+    "reason": "Interleaving does not rescue unsigned mass. Near-saturating nontrivial target families and higher multi-boundary words remain.",
+    "scalar_saturation_forces_target_identity": true,
+    "speedup_claim_allowed": false,
+    "uniform_growing_nontrivial_target_gap_proved": false
+  },
+  "created_at": "2026-08-11T15:24:11.591683+00:00",
+  "exhaustive_support_censuses": [
+    {
+      "checked_support_pair_count": 65025,
+      "different_marker_suffix_certificate_failure_count": 0,
+      "exhaustive_census_verified": true,
+      "frame_position_count": 3,
+      "minimum_pressure_margin": 0.0,
+      "nonempty_support_count": 255,
+      "pressure_inequality_failure_count": 0,
+      "same_suffix_certificate_failure_count": 0,
+      "saturated_support_pair_count": 2655,
+      "saturation_equivalence_failure_count": 0,
+      "status": "all-width-three-interleaved-support-pairs-certified"
+    }
+  ],
+  "falsifiers_triggered": [
+    "Interleaved F markers do not defeat suffix pivots.",
+    "A/B frame labels only alter fixed conjugacy coefficients.",
+    "Four separated leaves still leave one |G|k(G) outer fiber.",
+    "Scalar saturation cannot carry a nonidentity target.",
+    "Finite-width strictness does not prove a uniform signed target gap."
+  ],
+  "headline_metrics": {
+    "all_depth_interleaved_leaf_scalar_no_go_theorem_count": 1,
+    "control_failure_count": 0,
+    "exhaustive_outer_normal_form_check_count": 67761,
+    "exhaustive_outer_normal_form_failure_count": 0,
+    "exhaustive_support_census_failure_count": 0,
+    "exhaustive_support_pair_count": 65025,
+    "maximum_exhaustive_outer_frame_width": 5,
+    "new_quantum_algorithm_count": 0,
+    "nonidentity_uniform_target_gap_theorem_count": 0,
+    "representative_control_count": 4,
+    "scalar_saturation_control_count": 1
+  },
+  "outer_scaling_records": [
+    {
+      "checked_placement_type_base_count": 1,
+      "frame_position_count": 0,
+      "outer_normal_form_failure_count": 0,
+      "status": "all-interleaved-outer-normal-forms-verified"
+    },
+    {
+      "checked_placement_type_base_count": 16,
+      "frame_position_count": 1,
+      "outer_normal_form_failure_count": 0,
+      "status": "all-interleaved-outer-normal-forms-verified"
+    },
+    {
+      "checked_placement_type_base_count": 160,
+      "frame_position_count": 2,
+      "outer_normal_form_failure_count": 0,
+      "status": "all-interleaved-outer-normal-forms-verified"
+    },
+    {
+      "checked_placement_type_base_count": 1280,
+      "frame_position_count": 3,
+      "outer_normal_form_failure_count": 0,
+      "status": "all-interleaved-outer-normal-forms-verified"
+    },
+    {
+      "checked_placement_type_base_count": 8960,
+      "frame_position_count": 4,
+      "outer_normal_form_failure_count": 0,
+      "status": "all-interleaved-outer-normal-forms-verified"
+    },
+    {
+      "checked_placement_type_base_count": 57344,
+      "frame_position_count": 5,
+      "outer_normal_form_failure_count": 0,
+      "status": "all-interleaved-outer-normal-forms-verified"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "extend_suffix_elimination_through_interleaved_F_markers",
+      "resolution": "Equal higher frame suffixes also cancel every fixed higher F marker, leaving one triangular frame pivot.",
+      "resolved": true
+    },
+    {
+      "obligation": "derive_multi_boundary_outer_solution_bound",
+      "resolution": "Two leaf equations leave a coefficient-twisted commutator, equivalently one conjugacy fiber summed to |G|k(G).",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_scalar_pressure_for_all_pair_word_placements",
+      "resolution": "The stronger support fiber pays average support entropy and the outer conjugacy equation supplies the remaining loss.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_uniform_nontrivial_target_gap",
+      "resolution": "Pruned power-boundary supports have positive but vanishing scalar margin; their signed weighted character still needs an actual-presentation or word-measure theorem.",
+      "resolved": false
+    },
+    {
+      "obligation": "extend_beyond_one_crossing_pair_of_E_F_leaves",
+      "resolution": "More than two E/F pairs leave higher-genus multi-boundary systems rather than one two-variable conjugacy equation.",
+      "resolved": false
+    }
+  ],
+  "representative_controls": [
+    {
+      "augmented_same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "control_id": "CONTIGUOUS-BASELINE",
+      "different_suffix_certificate": {
+        "anchor": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "average_forced_bound_verified": true,
+        "average_suffix_forced_coordinate_count": 3.0,
+        "entropy_chain_rule_value": 1.0,
+        "entropy_chain_rule_verified": true,
+        "entropy_codimension": 3.0,
+        "exact_suffix_branch_elimination_verified": true,
+        "explicit_anchor_bound_verified": true,
+        "frame_position_count": 4,
+        "status": "exact-integer-suffix-branch-generator-bound",
+        "suffix_branch_coordinates": [
+          4
+        ],
+        "suffix_branch_witnesses": [
+          [
+            1,
+            0,
+            0,
+            1
+          ]
+        ],
+        "suffix_forced_coordinates": [
+          1,
+          2,
+          3
+        ],
+        "suffix_forced_incidence_count": 6,
+        "support": [
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            1
+          ]
+        ],
+        "support_size": 2,
+        "universal_finite_group_generator_upper_bound": 3
+      },
+      "different_suffix_steps": [
+        {
+          "anchor": [
+            0,
+            1,
+            1,
+            0
+          ],
+          "endpoint_relators_available": true,
+          "exact_marker_stable_suffix_pivot_verified": true,
+          "frame_coordinate_one_based": 4,
+          "higher_frame_generator_occurrence_count": 0,
+          "pattern_generator_one_based": 5,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            2,
+            5,
+            -4,
+            -3
+          ],
+          "status": "exact-interleaved-marker-stable-suffix-pivot",
+          "support_kind": "different",
+          "witness": [
+            1,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "different_support": [
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "dominant_effective_support_size": 4,
+      "dominant_support_family": "same-identity-fiber",
+      "exact_control_verified": true,
+      "frame_block_lengths": [
+        4,
+        0,
+        0,
+        0
+      ],
+      "frame_generator_upper_bound": 2,
+      "frame_position_count": 4,
+      "frame_types": [
+        "A",
+        "B",
+        "A",
+        "B"
+      ],
+      "full_solution_exponent_before_conjugacy_classes": 3,
+      "nontrivial_target_strict_finite_width_margin": true,
+      "outer_conjugacy_control": {
+        "coefficient_A": [
+          2,
+          4
+        ],
+        "coefficient_B": [
+          -5,
+          -2
+        ],
+        "coefficient_C": [],
+        "coefficient_D": [
+          -4,
+          -3
+        ],
+        "conjugacy_twist_T": [
+          -5,
+          4
+        ],
+        "different_base_assignment": [
+          0,
+          1,
+          1,
+          0
+        ],
+        "different_one_relation": [
+          3,
+          4,
+          6,
+          8
+        ],
+        "different_zero_relation": [
+          1,
+          2,
+          5,
+          7
+        ],
+        "exact_coefficient_conjugacy_normal_form_verified": true,
+        "expected_conjugacy_relation": [
+          9,
+          10,
+          -9,
+          -5,
+          4,
+          -10,
+          -4,
+          -3
+        ],
+        "first_E_generator": 1,
+        "first_F_generator": 6,
+        "frame_block_lengths": [
+          4,
+          0,
+          0,
+          0
+        ],
+        "frame_types": [
+          "A",
+          "B",
+          "A",
+          "B"
+        ],
+        "pattern": "EABABFEF",
+        "residual_leaf_occurrence_word": [
+          1,
+          6,
+          -1,
+          -6
+        ],
+        "residual_outer_relation": [
+          1,
+          2,
+          4,
+          6,
+          -5,
+          -2,
+          -1,
+          -6,
+          -4,
+          -3
+        ],
+        "second_E_generator": 7,
+        "second_F_generator": 8,
+        "solved_second_E_image": [
+          -5,
+          -2,
+          -1
+        ],
+        "solved_second_F_image": [
+          -6,
+          -4,
+          -3
+        ],
+        "split_zero_relation": [
+          1,
+          2,
+          4,
+          6,
+          7,
+          8
+        ],
+        "status": "exact-interleaved-leaf-outer-conjugacy-normal-form",
+        "transformed_conjugacy_relation": [
+          9,
+          10,
+          -9,
+          -5,
+          4,
+          -10,
+          -4,
+          -3
+        ],
+        "uniform_finite_group_outer_bound": "|G|*k(G)"
+      },
+      "pattern": "EABABFEF",
+      "same_suffix_certificate": {
+        "anchor": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "average_forced_bound_verified": true,
+        "average_suffix_forced_coordinate_count": 2.0,
+        "entropy_chain_rule_value": 2.0,
+        "entropy_chain_rule_verified": true,
+        "entropy_codimension": 2.0,
+        "exact_suffix_branch_elimination_verified": true,
+        "explicit_anchor_bound_verified": true,
+        "frame_position_count": 4,
+        "status": "exact-integer-suffix-branch-generator-bound",
+        "suffix_branch_coordinates": [
+          3,
+          4
+        ],
+        "suffix_branch_witnesses": [
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ]
+        ],
+        "suffix_forced_coordinates": [
+          1,
+          2
+        ],
+        "suffix_forced_incidence_count": 8,
+        "support": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "support_size": 4,
+        "universal_finite_group_generator_upper_bound": 2
+      },
+      "same_suffix_steps": [
+        {
+          "anchor": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "endpoint_relators_available": true,
+          "exact_marker_stable_suffix_pivot_verified": true,
+          "frame_coordinate_one_based": 3,
+          "higher_frame_generator_occurrence_count": 0,
+          "pattern_generator_one_based": 4,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            2,
+            4
+          ],
+          "status": "exact-interleaved-marker-stable-suffix-pivot",
+          "support_kind": "same",
+          "witness": [
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "endpoint_relators_available": true,
+          "exact_marker_stable_suffix_pivot_verified": true,
+          "frame_coordinate_one_based": 4,
+          "higher_frame_generator_occurrence_count": 0,
+          "pattern_generator_one_based": 5,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            3,
+            5
+          ],
+          "status": "exact-interleaved-marker-stable-suffix-pivot",
+          "support_kind": "same",
+          "witness": [
+            0,
+            1,
+            0,
+            1
+          ]
+        }
+      ],
+      "same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "saturation_condition_verified": true,
+      "scalar_crossing_pressure_margin": 0.5,
+      "scalar_crossing_pressure_upper_bound": -1.5,
+      "scalar_pressure_saturated": false,
+      "status": "interleaved-four-leaf-scalar-pressure-certified",
+      "support_entropy_exponent": 1.5,
+      "zero_same_assignment_present": true,
+      "zero_same_cell_forces_target_identity": true
+    },
+    {
+      "augmented_same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "control_id": "MAXIMALLY-INTERLEAVED-SATURATION",
+      "different_suffix_certificate": {
+        "anchor": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "average_forced_bound_verified": true,
+        "average_suffix_forced_coordinate_count": 2.0,
+        "entropy_chain_rule_value": 2.0,
+        "entropy_chain_rule_verified": true,
+        "entropy_codimension": 2.0,
+        "exact_suffix_branch_elimination_verified": true,
+        "explicit_anchor_bound_verified": true,
+        "frame_position_count": 4,
+        "status": "exact-integer-suffix-branch-generator-bound",
+        "suffix_branch_coordinates": [
+          3,
+          4
+        ],
+        "suffix_branch_witnesses": [
+          [
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0
+          ]
+        ],
+        "suffix_forced_coordinates": [
+          1,
+          2
+        ],
+        "suffix_forced_incidence_count": 8,
+        "support": [
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ]
+        ],
+        "support_size": 4,
+        "universal_finite_group_generator_upper_bound": 2
+      },
+      "different_suffix_steps": [
+        {
+          "anchor": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "endpoint_relators_available": true,
+          "exact_marker_stable_suffix_pivot_verified": true,
+          "frame_coordinate_one_based": 3,
+          "higher_frame_generator_occurrence_count": 0,
+          "pattern_generator_one_based": 6,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            3,
+            4,
+            -6,
+            -3
+          ],
+          "status": "exact-interleaved-marker-stable-suffix-pivot",
+          "support_kind": "different",
+          "witness": [
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            0,
+            1,
+            1
+          ],
+          "endpoint_relators_available": true,
+          "exact_marker_stable_suffix_pivot_verified": true,
+          "frame_coordinate_one_based": 4,
+          "higher_frame_generator_occurrence_count": 0,
+          "pattern_generator_one_based": 8,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            2,
+            3,
+            6,
+            7,
+            -8,
+            -7,
+            -6,
+            -3
+          ],
+          "status": "exact-interleaved-marker-stable-suffix-pivot",
+          "support_kind": "different",
+          "witness": [
+            1,
+            0,
+            1,
+            0
+          ]
+        }
+      ],
+      "different_support": [
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ]
+      ],
+      "dominant_effective_support_size": 4,
+      "dominant_support_family": "same-identity-fiber",
+      "exact_control_verified": true,
+      "frame_block_lengths": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "frame_generator_upper_bound": 2,
+      "frame_position_count": 4,
+      "frame_types": [
+        "A",
+        "B",
+        "A",
+        "B"
+      ],
+      "full_solution_exponent_before_conjugacy_classes": 3,
+      "nontrivial_target_strict_finite_width_margin": true,
+      "outer_conjugacy_control": {
+        "coefficient_A": [
+          2
+        ],
+        "coefficient_B": [
+          -4,
+          -2
+        ],
+        "coefficient_C": [],
+        "coefficient_D": [
+          -8
+        ],
+        "conjugacy_twist_T": [
+          -4
+        ],
+        "different_base_assignment": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "different_one_relation": [
+          3,
+          6,
+          7,
+          8
+        ],
+        "different_zero_relation": [
+          1,
+          2,
+          4,
+          5
+        ],
+        "exact_coefficient_conjugacy_normal_form_verified": true,
+        "expected_conjugacy_relation": [
+          9,
+          10,
+          -9,
+          -4,
+          -10,
+          -8
+        ],
+        "first_E_generator": 1,
+        "first_F_generator": 3,
+        "frame_block_lengths": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "frame_types": [
+          "A",
+          "B",
+          "A",
+          "B"
+        ],
+        "pattern": "EAFBEAFB",
+        "residual_leaf_occurrence_word": [
+          1,
+          3,
+          -1,
+          -3
+        ],
+        "residual_outer_relation": [
+          1,
+          2,
+          3,
+          -4,
+          -2,
+          -1,
+          -3,
+          -8
+        ],
+        "second_E_generator": 5,
+        "second_F_generator": 7,
+        "solved_second_E_image": [
+          -4,
+          -2,
+          -1
+        ],
+        "solved_second_F_image": [
+          -6,
+          -3,
+          -8
+        ],
+        "split_zero_relation": [
+          1,
+          2,
+          3,
+          5,
+          6,
+          7
+        ],
+        "status": "exact-interleaved-leaf-outer-conjugacy-normal-form",
+        "transformed_conjugacy_relation": [
+          9,
+          10,
+          -9,
+          -4,
+          -10,
+          -8
+        ],
+        "uniform_finite_group_outer_bound": "|G|*k(G)"
+      },
+      "pattern": "EAFBEAFB",
+      "same_suffix_certificate": {
+        "anchor": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "average_forced_bound_verified": true,
+        "average_suffix_forced_coordinate_count": 2.0,
+        "entropy_chain_rule_value": 2.0,
+        "entropy_chain_rule_verified": true,
+        "entropy_codimension": 2.0,
+        "exact_suffix_branch_elimination_verified": true,
+        "explicit_anchor_bound_verified": true,
+        "frame_position_count": 4,
+        "status": "exact-integer-suffix-branch-generator-bound",
+        "suffix_branch_coordinates": [
+          2,
+          4
+        ],
+        "suffix_branch_witnesses": [
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ]
+        ],
+        "suffix_forced_coordinates": [
+          1,
+          3
+        ],
+        "suffix_forced_incidence_count": 8,
+        "support": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "support_size": 4,
+        "universal_finite_group_generator_upper_bound": 2
+      },
+      "same_suffix_steps": [
+        {
+          "anchor": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "endpoint_relators_available": true,
+          "exact_marker_stable_suffix_pivot_verified": true,
+          "frame_coordinate_one_based": 2,
+          "higher_frame_generator_occurrence_count": 0,
+          "pattern_generator_one_based": 4,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            2,
+            4
+          ],
+          "status": "exact-interleaved-marker-stable-suffix-pivot",
+          "support_kind": "same",
+          "witness": [
+            1,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "endpoint_relators_available": true,
+          "exact_marker_stable_suffix_pivot_verified": true,
+          "frame_coordinate_one_based": 4,
+          "higher_frame_generator_occurrence_count": 0,
+          "pattern_generator_one_based": 8,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            6,
+            8
+          ],
+          "status": "exact-interleaved-marker-stable-suffix-pivot",
+          "support_kind": "same",
+          "witness": [
+            0,
+            0,
+            1,
+            1
+          ]
+        }
+      ],
+      "same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "saturation_condition_verified": true,
+      "scalar_crossing_pressure_margin": 0.0,
+      "scalar_crossing_pressure_upper_bound": -1.0,
+      "scalar_pressure_saturated": true,
+      "status": "interleaved-four-leaf-scalar-pressure-certified",
+      "support_entropy_exponent": 2.0,
+      "zero_same_assignment_present": true,
+      "zero_same_cell_forces_target_identity": true
+    },
+    {
+      "augmented_same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "control_id": "PRUNED-POWER-BOUNDARY",
+      "different_suffix_certificate": {
+        "anchor": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "average_forced_bound_verified": true,
+        "average_suffix_forced_coordinate_count": 0.0,
+        "entropy_chain_rule_value": 4.0,
+        "entropy_chain_rule_verified": true,
+        "entropy_codimension": 0.0,
+        "exact_suffix_branch_elimination_verified": true,
+        "explicit_anchor_bound_verified": true,
+        "frame_position_count": 4,
+        "status": "exact-integer-suffix-branch-generator-bound",
+        "suffix_branch_coordinates": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "suffix_branch_witnesses": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "suffix_forced_coordinates": [],
+        "suffix_forced_incidence_count": 0,
+        "support": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "support_size": 16,
+        "universal_finite_group_generator_upper_bound": 0
+      },
+      "different_suffix_steps": [
+        {
+          "anchor": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "endpoint_relators_available": true,
+          "exact_marker_stable_suffix_pivot_verified": true,
+          "frame_coordinate_one_based": 1,
+          "higher_frame_generator_occurrence_count": 0,
+          "pattern_generator_one_based": 2,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            2
+          ],
+          "status": "exact-interleaved-marker-stable-suffix-pivot",
+          "support_kind": "different",
+          "witness": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "endpoint_relators_available": true,
+          "exact_marker_stable_suffix_pivot_verified": true,
+          "frame_coordinate_one_based": 2,
+          "higher_frame_generator_occurrence_count": 0,
+          "pattern_generator_one_based": 4,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            3,
+            4,
+            -3
+          ],
+          "status": "exact-interleaved-marker-stable-suffix-pivot",
+          "support_kind": "different",
+          "witness": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "endpoint_relators_available": true,
+          "exact_marker_stable_suffix_pivot_verified": true,
+          "frame_coordinate_one_based": 3,
+          "higher_frame_generator_occurrence_count": 0,
+          "pattern_generator_one_based": 6,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            3,
+            6,
+            -3
+          ],
+          "status": "exact-interleaved-marker-stable-suffix-pivot",
+          "support_kind": "different",
+          "witness": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "endpoint_relators_available": true,
+          "exact_marker_stable_suffix_pivot_verified": true,
+          "frame_coordinate_one_based": 4,
+          "higher_frame_generator_occurrence_count": 0,
+          "pattern_generator_one_based": 8,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            3,
+            7,
+            8,
+            -7,
+            -3
+          ],
+          "status": "exact-interleaved-marker-stable-suffix-pivot",
+          "support_kind": "different",
+          "witness": [
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "dominant_effective_support_size": 16,
+      "dominant_support_family": "same-identity-fiber",
+      "exact_control_verified": true,
+      "frame_block_lengths": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "frame_generator_upper_bound": 0,
+      "frame_position_count": 4,
+      "frame_types": [
+        "B",
+        "A",
+        "B",
+        "A"
+      ],
+      "full_solution_exponent_before_conjugacy_classes": 1,
+      "nontrivial_target_strict_finite_width_margin": true,
+      "outer_conjugacy_control": {
+        "coefficient_A": [],
+        "coefficient_B": [
+          -2
+        ],
+        "coefficient_C": [
+          -8,
+          -6
+        ],
+        "coefficient_D": [
+          8
+        ],
+        "conjugacy_twist_T": [
+          -2
+        ],
+        "different_base_assignment": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "different_one_relation": [
+          3,
+          7
+        ],
+        "different_zero_relation": [
+          1,
+          2,
+          4,
+          5,
+          6,
+          8
+        ],
+        "exact_coefficient_conjugacy_normal_form_verified": true,
+        "expected_conjugacy_relation": [
+          9,
+          10,
+          -9,
+          -8,
+          -6,
+          -2,
+          -10,
+          8
+        ],
+        "first_E_generator": 1,
+        "first_F_generator": 3,
+        "frame_block_lengths": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "frame_types": [
+          "B",
+          "A",
+          "B",
+          "A"
+        ],
+        "pattern": "EBFAEBFA",
+        "residual_leaf_occurrence_word": [
+          1,
+          3,
+          -1,
+          -3
+        ],
+        "residual_outer_relation": [
+          1,
+          3,
+          -2,
+          -1,
+          -8,
+          -6,
+          -3,
+          8
+        ],
+        "second_E_generator": 5,
+        "second_F_generator": 7,
+        "solved_second_E_image": [
+          -4,
+          -2,
+          -1,
+          -8,
+          -6
+        ],
+        "solved_second_F_image": [
+          -3
+        ],
+        "split_zero_relation": [
+          1,
+          3,
+          4,
+          5,
+          7,
+          8
+        ],
+        "status": "exact-interleaved-leaf-outer-conjugacy-normal-form",
+        "transformed_conjugacy_relation": [
+          9,
+          10,
+          -9,
+          -8,
+          -6,
+          -2,
+          -10,
+          8
+        ],
+        "uniform_finite_group_outer_bound": "|G|*k(G)"
+      },
+      "pattern": "EBFAEBFA",
+      "same_suffix_certificate": {
+        "anchor": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "average_forced_bound_verified": true,
+        "average_suffix_forced_coordinate_count": 0.0,
+        "entropy_chain_rule_value": 4.0,
+        "entropy_chain_rule_verified": true,
+        "entropy_codimension": 0.0,
+        "exact_suffix_branch_elimination_verified": true,
+        "explicit_anchor_bound_verified": true,
+        "frame_position_count": 4,
+        "status": "exact-integer-suffix-branch-generator-bound",
+        "suffix_branch_coordinates": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "suffix_branch_witnesses": [
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ]
+        ],
+        "suffix_forced_coordinates": [],
+        "suffix_forced_incidence_count": 0,
+        "support": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "support_size": 16,
+        "universal_finite_group_generator_upper_bound": 0
+      },
+      "same_suffix_steps": [
+        {
+          "anchor": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "endpoint_relators_available": true,
+          "exact_marker_stable_suffix_pivot_verified": true,
+          "frame_coordinate_one_based": 1,
+          "higher_frame_generator_occurrence_count": 0,
+          "pattern_generator_one_based": 2,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            2
+          ],
+          "status": "exact-interleaved-marker-stable-suffix-pivot",
+          "support_kind": "same",
+          "witness": [
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "endpoint_relators_available": true,
+          "exact_marker_stable_suffix_pivot_verified": true,
+          "frame_coordinate_one_based": 2,
+          "higher_frame_generator_occurrence_count": 0,
+          "pattern_generator_one_based": 4,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            4
+          ],
+          "status": "exact-interleaved-marker-stable-suffix-pivot",
+          "support_kind": "same",
+          "witness": [
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "endpoint_relators_available": true,
+          "exact_marker_stable_suffix_pivot_verified": true,
+          "frame_coordinate_one_based": 3,
+          "higher_frame_generator_occurrence_count": 0,
+          "pattern_generator_one_based": 6,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            6
+          ],
+          "status": "exact-interleaved-marker-stable-suffix-pivot",
+          "support_kind": "same",
+          "witness": [
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "endpoint_relators_available": true,
+          "exact_marker_stable_suffix_pivot_verified": true,
+          "frame_coordinate_one_based": 4,
+          "higher_frame_generator_occurrence_count": 0,
+          "pattern_generator_one_based": 8,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            8
+          ],
+          "status": "exact-interleaved-marker-stable-suffix-pivot",
+          "support_kind": "same",
+          "witness": [
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "same_support": [
+        [
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          1,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "saturation_condition_verified": true,
+      "scalar_crossing_pressure_margin": 0.046554702195740205,
+      "scalar_crossing_pressure_upper_bound": -1.0465547021957402,
+      "scalar_pressure_saturated": false,
+      "status": "interleaved-four-leaf-scalar-pressure-certified",
+      "support_entropy_exponent": 3.9534452978042594,
+      "zero_same_assignment_present": false,
+      "zero_same_cell_forces_target_identity": true
+    },
+    {
+      "augmented_same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "control_id": "EMPTY-INTERIOR-BLOCKS",
+      "different_suffix_certificate": {
+        "anchor": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "average_forced_bound_verified": true,
+        "average_suffix_forced_coordinate_count": 4.0,
+        "entropy_chain_rule_value": 0.0,
+        "entropy_chain_rule_verified": true,
+        "entropy_codimension": 4.0,
+        "exact_suffix_branch_elimination_verified": true,
+        "explicit_anchor_bound_verified": true,
+        "frame_position_count": 4,
+        "status": "exact-integer-suffix-branch-generator-bound",
+        "suffix_branch_coordinates": [],
+        "suffix_branch_witnesses": [],
+        "suffix_forced_coordinates": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "suffix_forced_incidence_count": 4,
+        "support": [
+          [
+            1,
+            0,
+            1,
+            0
+          ]
+        ],
+        "support_size": 1,
+        "universal_finite_group_generator_upper_bound": 4
+      },
+      "different_suffix_steps": [],
+      "different_support": [
+        [
+          1,
+          0,
+          1,
+          0
+        ]
+      ],
+      "dominant_effective_support_size": 2,
+      "dominant_support_family": "same-identity-fiber",
+      "exact_control_verified": true,
+      "frame_block_lengths": [
+        0,
+        2,
+        0,
+        2
+      ],
+      "frame_generator_upper_bound": 3,
+      "frame_position_count": 4,
+      "frame_types": [
+        "B",
+        "B",
+        "A",
+        "B"
+      ],
+      "full_solution_exponent_before_conjugacy_classes": 4,
+      "nontrivial_target_strict_finite_width_margin": true,
+      "outer_conjugacy_control": {
+        "coefficient_A": [],
+        "coefficient_B": [
+          -4
+        ],
+        "coefficient_C": [
+          -8,
+          -3
+        ],
+        "coefficient_D": [],
+        "conjugacy_twist_T": [
+          -4
+        ],
+        "different_base_assignment": [
+          1,
+          0,
+          1,
+          0
+        ],
+        "different_one_relation": [
+          2,
+          3,
+          6,
+          7
+        ],
+        "different_zero_relation": [
+          1,
+          4,
+          5,
+          8
+        ],
+        "exact_coefficient_conjugacy_normal_form_verified": true,
+        "expected_conjugacy_relation": [
+          9,
+          10,
+          -9,
+          -8,
+          -3,
+          -4,
+          -10
+        ],
+        "first_E_generator": 1,
+        "first_F_generator": 2,
+        "frame_block_lengths": [
+          0,
+          2,
+          0,
+          2
+        ],
+        "frame_types": [
+          "B",
+          "B",
+          "A",
+          "B"
+        ],
+        "pattern": "EFBBEFAB",
+        "residual_leaf_occurrence_word": [
+          1,
+          2,
+          -1,
+          -2
+        ],
+        "residual_outer_relation": [
+          1,
+          2,
+          -4,
+          -1,
+          -8,
+          -3,
+          -2
+        ],
+        "second_E_generator": 5,
+        "second_F_generator": 6,
+        "solved_second_E_image": [
+          -4,
+          -1,
+          -8
+        ],
+        "solved_second_F_image": [
+          -3,
+          -2,
+          -7
+        ],
+        "split_zero_relation": [
+          1,
+          2,
+          5,
+          6,
+          7
+        ],
+        "status": "exact-interleaved-leaf-outer-conjugacy-normal-form",
+        "transformed_conjugacy_relation": [
+          9,
+          10,
+          -9,
+          -8,
+          -3,
+          -4,
+          -10
+        ],
+        "uniform_finite_group_outer_bound": "|G|*k(G)"
+      },
+      "pattern": "EFBBEFAB",
+      "same_suffix_certificate": {
+        "anchor": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "average_forced_bound_verified": true,
+        "average_suffix_forced_coordinate_count": 3.0,
+        "entropy_chain_rule_value": 1.0,
+        "entropy_chain_rule_verified": true,
+        "entropy_codimension": 3.0,
+        "exact_suffix_branch_elimination_verified": true,
+        "explicit_anchor_bound_verified": true,
+        "frame_position_count": 4,
+        "status": "exact-integer-suffix-branch-generator-bound",
+        "suffix_branch_coordinates": [
+          4
+        ],
+        "suffix_branch_witnesses": [
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "suffix_forced_coordinates": [
+          1,
+          2,
+          3
+        ],
+        "suffix_forced_incidence_count": 6,
+        "support": [
+          [
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "support_size": 2,
+        "universal_finite_group_generator_upper_bound": 3
+      },
+      "same_suffix_steps": [
+        {
+          "anchor": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "endpoint_relators_available": true,
+          "exact_marker_stable_suffix_pivot_verified": true,
+          "frame_coordinate_one_based": 4,
+          "higher_frame_generator_occurrence_count": 0,
+          "pattern_generator_one_based": 8,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            3,
+            4,
+            7,
+            8
+          ],
+          "status": "exact-interleaved-marker-stable-suffix-pivot",
+          "support_kind": "same",
+          "witness": [
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "saturation_condition_verified": true,
+      "scalar_crossing_pressure_margin": 0.5,
+      "scalar_crossing_pressure_upper_bound": -1.5,
+      "scalar_pressure_saturated": false,
+      "status": "interleaved-four-leaf-scalar-pressure-certified",
+      "support_entropy_exponent": 0.5,
+      "zero_same_assignment_present": true,
+      "zero_same_cell_forces_target_identity": true
+    }
+  ],
+  "status": "all-interleaved-four-leaf-scalar-profiles-controlled",
+  "summary": "Proved all-width scalar pressure control for arbitrary interleaved four-leaf crossing words, mixed frame types, and support profiles.",
+  "theorem_contract": {
+    "frame_loss": "u-ceil(log2 max(|S union {0}|,|D|))",
+    "outer_loss": "|G|*k(G)",
+    "scalar_conclusion": "at most -1+o(1)",
+    "scope": "E T^a F T^b E T^c F T^d for arbitrary a,b,c,d>=0 and arbitrary T_i in {A,B}",
+    "target_boundary": "Exact saturation forces target identity; a uniform signed gap for near-saturating growing supports remains open."
+  }
+}

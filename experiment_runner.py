@@ -939,6 +939,72 @@ from self_dual_wreath_vertex_trivialization_criterion import (
 from self_dual_wreath_weighted_overlap_exclusion import (
     write_weighted_overlap_exclusion,
 )
+from coset_arbitrary_covariant_measurement_reduction import write_arbitrary_covariant_measurement_reduction
+from coset_centralizer_whitening_rank_bound import write_coset_centralizer_whitening_rank_report
+from coset_covariant_measurement_multiplicity_width_no_go import write_coset_covariant_measurement_multiplicity_width_report
+from coset_covariant_multiplicity_whitening_escape import write_coset_covariant_multiplicity_whitening_report
+from coset_gelfand_row_orientation_no_go import write_gelfand_row_orientation_no_go
+from coset_hidden_involution_binary_decision_reduction import write_hidden_involution_binary_decision_report
+from coset_hidden_involution_fourth_moment_threshold import write_hidden_involution_fourth_moment_report
+from coset_hidden_involution_multiplicity_support_obstruction import write_multiplicity_support_obstruction_report
+from coset_hidden_involution_orbit_hull_twirl_reduction import write_hidden_involution_orbit_hull_report
+from coset_hidden_involution_query_separation_boundary import write_hidden_involution_query_separation_report
+from coset_hidden_involution_support_span_reduction import write_hidden_involution_support_span_report
+from coset_hidden_involution_threshold_compiler_boundary import write_hidden_involution_threshold_compiler_report
+from coset_hyperoctahedral_branching_polar_boundary import write_coset_hyperoctahedral_branching_polar_report
+from coset_kronecker_marginal_conservation import write_kronecker_marginal_conservation_report
+from coset_measurement_copy_width_whitening_tradeoff import write_coset_measurement_copy_width_whitening_report
+from coset_multiplicity_whitening_copy_window import write_coset_multiplicity_whitening_copy_window_report
+from coset_perfect_matching_spherical_boundary import write_perfect_matching_spherical_boundary
+from coset_prefix_polar_holonomy_reduction import write_coset_prefix_polar_holonomy_report
+from coset_prefix_relative_gap_inference_no_go import write_coset_prefix_relative_gap_inference_report
+from coset_restriction_principal_angle_polar_reduction import write_coset_restriction_principal_angle_polar_report
+from coset_sector_coherence_degree_no_go import write_sector_coherence_degree_no_go_report
+from coset_source_weighted_frame_inversion_tradeoff import write_coset_source_weighted_frame_inversion_report
+from coset_whitening_rank_sandwich_no_go import write_coset_whitening_rank_sandwich_report
+from dcp_adaptive_layout_uniform_entanglement_no_go import write_dcp_adaptive_layout_uniform_entanglement_report
+from dcp_arbitrary_measurement_witness_reduction import write_arbitrary_measurement_witness_reduction_report
+from dcp_canonical_pgm_erasure_equivalence import write_canonical_pgm_erasure_equivalence
+from dcp_covariant_rank_one_measurement_reduction import write_covariant_rank_one_measurement_reduction_report
+from dcp_four_block_ksum_noncollapse import write_four_block_ksum_noncollapse
+from dcp_linear_depth_fiber_walk_no_go import write_linear_depth_fiber_walk_no_go
+from dcp_low_bit_candidate_list_no_go import write_low_bit_candidate_list_no_go_report
+from dcp_multiplicity_oracle_query_lower_bound import write_multiplicity_oracle_query_lower_bound
+from dcp_per_target_stratum_obstruction import write_per_target_stratum_obstruction
+from dcp_pgm_bootstrap_perturbation_reduction import write_pgm_bootstrap_perturbation_reduction
+from dcp_pgm_garbage_bootstrap_reduction import write_pgm_garbage_bootstrap_reduction
+from dcp_polynomial_feature_contraction_no_go import write_polynomial_feature_contraction_no_go
+from dcp_source_weighted_inversion_tradeoff import write_dcp_source_weighted_inversion_tradeoff
+from dcp_subset_sum_cube_section_gap_theorem import write_cube_section_gap_theorem
+from dcp_subset_sum_sparse_character_obstruction import write_sparse_character_obstruction
+from dcp_uniform_legal_multiplicity_no_go import write_uniform_legal_multiplicity_no_go_report
+from dcp_varying_hms_fiber_normal_form import write_dcp_varying_hms_fiber_normal_form
+from diagram_hidden_subalgebra_coset_no_go import write_diagram_hidden_subalgebra_coset_no_go
+from diagram_multiplicity_source_mass_gate import write_diagram_multiplicity_source_mass_gate
+from self_dual_wreath_all_codimension_baba_no_go import write_all_codimension_baba_no_go_report
+from self_dual_wreath_class_uniform_commutator_moment import write_class_uniform_commutator_moment_report
+from self_dual_wreath_codimension_one_commuting_compression_no_go import write_codimension_one_commuting_compression_no_go_report
+from self_dual_wreath_codimension_two_universal_no_go import write_codimension_two_universal_no_go_report
+from self_dual_wreath_commutator_sector_filter_no_go import write_commutator_sector_filter_no_go_report
+from self_dual_wreath_component_block_coherence_boundary import write_component_block_coherence_boundary_report
+from self_dual_wreath_component_coefficient_projection_normal_form import write_component_coefficient_projection_normal_form_report
+from self_dual_wreath_component_noncrossing_lower_bound import write_component_noncrossing_lower_bound_report
+from self_dual_wreath_full_support_pair_budget_no_go import write_full_support_pair_budget_no_go_report
+from self_dual_wreath_information_set_universal_no_go import write_information_set_universal_no_go_report
+from self_dual_wreath_interleaved_even_parity_no_go import write_interleaved_even_parity_no_go_report
+from self_dual_wreath_interleaved_leaf_pressure_no_go import write_interleaved_leaf_pressure_no_go_report
+from self_dual_wreath_interleaved_product_lift_no_go import write_interleaved_product_lift_no_go_report
+from self_dual_wreath_nonsystematic_incidence_lattice_bound import write_nonsystematic_incidence_lattice_bound_report
+from self_dual_wreath_nonsystematic_mod_four_no_go import write_nonsystematic_mod_four_no_go_report
+from self_dual_wreath_nonsystematic_pair_witness_collapse import write_nonsystematic_pair_witness_collapse_report
+from self_dual_wreath_nonsystematic_twisted_star_no_go import write_nonsystematic_twisted_star_no_go_report
+from self_dual_wreath_plancherel_target_word_collapse import write_plancherel_target_word_collapse_report
+from self_dual_wreath_poisson_ridge_word_mixture import write_poisson_ridge_word_mixture_report
+from self_dual_wreath_same_support_triangle_target_no_go import write_same_support_triangle_target_no_go_report
+from self_dual_wreath_separator_defect_frontier import write_separator_defect_frontier_report
+from self_dual_wreath_systematic_stopping_core_no_go import write_systematic_stopping_core_no_go_report
+from self_dual_wreath_translated_parity_commutator_no_go import write_translated_parity_commutator_no_go_report
+from semidirect_hms_transfer_boundary import write_semidirect_hms_transfer_boundary
 from learnability_baselines import write_learnability_report
 from phase_family_naturalness import write_phase_family_naturalness_report
 from phase_state_workbench import write_hidden_shift_workbench
@@ -1528,7 +1594,73 @@ COSET_EXPERIMENTS = {
     "EXP-CODE-SELF-DUAL-WREATH-VERTEX-KERNEL-GRADED-REDUCTION",
     "EXP-CODE-SELF-DUAL-WREATH-VERTEX-TRIVIALIZATION-CRITERION",
     "EXP-CODE-SELF-DUAL-WREATH-WEIGHTED-OVERLAP-EXCLUSION",
-    "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING",
+            "EXP-COSET-ARBITRARY-COVARIANT-MEASUREMENT-REDUCTION",
+        "EXP-COSET-CENTRALIZER-WHITENING-RANK-BOUND",
+        "EXP-COSET-COVARIANT-MEASUREMENT-MULTIPLICITY-WIDTH-NO-GO",
+        "EXP-COSET-COVARIANT-MULTIPLICITY-WHITENING-ESCAPE",
+        "EXP-COSET-GELFAND-ROW-ORIENTATION-NO-GO",
+        "EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION",
+        "EXP-COSET-HIDDEN-INVOLUTION-FOURTH-MOMENT-THRESHOLD",
+        "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-SUPPORT-OBSTRUCTION",
+        "EXP-COSET-HIDDEN-INVOLUTION-ORBIT-HULL-TWIRL-REDUCTION",
+        "EXP-COSET-HIDDEN-INVOLUTION-QUERY-SEPARATION-BOUNDARY",
+        "EXP-COSET-HIDDEN-INVOLUTION-SUPPORT-SPAN-REDUCTION",
+        "EXP-COSET-HIDDEN-INVOLUTION-THRESHOLD-COMPILER-BOUNDARY",
+        "EXP-COSET-HYPEROCTAHEDRAL-BRANCHING-POLAR-BOUNDARY",
+        "EXP-COSET-KRONECKER-MARGINAL-CONSERVATION",
+        "EXP-COSET-MEASUREMENT-COPY-WIDTH-WHITENING-TRADEOFF",
+        "EXP-COSET-MULTIPLICITY-WHITENING-COPY-WINDOW",
+        "EXP-COSET-PERFECT-MATCHING-SPHERICAL-BOUNDARY",
+        "EXP-COSET-PREFIX-POLAR-HOLONOMY-REDUCTION",
+        "EXP-COSET-PREFIX-RELATIVE-GAP-INFERENCE-NO-GO",
+        "EXP-COSET-RESTRICTION-PRINCIPAL-ANGLE-POLAR-REDUCTION",
+        "EXP-COSET-SECTOR-COHERENCE-DEGREE-NO-GO",
+        "EXP-COSET-SOURCE-WEIGHTED-FRAME-INVERSION-TRADEOFF",
+        "EXP-COSET-WHITENING-RANK-SANDWICH-NO-GO",
+        "EXP-DHS-DCP-ADAPTIVE-LAYOUT-UNIFORM-ENTANGLEMENT-NO-GO",
+        "EXP-DHS-DCP-ARBITRARY-MEASUREMENT-WITNESS-REDUCTION",
+        "EXP-DHS-DCP-CANONICAL-PGM-ERASURE-EQUIVALENCE",
+        "EXP-DHS-DCP-COVARIANT-RANK-ONE-MEASUREMENT-REDUCTION",
+        "EXP-DHS-DCP-FOUR-BLOCK-KSUM-NONCOLLAPSE",
+        "EXP-DHS-DCP-LINEAR-DEPTH-FIBER-WALK-NO-GO",
+        "EXP-DHS-DCP-LOW-BIT-CANDIDATE-LIST-NO-GO",
+        "EXP-DHS-DCP-MULTIPLICITY-ORACLE-QUERY-LOWER-BOUND",
+        "EXP-DHS-DCP-PER-TARGET-STRATUM-OBSTRUCTION",
+        "EXP-DHS-DCP-PGM-BOOTSTRAP-PERTURBATION-REDUCTION",
+        "EXP-DHS-DCP-PGM-GARBAGE-BOOTSTRAP-REDUCTION",
+        "EXP-DHS-DCP-POLYNOMIAL-FEATURE-CONTRACTION-NO-GO",
+        "EXP-DHS-DCP-SOURCE-WEIGHTED-INVERSION-TRADEOFF",
+        "EXP-DHS-DCP-SUBSET-SUM-CUBE-SECTION-GAP-THEOREM",
+        "EXP-DHS-DCP-SUBSET-SUM-ADAPTIVE-SPARSE-CHARACTER-OBSTRUCTION",
+        "EXP-DHS-DCP-UNIFORM-LEGAL-MULTIPLICITY-NO-GO",
+        "EXP-DHS-DCP-VARYING-HMS-FIBER-NORMAL-FORM",
+        "EXP-DIAGRAM-HIDDEN-SUBALGEBRA-COSET-NO-GO",
+        "EXP-DIAGRAM-MULTIPLICITY-SOURCE-MASS-GATE",
+        "EXP-CODE-SELF-DUAL-WREATH-ALL-CODIMENSION-BABA-NO-GO",
+        "EXP-CODE-SELF-DUAL-WREATH-CLASS-UNIFORM-COMMUTATOR-MOMENT",
+        "EXP-CODE-SELF-DUAL-WREATH-CODIMENSION-ONE-COMMUTING-COMPRESSION-NO-GO",
+        "EXP-CODE-SELF-DUAL-WREATH-CODIMENSION-TWO-UNIVERSAL-NO-GO",
+        "EXP-CODE-SELF-DUAL-WREATH-COMMUTATOR-SECTOR-FILTER-NO-GO",
+        "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-BLOCK-COHERENCE-BOUNDARY",
+        "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COEFFICIENT-PROJECTION-NORMAL-FORM",
+        "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-NONCROSSING-LOWER-BOUND",
+        "EXP-CODE-SELF-DUAL-WREATH-FULL-SUPPORT-PAIR-BUDGET-NO-GO",
+        "EXP-CODE-SELF-DUAL-WREATH-INFORMATION-SET-UNIVERSAL-NO-GO",
+        "EXP-CODE-SELF-DUAL-WREATH-INTERLEAVED-EVEN-PARITY-NO-GO",
+        "EXP-CODE-SELF-DUAL-WREATH-INTERLEAVED-LEAF-PRESSURE-NO-GO",
+        "EXP-CODE-SELF-DUAL-WREATH-INTERLEAVED-PRODUCT-LIFT-NO-GO",
+        "EXP-CODE-SELF-DUAL-WREATH-NONSYSTEMATIC-INCIDENCE-LATTICE-BOUND",
+        "EXP-CODE-SELF-DUAL-WREATH-NONSYSTEMATIC-MOD-FOUR-NO-GO",
+        "EXP-CODE-SELF-DUAL-WREATH-NONSYSTEMATIC-PAIR-WITNESS-COLLAPSE",
+        "EXP-CODE-SELF-DUAL-WREATH-NONSYSTEMATIC-TWISTED-STAR-NO-GO",
+        "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-TARGET-WORD-COLLAPSE",
+        "EXP-CODE-SELF-DUAL-WREATH-POISSON-RIDGE-WORD-MIXTURE",
+        "EXP-CODE-SELF-DUAL-WREATH-SAME-SUPPORT-TRIANGLE-TARGET-NO-GO",
+        "EXP-CODE-SELF-DUAL-WREATH-SEPARATOR-DEFECT-FRONTIER",
+        "EXP-CODE-SELF-DUAL-WREATH-SYSTEMATIC-STOPPING-CORE-NO-GO",
+        "EXP-CODE-SELF-DUAL-WREATH-TRANSLATED-PARITY-COMMUTATOR-NO-GO",
+        "EXP-SEMIDIRECT-HMS-TRANSFER-BOUNDARY",
+"EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING",
     "EXP-COSET-ENTANGLEMENT-WIDTH-GATE",
     "EXP-COSET-GROWING-WIDTH-ARCHITECTURE",
     "EXP-COSET-TWO-COPY-TRANSITION-ALGEBRA",
@@ -2880,7 +3012,73 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-CODE-SELF-DUAL-WREATH-VERTEX-KERNEL-GRADED-REDUCTION": 283,
         "EXP-CODE-SELF-DUAL-WREATH-VERTEX-TRIVIALIZATION-CRITERION": 284,
         "EXP-CODE-SELF-DUAL-WREATH-WEIGHTED-OVERLAP-EXCLUSION": 285,
-        "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING": 80,
+                "EXP-COSET-ARBITRARY-COVARIANT-MEASUREMENT-REDUCTION": 110,
+        "EXP-COSET-CENTRALIZER-WHITENING-RANK-BOUND": 110,
+        "EXP-COSET-COVARIANT-MEASUREMENT-MULTIPLICITY-WIDTH-NO-GO": 110,
+        "EXP-COSET-COVARIANT-MULTIPLICITY-WHITENING-ESCAPE": 110,
+        "EXP-COSET-GELFAND-ROW-ORIENTATION-NO-GO": 110,
+        "EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION": 110,
+        "EXP-COSET-HIDDEN-INVOLUTION-FOURTH-MOMENT-THRESHOLD": 110,
+        "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-SUPPORT-OBSTRUCTION": 110,
+        "EXP-COSET-HIDDEN-INVOLUTION-ORBIT-HULL-TWIRL-REDUCTION": 110,
+        "EXP-COSET-HIDDEN-INVOLUTION-QUERY-SEPARATION-BOUNDARY": 110,
+        "EXP-COSET-HIDDEN-INVOLUTION-SUPPORT-SPAN-REDUCTION": 110,
+        "EXP-COSET-HIDDEN-INVOLUTION-THRESHOLD-COMPILER-BOUNDARY": 110,
+        "EXP-COSET-HYPEROCTAHEDRAL-BRANCHING-POLAR-BOUNDARY": 110,
+        "EXP-COSET-KRONECKER-MARGINAL-CONSERVATION": 110,
+        "EXP-COSET-MEASUREMENT-COPY-WIDTH-WHITENING-TRADEOFF": 110,
+        "EXP-COSET-MULTIPLICITY-WHITENING-COPY-WINDOW": 110,
+        "EXP-COSET-PERFECT-MATCHING-SPHERICAL-BOUNDARY": 110,
+        "EXP-COSET-PREFIX-POLAR-HOLONOMY-REDUCTION": 110,
+        "EXP-COSET-PREFIX-RELATIVE-GAP-INFERENCE-NO-GO": 110,
+        "EXP-COSET-RESTRICTION-PRINCIPAL-ANGLE-POLAR-REDUCTION": 110,
+        "EXP-COSET-SECTOR-COHERENCE-DEGREE-NO-GO": 110,
+        "EXP-COSET-SOURCE-WEIGHTED-FRAME-INVERSION-TRADEOFF": 110,
+        "EXP-COSET-WHITENING-RANK-SANDWICH-NO-GO": 110,
+        "EXP-DHS-DCP-ADAPTIVE-LAYOUT-UNIFORM-ENTANGLEMENT-NO-GO": 110,
+        "EXP-DHS-DCP-ARBITRARY-MEASUREMENT-WITNESS-REDUCTION": 110,
+        "EXP-DHS-DCP-CANONICAL-PGM-ERASURE-EQUIVALENCE": 110,
+        "EXP-DHS-DCP-COVARIANT-RANK-ONE-MEASUREMENT-REDUCTION": 110,
+        "EXP-DHS-DCP-FOUR-BLOCK-KSUM-NONCOLLAPSE": 110,
+        "EXP-DHS-DCP-LINEAR-DEPTH-FIBER-WALK-NO-GO": 110,
+        "EXP-DHS-DCP-LOW-BIT-CANDIDATE-LIST-NO-GO": 110,
+        "EXP-DHS-DCP-MULTIPLICITY-ORACLE-QUERY-LOWER-BOUND": 110,
+        "EXP-DHS-DCP-PER-TARGET-STRATUM-OBSTRUCTION": 110,
+        "EXP-DHS-DCP-PGM-BOOTSTRAP-PERTURBATION-REDUCTION": 110,
+        "EXP-DHS-DCP-PGM-GARBAGE-BOOTSTRAP-REDUCTION": 110,
+        "EXP-DHS-DCP-POLYNOMIAL-FEATURE-CONTRACTION-NO-GO": 110,
+        "EXP-DHS-DCP-SOURCE-WEIGHTED-INVERSION-TRADEOFF": 110,
+        "EXP-DHS-DCP-SUBSET-SUM-CUBE-SECTION-GAP-THEOREM": 110,
+        "EXP-DHS-DCP-SUBSET-SUM-ADAPTIVE-SPARSE-CHARACTER-OBSTRUCTION": 110,
+        "EXP-DHS-DCP-UNIFORM-LEGAL-MULTIPLICITY-NO-GO": 110,
+        "EXP-DHS-DCP-VARYING-HMS-FIBER-NORMAL-FORM": 110,
+        "EXP-DIAGRAM-HIDDEN-SUBALGEBRA-COSET-NO-GO": 110,
+        "EXP-DIAGRAM-MULTIPLICITY-SOURCE-MASS-GATE": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-ALL-CODIMENSION-BABA-NO-GO": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-CLASS-UNIFORM-COMMUTATOR-MOMENT": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-CODIMENSION-ONE-COMMUTING-COMPRESSION-NO-GO": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-CODIMENSION-TWO-UNIVERSAL-NO-GO": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-COMMUTATOR-SECTOR-FILTER-NO-GO": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-BLOCK-COHERENCE-BOUNDARY": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COEFFICIENT-PROJECTION-NORMAL-FORM": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-NONCROSSING-LOWER-BOUND": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-FULL-SUPPORT-PAIR-BUDGET-NO-GO": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-INFORMATION-SET-UNIVERSAL-NO-GO": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-INTERLEAVED-EVEN-PARITY-NO-GO": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-INTERLEAVED-LEAF-PRESSURE-NO-GO": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-INTERLEAVED-PRODUCT-LIFT-NO-GO": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-NONSYSTEMATIC-INCIDENCE-LATTICE-BOUND": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-NONSYSTEMATIC-MOD-FOUR-NO-GO": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-NONSYSTEMATIC-PAIR-WITNESS-COLLAPSE": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-NONSYSTEMATIC-TWISTED-STAR-NO-GO": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-TARGET-WORD-COLLAPSE": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-POISSON-RIDGE-WORD-MIXTURE": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-SAME-SUPPORT-TRIANGLE-TARGET-NO-GO": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-SEPARATOR-DEFECT-FRONTIER": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-SYSTEMATIC-STOPPING-CORE-NO-GO": 110,
+        "EXP-CODE-SELF-DUAL-WREATH-TRANSLATED-PARITY-COMMUTATOR-NO-GO": 110,
+        "EXP-SEMIDIRECT-HMS-TRANSFER-BOUNDARY": 110,
+"EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING": 80,
         "EXP-COSET-ENTANGLEMENT-WIDTH-GATE": 81,
         "EXP-COSET-GROWING-WIDTH-ARCHITECTURE": 82,
         "EXP-COSET-TWO-COPY-TRANSITION-ALGEBRA": 22,
@@ -6404,6 +6602,666 @@ def run_experiment(experiment_id: str) -> RunnerResult:
                 write_registry=True,
                 registry_experiment_id=experiment_id,
                 registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-ARBITRARY-COVARIANT-MEASUREMENT-REDUCTION"
+        ):
+            metrics = write_arbitrary_covariant_measurement_reduction(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-CENTRALIZER-WHITENING-RANK-BOUND"
+        ):
+            metrics = write_coset_centralizer_whitening_rank_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-COVARIANT-MEASUREMENT-MULTIPLICITY-WIDTH-NO-GO"
+        ):
+            metrics = write_coset_covariant_measurement_multiplicity_width_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-COVARIANT-MULTIPLICITY-WHITENING-ESCAPE"
+        ):
+            metrics = write_coset_covariant_multiplicity_whitening_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-GELFAND-ROW-ORIENTATION-NO-GO"
+        ):
+            metrics = write_gelfand_row_orientation_no_go(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION"
+        ):
+            metrics = write_hidden_involution_binary_decision_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-HIDDEN-INVOLUTION-FOURTH-MOMENT-THRESHOLD"
+        ):
+            metrics = write_hidden_involution_fourth_moment_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-SUPPORT-OBSTRUCTION"
+        ):
+            metrics = write_multiplicity_support_obstruction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-HIDDEN-INVOLUTION-ORBIT-HULL-TWIRL-REDUCTION"
+        ):
+            metrics = write_hidden_involution_orbit_hull_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-HIDDEN-INVOLUTION-QUERY-SEPARATION-BOUNDARY"
+        ):
+            metrics = write_hidden_involution_query_separation_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-HIDDEN-INVOLUTION-SUPPORT-SPAN-REDUCTION"
+        ):
+            metrics = write_hidden_involution_support_span_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-HIDDEN-INVOLUTION-THRESHOLD-COMPILER-BOUNDARY"
+        ):
+            metrics = write_hidden_involution_threshold_compiler_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-HYPEROCTAHEDRAL-BRANCHING-POLAR-BOUNDARY"
+        ):
+            metrics = write_coset_hyperoctahedral_branching_polar_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-KRONECKER-MARGINAL-CONSERVATION"
+        ):
+            metrics = write_kronecker_marginal_conservation_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-MEASUREMENT-COPY-WIDTH-WHITENING-TRADEOFF"
+        ):
+            metrics = write_coset_measurement_copy_width_whitening_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-MULTIPLICITY-WHITENING-COPY-WINDOW"
+        ):
+            metrics = write_coset_multiplicity_whitening_copy_window_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-PERFECT-MATCHING-SPHERICAL-BOUNDARY"
+        ):
+            metrics = write_perfect_matching_spherical_boundary(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-PREFIX-POLAR-HOLONOMY-REDUCTION"
+        ):
+            metrics = write_coset_prefix_polar_holonomy_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-PREFIX-RELATIVE-GAP-INFERENCE-NO-GO"
+        ):
+            metrics = write_coset_prefix_relative_gap_inference_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-RESTRICTION-PRINCIPAL-ANGLE-POLAR-REDUCTION"
+        ):
+            metrics = write_coset_restriction_principal_angle_polar_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-SECTOR-COHERENCE-DEGREE-NO-GO"
+        ):
+            metrics = write_sector_coherence_degree_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-SOURCE-WEIGHTED-FRAME-INVERSION-TRADEOFF"
+        ):
+            metrics = write_coset_source_weighted_frame_inversion_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-COSET-WHITENING-RANK-SANDWICH-NO-GO"
+        ):
+            metrics = write_coset_whitening_rank_sandwich_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-DHS-DCP-ADAPTIVE-LAYOUT-UNIFORM-ENTANGLEMENT-NO-GO"
+        ):
+            metrics = write_dcp_adaptive_layout_uniform_entanglement_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-DHS-DCP-ARBITRARY-MEASUREMENT-WITNESS-REDUCTION"
+        ):
+            metrics = write_arbitrary_measurement_witness_reduction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-DHS-DCP-CANONICAL-PGM-ERASURE-EQUIVALENCE"
+        ):
+            metrics = write_canonical_pgm_erasure_equivalence(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-DHS-DCP-COVARIANT-RANK-ONE-MEASUREMENT-REDUCTION"
+        ):
+            metrics = write_covariant_rank_one_measurement_reduction_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-DHS-DCP-FOUR-BLOCK-KSUM-NONCOLLAPSE"
+        ):
+            metrics = write_four_block_ksum_noncollapse(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-DHS-DCP-LINEAR-DEPTH-FIBER-WALK-NO-GO"
+        ):
+            metrics = write_linear_depth_fiber_walk_no_go(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-DHS-DCP-LOW-BIT-CANDIDATE-LIST-NO-GO"
+        ):
+            metrics = write_low_bit_candidate_list_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-DHS-DCP-MULTIPLICITY-ORACLE-QUERY-LOWER-BOUND"
+        ):
+            metrics = write_multiplicity_oracle_query_lower_bound(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-DHS-DCP-PER-TARGET-STRATUM-OBSTRUCTION"
+        ):
+            metrics = write_per_target_stratum_obstruction(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-DHS-DCP-PGM-BOOTSTRAP-PERTURBATION-REDUCTION"
+        ):
+            metrics = write_pgm_bootstrap_perturbation_reduction(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-DHS-DCP-PGM-GARBAGE-BOOTSTRAP-REDUCTION"
+        ):
+            metrics = write_pgm_garbage_bootstrap_reduction(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-DHS-DCP-POLYNOMIAL-FEATURE-CONTRACTION-NO-GO"
+        ):
+            metrics = write_polynomial_feature_contraction_no_go(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-DHS-DCP-SOURCE-WEIGHTED-INVERSION-TRADEOFF"
+        ):
+            metrics = write_dcp_source_weighted_inversion_tradeoff(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-DHS-DCP-SUBSET-SUM-CUBE-SECTION-GAP-THEOREM"
+        ):
+            metrics = write_cube_section_gap_theorem(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-DHS-DCP-SUBSET-SUM-ADAPTIVE-SPARSE-CHARACTER-OBSTRUCTION"
+        ):
+            metrics = write_sparse_character_obstruction(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-DHS-DCP-UNIFORM-LEGAL-MULTIPLICITY-NO-GO"
+        ):
+            metrics = write_uniform_legal_multiplicity_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-DHS-DCP-VARYING-HMS-FIBER-NORMAL-FORM"
+        ):
+            metrics = write_dcp_varying_hms_fiber_normal_form(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-DIAGRAM-HIDDEN-SUBALGEBRA-COSET-NO-GO"
+        ):
+            metrics = write_diagram_hidden_subalgebra_coset_no_go(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-DIAGRAM-MULTIPLICITY-SOURCE-MASS-GATE"
+        ):
+            metrics = write_diagram_multiplicity_source_mass_gate(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-ALL-CODIMENSION-BABA-NO-GO"
+        ):
+            metrics = write_all_codimension_baba_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-CLASS-UNIFORM-COMMUTATOR-MOMENT"
+        ):
+            metrics = write_class_uniform_commutator_moment_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-CODIMENSION-ONE-COMMUTING-COMPRESSION-NO-GO"
+        ):
+            metrics = write_codimension_one_commuting_compression_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-CODIMENSION-TWO-UNIVERSAL-NO-GO"
+        ):
+            metrics = write_codimension_two_universal_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COMMUTATOR-SECTOR-FILTER-NO-GO"
+        ):
+            metrics = write_commutator_sector_filter_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-BLOCK-COHERENCE-BOUNDARY"
+        ):
+            metrics = write_component_block_coherence_boundary_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COEFFICIENT-PROJECTION-NORMAL-FORM"
+        ):
+            metrics = write_component_coefficient_projection_normal_form_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-NONCROSSING-LOWER-BOUND"
+        ):
+            metrics = write_component_noncrossing_lower_bound_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-FULL-SUPPORT-PAIR-BUDGET-NO-GO"
+        ):
+            metrics = write_full_support_pair_budget_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-INFORMATION-SET-UNIVERSAL-NO-GO"
+        ):
+            metrics = write_information_set_universal_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-INTERLEAVED-EVEN-PARITY-NO-GO"
+        ):
+            metrics = write_interleaved_even_parity_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-INTERLEAVED-LEAF-PRESSURE-NO-GO"
+        ):
+            metrics = write_interleaved_leaf_pressure_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-INTERLEAVED-PRODUCT-LIFT-NO-GO"
+        ):
+            metrics = write_interleaved_product_lift_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-NONSYSTEMATIC-INCIDENCE-LATTICE-BOUND"
+        ):
+            metrics = write_nonsystematic_incidence_lattice_bound_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-NONSYSTEMATIC-MOD-FOUR-NO-GO"
+        ):
+            metrics = write_nonsystematic_mod_four_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-NONSYSTEMATIC-PAIR-WITNESS-COLLAPSE"
+        ):
+            metrics = write_nonsystematic_pair_witness_collapse_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-NONSYSTEMATIC-TWISTED-STAR-NO-GO"
+        ):
+            metrics = write_nonsystematic_twisted_star_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-TARGET-WORD-COLLAPSE"
+        ):
+            metrics = write_plancherel_target_word_collapse_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-POISSON-RIDGE-WORD-MIXTURE"
+        ):
+            metrics = write_poisson_ridge_word_mixture_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SAME-SUPPORT-TRIANGLE-TARGET-NO-GO"
+        ):
+            metrics = write_same_support_triangle_target_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SEPARATOR-DEFECT-FRONTIER"
+        ):
+            metrics = write_separator_defect_frontier_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-SYSTEMATIC-STOPPING-CORE-NO-GO"
+        ):
+            metrics = write_systematic_stopping_core_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-TRANSLATED-PARITY-COMMUTATOR-NO-GO"
+        ):
+            metrics = write_translated_parity_commutator_no_go_report(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
+                registry_result_id=result_id,
+            )
+        elif (
+            experiment_id
+            == "EXP-SEMIDIRECT-HMS-TRANSFER-BOUNDARY"
+        ):
+            metrics = write_semidirect_hms_transfer_boundary(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=record.candidate_id,
                 registry_result_id=result_id,
             )
         elif (

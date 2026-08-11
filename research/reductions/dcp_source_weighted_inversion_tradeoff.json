@@ -1,0 +1,349 @@
+{
+  "adversarial_audit": [
+    {
+      "challenge": "Source weighting suppresses hard small fibers.",
+      "response": "Weight c_h/D cancels 1/sigma_h^2=D/c_h exactly, so every occupied residue contributes one to RMS squared.",
+      "survives": false
+    },
+    {
+      "challenge": "Useful PGM information should correlate with cheap inversion.",
+      "response": "The exact duality is the opposite: mean inverse scale is sqrt(N P_PGM).",
+      "survives": false
+    },
+    {
+      "challenge": "Trim to an inverse-polynomial easy source subset.",
+      "response": "If accepted multiplicities are at most polynomial, conditional RMS is at least sqrt(D/poly(n)), independent of mu.",
+      "survives": false
+    },
+    {
+      "challenge": "This rules out every source-aware implementation.",
+      "response": "A global coisometry need not invert branches independently; that route remains explicitly open.",
+      "survives": false
+    }
+  ],
+  "claim_gate": {
+    "arithmetic_collision_walk_ruled_out": false,
+    "general_quantum_lower_bound_proved": false,
+    "global_source_aware_coisometry_ruled_out": false,
+    "inverse_polynomial_trim_with_polynomial_fibers_rescues_route": false,
+    "mean_inverse_pgm_duality_proved": true,
+    "reason": "The direct encoding has exponential mean and RMS reciprocal amplitude under its own planted law. A viable implementation must mix fibers globally or exploit arithmetic beyond branchwise inversion.",
+    "rms_support_identity_proved": true,
+    "source_weighting_makes_direct_fiber_inversion_polynomial": false,
+    "speedup_claim_allowed": false,
+    "standard_variable_time_rms_rescues_direct_encoding": false
+  },
+  "created_at": "2026-08-11T15:23:33.306536+00:00",
+  "falsifiers_triggered": [
+    "Planted source weighting does not suppress the direct inversion RMS cost.",
+    "Mean reciprocal amplitude equals sqrt(N P_PGM) exactly.",
+    "RMS reciprocal amplitude equals sqrt(number of occupied residues) exactly.",
+    "Trimming polynomial-size fibers cannot make branchwise inversion polynomial.",
+    "The theorem does not lower-bound a global all-fiber coisometry or arbitrary POVM."
+  ],
+  "finite_controls": [
+    {
+      "assignment_count": 16,
+      "control_id": "uniform-two-to-one",
+      "direct_source_average_inversion_polynomial": true,
+      "maximum_multiplicity": 2,
+      "mean_pgm_duality_residual": 3.552713678800501e-15,
+      "mean_reciprocal_amplitude": 2.82842712474619,
+      "modulus": 8,
+      "normalizations_verified": true,
+      "occupied_residue_count": 8,
+      "pgm_success_probability": 1.0000000000000002,
+      "rms_reciprocal_amplitude": 2.82842712474619,
+      "rms_support_identity_residual": 1.7763568394002505e-15,
+      "status": "source-weighted-inversion-identities-verified",
+      "support_fraction": 1.0
+    },
+    {
+      "assignment_count": 8,
+      "control_id": "injective-partial-support",
+      "direct_source_average_inversion_polynomial": true,
+      "maximum_multiplicity": 1,
+      "mean_pgm_duality_residual": 1.7763568394002505e-15,
+      "mean_reciprocal_amplitude": 2.82842712474619,
+      "modulus": 17,
+      "normalizations_verified": true,
+      "occupied_residue_count": 8,
+      "pgm_success_probability": 0.47058823529411764,
+      "rms_reciprocal_amplitude": 2.82842712474619,
+      "rms_support_identity_residual": 1.7763568394002505e-15,
+      "status": "source-weighted-inversion-identities-verified",
+      "support_fraction": 0.47058823529411764
+    },
+    {
+      "assignment_count": 256,
+      "control_id": "random-density-one-n8",
+      "direct_source_average_inversion_polynomial": true,
+      "maximum_multiplicity": 5,
+      "mean_pgm_duality_residual": 0.0,
+      "mean_reciprocal_amplitude": 11.684519664014065,
+      "modulus": 256,
+      "normalizations_verified": true,
+      "occupied_residue_count": 145,
+      "pgm_success_probability": 0.5333124991356694,
+      "rms_reciprocal_amplitude": 12.041594578792296,
+      "rms_support_identity_residual": 0.0,
+      "status": "source-weighted-inversion-identities-verified",
+      "support_fraction": 0.56640625
+    },
+    {
+      "assignment_count": 1024,
+      "control_id": "random-density-one-n10",
+      "direct_source_average_inversion_polynomial": true,
+      "maximum_multiplicity": 4,
+      "mean_pgm_duality_residual": 0.0,
+      "mean_reciprocal_amplitude": 22.80985540674737,
+      "modulus": 1024,
+      "normalizations_verified": true,
+      "occupied_residue_count": 554,
+      "pgm_success_probability": 0.5080952184342991,
+      "rms_reciprocal_amplitude": 23.53720459187964,
+      "rms_support_identity_residual": 0.0,
+      "status": "source-weighted-inversion-identities-verified",
+      "support_fraction": 0.541015625
+    },
+    {
+      "assignment_count": 4096,
+      "control_id": "random-density-one-n12",
+      "direct_source_average_inversion_polynomial": true,
+      "maximum_multiplicity": 6,
+      "mean_pgm_duality_residual": 0.0,
+      "mean_reciprocal_amplitude": 48.203681615165564,
+      "modulus": 4096,
+      "normalizations_verified": true,
+      "occupied_residue_count": 2478,
+      "pgm_success_probability": 0.5672839163223268,
+      "rms_reciprocal_amplitude": 49.77951385861457,
+      "rms_support_identity_residual": 0.0,
+      "status": "source-weighted-inversion-identities-verified",
+      "support_fraction": 0.60498046875
+    }
+  ],
+  "headline_metrics": {
+    "finite_control_failure_count": 0,
+    "finite_identity_control_count": 5,
+    "global_source_aware_coisometry_lower_bound_count": 0,
+    "maximum_mean_identity_residual": 3.552713678800501e-15,
+    "maximum_rms_identity_residual": 1.7763568394002505e-15,
+    "maximum_trim_bound_residual": 0.0,
+    "new_quantum_algorithm_count": 0,
+    "quenched_support_fraction_theorem_loaded": 1,
+    "source_weighted_direct_inversion_rescue_count": 0,
+    "trimming_control_count": 6
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "BACON-CHILDS-VAN-DAM-2005",
+      "title": "From optimal measurement to efficient quantum algorithms for the hidden subgroup problem over semidirect product groups",
+      "url": "https://arxiv.org/abs/quant-ph/0504083",
+      "use": "Covariant PGM and subset-sum multiplicity formula"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "compute_source_mean_inverse_scale",
+      "resolution": "Exact cancellation gives E[1/sigma]^2=N P_PGM.",
+      "resolved": true
+    },
+    {
+      "obligation": "compute_variable_time_rms_scale",
+      "resolution": "Each legal residue contributes exactly one to E[1/sigma^2].",
+      "resolved": true
+    },
+    {
+      "obligation": "transfer_support_scaling_to_random_density_one_sources",
+      "resolution": "The existing quenched Poisson theorem gives support fraction 1-e^-1 in probability.",
+      "resolved": true
+    },
+    {
+      "obligation": "construct_global_source_aware_fiber_coisometry",
+      "resolution": "The theorem rejects branchwise direct inversion, not a collective arithmetic transform.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_general_quantum_circuit_lower_bound",
+      "resolution": "No such lower bound follows from singular amplitudes alone.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "assumed_pgm_success_lower_bound_power": 4,
+      "input_bits": 64,
+      "mean_inverse_lower_bound_log2": 20.0,
+      "polynomial_branchwise_cost_possible": true,
+      "polynomial_fiber_cap_power": 4,
+      "quenched_rms_inverse_log2_asymptotic": 31.669135821185517,
+      "quenched_support_fraction_limit": 0.6321205588285577,
+      "status": "source-weighted-direct-inversion-superpolynomial",
+      "trimmed_rms_lower_bound_log2": 20.0
+    },
+    {
+      "assumed_pgm_success_lower_bound_power": 4,
+      "input_bits": 128,
+      "mean_inverse_lower_bound_log2": 50.0,
+      "polynomial_branchwise_cost_possible": true,
+      "polynomial_fiber_cap_power": 4,
+      "quenched_rms_inverse_log2_asymptotic": 63.66913582118551,
+      "quenched_support_fraction_limit": 0.6321205588285577,
+      "status": "source-weighted-direct-inversion-superpolynomial",
+      "trimmed_rms_lower_bound_log2": 50.0
+    },
+    {
+      "assumed_pgm_success_lower_bound_power": 4,
+      "input_bits": 256,
+      "mean_inverse_lower_bound_log2": 112.0,
+      "polynomial_branchwise_cost_possible": false,
+      "polynomial_fiber_cap_power": 4,
+      "quenched_rms_inverse_log2_asymptotic": 127.66913582118552,
+      "quenched_support_fraction_limit": 0.6321205588285577,
+      "status": "source-weighted-direct-inversion-superpolynomial",
+      "trimmed_rms_lower_bound_log2": 112.0
+    },
+    {
+      "assumed_pgm_success_lower_bound_power": 4,
+      "input_bits": 512,
+      "mean_inverse_lower_bound_log2": 238.0,
+      "polynomial_branchwise_cost_possible": false,
+      "polynomial_fiber_cap_power": 4,
+      "quenched_rms_inverse_log2_asymptotic": 255.6691358211855,
+      "quenched_support_fraction_limit": 0.6321205588285577,
+      "status": "source-weighted-direct-inversion-superpolynomial",
+      "trimmed_rms_lower_bound_log2": 238.0
+    }
+  ],
+  "status": "dcp-source-weighted-inversion-tradeoff-active",
+  "summary": "Closed source weighting and standard branchwise variable-time inversion as rescues for the direct DCP equality encoding. Useful PGM information is exactly dual to exponential average inverse amplitude; global source-aware transforms remain open.",
+  "theorem": {
+    "general_quantum_lower_bound_proved": false,
+    "global_source_aware_coisometry_ruled_out": false,
+    "mean_identity": "E_pi[1/sigma_h]=sum_h sqrt(c_h)/sqrt(D), hence its square equals N P_PGM exactly.",
+    "mean_pgm_duality_proved": true,
+    "quenched_consequence": "At density one, the proved quenched Poisson law gives |supp(c)|/N -> 1-e^-1 in probability, so RMS reciprocal amplitude is Theta(sqrt(N)) on almost every public source.",
+    "rms_identity": "E_pi[1/sigma_h^2]=sum_(c_h>0) 1=|supp(c)| exactly.",
+    "rms_support_identity_proved": true,
+    "route_consequence": "Source weighting, branchwise amplitude amplification, and standard variable-time RMS accounting do not make the direct fiber encoding polynomial when PGM information is useful.",
+    "scope_limit": "The identities do not constrain a global coisometry acting on all fibers at once, source-aware arithmetic preconditioning, collision walks, or arbitrary POVMs.",
+    "source_law": "A planted Boolean assignment induces pi_h=c_h/D on legal residues; the direct preparation singular amplitude is sigma_h=sqrt(c_h/D).",
+    "source_weighting_rescues_direct_inversion": false,
+    "status": "source-weighted-direct-inversion-tradeoff-proved",
+    "theorem_verified": true,
+    "trimmed_identity": "For accepted A of source mass mu, conditional RMS squared is |A|/mu and is at least D/max_(h in A)c_h.",
+    "trimmed_multiplicity_bound_proved": true
+  },
+  "theorem_contract": {
+    "cost_model": "target-by-target inversion cost at least reciprocal amplitude; standard variable-time aggregation uses RMS branch cost",
+    "encoding": "direct equality/state-preparation amplitude sqrt(c_h/D)",
+    "excluded_scope": "global all-fiber transforms and arithmetic source-aware circuits",
+    "target_law": "planted/source-weighted pi_h=c_h/D"
+  },
+  "trimming_controls": [
+    {
+      "accepted_maximum_multiplicity": 2,
+      "accepted_residue_count": 113,
+      "accepted_source_mass": 0.6015625,
+      "assignment_count": 256,
+      "branchwise_polytime_inversion_certified": false,
+      "conditional_mean_reciprocal_amplitude": 13.50470192803085,
+      "conditional_rms_reciprocal_amplitude": 13.705624970943713,
+      "control_id": "random-density-one-n8-singleton-doubleton",
+      "exact_conditional_rms_squared": 187.84415584415586,
+      "inverse_polynomial_source_mass_retained": true,
+      "lower_bound_residual": 0.0,
+      "modulus": 256,
+      "multiplicity_bound_rms_lower_bound": 11.313708498984761,
+      "polynomial_multiplicity_cap": true,
+      "status": "trimmed-source-rms-inversion-bound-verified"
+    },
+    {
+      "accepted_maximum_multiplicity": 5,
+      "accepted_residue_count": 36,
+      "accepted_source_mass": 0.4296875,
+      "assignment_count": 256,
+      "branchwise_polytime_inversion_certified": false,
+      "conditional_mean_reciprocal_amplitude": 9.10929640966117,
+      "conditional_rms_reciprocal_amplitude": 9.153240856757686,
+      "control_id": "random-density-one-n8-top-quartile",
+      "exact_conditional_rms_squared": 83.78181818181818,
+      "inverse_polynomial_source_mass_retained": true,
+      "lower_bound_residual": 0.0,
+      "modulus": 256,
+      "multiplicity_bound_rms_lower_bound": 7.155417527999327,
+      "polynomial_multiplicity_cap": true,
+      "status": "trimmed-source-rms-inversion-bound-verified"
+    },
+    {
+      "accepted_maximum_multiplicity": 2,
+      "accepted_residue_count": 420,
+      "accepted_source_mass": 0.568359375,
+      "assignment_count": 1024,
+      "branchwise_polytime_inversion_certified": false,
+      "conditional_mean_reciprocal_amplitude": 26.782273380312926,
+      "conditional_rms_reciprocal_amplitude": 27.1839855827829,
+      "control_id": "random-density-one-n10-singleton-doubleton",
+      "exact_conditional_rms_squared": 738.9690721649486,
+      "inverse_polynomial_source_mass_retained": true,
+      "lower_bound_residual": 0.0,
+      "modulus": 1024,
+      "multiplicity_bound_rms_lower_bound": 22.627416997969522,
+      "polynomial_multiplicity_cap": true,
+      "status": "trimmed-source-rms-inversion-bound-verified"
+    },
+    {
+      "accepted_maximum_multiplicity": 4,
+      "accepted_residue_count": 138,
+      "accepted_source_mass": 0.439453125,
+      "assignment_count": 1024,
+      "branchwise_polytime_inversion_certified": false,
+      "conditional_mean_reciprocal_amplitude": 17.6689514781132,
+      "conditional_rms_reciprocal_amplitude": 17.72079757422523,
+      "control_id": "random-density-one-n10-top-quartile",
+      "exact_conditional_rms_squared": 314.02666666666676,
+      "inverse_polynomial_source_mass_retained": true,
+      "lower_bound_residual": 0.0,
+      "modulus": 1024,
+      "multiplicity_bound_rms_lower_bound": 16.0,
+      "polynomial_multiplicity_cap": true,
+      "status": "trimmed-source-rms-inversion-bound-verified"
+    },
+    {
+      "accepted_maximum_multiplicity": 2,
+      "accepted_residue_count": 2082,
+      "accepted_source_mass": 0.67041015625,
+      "assignment_count": 4096,
+      "branchwise_polytime_inversion_certified": false,
+      "conditional_mean_reciprocal_amplitude": 54.93460289388458,
+      "conditional_rms_reciprocal_amplitude": 55.72756538791277,
+      "control_id": "random-density-one-n12-singleton-doubleton",
+      "exact_conditional_rms_squared": 3105.561544064093,
+      "inverse_polynomial_source_mass_retained": true,
+      "lower_bound_residual": 0.0,
+      "modulus": 4096,
+      "multiplicity_bound_rms_lower_bound": 45.254833995939045,
+      "polynomial_multiplicity_cap": true,
+      "status": "trimmed-source-rms-inversion-bound-verified"
+    },
+    {
+      "accepted_maximum_multiplicity": 6,
+      "accepted_residue_count": 619,
+      "accepted_source_mass": 0.4384765625,
+      "assignment_count": 4096,
+      "branchwise_polytime_inversion_certified": false,
+      "conditional_mean_reciprocal_amplitude": 37.180131576447614,
+      "conditional_rms_reciprocal_amplitude": 37.57267642001337,
+      "control_id": "random-density-one-n12-top-quartile",
+      "exact_conditional_rms_squared": 1411.706013363029,
+      "inverse_polynomial_source_mass_retained": true,
+      "lower_bound_residual": 0.0,
+      "modulus": 4096,
+      "multiplicity_bound_rms_lower_bound": 26.127890589687233,
+      "polynomial_multiplicity_cap": true,
+      "status": "trimmed-source-rms-inversion-bound-verified"
+    }
+  ]
+}

@@ -1,0 +1,205 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False. The decision threshold is 2^-k in that normalization; Markov's inequality forces degree Omega(2^(k/2)) for a generic bounded scalar separator.",
+      "challenge": "A normalization-one block encoding makes QSVT efficient.",
+      "resolved": true
+    },
+    {
+      "answer": "False. A direct structured transform can bypass generic scalar approximation, as other repository polar counterfamilies show.",
+      "challenge": "The polynomial bound proves the actual Helstrom circuit hard.",
+      "resolved": true
+    },
+    {
+      "answer": "False after compression. The |+> branch subspace is not reducing, and exact S_3 controls retain only a strict fraction of the signal.",
+      "challenge": "Centrality of K_C makes its isotypic labels Helstrom-optimal.",
+      "resolved": true
+    },
+    {
+      "answer": "Unproved. Coherent labels and branch transforms may exploit more than the measured class-sum eigenvalue.",
+      "challenge": "The central dilation is useless for every coherent compiler.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "actual_family_circuit_lower_bound_proved": false,
+    "central_class_sum_label_measurement_is_helstrom": false,
+    "coherent_central_dilation_compiler_ruled_out": false,
+    "efficient_measurement_bottleneck_matches_published_open_boundary": true,
+    "generic_polynomial_threshold_compiler_is_polynomial": false,
+    "information_theoretic_sample_threshold_new_to_literature": false,
+    "normalization_one_average_projector_block_encoding_formalized": true,
+    "polynomial_time_hidden_involution_decision_algorithm": false,
+    "reason": "Information is present, but generic normalized polynomial transforms and measured central labels do not compile the exponentially small compressed threshold. A source-specific direct sign is still required.",
+    "speedup_claim_allowed": false,
+    "structured_threshold_sign_compiler_constructed": false,
+    "threshold_information_exists": true
+  },
+  "created_at": "2026-08-11T15:21:56.861046+00:00",
+  "falsifiers_triggered": [
+    "A normalization-one LCU does not remove the exponentially small likelihood threshold.",
+    "Measuring central dilation eigenvalues does not recover the Helstrom test after compression.",
+    "The generic polynomial lower bound is not an arbitrary-circuit lower bound."
+  ],
+  "finite_controls": [
+    {
+      "branch_dimension": 2,
+      "branch_plus_invariance_commutator_norm": 0.9999999999999997,
+      "central_class_sum_measurement_total_variation": 0.08333333333333336,
+      "central_measurement_strictly_suboptimal": true,
+      "compression_identity_residual": 0.0,
+      "compression_not_reducing_for_class_sum": true,
+      "conjugacy_class_size": 3,
+      "copy_count": 1,
+      "data_dimension": 6,
+      "dilation_dimension": 12,
+      "finite_control_verified": true,
+      "helstrom_trace_distance": 0.16666666666666666,
+      "n": 3,
+      "retained_helstrom_signal_fraction": 0.5000000000000002,
+      "status": "central-dilation-compression-exact-label-measurement-suboptimal",
+      "transposition_count": 1
+    },
+    {
+      "branch_dimension": 4,
+      "branch_plus_invariance_commutator_norm": 1.0000000000000004,
+      "central_class_sum_measurement_total_variation": 0.125,
+      "central_measurement_strictly_suboptimal": true,
+      "compression_identity_residual": 0.0,
+      "compression_not_reducing_for_class_sum": true,
+      "conjugacy_class_size": 3,
+      "copy_count": 2,
+      "data_dimension": 36,
+      "dilation_dimension": 144,
+      "finite_control_verified": true,
+      "helstrom_trace_distance": 0.41666666666666674,
+      "n": 3,
+      "retained_helstrom_signal_fraction": 0.29999999999999993,
+      "status": "central-dilation-compression-exact-label-measurement-suboptimal",
+      "transposition_count": 1
+    }
+  ],
+  "headline_metrics": {
+    "actual_family_circuit_lower_bound_count": 0,
+    "finite_control_count": 2,
+    "finite_control_failure_count": 0,
+    "generic_exponential_degree_record_count": 4,
+    "new_quantum_algorithm_count": 0,
+    "scaling_record_count": 4,
+    "strict_central_measurement_suboptimality_control_count": 2,
+    "structured_threshold_sign_compiler_count": 0
+  },
+  "primary_literature": [
+    {
+      "id": "HAYASHI-KAWACHI-KOBAYASHI-2006-HSP-SAMPLE-COMPLEXITY",
+      "scope": "Proves optimal information-theoretic sample complexity and emphasizes that the resulting measurements ignore time complexity.",
+      "title": "Quantum Measurements for Hidden Subgroup Problems with Optimal Sample Complexity",
+      "url": "https://arxiv.org/abs/quant-ph/0604174"
+    },
+    {
+      "id": "SEN-2005-RANDOM-MEASUREMENT-HSP",
+      "scope": "Gives information-theoretic random-measurement constructions and identifies efficient pseudorandom measurement bases as open.",
+      "title": "Random measurement bases, quantum state distinction and applications to the hidden subgroup problem",
+      "url": "https://arxiv.org/abs/quant-ph/0512085"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-BINARY-SOURCE-WEIGHTED-SIGN",
+      "resolved": false,
+      "statement": "Find a source-weighted rational, variable-time, or direct representation transform that implements sign(A_k-2^-k I) without uniform small-threshold approximation."
+    },
+    {
+      "id": "PO-COSET-BINARY-MULTIPLICITY-ALGEBRA",
+      "resolved": false,
+      "statement": "Identify a polynomial presentation of the permutation- and diagonal-action invariant algebra containing the threshold sign."
+    },
+    {
+      "id": "PO-COSET-BINARY-DILATION-COHERENT-ESCAPE",
+      "resolved": false,
+      "statement": "Test whether coherent isotypic labels plus branch amplitude transforms can implement the compressed sign even though measuring the central eigenvalue is suboptimal."
+    },
+    {
+      "id": "PO-COSET-BINARY-SIGN-DEQUANTIZATION",
+      "resolved": false,
+      "statement": "Determine whether the useful sign mass is equivalent to a classically estimable relation count or collision statistic."
+    }
+  ],
+  "scaling_records": [
+    {
+      "actual_family_circuit_lower_bound_proved": false,
+      "conjugacy_class_size": 2027025,
+      "degree_lower_bound_over_sqrt_class_size": 0.5878897733541429,
+      "generic_polynomial_compiler_is_polynomial": false,
+      "log2_markov_degree_lower_bound": 9.709083812550343,
+      "markov_degree_lower_bound": 837,
+      "n": 16,
+      "normalized_likelihood_threshold": 4.76837158203125e-07,
+      "status": "generic-polynomial-compiler-exponential-structured-route-open",
+      "structured_direct_compiler_known": false,
+      "threshold_copy_count": 21
+    },
+    {
+      "actual_family_circuit_lower_bound_proved": false,
+      "conjugacy_class_size": 191898783962510625,
+      "degree_lower_bound_over_sqrt_class_size": 0.7075760689992041,
+      "generic_polynomial_compiler_is_polynomial": false,
+      "log2_markov_degree_lower_bound": 28.2075187516721,
+      "markov_degree_lower_bound": 309962566,
+      "n": 32,
+      "normalized_likelihood_threshold": 3.469446951953614e-18,
+      "status": "generic-polynomial-compiler-exponential-structured-route-open",
+      "structured_direct_compiler_known": false,
+      "threshold_copy_count": 58
+    },
+    {
+      "actual_family_circuit_lower_bound_proved": false,
+      "conjugacy_class_size": 112275575285571389562324404930670903477890625,
+      "degree_lower_bound_over_sqrt_class_size": 0.7277821664416809,
+      "generic_polynomial_compiler_is_polynomial": false,
+      "log2_markov_degree_lower_bound": 72.70751874963942,
+      "markov_degree_lower_bound": 7711592174301512466432,
+      "n": 64,
+      "normalized_likelihood_threshold": 5.605193857299268e-45,
+      "status": "generic-polynomial-compiler-exponential-structured-route-open",
+      "structured_direct_compiler_known": false,
+      "threshold_copy_count": 147
+    },
+    {
+      "actual_family_circuit_lower_bound_proved": false,
+      "conjugacy_class_size": 164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625,
+      "degree_lower_bound_over_sqrt_class_size": 0.7706937939203952,
+      "generic_polynomial_compiler_is_polynomial": false,
+      "log2_markov_degree_lower_bound": 177.70751874963943,
+      "markov_degree_lower_bound": 312819342350996125616239967818747088102195136062029824,
+      "n": 128,
+      "normalized_likelihood_threshold": 3.4063678720065206e-108,
+      "status": "generic-polynomial-compiler-exponential-structured-route-open",
+      "structured_direct_compiler_known": false,
+      "threshold_copy_count": 357
+    }
+  ],
+  "status": "generic-threshold-compilers-blocked-structured-sign-route-open",
+  "summary": "Formalized the threshold likelihood block encoding, proved an exponential generic polynomial-degree boundary, and showed that the obvious central-dilation label measurement is strictly suboptimal. Only a structured compressed-sign compiler remains viable.",
+  "theorem": {
+    "actual_family_circuit_lower_bound_proved": false,
+    "average_projector_encoding": "A_k=M^-1 sum_h Pi_h^tensor k has a normalization-one projected-unitary encoding from uniform h and controlled R_h tests.",
+    "central_class_sum_measurement_is_helstrom": false,
+    "central_dilation_compression_proved": true,
+    "central_dilation_identity": "For V_g=direct_sum_b tensor_(i:b_i=1)R_g, A_k=<+^k| (M^-1 sum_h V_h) |+^k>.",
+    "compression_obstruction": "The branch-plus subspace is not K_C-invariant and spectral thresholding does not commute with compression.",
+    "efficient_average_projector_block_encoding_formalized": true,
+    "generic_polynomial_degree_exponential_at_threshold": true,
+    "markov_polynomial_lower_bound": "Any bounded scalar polynomial separating 0 from 2^(1-k) by values -2/3 and +2/3 has degree at least sqrt(2^k/3).",
+    "normalized_sign_problem": "The Helstrom effect is sign(A_k-2^-k I), not sign(A_k) or a constant-threshold transform.",
+    "status": "generic-threshold-compilers-blocked-structured-sign-route-open",
+    "structured_threshold_sign_compiler_constructed": false,
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "central_dilation_scope": "Class-sum eigenvalue measurement on V with branch initialized to |+>^k; not every possible coherent use of the dilation.",
+    "generic_compiler_scope": "Polynomial/QSVT transformations using only the normalization-one block encoding of A_k and a uniform scalar approximation promise.",
+    "input_operator": "The class-averaged k-copy likelihood in the standard mixed coset-state model.",
+    "non_claim": "No lower bound on source-specific recoupling circuits, arbitrary quantum circuits, or efficient symmetric-group transforms."
+  }
+}

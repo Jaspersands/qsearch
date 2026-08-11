@@ -1,0 +1,2017 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A separator dependency graph can require f>k.",
+      "resolution": "Such a code exists at width six, so the separator conjecture is false; suffix witnesses from all codeword relators bypass it.",
+      "resolved": true
+    },
+    {
+      "objection": "The suffix theorem assumes an information set or zero row.",
+      "resolution": "It selects an arbitrary anchor and uses reverse conditional entropy; neither assumption appears.",
+      "resolved": true
+    },
+    {
+      "objection": "Residual check words can destroy the surface loss.",
+      "resolution": "The verified free-group automorphism absorbs an arbitrary word U.",
+      "resolved": true
+    },
+    {
+      "objection": "A finite census is being used as the all-width proof.",
+      "resolution": "The all-width proof is the entropy chain rule plus exact Tietze pivots; the census is only an implementation control.",
+      "resolved": true
+    }
+  ],
+  "all_depth_certificate": {
+    "affine_normalization_required": false,
+    "arbitrary_codimension": true,
+    "arbitrary_width": true,
+    "code_scope": "Every C subset F_2^n with |C|=2^r, 1<=r<n, d_min(C)>=2, full different support, and one-row-pruned same support in E B A B A A^n F E F",
+    "coefficient_absorption": "The Nielsen automorphism q -> q U^-1 sends K(U) to an orientable genus-two relator, for arbitrary residual U.",
+    "information_set_assumption_required": false,
+    "marked_codeword_identity_derivation": "The split and same color-one relations force W(c)=1 off the pruned row; the common different F suffix transfers identity to it.",
+    "pressure_margin_formula": "1+0.5*log2(2^r/(2^r-1)) > 1",
+    "residual_appended_generator_formula": "at most d=n-r",
+    "reverse_chain_entropy_argument": "For uniform X on C, r=H(X)=sum_i H(X_i|X_>i).  Conditional entropy is at most the branching indicator, so some anchor has at most n-r=d suffix-forced coordinates.",
+    "separator_feedback_assumption_required": false,
+    "status": "all-depth-all-codimension-single-fiber-BABA-no-go",
+    "symmetric_group_solution_exponent_formula": "d+4+o(1)",
+    "triangular_elimination_argument": "Each nonforced coordinate has an opposite-bit witness with equal higher suffix; W(b_i)W(a)^-1 contains x_i once and no x_j for j>i.",
+    "uniform_pressure_margin_lower_bound": 1.0,
+    "universal_single_fiber_BABA_no_go_verified": true,
+    "universal_surface_relation": "K(U)=e^-1 U^-1 q^-1 b p^-1 b^-1 p q U h^-1 e h"
+  },
+  "claim_gate": {
+    "all_single_fiber_BABA_code_supports_controlled": true,
+    "higher_codimension_single_fiber_escape_survives": false,
+    "multiple_base_fiber_patterns_controlled": false,
+    "natural_component_M4_positive": false,
+    "other_marked_words_controlled": false,
+    "reason": "All codeword supports in this BABA family lose at least one uniform pressure exponent; only broader marked architectures remain.",
+    "separator_feedback_escape_survives": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:23:39.923277+00:00",
+  "exhaustive_censuses": [
+    {
+      "candidate_code_count": 1820,
+      "code_width": 4,
+      "codeword_identity_derivation_failure_count": 0,
+      "codimension": 2,
+      "exhaustive_census_verified": true,
+      "information_dimension": 2,
+      "maximum_residual_appended_generator_bound": 2,
+      "minimum_distance_two_code_count": 228,
+      "status": "all-width-four-quarter-cube-codes-certified",
+      "suffix_certificate_failure_count": 0
+    }
+  ],
+  "falsifiers_triggered": [
+    "The conjectured universal separator bound f<=k is false.",
+    "Crossing the separator feedback gate is not sufficient for pressure survival.",
+    "Information-set absence does not rescue higher codimension.",
+    "Affine normalization and linearity are irrelevant to the suffix proof."
+  ],
+  "headline_metrics": {
+    "all_depth_all_codimension_BABA_no_go_theorem_count": 1,
+    "control_failure_count": 0,
+    "exhaustive_census_failure_count": 0,
+    "exhaustive_width_four_code_count": 228,
+    "feedback_crossing_surviving_full_relations_count": 0,
+    "feedback_gate_crossing_control_count": 1,
+    "maximum_stored_codimension": 4,
+    "minimum_theoretical_pressure_margin": 1.0963225389711972,
+    "new_quantum_algorithm_count": 0,
+    "representative_control_count": 5
+  },
+  "proof_obligations": [
+    {
+      "obligation": "classify_all_single_fiber_BABA_code_supports",
+      "resolution": "Reverse-chain entropy and suffix pivots leave at most d appended generators for every support of size 2^r.",
+      "resolved": true
+    },
+    {
+      "obligation": "remove_separator_feedback_assumption",
+      "resolution": "The exact f=2>k=1 SAT witness is still killed by the full codeword presentation; separator witnesses were incomplete.",
+      "resolved": true
+    },
+    {
+      "obligation": "extend_to_multiple_base_fibers",
+      "resolution": "Different base prefixes need not expose one common set of ordered codeword identities or one absorbable surface word.",
+      "resolved": false
+    },
+    {
+      "obligation": "extend_to_other_marked_words",
+      "resolution": "Interleaved B frames and multiple target boundaries can break the contiguous suffix pivots and fixed genus-two reduction.",
+      "resolved": false
+    }
+  ],
+  "representative_controls": [
+    {
+      "all_codeword_identities_forced": true,
+      "all_unpruned_codeword_relations_present": true,
+      "code_size": 8,
+      "code_width": 5,
+      "codimension": 2,
+      "common_different_suffix_relations_present": true,
+      "control_id": "INFORMATION-SET-CODIMENSION-TWO",
+      "different_support_size": 8,
+      "eliminated_appended_generator_count": 4,
+      "exact_control_verified": true,
+      "information_dimension": 3,
+      "minimum_distance": 2,
+      "reducer_remaining_generator_count": 5,
+      "reducer_solution_exponent_certificate_source": "single-orientable-surface-genus-2",
+      "reducer_solution_exponent_upper_bound": 4.0,
+      "reducer_true_pressure_margin": 3.096322538971198,
+      "reference_removed_codeword": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "residual_appended_generator_upper_bound": 1,
+      "residual_target_word": [
+        -13,
+        -12,
+        13,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -13,
+        12,
+        13
+      ],
+      "same_support_size": 7,
+      "split_relation_present": true,
+      "status": "all-codimension-single-fiber-BABA-core-subleading",
+      "suffix_branch_certificate": {
+        "anchor": [
+          0,
+          0,
+          1,
+          1,
+          0
+        ],
+        "average_forced_bound_verified": true,
+        "average_suffix_forced_coordinate_count": 1.75,
+        "entropy_chain_rule_value": 3.0,
+        "entropy_chain_rule_verified": true,
+        "entropy_codimension": 2.0,
+        "exact_suffix_branch_elimination_verified": true,
+        "explicit_anchor_bound_verified": true,
+        "frame_position_count": 5,
+        "status": "exact-integer-suffix-branch-generator-bound",
+        "suffix_branch_coordinates": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "suffix_branch_witnesses": [
+          [
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            1
+          ]
+        ],
+        "suffix_forced_coordinates": [
+          1
+        ],
+        "suffix_forced_incidence_count": 14,
+        "support": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        ],
+        "support_size": 8,
+        "universal_finite_group_generator_upper_bound": 2
+      },
+      "suffix_elimination_steps": [
+        {
+          "anchor": [
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "coordinate_one_based": 2,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            1,
+            2
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "coordinate_one_based": 3,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            2,
+            -3
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            0,
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "coordinate_one_based": 4,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            -4,
+            -3
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "coordinate_one_based": 5,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            1,
+            3,
+            5,
+            -4,
+            -3
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            1,
+            0,
+            1,
+            0,
+            1
+          ]
+        }
+      ],
+      "support_difference_peeling_stalls_on_full_core": true,
+      "support_entropy_bits": 2.903677461028802,
+      "surface_coefficient_control": {
+        "coefficient_free_surface_word": [
+          -4,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          -5,
+          4,
+          5
+        ],
+        "coefficient_word": [
+          6
+        ],
+        "exact_coefficient_absorption_verified": true,
+        "inverse_nielsen_recovers_original": true,
+        "marked_surface_word": [
+          -4,
+          -6,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          6,
+          -5,
+          4,
+          5
+        ],
+        "nielsen_generator": 3,
+        "nielsen_image": [
+          3,
+          -6
+        ],
+        "orientable_surface_genus": 2,
+        "status": "arbitrary-coefficient-word-absorbed-into-genus-two-surface",
+        "transformed_surface_word": [
+          -4,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          -5,
+          4,
+          5
+        ]
+      },
+      "theoretical_remaining_generator_upper_bound": 7,
+      "theoretical_solution_exponent_upper_bound": 6.0,
+      "theoretical_true_pressure_margin_lower_bound": 1.0963225389711972
+    },
+    {
+      "all_codeword_identities_forced": true,
+      "all_unpruned_codeword_relations_present": true,
+      "code_size": 8,
+      "code_width": 5,
+      "codimension": 2,
+      "common_different_suffix_relations_present": true,
+      "control_id": "NO-INFORMATION-SET-CODIMENSION-TWO",
+      "different_support_size": 8,
+      "eliminated_appended_generator_count": 4,
+      "exact_control_verified": true,
+      "information_dimension": 3,
+      "minimum_distance": 2,
+      "reducer_remaining_generator_count": 6,
+      "reducer_solution_exponent_certificate_source": "single-orientable-surface-genus-2",
+      "reducer_solution_exponent_upper_bound": 5.0,
+      "reducer_true_pressure_margin": 2.096322538971198,
+      "reference_removed_codeword": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "residual_appended_generator_upper_bound": 1,
+      "residual_target_word": [
+        -13,
+        -12,
+        13,
+        10,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        10,
+        10,
+        -13,
+        12,
+        13
+      ],
+      "same_support_size": 7,
+      "split_relation_present": true,
+      "status": "all-codimension-single-fiber-BABA-core-subleading",
+      "suffix_branch_certificate": {
+        "anchor": [
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        "average_forced_bound_verified": true,
+        "average_suffix_forced_coordinate_count": 1.875,
+        "entropy_chain_rule_value": 3.0,
+        "entropy_chain_rule_verified": true,
+        "entropy_codimension": 2.0,
+        "exact_suffix_branch_elimination_verified": true,
+        "explicit_anchor_bound_verified": true,
+        "frame_position_count": 5,
+        "status": "exact-integer-suffix-branch-generator-bound",
+        "suffix_branch_coordinates": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "suffix_branch_witnesses": [
+          [
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0,
+            1
+          ]
+        ],
+        "suffix_forced_coordinates": [
+          1
+        ],
+        "suffix_forced_incidence_count": 15,
+        "support": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        ],
+        "support_size": 8,
+        "universal_finite_group_generator_upper_bound": 2
+      },
+      "suffix_elimination_steps": [
+        {
+          "anchor": [
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          "coordinate_one_based": 2,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            1,
+            -2
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            1,
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          "coordinate_one_based": 3,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            1,
+            2,
+            -3,
+            -2
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            1,
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          "coordinate_one_based": 4,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            -4,
+            -3,
+            -2
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          "coordinate_one_based": 5,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            2,
+            3,
+            5,
+            -4,
+            -3,
+            -2
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            0,
+            1,
+            1,
+            0,
+            1
+          ]
+        }
+      ],
+      "support_difference_peeling_stalls_on_full_core": true,
+      "support_entropy_bits": 2.903677461028802,
+      "surface_coefficient_control": {
+        "coefficient_free_surface_word": [
+          -4,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          -5,
+          4,
+          5
+        ],
+        "coefficient_word": [
+          6
+        ],
+        "exact_coefficient_absorption_verified": true,
+        "inverse_nielsen_recovers_original": true,
+        "marked_surface_word": [
+          -4,
+          -6,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          6,
+          -5,
+          4,
+          5
+        ],
+        "nielsen_generator": 3,
+        "nielsen_image": [
+          3,
+          -6
+        ],
+        "orientable_surface_genus": 2,
+        "status": "arbitrary-coefficient-word-absorbed-into-genus-two-surface",
+        "transformed_surface_word": [
+          -4,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          -5,
+          4,
+          5
+        ]
+      },
+      "theoretical_remaining_generator_upper_bound": 7,
+      "theoretical_solution_exponent_upper_bound": 6.0,
+      "theoretical_true_pressure_margin_lower_bound": 1.0963225389711972
+    },
+    {
+      "all_codeword_identities_forced": true,
+      "all_unpruned_codeword_relations_present": true,
+      "code_size": 8,
+      "code_width": 6,
+      "codimension": 3,
+      "common_different_suffix_relations_present": true,
+      "control_id": "SEPARATOR-BOUND-SHARP",
+      "different_support_size": 8,
+      "eliminated_appended_generator_count": 5,
+      "exact_control_verified": true,
+      "information_dimension": 3,
+      "minimum_distance": 2,
+      "reducer_remaining_generator_count": 5,
+      "reducer_solution_exponent_certificate_source": "single-orientable-surface-genus-2",
+      "reducer_solution_exponent_upper_bound": 4.0,
+      "reducer_true_pressure_margin": 4.096322538971198,
+      "reference_removed_codeword": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        1
+      ],
+      "residual_appended_generator_upper_bound": 1,
+      "residual_target_word": [
+        -14,
+        -13,
+        14,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -14,
+        13,
+        14
+      ],
+      "same_support_size": 7,
+      "split_relation_present": true,
+      "status": "all-codimension-single-fiber-BABA-core-subleading",
+      "suffix_branch_certificate": {
+        "anchor": [
+          0,
+          1,
+          0,
+          0,
+          0,
+          1
+        ],
+        "average_forced_bound_verified": true,
+        "average_suffix_forced_coordinate_count": 2.375,
+        "entropy_chain_rule_value": 3.0000000000000004,
+        "entropy_chain_rule_verified": true,
+        "entropy_codimension": 3.0,
+        "exact_suffix_branch_elimination_verified": true,
+        "explicit_anchor_bound_verified": true,
+        "frame_position_count": 6,
+        "status": "exact-integer-suffix-branch-generator-bound",
+        "suffix_branch_coordinates": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "suffix_branch_witnesses": [
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        ],
+        "suffix_forced_coordinates": [
+          1
+        ],
+        "suffix_forced_incidence_count": 19,
+        "support": [
+          [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "support_size": 8,
+        "universal_finite_group_generator_upper_bound": 3
+      },
+      "suffix_elimination_steps": [
+        {
+          "anchor": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "coordinate_one_based": 2,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            1,
+            -2
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "coordinate_one_based": 3,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            1,
+            2,
+            3,
+            -2
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "coordinate_one_based": 4,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            2,
+            3,
+            4,
+            -2
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            0,
+            1,
+            1,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "coordinate_one_based": 5,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            4,
+            5,
+            -2
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "coordinate_one_based": 6,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            1,
+            2,
+            3,
+            4,
+            -6,
+            -2
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            1,
+            1,
+            1,
+            1,
+            0,
+            0
+          ]
+        }
+      ],
+      "support_difference_peeling_stalls_on_full_core": true,
+      "support_entropy_bits": 2.903677461028802,
+      "surface_coefficient_control": {
+        "coefficient_free_surface_word": [
+          -4,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          -5,
+          4,
+          5
+        ],
+        "coefficient_word": [
+          6
+        ],
+        "exact_coefficient_absorption_verified": true,
+        "inverse_nielsen_recovers_original": true,
+        "marked_surface_word": [
+          -4,
+          -6,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          6,
+          -5,
+          4,
+          5
+        ],
+        "nielsen_generator": 3,
+        "nielsen_image": [
+          3,
+          -6
+        ],
+        "orientable_surface_genus": 2,
+        "status": "arbitrary-coefficient-word-absorbed-into-genus-two-surface",
+        "transformed_surface_word": [
+          -4,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          -5,
+          4,
+          5
+        ]
+      },
+      "theoretical_remaining_generator_upper_bound": 8,
+      "theoretical_solution_exponent_upper_bound": 7.0,
+      "theoretical_true_pressure_margin_lower_bound": 1.0963225389711972
+    },
+    {
+      "all_codeword_identities_forced": true,
+      "all_unpruned_codeword_relations_present": true,
+      "code_size": 8,
+      "code_width": 6,
+      "codimension": 3,
+      "common_different_suffix_relations_present": true,
+      "control_id": "SEPARATOR-FEEDBACK-GATE-CROSSING",
+      "different_support_size": 8,
+      "eliminated_appended_generator_count": 5,
+      "exact_control_verified": true,
+      "information_dimension": 3,
+      "minimum_distance": 2,
+      "reducer_remaining_generator_count": 6,
+      "reducer_solution_exponent_certificate_source": "single-orientable-surface-genus-2",
+      "reducer_solution_exponent_upper_bound": 5.0,
+      "reducer_true_pressure_margin": 3.096322538971198,
+      "reference_removed_codeword": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "residual_appended_generator_upper_bound": 1,
+      "residual_target_word": [
+        -14,
+        -13,
+        14,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -14,
+        13,
+        14
+      ],
+      "same_support_size": 7,
+      "split_relation_present": true,
+      "status": "all-codimension-single-fiber-BABA-core-subleading",
+      "suffix_branch_certificate": {
+        "anchor": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1
+        ],
+        "average_forced_bound_verified": true,
+        "average_suffix_forced_coordinate_count": 2.625,
+        "entropy_chain_rule_value": 3.0,
+        "entropy_chain_rule_verified": true,
+        "entropy_codimension": 3.0,
+        "exact_suffix_branch_elimination_verified": true,
+        "explicit_anchor_bound_verified": true,
+        "frame_position_count": 6,
+        "status": "exact-integer-suffix-branch-generator-bound",
+        "suffix_branch_coordinates": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "suffix_branch_witnesses": [
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "suffix_forced_coordinates": [
+          1
+        ],
+        "suffix_forced_incidence_count": 21,
+        "support": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "support_size": 8,
+        "universal_finite_group_generator_upper_bound": 3
+      },
+      "suffix_elimination_steps": [
+        {
+          "anchor": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          "coordinate_one_based": 2,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            1,
+            -2
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          "coordinate_one_based": 3,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            1,
+            2,
+            -3,
+            -2
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            1
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          "coordinate_one_based": 4,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            1,
+            2,
+            3,
+            4,
+            -3,
+            -2
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          "coordinate_one_based": 5,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            1,
+            2,
+            3,
+            -5,
+            -3,
+            -2
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            1
+          ],
+          "coordinate_one_based": 6,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            -6,
+            -5,
+            -3,
+            -2
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "support_difference_peeling_stalls_on_full_core": true,
+      "support_entropy_bits": 2.903677461028802,
+      "surface_coefficient_control": {
+        "coefficient_free_surface_word": [
+          -4,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          -5,
+          4,
+          5
+        ],
+        "coefficient_word": [
+          6
+        ],
+        "exact_coefficient_absorption_verified": true,
+        "inverse_nielsen_recovers_original": true,
+        "marked_surface_word": [
+          -4,
+          -6,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          6,
+          -5,
+          4,
+          5
+        ],
+        "nielsen_generator": 3,
+        "nielsen_image": [
+          3,
+          -6
+        ],
+        "orientable_surface_genus": 2,
+        "status": "arbitrary-coefficient-word-absorbed-into-genus-two-surface",
+        "transformed_surface_word": [
+          -4,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          -5,
+          4,
+          5
+        ]
+      },
+      "theoretical_remaining_generator_upper_bound": 8,
+      "theoretical_solution_exponent_upper_bound": 7.0,
+      "theoretical_true_pressure_margin_lower_bound": 1.0963225389711972
+    },
+    {
+      "all_codeword_identities_forced": true,
+      "all_unpruned_codeword_relations_present": true,
+      "code_size": 8,
+      "code_width": 7,
+      "codimension": 4,
+      "common_different_suffix_relations_present": true,
+      "control_id": "GATE-CROSSING-WITH-FREE-CHECK",
+      "different_support_size": 8,
+      "eliminated_appended_generator_count": 5,
+      "exact_control_verified": true,
+      "information_dimension": 3,
+      "minimum_distance": 2,
+      "reducer_remaining_generator_count": 7,
+      "reducer_solution_exponent_certificate_source": "single-orientable-surface-genus-2",
+      "reducer_solution_exponent_upper_bound": 6.0,
+      "reducer_true_pressure_margin": 3.0963225389711972,
+      "reference_removed_codeword": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "residual_appended_generator_upper_bound": 2,
+      "residual_target_word": [
+        -15,
+        -14,
+        15,
+        -12,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        12,
+        -15,
+        14,
+        15
+      ],
+      "same_support_size": 7,
+      "split_relation_present": true,
+      "status": "all-codimension-single-fiber-BABA-core-subleading",
+      "suffix_branch_certificate": {
+        "anchor": [
+          0,
+          1,
+          1,
+          0,
+          1,
+          1,
+          0
+        ],
+        "average_forced_bound_verified": true,
+        "average_suffix_forced_coordinate_count": 3.625,
+        "entropy_chain_rule_value": 3.0,
+        "entropy_chain_rule_verified": true,
+        "entropy_codimension": 4.0,
+        "exact_suffix_branch_elimination_verified": true,
+        "explicit_anchor_bound_verified": true,
+        "frame_position_count": 7,
+        "status": "exact-integer-suffix-branch-generator-bound",
+        "suffix_branch_coordinates": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "suffix_branch_witnesses": [
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        ],
+        "suffix_forced_coordinates": [
+          1,
+          7
+        ],
+        "suffix_forced_incidence_count": 29,
+        "support": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        ],
+        "support_size": 8,
+        "universal_finite_group_generator_upper_bound": 4
+      },
+      "suffix_elimination_steps": [
+        {
+          "anchor": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "coordinate_one_based": 2,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            1,
+            -2
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "coordinate_one_based": 3,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            1,
+            2,
+            -3,
+            -2
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            1,
+            1,
+            0,
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "coordinate_one_based": 4,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            1,
+            2,
+            3,
+            4,
+            -3,
+            -2
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "coordinate_one_based": 5,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            1,
+            2,
+            3,
+            -5,
+            -3,
+            -2
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            1,
+            1,
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            1,
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "coordinate_one_based": 6,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            -6,
+            -5,
+            -3,
+            -2
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "support_difference_peeling_stalls_on_full_core": true,
+      "support_entropy_bits": 2.903677461028802,
+      "surface_coefficient_control": {
+        "coefficient_free_surface_word": [
+          -4,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          -5,
+          4,
+          5
+        ],
+        "coefficient_word": [
+          6,
+          12
+        ],
+        "exact_coefficient_absorption_verified": true,
+        "inverse_nielsen_recovers_original": true,
+        "marked_surface_word": [
+          -4,
+          -12,
+          -6,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          6,
+          12,
+          -5,
+          4,
+          5
+        ],
+        "nielsen_generator": 3,
+        "nielsen_image": [
+          3,
+          -12,
+          -6
+        ],
+        "orientable_surface_genus": 2,
+        "status": "arbitrary-coefficient-word-absorbed-into-genus-two-surface",
+        "transformed_surface_word": [
+          -4,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          -5,
+          4,
+          5
+        ]
+      },
+      "theoretical_remaining_generator_upper_bound": 9,
+      "theoretical_solution_exponent_upper_bound": 8.0,
+      "theoretical_true_pressure_margin_lower_bound": 1.0963225389711972
+    }
+  ],
+  "status": "all-single-fiber-BABA-code-supports-falsified",
+  "summary": "Proved a universal all-codimension no-go for every single-base-fiber BABA code support, including an exact separator-feedback crossing.",
+  "theorem_contract": {
+    "elimination": "Each nonforced coordinate has an opposite-bit witness with equal higher suffix; W(b_i)W(a)^-1 contains x_i once and no x_j for j>i.",
+    "pressure_conclusion": "1+0.5*log2(2^r/(2^r-1)) > 1",
+    "scope": "Every C subset F_2^n with |C|=2^r, 1<=r<n, d_min(C)>=2, full different support, and one-row-pruned same support in E B A B A A^n F E F",
+    "scope_limit": "Multiple base fibers, interleaved appended B frames, and other marked patterns remain open.",
+    "surface": "The Nielsen automorphism q -> q U^-1 sends K(U) to an orientable genus-two relator, for arbitrary residual U."
+  }
+}

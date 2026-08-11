@@ -1,0 +1,300 @@
+{
+  "adversarial_audit": [
+    {
+      "challenge": "Higher-rank or non-PGM effects evade a block normal form.",
+      "response": "The proof uses only covariant symmetrization, accessible dilation, and Schur's lemma; effect rank and PGM structure never enter.",
+      "survives": true
+    },
+    {
+      "challenge": "Mixed coset states invalidate matching-garbage cleanup.",
+      "response": "A covariant purification turns the mixed orbit into the same pure-orbit theorem on system plus reference.",
+      "survives": true
+    },
+    {
+      "challenge": "Average row preparation is already a hidden-object decoder.",
+      "response": "No verifier, hidden-label readout, or PGM polar inverse follows from the row state alone. All decoder gates remain false.",
+      "survives": false
+    },
+    {
+      "challenge": "The theorem proves the existing PGM bottleneck unavoidable.",
+      "response": "Arbitrary measurements may expose different A_nu maps. The theorem is a universal normal form, not PGM optimality or a lower bound for every A_nu implementation.",
+      "survives": false
+    }
+  ],
+  "claim_gate": {
+    "arbitrary_measurement_reduces_to_multiplicity_row_preparation": true,
+    "arbitrary_nonpgm_measurement_normal_form_open": false,
+    "efficient_live_homogeneous_fourier_transform_proved": false,
+    "multiplicity_row_state_is_classically_verifiable_witness": false,
+    "pgm_multiplicity_inverse_constructed": false,
+    "polynomial_hidden_involution_decoder_constructed": false,
+    "reason": "Every useful reversible homogeneous-orbit measurement exposes an average-success multiplicity-row preparation primitive. Unlike the abelian DCP case, no verifier or efficient live homogeneous Fourier transform turns those rows into a solver.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T14:54:07.800660+00:00",
+  "falsifiers_triggered": [
+    "Higher-rank, initially noncovariant, and non-PGM measurements do not evade the homogeneous intertwiner normal form.",
+    "Mixed covariant state orbits are covered whenever a public reversible purification is accessible.",
+    "The nonabelian inverse output is a multiplicity-row state, not automatically a classical hidden-subgroup witness.",
+    "An efficient group QFT alone does not supply the stabilizer-fixed homogeneous Fourier basis or a row-state verifier.",
+    "All algorithm, PGM inverse, and speedup gates remain false."
+  ],
+  "finite_controls": [
+    {
+      "average_inverse_row_preparation_probability": 0.3802267017039714,
+      "cleaned_map_contraction_residual": 0.0,
+      "cleaned_reference_norm_squared": 0.3802267017039712,
+      "control_id": "PURE-NATURAL-MULT-2",
+      "effect_completeness_residual": 6.405434141773218e-16,
+      "effect_covariance_residual": 6.595359426621572e-17,
+      "exact_homogeneous_measurement_reduction_verified": true,
+      "group_order": 6,
+      "homogeneous_fourier_block_residual": 2.1091926704436293e-16,
+      "initially_noncovariant_measurement": true,
+      "intertwiner_residual": 1.8344262000942822e-16,
+      "matching_garbage_normalization_residual": 8.881784197001252e-16,
+      "mixed_state_purification_control": false,
+      "orbit_kind": "S3/S2 three-point homogeneous orbit",
+      "orbit_size": 3,
+      "physical_dimension": 6,
+      "source_average_success": 0.33411741250665977,
+      "source_measurement_kind": "random-exact-initially-noncovariant-povm",
+      "source_to_symmetrized_success_residual": 0.0,
+      "stabilizer_size": 2,
+      "status": "pure-covariant-measurement-reduced-to-intertwiner-rows",
+      "success_to_average_row_preparation_residual": 0.0,
+      "symmetrized_success_maximum": 0.3341174125066598,
+      "symmetrized_success_minimum": 0.3341174125066598,
+      "symmetrized_success_spread": 0.0
+    },
+    {
+      "average_inverse_row_preparation_probability": 0.44529093079689597,
+      "cleaned_map_contraction_residual": 0.0,
+      "cleaned_reference_norm_squared": 0.4452909307968959,
+      "control_id": "PURE-NATURAL-MULT-3",
+      "effect_completeness_residual": 1.7624497533634709e-15,
+      "effect_covariance_residual": 1.134631596841141e-16,
+      "exact_homogeneous_measurement_reduction_verified": true,
+      "group_order": 6,
+      "homogeneous_fourier_block_residual": 2.7404194900205837e-16,
+      "initially_noncovariant_measurement": true,
+      "intertwiner_residual": 5.969206382456149e-17,
+      "matching_garbage_normalization_residual": 1.887379141862766e-15,
+      "mixed_state_purification_control": false,
+      "orbit_kind": "S3/S2 three-point homogeneous orbit",
+      "orbit_size": 3,
+      "physical_dimension": 9,
+      "source_average_success": 0.40215033697676256,
+      "source_measurement_kind": "random-exact-initially-noncovariant-povm",
+      "source_to_symmetrized_success_residual": 5.551115123125783e-17,
+      "stabilizer_size": 2,
+      "status": "pure-covariant-measurement-reduced-to-intertwiner-rows",
+      "success_to_average_row_preparation_residual": 0.0,
+      "symmetrized_success_maximum": 0.40215033697676256,
+      "symmetrized_success_minimum": 0.4021503369767625,
+      "symmetrized_success_spread": 5.551115123125783e-17
+    },
+    {
+      "average_inverse_row_preparation_probability": 0.33581110690273935,
+      "cleaned_map_contraction_residual": 0.0,
+      "cleaned_reference_norm_squared": 0.33581110690273924,
+      "control_id": "MIXED-CANONICAL-PURIFICATION",
+      "effect_completeness_residual": 2.75835046090629e-16,
+      "effect_covariance_residual": 1.1186640021493328e-16,
+      "exact_homogeneous_measurement_reduction_verified": true,
+      "group_order": 6,
+      "homogeneous_fourier_block_residual": null,
+      "initially_noncovariant_measurement": true,
+      "intertwiner_residual": 2.7097538689653877e-16,
+      "matching_garbage_normalization_residual": 1.1102230246251565e-15,
+      "mixed_state_purification_control": true,
+      "orbit_kind": "S3/S2 three-point homogeneous orbit",
+      "orbit_size": 3,
+      "physical_dimension": 9,
+      "source_average_success": 0.30197955643834884,
+      "source_measurement_kind": "random-system-povm-on-covariant-purification",
+      "source_to_symmetrized_success_residual": 5.551115123125783e-17,
+      "stabilizer_size": 2,
+      "status": "mixed-covariant-measurement-reduced-to-intertwiner-rows",
+      "success_to_average_row_preparation_residual": 0.0,
+      "symmetrized_success_maximum": 0.30197955643834884,
+      "symmetrized_success_minimum": 0.3019795564383488,
+      "symmetrized_success_spread": 5.551115123125783e-17
+    }
+  ],
+  "headline_metrics": {
+    "arbitrary_measurement_to_intertwiner_theorem_count": 1,
+    "average_multiplicity_row_preparation_transfer_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "homogeneous_fourier_block_normal_form_theorem_count": 1,
+    "initially_noncovariant_control_count": 3,
+    "maximum_homogeneous_fourier_block_residual": 2.7404194900205837e-16,
+    "maximum_intertwiner_residual": 2.7097538689653877e-16,
+    "minimum_row_preparation_to_decoder_success_ratio": 1.1072747921696413,
+    "mixed_purification_control_count": 1,
+    "multiplicity_row_verifier_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_hidden_involution_decoder_count": 0
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "BACON-CHILDS-VAN-DAM-2005",
+      "title": "From optimal measurement to efficient quantum algorithms for the hidden subgroup problem over semidirect product groups",
+      "url": "https://arxiv.org/abs/quant-ph/0504083",
+      "use": "PGM quantum-sampling precedent; the present theorem removes the PGM assumption at the normal-form level"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "symmetrize_arbitrary_homogeneous_measurement",
+      "resolution": "A coherent random group element and classical outcome correction preserve average success and circuit access.",
+      "resolved": true
+    },
+    {
+      "obligation": "extract_matching_garbage_intertwiner",
+      "resolution": "Known covariant purifications give eta_x=E_xPsi_x/sqrt(p), and covariance proves L_gK=KU_g exactly.",
+      "resolved": true
+    },
+    {
+      "obligation": "derive_homogeneous_fourier_block_normal_form",
+      "resolution": "Schur's lemma classifies every intertwiner between the physical and permutation representations as direct-sum identity-on-carrier tensor multiplicity maps.",
+      "resolved": true
+    },
+    {
+      "obligation": "transfer_decoder_success_to_average_row_preparation",
+      "resolution": "Hilbert--Schmidt norm conservation gives average q=||eta_0||^2, and Cauchy gives ||eta_0||^2>=p.",
+      "resolved": true
+    },
+    {
+      "obligation": "construct_efficient_multiplicity_row_verifier",
+      "resolution": "Unlike DCP fibers, generic nonabelian row states do not come with an automatic classical witness predicate.",
+      "resolved": false
+    },
+    {
+      "obligation": "implement_homogeneous_fourier_transform_for_live_coset_family",
+      "resolution": "An efficient S_n QFT does not by itself register the stabilizer-fixed multiplicity basis required for X=G/H.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "accessible_covariant_purification_required": true,
+      "efficient_group_qft_assumed": true,
+      "efficient_homogeneous_fourier_transform_proved": false,
+      "group_family": "S_n conjugacy class of fixed-point-free involutions",
+      "multiplicity_row_state_verifier_constructed": false,
+      "orbit_size_description": "n!/(2^(n/2)(n/2)!) for even n",
+      "pgm_polar_factor_constructed": false,
+      "polynomial_hidden_object_decoder_constructed": false,
+      "size_parameter": 8,
+      "status": "intertwiner-normal-form-proved-homogeneous-transform-and-row-verifier-open"
+    },
+    {
+      "accessible_covariant_purification_required": true,
+      "efficient_group_qft_assumed": true,
+      "efficient_homogeneous_fourier_transform_proved": false,
+      "group_family": "S_n conjugacy class of fixed-point-free involutions",
+      "multiplicity_row_state_verifier_constructed": false,
+      "orbit_size_description": "n!/(2^(n/2)(n/2)!) for even n",
+      "pgm_polar_factor_constructed": false,
+      "polynomial_hidden_object_decoder_constructed": false,
+      "size_parameter": 16,
+      "status": "intertwiner-normal-form-proved-homogeneous-transform-and-row-verifier-open"
+    },
+    {
+      "accessible_covariant_purification_required": true,
+      "efficient_group_qft_assumed": true,
+      "efficient_homogeneous_fourier_transform_proved": false,
+      "group_family": "S_n conjugacy class of fixed-point-free involutions",
+      "multiplicity_row_state_verifier_constructed": false,
+      "orbit_size_description": "n!/(2^(n/2)(n/2)!) for even n",
+      "pgm_polar_factor_constructed": false,
+      "polynomial_hidden_object_decoder_constructed": false,
+      "size_parameter": 32,
+      "status": "intertwiner-normal-form-proved-homogeneous-transform-and-row-verifier-open"
+    },
+    {
+      "accessible_covariant_purification_required": true,
+      "efficient_group_qft_assumed": true,
+      "efficient_homogeneous_fourier_transform_proved": false,
+      "group_family": "S_n conjugacy class of fixed-point-free involutions",
+      "multiplicity_row_state_verifier_constructed": false,
+      "orbit_size_description": "n!/(2^(n/2)(n/2)!) for even n",
+      "pgm_polar_factor_constructed": false,
+      "polynomial_hidden_object_decoder_constructed": false,
+      "size_parameter": 64,
+      "status": "intertwiner-normal-form-proved-homogeneous-transform-and-row-verifier-open"
+    },
+    {
+      "accessible_covariant_purification_required": true,
+      "efficient_group_qft_assumed": true,
+      "efficient_homogeneous_fourier_transform_proved": false,
+      "group_family": "S_n conjugacy class of fixed-point-free involutions",
+      "multiplicity_row_state_verifier_constructed": false,
+      "orbit_size_description": "n!/(2^(n/2)(n/2)!) for even n",
+      "pgm_polar_factor_constructed": false,
+      "polynomial_hidden_object_decoder_constructed": false,
+      "size_parameter": 128,
+      "status": "intertwiner-normal-form-proved-homogeneous-transform-and-row-verifier-open"
+    },
+    {
+      "accessible_covariant_purification_required": true,
+      "efficient_group_qft_assumed": true,
+      "efficient_homogeneous_fourier_transform_proved": false,
+      "group_family": "S_n conjugacy class of fixed-point-free involutions",
+      "multiplicity_row_state_verifier_constructed": false,
+      "orbit_size_description": "n!/(2^(n/2)(n/2)!) for even n",
+      "pgm_polar_factor_constructed": false,
+      "polynomial_hidden_object_decoder_constructed": false,
+      "size_parameter": 256,
+      "status": "intertwiner-normal-form-proved-homogeneous-transform-and-row-verifier-open"
+    },
+    {
+      "accessible_covariant_purification_required": true,
+      "efficient_group_qft_assumed": true,
+      "efficient_homogeneous_fourier_transform_proved": false,
+      "group_family": "S_n conjugacy class of fixed-point-free involutions",
+      "multiplicity_row_state_verifier_constructed": false,
+      "orbit_size_description": "n!/(2^(n/2)(n/2)!) for even n",
+      "pgm_polar_factor_constructed": false,
+      "polynomial_hidden_object_decoder_constructed": false,
+      "size_parameter": 512,
+      "status": "intertwiner-normal-form-proved-homogeneous-transform-and-row-verifier-open"
+    }
+  ],
+  "status": "arbitrary-covariant-measurements-reduced-row-verifier-open",
+  "summary": "Generalized the DCP arbitrary-measurement bootstrap to every finite homogeneous orbit: matching-garbage cleanup yields an exact intertwiner whose Fourier inverse prepares multiplicity-row states with average success at least the decoder success.",
+  "theorem": {
+    "arbitrary_effect_rank": true,
+    "arbitrary_measurement_to_intertwiner_reduced": true,
+    "average_success_transfer": "uniform homogeneous-Fourier average q=||eta_0||^2>=p",
+    "coherent_symmetrization": "uniform group randomization and outcome correction preserve average success and produce a homogeneous covariant POVM",
+    "dcp_specialization": "for a free abelian orbit every V_nu and R_nu is one-dimensional, recovering the Fourier-diagonal fiber filter",
+    "homogeneous_fourier_normal_form": "F_X K F_phys^*=direct_sum_nu I_(V_nu) tensor A_nu",
+    "initially_noncovariant_measurements": true,
+    "intertwiner_identity": "L_g K=K U_g for K=sum_x |x><eta_x|",
+    "inverse_row_preparation": "K^*F_X^*|nu,j,r> prepares |nu,j> tensor A_nu^*|r> with q_(nu,r)=||A_nu^*r||^2",
+    "matching_garbage_cleanup": "known orbit purifications bootstrap gamma_x=M_x Psi_x/sqrt(p), and cleaning gives eta_x=E_x Psi_x/sqrt(p)",
+    "mixed_covariant_orbits": true,
+    "mixed_state_extension": "apply effects to the system half of an accessible covariant purification",
+    "multiplicity_row_verifier_constructed": false,
+    "nonabelian_consequence": "a useful reversible measurement exposes average-success preparation of exact multiplicity-row states, without assuming the PGM",
+    "pgm_structure_used": false,
+    "polynomial_decoder_constructed": false,
+    "scope_limit": "No verifier or hardness interpretation for the row states is automatic. Efficient homogeneous Fourier transforms and accessible purifications are separate implementation obligations.",
+    "status": "arbitrary-homogeneous-measurements-reduced-to-multiplicity-row-preparation",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "average_transfer": "uniform homogeneous-Fourier average q=||eta_0||^2>=p",
+    "cleaned_map": "known orbit purifications bootstrap gamma_x=M_x Psi_x/sqrt(p), and cleaning gives eta_x=E_x Psi_x/sqrt(p)",
+    "measurement": "arbitrary accessible standard-circuit POVM with outcomes X",
+    "orbit": "finite transitive homogeneous space X=G/H",
+    "representation_normal_form": "F_X K F_phys^*=direct_sum_nu I_(V_nu) tensor A_nu",
+    "scope": "No verifier or hardness interpretation for the row states is automatic. Efficient homogeneous Fourier transforms and accessible purifications are separate implementation obligations.",
+    "state": "public accessible H-fixed covariant purification",
+    "symmetrization": "uniform group randomization and outcome correction preserve average success and produce a homogeneous covariant POVM"
+  }
+}

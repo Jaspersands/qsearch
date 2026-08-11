@@ -1,0 +1,553 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False in the quantum access model: efficient K QFT and GPE sample and coherently label restriction isotypics without computing a classical coefficient table.",
+      "challenge": "Plethysm coefficients make K-isotypic access hard.",
+      "resolved": true
+    },
+    {
+      "answer": "False universally: the exact S_6 control has one pure polar output supported coherently on two K-isotypic sectors.",
+      "challenge": "Measuring the K label implements the polar.",
+      "resolved": true
+    },
+    {
+      "answer": "False for basis change alone because left/right unitaries preserve every singular value of the restriction map.",
+      "challenge": "An efficient branching basis removes tiny angles.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Direct path synthesis or a structured rescaled encoding need not implement the polar as a bounded polynomial of R.",
+      "challenge": "The singular-value argument rules out all circuits.",
+      "resolved": true
+    }
+  ],
+  "branch_coherence_control": {
+    "branch_dephased_output_purity": 0.5918367346938767,
+    "branch_measurement_preserves_polar_output": false,
+    "coherence_destroyed_by_branch_measurement": 0.40816326530612335,
+    "coherent_output_purity": 1.0,
+    "control_verified": true,
+    "degree": 6,
+    "hom_space_multiplicity": 1,
+    "nonzero_target_wreath_sector_count": 2,
+    "positive_gram_eigenvalues": [
+      0.2333333333333335
+    ],
+    "restriction_map_rank": 1,
+    "singular_value_basis_change_residual": 0.0,
+    "source_partitions": [
+      [
+        5,
+        1
+      ],
+      [
+        5,
+        1
+      ]
+    ],
+    "status": "branch-coherence-and-unitary-invariance-verified",
+    "target_partition": [
+      4,
+      2
+    ],
+    "target_wreath_sector_weights": [
+      0.7142857142857135,
+      0.28571428571428603
+    ],
+    "unitary_basis_change_alters_singular_values": false
+  },
+  "claim_gate": {
+    "branch_label_measurement_implements_polar": false,
+    "classical_plethysm_table_is_required": false,
+    "clean_subduction_multiplicity_transform_constructed": false,
+    "coherent_wreath_isotypic_labels_accessible": true,
+    "general_quantum_lower_bound_proved": false,
+    "heterogeneous_wreath_fusion_transform_constructed": false,
+    "hyperoctahedral_qft_accessible": true,
+    "normalization_free_fused_polar_constructed": false,
+    "polynomial_hidden_involution_decoder_constructed": false,
+    "reason": "Wreath isotypic access and parity filtering are efficient, but the fused polar requires coherent multiplicity-path recoupling and a normalization-free implementation not supplied here.",
+    "source_projector_is_even_beta_parity_filter": true,
+    "speedup_claim_allowed": false,
+    "unitary_branching_change_removes_small_singular_scale": false
+  },
+  "created_at": "2026-08-11T15:21:57.354727+00:00",
+  "falsifiers_triggered": [
+    "Classical computation of every plethysm coefficient is not required for coherent K-isotypic quantum access.",
+    "A K-irrep label alone is not the fused PGM polar output.",
+    "An efficient unitary branching basis change alone cannot renormalize exponentially small principal angles.",
+    "General plethysm hardness is not a circuit lower bound for the inner-size-two perfect-matching centralizer."
+  ],
+  "headline_metrics": {
+    "branch_coherence_counterexample_count": 1,
+    "branch_coherence_nonzero_sector_count": 2,
+    "branch_measurement_coherence_loss": 0.40816326530612335,
+    "classical_multiplicity_table_required_count": 0,
+    "clean_subduction_multiplicity_basis_count": 0,
+    "coherent_wreath_isotypic_access_count": 1,
+    "finite_validation_failure_count": 0,
+    "general_quantum_circuit_lower_bound_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "normalization_free_fused_polar_count": 0,
+    "restriction_parity_control_count": 6,
+    "wreath_parity_control_count": 8
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "arxiv:quant-ph/0304064",
+      "url": "https://arxiv.org/abs/quant-ph/0304064",
+      "use": "Efficient QFT for G wr S_m when |G| is polynomial."
+    },
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "arxiv:2407.17649",
+      "url": "https://arxiv.org/abs/2407.17649",
+      "use": "Quantum restriction-multiplicity sampling for wreath-product subgroups, including the constant base-size regime."
+    },
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "arxiv:2602.08441",
+      "url": "https://arxiv.org/abs/2602.08441",
+      "use": "Independent 2026 evidence that plethysm multiplicity spaces admit efficient quantum verification via structured embeddings."
+    },
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "arxiv:2002.00788",
+      "url": "https://arxiv.org/abs/2002.00788",
+      "use": "Classical general plethysm hardness; explicitly not treated as a lower bound for the inner-size-two branching family."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-WREATH-CLEAN-SUBDUCTION",
+      "resolved": false,
+      "statement": "Compile a clean coherent S_(2m) down to C_2 wr S_m subduction transform including multiplicity-path labels."
+    },
+    {
+      "id": "PO-COSET-WREATH-HETEROGENEOUS-FUSION",
+      "resolved": false,
+      "statement": "Compile the diagonal C_2 wr S_m fusion transform for the heterogeneous source irreps at k=Theta(n log n) copies."
+    },
+    {
+      "id": "PO-COSET-WREATH-NORMALIZATION-FREE-POLAR",
+      "resolved": false,
+      "statement": "Use subduction/fusion paths to synthesize the polar directly, or block-encode each retained map at its natural tiny scale."
+    },
+    {
+      "id": "PO-COSET-WREATH-POLAR-DECODER",
+      "resolved": false,
+      "statement": "Compose any polar with the physical outcome map and prove a polynomial hidden-involution decoder and dequantization gap."
+    }
+  ],
+  "restriction_parity_controls": [
+    {
+      "canonical_involution_central_in_subgroup": true,
+      "centralizer_generation_verified": true,
+      "character_formula_plus_rank": 1,
+      "expected_hyperoctahedral_order": 8,
+      "half_degree": 2,
+      "hyperoctahedral_element_count": 8,
+      "irrep_dimension": 1,
+      "maximum_subgroup_commutator_residual": 0.0,
+      "one_dimensional_multiplicities_integral_nonnegative": true,
+      "one_dimensional_restriction_multiplicities": {
+        "base_sign": 0,
+        "base_times_block_sign": 0,
+        "block_sign": 0,
+        "trivial": 1
+      },
+      "parity_projector_is_subgroup_invariant": true,
+      "partition": [
+        4
+      ],
+      "plus_projector_rank": 1,
+      "plus_projector_rank_residual": 0,
+      "status": "restriction-central-parity-verified"
+    },
+    {
+      "canonical_involution_central_in_subgroup": true,
+      "centralizer_generation_verified": true,
+      "character_formula_plus_rank": 1,
+      "expected_hyperoctahedral_order": 8,
+      "half_degree": 2,
+      "hyperoctahedral_element_count": 8,
+      "irrep_dimension": 3,
+      "maximum_subgroup_commutator_residual": 5.78052937890738e-17,
+      "one_dimensional_multiplicities_integral_nonnegative": true,
+      "one_dimensional_restriction_multiplicities": {
+        "base_sign": 0,
+        "base_times_block_sign": 0,
+        "block_sign": 1,
+        "trivial": 0
+      },
+      "parity_projector_is_subgroup_invariant": true,
+      "partition": [
+        3,
+        1
+      ],
+      "plus_projector_rank": 1,
+      "plus_projector_rank_residual": 0,
+      "status": "restriction-central-parity-verified"
+    },
+    {
+      "canonical_involution_central_in_subgroup": true,
+      "centralizer_generation_verified": true,
+      "character_formula_plus_rank": 2,
+      "expected_hyperoctahedral_order": 8,
+      "half_degree": 2,
+      "hyperoctahedral_element_count": 8,
+      "irrep_dimension": 2,
+      "maximum_subgroup_commutator_residual": 0.0,
+      "one_dimensional_multiplicities_integral_nonnegative": true,
+      "one_dimensional_restriction_multiplicities": {
+        "base_sign": 1,
+        "base_times_block_sign": 0,
+        "block_sign": 0,
+        "trivial": 1
+      },
+      "parity_projector_is_subgroup_invariant": true,
+      "partition": [
+        2,
+        2
+      ],
+      "plus_projector_rank": 2,
+      "plus_projector_rank_residual": 0,
+      "status": "restriction-central-parity-verified"
+    },
+    {
+      "canonical_involution_central_in_subgroup": true,
+      "centralizer_generation_verified": true,
+      "character_formula_plus_rank": 2,
+      "expected_hyperoctahedral_order": 48,
+      "half_degree": 3,
+      "hyperoctahedral_element_count": 48,
+      "irrep_dimension": 5,
+      "maximum_subgroup_commutator_residual": 1.825079249330156e-16,
+      "one_dimensional_multiplicities_integral_nonnegative": true,
+      "one_dimensional_restriction_multiplicities": {
+        "base_sign": 0,
+        "base_times_block_sign": 0,
+        "block_sign": 0,
+        "trivial": 0
+      },
+      "parity_projector_is_subgroup_invariant": true,
+      "partition": [
+        5,
+        1
+      ],
+      "plus_projector_rank": 2,
+      "plus_projector_rank_residual": 0,
+      "status": "restriction-central-parity-verified"
+    },
+    {
+      "canonical_involution_central_in_subgroup": true,
+      "centralizer_generation_verified": true,
+      "character_formula_plus_rank": 6,
+      "expected_hyperoctahedral_order": 48,
+      "half_degree": 3,
+      "hyperoctahedral_element_count": 48,
+      "irrep_dimension": 9,
+      "maximum_subgroup_commutator_residual": 2.5070612493046383e-16,
+      "one_dimensional_multiplicities_integral_nonnegative": true,
+      "one_dimensional_restriction_multiplicities": {
+        "base_sign": 0,
+        "base_times_block_sign": 0,
+        "block_sign": 0,
+        "trivial": 1
+      },
+      "parity_projector_is_subgroup_invariant": true,
+      "partition": [
+        4,
+        2
+      ],
+      "plus_projector_rank": 6,
+      "plus_projector_rank_residual": 0,
+      "status": "restriction-central-parity-verified"
+    },
+    {
+      "canonical_involution_central_in_subgroup": true,
+      "centralizer_generation_verified": true,
+      "character_formula_plus_rank": 8,
+      "expected_hyperoctahedral_order": 48,
+      "half_degree": 3,
+      "hyperoctahedral_element_count": 48,
+      "irrep_dimension": 16,
+      "maximum_subgroup_commutator_residual": 2.9496719199061353e-16,
+      "one_dimensional_multiplicities_integral_nonnegative": true,
+      "one_dimensional_restriction_multiplicities": {
+        "base_sign": 0,
+        "base_times_block_sign": 0,
+        "block_sign": 0,
+        "trivial": 0
+      },
+      "parity_projector_is_subgroup_invariant": true,
+      "partition": [
+        3,
+        2,
+        1
+      ],
+      "plus_projector_rank": 8,
+      "plus_projector_rank_residual": 0,
+      "status": "restriction-central-parity-verified"
+    }
+  ],
+  "scaling_records": [
+    {
+      "bipartition_count": 2,
+      "central_even_parity_irrep_count": 1,
+      "central_odd_parity_irrep_count": 1,
+      "clean_subduction_multiplicity_basis_compiled": false,
+      "coherent_isotypic_sampling_requires_multiplicity_table": false,
+      "degree": 2,
+      "direct_symmetric_to_hyperoctahedral_tower_index_polynomial": false,
+      "half_degree": 1,
+      "hyperoctahedral_order_decimal": "2",
+      "hyperoctahedral_qft_polynomial": true,
+      "normalization_free_fused_polar_compiled": false,
+      "perfect_matching_index_decimal": "1",
+      "perfect_matching_index_log2": 0.0,
+      "status": "wreath-qft-accessible-clean-polar-open"
+    },
+    {
+      "bipartition_count": 5,
+      "central_even_parity_irrep_count": 4,
+      "central_odd_parity_irrep_count": 1,
+      "clean_subduction_multiplicity_basis_compiled": false,
+      "coherent_isotypic_sampling_requires_multiplicity_table": false,
+      "degree": 4,
+      "direct_symmetric_to_hyperoctahedral_tower_index_polynomial": false,
+      "half_degree": 2,
+      "hyperoctahedral_order_decimal": "8",
+      "hyperoctahedral_qft_polynomial": true,
+      "normalization_free_fused_polar_compiled": false,
+      "perfect_matching_index_decimal": "3",
+      "perfect_matching_index_log2": 1.584962500721156,
+      "status": "wreath-qft-accessible-clean-polar-open"
+    },
+    {
+      "bipartition_count": 10,
+      "central_even_parity_irrep_count": 5,
+      "central_odd_parity_irrep_count": 5,
+      "clean_subduction_multiplicity_basis_compiled": false,
+      "coherent_isotypic_sampling_requires_multiplicity_table": false,
+      "degree": 6,
+      "direct_symmetric_to_hyperoctahedral_tower_index_polynomial": false,
+      "half_degree": 3,
+      "hyperoctahedral_order_decimal": "48",
+      "hyperoctahedral_qft_polynomial": true,
+      "normalization_free_fused_polar_compiled": false,
+      "perfect_matching_index_decimal": "15",
+      "perfect_matching_index_log2": 3.9068905956085187,
+      "status": "wreath-qft-accessible-clean-polar-open"
+    },
+    {
+      "bipartition_count": 20,
+      "central_even_parity_irrep_count": 14,
+      "central_odd_parity_irrep_count": 6,
+      "clean_subduction_multiplicity_basis_compiled": false,
+      "coherent_isotypic_sampling_requires_multiplicity_table": false,
+      "degree": 8,
+      "direct_symmetric_to_hyperoctahedral_tower_index_polynomial": false,
+      "half_degree": 4,
+      "hyperoctahedral_order_decimal": "384",
+      "hyperoctahedral_qft_polynomial": true,
+      "normalization_free_fused_polar_compiled": false,
+      "perfect_matching_index_decimal": "105",
+      "perfect_matching_index_log2": 6.714245517666122,
+      "status": "wreath-qft-accessible-clean-polar-open"
+    },
+    {
+      "bipartition_count": 36,
+      "central_even_parity_irrep_count": 18,
+      "central_odd_parity_irrep_count": 18,
+      "clean_subduction_multiplicity_basis_compiled": false,
+      "coherent_isotypic_sampling_requires_multiplicity_table": false,
+      "degree": 10,
+      "direct_symmetric_to_hyperoctahedral_tower_index_polynomial": false,
+      "half_degree": 5,
+      "hyperoctahedral_order_decimal": "3840",
+      "hyperoctahedral_qft_polynomial": true,
+      "normalization_free_fused_polar_compiled": false,
+      "perfect_matching_index_decimal": "945",
+      "perfect_matching_index_log2": 9.884170519108435,
+      "status": "wreath-qft-accessible-clean-polar-open"
+    },
+    {
+      "bipartition_count": 65,
+      "central_even_parity_irrep_count": 42,
+      "central_odd_parity_irrep_count": 23,
+      "clean_subduction_multiplicity_basis_compiled": false,
+      "coherent_isotypic_sampling_requires_multiplicity_table": false,
+      "degree": 12,
+      "direct_symmetric_to_hyperoctahedral_tower_index_polynomial": false,
+      "half_degree": 6,
+      "hyperoctahedral_order_decimal": "46080",
+      "hyperoctahedral_qft_polynomial": true,
+      "normalization_free_fused_polar_compiled": false,
+      "perfect_matching_index_decimal": "10395",
+      "perfect_matching_index_log2": 13.343602137745732,
+      "status": "wreath-qft-accessible-clean-polar-open"
+    },
+    {
+      "bipartition_count": 185,
+      "central_even_parity_irrep_count": 113,
+      "central_odd_parity_irrep_count": 72,
+      "clean_subduction_multiplicity_basis_compiled": false,
+      "coherent_isotypic_sampling_requires_multiplicity_table": false,
+      "degree": 16,
+      "direct_symmetric_to_hyperoctahedral_tower_index_polynomial": false,
+      "half_degree": 8,
+      "hyperoctahedral_order_decimal": "10321920",
+      "hyperoctahedral_qft_polynomial": true,
+      "normalization_free_fused_polar_compiled": false,
+      "perfect_matching_index_decimal": "2027025",
+      "perfect_matching_index_log2": 20.950932451495344,
+      "status": "wreath-qft-accessible-clean-polar-open"
+    },
+    {
+      "bipartition_count": 481,
+      "central_even_parity_irrep_count": 282,
+      "central_odd_parity_irrep_count": 199,
+      "clean_subduction_multiplicity_basis_compiled": false,
+      "coherent_isotypic_sampling_requires_multiplicity_table": false,
+      "degree": 20,
+      "direct_symmetric_to_hyperoctahedral_tower_index_polynomial": false,
+      "half_degree": 10,
+      "hyperoctahedral_order_decimal": "3715891200",
+      "hyperoctahedral_qft_polynomial": true,
+      "normalization_free_fused_polar_compiled": false,
+      "perfect_matching_index_decimal": "654729075",
+      "perfect_matching_index_log2": 29.28632280618927,
+      "status": "wreath-qft-accessible-clean-polar-open"
+    }
+  ],
+  "status": "wreath-isotypic-access-closed-coherent-subduction-polar-open",
+  "summary": "Removed hyperoctahedral Fourier/isotypic access and classical plethysm tables from the active blocker list. Exact branch measurement is insufficient and basis changes preserve the tiny principal-angle scale; clean coherent subduction/fusion plus direct polar synthesis is the remaining structured route.",
+  "theorem": {
+    "branch_coherence_obstruction": "Measuring only the wreath irrep label is not the polar: an exact S_6 rank-one polar output has nonzero coherent mass in two orthogonal K-isotypic sectors.",
+    "branch_label_measurement_sufficient_for_polar": false,
+    "central_parity_rule": "The all-pair flip h_0 acts on (alpha,beta) as (-1)^|beta|; (I+rho(h_0))/2 selects even |beta| exactly.",
+    "centralizer_identity": "C_(S_(2m))(h_0)=C_2 wr S_m for the canonical perfect matching h_0.",
+    "classical_hardness_scope": "General plethysm computation is classically hard, but those hardness theorems do not by themselves prove hardness of this inner-size-two structured family or obstruct coherent quantum access.",
+    "classical_plethysm_table_required_for_isotypic_access": false,
+    "clean_subduction_multiplicity_basis_constructed": false,
+    "coherent_access": "The polynomial C_2 wr S_m QFT plus controlled restricted action gives coherent isotypic access by generalized phase estimation, without a classical table of plethysm coefficients.",
+    "coherent_wreath_isotypic_sampling_constructed": true,
+    "constructive_frontier": "Compile clean subduction multiplicity paths and heterogeneous wreath Clebsch-Gordan fusion, then synthesize the polar directly or produce a retained-window block encoding at its natural scale.",
+    "general_quantum_circuit_lower_bound_proved": false,
+    "hyperoctahedral_qft_efficiency_applied": true,
+    "irrep_classification": "Irreducibles of C_2 wr S_m are indexed by bipartitions (alpha,beta) with dimension binom(m,|alpha|)f^alpha f^beta.",
+    "normalization_free_fused_polar_constructed": false,
+    "restriction_coefficient_formula": "mult((alpha,beta),Res S^lambda)=<s_lambda,s_alpha[h_2]s_beta[e_2]>.",
+    "source_projector_as_wreath_parity_filter_proved": true,
+    "status": "wreath-isotypic-access-closed-coherent-subduction-polar-open",
+    "theorem_verified": true,
+    "unitary_branching_basis_change_removes_small_singular_scale": false,
+    "unitary_invariance_obstruction": "Subduction/QFT basis changes A R B preserve singular values, so they cannot remove the retained exp(-Omega(sqrt(n))) scale before a generic singular-value transform."
+  },
+  "theorem_contract": {
+    "access_model": "Efficient symmetric-group and wreath-product QFTs, controlled group actions, and coherent generalized phase estimation.",
+    "group_family": "S_(2m) restricted to C_2 wr S_m",
+    "non_claim": "No clean subduction multiplicity basis, wreath fusion network, normalization-free polar, decoder, or circuit lower bound.",
+    "source_projector": "Tensor product of +1 eigenspace projectors for the canonical fixed-point-free involution."
+  },
+  "wreath_parity_controls": [
+    {
+      "bipartition_count": 2,
+      "central_parity_balance_verified": true,
+      "dimension_identity_verified": true,
+      "even_beta_dimension_square_sum": 1,
+      "expected_each_central_parity_regular_dimension": 1,
+      "half_degree": 1,
+      "hyperoctahedral_order": 2,
+      "odd_beta_dimension_square_sum": 1,
+      "status": "wreath-bipartition-parity-verified",
+      "sum_irrep_dimension_squares": 2
+    },
+    {
+      "bipartition_count": 5,
+      "central_parity_balance_verified": true,
+      "dimension_identity_verified": true,
+      "even_beta_dimension_square_sum": 4,
+      "expected_each_central_parity_regular_dimension": 4,
+      "half_degree": 2,
+      "hyperoctahedral_order": 8,
+      "odd_beta_dimension_square_sum": 4,
+      "status": "wreath-bipartition-parity-verified",
+      "sum_irrep_dimension_squares": 8
+    },
+    {
+      "bipartition_count": 10,
+      "central_parity_balance_verified": true,
+      "dimension_identity_verified": true,
+      "even_beta_dimension_square_sum": 24,
+      "expected_each_central_parity_regular_dimension": 24,
+      "half_degree": 3,
+      "hyperoctahedral_order": 48,
+      "odd_beta_dimension_square_sum": 24,
+      "status": "wreath-bipartition-parity-verified",
+      "sum_irrep_dimension_squares": 48
+    },
+    {
+      "bipartition_count": 20,
+      "central_parity_balance_verified": true,
+      "dimension_identity_verified": true,
+      "even_beta_dimension_square_sum": 192,
+      "expected_each_central_parity_regular_dimension": 192,
+      "half_degree": 4,
+      "hyperoctahedral_order": 384,
+      "odd_beta_dimension_square_sum": 192,
+      "status": "wreath-bipartition-parity-verified",
+      "sum_irrep_dimension_squares": 384
+    },
+    {
+      "bipartition_count": 36,
+      "central_parity_balance_verified": true,
+      "dimension_identity_verified": true,
+      "even_beta_dimension_square_sum": 1920,
+      "expected_each_central_parity_regular_dimension": 1920,
+      "half_degree": 5,
+      "hyperoctahedral_order": 3840,
+      "odd_beta_dimension_square_sum": 1920,
+      "status": "wreath-bipartition-parity-verified",
+      "sum_irrep_dimension_squares": 3840
+    },
+    {
+      "bipartition_count": 65,
+      "central_parity_balance_verified": true,
+      "dimension_identity_verified": true,
+      "even_beta_dimension_square_sum": 23040,
+      "expected_each_central_parity_regular_dimension": 23040,
+      "half_degree": 6,
+      "hyperoctahedral_order": 46080,
+      "odd_beta_dimension_square_sum": 23040,
+      "status": "wreath-bipartition-parity-verified",
+      "sum_irrep_dimension_squares": 46080
+    },
+    {
+      "bipartition_count": 185,
+      "central_parity_balance_verified": true,
+      "dimension_identity_verified": true,
+      "even_beta_dimension_square_sum": 5160960,
+      "expected_each_central_parity_regular_dimension": 5160960,
+      "half_degree": 8,
+      "hyperoctahedral_order": 10321920,
+      "odd_beta_dimension_square_sum": 5160960,
+      "status": "wreath-bipartition-parity-verified",
+      "sum_irrep_dimension_squares": 10321920
+    },
+    {
+      "bipartition_count": 481,
+      "central_parity_balance_verified": true,
+      "dimension_identity_verified": true,
+      "even_beta_dimension_square_sum": 1857945600,
+      "expected_each_central_parity_regular_dimension": 1857945600,
+      "half_degree": 10,
+      "hyperoctahedral_order": 3715891200,
+      "odd_beta_dimension_square_sum": 1857945600,
+      "status": "wreath-bipartition-parity-verified",
+      "sum_irrep_dimension_squares": 3715891200
+    }
+  ]
+}

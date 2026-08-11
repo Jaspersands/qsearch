@@ -1,0 +1,271 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "Ruled out at k=ceil(log2 M): the exact relation formula bounds the fourth moment by a universal constant, and interpolation forces constant L1 distance.",
+      "challenge": "The second moment may be concentrated in exponentially rare likelihood spikes, leaving negligible trace distance.",
+      "resolved": true
+    },
+    {
+      "answer": "The proof permits maximal T=M^2 and E=M^3; these worst-case counts are already charged in the constant 55.",
+      "challenge": "Special commutation or high multiplicative energy can destroy the constant bound.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Copy complexity ignores the circuit complexity of the Helstrom block sign, which may encode the original hard problem.",
+      "challenge": "Theta(log M) states imply a polynomial quantum algorithm.",
+      "resolved": true
+    },
+    {
+      "answer": "False. The symmetrized effect has identical acceptance on every h and intentionally carries no individual-h label.",
+      "challenge": "The theorem identifies h and therefore solves search.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It is a coset-state promise theorem with no efficient measurement, graph input reduction, or matched classical lower bound.",
+      "challenge": "The result is already a graph-isomorphism speedup.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "classical_superpolynomial_query_lower_bound_proved": false,
+    "graph_isomorphism_algorithm_constructed": false,
+    "individual_hidden_involution_identified": false,
+    "information_theoretic_binary_measurement_exists": true,
+    "natural_graph_or_code_input_transfer_proved": false,
+    "polynomial_higher_copy_block_sign_compiler_constructed": false,
+    "published_equal_prime_order_sample_theorem_rederived": true,
+    "reason": "The information exists at logarithmic copy count, but the threshold Helstrom sign has not been compiled or separated from matched classical access on a natural input family.",
+    "sample_complexity_result_new_to_literature": false,
+    "speedup_claim_allowed": false,
+    "theta_log_class_copy_complexity_proved": true,
+    "threshold_trace_distance_lower_bound_proved": true
+  },
+  "created_at": "2026-08-11T14:53:49.657525+00:00",
+  "falsifiers_triggered": [
+    "The threshold chi-square signal cannot be dismissed as an exponentially rare likelihood spike.",
+    "Constant-copy evidence remains invalid even though logarithmic-copy information is sufficient.",
+    "Information-theoretic Helstrom existence does not certify an efficient measurement or speedup."
+  ],
+  "finite_controls": [
+    {
+      "conjugacy_class_size": 3,
+      "copy_count": 2,
+      "dense_helstrom_trace_distance": 0.41666666666666674,
+      "dense_matrix_fourth_moment": 2.999999999999999,
+      "dense_matrix_residual": 8.881784197001252e-16,
+      "direct_identity_pattern_fourth_moment": 3.0,
+      "exact_relation_formula_fourth_moment": 3.0,
+      "exact_second_moment": 1.0,
+      "finite_control_verified": true,
+      "interpolation_bound_respected": true,
+      "interpolation_trace_distance_lower_bound": 0.2886751345948129,
+      "n": 3,
+      "relation_formula_pattern_residual": 0.0,
+      "status": "exact-fourth-moment-threshold-control-verified",
+      "transposition_count": 1
+    },
+    {
+      "conjugacy_class_size": 6,
+      "copy_count": 3,
+      "dense_helstrom_trace_distance": null,
+      "dense_matrix_fourth_moment": null,
+      "dense_matrix_residual": null,
+      "direct_identity_pattern_fourth_moment": 4.814814814814815,
+      "exact_relation_formula_fourth_moment": 4.814814814814815,
+      "exact_second_moment": 1.1666666666666667,
+      "finite_control_verified": true,
+      "interpolation_bound_respected": true,
+      "interpolation_trace_distance_lower_bound": 0.28714442894982845,
+      "n": 4,
+      "relation_formula_pattern_residual": 0.0,
+      "status": "exact-fourth-moment-threshold-control-verified",
+      "transposition_count": 1
+    },
+    {
+      "conjugacy_class_size": 3,
+      "copy_count": 2,
+      "dense_helstrom_trace_distance": 0.375,
+      "dense_matrix_fourth_moment": 5.444444444444443,
+      "dense_matrix_residual": 1.7763568394002505e-15,
+      "direct_identity_pattern_fourth_moment": 5.444444444444445,
+      "exact_relation_formula_fourth_moment": 5.444444444444445,
+      "exact_second_moment": 1.0,
+      "finite_control_verified": true,
+      "interpolation_bound_respected": true,
+      "interpolation_trace_distance_lower_bound": 0.21428571428571427,
+      "n": 4,
+      "relation_formula_pattern_residual": 0.0,
+      "status": "exact-fourth-moment-threshold-control-verified",
+      "transposition_count": 2
+    },
+    {
+      "conjugacy_class_size": 15,
+      "copy_count": 4,
+      "dense_helstrom_trace_distance": null,
+      "dense_matrix_fourth_moment": null,
+      "dense_matrix_residual": null,
+      "direct_identity_pattern_fourth_moment": 4.395555555555555,
+      "exact_relation_formula_fourth_moment": 4.395555555555555,
+      "exact_second_moment": 1.0,
+      "finite_control_verified": true,
+      "interpolation_bound_respected": true,
+      "interpolation_trace_distance_lower_bound": 0.23848612528083504,
+      "n": 5,
+      "relation_formula_pattern_residual": 0.0,
+      "status": "exact-fourth-moment-threshold-control-verified",
+      "transposition_count": 2
+    },
+    {
+      "conjugacy_class_size": 15,
+      "copy_count": 4,
+      "dense_helstrom_trace_distance": null,
+      "dense_matrix_fourth_moment": null,
+      "dense_matrix_residual": null,
+      "direct_identity_pattern_fourth_moment": 3.631111111111111,
+      "exact_relation_formula_fourth_moment": 3.631111111111111,
+      "exact_second_moment": 1.0,
+      "finite_control_verified": true,
+      "interpolation_bound_respected": true,
+      "interpolation_trace_distance_lower_bound": 0.2623917857029948,
+      "n": 6,
+      "relation_formula_pattern_residual": 0.0,
+      "status": "exact-fourth-moment-threshold-control-verified",
+      "transposition_count": 3
+    }
+  ],
+  "headline_metrics": {
+    "dense_matrix_control_count": 2,
+    "exact_relation_formula_control_count": 5,
+    "finite_control_count": 5,
+    "finite_validation_failure_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_block_sign_compiler_count": 0,
+    "scaling_record_count": 5,
+    "threshold_information_sufficiency_theorem_count": 1,
+    "universal_fourth_moment_bound": 55.0,
+    "universal_trace_distance_lower_bound": 0.02383656473113981
+  },
+  "primary_literature": [
+    {
+      "id": "HAYASHI-KAWACHI-KOBAYASHI-2006-HSP-SAMPLE-COMPLEXITY",
+      "scope": "The published TCS theorem already gives Theta(log |H|) sample complexity for equal prime-order candidate subgroups. This report supplies a separate exact fourth-moment certificate.",
+      "title": "Quantum Measurements for Hidden Subgroup Problems with Optimal Sample Complexity",
+      "url": "https://arxiv.org/abs/quant-ph/0604174"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-BINARY-BLOCK-SIGN-COMPILER",
+      "resolved": false,
+      "statement": "Compile or falsify the invariant k-copy Helstrom sign at k=Theta(log |C|) using a polynomial sequence of subgroup, recoupling, or algebraic transforms."
+    },
+    {
+      "id": "PO-COSET-BINARY-SIGN-DEQUANTIZATION",
+      "resolved": false,
+      "statement": "Test whether the threshold sign statistic collapses to classical collision, character, Weisfeiler--Leman, or code invariants under the same access model."
+    },
+    {
+      "id": "PO-COSET-BINARY-NATURAL-INPUT-TRANSFER",
+      "resolved": false,
+      "statement": "Prove a promise-preserving reduction from a natural rigid-GI or code-equivalence decision family to the mixed coset-state experiment, including automorphisms and preparation cost."
+    },
+    {
+      "id": "PO-COSET-BINARY-CLASSICAL-QUERY-LOWER-BOUND",
+      "resolved": false,
+      "statement": "Establish the best classical randomized query complexity for the exact conjugacy-class hidden-subgroup decision promise."
+    }
+  ],
+  "scaling_records": [
+    {
+      "certified_equal_prior_bayes_advantage": 0.08159420670105187,
+      "certified_trace_distance_lower_bound": 0.16318841340210374,
+      "coarse_universal_fourth_moment_bound": 55.0,
+      "coarse_universal_trace_distance_lower_bound": 0.02383656473113981,
+      "conjugacy_class_size": 105,
+      "logarithmic_copy_information_sufficiency_proved": true,
+      "n": 8,
+      "polynomial_block_sign_compiler_known": false,
+      "relation_count_fourth_moment_upper_bound": 16.611338732318323,
+      "status": "logarithmic-copy-information-sufficient-compiler-open",
+      "threshold_copy_count": 7,
+      "threshold_second_moment": 1.2095238095238094
+    },
+    {
+      "certified_equal_prior_bayes_advantage": 0.07664175468171,
+      "certified_trace_distance_lower_bound": 0.15328350936342,
+      "coarse_universal_fourth_moment_bound": 55.0,
+      "coarse_universal_trace_distance_lower_bound": 0.02383656473113981,
+      "conjugacy_class_size": 2027025,
+      "logarithmic_copy_information_sufficiency_proved": true,
+      "n": 16,
+      "polynomial_block_sign_compiler_known": false,
+      "relation_count_fourth_moment_upper_bound": 11.783137062501918,
+      "status": "logarithmic-copy-information-sufficient-compiler-open",
+      "threshold_copy_count": 21,
+      "threshold_second_moment": 1.0345955279288612
+    },
+    {
+      "certified_equal_prior_bayes_advantage": 0.09168334579635878,
+      "certified_trace_distance_lower_bound": 0.18336669159271757,
+      "coarse_universal_fourth_moment_bound": 55.0,
+      "coarse_universal_trace_distance_lower_bound": 0.02383656473113981,
+      "conjugacy_class_size": 191898783962510625,
+      "logarithmic_copy_information_sufficiency_proved": true,
+      "n": 32,
+      "polynomial_block_sign_compiler_known": false,
+      "relation_count_fourth_moment_upper_bound": 25.194264685052875,
+      "status": "logarithmic-copy-information-sufficient-compiler-open",
+      "threshold_copy_count": 58,
+      "threshold_second_moment": 1.5019916760286531
+    },
+    {
+      "certified_equal_prior_bayes_advantage": 0.0940888147666435,
+      "certified_trace_distance_lower_bound": 0.188177629533287,
+      "coarse_universal_fourth_moment_bound": 55.0,
+      "coarse_universal_trace_distance_lower_bound": 0.02383656473113981,
+      "conjugacy_class_size": 112275575285571389562324404930670903477890625,
+      "logarithmic_copy_information_sufficiency_proved": true,
+      "n": 64,
+      "polynomial_block_sign_compiler_known": false,
+      "relation_count_fourth_moment_upper_bound": 28.325412461834205,
+      "status": "logarithmic-copy-information-sufficient-compiler-open",
+      "threshold_copy_count": 147,
+      "threshold_second_moment": 1.589000645371639
+    },
+    {
+      "certified_equal_prior_bayes_advantage": 0.09908697111327464,
+      "certified_trace_distance_lower_bound": 0.19817394222654927,
+      "coarse_universal_fourth_moment_bound": 55.0,
+      "coarse_universal_trace_distance_lower_bound": 0.02383656473113981,
+      "conjugacy_class_size": 164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625,
+      "logarithmic_copy_information_sufficiency_proved": true,
+      "n": 128,
+      "polynomial_block_sign_compiler_known": false,
+      "relation_count_fourth_moment_upper_bound": 36.01652813849578,
+      "status": "logarithmic-copy-information-sufficient-compiler-open",
+      "threshold_copy_count": 357,
+      "threshold_second_moment": 1.7819067719622375
+    }
+  ],
+  "status": "theta-log-class-information-threshold-proved-compiler-open",
+  "summary": "Re-derived the published Theta(log |C|) decision sample complexity through an explicit exact fourth-moment identity. The identity rules out rare-spike collapse and sharpens compiler diagnostics, but is not a new sample-complexity theorem.",
+  "theorem": {
+    "constant_trace_distance_at_log_class_size_proved": true,
+    "efficient_helstrom_compiler_constructed": false,
+    "exact_fourth_moment_identity": "tau(X_k^4)=M^-4[F P2+2A P3f+A P3p+(2B+Q)P4p+6T P4t+M P8].",
+    "exact_relation_classification_proved": true,
+    "fourth_moment_constant_at_log_class_size_proved": true,
+    "interpolation_inequality": "tau|X|>=tau(X^2)^(3/2)/tau(X^4)^(1/2).",
+    "status": "theta-log-class-information-threshold-proved-compiler-open",
+    "theorem_verified": true,
+    "theta_log_class_copy_complexity_proved": true,
+    "threshold_conclusion": "At k=ceil(log2 M), tau(X^2)>=1/2, tau(X^4)<55, and trace distance exceeds 1/(2^(5/2)sqrt(55)).",
+    "universal_relation_bounds": "F<=E<=M^3, T<=M^2, and A,B,Q<=M^2."
+  },
+  "theorem_contract": {
+    "access_model": "Independent standard mixed coset states for H={e,h}, with h promised in one conjugacy class of M>=2 nonidentity involutions.",
+    "complexity_scope": "Information-theoretic copy complexity only. Helstrom circuit size, oracle preparation, and classical query complexity are outside the theorem.",
+    "decision_problem": "Trivial subgroup versus the promised involution class; no individual hidden-element output.",
+    "non_claim": "No efficient measurement, natural GI/code-equivalence transfer, decision-to-search reduction, classical separation, or speedup."
+  }
+}

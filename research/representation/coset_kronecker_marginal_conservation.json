@@ -1,0 +1,519 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Dimension-weighted fusion of Plancherel labels predicts attenuation.",
+      "resolution": "That replacement discards the hidden-conditioned column operators. Physical source summation preserves the weak law.",
+      "resolved": true
+    },
+    {
+      "objection": "More copies make a rare target irrep more likely.",
+      "resolution": "Not in the final target marginal: every q has exactly the same pointwise probabilities.",
+      "resolved": true
+    },
+    {
+      "objection": "Marginal conservation proves no collective gain exists.",
+      "resolution": "Correlations and multiplicity registers are discarded; a noncentral coherent statistic can lie outside the theorem.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "fused_target_law_escapes_two_plancherel_domination": false,
+    "multiplicity_space_collective_gain_ruled_out": false,
+    "ordinary_kronecker_target_label_amplifies_signal": false,
+    "postfusion_central_commutator_filter_viable": false,
+    "reason": "Fusion conserves the one-copy target-label law exactly. Any gain must use correlations or multiplicity-space coherence rather than rare final labels.",
+    "source_target_correlations_are_uninformative": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:21:57.483086+00:00",
+  "existing_two_copy_controls": [
+    {
+      "exact_joint_probability_sum": "1",
+      "existing_conditional_law_matches_conservation_theorem": true,
+      "involution_cycle_type": [
+        2,
+        1
+      ],
+      "maximum_exact_target_marginal_residual": "0",
+      "n": 3,
+      "ordered_source_pair_count": 9,
+      "status": "existing-two-copy-law-marginal-conserved",
+      "target_count": 3
+    },
+    {
+      "exact_joint_probability_sum": "1",
+      "existing_conditional_law_matches_conservation_theorem": true,
+      "involution_cycle_type": [
+        2,
+        1,
+        1
+      ],
+      "maximum_exact_target_marginal_residual": "0",
+      "n": 4,
+      "ordered_source_pair_count": 25,
+      "status": "existing-two-copy-law-marginal-conserved",
+      "target_count": 5
+    },
+    {
+      "exact_joint_probability_sum": "1",
+      "existing_conditional_law_matches_conservation_theorem": true,
+      "involution_cycle_type": [
+        2,
+        2
+      ],
+      "maximum_exact_target_marginal_residual": "0",
+      "n": 4,
+      "ordered_source_pair_count": 25,
+      "status": "existing-two-copy-law-marginal-conserved",
+      "target_count": 5
+    },
+    {
+      "exact_joint_probability_sum": "1",
+      "existing_conditional_law_matches_conservation_theorem": true,
+      "involution_cycle_type": [
+        2,
+        2,
+        1
+      ],
+      "maximum_exact_target_marginal_residual": "0",
+      "n": 5,
+      "ordered_source_pair_count": 49,
+      "status": "existing-two-copy-law-marginal-conserved",
+      "target_count": 7
+    }
+  ],
+  "falsifiers_triggered": [
+    "Naive maximally mixed fusion drops the conditioned column operators.",
+    "Target support occurrence does not imply target measurement mass gain.",
+    "Additional copies do not improve the final irrep-label marginal.",
+    "The surviving search space is joint and multiplicity-sensitive."
+  ],
+  "fusion_marginal_controls": [
+    {
+      "copy_count": 1,
+      "exact_probability_sum": "1",
+      "involution_cycle_type": [
+        2,
+        1
+      ],
+      "maximum_exact_one_copy_residual": "0",
+      "maximum_pointwise_plancherel_ratio": 2.0,
+      "n": 3,
+      "one_copy_weak_fourier_marginal_conserved": true,
+      "pointwise_two_plancherel_domination_verified": true,
+      "status": "q-copy-weak-fourier-marginal-conserved",
+      "target_count": 3
+    },
+    {
+      "copy_count": 2,
+      "exact_probability_sum": "1",
+      "involution_cycle_type": [
+        2,
+        1
+      ],
+      "maximum_exact_one_copy_residual": "0",
+      "maximum_pointwise_plancherel_ratio": 2.0,
+      "n": 3,
+      "one_copy_weak_fourier_marginal_conserved": true,
+      "pointwise_two_plancherel_domination_verified": true,
+      "status": "q-copy-weak-fourier-marginal-conserved",
+      "target_count": 3
+    },
+    {
+      "copy_count": 3,
+      "exact_probability_sum": "1",
+      "involution_cycle_type": [
+        2,
+        1
+      ],
+      "maximum_exact_one_copy_residual": "0",
+      "maximum_pointwise_plancherel_ratio": 2.0,
+      "n": 3,
+      "one_copy_weak_fourier_marginal_conserved": true,
+      "pointwise_two_plancherel_domination_verified": true,
+      "status": "q-copy-weak-fourier-marginal-conserved",
+      "target_count": 3
+    },
+    {
+      "copy_count": 4,
+      "exact_probability_sum": "1",
+      "involution_cycle_type": [
+        2,
+        1
+      ],
+      "maximum_exact_one_copy_residual": "0",
+      "maximum_pointwise_plancherel_ratio": 2.0,
+      "n": 3,
+      "one_copy_weak_fourier_marginal_conserved": true,
+      "pointwise_two_plancherel_domination_verified": true,
+      "status": "q-copy-weak-fourier-marginal-conserved",
+      "target_count": 3
+    },
+    {
+      "copy_count": 7,
+      "exact_probability_sum": "1",
+      "involution_cycle_type": [
+        2,
+        1
+      ],
+      "maximum_exact_one_copy_residual": "0",
+      "maximum_pointwise_plancherel_ratio": 2.0,
+      "n": 3,
+      "one_copy_weak_fourier_marginal_conserved": true,
+      "pointwise_two_plancherel_domination_verified": true,
+      "status": "q-copy-weak-fourier-marginal-conserved",
+      "target_count": 3
+    },
+    {
+      "copy_count": 1,
+      "exact_probability_sum": "1",
+      "involution_cycle_type": [
+        2,
+        1,
+        1
+      ],
+      "maximum_exact_one_copy_residual": "0",
+      "maximum_pointwise_plancherel_ratio": 2.0,
+      "n": 4,
+      "one_copy_weak_fourier_marginal_conserved": true,
+      "pointwise_two_plancherel_domination_verified": true,
+      "status": "q-copy-weak-fourier-marginal-conserved",
+      "target_count": 5
+    },
+    {
+      "copy_count": 2,
+      "exact_probability_sum": "1",
+      "involution_cycle_type": [
+        2,
+        1,
+        1
+      ],
+      "maximum_exact_one_copy_residual": "0",
+      "maximum_pointwise_plancherel_ratio": 2.0,
+      "n": 4,
+      "one_copy_weak_fourier_marginal_conserved": true,
+      "pointwise_two_plancherel_domination_verified": true,
+      "status": "q-copy-weak-fourier-marginal-conserved",
+      "target_count": 5
+    },
+    {
+      "copy_count": 3,
+      "exact_probability_sum": "1",
+      "involution_cycle_type": [
+        2,
+        1,
+        1
+      ],
+      "maximum_exact_one_copy_residual": "0",
+      "maximum_pointwise_plancherel_ratio": 2.0,
+      "n": 4,
+      "one_copy_weak_fourier_marginal_conserved": true,
+      "pointwise_two_plancherel_domination_verified": true,
+      "status": "q-copy-weak-fourier-marginal-conserved",
+      "target_count": 5
+    },
+    {
+      "copy_count": 4,
+      "exact_probability_sum": "1",
+      "involution_cycle_type": [
+        2,
+        1,
+        1
+      ],
+      "maximum_exact_one_copy_residual": "0",
+      "maximum_pointwise_plancherel_ratio": 2.0,
+      "n": 4,
+      "one_copy_weak_fourier_marginal_conserved": true,
+      "pointwise_two_plancherel_domination_verified": true,
+      "status": "q-copy-weak-fourier-marginal-conserved",
+      "target_count": 5
+    },
+    {
+      "copy_count": 7,
+      "exact_probability_sum": "1",
+      "involution_cycle_type": [
+        2,
+        1,
+        1
+      ],
+      "maximum_exact_one_copy_residual": "0",
+      "maximum_pointwise_plancherel_ratio": 2.0,
+      "n": 4,
+      "one_copy_weak_fourier_marginal_conserved": true,
+      "pointwise_two_plancherel_domination_verified": true,
+      "status": "q-copy-weak-fourier-marginal-conserved",
+      "target_count": 5
+    },
+    {
+      "copy_count": 1,
+      "exact_probability_sum": "1",
+      "involution_cycle_type": [
+        2,
+        2
+      ],
+      "maximum_exact_one_copy_residual": "0",
+      "maximum_pointwise_plancherel_ratio": 2.0,
+      "n": 4,
+      "one_copy_weak_fourier_marginal_conserved": true,
+      "pointwise_two_plancherel_domination_verified": true,
+      "status": "q-copy-weak-fourier-marginal-conserved",
+      "target_count": 5
+    },
+    {
+      "copy_count": 2,
+      "exact_probability_sum": "1",
+      "involution_cycle_type": [
+        2,
+        2
+      ],
+      "maximum_exact_one_copy_residual": "0",
+      "maximum_pointwise_plancherel_ratio": 2.0,
+      "n": 4,
+      "one_copy_weak_fourier_marginal_conserved": true,
+      "pointwise_two_plancherel_domination_verified": true,
+      "status": "q-copy-weak-fourier-marginal-conserved",
+      "target_count": 5
+    },
+    {
+      "copy_count": 3,
+      "exact_probability_sum": "1",
+      "involution_cycle_type": [
+        2,
+        2
+      ],
+      "maximum_exact_one_copy_residual": "0",
+      "maximum_pointwise_plancherel_ratio": 2.0,
+      "n": 4,
+      "one_copy_weak_fourier_marginal_conserved": true,
+      "pointwise_two_plancherel_domination_verified": true,
+      "status": "q-copy-weak-fourier-marginal-conserved",
+      "target_count": 5
+    },
+    {
+      "copy_count": 4,
+      "exact_probability_sum": "1",
+      "involution_cycle_type": [
+        2,
+        2
+      ],
+      "maximum_exact_one_copy_residual": "0",
+      "maximum_pointwise_plancherel_ratio": 2.0,
+      "n": 4,
+      "one_copy_weak_fourier_marginal_conserved": true,
+      "pointwise_two_plancherel_domination_verified": true,
+      "status": "q-copy-weak-fourier-marginal-conserved",
+      "target_count": 5
+    },
+    {
+      "copy_count": 7,
+      "exact_probability_sum": "1",
+      "involution_cycle_type": [
+        2,
+        2
+      ],
+      "maximum_exact_one_copy_residual": "0",
+      "maximum_pointwise_plancherel_ratio": 2.0,
+      "n": 4,
+      "one_copy_weak_fourier_marginal_conserved": true,
+      "pointwise_two_plancherel_domination_verified": true,
+      "status": "q-copy-weak-fourier-marginal-conserved",
+      "target_count": 5
+    },
+    {
+      "copy_count": 1,
+      "exact_probability_sum": "1",
+      "involution_cycle_type": [
+        2,
+        2,
+        1
+      ],
+      "maximum_exact_one_copy_residual": "0",
+      "maximum_pointwise_plancherel_ratio": 2.0,
+      "n": 5,
+      "one_copy_weak_fourier_marginal_conserved": true,
+      "pointwise_two_plancherel_domination_verified": true,
+      "status": "q-copy-weak-fourier-marginal-conserved",
+      "target_count": 7
+    },
+    {
+      "copy_count": 2,
+      "exact_probability_sum": "1",
+      "involution_cycle_type": [
+        2,
+        2,
+        1
+      ],
+      "maximum_exact_one_copy_residual": "0",
+      "maximum_pointwise_plancherel_ratio": 2.0,
+      "n": 5,
+      "one_copy_weak_fourier_marginal_conserved": true,
+      "pointwise_two_plancherel_domination_verified": true,
+      "status": "q-copy-weak-fourier-marginal-conserved",
+      "target_count": 7
+    },
+    {
+      "copy_count": 3,
+      "exact_probability_sum": "1",
+      "involution_cycle_type": [
+        2,
+        2,
+        1
+      ],
+      "maximum_exact_one_copy_residual": "0",
+      "maximum_pointwise_plancherel_ratio": 2.0,
+      "n": 5,
+      "one_copy_weak_fourier_marginal_conserved": true,
+      "pointwise_two_plancherel_domination_verified": true,
+      "status": "q-copy-weak-fourier-marginal-conserved",
+      "target_count": 7
+    },
+    {
+      "copy_count": 4,
+      "exact_probability_sum": "1",
+      "involution_cycle_type": [
+        2,
+        2,
+        1
+      ],
+      "maximum_exact_one_copy_residual": "0",
+      "maximum_pointwise_plancherel_ratio": 2.0,
+      "n": 5,
+      "one_copy_weak_fourier_marginal_conserved": true,
+      "pointwise_two_plancherel_domination_verified": true,
+      "status": "q-copy-weak-fourier-marginal-conserved",
+      "target_count": 7
+    },
+    {
+      "copy_count": 7,
+      "exact_probability_sum": "1",
+      "involution_cycle_type": [
+        2,
+        2,
+        1
+      ],
+      "maximum_exact_one_copy_residual": "0",
+      "maximum_pointwise_plancherel_ratio": 2.0,
+      "n": 5,
+      "one_copy_weak_fourier_marginal_conserved": true,
+      "pointwise_two_plancherel_domination_verified": true,
+      "status": "q-copy-weak-fourier-marginal-conserved",
+      "target_count": 7
+    }
+  ],
+  "headline_metrics": {
+    "all_copy_marginal_conservation_theorem_count": 1,
+    "existing_two_copy_law_marginal_failure_count": 0,
+    "fusion_marginal_control_failure_count": 0,
+    "maximum_tested_copy_count": 7,
+    "maximum_tested_symmetric_group_degree": 5,
+    "multiplicity_collective_information_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "regular_column_control_failure_count": 0,
+    "target_label_signal_amplification_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "retain_physical_conditioned_column_states",
+      "resolution": "Source probabilities cancel their normalization factors; each source sum is the two-point regular-character kernel.",
+      "resolved": true
+    },
+    {
+      "obligation": "derive_arbitrary_copy_target_marginal",
+      "resolution": "The diagonal character projector raises the same two-point kernel to the qth power, leaving only e and h.",
+      "resolved": true
+    },
+    {
+      "obligation": "reconcile_existing_two_copy_conditional_law",
+      "resolution": "Exact summation of the stored source-pair/target joint law returns the one-copy target distribution in every control.",
+      "resolved": true
+    },
+    {
+      "obligation": "exclude_target_label_signal_amplification",
+      "resolution": "The target marginal is exactly independent of fusion arity.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_multiplicity_space_collective_information",
+      "resolution": "The source-target joint law and multiplicity coherences may contain information absent from the target marginal.",
+      "resolved": false
+    }
+  ],
+  "regular_column_controls": [
+    {
+      "exact_two_point_support_verified": true,
+      "expected_supported_group_element_count": 2,
+      "group_order": 6,
+      "involution_cycle_type": [
+        2,
+        1
+      ],
+      "maximum_exact_column_residual": 0,
+      "n": 3,
+      "status": "regular-column-two-point-support-verified",
+      "supported_group_element_count": 2
+    },
+    {
+      "exact_two_point_support_verified": true,
+      "expected_supported_group_element_count": 2,
+      "group_order": 24,
+      "involution_cycle_type": [
+        2,
+        1,
+        1
+      ],
+      "maximum_exact_column_residual": 0,
+      "n": 4,
+      "status": "regular-column-two-point-support-verified",
+      "supported_group_element_count": 2
+    },
+    {
+      "exact_two_point_support_verified": true,
+      "expected_supported_group_element_count": 2,
+      "group_order": 24,
+      "involution_cycle_type": [
+        2,
+        2
+      ],
+      "maximum_exact_column_residual": 0,
+      "n": 4,
+      "status": "regular-column-two-point-support-verified",
+      "supported_group_element_count": 2
+    },
+    {
+      "exact_two_point_support_verified": true,
+      "expected_supported_group_element_count": 2,
+      "group_order": 120,
+      "involution_cycle_type": [
+        2,
+        2,
+        1
+      ],
+      "maximum_exact_column_residual": 0,
+      "n": 5,
+      "status": "regular-column-two-point-support-verified",
+      "supported_group_element_count": 2
+    }
+  ],
+  "status": "kronecker-target-marginal-conserved-correlations-open",
+  "summary": "Proved that arbitrary-copy physical Kronecker fusion cannot amplify the weak-Fourier target-label marginal.",
+  "theorem": {
+    "arbitrary_copy_count": true,
+    "arbitrary_finite_group": true,
+    "commutator_filter_consequence": "Final-label commutator-score filtering remains kappa=2 dominated for every fusion arity.",
+    "full_joint_information_collapses_to_one_copy": false,
+    "marginal_conservation_law": "Pr_q[tau]=d_tau(d_tau+chi_tau(h))/|G| for every q>=1",
+    "plancherel_domination": "Pr_q[tau]<=2d_tau^2/|G|",
+    "q_copy_target_formula": "Pr_q[tau]=d_tau|G|^(-q-1) sum_g chi_tau(g)^* S_h(g)^q",
+    "scope_limit": "The theorem discards source labels and multiplicity registers; it does not bound their correlations or coherent joint observables.",
+    "source_column_sum_identity": "sum_lambda d_lambda(chi_lambda(g)+chi_lambda(gh))=|G|(1[g=e]+1[g=h])",
+    "status": "all-copy-weak-fourier-target-marginal-conservation",
+    "target_label_amplification_possible": false,
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "input": "q independent coset states for the same involution h",
+    "operation": "diagonal irrep measurement after physical Kronecker fusion",
+    "output": "Pr_q[tau]=d_tau(d_tau+chi_tau(h))/|G| for every q>=1",
+    "scope": "The theorem discards source labels and multiplicity registers; it does not bound their correlations or coherent joint observables."
+  }
+}

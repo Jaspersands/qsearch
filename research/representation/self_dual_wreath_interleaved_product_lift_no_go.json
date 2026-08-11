@@ -1,0 +1,1352 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The sparse seed already proves target triviality.",
+      "resolution": "False: exact S3 enumeration finds 48 nonidentity targets at depth zero. The no-go starts only after a positive cube lift.",
+      "resolved": true
+    },
+    {
+      "objection": "S3 target cancellation may be a finite-group accident.",
+      "resolution": "The target is an explicit product of conjugates of the defining relators, checked by free reduction.",
+      "resolved": true
+    },
+    {
+      "objection": "The generic four-exponent upper bound may be tight.",
+      "resolution": "Conjugacy-class incidence gives an all-finite-group upper bound |G|^3 k(G)^2, and C=E=1 gives the matching leading lower bound.",
+      "resolved": true
+    },
+    {
+      "objection": "Finite lift depths are being extrapolated.",
+      "resolution": "The all-depth proof uses unit-tail singleton relators and support projection; stored depths are implementation controls only.",
+      "resolved": true
+    }
+  ],
+  "all_depth_certificate": {
+    "arbitrary_positive_lift_depth": true,
+    "exact_leading_solution_exponent": true,
+    "exact_target_identity": true,
+    "exact_target_reduction": "r3 rewrites A^-1 C A B=BC; r4 and r2 imply [C,B^-1 E B]=1; the target becomes r2^-1.",
+    "family_scope": "P_t=EFEBAFAB A^t, D_t={0000,1001}xF_2^t, S_t=D_t\\{0}, for every t>=1",
+    "finite_group_hom_lower_bound": "|G|^3",
+    "finite_group_hom_upper_bound": "|G|^3*k(G)^2",
+    "projected_support_statement": "After tail elimination, both same and different supports project to {0000,1001}; a nonzero tail supplies the missing zero same row.",
+    "scalar_pressure_formula": "-2 + 0.5*log2(1-2^(-(t+1))) + o(1)",
+    "scalar_pressure_margin_formula": "1 - 0.5*log2(1-2^(-(t+1))) > 1",
+    "stable_presentation_statement": "Every positive depth is Tietze-equivalent to the fixed five-generator, four-relator presentation stored in the target certificate.",
+    "status": "all-positive-depth-sparse-product-lifts-falsified",
+    "symmetric_group_solution_exponent": "3+o(1), exactly",
+    "tail_elimination": "Each appended unit row is in S_t; its same-color-one relation is the singleton appended generator, so every tail generator is identity.",
+    "uniform_pressure_margin_lower_bound": 1.0,
+    "universal_product_lift_no_go_verified": true
+  },
+  "claim_gate": {
+    "all_nonlinear_near_threshold_supports_controlled": false,
+    "exact_symmetric_group_exponent_three_proved": true,
+    "natural_component_M4_positive": false,
+    "positive_product_lift_escape_survives": false,
+    "positive_product_lift_stabilization_proved": true,
+    "positive_product_lift_target_identity_proved": true,
+    "reason": "The unlifted target survivor is real, but every positive cube lift has identity target and a uniform pressure loss exceeding one.",
+    "sparse_seed_finite_target_survival_verified": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:24:14.435475+00:00",
+  "falsifiers_triggered": [
+    "A genuine finite target survivor need not survive one scalable lift step.",
+    "A vanishing generic pressure margin can conceal a full exponent of loss.",
+    "A syntactically nonempty transported target can lie in the normal closure.",
+    "Full-cube padding can add decisive relations rather than harmless entropy."
+  ],
+  "finite_hom_count_controls": [
+    {
+      "conjugacy_class_count": 2,
+      "direct_presentation_solution_count": 32,
+      "exact_formula_solution_count": 32,
+      "finite_log_group_exponent": 5.0,
+      "formula_matches_direct_enumeration": true,
+      "group_order": 2,
+      "lower_bound": 8,
+      "lower_bound_verified": true,
+      "status": "finite-product-lift-hom-count-bound-verified",
+      "symmetric_group_degree": 2,
+      "upper_bound": 32,
+      "upper_bound_verified": true
+    },
+    {
+      "conjugacy_class_count": 3,
+      "direct_presentation_solution_count": 1320,
+      "exact_formula_solution_count": 1320,
+      "finite_log_group_exponent": 4.010240849278783,
+      "formula_matches_direct_enumeration": true,
+      "group_order": 6,
+      "lower_bound": 216,
+      "lower_bound_verified": true,
+      "status": "finite-product-lift-hom-count-bound-verified",
+      "symmetric_group_degree": 3,
+      "upper_bound": 1944,
+      "upper_bound_verified": true
+    },
+    {
+      "conjugacy_class_count": 5,
+      "direct_presentation_solution_count": null,
+      "exact_formula_solution_count": 148320,
+      "finite_log_group_exponent": 3.74667265453337,
+      "formula_matches_direct_enumeration": null,
+      "group_order": 24,
+      "lower_bound": 13824,
+      "lower_bound_verified": true,
+      "status": "finite-product-lift-hom-count-bound-verified",
+      "symmetric_group_degree": 4,
+      "upper_bound": 345600,
+      "upper_bound_verified": true
+    },
+    {
+      "conjugacy_class_count": 7,
+      "direct_presentation_solution_count": null,
+      "exact_formula_solution_count": 23157120,
+      "finite_log_group_exponent": 3.5421080101436924,
+      "formula_matches_direct_enumeration": null,
+      "group_order": 120,
+      "lower_bound": 1728000,
+      "lower_bound_verified": true,
+      "status": "finite-product-lift-hom-count-bound-verified",
+      "symmetric_group_degree": 5,
+      "upper_bound": 84672000,
+      "upper_bound_verified": true
+    }
+  ],
+  "headline_metrics": {
+    "all_depth_product_lift_no_go_theorem_count": 1,
+    "exact_symmetric_group_solution_exponent": 3.0,
+    "finite_hom_bound_failure_count": 0,
+    "finite_hom_count_control_count": 4,
+    "generic_solution_exponent_upper_bound": 4.0,
+    "maximum_stored_lift_depth": 8,
+    "new_quantum_algorithm_count": 0,
+    "normal_closure_certificate_failure_count": 0,
+    "positive_lift_S3_nonidentity_target_count": 0,
+    "positive_lift_control_failure_count": 0,
+    "sparse_seed_S3_nonidentity_target_count": 48,
+    "stored_positive_lift_depth_count": 8,
+    "uniform_pressure_margin_lower_bound": 1.0
+  },
+  "positive_lift_controls": [
+    {
+      "appended_pattern_generators": [
+        9
+      ],
+      "appended_singleton_relators": [
+        [
+          -9
+        ]
+      ],
+      "different_support_size": 4,
+      "every_appended_generator_forced_identity": true,
+      "exact_control_verified": true,
+      "exact_scalar_pressure_margin": 1.207518749639422,
+      "exact_symmetric_group_solution_exponent": 3.0,
+      "frame_width": 5,
+      "generic_scalar_pressure_margin": 0.20751874963942196,
+      "generic_solution_exponent_upper_bound": 4.0,
+      "lift_depth": 1,
+      "pattern": "EFEBAFABA",
+      "projected_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "remaining_generators": [
+        3,
+        5,
+        6,
+        7,
+        8
+      ],
+      "residual_relations": [
+        [
+          -8,
+          -6,
+          8,
+          6
+        ],
+        [
+          -8,
+          -7,
+          -5,
+          8,
+          5,
+          7
+        ],
+        [
+          -6,
+          -5,
+          -3,
+          6,
+          3,
+          5
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          8,
+          -3,
+          6,
+          3,
+          5,
+          7
+        ]
+      ],
+      "residual_target_word": [
+        -7,
+        -5,
+        -3,
+        -6,
+        3,
+        -8,
+        5,
+        6,
+        7,
+        8
+      ],
+      "same_support_size": 3,
+      "stable_positive_depth_presentation_verified": true,
+      "status": "positive-depth-product-lift-stabilization-verified",
+      "support_entropy_bits": 1.792481250360578
+    },
+    {
+      "appended_pattern_generators": [
+        9,
+        10
+      ],
+      "appended_singleton_relators": [
+        [
+          -9
+        ],
+        [
+          -10
+        ]
+      ],
+      "different_support_size": 8,
+      "every_appended_generator_forced_identity": true,
+      "exact_control_verified": true,
+      "exact_scalar_pressure_margin": 1.0963225389711981,
+      "exact_symmetric_group_solution_exponent": 3.0,
+      "frame_width": 6,
+      "generic_scalar_pressure_margin": 0.09632253897119814,
+      "generic_solution_exponent_upper_bound": 4.0,
+      "lift_depth": 2,
+      "pattern": "EFEBAFABAA",
+      "projected_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "remaining_generators": [
+        3,
+        5,
+        6,
+        7,
+        8
+      ],
+      "residual_relations": [
+        [
+          -8,
+          -6,
+          8,
+          6
+        ],
+        [
+          -8,
+          -7,
+          -5,
+          8,
+          5,
+          7
+        ],
+        [
+          -6,
+          -5,
+          -3,
+          6,
+          3,
+          5
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          8,
+          -3,
+          6,
+          3,
+          5,
+          7
+        ]
+      ],
+      "residual_target_word": [
+        -7,
+        -5,
+        -3,
+        -6,
+        3,
+        -8,
+        5,
+        6,
+        7,
+        8
+      ],
+      "same_support_size": 7,
+      "stable_positive_depth_presentation_verified": true,
+      "status": "positive-depth-product-lift-stabilization-verified",
+      "support_entropy_bits": 2.903677461028802
+    },
+    {
+      "appended_pattern_generators": [
+        9,
+        10,
+        11
+      ],
+      "appended_singleton_relators": [
+        [
+          -9
+        ],
+        [
+          -10
+        ],
+        [
+          -11
+        ]
+      ],
+      "different_support_size": 16,
+      "every_appended_generator_forced_identity": true,
+      "exact_control_verified": true,
+      "exact_scalar_pressure_margin": 1.0465547021957402,
+      "exact_symmetric_group_solution_exponent": 3.0,
+      "frame_width": 7,
+      "generic_scalar_pressure_margin": 0.046554702195740205,
+      "generic_solution_exponent_upper_bound": 4.0,
+      "lift_depth": 3,
+      "pattern": "EFEBAFABAAA",
+      "projected_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "remaining_generators": [
+        3,
+        5,
+        6,
+        7,
+        8
+      ],
+      "residual_relations": [
+        [
+          -8,
+          -6,
+          8,
+          6
+        ],
+        [
+          -8,
+          -7,
+          -5,
+          8,
+          5,
+          7
+        ],
+        [
+          -6,
+          -5,
+          -3,
+          6,
+          3,
+          5
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          8,
+          -3,
+          6,
+          3,
+          5,
+          7
+        ]
+      ],
+      "residual_target_word": [
+        -7,
+        -5,
+        -3,
+        -6,
+        3,
+        -8,
+        5,
+        6,
+        7,
+        8
+      ],
+      "same_support_size": 15,
+      "stable_positive_depth_presentation_verified": true,
+      "status": "positive-depth-product-lift-stabilization-verified",
+      "support_entropy_bits": 3.9534452978042594
+    },
+    {
+      "appended_pattern_generators": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "appended_singleton_relators": [
+        [
+          -9
+        ],
+        [
+          -10
+        ],
+        [
+          -11
+        ],
+        [
+          -12
+        ]
+      ],
+      "different_support_size": 32,
+      "every_appended_generator_forced_identity": true,
+      "exact_control_verified": true,
+      "exact_scalar_pressure_margin": 1.0229018448065625,
+      "exact_symmetric_group_solution_exponent": 3.0,
+      "frame_width": 8,
+      "generic_scalar_pressure_margin": 0.022901844806561655,
+      "generic_solution_exponent_upper_bound": 4.0,
+      "lift_depth": 4,
+      "pattern": "EFEBAFABAAAA",
+      "projected_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "remaining_generators": [
+        3,
+        5,
+        6,
+        7,
+        8
+      ],
+      "residual_relations": [
+        [
+          -8,
+          -6,
+          8,
+          6
+        ],
+        [
+          -8,
+          -7,
+          -5,
+          8,
+          5,
+          7
+        ],
+        [
+          -6,
+          -5,
+          -3,
+          6,
+          3,
+          5
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          8,
+          -3,
+          6,
+          3,
+          5,
+          7
+        ]
+      ],
+      "residual_target_word": [
+        -7,
+        -5,
+        -3,
+        -6,
+        3,
+        -8,
+        5,
+        6,
+        7,
+        8
+      ],
+      "same_support_size": 31,
+      "stable_positive_depth_presentation_verified": true,
+      "status": "positive-depth-product-lift-stabilization-verified",
+      "support_entropy_bits": 4.9770981551934375
+    },
+    {
+      "appended_pattern_generators": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "appended_singleton_relators": [
+        [
+          -9
+        ],
+        [
+          -10
+        ],
+        [
+          -11
+        ],
+        [
+          -12
+        ],
+        [
+          -13
+        ]
+      ],
+      "different_support_size": 64,
+      "every_appended_generator_forced_identity": true,
+      "exact_control_verified": true,
+      "exact_scalar_pressure_margin": 1.011360038250043,
+      "exact_symmetric_group_solution_exponent": 3.0,
+      "frame_width": 9,
+      "generic_scalar_pressure_margin": 0.011360038250042948,
+      "generic_solution_exponent_upper_bound": 4.0,
+      "lift_depth": 5,
+      "pattern": "EFEBAFABAAAAA",
+      "projected_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "remaining_generators": [
+        3,
+        5,
+        6,
+        7,
+        8
+      ],
+      "residual_relations": [
+        [
+          -8,
+          -6,
+          8,
+          6
+        ],
+        [
+          -8,
+          -7,
+          -5,
+          8,
+          5,
+          7
+        ],
+        [
+          -6,
+          -5,
+          -3,
+          6,
+          3,
+          5
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          8,
+          -3,
+          6,
+          3,
+          5,
+          7
+        ]
+      ],
+      "residual_target_word": [
+        -7,
+        -5,
+        -3,
+        -6,
+        3,
+        -8,
+        5,
+        6,
+        7,
+        8
+      ],
+      "same_support_size": 63,
+      "stable_positive_depth_presentation_verified": true,
+      "status": "positive-depth-product-lift-stabilization-verified",
+      "support_entropy_bits": 5.988639961749958
+    },
+    {
+      "appended_pattern_generators": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "appended_singleton_relators": [
+        [
+          -9
+        ],
+        [
+          -10
+        ],
+        [
+          -11
+        ],
+        [
+          -12
+        ],
+        [
+          -13
+        ],
+        [
+          -14
+        ]
+      ],
+      "different_support_size": 128,
+      "every_appended_generator_forced_identity": true,
+      "exact_control_verified": true,
+      "exact_scalar_pressure_margin": 1.0056576566139164,
+      "exact_symmetric_group_solution_exponent": 3.0,
+      "frame_width": 10,
+      "generic_scalar_pressure_margin": 0.005657656613916373,
+      "generic_solution_exponent_upper_bound": 4.0,
+      "lift_depth": 6,
+      "pattern": "EFEBAFABAAAAAA",
+      "projected_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "remaining_generators": [
+        3,
+        5,
+        6,
+        7,
+        8
+      ],
+      "residual_relations": [
+        [
+          -8,
+          -6,
+          8,
+          6
+        ],
+        [
+          -8,
+          -7,
+          -5,
+          8,
+          5,
+          7
+        ],
+        [
+          -6,
+          -5,
+          -3,
+          6,
+          3,
+          5
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          8,
+          -3,
+          6,
+          3,
+          5,
+          7
+        ]
+      ],
+      "residual_target_word": [
+        -7,
+        -5,
+        -3,
+        -6,
+        3,
+        -8,
+        5,
+        6,
+        7,
+        8
+      ],
+      "same_support_size": 127,
+      "stable_positive_depth_presentation_verified": true,
+      "status": "positive-depth-product-lift-stabilization-verified",
+      "support_entropy_bits": 6.994342343386083
+    },
+    {
+      "appended_pattern_generators": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "appended_singleton_relators": [
+        [
+          -9
+        ],
+        [
+          -10
+        ],
+        [
+          -11
+        ],
+        [
+          -12
+        ],
+        [
+          -13
+        ],
+        [
+          -14
+        ],
+        [
+          -15
+        ]
+      ],
+      "different_support_size": 256,
+      "every_appended_generator_forced_identity": true,
+      "exact_control_verified": true,
+      "exact_scalar_pressure_margin": 1.0028232815705707,
+      "exact_symmetric_group_solution_exponent": 3.0,
+      "frame_width": 11,
+      "generic_scalar_pressure_margin": 0.002823281570570657,
+      "generic_solution_exponent_upper_bound": 4.0,
+      "lift_depth": 7,
+      "pattern": "EFEBAFABAAAAAAA",
+      "projected_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "remaining_generators": [
+        3,
+        5,
+        6,
+        7,
+        8
+      ],
+      "residual_relations": [
+        [
+          -8,
+          -6,
+          8,
+          6
+        ],
+        [
+          -8,
+          -7,
+          -5,
+          8,
+          5,
+          7
+        ],
+        [
+          -6,
+          -5,
+          -3,
+          6,
+          3,
+          5
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          8,
+          -3,
+          6,
+          3,
+          5,
+          7
+        ]
+      ],
+      "residual_target_word": [
+        -7,
+        -5,
+        -3,
+        -6,
+        3,
+        -8,
+        5,
+        6,
+        7,
+        8
+      ],
+      "same_support_size": 255,
+      "stable_positive_depth_presentation_verified": true,
+      "status": "positive-depth-product-lift-stabilization-verified",
+      "support_entropy_bits": 7.997176718429429
+    },
+    {
+      "appended_pattern_generators": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "appended_singleton_relators": [
+        [
+          -9
+        ],
+        [
+          -10
+        ],
+        [
+          -11
+        ],
+        [
+          -12
+        ],
+        [
+          -13
+        ],
+        [
+          -14
+        ],
+        [
+          -15
+        ],
+        [
+          -16
+        ]
+      ],
+      "different_support_size": 512,
+      "every_appended_generator_forced_identity": true,
+      "exact_control_verified": true,
+      "exact_scalar_pressure_margin": 1.0014102595311893,
+      "exact_symmetric_group_solution_exponent": 3.0,
+      "frame_width": 12,
+      "generic_scalar_pressure_margin": 0.0014102595311893396,
+      "generic_solution_exponent_upper_bound": 4.0,
+      "lift_depth": 8,
+      "pattern": "EFEBAFABAAAAAAAA",
+      "projected_different_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "projected_same_support": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          1
+        ]
+      ],
+      "remaining_generators": [
+        3,
+        5,
+        6,
+        7,
+        8
+      ],
+      "residual_relations": [
+        [
+          -8,
+          -6,
+          8,
+          6
+        ],
+        [
+          -8,
+          -7,
+          -5,
+          8,
+          5,
+          7
+        ],
+        [
+          -6,
+          -5,
+          -3,
+          6,
+          3,
+          5
+        ],
+        [
+          -8,
+          -7,
+          -6,
+          -5,
+          8,
+          -3,
+          6,
+          3,
+          5,
+          7
+        ]
+      ],
+      "residual_target_word": [
+        -7,
+        -5,
+        -3,
+        -6,
+        3,
+        -8,
+        5,
+        6,
+        7,
+        8
+      ],
+      "same_support_size": 511,
+      "stable_positive_depth_presentation_verified": true,
+      "status": "positive-depth-product-lift-stabilization-verified",
+      "support_entropy_bits": 8.99858974046881
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "decide_if_positive_product_lift_target_survives",
+      "resolution": "An explicit free-word normal-closure certificate reduces the target to the inverse second relator for every group.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_all_depth_presentation_stabilization",
+      "resolution": "Singleton tail relators kill every added generator and the projected support is depth-independent.",
+      "resolved": true
+    },
+    {
+      "obligation": "replace_generic_solution_exponent_with_true_exponent",
+      "resolution": "The matching |G|^3 lower bound and |G|^3 k(G)^2 upper bound give exponent 3+o(1) for S_n.",
+      "resolved": true
+    },
+    {
+      "obligation": "classify_arbitrary_nonlinear_near_threshold_supports",
+      "resolution": "The proof uses the exact two-row base and full cube tail; it does not constrain unrelated nonlinear supports.",
+      "resolved": false
+    }
+  ],
+  "sparse_seed_control": {
+    "different_support": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0,
+        1
+      ]
+    ],
+    "finite_target_survival_verified": true,
+    "nonidentity_target_count": 48,
+    "pattern": "EFEBAFAB",
+    "remaining_generators": [
+      3,
+      5,
+      6,
+      7,
+      8
+    ],
+    "residual_relations": [
+      [
+        -8,
+        -6,
+        8,
+        6
+      ],
+      [
+        -8,
+        -7,
+        -5,
+        8,
+        5,
+        7
+      ],
+      [
+        -6,
+        -5,
+        -3,
+        6,
+        3,
+        5
+      ]
+    ],
+    "residual_target_word": [
+      -7,
+      -5,
+      -3,
+      -6,
+      3,
+      -8,
+      5,
+      6,
+      7,
+      8
+    ],
+    "same_support": [
+      [
+        1,
+        0,
+        0,
+        1
+      ]
+    ],
+    "solution_count": 1368,
+    "status": "exact-sparse-S3-target-survivor",
+    "symmetric_group_degree": 3
+  },
+  "status": "interleaved-sparse-product-lift-family-falsified",
+  "summary": "Proved that the only sparse width-four S3 target survivor found so far is destroyed by every positive full-cube product lift.",
+  "target_certificate": {
+    "all_group_target_identity_proved": true,
+    "commutator_from_second_and_fourth_verified": true,
+    "conjugated_third_relator": [
+      -3,
+      6,
+      3,
+      5,
+      -6,
+      -5
+    ],
+    "derived_commutator_relation": [
+      -6,
+      -5,
+      -8,
+      5,
+      6,
+      -5,
+      8,
+      5
+    ],
+    "exact_free_word_normal_closure_certificate_verified": true,
+    "final_inverse_second_relator": [
+      -7,
+      -5,
+      -8,
+      5,
+      7,
+      8
+    ],
+    "fourth_relator_factorization_verified": true,
+    "generator_names": [
+      "A=x3",
+      "B=x5",
+      "C=x6",
+      "D=x7",
+      "E=x8"
+    ],
+    "inverse_replacement_from_third_verified": true,
+    "inverse_replacement_relation": [
+      -3,
+      -6,
+      3,
+      5,
+      6,
+      -5
+    ],
+    "original_relations": [
+      [
+        -8,
+        -6,
+        8,
+        6
+      ],
+      [
+        -8,
+        -7,
+        -5,
+        8,
+        5,
+        7
+      ],
+      [
+        -6,
+        -5,
+        -3,
+        6,
+        3,
+        5
+      ],
+      [
+        -8,
+        -7,
+        -6,
+        -5,
+        8,
+        -3,
+        6,
+        3,
+        5,
+        7
+      ]
+    ],
+    "replacement_relation": [
+      -3,
+      6,
+      3,
+      5,
+      -6,
+      -5
+    ],
+    "simplified_fourth_relator": [
+      -8,
+      -7,
+      -6,
+      -5,
+      8,
+      5,
+      6,
+      7
+    ],
+    "status": "exact-target-normal-closure-certificate-verified",
+    "target_after_commutator_relation": [
+      -7,
+      -5,
+      -8,
+      5,
+      7,
+      8
+    ],
+    "target_after_third_relation": [
+      -7,
+      -6,
+      -5,
+      -8,
+      5,
+      6,
+      7,
+      8
+    ],
+    "target_factorization_from_original_relators": [
+      -7,
+      -5,
+      -3,
+      -6,
+      3,
+      -8,
+      5,
+      6,
+      7,
+      8
+    ],
+    "target_word": [
+      -7,
+      -5,
+      -3,
+      -6,
+      3,
+      -8,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "theorem_contract": {
+    "counting_conclusion": "|G|^3 <= #Hom <= |G|^3*k(G)^2",
+    "scope": "P_t=EFEBAFAB A^t, D_t={0000,1001}xF_2^t, S_t=D_t\\{0}, for every t>=1",
+    "scope_limit": "Arbitrary nonlinear supports, noncube lifts, and other interleaved base patterns remain open.",
+    "stabilization": "Every positive depth is Tietze-equivalent to the fixed five-generator, four-relator presentation stored in the target certificate.",
+    "target_conclusion": "r3 rewrites A^-1 C A B=BC; r4 and r2 imply [C,B^-1 E B]=1; the target becomes r2^-1."
+  }
+}

@@ -1,0 +1,1424 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Cyclic abelianization can hide a large perfect kernel.",
+      "resolution": "Not here: ordered {0,j} witnesses give a triangular exact Tietze collapse, not merely an abelian calculation.",
+      "resolved": true
+    },
+    {
+      "objection": "Conjugating middle words may retain growing complexity.",
+      "resolution": "Their coordinates are earlier in the total order and inductively become powers of the root generator.",
+      "resolved": true
+    },
+    {
+      "objection": "Infinite cyclic incidence leaves an asymptotic escape.",
+      "resolution": "It is confined to bounded width, and the marked surface bound does not depend on the cyclic order anyway.",
+      "resolved": true
+    }
+  ],
+  "all_depth_certificate": {
+    "arbitrary_width": true,
+    "asymptotic_cyclic_order_bound": "XOR translation by c* turns signed differences into the normalized incidence invariant; hence delta<=4 for n>=9.",
+    "code_scope": "C subset F_2^n, |C|=2^(n-2), d_min(C)>=2, and every projection onto n-2 coordinates is noninjective",
+    "exact_codeword_group_formula": "<z_i | W(c)W(c*)^-1, c in C> is <x | x^delta>, where delta is the gcd of signed-weight differences from c*.",
+    "induction_conclusion": "Every prior generator is z_0^(+/-1), so M_j is a power of z_0 and z_j=z_0^(+/-1).",
+    "marked_surface_reduction": "Cyclic rotation and c -> c x^-a expose an orientable genus-two word.",
+    "marked_surface_relation": "h^-1 e^-1 h x^a c^-1 [p,q] c x^-a e",
+    "pair_witness_formula": "For each j>0, a {0,j} collision gives z_j=M_j^-1 z_0^(+/-1) M_j.",
+    "pressure_margin_formula": "n-0.5*log2(2^(n-2)*(2^(n-2)-1)) > 2",
+    "status": "all-depth-nonsystematic-pair-witness-no-go",
+    "symmetric_group_solution_exponent_upper_bound": 5.0,
+    "triangular_order_property": "The ordered middle word M_j uses only z_1,...,z_(j-1).",
+    "uniform_pressure_margin_lower_bound": 2.0,
+    "universal_no_information_set_no_go_verified": true
+  },
+  "claim_gate": {
+    "all_interleaved_information_set_cores_controlled": false,
+    "all_multiple_base_fiber_patterns_controlled": false,
+    "all_no_information_set_BABA_cores_controlled": true,
+    "all_normalized_no_information_set_BABA_cores_controlled": true,
+    "all_unnormalized_no_information_set_cores_controlled": true,
+    "natural_component_M4_positive": false,
+    "nonabelian_pair_witness_kernel_survives": false,
+    "normalized_no_information_set_actual_pressure_survives": false,
+    "reason": "Triangular pair witnesses collapse the codeword group to one cyclic generator, and the fixed marked surface law costs an exponent.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:25:01.128444+00:00",
+  "falsifiers_triggered": [
+    "The cyclic incidence quotient has no hidden nonabelian kernel.",
+    "Conjugating pair-witness words collapse triangularly.",
+    "Every no-information-set BABA core is uniformly subleading."
+  ],
+  "headline_metrics": {
+    "all_depth_pair_witness_collapse_theorem_count": 1,
+    "control_failure_count": 0,
+    "infinite_cyclic_control_count": 1,
+    "minimum_stored_true_pressure_margin": 2.04655470219574,
+    "new_quantum_algorithm_count": 0,
+    "stored_cyclic_order_control_count": 5,
+    "stored_finite_cyclic_orders_realized": 3
+  },
+  "proof_obligations": [
+    {
+      "obligation": "bound_nonabelian_ordered_presentation_kernel",
+      "resolution": "Triangular pair witnesses express every generator as x or x^-1.",
+      "resolved": true
+    },
+    {
+      "obligation": "classify_all_no_information_set_BABA_cores",
+      "resolution": "The codeword group is cyclic and the marked surface loss is uniform.",
+      "resolved": true
+    },
+    {
+      "obligation": "remove_zero_codeword_normalization_assumption",
+      "resolution": "Relative relators W(c)W(c*)^-1 give the same triangular collapse, and XOR normalization transfers the order bound.",
+      "resolved": true
+    },
+    {
+      "obligation": "classify_interleaved_information_set_orderings",
+      "resolution": "The existing systematic theorem assumes information coordinates precede checks; arbitrary coordinate order may change face words.",
+      "resolved": false
+    }
+  ],
+  "representative_controls": [
+    {
+      "all_coordinate_pairs_covered": true,
+      "code_size": 8,
+      "code_width": 5,
+      "codeword_presentation_remaining_generator_count": 1,
+      "codeword_presentation_residual_relations": [
+        [
+          -5,
+          -5
+        ]
+      ],
+      "control_id": "INDEX-TWO-TWISTED-STAR",
+      "coordinate_root_signs": [
+        1,
+        -1,
+        -1,
+        -1,
+        -1
+      ],
+      "cyclic_order": 2,
+      "elimination_steps": [
+        {
+          "common_middle_coordinates_one_based": [],
+          "common_middle_word": [],
+          "eliminated_coordinate_one_based": 2,
+          "endpoint_relation_kind": "inverse-conjugacy",
+          "exact_step_verified": true,
+          "expected_triangular_relation": [
+            1,
+            2
+          ],
+          "middle_is_power_of_root": true,
+          "middle_word_after_prior_substitutions": [],
+          "one_endpoint_codeword": [
+            1,
+            1,
+            0,
+            0,
+            0
+          ],
+          "raw_relation_quotient": [
+            1,
+            2
+          ],
+          "relation_vanishes_after_solved_substitution": true,
+          "root_sign": -1,
+          "solved_generator_image": [
+            -1
+          ],
+          "status": "exact-triangular-pair-witness-elimination",
+          "zero_endpoint_codeword": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "common_middle_coordinates_one_based": [],
+          "common_middle_word": [],
+          "eliminated_coordinate_one_based": 3,
+          "endpoint_relation_kind": "inverse-conjugacy",
+          "exact_step_verified": true,
+          "expected_triangular_relation": [
+            1,
+            3
+          ],
+          "middle_is_power_of_root": true,
+          "middle_word_after_prior_substitutions": [],
+          "one_endpoint_codeword": [
+            1,
+            0,
+            1,
+            0,
+            0
+          ],
+          "raw_relation_quotient": [
+            1,
+            3
+          ],
+          "relation_vanishes_after_solved_substitution": true,
+          "root_sign": -1,
+          "solved_generator_image": [
+            -1
+          ],
+          "status": "exact-triangular-pair-witness-elimination",
+          "zero_endpoint_codeword": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "common_middle_coordinates_one_based": [],
+          "common_middle_word": [],
+          "eliminated_coordinate_one_based": 4,
+          "endpoint_relation_kind": "inverse-conjugacy",
+          "exact_step_verified": true,
+          "expected_triangular_relation": [
+            1,
+            4
+          ],
+          "middle_is_power_of_root": true,
+          "middle_word_after_prior_substitutions": [],
+          "one_endpoint_codeword": [
+            1,
+            0,
+            0,
+            1,
+            0
+          ],
+          "raw_relation_quotient": [
+            1,
+            4
+          ],
+          "relation_vanishes_after_solved_substitution": true,
+          "root_sign": -1,
+          "solved_generator_image": [
+            -1
+          ],
+          "status": "exact-triangular-pair-witness-elimination",
+          "zero_endpoint_codeword": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "common_middle_coordinates_one_based": [],
+          "common_middle_word": [],
+          "eliminated_coordinate_one_based": 5,
+          "endpoint_relation_kind": "inverse-conjugacy",
+          "exact_step_verified": true,
+          "expected_triangular_relation": [
+            1,
+            5
+          ],
+          "middle_is_power_of_root": true,
+          "middle_word_after_prior_substitutions": [],
+          "one_endpoint_codeword": [
+            1,
+            0,
+            0,
+            0,
+            1
+          ],
+          "raw_relation_quotient": [
+            1,
+            5
+          ],
+          "relation_vanishes_after_solved_substitution": true,
+          "root_sign": -1,
+          "solved_generator_image": [
+            -1
+          ],
+          "status": "exact-triangular-pair-witness-elimination",
+          "zero_endpoint_codeword": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "exact_marked_control_verified": true,
+      "exact_ordered_codeword_cyclic_collapse_verified": true,
+      "has_dimension_sized_information_set": false,
+      "marked_remaining_generator_count": 6,
+      "marked_residual_target_word": [
+        -13,
+        -12,
+        13,
+        10,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -10,
+        -10,
+        -10,
+        -13,
+        12,
+        13
+      ],
+      "marked_solution_exponent_certificate_source": "single-orientable-surface-genus-2",
+      "marked_solution_exponent_upper_bound": 5.0,
+      "marked_support_difference_peeling_stalls": true,
+      "marked_true_pressure_margin_lower_bound": 2.096322538971198,
+      "minimum_distance": 2,
+      "reference_codeword": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "relative_signed_codeword_exponents": [
+        0,
+        -2,
+        -2,
+        -2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "signed_codeword_exponents": [
+        0,
+        -2,
+        -2,
+        -2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "nonsystematic-core-collapses-to-cyclic-surface-system"
+    },
+    {
+      "all_coordinate_pairs_covered": true,
+      "code_size": 8,
+      "code_width": 5,
+      "codeword_presentation_remaining_generator_count": 1,
+      "codeword_presentation_residual_relations": [
+        [
+          -5,
+          -5,
+          -5
+        ]
+      ],
+      "control_id": "INDEX-THREE",
+      "coordinate_root_signs": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "cyclic_order": 3,
+      "elimination_steps": [
+        {
+          "common_middle_coordinates_one_based": [],
+          "common_middle_word": [],
+          "eliminated_coordinate_one_based": 2,
+          "endpoint_relation_kind": "swap-conjugacy",
+          "exact_step_verified": true,
+          "expected_triangular_relation": [
+            1,
+            -2
+          ],
+          "middle_is_power_of_root": true,
+          "middle_word_after_prior_substitutions": [],
+          "one_endpoint_codeword": [
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          "raw_relation_quotient": [
+            1,
+            -2
+          ],
+          "relation_vanishes_after_solved_substitution": true,
+          "root_sign": 1,
+          "solved_generator_image": [
+            1
+          ],
+          "status": "exact-triangular-pair-witness-elimination",
+          "zero_endpoint_codeword": [
+            0,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "common_middle_coordinates_one_based": [
+            2
+          ],
+          "common_middle_word": [
+            2
+          ],
+          "eliminated_coordinate_one_based": 3,
+          "endpoint_relation_kind": "swap-conjugacy",
+          "exact_step_verified": true,
+          "expected_triangular_relation": [
+            1,
+            2,
+            -3,
+            -2
+          ],
+          "middle_is_power_of_root": true,
+          "middle_word_after_prior_substitutions": [
+            1
+          ],
+          "one_endpoint_codeword": [
+            1,
+            1,
+            0,
+            1,
+            0
+          ],
+          "raw_relation_quotient": [
+            1,
+            2,
+            -3,
+            -2
+          ],
+          "relation_vanishes_after_solved_substitution": true,
+          "root_sign": 1,
+          "solved_generator_image": [
+            1
+          ],
+          "status": "exact-triangular-pair-witness-elimination",
+          "zero_endpoint_codeword": [
+            0,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "common_middle_coordinates_one_based": [
+            2,
+            3
+          ],
+          "common_middle_word": [
+            2,
+            3
+          ],
+          "eliminated_coordinate_one_based": 4,
+          "endpoint_relation_kind": "swap-conjugacy",
+          "exact_step_verified": true,
+          "expected_triangular_relation": [
+            1,
+            2,
+            3,
+            -4,
+            -3,
+            -2
+          ],
+          "middle_is_power_of_root": true,
+          "middle_word_after_prior_substitutions": [
+            1,
+            1
+          ],
+          "one_endpoint_codeword": [
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_relation_quotient": [
+            1,
+            2,
+            3,
+            -4,
+            -3,
+            -2
+          ],
+          "relation_vanishes_after_solved_substitution": true,
+          "root_sign": 1,
+          "solved_generator_image": [
+            1
+          ],
+          "status": "exact-triangular-pair-witness-elimination",
+          "zero_endpoint_codeword": [
+            0,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "common_middle_coordinates_one_based": [
+            2,
+            3
+          ],
+          "common_middle_word": [
+            2,
+            3
+          ],
+          "eliminated_coordinate_one_based": 5,
+          "endpoint_relation_kind": "swap-conjugacy",
+          "exact_step_verified": true,
+          "expected_triangular_relation": [
+            1,
+            2,
+            3,
+            -5,
+            -3,
+            -2
+          ],
+          "middle_is_power_of_root": true,
+          "middle_word_after_prior_substitutions": [
+            1,
+            1
+          ],
+          "one_endpoint_codeword": [
+            1,
+            1,
+            1,
+            0,
+            0
+          ],
+          "raw_relation_quotient": [
+            1,
+            2,
+            3,
+            -5,
+            -3,
+            -2
+          ],
+          "relation_vanishes_after_solved_substitution": true,
+          "root_sign": 1,
+          "solved_generator_image": [
+            1
+          ],
+          "status": "exact-triangular-pair-witness-elimination",
+          "zero_endpoint_codeword": [
+            0,
+            1,
+            1,
+            0,
+            1
+          ]
+        }
+      ],
+      "exact_marked_control_verified": true,
+      "exact_ordered_codeword_cyclic_collapse_verified": true,
+      "has_dimension_sized_information_set": false,
+      "marked_remaining_generator_count": 6,
+      "marked_residual_target_word": [
+        -13,
+        -12,
+        13,
+        10,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        10,
+        10,
+        -13,
+        12,
+        13
+      ],
+      "marked_solution_exponent_certificate_source": "single-orientable-surface-genus-2",
+      "marked_solution_exponent_upper_bound": 5.0,
+      "marked_support_difference_peeling_stalls": true,
+      "marked_true_pressure_margin_lower_bound": 2.096322538971198,
+      "minimum_distance": 2,
+      "reference_codeword": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "relative_signed_codeword_exponents": [
+        0,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "signed_codeword_exponents": [
+        0,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "status": "nonsystematic-core-collapses-to-cyclic-surface-system"
+    },
+    {
+      "all_coordinate_pairs_covered": true,
+      "code_size": 16,
+      "code_width": 6,
+      "codeword_presentation_remaining_generator_count": 1,
+      "codeword_presentation_residual_relations": [
+        [
+          -6,
+          -6,
+          -6,
+          -6
+        ]
+      ],
+      "control_id": "INDEX-FOUR-MOD-FOUR",
+      "coordinate_root_signs": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "cyclic_order": 4,
+      "elimination_steps": [
+        {
+          "common_middle_coordinates_one_based": [],
+          "common_middle_word": [],
+          "eliminated_coordinate_one_based": 2,
+          "endpoint_relation_kind": "swap-conjugacy",
+          "exact_step_verified": true,
+          "expected_triangular_relation": [
+            1,
+            -2
+          ],
+          "middle_is_power_of_root": true,
+          "middle_word_after_prior_substitutions": [],
+          "one_endpoint_codeword": [
+            1,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "raw_relation_quotient": [
+            1,
+            -2
+          ],
+          "relation_vanishes_after_solved_substitution": true,
+          "root_sign": 1,
+          "solved_generator_image": [
+            1
+          ],
+          "status": "exact-triangular-pair-witness-elimination",
+          "zero_endpoint_codeword": [
+            0,
+            1,
+            0,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "common_middle_coordinates_one_based": [],
+          "common_middle_word": [],
+          "eliminated_coordinate_one_based": 3,
+          "endpoint_relation_kind": "swap-conjugacy",
+          "exact_step_verified": true,
+          "expected_triangular_relation": [
+            1,
+            -3
+          ],
+          "middle_is_power_of_root": true,
+          "middle_word_after_prior_substitutions": [],
+          "one_endpoint_codeword": [
+            1,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "raw_relation_quotient": [
+            1,
+            -3
+          ],
+          "relation_vanishes_after_solved_substitution": true,
+          "root_sign": 1,
+          "solved_generator_image": [
+            1
+          ],
+          "status": "exact-triangular-pair-witness-elimination",
+          "zero_endpoint_codeword": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "common_middle_coordinates_one_based": [
+            3
+          ],
+          "common_middle_word": [
+            3
+          ],
+          "eliminated_coordinate_one_based": 4,
+          "endpoint_relation_kind": "swap-conjugacy",
+          "exact_step_verified": true,
+          "expected_triangular_relation": [
+            1,
+            3,
+            -4,
+            -3
+          ],
+          "middle_is_power_of_root": true,
+          "middle_word_after_prior_substitutions": [
+            1
+          ],
+          "one_endpoint_codeword": [
+            1,
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          "raw_relation_quotient": [
+            1,
+            3,
+            -4,
+            -3
+          ],
+          "relation_vanishes_after_solved_substitution": true,
+          "root_sign": 1,
+          "solved_generator_image": [
+            1
+          ],
+          "status": "exact-triangular-pair-witness-elimination",
+          "zero_endpoint_codeword": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "common_middle_coordinates_one_based": [
+            3,
+            4
+          ],
+          "common_middle_word": [
+            3,
+            4
+          ],
+          "eliminated_coordinate_one_based": 5,
+          "endpoint_relation_kind": "swap-conjugacy",
+          "exact_step_verified": true,
+          "expected_triangular_relation": [
+            1,
+            3,
+            4,
+            -5,
+            -4,
+            -3
+          ],
+          "middle_is_power_of_root": true,
+          "middle_word_after_prior_substitutions": [
+            1,
+            1
+          ],
+          "one_endpoint_codeword": [
+            1,
+            0,
+            1,
+            1,
+            0,
+            1
+          ],
+          "raw_relation_quotient": [
+            1,
+            3,
+            4,
+            -5,
+            -4,
+            -3
+          ],
+          "relation_vanishes_after_solved_substitution": true,
+          "root_sign": 1,
+          "solved_generator_image": [
+            1
+          ],
+          "status": "exact-triangular-pair-witness-elimination",
+          "zero_endpoint_codeword": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "common_middle_coordinates_one_based": [
+            3,
+            4,
+            5
+          ],
+          "common_middle_word": [
+            3,
+            4,
+            5
+          ],
+          "eliminated_coordinate_one_based": 6,
+          "endpoint_relation_kind": "swap-conjugacy",
+          "exact_step_verified": true,
+          "expected_triangular_relation": [
+            1,
+            3,
+            4,
+            5,
+            -6,
+            -5,
+            -4,
+            -3
+          ],
+          "middle_is_power_of_root": true,
+          "middle_word_after_prior_substitutions": [
+            1,
+            1,
+            1
+          ],
+          "one_endpoint_codeword": [
+            1,
+            0,
+            1,
+            1,
+            1,
+            0
+          ],
+          "raw_relation_quotient": [
+            1,
+            3,
+            4,
+            5,
+            -6,
+            -5,
+            -4,
+            -3
+          ],
+          "relation_vanishes_after_solved_substitution": true,
+          "root_sign": 1,
+          "solved_generator_image": [
+            1
+          ],
+          "status": "exact-triangular-pair-witness-elimination",
+          "zero_endpoint_codeword": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "exact_marked_control_verified": true,
+      "exact_ordered_codeword_cyclic_collapse_verified": true,
+      "has_dimension_sized_information_set": false,
+      "marked_remaining_generator_count": 6,
+      "marked_residual_target_word": [
+        -14,
+        -13,
+        14,
+        -11,
+        -11,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        11,
+        11,
+        -14,
+        13,
+        14
+      ],
+      "marked_solution_exponent_certificate_source": "whitehead-orientable-surface-genus-2",
+      "marked_solution_exponent_upper_bound": 5.0,
+      "marked_support_difference_peeling_stalls": true,
+      "marked_true_pressure_margin_lower_bound": 2.04655470219574,
+      "minimum_distance": 2,
+      "reference_codeword": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "relative_signed_codeword_exponents": [
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "signed_codeword_exponents": [
+        0,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "status": "nonsystematic-core-collapses-to-cyclic-surface-system"
+    },
+    {
+      "all_coordinate_pairs_covered": true,
+      "code_size": 8,
+      "code_width": 5,
+      "codeword_presentation_remaining_generator_count": 1,
+      "codeword_presentation_residual_relations": [],
+      "control_id": "INFINITE-CYCLIC-RANK-DEFICIENT",
+      "coordinate_root_signs": [
+        1,
+        -1,
+        -1,
+        1,
+        1
+      ],
+      "cyclic_order": 0,
+      "elimination_steps": [
+        {
+          "common_middle_coordinates_one_based": [],
+          "common_middle_word": [],
+          "eliminated_coordinate_one_based": 2,
+          "endpoint_relation_kind": "inverse-conjugacy",
+          "exact_step_verified": true,
+          "expected_triangular_relation": [
+            1,
+            2
+          ],
+          "middle_is_power_of_root": true,
+          "middle_word_after_prior_substitutions": [],
+          "one_endpoint_codeword": [
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "raw_relation_quotient": [
+            1,
+            2
+          ],
+          "relation_vanishes_after_solved_substitution": true,
+          "root_sign": -1,
+          "solved_generator_image": [
+            -1
+          ],
+          "status": "exact-triangular-pair-witness-elimination",
+          "zero_endpoint_codeword": [
+            0,
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "common_middle_coordinates_one_based": [
+            2
+          ],
+          "common_middle_word": [
+            2
+          ],
+          "eliminated_coordinate_one_based": 3,
+          "endpoint_relation_kind": "inverse-conjugacy",
+          "exact_step_verified": true,
+          "expected_triangular_relation": [
+            1,
+            2,
+            3,
+            -2
+          ],
+          "middle_is_power_of_root": true,
+          "middle_word_after_prior_substitutions": [
+            -1
+          ],
+          "one_endpoint_codeword": [
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "raw_relation_quotient": [
+            1,
+            2,
+            3,
+            -2
+          ],
+          "relation_vanishes_after_solved_substitution": true,
+          "root_sign": -1,
+          "solved_generator_image": [
+            -1
+          ],
+          "status": "exact-triangular-pair-witness-elimination",
+          "zero_endpoint_codeword": [
+            0,
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "common_middle_coordinates_one_based": [
+            2,
+            3
+          ],
+          "common_middle_word": [
+            2,
+            3
+          ],
+          "eliminated_coordinate_one_based": 4,
+          "endpoint_relation_kind": "swap-conjugacy",
+          "exact_step_verified": true,
+          "expected_triangular_relation": [
+            1,
+            2,
+            3,
+            -4,
+            -3,
+            -2
+          ],
+          "middle_is_power_of_root": true,
+          "middle_word_after_prior_substitutions": [
+            -1,
+            -1
+          ],
+          "one_endpoint_codeword": [
+            1,
+            1,
+            1,
+            0,
+            1
+          ],
+          "raw_relation_quotient": [
+            1,
+            2,
+            3,
+            -4,
+            -3,
+            -2
+          ],
+          "relation_vanishes_after_solved_substitution": true,
+          "root_sign": 1,
+          "solved_generator_image": [
+            1
+          ],
+          "status": "exact-triangular-pair-witness-elimination",
+          "zero_endpoint_codeword": [
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "common_middle_coordinates_one_based": [
+            2,
+            3,
+            4
+          ],
+          "common_middle_word": [
+            2,
+            3,
+            4
+          ],
+          "eliminated_coordinate_one_based": 5,
+          "endpoint_relation_kind": "swap-conjugacy",
+          "exact_step_verified": true,
+          "expected_triangular_relation": [
+            1,
+            2,
+            3,
+            4,
+            -5,
+            -4,
+            -3,
+            -2
+          ],
+          "middle_is_power_of_root": true,
+          "middle_word_after_prior_substitutions": [
+            -1
+          ],
+          "one_endpoint_codeword": [
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          "raw_relation_quotient": [
+            1,
+            2,
+            3,
+            4,
+            -5,
+            -4,
+            -3,
+            -2
+          ],
+          "relation_vanishes_after_solved_substitution": true,
+          "root_sign": 1,
+          "solved_generator_image": [
+            1
+          ],
+          "status": "exact-triangular-pair-witness-elimination",
+          "zero_endpoint_codeword": [
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "exact_marked_control_verified": true,
+      "exact_ordered_codeword_cyclic_collapse_verified": true,
+      "has_dimension_sized_information_set": false,
+      "marked_remaining_generator_count": 6,
+      "marked_residual_target_word": [
+        -13,
+        -12,
+        13,
+        -10,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        10,
+        -13,
+        12,
+        13
+      ],
+      "marked_solution_exponent_certificate_source": "single-orientable-surface-genus-2",
+      "marked_solution_exponent_upper_bound": 5.0,
+      "marked_support_difference_peeling_stalls": true,
+      "marked_true_pressure_margin_lower_bound": 2.096322538971198,
+      "minimum_distance": 2,
+      "reference_codeword": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "relative_signed_codeword_exponents": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "signed_codeword_exponents": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "status": "nonsystematic-core-collapses-to-cyclic-surface-system"
+    },
+    {
+      "all_coordinate_pairs_covered": true,
+      "code_size": 8,
+      "code_width": 5,
+      "codeword_presentation_remaining_generator_count": 1,
+      "codeword_presentation_residual_relations": [
+        [
+          -5,
+          -5
+        ]
+      ],
+      "control_id": "AFFINE-TRANSLATED-TWISTED-STAR",
+      "coordinate_root_signs": [
+        1,
+        -1,
+        -1,
+        -1,
+        1
+      ],
+      "cyclic_order": 2,
+      "elimination_steps": [
+        {
+          "common_middle_coordinates_one_based": [],
+          "common_middle_word": [],
+          "eliminated_coordinate_one_based": 2,
+          "endpoint_relation_kind": "inverse-conjugacy",
+          "exact_step_verified": true,
+          "expected_triangular_relation": [
+            1,
+            2
+          ],
+          "middle_is_power_of_root": true,
+          "middle_word_after_prior_substitutions": [],
+          "one_endpoint_codeword": [
+            1,
+            1,
+            0,
+            0,
+            1
+          ],
+          "raw_relation_quotient": [
+            1,
+            2
+          ],
+          "relation_vanishes_after_solved_substitution": true,
+          "root_sign": -1,
+          "solved_generator_image": [
+            -1
+          ],
+          "status": "exact-triangular-pair-witness-elimination",
+          "zero_endpoint_codeword": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "common_middle_coordinates_one_based": [],
+          "common_middle_word": [],
+          "eliminated_coordinate_one_based": 3,
+          "endpoint_relation_kind": "inverse-conjugacy",
+          "exact_step_verified": true,
+          "expected_triangular_relation": [
+            1,
+            3
+          ],
+          "middle_is_power_of_root": true,
+          "middle_word_after_prior_substitutions": [],
+          "one_endpoint_codeword": [
+            1,
+            0,
+            1,
+            0,
+            1
+          ],
+          "raw_relation_quotient": [
+            1,
+            3
+          ],
+          "relation_vanishes_after_solved_substitution": true,
+          "root_sign": -1,
+          "solved_generator_image": [
+            -1
+          ],
+          "status": "exact-triangular-pair-witness-elimination",
+          "zero_endpoint_codeword": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "common_middle_coordinates_one_based": [],
+          "common_middle_word": [],
+          "eliminated_coordinate_one_based": 4,
+          "endpoint_relation_kind": "inverse-conjugacy",
+          "exact_step_verified": true,
+          "expected_triangular_relation": [
+            1,
+            4
+          ],
+          "middle_is_power_of_root": true,
+          "middle_word_after_prior_substitutions": [],
+          "one_endpoint_codeword": [
+            1,
+            0,
+            0,
+            1,
+            1
+          ],
+          "raw_relation_quotient": [
+            1,
+            4
+          ],
+          "relation_vanishes_after_solved_substitution": true,
+          "root_sign": -1,
+          "solved_generator_image": [
+            -1
+          ],
+          "status": "exact-triangular-pair-witness-elimination",
+          "zero_endpoint_codeword": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "common_middle_coordinates_one_based": [],
+          "common_middle_word": [],
+          "eliminated_coordinate_one_based": 5,
+          "endpoint_relation_kind": "swap-conjugacy",
+          "exact_step_verified": true,
+          "expected_triangular_relation": [
+            1,
+            -5
+          ],
+          "middle_is_power_of_root": true,
+          "middle_word_after_prior_substitutions": [],
+          "one_endpoint_codeword": [
+            1,
+            0,
+            0,
+            0,
+            0
+          ],
+          "raw_relation_quotient": [
+            1,
+            -5
+          ],
+          "relation_vanishes_after_solved_substitution": true,
+          "root_sign": 1,
+          "solved_generator_image": [
+            1
+          ],
+          "status": "exact-triangular-pair-witness-elimination",
+          "zero_endpoint_codeword": [
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "exact_marked_control_verified": true,
+      "exact_ordered_codeword_cyclic_collapse_verified": true,
+      "has_dimension_sized_information_set": false,
+      "marked_remaining_generator_count": 5,
+      "marked_residual_target_word": [
+        -13,
+        -12,
+        13,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -13,
+        12,
+        13
+      ],
+      "marked_solution_exponent_certificate_source": "single-orientable-surface-genus-2",
+      "marked_solution_exponent_upper_bound": 4.0,
+      "marked_support_difference_peeling_stalls": true,
+      "marked_true_pressure_margin_lower_bound": 3.096322538971198,
+      "minimum_distance": 2,
+      "reference_codeword": [
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "relative_signed_codeword_exponents": [
+        0,
+        -2,
+        -2,
+        -2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "signed_codeword_exponents": [
+        1,
+        -1,
+        -1,
+        -1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "status": "nonsystematic-core-collapses-to-cyclic-surface-system"
+    }
+  ],
+  "status": "all-no-information-set-BABA-cores-falsified",
+  "summary": "Proved that codimension-two codes without information sets have cyclic ordered presentations and pressure margin above two.",
+  "theorem_contract": {
+    "marked_pressure_conclusion": "Every code in scope leaves at most six generators and one uniform genus-two relation, so the exponent is at most five.",
+    "ordered_group_conclusion": "<z_i | W(c)W(c*)^-1, c in C> is <x | x^delta>, where delta is the gcd of signed-weight differences from c*.",
+    "scope": "C subset F_2^n, |C|=2^(n-2), d_min(C)>=2, and every projection onto n-2 coordinates is noninjective",
+    "scope_limit": "Codes with interleaved information sets, multiple base fibers, and other marked patterns remain open."
+  }
+}

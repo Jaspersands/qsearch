@@ -1,0 +1,258 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False. A union bound needs no independence; every selected side has the same iid marginal source law.",
+      "challenge": "The layouts are highly dependent, so union bounds fail.",
+      "resolved": true
+    },
+    {
+      "answer": "Summing factorial moments over all targets is exactly 2^q times the uniform-target average, which yields the max tail.",
+      "challenge": "The moment theorem controls a random target, not max_s.",
+      "resolved": true
+    },
+    {
+      "answer": "Not by itself. The proof instead caps every side multiplicity and lower-bounds the common full fiber size.",
+      "challenge": "Large side support alone forces large Schmidt rank.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Polynomial circuits can create volume-law states; only coordinate low-bond tensor architectures are excluded.",
+      "challenge": "Volume-law entanglement proves circuit hardness.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_fiber_coisometry_without_state_preparation_alive": true,
+    "arbitrary_label_adaptive_coordinate_layout_route_alive": false,
+    "fixed_polynomial_layout_dictionary_route_alive": false,
+    "general_polynomial_quantum_circuit_route_alive": true,
+    "inverse_polynomial_easy_source_coordinate_mps_route_alive": false,
+    "noncoordinate_tensorization_route_alive": true,
+    "polynomial_relation_solver_constructed": false,
+    "reason": "The growing moment theorem can be union-bounded over every balanced coordinate cut, forcing 2^(q-o(q)) high-fidelity Schmidt rank simultaneously. Only non-coordinate or state-avoiding implicit transforms remain relevant.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:23:10.434312+00:00",
+  "falsifiers_triggered": [
+    "Selecting a coordinate ordering after seeing all labels does not evade the low-bit fiber Schmidt-rank obstruction.",
+    "No inverse-polynomial easy-source subset supports a balanced polynomial-bond coordinate MPS at fixed high fidelity.",
+    "The theorem cannot be promoted to non-coordinate tensorizations, general circuits, or all-fiber coisometries."
+  ],
+  "finite_controls": [
+    {
+      "balanced_layout_count": 20,
+      "every_layout_fiber_size_consistent": true,
+      "every_layout_rank_bound_verified": true,
+      "full_fiber_size": 6,
+      "maximum_side_fiber_multiplicity": 3,
+      "minimum_deterministic_side_cap_rank_bound": 1,
+      "minimum_exact_schmidt_rank": 3,
+      "minimum_rank_for_requested_mass": 3,
+      "modulus_bits": 3,
+      "register_count": 6,
+      "register_offset": 0,
+      "requested_schmidt_mass": 0.99,
+      "status": "all-finite-balanced-layout-rank-bounds-verified",
+      "target": 2,
+      "trial_index": 0
+    },
+    {
+      "balanced_layout_count": 20,
+      "every_layout_fiber_size_consistent": true,
+      "every_layout_rank_bound_verified": true,
+      "full_fiber_size": 6,
+      "maximum_side_fiber_multiplicity": 4,
+      "minimum_deterministic_side_cap_rank_bound": 1,
+      "minimum_exact_schmidt_rank": 2,
+      "minimum_rank_for_requested_mass": 2,
+      "modulus_bits": 3,
+      "register_count": 6,
+      "register_offset": 0,
+      "requested_schmidt_mass": 0.99,
+      "status": "all-finite-balanced-layout-rank-bounds-verified",
+      "target": 7,
+      "trial_index": 1
+    },
+    {
+      "balanced_layout_count": 70,
+      "every_layout_fiber_size_consistent": true,
+      "every_layout_rank_bound_verified": true,
+      "full_fiber_size": 24,
+      "maximum_side_fiber_multiplicity": 8,
+      "minimum_deterministic_side_cap_rank_bound": 1,
+      "minimum_exact_schmidt_rank": 2,
+      "minimum_rank_for_requested_mass": 2,
+      "modulus_bits": 4,
+      "register_count": 8,
+      "register_offset": 0,
+      "requested_schmidt_mass": 0.99,
+      "status": "all-finite-balanced-layout-rank-bounds-verified",
+      "target": 1,
+      "trial_index": 0
+    },
+    {
+      "balanced_layout_count": 70,
+      "every_layout_fiber_size_consistent": true,
+      "every_layout_rank_bound_verified": true,
+      "full_fiber_size": 17,
+      "maximum_side_fiber_multiplicity": 4,
+      "minimum_deterministic_side_cap_rank_bound": 2,
+      "minimum_exact_schmidt_rank": 5,
+      "minimum_rank_for_requested_mass": 5,
+      "modulus_bits": 4,
+      "register_count": 8,
+      "register_offset": 0,
+      "requested_schmidt_mass": 0.99,
+      "status": "all-finite-balanced-layout-rank-bounds-verified",
+      "target": 1,
+      "trial_index": 1
+    }
+  ],
+  "headline_metrics": {
+    "adaptive_coordinate_mps_no_go_theorem_count": 1,
+    "all_balanced_coordinate_exp_rank_theorem_count": 1,
+    "all_layout_side_cap_union_theorem_count": 1,
+    "finite_all_layout_control_count": 4,
+    "finite_all_layout_control_failure_count": 0,
+    "finite_balanced_layout_count": 180,
+    "general_quantum_circuit_lower_bound_count": 0,
+    "maximum_all_layout_failure_log2_upper_bound": -16777235.0,
+    "minimum_scaling_rank_exponent_fraction": 0.7142856708467262,
+    "new_quantum_algorithm_count": 0,
+    "noncoordinate_tensor_network_no_go_count": 0,
+    "polynomial_dcp_decoder_count": 0,
+    "scaling_record_count": 4
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-DCP-ADAPTIVE-COORDINATE-LAYOUT",
+      "resolved": true,
+      "statement": "Control all balanced coordinate layouts selected after seeing the source labels."
+    },
+    {
+      "id": "PO-DCP-NONCOORDINATE-TENSOR",
+      "resolved": false,
+      "statement": "Classify algebraic/non-coordinate tensorizations that do not expose a balanced assignment-coordinate cut."
+    },
+    {
+      "id": "PO-DCP-COISOMETRY-WITHOUT-FIBER-STATE",
+      "resolved": false,
+      "statement": "Construct or obstruct an all-fiber arithmetic coisometry that never prepares one low-bit fiber state."
+    }
+  ],
+  "scaling_records": [
+    {
+      "all_layout_side_cap_failure_log2_upper_bound": -16777235.0,
+      "balanced_window": 2,
+      "every_balanced_coordinate_layout_exponential_rank_certified": true,
+      "finite_row_is_asymptotic_theorem": false,
+      "full_fiber_lower_tail_log2_upper_bound": -16777218.0,
+      "full_fiber_mean_log2": 16777220.0,
+      "inherited_averaged_factorial_moment_upper_bound": 2.0,
+      "lattice_chain_length_upper_bound": 877,
+      "modulus_bits": 16777216,
+      "moment_schedule_condition_ratio": 0.0027262333594451913,
+      "polynomial_bond_benchmark_log2": 300.0000020637917,
+      "register_count": 33554436,
+      "register_offset": 4,
+      "requested_schmidt_mass": 0.99,
+      "selected_factorial_moment_order": 28,
+      "side_multiplicity_cap_log2": 2396747,
+      "side_multiplicity_cap_subexponential": true,
+      "simultaneous_schmidt_rank_log2_lower_bound": 11983724.985500429,
+      "status": "all-balanced-coordinate-layouts-exponential-rank-certified"
+    },
+    {
+      "all_layout_side_cap_failure_log2_upper_bound": -4294967389.0,
+      "balanced_window": 2,
+      "every_balanced_coordinate_layout_exponential_rank_certified": true,
+      "finite_row_is_asymptotic_theorem": false,
+      "full_fiber_lower_tail_log2_upper_bound": -4294967298.0,
+      "full_fiber_mean_log2": 4294967300.0,
+      "inherited_averaged_factorial_moment_upper_bound": 2.0,
+      "lattice_chain_length_upper_bound": 17577,
+      "modulus_bits": 4294967296,
+      "moment_schedule_condition_ratio": 0.0005690204764175101,
+      "polynomial_bond_benchmark_log2": 396.00000000806165,
+      "register_count": 8589934596,
+      "register_offset": 4,
+      "requested_schmidt_mass": 0.99,
+      "selected_factorial_moment_order": 107,
+      "side_multiplicity_cap_log2": 160559527,
+      "side_multiplicity_cap_subexponential": true,
+      "simultaneous_schmidt_rank_log2_lower_bound": 3973848244.9855003,
+      "status": "all-balanced-coordinate-layouts-exponential-rank-certified"
+    },
+    {
+      "all_layout_side_cap_failure_log2_upper_bound": -1099511627855.0,
+      "balanced_window": 2,
+      "every_balanced_coordinate_layout_exponential_rank_certified": true,
+      "finite_row_is_asymptotic_theorem": false,
+      "full_fiber_lower_tail_log2_upper_bound": -1099511627778.0,
+      "full_fiber_mean_log2": 1099511627780.0,
+      "inherited_averaged_factorial_moment_upper_bound": 2.0,
+      "lattice_chain_length_upper_bound": 330620,
+      "modulus_bits": 1099511627776,
+      "moment_schedule_condition_ratio": 0.00013441482973229412,
+      "polynomial_bond_benchmark_log2": 492.0000000000315,
+      "register_count": 2199023255556,
+      "register_offset": 4,
+      "requested_schmidt_mass": 0.99,
+      "selected_factorial_moment_order": 407,
+      "side_multiplicity_cap_log2": 10806011085,
+      "side_multiplicity_cap_subexponential": true,
+      "simultaneous_schmidt_rank_log2_lower_bound": 1077899605608.9856,
+      "status": "all-balanced-coordinate-layouts-exponential-rank-certified"
+    },
+    {
+      "all_layout_side_cap_failure_log2_upper_bound": -281474976711975.0,
+      "balanced_window": 2,
+      "every_balanced_coordinate_layout_exponential_rank_certified": true,
+      "finite_row_is_asymptotic_theorem": false,
+      "full_fiber_lower_tail_log2_upper_bound": -281474976710658.0,
+      "full_fiber_mean_log2": 281474976710660.0,
+      "inherited_averaged_factorial_moment_upper_bound": 2.0,
+      "lattice_chain_length_upper_bound": 5988068,
+      "modulus_bits": 281474976710656,
+      "moment_schedule_condition_ratio": 3.412337993055769e-05,
+      "polynomial_bond_benchmark_log2": 588.0000000000001,
+      "register_count": 562949953421316,
+      "register_offset": 4,
+      "requested_schmidt_mass": 0.99,
+      "selected_factorial_moment_order": 1556,
+      "side_multiplicity_cap_log2": 723586058384,
+      "side_multiplicity_cap_subexponential": true,
+      "simultaneous_schmidt_rank_log2_lower_bound": 280027804593891.0,
+      "status": "all-balanced-coordinate-layouts-exponential-rank-certified"
+    }
+  ],
+  "status": "adaptive-coordinate-tensor-route-closed-noncoordinate-coisometry-open",
+  "summary": "Upgraded the low-bit fiber entanglement theorem from fixed polynomial layout dictionaries to every label-adaptive balanced coordinate ordering at once. Polynomial-bond coordinate MPS/QTT preparation is closed on all inverse-polynomial source mass.",
+  "theorem": {
+    "adaptive_coordinate_mps_polynomial_bond_possible": false,
+    "all_balanced_coordinate_side_caps_proved": true,
+    "all_layout_union_bound": "Union over at most 2^m label subsets; no cross-layout independence is assumed. The selected T gives failure at most 2^-q.",
+    "asymptotic_consequence": "With k=(q/log q)^(1/4), log T=o(q), so every balanced coordinate cut has eta-rank 2^(q-o(q)) with probability 1-2^-Omega(q).",
+    "deterministic_schmidt_bound": "If both side multiplicities are at most T, each Schmidt block has unnormalized weight at most T^2; eta mass needs rank eta*C_t/T^2.",
+    "every_balanced_coordinate_cut_exp_rank_proved": true,
+    "full_fiber_concentration": "Pairwise independence gives mean lambda=(2^m-1)/2^q, variance at most lambda, and Pr[C_t<lambda/2]<=4/lambda.",
+    "general_quantum_circuit_lower_bound_proved": false,
+    "inherited_moment_input": "For k=o((q/log q)^(1/3)), the cube-section/Smith-transfer theorem gives E_(a,S)[(c_S)_k]<=2 for all sufficiently large q.",
+    "inverse_polynomial_easy_source_subset_for_coordinate_mps_possible": false,
+    "noncoordinate_tensor_network_ruled_out": false,
+    "one_side_maximum_tail": "Pr[max_s c_s>=T]<=2^(q+1)/(T-k+1)^k by factorial-moment Markov.",
+    "polynomial_dcp_decoder_constructed": false,
+    "route_consequence": "No label-adaptive coordinate ordering can give a polynomial-bond MPS/QTT for high-fidelity preparation on inverse-polynomial source mass.",
+    "scope_limit": "The theorem requires a balanced coordinate cut of the low-bit fiber state. Non-coordinate tensors, highly unbalanced algorithms, and circuits/coisometries that avoid that state are not covered.",
+    "status": "all-balanced-adaptive-coordinate-layouts-closed",
+    "sub_cube_root_moment_schedule_admissible": true,
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "accuracy": "At least 0.990 Schmidt mass.",
+    "architecture": "Coordinate MPS/QTT whose ordering may be any function of all public labels and target, but has a balanced coordinate cut.",
+    "asymptotic_dependency": "The averaged growing-order factorial-moment theorem from dcp_subset_sum_cube_section_gap_theorem.py.",
+    "non_claim": "No general tensor-network, circuit, query, or DCP lower bound.",
+    "source": "m=2q+O(1) independent uniform labels modulo 2^q and an independent target, conditioned on the full low-bit fiber being nonempty."
+  }
+}

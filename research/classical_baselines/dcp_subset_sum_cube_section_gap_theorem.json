@@ -1,0 +1,379 @@
+{
+  "adversarial_audit": [
+    {
+      "attack": "Use a rank-deficient section arbitrarily close to the full cube.",
+      "reason": "row distinctness forces a noncoordinate functional with two nonzero coefficients, giving the uniform three-of-four bound",
+      "survives": false
+    },
+    {
+      "attack": "Use a full-rank lattice with only one missing Boolean vertex.",
+      "reason": "source-nongeneric full-rank states have an even Smith factor, so a parity equation removes at least half the cube",
+      "survives": false
+    },
+    {
+      "attack": "Apply the result to signed cancellation or a basis event.",
+      "reason": "the proof controls only a nonnegative tuple contribution and makes no statement about reduced-basis algorithms",
+      "survives": true
+    },
+    {
+      "attack": "Infer a classical or quantum computational lower bound.",
+      "reason": "source-moment universality is not a query lower bound or a decoder impossibility theorem",
+      "survives": true
+    }
+  ],
+  "claim_gate": {
+    "all_logarithmic_nonnegative_moment_orders_closed": true,
+    "coherent_implicit_decoder_closed": false,
+    "constant_bad_state_contraction_proved": true,
+    "final_near_log_nonnegative_window_closed": true,
+    "joint_low_high_basis_geometry_closed": false,
+    "polynomial_partial_subset_sum_solver_constructed": false,
+    "reason": "The constant Boolean-section gap removes the last logarithmic nonnegative-moment escape. Only signed, geometric, or coherent implicit mechanisms remain, and none has a decoder theorem.",
+    "signed_statistics_closed": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:23:34.311006+00:00",
+  "falsifiers_triggered": [
+    "The former 1-2^-k bad-state contraction is exponentially loose in k.",
+    "The final near-logarithmic nonnegative moment window is not a surviving DCP mechanism.",
+    "Escalating to any constant multiple of log n copies does not evade source-moment universality.",
+    "The theorem cannot be promoted to signed observables, basis geometry, or decoder impossibility."
+  ],
+  "functional_controls": [
+    {
+      "boolean_input_count": 8,
+      "coefficient_sum": "1",
+      "coefficient_vector": [
+        "1",
+        "1",
+        "-1"
+      ],
+      "nonzero_coefficient_count": 3,
+      "rank": 3,
+      "sharp_three_quarter_example": true,
+      "status": "boolean-section-three-quarter-gap-verified",
+      "three_quarter_bound_verified": true,
+      "valid_boolean_input_count": 6,
+      "valid_fraction": 0.75
+    },
+    {
+      "boolean_input_count": 4,
+      "coefficient_sum": "1",
+      "coefficient_vector": [
+        "1/2",
+        "1/2"
+      ],
+      "nonzero_coefficient_count": 2,
+      "rank": 2,
+      "sharp_three_quarter_example": false,
+      "status": "boolean-section-three-quarter-gap-verified",
+      "three_quarter_bound_verified": true,
+      "valid_boolean_input_count": 2,
+      "valid_fraction": 0.5
+    },
+    {
+      "boolean_input_count": 8,
+      "coefficient_sum": "1",
+      "coefficient_vector": [
+        "1",
+        "1/3",
+        "-1/3"
+      ],
+      "nonzero_coefficient_count": 3,
+      "rank": 3,
+      "sharp_three_quarter_example": false,
+      "status": "boolean-section-three-quarter-gap-verified",
+      "three_quarter_bound_verified": true,
+      "valid_boolean_input_count": 4,
+      "valid_fraction": 0.5
+    },
+    {
+      "boolean_input_count": 16,
+      "coefficient_sum": "1",
+      "coefficient_vector": [
+        "1",
+        "1",
+        "1",
+        "-2"
+      ],
+      "nonzero_coefficient_count": 4,
+      "rank": 4,
+      "sharp_three_quarter_example": false,
+      "status": "boolean-section-three-quarter-gap-verified",
+      "three_quarter_bound_verified": true,
+      "valid_boolean_input_count": 8,
+      "valid_fraction": 0.5
+    }
+  ],
+  "headline_metrics": {
+    "constant_cube_section_gap_theorem_count": 1,
+    "finite_bound_below_one_row_count": 12,
+    "finite_control_failure_count": 0,
+    "full_rank_one_half_parity_bound_theorem_count": 1,
+    "functional_control_count": 4,
+    "integer_functional_census_count": 5,
+    "integer_functional_test_count": 2133,
+    "maximum_instantiated_moment_order": 128,
+    "polynomial_witness_decoder_count": 0,
+    "proved_all_logarithmic_nonnegative_moment_obstruction_count": 1,
+    "proved_final_near_log_window_obstruction_count": 1,
+    "proved_reduced_basis_obstruction_count": 0,
+    "proved_signed_statistic_obstruction_count": 0,
+    "rank_deficient_three_quarter_bound_theorem_count": 1,
+    "scaling_row_count": 12,
+    "sharp_three_quarter_control_count": 1
+  },
+  "integer_censuses": [
+    {
+      "boolean_input_count": 4,
+      "coefficient_radius": 2,
+      "maximum_valid_boolean_input_count": 2,
+      "maximum_valid_fraction": 0.5,
+      "rank": 2,
+      "status": "finite-integer-functional-census-consistent",
+      "tested_noncoordinate_function_count": 2,
+      "three_quarter_bound_failure_count": 0
+    },
+    {
+      "boolean_input_count": 8,
+      "coefficient_radius": 2,
+      "maximum_valid_boolean_input_count": 6,
+      "maximum_valid_fraction": 0.75,
+      "rank": 3,
+      "status": "finite-integer-functional-census-consistent",
+      "tested_noncoordinate_function_count": 15,
+      "three_quarter_bound_failure_count": 0
+    },
+    {
+      "boolean_input_count": 16,
+      "coefficient_radius": 2,
+      "maximum_valid_boolean_input_count": 12,
+      "maximum_valid_fraction": 0.75,
+      "rank": 4,
+      "status": "finite-integer-functional-census-consistent",
+      "tested_noncoordinate_function_count": 76,
+      "three_quarter_bound_failure_count": 0
+    },
+    {
+      "boolean_input_count": 32,
+      "coefficient_radius": 2,
+      "maximum_valid_boolean_input_count": 24,
+      "maximum_valid_fraction": 0.75,
+      "rank": 5,
+      "status": "finite-integer-functional-census-consistent",
+      "tested_noncoordinate_function_count": 360,
+      "three_quarter_bound_failure_count": 0
+    },
+    {
+      "boolean_input_count": 64,
+      "coefficient_radius": 2,
+      "maximum_valid_boolean_input_count": 48,
+      "maximum_valid_fraction": 0.75,
+      "rank": 6,
+      "status": "finite-integer-functional-census-consistent",
+      "tested_noncoordinate_function_count": 1680,
+      "three_quarter_bound_failure_count": 0
+    }
+  ],
+  "proof_obligations": [
+    {
+      "description": "Prove the rank-deficient section bound for arbitrary real coordinate functionals, not only integer controls.",
+      "evidence": "injective coordinate projection plus the conditioned two-coordinate three-of-four lemma",
+      "id": "PO-DCP-CUBE-SECTION-PROJECTION",
+      "satisfied": true
+    },
+    {
+      "description": "Prove a full-rank even-Smith lattice contains at most half of the Boolean cube.",
+      "evidence": "proper mod-two image lies in a nonzero parity kernel",
+      "id": "PO-DCP-CUBE-SECTION-PARITY",
+      "satisfied": true
+    },
+    {
+      "description": "Control or construct signed near-log observables and charge their coherent implementation.",
+      "evidence": "outside the nonnegative transfer theorem",
+      "id": "PO-DCP-SIGNED-NEAR-LOG-STATISTIC",
+      "satisfied": false
+    },
+    {
+      "description": "Prove a source-covered reduced-basis event or construct a coherent implicit decoder using joint low/high labels.",
+      "evidence": "moment contraction does not imply a geometry lower bound",
+      "id": "PO-DCP-JOINT-LOW-HIGH-GEOMETRY",
+      "satisfied": false
+    }
+  ],
+  "scaling_rows": [
+    {
+      "chain_length_upper_bound": 129,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": true,
+      "log2_bad_contribution_upper_bound": -6958484.218261829,
+      "moment_order": 12,
+      "moment_order_multiplier": 0.5,
+      "n_bits": 16777216,
+      "normalized_path_overhead": 0.00027951927418579103,
+      "register_offset": 2,
+      "status": "finite-transfer-bound-below-one"
+    },
+    {
+      "chain_length_upper_bound": 619,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": true,
+      "log2_bad_contribution_upper_bound": -6933358.753738084,
+      "moment_order": 24,
+      "moment_order_multiplier": 1.0,
+      "n_bits": 16777216,
+      "normalized_path_overhead": 0.0017771136619402772,
+      "register_offset": 2,
+      "status": "finite-transfer-bound-below-one"
+    },
+    {
+      "chain_length_upper_bound": 2942,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": true,
+      "log2_bad_contribution_upper_bound": -6751119.7336420305,
+      "moment_order": 48,
+      "moment_order_multiplier": 2.0,
+      "n_bits": 16777216,
+      "normalized_path_overhead": 0.012639405718980812,
+      "register_offset": 2,
+      "status": "finite-transfer-bound-below-one"
+    },
+    {
+      "chain_length_upper_bound": 247,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": true,
+      "log2_bad_contribution_upper_bound": -1782560566.0108202,
+      "moment_order": 16,
+      "moment_order_multiplier": 0.5,
+      "n_bits": 4294967296,
+      "normalized_path_overhead": 2.775342538396952e-06,
+      "register_offset": 2,
+      "status": "finite-transfer-bound-below-one"
+    },
+    {
+      "chain_length_upper_bound": 1183,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": true,
+      "log2_bad_contribution_upper_bound": -1782496630.016256,
+      "moment_order": 32,
+      "moment_order_multiplier": 1.0,
+      "n_bits": 4294967296,
+      "normalized_path_overhead": 1.7661601305396513e-05,
+      "register_offset": 2,
+      "status": "finite-transfer-bound-below-one"
+    },
+    {
+      "chain_length_upper_bound": 5598,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": true,
+      "log2_bad_contribution_upper_bound": -1782034758.016252,
+      "moment_order": 64,
+      "moment_order_multiplier": 2.0,
+      "n_bits": 4294967296,
+      "normalized_path_overhead": 0.00012519955635204028,
+      "register_offset": 2,
+      "status": "finite-transfer-bound-below-one"
+    },
+    {
+      "chain_length_upper_bound": 619,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": true,
+      "log2_bad_contribution_upper_bound": -116822670398890.45,
+      "moment_order": 24,
+      "moment_order_multiplier": 0.5,
+      "n_bits": 281474976710656,
+      "normalized_path_overhead": 1.587033282568484e-10,
+      "register_offset": 2,
+      "status": "finite-transfer-bound-below-one"
+    },
+    {
+      "chain_length_upper_bound": 2942,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": true,
+      "log2_bad_contribution_upper_bound": -116822670160899.42,
+      "moment_order": 48,
+      "moment_order_multiplier": 1.0,
+      "n_bits": 281474976710656,
+      "normalized_path_overhead": 1.0042173204105609e-09,
+      "register_offset": 2,
+      "status": "finite-transfer-bound-below-one"
+    },
+    {
+      "chain_length_upper_bound": 13815,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": true,
+      "log2_bad_contribution_upper_bound": -116822668453693.39,
+      "moment_order": 96,
+      "moment_order_multiplier": 2.0,
+      "n_bits": 281474976710656,
+      "normalized_path_overhead": 7.069431540163151e-09,
+      "register_offset": 2,
+      "status": "finite-transfer-bound-below-one"
+    },
+    {
+      "chain_length_upper_bound": 1183,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": true,
+      "log2_bad_contribution_upper_bound": -7.656090530189131e+18,
+      "moment_order": 32,
+      "moment_order_multiplier": 0.5,
+      "n_bits": 18446744073709551616,
+      "normalized_path_overhead": 6.161737786669619e-15,
+      "register_offset": 2,
+      "status": "finite-transfer-bound-below-one"
+    },
+    {
+      "chain_length_upper_bound": 5598,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": true,
+      "log2_bad_contribution_upper_bound": -7.656090530188528e+18,
+      "moment_order": 64,
+      "moment_order_multiplier": 1.0,
+      "n_bits": 18446744073709551616,
+      "normalized_path_overhead": 3.885780586188048e-14,
+      "register_offset": 2,
+      "status": "finite-transfer-bound-below-one"
+    },
+    {
+      "chain_length_upper_bound": 26137,
+      "finite_row_is_asymptotic_theorem": false,
+      "finite_upper_bound_below_one": true,
+      "log2_bad_contribution_upper_bound": -7.656090530184226e+18,
+      "moment_order": 128,
+      "moment_order_multiplier": 2.0,
+      "n_bits": 18446744073709551616,
+      "normalized_path_overhead": 2.720601521843946e-13,
+      "register_offset": 2,
+      "status": "finite-transfer-bound-below-one"
+    }
+  ],
+  "status": "all-logarithmic-nonnegative-subset-sum-moments-obstructed",
+  "summary": "Proved a sharp universal 3/4 Boolean-section contraction for every source-nongeneric Smith-transfer state. Combined with the polynomial lattice-chain bound, this closes all k=O(log n) nonnegative moment orders, including the former final near-log window; signed and reduced-basis mechanisms remain open.",
+  "theorem": {
+    "all_logarithmic_nonnegative_moment_orders_closed": true,
+    "bad_contribution_bound": "k^(k/2) 2^(kc) (n+c+1)^L(k) (2^k+1)^L(k) (3/4)^n",
+    "chain_bound": "L(k)=O(k^2 log k) non-self lattice enlargements",
+    "constant_bad_state_contraction_proved": true,
+    "full_rank_parity_lemma_proved": true,
+    "full_rank_two_adic_bound": "an even Smith factor gives a nonzero mod-two parity equation, so |L intersect {0,1}^k| <= 2^(k-1)",
+    "logarithmic_order_consequence": "every k=O(log n) nonnegative source bad-tuple contribution vanishes",
+    "polynomial_subset_sum_solver_eliminated": false,
+    "rank_deficient_bound": "for rank r<k with distinct coordinate restrictions and 1 in V, |V intersect {0,1}^k| <= 3*2^(r-2)",
+    "rank_deficient_projection_lemma_proved": true,
+    "reduced_basis_geometry_closed": false,
+    "sharpness_example": "ell(x1,x2,x3)=x1+x2-x3 is Boolean on 6 of 8 inputs and defines a row-distinguishing rank-three section containing 1",
+    "signed_statistics_closed": false,
+    "status": "constant-cube-section-gap-proved",
+    "sub_cube_root_consequence": "every k=o((n/log n)^(1/3)) schedule satisfies the sufficient condition",
+    "theorem_verified": true,
+    "two_coordinate_three_of_four_lemma_proved": true,
+    "universal_bad_growth_ratio_bound": "b/2^r <= 3/4",
+    "vanishing_condition": "L(k)(log n+k)+k log k=o(n)"
+  },
+  "theorem_contract": {
+    "excluded": "signed statistics, reduced-basis events, dense coherent contractions, conditioned atypical families, and decoding",
+    "observable": "nonnegative source-nongeneric ordered distinct k-tuple factorial-moment contribution",
+    "proved": "constant 3/4 bad-state contraction and vanishing whenever L(k)(log n+k)+k log k=o(n)",
+    "source": "uniform independent labels and independent target modulo 2^n, with m=n+c for fixed c"
+  }
+}

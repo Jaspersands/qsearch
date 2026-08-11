@@ -1,0 +1,444 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False at the access level: vectorization turns it into two coherently projectable subspaces. No basis table is required.",
+      "challenge": "The restriction map still needs a dense Hom basis.",
+      "resolved": true
+    },
+    {
+      "answer": "False for normalization-one access. The whole retained window lies at principal singular scale exp(-Omega(sqrt(n))).",
+      "challenge": "Constant physical condition makes generic QSVT polynomial.",
+      "resolved": true
+    },
+    {
+      "answer": "False beyond generic bounded-polynomial access. Structured fiber and branching transforms can implement tiny-scale polars directly.",
+      "challenge": "A small singular scale proves the polar is hard.",
+      "resolved": true
+    },
+    {
+      "answer": "False. The asymptotic step uses the cited maximal-dimension theorem; finite rows are normalization controls only.",
+      "challenge": "Finite d_max rows prove the asymptotic degree bound.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "coherent_normalization_one_restriction_access_proved": true,
+    "dense_branching_table_required": false,
+    "general_quantum_lower_bound_proved": false,
+    "hyperoctahedral_branching_polar_constructed": false,
+    "normalization_one_generic_qsvt_polynomial": false,
+    "polynomial_fused_polar_circuit_constructed": false,
+    "polynomial_hidden_involution_decoder_proved": false,
+    "reason": "The fused PGM is now an exactly accessible principal-angle polar, but normalization-one generic QSVT still costs exp(Omega(sqrt(n))). Only structured rescaling or branching can turn this normal form into a polynomial algorithm.",
+    "representation_specific_rescaled_access_proved": false,
+    "restriction_map_principal_angle_normal_form_proved": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:22:58.596766+00:00",
+  "falsifiers_triggered": [
+    "A dense centralizer branching table is not required merely to access the fused restriction map.",
+    "Constant condition of the retained physical frame does not remove its exp(-Omega(sqrt(n))) normalization-one singular scale.",
+    "The black-box polynomial obstruction cannot be promoted to a structured-transform or general circuit lower bound."
+  ],
+  "finite_controls": [
+    {
+      "exact_principal_angle_normal_form_verified": true,
+      "hom_space_multiplicity": 1,
+      "invariant_projector_idempotence_residual": 5.551115123125783e-17,
+      "involution_projector_idempotence_residual": 0.0,
+      "involution_projector_rank": 1,
+      "maximum_gram_eigenvalue": 0.4999999999999999,
+      "minimum_positive_gram_eigenvalue": 0.4999999999999999,
+      "n": 3,
+      "polar_initial_support_residual": 0.0,
+      "product_projector_singular_value_residual": 0.0,
+      "restriction_gram_residual": 0.0,
+      "restriction_map_rank": 1,
+      "source_dimension": 2,
+      "source_partitions": [
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "restriction-principal-angle-polar-verified",
+      "target_dimension": 2,
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "exact_principal_angle_normal_form_verified": true,
+      "hom_space_multiplicity": 1,
+      "invariant_projector_idempotence_residual": 5.551115123125783e-17,
+      "involution_projector_idempotence_residual": 0.0,
+      "involution_projector_rank": 1,
+      "maximum_gram_eigenvalue": 0.4999999999999999,
+      "minimum_positive_gram_eigenvalue": 0.4999999999999999,
+      "n": 3,
+      "polar_initial_support_residual": 0.0,
+      "product_projector_singular_value_residual": 0.0,
+      "restriction_gram_residual": 0.0,
+      "restriction_map_rank": 1,
+      "source_dimension": 4,
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "restriction-principal-angle-polar-verified",
+      "target_dimension": 1,
+      "target_partition": [
+        3
+      ]
+    },
+    {
+      "exact_principal_angle_normal_form_verified": true,
+      "hom_space_multiplicity": 1,
+      "invariant_projector_idempotence_residual": 1.2660852402060024e-16,
+      "involution_projector_idempotence_residual": 0.0,
+      "involution_projector_rank": 1,
+      "maximum_gram_eigenvalue": 0.25,
+      "minimum_positive_gram_eigenvalue": 0.25,
+      "n": 3,
+      "polar_initial_support_residual": 0.0,
+      "product_projector_singular_value_residual": 1.1102230246251565e-16,
+      "restriction_gram_residual": 0.0,
+      "restriction_map_rank": 1,
+      "source_dimension": 4,
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "restriction-principal-angle-polar-verified",
+      "target_dimension": 2,
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "exact_principal_angle_normal_form_verified": true,
+      "hom_space_multiplicity": 3,
+      "invariant_projector_idempotence_residual": 9.288094113063782e-17,
+      "involution_projector_idempotence_residual": 0.0,
+      "involution_projector_rank": 1,
+      "maximum_gram_eigenvalue": 0.3749999999999999,
+      "minimum_positive_gram_eigenvalue": 0.3749999999999999,
+      "n": 3,
+      "polar_initial_support_residual": 0.0,
+      "product_projector_singular_value_residual": 0.0,
+      "restriction_gram_residual": 0.0,
+      "restriction_map_rank": 1,
+      "source_dimension": 8,
+      "source_partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "status": "restriction-principal-angle-polar-verified",
+      "target_dimension": 2,
+      "target_partition": [
+        2,
+        1
+      ]
+    }
+  ],
+  "headline_metrics": {
+    "coherent_normalization_one_restriction_access_count": 1,
+    "dense_branching_table_required_count": 0,
+    "finite_control_failure_count": 0,
+    "finite_principal_angle_control_count": 4,
+    "finite_subconstant_singular_row_count": 0,
+    "general_quantum_circuit_lower_bound_count": 0,
+    "generic_qsvt_exp_sqrt_degree_obstruction_theorem_count": 1,
+    "hyperoctahedral_branching_transform_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_fused_polar_circuit_count": 0,
+    "representation_specific_rescaling_count": 0,
+    "restriction_principal_angle_normal_form_theorem_count": 1,
+    "scaling_record_count": 8
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "aggarwal-elboim-maximal-dimension-2026",
+      "title": "On the maximal dimension of an irreducible representation of the symmetric group",
+      "url": "https://arxiv.org/abs/2605.25995",
+      "use": "Turns sqrt(beta d_max/M) into an exp(-Omega(sqrt(n))) principal singular scale."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-RESTRICTION-PROJECTOR-ACCESS",
+      "resolved": true,
+      "statement": "Expose the restriction map coherently without dense Kronecker or centralizer branching tables."
+    },
+    {
+      "id": "PO-COSET-RESTRICTION-RESCALING",
+      "resolved": false,
+      "statement": "Construct a representation-specific encoding normalized by sqrt(d_nu/M), or prove that such an encoding is impossible."
+    },
+    {
+      "id": "PO-COSET-HYPEROCTAHEDRAL-BRANCHING-POLAR",
+      "resolved": false,
+      "statement": "Determine whether S_n down to S_2 wr S_(n/2) branching diagonalizes or directly compiles the principal-angle polar."
+    },
+    {
+      "id": "PO-COSET-POLAR-TO-DECODER",
+      "resolved": false,
+      "statement": "Complete the physical outcome map and hidden-matching decoder after any structured polar construction."
+    }
+  ],
+  "scaling_records": [
+    {
+      "asymptotic_generic_qsvt_degree_order": "exp((mathfrak_d/2+o(1))*sqrt(n))/poly(n)",
+      "asymptotic_principal_singular_order": "exp(-(mathfrak_d/2+o(1))*sqrt(n))*poly(n)",
+      "constant_pgm_success_copy_count": 7,
+      "exact_beta_dmax_over_matching_count": 342.85714285714283,
+      "exact_principal_singular_upper_bound": 1.0,
+      "finite_bernstein_degree_lower_bound": null,
+      "finite_row_in_subconstant_singular_regime": false,
+      "maximum_irrep_dimension_decimal": "90",
+      "maximum_irrep_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "n": 8,
+      "perfect_matching_count_decimal": "105",
+      "physical_window_alpha": 0.0001,
+      "physical_window_beta": 400.0,
+      "polynomial_normalization_one_generic_qsvt_possible_asymptotically": false,
+      "status": "preasymptotic-principal-angle-control",
+      "windowed_pgm_success_lower_bound": 0.4156175620428725
+    },
+    {
+      "asymptotic_generic_qsvt_degree_order": "exp((mathfrak_d/2+o(1))*sqrt(n))/poly(n)",
+      "asymptotic_principal_singular_order": "exp(-(mathfrak_d/2+o(1))*sqrt(n))*poly(n)",
+      "constant_pgm_success_copy_count": 10,
+      "exact_beta_dmax_over_matching_count": 325.07936507936506,
+      "exact_principal_singular_upper_bound": 1.0,
+      "finite_bernstein_degree_lower_bound": null,
+      "finite_row_in_subconstant_singular_regime": false,
+      "maximum_irrep_dimension_decimal": "768",
+      "maximum_irrep_partition": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "n": 10,
+      "perfect_matching_count_decimal": "945",
+      "physical_window_alpha": 0.0001,
+      "physical_window_beta": 400.0,
+      "polynomial_normalization_one_generic_qsvt_possible_asymptotically": false,
+      "status": "preasymptotic-principal-angle-control",
+      "windowed_pgm_success_lower_bound": 0.3802582549737182
+    },
+    {
+      "asymptotic_generic_qsvt_degree_order": "exp((mathfrak_d/2+o(1))*sqrt(n))/poly(n)",
+      "asymptotic_principal_singular_order": "exp(-(mathfrak_d/2+o(1))*sqrt(n))*poly(n)",
+      "constant_pgm_success_copy_count": 14,
+      "exact_beta_dmax_over_matching_count": 296.2962962962963,
+      "exact_principal_singular_upper_bound": 1.0,
+      "finite_bernstein_degree_lower_bound": null,
+      "finite_row_in_subconstant_singular_regime": false,
+      "maximum_irrep_dimension_decimal": "7700",
+      "maximum_irrep_partition": [
+        5,
+        3,
+        2,
+        1,
+        1
+      ],
+      "n": 12,
+      "perfect_matching_count_decimal": "10395",
+      "physical_window_alpha": 0.0001,
+      "physical_window_beta": 400.0,
+      "polynomial_normalization_one_generic_qsvt_possible_asymptotically": false,
+      "status": "preasymptotic-principal-angle-control",
+      "windowed_pgm_success_lower_bound": 0.48244695853407366
+    },
+    {
+      "asymptotic_generic_qsvt_degree_order": "exp((mathfrak_d/2+o(1))*sqrt(n))/poly(n)",
+      "asymptotic_principal_singular_order": "exp(-(mathfrak_d/2+o(1))*sqrt(n))*poly(n)",
+      "constant_pgm_success_copy_count": 21,
+      "exact_beta_dmax_over_matching_count": 227.55555555555554,
+      "exact_principal_singular_upper_bound": 1.0,
+      "finite_bernstein_degree_lower_bound": null,
+      "finite_row_in_subconstant_singular_regime": false,
+      "maximum_irrep_dimension_decimal": "1153152",
+      "maximum_irrep_partition": [
+        6,
+        4,
+        3,
+        2,
+        1
+      ],
+      "n": 16,
+      "perfect_matching_count_decimal": "2027025",
+      "physical_window_alpha": 0.0001,
+      "physical_window_beta": 400.0,
+      "polynomial_normalization_one_generic_qsvt_possible_asymptotically": false,
+      "status": "preasymptotic-principal-angle-control",
+      "windowed_pgm_success_lower_bound": 0.3668489517581396
+    },
+    {
+      "asymptotic_generic_qsvt_degree_order": "exp((mathfrak_d/2+o(1))*sqrt(n))/poly(n)",
+      "asymptotic_principal_singular_order": "exp(-(mathfrak_d/2+o(1))*sqrt(n))*poly(n)",
+      "constant_pgm_success_copy_count": 30,
+      "exact_beta_dmax_over_matching_count": 152.38095238095238,
+      "exact_principal_singular_upper_bound": 1.0,
+      "finite_bernstein_degree_lower_bound": null,
+      "finite_row_in_subconstant_singular_regime": false,
+      "maximum_irrep_dimension_decimal": "249420600",
+      "maximum_irrep_partition": [
+        7,
+        5,
+        3,
+        2,
+        2,
+        1
+      ],
+      "n": 20,
+      "perfect_matching_count_decimal": "654729075",
+      "physical_window_alpha": 0.0001,
+      "physical_window_beta": 400.0,
+      "polynomial_normalization_one_generic_qsvt_possible_asymptotically": false,
+      "status": "preasymptotic-principal-angle-control",
+      "windowed_pgm_success_lower_bound": 0.4927659465428773
+    },
+    {
+      "asymptotic_generic_qsvt_degree_order": "exp((mathfrak_d/2+o(1))*sqrt(n))/poly(n)",
+      "asymptotic_principal_singular_order": "exp(-(mathfrak_d/2+o(1))*sqrt(n))*poly(n)",
+      "constant_pgm_success_copy_count": 39,
+      "exact_beta_dmax_over_matching_count": 148.6077097505669,
+      "exact_principal_singular_upper_bound": 1.0,
+      "finite_bernstein_degree_lower_bound": null,
+      "finite_row_in_subconstant_singular_regime": false,
+      "maximum_irrep_dimension_decimal": "117487079424",
+      "maximum_irrep_partition": [
+        8,
+        5,
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "n": 24,
+      "perfect_matching_count_decimal": "316234143225",
+      "physical_window_alpha": 0.0001,
+      "physical_window_beta": 400.0,
+      "polynomial_normalization_one_generic_qsvt_possible_asymptotically": false,
+      "status": "preasymptotic-principal-angle-control",
+      "windowed_pgm_success_lower_bound": 0.5077377543545534
+    },
+    {
+      "asymptotic_generic_qsvt_degree_order": "exp((mathfrak_d/2+o(1))*sqrt(n))/poly(n)",
+      "asymptotic_principal_singular_order": "exp(-(mathfrak_d/2+o(1))*sqrt(n))*poly(n)",
+      "constant_pgm_success_copy_count": 48,
+      "exact_beta_dmax_over_matching_count": 107.60728982951206,
+      "exact_principal_singular_upper_bound": 1.0,
+      "finite_bernstein_degree_lower_bound": null,
+      "finite_row_in_subconstant_singular_regime": false,
+      "maximum_irrep_dimension_decimal": "57424104738000",
+      "maximum_irrep_partition": [
+        8,
+        6,
+        5,
+        3,
+        2,
+        2,
+        1,
+        1
+      ],
+      "n": 28,
+      "perfect_matching_count_decimal": "213458046676875",
+      "physical_window_alpha": 0.0001,
+      "physical_window_beta": 400.0,
+      "polynomial_normalization_one_generic_qsvt_possible_asymptotically": false,
+      "status": "preasymptotic-principal-angle-control",
+      "windowed_pgm_success_lower_bound": 0.43461049594547485
+    },
+    {
+      "asymptotic_generic_qsvt_degree_order": "exp((mathfrak_d/2+o(1))*sqrt(n))/poly(n)",
+      "asymptotic_principal_singular_order": "exp(-(mathfrak_d/2+o(1))*sqrt(n))*poly(n)",
+      "constant_pgm_success_copy_count": 58,
+      "exact_beta_dmax_over_matching_count": 105.02564102564102,
+      "exact_principal_singular_upper_bound": 1.0,
+      "finite_bernstein_degree_lower_bound": null,
+      "finite_row_in_subconstant_singular_regime": false,
+      "maximum_irrep_dimension_decimal": "50385731994259200",
+      "maximum_irrep_partition": [
+        9,
+        7,
+        5,
+        4,
+        3,
+        2,
+        1,
+        1
+      ],
+      "n": 32,
+      "perfect_matching_count_decimal": "191898783962510625",
+      "physical_window_alpha": 0.0001,
+      "physical_window_beta": 400.0,
+      "polynomial_normalization_one_generic_qsvt_possible_asymptotically": false,
+      "status": "preasymptotic-principal-angle-control",
+      "windowed_pgm_success_lower_bound": 0.4697128000999864
+    }
+  ],
+  "status": "coherent-restriction-access-closed-generic-qsvt-subexponential-structured-rescaling-open",
+  "summary": "Converted the centralizer restriction matrix into an exact product-of-projectors principal-angle polar with coherent normalization-one access. Generic QSVT remains exp(Omega(sqrt(n))); structured rescaling and hyperoctahedral branching are now the specific constructive frontier.",
+  "theorem": {
+    "bernstein_consequence": "A bounded polynomial polar transform on normalization-one access has degree exp(Omega(sqrt(n))).",
+    "coherent_normalization_one_restriction_access_proved": true,
+    "coherent_projector_access": "The invariant projector is implementable by S_n generalized phase estimation and the fixed-involution projector is an explicit tensor product.",
+    "dense_branching_table_required": false,
+    "exact_restriction_principal_angle_normal_form_proved": true,
+    "general_quantum_circuit_lower_bound_proved": false,
+    "generic_qsvt_subexponential_obstruction_proved": true,
+    "gram_identity": "R_nu^*R_nu=D_nu exactly.",
+    "hyperoctahedral_branching_transform_constructed": false,
+    "maximal_dimension_consequence": "For M=(n-1)!!, Aggarwal--Elboim implies the retained principal singular scale is exp(-Omega(sqrt(n))).",
+    "physical_to_principal_spectrum": "lambda(B)=delta(D_nu)/d_nu, so a physical window lambda<=beta/M gives sigma(R_nu)<=sqrt(beta d_max/M).",
+    "polar_identity": "R_nu D_nu^(-1/2) is the covariance-compressed PGM polar factor.",
+    "polynomial_fused_polar_circuit_constructed": false,
+    "representation_specific_rescaling_ruled_out": false,
+    "restriction_product": "R_nu=(I_(V_nu^*) tensor P)J_nu is the vectorized centralizer restriction map.",
+    "scope_limit": "Only generic bounded-polynomial/QSVT transforms of the stated normalization-one product-of-projectors access are obstructed.",
+    "status": "restriction-principal-angle-access-and-generic-qsvt-bound-proved",
+    "theorem_verified": true,
+    "vectorized_intertwiner_space": "Hom_G(V_nu,U) is the invariant subspace of conj(V_nu) tensor U; J_nu is its isometric embedding."
+  },
+  "theorem_contract": {
+    "access_model": "Coherent reflections about the G-intertwiner invariant subspace and the fixed-involution source projector, each normalized by one.",
+    "non_claim": "No lower bound on structured rescaling, exact branching, non-polynomial circuits, or arbitrary measurements.",
+    "retained_window": "Physical frame eigenvalues in [alpha/M,beta/M], which retain constant average PGM success by the spectral-window theorem.",
+    "source": "Natural weak-Fourier source branch U and target irrep nu for same-hidden fixed-point-free involution coset states."
+  }
+}

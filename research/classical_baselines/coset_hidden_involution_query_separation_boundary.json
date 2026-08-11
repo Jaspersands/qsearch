@@ -1,0 +1,269 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False under the hard random-label distribution. Before the first collision every response is fresh and independent of h, so the null-coupled query set exposes at most one h per pair.",
+      "challenge": "Adaptive classical queries evade the pair count.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Yao's minimax principle applies the uniform-h, random-label distribution to every deterministic algorithm in the support.",
+      "challenge": "Randomized algorithms evade the deterministic coupling.",
+      "resolved": true
+    },
+    {
+      "answer": "It is a query algorithm only in the formal model where arbitrary oracle-independent Helstrom postprocessing is free; it is not a polynomial-time algorithm.",
+      "challenge": "The logarithmic-state theorem is not a query algorithm.",
+      "resolved": true
+    },
+    {
+      "answer": "Not by itself. The opaque oracle can hide all computational work inside state discrimination, and no natural-input compiler exists.",
+      "challenge": "An exponential oracle-query gap is Shor-level progress.",
+      "resolved": true
+    },
+    {
+      "answer": "Unresolved. Random labels prove a worst-case query lower bound, not hardness when graph or code labels expose extra invariants.",
+      "challenge": "The result dequantizes on structured labels.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "adaptive_classical_sqrt_class_query_lower_bound_proved": true,
+    "arbitrary_coherent_quantum_query_lower_bound_proved": false,
+    "decision_to_search_reduction_proved": false,
+    "exponential_oracle_query_separation_proved": true,
+    "independent_coset_state_theta_log_class_copy_bound_proved": true,
+    "natural_graph_or_code_input_reduction_proved": false,
+    "oracle_query_separation_new_to_literature": false,
+    "polynomial_time_quantum_measurement_constructed": false,
+    "published_unbounded_postprocessing_boundary_recovered": true,
+    "quantum_log_class_query_upper_bound_proved": true,
+    "reason": "The oracle-query gap is exact, but its quantum postprocessing is unbounded and the opaque-label promise is not a natural input model.",
+    "shor_level_algorithm_discovered": false,
+    "speedup_claim_allowed": false,
+    "structured_label_dequantization_passed": false
+  },
+  "created_at": "2026-08-11T14:53:50.545619+00:00",
+  "falsifiers_triggered": [
+    "The logarithmic-copy signal is not classically recoverable with logarithmically many opaque-label point queries.",
+    "The query separation cannot be promoted to a polynomial-time or natural-input speedup.",
+    "Adaptive classical query selection does not beat the pre-collision pair-exposure bound."
+  ],
+  "finite_controls": [
+    {
+      "conjugacy_class_size": 3,
+      "distinct_query_count": 2,
+      "exact_collision_candidate_identity_verified": true,
+      "exact_uniform_hidden_collision_probability": 0.3333333333333333,
+      "exposed_hidden_involution_count": 1,
+      "maximum_candidate_multiplicity": 1,
+      "n": 3,
+      "pair_bound_verified": true,
+      "pair_union_upper_bound": 0.3333333333333333,
+      "queried_pair_count": 1,
+      "status": "classical-collision-candidate-bound-verified",
+      "transposition_count": 1
+    },
+    {
+      "conjugacy_class_size": 3,
+      "distinct_query_count": 3,
+      "exact_collision_candidate_identity_verified": true,
+      "exact_uniform_hidden_collision_probability": 0.6666666666666666,
+      "exposed_hidden_involution_count": 2,
+      "maximum_candidate_multiplicity": 1,
+      "n": 3,
+      "pair_bound_verified": true,
+      "pair_union_upper_bound": 1.0,
+      "queried_pair_count": 3,
+      "status": "classical-collision-candidate-bound-verified",
+      "transposition_count": 1
+    },
+    {
+      "conjugacy_class_size": 6,
+      "distinct_query_count": 4,
+      "exact_collision_candidate_identity_verified": true,
+      "exact_uniform_hidden_collision_probability": 0.5,
+      "exposed_hidden_involution_count": 3,
+      "maximum_candidate_multiplicity": 1,
+      "n": 4,
+      "pair_bound_verified": true,
+      "pair_union_upper_bound": 1.0,
+      "queried_pair_count": 6,
+      "status": "classical-collision-candidate-bound-verified",
+      "transposition_count": 1
+    },
+    {
+      "conjugacy_class_size": 3,
+      "distinct_query_count": 3,
+      "exact_collision_candidate_identity_verified": true,
+      "exact_uniform_hidden_collision_probability": 1.0,
+      "exposed_hidden_involution_count": 3,
+      "maximum_candidate_multiplicity": 1,
+      "n": 4,
+      "pair_bound_verified": true,
+      "pair_union_upper_bound": 1.0,
+      "queried_pair_count": 3,
+      "status": "classical-collision-candidate-bound-verified",
+      "transposition_count": 2
+    },
+    {
+      "conjugacy_class_size": 15,
+      "distinct_query_count": 6,
+      "exact_collision_candidate_identity_verified": true,
+      "exact_uniform_hidden_collision_probability": 0.3333333333333333,
+      "exposed_hidden_involution_count": 5,
+      "maximum_candidate_multiplicity": 2,
+      "n": 5,
+      "pair_bound_verified": true,
+      "pair_union_upper_bound": 1.0,
+      "queried_pair_count": 15,
+      "status": "classical-collision-candidate-bound-verified",
+      "transposition_count": 2
+    },
+    {
+      "conjugacy_class_size": 15,
+      "distinct_query_count": 6,
+      "exact_collision_candidate_identity_verified": true,
+      "exact_uniform_hidden_collision_probability": 0.3333333333333333,
+      "exposed_hidden_involution_count": 5,
+      "maximum_candidate_multiplicity": 1,
+      "n": 6,
+      "pair_bound_verified": true,
+      "pair_union_upper_bound": 1.0,
+      "queried_pair_count": 15,
+      "status": "classical-collision-candidate-bound-verified",
+      "transposition_count": 3
+    }
+  ],
+  "headline_metrics": {
+    "certified_scaling_separation_count": 4,
+    "exponential_query_separation_theorem_count": 1,
+    "finite_control_count": 6,
+    "finite_control_failure_count": 0,
+    "natural_input_speedup_count": 0,
+    "polynomial_time_quantum_algorithm_count": 0,
+    "quantum_trace_distance_constant": 0.02383656473113981,
+    "scaling_record_count": 4,
+    "target_bayes_advantage": 0.01
+  },
+  "primary_literature": [
+    {
+      "id": "ETTINGER-HOYER-KNILL-2004-HSP-QUERY",
+      "scope": "Already proves polynomial quantum query complexity for arbitrary finite-group HSP while explicitly allowing exponential time.",
+      "title": "The quantum query complexity of the hidden subgroup problem is polynomial",
+      "url": "https://arxiv.org/abs/quant-ph/0401083"
+    },
+    {
+      "id": "HAYASHI-KAWACHI-KOBAYASHI-2006-HSP-SAMPLE-COMPLEXITY",
+      "scope": "Already proves the equal-prime-order logarithmic sample bound for both triviality and identification.",
+      "title": "Quantum Measurements for Hidden Subgroup Problems with Optimal Sample Complexity",
+      "url": "https://arxiv.org/abs/quant-ph/0604174"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-BINARY-POLYNOMIAL-HELSTROM-COMPILER",
+      "resolved": false,
+      "statement": "Implement the threshold invariant sign with polynomial gate complexity; query complexity currently treats it as free."
+    },
+    {
+      "id": "PO-COSET-BINARY-NATURAL-INPUT-TRANSFER",
+      "resolved": false,
+      "statement": "Replace the random opaque hiding oracle by a natural rigid-GI or code-equivalence input without assuming the desired canonizer."
+    },
+    {
+      "id": "PO-COSET-BINARY-DECISION-TO-SEARCH",
+      "resolved": false,
+      "statement": "Determine whether binary subgroup existence can recover an isomorphism/transporter with polynomially many natural calls."
+    },
+    {
+      "id": "PO-COSET-BINARY-STRUCTURED-CLASSICAL-BASELINE",
+      "resolved": false,
+      "statement": "Re-run the comparison when oracle labels expose graph/code structure rather than independent random names."
+    }
+  ],
+  "scaling_records": [
+    {
+      "classical_lower_bound_over_quantum_threshold": 13.619047619047619,
+      "classical_randomized_query_lower_bound": 286,
+      "conjugacy_class_size": 2027025,
+      "coset_state_information_lower_bound": 12,
+      "exponential_query_separation_certified": true,
+      "log2_classical_query_lower_bound": 8.159871336778389,
+      "log2_conjugacy_class_size": 20.950932451495344,
+      "n": 16,
+      "natural_input_reduction_known": false,
+      "polynomial_time_quantum_measurement_known": false,
+      "quantum_threshold_query_count": 21,
+      "status": "exponential-query-separation-computational-compiler-open",
+      "target_equal_prior_bayes_advantage": 0.01
+    },
+    {
+      "classical_lower_bound_over_quantum_threshold": 1510560.4827586208,
+      "classical_randomized_query_lower_bound": 87612508,
+      "conjugacy_class_size": 191898783962510625,
+      "coset_state_information_lower_bound": 49,
+      "exponential_query_separation_certified": true,
+      "log2_classical_query_lower_bound": 26.384633515104156,
+      "log2_conjugacy_class_size": 57.41312318247768,
+      "n": 32,
+      "natural_input_reduction_known": false,
+      "polynomial_time_quantum_measurement_known": false,
+      "quantum_threshold_query_count": 58,
+      "status": "exponential-query-separation-computational-compiler-open",
+      "target_equal_prior_bayes_advantage": 0.01
+    },
+    {
+      "classical_lower_bound_over_quantum_threshold": 1.4416349597029552e+19,
+      "classical_randomized_query_lower_bound": 2119203390763344258786,
+      "conjugacy_class_size": 112275575285571389562324404930670903477890625,
+      "coset_state_information_lower_bound": 138,
+      "exponential_query_separation_certified": true,
+      "log2_classical_query_lower_bound": 70.84401204979451,
+      "log2_conjugacy_class_size": 146.33188028936374,
+      "n": 64,
+      "natural_input_reduction_known": false,
+      "polynomial_time_quantum_measurement_known": false,
+      "quantum_threshold_query_count": 147,
+      "status": "exponential-query-separation-computational-compiler-open",
+      "target_equal_prior_bayes_advantage": 0.01
+    },
+    {
+      "classical_lower_bound_over_quantum_threshold": 2.2739112819062727e+50,
+      "classical_randomized_query_lower_bound": 81178632764053941286278762584928298477011387281602093,
+      "conjugacy_class_size": 164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625,
+      "coset_state_information_lower_bound": 347,
+      "exponential_query_separation_certified": true,
+      "log2_classical_query_lower_bound": 175.76136097606155,
+      "log2_conjugacy_class_size": 356.16657814189784,
+      "n": 128,
+      "natural_input_reduction_known": false,
+      "polynomial_time_quantum_measurement_known": false,
+      "quantum_threshold_query_count": 357,
+      "status": "exponential-query-separation-computational-compiler-open",
+      "target_equal_prior_bayes_advantage": 0.01
+    }
+  ],
+  "status": "exponential-hidden-involution-query-separation-compiler-open",
+  "summary": "Recovered the known unbounded-postprocessing HSP query boundary in the promised involution class and supplied an explicit adaptive classical pair-exposure bound. This is not a new oracle separation; polynomial gate complexity remains the real open problem.",
+  "theorem": {
+    "adaptive_classical_coupling_proved": true,
+    "arbitrary_coherent_quantum_query_lower_bound_proved": false,
+    "classical_transcript_bound": "TV(T_null,T_alt)<=|D_C(Q)|/M<=binom(q,2)/M.",
+    "coupling_statement": "Run the adaptive algorithm against random injective null labels; for uniform h, the alternative transcript is identical until h appears as a queried pair difference.",
+    "exponential_query_separation_proved": true,
+    "polynomial_time_quantum_algorithm_constructed": false,
+    "quantum_log_class_query_upper_bound_proved": true,
+    "quantum_query_upper": "ceil(log2 M) coherent queries prepare enough coset states for the class-symmetric fourth-moment Helstrom test; constant repetition amplifies its fixed bias.",
+    "query_separation": "Quantum O(log M) versus classical Omega(sqrt M) oracle queries; Theta(log M) is proved only for independent mixed coset states.",
+    "randomized_classical_sqrt_class_lower_bound_proved": true,
+    "status": "exponential-hidden-involution-query-separation-compiler-open",
+    "theorem_verified": true,
+    "yao_consequence": "Randomized worst-case Bayes advantage epsilon requires q(q-1)>=4 epsilon M."
+  },
+  "theorem_contract": {
+    "classical_model": "Randomized adaptive point queries; repeated queries removed without loss; arbitrary computation between queries.",
+    "non_claim": "No polynomial gate complexity, direct graph/code input result, decision-to-search reduction, or computational speedup.",
+    "oracle_promise": "Random opaque injective labels on elements under H={e}, or on right cosets under H={e,h} for h in a known involution class.",
+    "quantum_model": "Coherent oracle queries, efficient or free uniform group-state preparation, and arbitrary query-free postprocessing. The Omega(log M) information lower bound is scoped only to independent mixed coset states."
+  }
+}

@@ -940,40 +940,6 @@ def _register(
     metrics = payload["headline_metrics"]
     if not isinstance(metrics, dict):
         raise ValueError("chart-union artifact lacks metrics")
-    if int(metrics["finite_tail_collapse_observed_count"]) > 0:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-MARKER-POLYNOMIAL-CHART-UNION-FINITE-DECAY",
-                source=str(path),
-                claim=(
-                    "A polynomial union of learned logarithmic LLL-coordinate charts "
-                    "already has evidence of inverse-polynomial source coverage."
-                ),
-                reason_invalid=(
-                    "Disjoint held-out coverage decays in the preregistered scaling "
-                    "sweep, and no random-label concentration theorem is supplied."
-                ),
-                lesson=(
-                    "Prove a different chart distribution or move beyond coordinate-cell "
-                    "unions; do not tune on held-out labels or call finite decay a lower bound."
-                ),
-                applies_to=[candidate_id, experiment_id],
-                evidence=metrics,
-            )
-        )
-    upsert_experiment_result(
-        ExperimentResultRecord(
-            id=result_id or f"RESULT-{experiment_id}-LATEST",
-            experiment_id=experiment_id,
-            candidate_id=candidate_id,
-            created_at=str(payload["created_at"]),
-            status=str(payload["status"]),
-            summary=str(payload["summary"]),
-            metrics=metrics,
-            falsifiers_triggered=list(payload["falsifiers_triggered"]),
-            artifacts={"dcp_marker_chart_union_decoder": str(path)},
-        )
-    )
 
 
 def write_marker_chart_union_decoder(

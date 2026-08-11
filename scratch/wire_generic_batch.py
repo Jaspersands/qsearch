@@ -1,4 +1,5 @@
 import importlib
+import inspect
 import json
 import re
 import sys
@@ -7,7 +8,7 @@ from pathlib import Path
 sys.path.insert(0, ".")
 
 
-def wire_batch(modules_info, last_exp_id=None):
+def wire_batch(modules_info):
     """Wires a batch of modules into research_registry, experiment_runner, qsearch, tests, and README."""
 
     # 1. Update module report writer signatures and upserts
@@ -17,25 +18,49 @@ def wire_batch(modules_info, last_exp_id=None):
         with open(path) as f:
             code = f.read()
 
-        if "write_registry: bool = True" not in code:
-            old_pattern = re.compile(
-                rf"def {writer_name}\(\s*path:\s*Path\s*=\s*REPORT_PATH,?\s*\)\s*->\s*dict\[str,\s*Any\]:"
-            )
-            new_def = f"""def {writer_name}(
-    path: Path = REPORT_PATH,
+        match = re.search(r"^def " + re.escape(writer_name) + r"\(", code, re.MULTILINE)
+        if match:
+            def_idx = match.start()
+            sig_snippet = code[def_idx:def_idx + 400]
+            if "write_registry: bool = True" not in sig_snippet:
+                ret_idx = code.find("->", def_idx)
+                if ret_idx != -1:
+                    colon_idx = code.find(":\n", ret_idx)
+                else:
+                    colon_idx = code.find(":\n", def_idx)
+
+                old_sig = code[def_idx:colon_idx + 1]
+                path_param = "output_path" if "output_path" in old_sig else "path"
+                new_def = f"""def {writer_name}(
+    {path_param}: Path = REPORT_PATH,
     write_registry: bool = True,
     registry_experiment_id: str = (
         "{exp_id}"
     ),
     registry_candidate_id: str = "CODE-COSET-COLLECTIVE",
     registry_result_id: str = "",
-) -> dict[str, Any]:"""
-            code = old_pattern.sub(new_def, code)
+    **kwargs: Any,
+) -> dict[str, Any]:
+    path = {path_param}
+    output_path = {path_param}
+    for _k in ("write_registry", "registry_experiment_id", "registry_candidate_id", "registry_result_id"):
+        kwargs.pop(_k, None)"""
+                code = code[:def_idx] + new_def + code[colon_idx + 1:]
 
-            neg_id = "NEG-" + exp_id[9:]
-            upsert_block = f"""
+                # Find the end of writer_name function
+                end_pos = code.find("\ndef ", def_idx + 1)
+                if end_pos == -1:
+                    end_pos = code.find("\nif __name__", def_idx + 1)
+                if end_pos == -1:
+                    end_pos = len(code)
+
+                # Find the LAST return inside writer_name
+                ret_pos = code.rfind("\n    return ", def_idx, end_pos)
+                if ret_pos != -1:
+                    neg_id = "NEG-" + exp_id[9:]
+                    upsert_block = f"""
     if write_registry:
-        _res_payload = report if "report" in locals() else (payload if "payload" in locals() else result)
+        _res_payload = report if "report" in locals() else (payload if "payload" in locals() else (result if "result" in locals() else output))
         from research_registry import (
             ExperimentResultRecord,
             NegativeResultRecord,
@@ -78,20 +103,15 @@ def wire_batch(modules_info, last_exp_id=None):
                 metrics=_res_payload.get("headline_metrics", {{}}),
                 falsifiers_triggered=_res_payload.get("falsifiers_triggered", []),
                 artifacts={{
-                    "{mod_name}": str(path)
+                    "{mod_name}": str({path_param})
                 }},
             )
-        )"""
+        )\n"""
+                    code = code[:ret_pos] + upsert_block + code[ret_pos:]
 
-            code = re.sub(
-                r"(\n    return (?:payload|report|result|res))(\n\n|\n$)",
-                r"\n" + upsert_block + r"\1\2",
-                code,
-                count=1,
-            )
-            with open(path, "w") as f:
-                f.write(code)
-            print("Updated module file:", path)
+        with open(path, "w") as f:
+            f.write(code)
+        print("Updated module file:", path)
 
     # 2. Update research_registry.py
     print("Updating research_registry.py...")
@@ -102,7 +122,12 @@ def wire_batch(modules_info, last_exp_id=None):
     for mod_name, exp_id, writer_name, cli_name in modules_info:
         mod = importlib.import_module(mod_name)
         writer = getattr(mod, writer_name)
-        payload = writer(write_registry=False)
+        sig = inspect.signature(writer)
+        if "write_registry" in sig.parameters:
+            payload = writer(write_registry=False)
+        else:
+            payload = writer()
+
         summary = payload.get("summary", f"Theorem evaluation for {exp_id}.")
         falsifiers = payload.get(
             "falsifiers_triggered", [f"Falsifier for {exp_id}"]
@@ -147,61 +172,39 @@ def wire_batch(modules_info, last_exp_id=None):
     with open("experiment_runner.py") as f:
         runner_code = f.read()
 
-    # Add imports before from learnability_baselines import write_learnability_report
-    imports_str = "\n".join(
-        f"from {mod_name} import (\n    {writer_name},\n)"
-        for mod_name, exp_id, writer_name, cli_name in modules_info
-    )
-    import_anchor = "from learnability_baselines import write_learnability_report"
-    pos = runner_code.find(import_anchor)
-    runner_code = (
-        runner_code[:pos] + imports_str + "\n" + runner_code[pos:]
-    )
+    imp_lines = [f"from {mod_name} import {writer_name}" for mod_name, exp_id, writer_name, cli_name in modules_info]
+    imp_anchor = "from learnability_baselines import write_learnability_report"
+    imp_pos = runner_code.find(imp_anchor)
+    runner_code = runner_code[:imp_pos] + "\n".join(imp_lines) + "\n" + runner_code[imp_pos:]
 
-    # Add COSET_EXPERIMENTS IDs before "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING",
-    ids_str = "\n".join(
-        f'    "{exp_id}",'
-        for mod_name, exp_id, writer_name, cli_name in modules_info
-    )
-    id_anchor = '"EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING",'
-    pos = runner_code.find(id_anchor)
-    line_start = runner_code.rfind("\n", 0, pos) + 1
-    runner_code = runner_code[:line_start] + ids_str + "\n" + runner_code[line_start:]
+    set_lines = [f'        "{exp_id}",' for mod_name, exp_id, writer_name, cli_name in modules_info]
+    set_anchor = '"EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING",'
+    set_pos = runner_code.find(set_anchor)
+    runner_code = runner_code[:set_pos] + "\n".join(set_lines) + "\n" + runner_code[set_pos:]
 
-    # Add priority entries before "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING":
-    prio_matches = re.findall(r'"EXP-CODE-SELF-DUAL-WREATH-[A-Z0-9-]+": (\d+),', runner_code)
-    last_prio = max(int(x) for x in prio_matches) if prio_matches else 157
-    prio_str = "\n".join(
-        f'        "{exp_id}": {last_prio + 1 + i},'
-        for i, (mod_name, exp_id, writer_name, cli_name) in enumerate(
-            modules_info
-        )
-    )
+    prio_lines = [f'        "{exp_id}": 110,' for mod_name, exp_id, writer_name, cli_name in modules_info]
     prio_anchor = '"EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING":'
-    pos = runner_code.find(prio_anchor)
-    line_start = runner_code.rfind("\n", 0, pos) + 1
-    runner_code = runner_code[:line_start] + prio_str + "\n" + runner_code[line_start:]
+    prio_pos = runner_code.find(prio_anchor)
+    runner_code = runner_code[:prio_pos] + "\n".join(prio_lines) + "\n" + runner_code[prio_pos:]
 
-    # Add dispatch branches before == "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING"
-    dispatch_str = "\n".join(
-        f"""        elif (
+    dispatch_blocks = []
+    for mod_name, exp_id, writer_name, cli_name in modules_info:
+        block = f"""        elif (
             experiment_id
             == "{exp_id}"
         ):
-            payload = {writer_name}(
+            metrics = {writer_name}(
                 write_registry=True,
                 registry_experiment_id=experiment_id,
-                registry_candidate_id=experiment["candidate_id"],
+                registry_candidate_id=record.candidate_id,
                 registry_result_id=result_id,
             )"""
-        for mod_name, exp_id, writer_name, cli_name in modules_info
-    )
-    dispatch_anchor = '== "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING"'
-    pos = runner_code.find(dispatch_anchor)
-    branch_start = runner_code.rfind("        elif (", 0, pos)
-    runner_code = (
-        runner_code[:branch_start] + dispatch_str + "\n" + runner_code[branch_start:]
-    )
+        dispatch_blocks.append(block)
+
+    disp_anchor = '== "EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING"'
+    disp_pos = runner_code.find(disp_anchor)
+    disp_start = runner_code.rfind("        elif (", 0, disp_pos)
+    runner_code = runner_code[:disp_start] + "\n".join(dispatch_blocks) + "\n" + runner_code[disp_start:]
 
     with open("experiment_runner.py", "w") as f:
         f.write(runner_code)
@@ -209,90 +212,54 @@ def wire_batch(modules_info, last_exp_id=None):
     # 4. Update qsearch.py
     print("Updating qsearch.py...")
     with open("qsearch.py") as f:
-        q_code = f.read()
+        qcode = f.read()
 
-    # Add imports before from blocker_taxonomy import write_blocker_taxonomy
-    q_imports_str = "\n".join(
-        f"from {mod_name} import (\n    {writer_name},\n)"
-        for mod_name, exp_id, writer_name, cli_name in modules_info
-    )
-    q_import_anchor = "from blocker_taxonomy import write_blocker_taxonomy"
-    pos = q_code.find(q_import_anchor)
-    q_code = q_code[:pos] + q_imports_str + "\n\n\n" + q_code[pos:]
+    qimp_lines = [f"from {mod_name} import {writer_name}" for mod_name, exp_id, writer_name, cli_name in modules_info]
+    qimp_anchor = "from blocker_taxonomy import write_blocker_taxonomy"
+    qimp_pos = qcode.find(qimp_anchor)
+    qcode = qcode[:qimp_pos] + "\n".join(qimp_lines) + "\n" + qcode[qimp_pos:]
 
-    # Add command functions before def command_coset_strong_fourier_information(
-    cmd_funcs = []
-    for mod_name, exp_id, writer_name, cli_name in modules_info:
-        func_name = "command_" + cli_name.replace("-", "_")
-        art_path = f"research/representation/{mod_name}.json"
-        cmd_body = f"""def {func_name}(
-    args: argparse.Namespace,
-) -> int:
-    initialize_seed_registry(overwrite=False)
-    payload = {writer_name}(
-        write_registry=not args.no_registry,
-    )
-    validation = validate_registry()
-    metrics = payload["headline_metrics"]
-    print("{cli_name.replace('-', ' ').title()} analysis complete")
-    print(
-        "Artifact: {art_path}"
-    )
-    print(
-        f"Speedup claim allowed: "
-        f"{{payload['claim_gate']['speedup_claim_allowed']}}"
-    )
-    print(f"Registry valid: {{validation['valid']}}")
-    if validation["issues"]:
-        print(json.dumps(validation["issues"], indent=2))
-        return 1
-    return 0"""
-        cmd_funcs.append(cmd_body)
-
-    cmd_funcs_str = "\n\n\n".join(cmd_funcs)
-    cmd_anchor = "def command_coset_strong_fourier_information("
-    pos = q_code.find(cmd_anchor)
-    q_code = q_code[:pos] + cmd_funcs_str + "\n\n\n" + q_code[pos:]
-
-    # Add subparsers before coset_strong_fourier_information = subparsers.add_parser(
+    cmd_blocks = []
     subparser_blocks = []
     for mod_name, exp_id, writer_name, cli_name in modules_info:
-        func_name = "command_" + cli_name.replace("-", "_")
-        sub_body = f"""    {cli_name.replace('-', '_')} = subparsers.add_parser(
-        "{cli_name}",
-        help="Analyze {cli_name.replace('-', ' ')} theorem performance.",
-    )
-    {cli_name.replace('-', '_')}.add_argument(
-        "--no-registry",
-        action="store_true",
-    )
-    {cli_name.replace('-', '_')}.set_defaults(
-        func={func_name}
-    )"""
-        subparser_blocks.append(sub_body)
+        fn_name = "command_" + cli_name.replace("-", "_")
+        cmd_block = f"""def {fn_name}(args: argparse.Namespace) -> int:
+    report = {writer_name}()
+    print(f"Analysis complete: {{args.command}}")
+    print(f"Status: {{report.get('status')}}")
+    print(f"Registry valid: {{validate_registry()['valid']}}")
+    return 0\n\n"""
+        cmd_blocks.append(cmd_block)
 
-    subparsers_str = "\n\n".join(subparser_blocks)
-    sub_anchor = "coset_strong_fourier_information = subparsers.add_parser("
-    pos = q_code.find(sub_anchor)
-    sub_line_start = q_code.rfind("    ", 0, pos)
-    q_code = q_code[:sub_line_start] + subparsers_str + "\n\n" + q_code[sub_line_start:]
+        var_name = cli_name.replace("-", "_")
+        sub_block = f"""    {var_name} = subparsers.add_parser(
+        "{cli_name}",
+        help="{exp_id.replace('-', ' ').title()}",
+    )
+    {var_name}.set_defaults(func={fn_name})\n\n"""
+        subparser_blocks.append(sub_block)
+
+    cmd_anchor = "def command_coset_strong_fourier_information("
+    cmd_pos = qcode.find(cmd_anchor)
+    qcode = qcode[:cmd_pos] + "".join(cmd_blocks) + qcode[cmd_pos:]
+
+    sub_anchor = '    coset_strong_fourier_information = subparsers.add_parser('
+    sub_pos = qcode.find(sub_anchor)
+    qcode = qcode[:sub_pos] + "".join(subparser_blocks) + qcode[sub_pos:]
 
     with open("qsearch.py", "w") as f:
-        f.write(q_code)
+        f.write(qcode)
 
     # 5. Update tests/test_experiment_runner.py
     print("Updating tests/test_experiment_runner.py...")
     with open("tests/test_experiment_runner.py") as f:
-        test_code = f.read()
+        tcode = f.read()
 
     test_methods = []
     for mod_name, exp_id, writer_name, cli_name in modules_info:
-        method_name = (
-            "test_"
-            + cli_name.replace("-", "_")[5:]
-            + "_dispatches_from_clean_registry"
-        )
-        test_body = f"""    def {method_name}(self):
+        test_fn_name = "test_" + mod_name + "_dispatches_from_clean_registry"
+        if test_fn_name not in tcode:
+            tblock = f"""    def {test_fn_name}(self):
         old_cwd = os.getcwd()
         with tempfile.TemporaryDirectory() as tmp:
             try:
@@ -314,17 +281,15 @@ def wire_batch(modules_info, last_exp_id=None):
             "{mod_name}",
             record["artifacts"],
         )
-        self.assertTrue(validation["valid"], validation["issues"])"""
-        test_methods.append(test_body)
+        self.assertTrue(validation["valid"], validation["issues"])\n\n"""
+            test_methods.append(tblock)
 
-    test_methods_str = "\n\n".join(test_methods)
-    test_anchor = "def test_equal_commutator_audit_dispatches_from_clean_registry("
-    pos = test_code.find(test_anchor)
-    method_start = test_code.rfind("    def ", 0, pos)
-    test_code = test_code[:method_start] + test_methods_str + "\n\n" + test_code[method_start:]
-
-    with open("tests/test_experiment_runner.py", "w") as f:
-        f.write(test_code)
+    if test_methods:
+        target = '\nif __name__ == "__main__":'
+        inserted_code = "".join(test_methods) + "\n"
+        tcode = tcode.replace(target, inserted_code + target)
+        with open("tests/test_experiment_runner.py", "w") as f:
+            f.write(tcode)
 
     # 6. Update README.md
     print("Updating README.md...")
@@ -333,22 +298,20 @@ def wire_batch(modules_info, last_exp_id=None):
 
     readme_blocks = []
     for mod_name, exp_id, writer_name, cli_name in modules_info:
-        block = f"""Analyze {cli_name.replace('-', ' ')} theorem performance:
+        rblock = f"""```bash
+python3 qsearch.py {cli_name}
+```
+Evaluate {exp_id.replace('-', ' ').title()} theorem contract and headline metrics.
 
-```bash
-python qsearch.py {cli_name}
-python qsearch.py run {exp_id}
-```"""
-        readme_blocks.append(block)
+"""
+        readme_blocks.append(rblock)
 
-    readme_str = "\n\n".join(readme_blocks)
-    readme_anchor = "Isolate the solvable and unresolved equal-pair commutator terms:"
-    pos = readme_code.find(readme_anchor)
-    readme_code = (
-        readme_code[:pos] + readme_str + "\n\n" + readme_code[pos:]
-    )
-
-    with open("README.md", "w") as f:
-        f.write(readme_code)
+    ranchor = "Isolate the solvable and unresolved equal-pair commutator terms:"
+    rpos = readme_code.find(ranchor)
+    if rpos != -1:
+        rblock_pos = readme_code.rfind("```bash", 0, rpos)
+        readme_code = readme_code[:rblock_pos] + "".join(readme_blocks) + readme_code[rblock_pos:]
+        with open("README.md", "w") as f:
+            f.write(readme_code)
 
     print("Batch wiring complete!")

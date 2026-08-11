@@ -1,0 +1,315 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False for binary class detection. An invariant effect can distinguish the class mixture from the trivial subgroup while remaining exactly independent of which h occurred.",
+      "challenge": "Zero information about the individual h means invariant measurements are useless.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It fixes the second moment and an upper bound only; a matching trace-norm lower bound needs higher-moment or spectral control.",
+      "challenge": "Pairwise coset-state overlap already proves an efficient binary measurement near log2 |C| copies.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Its trace distance is at most sqrt(3/|C|)/2 and the uniform Kronecker target transform is not compiled here.",
+      "challenge": "The two-copy target-label formula gives a scalable algorithm.",
+      "resolved": true
+    },
+    {
+      "answer": "False. log |C| is polynomial in the natural group-register length for fixed-point-free involutions.",
+      "challenge": "The copy lower bound rules out a polynomial quantum algorithm.",
+      "resolved": true
+    },
+    {
+      "answer": "False without a promise-preserving reduction and accounting for graph automorphisms, oracle preparation, and the actual decision-to-search relationship.",
+      "challenge": "A coset-state binary algorithm would automatically solve GI.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "binary_detection_requires_hidden_involution_identification": false,
+    "classical_superpolynomial_separation_proved": false,
+    "constant_copy_fixed_point_free_binary_signal_possible": false,
+    "exact_binary_chi_square_identity_proved": true,
+    "graph_isomorphism_algorithm_constructed": false,
+    "graph_isomorphism_lower_bound_proved": false,
+    "one_copy_weak_fourier_is_binary_helstrom_optimal": true,
+    "polynomial_higher_copy_block_sign_compiler_constructed": false,
+    "polynomial_two_copy_kronecker_measurement_constructed": false,
+    "published_equal_prime_order_sample_theorem_rederived": true,
+    "reason": "Binary decision is a genuine escape from individual-label polar obligations, but constant-copy signal vanishes and neither threshold distinguishability nor its efficient measurement is known.",
+    "sample_complexity_result_new_to_literature": false,
+    "speedup_claim_allowed": false,
+    "threshold_trace_distance_lower_bound_proved": false,
+    "two_copy_target_label_is_binary_helstrom_optimal": true
+  },
+  "created_at": "2026-08-11T14:53:47.317941+00:00",
+  "falsifiers_triggered": [
+    "Constant-copy invariant measurements cannot retain constant fixed-point-free decision advantage.",
+    "Pairwise overlap decay alone does not prove threshold distinguishability.",
+    "Zero individual-label information does not imply zero binary class-detection information.",
+    "Two-copy target-label optimality is not a scalable hidden-involution algorithm."
+  ],
+  "finite_controls": [
+    {
+      "average_conjugation_invariance_residual": 0.0,
+      "chi_square_identity_residual": 0.0,
+      "chi_square_trace_distance_upper_bound": 0.28867513459481287,
+      "conjugacy_class_size": 3,
+      "copy_count": 1,
+      "entangled_target_gain_over_product_labels": null,
+      "equal_prior_bayes_success_probability": 0.5833333333333334,
+      "exact_label_helstrom_trace_distance": 0.16666666666666666,
+      "exact_normalized_chi_square": 0.3333333333333333,
+      "finite_control_verified": true,
+      "group_order": 6,
+      "helstrom_conjugation_invariance_residual": 1.6420419976791492e-16,
+      "helstrom_trace_distance": 0.16666666666666666,
+      "hilbert_dimension": 6,
+      "label_helstrom_identity_residual": 0.0,
+      "n": 3,
+      "negative_helstrom_rank": 1,
+      "positive_helstrom_rank": 1,
+      "predicted_normalized_chi_square": 0.3333333333333333,
+      "product_weak_fourier_trace_distance": 0.16666666666666666,
+      "status": "binary-helstrom-normal-form-verified",
+      "transposition_count": 1
+    },
+    {
+      "average_conjugation_invariance_residual": 0.0,
+      "chi_square_identity_residual": 0.0,
+      "chi_square_trace_distance_upper_bound": 0.5,
+      "conjugacy_class_size": 3,
+      "copy_count": 2,
+      "entangled_target_gain_over_product_labels": 0.1111111111111111,
+      "equal_prior_bayes_success_probability": 0.7083333333333334,
+      "exact_label_helstrom_trace_distance": 0.4166666666666667,
+      "exact_normalized_chi_square": 1.0,
+      "finite_control_verified": true,
+      "group_order": 6,
+      "helstrom_conjugation_invariance_residual": 2.606641344554601e-15,
+      "helstrom_trace_distance": 0.4166666666666667,
+      "hilbert_dimension": 36,
+      "label_helstrom_identity_residual": 0.0,
+      "n": 3,
+      "negative_helstrom_rank": 15,
+      "positive_helstrom_rank": 13,
+      "predicted_normalized_chi_square": 1.0,
+      "product_weak_fourier_trace_distance": 0.3055555555555556,
+      "status": "binary-helstrom-normal-form-verified",
+      "transposition_count": 1
+    },
+    {
+      "average_conjugation_invariance_residual": 0.0,
+      "chi_square_identity_residual": 8.881784197001252e-16,
+      "chi_square_trace_distance_upper_bound": 0.7637626158259734,
+      "conjugacy_class_size": 3,
+      "copy_count": 3,
+      "entangled_target_gain_over_product_labels": null,
+      "equal_prior_bayes_success_probability": 0.8310185185185185,
+      "exact_label_helstrom_trace_distance": null,
+      "exact_normalized_chi_square": 2.3333333333333326,
+      "finite_control_verified": true,
+      "group_order": 6,
+      "helstrom_conjugation_invariance_residual": 3.888003766224388e-15,
+      "helstrom_trace_distance": 0.662037037037037,
+      "hilbert_dimension": 216,
+      "label_helstrom_identity_residual": null,
+      "n": 3,
+      "negative_helstrom_rank": 143,
+      "positive_helstrom_rank": 73,
+      "predicted_normalized_chi_square": 2.3333333333333335,
+      "product_weak_fourier_trace_distance": 0.4212962962962963,
+      "status": "binary-helstrom-normal-form-verified",
+      "transposition_count": 1
+    },
+    {
+      "average_conjugation_invariance_residual": 0.0,
+      "chi_square_identity_residual": 0.0,
+      "chi_square_trace_distance_upper_bound": 0.28867513459481287,
+      "conjugacy_class_size": 3,
+      "copy_count": 1,
+      "entangled_target_gain_over_product_labels": null,
+      "equal_prior_bayes_success_probability": 0.625,
+      "exact_label_helstrom_trace_distance": 0.25,
+      "exact_normalized_chi_square": 0.3333333333333333,
+      "finite_control_verified": true,
+      "group_order": 24,
+      "helstrom_conjugation_invariance_residual": 1.6804787836634364e-15,
+      "helstrom_trace_distance": 0.25,
+      "hilbert_dimension": 24,
+      "label_helstrom_identity_residual": 0.0,
+      "n": 4,
+      "negative_helstrom_rank": 18,
+      "positive_helstrom_rank": 6,
+      "predicted_normalized_chi_square": 0.3333333333333333,
+      "product_weak_fourier_trace_distance": 0.25,
+      "status": "binary-helstrom-normal-form-verified",
+      "transposition_count": 2
+    },
+    {
+      "average_conjugation_invariance_residual": 0.0,
+      "chi_square_identity_residual": 0.0,
+      "chi_square_trace_distance_upper_bound": 0.5,
+      "conjugacy_class_size": 3,
+      "copy_count": 2,
+      "entangled_target_gain_over_product_labels": 0.0625,
+      "equal_prior_bayes_success_probability": 0.6875,
+      "exact_label_helstrom_trace_distance": 0.375,
+      "exact_normalized_chi_square": 1.0,
+      "finite_control_verified": true,
+      "group_order": 24,
+      "helstrom_conjugation_invariance_residual": 6.01112047674877e-15,
+      "helstrom_trace_distance": 0.375,
+      "hilbert_dimension": 576,
+      "label_helstrom_identity_residual": 0.0,
+      "n": 4,
+      "negative_helstrom_rank": 216,
+      "positive_helstrom_rank": 360,
+      "predicted_normalized_chi_square": 1.0,
+      "product_weak_fourier_trace_distance": 0.3125,
+      "status": "binary-helstrom-normal-form-verified",
+      "transposition_count": 2
+    }
+  ],
+  "headline_metrics": {
+    "exact_chi_square_control_count": 5,
+    "finite_control_count": 5,
+    "finite_validation_failure_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "one_copy_helstrom_label_control_count": 2,
+    "scalable_block_sign_compiler_count": 0,
+    "scaling_record_count": 5,
+    "strict_entangled_target_gain_control_count": 2,
+    "threshold_trace_distance_lower_bound_count": 0,
+    "two_copy_helstrom_target_control_count": 2
+  },
+  "primary_literature": [
+    {
+      "id": "HAYASHI-KAWACHI-KOBAYASHI-2006-HSP-SAMPLE-COMPLEXITY",
+      "scope": "Already proves Theta(log |H|/log p) sample complexity for triviality and identification when candidate subgroups have equal prime order, explicitly including symmetric hidden involutions.",
+      "title": "Quantum Measurements for Hidden Subgroup Problems with Optimal Sample Complexity",
+      "url": "https://arxiv.org/abs/quant-ph/0604174"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-BINARY-THRESHOLD-LOWER",
+      "resolved": false,
+      "statement": "Lower-bound class-mixture trace distance at k=Theta(log |C|), for example by controlling the fourth normalized trace moment of the centered likelihood operator."
+    },
+    {
+      "id": "PO-COSET-BINARY-BLOCK-SIGN-COMPILER",
+      "resolved": false,
+      "statement": "Compile the higher-copy invariant Helstrom block sign in polynomial size without enumerating C or diagonalizing exponential multiplicity spaces."
+    },
+    {
+      "id": "PO-COSET-TWO-COPY-KRONECKER-MEASUREMENT",
+      "resolved": false,
+      "statement": "Give a uniform polynomial S_n diagonal-target measurement; the exact scalar decision rule alone is not a circuit."
+    },
+    {
+      "id": "PO-COSET-BINARY-INPUT-MODEL-TRANSFER",
+      "resolved": false,
+      "statement": "Prove that a natural GI/code-equivalence input supplies the promised coset-state binary instance without hiding an equivalent hard preprocessing or decoding task."
+    },
+    {
+      "id": "PO-COSET-BINARY-CLASSICAL-BASELINE",
+      "resolved": false,
+      "statement": "Compare the same promise and oracle/query model against collision search, graph invariants, and dequantization."
+    }
+  ],
+  "scaling_records": [
+    {
+      "constant_copy_signal_can_remain_constant": false,
+      "copy_lower_bound_over_log2_class_size": 0.7446853092941416,
+      "information_theoretic_copy_lower_bound": 5,
+      "log2_matching_count": 6.714245517666122,
+      "matching_count": 105,
+      "n": 8,
+      "one_copy_trace_distance_upper_bound": 0.048795003647426664,
+      "polynomial_measurement_compiler_known": false,
+      "status": "constant-copy-decision-signal-ruled-out-threshold-open",
+      "target_bayes_advantage": 0.1,
+      "two_copy_trace_distance_upper_bound": 0.08451542547285165
+    },
+    {
+      "constant_copy_signal_can_remain_constant": false,
+      "copy_lower_bound_over_log2_class_size": 0.9068808772109759,
+      "information_theoretic_copy_lower_bound": 19,
+      "log2_matching_count": 20.950932451495344,
+      "matching_count": 2027025,
+      "n": 16,
+      "one_copy_trace_distance_upper_bound": 0.0003511886340227855,
+      "polynomial_measurement_compiler_known": false,
+      "status": "constant-copy-decision-signal-ruled-out-threshold-open",
+      "target_bayes_advantage": 0.1,
+      "two_copy_trace_distance_upper_bound": 0.0006082765571681767
+    },
+    {
+      "constant_copy_signal_can_remain_constant": false,
+      "copy_lower_bound_over_log2_class_size": 0.9579691358226936,
+      "information_theoretic_copy_lower_bound": 55,
+      "log2_matching_count": 57.41312318247768,
+      "matching_count": 191898783962510625,
+      "n": 32,
+      "one_copy_trace_distance_upper_bound": 1.1413895525035823e-09,
+      "polynomial_measurement_compiler_known": false,
+      "status": "constant-copy-decision-signal-ruled-out-threshold-open",
+      "target_bayes_advantage": 0.1,
+      "two_copy_trace_distance_upper_bound": 1.9769446961645093e-09
+    },
+    {
+      "constant_copy_signal_can_remain_constant": false,
+      "copy_lower_bound_over_log2_class_size": 0.9840644411542272,
+      "information_theoretic_copy_lower_bound": 144,
+      "log2_matching_count": 146.33188028936374,
+      "matching_count": 112275575285571389562324404930670903477890625,
+      "n": 64,
+      "one_copy_trace_distance_upper_bound": 4.718754246801185e-23,
+      "polynomial_measurement_compiler_known": false,
+      "status": "constant-copy-decision-signal-ruled-out-threshold-open",
+      "target_bayes_advantage": 0.1,
+      "two_copy_trace_distance_upper_bound": 8.17312210389106e-23
+    },
+    {
+      "constant_copy_signal_can_remain_constant": false,
+      "copy_lower_bound_over_log2_class_size": 0.9939169526989288,
+      "information_theoretic_copy_lower_bound": 354,
+      "log2_matching_count": 356.16657814189784,
+      "matching_count": 164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625,
+      "n": 128,
+      "one_copy_trace_distance_upper_bound": 1.2318512469980919e-54,
+      "polynomial_measurement_compiler_known": false,
+      "status": "constant-copy-decision-signal-ruled-out-threshold-open",
+      "target_bayes_advantage": 0.1,
+      "two_copy_trace_distance_upper_bound": 2.1336289471677736e-54
+    }
+  ],
+  "status": "binary-decision-copy-threshold-and-two-copy-normal-form-proved",
+  "summary": "Re-derived the published logarithmic sample threshold with an exact class-mixture chi-square identity and added exact one- and two-copy Helstrom normal forms. The new value is compiler diagnostics, not a new sample-complexity result.",
+  "theorem": {
+    "centered_orthogonality_identity": "Tr[(rho_h^k-rho_0^k)(rho_g^k-rho_0^k)]=|G|^-k(2^k-1) delta_(h,g).",
+    "centered_orthogonality_proved": true,
+    "chi_square_identity": "chi^2(rho_C^k||rho_0^k)=(2^k-1)/|C| exactly.",
+    "exact_chi_square_proved": true,
+    "higher_copy_boundary": "For k>=3, overlapping subset class sums commute with the diagonal group action but can act nontrivially and noncommutatively on recoupling multiplicity spaces.",
+    "one_copy_helstrom_normal_form": "After the group QFT, the class average is scalar on lambda and the optimal sign is sign(chi_lambda(h)).",
+    "one_copy_weak_fourier_helstrom_optimal": true,
+    "scalable_block_sign_compiler_constructed": false,
+    "status": "binary-decision-copy-threshold-and-two-copy-normal-form-proved",
+    "symmetrization_identity": "Conjugation-averaging any binary effect preserves null acceptance and class-average alternative acceptance and makes alternative acceptance identical for every h in C.",
+    "symmetrized_worst_case_binary_test_proved": true,
+    "theorem_verified": true,
+    "threshold_trace_distance_lower_bound_proved": false,
+    "trace_distance_upper_bound": "D(rho_C^k,rho_0^k)<=sqrt((2^k-1)/|C|)/2.",
+    "two_copy_helstrom_normal_form": "After source labels lambda,mu and diagonal coupling to nu, the optimal sign is sign(r_lambda+r_mu+r_nu).",
+    "two_copy_target_label_helstrom_optimal": true
+  },
+  "theorem_contract": {
+    "access_model": "k independent standard mixed coset states; null H={e}, alternative H={e,h} with h uniform in one nonidentity involution conjugacy class.",
+    "binary_output": "Decide trivial versus promised class; do not identify h.",
+    "non_claim": "No threshold trace-distance lower bound, scalable block-sign circuit, GI reduction, classical separation, or speedup.",
+    "worst_case_scope": "Conjugation symmetrization converts uniform-prior performance to identical performance on every h in the class, but does not cover arbitrary non-coset-state oracle access."
+  }
+}

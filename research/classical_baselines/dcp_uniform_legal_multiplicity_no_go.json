@@ -1,0 +1,289 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Fixed moments cannot control a threshold growing with n.",
+      "resolution": "For each requested polynomial tail exponent B, choose one larger but fixed factorial order k. Quenched convergence applies separately to that k.",
+      "resolved": true
+    },
+    {
+      "objection": "Conditioning on legality may amplify the rare tail.",
+      "resolution": "The legal fraction converges to the positive constant 1-exp(-1), so conditioning changes the bound only by a constant factor.",
+      "resolved": true
+    },
+    {
+      "objection": "Planted-target multiplicity data can validate the route.",
+      "resolution": "Planting size-biases Poisson to 1+Poisson and is a different target law from the primary-source uniform legal contract.",
+      "resolved": true
+    },
+    {
+      "objection": "The theorem is a general subset-sum lower bound.",
+      "resolution": "False. It rejects only final-fiber multiplicity filters and makes no claim about algorithms exploiting internal representations or coefficient geometry.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "internal_representation_dissection_survives": true,
+    "joint_low_high_preconditioner_survives": true,
+    "polynomial_fiber_multiplicity_representation_collapse_survives": false,
+    "polynomial_partial_subset_sum_solver_constructed": false,
+    "reason": "Uniform legal targets almost surely do not contain an inverse-polynomial mass of polynomially large final fibers; any surviving route must exploit different structure.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:23:34.322460+00:00",
+  "falsifiers_triggered": [
+    "Polynomially large witness fibers cannot occupy inverse-polynomial uniform-legal source mass.",
+    "Planted-witness target experiments use a size-biased law and cannot promote a Regev-compatible solver.",
+    "A many-representation proposal must count internal algorithmic representations separately from final witness multiplicity."
+  ],
+  "finite_controls": [
+    {
+      "exact_tail_inequality_verified": true,
+      "exact_uniform_legal_tail_probability": 0.0,
+      "factorial_moment": 0.4375,
+      "factorial_moment_tail_upper_bound": 0.09333333333333334,
+      "factorial_order": 2,
+      "legal_target_count": 25,
+      "legal_target_fraction": 0.78125,
+      "maximum_multiplicity": 2,
+      "n_bits": 5,
+      "status": "finite-uniform-legal-factorial-tail-bound-verified",
+      "target_count": 32,
+      "threshold": 3,
+      "trial_index": 0,
+      "upper_bound_residual": 0.0
+    },
+    {
+      "exact_tail_inequality_verified": true,
+      "exact_uniform_legal_tail_probability": 0.0,
+      "factorial_moment": 0.0,
+      "factorial_moment_tail_upper_bound": 0.0,
+      "factorial_order": 3,
+      "legal_target_count": 48,
+      "legal_target_fraction": 0.75,
+      "maximum_multiplicity": 2,
+      "n_bits": 6,
+      "status": "finite-uniform-legal-factorial-tail-bound-verified",
+      "target_count": 64,
+      "threshold": 4,
+      "trial_index": 1,
+      "upper_bound_residual": 0.0
+    },
+    {
+      "exact_tail_inequality_verified": true,
+      "exact_uniform_legal_tail_probability": 0.0,
+      "factorial_moment": 0.1875,
+      "factorial_moment_tail_upper_bound": 0.002484472049689441,
+      "factorial_order": 4,
+      "legal_target_count": 161,
+      "legal_target_fraction": 0.62890625,
+      "maximum_multiplicity": 4,
+      "n_bits": 8,
+      "status": "finite-uniform-legal-factorial-tail-bound-verified",
+      "target_count": 256,
+      "threshold": 5,
+      "trial_index": 0,
+      "upper_bound_residual": 0.0
+    },
+    {
+      "exact_tail_inequality_verified": true,
+      "exact_uniform_legal_tail_probability": 0.008264462809917356,
+      "factorial_moment": 4.546875,
+      "factorial_moment_tail_upper_bound": 0.02672176308539945,
+      "factorial_order": 4,
+      "legal_target_count": 484,
+      "legal_target_fraction": 0.47265625,
+      "maximum_multiplicity": 6,
+      "n_bits": 10,
+      "status": "finite-uniform-legal-factorial-tail-bound-verified",
+      "target_count": 1024,
+      "threshold": 6,
+      "trial_index": 1,
+      "upper_bound_residual": 0.0
+    }
+  ],
+  "headline_metrics": {
+    "finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "largest_selected_fixed_factorial_order": 14,
+    "limiting_law_row_count": 10,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_subset_sum_solver_count": 0,
+    "proved_inverse_polynomial_high_multiplicity_legal_subfamily_count": 0,
+    "tail_certificate_count": 4,
+    "tail_certificate_failure_count": 0,
+    "uniform_legal_multiplicity_no_go_theorem_count": 1
+  },
+  "limiting_laws": [
+    {
+      "multiplicity": 1,
+      "planted_probability": 0.36787944117144233,
+      "planted_to_uniform_legal_ratio": 0.6321205588285577,
+      "status": "zero-truncated-versus-size-biased-poisson",
+      "unconditional_poisson_probability": 0.36787944117144233,
+      "uniform_legal_probability": 0.5819767068693265
+    },
+    {
+      "multiplicity": 2,
+      "planted_probability": 0.36787944117144233,
+      "planted_to_uniform_legal_ratio": 1.2642411176571153,
+      "status": "zero-truncated-versus-size-biased-poisson",
+      "unconditional_poisson_probability": 0.18393972058572117,
+      "uniform_legal_probability": 0.2909883534346632
+    },
+    {
+      "multiplicity": 3,
+      "planted_probability": 0.18393972058572117,
+      "planted_to_uniform_legal_ratio": 1.896361676485673,
+      "status": "zero-truncated-versus-size-biased-poisson",
+      "unconditional_poisson_probability": 0.06131324019524039,
+      "uniform_legal_probability": 0.09699611781155441
+    },
+    {
+      "multiplicity": 4,
+      "planted_probability": 0.06131324019524039,
+      "planted_to_uniform_legal_ratio": 2.5284822353142307,
+      "status": "zero-truncated-versus-size-biased-poisson",
+      "unconditional_poisson_probability": 0.015328310048810098,
+      "uniform_legal_probability": 0.024249029452888603
+    },
+    {
+      "multiplicity": 5,
+      "planted_probability": 0.015328310048810098,
+      "planted_to_uniform_legal_ratio": 3.1606027941427883,
+      "status": "zero-truncated-versus-size-biased-poisson",
+      "unconditional_poisson_probability": 0.0030656620097620196,
+      "uniform_legal_probability": 0.0048498058905777205
+    },
+    {
+      "multiplicity": 6,
+      "planted_probability": 0.0030656620097620196,
+      "planted_to_uniform_legal_ratio": 3.7927233529713464,
+      "status": "zero-truncated-versus-size-biased-poisson",
+      "unconditional_poisson_probability": 0.0005109436682936699,
+      "uniform_legal_probability": 0.0008083009817629533
+    },
+    {
+      "multiplicity": 7,
+      "planted_probability": 0.0005109436682936699,
+      "planted_to_uniform_legal_ratio": 4.424843911799904,
+      "status": "zero-truncated-versus-size-biased-poisson",
+      "unconditional_poisson_probability": 7.299195261338141e-05,
+      "uniform_legal_probability": 0.00011547156882327905
+    },
+    {
+      "multiplicity": 8,
+      "planted_probability": 7.299195261338141e-05,
+      "planted_to_uniform_legal_ratio": 5.056964470628461,
+      "status": "zero-truncated-versus-size-biased-poisson",
+      "unconditional_poisson_probability": 9.123994076672677e-06,
+      "uniform_legal_probability": 1.4433946102909882e-05
+    },
+    {
+      "multiplicity": 9,
+      "planted_probability": 9.123994076672677e-06,
+      "planted_to_uniform_legal_ratio": 5.6890850294570185,
+      "status": "zero-truncated-versus-size-biased-poisson",
+      "unconditional_poisson_probability": 1.0137771196302974e-06,
+      "uniform_legal_probability": 1.6037717892122091e-06
+    },
+    {
+      "multiplicity": 10,
+      "planted_probability": 1.0137771196302974e-06,
+      "planted_to_uniform_legal_ratio": 6.321205588285576,
+      "status": "zero-truncated-versus-size-biased-poisson",
+      "unconditional_poisson_probability": 1.0137771196302975e-07,
+      "uniform_legal_probability": 1.6037717892122093e-07
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "transfer_quenched_poisson_occupancy_to_uniform_legal_targets",
+      "resolution": "Divide the deterministic factorial tail bound by the legal fraction, which converges to 1-exp(-1).",
+      "resolved": true
+    },
+    {
+      "obligation": "test_polynomial_fiber_multiplicity_as_representation_explosion",
+      "resolution": "Every polynomial threshold has smaller than every inverse-polynomial uniform-legal mass with high probability over sources.",
+      "resolved": true
+    },
+    {
+      "obligation": "exclude_internal_representation_or_joint_geometry_mechanisms",
+      "resolution": "Internal decompositions can be numerous even when the final witness is unique; they require a separate source-aware theorem.",
+      "resolved": false
+    }
+  ],
+  "status": "uniform-legal-high-multiplicity-route-falsified-internal-structure-open",
+  "summary": "Upgraded quenched Poisson occupancy to a superpolynomial tail no-go for polynomial final-fiber multiplicity under the uniform legal target law.",
+  "tail_certificates": [
+    {
+      "asymptotic_threshold": "T_n=ceil(n^0.25)",
+      "conditional_tail_bound": "Pr_legal[c>=T_n]<=4/((1-exp(-1))*(T_n)_6)",
+      "exponent_margin": 0.5,
+      "legal_fraction_event": "p_legal(a)>=(1-exp(-1))/2 with probability 1-o(1)",
+      "polynomial_threshold_exponent": 0.25,
+      "quenched_factorial_moment_event": "M_6(a)<=2 with probability 1-o(1)",
+      "requested_probability_exponent": 1.0,
+      "selected_fixed_factorial_order": 6,
+      "status": "fixed-moment-certificate-beats-requested-polynomial-tail",
+      "superpolynomial_tail_certificate_valid": true
+    },
+    {
+      "asymptotic_threshold": "T_n=ceil(n^0.5)",
+      "conditional_tail_bound": "Pr_legal[c>=T_n]<=4/((1-exp(-1))*(T_n)_8)",
+      "exponent_margin": 1.0,
+      "legal_fraction_event": "p_legal(a)>=(1-exp(-1))/2 with probability 1-o(1)",
+      "polynomial_threshold_exponent": 0.5,
+      "quenched_factorial_moment_event": "M_8(a)<=2 with probability 1-o(1)",
+      "requested_probability_exponent": 3.0,
+      "selected_fixed_factorial_order": 8,
+      "status": "fixed-moment-certificate-beats-requested-polynomial-tail",
+      "superpolynomial_tail_certificate_valid": true
+    },
+    {
+      "asymptotic_threshold": "T_n=ceil(n^1)",
+      "conditional_tail_bound": "Pr_legal[c>=T_n]<=4/((1-exp(-1))*(T_n)_12)",
+      "exponent_margin": 2.0,
+      "legal_fraction_event": "p_legal(a)>=(1-exp(-1))/2 with probability 1-o(1)",
+      "polynomial_threshold_exponent": 1.0,
+      "quenched_factorial_moment_event": "M_12(a)<=2 with probability 1-o(1)",
+      "requested_probability_exponent": 10.0,
+      "selected_fixed_factorial_order": 12,
+      "status": "fixed-moment-certificate-beats-requested-polynomial-tail",
+      "superpolynomial_tail_certificate_valid": true
+    },
+    {
+      "asymptotic_threshold": "T_n=ceil(n^2)",
+      "conditional_tail_bound": "Pr_legal[c>=T_n]<=4/((1-exp(-1))*(T_n)_14)",
+      "exponent_margin": 3.0,
+      "legal_fraction_event": "p_legal(a)>=(1-exp(-1))/2 with probability 1-o(1)",
+      "polynomial_threshold_exponent": 2.0,
+      "quenched_factorial_moment_event": "M_14(a)<=2 with probability 1-o(1)",
+      "requested_probability_exponent": 25.0,
+      "selected_fixed_factorial_order": 14,
+      "status": "fixed-moment-certificate-beats-requested-polynomial-tail",
+      "superpolynomial_tail_certificate_valid": true
+    }
+  ],
+  "theorem": {
+    "deterministic_tail_inequality": "Pr_uniform-legal[c>=T]<=M_k/(p_legal*(T)_k)",
+    "every_positive_polynomial_threshold": true,
+    "every_requested_inverse_polynomial_mass": true,
+    "general_representation_dissection_eliminated": false,
+    "high_multiplicity_uniform_legal_subfamily_eliminated": true,
+    "legal_fraction_limit": "p_legal converges in probability to 1-exp(-1)",
+    "polynomial_subset_sum_solver_eliminated": false,
+    "polynomial_threshold_consequence": "for every alpha,B>0, Pr_legal[c>=n^alpha]<=n^-B with probability 1-o(1)",
+    "quenched_input": "for every fixed k, M_k(a)=2^-n sum_s(c_s)_k converges in probability to one",
+    "scope_limit": "Only statistics reducible to final fiber multiplicity are excluded; internal representation counts, source-aware walks, and joint low/high geometry remain open.",
+    "status": "uniform-legal-polynomial-multiplicity-explosion-falsified",
+    "target_law_distinction": "uniform legal gives zero-truncated Poisson(1); planted witness gives 1+Poisson(1)",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "consequence": "for every alpha,B>0, Pr_legal[c>=n^alpha]<=n^-B with probability 1-o(1)",
+    "legal_fraction": "p_legal converges in probability to 1-exp(-1)",
+    "quenched_input": "for every fixed k, M_k(a)=2^-n sum_s(c_s)_k converges in probability to one",
+    "scope": "Only statistics reducible to final fiber multiplicity are excluded; internal representation counts, source-aware walks, and joint low/high geometry remain open.",
+    "tail_inequality": "Pr_uniform-legal[c>=T]<=M_k/(p_legal*(T)_k)"
+  }
+}

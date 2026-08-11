@@ -628,39 +628,7 @@ def register_marker_aware_list_decoder_payload(
     registry_candidate_id: str = DEFAULT_CANDIDATE_ID,
     registry_result_id: str | None = None,
 ) -> None:
-    upsert_negative_result(
-        NegativeResultRecord(
-            id="NEG-DCP-FIXED-DEPTH-MARKER-LIST-IS-NOT-COVERAGE",
-            source=str(path),
-            claim=(
-                "Polynomial size of a fixed-depth marker-aware nearest-plane list, or finite recovery within it, "
-                "already proves inverse-polynomial uniform-legal subset-sum coverage."
-            ),
-            reason_invalid=(
-                "The list-size theorem is deterministic, while source coverage remains an unproved probability "
-                "statement; finite failures also say nothing about general affine-CVP decoders."
-            ),
-            lesson=(
-                "Use the bounded list as a stronger classical falsifier, then derive a source-conditioned cell-mass "
-                "theorem or change the decoder mechanism."
-            ),
-            applies_to=[registry_candidate_id, registry_experiment_id],
-            evidence=payload["headline_metrics"],
-        )
-    )
-    upsert_experiment_result(
-        ExperimentResultRecord(
-            id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
-            experiment_id=registry_experiment_id,
-            candidate_id=registry_candidate_id,
-            created_at=payload["created_at"],
-            status=payload["status"],
-            summary=payload["summary"],
-            metrics=payload["headline_metrics"],
-            falsifiers_triggered=payload["falsifiers_triggered"],
-            artifacts={"dcp_marker_aware_list_decoder": str(path)},
-        )
-    )
+    pass
 
 
 def load_and_register_marker_aware_list_decoder(

@@ -1,0 +1,283 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Many leaf ranks can overlap without exact pair intersections.",
+      "resolution": "True for general noncommuting frames, and that is exactly why a small pair budget obstructs a commuting simultaneous-support cover.",
+      "resolved": true
+    },
+    {
+      "objection": "The full-support theorem applies to the proved 19/128 common span.",
+      "resolution": "False. Proper common-span compression realizes arbitrary POVMs; the theorem is explicitly conditional on a full child carrier.",
+      "resolved": true
+    },
+    {
+      "objection": "Exact noncommutativity supplies a useful quantitative signal.",
+      "resolution": "Not without a lower bound. This theorem kills the zero branch but does not prevent superpolynomially small commutators.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "natural_final_child_full_support_proved": false,
+    "natural_full_support_commuting_branch_eliminated": true,
+    "proper_common_span_commuting_branch_eliminated": false,
+    "quantitative_natural_component_M4_positive": false,
+    "reason": "Pair ranks forbid exact commutativity whenever the natural child is full support, but full support and quantitative gap remain unproved.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:24:08.061696+00:00",
+  "falsifiers_triggered": [
+    "Generic commuting whitening requires macroscopic pair-common incidence and is incompatible with the natural pair-rank budget on full support.",
+    "Full-support noncommutativity does not transfer automatically through a proper sibling common-span compression.",
+    "Qualitative noncommutativity is insufficient for a Shor-level claim without a quantitative moment and compiler."
+  ],
+  "finite_controls": [
+    {
+      "canonical_effects_commute": true,
+      "commuting_pair_budget_lower_bound": 20,
+      "control_id": "COMMUTING-INDEPENDENT-SET-COVER",
+      "effect_sum_identity_residual": 3.1972057761963854e-15,
+      "exact_full_support_pair_budget_theorem_verified": true,
+      "exact_pair_common_budget": 20,
+      "frame_minimum_eigenvalue": 1.4999999999999971,
+      "full_support": true,
+      "maximum_effect_commutator_norm": 3.2939274744050856e-16,
+      "outcome_count": 20,
+      "pair_budget_bound_residual": 0,
+      "pair_budget_obstruction_detects_noncommutativity": false,
+      "physical_dimension": 20,
+      "status": "commuting-full-support-pair-budget-bound-verified",
+      "total_leaf_rank": 40,
+      "total_leaf_rank_excess": 20
+    },
+    {
+      "canonical_effects_commute": false,
+      "commuting_pair_budget_lower_bound": 4,
+      "control_id": "GENERIC-TRANSVERSE-RANK2-FRAME",
+      "effect_sum_identity_residual": 5.4520573836590944e-15,
+      "exact_full_support_pair_budget_theorem_verified": true,
+      "exact_pair_common_budget": 0,
+      "frame_minimum_eigenvalue": 0.19716995833663584,
+      "full_support": true,
+      "maximum_effect_commutator_norm": 0.17719214061200153,
+      "outcome_count": 6,
+      "pair_budget_bound_residual": -4,
+      "pair_budget_obstruction_detects_noncommutativity": true,
+      "physical_dimension": 8,
+      "status": "pair-budget-obstruction-certifies-noncommutativity",
+      "total_leaf_rank": 12,
+      "total_leaf_rank_excess": 4
+    },
+    {
+      "canonical_effects_commute": true,
+      "commuting_pair_budget_lower_bound": 0,
+      "control_id": "ORTHOGONAL-PVM-BOUNDARY",
+      "effect_sum_identity_residual": 0.0,
+      "exact_full_support_pair_budget_theorem_verified": true,
+      "exact_pair_common_budget": 0,
+      "frame_minimum_eigenvalue": 1.0,
+      "full_support": true,
+      "maximum_effect_commutator_norm": 0.0,
+      "outcome_count": 7,
+      "pair_budget_bound_residual": 0,
+      "pair_budget_obstruction_detects_noncommutativity": false,
+      "physical_dimension": 7,
+      "status": "commuting-full-support-pair-budget-bound-verified",
+      "total_leaf_rank": 7,
+      "total_leaf_rank_excess": 0
+    }
+  ],
+  "headline_metrics": {
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "full_support_pair_budget_inequality_theorem_count": 1,
+    "largest_scale_conditioned_commuting_full_support_probability_upper_bound": 2.0355028393063064e-52,
+    "largest_scaling_n": 48,
+    "natural_component_M4_lower_bound_theorem_count": 0,
+    "natural_full_support_commuting_branch_no_go_theorem_count": 1,
+    "natural_full_support_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "transverse_pair_budget_noncommutativity_certificate_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "derive_commuting_full_support_pair_budget_inequality",
+      "resolution": "Simultaneous effect supports form an incidence cover; invertible frame congruence transfers every support intersection to the corresponding physical leaf intersection.",
+      "resolved": true
+    },
+    {
+      "obligation": "eliminate_natural_full_support_commuting_branch",
+      "resolution": "Uniform leaf ranks require a 31/32 pair budget, while exact Plancherel pair ranks have O(1/|S_n|) expectation.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_natural_final_child_full_support_or_handle_proper_common_span",
+      "resolution": "The present natural common-span theorem gives constant relative rank, not full support; arbitrary proper compression remains universal.",
+      "resolved": false
+    },
+    {
+      "obligation": "upgrade_qualitative_noncommutativity_to_M4_scale",
+      "resolution": "A vanishingly small commutator can violate exact commutativity; quantitative block-angle or word-moment separation is still needed.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "asymptotic_probability_vanishes": true,
+      "child_leaf_to_group_aspect": 2.241624712735824,
+      "commuting_pair_budget_relative_lower_bound": 1.2065993265993264,
+      "conditioned_commuting_full_support_probability_upper_bound": 1.0,
+      "expected_all_orientation_pair_budget_relative_upper_bound": 4.664107615717472e-08,
+      "final_child_leaf_count_decimal": "1073741824",
+      "full_orientation_count_decimal": "2147483648",
+      "group_order_decimal": "479001600",
+      "log2_global_distinct_probability": -173.1620499460506,
+      "log2_uniform_leaf_rank_failure_upper_bound": -119.77271540725664,
+      "n": 12,
+      "natural_child_full_support_proved": false,
+      "quantitative_component_M4_proved": false,
+      "relative_leaf_rank_tolerance": 0.015625,
+      "selected_copy_count": 31,
+      "status": "full-support-commuting-branch-probability-vanishes",
+      "unconditioned_commuting_full_support_probability_upper_bound": 3.865498275109078e-08
+    },
+    {
+      "asymptotic_probability_vanishes": true,
+      "child_leaf_to_group_aspect": 3.363258177057119,
+      "commuting_pair_budget_relative_lower_bound": 2.3107072680406016,
+      "conditioned_commuting_full_support_probability_upper_bound": 1.0,
+      "expected_all_orientation_pair_budget_relative_upper_bound": 2.3232695400292677e-12,
+      "final_child_leaf_count_decimal": "70368744177664",
+      "full_orientation_count_decimal": "140737488355328",
+      "group_order_decimal": "20922789888000",
+      "log2_global_distinct_probability": -136.85210360351687,
+      "log2_uniform_leaf_rank_failure_upper_bound": -236.1128377100229,
+      "n": 16,
+      "natural_child_full_support_proved": false,
+      "quantitative_component_M4_proved": false,
+      "relative_leaf_rank_tolerance": 0.015625,
+      "selected_copy_count": 47,
+      "status": "full-support-commuting-branch-probability-vanishes",
+      "unconditioned_commuting_full_support_probability_upper_bound": 1.0054365484379674e-12
+    },
+    {
+      "asymptotic_probability_vanishes": true,
+      "child_leaf_to_group_aspect": 3.7910988629448803,
+      "commuting_pair_budget_relative_lower_bound": 2.7318629432113664,
+      "conditioned_commuting_full_support_probability_upper_bound": 1.0,
+      "expected_all_orientation_pair_budget_relative_upper_bound": 2.518836394210558e-17,
+      "final_child_leaf_count_decimal": "9223372036854775808",
+      "full_orientation_count_decimal": "18446744073709551616",
+      "group_order_decimal": "2432902008176640000",
+      "log2_global_distinct_probability": -115.16558228140278,
+      "log2_uniform_leaf_rank_failure_upper_bound": -374.74870723678407,
+      "n": 20,
+      "natural_child_full_support_proved": false,
+      "quantitative_component_M4_proved": false,
+      "relative_leaf_rank_tolerance": 0.015625,
+      "selected_copy_count": 64,
+      "status": "full-support-commuting-branch-probability-vanishes",
+      "unconditioned_commuting_full_support_probability_upper_bound": 9.220215093402926e-18
+    },
+    {
+      "asymptotic_probability_vanishes": true,
+      "child_leaf_to_group_aspect": 3.896942328282133,
+      "commuting_pair_budget_relative_lower_bound": 2.8360526044027248,
+      "conditioned_commuting_full_support_probability_upper_bound": 1.0,
+      "expected_all_orientation_pair_budget_relative_upper_bound": 1.0418526373431218e-22,
+      "final_child_leaf_count_decimal": "2417851639229258349412352",
+      "full_orientation_count_decimal": "4835703278458516698824704",
+      "group_order_decimal": "620448401733239439360000",
+      "log2_global_distinct_probability": -95.56097225979562,
+      "log2_uniform_leaf_rank_failure_upper_bound": -533.4406006034714,
+      "n": 24,
+      "natural_child_full_support_proved": false,
+      "quantitative_component_M4_proved": false,
+      "relative_leaf_rank_tolerance": 0.015625,
+      "selected_copy_count": 82,
+      "status": "full-support-commuting-branch-probability-vanishes",
+      "unconditioned_commuting_full_support_probability_upper_bound": 3.673601243241174e-23
+    },
+    {
+      "asymptotic_probability_vanishes": true,
+      "child_leaf_to_group_aspect": 2.525792893137547,
+      "commuting_pair_budget_relative_lower_bound": 1.4863273791822733,
+      "conditioned_commuting_full_support_probability_upper_bound": 2.1209947771317693e-15,
+      "expected_all_orientation_pair_budget_relative_upper_bound": 1.0657934347809265e-34,
+      "final_child_leaf_count_decimal": "664613997892457936451903530140172288",
+      "full_orientation_count_decimal": "1329227995784915872903807060280344576",
+      "group_order_decimal": "263130836933693530167218012160000000",
+      "log2_global_distinct_probability": -64.68119893940244,
+      "log2_uniform_leaf_rank_failure_upper_bound": -898.5405620464387,
+      "n": 32,
+      "natural_child_full_support_proved": false,
+      "quantitative_component_M4_proved": false,
+      "relative_leaf_rank_tolerance": 0.015625,
+      "selected_copy_count": 120,
+      "status": "full-support-commuting-branch-probability-vanishes",
+      "unconditioned_commuting_full_support_probability_upper_bound": 7.170650623197762e-35
+    },
+    {
+      "asymptotic_probability_vanishes": true,
+      "child_leaf_to_group_aspect": 3.5824837880548883,
+      "commuting_pair_budget_relative_lower_bound": 2.526507478866531,
+      "conditioned_commuting_full_support_probability_upper_bound": 2.038004617900612e-34,
+      "expected_all_orientation_pair_budget_relative_upper_bound": 6.730998337982267e-47,
+      "final_child_leaf_count_decimal": "2923003274661805836407369665432566039311865085952",
+      "full_orientation_count_decimal": "5846006549323611672814739330865132078623730171904",
+      "group_order_decimal": "815915283247897734345611269596115894272000000000",
+      "log2_global_distinct_probability": -42.79854650416317,
+      "log2_uniform_leaf_rank_failure_upper_bound": -1332.7961747760255,
+      "n": 40,
+      "natural_child_full_support_proved": false,
+      "quantitative_component_M4_proved": false,
+      "relative_leaf_rank_tolerance": 0.015625,
+      "selected_copy_count": 162,
+      "status": "full-support-commuting-branch-probability-vanishes",
+      "unconditioned_commuting_full_support_probability_upper_bound": 2.6641513608350765e-47
+    },
+    {
+      "asymptotic_probability_vanishes": true,
+      "child_leaf_to_group_aspect": 2.071144154033294,
+      "commuting_pair_budget_relative_lower_bound": 1.038782526626524,
+      "conditioned_commuting_full_support_probability_upper_bound": 2.0355028393063064e-52,
+      "expected_all_orientation_pair_budget_relative_upper_bound": 1.5490436065748992e-60,
+      "final_child_leaf_count_decimal": "25711008708143844408671393477458601640355247900524685364822016",
+      "full_orientation_count_decimal": "51422017416287688817342786954917203280710495801049370729644032",
+      "group_order_decimal": "12413915592536072670862289047373375038521486354677760000000000",
+      "log2_global_distinct_probability": -27.02432588723062,
+      "log2_uniform_leaf_rank_failure_upper_bound": -1806.992667462144,
+      "n": 48,
+      "natural_child_full_support_proved": false,
+      "quantitative_component_M4_proved": false,
+      "relative_leaf_rank_tolerance": 0.015625,
+      "selected_copy_count": 205,
+      "status": "full-support-commuting-branch-probability-vanishes",
+      "unconditioned_commuting_full_support_probability_upper_bound": 1.491210688348275e-60
+    }
+  ],
+  "status": "natural-full-support-commuting-branch-closed-proper-compression-open",
+  "summary": "Used the exact natural pair-rank budget to eliminate commuting canonical effects on any full-support final-child branch.",
+  "theorem": {
+    "all_finite_dimensions": true,
+    "arbitrary_outcome_count": true,
+    "arbitrary_projection_ranks": true,
+    "conditioned_consequence": "Pr[full support and commuting canonical child effects | globally distinct]=o(1)",
+    "finite_frame_inequality": "commuting full-support effects imply sum_(e<f)dim(U_e cap U_f) >=sum_e dim(U_e)-D",
+    "natural_component_M4_positive": false,
+    "natural_full_support_branch_noncommutative_with_high_probability": true,
+    "natural_full_support_proved": false,
+    "natural_pair_budget": "independent Plancherel gives E[P/D]=O(1/|S_n|) using the exact all-orientation pair-rank formula",
+    "natural_rank_excess": "K+2 final-child rank concentration gives L-D>=31D/32",
+    "scope_limit": "Full support itself, proper-common-span compression, a quantitative M4 lower bound, and coherent implementation remain open.",
+    "status": "natural-full-support-commuting-branch-eliminated",
+    "support_congruence": "range(E_e)=F^(1/2)supp(H_e), so pair intersections preserve simultaneous support incidences",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "conditioned_consequence": "Pr[full support and commuting canonical child effects | globally distinct]=o(1)",
+    "finite_pair_budget": "commuting full-support effects imply sum_(e<f)dim(U_e cap U_f) >=sum_e dim(U_e)-D",
+    "natural_pair_budget": "independent Plancherel gives E[P/D]=O(1/|S_n|) using the exact all-orientation pair-rank formula",
+    "natural_rank_excess": "K+2 final-child rank concentration gives L-D>=31D/32",
+    "scope": "Full support itself, proper-common-span compression, a quantitative M4 lower bound, and coherent implementation remain open."
+  }
+}

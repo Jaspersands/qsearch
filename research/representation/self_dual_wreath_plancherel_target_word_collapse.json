@@ -1,0 +1,564 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A rare irrep with constant target character rescues pressure.",
+      "resolution": "Not in the natural trace average: all nonidentity target words cancel exactly under Plancherel weighting.",
+      "resolved": true
+    },
+    {
+      "objection": "The translated parity S3 survivor contradicts collapse.",
+      "resolution": "It has 168 pointwise nonidentity solutions, but their Plancherel character average is zero; only identity-target solutions remain.",
+      "resolved": true
+    },
+    {
+      "objection": "Using the direct-sum trace dephases the algorithm.",
+      "resolution": "This is an algebraic evaluation of a trace moment, not an operational measurement of the coherent sector register.",
+      "resolved": true
+    },
+    {
+      "objection": "Per-word pressure automatically proves positive M4.",
+      "resolution": "Coefficient growth and the noncrossing Green scale must still be controlled uniformly at the required approximation degree.",
+      "resolved": false
+    }
+  ],
+  "character_column_controls": [
+    {
+      "conjugacy_class_count": 2,
+      "exact_regular_character_collapse_verified": true,
+      "maximum_exact_identity_indicator_residual": "0",
+      "n": 2,
+      "nonidentity_class_count": 1,
+      "status": "plancherel-character-column-collapses-to-identity"
+    },
+    {
+      "conjugacy_class_count": 3,
+      "exact_regular_character_collapse_verified": true,
+      "maximum_exact_identity_indicator_residual": "0",
+      "n": 3,
+      "nonidentity_class_count": 2,
+      "status": "plancherel-character-column-collapses-to-identity"
+    },
+    {
+      "conjugacy_class_count": 5,
+      "exact_regular_character_collapse_verified": true,
+      "maximum_exact_identity_indicator_residual": "0",
+      "n": 4,
+      "nonidentity_class_count": 4,
+      "status": "plancherel-character-column-collapses-to-identity"
+    },
+    {
+      "conjugacy_class_count": 7,
+      "exact_regular_character_collapse_verified": true,
+      "maximum_exact_identity_indicator_residual": "0",
+      "n": 5,
+      "nonidentity_class_count": 6,
+      "status": "plancherel-character-column-collapses-to-identity"
+    },
+    {
+      "conjugacy_class_count": 11,
+      "exact_regular_character_collapse_verified": true,
+      "maximum_exact_identity_indicator_residual": "0",
+      "n": 6,
+      "nonidentity_class_count": 10,
+      "status": "plancherel-character-column-collapses-to-identity"
+    },
+    {
+      "conjugacy_class_count": 15,
+      "exact_regular_character_collapse_verified": true,
+      "maximum_exact_identity_indicator_residual": "0",
+      "n": 7,
+      "nonidentity_class_count": 14,
+      "status": "plancherel-character-column-collapses-to-identity"
+    },
+    {
+      "conjugacy_class_count": 22,
+      "exact_regular_character_collapse_verified": true,
+      "maximum_exact_identity_indicator_residual": "0",
+      "n": 8,
+      "nonidentity_class_count": 21,
+      "status": "plancherel-character-column-collapses-to-identity"
+    },
+    {
+      "conjugacy_class_count": 30,
+      "exact_regular_character_collapse_verified": true,
+      "maximum_exact_identity_indicator_residual": "0",
+      "n": 9,
+      "nonidentity_class_count": 29,
+      "status": "plancherel-character-column-collapses-to-identity"
+    },
+    {
+      "conjugacy_class_count": 42,
+      "exact_regular_character_collapse_verified": true,
+      "maximum_exact_identity_indicator_residual": "0",
+      "n": 10,
+      "nonidentity_class_count": 41,
+      "status": "plancherel-character-column-collapses-to-identity"
+    },
+    {
+      "conjugacy_class_count": 56,
+      "exact_regular_character_collapse_verified": true,
+      "maximum_exact_identity_indicator_residual": "0",
+      "n": 11,
+      "nonidentity_class_count": 55,
+      "status": "plancherel-character-column-collapses-to-identity"
+    },
+    {
+      "conjugacy_class_count": 77,
+      "exact_regular_character_collapse_verified": true,
+      "maximum_exact_identity_indicator_residual": "0",
+      "n": 12,
+      "nonidentity_class_count": 76,
+      "status": "plancherel-character-column-collapses-to-identity"
+    }
+  ],
+  "claim_gate": {
+    "all_four_leaf_scalar_pressure_transfers_to_natural_target_average": true,
+    "green_polynomial_coefficient_burden_controlled": false,
+    "natural_component_M4_positive": false,
+    "natural_plancherel_target_character_can_rescue_crossing_pressure": false,
+    "near_plancherel_stability_proved": true,
+    "noncrossing_green_trace_lower_bounded": false,
+    "reason": "Natural target averaging turns target characters into an identity constraint. The remaining M4 proof debt is approximation-coefficient control and a normalized noncrossing lower bound.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:25:37.524060+00:00",
+  "falsifiers_triggered": [
+    "Pointwise low-dimensional character signal does not survive natural target averaging.",
+    "Near-Plancherel sector errors perturb the collapse only by their trace distance.",
+    "A pointwise crossing bound is not yet a summed Green-moment theorem."
+  ],
+  "headline_metrics": {
+    "character_column_control_failure_count": 0,
+    "green_coefficient_burden_theorem_count": 0,
+    "marked_presentation_control_failure_count": 0,
+    "natural_component_M4_lower_bound_theorem_count": 0,
+    "natural_signed_target_pressure_loophole_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "plancherel_target_word_collapse_theorem_count": 1,
+    "stability_control_failure_count": 0,
+    "translated_parity_plancherel_surviving_target_count": 264,
+    "translated_parity_pointwise_nonidentity_target_count": 168
+  },
+  "marked_presentation_controls": [
+    {
+      "control_id": "SPARSE-SEED-TARGET-SURVIVES",
+      "different_support_size": 2,
+      "exact_S3_identity_target_count": 1320,
+      "exact_S3_nonidentity_target_count": 48,
+      "exact_S3_solution_count": 1368,
+      "exact_identity_constraint_count": 1320,
+      "exact_plancherel_weighted_character_sum": "1320",
+      "pattern": "EFEBAFAB",
+      "plancherel_weighted_character_sum": 1320.0,
+      "remaining_generator_count": 5,
+      "same_support_size": 1,
+      "status": "marked-target-character-collapses-to-identity-count",
+      "target_collapse_residual": "0",
+      "target_collapse_verified": true
+    },
+    {
+      "control_id": "POSITIVE-DEPTH-PRODUCT-LIFT-TARGET-COLLAPSES",
+      "different_support_size": 4,
+      "exact_S3_identity_target_count": 1320,
+      "exact_S3_nonidentity_target_count": 0,
+      "exact_S3_solution_count": 1320,
+      "exact_identity_constraint_count": 1320,
+      "exact_plancherel_weighted_character_sum": "1320",
+      "pattern": "EFEBAFABA",
+      "plancherel_weighted_character_sum": 1320.0,
+      "remaining_generator_count": 5,
+      "same_support_size": 3,
+      "status": "marked-target-character-collapses-to-identity-count",
+      "target_collapse_residual": "0",
+      "target_collapse_verified": true
+    },
+    {
+      "control_id": "TRANSLATED-PARITY-COMMUTATOR-SURVIVES-POINTWISE",
+      "different_support_size": 4,
+      "exact_S3_identity_target_count": 264,
+      "exact_S3_nonidentity_target_count": 168,
+      "exact_S3_solution_count": 432,
+      "exact_identity_constraint_count": 264,
+      "exact_plancherel_weighted_character_sum": "264",
+      "pattern": "EFEAAABFB",
+      "plancherel_weighted_character_sum": 264.0,
+      "remaining_generator_count": 4,
+      "same_support_size": 3,
+      "status": "marked-target-character-collapses-to-identity-count",
+      "target_collapse_residual": "0",
+      "target_collapse_verified": true
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "remove_adversarial_target_irrep_from_natural_trace",
+      "resolution": "Plancherel weights cancel one irrep dimension and leave the regular character divided by |G|.",
+      "resolved": true
+    },
+    {
+      "obligation": "handle_near_plancherel_physical_sector_weights",
+      "resolution": "Normalized characters lie in the unit disk, so total-variation duality gives the uniform 2delta error bound.",
+      "resolved": true
+    },
+    {
+      "obligation": "close_natural_signed_target_pressure_loophole",
+      "resolution": "The character factor becomes an additional identity relator and can only decrease every scalar presentation count.",
+      "resolved": true
+    },
+    {
+      "obligation": "sum_green_approximant_coefficients_without_losing_gap",
+      "resolution": "A per-word |G|^-1 crossing bound must survive the number and absolute coefficient mass of the ridge/polynomial expansion.",
+      "resolved": false
+    },
+    {
+      "obligation": "lower_bound_noncrossing_green_trace",
+      "resolution": "Target collapse controls crossing terms but does not establish the retained noncrossing scale after Green normalization.",
+      "resolved": false
+    }
+  ],
+  "stability_controls": [
+    {
+      "control_id": "S4-CLASS-0",
+      "exact_character_expectation_error": "1/75",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 4,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        4
+      ],
+      "two_tv_stability_verified": true
+    },
+    {
+      "control_id": "S4-CLASS-1",
+      "exact_character_expectation_error": "1/100",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 4,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        3,
+        1
+      ],
+      "two_tv_stability_verified": true
+    },
+    {
+      "control_id": "S4-CLASS-2",
+      "exact_character_expectation_error": "1/75",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 4,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        2,
+        2
+      ],
+      "two_tv_stability_verified": true
+    },
+    {
+      "control_id": "S4-CLASS-3",
+      "exact_character_expectation_error": "1/150",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 4,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        2,
+        1,
+        1
+      ],
+      "two_tv_stability_verified": true
+    },
+    {
+      "control_id": "S4-CLASS-4",
+      "exact_character_expectation_error": "0",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 4,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "two_tv_stability_verified": true
+    },
+    {
+      "control_id": "S5-CLASS-0",
+      "exact_character_expectation_error": "1/120",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 5,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        5
+      ],
+      "two_tv_stability_verified": true
+    },
+    {
+      "control_id": "S5-CLASS-1",
+      "exact_character_expectation_error": "1/100",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 5,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        4,
+        1
+      ],
+      "two_tv_stability_verified": true
+    },
+    {
+      "control_id": "S5-CLASS-2",
+      "exact_character_expectation_error": "1/100",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 5,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        3,
+        2
+      ],
+      "two_tv_stability_verified": true
+    },
+    {
+      "control_id": "S5-CLASS-3",
+      "exact_character_expectation_error": "1/100",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 5,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        3,
+        1,
+        1
+      ],
+      "two_tv_stability_verified": true
+    },
+    {
+      "control_id": "S5-CLASS-4",
+      "exact_character_expectation_error": "1/75",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 5,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        2,
+        2,
+        1
+      ],
+      "two_tv_stability_verified": true
+    },
+    {
+      "control_id": "S5-CLASS-5",
+      "exact_character_expectation_error": "1/100",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 5,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "two_tv_stability_verified": true
+    },
+    {
+      "control_id": "S5-CLASS-6",
+      "exact_character_expectation_error": "0",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 5,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "two_tv_stability_verified": true
+    },
+    {
+      "control_id": "S6-CLASS-0",
+      "exact_character_expectation_error": "1/100",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 6,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        6
+      ],
+      "two_tv_stability_verified": true
+    },
+    {
+      "control_id": "S6-CLASS-1",
+      "exact_character_expectation_error": "3/320",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 6,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        5,
+        1
+      ],
+      "two_tv_stability_verified": true
+    },
+    {
+      "control_id": "S6-CLASS-2",
+      "exact_character_expectation_error": "1/100",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 6,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        4,
+        2
+      ],
+      "two_tv_stability_verified": true
+    },
+    {
+      "control_id": "S6-CLASS-3",
+      "exact_character_expectation_error": "1/100",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 6,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        4,
+        1,
+        1
+      ],
+      "two_tv_stability_verified": true
+    },
+    {
+      "control_id": "S6-CLASS-4",
+      "exact_character_expectation_error": "9/800",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 6,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        3,
+        3
+      ],
+      "two_tv_stability_verified": true
+    },
+    {
+      "control_id": "S6-CLASS-5",
+      "exact_character_expectation_error": "1/100",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 6,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        3,
+        2,
+        1
+      ],
+      "two_tv_stability_verified": true
+    },
+    {
+      "control_id": "S6-CLASS-6",
+      "exact_character_expectation_error": "9/800",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 6,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "two_tv_stability_verified": true
+    },
+    {
+      "control_id": "S6-CLASS-7",
+      "exact_character_expectation_error": "1/100",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 6,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        2,
+        2,
+        2
+      ],
+      "two_tv_stability_verified": true
+    },
+    {
+      "control_id": "S6-CLASS-8",
+      "exact_character_expectation_error": "1/100",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 6,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "two_tv_stability_verified": true
+    },
+    {
+      "control_id": "S6-CLASS-9",
+      "exact_character_expectation_error": "1/100",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 6,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "two_tv_stability_verified": true
+    },
+    {
+      "control_id": "S6-CLASS-10",
+      "exact_character_expectation_error": "0",
+      "exact_total_variation": "1/100",
+      "exact_two_tv_upper_bound": "1/50",
+      "n": 6,
+      "status": "target-character-two-tv-stability-verified",
+      "target_cycle_type": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "two_tv_stability_verified": true
+    }
+  ],
+  "status": "natural-signed-target-loophole-closed-green-burden-open",
+  "summary": "Removed target-character rescue from the natural crossing-word problem; only Green approximation and noncrossing mass remain.",
+  "theorem": {
+    "arbitrary_finite_group": true,
+    "arbitrary_target_word": true,
+    "finite_group_identity": "E_{nu~Plancherel} chi_nu(g)/d_nu=1[g=e]",
+    "green_coefficient_burden_resolved": false,
+    "interleaved_pressure_consequence": "Natural target averaging cannot increase any four-leaf crossing profile above its all-depth scalar-pressure bound.",
+    "marked_word_consequence": "The target-character sum equals the unsigned presentation count with the additional relator W=e.",
+    "natural_signed_target_loophole_closed": true,
+    "positive_component_M4_proved": false,
+    "relative_error_stability": "|P_nu/Q_nu-1|<=epsilon for all nu implies character error <=epsilon",
+    "scope_limit": "Remaining word weights must be target-label independent; Green/ridge coefficient sums and noncrossing lower bounds are separate.",
+    "status": "natural-plancherel-target-character-collapsed",
+    "theorem_verified": true,
+    "total_variation_stability": "TV(P,Plancherel)<=delta implies character error <=2delta"
+  },
+  "theorem_contract": {
+    "marked_word_effect": "The target-character sum equals the unsigned presentation count with the additional relator W=e.",
+    "physical_stability": "TV(P,Plancherel)<=delta implies character error <=2delta",
+    "scope": "Remaining word weights must be target-label independent; Green/ridge coefficient sums and noncrossing lower bounds are separate.",
+    "target_trace_law": "E_{nu~Plancherel} chi_nu(g)/d_nu=1[g=e]"
+  }
+}

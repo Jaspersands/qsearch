@@ -3465,6 +3465,336 @@ python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-VERTEX-TRIVIALIZATION-CRITERION
 Analyze code wreath weighted overlap exclusion theorem performance:
 
 ```bash
+python3 qsearch.py coset-arbitrary-covariant-measurement-reduction
+```
+Evaluate Exp Coset Arbitrary Covariant Measurement Reduction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-centralizer-whitening-rank-bound
+```
+Evaluate Exp Coset Centralizer Whitening Rank Bound theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-covariant-measurement-multiplicity-width-no-go
+```
+Evaluate Exp Coset Covariant Measurement Multiplicity Width No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-covariant-multiplicity-whitening-escape
+```
+Evaluate Exp Coset Covariant Multiplicity Whitening Escape theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-gelfand-row-orientation-no-go
+```
+Evaluate Exp Coset Gelfand Row Orientation No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-binary-decision-reduction
+```
+Evaluate Exp Coset Hidden Involution Binary Decision Reduction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-fourth-moment-threshold
+```
+Evaluate Exp Coset Hidden Involution Fourth Moment Threshold theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-multiplicity-support-obstruction
+```
+Evaluate Exp Coset Hidden Involution Multiplicity Support Obstruction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-orbit-hull-twirl-reduction
+```
+Evaluate Exp Coset Hidden Involution Orbit Hull Twirl Reduction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-query-separation-boundary
+```
+Evaluate Exp Coset Hidden Involution Query Separation Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-support-span-reduction
+```
+Evaluate Exp Coset Hidden Involution Support Span Reduction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-threshold-compiler-boundary
+```
+Evaluate Exp Coset Hidden Involution Threshold Compiler Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hyperoctahedral-branching-polar-boundary
+```
+Evaluate Exp Coset Hyperoctahedral Branching Polar Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-kronecker-marginal-conservation
+```
+Evaluate Exp Coset Kronecker Marginal Conservation theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-measurement-copy-width-whitening-tradeoff
+```
+Evaluate Exp Coset Measurement Copy Width Whitening Tradeoff theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-multiplicity-whitening-copy-window
+```
+Evaluate Exp Coset Multiplicity Whitening Copy Window theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-perfect-matching-spherical-boundary
+```
+Evaluate Exp Coset Perfect Matching Spherical Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-prefix-polar-holonomy-reduction
+```
+Evaluate Exp Coset Prefix Polar Holonomy Reduction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-prefix-relative-gap-inference-no-go
+```
+Evaluate Exp Coset Prefix Relative Gap Inference No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-restriction-principal-angle-polar-reduction
+```
+Evaluate Exp Coset Restriction Principal Angle Polar Reduction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-sector-coherence-degree-no-go
+```
+Evaluate Exp Coset Sector Coherence Degree No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-source-weighted-frame-inversion-tradeoff
+```
+Evaluate Exp Coset Source Weighted Frame Inversion Tradeoff theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-whitening-rank-sandwich-no-go
+```
+Evaluate Exp Coset Whitening Rank Sandwich No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py dcp-adaptive-layout-uniform-entanglement-no-go
+```
+Evaluate Exp Dhs Dcp Adaptive Layout Uniform Entanglement No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py dcp-arbitrary-measurement-witness-reduction
+```
+Evaluate Exp Dhs Dcp Arbitrary Measurement Witness Reduction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py dcp-canonical-pgm-erasure-equivalence
+```
+Evaluate Exp Dhs Dcp Canonical Pgm Erasure Equivalence theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py dcp-covariant-rank-one-measurement-reduction
+```
+Evaluate Exp Dhs Dcp Covariant Rank One Measurement Reduction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py dcp-four-block-ksum-noncollapse
+```
+Evaluate Exp Dhs Dcp Four Block Ksum Noncollapse theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py dcp-linear-depth-fiber-walk-no-go
+```
+Evaluate Exp Dhs Dcp Linear Depth Fiber Walk No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py dcp-low-bit-candidate-list-no-go
+```
+Evaluate Exp Dhs Dcp Low Bit Candidate List No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py dcp-multiplicity-oracle-query-lower-bound
+```
+Evaluate Exp Dhs Dcp Multiplicity Oracle Query Lower Bound theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py dcp-per-target-stratum-obstruction
+```
+Evaluate Exp Dhs Dcp Per Target Stratum Obstruction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py dcp-pgm-bootstrap-perturbation-reduction
+```
+Evaluate Exp Dhs Dcp Pgm Bootstrap Perturbation Reduction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py dcp-pgm-garbage-bootstrap-reduction
+```
+Evaluate Exp Dhs Dcp Pgm Garbage Bootstrap Reduction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py dcp-polynomial-feature-contraction-no-go
+```
+Evaluate Exp Dhs Dcp Polynomial Feature Contraction No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py dcp-source-weighted-inversion-tradeoff
+```
+Evaluate Exp Dhs Dcp Source Weighted Inversion Tradeoff theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py dcp-subset-sum-cube-section-gap-theorem
+```
+Evaluate Exp Dhs Dcp Subset Sum Cube Section Gap Theorem theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py dcp-subset-sum-sparse-character-obstruction
+```
+Evaluate Exp Dhs Dcp Subset Sum Adaptive Sparse Character Obstruction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py dcp-uniform-legal-multiplicity-no-go
+```
+Evaluate Exp Dhs Dcp Uniform Legal Multiplicity No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py dcp-varying-hms-fiber-normal-form
+```
+Evaluate Exp Dhs Dcp Varying Hms Fiber Normal Form theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py diagram-hidden-subalgebra-coset-no-go
+```
+Evaluate Exp Diagram Hidden Subalgebra Coset No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py diagram-multiplicity-source-mass-gate
+```
+Evaluate Exp Diagram Multiplicity Source Mass Gate theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py all-codimension-baba-no-go
+```
+Evaluate Exp Code Self Dual Wreath All Codimension Baba No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py class-uniform-commutator-moment
+```
+Evaluate Exp Code Self Dual Wreath Class Uniform Commutator Moment theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py codimension-one-commuting-compression-no-go
+```
+Evaluate Exp Code Self Dual Wreath Codimension One Commuting Compression No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py codimension-two-universal-no-go
+```
+Evaluate Exp Code Self Dual Wreath Codimension Two Universal No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py commutator-sector-filter-no-go
+```
+Evaluate Exp Code Self Dual Wreath Commutator Sector Filter No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py component-block-coherence-boundary
+```
+Evaluate Exp Code Self Dual Wreath Component Block Coherence Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py component-coefficient-projection-normal-form
+```
+Evaluate Exp Code Self Dual Wreath Component Coefficient Projection Normal Form theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py component-noncrossing-lower-bound
+```
+Evaluate Exp Code Self Dual Wreath Component Noncrossing Lower Bound theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py full-support-pair-budget-no-go
+```
+Evaluate Exp Code Self Dual Wreath Full Support Pair Budget No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py information-set-universal-no-go
+```
+Evaluate Exp Code Self Dual Wreath Information Set Universal No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py interleaved-even-parity-no-go
+```
+Evaluate Exp Code Self Dual Wreath Interleaved Even Parity No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py interleaved-leaf-pressure-no-go
+```
+Evaluate Exp Code Self Dual Wreath Interleaved Leaf Pressure No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py interleaved-product-lift-no-go
+```
+Evaluate Exp Code Self Dual Wreath Interleaved Product Lift No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py nonsystematic-incidence-lattice-bound
+```
+Evaluate Exp Code Self Dual Wreath Nonsystematic Incidence Lattice Bound theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py nonsystematic-mod-four-no-go
+```
+Evaluate Exp Code Self Dual Wreath Nonsystematic Mod Four No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py nonsystematic-pair-witness-collapse
+```
+Evaluate Exp Code Self Dual Wreath Nonsystematic Pair Witness Collapse theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py nonsystematic-twisted-star-no-go
+```
+Evaluate Exp Code Self Dual Wreath Nonsystematic Twisted Star No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py plancherel-target-word-collapse
+```
+Evaluate Exp Code Self Dual Wreath Plancherel Target Word Collapse theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py poisson-ridge-word-mixture
+```
+Evaluate Exp Code Self Dual Wreath Poisson Ridge Word Mixture theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py same-support-triangle-target-no-go
+```
+Evaluate Exp Code Self Dual Wreath Same Support Triangle Target No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py separator-defect-frontier
+```
+Evaluate Exp Code Self Dual Wreath Separator Defect Frontier theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py systematic-stopping-core-no-go
+```
+Evaluate Exp Code Self Dual Wreath Systematic Stopping Core No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py translated-parity-commutator-no-go
+```
+Evaluate Exp Code Self Dual Wreath Translated Parity Commutator No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py semidirect-hms-transfer-boundary
+```
+Evaluate Exp Semidirect Hms Transfer Boundary theorem contract and headline metrics.
+
+```bash
 python qsearch.py code-wreath-weighted-overlap-exclusion
 python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-WEIGHTED-OVERLAP-EXCLUSION
 ```

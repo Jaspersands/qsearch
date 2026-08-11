@@ -1,0 +1,310 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The twisted-star no-go only reflects weight-two rows.",
+      "resolution": "Q_n has minimum nonzero row weight four.",
+      "resolved": true
+    },
+    {
+      "objection": "Non-unimodular incidence may restore pressure.",
+      "resolution": "Not at bounded index four: the fixed surface relation remains.",
+      "resolved": true
+    },
+    {
+      "objection": "The observed fourth-power law is a finite artifact.",
+      "resolution": "The weight-four anchor derivation proves the cyclic order-four presentation for every admissible width.",
+      "resolved": true
+    }
+  ],
+  "all_depth_certificate": {
+    "admissible_widths": "n>=6 and n=2 mod 4",
+    "arbitrary_admissible_width": true,
+    "cardinality_proof": "The fourth-root filter is (2^n+2*2^(n/2)*cos(n*pi/4))/4; the cosine vanishes for n=2 mod 4.",
+    "incidence_lattice_proof": "Weight-four row differences generate every e_i-e_j, and one weight-four row supplies total sum four.",
+    "marked_surface_nielsen_reduction": "Cyclic rotation and c -> c x^-a give a genus-two quadratic word; the normalized genus check is 2.",
+    "marked_surface_relation": "h^-1 e^-1 h x^a c^-1 [p,q] c x^-a e",
+    "no_information_set_proof": "Two weight-four rows sharing three coordinates realize every coordinate pair as their exact difference support.",
+    "no_spanning_star_proof": "For a fixed pivot, preserving weight mod four across every swap would require all other bits to be the complement of the pivot, which has forbidden weight when n=2 mod 4.",
+    "ordered_presentation_reduction": "Anchor relations on {0,1,2,j} identify j>=3; relations on {0,1,3,4}, {0,2,3,4}, and {1,2,3,4} identify the remaining generators and impose x^4=1.",
+    "pressure_margin_formula": "n-0.5*log2(2^(n-2)*(2^(n-2)-1)) > 2",
+    "status": "all-depth-nonsystematic-mod-four-pressure-no-go",
+    "symmetric_group_solution_exponent_upper_bound": 5.0,
+    "uniform_pressure_margin_lower_bound": 2.0,
+    "universal_mod_four_family_no_go_verified": true
+  },
+  "claim_gate": {
+    "all_mod_four_widths_controlled": true,
+    "all_nonsystematic_stopping_codes_controlled": false,
+    "bounded_smith_torsion_escape_survives": false,
+    "explicit_star_free_nonsystematic_family_constructed": true,
+    "growing_smith_invariant_family_constructed": false,
+    "mod_four_actual_pressure_survives": false,
+    "natural_component_M4_positive": false,
+    "reason": "The index-four codeword group survives, but a fixed genus-two marked relation makes the family uniformly subleading.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:24:56.085200+00:00",
+  "falsifiers_triggered": [
+    "Weight-two star rows are not necessary for fixed-rank collapse.",
+    "Bounded non-unimodular incidence is not a pressure escape.",
+    "The mod-four codeword presentation is exactly cyclic of order four."
+  ],
+  "headline_metrics": {
+    "all_depth_mod_four_family_construction_count": 1,
+    "all_depth_mod_four_no_go_theorem_count": 1,
+    "marked_control_failure_count": 0,
+    "maximum_stored_smith_invariant": 4,
+    "minimum_stored_true_pressure_margin": 2.04655470219574,
+    "new_quantum_algorithm_count": 0,
+    "stored_full_marked_width_count": 1,
+    "stored_structural_width_count": 3,
+    "structural_control_failure_count": 0
+  },
+  "marked_presentation_controls": [
+    {
+      "code_width": 6,
+      "exact_control_verified": true,
+      "fourth_power_relation_present": true,
+      "remaining_generator_count": 6,
+      "residual_relations": [
+        [
+          -11,
+          -11,
+          -11,
+          -11
+        ],
+        [
+          -14,
+          -13,
+          14,
+          -11,
+          -11,
+          -5,
+          -3,
+          -4,
+          3,
+          4,
+          5,
+          -11,
+          -11,
+          13
+        ],
+        [
+          -14,
+          -13,
+          14,
+          -11,
+          -11,
+          -5,
+          -3,
+          -4,
+          3,
+          4,
+          5,
+          11,
+          11,
+          13
+        ]
+      ],
+      "residual_target_word": [
+        -14,
+        -13,
+        14,
+        -11,
+        -11,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        11,
+        11,
+        -14,
+        13,
+        14
+      ],
+      "solution_exponent_certificate_source": "whitehead-orientable-surface-genus-2",
+      "solution_exponent_upper_bound": 5.0,
+      "status": "mod-four-marked-presentation-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true,
+      "support_entropy_bits": 3.9534452978042594,
+      "true_pressure_margin_lower_bound": 2.04655470219574
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "remove_spanning_star_from_nonsystematic_adversary",
+      "resolution": "Q_n has no weight-two row or spanning star.",
+      "resolved": true
+    },
+    {
+      "obligation": "test_bounded_smith_torsion_escape",
+      "resolution": "Smith invariant four survives in the codeword group but the marked surface law still gives margin >2.",
+      "resolved": true
+    },
+    {
+      "obligation": "construct_growing_smith_or_noncyclic_residual_family",
+      "resolution": "Search quarter-cube stopping codes whose incidence lattice has unbounded exponent or whose ordered presentation retains growing nonabelian rank.",
+      "resolved": false
+    }
+  ],
+  "status": "nonsystematic-mod-four-family-falsified-by-surface-loss",
+  "structural_controls": [
+    {
+      "all_coordinate_pairs_have_explicit_distance_two_witnesses": true,
+      "code_size": 16,
+      "code_width": 6,
+      "codeword_presentation_remaining_generator_count": 1,
+      "codeword_presentation_residual_relations": [
+        [
+          -6,
+          -6,
+          -6,
+          -6
+        ]
+      ],
+      "contains_weight_two_row": false,
+      "exact_control_verified": true,
+      "exact_cyclic_order_four_presentation_verified": true,
+      "expected_quarter_cube_size": 16,
+      "has_dimension_sized_information_set": false,
+      "incidence_lattice_formula": "{z in Z^n: sum(z)=0 mod 4}",
+      "incidence_lattice_index": 4,
+      "minimum_distance": 2,
+      "minimum_separating_coordinate_count": 5,
+      "roots_of_unity_filter_exact": true,
+      "smith_invariants": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        4
+      ],
+      "spanning_distance_two_star_exists": false,
+      "status": "mod-four-nonsystematic-cyclic-presentation-verified"
+    },
+    {
+      "all_coordinate_pairs_have_explicit_distance_two_witnesses": true,
+      "code_size": 256,
+      "code_width": 10,
+      "codeword_presentation_remaining_generator_count": 1,
+      "codeword_presentation_residual_relations": [
+        [
+          -10,
+          -10,
+          -10,
+          -10
+        ],
+        [
+          -10,
+          -10,
+          -10,
+          -10,
+          -10,
+          -10,
+          -10,
+          -10
+        ]
+      ],
+      "contains_weight_two_row": false,
+      "exact_control_verified": true,
+      "exact_cyclic_order_four_presentation_verified": true,
+      "expected_quarter_cube_size": 256,
+      "has_dimension_sized_information_set": false,
+      "incidence_lattice_formula": "{z in Z^n: sum(z)=0 mod 4}",
+      "incidence_lattice_index": 4,
+      "minimum_distance": 2,
+      "minimum_separating_coordinate_count": 9,
+      "roots_of_unity_filter_exact": true,
+      "smith_invariants": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4
+      ],
+      "spanning_distance_two_star_exists": false,
+      "status": "mod-four-nonsystematic-cyclic-presentation-verified"
+    },
+    {
+      "all_coordinate_pairs_have_explicit_distance_two_witnesses": true,
+      "code_size": 4096,
+      "code_width": 14,
+      "codeword_presentation_remaining_generator_count": 1,
+      "codeword_presentation_residual_relations": [
+        [
+          -14,
+          -14,
+          -14,
+          -14
+        ],
+        [
+          -14,
+          -14,
+          -14,
+          -14,
+          -14,
+          -14,
+          -14,
+          -14
+        ],
+        [
+          -14,
+          -14,
+          -14,
+          -14,
+          -14,
+          -14,
+          -14,
+          -14,
+          -14,
+          -14,
+          -14,
+          -14
+        ]
+      ],
+      "contains_weight_two_row": false,
+      "exact_control_verified": true,
+      "exact_cyclic_order_four_presentation_verified": true,
+      "expected_quarter_cube_size": 4096,
+      "has_dimension_sized_information_set": false,
+      "incidence_lattice_formula": "{z in Z^n: sum(z)=0 mod 4}",
+      "incidence_lattice_index": 4,
+      "minimum_distance": 2,
+      "minimum_separating_coordinate_count": 13,
+      "roots_of_unity_filter_exact": true,
+      "smith_invariants": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        4
+      ],
+      "spanning_distance_two_star_exists": false,
+      "status": "mod-four-nonsystematic-cyclic-presentation-verified"
+    }
+  ],
+  "summary": "Proved that a star-free codimension-two family with Smith invariant four still collapses under the fixed marked surface relation.",
+  "theorem_contract": {
+    "adversarial_features": "No information set, no weight-two rows, no spanning star, and a nontrivial Smith invariant four.",
+    "construction": "Quarter-cube weight-zero-mod-four codes at every n=2 mod 4.",
+    "presentation_conclusion": "The codeword group is C4, while the marked complement relation has a uniform genus-two normal form.",
+    "scope_limit": "Growing Smith invariants and non-cyclic residual groups remain open."
+  }
+}

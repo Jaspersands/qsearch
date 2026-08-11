@@ -10488,6 +10488,33 @@
   },
   {
     "artifacts": {
+      "coset_hidden_involution_support_span_reduction": "research/representation/coset_hidden_involution_support_span_reduction.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-11T14:54:10.036692+00:00",
+    "experiment_id": "EXP-COSET-HIDDEN-INVOLUTION-SUPPORT-SPAN-REDUCTION",
+    "falsifiers_triggered": [
+      "Exact shifted-likelihood thresholding is not the only binary measurement route.",
+      "The support-span rank bound does not supply an efficient range projection.",
+      "Published logarithmic sample sufficiency is not a new quantum algorithm."
+    ],
+    "id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-SUPPORT-SPAN-REDUCTION-LATEST",
+    "metrics": {
+      "finite_control_count": 4,
+      "finite_control_failure_count": 0,
+      "inverse_polynomial_frame_gap_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "new_sample_complexity_theorem_count": 0,
+      "perfect_completeness_control_count": 4,
+      "range_projector_compiler_count": 0,
+      "scaling_record_count": 4,
+      "support_test_helstrom_optimal_control_count": 4
+    },
+    "status": "published-support-span-test-reduced-to-range-polar-compiler-open",
+    "summary": "Recovered the published support-span triviality test and reduced its implementation to the range polar of a controlled-projector synthesis map. This is a better compiler target than exact Helstrom sign, but no polynomial range projector is known."
+  },
+  {
+    "artifacts": {
       "coset_hierarchical_gap_scaling": "research/representation/coset_hierarchical_gap_scaling.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",

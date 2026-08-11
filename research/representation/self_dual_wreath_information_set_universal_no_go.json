@@ -1,0 +1,530 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Large codimension makes local face words uncontrolled.",
+      "resolution": "The global information pivots and K(U) surface relation bypass all local-face classification.",
+      "resolved": true
+    },
+    {
+      "objection": "Interleaved checks make pivot relators non-triangular.",
+      "resolution": "Each unit-projection relation has exactly one information letter.",
+      "resolved": true
+    },
+    {
+      "objection": "An arbitrary residual check word changes topology.",
+      "resolution": "A verified free-group automorphism absorbs it.",
+      "resolved": true
+    }
+  ],
+  "all_depth_certificate": {
+    "affine_normalization_not_required": true,
+    "arbitrary_codimension": true,
+    "arbitrary_coordinate_order": true,
+    "arbitrary_coordinate_order_argument": "Ordered check letters may surround the pivot but cannot duplicate it, so exact Tietze elimination is order-independent.",
+    "arbitrary_information_dimension": true,
+    "code_scope": "Every length r+d code C with |C|=2^r, d_min(C)>=2, and an r-coordinate injective projection",
+    "coefficient_absorption": "q -> q U^-1 removes U and leaves orientable genus two",
+    "mixed_support_codeword_identity": "Same-support color-one relators set W(c)=1 off one row; different quotients force the removed row as well.",
+    "pressure_margin_formula": "1+0.5*log2(2^r/(2^r-1)) > 1",
+    "residual_generator_count_formula": "at most d+5 generators",
+    "status": "all-depth-information-set-BABA-pressure-no-go",
+    "symmetric_group_solution_exponent_upper_bound_formula": "d+4+o(1)",
+    "uniform_pressure_margin_lower_bound": 1.0,
+    "unit_projection_elimination": "The unique codeword above each unit projection contains its pivot information generator once and no other information generator.",
+    "universal_information_set_BABA_no_go_verified": true,
+    "universal_surface_relation": "K(U)=e^-1 U^-1 q^-1 b p^-1 b^-1 p q U h^-1 e h"
+  },
+  "claim_gate": {
+    "all_higher_codimension_separator_defect_codes_controlled": false,
+    "all_information_set_BABA_cores_controlled": true,
+    "all_multiple_base_fiber_patterns_controlled": false,
+    "high_codimension_information_set_escape_survives": false,
+    "information_set_actual_pressure_survives": false,
+    "interleaved_information_set_escape_survives": false,
+    "natural_component_M4_positive": false,
+    "reason": "Information pivots leave d check generators and the universal surface relation restores one full exponent of loss.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:24:08.080555+00:00",
+  "falsifiers_triggered": [
+    "Higher codimension does not rescue information-set codes.",
+    "Coordinate interleaving does not obstruct unit-pivot elimination.",
+    "Residual check words do not remove the fixed surface loss."
+  ],
+  "headline_metrics": {
+    "affine_control_count": 1,
+    "all_depth_information_set_universal_no_go_theorem_count": 1,
+    "control_failure_count": 0,
+    "interleaved_control_count": 2,
+    "maximum_stored_codimension": 5,
+    "minimum_stored_true_pressure_margin": 1.0465547021957402,
+    "new_quantum_algorithm_count": 0,
+    "stored_codimension_control_count": 4
+  },
+  "proof_obligations": [
+    {
+      "obligation": "classify_all_information_set_BABA_cores",
+      "resolution": "Unit projections and coefficient absorption work at arbitrary r,d.",
+      "resolved": true
+    },
+    {
+      "obligation": "remove_contiguous_and_affine_assumptions",
+      "resolution": "Pivot occurrence, not coordinate placement or zero normalization, drives the exact elimination.",
+      "resolved": true
+    },
+    {
+      "obligation": "classify_higher_codimension_separator_defect_codes",
+      "resolution": "Analyze codes whose minimum separating set has size greater than log2|C| and whose omitted-set witnesses have size 2..d.",
+      "resolved": false
+    }
+  ],
+  "representative_controls": [
+    {
+      "all_codeword_relations_forced_by_mixed_supports": true,
+      "all_information_generators_eliminated": true,
+      "code_size": 8,
+      "code_width": 5,
+      "codimension": 2,
+      "control_id": "CODIMENSION-TWO-CONTIGUOUS",
+      "coordinate_order_interleaved": false,
+      "elimination_steps": [
+        {
+          "exact_singleton_elimination_verified": true,
+          "information_coordinate_one_based": 1,
+          "ordered_codeword_relation": [
+            1,
+            4
+          ],
+          "other_information_generator_occurrence_count": 0,
+          "pivot_occurrence_count": 1,
+          "status": "exact-information-generator-elimination",
+          "unit_projection_codeword": [
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "exact_singleton_elimination_verified": true,
+          "information_coordinate_one_based": 2,
+          "ordered_codeword_relation": [
+            2,
+            4
+          ],
+          "other_information_generator_occurrence_count": 0,
+          "pivot_occurrence_count": 1,
+          "status": "exact-information-generator-elimination",
+          "unit_projection_codeword": [
+            0,
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "exact_singleton_elimination_verified": true,
+          "information_coordinate_one_based": 3,
+          "ordered_codeword_relation": [
+            3,
+            4
+          ],
+          "other_information_generator_occurrence_count": 0,
+          "pivot_occurrence_count": 1,
+          "status": "exact-information-generator-elimination",
+          "unit_projection_codeword": [
+            0,
+            0,
+            1,
+            1,
+            0
+          ]
+        }
+      ],
+      "exact_control_verified": true,
+      "information_dimension": 3,
+      "information_set_coordinates_one_based": [
+        1,
+        2,
+        3
+      ],
+      "minimum_distance": 2,
+      "reducer_remaining_generator_count": 5,
+      "reducer_solution_exponent_certificate_source": "single-orientable-surface-genus-2",
+      "reducer_solution_exponent_upper_bound": 4.0,
+      "reducer_true_pressure_margin": 3.096322538971198,
+      "residual_target_word": [
+        -13,
+        -12,
+        13,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -13,
+        12,
+        13
+      ],
+      "status": "information-set-BABA-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true,
+      "theoretical_remaining_generator_upper_bound": 7,
+      "theoretical_solution_exponent_upper_bound": 6.0,
+      "theoretical_true_pressure_margin_lower_bound": 1.0963225389711972,
+      "zero_codeword_present": true
+    },
+    {
+      "all_codeword_relations_forced_by_mixed_supports": true,
+      "all_information_generators_eliminated": true,
+      "code_size": 8,
+      "code_width": 5,
+      "codimension": 2,
+      "control_id": "CODIMENSION-TWO-INTERLEAVED",
+      "coordinate_order_interleaved": true,
+      "elimination_steps": [
+        {
+          "exact_singleton_elimination_verified": true,
+          "information_coordinate_one_based": 2,
+          "ordered_codeword_relation": [
+            1,
+            2
+          ],
+          "other_information_generator_occurrence_count": 0,
+          "pivot_occurrence_count": 1,
+          "status": "exact-information-generator-elimination",
+          "unit_projection_codeword": [
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "exact_singleton_elimination_verified": true,
+          "information_coordinate_one_based": 4,
+          "ordered_codeword_relation": [
+            1,
+            4
+          ],
+          "other_information_generator_occurrence_count": 0,
+          "pivot_occurrence_count": 1,
+          "status": "exact-information-generator-elimination",
+          "unit_projection_codeword": [
+            1,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "exact_singleton_elimination_verified": true,
+          "information_coordinate_one_based": 5,
+          "ordered_codeword_relation": [
+            1,
+            5
+          ],
+          "other_information_generator_occurrence_count": 0,
+          "pivot_occurrence_count": 1,
+          "status": "exact-information-generator-elimination",
+          "unit_projection_codeword": [
+            1,
+            0,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "exact_control_verified": true,
+      "information_dimension": 3,
+      "information_set_coordinates_one_based": [
+        2,
+        4,
+        5
+      ],
+      "minimum_distance": 2,
+      "reducer_remaining_generator_count": 6,
+      "reducer_solution_exponent_certificate_source": "multi-relator-coprime-pure-power-collapse",
+      "reducer_solution_exponent_upper_bound": 5.0,
+      "reducer_true_pressure_margin": 2.096322538971198,
+      "residual_target_word": [
+        -13,
+        -12,
+        13,
+        -10,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        10,
+        -13,
+        12,
+        13
+      ],
+      "status": "information-set-BABA-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true,
+      "theoretical_remaining_generator_upper_bound": 7,
+      "theoretical_solution_exponent_upper_bound": 6.0,
+      "theoretical_true_pressure_margin_lower_bound": 1.0963225389711972,
+      "zero_codeword_present": true
+    },
+    {
+      "all_codeword_relations_forced_by_mixed_supports": true,
+      "all_information_generators_eliminated": true,
+      "code_size": 16,
+      "code_width": 8,
+      "codimension": 4,
+      "control_id": "CODIMENSION-FOUR-INTERLEAVED",
+      "coordinate_order_interleaved": false,
+      "elimination_steps": [
+        {
+          "exact_singleton_elimination_verified": true,
+          "information_coordinate_one_based": 1,
+          "ordered_codeword_relation": [
+            1,
+            8
+          ],
+          "other_information_generator_occurrence_count": 0,
+          "pivot_occurrence_count": 1,
+          "status": "exact-information-generator-elimination",
+          "unit_projection_codeword": [
+            1,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ]
+        },
+        {
+          "exact_singleton_elimination_verified": true,
+          "information_coordinate_one_based": 2,
+          "ordered_codeword_relation": [
+            2,
+            7
+          ],
+          "other_information_generator_occurrence_count": 0,
+          "pivot_occurrence_count": 1,
+          "status": "exact-information-generator-elimination",
+          "unit_projection_codeword": [
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "exact_singleton_elimination_verified": true,
+          "information_coordinate_one_based": 3,
+          "ordered_codeword_relation": [
+            3,
+            6
+          ],
+          "other_information_generator_occurrence_count": 0,
+          "pivot_occurrence_count": 1,
+          "status": "exact-information-generator-elimination",
+          "unit_projection_codeword": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0
+          ]
+        },
+        {
+          "exact_singleton_elimination_verified": true,
+          "information_coordinate_one_based": 4,
+          "ordered_codeword_relation": [
+            4,
+            5
+          ],
+          "other_information_generator_occurrence_count": 0,
+          "pivot_occurrence_count": 1,
+          "status": "exact-information-generator-elimination",
+          "unit_projection_codeword": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "exact_control_verified": true,
+      "information_dimension": 4,
+      "information_set_coordinates_one_based": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "minimum_distance": 2,
+      "reducer_remaining_generator_count": 9,
+      "reducer_solution_exponent_certificate_source": "single-orientable-surface-genus-2",
+      "reducer_solution_exponent_upper_bound": 8.0,
+      "reducer_true_pressure_margin": 1.0465547021957402,
+      "residual_target_word": [
+        -16,
+        -15,
+        16,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -16,
+        15,
+        16
+      ],
+      "status": "information-set-BABA-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true,
+      "theoretical_remaining_generator_upper_bound": 9,
+      "theoretical_solution_exponent_upper_bound": 8.0,
+      "theoretical_true_pressure_margin_lower_bound": 1.0465547021957402,
+      "zero_codeword_present": true
+    },
+    {
+      "all_codeword_relations_forced_by_mixed_supports": true,
+      "all_information_generators_eliminated": true,
+      "code_size": 8,
+      "code_width": 8,
+      "codimension": 5,
+      "control_id": "CODIMENSION-FIVE-AFFINE-INTERLEAVED",
+      "coordinate_order_interleaved": true,
+      "elimination_steps": [
+        {
+          "exact_singleton_elimination_verified": true,
+          "information_coordinate_one_based": 1,
+          "ordered_codeword_relation": [
+            1,
+            3,
+            6,
+            8
+          ],
+          "other_information_generator_occurrence_count": 0,
+          "pivot_occurrence_count": 1,
+          "status": "exact-information-generator-elimination",
+          "unit_projection_codeword": [
+            1,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            1
+          ]
+        },
+        {
+          "exact_singleton_elimination_verified": true,
+          "information_coordinate_one_based": 2,
+          "ordered_codeword_relation": [
+            2,
+            3
+          ],
+          "other_information_generator_occurrence_count": 0,
+          "pivot_occurrence_count": 1,
+          "status": "exact-information-generator-elimination",
+          "unit_projection_codeword": [
+            0,
+            1,
+            1,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "exact_singleton_elimination_verified": true,
+          "information_coordinate_one_based": 4,
+          "ordered_codeword_relation": [
+            3,
+            4,
+            5,
+            8
+          ],
+          "other_information_generator_occurrence_count": 0,
+          "pivot_occurrence_count": 1,
+          "status": "exact-information-generator-elimination",
+          "unit_projection_codeword": [
+            0,
+            0,
+            1,
+            1,
+            1,
+            0,
+            0,
+            1
+          ]
+        }
+      ],
+      "exact_control_verified": true,
+      "information_dimension": 3,
+      "information_set_coordinates_one_based": [
+        1,
+        2,
+        4
+      ],
+      "minimum_distance": 2,
+      "reducer_remaining_generator_count": 9,
+      "reducer_solution_exponent_certificate_source": "single-orientable-surface-genus-1",
+      "reducer_solution_exponent_upper_bound": 8.0,
+      "reducer_true_pressure_margin": 2.0963225389711972,
+      "residual_target_word": [
+        -16,
+        -15,
+        16,
+        -13,
+        -12,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        12,
+        13,
+        -16,
+        15,
+        16
+      ],
+      "status": "information-set-BABA-core-uniformly-subleading",
+      "support_difference_peeling_stalls_on_full_core": true,
+      "theoretical_remaining_generator_upper_bound": 10,
+      "theoretical_solution_exponent_upper_bound": 9.0,
+      "theoretical_true_pressure_margin_lower_bound": 1.0963225389711972,
+      "zero_codeword_present": false
+    }
+  ],
+  "status": "all-information-set-BABA-cores-falsified",
+  "summary": "Proved an arbitrary-codimension, coordinate-order-independent no-go for every code with a dimension-sized information set.",
+  "theorem_contract": {
+    "elimination": "The unique codeword above each unit projection contains its pivot information generator once and no other information generator.",
+    "pressure_conclusion": "1+0.5*log2(2^r/(2^r-1)) > 1",
+    "scope": "Every length r+d code C with |C|=2^r, d_min(C)>=2, and an r-coordinate injective projection",
+    "scope_limit": "Higher-codimension codes without dimension-sized information sets and non-BABA marked patterns remain open.",
+    "surface_loss": "q -> q U^-1 removes U and leaves orientable genus two"
+  }
+}

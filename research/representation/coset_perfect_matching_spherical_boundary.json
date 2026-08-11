@@ -1,0 +1,361 @@
+{
+  "adversarial_audit": [
+    {
+      "challenge": "The nonabelian homogeneous transform is itself the blocker.",
+      "response": "For perfect matchings, coset embedding plus the S_(2m) QFT gives the exact basis distribution needed by the average inverse-row reduction.",
+      "survives": false
+    },
+    {
+      "challenge": "Multiplicity-free outcomes make every block scalar.",
+      "response": "Only the output multiplicity is one. The physical block is a row over its generally large multiplicity space.",
+      "survives": false
+    },
+    {
+      "challenge": "The Brauer QFT diagonalizes the required matching space.",
+      "response": "Equal standard-basis cardinality hides incompatible block profiles: p(m) versus sum_k p(m-2k).",
+      "survives": false
+    },
+    {
+      "challenge": "Large physical multiplicity proves a circuit lower bound.",
+      "response": "It does not: the state occupies only O(m log m) qubits. Multiplicity diagnoses the unresolved structure but is not a gate lower bound.",
+      "survives": false
+    }
+  ],
+  "claim_gate": {
+    "brauer_qft_is_required_spherical_inverse": false,
+    "generic_homogeneous_transform_blocker_applies_here": false,
+    "outcome_multiplicity_free_implies_physical_scalar_blocks": false,
+    "perfect_matching_label_space_gelfand_pair": true,
+    "polynomial_hidden_involution_decoder_constructed": false,
+    "reason": "The perfect-matching outcome transform is operational and multiplicity-free, but the arbitrary decoder consequence is still an unverified vector in a physical multiplicity space.",
+    "row_state_is_classically_verifiable_hidden_involution_witness": false,
+    "speedup_claim_allowed": false,
+    "uniform_homogeneous_fourier_basis_sampler_constructed": true
+  },
+  "created_at": "2026-08-11T15:22:49.257203+00:00",
+  "falsifiers_triggered": [
+    "The fixed-point-free-involution outcome space is a Gelfand pair, so higher output multiplicity is not the blocker.",
+    "The required average homogeneous-basis input distribution is efficiently sampleable from random matching cosets and the S_n QFT.",
+    "Multiplicity-free outcome sectors do not collapse the physical purification multiplicity spaces.",
+    "The Brauer regular QFT and perfect-matching spherical transform have different exact sector counts for every m>=2.",
+    "Large multiplicity dimension alone is not a quantum circuit lower bound.",
+    "No row-state verifier, hidden-involution decoder, or speedup has been constructed."
+  ],
+  "finite_character_controls": [
+    {
+      "constituent_dimension_sum": 1,
+      "degree": 2,
+      "exact_dimension_identity_verified": true,
+      "exact_thrall_decomposition_verified": true,
+      "half_degree": 1,
+      "hyperoctahedral_stabilizer_order": 2,
+      "maximum_constituent_multiplicity": 1,
+      "missing_even_row_constituent_count": 0,
+      "partition_count_half_degree": 1,
+      "perfect_matching_count": 1,
+      "permutation_character_inner_product_sector_count": 1,
+      "status": "exact-perfect-matching-gelfand-control",
+      "symmetric_group_order": 2,
+      "unexpected_constituent_count": 0
+    },
+    {
+      "constituent_dimension_sum": 3,
+      "degree": 4,
+      "exact_dimension_identity_verified": true,
+      "exact_thrall_decomposition_verified": true,
+      "half_degree": 2,
+      "hyperoctahedral_stabilizer_order": 8,
+      "maximum_constituent_multiplicity": 1,
+      "missing_even_row_constituent_count": 0,
+      "partition_count_half_degree": 2,
+      "perfect_matching_count": 3,
+      "permutation_character_inner_product_sector_count": 2,
+      "status": "exact-perfect-matching-gelfand-control",
+      "symmetric_group_order": 24,
+      "unexpected_constituent_count": 0
+    },
+    {
+      "constituent_dimension_sum": 15,
+      "degree": 6,
+      "exact_dimension_identity_verified": true,
+      "exact_thrall_decomposition_verified": true,
+      "half_degree": 3,
+      "hyperoctahedral_stabilizer_order": 48,
+      "maximum_constituent_multiplicity": 1,
+      "missing_even_row_constituent_count": 0,
+      "partition_count_half_degree": 3,
+      "perfect_matching_count": 15,
+      "permutation_character_inner_product_sector_count": 3,
+      "status": "exact-perfect-matching-gelfand-control",
+      "symmetric_group_order": 720,
+      "unexpected_constituent_count": 0
+    },
+    {
+      "constituent_dimension_sum": 105,
+      "degree": 8,
+      "exact_dimension_identity_verified": true,
+      "exact_thrall_decomposition_verified": true,
+      "half_degree": 4,
+      "hyperoctahedral_stabilizer_order": 384,
+      "maximum_constituent_multiplicity": 1,
+      "missing_even_row_constituent_count": 0,
+      "partition_count_half_degree": 5,
+      "perfect_matching_count": 105,
+      "permutation_character_inner_product_sector_count": 5,
+      "status": "exact-perfect-matching-gelfand-control",
+      "symmetric_group_order": 40320,
+      "unexpected_constituent_count": 0
+    },
+    {
+      "constituent_dimension_sum": 945,
+      "degree": 10,
+      "exact_dimension_identity_verified": true,
+      "exact_thrall_decomposition_verified": true,
+      "half_degree": 5,
+      "hyperoctahedral_stabilizer_order": 3840,
+      "maximum_constituent_multiplicity": 1,
+      "missing_even_row_constituent_count": 0,
+      "partition_count_half_degree": 7,
+      "perfect_matching_count": 945,
+      "permutation_character_inner_product_sector_count": 7,
+      "status": "exact-perfect-matching-gelfand-control",
+      "symmetric_group_order": 3628800,
+      "unexpected_constituent_count": 0
+    },
+    {
+      "constituent_dimension_sum": 10395,
+      "degree": 12,
+      "exact_dimension_identity_verified": true,
+      "exact_thrall_decomposition_verified": true,
+      "half_degree": 6,
+      "hyperoctahedral_stabilizer_order": 46080,
+      "maximum_constituent_multiplicity": 1,
+      "missing_even_row_constituent_count": 0,
+      "partition_count_half_degree": 11,
+      "perfect_matching_count": 10395,
+      "permutation_character_inner_product_sector_count": 11,
+      "status": "exact-perfect-matching-gelfand-control",
+      "symmetric_group_order": 479001600,
+      "unexpected_constituent_count": 0
+    },
+    {
+      "constituent_dimension_sum": 135135,
+      "degree": 14,
+      "exact_dimension_identity_verified": true,
+      "exact_thrall_decomposition_verified": true,
+      "half_degree": 7,
+      "hyperoctahedral_stabilizer_order": 645120,
+      "maximum_constituent_multiplicity": 1,
+      "missing_even_row_constituent_count": 0,
+      "partition_count_half_degree": 15,
+      "perfect_matching_count": 135135,
+      "permutation_character_inner_product_sector_count": 15,
+      "status": "exact-perfect-matching-gelfand-control",
+      "symmetric_group_order": 87178291200,
+      "unexpected_constituent_count": 0
+    }
+  ],
+  "headline_metrics": {
+    "brauer_profile_collision_count_beyond_trivial_m1": 0,
+    "brauer_regular_dimension_control_count": 8,
+    "brauer_regular_dimension_failure_count": 0,
+    "finite_character_control_count": 7,
+    "finite_character_control_failure_count": 0,
+    "homogeneous_basis_sampler_construction_count": 1,
+    "maximum_canonical_purification_multiplicity_ratio_log2": 716.161722083622,
+    "maximum_finite_constituent_multiplicity": 1,
+    "maximum_scaling_homogeneous_sector_count": 1741630,
+    "new_quantum_algorithm_count": 0,
+    "perfect_matching_gelfand_theorem_count": 1,
+    "polynomial_hidden_involution_decoder_count": 0,
+    "row_state_verifier_count": 0
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "MALEKI-RAZAFIMAHATRATRA-2023",
+      "title": "On cocliques in commutative Schurian association schemes of the symmetric group",
+      "url": "https://arxiv.org/abs/2307.02844",
+      "use": "Primary modern source confirming the perfect-matching Gelfand pair and its even-row constituents"
+    },
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "FOXMAN-NEHORAN-DING-2026",
+      "title": "Efficient Quantum Fourier Transforms For Semisimple Algebras",
+      "url": "https://arxiv.org/abs/2605.05337",
+      "use": "Brauer-algebra QFT audited as an adjacent circuit technique, not identified with the perfect-matching spherical transform"
+    },
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "BEALS-1997",
+      "title": "Quantum computation of Fourier transforms over symmetric groups",
+      "url": "https://doi.org/10.1145/258533.258548",
+      "use": "Efficient S_n QFT used by the homogeneous-basis sampler"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "identify_perfect_matching_gelfand_decomposition",
+      "resolution": "Thrall's decomposition gives exactly the even-row Specht modules once each; exact character controls verify m<=7.",
+      "resolved": true
+    },
+    {
+      "obligation": "make_homogeneous_basis_average_operational",
+      "resolution": "Random matching coset preparation and the efficient symmetric-group QFT sample the required basis law without conditional spherical-vector synthesis.",
+      "resolved": true
+    },
+    {
+      "obligation": "reduce_physical_multiplicity_row_to_scalar",
+      "resolution": "Gelfand multiplicity one applies to C[X_m], not to the physical purification representation.",
+      "resolved": false
+    },
+    {
+      "obligation": "verify_or_decode_prepared_row_state",
+      "resolution": "No independent relation, observable, or classical witness has been derived from the row vector.",
+      "resolved": false
+    },
+    {
+      "obligation": "transfer_2026_brauer_qft_to_spherical_inverse",
+      "resolution": "The sector counts and algebra actions differ, and the published approximation needs a separate large loop parameter. A transfer theorem is absent.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "arbitrary_measurement_row_state_verifier_constructed": false,
+      "brauer_and_homogeneous_sector_profiles_equal": false,
+      "brauer_regular_sector_count": 3,
+      "canonical_purification_multiplicity_ratio": 24,
+      "canonical_purification_multiplicity_ratio_log2": 4.584962500721154,
+      "degree": 4,
+      "efficient_matching_coset_embedding": true,
+      "efficient_symmetric_group_qft_available": true,
+      "half_degree": 2,
+      "homogeneous_sector_count": 2,
+      "maximum_homogeneous_irrep_dimension_decimal": "2",
+      "perfect_matching_count_decimal": "3",
+      "perfect_matching_log2": 1.584962500721156,
+      "polynomial_hidden_involution_decoder_constructed": false,
+      "status": "spherical-basis-sampling-resolved-physical-row-verifier-open",
+      "uniform_homogeneous_fourier_basis_sampler_constructed": true
+    },
+    {
+      "arbitrary_measurement_row_state_verifier_constructed": false,
+      "brauer_and_homogeneous_sector_profiles_equal": false,
+      "brauer_regular_sector_count": 8,
+      "canonical_purification_multiplicity_ratio": 40320,
+      "canonical_purification_multiplicity_ratio_log2": 15.29920801838728,
+      "degree": 8,
+      "efficient_matching_coset_embedding": true,
+      "efficient_symmetric_group_qft_available": true,
+      "half_degree": 4,
+      "homogeneous_sector_count": 5,
+      "maximum_homogeneous_irrep_dimension_decimal": "56",
+      "perfect_matching_count_decimal": "105",
+      "perfect_matching_log2": 6.714245517666122,
+      "polynomial_hidden_involution_decoder_constructed": false,
+      "status": "spherical-basis-sampling-resolved-physical-row-verifier-open",
+      "uniform_homogeneous_fourier_basis_sampler_constructed": true
+    },
+    {
+      "arbitrary_measurement_row_state_verifier_constructed": false,
+      "brauer_and_homogeneous_sector_profiles_equal": false,
+      "brauer_regular_sector_count": 41,
+      "canonical_purification_multiplicity_ratio": 20922789888000,
+      "canonical_purification_multiplicity_ratio_log2": 44.25014046988262,
+      "degree": 16,
+      "efficient_matching_coset_embedding": true,
+      "efficient_symmetric_group_qft_available": true,
+      "half_degree": 8,
+      "homogeneous_sector_count": 22,
+      "maximum_homogeneous_irrep_dimension_decimal": "480480",
+      "perfect_matching_count_decimal": "2027025",
+      "perfect_matching_log2": 20.950932451495344,
+      "polynomial_hidden_involution_decoder_constructed": false,
+      "status": "spherical-basis-sampling-resolved-physical-row-verifier-open",
+      "uniform_homogeneous_fourier_basis_sampler_constructed": true
+    },
+    {
+      "arbitrary_measurement_row_state_verifier_constructed": false,
+      "brauer_and_homogeneous_sector_profiles_equal": false,
+      "brauer_regular_sector_count": 526,
+      "canonical_purification_multiplicity_ratio": 263130836933693530167218012160000000,
+      "canonical_purification_multiplicity_ratio_log2": 117.6632636523603,
+      "degree": 32,
+      "efficient_matching_coset_embedding": true,
+      "efficient_symmetric_group_qft_available": true,
+      "half_degree": 16,
+      "homogeneous_sector_count": 231,
+      "maximum_homogeneous_irrep_dimension_decimal": "9857949210869760",
+      "perfect_matching_count_decimal": "191898783962510625",
+      "perfect_matching_log2": 57.41312318247768,
+      "polynomial_hidden_involution_decoder_constructed": false,
+      "status": "spherical-basis-sampling-resolved-physical-row-verifier-open",
+      "uniform_homogeneous_fourier_basis_sampler_constructed": true
+    },
+    {
+      "arbitrary_measurement_row_state_verifier_constructed": false,
+      "brauer_and_homogeneous_sector_profiles_equal": false,
+      "brauer_regular_sector_count": 24222,
+      "canonical_purification_multiplicity_ratio": 126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000,
+      "canonical_purification_multiplicity_ratio_log2": 295.9951439417241,
+      "degree": 64,
+      "efficient_matching_coset_embedding": true,
+      "efficient_symmetric_group_qft_available": true,
+      "half_degree": 32,
+      "homogeneous_sector_count": 8349,
+      "maximum_homogeneous_irrep_dimension_decimal": "993300587827744327491588617568325386240000",
+      "perfect_matching_count_decimal": "112275575285571389562324404930670903477890625",
+      "perfect_matching_log2": 146.33188028936374,
+      "polynomial_hidden_involution_decoder_constructed": false,
+      "status": "spherical-basis-sampling-resolved-physical-row-verifier-open",
+      "uniform_homogeneous_fourier_basis_sampler_constructed": true
+    },
+    {
+      "arbitrary_measurement_row_state_verifier_constructed": false,
+      "brauer_and_homogeneous_sector_profiles_equal": false,
+      "brauer_regular_sector_count": 6621308,
+      "canonical_purification_multiplicity_ratio": 385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000,
+      "canonical_purification_multiplicity_ratio_log2": 716.161722083622,
+      "degree": 128,
+      "efficient_matching_coset_embedding": true,
+      "efficient_symmetric_group_qft_available": true,
+      "half_degree": 64,
+      "homogeneous_sector_count": 1741630,
+      "maximum_homogeneous_irrep_dimension_decimal": "121510967548050028160594070312507760129142550663360590428101106226742589433364857142266927007498240000000",
+      "perfect_matching_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "perfect_matching_log2": 356.16657814189784,
+      "polynomial_hidden_involution_decoder_constructed": false,
+      "status": "spherical-basis-sampling-resolved-physical-row-verifier-open",
+      "uniform_homogeneous_fourier_basis_sampler_constructed": true
+    }
+  ],
+  "status": "perfect-matching-spherical-transform-resolved-row-verifier-open",
+  "summary": "Resolved the perfect-matching homogeneous Fourier sampling step, proved the multiplicity-free row normal form, and ruled out a naive substitution of the 2026 Brauer-algebra QFT; the live bottleneck is now a verifier or polar implementation for the physical multiplicity row.",
+  "theorem": {
+    "arbitrary_measurement_block_specialization": "Every cleaned covariant measurement intertwiner has live block I_(S^(2 lambda)) tensor <a_(2 lambda)| because the outcome multiplicity space is one-dimensional.",
+    "brauer_qft_nonidentification": "The Brauer regular transform has sum_k p(m-2k) sectors rather than p(m), so sharing a perfect-matching standard basis does not make it the S_(2m)/(S_2 wr S_m) spherical transform.",
+    "canonical_purification_multiplicity": "For regular U, U tensor conjugate(U) is |S_(2m)| copies of the regular representation, hence physical multiplicity |S_(2m)| dim(S^nu), not one.",
+    "gelfand_pair_proved": true,
+    "gram_spectrum_specialization": "K K^* is scalar alpha_(2 lambda) on each even-row constituent, so the outcome Gram operator lies in the commutative perfect-matching association scheme.",
+    "homogeneous_basis_sampler_constructed": true,
+    "homogeneous_basis_sampling_circuit": "Prepare a uniformly random matching, reversibly embed it as a uniform hyperoctahedral right coset, apply the S_(2m) QFT, and measure the irrep and carrier labels; retain the unique H-fixed column state.",
+    "homogeneous_space_identity": "Fixed-point-free involutions in S_(2m) are S_(2m)/(S_2 wr S_m), the perfect matchings on 2m points.",
+    "physical_blocks_reduced_to_scalars": false,
+    "polynomial_hidden_involution_decoder_constructed": false,
+    "remaining_algorithmic_obligation": "Give a noncircular verifier, reduction, or observable for the prepared physical multiplicity vector, or implement the relevant PGM polar row with a proved polynomial condition bound.",
+    "row_state_verifier_constructed": false,
+    "sampling_law": "The circuit samples (2 lambda,j) with probability dim(S^(2 lambda))/((2m-1)!!), uniform over the homogeneous Fourier basis.",
+    "status": "perfect-matching-spherical-outcome-resolved-physical-row-open",
+    "theorem_verified": true,
+    "thrall_decomposition": "Ind_(S_2 wr S_m)^S_(2m)(1) = direct_sum_(lambda partition m) S^(2 lambda), with multiplicity one."
+  },
+  "theorem_contract": {
+    "group": "S_(2m)",
+    "label_space": "fixed-point-free involutions/perfect matchings",
+    "label_stabilizer": "S_2 wr S_m",
+    "measurement_input": "accessible covariant purification and reversible decoder covered by the arbitrary-measurement intertwiner theorem",
+    "resolved_primitive": "uniform homogeneous-Fourier basis sampling and inverse input encoding via coset embedding plus the S_(2m) QFT",
+    "unresolved_primitive": "classically meaningful verification or polynomial polar implementation for the physical multiplicity row"
+  }
+}

@@ -1,0 +1,400 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "There are exponentially many leaves at each word position.",
+      "resolution": "They are sampled uniformly; summing their coefficients is an expectation with total mass one, not a union bound.",
+      "resolved": true
+    },
+    {
+      "objection": "The alternating exponential series has exponential l1 mass.",
+      "resolution": "Poisson complement words are a positive operator mixture and avoid expanding in raw powers of Fbar.",
+      "resolved": true
+    },
+    {
+      "objection": "Poisson words have unbounded degree.",
+      "resolution": "The pressure theorem is all-width, and the exact negative-binomial tail permits polynomial truncation when needed.",
+      "resolved": true
+    },
+    {
+      "objection": "This proves the exact Green component moment is positive.",
+      "resolution": "No: common-metric normalization, average ridge transfer, and the noncrossing lower bound remain.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "all_width_crossing_pressure_survives_ridge_mixture": true,
+    "common_metric_normalization_controlled": false,
+    "exponential_leaf_count_survives_in_coefficients": false,
+    "green_word_coefficient_burden_controlled": true,
+    "natural_component_M4_positive": false,
+    "noncrossing_ridge_moment_lower_bounded": false,
+    "normalized_ridge_has_probability_word_mixture": true,
+    "reason": "Poisson/Gamma mixing removes the frame-word coefficient burden. The remaining M4 barriers are common-metric normalization, average ridge transfer, and noncrossing mass.",
+    "ridge_to_green_average_error_controlled": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:25:37.539076+00:00",
+  "falsifiers_triggered": [
+    "Raw monomial l1 growth is an artifact of the wrong expansion basis.",
+    "Exponential leaf count is absorbed by uniform event sampling.",
+    "Infinite ridge words have an exact polynomial-scale truncation law.",
+    "Common-metric normalization, not frame-word coefficients, is now open."
+  ],
+  "fixed_length_controls": [
+    {
+      "ambient_dimension": 5,
+      "average_word_residual": 0.0,
+      "control_id": "Q3-L0",
+      "enumerated_word_count": 1,
+      "exact_fixed_length_factorization_verified": true,
+      "leaf_count": 3,
+      "status": "fixed-length-complement-word-average-factorizes",
+      "word_length": 0
+    },
+    {
+      "ambient_dimension": 5,
+      "average_word_residual": 1.1102230246251565e-16,
+      "control_id": "Q3-L1",
+      "enumerated_word_count": 3,
+      "exact_fixed_length_factorization_verified": true,
+      "leaf_count": 3,
+      "status": "fixed-length-complement-word-average-factorizes",
+      "word_length": 1
+    },
+    {
+      "ambient_dimension": 5,
+      "average_word_residual": 1.2659846025991333e-16,
+      "control_id": "Q3-L2",
+      "enumerated_word_count": 9,
+      "exact_fixed_length_factorization_verified": true,
+      "leaf_count": 3,
+      "status": "fixed-length-complement-word-average-factorizes",
+      "word_length": 2
+    },
+    {
+      "ambient_dimension": 5,
+      "average_word_residual": 1.2069352633703224e-16,
+      "control_id": "Q3-L3",
+      "enumerated_word_count": 27,
+      "exact_fixed_length_factorization_verified": true,
+      "leaf_count": 3,
+      "status": "fixed-length-complement-word-average-factorizes",
+      "word_length": 3
+    },
+    {
+      "ambient_dimension": 5,
+      "average_word_residual": 2.4652817807460314e-16,
+      "control_id": "Q3-L4",
+      "enumerated_word_count": 81,
+      "exact_fixed_length_factorization_verified": true,
+      "leaf_count": 3,
+      "status": "fixed-length-complement-word-average-factorizes",
+      "word_length": 4
+    },
+    {
+      "ambient_dimension": 6,
+      "average_word_residual": 0.0,
+      "control_id": "Q4-L0",
+      "enumerated_word_count": 1,
+      "exact_fixed_length_factorization_verified": true,
+      "leaf_count": 4,
+      "status": "fixed-length-complement-word-average-factorizes",
+      "word_length": 0
+    },
+    {
+      "ambient_dimension": 6,
+      "average_word_residual": 5.551115123125783e-17,
+      "control_id": "Q4-L1",
+      "enumerated_word_count": 4,
+      "exact_fixed_length_factorization_verified": true,
+      "leaf_count": 4,
+      "status": "fixed-length-complement-word-average-factorizes",
+      "word_length": 1
+    },
+    {
+      "ambient_dimension": 6,
+      "average_word_residual": 1.04826751174272e-16,
+      "control_id": "Q4-L2",
+      "enumerated_word_count": 16,
+      "exact_fixed_length_factorization_verified": true,
+      "leaf_count": 4,
+      "status": "fixed-length-complement-word-average-factorizes",
+      "word_length": 2
+    },
+    {
+      "ambient_dimension": 6,
+      "average_word_residual": 1.3017058604363334e-16,
+      "control_id": "Q4-L3",
+      "enumerated_word_count": 64,
+      "exact_fixed_length_factorization_verified": true,
+      "leaf_count": 4,
+      "status": "fixed-length-complement-word-average-factorizes",
+      "word_length": 3
+    },
+    {
+      "ambient_dimension": 6,
+      "average_word_residual": 1.590822196532426e-16,
+      "control_id": "Q4-L4",
+      "enumerated_word_count": 256,
+      "exact_fixed_length_factorization_verified": true,
+      "leaf_count": 4,
+      "status": "fixed-length-complement-word-average-factorizes",
+      "word_length": 4
+    }
+  ],
+  "headline_metrics": {
+    "common_metric_normalization_theorem_count": 0,
+    "fixed_length_control_failure_count": 0,
+    "green_word_coefficient_burden_remaining_count": 0,
+    "largest_scale_crossing_log2_bound": -8609.006143601258,
+    "largest_scaling_degree": 1024,
+    "maximum_control_operator_residual_to_tail_ratio": 0.002892864632381421,
+    "maximum_control_tail_formula_residual": 0.0,
+    "natural_component_M4_lower_bound_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "poisson_ridge_word_mixture_theorem_count": 1,
+    "ridge_mixture_control_failure_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "remove_exponential_leaf_count_from_heat_kernel_words",
+      "resolution": "Uniform leaf selection is inside a probability expectation; its coefficient mass is one for every Poisson length.",
+      "resolved": true
+    },
+    {
+      "obligation": "remove_uncontrolled_polynomial_monomial_coefficients",
+      "resolution": "Gamma mixing produces an exact negative-binomial probability law; only eta^-2 per unnormalized ridge factor remains.",
+      "resolved": true
+    },
+    {
+      "obligation": "truncate_infinite_words_at_polynomial_length",
+      "resolution": "The exact tail formula gives L=O(eta^-1 log(1/delta)) for inverse-polynomial eta and target error delta.",
+      "resolved": true
+    },
+    {
+      "obligation": "transfer_all_width_crossing_pressure_through_ridge_words",
+      "resolution": "Complement projectors have the same absolute group expansion as invariant projectors; mixture averaging preserves the bound.",
+      "resolved": true
+    },
+    {
+      "obligation": "control_common_metric_inverse_and_noncrossing_scale",
+      "resolution": "C_eta^-1/2 and the retained noncrossing ridge moment are not part of the normalized-frame heat-kernel mixture theorem.",
+      "resolved": false
+    }
+  ],
+  "ridge_controls": [
+    {
+      "ambient_dimension": 5,
+      "control_id": "Q3-ETA-1/2-L20",
+      "exact_mixture_verified": true,
+      "exact_negative_binomial_mass_through_truncation": 0.9983961138142842,
+      "exact_negative_binomial_tail": 0.0016038861857158267,
+      "leaf_count": 3,
+      "negative_binomial_mean": 4.0,
+      "normalized_exact_ridge_norm": 0.12455227605084736,
+      "residual_bounded_by_tail": true,
+      "ridge_parameter": 0.5,
+      "status": "normalized-ridge-negative-binomial-word-mixture-verified",
+      "tail_formula_residual": 0.0,
+      "truncated_mixture_operator_residual": 4.6398256210224545e-06,
+      "truncation_length": 20
+    },
+    {
+      "ambient_dimension": 5,
+      "control_id": "Q3-ETA-1/5-L50",
+      "exact_mixture_verified": true,
+      "exact_negative_binomial_mass_through_truncation": 0.9991300785153224,
+      "exact_negative_binomial_tail": 0.0008699214846776138,
+      "leaf_count": 3,
+      "negative_binomial_mean": 10.0,
+      "normalized_exact_ridge_norm": 0.04945237752811155,
+      "residual_bounded_by_tail": true,
+      "ridge_parameter": 0.2,
+      "status": "normalized-ridge-negative-binomial-word-mixture-verified",
+      "tail_formula_residual": 0.0,
+      "truncated_mixture_operator_residual": 8.978304912417279e-09,
+      "truncation_length": 50
+    },
+    {
+      "ambient_dimension": 6,
+      "control_id": "Q4-ETA-1/3-L30",
+      "exact_mixture_verified": true,
+      "exact_negative_binomial_mass_through_truncation": 0.9988280550332593,
+      "exact_negative_binomial_tail": 0.0011719449667407216,
+      "leaf_count": 4,
+      "negative_binomial_mean": 6.0,
+      "normalized_exact_ridge_norm": 0.08333332961390566,
+      "residual_bounded_by_tail": true,
+      "ridge_parameter": 0.3333333333333333,
+      "status": "normalized-ridge-negative-binomial-word-mixture-verified",
+      "tail_formula_residual": 0.0,
+      "truncated_mixture_operator_residual": 6.135335696255739e-08,
+      "truncation_length": 30
+    },
+    {
+      "ambient_dimension": 6,
+      "control_id": "Q4-ETA-1/10-L100",
+      "exact_mixture_verified": true,
+      "exact_negative_binomial_mass_through_truncation": 0.999328317340416,
+      "exact_negative_binomial_tail": 0.0006716826595839656,
+      "leaf_count": 4,
+      "negative_binomial_mean": 20.0,
+      "normalized_exact_ridge_norm": 0.021398112348306988,
+      "residual_bounded_by_tail": true,
+      "ridge_parameter": 0.1,
+      "status": "normalized-ridge-negative-binomial-word-mixture-verified",
+      "tail_formula_residual": 0.0,
+      "truncated_mixture_operator_residual": 4.030420896944528e-16,
+      "truncation_length": 100
+    }
+  ],
+  "scaling_records": [
+    {
+      "exact_length_tail_upper_bound": 9.754611303632468e-14,
+      "factorial_crossing_loss_survives": false,
+      "fixed_ridge_factor_count": 4,
+      "log2_crossing_bound_after_ridge_prefactor": 8.07346559729158,
+      "log2_ridge_absolute_coefficient_mass": 69.1508495181978,
+      "log2_symmetric_group_order": 61.07738392090622,
+      "n": 20,
+      "polynomial_word_length": true,
+      "ridge_inverse_polynomial_degree": 2,
+      "ridge_parameter": 0.0025,
+      "status": "finite-scale-ridge-prefactor-exceeds-group-loss",
+      "target_truncation_error": 9.765625e-14,
+      "truncation_length": 13415
+    },
+    {
+      "exact_length_tail_upper_bound": 8.880897679846673e-16,
+      "factorial_crossing_loss_survives": true,
+      "fixed_ridge_factor_count": 4,
+      "log2_crossing_bound_after_ridge_prefactor": -37.6632636523603,
+      "log2_ridge_absolute_coefficient_mass": 80.0,
+      "log2_symmetric_group_order": 117.6632636523603,
+      "n": 32,
+      "polynomial_word_length": true,
+      "ridge_inverse_polynomial_degree": 2,
+      "ridge_parameter": 0.0009765625,
+      "status": "ridge-prefactor-does-not-erase-factorial-crossing-loss",
+      "target_truncation_error": 8.881784197001252e-16,
+      "truncation_length": 39267
+    },
+    {
+      "exact_length_tail_upper_bound": 1.0237741501681498e-17,
+      "factorial_crossing_loss_survives": true,
+      "fixed_ridge_factor_count": 4,
+      "log2_crossing_bound_after_ridge_prefactor": -123.90643902719462,
+      "log2_ridge_absolute_coefficient_mass": 90.30169903639559,
+      "log2_symmetric_group_order": 214.2081380635902,
+      "n": 50,
+      "polynomial_word_length": true,
+      "ridge_inverse_polynomial_degree": 2,
+      "ridge_parameter": 0.0004,
+      "status": "ridge-prefactor-does-not-erase-factorial-crossing-loss",
+      "target_truncation_error": 1.024e-17,
+      "truncation_length": 107276
+    },
+    {
+      "exact_length_tail_upper_bound": 9.312086343506647e-20,
+      "factorial_crossing_loss_survives": true,
+      "fixed_ridge_factor_count": 4,
+      "log2_crossing_bound_after_ridge_prefactor": -293.67600971336145,
+      "log2_ridge_absolute_coefficient_mass": 101.1508495181978,
+      "log2_symmetric_group_order": 394.82685923155924,
+      "n": 80,
+      "polynomial_word_length": true,
+      "ridge_inverse_polynomial_degree": 2,
+      "ridge_parameter": 0.00015625,
+      "status": "ridge-prefactor-does-not-erase-factorial-crossing-loss",
+      "target_truncation_error": 9.313225746154785e-20,
+      "truncation_length": 305342
+    },
+    {
+      "exact_length_tail_upper_bound": 8.470069472532061e-22,
+      "factorial_crossing_loss_survives": true,
+      "fixed_ridge_factor_count": 4,
+      "log2_crossing_bound_after_ridge_prefactor": -604.161722083622,
+      "log2_ridge_absolute_coefficient_mass": 112.0,
+      "log2_symmetric_group_order": 716.161722083622,
+      "n": 128,
+      "polynomial_word_length": true,
+      "ridge_inverse_polynomial_degree": 2,
+      "ridge_parameter": 6.103515625e-05,
+      "status": "ridge-prefactor-does-not-erase-factorial-crossing-loss",
+      "target_truncation_error": 8.470329472543003e-22,
+      "truncation_length": 860185
+    },
+    {
+      "exact_length_tail_upper_bound": 8.271745743832593e-25,
+      "factorial_crossing_loss_survives": true,
+      "fixed_ridge_factor_count": 4,
+      "log2_crossing_bound_after_ridge_prefactor": -1555.9962872242147,
+      "log2_ridge_absolute_coefficient_mass": 128.0,
+      "log2_symmetric_group_order": 1683.9962872242147,
+      "n": 256,
+      "polynomial_word_length": true,
+      "ridge_inverse_polynomial_degree": 2,
+      "ridge_parameter": 1.52587890625e-05,
+      "status": "ridge-prefactor-does-not-erase-factorial-crossing-loss",
+      "target_truncation_error": 8.271806125530277e-25,
+      "truncation_length": 3903047
+    },
+    {
+      "exact_length_tail_upper_bound": 8.077910538907645e-28,
+      "factorial_crossing_loss_survives": true,
+      "fixed_ridge_factor_count": 4,
+      "log2_crossing_bound_after_ridge_prefactor": -3731.166121943203,
+      "log2_ridge_absolute_coefficient_mass": 144.0,
+      "log2_symmetric_group_order": 3875.166121943203,
+      "n": 512,
+      "polynomial_word_length": true,
+      "ridge_inverse_polynomial_degree": 2,
+      "ridge_parameter": 3.814697265625e-06,
+      "status": "ridge-prefactor-does-not-erase-factorial-crossing-loss",
+      "target_truncation_error": 8.077935669463161e-28,
+      "truncation_length": 17457986
+    },
+    {
+      "exact_length_tail_upper_bound": 7.888607125423719e-31,
+      "factorial_crossing_loss_survives": true,
+      "fixed_ridge_factor_count": 4,
+      "log2_crossing_bound_after_ridge_prefactor": -8609.006143601258,
+      "log2_ridge_absolute_coefficient_mass": 160.0,
+      "log2_symmetric_group_order": 8769.006143601258,
+      "n": 1024,
+      "polynomial_word_length": true,
+      "ridge_inverse_polynomial_degree": 2,
+      "ridge_parameter": 9.5367431640625e-07,
+      "status": "ridge-prefactor-does-not-erase-factorial-crossing-loss",
+      "target_truncation_error": 7.888609052210118e-31,
+      "truncation_length": 77203775
+    }
+  ],
+  "status": "ridge-frame-word-burden-closed-common-metric-open",
+  "summary": "Converted normalized Green ridge factors into an outcome-count-free probability mixture of polynomially truncatable complement words.",
+  "theorem": {
+    "absolute_coefficient_mass": "one for eta^2 R_eta, hence eta^-2 per unnormalized ridge factor",
+    "arbitrary_leaf_count": true,
+    "arbitrary_word_length": true,
+    "common_metric_normalization_resolved": false,
+    "crossing_pressure_transfer": "r fixed ridge factors cost eta^-2r; inverse-polynomial eta cannot erase an |S_n|^-1 all-width crossing bound",
+    "green_word_coefficient_burden_resolved": true,
+    "heat_kernel_identity": "exp(-t Fbar)=E[product_{j=1}^{N_t}(I-P_{E_j})]",
+    "inverse_polynomial_ridge_has_polynomial_truncation": true,
+    "length_distribution": "Pr[N=m]=eta^2(m+1)/(1+eta)^(m+2)",
+    "mean_word_length": "E[N]=2/eta",
+    "normalized_ridge_mixture": "eta^2 Fbar(Fbar+eta I)^-2 is a probability mixture of P_{E0} product_j(I-P_{Ej})",
+    "positive_component_M4_proved": false,
+    "scope_limit": "This controls normalized-frame ridge words, not C_eta^-1/2, ridge-to-Green average synthesis error, or noncrossing mass.",
+    "status": "normalized-ridge-word-burden-removed",
+    "theorem_verified": true,
+    "truncation_tail": "Pr[N>L]=r^(L+1)((L+2)-(L+1)r), r=(1+eta)^-1"
+  },
+  "theorem_contract": {
+    "heat_kernel": "exp(-t Fbar)=E[product_{j=1}^{N_t}(I-P_{E_j})]",
+    "normalized_frame": "Fbar=q^-1 sum_e P_e",
+    "pressure_transfer": "r fixed ridge factors cost eta^-2r; inverse-polynomial eta cannot erase an |S_n|^-1 all-width crossing bound",
+    "ridge_mixture": "eta^2 Fbar(Fbar+eta I)^-2 is a probability mixture of P_{E0} product_j(I-P_{Ej})",
+    "scope": "This controls normalized-frame ridge words, not C_eta^-1/2, ridge-to-Green average synthesis error, or noncrossing mass."
+  }
+}

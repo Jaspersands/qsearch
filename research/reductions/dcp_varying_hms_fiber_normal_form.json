@@ -1,0 +1,425 @@
+{
+  "adversarial_audit": [
+    {
+      "challenge": "HMS Fourier sampling requires one fixed multiplier set.",
+      "response": "The target-amplitude calculation is samplewise and the all-correct probability multiplies for arbitrary known H_i.",
+      "survives": false
+    },
+    {
+      "challenge": "Subset-sum collisions destroy the hidden phase.",
+      "response": "They change multiplicity weights. Uniform two-to-one fibers over every residue give perfect phase discrimination.",
+      "survives": false
+    },
+    {
+      "challenge": "A reversible subset-sum circuit already exposes h.",
+      "response": "Retaining b makes the paths orthogonal and fixes target probability at 1/N, independent of the multiplicities.",
+      "survives": false
+    },
+    {
+      "challenge": "Writing C_x as a matrix constructs the algorithm.",
+      "response": "Uniformly implementing its normalization and preimage cleanup is precisely the unresolved average-case subset-sum PGM.",
+      "survives": false
+    },
+    {
+      "challenge": "Constant PGM information success proves a speedup.",
+      "response": "No polynomial measurement circuit, contamination theorem, or lattice-recovery composition follows from the success formula.",
+      "survives": false
+    }
+  ],
+  "claim_gate": {
+    "collisions_are_information_obstruction": false,
+    "exact_f1_robustness_proved": false,
+    "forward_subset_sum_with_garbage_is_sufficient": false,
+    "generic_polytime_fiber_compression_constructed": false,
+    "lattice_composition_proved": false,
+    "reason": "The HMS decoder is already available after compression. The unresolved operation is the source-dependent normalized-fiber coisometry, which is equivalent to the clean DCP PGM primitive.",
+    "shift_multiplicity_candidate_passes_proof_gate": false,
+    "speedup_claim_allowed": false,
+    "varying_known_multiplier_sets_block_fourier_sampling": false,
+    "varying_set_fourier_sampling_transfer_proved": true,
+    "weighted_dcp_phase_normal_form_proved": true
+  },
+  "created_at": "2026-08-11T15:23:34.333556+00:00",
+  "falsifiers_triggered": [
+    "Fresh known multiplier sets do not invalidate the basic HMS Fourier proof.",
+    "Forward residue computation with retained preimages has exactly 1/N target success.",
+    "Uniform collision multiplicities can yield perfect distinguishability.",
+    "The weighted inverse-QFT decoder is exactly the covariant DCP PGM.",
+    "No generic polynomial normalized-fiber coisometry is constructed.",
+    "Clean information success does not resolve contamination or end-to-end recovery."
+  ],
+  "fiber_controls": [
+    {
+      "assignment_count": 8,
+      "canonical_coisometry_residual": 0.0,
+      "coherent_interference_gain": 8.0,
+      "collision_pair_count": 0,
+      "compressed_state_norm_residual": 2.220446049250313e-16,
+      "control_id": "injective-binary-residues",
+      "copy_count": 3,
+      "covariant_pgm_success_probability": 0.47058823529411764,
+      "exact_weighted_qft_formula": 0.47058823529411764,
+      "forward_compute_with_preimage_garbage_success": 0.05882352941176473,
+      "forward_garbage_formula_residual": 2.7755575615628914e-17,
+      "generic_random_instance_circuit_constructed": false,
+      "labels": [
+        1,
+        2,
+        4
+      ],
+      "maximum_multiplicity": 1,
+      "minimum_positive_multiplicity": 1,
+      "modulus": 17,
+      "multiplicities_uniform_on_support": true,
+      "normal_form_verified": true,
+      "observed_compressed_qft_success": 0.47058823529411786,
+      "occupied_residue_count": 8,
+      "pgm_formula_residual": 0.0,
+      "status": "weighted-hms-pgm-fiber-normal-form-verified",
+      "structured_polylog_fiber_compression_known": true
+    },
+    {
+      "assignment_count": 16,
+      "canonical_coisometry_residual": 6.280369834735101e-16,
+      "coherent_interference_gain": 8.000000000000002,
+      "collision_pair_count": 8,
+      "compressed_state_norm_residual": 2.220446049250313e-16,
+      "control_id": "uniform-collision-fibers",
+      "copy_count": 4,
+      "covariant_pgm_success_probability": 1.0000000000000002,
+      "exact_weighted_qft_formula": 1.0000000000000002,
+      "forward_compute_with_preimage_garbage_success": 0.12499999999999997,
+      "forward_garbage_formula_residual": 2.7755575615628914e-17,
+      "generic_random_instance_circuit_constructed": false,
+      "labels": [
+        1,
+        2,
+        4,
+        0
+      ],
+      "maximum_multiplicity": 2,
+      "minimum_positive_multiplicity": 2,
+      "modulus": 8,
+      "multiplicities_uniform_on_support": true,
+      "normal_form_verified": true,
+      "observed_compressed_qft_success": 1.0,
+      "occupied_residue_count": 8,
+      "pgm_formula_residual": 0.0,
+      "status": "weighted-hms-pgm-fiber-normal-form-verified",
+      "structured_polylog_fiber_compression_known": true
+    },
+    {
+      "assignment_count": 16,
+      "canonical_coisometry_residual": 3.8459253727671276e-16,
+      "coherent_interference_gain": 12.678300858899105,
+      "collision_pair_count": 3,
+      "compressed_state_norm_residual": 8.881784197001252e-16,
+      "control_id": "nonuniform-collision-fibers",
+      "copy_count": 4,
+      "covariant_pgm_success_probability": 0.7457824034646532,
+      "exact_weighted_qft_formula": 0.7457824034646532,
+      "forward_compute_with_preimage_garbage_success": 0.05882352941176479,
+      "forward_garbage_formula_residual": 8.326672684688674e-17,
+      "generic_random_instance_circuit_constructed": false,
+      "labels": [
+        1,
+        2,
+        3,
+        6
+      ],
+      "maximum_multiplicity": 2,
+      "minimum_positive_multiplicity": 1,
+      "modulus": 17,
+      "multiplicities_uniform_on_support": false,
+      "normal_form_verified": true,
+      "observed_compressed_qft_success": 0.7457824034646543,
+      "occupied_residue_count": 13,
+      "pgm_formula_residual": 0.0,
+      "status": "weighted-hms-pgm-fiber-normal-form-verified",
+      "structured_polylog_fiber_compression_known": false
+    },
+    {
+      "assignment_count": 16,
+      "canonical_coisometry_residual": 3.1401849173675503e-16,
+      "coherent_interference_gain": 13.742640687119282,
+      "collision_pair_count": 2,
+      "compressed_state_norm_residual": 0.0,
+      "control_id": "density-one-public-random-control",
+      "copy_count": 4,
+      "covariant_pgm_success_probability": 0.8589150429449552,
+      "exact_weighted_qft_formula": 0.8589150429449552,
+      "forward_compute_with_preimage_garbage_success": 0.0625,
+      "forward_garbage_formula_residual": 0.0,
+      "generic_random_instance_circuit_constructed": false,
+      "labels": [
+        3,
+        5,
+        6,
+        7
+      ],
+      "maximum_multiplicity": 2,
+      "minimum_positive_multiplicity": 1,
+      "modulus": 16,
+      "multiplicities_uniform_on_support": false,
+      "normal_form_verified": true,
+      "observed_compressed_qft_success": 0.8589150429449551,
+      "occupied_residue_count": 14,
+      "pgm_formula_residual": 0.0,
+      "status": "weighted-hms-pgm-fiber-normal-form-verified",
+      "structured_polylog_fiber_compression_known": false
+    }
+  ],
+  "headline_metrics": {
+    "dcp_polynomial_algorithm_count": 0,
+    "fiber_normal_form_control_count": 4,
+    "finite_control_failure_count": 0,
+    "generic_polytime_fiber_compression_count": 0,
+    "maximum_coherent_interference_gain": 13.742640687119282,
+    "maximum_probability_residual": 8.326672684688674e-16,
+    "new_quantum_algorithm_count": 0,
+    "perfect_information_collision_control_count": 1,
+    "varying_hms_control_count": 2,
+    "varying_set_fourier_transfer_theorem_count": 1
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "IVANYOS-PRAKASH-SANTHA-2018-HMS",
+      "title": "On learning linear functions from subset and its applications in quantum computing",
+      "url": "https://arxiv.org/abs/1806.09660",
+      "use": "Fixed-set HMS phase preprocessing and Fourier-sampling proof"
+    },
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "BACON-CHILDS-VAN-DAM-2005",
+      "title": "From optimal measurement to efficient quantum algorithms for the hidden subgroup problem over semidirect product groups",
+      "url": "https://arxiv.org/abs/quant-ph/0504083",
+      "use": "DCP/cyclic semidirect PGM and subset-sum multiplicities"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "allow_known_multiplier_sets_to_vary_by_sample",
+      "resolution": "The inverse-QFT target amplitude is computed independently for each H_i and depends only on |H_i|.",
+      "resolved": true
+    },
+    {
+      "obligation": "identify_dcp_tensor_state_as_weighted_hms_phase_state",
+      "resolution": "Grouping Boolean assignments by residue gives amplitudes sqrt(eta_h/D) after the canonical fiber coisometry.",
+      "resolved": true
+    },
+    {
+      "obligation": "match_weighted_qft_success_to_covariant_pgm",
+      "resolution": "Both equal (sum_h sqrt(eta_h))^2/(N D) exactly.",
+      "resolved": true
+    },
+    {
+      "obligation": "implement_generic_source_dependent_fiber_coisometry",
+      "resolution": "The matrix exists information-theoretically; no polynomial uniform circuit avoids coherent subset-sum fiber handling.",
+      "resolved": false
+    },
+    {
+      "obligation": "survive_f1_contamination_and_lattice_composition",
+      "resolution": "This is the clean DCP phase ensemble only; existing robustness and end-to-end recovery gates remain separate.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "assignment_count_log2": 16,
+      "copy_count": 16,
+      "expected_collision_pairs_log2": -1.0000220139472624,
+      "generic_polytime_compression_constructed": false,
+      "input_bits": 32,
+      "missing_operation": "uniform source-dependent coisometry |F_h(x)> -> |h>, including multiplicity normalization and coherent preimage cleanup",
+      "modulus_to_assignment_ratio_log2": 16,
+      "status": "fiber-compression-not-fourier-sampling-is-the-live-bottleneck",
+      "varying_set_fourier_measurement_cost": "poly(input_bits) after multiplier-register compression"
+    },
+    {
+      "assignment_count_log2": 32,
+      "copy_count": 32,
+      "expected_collision_pairs_log2": 30.999999999664098,
+      "generic_polytime_compression_constructed": false,
+      "input_bits": 32,
+      "missing_operation": "uniform source-dependent coisometry |F_h(x)> -> |h>, including multiplicity normalization and coherent preimage cleanup",
+      "modulus_to_assignment_ratio_log2": 0,
+      "status": "fiber-compression-not-fourier-sampling-is-the-live-bottleneck",
+      "varying_set_fourier_measurement_cost": "poly(input_bits) after multiplier-register compression"
+    },
+    {
+      "assignment_count_log2": 32,
+      "copy_count": 32,
+      "expected_collision_pairs_log2": -1.000000000335902,
+      "generic_polytime_compression_constructed": false,
+      "input_bits": 64,
+      "missing_operation": "uniform source-dependent coisometry |F_h(x)> -> |h>, including multiplicity normalization and coherent preimage cleanup",
+      "modulus_to_assignment_ratio_log2": 32,
+      "status": "fiber-compression-not-fourier-sampling-is-the-live-bottleneck",
+      "varying_set_fourier_measurement_cost": "poly(input_bits) after multiplier-register compression"
+    },
+    {
+      "assignment_count_log2": 64,
+      "copy_count": 64,
+      "expected_collision_pairs_log2": 63.0,
+      "generic_polytime_compression_constructed": false,
+      "input_bits": 64,
+      "missing_operation": "uniform source-dependent coisometry |F_h(x)> -> |h>, including multiplicity normalization and coherent preimage cleanup",
+      "modulus_to_assignment_ratio_log2": 0,
+      "status": "fiber-compression-not-fourier-sampling-is-the-live-bottleneck",
+      "varying_set_fourier_measurement_cost": "poly(input_bits) after multiplier-register compression"
+    },
+    {
+      "assignment_count_log2": 64,
+      "copy_count": 64,
+      "expected_collision_pairs_log2": -1.0,
+      "generic_polytime_compression_constructed": false,
+      "input_bits": 128,
+      "missing_operation": "uniform source-dependent coisometry |F_h(x)> -> |h>, including multiplicity normalization and coherent preimage cleanup",
+      "modulus_to_assignment_ratio_log2": 64,
+      "status": "fiber-compression-not-fourier-sampling-is-the-live-bottleneck",
+      "varying_set_fourier_measurement_cost": "poly(input_bits) after multiplier-register compression"
+    },
+    {
+      "assignment_count_log2": 128,
+      "copy_count": 128,
+      "expected_collision_pairs_log2": 127.0,
+      "generic_polytime_compression_constructed": false,
+      "input_bits": 128,
+      "missing_operation": "uniform source-dependent coisometry |F_h(x)> -> |h>, including multiplicity normalization and coherent preimage cleanup",
+      "modulus_to_assignment_ratio_log2": 0,
+      "status": "fiber-compression-not-fourier-sampling-is-the-live-bottleneck",
+      "varying_set_fourier_measurement_cost": "poly(input_bits) after multiplier-register compression"
+    }
+  ],
+  "status": "varying-hms-dcp-fiber-normal-form-active",
+  "summary": "Removed fixed multiplier-set consistency as a false blocker and reduced the entire DCP-to-HMS transfer to normalized subset-sum fiber compression. Collisions can preserve or improve information; the missing resource is an efficient source-dependent coisometry.",
+  "theorem": {
+    "collision_scope": "Collisions alter the weighted phase profile but are not an information no-go: equal positive multiplicities on all N residues give PGM success one.",
+    "collisions_are_information_no_go": false,
+    "dcp_polynomial_algorithm_constructed": false,
+    "dcp_weighted_multiplier_statement": "For eta_h=|{b:<x,b>=h}| and D=2^k, the canonical fiber coisometry maps the DCP tensor state to sum_h sqrt(eta_h/D) omega^(s h)|h>.",
+    "generic_fiber_compression_constructed": false,
+    "implementation_equivalence": "On the ensemble span, the missing map is C_x|F_h>=|h>. It is a source-dependent polar/coisometry and is the same normalized-fiber erasure primitive isolated by the canonical DCP PGM audit.",
+    "pgm_identity": "Inverse QFT after canonical fiber compression succeeds with (sum_h sqrt(eta_h))^2/(N D), exactly the optimal covariant PGM success probability.",
+    "pgm_success_identity_proved": true,
+    "retained_preimage_no_interference": "Computing h=<x,b> while retaining orthogonal b and Fourier transforming only h succeeds with probability exactly 1/N for every label tuple, multiplicity profile, and hidden shift.",
+    "retained_preimage_no_interference_proved": true,
+    "status": "varying-hms-dcp-fiber-normal-form-proved",
+    "theorem_scope_limit": "The exact coisometry matrix is not a circuit. No generic ranking, unranking, QSVT normalization, collision walk, or destructive measurement implementation is supplied.",
+    "theorem_verified": true,
+    "varying_support_extension_proved": true,
+    "varying_support_fourier_statement": "For independently supplied known H_i, inverse QFT on |H_i|^-1/2 sum_h omega^(h t_i)|h> returns t_i with probability |H_i|/q. The joint all-correct probability is product_i |H_i|/q; H_i need not be common.",
+    "weighted_multiplier_normal_form_proved": true
+  },
+  "theorem_contract": {
+    "decoder_after_missing_operation": "ordinary inverse QFT over Z_N",
+    "information_normal_form": "weighted multiple-shift phase register",
+    "missing_operation": "canonical normalized-fiber coisometry C_x",
+    "public_map": "L_x:{0,1}^k -> Z_N",
+    "source_state": "tensor products of public-label DCP phase states"
+  },
+  "varying_hms_controls": [
+    {
+      "control_id": "three-distinct-known-supports",
+      "expected_joint_all_correct_probability": 0.012212497455729698,
+      "expected_target_probabilities": [
+        0.23529411764705882,
+        0.29411764705882354,
+        0.17647058823529413
+      ],
+      "maximum_probability_residual": 3.3306690738754696e-16,
+      "modulus": 17,
+      "observed_joint_all_correct_probability": 0.012212497455729733,
+      "observed_target_probabilities": [
+        0.23529411764705888,
+        0.2941176470588239,
+        0.17647058823529438
+      ],
+      "phase_targets": [
+        3,
+        12,
+        6
+      ],
+      "status": "varying-support-hms-fourier-identity-verified",
+      "support_sizes": [
+        4,
+        5,
+        3
+      ],
+      "supports": [
+        [
+          0,
+          1,
+          4,
+          7
+        ],
+        [
+          0,
+          2,
+          3,
+          8,
+          11
+        ],
+        [
+          1,
+          5,
+          9
+        ]
+      ],
+      "supports_identical": false,
+      "varying_support_extension_verified": true
+    },
+    {
+      "control_id": "unequal-support-sizes",
+      "expected_joint_all_correct_probability": 0.03606311044327573,
+      "expected_target_probabilities": [
+        0.18181818181818182,
+        0.7272727272727273,
+        0.2727272727272727
+      ],
+      "maximum_probability_residual": 8.326672684688674e-16,
+      "modulus": 11,
+      "observed_joint_all_correct_probability": 0.03606311044327586,
+      "observed_target_probabilities": [
+        0.1818181818181818,
+        0.7272727272727278,
+        0.27272727272727354
+      ],
+      "phase_targets": [
+        1,
+        7,
+        9
+      ],
+      "status": "varying-support-hms-fourier-identity-verified",
+      "support_sizes": [
+        2,
+        8,
+        3
+      ],
+      "supports": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          2,
+          5,
+          8
+        ]
+      ],
+      "supports_identical": false,
+      "varying_support_extension_verified": true
+    }
+  ]
+}

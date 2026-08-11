@@ -1,0 +1,945 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The standard irrep's inverse-polynomial moment is typical.",
+      "resolution": "Its Plancherel mass is (n-1)^2/n!, while the exact natural average obeys the reciprocal-class bound.",
+      "resolved": true
+    },
+    {
+      "objection": "Finite extremal data proves an all-n inequality.",
+      "resolution": "The report marks global extremality false and preserves the n=4 exception and n=6 ties.",
+      "resolved": true
+    },
+    {
+      "objection": "A vanishing average rules out every irrep.",
+      "resolution": "False: trivial and sign moments equal one. The theorem bounds their source mass, not their pointwise signal.",
+      "resolved": true
+    },
+    {
+      "objection": "Postselection can expose a rare sector for free.",
+      "resolution": "Any such construction must supply and charge an efficient non-Plancherel preparation or amplification mechanism.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "exact_per_irrep_moment_derived": true,
+    "natural_plancherel_source_signal_survives": false,
+    "rare_low_dimensional_signal_exists": true,
+    "rare_sector_preparation_is_free": false,
+    "reason": "The commutator moment is suppressed on natural Plancherel source mass; exploiting rare sectors requires a separately costed source.",
+    "speedup_claim_allowed": false,
+    "standard_irrep_globally_extremal": false,
+    "worst_case_irrep_obstruction_proved": false
+  },
+  "created_at": "2026-08-11T15:23:45.330268+00:00",
+  "extremal_controls": [
+    {
+      "conjugacy_class_count": 3,
+      "exhaustive_finite_control_verified": true,
+      "known_small_degree_exception_or_tie": false,
+      "maximizing_partitions": [
+        [
+          2,
+          1
+        ]
+      ],
+      "maximum_exact_moment": "5/12",
+      "maximum_moment": 0.4166666666666667,
+      "non_one_dimensional_irrep_count": 1,
+      "standard_and_sign_twist_are_only_maximizers": true,
+      "standard_exact_moment": "5/12",
+      "standard_moment": 0.4166666666666667,
+      "status": "finite-standard-extremality-control",
+      "symmetric_group_degree": 3
+    },
+    {
+      "conjugacy_class_count": 5,
+      "exhaustive_finite_control_verified": true,
+      "known_small_degree_exception_or_tie": true,
+      "maximizing_partitions": [
+        [
+          2,
+          2
+        ]
+      ],
+      "maximum_exact_moment": "9/20",
+      "maximum_moment": 0.45,
+      "non_one_dimensional_irrep_count": 3,
+      "standard_and_sign_twist_are_only_maximizers": false,
+      "standard_exact_moment": "4/15",
+      "standard_moment": 0.26666666666666666,
+      "status": "finite-small-degree-exception-or-tie",
+      "symmetric_group_degree": 4
+    },
+    {
+      "conjugacy_class_count": 7,
+      "exhaustive_finite_control_verified": true,
+      "known_small_degree_exception_or_tie": false,
+      "maximizing_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_exact_moment": "23/112",
+      "maximum_moment": 0.20535714285714285,
+      "non_one_dimensional_irrep_count": 5,
+      "standard_and_sign_twist_are_only_maximizers": true,
+      "standard_exact_moment": "23/112",
+      "standard_moment": 0.20535714285714285,
+      "status": "finite-standard-extremality-control",
+      "symmetric_group_degree": 5
+    },
+    {
+      "conjugacy_class_count": 11,
+      "exhaustive_finite_control_verified": true,
+      "known_small_degree_exception_or_tie": true,
+      "maximizing_partitions": [
+        [
+          5,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          2,
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_exact_moment": "4/25",
+      "maximum_moment": 0.16,
+      "non_one_dimensional_irrep_count": 9,
+      "standard_and_sign_twist_are_only_maximizers": false,
+      "standard_exact_moment": "4/25",
+      "standard_moment": 0.16,
+      "status": "finite-small-degree-exception-or-tie",
+      "symmetric_group_degree": 6
+    },
+    {
+      "conjugacy_class_count": 15,
+      "exhaustive_finite_control_verified": true,
+      "known_small_degree_exception_or_tie": false,
+      "maximizing_partitions": [
+        [
+          6,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_exact_moment": "5/36",
+      "maximum_moment": 0.1388888888888889,
+      "non_one_dimensional_irrep_count": 13,
+      "standard_and_sign_twist_are_only_maximizers": true,
+      "standard_exact_moment": "5/36",
+      "standard_moment": 0.1388888888888889,
+      "status": "finite-standard-extremality-control",
+      "symmetric_group_degree": 7
+    },
+    {
+      "conjugacy_class_count": 22,
+      "exhaustive_finite_control_verified": true,
+      "known_small_degree_exception_or_tie": false,
+      "maximizing_partitions": [
+        [
+          7,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_exact_moment": "127/1078",
+      "maximum_moment": 0.11781076066790352,
+      "non_one_dimensional_irrep_count": 20,
+      "standard_and_sign_twist_are_only_maximizers": true,
+      "standard_exact_moment": "127/1078",
+      "standard_moment": 0.11781076066790352,
+      "status": "finite-standard-extremality-control",
+      "symmetric_group_degree": 8
+    },
+    {
+      "conjugacy_class_count": 30,
+      "exhaustive_finite_control_verified": true,
+      "known_small_degree_exception_or_tie": false,
+      "maximizing_partitions": [
+        [
+          8,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_exact_moment": "203/1920",
+      "maximum_moment": 0.10572916666666667,
+      "non_one_dimensional_irrep_count": 28,
+      "standard_and_sign_twist_are_only_maximizers": true,
+      "standard_exact_moment": "203/1920",
+      "standard_moment": 0.10572916666666667,
+      "status": "finite-standard-extremality-control",
+      "symmetric_group_degree": 9
+    },
+    {
+      "conjugacy_class_count": 42,
+      "exhaustive_finite_control_verified": true,
+      "known_small_degree_exception_or_tie": false,
+      "maximizing_partitions": [
+        [
+          9,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_exact_moment": "319/3402",
+      "maximum_moment": 0.09376837154614932,
+      "non_one_dimensional_irrep_count": 40,
+      "standard_and_sign_twist_are_only_maximizers": true,
+      "standard_exact_moment": "319/3402",
+      "standard_moment": 0.09376837154614932,
+      "status": "finite-standard-extremality-control",
+      "symmetric_group_degree": 10
+    },
+    {
+      "conjugacy_class_count": 56,
+      "exhaustive_finite_control_verified": true,
+      "known_small_degree_exception_or_tie": false,
+      "maximizing_partitions": [
+        [
+          10,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_exact_moment": "97/1120",
+      "maximum_moment": 0.08660714285714285,
+      "non_one_dimensional_irrep_count": 54,
+      "standard_and_sign_twist_are_only_maximizers": true,
+      "standard_exact_moment": "97/1120",
+      "standard_moment": 0.08660714285714285,
+      "status": "finite-standard-extremality-control",
+      "symmetric_group_degree": 11
+    },
+    {
+      "conjugacy_class_count": 77,
+      "exhaustive_finite_control_verified": true,
+      "known_small_degree_exception_or_tie": false,
+      "maximizing_partitions": [
+        [
+          11,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_exact_moment": "104/1331",
+      "maximum_moment": 0.0781367392937641,
+      "non_one_dimensional_irrep_count": 75,
+      "standard_and_sign_twist_are_only_maximizers": true,
+      "standard_exact_moment": "104/1331",
+      "standard_moment": 0.0781367392937641,
+      "status": "finite-standard-extremality-control",
+      "symmetric_group_degree": 12
+    },
+    {
+      "conjugacy_class_count": 101,
+      "exhaustive_finite_control_verified": true,
+      "known_small_degree_exception_or_tie": false,
+      "maximizing_partitions": [
+        [
+          12,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_exact_moment": "355/4848",
+      "maximum_moment": 0.07322607260726073,
+      "non_one_dimensional_irrep_count": 99,
+      "standard_and_sign_twist_are_only_maximizers": true,
+      "standard_exact_moment": "355/4848",
+      "standard_moment": 0.07322607260726073,
+      "status": "finite-standard-extremality-control",
+      "symmetric_group_degree": 13
+    },
+    {
+      "conjugacy_class_count": 135,
+      "exhaustive_finite_control_verified": true,
+      "known_small_degree_exception_or_tie": false,
+      "maximizing_partitions": [
+        [
+          13,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_exact_moment": "514/7605",
+      "maximum_moment": 0.0675871137409599,
+      "non_one_dimensional_irrep_count": 133,
+      "standard_and_sign_twist_are_only_maximizers": true,
+      "standard_exact_moment": "514/7605",
+      "standard_moment": 0.0675871137409599,
+      "status": "finite-standard-extremality-control",
+      "symmetric_group_degree": 14
+    },
+    {
+      "conjugacy_class_count": 176,
+      "exhaustive_finite_control_verified": true,
+      "known_small_degree_exception_or_tie": false,
+      "maximizing_partitions": [
+        [
+          14,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_exact_moment": "1097/17248",
+      "maximum_moment": 0.06360157699443414,
+      "non_one_dimensional_irrep_count": 174,
+      "standard_and_sign_twist_are_only_maximizers": true,
+      "standard_exact_moment": "1097/17248",
+      "standard_moment": 0.06360157699443414,
+      "status": "finite-standard-extremality-control",
+      "symmetric_group_degree": 15
+    },
+    {
+      "conjugacy_class_count": 231,
+      "exhaustive_finite_control_verified": true,
+      "known_small_degree_exception_or_tie": false,
+      "maximizing_partitions": [
+        [
+          15,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_exact_moment": "3089/51975",
+      "maximum_moment": 0.059432419432419434,
+      "non_one_dimensional_irrep_count": 229,
+      "standard_and_sign_twist_are_only_maximizers": true,
+      "standard_exact_moment": "3089/51975",
+      "standard_moment": 0.059432419432419434,
+      "status": "finite-standard-extremality-control",
+      "symmetric_group_degree": 16
+    },
+    {
+      "conjugacy_class_count": 297,
+      "exhaustive_finite_control_verified": true,
+      "known_small_degree_exception_or_tie": false,
+      "maximizing_partitions": [
+        [
+          16,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_exact_moment": "1073/19008",
+      "maximum_moment": 0.056449915824915826,
+      "non_one_dimensional_irrep_count": 295,
+      "standard_and_sign_twist_are_only_maximizers": true,
+      "standard_exact_moment": "1073/19008",
+      "standard_moment": 0.056449915824915826,
+      "status": "finite-standard-extremality-control",
+      "symmetric_group_degree": 17
+    },
+    {
+      "conjugacy_class_count": 385,
+      "exhaustive_finite_control_verified": true,
+      "known_small_degree_exception_or_tie": false,
+      "maximizing_partitions": [
+        [
+          17,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_exact_moment": "5913/111265",
+      "maximum_moment": 0.053143396395991555,
+      "non_one_dimensional_irrep_count": 383,
+      "standard_and_sign_twist_are_only_maximizers": true,
+      "standard_exact_moment": "5913/111265",
+      "standard_moment": 0.053143396395991555,
+      "status": "finite-standard-extremality-control",
+      "symmetric_group_degree": 18
+    },
+    {
+      "conjugacy_class_count": 490,
+      "exhaustive_finite_control_verified": true,
+      "known_small_degree_exception_or_tie": false,
+      "maximizing_partitions": [
+        [
+          18,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_exact_moment": "1151/22680",
+      "maximum_moment": 0.050749559082892415,
+      "non_one_dimensional_irrep_count": 488,
+      "standard_and_sign_twist_are_only_maximizers": true,
+      "standard_exact_moment": "1151/22680",
+      "standard_moment": 0.050749559082892415,
+      "status": "finite-standard-extremality-control",
+      "symmetric_group_degree": 19
+    },
+    {
+      "conjugacy_class_count": 627,
+      "exhaustive_finite_control_verified": true,
+      "known_small_degree_exception_or_tie": false,
+      "maximizing_partitions": [
+        [
+          19,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_exact_moment": "10898/226347",
+      "maximum_moment": 0.04814731363790994,
+      "non_one_dimensional_irrep_count": 625,
+      "standard_and_sign_twist_are_only_maximizers": true,
+      "standard_exact_moment": "10898/226347",
+      "standard_moment": 0.04814731363790994,
+      "status": "finite-standard-extremality-control",
+      "symmetric_group_degree": 20
+    }
+  ],
+  "falsifiers_triggered": [
+    "Inverse-polynomial signal in one low-dimensional irrep is not typical.",
+    "Finite standard-irrep extremality is not an all-n theorem.",
+    "Natural-source suppression does not rule out costed postselection."
+  ],
+  "headline_metrics": {
+    "all_n_standard_extremality_theorem_count": 0,
+    "exact_natural_source_no_go_theorem_count": 1,
+    "finite_extremal_control_failure_count": 0,
+    "largest_degree_inverse_n_tail_bound": 0.032083380784015146,
+    "largest_degree_reciprocal_class_average": 0.0016041690392007571,
+    "maximum_exhaustive_extremal_degree": 20,
+    "new_quantum_algorithm_count": 0,
+    "plancherel_control_failure_count": 0,
+    "standard_extremal_degree_count_from_seven": 14,
+    "stored_degree_count_from_seven": 14
+  },
+  "plancherel_controls": [
+    {
+      "class_size_lemma_verified": true,
+      "column_orthogonality_identity_verified": true,
+      "conjugacy_class_count": 7,
+      "exact_direct_irrep_average": "23/120",
+      "exact_reciprocal_class_average": "23/120",
+      "exact_theorem_upper_bound": "17/70",
+      "group_order": 120,
+      "inverse_n_threshold_tail_bound": 0.9583333333333334,
+      "reciprocal_class_average": 0.19166666666666668,
+      "smallest_nonidentity_class_size": 10,
+      "status": "plancherel-class-moment-obstruction-verified",
+      "symmetric_group_degree": 5,
+      "theorem_bound_verified": true,
+      "theorem_upper_bound": 0.24285714285714285,
+      "transposition_class_size": 10
+    },
+    {
+      "class_size_lemma_verified": true,
+      "column_orthogonality_identity_verified": true,
+      "conjugacy_class_count": 11,
+      "exact_direct_irrep_average": "901/7920",
+      "exact_reciprocal_class_average": "901/7920",
+      "exact_theorem_upper_bound": "26/165",
+      "group_order": 720,
+      "inverse_n_threshold_tail_bound": 0.6825757575757576,
+      "reciprocal_class_average": 0.11376262626262626,
+      "smallest_nonidentity_class_size": 15,
+      "status": "plancherel-class-moment-obstruction-verified",
+      "symmetric_group_degree": 6,
+      "theorem_bound_verified": true,
+      "theorem_upper_bound": 0.15757575757575756,
+      "transposition_class_size": 15
+    },
+    {
+      "class_size_lemma_verified": true,
+      "column_orthogonality_identity_verified": true,
+      "conjugacy_class_count": 15,
+      "exact_direct_irrep_average": "797/10800",
+      "exact_reciprocal_class_average": "797/10800",
+      "exact_theorem_upper_bound": "4/35",
+      "group_order": 5040,
+      "inverse_n_threshold_tail_bound": 0.5165740740740741,
+      "reciprocal_class_average": 0.07379629629629629,
+      "smallest_nonidentity_class_size": 21,
+      "status": "plancherel-class-moment-obstruction-verified",
+      "symmetric_group_degree": 7,
+      "theorem_bound_verified": true,
+      "theorem_upper_bound": 0.11428571428571428,
+      "transposition_class_size": 21
+    },
+    {
+      "class_size_lemma_verified": true,
+      "column_orthogonality_identity_verified": true,
+      "conjugacy_class_count": 22,
+      "exact_direct_irrep_average": "7201/147840",
+      "exact_reciprocal_class_average": "7201/147840",
+      "exact_theorem_upper_bound": "25/308",
+      "group_order": 40320,
+      "inverse_n_threshold_tail_bound": 0.38966450216450216,
+      "reciprocal_class_average": 0.04870806277056277,
+      "smallest_nonidentity_class_size": 28,
+      "status": "plancherel-class-moment-obstruction-verified",
+      "symmetric_group_degree": 8,
+      "theorem_bound_verified": true,
+      "theorem_upper_bound": 0.08116883116883117,
+      "transposition_class_size": 28
+    },
+    {
+      "class_size_lemma_verified": true,
+      "column_orthogonality_identity_verified": true,
+      "conjugacy_class_count": 30,
+      "exact_direct_irrep_average": "1051/30240",
+      "exact_reciprocal_class_average": "1051/30240",
+      "exact_theorem_upper_bound": "11/180",
+      "group_order": 362880,
+      "inverse_n_threshold_tail_bound": 0.31279761904761905,
+      "reciprocal_class_average": 0.034755291005291004,
+      "smallest_nonidentity_class_size": 36,
+      "status": "plancherel-class-moment-obstruction-verified",
+      "symmetric_group_degree": 9,
+      "theorem_bound_verified": true,
+      "theorem_upper_bound": 0.06111111111111111,
+      "transposition_class_size": 36
+    },
+    {
+      "class_size_lemma_verified": true,
+      "column_orthogonality_identity_verified": true,
+      "conjugacy_class_count": 42,
+      "exact_direct_irrep_average": "1871369/76204800",
+      "exact_reciprocal_class_average": "1871369/76204800",
+      "exact_theorem_upper_bound": "29/630",
+      "group_order": 3628800,
+      "inverse_n_threshold_tail_bound": 0.2455710138993869,
+      "reciprocal_class_average": 0.02455710138993869,
+      "smallest_nonidentity_class_size": 45,
+      "status": "plancherel-class-moment-obstruction-verified",
+      "symmetric_group_degree": 10,
+      "theorem_bound_verified": true,
+      "theorem_upper_bound": 0.046031746031746035,
+      "transposition_class_size": 45
+    },
+    {
+      "class_size_lemma_verified": true,
+      "column_orthogonality_identity_verified": null,
+      "conjugacy_class_count": 56,
+      "exact_direct_irrep_average": null,
+      "exact_reciprocal_class_average": "56741/3104640",
+      "exact_theorem_upper_bound": "111/3080",
+      "group_order": 39916800,
+      "inverse_n_threshold_tail_bound": 0.20103812358276643,
+      "reciprocal_class_average": 0.018276193052978767,
+      "smallest_nonidentity_class_size": 55,
+      "status": "plancherel-class-moment-obstruction-verified",
+      "symmetric_group_degree": 11,
+      "theorem_bound_verified": true,
+      "theorem_upper_bound": 0.03603896103896104,
+      "transposition_class_size": 55
+    },
+    {
+      "class_size_lemma_verified": true,
+      "column_orthogonality_identity_verified": null,
+      "conjugacy_class_count": 77,
+      "exact_direct_irrep_average": null,
+      "exact_reciprocal_class_average": "488029621/36883123200",
+      "exact_theorem_upper_bound": "13/462",
+      "group_order": 479001600,
+      "inverse_n_threshold_tail_bound": 0.15878144104672784,
+      "reciprocal_class_average": 0.013231786753893988,
+      "smallest_nonidentity_class_size": 66,
+      "status": "plancherel-class-moment-obstruction-verified",
+      "symmetric_group_degree": 12,
+      "theorem_bound_verified": true,
+      "theorem_upper_bound": 0.02813852813852814,
+      "transposition_class_size": 66
+    },
+    {
+      "class_size_lemma_verified": true,
+      "column_orthogonality_identity_verified": null,
+      "conjugacy_class_count": 101,
+      "exact_direct_irrep_average": null,
+      "exact_reciprocal_class_average": "6323154547/628929100800",
+      "exact_theorem_upper_bound": "179/7878",
+      "group_order": 6227020800,
+      "inverse_n_threshold_tail_bound": 0.13069996126183386,
+      "reciprocal_class_average": 0.01005384317398722,
+      "smallest_nonidentity_class_size": 78,
+      "status": "plancherel-class-moment-obstruction-verified",
+      "symmetric_group_degree": 13,
+      "theorem_bound_verified": true,
+      "theorem_upper_bound": 0.022721502919522723,
+      "transposition_class_size": 78
+    },
+    {
+      "class_size_lemma_verified": true,
+      "column_orthogonality_identity_verified": null,
+      "conjugacy_class_count": 135,
+      "exact_direct_irrep_average": null,
+      "exact_reciprocal_class_average": "1605607741/213983078400",
+      "exact_theorem_upper_bound": "226/12285",
+      "group_order": 87178291200,
+      "inverse_n_threshold_tail_bound": 0.10504806521187052,
+      "reciprocal_class_average": 0.007503433229419322,
+      "smallest_nonidentity_class_size": 91,
+      "status": "plancherel-class-moment-obstruction-verified",
+      "symmetric_group_degree": 14,
+      "theorem_bound_verified": true,
+      "theorem_upper_bound": 0.018396418396418396,
+      "transposition_class_size": 91
+    },
+    {
+      "class_size_lemma_verified": true,
+      "column_orthogonality_identity_verified": null,
+      "conjugacy_class_count": 176,
+      "exact_direct_irrep_average": null,
+      "exact_reciprocal_class_average": "661060132619/115075344384000",
+      "exact_theorem_upper_bound": "281/18480",
+      "group_order": 1307674368000,
+      "inverse_n_threshold_tail_bound": 0.08616877961447753,
+      "reciprocal_class_average": 0.005744585307631835,
+      "smallest_nonidentity_class_size": 105,
+      "status": "plancherel-class-moment-obstruction-verified",
+      "symmetric_group_degree": 15,
+      "theorem_bound_verified": true,
+      "theorem_upper_bound": 0.015205627705627705,
+      "transposition_class_size": 105
+    },
+    {
+      "class_size_lemma_verified": true,
+      "column_orthogonality_identity_verified": null,
+      "conjugacy_class_count": 231,
+      "exact_direct_irrep_average": null,
+      "exact_reciprocal_class_average": "21122364398761/4833164464128000",
+      "exact_theorem_upper_bound": "39/3080",
+      "group_order": 20922789888000,
+      "inverse_n_threshold_tail_bound": 0.0699247527967477,
+      "reciprocal_class_average": 0.004370297049796731,
+      "smallest_nonidentity_class_size": 120,
+      "status": "plancherel-class-moment-obstruction-verified",
+      "symmetric_group_degree": 16,
+      "theorem_bound_verified": true,
+      "theorem_upper_bound": 0.012662337662337663,
+      "transposition_class_size": 120
+    },
+    {
+      "class_size_lemma_verified": true,
+      "column_orthogonality_identity_verified": null,
+      "conjugacy_class_count": 297,
+      "exact_direct_irrep_average": null,
+      "exact_reciprocal_class_average": "6520871727707/1920712111718400",
+      "exact_theorem_upper_bound": "433/40392",
+      "group_order": 355687428096000,
+      "inverse_n_threshold_tail_bound": 0.057715478907372914,
+      "reciprocal_class_average": 0.0033950281710219362,
+      "smallest_nonidentity_class_size": 136,
+      "status": "plancherel-class-moment-obstruction-verified",
+      "symmetric_group_degree": 17,
+      "theorem_bound_verified": true,
+      "theorem_upper_bound": 0.010719944543473955,
+      "transposition_class_size": 136
+    },
+    {
+      "class_size_lemma_verified": true,
+      "column_orthogonality_identity_verified": null,
+      "conjugacy_class_count": 385,
+      "exact_direct_irrep_average": null,
+      "exact_reciprocal_class_average": "2149766628551609/821637958901760000",
+      "exact_theorem_upper_bound": "538/58905",
+      "group_order": 6402373705728000,
+      "inverse_n_threshold_tail_bound": 0.047095924542789616,
+      "reciprocal_class_average": 0.0026164402523772006,
+      "smallest_nonidentity_class_size": 153,
+      "status": "plancherel-class-moment-obstruction-verified",
+      "symmetric_group_degree": 18,
+      "theorem_bound_verified": true,
+      "theorem_upper_bound": 0.009133350309820898,
+      "transposition_class_size": 153
+    },
+    {
+      "class_size_lemma_verified": true,
+      "column_orthogonality_identity_verified": null,
+      "conjugacy_class_count": 490,
+      "exact_direct_irrep_average": null,
+      "exact_reciprocal_class_average": "6121822145209697/2980304960016384000",
+      "exact_theorem_upper_bound": "661/83790",
+      "group_order": 121645100408832000,
+      "inverse_n_threshold_tail_bound": 0.03902775800445093,
+      "reciprocal_class_average": 0.002054092526550049,
+      "smallest_nonidentity_class_size": 171,
+      "status": "plancherel-class-moment-obstruction-verified",
+      "symmetric_group_degree": 19,
+      "theorem_bound_verified": true,
+      "theorem_upper_bound": 0.007888769542904881,
+      "transposition_class_size": 171
+    },
+    {
+      "class_size_lemma_verified": true,
+      "column_orthogonality_identity_verified": null,
+      "conjugacy_class_count": 627,
+      "exact_direct_irrep_average": null,
+      "exact_reciprocal_class_average": "2447046870232798369/1525429559126753280000",
+      "exact_theorem_upper_bound": "43/6270",
+      "group_order": 2432902008176640000,
+      "inverse_n_threshold_tail_bound": 0.032083380784015146,
+      "reciprocal_class_average": 0.0016041690392007571,
+      "smallest_nonidentity_class_size": 190,
+      "status": "plancherel-class-moment-obstruction-verified",
+      "symmetric_group_degree": 20,
+      "theorem_bound_verified": true,
+      "theorem_upper_bound": 0.006858054226475279,
+      "transposition_class_size": 190
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_exact_per_irrep_commutator_moment",
+      "resolution": "Schur averaging over q gives |chi_rho(p)|^2/d_rho^2, and commuting-pair sampling makes p uniform by class.",
+      "resolved": true
+    },
+    {
+      "obligation": "average_over_natural_irrep_source",
+      "resolution": "Plancherel weights cancel d_rho^2 and character-table column orthogonality gives the reciprocal-class identity.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_symmetric_group_natural_source_signal",
+      "resolution": "The identity class contributes 1/p(n); the minimum nonidentity class-size theorem bounds every other term.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_standard_irrep_is_worst_case_for_all_n",
+      "resolution": "Exhaustive data through the stored degree supports this from n=7, but no all-n character inequality is known here.",
+      "resolved": false
+    },
+    {
+      "obligation": "exclude_adversarial_low_dimensional_postselection",
+      "resolution": "A decoder may alter the source law; its postselection cost must be charged before applying the Plancherel obstruction.",
+      "resolved": false
+    }
+  ],
+  "status": "class-uniform-commutator-natural-source-falsified",
+  "summary": "Converted a target-surviving commutator bias into an exact natural-source no-go while retaining adversarial postselection as the boundary.",
+  "theorem": {
+    "all_n_symmetric_group_bound_from_degree_five": true,
+    "arbitrary_finite_group_identity": true,
+    "finite_group_moment_formula": "A_rho=(1/(d_rho^2*k(G)))*sum_C |chi_rho(C)|^2",
+    "natural_source_obstruction_verified": true,
+    "plancherel_average_identity": "E_{rho~Plancherel} A_rho=(1/k(G))*sum_C 1/|C|",
+    "scope_limit": "This controls natural Plancherel source mass, not adversarially postselected low-dimensional irreps or a non-Plancherel source law.",
+    "standard_extremality_proved_for_all_n": false,
+    "standard_representation_asymptotic": "12/(pi^2*n)+o(1/n)",
+    "status": "exact-plancherel-source-moment-no-go",
+    "symmetric_group_average_bound": "E_Plancherel A_rho <= 1/p(n)+2/(n(n-1))",
+    "symmetric_group_class_size_lemma": "For n>=5 every nonidentity S_n class has size at least n(n-1)/2",
+    "threshold_tail_bound": "Pr_Plancherel[A_rho>=tau] <= (1/p(n)+2/(n(n-1)))/tau",
+    "worst_case_irrep_bound_proved": false
+  },
+  "theorem_contract": {
+    "natural_source_identity": "E_{rho~Plancherel} A_rho=(1/k(G))*sum_C 1/|C|",
+    "scope_limit": "This controls natural Plancherel source mass, not adversarially postselected low-dimensional irreps or a non-Plancherel source law.",
+    "symmetric_group_bound": "E_Plancherel A_rho <= 1/p(n)+2/(n(n-1))",
+    "target_law": "A_rho=(1/(d_rho^2*k(G)))*sum_C |chi_rho(C)|^2"
+  }
+}

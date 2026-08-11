@@ -1133,40 +1133,6 @@ def _register_vulnerable_coordinate_payload(
     metrics = payload["headline_metrics"]
     if not isinstance(metrics, dict):
         raise ValueError("vulnerable-coordinate artifact lacks headline metrics")
-    if int(metrics["finite_tail_collapse_observed_count"]) > 0:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-MARKER-LOG-COORDINATE-FINITE-TAIL-DECAY",
-                source=str(path),
-                claim=(
-                    "A public risk-ranked O(log n)-coordinate nearest-plane cell union "
-                    "already has evidence of inverse-polynomial uniform-legal target coverage."
-                ),
-                reason_invalid=(
-                    "The preregistered assignment-weighted held-out tail decays, and no "
-                    "random-label theorem transfers finite target censuses asymptotically."
-                ),
-                lesson=(
-                    "Prove concentration of accepted assignment mass or redesign the "
-                    "selector; do not tune coordinate bands on the exact target rows."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=metrics,
-            )
-        )
-    upsert_experiment_result(
-        ExperimentResultRecord(
-            id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
-            experiment_id=registry_experiment_id,
-            candidate_id=registry_candidate_id,
-            created_at=str(payload["created_at"]),
-            status=str(payload["status"]),
-            summary=str(payload["summary"]),
-            metrics=metrics,
-            falsifiers_triggered=list(payload["falsifiers_triggered"]),
-            artifacts={"dcp_marker_vulnerable_coordinate_decoder": str(path)},
-        )
-    )
     return payload
 
 

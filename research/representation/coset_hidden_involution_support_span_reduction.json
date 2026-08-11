@@ -1,0 +1,244 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False. The published support-span projector has perfect alternative completeness and logarithmically small null error.",
+      "challenge": "The exact Helstrom threshold is the only viable binary test.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Projecting onto the range of an efficient synthesis operator requires its polar/range transform or a direct range basis.",
+      "challenge": "The support-span formula is already an efficient circuit.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It controls only range dimension and is insensitive to arbitrarily small positive frame eigenvalues.",
+      "challenge": "The rank bound gives a usable singular-value gap.",
+      "resolved": true
+    },
+    {
+      "answer": "False. A structured range basis can bypass generic singular-value transformation, so no arbitrary-circuit lower bound follows.",
+      "challenge": "A small frame eigenvalue proves the range projector hard.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "inverse_polynomial_positive_frame_gap_proved": false,
+    "logarithmic_sample_upper_bound_proved": true,
+    "perfect_alternative_completeness_proved": true,
+    "polynomial_support_range_projector_constructed": false,
+    "polynomial_time_hidden_involution_decision_algorithm": false,
+    "published_support_span_sample_test_recovered": true,
+    "reason": "The known one-sided sample test reduces efficient implementation to a structured synthesis-range projector; neither a range basis nor a usable frame gap is known.",
+    "sample_complexity_result_new_to_literature": false,
+    "speedup_claim_allowed": false,
+    "support_membership_dequantization_passed": false
+  },
+  "created_at": "2026-08-11T14:54:10.036692+00:00",
+  "falsifiers_triggered": [
+    "Exact shifted-likelihood thresholding is not the only binary measurement route.",
+    "The support-span rank bound does not supply an efficient range projection.",
+    "Published logarithmic sample sufficiency is not a new quantum algorithm."
+  ],
+  "finite_controls": [
+    {
+      "candidate_support_rank": 3,
+      "conjugacy_class_size": 3,
+      "copy_count": 1,
+      "data_dimension": 6,
+      "equal_prior_helstrom_success_probability": 0.5833333333333334,
+      "equal_prior_support_test_success_probability": 0.5833333333333333,
+      "exact_null_false_positive_probability": 0.8333333333333335,
+      "finite_control_verified": true,
+      "implied_generic_inverse_singular_scale": 1.4142135623730951,
+      "maximum_alternative_acceptance_residual": 2.220446049250313e-16,
+      "minimum_alternative_acceptance_probability": 1.0,
+      "minimum_positive_average_projector_eigenvalue": 0.49999999999999994,
+      "n": 3,
+      "rank_union_false_positive_upper_bound": 1.0,
+      "status": "support-span-perfect-completeness-rank-bound-verified",
+      "sum_of_candidate_support_ranks": 9,
+      "support_span_rank": 5,
+      "support_span_test_is_helstrom_optimal": true,
+      "support_test_helstrom_success_gap": 1.1102230246251565e-16,
+      "synthesis_frame_identity_residual": 0.0,
+      "transposition_count": 1
+    },
+    {
+      "candidate_support_rank": 9,
+      "conjugacy_class_size": 3,
+      "copy_count": 2,
+      "data_dimension": 36,
+      "equal_prior_helstrom_success_probability": 0.7083333333333334,
+      "equal_prior_support_test_success_probability": 0.7083333333333335,
+      "exact_null_false_positive_probability": 0.5833333333333336,
+      "finite_control_verified": true,
+      "implied_generic_inverse_singular_scale": 2.0000000000000013,
+      "maximum_alternative_acceptance_residual": 4.440892098500626e-16,
+      "minimum_alternative_acceptance_probability": 1.0000000000000004,
+      "minimum_positive_average_projector_eigenvalue": 0.2499999999999997,
+      "n": 3,
+      "rank_union_false_positive_upper_bound": 0.75,
+      "status": "support-span-perfect-completeness-rank-bound-verified",
+      "sum_of_candidate_support_ranks": 27,
+      "support_span_rank": 21,
+      "support_span_test_is_helstrom_optimal": true,
+      "support_test_helstrom_success_gap": -1.1102230246251565e-16,
+      "synthesis_frame_identity_residual": 0.0,
+      "transposition_count": 1
+    },
+    {
+      "candidate_support_rank": 27,
+      "conjugacy_class_size": 3,
+      "copy_count": 3,
+      "data_dimension": 216,
+      "equal_prior_helstrom_success_probability": 0.8310185185185186,
+      "equal_prior_support_test_success_probability": 0.8310185185185184,
+      "exact_null_false_positive_probability": 0.3379629629629629,
+      "finite_control_verified": true,
+      "implied_generic_inverse_singular_scale": 2.0000000000000013,
+      "maximum_alternative_acceptance_residual": 2.220446049250313e-16,
+      "minimum_alternative_acceptance_probability": 0.9999999999999998,
+      "minimum_positive_average_projector_eigenvalue": 0.24999999999999975,
+      "n": 3,
+      "rank_union_false_positive_upper_bound": 0.375,
+      "status": "support-span-perfect-completeness-rank-bound-verified",
+      "sum_of_candidate_support_ranks": 81,
+      "support_span_rank": 73,
+      "support_span_test_is_helstrom_optimal": true,
+      "support_test_helstrom_success_gap": 2.220446049250313e-16,
+      "synthesis_frame_identity_residual": 0.0,
+      "transposition_count": 1
+    },
+    {
+      "candidate_support_rank": 144,
+      "conjugacy_class_size": 3,
+      "copy_count": 2,
+      "data_dimension": 576,
+      "equal_prior_helstrom_success_probability": 0.6875,
+      "equal_prior_support_test_success_probability": 0.6875,
+      "exact_null_false_positive_probability": 0.625,
+      "finite_control_verified": true,
+      "implied_generic_inverse_singular_scale": 1.732050807568879,
+      "maximum_alternative_acceptance_residual": 0.0,
+      "minimum_alternative_acceptance_probability": 1.0,
+      "minimum_positive_average_projector_eigenvalue": 0.33333333333333265,
+      "n": 4,
+      "rank_union_false_positive_upper_bound": 0.75,
+      "status": "support-span-perfect-completeness-rank-bound-verified",
+      "sum_of_candidate_support_ranks": 432,
+      "support_span_rank": 360,
+      "support_span_test_is_helstrom_optimal": true,
+      "support_test_helstrom_success_gap": 0.0,
+      "synthesis_frame_identity_residual": 0.0,
+      "transposition_count": 2
+    }
+  ],
+  "headline_metrics": {
+    "finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "inverse_polynomial_frame_gap_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "new_sample_complexity_theorem_count": 0,
+    "perfect_completeness_control_count": 4,
+    "range_projector_compiler_count": 0,
+    "scaling_record_count": 4,
+    "support_test_helstrom_optimal_control_count": 4
+  },
+  "primary_literature": [
+    {
+      "id": "HAYASHI-KAWACHI-KOBAYASHI-2006-HSP-SAMPLE-COMPLEXITY",
+      "scope": "Theorem 4 projects onto the span of candidate coset-state supports and proves the M/2^k trivial-state error bound.",
+      "title": "Quantum Measurements for Hidden Subgroup Problems with Optimal Sample Complexity",
+      "url": "https://arxiv.org/abs/quant-ph/0604174"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-BINARY-SUPPORT-RANGE-BASIS",
+      "resolved": false,
+      "statement": "Give a polynomial representation-theoretic basis or membership test for span_h supp(P_h^tensor k) at k=Theta(log M)."
+    },
+    {
+      "id": "PO-COSET-BINARY-SUPPORT-POLAR",
+      "resolved": false,
+      "statement": "Implement the synthesis-map range projector directly, or prove an inverse-polynomial least positive singular value on natural source sectors."
+    },
+    {
+      "id": "PO-COSET-BINARY-SUPPORT-DEQUANTIZATION",
+      "resolved": false,
+      "statement": "Test whether support membership is equivalent to a classical relation-span, graph invariant, or code invariant."
+    }
+  ],
+  "scaling_records": [
+    {
+      "alternative_completeness": 1.0,
+      "certified_null_false_positive_upper_bound": 0.06041005253791809,
+      "conjugacy_class_size": 2027025,
+      "least_positive_frame_eigenvalue_certified": false,
+      "n": 16,
+      "polynomial_range_projector_compiler_known": false,
+      "sample_count_polynomial_in_group_register_length": true,
+      "status": "published-log-sample-support-test-range-compiler-open",
+      "sufficient_copy_count": 25,
+      "target_null_false_positive": 0.1
+    },
+    {
+      "alternative_completeness": 1.0,
+      "certified_null_false_positive_upper_bound": 0.0832228313877922,
+      "conjugacy_class_size": 191898783962510625,
+      "least_positive_frame_eigenvalue_certified": false,
+      "n": 32,
+      "polynomial_range_projector_compiler_known": false,
+      "sample_count_polynomial_in_group_register_length": true,
+      "status": "published-log-sample-support-test-range-compiler-open",
+      "sufficient_copy_count": 61,
+      "target_null_false_positive": 0.1
+    },
+    {
+      "alternative_completeness": 1.0,
+      "certified_null_false_positive_upper_bound": 0.07866579561442828,
+      "conjugacy_class_size": 112275575285571389562324404930670903477890625,
+      "least_positive_frame_eigenvalue_certified": false,
+      "n": 64,
+      "polynomial_range_projector_compiler_known": false,
+      "sample_count_polynomial_in_group_register_length": true,
+      "status": "published-log-sample-support-test-range-compiler-open",
+      "sufficient_copy_count": 150,
+      "target_null_false_positive": 0.1
+    },
+    {
+      "alternative_completeness": 1.0,
+      "certified_null_false_positive_upper_bound": 0.07014957346076522,
+      "conjugacy_class_size": 164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625,
+      "least_positive_frame_eigenvalue_certified": false,
+      "n": 128,
+      "polynomial_range_projector_compiler_known": false,
+      "sample_count_polynomial_in_group_register_length": true,
+      "status": "published-log-sample-support-test-range-compiler-open",
+      "sufficient_copy_count": 360,
+      "target_null_false_positive": 0.1
+    }
+  ],
+  "status": "published-support-span-test-reduced-to-range-polar-compiler-open",
+  "summary": "Recovered the published support-span triviality test and reduced its implementation to the range polar of a controlled-projector synthesis map. This is a better compiler target than exact Helstrom sign, but no polynomial range projector is known.",
+  "theorem": {
+    "implementation_boundary": "The rank proof has no least-positive-eigenvalue bound and no uniform representation basis for range(W_k).",
+    "inverse_polynomial_positive_frame_gap_proved": false,
+    "logarithmic_sample_upper_bound_proved": true,
+    "perfect_alternative_completeness_proved": true,
+    "perfect_completeness": "supp(rho_h^tensor k) is contained in supp(T_k), so every alternative is accepted with probability one.",
+    "polynomial_range_projector_compiler_constructed": false,
+    "rank_false_positive_bound": "rank(T_k)<=sum_h rank(P_h^tensor k)=M|G|^k/2^k, hence Tr(T_k I/|G|^k)<=M/2^k.",
+    "status": "published-support-span-test-reduced-to-range-polar-compiler-open",
+    "support_test": "T_k is the orthogonal projector onto span_h supp(P_h^tensor k).",
+    "synthesis_frame_identity_proved": true,
+    "synthesis_reduction": "W_k=M^-1/2 sum_h P_h<h| satisfies W_kW_k^*=A_k and T_k=polar(W_k)polar(W_k)^*.",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "access_model": "Independent standard mixed coset states for equal order-two candidate subgroups.",
+    "implementation_scope": "Synthesis-map range projection. A matrix formula or block encoding is not an efficient polar/range circuit.",
+    "measurement": "One binary support-span projector with perfect alternative completeness; no individual-h output.",
+    "non_claim": "No new sample theorem, inverse-polynomial frame gap, polynomial range projector, GI algorithm, or speedup."
+  }
+}

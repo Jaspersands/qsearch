@@ -1,0 +1,267 @@
+{
+  "adversarial_audit": [
+    {
+      "challenge": "POVM completeness might forbid a zero target-success coordinate.",
+      "response": "Completeness fixes only the seed diagonal. The PSD Gram off-diagonals create exact destructive cancellation.",
+      "survives": true
+    },
+    {
+      "challenge": "A constant decoder success might disappear asymptotically.",
+      "response": "The Poisson limit gives an explicit positive constant for every fixed rejected multiplicity.",
+      "survives": true
+    },
+    {
+      "challenge": "Random signed/unit transforms can move a hard target to an easy one.",
+      "response": "They preserve fiber cardinality exactly, and the counterexample accepts or rejects whole multiplicity strata.",
+      "survives": true
+    },
+    {
+      "challenge": "The counterexample is itself an efficient DCP decoder.",
+      "response": "No. It is multiplicity-table dependent and only refutes an information-theoretic per-target inference.",
+      "survives": true
+    }
+  ],
+  "claim_gate": {
+    "average_measurement_to_witness_reduction_invalidated": false,
+    "average_to_per_target_upgrade_proved": false,
+    "covariance_implies_uniform_per_target_filter": false,
+    "efficient_counterexample_measurement_constructed": false,
+    "natural_self_reduction_crosses_multiplicity_strata": false,
+    "per_target_witness_solver_constructed": false,
+    "reason": "A valid covariant POVM can have constant decoding success while its witness filter vanishes on a positive-mass multiplicity stratum, and natural witness-bijection orbits preserve that stratum.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:23:10.832479+00:00",
+  "falsifiers_triggered": [
+    "POVM completeness constrains the diagonal seed but does not force every cleaned target coefficient to be nonzero.",
+    "Constant average DCP decoding success does not imply inverse-polynomial success for every legal subset-sum target.",
+    "Signed, permuted, and odd-unit self-reductions preserve target multiplicity and cannot cross the counterexample's rejected stratum.",
+    "The multiplicity-aware counterexample is not efficiently implementable and is not a quantum algorithm.",
+    "The existing average measurement-to-witness reduction remains valid and is not weakened by this boundary."
+  ],
+  "finite_filter_controls": [
+    {
+      "assignment_count": 64,
+      "control_id": "DENSITY-ONE-N6-J1",
+      "correlation_dimension": 38,
+      "correlation_psd_residual": 7.50684549319458e-15,
+      "correlation_unit_diagonal_residual": 2.220446049250313e-16,
+      "decoder_success_constant_at_finite_size": true,
+      "decoder_success_probability": 0.190024693148732,
+      "filter_residual": 2.0626626458036146e-33,
+      "legal_target_count": 38,
+      "maximum_accepted_target_success": 1.0,
+      "maximum_rejected_target_success": 2.0626626458036146e-33,
+      "minimum_accepted_target_success": 1.0,
+      "modulus": 64,
+      "per_target_success_proved": false,
+      "povm_completeness_residual": 2.220446049250313e-16,
+      "predicted_uniform_legal_witness_success": 0.47368421052631576,
+      "rejected_legal_fraction": 0.5263157894736842,
+      "rejected_multiplicity": 1,
+      "rejected_target_count": 20,
+      "status": "exact-covariant-measurement-rejects-one-multiplicity-stratum",
+      "stratum_filter_verified": true,
+      "uniform_legal_witness_success": 0.47368421052631576
+    },
+    {
+      "assignment_count": 128,
+      "control_id": "DENSITY-ONE-N7-J1",
+      "correlation_dimension": 58,
+      "correlation_psd_residual": 1.9060213493352653e-14,
+      "correlation_unit_diagonal_residual": 2.220446049250313e-16,
+      "decoder_success_constant_at_finite_size": true,
+      "decoder_success_probability": 0.24416328452705655,
+      "filter_residual": 2.220446049250313e-16,
+      "legal_target_count": 58,
+      "maximum_accepted_target_success": 0.9999999999999998,
+      "maximum_rejected_target_success": 4.698832949535529e-34,
+      "minimum_accepted_target_success": 0.9999999999999998,
+      "modulus": 128,
+      "per_target_success_proved": false,
+      "povm_completeness_residual": 2.220446049250313e-16,
+      "predicted_uniform_legal_witness_success": 0.6551724137931034,
+      "rejected_legal_fraction": 0.3448275862068966,
+      "rejected_multiplicity": 1,
+      "rejected_target_count": 20,
+      "status": "exact-covariant-measurement-rejects-one-multiplicity-stratum",
+      "stratum_filter_verified": true,
+      "uniform_legal_witness_success": 0.6551724137931033
+    },
+    {
+      "assignment_count": 256,
+      "control_id": "DENSITY-ONE-N8-J1",
+      "correlation_dimension": 136,
+      "correlation_psd_residual": 8.422314150271092e-14,
+      "correlation_unit_diagonal_residual": 2.220446049250313e-16,
+      "decoder_success_constant_at_finite_size": true,
+      "decoder_success_probability": 0.17422859953049535,
+      "filter_residual": 2.220446049250313e-16,
+      "legal_target_count": 136,
+      "maximum_accepted_target_success": 0.9999999999999998,
+      "maximum_rejected_target_success": 1.5857797913878743e-33,
+      "minimum_accepted_target_success": 0.9999999999999998,
+      "modulus": 256,
+      "per_target_success_proved": false,
+      "povm_completeness_residual": 2.220446049250313e-16,
+      "predicted_uniform_legal_witness_success": 0.47058823529411764,
+      "rejected_legal_fraction": 0.5294117647058824,
+      "rejected_multiplicity": 1,
+      "rejected_target_count": 72,
+      "status": "exact-covariant-measurement-rejects-one-multiplicity-stratum",
+      "stratum_filter_verified": true,
+      "uniform_legal_witness_success": 0.47058823529411753
+    }
+  ],
+  "headline_metrics": {
+    "efficient_stratum_filter_measurement_count": 0,
+    "exact_stratum_filter_control_count": 3,
+    "finite_control_failure_count": 0,
+    "information_theoretic_per_target_counterexample_count": 1,
+    "maximum_rejected_target_success": 2.0626626458036146e-33,
+    "minimum_finite_decoder_success": 0.17422859953049535,
+    "minimum_limiting_decoder_success": 0.1642788024221198,
+    "minimum_limiting_rejected_legal_mass": 0.024249029452888603,
+    "multiplicity_orbit_control_count": 3,
+    "new_quantum_algorithm_count": 0,
+    "per_target_witness_solver_count": 0,
+    "poisson_positive_mass_stratum_count": 4
+  },
+  "multiplicity_orbit_controls": [
+    {
+      "n_bits": 6,
+      "orbit_crosses_multiplicity_strata": false,
+      "register_count": 6,
+      "signed_unit_orbit_preserves_multiplicity": true,
+      "status": "natural-self-reduction-orbit-is-multiplicity-stratified",
+      "target": 4,
+      "target_multiplicity": 1,
+      "transformation_count": 10,
+      "transformed_multiplicity_maximum": 1,
+      "transformed_multiplicity_minimum": 1
+    },
+    {
+      "n_bits": 7,
+      "orbit_crosses_multiplicity_strata": false,
+      "register_count": 7,
+      "signed_unit_orbit_preserves_multiplicity": true,
+      "status": "natural-self-reduction-orbit-is-multiplicity-stratified",
+      "target": 3,
+      "target_multiplicity": 1,
+      "transformation_count": 10,
+      "transformed_multiplicity_maximum": 1,
+      "transformed_multiplicity_minimum": 1
+    },
+    {
+      "n_bits": 8,
+      "orbit_crosses_multiplicity_strata": false,
+      "register_count": 8,
+      "signed_unit_orbit_preserves_multiplicity": true,
+      "status": "natural-self-reduction-orbit-is-multiplicity-stratified",
+      "target": 3,
+      "target_multiplicity": 1,
+      "transformation_count": 10,
+      "transformed_multiplicity_maximum": 1,
+      "transformed_multiplicity_minimum": 1
+    }
+  ],
+  "poisson_limits": [
+    {
+      "decoder_success_has_positive_constant_limit": true,
+      "limiting_accepted_amplitude_coefficient": 0.4053132152078437,
+      "limiting_decoder_success_probability": 0.1642788024221198,
+      "limiting_unconditional_target_mass": 0.36787944117144233,
+      "limiting_uniform_legal_target_mass": 0.5819767068693265,
+      "per_target_gap_persists_asymptotically": true,
+      "rejected_multiplicity": 1,
+      "rejected_stratum_has_positive_legal_mass": true,
+      "status": "positive-decoder-success-with-positive-rejected-legal-stratum"
+    },
+    {
+      "decoder_success_has_positive_constant_limit": true,
+      "limiting_accepted_amplitude_coefficient": 0.5130626088678416,
+      "limiting_decoder_success_probability": 0.2632332406182758,
+      "limiting_unconditional_target_mass": 0.18393972058572117,
+      "limiting_uniform_legal_target_mass": 0.2909883534346632,
+      "per_target_gap_persists_asymptotically": true,
+      "rejected_multiplicity": 2,
+      "rejected_stratum_has_positive_legal_mass": true,
+      "status": "positive-decoder-success-with-positive-rejected-legal-stratum"
+    },
+    {
+      "decoder_success_has_positive_constant_limit": true,
+      "limiting_accepted_amplitude_coefficient": 0.6669950091844554,
+      "limiting_decoder_success_probability": 0.44488234227697177,
+      "limiting_unconditional_target_mass": 0.06131324019524039,
+      "limiting_uniform_legal_target_mass": 0.09699611781155441,
+      "per_target_gap_persists_asymptotically": true,
+      "rejected_multiplicity": 3,
+      "rejected_stratum_has_positive_legal_mass": true,
+      "status": "positive-decoder-success-with-positive-rejected-legal-stratum"
+    },
+    {
+      "decoder_success_has_positive_constant_limit": true,
+      "limiting_accepted_amplitude_coefficient": 0.7425360362816659,
+      "limiting_decoder_success_probability": 0.5513597651768875,
+      "limiting_unconditional_target_mass": 0.015328310048810098,
+      "limiting_uniform_legal_target_mass": 0.024249029452888603,
+      "per_target_gap_persists_asymptotically": true,
+      "rejected_multiplicity": 4,
+      "rejected_stratum_has_positive_legal_mass": true,
+      "status": "positive-decoder-success-with-positive-rejected-legal-stratum"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "construct_valid_covariant_stratum_filter_povm",
+      "resolution": "The root-of-unity Gram construction is PSD with unit diagonal and cyclic twirl equal to identity.",
+      "resolved": true
+    },
+    {
+      "obligation": "derive_exact_cleaned_per_target_filter",
+      "resolution": "Equal rejected amplitudes cancel, yielding q=0 there and q=1 on every accepted legal target.",
+      "resolved": true
+    },
+    {
+      "obligation": "show_gap_survives_density_one_scaling",
+      "resolution": "The zero-truncated Poisson law gives every fixed stratum positive legal mass and the accepted amplitude a positive limit.",
+      "resolved": true
+    },
+    {
+      "obligation": "upgrade_by_natural_instance_randomization",
+      "resolution": "Those witness-bijection transformations preserve exact multiplicity, so they cannot leave the rejected stratum.",
+      "resolved": false
+    },
+    {
+      "obligation": "implement_stratum_filter_efficiently",
+      "resolution": "The construction consumes the full multiplicity table and is deliberately not promoted to an algorithm.",
+      "resolved": false
+    }
+  ],
+  "status": "per-target-stratum-obstruction-certified",
+  "summary": "Covariance and natural DCP instance symmetries cannot upgrade the average witness reduction to every legal target: an exact constant-success POVM can reject an entire positive-mass multiplicity stratum.",
+  "theorem": {
+    "cleaned_filter_statement": "the arbitrary-measurement inverse has q_s=1 off the rejected stratum and q_s=0 on it",
+    "consequence": "covariance, completeness, and natural instance randomization do not upgrade average legal-target witness success to every target",
+    "correlation_seed_construction": "C is the Gram matrix of e_0 on accepted targets and root-of-unity phases times e_1 on one equal-amplitude multiplicity stratum",
+    "covariance_forces_per_target_success": false,
+    "density_one_limit": "for fixed j, rejected uniform-legal mass tends to 1/(j!(e-1)) while decoder success tends to a positive constant",
+    "efficient_stratum_filter_measurement_constructed": false,
+    "exact_povm_statement": "C>=0 and diag(C)=1, so E_0=C/N and its cyclic translates sum to I",
+    "information_theoretic_counterexample_proved": true,
+    "natural_orbit_invariant": "coordinate permutations/complements and odd-unit multiplication are witness bijections and preserve c_s exactly",
+    "natural_self_reduction_upgrades_average_to_every_target": false,
+    "per_target_witness_solver_constructed": false,
+    "scope_limit": "The multiplicity-aware seed is not shown efficiently implementable. The result blocks an information-theoretic proof strategy, not efficient per-target reductions using new non-orbit structure.",
+    "status": "per-target-upgrade-blocked-by-multiplicity-stratum-counterexample",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "dependency": "quenched Poisson fiber law proved in the existing uniform-legal multiplicity module",
+    "ensemble": "density-one cyclic DCP phase ensemble on legal fibers",
+    "measurement_class": "all exact covariant POVMs at the information-theoretic level",
+    "rejected_set": "one fixed equal-amplitude multiplicity stratum",
+    "scope": "The multiplicity-aware seed is not shown efficiently implementable. The result blocks an information-theoretic proof strategy, not efficient per-target reductions using new non-orbit structure.",
+    "self_reduction_group": "coordinate permutations, Boolean complements, and units of Z_N"
+  }
+}

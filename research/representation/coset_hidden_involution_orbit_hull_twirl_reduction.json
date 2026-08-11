@@ -1,0 +1,211 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False. Orbit averaging makes the support invariant and Schur twirling supplies identity on every carrier V_nu.",
+      "challenge": "Binary support still needs the individual hidden orientation.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Q_nu can have proper support inside a large multiplicity space, so the irrep label is only the first stage.",
+      "challenge": "Measuring nu completes the support test.",
+      "resolved": true
+    },
+    {
+      "answer": "Unproved. Stabilizer invariance gives a subduction algebra but not a uniform basis or support projector on sampled sectors.",
+      "challenge": "Hyperoctahedral stabilizer symmetry diagonalizes Q_nu automatically.",
+      "resolved": false
+    },
+    {
+      "answer": "False. The missing multiplicity-support projector can still contain all computational hardness.",
+      "challenge": "The reduction is an efficient algorithm.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "canonical_multiplicity_operators_formalized": true,
+    "diagonal_conjugation_irrep_label_available": true,
+    "individual_hidden_orientation_required_for_binary_support": false,
+    "multiplicity_support_dequantization_passed": false,
+    "orbit_hull_schur_support_reduction_proved": true,
+    "polynomial_time_hidden_involution_decision_algorithm": false,
+    "reason": "The binary test no longer needs carrier orientation, but efficient support projection inside the canonical multiplicity blocks remains unconstructed and may be classically reducible.",
+    "speedup_claim_allowed": false,
+    "uniform_multiplicity_support_projector_constructed": false
+  },
+  "created_at": "2026-08-11T14:53:50.538669+00:00",
+  "falsifiers_triggered": [
+    "Binary support projection does not require an individual hidden-involution output or carrier orientation.",
+    "Irrep-label access alone does not implement the multiplicity support.",
+    "Stabilizer symmetry is a reduction, not a compiled measurement."
+  ],
+  "finite_controls": [
+    {
+      "canonical_stabilizer_size": 2,
+      "carrier_invariant_support_verified": true,
+      "conjugacy_class_size": 3,
+      "copy_count": 1,
+      "data_dimension": 6,
+      "explicit_orbit_hull_rank": 5,
+      "finite_control_verified": true,
+      "group_order": 6,
+      "maximum_stabilizer_projector_commutator_residual": 0.0,
+      "maximum_twirl_commutator_residual": 0.0,
+      "n": 3,
+      "orbit_average_full_twirl_residual": 0.0,
+      "orbit_stabilizer_quotient": 3,
+      "status": "orbit-hull-schur-support-reduction-verified",
+      "support_projector_orbit_hull_residual": 9.67016249301157e-16,
+      "support_rank": 5,
+      "transposition_count": 1
+    },
+    {
+      "canonical_stabilizer_size": 2,
+      "carrier_invariant_support_verified": true,
+      "conjugacy_class_size": 3,
+      "copy_count": 2,
+      "data_dimension": 36,
+      "explicit_orbit_hull_rank": 21,
+      "finite_control_verified": true,
+      "group_order": 6,
+      "maximum_stabilizer_projector_commutator_residual": 0.0,
+      "maximum_twirl_commutator_residual": 0.0,
+      "n": 3,
+      "orbit_average_full_twirl_residual": 0.0,
+      "orbit_stabilizer_quotient": 3,
+      "status": "orbit-hull-schur-support-reduction-verified",
+      "support_projector_orbit_hull_residual": 4.1967467485335715e-15,
+      "support_rank": 21,
+      "transposition_count": 1
+    },
+    {
+      "canonical_stabilizer_size": 8,
+      "carrier_invariant_support_verified": true,
+      "conjugacy_class_size": 3,
+      "copy_count": 1,
+      "data_dimension": 24,
+      "explicit_orbit_hull_rank": 24,
+      "finite_control_verified": true,
+      "group_order": 24,
+      "maximum_stabilizer_projector_commutator_residual": 0.0,
+      "maximum_twirl_commutator_residual": 0.0,
+      "n": 4,
+      "orbit_average_full_twirl_residual": 0.0,
+      "orbit_stabilizer_quotient": 3,
+      "status": "orbit-hull-schur-support-reduction-verified",
+      "support_projector_orbit_hull_residual": 3.0538086054750683e-15,
+      "support_rank": 24,
+      "transposition_count": 2
+    }
+  ],
+  "headline_metrics": {
+    "carrier_orientation_obligation_eliminated_count": 4,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "multiplicity_support_projector_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "orbit_hull_identity_control_count": 3,
+    "scaling_record_count": 4
+  },
+  "primary_literature": [
+    {
+      "id": "HAYASHI-KAWACHI-KOBAYASHI-2006-HSP-SAMPLE-COMPLEXITY",
+      "scope": "Provides the support-span binary measurement whose orbit hull is reduced here.",
+      "title": "Quantum Measurements for Hidden Subgroup Problems with Optimal Sample Complexity",
+      "url": "https://arxiv.org/abs/quant-ph/0604174"
+    },
+    {
+      "id": "BEALS-1997-SYMMETRIC-QFT",
+      "scope": "Makes diagonal-conjugation irrep labeling an available primitive, not the missing multiplicity-support projector.",
+      "title": "Quantum computation of Fourier transforms over symmetric groups",
+      "url": "https://doi.org/10.1145/258533.258548"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-BINARY-CANONICAL-QNU",
+      "resolved": false,
+      "statement": "Express Q_nu=Tr_(V_nu)(P_0) uniformly through the S_(2m) down C_2 wr S_m restriction and sampled source labels."
+    },
+    {
+      "id": "PO-COSET-BINARY-MULTIPLICITY-SUPPORT",
+      "resolved": false,
+      "statement": "Compile supp(Q_nu) without enumerating exponential branching multiplicities or performing a small-gap generic polar transform."
+    },
+    {
+      "id": "PO-COSET-BINARY-MULTIPLICITY-DEQUANTIZATION",
+      "resolved": false,
+      "statement": "Determine whether Q_nu support is a classically computable restriction/association-scheme invariant."
+    }
+  ],
+  "scaling_records": [
+    {
+      "diagonal_conjugation_irrep_label_accessible": true,
+      "hyperoctahedral_stabilizer_order": 10321920,
+      "individual_hidden_orientation_required": false,
+      "matching_count": 2027025,
+      "n": 16,
+      "orbit_stabilizer_identity_verified": true,
+      "status": "carrier-eliminated-multiplicity-support-compiler-open",
+      "support_test_copy_count": 25,
+      "symmetric_group_order": 20922789888000,
+      "uniform_multiplicity_support_projector_known": false
+    },
+    {
+      "diagonal_conjugation_irrep_label_accessible": true,
+      "hyperoctahedral_stabilizer_order": 1371195958099968000,
+      "individual_hidden_orientation_required": false,
+      "matching_count": 191898783962510625,
+      "n": 32,
+      "orbit_stabilizer_identity_verified": true,
+      "status": "carrier-eliminated-multiplicity-support-compiler-open",
+      "support_test_copy_count": 61,
+      "symmetric_group_order": 263130836933693530167218012160000000,
+      "uniform_multiplicity_support_projector_known": false
+    },
+    {
+      "diagonal_conjugation_irrep_label_accessible": true,
+      "hyperoctahedral_stabilizer_order": 1130138339199322632554990773529330319360000000,
+      "individual_hidden_orientation_required": false,
+      "matching_count": 112275575285571389562324404930670903477890625,
+      "n": 64,
+      "orbit_stabilizer_identity_verified": true,
+      "status": "carrier-eliminated-multiplicity-support-compiler-open",
+      "support_test_copy_count": 150,
+      "symmetric_group_order": 126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000,
+      "uniform_multiplicity_support_projector_known": false
+    },
+    {
+      "diagonal_conjugation_irrep_label_accessible": true,
+      "hyperoctahedral_stabilizer_order": 2340650764331144466221345754697091809049283736233503362096217361956854360782374130152842356326400000000000000,
+      "individual_hidden_orientation_required": false,
+      "matching_count": 164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625,
+      "n": 128,
+      "orbit_stabilizer_identity_verified": true,
+      "status": "carrier-eliminated-multiplicity-support-compiler-open",
+      "support_test_copy_count": 360,
+      "symmetric_group_order": 385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000,
+      "uniform_multiplicity_support_projector_known": false
+    }
+  ],
+  "status": "binary-support-reduced-to-canonical-multiplicity-support",
+  "summary": "Reduced the published hidden-involution support-span measurement to canonical multiplicity-support projectors under diagonal conjugation. Carrier orientation is eliminated; the hyperoctahedral subduction support is now the exact computational bottleneck.",
+  "theorem": {
+    "carrier_orientation_eliminated_for_binary_support": true,
+    "diagonal_irrep_label_primitive_available": true,
+    "invariant_hull_identity": "supp(|G|^-1 sum_x U_x P U_x^*)=span_x U_x range(P).",
+    "multiplicity_support_projector_constructed": false,
+    "orbit_hull_identity_proved": true,
+    "perfect_matching_stabilizer": "For h_0 of cycle type 2^m in S_(2m), Stab(h_0)=C_2 wr S_m.",
+    "schur_support_reduction_proved": true,
+    "schur_twirl_normal_form": "A=direct_sum_nu (I_(V_nu)/d_nu) tensor Tr_(V_nu)(P_(nu,nu)).",
+    "status": "binary-support-reduced-to-canonical-multiplicity-support",
+    "support_normal_form": "supp(A)=direct_sum_nu I_(V_nu) tensor supp(Q_nu).",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "canonical_projector": "The k-fold plus-eigenspace projector for one fixed hidden involution h_0.",
+    "compiler_target": "After irrep label nu, project onto supp(Q_nu) in the diagonal-action multiplicity register.",
+    "non_claim": "No uniform Q_nu representation, support circuit, dequantization separation, hidden-element decoder, or speedup.",
+    "representation": "Diagonal conjugation of G on k regular data registers."
+  }
+}

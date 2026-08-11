@@ -1,0 +1,247 @@
+{
+  "adversarial_audit": [
+    {
+      "challenge": "A fixed factorization restores ordinary cosets.",
+      "response": "A factorization may define a different sample model, but it does not make overlapping principal translates disjoint.",
+      "survives": false
+    },
+    {
+      "challenge": "Rescaling an idempotent bridge makes it invertible.",
+      "response": "A nonidentity idempotent cannot be a unit; projective loop rescaling does not restore lost propagating rank.",
+      "survives": false
+    },
+    {
+      "challenge": "An efficient algebra QFT automatically defines an HSP.",
+      "response": "The transform diagonalizes algebra action but supplies no hiding relation, orthogonal coset samples, or decoder.",
+      "survives": false
+    },
+    {
+      "challenge": "The NP-complete contraction connection is positive evidence.",
+      "response": "It is evidence against an unrestricted BQP algorithm. A credible route needs an intermediate promise and a matched classical barrier.",
+      "survives": false
+    },
+    {
+      "challenge": "The no-go also kills module-spectrum algorithms.",
+      "response": "Module decompositions do not require principal translates to partition the diagram basis.",
+      "survives": false
+    }
+  ],
+  "claim_gate": {
+    "bridge_or_reset_generated_right_translates_partition_basis": false,
+    "dequantization_survived": false,
+    "efficient_diagram_qft_alone_implies_hidden_problem_algorithm": false,
+    "module_spectrum_replacement_direction_structurally_open": true,
+    "module_spectrum_replacement_passes_proof_gate": false,
+    "naive_diagram_hidden_subalgebra_has_hsp_cosets": false,
+    "natural_decision_reduction_proved": false,
+    "reason": "Noninvertible diagram generators forbid ordinary coset partitions. A module-based problem may use the new QFT, but no natural reduction or quantum advantage has been established.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T15:23:34.339411+00:00",
+  "falsifiers_triggered": [
+    "Noninvertible bridge/reset generators cannot define equal-or-disjoint right cosets.",
+    "A fixed factorization is a new oracle model, not a repair of the coset partition.",
+    "An efficient semisimple-algebra QFT does not itself define a hidden problem or decoder.",
+    "The unrestricted graph-contraction connection is NP-complete and therefore not a credible BQP target without a promise.",
+    "The published QFT approximation requires a separate large loop-parameter regime.",
+    "The module-spectrum replacement has not passed its reduction or dequantization gates."
+  ],
+  "finite_controls": [
+    {
+      "control_id": "T2-UNIT-GROUP",
+      "monoid_order": 4,
+      "overlapping_unequal_translate_pair_count": 0,
+      "right_translate_count": 3,
+      "right_translates_cover_monoid": true,
+      "right_translates_equal_or_disjoint": true,
+      "status": "group-coset-partition-control",
+      "submonoid_is_group": true,
+      "submonoid_order": 2,
+      "theorem_equivalence_verified": true
+    },
+    {
+      "control_id": "T2-RESET-IDEMPOTENT",
+      "monoid_order": 4,
+      "overlapping_unequal_translate_pair_count": 2,
+      "right_translate_count": 4,
+      "right_translates_cover_monoid": true,
+      "right_translates_equal_or_disjoint": false,
+      "status": "nonunit-overlapping-translate-control",
+      "submonoid_is_group": false,
+      "submonoid_order": 2,
+      "theorem_equivalence_verified": true
+    },
+    {
+      "control_id": "T2-TRIVIAL-GROUP",
+      "monoid_order": 4,
+      "overlapping_unequal_translate_pair_count": 0,
+      "right_translate_count": 4,
+      "right_translates_cover_monoid": true,
+      "right_translates_equal_or_disjoint": true,
+      "status": "group-coset-partition-control",
+      "submonoid_is_group": true,
+      "submonoid_order": 1,
+      "theorem_equivalence_verified": true
+    }
+  ],
+  "headline_metrics": {
+    "exhaustive_t2_equivalence_failure_count": 0,
+    "exhaustive_t2_submonoid_count": 6,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "finite_monoid_coset_partition_iff_group_theorem_count": 1,
+    "maximum_brauer_basis_dimension_log2": 146.33188028936374,
+    "maximum_partition_basis_dimension_log2": 216.70885945661234,
+    "naive_hidden_subalgebra_coset_model_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "nonunit_overlapping_translate_control_count": 1,
+    "replacement_hypothesis_proof_gate_pass_count": 0
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "FOXMAN-NEHORAN-DING-2026",
+      "title": "Efficient Quantum Fourier Transforms For Semisimple Algebras",
+      "url": "https://arxiv.org/abs/2605.05337",
+      "use": "Primary QFT theorem and explicit hidden-subalgebra caveats; source of the module-spectrum replacement direction"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "test_naive_hidden_subalgebra_coset_partition",
+      "resolution": "The finite-monoid theorem proves that nonunit diagram generators make ordinary cosets impossible.",
+      "resolved": true
+    },
+    {
+      "obligation": "define_a_valid_noncoset_oracle_state_model",
+      "resolution": "Ideals, Green relations, and fixed factorizations have not yet been connected to orthogonal quantum sample states.",
+      "resolved": false
+    },
+    {
+      "obligation": "reduce_a_natural_problem_to_module_spectral_data",
+      "resolution": "The replacement hypothesis names tensor/code families but does not yet prove a YES/NO multiplicity separation.",
+      "resolved": false
+    },
+    {
+      "obligation": "satisfy_the_published_qft_parameter_regime",
+      "resolution": "The approximation factor is at least linear in algebra dimension, requiring a separate sufficiently large loop parameter and a compatible input representation.",
+      "resolved": false
+    },
+    {
+      "obligation": "survive_matched_classical_baselines",
+      "resolution": "No module-spectrum candidate has yet passed dequantization.",
+      "resolved": false
+    }
+  ],
+  "replacement_hypothesis": {
+    "asymptotically_unitary_parameter_regime_proved": false,
+    "classical_baselines": [
+      "explicit invariant and canonical-form algorithms",
+      "randomized trace/moment estimation",
+      "tensor-network contraction at matched width",
+      "low-dimensional and low-rank multiplicity formulas",
+      "classical sampling of the measured Fourier marginal"
+    ],
+    "coherent_input_preparation_proved": false,
+    "decisive_falsifiers": [
+      "classical canonicalization is polynomial on the promised family",
+      "the Fourier marginal is classically sampleable",
+      "informative sectors have exponentially small source mass",
+      "the required loop parameter or state preparation is exponentially encoded",
+      "the reduction lands on NP-complete unrestricted contraction equivalence"
+    ],
+    "dequantization_survived": false,
+    "hypothesis_id": "HYP-DIAGRAM-MODULE-SPECTRAL",
+    "input_model": "Succinct reversible preparation of module states plus block access to diagram-generator actions; no arbitrary hidden-coset oracle",
+    "mechanism": "Diagram-algebra QFT or generalized Schur transform, followed by irrep/multiplicity interference and a decision observable",
+    "natural_decision_reduction_proved": false,
+    "problem_family": "Promise module-isomorphism or invariant-multiplicity problems for orthogonal/permutation tensor actions, with Brauer or partition algebra as the explicit commutant",
+    "proof_gate_passed": false,
+    "required_proof_obligations": [
+      "natural scalable decision problem and reduction",
+      "succinct coherent input and generator access",
+      "valid large-loop-parameter regime at polynomial input length",
+      "inverse-polynomial informative Fourier mass",
+      "efficient decision observable after the QFT",
+      "superpolynomial classical barrier in the same access model"
+    ],
+    "status": "high-variance-replacement-hypothesis-proof-gate-open",
+    "target_reduction": "Find a natural tensor/code/isomorphism promise whose YES/NO cases differ in a diagram-module multiplicity accessible at inverse-polynomial source mass"
+  },
+  "scaling_records": [
+    {
+      "brauer_basis_dimension_decimal": "105",
+      "brauer_basis_dimension_log2": 6.714245517666122,
+      "diagram_order": 4,
+      "efficient_qft_implies_hidden_problem_solver": false,
+      "module_spectrum_direction_not_killed_by_coset_no_go": true,
+      "necessary_brauer_loop_parameter_log2_from_published_factor": 13.428491035332245,
+      "necessary_partition_loop_parameter_log2_from_published_factor": 24.030830104773376,
+      "ordinary_coset_partition_available_for_bridge_generated_subalgebra": false,
+      "partition_basis_dimension_decimal": "4140",
+      "partition_basis_dimension_log2": 12.015415052386688,
+      "status": "naive-cosets-impossible-module-spectrum-model-open"
+    },
+    {
+      "brauer_basis_dimension_decimal": "2027025",
+      "brauer_basis_dimension_log2": 20.950932451495344,
+      "diagram_order": 8,
+      "efficient_qft_implies_hidden_problem_solver": false,
+      "module_spectrum_direction_not_killed_by_coset_no_go": true,
+      "necessary_brauer_loop_parameter_log2_from_published_factor": 41.90186490299069,
+      "necessary_partition_loop_parameter_log2_from_published_factor": 66.57387846763943,
+      "ordinary_coset_partition_available_for_bridge_generated_subalgebra": false,
+      "partition_basis_dimension_decimal": "10480142147",
+      "partition_basis_dimension_log2": 33.286939233819716,
+      "status": "naive-cosets-impossible-module-spectrum-model-open"
+    },
+    {
+      "brauer_basis_dimension_decimal": "191898783962510625",
+      "brauer_basis_dimension_log2": 57.41312318247768,
+      "diagram_order": 16,
+      "efficient_qft_implies_hidden_problem_solver": false,
+      "module_spectrum_direction_not_killed_by_coset_no_go": true,
+      "necessary_brauer_loop_parameter_log2_from_published_factor": 114.82624636495537,
+      "necessary_partition_loop_parameter_log2_from_published_factor": 173.45400598583157,
+      "ordinary_coset_partition_available_for_bridge_generated_subalgebra": false,
+      "partition_basis_dimension_decimal": "128064670049908713818925644",
+      "partition_basis_dimension_log2": 86.72700299291579,
+      "status": "naive-cosets-impossible-module-spectrum-model-open"
+    },
+    {
+      "brauer_basis_dimension_decimal": "112275575285571389562324404930670903477890625",
+      "brauer_basis_dimension_log2": 146.33188028936374,
+      "diagram_order": 32,
+      "efficient_qft_implies_hidden_problem_solver": false,
+      "module_spectrum_direction_not_killed_by_coset_no_go": true,
+      "necessary_brauer_loop_parameter_log2_from_published_factor": 292.6637605787275,
+      "necessary_partition_loop_parameter_log2_from_published_factor": 433.4177189132247,
+      "ordinary_coset_partition_available_for_bridge_generated_subalgebra": false,
+      "partition_basis_dimension_decimal": "172134143357358850934369963665272571125557575184049758045339873395",
+      "partition_basis_dimension_log2": 216.70885945661234,
+      "status": "naive-cosets-impossible-module-spectrum-model-open"
+    }
+  ],
+  "status": "naive-hidden-subalgebra-cosets-killed-module-spectrum-open",
+  "summary": "Proved that HSP-style right cosets in a finite diagram-basis monoid are possible only for hidden groups of units, killing the naive bridge/reset hidden-subalgebra model and redirecting the semisimple-QFT opportunity toward proof-gated module spectra.",
+  "theorem": {
+    "bridge_generated_hidden_cosets_valid": false,
+    "converse": "If B is a group and ab=a'b', then a=a'b'b^-1, so intersecting right translates are equal.",
+    "diagram_generator_consequence": "A nonidentity bridge/reset idempotent is a nonunit, so any hidden submonoid containing it fails the ordinary coset partition.",
+    "equal_or_disjoint_implies_group": true,
+    "finite_inverse_step": "In a finite monoid, bc=1 makes right multiplication by b injective and hence surjective; a left inverse exists and equals c.",
+    "forward_implication": "For b in B, bB intersects B at b, hence bB=B. Therefore 1=bc for some c in B.",
+    "group_implies_equal_or_disjoint": true,
+    "projective_rescaling_scope": "The conclusion applies to the projective diagram-basis monoid after removing nonzero loop scalars; it does not classify arbitrary linear subspaces or module-theoretic hiding notions.",
+    "statement": "For a submonoid B of a finite monoid M, the family {aB:a in M} is equal-or-disjoint if and only if B is a group of units.",
+    "status": "finite-monoid-coset-partition-iff-group-proved",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "coset_requirement": "right translates are equal or disjoint",
+    "naive_hidden_structure": "submonoid generated by diagram generators",
+    "object": "finite projective diagram-basis monoid",
+    "replacement_search_space": "module spectra, multiplicities, and invariant subspaces under succinct diagram-algebra actions",
+    "theorem_boundary": "this happens exactly for subgroups of units"
+  }
+}

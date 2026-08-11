@@ -1,0 +1,338 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False. Compression by the G-intertwiner embedding does not preserve products; the exact S_6 D_2,D_3 commutator is nonzero.",
+      "challenge": "Physical source-factor projectors commute, so prefix metrics commute.",
+      "resolved": true
+    },
+    {
+      "answer": "False. They differ by the exact Uhlmann holonomy U_j, and the S_6 final-step distance is strictly positive.",
+      "challenge": "Sequential relative polars automatically equal the global polar.",
+      "resolved": true
+    },
+    {
+      "answer": "Not proved and false in the finite control: all audited relative-effect lower edges exceed 0.2 despite the shrinking prefix metric.",
+      "challenge": "An exponentially small global overlap forces one tiny conditional step.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Moore--Penrose powers give the same exact formula, with U_j a partial isometry from supp(D_j) to supp(E_j).",
+      "challenge": "Rank loss invalidates the prefix chain algebra.",
+      "resolved": true
+    },
+    {
+      "answer": "False. The required natural all-n gap, uniform holonomy/support compiler, uniformity, and decoder theorems are all open.",
+      "challenge": "The finite constant gaps establish a scalable polar algorithm.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_n_relative_effect_gap_proved": false,
+    "exact_full_rank_prefix_chain_rule_proved": true,
+    "exact_partial_support_chain_rule_proved": true,
+    "finite_relative_effects_constant_gap": true,
+    "naive_sequential_parity_conditioning_valid": false,
+    "nontrivial_multiplicity_holonomy_exists": true,
+    "polynomial_fused_polar_constructed": false,
+    "polynomial_hidden_involution_decoder_constructed": false,
+    "rank_loss_chain_rule_proved": true,
+    "rank_loss_compiler_constructed": false,
+    "reason": "Prefix conditioning can avoid the global tiny singular scale only if natural relative gaps and Uhlmann holonomy/support transports are compiled uniformly; the exact chain algebra is proved.",
+    "speedup_claim_allowed": false,
+    "uniform_holonomy_compiler_constructed": false
+  },
+  "created_at": "2026-08-11T15:22:53.018153+00:00",
+  "falsifiers_triggered": [
+    "Commuting physical parity projectors need not yield commuting multiplicity-prefix metrics.",
+    "Relative polar composition without input-side holonomy is not exact.",
+    "A small global principal angle does not by itself force a small finite conditional principal angle.",
+    "Prefix rank loss does not break the polar chain rule; it changes the Uhlmann correction from a unitary to a partial isometry.",
+    "A finite constant conditional gap does not imply an all-n algorithm."
+  ],
+  "finite_control": {
+    "chain_steps": [
+      {
+        "exact_chain_rule_verified": true,
+        "global_polar_isometry_residual": 1.1125281203152668e-15,
+        "holonomy_formula_residual": 1.2387729686166455e-15,
+        "holonomy_identity_distance": 6.77406541260667e-16,
+        "holonomy_is_identity": true,
+        "holonomy_unitarity_residual": 1.343848010546529e-15,
+        "multiplicity_dimension": 3,
+        "next_metric_maximum_eigenvalue": 0.23333333333333323,
+        "next_metric_minimum_eigenvalue": 0.09999999999999995,
+        "prefix_metric_commutator_norm": 4.337147489887063e-18,
+        "prefix_metrics_commute": true,
+        "previous_metric_maximum_eigenvalue": 0.4000000000000003,
+        "previous_metric_minimum_eigenvalue": 0.3999999999999999,
+        "relative_effect_condition_number": 2.3333333333333344,
+        "relative_effect_maximum_eigenvalue": 0.5833333333333337,
+        "relative_effect_minimum_eigenvalue": 0.25000000000000006,
+        "relative_polar_isometry_residual": 1.0546717015061697e-15,
+        "relative_polar_to_global_polar_distance": 8.65644452117683e-16,
+        "status": "commuting-prefix-no-holonomy",
+        "step": 2
+      },
+      {
+        "exact_chain_rule_verified": true,
+        "global_polar_isometry_residual": 3.379171052968845e-16,
+        "holonomy_formula_residual": 8.540637584039315e-16,
+        "holonomy_identity_distance": 0.0661561816181627,
+        "holonomy_is_identity": false,
+        "holonomy_unitarity_residual": 1.1131517904475039e-15,
+        "multiplicity_dimension": 3,
+        "next_metric_maximum_eigenvalue": 0.1833333333333333,
+        "next_metric_minimum_eigenvalue": 0.033333333333333326,
+        "prefix_metric_commutator_norm": 0.0074535599249992935,
+        "prefix_metrics_commute": false,
+        "previous_metric_maximum_eigenvalue": 0.23333333333333323,
+        "previous_metric_minimum_eigenvalue": 0.09999999999999995,
+        "relative_effect_condition_number": 3.818181818181819,
+        "relative_effect_maximum_eigenvalue": 1.000000000000001,
+        "relative_effect_minimum_eigenvalue": 0.26190476190476214,
+        "relative_polar_isometry_residual": 7.156925965509865e-16,
+        "relative_polar_to_global_polar_distance": 0.06615618161816267,
+        "status": "noncommuting-prefix-unitary-holonomy",
+        "step": 3
+      }
+    ],
+    "control_verified": true,
+    "degree": 6,
+    "final_global_maximum_singular_value": 0.4281744192888376,
+    "final_global_minimum_singular_value": 0.18257418583505536,
+    "finite_constant_relative_gap_found": true,
+    "multiplicity_dimension": 3,
+    "naive_sequential_conditioning_falsified": true,
+    "noncommuting_later_prefix_pair_found": true,
+    "prefix_metric_eigenvalues": [
+      [
+        0.3999999999999999,
+        0.3999999999999999,
+        0.4000000000000003
+      ],
+      [
+        0.09999999999999995,
+        0.10000000000000003,
+        0.23333333333333323
+      ],
+      [
+        0.033333333333333326,
+        0.03333333333333335,
+        0.1833333333333333
+      ]
+    ],
+    "scalar_first_prefix_verified": true,
+    "source_partitions": [
+      [
+        5,
+        1
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        5,
+        1
+      ]
+    ],
+    "status": "fixed-point-free-prefix-holonomy-verified",
+    "target_partition": [
+      4,
+      2
+    ]
+  },
+  "headline_metrics": {
+    "all_n_relative_gap_theorem_count": 0,
+    "exact_partial_support_chain_rule_theorem_count": 1,
+    "exact_prefix_polar_chain_rule_theorem_count": 1,
+    "finite_constant_relative_gap_step_count": 2,
+    "finite_fixed_point_free_control_count": 2,
+    "finite_noncommuting_prefix_step_count": 1,
+    "finite_prefix_step_count": 2,
+    "finite_rank_loss_dimension": 2,
+    "finite_validation_failure_count": 0,
+    "maximum_finite_holonomy_identity_distance": 0.0661561816181627,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_fused_polar_count": 0,
+    "rank_loss_chain_rule_count": 1,
+    "rank_loss_compiler_count": 0,
+    "uniform_holonomy_compiler_count": 0
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-PREFIX-RELATIVE-GAP",
+      "resolved": false,
+      "statement": "Prove inverse-polynomial positive lower edges for every relative effect E_j on high natural source/PGM mass, or find a natural small-gap counterfamily."
+    },
+    {
+      "id": "PO-COSET-PREFIX-HOLONOMY-COMPILER",
+      "resolved": false,
+      "statement": "Compile U_j from wreath subduction/fusion path data with polynomial gates, or prove typical U_j is negligible."
+    },
+    {
+      "id": "PO-COSET-PREFIX-RANK-LOSS",
+      "resolved": false,
+      "statement": "Compile the proved partial Uhlmann support transport when a prefix metric loses rank, uniformly over source labels."
+    },
+    {
+      "id": "PO-COSET-PREFIX-UNIFORMITY",
+      "resolved": false,
+      "statement": "Give one source-label-uniform SELECT for all k=Theta(n log n) relative effects and holonomies with controlled total error."
+    }
+  ],
+  "rank_loss_control": {
+    "degree": 6,
+    "exact_partial_support_chain_rule_verified": true,
+    "global_polar_partial_isometry_residual": 1.1102230246251565e-16,
+    "holonomy_final_support_residual": 9.119143723620908e-16,
+    "holonomy_formula_residual": 6.754648797867556e-16,
+    "holonomy_initial_support_residual": 9.992007221626409e-16,
+    "lost_multiplicity_dimension": 2,
+    "multiplicity_dimension": 3,
+    "next_prefix_rank": 1,
+    "next_support_outside_previous_support_residual": 2.3305152657874726e-16,
+    "partial_chain_rule_residual": 6.750786692465399e-16,
+    "positive_relative_effect_eigenvalues": [
+      0.35714285714285715
+    ],
+    "previous_prefix_rank": 3,
+    "relative_effect_rank": 1,
+    "relative_polar_partial_isometry_residual": 1.1102230246251565e-16,
+    "source_partitions": [
+      [
+        5,
+        1
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        5,
+        1
+      ]
+    ],
+    "status": "fixed-point-free-rank-loss-partial-holonomy-verified",
+    "target_partition": [
+      4,
+      1,
+      1
+    ]
+  },
+  "scaling_records": [
+    {
+      "all_prefix_relative_gap_theorem_proved": false,
+      "degree": 8,
+      "global_polar_constructed": false,
+      "information_threshold_copy_count": 7,
+      "perfect_matching_hypothesis_count_decimal": "105",
+      "prefix_depth": 7,
+      "rank_loss_compiler_constructed": false,
+      "required_holonomy_gate_cost": "poly(degree,prefix_depth,log(1/error)) uniformly in source labels",
+      "required_relative_effect_lower_edge": "lambda_min^+(E_j)>=1/poly(degree,prefix_depth) on retained mass",
+      "required_support_rank_handling": "coherent support update when rank(D_j)<rank(D_(j-1))",
+      "status": "prefix-chain-criterion-recorded-asymptotic-inputs-open",
+      "uniform_holonomy_compiler_constructed": false
+    },
+    {
+      "all_prefix_relative_gap_theorem_proved": false,
+      "degree": 16,
+      "global_polar_constructed": false,
+      "information_threshold_copy_count": 21,
+      "perfect_matching_hypothesis_count_decimal": "2027025",
+      "prefix_depth": 21,
+      "rank_loss_compiler_constructed": false,
+      "required_holonomy_gate_cost": "poly(degree,prefix_depth,log(1/error)) uniformly in source labels",
+      "required_relative_effect_lower_edge": "lambda_min^+(E_j)>=1/poly(degree,prefix_depth) on retained mass",
+      "required_support_rank_handling": "coherent support update when rank(D_j)<rank(D_(j-1))",
+      "status": "prefix-chain-criterion-recorded-asymptotic-inputs-open",
+      "uniform_holonomy_compiler_constructed": false
+    },
+    {
+      "all_prefix_relative_gap_theorem_proved": false,
+      "degree": 32,
+      "global_polar_constructed": false,
+      "information_threshold_copy_count": 58,
+      "perfect_matching_hypothesis_count_decimal": "191898783962510625",
+      "prefix_depth": 58,
+      "rank_loss_compiler_constructed": false,
+      "required_holonomy_gate_cost": "poly(degree,prefix_depth,log(1/error)) uniformly in source labels",
+      "required_relative_effect_lower_edge": "lambda_min^+(E_j)>=1/poly(degree,prefix_depth) on retained mass",
+      "required_support_rank_handling": "coherent support update when rank(D_j)<rank(D_(j-1))",
+      "status": "prefix-chain-criterion-recorded-asymptotic-inputs-open",
+      "uniform_holonomy_compiler_constructed": false
+    },
+    {
+      "all_prefix_relative_gap_theorem_proved": false,
+      "degree": 64,
+      "global_polar_constructed": false,
+      "information_threshold_copy_count": 147,
+      "perfect_matching_hypothesis_count_decimal": "112275575285571389562324404930670903477890625",
+      "prefix_depth": 147,
+      "rank_loss_compiler_constructed": false,
+      "required_holonomy_gate_cost": "poly(degree,prefix_depth,log(1/error)) uniformly in source labels",
+      "required_relative_effect_lower_edge": "lambda_min^+(E_j)>=1/poly(degree,prefix_depth) on retained mass",
+      "required_support_rank_handling": "coherent support update when rank(D_j)<rank(D_(j-1))",
+      "status": "prefix-chain-criterion-recorded-asymptotic-inputs-open",
+      "uniform_holonomy_compiler_constructed": false
+    },
+    {
+      "all_prefix_relative_gap_theorem_proved": false,
+      "degree": 128,
+      "global_polar_constructed": false,
+      "information_threshold_copy_count": 357,
+      "perfect_matching_hypothesis_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "prefix_depth": 357,
+      "rank_loss_compiler_constructed": false,
+      "required_holonomy_gate_cost": "poly(degree,prefix_depth,log(1/error)) uniformly in source labels",
+      "required_relative_effect_lower_edge": "lambda_min^+(E_j)>=1/poly(degree,prefix_depth) on retained mass",
+      "required_support_rank_handling": "coherent support update when rank(D_j)<rank(D_(j-1))",
+      "status": "prefix-chain-criterion-recorded-asymptotic-inputs-open",
+      "uniform_holonomy_compiler_constructed": false
+    },
+    {
+      "all_prefix_relative_gap_theorem_proved": false,
+      "degree": 256,
+      "global_polar_constructed": false,
+      "information_threshold_copy_count": 840,
+      "perfect_matching_hypothesis_count_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "prefix_depth": 840,
+      "rank_loss_compiler_constructed": false,
+      "required_holonomy_gate_cost": "poly(degree,prefix_depth,log(1/error)) uniformly in source labels",
+      "required_relative_effect_lower_edge": "lambda_min^+(E_j)>=1/poly(degree,prefix_depth) on retained mass",
+      "required_support_rank_handling": "coherent support update when rank(D_j)<rank(D_(j-1))",
+      "status": "prefix-chain-criterion-recorded-asymptotic-inputs-open",
+      "uniform_holonomy_compiler_constructed": false
+    }
+  ],
+  "status": "prefix-polar-chain-rule-proved-holonomy-and-gaps-open",
+  "summary": "Derived the exact source-prefix polar chain rule. A fixed-point-free S_6 control falsifies naive recursion through noncommuting compressed metrics, but retains constant relative gaps. A second S_6 control proves the partial-support extension across rank loss; coherent Uhlmann transport is now the precise constructive correction.",
+  "theorem": {
+    "all_n_relative_gap_proved": false,
+    "commutation_criterion": "U_j=I exactly iff positive D_(j-1) and D_j commute.",
+    "exact_chain_rule": "Q_j=V_jU_j with U_j=E_j^(-1/2)D_(j-1)^(-1/2)D_j^(1/2).",
+    "exact_full_rank_chain_rule_proved": true,
+    "finite_fixed_point_free_noncommuting_control_verified": true,
+    "holonomy_identification": "U_j is the left polar/Uhlmann factor of D_(j-1)^(+,-1/2)D_j^(1/2): unitary at equal full rank and a support-carrying partial isometry after rank loss.",
+    "holonomy_unitarity_proved": true,
+    "identity_if_and_only_if_commuting_proved": true,
+    "naive_sequential_conditioning_universally_valid": false,
+    "polynomial_escape_criterion": "Inverse-polynomial relative-effect gaps plus polynomial coherent holonomy and support compilers imply a polynomial prefix polar, without transforming the exponentially small global singular scale.",
+    "polynomial_fused_polar_constructed": false,
+    "prefix_analysis": "A_j=P_j...P_1J, D_j=A_j^*A_j, and Q_j=A_jD_j^(+,-1/2) on its prefix support.",
+    "rank_loss_extension_proved": true,
+    "relative_effect": "E_j=D_(j-1)^(-1/2)D_jD_(j-1)^(-1/2).",
+    "relative_polar": "V_j=A_jD_(j-1)^(-1/2)E_j^(-1/2).",
+    "scope_limit": "The full-rank and Moore--Penrose support chain rules are exact, but no natural all-n gap or uniform holonomy/support circuit is supplied.",
+    "status": "prefix-polar-chain-rule-proved-holonomy-and-gaps-open",
+    "theorem_verified": true,
+    "uniform_holonomy_compiler_constructed": false
+  },
+  "theorem_contract": {
+    "constructive_model": "Coherent block access to each relative analysis plus a direct or block-encoded multiplicity-domain holonomy.",
+    "domain": "One fixed G-intertwiner multiplicity block and ordered commuting source-factor involution projectors.",
+    "non_claim": "No typical-source relative gap, uniform holonomy/support circuit, decoder, or end-to-end speedup.",
+    "proved_regime": "Positive full-rank prefixes and changing-support prefixes via Moore--Penrose powers."
+  }
+}
