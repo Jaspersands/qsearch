@@ -12488,6 +12488,57 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             ],
         ),
         ExperimentRecord(
+            id="EXP-COSET-HIDDEN-INVOLUTION-SUPPORT-FILTER-NO-GO",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Exp Coset Hidden Involution Support Filter No Go",
+            status="planned",
+            hypothesis="Exact moments show that the useful support-span signal itself is concentrated at normalized eigenvalue scale Theta(1/M). Generic bounded-error polynomial/QSVT filtering therefore costs Omega(sqrt(M)); structured block rescaling remains open.",
+            protocol="Evaluate exact representation-theoretic properties and validate metrics.",
+            positive_signal="Exact moments show that the useful support-span signal itself is concentrated at normalized eigenvalue scale Theta(1/M). Generic bounded-error polynomial/QSVT filtering therefore costs Omega(sqrt(M)); structured block rescaling remains open.",
+            falsifiers=["A normalization-one average-projector block encoding is not an efficient support measurement.", "The small-gap obstruction is not confined to negligible alternative mass.", "Replacing exact support projection by bounded-error scalar polynomial filtering does not remove the exponential degree.", "No arbitrary-circuit or graph-isomorphism lower bound follows from this compiler-specific obstruction."],
+            metrics=["finite_control_count", "finite_control_failure_count", "exact_moment_theorem_count", "alternative_low_spectrum_mass_theorem_count", "generic_polynomial_filter_no_go_count", "structured_support_compiler_count", "arbitrary_circuit_lower_bound_count", "new_quantum_algorithm_count"],
+            dependencies=[
+                "coset_hidden_involution_support_filter_no_go.py",
+            ],
+            next_actions=[
+                "Run qsearch.py coset-hidden-involution-support-filter-no-go.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-DHS-DCP-CNOT-LINEAR-SPLIT-ENTANGLEMENT-NO-GO",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Exp Dhs Dcp Cnot Linear Split Entanglement No Go",
+            status="planned",
+            hypothesis="Extended the low-bit fiber entanglement no-go from coordinate permutations to every adaptive sub-q^(4/3) CNOT transform in the stated logarithmic regime, with approximate Schmidt rank 2^(q-o(q)) even allowing matrix cancellation.",
+            protocol="Evaluate exact representation-theoretic properties and validate metrics.",
+            positive_signal="Extended the low-bit fiber entanglement no-go from coordinate permutations to every adaptive sub-q^(4/3) CNOT transform in the stated logarithmic regime, with approximate Schmidt rank 2^(q-o(q)) even allowing matrix cancellation.",
+            falsifiers=["A compact label-adaptive CNOT preprocessing cannot expose a polynomial-bond balanced MPS/QTT fiber state.", "Arbitrary offset functions from extra parity features do not increase the inherited factorial-moment bound.", "Absence of affine flats is not used as a surrogate for matrix rank; row/column occupancy controls cancellation directly.", "Dense quadratic linear maps, nonlinear tensorizations, and general circuits remain open."],
+            metrics=["offset_moment_control_count", "linear_split_schmidt_control_count", "finite_control_failure_count", "scaling_record_count", "arbitrary_offset_moment_domination_theorem_count", "compact_cnot_family_approximate_rank_no_go_count", "minimum_schmidt_rank_exponent_fraction", "dense_quadratic_cnot_no_go_count", "nonlinear_tensor_no_go_count", "general_quantum_circuit_lower_bound_count", "polynomial_subset_sum_solver_count", "new_quantum_algorithm_count"],
+            dependencies=[
+                "dcp_cnot_linear_split_entanglement_no_go.py",
+            ],
+            next_actions=[
+                "Run qsearch.py dcp-cnot-linear-split-entanglement-no-go.",
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-DHS-DCP-LINEAR-REPARAMETERIZATION-AFFINE-FLAT-NO-GO",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Exp Dhs Dcp Linear Reparameterization Affine Flat No Go",
+            status="planned",
+            hypothesis="Proved that density-one low-bit fibers contain no affine flat of dimension 8log2(q) or larger with failure 2^-Omega(q log q), uniformly over every adaptive GL(m,2) reparameterization. Any support-contained cancellation-free affine cover is exponential.",
+            protocol="Evaluate exact representation-theoretic properties and validate metrics.",
+            positive_signal="Proved that density-one low-bit fibers contain no affine flat of dimension 8log2(q) or larger with failure 2^-Omega(q log q), uniformly over every adaptive GL(m,2) reparameterization. Any support-contained cancellation-free affine cover is exponential.",
+            falsifiers=["A label-adaptive binary linear transform cannot expose a large affine product component inside a typical low-bit fiber.", "Polynomially many support-contained affine/stabilizer pieces cannot cover the typical fiber without cancellation.", "The theorem does not imply arbitrary linear-split Schmidt rank or stabilizer rank with cancellation.", "Nonlinear tensorizations and general quantum circuits remain open."],
+            metrics=["finite_parity_kernel_control_count", "finite_control_failure_count", "scaling_record_count", "all_gl_large_affine_flat_no_go_theorem_count", "polynomial_cancellation_free_affine_cover_no_go_count", "minimum_affine_cover_log2_lower_bound", "maximum_union_failure_log2_upper_bound", "maximum_planted_target_failure_log2_upper_bound", "arbitrary_linear_mps_no_go_count", "nonlinear_tensor_no_go_count", "general_quantum_circuit_lower_bound_count", "polynomial_subset_sum_solver_count", "new_quantum_algorithm_count"],
+            dependencies=[
+                "dcp_linear_reparameterization_affine_flat_no_go.py",
+            ],
+            next_actions=[
+                "Run qsearch.py dcp-linear-reparameterization-affine-flat-no-go.",
+            ],
+        ),
+        ExperimentRecord(
             id="EXP-CODE-SELF-DUAL-WREATH-EQUAL-COMMUTATOR-AUDIT",
             candidate_id="CODE-COSET-COLLECTIVE",
             title="Equal-pair commutator recoupling audit",

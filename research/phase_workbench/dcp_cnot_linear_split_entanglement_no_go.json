@@ -1,0 +1,265 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "After conditioning on them they only set an inhomogeneous right-hand side; each tuple has no more coefficient solutions than its homogeneous counterpart.",
+      "challenge": "Extra parity features can cancel and increase a fiber moment.",
+      "resolved": true
+    },
+    {
+      "answer": "False when the side has positive excess d. The corrected bound is 2^(dk+1); the constant d shifts log T but does not change the exponential-rank conclusion.",
+      "challenge": "A q+O(1)-variable side has unit factorial moment.",
+      "resolved": true
+    },
+    {
+      "answer": "The union is over every circuit in the declared gate-size class and every target, so no independence from the selection rule is assumed.",
+      "challenge": "The transform may depend arbitrarily on all public labels.",
+      "resolved": true
+    },
+    {
+      "answer": "False. The rank theorem instead controls all row/column occupancies and uses the operator-norm inequality, so matrix cancellation is allowed.",
+      "challenge": "No large affine flat already proves this rank bound.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Dense quadratic-size CNOT networks exceed the current moment/union budget and remain open.",
+      "challenge": "The theorem covers every polynomial linear transform.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "compact_adaptive_cnot_mps_route_alive": false,
+    "dense_quadratic_cnot_transform_route_alive": true,
+    "general_quantum_circuit_route_alive": true,
+    "matrix_cancellation_evades_compact_cnot_bound": false,
+    "nonlinear_tensorization_route_alive": true,
+    "polynomial_subset_sum_solver_constructed": false,
+    "reason": "Growing factorial moments close compact adaptive CNOT reparameterizations even with cancellation, but the circuit count is too large for arbitrary dense GL maps.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-11T17:27:26.897327+00:00",
+  "falsifiers_triggered": [
+    "A compact label-adaptive CNOT preprocessing cannot expose a polynomial-bond balanced MPS/QTT fiber state.",
+    "Arbitrary offset functions from extra parity features do not increase the inherited factorial-moment bound.",
+    "Absence of affine flats is not used as a surrogate for matrix rank; row/column occupancy controls cancellation directly.",
+    "Dense quadratic linear maps, nonlinear tensorizations, and general circuits remain open."
+  ],
+  "headline_metrics": {
+    "arbitrary_offset_moment_domination_theorem_count": 1,
+    "compact_cnot_family_approximate_rank_no_go_count": 1,
+    "dense_quadratic_cnot_no_go_count": 0,
+    "finite_control_failure_count": 0,
+    "general_quantum_circuit_lower_bound_count": 0,
+    "linear_split_schmidt_control_count": 2,
+    "minimum_schmidt_rank_exponent_fraction": 0.562653562649744,
+    "new_quantum_algorithm_count": 0,
+    "nonlinear_tensor_no_go_count": 0,
+    "offset_moment_control_count": 2,
+    "polynomial_subset_sum_solver_count": 0,
+    "scaling_record_count": 4
+  },
+  "moment_controls": [
+    {
+      "domination_residual": 0.0,
+      "factorial_order": 2,
+      "homogeneous_average_factorial_moment": 0.875,
+      "modulus_bits": 3,
+      "offset_average_factorial_moment": 0.875,
+      "offset_id": "quadratic-bit-product",
+      "offset_moment_dominated": true,
+      "source_target_pair_count": 4096,
+      "status": "arbitrary-offset-factorial-moment-dominated"
+    },
+    {
+      "domination_residual": 0.0,
+      "factorial_order": 3,
+      "homogeneous_average_factorial_moment": 0.65625,
+      "modulus_bits": 3,
+      "offset_average_factorial_moment": 0.65625,
+      "offset_id": "nonlinear-residue-table",
+      "offset_moment_dominated": true,
+      "source_target_pair_count": 4096,
+      "status": "arbitrary-offset-factorial-moment-dominated"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-DCP-LINEAR-OFFSET-MOMENT-DOMINATION",
+      "resolved": true,
+      "statement": "Transfer the ordinary growing factorial-moment bound to every affine linear side restriction and arbitrary offset."
+    },
+    {
+      "id": "PO-DCP-COMPACT-CNOT-UNIFORM-SIDE-CAP",
+      "resolved": true,
+      "statement": "Union-bound every source-adaptive compact CNOT transform, its row/column cosets, and all targets."
+    },
+    {
+      "id": "PO-DCP-DENSE-LINEAR-SPLIT-RANK",
+      "resolved": false,
+      "statement": "Control all dense polynomial CNOT transforms, including Theta(q^2)-gate arbitrary GL(m,2) maps."
+    },
+    {
+      "id": "PO-DCP-NONLINEAR-TENSORIZATION",
+      "resolved": false,
+      "statement": "Construct or obstruct efficiently computable nonlinear maps without a balanced transformed-coordinate cut."
+    }
+  ],
+  "scaling_records": [
+    {
+      "affine_row_column_coset_log2_upper_bound": 1099511627779,
+      "averaged_side_factorial_moment_log2_upper_bound": 815,
+      "candidate_circuit_and_cut_log2_upper_bound": 92358976733274.77,
+      "cnot_gate_budget": 1099511627776,
+      "compact_cnot_family_exponential_rank_certified": true,
+      "dense_quadratic_cnot_family_ruled_out": false,
+      "independent_target_failure_log2_upper_bound": -3298534883328.0,
+      "inherited_bad_moment_log2_upper_bound": -456190766702.0439,
+      "inherited_factorial_moment_envelope_certified": true,
+      "maximum_side_register_excess": 2,
+      "modulus_bits": 1099511627776,
+      "planted_target_failure_log2_upper_bound": -2199023255552.0,
+      "register_count": 2199023255556,
+      "register_offset": 4,
+      "requested_schmidt_mass": 0.99,
+      "schmidt_rank_exponent_fraction": 0.562653562649744,
+      "selected_factorial_moment_order": 407,
+      "side_cap_over_modulus_bits": 0.2186732186764857,
+      "side_multiplicity_cap_log2": 240433746618,
+      "simultaneous_schmidt_rank_log2_lower_bound": 618644134542.9856,
+      "status": "compact-adaptive-cnot-family-exponential-schmidt-rank-certified"
+    },
+    {
+      "affine_row_column_coset_log2_upper_bound": 281474976710659,
+      "averaged_side_factorial_moment_log2_upper_bound": 3113,
+      "candidate_circuit_and_cut_log2_upper_bound": 2.8147497671065704e+16,
+      "cnot_gate_budget": 281474976710656,
+      "compact_cnot_family_exponential_rank_certified": true,
+      "dense_quadratic_cnot_family_ruled_out": false,
+      "independent_target_failure_log2_upper_bound": -844424930131968.0,
+      "inherited_bad_moment_log2_upper_bound": -116813065571127.84,
+      "inherited_factorial_moment_envelope_certified": true,
+      "maximum_side_register_excess": 2,
+      "modulus_bits": 281474976710656,
+      "planted_target_failure_log2_upper_bound": -562949953421312.0,
+      "register_count": 562949953421316,
+      "register_offset": 4,
+      "requested_schmidt_mass": 0.99,
+      "schmidt_rank_exponent_fraction": 0.8650385604112962,
+      "selected_factorial_moment_order": 1556,
+      "side_cap_over_modulus_bits": 0.06748071979435721,
+      "side_multiplicity_cap_log2": 18994134032535,
+      "simultaneous_schmidt_rank_log2_lower_bound": 243486708645589.0,
+      "status": "compact-adaptive-cnot-family-exponential-schmidt-rank-certified"
+    },
+    {
+      "affine_row_column_coset_log2_upper_bound": 72057594037927939,
+      "averaged_side_factorial_moment_log2_upper_bound": 11979,
+      "candidate_circuit_and_cut_log2_upper_bound": 8.358680908399641e+18,
+      "cnot_gate_budget": 72057594037927936,
+      "compact_cnot_family_exponential_rank_certified": true,
+      "dense_quadratic_cnot_family_ruled_out": false,
+      "independent_target_failure_log2_upper_bound": -2.161727821137838e+17,
+      "inherited_bad_moment_log2_upper_bound": -2.9905962388111292e+16,
+      "inherited_factorial_moment_envelope_certified": true,
+      "maximum_side_register_excess": 2,
+      "modulus_bits": 72057594037927936,
+      "planted_target_failure_log2_upper_bound": -1.4411518807585587e+17,
+      "register_count": 144115188075855876,
+      "register_offset": 4,
+      "requested_schmidt_mass": 0.99,
+      "schmidt_rank_exponent_fraction": 0.9595925864084154,
+      "selected_factorial_moment_order": 5989,
+      "side_cap_over_modulus_bits": 0.020203706795792337,
+      "side_multiplicity_cap_log2": 1455830502352530,
+      "simultaneous_schmidt_rank_log2_lower_bound": 6.914593303322288e+16,
+      "status": "compact-adaptive-cnot-family-exponential-schmidt-rank-certified"
+    },
+    {
+      "affine_row_column_coset_log2_upper_bound": 18446744073709551619,
+      "averaged_side_factorial_moment_log2_upper_bound": 46341,
+      "candidate_circuit_and_cut_log2_upper_bound": 2.434970217729661e+21,
+      "cnot_gate_budget": 18446744073709551616,
+      "compact_cnot_family_exponential_rank_certified": true,
+      "dense_quadratic_cnot_family_ruled_out": false,
+      "independent_target_failure_log2_upper_bound": -5.5340232221128655e+19,
+      "inherited_bad_moment_log2_upper_bound": -7.656047561730657e+18,
+      "inherited_factorial_moment_envelope_certified": true,
+      "maximum_side_register_excess": 2,
+      "modulus_bits": 18446744073709551616,
+      "planted_target_failure_log2_upper_bound": -3.6893488147419103e+19,
+      "register_count": 36893488147419103236,
+      "register_offset": 4,
+      "requested_schmidt_mass": 0.99,
+      "schmidt_rank_exponent_fraction": 0.9881743634009496,
+      "selected_factorial_moment_order": 23170,
+      "side_cap_over_modulus_bits": 0.005912818299525249,
+      "side_multiplicity_cap_log2": 109072245925688769,
+      "simultaneous_schmidt_rank_log2_lower_bound": 1.8228599581858175e+19,
+      "status": "compact-adaptive-cnot-family-exponential-schmidt-rank-certified"
+    }
+  ],
+  "schmidt_controls": [
+    {
+      "cancellation_aware_rank_bound_verified": true,
+      "cnot_gate_count": 4,
+      "column_count": 8,
+      "deterministic_rank_lower_bound": 3,
+      "exact_schmidt_rank": 6,
+      "fiber_size": 10,
+      "maximum_column_occupancy": 2,
+      "maximum_row_occupancy": 2,
+      "modulus_bits": 3,
+      "rank_for_requested_mass": 4,
+      "register_count": 6,
+      "requested_mass": 0.9,
+      "row_count": 8,
+      "schmidt_mass_residual": 0.0,
+      "selected_target": 0,
+      "status": "linear-split-cancellation-aware-schmidt-bound-verified"
+    },
+    {
+      "cancellation_aware_rank_bound_verified": true,
+      "cnot_gate_count": 5,
+      "column_count": 16,
+      "deterministic_rank_lower_bound": 5,
+      "exact_schmidt_rank": 8,
+      "fiber_size": 20,
+      "maximum_column_occupancy": 2,
+      "maximum_row_occupancy": 2,
+      "modulus_bits": 4,
+      "rank_for_requested_mass": 8,
+      "register_count": 8,
+      "requested_mass": 0.9,
+      "row_count": 16,
+      "schmidt_mass_residual": 0.0,
+      "selected_target": 0,
+      "status": "linear-split-cancellation-aware-schmidt-bound-verified"
+    }
+  ],
+  "status": "sub-q-four-thirds-cnot-linear-tensor-route-closed-dense-and-nonlinear-routes-open",
+  "summary": "Extended the low-bit fiber entanglement no-go from coordinate permutations to every adaptive sub-q^(4/3) CNOT transform in the stated logarithmic regime, with approximate Schmidt rank 2^(q-o(q)) even allowing matrix cancellation.",
+  "theorem": {
+    "admissible_gate_regime": "G=o(q^(4/3)/((log q)^(4/3)h(q))) for some h(q)->infinity.",
+    "affine_restriction_normal_form": "Every affine side restriction is ordinary density-one subset sum in an independent parity-feature basis plus an arbitrary offset g.",
+    "approximate_rank_with_matrix_cancellation_proved": true,
+    "arbitrary_offset_moment_domination_proved": true,
+    "cancellation_aware_schmidt_bound": "||M||^2<=||M||_1||M||_infinity<=T^2, so eta Schmidt mass requires rank at least eta|F|/T^2.",
+    "cnot_family_count": "At most 2^m(G+1)(m+1)[m(m-1)]^G affine CNOT circuits and cut choices.",
+    "compact_cnot_family_exponential_rank_proved": true,
+    "dense_quadratic_cnot_transforms_ruled_out": false,
+    "general_quantum_circuit_lower_bound_proved": false,
+    "nonlinear_tensorization_ruled_out": false,
+    "offset_moment_domination": "For each distinct tuple, an inhomogeneous offset equation has zero solutions or one homogeneous-kernel coset, so its factorial moment is at most the ordinary homogeneous moment.",
+    "planted_target_transfer": "Independent-target failure 2^-3q absorbs the planted likelihood ratio at most 2^q, leaving failure at most 2^-2q.",
+    "polynomial_subset_sum_solver_constructed": false,
+    "simultaneous_side_cap": "For side excess d=O(1), E[(X)_k]<=2^(dk+1). Union over circuits, affine row/column cosets, and targets gives log T=d+O((G log q+q)/k).",
+    "status": "sub-q-four-thirds-cnot-linear-tensor-route-closed-dense-and-nonlinear-routes-open",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "accuracy": "Any fixed requested Schmidt mass eta in (0,1].",
+    "architecture": "A label/target-adaptive invertible binary linear transform implemented by at most G CNOTs, followed by a balanced transformed-coordinate MPS/QTT cut.",
+    "asymptotic_gate_scope": "G=o(q^(4/3)/((log q)^(4/3)h(q))) for h(q)->infinity.",
+    "non_claim": "No bound for dense Theta(q^2) linear circuits, nonlinear maps, unbalanced tensor architectures, or general circuits.",
+    "source": "m=2q+O(1) independent uniform labels modulo 2^q, under independent or planted target law."
+  }
+}

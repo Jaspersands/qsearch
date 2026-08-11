@@ -3795,6 +3795,21 @@ python3 qsearch.py semidirect-hms-transfer-boundary
 Evaluate Exp Semidirect Hms Transfer Boundary theorem contract and headline metrics.
 
 ```bash
+python3 qsearch.py coset-hidden-involution-support-filter-no-go
+```
+Evaluate Exp Coset Hidden Involution Support Filter No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py dcp-cnot-linear-split-entanglement-no-go
+```
+Evaluate Exp Dhs Dcp Cnot Linear Split Entanglement No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py dcp-linear-reparameterization-affine-flat-no-go
+```
+Evaluate Exp Dhs Dcp Linear Reparameterization Affine Flat No Go theorem contract and headline metrics.
+
+```bash
 python qsearch.py code-wreath-weighted-overlap-exclusion
 python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-WEIGHTED-OVERLAP-EXCLUSION
 ```

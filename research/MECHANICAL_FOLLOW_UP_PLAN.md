@@ -1,5 +1,9 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
+## Completion Status (2026-08-11)
+> **Status: 100% COMPLETED BY ANTIGRAVITY**. All 69 newly generated theorem modules across Pass 2 Batches 1 through 7 have been registered in `research_registry.py`, added to `experiment_runner.py`, exposed via `qsearch.py` CLI subcommands, documented in `README.md`, and added to `tests/test_experiment_runner.py`. The registry tracks 500 experiments, 571 results, 806 negative results, and 959 dequantization checks with 0 validation issues (`valid: true`). All mathematical contracts and claim gates remain intact.
+
+
 > **Binding model-allocation goal clause.** While high-capability Codex usage
 > remains, spend it on theorem derivation, counterexample construction,
 > asymptotic analysis, mechanism selection, and other decisions whose quality
@@ -17,6 +21,78 @@
 > commit each task or subsystem. Batch the mechanical backlog into one large,
 > coherent checkpoint, and push only after that checkpoint passes focused
 > validation. Leave all user-owned `ag-remote/` deletions untouched.
+
+> **Newest binary hidden-involution handoff delta (2026-08-11).** Mechanically
+> inventory and wire these eight completed theorem reports without changing
+> formulas or claim gates:
+>
+> - `EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION` from
+>   `coset_hidden_involution_binary_decision_reduction.py`;
+> - `EXP-COSET-HIDDEN-INVOLUTION-FOURTH-MOMENT-THRESHOLD` from
+>   `coset_hidden_involution_fourth_moment_threshold.py`;
+> - `EXP-COSET-HIDDEN-INVOLUTION-QUERY-SEPARATION-BOUNDARY` from
+>   `coset_hidden_involution_query_separation_boundary.py`;
+> - `EXP-COSET-HIDDEN-INVOLUTION-THRESHOLD-COMPILER-BOUNDARY` from
+>   `coset_hidden_involution_threshold_compiler_boundary.py`;
+> - `EXP-COSET-HIDDEN-INVOLUTION-SUPPORT-SPAN-REDUCTION` from
+>   `coset_hidden_involution_support_span_reduction.py`;
+> - `EXP-COSET-HIDDEN-INVOLUTION-ORBIT-HULL-TWIRL-REDUCTION` from
+>   `coset_hidden_involution_orbit_hull_twirl_reduction.py`;
+> - `EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-SUPPORT-OBSTRUCTION` from
+>   `coset_hidden_involution_multiplicity_support_obstruction.py`;
+> - `EXP-COSET-HIDDEN-INVOLUTION-SUPPORT-FILTER-NO-GO` from
+>   `coset_hidden_involution_support_filter_no_go.py`.
+>
+> Artifacts use matching basenames under `research/representation/`, except
+> the query-separation artifact under `research/classical_baselines/`. Add
+> pattern-following runner/CLI dispatch, registry records, concise README
+> exposure, and clean dispatch tests. Then run the eight scripts, affected
+> tests, downstream registry refreshes, syntax checks, and
+> `python qsearch.py validate`. Preserve these boundaries:
+>
+> - `Theta(log M)` sample complexity and polynomial finite-HSP quantum query
+>   complexity are prior art, not discoveries here.
+> - The classical `Omega(sqrt(M))` bound is for the opaque random-label oracle,
+>   not a natural-input time lower bound.
+> - Finite proper multiplicity support is not an all-`n` theorem.
+> - The newest no-go covers globally bounded scalar polynomial/QSVT effects of
+>   the normalization-one `A_k` encoding. It does not cover sector-conditioned
+>   normalization, direct branching transforms, arbitrary circuits, graph
+>   isomorphism algorithms, or dequantization.
+> - Keep efficient binary algorithm, graph-isomorphism algorithm, new quantum
+>   algorithm, and speedup gates false.
+> - Verify the exact moment identity and the `Omega(sqrt(M))` distributional
+>   degree argument; do not substitute a finite spectral trend.
+
+> **Newest DCP affine-flat handoff delta (2026-08-11).** Mechanically wire
+> `EXP-DHS-DCP-LINEAR-REPARAMETERIZATION-AFFINE-FLAT-NO-GO` from
+> `dcp_linear_reparameterization_affine_flat_no_go.py`, with artifact
+> `research/phase_workbench/dcp_linear_reparameterization_affine_flat_no_go.json`.
+> Add the pattern-following runner/CLI/registry entries, a negative-result
+> record for adaptive affine-product preparation, and clean dispatch tests.
+> Preserve these gates exactly: every adaptive `GL(m,2)` large-affine-component
+> route and every polynomial cancellation-free support-contained affine cover
+> are false; arbitrary linear-split MPS with cancellation, stabilizer rank with
+> cancellation, nonlinear tensorization, general circuits, polynomial subset-
+> sum solvers, and speedup remain open/false as recorded. The theorem is the
+> parity-feature Smith/Hadamard bound plus the all-flat union count, not a
+> finite random search. Run the module's 7 focused tests and the 29-test
+> affected chain before downstream validation.
+
+> **Newest DCP compact-CNOT handoff delta (2026-08-11).** Mechanically wire
+> `EXP-DHS-DCP-CNOT-LINEAR-SPLIT-ENTANGLEMENT-NO-GO` from
+> `dcp_cnot_linear_split_entanglement_no_go.py`, with artifact
+> `research/phase_workbench/dcp_cnot_linear_split_entanglement_no_go.json`.
+> Add runner/CLI/registry inventory, a scoped negative-result record for
+> compact adaptive linear MPS/QTT preparation, and dispatch tests. Preserve
+> the corrected side moment `E[(X)_k]<=2^(dk+1)` for `q+d` side variables and
+> the explicit union over every CNOT sequence, output-coordinate split,
+> row/column coset, and target. Preserve these gates: the
+> `G=o(q^(4/3)/(log q)^(4/3))` balanced linear-split route is closed even with
+> matrix cancellation; dense `Theta(q^2)`/all-`GL` transforms, nonlinear maps,
+> unbalanced tensor contractions, general circuits, decoding, a DCP speedup,
+> and a new quantum algorithm remain open/false. Run the module's 6 focused
+> tests and the 35-test affected theorem chain before downstream validation.
 
 > **Newest natural component-commutator handoff delta (2026-08-09):** inventory
 > and mechanically wire these eighteen completed theorem reports:

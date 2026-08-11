@@ -1,0 +1,244 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "The count already unions over every affine flat and hence every label-dependent GL(m,2) choice.",
+      "challenge": "Choose the linear variables after seeing all labels.",
+      "resolved": true
+    },
+    {
+      "answer": "Grouping equal parity types sums disjoint independent uniform residues; every grouped coefficient remains uniform and independent.",
+      "challenge": "Repeated generator columns invalidate coefficient independence.",
+      "resolved": true
+    },
+    {
+      "answer": "The exact likelihood ratio is at most N. The independent-target failure has Omega(q log q) negative exponent, so this costs only an additive q.",
+      "challenge": "Size-biased planted targets concentrate on the exceptional flat event.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Low matrix rank can arise through cancellations or non-affine structure; that stronger theorem remains open.",
+      "challenge": "No large affine flat implies exponential Schmidt rank.",
+      "resolved": true
+    },
+    {
+      "answer": "False without a no-cancellation/support-containment premise. Only cancellation-free affine covers are bounded.",
+      "challenge": "An exponential stabilizer-rank lower bound follows.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "adaptive_gl_large_affine_component_route_alive": false,
+    "arbitrary_linear_reparameterized_mps_route_alive": true,
+    "general_quantum_circuit_route_alive": true,
+    "nonlinear_tensorization_route_alive": true,
+    "planted_target_affine_component_route_alive": false,
+    "polynomial_cancellation_free_affine_cover_route_alive": false,
+    "polynomial_subset_sum_solver_constructed": false,
+    "reason": "Every adaptive linear reparameterization lacks a large affine fiber component, but cancellation-based low rank and genuinely nonlinear/coherent constructions remain unclassified.",
+    "speedup_claim_allowed": false,
+    "stabilizer_rank_with_cancellation_route_alive": true
+  },
+  "created_at": "2026-08-11T17:27:09.271820+00:00",
+  "falsifiers_triggered": [
+    "A label-adaptive binary linear transform cannot expose a large affine product component inside a typical low-bit fiber.",
+    "Polynomially many support-contained affine/stabilizer pieces cannot cover the typical fiber without cancellation.",
+    "The theorem does not imply arbitrary linear-split Schmidt rank or stabilizer rank with cancellation.",
+    "Nonlinear tensorizations and general quantum circuits remain open."
+  ],
+  "finite_controls": [
+    {
+      "column_types": [
+        1,
+        2,
+        3
+      ],
+      "distinct_nonzero_type_count": 3,
+      "evaluation_row_count": 4,
+      "exact_kernel_probability": 0.03125,
+      "exact_modular_kernel_size": 2,
+      "feature_dimension": 2,
+      "kernel_bound_verified": true,
+      "modulus": 4,
+      "rational_evaluation_rank": 3,
+      "smith_hadamard_probability_upper_bound": 0.08118988160479113,
+      "status": "parity-feature-smith-kernel-bound-verified"
+    },
+    {
+      "column_types": [
+        1,
+        2,
+        4
+      ],
+      "distinct_nonzero_type_count": 3,
+      "evaluation_row_count": 8,
+      "exact_kernel_probability": 0.001953125,
+      "exact_modular_kernel_size": 1,
+      "feature_dimension": 3,
+      "kernel_bound_verified": true,
+      "modulus": 8,
+      "rational_evaluation_rank": 3,
+      "smith_hadamard_probability_upper_bound": 0.01014873520059889,
+      "status": "parity-feature-smith-kernel-bound-verified"
+    },
+    {
+      "column_types": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "distinct_nonzero_type_count": 4,
+      "evaluation_row_count": 8,
+      "exact_kernel_probability": 0.00048828125,
+      "exact_modular_kernel_size": 2,
+      "feature_dimension": 3,
+      "kernel_bound_verified": true,
+      "modulus": 8,
+      "rational_evaluation_rank": 4,
+      "smith_hadamard_probability_upper_bound": 0.00390625,
+      "status": "parity-feature-smith-kernel-bound-verified"
+    }
+  ],
+  "headline_metrics": {
+    "all_gl_large_affine_flat_no_go_theorem_count": 1,
+    "arbitrary_linear_mps_no_go_count": 0,
+    "finite_control_failure_count": 0,
+    "finite_parity_kernel_control_count": 3,
+    "general_quantum_circuit_lower_bound_count": 0,
+    "maximum_planted_target_failure_log2_upper_bound": -2313.976781517238,
+    "maximum_union_failure_log2_upper_bound": -2377.976781517238,
+    "minimum_affine_cover_log2_lower_bound": 20.0,
+    "new_quantum_algorithm_count": 0,
+    "nonlinear_tensor_no_go_count": 0,
+    "polynomial_cancellation_free_affine_cover_no_go_count": 1,
+    "polynomial_subset_sum_solver_count": 0,
+    "scaling_record_count": 4
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-DCP-AFFINE-FLAT-SMITH-KERNEL",
+      "resolved": true,
+      "statement": "Bound the modular constant-function probability for every fixed affine flat by its distinct parity features."
+    },
+    {
+      "id": "PO-DCP-AFFINE-FLAT-UNIFORM-GL-UNION",
+      "resolved": true,
+      "statement": "Union-bound all affine flats selected after observing the instance, including every GL(m,2) coordinate split."
+    },
+    {
+      "id": "PO-DCP-AFFINE-FLAT-PLANTED-TARGET-TRANSFER",
+      "resolved": true,
+      "statement": "Transfer the all-flat event from an independent target to the planted witness target law."
+    },
+    {
+      "id": "PO-DCP-LINEAR-SPLIT-SCHMIDT-RANK",
+      "resolved": false,
+      "statement": "Upgrade absence of large contained flats to approximate Schmidt-rank bounds across every balanced linear split, allowing matrix cancellation."
+    },
+    {
+      "id": "PO-DCP-NONLINEAR-TENSORIZATION",
+      "resolved": false,
+      "statement": "Classify efficiently computable nonlinear coordinate maps that might expose low-bond fiber structure."
+    }
+  ],
+  "scaling_records": [
+    {
+      "arbitrary_linear_tensor_rank_excluded": false,
+      "cancellation_free_affine_cover_log2_lower_bound": 20.0,
+      "every_large_affine_flat_excluded": true,
+      "excluded_affine_dimension": 48,
+      "full_fiber_lower_tail_log2_upper_bound": -66.0,
+      "full_fiber_mean_log2": 68.0,
+      "maximizing_distinct_feature_count": 48,
+      "maximizing_flat_dimension": 48,
+      "maximum_union_term_log2": -2377.9768557645293,
+      "modulus_bits": 64,
+      "planted_target_failure_log2_upper_bound": -2313.976781517238,
+      "polynomial_affine_cover_excluded": true,
+      "register_count": 132,
+      "register_offset": 4,
+      "status": "all-large-affine-flats-and-polynomial-cancellation-free-covers-excluded",
+      "union_failure_probability_log2_upper_bound": -2377.976781517238
+    },
+    {
+      "arbitrary_linear_tensor_rank_excluded": false,
+      "cancellation_free_affine_cover_log2_lower_bound": 76.0,
+      "every_large_affine_flat_excluded": true,
+      "excluded_affine_dimension": 56,
+      "full_fiber_lower_tail_log2_upper_bound": -130.0,
+      "full_fiber_mean_log2": 132.0,
+      "maximizing_distinct_feature_count": 56,
+      "maximizing_flat_dimension": 56,
+      "maximum_union_term_log2": -5659.703267390903,
+      "modulus_bits": 128,
+      "planted_target_failure_log2_upper_bound": -5531.703267390903,
+      "polynomial_affine_cover_excluded": true,
+      "register_count": 260,
+      "register_offset": 4,
+      "status": "all-large-affine-flats-and-polynomial-cancellation-free-covers-excluded",
+      "union_failure_probability_log2_upper_bound": -5659.703267390903
+    },
+    {
+      "arbitrary_linear_tensor_rank_excluded": false,
+      "cancellation_free_affine_cover_log2_lower_bound": 196.0,
+      "every_large_affine_flat_excluded": true,
+      "excluded_affine_dimension": 64,
+      "full_fiber_lower_tail_log2_upper_bound": -258.0,
+      "full_fiber_mean_log2": 260.0,
+      "maximizing_distinct_feature_count": 64,
+      "maximizing_flat_dimension": 64,
+      "maximum_union_term_log2": -13182.661435594378,
+      "modulus_bits": 256,
+      "planted_target_failure_log2_upper_bound": -12926.661435594378,
+      "polynomial_affine_cover_excluded": true,
+      "register_count": 516,
+      "register_offset": 4,
+      "status": "all-large-affine-flats-and-polynomial-cancellation-free-covers-excluded",
+      "union_failure_probability_log2_upper_bound": -13182.661435594378
+    },
+    {
+      "arbitrary_linear_tensor_rank_excluded": false,
+      "cancellation_free_affine_cover_log2_lower_bound": 444.0,
+      "every_large_affine_flat_excluded": true,
+      "excluded_affine_dimension": 72,
+      "full_fiber_lower_tail_log2_upper_bound": -514.0,
+      "full_fiber_mean_log2": 516.0,
+      "maximizing_distinct_feature_count": 72,
+      "maximizing_flat_dimension": 72,
+      "maximum_union_term_log2": -30177.724074095247,
+      "modulus_bits": 512,
+      "planted_target_failure_log2_upper_bound": -29665.724074095247,
+      "polynomial_affine_cover_excluded": true,
+      "register_count": 1028,
+      "register_offset": 4,
+      "status": "all-large-affine-flats-and-polynomial-cancellation-free-covers-excluded",
+      "union_failure_probability_log2_upper_bound": -30177.724074095247
+    }
+  ],
+  "status": "adaptive-linear-affine-product-route-closed-cancellation-and-nonlinear-routes-open",
+  "summary": "Proved that density-one low-bit fibers contain no affine flat of dimension 8log2(q) or larger with failure 2^-Omega(q log q), uniformly over every adaptive GL(m,2) reparameterization. Any support-contained cancellation-free affine cover is exponential.",
+  "theorem": {
+    "affine_flat_count": "At most 2^(m-r) binom(2^r-1,t)(t+1)^m/|GL(r,2)| affine flats have t selected nonzero column types.",
+    "arbitrary_linear_reparameterized_mps_ruled_out": false,
+    "asymptotic_union_bound": "For m=2q+O(1) and r>=8log2(q), summing the fixed-flat bound is 2^-Omega(q log q).",
+    "cancellation_free_polynomial_affine_cover_possible": false,
+    "cover_consequence": "Together with full-fiber lower-tail concentration, every cover by support-contained affine flats needs 2^(q-O(log q)) pieces.",
+    "every_gl_reparameterization_large_flat_excluded": true,
+    "feature_independence": "Distinct nonzero parity functions are rationally independent by their Walsh-character expansion.",
+    "fixed_flat_probability": "For t feature types, Smith normal form and one Hadamard-bounded nonzero minor give probability at most t^(t/2)/N^(t+1).",
+    "general_quantum_circuit_lower_bound_proved": false,
+    "nonlinear_tensorization_ruled_out": false,
+    "parity_feature_normal_form": "On an affine r-flat, group equal nonzero generator-column types to obtain C+sum_g B_g<g,y>_2 with independent uniform B_g.",
+    "planted_target_large_flat_excluded": true,
+    "planted_target_transfer": "The planted-target likelihood ratio is N*C_s/2^m<=N, so adding q to the independent-target failure exponent preserves 2^-Omega(q log q).",
+    "polynomial_subset_sum_solver_constructed": false,
+    "status": "adaptive-linear-affine-product-route-closed-cancellation-and-nonlinear-routes-open",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "excluded_architecture": "One large affine product component, or a polynomial-size cancellation-free cover by affine/stabilizer supports contained in the exact low-bit fiber.",
+    "non_claim": "No general Schmidt-rank, stabilizer-rank-with-cancellation, nonlinear tensor-network, circuit, or query lower bound.",
+    "source": "Independent uniform density-one modular subset-sum labels and either an independent uniform target or a planted size-biased target, with N=2^q and m=2q+O(1).",
+    "transformation": "Any invertible F_2-linear or affine reparameterization chosen after seeing the public labels and target."
+  }
+}

@@ -721,6 +721,9 @@ from self_dual_wreath_separator_defect_frontier import write_separator_defect_fr
 from self_dual_wreath_systematic_stopping_core_no_go import write_systematic_stopping_core_no_go_report
 from self_dual_wreath_translated_parity_commutator_no_go import write_translated_parity_commutator_no_go_report
 from semidirect_hms_transfer_boundary import write_semidirect_hms_transfer_boundary
+from coset_hidden_involution_support_filter_no_go import write_support_filter_no_go_report
+from dcp_cnot_linear_split_entanglement_no_go import write_cnot_linear_split_entanglement_report
+from dcp_linear_reparameterization_affine_flat_no_go import write_linear_reparameterization_affine_flat_report
 from blocker_taxonomy import write_blocker_taxonomy
 from affine_geometry_code_search import AffineGeometrySearchSpec, write_affine_geometry_code_search
 from bch_code_search import BCHSearchSpec, write_bch_code_search
@@ -12233,6 +12236,27 @@ def command_semidirect_hms_transfer_boundary(args: argparse.Namespace) -> int:
     print(f"Registry valid: {validate_registry()['valid']}")
     return 0
 
+def command_coset_hidden_involution_support_filter_no_go(args: argparse.Namespace) -> int:
+    report = write_support_filter_no_go_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_dcp_cnot_linear_split_entanglement_no_go(args: argparse.Namespace) -> int:
+    report = write_cnot_linear_split_entanglement_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_dcp_linear_reparameterization_affine_flat_no_go(args: argparse.Namespace) -> int:
+    report = write_linear_reparameterization_affine_flat_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
 def command_coset_strong_fourier_information(
     args: argparse.Namespace,
 ) -> int:
@@ -20752,6 +20776,24 @@ def build_parser() -> argparse.ArgumentParser:
         help="Exp Semidirect Hms Transfer Boundary",
     )
     semidirect_hms_transfer_boundary.set_defaults(func=command_semidirect_hms_transfer_boundary)
+
+    coset_hidden_involution_support_filter_no_go = subparsers.add_parser(
+        "coset-hidden-involution-support-filter-no-go",
+        help="Exp Coset Hidden Involution Support Filter No Go",
+    )
+    coset_hidden_involution_support_filter_no_go.set_defaults(func=command_coset_hidden_involution_support_filter_no_go)
+
+    dcp_cnot_linear_split_entanglement_no_go = subparsers.add_parser(
+        "dcp-cnot-linear-split-entanglement-no-go",
+        help="Exp Dhs Dcp Cnot Linear Split Entanglement No Go",
+    )
+    dcp_cnot_linear_split_entanglement_no_go.set_defaults(func=command_dcp_cnot_linear_split_entanglement_no_go)
+
+    dcp_linear_reparameterization_affine_flat_no_go = subparsers.add_parser(
+        "dcp-linear-reparameterization-affine-flat-no-go",
+        help="Exp Dhs Dcp Linear Reparameterization Affine Flat No Go",
+    )
+    dcp_linear_reparameterization_affine_flat_no_go.set_defaults(func=command_dcp_linear_reparameterization_affine_flat_no_go)
 
     coset_strong_fourier_information = subparsers.add_parser(
         "coset-strong-fourier-information",

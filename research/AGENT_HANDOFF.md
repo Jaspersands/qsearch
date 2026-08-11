@@ -1,6 +1,19 @@
 # Research Agent Handoff
 
-Last updated: 2026-08-09
+Last updated: 2026-08-11
+
+## Antigravity Mechanical Wiring Completion Note (2026-08-11)
+
+- **Mechanical Wiring Status**: **100% COMPLETE**. All **69 newly generated theorem modules** (Pass 2 Batches 1–7) across `coset_*`, `dcp_*`, `diagram_*`, `self_dual_wreath_*`, and `semidirect_*` families have been fully wired into:
+  - `research_registry.py` (all 69 `ExperimentRecord` blocks registered)
+  - `experiment_runner.py` (imports, runner dispatchers, priority maps, and supported experiment sets)
+  - `qsearch.py` (CLI subparser commands and execution handlers)
+  - `README.md` (CLI command documentation)
+  - `tests/test_experiment_runner.py` (full unit test dispatch coverage)
+- **Repository Milestones**: The research registry now tracks **500 registered experiments**, **571 experiment results**, **806 negative result records**, and **959 dequantization checks**.
+- **Validation**: Full workspace validation (`python3 qsearch.py dequantize && python3 qsearch.py validate`), `python3 -m compileall -q .`, `node --check site/progress.js`, and `git diff --check` all passed cleanly with **0 issues (`valid: true`)**.
+- **Claim Gates & Integrity**: All mathematical constants, formulas, falsifiers, negative result claims, and `speedup_claim_allowed=False` gates remain 100% intact.
+
 
 ## Objective And Operating Policy
 
@@ -42,6 +55,141 @@ Codex must record the current theorem, exact assumptions, known falsifiers,
 unresolved proof obligations, next high-value derivations, and concrete
 success/failure checks here. Running out of Codex usage is a model handoff, not
 the end of the repository's research goal.
+
+## Newest High-Reasoning Frontier: Binary Hidden Involutions
+
+The newest pass separates information-theoretic binary detection from hidden-
+element identification for a conjugacy class `C` of `M` nonidentity
+involutions. No new algorithm or speedup has been found. The completed theorem
+chain is:
+
+- `coset_hidden_involution_binary_decision_reduction.py`: the centered mixed
+  alternatives are Hilbert--Schmidt orthogonal and
+  `chi^2(rho_C^k || I/d)=(2^k-1)/M`. One-copy weak Fourier labels and the
+  two-copy `(lambda,mu;nu)` coupling label are exactly Helstrom-optimal in
+  their stated regimes. Hayashi--Kawachi--Kobayashi already imply the
+  `Theta(log M)` sample scale, so it is not novel.
+- `coset_hidden_involution_fourth_moment_threshold.py`: an exact fourth-moment
+  identity in `(M,c,T,E)` gives a constant trace-distance lower bound at
+  `k=ceil(log2 M)`. This is an explicit certificate, not a new sample theorem.
+- `coset_hidden_involution_query_separation_boundary.py`: opaque-label
+  classical access needs `Omega(sqrt(M))` queries by a collision-transcript
+  bound, while standard coset states give an unbounded-processing quantum
+  upper bound `O(log M)`. Do not claim a matching arbitrary-quantum lower
+  bound. Ettinger--Hoyer--Knill already give polynomial finite-HSP queries.
+- `coset_hidden_involution_threshold_compiler_boundary.py`: the natural
+  normalization-one average-projector encoding exists, but generic scalar
+  thresholding at scale `2^-k` has exponential degree. Its central class-sum
+  dilation is exact, while measuring only the dilation label is suboptimal.
+- `coset_hidden_involution_support_span_reduction.py`: the Hayashi support test
+  is `T=supp(A_k)`, accepts every alternative, and has null acceptance at most
+  `M/2^k`. Its polar/range synthesis remains computationally unimplemented.
+- `coset_hidden_involution_orbit_hull_twirl_reduction.py`: Schur twirling gives
+  `A_k=direct_sum_nu I_(V_nu)/d_nu tensor Q_nu` and
+  `T=direct_sum_nu I_(V_nu) tensor supp(Q_nu)`. Binary detection removes the
+  carrier-orientation output; multiplicity support is the missing object.
+- `coset_hidden_involution_multiplicity_support_obstruction.py`: diagonal group
+  and stabilizer actions are identity on global multiplicity, so they cannot
+  implement `T` when a `supp(Q_nu)` is proper nonzero. Exact `S_3/S_4`
+  controls verify proper support; no all-`n` proper-support theorem is claimed.
+- `coset_hidden_involution_support_filter_no_go.py`: the generic support-filter
+  obstruction is distributional, not a negligible hard edge. Exactly,
+  `Tr(A_k)/d=2^-k`,
+  `Tr(A_k^2)/d=4^-k[1+(2^k-1)/M]`, and the alternative mean eigenvalue is
+  `mu=2^-k+(1-2^-k)/M`. At `k=ceil(log2(4M))`, at least `3/4` of alternative
+  mass lies below `4mu<=5/M`. Any globally `[0,1]`-bounded polynomial effect
+  with null acceptance at most `1/3` and alternative acceptance at least
+  `2/3` has degree at least `1/sqrt(72mu)=Omega(sqrt(M))`. This refutes generic
+  normalization-one QSVT filtering, not arbitrary circuits.
+
+The latest affected chain passed **52 tests** in 6.89 seconds. The newest
+support-filter report contributes **8 focused passing tests** and a live
+artifact. Artifacts use matching basenames under `research/representation/`,
+except the query-boundary artifact under `research/classical_baselines/`.
+
+**Current high-judgment target.** The surviving binary route is a structured
+fused transform that deflates exceptional large-eigenvalue sectors and
+directly rescales or projects naturally occupied multiplicity blocks without
+paying the raw `Theta(1/M)` frame scale. Require both constant retained natural
+source mass and coherent polynomial normalization/support access. Existing
+standalone whitening results already impose an `exp(Omega(sqrt(n)))` burden;
+renaming the inverse as a branching transform is not progress. The decisive
+falsifier is that every proposed deflation still leaves constant alternative
+mass at exponentially small normalized singular values. Any survivor must
+also pass a classical query-limited comparison.
+
+## DCP Adaptive-Linear Affine-Flat Boundary
+
+`dcp_linear_reparameterization_affine_flat_no_go.py` closes one concrete
+non-coordinate escape for density-one low-bit subset-sum fibers. Let
+`N=2^q`, `m=2q+O(1)`, and
+`F_(a,s)={x in F_2^m: sum_i a_i x_i=s mod N}`. For an affine `r`-flat,
+group the generator matrix's repeated nonzero columns into `t` distinct parity
+features. Their aggregate coefficients remain independent uniform residues,
+and the parity-evaluation matrix has rational rank `t`. Smith normal form plus
+Hadamard gives fixed-flat probability at most `t^(t/2)/N^(t+1)`. Counting all
+generator matrices modulo `GL(r,2)`, all affine cosets, and all `t`, then
+union-bounding proves that no affine flat of dimension at least
+`8 ceil(log2 q)` is contained in the fiber except with probability
+`2^-Omega(q log q)`.
+
+The full fiber has `2^(q+O(1))` points with overwhelming probability, so every
+support-contained cancellation-free affine/stabilizer cover needs
+`2^(q-O(log q))` pieces. The union is already over every affine flat, so the
+transform may be chosen after seeing all labels and the target. Three exact
+modular-kernel controls and four scaling records pass; the affected
+affine-flat/adaptive-layout/fiber-moment chain passed **29 tests** in 11.71
+seconds. The live artifact is
+`research/phase_workbench/dcp_linear_reparameterization_affine_flat_no_go.json`.
+
+Do not broaden this result. It does **not** prove high Schmidt rank across all
+linear splits, stabilizer rank when amplitudes may cancel, a nonlinear-
+tensorization no-go, or a general circuit lower bound. The next hard target is
+an approximate linear-split Schmidt bound that permits matrix cancellation, or
+a constructive efficiently computable nonlinear coordinate map. Merely finding
+another affine patch is closed.
+
+### Compact CNOT Linear-Split Entanglement Boundary
+
+`dcp_cnot_linear_split_entanglement_no_go.py` now supplies the missing
+cancellation-aware extension for compact binary linear preprocessing. On any
+row or column affine restriction, grouping equal parity features and choosing
+an independent feature basis gives
+
+`h(z)=sum_i b_i z_i+g(z) mod 2^q`,
+
+with independent uniform `b_i` after conditioning on the arbitrary offset
+function `g`. For each ordered distinct tuple, the equations over `(b,t)` are
+an inhomogeneous linear system with the same homogeneous kernel as ordinary
+subset sum. It is therefore either empty or a kernel coset, so the ordinary
+growing factorial-moment bound dominates it term by term after target
+averaging. For a side with `q+d` variables the corrected envelope is
+`E[(X)_k] <= 2^(dk+1)`, not the unit-density shorthand `<=2` when `d>0`.
+
+Unioning over every at-most-`G` CNOT sequence, every output-coordinate
+bipartition, every row/column coset, and every target yields
+`log_2 T=d+O((G log q+q)/k)`. The indicator amplitude matrix then obeys
+`||M||^2 <= ||M||_1||M||_infinity <= T^2`, so retaining fixed Schmidt mass
+`eta` needs rank at least `eta|F|/T^2`. Choosing an admissible
+`k=o((q/log q)^(1/3))` closes every
+`G=o(q^(4/3)/(log q)^(4/3))` family asymptotically, including matrix
+cancellation and label/target-adaptive selection. Independent-target failure
+`2^-3q` absorbs the planted likelihood ratio `<=2^q`.
+
+The live artifact is
+`research/phase_workbench/dcp_cnot_linear_split_entanglement_no_go.json`.
+Its two exact offset controls, two exact Schmidt controls, and four asymptotic
+records have zero failures; the focused/adjacent theorem chain passed **35
+tests** in 9.30 seconds. The minimum instantiated Schmidt-rank exponent was
+`0.56265` for the conservative `G=q`, `k=(q/log q)^(1/4)` schedule.
+
+Do not broaden this theorem. Dense `Theta(q^2)` CNOT/`GL(m,2)` transforms,
+nonlinear coordinate maps, unbalanced tensor-network contractions, general
+circuits, and polynomial subset-sum decoding remain open. This is a
+state-preparation/tensor-factorization obstruction, not a DCP time lower bound
+or an algorithm. The next hard DCP question is whether dense all-`GL` splits
+admit an explicit low-rank counterexample or a stronger uniform max-load/rank
+theorem that avoids a `2^Theta(q^2)` family union bound.
 
 ## Authoritative Current State
 

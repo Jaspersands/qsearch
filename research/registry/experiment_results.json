@@ -10488,10 +10488,145 @@
   },
   {
     "artifacts": {
-      "coset_hidden_involution_support_span_reduction": "research/representation/coset_hidden_involution_support_span_reduction.json"
+      "coset_hidden_involution_binary_decision_reduction": "/private/var/folders/y_/k55rjs0x7nb045dsgq61qw000000gn/T/pytest-of-jaspersands/pytest-120/test_report_preserves_threshol0/binary.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-08-11T14:54:10.036692+00:00",
+    "created_at": "2026-08-11T16:53:08.413952+00:00",
+    "experiment_id": "EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION",
+    "falsifiers_triggered": [
+      "Constant-copy invariant measurements cannot retain constant fixed-point-free decision advantage.",
+      "Pairwise overlap decay alone does not prove threshold distinguishability.",
+      "Zero individual-label information does not imply zero binary class-detection information.",
+      "Two-copy target-label optimality is not a scalable hidden-involution algorithm."
+    ],
+    "id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-BINARY-DECISION-REDUCTION-LATEST",
+    "metrics": {
+      "exact_chi_square_control_count": 2,
+      "finite_control_count": 2,
+      "finite_validation_failure_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "one_copy_helstrom_label_control_count": 1,
+      "scalable_block_sign_compiler_count": 0,
+      "scaling_record_count": 2,
+      "strict_entangled_target_gain_control_count": 1,
+      "threshold_trace_distance_lower_bound_count": 0,
+      "two_copy_helstrom_target_control_count": 1
+    },
+    "status": "binary-decision-copy-threshold-and-two-copy-normal-form-proved",
+    "summary": "Re-derived the published logarithmic sample threshold with an exact class-mixture chi-square identity and added exact one- and two-copy Helstrom normal forms. The new value is compiler diagnostics, not a new sample-complexity result."
+  },
+  {
+    "artifacts": {
+      "coset_hidden_involution_fourth_moment_threshold": "/private/var/folders/y_/k55rjs0x7nb045dsgq61qw000000gn/T/pytest-of-jaspersands/pytest-120/test_report_promotes_informati0/fourth.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-11T16:53:11.713630+00:00",
+    "experiment_id": "EXP-COSET-HIDDEN-INVOLUTION-FOURTH-MOMENT-THRESHOLD",
+    "falsifiers_triggered": [
+      "The threshold chi-square signal cannot be dismissed as an exponentially rare likelihood spike.",
+      "Constant-copy evidence remains invalid even though logarithmic-copy information is sufficient.",
+      "Information-theoretic Helstrom existence does not certify an efficient measurement or speedup."
+    ],
+    "id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-FOURTH-MOMENT-THRESHOLD-LATEST",
+    "metrics": {
+      "dense_matrix_control_count": 2,
+      "exact_relation_formula_control_count": 2,
+      "finite_control_count": 2,
+      "finite_validation_failure_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "polynomial_block_sign_compiler_count": 0,
+      "scaling_record_count": 2,
+      "threshold_information_sufficiency_theorem_count": 1,
+      "universal_fourth_moment_bound": 55.0,
+      "universal_trace_distance_lower_bound": 0.02383656473113981
+    },
+    "status": "theta-log-class-information-threshold-proved-compiler-open",
+    "summary": "Re-derived the published Theta(log |C|) decision sample complexity through an explicit exact fourth-moment identity. The identity rules out rare-spike collapse and sharpens compiler diagnostics, but is not a new sample-complexity theorem."
+  },
+  {
+    "artifacts": {
+      "coset_hidden_involution_multiplicity_support_obstruction": "/private/var/folders/y_/k55rjs0x7nb045dsgq61qw000000gn/T/pytest-of-jaspersands/pytest-120/test_report_requires_commutant0/multiplicity.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-11T16:53:14.636031+00:00",
+    "experiment_id": "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-SUPPORT-OBSTRUCTION",
+    "falsifiers_triggered": [
+      "Diagonal symmetric-group irrep labels can carry zero binary signal despite constant full distinguishability.",
+      "A stabilizer-subgroup QFT acting through the same representation cannot resolve global multiplicity support.",
+      "Finite proper support is not an asymptotic lower bound against commutant-side algorithms."
+    ],
+    "id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-SUPPORT-OBSTRUCTION-LATEST",
+    "metrics": {
+      "commutant_support_compiler_count": 0,
+      "finite_control_count": 2,
+      "finite_control_failure_count": 0,
+      "maximum_irrep_label_signal_fraction": 0.0,
+      "new_quantum_algorithm_count": 0,
+      "proper_support_sector_count": 4,
+      "scalable_proper_support_theorem_count": 0,
+      "zero_irrep_signal_control_count": 2
+    },
+    "status": "carrier-and-subgroup-label-only-support-route-refuted-finitely",
+    "summary": "Proved the carrier-algebra obstruction and verified proper multiplicity support in every finite threshold sector tested. Ordinary group or hyperoctahedral isotypic labels cannot implement the binary support; a commutant/recoupling primitive is mandatory."
+  },
+  {
+    "artifacts": {
+      "coset_hidden_involution_orbit_hull_twirl_reduction": "/private/var/folders/y_/k55rjs0x7nb045dsgq61qw000000gn/T/pytest-of-jaspersands/pytest-120/test_report_eliminates_carrier0/orbit.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-11T16:53:12.282378+00:00",
+    "experiment_id": "EXP-COSET-HIDDEN-INVOLUTION-ORBIT-HULL-TWIRL-REDUCTION",
+    "falsifiers_triggered": [
+      "Binary support projection does not require an individual hidden-involution output or carrier orientation.",
+      "Irrep-label access alone does not implement the multiplicity support.",
+      "Stabilizer symmetry is a reduction, not a compiled measurement."
+    ],
+    "id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-ORBIT-HULL-TWIRL-REDUCTION-LATEST",
+    "metrics": {
+      "carrier_orientation_obligation_eliminated_count": 2,
+      "finite_control_count": 2,
+      "finite_control_failure_count": 0,
+      "multiplicity_support_projector_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "orbit_hull_identity_control_count": 2,
+      "scaling_record_count": 2
+    },
+    "status": "binary-support-reduced-to-canonical-multiplicity-support",
+    "summary": "Reduced the published hidden-involution support-span measurement to canonical multiplicity-support projectors under diagonal conjugation. Carrier orientation is eliminated; the hyperoctahedral subduction support is now the exact computational bottleneck."
+  },
+  {
+    "artifacts": {
+      "coset_hidden_involution_support_filter_no_go": "research/representation/coset_hidden_involution_support_filter_no_go.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-11T17:27:04.587241+00:00",
+    "experiment_id": "EXP-COSET-HIDDEN-INVOLUTION-SUPPORT-FILTER-NO-GO",
+    "falsifiers_triggered": [
+      "A normalization-one average-projector block encoding is not an efficient support measurement.",
+      "The small-gap obstruction is not confined to negligible alternative mass.",
+      "Replacing exact support projection by bounded-error scalar polynomial filtering does not remove the exponential degree.",
+      "No arbitrary-circuit or graph-isomorphism lower bound follows from this compiler-specific obstruction."
+    ],
+    "id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-SUPPORT-FILTER-NO-GO-LATEST",
+    "metrics": {
+      "alternative_low_spectrum_mass_theorem_count": 1,
+      "arbitrary_circuit_lower_bound_count": 0,
+      "exact_moment_theorem_count": 1,
+      "finite_control_count": 4,
+      "finite_control_failure_count": 0,
+      "generic_polynomial_filter_no_go_count": 1,
+      "new_quantum_algorithm_count": 0,
+      "structured_support_compiler_count": 0
+    },
+    "status": "generic-support-spectral-filter-refuted-structured-block-rescaling-open",
+    "summary": "Exact moments show that the useful support-span signal itself is concentrated at normalized eigenvalue scale Theta(1/M). Generic bounded-error polynomial/QSVT filtering therefore costs Omega(sqrt(M)); structured block rescaling remains open."
+  },
+  {
+    "artifacts": {
+      "coset_hidden_involution_support_span_reduction": "/private/var/folders/y_/k55rjs0x7nb045dsgq61qw000000gn/T/pytest-of-jaspersands/pytest-120/test_report_recovers_prior_art0/support.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-11T16:53:12.089193+00:00",
     "experiment_id": "EXP-COSET-HIDDEN-INVOLUTION-SUPPORT-SPAN-REDUCTION",
     "falsifiers_triggered": [
       "Exact shifted-likelihood thresholding is not the only binary measurement route.",
@@ -10500,18 +10635,44 @@
     ],
     "id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-SUPPORT-SPAN-REDUCTION-LATEST",
     "metrics": {
-      "finite_control_count": 4,
+      "finite_control_count": 2,
       "finite_control_failure_count": 0,
       "inverse_polynomial_frame_gap_theorem_count": 0,
       "new_quantum_algorithm_count": 0,
       "new_sample_complexity_theorem_count": 0,
-      "perfect_completeness_control_count": 4,
+      "perfect_completeness_control_count": 2,
       "range_projector_compiler_count": 0,
-      "scaling_record_count": 4,
-      "support_test_helstrom_optimal_control_count": 4
+      "scaling_record_count": 2,
+      "support_test_helstrom_optimal_control_count": 2
     },
     "status": "published-support-span-test-reduced-to-range-polar-compiler-open",
     "summary": "Recovered the published support-span triviality test and reduced its implementation to the range polar of a controlled-projector synthesis map. This is a better compiler target than exact Helstrom sign, but no polynomial range projector is known."
+  },
+  {
+    "artifacts": {
+      "coset_hidden_involution_threshold_compiler_boundary": "/private/var/folders/y_/k55rjs0x7nb045dsgq61qw000000gn/T/pytest-of-jaspersands/pytest-120/test_report_keeps_structured_d0/compiler.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-11T16:53:11.919208+00:00",
+    "experiment_id": "EXP-COSET-HIDDEN-INVOLUTION-THRESHOLD-COMPILER-BOUNDARY",
+    "falsifiers_triggered": [
+      "A normalization-one LCU does not remove the exponentially small likelihood threshold.",
+      "Measuring central dilation eigenvalues does not recover the Helstrom test after compression.",
+      "The generic polynomial lower bound is not an arbitrary-circuit lower bound."
+    ],
+    "id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-THRESHOLD-COMPILER-BOUNDARY-LATEST",
+    "metrics": {
+      "actual_family_circuit_lower_bound_count": 0,
+      "finite_control_count": 2,
+      "finite_control_failure_count": 0,
+      "generic_exponential_degree_record_count": 2,
+      "new_quantum_algorithm_count": 0,
+      "scaling_record_count": 2,
+      "strict_central_measurement_suboptimality_control_count": 2,
+      "structured_threshold_sign_compiler_count": 0
+    },
+    "status": "generic-threshold-compilers-blocked-structured-sign-route-open",
+    "summary": "Formalized the threshold likelihood block encoding, proved an exponential generic polynomial-degree boundary, and showed that the obvious central-dilation label measurement is strictly suboptimal. Only a structured compressed-sign compiler remains viable."
   },
   {
     "artifacts": {
@@ -13872,6 +14033,37 @@
   },
   {
     "artifacts": {
+      "dcp_adaptive_layout_uniform_entanglement_no_go": "/private/var/folders/y_/k55rjs0x7nb045dsgq61qw000000gn/T/pytest-of-jaspersands/pytest-128/test_report_closes_adaptive_co0/report.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-11T17:27:29.733463+00:00",
+    "experiment_id": "EXP-DHS-DCP-ADAPTIVE-LAYOUT-UNIFORM-ENTANGLEMENT-NO-GO",
+    "falsifiers_triggered": [
+      "Selecting a coordinate ordering after seeing all labels does not evade the low-bit fiber Schmidt-rank obstruction.",
+      "No inverse-polynomial easy-source subset supports a balanced polynomial-bond coordinate MPS at fixed high fidelity.",
+      "The theorem cannot be promoted to non-coordinate tensorizations, general circuits, or all-fiber coisometries."
+    ],
+    "id": "RESULT-EXP-DHS-DCP-ADAPTIVE-LAYOUT-UNIFORM-ENTANGLEMENT-NO-GO-LATEST",
+    "metrics": {
+      "adaptive_coordinate_mps_no_go_theorem_count": 1,
+      "all_balanced_coordinate_exp_rank_theorem_count": 1,
+      "all_layout_side_cap_union_theorem_count": 1,
+      "finite_all_layout_control_count": 4,
+      "finite_all_layout_control_failure_count": 0,
+      "finite_balanced_layout_count": 180,
+      "general_quantum_circuit_lower_bound_count": 0,
+      "maximum_all_layout_failure_log2_upper_bound": -16777235.0,
+      "minimum_scaling_rank_exponent_fraction": 0.7142856708467262,
+      "new_quantum_algorithm_count": 0,
+      "noncoordinate_tensor_network_no_go_count": 0,
+      "polynomial_dcp_decoder_count": 0,
+      "scaling_record_count": 4
+    },
+    "status": "adaptive-coordinate-tensor-route-closed-noncoordinate-coisometry-open",
+    "summary": "Upgraded the low-bit fiber entanglement theorem from fixed polynomial layout dictionaries to every label-adaptive balanced coordinate ordering at once. Polynomial-bond coordinate MPS/QTT preparation is closed on all inverse-polynomial source mass."
+  },
+  {
+    "artifacts": {
       "dcp_affine_transport": "research/phase_workbench/dcp_affine_transport.json"
     },
     "candidate_id": "DHS-GOWERS-SIEVE",
@@ -14229,6 +14421,37 @@
     },
     "status": "finite-clifford-signal-proof-blocked",
     "summary": "Evaluated 260 public-label Clifford measurements on 20 exact DCP batches. 3 finite instances had Hamming-weight bias at least 1/n^2, but zero asymptotic signal families, adversarial thresholds, or full decoders were proved."
+  },
+  {
+    "artifacts": {
+      "dcp_cnot_linear_split_entanglement_no_go": "/private/var/folders/y_/k55rjs0x7nb045dsgq61qw000000gn/T/pytest-of-jaspersands/pytest-128/test_report_keeps_dense_and_no0/cnot-linear.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-11T17:27:29.497867+00:00",
+    "experiment_id": "EXP-DHS-DCP-CNOT-LINEAR-SPLIT-ENTANGLEMENT-NO-GO",
+    "falsifiers_triggered": [
+      "A compact label-adaptive CNOT preprocessing cannot expose a polynomial-bond balanced MPS/QTT fiber state.",
+      "Arbitrary offset functions from extra parity features do not increase the inherited factorial-moment bound.",
+      "Absence of affine flats is not used as a surrogate for matrix rank; row/column occupancy controls cancellation directly.",
+      "Dense quadratic linear maps, nonlinear tensorizations, and general circuits remain open."
+    ],
+    "id": "RESULT-EXP-DHS-DCP-CNOT-LINEAR-SPLIT-ENTANGLEMENT-NO-GO-LATEST",
+    "metrics": {
+      "arbitrary_offset_moment_domination_theorem_count": 1,
+      "compact_cnot_family_approximate_rank_no_go_count": 1,
+      "dense_quadratic_cnot_no_go_count": 0,
+      "finite_control_failure_count": 0,
+      "general_quantum_circuit_lower_bound_count": 0,
+      "linear_split_schmidt_control_count": 2,
+      "minimum_schmidt_rank_exponent_fraction": 0.562653562649744,
+      "new_quantum_algorithm_count": 0,
+      "nonlinear_tensor_no_go_count": 0,
+      "offset_moment_control_count": 2,
+      "polynomial_subset_sum_solver_count": 0,
+      "scaling_record_count": 2
+    },
+    "status": "sub-q-four-thirds-cnot-linear-tensor-route-closed-dense-and-nonlinear-routes-open",
+    "summary": "Extended the low-bit fiber entanglement no-go from coordinate permutations to every adaptive sub-q^(4/3) CNOT transform in the stated logarithmic regime, with approximate Schmidt rank 2^(q-o(q)) even allowing matrix cancellation."
   },
   {
     "artifacts": {
@@ -15059,6 +15282,38 @@
     },
     "status": "exact-nonlinear-decoder-observed-exponential-scaling",
     "summary": "Ran 20 exact branch-and-bound decodes with f=1-rate contamination. Exact reflection recoveries=20; fitted log2 candidate-evaluation slope=1.0000; polynomial branch-and-bound proofs=0."
+  },
+  {
+    "artifacts": {
+      "dcp_linear_reparameterization_affine_flat_no_go": "/private/var/folders/y_/k55rjs0x7nb045dsgq61qw000000gn/T/pytest-of-jaspersands/pytest-128/test_report_preserves_cancella0/affine-flat.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-11T17:27:29.704113+00:00",
+    "experiment_id": "EXP-DHS-DCP-LINEAR-REPARAMETERIZATION-AFFINE-FLAT-NO-GO",
+    "falsifiers_triggered": [
+      "A label-adaptive binary linear transform cannot expose a large affine product component inside a typical low-bit fiber.",
+      "Polynomially many support-contained affine/stabilizer pieces cannot cover the typical fiber without cancellation.",
+      "The theorem does not imply arbitrary linear-split Schmidt rank or stabilizer rank with cancellation.",
+      "Nonlinear tensorizations and general quantum circuits remain open."
+    ],
+    "id": "RESULT-EXP-DHS-DCP-LINEAR-REPARAMETERIZATION-AFFINE-FLAT-NO-GO-LATEST",
+    "metrics": {
+      "all_gl_large_affine_flat_no_go_theorem_count": 1,
+      "arbitrary_linear_mps_no_go_count": 0,
+      "finite_control_failure_count": 0,
+      "finite_parity_kernel_control_count": 3,
+      "general_quantum_circuit_lower_bound_count": 0,
+      "maximum_planted_target_failure_log2_upper_bound": -2313.976781517238,
+      "maximum_union_failure_log2_upper_bound": -2377.976781517238,
+      "minimum_affine_cover_log2_lower_bound": 20.0,
+      "new_quantum_algorithm_count": 0,
+      "nonlinear_tensor_no_go_count": 0,
+      "polynomial_cancellation_free_affine_cover_no_go_count": 1,
+      "polynomial_subset_sum_solver_count": 0,
+      "scaling_record_count": 2
+    },
+    "status": "adaptive-linear-affine-product-route-closed-cancellation-and-nonlinear-routes-open",
+    "summary": "Proved that density-one low-bit fibers contain no affine flat of dimension 8log2(q) or larger with failure 2^-Omega(q log q), uniformly over every adaptive GL(m,2) reparameterization. Any support-contained cancellation-free affine cover is exponential."
   },
   {
     "artifacts": {

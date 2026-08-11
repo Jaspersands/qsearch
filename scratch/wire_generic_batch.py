@@ -22,7 +22,7 @@ def wire_batch(modules_info):
         if match:
             def_idx = match.start()
             sig_snippet = code[def_idx:def_idx + 400]
-            if "write_registry: bool = True" not in sig_snippet:
+            if "if write_registry:" not in code[def_idx:]:
                 ret_idx = code.find("->", def_idx)
                 if ret_idx != -1:
                     colon_idx = code.find(":\n", ret_idx)
@@ -193,7 +193,7 @@ def wire_batch(modules_info):
             experiment_id
             == "{exp_id}"
         ):
-            metrics = {writer_name}(
+            payload = {writer_name}(
                 write_registry=True,
                 registry_experiment_id=experiment_id,
                 registry_candidate_id=record.candidate_id,

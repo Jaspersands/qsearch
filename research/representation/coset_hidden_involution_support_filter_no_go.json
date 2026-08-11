@@ -1,0 +1,262 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False: at least three quarters of the alternative spectral mass lies at lambda<=4mu=O(1/M).",
+      "challenge": "Only a negligible worst-conditioned tail causes the gap.",
+      "resolved": true
+    },
+    {
+      "answer": "False for globally bounded polynomial effects: the distributional acceptance conditions alone force degree Omega(sqrt(M)).",
+      "challenge": "Approximate bounded-error filtering avoids the support condition number.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It rules out only scalar polynomial functional calculus of the normalization-one average projector.",
+      "challenge": "The result proves no efficient binary algorithm exists.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Deflating exceptional sectors and renormalizing naturally occupied blocks is the main surviving route.",
+      "challenge": "A source-conditioned block normalization is covered.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "arbitrary_structured_compiler_refuted": false,
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "graph_isomorphism_algorithm_constructed": false,
+    "normalization_one_qsvt_filter_polynomial_time": false,
+    "reason": "The natural support filter needs exponential polynomial degree, while the only live escape is an unproved structured sector deflation/rescaling or direct multiplicity transform.",
+    "source_conditioned_rescaling_refuted": false,
+    "speedup_claim_allowed": false,
+    "support_span_measurement_information_theoretically_valid": true,
+    "useful_spectral_mass_inverse_polynomial": false
+  },
+  "created_at": "2026-08-11T17:27:04.587241+00:00",
+  "falsifiers_triggered": [
+    "A normalization-one average-projector block encoding is not an efficient support measurement.",
+    "The small-gap obstruction is not confined to negligible alternative mass.",
+    "Replacing exact support projection by bounded-error scalar polynomial filtering does not remove the exponential degree.",
+    "No arbitrary-circuit or graph-isomorphism lower bound follows from this compiler-specific obstruction."
+  ],
+  "finite_controls": [
+    {
+      "conjugacy_class_size": 3,
+      "copy_count": 1,
+      "data_dimension": 6,
+      "effective_rank": 4.499999999999999,
+      "effective_rank_bound_verified": true,
+      "empirical_alternative_mean_eigenvalue": 0.6666666666666669,
+      "exact_alternative_mean_eigenvalue": 0.6666666666666666,
+      "finite_control_verified": true,
+      "n": 3,
+      "normalized_second_moment": 0.3333333333333334,
+      "normalized_trace": 0.5,
+      "second_moment_identity_residual": 1.1102230246251565e-16,
+      "smallest_eigenvalue_bound_verified": true,
+      "smallest_eigenvalue_upper_bound": 0.6666666666666666,
+      "smallest_positive_eigenvalue": 0.5,
+      "status": "exact-moments-and-support-gap-bound-verified",
+      "support_rank": 5,
+      "support_rank_fraction": 0.8333333333333334,
+      "trace_identity_residual": 0.0,
+      "transposition_count": 1
+    },
+    {
+      "conjugacy_class_size": 3,
+      "copy_count": 2,
+      "data_dimension": 36,
+      "effective_rank": 18.0,
+      "effective_rank_bound_verified": true,
+      "empirical_alternative_mean_eigenvalue": 0.5,
+      "exact_alternative_mean_eigenvalue": 0.5,
+      "finite_control_verified": true,
+      "n": 3,
+      "normalized_second_moment": 0.125,
+      "normalized_trace": 0.25,
+      "second_moment_identity_residual": 0.0,
+      "smallest_eigenvalue_bound_verified": true,
+      "smallest_eigenvalue_upper_bound": 0.5,
+      "smallest_positive_eigenvalue": 0.2499999999999998,
+      "status": "exact-moments-and-support-gap-bound-verified",
+      "support_rank": 21,
+      "support_rank_fraction": 0.5833333333333334,
+      "trace_identity_residual": 0.0,
+      "transposition_count": 1
+    },
+    {
+      "conjugacy_class_size": 6,
+      "copy_count": 2,
+      "data_dimension": 576,
+      "effective_rank": 384.0000000000002,
+      "effective_rank_bound_verified": true,
+      "empirical_alternative_mean_eigenvalue": 0.3749999999999998,
+      "exact_alternative_mean_eigenvalue": 0.375,
+      "finite_control_verified": true,
+      "n": 4,
+      "normalized_second_moment": 0.09374999999999994,
+      "normalized_trace": 0.25,
+      "second_moment_identity_residual": 5.551115123125783e-17,
+      "smallest_eigenvalue_bound_verified": true,
+      "smallest_eigenvalue_upper_bound": 0.375,
+      "smallest_positive_eigenvalue": 0.08333333333333286,
+      "status": "exact-moments-and-support-gap-bound-verified",
+      "support_rank": 480,
+      "support_rank_fraction": 0.8333333333333334,
+      "trace_identity_residual": 0.0,
+      "transposition_count": 1
+    },
+    {
+      "conjugacy_class_size": 3,
+      "copy_count": 2,
+      "data_dimension": 576,
+      "effective_rank": 288.0,
+      "effective_rank_bound_verified": true,
+      "empirical_alternative_mean_eigenvalue": 0.5,
+      "exact_alternative_mean_eigenvalue": 0.5,
+      "finite_control_verified": true,
+      "n": 4,
+      "normalized_second_moment": 0.125,
+      "normalized_trace": 0.25,
+      "second_moment_identity_residual": 0.0,
+      "smallest_eigenvalue_bound_verified": true,
+      "smallest_eigenvalue_upper_bound": 0.5,
+      "smallest_positive_eigenvalue": 0.33333333333333187,
+      "status": "exact-moments-and-support-gap-bound-verified",
+      "support_rank": 360,
+      "support_rank_fraction": 0.625,
+      "trace_identity_residual": 0.0,
+      "transposition_count": 2
+    }
+  ],
+  "headline_metrics": {
+    "alternative_low_spectrum_mass_theorem_count": 1,
+    "arbitrary_circuit_lower_bound_count": 0,
+    "exact_moment_theorem_count": 1,
+    "finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "generic_polynomial_filter_no_go_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "structured_support_compiler_count": 0
+  },
+  "primary_literature": [
+    {
+      "id": "HAYASHI-KAWACHI-KOBAYASHI-2006-HSP-SAMPLE-COMPLEXITY",
+      "scope": "Provides the information-theoretic support-span test; the present result isolates its normalized spectral cost.",
+      "title": "Quantum Measurements for Hidden Subgroup Problems with Optimal Sample Complexity",
+      "url": "https://arxiv.org/abs/quant-ph/0604174"
+    },
+    {
+      "id": "GILYEN-SU-LOW-WIEBE-2018-QSVT",
+      "scope": "Supplies the generic bounded-polynomial block-encoding framework to which the degree obstruction applies.",
+      "title": "Quantum singular value transformation and beyond",
+      "url": "https://arxiv.org/abs/1806.01838"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-BINARY-SECTOR-DEFLATION",
+      "resolved": false,
+      "statement": "Decompose and remove the exceptional large-eigenvalue sectors, then prove whether the remaining A_k admits a polynomial normalization boost."
+    },
+    {
+      "id": "PO-COSET-BINARY-SOURCE-BLOCK-CONDITIONING",
+      "resolved": false,
+      "statement": "Bound the occupied multiplicity-block spectra after source-label conditioning, rather than globally."
+    },
+    {
+      "id": "PO-COSET-BINARY-DIRECT-SUPPORT-TRANSFORM",
+      "resolved": false,
+      "statement": "Construct a representation-theoretic range transform for W whose cost is not controlled by sigma_min(W)."
+    },
+    {
+      "id": "PO-COSET-BINARY-FILTER-DEQUANTIZATION",
+      "resolved": false,
+      "statement": "Test whether any proposed sector deflation or rescaling is also available to a classical query-limited algorithm."
+    }
+  ],
+  "scaling_records": [
+    {
+      "alternative_mass_below_threshold_lower_bound": 0.75,
+      "alternative_mean_eigenvalue": 6.125430574079663e-07,
+      "arbitrary_structured_compiler_ruled_out": false,
+      "conjugacy_class_size": 2027025,
+      "copy_count": 23,
+      "degree_over_sqrt_class_size": 0.10605896747488122,
+      "inverse_polynomial_spectral_filter_possible": false,
+      "log2_polynomial_degree_lower_bound": 7.2384047393250786,
+      "low_spectrum_threshold": 2.450172229631865e-06,
+      "n": 16,
+      "polynomial_degree_lower_bound": 151,
+      "status": "generic-bounded-error-polynomial-filter-exponential-structured-compiler-open",
+      "support_rank_fraction_upper_bound": 0.24164021015167236
+    },
+    {
+      "alternative_mass_below_threshold_lower_bound": 0.75,
+      "alternative_mean_eigenvalue": 6.0784421802457145e-18,
+      "arbitrary_structured_compiler_ruled_out": false,
+      "conjugacy_class_size": 191898783962510625,
+      "copy_count": 60,
+      "degree_over_sqrt_class_size": 0.10911928151020571,
+      "inverse_polynomial_spectral_filter_possible": false,
+      "log2_polynomial_degree_lower_bound": 25.510539546512824,
+      "low_spectrum_threshold": 2.4313768720982858e-17,
+      "n": 32,
+      "polynomial_degree_lower_bound": 47801069,
+      "status": "generic-bounded-error-polynomial-filter-exponential-structured-compiler-open",
+      "support_rank_fraction_upper_bound": 0.1664456627755844
+    },
+    {
+      "alternative_mass_below_threshold_lower_bound": 0.75,
+      "alternative_mean_eigenvalue": 1.0307955121006501e-44,
+      "arbitrary_structured_compiler_ruled_out": false,
+      "conjugacy_class_size": 112275575285571389562324404930670903477890625,
+      "copy_count": 149,
+      "degree_over_sqrt_class_size": 0.1095480995436878,
+      "inverse_polynomial_spectral_filter_possible": false,
+      "log2_polynomial_degree_lower_bound": 69.97557650625701,
+      "low_spectrum_threshold": 4.1231820484026004e-44,
+      "n": 64,
+      "polynomial_degree_lower_bound": 1160773520023317642100,
+      "status": "generic-bounded-error-polynomial-filter-exponential-structured-compiler-open",
+      "support_rank_fraction_upper_bound": 0.15733159122885657
+    },
+    {
+      "alternative_mass_below_threshold_lower_bound": 0.75,
+      "alternative_mean_eigenvalue": 6.921421946924645e-108,
+      "arbitrary_structured_compiler_ruled_out": false,
+      "conjugacy_class_size": 164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625,
+      "copy_count": 359,
+      "degree_over_sqrt_class_size": 0.11036321718914603,
+      "inverse_polynomial_spectral_filter_possible": false,
+      "log2_polynomial_degree_lower_bound": 174.90362039436388,
+      "low_spectrum_threshold": 2.768568778769858e-107,
+      "n": 128,
+      "polynomial_degree_lower_bound": 44795675394286049663906866876634205542792014835573017,
+      "status": "generic-bounded-error-polynomial-filter-exponential-structured-compiler-open",
+      "support_rank_fraction_upper_bound": 0.14029914692153045
+    }
+  ],
+  "status": "generic-support-spectral-filter-refuted-structured-block-rescaling-open",
+  "summary": "Exact moments show that the useful support-span signal itself is concentrated at normalized eigenvalue scale Theta(1/M). Generic bounded-error polynomial/QSVT filtering therefore costs Omega(sqrt(M)); structured block rescaling remains open.",
+  "theorem": {
+    "alternative_spectral_mass_consequence": "At k>=ceil(log2(4M)), at least 3/4 of alternative mass has lambda<=4mu<=5/M.",
+    "arbitrary_circuit_lower_bound_proved": false,
+    "bounded_error_polynomial_lower_bound": "Any globally [0,1]-bounded polynomial effect with null acceptance <=1/3 and alternative acceptance >=2/3 has degree >=1/sqrt(72mu)=Omega(sqrt(M)).",
+    "effective_rank_consequence": "rank(A)/d >= 1/[1+(2^k-1)/M], while lambda_min^+(A) <= 2^-k+(1-2^-k)/M.",
+    "exact_moment_identity": "Tr(A)/d=2^-k and Tr(A^2)/d=4^-k[1+(2^k-1)/M].",
+    "exact_moments_proved": true,
+    "generic_qsvt_support_filter_ruled_out": true,
+    "low_spectrum_mass_proved": true,
+    "polynomial_degree_exponential_at_threshold": true,
+    "status": "generic-support-spectral-filter-refuted-structured-block-rescaling-open",
+    "structured_support_compiler_constructed": false,
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "compiler_scope": "One globally bounded scalar polynomial effect p(A_k) applied to a normalization-one block encoding of A_k.",
+    "error_scope": "Distributional bounded error, not uniform operator-norm approximation of the entire support projector.",
+    "outside_scope": "Source-conditioned rescaling, exceptional-sector deflation, rational/variable-time methods with additional structure, and arbitrary representation-theoretic circuits.",
+    "state_model": "The standard k-copy mixed coset-state class mixture for a uniform conjugacy class of M nonidentity involutions."
+  }
+}
