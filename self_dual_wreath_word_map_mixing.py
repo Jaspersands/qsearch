@@ -337,7 +337,35 @@ def write_wreath_word_map_mixing_report(
     payload = asdict(run_wreath_word_map_mixing())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-COSET"
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=result_id,
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=utc_now(),
+                status=payload["status"],
+                summary=payload["summary"],
+                metrics=payload["headline_metrics"],
+                falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                artifacts={"self_dual_wreath_word_map_mixing": str(path)},
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-CODE-WREATH-WORD-MAP-MEAN-MIXING-NOT-KTH-MOMENT",
+                source="self_dual_wreath_word_map_mixing.py",
+                claim="Spectral mixing of the natural subset-word mean implies concentration or control of the kth moment.",
+                reason_invalid="Rapid lazy-walk mixing controls E[a_m], but the sub-POVM certificate requires the kth moment of the quenched word statistic.",
+                lesson="Single-walk spectral mixing does not control high moments or concentration without coupled-walk analysis.",
+                applies_to=["CODE-SELF-DUAL-WREATH", "DHS-COSET-COLLECTIVE", "PO-DEQUANTIZATION", "PO-FALSIFIERS"],
+                evidence=payload["headline_metrics"],
+            )
+        )
     return payload
+
+
 
 
 if __name__ == "__main__":

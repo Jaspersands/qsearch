@@ -10086,5 +10086,223 @@
     "run_id": "RUN-EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-LAPLACIAN-GAP-00297",
     "status": "width-independent-metric-floor-conditional-trivialization-open",
     "summary": "Proved the Dirichlet form and the commuting-atom splitting (floor two, width independent), derived the exact p-star spectrum and matched the known S6 noncommuting counterexample and the d=5 plane to 2.665e-15, and found no violation of the 2-2gamma floor across 270 full-live-graph controls. On natural portfolios the distinct residual-correlation count collapses to 1 at n=12. Vertex trivialization remains unproved."
+  },
+  {
+    "artifacts": {
+      "dcp_approximate_erasure_coherence_reduction": "research/reductions/dcp_approximate_erasure_coherence_reduction.json"
+    },
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "experiment_id": "EXP-DHS-DCP-APPROXIMATE-ERASURE-COHERENCE-REDUCTION",
+    "falsifier_count": 5,
+    "falsifiers_triggered": [
+      "Target-dependent garbage reduces QFT success exactly through the weighted garbage Gram mean.",
+      "The public zero-frequency input prepares the same weighted mean garbage needed to invert the erasure.",
+      "Inverse-polynomial relative coherence cannot hide entirely on high-multiplicity fibers; truncation yields uniform-legal fidelity Omega((L/D)R^2).",
+      "Exact erasure-plus-QFT with inverse-polynomial success is already an average witness solver.",
+      "No perturbation theorem for approximate erasure isometries and no reduction for arbitrary full-rank POVMs is claimed."
+    ],
+    "metrics": {
+      "exact_garbage_gram_qft_formula_count": 1,
+      "finite_control_count": 36,
+      "finite_control_failure_count": 0,
+      "inverse_polynomial_erasure_to_witness_reduction_count": 1,
+      "joint_polynomial_scaling_row_count": 15,
+      "maximum_qft_formula_residual": 8.673617379884035e-18,
+      "maximum_uniform_legal_bound_residual": 0.0,
+      "minimum_finite_support_fraction": 0.3984375,
+      "polynomial_average_subset_sum_witness_solver_count": 0,
+      "polynomial_erasure_plus_qft_decoder_count": 0,
+      "proved_approximate_isometry_perturbation_bound_count": 0,
+      "proved_arbitrary_full_rank_pgm_reduction_count": 0,
+      "scaling_row_count": 15,
+      "uniform_legal_fidelity_transfer_theorem_count": 1,
+      "weighted_mean_reference_preparation_count": 1
+    },
+    "recorded_at": "2026-08-12T13:49:03.773384+00:00",
+    "result_id": "RESULT-EXP-DHS-DCP-APPROXIMATE-ERASURE-COHERENCE-REDUCTION-DCP-ERASURE-COHERENCE",
+    "run_id": "RUN-EXP-DHS-DCP-APPROXIMATE-ERASURE-COHERENCE-REDUCTION-00298",
+    "status": "target-dependent-garbage-erasure-reduced-to-witness-approximate-isometry-and-arbitrary-pgm-open",
+    "summary": "Verified 36 garbage-Gram and target-law controls with 0 failures and 15 polynomial resource rows. Exact erasure-plus-QFT with inverse-polynomial relative success is solver-equivalent even with target-dependent garbage; approximate isometries and arbitrary POVMs remain open."
+  },
+  {
+    "artifacts": {
+      "dcp_coherent_fiber_erasure_boundary": "research/reductions/dcp_coherent_fiber_erasure_boundary.json"
+    },
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "experiment_id": "EXP-DHS-DCP-COHERENT-FIBER-ERASURE-BOUNDARY",
+    "falsifier_count": 5,
+    "falsifiers_triggered": [
+      "A black-box index-erasure lower bound cannot be cited as a lower bound for public arithmetic subset-sum maps.",
+      "A target-addressable normalized-fiber primitive with a success flag is already an average-case support-decision algorithm.",
+      "Witness self-reduction additionally requires guarantees on every fixed-variable subinstance.",
+      "A global collective channel need not expose the target-addressable interface and is not ruled out by these reductions.",
+      "Any use of DCP state reflection, rewinding, chosen labels, QRAM, or advice must be charged separately."
+    ],
+    "metrics": {
+      "access_model_count": 3,
+      "black_box_index_erasure_lower_bound_count": 1,
+      "black_box_superpolynomial_row_count": 4,
+      "maximum_n_bits": 1024,
+      "polynomial_global_collective_pgm_channel_count": 0,
+      "polynomial_source_aware_fiber_preparer_count": 0,
+      "proved_fixed_variable_witness_self_reduction_count": 1,
+      "proved_global_collective_measurement_reduction_count": 0,
+      "proved_target_addressable_support_decision_reduction_count": 1,
+      "reduction_certificate_count": 3,
+      "scaling_row_count": 5,
+      "tail_black_box_query_lower_bound_log2": 512.0,
+      "valid_black_box_lower_bound_transfer_to_structured_subset_sum_count": 0
+    },
+    "recorded_at": "2026-08-12T13:49:17.103862+00:00",
+    "result_id": "RESULT-EXP-DHS-DCP-COHERENT-FIBER-ERASURE-BOUNDARY-DCP-FIBER-ERASURE-BOUNDARY",
+    "run_id": "RUN-EXP-DHS-DCP-COHERENT-FIBER-ERASURE-BOUNDARY-00299",
+    "status": "index-erasure-transfer-invalid-target-addressable-reductions-proved-global-channel-open",
+    "summary": "Separated 3 state-generation access models and proved 2 conditional reductions. The black-box square-root lower bound has zero valid transfers to structured subset sum; target-addressable support decision and fixed-variable witness obligations are explicit."
+  },
+  {
+    "artifacts": {
+      "dcp_erasure_perturbation_reduction": "research/reductions/dcp_erasure_perturbation_reduction.json"
+    },
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "experiment_id": "EXP-DHS-DCP-ERASURE-PERTURBATION-REDUCTION",
+    "falsifier_count": 5,
+    "falsifiers_triggered": [
+      "Polynomial circuit approximation error must be compared with the inverse-polynomial decoding signal, not merely declared small.",
+      "Postselection normalization amplifies state error by the inverse square root of reference success.",
+      "For R=1/poly(n), the sufficient operator precision rho^2 R^(5/2)/128 remains inverse polynomial.",
+      "Average phase-state fidelity does not imply full fiber-subspace operator-norm control.",
+      "No environment recovery or arbitrary-POVM reduction is claimed."
+    ],
+    "metrics": {
+      "inverse_polynomial_relative_success_schedule_count": 4,
+      "maximum_n_bits": 1024,
+      "maximum_reference_state_norm_error": 3.814697265625e-06,
+      "minimum_sufficient_operator_error_log2": -209.0,
+      "operator_norm_perturbation_theorem_count": 1,
+      "polynomial_average_subset_sum_witness_solver_count": 0,
+      "polynomial_erasure_plus_qft_decoder_count": 0,
+      "polynomial_precision_sufficient_row_count": 20,
+      "proved_arbitrary_full_rank_pgm_reduction_count": 0,
+      "proved_average_only_channel_perturbation_count": 0,
+      "proved_nonunitary_environment_recovery_count": 0,
+      "scaling_row_count": 20
+    },
+    "recorded_at": "2026-08-12T13:49:32.473729+00:00",
+    "result_id": "RESULT-EXP-DHS-DCP-ERASURE-PERTURBATION-REDUCTION-DCP-ERASURE-PERTURBATION",
+    "run_id": "RUN-EXP-DHS-DCP-ERASURE-PERTURBATION-REDUCTION-00300",
+    "status": "operator-norm-approximate-erasure-solver-equivalent-average-channel-and-arbitrary-pgm-open",
+    "summary": "Instantiated 20 perturbation schedules; all retain polynomial resources at the sufficient operator precision. Operator-norm approximate erasure-plus-QFT is solver-equivalent; average-only channels and arbitrary POVMs remain open."
+  },
+  {
+    "artifacts": {
+      "dcp_global_erasure_inversion_reduction": "research/reductions/dcp_global_erasure_inversion_reduction.json"
+    },
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "experiment_id": "EXP-DHS-DCP-GLOBAL-ERASURE-INVERSION-REDUCTION",
+    "falsifier_count": 5,
+    "falsifiers_triggered": [
+      "Target-dependent erasure garbage destroys exactly the off-diagonal target coherence needed by a following cyclic QFT.",
+      "Common efficiently preparable garbage makes the erasure circuit invertible into normalized-fiber preparation.",
+      "Source-weighted average fidelity cannot hide on large fibers: uniform-legal mass is pointwise dominated by D/L times source-weighted mass.",
+      "The reduction produces and verifies a witness directly; fixed-variable self-reduction is unnecessary under the common-garbage interface.",
+      "An arbitrary PGM implementation need not factor through coherent erasure and is not ruled out."
+    ],
+    "metrics": {
+      "coherence_erasure_theorem_count": 1,
+      "maximum_finite_domination_constant": 2.115702479338843,
+      "poisson_asymptotic_domination_constant": 1.5819767068693265,
+      "polynomial_arbitrary_full_rank_pgm_count": 0,
+      "polynomial_average_subset_sum_witness_solver_count": 0,
+      "polynomial_coherent_erasure_circuit_count": 0,
+      "proved_arbitrary_pgm_to_witness_reduction_count": 0,
+      "proved_coherent_erasure_to_witness_reduction_count": 1,
+      "quenched_support_law_theorem_count": 1,
+      "tail_mean_domination_constant": 1.544010449539472,
+      "target_law_transfer_control_count": 24,
+      "target_law_transfer_failure_count": 0
+    },
+    "recorded_at": "2026-08-12T13:49:53.019552+00:00",
+    "result_id": "RESULT-EXP-DHS-DCP-GLOBAL-ERASURE-INVERSION-REDUCTION-DCP-ERASURE-INVERSION",
+    "run_id": "RUN-EXP-DHS-DCP-GLOBAL-ERASURE-INVERSION-REDUCTION-00301",
+    "status": "coherent-erasure-reduced-to-average-witness-arbitrary-full-rank-pgm-open",
+    "summary": "Verified target-law domination on 24 controls with 0 failures. The quenched support theorem is available, so the coherent erasure-plus-QFT route is conditionally equivalent to an average subset-sum witness solver; arbitrary full-rank POVMs remain open."
+  },
+  {
+    "artifacts": {
+      "dcp_pgm_qsvt_degree_obstruction": "research/phase_workbench/dcp_pgm_qsvt_degree_obstruction.json"
+    },
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "experiment_id": "EXP-DHS-DCP-PGM-QSVT-DEGREE-OBSTRUCTION",
+    "falsifier_count": 5,
+    "falsifiers_triggered": [
+      "A polynomial-size direct block encoding does not imply a polynomial-degree bounded spectral transform.",
+      "QSVT degree must include the exponentially small spectral spacing, not only the fiber condition-number ratio.",
+      "Switching from count eigenvalues to square-root amplitudes weakens but does not remove the exponential Markov bound.",
+      "An explicit worst-case label family is not evidence for random-source prevalence.",
+      "The theorem does not cover source-aware encodings, collision walks, or different collective measurements."
+    ],
+    "metrics": {
+      "amplitude_encoding_markov_theorem_count": 1,
+      "average_case_random_source_prevalence_theorem_count": 1,
+      "collision_walk_lower_bound_count": 0,
+      "count_encoding_markov_theorem_count": 1,
+      "exact_lifted_source_count": 13,
+      "exact_lifted_source_failure_count": 0,
+      "general_collective_measurement_lower_bound_count": 0,
+      "maximum_n_bits": 1024,
+      "random_source_control_count": 24,
+      "random_source_singleton_doubleton_count": 24,
+      "random_source_singleton_doubleton_fraction": 1.0,
+      "structured_preconditioner_lower_bound_count": 0,
+      "tail_amplitude_encoding_degree_lower_bound_log2": 255.5768617313473,
+      "tail_amplitude_encoding_superpolynomial_row_count": 2,
+      "tail_count_encoding_degree_lower_bound_log2": 510.9410850797655,
+      "tail_count_encoding_superpolynomial_row_count": 4,
+      "uniform_worst_case_qsvt_obstruction_count": 1
+    },
+    "recorded_at": "2026-08-12T13:50:32.342985+00:00",
+    "result_id": "RESULT-EXP-DHS-DCP-PGM-QSVT-DEGREE-OBSTRUCTION-DCP-PGM-QSVT-DEGREE",
+    "run_id": "RUN-EXP-DHS-DCP-PGM-QSVT-DEGREE-OBSTRUCTION-00302",
+    "status": "generic-direct-qsvt-rescaling-exponential-average-source-structured-routes-open",
+    "summary": "Verified 13 all-n lifted source controls with 0 failures. Singleton and doubleton fibers co-occurred in 24/24 finite random controls. Generic direct QSVT rescaling is exponentially degree-limited; the average-source transfer is proved, and no source-structured lower bound is claimed."
+  },
+  {
+    "artifacts": {
+      "dcp_subset_sum_quenched_occupancy_theorem": "research/classical_baselines/dcp_subset_sum_quenched_occupancy_theorem.json"
+    },
+    "candidate_id": "DHS-GOWERS-SIEVE",
+    "experiment_id": "EXP-DHS-DCP-SUBSET-SUM-QUENCHED-OCCUPANCY-THEOREM",
+    "falsifier_count": 5,
+    "falsifiers_triggered": [
+      "Annealed one-target factorial moments alone do not imply a quenched occupancy law; two-target covariance is required.",
+      "Cross-target assignment overlaps must be isolated before applying the distinct-row lattice contraction.",
+      "Independent-balls occupancy is a conclusion of the mixed-moment transfer, not an assumed model.",
+      "Finite convergence toward Poisson fractions is a control, not the proof.",
+      "Quenched fiber prevalence does not lower-bound source-aware preconditioners, collision walks, or other collective measurements."
+    ],
+    "metrics": {
+      "collision_walk_lower_bound_count": 0,
+      "computational_lower_bound_count": 0,
+      "exact_source_ensemble_control_count": 3,
+      "exact_source_ensemble_control_failure_count": 0,
+      "maximum_random_n_bits": 18,
+      "mixed_moment_certificate_count": 5,
+      "quenched_factorial_moment_convergence_theorem_count": 1,
+      "quenched_poisson_occupancy_theorem_count": 1,
+      "random_scaling_all_trials_prevalence_row_count": 6,
+      "random_scaling_row_count": 6,
+      "random_source_singleton_doubleton_prevalence_theorem_count": 1,
+      "source_aware_preconditioner_lower_bound_count": 0,
+      "tail_doubleton_absolute_error": 0.004903423093369885,
+      "tail_mean_doubleton_fraction": 0.1870737075805664,
+      "tail_mean_singleton_fraction": 0.3775367736816406,
+      "tail_singleton_absolute_error": 0.01661359002452223,
+      "two_target_transfer_failure_count": 0
+    },
+    "recorded_at": "2026-08-12T13:52:06.784776+00:00",
+    "result_id": "RESULT-EXP-DHS-DCP-SUBSET-SUM-QUENCHED-OCCUPANCY-THEOREM-DCP-QUENCHED-OCCUPANCY",
+    "run_id": "RUN-EXP-DHS-DCP-SUBSET-SUM-QUENCHED-OCCUPANCY-THEOREM-00303",
+    "status": "quenched-poisson-occupancy-proved-generic-direct-qsvt-average-source-blocked",
+    "summary": "Certified 5 mixed-moment instances of an all-fixed-order two-target theorem, ran 3 exact source ensembles with 0 failures, and measured 6 random scaling rows. Singleton and doubleton fibers have asymptotically positive quenched mass; this closes generic direct QSVT rescaling, not source-aware alternatives."
   }
 ]

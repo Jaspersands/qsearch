@@ -536,7 +536,35 @@ def write_natural_moment_word_map_report(
     payload = asdict(run_natural_moment_word_map())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-COSET"
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=result_id,
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=utc_now(),
+                status=payload["status"],
+                summary=payload["summary"],
+                metrics=payload["headline_metrics"],
+                falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                artifacts={"self_dual_wreath_natural_moment_word_map": str(path)},
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id="NEG-CODE-WREATH-ALL-ORDER-WORD-MAP-NOT-GROWING-CONTRACTION",
+                source="self_dual_wreath_natural_moment_word_map.py",
+                claim="Subset word-map counting automatically proves growing-order moment contraction for natural wreath frames.",
+                reason_invalid="Natural irrep averaging replaces physical irreps with word maps, but counting subset identities does not prove polynomial moment bounds at growing order.",
+                lesson="Exact natural character formulas eliminate irrep summations, but explicit subset word-map bounds are required for growing-order sub-POVM certificates.",
+                applies_to=["CODE-SELF-DUAL-WREATH", "DHS-COSET-COLLECTIVE", "PO-DEQUANTIZATION", "PO-FALSIFIERS"],
+                evidence=payload["headline_metrics"],
+            )
+        )
     return payload
+
+
 
 
 if __name__ == "__main__":

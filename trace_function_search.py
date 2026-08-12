@@ -547,6 +547,21 @@ def write_trace_function_search_report(
     )
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        negative_results_written = write_negative_results_from_trace_search(payload)
+        metrics = dict(payload.get("headline_metrics", {}))
+        metrics["negative_results_written"] = negative_results_written
+        upsert_scaling_run(
+            {
+                "id": payload.get("id", "TRACE-FUNCTION-SEARCH-LATEST"),
+                "experiment_id": "EXP-TRACE-FUNCTION-SEARCH",
+                "created_at": payload.get("created_at", utc_now()),
+                "status": payload.get("status", "completed"),
+                "summary": "trace function search report",
+                "artifacts": {"trace_function_search": str(output_path)},
+                "headline_metrics": metrics,
+            }
+        )
     return payload
 
 
