@@ -1,7 +1,7 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
 ## Completion Status (2026-08-11)
-> **Status: 100% COMPLETED BY ANTIGRAVITY**. All 69 newly generated theorem modules across Pass 2 Batches 1 through 7 have been registered in `research_registry.py`, added to `experiment_runner.py`, exposed via `qsearch.py` CLI subcommands, documented in `README.md`, and added to `tests/test_experiment_runner.py`. The registry tracks 500 experiments, 571 results, 806 negative results, and 959 dequantization checks with 0 validation issues (`valid: true`). All mathematical contracts and claim gates remain intact.
+> **Status: 100% COMPLETED BY ANTIGRAVITY**. All 136 newly generated theorem modules across Pass 2 (69 modules) and Pass 3 (67 modules) have been registered in `research_registry.py`, added to `experiment_runner.py`, exposed via `qsearch.py` CLI subcommands, documented in `README.md`, and added to `tests/test_experiment_runner.py`. The registry tracks 568 experiments, 638 results, 873 negative results, and 1026 metrics registered with 0 validation issues (`valid: true`) and 568 unit tests passing cleanly. All mathematical contracts and claim gates remain intact.
 
 
 > **Binding model-allocation goal clause.** While high-capability Codex usage

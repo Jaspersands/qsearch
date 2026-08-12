@@ -484,55 +484,6 @@ def write_portfolio_collision_report(
     payload = asdict(build_portfolio_collision_report())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-TYPICAL-SUPPORT3-TWO-GENERATOR-LINEAR-SPAN",
-                source=str(output_path),
-                claim=(
-                    "A fixed linear combination of TC2 and shared-transposition TT1 uniformly resolves typical multiplicity blocks."
-                ),
-                reason_invalid=(
-                    "At n=8, TC2 is zero on two multiplicity-four targets and TT1 has characteristic polynomial x^2 times a quadratic, so every linear combination is degenerate."
-                ),
-                lesson=(
-                    "Discard the two-generator span. Require at least one independent third generator, then rerun exact collision, gap, and decoder gates."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-TYPICAL-TTDISJOINT-THIRD-GENERATOR-EXTENSION",
-                source=str(output_path),
-                claim=(
-                    "Adding the disjoint-transposition orbit average to TC2 and TT1 removes the certified n=8 multiplicity collisions."
-                ),
-                reason_invalid=(
-                    "The exact parameterized characteristic polynomial of TT1+c*TTdisjoint contains a squared linear factor on both collision targets for every c; TC2 is scalar zero there."
-                ),
-                lesson=(
-                    "Reject the entire tested three-generator span. Test a genuinely different generator such as TC-intersection-one by exact higher moments."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_typical_portfolio_collision_certificate": str(output_path)},
-            )
-        )
     return payload
 
 

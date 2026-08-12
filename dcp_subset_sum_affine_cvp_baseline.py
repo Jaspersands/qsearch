@@ -491,35 +491,4 @@ def write_affine_cvp_baseline(
     payload = asdict(run_affine_cvp_baseline(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-SUBSET-SUM-AFFINE-BABAI-FINITE-WITHOUT-COVERAGE",
-                source=str(path),
-                claim="Finite marker-aware Babai success establishes a density-one partial subset-sum solver.",
-                reason_invalid=(
-                    "The baseline has exact verification but no inverse-polynomial legal source-coverage or scaling theorem."
-                ),
-                lesson=(
-                    "Use it as a classical attack and diagnostic. Require a source-conditioned BDD radius theorem before "
-                    "promoting any affine-CVP mutation."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-AFFINE-CVP-BASELINE"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_subset_sum_affine_cvp_baseline": str(path)},
-            )
-        )
     return payload

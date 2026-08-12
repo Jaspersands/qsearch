@@ -440,35 +440,4 @@ def write_affine_bdd_geometry(
     payload = asdict(run_affine_bdd_geometry(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-SUBSET-SUM-FINITE-BABAI-CELLS-NOT-SOURCE-BDD-THEOREM",
-                source=str(path),
-                claim="Finite exact Babai-cell membership proves inverse-polynomial affine decoding coverage.",
-                reason_invalid=(
-                    "Cell membership exactly explains sampled runs but has no analytic lower bound over the source distribution."
-                ),
-                lesson=(
-                    "Derive a source law for witness-specific Gram-Schmidt coordinates or abandon nearest plane as the "
-                    "asymptotic decoder."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-AFFINE-BDD-GEOMETRY"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_subset_sum_affine_bdd_geometry": str(path)},
-            )
-        )
     return payload

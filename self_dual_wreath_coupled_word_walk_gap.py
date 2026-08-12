@@ -463,54 +463,6 @@ def write_wreath_coupled_word_walk_gap_report(
     payload = asdict(run_wreath_coupled_word_walk_gap())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id=(
-                    "NEG-CODE-WREATH-COUPLED-GAP-"
-                    "NOT-TYPICAL-MOMENT"
-                ),
-                source=str(path),
-                claim=(
-                    "A constant spectral gap for the shared-generator word "
-                    "walk closes the natural high-moment certificate."
-                ),
-                reason_invalid=(
-                    "At the certificate order the transient remains above the "
-                    "stationary scale, and rare equal one-dimensional labels "
-                    "contaminate the unconditional source moment."
-                ),
-                lesson=(
-                    "Condition the character average on all-unequal "
-                    "Plancherel labels and analyze the resulting signed kernel."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_coupled_word_walk_gap": str(path)
-                },
-            )
-        )
     return payload
 
 

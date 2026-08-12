@@ -218,44 +218,6 @@ def write_stable_shape_quadratic_gap_certificate(
     payload = asdict(build_stable_shape_quadratic_gap_certificate())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-FIVE-GAPPED-QUADRATIC-SHAPES-AS-COMPLETE-ASSOCIATOR",
-                source=str(output_path),
-                claim=(
-                    "Five exact complementary normalized gaps complete the stable Racah associator."
-                ),
-                reason_invalid=(
-                    "The cubic gap, coherent label circuits, left/right transition synthesis, hidden-involution "
-                    "decoder, and classical separation remain unproved."
-                ),
-                lesson=(
-                    "Close the cubic discriminant/root separation next, then prove common-orbit block encoding and "
-                    "complete transition behavior before decoder experiments."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "coset_stable_shape_quadratic_gap_certificate": str(
-                        output_path
-                    )
-                },
-            )
-        )
     return payload
 
 

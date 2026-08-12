@@ -458,49 +458,6 @@ def write_self_dual_wreath_harmonic_carrier_schema(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-SELF-DUAL-WREATH-COMPACT-HARMONIC-LABELS-NOT-TRANSFORM",
-                source=str(path),
-                claim=(
-                    "Compact irreducible and multiplicity labels make the "
-                    "depth-three carrier transform polynomial."
-                ),
-                reason_invalid=(
-                    "The harmonic/Burnside identity forces p(n) outer labels "
-                    "and at least one multiplicity block with n!/p(n) matrix "
-                    "coordinates. Compact addresses do not provide sparse "
-                    "matrix elements, recoupling rules, or a coherent basis."
-                ),
-                lesson=(
-                    "Search for uniform sparse Kronecker recurrences or "
-                    "implicit block encodings; never materialize dense "
-                    "multiplicity blocks."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = (
-            registry_result_id
-            or f"RESULT-{registry_experiment_id}-LATEST"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_harmonic_carrier_schema": str(path)
-                },
-            )
-        )
     return payload
 
 

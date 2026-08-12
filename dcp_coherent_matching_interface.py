@@ -328,47 +328,4 @@ def write_coherent_matching_interface_audit(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-ARBITRARY-QUANTUM-RELATION-SOLVER-WITHOUT-WORKSPACE-OVERLAP",
-                source=str(path),
-                claim=(
-                    "Any quantum algorithm that outputs a superposition of subset-sum witnesses can replace the "
-                    "deterministic solver in Regev's matching routine."
-                ),
-                reason_invalid=(
-                    "Target-dependent witness amplitudes or orthogonal garbage can erase paired-endpoint interference. "
-                    "The source proof needs canonical selection, a shared-seed decomposition, or an explicit overlap theorem."
-                ),
-                lesson=(
-                    "Randomized classical solvers with explicit target-independent shared coins are now interface-compatible. "
-                    "For genuinely quantum solvers, prove balanced paired amplitudes, workspace overlap, and reversible erasure."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "proved_seeded_randomized_solver_bridge_count": payload["headline_metrics"][
-                        "proved_seeded_randomized_solver_bridge_count"
-                    ],
-                    "zero_visibility_counterexample_count": payload["headline_metrics"][
-                        "zero_visibility_counterexample_count"
-                    ],
-                    "proved_arbitrary_quantum_relation_solver_bridge_count": 0,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-COHERENT-MATCHING-INTERFACE"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_coherent_matching_interface": str(path)},
-            )
-        )
     return payload

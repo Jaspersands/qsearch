@@ -1,0 +1,260 @@
+{
+  "created_at": "2026-08-12T03:39:51.300829+00:00",
+  "theorem_contract": {
+    "section": "W=stack_v a_v T_v B with sum_v|a_v|^2=1",
+    "effects": "W^*D_vW=|a_v|^2 I on every holonomy fixed space",
+    "holonomy": "arbitrary cycle constraints only replace the root basis by an isometry B and cannot create operator-valued vertex effects",
+    "separation": "natural M4/r has liminf 3/64, so every flat scalar/commuting component POVM has normalized aggregate error at least 3/512-o(1)",
+    "required_extension": "vertex-dependent partial supports, operator-valued endpoint metrics, or a direct representation-specific global polar"
+  },
+  "theorem": {
+    "section_isometry": "W=stack_v a_v T_v B with sum_v|a_v|^2=1",
+    "component_effects": "W^*D_vW=|a_v|^2 I on every holonomy fixed space",
+    "fixed_space_invariance": "arbitrary cycle constraints only replace the root basis by an isometry B and cannot create operator-valued vertex effects",
+    "natural_separation": "natural M4/r has liminf 3/64, so every flat scalar/commuting component POVM has normalized aggregate error at least 3/512-o(1)",
+    "required_extension": "vertex-dependent partial supports, operator-valued endpoint metrics, or a direct representation-specific global polar",
+    "theorem_verified": true,
+    "status": "flat-equal-rank-holonomy-component-architecture-falsified"
+  },
+  "flat_holonomy_controls": [
+    {
+      "control_id": "UNIFORM-UNITARY-TREE-FULL-FIBER",
+      "vertex_count": 3,
+      "ambient_fiber_dimension": 3,
+      "holonomy_fixed_space_dimension": 3,
+      "scalar_vertex_weights": [
+        0.3333333333333334,
+        0.3333333333333334,
+        0.3333333333333334
+      ],
+      "section_isometry_residual": 2.2239171682552875e-16,
+      "maximum_transport_unitarity_residual": 1.2057739340205089e-17,
+      "maximum_component_scalar_residual": 5.585826313175524e-17,
+      "component_effect_sum_residual": 4.4443632175056e-16,
+      "normalized_component_m4": 0.0,
+      "component_effects_pairwise_commute": true,
+      "exact_flat_holonomy_scalarization_verified": true,
+      "status": "flat-holonomy-component-povm-exactly-scalar"
+    },
+    {
+      "control_id": "NONUNIFORM-WEIGHTED-FIXED-SUBSPACE",
+      "vertex_count": 3,
+      "ambient_fiber_dimension": 3,
+      "holonomy_fixed_space_dimension": 2,
+      "scalar_vertex_weights": [
+        0.19999999999999998,
+        0.29999999999999993,
+        0.5000000000000001
+      ],
+      "section_isometry_residual": 0.0,
+      "maximum_transport_unitarity_residual": 2.3865932489148995e-17,
+      "maximum_component_scalar_residual": 0.0,
+      "component_effect_sum_residual": 0.0,
+      "normalized_component_m4": 0.0,
+      "component_effects_pairwise_commute": true,
+      "exact_flat_holonomy_scalarization_verified": true,
+      "status": "flat-holonomy-component-povm-exactly-scalar"
+    },
+    {
+      "control_id": "RANK-ONE-HOLONOMY-FIXED-SPACE",
+      "vertex_count": 4,
+      "ambient_fiber_dimension": 3,
+      "holonomy_fixed_space_dimension": 1,
+      "scalar_vertex_weights": [
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "section_isometry_residual": 0.0,
+      "maximum_transport_unitarity_residual": 1.301711005729165e-16,
+      "maximum_component_scalar_residual": 0.0,
+      "component_effect_sum_residual": 0.0,
+      "normalized_component_m4": 0.0,
+      "component_effects_pairwise_commute": true,
+      "exact_flat_holonomy_scalarization_verified": true,
+      "status": "flat-holonomy-component-povm-exactly-scalar"
+    }
+  ],
+  "flat_support_controls": [
+    {
+      "control_id": "NO-FLAT-ACTIVE-VERTEX",
+      "fiber_dimension": 12,
+      "leaf_count": 6,
+      "active_flat_vertex_count": 0,
+      "normalized_natural_total_support_rank": 1.0,
+      "maximum_normalized_natural_leaf_rank": 0.16666666666666666,
+      "normalized_flat_support_approximation_error": 1.0000000000000002,
+      "rank_only_error_lower_bound": 1.0,
+      "rank_mismatch_bound_verified": true,
+      "status": "flat-full-fiber-support-rank-mismatch-verified"
+    },
+    {
+      "control_id": "ONE-FLAT-ACTIVE-VERTEX",
+      "fiber_dimension": 12,
+      "leaf_count": 6,
+      "active_flat_vertex_count": 1,
+      "normalized_natural_total_support_rank": 1.0,
+      "maximum_normalized_natural_leaf_rank": 0.16666666666666666,
+      "normalized_flat_support_approximation_error": 1.666666666666667,
+      "rank_only_error_lower_bound": 1.6666666666666667,
+      "rank_mismatch_bound_verified": true,
+      "status": "flat-full-fiber-support-rank-mismatch-verified"
+    },
+    {
+      "control_id": "ALL-FLAT-ACTIVE-VERTICES",
+      "fiber_dimension": 12,
+      "leaf_count": 6,
+      "active_flat_vertex_count": 6,
+      "normalized_natural_total_support_rank": 1.0,
+      "maximum_normalized_natural_leaf_rank": 0.16666666666666666,
+      "normalized_flat_support_approximation_error": 5.000000000000001,
+      "rank_only_error_lower_bound": 5.0,
+      "rank_mismatch_bound_verified": true,
+      "status": "flat-full-fiber-support-rank-mismatch-verified"
+    }
+  ],
+  "scaling_records": [
+    {
+      "child_aspect": 2.0,
+      "natural_effect_m4_limit": 0.125,
+      "natural_support_m4_limit": 2.0,
+      "flat_holonomy_effect_m4": 0.0,
+      "commuting_effect_error_floor": 0.005859375,
+      "natural_total_support_rank_to_fiber": 2.0,
+      "flat_equal_rank_holonomy_sufficient": false,
+      "partial_support_or_operator_metric_required": true,
+      "nonflat_gpe_holonomy_compiled": false,
+      "status": "flat-holonomy-falsified-nonflat-partial-support-required"
+    },
+    {
+      "child_aspect": 2.25,
+      "natural_effect_m4_limit": 0.10973936899862825,
+      "natural_support_m4_limit": 2.8125,
+      "flat_holonomy_effect_m4": 0.0,
+      "commuting_effect_error_floor": 0.005859375,
+      "natural_total_support_rank_to_fiber": 2.25,
+      "flat_equal_rank_holonomy_sufficient": false,
+      "partial_support_or_operator_metric_required": true,
+      "nonflat_gpe_holonomy_compiled": false,
+      "status": "flat-holonomy-falsified-nonflat-partial-support-required"
+    },
+    {
+      "child_aspect": 2.5,
+      "natural_effect_m4_limit": 0.09600000000000002,
+      "natural_support_m4_limit": 3.75,
+      "flat_holonomy_effect_m4": 0.0,
+      "commuting_effect_error_floor": 0.005859375,
+      "natural_total_support_rank_to_fiber": 2.5,
+      "flat_equal_rank_holonomy_sufficient": false,
+      "partial_support_or_operator_metric_required": true,
+      "nonflat_gpe_holonomy_compiled": false,
+      "status": "flat-holonomy-falsified-nonflat-partial-support-required"
+    },
+    {
+      "child_aspect": 3.0,
+      "natural_effect_m4_limit": 0.07407407407407408,
+      "natural_support_m4_limit": 6.0,
+      "flat_holonomy_effect_m4": 0.0,
+      "commuting_effect_error_floor": 0.005859375,
+      "natural_total_support_rank_to_fiber": 3.0,
+      "flat_equal_rank_holonomy_sufficient": false,
+      "partial_support_or_operator_metric_required": true,
+      "nonflat_gpe_holonomy_compiled": false,
+      "status": "flat-holonomy-falsified-nonflat-partial-support-required"
+    },
+    {
+      "child_aspect": 3.5,
+      "natural_effect_m4_limit": 0.05830903790087463,
+      "natural_support_m4_limit": 8.75,
+      "flat_holonomy_effect_m4": 0.0,
+      "commuting_effect_error_floor": 0.005859375,
+      "natural_total_support_rank_to_fiber": 3.5,
+      "flat_equal_rank_holonomy_sufficient": false,
+      "partial_support_or_operator_metric_required": true,
+      "nonflat_gpe_holonomy_compiled": false,
+      "status": "flat-holonomy-falsified-nonflat-partial-support-required"
+    },
+    {
+      "child_aspect": 4.0,
+      "natural_effect_m4_limit": 0.046875,
+      "natural_support_m4_limit": 12.0,
+      "flat_holonomy_effect_m4": 0.0,
+      "commuting_effect_error_floor": 0.005859375,
+      "natural_total_support_rank_to_fiber": 4.0,
+      "flat_equal_rank_holonomy_sufficient": false,
+      "partial_support_or_operator_metric_required": true,
+      "nonflat_gpe_holonomy_compiled": false,
+      "status": "flat-holonomy-falsified-nonflat-partial-support-required"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "test_flat_equal_rank_holonomy_against_natural_component_m4",
+      "resolved": true,
+      "resolution": "Every flat section has scalar coordinate effects and zero M4, separated from the positive natural limit."
+    },
+    {
+      "obligation": "generalize_gpe_holonomy_to_partial_support_connections",
+      "resolved": false,
+      "resolution": "Need coherently selectable initial/final support projections, partial transports, and an operator-valued frustration gap."
+    },
+    {
+      "obligation": "compile_direct_global_orientation_polar",
+      "resolved": false,
+      "resolution": "A direct representation transform could bypass componentwise partial-holonomy assembly but is not known."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Nontrivial cycle holonomy makes flat vertex effects noncommuting.",
+      "resolved": true,
+      "resolution": "Cycle constraints only choose B; unitarity still gives B^*T_v^*T_vB=I at every vertex."
+    },
+    {
+      "objection": "Nonuniform scalar vertex weights create the natural geometry.",
+      "resolved": true,
+      "resolution": "They change probabilities but every effect remains scalar."
+    },
+    {
+      "objection": "This rules out pair-polar GPE as an ingredient.",
+      "resolved": true,
+      "resolution": "No. It rules out only a flat equal-rank assembly; pair GPE may supply edges in a genuinely partial-support connection."
+    },
+    {
+      "objection": "A flat model can match retained supports by activating all vertices.",
+      "resolved": true,
+      "resolution": "Its support is then the full fiber at every vertex, while natural leaf support is sparse and total support rank is only alpha r."
+    }
+  ],
+  "headline_metrics": {
+    "flat_holonomy_scalar_effect_theorem_count": 1,
+    "flat_holonomy_architecture_no_go_count": 1,
+    "finite_flat_holonomy_control_count": 3,
+    "finite_flat_support_control_count": 3,
+    "finite_control_failure_count": 0,
+    "natural_effect_m4_uniform_floor": 0.046875,
+    "natural_commuting_effect_error_uniform_floor": 0.005859375,
+    "natural_support_m4_uniform_floor": 2.0,
+    "partial_support_holonomy_compiler_count": 0,
+    "direct_global_polar_compiler_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "flat_equal_rank_holonomy_component_povm_rejected": true,
+    "partial_support_or_operator_metric_required": true,
+    "all_gpe_holonomy_routes_rejected": false,
+    "partial_support_gpe_holonomy_compiled": false,
+    "direct_global_orientation_polar_compiled": false,
+    "hidden_label_decoder_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "Flat holonomy can only produce scalar vertex effects; the natural nonabelian support geometry requires a nonflat coherent architecture."
+  },
+  "status": "flat-holonomy-component-route-falsified-partial-support-required",
+  "summary": "A flat equal-rank unitary GPE-holonomy resolver has exactly scalar coordinate effects on every fixed space and cannot realize the positive natural component M4. Partial supports, operator-valued metrics, or a direct global polar are mandatory.",
+  "falsifiers_triggered": [
+    "Solving only the flat holonomy gap would not compile the natural component POVM.",
+    "Nontrivial unitary cycle holonomy does not create noncommuting vertex effects.",
+    "Scalar vertex reweighting cannot substitute for partial support geometry."
+  ]
+}

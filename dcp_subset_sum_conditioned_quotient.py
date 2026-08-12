@@ -234,34 +234,4 @@ def write_conditioned_quotient_audit(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-LOW-BIT-CONDITIONING-AS-HIGH-BIT-CONCENTRATION-SHORTCUT",
-                source=str(path),
-                claim="Polynomial low-bit conditioning automatically concentrates the remaining quotient onto a polynomial explicit candidate set.",
-                reason_invalid="Exact finite quotient distributions retain broad support/high entropy and no implicit high-bit decoder or geometry theorem is supplied.",
-                lesson="Keep the BDD preconditioner, but require a mechanism that changes quotient geometry and prove it asymptotically.",
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "minimum_tail_normalized_shannon_entropy": payload["headline_metrics"]["minimum_tail_normalized_shannon_entropy"],
-                    "maximum_tail_top_polynomial_candidate_mass": payload["headline_metrics"]["maximum_tail_top_polynomial_candidate_mass"],
-                    "proved_high_bit_geometry_improvement_count": 0,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-SUBSET-SUM-CONDITIONED-QUOTIENT"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_subset_sum_conditioned_quotient": str(path)},
-            )
-        )
     return payload

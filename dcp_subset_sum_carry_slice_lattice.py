@@ -461,44 +461,4 @@ def write_carry_slice_lattice_search(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-CARRY-SLICED-LLL-FINITE-WITHOUT-COVERAGE-THEOREM",
-                source=str(path),
-                claim=(
-                    "Finite success of a low-carry-sliced LLL embedding proves a polynomial partial density-one "
-                    "subset-sum solver."
-                ),
-                reason_invalid=(
-                    "The paired finite audit has no uniform inverse-polynomial legal-input coverage or reversible "
-                    "composition theorem, regardless of whether it improves the unsliced baseline at tested sizes."
-                ),
-                lesson=(
-                    "Retain carry slicing as a serious polynomial solver class. Next prove or falsify its average-case "
-                    "short-vector separation and tail coverage instead of tuning finite scales."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "carry_sliced_only_success_count": payload["headline_metrics"]["carry_sliced_only_success_count"],
-                    "tail_carry_sliced_success_count": payload["headline_metrics"]["tail_carry_sliced_success_count"],
-                    "proved_uniform_inverse_polynomial_coverage_count": 0,
-                    "source_contract_satisfying_row_count": 0,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-SUBSET-SUM-CARRY-SLICE-LATTICE"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_subset_sum_carry_slice_lattice": str(path)},
-            )
-        )
     return payload

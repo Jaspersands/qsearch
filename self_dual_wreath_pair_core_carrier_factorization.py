@@ -1081,58 +1081,6 @@ def write_pair_core_carrier_factorization_report(
     payload = asdict(run_pair_core_carrier_factorization(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-WREATH-SINGLE-RECIPROCAL-PAIR-CORE-LAW",
-                source=str(path),
-                claim=(
-                    "Every off-common pair-core overlap is a single "
-                    "reciprocal irrep dimension 1/d_alpha."
-                ),
-                reason_invalid=(
-                    "The exact shared-vertex overlap is a two-carrier "
-                    "product 1/(d_beta d_p). Finite screens saw single "
-                    "reciprocals only because their membership blocks were "
-                    "singletons, which forces the second carrier to be one "
-                    "dimensional."
-                ),
-                lesson=(
-                    "Use the closed-form carrier factorization rather than "
-                    "measured reciprocal spectra, and do not treat a small "
-                    "per-block correlation as evidence of conditioning "
-                    "without counting adjacency."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_pair_core_carrier_factorization": str(
-                        path
-                    )
-                },
-            )
-        )
     return payload
 
 

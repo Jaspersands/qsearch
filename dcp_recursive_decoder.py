@@ -358,33 +358,4 @@ def write_recursive_decoder_report(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-EMPIRICAL-RECURSION-NOT-ASYMPTOTIC-THEOREM",
-                source=str(path),
-                claim="Successful finite recursive DCP decoder trials establish an improved DHSP algorithm.",
-                reason_invalid=(
-                    "The current run has no uniform per-stage endpoint probability, bounded total failure, or improved "
-                    "sample/time/space recurrence relative to generic sieves."
-                ),
-                lesson="Use empirical full recovery to test decoder composition only; require a theorem before algorithmic promotion.",
-                applies_to=["DHS-GOWERS-SIEVE", "HYP-LIT-HIDDEN-SHIFT-SIEVE", registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-RECURSIVE-DECODER"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_recursive_decoder": str(path)},
-            )
-        )
     return payload

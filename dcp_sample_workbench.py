@@ -621,47 +621,4 @@ def write_dcp_sample_workbench(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-DETERMINISTIC-FAVORABLE-BRANCH",
-                source=str(path),
-                claim="A bucketed phase-label trace may deterministically subtract matched labels when estimating sample yield.",
-                reason_invalid=(
-                    "The physical CNOT combine produces sum and difference labels with probability 1/2. "
-                    f"The live audit found an optimism gap of {payload['headline_metrics']['postselection_optimism_gap']} outputs."
-                ),
-                lesson="Charge measurement branches and postselection in every phase-state sample exponent.",
-                applies_to=["DHS-GOWERS-SIEVE", "HYP-LIT-HIDDEN-SHIFT-SIEVE", "EXP-DHS-PHASE-SIEVE"],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-PARITY-ENDPOINT-NOT-FULL-DECODER",
-                source=str(path),
-                claim="A high-valuation N/2 phase label constitutes recovery of the hidden reflection.",
-                reason_invalid="The corresponding Hadamard measurement reveals only s mod 2; all remaining bits and reduction composition remain unproved.",
-                lesson="Track decoded congruence bits and the complete recursive decoder separately from target valuation.",
-                applies_to=["DHS-GOWERS-SIEVE", "HYP-LIT-HIDDEN-SHIFT-SIEVE", "EXP-DHS-PHASE-SIEVE"],
-                evidence={
-                    "parity_endpoint_trial_count": payload["headline_metrics"]["parity_endpoint_trial_count"],
-                    "full_hidden_reflection_decode_count": payload["headline_metrics"]["full_hidden_reflection_decode_count"],
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-SAMPLE-NATIVE"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_sample_native_sieve": str(path)},
-            )
-        )
     return payload

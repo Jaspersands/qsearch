@@ -449,54 +449,6 @@ def write_plancherel_block_mass_report(
     payload = asdict(run_plancherel_block_mass())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-WREATH-SELLKE-SUPPORT-IS-USABLE-MASS",
-                source=str(path),
-                claim=(
-                    "Typical constant-block tensor covering makes direct "
-                    "postselection onto matched trivial/sign common-core "
-                    "sectors inverse-polynomially likely."
-                ),
-                reason_invalid=(
-                    "Exact Plancherel stationarity gives expected single-side "
-                    "invariant fraction 1/n! and matched two-side fraction "
-                    "2/(n!)^2, independent of block size."
-                ),
-                lesson=(
-                    "Use support theorems to identify obstructions, not as "
-                    "success-probability estimates. Seek a high-success "
-                    "complement projection or high-dimensional channel."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_plancherel_block_mass": str(path)
-                },
-            )
-        )
     return payload
 
 

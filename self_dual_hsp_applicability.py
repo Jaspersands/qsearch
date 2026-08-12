@@ -430,38 +430,6 @@ def write_self_dual_hsp_applicability(
     payload = asdict(run_self_dual_hsp_applicability(source_path=source_path, spec=spec))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        for record in payload["family_records"]:
-            if record["dimension_condition_passes"]:
-                continue
-            upsert_negative_result(
-                NegativeResultRecord(
-                    id=f"NEG-CODE-SELF-DUAL-HSP-NOGO-OVERREACH-{record['family_id'].upper()}",
-                    source=str(path),
-                    claim=f"The published single-coset code-equivalence no-go already closes {record['family_id']}.",
-                    reason_invalid=record["interpretation"],
-                    lesson=(
-                        "Apply sufficient no-go theorems only after checking their dimension, automorphism-size, and "
-                        "minimal-degree hypotheses. A failed hypothesis creates proof debt, not positive evidence."
-                    ),
-                    applies_to=[registry_candidate_id, registry_experiment_id],
-                    evidence=record,
-                )
-            )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"self_dual_hsp_applicability": str(path)},
-            )
-        )
     return payload
 
 

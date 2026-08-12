@@ -1,0 +1,450 @@
+{
+  "created_at": "2026-08-12T03:41:12.140354+00:00",
+  "theorem_contract": {
+    "fixed_tuple_purity": "Tr(tau^2)=|G|^-2 4^-k sum_(s,t) product_i L_i(s,t).",
+    "plancherel_second_character_moment": "E_Pl[(chi_lambda(g)/d_lambda)^2]=1/|Cl(g)|.",
+    "annealed_purity": "E Tr(tau^2)=|G|^-2 2^-k sum_(s,t) [|Cl(s^-1t)|^-1+(|Cl(s)||Cl(t)|)^-1]^k.",
+    "partition_bound": "For k=ceil(log2|G|), |G|2^k ETr(tau^2)<=2p(n)+2p(n)^2.",
+    "holevo_consequence": "Typical one-block Holevo information is O(log p(n))=O(sqrt(n)), not Theta(log(n!)).",
+    "scope": "The theorem applies after carrier trace. It leaves polynomially many blocks, adaptive bit extraction, and carrier-retaining decoders open.",
+    "theorem_verified": true,
+    "status": "joint-register-one-block-nonextensive-multiblock-open",
+    "collision_free_conditioning": "Conditioned expectation is at most the unconditioned expectation divided by P_cf(n,k), and P_cf(n,k)->1."
+  },
+  "theorem": {
+    "fixed_tuple_purity": "Tr(tau^2)=|G|^-2 4^-k sum_(s,t) product_i L_i(s,t).",
+    "plancherel_second_character_moment": "E_Pl[(chi_lambda(g)/d_lambda)^2]=1/|Cl(g)|.",
+    "annealed_purity": "E Tr(tau^2)=|G|^-2 2^-k sum_(s,t) [|Cl(s^-1t)|^-1+(|Cl(s)||Cl(t)|)^-1]^k.",
+    "partition_bound": "For k=ceil(log2|G|), |G|2^k ETr(tau^2)<=2p(n)+2p(n)^2.",
+    "holevo_consequence": "Typical one-block Holevo information is O(log p(n))=O(sqrt(n)), not Theta(log(n!)).",
+    "scope": "The theorem applies after carrier trace. It leaves polynomially many blocks, adaptive bit extraction, and carrier-retaining decoders open.",
+    "theorem_verified": true,
+    "status": "joint-register-one-block-nonextensive-multiblock-open"
+  },
+  "fixed_tuple_controls": [
+    {
+      "control_id": "W3-SINGLE-UNEQUAL",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 1,
+      "group_order": 6,
+      "joint_register_dimension": 12,
+      "direct_matrix_purity": 0.43750000000000017,
+      "exact_character_purity": 0.4375,
+      "purity_formula_residual": 1.6653345369377348e-16,
+      "normalized_purity": 5.25,
+      "holevo_upper_bound_bits": 2.3923174227787602,
+      "exact_fixed_tuple_purity_verified": true,
+      "status": "exact-fixed-tuple-joint-purity"
+    },
+    {
+      "control_id": "W3-INFORMATION-THRESHOLD",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 3,
+      "group_order": 6,
+      "joint_register_dimension": 48,
+      "direct_matrix_purity": 0.21484375000000006,
+      "exact_character_purity": 0.21484375,
+      "purity_formula_residual": 5.551115123125783e-17,
+      "normalized_purity": 10.3125,
+      "holevo_upper_bound_bits": 3.3663222142458156,
+      "exact_fixed_tuple_purity_verified": true,
+      "status": "exact-fixed-tuple-joint-purity"
+    },
+    {
+      "control_id": "W4-COLLISION-FREE-PAIR",
+      "n": 4,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 2,
+      "group_order": 24,
+      "joint_register_dimension": 96,
+      "direct_matrix_purity": 0.04050925925925923,
+      "exact_character_purity": 0.040509259259259266,
+      "purity_formula_residual": 3.469446951953614e-17,
+      "normalized_purity": 3.8888888888888893,
+      "holevo_upper_bound_bits": 1.9593580155026542,
+      "exact_fixed_tuple_purity_verified": true,
+      "status": "exact-fixed-tuple-joint-purity"
+    }
+  ],
+  "natural_controls": [
+    {
+      "n": 3,
+      "copy_count": 3,
+      "group_order": 6,
+      "partition_count": 3,
+      "exact_normalized_annealed_purity": 4.252057613168724,
+      "universal_normalized_purity_upper_bound": 24.0,
+      "exact_annealed_holevo_upper_bound_bits": 2.088161144768759,
+      "universal_holevo_upper_bound_bits": 4.584962500721156,
+      "bound_ratio": 0.17716906721536352,
+      "class_product_rounding_residual": 0.0,
+      "exact_class_formula_verified": true,
+      "status": "exact-annealed-joint-purity-below-partition-bound"
+    },
+    {
+      "n": 4,
+      "copy_count": 5,
+      "group_order": 24,
+      "partition_count": 5,
+      "exact_normalized_annealed_purity": 2.539186571538145,
+      "universal_normalized_purity_upper_bound": 60.0,
+      "exact_annealed_holevo_upper_bound_bits": 1.3443664036281426,
+      "universal_holevo_upper_bound_bits": 5.906890595608519,
+      "bound_ratio": 0.04231977619230242,
+      "class_product_rounding_residual": 8.881784197001252e-16,
+      "exact_class_formula_verified": true,
+      "status": "exact-annealed-joint-purity-below-partition-bound"
+    },
+    {
+      "n": 5,
+      "copy_count": 7,
+      "group_order": 120,
+      "partition_count": 7,
+      "exact_normalized_annealed_purity": 2.0785609409445738,
+      "universal_normalized_purity_upper_bound": 112.0,
+      "exact_annealed_holevo_upper_bound_bits": 1.0555850466919787,
+      "universal_holevo_upper_bound_bits": 6.807354922057604,
+      "bound_ratio": 0.018558579829862264,
+      "class_product_rounding_residual": 2.842170943040401e-14,
+      "exact_class_formula_verified": true,
+      "status": "exact-annealed-joint-purity-below-partition-bound"
+    },
+    {
+      "n": 6,
+      "copy_count": 10,
+      "group_order": 720,
+      "partition_count": 11,
+      "exact_normalized_annealed_purity": 2.424365233275767,
+      "universal_normalized_purity_upper_bound": 264.0,
+      "exact_annealed_holevo_upper_bound_bits": 1.2776070587709167,
+      "universal_holevo_upper_bound_bits": 8.044394119358454,
+      "bound_ratio": 0.009183201641196088,
+      "class_product_rounding_residual": 9.094947017729282e-13,
+      "exact_class_formula_verified": true,
+      "status": "exact-annealed-joint-purity-below-partition-bound"
+    },
+    {
+      "n": 7,
+      "copy_count": 13,
+      "group_order": 5040,
+      "partition_count": 15,
+      "exact_normalized_annealed_purity": 2.6254760232888765,
+      "universal_normalized_purity_upper_bound": 480.0,
+      "exact_annealed_holevo_upper_bound_bits": 1.3925790205603883,
+      "universal_holevo_upper_bound_bits": 8.906890595608518,
+      "bound_ratio": 0.0054697417151851595,
+      "class_product_rounding_residual": 2.9103830456733704e-11,
+      "exact_class_formula_verified": true,
+      "status": "exact-annealed-joint-purity-below-partition-bound"
+    },
+    {
+      "n": 8,
+      "copy_count": 16,
+      "group_order": 40320,
+      "partition_count": 22,
+      "exact_normalized_annealed_purity": 2.6254005690244813,
+      "universal_normalized_purity_upper_bound": 1012.0,
+      "exact_annealed_holevo_upper_bound_bits": 1.3925375579622294,
+      "universal_holevo_upper_bound_bits": 9.98299357469431,
+      "bound_ratio": 0.0025942693369807126,
+      "class_product_rounding_residual": 4.656612873077393e-10,
+      "exact_class_formula_verified": true,
+      "status": "exact-annealed-joint-purity-below-partition-bound"
+    },
+    {
+      "n": 9,
+      "copy_count": 19,
+      "group_order": 362880,
+      "partition_count": 30,
+      "exact_normalized_annealed_purity": 2.4447966662175964,
+      "universal_normalized_purity_upper_bound": 1860.0,
+      "exact_annealed_holevo_upper_bound_bits": 1.2897144811946515,
+      "universal_holevo_upper_bound_bits": 10.861086905995395,
+      "bound_ratio": 0.0013144068097944066,
+      "class_product_rounding_residual": 5.960464477539063e-08,
+      "exact_class_formula_verified": true,
+      "status": "exact-annealed-joint-purity-below-partition-bound"
+    },
+    {
+      "n": 10,
+      "copy_count": 22,
+      "group_order": 3628800,
+      "partition_count": 42,
+      "exact_normalized_annealed_purity": 2.1558376579924676,
+      "universal_normalized_purity_upper_bound": 3612.0,
+      "exact_annealed_holevo_upper_bound_bits": 1.108248542270667,
+      "universal_holevo_upper_bound_bits": 11.818582177480858,
+      "bound_ratio": 0.000596854279621392,
+      "class_product_rounding_residual": 3.814697265625e-06,
+      "exact_class_formula_verified": true,
+      "status": "exact-annealed-joint-purity-below-partition-bound"
+    },
+    {
+      "n": 11,
+      "copy_count": 26,
+      "group_order": 39916800,
+      "partition_count": 56,
+      "exact_normalized_annealed_purity": 2.6812185248342835,
+      "universal_normalized_purity_upper_bound": 6384.0,
+      "exact_annealed_holevo_upper_bound_bits": 1.422888806730777,
+      "universal_holevo_upper_bound_bits": 12.640244936222345,
+      "bound_ratio": 0.0004199903704314354,
+      "class_product_rounding_residual": 0.000244140625,
+      "exact_class_formula_verified": true,
+      "status": "exact-annealed-joint-purity-below-partition-bound"
+    },
+    {
+      "n": 12,
+      "copy_count": 29,
+      "group_order": 479001600,
+      "partition_count": 77,
+      "exact_normalized_annealed_purity": 2.1208123554242815,
+      "universal_normalized_purity_upper_bound": 12012.0,
+      "exact_annealed_holevo_upper_bound_bits": 1.0846169801921097,
+      "universal_holevo_upper_bound_bits": 13.552188759557149,
+      "bound_ratio": 0.0001765578051468766,
+      "class_product_rounding_residual": 0.015625,
+      "exact_class_formula_verified": true,
+      "status": "exact-annealed-joint-purity-below-partition-bound"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 16,
+      "information_threshold_copy_count": 45,
+      "hidden_label_entropy_bits": 44.25014046988262,
+      "partition_count_decimal": "231",
+      "universal_annealed_holevo_upper_bound_bits": 16.70973003654363,
+      "typical_failure_probability": 0.00390625,
+      "typical_holevo_upper_bound_bits": 24.70973003654363,
+      "bounded_error_fano_block_lower_bound": 1.1567021481118505,
+      "bounded_error_fano_coset_copy_lower_bound": 52.05159666503327,
+      "holevo_fraction_upper_bound": 0.5584102055757649,
+      "collision_free_conditioning_asymptotically_neutral": true,
+      "one_block_extensive_information_ruled_out": true,
+      "polynomial_number_of_blocks_ruled_out": false,
+      "carrier_retaining_decoder_ruled_out": false,
+      "status": "one-block-joint-register-nonextensive-multiblock-open"
+    },
+    {
+      "n": 32,
+      "information_threshold_copy_count": 118,
+      "hidden_label_entropy_bits": 117.6632636523603,
+      "partition_count_decimal": "8349",
+      "universal_annealed_holevo_upper_bound_bits": 27.05494817630154,
+      "typical_failure_probability": 0.0009765625,
+      "typical_holevo_upper_bound_bits": 37.054948176301544,
+      "bounded_error_fano_block_lower_bound": 2.0921330011133583,
+      "bounded_error_fano_coset_copy_lower_bound": 246.87169413137627,
+      "holevo_fraction_upper_bound": 0.31492368158154715,
+      "collision_free_conditioning_asymptotically_neutral": true,
+      "one_block_extensive_information_ruled_out": true,
+      "polynomial_number_of_blocks_ruled_out": false,
+      "carrier_retaining_decoder_ruled_out": false,
+      "status": "one-block-joint-register-nonextensive-multiblock-open"
+    },
+    {
+      "n": 64,
+      "information_threshold_copy_count": 296,
+      "hidden_label_entropy_bits": 295.9951439417241,
+      "partition_count_decimal": "1741630",
+      "universal_annealed_holevo_upper_bound_bits": 42.46401429425814,
+      "typical_failure_probability": 0.000244140625,
+      "typical_holevo_upper_bound_bits": 54.46401429425814,
+      "bounded_error_fano_block_lower_bound": 3.6062674166087243,
+      "bounded_error_fano_coset_copy_lower_bound": 1067.4551553161823,
+      "holevo_fraction_upper_bound": 0.1840030669725483,
+      "collision_free_conditioning_asymptotically_neutral": true,
+      "one_block_extensive_information_ruled_out": true,
+      "polynomial_number_of_blocks_ruled_out": false,
+      "carrier_retaining_decoder_ruled_out": false,
+      "status": "one-block-joint-register-nonextensive-multiblock-open"
+    },
+    {
+      "n": 128,
+      "information_threshold_copy_count": 717,
+      "hidden_label_entropy_bits": 716.161722083622,
+      "partition_count_decimal": "4351078600",
+      "universal_annealed_holevo_upper_bound_bits": 65.03745186562153,
+      "typical_failure_probability": 6.103515625e-05,
+      "typical_holevo_upper_bound_bits": 79.03745186562153,
+      "bounded_error_fano_block_lower_bound": 6.029076608287823,
+      "bounded_error_fano_coset_copy_lower_bound": 4322.847928142369,
+      "holevo_fraction_upper_bound": 0.11036257513968724,
+      "collision_free_conditioning_asymptotically_neutral": true,
+      "one_block_extensive_information_ruled_out": true,
+      "polynomial_number_of_blocks_ruled_out": false,
+      "carrier_retaining_decoder_ruled_out": false,
+      "status": "one-block-joint-register-nonextensive-multiblock-open"
+    },
+    {
+      "n": 256,
+      "information_threshold_copy_count": 1684,
+      "hidden_label_entropy_bits": 1683.9962872242147,
+      "partition_count_decimal": "365749566870782",
+      "universal_annealed_holevo_upper_bound_bits": 97.75569896862906,
+      "typical_failure_probability": 1.52587890625e-05,
+      "typical_holevo_upper_bound_bits": 113.75569896862906,
+      "bounded_error_fano_block_lower_bound": 9.861008334695429,
+      "bounded_error_fano_coset_copy_lower_bound": 16605.938035627103,
+      "holevo_fraction_upper_bound": 0.06755103905611112,
+      "collision_free_conditioning_asymptotically_neutral": true,
+      "one_block_extensive_information_ruled_out": true,
+      "polynomial_number_of_blocks_ruled_out": false,
+      "carrier_retaining_decoder_ruled_out": false,
+      "status": "one-block-joint-register-nonextensive-multiblock-open"
+    },
+    {
+      "n": 512,
+      "information_threshold_copy_count": 3876,
+      "hidden_label_entropy_bits": 3875.166121943203,
+      "partition_count_decimal": "4453575699570940947378",
+      "universal_annealed_holevo_upper_bound_bits": 144.83090821814227,
+      "typical_failure_probability": 3.814697265625e-06,
+      "typical_holevo_upper_bound_bits": 162.83090821814227,
+      "bounded_error_fano_block_lower_bound": 15.86016938505091,
+      "bounded_error_fano_coset_copy_lower_bound": 61474.016536457326,
+      "holevo_fraction_upper_bound": 0.042019078174767556,
+      "collision_free_conditioning_asymptotically_neutral": true,
+      "one_block_extensive_information_ruled_out": true,
+      "polynomial_number_of_blocks_ruled_out": false,
+      "carrier_retaining_decoder_ruled_out": false,
+      "status": "one-block-joint-register-nonextensive-multiblock-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_joint_register_purity",
+      "resolved": true,
+      "resolution": "The carrier trace factorizes over orientation bits and class contraction validates the exact fixed-tuple formula."
+    },
+    {
+      "obligation": "bound_natural_one_block_information",
+      "resolved": true,
+      "resolution": "Character column orthogonality, binomial expansion, and Cauchy--Schwarz give the partition-count upper bound."
+    },
+    {
+      "obligation": "condition_on_collision_free_sources",
+      "resolved": true,
+      "resolution": "Nonnegativity costs at most 1/P_cf, and the existing global collision-free theorem proves P_cf tends to one."
+    },
+    {
+      "obligation": "construct_multiblock_iterative_information_extractor",
+      "resolved": false,
+      "resolution": "The purity bound permits polynomially many blocks but supplies no efficient observables whose outcomes accumulate to the label."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Finite positive Holevo information scales to a one-block decoder.",
+      "resolved": true,
+      "resolution": "False for typical natural labels: normalized purity is at most exp(O(sqrt(n))) and one-block Holevo is nonextensive."
+    },
+    {
+      "objection": "Nonextensive one-block information kills the route completely.",
+      "resolved": false,
+      "resolution": "Fano requires only a polynomial number of threshold blocks under this bound; iterative or adaptive extraction remains possible."
+    },
+    {
+      "objection": "The bound also applies if the carrier is retained.",
+      "resolved": false,
+      "resolution": "No. Equation (1) arises specifically from tracing the carrier; the full row-copy isometry preserves the original ensemble."
+    }
+  ],
+  "headline_metrics": {
+    "exact_fixed_tuple_purity_theorem_count": 1,
+    "exact_plancherel_annealed_purity_theorem_count": 1,
+    "partition_count_purity_upper_bound_theorem_count": 1,
+    "fixed_tuple_control_count": 3,
+    "natural_class_control_count": 10,
+    "exhaustive_plancherel_validation_count": 2,
+    "finite_control_failure_count": 0,
+    "maximum_exact_normalized_annealed_purity": 4.252057613168724,
+    "maximum_exact_annealed_holevo_upper_bound_bits": 2.088161144768759,
+    "one_block_extensive_information_theorem_count": 0,
+    "multiblock_information_extractor_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "joint_register_contains_nonzero_finite_information": true,
+    "exact_joint_purity_class_formula_proved": true,
+    "typical_one_block_extensive_information_ruled_out": true,
+    "collision_free_conditioning_preserves_asymptotic_bound": true,
+    "polynomial_number_of_joint_blocks_ruled_out": false,
+    "adaptive_joint_information_extractor_constructed": false,
+    "carrier_retaining_decoder_ruled_out": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false
+  },
+  "status": "joint-register-one-block-nonextensive-multiblock-open",
+  "summary": "The carrier-traced joint register has an exact class-compressed purity. Typical natural threshold blocks carry only O(sqrt(n)) Holevo bits, ruling out an extensive one-block decoder but leaving polynomial multiblock information extraction open.",
+  "falsifiers_triggered": [
+    "The substantial W3 joint correlation signal does not extrapolate to extensive information in one natural threshold block.",
+    "Discarding the carrier incurs a quantifiable decoupling cost even though neither retained marginal alone contains information.",
+    "A one-block no-go is not a polynomial-copy no-go; adaptive multiblock observables remain a legitimate research direction."
+  ]
+}

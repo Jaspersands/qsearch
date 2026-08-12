@@ -554,25 +554,6 @@ def write_common_core_cech_laplacian_report(
     payload = asdict(run_common_core_cech_laplacian(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_common_core_cech_laplacian": str(path)
-                },
-            )
-        )
     return payload
 
 

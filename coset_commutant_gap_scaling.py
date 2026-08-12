@@ -303,48 +303,4 @@ def write_commutant_gap_scaling_report(
     payload = asdict(build_commutant_gap_scaling_report(n_values=n_values))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-NONUNIFORM-COMMUTANT-COEFFICIENT-SEARCH",
-                source=str(output_path),
-                claim="Independently optimized finite-n commutant coefficients define a uniform quantum transform.",
-                reason_invalid=(
-                    "An n- and sector-specific coefficient table is nonuniform advice. The scaling probe therefore "
-                    "uses one fixed support-intersection-two orbit Hamiltonian at every n."
-                ),
-                lesson="Require a closed coefficient rule and normalized-gap theorem before circuit promotion.",
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-FINITE-GAP-INTERPOLATION-AS-THEOREM",
-                source=str(output_path),
-                claim="Agreement with 2/[n(n-1)] on finite rows proves the all-n multiplicity gap.",
-                reason_invalid=(
-                    "Finite numerical spectra do not prove the exact multiplicity action or exclude a later gap collapse."
-                ),
-                lesson=(
-                    "Derive the 2x2 multiplicity trace and determinant symbolically from the 2-subset module or orbit characters."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_commutant_gap_scaling": str(output_path)},
-            )
-        )
     return payload

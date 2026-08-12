@@ -1,0 +1,293 @@
+{
+  "created_at": "2026-08-12T03:41:18.381109+00:00",
+  "theorem_contract": {
+    "transition": "K_(lambda,mu)(nu)=g(lambda,mu,nu)d_nu/(d_lambda d_mu).",
+    "regular_identity": "sum_mu d_mu g(lambda,mu,nu)=d_lambda d_nu from V_lambda tensor Reg=d_lambda Reg.",
+    "stationarity": "For every fixed lambda, averaging K_(lambda,mu) over Plancherel mu returns Plancherel nu, independent of lambda.",
+    "disjoint_tree_consequence": "Every disjoint dimension-weighted Kronecker tree with independent Plancherel leaves has independent Plancherel roots.",
+    "admission_consequence": "Independent recoupling cannot focus exact conjugate or one-box edge events beyond their stretched-exponential Plancherel mass.",
+    "scope": "Measured irrep-label stationarity does not dequantize shared-source coherence, Racah amplitudes, multiplicities, or transition filters.",
+    "theorem_verified": true,
+    "status": "plancherel-recoupling-stationarity-proved-shared-correlation-open"
+  },
+  "theorem": {
+    "transition": "K_(lambda,mu)(nu)=g(lambda,mu,nu)d_nu/(d_lambda d_mu).",
+    "regular_identity": "sum_mu d_mu g(lambda,mu,nu)=d_lambda d_nu from V_lambda tensor Reg=d_lambda Reg.",
+    "stationarity": "For every fixed lambda, averaging K_(lambda,mu) over Plancherel mu returns Plancherel nu, independent of lambda.",
+    "disjoint_tree_consequence": "Every disjoint dimension-weighted Kronecker tree with independent Plancherel leaves has independent Plancherel roots.",
+    "admission_consequence": "Independent recoupling cannot focus exact conjugate or one-box edge events beyond their stretched-exponential Plancherel mass.",
+    "scope": "Measured irrep-label stationarity does not dequantize shared-source coherence, Racah amplitudes, multiplicities, or transition filters.",
+    "theorem_verified": true,
+    "status": "plancherel-recoupling-stationarity-proved-shared-correlation-open"
+  },
+  "finite_controls": [
+    {
+      "n": 2,
+      "partition_count": 2,
+      "group_order": 2,
+      "fixed_input_count": 2,
+      "transition_row_normalization_residual": "0",
+      "maximum_stationarity_residual": "0",
+      "maximum_regular_multiplicity_identity_residual": 0,
+      "maximum_output_dependence_on_fixed_input_residual": "0",
+      "maximum_two_step_stationarity_residual": "0",
+      "exact_plancherel_stationarity_verified": true,
+      "status": "exact-plancherel-absorbing-recoupling-law"
+    },
+    {
+      "n": 3,
+      "partition_count": 3,
+      "group_order": 6,
+      "fixed_input_count": 3,
+      "transition_row_normalization_residual": "0",
+      "maximum_stationarity_residual": "0",
+      "maximum_regular_multiplicity_identity_residual": 0,
+      "maximum_output_dependence_on_fixed_input_residual": "0",
+      "maximum_two_step_stationarity_residual": "0",
+      "exact_plancherel_stationarity_verified": true,
+      "status": "exact-plancherel-absorbing-recoupling-law"
+    },
+    {
+      "n": 4,
+      "partition_count": 5,
+      "group_order": 24,
+      "fixed_input_count": 5,
+      "transition_row_normalization_residual": "0",
+      "maximum_stationarity_residual": "0",
+      "maximum_regular_multiplicity_identity_residual": 0,
+      "maximum_output_dependence_on_fixed_input_residual": "0",
+      "maximum_two_step_stationarity_residual": "0",
+      "exact_plancherel_stationarity_verified": true,
+      "status": "exact-plancherel-absorbing-recoupling-law"
+    },
+    {
+      "n": 5,
+      "partition_count": 7,
+      "group_order": 120,
+      "fixed_input_count": 7,
+      "transition_row_normalization_residual": "0",
+      "maximum_stationarity_residual": "0",
+      "maximum_regular_multiplicity_identity_residual": 0,
+      "maximum_output_dependence_on_fixed_input_residual": "0",
+      "maximum_two_step_stationarity_residual": "0",
+      "exact_plancherel_stationarity_verified": true,
+      "status": "exact-plancherel-absorbing-recoupling-law"
+    },
+    {
+      "n": 6,
+      "partition_count": 11,
+      "group_order": 720,
+      "fixed_input_count": 11,
+      "transition_row_normalization_residual": "0",
+      "maximum_stationarity_residual": "0",
+      "maximum_regular_multiplicity_identity_residual": 0,
+      "maximum_output_dependence_on_fixed_input_residual": "0",
+      "maximum_two_step_stationarity_residual": "0",
+      "exact_plancherel_stationarity_verified": true,
+      "status": "exact-plancherel-absorbing-recoupling-law"
+    },
+    {
+      "n": 7,
+      "partition_count": 15,
+      "group_order": 5040,
+      "fixed_input_count": 15,
+      "transition_row_normalization_residual": "0",
+      "maximum_stationarity_residual": "0",
+      "maximum_regular_multiplicity_identity_residual": 0,
+      "maximum_output_dependence_on_fixed_input_residual": "0",
+      "maximum_two_step_stationarity_residual": "0",
+      "exact_plancherel_stationarity_verified": true,
+      "status": "exact-plancherel-absorbing-recoupling-law"
+    },
+    {
+      "n": 8,
+      "partition_count": 22,
+      "group_order": 40320,
+      "fixed_input_count": 22,
+      "transition_row_normalization_residual": "0",
+      "maximum_stationarity_residual": "0",
+      "maximum_regular_multiplicity_identity_residual": 0,
+      "maximum_output_dependence_on_fixed_input_residual": "0",
+      "maximum_two_step_stationarity_residual": "0",
+      "exact_plancherel_stationarity_verified": true,
+      "status": "exact-plancherel-absorbing-recoupling-law"
+    },
+    {
+      "n": 9,
+      "partition_count": 30,
+      "group_order": 362880,
+      "fixed_input_count": 30,
+      "transition_row_normalization_residual": "0",
+      "maximum_stationarity_residual": "0",
+      "maximum_regular_multiplicity_identity_residual": 0,
+      "maximum_output_dependence_on_fixed_input_residual": "0",
+      "maximum_two_step_stationarity_residual": "0",
+      "exact_plancherel_stationarity_verified": true,
+      "status": "exact-plancherel-absorbing-recoupling-law"
+    },
+    {
+      "n": 10,
+      "partition_count": 42,
+      "group_order": 3628800,
+      "fixed_input_count": 42,
+      "transition_row_normalization_residual": "0",
+      "maximum_stationarity_residual": "0",
+      "maximum_regular_multiplicity_identity_residual": 0,
+      "maximum_output_dependence_on_fixed_input_residual": "0",
+      "maximum_two_step_stationarity_residual": "0",
+      "exact_plancherel_stationarity_verified": true,
+      "status": "exact-plancherel-absorbing-recoupling-law"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 32,
+      "maximum_plancherel_atom_asymptotic": "exp(-Theta(sqrt(n)))",
+      "disjoint_tree_root_law": "exact Plancherel",
+      "disjoint_tree_root_independence": true,
+      "local_young_degree_upper": 81.0,
+      "disjoint_root_young_edge_probability_upper_asymptotic": "poly(n) exp(-Theta(sqrt(n)))",
+      "independent_recoupling_focuses_rare_channels": false,
+      "shared_source_coherence_ruled_out": false,
+      "coherent_racah_transform_dequantized": false,
+      "status": "disjoint-recoupling-stationary-shared-source-correlations-open"
+    },
+    {
+      "n": 64,
+      "maximum_plancherel_atom_asymptotic": "exp(-Theta(sqrt(n)))",
+      "disjoint_tree_root_law": "exact Plancherel",
+      "disjoint_tree_root_independence": true,
+      "local_young_degree_upper": 151.62741699796953,
+      "disjoint_root_young_edge_probability_upper_asymptotic": "poly(n) exp(-Theta(sqrt(n)))",
+      "independent_recoupling_focuses_rare_channels": false,
+      "shared_source_coherence_ruled_out": false,
+      "coherent_racah_transform_dequantized": false,
+      "status": "disjoint-recoupling-stationary-shared-source-correlations-open"
+    },
+    {
+      "n": 128,
+      "maximum_plancherel_atom_asymptotic": "exp(-Theta(sqrt(n)))",
+      "disjoint_tree_root_law": "exact Plancherel",
+      "disjoint_tree_root_independence": true,
+      "local_young_degree_upper": 289.0,
+      "disjoint_root_young_edge_probability_upper_asymptotic": "poly(n) exp(-Theta(sqrt(n)))",
+      "independent_recoupling_focuses_rare_channels": false,
+      "shared_source_coherence_ruled_out": false,
+      "coherent_racah_transform_dequantized": false,
+      "status": "disjoint-recoupling-stationary-shared-source-correlations-open"
+    },
+    {
+      "n": 256,
+      "maximum_plancherel_atom_asymptotic": "exp(-Theta(sqrt(n)))",
+      "disjoint_tree_root_law": "exact Plancherel",
+      "disjoint_tree_root_independence": true,
+      "local_young_degree_upper": 558.2548339959391,
+      "disjoint_root_young_edge_probability_upper_asymptotic": "poly(n) exp(-Theta(sqrt(n)))",
+      "independent_recoupling_focuses_rare_channels": false,
+      "shared_source_coherence_ruled_out": false,
+      "coherent_racah_transform_dequantized": false,
+      "status": "disjoint-recoupling-stationary-shared-source-correlations-open"
+    },
+    {
+      "n": 512,
+      "maximum_plancherel_atom_asymptotic": "exp(-Theta(sqrt(n)))",
+      "disjoint_tree_root_law": "exact Plancherel",
+      "disjoint_tree_root_independence": true,
+      "local_young_degree_upper": 1089.0,
+      "disjoint_root_young_edge_probability_upper_asymptotic": "poly(n) exp(-Theta(sqrt(n)))",
+      "independent_recoupling_focuses_rare_channels": false,
+      "shared_source_coherence_ruled_out": false,
+      "coherent_racah_transform_dequantized": false,
+      "status": "disjoint-recoupling-stationary-shared-source-correlations-open"
+    },
+    {
+      "n": 1024,
+      "maximum_plancherel_atom_asymptotic": "exp(-Theta(sqrt(n)))",
+      "disjoint_tree_root_law": "exact Plancherel",
+      "disjoint_tree_root_independence": true,
+      "local_young_degree_upper": 2139.5096679918784,
+      "disjoint_root_young_edge_probability_upper_asymptotic": "poly(n) exp(-Theta(sqrt(n)))",
+      "independent_recoupling_focuses_rare_channels": false,
+      "shared_source_coherence_ruled_out": false,
+      "coherent_racah_transform_dequantized": false,
+      "status": "disjoint-recoupling-stationary-shared-source-correlations-open"
+    }
+  ],
+  "literature_links": [
+    {
+      "paper_id": "aggarwal-elboim-maximal-dimension-2026",
+      "url": "https://arxiv.org/abs/2605.25995",
+      "supports": "The maximal Plancherel atom is exp(-Theta(sqrt(n))).",
+      "external_theorem_not_reproved_here": true
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_natural_dimension_weighted_recoupling_law",
+      "resolved": true,
+      "resolution": "Plancherel is an exact absorbing/stationary law under Kronecker recoupling with one fresh Plancherel input."
+    },
+    {
+      "obligation": "test_independent_recoupling_as_rare_channel_focuser",
+      "resolved": true,
+      "resolution": "Rejected: disjoint trees retain independent Plancherel roots."
+    },
+    {
+      "obligation": "characterize_shared_source_recoupling_correlations",
+      "resolved": false,
+      "resolution": "Useful activation must reuse labels or preserve coherent multiplicity/Racah correlations absent from the classical tree law."
+    },
+    {
+      "obligation": "compile_label_adaptive_shared_source_transform",
+      "resolved": false,
+      "resolution": "No polynomial circuit or information-bearing filter is known."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Repeated random Kronecker recoupling concentrates onto useful intermediate shapes.",
+      "resolved": true,
+      "resolution": "False for dimension-weighted measured labels: one fresh Plancherel input resets the output exactly to Plancherel."
+    },
+    {
+      "objection": "Stationarity proves a classical simulation of the coherent decoder.",
+      "resolved": true,
+      "resolution": "False. It discards multiplicity phases and correlations between overlapping coupling trees."
+    },
+    {
+      "objection": "The sign-twist collective witness contradicts stationarity.",
+      "resolved": true,
+      "resolution": "No. Its useful channels share source labels and are deterministically correlated across complementary orientations."
+    }
+  ],
+  "headline_metrics": {
+    "plancherel_recoupling_stationarity_theorem_count": 1,
+    "regular_multiplicity_identity_theorem_count": 1,
+    "disjoint_tree_root_law_theorem_count": 1,
+    "finite_control_count": 9,
+    "finite_control_failure_count": 0,
+    "independent_recoupling_rare_channel_focuser_count": 0,
+    "shared_source_correlation_theorem_count": 0,
+    "natural_collective_decoder_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "dimension_weighted_recoupling_preserves_plancherel": true,
+    "disjoint_recoupling_tree_roots_independent_plancherel": true,
+    "independent_recoupling_focuses_rare_channels": false,
+    "shared_source_recoupling_dequantized": false,
+    "coherent_racah_transform_dequantized": false,
+    "typical_collective_energy_bound_proved": false,
+    "polynomial_point_decoder_proved": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "Only shared-source coherent recoupling can evade the stationary classical label law, and its magnitude/access remain open."
+  },
+  "status": "plancherel-recoupling-stationarity-proved-shared-correlation-open",
+  "summary": "Proved exact Plancherel stationarity under dimension-weighted Kronecker recoupling. Independent/disjoint trees cannot focus rare useful channels; the surviving target is shared-source coherent recoupling.",
+  "falsifiers_triggered": [
+    "Random independent Kronecker trees do not change the natural irrep label law at any depth.",
+    "A useful collective mechanism must exploit overlap between coupling trees, shared source labels, or multiplicity coherence.",
+    "Classical label stationarity must not be reported as a dequantization of coherent Racah processing."
+  ]
+}

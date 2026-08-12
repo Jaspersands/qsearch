@@ -274,34 +274,4 @@ def write_subset_sum_low_bit_bdd_audit(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-POLYNOMIAL-LOW-BIT-BDD-AS-FULL-SUBSET-SUM-SOLVER",
-                source=str(path),
-                claim="A polynomial BDD for O(log n) low subset-sum bits is already a polynomial density-one witness solver.",
-                reason_invalid="The exact representation leaves Theta(n) residual witness entropy and no high-bit geometry or decoding theorem.",
-                lesson="Retain the low-bit BDD as a proved preconditioning/state-preparation primitive. Demand a separate high-bit solver and coverage theorem.",
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "polynomial_width_certificate_count": payload["headline_metrics"]["polynomial_width_certificate_count"],
-                    "linear_residual_entropy_certificate_count": payload["headline_metrics"]["linear_residual_entropy_certificate_count"],
-                    "proved_polynomial_witness_solver_count": 0,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-SUBSET-SUM-LOW-BIT-BDD"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_subset_sum_low_bit_bdd": str(path)},
-            )
-        )
     return payload

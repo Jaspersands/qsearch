@@ -413,43 +413,4 @@ def write_multirecord_hierarchy_report(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-IID-DISJOINT-MULTIRECORD-MARGIN-PARSEVAL",
-                source=str(path),
-                claim="A fixed-degree product of iid DCP quadrature records creates a sample-efficient coarse-frequency sketch.",
-                reason_invalid=(
-                    "Every fixed signed aggregate label remains uniform. Conditional Jensen and Parseval retain the "
-                    "margin-energy lower bound, while the product outcome contributes a 4^r second moment on disjoint blocks."
-                ),
-                lesson=(
-                    "Do not retry disjoint fixed-degree product kernels. Analyze overlapping degenerate U-statistics, "
-                    "adaptive score families, implicit contractions, or premeasurement collective observables."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "certificate_count": payload["headline_metrics"]["certificate_count"],
-                    "joint_polynomial_resource_row_count": payload["headline_metrics"][
-                        "joint_polynomial_resource_row_count"
-                    ],
-                    "proved_overlapping_ustatistic_lower_bound_count": 0,
-                    "proved_collective_measurement_lower_bound_count": 0,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-MULTIRECORD-HIERARCHY"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_multirecord_estimator_hierarchy": str(path)},
-            )
-        )
     return payload

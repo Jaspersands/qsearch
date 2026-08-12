@@ -649,57 +649,6 @@ def write_self_dual_global_orbit_audit(
     payload = asdict(run_self_dual_global_orbit_audit(source_path=source_path, spec=spec))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        for pair in payload["pair_audits"]:
-            if not pair["equivalence_witness_found"]:
-                continue
-            upsert_negative_result(
-                NegativeResultRecord(
-                    id=f"NEG-CODE-SELF-DUAL-GLOBAL-ORBIT-{pair['id'].upper()}",
-                    source=str(path),
-                    claim=f"{pair['left_id']} and {pair['right_id']} form a non-equivalent hard code pair.",
-                    reason_invalid=pair["interpretation"],
-                    lesson=(
-                        "A matching basis-normalized full column multiset is an exact equivalence witness. Remove the "
-                        "pair before any coset-state measurement experiment."
-                    ),
-                    applies_to=[registry_candidate_id, registry_experiment_id],
-                    evidence=pair,
-                )
-            )
-        for family in payload["family_records"]:
-            if family["construction_a_invariant_class_count"] != 1:
-                continue
-            upsert_negative_result(
-                NegativeResultRecord(
-                    id=f"NEG-CODE-SELF-DUAL-CONSTRUCTION-A-LOCAL-{family['family_id'].upper()}",
-                    source=str(path),
-                    claim=f"Low-norm Construction-A invariants separate {family['family_id']}.",
-                    reason_invalid=(
-                        "All sampled instances share determinant, parity, minimum norm, and norm-two vector count."
-                    ),
-                    lesson=(
-                        "Construction-A low-norm invariants can collapse even when the global lattice orbit remains "
-                        "unknown. Add frame recovery or stronger lattice invariants; do not call the collision hardness."
-                    ),
-                    applies_to=[registry_candidate_id, registry_experiment_id],
-                    evidence=family,
-                )
-            )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"self_dual_global_orbit_audit": str(path)},
-            )
-        )
     return payload
 
 

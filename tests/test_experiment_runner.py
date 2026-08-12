@@ -8298,6 +8298,1620 @@ class ExperimentRunnerTests(unittest.TestCase):
         self.assertTrue(validation["valid"], validation["issues"])
 
 
+    def test_dcp_carry_quadratic_extension_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-DHS-DCP-CARRY-QUADRATIC-EXTENSION-BOUNDARY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "dcp_carry_quadratic_extension_boundary",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_dcp_label_incidence_rank_width_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-DHS-DCP-LABEL-INCIDENCE-RANK-WIDTH-NO-GO"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "dcp_label_incidence_rank_width_no_go",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_hidden_shift_public_evaluator_admission_theorem_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-HIDDEN-SHIFT-PUBLIC-EVALUATOR-ADMISSION-THEOREM"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "hidden_shift_public_evaluator_admission_theorem",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_all_level_component_trim_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-ALL-LEVEL-COMPONENT-TRIM"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_all_level_component_trim",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_branch_character_decoder_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-DECODER-BOUNDARY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_branch_character_decoder_boundary",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_coherent_component_trim_hybrid_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COHERENT-COMPONENT-TRIM-HYBRID"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_coherent_component_trim_hybrid",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_coherent_gpe_router_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COHERENT-GPE-ROUTER-BOUNDARY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_coherent_gpe_router_boundary",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_collective_point_activation_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COLLECTIVE-POINT-ACTIVATION"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_collective_point_activation",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_common_window_access_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COMMON-WINDOW-ACCESS-BOUNDARY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_common_window_access_boundary",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_component_common_codimension_curl_reduction_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-COMMON-CODIMENSION-CURL-REDUCTION"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_component_common_codimension_curl_reduction",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_component_dependency_ridge_moment_method_bridge_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEPENDENCY-RIDGE-MOMENT-METHOD-BRIDGE"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_component_dependency_ridge_moment_method_bridge",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_component_dependency_ridge_parity_stability_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEPENDENCY-RIDGE-PARITY-STABILITY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_component_dependency_ridge_parity_stability",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
+    def test_self_dual_wreath_component_dependency_ridge_physical_curl_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEPENDENCY-RIDGE-PHYSICAL-CURL"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_component_dependency_ridge_physical_curl",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_component_dependency_ridge_physical_hamming_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEPENDENCY-RIDGE-PHYSICAL-HAMMING"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_component_dependency_ridge_physical_hamming",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_component_dependency_ridge_physical_spectrum_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEPENDENCY-RIDGE-PHYSICAL-SPECTRUM"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_component_dependency_ridge_physical_spectrum",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_component_dependency_ridge_single_frame_tail_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DEPENDENCY-RIDGE-SINGLE-FRAME-TAIL"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_component_dependency_ridge_single_frame_tail",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_component_diagonal_leakage_bridge_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DIAGONAL-LEAKAGE-BRIDGE"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_component_diagonal_leakage_bridge",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_component_leaf_fourier_commutator_duality_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-LEAF-FOURIER-COMMUTATOR-DUALITY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_component_leaf_fourier_commutator_duality",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_component_leaf_fourier_leverage_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-LEAF-FOURIER-LEVERAGE"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_component_leaf_fourier_leverage",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_component_leaf_fourier_strata_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-LEAF-FOURIER-STRATA"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_component_leaf_fourier_strata",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_component_m4_operational_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-M4-OPERATIONAL-BOUNDARY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_component_m4_operational_boundary",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_component_polar_traffic_curl_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POLAR-TRAFFIC-CURL"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_component_polar_traffic_curl",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_component_single_leaf_diagonal_reduction_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-SINGLE-LEAF-DIAGONAL-REDUCTION"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_component_single_leaf_diagonal_reduction",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_component_size_biased_effect_law_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-SIZE-BIASED-EFFECT-LAW"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_component_size_biased_effect_law",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
+    def test_self_dual_wreath_component_support_geometry_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-SUPPORT-GEOMETRY-NO-GO"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_component_support_geometry_no_go",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_component_support_ridge_poisson_scale_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-SUPPORT-RIDGE-POISSON-SCALE-NO-GO"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_component_support_ridge_poisson_scale_no_go",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_component_trimmed_support_scalarization_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-COMPONENT-TRIMMED-SUPPORT-SCALARIZATION"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_component_trimmed_support_scalarization",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_conjugate_pair_admission_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-CONJUGATE-PAIR-ADMISSION-NO-GO"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_conjugate_pair_admission_no_go",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_constant_arity_joint_freeness_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-CONSTANT-ARITY-JOINT-FREENESS"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_constant_arity_joint_freeness",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_final_root_common_window_metric_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-COMMON-WINDOW-METRIC"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_final_root_common_window_metric",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_final_root_joint_aspect_sharpening_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-JOINT-ASPECT-SHARPENING"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_final_root_joint_aspect_sharpening",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_final_root_relative_jacobi_transfer_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-RELATIVE-JACOBI-TRANSFER"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_final_root_relative_jacobi_transfer",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_fixed_arity_support_sum_compiler_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-FIXED-ARITY-SUPPORT-SUM-COMPILER"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_fixed_arity_support_sum_compiler",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_flat_holonomy_component_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-FLAT-HOLONOMY-COMPONENT-NO-GO"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_flat_holonomy_component_no_go",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_interleaved_target_margin_stability_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-INTERLEAVED-TARGET-MARGIN-STABILITY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_interleaved_target_margin_stability",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_joint_character_correlation_decoder_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-JOINT-CHARACTER-CORRELATION-DECODER"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_joint_character_correlation_decoder",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
+    def test_self_dual_wreath_joint_character_multiplicity_gram_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-JOINT-CHARACTER-MULTIPLICITY-GRAM"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_joint_character_multiplicity_gram",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_joint_character_purity_decoupling_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-JOINT-CHARACTER-PURITY-DECOUPLING"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_joint_character_purity_decoupling",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_orientation_kernel_hash_thinning_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-KERNEL-HASH-THINNING"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_orientation_kernel_hash_thinning",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_orientation_partition_traffic_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-PARTITION-TRAFFIC"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_orientation_partition_traffic",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_partial_holonomy_sheaf_resolver_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-PARTIAL-HOLONOMY-SHEAF-RESOLVER"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_partial_holonomy_sheaf_resolver",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_physical_branch_erasure_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-BRANCH-ERASURE-BOUNDARY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_physical_branch_erasure_boundary",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_physical_row_copy_erasure_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-ROW-COPY-ERASURE-NO-GO"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_physical_row_copy_erasure_no_go",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_plancherel_recoupling_stationarity_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-RECOUPLING-STATIONARITY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_plancherel_recoupling_stationarity",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_point_child_star_energy_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-POINT-CHILD-STAR-ENERGY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_point_child_star_energy",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_point_effect_access_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-POINT-EFFECT-ACCESS-BOUNDARY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_point_effect_access_boundary",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_point_effect_qsvt_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-POINT-EFFECT-QSVT-NO-GO"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_point_effect_qsvt_no_go",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_point_linear_povm_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-POINT-LINEAR-POVM"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_point_linear_povm",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
+    def test_self_dual_wreath_single_pair_point_signal_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-SINGLE-PAIR-POINT-SIGNAL-NO-GO"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_single_pair_point_signal_no_go",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_sparse_polar_access_composition_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-SPARSE-POLAR-ACCESS-COMPOSITION-NO-GO"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_sparse_polar_access_composition_no_go",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_sparse_support_polar_hybrid_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-SPARSE-SUPPORT-POLAR-HYBRID"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_sparse_support_polar_hybrid",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_sparse_support_polar_schedule_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-SPARSE-SUPPORT-POLAR-SCHEDULE"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_sparse_support_polar_schedule",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_support_projector_endpoint_gauge_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-SUPPORT-PROJECTOR-ENDPOINT-GAUGE-BOUNDARY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_support_projector_endpoint_gauge_boundary",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_transpose_edge_admission_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-TRANSPOSE-EDGE-ADMISSION-NO-GO"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_transpose_edge_admission_no_go",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_windowed_root_flatness_bridge_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-WINDOWED-ROOT-FLATNESS-BRIDGE"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_windowed_root_flatness_bridge",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
+    def test_self_dual_wreath_point_parent_coherence_witness_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-POINT-PARENT-COHERENCE-WITNESS"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_point_parent_coherence_witness",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_point_pgm_coarse_graining_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-POINT-PGM-COARSE-GRAINING"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_point_pgm_coarse_graining",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_point_stabilizer_collision_free_kernel_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-POINT-STABILIZER-COLLISION-FREE-KERNEL"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_point_stabilizer_collision_free_kernel",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_point_stabilizer_quotient_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-POINT-STABILIZER-QUOTIENT"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_point_stabilizer_quotient",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_point_standard_energy_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-POINT-STANDARD-ENERGY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_point_standard_energy",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_point_young_star_naimark_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-POINT-YOUNG-STAR-NAIMARK"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_point_young_star_naimark",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_recursive_kernel_isometry_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-KERNEL-ISOMETRY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_recursive_kernel_isometry",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_reversible_automaton_fiber_collapse_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-REVERSIBLE-AUTOMATON-FIBER-COLLAPSE"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_reversible_automaton_fiber_collapse",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_shared_pair_recoupling_decoupling_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-SHARED-PAIR-RECOUPLING-DECOUPLING"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_shared_pair_recoupling_decoupling",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_sibling_frame_all_fixed_joint_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-ALL-FIXED-JOINT"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_sibling_frame_all_fixed_joint",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_sibling_frame_all_fixed_mp_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-SIBLING-FRAME-ALL-FIXED-MP"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_sibling_frame_all_fixed_mp",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_sign_twist_collective_activation_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-SIGN-TWIST-COLLECTIVE-ACTIVATION"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(
+            item for item in records if item["id"] == result.result_id
+        )
+        self.assertIn(
+            "self_dual_wreath_sign_twist_collective_activation",
+            record["artifacts"],
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
 
 if __name__ == "__main__":
     unittest.main()

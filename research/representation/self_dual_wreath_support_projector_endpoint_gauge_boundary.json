@@ -1,0 +1,271 @@
+{
+  "created_at": "2026-08-12T03:41:30.649394+00:00",
+  "theorem_contract": {
+    "gauge": "W_U=WU has W_UW_U^*=WW^* for every input unitary U",
+    "effects": "H_e^(U)=U^*H_eU",
+    "range_only_no_go": "the same support projector can induce input-coordinate outcome laws with total-variation distance 1/2",
+    "endpoint_polar": "V=C(C^*C)^(-1/2) fixes the physical-to-support gauge",
+    "conditional_complexity": "degree O((beta/sigma)log(1/error)) given a C/beta block encoding",
+    "natural_boundary": "the support projector controls neither beta/sigma nor the input gauge; generic flat normalized access still costs sqrt(q)"
+  },
+  "theorem": {
+    "gauge_family": "W_U=WU has W_UW_U^*=WW^* for every input unitary U",
+    "component_conjugation": "H_e^(U)=U^*H_eU",
+    "range_only_no_go": "the same support projector can induce input-coordinate outcome laws with total-variation distance 1/2",
+    "endpoint_polar": "V=C(C^*C)^(-1/2) fixes the physical-to-support gauge",
+    "conditional_complexity": "degree O((beta/sigma)log(1/error)) given a C/beta block encoding",
+    "natural_access_boundary": "the support projector controls neither beta/sigma nor the input gauge; generic flat normalized access still costs sqrt(q)",
+    "theorem_verified": true,
+    "status": "support-projector-endpoint-gauge-boundary-proved"
+  },
+  "gauge_controls": [
+    {
+      "control_id": "QUBIT-Z-VERSUS-X-ENDPOINT-GAUGE",
+      "input_dimension": 2,
+      "coefficient_dimension": 2,
+      "coordinate_outcome_count": 2,
+      "common_range_projector_residual": 2.4441574809578864e-16,
+      "endpoint_isometry_operator_distance": 2.0000000000000004,
+      "maximum_component_effect_operator_distance": 0.7071067811865475,
+      "witness_outcome_total_variation_distance": 0.5,
+      "range_projector_transcript_total_variation_distance": 0.0,
+      "fixed_compiler_worst_case_isometry_error_lower_bound": 1.0000000000000002,
+      "exact_same_range_different_povm_verified": true,
+      "status": "same-support-projector-distinct-physical-povm-verified"
+    }
+  ],
+  "polar_controls": [
+    {
+      "control_id": "RECTANGULAR-WELL-CONDITIONED-ENDPOINT",
+      "input_dimension": 2,
+      "coefficient_dimension": 4,
+      "minimum_positive_singular_value": 1.0,
+      "maximum_singular_value": 1.077032961426901,
+      "block_encoding_normalization": 1.077032961426901,
+      "normalized_inverse_singular_gap": 1.077032961426901,
+      "polar_isometry_residual": 8.881784197001252e-16,
+      "polar_range_projector_residual": 0.0,
+      "polar_reconstruction_residual": 5.661048867003677e-16,
+      "coordinate_effect_sum_residual": 8.881784197001252e-16,
+      "exact_endpoint_polar_verified": true,
+      "status": "endpoint-polar-fixes-physical-gauge"
+    },
+    {
+      "control_id": "RECTANGULAR-GAUGED-ENDPOINT",
+      "input_dimension": 2,
+      "coefficient_dimension": 4,
+      "minimum_positive_singular_value": 1.044030650891055,
+      "maximum_singular_value": 1.077032961426901,
+      "block_encoding_normalization": 1.077032961426901,
+      "normalized_inverse_singular_gap": 1.031610480504264,
+      "polar_isometry_residual": 8.881784197001252e-16,
+      "polar_range_projector_residual": 0.0,
+      "polar_reconstruction_residual": 5.661048867003677e-16,
+      "coordinate_effect_sum_residual": 8.881784197001252e-16,
+      "exact_endpoint_polar_verified": true,
+      "status": "endpoint-polar-fixes-physical-gauge"
+    }
+  ],
+  "conditioning_counterexamples": [
+    {
+      "exponent": 4,
+      "common_range_dimension": 2,
+      "well_conditioned_minimum_singular_value": 1.0,
+      "ill_conditioned_minimum_singular_value": 0.0625,
+      "common_range_projector_residual": 0.0,
+      "ill_conditioned_inverse_gap": 16.0,
+      "support_projector_reveals_conditioning": false,
+      "status": "identical-range-arbitrarily-small-endpoint-singular-gap"
+    },
+    {
+      "exponent": 8,
+      "common_range_dimension": 2,
+      "well_conditioned_minimum_singular_value": 1.0,
+      "ill_conditioned_minimum_singular_value": 0.00390625,
+      "common_range_projector_residual": 0.0,
+      "ill_conditioned_inverse_gap": 256.0,
+      "support_projector_reveals_conditioning": false,
+      "status": "identical-range-arbitrarily-small-endpoint-singular-gap"
+    },
+    {
+      "exponent": 16,
+      "common_range_dimension": 2,
+      "well_conditioned_minimum_singular_value": 1.0,
+      "ill_conditioned_minimum_singular_value": 1.52587890625e-05,
+      "common_range_projector_residual": 0.0,
+      "ill_conditioned_inverse_gap": 65536.0,
+      "support_projector_reveals_conditioning": false,
+      "status": "identical-range-arbitrarily-small-endpoint-singular-gap"
+    },
+    {
+      "exponent": 32,
+      "common_range_dimension": 2,
+      "well_conditioned_minimum_singular_value": 1.0,
+      "ill_conditioned_minimum_singular_value": 2.3283064365386963e-10,
+      "common_range_projector_residual": 0.0,
+      "ill_conditioned_inverse_gap": 4294967296.0,
+      "support_projector_reveals_conditioning": false,
+      "status": "identical-range-arbitrarily-small-endpoint-singular-gap"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 8,
+      "information_threshold_copy_count": 16,
+      "orientation_count_decimal": "65536",
+      "generic_flat_endpoint_inverse_gap_log2": 8.0,
+      "polynomial_query_benchmark_log2": 18.0,
+      "generic_normalized_endpoint_access_polynomial": false,
+      "sheaf_support_reflection_removes_endpoint_gauge": false,
+      "tightly_normalized_representation_endpoint_map_proved": false,
+      "direct_global_orientation_polar_proved": false,
+      "status": "support-resolved-endpoint-gauge-and-normalization-open"
+    },
+    {
+      "n": 16,
+      "information_threshold_copy_count": 45,
+      "orientation_count_decimal": "35184372088832",
+      "generic_flat_endpoint_inverse_gap_log2": 22.5,
+      "polynomial_query_benchmark_log2": 24.0,
+      "generic_normalized_endpoint_access_polynomial": false,
+      "sheaf_support_reflection_removes_endpoint_gauge": false,
+      "tightly_normalized_representation_endpoint_map_proved": false,
+      "direct_global_orientation_polar_proved": false,
+      "status": "support-resolved-endpoint-gauge-and-normalization-open"
+    },
+    {
+      "n": 32,
+      "information_threshold_copy_count": 118,
+      "orientation_count_decimal": "332306998946228968225951765070086144",
+      "generic_flat_endpoint_inverse_gap_log2": 59.0,
+      "polynomial_query_benchmark_log2": 30.0,
+      "generic_normalized_endpoint_access_polynomial": false,
+      "sheaf_support_reflection_removes_endpoint_gauge": false,
+      "tightly_normalized_representation_endpoint_map_proved": false,
+      "direct_global_orientation_polar_proved": false,
+      "status": "support-resolved-endpoint-gauge-and-normalization-open"
+    },
+    {
+      "n": 64,
+      "information_threshold_copy_count": 296,
+      "orientation_count_decimal": "127314748520905380391777855525586135065716774604121015664758778084648831235208544136462336",
+      "generic_flat_endpoint_inverse_gap_log2": 148.0,
+      "polynomial_query_benchmark_log2": 36.0,
+      "generic_normalized_endpoint_access_polynomial": false,
+      "sheaf_support_reflection_removes_endpoint_gauge": false,
+      "tightly_normalized_representation_endpoint_map_proved": false,
+      "direct_global_orientation_polar_proved": false,
+      "status": "support-resolved-endpoint-gauge-and-normalization-open"
+    },
+    {
+      "n": 128,
+      "information_threshold_copy_count": 717,
+      "orientation_count_decimal": "689456532887748412341091025928864224451014138635639044112158674527024860928026977516082500242976073479223111693916991352080883023896091539947888937618883326765331077022147490374177752073413947198182949091512336515072",
+      "generic_flat_endpoint_inverse_gap_log2": 358.5,
+      "polynomial_query_benchmark_log2": 42.0,
+      "generic_normalized_endpoint_access_polynomial": false,
+      "sheaf_support_reflection_removes_endpoint_gauge": false,
+      "tightly_normalized_representation_endpoint_map_proved": false,
+      "direct_global_orientation_polar_proved": false,
+      "status": "support-resolved-endpoint-gauge-and-normalization-open"
+    },
+    {
+      "n": 256,
+      "information_threshold_copy_count": 1684,
+      "orientation_count_decimal": "860028212505886575632559435538795866608138495042546309515417837808369288468450246520559380979885027670334016086788139798837988311002388605422513556437685951259194841500993383711348363849824784478200230511953188242758694262362517763971154602943505187061319604744398442529571557321534539868022263641397802181515661255257880583914037708681623204918364907018103131937196392909601307565449697871351246895708373190171849236025477424723697839874987752147014662945845456168707061656085643803500177291799667792674816",
+      "generic_flat_endpoint_inverse_gap_log2": 842.0,
+      "polynomial_query_benchmark_log2": 48.0,
+      "generic_normalized_endpoint_access_polynomial": false,
+      "sheaf_support_reflection_removes_endpoint_gauge": false,
+      "tightly_normalized_representation_endpoint_map_proved": false,
+      "direct_global_orientation_polar_proved": false,
+      "status": "support-resolved-endpoint-gauge-and-normalization-open"
+    },
+    {
+      "n": 512,
+      "information_threshold_copy_count": 3876,
+      "orientation_count_decimal": "619816586023555395330049845365414448109499297593821762716905649399682023285118933297188176383880583443857436927734609950082666761279685685456442262294384998147645612296038263227304878866307198495104675970246172980945647863110118597631748806423099247655860327634183354840231515556855569768562158005566062062786076901426696873418821998625630756393942995606451626216589337252704636004559955301941546908162386905256766212779050376697752503320034890121560832740288319316526055359316389327328066951407468079820631912503762217278929248251789462240982174263353702135501981787184956131541559157159265401216302283843285863940500461665640468755034437934559600408864964283944776677367090028646133091084495971952190618489780095310182114104357640610010765231099708403229175786844168562833581822237586279735323669735515987716860265250715172510110310265066831162540642135419179538285821791564517333585979818199137094929803635925621564916031656744744629893041102607609272184433467296862632615408544140362064462664448672105716291774692196055969342641153324397976934537931517261990849018034762945983424462289123232446469448519278470709965144817294519754931639941215856238961052547547136",
+      "generic_flat_endpoint_inverse_gap_log2": 1938.0,
+      "polynomial_query_benchmark_log2": 54.0,
+      "generic_normalized_endpoint_access_polynomial": false,
+      "sheaf_support_reflection_removes_endpoint_gauge": false,
+      "tightly_normalized_representation_endpoint_map_proved": false,
+      "direct_global_orientation_polar_proved": false,
+      "status": "support-resolved-endpoint-gauge-and-normalization-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "separate_support_projection_from_physical_endpoint_gauge",
+      "resolved": true,
+      "resolution": "The qubit control has identical range oracles and outcome laws at total-variation distance one half."
+    },
+    {
+      "obligation": "identify_sufficient_endpoint_datum",
+      "resolved": true,
+      "resolution": "The polar of a full-rank boundary map fixes the range gauge and yields the exact coordinate POVM."
+    },
+    {
+      "obligation": "construct_tightly_normalized_natural_boundary_map",
+      "resolved": false,
+      "resolution": "Need beta/sigma polynomial without normalized q-leaf frame access; pair GPE or a direct representation transform must supply it."
+    },
+    {
+      "obligation": "compose_partial_sheaf_kernel_filter_with_physical_pgm_input",
+      "resolved": false,
+      "resolution": "The kernel reflection and the generalized Fourier row-copy must be joined by a proved, conditioned boundary polar."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "A resolved support projector uniquely specifies its embedding.",
+      "resolved": true,
+      "resolution": "WU has the same range for every input unitary U."
+    },
+    {
+      "objection": "Gauge ambiguity is only an unobservable global phase.",
+      "resolved": true,
+      "resolution": "Hadamard input gauge changes a coordinate outcome law by TV 1/2."
+    },
+    {
+      "objection": "A support reflection certifies a good endpoint singular gap.",
+      "resolved": true,
+      "resolution": "The same full range supports diagonal boundary maps with minimum singular value 2^-m for arbitrary m."
+    },
+    {
+      "objection": "The endpoint polar formula is already an efficient circuit.",
+      "resolved": false,
+      "resolution": "Its complexity depends on tightly normalized boundary access, which is exactly where generic frame access costs sqrt(q)."
+    }
+  ],
+  "headline_metrics": {
+    "support_endpoint_gauge_no_go_theorem_count": 1,
+    "endpoint_polar_normal_form_theorem_count": 1,
+    "finite_gauge_ambiguity_control_count": 1,
+    "finite_endpoint_polar_control_count": 2,
+    "finite_control_failure_count": 0,
+    "same_range_conditioning_counterexample_count": 4,
+    "maximum_counterexample_inverse_gap_log2": 32,
+    "tightly_normalized_natural_endpoint_count": 0,
+    "direct_global_orientation_polar_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "support_projector_alone_sufficient_for_physical_povm": false,
+    "endpoint_polar_is_sufficient_given_boundary_access_and_gap": true,
+    "support_projector_controls_endpoint_conditioning": false,
+    "tightly_normalized_natural_boundary_access_proved": false,
+    "partial_sheaf_to_physical_endpoint_compiled": false,
+    "direct_global_orientation_polar_compiled": false,
+    "hidden_label_decoder_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "The sheaf support still lacks the physical input gauge, and generic normalized boundary access retains the sqrt(q) barrier."
+  },
+  "status": "support-projector-insufficient-endpoint-polar-access-open",
+  "summary": "A sheaf kernel projector identifies the coefficient range but not the physical input gauge. A boundary-map polar is sufficient, yet its normalization and singular gap are independent of the range and remain the natural access bottleneck.",
+  "falsifiers_triggered": [
+    "A coherent support reflection alone does not compile the physical component POVM.",
+    "Support geometry does not certify endpoint-polar conditioning.",
+    "Generic normalized frame access is not repaired by separately resolving the range."
+  ]
+}

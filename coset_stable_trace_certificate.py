@@ -400,38 +400,4 @@ def write_stable_trace_certificate(
     payload = asdict(build_stable_trace_certificate())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-EXACT-TRACE-AS-COMPLETE-QUARTIC-GAP",
-                source=str(output_path),
-                claim=(
-                    "The exact first power trace determines the stable quartic spectrum and an efficient Racah transform."
-                ),
-                reason_invalid=(
-                    "A 4x4 characteristic polynomial requires three additional independent coefficients or power "
-                    "traces, followed by root separation and circuit synthesis."
-                ),
-                lesson=(
-                    "Apply the same marked-cycle machinery to H^2, H^3, and H^4, use Newton identities, and prove "
-                    "normalized root separation before promotion."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_stable_trace_certificate": str(output_path)},
-            )
-        )
     return payload

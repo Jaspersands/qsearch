@@ -393,38 +393,4 @@ def write_recoupling_mechanism_synthesis_report(
     payload = asdict(build_recoupling_mechanism_synthesis_report())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        for proposal in payload["mutation_proposals"]:
-            upsert_mutation_proposal(proposal)
-        for evaluation in payload["evaluations"]:
-            if not evaluation["decision"].startswith("rejected"):
-                continue
-            upsert_negative_result(
-                NegativeResultRecord(
-                    id=f"NEG-{evaluation['id']}",
-                    source=str(output_path),
-                    claim=f"{evaluation['title']} is eligible for promotion as a collective algorithm.",
-                    reason_invalid=" | ".join(
-                        evaluation["known_no_go_violations"] + evaluation["interface_issues"]
-                    )
-                    or evaluation["rationale"],
-                    lesson="Compose only typed, scope-matched primitives and retain every unproved circuit or decoder as proof debt.",
-                    applies_to=[registry_candidate_id, registry_experiment_id],
-                    evidence={"stages": evaluation["stages"], "decision": evaluation["decision"]},
-                )
-            )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_recoupling_mechanism_synthesis": str(output_path)},
-            )
-        )
     return payload

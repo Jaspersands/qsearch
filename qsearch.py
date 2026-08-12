@@ -724,6 +724,30 @@ from semidirect_hms_transfer_boundary import write_semidirect_hms_transfer_bound
 from coset_hidden_involution_support_filter_no_go import write_support_filter_no_go_report
 from dcp_cnot_linear_split_entanglement_no_go import write_cnot_linear_split_entanglement_report
 from dcp_linear_reparameterization_affine_flat_no_go import write_linear_reparameterization_affine_flat_report
+from self_dual_wreath_component_dependency_ridge_physical_curl import write_component_dependency_ridge_physical_curl_report
+from self_dual_wreath_component_dependency_ridge_physical_hamming import write_component_dependency_ridge_physical_hamming_report
+from self_dual_wreath_component_dependency_ridge_physical_spectrum import write_component_dependency_ridge_physical_spectrum_report
+from self_dual_wreath_component_dependency_ridge_single_frame_tail import write_component_dependency_ridge_single_frame_tail_report
+from self_dual_wreath_component_diagonal_leakage_bridge import write_component_diagonal_leakage_bridge_report
+from self_dual_wreath_component_leaf_fourier_commutator_duality import write_component_leaf_fourier_commutator_duality_report
+from self_dual_wreath_component_leaf_fourier_leverage import write_component_leaf_fourier_leverage_report
+from self_dual_wreath_component_leaf_fourier_strata import write_component_leaf_fourier_strata_report
+from self_dual_wreath_component_m4_operational_boundary import write_component_m4_operational_boundary_report
+from self_dual_wreath_component_polar_traffic_curl import write_component_polar_traffic_curl_report
+from self_dual_wreath_component_single_leaf_diagonal_reduction import write_component_single_leaf_diagonal_reduction_report
+from self_dual_wreath_component_size_biased_effect_law import write_component_size_biased_effect_law_report
+from self_dual_wreath_point_parent_coherence_witness import write_point_parent_coherence_witness_report
+from self_dual_wreath_point_pgm_coarse_graining import write_point_pgm_coarse_graining_report
+from self_dual_wreath_point_stabilizer_collision_free_kernel import write_collision_free_point_kernel_report
+from self_dual_wreath_point_stabilizer_quotient import write_point_stabilizer_quotient_report
+from self_dual_wreath_point_standard_energy import write_point_standard_energy_report
+from self_dual_wreath_point_young_star_naimark import write_young_star_naimark_report
+from self_dual_wreath_recursive_kernel_isometry import write_recursive_kernel_isometry_report
+from self_dual_wreath_reversible_automaton_fiber_collapse import write_reversible_automaton_fiber_report
+from self_dual_wreath_shared_pair_recoupling_decoupling import write_shared_pair_recoupling_decoupling_report
+from self_dual_wreath_sibling_frame_all_fixed_joint import write_sibling_frame_all_fixed_joint_report
+from self_dual_wreath_sibling_frame_all_fixed_mp import write_sibling_frame_all_fixed_mp_report
+from self_dual_wreath_sign_twist_collective_activation import write_sign_twist_collective_activation_report
 from blocker_taxonomy import write_blocker_taxonomy
 from affine_geometry_code_search import AffineGeometrySearchSpec, write_affine_geometry_code_search
 from bch_code_search import BCHSearchSpec, write_bch_code_search
@@ -12257,6 +12281,174 @@ def command_dcp_linear_reparameterization_affine_flat_no_go(args: argparse.Names
     print(f"Registry valid: {validate_registry()['valid']}")
     return 0
 
+def command_self_dual_wreath_component_dependency_ridge_physical_curl(args: argparse.Namespace) -> int:
+    report = write_component_dependency_ridge_physical_curl_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_component_dependency_ridge_physical_hamming(args: argparse.Namespace) -> int:
+    report = write_component_dependency_ridge_physical_hamming_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_component_dependency_ridge_physical_spectrum(args: argparse.Namespace) -> int:
+    report = write_component_dependency_ridge_physical_spectrum_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_component_dependency_ridge_single_frame_tail(args: argparse.Namespace) -> int:
+    report = write_component_dependency_ridge_single_frame_tail_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_component_diagonal_leakage_bridge(args: argparse.Namespace) -> int:
+    report = write_component_diagonal_leakage_bridge_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_component_leaf_fourier_commutator_duality(args: argparse.Namespace) -> int:
+    report = write_component_leaf_fourier_commutator_duality_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_component_leaf_fourier_leverage(args: argparse.Namespace) -> int:
+    report = write_component_leaf_fourier_leverage_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_component_leaf_fourier_strata(args: argparse.Namespace) -> int:
+    report = write_component_leaf_fourier_strata_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_component_m4_operational_boundary(args: argparse.Namespace) -> int:
+    report = write_component_m4_operational_boundary_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_component_polar_traffic_curl(args: argparse.Namespace) -> int:
+    report = write_component_polar_traffic_curl_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_component_single_leaf_diagonal_reduction(args: argparse.Namespace) -> int:
+    report = write_component_single_leaf_diagonal_reduction_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_component_size_biased_effect_law(args: argparse.Namespace) -> int:
+    report = write_component_size_biased_effect_law_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_point_parent_coherence_witness(args: argparse.Namespace) -> int:
+    report = write_point_parent_coherence_witness_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_point_pgm_coarse_graining(args: argparse.Namespace) -> int:
+    report = write_point_pgm_coarse_graining_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_point_stabilizer_collision_free_kernel(args: argparse.Namespace) -> int:
+    report = write_collision_free_point_kernel_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_point_stabilizer_quotient(args: argparse.Namespace) -> int:
+    report = write_point_stabilizer_quotient_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_point_standard_energy(args: argparse.Namespace) -> int:
+    report = write_point_standard_energy_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_point_young_star_naimark(args: argparse.Namespace) -> int:
+    report = write_young_star_naimark_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_recursive_kernel_isometry(args: argparse.Namespace) -> int:
+    report = write_recursive_kernel_isometry_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_reversible_automaton_fiber_collapse(args: argparse.Namespace) -> int:
+    report = write_reversible_automaton_fiber_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_shared_pair_recoupling_decoupling(args: argparse.Namespace) -> int:
+    report = write_shared_pair_recoupling_decoupling_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_sibling_frame_all_fixed_joint(args: argparse.Namespace) -> int:
+    report = write_sibling_frame_all_fixed_joint_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_sibling_frame_all_fixed_mp(args: argparse.Namespace) -> int:
+    report = write_sibling_frame_all_fixed_mp_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
+def command_self_dual_wreath_sign_twist_collective_activation(args: argparse.Namespace) -> int:
+    report = write_sign_twist_collective_activation_report()
+    print(f"Analysis complete: {args.command}")
+    print(f"Status: {report.get('status')}")
+    print(f"Registry valid: {validate_registry()['valid']}")
+    return 0
+
 def command_coset_strong_fourier_information(
     args: argparse.Namespace,
 ) -> int:
@@ -20794,6 +20986,150 @@ def build_parser() -> argparse.ArgumentParser:
         help="Exp Dhs Dcp Linear Reparameterization Affine Flat No Go",
     )
     dcp_linear_reparameterization_affine_flat_no_go.set_defaults(func=command_dcp_linear_reparameterization_affine_flat_no_go)
+
+    self_dual_wreath_component_dependency_ridge_physical_curl = subparsers.add_parser(
+        "self-dual-wreath-component-dependency-ridge-physical-curl",
+        help="Exp Code Self Dual Wreath Component Dependency Ridge Physical Curl",
+    )
+    self_dual_wreath_component_dependency_ridge_physical_curl.set_defaults(func=command_self_dual_wreath_component_dependency_ridge_physical_curl)
+
+    self_dual_wreath_component_dependency_ridge_physical_hamming = subparsers.add_parser(
+        "self-dual-wreath-component-dependency-ridge-physical-hamming",
+        help="Exp Code Self Dual Wreath Component Dependency Ridge Physical Hamming",
+    )
+    self_dual_wreath_component_dependency_ridge_physical_hamming.set_defaults(func=command_self_dual_wreath_component_dependency_ridge_physical_hamming)
+
+    self_dual_wreath_component_dependency_ridge_physical_spectrum = subparsers.add_parser(
+        "self-dual-wreath-component-dependency-ridge-physical-spectrum",
+        help="Exp Code Self Dual Wreath Component Dependency Ridge Physical Spectrum",
+    )
+    self_dual_wreath_component_dependency_ridge_physical_spectrum.set_defaults(func=command_self_dual_wreath_component_dependency_ridge_physical_spectrum)
+
+    self_dual_wreath_component_dependency_ridge_single_frame_tail = subparsers.add_parser(
+        "self-dual-wreath-component-dependency-ridge-single-frame-tail",
+        help="Exp Code Self Dual Wreath Component Dependency Ridge Single Frame Tail",
+    )
+    self_dual_wreath_component_dependency_ridge_single_frame_tail.set_defaults(func=command_self_dual_wreath_component_dependency_ridge_single_frame_tail)
+
+    self_dual_wreath_component_diagonal_leakage_bridge = subparsers.add_parser(
+        "self-dual-wreath-component-diagonal-leakage-bridge",
+        help="Exp Code Self Dual Wreath Component Diagonal Leakage Bridge",
+    )
+    self_dual_wreath_component_diagonal_leakage_bridge.set_defaults(func=command_self_dual_wreath_component_diagonal_leakage_bridge)
+
+    self_dual_wreath_component_leaf_fourier_commutator_duality = subparsers.add_parser(
+        "self-dual-wreath-component-leaf-fourier-commutator-duality",
+        help="Exp Code Self Dual Wreath Component Leaf Fourier Commutator Duality",
+    )
+    self_dual_wreath_component_leaf_fourier_commutator_duality.set_defaults(func=command_self_dual_wreath_component_leaf_fourier_commutator_duality)
+
+    self_dual_wreath_component_leaf_fourier_leverage = subparsers.add_parser(
+        "self-dual-wreath-component-leaf-fourier-leverage",
+        help="Exp Code Self Dual Wreath Component Leaf Fourier Leverage",
+    )
+    self_dual_wreath_component_leaf_fourier_leverage.set_defaults(func=command_self_dual_wreath_component_leaf_fourier_leverage)
+
+    self_dual_wreath_component_leaf_fourier_strata = subparsers.add_parser(
+        "self-dual-wreath-component-leaf-fourier-strata",
+        help="Exp Code Self Dual Wreath Component Leaf Fourier Strata",
+    )
+    self_dual_wreath_component_leaf_fourier_strata.set_defaults(func=command_self_dual_wreath_component_leaf_fourier_strata)
+
+    self_dual_wreath_component_m4_operational_boundary = subparsers.add_parser(
+        "self-dual-wreath-component-m4-operational-boundary",
+        help="Exp Code Self Dual Wreath Component M4 Operational Boundary",
+    )
+    self_dual_wreath_component_m4_operational_boundary.set_defaults(func=command_self_dual_wreath_component_m4_operational_boundary)
+
+    self_dual_wreath_component_polar_traffic_curl = subparsers.add_parser(
+        "self-dual-wreath-component-polar-traffic-curl",
+        help="Exp Code Self Dual Wreath Component Polar Traffic Curl",
+    )
+    self_dual_wreath_component_polar_traffic_curl.set_defaults(func=command_self_dual_wreath_component_polar_traffic_curl)
+
+    self_dual_wreath_component_single_leaf_diagonal_reduction = subparsers.add_parser(
+        "self-dual-wreath-component-single-leaf-diagonal-reduction",
+        help="Exp Code Self Dual Wreath Component Single Leaf Diagonal Reduction",
+    )
+    self_dual_wreath_component_single_leaf_diagonal_reduction.set_defaults(func=command_self_dual_wreath_component_single_leaf_diagonal_reduction)
+
+    self_dual_wreath_component_size_biased_effect_law = subparsers.add_parser(
+        "self-dual-wreath-component-size-biased-effect-law",
+        help="Exp Code Self Dual Wreath Component Size Biased Effect Law",
+    )
+    self_dual_wreath_component_size_biased_effect_law.set_defaults(func=command_self_dual_wreath_component_size_biased_effect_law)
+
+    self_dual_wreath_point_parent_coherence_witness = subparsers.add_parser(
+        "self-dual-wreath-point-parent-coherence-witness",
+        help="Exp Code Self Dual Wreath Point Parent Coherence Witness",
+    )
+    self_dual_wreath_point_parent_coherence_witness.set_defaults(func=command_self_dual_wreath_point_parent_coherence_witness)
+
+    self_dual_wreath_point_pgm_coarse_graining = subparsers.add_parser(
+        "self-dual-wreath-point-pgm-coarse-graining",
+        help="Exp Code Self Dual Wreath Point Pgm Coarse Graining",
+    )
+    self_dual_wreath_point_pgm_coarse_graining.set_defaults(func=command_self_dual_wreath_point_pgm_coarse_graining)
+
+    self_dual_wreath_point_stabilizer_collision_free_kernel = subparsers.add_parser(
+        "self-dual-wreath-point-stabilizer-collision-free-kernel",
+        help="Exp Code Self Dual Wreath Point Stabilizer Collision Free Kernel",
+    )
+    self_dual_wreath_point_stabilizer_collision_free_kernel.set_defaults(func=command_self_dual_wreath_point_stabilizer_collision_free_kernel)
+
+    self_dual_wreath_point_stabilizer_quotient = subparsers.add_parser(
+        "self-dual-wreath-point-stabilizer-quotient",
+        help="Exp Code Self Dual Wreath Point Stabilizer Quotient",
+    )
+    self_dual_wreath_point_stabilizer_quotient.set_defaults(func=command_self_dual_wreath_point_stabilizer_quotient)
+
+    self_dual_wreath_point_standard_energy = subparsers.add_parser(
+        "self-dual-wreath-point-standard-energy",
+        help="Exp Code Self Dual Wreath Point Standard Energy",
+    )
+    self_dual_wreath_point_standard_energy.set_defaults(func=command_self_dual_wreath_point_standard_energy)
+
+    self_dual_wreath_point_young_star_naimark = subparsers.add_parser(
+        "self-dual-wreath-point-young-star-naimark",
+        help="Exp Code Self Dual Wreath Point Young Star Naimark",
+    )
+    self_dual_wreath_point_young_star_naimark.set_defaults(func=command_self_dual_wreath_point_young_star_naimark)
+
+    self_dual_wreath_recursive_kernel_isometry = subparsers.add_parser(
+        "self-dual-wreath-recursive-kernel-isometry",
+        help="Exp Code Self Dual Wreath Recursive Kernel Isometry",
+    )
+    self_dual_wreath_recursive_kernel_isometry.set_defaults(func=command_self_dual_wreath_recursive_kernel_isometry)
+
+    self_dual_wreath_reversible_automaton_fiber_collapse = subparsers.add_parser(
+        "self-dual-wreath-reversible-automaton-fiber-collapse",
+        help="Exp Code Self Dual Wreath Reversible Automaton Fiber Collapse",
+    )
+    self_dual_wreath_reversible_automaton_fiber_collapse.set_defaults(func=command_self_dual_wreath_reversible_automaton_fiber_collapse)
+
+    self_dual_wreath_shared_pair_recoupling_decoupling = subparsers.add_parser(
+        "self-dual-wreath-shared-pair-recoupling-decoupling",
+        help="Exp Code Self Dual Wreath Shared Pair Recoupling Decoupling",
+    )
+    self_dual_wreath_shared_pair_recoupling_decoupling.set_defaults(func=command_self_dual_wreath_shared_pair_recoupling_decoupling)
+
+    self_dual_wreath_sibling_frame_all_fixed_joint = subparsers.add_parser(
+        "self-dual-wreath-sibling-frame-all-fixed-joint",
+        help="Exp Code Self Dual Wreath Sibling Frame All Fixed Joint",
+    )
+    self_dual_wreath_sibling_frame_all_fixed_joint.set_defaults(func=command_self_dual_wreath_sibling_frame_all_fixed_joint)
+
+    self_dual_wreath_sibling_frame_all_fixed_mp = subparsers.add_parser(
+        "self-dual-wreath-sibling-frame-all-fixed-mp",
+        help="Exp Code Self Dual Wreath Sibling Frame All Fixed Mp",
+    )
+    self_dual_wreath_sibling_frame_all_fixed_mp.set_defaults(func=command_self_dual_wreath_sibling_frame_all_fixed_mp)
+
+    self_dual_wreath_sign_twist_collective_activation = subparsers.add_parser(
+        "self-dual-wreath-sign-twist-collective-activation",
+        help="Exp Code Self Dual Wreath Sign Twist Collective Activation",
+    )
+    self_dual_wreath_sign_twist_collective_activation.set_defaults(func=command_self_dual_wreath_sign_twist_collective_activation)
 
     coset_strong_fourier_information = subparsers.add_parser(
         "coset-strong-fourier-information",

@@ -452,48 +452,6 @@ def write_self_dual_wreath_physical_frame_blocks(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-SELF-DUAL-WREATH-FINITE-PHYSICAL-BLOCKS-NOT-PRECONDITIONER",
-                source=str(path),
-                claim=(
-                    "Well-conditioned finite equal-pair physical frame blocks "
-                    "supply an all-n PGM preconditioner."
-                ),
-                reason_invalid=(
-                    "The probe covers selected equal-pair sectors only, "
-                    "reaches the information threshold only for S_3, and "
-                    "omits unequal-pair tuples and hidden-label multiplicities."
-                ),
-                lesson=(
-                    "Use the physical block formula to search recurrences and "
-                    "worst sectors, but require all-n tuple coverage and a "
-                    "coherent blockwise inverse before any decoder claim."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = (
-            registry_result_id
-            or f"RESULT-{registry_experiment_id}-LATEST"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_physical_frame_blocks": str(path)
-                },
-            )
-        )
     return payload
 
 

@@ -430,40 +430,6 @@ def write_boolean_coset_separation(
     payload = asdict(run_boolean_coset_separation(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-SHORT-RELATIONS-CLOSE-MARKER-WITNESS-NOGO",
-                source=str(path),
-                claim=(
-                    "The existence of exponentially many short marker-zero subset-sum relations by itself rules out "
-                    "marker-aware affine decoding because valid Boolean witnesses are correspondingly close."
-                ),
-                reason_invalid=(
-                    "Under the exact uniform-legal source, every fixed sub-half Hamming radius contains two witnesses "
-                    "with only exponentially small conditional probability."
-                ),
-                lesson=(
-                    "Keep marker-aware affine decoding open, but demand an explicit polynomial decoder and source coverage. "
-                    "Do not infer it from Boolean separation alone."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_boolean_coset_separation": str(path)},
-            )
-        )
     return payload
 
 

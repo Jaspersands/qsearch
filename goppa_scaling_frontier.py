@@ -594,39 +594,6 @@ def write_goppa_scaling_frontier(
     payload = asdict(run_goppa_scaling_frontier(specs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        for record in payload["records"]:
-            for audit in record["collision_audits"]:
-                if audit["status"] != "rejected-by-scalable-goppa-invariant":
-                    continue
-                upsert_negative_result(
-                    NegativeResultRecord(
-                        id=f"NEG-CODE-GOPPA-SCALING-{audit['id'].upper()}",
-                        source=str(path),
-                        claim=f"{audit['id']} supplies a hard code-equivalence row beyond scalable classical invariants.",
-                        reason_invalid=audit["interpretation"],
-                        lesson=(
-                            "Run exact dual weight/incidence, Schur/hull, semilinear support, support recovery, and "
-                            "canonicalization before using a Goppa row in nonabelian measurement design."
-                        ),
-                        applies_to=[registry_candidate_id, registry_experiment_id],
-                        evidence=audit,
-                    )
-                )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"goppa_scaling_frontier": str(path)},
-            )
-        )
     return payload
 
 

@@ -530,44 +530,6 @@ def write_stable_shape_second_moment_certificate(
     payload = asdict(build_stable_shape_second_moment_certificate())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-FIVE-EXACT-QUADRATIC-SHAPES-AS-COMPLETE-RACAH",
-                source=str(output_path),
-                claim=(
-                    "Exact characteristic polynomials for five complementary shapes close the stable Racah transform."
-                ),
-                reason_invalid=(
-                    "The multiplicity-three determinant, six normalized gap theorems, coherent orbit-LCU "
-                    "compilation, coupling-tree transitions, and hidden-involution decoder remain unproved."
-                ),
-                lesson=(
-                    "Finish the lone cubic determinant, prove each quadratic/cubic normalized discriminant bound, "
-                    "then satisfy circuit and decoder proof gates independently."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "coset_stable_shape_second_moment_certificate": str(
-                        output_path
-                    )
-                },
-            )
-        )
     return payload
 
 

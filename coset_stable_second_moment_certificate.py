@@ -541,37 +541,4 @@ def write_stable_second_moment_certificate(
     payload = asdict(build_stable_second_moment_certificate())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-TWO-QUARTIC-COEFFICIENTS-AS-COMPLETE-GAP-THEOREM",
-                source=str(output_path),
-                claim=(
-                    "The first two exact characteristic coefficients determine the stable Racah spectrum and gap."
-                ),
-                reason_invalid=(
-                    "A quartic still needs its cubic and constant coefficients, followed by a uniform root-separation theorem."
-                ),
-                lesson=(
-                    "Extend the relative-orbit engine to third and fourth moments, reconstruct the complete quartic, "
-                    "and prove normalized root separation before circuit claims."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_stable_second_moment_certificate": str(output_path)},
-            )
-        )
     return payload

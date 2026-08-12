@@ -462,39 +462,4 @@ def write_smith_transfer_order_six(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-SUBSET-SUM-SOURCE-AVERAGE-FIXED-SIXTH-MOMENT",
-                source=str(path),
-                claim=(
-                    "A generic source-averaged fixed-sixth-order dependency supplies a persistent density-one modular "
-                    "subset-sum signal at fixed register offset."
-                ),
-                reason_invalid=(
-                    "The exhaustive HNF transfer graph is acyclic outside self loops, and every bad terminal lattice "
-                    "has Boolean growth ratio at most 3/4 relative to its source-probability rank penalty."
-                ),
-                lesson=(
-                    "Reopen fixed order six only through an inverse-polynomial atypical conditioned-fiber tail. Generic "
-                    "source mechanisms must move to order at least seven, growing order, or non-moment geometry."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-SMITH-TRANSFER-ORDER-SIX"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_subset_sum_smith_transfer_order_six": str(path)},
-            )
-        )
     return payload

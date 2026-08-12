@@ -262,40 +262,6 @@ def write_stable_root_separation_certificate(
     payload = asdict(build_stable_root_separation_certificate())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-STABLE-ROOT-GAP-AS-END-TO-END-DECODER",
-                source=str(output_path),
-                claim=(
-                    "An inverse-polynomial normalized gap in one stable Racah channel yields an efficient nonabelian HSP algorithm."
-                ),
-                reason_invalid=(
-                    "Uniform coherent implementation, all-sector coverage, and a reduction-compatible hidden-involution decoder remain absent."
-                ),
-                lesson=(
-                    "Compile the bounded-support hierarchy and phase estimation coherently, then quantify decoder information against classical baselines."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "coset_stable_root_separation_certificate": str(output_path)
-                },
-            )
-        )
     return payload
 
 

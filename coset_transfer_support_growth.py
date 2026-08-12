@@ -271,43 +271,6 @@ def write_transfer_support_growth_report(
     payload = asdict(build_transfer_support_growth_report())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-TYPICAL-DIRECT-FIXED-SUPPORT-TRANSFER-CONTRACTION",
-                source=str(output_path),
-                claim=(
-                    "The fixed-support marked-class contraction can be applied "
-                    "termwise to finish high-degree typical-irrep transfer traces."
-                ),
-                reason_invalid=(
-                    "Full-support pairs carry 89.5% of n=9 degree-28 weight and "
-                    "20.5% of n=10 degree-five weight; support nine or ten carries "
-                    "62.0% at n=10 degree five. Marked injection costs n! there."
-                ),
-                lesson=(
-                    "Stop extending fixed-support injection enumeration. Search "
-                    "for a collective representation, centralizer, branching, or "
-                    "tensor-network recurrence over full-support pair orbits."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_transfer_support_growth": str(output_path)},
-            )
-        )
     return payload
 
 

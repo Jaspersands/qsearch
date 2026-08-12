@@ -178,33 +178,4 @@ def write_multiscale_aliasing_report(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-RANDOM-LABEL-RAW-PAIR-MULTISCALE-ALIASING",
-                source=str(path),
-                claim="Polynomially many random DCP labels directly supply the high-valuation aliases needed for bitwise phase estimation.",
-                reason_invalid=(
-                    "Raw useful labels occur with probability 2^-(n-b), and useful pair differences require birthday "
-                    "sample scale 2^((n-b)/2) for b=O(log n)."
-                ),
-                lesson="Reject chosen-label shortcuts and simple pair aliasing; search deeper global random-label decoders.",
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-MULTISCALE-ALIASING"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_multiscale_aliasing": str(path)},
-            )
-        )
     return payload

@@ -1,0 +1,341 @@
+{
+  "created_at": "2026-08-12T03:39:38.156322+00:00",
+  "theorem_contract": {
+    "controlled_projector": "GPE efficiently implements C=sum_e |e><e| tensor E_e when the orientation-controlled group action and group QFT are efficient.",
+    "normalized_analysis_identity": "C(|+> tensor psi)=q^-1/2 sum_e |e>E_e psi exactly.",
+    "native_success": "For A=sum_e E_e and rho=A/Tr(A), success is Tr(A^2)/(q Tr(A)).",
+    "sparse_mp_consequence": "The sparse MP moment ratio is (1+alpha+o(1))/q, despite small support-surrogate native polar error.",
+    "fixed_arity_consequence": "A fixed R leaves q=2^(ceil(log2(n!))+O(1))/R candidates and a superpolynomial square-root amplification cost.",
+    "scope": "Only uniform-mask controlled membership plus amplification is excluded; a new global representation transform or direct physical branch-carrier circuit remains possible.",
+    "theorem_verified": true,
+    "status": "coherent-gpe-membership-router-refuted"
+  },
+  "theorem": {
+    "controlled_projector": "GPE efficiently implements C=sum_e |e><e| tensor E_e when the orientation-controlled group action and group QFT are efficient.",
+    "normalized_analysis_identity": "C(|+> tensor psi)=q^-1/2 sum_e |e>E_e psi exactly.",
+    "native_success": "For A=sum_e E_e and rho=A/Tr(A), success is Tr(A^2)/(q Tr(A)).",
+    "sparse_mp_consequence": "The sparse MP moment ratio is (1+alpha+o(1))/q, despite small support-surrogate native polar error.",
+    "fixed_arity_consequence": "A fixed R leaves q=2^(ceil(log2(n!))+O(1))/R candidates and a superpolynomial square-root amplification cost.",
+    "scope": "Only uniform-mask controlled membership plus amplification is excluded; a new global representation transform or direct physical branch-carrier circuit remains possible.",
+    "theorem_verified": true,
+    "status": "coherent-gpe-membership-router-refuted"
+  },
+  "finite_controls": [
+    {
+      "control_id": "ORTHOGONAL-4",
+      "ambient_dimension": 4,
+      "orientation_count": 4,
+      "projector_ranks": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "controlled_gpe_to_normalized_analysis_residual": 0.0,
+      "analysis_gram_residual": 0.0,
+      "native_success_probability": 0.25,
+      "native_success_trace_formula": 0.25,
+      "flat_orthogonal_family": true,
+      "flat_expected_success_probability": 0.25,
+      "exact_controlled_gpe_analysis_identity_verified": true,
+      "status": "coherent-gpe-equals-normalized-orientation-analysis"
+    },
+    {
+      "control_id": "ORTHOGONAL-8",
+      "ambient_dimension": 8,
+      "orientation_count": 8,
+      "projector_ranks": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "controlled_gpe_to_normalized_analysis_residual": 0.0,
+      "analysis_gram_residual": 0.0,
+      "native_success_probability": 0.125,
+      "native_success_trace_formula": 0.12499999999999997,
+      "flat_orthogonal_family": true,
+      "flat_expected_success_probability": 0.125,
+      "exact_controlled_gpe_analysis_identity_verified": true,
+      "status": "coherent-gpe-equals-normalized-orientation-analysis"
+    },
+    {
+      "control_id": "OVERLAPPING-4",
+      "ambient_dimension": 3,
+      "orientation_count": 4,
+      "projector_ranks": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "controlled_gpe_to_normalized_analysis_residual": 0.0,
+      "analysis_gram_residual": 3.519503007505291e-16,
+      "native_success_probability": 0.40625,
+      "native_success_trace_formula": 0.4062499999999999,
+      "flat_orthogonal_family": false,
+      "flat_expected_success_probability": null,
+      "exact_controlled_gpe_analysis_identity_verified": true,
+      "status": "coherent-gpe-equals-normalized-orientation-analysis"
+    }
+  ],
+  "natural_moment_benchmarks": [
+    {
+      "child_aspect": 0.5,
+      "orientation_count_log2": 8,
+      "orientation_count_decimal": "256",
+      "mp_first_moment": 0.5,
+      "mp_second_moment": 0.75,
+      "native_gpe_success_moment_ratio": 0.005859375,
+      "amplitude_amplification_query_scale": 13.063945294843618,
+      "support_scalarization_native_error_can_be_small": true,
+      "coherent_gpe_membership_success_inverse_orientation_width": true,
+      "status": "sparse-support-accuracy-does-not-amplify-gpe-membership"
+    },
+    {
+      "child_aspect": 0.125,
+      "orientation_count_log2": 16,
+      "orientation_count_decimal": "65536",
+      "mp_first_moment": 0.125,
+      "mp_second_moment": 0.140625,
+      "native_gpe_success_moment_ratio": 1.71661376953125e-05,
+      "amplitude_amplification_query_scale": 241.35911464500825,
+      "support_scalarization_native_error_can_be_small": true,
+      "coherent_gpe_membership_success_inverse_orientation_width": true,
+      "status": "sparse-support-accuracy-does-not-amplify-gpe-membership"
+    },
+    {
+      "child_aspect": 0.000244140625,
+      "orientation_count_log2": 32,
+      "orientation_count_decimal": "4294967296",
+      "mp_first_moment": 0.000244140625,
+      "mp_second_moment": 0.0002442002296447754,
+      "native_gpe_success_moment_ratio": 2.3288748707273044e-10,
+      "amplitude_amplification_query_scale": 65528.00146454579,
+      "support_scalarization_native_error_can_be_small": true,
+      "coherent_gpe_membership_success_inverse_orientation_width": true,
+      "status": "sparse-support-accuracy-does-not-amplify-gpe-membership"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 12,
+      "group_order_decimal": "479001600",
+      "selected_copy_count": 31,
+      "fixed_jump_log2_arity": 24,
+      "early_child_orientation_count_decimal": "128",
+      "early_child_orientation_count_log2": 7,
+      "coherent_gpe_amplification_log2_lower_bound": 3.0,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 35.84962500721156,
+      "coherent_gpe_membership_router_superpolynomial": false,
+      "direct_physical_branch_router_ruled_out": false,
+      "status": "finite-size-gpe-width-separation-not-yet-visible"
+    },
+    {
+      "n": 16,
+      "group_order_decimal": "20922789888000",
+      "selected_copy_count": 47,
+      "fixed_jump_log2_arity": 24,
+      "early_child_orientation_count_decimal": "8388608",
+      "early_child_orientation_count_log2": 23,
+      "coherent_gpe_amplification_log2_lower_bound": 11.0,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 40.0,
+      "coherent_gpe_membership_router_superpolynomial": false,
+      "direct_physical_branch_router_ruled_out": false,
+      "status": "finite-size-gpe-width-separation-not-yet-visible"
+    },
+    {
+      "n": 20,
+      "group_order_decimal": "2432902008176640000",
+      "selected_copy_count": 64,
+      "fixed_jump_log2_arity": 24,
+      "early_child_orientation_count_decimal": "1099511627776",
+      "early_child_orientation_count_log2": 40,
+      "coherent_gpe_amplification_log2_lower_bound": 19.5,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 43.219280948873624,
+      "coherent_gpe_membership_router_superpolynomial": false,
+      "direct_physical_branch_router_ruled_out": false,
+      "status": "finite-size-gpe-width-separation-not-yet-visible"
+    },
+    {
+      "n": 24,
+      "group_order_decimal": "620448401733239439360000",
+      "selected_copy_count": 82,
+      "fixed_jump_log2_arity": 24,
+      "early_child_orientation_count_decimal": "288230376151711744",
+      "early_child_orientation_count_log2": 58,
+      "coherent_gpe_amplification_log2_lower_bound": 28.5,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 45.84962500721156,
+      "coherent_gpe_membership_router_superpolynomial": false,
+      "direct_physical_branch_router_ruled_out": false,
+      "status": "finite-size-gpe-width-separation-not-yet-visible"
+    },
+    {
+      "n": 32,
+      "group_order_decimal": "263130836933693530167218012160000000",
+      "selected_copy_count": 120,
+      "fixed_jump_log2_arity": 24,
+      "early_child_orientation_count_decimal": "79228162514264337593543950336",
+      "early_child_orientation_count_log2": 96,
+      "coherent_gpe_amplification_log2_lower_bound": 47.5,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 50.0,
+      "coherent_gpe_membership_router_superpolynomial": false,
+      "direct_physical_branch_router_ruled_out": false,
+      "status": "finite-size-gpe-width-separation-not-yet-visible"
+    },
+    {
+      "n": 40,
+      "group_order_decimal": "815915283247897734345611269596115894272000000000",
+      "selected_copy_count": 162,
+      "fixed_jump_log2_arity": 24,
+      "early_child_orientation_count_decimal": "348449143727040986586495598010130648530944",
+      "early_child_orientation_count_log2": 138,
+      "coherent_gpe_amplification_log2_lower_bound": 68.5,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 53.219280948873624,
+      "coherent_gpe_membership_router_superpolynomial": true,
+      "direct_physical_branch_router_ruled_out": false,
+      "status": "coherent-gpe-membership-router-superpolynomial"
+    },
+    {
+      "n": 48,
+      "group_order_decimal": "12413915592536072670862289047373375038521486354677760000000000",
+      "selected_copy_count": 205,
+      "fixed_jump_log2_arity": 24,
+      "early_child_orientation_count_decimal": "3064991081731777716716694054300618367237478244367204352",
+      "early_child_orientation_count_log2": 181,
+      "coherent_gpe_amplification_log2_lower_bound": 90.0,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 55.84962500721156,
+      "coherent_gpe_membership_router_superpolynomial": true,
+      "direct_physical_branch_router_ruled_out": false,
+      "status": "coherent-gpe-membership-router-superpolynomial"
+    },
+    {
+      "n": 64,
+      "group_order_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "selected_copy_count": 298,
+      "fixed_jump_log2_arity": 24,
+      "early_child_orientation_count_decimal": "30354201441027016733116592294117482916287606860189680019559568902170379456331382784",
+      "early_child_orientation_count_log2": 274,
+      "coherent_gpe_amplification_log2_lower_bound": 136.5,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 60.0,
+      "coherent_gpe_membership_router_superpolynomial": true,
+      "direct_physical_branch_router_ruled_out": false,
+      "status": "coherent-gpe-membership-router-superpolynomial"
+    },
+    {
+      "n": 80,
+      "group_order_decimal": "71569457046263802294811533723186532165584657342365752577109445058227039255480148842668944867280814080000000000000000000",
+      "selected_copy_count": 397,
+      "fixed_jump_log2_arity": 24,
+      "early_child_orientation_count_decimal": "19239260838083241802870625048898248928261591440656956380834127638791856333738872368854622194768025215237611323392",
+      "early_child_orientation_count_log2": 373,
+      "coherent_gpe_amplification_log2_lower_bound": 186.0,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 63.219280948873624,
+      "coherent_gpe_membership_router_superpolynomial": true,
+      "direct_physical_branch_router_ruled_out": false,
+      "status": "coherent-gpe-membership-router-superpolynomial"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "test_coherent_orientation_controlled_gpe_as_flattened_router",
+      "resolved": true,
+      "resolution": "Resolved negatively by equation (2): it is exactly normalized analysis."
+    },
+    {
+      "obligation": "test_sparse_support_scalarization_as_gpe_success_amplifier",
+      "resolved": true,
+      "resolution": "Resolved negatively by equation (4) and the sparse MP first two moments."
+    },
+    {
+      "obligation": "exploit_internal_controlled_representation_structure_beyond_membership",
+      "resolved": false,
+      "resolution": "A useful transform must interfere multiplicity/carrier data without postselecting one candidate invariant flag."
+    },
+    {
+      "obligation": "derive_direct_physical_branch_to_polar_factorization",
+      "resolved": false,
+      "resolution": "The received wreath carrier already has an orientation register and is outside equation (2)'s prepare-and-membership model."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Efficient measurement of every E_e supplies an efficient measurement of which E_e contains the input.",
+      "resolved": true,
+      "resolution": "False for coherent uniform membership: the exact good amplitude is normalized by sqrt(q)."
+    },
+    {
+      "objection": "Near-projection frame geometry makes the GPE good flag constant probability.",
+      "resolved": true,
+      "resolution": "False. A flat orthogonal frame is an exact projection and still succeeds with probability 1/q."
+    },
+    {
+      "objection": "The BCH Clebsch--Gordan result gives the required symmetric-group internal Kronecker basis transform.",
+      "resolved": true,
+      "resolution": "Its group-general GPE construction is the limited isotypic projection used here; it does not furnish the source-adapted multiplicity polar."
+    },
+    {
+      "objection": "This is a lower bound on direct physical branch interference.",
+      "resolved": false,
+      "resolution": "No. Physical branch interference does not prepare a fresh uniform candidate mask and postselect controlled membership."
+    }
+  ],
+  "literature_links": [
+    {
+      "paper": "Efficient Quantum Circuits for Schur and Clebsch-Gordan Transforms",
+      "url": "https://arxiv.org/abs/quant-ph/0407082",
+      "used_for": "Group-general GPE capability is efficient isotypic projection, not a full multiplicity-basis transform",
+      "router_supplied": false
+    },
+    {
+      "paper": "Quantum complexity of the Kronecker coefficients",
+      "url": "https://arxiv.org/abs/2302.11454",
+      "used_for": "Efficient symmetric-group Kronecker projector measurement and its rank-counting boundary",
+      "router_supplied": false
+    },
+    {
+      "paper": "Quantum rejection sampling",
+      "url": "https://arxiv.org/abs/1103.2774",
+      "used_for": "Square-root candidate-width cost in the unknown-state normalized-membership model",
+      "router_supplied": false
+    }
+  ],
+  "headline_metrics": {
+    "coherent_gpe_normalized_analysis_identity_count": 1,
+    "flat_projection_inverse_width_control_count": 2,
+    "finite_control_failure_count": 0,
+    "natural_sparse_mp_success_benchmark_count": 3,
+    "superpolynomial_scaling_row_count": 4,
+    "flattened_early_router_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "orientation_invariant_membership_projectors_gpe_measurable": true,
+    "coherent_uniform_gpe_equals_normalized_analysis": true,
+    "sparse_support_scalarization_removes_gpe_width": false,
+    "coherent_gpe_membership_router_polynomial": false,
+    "full_symmetric_group_kronecker_basis_transform_available": false,
+    "direct_physical_branch_router_ruled_out": false,
+    "flattened_early_orientation_router_proved": false,
+    "speedup_claim_allowed": false
+  },
+  "status": "coherent-gpe-membership-router-refuted",
+  "summary": "Efficient controlled GPE implements orientation membership but equals the normalized q-candidate analysis on a uniform mask. Its native success is Theta(1/q), even for exact flat projection frames, so it cannot be the missing flattened router without a new physical or multiplicity-coherent interference mechanism.",
+  "falsifiers_triggered": [
+    "Efficient Kronecker/isotypic membership does not imply efficient coherent orientation routing.",
+    "Sparse support-projection geometry does not remove candidate-width normalization from uniform controlled GPE."
+  ]
+}

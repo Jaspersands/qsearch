@@ -308,51 +308,6 @@ def write_natural_unequal_dominance_report(
     payload = asdict(run_natural_unequal_dominance())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id=(
-                    "NEG-CODE-WREATH-EQUAL-COMMUTATOR-"
-                    "NOT-NATURAL-ASYMPTOTIC-BOTTLENECK"
-                ),
-                source=str(path),
-                claim=(
-                    "A scalable equal-pair mixed-commutator recoupling engine "
-                    "is required before natural-source wreath frame moments "
-                    "can make asymptotic progress."
-                ),
-                reason_invalid=(
-                    "Equal physical labels are collisions of two independent "
-                    "Plancherel draws. Across ceil(log2(n!)) labels their "
-                    "total probability tends to zero."
-                ),
-                lesson=(
-                    "Prioritize growing-order contraction on arbitrary "
-                    "all-unequal physical tuples; retain equal recoupling only "
-                    "for worst-sector or finite-size completeness."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_natural_unequal_dominance": str(path)
-                },
-            )
-        )
     return payload
 
 

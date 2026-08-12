@@ -291,36 +291,4 @@ def write_hadamard_scaling_report(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-HADAMARD-SUBCRITICAL-REGISTER-RATIO-AVERAGE-TV-BOUND",
-                source=str(path),
-                claim="A Hadamard-output decoder with m below 1.7096 log2(N) phase states has inverse-polynomial average signal.",
-                reason_invalid=(
-                    "The signed-relation second-moment and Parseval bound makes expected full-output TV exponentially "
-                    "small for every fixed register ratio below 1/log2(3/2)."
-                ),
-                lesson="Do not spend effort tuning decoders in the analytically subcritical regime; test supercritical ratios and exact robustness.",
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "subcritical_threshold": SUBCRITICAL_REGISTER_RATIO,
-                    "subcritical_rows": payload["headline_metrics"]["analytically_subcritical_row_count"],
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-HADAMARD-SCALING"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_hadamard_scaling": str(path)},
-            )
-        )
     return payload

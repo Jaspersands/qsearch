@@ -811,65 +811,6 @@ def write_same_hidden_target_law_report(
     payload = asdict(build_same_hidden_target_law_report(n_values=n_values))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-DIMENSION-COUPLING-NOT-SAME-HIDDEN-TARGET-LAW",
-                source=str(output_path),
-                claim=(
-                    "The dimension-weighted Kronecker coupling mass is the "
-                    "two-copy target distribution for a shared hidden involution."
-                ),
-                reason_invalid=(
-                    "The operational law contains the exact correction "
-                    "(1+r_lambda+r_mu+r_nu)/"
-                    "((1+r_lambda)(1+r_mu))."
-                ),
-                lesson=(
-                    "Weight every source-target coverage and collision claim "
-                    "by the shared-hidden character-ratio law."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-EXACT-TARGET-LAW-NOT-HIDDEN-INVOLUTION-DECODER",
-                source=str(output_path),
-                claim=(
-                    "An exact coupled-irrep target law supplies a hidden-"
-                    "involution algorithm."
-                ),
-                reason_invalid=(
-                    "The law is conjugacy-class invariant and omits coherent "
-                    "recoupling, multiplicity outcomes, and decoding of h."
-                ),
-                lesson=(
-                    "Use the law for honest branch accounting, then require "
-                    "an h-dependent multiplicity outcome and decoder theorem."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = (
-            registry_result_id
-            or f"RESULT-{registry_experiment_id}-COSET"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=dict(payload["headline_metrics"]),
-                falsifiers_triggered=list(payload["falsifiers_triggered"]),
-                artifacts={"coset_same_hidden_target_law": str(output_path)},
-            )
-        )
     return payload
 
 

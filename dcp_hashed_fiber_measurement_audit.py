@@ -403,43 +403,4 @@ def write_hashed_fiber_measurement_audit(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-HASHED-HADAMARD-FIBER-ERASURE",
-                source=str(path),
-                claim="Polynomial residue hashing plus Hadamard erasure gives polynomial-success coherent DCP fiber interference.",
-                reason_invalid=(
-                    "Averaging postselection success over d removes false hash collisions and leaves only exact subset-sum "
-                    "collisions. Random m=Theta(n) labels therefore have exponentially small worst-d success with high probability."
-                ),
-                lesson=(
-                    "Do not retry uniform |+> fiber projection or hide its success in postselection. Search nonuniform "
-                    "reference states, coherent collision walks, or compressed PGMs with explicit overlap proofs."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "finite_instance_count": payload["headline_metrics"]["finite_instance_count"],
-                    "mean_identity_failure_count": payload["headline_metrics"]["mean_identity_failure_count"],
-                    "high_probability_polynomial_uniform_success_ruled_out_count": payload["headline_metrics"][
-                        "high_probability_polynomial_uniform_success_ruled_out_count"
-                    ],
-                    "nonuniform_reference_projection_ruled_out": True,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-HASHED-FIBER-MEASUREMENT"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_hashed_fiber_measurement_audit": str(path)},
-            )
-        )
     return payload

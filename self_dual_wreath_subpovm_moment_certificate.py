@@ -918,57 +918,6 @@ def write_wreath_subpovm_moment_certificate_report(
     )
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-WREATH-FINITE-SUBPOVM-MOMENTS-NOT-CIRCUIT",
-                source=str(output_path),
-                claim=(
-                    "Finite high-order moment certificates already implement "
-                    "the code-equivalence projector sub-POVM."
-                ),
-                reason_invalid=(
-                    "The complete calculation is confined to W_3. Natural "
-                    "equal sectors can be discarded asymptotically, but no "
-                    "growing-order all-unequal contraction, structured maximal-"
-                    "effect dilation, or permutation decoder is known."
-                ),
-                lesson=(
-                    "Use the moment ratio as the proof objective for natural "
-                    "conclusive probability while separately synthesizing the "
-                    "covariant measurement."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-SUCCESS",
-                    "PO-COMPLEXITY",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = (
-            registry_result_id
-            or f"RESULT-{registry_experiment_id}-CODE"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=dict(payload["headline_metrics"]),
-                falsifiers_triggered=list(payload["falsifiers_triggered"]),
-                artifacts={
-                    "self_dual_wreath_subpovm_moment_certificate": str(
-                        output_path
-                    )
-                },
-            )
-        )
     return payload
 
 

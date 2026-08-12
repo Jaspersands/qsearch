@@ -341,36 +341,4 @@ def write_two_copy_transition_report(
     payload = asdict(build_two_copy_transition_report(n_values=n_values))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-EXPLICIT-TWO-COPY-TRANSITION-TABLE",
-                source=str(output_path),
-                claim="A finite explicit regular-representation transition table is a scalable collective measurement.",
-                reason_invalid=(
-                    "The construction uses factorial Hilbert dimension and |S_n|^4 dense matrix entries; it neither "
-                    "implements recoupling coherently nor decodes the hidden involution."
-                ),
-                lesson=(
-                    "Search for compressed formulas for sector transition weights and reject any representation that "
-                    "materializes the regular tensor space."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_two_copy_transition_audit": str(output_path)},
-            )
-        )
     return payload

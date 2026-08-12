@@ -365,38 +365,4 @@ def write_likelihood_branch_bound_report(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-LIKELIHOOD-INTERVAL-BOUND-EXPONENTIAL-SCALING",
-                source=str(path),
-                claim="A separable Lipschitz branch-and-bound localizes the random-label DCP likelihood in poly(log N) time.",
-                reason_invalid=(
-                    "Random high-frequency terms saturate broad interval bounds. The exact implementation evaluates an "
-                    "exponential candidate set in finite scaling and has no polynomial resource theorem."
-                ),
-                lesson="Require a nonseparable global certificate or algebraic sketch; removing the N-entry table alone is insufficient.",
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "fitted_log2_evaluation_slope_per_n": payload["headline_metrics"][
-                        "fitted_log2_evaluation_slope_per_n"
-                    ],
-                    "proved_general_nonlinear_lower_bound_count": 0,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-LIKELIHOOD-BRANCH-BOUND"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_likelihood_branch_bound": str(path)},
-            )
-        )
     return payload

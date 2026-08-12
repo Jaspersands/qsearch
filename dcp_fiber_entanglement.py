@@ -503,58 +503,6 @@ def write_fiber_entanglement_audit(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        negatives = (
-            (
-                "NEG-DCP-EXACT-LOW-BOND-FIBER-STATE-PREPARATION",
-                "A polynomial-bond exact tensor network can prepare density-one random linear-depth subset-sum fiber states.",
-                "The exact Schmidt formula gives exponential rank on a constant fraction of random instances.",
-            ),
-            (
-                "NEG-DCP-SCHMIDT-RANK-AS-GENERAL-CIRCUIT-LOWER-BOUND",
-                "Exponential fiber Schmidt rank proves exponential quantum circuit complexity.",
-                "Polynomial-size quantum circuits can create volume-law entanglement; rank only lower-bounds the declared tensor-network bond.",
-            ),
-            (
-                "NEG-DCP-FINITE-SCHMIDT-TAIL-AS-ASYMPTOTIC-APPROXIMATE-NOGO",
-                "Large finite 99-percent Schmidt ranks rule out all scalable approximate low-bond preparation.",
-                "Finite ranks alone do not prove this; the separately certified second-moment purity theorem supplies only the declared random-source scope.",
-            ),
-            (
-                "NEG-DCP-POLYNOMIAL-TENSOR-LAYOUT-DICTIONARY",
-                "Trying polynomially many fixed coordinate orderings evades the random-fiber approximate bond obstruction.",
-                "Polynomial Markov slack preserves exponential rank and union-bounds every layout in a fixed polynomial dictionary with density-one probability.",
-            ),
-        )
-        for negative_id, claim, reason in negatives:
-            upsert_negative_result(
-                NegativeResultRecord(
-                    id=negative_id,
-                    source=str(path),
-                    claim=claim,
-                    reason_invalid=reason,
-                    lesson=(
-                        "Any tensor-network proposal must declare exact versus approximate preparation, coordinate "
-                        "ordering, bond dimension, source coverage, and whether it actually outputs a verified relation."
-                    ),
-                    applies_to=[registry_candidate_id, registry_experiment_id],
-                    evidence=payload["headline_metrics"],
-                )
-            )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_fiber_entanglement": str(path)},
-            )
-        )
     return payload
 
 

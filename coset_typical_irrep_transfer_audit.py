@@ -311,40 +311,6 @@ def write_typical_irrep_transfer_report(
     )
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-FIXED-BOUNDED-TAIL-FOURIER-ROUTE",
-                source=str(output_path),
-                claim=(
-                    "A polynomial recoupling algorithm restricted to a predetermined bounded-tail partition family can process natural coset states efficiently."
-                ),
-                reason_invalid=(
-                    "For every fixed tail budget K, the entire family's weak-Fourier probability is at most "
-                    "2*P_K*n^(2K)/n!, smaller than every inverse polynomial."
-                ),
-                lesson=(
-                    "Require uniform label-adaptive primitives on sampled typical partitions. Stable families may be "
-                    "used only to discover algebraic mechanisms that are subsequently transferred and reproved."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_typical_irrep_transfer_audit": str(output_path)},
-            )
-        )
     return payload
 
 

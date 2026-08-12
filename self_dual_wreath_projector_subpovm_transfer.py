@@ -317,57 +317,6 @@ def write_wreath_projector_subpovm_transfer_report(
     payload = asdict(build_wreath_projector_subpovm_transfer_report())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-WREATH-SN-SUBPOVM-PERFORMANCE-TRANSFER",
-                source=str(output_path),
-                claim=(
-                    "Finite S_n projector-sub-POVM information and condition "
-                    "numbers automatically transfer to code equivalence."
-                ),
-                reason_invalid=(
-                    "Only the normalized-projector and covariant sub-POVM "
-                    "identities are group-general. The physical wreath source "
-                    "law, global frame condition, outcome transform, and "
-                    "decoder are distinct."
-                ),
-                lesson=(
-                    "Use the projector sub-POVM as the physical wreath "
-                    "architecture target, but prove its all-sector condition "
-                    "and Naimark dilation directly."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-REDUCTION",
-                    "PO-MEASUREMENT",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = (
-            registry_result_id
-            or f"RESULT-{registry_experiment_id}-CODE"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=dict(payload["headline_metrics"]),
-                falsifiers_triggered=list(payload["falsifiers_triggered"]),
-                artifacts={
-                    "self_dual_wreath_projector_subpovm_transfer": str(
-                        output_path
-                    )
-                },
-            )
-        )
     return payload
 
 

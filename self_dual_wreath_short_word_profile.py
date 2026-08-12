@@ -395,55 +395,6 @@ def write_short_word_profile_report(
     payload = asdict(run_short_word_profile())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id=(
-                    "NEG-CODE-WREATH-MARGINAL-SHORT-WORD-"
-                    "NOT-JOINT-TAIL"
-                ),
-                source=str(path),
-                claim=(
-                    "Uniform fixed-mask bridge-word marginals prove the joint "
-                    "short-word anti-concentration needed by the frame moment."
-                ),
-                reason_invalid=(
-                    "Different subset masks reuse the same bridge generators. "
-                    "Mask inequality removes only the diagonal and does not "
-                    "bound non-diagonal word correlations or character signs."
-                ),
-                lesson=(
-                    "Classify joint word maps by mask incidence rank or "
-                    "overlap hypergraph and prove product mixing on every "
-                    "non-diagonal class."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_short_word_profile": str(path)
-                },
-            )
-        )
     return payload
 
 

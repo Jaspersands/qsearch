@@ -1,0 +1,329 @@
+{
+  "created_at": "2026-08-12T03:39:38.136306+00:00",
+  "theorem_contract": {
+    "passive_uniformity": "Returning row-copy to the group basis gives unitary Kraus maps U_s^*/sqrt(|G|), so the group label alone is exactly uniform.",
+    "character_kraus_factorization": "K_z(h)=tensor_i[rho_lambda_i(h) tensor I + (-1)^z_i I tensor rho_mu_i(h)]/2.",
+    "character_probability_law": "p(z|h)=2^-k product_i[1+(-1)^z_i chi_lambda_i(h)chi_mu_i(h)/(d_lambda_i d_mu_i)].",
+    "correction_success": "A character-controlled right correction d(z) has P_d=|S_n|^-1 sum_z p(z|d(z)).",
+    "conjugacy_class_bound": "P_opt<=p(n)/n!, or |Aut|p(n)/n! for success modulo a stabilizer.",
+    "scope": "The theorem excludes passive retention and character-controlled right-group corrections. Carrier-dependent coherent processing, general right-group-algebra unitaries, and multi-round routers remain open.",
+    "theorem_verified": true,
+    "status": "branch-character-right-correction-factorially-suppressed"
+  },
+  "theorem": {
+    "passive_uniformity": "Returning row-copy to the group basis gives unitary Kraus maps U_s^*/sqrt(|G|), so the group label alone is exactly uniform.",
+    "character_kraus_factorization": "K_z(h)=tensor_i[rho_lambda_i(h) tensor I + (-1)^z_i I tensor rho_mu_i(h)]/2.",
+    "character_probability_law": "p(z|h)=2^-k product_i[1+(-1)^z_i chi_lambda_i(h)chi_mu_i(h)/(d_lambda_i d_mu_i)].",
+    "correction_success": "A character-controlled right correction d(z) has P_d=|S_n|^-1 sum_z p(z|d(z)).",
+    "conjugacy_class_bound": "P_opt<=p(n)/n!, or |Aut|p(n)/n! for success modulo a stabilizer.",
+    "scope": "The theorem excludes passive retention and character-controlled right-group corrections. Carrier-dependent coherent processing, general right-group-algebra unitaries, and multi-round routers remain open.",
+    "theorem_verified": true,
+    "status": "branch-character-right-correction-factorially-suppressed"
+  },
+  "finite_controls": [
+    {
+      "control_id": "W3-SINGLE-UNEQUAL",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "group_order": 6,
+      "conjugacy_class_count": 3,
+      "orientation_character_count": 2,
+      "carrier_dimension": 2,
+      "maximum_direct_factorization_residual": 2.7755575615628914e-17,
+      "maximum_probability_normalization_residual": 0.0,
+      "maximum_same_cycle_type_variation": 0.0,
+      "identity_zero_character_probability": 1.0,
+      "passive_group_guess_success": 0.16666666666666666,
+      "optimal_character_correction_success": 0.2916666666666667,
+      "conjugacy_class_success_ceiling": 0.5,
+      "optimal_to_ceiling_ratio": 0.5833333333333334,
+      "exact_character_channel_verified": true,
+      "correction_decoder_bound_verified": true,
+      "status": "exact-class-function-character-decoder-boundary"
+    },
+    {
+      "control_id": "W3-COLLISION-FREE-THRESHOLD",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "group_order": 6,
+      "conjugacy_class_count": 3,
+      "orientation_character_count": 8,
+      "carrier_dimension": 4,
+      "maximum_direct_factorization_residual": 1.3877787807814457e-17,
+      "maximum_probability_normalization_residual": 0.0,
+      "maximum_same_cycle_type_variation": 0.0,
+      "identity_zero_character_probability": 1.0,
+      "passive_group_guess_success": 0.16666666666666666,
+      "optimal_character_correction_success": 0.4895833333333333,
+      "conjugacy_class_success_ceiling": 0.5,
+      "optimal_to_ceiling_ratio": 0.9791666666666666,
+      "exact_character_channel_verified": true,
+      "correction_decoder_bound_verified": true,
+      "status": "exact-class-function-character-decoder-boundary"
+    },
+    {
+      "control_id": "W4-COLLISION-FREE-PAIR",
+      "n": 4,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "group_order": 24,
+      "conjugacy_class_count": 5,
+      "orientation_character_count": 4,
+      "carrier_dimension": 18,
+      "maximum_direct_factorization_residual": 1.1102230246251565e-16,
+      "maximum_probability_normalization_residual": 4.440892098500626e-16,
+      "maximum_same_cycle_type_variation": 1.1102230246251565e-16,
+      "identity_zero_character_probability": 1.0,
+      "passive_group_guess_success": 0.041666666666666664,
+      "optimal_character_correction_success": 0.08796296296296295,
+      "conjugacy_class_success_ceiling": 0.20833333333333334,
+      "optimal_to_ceiling_ratio": 0.42222222222222217,
+      "exact_character_channel_verified": true,
+      "correction_decoder_bound_verified": true,
+      "status": "exact-class-function-character-decoder-boundary"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 16,
+      "group_order_decimal": "20922789888000",
+      "conjugacy_class_count_decimal": "231",
+      "log2_group_order": 44.25014046988262,
+      "log2_conjugacy_class_count": 7.851749041416057,
+      "log2_character_correction_success_upper_bound": -36.39839142846657,
+      "amplitude_amplification_query_log2_lower_bound": 18.199195714233284,
+      "polynomial_benchmark_log2": -40.0,
+      "subfactorial_stabilizer_preserves_factorial_suppression": true,
+      "character_correction_superpolynomially_suppressed": false,
+      "carrier_dependent_coherent_decoder_ruled_out": false,
+      "status": "factorial-character-correction-suppression"
+    },
+    {
+      "n": 32,
+      "group_order_decimal": "263130836933693530167218012160000000",
+      "conjugacy_class_count_decimal": "8349",
+      "log2_group_order": 117.6632636523603,
+      "log2_conjugacy_class_count": 13.027387694052763,
+      "log2_character_correction_success_upper_bound": -104.63587595830754,
+      "amplitude_amplification_query_log2_lower_bound": 52.31793797915377,
+      "polynomial_benchmark_log2": -50.0,
+      "subfactorial_stabilizer_preserves_factorial_suppression": true,
+      "character_correction_superpolynomially_suppressed": true,
+      "carrier_dependent_coherent_decoder_ruled_out": false,
+      "status": "factorial-character-correction-suppression"
+    },
+    {
+      "n": 64,
+      "group_order_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "conjugacy_class_count_decimal": "1741630",
+      "log2_group_order": 295.9951439417241,
+      "log2_conjugacy_class_count": 20.732006732949646,
+      "log2_character_correction_success_upper_bound": -275.2631372087745,
+      "amplitude_amplification_query_log2_lower_bound": 137.63156860438724,
+      "polynomial_benchmark_log2": -60.0,
+      "subfactorial_stabilizer_preserves_factorial_suppression": true,
+      "character_correction_superpolynomially_suppressed": true,
+      "carrier_dependent_coherent_decoder_ruled_out": false,
+      "status": "factorial-character-correction-suppression"
+    },
+    {
+      "n": 80,
+      "group_order_decimal": "71569457046263802294811533723186532165584657342365752577109445058227039255480148842668944867280814080000000000000000000",
+      "conjugacy_class_count_decimal": "15796476",
+      "log2_group_order": 394.82685923155924,
+      "log2_conjugacy_class_count": 23.91309941094446,
+      "log2_character_correction_success_upper_bound": -370.91375982061476,
+      "amplitude_amplification_query_log2_lower_bound": 185.45687991030738,
+      "polynomial_benchmark_log2": -63.219280948873624,
+      "subfactorial_stabilizer_preserves_factorial_suppression": true,
+      "character_correction_superpolynomially_suppressed": true,
+      "carrier_dependent_coherent_decoder_ruled_out": false,
+      "status": "factorial-character-correction-suppression"
+    },
+    {
+      "n": 96,
+      "group_order_decimal": "991677934870949689209571401541893801158183648651267795444376054838492222809091499987689476037000748982075094738965754305639874560000000000000000000000",
+      "conjugacy_class_count_decimal": "118114304",
+      "log2_group_order": 498.27715779390303,
+      "log2_conjugacy_class_count": 26.815608449153654,
+      "log2_character_correction_success_upper_bound": -471.46154934474936,
+      "amplitude_amplification_query_log2_lower_bound": 235.73077467237468,
+      "polynomial_benchmark_log2": -65.84962500721156,
+      "subfactorial_stabilizer_preserves_factorial_suppression": true,
+      "character_correction_superpolynomially_suppressed": true,
+      "carrier_dependent_coherent_decoder_ruled_out": false,
+      "status": "factorial-character-correction-suppression"
+    },
+    {
+      "n": 128,
+      "group_order_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "conjugacy_class_count_decimal": "4351078600",
+      "log2_group_order": 716.161722083622,
+      "log2_conjugacy_class_count": 32.01872593264498,
+      "log2_character_correction_success_upper_bound": -684.142996150977,
+      "amplitude_amplification_query_log2_lower_bound": 342.0714980754885,
+      "polynomial_benchmark_log2": -70.0,
+      "subfactorial_stabilizer_preserves_factorial_suppression": true,
+      "character_correction_superpolynomially_suppressed": true,
+      "carrier_dependent_coherent_decoder_ruled_out": false,
+      "status": "factorial-character-correction-suppression"
+    },
+    {
+      "n": 256,
+      "group_order_decimal": "857817775342842654119082271681232625157781520279485619859655650377269452553147589377440291360451408450375885342336584306157196834693696475322289288497426025679637332563368786442675207626794560187968867971521143307702077526646451464709187326100832876325702818980773671781454170250523018608495319068138257481070252817559459476987034665712738139286205234756808218860701203611083152093501947437109101726968262861606263662435022840944191408424615936000000000000000000000000000000000000000000000000000000000000000",
+      "conjugacy_class_count_decimal": "365749566870782",
+      "log2_group_order": 1683.9962872242147,
+      "log2_conjugacy_class_count": 48.37784948431453,
+      "log2_character_correction_success_upper_bound": -1635.6184377399002,
+      "amplitude_amplification_query_log2_lower_bound": 817.8092188699501,
+      "polynomial_benchmark_log2": -80.0,
+      "subfactorial_stabilizer_preserves_factorial_suppression": true,
+      "character_correction_superpolynomially_suppressed": true,
+      "carrier_dependent_coherent_decoder_ruled_out": false,
+      "status": "factorial-character-correction-suppression"
+    },
+    {
+      "n": 512,
+      "group_order_decimal": "347728979313260536328304591754560471199225065564351457034247483155161041206635254347320985033950225364432243311021394545295001702070069013264153113260937941358711864044716186861040899557497361427588282356254968425012480396855239725120562512065555822121708786443620799246550959187232026838081415178588172535280020786313470076859739980965720873849904291373826841584712798618430387338042329771801724767691095019545758986942732515033551529595009876999279553931070378592917099002397061907147143424113252117585950817850896618433994140232823316432187410356341262386332496954319973130407342567282027398579382543048456876800862349928140411905431276197435674603281842530744177527365885721629512253872386613118821540847897493107398381956081763695236422795880296204301770808809477147632428639299038833046264585834888158847387737841843413664892833586209196366979775748895821826924040057845140287522238675082137570315954526727437094904914796782641000740777897919134093393530422760955140211387173650047358347353379234387609261306673773281412893026941927424000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "conjugacy_class_count_decimal": "4453575699570940947378",
+      "log2_group_order": 3875.166121943203,
+      "log2_conjugacy_class_count": 71.91545410907113,
+      "log2_character_correction_success_upper_bound": -3803.250667834132,
+      "amplitude_amplification_query_log2_lower_bound": 1901.625333917066,
+      "polynomial_benchmark_log2": -90.0,
+      "subfactorial_stabilizer_preserves_factorial_suppression": true,
+      "character_correction_superpolynomially_suppressed": true,
+      "carrier_dependent_coherent_decoder_ruled_out": false,
+      "status": "factorial-character-correction-suppression"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_native_branch_character_channel",
+      "resolved": true,
+      "resolution": "The Walsh Kraus operators tensor-factor and their maximally mixed probabilities are products of normalized character ratios."
+    },
+    {
+      "obligation": "test_branch_character_as_group_column_correction",
+      "resolved": true,
+      "resolution": "Every right-group correction selected only by the character has success at most p(n)/n! for a rigid hidden label."
+    },
+    {
+      "obligation": "analyze_arbitrary_character_controlled_commutant_unitary",
+      "resolved": false,
+      "resolution": "A general Fourier-column unitary is a right-group-algebra operation, not necessarily a single right translation."
+    },
+    {
+      "obligation": "construct_or_refute_carrier_dependent_joint_decoder",
+      "resolved": false,
+      "resolution": "The post-Walsh carrier contains matrix-valued, noncentral information that equation (2) intentionally traces out."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "There are about n! character strings, so they can label permutations.",
+      "resolved": true,
+      "resolution": "Cardinality is not information: the full outcome law is a class function and cannot separate elements within a cycle type."
+    },
+    {
+      "objection": "Keeping the character coherently changes the ordinary group marginal.",
+      "resolved": true,
+      "resolution": "Any residual-only unitary leaves the group marginal invariant; without a controlled correction the group label is uniform."
+    },
+    {
+      "objection": "The class-function bound rules out every joint decoder.",
+      "resolved": false,
+      "resolution": "No. Tracing or ignoring the carrier removes cross-orientation matrix information. A carrier-dependent coherent decoder is outside scope."
+    }
+  ],
+  "headline_metrics": {
+    "passive_uniformity_theorem_count": 1,
+    "branch_character_factorization_theorem_count": 1,
+    "conjugacy_class_decoder_bound_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "superpolynomial_scaling_row_count": 7,
+    "carrier_dependent_joint_decoder_count": 0,
+    "physical_orientation_polar_compiler_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "passive_branch_character_retention_changes_group_marginal": false,
+    "native_branch_character_probability_factorization_proved": true,
+    "character_controlled_right_correction_factorially_suppressed": true,
+    "branch_character_alone_supplies_missing_fourier_column": false,
+    "arbitrary_character_controlled_commutant_unitary_ruled_out": false,
+    "carrier_dependent_joint_decoder_ruled_out": false,
+    "multi_round_orientation_index_relocation_ruled_out": false,
+    "physical_orientation_polar_compiled": false,
+    "speedup_claim_allowed": false
+  },
+  "status": "branch-character-right-correction-factorially-suppressed",
+  "summary": "A retained orientation character does not by itself replace the missing Fourier column: passive group outcomes are uniform, and every character-controlled right correction has at most p(n)/n! success.",
+  "falsifiers_triggered": [
+    "Having as many branch characters as hidden labels does not imply decodability; their native probability law is conjugacy-class invariant.",
+    "Keeping the full character instead of postselecting does not alter the ordinary inverse-QFT group marginal.",
+    "A positive character-retaining decoder must process matrix-valued carrier information or use a broader commutant transform."
+  ]
+}

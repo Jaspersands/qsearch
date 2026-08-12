@@ -1,0 +1,282 @@
+{
+  "created_at": "2026-08-12T03:42:34.950804+00:00",
+  "theorem_contract": {
+    "random_witness": "E_(S,T) ||[A_S,A_T]||F^2/(2D)=M4(H)/D",
+    "bounded_tail": "liminf E X>=c implies liminf Pr[X>=tau]>=(c-tau)/(2-tau)",
+    "dequantization": "M4(H)/D<=8 sum_x||H_x-K_x||F^2/D for every commuting POVM K",
+    "hidden_label": "M4 is invariant under unitary conjugation and leaf permutation; uniform Walsh-pair gap laws are invariant under affine leaf relabeling",
+    "conditional_measurement": "given P/r and a block encoding of P, degree-four trace tests of PZ_SP and PZ_TP estimate a random commutator witness at constant precision",
+    "access": "Walsh phases cost O(m), but generic normalized frame access to P retains the Omega(sqrt(2^m)) query boundary",
+    "scope": "The theorem produces a constant-rate structural witness and rules out commuting approximations. It proves that M4-only transcripts cannot decode the hidden involution and does not compile the dependency-support projection."
+  },
+  "theorem": {
+    "random_pair_identity": "E_(S,T) ||[A_S,A_T]||F^2/(2D)=M4(H)/D",
+    "pair_gap_range": "-I<=A_S<=I implies 0<=||[A_S,A_T]||F^2/(2D)<=2",
+    "witness_mass_bound": "liminf E X>=c implies liminf Pr[X>=tau]>=(c-tau)/(2-tau)",
+    "commuting_approximation_bound": "M4(H)/D<=8 sum_x||H_x-K_x||F^2/D for every commuting POVM K",
+    "covariance_blindness": "M4 is invariant under unitary conjugation and leaf permutation; uniform Walsh-pair gap laws are invariant under affine leaf relabeling",
+    "conditional_trace_test": "given P/r and a block encoding of P, degree-four trace tests of PZ_SP and PZ_TP estimate a random commutator witness at constant precision",
+    "access_boundary": "Walsh phases cost O(m), but generic normalized frame access to P retains the Omega(sqrt(2^m)) query boundary",
+    "theorem_verified": true,
+    "status": "positive-m4-operational-witness-proved-decoder-implication-falsified"
+  },
+  "finite_controls": [
+    {
+      "control_id": "QUBIT-XZ-FOUR-LEAF",
+      "cube_dimension": 2,
+      "leaf_count": 4,
+      "fiber_dimension": 2,
+      "normalized_component_m4": 0.06250000000000001,
+      "normalized_walsh_pair_gap_mean": 0.06250000000000001,
+      "maximum_normalized_pair_gap": 0.5000000000000001,
+      "pair_gap_upper_bound": 2.0,
+      "witness_threshold": 0.03125000000000001,
+      "observed_witness_pair_fraction": 0.125,
+      "bounded_variable_witness_fraction_lower_bound": 0.015873015873015876,
+      "commuting_approximation_normalized_squared_error": 0.12500000000000003,
+      "m4_implied_commuting_error_lower_bound": 0.007812500000000002,
+      "commuting_effect_commutator_residual": 0.0,
+      "conjugated_relabelled_m4_residual": 6.245004513516506e-17,
+      "affine_relabelled_pair_distribution_residual": 4.996003610813204e-16,
+      "zero_information_counterensemble_holevo_bits": -0.0,
+      "perfect_information_counterensemble_holevo_bits": 2.0,
+      "same_internal_m4_in_both_counterensembles": true,
+      "exact_operational_boundary_verified": true,
+      "status": "m4-random-witness-and-covariance-blindness-verified"
+    }
+  ],
+  "scaling_records": [
+    {
+      "child_aspect": 2.0,
+      "natural_normalized_m4_limit": 0.125,
+      "half_signal_witness_threshold": 0.0625,
+      "asymptotic_random_pair_witness_probability_lower_bound": 0.03225806451612903,
+      "independent_trials_for_95_percent_witness_probability": 92,
+      "commuting_approximation_squared_error_lower_bound": 0.015625,
+      "commuting_approximation_rms_error_lower_bound": 0.125,
+      "sourcewise_witness_guaranteed": false,
+      "joint_natural_source_and_mask_witness_guaranteed": true,
+      "status": "constant-joint-source-mask-witness-commuting-approximation-excluded"
+    },
+    {
+      "child_aspect": 2.25,
+      "natural_normalized_m4_limit": 0.10973936899862825,
+      "half_signal_witness_threshold": 0.05486968449931413,
+      "asymptotic_random_pair_witness_probability_lower_bound": 0.028208744710860365,
+      "independent_trials_for_95_percent_witness_probability": 105,
+      "commuting_approximation_squared_error_lower_bound": 0.013717421124828532,
+      "commuting_approximation_rms_error_lower_bound": 0.11712139482105108,
+      "sourcewise_witness_guaranteed": false,
+      "joint_natural_source_and_mask_witness_guaranteed": true,
+      "status": "constant-joint-source-mask-witness-commuting-approximation-excluded"
+    },
+    {
+      "child_aspect": 2.5,
+      "natural_normalized_m4_limit": 0.096,
+      "half_signal_witness_threshold": 0.048,
+      "asymptotic_random_pair_witness_probability_lower_bound": 0.02459016393442623,
+      "independent_trials_for_95_percent_witness_probability": 121,
+      "commuting_approximation_squared_error_lower_bound": 0.012,
+      "commuting_approximation_rms_error_lower_bound": 0.10954451150103323,
+      "sourcewise_witness_guaranteed": false,
+      "joint_natural_source_and_mask_witness_guaranteed": true,
+      "status": "constant-joint-source-mask-witness-commuting-approximation-excluded"
+    },
+    {
+      "child_aspect": 3.0,
+      "natural_normalized_m4_limit": 0.07407407407407407,
+      "half_signal_witness_threshold": 0.037037037037037035,
+      "asymptotic_random_pair_witness_probability_lower_bound": 0.018867924528301886,
+      "independent_trials_for_95_percent_witness_probability": 158,
+      "commuting_approximation_squared_error_lower_bound": 0.009259259259259259,
+      "commuting_approximation_rms_error_lower_bound": 0.09622504486493763,
+      "sourcewise_witness_guaranteed": false,
+      "joint_natural_source_and_mask_witness_guaranteed": true,
+      "status": "constant-joint-source-mask-witness-commuting-approximation-excluded"
+    },
+    {
+      "child_aspect": 3.5,
+      "natural_normalized_m4_limit": 0.05830903790087463,
+      "half_signal_witness_threshold": 0.029154518950437316,
+      "asymptotic_random_pair_witness_probability_lower_bound": 0.014792899408284023,
+      "independent_trials_for_95_percent_witness_probability": 202,
+      "commuting_approximation_squared_error_lower_bound": 0.007288629737609329,
+      "commuting_approximation_rms_error_lower_bound": 0.08537347209531383,
+      "sourcewise_witness_guaranteed": false,
+      "joint_natural_source_and_mask_witness_guaranteed": true,
+      "status": "constant-joint-source-mask-witness-commuting-approximation-excluded"
+    },
+    {
+      "child_aspect": 4.0,
+      "natural_normalized_m4_limit": 0.046875,
+      "half_signal_witness_threshold": 0.0234375,
+      "asymptotic_random_pair_witness_probability_lower_bound": 0.011857707509881422,
+      "independent_trials_for_95_percent_witness_probability": 252,
+      "commuting_approximation_squared_error_lower_bound": 0.005859375,
+      "commuting_approximation_rms_error_lower_bound": 0.07654655446197431,
+      "sourcewise_witness_guaranteed": false,
+      "joint_natural_source_and_mask_witness_guaranteed": true,
+      "status": "constant-joint-source-mask-witness-commuting-approximation-excluded"
+    }
+  ],
+  "access_scaling_records": [
+    {
+      "n": 8,
+      "information_threshold_copy_count": 16,
+      "leaf_count_decimal": "65536",
+      "walsh_mask_description_bits": 16,
+      "walsh_sign_phase_gate_count_upper_bound": 16,
+      "generic_support_access_lower_bound_log2_queries": 8.0,
+      "constant_precision_trace_samples_are_constant_given_support_access": true,
+      "representation_specific_support_projector_required": true,
+      "status": "masks-succinct-global-support-projector-remains-hard"
+    },
+    {
+      "n": 16,
+      "information_threshold_copy_count": 45,
+      "leaf_count_decimal": "35184372088832",
+      "walsh_mask_description_bits": 45,
+      "walsh_sign_phase_gate_count_upper_bound": 45,
+      "generic_support_access_lower_bound_log2_queries": 22.5,
+      "constant_precision_trace_samples_are_constant_given_support_access": true,
+      "representation_specific_support_projector_required": true,
+      "status": "masks-succinct-global-support-projector-remains-hard"
+    },
+    {
+      "n": 32,
+      "information_threshold_copy_count": 118,
+      "leaf_count_decimal": "332306998946228968225951765070086144",
+      "walsh_mask_description_bits": 118,
+      "walsh_sign_phase_gate_count_upper_bound": 118,
+      "generic_support_access_lower_bound_log2_queries": 59.0,
+      "constant_precision_trace_samples_are_constant_given_support_access": true,
+      "representation_specific_support_projector_required": true,
+      "status": "masks-succinct-global-support-projector-remains-hard"
+    },
+    {
+      "n": 64,
+      "information_threshold_copy_count": 296,
+      "leaf_count_decimal": "127314748520905380391777855525586135065716774604121015664758778084648831235208544136462336",
+      "walsh_mask_description_bits": 296,
+      "walsh_sign_phase_gate_count_upper_bound": 296,
+      "generic_support_access_lower_bound_log2_queries": 148.0,
+      "constant_precision_trace_samples_are_constant_given_support_access": true,
+      "representation_specific_support_projector_required": true,
+      "status": "masks-succinct-global-support-projector-remains-hard"
+    },
+    {
+      "n": 128,
+      "information_threshold_copy_count": 717,
+      "leaf_count_decimal": "689456532887748412341091025928864224451014138635639044112158674527024860928026977516082500242976073479223111693916991352080883023896091539947888937618883326765331077022147490374177752073413947198182949091512336515072",
+      "walsh_mask_description_bits": 717,
+      "walsh_sign_phase_gate_count_upper_bound": 717,
+      "generic_support_access_lower_bound_log2_queries": 358.5,
+      "constant_precision_trace_samples_are_constant_given_support_access": true,
+      "representation_specific_support_projector_required": true,
+      "status": "masks-succinct-global-support-projector-remains-hard"
+    },
+    {
+      "n": 256,
+      "information_threshold_copy_count": 1684,
+      "leaf_count_decimal": "860028212505886575632559435538795866608138495042546309515417837808369288468450246520559380979885027670334016086788139798837988311002388605422513556437685951259194841500993383711348363849824784478200230511953188242758694262362517763971154602943505187061319604744398442529571557321534539868022263641397802181515661255257880583914037708681623204918364907018103131937196392909601307565449697871351246895708373190171849236025477424723697839874987752147014662945845456168707061656085643803500177291799667792674816",
+      "walsh_mask_description_bits": 1684,
+      "walsh_sign_phase_gate_count_upper_bound": 1684,
+      "generic_support_access_lower_bound_log2_queries": 842.0,
+      "constant_precision_trace_samples_are_constant_given_support_access": true,
+      "representation_specific_support_projector_required": true,
+      "status": "masks-succinct-global-support-projector-remains-hard"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "turn_positive_natural_M4_into_randomized_witness_mass",
+      "resolved": true,
+      "resolution": "Walsh duality and the sharp bounded-variable inequality give liminf witness probability 3/253 at half the uniform signal floor."
+    },
+    {
+      "obligation": "exclude_commuting_component_dequantization",
+      "resolved": true,
+      "resolution": "Commutator perturbation plus Walsh Parseval forces annealed normalized squared distance at least 3/512-o(1)."
+    },
+    {
+      "obligation": "derive_hidden_involution_information_from_M4",
+      "resolved": false,
+      "resolution": "Impossible from M4 alone: covariance makes the scalar and uniform-mask witness law hidden-label invariant."
+    },
+    {
+      "obligation": "compile_dependency_support_reflection_or_block_encoding",
+      "resolved": false,
+      "resolution": "Generic PREPARE/SELECT pays sqrt(q); a representation-specific global polar or equivalent direct observable is required."
+    },
+    {
+      "obligation": "construct_label_sensitive_covariant_decoder",
+      "resolved": false,
+      "resolution": "The decoder must retain outer orbit phase/row information, not collapse the component to a conjugation-invariant trace."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "A positive average can be hidden among exponentially few masks.",
+      "resolved": true,
+      "resolution": "Every normalized pair gap is at most two, so a 3/64 mean forces at least 3/253 mass above 3/128 asymptotically."
+    },
+    {
+      "objection": "Positive M4 might still admit a close classical joint eigenbasis.",
+      "resolved": true,
+      "resolution": "Any commuting POVM is at annealed normalized L2 squared distance at least 3/512-o(1)."
+    },
+    {
+      "objection": "Estimating the constant M4 signal reveals the hidden permutation.",
+      "resolved": true,
+      "resolution": "False. The statistic is a covariant orbit invariant. Exact counterensembles have the same positive M4 with zero or perfect hidden-label Holevo information."
+    },
+    {
+      "objection": "Succinct Walsh masks make the witness circuit efficient.",
+      "resolved": true,
+      "resolution": "They remove mask enumeration only. Preparing P/r or reflecting about P remains outside generic polynomial-query access."
+    },
+    {
+      "objection": "Failure of commuting approximation proves a classical separation.",
+      "resolved": false,
+      "resolution": "General classical algorithms need not simulate the component through a commuting POVM, so matched classical baselines remain mandatory."
+    }
+  ],
+  "headline_metrics": {
+    "m4_random_pair_witness_theorem_count": 1,
+    "commuting_approximation_no_go_theorem_count": 1,
+    "m4_covariance_blindness_theorem_count": 1,
+    "finite_control_count": 1,
+    "finite_control_failure_count": 0,
+    "uniform_natural_m4_liminf": 0.046875,
+    "uniform_half_signal_threshold": 0.0234375,
+    "uniform_random_pair_witness_probability_liminf": 0.011857707509881422,
+    "uniform_commuting_approximation_squared_error_liminf": 0.005859375,
+    "m4_only_hidden_information_bits": 0.0,
+    "coherent_dependency_support_compiler_count": 0,
+    "hidden_involution_decoder_count": 0,
+    "classical_separation_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "positive_M4_implies_constant_joint_source_mask_witness_rate": true,
+    "positive_M4_rules_out_commuting_POVM_approximation": true,
+    "walsh_masks_have_polynomial_description_and_phase_cost": true,
+    "M4_scalar_is_hidden_label_sensitive": false,
+    "M4_only_transcript_has_hidden_information": false,
+    "sourcewise_M4_lower_bound_proved": false,
+    "dependency_support_state_and_reflection_compiled": false,
+    "label_sensitive_covariant_decoder_proved": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "Positive M4 is an efficiently indexed, robustly noncommuting structural signal, but its invariant scalar carries no hidden label and its support projection is not coherently accessible."
+  },
+  "status": "positive-m4-operational-witness-proved-decoder-implication-falsified",
+  "summary": "Converted positive natural M4 into a constant-rate random-mask witness and a quantitative commuting-approximation no-go, while proving that the witness alone is hidden-label blind.",
+  "falsifiers_triggered": [
+    "The positive annealed M4 signal cannot be confined to exponentially rare mask pairs.",
+    "A commuting component model cannot approximate the natural POVM at vanishing normalized L2 error.",
+    "The M4 scalar and its uniform affine-mask witness law do not decode the hidden involution.",
+    "Efficient Walsh phases do not provide the missing dependency-support reflection.",
+    "Noncommutativity alone is not a classical complexity separation."
+  ]
+}

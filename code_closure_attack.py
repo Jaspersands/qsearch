@@ -443,39 +443,4 @@ def write_code_closure_attack_report(
     payload = build_code_closure_attack_report(pairs=pairs, t=t, max_pairs=max_pairs)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        for record in payload["records"]:
-            if record["status"] != "rejected-by-t-closure-conductor":
-                continue
-            upsert_negative_result(
-                NegativeResultRecord(
-                    id=f"CLOSURE-REJECT-{_safe_id(record['id'])}",
-                    source="code_closure_attack.py",
-                    claim=f"{record['id']} is a hard code-equivalence row requiring a collective quantum measurement.",
-                    reason_invalid=record["interpretation"],
-                    lesson=(
-                        "Run conductors and local t-closures after Schur powers; algebraic support recovery is a "
-                        "polynomial-time classical attack, not a minor invariant."
-                    ),
-                    applies_to=["CODE-COSET-COLLECTIVE", "PO-DEQUANTIZATION", "PO-FALSIFIERS"],
-                    evidence={
-                        "row_id": record["row_id"],
-                        "source": record["source"],
-                        "distinguishing_invariants": record["distinguishing_invariants"],
-                    },
-                )
-            )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=registry_result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"code_closure_attack": str(output_path)},
-            )
-        )
     return payload

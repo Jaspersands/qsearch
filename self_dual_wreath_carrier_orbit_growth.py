@@ -358,44 +358,6 @@ def write_self_dual_wreath_carrier_orbit_growth(
     payload = asdict(run_self_dual_wreath_carrier_orbit_growth(spec=spec))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-SELF-DUAL-WREATH-EXPLICIT-CARRIER-ORBIT-TABLE",
-                source=str(path),
-                claim=(
-                    "Register-symmetry compression makes an explicit "
-                    "carrier-orbit basis polynomial."
-                ),
-                reason_invalid=(
-                    "At word depth three, relative hidden labels are "
-                    "simultaneous-conjugacy orbits of permutation pairs. "
-                    "Burnside's formula leaves at least n!/2 full-wreath "
-                    "orbits, even though subset intersection profiles are "
-                    "polynomial for fixed depth."
-                ),
-                lesson=(
-                    "Do not enumerate carrier orbits. Search for a compressed "
-                    "harmonic/representation block transform and recurrence."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"self_dual_wreath_carrier_orbit_growth": str(path)},
-            )
-        )
     return payload
 
 

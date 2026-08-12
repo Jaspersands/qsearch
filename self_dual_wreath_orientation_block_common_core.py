@@ -447,53 +447,6 @@ def write_orientation_block_common_core_report(
     payload = asdict(run_orientation_block_common_core())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-WREATH-RANDOM-INCIDENCE-MISSES-BLOCK-COMMON-CORE",
-                source=str(path),
-                claim=(
-                    "The disappearance of common ranges in random five-"
-                    "orientation families rules out large exact common cores."
-                ),
-                reason_invalid=(
-                    "Exact block packings construct 2^r carefully correlated "
-                    "orientations with a shared vector; at n=12,k=29 the "
-                    "finite witness has r=9 and family size 512."
-                ),
-                lesson=(
-                    "Search structured incidence codes and prove or disprove "
-                    "linear-rate packing persistence under the natural label "
-                    "law; random fixed-depth samples miss this mechanism."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_orientation_block_common_core": str(path)
-                },
-            )
-        )
     return payload
 
 

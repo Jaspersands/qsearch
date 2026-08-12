@@ -1,0 +1,334 @@
+{
+  "created_at": "2026-08-12T03:42:35.175299+00:00",
+  "theorem_contract": {
+    "measure": "nu_n=r_n^-1 sum_e sum_lambda lambda delta_lambda, with moments r_n^-1 sum_e Tr(H_e^(k+1))",
+    "moments": "for every fixed p>=1, E r_n^-1 sum_e Tr(H_e^p)-gamma_n^(p-1)->0",
+    "law": "nu_n converges weakly to delta_(gamma_n), uniformly for gamma_n=1/alpha_n in (1/4,1/2]",
+    "tail": "for every fixed theta<1/4, expected normalized POVM trace below theta vanishes",
+    "dependency": "common codimension o(D), block-word telescoping, and bounded conditioning transfer the law to exact globally distinct components",
+    "trim_stability": "|M4(H)-M4(K_theta)|/r<=8 sqrt(delta_theta)",
+    "signal": "for every fixed theta<1/4, trimmed natural M4/D has the same limit (alpha-1)/alpha^3>=3/64",
+    "scope": "This is an annealed trace-weighted edge and retained-signal theorem. It is not a uniform minimum eigenvalue, sourcewise edge, coherent block encoding, measurement, or decoder."
+  },
+  "theorem": {
+    "size_biased_measure": "nu_n=r_n^-1 sum_e sum_lambda lambda delta_lambda, with moments r_n^-1 sum_e Tr(H_e^(k+1))",
+    "marked_polar_moments": "for every fixed p>=1, E r_n^-1 sum_e Tr(H_e^p)-gamma_n^(p-1)->0",
+    "limiting_law": "nu_n converges weakly to delta_(gamma_n), uniformly for gamma_n=1/alpha_n in (1/4,1/2]",
+    "fixed_threshold_tail": "for every fixed theta<1/4, expected normalized POVM trace below theta vanishes",
+    "exact_dependency_transfer": "common codimension o(D), block-word telescoping, and bounded conditioning transfer the law to exact globally distinct components",
+    "m4_trim_stability": "|M4(H)-M4(K_theta)|/r<=8 sqrt(delta_theta)",
+    "retained_signal": "for every fixed theta<1/4, trimmed natural M4/D has the same limit (alpha-1)/alpha^3>=3/64",
+    "theorem_verified": true,
+    "status": "natural-size-biased-effect-edge-and-trimmed-m4-proved"
+  },
+  "point_mass_controls": [
+    {
+      "control_id": "EXACT-2-FRAME-FUSION-POVM",
+      "coefficient_aspect": 2.0,
+      "fiber_dimension": 4,
+      "coefficient_dimension": 8,
+      "leaf_count": 4,
+      "coordinate_block_dimension": 2,
+      "positive_effect_eigenvalue": 0.5,
+      "highest_checked_moment_order": 6,
+      "size_biased_moments": [
+        1.0,
+        0.5,
+        0.25,
+        0.125,
+        0.0625,
+        0.03125,
+        0.015625
+      ],
+      "predicted_point_mass_moments": [
+        1.0,
+        0.5,
+        0.25,
+        0.125,
+        0.0625,
+        0.03125,
+        0.015625
+      ],
+      "maximum_moment_residual": 0.0,
+      "maximum_coefficient_projection_word_residual": 2.220446049250313e-16,
+      "low_trace_threshold": 0.25,
+      "normalized_low_effect_trace": 0.0,
+      "component_effects_noncommuting": true,
+      "exact_size_biased_point_mass_control_verified": true,
+      "status": "exact-size-biased-point-mass-component-control"
+    },
+    {
+      "control_id": "EXACT-4-FRAME-FUSION-POVM",
+      "coefficient_aspect": 4.0,
+      "fiber_dimension": 4,
+      "coefficient_dimension": 16,
+      "leaf_count": 8,
+      "coordinate_block_dimension": 2,
+      "positive_effect_eigenvalue": 0.25,
+      "highest_checked_moment_order": 6,
+      "size_biased_moments": [
+        1.0,
+        0.25,
+        0.0625,
+        0.015625,
+        0.00390625,
+        0.0009765625,
+        0.000244140625
+      ],
+      "predicted_point_mass_moments": [
+        1.0,
+        0.25,
+        0.0625,
+        0.015625,
+        0.00390625,
+        0.0009765625,
+        0.000244140625
+      ],
+      "maximum_moment_residual": 0.0,
+      "maximum_coefficient_projection_word_residual": 0.0,
+      "low_trace_threshold": 0.125,
+      "normalized_low_effect_trace": 0.0,
+      "component_effects_noncommuting": true,
+      "exact_size_biased_point_mass_control_verified": true,
+      "status": "exact-size-biased-point-mass-component-control"
+    }
+  ],
+  "trim_controls": [
+    {
+      "control_id": "CONSTANT-EDGE-SIGNAL-PLUS-LOW-NONCOMMUTING-SECTOR",
+      "leaf_count": 8,
+      "fiber_dimension": 6,
+      "trim_threshold": 0.2,
+      "normalized_discarded_effect_trace": 0.3333333333333333,
+      "normalized_original_m4": 0.0107421875,
+      "normalized_trimmed_m4": 0.010416666666666666,
+      "normalized_m4_difference": 0.0003255208333333339,
+      "outcome_free_stability_upper_bound": 4.618802153517006,
+      "retained_minimum_positive_eigenvalue": 0.25,
+      "discarded_sector_noncommutative": true,
+      "trim_stability_verified": true,
+      "status": "outcome-free-m4-spectral-trim-stability-verified"
+    }
+  ],
+  "scaling_records": [
+    {
+      "child_aspect": 2.0,
+      "coefficient_support_ratio": 0.5,
+      "fixed_trace_edge_threshold": 0.2,
+      "limiting_first_six_size_biased_moments": [
+        1.0,
+        0.5,
+        0.25,
+        0.125,
+        0.0625,
+        0.03125,
+        0.015625
+      ],
+      "fixed_threshold_discarded_trace_vanishes": true,
+      "inverse_polynomial_threshold_discarded_trace_vanishes": true,
+      "trimmed_component_m4_limit": 0.125,
+      "uniform_trimmed_m4_lower_bound": 0.046875,
+      "retained_square_root_condition_number_upper_bound": 2.23606797749979,
+      "uniform_minimum_nonzero_effect_eigenvalue_proved": false,
+      "coherent_effect_block_encoding_proved": false,
+      "status": "trace-weighted-effect-edge-and-trimmed-m4-proved-access-open"
+    },
+    {
+      "child_aspect": 2.25,
+      "coefficient_support_ratio": 0.4444444444444444,
+      "fixed_trace_edge_threshold": 0.2,
+      "limiting_first_six_size_biased_moments": [
+        1.0,
+        0.4444444444444444,
+        0.19753086419753085,
+        0.08779149519890259,
+        0.039018442310623375,
+        0.01734152991583261,
+        0.007707346629258937
+      ],
+      "fixed_threshold_discarded_trace_vanishes": true,
+      "inverse_polynomial_threshold_discarded_trace_vanishes": true,
+      "trimmed_component_m4_limit": 0.10973936899862825,
+      "uniform_trimmed_m4_lower_bound": 0.046875,
+      "retained_square_root_condition_number_upper_bound": 2.23606797749979,
+      "uniform_minimum_nonzero_effect_eigenvalue_proved": false,
+      "coherent_effect_block_encoding_proved": false,
+      "status": "trace-weighted-effect-edge-and-trimmed-m4-proved-access-open"
+    },
+    {
+      "child_aspect": 2.5,
+      "coefficient_support_ratio": 0.4,
+      "fixed_trace_edge_threshold": 0.2,
+      "limiting_first_six_size_biased_moments": [
+        1.0,
+        0.4,
+        0.16000000000000003,
+        0.06400000000000002,
+        0.025600000000000005,
+        0.010240000000000003,
+        0.0040960000000000015
+      ],
+      "fixed_threshold_discarded_trace_vanishes": true,
+      "inverse_polynomial_threshold_discarded_trace_vanishes": true,
+      "trimmed_component_m4_limit": 0.096,
+      "uniform_trimmed_m4_lower_bound": 0.046875,
+      "retained_square_root_condition_number_upper_bound": 2.23606797749979,
+      "uniform_minimum_nonzero_effect_eigenvalue_proved": false,
+      "coherent_effect_block_encoding_proved": false,
+      "status": "trace-weighted-effect-edge-and-trimmed-m4-proved-access-open"
+    },
+    {
+      "child_aspect": 3.0,
+      "coefficient_support_ratio": 0.3333333333333333,
+      "fixed_trace_edge_threshold": 0.2,
+      "limiting_first_six_size_biased_moments": [
+        1.0,
+        0.3333333333333333,
+        0.1111111111111111,
+        0.03703703703703703,
+        0.012345679012345677,
+        0.004115226337448558,
+        0.0013717421124828527
+      ],
+      "fixed_threshold_discarded_trace_vanishes": true,
+      "inverse_polynomial_threshold_discarded_trace_vanishes": true,
+      "trimmed_component_m4_limit": 0.07407407407407407,
+      "uniform_trimmed_m4_lower_bound": 0.046875,
+      "retained_square_root_condition_number_upper_bound": 2.23606797749979,
+      "uniform_minimum_nonzero_effect_eigenvalue_proved": false,
+      "coherent_effect_block_encoding_proved": false,
+      "status": "trace-weighted-effect-edge-and-trimmed-m4-proved-access-open"
+    },
+    {
+      "child_aspect": 3.5,
+      "coefficient_support_ratio": 0.2857142857142857,
+      "fixed_trace_edge_threshold": 0.2,
+      "limiting_first_six_size_biased_moments": [
+        1.0,
+        0.2857142857142857,
+        0.08163265306122448,
+        0.02332361516034985,
+        0.006663890045814243,
+        0.001903968584518355,
+        0.0005439910241481013
+      ],
+      "fixed_threshold_discarded_trace_vanishes": true,
+      "inverse_polynomial_threshold_discarded_trace_vanishes": true,
+      "trimmed_component_m4_limit": 0.05830903790087463,
+      "uniform_trimmed_m4_lower_bound": 0.046875,
+      "retained_square_root_condition_number_upper_bound": 2.23606797749979,
+      "uniform_minimum_nonzero_effect_eigenvalue_proved": false,
+      "coherent_effect_block_encoding_proved": false,
+      "status": "trace-weighted-effect-edge-and-trimmed-m4-proved-access-open"
+    },
+    {
+      "child_aspect": 4.0,
+      "coefficient_support_ratio": 0.25,
+      "fixed_trace_edge_threshold": 0.2,
+      "limiting_first_six_size_biased_moments": [
+        1.0,
+        0.25,
+        0.0625,
+        0.015625,
+        0.00390625,
+        0.0009765625,
+        0.000244140625
+      ],
+      "fixed_threshold_discarded_trace_vanishes": true,
+      "inverse_polynomial_threshold_discarded_trace_vanishes": true,
+      "trimmed_component_m4_limit": 0.046875,
+      "uniform_trimmed_m4_lower_bound": 0.046875,
+      "retained_square_root_condition_number_upper_bound": 2.23606797749979,
+      "uniform_minimum_nonzero_effect_eigenvalue_proved": false,
+      "coherent_effect_block_encoding_proved": false,
+      "status": "trace-weighted-effect-edge-and-trimmed-m4-proved-access-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_all_fixed_size_biased_component_effect_moments",
+      "resolved": true,
+      "resolution": "The all-equal marked polar traffic has sparse-Haar leading term gamma^(p-1); repeated-block corrections vanish with the maximum coordinate-block fraction."
+    },
+    {
+      "obligation": "prove_natural_trace_weighted_component_effect_edge",
+      "resolved": true,
+      "resolution": "Moment determinacy on [0,1] gives delta_gamma with gamma>=1/4, so all fixed sub-1/4 trace tails vanish."
+    },
+    {
+      "obligation": "show_positive_M4_survives_constant_effect_trim",
+      "resolved": true,
+      "resolution": "Walsh Parseval converts discarded POVM trace to RMS Fourier error, and commutator telescoping costs at most 8 sqrt(delta)."
+    },
+    {
+      "obligation": "compile_normalized_component_effect_block_encodings",
+      "resolved": false,
+      "resolution": "The spectral obstruction is removed on retained trace mass, but no coherent oracle for H_e or its support is constructed."
+    },
+    {
+      "obligation": "upgrade_annealed_trace_edge_to_sourcewise_uniform_edge",
+      "resolved": false,
+      "resolution": "Rare source blocks and sparse exceptional eigenvalues remain compatible with every proved normalized moment."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Ordinary empirical effect spectra can reveal the sparse positive edge.",
+      "resolved": true,
+      "resolution": "False: almost all eigenvalues of each sparse effect are zero. The probability measure must be weighted by POVM trace."
+    },
+    {
+      "objection": "A positive aggregate M4 may live entirely on tiny effect eigenvalues.",
+      "resolved": true,
+      "resolution": "The trace below every fixed theta<1/4 vanishes, and the outcome-free stability bound transfers the full M4 limit to the retained constant-edge effects."
+    },
+    {
+      "objection": "The trace-weighted edge is a hard minimum eigenvalue theorem.",
+      "resolved": true,
+      "resolution": "No. A vanishing fraction of arbitrarily small positive eigenvalues is allowed."
+    },
+    {
+      "objection": "Constant retained conditioning compiles the matrix POVM.",
+      "resolved": false,
+      "resolution": "Only after a normalized coherent block encoding of each effect and controlled support transport is available."
+    }
+  ],
+  "headline_metrics": {
+    "all_fixed_size_biased_effect_moment_theorem_count": 1,
+    "natural_trace_weighted_effect_edge_theorem_count": 1,
+    "constant_edge_trimmed_positive_m4_theorem_count": 1,
+    "point_mass_control_count": 2,
+    "trim_control_count": 1,
+    "finite_control_failure_count": 0,
+    "uniform_fixed_effect_edge_threshold": 0.2,
+    "uniform_trimmed_natural_m4_liminf": 0.046875,
+    "uniform_minimum_nonzero_effect_edge_theorem_count": 0,
+    "sourcewise_effect_edge_theorem_count": 0,
+    "coherent_component_effect_block_encoding_count": 0,
+    "component_povm_dilation_circuit_count": 0,
+    "hidden_involution_decoder_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "natural_size_biased_effect_law_proved": true,
+    "natural_trace_weighted_effect_edge_positive": true,
+    "positive_natural_M4_survives_constant_effect_trim": true,
+    "tiny_effect_eigenvalues_explain_natural_M4": false,
+    "retained_square_root_polynomial_degree_is_constant_given_block_encoding": true,
+    "uniform_minimum_nonzero_effect_eigenvalue_proved": false,
+    "sourcewise_uniform_effect_edge_proved": false,
+    "coherent_component_effect_block_encoding_proved": false,
+    "component_povm_dilation_compiled": false,
+    "decoder_information_gain_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "The natural M4 lives on constant-edge component eigenchannels, so spectral conditioning is no longer the final-root obstacle; coherent effect access and label-sensitive decoding remain open."
+  },
+  "status": "natural-size-biased-effect-edge-and-trimmed-m4-proved",
+  "summary": "Proved the natural size-biased component spectrum converges to delta_(1/alpha) and that fixed constant-edge trimming preserves the positive M4 signal.",
+  "falsifiers_triggered": [
+    "The correct sparse-effect spectral object is POVM-trace weighted, not the ordinary empirical law.",
+    "Tiny component eigenvalues cannot carry the proved constant natural M4 signal.",
+    "A trace-weighted edge does not imply a uniform hard edge or sourcewise concentration.",
+    "Square-root conditioning is removed only after normalized coherent effect access exists."
+  ]
+}

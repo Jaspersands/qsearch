@@ -375,41 +375,6 @@ def write_self_dual_fixed_order_sparsity_obstruction(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-SELF-DUAL-FIXED-ORDER-RIGIDITY-SCALING",
-                source=str(path),
-                claim=(
-                    "The successful fixed weight-ten support certificate scales "
-                    "to a growing random self-dual family."
-                ),
-                reason_invalid=payload["summary"],
-                lesson=(
-                    "Replace explicit fixed-order support enumeration with an "
-                    "implicit growing-weight invariant or a uniform automorphism "
-                    "theorem; do not infer quantum advantage from this obstruction."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_fixed_order_sparsity_obstruction": str(path)
-                },
-            )
-        )
     return payload
 
 

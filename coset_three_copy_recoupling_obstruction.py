@@ -314,36 +314,4 @@ def write_three_copy_recoupling_report(
     payload = asdict(build_three_copy_recoupling_report(n_values=n_values))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-K3-SINGLE-PAIRWISE-RECOUPLING-BASIS",
-                source=str(output_path),
-                claim="One pairwise Kronecker basis diagonalizes the three-copy transposition coset-state frame.",
-                reason_invalid=(
-                    "The exact standard-representation class sums satisfy "
-                    "[K_12,K_23]_(000,001)=n for every n>=3."
-                ),
-                lesson=(
-                    "Any k>=3 route must implement overlapping Racah/associator transformations and account for "
-                    "multiplicity-space decoding rather than extending the two-copy diagonalization verbatim."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_three_copy_recoupling_obstruction": str(output_path)},
-            )
-        )
     return payload

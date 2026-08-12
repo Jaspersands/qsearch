@@ -335,46 +335,6 @@ def write_modular_gap_bound_report(
     payload = asdict(build_modular_gap_bound_report())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-TYPICAL-FINITE-SQUARE-FREE-DOES-NOT-CERTIFY-EFFICIENT-PRECISION",
-                source=str(output_path),
-                claim=(
-                    "Exact square-freeness of the audited n=10 multiplicity "
-                    "blocks is enough to justify efficient phase estimation."
-                ),
-                reason_invalid=(
-                    "Safe denominator clearing and the integer discriminant give "
-                    "only astronomically weak normalized gap lower bounds; the "
-                    "best certified log10 bound is "
-                    f"{payload['headline_metrics']['strongest_lcu_normalized_gap_lower_bound_log10']:.1f}."
-                ),
-                lesson=(
-                    "Prove an inverse-polynomial normalized gap from separator "
-                    "structure or reject phase-estimation implementations; do "
-                    "not substitute finite square-freeness for precision analysis."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "coset_typical_modular_gap_bounds": str(output_path)
-                },
-            )
-        )
     return payload
 
 

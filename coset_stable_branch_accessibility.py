@@ -362,40 +362,6 @@ def write_stable_branch_accessibility_report(
     payload = asdict(build_stable_branch_accessibility_report(n_values=n_values))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-STABLE-W3-BRANCH-NATURAL-INPUT-POSTSELECTION",
-                source=str(output_path),
-                claim=(
-                    "The polynomial stable W_n^tensor3 frame filter is directly usable on natural symmetric-group involution coset states."
-                ),
-                reason_invalid=(
-                    "The exact source/final branch probability is d_W^3*d_xi*Tr(F)/(n!)^3 and is bounded by "
-                    "(25/3)n^9/(n!)^3, so postselection and generic amplitude amplification are superpolynomial."
-                ),
-                lesson=(
-                    "Keep the stable branch only as a proof/mechanism control. Transfer the construction to typical "
-                    "high-dimensional Plancherel labels or prove a new direct conditioned-state preparation route."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_stable_branch_accessibility": str(output_path)},
-            )
-        )
     return payload
 
 

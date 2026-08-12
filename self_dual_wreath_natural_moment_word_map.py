@@ -536,56 +536,6 @@ def write_natural_moment_word_map_report(
     payload = asdict(run_natural_moment_word_map())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id=(
-                    "NEG-CODE-WREATH-ALL-ORDER-WORD-MAP-"
-                    "NOT-GROWING-CONTRACTION"
-                ),
-                source=str(path),
-                claim=(
-                    "Eliminating the physical-irrep sum from natural frame "
-                    "moments already gives a polynomial high-order moment "
-                    "algorithm."
-                ),
-                reason_invalid=(
-                    "The exact replacement enumerates (n!)^m bridge sequences "
-                    "and 2^m subset words. No compressed recurrence is proved "
-                    "at the required growing moment order."
-                ),
-                lesson=(
-                    "Attack the identity/bridge subset-word distribution with "
-                    "surface-word, cycle-index, or representation-stability "
-                    "methods, and separately prove natural-tuple concentration."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_natural_moment_word_map": str(path)
-                },
-            )
-        )
     return payload
 
 

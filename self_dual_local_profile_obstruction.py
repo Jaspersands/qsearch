@@ -435,38 +435,6 @@ def write_self_dual_local_obstruction(
     payload = asdict(run_self_dual_local_obstruction(source_path=source_path, spec=spec))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        for family in payload["family_records"]:
-            if not family["status"].startswith("bounded-local-profile-obstruction-proof-debt"):
-                continue
-            upsert_negative_result(
-                NegativeResultRecord(
-                    id=f"NEG-CODE-SELF-DUAL-LOCAL-PROFILE-{family['family_id'].upper()}",
-                    source=str(path),
-                    claim=f"Bounded puncture/shorten rank-hull profiles distinguish {family['family_id']}.",
-                    reason_invalid=family["interpretation"],
-                    lesson=(
-                        "On self-dual codes, local puncture/shorten rank-hull data is forced below minimum distance. "
-                        "Use global or growing-order canonical information instead."
-                    ),
-                    applies_to=[registry_candidate_id, registry_experiment_id],
-                    evidence=family,
-                )
-            )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"self_dual_local_profile_obstruction": str(path)},
-            )
-        )
     return payload
 
 

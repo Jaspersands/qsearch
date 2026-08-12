@@ -249,41 +249,4 @@ def write_subset_sum_carry_anf_audit(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-FINITE-FULL-DOMAIN-CARRY-ANF-WITHOUT-SOLVER",
-                source=str(path),
-                claim="Exact finite carry ANF profiles establish a polynomial algebraic density-one subset-sum solver.",
-                reason_invalid=(
-                    "The truth tables and Mobius transforms are exponential, finite degree trends are not uniform theorems, "
-                    "and even compact polynomial systems require a separate polynomial witness-finding algorithm."
-                ),
-                lesson=(
-                    "Use full-domain ANF as a rejection test for bounded-degree carry hypotheses. Keep other symbolic, "
-                    "lattice, representation, and non-algebraic solver classes open."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "carry_row_count": payload["headline_metrics"]["carry_row_count"],
-                    "tail_bounded_degree_row_count": payload["headline_metrics"]["tail_bounded_degree_row_count"],
-                    "maximum_observed_anf_degree": payload["headline_metrics"]["maximum_observed_anf_degree"],
-                    "source_contract_satisfying_row_count": 0,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-SUBSET-SUM-CARRY-ANF"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_subset_sum_carry_anf": str(path)},
-            )
-        )
     return payload

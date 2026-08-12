@@ -910,56 +910,6 @@ def write_orientation_triple_range_report(
     payload = asdict(run_orientation_triple_range(sample_count=sample_count))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-WREATH-ORIENTATION-TRIPLE-RARITY-HEURISTIC",
-                source=str(path),
-                claim=(
-                    "Although pairwise intersections proliferate, common "
-                    "ranges of three distinct orientations are rare on the "
-                    "declared threshold portfolios."
-                ),
-                reason_invalid=(
-                    "The exact fixed-family formula passes all finite controls, "
-                    "and deterministic uniform sampling gives a lower 95% "
-                    "confidence bound above one half for every declared n=12 "
-                    "target control. This rejects the rarity heuristic on that "
-                    "sampled scope, not for all targets or all triples."
-                ),
-                lesson=(
-                    "Track the multiplicity directions recurring across large "
-                    "orientation families or compress exact higher-incidence "
-                    "counts; zero-intersection heuristics are exhausted."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_orientation_triple_range": str(path)
-                },
-            )
-        )
     return payload
 
 

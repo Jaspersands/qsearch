@@ -357,44 +357,6 @@ def write_signed_permutation_transport_audit(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-SIGNED-PERMUTATIONS-AS-GLOBAL-FIBER-TRANSPORT",
-                source=str(path),
-                claim=(
-                    "Coordinate permutations plus arbitrary bit complements provide a broader total linear-depth "
-                    "2-adic fiber transport than a single exact-valuation pivot."
-                ),
-                reason_invalid=(
-                    "Exact coefficient and sign-orbit balance forces the translation to come from an odd number "
-                    "of labels congruent to 2^k, so the class exists exactly when a single pivot exists."
-                ),
-                lesson=(
-                    "Exclude all signed-coordinate permutations from the global transport search. Search only "
-                    "genuine coordinate-mixing GF(2)-affine maps, nonlinear arithmetic maps, partial transports, "
-                    "or walks, and subject each to source and classical-access audits."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or (
-            f"RESULT-{registry_experiment_id}-DCP-SIGNED-PERMUTATION-TRANSPORT"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_signed_permutation_transport": str(path)},
-            )
-        )
     return payload
 
 

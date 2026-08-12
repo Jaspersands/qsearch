@@ -324,38 +324,6 @@ def write_n9_full_transfer_report(
     payload = asdict(build_n9_full_transfer_report(recompute=recompute))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-TYPICAL-N9-FULL-SEPARATION-NOT-ASYMPTOTIC-ALGORITHM",
-                source=str(output_path),
-                claim=(
-                    "Exact separation of every n=8 and n=9 typical multiplicity block establishes an efficient uniform resolver."
-                ),
-                reason_invalid=(
-                    "Only two finite sizes are complete; the n=9 minimum raw gap is below 0.00043, and all-n normalized-gap, coherent-transform, outcome-law, decoder, and classical-separation obligations remain open."
-                ),
-                lesson=(
-                    "Derive an all-n class-algebra recurrence and normalized root bound before any circuit claim; otherwise search for the first collision or superpolynomial gap collapse at n>=10."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_typical_n9_full_transfer": str(output_path)},
-            )
-        )
     return payload
 
 

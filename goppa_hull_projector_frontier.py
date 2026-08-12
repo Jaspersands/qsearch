@@ -427,42 +427,6 @@ def write_goppa_hull_projector_frontier(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        for record in payload["records"]:
-            for audit in record["pair_audits"]:
-                if audit["status"] not in {
-                    "rejected-by-polynomial-goppa-projector-invariant",
-                    "rejected-by-exact-goppa-projector-graph",
-                    "goppa-projector-equivalent-or-automorphic-control",
-                }:
-                    continue
-                upsert_negative_result(
-                    NegativeResultRecord(
-                        id=f"NEG-CODE-GOPPA-PROJECTOR-{audit['id'].upper()}",
-                        source=str(path),
-                        claim=f"{audit['id']} remains a code-native hard row after public-generator preprocessing.",
-                        reason_invalid=audit["interpretation"],
-                        lesson=(
-                            "Audit the Euclidean hull and apply the basis-independent projector before treating a public "
-                            "code generator as a nonabelian-HSP frontier instance."
-                        ),
-                        applies_to=[registry_candidate_id, registry_experiment_id],
-                        evidence=audit,
-                    )
-                )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"goppa_hull_projector_frontier": str(path)},
-            )
-        )
     return payload
 
 

@@ -274,33 +274,4 @@ def write_random_design_decoder_report(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-RANDOM-DESIGN-POLY-SAMPLES-DO-NOT-IMPLY-POLY-TIME",
-                source=str(path),
-                claim="Recovering the hidden DCP frequency from O(log N) local measurement records establishes an efficient decoder.",
-                reason_invalid=(
-                    "The implemented decoder computes a length-N FFT with Theta(N log N) time and Theta(N) memory. "
-                    "Polynomial random candidate testing does not locate the hidden frequency."
-                ),
-                lesson="Track sample and decoding complexity separately; the remaining random-design frequency-search gap is computational.",
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-RANDOM-DESIGN-DECODER"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_random_design_decoder": str(path)},
-            )
-        )
     return payload

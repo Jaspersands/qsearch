@@ -474,53 +474,6 @@ def write_target_indexed_locality_audit(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        negatives = (
-            (
-                "NEG-DCP-TARGET-INDEXED-LOCAL-PARTNER-MAP",
-                "Target-indexing lets an implicit map pair inverse-polynomial source mass using beta-local partners at linear depth.",
-                "The source fixes all signs, and the Hamming-ball union bound has exponent H_2(beta)-alpha<0.",
-            ),
-            (
-                "NEG-DCP-LINEAR-PARTNER-SUPPORT-AS-TIME-LOWER-BOUND",
-                "A linear minimum partner distance proves exponential classical or quantum search time.",
-                "Output distance is not circuit complexity; only current exact baselines are exponential, with no unrestricted lower bound.",
-            ),
-            (
-                "NEG-DCP-FINITE-SPARSE-PARTNERS-AS-ASYMPTOTIC-TRANSPORT",
-                "Sparse nearest partners in small exact rows imply a scalable local target-indexed map.",
-                "The asymptotic Hamming-ball exponent is negative below the entropy threshold despite finite-size collisions.",
-            ),
-        )
-        for negative_id, claim, reason in negatives:
-            upsert_negative_result(
-                NegativeResultRecord(
-                    id=negative_id,
-                    source=str(path),
-                    claim=claim,
-                    reason_invalid=reason,
-                    lesson=(
-                        "Search only linear-support target-indexed relation samplers, and require source-law coverage, "
-                        "a polynomial coherent circuit, verified output, and matched classical access."
-                    ),
-                    applies_to=[registry_candidate_id, registry_experiment_id],
-                    evidence=payload["headline_metrics"],
-                )
-            )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_target_indexed_locality": str(path)},
-            )
-        )
     return payload
 
 

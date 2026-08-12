@@ -1,0 +1,299 @@
+{
+  "created_at": "2026-08-12T03:41:12.260769+00:00",
+  "theorem_contract": {
+    "incidence": "(delta x)_a=Q_a x_v-U_aP_a x_u for partial edge U_a",
+    "kernel": "ker(delta^*delta)=ker(delta)",
+    "component_povm": "H_v=B^*D_vB and sum_vH_v=I for B=orth(ker delta)",
+    "normalization": "||delta||<=sqrt(2 Delta) for maximum graph degree Delta",
+    "conditional_filter": "O((beta/sigma)log(1/error)) singular-value-filter degree given a beta-normalized coherent incidence block encoding",
+    "scope": "pair-edge circuits alone do not prove sparse coherent SELECT, exact dependency coverage, a natural gap, or the physical endpoint polar"
+  },
+  "theorem": {
+    "incidence": "(delta x)_a=Q_a x_v-U_aP_a x_u for partial edge U_a",
+    "kernel": "ker(delta^*delta)=ker(delta)",
+    "component_povm": "H_v=B^*D_vB and sum_vH_v=I for B=orth(ker delta)",
+    "sparse_norm": "||delta||<=sqrt(2 Delta) for maximum graph degree Delta",
+    "conditional_filter_complexity": "O((beta/sigma)log(1/error)) singular-value-filter degree given a beta-normalized coherent incidence block encoding",
+    "natural_scope": "pair-edge circuits alone do not prove sparse coherent SELECT, exact dependency coverage, a natural gap, or the physical endpoint polar",
+    "theorem_verified": true,
+    "status": "partial-isometry-sheaf-kernel-resolver-normal-form-proved"
+  },
+  "finite_controls": [
+    {
+      "control_id": "FLAT-UNITARY-TREE-CONTROL",
+      "vertex_count": 3,
+      "edge_count": 2,
+      "vertex_fiber_dimension": 2,
+      "maximum_graph_degree": 2,
+      "incidence_row_dimension": 4,
+      "incidence_column_dimension": 6,
+      "incidence_rank": 4,
+      "section_space_dimension": 2,
+      "minimum_positive_incidence_singular_value": 0.9999999999999999,
+      "incidence_operator_norm": 1.732050807568877,
+      "sparse_degree_norm_upper_bound": 2.0,
+      "kernel_laplacian_residual": 4.613731826942888e-16,
+      "section_isometry_residual": 3.4374715281340806e-16,
+      "component_effect_sum_residual": 2.390713527385615e-16,
+      "maximum_component_commutator_norm": 1.6817246385368842e-32,
+      "normalized_component_m4": 4.363514103047121e-64,
+      "component_effects_pairwise_commute": true,
+      "partial_edge_identities_verified": true,
+      "exact_sheaf_kernel_reduction_verified": true,
+      "status": "exact-flat-sheaf-scalar-component-resolver"
+    },
+    {
+      "control_id": "RANK-ONE-PARTIAL-TRIANGLE-SEED-5",
+      "vertex_count": 3,
+      "edge_count": 3,
+      "vertex_fiber_dimension": 2,
+      "maximum_graph_degree": 2,
+      "incidence_row_dimension": 6,
+      "incidence_column_dimension": 6,
+      "incidence_rank": 3,
+      "section_space_dimension": 3,
+      "minimum_positive_incidence_singular_value": 0.4297416266756388,
+      "incidence_operator_norm": 1.738465228513827,
+      "sparse_degree_norm_upper_bound": 2.0,
+      "kernel_laplacian_residual": 7.441268739789705e-16,
+      "section_isometry_residual": 8.190300156526524e-16,
+      "component_effect_sum_residual": 7.824632048169317e-16,
+      "maximum_component_commutator_norm": 0.10236326825256906,
+      "normalized_component_m4": 0.0200342453558828,
+      "component_effects_pairwise_commute": false,
+      "partial_edge_identities_verified": true,
+      "exact_sheaf_kernel_reduction_verified": true,
+      "status": "exact-partial-sheaf-noncommuting-component-resolver"
+    },
+    {
+      "control_id": "RANK-ONE-PARTIAL-TRIANGLE-SEED-17",
+      "vertex_count": 3,
+      "edge_count": 3,
+      "vertex_fiber_dimension": 2,
+      "maximum_graph_degree": 2,
+      "incidence_row_dimension": 6,
+      "incidence_column_dimension": 6,
+      "incidence_rank": 3,
+      "section_space_dimension": 3,
+      "minimum_positive_incidence_singular_value": 1.0060632325884373,
+      "incidence_operator_norm": 1.7603188263959704,
+      "sparse_degree_norm_upper_bound": 2.0,
+      "kernel_laplacian_residual": 5.914771969021008e-16,
+      "section_isometry_residual": 6.764289124984501e-16,
+      "component_effect_sum_residual": 7.358396548648156e-16,
+      "maximum_component_commutator_norm": 0.10436603852182177,
+      "normalized_component_m4": 0.020194921451240074,
+      "component_effects_pairwise_commute": false,
+      "partial_edge_identities_verified": true,
+      "exact_sheaf_kernel_reduction_verified": true,
+      "status": "exact-partial-sheaf-noncommuting-component-resolver"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 8,
+      "information_threshold_copy_count": 16,
+      "orientation_vertex_count_decimal": "65536",
+      "conditional_maximum_generator_degree": 256,
+      "conditional_incidence_normalization_upper_bound": 22.627416997969522,
+      "pair_gpe_partial_transport_per_edge_polynomial": true,
+      "polynomial_coherent_edge_select_proved": false,
+      "exact_natural_dependency_kernel_coverage_proved": false,
+      "inverse_polynomial_sheaf_gap_proved": false,
+      "endpoint_intertwiner_polar_proved": false,
+      "natural_component_povm_compiled": false,
+      "status": "partial-sheaf-architecture-defined-natural-generator-gap-open"
+    },
+    {
+      "n": 16,
+      "information_threshold_copy_count": 45,
+      "orientation_vertex_count_decimal": "35184372088832",
+      "conditional_maximum_generator_degree": 2025,
+      "conditional_incidence_normalization_upper_bound": 63.63961030678928,
+      "pair_gpe_partial_transport_per_edge_polynomial": true,
+      "polynomial_coherent_edge_select_proved": false,
+      "exact_natural_dependency_kernel_coverage_proved": false,
+      "inverse_polynomial_sheaf_gap_proved": false,
+      "endpoint_intertwiner_polar_proved": false,
+      "natural_component_povm_compiled": false,
+      "status": "partial-sheaf-architecture-defined-natural-generator-gap-open"
+    },
+    {
+      "n": 32,
+      "information_threshold_copy_count": 118,
+      "orientation_vertex_count_decimal": "332306998946228968225951765070086144",
+      "conditional_maximum_generator_degree": 13924,
+      "conditional_incidence_normalization_upper_bound": 166.87720036002523,
+      "pair_gpe_partial_transport_per_edge_polynomial": true,
+      "polynomial_coherent_edge_select_proved": false,
+      "exact_natural_dependency_kernel_coverage_proved": false,
+      "inverse_polynomial_sheaf_gap_proved": false,
+      "endpoint_intertwiner_polar_proved": false,
+      "natural_component_povm_compiled": false,
+      "status": "partial-sheaf-architecture-defined-natural-generator-gap-open"
+    },
+    {
+      "n": 64,
+      "information_threshold_copy_count": 296,
+      "orientation_vertex_count_decimal": "127314748520905380391777855525586135065716774604121015664758778084648831235208544136462336",
+      "conditional_maximum_generator_degree": 87616,
+      "conditional_incidence_normalization_upper_bound": 418.60721446243616,
+      "pair_gpe_partial_transport_per_edge_polynomial": true,
+      "polynomial_coherent_edge_select_proved": false,
+      "exact_natural_dependency_kernel_coverage_proved": false,
+      "inverse_polynomial_sheaf_gap_proved": false,
+      "endpoint_intertwiner_polar_proved": false,
+      "natural_component_povm_compiled": false,
+      "status": "partial-sheaf-architecture-defined-natural-generator-gap-open"
+    },
+    {
+      "n": 128,
+      "information_threshold_copy_count": 717,
+      "orientation_vertex_count_decimal": "689456532887748412341091025928864224451014138635639044112158674527024860928026977516082500242976073479223111693916991352080883023896091539947888937618883326765331077022147490374177752073413947198182949091512336515072",
+      "conditional_maximum_generator_degree": 514089,
+      "conditional_incidence_normalization_upper_bound": 1013.9911242215092,
+      "pair_gpe_partial_transport_per_edge_polynomial": true,
+      "polynomial_coherent_edge_select_proved": false,
+      "exact_natural_dependency_kernel_coverage_proved": false,
+      "inverse_polynomial_sheaf_gap_proved": false,
+      "endpoint_intertwiner_polar_proved": false,
+      "natural_component_povm_compiled": false,
+      "status": "partial-sheaf-architecture-defined-natural-generator-gap-open"
+    },
+    {
+      "n": 256,
+      "information_threshold_copy_count": 1684,
+      "orientation_vertex_count_decimal": "860028212505886575632559435538795866608138495042546309515417837808369288468450246520559380979885027670334016086788139798837988311002388605422513556437685951259194841500993383711348363849824784478200230511953188242758694262362517763971154602943505187061319604744398442529571557321534539868022263641397802181515661255257880583914037708681623204918364907018103131937196392909601307565449697871351246895708373190171849236025477424723697839874987752147014662945845456168707061656085643803500177291799667792674816",
+      "conditional_maximum_generator_degree": 2835856,
+      "conditional_incidence_normalization_upper_bound": 2381.535639036292,
+      "pair_gpe_partial_transport_per_edge_polynomial": true,
+      "polynomial_coherent_edge_select_proved": false,
+      "exact_natural_dependency_kernel_coverage_proved": false,
+      "inverse_polynomial_sheaf_gap_proved": false,
+      "endpoint_intertwiner_polar_proved": false,
+      "natural_component_povm_compiled": false,
+      "status": "partial-sheaf-architecture-defined-natural-generator-gap-open"
+    },
+    {
+      "n": 512,
+      "information_threshold_copy_count": 3876,
+      "orientation_vertex_count_decimal": "619816586023555395330049845365414448109499297593821762716905649399682023285118933297188176383880583443857436927734609950082666761279685685456442262294384998147645612296038263227304878866307198495104675970246172980945647863110118597631748806423099247655860327634183354840231515556855569768562158005566062062786076901426696873418821998625630756393942995606451626216589337252704636004559955301941546908162386905256766212779050376697752503320034890121560832740288319316526055359316389327328066951407468079820631912503762217278929248251789462240982174263353702135501981787184956131541559157159265401216302283843285863940500461665640468755034437934559600408864964283944776677367090028646133091084495971952190618489780095310182114104357640610010765231099708403229175786844168562833581822237586279735323669735515987716860265250715172510110310265066831162540642135419179538285821791564517333585979818199137094929803635925621564916031656744744629893041102607609272184433467296862632615408544140362064462664448672105716291774692196055969342641153324397976934537931517261990849018034762945983424462289123232446469448519278470709965144817294519754931639941215856238961052547547136",
+      "conditional_maximum_generator_degree": 15023376,
+      "conditional_incidence_normalization_upper_bound": 5481.491767758116,
+      "pair_gpe_partial_transport_per_edge_polynomial": true,
+      "polynomial_coherent_edge_select_proved": false,
+      "exact_natural_dependency_kernel_coverage_proved": false,
+      "inverse_polynomial_sheaf_gap_proved": false,
+      "endpoint_intertwiner_polar_proved": false,
+      "natural_component_povm_compiled": false,
+      "status": "partial-sheaf-architecture-defined-natural-generator-gap-open"
+    }
+  ],
+  "circuit_schema": [
+    {
+      "step": "coherent_edge_select",
+      "operation": "prepare a sparse generator edge label and SELECT its GPE partial transport plus initial/final support flags",
+      "proved_for_natural_family": false
+    },
+    {
+      "step": "incidence_block_encoding",
+      "operation": "combine signed endpoint maps into delta/sqrt(2 Delta)",
+      "proved_for_natural_family": false
+    },
+    {
+      "step": "kernel_filter",
+      "operation": "singular-value transform delta across a promised gap sigma",
+      "proved_for_natural_family": false
+    },
+    {
+      "step": "endpoint_intertwiner",
+      "operation": "map the physical input coherently into the resolved coefficient support",
+      "proved_for_natural_family": false
+    },
+    {
+      "step": "coordinate_readout",
+      "operation": "reversibly expose the orientation vertex register",
+      "proved_for_natural_family": true
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "define_nonflat_partial_holonomy_resolver",
+      "resolved": true,
+      "resolution": "The partial incidence and sheaf Laplacian exactly resolve a section space whose coordinate effects may be noncommuting."
+    },
+    {
+      "obligation": "construct_polynomial_coherent_natural_edge_select",
+      "resolved": false,
+      "resolution": "Need a reversible polynomial-degree generator rule; an exponential table of orientation pairs is not acceptable."
+    },
+    {
+      "obligation": "prove_exact_natural_dependency_kernel_coverage",
+      "resolved": false,
+      "resolution": "Pair relations can miss emergent higher dependencies. Prove the multilevel incidence has kernel equal to the natural support."
+    },
+    {
+      "obligation": "prove_inverse_polynomial_natural_sheaf_gap",
+      "resolved": false,
+      "resolution": "The weighted pair bulk edge is relevant input but does not control incomplete relations or multilevel outliers."
+    },
+    {
+      "obligation": "compile_physical_endpoint_intertwiner",
+      "resolved": false,
+      "resolution": "A support reflection does not fix the polar gauge mapping the physical input into that support."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Partial connections still force scalar vertex effects.",
+      "resolved": true,
+      "resolution": "Two exact rank-one triangle controls have nonzero component M4."
+    },
+    {
+      "objection": "Explicit path and holonomy gauges remain necessary.",
+      "resolved": true,
+      "resolution": "The kernel of one positive sheaf Laplacian enforces all edge and cycle constraints without choosing a spanning path."
+    },
+    {
+      "objection": "The abstract sheaf normal form is already a circuit.",
+      "resolved": false,
+      "resolution": "Natural edge SELECT, kernel coverage, gap, and endpoint polar are all unproved and are exactly the expensive operations."
+    },
+    {
+      "objection": "Any pair-edge family spans the full natural dependency space.",
+      "resolved": false,
+      "resolution": "Existing emergent-homology controls disprove this without a multilevel completion theorem."
+    }
+  ],
+  "headline_metrics": {
+    "partial_sheaf_kernel_normal_form_theorem_count": 1,
+    "finite_partial_noncommuting_control_count": 2,
+    "finite_flat_scalar_control_count": 1,
+    "finite_control_failure_count": 0,
+    "polynomial_natural_edge_select_count": 0,
+    "exact_natural_dependency_coverage_count": 0,
+    "inverse_polynomial_natural_sheaf_gap_count": 0,
+    "physical_endpoint_intertwiner_count": 0,
+    "natural_component_povm_compiler_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "partial_sheaf_resolver_normal_form_proved": true,
+    "partial_connections_can_have_noncommuting_component_effects": true,
+    "flat_holonomy_limit_recovers_scalar_effects": true,
+    "natural_sparse_coherent_edge_select_proved": false,
+    "natural_exact_dependency_kernel_coverage_proved": false,
+    "natural_inverse_polynomial_sheaf_gap_proved": false,
+    "physical_endpoint_intertwiner_compiled": false,
+    "natural_component_povm_compiled": false,
+    "speedup_claim_allowed": false,
+    "reason": "The correct nonflat resolver is defined, but none of its four natural access, coverage, gap, and endpoint obligations is solved."
+  },
+  "status": "partial-holonomy-sheaf-normal-form-proved-natural-compiler-open",
+  "summary": "A partial-isometry sheaf Laplacian is the first graph resolver in the project capable of noncommuting component geometry. It replaces explicit path/holonomy bookkeeping by one kernel filter, conditional on a sparse natural edge SELECT, exact dependency coverage, a gap, and the physical endpoint polar.",
+  "falsifiers_triggered": [
+    "Flat equal-rank holonomy is not expressive enough for the natural component POVM.",
+    "Pair-edge availability does not imply exact global dependency coverage.",
+    "A kernel reflection alone does not determine the physical input gauge."
+  ]
+}

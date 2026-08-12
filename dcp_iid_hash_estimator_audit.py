@@ -288,39 +288,4 @@ def write_iid_hash_estimator_report(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-IID-EXACT-LINEAR-HASH-BIN-PARSEVAL",
-                source=str(path),
-                claim="Exact linear iid Monte Carlo estimators provide sample-efficient coarse frequency buckets for DCP decoding.",
-                reason_invalid=(
-                    "Normalized Parseval forces second moment N/B for a bucket of size N/B. Polynomially many coarse "
-                    "buckets require exponential samples, while polynomial samples require exponentially many buckets."
-                ),
-                lesson="Search nonlinear iid localization or prove a biased low-variance margin; do not retry exact linear bucket indicators.",
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "certificate_count": payload["headline_metrics"]["certificate_count"],
-                    "joint_polynomial_resource_row_count": payload["headline_metrics"][
-                        "joint_polynomial_resource_row_count"
-                    ],
-                    "proved_nonlinear_decoder_lower_bound_count": 0,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-IID-LINEAR-HASH"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_iid_hash_estimator_audit": str(path)},
-            )
-        )
     return payload

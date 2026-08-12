@@ -280,42 +280,6 @@ def write_stable_shape_cubic_gap_certificate(
     payload = asdict(build_stable_shape_cubic_gap_certificate())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-ALL-STABLE-SHAPE-GAPS-AS-COMPLETE-QUANTUM-ALGORITHM",
-                source=str(output_path),
-                claim=(
-                    "Exact normalized gaps for every nontrivial stable shape constitute a nonabelian HSP algorithm."
-                ),
-                reason_invalid=(
-                    "Coherent label and transition circuits, decoder information, sample complexity, and classical "
-                    "separation remain unproved."
-                ),
-                lesson=(
-                    "Compile the common orbit Hamiltonian uniformly across all shapes, synthesize the complete "
-                    "coupling-tree transition, then test decoder information against classical baselines."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "coset_stable_shape_cubic_gap_certificate": str(output_path)
-                },
-            )
-        )
     return payload
 
 

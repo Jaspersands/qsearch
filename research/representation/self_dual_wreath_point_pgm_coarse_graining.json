@@ -1,0 +1,292 @@
+{
+  "created_at": "2026-08-12T03:42:35.408478+00:00",
+  "theorem_contract": {
+    "prior_weighted_identity": "p_j omega_j=sum_(g:g(point)=j) p_g tau_g for uniform fine labels.",
+    "effect_identity": "E_j^point=sum_(g:g(point)=j) M_g^fine, including the average-state kernel complement distributed by the priors.",
+    "operational_reduction": "Run the full covariant PGM, reversibly compute g(point), and discard the remaining fine label.",
+    "inherited_bottleneck": "For retained joint-character states the route inherits controlled D_nu^-1/2, equivalently orientation projection-Gram inversion.",
+    "alternative_route": "A direct Young child-star measurement could still bypass a hard fine inverse; the coarse-graining identity neither supplies nor rules it out.",
+    "scope": "This is an exact PGM identity and implementation reduction, not a polynomial PGM compiler, point decoder, or speedup.",
+    "theorem_verified": true,
+    "status": "point-pgm-exactly-coarse-grained-full-pgm"
+  },
+  "theorem": {
+    "prior_weighted_identity": "p_j omega_j=sum_(g:g(point)=j) p_g tau_g for uniform fine labels.",
+    "effect_identity": "E_j^point=sum_(g:g(point)=j) M_g^fine, including the average-state kernel complement distributed by the priors.",
+    "operational_reduction": "Run the full covariant PGM, reversibly compute g(point), and discard the remaining fine label.",
+    "inherited_bottleneck": "For retained joint-character states the route inherits controlled D_nu^-1/2, equivalently orientation projection-Gram inversion.",
+    "alternative_route": "A direct Young child-star measurement could still bypass a hard fine inverse; the coarse-graining identity neither supplies nor rules it out.",
+    "scope": "This is an exact PGM identity and implementation reduction, not a polynomial PGM compiler, point decoder, or speedup.",
+    "theorem_verified": true,
+    "status": "point-pgm-exactly-coarse-grained-full-pgm"
+  },
+  "finite_controls": [
+    {
+      "control_id": "W3-SINGLE-UNEQUAL",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "fine_hypothesis_count": 6,
+      "point_hypothesis_count": 3,
+      "point_fiber_size": 2,
+      "copy_count": 1,
+      "register_dimension": 12,
+      "average_support_rank": 5,
+      "maximum_coarse_state_aggregation_residual": 0.0,
+      "maximum_coarse_effect_aggregation_residual": 4.561779019455295e-16,
+      "maximum_mapped_confusion_residual": 3.764949453935611e-16,
+      "fine_povm_completeness_residual": 9.27550290288436e-16,
+      "point_povm_completeness_residual": 1.222516545031687e-15,
+      "fine_pgm_success": 0.25000000000000006,
+      "mapped_fine_pgm_point_success": 0.4166666666666668,
+      "direct_point_pgm_success": 0.4166666666666666,
+      "within_fiber_error_recovery_gain": 0.16666666666666674,
+      "exact_point_pgm_coarse_graining_verified": true,
+      "status": "exact-point-pgm-coarse-graining"
+    },
+    {
+      "control_id": "W3-INFORMATION-THRESHOLD",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "fine_hypothesis_count": 6,
+      "point_hypothesis_count": 3,
+      "point_fiber_size": 2,
+      "copy_count": 3,
+      "register_dimension": 48,
+      "average_support_rank": 30,
+      "maximum_coarse_state_aggregation_residual": 0.0,
+      "maximum_coarse_effect_aggregation_residual": 2.5456562674297806e-15,
+      "maximum_mapped_confusion_residual": 1.642041997679149e-16,
+      "fine_povm_completeness_residual": 2.080109219391672e-15,
+      "point_povm_completeness_residual": 1.855691481232114e-15,
+      "fine_pgm_success": 0.5890004748950276,
+      "mapped_fine_pgm_point_success": 0.5890004748950276,
+      "direct_point_pgm_success": 0.5890004748950277,
+      "within_fiber_error_recovery_gain": 0.0,
+      "exact_point_pgm_coarse_graining_verified": true,
+      "status": "exact-point-pgm-coarse-graining"
+    },
+    {
+      "control_id": "W4-COLLISION-FREE-PAIR",
+      "n": 4,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "fine_hypothesis_count": 24,
+      "point_hypothesis_count": 4,
+      "point_fiber_size": 6,
+      "copy_count": 2,
+      "register_dimension": 96,
+      "average_support_rank": 54,
+      "maximum_coarse_state_aggregation_residual": 0.0,
+      "maximum_coarse_effect_aggregation_residual": 2.1259332113491245e-15,
+      "maximum_mapped_confusion_residual": 6.02366334984414e-16,
+      "fine_povm_completeness_residual": 5.25486717363063e-15,
+      "point_povm_completeness_residual": 4.013177798764104e-15,
+      "fine_pgm_success": 0.05890034622419899,
+      "mapped_fine_pgm_point_success": 0.27413787291391045,
+      "direct_point_pgm_success": 0.2741378729139106,
+      "within_fiber_error_recovery_gain": 0.21523752668971147,
+      "exact_point_pgm_coarse_graining_verified": true,
+      "status": "exact-point-pgm-coarse-graining"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 8,
+      "fine_hypothesis_count_decimal": "40320",
+      "point_hypothesis_count": 8,
+      "point_fiber_size_decimal": "5040",
+      "fine_output_register_qubits": 16,
+      "point_output_register_qubits": 3,
+      "reversible_point_image_evaluation_polynomial": true,
+      "child_star_square_root_required_for_inherited_route": false,
+      "full_covariant_multiplicity_inverse_required": true,
+      "full_covariant_multiplicity_inverse_compiled": false,
+      "direct_coarse_bypass_ruled_out": false,
+      "polynomial_point_pgm_circuit_proved": false,
+      "status": "point-pgm-reduces-to-full-pgm-multiplicity-inverse"
+    },
+    {
+      "n": 16,
+      "fine_hypothesis_count_decimal": "20922789888000",
+      "point_hypothesis_count": 16,
+      "point_fiber_size_decimal": "1307674368000",
+      "fine_output_register_qubits": 45,
+      "point_output_register_qubits": 4,
+      "reversible_point_image_evaluation_polynomial": true,
+      "child_star_square_root_required_for_inherited_route": false,
+      "full_covariant_multiplicity_inverse_required": true,
+      "full_covariant_multiplicity_inverse_compiled": false,
+      "direct_coarse_bypass_ruled_out": false,
+      "polynomial_point_pgm_circuit_proved": false,
+      "status": "point-pgm-reduces-to-full-pgm-multiplicity-inverse"
+    },
+    {
+      "n": 32,
+      "fine_hypothesis_count_decimal": "263130836933693530167218012160000000",
+      "point_hypothesis_count": 32,
+      "point_fiber_size_decimal": "8222838654177922817725562880000000",
+      "fine_output_register_qubits": 118,
+      "point_output_register_qubits": 5,
+      "reversible_point_image_evaluation_polynomial": true,
+      "child_star_square_root_required_for_inherited_route": false,
+      "full_covariant_multiplicity_inverse_required": true,
+      "full_covariant_multiplicity_inverse_compiled": false,
+      "direct_coarse_bypass_ruled_out": false,
+      "polynomial_point_pgm_circuit_proved": false,
+      "status": "point-pgm-reduces-to-full-pgm-multiplicity-inverse"
+    },
+    {
+      "n": 64,
+      "fine_hypothesis_count_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "point_hypothesis_count": 64,
+      "point_fiber_size_decimal": "1982608315404440064116146708361898137544773690227268628106279599612729753600000000000000",
+      "fine_output_register_qubits": 296,
+      "point_output_register_qubits": 6,
+      "reversible_point_image_evaluation_polynomial": true,
+      "child_star_square_root_required_for_inherited_route": false,
+      "full_covariant_multiplicity_inverse_required": true,
+      "full_covariant_multiplicity_inverse_compiled": false,
+      "direct_coarse_bypass_ruled_out": false,
+      "polynomial_point_pgm_circuit_proved": false,
+      "status": "point-pgm-reduces-to-full-pgm-multiplicity-inverse"
+    },
+    {
+      "n": 128,
+      "fine_hypothesis_count_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "point_hypothesis_count": 128,
+      "point_fiber_size_decimal": "3012660018457659544809977077527059692324164918673621799053346900596667207618480809067860692097713761984609779945772783965563851033300772326297773087851869982500270661791244122597621760000000000000000000000000000000",
+      "fine_output_register_qubits": 717,
+      "point_output_register_qubits": 7,
+      "reversible_point_image_evaluation_polynomial": true,
+      "child_star_square_root_required_for_inherited_route": false,
+      "full_covariant_multiplicity_inverse_required": true,
+      "full_covariant_multiplicity_inverse_compiled": false,
+      "direct_coarse_bypass_ruled_out": false,
+      "polynomial_point_pgm_circuit_proved": false,
+      "status": "point-pgm-reduces-to-full-pgm-multiplicity-inverse"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "identify_point_pgm_inside_fine_covariant_pgm",
+      "resolved": true,
+      "resolution": "Linearity in prior-weighted states makes every point effect the exact sum of its fine-label PGM effects."
+    },
+    {
+      "obligation": "compile_full_multiplicity_inverse",
+      "resolved": false,
+      "resolution": "No controlled all-n inverse square root for the natural D_nu orientation kernels is proved."
+    },
+    {
+      "obligation": "compare_direct_coarse_and_refined_implementation_cost",
+      "resolved": false,
+      "resolution": "A direct child-star transform might avoid resolving fine labels and could be easier than the inherited full PGM."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "A point PGM necessarily requires a new child-star square root.",
+      "resolved": true,
+      "resolution": "False. Coarse-graining a full PGM implements exactly the same point effects."
+    },
+    {
+      "objection": "The identity proves an efficient point PGM.",
+      "resolved": true,
+      "resolution": "False. It transfers the unresolved full-PGM multiplicity inverse."
+    },
+    {
+      "objection": "A hard full PGM implies every direct point measurement is hard.",
+      "resolved": true,
+      "resolution": "False. Coarse measurements can admit implementations that do not realize their fine refinements."
+    }
+  ],
+  "headline_metrics": {
+    "exact_coarse_graining_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "child_star_square_roots_avoided_by_inherited_route": 1,
+    "full_multiplicity_inverse_compiler_count": 0,
+    "polynomial_point_pgm_circuit_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "point_pgm_equals_coarse_grained_full_pgm": true,
+    "reversible_point_image_postprocessing_polynomial": true,
+    "child_star_square_root_logically_required": false,
+    "full_covariant_multiplicity_inverse_compiled": false,
+    "direct_coarse_bypass_ruled_out": false,
+    "polynomial_point_pgm_circuit_proved": false,
+    "polynomial_full_hidden_shift_decoder_proved": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "The exact reduction removes a duplicate measurement bottleneck but inherits the unresolved orientation-kernel inverse."
+  },
+  "status": "point-pgm-exactly-coarse-grained-full-pgm",
+  "summary": "Proved that the point PGM is exactly the full retained-state PGM with its output coarse-grained by point image. This redirects the inherited route to D_nu inversion while leaving direct coarse bypasses open.",
+  "falsifiers_triggered": [
+    "A separate child-star square-root compiler is not necessary if the full covariant PGM can be implemented.",
+    "Removing the child-star prerequisite does not remove the natural orientation multiplicity-inverse bottleneck.",
+    "Fine-PGM hardness cannot be promoted into a direct coarse-measurement lower bound."
+  ]
+}

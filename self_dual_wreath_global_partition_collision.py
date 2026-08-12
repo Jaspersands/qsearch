@@ -298,55 +298,6 @@ def write_global_partition_collision_report(
     payload = asdict(run_global_partition_collision())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id=(
-                    "NEG-CODE-WREATH-ALL-UNEQUAL-"
-                    "NOT-GLOBALLY-DISTINCT"
-                ),
-                source=str(path),
-                claim=(
-                    "Within-label inequality is the strongest natural source "
-                    "conditioning needed for growing frame moments."
-                ),
-                reason_invalid=(
-                    "The full source is 2k iid Plancherel draws. Repeated "
-                    "partitions across labels are asymptotically absent and "
-                    "support known finite half-norm counterexamples."
-                ),
-                lesson=(
-                    "Target arbitrary collision-free source tuples and discard "
-                    "the o(1) global-collision event before seeking a uniform "
-                    "tensor contraction."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-NATURAL-ACCESS",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_global_partition_collision": str(path)
-                },
-            )
-        )
     return payload
 
 

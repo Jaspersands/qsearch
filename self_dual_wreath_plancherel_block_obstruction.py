@@ -666,55 +666,6 @@ def write_plancherel_block_obstruction_report(
     payload = asdict(build_plancherel_block_obstruction_report())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-WREATH-UNIFORM-COLLISION-FREE-NORM-BOUND",
-                source=str(path),
-                claim=(
-                    "Every naturally occupied globally collision-free "
-                    "orientation frame satisfies ||F_nu|| <= poly(n)2^-k "
-                    "uniformly over target irreps."
-                ),
-                reason_invalid=(
-                    "Sellke-typical tensor-covering blocks yield "
-                    "r=Theta(k) independently switchable blocks whose 2^r "
-                    "orientation projectors share a vector, so some target "
-                    "has ||F_nu||>=2^(r-k)."
-                ),
-                lesson=(
-                    "Stop spending research effort on the uniform frame-norm "
-                    "upper bound. Test alternative whitening, quotienting of "
-                    "the exact common channels, or different measurements."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_plancherel_block_obstruction": str(path)
-                },
-            )
-        )
     return payload
 
 

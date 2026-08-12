@@ -1,0 +1,576 @@
+{
+  "created_at": "2026-08-12T03:41:12.269161+00:00",
+  "theorem_contract": {
+    "one_pass_kraus_restriction": "For L=(<j|F tensor I)(direct_sum_i U_i), the restriction of L to branch i has norm |F[j,i]|.",
+    "robust_error_bound": "If L is epsilon-close to c times an isometry on every nonzero branch block, epsilon >= c-min_i|F[j,i]| >= c-1/sqrt(q).",
+    "flat_polar_consequence": "For pairwise orthogonal E_i summing to I, the exact polar image is the full direct sum, so exact one-pass physical branch erasure succeeds with probability at most 1/q; Walsh attains it.",
+    "accepted_rank_consequence": "Retaining r branch characters accepts at most r/q of a covariant uniform branch mixture; constant acceptance retains Theta(q) unresolved characters.",
+    "escape_condition": "A source-restricted correlated image can erase deterministically; a positive wreath result must exhibit and coherently access such correlations or relocate the branch index into the carrier.",
+    "scope": "The theorem excludes one-pass block-diagonal carrier processing plus branch-only mixing/postselection. It is not a lower bound on arbitrary representation-specific, multi-round, or source-restricted circuits.",
+    "theorem_verified": true,
+    "status": "physical-one-pass-branch-erasure-refuted"
+  },
+  "theorem": {
+    "one_pass_kraus_restriction": "For L=(<j|F tensor I)(direct_sum_i U_i), the restriction of L to branch i has norm |F[j,i]|.",
+    "robust_error_bound": "If L is epsilon-close to c times an isometry on every nonzero branch block, epsilon >= c-min_i|F[j,i]| >= c-1/sqrt(q).",
+    "flat_polar_consequence": "For pairwise orthogonal E_i summing to I, the exact polar image is the full direct sum, so exact one-pass physical branch erasure succeeds with probability at most 1/q; Walsh attains it.",
+    "accepted_rank_consequence": "Retaining r branch characters accepts at most r/q of a covariant uniform branch mixture; constant acceptance retains Theta(q) unresolved characters.",
+    "escape_condition": "A source-restricted correlated image can erase deterministically; a positive wreath result must exhibit and coherently access such correlations or relocate the branch index into the carrier.",
+    "scope": "The theorem excludes one-pass block-diagonal carrier processing plus branch-only mixing/postselection. It is not a lower bound on arbitrary representation-specific, multi-round, or source-restricted circuits.",
+    "theorem_verified": true,
+    "status": "physical-one-pass-branch-erasure-refuted"
+  },
+  "flat_polar_controls": [
+    {
+      "control_id": "FLAT-Q2-D1",
+      "branch_count": 2,
+      "block_dimension": 1,
+      "carrier_dimension": 2,
+      "flat_frame_gram_residual": 0.0,
+      "polar_isometry_residual": 0.0,
+      "branch_row_minimum_magnitude": 0.7071067811865475,
+      "branch_row_maximum_magnitude": 0.7071067811865475,
+      "postselected_scaled_polar_amplitude": 0.7071067811865475,
+      "postselected_success_probability": 0.4999999999999999,
+      "inverse_width_success_upper_bound": 0.5,
+      "scaled_polar_residual": 0.0,
+      "exact_inverse_width_boundary_verified": true,
+      "status": "physical-walsh-erasure-attains-inverse-width"
+    },
+    {
+      "control_id": "FLAT-Q4-D1",
+      "branch_count": 4,
+      "block_dimension": 1,
+      "carrier_dimension": 4,
+      "flat_frame_gram_residual": 0.0,
+      "polar_isometry_residual": 0.0,
+      "branch_row_minimum_magnitude": 0.5,
+      "branch_row_maximum_magnitude": 0.5,
+      "postselected_scaled_polar_amplitude": 0.5,
+      "postselected_success_probability": 0.25,
+      "inverse_width_success_upper_bound": 0.25,
+      "scaled_polar_residual": 0.0,
+      "exact_inverse_width_boundary_verified": true,
+      "status": "physical-walsh-erasure-attains-inverse-width"
+    },
+    {
+      "control_id": "FLAT-Q4-D2",
+      "branch_count": 4,
+      "block_dimension": 2,
+      "carrier_dimension": 8,
+      "flat_frame_gram_residual": 0.0,
+      "polar_isometry_residual": 0.0,
+      "branch_row_minimum_magnitude": 0.5,
+      "branch_row_maximum_magnitude": 0.5,
+      "postselected_scaled_polar_amplitude": 0.5,
+      "postselected_success_probability": 0.25,
+      "inverse_width_success_upper_bound": 0.25,
+      "scaled_polar_residual": 0.0,
+      "exact_inverse_width_boundary_verified": true,
+      "status": "physical-walsh-erasure-attains-inverse-width"
+    },
+    {
+      "control_id": "FLAT-Q8-D1",
+      "branch_count": 8,
+      "block_dimension": 1,
+      "carrier_dimension": 8,
+      "flat_frame_gram_residual": 0.0,
+      "polar_isometry_residual": 0.0,
+      "branch_row_minimum_magnitude": 0.35355339059327373,
+      "branch_row_maximum_magnitude": 0.35355339059327373,
+      "postselected_scaled_polar_amplitude": 0.35355339059327373,
+      "postselected_success_probability": 0.12499999999999997,
+      "inverse_width_success_upper_bound": 0.125,
+      "scaled_polar_residual": 0.0,
+      "exact_inverse_width_boundary_verified": true,
+      "status": "physical-walsh-erasure-attains-inverse-width"
+    },
+    {
+      "control_id": "FLAT-Q8-D3",
+      "branch_count": 8,
+      "block_dimension": 3,
+      "carrier_dimension": 24,
+      "flat_frame_gram_residual": 0.0,
+      "polar_isometry_residual": 0.0,
+      "branch_row_minimum_magnitude": 0.35355339059327373,
+      "branch_row_maximum_magnitude": 0.35355339059327373,
+      "postselected_scaled_polar_amplitude": 0.35355339059327373,
+      "postselected_success_probability": 0.12499999999999997,
+      "inverse_width_success_upper_bound": 0.125,
+      "scaled_polar_residual": 0.0,
+      "exact_inverse_width_boundary_verified": true,
+      "status": "physical-walsh-erasure-attains-inverse-width"
+    },
+    {
+      "control_id": "FLAT-Q16-D1",
+      "branch_count": 16,
+      "block_dimension": 1,
+      "carrier_dimension": 16,
+      "flat_frame_gram_residual": 0.0,
+      "polar_isometry_residual": 0.0,
+      "branch_row_minimum_magnitude": 0.25,
+      "branch_row_maximum_magnitude": 0.25,
+      "postselected_scaled_polar_amplitude": 0.25,
+      "postselected_success_probability": 0.0625,
+      "inverse_width_success_upper_bound": 0.0625,
+      "scaled_polar_residual": 0.0,
+      "exact_inverse_width_boundary_verified": true,
+      "status": "physical-walsh-erasure-attains-inverse-width"
+    }
+  ],
+  "robust_bounds": [
+    {
+      "branch_count": 2,
+      "requested_isometry_amplitude": 1.0,
+      "unitary_row_magnitudes": [
+        0.7071067811865475,
+        0.7071067811865475
+      ],
+      "minimum_row_magnitude": 0.7071067811865475,
+      "maximum_possible_minimum_row_magnitude": 0.7071067811865475,
+      "operator_error_lower_bound": 0.29289321881345254,
+      "constant_amplitude_vanishing_error_possible": false,
+      "bound_verified": true,
+      "status": "robust-one-pass-erasure-error-bound"
+    },
+    {
+      "branch_count": 2,
+      "requested_isometry_amplitude": 0.6666666666666666,
+      "unitary_row_magnitudes": [
+        0.8660254037844386,
+        0.5
+      ],
+      "minimum_row_magnitude": 0.5,
+      "maximum_possible_minimum_row_magnitude": 0.7071067811865475,
+      "operator_error_lower_bound": 0.16666666666666663,
+      "constant_amplitude_vanishing_error_possible": true,
+      "bound_verified": true,
+      "status": "robust-one-pass-erasure-error-bound"
+    },
+    {
+      "branch_count": 4,
+      "requested_isometry_amplitude": 1.0,
+      "unitary_row_magnitudes": [
+        0.5,
+        0.5,
+        0.5,
+        0.5
+      ],
+      "minimum_row_magnitude": 0.5,
+      "maximum_possible_minimum_row_magnitude": 0.5,
+      "operator_error_lower_bound": 0.5,
+      "constant_amplitude_vanishing_error_possible": false,
+      "bound_verified": true,
+      "status": "robust-one-pass-erasure-error-bound"
+    },
+    {
+      "branch_count": 4,
+      "requested_isometry_amplitude": 0.6666666666666666,
+      "unitary_row_magnitudes": [
+        0.8660254037844386,
+        0.28867513459481287,
+        0.28867513459481287,
+        0.28867513459481287
+      ],
+      "minimum_row_magnitude": 0.28867513459481287,
+      "maximum_possible_minimum_row_magnitude": 0.5,
+      "operator_error_lower_bound": 0.37799153207185376,
+      "constant_amplitude_vanishing_error_possible": false,
+      "bound_verified": true,
+      "status": "robust-one-pass-erasure-error-bound"
+    },
+    {
+      "branch_count": 8,
+      "requested_isometry_amplitude": 1.0,
+      "unitary_row_magnitudes": [
+        0.35355339059327373,
+        0.35355339059327373,
+        0.35355339059327373,
+        0.35355339059327373,
+        0.35355339059327373,
+        0.35355339059327373,
+        0.35355339059327373,
+        0.35355339059327373
+      ],
+      "minimum_row_magnitude": 0.35355339059327373,
+      "maximum_possible_minimum_row_magnitude": 0.35355339059327373,
+      "operator_error_lower_bound": 0.6464466094067263,
+      "constant_amplitude_vanishing_error_possible": false,
+      "bound_verified": true,
+      "status": "robust-one-pass-erasure-error-bound"
+    },
+    {
+      "branch_count": 8,
+      "requested_isometry_amplitude": 0.6666666666666666,
+      "unitary_row_magnitudes": [
+        0.8660254037844386,
+        0.1889822365046136,
+        0.1889822365046136,
+        0.1889822365046136,
+        0.1889822365046136,
+        0.1889822365046136,
+        0.1889822365046136,
+        0.1889822365046136
+      ],
+      "minimum_row_magnitude": 0.1889822365046136,
+      "maximum_possible_minimum_row_magnitude": 0.35355339059327373,
+      "operator_error_lower_bound": 0.47768443016205303,
+      "constant_amplitude_vanishing_error_possible": false,
+      "bound_verified": true,
+      "status": "robust-one-pass-erasure-error-bound"
+    },
+    {
+      "branch_count": 16,
+      "requested_isometry_amplitude": 1.0,
+      "unitary_row_magnitudes": [
+        0.25,
+        0.25,
+        0.25,
+        0.25,
+        0.25,
+        0.25,
+        0.25,
+        0.25,
+        0.25,
+        0.25,
+        0.25,
+        0.25,
+        0.25,
+        0.25,
+        0.25,
+        0.25
+      ],
+      "minimum_row_magnitude": 0.25,
+      "maximum_possible_minimum_row_magnitude": 0.25,
+      "operator_error_lower_bound": 0.75,
+      "constant_amplitude_vanishing_error_possible": false,
+      "bound_verified": true,
+      "status": "robust-one-pass-erasure-error-bound"
+    },
+    {
+      "branch_count": 16,
+      "requested_isometry_amplitude": 0.6666666666666666,
+      "unitary_row_magnitudes": [
+        0.8660254037844386,
+        0.12909944487358055,
+        0.12909944487358055,
+        0.12909944487358055,
+        0.12909944487358055,
+        0.12909944487358055,
+        0.12909944487358055,
+        0.12909944487358055,
+        0.12909944487358055,
+        0.12909944487358055,
+        0.12909944487358055,
+        0.12909944487358055,
+        0.12909944487358055,
+        0.12909944487358055,
+        0.12909944487358055,
+        0.12909944487358055
+      ],
+      "minimum_row_magnitude": 0.12909944487358055,
+      "maximum_possible_minimum_row_magnitude": 0.25,
+      "operator_error_lower_bound": 0.537567221793086,
+      "constant_amplitude_vanishing_error_possible": false,
+      "bound_verified": true,
+      "status": "robust-one-pass-erasure-error-bound"
+    }
+  ],
+  "accepted_rank_controls": [
+    {
+      "branch_count": 16,
+      "accepted_character_count": 1,
+      "covariant_uniform_branch_acceptance": 0.0625,
+      "rank_fraction_upper_bound": 0.0625,
+      "branch_label_erased": true,
+      "constant_acceptance_requires_linear_rank": false,
+      "status": "sublinear-character-rank-has-vanishing-acceptance"
+    },
+    {
+      "branch_count": 16,
+      "accepted_character_count": 2,
+      "covariant_uniform_branch_acceptance": 0.125,
+      "rank_fraction_upper_bound": 0.125,
+      "branch_label_erased": false,
+      "constant_acceptance_requires_linear_rank": true,
+      "status": "constant-acceptance-retains-linear-character-space"
+    },
+    {
+      "branch_count": 16,
+      "accepted_character_count": 8,
+      "covariant_uniform_branch_acceptance": 0.5,
+      "rank_fraction_upper_bound": 0.5,
+      "branch_label_erased": false,
+      "constant_acceptance_requires_linear_rank": true,
+      "status": "constant-acceptance-retains-linear-character-space"
+    },
+    {
+      "branch_count": 64,
+      "accepted_character_count": 1,
+      "covariant_uniform_branch_acceptance": 0.015625,
+      "rank_fraction_upper_bound": 0.015625,
+      "branch_label_erased": true,
+      "constant_acceptance_requires_linear_rank": false,
+      "status": "sublinear-character-rank-has-vanishing-acceptance"
+    },
+    {
+      "branch_count": 64,
+      "accepted_character_count": 8,
+      "covariant_uniform_branch_acceptance": 0.125,
+      "rank_fraction_upper_bound": 0.125,
+      "branch_label_erased": false,
+      "constant_acceptance_requires_linear_rank": true,
+      "status": "constant-acceptance-retains-linear-character-space"
+    },
+    {
+      "branch_count": 64,
+      "accepted_character_count": 32,
+      "covariant_uniform_branch_acceptance": 0.5,
+      "rank_fraction_upper_bound": 0.5,
+      "branch_label_erased": false,
+      "constant_acceptance_requires_linear_rank": true,
+      "status": "constant-acceptance-retains-linear-character-space"
+    }
+  ],
+  "correlated_escape_controls": [
+    {
+      "branch_count": 2,
+      "carrier_dimension": 3,
+      "diagonal_embedding_isometry_residual": 2.220446049250313e-16,
+      "branch_erasure_residual": 2.231687133607212e-16,
+      "deterministic_branch_erasure_verified": true,
+      "flat_orthogonal_full_direct_sum_input": false,
+      "status": "source-correlated-subspace-evades-erasure-boundary"
+    },
+    {
+      "branch_count": 4,
+      "carrier_dimension": 2,
+      "diagonal_embedding_isometry_residual": 0.0,
+      "branch_erasure_residual": 0.0,
+      "deterministic_branch_erasure_verified": true,
+      "flat_orthogonal_full_direct_sum_input": false,
+      "status": "source-correlated-subspace-evades-erasure-boundary"
+    },
+    {
+      "branch_count": 8,
+      "carrier_dimension": 1,
+      "diagonal_embedding_isometry_residual": 2.220446049250313e-16,
+      "branch_erasure_residual": 1.193812447098184e-16,
+      "deterministic_branch_erasure_verified": true,
+      "flat_orthogonal_full_direct_sum_input": false,
+      "status": "source-correlated-subspace-evades-erasure-boundary"
+    },
+    {
+      "branch_count": 16,
+      "carrier_dimension": 2,
+      "diagonal_embedding_isometry_residual": 0.0,
+      "branch_erasure_residual": 0.0,
+      "deterministic_branch_erasure_verified": true,
+      "flat_orthogonal_full_direct_sum_input": false,
+      "status": "source-correlated-subspace-evades-erasure-boundary"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 8,
+      "information_threshold_copy_count": 18,
+      "branch_count_decimal": "262144",
+      "one_pass_success_probability_log2_upper_bound": -18,
+      "amplitude_amplification_query_log2_lower_bound": 9.0,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 30.0,
+      "one_pass_erasure_amplification_superpolynomial": false,
+      "direct_source_correlated_transform_ruled_out": false,
+      "status": "finite-size-erasure-benchmark-not-separated"
+    },
+    {
+      "n": 12,
+      "information_threshold_copy_count": 31,
+      "branch_count_decimal": "2147483648",
+      "one_pass_success_probability_log2_upper_bound": -31,
+      "amplitude_amplification_query_log2_lower_bound": 15.5,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 35.84962500721156,
+      "one_pass_erasure_amplification_superpolynomial": false,
+      "direct_source_correlated_transform_ruled_out": false,
+      "status": "finite-size-erasure-benchmark-not-separated"
+    },
+    {
+      "n": 16,
+      "information_threshold_copy_count": 47,
+      "branch_count_decimal": "140737488355328",
+      "one_pass_success_probability_log2_upper_bound": -47,
+      "amplitude_amplification_query_log2_lower_bound": 23.5,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 40.0,
+      "one_pass_erasure_amplification_superpolynomial": false,
+      "direct_source_correlated_transform_ruled_out": false,
+      "status": "finite-size-erasure-benchmark-not-separated"
+    },
+    {
+      "n": 20,
+      "information_threshold_copy_count": 64,
+      "branch_count_decimal": "18446744073709551616",
+      "one_pass_success_probability_log2_upper_bound": -64,
+      "amplitude_amplification_query_log2_lower_bound": 32.0,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 43.219280948873624,
+      "one_pass_erasure_amplification_superpolynomial": false,
+      "direct_source_correlated_transform_ruled_out": false,
+      "status": "finite-size-erasure-benchmark-not-separated"
+    },
+    {
+      "n": 24,
+      "information_threshold_copy_count": 82,
+      "branch_count_decimal": "4835703278458516698824704",
+      "one_pass_success_probability_log2_upper_bound": -82,
+      "amplitude_amplification_query_log2_lower_bound": 41.0,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 45.84962500721156,
+      "one_pass_erasure_amplification_superpolynomial": false,
+      "direct_source_correlated_transform_ruled_out": false,
+      "status": "finite-size-erasure-benchmark-not-separated"
+    },
+    {
+      "n": 32,
+      "information_threshold_copy_count": 120,
+      "branch_count_decimal": "1329227995784915872903807060280344576",
+      "one_pass_success_probability_log2_upper_bound": -120,
+      "amplitude_amplification_query_log2_lower_bound": 60.0,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 50.0,
+      "one_pass_erasure_amplification_superpolynomial": true,
+      "direct_source_correlated_transform_ruled_out": false,
+      "status": "physical-one-pass-erasure-superpolynomial"
+    },
+    {
+      "n": 40,
+      "information_threshold_copy_count": 162,
+      "branch_count_decimal": "5846006549323611672814739330865132078623730171904",
+      "one_pass_success_probability_log2_upper_bound": -162,
+      "amplitude_amplification_query_log2_lower_bound": 81.0,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 53.219280948873624,
+      "one_pass_erasure_amplification_superpolynomial": true,
+      "direct_source_correlated_transform_ruled_out": false,
+      "status": "physical-one-pass-erasure-superpolynomial"
+    },
+    {
+      "n": 48,
+      "information_threshold_copy_count": 205,
+      "branch_count_decimal": "51422017416287688817342786954917203280710495801049370729644032",
+      "one_pass_success_probability_log2_upper_bound": -205,
+      "amplitude_amplification_query_log2_lower_bound": 102.5,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 55.84962500721156,
+      "one_pass_erasure_amplification_superpolynomial": true,
+      "direct_source_correlated_transform_ruled_out": false,
+      "status": "physical-one-pass-erasure-superpolynomial"
+    },
+    {
+      "n": 64,
+      "information_threshold_copy_count": 298,
+      "branch_count_decimal": "509258994083621521567111422102344540262867098416484062659035112338595324940834176545849344",
+      "one_pass_success_probability_log2_upper_bound": -298,
+      "amplitude_amplification_query_log2_lower_bound": 149.0,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 60.0,
+      "one_pass_erasure_amplification_superpolynomial": true,
+      "direct_source_correlated_transform_ruled_out": false,
+      "status": "physical-one-pass-erasure-superpolynomial"
+    },
+    {
+      "n": 80,
+      "information_threshold_copy_count": 397,
+      "branch_count_decimal": "322781234760863573706989896500376484291213224103652939103832419567580952752105149328705669160017228929487896496593436672",
+      "one_pass_success_probability_log2_upper_bound": -397,
+      "amplitude_amplification_query_log2_lower_bound": 198.5,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 63.219280948873624,
+      "one_pass_erasure_amplification_superpolynomial": true,
+      "direct_source_correlated_transform_ruled_out": false,
+      "status": "physical-one-pass-erasure-superpolynomial"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "test_physical_branch_hadamard_as_orientation_polar",
+      "resolved": true,
+      "resolution": "Resolved negatively for one-pass erasure by the unitary-row norm bound, including the exact flat polar control."
+    },
+    {
+      "obligation": "test_whether_retaining_many_characters_avoids_width",
+      "resolved": true,
+      "resolution": "Rank-r acceptance is r/q; constant mass leaves a linear-dimensional unresolved branch output and is not polar erasure."
+    },
+    {
+      "obligation": "derive_actual_row_copy_source_correlation_or_classifier",
+      "resolved": false,
+      "resolution": "The actual C_U image must be shown to admit efficient branch-index relocation, correlated compression, or a coherent decoder beyond membership GPE."
+    },
+    {
+      "obligation": "rule_out_arbitrary_direct_physical_branch_to_polar_circuit",
+      "resolved": false,
+      "resolution": "The diagonal correlated escape proves that no such general conclusion follows from branch width alone."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The normalized-analysis no-go is irrelevant because the physical branch register is already present.",
+      "resolved": true,
+      "resolution": "Presence removes branch preparation but not coherent erasure: a one-pass Fourier row still has total squared amplitude one across q inputs."
+    },
+    {
+      "objection": "Perfectly orthogonal leaf ranges make branch erasure easy.",
+      "resolved": true,
+      "resolution": "They make the polar perfectly conditioned but also make its image the full direct sum; Walsh postselection is exactly Q^*/sqrt(q)."
+    },
+    {
+      "objection": "Accepting every nontrivial character gives near-unit success and therefore implements the polar.",
+      "resolved": true,
+      "resolution": "It retains q-1 orthogonal branch outcomes. The physical filter is useful but is not a branch-erasing coisometry."
+    },
+    {
+      "objection": "Equation (1) rules out the direct physical carrier route completely.",
+      "resolved": true,
+      "resolution": "False. The correlated-input controls erase with unit probability, so a representation-specific source-image factorization remains possible."
+    },
+    {
+      "objection": "Controlled GPE membership already computes the carrier-side branch label needed for erasure.",
+      "resolved": false,
+      "resolution": "Membership tests a supplied candidate i and preserves it; no polynomial coherent index-recovery transform over all orientations is known."
+    }
+  ],
+  "headline_metrics": {
+    "one_pass_branch_erasure_theorem_count": 1,
+    "flat_polar_inverse_width_control_count": 6,
+    "robust_error_bound_control_count": 8,
+    "accepted_rank_control_count": 6,
+    "correlated_input_escape_control_count": 4,
+    "finite_control_failure_count": 0,
+    "superpolynomial_scaling_row_count": 5,
+    "physical_source_correlation_factorization_count": 0,
+    "coherent_orientation_index_classifier_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "physical_branch_register_removes_preparation_cost": true,
+    "physical_branch_register_removes_erasure_width": false,
+    "one_pass_branch_fourier_erasure_polynomial": false,
+    "accept_many_characters_equals_orientation_polar": false,
+    "flat_orthogonal_conditioning_removes_erasure_width": false,
+    "source_correlated_escape_exists_abstractly": true,
+    "actual_wreath_row_copy_correlated_factorization_proved": false,
+    "coherent_orientation_index_classifier_proved": false,
+    "arbitrary_direct_physical_router_ruled_out": false,
+    "hierarchical_orientation_polar_proved": false,
+    "speedup_claim_allowed": false
+  },
+  "status": "physical-one-pass-branch-erasure-refuted",
+  "summary": "A physical orientation register avoids preparing a candidate mask but does not make one-pass Fourier erasure free. On the exact flat polar, any branch-controlled carrier processing followed by one branch-only postselection has success at most 1/q, with a robust constant-error bound. The surviving route must exploit a proved source-image correlation or coherently relocate the orientation index into the carrier before erasure.",
+  "falsifiers_triggered": [
+    "The phrase 'the branch register is already present' does not by itself remove the exponential orientation-width cost.",
+    "Near-unit acceptance of many nontrivial orientation characters is not implementation of the polar coisometry.",
+    "The no-go cannot be extended to source-correlated or carrier-classifying transforms without new arguments."
+  ]
+}

@@ -298,44 +298,6 @@ def write_stable_shape_coherent_label_certificate(
     payload = asdict(build_stable_shape_coherent_label_certificate())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-SEVEN-COHERENT-SHAPE-LABELS-AS-COMPLETE-RACAH-DECODER",
-                source=str(output_path),
-                claim=(
-                    "Coherent eigenlabels on all stable shapes implement a full Racah decoder."
-                ),
-                reason_invalid=(
-                    "Channel routing, coupling-tree transitions, hidden-involution information, and classical "
-                    "separation remain unproved."
-                ),
-                lesson=(
-                    "Construct coherent projectors/routing and the complete left/right transition isometry before "
-                    "testing whether label outcomes support a reduction-compatible decoder."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "coset_stable_shape_coherent_label_certificate": str(
-                        output_path
-                    )
-                },
-            )
-        )
     return payload
 
 

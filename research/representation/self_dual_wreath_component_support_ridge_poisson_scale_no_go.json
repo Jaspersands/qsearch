@@ -1,0 +1,244 @@
+{
+  "created_at": "2026-08-12T03:39:48.026966+00:00",
+  "theorem_contract": {
+    "rescaling": "delta=eta/q for F=q Fbar",
+    "support_resolvent_mixture": "delta(Fbar+delta I)^-1=sum_m delta(1+delta)^(-m-1) E[product Q_j]",
+    "support_tail_mixture": "delta^2(Fbar+delta I)^-2=sum_m delta^2(m+1)(1+delta)^(-m-2) E[product Q_j]",
+    "length_lower_bound": "Pr[N<=L]<=delta^2(L+1)(L+2)/2, so L=Omega(1/delta)",
+    "coarse_tail": "T_(q delta)(F)/D>=rank(F)/D-2Tr(F)/(q delta D)",
+    "scope": "The no-go concerns positive words formed by iid uniform leaf complements. It does not rule out signed, rational, local-law, or aggregate-frame methods."
+  },
+  "theorem": {
+    "parameter_rescaling": "delta=eta/q for F=q Fbar",
+    "geometric_mixture": "delta(Fbar+delta I)^-1=sum_m delta(1+delta)^(-m-1) E[product Q_j]",
+    "squared_mixture": "delta^2(Fbar+delta I)^-2=sum_m delta^2(m+1)(1+delta)^(-m-2) E[product Q_j]",
+    "constant_mass_length_lower_bound": "Pr[N<=L]<=delta^2(L+1)(L+2)/2, so L=Omega(1/delta)",
+    "coarse_ridge_tail_lower_bound": "T_(q delta)(F)/D>=rank(F)/D-2Tr(F)/(q delta D)",
+    "final_root_leaf_aspect": "q/|S_n| in [2,4)",
+    "positive_uniform_leaf_poisson_route_only": true,
+    "signed_or_aggregate_approximations_ruled_out": false,
+    "theorem_verified": true,
+    "status": "support-ridge-positive-leaf-word-polynomial-scale-route-ruled-out"
+  },
+  "finite_controls": [
+    {
+      "control_id": "D6-Q3-DELTA-1-2",
+      "ambient_dimension": 6,
+      "leaf_count": 3,
+      "normalized_ridge_parameter": 0.5,
+      "truncation_length": 12,
+      "geometric_mass_through_truncation": 0.9948617689138274,
+      "negative_binomial_mass_through_truncation": 0.972596100873746,
+      "geometric_tail": 0.005138231086172626,
+      "negative_binomial_tail": 0.027403899126254006,
+      "geometric_resolvent_residual": 0.004844951059231087,
+      "squared_resolvent_residual": 0.02580211212604222,
+      "geometric_residual_bounded_by_tail": true,
+      "squared_residual_bounded_by_tail": true,
+      "exact_positive_mixture_verified": true,
+      "status": "exact-support-ridge-positive-word-mixtures-verified"
+    },
+    {
+      "control_id": "D7-Q4-DELTA-1-3",
+      "ambient_dimension": 7,
+      "leaf_count": 4,
+      "normalized_ridge_parameter": 0.3333333333333333,
+      "truncation_length": 18,
+      "geometric_mass_through_truncation": 0.9957717174147547,
+      "negative_binomial_mass_through_truncation": 0.9756873751348394,
+      "geometric_tail": 0.004228282585245324,
+      "negative_binomial_tail": 0.024312624865160615,
+      "geometric_resolvent_residual": 0.0009484235267741345,
+      "squared_resolvent_residual": 0.005295229525830893,
+      "geometric_residual_bounded_by_tail": true,
+      "squared_residual_bounded_by_tail": true,
+      "exact_positive_mixture_verified": true,
+      "status": "exact-support-ridge-positive-word-mixtures-verified"
+    },
+    {
+      "control_id": "D8-Q5-DELTA-1-5",
+      "ambient_dimension": 8,
+      "leaf_count": 5,
+      "normalized_ridge_parameter": 0.2,
+      "truncation_length": 28,
+      "geometric_mass_through_truncation": 0.9949447357202951,
+      "negative_binomial_mass_through_truncation": 0.9705109583683881,
+      "geometric_tail": 0.00505526427970491,
+      "negative_binomial_tail": 0.029489041631611975,
+      "geometric_resolvent_residual": 0.00013438935480731922,
+      "squared_resolvent_residual": 0.0007377664790276285,
+      "geometric_residual_bounded_by_tail": true,
+      "squared_residual_bounded_by_tail": true,
+      "exact_positive_mixture_verified": true,
+      "status": "exact-support-ridge-positive-word-mixtures-verified"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 8,
+      "group_order_decimal": "40320",
+      "child_leaf_count_decimal": "131072",
+      "child_leaf_aspect": 3.250793650793651,
+      "physical_inverse_polynomial_degree": 2,
+      "log2_geometric_mean_length_at_physical_eta": 23.0,
+      "log2_squared_mean_length_at_physical_eta": 24.0,
+      "constant_mass_squared_length_log2_lower_bound": 22.999999828017337,
+      "normalized_inverse_polynomial_degree": 2,
+      "coarse_physical_ridge_log2": 11.0,
+      "assumed_support_rank_density": 0.25,
+      "assumed_frame_trace_density": 4.0,
+      "coarse_normalized_tail_lower_bound": 0.24609375,
+      "positive_poisson_words_polynomial_at_physical_scale": false,
+      "coarse_normalized_ridge_transfers_support": false,
+      "status": "positive-poisson-route-has-factorial-length-or-constant-tail-error"
+    },
+    {
+      "n": 16,
+      "group_order_decimal": "20922789888000",
+      "child_leaf_count_decimal": "70368744177664",
+      "child_leaf_aspect": 3.363258177057119,
+      "physical_inverse_polynomial_degree": 2,
+      "log2_geometric_mean_length_at_physical_eta": 54.0,
+      "log2_squared_mean_length_at_physical_eta": 55.0,
+      "constant_mass_squared_length_log2_lower_bound": 54.0,
+      "normalized_inverse_polynomial_degree": 2,
+      "coarse_physical_ridge_log2": 38.0,
+      "assumed_support_rank_density": 0.25,
+      "assumed_frame_trace_density": 4.0,
+      "coarse_normalized_tail_lower_bound": 0.24999999997089617,
+      "positive_poisson_words_polynomial_at_physical_scale": false,
+      "coarse_normalized_ridge_transfers_support": false,
+      "status": "positive-poisson-route-has-factorial-length-or-constant-tail-error"
+    },
+    {
+      "n": 32,
+      "group_order_decimal": "263130836933693530167218012160000000",
+      "child_leaf_count_decimal": "664613997892457936451903530140172288",
+      "child_leaf_aspect": 2.525792893137547,
+      "physical_inverse_polynomial_degree": 2,
+      "log2_geometric_mean_length_at_physical_eta": 129.0,
+      "log2_squared_mean_length_at_physical_eta": 130.0,
+      "constant_mass_squared_length_log2_lower_bound": 129.0,
+      "normalized_inverse_polynomial_degree": 2,
+      "coarse_physical_ridge_log2": 109.0,
+      "assumed_support_rank_density": 0.25,
+      "assumed_frame_trace_density": 4.0,
+      "coarse_normalized_tail_lower_bound": 0.25,
+      "positive_poisson_words_polynomial_at_physical_scale": false,
+      "coarse_normalized_ridge_transfers_support": false,
+      "status": "positive-poisson-route-has-factorial-length-or-constant-tail-error"
+    },
+    {
+      "n": 64,
+      "group_order_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "child_leaf_count_decimal": "254629497041810760783555711051172270131433549208242031329517556169297662470417088272924672",
+      "child_leaf_aspect": 2.006743268635331,
+      "physical_inverse_polynomial_degree": 2,
+      "log2_geometric_mean_length_at_physical_eta": 309.0,
+      "log2_squared_mean_length_at_physical_eta": 310.0,
+      "constant_mass_squared_length_log2_lower_bound": 309.0,
+      "normalized_inverse_polynomial_degree": 2,
+      "coarse_physical_ridge_log2": 285.0,
+      "assumed_support_rank_density": 0.25,
+      "assumed_frame_trace_density": 4.0,
+      "coarse_normalized_tail_lower_bound": 0.25,
+      "positive_poisson_words_polynomial_at_physical_scale": false,
+      "coarse_normalized_ridge_transfers_support": false,
+      "status": "positive-poisson-route-has-factorial-length-or-constant-tail-error"
+    },
+    {
+      "n": 128,
+      "group_order_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "child_leaf_count_decimal": "1378913065775496824682182051857728448902028277271278088224317349054049721856053955032165000485952146958446223387833982704161766047792183079895777875237766653530662154044294980748355504146827894396365898183024673030144",
+      "child_leaf_aspect": 3.5758294199709315,
+      "physical_inverse_polynomial_degree": 2,
+      "log2_geometric_mean_length_at_physical_eta": 732.0,
+      "log2_squared_mean_length_at_physical_eta": 733.0,
+      "constant_mass_squared_length_log2_lower_bound": 732.0,
+      "normalized_inverse_polynomial_degree": 2,
+      "coarse_physical_ridge_log2": 704.0,
+      "assumed_support_rank_density": 0.25,
+      "assumed_frame_trace_density": 4.0,
+      "coarse_normalized_tail_lower_bound": 0.25,
+      "positive_poisson_words_polynomial_at_physical_scale": false,
+      "coarse_normalized_ridge_transfers_support": false,
+      "status": "positive-poisson-route-has-factorial-length-or-constant-tail-error"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "audit_poisson_word_scale_at_physical_support_ridge_parameter",
+      "resolved": true,
+      "resolution": "Exact rescaling sends eta to delta=eta/q, and both positive mixtures require Theta(q/eta) expected leaf factors."
+    },
+    {
+      "obligation": "test_polynomial_normalized_parameter_as_support_approximation",
+      "resolved": true,
+      "resolution": "The trace/rank inequality leaves tail density rho-o(1) when delta is inverse polynomial and q is factorial."
+    },
+    {
+      "obligation": "find_nonpositive_or_aggregate_resolvent_representation",
+      "resolved": false,
+      "resolution": "A signed polynomial/rational recursion or direct physical local law must avoid one-uniform-leaf-at-a-time mixing."
+    },
+    {
+      "obligation": "prove_natural_physical_support_ridge_tail_small",
+      "resolved": false,
+      "resolution": "The normalization no-go removes one proof route; it does not estimate the actual natural spectrum."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Inverse-polynomial eta gives polynomial Poisson length.",
+      "resolved": true,
+      "resolution": "Only when eta is measured against Fbar. The physical ridge uses delta=eta/q, which has factorial inverse."
+    },
+    {
+      "objection": "Choose inverse-polynomial delta instead.",
+      "resolved": true,
+      "resolution": "Then physical eta=q delta and equation (6) leaves constant support-ridge error on the positive-rank event."
+    },
+    {
+      "objection": "Small expected length is not necessary for constant captured mass.",
+      "resolved": true,
+      "resolution": "Equation (5) directly forces L=Omega(1/delta) for the squared-resolvent mixture to capture one half of its mass."
+    },
+    {
+      "objection": "This rules out all polynomial support-ridge proofs.",
+      "resolved": false,
+      "resolution": "It does not touch signed cancellation, rational recursion, aggregate-frame access, or direct spectral/local-law bounds."
+    }
+  ],
+  "headline_metrics": {
+    "poisson_parameter_scale_no_go_theorem_count": 1,
+    "exact_positive_mixture_control_count": 3,
+    "finite_control_failure_count": 0,
+    "maximum_geometric_residual_to_tail_ratio": 0.9429219857918072,
+    "maximum_squared_residual_to_tail_ratio": 0.9415489382429812,
+    "tail_physical_word_length_log2_lower_bound": 732.0,
+    "tail_coarse_normalized_ridge_error_lower_bound": 0.25,
+    "alternative_support_ridge_route_count": 0,
+    "natural_support_ridge_tail_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "positive_poisson_leaf_words_valid_at_physical_scale": true,
+    "positive_poisson_leaf_words_polynomial_length_at_physical_scale": false,
+    "polynomial_normalized_parameter_approximates_support": false,
+    "signed_polynomial_or_rational_route_ruled_out": false,
+    "aggregate_frame_route_ruled_out": false,
+    "natural_support_ridge_tail_small": false,
+    "natural_component_M4_positive": false,
+    "speedup_claim_allowed": false,
+    "reason": "The old positive Poisson expansion is exact but has factorial length at the physical support scale; other spectral routes remain open."
+  },
+  "status": "positive-poisson-support-ridge-route-falsified-by-normalization",
+  "summary": "Proved that positive uniform-leaf Poisson words face a factorial-length versus constant-tail-error dichotomy at the physical dependency support-ridge scale.",
+  "falsifiers_triggered": [
+    "The normalized-frame parameter is eta/q, not the physical eta.",
+    "A polynomial normalized ridge leaves constant support-tail error.",
+    "Constant captured squared-resolvent mass requires Omega(q/eta) positive leaf factors.",
+    "Signed, rational, aggregate-frame, and direct local-law routes remain open.",
+    "No natural tail, component M4, algorithm, or speedup is proved."
+  ]
+}

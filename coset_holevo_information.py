@@ -305,48 +305,6 @@ def write_coset_holevo_report(
     payload = asdict(build_coset_holevo_report(n_values=n_values, error=error))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        negatives = (
-            (
-                "NEG-COSET-UNDERCHARGED-HOLEVO-COPY-BUDGET",
-                "A collective hidden-involution decoder may use fewer than the exact Holevo/Fano copy lower bound.",
-                "Entropy subadditivity bounds k-copy information by k times the exact one-copy character formula.",
-            ),
-            (
-                "NEG-COSET-POLYNOMIAL-COPY-LOWER-BOUND-AS-NO-ALGORITHM",
-                "The Omega(n log n) hard-family copy requirement rules out a polynomial quantum algorithm.",
-                "The certified copy count is polynomial; it only rules out under-sampled mechanisms.",
-            ),
-        )
-        for negative_id, claim, reason in negatives:
-            upsert_negative_result(
-                NegativeResultRecord(
-                    id=negative_id,
-                    source=str(output_path),
-                    claim=claim,
-                    reason_invalid=reason,
-                    lesson=(
-                        "Charge the exact copy lower bound, then focus research on uniform recoupling circuits, "
-                        "state-dependent frame action, and a compressed verified decoder."
-                    ),
-                    applies_to=[registry_candidate_id, registry_experiment_id],
-                    evidence=payload["headline_metrics"],
-                )
-            )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-COSET-HOLEVO"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_holevo_information": str(output_path)},
-            )
-        )
     return payload
 
 

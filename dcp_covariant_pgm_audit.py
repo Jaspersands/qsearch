@@ -277,41 +277,4 @@ def write_covariant_pgm_audit(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-EXACT-PGM-SUCCESS-WITHOUT-IMPLEMENTATION",
-                source=str(path),
-                claim="Constant clean covariant-PGM success at m=Theta(n) is itself a polynomial DCP algorithm.",
-                reason_invalid=(
-                    "The formula assumes the full covariant measurement. Naive implementation uses N outcomes or an "
-                    "N-entry multiplicity table; no polynomial normalized-fiber isometry, block encoding, or walk exists."
-                ),
-                lesson=(
-                    "Treat clean PGM success as a target specification. Promote only a uniform polynomial circuit with "
-                    "complete output decoding, exact f=1 robustness, and lattice parameter composition."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "mean_n_register_pgm_success": payload["headline_metrics"]["mean_n_register_pgm_success"],
-                    "proved_clean_information_theorem_count": 1,
-                    "proved_polynomial_pgm_circuit_count": 0,
-                    "proved_exact_f1_robust_pgm_count": 0,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-COVARIANT-PGM"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_covariant_pgm_audit": str(path)},
-            )
-        )
     return payload

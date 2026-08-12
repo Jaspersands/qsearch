@@ -1,0 +1,287 @@
+{
+  "created_at": "2026-08-12T03:41:30.639709+00:00",
+  "theorem_contract": {
+    "gap_free_native_bound": "||(polar(X)-polar(Y))sqrt(S)||F/sqrt(Tr S) <=sqrt(rho)+(2rho)^(1/4), with no lower spectral-edge assumption.",
+    "exact_recursive_hybrid": "Same-initial-support child replacement preserves the parent Gram matrix and gives an exact trace-weighted squared-error identity.",
+    "support_invariant": "supp(P+Q)=supp(A+B), so every support-surrogate parent polar has the same initial support as the exact parent polar.",
+    "annealed_natural_transfer": "E rho=alpha-|G|^-1 and geometric composition through alpha<=2/R gives annealed native RMS error O(R^-1/4).",
+    "low_singular_native_mass": "The aggregate native mass of support-analysis singular values below sqrt(1-kappa) is O(kappa^-2 R^-1/2).",
+    "scope": "No coherent support reflection, singular-value filter, fixed-R endpoint measurement, decoder, or complexity separation is proved.",
+    "theorem_verified": true,
+    "status": "native-state-sparse-polar-hybrid-proved"
+  },
+  "theorem": {
+    "gap_free_native_bound": "||(polar(X)-polar(Y))sqrt(S)||F/sqrt(Tr S) <=sqrt(rho)+(2rho)^(1/4), with no lower spectral-edge assumption.",
+    "exact_recursive_hybrid": "Same-initial-support child replacement preserves the parent Gram matrix and gives an exact trace-weighted squared-error identity.",
+    "support_invariant": "supp(P+Q)=supp(A+B), so every support-surrogate parent polar has the same initial support as the exact parent polar.",
+    "annealed_natural_transfer": "E rho=alpha-|G|^-1 and geometric composition through alpha<=2/R gives annealed native RMS error O(R^-1/4).",
+    "low_singular_native_mass": "The aggregate native mass of support-analysis singular values below sqrt(1-kappa) is O(kappa^-2 R^-1/2).",
+    "scope": "No coherent support reflection, singular-value filter, fixed-R endpoint measurement, decoder, or complexity separation is proved.",
+    "theorem_verified": true,
+    "status": "native-state-sparse-polar-hybrid-proved"
+  },
+  "perturbation_controls": [
+    {
+      "control_id": "PERTURB-0",
+      "ambient_dimension": 12,
+      "total_trace": 8.0,
+      "support_scalarization_pressure": 0.7399802501383999,
+      "normalized_pressure": 0.09249753126729998,
+      "exact_native_rms_polar_error": 0.05018736911965054,
+      "native_rms_polar_error_upper_bound": 0.9599621884073758,
+      "square_root_trace_distance": 0.14580455789076896,
+      "square_root_trace_distance_upper_bound": 3.4408841890151427,
+      "initial_supports_match": true,
+      "gap_free_native_polar_bound_verified": true,
+      "status": "gap-free-native-polar-perturbation-verified"
+    },
+    {
+      "control_id": "PERTURB-1",
+      "ambient_dimension": 16,
+      "total_trace": 12.0,
+      "support_scalarization_pressure": 2.4518365449137187,
+      "normalized_pressure": 0.20431971207614322,
+      "exact_native_rms_polar_error": 0.05529585390264796,
+      "native_rms_polar_error_upper_bound": 1.251547936058512,
+      "square_root_trace_distance": 0.5377062373779431,
+      "square_root_trace_distance_upper_bound": 7.67098931546181,
+      "initial_supports_match": true,
+      "gap_free_native_polar_bound_verified": true,
+      "status": "gap-free-native-polar-perturbation-verified"
+    },
+    {
+      "control_id": "PERTURB-2",
+      "ambient_dimension": 20,
+      "total_trace": 16.0,
+      "support_scalarization_pressure": 4.375972098426047,
+      "normalized_pressure": 0.2734982561516279,
+      "exact_native_rms_polar_error": 0.07917384462431389,
+      "native_rms_polar_error_upper_bound": 1.3829660292190158,
+      "square_root_trace_distance": 1.0480899997115851,
+      "square_root_trace_distance_upper_bound": 11.833474010181181,
+      "initial_supports_match": true,
+      "gap_free_native_polar_bound_verified": true,
+      "status": "gap-free-native-polar-perturbation-verified"
+    }
+  ],
+  "same_gram_controls": [
+    {
+      "control_id": "HYBRID-0",
+      "ambient_dimension": 12,
+      "total_trace": 8.0,
+      "parent_native_error_squared": 16.54001964179123,
+      "weighted_child_error_squared": 16.540019641791247,
+      "gram_matrix_difference_norm": 7.547227256924983e-16,
+      "parent_initial_supports_match": true,
+      "exact_same_gram_hybrid_identity_verified": true,
+      "status": "exact-same-gram-recursive-hybrid-verified"
+    },
+    {
+      "control_id": "HYBRID-1",
+      "ambient_dimension": 16,
+      "total_trace": 12.0,
+      "parent_native_error_squared": 24.609920332883366,
+      "weighted_child_error_squared": 24.609920332883345,
+      "gram_matrix_difference_norm": 1.7567711429567808e-15,
+      "parent_initial_supports_match": true,
+      "exact_same_gram_hybrid_identity_verified": true,
+      "status": "exact-same-gram-recursive-hybrid-verified"
+    },
+    {
+      "control_id": "HYBRID-2",
+      "ambient_dimension": 20,
+      "total_trace": 16.0,
+      "parent_native_error_squared": 32.042137453239405,
+      "weighted_child_error_squared": 32.04213745323932,
+      "gram_matrix_difference_norm": 1.2980064559142582e-15,
+      "parent_initial_supports_match": true,
+      "exact_same_gram_hybrid_identity_verified": true,
+      "status": "exact-same-gram-recursive-hybrid-verified"
+    }
+  ],
+  "low_singular_controls": [
+    {
+      "control_id": "LOW-0",
+      "ambient_dimension": 12,
+      "principal_correlation_threshold": 0.5,
+      "low_singular_rank": 2,
+      "low_singular_rank_upper_bound": 5.7274837689192495,
+      "exact_native_state_mass": 0.056699501090207056,
+      "native_state_mass_upper_bound": 0.5551105236268928,
+      "normalized_support_scalarization_pressure": 0.09249753126729998,
+      "low_singular_rank_and_native_mass_bounds_verified": true,
+      "status": "low-singular-native-mass-pressure-verified"
+    },
+    {
+      "control_id": "LOW-1",
+      "ambient_dimension": 16,
+      "principal_correlation_threshold": 0.5,
+      "low_singular_rank": 3,
+      "low_singular_rank_upper_bound": 8.111748848361806,
+      "exact_native_state_mass": 0.05373080638662701,
+      "native_state_mass_upper_bound": 0.7642491096218175,
+      "normalized_support_scalarization_pressure": 0.20431971207614322,
+      "low_singular_rank_and_native_mass_bounds_verified": true,
+      "status": "low-singular-native-mass-pressure-verified"
+    },
+    {
+      "control_id": "LOW-2",
+      "ambient_dimension": 20,
+      "principal_correlation_threshold": 0.5,
+      "low_singular_rank": 4,
+      "low_singular_rank_upper_bound": 10.48264255244402,
+      "exact_native_state_mass": 0.06611647405378066,
+      "native_state_mass_upper_bound": 0.8645921256363238,
+      "normalized_support_scalarization_pressure": 0.2734982561516279,
+      "low_singular_rank_and_native_mass_bounds_verified": true,
+      "status": "low-singular-native-mass-pressure-verified"
+    }
+  ],
+  "natural_schedule_records": [
+    {
+      "jump_log2_arity": 8,
+      "jump_arity_decimal": "256",
+      "principal_correlation_threshold": 0.5,
+      "maximum_early_child_aspect": 0.0078125,
+      "aggregate_native_rms_polar_error_upper_bound": 2.523935241611402,
+      "aggregate_native_polar_mse_upper_bound": 6.370249103848005,
+      "aggregate_low_singular_native_mass_upper_bound": 1.0471316076824155,
+      "asymptotic_native_rms_rate": "O(R^-1/4)",
+      "asymptotic_low_singular_mass_rate": "O(kappa^-2 R^-1/2)",
+      "jump_arity_fixed_before_n_limit": true,
+      "coherent_support_reflection_compiler_proved": false,
+      "status": "native-state-error-tunable-coherent-access-open"
+    },
+    {
+      "jump_log2_arity": 16,
+      "jump_arity_decimal": "65536",
+      "principal_correlation_threshold": 0.5,
+      "maximum_early_child_aspect": 3.0517578125e-05,
+      "aggregate_native_rms_polar_error_upper_bound": 0.574400680034731,
+      "aggregate_native_polar_mse_upper_bound": 0.32993614122436143,
+      "aggregate_low_singular_native_mass_upper_bound": 0.06445695331885735,
+      "asymptotic_native_rms_rate": "O(R^-1/4)",
+      "asymptotic_low_singular_mass_rate": "O(kappa^-2 R^-1/2)",
+      "jump_arity_fixed_before_n_limit": true,
+      "coherent_support_reflection_compiler_proved": false,
+      "status": "native-state-error-tunable-coherent-access-open"
+    },
+    {
+      "jump_log2_arity": 24,
+      "jump_arity_decimal": "16777216",
+      "principal_correlation_threshold": 0.5,
+      "maximum_early_child_aspect": 1.1920928955078125e-07,
+      "aggregate_native_rms_polar_error_upper_bound": 0.1400637243606753,
+      "aggregate_native_polar_mse_upper_bound": 0.019617846881783228,
+      "aggregate_low_singular_native_mass_upper_bound": 0.004024965386849427,
+      "asymptotic_native_rms_rate": "O(R^-1/4)",
+      "asymptotic_low_singular_mass_rate": "O(kappa^-2 R^-1/2)",
+      "jump_arity_fixed_before_n_limit": true,
+      "coherent_support_reflection_compiler_proved": false,
+      "status": "native-state-error-tunable-coherent-access-open"
+    },
+    {
+      "jump_log2_arity": 32,
+      "jump_arity_decimal": "4294967296",
+      "principal_correlation_threshold": 0.5,
+      "maximum_early_child_aspect": 4.656612873077393e-10,
+      "aggregate_native_rms_polar_error_upper_bound": 0.034794903237168356,
+      "aggregate_native_polar_mse_upper_bound": 0.001210685291283909,
+      "aggregate_low_singular_native_mass_upper_bound": 0.0002515463624651952,
+      "asymptotic_native_rms_rate": "O(R^-1/4)",
+      "asymptotic_low_singular_mass_rate": "O(kappa^-2 R^-1/2)",
+      "jump_arity_fixed_before_n_limit": true,
+      "coherent_support_reflection_compiler_proved": false,
+      "status": "native-state-error-tunable-coherent-access-open"
+    },
+    {
+      "jump_log2_arity": 40,
+      "jump_arity_decimal": "1099511627776",
+      "principal_correlation_threshold": 0.5,
+      "maximum_early_child_aspect": 1.8189894035458565e-12,
+      "aggregate_native_rms_polar_error_upper_bound": 0.00868491156847956,
+      "aggregate_native_polar_mse_upper_bound": 7.54276889523101e-05,
+      "aggregate_low_singular_native_mass_upper_bound": 1.5721593083324653e-05,
+      "asymptotic_native_rms_rate": "O(R^-1/4)",
+      "asymptotic_low_singular_mass_rate": "O(kappa^-2 R^-1/2)",
+      "jump_arity_fixed_before_n_limit": true,
+      "coherent_support_reflection_compiler_proved": false,
+      "status": "native-state-error-tunable-coherent-access-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "convert_sparse_frame_pressure_to_native_polar_error",
+      "resolved": true,
+      "resolution": "Equation (1) follows from polar reconstruction and Powers--Stoermer."
+    },
+    {
+      "obligation": "compose_native_polar_error_through_sparse_hierarchy",
+      "resolved": true,
+      "resolution": "Equation (2), support invariance, Minkowski, and Jensen give (3)."
+    },
+    {
+      "obligation": "bound_native_mass_of_ill_conditioned_support_modes",
+      "resolved": true,
+      "resolution": "Equation (4) and the sibling support-overlap moment give the stated rate."
+    },
+    {
+      "obligation": "compile_coherent_recursive_support_reflections",
+      "resolved": false,
+      "resolution": "The theorem compares mathematical polar factors but supplies no access circuit."
+    },
+    {
+      "obligation": "compile_fixed_R_jump_and_final_endpoint_measurements",
+      "resolved": false,
+      "resolution": "Constant arity and state-small bad sectors do not themselves implement the POVM."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "A lower spectral edge is hidden in the polar perturbation step.",
+      "resolved": true,
+      "resolution": "Native weighting cancels the exact inverse; Powers--Stoermer is gap-free."
+    },
+    {
+      "objection": "Local support replacement errors can amplify under recursive polarizations.",
+      "resolved": true,
+      "resolution": "Same initial supports preserve the Gram matrix exactly, yielding equation (2)."
+    },
+    {
+      "objection": "A small-rank low singular sector can carry large native state mass.",
+      "resolved": true,
+      "resolution": "Equation (4) adds the required frame-to-support trace-distance term."
+    },
+    {
+      "objection": "The mathematical surrogate polar is already a coherent circuit.",
+      "resolved": false,
+      "resolution": "Support reflections, filtering, endpoint effects, and error-aware access remain open."
+    }
+  ],
+  "headline_metrics": {
+    "gap_free_native_polar_theorem_count": 1,
+    "exact_recursive_hybrid_theorem_count": 1,
+    "low_singular_native_mass_theorem_count": 1,
+    "natural_schedule_record_count": 5,
+    "finite_control_failure_count": 0,
+    "smallest_recorded_native_rms_bound": 0.00868491156847956,
+    "smallest_recorded_low_singular_mass_bound": 1.5721593083324653e-05,
+    "coherent_support_reflection_compiler_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "gap_free_native_state_polar_perturbation_proved": true,
+    "exact_same_support_recursive_hybrid_proved": true,
+    "annealed_sparse_hierarchy_error_tunable": true,
+    "low_singular_native_mass_tunable": true,
+    "operator_norm_frame_closeness_proved": false,
+    "coherent_recursive_support_reflections_proved": false,
+    "fixed_R_endpoint_measurement_compiled": false,
+    "end_to_end_algorithm_proved": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false
+  },
+  "status": "native-state-sparse-polar-hybrid-proved",
+  "summary": "Native-state weighting converts sparse frame support pressure into a gap-free polar-error bound, and an exact same-support hybrid makes the early hierarchy error tunable with fixed jump arity. Coherent support and endpoint access remain unresolved, so no algorithm or speedup claim is allowed.",
+  "falsifiers_triggered": []
+}

@@ -1,0 +1,264 @@
+{
+  "created_at": "2026-08-12T03:39:47.966217+00:00",
+  "theorem_contract": {
+    "bessel": "theta sum_e Q_e<=sum_e K_e<=I",
+    "transfer": "|sqrt(M4(K)/r)-gamma^2 sqrt(M4(Q)/r)|<=sqrt(6(2+c) sum_e||K_e-gamma Q_e||F^2/r)",
+    "natural_limit": "E M4(Q_n)/r_n-alpha_n(alpha_n-1)->0",
+    "commuting_no_go": "M4(Q)/r<=4(theta^-1+B)sum_e||Q_e-R_e||F^2/r for commuting R with ||sum R_e^2||<=B",
+    "gpe_boundary": "one common diagonal GPE-transcript predicate algebra is insufficient; coherent row operations, recoupling, and holonomy remain open"
+  },
+  "theorem": {
+    "support_bessel_bound": "theta sum_e Q_e<=sum_e K_e<=I",
+    "commutator_transfer": "|sqrt(M4(K)/r)-gamma^2 sqrt(M4(Q)/r)|<=sqrt(6(2+c) sum_e||K_e-gamma Q_e||F^2/r)",
+    "natural_support_m4_limit": "E M4(Q_n)/r_n-alpha_n(alpha_n-1)->0",
+    "commuting_classifier_no_go": "M4(Q)/r<=4(theta^-1+B)sum_e||Q_e-R_e||F^2/r for commuting R with ||sum R_e^2||<=B",
+    "gpe_scope_boundary": "one common diagonal GPE-transcript predicate algebra is insufficient; coherent row operations, recoupling, and holonomy remain open",
+    "theorem_verified": true,
+    "status": "natural-support-nonabelian-geometry-and-commuting-classifier-no-go-proved"
+  },
+  "transfer_controls": [
+    {
+      "control_id": "EXACT-TWO-FRAME-GAMMA-ONE-HALF",
+      "fiber_dimension": 4,
+      "leaf_count": 4,
+      "support_scalar": 0.5,
+      "trim_threshold": 0.2,
+      "normalized_scalarization_error": 0.0,
+      "scalarization_commutator_constant": 0.44999999999999996,
+      "normalized_trimmed_effect_m4": 0.0625,
+      "normalized_support_projector_m4": 1.0,
+      "normalized_rescaled_support_m4": 0.0625,
+      "square_root_m4_transfer_residual": 0.0,
+      "square_root_m4_transfer_upper_bound": 0.0,
+      "support_frame_bessel_norm": 2.0,
+      "support_frame_bessel_upper_bound": 5.0,
+      "support_m4_upper_bound": 24.999999999999996,
+      "transfer_bound_verified": true,
+      "status": "support-curl-transfer-and-bessel-bound-verified"
+    },
+    {
+      "control_id": "PERTURBED-TWO-FRAME-GAMMA-ONE-HALF",
+      "fiber_dimension": 4,
+      "leaf_count": 4,
+      "support_scalar": 0.5,
+      "trim_threshold": 0.2,
+      "normalized_scalarization_error": 0.0050000000000000105,
+      "scalarization_commutator_constant": 0.44999999999999996,
+      "normalized_trimmed_effect_m4": 0.030628125000000003,
+      "normalized_support_projector_m4": 0.5000000000000001,
+      "normalized_rescaled_support_m4": 0.03125000000000001,
+      "square_root_m4_transfer_residual": 0.0017677669529663764,
+      "square_root_m4_transfer_upper_bound": 0.2711088342345195,
+      "support_frame_bessel_norm": 2.0,
+      "support_frame_bessel_upper_bound": 5.0,
+      "support_m4_upper_bound": 24.999999999999996,
+      "transfer_bound_verified": true,
+      "status": "support-curl-transfer-and-bessel-bound-verified"
+    },
+    {
+      "control_id": "EXACT-FOUR-FRAME-GAMMA-ONE-QUARTER",
+      "fiber_dimension": 4,
+      "leaf_count": 8,
+      "support_scalar": 0.25,
+      "trim_threshold": 0.2,
+      "normalized_scalarization_error": 0.0,
+      "scalarization_commutator_constant": 0.5625,
+      "normalized_trimmed_effect_m4": 0.015625,
+      "normalized_support_projector_m4": 4.0,
+      "normalized_rescaled_support_m4": 0.015625,
+      "square_root_m4_transfer_residual": 0.0,
+      "square_root_m4_transfer_upper_bound": 0.0,
+      "support_frame_bessel_norm": 4.0,
+      "support_frame_bessel_upper_bound": 5.0,
+      "support_m4_upper_bound": 24.999999999999996,
+      "transfer_bound_verified": true,
+      "status": "support-curl-transfer-and-bessel-bound-verified"
+    }
+  ],
+  "commuting_classifier_controls": [
+    {
+      "control_id": "TWO-FRAME-COORDINATE-PVM",
+      "fiber_dimension": 4,
+      "leaf_count": 4,
+      "trim_threshold": 0.2,
+      "support_projector_m4_per_dimension": 1.0,
+      "commuting_approximant_bessel_norm": 1.0,
+      "normalized_support_approximation_error": 1.0000000000000002,
+      "commuting_error_lower_bound": 0.041666666666666664,
+      "commuting_perturbation_upper_bound": 24.000000000000007,
+      "approximants_pairwise_commute": true,
+      "commuting_classifier_inequality_verified": true,
+      "status": "commuting-support-classifier-error-bound-verified"
+    },
+    {
+      "control_id": "FOUR-FRAME-COORDINATE-PVM",
+      "fiber_dimension": 4,
+      "leaf_count": 8,
+      "trim_threshold": 0.2,
+      "support_projector_m4_per_dimension": 4.0,
+      "commuting_approximant_bessel_norm": 1.0,
+      "normalized_support_approximation_error": 3.000000000000001,
+      "commuting_error_lower_bound": 0.16666666666666666,
+      "commuting_perturbation_upper_bound": 72.00000000000003,
+      "approximants_pairwise_commute": true,
+      "commuting_classifier_inequality_verified": true,
+      "status": "commuting-support-classifier-error-bound-verified"
+    }
+  ],
+  "scaling_records": [
+    {
+      "child_aspect": 2.0,
+      "support_scalar": 0.5,
+      "natural_effect_m4_limit": 0.125,
+      "natural_support_projector_m4_limit": 2.0,
+      "uniform_bessel_bound": 5.0,
+      "bounded_commuting_classifier_error_lower_bound": 0.05,
+      "pvm_transcript_classifier_error_lower_bound": 0.08333333333333333,
+      "scalar_amplitude_obstruction_survives": false,
+      "commuting_label_predicate_sufficient": false,
+      "coherent_noncommuting_classifier_proved": false,
+      "status": "support-geometry-nonabelian-commuting-label-classifier-rejected"
+    },
+    {
+      "child_aspect": 2.25,
+      "support_scalar": 0.4444444444444444,
+      "natural_effect_m4_limit": 0.10973936899862825,
+      "natural_support_projector_m4_limit": 2.8125000000000004,
+      "uniform_bessel_bound": 5.0,
+      "bounded_commuting_classifier_error_lower_bound": 0.07031250000000001,
+      "pvm_transcript_classifier_error_lower_bound": 0.11718750000000001,
+      "scalar_amplitude_obstruction_survives": false,
+      "commuting_label_predicate_sufficient": false,
+      "coherent_noncommuting_classifier_proved": false,
+      "status": "support-geometry-nonabelian-commuting-label-classifier-rejected"
+    },
+    {
+      "child_aspect": 2.5,
+      "support_scalar": 0.4,
+      "natural_effect_m4_limit": 0.09600000000000002,
+      "natural_support_projector_m4_limit": 3.75,
+      "uniform_bessel_bound": 5.0,
+      "bounded_commuting_classifier_error_lower_bound": 0.09375,
+      "pvm_transcript_classifier_error_lower_bound": 0.15625,
+      "scalar_amplitude_obstruction_survives": false,
+      "commuting_label_predicate_sufficient": false,
+      "coherent_noncommuting_classifier_proved": false,
+      "status": "support-geometry-nonabelian-commuting-label-classifier-rejected"
+    },
+    {
+      "child_aspect": 3.0,
+      "support_scalar": 0.3333333333333333,
+      "natural_effect_m4_limit": 0.07407407407407408,
+      "natural_support_projector_m4_limit": 6.000000000000002,
+      "uniform_bessel_bound": 5.0,
+      "bounded_commuting_classifier_error_lower_bound": 0.15000000000000005,
+      "pvm_transcript_classifier_error_lower_bound": 0.25000000000000006,
+      "scalar_amplitude_obstruction_survives": false,
+      "commuting_label_predicate_sufficient": false,
+      "coherent_noncommuting_classifier_proved": false,
+      "status": "support-geometry-nonabelian-commuting-label-classifier-rejected"
+    },
+    {
+      "child_aspect": 3.5,
+      "support_scalar": 0.2857142857142857,
+      "natural_effect_m4_limit": 0.05830903790087463,
+      "natural_support_projector_m4_limit": 8.750000000000002,
+      "uniform_bessel_bound": 5.0,
+      "bounded_commuting_classifier_error_lower_bound": 0.21875000000000006,
+      "pvm_transcript_classifier_error_lower_bound": 0.3645833333333334,
+      "scalar_amplitude_obstruction_survives": false,
+      "commuting_label_predicate_sufficient": false,
+      "coherent_noncommuting_classifier_proved": false,
+      "status": "support-geometry-nonabelian-commuting-label-classifier-rejected"
+    },
+    {
+      "child_aspect": 4.0,
+      "support_scalar": 0.25,
+      "natural_effect_m4_limit": 0.046875,
+      "natural_support_projector_m4_limit": 12.0,
+      "uniform_bessel_bound": 5.0,
+      "bounded_commuting_classifier_error_lower_bound": 0.3,
+      "pvm_transcript_classifier_error_lower_bound": 0.5,
+      "scalar_amplitude_obstruction_survives": false,
+      "commuting_label_predicate_sufficient": false,
+      "coherent_noncommuting_classifier_proved": false,
+      "status": "support-geometry-nonabelian-commuting-label-classifier-rejected"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "transfer_positive_natural_m4_to_retained_support_geometry",
+      "resolved": true,
+      "resolution": "Scalarization error, exact Bessel control, and bounded M4 make the commutator perturbation vanish in L1."
+    },
+    {
+      "obligation": "test_commuting_gpe_transcript_support_classifier",
+      "resolved": true,
+      "resolution": "Every bounded commuting classifier has a constant aggregate normalized Frobenius error floor."
+    },
+    {
+      "obligation": "construct_noncommuting_coherent_support_select",
+      "resolved": false,
+      "resolution": "Need a recoupling- or holonomy-aware circuit outside one common diagonal transcript algebra."
+    },
+    {
+      "obligation": "extract_hidden_label_information_from_support_geometry",
+      "resolved": false,
+      "resolution": "Internal support noncommutativity remains hidden-label blind unless tied to a covariant observable and decoder."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Trace-weighted scalarization permits unbounded support overlap.",
+      "resolved": true,
+      "resolution": "The retained edge gives theta sum Q_e<=I exactly."
+    },
+    {
+      "objection": "Scalar effect amplitudes remove the nonabelian mechanism.",
+      "resolved": true,
+      "resolution": "The rescaled support-projector M4 converges to alpha(alpha-1), uniformly at least two."
+    },
+    {
+      "objection": "GPE has been ruled out entirely.",
+      "resolved": true,
+      "resolution": "Only a common commuting transcript classifier is ruled out; coherent carrier-row and holonomy operations remain possible."
+    },
+    {
+      "objection": "Support noncommutativity is already a decoder.",
+      "resolved": false,
+      "resolution": "It is invariant internal geometry until a label-sensitive covariant measurement and classical postprocessing are proved."
+    }
+  ],
+  "headline_metrics": {
+    "support_bessel_bound_theorem_count": 1,
+    "natural_support_m4_limit_theorem_count": 1,
+    "commuting_classifier_no_go_theorem_count": 1,
+    "finite_transfer_control_count": 3,
+    "finite_commuting_classifier_control_count": 2,
+    "finite_control_failure_count": 0,
+    "uniform_support_m4_lower_bound": 2.0,
+    "uniform_bounded_commuting_classifier_error_floor": 0.05,
+    "coherent_noncommuting_support_select_count": 0,
+    "hidden_label_decoder_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "natural_retained_support_m4_limit_proved": true,
+    "uniform_retained_support_bessel_bound_proved": true,
+    "commuting_bounded_support_classifier_rejected": true,
+    "all_gpe_based_support_classifiers_rejected": false,
+    "coherent_recoupling_support_classifier_proved": false,
+    "coherent_support_projector_select_proved": false,
+    "hidden_label_information_gain_proved": false,
+    "component_povm_dilation_compiled": false,
+    "speedup_claim_allowed": false,
+    "reason": "The nonabelian mechanism is now localized to retained support geometry, but no coherent noncommuting selector or decoder exists."
+  },
+  "status": "natural-support-geometry-nonabelian-commuting-classifier-rejected",
+  "summary": "Constant-edge retained supports form a bounded fusion frame and carry the full natural component M4 after scalar rescaling. A commuting GPE-transcript predicate cannot approximate them with vanishing aggregate error; coherent recoupling/holonomy access remains open.",
+  "falsifiers_triggered": [
+    "Matrix-valued square-root amplitudes are not the surviving nonabelian mechanism.",
+    "One common commuting GPE-label transcript cannot classify the retained supports.",
+    "Positive support M4 does not itself reveal the hidden involution."
+  ]
+}

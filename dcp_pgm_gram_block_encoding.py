@@ -494,58 +494,6 @@ def write_gram_block_encoding_report(
     output_path.write_text(
         json.dumps(payload, indent=2, sort_keys=True)
     )
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id=(
-                    "NEG-DCP-PGM-GRAM-BLOCK-ENCODING-"
-                    "NORMALIZATION"
-                ),
-                source=str(output_path),
-                claim=(
-                    "A polynomial projected block encoding of the DCP PGM "
-                    "Gram operator immediately gives a polynomial PGM circuit."
-                ),
-                reason_invalid=(
-                    "The direct circuit encodes G/N. Legal density-one fibers "
-                    "have equality amplitude sqrt(c_s/2^m), so generic "
-                    "rescaling or coherent fiber erasure costs "
-                    "sqrt(2^m/c_s), exponential on almost all legal inputs."
-                ),
-                lesson=(
-                    "Search only for a structured preconditioner or collision "
-                    "walk that rescales all legal fibers collectively; do not "
-                    "count the unscaled block encoding as implementation."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload[
-                    "falsifiers_triggered"
-                ],
-                artifacts={
-                    "dcp_pgm_gram_block_encoding": str(
-                        output_path
-                    )
-                },
-            )
-        )
     return payload
 
 

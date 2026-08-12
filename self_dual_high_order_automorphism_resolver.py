@@ -339,46 +339,6 @@ def write_self_dual_high_order_automorphism_resolver(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        for record in payload["records"]:
-            if not record["rigidity_certified"]:
-                continue
-            upsert_negative_result(
-                NegativeResultRecord(
-                    id=(
-                        "NEG-CODE-SELF-DUAL-HIGH-ORDER-RIGID-"
-                        + str(record["instance_id"]).upper()
-                    ),
-                    source=str(path),
-                    claim=(
-                        f"{record['instance_id']} remains outside the rigid "
-                        "graph-isomorphism-style rowspace-HSP stratum."
-                    ),
-                    reason_invalid=record["interpretation"],
-                    lesson=(
-                        "Increase exact support order before interpreting sparse "
-                        "bounded-weight structure as an HSP opening."
-                    ),
-                    applies_to=[registry_candidate_id, registry_experiment_id],
-                    evidence=record,
-                )
-            )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_high_order_automorphism_resolver": str(path)
-                },
-            )
-        )
     return payload
 
 

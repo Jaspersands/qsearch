@@ -500,54 +500,6 @@ def write_character_ratio_contract_report(
     payload = asdict(run_character_ratio_contract())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id=(
-                    "NEG-CODE-WREATH-POINTWISE-CHARACTER-"
-                    "BOUND-NOT-MOMENT"
-                ),
-                source=str(path),
-                claim=(
-                    "A pointwise symmetric-group character-ratio bound alone "
-                    "proves collision-free wreath-frame contraction."
-                ),
-                reason_invalid=(
-                    "The moment expansion contains correlated subset words; "
-                    "their low-transposition-length contribution and aligned "
-                    "signs require a separate joint anti-concentration theorem."
-                ),
-                lesson=(
-                    "Build a short-word profile and prove aggregate product "
-                    "mixing across all globally distinct source partitions."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_character_ratio_contract": str(path)
-                },
-            )
-        )
     return payload
 
 

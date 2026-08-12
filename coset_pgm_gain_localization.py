@@ -373,53 +373,6 @@ def write_pgm_gain_localization_report(
     )
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-FINITE-LOW-CONDITION-PGM-FRAME-NOT-SCALABLE",
-                source=str(output_path),
-                claim=(
-                    "Broad finite PGM gain and low finite frame condition "
-                    "numbers imply a scalable collective measurement."
-                ),
-                reason_invalid=(
-                    "The frames are still formed as explicit hidden-orbit "
-                    "averages and inverted as dense matrices. No uniform "
-                    "harmonic block encoding, all-n spectrum theorem, or "
-                    "hidden-involution decoder is known."
-                ),
-                lesson=(
-                    "Target a representation-theoretic average-frame block "
-                    "encoding and inverse-root transform; do not optimize "
-                    "another bounded-support separator."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = (
-            registry_result_id
-            or f"RESULT-{registry_experiment_id}-COSET"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=dict(payload["headline_metrics"]),
-                falsifiers_triggered=list(payload["falsifiers_triggered"]),
-                artifacts={"coset_pgm_gain_localization": str(output_path)},
-            )
-        )
     return payload
 
 

@@ -394,55 +394,6 @@ def write_commutant_information_obstruction_report(
     payload = asdict(build_commutant_information_obstruction_report())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-COMMUTANT-ONLY-HIDDEN-INVOLUTION-DECODER",
-                source=str(output_path),
-                claim=(
-                    "Target, multiplicity, or Racah labels from "
-                    "diagonal-action commutant effects can identify the "
-                    "individual hidden involution."
-                ),
-                reason_invalid=(
-                    "Every such outcome probability is constant over the "
-                    "hidden conjugacy class, so its mutual information is zero."
-                ),
-                lesson=(
-                    "Retain commutant transforms only as preprocessing and "
-                    "require a carrier-sensitive covariant final POVM."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-SUCCESS",
-                    "PO-NO-GO",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = (
-            registry_result_id
-            or f"RESULT-{registry_experiment_id}-COSET"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=dict(payload["headline_metrics"]),
-                falsifiers_triggered=list(payload["falsifiers_triggered"]),
-                artifacts={
-                    "coset_commutant_information_obstruction": str(
-                        output_path
-                    )
-                },
-            )
-        )
     return payload
 
 

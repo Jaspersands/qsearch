@@ -97,23 +97,6 @@ def write_hidden_shift_sweep(
     payload = hidden_shift_sweep(active_n, active_samples, active_families, shift=shift, seed=seed)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_scaling_run(
-            {
-                "id": payload["id"],
-                "created_at": payload["created_at"],
-                "kind": payload["kind"],
-                "status": payload["status"],
-                "summary": payload["summary"],
-                "row_count": len(payload["rows"]),
-                "artifacts": {"hidden_shift_sweep": str(output_path)},
-                "headline_metrics": {
-                    "max_best_two_adic_valuation": max(row["best_two_adic_valuation"] for row in payload["rows"]),
-                    "max_restricted_query_survivor_count": max(row["restricted_query_survivor_count"] for row in payload["rows"]),
-                    "max_high_dequantization_risk_count": max(row["high_dequantization_risk_count"] for row in payload["rows"]),
-                },
-            }
-        )
     return payload
 
 

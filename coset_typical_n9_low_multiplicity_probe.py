@@ -607,38 +607,6 @@ def write_n9_low_multiplicity_report(
     payload = asdict(build_n9_low_multiplicity_report(recompute=recompute))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-TYPICAL-N9-LOW-MULTIPLICITY-SURVIVAL-NOT-ALL-TARGET",
-                source=str(output_path),
-                claim=(
-                    "Survival on every n=9 target of multiplicity at most ten establishes adjacent-size robustness."
-                ),
-                reason_invalid=(
-                    "Thirteen n=9 targets of multiplicity 11 through 28 remain unaudited and may contain collisions or much smaller gaps."
-                ),
-                lesson=(
-                    "Move next to multiplicity eleven with the bounded-memory contraction, then stop immediately on a repeated root."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_typical_n9_low_multiplicity_probe": str(output_path)},
-            )
-        )
     return payload
 
 

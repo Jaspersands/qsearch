@@ -368,55 +368,6 @@ def write_mask_hypergraph_reduction_report(
     payload = asdict(run_mask_hypergraph_reduction())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id=(
-                    "NEG-CODE-WREATH-GLOBAL-DISTINCTNESS-"
-                    "NOT-JOINT-INDEPENDENCE"
-                ),
-                source=str(path),
-                claim=(
-                    "Globally distinct source partitions make every distinct-"
-                    "mask joint character product vanish."
-                ),
-                reason_invalid=(
-                    "Exact collision-free W5 triangle mask families have "
-                    "nonzero character products despite having no repeated "
-                    "source partition."
-                ),
-                lesson=(
-                    "Use private-column elimination first, then prove "
-                    "anti-concentration on the surviving dense two-core mask "
-                    "incidence hypergraphs."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_mask_hypergraph_reduction": str(path)
-                },
-            )
-        )
     return payload
 
 

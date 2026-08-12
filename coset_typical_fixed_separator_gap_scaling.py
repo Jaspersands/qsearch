@@ -311,38 +311,6 @@ def write_fixed_separator_gap_report(
     payload = asdict(build_fixed_separator_gap_report(n_values=n_values))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-TYPICAL-FOUR-SIZE-SEPARATOR-GAP-NOT-ASYMPTOTIC",
-                source=str(output_path),
-                claim=(
-                    "Finite simple spectra and a positive exact n=8 gap establish an inverse-polynomial all-n separator gap."
-                ),
-                reason_invalid=(
-                    "Only n=5 through n=8 are audited, the finite gaps fall sharply, and the fitted exponent is descriptive rather than a proved bound."
-                ),
-                lesson=(
-                    "Test n=9 next, then derive an exact class-algebra recurrence and root-separation theorem before synthesizing phase estimation."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_typical_fixed_separator_gap_scaling": str(output_path)},
-            )
-        )
     return payload
 
 

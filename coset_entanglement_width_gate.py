@@ -290,51 +290,6 @@ def write_entanglement_width_gate_report(
     payload = asdict(build_entanglement_width_gate_report())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-BOUNDED-COPY-MECHANISM-AS-GI-DECODER",
-                source=str(output_path),
-                claim=(
-                    "A fixed one-, two-, or three-register representation "
-                    "measurement can provide nonnegligible information for "
-                    "the GI-relevant hidden-involution family."
-                ),
-                reason_invalid=(
-                    "Primary multiregister lower bounds require entanglement "
-                    "across Omega(n log n) coset states."
-                ),
-                lesson=(
-                    "Keep bounded-copy modules as local primitives only and "
-                    "require an explicit growing-width measurement network."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-SUCCESS",
-                    "PO-NO-GO",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = (
-            registry_result_id
-            or f"RESULT-{registry_experiment_id}-COSET"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=dict(payload["headline_metrics"]),
-                falsifiers_triggered=list(payload["falsifiers_triggered"]),
-                artifacts={"coset_entanglement_width_gate": str(output_path)},
-            )
-        )
     return payload
 
 

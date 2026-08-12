@@ -389,38 +389,6 @@ def write_stable_subspace_transition_report(
     payload = asdict(build_stable_subspace_transition_report(n_values=n_values))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-STABLE-CHANNEL-AS-CLOSED-RACAH-SUBSPACE",
-                source=str(output_path),
-                claim=(
-                    "The proved 2x4 stable multiplicity labels close under left/right recoupling and therefore form an associator."
-                ),
-                reason_invalid=(
-                    "Gauge-invariant projector overlap shows substantial probability leakage into complementary intermediate sectors."
-                ),
-                lesson=(
-                    "Classify and coherently cover the complementary sectors before searching for a transition filter or decoder."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_stable_subspace_transition_probe": str(output_path)},
-            )
-        )
     return payload
 
 

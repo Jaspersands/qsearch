@@ -659,48 +659,6 @@ def write_self_dual_wreath_character_moments(
     payload = asdict(run_self_dual_wreath_character_moments())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-SELF-DUAL-WREATH-SECOND-MOMENT-NOT-SPECTRAL-INVERSE",
-                source=str(path),
-                claim=(
-                    "An exact all-n second moment supplies the support gap "
-                    "and a blockwise frame pseudoinverse."
-                ),
-                reason_invalid=(
-                    "The second moment controls effective rank but not the "
-                    "minimum positive eigenvalue. Third and higher moments "
-                    "lack a polynomial symbolic contraction."
-                ),
-                lesson=(
-                    "Use the character engine to derive higher-moment or "
-                    "minimal-polynomial recurrences; require a support-gap "
-                    "theorem before pseudoinversion."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = (
-            registry_result_id
-            or f"RESULT-{registry_experiment_id}-LATEST"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_character_moments": str(path)
-                },
-            )
-        )
     return payload
 
 

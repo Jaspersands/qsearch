@@ -414,42 +414,6 @@ def write_independent_third_generator_report(
     payload = asdict(build_independent_third_generator_report())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-TYPICAL-FINITE-THIRD-GENERATOR-REPAIR-NOT-UNIFORM-GAP",
-                source=str(output_path),
-                claim=(
-                    "The exact n=8 low-multiplicity TC1 certificates are sufficient evidence for a uniform efficient multiplicity measurement."
-                ),
-                reason_invalid=(
-                    "The certificate covers six of 20 nontrivial targets at n=8 and proves neither the 14 higher-multiplicity targets nor all-n coverage, inverse-polynomial normalized gaps, coherent implementation, or decoding."
-                ),
-                lesson=(
-                    "Retain TC1 as the first surviving third generator, but next develop a higher-multiplicity transfer method, test adjacent n, and bound exact parameterized gaps before any algorithmic interpretation."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "coset_typical_independent_third_generator_certificate": str(
-                        output_path
-                    )
-                },
-            )
-        )
     return payload
 
 

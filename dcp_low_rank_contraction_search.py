@@ -523,19 +523,4 @@ def write_low_rank_contraction_search(
                 evidence=payload["headline_metrics"],
             )
         )
-    if write_registry:
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-LOW-RANK-CONTRACTION"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_low_rank_contraction_search": str(path)},
-            )
-        )
     return payload

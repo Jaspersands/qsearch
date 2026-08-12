@@ -653,53 +653,6 @@ def write_affine_recoupling_bundle_report(
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
 
-    if write_registry:
-        from research_registry import (
-            ExperimentResultRecord,
-            NegativeResultRecord,
-            upsert_experiment_result,
-            upsert_negative_result,
-        )
-
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-SELF-DUAL-WREATH-AFFINE-RECOUPLING-BUNDLE",
-                source=registry_experiment_id,
-                claim=(
-                    "Uniform affine coefficient support implies universal scalar coefficient fibers."
-                ),
-                reason_invalid=(
-                    "Globally source-distinct S6 control falsifies universal scalar coefficient fibers."
-                ),
-                lesson=(
-                    "All-n target requires matrix partial support plus uniform coherent SELECT."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_affine_recoupling_bundle": str(path)
-                },
-            )
-        )
     return payload
 
 

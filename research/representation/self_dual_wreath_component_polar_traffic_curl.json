@@ -1,0 +1,258 @@
+{
+  "created_at": "2026-08-12T03:42:34.967437+00:00",
+  "theorem_contract": {
+    "marked_traffic": "every fixed exact leaf-label partition has noncrossing limit alpha^blocks and every crossing exact pattern vanishes",
+    "fixed_ridge": "for fixed eta, polynomial L2 approximation and all higher moments identify C(L(L+eta)^-1)/D with sparse Wishart/Haar traffic",
+    "support": "the MP positive edge and outcome-free curl stability permit eta->0",
+    "comparator": "gamma^2(1-gamma) for gamma=1/alpha and maximum block fraction o(1)",
+    "natural_full_support": "E C(supp(L_n))/D_n-(alpha_n-1)/alpha_n^3 -> 0",
+    "exact_dependency": "E C(Pi_n)/D_n has the same limit because common codimension is o(D_n)",
+    "conditioning": "bounded-curl conditioning changes the expectation by o(1)",
+    "scope": "This proves a normalized component fourth-moment mechanism. No coherent measurement, decoder, complexity bound, or speedup follows automatically."
+  },
+  "theorem": {
+    "polynomial_traffic_input": "every fixed exact leaf-label partition has noncrossing limit alpha^blocks and every crossing exact pattern vanishes",
+    "fixed_ridge_transfer": "for fixed eta, polynomial L2 approximation and all higher moments identify C(L(L+eta)^-1)/D with sparse Wishart/Haar traffic",
+    "support_limit": "the MP positive edge and outcome-free curl stability permit eta->0",
+    "sparse_haar_comparator": "gamma^2(1-gamma) for gamma=1/alpha and maximum block fraction o(1)",
+    "natural_limit": "E C(supp(L_n))/D_n-(alpha_n-1)/alpha_n^3 -> 0",
+    "common_compression_consequence": "E C(Pi_n)/D_n has the same limit because common codimension is o(D_n)",
+    "globally_distinct_consequence": "bounded-curl conditioning changes the expectation by o(1)",
+    "theorem_verified": true,
+    "status": "positive-natural-component-polar-traffic-limit-proved"
+  },
+  "finite_controls": [
+    {
+      "control_id": "D8-N16-Q4-ETA-1E-1",
+      "physical_dimension": 8,
+      "coefficient_dimension": 16,
+      "leaf_count": 4,
+      "ridge_parameter": 0.1,
+      "support_rank": 8,
+      "support_ridge_error_squared": 0.13207358685714315,
+      "spectral_tail_identity_value": 0.13207358685714338,
+      "normalized_support_curl": 0.04469789473635831,
+      "normalized_ridge_curl": 0.022698545491015798,
+      "normalized_curl_difference": 0.02199934924534251,
+      "stability_upper_bound": 2.1878835925309605,
+      "exact_tail_identity_verified": true,
+      "curl_stability_verified": true,
+      "status": "polar-support-curl-stable-under-bounded-ridge"
+    },
+    {
+      "control_id": "D8-N16-Q4-ETA-1E-2",
+      "physical_dimension": 8,
+      "coefficient_dimension": 16,
+      "leaf_count": 4,
+      "ridge_parameter": 0.01,
+      "support_rank": 8,
+      "support_ridge_error_squared": 0.0020572216116678554,
+      "spectral_tail_identity_value": 0.002057221611667857,
+      "normalized_support_curl": 0.04469789473635831,
+      "normalized_ridge_curl": 0.040725250791070075,
+      "normalized_curl_difference": 0.0039726439452882345,
+      "stability_upper_bound": 0.25863292500809504,
+      "exact_tail_identity_verified": true,
+      "curl_stability_verified": true,
+      "status": "polar-support-curl-stable-under-bounded-ridge"
+    },
+    {
+      "control_id": "D10-N20-Q4-ETA-3E-2",
+      "physical_dimension": 10,
+      "coefficient_dimension": 20,
+      "leaf_count": 4,
+      "ridge_parameter": 0.03,
+      "support_rank": 10,
+      "support_ridge_error_squared": 0.01051592989565905,
+      "spectral_tail_identity_value": 0.010515929895659037,
+      "normalized_support_curl": 0.04922638186688112,
+      "normalized_ridge_curl": 0.04113634235164555,
+      "normalized_curl_difference": 0.00809003951523557,
+      "stability_upper_bound": 0.5272651365378503,
+      "exact_tail_identity_verified": true,
+      "curl_stability_verified": true,
+      "status": "polar-support-curl-stable-under-bounded-ridge"
+    },
+    {
+      "control_id": "D12-N24-Q8-ETA-1E-2",
+      "physical_dimension": 12,
+      "coefficient_dimension": 24,
+      "leaf_count": 8,
+      "ridge_parameter": 0.01,
+      "support_rank": 12,
+      "support_ridge_error_squared": 0.001822253623758581,
+      "spectral_tail_identity_value": 0.001822253623758579,
+      "normalized_support_curl": 0.08063009750851134,
+      "normalized_ridge_curl": 0.07519278307164946,
+      "normalized_curl_difference": 0.005437314436861879,
+      "stability_upper_bound": 0.19838162801784118,
+      "exact_tail_identity_verified": true,
+      "curl_stability_verified": true,
+      "status": "polar-support-curl-stable-under-bounded-ridge"
+    }
+  ],
+  "scaling_records": [
+    {
+      "child_aspect": 2.0,
+      "coefficient_support_ratio": 0.5,
+      "sparse_haar_polar_curl_limit": 0.125,
+      "uniform_natural_lower_bound": 0.046875,
+      "positive_limit": true,
+      "marked_traffic_input_proved": true,
+      "support_ridge_tail_input_proved": true,
+      "common_codimension_transfer_proved": true,
+      "algorithm_compiled": false,
+      "status": "positive-natural-polar-traffic-limit-algorithm-open"
+    },
+    {
+      "child_aspect": 2.25,
+      "coefficient_support_ratio": 0.4444444444444444,
+      "sparse_haar_polar_curl_limit": 0.10973936899862825,
+      "uniform_natural_lower_bound": 0.046875,
+      "positive_limit": true,
+      "marked_traffic_input_proved": true,
+      "support_ridge_tail_input_proved": true,
+      "common_codimension_transfer_proved": true,
+      "algorithm_compiled": false,
+      "status": "positive-natural-polar-traffic-limit-algorithm-open"
+    },
+    {
+      "child_aspect": 2.5,
+      "coefficient_support_ratio": 0.4,
+      "sparse_haar_polar_curl_limit": 0.09600000000000002,
+      "uniform_natural_lower_bound": 0.046875,
+      "positive_limit": true,
+      "marked_traffic_input_proved": true,
+      "support_ridge_tail_input_proved": true,
+      "common_codimension_transfer_proved": true,
+      "algorithm_compiled": false,
+      "status": "positive-natural-polar-traffic-limit-algorithm-open"
+    },
+    {
+      "child_aspect": 3.0,
+      "coefficient_support_ratio": 0.3333333333333333,
+      "sparse_haar_polar_curl_limit": 0.07407407407407408,
+      "uniform_natural_lower_bound": 0.046875,
+      "positive_limit": true,
+      "marked_traffic_input_proved": true,
+      "support_ridge_tail_input_proved": true,
+      "common_codimension_transfer_proved": true,
+      "algorithm_compiled": false,
+      "status": "positive-natural-polar-traffic-limit-algorithm-open"
+    },
+    {
+      "child_aspect": 3.5,
+      "coefficient_support_ratio": 0.2857142857142857,
+      "sparse_haar_polar_curl_limit": 0.05830903790087463,
+      "uniform_natural_lower_bound": 0.046875,
+      "positive_limit": true,
+      "marked_traffic_input_proved": true,
+      "support_ridge_tail_input_proved": true,
+      "common_codimension_transfer_proved": true,
+      "algorithm_compiled": false,
+      "status": "positive-natural-polar-traffic-limit-algorithm-open"
+    },
+    {
+      "child_aspect": 4.0,
+      "coefficient_support_ratio": 0.25,
+      "sparse_haar_polar_curl_limit": 0.046875,
+      "uniform_natural_lower_bound": 0.046875,
+      "positive_limit": true,
+      "marked_traffic_input_proved": true,
+      "support_ridge_tail_input_proved": true,
+      "common_codimension_transfer_proved": true,
+      "algorithm_compiled": false,
+      "status": "positive-natural-polar-traffic-limit-algorithm-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "prove_marked_polynomial_traffic_for_all_fixed_orders",
+      "resolved": true,
+      "resolution": "The orientation-partition traffic theorem localizes every exact equality pattern to its noncrossing support."
+    },
+    {
+      "obligation": "extend_polynomial_traffic_to_the_support_polar_factor",
+      "resolved": true,
+      "resolution": "Use a fixed support ridge, polynomial L2 approximation with higher-moment uniform integrability, then the MP ridge tail."
+    },
+    {
+      "obligation": "prove_positive_natural_exact_dependency_component_M4",
+      "resolved": true,
+      "resolution": "The sparse polar limit has floor 3/64 and common compression changes normalized curl by o(1)."
+    },
+    {
+      "obligation": "compile_and_decode_the_component_measurement",
+      "resolved": false,
+      "resolution": "Need a coherent implementation of the support-polar block observable and an information theorem linking it to hidden-involution recovery."
+    },
+    {
+      "obligation": "prove_end_to_end_quantum_speedup",
+      "resolved": false,
+      "resolution": "Query preparation, gate complexity, sample complexity, classical baselines, and a reduction to a hard problem remain open."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Marginal MP moments are enough for polar block traffic.",
+      "resolved": true,
+      "resolution": "False in general; the proof explicitly uses every fixed leaf-label equality pattern, a strictly stronger theorem."
+    },
+    {
+      "objection": "Moment convergence permits replacing support in operator norm.",
+      "resolved": true,
+      "resolution": "No operator-norm replacement is claimed. The two-limit argument is normalized Schatten/trace only and tolerates sparse outliers."
+    },
+    {
+      "objection": "The natural row space has been assumed Haar.",
+      "resolved": true,
+      "resolution": "Only one fixed normalized block functional is identified through equality-pattern traffic; no norm-level Haar universality is asserted."
+    },
+    {
+      "objection": "Nonuniform natural leaf ranks invalidate the equal-block comparator.",
+      "resolved": true,
+      "resolution": "Uniform orientation-rank concentration makes relative rank imbalance vanish and the maximum coefficient block fraction o(1)."
+    },
+    {
+      "objection": "Positive component M4 is already a Shor-level algorithm.",
+      "resolved": false,
+      "resolution": "It is only a structural measurement signal. Compilation, decoding, complexity, and classical-separation proofs remain mandatory."
+    }
+  ],
+  "headline_metrics": {
+    "polar_traffic_functional_calculus_theorem_count": 1,
+    "natural_full_support_curl_limit_theorem_count": 1,
+    "natural_exact_dependency_M4_positive_theorem_count": 1,
+    "uniform_aspect_component_M4_lower_bound": 0.046875,
+    "finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "maximum_finite_tail_identity_residual": 2.220446049250313e-16,
+    "maximum_exact_haar_finite_to_asymptotic_residual": 1.2128712871289915e-05,
+    "coherent_component_measurement_compiler_count": 0,
+    "hidden_involution_decoder_count": 0,
+    "end_to_end_speedup_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "all_fixed_marked_traffic_proved": true,
+    "polar_functional_calculus_transfer_proved": true,
+    "natural_full_support_canonical_curl_positive": true,
+    "natural_exact_dependency_component_M4_positive": true,
+    "global_distinct_positive_component_M4": true,
+    "coherent_component_measurement_compiled": false,
+    "decoder_information_gain_proved": false,
+    "query_and_gate_complexity_polynomial": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "A positive natural noncommutative component signal is proved, but no executable measurement or complexity separation is yet available."
+  },
+  "status": "positive-natural-component-M4-proved-algorithmic-realization-open",
+  "summary": "Transferred all-fixed marked orientation traffic through the polar support and proved a uniform positive natural component M4 limit.",
+  "falsifiers_triggered": [
+    "Marginal MP moments alone would not justify the polar transfer; marked traffic is essential.",
+    "No operator-norm Haar or hard-edge theorem is used or claimed.",
+    "Sparse spectral outliers are removed only in normalized trace via the support ridge.",
+    "The commuting-whitening counterfamily does not share the proved natural equality-pattern traffic.",
+    "Positive component M4 is not a compiled measurement, decoder, algorithm, or speedup."
+  ]
+}

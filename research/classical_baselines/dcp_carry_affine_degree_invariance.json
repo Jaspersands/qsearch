@@ -1,0 +1,278 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "The theorem is symbolic on the full cube: every set of 2^j odd labels has coefficient one, independently of the finite controls.",
+      "challenge": "The finite ANF trend may be an interpolation artifact.",
+      "resolved": true
+    },
+    {
+      "answer": "An invertible affine substitution cannot change Boolean algebraic degree because applying its inverse gives the opposite inequality.",
+      "challenge": "A dense GL map can lower the polynomial degree.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Integer addition evaluates this predicate with a polynomial-size arithmetic circuit despite its ANF degree.",
+      "challenge": "High ANF degree proves computational hardness.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Degree and Schmidt rank are different invariants; the all-GL approximate-rank question remains open.",
+      "challenge": "The result closes dense linear tensorization.",
+      "resolved": true
+    }
+  ],
+  "affine_controls": [
+    {
+      "degree_preserved": true,
+      "linear_rank": 6,
+      "linear_rows": [
+        3,
+        6,
+        12,
+        24,
+        48,
+        32
+      ],
+      "modulus_bits": 4,
+      "original_degree": 4,
+      "output_bit": 2,
+      "status": "invertible-affine-anf-degree-preserved",
+      "transformed_degree": 4,
+      "translation_mask": 41,
+      "variable_count": 6
+    },
+    {
+      "degree_preserved": true,
+      "linear_rank": 7,
+      "linear_rows": [
+        3,
+        6,
+        12,
+        24,
+        48,
+        96,
+        64
+      ],
+      "modulus_bits": 4,
+      "original_degree": 4,
+      "output_bit": 2,
+      "status": "invertible-affine-anf-degree-preserved",
+      "transformed_degree": 4,
+      "translation_mask": 43,
+      "variable_count": 7
+    }
+  ],
+  "claim_gate": {
+    "arithmetic_circuit_route_alive": true,
+    "auxiliary_variable_low_degree_lift_route_alive": true,
+    "bounded_degree_full_cube_carry_route_alive": false,
+    "dense_gl_bounded_degree_escape_alive": false,
+    "dense_gl_tensor_rank_route_alive": true,
+    "high_anf_degree_implies_hardness": false,
+    "polynomial_subset_sum_solver_ruled_out": false,
+    "reason": "Lucas' theorem forces affine-invariant linear ANF degree on a random intermediate carry, but high degree alone is not a time, tensor-rank, or circuit lower bound.",
+    "speedup_claim_allowed": false
+  },
+  "coefficient_controls": [
+    {
+      "degree_ceiling": 4,
+      "exact_anf_degree": 4,
+      "exact_degree_theorem_applicable": true,
+      "exact_degree_theorem_verified": true,
+      "exact_top_degree_monomial_count": 15,
+      "generating_function_coefficient_failure_count": 0,
+      "labels": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11
+      ],
+      "lucas_truth_identity_failure_count": 0,
+      "modulus_bits": 4,
+      "odd_label_count": 6,
+      "odd_top_monomial_lower_bound": 15,
+      "output_bit": 2,
+      "status": "lucas-generating-function-degree-theorem-verified",
+      "target_bit": 0
+    },
+    {
+      "degree_ceiling": 4,
+      "exact_anf_degree": 4,
+      "exact_degree_theorem_applicable": true,
+      "exact_degree_theorem_verified": true,
+      "exact_top_degree_monomial_count": 1,
+      "generating_function_coefficient_failure_count": 0,
+      "labels": [
+        3,
+        5,
+        7,
+        9,
+        2,
+        6,
+        12
+      ],
+      "lucas_truth_identity_failure_count": 0,
+      "modulus_bits": 4,
+      "odd_label_count": 4,
+      "odd_top_monomial_lower_bound": 1,
+      "output_bit": 2,
+      "status": "lucas-generating-function-degree-theorem-verified",
+      "target_bit": 1
+    },
+    {
+      "degree_ceiling": 2,
+      "exact_anf_degree": 2,
+      "exact_degree_theorem_applicable": true,
+      "exact_degree_theorem_verified": true,
+      "exact_top_degree_monomial_count": 6,
+      "generating_function_coefficient_failure_count": 0,
+      "labels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "lucas_truth_identity_failure_count": 0,
+      "modulus_bits": 4,
+      "odd_label_count": 4,
+      "odd_top_monomial_lower_bound": 6,
+      "output_bit": 1,
+      "status": "lucas-generating-function-degree-theorem-verified",
+      "target_bit": 0
+    }
+  ],
+  "created_at": "2026-08-11T17:37:08.871808+00:00",
+  "falsifiers_triggered": [
+    "Finite full-domain ANF trends are replaced by a uniform Lucas/generating-function identity.",
+    "Dense GL preprocessing cannot make every carry constraint bounded degree in the original variable count.",
+    "High ANF degree is not promoted into subset-sum hardness or a quantum advantage.",
+    "Auxiliary-variable arithmetic formulations and dense-GL tensor-rank collapse remain open."
+  ],
+  "headline_metrics": {
+    "affine_invariance_control_count": 2,
+    "auxiliary_variable_no_go_count": 0,
+    "coefficient_control_count": 3,
+    "dense_affine_degree_invariance_theorem_count": 1,
+    "finite_control_failure_count": 0,
+    "lucas_generating_function_theorem_count": 1,
+    "minimum_certified_degree_fraction": 0.12121212121212122,
+    "minimum_top_monomial_log2_fraction": 0.2924262833620818,
+    "new_quantum_algorithm_count": 0,
+    "random_linear_degree_theorem_count": 1,
+    "scaling_record_count": 4,
+    "subset_sum_time_lower_bound_count": 0,
+    "tensor_rank_no_go_count": 0
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-DCP-CARRY-LUCAS-ANF-FORMULA",
+      "resolved": true,
+      "statement": "Derive every carry ANF coefficient from Lucas' theorem and the Boolean generating-function factorization."
+    },
+    {
+      "id": "PO-DCP-CARRY-DENSE-AFFINE-DEGREE-ESCAPE",
+      "resolved": true,
+      "statement": "Determine whether dense invertible affine preprocessing can reduce the selected carry to bounded degree."
+    },
+    {
+      "id": "PO-DCP-CARRY-AUXILIARY-VARIABLE-COMPRESSION",
+      "resolved": false,
+      "statement": "Construct or obstruct a polynomial-size low-degree lift using carry or arithmetic auxiliary variables."
+    },
+    {
+      "id": "PO-DCP-DENSE-LINEAR-SPLIT-RANK",
+      "resolved": false,
+      "statement": "Prove or refute exponential approximate Schmidt rank for all dense GL(m,2) splits; high ANF degree is insufficient."
+    }
+  ],
+  "scaling_records": [
+    {
+      "affine_invariant_linear_degree_certified": true,
+      "bounded_degree_after_dense_gl_ruled_out": true,
+      "certified_anf_degree": 16,
+      "certified_degree_fraction": 0.12121212121212122,
+      "high_degree_failure_probability_log2_upper_bound": -5.289881816592866,
+      "modulus_bits": 128,
+      "odd_label_threshold": 44,
+      "register_count": 132,
+      "register_offset": 4,
+      "selected_output_bit": 4,
+      "status": "random-carry-linear-degree-affine-invariant",
+      "top_degree_monomial_log2_lower_bound": 38.6002694037948
+    },
+    {
+      "affine_invariant_linear_degree_certified": true,
+      "bounded_degree_after_dense_gl_ruled_out": true,
+      "certified_anf_degree": 32,
+      "certified_degree_fraction": 0.12307692307692308,
+      "high_degree_failure_probability_log2_upper_bound": -10.41946418419807,
+      "modulus_bits": 256,
+      "odd_label_threshold": 86,
+      "register_count": 260,
+      "register_offset": 4,
+      "selected_output_bit": 5,
+      "status": "random-carry-linear-degree-affine-invariant",
+      "top_degree_monomial_log2_lower_bound": 78.40019905123766
+    },
+    {
+      "affine_invariant_linear_degree_certified": true,
+      "bounded_degree_after_dense_gl_ruled_out": true,
+      "certified_anf_degree": 64,
+      "certified_degree_fraction": 0.12403100775193798,
+      "high_degree_failure_probability_log2_upper_bound": -20.678628919408474,
+      "modulus_bits": 512,
+      "odd_label_threshold": 172,
+      "register_count": 516,
+      "register_offset": 4,
+      "selected_output_bit": 6,
+      "status": "random-carry-linear-degree-affine-invariant",
+      "top_degree_monomial_log2_lower_bound": 159.79733543468907
+    },
+    {
+      "affine_invariant_linear_degree_certified": true,
+      "bounded_degree_after_dense_gl_ruled_out": true,
+      "certified_anf_degree": 128,
+      "certified_degree_fraction": 0.1245136186770428,
+      "high_degree_failure_probability_log2_upper_bound": -41.19695838982929,
+      "modulus_bits": 1024,
+      "odd_label_threshold": 342,
+      "register_count": 1028,
+      "register_offset": 4,
+      "selected_output_bit": 7,
+      "status": "random-carry-linear-degree-affine-invariant",
+      "top_degree_monomial_log2_lower_bound": 321.74292018501865
+    }
+  ],
+  "status": "dense-affine-bounded-degree-carry-route-closed",
+  "summary": "Upgraded finite carry-degree evidence to an exact symbolic theorem: a random density-one instance has an Omega(m)-degree carry with exponentially many top ANF monomials, invariant under every dense invertible affine reparameterization.",
+  "theorem": {
+    "affine_invariance": "deg(f composed with L)=deg(f) for every invertible affine L, by applying the degree upper bound to L and L inverse",
+    "anf_coefficient_formula": "hat f(I)=[z^(2^j)] product_(i in I)((1+z)^a_i-1) over F_2",
+    "arbitrary_invertible_affine_degree_reduction_ruled_out": true,
+    "auxiliary_variable_reformulation_ruled_out": false,
+    "coefficient_formula_proved": true,
+    "exact_degree_condition": "if O labels are odd and O>=2^j, degree(f_j)=2^j and at least binom(O,2^j) top-degree monomials occur",
+    "linear_degree_with_exponentially_many_terms_proved": true,
+    "lucas_bit_identity": "bit_j(s)=binom(s,2^j) mod 2 for every nonnegative integer s",
+    "lucas_identity_proved": true,
+    "obstruction_scope": "bounded-degree ANF reconstruction after arbitrary dense affine Boolean preprocessing, without auxiliary variables",
+    "polynomial_subset_sum_solver_ruled_out": false,
+    "random_label_consequence": "for 2^j in (m/12,m/6], degree Theta(m) with exp(Omega(m)) top monomials except with probability exp(-m/36)",
+    "status": "dense-affine-bounded-degree-carry-route-closed",
+    "tensor_rank_collapse_ruled_out": false,
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "conclusion": "with failure exp(-Omega(m)), some carry predicate retains degree Omega(m) and exponential ANF top support",
+    "non_claim": "no lower bound for auxiliary-variable systems, arithmetic circuits, tensor networks, quantum circuits, or decoding",
+    "predicate": "one selected output-bit equality of the exact integer subset sum on the full Boolean cube",
+    "preprocessing": "an arbitrary label/target-adaptive invertible affine map on the same m Boolean variables",
+    "source": "m=q+O(1) independent uniform labels in Z_(2^q); only their independent parity bits enter the probability bound"
+  }
+}

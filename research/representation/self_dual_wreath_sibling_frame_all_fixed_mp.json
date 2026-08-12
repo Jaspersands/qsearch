@@ -1,0 +1,289 @@
+{
+  "created_at": "2026-08-12T03:42:57.514411+00:00",
+  "theorem_contract": {
+    "normal_form": "E Tr(F^p)/D=g^-p sum_U c_u(U)#Hom(P(U),S_n)",
+    "entropy_filter": "|U|^u g^-ceil(log2|U|)=alpha^log2|U| g^(log2|U|-ceil(log2|U|))=o(1)",
+    "cube_section": "|U|=2^d and rank_R(U)=d iff U is the block-constant subspace of a d-block partition",
+    "topology": "P(U_pi) is free of rank p-d iff pi is noncrossing",
+    "word_measure": "every other power-two support leaves a fixed nontrivial residual word, whose S_n identity probability is o(1)",
+    "limit": "E Tr(F_n^p)/D_n-sum_d Narayana(p,d)alpha_n^d -> 0 for every fixed p",
+    "scope": "Independent Plancherel marginal moments at every fixed order are proved. Growing order, rates for shrinking thresholds, ridge curl, algorithms, and speedups are outside the theorem."
+  },
+  "theorem": {
+    "exact_support_expansion": "E Tr(F^p)/D=g^-p sum_U c_u(U)#Hom(P(U),S_n)",
+    "non_power_two_suppression": "|U|^u g^-ceil(log2|U|)=alpha^log2|U| g^(log2|U|-ceil(log2|U|))=o(1)",
+    "power_two_cube_section_classification": "|U|=2^d and rank_R(U)=d iff U is the block-constant subspace of a d-block partition",
+    "noncrossing_free_presentation_criterion": "P(U_pi) is free of rank p-d iff pi is noncrossing",
+    "crossing_word_suppression": "every other power-two support leaves a fixed nontrivial residual word, whose S_n identity probability is o(1)",
+    "limiting_moment_formula": "E Tr(F_n^p)/D_n-sum_d Narayana(p,d)alpha_n^d -> 0 for every fixed p",
+    "fixed_order_rate_scope": "word exposure gives a fixed-p vanishing bound, not control uniform in p and not an inverse-polynomial ridge-tail rate",
+    "every_fixed_independent_marginal_moment_proved": true,
+    "growing_order_local_law_proved": false,
+    "theorem_verified": true,
+    "status": "all-fixed-independent-sibling-frame-mp-moments-proved"
+  },
+  "classification_controls": [
+    {
+      "moment_order": 1,
+      "power_of_two_support_count": 1,
+      "rank_equality_support_count": 1,
+      "partition_support_count": 1,
+      "noncrossing_partition_support_count": 1,
+      "free_presentation_support_count": 1,
+      "narayana_counts_by_block_count": {
+        "1": 1
+      },
+      "free_counts_by_log_support_size": {
+        "1": 1
+      },
+      "extra_free_support_count": 0,
+      "missing_noncrossing_support_count": 0,
+      "cube_section_classification_verified": true,
+      "noncrossing_free_classification_verified": true,
+      "status": "power-two-leading-supports-exactly-noncrossing-partitions"
+    },
+    {
+      "moment_order": 2,
+      "power_of_two_support_count": 2,
+      "rank_equality_support_count": 2,
+      "partition_support_count": 2,
+      "noncrossing_partition_support_count": 2,
+      "free_presentation_support_count": 2,
+      "narayana_counts_by_block_count": {
+        "1": 1,
+        "2": 1
+      },
+      "free_counts_by_log_support_size": {
+        "1": 1,
+        "2": 1
+      },
+      "extra_free_support_count": 0,
+      "missing_noncrossing_support_count": 0,
+      "cube_section_classification_verified": true,
+      "noncrossing_free_classification_verified": true,
+      "status": "power-two-leading-supports-exactly-noncrossing-partitions"
+    },
+    {
+      "moment_order": 3,
+      "power_of_two_support_count": 5,
+      "rank_equality_support_count": 5,
+      "partition_support_count": 5,
+      "noncrossing_partition_support_count": 5,
+      "free_presentation_support_count": 5,
+      "narayana_counts_by_block_count": {
+        "1": 1,
+        "2": 3,
+        "3": 1
+      },
+      "free_counts_by_log_support_size": {
+        "1": 1,
+        "2": 3,
+        "3": 1
+      },
+      "extra_free_support_count": 0,
+      "missing_noncrossing_support_count": 0,
+      "cube_section_classification_verified": true,
+      "noncrossing_free_classification_verified": true,
+      "status": "power-two-leading-supports-exactly-noncrossing-partitions"
+    },
+    {
+      "moment_order": 4,
+      "power_of_two_support_count": 44,
+      "rank_equality_support_count": 15,
+      "partition_support_count": 15,
+      "noncrossing_partition_support_count": 14,
+      "free_presentation_support_count": 14,
+      "narayana_counts_by_block_count": {
+        "1": 1,
+        "2": 6,
+        "3": 6,
+        "4": 1
+      },
+      "free_counts_by_log_support_size": {
+        "1": 1,
+        "2": 6,
+        "3": 6,
+        "4": 1
+      },
+      "extra_free_support_count": 0,
+      "missing_noncrossing_support_count": 0,
+      "cube_section_classification_verified": true,
+      "noncrossing_free_classification_verified": true,
+      "status": "power-two-leading-supports-exactly-noncrossing-partitions"
+    },
+    {
+      "moment_order": 5,
+      "power_of_two_support_count": 6907,
+      "rank_equality_support_count": 52,
+      "partition_support_count": 52,
+      "noncrossing_partition_support_count": 42,
+      "free_presentation_support_count": 42,
+      "narayana_counts_by_block_count": {
+        "1": 1,
+        "2": 10,
+        "3": 20,
+        "4": 10,
+        "5": 1
+      },
+      "free_counts_by_log_support_size": {
+        "1": 1,
+        "2": 10,
+        "3": 20,
+        "4": 10,
+        "5": 1
+      },
+      "extra_free_support_count": 0,
+      "missing_noncrossing_support_count": 0,
+      "cube_section_classification_verified": true,
+      "noncrossing_free_classification_verified": true,
+      "status": "power-two-leading-supports-exactly-noncrossing-partitions"
+    }
+  ],
+  "double_count_controls": [
+    {
+      "symmetric_group_degree": 2,
+      "residual_source_pair_count": 0,
+      "moment_order": 1,
+      "child_orientation_count": 1,
+      "child_aspect": "1/2",
+      "row_tuple_count": 1,
+      "exact_support_count": 1,
+      "direct_two_color_moment": "1/2",
+      "support_presentation_moment": "1/2",
+      "exact_double_count_verified": true,
+      "status": "exact-marginal-support-double-count-verified"
+    },
+    {
+      "symmetric_group_degree": 2,
+      "residual_source_pair_count": 2,
+      "moment_order": 2,
+      "child_orientation_count": 4,
+      "child_aspect": "2",
+      "row_tuple_count": 16,
+      "exact_support_count": 2,
+      "direct_two_color_moment": "5",
+      "support_presentation_moment": "5",
+      "exact_double_count_verified": true,
+      "status": "exact-marginal-support-double-count-verified"
+    },
+    {
+      "symmetric_group_degree": 2,
+      "residual_source_pair_count": 2,
+      "moment_order": 3,
+      "child_orientation_count": 4,
+      "child_aspect": "2",
+      "row_tuple_count": 64,
+      "exact_support_count": 7,
+      "direct_two_color_moment": "14",
+      "support_presentation_moment": "14",
+      "exact_double_count_verified": true,
+      "status": "exact-marginal-support-double-count-verified"
+    },
+    {
+      "symmetric_group_degree": 2,
+      "residual_source_pair_count": 2,
+      "moment_order": 4,
+      "child_orientation_count": 4,
+      "child_aspect": "2",
+      "row_tuple_count": 256,
+      "exact_support_count": 29,
+      "direct_two_color_moment": "44",
+      "support_presentation_moment": "44",
+      "exact_double_count_verified": true,
+      "status": "exact-marginal-support-double-count-verified"
+    },
+    {
+      "symmetric_group_degree": 3,
+      "residual_source_pair_count": 1,
+      "moment_order": 3,
+      "child_orientation_count": 2,
+      "child_aspect": "1/3",
+      "row_tuple_count": 8,
+      "exact_support_count": 4,
+      "direct_two_color_moment": "1/2",
+      "support_presentation_moment": "1/2",
+      "exact_double_count_verified": true,
+      "status": "exact-marginal-support-double-count-verified"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "prove_all_fixed_independent_child_frame_moments",
+      "resolved": true,
+      "resolution": "Exact support expansion plus entropy, Boolean cube-section, noncrossing, and fixed-word suppression lemmas give all orders."
+    },
+    {
+      "obligation": "deduce_qualitative_independent_child_frame_weak_mp_law",
+      "resolved": true,
+      "resolution": "Apply the companion moment-method bridge to the all-fixed moments."
+    },
+    {
+      "obligation": "obtain_inverse_polynomial_small_eigenvalue_rate",
+      "resolved": false,
+      "resolution": "Requires p-dependent word bounds, a local law, or a direct shrinking-threshold argument; fixed-p convergence is insufficient."
+    },
+    {
+      "obligation": "prove_positive_natural_physical_ridge_curl",
+      "resolved": false,
+      "resolution": "The marginal frame law controls support transfer but not noncommutativity of typical compressed leaf pairs."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Low moments may be accidental.",
+      "resolved": true,
+      "resolution": "The support expansion and finite support classification apply to an arbitrary fixed moment order."
+    },
+    {
+      "objection": "Rare affine or nonlinear orientation supports add extra leading terms.",
+      "resolved": true,
+      "resolution": "Non-power sizes lose a strict group exponent; power-two nonpartition supports have incidence rank greater than log2 size and leave a nontrivial fixed word."
+    },
+    {
+      "objection": "Crossing block partitions are also free at leading order.",
+      "resolved": true,
+      "resolution": "Two crossing blocks retain an explicit commutator after all individual block relators are imposed."
+    },
+    {
+      "objection": "All fixed moments prove a minimum spectral edge or polynomial algorithm.",
+      "resolved": false,
+      "resolution": "They prove only the weak expected law and normalized fixed-threshold tail. Shrinking-threshold rates and coherent access remain open."
+    }
+  ],
+  "headline_metrics": {
+    "all_fixed_independent_marginal_mp_theorem_count": 1,
+    "classification_control_order_count": 5,
+    "highest_exhaustive_classification_order": 5,
+    "power_two_supports_checked": 6959,
+    "extra_free_support_count": 0,
+    "missing_noncrossing_support_count": 0,
+    "exact_double_count_control_count": 5,
+    "finite_control_failure_count": 0,
+    "growing_order_local_law_theorem_count": 0,
+    "inverse_polynomial_tail_rate_theorem_count": 0,
+    "natural_ridge_curl_lower_bound_theorem_count": 0,
+    "natural_component_M4_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "all_fixed_independent_child_frame_moments_proved": true,
+    "independent_child_frame_weak_mp_law_proved": true,
+    "qualitative_independent_support_ridge_tail_small": true,
+    "global_distinct_support_ridge_tail_small": true,
+    "inverse_polynomial_small_eigenvalue_rate_proved": false,
+    "natural_physical_ridge_curl_positive": false,
+    "natural_component_M4_positive": false,
+    "component_measurement_compiled": false,
+    "speedup_claim_allowed": false,
+    "reason": "The qualitative spectral support debt is closed, but no positive natural component curl or coherent implementation is proved."
+  },
+  "status": "all-fixed-independent-mp-law-and-qualitative-ridge-tail-proved",
+  "summary": "Proved every fixed independent sibling-frame marginal moment is Marchenko--Pastur by classifying the only leading support presentations.",
+  "falsifiers_triggered": [
+    "The first four moments were not the endpoint; the all-fixed theorem is now closed.",
+    "Non-power-of-two supports cannot contribute at leading order.",
+    "Power-of-two affine-looking supports outside block partitions retain extra relations.",
+    "Crossing partitions retain a fixed nontrivial word and are subleading.",
+    "The theorem does not provide a shrinking-threshold rate, positive curl, algorithm, or speedup."
+  ]
+}

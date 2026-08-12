@@ -572,54 +572,6 @@ def write_orientation_common_range_report(
     payload = asdict(run_orientation_common_range())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-WREATH-ORIENTATION-PAIRWISE-TRANSVERSALITY",
-                source=str(path),
-                claim=(
-                    "Globally distinct source partitions make almost all "
-                    "orientation-projector ranges transverse."
-                ),
-                reason_invalid=(
-                    "The exact trivial/sign multiplicity criterion and "
-                    "Kronecker-support dynamic program find near-universal "
-                    "nonzero pairwise common ranges at threshold."
-                ),
-                lesson=(
-                    "Measure whether common directions recur across triples "
-                    "and larger orientation families, or directly control the "
-                    "operator-valued Gram norm; pairwise zero-intersection "
-                    "arguments cannot work."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_orientation_common_range": str(path)
-                },
-            )
-        )
     return payload
 
 

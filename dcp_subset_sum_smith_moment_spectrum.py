@@ -562,39 +562,4 @@ def write_smith_moment_spectrum(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-SUBSET-SUM-SAMPLED-SMITH-FLATNESS",
-                source=str(path),
-                claim=(
-                    "Failure to observe atypical fifth-order or order>=6 dependent Smith types in polynomially many "
-                    "sampled assignment tuples proves density-one subset-sum counts have no useful high-order structure."
-                ),
-                reason_invalid=(
-                    "Exponentially rare affine configurations can make a nonnegligible factorial-moment contribution. "
-                    "Only complete enumeration or a uniform analytic count can establish absence."
-                ),
-                lesson=(
-                    "Use sampled Smith spectra to generate exact dependency classes and conjectures, never as a lower "
-                    "bound. Promotion requires asymptotic class counts and an algorithmic observable."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-SMITH-MOMENT-SPECTRUM"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_subset_sum_smith_moment_spectrum": str(path)},
-            )
-        )
     return payload

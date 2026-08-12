@@ -323,38 +323,4 @@ def write_hierarchical_gap_scaling_report(
     payload = asdict(build_hierarchical_gap_scaling_report(n_values=n_values))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-FINITE-HIERARCHICAL-GAP-SCALING-AS-THEOREM",
-                source=str(output_path),
-                claim=(
-                    "Nonzero hierarchical Racah gaps through n=8 establish an efficient all-n multiplicity transform."
-                ),
-                reason_invalid=(
-                    "The evidence is finite dense diagonalization on one final-target family and contains no "
-                    "inverse-polynomial lower bound or coherent circuit."
-                ),
-                lesson=(
-                    "Use the observed spectra to conjecture exact stable formulas, then prove them with character-orbit "
-                    "or partition-algebra methods before algorithmic promotion."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_hierarchical_gap_scaling": str(output_path)},
-            )
-        )
     return payload

@@ -404,56 +404,6 @@ def write_spectral_filter_query_lower_bound_report(
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
 
-    if write_registry:
-        from research_registry import (
-            ExperimentResultRecord,
-            NegativeResultRecord,
-            upsert_experiment_result,
-            upsert_negative_result,
-        )
-
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-SELF-DUAL-WREATH-SPECTRAL-FILTER-QUERY-LOWER-BOUND",
-                source=registry_experiment_id,
-                claim=(
-                    "Generic PREPARE/SELECT low-pass filtering can exploit trimmed sub-POVM existence at polynomial cost."
-                ),
-                reason_invalid=(
-                    "Search reduction proves Omega(sqrt(n!)) quantum query lower bound for generic low-pass filtering."
-                ),
-                lesson=(
-                    "Future filter proposals must identify representation structure beyond black-box search."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_spectral_filter_query_lower_bound": str(
-                        path
-                    )
-                },
-            )
-        )
     return payload
 
 

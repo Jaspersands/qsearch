@@ -480,38 +480,6 @@ def write_stable_shape_family_certificate(
     payload = asdict(build_stable_shape_family_certificate())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-NINE-STABLE-SHAPES-AS-COHERENT-RACAH-TRANSFORM",
-                source=str(output_path),
-                claim=(
-                    "An exact constant-size list of stable intermediate shapes supplies a coherent Racah transform and decoder."
-                ),
-                reason_invalid=(
-                    "Six nontrivial second-stage multiplicity families still lack coherent normalized-gap labels, and transitions are not synthesized."
-                ),
-                lesson=(
-                    "Use the theorem to bound operator synthesis to nine shapes, then prove every label/gap and transition primitive explicitly."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_stable_shape_family_certificate": str(output_path)},
-            )
-        )
     return payload
 
 

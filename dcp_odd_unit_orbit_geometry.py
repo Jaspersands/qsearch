@@ -584,41 +584,4 @@ def write_odd_unit_orbit_geometry_audit(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-ODD-UNIT-FINITE-FEATURE-ENRICHMENT-NOT-COVERAGE",
-                source=str(path),
-                claim=(
-                    "A threshold feature enriched for LLL success on finitely many odd units proves an inverse-polynomial easy-unit orbit."
-                ),
-                reason_invalid=(
-                    "Even held-out enrichment lacks a uniform source-prevalence and average-case LLL theorem; post-reduction features are only diagnostics."
-                ),
-                lesson=(
-                    "Use surviving pre-reduction rules only to formulate an analytic orbit-measure conjecture, then prove it uniformly or reject the route."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "heldout_positive_pre_reduction_rule_count": payload["headline_metrics"][
-                        "heldout_positive_pre_reduction_rule_count"
-                    ],
-                    "proved_inverse_polynomial_easy_orbit_measure_count": 0,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-ODD-UNIT-ORBIT-GEOMETRY"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_odd_unit_orbit_geometry": str(path)},
-            )
-        )
     return payload

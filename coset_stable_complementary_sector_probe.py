@@ -364,38 +364,6 @@ def write_complementary_sector_report(
     payload = asdict(build_complementary_sector_report(n_values=n_values))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-STABLE-LEAKAGE-AS-SINGLE-COMPLEMENT-REPAIR",
-                source=str(output_path),
-                claim=(
-                    "One additional intermediate partition captures the stable branch leakage and closes a restricted associator."
-                ),
-                reason_invalid=(
-                    "Every character-allowed complementary sector has nonzero projector overlap, and no one sector captures all leaked mass."
-                ),
-                lesson=(
-                    "Derive an all-n support formula and cover the full intermediate-sector family before coherent synthesis."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_stable_complementary_sector_probe": str(output_path)},
-            )
-        )
     return payload
 
 

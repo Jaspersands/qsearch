@@ -1,0 +1,321 @@
+{
+  "created_at": "2026-08-12T03:41:19.740982+00:00",
+  "theorem_contract": {
+    "density_block_encoding": "(U_rho^* tensor I)Swap(U_rho tensor I) has all-zero ancilla block rho.",
+    "twirl_purification": "A uniform coherent group label and controlled L_g prepare purifications of subgroup and full-group twirls.",
+    "centered_lcu": "One selector qubit gives a normalization-two block encoding of Delta_0=rho_H-rho_G.",
+    "generic_degree_boundary": "Rescaling Delta_0/2 to Delta_0/beta by bounded polynomial/QSVT has degree Theta(beta^-1) up to logarithmic precision factors.",
+    "conditional_naimark_compiler": "If beta is inverse polynomial and preparation/group-action primitives are efficient, QSVT square roots and n covariant effects give a polynomial approximate Naimark dilation.",
+    "scope": "The degree bound is for generic rescaling of this block encoding. It does not rule out a direct representation-specific point transform.",
+    "theorem_verified": true,
+    "status": "centered-effect-block-encoding-proved-beta-normalization-open"
+  },
+  "theorem": {
+    "density_block_encoding": "(U_rho^* tensor I)Swap(U_rho tensor I) has all-zero ancilla block rho.",
+    "twirl_purification": "A uniform coherent group label and controlled L_g prepare purifications of subgroup and full-group twirls.",
+    "centered_lcu": "One selector qubit gives a normalization-two block encoding of Delta_0=rho_H-rho_G.",
+    "generic_degree_boundary": "Rescaling Delta_0/2 to Delta_0/beta by bounded polynomial/QSVT has degree Theta(beta^-1) up to logarithmic precision factors.",
+    "conditional_naimark_compiler": "If beta is inverse polynomial and preparation/group-action primitives are efficient, QSVT square roots and n covariant effects give a polynomial approximate Naimark dilation.",
+    "scope": "The degree bound is for generic rescaling of this block encoding. It does not rule out a direct representation-specific point transform.",
+    "theorem_verified": true,
+    "status": "centered-effect-block-encoding-proved-beta-normalization-open"
+  },
+  "projected_unitary_controls": [
+    {
+      "control_id": "CYCLIC-2-RANK-2",
+      "system_dimension": 2,
+      "purification_environment_dimension": 2,
+      "twirl_group_order": 2,
+      "twirl_subgroup_order": 1,
+      "base_density_trace_residual": 0.0,
+      "base_projected_block_residual": 0.0,
+      "base_dilation_unitarity_residual": 6.60461268287629e-17,
+      "subgroup_twirl_projected_block_residual": 0.0,
+      "full_twirl_projected_block_residual": 7.850462293418876e-17,
+      "lcu_centered_block_residual": 3.925231146709438e-17,
+      "lcu_normalization": 2,
+      "exact_purification_block_encoding_verified": true,
+      "exact_twirl_and_lcu_block_encoding_verified": true,
+      "status": "exact-purification-twirl-centered-block-encoding"
+    },
+    {
+      "control_id": "CYCLIC-3-RANK-2",
+      "system_dimension": 3,
+      "purification_environment_dimension": 2,
+      "twirl_group_order": 3,
+      "twirl_subgroup_order": 1,
+      "base_density_trace_residual": 0.0,
+      "base_projected_block_residual": 0.0,
+      "base_dilation_unitarity_residual": 2.7844606470701966e-16,
+      "subgroup_twirl_projected_block_residual": 0.0,
+      "full_twirl_projected_block_residual": 1.4015878649856313e-16,
+      "lcu_centered_block_residual": 7.211110073938365e-17,
+      "lcu_normalization": 2,
+      "exact_purification_block_encoding_verified": true,
+      "exact_twirl_and_lcu_block_encoding_verified": true,
+      "status": "exact-purification-twirl-centered-block-encoding"
+    }
+  ],
+  "finite_point_controls": [
+    {
+      "control_id": "W3-SINGLE-UNEQUAL",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 1,
+      "register_dimension": 12,
+      "centered_operator_norm_beta": 0.17677669529663692,
+      "centered_hilbert_schmidt_norm_squared": 0.06250000000000003,
+      "centered_effective_rank": 2.0,
+      "linear_povm_success_excess": 0.11785113019775796,
+      "target_rescaling_error": 0.01,
+      "bernstein_qsvt_degree_lower_bound": 12,
+      "singular_value_amplification_query_upper_estimate": 240,
+      "constant_normalization_centered_block_encoding_proved": true,
+      "inverse_polynomial_beta_proved_for_family": false,
+      "generic_rescaling_polynomial_for_family_proved": false,
+      "complete_n_outcome_naimark_compiler_proved": false,
+      "status": "finite-centered-access-cost-control-asymptotic-beta-open"
+    },
+    {
+      "control_id": "W3-INFORMATION-THRESHOLD",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 3,
+      "register_dimension": 48,
+      "centered_operator_norm_beta": 0.11355555650202105,
+      "centered_hilbert_schmidt_norm_squared": 0.044921875000000014,
+      "centered_effective_rank": 3.483702779884256,
+      "linear_povm_success_excess": 0.13186460261913147,
+      "target_rescaling_error": 0.01,
+      "bernstein_qsvt_degree_lower_bound": 18,
+      "singular_value_amplification_query_upper_estimate": 374,
+      "constant_normalization_centered_block_encoding_proved": true,
+      "inverse_polynomial_beta_proved_for_family": false,
+      "generic_rescaling_polynomial_for_family_proved": false,
+      "complete_n_outcome_naimark_compiler_proved": false,
+      "status": "finite-centered-access-cost-control-asymptotic-beta-open"
+    },
+    {
+      "control_id": "W4-COLLISION-FREE-PAIR",
+      "n": 4,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 2,
+      "register_dimension": 96,
+      "centered_operator_norm_beta": 0.01799835620804272,
+      "centered_hilbert_schmidt_norm_squared": 0.0025612997256515774,
+      "centered_effective_rank": 7.906690106842957,
+      "linear_povm_success_excess": 0.03557685624239172,
+      "target_rescaling_error": 0.01,
+      "bernstein_qsvt_degree_lower_bound": 109,
+      "singular_value_amplification_query_upper_estimate": 2356,
+      "constant_normalization_centered_block_encoding_proved": true,
+      "inverse_polynomial_beta_proved_for_family": false,
+      "generic_rescaling_polynomial_for_family_proved": false,
+      "complete_n_outcome_naimark_compiler_proved": false,
+      "status": "finite-centered-access-cost-control-asymptotic-beta-open"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 16,
+      "information_threshold_copy_count": 45,
+      "point_outcome_count": 16,
+      "seed_joint_state_purification_schema_polynomial": true,
+      "subgroup_and_group_uniform_prepare_polynomial": true,
+      "controlled_left_action_polynomial": true,
+      "centered_block_encoding_normalization": 2,
+      "generic_rescaling_query_complexity": "Theta(beta_n^-1) up to log precision",
+      "inverse_polynomial_beta_sufficient_for_polynomial_rescaling": true,
+      "inverse_polynomial_beta_proved": false,
+      "representation_specific_rescaling_bypass_ruled_out": false,
+      "end_to_end_point_measurement_compiled": false,
+      "status": "constant-normalization-centered-access-beta-and-naimark-open"
+    },
+    {
+      "n": 64,
+      "information_threshold_copy_count": 296,
+      "point_outcome_count": 64,
+      "seed_joint_state_purification_schema_polynomial": true,
+      "subgroup_and_group_uniform_prepare_polynomial": true,
+      "controlled_left_action_polynomial": true,
+      "centered_block_encoding_normalization": 2,
+      "generic_rescaling_query_complexity": "Theta(beta_n^-1) up to log precision",
+      "inverse_polynomial_beta_sufficient_for_polynomial_rescaling": true,
+      "inverse_polynomial_beta_proved": false,
+      "representation_specific_rescaling_bypass_ruled_out": false,
+      "end_to_end_point_measurement_compiled": false,
+      "status": "constant-normalization-centered-access-beta-and-naimark-open"
+    },
+    {
+      "n": 256,
+      "information_threshold_copy_count": 1684,
+      "point_outcome_count": 256,
+      "seed_joint_state_purification_schema_polynomial": true,
+      "subgroup_and_group_uniform_prepare_polynomial": true,
+      "controlled_left_action_polynomial": true,
+      "centered_block_encoding_normalization": 2,
+      "generic_rescaling_query_complexity": "Theta(beta_n^-1) up to log precision",
+      "inverse_polynomial_beta_sufficient_for_polynomial_rescaling": true,
+      "inverse_polynomial_beta_proved": false,
+      "representation_specific_rescaling_bypass_ruled_out": false,
+      "end_to_end_point_measurement_compiled": false,
+      "status": "constant-normalization-centered-access-beta-and-naimark-open"
+    },
+    {
+      "n": 1024,
+      "information_threshold_copy_count": 8770,
+      "point_outcome_count": 1024,
+      "seed_joint_state_purification_schema_polynomial": true,
+      "subgroup_and_group_uniform_prepare_polynomial": true,
+      "controlled_left_action_polynomial": true,
+      "centered_block_encoding_normalization": 2,
+      "generic_rescaling_query_complexity": "Theta(beta_n^-1) up to log precision",
+      "inverse_polynomial_beta_sufficient_for_polynomial_rescaling": true,
+      "inverse_polynomial_beta_proved": false,
+      "representation_specific_rescaling_bypass_ruled_out": false,
+      "end_to_end_point_measurement_compiled": false,
+      "status": "constant-normalization-centered-access-beta-and-naimark-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "construct_centered_point_effect_block_encoding",
+      "resolved": true,
+      "resolution": "Purification projected-unitary encodings, coherent twirls, and one-qubit LCU give Delta/2 exactly."
+    },
+    {
+      "obligation": "charge_centered_effect_rescaling_cost",
+      "resolved": true,
+      "resolution": "Bernstein's inequality and singular-value amplification give matching beta^-1 generic degree dependence."
+    },
+    {
+      "obligation": "prove_inverse_polynomial_collective_beta",
+      "resolved": false,
+      "resolution": "Finite beta values are positive, but no natural collision-free threshold theorem excludes superpolynomial decay."
+    },
+    {
+      "obligation": "compile_complete_covariant_point_naimark_dilation",
+      "resolved": false,
+      "resolution": "A conditional generic route exists if beta is inverse polynomial; its all-n premises and explicit representation circuit are open."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Mixed-state preparation does not provide a density block encoding.",
+      "resolved": true,
+      "resolution": "A purification plus one system-signal swap gives the density operator as an exact projected unitary block."
+    },
+    {
+      "objection": "Constant-normalization Delta access makes the POVM polynomial.",
+      "resolved": true,
+      "resolution": "False without beta control. Generic rescaling costs Theta(1/beta) queries before effect square roots are implemented."
+    },
+    {
+      "objection": "The beta boundary is an arbitrary-circuit lower bound.",
+      "resolved": false,
+      "resolution": "It applies only to bounded-polynomial/QSVT transforms of the normalization-two centered block encoding."
+    }
+  ],
+  "literature_links": [
+    {
+      "id": "GILYEN-SU-LOW-WIEBE-2018-QSVT",
+      "title": "Quantum singular value transformation and beyond",
+      "url": "https://arxiv.org/abs/1806.01838",
+      "used_for": "Projected-unitary block encodings and uniform singular-value amplification with explicit normalization dependence",
+      "arbitrary_circuit_lower_bound": false
+    }
+  ],
+  "headline_metrics": {
+    "purification_density_block_encoding_theorem_count": 1,
+    "centered_twirl_lcu_block_encoding_theorem_count": 1,
+    "generic_beta_rescaling_boundary_theorem_count": 1,
+    "projected_unitary_control_count": 2,
+    "finite_control_failure_count": 0,
+    "minimum_finite_beta": 0.01799835620804272,
+    "inverse_polynomial_collective_beta_theorem_count": 0,
+    "complete_point_naimark_compiler_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "purification_density_block_encoding_proved": true,
+    "centered_point_effect_block_encoding_proved": true,
+    "centered_block_encoding_has_constant_normalization": true,
+    "generic_rescaling_costs_inverse_beta": true,
+    "inverse_polynomial_collective_beta_proved": false,
+    "complete_covariant_point_naimark_compiled": false,
+    "representation_specific_direct_point_transform_ruled_out": false,
+    "polynomial_full_hidden_shift_decoder_proved": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "Centered-effect access is exact, but generic normalization and the full Naimark compiler remain hostage to an unproved collective beta bound."
+  },
+  "status": "centered-effect-block-encoding-proved-beta-normalization-open",
+  "summary": "Closed the constant-normalization block-encoding step for the linear point POVM and proved its generic inverse-beta query boundary. The next hard gate is collective operator norm/effective rank, not average-state inversion.",
+  "falsifiers_triggered": [
+    "The inverse-free linear POVM still has a normalization cost: exact Delta/2 access does not give Delta/beta for free.",
+    "The access bottleneck is beta, not the factorial orientation width; coherent purification and group twirls avoid branch enumeration.",
+    "The QSVT degree boundary does not exclude a direct symmetry-adapted point transform outside generic polynomial rescaling."
+  ]
+}

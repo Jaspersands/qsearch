@@ -1165,14 +1165,6 @@ def write_marker_vulnerable_coordinate_decoder(
     payload = asdict(run_marker_vulnerable_coordinate_decoder(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
-    if write_registry:
-        _register_vulnerable_coordinate_payload(
-            payload,
-            path,
-            registry_experiment_id,
-            registry_candidate_id,
-            registry_result_id,
-        )
     return payload
 
 

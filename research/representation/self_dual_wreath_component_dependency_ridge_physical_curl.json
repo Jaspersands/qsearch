@@ -1,0 +1,208 @@
+{
+  "created_at": "2026-08-12T03:42:27.868071+00:00",
+  "theorem_contract": {
+    "push_through": "f_eta(R*R)=R*(RR*+eta I)^-1R",
+    "physical_kernel": "Q_eta=R*G_eta R, G_eta=(F+eta I)^-1-Y(F_perp+eta I)^-1Y",
+    "positive_factorization": "G_eta=J_eta S_eta^-1 J_eta*>=0 and rank(G_eta)=rank(X)",
+    "signed_frames": "F_S=R Z_S R*",
+    "all_words": "Tr product_j(Q_eta Z_Sj Q_eta)=Tr product_j C_Sj, C_S=F^(1/2)G_eta F_S G_eta F^(1/2)",
+    "positive_curl": "C_coeff(Q_eta)=q^-2 sum_(S,T)||[C_S,C_T]||F^2/2",
+    "scope": "This exact algebraic reduction makes the bounded ridge curl a physical resolvent/signed-frame target. It proves neither a natural positive curl nor a small natural ridge tail."
+  },
+  "theorem": {
+    "push_through_identity": "f_eta(R*R)=R*(RR*+eta I)^-1R",
+    "physical_resolvent_kernel": "Q_eta=R*G_eta R, G_eta=(F+eta I)^-1-Y(F_perp+eta I)^-1Y",
+    "schur_factorization": "G_eta=J_eta S_eta^-1 J_eta*>=0 and rank(G_eta)=rank(X)",
+    "signed_physical_frame": "F_S=R Z_S R*",
+    "word_trace_identity": "Tr product_j(Q_eta Z_Sj Q_eta)=Tr product_j C_Sj, C_S=F^(1/2)G_eta F_S G_eta F^(1/2)",
+    "parity_curl_identity": "C_coeff(Q_eta)=q^-2 sum_(S,T)||[C_S,C_T]||F^2/2",
+    "arbitrary_child_synthesis": true,
+    "arbitrary_common_subspace_inside_child_range": true,
+    "coefficient_support_removed_from_ridge_curl": true,
+    "common_metric_removed_from_ridge_curl": true,
+    "theorem_verified": true,
+    "status": "bounded-dependency-ridge-curl-has-exact-physical-resolvent-normal-form"
+  },
+  "finite_controls": [
+    {
+      "control_id": "FULL-ROW-D12-N16-R5-Q4",
+      "physical_dimension": 12,
+      "coefficient_dimension": 16,
+      "child_synthesis_rank": 12,
+      "common_fiber_dimension": 5,
+      "leaf_count": 4,
+      "coordinate_block_dimension": 4,
+      "ridge_parameter": 0.01,
+      "physical_resolvent_kernel_minimum_eigenvalue": -5.223157222694581e-15,
+      "physical_resolvent_kernel_rank": 5,
+      "kernel_rank_residual": 0,
+      "schur_complement_minimum_eigenvalue": 0.39786472965379654,
+      "schur_factorization_residual": 6.812834991830167e-15,
+      "coefficient_to_physical_ridge_residual": 1.1763821957469013e-13,
+      "maximum_signed_frame_hermitian_residual": 0.0,
+      "maximum_reduced_observable_hermitian_residual": 0.0,
+      "maximum_word_trace_residual_through_degree_four": 1.0285106100950345e-12,
+      "maximum_pair_gap_residual": 8.004708007547379e-14,
+      "coefficient_normalized_ridge_curl": 0.019279016074536196,
+      "physical_normalized_ridge_curl": 0.0192790160745403,
+      "normalized_ridge_curl_residual": 4.1043557441611256e-15,
+      "physical_ridge_curl_positive": true,
+      "exact_physical_curl_reduction_verified": true,
+      "status": "dependency-ridge-parity-curl-reduced-exactly-to-physical-frames"
+    },
+    {
+      "control_id": "DEFICIENT-D14-N16-S10-R4-Q8",
+      "physical_dimension": 14,
+      "coefficient_dimension": 16,
+      "child_synthesis_rank": 10,
+      "common_fiber_dimension": 4,
+      "leaf_count": 8,
+      "coordinate_block_dimension": 2,
+      "ridge_parameter": 0.003,
+      "physical_resolvent_kernel_minimum_eigenvalue": -1.7649213962382766e-11,
+      "physical_resolvent_kernel_rank": 4,
+      "kernel_rank_residual": 0,
+      "schur_complement_minimum_eigenvalue": 0.3507280968731215,
+      "schur_factorization_residual": 1.9671854980153113e-11,
+      "coefficient_to_physical_ridge_residual": 1.7591175010211768e-13,
+      "maximum_signed_frame_hermitian_residual": 0.0,
+      "maximum_reduced_observable_hermitian_residual": 0.0,
+      "maximum_word_trace_residual_through_degree_four": 1.756816914328771e-12,
+      "maximum_pair_gap_residual": 1.9478862967048372e-13,
+      "coefficient_normalized_ridge_curl": 0.031026860023082213,
+      "physical_normalized_ridge_curl": 0.031026860023097198,
+      "normalized_ridge_curl_residual": 1.498454138548766e-14,
+      "physical_ridge_curl_positive": true,
+      "exact_physical_curl_reduction_verified": true,
+      "status": "dependency-ridge-parity-curl-reduced-exactly-to-physical-frames"
+    },
+    {
+      "control_id": "TALL-D10-N12-S9-R3-Q4",
+      "physical_dimension": 10,
+      "coefficient_dimension": 12,
+      "child_synthesis_rank": 9,
+      "common_fiber_dimension": 3,
+      "leaf_count": 4,
+      "coordinate_block_dimension": 3,
+      "ridge_parameter": 0.001,
+      "physical_resolvent_kernel_minimum_eigenvalue": -9.608308956367903e-14,
+      "physical_resolvent_kernel_rank": 3,
+      "kernel_rank_residual": 0,
+      "schur_complement_minimum_eigenvalue": 0.4127503375114817,
+      "schur_factorization_residual": 4.1536858800215463e-11,
+      "coefficient_to_physical_ridge_residual": 3.117638546670435e-13,
+      "maximum_signed_frame_hermitian_residual": 0.0,
+      "maximum_reduced_observable_hermitian_residual": 0.0,
+      "maximum_word_trace_residual_through_degree_four": 1.0209610935991863e-12,
+      "maximum_pair_gap_residual": 6.195044477408373e-14,
+      "coefficient_normalized_ridge_curl": 0.008342995561150519,
+      "physical_normalized_ridge_curl": 0.008342995561152615,
+      "normalized_ridge_curl_residual": 2.095545958979983e-15,
+      "physical_ridge_curl_positive": true,
+      "exact_physical_curl_reduction_verified": true,
+      "status": "dependency-ridge-parity-curl-reduced-exactly-to-physical-frames"
+    },
+    {
+      "control_id": "BLOCK-ALIGNED-COMMUTING-D8-Q4",
+      "physical_dimension": 8,
+      "coefficient_dimension": 8,
+      "child_synthesis_rank": 8,
+      "common_fiber_dimension": 3,
+      "leaf_count": 4,
+      "coordinate_block_dimension": 2,
+      "ridge_parameter": 0.01,
+      "physical_resolvent_kernel_minimum_eigenvalue": 0.0,
+      "physical_resolvent_kernel_rank": 3,
+      "kernel_rank_residual": 0,
+      "schur_complement_minimum_eigenvalue": 0.26,
+      "schur_factorization_residual": 0.0,
+      "coefficient_to_physical_ridge_residual": 1.1102230246251565e-16,
+      "maximum_signed_frame_hermitian_residual": 0.0,
+      "maximum_reduced_observable_hermitian_residual": 0.0,
+      "maximum_word_trace_residual_through_degree_four": 1.3322676295501878e-15,
+      "maximum_pair_gap_residual": 0.0,
+      "coefficient_normalized_ridge_curl": 0.0,
+      "physical_normalized_ridge_curl": 0.0,
+      "normalized_ridge_curl_residual": 0.0,
+      "physical_ridge_curl_positive": false,
+      "exact_physical_curl_reduction_verified": true,
+      "status": "dependency-ridge-parity-curl-reduced-exactly-to-physical-frames"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "remove_coefficient_space_from_bounded_ridge_curl",
+      "resolved": true,
+      "resolution": "Push-through and cyclic trace give exact physical words for every parity-mask sequence."
+    },
+    {
+      "obligation": "prove_physical_resolvent_kernel_positive",
+      "resolved": true,
+      "resolution": "The common/perpendicular block inverse gives the rank-r Schur factorization G_eta=J_eta S_eta^-1 J_eta*."
+    },
+    {
+      "obligation": "evaluate_natural_signed_frame_resolvent_words",
+      "resolved": false,
+      "resolution": "Use the regular-master word map or a growing-moment local law on F, F_perp, and typical signed frames F_S."
+    },
+    {
+      "obligation": "prove_positive_natural_physical_ridge_curl",
+      "resolved": false,
+      "resolution": "Show a positive normalized commutator-square average for the C_S on accepted Plancherel source mass."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The difference of the two physical resolvents need not be positive.",
+      "resolved": true,
+      "resolution": "In this nested compression geometry it is the positive rank-r Schur factor J_eta S_eta^-1 J_eta*."
+    },
+    {
+      "objection": "Cyclic trace transfer loses commutator positivity.",
+      "resolved": true,
+      "resolution": "The transferred C_S are Hermitian, so every physical pair gap remains one half of a Frobenius commutator square."
+    },
+    {
+      "objection": "One must enumerate exponentially many masks.",
+      "resolved": false,
+      "resolution": "The existing exchangeability theorem reduces pair types to O(m^3) strata, but no natural stratum formula is known."
+    },
+    {
+      "objection": "A positive generic finite control is evidence for the natural ensemble.",
+      "resolved": true,
+      "resolution": "It is not. The block-aligned control also has exactly zero curl; only a representation-specific average can decide."
+    }
+  ],
+  "headline_metrics": {
+    "exact_physical_ridge_curl_reduction_theorem_count": 1,
+    "finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "positive_generic_control_count": 3,
+    "zero_commuting_boundary_control_count": 1,
+    "maximum_schur_factorization_residual": 4.1536858800215463e-11,
+    "maximum_word_trace_residual": 1.756816914328771e-12,
+    "maximum_normalized_curl_residual": 1.498454138548766e-14,
+    "natural_physical_ridge_curl_lower_bound_count": 0,
+    "natural_component_M4_lower_bound_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "bounded_ridge_has_exact_physical_resolvent_normal_form": true,
+    "physical_resolvent_kernel_positive_rank_r": true,
+    "all_bounded_ridge_parity_words_are_physical": true,
+    "natural_signed_frame_resolvent_words_controlled": false,
+    "natural_physical_ridge_curl_positive": false,
+    "natural_support_ridge_tail_small": false,
+    "natural_component_M4_positive": false,
+    "speedup_claim_allowed": false,
+    "reason": "The full bounded-ridge curl is now an exact physical frame target, but its natural positive value and support transfer remain unproved."
+  },
+  "status": "bounded-ridge-parity-curl-reduced-to-physical-resolvent-words",
+  "summary": "Derived a positive rank-r Schur factor for the dependency ridge and transferred every parity word and the full commutator curl exactly to resolvent-dressed signed physical frames.",
+  "falsifiers_triggered": [
+    "The physical resolvent difference is positive here only through the nested Schur geometry.",
+    "The physical trace identity does not establish a natural lower bound.",
+    "A block-aligned common fiber has exactly zero ridge curl.",
+    "No natural tail, exact M4, measurement, algorithm, or speedup is proved."
+  ]
+}

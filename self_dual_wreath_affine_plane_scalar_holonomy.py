@@ -430,53 +430,6 @@ def write_affine_plane_scalar_holonomy_report(
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
 
-    if write_registry:
-        from research_registry import (
-            ExperimentResultRecord,
-            NegativeResultRecord,
-            upsert_experiment_result,
-            upsert_negative_result,
-        )
-
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-SELF-DUAL-WREATH-AFFINE-PLANE-SCALAR-HOLONOMY",
-                source=registry_experiment_id,
-                claim=(
-                    "Negative simplex holonomy causes local destructive interference within a single multiplicity-scalar affine plane channel."
-                ),
-                reason_invalid=(
-                    "Theorem proves every multiplicity-scalar affine-plane carrier channel has positive flat J3 holonomy."
-                ),
-                lesson=(
-                    "Multiplicity-scalar affine-plane holonomy is strictly positive; counterexamples must use matrix recoupling or overlapping supports."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_affine_plane_scalar_holonomy": str(path)
-                },
-            )
-        )
     return payload
 
 

@@ -383,58 +383,6 @@ def write_approximate_erasure_coherence_report(
     output_path.write_text(
         json.dumps(payload, indent=2, sort_keys=True)
     )
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-TARGET-DEPENDENT-GARBAGE-ERASURE-SHORTCUT",
-                source=str(output_path),
-                claim=(
-                    "Target-dependent garbage lets a coherent erasure-plus-QFT "
-                    "decoder achieve inverse-polynomial success without "
-                    "yielding an average subset-sum witness solver."
-                ),
-                reason_invalid=(
-                    "The relative QFT success is the squared weighted garbage "
-                    "mean. That mean is publicly preparable, and truncation "
-                    "transfers its inverse-preparation fidelity to uniform "
-                    "legal targets with only a polynomial loss."
-                ),
-                lesson=(
-                    "Treat every exact erasure-plus-QFT factorization with "
-                    "inverse-polynomial relative success as the solver itself. "
-                    "Search approximate-isometry loopholes quantitatively or "
-                    "use a genuinely non-erasure full-rank POVM."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "EXP-DHS-DCP-GLOBAL-ERASURE-INVERSION-REDUCTION",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload[
-                    "falsifiers_triggered"
-                ],
-                artifacts={
-                    "dcp_approximate_erasure_coherence_reduction": str(
-                        output_path
-                    )
-                },
-            )
-        )
     return payload
 
 

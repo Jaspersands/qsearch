@@ -400,41 +400,4 @@ def write_reference_projection_audit(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-PUBLIC-LOW-TRACE-REFERENCE-PROJECTION",
-                source=str(path),
-                claim="A public label-dependent rank-one or polynomial-rank reference projection efficiently erases DCP subset identity while retaining hidden-shift signal.",
-                reason_invalid=(
-                    "Every public effect E independent of d has hidden-average success at most Tr(E)c_max/2^m. "
-                    "Random m=Theta(n) labels make this exponentially small for polynomial trace with high probability."
-                ),
-                lesson=(
-                    "Do not mutate the reference vector or add polynomially many reference directions. Search full-rank "
-                    "many-outcome measurements, compressed PGMs, or adaptive collision walks and charge their complete decoder."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "finite_instance_count": payload["headline_metrics"]["finite_instance_count"],
-                    "random_reference_bound_violation_count": payload["headline_metrics"]["random_reference_bound_violation_count"],
-                    "proved_low_trace_effect_no_go_count": payload["headline_metrics"]["proved_low_trace_effect_no_go_count"],
-                    "proved_full_rank_collective_measurement_no_go_count": 0,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-REFERENCE-PROJECTION"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_reference_projection_audit": str(path)},
-            )
-        )
     return payload

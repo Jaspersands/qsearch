@@ -1,0 +1,609 @@
+{
+  "created_at": "2026-08-12T03:41:12.491835+00:00",
+  "theorem_contract": {
+    "row_copy_range": "For every nu and Fourier row a, C_(nu,a)C_(nu,a)^*=direct_sum_e E_(nu,e); containment is upgraded to equality by multiplicity additivity.",
+    "physical_native_state": "Under row-copy, the normalized physical average on its support is tau=RR^*/Tr(A)=Q A Q^*/Tr(A).",
+    "trace_budget": "For any one-pass selected branch row, Tr(supp(tau)L^*L)<=sum_e |f_e|^2 rank(E_e)<=r_max.",
+    "spectral_split": "Thresholding A at B gives p<=B r_max/N+[Tr(A^2)/N]/B, hence p<=2 sqrt((Tr(A^2)/N) r_max/N).",
+    "natural_transfer": "Uniform orientation-rank concentration and the exact sparse second moment make the bound exp(-Omega(n log n)) for every fixed-R early child, simultaneously after a subfactorial union bound.",
+    "scope": "Only one-pass block-controlled carrier operations followed by a branch-only erasure row are excluded. Multi-round source-adapted transforms and decoders retaining branch characters remain open.",
+    "theorem_verified": true,
+    "status": "physical-row-copy-one-pass-erasure-refuted"
+  },
+  "theorem": {
+    "row_copy_range": "For every nu and Fourier row a, C_(nu,a)C_(nu,a)^*=direct_sum_e E_(nu,e); containment is upgraded to equality by multiplicity additivity.",
+    "physical_native_state": "Under row-copy, the normalized physical average on its support is tau=RR^*/Tr(A)=Q A Q^*/Tr(A).",
+    "trace_budget": "For any one-pass selected branch row, Tr(supp(tau)L^*L)<=sum_e |f_e|^2 rank(E_e)<=r_max.",
+    "spectral_split": "Thresholding A at B gives p<=B r_max/N+[Tr(A^2)/N]/B, hence p<=2 sqrt((Tr(A^2)/N) r_max/N).",
+    "natural_transfer": "Uniform orientation-rank concentration and the exact sparse second moment make the bound exp(-Omega(n log n)) for every fixed-R early child, simultaneously after a subfactorial union bound.",
+    "scope": "Only one-pass block-controlled carrier operations followed by a branch-only erasure row are excluded. Multi-round source-adapted transforms and decoders retaining branch characters remain open.",
+    "theorem_verified": true,
+    "status": "physical-row-copy-one-pass-erasure-refuted"
+  },
+  "row_copy_controls": [
+    {
+      "control_id": "W3-SINGLE-UNEQUAL",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "orientation_count": 2,
+      "active_sector_row_count": 3,
+      "inactive_sector_row_count": 1,
+      "maximum_range_projector_residual": 4.440892098500626e-16,
+      "maximum_range_rank_residual": 0,
+      "maximum_invariant_range_leakage": 6.805002531977554e-17,
+      "exact_full_direct_sum_range_verified": true,
+      "status": "physical-row-copy-range-equals-orientation-direct-sum"
+    },
+    {
+      "control_id": "W3-COLLISION-FREE-THRESHOLD",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "orientation_count": 8,
+      "active_sector_row_count": 4,
+      "inactive_sector_row_count": 0,
+      "maximum_range_projector_residual": 4.440892098500626e-16,
+      "maximum_range_rank_residual": 0,
+      "maximum_invariant_range_leakage": 1.540093473568659e-16,
+      "exact_full_direct_sum_range_verified": true,
+      "status": "physical-row-copy-range-equals-orientation-direct-sum"
+    },
+    {
+      "control_id": "W4-COLLISION-FREE-PAIR",
+      "n": 4,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "orientation_count": 4,
+      "active_sector_row_count": 9,
+      "inactive_sector_row_count": 1,
+      "maximum_range_projector_residual": 6.520370844951641e-16,
+      "maximum_range_rank_residual": 0,
+      "maximum_invariant_range_leakage": 4.94395426091258e-16,
+      "exact_full_direct_sum_range_verified": true,
+      "status": "physical-row-copy-range-equals-orientation-direct-sum"
+    }
+  ],
+  "native_erasure_controls": [
+    {
+      "control_id": "RANDOM-0-IDENTITY",
+      "ambient_dimension": 16,
+      "branch_count": 4,
+      "branch_ranks": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "total_coefficient_rank": 8,
+      "frame_rank": 8,
+      "maximum_branch_rank": 2,
+      "frame_second_moment_per_trace": 1.3622254006896755,
+      "exact_acceptance_probability": 0.3405563501724188,
+      "optimized_acceptance_upper_bound": 1.0,
+      "optimizing_spectral_threshold": 2.3342882432893126,
+      "row_copy_native_state_identity_residual": 7.142138418046635e-16,
+      "support_trace_budget": 1.999999999999999,
+      "support_trace_budget_upper_bound": 2.0,
+      "native_one_pass_bound_verified": true,
+      "status": "native-row-copy-one-pass-erasure-bound-verified"
+    },
+    {
+      "control_id": "RANDOM-0-CONTROLLED",
+      "ambient_dimension": 16,
+      "branch_count": 4,
+      "branch_ranks": [
+        2,
+        2,
+        2,
+        2
+      ],
+      "total_coefficient_rank": 8,
+      "frame_rank": 8,
+      "maximum_branch_rank": 2,
+      "frame_second_moment_per_trace": 1.3622254006896755,
+      "exact_acceptance_probability": 0.25441788869676607,
+      "optimized_acceptance_upper_bound": 1.0,
+      "optimizing_spectral_threshold": 2.3342882432893126,
+      "row_copy_native_state_identity_residual": 7.142138418046635e-16,
+      "support_trace_budget": 1.9999999999999998,
+      "support_trace_budget_upper_bound": 2.0,
+      "native_one_pass_bound_verified": true,
+      "status": "native-row-copy-one-pass-erasure-bound-verified"
+    },
+    {
+      "control_id": "RANDOM-1-IDENTITY",
+      "ambient_dimension": 24,
+      "branch_count": 4,
+      "branch_ranks": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "total_coefficient_rank": 12,
+      "frame_rank": 12,
+      "maximum_branch_rank": 3,
+      "frame_second_moment_per_trace": 1.3550257818553748,
+      "exact_acceptance_probability": 0.21816134150124591,
+      "optimized_acceptance_upper_bound": 1.0,
+      "optimizing_spectral_threshold": 2.328111493769468,
+      "row_copy_native_state_identity_residual": 3.5471637933997057e-16,
+      "support_trace_budget": 2.9999999999999973,
+      "support_trace_budget_upper_bound": 3.0,
+      "native_one_pass_bound_verified": true,
+      "status": "native-row-copy-one-pass-erasure-bound-verified"
+    },
+    {
+      "control_id": "RANDOM-1-CONTROLLED",
+      "ambient_dimension": 24,
+      "branch_count": 4,
+      "branch_ranks": [
+        3,
+        3,
+        3,
+        3
+      ],
+      "total_coefficient_rank": 12,
+      "frame_rank": 12,
+      "maximum_branch_rank": 3,
+      "frame_second_moment_per_trace": 1.3550257818553748,
+      "exact_acceptance_probability": 0.2669714338169476,
+      "optimized_acceptance_upper_bound": 1.0,
+      "optimizing_spectral_threshold": 2.328111493769468,
+      "row_copy_native_state_identity_residual": 3.5471637933997057e-16,
+      "support_trace_budget": 2.999999999999998,
+      "support_trace_budget_upper_bound": 3.0,
+      "native_one_pass_bound_verified": true,
+      "status": "native-row-copy-one-pass-erasure-bound-verified"
+    },
+    {
+      "control_id": "RANDOM-2-IDENTITY",
+      "ambient_dimension": 32,
+      "branch_count": 8,
+      "branch_ranks": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "total_coefficient_rank": 16,
+      "frame_rank": 16,
+      "maximum_branch_rank": 2,
+      "frame_second_moment_per_trace": 1.3852547946268103,
+      "exact_acceptance_probability": 0.12518286623615,
+      "optimized_acceptance_upper_bound": 0.8322423909615546,
+      "optimizing_spectral_threshold": 3.3289695638462184,
+      "row_copy_native_state_identity_residual": 3.874379060818731e-16,
+      "support_trace_budget": 2.0,
+      "support_trace_budget_upper_bound": 1.9999999999999998,
+      "native_one_pass_bound_verified": true,
+      "status": "native-row-copy-one-pass-erasure-bound-verified"
+    },
+    {
+      "control_id": "RANDOM-2-CONTROLLED",
+      "ambient_dimension": 32,
+      "branch_count": 8,
+      "branch_ranks": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "total_coefficient_rank": 16,
+      "frame_rank": 16,
+      "maximum_branch_rank": 2,
+      "frame_second_moment_per_trace": 1.3852547946268103,
+      "exact_acceptance_probability": 0.12353112639997842,
+      "optimized_acceptance_upper_bound": 0.8322423909615546,
+      "optimizing_spectral_threshold": 3.3289695638462184,
+      "row_copy_native_state_identity_residual": 3.874379060818731e-16,
+      "support_trace_budget": 2.0000000000000004,
+      "support_trace_budget_upper_bound": 1.9999999999999998,
+      "native_one_pass_bound_verified": true,
+      "status": "native-row-copy-one-pass-erasure-bound-verified"
+    },
+    {
+      "control_id": "RANDOM-3-IDENTITY",
+      "ambient_dimension": 48,
+      "branch_count": 8,
+      "branch_ranks": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "total_coefficient_rank": 24,
+      "frame_rank": 24,
+      "maximum_branch_rank": 3,
+      "frame_second_moment_per_trace": 1.4316656727305286,
+      "exact_acceptance_probability": 0.11390991840392166,
+      "optimized_acceptance_upper_bound": 0.8460690494074727,
+      "optimizing_spectral_threshold": 3.3842761976298896,
+      "row_copy_native_state_identity_residual": 3.5459280602260586e-16,
+      "support_trace_budget": 3.0,
+      "support_trace_budget_upper_bound": 2.9999999999999996,
+      "native_one_pass_bound_verified": true,
+      "status": "native-row-copy-one-pass-erasure-bound-verified"
+    },
+    {
+      "control_id": "RANDOM-3-CONTROLLED",
+      "ambient_dimension": 48,
+      "branch_count": 8,
+      "branch_ranks": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "total_coefficient_rank": 24,
+      "frame_rank": 24,
+      "maximum_branch_rank": 3,
+      "frame_second_moment_per_trace": 1.4316656727305286,
+      "exact_acceptance_probability": 0.12837569440547586,
+      "optimized_acceptance_upper_bound": 0.8460690494074727,
+      "optimizing_spectral_threshold": 3.3842761976298896,
+      "row_copy_native_state_identity_residual": 3.5459280602260586e-16,
+      "support_trace_budget": 3.0,
+      "support_trace_budget_upper_bound": 2.9999999999999996,
+      "native_one_pass_bound_verified": true,
+      "status": "native-row-copy-one-pass-erasure-bound-verified"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 16,
+      "group_order_log2": 44.25014046988262,
+      "information_threshold_copy_count": 47,
+      "fixed_jump_log2_arity": 24,
+      "early_child_orientation_log2": 23,
+      "early_child_aspect": 4.009316178628343e-07,
+      "partition_count_log2_upper_bound": 14.802626237340029,
+      "simultaneous_second_moment_markov_factor_log2": 54.80262623734003,
+      "rank_relative_error": 0.5,
+      "one_pass_native_success_log2_upper_bound": 0.0,
+      "amplitude_amplification_query_log2_lower_bound": 0.0,
+      "polynomial_benchmark_log2": 40.0,
+      "rank_concentration_dependency": "existing simultaneous all-orientation/all-target Plancherel rank concentration, after global-distinct conditioning",
+      "second_moment_dependency": "existing exact sparse-frame second moment plus Markov and a union bound over fixed-R children and partition targets",
+      "one_pass_native_erasure_superpolynomial": false,
+      "multi_round_source_adapted_transform_ruled_out": false,
+      "status": "finite-size-native-erasure-separation-not-visible"
+    },
+    {
+      "n": 20,
+      "group_order_log2": 61.07738392090622,
+      "information_threshold_copy_count": 64,
+      "fixed_jump_log2_arity": 24,
+      "early_child_orientation_log2": 40,
+      "early_child_aspect": 4.519342020684337e-07,
+      "partition_count_log2_upper_bound": 16.54983925610712,
+      "simultaneous_second_moment_markov_factor_log2": 57.83755163565657,
+      "rank_relative_error": 0.5,
+      "one_pass_native_success_log2_upper_bound": 0.0,
+      "amplitude_amplification_query_log2_lower_bound": 0.0,
+      "polynomial_benchmark_log2": 43.219280948873624,
+      "rank_concentration_dependency": "existing simultaneous all-orientation/all-target Plancherel rank concentration, after global-distinct conditioning",
+      "second_moment_dependency": "existing exact sparse-frame second moment plus Markov and a union bound over fixed-R children and partition targets",
+      "one_pass_native_erasure_superpolynomial": false,
+      "multi_round_source_adapted_transform_ruled_out": false,
+      "status": "finite-size-native-erasure-separation-not-visible"
+    },
+    {
+      "n": 24,
+      "group_order_log2": 79.03765741910046,
+      "information_threshold_copy_count": 82,
+      "fixed_jump_log2_arity": 24,
+      "early_child_orientation_log2": 58,
+      "early_child_aspect": 4.645517263748782e-07,
+      "partition_count_log2_upper_bound": 18.129440567308777,
+      "simultaneous_second_moment_markov_factor_log2": 60.4692905701934,
+      "rank_relative_error": 0.5,
+      "one_pass_native_success_log2_upper_bound": 0.0,
+      "amplitude_amplification_query_log2_lower_bound": 0.0,
+      "polynomial_benchmark_log2": 45.84962500721156,
+      "rank_concentration_dependency": "existing simultaneous all-orientation/all-target Plancherel rank concentration, after global-distinct conditioning",
+      "second_moment_dependency": "existing exact sparse-frame second moment plus Markov and a union bound over fixed-R children and partition targets",
+      "one_pass_native_erasure_superpolynomial": false,
+      "multi_round_source_adapted_transform_ruled_out": false,
+      "status": "finite-size-native-erasure-separation-not-visible"
+    },
+    {
+      "n": 32,
+      "group_order_log2": 117.6632636523603,
+      "information_threshold_copy_count": 120,
+      "fixed_jump_log2_arity": 24,
+      "early_child_orientation_log2": 96,
+      "early_child_aspect": 3.010979763433401e-07,
+      "partition_count_log2_upper_bound": 20.934074783586084,
+      "simultaneous_second_moment_markov_factor_log2": 64.93407478358608,
+      "rank_relative_error": 0.5,
+      "one_pass_native_success_log2_upper_bound": -13.240481140650132,
+      "amplitude_amplification_query_log2_lower_bound": 6.620240570325066,
+      "polynomial_benchmark_log2": 50.0,
+      "rank_concentration_dependency": "existing simultaneous all-orientation/all-target Plancherel rank concentration, after global-distinct conditioning",
+      "second_moment_dependency": "existing exact sparse-frame second moment plus Markov and a union bound over fixed-R children and partition targets",
+      "one_pass_native_erasure_superpolynomial": false,
+      "multi_round_source_adapted_transform_ruled_out": false,
+      "status": "finite-size-native-erasure-separation-not-visible"
+    },
+    {
+      "n": 40,
+      "group_order_log2": 159.1590398241785,
+      "information_threshold_copy_count": 162,
+      "fixed_jump_log2_arity": 24,
+      "early_child_orientation_log2": 138,
+      "early_child_aspect": 4.2706534720121906e-07,
+      "partition_count_log2_upper_bound": 23.40500713108134,
+      "simultaneous_second_moment_markov_factor_log2": 68.6927195106308,
+      "rank_relative_error": 0.5,
+      "one_pass_native_success_log2_upper_bound": -32.36115868626156,
+      "amplitude_amplification_query_log2_lower_bound": 16.18057934313078,
+      "polynomial_benchmark_log2": 53.219280948873624,
+      "rank_concentration_dependency": "existing simultaneous all-orientation/all-target Plancherel rank concentration, after global-distinct conditioning",
+      "second_moment_dependency": "existing exact sparse-frame second moment plus Markov and a union bound over fixed-R children and partition targets",
+      "one_pass_native_erasure_superpolynomial": false,
+      "multi_round_source_adapted_transform_ruled_out": false,
+      "status": "finite-size-native-erasure-separation-not-visible"
+    },
+    {
+      "n": 48,
+      "group_order_log2": 202.94957202970025,
+      "information_threshold_copy_count": 205,
+      "fixed_jump_log2_arity": 24,
+      "early_child_orientation_log2": 181,
+      "early_child_aspect": 2.468996231595615e-07,
+      "partition_count_log2_upper_bound": 25.638900728525048,
+      "simultaneous_second_moment_markov_factor_log2": 71.97875073140966,
+      "rank_relative_error": 0.5,
+      "one_pass_native_success_log2_upper_bound": -52.21814320583418,
+      "amplitude_amplification_query_log2_lower_bound": 26.10907160291709,
+      "polynomial_benchmark_log2": 55.84962500721156,
+      "rank_concentration_dependency": "existing simultaneous all-orientation/all-target Plancherel rank concentration, after global-distinct conditioning",
+      "second_moment_dependency": "existing exact sparse-frame second moment plus Markov and a union bound over fixed-R children and partition targets",
+      "one_pass_native_erasure_superpolynomial": false,
+      "multi_round_source_adapted_transform_ruled_out": false,
+      "status": "finite-size-native-erasure-separation-not-visible"
+    },
+    {
+      "n": 64,
+      "group_order_log2": 295.9951439417241,
+      "information_threshold_copy_count": 298,
+      "fixed_jump_log2_arity": 24,
+      "early_child_orientation_log2": 274,
+      "early_child_aspect": 2.3922243936481974e-07,
+      "partition_count_log2_upper_bound": 29.605252474680057,
+      "simultaneous_second_moment_markov_factor_log2": 77.60525247468006,
+      "rank_relative_error": 0.5,
+      "one_pass_native_success_log2_upper_bound": -95.9048923397369,
+      "amplitude_amplification_query_log2_lower_bound": 47.95244616986845,
+      "polynomial_benchmark_log2": 60.0,
+      "rank_concentration_dependency": "existing simultaneous all-orientation/all-target Plancherel rank concentration, after global-distinct conditioning",
+      "second_moment_dependency": "existing exact sparse-frame second moment plus Markov and a union bound over fixed-R children and partition targets",
+      "one_pass_native_erasure_superpolynomial": false,
+      "multi_round_source_adapted_transform_ruled_out": false,
+      "status": "finite-size-native-erasure-separation-not-visible"
+    },
+    {
+      "n": 80,
+      "group_order_log2": 394.82685923155924,
+      "information_threshold_copy_count": 397,
+      "fixed_jump_log2_arity": 24,
+      "early_child_orientation_log2": 373,
+      "early_child_aspect": 2.688194326477379e-07,
+      "partition_count_log2_upper_bound": 33.09967851221424,
+      "simultaneous_second_moment_markov_factor_log2": 82.38739089176369,
+      "rank_relative_error": 0.5,
+      "one_pass_native_success_log2_upper_bound": -143.0138231098454,
+      "amplitude_amplification_query_log2_lower_bound": 71.5069115549227,
+      "polynomial_benchmark_log2": 63.219280948873624,
+      "rank_concentration_dependency": "existing simultaneous all-orientation/all-target Plancherel rank concentration, after global-distinct conditioning",
+      "second_moment_dependency": "existing exact sparse-frame second moment plus Markov and a union bound over fixed-R children and partition targets",
+      "one_pass_native_erasure_superpolynomial": true,
+      "multi_round_source_adapted_transform_ruled_out": false,
+      "status": "natural-native-one-pass-erasure-superpolynomial"
+    },
+    {
+      "n": 96,
+      "group_order_log2": 498.27715779390303,
+      "information_threshold_copy_count": 501,
+      "fixed_jump_log2_arity": 24,
+      "early_child_orientation_log2": 477,
+      "early_child_aspect": 3.9349324520392385e-07,
+      "partition_count_log2_upper_bound": 36.25888113461755,
+      "simultaneous_second_moment_markov_factor_log2": 86.59873113750217,
+      "rank_relative_error": 0.5,
+      "one_pass_native_success_log2_upper_bound": -192.908152897043,
+      "amplitude_amplification_query_log2_lower_bound": 96.4540764485215,
+      "polynomial_benchmark_log2": 65.84962500721156,
+      "rank_concentration_dependency": "existing simultaneous all-orientation/all-target Plancherel rank concentration, after global-distinct conditioning",
+      "second_moment_dependency": "existing exact sparse-frame second moment plus Markov and a union bound over fixed-R children and partition targets",
+      "one_pass_native_erasure_superpolynomial": true,
+      "multi_round_source_adapted_transform_ruled_out": false,
+      "status": "natural-native-one-pass-erasure-superpolynomial"
+    },
+    {
+      "n": 128,
+      "group_order_log2": 716.161722083622,
+      "information_threshold_copy_count": 719,
+      "fixed_jump_log2_arity": 24,
+      "early_child_orientation_log2": 695,
+      "early_child_aspect": 4.2627208470949254e-07,
+      "partition_count_log2_upper_bound": 41.86814956717217,
+      "simultaneous_second_moment_markov_factor_log2": 93.86814956717217,
+      "rank_relative_error": 0.5,
+      "one_pass_native_success_log2_upper_bound": -298.27344365856305,
+      "amplitude_amplification_query_log2_lower_bound": 149.13672182928153,
+      "polynomial_benchmark_log2": 70.0,
+      "rank_concentration_dependency": "existing simultaneous all-orientation/all-target Plancherel rank concentration, after global-distinct conditioning",
+      "second_moment_dependency": "existing exact sparse-frame second moment plus Markov and a union bound over fixed-R children and partition targets",
+      "one_pass_native_erasure_superpolynomial": true,
+      "multi_round_source_adapted_transform_ruled_out": false,
+      "status": "natural-native-one-pass-erasure-superpolynomial"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "determine_fixed_row_physical_row_copy_range",
+      "resolved": true,
+      "resolution": "The range is exactly the full direct sum of active orientation invariant ranges, not merely contained in it."
+    },
+    {
+      "obligation": "test_one_pass_branch_erasure_on_actual_native_support",
+      "resolved": true,
+      "resolution": "The trace-budget and spectral-split theorem applies directly to tau=RR^*/Tr(A), including arbitrary branch-controlled carrier unitaries."
+    },
+    {
+      "obligation": "transfer_to_natural_fixed_arity_early_children",
+      "resolved": true,
+      "resolution": "Existing uniform rank concentration and exact second moments imply a high-probability subfactorial m2 factor versus factorial q width."
+    },
+    {
+      "obligation": "construct_multi_round_orientation_index_relocation",
+      "resolved": false,
+      "resolution": "A surviving circuit must move branch information coherently through carrier/ancilla structure before erasure or avoid erasure in the final decoder."
+    },
+    {
+      "obligation": "prove_simultaneous_operational_error_for_approximate_pgm",
+      "resolved": false,
+      "resolution": "The theorem bounds conclusive probability of the one-pass architecture; it does not lower-bound every approximate coherent PGM implementation."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The row-copy output may already be a diagonal branch correlation that Walsh erases.",
+      "resolved": true,
+      "resolution": "Equation (1) shows the unrestricted fixed-row image is the entire direct sum; the hidden-state support is ran(Q), whose native density is equation (2)."
+    },
+    {
+      "objection": "A small support codimension could still concentrate all native mass into one character.",
+      "resolved": true,
+      "resolution": "Equation (4) uses the native eigenvalue distribution through Tr(A^2), not codimension alone."
+    },
+    {
+      "objection": "Arbitrary branch-controlled carrier unitaries can beat the trace budget.",
+      "resolved": true,
+      "resolution": "Their Hilbert-Schmidt contribution on branch e remains |f_e|^2 rank(E_e); positivity gives equation (3)."
+    },
+    {
+      "objection": "A union over partition targets destroys the natural asymptotic bound.",
+      "resolved": true,
+      "resolution": "p(n)=exp(O(sqrt(n))) and fixed R are subfactorial, while q=exp(Theta(n log n)); the gap survives Markov and union bounds."
+    },
+    {
+      "objection": "This rules out the physical orientation interference filter.",
+      "resolved": true,
+      "resolution": "That filter keeps q-1 characters (or another linear-rank set) and is not a one-row branch eraser."
+    },
+    {
+      "objection": "This is an arbitrary-circuit lower bound for the physical PGM.",
+      "resolved": false,
+      "resolution": "No. Alternating branch/carrier transforms, coherent index relocation, and final decoders that retain orientation characters remain outside the theorem."
+    }
+  ],
+  "headline_metrics": {
+    "exact_row_copy_full_range_theorem_count": 1,
+    "native_one_pass_erasure_bound_theorem_count": 1,
+    "row_copy_control_count": 3,
+    "native_erasure_control_count": 8,
+    "finite_control_failure_count": 0,
+    "superpolynomial_scaling_row_count": 3,
+    "multi_round_orientation_index_relocation_count": 0,
+    "physical_orientation_polar_compiler_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "fixed_row_copy_range_equals_full_orientation_direct_sum": true,
+    "physical_native_state_equals_RRstar_over_trace": true,
+    "one_pass_native_erasure_moment_bound_proved": true,
+    "natural_one_pass_erasure_superpolynomial": true,
+    "physical_interference_filter_refuted": false,
+    "multi_round_source_adapted_transform_ruled_out": false,
+    "branch_character_retaining_decoder_ruled_out": false,
+    "arbitrary_physical_orientation_polar_ruled_out": false,
+    "physical_orientation_polar_compiled": false,
+    "speedup_claim_allowed": false
+  },
+  "status": "physical-row-copy-one-pass-erasure-refuted",
+  "summary": "The physical row-copy interface fills the full orientation-range direct sum, and its hidden-state support carries native density RR*/Tr(A). A trace-budget plus spectral split proves that every one-pass branch-controlled carrier circuit followed by one branch-erasure row has exp(-Omega(n log n)) success on natural fixed-R early children. Any surviving physical router must be genuinely multi-round or retain branch characters in a different coherent decoder.",
+  "falsifiers_triggered": [
+    "Physical row-copy is not by itself the correlated diagonal embedding needed for deterministic Walsh erasure.",
+    "Native-state weighting does not rescue one-pass erasure once rank balance and the second moment are charged.",
+    "The direct physical route remains open only beyond the one-pass block-controlled/branch-only architecture."
+  ]
+}

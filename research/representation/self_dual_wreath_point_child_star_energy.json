@@ -1,0 +1,654 @@
+{
+  "created_at": "2026-08-12T03:41:19.681784+00:00",
+  "theorem_contract": {
+    "subgroup_gram": "Z^H_alpha=d_alpha^-1 sum_a X_(alpha,a)X_(alpha,a)^* from one Fourier-transformed native purification.",
+    "full_twirl_pinch": "Z^G_alpha=direct_sum_(nu covers alpha) D_nu/d_nu; all cross-parent blocks are removed by the full group twirl.",
+    "positive_energy": "||omega-bar||_2^2=sum_alpha d_alpha||Z^H_alpha-Z^G_alpha||_F^2.",
+    "recoupling_witness": "Splitting each child star by parent pairs gives nonnegative channel energies; any active off-diagonal pair is an explicit recoupling witness.",
+    "algorithmic_boundary": "Native purification, group QFT, and Young labels avoid subgroup enumeration, but dense orientation Grams and relative-scale access remain.",
+    "scope": "This is a positive support/energy decomposition, not an asymptotic lower bound, coherent measurement, or decoder.",
+    "theorem_verified": true,
+    "status": "positive-child-star-recoupling-witness-theorem"
+  },
+  "theorem": {
+    "subgroup_gram": "Z^H_alpha=d_alpha^-1 sum_a X_(alpha,a)X_(alpha,a)^* from one Fourier-transformed native purification.",
+    "full_twirl_pinch": "Z^G_alpha=direct_sum_(nu covers alpha) D_nu/d_nu; all cross-parent blocks are removed by the full group twirl.",
+    "positive_energy": "||omega-bar||_2^2=sum_alpha d_alpha||Z^H_alpha-Z^G_alpha||_F^2.",
+    "recoupling_witness": "Splitting each child star by parent pairs gives nonnegative channel energies; any active off-diagonal pair is an explicit recoupling witness.",
+    "algorithmic_boundary": "Native purification, group QFT, and Young labels avoid subgroup enumeration, but dense orientation Grams and relative-scale access remain.",
+    "scope": "This is a positive support/energy decomposition, not an asymptotic lower bound, coherent measurement, or decoder.",
+    "theorem_verified": true,
+    "status": "positive-child-star-recoupling-witness-theorem"
+  },
+  "finite_controls": [
+    {
+      "control_id": "W3-INFORMATION-THRESHOLD",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 3,
+      "orientation_count": 8,
+      "register_dimension": 48,
+      "child_star_count": 2,
+      "active_child_star_count": 2,
+      "direct_centered_energy": 0.044921875000000014,
+      "decomposed_centered_energy": 0.04492187500000001,
+      "total_diagonal_parent_energy": 0.005859375,
+      "total_offdiagonal_parent_energy": 0.039062500000000014,
+      "offdiagonal_energy_fraction": 0.8695652173913045,
+      "maximum_purification_gram_residual": 4.225229440446142e-17,
+      "maximum_full_twirl_parent_block_residual": 2.019608678943192e-17,
+      "centered_energy_decomposition_residual": 3.0831000324687246e-17,
+      "strongest_witness_child": [
+        2
+      ],
+      "strongest_witness_parent_pair": [
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "strongest_witness_energy": 0.009765625000000003,
+      "child_records": [
+        {
+          "child": [
+            2
+          ],
+          "child_irrep_dimension": 1,
+          "parent_partitions": [
+            [
+              3
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "parent_count": 2,
+          "child_star_dimension": 24,
+          "centered_child_star_rank": 8,
+          "child_energy": 0.022460937500000003,
+          "diagonal_parent_energy": 0.0029296875,
+          "offdiagonal_parent_energy": 0.019531250000000007,
+          "offdiagonal_energy_fraction": 0.8695652173913045,
+          "active_parent_block_count": 3,
+          "active_offdiagonal_parent_block_count": 2,
+          "strongest_parent_pair": [
+            [
+              3
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "strongest_parent_block_energy": 0.009765625000000003
+        },
+        {
+          "child": [
+            1,
+            1
+          ],
+          "child_irrep_dimension": 1,
+          "parent_partitions": [
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "parent_count": 2,
+          "child_star_dimension": 24,
+          "centered_child_star_rank": 8,
+          "child_energy": 0.022460937500000003,
+          "diagonal_parent_energy": 0.0029296875,
+          "offdiagonal_parent_energy": 0.019531250000000007,
+          "offdiagonal_energy_fraction": 0.8695652173913045,
+          "active_parent_block_count": 3,
+          "active_offdiagonal_parent_block_count": 2,
+          "strongest_parent_pair": [
+            [
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "strongest_parent_block_energy": 0.009765625000000003
+        }
+      ],
+      "exact_child_star_energy_theorem_verified": true,
+      "status": "exact-positive-child-star-recoupling-decomposition"
+    },
+    {
+      "control_id": "W4-COLLISION-FREE-PAIR",
+      "n": 4,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 2,
+      "orientation_count": 4,
+      "register_dimension": 96,
+      "child_star_count": 3,
+      "active_child_star_count": 3,
+      "direct_centered_energy": 0.0025612997256515765,
+      "decomposed_centered_energy": 0.002561299725651576,
+      "total_diagonal_parent_energy": 0.00024112654320987648,
+      "total_offdiagonal_parent_energy": 0.0023201731824417,
+      "offdiagonal_energy_fraction": 0.9058577405857741,
+      "maximum_purification_gram_residual": 3.941868782444889e-17,
+      "maximum_full_twirl_parent_block_residual": 1.6758593567775153e-17,
+      "centered_energy_decomposition_residual": 4.794366299983577e-17,
+      "strongest_witness_child": [
+        2,
+        1
+      ],
+      "strongest_witness_parent_pair": [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "strongest_witness_energy": 0.0006822988111568355,
+      "child_records": [
+        {
+          "child": [
+            3
+          ],
+          "child_irrep_dimension": 1,
+          "parent_partitions": [
+            [
+              4
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "parent_count": 2,
+          "child_star_dimension": 16,
+          "centered_child_star_rank": 6,
+          "child_energy": 1.607510288065843e-05,
+          "diagonal_parent_energy": 1.607510288065843e-05,
+          "offdiagonal_parent_energy": 7.319677611040866e-35,
+          "offdiagonal_energy_fraction": 4.5534250482763034e-30,
+          "active_parent_block_count": 1,
+          "active_offdiagonal_parent_block_count": 0,
+          "strongest_parent_pair": [
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "strongest_parent_block_energy": 1.607510288065843e-05
+        },
+        {
+          "child": [
+            2,
+            1
+          ],
+          "child_irrep_dimension": 2,
+          "parent_partitions": [
+            [
+              3,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              1,
+              1
+            ]
+          ],
+          "parent_count": 3,
+          "child_star_dimension": 32,
+          "centered_child_star_rank": 19,
+          "child_energy": 0.0023291037951531767,
+          "diagonal_parent_energy": 8.037551440329213e-05,
+          "offdiagonal_parent_energy": 0.0022487282807498845,
+          "offdiagonal_energy_fraction": 0.9654907975460122,
+          "active_parent_block_count": 8,
+          "active_offdiagonal_parent_block_count": 6,
+          "strongest_parent_pair": [
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              1,
+              1
+            ]
+          ],
+          "strongest_parent_block_energy": 0.0006822988111568355
+        },
+        {
+          "child": [
+            1,
+            1,
+            1
+          ],
+          "child_irrep_dimension": 1,
+          "parent_partitions": [
+            [
+              2,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "parent_count": 2,
+          "child_star_dimension": 16,
+          "centered_child_star_rank": 10,
+          "child_energy": 0.00021612082761774114,
+          "diagonal_parent_energy": 0.00014467592592592592,
+          "offdiagonal_parent_energy": 7.144490169181525e-05,
+          "offdiagonal_energy_fraction": 0.3305785123966942,
+          "active_parent_block_count": 3,
+          "active_offdiagonal_parent_block_count": 2,
+          "strongest_parent_pair": [
+            [
+              2,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1
+            ]
+          ],
+          "strongest_parent_block_energy": 0.00014467592592592592
+        }
+      ],
+      "exact_child_star_energy_theorem_verified": true,
+      "status": "exact-positive-child-star-recoupling-decomposition"
+    },
+    {
+      "control_id": "W4-ZERO-ZERO-COLLECTIVE-ACTIVATION",
+      "n": 4,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 2,
+      "orientation_count": 4,
+      "register_dimension": 96,
+      "child_star_count": 3,
+      "active_child_star_count": 2,
+      "direct_centered_energy": 0.0017361111111111106,
+      "decomposed_centered_energy": 0.0017361111111111112,
+      "total_diagonal_parent_energy": 2.441901514324125e-34,
+      "total_offdiagonal_parent_energy": 0.0017361111111111112,
+      "offdiagonal_energy_fraction": 1.0,
+      "maximum_purification_gram_residual": 1.1133049407531819e-16,
+      "maximum_full_twirl_parent_block_residual": 2.4557883695543268e-17,
+      "centered_energy_decomposition_residual": 6.469294267307819e-17,
+      "strongest_witness_child": [
+        1,
+        1,
+        1
+      ],
+      "strongest_witness_parent_pair": [
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "strongest_witness_energy": 0.0005787037037037039,
+      "child_records": [
+        {
+          "child": [
+            3
+          ],
+          "child_irrep_dimension": 1,
+          "parent_partitions": [
+            [
+              4
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "parent_count": 2,
+          "child_star_dimension": 16,
+          "centered_child_star_rank": 0,
+          "child_energy": 1.5049288745989198e-34,
+          "diagonal_parent_energy": 9.634127207043032e-35,
+          "offdiagonal_parent_energy": 5.415161538946165e-35,
+          "offdiagonal_energy_fraction": 0.0,
+          "active_parent_block_count": 0,
+          "active_offdiagonal_parent_block_count": 0,
+          "strongest_parent_pair": [
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "strongest_parent_block_energy": 8.622407468322319e-35
+        },
+        {
+          "child": [
+            2,
+            1
+          ],
+          "child_irrep_dimension": 2,
+          "parent_partitions": [
+            [
+              3,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              1,
+              1
+            ]
+          ],
+          "parent_count": 3,
+          "child_star_dimension": 32,
+          "centered_child_star_rank": 4,
+          "child_energy": 0.0005787037037037033,
+          "diagonal_parent_energy": 9.570178915686708e-35,
+          "offdiagonal_parent_energy": 0.0005787037037037035,
+          "offdiagonal_energy_fraction": 1.0000000000000002,
+          "active_parent_block_count": 2,
+          "active_offdiagonal_parent_block_count": 2,
+          "strongest_parent_pair": [
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "strongest_parent_block_energy": 0.00028935185185185173
+        },
+        {
+          "child": [
+            1,
+            1,
+            1
+          ],
+          "child_irrep_dimension": 1,
+          "parent_partitions": [
+            [
+              2,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "parent_count": 2,
+          "child_star_dimension": 16,
+          "centered_child_star_rank": 2,
+          "child_energy": 0.0011574074074074078,
+          "diagonal_parent_energy": 5.214709020511512e-35,
+          "offdiagonal_parent_energy": 0.0011574074074074078,
+          "offdiagonal_energy_fraction": 1.0,
+          "active_parent_block_count": 2,
+          "active_offdiagonal_parent_block_count": 2,
+          "strongest_parent_pair": [
+            [
+              2,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "strongest_parent_block_energy": 0.0005787037037037039
+        }
+      ],
+      "exact_child_star_energy_theorem_verified": true,
+      "status": "exact-positive-child-star-recoupling-decomposition"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 8,
+      "information_threshold_copy_count": 16,
+      "orientation_log2_width": 16,
+      "young_child_label_count": 15,
+      "maximum_parent_count_per_child_upper_bound": 5.0,
+      "native_purification_and_group_qft_polynomial": true,
+      "explicit_subgroup_element_average_required": false,
+      "positive_channel_witness_extraction_formula_proved": true,
+      "dense_orientation_gram_materialization_polynomial": false,
+      "coherent_relative_scale_gram_access_proved": false,
+      "efficient_child_star_measurement_proved": false,
+      "status": "positive-recoupling-witness-formula-proved-coherent-access-open"
+    },
+    {
+      "n": 16,
+      "information_threshold_copy_count": 45,
+      "orientation_log2_width": 45,
+      "young_child_label_count": 176,
+      "maximum_parent_count_per_child_upper_bound": 6.656854249492381,
+      "native_purification_and_group_qft_polynomial": true,
+      "explicit_subgroup_element_average_required": false,
+      "positive_channel_witness_extraction_formula_proved": true,
+      "dense_orientation_gram_materialization_polynomial": false,
+      "coherent_relative_scale_gram_access_proved": false,
+      "efficient_child_star_measurement_proved": false,
+      "status": "positive-recoupling-witness-formula-proved-coherent-access-open"
+    },
+    {
+      "n": 32,
+      "information_threshold_copy_count": 118,
+      "orientation_log2_width": 118,
+      "young_child_label_count": 6842,
+      "maximum_parent_count_per_child_upper_bound": 9.0,
+      "native_purification_and_group_qft_polynomial": true,
+      "explicit_subgroup_element_average_required": false,
+      "positive_channel_witness_extraction_formula_proved": true,
+      "dense_orientation_gram_materialization_polynomial": false,
+      "coherent_relative_scale_gram_access_proved": false,
+      "efficient_child_star_measurement_proved": false,
+      "status": "positive-recoupling-witness-formula-proved-coherent-access-open"
+    },
+    {
+      "n": 64,
+      "information_threshold_copy_count": 296,
+      "orientation_log2_width": 296,
+      "young_child_label_count": 1505499,
+      "maximum_parent_count_per_child_upper_bound": 12.313708498984761,
+      "native_purification_and_group_qft_polynomial": true,
+      "explicit_subgroup_element_average_required": false,
+      "positive_channel_witness_extraction_formula_proved": true,
+      "dense_orientation_gram_materialization_polynomial": false,
+      "coherent_relative_scale_gram_access_proved": false,
+      "efficient_child_star_measurement_proved": false,
+      "status": "positive-recoupling-witness-formula-proved-coherent-access-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "replace_scalar_activation_with_positive_channel_witnesses",
+      "resolved": true,
+      "resolution": "Point energy is exactly the sum of child and parent-pair block Frobenius energies."
+    },
+    {
+      "obligation": "remove_explicit_stabilizer_average_from_witness_extraction",
+      "resolved": true,
+      "resolution": "A Fourier-transformed native purification and child-row partial trace produce every subgroup Gram block directly."
+    },
+    {
+      "obligation": "prove_scalable_collective_witness_magnitude",
+      "resolved": false,
+      "resolution": "Finite active blocks may still have factorially small energy."
+    },
+    {
+      "obligation": "compile_coherent_child_star_action",
+      "resolved": false,
+      "resolution": "The exact Gram formula does not remove orientation width or give relative-scale square-root access."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Collective activation could be a cancellation artifact.",
+      "resolved": true,
+      "resolution": "No. It decomposes into explicitly nonnegative child/parent block energies."
+    },
+    {
+      "objection": "A positive recoupling block implies inverse-polynomial signal.",
+      "resolved": false,
+      "resolution": "Nonzero support gives no asymptotic magnitude lower bound."
+    },
+    {
+      "objection": "Efficient state preparation automatically block-encodes the Gram at its useful scale.",
+      "resolved": true,
+      "resolution": "False. Purification access can retain sector, orientation-width, and singular-value normalization penalties."
+    }
+  ],
+  "headline_metrics": {
+    "positive_child_star_energy_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "active_finite_child_star_count": 7,
+    "finite_offdiagonal_recoupling_witness_count": 16,
+    "scalable_recoupling_magnitude_theorem_count": 0,
+    "efficient_child_star_measurement_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "positive_child_star_energy_decomposition_proved": true,
+    "native_purification_gram_formula_proved": true,
+    "full_twirl_parent_pinch_formula_proved": true,
+    "finite_collective_recoupling_witnesses_extracted": true,
+    "scalable_collective_witness_magnitude_proved": false,
+    "coherent_relative_scale_child_star_access_proved": false,
+    "efficient_point_measurement_proved": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "The exact decomposition identifies positive intermediate channels, but neither their threshold magnitude nor coherent access is solved."
+  },
+  "status": "positive-child-star-recoupling-witness-theorem",
+  "summary": "Converted point signal into positive Young child-star and parent-pair energies derived from one native Fourier purification. This enables recoupling-witness search without claiming scalable magnitude or access.",
+  "falsifiers_triggered": [
+    "Collective point activation is not a signed scalar cancellation; it has explicit positive intermediate-channel witnesses.",
+    "Explicit stabilizer-element averaging is unnecessary for exact finite witness extraction once the native Fourier amplitude is available.",
+    "A positive finite channel remains insufficient for an asymptotic or algorithmic claim."
+  ]
+}

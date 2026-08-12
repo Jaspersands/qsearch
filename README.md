@@ -3810,6 +3810,896 @@ python3 qsearch.py dcp-linear-reparameterization-affine-flat-no-go
 Evaluate Exp Dhs Dcp Linear Reparameterization Affine Flat No Go theorem contract and headline metrics.
 
 ```bash
+python3 qsearch.py dcp-carry-quadratic-extension-boundary
+```
+Evaluate Exp Dhs Dcp Carry Quadratic Extension Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py dcp-label-incidence-rank-width-no-go
+```
+Evaluate Exp Dhs Dcp Label Incidence Rank Width No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py hidden-shift-public-evaluator-admission-theorem
+```
+Evaluate Exp Hidden Shift Public Evaluator Admission Theorem theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-all-level-component-trim
+```
+Evaluate Exp Code Self Dual Wreath All Level Component Trim theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-branch-character-decoder-boundary
+```
+Evaluate Exp Code Self Dual Wreath Branch Character Decoder Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-coherent-component-trim-hybrid
+```
+Evaluate Exp Code Self Dual Wreath Coherent Component Trim Hybrid theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-coherent-gpe-router-boundary
+```
+Evaluate Exp Code Self Dual Wreath Coherent Gpe Router Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-collective-point-activation
+```
+Evaluate Exp Code Self Dual Wreath Collective Point Activation theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-common-window-access-boundary
+```
+Evaluate Exp Code Self Dual Wreath Common Window Access Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-common-codimension-curl-reduction
+```
+Evaluate Exp Code Self Dual Wreath Component Common Codimension Curl Reduction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-dependency-ridge-moment-method-bridge
+```
+Evaluate Exp Code Self Dual Wreath Component Dependency Ridge Moment Method Bridge theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-dependency-ridge-parity-stability
+```
+Evaluate Exp Code Self Dual Wreath Component Dependency Ridge Parity Stability theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-dependency-ridge-physical-curl
+```
+Evaluate Exp Code Self Dual Wreath Component Dependency Ridge Physical Curl theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-dependency-ridge-physical-hamming
+```
+Evaluate Exp Code Self Dual Wreath Component Dependency Ridge Physical Hamming theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-dependency-ridge-physical-spectrum
+```
+Evaluate Exp Code Self Dual Wreath Component Dependency Ridge Physical Spectrum theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-dependency-ridge-single-frame-tail
+```
+Evaluate Exp Code Self Dual Wreath Component Dependency Ridge Single Frame Tail theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-diagonal-leakage-bridge
+```
+Evaluate Exp Code Self Dual Wreath Component Diagonal Leakage Bridge theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-leaf-fourier-commutator-duality
+```
+Evaluate Exp Code Self Dual Wreath Component Leaf Fourier Commutator Duality theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-leaf-fourier-leverage
+```
+Evaluate Exp Code Self Dual Wreath Component Leaf Fourier Leverage theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-leaf-fourier-strata
+```
+Evaluate Exp Code Self Dual Wreath Component Leaf Fourier Strata theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-m4-operational-boundary
+```
+Evaluate Exp Code Self Dual Wreath Component M4 Operational Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-polar-traffic-curl
+```
+Evaluate Exp Code Self Dual Wreath Component Polar Traffic Curl theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-single-leaf-diagonal-reduction
+```
+Evaluate Exp Code Self Dual Wreath Component Single Leaf Diagonal Reduction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-size-biased-effect-law
+```
+Evaluate Exp Code Self Dual Wreath Component Size Biased Effect Law theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-support-geometry-no-go
+```
+Evaluate Exp Code Self Dual Wreath Component Support Geometry No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-support-ridge-poisson-scale-no-go
+```
+Evaluate Exp Code Self Dual Wreath Component Support Ridge Poisson Scale No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-trimmed-support-scalarization
+```
+Evaluate Exp Code Self Dual Wreath Component Trimmed Support Scalarization theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-conjugate-pair-admission-no-go
+```
+Evaluate Exp Code Self Dual Wreath Conjugate Pair Admission No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-constant-arity-joint-freeness
+```
+Evaluate Exp Code Self Dual Wreath Constant Arity Joint Freeness theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-final-root-common-window-metric
+```
+Evaluate Exp Code Self Dual Wreath Final Root Common Window Metric theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-final-root-joint-aspect-sharpening
+```
+Evaluate Exp Code Self Dual Wreath Final Root Joint Aspect Sharpening theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-final-root-relative-jacobi-transfer
+```
+Evaluate Exp Code Self Dual Wreath Final Root Relative Jacobi Transfer theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-fixed-arity-support-sum-compiler
+```
+Evaluate Exp Code Self Dual Wreath Fixed Arity Support Sum Compiler theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-flat-holonomy-component-no-go
+```
+Evaluate Exp Code Self Dual Wreath Flat Holonomy Component No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-interleaved-target-margin-stability
+```
+Evaluate Exp Code Self Dual Wreath Interleaved Target Margin Stability theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-joint-character-correlation-decoder
+```
+Evaluate Exp Code Self Dual Wreath Joint Character Correlation Decoder theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-joint-character-multiplicity-gram
+```
+Evaluate Exp Code Self Dual Wreath Joint Character Multiplicity Gram theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-joint-character-purity-decoupling
+```
+Evaluate Exp Code Self Dual Wreath Joint Character Purity Decoupling theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-orientation-kernel-hash-thinning
+```
+Evaluate Exp Code Self Dual Wreath Orientation Kernel Hash Thinning theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-orientation-partition-traffic
+```
+Evaluate Exp Code Self Dual Wreath Orientation Partition Traffic theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-partial-holonomy-sheaf-resolver
+```
+Evaluate Exp Code Self Dual Wreath Partial Holonomy Sheaf Resolver theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-physical-branch-erasure-boundary
+```
+Evaluate Exp Code Self Dual Wreath Physical Branch Erasure Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-physical-row-copy-erasure-no-go
+```
+Evaluate Exp Code Self Dual Wreath Physical Row Copy Erasure No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-plancherel-recoupling-stationarity
+```
+Evaluate Exp Code Self Dual Wreath Plancherel Recoupling Stationarity theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-child-star-energy
+```
+Evaluate Exp Code Self Dual Wreath Point Child Star Energy theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-effect-access-boundary
+```
+Evaluate Exp Code Self Dual Wreath Point Effect Access Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-effect-qsvt-no-go
+```
+Evaluate Exp Code Self Dual Wreath Point Effect Qsvt No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-linear-povm
+```
+Evaluate Exp Code Self Dual Wreath Point Linear Povm theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-single-pair-point-signal-no-go
+```
+Evaluate Exp Code Self Dual Wreath Single Pair Point Signal No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-sparse-polar-access-composition-no-go
+```
+Evaluate Exp Code Self Dual Wreath Sparse Polar Access Composition No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-sparse-support-polar-hybrid
+```
+Evaluate Exp Code Self Dual Wreath Sparse Support Polar Hybrid theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-sparse-support-polar-schedule
+```
+Evaluate Exp Code Self Dual Wreath Sparse Support Polar Schedule theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-support-projector-endpoint-gauge-boundary
+```
+Evaluate Exp Code Self Dual Wreath Support Projector Endpoint Gauge Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-transpose-edge-admission-no-go
+```
+Evaluate Exp Code Self Dual Wreath Transpose Edge Admission No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-windowed-root-flatness-bridge
+```
+Evaluate Exp Code Self Dual Wreath Windowed Root Flatness Bridge theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-parent-coherence-witness
+```
+Evaluate Exp Code Self Dual Wreath Point Parent Coherence Witness theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-pgm-coarse-graining
+```
+Evaluate Exp Code Self Dual Wreath Point Pgm Coarse Graining theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-stabilizer-collision-free-kernel
+```
+Evaluate Exp Code Self Dual Wreath Point Stabilizer Collision Free Kernel theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-stabilizer-quotient
+```
+Evaluate Exp Code Self Dual Wreath Point Stabilizer Quotient theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-standard-energy
+```
+Evaluate Exp Code Self Dual Wreath Point Standard Energy theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-young-star-naimark
+```
+Evaluate Exp Code Self Dual Wreath Point Young Star Naimark theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-recursive-kernel-isometry
+```
+Evaluate Exp Code Self Dual Wreath Recursive Kernel Isometry theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-reversible-automaton-fiber-collapse
+```
+Evaluate Exp Code Self Dual Wreath Reversible Automaton Fiber Collapse theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-shared-pair-recoupling-decoupling
+```
+Evaluate Exp Code Self Dual Wreath Shared Pair Recoupling Decoupling theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-sibling-frame-all-fixed-joint
+```
+Evaluate Exp Code Self Dual Wreath Sibling Frame All Fixed Joint theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-sibling-frame-all-fixed-mp
+```
+Evaluate Exp Code Self Dual Wreath Sibling Frame All Fixed Mp theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-sign-twist-collective-activation
+```
+Evaluate Exp Code Self Dual Wreath Sign Twist Collective Activation theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-dependency-ridge-physical-curl
+```
+Evaluate Exp Code Self Dual Wreath Component Dependency Ridge Physical Curl theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-dependency-ridge-physical-curl
+```
+Evaluate Exp Code Self Dual Wreath Component Dependency Ridge Physical Curl theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-dependency-ridge-physical-hamming
+```
+Evaluate Exp Code Self Dual Wreath Component Dependency Ridge Physical Hamming theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-dependency-ridge-physical-spectrum
+```
+Evaluate Exp Code Self Dual Wreath Component Dependency Ridge Physical Spectrum theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-dependency-ridge-single-frame-tail
+```
+Evaluate Exp Code Self Dual Wreath Component Dependency Ridge Single Frame Tail theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-diagonal-leakage-bridge
+```
+Evaluate Exp Code Self Dual Wreath Component Diagonal Leakage Bridge theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-leaf-fourier-commutator-duality
+```
+Evaluate Exp Code Self Dual Wreath Component Leaf Fourier Commutator Duality theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-leaf-fourier-leverage
+```
+Evaluate Exp Code Self Dual Wreath Component Leaf Fourier Leverage theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-leaf-fourier-strata
+```
+Evaluate Exp Code Self Dual Wreath Component Leaf Fourier Strata theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-m4-operational-boundary
+```
+Evaluate Exp Code Self Dual Wreath Component M4 Operational Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-polar-traffic-curl
+```
+Evaluate Exp Code Self Dual Wreath Component Polar Traffic Curl theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-single-leaf-diagonal-reduction
+```
+Evaluate Exp Code Self Dual Wreath Component Single Leaf Diagonal Reduction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-size-biased-effect-law
+```
+Evaluate Exp Code Self Dual Wreath Component Size Biased Effect Law theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-parent-coherence-witness
+```
+Evaluate Exp Code Self Dual Wreath Point Parent Coherence Witness theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-pgm-coarse-graining
+```
+Evaluate Exp Code Self Dual Wreath Point Pgm Coarse Graining theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-stabilizer-collision-free-kernel
+```
+Evaluate Exp Code Self Dual Wreath Point Stabilizer Collision Free Kernel theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-stabilizer-quotient
+```
+Evaluate Exp Code Self Dual Wreath Point Stabilizer Quotient theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-standard-energy
+```
+Evaluate Exp Code Self Dual Wreath Point Standard Energy theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-young-star-naimark
+```
+Evaluate Exp Code Self Dual Wreath Point Young Star Naimark theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-recursive-kernel-isometry
+```
+Evaluate Exp Code Self Dual Wreath Recursive Kernel Isometry theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-reversible-automaton-fiber-collapse
+```
+Evaluate Exp Code Self Dual Wreath Reversible Automaton Fiber Collapse theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-shared-pair-recoupling-decoupling
+```
+Evaluate Exp Code Self Dual Wreath Shared Pair Recoupling Decoupling theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-sibling-frame-all-fixed-joint
+```
+Evaluate Exp Code Self Dual Wreath Sibling Frame All Fixed Joint theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-sibling-frame-all-fixed-mp
+```
+Evaluate Exp Code Self Dual Wreath Sibling Frame All Fixed Mp theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-sign-twist-collective-activation
+```
+Evaluate Exp Code Self Dual Wreath Sign Twist Collective Activation theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-dependency-ridge-physical-curl
+```
+Evaluate Exp Code Self Dual Wreath Component Dependency Ridge Physical Curl theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-dependency-ridge-physical-hamming
+```
+Evaluate Exp Code Self Dual Wreath Component Dependency Ridge Physical Hamming theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-dependency-ridge-physical-spectrum
+```
+Evaluate Exp Code Self Dual Wreath Component Dependency Ridge Physical Spectrum theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-dependency-ridge-single-frame-tail
+```
+Evaluate Exp Code Self Dual Wreath Component Dependency Ridge Single Frame Tail theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-diagonal-leakage-bridge
+```
+Evaluate Exp Code Self Dual Wreath Component Diagonal Leakage Bridge theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-leaf-fourier-commutator-duality
+```
+Evaluate Exp Code Self Dual Wreath Component Leaf Fourier Commutator Duality theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-leaf-fourier-leverage
+```
+Evaluate Exp Code Self Dual Wreath Component Leaf Fourier Leverage theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-leaf-fourier-strata
+```
+Evaluate Exp Code Self Dual Wreath Component Leaf Fourier Strata theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-m4-operational-boundary
+```
+Evaluate Exp Code Self Dual Wreath Component M4 Operational Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-polar-traffic-curl
+```
+Evaluate Exp Code Self Dual Wreath Component Polar Traffic Curl theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-single-leaf-diagonal-reduction
+```
+Evaluate Exp Code Self Dual Wreath Component Single Leaf Diagonal Reduction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-size-biased-effect-law
+```
+Evaluate Exp Code Self Dual Wreath Component Size Biased Effect Law theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-parent-coherence-witness
+```
+Evaluate Exp Code Self Dual Wreath Point Parent Coherence Witness theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-pgm-coarse-graining
+```
+Evaluate Exp Code Self Dual Wreath Point Pgm Coarse Graining theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-stabilizer-collision-free-kernel
+```
+Evaluate Exp Code Self Dual Wreath Point Stabilizer Collision Free Kernel theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-stabilizer-quotient
+```
+Evaluate Exp Code Self Dual Wreath Point Stabilizer Quotient theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-standard-energy
+```
+Evaluate Exp Code Self Dual Wreath Point Standard Energy theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-young-star-naimark
+```
+Evaluate Exp Code Self Dual Wreath Point Young Star Naimark theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-recursive-kernel-isometry
+```
+Evaluate Exp Code Self Dual Wreath Recursive Kernel Isometry theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-reversible-automaton-fiber-collapse
+```
+Evaluate Exp Code Self Dual Wreath Reversible Automaton Fiber Collapse theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-shared-pair-recoupling-decoupling
+```
+Evaluate Exp Code Self Dual Wreath Shared Pair Recoupling Decoupling theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-sibling-frame-all-fixed-joint
+```
+Evaluate Exp Code Self Dual Wreath Sibling Frame All Fixed Joint theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-sibling-frame-all-fixed-mp
+```
+Evaluate Exp Code Self Dual Wreath Sibling Frame All Fixed Mp theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-sign-twist-collective-activation
+```
+Evaluate Exp Code Self Dual Wreath Sign Twist Collective Activation theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-joint-character-multiplicity-gram
+```
+Evaluate Exp Code Self Dual Wreath Joint Character Multiplicity Gram theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-joint-character-purity-decoupling
+```
+Evaluate Exp Code Self Dual Wreath Joint Character Purity Decoupling theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-orientation-kernel-hash-thinning
+```
+Evaluate Exp Code Self Dual Wreath Orientation Kernel Hash Thinning theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-orientation-partition-traffic
+```
+Evaluate Exp Code Self Dual Wreath Orientation Partition Traffic theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-partial-holonomy-sheaf-resolver
+```
+Evaluate Exp Code Self Dual Wreath Partial Holonomy Sheaf Resolver theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-physical-branch-erasure-boundary
+```
+Evaluate Exp Code Self Dual Wreath Physical Branch Erasure Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-physical-row-copy-erasure-no-go
+```
+Evaluate Exp Code Self Dual Wreath Physical Row Copy Erasure No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-plancherel-recoupling-stationarity
+```
+Evaluate Exp Code Self Dual Wreath Plancherel Recoupling Stationarity theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-child-star-energy
+```
+Evaluate Exp Code Self Dual Wreath Point Child Star Energy theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-effect-access-boundary
+```
+Evaluate Exp Code Self Dual Wreath Point Effect Access Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-effect-qsvt-no-go
+```
+Evaluate Exp Code Self Dual Wreath Point Effect Qsvt No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-linear-povm
+```
+Evaluate Exp Code Self Dual Wreath Point Linear Povm theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-single-pair-point-signal-no-go
+```
+Evaluate Exp Code Self Dual Wreath Single Pair Point Signal No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-sparse-polar-access-composition-no-go
+```
+Evaluate Exp Code Self Dual Wreath Sparse Polar Access Composition No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-sparse-support-polar-hybrid
+```
+Evaluate Exp Code Self Dual Wreath Sparse Support Polar Hybrid theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-sparse-support-polar-schedule
+```
+Evaluate Exp Code Self Dual Wreath Sparse Support Polar Schedule theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-support-projector-endpoint-gauge-boundary
+```
+Evaluate Exp Code Self Dual Wreath Support Projector Endpoint Gauge Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-transpose-edge-admission-no-go
+```
+Evaluate Exp Code Self Dual Wreath Transpose Edge Admission No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-windowed-root-flatness-bridge
+```
+Evaluate Exp Code Self Dual Wreath Windowed Root Flatness Bridge theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-joint-character-multiplicity-gram
+```
+Evaluate Exp Code Self Dual Wreath Joint Character Multiplicity Gram theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-joint-character-purity-decoupling
+```
+Evaluate Exp Code Self Dual Wreath Joint Character Purity Decoupling theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-orientation-kernel-hash-thinning
+```
+Evaluate Exp Code Self Dual Wreath Orientation Kernel Hash Thinning theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-orientation-partition-traffic
+```
+Evaluate Exp Code Self Dual Wreath Orientation Partition Traffic theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-partial-holonomy-sheaf-resolver
+```
+Evaluate Exp Code Self Dual Wreath Partial Holonomy Sheaf Resolver theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-physical-branch-erasure-boundary
+```
+Evaluate Exp Code Self Dual Wreath Physical Branch Erasure Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-physical-row-copy-erasure-no-go
+```
+Evaluate Exp Code Self Dual Wreath Physical Row Copy Erasure No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-plancherel-recoupling-stationarity
+```
+Evaluate Exp Code Self Dual Wreath Plancherel Recoupling Stationarity theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-child-star-energy
+```
+Evaluate Exp Code Self Dual Wreath Point Child Star Energy theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-effect-access-boundary
+```
+Evaluate Exp Code Self Dual Wreath Point Effect Access Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-effect-qsvt-no-go
+```
+Evaluate Exp Code Self Dual Wreath Point Effect Qsvt No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-linear-povm
+```
+Evaluate Exp Code Self Dual Wreath Point Linear Povm theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-single-pair-point-signal-no-go
+```
+Evaluate Exp Code Self Dual Wreath Single Pair Point Signal No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-sparse-polar-access-composition-no-go
+```
+Evaluate Exp Code Self Dual Wreath Sparse Polar Access Composition No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-sparse-support-polar-hybrid
+```
+Evaluate Exp Code Self Dual Wreath Sparse Support Polar Hybrid theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-sparse-support-polar-schedule
+```
+Evaluate Exp Code Self Dual Wreath Sparse Support Polar Schedule theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-support-projector-endpoint-gauge-boundary
+```
+Evaluate Exp Code Self Dual Wreath Support Projector Endpoint Gauge Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-transpose-edge-admission-no-go
+```
+Evaluate Exp Code Self Dual Wreath Transpose Edge Admission No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-windowed-root-flatness-bridge
+```
+Evaluate Exp Code Self Dual Wreath Windowed Root Flatness Bridge theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-dependency-ridge-physical-curl
+```
+Evaluate Exp Code Self Dual Wreath Component Dependency Ridge Physical Curl theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-dependency-ridge-physical-hamming
+```
+Evaluate Exp Code Self Dual Wreath Component Dependency Ridge Physical Hamming theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-dependency-ridge-physical-spectrum
+```
+Evaluate Exp Code Self Dual Wreath Component Dependency Ridge Physical Spectrum theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-dependency-ridge-single-frame-tail
+```
+Evaluate Exp Code Self Dual Wreath Component Dependency Ridge Single Frame Tail theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-diagonal-leakage-bridge
+```
+Evaluate Exp Code Self Dual Wreath Component Diagonal Leakage Bridge theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-leaf-fourier-commutator-duality
+```
+Evaluate Exp Code Self Dual Wreath Component Leaf Fourier Commutator Duality theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-leaf-fourier-leverage
+```
+Evaluate Exp Code Self Dual Wreath Component Leaf Fourier Leverage theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-leaf-fourier-strata
+```
+Evaluate Exp Code Self Dual Wreath Component Leaf Fourier Strata theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-m4-operational-boundary
+```
+Evaluate Exp Code Self Dual Wreath Component M4 Operational Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-polar-traffic-curl
+```
+Evaluate Exp Code Self Dual Wreath Component Polar Traffic Curl theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-single-leaf-diagonal-reduction
+```
+Evaluate Exp Code Self Dual Wreath Component Single Leaf Diagonal Reduction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-size-biased-effect-law
+```
+Evaluate Exp Code Self Dual Wreath Component Size Biased Effect Law theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-parent-coherence-witness
+```
+Evaluate Exp Code Self Dual Wreath Point Parent Coherence Witness theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-pgm-coarse-graining
+```
+Evaluate Exp Code Self Dual Wreath Point Pgm Coarse Graining theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-stabilizer-collision-free-kernel
+```
+Evaluate Exp Code Self Dual Wreath Point Stabilizer Collision Free Kernel theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-stabilizer-quotient
+```
+Evaluate Exp Code Self Dual Wreath Point Stabilizer Quotient theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-standard-energy
+```
+Evaluate Exp Code Self Dual Wreath Point Standard Energy theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-young-star-naimark
+```
+Evaluate Exp Code Self Dual Wreath Point Young Star Naimark theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-recursive-kernel-isometry
+```
+Evaluate Exp Code Self Dual Wreath Recursive Kernel Isometry theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-reversible-automaton-fiber-collapse
+```
+Evaluate Exp Code Self Dual Wreath Reversible Automaton Fiber Collapse theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-shared-pair-recoupling-decoupling
+```
+Evaluate Exp Code Self Dual Wreath Shared Pair Recoupling Decoupling theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-sibling-frame-all-fixed-joint
+```
+Evaluate Exp Code Self Dual Wreath Sibling Frame All Fixed Joint theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-sibling-frame-all-fixed-mp
+```
+Evaluate Exp Code Self Dual Wreath Sibling Frame All Fixed Mp theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-sign-twist-collective-activation
+```
+Evaluate Exp Code Self Dual Wreath Sign Twist Collective Activation theorem contract and headline metrics.
+
+```bash
 python qsearch.py code-wreath-weighted-overlap-exclusion
 python qsearch.py run EXP-CODE-SELF-DUAL-WREATH-WEIGHTED-OVERLAP-EXCLUSION
 ```

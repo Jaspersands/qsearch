@@ -433,48 +433,6 @@ def write_self_dual_wreath_stable_commutator_rank(
     payload = asdict(run_self_dual_wreath_stable_commutator_rank())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id=(
-                    "NEG-CODE-SELF-DUAL-WREATH-STABLE-PARTITION-"
-                    "MASS-VANISHES"
-                ),
-                source=str(path),
-                claim=(
-                    "A polynomial commutator contraction for bounded-tail "
-                    "stable partitions covers typical physical irrep labels."
-                ),
-                reason_invalid=(
-                    "Fixed-tail source Plancherel mass is poly(n)/n!, and "
-                    "physical label mass is its square."
-                ),
-                lesson=(
-                    "Require recoupling control for Plancherel-typical "
-                    "partitions with growing rows and columns."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_stable_commutator_rank": str(path)
-                },
-            )
-        )
     return payload
 
 

@@ -329,47 +329,4 @@ def write_target_distribution_audit(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-PLANTED-TARGET-REPRESENTATION-SIZE-BIAS",
-                source=str(path),
-                claim=(
-                    "High representation multiplicity observed on planted-witness subset-sum targets transfers directly "
-                    "to Regev's uniform source-target distribution."
-                ),
-                reason_invalid=(
-                    "Planting samples targets proportional to witness multiplicity. The exact audit separates this "
-                    "size-biased law from uniform legal and independent uniform source targets."
-                ),
-                lesson=(
-                    "Evaluate representation attacks on independent uniform targets and charge legal-input coverage. A "
-                    "rare subfamily must be efficiently detectable and have a polynomial witness algorithm."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "mean_tail_planted_vs_uniform_legal_total_variation": payload["headline_metrics"][
-                        "mean_tail_planted_vs_uniform_legal_total_variation"
-                    ],
-                    "maximum_tail_uniform_target_quadratic_tail_probability": payload["headline_metrics"][
-                        "maximum_tail_uniform_target_quadratic_tail_probability"
-                    ],
-                    "proved_polynomial_representation_solver_count": 0,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-SUBSET-SUM-TARGET-DISTRIBUTION"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_subset_sum_target_distribution": str(path)},
-            )
-        )
     return payload

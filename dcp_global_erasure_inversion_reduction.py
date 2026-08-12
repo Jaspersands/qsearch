@@ -379,56 +379,6 @@ def write_global_erasure_inversion_report(
     output_path.write_text(
         json.dumps(payload, indent=2, sort_keys=True)
     )
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-COHERENT-ERASURE-AS-PGM-SHORTCUT",
-                source=str(output_path),
-                claim=(
-                    "A coherent subset-sum fiber-erasure circuit is a weaker "
-                    "primitive than an average density-one subset-sum solver."
-                ),
-                reason_invalid=(
-                    "PGM-compatible target coherence forces common garbage. "
-                    "The inverse circuit prepares normalized legal fibers, and "
-                    "the quenched support law transfers source-weighted "
-                    "fidelity to uniform-legal fidelity with constant loss."
-                ),
-                lesson=(
-                    "Treat coherent erasure as the solver itself, not as a "
-                    "free PGM subroutine. Search either an explicit average "
-                    "solver or a full-rank measurement with no erasure-plus-QFT "
-                    "factorization."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload[
-                    "falsifiers_triggered"
-                ],
-                artifacts={
-                    "dcp_global_erasure_inversion_reduction": str(
-                        output_path
-                    )
-                },
-            )
-        )
     return payload
 
 

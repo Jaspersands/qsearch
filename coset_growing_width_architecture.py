@@ -566,51 +566,6 @@ def write_growing_width_architecture_report(
     payload = asdict(build_growing_width_architecture_report())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-MANY-SEPARATE-COPIES-NOT-GROWING-WIDTH-MEASUREMENT",
-                source=str(output_path),
-                claim=(
-                    "Polynomially many separately measured coset states "
-                    "satisfy the multiregister entanglement-width requirement."
-                ),
-                reason_invalid=(
-                    "The joint quantum width remains one; classical "
-                    "postprocessing cannot retroactively create the required "
-                    "entangled POVM."
-                ),
-                lesson=(
-                    "Require a typed growing-width quantum DAG with carrier "
-                    "preservation and a noncommutant covariant final POVM."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                    "PO-NO-GO",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = (
-            registry_result_id
-            or f"RESULT-{registry_experiment_id}-COSET"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=dict(payload["headline_metrics"]),
-                falsifiers_triggered=list(payload["falsifiers_triggered"]),
-                artifacts={"coset_growing_width_architecture": str(output_path)},
-            )
-        )
     return payload
 
 

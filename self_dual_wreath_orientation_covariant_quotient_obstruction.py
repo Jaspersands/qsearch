@@ -410,55 +410,6 @@ def write_orientation_covariant_quotient_obstruction_report(
     payload = asdict(run_orientation_covariant_quotient_obstruction())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-WREATH-NAIVE-BRANCHWISE-COMMON-CORE-QUOTIENT",
-                source=str(path),
-                claim=(
-                    "The thin algebraic common-core quotient lifts to a "
-                    "nontrivial local projector commuting with every physical "
-                    "orientation branch."
-                ),
-                reason_invalid=(
-                    "All orientation actions generate independent A_n factors. "
-                    "For non-self-conjugate sources the carrier is irreducible, "
-                    "so its branchwise commutant contains only scalars."
-                ),
-                lesson=(
-                    "Any physical bypass must coherently mix induced "
-                    "orientation branches or exploit self-conjugate splitting; "
-                    "do not implement the compressed quotient branchwise."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_orientation_covariant_quotient_obstruction": str(
-                        path
-                    )
-                },
-            )
-        )
     return payload
 
 

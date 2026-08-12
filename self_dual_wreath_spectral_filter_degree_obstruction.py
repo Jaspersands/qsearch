@@ -401,55 +401,6 @@ def write_spectral_filter_degree_obstruction_report(
     payload = asdict(run_spectral_filter_degree_obstruction())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-WREATH-GENERIC-SPECTRAL-TRIM-QSVT",
-                source=str(path),
-                claim=(
-                    "A generic bounded-polynomial transform of the "
-                    "normalization-one average-frame encoding implements the "
-                    "constant-success spectral trimming in polynomial degree."
-                ),
-                reason_invalid=(
-                    "The cutoff is Theta(1/n!). Bernstein's inequality forces "
-                    "Omega(n!) eigenvalue-polynomial degree or "
-                    "Omega(sqrt(n!)) singular-value-polynomial degree."
-                ),
-                lesson=(
-                    "Search for an exact representation-basis classifier, a "
-                    "better-scaled block encoding, or an intrinsic quotient; "
-                    "do not apply generic QSVT to B."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_spectral_filter_degree_obstruction": str(
-                        path
-                    )
-                },
-            )
-        )
     return payload
 
 

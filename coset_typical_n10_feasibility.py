@@ -194,38 +194,6 @@ def write_n10_feasibility_report(
     payload = asdict(build_n10_feasibility_report())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-TYPICAL-N10-EXPLICIT-TRANSLATION-CONTRACTION-SCALING",
-                source=str(output_path),
-                claim=(
-                    "The explicit n=9 translation-contraction architecture scales directly to n=10 and beyond."
-                ),
-                reason_invalid=(
-                    "At n=10, degree-five support already requires 12630 rows over 10!, or 91.7 GB, while only multiplicity three has been contracted and target multiplicities reach 117."
-                ),
-                lesson=(
-                    "Replace explicit group-row storage with a representation- or class-algebra recurrence before extending the finite collision ladder."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_typical_n10_feasibility": str(output_path)},
-            )
-        )
     return payload
 
 

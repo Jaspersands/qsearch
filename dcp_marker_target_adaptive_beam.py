@@ -939,48 +939,6 @@ def write_target_adaptive_beam_audit(
     payload = asdict(run_target_adaptive_beam_audit(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-MARKER-TARGET-ADAPTIVE-BEAM-FINITE-NOT-SOURCE-THEOREM",
-                source=str(path),
-                claim=(
-                    "Finite success or failure of an n^a target-adaptive "
-                    "nearest-plane beam establishes its asymptotic random-source coverage."
-                ),
-                reason_invalid=(
-                    "Every tested width is polynomial and source-native, but "
-                    "the sweep supplies neither an inverse-polynomial success "
-                    "lower bound nor an all-fixed-powers failure theorem."
-                ),
-                lesson=(
-                    "Use target-adaptive K-best search as the minimum classical "
-                    "marker baseline. Promote it only with a uniform source law, "
-                    "and do not infer quantum advantage from finite collapse."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = (
-            registry_result_id
-            or f"RESULT-{registry_experiment_id}-TARGET-ADAPTIVE-BEAM"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=list(payload["falsifiers_triggered"]),
-                artifacts={
-                    "dcp_marker_target_adaptive_beam": str(path)
-                },
-            )
-        )
     return payload
 
 

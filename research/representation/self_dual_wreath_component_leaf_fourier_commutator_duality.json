@@ -1,0 +1,284 @@
+{
+  "created_at": "2026-08-12T03:42:30.643282+00:00",
+  "theorem_contract": {
+    "deterministic_duality": "M4(H)=q^-2 sum_(S,T)[Tr(A_S^2A_T^2)-Tr(A_SA_TA_SA_T)]",
+    "positive_pair_gap": "each Fourier pair gap equals ||[A_S,A_T]||_F^2/2 and is nonnegative",
+    "coordinate_compression": "A_S=W*Z_SW for block-sign involution Z_S=sum_x chi_S(x)D_x",
+    "parity_leakage_curl": "[PZ_SP,PZ_TP]=PZ_T(I-P)Z_SP-PZ_S(I-P)Z_TP",
+    "annealed_strata": "coordinate exchangeability reduces q^2 pairs to binom(m+3,3) four-cell strata",
+    "typical_implication": "a kappa lower bound on normalized gap over stratum mass rho gives M4/r>=rho*kappa",
+    "natural_scope": "Independent Plancherel sources and global-distinct/rank-event conditioning are coordinate-exchangeable. Physical 1/D weights may be inserted before the stratum expectation.",
+    "scope": "The duality proves no natural typical parity-commutator gap."
+  },
+  "theorem": {
+    "deterministic_duality": "M4(H)=q^-2 sum_(S,T)[Tr(A_S^2A_T^2)-Tr(A_SA_TA_SA_T)]",
+    "positive_pair_gap": "each Fourier pair gap equals ||[A_S,A_T]||_F^2/2 and is nonnegative",
+    "coordinate_compression": "A_S=W*Z_SW for block-sign involution Z_S=sum_x chi_S(x)D_x",
+    "parity_leakage_curl": "[PZ_SP,PZ_TP]=PZ_T(I-P)Z_SP-PZ_S(I-P)Z_TP",
+    "annealed_stratum_count": "coordinate exchangeability reduces q^2 pairs to binom(m+3,3) four-cell strata",
+    "typical_stratum_implication": "a kappa lower bound on normalized gap over stratum mass rho gives M4/r>=rho*kappa",
+    "arbitrary_hermitian_povm": true,
+    "theorem_verified": true,
+    "status": "component-M4-is-average-compressed-parity-commutator-gap"
+  },
+  "finite_controls": [
+    {
+      "control_id": "UNIFORM-Q8-R3",
+      "profile_kind": "uniform-scalar-povm",
+      "cube_dimension": 3,
+      "leaf_count": 8,
+      "fiber_dimension": 3,
+      "leaf_pair_count": 64,
+      "fourier_pair_count": 64,
+      "observed_pair_stratum_count": 20,
+      "predicted_pair_stratum_count": 20,
+      "direct_normalized_component_M4": 0.0,
+      "fourier_dual_normalized_component_M4": 0.0,
+      "strata_reconstructed_normalized_component_M4": 0.0,
+      "maximum_negative_fourier_pair_gap": 0.0,
+      "maximum_pair_gap_to_half_commutator_residual": 0.0,
+      "fourier_duality_residual": 0.0,
+      "stratum_reconstruction_residual": 0.0,
+      "maximum_stratum_multinomial_residual": 0,
+      "exact_fourier_commutator_duality_verified": true,
+      "positive_component_M4_in_control": false,
+      "status": "zero-component-M4-fourier-commutator-boundary-verified"
+    },
+    {
+      "control_id": "COARSE-Q8-TWO-BIT-PVM",
+      "profile_kind": "commuting-coarse-pvm",
+      "cube_dimension": 3,
+      "leaf_count": 8,
+      "fiber_dimension": 4,
+      "leaf_pair_count": 64,
+      "fourier_pair_count": 64,
+      "observed_pair_stratum_count": 20,
+      "predicted_pair_stratum_count": 20,
+      "direct_normalized_component_M4": 0.0,
+      "fourier_dual_normalized_component_M4": 0.0,
+      "strata_reconstructed_normalized_component_M4": 0.0,
+      "maximum_negative_fourier_pair_gap": 0.0,
+      "maximum_pair_gap_to_half_commutator_residual": 0.0,
+      "fourier_duality_residual": 0.0,
+      "stratum_reconstruction_residual": 0.0,
+      "maximum_stratum_multinomial_residual": 0,
+      "exact_fourier_commutator_duality_verified": true,
+      "positive_component_M4_in_control": false,
+      "status": "zero-component-M4-fourier-commutator-boundary-verified"
+    },
+    {
+      "control_id": "HAAR-Q8-B2-R5",
+      "profile_kind": "noncommutative-haar-block-povm",
+      "cube_dimension": 3,
+      "leaf_count": 8,
+      "fiber_dimension": 5,
+      "leaf_pair_count": 64,
+      "fourier_pair_count": 64,
+      "observed_pair_stratum_count": 20,
+      "predicted_pair_stratum_count": 20,
+      "direct_normalized_component_M4": 0.04544739567906349,
+      "fourier_dual_normalized_component_M4": 0.045447395679063494,
+      "strata_reconstructed_normalized_component_M4": 0.04544739567906349,
+      "maximum_negative_fourier_pair_gap": 3.885780586188048e-16,
+      "maximum_pair_gap_to_half_commutator_residual": 3.8857805861880513e-16,
+      "fourier_duality_residual": 6.938893903907228e-18,
+      "stratum_reconstruction_residual": 6.938893903907228e-18,
+      "maximum_stratum_multinomial_residual": 0,
+      "exact_fourier_commutator_duality_verified": true,
+      "positive_component_M4_in_control": true,
+      "status": "positive-component-M4-fourier-commutator-duality-verified"
+    },
+    {
+      "control_id": "S3-REPEATED-STANDARD-TRIVIAL-TARGET",
+      "profile_kind": "finite-wreath-canonical-component-povm",
+      "cube_dimension": 2,
+      "leaf_count": 4,
+      "fiber_dimension": 17,
+      "leaf_pair_count": 16,
+      "fourier_pair_count": 16,
+      "observed_pair_stratum_count": 10,
+      "predicted_pair_stratum_count": 10,
+      "direct_normalized_component_M4": 0.06617647058823514,
+      "fourier_dual_normalized_component_M4": 0.06617647058823514,
+      "strata_reconstructed_normalized_component_M4": 0.06617647058823513,
+      "maximum_negative_fourier_pair_gap": 7.771561172376096e-16,
+      "maximum_pair_gap_to_half_commutator_residual": 8.881784197001252e-16,
+      "fourier_duality_residual": 0.0,
+      "stratum_reconstruction_residual": 1.3877787807814457e-17,
+      "maximum_stratum_multinomial_residual": 0,
+      "exact_fourier_commutator_duality_verified": true,
+      "positive_component_M4_in_control": true,
+      "status": "positive-component-M4-fourier-commutator-duality-verified"
+    }
+  ],
+  "scaling_records": [
+    {
+      "cube_dimension": 4,
+      "leaf_pair_count_log2": 8,
+      "exact_pair_stratum_count": 35,
+      "log2_pair_stratum_count": 5.129283016944966,
+      "pair_stratum_polynomial_degree": 3,
+      "typical_cell_lower_count": 0,
+      "typical_cell_upper_count": 4,
+      "typical_four_cell_mass_lower_bound": 0.9111280276940615,
+      "constant_typical_stratum_gap_would_prove_constant_M4": true,
+      "natural_typical_parity_gap_proved": false,
+      "status": "fourier-pair-average-reduced-to-cubic-many-occupancy-strata"
+    },
+    {
+      "cube_dimension": 8,
+      "leaf_pair_count_log2": 16,
+      "exact_pair_stratum_count": 165,
+      "log2_pair_stratum_count": 7.366322214245816,
+      "pair_stratum_polynomial_degree": 3,
+      "typical_cell_lower_count": 0,
+      "typical_cell_upper_count": 7,
+      "typical_four_cell_mass_lower_bound": 0.9845563669101783,
+      "constant_typical_stratum_gap_would_prove_constant_M4": true,
+      "natural_typical_parity_gap_proved": false,
+      "status": "fourier-pair-average-reduced-to-cubic-many-occupancy-strata"
+    },
+    {
+      "cube_dimension": 16,
+      "leaf_pair_count_log2": 32,
+      "exact_pair_stratum_count": 969,
+      "log2_pair_stratum_count": 9.92035285541508,
+      "pair_stratum_polynomial_degree": 3,
+      "typical_cell_lower_count": 0,
+      "typical_cell_upper_count": 11,
+      "typical_four_cell_mass_lower_bound": 0.982500071054537,
+      "constant_typical_stratum_gap_would_prove_constant_M4": true,
+      "natural_typical_parity_gap_proved": false,
+      "status": "fourier-pair-average-reduced-to-cubic-many-occupancy-strata"
+    },
+    {
+      "cube_dimension": 32,
+      "leaf_pair_count_log2": 64,
+      "exact_pair_stratum_count": 6545,
+      "log2_pair_stratum_count": 12.676177476832603,
+      "pair_stratum_polynomial_degree": 3,
+      "typical_cell_lower_count": 0,
+      "typical_cell_upper_count": 19,
+      "typical_four_cell_mass_lower_bound": 0.9958434025427613,
+      "constant_typical_stratum_gap_would_prove_constant_M4": true,
+      "natural_typical_parity_gap_proved": false,
+      "status": "fourier-pair-average-reduced-to-cubic-many-occupancy-strata"
+    },
+    {
+      "cube_dimension": 64,
+      "leaf_pair_count_log2": 128,
+      "exact_pair_stratum_count": 47905,
+      "log2_pair_stratum_count": 15.547888622123525,
+      "pair_stratum_polynomial_degree": 3,
+      "typical_cell_lower_count": 0,
+      "typical_cell_upper_count": 33,
+      "typical_four_cell_mass_lower_bound": 0.9990430969313518,
+      "constant_typical_stratum_gap_would_prove_constant_M4": true,
+      "natural_typical_parity_gap_proved": false,
+      "status": "fourier-pair-average-reduced-to-cubic-many-occupancy-strata"
+    },
+    {
+      "cube_dimension": 128,
+      "leaf_pair_count_log2": 256,
+      "exact_pair_stratum_count": 366145,
+      "log2_pair_stratum_count": 18.482055569268002,
+      "pair_stratum_polynomial_degree": 3,
+      "typical_cell_lower_count": 7,
+      "typical_cell_upper_count": 57,
+      "typical_four_cell_mass_lower_bound": 0.9995408728900842,
+      "constant_typical_stratum_gap_would_prove_constant_M4": true,
+      "natural_typical_parity_gap_proved": false,
+      "status": "fourier-pair-average-reduced-to-cubic-many-occupancy-strata"
+    },
+    {
+      "cube_dimension": 256,
+      "leaf_pair_count_log2": 512,
+      "exact_pair_stratum_count": 2862209,
+      "log2_pair_stratum_count": 21.44869759158253,
+      "pair_stratum_polynomial_degree": 3,
+      "typical_cell_lower_count": 26,
+      "typical_cell_upper_count": 102,
+      "typical_four_cell_mass_lower_bound": 0.9998991431585836,
+      "constant_typical_stratum_gap_would_prove_constant_M4": true,
+      "natural_typical_parity_gap_proved": false,
+      "status": "fourier-pair-average-reduced-to-cubic-many-occupancy-strata"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "replace_signed_diagonal_crossing_subtraction_by_positive_fourier_pair_average",
+      "resolved": true,
+      "resolution": "Two applications of Walsh orthogonality give equation (1), whose summands are half commutator squares."
+    },
+    {
+      "obligation": "remove_exponential_fourier_pair_enumeration",
+      "resolved": true,
+      "resolution": "Coordinate exchangeability leaves binom(m+3,3) four-cell occupancy strata with exact multinomial weights."
+    },
+    {
+      "obligation": "prove_positive_natural_typical_parity_curl_gap",
+      "resolved": false,
+      "resolution": "For four-cell counts m/4+O(sqrt(m log m)), lower-bound E[1_E ||[W*Z_SW,W*Z_TW]||_F^2/(2D)] on positive mass."
+    },
+    {
+      "obligation": "identify_exact_commuting_recoupling_if_typical_gap_vanishes",
+      "resolved": false,
+      "resolution": "A vanishing result must exhibit why the natural dependency projection asymptotically commutes with typical parity involutions; ambient commutativity alone is insufficient."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The dual observables commute because all Z_S commute.",
+      "resolved": true,
+      "resolution": "False after compression. Equation (3) shows noncommutativity is exactly complement leakage through P."
+    },
+    {
+      "objection": "Fourier duality merely moves a signed cancellation.",
+      "resolved": true,
+      "resolution": "No. Every pair gap is a nonnegative commutator square."
+    },
+    {
+      "objection": "One exceptional Fourier pair proves positive M4.",
+      "resolved": true,
+      "resolution": "A single pair has q^-2 weight. The proof needs positive gap on inverse-polynomial or constant pair mass."
+    },
+    {
+      "objection": "Generic projection geometry proves the natural gap.",
+      "resolved": true,
+      "resolution": "It does not. Natural P is a support difference of structured Racah Gram operators, and may have arithmetic commuting sectors."
+    }
+  ],
+  "headline_metrics": {
+    "component_fourier_commutator_duality_theorem_count": 1,
+    "positive_fourier_pair_gap_identity_count": 1,
+    "finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "finite_positive_component_M4_control_count": 2,
+    "maximum_control_fourier_duality_residual": 6.938893903907228e-18,
+    "tail_cube_dimension": 256,
+    "tail_fourier_pair_count_log2": 512,
+    "tail_exact_pair_stratum_count": 2862209,
+    "tail_typical_four_cell_mass_lower_bound": 0.9998991431585836,
+    "natural_typical_parity_gap_theorem_count": 0,
+    "natural_component_M4_lower_bound_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "component_M4_is_uniform_fourier_pair_gap_average": true,
+    "fourier_pair_gaps_are_termwise_nonnegative": true,
+    "annealed_fourier_pairs_reduce_to_cubic_many_strata": true,
+    "natural_typical_compressed_parity_gap_positive": false,
+    "natural_component_M4_positive": false,
+    "component_compiler_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "The signed diagonal/crossing burden is replaced by one positive typical compressed-parity gap, but that natural gap is unproved."
+  },
+  "status": "component-M4-reduced-to-typical-compressed-parity-commutator-gap",
+  "summary": "Proved that component M4 is the uniform average of nonnegative Walsh-coefficient commutator gaps and reduced its natural pair law to cubic-many four-cell occupancy strata.",
+  "falsifiers_triggered": [
+    "Ambient parity involutions commute, but their dependency-projection compressions need not.",
+    "A single exceptional Fourier pair has exponentially small averaging weight.",
+    "Commuting PVM controls have zero parity-curl gap despite full Fourier support.",
+    "No natural typical parity gap, M4, component compiler, algorithm, or speedup is proved."
+  ]
+}

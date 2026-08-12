@@ -309,33 +309,4 @@ def write_clifford_contamination_report(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-CLIFFORD-ONE-BAD-SIGNAL-DOES-NOT-ESTABLISH-F1-DECODER",
-                source=str(path),
-                claim="A finite Clifford statistic surviving one arbitrary bad register solves the exact f=1 DCP promise.",
-                reason_invalid=(
-                    "The audit has no uniform lower bound, covers exactly one bad register rather than the full promise, "
-                    "and does not recover the hidden reflection."
-                ),
-                lesson="Extend only surviving schemas to t-bad thresholds and full decoding; kill exponentially decaying statistics.",
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-CLIFFORD-CONTAMINATION"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_clifford_contamination": str(path)},
-            )
-        )
     return payload

@@ -561,53 +561,6 @@ def write_block_common_core_quotient_report(
     payload = asdict(run_block_common_core_quotient())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-WREATH-BLOCK-COMMON-CORE-IS-UNQUOTIENTABLE",
-                source=str(path),
-                claim=(
-                    "The explicit Sellke-generated one-dimensional block "
-                    "common cores cannot be removed without deleting a "
-                    "constant fraction of the natural Fourier carrier."
-                ),
-                reason_invalid=(
-                    "Exact side isotypic projectors annihilate those common "
-                    "cores, while Plancherel stationarity bounds expected "
-                    "dimension loss by 4b/n! for b blocks."
-                ),
-                lesson=(
-                    "Pursue a physical lift of the block quotient and audit "
-                    "the residual high-dimensional spectrum; do not resume "
-                    "the unquotiented uniform norm proof."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_block_common_core_quotient": str(path)
-                },
-            )
-        )
     return payload
 
 

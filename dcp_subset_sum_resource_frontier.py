@@ -316,41 +316,4 @@ def write_subset_sum_resource_frontier(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-KNOWN-SUBSET-SUM-FRONTIERS-REMAIN-EXPONENTIAL",
-                source=str(path),
-                claim="A known meet-in-the-middle, dissection, Wagner, representation, or quantum subset-sum improvement satisfies Regev's polynomial partial-solver contract.",
-                reason_invalid=(
-                    "Every recorded route has a positive exponential time exponent; heuristic/randomized/quantum routes "
-                    "also lack the deterministic matching interface or a replacement composition theorem."
-                ),
-                lesson=(
-                    "Use these algorithms as mandatory resource baselines. A viable mutation must drive the exponent to zero "
-                    "by exploiting new density-one structure and prove legal coverage plus interface compatibility."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "known_algorithm_count": payload["headline_metrics"]["known_algorithm_count"],
-                    "best_recorded_classical_time_exponent": payload["headline_metrics"]["best_recorded_classical_time_exponent"],
-                    "best_recorded_quantum_time_exponent": payload["headline_metrics"]["best_recorded_quantum_time_exponent"],
-                    "known_regev_contract_satisfying_algorithm_count": 0,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-SUBSET-SUM-RESOURCE-FRONTIER"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_subset_sum_resource_frontier": str(path)},
-            )
-        )
     return payload

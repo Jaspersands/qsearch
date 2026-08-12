@@ -364,43 +364,4 @@ def write_ustatistic_variance_report(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-IID-EXPLICIT-OVERLAPPING-USTATISTIC",
-                source=str(path),
-                claim="Overlapping all-subsets U-statistics remove the exponential variance of DCP multirecord product kernels.",
-                reason_invalid=(
-                    "Hoeffding decomposition gives Var(U_m)>=Var(h)/C(m,r). The DCP margin-energy bound therefore forces "
-                    "exponential records at fixed degree or exponentially many explicitly evaluated tuples at growing degree."
-                ),
-                lesson=(
-                    "Do not retry explicit all-subsets product kernels. Search a proved implicit contraction, a non-product "
-                    "adaptive statistic, or a polynomial premeasurement collective observable."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "certificate_count": payload["headline_metrics"]["certificate_count"],
-                    "joint_polynomial_explicit_resource_row_count": payload["headline_metrics"][
-                        "joint_polynomial_explicit_resource_row_count"
-                    ],
-                    "proved_implicit_contraction_lower_bound_count": 0,
-                    "proved_collective_measurement_lower_bound_count": 0,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-USTATISTIC-VARIANCE"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_ustatistic_variance_audit": str(path)},
-            )
-        )
     return payload

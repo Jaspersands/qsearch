@@ -298,39 +298,4 @@ def write_embedding_volume_theorem(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-SUBSET-SUM-VOLUME-ONLY-LATTICE-GAP",
-                source=str(path),
-                claim=(
-                    "The standard or O(log n) carry-sliced density-one embedding creates an asymptotic planted "
-                    "short-vector separation visible from covolume alone."
-                ),
-                reason_invalid=(
-                    "Both exact determinant roots tend to four, placing the planted witness at limiting ratio "
-                    "sqrt(2*pi*e)/4 to the Gaussian volume scale."
-                ),
-                lesson=(
-                    "Require an explicit local Gram-Schmidt event, average short-vector count theorem, and decoder "
-                    "coverage. Do not cite determinant or finite LLL recovery as the missing gap."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-EMBEDDING-VOLUME-THEOREM"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_subset_sum_embedding_volume_theorem": str(path)},
-            )
-        )
     return payload

@@ -417,53 +417,6 @@ def write_local_isotypic_filter_no_go_report(
     payload = asdict(run_local_isotypic_filter_no_go())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-WREATH-CONSTANT-MASS-BLOCK-LOCAL-ISOTYPIC-FILTER",
-                source=str(path),
-                claim=(
-                    "A product of constant-block isotypic filters can retain "
-                    "nonvanishing natural mass per block while eliminating "
-                    "all exponential common-core families."
-                ),
-                reason_invalid=(
-                    "Plancherel incidence forces one self-dual retained irrep "
-                    "to recur on a linear number of good blocks; pairing those "
-                    "blocks recreates 2^Theta(k) common orientations."
-                ),
-                lesson=(
-                    "Stop searching constant-block local deletions. Require a "
-                    "growing-block/nonlocal transform or implement global "
-                    "spectral trimming through new structured access."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_local_isotypic_filter_no_go": str(path)
-                },
-            )
-        )
     return payload
 
 

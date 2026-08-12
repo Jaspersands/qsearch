@@ -491,40 +491,6 @@ def write_marker_all_target_coverage(
     payload = asdict(run_marker_all_target_coverage(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-FINITE-ALL-TARGET-COVERAGE-IS-NOT-RANDOM-LABEL-THEOREM",
-                source=str(path),
-                claim=(
-                    "Exact fixed-depth coverage over every target for finitely many label sets proves an asymptotic "
-                    "coverage law or lower bound under random labels."
-                ),
-                reason_invalid=(
-                    "Target sampling is eliminated, but the remaining label-dependent LLL geometry is sampled at "
-                    "finite n and has no concentration theorem."
-                ),
-                lesson=(
-                    "Use the census to identify the right label statistic, then prove its source law or abandon the "
-                    "fixed-depth branching mechanism."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_marker_all_target_coverage": str(path)},
-            )
-        )
     return payload
 
 

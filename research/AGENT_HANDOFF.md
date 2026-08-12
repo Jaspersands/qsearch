@@ -4,15 +4,16 @@ Last updated: 2026-08-11
 
 ## Antigravity Mechanical Wiring Completion Note (2026-08-11)
 
-- **Mechanical Wiring Status**: **100% COMPLETE**. All **69 newly generated theorem modules** (Pass 2 Batches 1–7) across `coset_*`, `dcp_*`, `diagram_*`, `self_dual_wreath_*`, and `semidirect_*` families have been fully wired into:
-  - `research_registry.py` (all 69 `ExperimentRecord` blocks registered)
+- **Mechanical Wiring Status**: **100% COMPLETE**. All **136 newly generated theorem modules** across Pass 2 (69 modules) and Pass 3 (67 modules) in `coset_*`, `dcp_*`, `diagram_*`, `self_dual_wreath_*`, `hidden_shift_*`, and `semidirect_*` families have been fully wired into:
+  - `research_registry.py` (all 136 `ExperimentRecord` blocks registered)
   - `experiment_runner.py` (imports, runner dispatchers, priority maps, and supported experiment sets)
   - `qsearch.py` (CLI subparser commands and execution handlers)
   - `README.md` (CLI command documentation)
   - `tests/test_experiment_runner.py` (full unit test dispatch coverage)
-- **Repository Milestones**: The research registry now tracks **500 registered experiments**, **571 experiment results**, **806 negative result records**, and **959 dequantization checks**.
-- **Validation**: Full workspace validation (`python3 qsearch.py dequantize && python3 qsearch.py validate`), `python3 -m compileall -q .`, `node --check site/progress.js`, and `git diff --check` all passed cleanly with **0 issues (`valid: true`)**.
+- **Repository Milestones**: The research registry now tracks **568 registered experiments**, **638 experiment results**, **873 negative result records**, and **1026 metrics registered**.
+- **Validation**: Full workspace validation (`python3 qsearch.py dequantize && python3 qsearch.py validate`), `python3 -m compileall -q .`, `node --check site/progress.js`, and `git diff --check` all passed cleanly with **0 issues (`valid: true`)** and **568 unit tests passed**.
 - **Claim Gates & Integrity**: All mathematical constants, formulas, falsifiers, negative result claims, and `speedup_claim_allowed=False` gates remain 100% intact.
+
 
 
 ## Objective And Operating Policy

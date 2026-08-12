@@ -438,49 +438,6 @@ def write_goppa_syzygy_frontier(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        for record in payload["records"]:
-            for audit in record["pair_audits"]:
-                if audit["status"] == "rejected-by-exact-goppa-syzygy-invariant":
-                    upsert_negative_result(
-                        NegativeResultRecord(
-                            id=f"NEG-CODE-GOPPA-SYZYGY-{audit['id'].upper()}",
-                            source=str(path),
-                            claim=f"{audit['id']} survives the exact low-degree syzygy baseline.",
-                            reason_invalid=audit["interpretation"],
-                            lesson="Charge exact Betti and complete shortening-profile invariants before designing a collective measurement for a code pair.",
-                            applies_to=[registry_candidate_id, registry_experiment_id],
-                            evidence=audit,
-                        )
-                    )
-                elif audit["status"] == "goppa-syzygy-invariant-collision-proof-debt":
-                    upsert_negative_result(
-                        NegativeResultRecord(
-                            id=f"NEG-CODE-GOPPA-SYZYGY-COLLISION-{audit['id'].upper()}",
-                            source=str(path),
-                            claim=f"Low-degree whole-code and one-coordinate-shortening syzygies separate {audit['id']}.",
-                            reason_invalid=audit["interpretation"],
-                            lesson=(
-                                "Do not rerun the same beta_1,2/beta_2,3 baseline on this row. Move to deeper "
-                                "shortenings, higher Betti degrees, algebraic support recovery, or canonicalization."
-                            ),
-                            applies_to=[registry_candidate_id, registry_experiment_id],
-                            evidence=audit,
-                        )
-                    )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"goppa_syzygy_frontier": str(path)},
-            )
-        )
     return payload
 
 

@@ -283,40 +283,6 @@ def write_stable_coherent_label_certificate(
     payload = asdict(build_stable_coherent_label_certificate())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-STABLE-COHERENT-LABEL-AS-RACAH-DECODER",
-                source=str(output_path),
-                claim=(
-                    "A coherent multiplicity label in one stable channel implements the full Racah network or hidden-involution decoder."
-                ),
-                reason_invalid=(
-                    "The construction does not change coupling trees, cover all sectors, or map labels to the hidden involution."
-                ),
-                lesson=(
-                    "Construct overlapping left/right stable label transforms and analyze their transition kernel before any decoder claim."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "coset_stable_coherent_label_certificate": str(output_path)
-                },
-            )
-        )
     return payload
 
 

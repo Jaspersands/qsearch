@@ -439,54 +439,6 @@ def write_cluster_locality_no_go_report(
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
 
-    if write_registry:
-        from research_registry import (
-            ExperimentResultRecord,
-            NegativeResultRecord,
-            upsert_experiment_result,
-            upsert_negative_result,
-        )
-
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-SELF-DUAL-WREATH-CLUSTER-LOCALITY-NO-GO",
-                source=registry_experiment_id,
-                claim=(
-                    "Disjoint product isotypic filters acting on sublinear source labels per cluster can restore polynomial frame bounds."
-                ),
-                reason_invalid=(
-                    "Quantitative locality lower bounds prove sublinear disjoint cluster filters leave a superpolynomial common-family spike."
-                ),
-                lesson=(
-                    "High-retention filters must use linear-scale, overlapping, or genuinely global coordination."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_cluster_locality_no_go": str(path)
-                },
-            )
-        )
     return payload
 
 

@@ -395,46 +395,4 @@ def write_preconditioned_geometry_audit(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-LOW-BIT-PRECONDITIONER-COUNT-GEOMETRY",
-                source=str(path),
-                claim=(
-                    "Conditioning O(log n) low subset-sum bits creates an improved exact-solution or near-residual "
-                    "density that explains a polynomial high-bit solver."
-                ),
-                reason_invalid=(
-                    "For every fixed low fiber, high residual indicators are pairwise independent with exact mean "
-                    "F|W|/Q and binomial variance; the ensemble density exponent is unchanged."
-                ),
-                lesson=(
-                    "Retain the low-bit BDD only as a representation primitive. Require a theorem about higher-order "
-                    "correlations, LLL basis geometry, or an implicit decoder before further solver promotion."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "theorem_certificate_count": payload["headline_metrics"]["theorem_certificate_count"],
-                    "maximum_absolute_density_exponent_change": payload["headline_metrics"][
-                        "maximum_absolute_density_exponent_change"
-                    ],
-                    "lll_geometry_improvement_proved_count": 0,
-                    "polynomial_witness_solver_proved_count": 0,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-SUBSET-SUM-PRECONDITIONED-GEOMETRY"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_subset_sum_preconditioned_geometry": str(path)},
-            )
-        )
     return payload

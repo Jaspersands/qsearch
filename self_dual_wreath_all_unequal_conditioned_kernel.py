@@ -521,57 +521,6 @@ def write_all_unequal_conditioned_kernel_report(
     payload = asdict(run_all_unequal_conditioned_kernel())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id=(
-                    "NEG-CODE-WREATH-ALL-UNEQUAL-HALF-NORM-"
-                    "NOT-K-SCALE"
-                ),
-                source=str(path),
-                claim=(
-                    "Removing equal source sectors and proving B<=I/2 closes "
-                    "the all-unequal moment certificate."
-                ),
-                reason_invalid=(
-                    "The required frame-eigenvalue scale is approximately "
-                    "2^{1-k}; single-coordinate projection domination loses "
-                    "roughly k-1 bits in operator norm."
-                ),
-                lesson=(
-                    "Exploit simultaneous nontriviality in all k unequal "
-                    "representations through a level-sensitive tensor "
-                    "contraction or conditioned Fourier-support theorem."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_all_unequal_conditioned_kernel": str(
-                        path
-                    )
-                },
-            )
-        )
     return payload
 
 

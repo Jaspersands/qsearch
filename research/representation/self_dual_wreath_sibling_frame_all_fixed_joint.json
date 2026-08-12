@@ -1,0 +1,260 @@
+{
+  "created_at": "2026-08-12T03:42:54.781725+00:00",
+  "theorem_contract": {
+    "support_expansion": "E Tr(w(A,B))/D=g^-p sum_U c_u(U) sum_phi chi_nu(t(phi))/d_nu",
+    "uniform_character_bound": "|chi_nu(t)|/d_nu<=1 lets scalar support pressure suppress every nonleading support uniformly in nu",
+    "leading_topology": "leading supports are exactly block-constant subspaces of color-respecting noncrossing partitions",
+    "joint_limit": "sum_(pi in NC(p),pi<=ker(w)) alpha_n^|pi|",
+    "common_range": "alpha_n in [2,4) gives E null(A_n)/D_n=o(1), hence E codim(Ran(A_n) intersect Ran(B_n))/D_n=o(1)",
+    "scope": "Every fixed independent mixed moment and normalized common codimension are controlled. Growing order, operator norm, marked leaves, positive curl, and algorithms remain open."
+  },
+  "theorem": {
+    "exact_support_expansion": "E Tr(w(A,B))/D=g^-p sum_U c_u(U) sum_phi chi_nu(t(phi))/d_nu",
+    "character_domination": "|chi_nu(t)|/d_nu<=1 lets scalar support pressure suppress every nonleading support uniformly in nu",
+    "leading_support_classification": "leading supports are exactly block-constant subspaces of color-respecting noncrossing partitions",
+    "limiting_joint_moment": "sum_(pi in NC(p),pi<=ker(w)) alpha_n^|pi|",
+    "common_codimension_corollary": "alpha_n in [2,4) gives E null(A_n)/D_n=o(1), hence E codim(Ran(A_n) intersect Ran(B_n))/D_n=o(1)",
+    "every_fixed_joint_moment_proved": true,
+    "uniform_in_target_irrep": true,
+    "growing_order_control_proved": false,
+    "theorem_verified": true,
+    "status": "all-fixed-independent-sibling-joint-freeness-proved"
+  },
+  "support_sequence_controls": [
+    {
+      "moment_order": 2,
+      "residual_source_pair_count": 3,
+      "complement_pair_count": 1,
+      "support_size": 2,
+      "exact_formula_count": 8,
+      "brute_force_count": 8,
+      "exact_support_sequence_formula_verified": true,
+      "status": "exact-mixed-support-sequence-count-verified"
+    },
+    {
+      "moment_order": 2,
+      "residual_source_pair_count": 4,
+      "complement_pair_count": 1,
+      "support_size": 2,
+      "exact_formula_count": 16,
+      "brute_force_count": 16,
+      "exact_support_sequence_formula_verified": true,
+      "status": "exact-mixed-support-sequence-count-verified"
+    },
+    {
+      "moment_order": 3,
+      "residual_source_pair_count": 4,
+      "complement_pair_count": 2,
+      "support_size": 4,
+      "exact_formula_count": 224,
+      "brute_force_count": 224,
+      "exact_support_sequence_formula_verified": true,
+      "status": "exact-mixed-support-sequence-count-verified"
+    }
+  ],
+  "leading_support_controls": [
+    {
+      "word": "AB",
+      "moment_order": 2,
+      "power_of_two_support_count": 3,
+      "predicted_leading_support_count": 1,
+      "free_presentation_support_count": 1,
+      "predicted_counts_by_block_count": {
+        "2": 1
+      },
+      "free_counts_by_log_support_size": {
+        "2": 1
+      },
+      "free_mp_coefficient_counts": {
+        "2": 1
+      },
+      "extra_free_support_count": 0,
+      "missing_predicted_support_count": 0,
+      "free_mp_polynomial_match_verified": true,
+      "leading_support_classification_verified": true,
+      "status": "leading-mixed-supports-exactly-color-respecting-noncrossing"
+    },
+    {
+      "word": "AAB",
+      "moment_order": 3,
+      "power_of_two_support_count": 11,
+      "predicted_leading_support_count": 2,
+      "free_presentation_support_count": 2,
+      "predicted_counts_by_block_count": {
+        "2": 1,
+        "3": 1
+      },
+      "free_counts_by_log_support_size": {
+        "2": 1,
+        "3": 1
+      },
+      "free_mp_coefficient_counts": {
+        "2": 1,
+        "3": 1
+      },
+      "extra_free_support_count": 0,
+      "missing_predicted_support_count": 0,
+      "free_mp_polynomial_match_verified": true,
+      "leading_support_classification_verified": true,
+      "status": "leading-mixed-supports-exactly-color-respecting-noncrossing"
+    },
+    {
+      "word": "AAAB",
+      "moment_order": 4,
+      "power_of_two_support_count": 107,
+      "predicted_leading_support_count": 5,
+      "free_presentation_support_count": 5,
+      "predicted_counts_by_block_count": {
+        "2": 1,
+        "3": 3,
+        "4": 1
+      },
+      "free_counts_by_log_support_size": {
+        "2": 1,
+        "3": 3,
+        "4": 1
+      },
+      "free_mp_coefficient_counts": {
+        "2": 1,
+        "3": 3,
+        "4": 1
+      },
+      "extra_free_support_count": 0,
+      "missing_predicted_support_count": 0,
+      "free_mp_polynomial_match_verified": true,
+      "leading_support_classification_verified": true,
+      "status": "leading-mixed-supports-exactly-color-respecting-noncrossing"
+    },
+    {
+      "word": "AABB",
+      "moment_order": 4,
+      "power_of_two_support_count": 107,
+      "predicted_leading_support_count": 4,
+      "free_presentation_support_count": 4,
+      "predicted_counts_by_block_count": {
+        "2": 1,
+        "3": 2,
+        "4": 1
+      },
+      "free_counts_by_log_support_size": {
+        "2": 1,
+        "3": 2,
+        "4": 1
+      },
+      "free_mp_coefficient_counts": {
+        "2": 1,
+        "3": 2,
+        "4": 1
+      },
+      "extra_free_support_count": 0,
+      "missing_predicted_support_count": 0,
+      "free_mp_polynomial_match_verified": true,
+      "leading_support_classification_verified": true,
+      "status": "leading-mixed-supports-exactly-color-respecting-noncrossing"
+    },
+    {
+      "word": "ABAB",
+      "moment_order": 4,
+      "power_of_two_support_count": 107,
+      "predicted_leading_support_count": 3,
+      "free_presentation_support_count": 3,
+      "predicted_counts_by_block_count": {
+        "3": 2,
+        "4": 1
+      },
+      "free_counts_by_log_support_size": {
+        "3": 2,
+        "4": 1
+      },
+      "free_mp_coefficient_counts": {
+        "3": 2,
+        "4": 1
+      },
+      "extra_free_support_count": 0,
+      "missing_predicted_support_count": 0,
+      "free_mp_polynomial_match_verified": true,
+      "leading_support_classification_verified": true,
+      "status": "leading-mixed-supports-exactly-color-respecting-noncrossing"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "prove_all_fixed_independent_sibling_joint_freeness",
+      "resolved": true,
+      "resolution": "Complement-support pressure leaves exactly the color-respecting noncrossing partition contributions."
+    },
+    {
+      "obligation": "prove_final_root_common_codimension_is_subextensive",
+      "resolved": true,
+      "resolution": "Marginal MP has no zero atom at alpha>1; the elementary intersection rank inequality then gives codimension o(D)."
+    },
+    {
+      "obligation": "transfer_full_support_leaf_curl_through_subextensive_common_compression",
+      "resolved": false,
+      "resolution": "Requires a bounded global-curl perturbation theorem, not merely the rank statement."
+    },
+    {
+      "obligation": "prove_positive_full_support_natural_leaf_whitening_curl",
+      "resolved": false,
+      "resolution": "Generic projection frames can whiten to commuting effects; a natural marked-support calculation is still required."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Target-character signs can create extra leading mixed moments.",
+      "resolved": true,
+      "resolution": "All nonleading supports are suppressed using the absolute character bound; leading target words are exactly identity."
+    },
+    {
+      "objection": "Affine complement supports outside linear partitions survive.",
+      "resolved": true,
+      "resolution": "Cube-section equality forces zero into every rank-saturating support and identifies a block-constant linear subspace."
+    },
+    {
+      "objection": "A monochromatic crossing partition is leading.",
+      "resolved": true,
+      "resolution": "Its two crossing blocks leave an explicit nontrivial commutator word."
+    },
+    {
+      "objection": "Subextensive common codimension proves positive component curl.",
+      "resolved": false,
+      "resolution": "Low-rank compression and full-support whitening still require separate perturbation and marked noncommutativity theorems."
+    }
+  ],
+  "headline_metrics": {
+    "all_fixed_independent_joint_freeness_theorem_count": 1,
+    "uniform_target_character_theorem_count": 1,
+    "common_codimension_subextensive_theorem_count": 1,
+    "support_sequence_control_count": 3,
+    "leading_support_control_count": 5,
+    "highest_exhaustive_mixed_order": 4,
+    "power_two_mixed_supports_checked": 335,
+    "extra_free_support_count": 0,
+    "missing_predicted_support_count": 0,
+    "finite_control_failure_count": 0,
+    "growing_order_joint_law_theorem_count": 0,
+    "positive_full_support_leaf_curl_theorem_count": 0,
+    "natural_component_M4_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "all_fixed_independent_joint_freeness_proved": true,
+    "uniform_over_target_irreps": true,
+    "final_root_child_nullity_subextensive": true,
+    "final_root_common_codimension_subextensive": true,
+    "low_rank_common_compression_curl_transfer_proved": false,
+    "natural_full_support_whitened_leaf_curl_positive": false,
+    "natural_component_M4_positive": false,
+    "speedup_claim_allowed": false,
+    "reason": "The unmarked sibling-frame law and common-rank geometry are closed qualitatively; marked leaf curl remains the decisive gap."
+  },
+  "status": "all-fixed-joint-freeness-common-codimension-closed-marked-curl-open",
+  "summary": "Proved all-fixed independent sibling joint freeness uniformly in the target and reduced common-span compression to subextensive rank.",
+  "falsifiers_triggered": [
+    "Degree-four joint freeness was not the endpoint; every fixed mixed word is controlled.",
+    "Target characters cannot rescue a scalar-subleading support.",
+    "Affine and crossing power-two supports do not add free cumulants.",
+    "Normalized common codimension vanishes, but marked leaf whitening curl is still open.",
+    "No growing-order law, positive component M4, compiler, decoder, or speedup is proved."
+  ]
+}

@@ -512,52 +512,6 @@ def write_sparse_character_obstruction(
     payload = asdict(run_sparse_character_obstruction(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-SUBSET-SUM-FULL-LABEL-ADAPTIVE-SPARSE-CHARACTERS",
-                source=str(path),
-                claim=(
-                    "After seeing all labels, polynomially many adaptively "
-                    "selected subset-sum characters retain enough Fourier mass "
-                    "to recover target-dependent density-one fiber structure."
-                ),
-                reason_invalid=(
-                    "Low-order characters are annihilated by random antipodal "
-                    "labels, while an exact growing-moment bound controls every "
-                    "high-order character simultaneously. Any polynomial sparse "
-                    "selection contributes only a superpolynomially small "
-                    "nonzero-frequency correction with high source probability."
-                ),
-                lesson=(
-                    "Do not search another sparse frequency dictionary. A "
-                    "surviving Fourier route must implicitly contract "
-                    "exponentially many characters with polynomial resources "
-                    "and an explicit witness-decoder implication."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = (
-            registry_result_id
-            or f"RESULT-{registry_experiment_id}-SPARSE-CHARACTER-OBSTRUCTION"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=list(payload["falsifiers_triggered"]),
-                artifacts={
-                    "dcp_subset_sum_sparse_character_obstruction": str(path)
-                },
-            )
-        )
     return payload
 
 

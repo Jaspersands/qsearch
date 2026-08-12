@@ -511,49 +511,6 @@ def write_self_dual_wreath_typical_recoupling_transfer(
     payload = asdict(run_self_dual_wreath_typical_recoupling_transfer())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id=(
-                    "NEG-CODE-SELF-DUAL-WREATH-KNOWN-PRIMITIVES-"
-                    "NOT-TYPICAL-RECOUPLING"
-                ),
-                source=str(path),
-                claim=(
-                    "Known S_n QFT, YJM-label, and block-encoding primitives "
-                    "already supply the typical physical wreath decoder."
-                ),
-                reason_invalid=(
-                    "They leave internal multiplicity bases, overlapping "
-                    "associators, mixed four-class contraction, support "
-                    "conditioning, and output decoding unresolved."
-                ),
-                lesson=(
-                    "Synthesize the first missing typed recoupling primitive "
-                    "rather than relabeling known transforms."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_typical_recoupling_transfer": str(path)
-                },
-            )
-        )
     return payload
 
 

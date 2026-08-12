@@ -402,40 +402,4 @@ def write_subset_sum_bridge_audit(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-POLYNOMIAL-EXPLICIT-SUBSET-CANDIDATE-COVERAGE",
-                source=str(path),
-                claim="Testing polynomially many explicit subsets can satisfy Regev's inverse-polynomial legal-input coverage assumption.",
-                reason_invalid=(
-                    "Against a uniform target, M explicit candidate sums cover at most M/N residues. Polynomial M is "
-                    "exponentially below inverse-polynomial coverage for N=2^n."
-                ),
-                lesson=(
-                    "Search structural average-case subset-sum algorithms, reversible algebraic decoders, or coherent "
-                    "many-target methods. Do not mutate low-weight or random candidate enumeration."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "source_contract_satisfying_row_count": payload["headline_metrics"]["source_contract_satisfying_row_count"],
-                    "polynomial_enumeration_ruled_out_count": payload["headline_metrics"]["polynomial_enumeration_ruled_out_count"],
-                    "primary_source_conditional_dcp_reduction_count": 1,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-SUBSET-SUM-BRIDGE"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_subset_sum_bridge": str(path)},
-            )
-        )
     return payload

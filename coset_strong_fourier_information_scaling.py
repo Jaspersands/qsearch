@@ -436,55 +436,6 @@ def write_strong_fourier_information_scaling_report(
     )
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-FIXED-SOURCE-CARRIER-INFORMATION-NOT-NATURAL",
-                source=str(output_path),
-                claim=(
-                    "Information measured after conditioning on selected "
-                    "source partitions represents natural coset-state access."
-                ),
-                reason_invalid=(
-                    "The full natural strong Fourier channel weights all "
-                    "source labels; its one-copy information falls to about "
-                    "0.024 bits by n=8 on the audited hard family."
-                ),
-                lesson=(
-                    "Integrate source-label probability into every information "
-                    "and decoder claim before optimizing conditional branches."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-SUCCESS",
-                    "PO-NATURAL-ACCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = (
-            registry_result_id
-            or f"RESULT-{registry_experiment_id}-COSET"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=dict(payload["headline_metrics"]),
-                falsifiers_triggered=list(payload["falsifiers_triggered"]),
-                artifacts={
-                    "coset_strong_fourier_information_scaling": str(
-                        output_path
-                    )
-                },
-            )
-        )
     return payload
 
 

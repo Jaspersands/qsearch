@@ -725,56 +725,6 @@ def write_subgroup_twirl_reduction_report(
     payload = asdict(run_subgroup_twirl_reduction())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id=(
-                    "NEG-CODE-WREATH-TWIRL-DOES-NOT-"
-                    "BOUND-MULTIPLICITY-PARTIAL-TRACE"
-                ),
-                source=str(path),
-                claim=(
-                    "Rewriting the collision-free frame as a subgroup twirl "
-                    "is sufficient to prove its poly(n) 2^-k norm bound."
-                ),
-                reason_invalid=(
-                    "Schur averaging transfers the problem to positive "
-                    "operators on diagonal-S_n multiplicity spaces; the "
-                    "largest tested threshold stress has multiplicity "
-                    "dimension exponential in n."
-                ),
-                lesson=(
-                    "Target the normalized partial trace of the base tensor "
-                    "projector inside each isotypic multiplicity block, using "
-                    "recoupling, character bounds, or a counterexample search."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_subgroup_twirl_reduction": str(path)
-                },
-            )
-        )
     return payload
 
 

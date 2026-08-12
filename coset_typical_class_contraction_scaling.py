@@ -631,55 +631,6 @@ def write_class_contraction_scaling_report(
     payload = asdict(build_class_contraction_scaling_report(n_values=n_values))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-TYPICAL-SINGLE-TC2-GENERATOR-UNIFORMITY",
-                source=str(output_path),
-                claim=(
-                    "The normalized transposition/3-cycle intersection-two orbit average alone resolves every typical Kronecker multiplicity block uniformly."
-                ),
-                reason_invalid=(
-                    "Class-compressed exact second moments find zero variance on two n=6 targets, two n=8 targets, one n=9 target, and two n=10 targets despite full n=7 splitting."
-                ),
-                lesson=(
-                    "Reject one-generator extrapolation. Search a fixed portfolio only under all-n joint-spectrum, gap, natural-access, and decoder obligations."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-TYPICAL-SINGLE-TT1-GENERATOR-UNIFORMITY",
-                source=str(output_path),
-                claim=(
-                    "The shared-point transposition-pair orbit average alone resolves every typical Kronecker multiplicity block uniformly."
-                ),
-                reason_invalid=(
-                    "Its exact variance vanishes on hook and conjugate-hook targets throughout the audited scaling rows, although it repairs the primary generator's scalar blocks."
-                ),
-                lesson=(
-                    "Retain both support-three generators only as a finite portfolio. Require joint algebra generation and all-n gap control."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_typical_class_contraction_scaling": str(output_path)},
-            )
-        )
     return payload
 
 

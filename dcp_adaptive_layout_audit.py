@@ -496,53 +496,6 @@ def write_adaptive_layout_audit(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        negatives = (
-            (
-                "NEG-DCP-ADAPTIVE-VALUATION-LAYOUT-COMPRESSION",
-                "A label-adaptive balanced cut obtains growing 2-adic subgroup compression by collecting high-valuation labels.",
-                "Having a side divisible by four already requires a binomial half-population large deviation with exponential loss.",
-            ),
-            (
-                "NEG-DCP-EXPONENTIAL-RANK-ORACLE-AS-LAYOUT-ALGORITHM",
-                "Adaptive swap search over exact Schmidt scores is a polynomial layout-selection algorithm.",
-                "Each score uses O(m 2^q) residue dynamic programming at q=Theta(n).",
-            ),
-            (
-                "NEG-DCP-FINITE-ADAPTIVE-LAYOUT-IMPROVEMENT-AS-SPEEDUP",
-                "Finite reductions in 99-percent Schmidt rank establish a scalable DCP relation mechanism.",
-                "No all-n rank collapse, polynomial contraction, source-coverage theorem, or verified relation output is supplied.",
-            ),
-        )
-        for negative_id, claim, reason in negatives:
-            upsert_negative_result(
-                NegativeResultRecord(
-                    id=negative_id,
-                    source=str(path),
-                    claim=claim,
-                    reason_invalid=reason,
-                    lesson=(
-                        "A surviving adaptive layout must use a polynomially computable additive statistic, prove "
-                        "inverse-polynomial source coverage and polynomial bond, and output a verified relation."
-                    ),
-                    applies_to=[registry_candidate_id, registry_experiment_id],
-                    evidence=payload["headline_metrics"],
-                )
-            )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_adaptive_layout_audit": str(path)},
-            )
-        )
     return payload
 
 

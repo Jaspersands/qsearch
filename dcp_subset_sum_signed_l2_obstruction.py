@@ -491,50 +491,6 @@ def write_signed_l2_obstruction(
     payload = asdict(run_signed_l2_obstruction(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-SUBSET-SUM-LOW-ONLY-SPARSE-SIGNED-OBSERVABLE",
-                source=str(path),
-                claim=(
-                    "Signs or cancellations chosen from exposed low data can "
-                    "make a polynomial support of subset-sum high-equation hits "
-                    "depart from its no-hit baseline on inverse-polynomial source mass."
-                ),
-                reason_invalid=(
-                    "Distinct nonzero Boolean high equations are conditionally "
-                    "pairwise independent. A support M departs from its no-hit "
-                    "baseline only when an equation hits, with probability at "
-                    "most M/2^(n-b), negligible for fixed-polynomial M and b=O(log n)."
-                ),
-                lesson=(
-                    "Do not reopen sparse low-only signed scores. A surviving "
-                    "observable must adapt to full high labels, use a dense "
-                    "implicit contraction, be nonlinear, or prove a reduced-basis decoder implication."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = (
-            registry_result_id
-            or f"RESULT-{registry_experiment_id}-SIGNED-L2-OBSTRUCTION"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=list(payload["falsifiers_triggered"]),
-                artifacts={
-                    "dcp_subset_sum_signed_l2_obstruction": str(path)
-                },
-            )
-        )
     return payload
 
 

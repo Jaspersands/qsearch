@@ -412,42 +412,6 @@ def write_stable_encoded_tree_certificate(
     payload = asdict(build_stable_encoded_tree_certificate())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-ENCODED-TREE-LABELS-AS-COMPLETE-HSP-DECODER",
-                source=str(output_path),
-                claim=(
-                    "Complete coherent coupling-tree labels on one stable branch already implement the hidden-involution decoder."
-                ),
-                reason_invalid=(
-                    "The construction exposes a basis interface but no state-dependent transition filter, outcome "
-                    "information theorem, full-sector coverage, or classical separation."
-                ),
-                lesson=(
-                    "Use the encoded transition to formulate and test scalable frame/measurement operators, then kill "
-                    "any signal with legal classical representation baselines before promoting it."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "coset_stable_encoded_tree_certificate": str(output_path)
-                },
-            )
-        )
     return payload
 
 

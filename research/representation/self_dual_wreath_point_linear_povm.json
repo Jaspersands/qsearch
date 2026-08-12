@@ -1,0 +1,269 @@
+{
+  "created_at": "2026-08-12T03:41:24.347646+00:00",
+  "theorem_contract": {
+    "effects": "M_j=I/n+Delta_j/(n||Delta_j||_infinity).",
+    "positivity": "sum_j M_j=I and M_j>=0 because sum_j Delta_j=0 and spectrum(Delta_j) lies in [-beta,beta].",
+    "success": "P_lin=1/n+||Delta||_2^2/(n||Delta||_infinity).",
+    "stable_rank_criterion": "Success excess is ||Delta||_infinity r_eff/n, where r_eff=||Delta||_2^2/||Delta||_infinity^2.",
+    "access_boundary": "Unlike the PGM, no average-state inverse is needed; coherent signed access to Delta and its norm is still required.",
+    "scope": "The POVM is exact as an operator identity. No block encoding, Naimark dilation, efficient norm estimate, or natural stable-rank bound is proved.",
+    "theorem_verified": true,
+    "status": "linear-point-povm-criterion-proved-effect-access-open"
+  },
+  "theorem": {
+    "effects": "M_j=I/n+Delta_j/(n||Delta_j||_infinity).",
+    "positivity": "sum_j M_j=I and M_j>=0 because sum_j Delta_j=0 and spectrum(Delta_j) lies in [-beta,beta].",
+    "success": "P_lin=1/n+||Delta||_2^2/(n||Delta||_infinity).",
+    "stable_rank_criterion": "Success excess is ||Delta||_infinity r_eff/n, where r_eff=||Delta||_2^2/||Delta||_infinity^2.",
+    "access_boundary": "Unlike the PGM, no average-state inverse is needed; coherent signed access to Delta and its norm is still required.",
+    "scope": "The POVM is exact as an operator identity. No block encoding, Naimark dilation, efficient norm estimate, or natural stable-rank bound is proved.",
+    "theorem_verified": true,
+    "status": "linear-point-povm-criterion-proved-effect-access-open"
+  },
+  "finite_controls": [
+    {
+      "control_id": "W3-SINGLE-UNEQUAL",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 1,
+      "register_dimension": 12,
+      "centered_hilbert_schmidt_norm_squared": 0.06250000000000003,
+      "centered_operator_norm": 0.17677669529663695,
+      "centered_effective_rank": 1.9999999999999996,
+      "minimum_effect_eigenvalue": -2.6884088825270675e-17,
+      "maximum_effect_eigenvalue": 0.6666666666666667,
+      "povm_completeness_residual": 5.535992165868707e-16,
+      "covariance_norm_residual": 2.7755575615628914e-17,
+      "predicted_linear_success": 0.45118446353109126,
+      "observed_linear_success": 0.4511844635310913,
+      "linear_success_formula_residual": 5.551115123125783e-17,
+      "pretty_good_success": 0.4166666666666667,
+      "linear_minus_pretty_good_success": 0.03451779686442463,
+      "random_guess_success": 0.3333333333333333,
+      "linear_success_excess": 0.117851130197758,
+      "exact_linear_point_povm_verified": true,
+      "status": "exact-linear-covariant-point-povm"
+    },
+    {
+      "control_id": "W3-INFORMATION-THRESHOLD",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 3,
+      "register_dimension": 48,
+      "centered_hilbert_schmidt_norm_squared": 0.044921875000000014,
+      "centered_operator_norm": 0.11355555650202107,
+      "centered_effective_rank": 3.483702779884255,
+      "minimum_effect_eigenvalue": 0.07843157622458233,
+      "maximum_effect_eigenvalue": 0.6666666666666672,
+      "povm_completeness_residual": 1.472358118576739e-16,
+      "covariance_norm_residual": 2.7755575615628914e-17,
+      "predicted_linear_success": 0.4651979359524648,
+      "observed_linear_success": 0.4651979359524649,
+      "linear_success_formula_residual": 1.1102230246251565e-16,
+      "pretty_good_success": 0.5890004748950276,
+      "linear_minus_pretty_good_success": -0.12380253894256271,
+      "random_guess_success": 0.3333333333333333,
+      "linear_success_excess": 0.13186460261913158,
+      "exact_linear_point_povm_verified": true,
+      "status": "exact-linear-covariant-point-povm"
+    },
+    {
+      "control_id": "W4-COLLISION-FREE-PAIR",
+      "n": 4,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 2,
+      "register_dimension": 96,
+      "centered_hilbert_schmidt_norm_squared": 0.0025612997256515774,
+      "centered_operator_norm": 0.017998356208042725,
+      "centered_effective_rank": 7.906690106842951,
+      "minimum_effect_eigenvalue": 0.05322642152377933,
+      "maximum_effect_eigenvalue": 0.5000000000000002,
+      "povm_completeness_residual": 7.670386284578457e-16,
+      "covariance_norm_residual": 1.0408340855860843e-17,
+      "predicted_linear_success": 0.2855768562423917,
+      "observed_linear_success": 0.2855768562423917,
+      "linear_success_formula_residual": 0.0,
+      "pretty_good_success": 0.27413787291391045,
+      "linear_minus_pretty_good_success": 0.011438983328481256,
+      "random_guess_success": 0.25,
+      "linear_success_excess": 0.03557685624239171,
+      "exact_linear_point_povm_verified": true,
+      "status": "exact-linear-covariant-point-povm"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 16,
+      "point_hypothesis_count": 16,
+      "sufficient_operator_norm_times_effective_rank": "||Delta||_infinity r_eff >= n^-O(1)",
+      "point_success_excess": "delta_n=||Delta||_2^2/(n||Delta||_infinity)=||Delta||_infinity r_eff/n",
+      "pgm_average_inverse_required": false,
+      "signed_centered_state_access_required": true,
+      "operator_norm_estimation_required": true,
+      "coherent_affine_effect_compiler_proved": false,
+      "inverse_polynomial_natural_success_excess_proved": false,
+      "status": "linear-point-povm-criterion-proved-physical-effect-access-open"
+    },
+    {
+      "n": 64,
+      "point_hypothesis_count": 64,
+      "sufficient_operator_norm_times_effective_rank": "||Delta||_infinity r_eff >= n^-O(1)",
+      "point_success_excess": "delta_n=||Delta||_2^2/(n||Delta||_infinity)=||Delta||_infinity r_eff/n",
+      "pgm_average_inverse_required": false,
+      "signed_centered_state_access_required": true,
+      "operator_norm_estimation_required": true,
+      "coherent_affine_effect_compiler_proved": false,
+      "inverse_polynomial_natural_success_excess_proved": false,
+      "status": "linear-point-povm-criterion-proved-physical-effect-access-open"
+    },
+    {
+      "n": 256,
+      "point_hypothesis_count": 256,
+      "sufficient_operator_norm_times_effective_rank": "||Delta||_infinity r_eff >= n^-O(1)",
+      "point_success_excess": "delta_n=||Delta||_2^2/(n||Delta||_infinity)=||Delta||_infinity r_eff/n",
+      "pgm_average_inverse_required": false,
+      "signed_centered_state_access_required": true,
+      "operator_norm_estimation_required": true,
+      "coherent_affine_effect_compiler_proved": false,
+      "inverse_polynomial_natural_success_excess_proved": false,
+      "status": "linear-point-povm-criterion-proved-physical-effect-access-open"
+    },
+    {
+      "n": 1024,
+      "point_hypothesis_count": 1024,
+      "sufficient_operator_norm_times_effective_rank": "||Delta||_infinity r_eff >= n^-O(1)",
+      "point_success_excess": "delta_n=||Delta||_2^2/(n||Delta||_infinity)=||Delta||_infinity r_eff/n",
+      "pgm_average_inverse_required": false,
+      "signed_centered_state_access_required": true,
+      "operator_norm_estimation_required": true,
+      "coherent_affine_effect_compiler_proved": false,
+      "inverse_polynomial_natural_success_excess_proved": false,
+      "status": "linear-point-povm-criterion-proved-physical-effect-access-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "construct_point_measurement_without_pgm_inverse",
+      "resolved": true,
+      "resolution": "The isotropic centered ensemble yields an affine covariant POVM with exact success controlled by two Schatten norms."
+    },
+    {
+      "obligation": "prove_natural_linear_povm_success_excess",
+      "resolved": false,
+      "resolution": "Neither collision-free ||Delta||_2^2 nor ||Delta||_infinity has an all-n bound strong enough to control their ratio."
+    },
+    {
+      "obligation": "compile_signed_centered_state_effect",
+      "resolved": false,
+      "resolution": "Preparing tau and subgroup twirls does not by itself implement the signed affine effect or its Naimark dilation."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The PGM multiplicity inverse is necessary for any nontrivial point decoder.",
+      "resolved": true,
+      "resolution": "False at the operator level. The linear POVM has positive finite excess and in two controls exceeds the implemented PGM success."
+    },
+    {
+      "objection": "The linear POVM is automatically implementable from copies of tau.",
+      "resolved": false,
+      "resolution": "No known generic procedure turns state preparation into the signed effect Delta/beta at inverse-polynomial cost."
+    },
+    {
+      "objection": "Hilbert--Schmidt energy alone lower-bounds success excess.",
+      "resolved": false,
+      "resolution": "Equation (2) also depends on the operator norm. A concentrated standard harmonic may have poor effective rank."
+    }
+  ],
+  "headline_metrics": {
+    "exact_linear_point_povm_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "linear_beats_pgm_control_count": 2,
+    "minimum_finite_linear_success_excess": 0.03557685624239171,
+    "physical_affine_effect_compiler_count": 0,
+    "natural_inverse_polynomial_success_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "linear_covariant_point_povm_proved": true,
+    "pgm_average_inverse_required_for_point_decoding": false,
+    "natural_stable_rank_success_bound_proved": false,
+    "signed_centered_state_block_encoding_proved": false,
+    "coherent_linear_point_measurement_compiled": false,
+    "inverse_polynomial_point_decoder_excess_proved": false,
+    "polynomial_full_hidden_shift_decoder_proved": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "An exact inverse-free POVM exists, but its natural norm ratio and physical signed-effect implementation are unproved."
+  },
+  "status": "linear-point-povm-criterion-proved-effect-access-open",
+  "summary": "Replaced the PGM inverse as a logical necessity with a simpler affine point POVM. The active gates are now standard-harmonic stable rank and coherent signed-effect access.",
+  "falsifiers_triggered": [
+    "Point decoding does not intrinsically require whitening the full average state; an exact linear covariant POVM can perform better.",
+    "An operator-level POVM formula is not a circuit and does not resolve the physical access problem.",
+    "Positive standard energy alone is insufficient without operator-norm or effective-rank control."
+  ]
+}

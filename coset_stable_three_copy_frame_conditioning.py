@@ -333,42 +333,6 @@ def write_stable_three_copy_frame_conditioning_report(
     payload = asdict(build_stable_three_copy_frame_conditioning_report())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-STABLE-THREE-COPY-CONDITIONING-AS-HIDDEN-INVOLUTION-DECODER",
-                source=str(output_path),
-                claim=(
-                    "An all-n conditioned stable frame and polynomial inverse-square-root filter constitute a hidden-involution decoder."
-                ),
-                reason_invalid=(
-                    "The filter is only an implementable measurement primitive on one conditioned branch; no outcome-information, "
-                    "reconstruction, branch-probability, or classical-separation theorem follows."
-                ),
-                lesson=(
-                    "Compute the parameter-dependent PGM outcome law, prove mutual-information or reconstruction guarantees, "
-                    "and attack it with classical character and bounded-treewidth tensor contractions."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "coset_stable_three_copy_frame_conditioning": str(output_path)
-                },
-            )
-        )
     return payload
 
 

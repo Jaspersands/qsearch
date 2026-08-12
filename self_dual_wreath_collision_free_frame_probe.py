@@ -390,54 +390,6 @@ def write_collision_free_frame_probe_report(
     payload = asdict(run_collision_free_frame_probe())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id=(
-                    "NEG-CODE-WREATH-COLLISION-FREE-"
-                    "EXACT-INDEPENDENCE"
-                ),
-                source=str(path),
-                claim=(
-                    "Global source-partition distinctness forces the exact "
-                    "frame norm bound ||B||<=2^{1-k}."
-                ),
-                reason_invalid=(
-                    "Complete finite W5 collision-free probes contain top "
-                    "eigenvalues slightly above 2^{1-k}."
-                ),
-                lesson=(
-                    "Target the sufficient and more plausible bound "
-                    "||B||<=poly(n)2^-k using character ratios, overlap "
-                    "graphs, or Fourier-level contraction."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_collision_free_frame_probe": str(path)
-                },
-            )
-        )
     return payload
 
 

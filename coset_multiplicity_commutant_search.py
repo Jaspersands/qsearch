@@ -747,39 +747,4 @@ def write_multiplicity_commutant_report(
     )
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-FINITE-COMMUTANT-SPLITTING-AS-POLY-TRANSFORM",
-                source=str(output_path),
-                claim=(
-                    "A finite simple spectrum of a bounded-support commutant Hamiltonian proves a scalable polynomial "
-                    "Kronecker multiplicity transform."
-                ),
-                reason_invalid=(
-                    "Phase-estimation complexity depends on the LCU-normalized minimum eigenvalue gap. The finite "
-                    "search supplies no inverse-polynomial all-n lower bound on reduction-relevant sectors."
-                ),
-                lesson=(
-                    "Search for an exactly solvable commutant algebra or prove normalized gap concentration before "
-                    "treating finite multiplicity splitting as a circuit primitive."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_multiplicity_commutant_search": str(output_path)},
-            )
-        )
     return payload

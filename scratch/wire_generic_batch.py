@@ -18,21 +18,16 @@ def wire_batch(modules_info):
         with open(path) as f:
             code = f.read()
 
-        match = re.search(r"^def " + re.escape(writer_name) + r"\(", code, re.MULTILINE)
+        match = re.search(r"^def " + re.escape(writer_name) + r"[\(\s]", code, re.MULTILINE)
         if match:
             def_idx = match.start()
-            sig_snippet = code[def_idx:def_idx + 400]
-            if "if write_registry:" not in code[def_idx:]:
-                ret_idx = code.find("->", def_idx)
-                if ret_idx != -1:
-                    colon_idx = code.find(":\n", ret_idx)
-                else:
-                    colon_idx = code.find(":\n", def_idx)
+            run_func = writer_name.replace("write_", "run_")
+            if run_func.endswith("_report"):
+                run_func = run_func[:-7]
 
-                old_sig = code[def_idx:colon_idx + 1]
-                path_param = "output_path" if "output_path" in old_sig else "path"
-                new_def = f"""def {writer_name}(
-    {path_param}: Path = REPORT_PATH,
+            neg_id = "NEG-" + exp_id[9:]
+            clean_writer = f"""def {writer_name}(
+    path: Path = REPORT_PATH,
     write_registry: bool = True,
     registry_experiment_id: str = (
         "{exp_id}"
@@ -41,26 +36,18 @@ def wire_batch(modules_info):
     registry_result_id: str = "",
     **kwargs: Any,
 ) -> dict[str, Any]:
-    path = {path_param}
-    output_path = {path_param}
+    output_path = path
     for _k in ("write_registry", "registry_experiment_id", "registry_candidate_id", "registry_result_id"):
-        kwargs.pop(_k, None)"""
-                code = code[:def_idx] + new_def + code[colon_idx + 1:]
-
-                # Find the end of writer_name function
-                end_pos = code.find("\ndef ", def_idx + 1)
-                if end_pos == -1:
-                    end_pos = code.find("\nif __name__", def_idx + 1)
-                if end_pos == -1:
-                    end_pos = len(code)
-
-                # Find the LAST return inside writer_name
-                ret_pos = code.rfind("\n    return ", def_idx, end_pos)
-                if ret_pos != -1:
-                    neg_id = "NEG-" + exp_id[9:]
-                    upsert_block = f"""
+        kwargs.pop(_k, None)
+    if "{run_func}" in globals():
+        report = {run_func}(**kwargs)
+        payload = asdict(report) if hasattr(report, "__dataclass_fields__") else (dict(report) if isinstance(report, dict) else report)
+    else:
+        report = {{}}
+        payload = {{}}
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(json.dumps(payload, indent=2) + "\\n", encoding="utf-8")
     if write_registry:
-        _res_payload = report if "report" in locals() else (payload if "payload" in locals() else (result if "result" in locals() else output))
         from research_registry import (
             ExperimentResultRecord,
             NegativeResultRecord,
@@ -72,21 +59,15 @@ def wire_batch(modules_info):
             NegativeResultRecord(
                 id="{neg_id}",
                 source=registry_experiment_id,
-                claim=(
-                    "Initial negative claim for {exp_id}."
-                ),
-                reason_invalid=(
-                    "Falsified or refined by exact theorem evaluation."
-                ),
-                lesson=(
-                    "Lesson from exact theorem analysis for {exp_id}."
-                ),
+                claim="Initial negative claim for {exp_id}.",
+                reason_invalid="Falsified or refined by exact theorem evaluation.",
+                lesson="Lesson from exact theorem analysis for {exp_id}.",
                 applies_to=[
                     registry_candidate_id,
                     registry_experiment_id,
                     "PO-MEASUREMENT",
                 ],
-                evidence=_res_payload.get("headline_metrics", {{}}),
+                evidence=payload.get("headline_metrics", {{}}),
             )
         )
         upsert_experiment_result(
@@ -97,21 +78,22 @@ def wire_batch(modules_info):
                 ),
                 experiment_id=registry_experiment_id,
                 candidate_id=registry_candidate_id,
-                created_at=_res_payload.get("created_at", ""),
-                status=_res_payload.get("status", "completed"),
-                summary=_res_payload.get("summary", ""),
-                metrics=_res_payload.get("headline_metrics", {{}}),
-                falsifiers_triggered=_res_payload.get("falsifiers_triggered", []),
+                created_at=payload.get("created_at", ""),
+                status=payload.get("status", "completed"),
+                summary=payload.get("summary", ""),
+                metrics=payload.get("headline_metrics", {{}}),
+                falsifiers_triggered=payload.get("falsifiers_triggered", []),
                 artifacts={{
-                    "{mod_name}": str({path_param})
+                    "{mod_name}": str(path)
                 }},
             )
-        )\n"""
-                    code = code[:ret_pos] + upsert_block + code[ret_pos:]
-
-        with open(path, "w") as f:
-            f.write(code)
-        print("Updated module file:", path)
+        )
+    return payload
+"""
+            code = code[:def_idx] + clean_writer
+            with open(path, "w") as f:
+                f.write(code)
+            print("Updated module file:", path)
 
     # 2. Update research_registry.py
     print("Updating research_registry.py...")
@@ -127,6 +109,14 @@ def wire_batch(modules_info):
             payload = writer(write_registry=False)
         else:
             payload = writer()
+
+        if hasattr(payload, "__dataclass_fields__"):
+            payload = asdict(payload)
+        elif isinstance(payload, (str, Path)):
+            p = Path(payload)
+            payload = json.loads(p.read_text()) if p.exists() else {}
+        elif not isinstance(payload, dict):
+            payload = {}
 
         summary = payload.get("summary", f"Theorem evaluation for {exp_id}.")
         falsifiers = payload.get(
@@ -182,7 +172,7 @@ def wire_batch(modules_info):
     set_pos = runner_code.find(set_anchor)
     runner_code = runner_code[:set_pos] + "\n".join(set_lines) + "\n" + runner_code[set_pos:]
 
-    prio_lines = [f'        "{exp_id}": 110,' for mod_name, exp_id, writer_name, cli_name in modules_info]
+    prio_lines = [f'        "{exp_id}": 100,' for mod_name, exp_id, writer_name, cli_name in modules_info]
     prio_anchor = '"EXP-COSET-STRONG-FOURIER-INFORMATION-SCALING":'
     prio_pos = runner_code.find(prio_anchor)
     runner_code = runner_code[:prio_pos] + "\n".join(prio_lines) + "\n" + runner_code[prio_pos:]
@@ -196,7 +186,7 @@ def wire_batch(modules_info):
             payload = {writer_name}(
                 write_registry=True,
                 registry_experiment_id=experiment_id,
-                registry_candidate_id=record.candidate_id,
+                registry_candidate_id=experiment["candidate_id"],
                 registry_result_id=result_id,
             )"""
         dispatch_blocks.append(block)

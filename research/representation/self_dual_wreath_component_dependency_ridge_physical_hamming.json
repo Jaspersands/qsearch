@@ -1,0 +1,221 @@
+{
+  "created_at": "2026-08-12T03:42:28.517041+00:00",
+  "theorem_contract": {
+    "physical_leaf": "K_e=F^(1/2)G_eta E_e G_eta F^(1/2)",
+    "all_words": "Tr product_j(Q_eta D_ej Q_eta)=Tr product_j K_ej",
+    "leaf_marked_words": "Tr product_j K_ej=Tr product_j(E_ej P_eta), P_eta=G_eta F G_eta",
+    "walsh_to_leaf": "C(Q_eta)=sum_(e,f)||[K_e,K_f]||F^2/2",
+    "annealed_hamming": "E[1_A C(Q_eta)/D]=(1/2)E_(H~Bin(m,1/2))[q^2 c_H^eta]",
+    "target": "lower-bound (q^2/D)E[1_A||[K_0,K_eh]||F^2] at typical |e_h|",
+    "scope": "The algebraic identities are deterministic. The Hamming collapse additionally uses source relabeling invariance in law and an invariant accepted event. No pair-gap bound is proved."
+  },
+  "theorem": {
+    "physical_leaf_effect": "K_e=F^(1/2)G_eta E_e G_eta F^(1/2)",
+    "all_word_identity": "Tr product_j(Q_eta D_ej Q_eta)=Tr product_j K_ej",
+    "leaf_marked_word_identity": "Tr product_j K_ej=Tr product_j(E_ej P_eta), P_eta=G_eta F G_eta",
+    "walsh_inversion": "C(Q_eta)=sum_(e,f)||[K_e,K_f]||F^2/2",
+    "annealed_hamming_identity": "E[1_A C(Q_eta)/D]=(1/2)E_(H~Bin(m,1/2))[q^2 c_H^eta]",
+    "exact_typical_pair_target": "lower-bound (q^2/D)E[1_A||[K_0,K_eh]||F^2] at typical |e_h|",
+    "arbitrary_equal_block_synthesis": true,
+    "source_relabeling_invariant_event_required_for_hamming_reduction": true,
+    "theorem_verified": true,
+    "status": "physical-ridge-curl-reduced-to-one-typical-hamming-leaf-word"
+  },
+  "finite_controls": [
+    {
+      "control_id": "ISOMETRIC-D10-Q4-B3-R4",
+      "physical_dimension": 10,
+      "coefficient_dimension": 12,
+      "common_fiber_dimension": 4,
+      "leaf_count": 4,
+      "coordinate_block_dimension": 3,
+      "ridge_parameter": 0.01,
+      "maximum_leaf_isometry_residual": 7.722549869079356e-16,
+      "physical_leaf_kernel_minimum_eigenvalue": -9.428278437257971e-16,
+      "maximum_coefficient_to_physical_leaf_word_residual": 2.5923707624997405e-14,
+      "maximum_physical_to_leaf_marked_word_residual": 2.5617044000176916e-15,
+      "maximum_pair_commutator_residual": 3.840677775812651e-15,
+      "coefficient_normalized_parity_curl": 0.022069516365056708,
+      "physical_leaf_normalized_parity_curl": 0.022069516365058512,
+      "normalized_parity_curl_residual": 1.8041124150158794e-15,
+      "physical_leaf_pair_curl_positive": true,
+      "exact_physical_leaf_word_reduction_verified": true,
+      "status": "dependency-ridge-curl-reduced-to-physical-leaf-hamming-word"
+    },
+    {
+      "control_id": "ISOMETRIC-D12-Q4-B4-R5",
+      "physical_dimension": 12,
+      "coefficient_dimension": 16,
+      "common_fiber_dimension": 5,
+      "leaf_count": 4,
+      "coordinate_block_dimension": 4,
+      "ridge_parameter": 0.003,
+      "maximum_leaf_isometry_residual": 5.973704548222679e-16,
+      "physical_leaf_kernel_minimum_eigenvalue": -4.628066512465999e-16,
+      "maximum_coefficient_to_physical_leaf_word_residual": 4.556355293061642e-13,
+      "maximum_physical_to_leaf_marked_word_residual": 1.7772239894833365e-15,
+      "maximum_pair_commutator_residual": 4.534914110898569e-14,
+      "coefficient_normalized_parity_curl": 0.026638311326118085,
+      "physical_leaf_normalized_parity_curl": 0.02663831132615046,
+      "normalized_parity_curl_residual": 3.2373409508679174e-14,
+      "physical_leaf_pair_curl_positive": true,
+      "exact_physical_leaf_word_reduction_verified": true,
+      "status": "dependency-ridge-curl-reduced-to-physical-leaf-hamming-word"
+    },
+    {
+      "control_id": "ISOMETRIC-D12-Q8-B2-R4",
+      "physical_dimension": 12,
+      "coefficient_dimension": 16,
+      "common_fiber_dimension": 4,
+      "leaf_count": 8,
+      "coordinate_block_dimension": 2,
+      "ridge_parameter": 0.001,
+      "maximum_leaf_isometry_residual": 7.018576778234741e-16,
+      "physical_leaf_kernel_minimum_eigenvalue": -1.4987114904856228e-15,
+      "maximum_coefficient_to_physical_leaf_word_residual": 8.15791878494565e-13,
+      "maximum_physical_to_leaf_marked_word_residual": 8.942562614587554e-16,
+      "maximum_pair_commutator_residual": 4.9963505555084e-14,
+      "coefficient_normalized_parity_curl": 0.030360339499783357,
+      "physical_leaf_normalized_parity_curl": 0.03036033949991165,
+      "normalized_parity_curl_residual": 1.2829320938934075e-13,
+      "physical_leaf_pair_curl_positive": true,
+      "exact_physical_leaf_word_reduction_verified": true,
+      "status": "dependency-ridge-curl-reduced-to-physical-leaf-hamming-word"
+    }
+  ],
+  "scaling_records": [
+    {
+      "cube_dimension": 46,
+      "leaf_count_log2": 46,
+      "typical_hamming_lower": 9,
+      "typical_hamming_upper": 37,
+      "typical_hamming_mass_lower_bound": 0.9999907523000786,
+      "assumed_rescaled_pair_gap_lower_bound": 0.00390625,
+      "implied_bounded_ridge_curl_lower_bound": 0.001953106938086091,
+      "hamming_stratum_count": 46,
+      "parity_mask_pair_stratum_count": 18424,
+      "physical_hamming_reduction_is_stronger_than_mask_stratification": true,
+      "natural_rescaled_pair_gap_proved": false,
+      "status": "typical-physical-ridge-pair-target-unproved"
+    },
+    {
+      "cube_dimension": 118,
+      "leaf_count_log2": 118,
+      "typical_hamming_lower": 35,
+      "typical_hamming_upper": 83,
+      "typical_hamming_mass_lower_bound": 0.99999527552943,
+      "assumed_rescaled_pair_gap_lower_bound": 0.0009765625,
+      "implied_bounded_ridge_curl_lower_bound": 0.0004882789431296045,
+      "hamming_stratum_count": 118,
+      "parity_mask_pair_stratum_count": 287980,
+      "physical_hamming_reduction_is_stronger_than_mask_stratification": true,
+      "natural_rescaled_pair_gap_proved": false,
+      "status": "typical-physical-ridge-pair-target-unproved"
+    },
+    {
+      "cube_dimension": 296,
+      "leaf_count_log2": 296,
+      "typical_hamming_lower": 106,
+      "typical_hamming_upper": 190,
+      "typical_hamming_mass_lower_bound": 0.9999993444754821,
+      "assumed_rescaled_pair_gap_lower_bound": 0.000244140625,
+      "implied_bounded_ridge_curl_lower_bound": 0.00012207023247991725,
+      "hamming_stratum_count": 296,
+      "parity_mask_pair_stratum_count": 4410549,
+      "physical_hamming_reduction_is_stronger_than_mask_stratification": true,
+      "natural_rescaled_pair_gap_proved": false,
+      "status": "typical-physical-ridge-pair-target-unproved"
+    },
+    {
+      "cube_dimension": 714,
+      "leaf_count_log2": 714,
+      "typical_hamming_lower": 288,
+      "typical_hamming_upper": 426,
+      "typical_hamming_mass_lower_bound": 0.9999998191220538,
+      "assumed_rescaled_pair_gap_lower_bound": 6.103515625e-05,
+      "implied_bounded_ridge_curl_lower_bound": 3.0517572605043146e-05,
+      "hamming_stratum_count": 714,
+      "parity_mask_pair_stratum_count": 61176830,
+      "physical_hamming_reduction_is_stronger_than_mask_stratification": true,
+      "natural_rescaled_pair_gap_proved": false,
+      "status": "typical-physical-ridge-pair-target-unproved"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "remove_parity_mask_average_from_physical_ridge_curl",
+      "resolved": true,
+      "resolution": "Walsh orthogonality converts the normalized mask-pair curl exactly into the physical leaf-pair commutator sum."
+    },
+    {
+      "obligation": "express_ridge_pair_gap_as_leaf_marked_physical_word",
+      "resolved": true,
+      "resolution": "Every degree-four pair trace is an alternating word in two leaf frames and P_eta=G_eta F G_eta."
+    },
+    {
+      "obligation": "prove_typical_hamming_rescaled_ridge_pair_gap",
+      "resolved": false,
+      "resolution": "Evaluate equation (5) under accepted Plancherel sources for h=m/2+O(sqrt(m)); a q^-2 raw scale is expected."
+    },
+    {
+      "obligation": "transfer_bounded_ridge_curl_to_exact_support",
+      "resolved": false,
+      "resolution": "Prove the companion physical support-ridge tail is small enough for the 16sqrt(R_eta)+8R_eta bound."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The q^-2 Walsh average leaves O(m^3) mask strata.",
+      "resolved": true,
+      "resolution": "Invert Walsh first. The annealed physical leaf target has only m nonzero Hamming strata."
+    },
+    {
+      "objection": "The square root of F makes word-map evaluation nonlocal.",
+      "resolved": true,
+      "resolution": "Cyclic trace removes it: all degree-four words alternate E_e with P_eta=G_eta F G_eta."
+    },
+    {
+      "objection": "Translation covariance in one source block is required.",
+      "resolved": true,
+      "resolution": "Only covariance after source-pair relabeling and averaging is used; a fixed unequal-source realization need not be covariant."
+    },
+    {
+      "objection": "Positivity of every pair gap proves a useful average.",
+      "resolved": false,
+      "resolution": "Every typical pair gap could still vanish or be o(q^-2); the rescaled natural lower bound is the decisive open theorem."
+    }
+  ],
+  "headline_metrics": {
+    "exact_physical_leaf_word_reduction_theorem_count": 1,
+    "walsh_mask_to_leaf_pair_reduction_theorem_count": 1,
+    "annealed_hamming_profile_reduction_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "maximum_coefficient_physical_word_residual": 8.15791878494565e-13,
+    "maximum_leaf_marked_word_residual": 2.5617044000176916e-15,
+    "profile_identity_residual": 0.0,
+    "tail_hamming_stratum_count": 714,
+    "tail_mask_pair_stratum_count": 61176830,
+    "natural_typical_rescaled_ridge_pair_gap_theorem_count": 0,
+    "natural_exact_component_M4_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "bounded_ridge_curl_is_physical_leaf_pair_sum": true,
+    "physical_leaf_pair_gap_is_leaf_marked_resolvent_word": true,
+    "annealed_target_has_only_m_hamming_strata": true,
+    "natural_typical_rescaled_ridge_pair_gap_positive": false,
+    "natural_support_ridge_tail_small": false,
+    "natural_exact_component_M4_positive": false,
+    "speedup_claim_allowed": false,
+    "reason": "The bounded target is one typical physical Hamming-pair word, but neither its natural scale nor support-ridge transfer is proved."
+  },
+  "status": "bounded-ridge-curl-reduced-to-typical-physical-hamming-pair",
+  "summary": "Inverted the parity-mask curl into an exact physical leaf-pair sum, removed frame square roots from its trace words, and reduced the accepted-source target to one binomial Hamming profile.",
+  "falsifiers_triggered": [
+    "Polynomially many mask strata were not the minimal formulation; the physical ridge target has only m Hamming strata.",
+    "The Hamming identity is annealed and does not assert covariance of one unequal-source realization.",
+    "Pair-gap positivity alone gives no nonnegligible lower bound.",
+    "No natural pair scale, support transfer, exact M4, algorithm, or speedup is proved."
+  ]
+}

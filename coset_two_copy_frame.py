@@ -403,36 +403,4 @@ def write_two_copy_frame_report(
     payload = asdict(build_two_copy_frame_report(n_values=n_values))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-TWO-COPY-SPECTRUM-AS-ALGORITHM",
-                source=str(output_path),
-                claim="An explicit two-copy Kronecker-sector frame spectrum supplies a hidden-involution algorithm.",
-                reason_invalid=(
-                    "The PGM gains at most a factor four over guessing, while coherent recoupling and outcome decoding "
-                    "remain unimplemented."
-                ),
-                lesson=(
-                    "Treat the spectrum as a design primitive. Build a uniform coherent Kronecker transform and solve "
-                    "the k>=3 overlapping recoupling/decoder problem."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_two_copy_frame": str(output_path)},
-            )
-        )
     return payload

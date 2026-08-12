@@ -439,57 +439,6 @@ def write_quenched_occupancy_report(
     output_path.write_text(
         json.dumps(payload, indent=2, sort_keys=True)
     )
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-PGM-GENERIC-DIRECT-QSVT-AVERAGE-SOURCE",
-                source=str(output_path),
-                claim=(
-                    "Generic direct QSVT rescaling can evade singleton/"
-                    "doubleton spectral spacing on almost all random "
-                    "density-one subset-sum sources."
-                ),
-                reason_invalid=(
-                    "The two-target lattice-transfer extension proves a "
-                    "quenched Poisson(1) fiber law. Singleton and doubleton "
-                    "residues both occupy asymptotically positive fractions "
-                    "with high probability over the public labels."
-                ),
-                lesson=(
-                    "Retire generic direct count/amplitude polynomial "
-                    "transforms. Search source-aware encodings, collision "
-                    "walks, or different full-rank measurements."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "EXP-DHS-DCP-PGM-QSVT-DEGREE-OBSTRUCTION",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload[
-                    "falsifiers_triggered"
-                ],
-                artifacts={
-                    "dcp_subset_sum_quenched_occupancy_theorem": str(
-                        output_path
-                    )
-                },
-            )
-        )
     return payload
 
 

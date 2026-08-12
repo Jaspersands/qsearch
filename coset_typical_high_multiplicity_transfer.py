@@ -719,40 +719,6 @@ def write_high_multiplicity_transfer_report(
     payload = asdict(build_high_multiplicity_transfer_report(recompute=recompute))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-TYPICAL-N8-FULL-SEPARATION-NOT-ASYMPTOTIC-GAP",
-                source=str(output_path),
-                claim=(
-                    "A fixed coefficient exactly separating every n=8 target establishes a uniform typical-irrep resolver."
-                ),
-                reason_invalid=(
-                    "The theorem covers one source size and coefficient; parameter robustness, adjacent sizes, all-n normalized gaps, coherent implementation, and decoding are absent."
-                ),
-                lesson=(
-                    "Move immediately to n=9 and coefficient perturbations. Reject the mechanism on the first repeated root or superpolynomial normalized-gap trend."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "coset_typical_high_multiplicity_transfer": str(output_path)
-                },
-            )
-        )
     return payload
 
 

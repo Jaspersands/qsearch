@@ -341,41 +341,6 @@ def write_stable_shape_router_certificate(
     payload = asdict(build_stable_shape_router_certificate())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-TRANSPOSITION-SIGNATURE-ALONE-AS-STABLE-SHAPE-ROUTER",
-                source=str(output_path),
-                claim=(
-                    "The pair transposition class sum alone uniformly distinguishes every stable intermediate shape."
-                ),
-                reason_invalid=(
-                    "Exact content formulas exhibit collisions at n=8, n=9, and n=12. The joint 3-cycle signature "
-                    "is required for a uniform stable-range router."
-                ),
-                lesson=(
-                    "Use the exact two-class central signature and retain a separate obligation for multiplicity labels."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "coset_stable_shape_router_certificate": str(output_path)
-                },
-            )
-        )
     return payload
 
 

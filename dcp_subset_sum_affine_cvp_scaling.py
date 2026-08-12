@@ -363,36 +363,4 @@ def write_affine_cvp_scaling(
     payload = asdict(run_affine_cvp_scaling(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-SUBSET-SUM-AFFINE-CVP-FINITE-SCALING-NOT-COVERAGE",
-                source=str(path),
-                claim="Finite source-native affine-CVP scaling establishes an asymptotic partial solver.",
-                reason_invalid=(
-                    "Exact legality and held-out scaling remove source bias but still do not prove an "
-                    "inverse-polynomial asymptotic coverage lower bound."
-                ),
-                lesson=(
-                    "Use the tail as a classical falsifier and formulate a source-conditioned BDD theorem; never fit a "
-                    "speedup claim directly to these rows."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-AFFINE-CVP-SCALING"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_subset_sum_affine_cvp_scaling": str(path)},
-            )
-        )
     return payload

@@ -294,40 +294,4 @@ def write_contaminated_pgm_audit(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-F1-CONTAMINATION-AS-CLEAN-PGM-INFORMATION-BARRIER",
-                source=str(path),
-                claim="The exact f=1 bad-register rate by itself destroys global clean-PGM information at m=Theta(log N).",
-                reason_invalid=(
-                    "Under the primary-source tensor-product contract, the all-good component has constant weight for "
-                    "m=Theta(log N), and every other POVM success contribution is nonnegative."
-                ),
-                lesson=(
-                    "Do not cite f=1 contamination as the information barrier for global linear-size measurements. The "
-                    "remaining obstruction is efficient normalized-fiber implementation and end-to-end composition."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "lower_bound_violation_count": payload["headline_metrics"]["lower_bound_violation_count"],
-                    "proved_exact_f1_information_robustness_count": 1,
-                    "proved_exact_f1_robust_pgm_circuit_count": 0,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-CONTAMINATED-PGM"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_contaminated_pgm_audit": str(path)},
-            )
-        )
     return payload

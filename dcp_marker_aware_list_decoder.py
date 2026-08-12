@@ -690,14 +690,6 @@ def write_marker_aware_list_decoder(
     payload = asdict(run_marker_aware_list_decoder(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        register_marker_aware_list_decoder_payload(
-            payload,
-            path,
-            registry_experiment_id,
-            registry_candidate_id,
-            registry_result_id,
-        )
     return payload
 
 

@@ -1,0 +1,311 @@
+{
+  "created_at": "2026-08-12T03:41:11.978263+00:00",
+  "theorem_contract": {
+    "matrix_valued_gram": "G_nu[(b,e),(b',f)]=[Tr_C(E_(nu,e)E_(nu,f))]_[b,b'] and G_nu=L_nu^*L_nu.",
+    "scalar_orientation_kernel": "Tr_C(E_eE_f)=Tr(E_eE_f)/d_nu I by character centrality, so G_nu=I_(d_nu) tensor H_nu with H_nu[e,f]=Tr(E_eE_f)/d_nu.",
+    "exact_multiplicity_identity": "D_nu=d_nu/(q dim(C)) (I tensor W)G_nu(I tensor W)^*.",
+    "spectral_equivalence": "The nonzero condition number of D_nu is exactly that of G_nu.",
+    "moment_bound": "Tr(G_nu)=Tr(A_nu) and Tr(G_nu^2)<=dim(C)Tr(A_nu^2), so srank(D_nu)>=Tr(A_nu)^2/[dim(C)Tr(A_nu^2)].",
+    "access_boundary": "Controlled invariant projectors and Walsh are standard operations, but a correctly normalized coherent block encoding of G_nu is open.",
+    "scope": "The theorem identifies the exact operator. It proves neither a bulk hard edge nor an efficient inverse or hidden-label decoder.",
+    "theorem_verified": true,
+    "status": "joint-character-projection-gram-identified-access-open"
+  },
+  "theorem": {
+    "matrix_valued_gram": "G_nu[(b,e),(b',f)]=[Tr_C(E_(nu,e)E_(nu,f))]_[b,b'] and G_nu=L_nu^*L_nu.",
+    "scalar_orientation_kernel": "Tr_C(E_eE_f)=Tr(E_eE_f)/d_nu I by character centrality, so G_nu=I_(d_nu) tensor H_nu with H_nu[e,f]=Tr(E_eE_f)/d_nu.",
+    "exact_multiplicity_identity": "D_nu=d_nu/(q dim(C)) (I tensor W)G_nu(I tensor W)^*.",
+    "spectral_equivalence": "The nonzero condition number of D_nu is exactly that of G_nu.",
+    "moment_bound": "Tr(G_nu)=Tr(A_nu) and Tr(G_nu^2)<=dim(C)Tr(A_nu^2), so srank(D_nu)>=Tr(A_nu)^2/[dim(C)Tr(A_nu^2)].",
+    "access_boundary": "Controlled invariant projectors and Walsh are standard operations, but a correctly normalized coherent block encoding of G_nu is open.",
+    "scope": "The theorem identifies the exact operator. It proves neither a bulk hard edge nor an efficient inverse or hidden-label decoder.",
+    "theorem_verified": true,
+    "status": "joint-character-projection-gram-identified-access-open"
+  },
+  "finite_controls": [
+    {
+      "control_id": "W3-SINGLE-UNEQUAL",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "orientation_count": 2,
+      "carrier_dimension": 2,
+      "active_sector_count": 2,
+      "maximum_exact_multiplicity_formula_residual": 2.220446049250313e-16,
+      "maximum_gram_factorization_residual": 0.0,
+      "maximum_scalar_block_residual": 0.0,
+      "maximum_orientation_kernel_factorization_residual": 0.0,
+      "maximum_trace_identity_residual": 1.1102230246251565e-16,
+      "maximum_walsh_spectrum_residual": 1.1102230246251565e-16,
+      "maximum_moment_bound_violation": 0.0,
+      "maximum_nonzero_condition_number": 1.0,
+      "minimum_stable_rank_lower_bound": 0.5000000000000001,
+      "maximum_character_offdiagonal_norm": 0.3535533905932737,
+      "exact_projection_gram_theorem_verified": true,
+      "status": "exact-joint-character-projection-gram"
+    },
+    {
+      "control_id": "W3-INFORMATION-THRESHOLD",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "orientation_count": 8,
+      "carrier_dimension": 4,
+      "active_sector_count": 3,
+      "maximum_exact_multiplicity_formula_residual": 5.459802834431839e-17,
+      "maximum_gram_factorization_residual": 2.830524433501838e-16,
+      "maximum_scalar_block_residual": 0.0,
+      "maximum_orientation_kernel_factorization_residual": 0.0,
+      "maximum_trace_identity_residual": 1.7763568394002505e-15,
+      "maximum_walsh_spectrum_residual": 2.7755575615628914e-17,
+      "maximum_moment_bound_violation": 0.0,
+      "maximum_nonzero_condition_number": 10.403882032022077,
+      "minimum_stable_rank_lower_bound": 0.9,
+      "maximum_character_offdiagonal_norm": 0.12693810007243686,
+      "exact_projection_gram_theorem_verified": true,
+      "status": "exact-joint-character-projection-gram"
+    },
+    {
+      "control_id": "W4-COLLISION-FREE-PAIR",
+      "n": 4,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "orientation_count": 4,
+      "carrier_dimension": 18,
+      "active_sector_count": 4,
+      "maximum_exact_multiplicity_formula_residual": 8.849706287623377e-17,
+      "maximum_gram_factorization_residual": 1.6621506210948779e-15,
+      "maximum_scalar_block_residual": 8.727916879080868e-16,
+      "maximum_orientation_kernel_factorization_residual": 3.638889937253969e-17,
+      "maximum_trace_identity_residual": 2.6645352591003757e-15,
+      "maximum_walsh_spectrum_residual": 1.3877787807814457e-16,
+      "maximum_moment_bound_violation": 0.0,
+      "maximum_nonzero_condition_number": 4.599485800859731,
+      "minimum_stable_rank_lower_bound": 0.1111111111111111,
+      "maximum_character_offdiagonal_norm": 0.1456678955791877,
+      "exact_projection_gram_theorem_verified": true,
+      "status": "exact-joint-character-projection-gram"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 8,
+      "information_threshold_copy_count": 16,
+      "orientation_log2_width": 16,
+      "controlled_invariant_projector_schema_polynomial": true,
+      "branch_walsh_polynomial": true,
+      "explicit_orientation_enumeration_required": false,
+      "coherent_projection_gram_block_encoding_proved": false,
+      "inverse_polynomial_bulk_window_proved": false,
+      "all_n_joint_decoder_proved": false,
+      "status": "projection-gram-identified-coherent-normalization-open"
+    },
+    {
+      "n": 16,
+      "information_threshold_copy_count": 45,
+      "orientation_log2_width": 45,
+      "controlled_invariant_projector_schema_polynomial": true,
+      "branch_walsh_polynomial": true,
+      "explicit_orientation_enumeration_required": false,
+      "coherent_projection_gram_block_encoding_proved": false,
+      "inverse_polynomial_bulk_window_proved": false,
+      "all_n_joint_decoder_proved": false,
+      "status": "projection-gram-identified-coherent-normalization-open"
+    },
+    {
+      "n": 32,
+      "information_threshold_copy_count": 118,
+      "orientation_log2_width": 118,
+      "controlled_invariant_projector_schema_polynomial": true,
+      "branch_walsh_polynomial": true,
+      "explicit_orientation_enumeration_required": false,
+      "coherent_projection_gram_block_encoding_proved": false,
+      "inverse_polynomial_bulk_window_proved": false,
+      "all_n_joint_decoder_proved": false,
+      "status": "projection-gram-identified-coherent-normalization-open"
+    },
+    {
+      "n": 64,
+      "information_threshold_copy_count": 296,
+      "orientation_log2_width": 296,
+      "controlled_invariant_projector_schema_polynomial": true,
+      "branch_walsh_polynomial": true,
+      "explicit_orientation_enumeration_required": false,
+      "coherent_projection_gram_block_encoding_proved": false,
+      "inverse_polynomial_bulk_window_proved": false,
+      "all_n_joint_decoder_proved": false,
+      "status": "projection-gram-identified-coherent-normalization-open"
+    },
+    {
+      "n": 128,
+      "information_threshold_copy_count": 717,
+      "orientation_log2_width": 717,
+      "controlled_invariant_projector_schema_polynomial": true,
+      "branch_walsh_polynomial": true,
+      "explicit_orientation_enumeration_required": false,
+      "coherent_projection_gram_block_encoding_proved": false,
+      "inverse_polynomial_bulk_window_proved": false,
+      "all_n_joint_decoder_proved": false,
+      "status": "projection-gram-identified-coherent-normalization-open"
+    },
+    {
+      "n": 256,
+      "information_threshold_copy_count": 1684,
+      "orientation_log2_width": 1684,
+      "controlled_invariant_projector_schema_polynomial": true,
+      "branch_walsh_polynomial": true,
+      "explicit_orientation_enumeration_required": false,
+      "coherent_projection_gram_block_encoding_proved": false,
+      "inverse_polynomial_bulk_window_proved": false,
+      "all_n_joint_decoder_proved": false,
+      "status": "projection-gram-identified-coherent-normalization-open"
+    },
+    {
+      "n": 512,
+      "information_threshold_copy_count": 3876,
+      "orientation_log2_width": 3876,
+      "controlled_invariant_projector_schema_polynomial": true,
+      "branch_walsh_polynomial": true,
+      "explicit_orientation_enumeration_required": false,
+      "coherent_projection_gram_block_encoding_proved": false,
+      "inverse_polynomial_bulk_window_proved": false,
+      "all_n_joint_decoder_proved": false,
+      "status": "projection-gram-identified-coherent-normalization-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "identify_joint_multiplicity_operator",
+      "resolved": true,
+      "resolution": "Fourier orthogonality and carrier partial trace give the Walsh-rotated projection Gram exactly."
+    },
+    {
+      "obligation": "remove_fourier_column_from_multiplicity_inverse",
+      "resolved": true,
+      "resolution": "Products and convolutions of symmetric-group characters are central, forcing every carrier partial-trace block to be scalar."
+    },
+    {
+      "obligation": "control_projection_gram_second_moment",
+      "resolved": true,
+      "resolution": "The Hilbert--Schmidt partial-trace inequality proves the exact trace identity and universal second-moment upper bound."
+    },
+    {
+      "obligation": "compile_normalized_coherent_projection_gram_access",
+      "resolved": false,
+      "resolution": "Controlled E_e is standard, but projected preparation may have sector- and rank-dependent normalization."
+    },
+    {
+      "obligation": "prove_information_carrying_inverse_polynomial_bulk_window",
+      "resolved": false,
+      "resolution": "A stable-rank lower bound does not exclude sparse tiny eigenvalues or show that the retained window contains decoder information."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Walsh interference diagonalizes the orientation problem.",
+      "resolved": true,
+      "resolution": "False generically: D_nu has nonzero off-character blocks and is only unitarily equivalent to the matrix-valued Gram G_nu."
+    },
+    {
+      "objection": "The one-row 1/q erasure penalty still applies.",
+      "resolved": true,
+      "resolution": "No character is postselected. The full Walsh register is retained inside a normalized covariant state."
+    },
+    {
+      "objection": "The second moment supplies a polynomial inverse.",
+      "resolved": false,
+      "resolution": "It controls stable rank only; coherent access normalization and the information-bearing hard edge remain separate obligations."
+    }
+  ],
+  "headline_metrics": {
+    "exact_projection_gram_identity_theorem_count": 1,
+    "scalar_orientation_kernel_collapse_theorem_count": 1,
+    "projection_gram_moment_bound_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "finite_active_sector_count": 9,
+    "maximum_finite_nonzero_condition_number": 10.403882032022077,
+    "coherent_projection_gram_block_encoding_count": 0,
+    "all_n_joint_decoder_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "joint_multiplicity_equals_walsh_rotated_projection_gram": true,
+    "fourier_column_factors_from_joint_multiplicity": true,
+    "orientation_kernel_entries_equal_pair_overlaps": true,
+    "projection_gram_psd_and_trace_moment_bounds_proved": true,
+    "one_row_branch_erasure_required": false,
+    "walsh_diagonalizes_projection_gram": false,
+    "coherent_projection_gram_block_encoding_proved": false,
+    "inverse_polynomial_information_bulk_proved": false,
+    "polynomial_joint_decoder_proved": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false
+  },
+  "status": "joint-character-projection-gram-identified-access-open",
+  "summary": "The retained-character multiplicity operator is exactly a Walsh-rotated orientation overlap kernel tensored with the identity Fourier column. This removes branch erasure and column inversion but leaves coherent kernel access and bulk inversion open.",
+  "falsifiers_triggered": [
+    "A retained branch character is not a scalar Fourier column; its multiplicity operator contains matrix-valued cross-orientation blocks.",
+    "The one-pass erasure lower bound does not apply to retaining the full Walsh register as part of the decoder state.",
+    "Finite conditioning and a stable-rank bound do not prove a scalable multiplicity inverse."
+  ]
+}

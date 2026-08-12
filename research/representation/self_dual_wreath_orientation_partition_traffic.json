@@ -1,0 +1,6844 @@
+{
+  "created_at": "2026-08-12T03:41:12.251544+00:00",
+  "theorem_contract": {
+    "exact_patterns": "T^=_sigma->alpha^|sigma| for sigma in NC(p), and 0 otherwise",
+    "equality_constraints": "T_rho->sum_(sigma in NC(p),sigma>=rho)alpha^|sigma|",
+    "support": "the unique leading row support for exact ker(e)=sigma is the block-constant cube V_sigma",
+    "crossings": "crossing blocks leave a fixed nontrivial commutator word over S_n",
+    "degree_four": "T_AABB-T_ABAB->alpha^2",
+    "scope": "The theorem is independent-Plancherel, fixed-order, and unwhitened. Polar functional calculus and component M4 are separate."
+  },
+  "theorem": {
+    "exact_equality_limit": "T^=_sigma->alpha^|sigma| for sigma in NC(p), and 0 otherwise",
+    "constrained_equality_limit": "T_rho->sum_(sigma in NC(p),sigma>=rho)alpha^|sigma|",
+    "support_localization": "the unique leading row support for exact ker(e)=sigma is the block-constant cube V_sigma",
+    "crossing_suppression": "crossing blocks leave a fixed nontrivial commutator word over S_n",
+    "degree_four_gap": "T_AABB-T_ABAB->alpha^2",
+    "every_fixed_equality_pattern_proved": true,
+    "polar_functional_calculus_proved": false,
+    "theorem_verified": true,
+    "status": "all-fixed-orientation-equality-traffic-proved"
+  },
+  "equality_controls": [
+    {
+      "control_id": "P4-AABB",
+      "moment_order": 4,
+      "constraint_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "noncrossing_coarsening_count": 2,
+      "coefficient_counts_by_block_count": {
+        "1": 1,
+        "2": 1
+      },
+      "polynomial": "alpha+alpha^2",
+      "expected_polynomial": "alpha+alpha^2",
+      "polynomial_match_verified": true,
+      "status": "equality-constrained-noncrossing-polynomial-verified"
+    },
+    {
+      "control_id": "P4-ABAB",
+      "moment_order": 4,
+      "constraint_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "noncrossing_coarsening_count": 1,
+      "coefficient_counts_by_block_count": {
+        "1": 1
+      },
+      "polynomial": "alpha",
+      "expected_polynomial": "alpha",
+      "polynomial_match_verified": true,
+      "status": "equality-constrained-noncrossing-polynomial-verified"
+    },
+    {
+      "control_id": "P5-AABCC",
+      "moment_order": 5,
+      "constraint_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "noncrossing_coarsening_count": 5,
+      "coefficient_counts_by_block_count": {
+        "1": 1,
+        "2": 3,
+        "3": 1
+      },
+      "polynomial": "alpha+3*alpha^2+alpha^3",
+      "expected_polynomial": "alpha+3*alpha^2+alpha^3",
+      "polynomial_match_verified": true,
+      "status": "equality-constrained-noncrossing-polynomial-verified"
+    },
+    {
+      "control_id": "P6-ABCABC",
+      "moment_order": 6,
+      "constraint_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "noncrossing_coarsening_count": 1,
+      "coefficient_counts_by_block_count": {
+        "1": 1
+      },
+      "polynomial": "alpha",
+      "expected_polynomial": "alpha",
+      "polynomial_match_verified": true,
+      "status": "equality-constrained-noncrossing-polynomial-verified"
+    }
+  ],
+  "exact_partition_controls": [
+    {
+      "moment_order": 1,
+      "exact_partition": [
+        [
+          0
+        ]
+      ],
+      "block_count": 1,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^1",
+      "block_constant_support_size": 2,
+      "presentation_free_rank": 0,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 2,
+      "exact_partition": [
+        [
+          0,
+          1
+        ]
+      ],
+      "block_count": 1,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^1",
+      "block_constant_support_size": 2,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 2,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 0,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 3,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2
+        ]
+      ],
+      "block_count": 1,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^1",
+      "block_constant_support_size": 2,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 3,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 3,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 3,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 3,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 0,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 4,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2,
+          3
+        ]
+      ],
+      "block_count": 1,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^1",
+      "block_constant_support_size": 2,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 4,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 4,
+      "exact_partition": [
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          2
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 4,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 4,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 4,
+      "exact_partition": [
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 4,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 4,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 4,
+      "exact_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 4,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 4,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 4,
+      "exact_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 4,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 4,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 4,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 0,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      ],
+      "block_count": 1,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^1",
+      "block_constant_support_size": 2,
+      "presentation_free_rank": 4,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2,
+          4
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          1,
+          3,
+          4
+        ],
+        [
+          2
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          1,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          1,
+          4
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          2,
+          3,
+          4
+        ],
+        [
+          1
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2,
+          4
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          4
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          4
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0,
+          4
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 5,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 5,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^5",
+      "block_constant_support_size": 32,
+      "presentation_free_rank": 0,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "block_count": 1,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^1",
+      "block_constant_support_size": 2,
+      "presentation_free_rank": 5,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 4,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2,
+          3,
+          5
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 4,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 4,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2,
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2,
+          4,
+          5
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 4,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2,
+          4
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2,
+          4
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2,
+          5
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 4,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 4,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2,
+          5
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          3,
+          4,
+          5
+        ],
+        [
+          2
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 4,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          3,
+          4
+        ],
+        [
+          2
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          3,
+          5
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          5
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          3,
+          5
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          2
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          3
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          4,
+          5
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 4,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          4
+        ],
+        [
+          2,
+          3,
+          5
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          4
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          5
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 4,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 4,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          5
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3,
+          5
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          4,
+          5
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          4
+        ],
+        [
+          2
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          4
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          5
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          4,
+          5
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          5
+        ],
+        [
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1,
+          5
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 5,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^5",
+      "block_constant_support_size": 32,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2,
+          3,
+          4,
+          5
+        ],
+        [
+          1
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 4,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2,
+          3,
+          4
+        ],
+        [
+          1,
+          5
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2,
+          3,
+          4
+        ],
+        [
+          1
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2,
+          3,
+          5
+        ],
+        [
+          1,
+          4
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          4,
+          5
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2,
+          3,
+          5
+        ],
+        [
+          1
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2,
+          3
+        ],
+        [
+          1
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2,
+          4,
+          5
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          1,
+          3,
+          5
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2,
+          5
+        ],
+        [
+          1,
+          3,
+          4
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          4,
+          5
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2,
+          5
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3,
+          5
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2,
+          4,
+          5
+        ],
+        [
+          1
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          1
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2,
+          4
+        ],
+        [
+          1
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2,
+          5
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          4,
+          5
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2,
+          5
+        ],
+        [
+          1
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2,
+          5
+        ],
+        [
+          1
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1
+        ],
+        [
+          3
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          2
+        ],
+        [
+          1
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 5,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^5",
+      "block_constant_support_size": 32,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3,
+          4,
+          5
+        ],
+        [
+          1,
+          2
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 4,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          1,
+          2,
+          5
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3,
+          5
+        ],
+        [
+          1,
+          2,
+          4
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2,
+          4,
+          5
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2,
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3,
+          5
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2,
+          5
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          4,
+          5
+        ],
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 4,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2,
+          3,
+          5
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 4,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "block_count": 2,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^2",
+      "block_constant_support_size": 4,
+      "presentation_free_rank": 4,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3,
+          5
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          4,
+          5
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2,
+          5
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          2,
+          4
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          4,
+          5
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          4
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          4
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          5
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2,
+          5
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 5,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^5",
+      "block_constant_support_size": 32,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3,
+          4,
+          5
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3,
+          4
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3,
+          5
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4,
+          5
+        ],
+        [
+          2
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3,
+          5
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          4,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3,
+          5
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          3
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 5,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^5",
+      "block_constant_support_size": 32,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          4,
+          5
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          3,
+          5
+        ],
+        [
+          2
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          3,
+          4,
+          5
+        ],
+        [
+          2
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          3,
+          4
+        ],
+        [
+          2
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          3,
+          5
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          3,
+          5
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 5,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^5",
+      "block_constant_support_size": 32,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          4,
+          5
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          4
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          3,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          4
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          4,
+          5
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          3,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          5
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          3,
+          4
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          3,
+          4,
+          5
+        ]
+      ],
+      "block_count": 3,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^3",
+      "block_constant_support_size": 8,
+      "presentation_free_rank": 3,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          3,
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          5
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          3,
+          5
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 5,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^5",
+      "block_constant_support_size": 32,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          4,
+          5
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          4
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          4
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          4
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 5,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^5",
+      "block_constant_support_size": 32,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          5
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          4,
+          5
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          4
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 5,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^5",
+      "block_constant_support_size": 32,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          5
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          4,
+          5
+        ],
+        [
+          3
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": false,
+      "limiting_exact_equality_traffic": "0",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": null,
+      "fixed_nontrivial_residual_required": true,
+      "status": "crossing-exact-label-pattern-suppressed"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 5,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^5",
+      "block_constant_support_size": 32,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          5
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3,
+          4,
+          5
+        ]
+      ],
+      "block_count": 4,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^4",
+      "block_constant_support_size": 16,
+      "presentation_free_rank": 2,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 5,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^5",
+      "block_constant_support_size": 32,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0,
+          5
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 5,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^5",
+      "block_constant_support_size": 32,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 5,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^5",
+      "block_constant_support_size": 32,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 5,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^5",
+      "block_constant_support_size": 32,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          4
+        ]
+      ],
+      "block_count": 5,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^5",
+      "block_constant_support_size": 32,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "block_count": 5,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^5",
+      "block_constant_support_size": 32,
+      "presentation_free_rank": 1,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    },
+    {
+      "moment_order": 6,
+      "exact_partition": [
+        [
+          0
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ]
+      ],
+      "block_count": 6,
+      "noncrossing": true,
+      "limiting_exact_equality_traffic": "alpha^6",
+      "block_constant_support_size": 64,
+      "presentation_free_rank": 0,
+      "fixed_nontrivial_residual_required": false,
+      "status": "noncrossing-exact-label-pattern-survives"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "localize_mp_moment_proof_to_exact_orientation_equalities",
+      "resolved": true,
+      "resolution": "Each exact equality partition has one full block-constant support; incomplete supports are entropy-subleading."
+    },
+    {
+      "obligation": "derive_every_fixed_equality_constrained_leaf_traffic",
+      "resolved": true,
+      "resolution": "Sum the exact-pattern theorem over noncrossing coarsenings."
+    },
+    {
+      "obligation": "transfer_marked_traffic_through_full_frame_polar_factor",
+      "resolved": false,
+      "resolution": "Use bounded support ridges, outcome-free curl stability, and functional approximation before eta tends to zero."
+    },
+    {
+      "obligation": "derive_natural_full_support_component_curl_limit",
+      "resolved": false,
+      "resolution": "The target benchmark is alpha^-2(1-alpha^-1), but the polar traffic bridge must be proved first."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Ordinary MP moments determine marked leaf patterns.",
+      "resolved": true,
+      "resolution": "Not in general. The stronger exact-support localization is proved here and must be retained explicitly."
+    },
+    {
+      "objection": "ABAB has the same two-block contribution as AABB.",
+      "resolved": true,
+      "resolution": "Its two forced equality blocks cross, so every noncrossing coarsening merges them and removes the alpha^2 term."
+    },
+    {
+      "objection": "Rare incomplete row supports can restore crossing mass.",
+      "resolved": true,
+      "resolution": "The integer frame-subword generator bound gives each incomplete support a strict group exponent loss."
+    },
+    {
+      "objection": "Marked unwhitened traffic already proves component curl.",
+      "resolved": false,
+      "resolution": "Generic bounded-condition whitening can cancel all commutators; polar functional calculus is indispensable."
+    }
+  ],
+  "headline_metrics": {
+    "all_fixed_orientation_partition_traffic_theorem_count": 1,
+    "equality_constraint_control_count": 4,
+    "exact_partition_control_count": 278,
+    "highest_exact_partition_control_order": 6,
+    "finite_control_failure_count": 0,
+    "degree_four_uncompressed_gap_theorem_count": 1,
+    "polar_functional_calculus_theorem_count": 0,
+    "natural_full_support_curl_theorem_count": 0,
+    "natural_component_M4_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "all_fixed_exact_equality_traffic_proved": true,
+    "all_fixed_equality_constrained_traffic_proved": true,
+    "uncompressed_aabb_minus_abab_limit_is_alpha_squared": true,
+    "polar_functional_calculus_transfer_proved": false,
+    "natural_full_support_canonical_curl_positive": false,
+    "natural_component_M4_positive": false,
+    "speedup_claim_allowed": false,
+    "reason": "Marked leaf traffic is now classified at every fixed order, but canonical polar normalization remains untransferred."
+  },
+  "status": "all-fixed-marked-traffic-proved-polar-transfer-open",
+  "summary": "Localized the all-fixed MP proof to every leaf-label equality pattern and identified noncrossing coarsenings as the exact limits.",
+  "falsifiers_triggered": [
+    "Ordinary marginal MP moments are weaker than the marked traffic theorem used here.",
+    "The ABAB exact two-label pattern is crossing and asymptotically suppressed.",
+    "Incomplete orientation row supports cannot contribute at leading scale.",
+    "No polar transfer, canonical component curl, algorithm, or speedup is proved."
+  ]
+}

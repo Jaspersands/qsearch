@@ -1,0 +1,288 @@
+{
+  "created_at": "2026-08-12T03:42:28.533095+00:00",
+  "theorem_contract": {
+    "rank": "rank(F_perp)=rank(F)-r",
+    "nullity": "nullity(F_perp restricted to Ran(I-XX*))=nullity(F)",
+    "interlacing": "lambda_j^+(F)<=lambda_j^+(F_perp|Ran(I-XX*))",
+    "single_frame": "T_eta(F_perp)<=T_eta(F)",
+    "dependency_error": "||Pi-Q_eta||F^2<=2T_eta(F)",
+    "near_zero_count": "T_eta(F)/D<=N_F^+(tau)/D+(rank(F)/D)(eta/(tau+eta))^2",
+    "weak_law": "all-fixed-moment convergence to a determinate law with the correct zero atom gives qualitative tail closure along a diagonal scale",
+    "global_distinct": "|E[Z|C]-E[Z]|<=1-Pr(C) for Z=T_eta(F)/D in [0,1]",
+    "scope": "This deterministic reduction removes the excluded frame as an independent tail target. It does not prove the natural child-frame small-eigenvalue density or its rate."
+  },
+  "theorem": {
+    "rank_drop": "rank(F_perp)=rank(F)-r",
+    "nullity_match": "nullity(F_perp restricted to Ran(I-XX*))=nullity(F)",
+    "positive_eigenvalue_interlacing": "lambda_j^+(F)<=lambda_j^+(F_perp|Ran(I-XX*))",
+    "excluded_tail_domination": "T_eta(F_perp)<=T_eta(F)",
+    "dependency_error": "||Pi-Q_eta||F^2<=2T_eta(F)",
+    "near_zero_split": "T_eta(F)/D<=N_F^+(tau)/D+(rank(F)/D)(eta/(tau+eta))^2",
+    "weak_law_consequence": "all-fixed-moment convergence to a determinate law with the correct zero atom gives qualitative tail closure along a diagonal scale",
+    "collision_free_transfer": "|E[Z|C]-E[Z]|<=1-Pr(C) for Z=T_eta(F)/D in [0,1]",
+    "arbitrary_positive_frame": true,
+    "arbitrary_common_subspace_inside_range": true,
+    "theorem_verified": true,
+    "status": "dependency-support-transfer-needs-one-frame-near-zero-density-only"
+  },
+  "finite_controls": [
+    {
+      "control_id": "FULL-ROW-D12-N16-R5",
+      "physical_dimension": 12,
+      "common_fiber_dimension": 5,
+      "full_frame_rank": 12,
+      "excluded_frame_rank": 7,
+      "full_frame_nullity": 0,
+      "excluded_restriction_nullity": 0,
+      "ridge_parameter": 0.01,
+      "full_support_ridge_tail": 0.004160445198228375,
+      "excluded_support_ridge_tail": 0.0008031343127393297,
+      "excluded_to_full_tail_ratio": 0.1930404739092165,
+      "minimum_positive_eigenvalue_interlacing_slack": 0.2902755184439877,
+      "rank_drop_residual": 0,
+      "excluded_tail_bounded_by_full_tail": true,
+      "exact_single_frame_tail_reduction_verified": true,
+      "status": "dependency-ridge-tail-reduced-to-one-child-frame"
+    },
+    {
+      "control_id": "DEFICIENT-D14-N18-S10-R4",
+      "physical_dimension": 14,
+      "common_fiber_dimension": 4,
+      "full_frame_rank": 10,
+      "excluded_frame_rank": 6,
+      "full_frame_nullity": 4,
+      "excluded_restriction_nullity": 4,
+      "ridge_parameter": 0.003,
+      "full_support_ridge_tail": 0.0003485490213167323,
+      "excluded_support_ridge_tail": 8.586110049183242e-05,
+      "excluded_to_full_tail_ratio": 0.24633866469476903,
+      "minimum_positive_eigenvalue_interlacing_slack": 0.22803619629529104,
+      "rank_drop_residual": 0,
+      "excluded_tail_bounded_by_full_tail": true,
+      "exact_single_frame_tail_reduction_verified": true,
+      "status": "dependency-ridge-tail-reduced-to-one-child-frame"
+    },
+    {
+      "control_id": "TALL-D16-N12-S12-R6",
+      "physical_dimension": 16,
+      "common_fiber_dimension": 6,
+      "full_frame_rank": 12,
+      "excluded_frame_rank": 6,
+      "full_frame_nullity": 4,
+      "excluded_restriction_nullity": 4,
+      "ridge_parameter": 0.001,
+      "full_support_ridge_tail": 4.440578553146295e-05,
+      "excluded_support_ridge_tail": 8.550382919728743e-06,
+      "excluded_to_full_tail_ratio": 0.19255110156019012,
+      "minimum_positive_eigenvalue_interlacing_slack": 0.3066415469360637,
+      "rank_drop_residual": 0,
+      "excluded_tail_bounded_by_full_tail": true,
+      "exact_single_frame_tail_reduction_verified": true,
+      "status": "dependency-ridge-tail-reduced-to-one-child-frame"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 16,
+      "small_eigenvalue_threshold": 0.00390625,
+      "assumed_positive_small_eigenvalue_density": 0.00390625,
+      "ridge_parameter": 5.960464477539063e-08,
+      "ridge_to_threshold_ratio": 1.52587890625e-05,
+      "normalized_single_frame_tail_upper_bound": 0.003906250232823538,
+      "normalized_dependency_error_upper_bound": 0.007812500465647076,
+      "target_physical_M4_signal": 0.0001,
+      "parity_curl_transfer_error_upper_bound": 1.4767136082438332,
+      "transfer_preserves_target_signal": false,
+      "uniform_minimum_eigenvalue_required": false,
+      "status": "illustrative-near-zero-density-rate-too-weak-for-target"
+    },
+    {
+      "n": 32,
+      "small_eigenvalue_threshold": 0.0009765625,
+      "assumed_positive_small_eigenvalue_density": 0.0009765625,
+      "ridge_parameter": 9.313225746154785e-10,
+      "ridge_to_threshold_ratio": 9.5367431640625e-07,
+      "normalized_single_frame_tail_upper_bound": 0.000976562500909493,
+      "normalized_dependency_error_upper_bound": 0.001953125001818986,
+      "target_physical_M4_signal": 0.0001,
+      "parity_curl_transfer_error_upper_bound": 0.7227317815303711,
+      "transfer_preserves_target_signal": false,
+      "uniform_minimum_eigenvalue_required": false,
+      "status": "illustrative-near-zero-density-rate-too-weak-for-target"
+    },
+    {
+      "n": 64,
+      "small_eigenvalue_threshold": 0.000244140625,
+      "assumed_positive_small_eigenvalue_density": 0.000244140625,
+      "ridge_parameter": 1.4551915228366852e-11,
+      "ridge_to_threshold_ratio": 5.960464477539063e-08,
+      "normalized_single_frame_tail_upper_bound": 0.0002441406250035527,
+      "normalized_dependency_error_upper_bound": 0.0004882812500071054,
+      "target_physical_M4_signal": 0.0001,
+      "parity_curl_transfer_error_upper_bound": 0.35745964059590307,
+      "transfer_preserves_target_signal": false,
+      "uniform_minimum_eigenvalue_required": false,
+      "status": "illustrative-near-zero-density-rate-too-weak-for-target"
+    },
+    {
+      "n": 128,
+      "small_eigenvalue_threshold": 6.103515625e-05,
+      "assumed_positive_small_eigenvalue_density": 6.103515625e-05,
+      "ridge_parameter": 2.2737367544323206e-13,
+      "ridge_to_threshold_ratio": 3.725290298461914e-09,
+      "normalized_single_frame_tail_upper_bound": 6.103515625001388e-05,
+      "normalized_dependency_error_upper_bound": 0.00012207031250002776,
+      "target_physical_M4_signal": 0.0001,
+      "parity_curl_transfer_error_upper_bound": 0.1777532577966572,
+      "transfer_preserves_target_signal": false,
+      "uniform_minimum_eigenvalue_required": false,
+      "status": "illustrative-near-zero-density-rate-too-weak-for-target"
+    },
+    {
+      "n": 256,
+      "small_eigenvalue_threshold": 1.52587890625e-05,
+      "assumed_positive_small_eigenvalue_density": 1.52587890625e-05,
+      "ridge_parameter": 3.552713678800501e-15,
+      "ridge_to_threshold_ratio": 2.3283064365386963e-10,
+      "normalized_single_frame_tail_upper_bound": 1.5258789062500054e-05,
+      "normalized_dependency_error_upper_bound": 3.051757812500011e-05,
+      "target_physical_M4_signal": 0.0001,
+      "parity_curl_transfer_error_upper_bound": 0.0886324882733186,
+      "transfer_preserves_target_signal": false,
+      "uniform_minimum_eigenvalue_required": false,
+      "status": "illustrative-near-zero-density-rate-too-weak-for-target"
+    },
+    {
+      "n": 512,
+      "small_eigenvalue_threshold": 3.814697265625e-06,
+      "assumed_positive_small_eigenvalue_density": 3.814697265625e-06,
+      "ridge_parameter": 5.551115123125783e-17,
+      "ridge_to_threshold_ratio": 1.4551915228366852e-11,
+      "normalized_single_frame_tail_upper_bound": 3.814697265625e-06,
+      "normalized_dependency_error_upper_bound": 7.62939453125e-06,
+      "target_physical_M4_signal": 0.0001,
+      "parity_curl_transfer_error_upper_bound": 0.04425520898040922,
+      "transfer_preserves_target_signal": false,
+      "uniform_minimum_eigenvalue_required": false,
+      "status": "illustrative-near-zero-density-rate-too-weak-for-target"
+    },
+    {
+      "n": 1024,
+      "small_eigenvalue_threshold": 9.5367431640625e-07,
+      "assumed_positive_small_eigenvalue_density": 9.5367431640625e-07,
+      "ridge_parameter": 8.673617379884035e-19,
+      "ridge_to_threshold_ratio": 9.094947017729282e-13,
+      "normalized_single_frame_tail_upper_bound": 9.5367431640625e-07,
+      "normalized_dependency_error_upper_bound": 1.9073486328125e-06,
+      "target_physical_M4_signal": 0.0001,
+      "parity_curl_transfer_error_upper_bound": 0.02211234570114211,
+      "transfer_preserves_target_signal": false,
+      "uniform_minimum_eigenvalue_required": false,
+      "status": "illustrative-near-zero-density-rate-too-weak-for-target"
+    },
+    {
+      "n": 4096,
+      "small_eigenvalue_threshold": 5.960464477539063e-08,
+      "assumed_positive_small_eigenvalue_density": 5.960464477539063e-08,
+      "ridge_parameter": 2.117582368135751e-22,
+      "ridge_to_threshold_ratio": 3.552713678800501e-15,
+      "normalized_single_frame_tail_upper_bound": 5.960464477539063e-08,
+      "normalized_dependency_error_upper_bound": 1.1920928955078125e-07,
+      "target_physical_M4_signal": 0.0001,
+      "parity_curl_transfer_error_upper_bound": 0.005525225402336309,
+      "transfer_preserves_target_signal": false,
+      "uniform_minimum_eigenvalue_required": false,
+      "status": "illustrative-near-zero-density-rate-too-weak-for-target"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "remove_sibling_excluded_frame_as_independent_tail_target",
+      "resolved": true,
+      "resolution": "Rank-drop nullity matching plus compression interlacing gives T_eta(F_perp)<=T_eta(F)."
+    },
+    {
+      "obligation": "replace_uniform_edge_by_trace_small_eigenvalue_density",
+      "resolved": true,
+      "resolution": "Equation (6) needs only a vanishing fraction of positive eigenvalues below tau and eta/tau small."
+    },
+    {
+      "obligation": "transfer_bounded_tail_through_global_distinct_conditioning",
+      "resolved": true,
+      "resolution": "The normalized tail lies in [0,1], so its conditional expectation changes by at most the collision probability."
+    },
+    {
+      "obligation": "prove_all_fixed_independent_child_frame_moments_or_weak_law",
+      "resolved": false,
+      "resolution": "Extend the exact first-four independent moments to every fixed order. The resulting bounded tail, not the raw moments, transfers through global distinctness."
+    },
+    {
+      "obligation": "obtain_inverse_polynomial_small_eigenvalue_density_rate",
+      "resolved": false,
+      "resolution": "A polynomial algorithm needs quantitative control at tau=n^-O(1); qualitative weak convergence is insufficient."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "F_perp needs a separate correlated local law.",
+      "resolved": true,
+      "resolution": "No. Its positive eigenvalues interlace above those of F, and the exact rank drop makes the nullities match."
+    },
+    {
+      "objection": "A minimum positive eigenvalue is required.",
+      "resolved": true,
+      "resolution": "No. A vanishing normalized count below tau plus eta/tau small controls the trace tail."
+    },
+    {
+      "objection": "The first four Marchenko--Pastur moments suffice.",
+      "resolved": false,
+      "resolution": "They do not control vanishing-scale mass. All fixed moments can imply only qualitative weak convergence; a rate needs more."
+    },
+    {
+      "objection": "Unbounded raw moments must transfer through global distinctness.",
+      "resolved": true,
+      "resolution": "They need not. Prove the spectral law independently, then transfer the bounded tail observable using equation (8)."
+    },
+    {
+      "objection": "Weak convergence proves polynomial implementability.",
+      "resolved": false,
+      "resolution": "It supplies no inverse-polynomial tau rate and does not remove the normalized-access or Poisson-length barriers."
+    }
+  ],
+  "headline_metrics": {
+    "single_frame_tail_domination_theorem_count": 1,
+    "near_zero_density_sufficiency_theorem_count": 1,
+    "bounded_global_distinct_tail_transfer_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "maximum_excluded_to_full_tail_ratio": 0.24633866469476903,
+    "minimum_interlacing_slack": 0.22803619629529104,
+    "scaling_transfer_survival_count": 0,
+    "natural_child_small_eigenvalue_density_theorem_count": 0,
+    "inverse_polynomial_small_eigenvalue_rate_theorem_count": 0,
+    "natural_component_M4_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "excluded_frame_tail_dominated_by_child_frame_tail": true,
+    "uniform_child_frame_lower_edge_required": false,
+    "vanishing_near_zero_eigenvalue_density_suffices": true,
+    "all_fixed_natural_moment_convergence_proved": false,
+    "global_distinct_bounded_tail_transfer_proved": true,
+    "inverse_polynomial_near_zero_density_rate_proved": false,
+    "natural_support_ridge_tail_small": false,
+    "natural_component_M4_positive": false,
+    "speedup_claim_allowed": false,
+    "reason": "Only one child-frame near-zero density remains in the tail premise, but no natural qualitative law or polynomial rate is proved."
+  },
+  "status": "dependency-tail-reduced-to-one-child-frame-near-zero-density",
+  "summary": "Used compression interlacing to dominate the sibling-excluded ridge tail by the child-frame tail and replaced a uniform edge with an explicit near-zero eigenvalue-count criterion.",
+  "falsifiers_triggered": [
+    "The sibling-excluded frame does not require an independent local law.",
+    "A uniform minimum eigenvalue is stronger than trace-tail transfer needs.",
+    "Four fixed moments do not control vanishing-scale spectral mass.",
+    "Unbounded moment observables need not be conditioned; the bounded tail transfers directly.",
+    "Qualitative weak convergence does not imply polynomial implementation.",
+    "No natural small-eigenvalue law, exact M4, algorithm, or speedup is proved."
+  ]
+}

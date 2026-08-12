@@ -1,0 +1,314 @@
+{
+  "created_at": "2026-08-12T03:42:54.149371+00:00",
+  "theorem_contract": {
+    "covariant_naimark": "W psi=sum_j |j>L_(x_j)sqrt(M_n)L_(x_j)^* psi is an exact isometry.",
+    "branching_normal_form": "F M_n F^*=direct_sum_alpha I_(d_alpha) tensor Z_alpha over S_(n-1) child stars.",
+    "seed_square_root": "F sqrt(M_n) F^*=direct_sum_alpha I_(d_alpha) tensor sqrt(Z_alpha).",
+    "polynomial_structure": "There are n outcomes, Young-chain child labels are efficient, and each child has at most O(sqrt(n)) parent diagrams.",
+    "unresolved_multiplicity": "Z_alpha still acts on orientation multiplicity 2^k times Fourier columns; no implicit block transform or spectrum theorem is known.",
+    "scope": "This is an exact direct-measurement normal form, not an end-to-end circuit.",
+    "theorem_verified": true,
+    "status": "young-star-naimark-normal-form-proved-multiplicity-transform-open"
+  },
+  "theorem": {
+    "covariant_naimark": "W psi=sum_j |j>L_(x_j)sqrt(M_n)L_(x_j)^* psi is an exact isometry.",
+    "branching_normal_form": "F M_n F^*=direct_sum_alpha I_(d_alpha) tensor Z_alpha over S_(n-1) child stars.",
+    "seed_square_root": "F sqrt(M_n) F^*=direct_sum_alpha I_(d_alpha) tensor sqrt(Z_alpha).",
+    "polynomial_structure": "There are n outcomes, Young-chain child labels are efficient, and each child has at most O(sqrt(n)) parent diagrams.",
+    "unresolved_multiplicity": "Z_alpha still acts on orientation multiplicity 2^k times Fourier columns; no implicit block transform or spectrum theorem is known.",
+    "scope": "This is an exact direct-measurement normal form, not an end-to-end circuit.",
+    "theorem_verified": true,
+    "status": "young-star-naimark-normal-form-proved-multiplicity-transform-open"
+  },
+  "finite_controls": [
+    {
+      "control_id": "W3-SINGLE-UNEQUAL",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 1,
+      "orientation_count": 2,
+      "retained_register_dimension": 12,
+      "point_outcome_count": 3,
+      "child_partition_count": 2,
+      "active_child_star_count": 2,
+      "maximum_child_star_multiplicity_dimension": 6,
+      "maximum_child_irrep_dimension": 1,
+      "maximum_parent_count_per_child": 2,
+      "maximum_seed_young_star_factorization_residual": 7.880215364529719e-17,
+      "maximum_seed_square_root_factorization_residual": 5.203926560507816e-10,
+      "minimum_child_star_effect_eigenvalue": 0.33333333333333315,
+      "maximum_child_star_effect_eigenvalue": 0.6666666666666665,
+      "maximum_centered_child_star_rank": 2,
+      "maximum_centered_child_star_rank_fraction": 0.3333333333333333,
+      "centered_child_star_has_both_signs": true,
+      "centered_child_star_rank_one_factorization_falsified": true,
+      "covariant_effect_orbit_residual": 7.401486830834374e-17,
+      "naimark_isometry_residual": 1.7718138422001088e-15,
+      "naimark_born_probability_residual": 1.7422013638940487e-15,
+      "exact_width_n_covariant_naimark_verified": true,
+      "exact_young_star_seed_factorization_verified": true,
+      "status": "exact-width-n-young-star-naimark-normal-form"
+    },
+    {
+      "control_id": "W3-INFORMATION-THRESHOLD",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 3,
+      "orientation_count": 8,
+      "retained_register_dimension": 48,
+      "point_outcome_count": 3,
+      "child_partition_count": 2,
+      "active_child_star_count": 2,
+      "maximum_child_star_multiplicity_dimension": 24,
+      "maximum_child_irrep_dimension": 1,
+      "maximum_parent_count_per_child": 2,
+      "maximum_seed_young_star_factorization_residual": 7.509135738604754e-17,
+      "maximum_seed_square_root_factorization_residual": 3.136082910715949e-15,
+      "minimum_child_star_effect_eigenvalue": 0.07843157622458229,
+      "maximum_child_star_effect_eigenvalue": 0.6666666666666667,
+      "maximum_centered_child_star_rank": 8,
+      "maximum_centered_child_star_rank_fraction": 0.3333333333333333,
+      "centered_child_star_has_both_signs": true,
+      "centered_child_star_rank_one_factorization_falsified": true,
+      "covariant_effect_orbit_residual": 2.8666382169769566e-17,
+      "naimark_isometry_residual": 2.5229120592969303e-15,
+      "naimark_born_probability_residual": 5.551115123125783e-16,
+      "exact_width_n_covariant_naimark_verified": true,
+      "exact_young_star_seed_factorization_verified": true,
+      "status": "exact-width-n-young-star-naimark-normal-form"
+    },
+    {
+      "control_id": "W4-COLLISION-FREE-PAIR",
+      "n": 4,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 2,
+      "orientation_count": 4,
+      "retained_register_dimension": 96,
+      "point_outcome_count": 4,
+      "child_partition_count": 3,
+      "active_child_star_count": 3,
+      "maximum_child_star_multiplicity_dimension": 32,
+      "maximum_child_irrep_dimension": 2,
+      "maximum_parent_count_per_child": 3,
+      "maximum_seed_young_star_factorization_residual": 5.779940655637915e-16,
+      "maximum_seed_square_root_factorization_residual": 6.87581398832773e-15,
+      "minimum_child_star_effect_eigenvalue": 0.05322642152377981,
+      "maximum_child_star_effect_eigenvalue": 0.4999999999999997,
+      "maximum_centered_child_star_rank": 19,
+      "maximum_centered_child_star_rank_fraction": 0.625,
+      "centered_child_star_has_both_signs": true,
+      "centered_child_star_rank_one_factorization_falsified": true,
+      "covariant_effect_orbit_residual": 2.862610514707951e-16,
+      "naimark_isometry_residual": 4.5991326658444154e-15,
+      "naimark_born_probability_residual": 5.633766544994711e-16,
+      "exact_width_n_covariant_naimark_verified": true,
+      "exact_young_star_seed_factorization_verified": true,
+      "status": "exact-width-n-young-star-naimark-normal-form"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 8,
+      "information_threshold_copy_count": 16,
+      "orientation_multiplicity_log2": 16,
+      "child_partition_count": 15,
+      "maximum_parent_count_per_child": 4,
+      "maximum_parent_count_upper_bound": 5.0,
+      "child_star_parent_graph_polynomial_degree": true,
+      "subgroup_chain_young_label_transform_polynomial": true,
+      "coset_outcome_width_polynomial": true,
+      "explicit_orientation_multiplicity_polynomial": false,
+      "implicit_child_star_block_transform_proved": false,
+      "child_star_spectrum_bound_proved": false,
+      "direct_point_naimark_compiled": false,
+      "status": "young-star-normal-form-proved-implicit-multiplicity-transform-open"
+    },
+    {
+      "n": 16,
+      "information_threshold_copy_count": 45,
+      "orientation_multiplicity_log2": 45,
+      "child_partition_count": 176,
+      "maximum_parent_count_per_child": 6,
+      "maximum_parent_count_upper_bound": 6.656854249492381,
+      "child_star_parent_graph_polynomial_degree": true,
+      "subgroup_chain_young_label_transform_polynomial": true,
+      "coset_outcome_width_polynomial": true,
+      "explicit_orientation_multiplicity_polynomial": false,
+      "implicit_child_star_block_transform_proved": false,
+      "child_star_spectrum_bound_proved": false,
+      "direct_point_naimark_compiled": false,
+      "status": "young-star-normal-form-proved-implicit-multiplicity-transform-open"
+    },
+    {
+      "n": 32,
+      "information_threshold_copy_count": 118,
+      "orientation_multiplicity_log2": 118,
+      "child_partition_count": 6842,
+      "maximum_parent_count_per_child": 8,
+      "maximum_parent_count_upper_bound": 9.0,
+      "child_star_parent_graph_polynomial_degree": true,
+      "subgroup_chain_young_label_transform_polynomial": true,
+      "coset_outcome_width_polynomial": true,
+      "explicit_orientation_multiplicity_polynomial": false,
+      "implicit_child_star_block_transform_proved": false,
+      "child_star_spectrum_bound_proved": false,
+      "direct_point_naimark_compiled": false,
+      "status": "young-star-normal-form-proved-implicit-multiplicity-transform-open"
+    },
+    {
+      "n": 64,
+      "information_threshold_copy_count": 296,
+      "orientation_multiplicity_log2": 296,
+      "child_partition_count": 1505499,
+      "maximum_parent_count_per_child": 11,
+      "maximum_parent_count_upper_bound": 12.313708498984761,
+      "child_star_parent_graph_polynomial_degree": true,
+      "subgroup_chain_young_label_transform_polynomial": true,
+      "coset_outcome_width_polynomial": true,
+      "explicit_orientation_multiplicity_polynomial": false,
+      "implicit_child_star_block_transform_proved": false,
+      "child_star_spectrum_bound_proved": false,
+      "direct_point_naimark_compiled": false,
+      "status": "young-star-normal-form-proved-implicit-multiplicity-transform-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "compress_point_outcome_orbit",
+      "resolved": true,
+      "resolution": "Covariance reduces the full measurement to one H-invariant seed and n coset outcomes, with an exact Naimark isometry."
+    },
+    {
+      "obligation": "factor_point_seed_by_young_branching",
+      "resolved": true,
+      "resolution": "Multiplicity-free S_n to S_(n-1) restriction gives independent child-star blocks and commutes with the PSD square root."
+    },
+    {
+      "obligation": "compile_implicit_child_star_square_roots",
+      "resolved": false,
+      "resolution": "The parent graph is sparse but each Z_alpha retains exponential orientation multiplicity and large Fourier-column spaces."
+    },
+    {
+      "obligation": "prove_child_star_spectral_access",
+      "resolved": false,
+      "resolution": "No all-n gap, stable-rank, automaton, or direct Racah transform implements sqrt(Z_alpha) at the native relative scale."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "A direct point POVM still needs n! explicit outcomes.",
+      "resolved": true,
+      "resolution": "False. Point quotienting leaves exactly n covariant outcomes."
+    },
+    {
+      "objection": "Young branching makes every seed block polynomial size.",
+      "resolved": false,
+      "resolution": "It makes the parent-diagram star sparse, not the orientation/column multiplicity space on which Z_alpha acts."
+    },
+    {
+      "objection": "Each centered child star is rank one or a scalar column tensor.",
+      "resolved": true,
+      "resolution": "False in finite controls. The S_4 central child star has rank 19 of 32 and contains both positive and negative eigenvalues."
+    },
+    {
+      "objection": "The generic beta-QSVT no-go also rules out equations (1)--(3).",
+      "resolved": true,
+      "resolution": "No. A direct child-star square-root transform need not rescale the global Delta/2 block by a bounded scalar polynomial."
+    }
+  ],
+  "headline_metrics": {
+    "width_n_covariant_naimark_theorem_count": 1,
+    "young_star_seed_factorization_theorem_count": 1,
+    "young_star_square_root_factorization_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "maximum_finite_child_star_multiplicity_dimension": 32,
+    "maximum_finite_centered_child_star_rank": 19,
+    "implicit_child_star_transform_count": 0,
+    "direct_point_measurement_circuit_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "point_outcome_orbit_compressed_to_n": true,
+    "young_star_seed_factorization_proved": true,
+    "young_star_square_root_factorization_proved": true,
+    "orientation_multiplicity_removed": false,
+    "centered_child_star_rank_one_factorization_valid": false,
+    "implicit_child_star_block_transform_proved": false,
+    "child_star_spectrum_bound_proved": false,
+    "direct_covariant_point_naimark_compiled": false,
+    "polynomial_full_hidden_shift_decoder_proved": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "The exact direct normal form avoids factorial outcomes and generic beta rescaling, but exponential child-star multiplicity remains."
+  },
+  "status": "young-star-naimark-normal-form-proved-multiplicity-transform-open",
+  "summary": "Reduced direct point measurement to n covariant outcomes and exact S_(n-1) child-star square roots. This is the correct escape from generic QSVT, but the child-star orientation multiplicity is still uncompiled.",
+  "falsifiers_triggered": [
+    "The direct measurement does not intrinsically require n! outcome enumeration or a global centered-operator rescaling.",
+    "Sparse Young parent adjacency does not imply polynomial child-star matrix dimension or efficient square-root access.",
+    "An exact covariant Naimark normal form must not be reported as a circuit until Z_alpha is implemented implicitly."
+  ]
+}

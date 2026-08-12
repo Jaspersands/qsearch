@@ -365,41 +365,6 @@ def write_carry_high_part_no_go(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-LOW-ONLY-CARRY-SELECTION-HIGH-GEOMETRY",
-                source=str(path),
-                claim=(
-                    "Selecting a reachable low carry and discarding the low constraints creates a specially "
-                    "distributed high quotient on which a standard lattice solver gains structural advantage."
-                ),
-                reason_invalid=(
-                    "Conditioned on all low data, the high labels remain independent uniform and target translation "
-                    "by the carry is a bijection. Every fixed low-selected quotient is exactly a generic random instance."
-                ),
-                lesson=(
-                    "Require a genuinely joint low/high basis or a carry-restricted witness-set theorem. If sweeping "
-                    "carries for a high-only event, prove its generic probability and charge the polynomial union bound."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-CARRY-HIGH-PART-NOGO"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_carry_high_part_no_go": str(path)},
-            )
-        )
     return payload
 
 

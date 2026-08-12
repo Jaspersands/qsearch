@@ -333,50 +333,6 @@ def write_fiber_balance_obstruction_audit(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        negatives = (
-            (
-                "NEG-DCP-IMPLICIT-TOTAL-GLOBAL-TRANSPORT-BEYOND-PIVOT",
-                "A nonlinear or implicit full-cube bijection can toggle the next subset-sum bit without an exact-valuation label.",
-                "Half-periodicity forces the factored first Fourier coefficient to vanish, which is equivalent to an exact-valuation pivot.",
-            ),
-            (
-                "NEG-DCP-SET-THEORETIC-FIBER-PAIRING-AS-EFFICIENT-MAP",
-                "Large optimal cross-child matching mass on finite fibers is evidence for an efficient quantum transport.",
-                "The multiplicity bound constructs no matching circuit, coherent state preparation, verified output routine, or classical separation.",
-            ),
-        )
-        for negative_id, claim, reason in negatives:
-            upsert_negative_result(
-                NegativeResultRecord(
-                    id=negative_id,
-                    source=str(path),
-                    claim=claim,
-                    reason_invalid=reason,
-                    lesson=(
-                        "Delete total full-cube transports from the search space. Retain only target-fiber partial maps "
-                        "or relation samplers and require explicit source coverage, efficient implementation, and classical baselines."
-                    ),
-                    applies_to=[registry_candidate_id, registry_experiment_id],
-                    evidence=payload["headline_metrics"],
-                )
-            )
-        result_id = registry_result_id or (
-            f"RESULT-{registry_experiment_id}-DCP-FIBER-BALANCE-OBSTRUCTION"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_fiber_balance_obstruction": str(path)},
-            )
-        )
     return payload
 
 

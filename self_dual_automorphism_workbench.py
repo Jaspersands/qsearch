@@ -867,51 +867,6 @@ def write_self_dual_automorphism_workbench(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        for record in payload["records"]:
-            if not (
-                record["rigidity_certified"]
-                or record["explicit_nontrivial_automorphism_certified"]
-            ):
-                continue
-            claim = (
-                f"{record['instance_id']} lies outside the rigid graph-isomorphism-style "
-                "rowspace-HSP obstruction."
-                if record["rigidity_certified"]
-                else f"{record['instance_id']} is a rigid order-two rowspace-HSP instance."
-            )
-            upsert_negative_result(
-                NegativeResultRecord(
-                    id=(
-                        "NEG-CODE-SELF-DUAL-AUTOMORPHISM-"
-                        + str(record["instance_id"]).upper()
-                    ),
-                    source=str(path),
-                    claim=claim,
-                    reason_invalid=record["interpretation"],
-                    lesson=(
-                        "Stratify self-dual instances by certified permutation "
-                        "automorphism structure before importing an HSP no-go or "
-                        "designing a collective measurement."
-                    ),
-                    applies_to=[registry_candidate_id, registry_experiment_id],
-                    evidence=record,
-                )
-            )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"self_dual_automorphism_workbench": str(path)},
-            )
-        )
     return payload
 
 

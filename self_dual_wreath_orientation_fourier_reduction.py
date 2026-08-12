@@ -728,53 +728,6 @@ def write_orientation_fourier_reduction_report(
     payload = asdict(run_orientation_fourier_reduction())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-WREATH-ORIENTATION-SUPPORT-SPARSITY",
-                source=str(path),
-                claim=(
-                    "Global source-partition distinctness leaves only "
-                    "polynomially many active orientation projectors in each "
-                    "diagonal-S_n Fourier sector."
-                ),
-                reason_invalid=(
-                    "The exact Boolean Kronecker-support dynamic program "
-                    "finds threshold portfolios where every target irrep "
-                    "supports every orientation."
-                ),
-                lesson=(
-                    "Exploit canonical-angle, fusion-frame, or recoupling "
-                    "geometry of the fully supported projector sum; support "
-                    "counting alone cannot close the norm theorem."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_orientation_fourier_reduction": str(path)
-                },
-            )
-        )
     return payload
 
 

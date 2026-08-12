@@ -355,43 +355,4 @@ def write_factorized_contraction_report(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-IID-RANK-ONE-IMPLICIT-CONTRACTION",
-                source=str(path),
-                claim="Elementary-symmetric contraction of a rank-one product kernel gives a polynomial DCP bucket decoder.",
-                reason_invalid=(
-                    "Although the contraction costs O(mr), the first Hoeffding projection and response Parseval energy "
-                    "force m>=12 r^2 min(S,N-S), exponential for coarse polynomially many buckets."
-                ),
-                lesson=(
-                    "Do not retry scalar rank-one power kernels. Search polynomial-rank cancellations or low-bond tensor "
-                    "networks with explicit norm, precision, margin, and intermediate-dimension accounting."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "certificate_count": payload["headline_metrics"]["certificate_count"],
-                    "joint_polynomial_resource_row_count": payload["headline_metrics"][
-                        "joint_polynomial_resource_row_count"
-                    ],
-                    "proved_polynomial_rank_contraction_lower_bound_count": 0,
-                    "proved_tensor_train_contraction_lower_bound_count": 0,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-FACTORIZED-CONTRACTION"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_factorized_contraction_audit": str(path)},
-            )
-        )
     return payload

@@ -388,38 +388,4 @@ def write_sparse_stable_gap_report(
     payload = asdict(build_sparse_stable_gap_report(n_values=n_values))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-SPARSE-INTEGER-SPECTRA-AS-ALL-N-GAP-PROOF",
-                source=str(output_path),
-                claim=(
-                    "Sparse finite integer characteristic polynomials prove a stable inverse-polynomial Racah gap."
-                ),
-                reason_invalid=(
-                    "The coefficients are numerically reconstructed at finitely many n and no exact coefficient "
-                    "formula or root-separation theorem is supplied."
-                ),
-                lesson=(
-                    "Use the reconstructed quartics as targets for exact character-orbit or partition-algebra trace "
-                    "identities, then prove root separation uniformly."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_sparse_stable_gap_probe": str(output_path)},
-            )
-        )
     return payload

@@ -1,0 +1,253 @@
+{
+  "created_at": "2026-08-12T03:39:48.029292+00:00",
+  "theorem_contract": {
+    "variance": "v_n=r_n^-1 sum_e Tr(H_e(H_e-gamma_n I)^2)->0 from the first three size-biased moments",
+    "effects": "sum_e||K_e-gamma_n Q_e||F^2/r_n<=v_n/theta",
+    "square_roots": "sum_e||sqrt(K_e)-sqrt(gamma_n)Q_e||F^2/r_n<=v_n/(gamma_n theta)",
+    "dilation": "the trimmed component dilation is normalized-Frobenius close to sqrt(gamma_n) stack_e V_e Q_e",
+    "rank": "sum_e rank(Q_e)/r_n->1/gamma_n=alpha_n",
+    "scope": "all statements are annealed after exact dependency compression and global-distinct conditioning; no operator-norm or sourcewise claim"
+  },
+  "theorem": {
+    "variance": "v_n=r_n^-1 sum_e Tr(H_e(H_e-gamma_n I)^2)->0 from the first three size-biased moments",
+    "effect_scalarization": "sum_e||K_e-gamma_n Q_e||F^2/r_n<=v_n/theta",
+    "root_scalarization": "sum_e||sqrt(K_e)-sqrt(gamma_n)Q_e||F^2/r_n<=v_n/(gamma_n theta)",
+    "naimark_normal_form": "the trimmed component dilation is normalized-Frobenius close to sqrt(gamma_n) stack_e V_e Q_e",
+    "aggregate_support_rank": "sum_e rank(Q_e)/r_n->1/gamma_n=alpha_n",
+    "exact_dependency_scope": "all statements are annealed after exact dependency compression and global-distinct conditioning; no operator-norm or sourcewise claim",
+    "theorem_verified": true,
+    "status": "natural-trimmed-component-support-scalarization-proved"
+  },
+  "finite_controls": [
+    {
+      "control_id": "EXACT-BALANCED-TWO-FRAME",
+      "fiber_dimension": 4,
+      "leaf_count": 4,
+      "target_support_scalar": 0.5,
+      "trim_threshold": 0.2,
+      "normalized_discarded_trace": 0.0,
+      "normalized_size_biased_variance": 0.0,
+      "normalized_effect_support_scalar_error": 0.0,
+      "effect_error_upper_bound": 0.0,
+      "normalized_square_root_support_scalar_error": 0.0,
+      "square_root_error_upper_bound": 0.0,
+      "aggregate_retained_support_rank": 8,
+      "normalized_aggregate_retained_support_rank": 2.0,
+      "target_normalized_aggregate_support_rank": 2.0,
+      "normalized_support_rank_error": 0.0,
+      "support_rank_error_upper_bound": 0.0,
+      "maximum_effect_commutator_norm": 0.08838834764831845,
+      "scalarization_bounds_verified": true,
+      "status": "trimmed-support-and-square-root-scalarization-verified"
+    },
+    {
+      "control_id": "PERTURBED-TWO-FRAME-0.55-0.45",
+      "fiber_dimension": 4,
+      "leaf_count": 4,
+      "target_support_scalar": 0.5,
+      "trim_threshold": 0.2,
+      "normalized_discarded_trace": 0.0,
+      "normalized_size_biased_variance": 0.0025000000000000044,
+      "normalized_effect_support_scalar_error": 0.005000000000000009,
+      "effect_error_upper_bound": 0.012500000000000022,
+      "normalized_square_root_support_scalar_error": 0.0025078537793346545,
+      "square_root_error_upper_bound": 0.025000000000000043,
+      "aggregate_retained_support_rank": 8,
+      "normalized_aggregate_retained_support_rank": 2.0,
+      "target_normalized_aggregate_support_rank": 2.0,
+      "normalized_support_rank_error": 0.0,
+      "support_rank_error_upper_bound": 0.5000000000000004,
+      "maximum_effect_commutator_norm": 0.08750446417183526,
+      "scalarization_bounds_verified": true,
+      "status": "trimmed-support-and-square-root-scalarization-verified"
+    },
+    {
+      "control_id": "PERTURBED-TWO-FRAME-0.60-0.40",
+      "fiber_dimension": 4,
+      "leaf_count": 4,
+      "target_support_scalar": 0.5,
+      "trim_threshold": 0.2,
+      "normalized_discarded_trace": 0.0,
+      "normalized_size_biased_variance": 0.009999999999999995,
+      "normalized_effect_support_scalar_error": 0.01999999999999999,
+      "effect_error_upper_bound": 0.049999999999999975,
+      "normalized_square_root_support_scalar_error": 0.010127693989751895,
+      "square_root_error_upper_bound": 0.09999999999999995,
+      "aggregate_retained_support_rank": 8,
+      "normalized_aggregate_retained_support_rank": 2.0,
+      "target_normalized_aggregate_support_rank": 2.0,
+      "normalized_support_rank_error": 0.0,
+      "support_rank_error_upper_bound": 0.9999999999999998,
+      "maximum_effect_commutator_norm": 0.08485281374238572,
+      "scalarization_bounds_verified": true,
+      "status": "trimmed-support-and-square-root-scalarization-verified"
+    }
+  ],
+  "scaling_records": [
+    {
+      "child_aspect": 2.0,
+      "target_support_scalar": 0.5,
+      "fixed_trim_threshold": 0.2,
+      "assumed_size_biased_variance": 0.03125,
+      "effect_support_scalar_error_upper_bound": 0.15625,
+      "square_root_dilation_error_upper_bound": 0.3125,
+      "aggregate_support_rank_to_fiber_target": 2.0,
+      "matrix_square_root_amplitude_required_asymptotically": false,
+      "coherent_support_projector_select_proved": false,
+      "uniform_partial_isometry_transport_proved": false,
+      "status": "matrix-amplitudes-scalarized-support-select-and-transport-open"
+    },
+    {
+      "child_aspect": 2.25,
+      "target_support_scalar": 0.4444444444444444,
+      "fixed_trim_threshold": 0.2,
+      "assumed_size_biased_variance": 0.015625,
+      "effect_support_scalar_error_upper_bound": 0.078125,
+      "square_root_dilation_error_upper_bound": 0.17578125,
+      "aggregate_support_rank_to_fiber_target": 2.25,
+      "matrix_square_root_amplitude_required_asymptotically": false,
+      "coherent_support_projector_select_proved": false,
+      "uniform_partial_isometry_transport_proved": false,
+      "status": "matrix-amplitudes-scalarized-support-select-and-transport-open"
+    },
+    {
+      "child_aspect": 2.5,
+      "target_support_scalar": 0.4,
+      "fixed_trim_threshold": 0.2,
+      "assumed_size_biased_variance": 0.0078125,
+      "effect_support_scalar_error_upper_bound": 0.0390625,
+      "square_root_dilation_error_upper_bound": 0.09765624999999999,
+      "aggregate_support_rank_to_fiber_target": 2.5,
+      "matrix_square_root_amplitude_required_asymptotically": false,
+      "coherent_support_projector_select_proved": false,
+      "uniform_partial_isometry_transport_proved": false,
+      "status": "matrix-amplitudes-scalarized-support-select-and-transport-open"
+    },
+    {
+      "child_aspect": 3.0,
+      "target_support_scalar": 0.3333333333333333,
+      "fixed_trim_threshold": 0.2,
+      "assumed_size_biased_variance": 0.00390625,
+      "effect_support_scalar_error_upper_bound": 0.01953125,
+      "square_root_dilation_error_upper_bound": 0.05859375,
+      "aggregate_support_rank_to_fiber_target": 3.0,
+      "matrix_square_root_amplitude_required_asymptotically": false,
+      "coherent_support_projector_select_proved": false,
+      "uniform_partial_isometry_transport_proved": false,
+      "status": "matrix-amplitudes-scalarized-support-select-and-transport-open"
+    },
+    {
+      "child_aspect": 3.5,
+      "target_support_scalar": 0.2857142857142857,
+      "fixed_trim_threshold": 0.2,
+      "assumed_size_biased_variance": 0.001953125,
+      "effect_support_scalar_error_upper_bound": 0.009765625,
+      "square_root_dilation_error_upper_bound": 0.0341796875,
+      "aggregate_support_rank_to_fiber_target": 3.5,
+      "matrix_square_root_amplitude_required_asymptotically": false,
+      "coherent_support_projector_select_proved": false,
+      "uniform_partial_isometry_transport_proved": false,
+      "status": "matrix-amplitudes-scalarized-support-select-and-transport-open"
+    },
+    {
+      "child_aspect": 4.0,
+      "target_support_scalar": 0.25,
+      "fixed_trim_threshold": 0.2,
+      "assumed_size_biased_variance": 0.0009765625,
+      "effect_support_scalar_error_upper_bound": 0.0048828125,
+      "square_root_dilation_error_upper_bound": 0.01953125,
+      "aggregate_support_rank_to_fiber_target": 4.0,
+      "matrix_square_root_amplitude_required_asymptotically": false,
+      "coherent_support_projector_select_proved": false,
+      "uniform_partial_isometry_transport_proved": false,
+      "status": "matrix-amplitudes-scalarized-support-select-and-transport-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "convert_size_biased_point_mass_law_to_effect_scalarization",
+      "resolved": true,
+      "resolution": "The first three size-biased moments make v_n vanish, and the fixed retained threshold removes the missing lambda factor."
+    },
+    {
+      "obligation": "scalarize_component_square_root_amplitudes",
+      "resolved": true,
+      "resolution": "The scalar square-root inequality in (3) controls the full stacked Naimark map in normalized Frobenius mean square."
+    },
+    {
+      "obligation": "bound_total_retained_support_rank",
+      "resolved": true,
+      "resolution": "The retained threshold converts weighted variance to an unweighted support-count error, yielding total rank alpha*r."
+    },
+    {
+      "obligation": "compile_coherent_support_projector_select",
+      "resolved": false,
+      "resolution": "Need a reversible classifier or direct representation circuit for Q_e on a superposition of factorially many leaf labels."
+    },
+    {
+      "obligation": "compile_uniform_partial_isometry_transport",
+      "resolved": false,
+      "resolution": "Pair GPE proves individual compatible transports, not a global controlled support/gauge network on natural mass."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Trace-weighted convergence cannot control unweighted supports.",
+      "resolved": true,
+      "resolution": "It cannot near zero. After retaining lambda>=theta, division by the fixed theta converts the weighted variance exactly."
+    },
+    {
+      "objection": "Noncommuting effects require non-scalar eigenvalue amplitudes.",
+      "resolved": true,
+      "resolution": "False. The finite fusion controls are noncommuting while every positive effect eigenvalue is the same scalar; geometry sits in the support projectors and partial isometries."
+    },
+    {
+      "objection": "Aggregate Frobenius scalarization is operator-norm access.",
+      "resolved": true,
+      "resolution": "No. Exceptional source blocks and eigenchannels may remain; the theorem controls only annealed normalized mean square."
+    },
+    {
+      "objection": "Scalar amplitudes make a mask-Hadamard circuit sufficient.",
+      "resolved": false,
+      "resolution": "The supports Q_e are sparse, noncommuting, and mask dependent. Their SELECT and the V_e transports carry the hard geometry."
+    }
+  ],
+  "headline_metrics": {
+    "trimmed_effect_support_scalarization_theorem_count": 1,
+    "trimmed_square_root_dilation_scalarization_theorem_count": 1,
+    "aggregate_retained_support_rank_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "uniform_trim_threshold": 0.2,
+    "tail_assumed_variance": 0.0009765625,
+    "tail_square_root_error_upper_bound": 0.01953125,
+    "matrix_square_root_amplitude_gate_count": 0,
+    "coherent_support_projector_select_count": 0,
+    "uniform_partial_isometry_transport_count": 0,
+    "component_povm_dilation_circuit_count": 0,
+    "hidden_involution_decoder_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "natural_trimmed_effects_support_scalar_in_aggregate": true,
+    "natural_trimmed_square_roots_support_scalar_in_aggregate": true,
+    "aggregate_retained_support_rank_is_alpha_times_fiber": true,
+    "generic_matrix_square_root_amplitudes_are_final_root_bottleneck": false,
+    "operator_norm_support_scalarization_proved": false,
+    "sourcewise_support_scalarization_proved": false,
+    "coherent_support_projector_select_proved": false,
+    "uniform_gpe_support_transport_proved": false,
+    "component_povm_dilation_compiled": false,
+    "decoder_information_gain_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "The retained matrix amplitudes become scalar, but their sparse noncommuting supports and controlled partial-isometry gauges are still not coherently accessible."
+  },
+  "status": "natural-trimmed-component-support-scalarization-proved",
+  "summary": "Reduced the retained natural component dilation to scalar amplitudes on sparse support projectors with total rank alpha times the fiber.",
+  "falsifiers_triggered": [
+    "Natural noncommutativity can reside entirely in support geometry while positive effect amplitudes scalarize.",
+    "Generic matrix square-root synthesis is not the final-root bottleneck after constant trace trim.",
+    "Factorially many labels do not imply factorial aggregate retained support rank.",
+    "Average support scalarization does not provide coherent support SELECT or a decoder."
+  ]
+}

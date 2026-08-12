@@ -743,53 +743,6 @@ def write_orientation_fusion_moment_report(
     payload = asdict(run_orientation_fusion_moment())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-WREATH-SECOND-FUSION-MOMENT-NOT-NORM",
-                source=str(path),
-                claim=(
-                    "A bounded pairwise fusion-frame collision scale proves "
-                    "the uniform orientation-projector sum norm bound."
-                ),
-                reason_invalid=(
-                    "The exact class-algebra calculation controls only "
-                    "Tr(F^2)/Tr(F), a lower bound on the top eigenvalue; it "
-                    "cannot exclude a small high-eigenvalue subspace."
-                ),
-                lesson=(
-                    "Develop growing orientation moments, an operator-valued "
-                    "Gram contraction, or a direct recoupling/fusion-frame "
-                    "norm theorem before making a conclusive-rate claim."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_orientation_fusion_moment": str(path)
-                },
-            )
-        )
     return payload
 
 

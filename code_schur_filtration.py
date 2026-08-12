@@ -314,36 +314,4 @@ def write_code_schur_filtration_report(
     payload = build_code_schur_filtration_report(pairs=pairs, max_power=max_power, max_pairs=max_pairs)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        for record in payload["records"]:
-            if record["status"] != "rejected-by-schur-filtration":
-                continue
-            upsert_negative_result(
-                NegativeResultRecord(
-                    id="SCHUR-REJECT-" + "".join(ch if ch.isalnum() else "_" for ch in record["id"].upper()),
-                    source="code_schur_filtration.py",
-                    claim=f"{record['id']} is a hard code-equivalence row requiring a collective quantum measurement.",
-                    reason_invalid=record["interpretation"],
-                    lesson="Apply primal/dual Schur powers and local puncture/shortening filtrations before measurement design.",
-                    applies_to=["CODE-COSET-COLLECTIVE", "PO-DEQUANTIZATION", "PO-FALSIFIERS"],
-                    evidence={
-                        "row_id": record["row_id"],
-                        "source": record["source"],
-                        "distinguishing_invariants": record["distinguishing_invariants"],
-                    },
-                )
-            )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=registry_result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"code_schur_filtration": str(output_path)},
-            )
-        )
     return payload

@@ -516,40 +516,6 @@ def write_marker_deviation_geometry(
     payload = asdict(run_marker_deviation_geometry(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-FINITE-MARKER-DEVIATION-GROWTH-IS-NOT-A-LOWER-BOUND",
-                source=str(path),
-                claim=(
-                    "Observed growth or one-step-tree escape of exact witness rounding deviations proves that every "
-                    "polynomial marker-aware affine decoder has negligible source coverage."
-                ),
-                reason_invalid=(
-                    "The audit characterizes one LLL basis and one nearest-plane branching grammar on finite inputs; "
-                    "it supplies no distributional theorem or reduction from general affine decoding."
-                ),
-                lesson=(
-                    "Use exact profiles to formulate a source theorem or design a qualitatively different decoder, "
-                    "not to claim an affine-CVP lower bound."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=registry_result_id or f"RESULT-{registry_experiment_id}-LATEST",
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_marker_deviation_geometry": str(path)},
-            )
-        )
     return payload
 
 

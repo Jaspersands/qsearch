@@ -511,45 +511,6 @@ def write_self_dual_wreath_hecke_audit(
     payload = asdict(run_self_dual_wreath_hecke_audit(spec=spec))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-SELF-DUAL-WREATH-CENTRALIZER-GELFAND-TRANSFER",
-                source=str(path),
-                claim=(
-                    "Because the hidden-permutation label stabilizer is a "
-                    "Gelfand subgroup, the all-register hidden-subgroup PGM "
-                    "theorem applies."
-                ),
-                reason_invalid=(
-                    "The theorem requires the actual hidden subgroup H=<h_e> "
-                    "to form a Gelfand pair with W_n. Its standard equal-pair "
-                    "irrep has multiplicity n(n-1)/2, so the pair is "
-                    "non-Gelfand for n>=3."
-                ),
-                lesson=(
-                    "Use the centralizer Hecke algebra only for scalar "
-                    "label-space kernels. Analyze the operator-valued k-copy "
-                    "carrier frame separately."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"self_dual_wreath_hecke_audit": str(path)},
-            )
-        )
     return payload
 
 

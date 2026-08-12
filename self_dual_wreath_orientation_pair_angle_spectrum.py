@@ -433,53 +433,6 @@ def write_orientation_pair_angle_spectrum_report(
     payload = asdict(run_orientation_pair_angle_spectrum())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-WREATH-PAIR-HS-OVERLAP-LOSES-ANGLE-SPECTRUM",
-                source=str(path),
-                claim=(
-                    "Pairwise Hilbert--Schmidt overlaps are the strongest "
-                    "available local geometric description of orientation ranges."
-                ),
-                reason_invalid=(
-                    "The exact recoupling decomposition gives every principal "
-                    "correlation as a reciprocal symmetric-group irrep "
-                    "dimension and proves 1/(n-1) contraction off common ranges."
-                ),
-                lesson=(
-                    "Work on the quotient by trivial/sign common ranges and "
-                    "their higher-family incidence; do not discard the exact "
-                    "principal-angle spectrum into a scalar frame potential."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_orientation_pair_angle_spectrum": str(path)
-                },
-            )
-        )
     return payload
 
 

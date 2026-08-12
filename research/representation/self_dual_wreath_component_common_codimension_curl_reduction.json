@@ -1,0 +1,213 @@
+{
+  "created_at": "2026-08-12T03:39:39.369235+00:00",
+  "theorem_contract": {
+    "rank": "||P-Pi||F^2=rank(P_exc)=rank(R)-dim(common)",
+    "intersection": "D-dim(Ran A cap Ran B)<=nullity(A)+nullity(B)",
+    "natural_input": "all-fixed MP at alpha in [2,4) gives expected normalized child nullity and common codimension o(1)",
+    "stability": "E|C(Pi)-C(P)|/D<=16sqrt(delta)+8delta=o(1)",
+    "physical_effects": "H_e=F^{+/2}E_eF^{+/2}",
+    "physical_curl": "C(P)=sum_(e,f)||[H_e,H_f]||F^2/2",
+    "scope": "Common compression is removed only at normalized constant scale. Positivity of the natural full-support curl is open."
+  },
+  "theorem": {
+    "support_difference_rank": "||P-Pi||F^2=rank(P_exc)=rank(R)-dim(common)",
+    "intersection_codimension": "D-dim(Ran A cap Ran B)<=nullity(A)+nullity(B)",
+    "mp_nullity_consequence": "all-fixed MP at alpha in [2,4) gives expected normalized child nullity and common codimension o(1)",
+    "curl_transfer": "E|C(Pi)-C(P)|/D<=16sqrt(delta)+8delta=o(1)",
+    "full_support_effects": "H_e=F^{+/2}E_eF^{+/2}",
+    "full_support_curl": "C(P)=sum_(e,f)||[H_e,H_f]||F^2/2",
+    "theorem_verified": true,
+    "status": "common-compression-negligible-full-support-curl-target-exact"
+  },
+  "finite_controls": [
+    {
+      "control_id": "FULL-ROW-D8-N16-R6",
+      "physical_dimension": 8,
+      "coefficient_dimension": 16,
+      "leaf_count": 4,
+      "child_support_rank": 8,
+      "common_dimension": 6,
+      "excluded_support_rank": 2,
+      "child_rank_minus_common_dimension": 2,
+      "full_minus_dependency_frobenius_squared": 1.9999999999999996,
+      "maximum_full_support_word_residual": 2.2205274012317778e-15,
+      "coefficient_full_support_normalized_curl": 0.0479495831362531,
+      "physical_canonical_normalized_curl": 0.04794958313625309,
+      "full_support_curl_residual": 1.3877787807814457e-17,
+      "dependency_normalized_curl": 0.02303068830205585,
+      "dependency_to_full_curl_difference": 0.024918894834197253,
+      "stability_upper_bound": 9.999999999999998,
+      "exact_rank_and_word_reduction_verified": true,
+      "stability_bound_verified": true,
+      "status": "common-compression-reduced-to-low-rank-full-support-curl"
+    },
+    {
+      "control_id": "FULL-ROW-D10-N20-R7",
+      "physical_dimension": 10,
+      "coefficient_dimension": 20,
+      "leaf_count": 4,
+      "child_support_rank": 10,
+      "common_dimension": 7,
+      "excluded_support_rank": 3,
+      "child_rank_minus_common_dimension": 3,
+      "full_minus_dependency_frobenius_squared": 3.0000000000000004,
+      "maximum_full_support_word_residual": 4.662955772972169e-15,
+      "coefficient_full_support_normalized_curl": 0.05088833243867127,
+      "physical_canonical_normalized_curl": 0.05088833243867136,
+      "full_support_curl_residual": 8.881784197001253e-17,
+      "dependency_normalized_curl": 0.02227572595698002,
+      "dependency_to_full_curl_difference": 0.028612606481691248,
+      "stability_upper_bound": 11.16356092008266,
+      "exact_rank_and_word_reduction_verified": true,
+      "stability_bound_verified": true,
+      "status": "common-compression-reduced-to-low-rank-full-support-curl"
+    },
+    {
+      "control_id": "FULL-ROW-D12-N24-R9",
+      "physical_dimension": 12,
+      "coefficient_dimension": 24,
+      "leaf_count": 4,
+      "child_support_rank": 12,
+      "common_dimension": 9,
+      "excluded_support_rank": 3,
+      "child_rank_minus_common_dimension": 3,
+      "full_minus_dependency_frobenius_squared": 2.9999999999999982,
+      "maximum_full_support_word_residual": 4.440902026223676e-15,
+      "coefficient_full_support_normalized_curl": 0.04518361613694503,
+      "physical_canonical_normalized_curl": 0.04518361613694505,
+      "full_support_curl_residual": 1.850371707708594e-17,
+      "dependency_normalized_curl": 0.028923653604352357,
+      "dependency_to_full_curl_difference": 0.01625996253259267,
+      "stability_upper_bound": 9.999999999999996,
+      "exact_rank_and_word_reduction_verified": true,
+      "stability_bound_verified": true,
+      "status": "common-compression-reduced-to-low-rank-full-support-curl"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 32,
+      "assumed_left_nullity_fraction": 0.03125,
+      "assumed_right_nullity_fraction": 0.03125,
+      "excluded_rank_fraction_upper_bound": 0.0625,
+      "normalized_curl_transfer_error_upper_bound": 4.5,
+      "common_compression_negligible_at_constant_scale": false,
+      "inverse_polynomial_signal_preserved_without_rate": false,
+      "status": "preasymptotic-curl-stability-constant-exceeds-one"
+    },
+    {
+      "n": 64,
+      "assumed_left_nullity_fraction": 0.015625,
+      "assumed_right_nullity_fraction": 0.015625,
+      "excluded_rank_fraction_upper_bound": 0.03125,
+      "normalized_curl_transfer_error_upper_bound": 3.0784271247461903,
+      "common_compression_negligible_at_constant_scale": false,
+      "inverse_polynomial_signal_preserved_without_rate": false,
+      "status": "preasymptotic-curl-stability-constant-exceeds-one"
+    },
+    {
+      "n": 128,
+      "assumed_left_nullity_fraction": 0.0078125,
+      "assumed_right_nullity_fraction": 0.0078125,
+      "excluded_rank_fraction_upper_bound": 0.015625,
+      "normalized_curl_transfer_error_upper_bound": 2.125,
+      "common_compression_negligible_at_constant_scale": false,
+      "inverse_polynomial_signal_preserved_without_rate": false,
+      "status": "preasymptotic-curl-stability-constant-exceeds-one"
+    },
+    {
+      "n": 256,
+      "assumed_left_nullity_fraction": 0.00390625,
+      "assumed_right_nullity_fraction": 0.00390625,
+      "excluded_rank_fraction_upper_bound": 0.0078125,
+      "normalized_curl_transfer_error_upper_bound": 1.4767135623730951,
+      "common_compression_negligible_at_constant_scale": false,
+      "inverse_polynomial_signal_preserved_without_rate": false,
+      "status": "preasymptotic-curl-stability-constant-exceeds-one"
+    },
+    {
+      "n": 1024,
+      "assumed_left_nullity_fraction": 0.0009765625,
+      "assumed_right_nullity_fraction": 0.0009765625,
+      "excluded_rank_fraction_upper_bound": 0.001953125,
+      "normalized_curl_transfer_error_upper_bound": 0.7227317811865476,
+      "common_compression_negligible_at_constant_scale": true,
+      "inverse_polynomial_signal_preserved_without_rate": false,
+      "status": "qualitative-mp-nullity-makes-common-compression-negligible"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "show_natural_common_compression_has_subextensive_rank_cost",
+      "resolved": true,
+      "resolution": "The all-fixed MP law has no zero atom and the range intersection inequality bounds the excluded rank."
+    },
+    {
+      "obligation": "transfer_dependency_curl_to_full_child_support",
+      "resolved": true,
+      "resolution": "Apply the outcome-free contraction curl stability bound to the two nested support projections."
+    },
+    {
+      "obligation": "prove_positive_natural_full_support_whitening_curl",
+      "resolved": false,
+      "resolution": "Evaluate the marked canonical effects in (5); uncompressed leaf commutators alone are insufficient."
+    },
+    {
+      "obligation": "preserve_an_inverse_polynomial_signal",
+      "resolved": false,
+      "resolution": "Qualitative nullity convergence preserves only a constant signal without an explicit rate."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Proper sibling-common compression remains a separate local law.",
+      "resolved": true,
+      "resolution": "Its coefficient support has rank at most the common codimension, which is subextensive under the MP theorem."
+    },
+    {
+      "objection": "A low-rank projection change can be amplified by q^2 outcomes.",
+      "resolved": true,
+      "resolution": "The parity-curl stability theorem is outcome-count independent."
+    },
+    {
+      "objection": "The full-support physical effects are only heuristic.",
+      "resolved": true,
+      "resolution": "Polar decomposition gives exact all-word identities and the exact commutator sum (6)."
+    },
+    {
+      "objection": "Full-support reduction proves noncommutativity.",
+      "resolved": false,
+      "resolution": "The bounded-condition commuting-whitening counterfamily still applies; natural marked structure must rule it out."
+    }
+  ],
+  "headline_metrics": {
+    "common_codimension_curl_reduction_theorem_count": 1,
+    "exact_full_support_physical_word_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "maximum_full_support_word_residual": 4.662955772972169e-15,
+    "maximum_full_support_curl_residual": 8.881784197001253e-17,
+    "natural_full_support_curl_lower_bound_theorem_count": 0,
+    "natural_component_M4_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "all_fixed_mp_input_available": true,
+    "natural_child_nullity_subextensive": true,
+    "natural_common_codimension_subextensive": true,
+    "common_compression_negligible_for_constant_normalized_curl": true,
+    "full_support_canonical_effect_target_exact": true,
+    "natural_full_support_canonical_curl_positive": false,
+    "natural_component_M4_positive": false,
+    "speedup_claim_allowed": false,
+    "reason": "The common-compression bottleneck is removed at constant scale; the natural full-support marked commutator is now the sole M4 gap."
+  },
+  "status": "common-compression-removed-full-support-natural-curl-open",
+  "summary": "Used the all-fixed MP law and an outcome-free perturbation bound to reduce exact component M4 to full-support canonical leaf curl.",
+  "falsifiers_triggered": [
+    "Proper common-span compression is not an extensive obstacle at final-root aspect above one.",
+    "The q^2 leaf count does not amplify low-rank support error in parity curl.",
+    "Full-support whitening remains capable of exact generic commutator cancellation.",
+    "No natural full-support curl, component M4, algorithm, or speedup is proved."
+  ]
+}

@@ -459,33 +459,4 @@ def write_dcp_schedule_search_report(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-SCHEDULE-SELECTION-NOT-ASYMPTOTIC-PROOF",
-                source=str(path),
-                claim="A schedule selected by finite held-out endpoint success is an improved DHSP algorithm.",
-                reason_invalid=(
-                    "Train/holdout separation controls seed overfitting only. It does not prove a uniform recurrence, "
-                    "bounded recursive failure, or a resource improvement over generic sieves."
-                ),
-                lesson="Use schedule search to generate recurrence conjectures, then require symbolic proof.",
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-SCHEDULE-SEARCH"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_schedule_search": str(path)},
-            )
-        )
     return payload

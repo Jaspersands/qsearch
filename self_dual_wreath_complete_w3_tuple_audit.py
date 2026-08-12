@@ -434,48 +434,6 @@ def write_complete_w3_tuple_audit(
     payload = asdict(run_complete_w3_tuple_audit())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-SELF-DUAL-WREATH-COMPLETE-W3-NOT-ALL-N-INVERSE",
-                source=str(path),
-                claim=(
-                    "Complete mild conditioning of all naturally occupied "
-                    "W_3 threshold blocks supplies a scalable frame inverse."
-                ),
-                reason_invalid=(
-                    "The result is confined to n=3, uses dense finite "
-                    "diagonalization, and supplies no character recurrence, "
-                    "coherent pseudoinverse, harmonic transform, or decoder."
-                ),
-                lesson=(
-                    "Use W_3 as an exact regression target for all-n moment "
-                    "recurrences, but require a growing-n theorem before "
-                    "promoting conditioning."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = (
-            registry_result_id
-            or f"RESULT-{registry_experiment_id}-LATEST"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_complete_w3_tuple_audit": str(path)
-                },
-            )
-        )
     return payload
 
 

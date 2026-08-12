@@ -811,60 +811,6 @@ def write_qtt_contraction_search(
     payload = asdict(run_qtt_contraction_search(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        if not bool(
-            payload["claim_gate"]["tail_registered_bond_cap_survivor_found"]
-        ):
-            upsert_negative_result(
-                NegativeResultRecord(
-                    id=(
-                        "NEG-DCP-SUBSET-SUM-QTT-"
-                        "FINITE-DENSE-CONTRACTION"
-                    ),
-                    source=str(path),
-                    claim=(
-                        "The tested natural, structured, or random target-bit "
-                        "ordering gives a QTT with the registered R=n bond cap "
-                        "and additive count error below one half."
-                    ),
-                    reason_invalid=(
-                        "Every tail source unfolding in the finite audit has "
-                        "best rank-cap Frobenius error above the necessary "
-                        "additive-half threshold and tracks histogram-preserving "
-                        "random controls."
-                    ),
-                    lesson=(
-                        "Do not retune the same finite QTT bit order. A surviving "
-                        "dense contraction needs a new algebraic tensorization, "
-                        "a uniform rank theorem, subinstance stability, and "
-                        "verified witness extraction."
-                    ),
-                    applies_to=[
-                        registry_candidate_id,
-                        registry_experiment_id,
-                    ],
-                    evidence=payload["headline_metrics"],
-                )
-            )
-        result_id = (
-            registry_result_id
-            or f"RESULT-{registry_experiment_id}-QTT-DENSE-CONTRACTION"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=list(payload["falsifiers_triggered"]),
-                artifacts={
-                    "dcp_subset_sum_qtt_contraction_search": str(path)
-                },
-            )
-        )
     return payload
 
 

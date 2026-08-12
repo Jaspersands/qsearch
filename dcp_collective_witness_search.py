@@ -311,37 +311,4 @@ def write_collective_witness_search(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-BOUNDED-LOCALITY-PAULI-WITNESSES-NEGLIGIBLE",
-                source=str(path),
-                claim="A polynomial-size search over bounded-locality Pauli correlators yields a uniform f=1 DCP contamination witness.",
-                reason_invalid=(
-                    "Nonzero common-reflection signal requires a signed modular relation among supported random labels. "
-                    "For polynomially many labels, the aggregate probability for logarithmic support is negligible."
-                ),
-                lesson="Search genuinely global implicit measurements; finite rare relations cannot support a uniform decoder claim.",
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "certificate_count": payload["headline_metrics"]["locality_certificate_count"],
-                    "negligible_count": payload["headline_metrics"]["logarithmic_locality_negligible_count"],
-                    "polynomial_time_robust_witness_count": 0,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-COLLECTIVE-WITNESS"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_collective_witness_search": str(path)},
-            )
-        )
     return payload

@@ -337,44 +337,4 @@ def write_biased_linear_margin_report(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-IID-BIASED-LINEAR-MARGIN-PARSEVAL",
-                source=str(path),
-                claim="A biased or smoothed one-pass linear score gives sample-efficient coarse DCP frequency buckets while retaining a uniform decision margin.",
-                reason_invalid=(
-                    "Parseval plus the optimal two-level margin response forces energy at least "
-                    "4 gamma^2 S(N-S)/N. Resolving the margin by a uniformly MSE-controlled empirical mean retains "
-                    "the exponential sample-versus-bucket-enumeration tradeoff."
-                ),
-                lesson=(
-                    "Do not mutate exact indicators into smooth biased linear scores without changing the estimator class. "
-                    "Search nonlinear record coupling, multiple adaptive statistics, or collective measurements."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "certificate_count": payload["headline_metrics"]["certificate_count"],
-                    "joint_polynomial_resource_row_count": payload["headline_metrics"][
-                        "joint_polynomial_resource_row_count"
-                    ],
-                    "proved_uniform_margin_linear_no_go_count": 1,
-                    "proved_nonlinear_decoder_lower_bound_count": 0,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-BIASED-LINEAR-MARGIN"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_biased_linear_margin_audit": str(path)},
-            )
-        )
     return payload

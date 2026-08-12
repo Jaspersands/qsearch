@@ -447,47 +447,6 @@ def write_self_dual_wreath_unequal_frame_blocks(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-SELF-DUAL-WREATH-ZERO-CHARACTER-NOT-COLLECTIVE-SCALAR",
-                source=str(path),
-                claim=(
-                    "Unequal-pair wreath irreps can be discarded because "
-                    "their one-copy bridge character is zero."
-                ),
-                reason_invalid=(
-                    "Their one-copy frame is I/2, but exact correlated "
-                    "multi-copy blocks have nontrivial spectra and kernels."
-                ),
-                lesson=(
-                    "Retain unequal-pair sectors in collective measurements; "
-                    "analyze mixed tuples and growing spectral recurrences "
-                    "before attempting a frame inverse."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = (
-            registry_result_id
-            or f"RESULT-{registry_experiment_id}-LATEST"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_unequal_frame_blocks": str(path)
-                },
-            )
-        )
     return payload
 
 

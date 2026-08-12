@@ -235,57 +235,6 @@ def write_erasure_perturbation_report(
     output_path.write_text(
         json.dumps(payload, indent=2, sort_keys=True)
     )
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-OPERATOR-NORM-APPROXIMATE-ERASURE-SHORTCUT",
-                source=str(output_path),
-                claim=(
-                    "An operator-norm approximate erasure-plus-QFT circuit "
-                    "can retain inverse-polynomial decoding success while "
-                    "evading the average witness reduction."
-                ),
-                reason_invalid=(
-                    "Reference postselection and inverse preparation are "
-                    "stable at delta<=rho^2 R^(5/2)/128. For inverse-"
-                    "polynomial R this is only inverse-polynomial precision."
-                ),
-                lesson=(
-                    "Retire uniform operator-norm approximate erasure routes. "
-                    "A remaining proposal must use only an average-state "
-                    "guarantee with a justified decoder, recover an inaccessible "
-                    "environment, or implement a non-erasure full-rank POVM."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "EXP-DHS-DCP-APPROXIMATE-ERASURE-COHERENCE-REDUCTION",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload[
-                    "falsifiers_triggered"
-                ],
-                artifacts={
-                    "dcp_erasure_perturbation_reduction": str(
-                        output_path
-                    )
-                },
-            )
-        )
     return payload
 
 

@@ -607,40 +607,6 @@ def write_stable_third_moment_certificate(
     payload = asdict(build_stable_third_moment_certificate(workers=workers))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-THREE-COEFFICIENTS-AS-COMPLETE-RACAH-SOLUTION",
-                source=str(output_path),
-                claim=(
-                    "Three exact stable quartic coefficients establish a usable collective measurement or quantum speedup."
-                ),
-                reason_invalid=(
-                    "The determinant, normalized root separation, coherent Racah circuit, and hidden-involution decoder remain open."
-                ),
-                lesson=(
-                    "Close Tr(H^4) or the determinant next, then attack root separation and implementation before evaluating decoder information."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "coset_stable_third_moment_certificate": str(output_path)
-                },
-            )
-        )
     return payload
 
 

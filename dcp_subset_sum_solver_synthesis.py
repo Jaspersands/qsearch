@@ -1742,34 +1742,4 @@ def write_subset_sum_solver_synthesis(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-SUBSET-SUM-SOLVER-SYNTHESIS-WEAK-MUTATIONS",
-                source=str(path),
-                claim="LLL retuning, bounded-degree carries, basic deep Wagner trees, or known quantum exponents are new polynomial partial-solver candidates.",
-                reason_invalid="Each route matches a live negative result or retains a positive exponential resource exponent.",
-                lesson="Generate hybrids only when they change geometry, distributions, or theorem interfaces and attach uniform proof obligations before candidate promotion.",
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "negative_match_rejection_count": payload["headline_metrics"]["negative_match_rejection_count"],
-                    "proposal_only_survivor_count": payload["headline_metrics"]["proposal_only_survivor_count"],
-                    "accepted_candidate_count": 0,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-SUBSET-SUM-SOLVER-SYNTHESIS"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_subset_sum_solver_synthesis": str(path)},
-            )
-        )
     return payload

@@ -1,0 +1,368 @@
+{
+  "created_at": "2026-08-12T03:42:42.907540+00:00",
+  "theorem_contract": {
+    "operator_projector": "P_std=(n-1)/n! sum_g chi_(n-1,1)(g) Ad_(L_g) is the orthogonal standard-isotypic projector on Hilbert--Schmidt space.",
+    "point_signal_energy": "||omega_0-bar(omega)||_2^2=||P_std(tau)||_2^2/(n-1).",
+    "stabilizer_projection": "omega_0-bar(omega)=T_Stab(0) P_std(tau).",
+    "fourier_positive_sum": "The signal is 1/(n-1) times the sum of squared standard projections of every Fourier irrep-pair block.",
+    "standard_kronecker_rule": "g(nu,mu,(n-1,1))=|nu^- intersect mu^-|-1[nu=mu].",
+    "scope": "The positive decomposition removes class cancellation but supplies no natural/collision-free energy lower bound or coherent block compiler.",
+    "theorem_verified": true,
+    "status": "positive-standard-energy-identity-proved-asymptotic-bound-open"
+  },
+  "theorem": {
+    "operator_projector": "P_std=(n-1)/n! sum_g chi_(n-1,1)(g) Ad_(L_g) is the orthogonal standard-isotypic projector on Hilbert--Schmidt space.",
+    "point_signal_energy": "||omega_0-bar(omega)||_2^2=||P_std(tau)||_2^2/(n-1).",
+    "stabilizer_projection": "omega_0-bar(omega)=T_Stab(0) P_std(tau).",
+    "fourier_positive_sum": "The signal is 1/(n-1) times the sum of squared standard projections of every Fourier irrep-pair block.",
+    "standard_kronecker_rule": "g(nu,mu,(n-1,1))=|nu^- intersect mu^-|-1[nu=mu].",
+    "scope": "The positive decomposition removes class cancellation but supplies no natural/collision-free energy lower bound or coherent block compiler.",
+    "theorem_verified": true,
+    "status": "positive-standard-energy-identity-proved-asymptotic-bound-open"
+  },
+  "multiplicity_validations": [
+    {
+      "n": 3,
+      "irrep_pair_count": 9,
+      "maximum_exact_multiplicity": 1,
+      "maximum_formula_multiplicity": 1,
+      "mismatch_count": 0,
+      "exact_standard_kronecker_rule_verified": true,
+      "status": "exact-standard-kronecker-young-edge-rule"
+    },
+    {
+      "n": 4,
+      "irrep_pair_count": 25,
+      "maximum_exact_multiplicity": 1,
+      "maximum_formula_multiplicity": 1,
+      "mismatch_count": 0,
+      "exact_standard_kronecker_rule_verified": true,
+      "status": "exact-standard-kronecker-young-edge-rule"
+    },
+    {
+      "n": 5,
+      "irrep_pair_count": 49,
+      "maximum_exact_multiplicity": 1,
+      "maximum_formula_multiplicity": 1,
+      "mismatch_count": 0,
+      "exact_standard_kronecker_rule_verified": true,
+      "status": "exact-standard-kronecker-young-edge-rule"
+    },
+    {
+      "n": 6,
+      "irrep_pair_count": 121,
+      "maximum_exact_multiplicity": 2,
+      "maximum_formula_multiplicity": 2,
+      "mismatch_count": 0,
+      "exact_standard_kronecker_rule_verified": true,
+      "status": "exact-standard-kronecker-young-edge-rule"
+    },
+    {
+      "n": 7,
+      "irrep_pair_count": 225,
+      "maximum_exact_multiplicity": 2,
+      "maximum_formula_multiplicity": 2,
+      "mismatch_count": 0,
+      "exact_standard_kronecker_rule_verified": true,
+      "status": "exact-standard-kronecker-young-edge-rule"
+    },
+    {
+      "n": 8,
+      "irrep_pair_count": 484,
+      "maximum_exact_multiplicity": 2,
+      "maximum_formula_multiplicity": 2,
+      "mismatch_count": 0,
+      "exact_standard_kronecker_rule_verified": true,
+      "status": "exact-standard-kronecker-young-edge-rule"
+    }
+  ],
+  "finite_controls": [
+    {
+      "control_id": "W3-SINGLE-UNEQUAL",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 1,
+      "group_order": 6,
+      "orientation_count": 2,
+      "centered_point_signal": 0.06250000000000003,
+      "standard_projection_energy": 0.12500000000000003,
+      "energy_identity_residual": 2.7755575615628914e-17,
+      "standard_projector_idempotence_residual": 5.2259694385339856e-17,
+      "stabilizer_projection_identity_residual": 7.579151370308541e-17,
+      "fourier_block_energy_sum_residual": 0.0,
+      "positive_young_pair_count": 5,
+      "active_positive_young_pair_count": 2,
+      "active_nonstandard_fourier_pair_count": 2,
+      "maximum_zero_multiplicity_block_energy": 6.222732613558706e-34,
+      "diagonal_standard_energy": 3.932122966646788e-33,
+      "offdiagonal_standard_energy": 0.12500000000000003,
+      "offdiagonal_energy_fraction": 1.0,
+      "largest_energy_irrep_pair": [
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "largest_energy_fraction": 0.5000000000000001,
+      "exact_positive_standard_energy_theorem_verified": true,
+      "status": "exact-positive-standard-young-edge-energy"
+    },
+    {
+      "control_id": "W3-INFORMATION-THRESHOLD",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 3,
+      "group_order": 6,
+      "orientation_count": 8,
+      "centered_point_signal": 0.044921875000000014,
+      "standard_projection_energy": 0.08984375,
+      "energy_identity_residual": 2.7755575615628914e-17,
+      "standard_projector_idempotence_residual": 3.080660836703518e-17,
+      "stabilizer_projection_identity_residual": 3.3415948194434155e-17,
+      "fourier_block_energy_sum_residual": 1.3877787807814457e-17,
+      "positive_young_pair_count": 5,
+      "active_positive_young_pair_count": 5,
+      "active_nonstandard_fourier_pair_count": 4,
+      "maximum_zero_multiplicity_block_energy": 3.735290047849853e-35,
+      "diagonal_standard_energy": 0.011718749999999995,
+      "offdiagonal_standard_energy": 0.078125,
+      "offdiagonal_energy_fraction": 0.8695652173913043,
+      "largest_energy_irrep_pair": [
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "largest_energy_fraction": 0.21739130434782614,
+      "exact_positive_standard_energy_theorem_verified": true,
+      "status": "exact-positive-standard-young-edge-energy"
+    },
+    {
+      "control_id": "W4-COLLISION-FREE-PAIR",
+      "n": 4,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 2,
+      "group_order": 24,
+      "orientation_count": 4,
+      "centered_point_signal": 0.0025612997256515774,
+      "standard_projection_energy": 0.007683899176954728,
+      "energy_identity_residual": 4.336808689942018e-18,
+      "standard_projector_idempotence_residual": 2.1341825784717792e-17,
+      "stabilizer_projection_identity_residual": 2.027647886639728e-17,
+      "fourier_block_energy_sum_residual": 3.469446951953614e-18,
+      "positive_young_pair_count": 12,
+      "active_positive_young_pair_count": 10,
+      "active_nonstandard_fourier_pair_count": 9,
+      "maximum_zero_multiplicity_block_energy": 5.097732105785405e-35,
+      "diagonal_standard_energy": 0.0007233796296296296,
+      "offdiagonal_standard_energy": 0.0069605195473250985,
+      "offdiagonal_energy_fraction": 0.9058577405857741,
+      "largest_energy_irrep_pair": [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "largest_energy_fraction": 0.26638772663877286,
+      "exact_positive_standard_energy_theorem_verified": true,
+      "status": "exact-positive-standard-young-edge-energy"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 8,
+      "irrep_count": 22,
+      "ordered_irrep_pair_count": 484,
+      "positive_standard_multiplicity_pair_count": 112,
+      "positive_pair_fraction": 0.23140495867768596,
+      "maximum_standard_kronecker_multiplicity": 2,
+      "maximum_removable_corner_count": 3,
+      "positive_energy_sum_has_no_sign_cancellation": true,
+      "collision_free_expected_energy_lower_bound_proved": false,
+      "coherent_standard_block_projection_compiled": false,
+      "status": "positive-young-edge-energy-signal-bound-and-compiler-open"
+    },
+    {
+      "n": 12,
+      "irrep_count": 77,
+      "ordered_irrep_pair_count": 5929,
+      "positive_standard_multiplicity_pair_count": 577,
+      "positive_pair_fraction": 0.09731826614943498,
+      "maximum_standard_kronecker_multiplicity": 3,
+      "maximum_removable_corner_count": 4,
+      "positive_energy_sum_has_no_sign_cancellation": true,
+      "collision_free_expected_energy_lower_bound_proved": false,
+      "coherent_standard_block_projection_compiled": false,
+      "status": "positive-young-edge-energy-signal-bound-and-compiler-open"
+    },
+    {
+      "n": 16,
+      "irrep_count": 231,
+      "ordered_irrep_pair_count": 53361,
+      "positive_standard_multiplicity_pair_count": 2292,
+      "positive_pair_fraction": 0.0429527182773936,
+      "maximum_standard_kronecker_multiplicity": 4,
+      "maximum_removable_corner_count": 5,
+      "positive_energy_sum_has_no_sign_cancellation": true,
+      "collision_free_expected_energy_lower_bound_proved": false,
+      "coherent_standard_block_projection_compiled": false,
+      "status": "positive-young-edge-energy-signal-bound-and-compiler-open"
+    },
+    {
+      "n": 20,
+      "irrep_count": 627,
+      "ordered_irrep_pair_count": 393129,
+      "positive_standard_multiplicity_pair_count": 7711,
+      "positive_pair_fraction": 0.019614426816642883,
+      "maximum_standard_kronecker_multiplicity": 4,
+      "maximum_removable_corner_count": 5,
+      "positive_energy_sum_has_no_sign_cancellation": true,
+      "collision_free_expected_energy_lower_bound_proved": false,
+      "coherent_standard_block_projection_compiled": false,
+      "status": "positive-young-edge-energy-signal-bound-and-compiler-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "replace_signed_standard_coefficient_by_positive_energy",
+      "resolved": true,
+      "resolution": "The character projector is orthogonal and central overlap makes the point coefficient exactly its normalized squared energy."
+    },
+    {
+      "obligation": "localize_standard_energy_in_fourier_space",
+      "resolved": true,
+      "resolution": "Tensoring with the standard representation gives the exact shared-child multiplicity rule and a nonnegative block sum."
+    },
+    {
+      "obligation": "lower_bound_collision_free_standard_energy",
+      "resolved": false,
+      "resolution": "No theorem prevents all positive Young-edge block energies from being superpolynomially small under natural distinct sources."
+    },
+    {
+      "obligation": "compile_standard_energy_point_measurement",
+      "resolved": false,
+      "resolution": "Young-edge projection is structurally local, but the source multiplicity kernels still require coherent whitening."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The small standard coefficient may be only destructive class cancellation.",
+      "resolved": true,
+      "resolution": "False. It is a sum of squared standard-isotypic Fourier block norms."
+    },
+    {
+      "objection": "Standard harmonic means only the Fourier irrep (n-1,1) matters.",
+      "resolved": true,
+      "resolution": "False. Standard refers to conjugation on operator space. Finite controls place energy in many nu,mu blocks sharing Young children."
+    },
+    {
+      "objection": "Positivity supplies an inverse-polynomial lower bound.",
+      "resolved": false,
+      "resolution": "A positive sum can still be superpolynomially small; source-law mass and block normalization must be quantified."
+    }
+  ],
+  "headline_metrics": {
+    "standard_operator_projector_theorem_count": 1,
+    "positive_point_energy_identity_theorem_count": 1,
+    "standard_kronecker_young_edge_rule_theorem_count": 1,
+    "multiplicity_validation_count": 6,
+    "finite_energy_control_count": 3,
+    "finite_control_failure_count": 0,
+    "minimum_finite_offdiagonal_energy_fraction": 0.8695652173913043,
+    "collision_free_energy_lower_bound_theorem_count": 0,
+    "coherent_standard_projection_compiler_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "positive_standard_energy_identity_proved": true,
+    "standard_kronecker_young_edge_rule_proved": true,
+    "standard_energy_confined_to_literal_standard_fourier_sector": false,
+    "collision_free_standard_energy_lower_bound_proved": false,
+    "coherent_standard_block_projection_compiled": false,
+    "inverse_polynomial_point_decoder_excess_proved": false,
+    "polynomial_full_hidden_shift_decoder_proved": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "The signal is now a positive local energy target, but neither its natural magnitude nor the physical measurement is controlled."
+  },
+  "status": "positive-standard-energy-identity-proved-asymptotic-bound-open",
+  "summary": "Converted point extraction from a signed class coefficient into an exact positive Young-edge energy sum. This removes a false cancellation concern while exposing the real open gates: source energy and coherent whitening.",
+  "falsifiers_triggered": [
+    "The standard point harmonic is distributed across many Fourier irrep pairs, not confined to the literal standard irrep block.",
+    "Small finite standard coefficients cannot be blamed on cancellation; they represent genuinely small positive operator-space energy.",
+    "Positive Young-edge locality alone gives no inverse-polynomial signal."
+  ]
+}

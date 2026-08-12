@@ -1,0 +1,257 @@
+{
+  "created_at": "2026-08-12T03:42:35.159693+00:00",
+  "theorem_contract": {
+    "source_flip_covariance": "first-m source-pair flips conjugate canonical effects and act transitively by e->e xor h on one final child",
+    "annealed_identity": "E[1_E sum_e Tr(H_e^4)/D]=q E[1_E Tr(H_0^4)/D]",
+    "green_word": "Tr(H_0^4)=Tr(E_0 K E_0 K E_0 K E_0 K)",
+    "conditioning": "valid for every source law and additional event invariant under the first-m source-pair flips, including global distinctness and the optimized rank/second-moment event",
+    "budget": "A one-fixed-leaf physical Green moment at most 1/(8192q), plus distinct crossing at most 1/16384, would leave physical M4 at least 1/16384-o(1). Neither upper bound is proved.",
+    "scope": "This is an orbit reduction, not a natural Green-moment or crossing upper bound."
+  },
+  "finite_controls": [
+    {
+      "control_id": "S3-REPEATED-STANDARD-TRIVIAL-TARGET",
+      "n": 3,
+      "target_partition": [
+        3
+      ],
+      "labels": [
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "child_cube_dimension": 2,
+      "child_leaf_count": 4,
+      "source_flip_count": 4,
+      "ambient_physical_dimension": 64,
+      "common_fiber_dimension": 17,
+      "direct_normalized_diagonal_fourth_moment": 0.12280273437499968,
+      "orbit_averaged_fixed_leaf_fourth_moment_times_leaf_count": 0.12280273437499967,
+      "maximum_flip_covariance_residual": 3.8163916471489756e-17,
+      "common_fiber_dimension_orbit_range": 0,
+      "annealed_single_leaf_identity_residual": 1.3877787807814457e-17,
+      "exact_single_leaf_diagonal_orbit_reduction_verified": true,
+      "status": "single-leaf-diagonal-orbit-reduction-verified"
+    },
+    {
+      "control_id": "S3-REPEATED-STANDARD-STANDARD-TARGET",
+      "n": 3,
+      "target_partition": [
+        2,
+        1
+      ],
+      "labels": [
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "child_cube_dimension": 2,
+      "child_leaf_count": 4,
+      "source_flip_count": 4,
+      "ambient_physical_dimension": 128,
+      "common_fiber_dimension": 52,
+      "direct_normalized_diagonal_fourth_moment": 0.14084201388888906,
+      "orbit_averaged_fixed_leaf_fourth_moment_times_leaf_count": 0.14084201388888898,
+      "maximum_flip_covariance_residual": 4.163336342344337e-17,
+      "common_fiber_dimension_orbit_range": 0,
+      "annealed_single_leaf_identity_residual": 8.326672684688674e-17,
+      "exact_single_leaf_diagonal_orbit_reduction_verified": true,
+      "status": "single-leaf-diagonal-orbit-reduction-verified"
+    },
+    {
+      "control_id": "S3-NONIDENTICAL-SOURCE-STANDARD-TARGET",
+      "n": 3,
+      "target_partition": [
+        2,
+        1
+      ],
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "child_cube_dimension": 2,
+      "child_leaf_count": 4,
+      "source_flip_count": 4,
+      "ambient_physical_dimension": 16,
+      "common_fiber_dimension": 7,
+      "direct_normalized_diagonal_fourth_moment": 0.24008657407407344,
+      "orbit_averaged_fixed_leaf_fourth_moment_times_leaf_count": 0.24008657407407333,
+      "maximum_flip_covariance_residual": 6.938893903907228e-17,
+      "common_fiber_dimension_orbit_range": 0,
+      "annealed_single_leaf_identity_residual": 1.1102230246251565e-16,
+      "exact_single_leaf_diagonal_orbit_reduction_verified": true,
+      "status": "single-leaf-diagonal-orbit-reduction-verified"
+    }
+  ],
+  "theorem": {
+    "covariance": "first-m source-pair flips conjugate canonical effects and act transitively by e->e xor h on one final child",
+    "annealed_identity": "E[1_E sum_e Tr(H_e^4)/D]=q E[1_E Tr(H_0^4)/D]",
+    "fixed_leaf_green_word": "Tr(H_0^4)=Tr(E_0 K E_0 K E_0 K E_0 K)",
+    "conditioning_scope": "valid for every source law and additional event invariant under the first-m source-pair flips, including global distinctness and the optimized rank/second-moment event",
+    "implication": "natural diagonal leakage reduces to one fixed marked-leaf fourth Green/support-projection moment",
+    "arbitrary_flip_invariant_source_law": true,
+    "arbitrary_flip_invariant_event": true,
+    "uniform_outcome_bound_required": false,
+    "theorem_verified": true,
+    "status": "annealed-diagonal-leakage-reduced-to-one-marked-leaf"
+  },
+  "budget": {
+    "optimized_physical_total_noncrossing_floor": "1/4096",
+    "proposed_physical_diagonal_budget": "1/8192",
+    "proposed_physical_distinct_crossing_budget": "1/16384",
+    "resulting_physical_component_M4_margin": "1/16384",
+    "fixed_leaf_budget": "E[1_E Tr(H_0^4)/D]<=1/(8192 q)+o(1)",
+    "accepted_event_flip_invariance_required": true,
+    "budget_has_positive_margin": true,
+    "natural_fixed_leaf_green_moment_bound_proved": false,
+    "natural_distinct_crossing_bound_proved": false,
+    "natural_component_M4_positive": false,
+    "statement": "A one-fixed-leaf physical Green moment at most 1/(8192q), plus distinct crossing at most 1/16384, would leave physical M4 at least 1/16384-o(1). Neither upper bound is proved."
+  },
+  "proof_obligations": [
+    {
+      "obligation": "remove_exponential_outcome_sum_from_annealed_diagonal_term",
+      "resolved": true,
+      "resolution": "Flip transitivity and invariant conditioning give equation (1) exactly."
+    },
+    {
+      "obligation": "bound_one_fixed_natural_leaf_fourth_green_moment",
+      "resolved": false,
+      "resolution": "Evaluate or upper-bound Tr(E_0 K E_0 K E_0 K E_0 K) in the independent Plancherel regular master on the accepted event."
+    },
+    {
+      "obligation": "bound_exact_natural_distinct_crossing_term",
+      "resolved": false,
+      "resolution": "Transfer leaf-marked pressure through exact dependency-support normalization."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "A union bound over all q component outcomes is necessary.",
+      "resolved": true,
+      "resolution": "False for the annealed diagonal trace. Transitivity turns the sum into q times one fixed leaf."
+    },
+    {
+      "objection": "Blockwise Hamming covariance is being assumed.",
+      "resolved": true,
+      "resolution": "No. Only covariance of the source law and accepted event is used; individual source blocks may have unequal leaf moments."
+    },
+    {
+      "objection": "The one-leaf reduction proves its target bound.",
+      "resolved": true,
+      "resolution": "No. Common-span Green normalization can amplify a fixed leaf; equation (2) remains a representation-specific moment problem."
+    }
+  ],
+  "headline_metrics": {
+    "single_leaf_diagonal_orbit_reduction_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "maximum_control_covariance_residual": 6.938893903907228e-17,
+    "maximum_control_annealed_identity_residual": 1.1102230246251565e-16,
+    "optimized_physical_noncrossing_floor": 0.000244140625,
+    "proposed_physical_diagonal_budget": 0.0001220703125,
+    "proposed_physical_crossing_budget": 6.103515625e-05,
+    "proposed_physical_component_M4_margin": 6.103515625e-05,
+    "natural_fixed_leaf_green_moment_theorem_count": 0,
+    "natural_distinct_crossing_theorem_count": 0,
+    "natural_component_M4_lower_bound_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "annealed_diagonal_sum_reduced_to_one_fixed_leaf": true,
+    "uniform_all_outcome_leverage_bound_required": false,
+    "natural_fixed_leaf_fourth_green_moment_controlled": false,
+    "natural_distinct_crossing_pressure_controlled": false,
+    "natural_component_M4_positive": false,
+    "speedup_claim_allowed": false,
+    "reason": "The exponential diagonal sum is gone, but the one fixed-leaf Green moment and exact crossing term remain unbounded naturally."
+  },
+  "status": "natural-diagonal-reduced-to-single-leaf-green-moment",
+  "summary": "Reduced annealed natural component diagonal leakage to one fixed leaf-marked fourth Green moment under invariant conditioning.",
+  "falsifiers_triggered": [
+    "No union bound over exponentially many component outcomes is needed for annealed diagonal leakage.",
+    "Blockwise leaf equality is unnecessary and generally false; only law-level covariance is used.",
+    "The fixed leaf can still be amplified by exact common-span normalization, so the natural moment remains open."
+  ]
+}

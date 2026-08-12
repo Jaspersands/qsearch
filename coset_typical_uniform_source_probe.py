@@ -599,49 +599,6 @@ def write_uniform_source_probe_report(
     payload = asdict(build_uniform_source_probe_report())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-TYPICAL-FIXED-SEPARATOR-UNIFORM-SOURCE",
-                source=str(output_path),
-                claim=(
-                    "The fixed TT1+TC1 separator that splits the audited "
-                    "maximum-dimension self-pairs uniformly resolves arbitrary "
-                    "sampled source partitions."
-                ),
-                reason_invalid=(
-                    "Exact unequal-source character moments prove scalar action "
-                    "on two nontrivial multiplicity-two n=6 blocks with "
-                    "nonzero natural source-pair mass."
-                ),
-                lesson=(
-                    "Search partition-dependent coefficient rules or a larger "
-                    "commutant portfolio, and require a uniform reversible "
-                    "coefficient-selection circuit plus all-source gap theorem."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = (
-            registry_result_id
-            or f"RESULT-{registry_experiment_id}-COSET"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "coset_typical_uniform_source_probe": str(output_path)
-                },
-            )
-        )
     return payload
 
 

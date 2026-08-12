@@ -1,0 +1,280 @@
+{
+  "created_at": "2026-08-12T03:42:34.936066+00:00",
+  "theorem_contract": {
+    "translation_selection": "annealed Tr(A_S1 A_S2 A_S3 A_S4) vanishes unless S1 xor S2 xor S3 xor S4=0",
+    "fixed_leaf_identity": "E[1_E Tr(H_0^4)/D]=q^-4 sum_(S1,S2,S3) E[1_E Tr(A_S1 A_S2 A_S3 A_(S1 xor S2 xor S3))/D]",
+    "coordinate_orbits": "the surviving word expectation depends only on the eight Venn-cell counts of (S1,S2,S3)",
+    "stratum_count": "number of strata=binom(m+7,7)=O(m^7)",
+    "multiplicity": "multiplicity=m!/prod_(a,b,c)c_abc!",
+    "coefficient_normal_form": "for H_x=W*D_xW, A_S=W*Z_SW with Z_S=sum_x chi_S(x)D_x and Z_S^2=I",
+    "conditioning_scope": "Independent Plancherel sources, global-distinct conditioning, the optimized rank/second-moment event, and physical 1/D weight are all invariant and may be inserted in the identity.",
+    "scope": "The reduction removes exponential orbit enumeration, not the representation-specific signed word estimates."
+  },
+  "theorem": {
+    "translation_selection_rule": "annealed Tr(A_S1 A_S2 A_S3 A_S4) vanishes unless S1 xor S2 xor S3 xor S4=0",
+    "fixed_leaf_fourier_identity": "E[1_E Tr(H_0^4)/D]=q^-4 sum_(S1,S2,S3) E[1_E Tr(A_S1 A_S2 A_S3 A_(S1 xor S2 xor S3))/D]",
+    "coordinate_orbit_invariant": "the surviving word expectation depends only on the eight Venn-cell counts of (S1,S2,S3)",
+    "stratum_count": "number of strata=binom(m+7,7)=O(m^7)",
+    "stratum_multiplicity": "multiplicity=m!/prod_(a,b,c)c_abc!",
+    "coefficient_sign_compression": "for H_x=W*D_xW, A_S=W*Z_SW with Z_S=sum_x chi_S(x)D_x and Z_S^2=I",
+    "arbitrary_flip_and_coordinate_invariant_law": true,
+    "arbitrary_invariant_event_and_scalar_weight": true,
+    "theorem_verified": true,
+    "status": "annealed-fixed-leaf-diagonal-reduced-to-polynomial-walsh-strata"
+  },
+  "finite_controls": [
+    {
+      "control_id": "UNIFORM-Q8-R3",
+      "profile_kind": "uniform-scalar-povm",
+      "cube_dimension": 3,
+      "leaf_count": 8,
+      "fiber_dimension": 3,
+      "raw_four_mask_word_count": 4096,
+      "xor_surviving_word_count": 512,
+      "observed_stratum_count": 120,
+      "predicted_stratum_count": 120,
+      "fixed_base_leaf_normalized_fourth_moment": 0.000244140625,
+      "translation_orbit_averaged_fixed_leaf_normalized_fourth_moment": 0.000244140625,
+      "direct_average_leaf_normalized_fourth_moment": 0.000244140625,
+      "xor_surviving_fourier_normalized_fourth_moment_real": 0.000244140625,
+      "xor_surviving_fourier_normalized_fourth_moment_imaginary": 0.0,
+      "strata_reconstructed_normalized_fourth_moment_real": 0.000244140625,
+      "strata_reconstructed_normalized_fourth_moment_imaginary": 0.0,
+      "translation_average_residual": 0.0,
+      "walsh_xor_residual": 0.0,
+      "stratum_reconstruction_residual": 0.0,
+      "maximum_stratum_multinomial_residual": 0,
+      "exact_annealed_fourier_stratum_reduction_verified": true,
+      "status": "annealed-leaf-fourth-moment-reduced-to-polynomial-fourier-strata"
+    },
+    {
+      "control_id": "COARSE-Q16-TWO-BIT-PVM",
+      "profile_kind": "coarse-projection-valued-povm",
+      "cube_dimension": 4,
+      "leaf_count": 16,
+      "fiber_dimension": 4,
+      "raw_four_mask_word_count": 65536,
+      "xor_surviving_word_count": 4096,
+      "observed_stratum_count": 330,
+      "predicted_stratum_count": 330,
+      "fixed_base_leaf_normalized_fourth_moment": 0.0009765625,
+      "translation_orbit_averaged_fixed_leaf_normalized_fourth_moment": 0.0009765625,
+      "direct_average_leaf_normalized_fourth_moment": 0.0009765625,
+      "xor_surviving_fourier_normalized_fourth_moment_real": 0.0009765625,
+      "xor_surviving_fourier_normalized_fourth_moment_imaginary": 0.0,
+      "strata_reconstructed_normalized_fourth_moment_real": 0.0009765625,
+      "strata_reconstructed_normalized_fourth_moment_imaginary": 0.0,
+      "translation_average_residual": 0.0,
+      "walsh_xor_residual": 0.0,
+      "stratum_reconstruction_residual": 0.0,
+      "maximum_stratum_multinomial_residual": 0,
+      "exact_annealed_fourier_stratum_reduction_verified": true,
+      "status": "annealed-leaf-fourth-moment-reduced-to-polynomial-fourier-strata"
+    },
+    {
+      "control_id": "HAAR-Q8-B2-R5",
+      "profile_kind": "noncommutative-haar-block-povm",
+      "cube_dimension": 3,
+      "leaf_count": 8,
+      "fiber_dimension": 5,
+      "raw_four_mask_word_count": 4096,
+      "xor_surviving_word_count": 512,
+      "observed_stratum_count": 120,
+      "predicted_stratum_count": 120,
+      "fixed_base_leaf_normalized_fourth_moment": 0.003979714697656333,
+      "translation_orbit_averaged_fixed_leaf_normalized_fourth_moment": 0.01141653422391721,
+      "direct_average_leaf_normalized_fourth_moment": 0.01141653422391721,
+      "xor_surviving_fourier_normalized_fourth_moment_real": 0.0114165342239172,
+      "xor_surviving_fourier_normalized_fourth_moment_imaginary": 1.2070219498373783e-20,
+      "strata_reconstructed_normalized_fourth_moment_real": 0.011416534223917214,
+      "strata_reconstructed_normalized_fourth_moment_imaginary": 7.807261493520498e-21,
+      "translation_average_residual": 0.0,
+      "walsh_xor_residual": 1.0408347854581954e-17,
+      "stratum_reconstruction_residual": 1.3877788462558956e-17,
+      "maximum_stratum_multinomial_residual": 0,
+      "exact_annealed_fourier_stratum_reduction_verified": true,
+      "status": "annealed-leaf-fourth-moment-reduced-to-polynomial-fourier-strata"
+    },
+    {
+      "control_id": "S3-REPEATED-STANDARD-TRIVIAL-TARGET",
+      "profile_kind": "finite-wreath-canonical-component-povm",
+      "cube_dimension": 2,
+      "leaf_count": 4,
+      "fiber_dimension": 17,
+      "raw_four_mask_word_count": 256,
+      "xor_surviving_word_count": 64,
+      "observed_stratum_count": 36,
+      "predicted_stratum_count": 36,
+      "fixed_base_leaf_normalized_fourth_moment": 0.11557904411764675,
+      "translation_orbit_averaged_fixed_leaf_normalized_fourth_moment": 0.11557904411764676,
+      "direct_average_leaf_normalized_fourth_moment": 0.11557904411764676,
+      "xor_surviving_fourier_normalized_fourth_moment_real": 0.11557904411764668,
+      "xor_surviving_fourier_normalized_fourth_moment_imaginary": 0.0,
+      "strata_reconstructed_normalized_fourth_moment_real": 0.11557904411764669,
+      "strata_reconstructed_normalized_fourth_moment_imaginary": 0.0,
+      "translation_average_residual": 0.0,
+      "walsh_xor_residual": 8.326672684688674e-17,
+      "stratum_reconstruction_residual": 1.3877787807814457e-17,
+      "maximum_stratum_multinomial_residual": 0,
+      "exact_annealed_fourier_stratum_reduction_verified": true,
+      "status": "annealed-leaf-fourth-moment-reduced-to-polynomial-fourier-strata"
+    }
+  ],
+  "scaling_records": [
+    {
+      "cube_dimension": 4,
+      "leaf_count_log2": 4,
+      "surviving_fourier_word_count_log2": 12,
+      "exact_stratum_count": 330,
+      "log2_stratum_count": 8.366322214245816,
+      "stratum_count_polynomial_degree": 7,
+      "exponential_word_enumeration_removed": true,
+      "natural_representative_word_bound_proved": false,
+      "status": "exponential-fourier-words-reduced-to-degree-seven-strata"
+    },
+    {
+      "cube_dimension": 8,
+      "leaf_count_log2": 8,
+      "surviving_fourier_word_count_log2": 24,
+      "exact_stratum_count": 6435,
+      "log2_stratum_count": 12.651724433108065,
+      "stratum_count_polynomial_degree": 7,
+      "exponential_word_enumeration_removed": true,
+      "natural_representative_word_bound_proved": false,
+      "status": "exponential-fourier-words-reduced-to-degree-seven-strata"
+    },
+    {
+      "cube_dimension": 16,
+      "leaf_count_log2": 16,
+      "surviving_fourier_word_count_log2": 48,
+      "exact_stratum_count": 245157,
+      "log2_stratum_count": 17.90334643010939,
+      "stratum_count_polynomial_degree": 7,
+      "exponential_word_enumeration_removed": true,
+      "natural_representative_word_bound_proved": false,
+      "status": "exponential-fourier-words-reduced-to-degree-seven-strata"
+    },
+    {
+      "cube_dimension": 32,
+      "leaf_count_log2": 32,
+      "surviving_fourier_word_count_log2": 96,
+      "exact_stratum_count": 15380937,
+      "log2_stratum_count": 23.874640058543577,
+      "stratum_count_polynomial_degree": 7,
+      "exponential_word_enumeration_removed": true,
+      "natural_representative_word_bound_proved": false,
+      "status": "exponential-fourier-words-reduced-to-degree-seven-strata"
+    },
+    {
+      "cube_dimension": 64,
+      "leaf_count_log2": 64,
+      "surviving_fourier_word_count_log2": 192,
+      "exact_stratum_count": 1329890705,
+      "log2_stratum_count": 30.30866053893556,
+      "stratum_count_polynomial_degree": 7,
+      "exponential_word_enumeration_removed": true,
+      "natural_representative_word_bound_proved": false,
+      "status": "exponential-fourier-words-reduced-to-degree-seven-strata"
+    },
+    {
+      "cube_dimension": 128,
+      "leaf_count_log2": 128,
+      "surviving_fourier_word_count_log2": 384,
+      "exact_stratum_count": 138432467745,
+      "log2_stratum_count": 37.010391393970124,
+      "stratum_count_polynomial_degree": 7,
+      "exponential_word_enumeration_removed": true,
+      "natural_representative_word_bound_proved": false,
+      "status": "exponential-fourier-words-reduced-to-degree-seven-strata"
+    },
+    {
+      "cube_dimension": 256,
+      "leaf_count_log2": 256,
+      "surviving_fourier_word_count_log2": 768,
+      "exact_stratum_count": 15932831090241,
+      "log2_stratum_count": 43.8570678743445,
+      "stratum_count_polynomial_degree": 7,
+      "exponential_word_enumeration_removed": true,
+      "natural_representative_word_bound_proved": false,
+      "status": "exponential-fourier-words-reduced-to-degree-seven-strata"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "remove_exponential_fourier_word_enumeration_from_fixed_leaf_diagonal",
+      "resolved": true,
+      "resolution": "Flip characters impose XOR zero and coordinate exchangeability leaves exactly binom(m+7,7) Venn strata."
+    },
+    {
+      "obligation": "evaluate_natural_representative_compressed_parity_words",
+      "resolved": false,
+      "resolution": "For every relevant eight-cell density, bound the signed regular-master expectation of W*Z_S1W ... W*Z_S4W after support/pseudoinverse normalization."
+    },
+    {
+      "obligation": "sum_stratum_bounds_without_exponential_absolute_value_loss",
+      "resolved": false,
+      "resolution": "Use signed generating functions, saddle-point pressure, or a positive aggregate identity; termwise absolute values are not licensed."
+    },
+    {
+      "obligation": "bound_natural_distinct_crossing_pressure",
+      "resolved": false,
+      "resolution": "The diagonal strata do not settle the separate ordered distinct crossing term."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The fixed leaf itself is translation invariant in each sample.",
+      "resolved": true,
+      "resolution": "False. Translation invariance is at source-law/event level; the base-leaf moment can differ inside one profile."
+    },
+    {
+      "objection": "XOR zero leaves only polynomially many mask triples.",
+      "resolved": true,
+      "resolution": "False before quotienting: it leaves q^3 triples. Coordinate exchangeability is the separate step producing O(m^7) strata."
+    },
+    {
+      "objection": "A polynomial number of strata proves the moment is small.",
+      "resolved": true,
+      "resolution": "No. Multinomial weights sum to q^3 and signed representative words can remain large."
+    },
+    {
+      "objection": "Schatten norms of individual A_S determine ordered four-word traces.",
+      "resolved": true,
+      "resolution": "They do not; relative matrix order and phase-sensitive recoupling remain essential."
+    }
+  ],
+  "headline_metrics": {
+    "annealed_leaf_fourier_stratum_reduction_theorem_count": 1,
+    "finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "maximum_control_walsh_xor_residual": 8.326672684688674e-17,
+    "maximum_control_stratum_residual": 1.3877788462558956e-17,
+    "tail_cube_dimension": 256,
+    "tail_surviving_fourier_word_count_log2": 768,
+    "tail_exact_stratum_count": 15932831090241,
+    "tail_log2_stratum_count": 43.8570678743445,
+    "natural_representative_word_bound_count": 0,
+    "natural_fixed_leaf_diagonal_bound_count": 0,
+    "natural_distinct_crossing_bound_count": 0,
+    "natural_component_M4_lower_bound_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "annealed_non_xor_fourier_words_cancel": true,
+    "surviving_words_reduce_to_polynomial_venn_strata": true,
+    "natural_representative_stratum_words_controlled": false,
+    "natural_fixed_leaf_diagonal_green_moment_controlled": false,
+    "natural_distinct_crossing_pressure_controlled": false,
+    "natural_component_M4_positive": false,
+    "speedup_claim_allowed": false,
+    "reason": "The exponential mask combinatorics are removed, but the signed compressed-parity word expectations and their weighted sum are open."
+  },
+  "status": "annealed-leaf-diagonal-reduced-to-polynomial-fourier-strata",
+  "summary": "Reduced the annealed fixed-leaf fourth moment from exponentially many Walsh words to O(m^7) Venn-pattern expectations, preserving the exact support-normalized natural target.",
+  "falsifiers_triggered": [
+    "Translation symmetry is annealed and does not imply blockwise leaf equality.",
+    "XOR selection alone leaves q^3 words; coordinate exchangeability is essential.",
+    "Polynomial orbit count does not justify termwise absolute-value bounds.",
+    "No natural representative-word estimate, crossing bound, M4, algorithm, or speedup is proved."
+  ]
+}

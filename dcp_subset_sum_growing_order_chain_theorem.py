@@ -414,46 +414,6 @@ def write_growing_order_chain_theorem(
     payload = asdict(run_growing_order_chain_theorem(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n")
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-SUBSET-SUM-NEAR-LOG-GROWING-MOMENT-CHAIN",
-                source=str(path),
-                claim=(
-                    "A nonnegative source bad-tuple moment at any fixed fraction "
-                    "below logarithmic order can retain asymptotic density-one signal."
-                ),
-                reason_invalid=(
-                    "Integer saturation indices bound every non-self Boolean-lattice "
-                    "transfer path by O(k^2 log k), so terminal bad-state contraction "
-                    "dominates whenever 2^k L(k)(log n+k)=o(n)."
-                ),
-                lesson=(
-                    "Search only the final near-log window with full resource accounting, "
-                    "a signed observable, or non-moment reduced-basis geometry."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=list(payload["falsifiers_triggered"]),
-                artifacts={
-                    "dcp_subset_sum_growing_order_chain_theorem": str(path)
-                },
-            )
-        )
     return payload
 
 

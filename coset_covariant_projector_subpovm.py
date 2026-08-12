@@ -527,55 +527,6 @@ def write_covariant_projector_subpovm_report(
     )
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-COVARIANT-SUBPOVM-EFFECTS-NOT-NAIMARK-CIRCUIT",
-                source=str(output_path),
-                claim=(
-                    "The whitening-free covariant projector effects already "
-                    "give an efficient hidden-involution measurement."
-                ),
-                reason_invalid=(
-                    "The theorem specifies one effect per hidden involution "
-                    "but supplies no uniform orbit Naimark dilation, compressed "
-                    "outcome transform, polynomial decoder, or classical "
-                    "separation."
-                ),
-                lesson=(
-                    "Target harmonic synthesis of this particular sub-POVM; "
-                    "its condition-only conclusive bound makes it a sharper "
-                    "architecture than direct PGM frame inversion."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = (
-            registry_result_id
-            or f"RESULT-{registry_experiment_id}-COSET"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=dict(payload["headline_metrics"]),
-                falsifiers_triggered=list(payload["falsifiers_triggered"]),
-                artifacts={
-                    "coset_covariant_projector_subpovm": str(output_path)
-                },
-            )
-        )
     return payload
 
 

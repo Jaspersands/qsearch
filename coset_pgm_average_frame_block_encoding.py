@@ -406,55 +406,6 @@ def write_average_frame_block_encoding_report(
     )
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-PGM-DIRECT-PROJECTED-LCU-NORMALIZATION",
-                source=str(output_path),
-                claim=(
-                    "The compact average-frame subset identity directly yields "
-                    "a polynomial growing-width PGM circuit."
-                ),
-                reason_invalid=(
-                    "The direct projected LCU has exponentially small average "
-                    "spectral scale at k=Theta(n log n) under the stated hard-"
-                    "sector character-ratio envelope. Explicit subset expansion "
-                    "also has 2^k terms."
-                ),
-                lesson=(
-                    "Search a representation-specific spectral amplifier, "
-                    "different frame factorization, or direct covariant "
-                    "measurement that avoids generic frame normalization."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = (
-            registry_result_id
-            or f"RESULT-{registry_experiment_id}-COSET"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=dict(payload["headline_metrics"]),
-                falsifiers_triggered=list(payload["falsifiers_triggered"]),
-                artifacts={
-                    "coset_pgm_average_frame_block_encoding": str(output_path)
-                },
-            )
-        )
     return payload
 
 

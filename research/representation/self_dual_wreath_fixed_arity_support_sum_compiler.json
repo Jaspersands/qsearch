@@ -1,0 +1,439 @@
+{
+  "created_at": "2026-08-12T03:39:51.290390+00:00",
+  "theorem_contract": {
+    "support_functional_calculus": "For fixed R and t<=1/2, the positive MP edge transfers joint freeness from child frames to their support projections.",
+    "free_binomial_law": "The R-way support sum has free-binomial endpoints (sqrt((R-1)t)+-sqrt(1-t))^2 and no atoms for Rt in [2,4).",
+    "uniform_edge": "Uniformly for R>=8 and Rt in [2,4), its spectrum is supported between (sqrt(2)-1)^2 and 9 in the limiting bulk.",
+    "jump_block_encoding": "Uniform coherent SELECT exposes the stacked support analysis over sqrt(R), giving fixed-R QSVT cost O(sqrt(R/a)log(1/error)).",
+    "final_root": "Each jump child has aspect greater than one, so its support is identity off o(D) rank and the final normalized binary stack is already isometric on common bulk.",
+    "compiler_reduction": "A polynomial normalization-one SELECT for flattened early-child routers suffices for polynomial-in-n orientation-polar compilation at every fixed target accuracy.",
+    "scope": "The early router, uniform finite-size edges, target-error efficiency, physical endpoint gauge, decoder, and classical separation remain open.",
+    "theorem_verified": true,
+    "status": "post-router-fixed-arity-and-final-root-compiler-reduced"
+  },
+  "theorem": {
+    "support_functional_calculus": "For fixed R and t<=1/2, the positive MP edge transfers joint freeness from child frames to their support projections.",
+    "free_binomial_law": "The R-way support sum has free-binomial endpoints (sqrt((R-1)t)+-sqrt(1-t))^2 and no atoms for Rt in [2,4).",
+    "uniform_edge": "Uniformly for R>=8 and Rt in [2,4), its spectrum is supported between (sqrt(2)-1)^2 and 9 in the limiting bulk.",
+    "jump_block_encoding": "Uniform coherent SELECT exposes the stacked support analysis over sqrt(R), giving fixed-R QSVT cost O(sqrt(R/a)log(1/error)).",
+    "final_root": "Each jump child has aspect greater than one, so its support is identity off o(D) rank and the final normalized binary stack is already isometric on common bulk.",
+    "compiler_reduction": "A polynomial normalization-one SELECT for flattened early-child routers suffices for polynomial-in-n orientation-polar compilation at every fixed target accuracy.",
+    "scope": "The early router, uniform finite-size edges, target-error efficiency, physical endpoint gauge, decoder, and classical separation remain open.",
+    "theorem_verified": true,
+    "status": "post-router-fixed-arity-and-final-root-compiler-reduced"
+  },
+  "free_binomial_records": [
+    {
+      "jump_arity": 8,
+      "total_aspect": 2.0,
+      "child_support_trace": 0.25,
+      "zero_atom_mass": 0.0,
+      "top_atom_mass": 0.0,
+      "continuous_support_lower": 0.2087121525220801,
+      "continuous_support_upper": 4.791287847477921,
+      "uniform_lower_edge_floor": 0.17157287525381,
+      "uniform_upper_edge_ceiling": 9.0,
+      "no_endpoint_atoms": true,
+      "uniform_edge_bounds_verified": true,
+      "status": "atom-free-free-binomial-uniform-edge"
+    },
+    {
+      "jump_arity": 8,
+      "total_aspect": 2.5,
+      "child_support_trace": 0.3125,
+      "zero_atom_mass": 0.0,
+      "top_atom_mass": 0.0,
+      "continuous_support_lower": 0.42232289120642713,
+      "continuous_support_upper": 5.327677108793574,
+      "uniform_lower_edge_floor": 0.17157287525381,
+      "uniform_upper_edge_ceiling": 9.0,
+      "no_endpoint_atoms": true,
+      "uniform_edge_bounds_verified": true,
+      "status": "atom-free-free-binomial-uniform-edge"
+    },
+    {
+      "jump_arity": 8,
+      "total_aspect": 3.0,
+      "child_support_trace": 0.375,
+      "zero_atom_mass": 0.0,
+      "top_atom_mass": 0.0,
+      "continuous_support_lower": 0.6882623085101004,
+      "continuous_support_upper": 5.811737691489901,
+      "uniform_lower_edge_floor": 0.17157287525381,
+      "uniform_upper_edge_ceiling": 9.0,
+      "no_endpoint_atoms": true,
+      "uniform_edge_bounds_verified": true,
+      "status": "atom-free-free-binomial-uniform-edge"
+    },
+    {
+      "jump_arity": 8,
+      "total_aspect": 3.999,
+      "child_support_trace": 0.499875,
+      "zero_atom_mass": 0.0,
+      "top_atom_mass": 0.0,
+      "continuous_support_lower": 1.3534987716151397,
+      "continuous_support_upper": 6.645001228384861,
+      "uniform_lower_edge_floor": 0.17157287525381,
+      "uniform_upper_edge_ceiling": 9.0,
+      "no_endpoint_atoms": true,
+      "uniform_edge_bounds_verified": true,
+      "status": "atom-free-free-binomial-uniform-edge"
+    },
+    {
+      "jump_arity": 16,
+      "total_aspect": 2.0,
+      "child_support_trace": 0.125,
+      "zero_atom_mass": 0.0,
+      "top_atom_mass": 0.0,
+      "continuous_support_lower": 0.18826230851010042,
+      "continuous_support_upper": 5.3117376914899,
+      "uniform_lower_edge_floor": 0.17157287525381,
+      "uniform_upper_edge_ceiling": 9.0,
+      "no_endpoint_atoms": true,
+      "uniform_edge_bounds_verified": true,
+      "status": "atom-free-free-binomial-uniform-edge"
+    },
+    {
+      "jump_arity": 16,
+      "total_aspect": 2.5,
+      "child_support_trace": 0.15625,
+      "zero_atom_mass": 0.0,
+      "top_atom_mass": 0.0,
+      "continuous_support_lower": 0.37499999999999994,
+      "continuous_support_upper": 5.999999999999999,
+      "uniform_lower_edge_floor": 0.17157287525381,
+      "uniform_upper_edge_ceiling": 9.0,
+      "no_endpoint_atoms": true,
+      "uniform_edge_bounds_verified": true,
+      "status": "atom-free-free-binomial-uniform-edge"
+    },
+    {
+      "jump_arity": 16,
+      "total_aspect": 3.0,
+      "child_support_trace": 0.1875,
+      "zero_atom_mass": 0.0,
+      "top_atom_mass": 0.0,
+      "continuous_support_lower": 0.6016533443880441,
+      "continuous_support_upper": 6.648346655611957,
+      "uniform_lower_edge_floor": 0.17157287525381,
+      "uniform_upper_edge_ceiling": 9.0,
+      "no_endpoint_atoms": true,
+      "uniform_edge_bounds_verified": true,
+      "status": "atom-free-free-binomial-uniform-edge"
+    },
+    {
+      "jump_arity": 16,
+      "total_aspect": 3.999,
+      "child_support_trace": 0.2499375,
+      "zero_atom_mass": 0.0,
+      "top_atom_mass": 0.0,
+      "continuous_support_lower": 1.1453025888361348,
+      "continuous_support_upper": 7.852947411163865,
+      "uniform_lower_edge_floor": 0.17157287525381,
+      "uniform_upper_edge_ceiling": 9.0,
+      "no_endpoint_atoms": true,
+      "uniform_edge_bounds_verified": true,
+      "status": "atom-free-free-binomial-uniform-edge"
+    },
+    {
+      "jump_arity": 256,
+      "total_aspect": 2.0,
+      "child_support_trace": 0.0078125,
+      "zero_atom_mass": 0.0,
+      "top_atom_mass": 0.0,
+      "continuous_support_lower": 0.172526117036159,
+      "continuous_support_upper": 5.796223882963841,
+      "uniform_lower_edge_floor": 0.17157287525381,
+      "uniform_upper_edge_ceiling": 9.0,
+      "no_endpoint_atoms": true,
+      "uniform_edge_bounds_verified": true,
+      "status": "atom-free-free-binomial-uniform-edge"
+    },
+    {
+      "jump_arity": 256,
+      "total_aspect": 2.5,
+      "child_support_trace": 0.009765625,
+      "zero_atom_mass": 0.0,
+      "top_atom_mass": 0.0,
+      "continuous_support_lower": 0.3398218867365476,
+      "continuous_support_upper": 6.621115613263454,
+      "uniform_lower_edge_floor": 0.17157287525381,
+      "uniform_upper_edge_ceiling": 9.0,
+      "no_endpoint_atoms": true,
+      "uniform_edge_bounds_verified": true,
+      "status": "atom-free-free-binomial-uniform-edge"
+    },
+    {
+      "jump_arity": 256,
+      "total_aspect": 3.0,
+      "child_support_trace": 0.01171875,
+      "zero_atom_mass": 0.0,
+      "top_atom_mass": 0.0,
+      "continuous_support_lower": 0.5395508159339929,
+      "continuous_support_upper": 7.413574184066007,
+      "uniform_lower_edge_floor": 0.17157287525381,
+      "uniform_upper_edge_ceiling": 9.0,
+      "no_endpoint_atoms": true,
+      "uniform_edge_bounds_verified": true,
+      "status": "atom-free-free-binomial-uniform-edge"
+    },
+    {
+      "jump_arity": 256,
+      "total_aspect": 3.999,
+      "child_support_trace": 0.01562109375,
+      "zero_atom_mass": 0.0,
+      "top_atom_mass": 0.0,
+      "continuous_support_lower": 1.0073769364156318,
+      "continuous_support_upper": 8.928138688584369,
+      "uniform_lower_edge_floor": 0.17157287525381,
+      "uniform_upper_edge_ceiling": 9.0,
+      "no_endpoint_atoms": true,
+      "uniform_edge_bounds_verified": true,
+      "status": "atom-free-free-binomial-uniform-edge"
+    },
+    {
+      "jump_arity": 65536,
+      "total_aspect": 2.0,
+      "child_support_trace": 3.0517578125e-05,
+      "zero_atom_mass": 0.0,
+      "top_atom_mass": 0.0,
+      "continuous_support_lower": 0.17157657773919263,
+      "continuous_support_upper": 5.828301351948308,
+      "uniform_lower_edge_floor": 0.17157287525381,
+      "uniform_upper_edge_ceiling": 9.0,
+      "no_endpoint_atoms": true,
+      "uniform_edge_bounds_verified": true,
+      "status": "atom-free-free-binomial-uniform-edge"
+    },
+    {
+      "jump_arity": 65536,
+      "total_aspect": 2.5,
+      "child_support_trace": 3.814697265625e-05,
+      "zero_atom_mass": 0.0,
+      "top_atom_mass": 0.0,
+      "continuous_support_lower": 0.33773048801699485,
+      "continuous_support_upper": 6.662116924092381,
+      "uniform_lower_edge_floor": 0.17157287525381,
+      "uniform_upper_edge_ceiling": 9.0,
+      "no_endpoint_atoms": true,
+      "uniform_edge_bounds_verified": true,
+      "status": "atom-free-free-binomial-uniform-edge"
+    },
+    {
+      "jump_arity": 65536,
+      "total_aspect": 3.0,
+      "child_support_trace": 4.57763671875e-05,
+      "zero_atom_mass": 0.0,
+      "top_atom_mass": 0.0,
+      "continuous_support_lower": 0.5359125485228301,
+      "continuous_support_upper": 7.46390434600842,
+      "uniform_lower_edge_floor": 0.17157287525381,
+      "uniform_upper_edge_ceiling": 9.0,
+      "no_endpoint_atoms": true,
+      "uniform_edge_bounds_verified": true,
+      "status": "atom-free-free-binomial-uniform-edge"
+    },
+    {
+      "jump_arity": 65536,
+      "total_aspect": 3.999,
+      "child_support_trace": 6.10198974609375e-05,
+      "zero_atom_mass": 0.0,
+      "top_atom_mass": 0.0,
+      "continuous_support_lower": 0.9995305308081169,
+      "continuous_support_upper": 8.998225389602037,
+      "uniform_lower_edge_floor": 0.17157287525381,
+      "uniform_upper_edge_ceiling": 9.0,
+      "no_endpoint_atoms": true,
+      "uniform_edge_bounds_verified": true,
+      "status": "atom-free-free-binomial-uniform-edge"
+    }
+  ],
+  "stack_controls": [
+    {
+      "control_id": "ORTHOGONAL-EIGHT-WAY",
+      "ambient_dimension": 16,
+      "arity": 8,
+      "support_ranks": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "stacked_gram_residual": 0.0,
+      "normalized_stacked_operator_norm": 0.35355339059327373,
+      "predicted_normalized_operator_norm": 0.3535533905932738,
+      "positive_singular_value_minimum": 1.0,
+      "positive_singular_value_maximum": 1.0,
+      "qsvt_window_lower": 0.17157287525381,
+      "qsvt_condition_proxy": 6.828427124746188,
+      "exact_stacked_prepare_select_identity_verified": true,
+      "status": "exact-stacked-prepare-select-block-identity"
+    },
+    {
+      "control_id": "FINAL-COMMON-BULK",
+      "ambient_dimension": 16,
+      "arity": 2,
+      "support_ranks": [
+        12,
+        12
+      ],
+      "stacked_gram_residual": 0.0,
+      "normalized_stacked_operator_norm": 1.0,
+      "predicted_normalized_operator_norm": 1.0,
+      "positive_singular_value_minimum": 1.0,
+      "positive_singular_value_maximum": 1.4142135623730951,
+      "qsvt_window_lower": 1.0,
+      "qsvt_condition_proxy": 1.4142135623730951,
+      "exact_stacked_prepare_select_identity_verified": true,
+      "status": "exact-stacked-prepare-select-block-identity"
+    }
+  ],
+  "scaling_records": [
+    {
+      "jump_log2_arity": 8,
+      "jump_arity_decimal": "256",
+      "target_qsvt_error": 1e-06,
+      "fixed_spectral_window_lower": 0.1,
+      "qsvt_select_call_upper_proxy": 700,
+      "final_common_bulk_select_call_count": 1,
+      "jump_arity_fixed_before_n_limit": true,
+      "jump_qsvt_overhead_constant_in_n": true,
+      "final_root_overhead_constant_in_n": true,
+      "flattened_early_router_assumed": true,
+      "flattened_early_router_proved": false,
+      "status": "post-router-constant-in-n-endpoint-compiler"
+    },
+    {
+      "jump_log2_arity": 16,
+      "jump_arity_decimal": "65536",
+      "target_qsvt_error": 1e-06,
+      "fixed_spectral_window_lower": 0.1,
+      "qsvt_select_call_upper_proxy": 11185,
+      "final_common_bulk_select_call_count": 1,
+      "jump_arity_fixed_before_n_limit": true,
+      "jump_qsvt_overhead_constant_in_n": true,
+      "final_root_overhead_constant_in_n": true,
+      "flattened_early_router_assumed": true,
+      "flattened_early_router_proved": false,
+      "status": "post-router-constant-in-n-endpoint-compiler"
+    },
+    {
+      "jump_log2_arity": 24,
+      "jump_arity_decimal": "16777216",
+      "target_qsvt_error": 1e-06,
+      "fixed_spectral_window_lower": 0.1,
+      "qsvt_select_call_upper_proxy": 178949,
+      "final_common_bulk_select_call_count": 1,
+      "jump_arity_fixed_before_n_limit": true,
+      "jump_qsvt_overhead_constant_in_n": true,
+      "final_root_overhead_constant_in_n": true,
+      "flattened_early_router_assumed": true,
+      "flattened_early_router_proved": false,
+      "status": "post-router-constant-in-n-endpoint-compiler"
+    },
+    {
+      "jump_log2_arity": 32,
+      "jump_arity_decimal": "4294967296",
+      "target_qsvt_error": 1e-06,
+      "fixed_spectral_window_lower": 0.1,
+      "qsvt_select_call_upper_proxy": 2863169,
+      "final_common_bulk_select_call_count": 1,
+      "jump_arity_fixed_before_n_limit": true,
+      "jump_qsvt_overhead_constant_in_n": true,
+      "final_root_overhead_constant_in_n": true,
+      "flattened_early_router_assumed": true,
+      "flattened_early_router_proved": false,
+      "status": "post-router-constant-in-n-endpoint-compiler"
+    },
+    {
+      "jump_log2_arity": 40,
+      "jump_arity_decimal": "1099511627776",
+      "target_qsvt_error": 1e-06,
+      "fixed_spectral_window_lower": 0.1,
+      "qsvt_select_call_upper_proxy": 45810693,
+      "final_common_bulk_select_call_count": 1,
+      "jump_arity_fixed_before_n_limit": true,
+      "jump_qsvt_overhead_constant_in_n": true,
+      "final_root_overhead_constant_in_n": true,
+      "flattened_early_router_assumed": true,
+      "flattened_early_router_proved": false,
+      "status": "post-router-constant-in-n-endpoint-compiler"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_natural_fixed_arity_support_sum_law",
+      "resolved": true,
+      "resolution": "Fixed joint freeness plus separated support functional calculus gives free Bernoulli projections and equation (1)."
+    },
+    {
+      "obligation": "show_fixed_R_jump_is_not_an_n_asymptotic_access_barrier",
+      "resolved": true,
+      "resolution": "The free-binomial edge and stacked block identity make its QSVT overhead constant in n for fixed R."
+    },
+    {
+      "obligation": "show_final_root_is_not_an_n_asymptotic_access_barrier",
+      "resolved": true,
+      "resolution": "Aspect greater than one gives asymptotically full supports; the normalized binary stack is an isometry on common bulk."
+    },
+    {
+      "obligation": "construct_flattened_early_orientation_support_router",
+      "resolved": false,
+      "resolution": "This is the sole remaining orientation-polar access primitive after the reduction."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Frame freeness automatically implies support freeness without an edge argument.",
+      "resolved": true,
+      "resolution": "The transfer explicitly uses t<=1/2, the separated positive MP edge, and fixed functional calculus before the support limit."
+    },
+    {
+      "objection": "Normalization sqrt(R) is polynomial because R is fixed.",
+      "resolved": true,
+      "resolution": "It is constant in n but may be enormous as a function of target accuracy; no efficient-error claim is made."
+    },
+    {
+      "objection": "Weak limiting support proves a uniform finite-n operator edge.",
+      "resolved": false,
+      "resolution": "Only a fixed-window, vanishing-rank/native-mass trim follows; exceptional finite-n modes remain legal."
+    },
+    {
+      "objection": "The conditional post-router compiler constructs the missing router.",
+      "resolved": false,
+      "resolution": "No. It isolates and assumes a normalization-one coherent SELECT for the flattened early children."
+    }
+  ],
+  "headline_metrics": {
+    "natural_free_binomial_support_sum_theorem_count": 1,
+    "fixed_R_jump_constant_in_n_compiler_reduction_count": 1,
+    "final_root_common_bulk_compiler_reduction_count": 1,
+    "free_binomial_record_count": 16,
+    "finite_stack_control_count": 2,
+    "finite_control_failure_count": 0,
+    "uniform_free_binomial_lower_edge": 0.17157287525381,
+    "flattened_early_router_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "fixed_arity_support_sum_free_binomial_law_proved": true,
+    "fixed_R_jump_overhead_constant_in_n_given_router": true,
+    "final_root_overhead_constant_in_n_given_router": true,
+    "uniform_finite_n_operator_edge_proved": false,
+    "target_error_polynomial_complexity_proved": false,
+    "flattened_early_orientation_router_proved": false,
+    "orientation_polar_compiled_unconditionally": false,
+    "end_to_end_algorithm_proved": false,
+    "speedup_claim_allowed": false
+  },
+  "status": "post-router-fixed-arity-and-final-root-compiler-reduced",
+  "summary": "Derived the fixed-arity free-binomial support-sum law and reduced the jump plus final root to constant-in-n overhead conditional on one flattened early orientation-support router. That router remains unconstructed, so the orientation polar and speedup remain open.",
+  "falsifiers_triggered": [
+    "After a flattened early router, fixed-arity endpoint normalization is not an additional asymptotic-in-n barrier.",
+    "The remaining compiler cannot be completed by substituting weak limiting edges for uniform finite-size access guarantees."
+  ]
+}

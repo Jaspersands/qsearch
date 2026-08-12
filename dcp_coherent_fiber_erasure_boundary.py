@@ -365,56 +365,6 @@ def write_coherent_fiber_erasure_boundary_report(
     output_path.write_text(
         json.dumps(payload, indent=2, sort_keys=True)
     )
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-BLACK-BOX-INDEX-ERASURE-LOWER-BOUND-TRANSFER",
-                source=str(output_path),
-                claim=(
-                    "The black-box non-coherent index-erasure lower bound "
-                    "directly rules out polynomial DCP subset-sum fiber erasure."
-                ),
-                reason_invalid=(
-                    "DCP exposes public arithmetic labels and a structured "
-                    "many-to-one map, outside the arbitrary injective black-box "
-                    "model of the lower bound."
-                ),
-                lesson=(
-                    "Use index erasure as a generic baseline. Prove a "
-                    "structure-preserving reduction before transferring any "
-                    "lower bound, and separately charge target-addressable "
-                    "support-decision or fixed-variable witness obligations."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    INDEX_ERASURE_LITERATURE_ID,
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload[
-                    "falsifiers_triggered"
-                ],
-                artifacts={
-                    "dcp_coherent_fiber_erasure_boundary": str(
-                        output_path
-                    )
-                },
-            )
-        )
     return payload
 
 

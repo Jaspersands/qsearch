@@ -1,0 +1,356 @@
+{
+  "created_at": "2026-08-12T03:39:51.411665+00:00",
+  "theorem_contract": {
+    "native_joint_state": "tau_g[(s,z),(t,w)]=( |G| dim(C) )^-1 Tr[K_w(t^-1g)^* K_z(s^-1g)].",
+    "covariance": "tau_g=(L_g tensor I)tau_e(L_g^* tensor I).",
+    "marginal_independence": "Both Tr_character(tau_g) and Tr_group(tau_g) are independent of g; all label information is correlation-only.",
+    "schur_factorization": "F_G bar(tau) F_G^*=direct_sum_nu I_(d_nu)/d_nu tensor D_nu.",
+    "algorithmic_reduction": "The joint covariant PGM requires controlled D_nu^-1/2 and the efficient S_n QFT, without branch erasure.",
+    "scope": "Finite informative controls prove a mechanism, not all-n extensive information, inverse-polynomial conditioning, block encoding, or speedup.",
+    "theorem_verified": true,
+    "status": "joint-character-correlation-mechanism-multiplicity-inverse-open"
+  },
+  "theorem": {
+    "native_joint_state": "tau_g[(s,z),(t,w)]=( |G| dim(C) )^-1 Tr[K_w(t^-1g)^* K_z(s^-1g)].",
+    "covariance": "tau_g=(L_g tensor I)tau_e(L_g^* tensor I).",
+    "marginal_independence": "Both Tr_character(tau_g) and Tr_group(tau_g) are independent of g; all label information is correlation-only.",
+    "schur_factorization": "F_G bar(tau) F_G^*=direct_sum_nu I_(d_nu)/d_nu tensor D_nu.",
+    "algorithmic_reduction": "The joint covariant PGM requires controlled D_nu^-1/2 and the efficient S_n QFT, without branch erasure.",
+    "scope": "Finite informative controls prove a mechanism, not all-n extensive information, inverse-polynomial conditioning, block encoding, or speedup.",
+    "theorem_verified": true,
+    "status": "joint-character-correlation-mechanism-multiplicity-inverse-open"
+  },
+  "finite_controls": [
+    {
+      "control_id": "W3-SINGLE-UNEQUAL",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "group_order": 6,
+      "copy_count": 1,
+      "orientation_character_count": 2,
+      "source_carrier_dimension": 2,
+      "joint_register_dimension": 12,
+      "joint_state_rank": 4,
+      "average_state_rank": 5,
+      "maximum_covariance_residual": 0.0,
+      "maximum_group_marginal_label_variation": 4.277421474636179e-17,
+      "maximum_character_marginal_label_variation": 1.1102230246251565e-16,
+      "maximum_joint_state_label_variation": 0.4330127018922194,
+      "maximum_schur_factorization_residual": 7.743301529425831e-17,
+      "maximum_multiplicity_condition_number": 1.0000000000000002,
+      "maximum_character_offdiagonal_block_norm": 0.35355339059327384,
+      "joint_holevo_information_bits": 0.45120505930460153,
+      "hidden_label_entropy_bits": 2.584962500721156,
+      "holevo_information_fraction": 0.17454994383041292,
+      "joint_pretty_good_success": 0.2500000000000002,
+      "optimal_right_correction_success": 0.2916666666666667,
+      "pretty_good_minus_right_correction_success": -0.04166666666666646,
+      "random_guess_success": 0.16666666666666666,
+      "exact_joint_correlation_theorem_verified": true,
+      "status": "exact-joint-character-correlation-mechanism"
+    },
+    {
+      "control_id": "W3-INFORMATION-THRESHOLD",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "group_order": 6,
+      "copy_count": 3,
+      "orientation_character_count": 8,
+      "source_carrier_dimension": 4,
+      "joint_register_dimension": 48,
+      "joint_state_rank": 11,
+      "average_state_rank": 30,
+      "maximum_covariance_residual": 0.0,
+      "maximum_group_marginal_label_variation": 4.6092748560941446e-17,
+      "maximum_character_marginal_label_variation": 2.7755575615628914e-17,
+      "maximum_joint_state_label_variation": 0.4225249152936298,
+      "maximum_schur_factorization_residual": 2.8677305607864804e-17,
+      "maximum_multiplicity_condition_number": 10.403882032022072,
+      "maximum_character_offdiagonal_block_norm": 0.1269381000724369,
+      "joint_holevo_information_bits": 1.6233598503761373,
+      "hidden_label_entropy_bits": 2.584962500721156,
+      "holevo_information_fraction": 0.6280013152698541,
+      "joint_pretty_good_success": 0.5890004748950277,
+      "optimal_right_correction_success": 0.4895833333333333,
+      "pretty_good_minus_right_correction_success": 0.0994171415616944,
+      "random_guess_success": 0.16666666666666666,
+      "exact_joint_correlation_theorem_verified": true,
+      "status": "exact-joint-character-correlation-mechanism"
+    },
+    {
+      "control_id": "W4-COLLISION-FREE-PAIR",
+      "n": 4,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "group_order": 24,
+      "copy_count": 2,
+      "orientation_character_count": 4,
+      "source_carrier_dimension": 18,
+      "joint_register_dimension": 96,
+      "joint_state_rank": 51,
+      "average_state_rank": 54,
+      "maximum_covariance_residual": 0.0,
+      "maximum_group_marginal_label_variation": 5.199010279858846e-17,
+      "maximum_character_marginal_label_variation": 5.551115123125784e-17,
+      "maximum_joint_state_label_variation": 0.098614513961928,
+      "maximum_schur_factorization_residual": 5.0136123587488424e-17,
+      "maximum_multiplicity_condition_number": 4.599485800859729,
+      "maximum_character_offdiagonal_block_norm": 0.14566789557918763,
+      "joint_holevo_information_bits": 0.28622747816733973,
+      "hidden_label_entropy_bits": 4.584962500721156,
+      "holevo_information_fraction": 0.062427441472491824,
+      "joint_pretty_good_success": 0.05890034622419899,
+      "optimal_right_correction_success": 0.08796296296296295,
+      "pretty_good_minus_right_correction_success": -0.02906261673876396,
+      "random_guess_success": 0.041666666666666664,
+      "exact_joint_correlation_theorem_verified": true,
+      "status": "exact-joint-character-correlation-mechanism"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 8,
+      "information_threshold_copy_count": 16,
+      "group_register_qubits": 16,
+      "orientation_character_qubits": 16,
+      "joint_register_qubit_upper_bound": 32,
+      "row_copy_and_walsh_polynomial": true,
+      "symmetric_group_qft_polynomial": true,
+      "branch_erasure_required": false,
+      "all_n_extensive_holevo_information_proved": false,
+      "multiplicity_operator_block_encoding_proved": false,
+      "inverse_polynomial_multiplicity_conditioning_proved": false,
+      "polynomial_joint_decoder_proved": false,
+      "status": "joint-correlation-access-polynomial-multiplicity-inverse-open"
+    },
+    {
+      "n": 16,
+      "information_threshold_copy_count": 45,
+      "group_register_qubits": 45,
+      "orientation_character_qubits": 45,
+      "joint_register_qubit_upper_bound": 90,
+      "row_copy_and_walsh_polynomial": true,
+      "symmetric_group_qft_polynomial": true,
+      "branch_erasure_required": false,
+      "all_n_extensive_holevo_information_proved": false,
+      "multiplicity_operator_block_encoding_proved": false,
+      "inverse_polynomial_multiplicity_conditioning_proved": false,
+      "polynomial_joint_decoder_proved": false,
+      "status": "joint-correlation-access-polynomial-multiplicity-inverse-open"
+    },
+    {
+      "n": 32,
+      "information_threshold_copy_count": 118,
+      "group_register_qubits": 118,
+      "orientation_character_qubits": 118,
+      "joint_register_qubit_upper_bound": 236,
+      "row_copy_and_walsh_polynomial": true,
+      "symmetric_group_qft_polynomial": true,
+      "branch_erasure_required": false,
+      "all_n_extensive_holevo_information_proved": false,
+      "multiplicity_operator_block_encoding_proved": false,
+      "inverse_polynomial_multiplicity_conditioning_proved": false,
+      "polynomial_joint_decoder_proved": false,
+      "status": "joint-correlation-access-polynomial-multiplicity-inverse-open"
+    },
+    {
+      "n": 64,
+      "information_threshold_copy_count": 296,
+      "group_register_qubits": 296,
+      "orientation_character_qubits": 296,
+      "joint_register_qubit_upper_bound": 592,
+      "row_copy_and_walsh_polynomial": true,
+      "symmetric_group_qft_polynomial": true,
+      "branch_erasure_required": false,
+      "all_n_extensive_holevo_information_proved": false,
+      "multiplicity_operator_block_encoding_proved": false,
+      "inverse_polynomial_multiplicity_conditioning_proved": false,
+      "polynomial_joint_decoder_proved": false,
+      "status": "joint-correlation-access-polynomial-multiplicity-inverse-open"
+    },
+    {
+      "n": 128,
+      "information_threshold_copy_count": 717,
+      "group_register_qubits": 717,
+      "orientation_character_qubits": 717,
+      "joint_register_qubit_upper_bound": 1434,
+      "row_copy_and_walsh_polynomial": true,
+      "symmetric_group_qft_polynomial": true,
+      "branch_erasure_required": false,
+      "all_n_extensive_holevo_information_proved": false,
+      "multiplicity_operator_block_encoding_proved": false,
+      "inverse_polynomial_multiplicity_conditioning_proved": false,
+      "polynomial_joint_decoder_proved": false,
+      "status": "joint-correlation-access-polynomial-multiplicity-inverse-open"
+    },
+    {
+      "n": 256,
+      "information_threshold_copy_count": 1684,
+      "group_register_qubits": 1684,
+      "orientation_character_qubits": 1684,
+      "joint_register_qubit_upper_bound": 3368,
+      "row_copy_and_walsh_polynomial": true,
+      "symmetric_group_qft_polynomial": true,
+      "branch_erasure_required": false,
+      "all_n_extensive_holevo_information_proved": false,
+      "multiplicity_operator_block_encoding_proved": false,
+      "inverse_polynomial_multiplicity_conditioning_proved": false,
+      "polynomial_joint_decoder_proved": false,
+      "status": "joint-correlation-access-polynomial-multiplicity-inverse-open"
+    },
+    {
+      "n": 512,
+      "information_threshold_copy_count": 3876,
+      "group_register_qubits": 3876,
+      "orientation_character_qubits": 3876,
+      "joint_register_qubit_upper_bound": 7752,
+      "row_copy_and_walsh_polynomial": true,
+      "symmetric_group_qft_polynomial": true,
+      "branch_erasure_required": false,
+      "all_n_extensive_holevo_information_proved": false,
+      "multiplicity_operator_block_encoding_proved": false,
+      "inverse_polynomial_multiplicity_conditioning_proved": false,
+      "polynomial_joint_decoder_proved": false,
+      "status": "joint-correlation-access-polynomial-multiplicity-inverse-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_exact_joint_retained_character_state",
+      "resolved": true,
+      "resolution": "The operator-valued Walsh amplitudes give tau_g exactly and intertwine hidden labels with the left regular action."
+    },
+    {
+      "obligation": "separate_marginal_signal_from_correlation_signal",
+      "resolved": true,
+      "resolution": "Each marginal is label independent while finite joint states have positive Holevo information and non-random PGM success."
+    },
+    {
+      "obligation": "prove_all_n_extensive_joint_holevo_information",
+      "resolved": false,
+      "resolution": "No natural Plancherel tuple theorem yet lower-bounds chi({tau_g}) by log(n!)-O(polylog(n))."
+    },
+    {
+      "obligation": "compile_joint_multiplicity_inverse",
+      "resolved": false,
+      "resolution": "A coherent block encoding and inverse-polynomial bulk condition for D_nu have not been constructed."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The class-function character probability no-go removes all retained-character information.",
+      "resolved": true,
+      "resolution": "False: it removes diagonal character-only decoding. Off-diagonal group--character correlations vary with the hidden label."
+    },
+    {
+      "objection": "Positive finite Holevo information gives a scalable decoder.",
+      "resolved": false,
+      "resolution": "The W3 threshold control retains substantial information, but W4 low-copy controls are weak and no all-n theorem exists."
+    },
+    {
+      "objection": "The mixed-state PGM must dominate the classical right-correction decoder.",
+      "resolved": true,
+      "resolution": "False in the W4 low-copy control. The report records both implemented baselines and does not call the PGM optimal."
+    },
+    {
+      "objection": "The Schur form makes the PGM automatically efficient.",
+      "resolved": false,
+      "resolution": "The source-dependent multiplicity operators D_nu may be wide, ill-conditioned, or lack an efficient coherent block encoding."
+    }
+  ],
+  "headline_metrics": {
+    "exact_joint_state_theorem_count": 1,
+    "marginal_independence_theorem_count": 1,
+    "covariant_schur_factorization_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "finite_positive_holevo_control_count": 3,
+    "maximum_finite_holevo_information_fraction": 0.6280013152698541,
+    "maximum_finite_joint_pretty_good_success": 0.5890004748950277,
+    "pgm_beats_right_correction_control_count": 1,
+    "all_n_extensive_information_theorem_count": 0,
+    "multiplicity_inverse_compiler_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "joint_group_character_state_is_hidden_label_dependent": true,
+    "group_marginal_contains_hidden_label_information": false,
+    "character_marginal_contains_hidden_label_information": false,
+    "joint_correlations_contain_finite_hidden_label_information": true,
+    "branch_erasure_required_for_this_route": false,
+    "all_n_extensive_joint_information_proved": false,
+    "joint_multiplicity_block_encoding_proved": false,
+    "joint_multiplicity_conditioning_proved": false,
+    "polynomial_joint_decoder_proved": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false
+  },
+  "status": "joint-character-correlation-mechanism-multiplicity-inverse-open",
+  "summary": "Retaining the group and orientation-character registers exposes hidden-label-dependent quantum correlations with label-independent marginals. The PGM reduces to new multiplicity operators D_nu, whose asymptotic information and implementation are now the open gates.",
+  "falsifiers_triggered": [
+    "The conjugacy-class probability bound does not extend to the coherent joint group--character state.",
+    "Neither retained register is individually informative; any positive decoder must preserve and process their quantum correlations.",
+    "Avoiding branch erasure relocates rather than automatically solves the state-dependent multiplicity inverse problem."
+  ]
+}

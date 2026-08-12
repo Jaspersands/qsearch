@@ -1,0 +1,494 @@
+{
+  "created_at": "2026-08-12T03:39:38.148099+00:00",
+  "theorem_contract": {
+    "branch_error_identity": "epsilon=sum_s Tr(C_s rho C_s^* L_s), exactly equal to the ideal-versus-trimmed coherent Naimark mean-square error",
+    "parent_bound": "epsilon<=(kappa/r)sum_s tau_s B_s, with the sharper endpoint-weighted factor ||C_s||^2 available branchwise",
+    "postselection_rule": "endpoint probability times the normalized child-flatness bound is bounded directly on the unnormalized branch state",
+    "recursive_hybrid": "if ideal-prefix level errors are epsilon_l, total mean-square error is at most (sum_l sqrt(epsilon_l))^2",
+    "natural_final_root": "for two children with r/N_s>=19/520 and B_s<=N_s, tau=eta(19/1040)/kappa gives branch-averaged error at most eta",
+    "scope": "Native root-state flatness, aggregate rank budgets at every level, coherent effect thresholding/SELECT, and the recursive circuit remain unproved. Conditional branches are not individually close."
+  },
+  "finite_controls": [
+    {
+      "control_id": "BALANCED-UNIFORM-PARENT",
+      "parent_dimension": 2,
+      "branch_count": 2,
+      "parent_state_flatness": 1.0,
+      "endpoint_column_isometry_residual": 2.220446049250313e-16,
+      "branch_details": [
+        {
+          "branch_index": 0,
+          "output_dimension": 2,
+          "endpoint_probability": 0.4999999999999999,
+          "endpoint_operator_norm_squared": 0.4999999999999999,
+          "conditional_child_flatness": 1.0,
+          "component_rank_budget": 4,
+          "truncation_threshold": 0.1,
+          "discarded_effect_trace": 0.03,
+          "exact_branch_weighted_failure": 0.007499999999999998,
+          "conditional_flatness_failure_upper_bound": 0.09999999999999998,
+          "parent_flatness_branch_upper_bound": 0.09999999999999998,
+          "status": "coherent-branch-parent-budget-verified"
+        },
+        {
+          "branch_index": 1,
+          "output_dimension": 2,
+          "endpoint_probability": 0.4999999999999999,
+          "endpoint_operator_norm_squared": 0.4999999999999999,
+          "conditional_child_flatness": 1.0,
+          "component_rank_budget": 4,
+          "truncation_threshold": 0.1,
+          "discarded_effect_trace": 0.03,
+          "exact_branch_weighted_failure": 0.007499999999999998,
+          "conditional_flatness_failure_upper_bound": 0.09999999999999998,
+          "parent_flatness_branch_upper_bound": 0.09999999999999998,
+          "status": "coherent-branch-parent-budget-verified"
+        }
+      ],
+      "aggregate_component_rank_budget": 8,
+      "exact_branch_averaged_failure": 0.014999999999999996,
+      "exact_ideal_to_trimmed_mean_square_error": 0.014999999999999998,
+      "conditional_branch_bound_sum": 0.19999999999999996,
+      "endpoint_weighted_parent_bound": 0.19999999999999996,
+      "coarse_parent_rank_budget_bound": 0.4,
+      "exact_error_identity_verified": true,
+      "conditional_and_parent_bounds_verified": true,
+      "child_postselection_flatness_required": false,
+      "exact_control_verified": true,
+      "status": "coherent-branch-averaged-component-trim-verified"
+    },
+    {
+      "control_id": "IMBALANCED-UNIFORM-PARENT",
+      "parent_dimension": 2,
+      "branch_count": 2,
+      "parent_state_flatness": 1.0,
+      "endpoint_column_isometry_residual": 0.0,
+      "branch_details": [
+        {
+          "branch_index": 0,
+          "output_dimension": 2,
+          "endpoint_probability": 0.50005,
+          "endpoint_operator_norm_squared": 1.0,
+          "conditional_child_flatness": 1.9998000199980002,
+          "component_rank_budget": 4,
+          "truncation_threshold": 0.1,
+          "discarded_effect_trace": 0.03,
+          "exact_branch_weighted_failure": 0.015,
+          "conditional_flatness_failure_upper_bound": 0.2,
+          "parent_flatness_branch_upper_bound": 0.2,
+          "status": "coherent-branch-parent-budget-verified"
+        },
+        {
+          "branch_index": 1,
+          "output_dimension": 2,
+          "endpoint_probability": 0.49995,
+          "endpoint_operator_norm_squared": 0.9999,
+          "conditional_child_flatness": 1.9999999999999998,
+          "component_rank_budget": 4,
+          "truncation_threshold": 0.1,
+          "discarded_effect_trace": 0.03,
+          "exact_branch_weighted_failure": 0.0,
+          "conditional_flatness_failure_upper_bound": 0.19998,
+          "parent_flatness_branch_upper_bound": 0.19998000000000002,
+          "status": "coherent-branch-parent-budget-verified"
+        }
+      ],
+      "aggregate_component_rank_budget": 8,
+      "exact_branch_averaged_failure": 0.015,
+      "exact_ideal_to_trimmed_mean_square_error": 0.015,
+      "conditional_branch_bound_sum": 0.39998,
+      "endpoint_weighted_parent_bound": 0.39998,
+      "coarse_parent_rank_budget_bound": 0.4,
+      "exact_error_identity_verified": true,
+      "conditional_and_parent_bounds_verified": true,
+      "child_postselection_flatness_required": false,
+      "exact_control_verified": true,
+      "status": "coherent-branch-averaged-component-trim-verified"
+    },
+    {
+      "control_id": "BALANCED-CONCENTRATED-PARENT",
+      "parent_dimension": 2,
+      "branch_count": 2,
+      "parent_state_flatness": 2.0,
+      "endpoint_column_isometry_residual": 2.220446049250313e-16,
+      "branch_details": [
+        {
+          "branch_index": 0,
+          "output_dimension": 2,
+          "endpoint_probability": 0.4999999999999999,
+          "endpoint_operator_norm_squared": 0.4999999999999999,
+          "conditional_child_flatness": 2.0,
+          "component_rank_budget": 4,
+          "truncation_threshold": 0.1,
+          "discarded_effect_trace": 0.03,
+          "exact_branch_weighted_failure": 0.014999999999999996,
+          "conditional_flatness_failure_upper_bound": 0.19999999999999996,
+          "parent_flatness_branch_upper_bound": 0.19999999999999996,
+          "status": "coherent-branch-parent-budget-verified"
+        },
+        {
+          "branch_index": 1,
+          "output_dimension": 2,
+          "endpoint_probability": 0.4999999999999999,
+          "endpoint_operator_norm_squared": 0.4999999999999999,
+          "conditional_child_flatness": 2.0,
+          "component_rank_budget": 4,
+          "truncation_threshold": 0.1,
+          "discarded_effect_trace": 0.03,
+          "exact_branch_weighted_failure": 0.014999999999999996,
+          "conditional_flatness_failure_upper_bound": 0.19999999999999996,
+          "parent_flatness_branch_upper_bound": 0.19999999999999996,
+          "status": "coherent-branch-parent-budget-verified"
+        }
+      ],
+      "aggregate_component_rank_budget": 8,
+      "exact_branch_averaged_failure": 0.029999999999999992,
+      "exact_ideal_to_trimmed_mean_square_error": 0.029999999999999995,
+      "conditional_branch_bound_sum": 0.3999999999999999,
+      "endpoint_weighted_parent_bound": 0.3999999999999999,
+      "coarse_parent_rank_budget_bound": 0.8,
+      "exact_error_identity_verified": true,
+      "conditional_and_parent_bounds_verified": true,
+      "child_postselection_flatness_required": false,
+      "exact_control_verified": true,
+      "status": "coherent-branch-averaged-component-trim-verified"
+    }
+  ],
+  "postselection_counterfamily": [
+    {
+      "parent_dimension": 2,
+      "small_endpoint_eigenvalue": 0.25,
+      "rare_branch_probability": 0.625,
+      "conditional_child_flatness": 1.6,
+      "conditional_flatness_to_parent_flatness_ratio": 1.6,
+      "branch_probability_times_conditional_flatness": 1.0,
+      "endpoint_column_isometry_exact": true,
+      "status": "postselection-creates-linear-flatness-from-isotropic-parent"
+    },
+    {
+      "parent_dimension": 4,
+      "small_endpoint_eigenvalue": 0.0625,
+      "rare_branch_probability": 0.296875,
+      "conditional_child_flatness": 3.3684210526315788,
+      "conditional_flatness_to_parent_flatness_ratio": 3.3684210526315788,
+      "branch_probability_times_conditional_flatness": 1.0,
+      "endpoint_column_isometry_exact": true,
+      "status": "postselection-creates-linear-flatness-from-isotropic-parent"
+    },
+    {
+      "parent_dimension": 8,
+      "small_endpoint_eigenvalue": 0.015625,
+      "rare_branch_probability": 0.138671875,
+      "conditional_child_flatness": 7.211267605633803,
+      "conditional_flatness_to_parent_flatness_ratio": 7.211267605633803,
+      "branch_probability_times_conditional_flatness": 1.0,
+      "endpoint_column_isometry_exact": true,
+      "status": "postselection-creates-linear-flatness-from-isotropic-parent"
+    },
+    {
+      "parent_dimension": 16,
+      "small_endpoint_eigenvalue": 0.00390625,
+      "rare_branch_probability": 0.066162109375,
+      "conditional_child_flatness": 15.114391143911439,
+      "conditional_flatness_to_parent_flatness_ratio": 15.114391143911439,
+      "branch_probability_times_conditional_flatness": 1.0,
+      "endpoint_column_isometry_exact": true,
+      "status": "postselection-creates-linear-flatness-from-isotropic-parent"
+    },
+    {
+      "parent_dimension": 32,
+      "small_endpoint_eigenvalue": 0.0009765625,
+      "rare_branch_probability": 0.032196044921875,
+      "conditional_child_flatness": 31.059715639810427,
+      "conditional_flatness_to_parent_flatness_ratio": 31.059715639810427,
+      "branch_probability_times_conditional_flatness": 1.0,
+      "endpoint_column_isometry_exact": true,
+      "status": "postselection-creates-linear-flatness-from-isotropic-parent"
+    },
+    {
+      "parent_dimension": 64,
+      "small_endpoint_eigenvalue": 0.000244140625,
+      "rare_branch_probability": 0.015865325927734375,
+      "conditional_child_flatness": 63.03053618658331,
+      "conditional_flatness_to_parent_flatness_ratio": 63.03053618658331,
+      "branch_probability_times_conditional_flatness": 1.0,
+      "endpoint_column_isometry_exact": true,
+      "status": "postselection-creates-linear-flatness-from-isotropic-parent"
+    },
+    {
+      "parent_dimension": 128,
+      "small_endpoint_eigenvalue": 6.103515625e-05,
+      "rare_branch_probability": 0.007873058319091797,
+      "conditional_child_flatness": 127.01544424928835,
+      "conditional_flatness_to_parent_flatness_ratio": 127.01544424928835,
+      "branch_probability_times_conditional_flatness": 1.0,
+      "endpoint_column_isometry_exact": true,
+      "status": "postselection-creates-linear-flatness-from-isotropic-parent"
+    },
+    {
+      "parent_dimension": 256,
+      "small_endpoint_eigenvalue": 1.52587890625e-05,
+      "rare_branch_probability": 0.003921449184417725,
+      "conditional_child_flatness": 255.00776701980513,
+      "conditional_flatness_to_parent_flatness_ratio": 255.00776701980513,
+      "branch_probability_times_conditional_flatness": 1.0,
+      "endpoint_column_isometry_exact": true,
+      "status": "postselection-creates-linear-flatness-from-isotropic-parent"
+    },
+    {
+      "parent_dimension": 512,
+      "small_endpoint_eigenvalue": 3.814697265625e-06,
+      "rare_branch_probability": 0.001956932246685028,
+      "conditional_child_flatness": 511.00389484304503,
+      "conditional_flatness_to_parent_flatness_ratio": 511.00389484304503,
+      "branch_probability_times_conditional_flatness": 1.0,
+      "endpoint_column_isometry_exact": true,
+      "status": "postselection-creates-linear-flatness-from-isotropic-parent"
+    },
+    {
+      "parent_dimension": 1024,
+      "small_endpoint_eigenvalue": 9.5367431640625e-07,
+      "rare_branch_probability": 0.0009775152429938316,
+      "conditional_child_flatness": 1023.0019502686264,
+      "conditional_flatness_to_parent_flatness_ratio": 1023.0019502686264,
+      "branch_probability_times_conditional_flatness": 1.0,
+      "endpoint_column_isometry_exact": true,
+      "status": "postselection-creates-linear-flatness-from-isotropic-parent"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 8,
+      "root_flatness_polynomial_degree": 2,
+      "root_flatness_upper_bound": 64.0,
+      "recursive_level_count_upper_bound": 16,
+      "aggregate_rank_budget_to_root_dimension_upper_bound": 54.73684210526316,
+      "total_mean_square_error_target": 0.1,
+      "per_level_mean_square_error_target": 0.000390625,
+      "retained_component_eigenvalue_threshold": 1.1150653545673078e-07,
+      "inverse_threshold_cost": 8968084.210526315,
+      "hybrid_total_mean_square_error_upper_bound": 0.1,
+      "inverse_polynomial_threshold_conditional_on_level_budget": true,
+      "natural_root_flatness_proved": false,
+      "polynomial_all_level_rank_budget_proved": false,
+      "coherent_recursive_trim_compiled": false,
+      "status": "inverse-polynomial-coherent-trim-conditional-on-root-and-level-budgets"
+    },
+    {
+      "n": 12,
+      "root_flatness_polynomial_degree": 2,
+      "root_flatness_upper_bound": 144.0,
+      "recursive_level_count_upper_bound": 29,
+      "aggregate_rank_budget_to_root_dimension_upper_bound": 54.73684210526316,
+      "total_mean_square_error_target": 0.1,
+      "per_level_mean_square_error_target": 0.00011890606420927467,
+      "retained_component_eigenvalue_threshold": 1.5085571714584793e-08,
+      "inverse_threshold_cost": 66288505.2631579,
+      "hybrid_total_mean_square_error_upper_bound": 0.1,
+      "inverse_polynomial_threshold_conditional_on_level_budget": true,
+      "natural_root_flatness_proved": false,
+      "polynomial_all_level_rank_budget_proved": false,
+      "coherent_recursive_trim_compiled": false,
+      "status": "inverse-polynomial-coherent-trim-conditional-on-root-and-level-budgets"
+    },
+    {
+      "n": 16,
+      "root_flatness_polynomial_degree": 2,
+      "root_flatness_upper_bound": 256.0,
+      "recursive_level_count_upper_bound": 45,
+      "aggregate_rank_budget_to_root_dimension_upper_bound": 54.73684210526316,
+      "total_mean_square_error_target": 0.1,
+      "per_level_mean_square_error_target": 4.938271604938272e-05,
+      "retained_component_eigenvalue_threshold": 3.5241571699905035e-09,
+      "inverse_threshold_cost": 283755789.4736842,
+      "hybrid_total_mean_square_error_upper_bound": 0.1,
+      "inverse_polynomial_threshold_conditional_on_level_budget": true,
+      "natural_root_flatness_proved": false,
+      "polynomial_all_level_rank_budget_proved": false,
+      "coherent_recursive_trim_compiled": false,
+      "status": "inverse-polynomial-coherent-trim-conditional-on-root-and-level-budgets"
+    },
+    {
+      "n": 24,
+      "root_flatness_polynomial_degree": 2,
+      "root_flatness_upper_bound": 576.0,
+      "recursive_level_count_upper_bound": 80,
+      "aggregate_rank_budget_to_root_dimension_upper_bound": 54.73684210526316,
+      "total_mean_square_error_target": 0.1,
+      "per_level_mean_square_error_target": 1.5625e-05,
+      "retained_component_eigenvalue_threshold": 4.955846020299145e-10,
+      "inverse_threshold_cost": 2017818947.368421,
+      "hybrid_total_mean_square_error_upper_bound": 0.09999999999999996,
+      "inverse_polynomial_threshold_conditional_on_level_budget": true,
+      "natural_root_flatness_proved": false,
+      "polynomial_all_level_rank_budget_proved": false,
+      "coherent_recursive_trim_compiled": false,
+      "status": "inverse-polynomial-coherent-trim-conditional-on-root-and-level-budgets"
+    },
+    {
+      "n": 32,
+      "root_flatness_polynomial_degree": 2,
+      "root_flatness_upper_bound": 1024.0,
+      "recursive_level_count_upper_bound": 118,
+      "aggregate_rank_budget_to_root_dimension_upper_bound": 54.73684210526316,
+      "total_mean_square_error_target": 0.1,
+      "per_level_mean_square_error_target": 7.181844297615628e-06,
+      "retained_component_eigenvalue_threshold": 1.2813161213068748e-10,
+      "inverse_threshold_cost": 7804475284.2105255,
+      "hybrid_total_mean_square_error_upper_bound": 0.1,
+      "inverse_polynomial_threshold_conditional_on_level_budget": true,
+      "natural_root_flatness_proved": false,
+      "polynomial_all_level_rank_budget_proved": false,
+      "coherent_recursive_trim_compiled": false,
+      "status": "inverse-polynomial-coherent-trim-conditional-on-root-and-level-budgets"
+    },
+    {
+      "n": 48,
+      "root_flatness_polynomial_degree": 2,
+      "root_flatness_upper_bound": 2304.0,
+      "recursive_level_count_upper_bound": 203,
+      "aggregate_rank_budget_to_root_dimension_upper_bound": 54.73684210526316,
+      "total_mean_square_error_target": 0.1,
+      "per_level_mean_square_error_target": 2.4266543716178506e-06,
+      "retained_component_eigenvalue_threshold": 1.9241800656358156e-11,
+      "inverse_threshold_cost": 51970188126.31579,
+      "hybrid_total_mean_square_error_upper_bound": 0.1,
+      "inverse_polynomial_threshold_conditional_on_level_budget": true,
+      "natural_root_flatness_proved": false,
+      "polynomial_all_level_rank_budget_proved": false,
+      "coherent_recursive_trim_compiled": false,
+      "status": "inverse-polynomial-coherent-trim-conditional-on-root-and-level-budgets"
+    },
+    {
+      "n": 64,
+      "root_flatness_polynomial_degree": 2,
+      "root_flatness_upper_bound": 4096.0,
+      "recursive_level_count_upper_bound": 296,
+      "aggregate_rank_budget_to_root_dimension_upper_bound": 54.73684210526316,
+      "total_mean_square_error_target": 0.1,
+      "per_level_mean_square_error_target": 1.1413440467494523e-06,
+      "retained_component_eigenvalue_threshold": 5.0906928166878555e-12,
+      "inverse_threshold_cost": 196436916547.36838,
+      "hybrid_total_mean_square_error_upper_bound": 0.10000000000000003,
+      "inverse_polynomial_threshold_conditional_on_level_budget": true,
+      "natural_root_flatness_proved": false,
+      "polynomial_all_level_rank_budget_proved": false,
+      "coherent_recursive_trim_compiled": false,
+      "status": "inverse-polynomial-coherent-trim-conditional-on-root-and-level-budgets"
+    },
+    {
+      "n": 96,
+      "root_flatness_polynomial_degree": 2,
+      "root_flatness_upper_bound": 9216.0,
+      "recursive_level_count_upper_bound": 499,
+      "aggregate_rank_budget_to_root_dimension_upper_bound": 54.73684210526316,
+      "total_mean_square_error_target": 0.1,
+      "per_level_mean_square_error_target": 4.0160481283207703e-07,
+      "retained_component_eigenvalue_threshold": 7.961166453627328e-13,
+      "inverse_threshold_cost": 1256097339284.2104,
+      "hybrid_total_mean_square_error_upper_bound": 0.1,
+      "inverse_polynomial_threshold_conditional_on_level_budget": true,
+      "natural_root_flatness_proved": false,
+      "polynomial_all_level_rank_budget_proved": false,
+      "coherent_recursive_trim_compiled": false,
+      "status": "inverse-polynomial-coherent-trim-conditional-on-root-and-level-budgets"
+    }
+  ],
+  "theorem": {
+    "exact_branch_error_identity": "epsilon=sum_s Tr(C_s rho C_s^* L_s), exactly equal to the ideal-versus-trimmed coherent Naimark mean-square error",
+    "parent_flatness_rank_budget_bound": "epsilon<=(kappa/r)sum_s tau_s B_s, with the sharper endpoint-weighted factor ||C_s||^2 available branchwise",
+    "postselection_cancellation": "endpoint probability times the normalized child-flatness bound is bounded directly on the unnormalized branch state",
+    "ideal_prefix_invariance": "an ideal isometry preserves the nonzero spectrum and flatness of the root state on its image",
+    "coherent_hybrid_bound": "if ideal-prefix level errors are epsilon_l, total mean-square error is at most (sum_l sqrt(epsilon_l))^2",
+    "natural_final_root_corollary": "for two children with r/N_s>=19/520 and B_s<=N_s, tau=eta(19/1040)/kappa gives branch-averaged error at most eta",
+    "scope_limit": "Native root-state flatness, aggregate rank budgets at every level, coherent effect thresholding/SELECT, and the recursive circuit remain unproved. Conditional branches are not individually close.",
+    "arbitrary_endpoint_branch_count": true,
+    "arbitrary_child_povms": true,
+    "child_postselection_flatness_eliminated": true,
+    "ideal_isometric_prefix_hybrid_proved": true,
+    "natural_root_flatness_proved": false,
+    "polynomial_all_level_rank_budget_proved": false,
+    "recursive_component_compiler_proved": false,
+    "theorem_verified": true,
+    "status": "child-flatness-gate-replaced-by-root-and-level-rank-budgets"
+  },
+  "proof_obligations": [
+    {
+      "obligation": "remove_postselected_child_flatness_from_coherent_trim",
+      "resolved": true,
+      "resolution": "The unnormalized branch identity charges all discarded effects directly against the parent density and aggregate component-rank budget."
+    },
+    {
+      "obligation": "prove_native_root_state_polynomial_flatness",
+      "resolved": false,
+      "resolution": "Identify the exact native root density on each retained source/target block; do not infer isotropy from covariance."
+    },
+    {
+      "obligation": "prove_polynomial_aggregate_component_rank_budget_each_level",
+      "resolved": false,
+      "resolution": "The final root has a constant two-child budget from the 19/520 aspect. Earlier relation-bearing levels remain open."
+    },
+    {
+      "obligation": "compile_coherent_level_trim_and_compose_hybrid",
+      "resolved": false,
+      "resolution": "Requires block encodings, threshold flags, support SELECT, and a level-indexed implementation preserving branch coherence."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Every postselected child must be polynomially flat.",
+      "resolved": true,
+      "resolution": "False for coherent average-state error. The counterfamily has conditional flatness Theta(r) from an isotropic parent, while the parent-level rank-budget theorem remains finite."
+    },
+    {
+      "objection": "Parent-level averaging proves each branch is accurate.",
+      "resolved": true,
+      "resolution": "False. It proves only the coherent branch-averaged error; a rare conditioned branch may still fail badly."
+    },
+    {
+      "objection": "Final-root aspect control completes the recursive trim.",
+      "resolved": false,
+      "resolution": "Only the final binary merge has the required aggregate rank budget. Earlier levels and native root density are unproved."
+    },
+    {
+      "objection": "A mean-square hybrid is already a coherent circuit.",
+      "resolved": false,
+      "resolution": "The theorem supplies an error ledger, not threshold or support oracles, uniform SELECT, or gate complexity."
+    }
+  ],
+  "headline_metrics": {
+    "coherent_branch_trim_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "postselection_flatness_counterfamily_row_count": 10,
+    "tail_postselection_conditional_flatness": 1023.0019502686264,
+    "tail_branch_probability_times_flatness": 1.0,
+    "conditional_child_flatness_requirement_count": 0,
+    "natural_final_root_aggregate_budget_theorem_count": 1,
+    "all_level_aggregate_rank_budget_theorem_count": 0,
+    "scaling_record_count": 8,
+    "tail_inverse_threshold_cost": 1256097339284.2104,
+    "natural_root_flatness_theorem_count": 0,
+    "coherent_recursive_trim_compiler_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "coherent_branch_averaged_trim_proved": true,
+    "postselected_child_flatness_required": false,
+    "natural_final_root_constant_budget_available": true,
+    "natural_root_state_polynomially_flat": false,
+    "polynomial_all_level_component_rank_budget_proved": false,
+    "coherent_recursive_component_trim_compiled": false,
+    "recursive_orientation_polar_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "Coherent branch averaging removes the artificial child-flatness gate, but native root-state control, all-level aggregate budgets, and coherent component access remain unresolved."
+  },
+  "status": "child-flatness-gate-replaced-by-root-and-level-rank-budgets",
+  "summary": "Replaced postselected child flatness by a coherent parent-state rank-budget theorem and an ideal-prefix hybrid error ledger.",
+  "falsifiers_triggered": [
+    "Postselection can create linear-in-dimension child flatness from an isotropic parent.",
+    "Conditional child flatness is unnecessary for coherent branch-averaged trim error.",
+    "The final-root 19/520 aspect yields a constant isotropic-parent cutoff, not a recursive compiler.",
+    "Global ideal-prefix flatness still needs native root-state and per-level rank-budget theorems."
+  ]
+}

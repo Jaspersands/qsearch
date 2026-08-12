@@ -555,43 +555,6 @@ def write_self_dual_wreath_subset_carrier_algebra(
     payload = asdict(run_self_dual_wreath_subset_carrier_algebra(spec=spec))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-SELF-DUAL-WREATH-SCALAR-SUBSET-ORBIT-PRECONDITIONER",
-                source=str(path),
-                claim=(
-                    "Grouping the 2^k subset terms by Hamming weight produces "
-                    "a commutative k+1-dimensional carrier algebra."
-                ),
-                reason_invalid=(
-                    "The exact symmetrized orbit sums U_2 and U_3 have a "
-                    "nonzero commutator at k=4, and the truncated word algebra "
-                    "grows beyond k+1 dimensions."
-                ),
-                lesson=(
-                    "Use register symmetry for compression, but construct a "
-                    "noncommutative multiplicity-block transform and "
-                    "representation-specific preconditioner."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"self_dual_wreath_subset_carrier_algebra": str(path)},
-            )
-        )
     return payload
 
 

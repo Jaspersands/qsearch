@@ -1,0 +1,674 @@
+{
+  "created_at": "2026-08-12T03:41:12.224116+00:00",
+  "theorem_contract": {
+    "offdiagonal_energy": "sum_(e!=f)H_ef^2<=H_max[Tr(A^2)-Tr(A)]/d_nu.",
+    "pairwise_hashing": "For h(e)=Me+b with uniform M,b, Pr[e retained]=p and Pr[e,f retained]=p^2 for e!=f.",
+    "thinned_error": "E||H_S-mI||F^2<=p q m^2[epsilon^2+p(1+epsilon)C].",
+    "spectral_bulk": "Normalized Frobenius error eta leaves at most eta/kappa^2 rank and (eta/kappa^2+eta/kappa)/(1-sqrt(eta)) trace mass outside the relative kappa window.",
+    "physical_acceptance": "Hashing the explicit physical orientation register accepts with label-independent density p and requires no branch erasure.",
+    "scope": "The theorem gives an annealed/state-weighted almost-scalar bulk. Coherent exceptional-mode handling and a global contraction remain open.",
+    "theorem_verified": true,
+    "status": "orientation-kernel-polynomial-hash-bulk-proved-compiler-open"
+  },
+  "theorem": {
+    "offdiagonal_energy": "sum_(e!=f)H_ef^2<=H_max[Tr(A^2)-Tr(A)]/d_nu.",
+    "pairwise_hashing": "For h(e)=Me+b with uniform M,b, Pr[e retained]=p and Pr[e,f retained]=p^2 for e!=f.",
+    "thinned_error": "E||H_S-mI||F^2<=p q m^2[epsilon^2+p(1+epsilon)C].",
+    "spectral_bulk": "Normalized Frobenius error eta leaves at most eta/kappa^2 rank and (eta/kappa^2+eta/kappa)/(1-sqrt(eta)) trace mass outside the relative kappa window.",
+    "physical_acceptance": "Hashing the explicit physical orientation register accepts with label-independent density p and requires no branch erasure.",
+    "scope": "The theorem gives an annealed/state-weighted almost-scalar bulk. Coherent exceptional-mode handling and a global contraction remain open.",
+    "theorem_verified": true,
+    "status": "orientation-kernel-polynomial-hash-bulk-proved-compiler-open"
+  },
+  "hash_controls": [
+    {
+      "control_id": "W3-THRESHOLD-(3,)",
+      "n": 3,
+      "target": [
+        3
+      ],
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "orientation_count": 8,
+      "hash_output_bits": 1,
+      "retention_density": 0.5,
+      "diagonal_mean": 0.75,
+      "maximum_relative_diagonal_deviation": 4.333333333333333,
+      "frame_collision_ratio": 0.6666666666666666,
+      "offdiagonal_frobenius_squared": 4.0,
+      "deterministic_offdiagonal_upper_bound": 16.0,
+      "deterministic_bound_violation": 0.0,
+      "enumerated_hash_count": 16,
+      "exact_expected_thinned_error": 7.75,
+      "predicted_expected_thinned_error": 7.75,
+      "expectation_formula_residual": 0.0,
+      "minimum_nonempty_subset_size": 4,
+      "maximum_subset_size": 8,
+      "median_nonempty_normalized_error": 3.888888888888889,
+      "minimum_nonempty_normalized_error": 0.5555555555555557,
+      "exact_hash_thinning_theorem_verified": true,
+      "status": "exact-pairwise-independent-kernel-thinning"
+    },
+    {
+      "control_id": "W3-THRESHOLD-(2, 1)",
+      "n": 3,
+      "target": [
+        2,
+        1
+      ],
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "orientation_count": 8,
+      "hash_output_bits": 1,
+      "retention_density": 0.5,
+      "diagonal_mean": 0.6249999999999999,
+      "maximum_relative_diagonal_deviation": 1.0,
+      "frame_collision_ratio": 0.40000000000000024,
+      "offdiagonal_frobenius_squared": 0.5000000000000001,
+      "deterministic_offdiagonal_upper_bound": 2.0000000000000004,
+      "deterministic_bound_violation": 0.0,
+      "enumerated_hash_count": 16,
+      "exact_expected_thinned_error": 0.8124999999999998,
+      "predicted_expected_thinned_error": 0.8124999999999999,
+      "expectation_formula_residual": 1.1102230246251565e-16,
+      "minimum_nonempty_subset_size": 4,
+      "maximum_subset_size": 8,
+      "median_nonempty_normalized_error": 0.5200000000000001,
+      "minimum_nonempty_normalized_error": 0.20000000000000012,
+      "exact_hash_thinning_theorem_verified": true,
+      "status": "exact-pairwise-independent-kernel-thinning"
+    },
+    {
+      "control_id": "W3-THRESHOLD-(1, 1, 1)",
+      "n": 3,
+      "target": [
+        1,
+        1,
+        1
+      ],
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "orientation_count": 8,
+      "hash_output_bits": 1,
+      "retention_density": 0.5,
+      "diagonal_mean": 0.75,
+      "maximum_relative_diagonal_deviation": 4.333333333333333,
+      "frame_collision_ratio": 0.6666666666666666,
+      "offdiagonal_frobenius_squared": 4.0,
+      "deterministic_offdiagonal_upper_bound": 16.0,
+      "deterministic_bound_violation": 0.0,
+      "enumerated_hash_count": 16,
+      "exact_expected_thinned_error": 7.75,
+      "predicted_expected_thinned_error": 7.75,
+      "expectation_formula_residual": 0.0,
+      "minimum_nonempty_subset_size": 4,
+      "maximum_subset_size": 8,
+      "median_nonempty_normalized_error": 3.888888888888889,
+      "minimum_nonempty_normalized_error": 0.5555555555555557,
+      "exact_hash_thinning_theorem_verified": true,
+      "status": "exact-pairwise-independent-kernel-thinning"
+    },
+    {
+      "control_id": "W4-PAIR-(3, 1)",
+      "n": 4,
+      "target": [
+        3,
+        1
+      ],
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "orientation_count": 4,
+      "hash_output_bits": 1,
+      "retention_density": 0.5,
+      "diagonal_mean": 0.4166666666666665,
+      "maximum_relative_diagonal_deviation": 1.4,
+      "frame_collision_ratio": 0.0,
+      "offdiagonal_frobenius_squared": 2.752893411501384e-34,
+      "deterministic_offdiagonal_upper_bound": 0.0,
+      "deterministic_bound_violation": 2.752893411501384e-34,
+      "enumerated_hash_count": 8,
+      "exact_expected_thinned_error": 0.3749999999999997,
+      "predicted_expected_thinned_error": 0.37499999999999967,
+      "expectation_formula_residual": 5.551115123125783e-17,
+      "minimum_nonempty_subset_size": 2,
+      "maximum_subset_size": 4,
+      "median_nonempty_normalized_error": 1.08,
+      "minimum_nonempty_normalized_error": 0.6800000000000002,
+      "exact_hash_thinning_theorem_verified": true,
+      "status": "exact-pairwise-independent-kernel-thinning"
+    },
+    {
+      "control_id": "W4-PAIR-(2, 2)",
+      "n": 4,
+      "target": [
+        2,
+        2
+      ],
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "orientation_count": 4,
+      "hash_output_bits": 1,
+      "retention_density": 0.5,
+      "diagonal_mean": 1.3749999999999996,
+      "maximum_relative_diagonal_deviation": 2.272727272727273,
+      "frame_collision_ratio": 0.09090909090909094,
+      "offdiagonal_frobenius_squared": 0.12500000000000003,
+      "deterministic_offdiagonal_upper_bound": 2.2499999999999996,
+      "deterministic_bound_violation": 0.0,
+      "enumerated_hash_count": 8,
+      "exact_expected_thinned_error": 6.8749999999999964,
+      "predicted_expected_thinned_error": 6.8749999999999964,
+      "expectation_formula_residual": 0.0,
+      "minimum_nonempty_subset_size": 2,
+      "maximum_subset_size": 4,
+      "median_nonempty_normalized_error": 1.826446280991736,
+      "minimum_nonempty_normalized_error": 0.5371900826446282,
+      "exact_hash_thinning_theorem_verified": true,
+      "status": "exact-pairwise-independent-kernel-thinning"
+    },
+    {
+      "control_id": "W4-PAIR-(2, 1, 1)",
+      "n": 4,
+      "target": [
+        2,
+        1,
+        1
+      ],
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "orientation_count": 4,
+      "hash_output_bits": 1,
+      "retention_density": 0.5,
+      "diagonal_mean": 0.9166666666666662,
+      "maximum_relative_diagonal_deviation": 1.1818181818181817,
+      "frame_collision_ratio": 0.06060606060606066,
+      "offdiagonal_frobenius_squared": 0.024691358024691346,
+      "deterministic_offdiagonal_upper_bound": 0.4444444444444444,
+      "deterministic_bound_violation": 0.0,
+      "enumerated_hash_count": 8,
+      "exact_expected_thinned_error": 1.0478395061728383,
+      "predicted_expected_thinned_error": 1.0478395061728383,
+      "expectation_formula_residual": 0.0,
+      "minimum_nonempty_subset_size": 2,
+      "maximum_subset_size": 4,
+      "median_nonempty_normalized_error": 0.6271808999081723,
+      "minimum_nonempty_normalized_error": 0.04132231404958676,
+      "exact_hash_thinning_theorem_verified": true,
+      "status": "exact-pairwise-independent-kernel-thinning"
+    },
+    {
+      "control_id": "W4-PAIR-(1, 1, 1, 1)",
+      "n": 4,
+      "target": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "orientation_count": 4,
+      "hash_output_bits": 1,
+      "retention_density": 0.5,
+      "diagonal_mean": 0.4999999999999998,
+      "maximum_relative_diagonal_deviation": 3.0,
+      "frame_collision_ratio": 0.0,
+      "offdiagonal_frobenius_squared": 5.983946388956798e-34,
+      "deterministic_offdiagonal_upper_bound": 0.0,
+      "deterministic_bound_violation": 5.983946388956798e-34,
+      "enumerated_hash_count": 8,
+      "exact_expected_thinned_error": 1.4999999999999991,
+      "predicted_expected_thinned_error": 1.4999999999999987,
+      "expectation_formula_residual": 4.440892098500626e-16,
+      "minimum_nonempty_subset_size": 2,
+      "maximum_subset_size": 4,
+      "median_nonempty_normalized_error": 3.000000000000001,
+      "minimum_nonempty_normalized_error": 1.0000000000000002,
+      "exact_hash_thinning_theorem_verified": true,
+      "status": "exact-pairwise-independent-kernel-thinning"
+    }
+  ],
+  "trim_controls": [
+    {
+      "control_id": "W3-THRESHOLD-(3,)",
+      "matrix_dimension": 8,
+      "normalized_frobenius_error": 3.8888888888888884,
+      "relative_window": 0.75,
+      "observed_bad_eigenvalue_count": 6,
+      "bad_eigenvalue_count_upper_bound": 55.30864197530863,
+      "observed_bad_trace_mass": 0.7602588021348051,
+      "bad_trace_mass_upper_bound": 1.0,
+      "retained_condition_number_upper_bound": 7.0,
+      "spectral_trim_bounds_verified": true,
+      "status": "frobenius-to-native-spectral-bulk-bound"
+    },
+    {
+      "control_id": "W3-THRESHOLD-(2, 1)",
+      "matrix_dimension": 8,
+      "normalized_frobenius_error": 0.5999999999999999,
+      "relative_window": 0.75,
+      "observed_bad_eigenvalue_count": 3,
+      "bad_eigenvalue_count_upper_bound": 8.533333333333331,
+      "observed_bad_trace_mass": 0.3,
+      "bad_trace_mass_upper_bound": 1.0,
+      "retained_condition_number_upper_bound": 7.0,
+      "spectral_trim_bounds_verified": true,
+      "status": "frobenius-to-native-spectral-bulk-bound"
+    },
+    {
+      "control_id": "W3-THRESHOLD-(1, 1, 1)",
+      "matrix_dimension": 8,
+      "normalized_frobenius_error": 3.8888888888888884,
+      "relative_window": 0.75,
+      "observed_bad_eigenvalue_count": 6,
+      "bad_eigenvalue_count_upper_bound": 55.30864197530863,
+      "observed_bad_trace_mass": 0.7602588021348051,
+      "bad_trace_mass_upper_bound": 1.0,
+      "retained_condition_number_upper_bound": 7.0,
+      "spectral_trim_bounds_verified": true,
+      "status": "frobenius-to-native-spectral-bulk-bound"
+    },
+    {
+      "control_id": "W4-PAIR-(3, 1)",
+      "matrix_dimension": 4,
+      "normalized_frobenius_error": 1.0799999999999992,
+      "relative_window": 0.75,
+      "observed_bad_eigenvalue_count": 3,
+      "bad_eigenvalue_count_upper_bound": 7.679999999999994,
+      "observed_bad_trace_mass": 0.5999999999999998,
+      "bad_trace_mass_upper_bound": 1.0,
+      "retained_condition_number_upper_bound": 7.0,
+      "spectral_trim_bounds_verified": true,
+      "status": "frobenius-to-native-spectral-bulk-bound"
+    },
+    {
+      "control_id": "W4-PAIR-(2, 2)",
+      "matrix_dimension": 4,
+      "normalized_frobenius_error": 1.8264462809917363,
+      "relative_window": 0.75,
+      "observed_bad_eigenvalue_count": 3,
+      "bad_eigenvalue_count_upper_bound": 12.988062442607903,
+      "observed_bad_trace_mass": 0.8214121732666126,
+      "bad_trace_mass_upper_bound": 1.0,
+      "retained_condition_number_upper_bound": 7.0,
+      "spectral_trim_bounds_verified": true,
+      "status": "frobenius-to-native-spectral-bulk-bound"
+    },
+    {
+      "control_id": "W4-PAIR-(2, 1, 1)",
+      "matrix_dimension": 4,
+      "normalized_frobenius_error": 0.6271808999081729,
+      "relative_window": 0.75,
+      "observed_bad_eigenvalue_count": 2,
+      "bad_eigenvalue_count_upper_bound": 4.459953066013674,
+      "observed_bad_trace_mass": 0.5487809766256497,
+      "bad_trace_mass_upper_bound": 1.0,
+      "retained_condition_number_upper_bound": 7.0,
+      "spectral_trim_bounds_verified": true,
+      "status": "frobenius-to-native-spectral-bulk-bound"
+    },
+    {
+      "control_id": "W4-PAIR-(1, 1, 1, 1)",
+      "matrix_dimension": 4,
+      "normalized_frobenius_error": 3.0,
+      "relative_window": 0.75,
+      "observed_bad_eigenvalue_count": 4,
+      "bad_eigenvalue_count_upper_bound": 21.333333333333332,
+      "observed_bad_trace_mass": 1.0,
+      "bad_trace_mass_upper_bound": 1.0,
+      "retained_condition_number_upper_bound": 7.0,
+      "spectral_trim_bounds_verified": true,
+      "status": "frobenius-to-native-spectral-bulk-bound"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 16,
+      "information_threshold_copy_count": 45,
+      "hash_output_bits": 32,
+      "retention_probability_lower_bound": 2.3283064365386963e-10,
+      "polynomial_collision_markov_bound": 65536.0,
+      "diagonal_relative_error_target": 0.00390625,
+      "expected_normalized_frobenius_error_upper_bound": 3.057718276977539e-05,
+      "markov_normalized_error_threshold": 0.005529663893020569,
+      "relative_spectral_window": 0.7071067811865476,
+      "exceptional_rank_fraction_upper_bound": 0.011059327786041136,
+      "hash_projection_inverse_polynomial_acceptance": true,
+      "simultaneous_all_sector_kernel_bound_proved": false,
+      "coherent_exceptional_spectrum_filter_proved": false,
+      "scalar_whitening_global_contraction_proved": false,
+      "polynomial_joint_decoder_proved": false,
+      "status": "polynomial-hash-bulk-criterion-coherent-trim-open"
+    },
+    {
+      "n": 32,
+      "information_threshold_copy_count": 118,
+      "hash_output_bits": 40,
+      "retention_probability_lower_bound": 9.094947017729282e-13,
+      "polynomial_collision_markov_bound": 1048576.0,
+      "diagonal_relative_error_target": 0.0009765625,
+      "expected_normalized_frobenius_error_upper_bound": 1.9082799553871155e-06,
+      "markov_normalized_error_threshold": 0.0013814050656440766,
+      "relative_spectral_window": 0.6484197773255048,
+      "exceptional_rank_fraction_upper_bound": 0.003285553465529474,
+      "hash_projection_inverse_polynomial_acceptance": true,
+      "simultaneous_all_sector_kernel_bound_proved": false,
+      "coherent_exceptional_spectrum_filter_proved": false,
+      "scalar_whitening_global_contraction_proved": false,
+      "polynomial_joint_decoder_proved": false,
+      "status": "polynomial-hash-bulk-criterion-coherent-trim-open"
+    },
+    {
+      "n": 64,
+      "information_threshold_copy_count": 296,
+      "hash_output_bits": 48,
+      "retention_probability_lower_bound": 3.552713678800501e-15,
+      "polynomial_collision_markov_bound": 16777216.0,
+      "diagonal_relative_error_target": 0.000244140625,
+      "expected_normalized_frobenius_error_upper_bound": 1.1922384146600962e-07,
+      "markov_normalized_error_threshold": 0.0003452880557824287,
+      "relative_spectral_window": 0.5946035575013605,
+      "exceptional_rank_fraction_upper_bound": 0.000976622102825897,
+      "hash_projection_inverse_polynomial_acceptance": true,
+      "simultaneous_all_sector_kernel_bound_proved": false,
+      "coherent_exceptional_spectrum_filter_proved": false,
+      "scalar_whitening_global_contraction_proved": false,
+      "polynomial_joint_decoder_proved": false,
+      "status": "polynomial-hash-bulk-criterion-coherent-trim-open"
+    },
+    {
+      "n": 128,
+      "information_threshold_copy_count": 717,
+      "hash_output_bits": 56,
+      "retention_probability_lower_bound": 1.3877787807814457e-17,
+      "polynomial_collision_markov_bound": 268435456.0,
+      "diagonal_relative_error_target": 6.103515625e-05,
+      "expected_normalized_frobenius_error_upper_bound": 7.450807970599271e-09,
+      "markov_normalized_error_threshold": 8.63180628292785e-05,
+      "relative_spectral_window": 0.5452538663326288,
+      "exceptional_rank_fraction_upper_bound": 0.00029033819841914083,
+      "hash_projection_inverse_polynomial_acceptance": true,
+      "simultaneous_all_sector_kernel_bound_proved": false,
+      "coherent_exceptional_spectrum_filter_proved": false,
+      "scalar_whitening_global_contraction_proved": false,
+      "polynomial_joint_decoder_proved": false,
+      "status": "polynomial-hash-bulk-criterion-coherent-trim-open"
+    },
+    {
+      "n": 256,
+      "information_threshold_copy_count": 1684,
+      "hash_output_bits": 64,
+      "retention_probability_lower_bound": 5.421010862427522e-20,
+      "polynomial_collision_markov_bound": 4294967296.0,
+      "diagonal_relative_error_target": 1.52587890625e-05,
+      "expected_normalized_frobenius_error_upper_bound": 4.656648400214181e-10,
+      "markov_normalized_error_threshold": 2.1579268755484235e-05,
+      "relative_spectral_window": 0.5,
+      "exceptional_rank_fraction_upper_bound": 8.631707502193694e-05,
+      "hash_projection_inverse_polynomial_acceptance": true,
+      "simultaneous_all_sector_kernel_bound_proved": false,
+      "coherent_exceptional_spectrum_filter_proved": false,
+      "scalar_whitening_global_contraction_proved": false,
+      "polynomial_joint_decoder_proved": false,
+      "status": "polynomial-hash-bulk-criterion-coherent-trim-open"
+    },
+    {
+      "n": 512,
+      "information_threshold_copy_count": 3876,
+      "hash_output_bits": 72,
+      "retention_probability_lower_bound": 2.117582368135751e-22,
+      "polynomial_collision_markov_bound": 68719476736.0,
+      "diagonal_relative_error_target": 3.814697265625e-06,
+      "expected_normalized_frobenius_error_upper_bound": 2.9103885967884935e-11,
+      "markov_normalized_error_threshold": 5.394801754270951e-06,
+      "relative_spectral_window": 0.4585020216023356,
+      "exceptional_rank_fraction_upper_bound": 2.5662146520832708e-05,
+      "hash_projection_inverse_polynomial_acceptance": true,
+      "simultaneous_all_sector_kernel_bound_proved": false,
+      "coherent_exceptional_spectrum_filter_proved": false,
+      "scalar_whitening_global_contraction_proved": false,
+      "polynomial_joint_decoder_proved": false,
+      "status": "polynomial-hash-bulk-criterion-coherent-trim-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "convert_existing_second_moment_to_kernel_fourth_energy",
+      "resolved": true,
+      "resolution": "Nonnegative projector overlaps and H_ef<=sqrt(H_eeH_ff) turn the existing frame collision moment into equation (1)."
+    },
+    {
+      "obligation": "construct_polynomial_acceptance_kernel_thinning",
+      "resolved": true,
+      "resolution": "A reversible pairwise-independent affine hash reduces offdiagonal Frobenius energy by an extra factor p."
+    },
+    {
+      "obligation": "transfer_annealed_collision_bound_to_coherent_sector_mass",
+      "resolved": false,
+      "resolution": "The existing moment must be weighted over the actual coherent nu distribution without an exponential union bound."
+    },
+    {
+      "obligation": "compile_exceptional_spectrum_handling",
+      "resolved": false,
+      "resolution": "Frobenius bulk control alone does not make scalar whitening a valid contraction on rare high-eigenvalue modes."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "A fourth representation moment is required to bound Tr(H^2).",
+      "resolved": true,
+      "resolution": "No: positivity and the maximum diagonal reduce squared overlap energy to the already-known first overlap sum."
+    },
+    {
+      "objection": "Hash thinning is another factorial branch postselection.",
+      "resolved": true,
+      "resolution": "Choosing O(log n) hash bits gives inverse-polynomial acceptance while retaining a factorial number of branches."
+    },
+    {
+      "objection": "Small normalized Frobenius error proves a global inverse.",
+      "resolved": false,
+      "resolution": "Rare spectral outliers can still violate contraction or block-encoding normalization; the theorem bounds only their rank and trace mass."
+    }
+  ],
+  "headline_metrics": {
+    "kernel_offdiagonal_energy_theorem_count": 1,
+    "pairwise_hash_thinning_theorem_count": 1,
+    "spectral_bulk_trim_theorem_count": 1,
+    "finite_hash_control_count": 7,
+    "finite_trim_control_count": 7,
+    "finite_control_failure_count": 0,
+    "inverse_polynomial_hash_scaling_row_count": 6,
+    "coherent_exceptional_spectrum_filter_count": 0,
+    "polynomial_joint_decoder_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "kernel_fourth_energy_bounded_by_frame_second_moment": true,
+    "pairwise_independent_hash_reduces_normalized_kernel_error": true,
+    "inverse_polynomial_physical_hash_acceptance": true,
+    "state_weighted_almost_scalar_bulk_criterion_proved": true,
+    "simultaneous_all_sector_kernel_bound_proved": false,
+    "coherent_exceptional_spectrum_filter_proved": false,
+    "scalar_whitening_global_contraction_proved": false,
+    "polynomial_joint_decoder_proved": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false
+  },
+  "status": "orientation-kernel-polynomial-hash-bulk-proved-compiler-open",
+  "summary": "Pairwise-independent hashing retains inverse-polynomial physical mass while suppressing the orientation kernel's normalized offdiagonal Frobenius energy by the retention density. The remaining gate is a coherent treatment of rare spectral outliers.",
+  "falsifiers_triggered": [
+    "A fixed fourth representation moment is not necessary for annealed orientation-kernel bulk control.",
+    "Retaining all factorially many orientations is not necessary; a public inverse-polynomial-density hash preserves polynomial success.",
+    "Frobenius bulk concentration does not by itself compile a complete POVM."
+  ]
+}

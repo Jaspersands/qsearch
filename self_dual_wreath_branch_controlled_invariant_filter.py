@@ -665,54 +665,6 @@ def write_branch_controlled_invariant_filter_report(
     payload = asdict(run_branch_controlled_invariant_filter())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-WREATH-SCALAR-COMMUTANT-BLOCKS-ALL-PHYSICAL-FILTERS",
-                source=str(path),
-                claim=(
-                    "The scalar compressed orientation commutant rules out "
-                    "every nontrivial covariant physical common-channel filter."
-                ),
-                reason_invalid=(
-                    "The induced carrier has orthogonal orientation branches. "
-                    "A direct sum of branch-dependent central complements is "
-                    "a nontrivial projector commuting with physical R(s)."
-                ),
-                lesson=(
-                    "Analyze the residual spectrum of the branch-controlled "
-                    "filter rather than one compressed quotient or generic "
-                    "spectral QSVT."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_branch_controlled_invariant_filter": str(
-                        path
-                    )
-                },
-            )
-        )
     return payload
 
 

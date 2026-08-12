@@ -1,0 +1,473 @@
+{
+  "created_at": "2026-08-12T03:42:41.172634+00:00",
+  "theorem_contract": {
+    "quotient_state": "omega_j=(n-1)!^-1 sum_(g:g(0)=j) tau_g; omega_(xj)=L_x omega_j L_x^*.",
+    "isotropic_standard_geometry": "Delta_j=omega_j-bar spans zero or V_(n-1,1), with Gram diagonal d and off-diagonal -d/(n-1).",
+    "young_edge_fourier_locality": "The (nu,mu) Fourier block of omega_0 vanishes unless nu and mu share a child alpha partitioning n-1.",
+    "fixed_tuple_overlap": "K(u)=|G|^-2 4^-k sum_(s,t) product_i Q_i(s,t,u).",
+    "natural_overlap": "E K(u)=|G|^-2 2^-k sum_(s,t) [a_(s^-1t)+c(s,u^-1s)c(t,t^-1u)]^k.",
+    "standard_signal_coefficient": "E||omega_0-bar||_2^2=|G|^-1 sum_u (fix(u)-1) E K(u).",
+    "recursive_reduction": "Efficient covariant point decoders with inverse-polynomial excess and fresh subgroup-native blocks imply polynomial full recovery by the S_n>S_(n-1)>... stabilizer chain.",
+    "scope": "The exact quotient reduction and finite signal do not prove an all-n inverse-polynomial excess, a collision-free conditional signal formula, efficient multiplicity whitening, fresh subgroup-state access for every problem encoding, or classical separation.",
+    "theorem_verified": true,
+    "status": "point-quotient-reduction-proved-asymptotic-signal-and-decoder-open"
+  },
+  "theorem": {
+    "quotient_state": "omega_j=(n-1)!^-1 sum_(g:g(0)=j) tau_g; omega_(xj)=L_x omega_j L_x^*.",
+    "isotropic_standard_geometry": "Delta_j=omega_j-bar spans zero or V_(n-1,1), with Gram diagonal d and off-diagonal -d/(n-1).",
+    "young_edge_fourier_locality": "The (nu,mu) Fourier block of omega_0 vanishes unless nu and mu share a child alpha partitioning n-1.",
+    "fixed_tuple_overlap": "K(u)=|G|^-2 4^-k sum_(s,t) product_i Q_i(s,t,u).",
+    "natural_overlap": "E K(u)=|G|^-2 2^-k sum_(s,t) [a_(s^-1t)+c(s,u^-1s)c(t,t^-1u)]^k.",
+    "standard_signal_coefficient": "E||omega_0-bar||_2^2=|G|^-1 sum_u (fix(u)-1) E K(u).",
+    "recursive_reduction": "Efficient covariant point decoders with inverse-polynomial excess and fresh subgroup-native blocks imply polynomial full recovery by the S_n>S_(n-1)>... stabilizer chain.",
+    "scope": "The exact quotient reduction and finite signal do not prove an all-n inverse-polynomial excess, a collision-free conditional signal formula, efficient multiplicity whitening, fresh subgroup-state access for every problem encoding, or classical separation.",
+    "theorem_verified": true,
+    "status": "point-quotient-reduction-proved-asymptotic-signal-and-decoder-open"
+  },
+  "finite_controls": [
+    {
+      "control_id": "W3-SINGLE-UNEQUAL",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "group_order": 6,
+      "point_stabilizer_order": 2,
+      "copy_count": 1,
+      "orientation_count": 2,
+      "quotient_hypothesis_count": 3,
+      "maximum_covariance_residual": 0.0,
+      "maximum_group_marginal_variation": 4.3885418357208765e-17,
+      "maximum_character_marginal_variation": 1.1102230246251565e-16,
+      "centered_hilbert_schmidt_norm_squared": 0.06250000000000003,
+      "centered_gram_isotropy_residual": 1.6996749443881478e-17,
+      "centered_state_span_rank": 2,
+      "expected_standard_span_rank": 2,
+      "allowed_young_irrep_pair_count": 7,
+      "active_allowed_young_irrep_pair_count": 4,
+      "active_nonstandard_young_irrep_pair_count": 3,
+      "maximum_forbidden_young_block_norm": 2.4780283877501558e-17,
+      "point_holevo_information_bits": 0.18326126455027447,
+      "hidden_point_entropy_bits": 1.584962500721156,
+      "point_pretty_good_success": 0.4166666666666667,
+      "random_guess_success": 0.3333333333333333,
+      "pretty_good_excess": 0.08333333333333337,
+      "wrong_output_probability": 0.29166666666666663,
+      "covariance_error_law_residual": 2.220446049250313e-16,
+      "fixed_tuple_overlap_formula_residual": 1.6653345369377348e-16,
+      "fixed_tuple_overlap_class_residual": 5.551115123125783e-17,
+      "exact_point_quotient_theorem_verified": true,
+      "status": "exact-point-quotient-young-edge-mechanism"
+    },
+    {
+      "control_id": "W3-INFORMATION-THRESHOLD",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "group_order": 6,
+      "point_stabilizer_order": 2,
+      "copy_count": 3,
+      "orientation_count": 8,
+      "quotient_hypothesis_count": 3,
+      "maximum_covariance_residual": 0.0,
+      "maximum_group_marginal_variation": 6.527725485922918e-17,
+      "maximum_character_marginal_variation": 2.7755575615628914e-17,
+      "centered_hilbert_schmidt_norm_squared": 0.044921875000000014,
+      "centered_gram_isotropy_residual": 6.938893903907228e-18,
+      "centered_state_span_rank": 2,
+      "expected_standard_span_rank": 2,
+      "allowed_young_irrep_pair_count": 7,
+      "active_allowed_young_irrep_pair_count": 7,
+      "active_nonstandard_young_irrep_pair_count": 6,
+      "maximum_forbidden_young_block_norm": 5.258735024083607e-18,
+      "point_holevo_information_bits": 0.6233598503761364,
+      "hidden_point_entropy_bits": 1.584962500721156,
+      "point_pretty_good_success": 0.5890004748950276,
+      "random_guess_success": 0.3333333333333333,
+      "pretty_good_excess": 0.2556671415616943,
+      "wrong_output_probability": 0.2054997625524862,
+      "covariance_error_law_residual": 1.3877787807814457e-16,
+      "fixed_tuple_overlap_formula_residual": 8.326672684688674e-17,
+      "fixed_tuple_overlap_class_residual": 0.0,
+      "exact_point_quotient_theorem_verified": true,
+      "status": "exact-point-quotient-young-edge-mechanism"
+    },
+    {
+      "control_id": "W4-COLLISION-FREE-PAIR",
+      "n": 4,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "group_order": 24,
+      "point_stabilizer_order": 6,
+      "copy_count": 2,
+      "orientation_count": 4,
+      "quotient_hypothesis_count": 4,
+      "maximum_covariance_residual": 2.0370345485735042e-17,
+      "maximum_group_marginal_variation": 4.9856326925223606e-17,
+      "maximum_character_marginal_variation": 1.8410966031475738e-16,
+      "centered_hilbert_schmidt_norm_squared": 0.0025612997256515774,
+      "centered_gram_isotropy_residual": 2.655742100606481e-19,
+      "centered_state_span_rank": 3,
+      "expected_standard_span_rank": 3,
+      "allowed_young_irrep_pair_count": 15,
+      "active_allowed_young_irrep_pair_count": 12,
+      "active_nonstandard_young_irrep_pair_count": 11,
+      "maximum_forbidden_young_block_norm": 6.254882352950495e-18,
+      "point_holevo_information_bits": 0.0643262431111502,
+      "hidden_point_entropy_bits": 2.0,
+      "point_pretty_good_success": 0.27413787291391045,
+      "random_guess_success": 0.25,
+      "pretty_good_excess": 0.024137872913910452,
+      "wrong_output_probability": 0.24195404236202986,
+      "covariance_error_law_residual": 8.326672684688674e-17,
+      "fixed_tuple_overlap_formula_residual": 4.163336342344337e-17,
+      "fixed_tuple_overlap_class_residual": 1.734723475976807e-17,
+      "exact_point_quotient_theorem_verified": true,
+      "status": "exact-point-quotient-young-edge-mechanism"
+    }
+  ],
+  "natural_signal_controls": [
+    {
+      "n": 3,
+      "copy_count": 3,
+      "group_order": 6,
+      "orientation_count": 8,
+      "partition_count": 3,
+      "expected_native_state_purity": 0.08858453360768176,
+      "expected_point_state_purity": 0.05847050754458162,
+      "expected_average_state_purity": 0.04211609975137174,
+      "expected_centered_hilbert_schmidt_norm_squared": 0.01635440779320988,
+      "normalized_expected_centered_signal": 0.7850115740740743,
+      "expected_pair_hilbert_schmidt_distance_squared": 0.04906322337962964,
+      "expected_success_excess_trace_norm_upper_bound": 0.44300439446863116,
+      "subgroup_average_standard_coefficient_residual": 3.469446951953614e-18,
+      "nonnegative_signal_verified": true,
+      "collision_free_conditioned_signal_formula_proved": false,
+      "asymptotic_inverse_polynomial_signal_proved": false,
+      "status": "exact-natural-point-standard-coefficient-finite-control"
+    },
+    {
+      "n": 4,
+      "copy_count": 5,
+      "group_order": 24,
+      "orientation_count": 32,
+      "partition_count": 5,
+      "expected_native_state_purity": 0.003306232515023627,
+      "expected_point_state_purity": 0.0016737675879747564,
+      "expected_average_state_purity": 0.0014439442845847852,
+      "expected_centered_hilbert_schmidt_norm_squared": 0.00022982330338997123,
+      "normalized_expected_centered_signal": 0.1765042970034979,
+      "expected_pair_hilbert_schmidt_distance_squared": 0.0006128621423732566,
+      "expected_success_excess_trace_norm_upper_bound": 0.21006207237593957,
+      "subgroup_average_standard_coefficient_residual": 3.5236570605778894e-19,
+      "nonnegative_signal_verified": true,
+      "collision_free_conditioned_signal_formula_proved": false,
+      "asymptotic_inverse_polynomial_signal_proved": false,
+      "status": "exact-natural-point-standard-coefficient-finite-control"
+    },
+    {
+      "n": 5,
+      "copy_count": 7,
+      "group_order": 120,
+      "orientation_count": 128,
+      "partition_count": 7,
+      "expected_native_state_purity": 0.000135322977926079,
+      "expected_point_state_purity": 6.822369602440257e-05,
+      "expected_average_state_purity": 6.587045018384909e-05,
+      "expected_centered_hilbert_schmidt_norm_squared": 2.3532458405534768e-06,
+      "normalized_expected_centered_signal": 0.0361458561109014,
+      "expected_pair_hilbert_schmidt_distance_squared": 5.883114601383692e-06,
+      "expected_success_excess_trace_norm_upper_bound": 0.09506031783938738,
+      "subgroup_average_standard_coefficient_residual": 4.658681209898652e-21,
+      "nonnegative_signal_verified": true,
+      "collision_free_conditioned_signal_formula_proved": false,
+      "asymptotic_inverse_polynomial_signal_proved": false,
+      "status": "exact-natural-point-standard-coefficient-finite-control"
+    },
+    {
+      "n": 6,
+      "copy_count": 10,
+      "group_order": 720,
+      "orientation_count": 1024,
+      "partition_count": 11,
+      "expected_native_state_purity": 3.288255796001201e-06,
+      "expected_point_state_purity": 1.3727597397156158e-06,
+      "expected_average_state_purity": 1.3592763279014146e-06,
+      "expected_centered_hilbert_schmidt_norm_squared": 1.3483411814201127e-08,
+      "normalized_expected_centered_signal": 0.009941049862374207,
+      "expected_pair_hilbert_schmidt_distance_squared": 3.236018835408271e-08,
+      "expected_success_excess_trace_norm_upper_bound": 0.04985240681846315,
+      "subgroup_average_standard_coefficient_residual": 1.5054687148465104e-22,
+      "nonnegative_signal_verified": true,
+      "collision_free_conditioned_signal_formula_proved": false,
+      "asymptotic_inverse_polynomial_signal_proved": false,
+      "status": "exact-natural-point-standard-coefficient-finite-control"
+    }
+  ],
+  "young_edge_scaling_records": [
+    {
+      "n": 8,
+      "irrep_count": 22,
+      "young_child_count": 15,
+      "allowed_ordered_irrep_pair_count": 116,
+      "maximum_allowed_neighbor_count": 9,
+      "total_ordered_irrep_pair_count": 484,
+      "allowed_pair_fraction": 0.2396694214876033,
+      "maximum_removable_corner_count": 3,
+      "maximum_addable_parent_count": 4,
+      "local_young_edge_navigation_polynomial": true,
+      "simultaneous_multiplicity_whitening_proved": false,
+      "status": "young-edge-local-point-decoder-whitening-open"
+    },
+    {
+      "n": 12,
+      "irrep_count": 77,
+      "young_child_count": 56,
+      "allowed_ordered_irrep_pair_count": 583,
+      "maximum_allowed_neighbor_count": 15,
+      "total_ordered_irrep_pair_count": 5929,
+      "allowed_pair_fraction": 0.09833024118738404,
+      "maximum_removable_corner_count": 4,
+      "maximum_addable_parent_count": 5,
+      "local_young_edge_navigation_polynomial": true,
+      "simultaneous_multiplicity_whitening_proved": false,
+      "status": "young-edge-local-point-decoder-whitening-open"
+    },
+    {
+      "n": 16,
+      "irrep_count": 231,
+      "young_child_count": 176,
+      "allowed_ordered_irrep_pair_count": 2297,
+      "maximum_allowed_neighbor_count": 22,
+      "total_ordered_irrep_pair_count": 53361,
+      "allowed_pair_fraction": 0.04304641966979629,
+      "maximum_removable_corner_count": 5,
+      "maximum_addable_parent_count": 6,
+      "local_young_edge_navigation_polynomial": true,
+      "simultaneous_multiplicity_whitening_proved": false,
+      "status": "young-edge-local-point-decoder-whitening-open"
+    },
+    {
+      "n": 20,
+      "irrep_count": 627,
+      "young_child_count": 490,
+      "allowed_ordered_irrep_pair_count": 7717,
+      "maximum_allowed_neighbor_count": 24,
+      "total_ordered_irrep_pair_count": 393129,
+      "allowed_pair_fraction": 0.01962968898249684,
+      "maximum_removable_corner_count": 5,
+      "maximum_addable_parent_count": 6,
+      "local_young_edge_navigation_polynomial": true,
+      "simultaneous_multiplicity_whitening_proved": false,
+      "status": "young-edge-local-point-decoder-whitening-open"
+    }
+  ],
+  "stabilizer_chain_reductions": [
+    {
+      "n": 16,
+      "stabilizer_stage_count": 15,
+      "required_point_success": "p_m=1/m+delta_m with delta_m>=m^-O(1)",
+      "covariant_wrong_output_law": "Pr[wrong label]=(1-p_m)/(m-1)",
+      "plurality_margin": "p_m-(1-p_m)/(m-1)=m delta_m/(m-1)>=delta_m",
+      "repetitions_per_stage": "T_m>=2 delta_m^-2 ln((m-1)/epsilon_m)",
+      "fresh_subgroup_native_blocks_required": true,
+      "public_oracle_restriction_required": true,
+      "inverse_polynomial_point_excess_suffices": true,
+      "recursive_full_recovery_reduction_proved": true,
+      "inverse_polynomial_natural_point_excess_proved": false,
+      "efficient_point_measurement_proved": false,
+      "polynomial_full_hidden_shift_algorithm_proved": false,
+      "status": "conditional-stabilizer-chain-reduction-point-decoder-open"
+    },
+    {
+      "n": 64,
+      "stabilizer_stage_count": 63,
+      "required_point_success": "p_m=1/m+delta_m with delta_m>=m^-O(1)",
+      "covariant_wrong_output_law": "Pr[wrong label]=(1-p_m)/(m-1)",
+      "plurality_margin": "p_m-(1-p_m)/(m-1)=m delta_m/(m-1)>=delta_m",
+      "repetitions_per_stage": "T_m>=2 delta_m^-2 ln((m-1)/epsilon_m)",
+      "fresh_subgroup_native_blocks_required": true,
+      "public_oracle_restriction_required": true,
+      "inverse_polynomial_point_excess_suffices": true,
+      "recursive_full_recovery_reduction_proved": true,
+      "inverse_polynomial_natural_point_excess_proved": false,
+      "efficient_point_measurement_proved": false,
+      "polynomial_full_hidden_shift_algorithm_proved": false,
+      "status": "conditional-stabilizer-chain-reduction-point-decoder-open"
+    },
+    {
+      "n": 256,
+      "stabilizer_stage_count": 255,
+      "required_point_success": "p_m=1/m+delta_m with delta_m>=m^-O(1)",
+      "covariant_wrong_output_law": "Pr[wrong label]=(1-p_m)/(m-1)",
+      "plurality_margin": "p_m-(1-p_m)/(m-1)=m delta_m/(m-1)>=delta_m",
+      "repetitions_per_stage": "T_m>=2 delta_m^-2 ln((m-1)/epsilon_m)",
+      "fresh_subgroup_native_blocks_required": true,
+      "public_oracle_restriction_required": true,
+      "inverse_polynomial_point_excess_suffices": true,
+      "recursive_full_recovery_reduction_proved": true,
+      "inverse_polynomial_natural_point_excess_proved": false,
+      "efficient_point_measurement_proved": false,
+      "polynomial_full_hidden_shift_algorithm_proved": false,
+      "status": "conditional-stabilizer-chain-reduction-point-decoder-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_point_quotient_representation_geometry",
+      "resolved": true,
+      "resolution": "Covariance and two-transitivity force the centered quotient family to be an isotropic copy of the standard module."
+    },
+    {
+      "obligation": "identify_point_signal_fourier_support",
+      "resolved": true,
+      "resolution": "The S_(n-1) Reynolds operator and multiplicity-free Young branching restrict nonzero blocks to shared-child pairs."
+    },
+    {
+      "obligation": "derive_natural_point_signal",
+      "resolved": true,
+      "resolution": "The relative overlap kernel and Plancherel two-character moment give an exact finite class formula and standard coefficient."
+    },
+    {
+      "obligation": "prove_inverse_polynomial_natural_point_advantage",
+      "resolved": false,
+      "resolution": "Exact S_3--S_6 normalized Hilbert--Schmidt controls decay rapidly; no lower bound prevents factorial or exponential collapse."
+    },
+    {
+      "obligation": "transfer_point_signal_to_collision_free_sources",
+      "resolved": false,
+      "resolution": "The exact natural formula averages unrestricted independent Plancherel pairs. Vanishing collision probability gives only an additive comparison and need not preserve a tiny signal lower bound."
+    },
+    {
+      "obligation": "compile_efficient_point_measurement",
+      "resolved": false,
+      "resolution": "Young-edge locality is sparse, but every active irrep still carries an orientation multiplicity kernel requiring coherent whitening."
+    },
+    {
+      "obligation": "lift_point_decoder_down_stabilizer_chain",
+      "resolved": true,
+      "resolution": "Under fresh subgroup-native access, covariance gives a uniform error law and inverse-polynomial excess amplifies by plurality."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Point averaging leaves only the standard Fourier irrep.",
+      "resolved": true,
+      "resolution": "False. The centered operator family transforms as standard, but finite controls have nonzero blocks outside (n-1,1); the correct support rule is shared-child Young-edge locality."
+    },
+    {
+      "objection": "Positive point Holevo information implies a scalable weak learner.",
+      "resolved": false,
+      "resolution": "Finite point PGM excess is positive, while the exact natural normalized Hilbert--Schmidt signal falls sharply through S_6."
+    },
+    {
+      "objection": "High-probability collision freedom automatically transfers the natural signal.",
+      "resolved": false,
+      "resolution": "Not at the needed relative scale. The unrestricted signal may be smaller than the excluded event probability, so a conditioned lower bound needs a separate argument."
+    },
+    {
+      "objection": "An inverse-polynomial excess cannot be amplified because there are m labels.",
+      "resolved": true,
+      "resolution": "For an S_m-covariant decoder all wrong labels are equiprobable. The correct-label plurality margin is at least delta_m."
+    },
+    {
+      "objection": "The point decoder automatically recurses on arbitrary coset states.",
+      "resolved": false,
+      "resolution": "Recursion needs fresh states native to each restricted subgroup and known-translation oracle reindexing; inherited S_n states do not supply this for free."
+    }
+  ],
+  "headline_metrics": {
+    "exact_point_quotient_geometry_theorem_count": 1,
+    "young_edge_fourier_locality_theorem_count": 1,
+    "exact_relative_overlap_kernel_theorem_count": 1,
+    "exact_natural_standard_signal_theorem_count": 1,
+    "conditional_stabilizer_chain_reduction_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "minimum_finite_point_pgm_excess": 0.024137872913910452,
+    "minimum_natural_normalized_point_signal": 0.009941049862374207,
+    "inverse_polynomial_point_signal_theorem_count": 0,
+    "efficient_point_measurement_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "point_quotient_isotropic_standard_geometry_proved": true,
+    "point_quotient_young_edge_locality_proved": true,
+    "point_signal_confined_to_standard_fourier_irrep": false,
+    "exact_natural_point_signal_formula_proved": true,
+    "collision_free_conditioned_point_signal_formula_proved": false,
+    "inverse_polynomial_natural_point_signal_proved": false,
+    "efficient_point_measurement_proved": false,
+    "fresh_subgroup_native_state_access_proved_for_target_problem": false,
+    "conditional_stabilizer_chain_recovery_reduction_proved": true,
+    "polynomial_full_hidden_shift_decoder_proved": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "The quotient and recursive reduction are exact, but the natural point signal may collapse and the Young-edge multiplicity inverse has no efficient coherent implementation."
+  },
+  "status": "point-quotient-reduction-proved-asymptotic-signal-and-decoder-open",
+  "summary": "Point-image extraction is now an exact Young-edge-local weak-learning target with a stabilizer-chain payoff. Finite signal is real, but its rapid natural decay and unresolved multiplicity whitening block any polynomial decoder or speedup claim.",
+  "falsifiers_triggered": [
+    "The operator-valued point signal is not confined to the standard Fourier irrep; a standard-sector-only decoder discards real signal.",
+    "Positive S_3 and S_4 point PGM excess does not establish asymptotic weak learnability; normalized natural signal drops sharply through S_6.",
+    "Young-edge sparsity localizes irrep coupling but does not remove the orientation-kernel whitening problem."
+  ]
+}

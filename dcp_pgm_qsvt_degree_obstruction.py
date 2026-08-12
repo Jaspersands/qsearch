@@ -456,57 +456,6 @@ def write_qsvt_degree_obstruction_report(
     output_path.write_text(
         json.dumps(payload, indent=2, sort_keys=True)
     )
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-PGM-GENERIC-DIRECT-QSVT-RESCALING",
-                source=str(output_path),
-                claim=(
-                    "Generic QSVT on the direct DCP count or amplitude "
-                    "encoding implements normalized-fiber PGM weights in "
-                    "polynomial degree."
-                ),
-                reason_invalid=(
-                    "Singleton and doubleton weights differ by a constant "
-                    "across spectral spacing 2^-m or 2^(-m/2). Markov's "
-                    "inequality forces degree Omega(2^(m/2)) or "
-                    "Omega(2^(m/4)), respectively."
-                ),
-                lesson=(
-                    "Search only source-aware encodings with polynomial "
-                    "normalization, collision walks, or other full-rank "
-                    "measurements. Preserve the lack of an average-source "
-                    "prevalence theorem."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload[
-                    "falsifiers_triggered"
-                ],
-                artifacts={
-                    "dcp_pgm_qsvt_degree_obstruction": str(
-                        output_path
-                    )
-                },
-            )
-        )
     return payload
 
 

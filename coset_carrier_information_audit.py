@@ -550,51 +550,6 @@ def write_carrier_information_audit_report(
     payload = asdict(build_carrier_information_audit_report())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-SPECTRAL-SEPARATOR-SEARCH-NOT-INFORMATION-SEARCH",
-                source=str(output_path),
-                claim=(
-                    "A large-gap multiplicity separator is the best "
-                    "information-bearing refinement of carrier labels."
-                ),
-                reason_invalid=(
-                    "The gap-optimized rule is not information-optimal on the "
-                    "finite controls, and every searched refinement is "
-                    "dominated by direct product Young-basis measurement."
-                ),
-                lesson=(
-                    "Rank covariant measurement candidates by hidden-element "
-                    "information and Bayes recovery before gap optimization."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-SUCCESS",
-                    "PO-DEQUANTIZATION",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = (
-            registry_result_id
-            or f"RESULT-{registry_experiment_id}-COSET"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=dict(payload["headline_metrics"]),
-                falsifiers_triggered=list(payload["falsifiers_triggered"]),
-                artifacts={"coset_carrier_information_audit": str(output_path)},
-            )
-        )
     return payload
 
 

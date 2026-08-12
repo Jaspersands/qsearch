@@ -449,40 +449,6 @@ def write_stable_shape_trace_certificate(
     payload = asdict(build_stable_shape_trace_certificate())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-EXACT-NINE-SHAPE-TRACES-AS-COMPLETE-LABEL-PROOF",
-                source=str(output_path),
-                claim=(
-                    "Exact first characteristic coefficients for all nine shapes prove complete coherent labels."
-                ),
-                reason_invalid=(
-                    "Five open multiplicity-two shapes still need determinants, one multiplicity-three shape needs "
-                    "two higher coefficients, and all six need normalized gap and circuit theorems."
-                ),
-                lesson=(
-                    "Generalize marked-cycle moments only to the seven remaining coefficient families, then apply "
-                    "exact root separation and coherent block-encoding proof gates."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_stable_shape_trace_certificate": str(output_path)},
-            )
-        )
     return payload
 
 

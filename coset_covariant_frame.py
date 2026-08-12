@@ -265,35 +265,4 @@ def write_covariant_frame_report(
     payload = asdict(build_covariant_frame_report(n_values=n_values))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-CENTRAL-ONE-COPY-FRAME-AS-ALGORITHM",
-                source=str(output_path),
-                claim="Diagonalizing the central one-copy coset-state frame supplies a hidden-involution algorithm.",
-                reason_invalid=(
-                    "The exact PGM success is only 2/|C| times the frame support mass, at most twice uniform guessing."
-                ),
-                lesson=(
-                    "Use the central spectrum as a normalization primitive, then solve the k-copy diagonal-action and "
-                    "compressed outcome-decoding problem explicitly."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_covariant_frame": str(output_path)},
-            )
-        )
     return payload

@@ -181,39 +181,4 @@ def write_fixed_order_moment_theorem(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-SUBSET-SUM-ALL-FIXED-SOURCE-MOMENTS",
-                source=str(path),
-                claim=(
-                    "Some sufficiently large but fixed source factorial-moment order generically retains a persistent "
-                    "density-one modular subset-sum signal."
-                ),
-                reason_invalid=(
-                    "For every fixed order k, finite monotone lattice transfer and the Boolean-subspace projection "
-                    "lemma bound every bad state's relative growth by at most 1-2^-k."
-                ),
-                lesson=(
-                    "Stop escalating fixed moment degree. Search only growing-order mechanisms with charged resources, "
-                    "proved atypical conditioned fibers, or non-moment reduced-basis geometry."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-ALL-FIXED-MOMENT-THEOREM"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_subset_sum_fixed_order_moment_theorem": str(path)},
-            )
-        )
     return payload

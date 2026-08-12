@@ -773,56 +773,6 @@ def write_multistar_degree_obstruction_report(
     payload = asdict(run_multistar_degree_obstruction(**kwargs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-WREATH-SIGN-BLIND-MULTISTAR-CERTIFICATE",
-                source=str(path),
-                claim=(
-                    "Block Gershgorin on absolute pair-core overlap weights "
-                    "can certify the residual pair quotient at all depth."
-                ),
-                reason_invalid=(
-                    "The crossing graph of a sibling merge is complete "
-                    "bipartite and Sellke covering saturates the off-common "
-                    "weight at 1/(n-1), so the weighted degree grows like "
-                    "2^(j-1)/(n-1) and the certificate is already vacuous at "
-                    "n=8 on natural threshold portfolios."
-                ),
-                lesson=(
-                    "Only a phase-sensitive argument can survive. Bound the "
-                    "positive spectrum of the projector-weighted orientation "
-                    "Laplacian Delta = D - A, whose nonzero spectrum equals "
-                    "that of the existing relation Gram."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                    "PO-SUCCESS",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_multistar_degree_obstruction": str(path)
-                },
-            )
-        )
     return payload
 
 

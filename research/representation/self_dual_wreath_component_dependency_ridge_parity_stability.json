@@ -1,0 +1,246 @@
+{
+  "created_at": "2026-08-12T03:39:39.385736+00:00",
+  "theorem_contract": {
+    "dependency_projection": "Pi=supp(L)-supp(M), with 0<=M<=L",
+    "support_ridge": "Q_eta=L(L+eta I)^-1-M(M+eta I)^-1",
+    "operator_order": "0<=Q_eta<=I by operator monotonicity of x/(x+eta)",
+    "parity_curl": "C(P)=q^-2 sum_(S,T)||[PZ_SP,PZ_TP]||_F^2/2",
+    "fiber_stability": "|C(Pi)-C(Q)|/r<=16 epsilon+8 epsilon^2 for epsilon=||Pi-Q||F/sqrt(r)",
+    "physical_stability": "E[1_E|C(Pi)-C(Q)|/D]<=16sqrt(R)+8R, R=E[1_E||Pi-Q||F^2/D]",
+    "spectral_tail": "||Pi-Q_eta||F^2<=sum_spec+(L)(eta/(lambda+eta))^2+sum_spec+(M)(eta/(mu+eta))^2",
+    "word_access": "f_eta(A)=I-eta integral_0^infinity exp(-eta t)exp(-tA)dt",
+    "scope": "The theorem removes exact support discontinuity from the M4 target conditionally on a trace-weighted spectral tail; it does not prove a positive natural ridge curl or that tail."
+  },
+  "theorem": {
+    "dependency_projection": "Pi=supp(L)-supp(M), with 0<=M<=L",
+    "support_ridge": "Q_eta=L(L+eta I)^-1-M(M+eta I)^-1",
+    "operator_order": "0<=Q_eta<=I by operator monotonicity of x/(x+eta)",
+    "parity_curl_functional": "C(P)=q^-2 sum_(S,T)||[PZ_SP,PZ_TP]||_F^2/2",
+    "normalized_stability": "|C(Pi)-C(Q)|/r<=16 epsilon+8 epsilon^2 for epsilon=||Pi-Q||F/sqrt(r)",
+    "physical_annealed_stability": "E[1_E|C(Pi)-C(Q)|/D]<=16sqrt(R)+8R, R=E[1_E||Pi-Q||F^2/D]",
+    "spectral_tail": "||Pi-Q_eta||F^2<=sum_spec+(L)(eta/(lambda+eta))^2+sum_spec+(M)(eta/(mu+eta))^2",
+    "heat_kernel": "f_eta(A)=I-eta integral_0^infinity exp(-eta t)exp(-tA)dt",
+    "arbitrary_nested_positive_grams": true,
+    "arbitrary_equal_coordinate_blocks": true,
+    "theorem_verified": true,
+    "status": "exact-parity-curl-M4-stable-under-support-resolvent-ridge"
+  },
+  "finite_controls": [
+    {
+      "control_id": "RANDOM-NESTED-N16-R6-ETA-1E-2",
+      "ambient_coefficient_dimension": 16,
+      "exact_dependency_rank": 6,
+      "leaf_count": 4,
+      "coordinate_block_dimension": 4,
+      "ridge_parameter": 0.01,
+      "gram_order_minimum_eigenvalue": 0.17040517061541696,
+      "ridge_minimum_eigenvalue": 0.002823980906266926,
+      "ridge_maximum_eigenvalue": 0.9918040250619764,
+      "exact_projection_residual": 3.185308410614485e-15,
+      "ridge_positive_contraction_residual": 0.0,
+      "dependency_ridge_frobenius_error_squared": 0.006628275968247354,
+      "spectral_tail_error_upper_bound": 0.012859666488490388,
+      "normalized_dependency_ridge_error": 0.033237218014968685,
+      "exact_normalized_parity_curl_M4": 0.029050697627705648,
+      "ridge_normalized_parity_curl_M4": 0.026313916725751788,
+      "normalized_parity_curl_difference": 0.00273678090195386,
+      "dimension_free_stability_upper_bound": 0.5406331895304954,
+      "spectral_tail_bound_verified": true,
+      "parity_curl_stability_verified": true,
+      "exact_and_ridge_curls_both_nonnegative": true,
+      "status": "dependency-support-ridge-parity-curl-stability-verified"
+    },
+    {
+      "control_id": "RANDOM-NESTED-N16-R6-ETA-1E-3",
+      "ambient_coefficient_dimension": 16,
+      "exact_dependency_rank": 6,
+      "leaf_count": 4,
+      "coordinate_block_dimension": 4,
+      "ridge_parameter": 0.001,
+      "gram_order_minimum_eigenvalue": 0.17040517061541696,
+      "ridge_minimum_eigenvalue": 0.00028725314088612824,
+      "ridge_maximum_eigenvalue": 0.999172395706716,
+      "exact_projection_residual": 3.185308410614485e-15,
+      "ridge_positive_contraction_residual": 0.0,
+      "dependency_ridge_frobenius_error_squared": 7.290137602248565e-05,
+      "spectral_tail_error_upper_bound": 0.0001384080105810349,
+      "normalized_dependency_ridge_error": 0.0034857179084201496,
+      "exact_normalized_parity_curl_M4": 0.029050697627705648,
+      "ridge_normalized_parity_curl_M4": 0.028746537417009027,
+      "normalized_parity_curl_difference": 0.0003041602106966211,
+      "dimension_free_stability_upper_bound": 0.055868688369419044,
+      "spectral_tail_bound_verified": true,
+      "parity_curl_stability_verified": true,
+      "exact_and_ridge_curls_both_nonnegative": true,
+      "status": "dependency-support-ridge-parity-curl-stability-verified"
+    },
+    {
+      "control_id": "RANDOM-NESTED-N16-R5-ETA-3E-3",
+      "ambient_coefficient_dimension": 16,
+      "exact_dependency_rank": 5,
+      "leaf_count": 8,
+      "coordinate_block_dimension": 2,
+      "ridge_parameter": 0.003,
+      "gram_order_minimum_eigenvalue": 0.1418738548220693,
+      "ridge_minimum_eigenvalue": 0.0009022394269085111,
+      "ridge_maximum_eigenvalue": 0.9973961544393077,
+      "exact_projection_residual": 2.14857047148538e-15,
+      "ridge_positive_contraction_residual": 0.0,
+      "dependency_ridge_frobenius_error_squared": 0.0007310630664623119,
+      "spectral_tail_error_upper_bound": 0.0013873851445366538,
+      "normalized_dependency_ridge_error": 0.012091840773532472,
+      "exact_normalized_parity_curl_M4": 0.04747616960907754,
+      "ridge_normalized_parity_curl_M4": 0.0459132820972011,
+      "normalized_parity_curl_difference": 0.001562887511876436,
+      "dimension_free_stability_upper_bound": 0.19463915328285925,
+      "spectral_tail_bound_verified": true,
+      "parity_curl_stability_verified": true,
+      "exact_and_ridge_curls_both_nonnegative": true,
+      "status": "dependency-support-ridge-parity-curl-stability-verified"
+    },
+    {
+      "control_id": "COMMUTING-NESTED-N16-R6-ETA-1E-2",
+      "ambient_coefficient_dimension": 16,
+      "exact_dependency_rank": 6,
+      "leaf_count": 4,
+      "coordinate_block_dimension": 4,
+      "ridge_parameter": 0.01,
+      "gram_order_minimum_eigenvalue": 0.16000000000000003,
+      "ridge_minimum_eigenvalue": 0.005813199076116549,
+      "ridge_maximum_eigenvalue": 0.9937888198757764,
+      "exact_projection_residual": 0.0,
+      "ridge_positive_contraction_residual": 0.0,
+      "dependency_ridge_frobenius_error_squared": 0.0012732124353958029,
+      "spectral_tail_error_upper_bound": 0.008842400442208537,
+      "normalized_dependency_ridge_error": 0.014567157326189868,
+      "exact_normalized_parity_curl_M4": 0.0,
+      "ridge_normalized_parity_curl_M4": 0.0,
+      "normalized_parity_curl_difference": 0.0,
+      "dimension_free_stability_upper_bound": 0.23477213379956563,
+      "spectral_tail_bound_verified": true,
+      "parity_curl_stability_verified": true,
+      "exact_and_ridge_curls_both_nonnegative": true,
+      "status": "dependency-support-ridge-parity-curl-stability-verified"
+    }
+  ],
+  "physical_transfer_records": [
+    {
+      "trace_weighted_dependency_ridge_error": 1e-12,
+      "physical_parity_curl_transfer_upper_bound": 1.6000007999999998e-05,
+      "target_exact_physical_M4_lower_bound": 0.0001,
+      "required_ridge_physical_M4_lower_bound": 0.000116000008,
+      "ridge_signal_survives_transfer": true,
+      "uniform_child_frame_edge_required": false,
+      "uniform_common_metric_edge_required": false,
+      "status": "trace-weighted-ridge-error-permits-positive-M4-transfer"
+    },
+    {
+      "trace_weighted_dependency_ridge_error": 1e-10,
+      "physical_parity_curl_transfer_upper_bound": 0.00016000080000000001,
+      "target_exact_physical_M4_lower_bound": 0.0001,
+      "required_ridge_physical_M4_lower_bound": 0.00026000080000000003,
+      "ridge_signal_survives_transfer": true,
+      "uniform_child_frame_edge_required": false,
+      "uniform_common_metric_edge_required": false,
+      "status": "trace-weighted-ridge-error-permits-positive-M4-transfer"
+    },
+    {
+      "trace_weighted_dependency_ridge_error": 1e-08,
+      "physical_parity_curl_transfer_upper_bound": 0.00160008,
+      "target_exact_physical_M4_lower_bound": 0.0001,
+      "required_ridge_physical_M4_lower_bound": 0.00170008,
+      "ridge_signal_survives_transfer": true,
+      "uniform_child_frame_edge_required": false,
+      "uniform_common_metric_edge_required": false,
+      "status": "trace-weighted-ridge-error-permits-positive-M4-transfer"
+    },
+    {
+      "trace_weighted_dependency_ridge_error": 1e-06,
+      "physical_parity_curl_transfer_upper_bound": 0.016008,
+      "target_exact_physical_M4_lower_bound": 0.0001,
+      "required_ridge_physical_M4_lower_bound": 0.016108,
+      "ridge_signal_survives_transfer": true,
+      "uniform_child_frame_edge_required": false,
+      "uniform_common_metric_edge_required": false,
+      "status": "trace-weighted-ridge-error-permits-positive-M4-transfer"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "replace_dependency_support_projection_by_bounded_resolvent_in_M4",
+      "resolved": true,
+      "resolution": "Operator monotonicity gives a positive contraction and equations (3)-(4) transfer its parity curl without outcome-count loss."
+    },
+    {
+      "obligation": "reduce_ridge_to_support_error_to_scalar_spectral_tail",
+      "resolved": true,
+      "resolution": "Equation (5) is an explicit trace of squared resolvent defects for L and M."
+    },
+    {
+      "obligation": "prove_natural_trace_weighted_dependency_ridge_error_small",
+      "resolved": false,
+      "resolution": "Choose inverse-polynomial eta and bound the regular-master average of equation (5) under accepted Plancherel sources."
+    },
+    {
+      "obligation": "prove_positive_natural_bounded_ridge_parity_curl",
+      "resolved": false,
+      "resolution": "Evaluate the heat-kernel/resolvent parity words on typical four-cell mask strata and beat the transfer error."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The difference of two support ridges need not be positive.",
+      "resolved": true,
+      "resolution": "It is positive here because M<=L and x/(x+eta) is operator monotone."
+    },
+    {
+      "objection": "Approximating q leaf effects incurs a factor q.",
+      "resolved": true,
+      "resolution": "The Walsh pair functional is a normalized q^-2 average; the stability constant is outcome-count independent."
+    },
+    {
+      "objection": "A uniform minimum eigenvalue of L and M is required.",
+      "resolved": true,
+      "resolution": "No. The transfer premise is the annealed trace-weighted squared resolvent tail in equation (5)."
+    },
+    {
+      "objection": "A small ridge error proves positive M4.",
+      "resolved": true,
+      "resolution": "No. The bounded ridge curl must first have a positive natural lower bound exceeding the transfer error."
+    }
+  ],
+  "headline_metrics": {
+    "dependency_support_ridge_parity_stability_theorem_count": 1,
+    "trace_weighted_physical_transfer_theorem_count": 1,
+    "finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "finite_eta_convergence_control_count": 1,
+    "maximum_finite_stability_ratio": 0.008029666619054649,
+    "physical_transfer_record_count": 4,
+    "physical_transfer_surviving_record_count": 4,
+    "natural_trace_weighted_dependency_ridge_error_theorem_count": 0,
+    "natural_bounded_ridge_parity_curl_lower_bound_count": 0,
+    "natural_component_M4_lower_bound_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "dependency_support_has_positive_contraction_resolvent_approximation": true,
+    "parity_curl_M4_is_outcome_count_free_stable": true,
+    "physical_trace_weighted_ridge_transfer_proved": true,
+    "uniform_child_frame_edge_required": false,
+    "uniform_common_metric_edge_required": false,
+    "natural_trace_weighted_dependency_ridge_error_small": false,
+    "natural_bounded_ridge_parity_curl_positive": false,
+    "natural_component_M4_positive": false,
+    "speedup_claim_allowed": false,
+    "reason": "Support discontinuity and common-metric inversion are removed from the trace target, but both the natural ridge spectral tail and positive bounded parity curl remain open."
+  },
+  "status": "dependency-support-M4-transferred-to-bounded-ridge-parity-curl",
+  "summary": "Replaced the exact dependency support projection by an ordered positive resolvent ridge with dimension-free parity-curl M4 stability and an explicit trace-weighted spectral-tail premise.",
+  "falsifiers_triggered": [
+    "The ordered support-ridge difference is positive only because 0<=M<=L and the resolvent map is operator monotone.",
+    "No factor equal to the exponential leaf count appears in the parity-curl transfer.",
+    "Uniform spectral edges are stronger than the trace-weighted ridge premise actually needed.",
+    "No natural ridge error, ridge curl, exact M4, algorithm, or speedup is proved."
+  ]
+}

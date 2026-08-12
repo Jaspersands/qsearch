@@ -625,49 +625,6 @@ def write_self_dual_code_boundary(
     payload = asdict(run_self_dual_code_boundary(specs))
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        for family in payload["family_records"]:
-            for audit in family["collision_audits"]:
-                if audit["status"] not in {
-                    "rejected-by-scalable-self-dual-invariant",
-                    "rejected-by-exact-self-dual-codeword-invariant",
-                    "equivalent-control-under-exact-incidence-isomorphism",
-                }:
-                    continue
-                upsert_negative_result(
-                    NegativeResultRecord(
-                        id=f"NEG-CODE-SELF-DUAL-{audit['id'].upper()}",
-                        source=str(path),
-                        claim=f"{audit['id']} supplies a hard self-dual code-equivalence row.",
-                        reason_invalid=audit["interpretation"],
-                        lesson=(
-                            "Growing hull is necessary to evade the trivial-hull route but is not sufficient. "
-                            "Exhaust scalable invariants and canonicalization before nonabelian measurement design."
-                        ),
-                        applies_to=[registry_candidate_id, registry_experiment_id],
-                        evidence={
-                            "family_id": family["spec"]["id"],
-                            "pair_id": audit["id"],
-                            "status": audit["status"],
-                            "scalable_signatures_match": audit["scalable_signatures_match"],
-                            "exact_signatures_match": audit["exact_signatures_match"],
-                        },
-                    )
-                )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"self_dual_code_boundary": str(path)},
-            )
-        )
     return payload
 
 

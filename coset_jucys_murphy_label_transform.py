@@ -482,39 +482,4 @@ def write_jucys_murphy_label_transform_report(
     payload = asdict(build_jucys_murphy_label_transform_report(n_values=n_values))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-JM-LABELS-AS-KRONECKER-MULTIPLICITY-BASIS",
-                source=str(output_path),
-                claim=(
-                    "Simultaneous diagonal Young--Jucys--Murphy labels implement the full internal S_n "
-                    "Kronecker transform and its hidden-involution decoder."
-                ),
-                reason_invalid=(
-                    "The YJM algebra acts identically on every copy of V_nu. Its joint eigenspaces retain exact "
-                    "degeneracy g(lambda,mu,nu), so no multiplicity basis, associator, transition filter, or decoder follows."
-                ),
-                lesson=(
-                    "Use the polynomial label transform as a front end, then state multiplicity-space control and "
-                    "decoding as separate typed proof obligations."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_jucys_murphy_label_transform": str(output_path)},
-            )
-        )
     return payload

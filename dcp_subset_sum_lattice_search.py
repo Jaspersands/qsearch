@@ -449,41 +449,4 @@ def write_subset_sum_lattice_search(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-TESTED-LLL-DENSITY-ONE-PARTIAL-SOLVERS",
-                source=str(path),
-                claim="Small-n success of standard modular LLL embeddings establishes Regev's partial average-case subset-sum assumption.",
-                reason_invalid=(
-                    "Tested embedding/scaling/basis-combination rows lose success in the scaling tail and have no uniform "
-                    "inverse-polynomial legal-input coverage or reversible implementation theorem."
-                ),
-                lesson=(
-                    "Retain LLL as a serious baseline, not positive evidence. A mutation must change the asymptotic short-vector "
-                    "geometry, use structural preprocessing, or prove coverage rather than tune finite embedding constants."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence={
-                    "row_count": payload["headline_metrics"]["row_count"],
-                    "tail_success_row_count": payload["headline_metrics"]["tail_success_row_count"],
-                    "proved_uniform_inverse_polynomial_coverage_count": 0,
-                    "source_contract_satisfying_row_count": 0,
-                },
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-SUBSET-SUM-LATTICE"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_subset_sum_lattice_search": str(path)},
-            )
-        )
     return payload

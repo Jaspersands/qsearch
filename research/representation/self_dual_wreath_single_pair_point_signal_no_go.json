@@ -1,0 +1,248 @@
+{
+  "created_at": "2026-08-12T03:41:25.795971+00:00",
+  "theorem_contract": {
+    "exact_pair_signal": "D_(lambda,mu)=g(lambda,mu,(n-1,1))/[2(d_lambda d_mu)^3].",
+    "positive_criterion": "For lambda!=mu, D>0 iff lambda and mu share a child partition of n-1.",
+    "unequal_plancherel_expectation": "E_neq D=[2(n!)^2(1-C_n)]^-1 sum_(lambda!=mu) g(lambda,mu,std)/(d_lambda d_mu).",
+    "measurement_upper_bound": "E_neq[P_success-1/n]<=1/2 sqrt(2n! E_neq D).",
+    "asymptotic_consequence": "The Young-edge count is at most p(n)(sqrt(2n)+1)^2, so one-pair point advantage is exp(-Theta(n log n)) up to subexponential factors.",
+    "scope": "The no-go applies to one unequal pair after carrier trace. It does not bound collective information-threshold blocks or carrier-retaining decoders.",
+    "theorem_verified": true,
+    "status": "single-pair-point-route-factorially-weak-collective-route-open"
+  },
+  "theorem": {
+    "exact_pair_signal": "D_(lambda,mu)=g(lambda,mu,(n-1,1))/[2(d_lambda d_mu)^3].",
+    "positive_criterion": "For lambda!=mu, D>0 iff lambda and mu share a child partition of n-1.",
+    "unequal_plancherel_expectation": "E_neq D=[2(n!)^2(1-C_n)]^-1 sum_(lambda!=mu) g(lambda,mu,std)/(d_lambda d_mu).",
+    "measurement_upper_bound": "E_neq[P_success-1/n]<=1/2 sqrt(2n! E_neq D).",
+    "asymptotic_consequence": "The Young-edge count is at most p(n)(sqrt(2n)+1)^2, so one-pair point advantage is exp(-Theta(n log n)) up to subexponential factors.",
+    "scope": "The no-go applies to one unequal pair after carrier trace. It does not bound collective information-threshold blocks or carrier-retaining decoders.",
+    "theorem_verified": true,
+    "status": "single-pair-point-route-factorially-weak-collective-route-open"
+  },
+  "finite_controls": [
+    {
+      "n": 3,
+      "unordered_unequal_pair_count": 3,
+      "positive_signal_pair_count": 2,
+      "zero_signal_pair_count": 1,
+      "maximum_formula_residual": 2.7755575615628914e-17,
+      "maximum_zero_criterion_residual": 0.0,
+      "minimum_positive_signal": 0.06250000000000003,
+      "maximum_positive_signal": 0.06250000000000003,
+      "exact_single_pair_signal_formula_verified": true,
+      "exact_shared_child_zero_criterion_verified": true,
+      "status": "exact-single-pair-point-signal-and-zero-criterion"
+    },
+    {
+      "n": 4,
+      "unordered_unequal_pair_count": 10,
+      "positive_signal_pair_count": 5,
+      "zero_signal_pair_count": 5,
+      "maximum_formula_residual": 6.938893903907228e-18,
+      "maximum_zero_criterion_residual": 5.758741010361433e-33,
+      "minimum_positive_signal": 0.0006858710562414265,
+      "maximum_positive_signal": 0.018518518518518524,
+      "exact_single_pair_signal_formula_verified": true,
+      "exact_shared_child_zero_criterion_verified": true,
+      "status": "exact-single-pair-point-signal-and-zero-criterion"
+    },
+    {
+      "n": 5,
+      "unordered_unequal_pair_count": 21,
+      "positive_signal_pair_count": 9,
+      "zero_signal_pair_count": 12,
+      "maximum_formula_residual": 1.0408340855860843e-17,
+      "maximum_zero_criterion_residual": 5.892924358623384e-33,
+      "minimum_positive_signal": 1.8518518518518498e-05,
+      "maximum_positive_signal": 0.0078124999999999905,
+      "exact_single_pair_signal_formula_verified": true,
+      "exact_shared_child_zero_criterion_verified": true,
+      "status": "exact-single-pair-point-signal-and-zero-criterion"
+    }
+  ],
+  "natural_scaling_records": [
+    {
+      "n": 8,
+      "partition_count": 22,
+      "group_order_log2": 15.29920801838728,
+      "ordered_positive_young_edge_count": 94,
+      "ordered_positive_young_edge_count_upper_bound": 550.0,
+      "plancherel_collision_probability": 0.10763733878968254,
+      "exact_conditioned_expected_centered_signal": 2.3709041908015946e-10,
+      "exact_conditioned_expected_centered_signal_log2": -31.97384358476657,
+      "optimal_point_success_excess_upper_bound": 0.002186262300973059,
+      "optimal_point_success_excess_upper_bound_log2": -8.837317783189645,
+      "combinatorial_success_excess_upper_bound": 0.06181877464960413,
+      "combinatorial_success_excess_upper_bound_log2": -4.015811131897899,
+      "one_pair_inverse_polynomial_point_advantage_ruled_out": true,
+      "information_threshold_collective_block_ruled_out": false,
+      "status": "natural-single-pair-point-advantage-factorially-small"
+    },
+    {
+      "n": 12,
+      "partition_count": 77,
+      "group_order_log2": 28.835455234075408,
+      "ordered_positive_young_edge_count": 506,
+      "ordered_positive_young_edge_count_upper_bound": 2679.4428407772184,
+      "plancherel_collision_probability": 0.047530278695833164,
+      "exact_conditioned_expected_centered_signal": 8.706163747586029e-19,
+      "exact_conditioned_expected_centered_signal_log2": -59.99459664792949,
+      "optimal_point_success_excess_upper_bound": 1.4439990244033589e-05,
+      "optimal_point_success_excess_upper_bound_log2": -16.07957070692704,
+      "combinatorial_success_excess_upper_bound": 0.0012117085755188565,
+      "combinatorial_success_excess_upper_bound_log2": -9.688741522492048,
+      "one_pair_inverse_polynomial_point_advantage_ruled_out": true,
+      "information_threshold_collective_block_ruled_out": false,
+      "status": "natural-single-pair-point-advantage-factorially-small"
+    },
+    {
+      "n": 16,
+      "partition_count": 231,
+      "group_order_log2": 44.25014046988262,
+      "ordered_positive_young_edge_count": 2066,
+      "ordered_positive_young_edge_count_upper_bound": 10236.46666326548,
+      "plancherel_collision_probability": 0.021580705579990426,
+      "exact_conditioned_expected_centered_signal": 3.1804182761245635e-28,
+      "exact_conditioned_expected_centered_signal_log2": -91.34477014127125,
+      "optimal_point_success_excess_upper_bound": 5.768154962694285e-08,
+      "optimal_point_success_excess_upper_bound_log2": -24.047314835694316,
+      "combinatorial_success_excess_upper_bound": 1.1180796459879903e-05,
+      "combinatorial_success_excess_upper_bound_log2": -16.448617512750165,
+      "one_pair_inverse_polynomial_point_advantage_ruled_out": true,
+      "information_threshold_collective_block_ruled_out": false,
+      "status": "natural-single-pair-point-advantage-factorially-small"
+    },
+    {
+      "n": 20,
+      "partition_count": 627,
+      "group_order_log2": 61.07738392090622,
+      "ordered_positive_young_edge_count": 7090,
+      "ordered_positive_young_edge_count_upper_bound": 33637.9923717023,
+      "plancherel_collision_probability": 0.010237706029929823,
+      "exact_conditioned_expected_centered_signal": 1.8197363158462338e-38,
+      "exact_conditioned_expected_centered_signal_log2": -125.36953819012066,
+      "optimal_point_success_excess_upper_bound": 1.4878239373619215e-10,
+      "optimal_point_success_excess_upper_bound_log2": -32.64607713460722,
+      "combinatorial_success_excess_upper_bound": 5.9095889959287454e-08,
+      "combinatorial_success_excess_upper_bound_log2": -24.01236696273238,
+      "one_pair_inverse_polynomial_point_advantage_ruled_out": true,
+      "information_threshold_collective_block_ruled_out": false,
+      "status": "natural-single-pair-point-advantage-factorially-small"
+    },
+    {
+      "n": 24,
+      "partition_count": 1575,
+      "group_order_log2": 79.03765741910046,
+      "ordered_positive_young_edge_count": 21534,
+      "ordered_positive_young_edge_count_upper_bound": 98998.84017536785,
+      "plancherel_collision_probability": 0.005722791801940631,
+      "exact_conditioned_expected_centered_signal": 2.291066093047066e-49,
+      "exact_conditioned_expected_centered_signal_log2": -161.5784575711368,
+      "optimal_point_success_excess_upper_bound": 2.6659785217591957e-13,
+      "optimal_point_success_excess_upper_bound_log2": -41.77040007601817,
+      "combinatorial_success_excess_upper_bound": 2.002988613626249e-10,
+      "combinatorial_success_excess_upper_bound_log2": -32.21712672897694,
+      "one_pair_inverse_polynomial_point_advantage_ruled_out": true,
+      "information_threshold_collective_block_ruled_out": false,
+      "status": "natural-single-pair-point-advantage-factorially-small"
+    },
+    {
+      "n": 28,
+      "partition_count": 3718,
+      "group_order_log2": 97.94419575123734,
+      "ordered_positive_young_edge_count": 59674,
+      "ordered_positive_young_edge_count_upper_bound": 267571.928656102,
+      "plancherel_collision_probability": 0.0029774964320603173,
+      "exact_conditioned_expected_centered_signal": 8.040482104047738e-61,
+      "exact_conditioned_expected_centered_signal_log2": -199.63033178072158,
+      "optimal_point_success_excess_upper_bound": 3.501035045942289e-16,
+      "optimal_point_success_excess_upper_bound_log2": -51.34306801474212,
+      "combinatorial_success_excess_upper_bound": 4.691021109992868e-13,
+      "combinatorial_success_excess_upper_bound_log2": -40.95516324043716,
+      "one_pair_inverse_polynomial_point_advantage_ruled_out": true,
+      "information_threshold_collective_block_ruled_out": false,
+      "status": "natural-single-pair-point-advantage-factorially-small"
+    },
+    {
+      "n": 32,
+      "partition_count": 8349,
+      "group_order_log2": 117.6632636523603,
+      "ordered_positive_young_edge_count": 153852,
+      "ordered_positive_young_edge_count_upper_bound": 676269.0,
+      "plancherel_collision_probability": 0.0017803245793295511,
+      "exact_conditioned_expected_centered_signal": 9.376636233437859e-73,
+      "exact_conditioned_expected_centered_signal_log2": -239.27168046242642,
+      "optimal_point_success_excess_upper_bound": 3.512322692839668e-19,
+      "optimal_point_success_excess_upper_bound_log2": -61.30420840503305,
+      "combinatorial_success_excess_upper_bound": 8.022889448388884e-16,
+      "combinatorial_success_excess_upper_bound_log2": -50.1467276004564,
+      "one_pair_inverse_polynomial_point_advantage_ruled_out": true,
+      "information_threshold_collective_block_ruled_out": false,
+      "status": "natural-single-pair-point-advantage-factorially-small"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_exact_single_pair_point_signal",
+      "resolved": true,
+      "resolution": "Irreducible character convolution reduces the standard coefficient to one Kronecker multiplicity with exact dimension normalization."
+    },
+    {
+      "obligation": "rule_out_natural_one_pair_point_decoder",
+      "resolved": true,
+      "resolution": "Young-edge counting and a trace-norm measurement bound make the average optimal success excess factorially small."
+    },
+    {
+      "obligation": "extend_no_go_to_information_threshold_blocks",
+      "resolved": false,
+      "resolution": "Cross-copy products share s,t,u and can create standard energy that is absent from every isolated pair; no tensorized bound is proved."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Any positive one-pair point signal can seed a scalable weak learner.",
+      "resolved": true,
+      "resolution": "False under the natural source law: even the optimal POVM has factorially small average excess over random guessing."
+    },
+    {
+      "objection": "All unequal source pairs have point information.",
+      "resolved": true,
+      "resolution": "False. The signal is exactly zero unless the two Young diagrams share an S_(n-1) child."
+    },
+    {
+      "objection": "The one-pair bound tensorizes to threshold copy count.",
+      "resolved": false,
+      "resolution": "The retained joint block is not a product of independently shifted point states; shared group variables generate collective harmonics."
+    }
+  ],
+  "headline_metrics": {
+    "exact_single_pair_signal_theorem_count": 1,
+    "shared_child_zero_criterion_theorem_count": 1,
+    "natural_one_pair_measurement_no_go_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "tail_n": 32,
+    "tail_optimal_success_excess_upper_bound_log2": -61.30420840503305,
+    "threshold_collective_no_go_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "exact_single_pair_point_signal_proved": true,
+    "single_pair_shared_child_criterion_proved": true,
+    "natural_single_pair_inverse_polynomial_point_advantage_ruled_out": true,
+    "information_threshold_collective_point_decoder_ruled_out": false,
+    "carrier_retaining_point_decoder_ruled_out": false,
+    "polynomial_full_hidden_shift_decoder_proved": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "One-pair point extraction is factorially weak. Collective threshold standard energy and its coherent measurement remain unresolved."
+  },
+  "status": "single-pair-point-route-factorially-weak-collective-route-open",
+  "summary": "Closed and killed the one-pair point-extraction route with an exact dimension/Kronecker formula. Any viable point decoder must exploit collective threshold-copy structure rather than isolated pair signals.",
+  "falsifiers_triggered": [
+    "Positive finite one-pair signal is not research progress toward a scalable decoder; its natural optimal advantage is factorially small.",
+    "Unequal source labels alone do not guarantee point information; Young adjacency is necessary and sufficient at one pair.",
+    "The no-go cannot be multiplied across copies because the physical joint register contains collective group correlations."
+  ]
+}

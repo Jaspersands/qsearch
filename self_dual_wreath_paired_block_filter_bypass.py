@@ -443,53 +443,6 @@ def write_paired_block_filter_bypass_report(
     payload = asdict(run_paired_block_filter_bypass())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-CODE-WREATH-BRANCH-CONTROLLED-LOCAL-FILTER-NORM-RESTORATION",
-                source=str(path),
-                claim=(
-                    "Removing trivial/sign selected sectors independently in "
-                    "each orientation block restores a uniform "
-                    "poly(n)2^-k residual frame norm."
-                ),
-                reason_invalid=(
-                    "Pairs of Sellke-good blocks share retained nontrivial "
-                    "self-dual irreps. Assigning one bit per pair recreates "
-                    "2^Theta(k) filtered projectors with a common vector."
-                ),
-                lesson=(
-                    "Do not extend the local one-dimensional filter. Search "
-                    "for a genuinely nonlocal block transform or an efficient "
-                    "implementation of the global spectral-trimming theorem."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-COMPLEXITY",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_paired_block_filter_bypass": str(path)
-                },
-            )
-        )
     return payload
 
 

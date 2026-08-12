@@ -344,43 +344,6 @@ def write_partial_relation_coverage_audit(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-POLYNOMIAL-SIGNED-RELATION-DICTIONARY-AS-PARTIAL-MAP",
-                source=str(path),
-                claim=(
-                    "A polynomial dictionary of explicit signed-difference masks gives inverse-polynomial "
-                    "source-weighted child-fiber pairing coverage at linear depth."
-                ),
-                reason_invalid=(
-                    "With exponentially high probability every mask has linear support, hence exponentially small "
-                    "compatible domain; polynomially many masks remain exponentially small in total."
-                ),
-                lesson=(
-                    "Remove explicit signed-relation dictionaries from synthesis. A surviving partial map must be "
-                    "implicitly target-indexed or nontranslation and must prove its exact source-law coverage."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or (
-            f"RESULT-{registry_experiment_id}-DCP-PARTIAL-RELATION-COVERAGE"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_partial_relation_coverage": str(path)},
-            )
-        )
     return payload
 
 

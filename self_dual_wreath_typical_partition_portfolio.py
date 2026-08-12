@@ -379,49 +379,6 @@ def write_self_dual_wreath_typical_partition_portfolio(
     payload = asdict(run_self_dual_wreath_typical_partition_portfolio())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id=(
-                    "NEG-CODE-SELF-DUAL-WREATH-TYPICAL-"
-                    "PRECERTIFIED-CATALOG-SUPERPOLYNOMIAL"
-                ),
-                source=str(path),
-                claim=(
-                    "A polynomial catalog of partition-specific typical "
-                    "recoupling certificates covers constant natural mass."
-                ),
-                reason_invalid=(
-                    "The maximum Plancherel atom is "
-                    "exp(-Theta(sqrt(n))), so constant mass requires "
-                    "exp(Omega(sqrt(n))) labels."
-                ),
-                lesson=(
-                    "Synthesize one uniform rule parameterized by the sampled "
-                    "partition descriptions."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_typical_partition_portfolio": str(path)
-                },
-            )
-        )
     return payload
 
 

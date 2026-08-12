@@ -305,30 +305,4 @@ def write_dcp_uniform_schedule_report(
     payload = asdict(report)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-BLOCK-SCALE-TUNING-NOT-ASYMPTOTIC-ADVANCE",
-                source=str(path),
-                claim="Tuning the constant in a Kuperberg-style sqrt(log N) bucket schedule is a new asymptotic algorithm.",
-                reason_invalid="Every searched schedule remains in the same 2^O(sqrt(log N)) grammar and has no proved recurrence.",
-                lesson="Use constant tuning to strengthen the baseline; require a new recurrence class for breakthrough evidence.",
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-DCP-UNIFORM-SCHEDULE"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_uniform_schedule_family": str(path)},
-            )
-        )
     return payload

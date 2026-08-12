@@ -304,39 +304,4 @@ def write_carry_relation_theorem(
     )
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-DCP-SUBSET-SUM-CARRY-SLICED-UNIFORM-SHORTEST-ISOLATION",
-                source=str(path),
-                claim=(
-                    "Logarithmic low-bit carry slicing uniformly isolates the planted binary witness among shortest "
-                    "vectors of the quotient embedding."
-                ),
-                reason_invalid=(
-                    "A balanced signed-relation family retains positive exponential expectation and has a rigorous "
-                    "inverse-polynomial Paley-Zygmund source-coverage bound."
-                ),
-                lesson=(
-                    "Require a source-subset theorem that avoids the competitor event or a marker-aware extractor; do "
-                    "not infer isolation from low-bit exactness or finite LLL success."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-CARRY-RELATION-THEOREM"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"dcp_subset_sum_carry_relation_theorem": str(path)},
-            )
-        )
     return payload

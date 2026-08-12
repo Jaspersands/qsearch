@@ -1,0 +1,322 @@
+{
+  "created_at": "2026-08-12T03:42:35.314147+00:00",
+  "theorem_contract": {
+    "pinching": "P_parent removes every off-diagonal parent block inside each fixed S_(n-1) child star.",
+    "pythagorean_energy": "||Delta||_2^2=||P_parent Delta||_2^2+||(I-P_parent)Delta||_2^2.",
+    "information_consequence": "If P_parent Delta_j=0 for every point j, all parent-dephased point states coincide and carry zero point information.",
+    "sign_twist_witness": "For every n>=6, the sign-twist portfolio's exact Theta(n^-15) point energy lies entirely in two distinct-parent coherence blocks.",
+    "mrs_boundary": "This witnesses failure of early projective parent-label dephasing, not separation from every adaptive MRS transcript POVM.",
+    "source_law_boundary": "The all-n witness portfolio remains factorially rare under natural Plancherel source sampling.",
+    "theorem_verified": true,
+    "status": "all-n-parent-coherence-resource-proved-natural-admission-open"
+  },
+  "theorem": {
+    "pinching": "P_parent removes every off-diagonal parent block inside each fixed S_(n-1) child star.",
+    "pythagorean_energy": "||Delta||_2^2=||P_parent Delta||_2^2+||(I-P_parent)Delta||_2^2.",
+    "information_consequence": "If P_parent Delta_j=0 for every point j, all parent-dephased point states coincide and carry zero point information.",
+    "sign_twist_witness": "For every n>=6, the sign-twist portfolio's exact Theta(n^-15) point energy lies entirely in two distinct-parent coherence blocks.",
+    "mrs_boundary": "This witnesses failure of early projective parent-label dephasing, not separation from every adaptive MRS transcript POVM.",
+    "source_law_boundary": "The all-n witness portfolio remains factorially rare under natural Plancherel source sampling.",
+    "theorem_verified": true,
+    "status": "all-n-parent-coherence-resource-proved-natural-admission-open"
+  },
+  "finite_controls": [
+    {
+      "control_id": "W3-INFORMATION-THRESHOLD",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 3,
+      "orientation_count": 8,
+      "total_point_energy": 0.044921875000000014,
+      "parent_dephased_point_energy": 0.005859375,
+      "parent_offdiagonal_point_energy": 0.03906250000000001,
+      "parent_dephased_energy_fraction": 0.13043478260869562,
+      "parent_offdiagonal_energy_fraction": 0.8695652173913042,
+      "energy_pythagorean_residual": 7.458936881129264e-18,
+      "maximum_parent_dephased_point_state_variation": 0.13258252147247765,
+      "parent_dephasing_erases_all_point_information": false,
+      "parent_coherence_carries_point_information": true,
+      "exact_parent_coherence_decomposition_verified": true,
+      "status": "exact-parent-coherence-energy-decomposition"
+    },
+    {
+      "control_id": "W4-COLLISION-FREE-PAIR",
+      "n": 4,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 2,
+      "orientation_count": 4,
+      "total_point_energy": 0.0025612997256515765,
+      "parent_dephased_point_energy": 0.00024112654320987648,
+      "parent_offdiagonal_point_energy": 0.0023201731824417,
+      "parent_dephased_energy_fraction": 0.09414225941422595,
+      "parent_offdiagonal_energy_fraction": 0.905857740585774,
+      "energy_pythagorean_residual": 1.7073598280228895e-17,
+      "maximum_parent_dephased_point_state_variation": 0.02535752581042435,
+      "parent_dephasing_erases_all_point_information": false,
+      "parent_coherence_carries_point_information": true,
+      "exact_parent_coherence_decomposition_verified": true,
+      "status": "exact-parent-coherence-energy-decomposition"
+    },
+    {
+      "control_id": "W4-ZERO-ZERO-COLLECTIVE-ACTIVATION",
+      "n": 4,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 2,
+      "orientation_count": 4,
+      "total_point_energy": 0.001736111111111111,
+      "parent_dephased_point_energy": 3.932552967511869e-34,
+      "parent_offdiagonal_point_energy": 0.001736111111111111,
+      "parent_dephased_energy_fraction": 2.2651505092868366e-31,
+      "parent_offdiagonal_energy_fraction": 1.0,
+      "energy_pythagorean_residual": 2.212113475409652e-17,
+      "maximum_parent_dephased_point_state_variation": 2.759916570274298e-17,
+      "parent_dephasing_erases_all_point_information": true,
+      "parent_coherence_carries_point_information": true,
+      "exact_parent_coherence_decomposition_verified": true,
+      "status": "exact-parent-dephasing-zero-information-witness"
+    }
+  ],
+  "sign_twist_scaling": [
+    {
+      "n": 6,
+      "exact_conditional_point_energy": "1/364500",
+      "exact_parent_diagonal_energy": "0",
+      "exact_parent_offdiagonal_energy": "1/364500",
+      "parent_offdiagonal_energy_fraction": 1.0,
+      "pairwise_nonadjacent_sources": true,
+      "exactly_two_distinct_parent_edges": true,
+      "parent_dephasing_erases_conditional_point_signal": true,
+      "inverse_polynomial_conditional_signal": true,
+      "inverse_polynomial_natural_source_admission": false,
+      "complete_mrs_transcript_separation_proved": false,
+      "status": "all-n-parent-coherence-necessary-source-admission-fails"
+    },
+    {
+      "n": 8,
+      "exact_conditional_point_energy": "1/702464000",
+      "exact_parent_diagonal_energy": "0",
+      "exact_parent_offdiagonal_energy": "1/702464000",
+      "parent_offdiagonal_energy_fraction": 1.0,
+      "pairwise_nonadjacent_sources": true,
+      "exactly_two_distinct_parent_edges": true,
+      "parent_dephasing_erases_conditional_point_signal": true,
+      "inverse_polynomial_conditional_signal": true,
+      "inverse_polynomial_natural_source_admission": false,
+      "complete_mrs_transcript_separation_proved": false,
+      "status": "all-n-parent-coherence-necessary-source-admission-fails"
+    },
+    {
+      "n": 10,
+      "exact_conditional_point_energy": "1/72351562500",
+      "exact_parent_diagonal_energy": "0",
+      "exact_parent_offdiagonal_energy": "1/72351562500",
+      "parent_offdiagonal_energy_fraction": 1.0,
+      "pairwise_nonadjacent_sources": true,
+      "exactly_two_distinct_parent_edges": true,
+      "parent_dephasing_erases_conditional_point_signal": true,
+      "inverse_polynomial_conditional_signal": true,
+      "inverse_polynomial_natural_source_admission": false,
+      "complete_mrs_transcript_separation_proved": false,
+      "status": "all-n-parent-coherence-necessary-source-admission-fails"
+    },
+    {
+      "n": 16,
+      "exact_conditional_point_energy": "1/383281659904000",
+      "exact_parent_diagonal_energy": "0",
+      "exact_parent_offdiagonal_energy": "1/383281659904000",
+      "parent_offdiagonal_energy_fraction": 1.0,
+      "pairwise_nonadjacent_sources": true,
+      "exactly_two_distinct_parent_edges": true,
+      "parent_dephasing_erases_conditional_point_signal": true,
+      "inverse_polynomial_conditional_signal": true,
+      "inverse_polynomial_natural_source_admission": false,
+      "complete_mrs_transcript_separation_proved": false,
+      "status": "all-n-parent-coherence-necessary-source-admission-fails"
+    },
+    {
+      "n": 32,
+      "exact_conditional_point_energy": "1/35545652495168569344",
+      "exact_parent_diagonal_energy": "0",
+      "exact_parent_offdiagonal_energy": "1/35545652495168569344",
+      "parent_offdiagonal_energy_fraction": 1.0,
+      "pairwise_nonadjacent_sources": true,
+      "exactly_two_distinct_parent_edges": true,
+      "parent_dephasing_erases_conditional_point_signal": true,
+      "inverse_polynomial_conditional_signal": true,
+      "inverse_polynomial_natural_source_admission": false,
+      "complete_mrs_transcript_separation_proved": false,
+      "status": "all-n-parent-coherence-necessary-source-admission-fails"
+    },
+    {
+      "n": 64,
+      "exact_conditional_point_energy": "1/1854228642563664635756544",
+      "exact_parent_diagonal_energy": "0",
+      "exact_parent_offdiagonal_energy": "1/1854228642563664635756544",
+      "parent_offdiagonal_energy_fraction": 1.0,
+      "pairwise_nonadjacent_sources": true,
+      "exactly_two_distinct_parent_edges": true,
+      "parent_dephasing_erases_conditional_point_signal": true,
+      "inverse_polynomial_conditional_signal": true,
+      "inverse_polynomial_natural_source_admission": false,
+      "complete_mrs_transcript_separation_proved": false,
+      "status": "all-n-parent-coherence-necessary-source-admission-fails"
+    },
+    {
+      "n": 128,
+      "exact_conditional_point_energy": "1/75793612541437935616000000000",
+      "exact_parent_diagonal_energy": "0",
+      "exact_parent_offdiagonal_energy": "1/75793612541437935616000000000",
+      "parent_offdiagonal_energy_fraction": 1.0,
+      "pairwise_nonadjacent_sources": true,
+      "exactly_two_distinct_parent_edges": true,
+      "parent_dephasing_erases_conditional_point_signal": true,
+      "inverse_polynomial_conditional_signal": true,
+      "inverse_polynomial_natural_source_admission": false,
+      "complete_mrs_transcript_separation_proved": false,
+      "status": "all-n-parent-coherence-necessary-source-admission-fails"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "identify_where_collective_point_energy_lives",
+      "resolved": true,
+      "resolution": "Young child-star parent pinching splits it exactly into transcript diagonal and coherent recoupling energies."
+    },
+    {
+      "obligation": "construct_all_n_parent_coherence_point_witness",
+      "resolved": true,
+      "resolution": "The sign-twist conditional signal is entirely off-diagonal for every n>=6."
+    },
+    {
+      "obligation": "obtain_inverse_polynomial_natural_coherence_mass",
+      "resolved": false,
+      "resolution": "The proved coherent witness uses factorially rare source labels."
+    },
+    {
+      "obligation": "compile_coherent_parent_recombination_filter",
+      "resolved": false,
+      "resolution": "No label-adaptive Racah/path filter or direct point measurement is implemented."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Measuring intermediate parents preserves the sign-twist signal because its magnitude is polynomial.",
+      "resolved": true,
+      "resolution": "False. Magnitude and coherence location are separate; parent pinching annihilates the entire signal."
+    },
+    {
+      "objection": "An off-diagonal finite block proves a natural MRS escape.",
+      "resolved": true,
+      "resolution": "False. Natural source mass and full adaptive transcript separation remain unproved."
+    },
+    {
+      "objection": "The commutant zero-information theorem rules out using a Racah transform as preprocessing.",
+      "resolved": true,
+      "resolution": "False. It rules out invariant labels as final outcomes; coherent recombination into a carrier-sensitive point effect remains open."
+    }
+  ],
+  "headline_metrics": {
+    "parent_energy_pythagorean_theorem_count": 1,
+    "all_n_parent_coherence_witness_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "finite_zero_information_parent_dephasing_count": 1,
+    "natural_inverse_polynomial_coherence_witness_count": 0,
+    "complete_mrs_transcript_separation_count": 0,
+    "coherent_parent_filter_circuit_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "parent_pinching_energy_decomposition_proved": true,
+    "all_n_sign_twist_signal_entirely_parent_coherent": true,
+    "early_parent_measurement_can_destroy_all_point_information": true,
+    "inverse_polynomial_natural_coherence_mass_proved": false,
+    "complete_mrs_transcript_povm_separation_proved": false,
+    "coherent_parent_recombination_filter_compiled": false,
+    "polynomial_point_decoder_proved": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "Parent coherence is a necessary conditional resource, but its natural mass and coherent implementation are unsolved."
+  },
+  "status": "all-n-parent-coherence-resource-proved-natural-admission-open",
+  "summary": "Proved an exact parent-dephasing energy split and an all-n conditional portfolio whose point signal is entirely recoupling coherence. This identifies the resource while retaining source and circuit blockers.",
+  "falsifiers_triggered": [
+    "Intermediate parent labels are not harmless bookkeeping: measuring them can erase every bit of available point signal.",
+    "Inverse-polynomial conditional energy does not compensate for factorially rare source admission.",
+    "A coherent recoupling witness is not yet a complete MRS-model escape or a decoder."
+  ]
+}

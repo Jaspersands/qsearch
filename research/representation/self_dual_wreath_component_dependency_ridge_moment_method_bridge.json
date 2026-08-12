@@ -1,0 +1,283 @@
+{
+  "created_at": "2026-08-12T03:39:39.378700+00:00",
+  "theorem_contract": {
+    "moments": "m_k(alpha)=sum_(j=1)^k Narayana(k,j)alpha^j",
+    "uniform_gap": "inf_(alpha in [2,4)) ell(alpha)=(sqrt(2)-1)^2",
+    "premise": "for every fixed k, E Tr(F_n^k)/D_n-m_k(alpha_n)->0",
+    "weak_law": "the expected empirical laws converge subsequentially to MP_(alpha_n)",
+    "small_eigenvalues": "for fixed tau<(sqrt(2)-1)^2, E N_Fn^+(tau)/D_n->0",
+    "ridge_tail": "for every fixed a>0, eta_n=n^-a gives E T_eta_n(F_n)/D_n->0",
+    "conditioning": "bounded tail transfer adds at most 1-p_cf=o(1)",
+    "scope": "This is a method-of-moments implication. It does not prove the all-fixed natural moment premise or a positive ridge curl."
+  },
+  "theorem": {
+    "mp_moments": "m_k(alpha)=sum_(j=1)^k Narayana(k,j)alpha^j",
+    "uniform_mp_gap": "inf_(alpha in [2,4)) ell(alpha)=(sqrt(2)-1)^2",
+    "all_fixed_moment_premise": "for every fixed k, E Tr(F_n^k)/D_n-m_k(alpha_n)->0",
+    "weak_convergence_consequence": "the expected empirical laws converge subsequentially to MP_(alpha_n)",
+    "fixed_threshold_consequence": "for fixed tau<(sqrt(2)-1)^2, E N_Fn^+(tau)/D_n->0",
+    "inverse_polynomial_ridge_consequence": "for every fixed a>0, eta_n=n^-a gives E T_eta_n(F_n)/D_n->0",
+    "collision_free_consequence": "bounded tail transfer adds at most 1-p_cf=o(1)",
+    "constant_signal_only_without_rate": true,
+    "growing_moment_edge_required": false,
+    "theorem_verified": true,
+    "status": "all-fixed-moment-convergence-suffices-for-constant-signal-ridge-transfer"
+  },
+  "finite_controls": [
+    {
+      "control_id": "DIM-64-SQRT-CONTAMINATION",
+      "dimension": 64,
+      "contaminated_eigenvalue_count": 8,
+      "contaminated_eigenvalue_fraction": 0.125,
+      "tiny_eigenvalue": 1.4551915228366852e-11,
+      "minimum_positive_eigenvalue": 1.4551915228366852e-11,
+      "maximum_moment_difference_through_order": 8,
+      "maximum_normalized_moment_difference": 0.07638888888706985,
+      "ridge_parameter": 5.960464477539063e-08,
+      "exact_normalized_support_ridge_tail": 0.12493898718821973,
+      "near_zero_split_upper_bound": 0.12500000000005684,
+      "tail_bound_verified": true,
+      "minimum_edge_vanishes": true,
+      "normalized_tail_vanishes_with_contamination_fraction": true,
+      "status": "vanishing-fraction-hard-edge-outliers-compatible-with-vanishing-tail"
+    },
+    {
+      "control_id": "DIM-256-SQRT-CONTAMINATION",
+      "dimension": 256,
+      "contaminated_eigenvalue_count": 16,
+      "contaminated_eigenvalue_fraction": 0.0625,
+      "tiny_eigenvalue": 3.552713678800501e-15,
+      "minimum_positive_eigenvalue": 3.552713678800501e-15,
+      "maximum_moment_difference_through_order": 8,
+      "maximum_normalized_moment_difference": 0.03492647058823506,
+      "ridge_parameter": 2.3283064365386963e-10,
+      "exact_normalized_support_ridge_tail": 0.062498092695022045,
+      "near_zero_split_upper_bound": 0.0625,
+      "tail_bound_verified": true,
+      "minimum_edge_vanishes": true,
+      "normalized_tail_vanishes_with_contamination_fraction": true,
+      "status": "vanishing-fraction-hard-edge-outliers-compatible-with-vanishing-tail"
+    },
+    {
+      "control_id": "DIM-1024-SQRT-CONTAMINATION",
+      "dimension": 1024,
+      "contaminated_eigenvalue_count": 32,
+      "contaminated_eigenvalue_fraction": 0.03125,
+      "tiny_eigenvalue": 8.673617379884035e-19,
+      "minimum_positive_eigenvalue": 8.673617379884035e-19,
+      "maximum_moment_difference_through_order": 8,
+      "maximum_normalized_moment_difference": 0.016571969696969724,
+      "ridge_parameter": 9.094947017729282e-13,
+      "exact_normalized_support_ridge_tail": 0.03124994039544049,
+      "near_zero_split_upper_bound": 0.03125,
+      "tail_bound_verified": true,
+      "minimum_edge_vanishes": true,
+      "normalized_tail_vanishes_with_contamination_fraction": true,
+      "status": "vanishing-fraction-hard-edge-outliers-compatible-with-vanishing-tail"
+    },
+    {
+      "control_id": "DIM-4096-SQRT-CONTAMINATION",
+      "dimension": 4096,
+      "contaminated_eigenvalue_count": 64,
+      "contaminated_eigenvalue_fraction": 0.015625,
+      "tiny_eigenvalue": 2.117582368135751e-22,
+      "minimum_positive_eigenvalue": 2.117582368135751e-22,
+      "maximum_moment_difference_through_order": 8,
+      "maximum_normalized_moment_difference": 0.00805288461538467,
+      "ridge_parameter": 3.552713678800501e-15,
+      "exact_normalized_support_ridge_tail": 0.015624998137355017,
+      "near_zero_split_upper_bound": 0.015625,
+      "tail_bound_verified": true,
+      "minimum_edge_vanishes": true,
+      "normalized_tail_vanishes_with_contamination_fraction": true,
+      "status": "vanishing-fraction-hard-edge-outliers-compatible-with-vanishing-tail"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 32,
+      "child_aspect": 2.0,
+      "uniform_mp_lower_edge": 0.17157287525381,
+      "chosen_fixed_threshold": 0.085786437626905,
+      "ridge_inverse_polynomial_degree": 4,
+      "ridge_parameter": 9.5367431640625e-07,
+      "ridge_to_fixed_threshold_squared": 1.2358143965786309e-10,
+      "assumed_expected_small_eigenvalue_density": 0.17677669529663687,
+      "resulting_single_frame_tail_upper_bound": 0.17677669542021832,
+      "qualitative_all_fixed_moment_premise_assumed": true,
+      "growing_moment_edge_required": false,
+      "global_distinct_raw_moment_transfer_required": false,
+      "status": "all-fixed-moment-premise-would-close-qualitative-ridge-tail"
+    },
+    {
+      "n": 64,
+      "child_aspect": 2.25,
+      "uniform_mp_lower_edge": 0.17157287525381,
+      "chosen_fixed_threshold": 0.085786437626905,
+      "ridge_inverse_polynomial_degree": 4,
+      "ridge_parameter": 5.960464477539063e-08,
+      "ridge_to_fixed_threshold_squared": 4.827500609799786e-13,
+      "assumed_expected_small_eigenvalue_density": 0.125,
+      "resulting_single_frame_tail_upper_bound": 0.12500000000048275,
+      "qualitative_all_fixed_moment_premise_assumed": true,
+      "growing_moment_edge_required": false,
+      "global_distinct_raw_moment_transfer_required": false,
+      "status": "all-fixed-moment-premise-would-close-qualitative-ridge-tail"
+    },
+    {
+      "n": 128,
+      "child_aspect": 3.0,
+      "uniform_mp_lower_edge": 0.17157287525381,
+      "chosen_fixed_threshold": 0.085786437626905,
+      "ridge_inverse_polynomial_degree": 4,
+      "ridge_parameter": 3.725290298461914e-09,
+      "ridge_to_fixed_threshold_squared": 1.8857448823640734e-15,
+      "assumed_expected_small_eigenvalue_density": 0.08838834764831843,
+      "resulting_single_frame_tail_upper_bound": 0.08838834764832032,
+      "qualitative_all_fixed_moment_premise_assumed": true,
+      "growing_moment_edge_required": false,
+      "global_distinct_raw_moment_transfer_required": false,
+      "status": "all-fixed-moment-premise-would-close-qualitative-ridge-tail"
+    },
+    {
+      "n": 256,
+      "child_aspect": 3.75,
+      "uniform_mp_lower_edge": 0.17157287525381,
+      "chosen_fixed_threshold": 0.085786437626905,
+      "ridge_inverse_polynomial_degree": 4,
+      "ridge_parameter": 2.3283064365386963e-10,
+      "ridge_to_fixed_threshold_squared": 7.366191546506046e-18,
+      "assumed_expected_small_eigenvalue_density": 0.0625,
+      "resulting_single_frame_tail_upper_bound": 0.06250000000000001,
+      "qualitative_all_fixed_moment_premise_assumed": true,
+      "growing_moment_edge_required": false,
+      "global_distinct_raw_moment_transfer_required": false,
+      "status": "all-fixed-moment-premise-would-close-qualitative-ridge-tail"
+    },
+    {
+      "n": 512,
+      "child_aspect": 2.0,
+      "uniform_mp_lower_edge": 0.17157287525381,
+      "chosen_fixed_threshold": 0.085786437626905,
+      "ridge_inverse_polynomial_degree": 4,
+      "ridge_parameter": 1.4551915228366852e-11,
+      "ridge_to_fixed_threshold_squared": 2.877418587496781e-20,
+      "assumed_expected_small_eigenvalue_density": 0.044194173824159216,
+      "resulting_single_frame_tail_upper_bound": 0.044194173824159216,
+      "qualitative_all_fixed_moment_premise_assumed": true,
+      "growing_moment_edge_required": false,
+      "global_distinct_raw_moment_transfer_required": false,
+      "status": "all-fixed-moment-premise-would-close-qualitative-ridge-tail"
+    },
+    {
+      "n": 1024,
+      "child_aspect": 2.25,
+      "uniform_mp_lower_edge": 0.17157287525381,
+      "chosen_fixed_threshold": 0.085786437626905,
+      "ridge_inverse_polynomial_degree": 4,
+      "ridge_parameter": 9.094947017729282e-13,
+      "ridge_to_fixed_threshold_squared": 1.1239916360984214e-22,
+      "assumed_expected_small_eigenvalue_density": 0.03125,
+      "resulting_single_frame_tail_upper_bound": 0.03125,
+      "qualitative_all_fixed_moment_premise_assumed": true,
+      "growing_moment_edge_required": false,
+      "global_distinct_raw_moment_transfer_required": false,
+      "status": "all-fixed-moment-premise-would-close-qualitative-ridge-tail"
+    },
+    {
+      "n": 4096,
+      "child_aspect": 3.0,
+      "uniform_mp_lower_edge": 0.17157287525381,
+      "chosen_fixed_threshold": 0.085786437626905,
+      "ridge_inverse_polynomial_degree": 4,
+      "ridge_parameter": 3.552713678800501e-15,
+      "ridge_to_fixed_threshold_squared": 1.7150751283602313e-27,
+      "assumed_expected_small_eigenvalue_density": 0.015625,
+      "resulting_single_frame_tail_upper_bound": 0.015625,
+      "qualitative_all_fixed_moment_premise_assumed": true,
+      "growing_moment_edge_required": false,
+      "global_distinct_raw_moment_transfer_required": false,
+      "status": "all-fixed-moment-premise-would-close-qualitative-ridge-tail"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "identify_sufficient_moment_regime_for_trace_tail",
+      "resolved": true,
+      "resolution": "All fixed moments plus determinacy imply the weak law; orders growing with n are unnecessary for a trace tail."
+    },
+    {
+      "obligation": "avoid_global_distinct_transfer_of_unbounded_moments",
+      "resolved": true,
+      "resolution": "Derive the independent weak law, then transfer only the bounded support-ridge tail."
+    },
+    {
+      "obligation": "prove_all_fixed_independent_plancherel_child_frame_moments",
+      "resolved": false,
+      "resolution": "Use the exact arbitrary-word normal form with fixed-order word-map/character bounds. Only orders one through four are proved."
+    },
+    {
+      "obligation": "prove_constant_or_inverse_polynomial_natural_ridge_curl",
+      "resolved": false,
+      "resolution": "The spectral bridge controls support transfer only; the typical physical Hamming-pair commutator remains open."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "A spectral edge requires moments growing with dimension.",
+      "resolved": true,
+      "resolution": "Correct for the minimum eigenvalue, but the target is a normalized trace tail. Weak convergence is enough."
+    },
+    {
+      "objection": "Four exact moments imply the weak law.",
+      "resolved": false,
+      "resolution": "No finite moment list determines a measure or excludes a macroscopic near-zero sector. Every fixed order is required."
+    },
+    {
+      "objection": "Tiny minimum eigenvalues falsify trace-tail transfer.",
+      "resolved": true,
+      "resolution": "A vanishing fraction of arbitrarily tiny eigenvalues gives a vanishing normalized tail; the controls exhibit this exactly."
+    },
+    {
+      "objection": "Qualitative moment convergence preserves inverse-polynomial signals.",
+      "resolved": false,
+      "resolution": "Without a rate it only suffices when the ridge-curl signal has a constant lower bound."
+    }
+  ],
+  "headline_metrics": {
+    "all_fixed_moment_to_tail_bridge_theorem_count": 1,
+    "growing_moment_edge_requirement_removed_count": 1,
+    "global_distinct_raw_moment_transfer_requirement_removed_count": 1,
+    "finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "mp_moment_formula_residual_through_order_four": 0.0,
+    "minimum_control_positive_eigenvalue": 2.117582368135751e-22,
+    "maximum_control_normalized_tail": 0.12493898718821973,
+    "all_fixed_natural_moment_theorem_count": 0,
+    "natural_ridge_curl_lower_bound_theorem_count": 0,
+    "natural_component_M4_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "all_fixed_moments_would_suffice_for_trace_tail": true,
+    "growing_moment_spectral_edge_required_for_trace_tail": false,
+    "globally_distinct_raw_moment_control_required": false,
+    "independent_moments_through_order_four_proved": true,
+    "all_fixed_independent_moments_proved": false,
+    "natural_child_frame_weak_mp_law_proved": false,
+    "natural_support_ridge_tail_small": false,
+    "natural_ridge_curl_positive": false,
+    "natural_component_M4_positive": false,
+    "speedup_claim_allowed": false,
+    "reason": "The spectral target now needs only all-fixed independent moments, but that theorem and the positive ridge curl are open."
+  },
+  "status": "all-fixed-moment-criterion-for-support-ridge-tail-proved",
+  "summary": "Proved that all fixed independent child-frame moments, rather than growing moments or a spectral edge, suffice for qualitative dependency-ridge transfer at a constant signal.",
+  "falsifiers_triggered": [
+    "Growing moments are unnecessary for the normalized support-ridge trace tail.",
+    "Four fixed moments remain insufficient; every fixed order is still open.",
+    "Unbounded raw moments need not transfer through global-distinct conditioning.",
+    "A vanishing fraction of arbitrarily tiny eigenvalues is compatible with vanishing trace tail.",
+    "No all-fixed natural law, ridge curl, exact M4, algorithm, or speedup is proved."
+  ]
+}

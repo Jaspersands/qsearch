@@ -1,0 +1,223 @@
+{
+  "created_at": "2026-08-12T03:42:28.521862+00:00",
+  "theorem_contract": {
+    "full_spectrum": "spec+(R*R)=spec+(RR*) with multiplicity",
+    "excluded_spectrum": "spec+(R*(I-XX*)R)=spec+((I-XX*)RR*(I-XX*))",
+    "rank": "rank(L)-rank(M)=rank(X)=r",
+    "tail_trace": "T_eta(A)=rank(A)-2Tr f_eta(A)+Tr f_eta(A)^2",
+    "dependency_error": "||Pi-Q_eta||F^2<=T_eta(F)+T_eta(F_perp)",
+    "physical_average": "E[1_E||Pi-Q_eta||F^2/D]<=E[1_E(T_eta(F)+T_eta(F_perp))/D]",
+    "scope": "This is an exact singular-value reduction. It does not bound the natural physical frame tails or positive ridge curl."
+  },
+  "theorem": {
+    "full_spectrum_transfer": "spec+(R*R)=spec+(RR*) with multiplicity",
+    "excluded_spectrum_transfer": "spec+(R*(I-XX*)R)=spec+((I-XX*)RR*(I-XX*))",
+    "rank_identity": "rank(L)-rank(M)=rank(X)=r",
+    "tail_trace_identity": "T_eta(A)=rank(A)-2Tr f_eta(A)+Tr f_eta(A)^2",
+    "dependency_error_bound": "||Pi-Q_eta||F^2<=T_eta(F)+T_eta(F_perp)",
+    "physical_annealed_bound": "E[1_E||Pi-Q_eta||F^2/D]<=E[1_E(T_eta(F)+T_eta(F_perp))/D]",
+    "arbitrary_child_synthesis": true,
+    "arbitrary_common_subspace_inside_child_range": true,
+    "theorem_verified": true,
+    "status": "dependency-ridge-error-is-two-physical-frame-spectral-tails"
+  },
+  "finite_controls": [
+    {
+      "control_id": "FULL-ROW-RANK-D12-N16-R5",
+      "physical_dimension": 12,
+      "coefficient_dimension": 16,
+      "child_synthesis_rank": 12,
+      "common_fiber_dimension": 5,
+      "excluded_synthesis_rank": 7,
+      "ridge_parameter": 0.01,
+      "maximum_full_nonzero_spectrum_residual": 1.7763568394002505e-15,
+      "maximum_excluded_nonzero_spectrum_residual": 1.3322676295501878e-15,
+      "rank_difference_residual": 0,
+      "coefficient_full_support_ridge_tail": 0.00416044519822837,
+      "physical_full_support_ridge_tail": 0.004160445198228357,
+      "coefficient_excluded_support_ridge_tail": 0.0006279016785342512,
+      "physical_excluded_support_ridge_tail": 0.0006279016785342513,
+      "exact_dependency_ridge_error_squared": 0.0035393394362784256,
+      "coefficient_spectral_tail_upper_bound": 0.0047883468767626215,
+      "physical_spectral_tail_upper_bound": 0.0047883468767626084,
+      "physical_tail_bound_slack": 0.0012490074404841829,
+      "support_ridge_tail_trace_formula_residual": 1.033895191682177e-15,
+      "exact_physical_spectral_reduction_verified": true,
+      "status": "dependency-ridge-error-reduced-to-physical-frame-spectral-tails"
+    },
+    {
+      "control_id": "RANK-DEFICIENT-D14-N18-S10-R4",
+      "physical_dimension": 14,
+      "coefficient_dimension": 18,
+      "child_synthesis_rank": 10,
+      "common_fiber_dimension": 4,
+      "excluded_synthesis_rank": 6,
+      "ridge_parameter": 0.003,
+      "maximum_full_nonzero_spectrum_residual": 8.881784197001252e-16,
+      "maximum_excluded_nonzero_spectrum_residual": 4.440892098500626e-16,
+      "rank_difference_residual": 0,
+      "coefficient_full_support_ridge_tail": 0.000348549021316733,
+      "physical_full_support_ridge_tail": 0.00034854902131673204,
+      "coefficient_excluded_support_ridge_tail": 7.566305619587274e-05,
+      "physical_excluded_support_ridge_tail": 7.56630561958727e-05,
+      "exact_dependency_ridge_error_squared": 0.0002731163407577014,
+      "coefficient_spectral_tail_upper_bound": 0.00042421207751260575,
+      "physical_spectral_tail_upper_bound": 0.0004242120775126047,
+      "physical_tail_bound_slack": 0.0001510957367549033,
+      "support_ridge_tail_trace_formula_residual": 5.306627533230301e-16,
+      "exact_physical_spectral_reduction_verified": true,
+      "status": "dependency-ridge-error-reduced-to-physical-frame-spectral-tails"
+    },
+    {
+      "control_id": "TALL-D16-N12-S12-R6",
+      "physical_dimension": 16,
+      "coefficient_dimension": 12,
+      "child_synthesis_rank": 12,
+      "common_fiber_dimension": 6,
+      "excluded_synthesis_rank": 6,
+      "ridge_parameter": 0.001,
+      "maximum_full_nonzero_spectrum_residual": 2.220446049250313e-15,
+      "maximum_excluded_nonzero_spectrum_residual": 1.3322676295501878e-15,
+      "rank_difference_residual": 0,
+      "coefficient_full_support_ridge_tail": 4.4405785531462894e-05,
+      "physical_full_support_ridge_tail": 4.4405785531462854e-05,
+      "coefficient_excluded_support_ridge_tail": 6.477093491600891e-06,
+      "physical_excluded_support_ridge_tail": 6.4770934916008754e-06,
+      "exact_dependency_ridge_error_squared": 3.793598279239012e-05,
+      "coefficient_spectral_tail_upper_bound": 5.088287902306379e-05,
+      "physical_spectral_tail_upper_bound": 5.088287902306373e-05,
+      "physical_tail_bound_slack": 1.2946896230673606e-05,
+      "support_ridge_tail_trace_formula_residual": 2.7956424068081853e-15,
+      "exact_physical_spectral_reduction_verified": true,
+      "status": "dependency-ridge-error-reduced-to-physical-frame-spectral-tails"
+    }
+  ],
+  "scaling_records": [
+    {
+      "target_exact_physical_M4": 0.0001,
+      "assumed_normalized_physical_spectral_tail": 1e-14,
+      "exact_M4_transfer_error_upper_bound": 1.60000008e-06,
+      "required_bounded_ridge_physical_curl": 0.00010160000008,
+      "transfer_can_preserve_target_signal": true,
+      "uniform_minimum_frame_eigenvalue_required": false,
+      "coefficient_space_analysis_required": false,
+      "status": "physical-frame-tail-permits-exact-M4-transfer"
+    },
+    {
+      "target_exact_physical_M4": 0.0001,
+      "assumed_normalized_physical_spectral_tail": 1e-12,
+      "exact_M4_transfer_error_upper_bound": 1.6000007999999998e-05,
+      "required_bounded_ridge_physical_curl": 0.000116000008,
+      "transfer_can_preserve_target_signal": true,
+      "uniform_minimum_frame_eigenvalue_required": false,
+      "coefficient_space_analysis_required": false,
+      "status": "physical-frame-tail-permits-exact-M4-transfer"
+    },
+    {
+      "target_exact_physical_M4": 0.0001,
+      "assumed_normalized_physical_spectral_tail": 1e-10,
+      "exact_M4_transfer_error_upper_bound": 0.00016000080000000001,
+      "required_bounded_ridge_physical_curl": 0.00026000080000000003,
+      "transfer_can_preserve_target_signal": true,
+      "uniform_minimum_frame_eigenvalue_required": false,
+      "coefficient_space_analysis_required": false,
+      "status": "physical-frame-tail-permits-exact-M4-transfer"
+    },
+    {
+      "target_exact_physical_M4": 0.0001,
+      "assumed_normalized_physical_spectral_tail": 1e-08,
+      "exact_M4_transfer_error_upper_bound": 0.00160008,
+      "required_bounded_ridge_physical_curl": 0.00170008,
+      "transfer_can_preserve_target_signal": true,
+      "uniform_minimum_frame_eigenvalue_required": false,
+      "coefficient_space_analysis_required": false,
+      "status": "physical-frame-tail-permits-exact-M4-transfer"
+    },
+    {
+      "target_exact_physical_M4": 0.0001,
+      "assumed_normalized_physical_spectral_tail": 1e-06,
+      "exact_M4_transfer_error_upper_bound": 0.016008,
+      "required_bounded_ridge_physical_curl": 0.016108,
+      "transfer_can_preserve_target_signal": true,
+      "uniform_minimum_frame_eigenvalue_required": false,
+      "coefficient_space_analysis_required": false,
+      "status": "physical-frame-tail-permits-exact-M4-transfer"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "remove_coefficient_space_from_dependency_ridge_error",
+      "resolved": true,
+      "resolution": "The two coefficient Grams share nonzero spectra with the child frame and sibling-excluded physical frame."
+    },
+    {
+      "obligation": "express_support_ridge_tail_as_resolvent_trace",
+      "resolved": true,
+      "resolution": "Equation (3) uses only rank, Tr f_eta, and Tr f_eta^2."
+    },
+    {
+      "obligation": "bound_natural_child_and_excluded_physical_frame_tails",
+      "resolved": false,
+      "resolution": "Use regular-master heat/resolvent word moments to prove E[1_E(T_eta(F)+T_eta(F_perp))/D]=o(signal^2)."
+    },
+    {
+      "obligation": "prove_positive_bounded_ridge_parity_curl",
+      "resolved": false,
+      "resolution": "The spectral reduction controls transfer error only; a natural typical-stratum ridge signal is still required."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The coefficient Gram has extra zero eigenvalues that spoil physical transfer.",
+      "resolved": true,
+      "resolution": "The tail sums only positive eigenvalues; all nonzero singular values transfer with multiplicity."
+    },
+    {
+      "objection": "Projecting away X changes the nonzero singular-value correspondence.",
+      "resolved": true,
+      "resolution": "Set T=(I-XX*)R. Then M=T*T and F_perp=TT* exactly."
+    },
+    {
+      "objection": "The ridge error needs a uniform hard edge.",
+      "resolved": true,
+      "resolution": "No. Equation (5) is a trace-weighted physical spectral-tail premise."
+    },
+    {
+      "objection": "Physical accessibility of the tail proves it is small.",
+      "resolved": true,
+      "resolution": "It does not; natural representation-theoretic resolvent estimates remain the hard theorem."
+    }
+  ],
+  "headline_metrics": {
+    "dependency_ridge_physical_spectrum_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "maximum_nonzero_spectrum_residual": 2.220446049250313e-15,
+    "maximum_tail_trace_formula_residual": 2.7956424068081853e-15,
+    "minimum_physical_tail_bound_slack": 1.2946896230673606e-05,
+    "scaling_record_count": 5,
+    "scaling_transfer_survival_count": 5,
+    "natural_physical_spectral_tail_theorem_count": 0,
+    "natural_bounded_ridge_parity_curl_lower_bound_count": 0,
+    "natural_component_M4_lower_bound_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "coefficient_dependency_ridge_error_reduced_to_physical_spectra": true,
+    "uniform_minimum_frame_eigenvalue_required": false,
+    "common_coefficient_metric_required": false,
+    "natural_physical_frame_resolvent_tail_small": false,
+    "natural_bounded_ridge_parity_curl_positive": false,
+    "natural_component_M4_positive": false,
+    "speedup_claim_allowed": false,
+    "reason": "The ridge transfer premise is now a physical frame spectral statistic, but no natural tail or positive ridge signal is proved."
+  },
+  "status": "dependency-ridge-error-reduced-to-two-physical-frame-tails",
+  "summary": "Transferred the dependency support-ridge error exactly from two coefficient Grams to the child and sibling-excluded physical frame spectra, exposing a scalar resolvent-tail target.",
+  "falsifiers_triggered": [
+    "Coefficient-space zero modes do not enter the support-ridge tail.",
+    "The sibling-excluded Gram has an exact physical TT* counterpart.",
+    "Uniform hard edges are stronger than the physical trace-tail premise needed.",
+    "No natural physical tail, ridge curl, exact M4, algorithm, or speedup is proved."
+  ]
+}

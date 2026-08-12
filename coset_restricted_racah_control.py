@@ -376,36 +376,4 @@ def write_restricted_racah_control_report(
     payload = asdict(build_restricted_racah_control_report(n=n))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-PAIR-GAP-AS-THREE-COPY-RACAH-TRANSFORM",
-                source=str(output_path),
-                claim=(
-                    "The solved pairwise commutant gap directly supplies a closed three-copy Racah transform on the same channel."
-                ),
-                reason_invalid=(
-                    "Every audited parity-resolved 2x2 overlap is a nonunitary subblock with explicit leakage to other intermediate irreps."
-                ),
-                lesson=(
-                    "A full associator must coherently include all intermediate partitions and multiplicity channels, not only the solved pair block."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_restricted_racah_control": str(output_path)},
-            )
-        )
     return payload

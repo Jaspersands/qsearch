@@ -282,44 +282,6 @@ def write_n10_gap_trend_report(
     payload = asdict(build_n10_gap_trend_report())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-TYPICAL-EXISTING-FINITE-GAPS-DO-NOT-ESTABLISH-STABLE-PRECISION",
-                source=str(output_path),
-                claim=(
-                    "The existing exactly square-free n=10 blocks provide "
-                    "evidence of stable phase-estimation precision."
-                ),
-                reason_invalid=(
-                    "The numerical LCU-normalized gap drops by "
-                    f"{payload['headline_metrics']['multiplicity6_to_multiplicity8_gap_drop_factor']:.2f}x "
-                    "from multiplicity six to eight, and neither magnitude has "
-                    "a machine-verified interval certificate."
-                ),
-                lesson=(
-                    "Measure higher exact-ladder gaps and derive a "
-                    "separator-specific all-n bound; treat current numerics only "
-                    "as a kill signal against unsupported precision claims."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={"coset_typical_n10_gap_trend": str(output_path)},
-            )
-        )
     return payload
 
 

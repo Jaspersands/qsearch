@@ -530,49 +530,6 @@ def write_self_dual_wreath_all_unequal_third_moment(
     payload = asdict(run_self_dual_wreath_all_unequal_third_moment())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id=(
-                    "NEG-CODE-SELF-DUAL-WREATH-CLASS-TRIPLES-"
-                    "MISS-EQUAL-COMMUTATORS"
-                ),
-                source=str(path),
-                claim=(
-                    "The classes of r, q, and r^-1 q suffice for every "
-                    "physical-irrep third moment."
-                ),
-                reason_invalid=(
-                    "Equal-pair extensions depend on the commutator class. "
-                    "The registered S_4 witness holds all three class labels "
-                    "fixed while changing that commutator class."
-                ),
-                lesson=(
-                    "Introduce recoupling or richer simultaneous-conjugacy "
-                    "coordinates for equal-pair sectors."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_all_unequal_third_moment": str(path)
-                },
-            )
-        )
     return payload
 
 

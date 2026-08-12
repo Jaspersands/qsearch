@@ -547,20 +547,6 @@ def write_trace_function_search_report(
     )
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_scaling_run(
-            {
-                "id": payload["id"],
-                "created_at": payload["created_at"],
-                "kind": payload["kind"],
-                "status": payload["status"],
-                "summary": payload["summary"],
-                "row_count": payload["record_count"],
-                "artifacts": {"trace_function_search": str(output_path)},
-                "headline_metrics": payload["headline_metrics"],
-            }
-        )
-        write_negative_results_from_trace_search(payload)
     return payload
 
 

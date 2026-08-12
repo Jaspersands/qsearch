@@ -1,0 +1,391 @@
+{
+  "created_at": "2026-08-12T03:41:24.329852+00:00",
+  "theorem_contract": {
+    "twirl_projection": "T_H-T_G is an orthogonal Hilbert--Schmidt projection because T_H,T_G commute and range(T_G) is contained in range(T_H).",
+    "beta_purity_chain": "beta^2<=||Delta||_2^2<=Tr(tau^2).",
+    "conditional_typical_beta": "With collision-free conditional probability at least 1-eta, beta<=sqrt(C_n/[eta P_cf n! 2^k]).",
+    "generic_degree_lower_bound": "Bounded-polynomial rescaling of Delta/2 has degree Omega(sqrt(eta P_cf n! 2^k/C_n)).",
+    "asymptotic_consequence": "At k=ceil(log2 n!), inverse-polynomial eta, and P_cf=1-o(1), generic degree is n! exp(-O(sqrt(n))).",
+    "scope": "This is a typical-source lower bound for generic scalar QSVT on the centered density block encoding, not an arbitrary-measurement lower bound.",
+    "theorem_verified": true,
+    "status": "generic-centered-effect-qsvt-factorial-no-go-direct-transform-open"
+  },
+  "theorem": {
+    "twirl_projection": "T_H-T_G is an orthogonal Hilbert--Schmidt projection because T_H,T_G commute and range(T_G) is contained in range(T_H).",
+    "beta_purity_chain": "beta^2<=||Delta||_2^2<=Tr(tau^2).",
+    "conditional_typical_beta": "With collision-free conditional probability at least 1-eta, beta<=sqrt(C_n/[eta P_cf n! 2^k]).",
+    "generic_degree_lower_bound": "Bounded-polynomial rescaling of Delta/2 has degree Omega(sqrt(eta P_cf n! 2^k/C_n)).",
+    "asymptotic_consequence": "At k=ceil(log2 n!), inverse-polynomial eta, and P_cf=1-o(1), generic degree is n! exp(-O(sqrt(n))).",
+    "scope": "This is a typical-source lower bound for generic scalar QSVT on the centered density block encoding, not an arbitrary-measurement lower bound.",
+    "theorem_verified": true,
+    "status": "generic-centered-effect-qsvt-factorial-no-go-direct-transform-open"
+  },
+  "finite_controls": [
+    {
+      "control_id": "W3-SINGLE-UNEQUAL",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 1,
+      "native_state_purity": 0.43750000000000017,
+      "centered_hilbert_schmidt_norm_squared": 0.0625,
+      "centered_operator_norm_squared": 0.03125000000000002,
+      "beta_squared_to_centered_energy_ratio": 0.5000000000000003,
+      "centered_energy_to_purity_ratio": 0.1428571428571428,
+      "twirl_difference_projection_residual": 6.551245212181379e-17,
+      "beta_purity_chain_verified": true,
+      "status": "exact-point-beta-purity-chain"
+    },
+    {
+      "control_id": "W3-INFORMATION-THRESHOLD",
+      "n": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 3,
+      "native_state_purity": 0.21484375000000006,
+      "centered_hilbert_schmidt_norm_squared": 0.044921875,
+      "centered_operator_norm_squared": 0.012894864412483676,
+      "beta_squared_to_centered_energy_ratio": 0.2870508947474627,
+      "centered_energy_to_purity_ratio": 0.20909090909090905,
+      "twirl_difference_projection_residual": 3.3415948194434155e-17,
+      "beta_purity_chain_verified": true,
+      "status": "exact-point-beta-purity-chain"
+    },
+    {
+      "control_id": "W4-COLLISION-FREE-PAIR",
+      "n": 4,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "copy_count": 2,
+      "native_state_purity": 0.04050925925925923,
+      "centered_hilbert_schmidt_norm_squared": 0.0025612997256515783,
+      "centered_operator_norm_squared": 0.00032394082619159,
+      "beta_squared_to_centered_energy_ratio": 0.12647517311125372,
+      "centered_energy_to_purity_ratio": 0.06322751322751329,
+      "twirl_difference_projection_residual": 3.494392373357381e-17,
+      "beta_purity_chain_verified": true,
+      "status": "exact-point-beta-purity-chain"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 12,
+      "copy_count": 29,
+      "group_order_log2": 28.835455234075408,
+      "orientation_count_log2": 29,
+      "partition_count_decimal": "77",
+      "normalized_purity_bound_log2": 13.552188759557149,
+      "typical_failure_probability": 0.006944444444444444,
+      "log2_collision_free_probability": -144.69716596561017,
+      "collision_free_conditioning_loss_log2": 144.69716596561017,
+      "typical_beta_upper_bound_log2": 0.0,
+      "generic_qsvt_degree_lower_bound_log2": 0.0,
+      "polynomial_degree_ten_benchmark_log2": 35.84962500721156,
+      "generic_qsvt_degree_exceeds_polynomial_benchmark": false,
+      "asymptotic_collision_free_mass_tends_to_one": true,
+      "direct_representation_specific_measurement_ruled_out": false,
+      "status": "finite-size-qsvt-separation-not-yet-visible"
+    },
+    {
+      "n": 16,
+      "copy_count": 45,
+      "group_order_log2": 44.25014046988262,
+      "orientation_count_log2": 45,
+      "partition_count_decimal": "231",
+      "normalized_purity_bound_log2": 16.70973003654363,
+      "typical_failure_probability": 0.00390625,
+      "log2_collision_free_probability": -124.73170170029044,
+      "collision_free_conditioning_loss_log2": 124.73170170029044,
+      "typical_beta_upper_bound_log2": 0.0,
+      "generic_qsvt_degree_lower_bound_log2": 0.0,
+      "polynomial_degree_ten_benchmark_log2": 40.0,
+      "generic_qsvt_degree_exceeds_polynomial_benchmark": false,
+      "asymptotic_collision_free_mass_tends_to_one": true,
+      "direct_representation_specific_measurement_ruled_out": false,
+      "status": "finite-size-qsvt-separation-not-yet-visible"
+    },
+    {
+      "n": 20,
+      "copy_count": 62,
+      "group_order_log2": 61.07738392090622,
+      "orientation_count_log2": 62,
+      "partition_count_decimal": "627",
+      "normalized_purity_bound_log2": 19.586942381693667,
+      "typical_failure_probability": 0.0025,
+      "log2_collision_free_probability": -108.11047647352635,
+      "collision_free_conditioning_loss_log2": 108.11047647352635,
+      "typical_beta_upper_bound_log2": 0.0,
+      "generic_qsvt_degree_lower_bound_log2": 0.0,
+      "polynomial_degree_ten_benchmark_log2": 43.219280948873624,
+      "generic_qsvt_degree_exceeds_polynomial_benchmark": false,
+      "asymptotic_collision_free_mass_tends_to_one": true,
+      "direct_representation_specific_measurement_ruled_out": false,
+      "status": "finite-size-qsvt-separation-not-yet-visible"
+    },
+    {
+      "n": 24,
+      "copy_count": 80,
+      "group_order_log2": 79.03765741910046,
+      "orientation_count_log2": 80,
+      "partition_count_decimal": "1575",
+      "normalized_purity_bound_log2": 22.24318793273102,
+      "typical_failure_probability": 0.001736111111111111,
+      "log2_collision_free_probability": -91.08167443121611,
+      "collision_free_conditioning_loss_log2": 91.08167443121611,
+      "typical_beta_upper_bound_log2": -18.271435026855507,
+      "generic_qsvt_degree_lower_bound_log2": 18.271435026855507,
+      "polynomial_degree_ten_benchmark_log2": 45.84962500721156,
+      "generic_qsvt_degree_exceeds_polynomial_benchmark": false,
+      "asymptotic_collision_free_mass_tends_to_one": true,
+      "direct_representation_specific_measurement_ruled_out": false,
+      "status": "finite-size-qsvt-separation-not-yet-visible"
+    },
+    {
+      "n": 28,
+      "copy_count": 98,
+      "group_order_log2": 97.94419575123734,
+      "orientation_count_log2": 98,
+      "partition_count_decimal": "3718",
+      "normalized_purity_bound_log2": 24.721010087531468,
+      "typical_failure_probability": 0.0012755102040816326,
+      "log2_collision_free_probability": -75.35305733990545,
+      "collision_free_conditioning_loss_log2": 75.35305733990545,
+      "typical_beta_upper_bound_log2": -43.12770923984261,
+      "generic_qsvt_degree_lower_bound_log2": 43.12770923984261,
+      "polynomial_degree_ten_benchmark_log2": 48.07354922057604,
+      "generic_qsvt_degree_exceeds_polynomial_benchmark": false,
+      "asymptotic_collision_free_mass_tends_to_one": true,
+      "direct_representation_specific_measurement_ruled_out": false,
+      "status": "finite-size-qsvt-separation-not-yet-visible"
+    },
+    {
+      "n": 32,
+      "copy_count": 118,
+      "group_order_log2": 117.6632636523603,
+      "orientation_count_log2": 118,
+      "partition_count_decimal": "8349",
+      "normalized_purity_bound_log2": 27.05494817630154,
+      "typical_failure_probability": 0.0009765625,
+      "log2_collision_free_probability": -62.62719738503115,
+      "collision_free_conditioning_loss_log2": 62.62719738503115,
+      "typical_beta_upper_bound_log2": -67.9905590455138,
+      "generic_qsvt_degree_lower_bound_log2": 67.9905590455138,
+      "polynomial_degree_ten_benchmark_log2": 50.0,
+      "generic_qsvt_degree_exceeds_polynomial_benchmark": true,
+      "asymptotic_collision_free_mass_tends_to_one": true,
+      "direct_representation_specific_measurement_ruled_out": false,
+      "status": "typical-centered-qsvt-rescaling-superpolynomial"
+    },
+    {
+      "n": 36,
+      "copy_count": 139,
+      "group_order_log2": 138.09432863135638,
+      "orientation_count_log2": 139,
+      "partition_count_decimal": "17977",
+      "normalized_purity_bound_log2": 29.267809577399323,
+      "typical_failure_probability": 0.0007716049382716049,
+      "log2_collision_free_probability": -51.65138107569346,
+      "collision_free_conditioning_loss_log2": 51.65138107569346,
+      "typical_beta_upper_bound_log2": -92.91764398768949,
+      "generic_qsvt_degree_lower_bound_log2": 92.91764398768949,
+      "polynomial_degree_ten_benchmark_log2": 51.69925001442312,
+      "generic_qsvt_degree_exceeds_polynomial_benchmark": true,
+      "asymptotic_collision_free_mass_tends_to_one": true,
+      "direct_representation_specific_measurement_ruled_out": false,
+      "status": "typical-centered-qsvt-rescaling-superpolynomial"
+    },
+    {
+      "n": 40,
+      "copy_count": 160,
+      "group_order_log2": 159.1590398241785,
+      "orientation_count_log2": 160,
+      "partition_count_decimal": "37338",
+      "normalized_purity_bound_log2": 31.376752701486968,
+      "typical_failure_probability": 0.000625,
+      "log2_collision_free_probability": -41.78135865605296,
+      "collision_free_conditioning_loss_log2": 41.78135865605296,
+      "typical_beta_upper_bound_log2": -117.67853613843192,
+      "generic_qsvt_degree_lower_bound_log2": 117.67853613843192,
+      "polynomial_degree_ten_benchmark_log2": 53.219280948873624,
+      "generic_qsvt_degree_exceeds_polynomial_benchmark": true,
+      "asymptotic_collision_free_mass_tends_to_one": true,
+      "direct_representation_specific_measurement_ruled_out": false,
+      "status": "typical-centered-qsvt-rescaling-superpolynomial"
+    },
+    {
+      "n": 44,
+      "copy_count": 181,
+      "group_order_log2": 180.79460562491477,
+      "orientation_count_log2": 181,
+      "partition_count_decimal": "75175",
+      "normalized_purity_bound_log2": 33.395949875724334,
+      "typical_failure_probability": 0.0005165289256198347,
+      "log2_collision_free_probability": -33.6248581203821,
+      "collision_free_conditioning_loss_log2": 33.6248581203821,
+      "typical_beta_upper_bound_log2": -141.92746719576687,
+      "generic_qsvt_degree_lower_bound_log2": 141.92746719576687,
+      "polynomial_degree_ten_benchmark_log2": 54.59431618637297,
+      "generic_qsvt_degree_exceeds_polynomial_benchmark": true,
+      "asymptotic_collision_free_mass_tends_to_one": true,
+      "direct_representation_specific_measurement_ruled_out": false,
+      "status": "typical-centered-qsvt-rescaling-superpolynomial"
+    },
+    {
+      "n": 48,
+      "copy_count": 203,
+      "group_order_log2": 202.94957202970025,
+      "orientation_count_log2": 203,
+      "partition_count_decimal": "147273",
+      "normalized_purity_bound_log2": 35.336276666929614,
+      "typical_failure_probability": 0.00043402777777777775,
+      "log2_collision_free_probability": -26.510078745979804,
+      "collision_free_conditioning_loss_log2": 26.510078745979804,
+      "typical_beta_upper_bound_log2": -166.46664580767424,
+      "generic_qsvt_degree_lower_bound_log2": 166.46664580767424,
+      "polynomial_degree_ten_benchmark_log2": 55.84962500721156,
+      "generic_qsvt_degree_exceeds_polynomial_benchmark": true,
+      "asymptotic_collision_free_mass_tends_to_one": true,
+      "direct_representation_specific_measurement_ruled_out": false,
+      "status": "typical-centered-qsvt-rescaling-superpolynomial"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "bound_centered_operator_norm_from_native_purity",
+      "resolved": true,
+      "resolution": "The point-centered map is an orthogonal HS projection and operator norm is bounded by Hilbert--Schmidt norm."
+    },
+    {
+      "obligation": "transfer_beta_upper_bound_to_collision_free_sources",
+      "resolved": true,
+      "resolution": "Unlike a signal lower bound, the nonnegative purity upper bound conditions safely at cost 1/P_cf, with P_cf tending to one."
+    },
+    {
+      "obligation": "test_generic_qsvt_linear_point_compiler",
+      "resolved": true,
+      "resolution": "Rejected for typical threshold sources: beta is factorially small with high probability, forcing factorial polynomial degree."
+    },
+    {
+      "obligation": "construct_direct_symmetry_adapted_point_naimark",
+      "resolved": false,
+      "resolution": "A direct Young/Racah transform could normalize relative block coordinates without scalar amplification of Delta/2."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Purity bounds only average beta and do not give a typical compiler obstruction.",
+      "resolved": true,
+      "resolution": "Markov yields a high-probability beta upper bound; a smaller beta strengthens the Bernstein degree lower bound."
+    },
+    {
+      "objection": "Collision-free conditioning invalidates the natural purity no-go.",
+      "resolved": true,
+      "resolution": "For upper bounds, conditioning loses only 1/P_cf=1+o(1), unlike the unresolved collision-free point-signal lower bound."
+    },
+    {
+      "objection": "Factorial QSVT degree rules out the linear POVM itself.",
+      "resolved": false,
+      "resolution": "No. It rules out one generic implementation from Delta/2. A direct covariant Naimark transform remains outside the model."
+    }
+  ],
+  "literature_links": [
+    {
+      "id": "GILYEN-SU-LOW-WIEBE-2018-QSVT",
+      "title": "Quantum singular value transformation and beyond",
+      "url": "https://arxiv.org/abs/1806.01838",
+      "used_for": "Bounded-polynomial implementation model and singular-value rescaling",
+      "arbitrary_measurement_lower_bound": false
+    }
+  ],
+  "headline_metrics": {
+    "point_beta_purity_chain_theorem_count": 1,
+    "conditional_typical_beta_bound_theorem_count": 1,
+    "generic_centered_qsvt_no_go_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "superpolynomial_scaling_row_count": 5,
+    "tail_n": 48,
+    "tail_generic_degree_lower_bound_log2": 166.46664580767424,
+    "direct_point_transform_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "typical_collective_beta_inverse_polynomial": false,
+    "generic_centered_effect_qsvt_polynomial": false,
+    "generic_centered_effect_qsvt_superpolynomial_proved": true,
+    "collision_free_conditioning_preserves_beta_upper_bound": true,
+    "linear_point_povm_information_theoretically_invalidated": false,
+    "direct_representation_specific_point_transform_ruled_out": false,
+    "carrier_retaining_point_decoder_ruled_out": false,
+    "polynomial_full_hidden_shift_decoder_proved": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "Typical purity forces factorial generic rescaling cost. Only a direct symmetry-adapted measurement or carrier-retaining route remains viable."
+  },
+  "status": "generic-centered-effect-qsvt-factorial-no-go-direct-transform-open",
+  "summary": "Closed the generic QSVT implementation route for the linear point POVM: typical threshold beta is factorially small, even after collision-free conditioning. The POVM remains an information-theoretic target for a direct Young/Racah Naimark transform.",
+  "falsifiers_triggered": [
+    "Constant-normalization Delta block encoding is not enough; natural purity forces its useful scale to be factorially small.",
+    "The conditional QSVT compiler premise beta>=n^-O(1) fails with high probability for natural carrier-traced threshold blocks.",
+    "This normalization no-go does not extend to direct representation-specific POVM synthesis or coherent carrier retention."
+  ]
+}

@@ -1,0 +1,246 @@
+{
+  "created_at": "2026-08-12T03:42:40.820937+00:00",
+  "theorem_contract": {
+    "local_rank_one_factorization": "Q_(s,t,u)(lambda,mu) is the sum of four rank-one features in the lambda and mu source slots.",
+    "injective_overlap_kernel": "K_cf(u)=|G|^-2 4^-k sum_(s,t) I_n(Q,...,Q)/P_cf(n,k); the repeated four-term expansion compresses to k+1 count-DP profiles.",
+    "standard_signal_coefficient": "E_cf||omega_0-bar||_2^2=|G|^-1 sum_u(fix(u)-1)K_cf(u).",
+    "finite_conditioning_effect": "At S_4,k=2 the exact conditioned signal is 7/3888 and exceeds the unrestricted normalized signal by a factor greater than two.",
+    "scope": "The source contraction is polynomial in p(n),k, but the group sum is still factorial. No all-n conditioned signal bound, efficient point measurement, or classical separation follows.",
+    "theorem_verified": true,
+    "status": "collision-free-point-kernel-exact-asymptotic-signal-open"
+  },
+  "theorem": {
+    "local_rank_one_factorization": "Q_(s,t,u)(lambda,mu) is the sum of four rank-one features in the lambda and mu source slots.",
+    "injective_overlap_kernel": "K_cf(u)=|G|^-2 4^-k sum_(s,t) I_n(Q,...,Q)/P_cf(n,k); the repeated four-term expansion compresses to k+1 count-DP profiles.",
+    "standard_signal_coefficient": "E_cf||omega_0-bar||_2^2=|G|^-1 sum_u(fix(u)-1)K_cf(u).",
+    "finite_conditioning_effect": "At S_4,k=2 the exact conditioned signal is 7/3888 and exceeds the unrestricted normalized signal by a factor greater than two.",
+    "scope": "The source contraction is polynomial in p(n),k, but the group sum is still factorial. No all-n conditioned signal bound, efficient point measurement, or classical separation follows.",
+    "theorem_verified": true,
+    "status": "collision-free-point-kernel-exact-asymptotic-signal-open"
+  },
+  "component_validations": [
+    {
+      "n": 3,
+      "permutation_triple_count": 216,
+      "ordered_source_pair_count": 9,
+      "checked_local_factor_count": 1944,
+      "maximum_absolute_residual": 0.0,
+      "exact_four_term_rank_one_expansion_verified": true,
+      "status": "exact-point-overlap-rank-one-expansion"
+    }
+  ],
+  "finite_controls": [
+    {
+      "n": 4,
+      "copy_count": 2,
+      "partition_count": 5,
+      "group_order": 24,
+      "orientation_count": 4,
+      "ordered_distinct_source_assignment_count": 120,
+      "global_collision_free_probability": "89/1536",
+      "relative_overlap_kernel_by_cycle_type": {
+        "(1, 1, 1, 1)": "505/9612",
+        "(2, 1, 1)": "5543/173016",
+        "(3, 1)": "665/19224",
+        "(2, 2)": "3299/86508",
+        "(4,)": "5543/173016"
+      },
+      "exact_conditioned_native_state_purity": "505/9612",
+      "exact_conditioned_point_state_purity": "12563/346032",
+      "exact_conditioned_average_state_purity": "995/28836",
+      "exact_conditioned_centered_signal": "7/3888",
+      "conditioned_normalized_centered_signal": 0.1728395061728395,
+      "unrestricted_normalized_centered_signal": 0.06423611111111094,
+      "conditioned_to_unrestricted_signal_ratio": 2.690690690690698,
+      "standard_character_coefficient_residual": "0",
+      "direct_dense_source_average_centered_signal": 0.0018004115226337432,
+      "injective_to_direct_dense_residual": 1.734723475976807e-18,
+      "exact_collision_free_point_kernel_verified": true,
+      "information_threshold_reached": false,
+      "status": "exact-collision-free-point-kernel-finite-control"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 8,
+      "partition_count": 22,
+      "information_threshold_copy_count": 16,
+      "required_distinct_partition_count": 32,
+      "enough_distinct_partitions_exist": false,
+      "log2_global_collision_free_probability": -Infinity,
+      "rank_one_expansion_term_count_log2": 32,
+      "injective_slot_dp_state_count_log2": 32,
+      "compressed_profile_count": 17,
+      "compressed_source_dp_state_upper_bound": 6561,
+      "exponential_source_component_expansion_removed": true,
+      "source_contraction_polynomial_in_partition_and_copy_count": true,
+      "factorial_group_sum_compressed": false,
+      "exact_threshold_kernel_computationally_compiled": false,
+      "asymptotic_conditioned_point_signal_bound_proved": false,
+      "status": "collision-free-threshold-source-combinatorially-impossible"
+    },
+    {
+      "n": 12,
+      "partition_count": 77,
+      "information_threshold_copy_count": 29,
+      "required_distinct_partition_count": 58,
+      "enough_distinct_partitions_exist": true,
+      "log2_global_collision_free_probability": -144.69716596561017,
+      "rank_one_expansion_term_count_log2": 58,
+      "injective_slot_dp_state_count_log2": 58,
+      "compressed_profile_count": 30,
+      "compressed_source_dp_state_upper_bound": 57600,
+      "exponential_source_component_expansion_removed": true,
+      "source_contraction_polynomial_in_partition_and_copy_count": true,
+      "factorial_group_sum_compressed": false,
+      "exact_threshold_kernel_computationally_compiled": false,
+      "asymptotic_conditioned_point_signal_bound_proved": false,
+      "status": "collision-free-threshold-source-possible-signal-bound-open"
+    },
+    {
+      "n": 16,
+      "partition_count": 231,
+      "information_threshold_copy_count": 45,
+      "required_distinct_partition_count": 90,
+      "enough_distinct_partitions_exist": true,
+      "log2_global_collision_free_probability": -124.73170170029044,
+      "rank_one_expansion_term_count_log2": 90,
+      "injective_slot_dp_state_count_log2": 90,
+      "compressed_profile_count": 46,
+      "compressed_source_dp_state_upper_bound": 304704,
+      "exponential_source_component_expansion_removed": true,
+      "source_contraction_polynomial_in_partition_and_copy_count": true,
+      "factorial_group_sum_compressed": false,
+      "exact_threshold_kernel_computationally_compiled": false,
+      "asymptotic_conditioned_point_signal_bound_proved": false,
+      "status": "collision-free-threshold-source-possible-signal-bound-open"
+    },
+    {
+      "n": 24,
+      "partition_count": 1575,
+      "information_threshold_copy_count": 80,
+      "required_distinct_partition_count": 160,
+      "enough_distinct_partitions_exist": true,
+      "log2_global_collision_free_probability": -91.08167443121611,
+      "rank_one_expansion_term_count_log2": 160,
+      "injective_slot_dp_state_count_log2": 160,
+      "compressed_profile_count": 81,
+      "compressed_source_dp_state_upper_bound": 2825761,
+      "exponential_source_component_expansion_removed": true,
+      "source_contraction_polynomial_in_partition_and_copy_count": true,
+      "factorial_group_sum_compressed": false,
+      "exact_threshold_kernel_computationally_compiled": false,
+      "asymptotic_conditioned_point_signal_bound_proved": false,
+      "status": "collision-free-threshold-source-possible-signal-bound-open"
+    },
+    {
+      "n": 32,
+      "partition_count": 8349,
+      "information_threshold_copy_count": 118,
+      "required_distinct_partition_count": 236,
+      "enough_distinct_partitions_exist": true,
+      "log2_global_collision_free_probability": -62.62719738503115,
+      "rank_one_expansion_term_count_log2": 236,
+      "injective_slot_dp_state_count_log2": 236,
+      "compressed_profile_count": 119,
+      "compressed_source_dp_state_upper_bound": 12960000,
+      "exponential_source_component_expansion_removed": true,
+      "source_contraction_polynomial_in_partition_and_copy_count": true,
+      "factorial_group_sum_compressed": false,
+      "exact_threshold_kernel_computationally_compiled": false,
+      "asymptotic_conditioned_point_signal_bound_proved": false,
+      "status": "collision-free-threshold-source-possible-signal-bound-open"
+    },
+    {
+      "n": 48,
+      "partition_count": 147273,
+      "information_threshold_copy_count": 203,
+      "required_distinct_partition_count": 406,
+      "enough_distinct_partitions_exist": true,
+      "log2_global_collision_free_probability": -26.510078745979804,
+      "rank_one_expansion_term_count_log2": 406,
+      "injective_slot_dp_state_count_log2": 406,
+      "compressed_profile_count": 204,
+      "compressed_source_dp_state_upper_bound": 110376036,
+      "exponential_source_component_expansion_removed": true,
+      "source_contraction_polynomial_in_partition_and_copy_count": true,
+      "factorial_group_sum_compressed": false,
+      "exact_threshold_kernel_computationally_compiled": false,
+      "asymptotic_conditioned_point_signal_bound_proved": false,
+      "status": "collision-free-threshold-source-possible-signal-bound-open"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_collision_free_point_overlap_kernel",
+      "resolved": true,
+      "resolution": "The four rank-one local terms feed exactly into the existing injective Plancherel transform for 2k distinct source slots."
+    },
+    {
+      "obligation": "validate_injective_point_signal_against_physical_states",
+      "resolved": true,
+      "resolution": "The S_4,k=2 formula equals dense averaging over all 120 ordered globally-distinct source assignments."
+    },
+    {
+      "obligation": "bound_threshold_collision_free_standard_coefficient",
+      "resolved": false,
+      "resolution": "The repeated-feature DP removes exponential source contraction, but the factorial group sum has no class/harmonic compression and no signed asymptotic contraction or lower bound is proved."
+    },
+    {
+      "obligation": "compress_repeated_injective_source_contraction",
+      "resolved": true,
+      "resolution": "Symmetry groups 4^k component choices into k+1 multiplicity profiles, each evaluated by a four-count injective DP."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The unrestricted Plancherel point signal transfers because collisions are rare.",
+      "resolved": true,
+      "resolution": "False at the relevant relative scale. The S_4 exact control changes the normalized signal by a factor greater than two, and generic conditioning error can dominate a tiny signal."
+    },
+    {
+      "objection": "Conditioning repairs the decaying point signal.",
+      "resolved": false,
+      "resolution": "One finite enhancement gives no all-n lower bound; both collapse and survival remain compatible with the exact formula."
+    },
+    {
+      "objection": "An exact injective formula is already an efficient decoder.",
+      "resolved": true,
+      "resolution": "No. The source contraction is now polynomial, but the group sum remains factorial and the scalar computation does not implement the point PGM."
+    }
+  ],
+  "headline_metrics": {
+    "exact_local_rank_one_factorization_theorem_count": 1,
+    "exact_collision_free_point_kernel_theorem_count": 1,
+    "polynomial_source_contraction_theorem_count": 1,
+    "exact_dense_source_validation_count": 1,
+    "finite_control_failure_count": 0,
+    "s4_k2_exact_conditioned_centered_signal": 0.001800411522633745,
+    "s4_k2_conditioning_signal_ratio": 2.690690690690698,
+    "threshold_conditioned_signal_bound_theorem_count": 0,
+    "efficient_point_decoder_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "point_overlap_four_term_rank_one_factorization_proved": true,
+    "collision_free_point_overlap_kernel_proved": true,
+    "collision_free_standard_signal_coefficient_proved": true,
+    "exponential_source_component_expansion_removed": true,
+    "factorial_group_sum_compressed": false,
+    "unrestricted_signal_transfer_sufficient": false,
+    "conditioning_asymptotically_repairs_point_signal": false,
+    "threshold_collision_free_point_signal_bound_proved": false,
+    "efficient_collision_free_point_measurement_proved": false,
+    "polynomial_full_hidden_shift_decoder_proved": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false,
+    "reason": "The source-conditioned scalar and polynomial source contraction are exact, but the factorial group sum, threshold asymptotics, and coherent Young-edge measurement remain open."
+  },
+  "status": "collision-free-point-kernel-exact-asymptotic-signal-open",
+  "summary": "Replaced the invalid generic-conditioning shortcut with the exact injective point-overlap kernel. Conditioning materially changes the first finite signal, while threshold behavior remains unresolved.",
+  "falsifiers_triggered": [
+    "The unrestricted point-signal trend is not a collision-free no-go; conditioning changes the S_4,k=2 normalized signal by a constant factor.",
+    "Vanishing source-law total variation is too weak to transfer a signal that may be exponentially or factorially small.",
+    "Exact annealed kernel evaluation does not compile the physical point measurement."
+  ]
+}

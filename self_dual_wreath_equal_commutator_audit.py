@@ -444,49 +444,6 @@ def write_self_dual_wreath_equal_commutator_audit(
     payload = asdict(run_self_dual_wreath_equal_commutator_audit())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id=(
-                    "NEG-CODE-SELF-DUAL-WREATH-PURE-COMMUTATOR-"
-                    "NOT-MIXED-RECOUPLING"
-                ),
-                source=str(path),
-                claim=(
-                    "Frobenius' pure commutator formula contracts the complete "
-                    "equal-pair physical third moment."
-                ),
-                reason_invalid=(
-                    "Mixed terms couple the commutator class to the classes "
-                    "of r, q, and r^-1q. Their four-class kernel has no "
-                    "polynomial construction in the artifact."
-                ),
-                lesson=(
-                    "Construct the mixed recoupling tensor rather than "
-                    "reusing the unconditioned commutator distribution."
-                ),
-                applies_to=[registry_candidate_id, registry_experiment_id],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=(
-                    registry_result_id
-                    or f"RESULT-{registry_experiment_id}-LATEST"
-                ),
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=payload["created_at"],
-                status=payload["status"],
-                summary=payload["summary"],
-                metrics=payload["headline_metrics"],
-                falsifiers_triggered=payload["falsifiers_triggered"],
-                artifacts={
-                    "self_dual_wreath_equal_commutator_audit": str(path)
-                },
-            )
-        )
     return payload
 
 

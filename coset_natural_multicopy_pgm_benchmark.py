@@ -542,55 +542,6 @@ def write_natural_multicopy_pgm_report(
     )
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
-    if write_registry:
-        upsert_negative_result(
-            NegativeResultRecord(
-                id="NEG-COSET-FINITE-NATURAL-PGM-NOT-EFFICIENT-DECODER",
-                source=str(output_path),
-                claim=(
-                    "Finite natural-input collective PGM information gain "
-                    "already supplies a code-equivalence algorithm."
-                ),
-                reason_invalid=(
-                    "The exact PGM is materialized branch by branch; no "
-                    "uniform polynomial circuit, compressed outcome, hidden "
-                    "involution decoder, or classical separation is known."
-                ),
-                lesson=(
-                    "Use the PGM information gain as the decoder-facing target "
-                    "for growing-width carrier synthesis, not as evidence of "
-                    "speedup."
-                ),
-                applies_to=[
-                    registry_candidate_id,
-                    registry_experiment_id,
-                    "PO-MEASUREMENT",
-                    "PO-SUCCESS",
-                    "PO-COST",
-                    "PO-DEQUANTIZATION",
-                ],
-                evidence=payload["headline_metrics"],
-            )
-        )
-        result_id = (
-            registry_result_id
-            or f"RESULT-{registry_experiment_id}-COSET"
-        )
-        upsert_experiment_result(
-            ExperimentResultRecord(
-                id=result_id,
-                experiment_id=registry_experiment_id,
-                candidate_id=registry_candidate_id,
-                created_at=str(payload["created_at"]),
-                status=str(payload["status"]),
-                summary=str(payload["summary"]),
-                metrics=dict(payload["headline_metrics"]),
-                falsifiers_triggered=list(payload["falsifiers_triggered"]),
-                artifacts={
-                    "coset_natural_multicopy_pgm_benchmark": str(output_path)
-                },
-            )
-        )
     return payload
 
 
