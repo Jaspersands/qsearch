@@ -110,11 +110,11 @@
   },
   "execution_model": "Research generation and experiments run interactively during active Codex sessions. A GitHub workflow validates pushed snapshots, and a scheduled backup can commit only validation-passing changes; neither mechanism performs autonomous quantum-algorithm research between sessions.",
   "metrics": {
-    "blocking_findings": 564,
-    "experiments": 191,
-    "negative_results": 508,
+    "blocking_findings": 958,
+    "experiments": 567,
+    "negative_results": 806,
     "proof_debts": 24,
-    "results": 274
+    "results": 571
   },
   "milestones": [
     {
@@ -165,7 +165,7 @@
       "tone": "blocked"
     },
     {
-      "evidence": "Current triage retains 0 viable code rows; the last Goppa syzygy collision was resolved by the hull-projector route.",
+      "evidence": "Current triage retains 7 viable code rows; the last Goppa syzygy collision was resolved by the hull-projector route.",
       "next": "Generate a new natural family that survives the complete classical triage gate.",
       "short_title": "Codes",
       "stage": 1,
@@ -185,7 +185,7 @@
       "tone": "active"
     }
   ],
-  "updated_at": "2026-07-24",
+  "updated_at": "2026-08-12",
   "verdict": {
     "detail": "Every speedup claim remains blocked. A complete 25-label stable coupling-tree interface, direct frame block encoding, all-n conditioning bound, and polynomial inverse filter are proved. The same audit then cuts this branch as an algorithmic route: its natural-input probability is factorially small.",
     "title": "No breakthrough yet"
