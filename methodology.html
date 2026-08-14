@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Research methodology, proof-gating protocol, and reproduction guide for Q-Search quantum algorithm search program.">
+    <title>Q-Search | Research Methodology</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Q-Search home">
+            <span class="brand-mark" aria-hidden="true">Q</span>
+            <span>Q-Search</span>
+        </a>
+        <nav aria-label="Methodology sections">
+            <a href="index.html">Progress</a>
+            <a href="frontier.html">Frontier data</a>
+            <a href="#principles">Principles</a>
+            <a href="#diagnosis">Diagnosis</a>
+            <a href="#gates">Proof gates</a>
+            <a href="#reproduction">Reproduction</a>
+        </nav>
+        <a class="github-link" href="https://github.com/Jaspersands/qsearch" target="_blank" rel="noreferrer">GitHub</a>
+    </header>
+
+    <main id="top">
+        <section class="hero" aria-labelledby="page-title">
+            <div class="hero-copy">
+                <p class="eyebrow">Operating System & Specification</p>
+                <h1 id="page-title">Methodology</h1>
+                <p class="hero-lede">
+                    A proof-gated framework for investigating structural quantum advantage. The program generates hypotheses from known quantum mechanics, attacks them with classical baselines, and records negative results instead of promoting toy examples.
+                </p>
+                <div class="hero-actions">
+                    <a class="primary-action" href="index.html">← Back to live progress</a>
+                    <a class="secondary-action" href="frontier.html">Frontier data</a>
+                </div>
+            </div>
+            <div class="verdict-block" aria-label="Methodology claim gate">
+                <p class="eyebrow">Operating Contract</p>
+                <strong id="verdict-title">Proof-Gated Defense</strong>
+                <p id="verdict-detail">No speedup is claimed until a candidate provably defeats classical ISD, Weisfeiler-Leman, Fourier contraction, and lattice BDD baselines.</p>
+                <div class="updated-row">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    <span>100% Deterministic & Reproducible</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="metric-strip" aria-label="Methodology overview metrics">
+            <div><strong>659</strong><span>experiments specified</span></div>
+            <div><strong>663</strong><span>results recorded</span></div>
+            <div><strong>1,142</strong><span>blocking dequantizations</span></div>
+            <div><strong>806</strong><span>negative results retained</span></div>
+            <div><strong>0</strong><span>toy benchmarks promoted</span></div>
+        </section>
+
+        <!-- Section 1: Blunt Diagnosis -->
+        <section id="diagnosis" class="content-section">
+            <div class="section-heading compact">
+                <p class="eyebrow">The Blunt Diagnosis</p>
+                <h2>Why heuristic toy search fails</h2>
+            </div>
+            <div class="track-list">
+                <div class="track-row">
+                    <div class="track-title">
+                        <span class="status-label blocked">Failure Mode 1</span>
+                        <h3>Small Circuit Illusions</h3>
+                    </div>
+                    <div class="track-summary">
+                        <p>
+                            Searching N&le;3 qubit circuits and arbitrary oracle puzzles consistently rediscovers trivial parity tricks (like Bernstein-Vazirani) or overfits to custom bitwise secret-finding oracles that lack a natural scalable problem family.
+                        </p>
+                    </div>
+                    <div class="track-next">
+                        <strong>Resolution</strong>
+                        Require scalable algebraic or combinatorial problem families with known classical hardness barriers.
+                    </div>
+                </div>
+
+                <div class="track-row">
+                    <div class="track-title">
+                        <span class="status-label blocked">Failure Mode 2</span>
+                        <h3>Vanity Benchmarking</h3>
+                    </div>
+                    <div class="track-summary">
+                        <p>
+                            Treating <code>success_rate &ge; 1.0</code> on tiny instances as "solved novel algorithms" creates the illusion of progress without testing true asymptotic complexity or classical resistance.
+                        </p>
+                    </div>
+                    <div class="track-next">
+                        <strong>Resolution</strong>
+                        Record finite experiments as negative results until explicit asymptotic proof obligations are satisfied.
+                    </div>
+                </div>
+
+                <div class="track-row">
+                    <div class="track-title">
+                        <span class="status-label blocked">Failure Mode 3</span>
+                        <h3>Standalone Unitary Synthesis</h3>
+                    </div>
+                    <div class="track-summary">
+                        <p>
+                            State preparation and unitary synthesis are useful subroutines only when tied to a larger algorithmic mechanism; as standalone discovery targets they have a low ceiling.
+                        </p>
+                    </div>
+                    <div class="track-next">
+                        <strong>Resolution</strong>
+                        Anchor search in representation-theoretic reductions (Racah coefficients, commutants, Fourier sampling).
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Proof-Gated Framework & Dequantization -->
+        <section id="gates" class="content-section evidence-layout">
+            <div>
+                <div class="section-heading compact">
+                    <p class="eyebrow">Defense In Depth</p>
+                    <h2>Classical attack matrix</h2>
+                </div>
+                <div class="milestone-list">
+                    <div class="milestone">
+                        <span class="milestone-index">01</span>
+                        <div>
+                            <strong>Linear Information Set Decoding (ISD)</strong>
+                            <p>Attacks code equivalence, permutation invariants, and syndrome spaces using Prange, Stern, and hull projector baselines.</p>
+                        </div>
+                    </div>
+                    <div class="milestone">
+                        <span class="milestone-index">02</span>
+                        <div>
+                            <strong>Weisfeiler-Leman & Tensor Invariants</strong>
+                            <p>Evaluates higher-order graphlet color refinement and individualization tensor observables for isomorphism candidates.</p>
+                        </div>
+                    </div>
+                    <div class="milestone">
+                        <span class="milestone-index">03</span>
+                        <div>
+                            <strong>Fourier & Low-Degree Polynomial Contractions</strong>
+                            <p>Deconstructs phase shifts, boolean hidden shifts, and bounded-degree correlation channels in polynomial classical time.</p>
+                        </div>
+                    </div>
+                    <div class="milestone">
+                        <span class="milestone-index">04</span>
+                        <div>
+                            <strong>Lattice CVP & BDD Reductions</strong>
+                            <p>Applies LLL and BKZ reduction on subset-sum, carry slice lattices, and modular recurrence structures.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <aside class="conjecture-panel" aria-labelledby="gate-title">
+                <p class="eyebrow">Claim-Gate Policy</p>
+                <h2 id="gate-title">Speedup Claim Gate</h2>
+                <div class="formula">Blocked if &exist; Classical &Ascr; with poly(n) query or time complexity</div>
+                <p>
+                    A candidate's speedup claim is strictly marked <code>blocked-speedup-claims</code> until it is proven that no efficient classical simulation can replicate its sampling distribution.
+                </p>
+                <dl class="fact-list">
+                    <div>
+                        <dt>Active Blockers</dt>
+                        <dd>1,142 finding rows</dd>
+                    </div>
+                    <div>
+                        <dt>Registry Status</dt>
+                        <dd>blocked-speedup-claims</dd>
+                    </div>
+                    <div>
+                        <dt>Negative Results</dt>
+                        <dd>806 records preserved</dd>
+                    </div>
+                </dl>
+                <p class="boundary-note">
+                    <strong>Standard:</strong> Negative results are treated as permanent scientific output, preventing redundant re-exploration of closed mechanisms.
+                </p>
+            </aside>
+        </section>
+
+        <!-- Section 3: High-Upside Search Agendas -->
+        <section id="principles" class="content-section">
+            <div class="section-heading compact">
+                <p class="eyebrow">Theoretical Grounding</p>
+                <h2>High-upside search agendas</h2>
+            </div>
+            <div class="track-list">
+                <div class="track-row">
+                    <div class="track-title">
+                        <span class="status-label active">Agenda 1</span>
+                        <h3>Nonabelian Coset States</h3>
+                    </div>
+                    <div class="track-summary">
+                        <p>
+                            Collective POVMs and commutant moment analysis across multiple coset state copies in symmetric groups S_n and hyperoctahedral groups B_n.
+                        </p>
+                    </div>
+                    <div class="track-next">
+                        <strong>Active Theorem</strong>
+                        Exact surface reduction and high-multiplicity Racah intertwiners.
+                    </div>
+                </div>
+
+                <div class="track-row">
+                    <div class="track-title">
+                        <span class="status-label active">Agenda 2</span>
+                        <h3>Dihedral HSP & Subset Sum</h3>
+                    </div>
+                    <div class="track-summary">
+                        <p>
+                            Testing whether non-trivial correlation between affine carry relations and quantum walk fibers can improve Kuperberg sieve bounds.
+                        </p>
+                    </div>
+                    <div class="track-next">
+                        <strong>Active Theorem</strong>
+                        Carry ANF degree invariance and 4-block k-sum non-collapse.
+                    </div>
+                </div>
+
+                <div class="track-row">
+                    <div class="track-title">
+                        <span class="status-label active">Agenda 3</span>
+                        <h3>Self-Dual Wreath Codes</h3>
+                    </div>
+                    <div class="track-summary">
+                        <p>
+                            Self-dual linear code equivalence under wreath product automorphisms and tetrahedral word map projections.
+                        </p>
+                    </div>
+                    <div class="track-next">
+                        <strong>Active Theorem</strong>
+                        Orientation retention theorem and sign-syndrome decoupling.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 4: CLI & Reproduction Guide -->
+        <section id="reproduction" class="content-section next-section">
+            <div class="section-heading compact">
+                <p class="eyebrow">Local Reproduction</p>
+                <h2>Running experiments & audits</h2>
+            </div>
+            <ol class="next-list">
+                <li>
+                    <strong>Run Dequantization Audit</strong>
+                    <span>Executes all 1,146 classical attack rows against candidate registries:</span>
+                    <div class="formula" style="margin: 12px 0 0; padding: 14px; text-align: left; font-size: 0.85rem;"><code>python3 qsearch.py dequantize</code></div>
+                </li>
+                <li>
+                    <strong>Validate Full Registry</strong>
+                    <span>Verifies consistency across all 659 experiments, results, and proof edges:</span>
+                    <div class="formula" style="margin: 12px 0 0; padding: 14px; text-align: left; font-size: 0.85rem;"><code>python3 qsearch.py validate</code></div>
+                </li>
+                <li>
+                    <strong>Rebuild Public Progress Snapshot</strong>
+                    <span>Regenerates the live JSON telemetry powering the dashboard:</span>
+                    <div class="formula" style="margin: 12px 0 0; padding: 14px; text-align: left; font-size: 0.85rem;"><code>python3 tools/build_progress_snapshot.py</code></div>
+                </li>
+                <li>
+                    <strong>Run Single Experiment Subcommand</strong>
+                    <span>Executes any individual theorem module (e.g. coset hidden involution):</span>
+                    <div class="formula" style="margin: 12px 0 0; padding: 14px; text-align: left; font-size: 0.85rem;"><code>python3 qsearch.py coset-hidden-involution-binary-identification-self-reduction</code></div>
+                </li>
+            </ol>
+        </section>
+
+        <!-- Section 5: Operations Band -->
+        <section class="content-section operations-band" aria-labelledby="operations-title">
+            <div>
+                <p class="eyebrow">Execution Model</p>
+                <h2 id="operations-title">Model allocation policy</h2>
+            </div>
+            <p id="execution-copy">
+                High-capability Codex reasoning is spent on theorem derivation, counterexample construction, and asymptotic analysis. Mechanical wiring, registry upserts, and snapshot builds are handled automatically via Antigravity.
+            </p>
+            <div class="operations-links">
+                <a href="index.html">Live progress</a>
+                <a href="docs/REPOSITORY_MAP.md">Repository map</a>
+                <a href="research/frontier_map.json" target="_blank">Frontier map</a>
+                <a href="research/registry/negative_results.json" target="_blank">Negative results</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span>Q-Search research methodology</span>
+        <span>No breakthrough claim is made without a proof-complete complexity separation.</span>
+    </footer>
+</body>
+</html>

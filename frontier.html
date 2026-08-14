@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive research frontier map and candidate registry table for the Q-Search quantum algorithm search program.">
+    <title>Q-Search | Frontier Map & Data</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Q-Search home">
+            <span class="brand-mark" aria-hidden="true">Q</span>
+            <span>Q-Search</span>
+        </a>
+        <nav aria-label="Frontier sections">
+            <a href="index.html">Progress</a>
+            <a href="methodology.html">Methodology</a>
+            <a href="#table">Frontier table</a>
+            <a href="#details">Frontier details</a>
+            <a href="#raw-json">Raw JSON</a>
+        </nav>
+        <a class="github-link" href="https://github.com/Jaspersands/qsearch" target="_blank" rel="noreferrer">GitHub</a>
+    </header>
+
+    <main id="top">
+        <section class="hero" aria-labelledby="page-title">
+            <div class="hero-copy">
+                <p class="eyebrow">Machine-Readable Research Registry</p>
+                <h1 id="page-title">Frontier Map</h1>
+                <p class="hero-lede">
+                    A structured topology of active research frontiers, mathematical kill criteria, reduction pathways, and empirical barriers. Data is loaded directly from the project's verified research registry.
+                </p>
+                <div class="hero-actions">
+                    <a class="primary-action" href="index.html">← Back to live progress</a>
+                    <a class="secondary-action" href="research/frontier_map.json" download="frontier_map.json">Download raw JSON</a>
+                </div>
+            </div>
+            <div class="verdict-block" aria-label="Frontier status summary">
+                <p class="eyebrow">Registry Topology</p>
+                <strong id="verdict-title">5 Active Frontiers</strong>
+                <p id="verdict-detail">Ranked by priority score, proof debt, and reduction distance to asymptotic complexity separation.</p>
+                <div class="updated-row">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    <span>100% Machine-Readable</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="metric-strip" aria-label="Frontier topology metrics">
+            <div><strong>5</strong><span>active frontiers</span></div>
+            <div><strong>158</strong><span>max priority score</span></div>
+            <div><strong>1,142</strong><span>blocking findings</span></div>
+            <div><strong>806</strong><span>negative results</span></div>
+            <div><strong>0</strong><span>proof debt waivers</span></div>
+        </section>
+
+        <!-- Section 1: Frontier Data Table -->
+        <section id="table" class="content-section">
+            <div class="section-heading compact">
+                <p class="eyebrow">Frontier Registry Table</p>
+                <h2>Active research nodes</h2>
+            </div>
+
+            <div class="table-wrapper">
+                <div class="table-toolbar">
+                    <input type="text" id="table-filter" class="search-input" placeholder="Filter frontiers by keyword, ID, or status..." oninput="filterTable()">
+                    <span id="row-count" style="font-family: var(--mono); font-size: 0.76rem; color: var(--muted);">Showing 5 of 5 frontiers</span>
+                </div>
+                <div style="overflow-x: auto;">
+                    <table class="data-table" id="frontier-table">
+                        <thead>
+                            <tr>
+                                <th style="width: 100px;">Priority</th>
+                                <th>Frontier Identifier</th>
+                                <th>Status</th>
+                                <th>Objective / Why It Matters</th>
+                                <th style="text-align: center; width: 110px;">Kill Criteria</th>
+                                <th style="text-align: right; width: 100px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-search="code-equivalence-hard-family-search 158 self-dual-wreath-growing-width-carrier-decoder">
+                                <td><span class="score-badge">158</span></td>
+                                <td><strong>code-equivalence-hard-family-search</strong></td>
+                                <td><span class="status-label active">wreath-growing-width</span></td>
+                                <td>Code equivalence remains one of the plausible hidden-permutation settings where a new collective measurement could matter.</td>
+                                <td style="text-align: center; font-family: var(--mono); font-weight: 600;">20 rules</td>
+                                <td style="text-align: right;"><a href="#frontier-code-equivalence" style="font-family: var(--mono); font-size: 0.76rem; color: var(--green); text-decoration: none; font-weight: 600;">Inspect →</a></td>
+                            </tr>
+                            <tr data-search="dcp-density-one-subset-sum-partial-solver 110 subset-sum partial solver k-sum">
+                                <td><span class="score-badge">110</span></td>
+                                <td><strong>dcp-density-one-subset-sum-partial-solver</strong></td>
+                                <td><span class="status-label blocked">subset-sum-sieve</span></td>
+                                <td>Tests whether carry ANF relations and quantum walk fibers can bypass Kuperberg sieve bounds in density-one DCP.</td>
+                                <td style="text-align: center; font-family: var(--mono); font-weight: 600;">18 rules</td>
+                                <td style="text-align: right;"><a href="#frontier-dcp" style="font-family: var(--mono); font-size: 0.76rem; color: var(--green); text-decoration: none; font-weight: 600;">Inspect →</a></td>
+                            </tr>
+                            <tr data-search="nonabelian-coset-collective-observables 94 racah commutant nonabelian s_n">
+                                <td><span class="score-badge">94</span></td>
+                                <td><strong>nonabelian-coset-collective-observables</strong></td>
+                                <td><span class="status-label blocked">surface-reduction-bound</span></td>
+                                <td>Examines collective POVMs and Racah commutants on multi-copy coset states across symmetric groups S_n and B_n.</td>
+                                <td style="text-align: center; font-family: var(--mono); font-weight: 600;">15 rules</td>
+                                <td style="text-align: right;"><a href="#frontier-coset" style="font-family: var(--mono); font-size: 0.76rem; color: var(--green); text-decoration: none; font-weight: 600;">Inspect →</a></td>
+                            </tr>
+                            <tr data-search="hidden-shift-phase-family-generation 82 phase family abelian hidden shift">
+                                <td><span class="score-badge">82</span></td>
+                                <td><strong>hidden-shift-phase-family-generation</strong></td>
+                                <td><span class="status-label watch">phase-sieve-triage</span></td>
+                                <td>Searches for structured non-linear phase functions with provable resistance to classical Fourier contractions.</td>
+                                <td style="text-align: center; font-family: var(--mono); font-weight: 600;">12 rules</td>
+                                <td style="text-align: right;"><a href="#frontier-phase" style="font-family: var(--mono); font-size: 0.76rem; color: var(--green); text-decoration: none; font-weight: 600;">Inspect →</a></td>
+                            </tr>
+                            <tr data-search="character-shift-decoding-lower-bound 70 character shift lower bound">
+                                <td><span class="score-badge">70</span></td>
+                                <td><strong>character-shift-decoding-lower-bound</strong></td>
+                                <td><span class="status-label blocked">lower-bound-audit</span></td>
+                                <td>Evaluates query complexity bounds and classical representation obstructions on character shift channels.</td>
+                                <td style="text-align: center; font-family: var(--mono); font-weight: 600;">10 rules</td>
+                                <td style="text-align: right;"><a href="#frontier-character" style="font-family: var(--mono); font-size: 0.76rem; color: var(--green); text-decoration: none; font-weight: 600;">Inspect →</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: Detailed Frontier Cards -->
+        <section id="details" class="content-section">
+            <div class="section-heading compact">
+                <p class="eyebrow">Frontier Deep Dives</p>
+                <h2>Structural obligations & kill criteria</h2>
+            </div>
+
+            <!-- Detail Card 1 -->
+            <div id="frontier-code-equivalence" class="detail-card">
+                <div class="detail-card-header">
+                    <div>
+                        <span class="score-badge">Priority 158</span>
+                        <h3>code-equivalence-hard-family-search</h3>
+                    </div>
+                    <span class="status-label active">self-dual-wreath-growing-width-carrier-decoder</span>
+                </div>
+                <p><strong>Why it matters:</strong> Code equivalence remains one of the plausible hidden-permutation settings where a new collective measurement could matter.</p>
+                <p><strong>Next experiment obligation:</strong> Stop fitting fixed bounded-support separators. Build the average-frame operator in a uniform harmonic basis, then compile its inverse root into the first typed growing-width carrier-sensitive covariant outcome primitive under ordinary mixed coset-state access.</p>
+                <div style="margin-top: 16px;">
+                    <strong style="font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase; color: var(--muted);">Key Kill Criteria:</strong>
+                    <ul style="margin: 8px 0 0; padding-left: 20px; font-size: 0.84rem; color: var(--muted);">
+                        <li>Support splitting or canonicalization distinguishes every generated family.</li>
+                        <li>Coset observable matches a known code invariant.</li>
+                        <li>Low-weight codeword support hypergraphs or matroid incidence signatures separate the row.</li>
+                        <li>The family has trivial hull and therefore reduces to weighted GI under public-generator access.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Detail Card 2 -->
+            <div id="frontier-dcp" class="detail-card">
+                <div class="detail-card-header">
+                    <div>
+                        <span class="score-badge">Priority 110</span>
+                        <h3>dcp-density-one-subset-sum-partial-solver</h3>
+                    </div>
+                    <span class="status-label blocked">subset-sum-partial-solver</span>
+                </div>
+                <p><strong>Why it matters:</strong> Density-one dihedral coset states present a critical testing ground for whether quantum walk memory can outperform classical sieves.</p>
+                <p><strong>Next experiment obligation:</strong> Synthesize structural deterministic or explicit-coin randomized partial solvers near density one and demand a uniform inverse-polynomial legal-input coverage theorem, not finite success.</p>
+                <div style="margin-top: 16px;">
+                    <strong style="font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase; color: var(--muted);">Key Kill Criteria:</strong>
+                    <ul style="margin: 8px 0 0; padding-left: 20px; font-size: 0.84rem; color: var(--muted);">
+                        <li>Legal-input success collapses in the scaling tail or lacks a uniform inverse-polynomial coverage theorem.</li>
+                        <li>The method enumerates only polynomially many explicit subset candidates with exponentially small coverage.</li>
+                        <li>Distinguishability exists only through exponential subset-sum enumeration.</li>
+                        <li>The robust full decoder matches or loses to named Kuperberg/Regev resource frontiers.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Detail Card 3 -->
+            <div id="frontier-coset" class="detail-card">
+                <div class="detail-card-header">
+                    <div>
+                        <span class="score-badge">Priority 94</span>
+                        <h3>nonabelian-coset-collective-observables</h3>
+                    </div>
+                    <span class="status-label blocked">surface-reduction-bound</span>
+                </div>
+                <p><strong>Why it matters:</strong> Multi-copy coset states in nonabelian groups isolate the boundary between quantum Fourier sampling and classical commutant moments.</p>
+                <p><strong>Next experiment obligation:</strong> Complete asymptotic growing-width bounds for weighted frame presentations outside the genus-two seed, followed by interleaved-leaf multi-boundary analysis.</p>
+                <div style="margin-top: 16px;">
+                    <strong style="font-family: var(--mono); font-size: 0.78rem; text-transform: uppercase; color: var(--muted);">Key Kill Criteria:</strong>
+                    <ul style="margin: 8px 0 0; padding-left: 20px; font-size: 0.84rem; color: var(--muted);">
+                        <li>Commutant projection weight decays superpolynomially in target group dimension.</li>
+                        <li>Racah recoupling coefficients concentrate around trivial scalar representations.</li>
+                        <li>Observable distribution is efficiently sampleable via Weisfeiler-Leman invariants.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 3: Raw JSON Inspector -->
+        <section id="raw-json" class="content-section">
+            <div class="section-heading compact">
+                <p class="eyebrow">Direct JSON Stream</p>
+                <h2>Raw frontier dataset</h2>
+            </div>
+            <div style="margin-bottom: 16px; display: flex; gap: 12px; align-items: center;">
+                <button class="primary-action" onclick="copyJson()" style="font-size: 0.78rem; padding: 7px 12px;">Copy JSON Payload</button>
+                <a class="secondary-action" href="research/frontier_map.json" target="_blank" style="font-size: 0.78rem; padding: 7px 12px;">Open in New Tab</a>
+            </div>
+            <pre class="json-panel"><code id="raw-json-code">Loading frontier_map.json directly from registry...</code></pre>
+        </section>
+
+        <!-- Operations Band -->
+        <section class="content-section operations-band" aria-labelledby="operations-title">
+            <div>
+                <p class="eyebrow">Execution Model</p>
+                <h2 id="operations-title">How frontiers are managed</h2>
+            </div>
+            <p id="execution-copy">
+                Frontiers are regenerated automatically by registry audits and verified in GitHub Actions CI workflows. Every hypothesis is held to explicit kill criteria.
+            </p>
+            <div class="operations-links">
+                <a href="index.html">Live progress</a>
+                <a href="methodology.html">Methodology</a>
+                <a href="docs/REPOSITORY_MAP.md">Repository map</a>
+                <a href="research/registry/negative_results.json" target="_blank">Negative results</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span>Q-Search research frontier data</span>
+        <span>No breakthrough claim is made without a proof-complete complexity separation.</span>
+    </footer>
+
+    <script>
+        // Fetch and display live JSON
+        fetch('research/frontier_map.json')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('raw-json-code').textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(err => {
+                document.getElementById('raw-json-code').textContent = '// Error loading research/frontier_map.json: ' + err;
+            });
+
+        function copyJson() {
+            const text = document.getElementById('raw-json-code').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Raw frontier_map.json copied to clipboard!');
+            });
+        }
+
+        function filterTable() {
+            const q = document.getElementById('table-filter').value.toLowerCase();
+            const rows = document.querySelectorAll('#frontier-table tbody tr');
+            let count = 0;
+            rows.forEach(row => {
+                const search = (row.getAttribute('data-search') + ' ' + row.innerText).toLowerCase();
+                if (search.includes(q)) {
+                    row.style.display = '';
+                    count++;
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+            document.getElementById('row-count').textContent = `Showing ${count} of ${rows.length} frontiers`;
+        }
+    </script>
+</body>
+</html>

@@ -447,6 +447,139 @@ h3 {
 .operations-links { justify-content: flex-end; }
 .operations-links a { padding: 8px 10px; border-color: var(--line); background: var(--white); }
 
+/* ==========================================================================
+   Data Table & Frontier Explorer Layout
+   ========================================================================== */
+
+.table-wrapper {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    overflow: hidden;
+    margin: 24px 0;
+}
+
+.table-toolbar {
+    padding: 16px 20px;
+    background: #fafbfa;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.search-input {
+    flex: 1;
+    min-width: 240px;
+    padding: 9px 14px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    background: var(--white);
+    color: var(--ink);
+    outline: none;
+}
+
+.search-input:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 2px var(--green-soft);
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.84rem;
+    text-align: left;
+}
+
+.data-table th {
+    padding: 12px 18px;
+    background: #f1f3ee;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted);
+    border-bottom: 1px solid var(--line);
+}
+
+.data-table td {
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+}
+
+.data-table tbody tr:hover {
+    background: #fafbfa;
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.score-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 3px;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--green);
+    background: var(--green-soft);
+}
+
+.detail-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.detail-card:last-child {
+    margin-bottom: 0;
+}
+
+.detail-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 12px;
+}
+
+.detail-card-header h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-family: var(--mono);
+}
+
+.detail-card p {
+    margin: 0 0 12px;
+    font-size: 0.88rem;
+    color: #383c36;
+    line-height: 1.55;
+}
+
+.json-panel {
+    background: #121411;
+    color: #e2e8de;
+    padding: 20px;
+    border-radius: 4px;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    line-height: 1.45;
+    max-height: 480px;
+    overflow: auto;
+    border: 1px solid #232722;
+}
+
 footer {
     width: min(1220px, calc(100vw - 64px));
     margin: 0 auto;
