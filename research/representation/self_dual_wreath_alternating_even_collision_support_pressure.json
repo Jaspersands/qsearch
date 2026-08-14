@@ -1,0 +1,167 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The two triangle inequalities count k only once.",
+      "resolution": "They count k twice; subtracting one s(k) still leaves the intersection term 2|A intersection B|>=2s(k).",
+      "resolved": true
+    },
+    {
+      "objection": "A nontrivial even permutation may move only two points.",
+      "resolution": "Impossible: a two-point move is a transposition and odd.",
+      "resolved": true
+    },
+    {
+      "objection": "There may be too many bounded-support abstract profiles.",
+      "resolution": "At support u their total combinatorial overhead is exp(O(u log u)), which is n^o(1) throughout the declared slow window.",
+      "resolved": true
+    },
+    {
+      "objection": "Eliminating local profiles proves Z6_+ subpolynomial.",
+      "resolution": "Growing-support profiles contain almost all random permutations and remain uncontrolled.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "bounded_and_slow_support_core_vanishes_proved": true,
+    "classical_separation_proved": false,
+    "even_six_word_support_pressure_gap_proved": true,
+    "fully_nonidentity_even_core_subpolynomial_proved": false,
+    "growing_support_even_core_subpolynomial_proved": false,
+    "irreducible_racah_cmi_vanishes_proved": false,
+    "local_cycle_obstruction_eliminated": true,
+    "physical_rank_profile_mixes_proved": false,
+    "reason": "All local and slowly growing support profiles vanish, but the growing-support collision core is untouched.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T23:13:06.422404+00:00",
+  "exhaustive_controls": [
+    {
+      "alternating_group_order": 3,
+      "degree": 3,
+      "fully_nonidentity_even_triple_count": 0,
+      "minimum_gap_witness_union_support": null,
+      "minimum_gap_witness_word_supports": null,
+      "minimum_observed_support_pressure_gap": null,
+      "proved_support_pressure_gap_lower": 6,
+      "status": "even-six-word-support-pressure-gap-verified",
+      "theorem_bound_verified_exhaustively": true
+    },
+    {
+      "alternating_group_order": 12,
+      "degree": 4,
+      "fully_nonidentity_even_triple_count": 990,
+      "minimum_gap_witness_union_support": 4,
+      "minimum_gap_witness_word_supports": [
+        3,
+        3,
+        4,
+        3,
+        3,
+        3
+      ],
+      "minimum_observed_support_pressure_gap": 11,
+      "proved_support_pressure_gap_lower": 6,
+      "status": "even-six-word-support-pressure-gap-verified",
+      "theorem_bound_verified_exhaustively": true
+    },
+    {
+      "alternating_group_order": 60,
+      "degree": 5,
+      "fully_nonidentity_even_triple_count": 195054,
+      "minimum_gap_witness_union_support": 5,
+      "minimum_gap_witness_word_supports": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "minimum_observed_support_pressure_gap": 8,
+      "proved_support_pressure_gap_lower": 6,
+      "status": "even-six-word-support-pressure-gap-verified",
+      "theorem_bound_verified_exhaustively": true
+    }
+  ],
+  "falsifiers_triggered": [
+    "Bounded-support cycle gadgets cannot produce the coarse alternating collision obstruction.",
+    "Slowly growing planted supports also vanish after summing all abstract profiles.",
+    "Any Renyi obstruction must be a genuinely growing-support word-map phenomenon."
+  ],
+  "headline_metrics": {
+    "even_support_pressure_theorem_count": 1,
+    "exhaustive_control_count": 3,
+    "finite_control_failure_count": 0,
+    "growing_support_core_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "physical_rank_mixing_theorem_count": 0,
+    "proved_pressure_gap": 6,
+    "slow_support_uniform_elimination_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "prove_uniform_support_pressure_gap_for_even_core",
+      "resolution": "Two product-triangle support inequalities, shared-k accounting, and minimum support three for nontrivial even permutations give +6.",
+      "resolved": true
+    },
+    {
+      "obligation": "sum_all_slowly_growing_support_profiles",
+      "resolution": "For u=o(log n/log log n), abstract permutations, profiles, and centralizer factors contribute n^o(1), preserving the -6 gap.",
+      "resolved": true
+    },
+    {
+      "obligation": "control_growing_support_even_collision_core",
+      "resolution": "Use cycle exposure, switching, or character cancellation for u=Omega(log n/log log n), especially typical linear support.",
+      "resolved": false
+    }
+  ],
+  "scaling_controls": [
+    {
+      "combinatorial_overhead_log_n_ratio": 0.29818879797456005,
+      "log_n": 1000,
+      "overhead_is_subpolynomial_on_declared_family": true,
+      "pressure_exponent_upper": -5.70181120202544,
+      "status": "explicit-slow-support-family-has-subpolynomial-overhead",
+      "support_over_log_n_loglog_n_scale": 0.08289306334778564,
+      "union_support": 12
+    },
+    {
+      "combinatorial_overhead_log_n_ratio": 0.042153175286325284,
+      "log_n": 100000,
+      "overhead_is_subpolynomial_on_declared_family": true,
+      "pressure_exponent_upper": -5.957846824713675,
+      "status": "explicit-slow-support-family-has-subpolynomial-overhead",
+      "support_over_log_n_loglog_n_scale": 0.010707020682422312,
+      "union_support": 93
+    },
+    {
+      "combinatorial_overhead_log_n_ratio": 0.005247895631504496,
+      "log_n": 10000000,
+      "overhead_is_subpolynomial_on_declared_family": true,
+      "pressure_exponent_upper": -5.994752104368495,
+      "status": "explicit-slow-support-family-has-subpolynomial-overhead",
+      "support_over_log_n_loglog_n_scale": 0.0012684941277304198,
+      "union_support": 787
+    }
+  ],
+  "status": "even-collision-obstruction-forced-into-growing-support-regime",
+  "summary": "Proved a six-power support-pressure deficit and eliminated every even collision profile below the log n/log log n support scale.",
+  "theorem": {
+    "fixed_support_collision_pressure": "2|U|-sum_w s(w)<=-6",
+    "large_support_core_controlled": false,
+    "obstruction_support_lower_scale": "Omega(log n/log log n)",
+    "pair_triangle_inequality": "s(a)+s(b)+s(ab)>=2|supp(a) union supp(b)|",
+    "six_word_even_gap": "sum_(w in (g,h,k,gk,hk,ghk))s(w)>=2|U|+6",
+    "slowly_growing_support_contribution": "Z6_+[|U|=o(log n/log log n)]=n^(-6+o(1))",
+    "status": "all-local-even-word-collision-obstructions-eliminated"
+  },
+  "theorem_contract": {
+    "collision_pressure": "2|U|-sum_w s(w)<=-6",
+    "even_nonidentity_minimum_support": 3,
+    "remaining_scope": "Only union supports at least order log n/log log n remain; no estimate is proved on that growing-support region.",
+    "six_word_gap": "sum_(w in (g,h,k,gk,hk,ghk))s(w)>=2|U|+6",
+    "support_inequality": "s(a)+s(b)+s(ab)>=2|supp(a) union supp(b)|",
+    "uniform_window": "Z6_+[|U|=o(log n/log log n)]=n^(-6+o(1))"
+  }
+}

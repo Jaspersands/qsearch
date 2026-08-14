@@ -1,0 +1,285 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Every Racah block needs a uniform subpolynomial bound.",
+      "resolution": "False. Equation (3) permits large blocks on a sufficiently small physical mass.",
+      "resolved": true
+    },
+    {
+      "objection": "Small bad probability alone controls information.",
+      "resolution": "It must beat the p(n)^2 support entropy; the explicit delta log term records the required rate.",
+      "resolved": true
+    },
+    {
+      "objection": "A Hilbert-Schmidt rank bound is automatically useful.",
+      "resolution": "It is useful only after normalization by the independent block mass l_mu r_nu/M. Existing typical rank pressure can erase it.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "classical_separation_proved": false,
+    "irreducible_orientation_racah_cmi_vanishes_proved": false,
+    "natural_bad_block_mass_rate_proved": false,
+    "natural_physical_average_racah_mi_sublogarithmic_proved": false,
+    "natural_subpolynomial_good_block_overlap_proved": false,
+    "operator_norm_to_relative_overlap_bound_proved": true,
+    "physical_rank_profile_mixes_proved": false,
+    "reason": "The exact sufficient tail rates are known, but neither rate is proved for natural Plancherel-shaped symmetric-group recoupling.",
+    "speedup_claim_allowed": false,
+    "tail_tolerant_racah_mi_certificate_proved": true,
+    "uniform_racah_collision_bound_required": false
+  },
+  "created_at": "2026-08-14T00:12:41.396852+00:00",
+  "falsifiers_triggered": [
+    "Rare large recoupling blocks do not by themselves defeat direct entropy transfer.",
+    "Bad-block mass must be charged against the partition-label support entropy.",
+    "Raw operator contraction is irrelevant unless normalized to the rank-product block mass."
+  ],
+  "finite_controls": [
+    {
+      "average_tail_certificate_upper_bits": 0.8777500005341896,
+      "certificate_violation_bits": 0.0,
+      "exact_entropic_tail_certificate_verified": true,
+      "label_count": 3,
+      "maximum_finite_relative_block_overlap": 1.5,
+      "n": 3,
+      "physical_average_bad_block_mass": 0.1481481481481481,
+      "physical_average_recoupling_mutual_information_bits": 0.05591759275284951,
+      "positive_outer_tuple_count": 41,
+      "relative_overlap_threshold": 1.0,
+      "status": "average-racah-mutual-information-obeys-tail-certificate"
+    },
+    {
+      "average_tail_certificate_upper_bits": 1.0,
+      "certificate_violation_bits": 0.0,
+      "exact_entropic_tail_certificate_verified": true,
+      "label_count": 3,
+      "maximum_finite_relative_block_overlap": 1.5,
+      "n": 3,
+      "physical_average_bad_block_mass": 0.0,
+      "physical_average_recoupling_mutual_information_bits": 0.05591759275284951,
+      "positive_outer_tuple_count": 41,
+      "relative_overlap_threshold": 2.0,
+      "status": "average-racah-mutual-information-obeys-tail-certificate"
+    },
+    {
+      "average_tail_certificate_upper_bits": 2.5292634971102013,
+      "certificate_violation_bits": 0.0,
+      "exact_entropic_tail_certificate_verified": true,
+      "label_count": 5,
+      "maximum_finite_relative_block_overlap": 2.0,
+      "n": 4,
+      "physical_average_bad_block_mass": 0.432002314814815,
+      "physical_average_recoupling_mutual_information_bits": 0.1404257307173426,
+      "positive_outer_tuple_count": 321,
+      "relative_overlap_threshold": 1.0,
+      "status": "average-racah-mutual-information-obeys-tail-certificate"
+    },
+    {
+      "average_tail_certificate_upper_bits": 1.0,
+      "certificate_violation_bits": 0.0,
+      "exact_entropic_tail_certificate_verified": true,
+      "label_count": 5,
+      "maximum_finite_relative_block_overlap": 2.0,
+      "n": 4,
+      "physical_average_bad_block_mass": 0.0,
+      "physical_average_recoupling_mutual_information_bits": 0.1404257307173426,
+      "positive_outer_tuple_count": 321,
+      "relative_overlap_threshold": 2.0,
+      "status": "average-racah-mutual-information-obeys-tail-certificate"
+    },
+    {
+      "average_tail_certificate_upper_bits": 4.1845537113745825,
+      "certificate_violation_bits": 0.0,
+      "exact_entropic_tail_certificate_verified": true,
+      "label_count": 7,
+      "maximum_finite_relative_block_overlap": 3.610000000000004,
+      "n": 5,
+      "physical_average_bad_block_mass": 0.6775065907921861,
+      "physical_average_recoupling_mutual_information_bits": 0.23736799519617469,
+      "positive_outer_tuple_count": 1625,
+      "relative_overlap_threshold": 1.0,
+      "status": "average-racah-mutual-information-obeys-tail-certificate"
+    },
+    {
+      "average_tail_certificate_upper_bits": 1.9885492189738527,
+      "certificate_violation_bits": 0.0,
+      "exact_entropic_tail_certificate_verified": true,
+      "label_count": 7,
+      "maximum_finite_relative_block_overlap": 3.610000000000004,
+      "n": 5,
+      "physical_average_bad_block_mass": 0.11281330375514369,
+      "physical_average_recoupling_mutual_information_bits": 0.23736799519617469,
+      "positive_outer_tuple_count": 1625,
+      "relative_overlap_threshold": 2.0,
+      "status": "average-racah-mutual-information-obeys-tail-certificate"
+    },
+    {
+      "average_tail_certificate_upper_bits": 2.0,
+      "certificate_violation_bits": 0.0,
+      "exact_entropic_tail_certificate_verified": true,
+      "label_count": 7,
+      "maximum_finite_relative_block_overlap": 3.610000000000004,
+      "n": 5,
+      "physical_average_bad_block_mass": 0.0,
+      "physical_average_recoupling_mutual_information_bits": 0.23736799519617469,
+      "positive_outer_tuple_count": 1625,
+      "relative_overlap_threshold": 4.0,
+      "status": "average-racah-mutual-information-obeys-tail-certificate"
+    }
+  ],
+  "headline_metrics": {
+    "entropic_tail_certificate_theorem_count": 1,
+    "finite_control_failure_count": 0,
+    "finite_tail_control_count": 7,
+    "natural_bad_mass_bound_count": 0,
+    "natural_good_block_bound_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "operator_relative_overlap_interface_count": 1,
+    "physical_rank_mixing_theorem_count": 0
+  },
+  "operator_controls": [
+    {
+      "block_operator_norm_square": 0.25,
+      "column_block_rank": 5,
+      "exact_operator_certificate_verified": true,
+      "exact_relative_block_overlap": 1.0,
+      "operator_bound_violation": 0.0,
+      "operator_relative_overlap_upper": 1.0,
+      "row_block_rank": 4,
+      "status": "operator-norm-certifies-relative-racah-overlap",
+      "total_multiplicity_dimension": 20
+    },
+    {
+      "block_operator_norm_square": 0.5,
+      "column_block_rank": 6,
+      "exact_operator_certificate_verified": true,
+      "exact_relative_block_overlap": 1.25,
+      "operator_bound_violation": 0.0,
+      "operator_relative_overlap_upper": 1.5,
+      "row_block_rank": 10,
+      "status": "operator-norm-certifies-relative-racah-overlap",
+      "total_multiplicity_dimension": 30
+    },
+    {
+      "block_operator_norm_square": 1.0,
+      "column_block_rank": 3,
+      "exact_operator_certificate_verified": true,
+      "exact_relative_block_overlap": 4.0,
+      "operator_bound_violation": 0.0,
+      "operator_relative_overlap_upper": 4.0,
+      "row_block_rank": 3,
+      "status": "operator-norm-certifies-relative-racah-overlap",
+      "total_multiplicity_dimension": 12
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_tail_tolerant_racah_information_certificate",
+      "resolution": "Split information density at K and entropy-bound the exceptional mass over at most p(n)^2 intermediate blocks.",
+      "resolved": true
+    },
+    {
+      "obligation": "connect_block_operator_norms_to_relative_overlap",
+      "resolution": "Use Hilbert-Schmidt square <= block rank times operator norm square.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_natural_good_block_relative_overlap_subpolynomial",
+      "resolution": "Apply a growing-row 6j operator estimate on physical block mass, not uniformly over adversarial labels.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_natural_bad_block_mass_small_enough",
+      "resolution": "For a subpolynomial K_n, show E_P pi{a>K_n} is small enough that delta log(p(n)^2/delta)=o(log n).",
+      "resolved": false
+    }
+  ],
+  "status": "natural-racah-search-target-is-relative-overlap-tail",
+  "summary": "Replaced uniform 6j delocalization by a tail-tolerant relative-overlap criterion sufficient for sublogarithmic rank entropy.",
+  "synthetic_scaling_controls": [
+    {
+      "information_upper_over_log2_n": 0.5051642539404619,
+      "log2_partition_count_upper": 16.54983925610712,
+      "n": 20,
+      "natural_racah_conditions_proved": false,
+      "status": "synthetic-tail-schedule-implies-sublog-racah-information",
+      "sufficient_asymptotic_conditions_satisfied": true,
+      "synthetic_average_bad_mass": 0.0025,
+      "synthetic_average_information_upper_bits": 2.1832835816380967,
+      "synthetic_log2_relative_overlap_threshold": 2.0789247448831243
+    },
+    {
+      "information_upper_over_log2_n": 0.42544126428546225,
+      "log2_partition_count_upper": 26.167593479482612,
+      "n": 50,
+      "natural_racah_conditions_proved": false,
+      "status": "synthetic-tail-schedule-implies-sublog-racah-information",
+      "sufficient_asymptotic_conditions_satisfied": true,
+      "synthetic_average_bad_mass": 0.0004,
+      "synthetic_average_information_upper_bits": 2.4011293128230906,
+      "synthetic_log2_relative_overlap_threshold": 2.3756801530876848
+    },
+    {
+      "information_upper_over_log2_n": 0.38927663289997644,
+      "log2_partition_count_upper": 37.006565593350075,
+      "n": 100,
+      "natural_racah_conditions_proved": false,
+      "status": "synthetic-tail-schedule-implies-sublog-racah-information",
+      "sufficient_asymptotic_conditions_satisfied": true,
+      "synthetic_average_bad_mass": 0.0001,
+      "synthetic_average_information_upper_bits": 2.5862979670271717,
+      "synthetic_log2_relative_overlap_threshold": 2.5775678826705466
+    },
+    {
+      "information_upper_over_log2_n": 0.3167956416097922,
+      "log2_partition_count_upper": 117.02503565540671,
+      "n": 1000,
+      "natural_racah_conditions_proved": false,
+      "status": "synthetic-tail-schedule-implies-sublog-racah-information",
+      "sufficient_asymptotic_conditions_satisfied": true,
+      "synthetic_average_bad_mass": 1e-06,
+      "synthetic_average_information_upper_bits": 3.1571170266043094,
+      "synthetic_log2_relative_overlap_threshold": 3.156863044964429
+    },
+    {
+      "information_upper_over_log2_n": 0.27433157947394976,
+      "log2_partition_count_upper": 370.0656559335008,
+      "n": 10000,
+      "natural_racah_conditions_proved": false,
+      "status": "synthetic-tail-schedule-implies-sublog-racah-information",
+      "sufficient_asymptotic_conditions_satisfied": true,
+      "synthetic_average_bad_mass": 1e-08,
+      "synthetic_average_information_upper_bits": 3.6452391246773557,
+      "synthetic_log2_relative_overlap_threshold": 3.6452314576099893
+    },
+    {
+      "information_upper_over_log2_n": 0.2239903259322694,
+      "log2_partition_count_upper": 3700.6565593350065,
+      "n": 1000000,
+      "natural_racah_conditions_proved": false,
+      "status": "synthetic-tail-schedule-implies-sublog-racah-information",
+      "sufficient_asymptotic_conditions_satisfied": true,
+      "synthetic_average_bad_mass": 1e-12,
+      "synthetic_average_information_upper_bits": 4.464478540184298,
+      "synthetic_log2_relative_overlap_threshold": 4.464478532743121
+    }
+  ],
+  "theorem": {
+    "averaged_tail_bound": "E I_pi<=log2 K+bar_delta_K log2(p(n)^2/bar_delta_K)",
+    "local_tail_bound": "I_pi<=log2 K+delta_K log2(p(n)^2/delta_K)",
+    "natural_condition_proved": false,
+    "operator_overlap_bound": "a_(mu,nu)<=M||R_(mu,nu)||_op^2/max(l_mu,r_nu)",
+    "status": "racah-rank-transfer-has-tail-tolerant-entropic-certificate",
+    "sufficient_asymptotic_condition": "log K=o(log n) and bar_delta log(p(n)^2/bar_delta)=o(log n)"
+  },
+  "theorem_contract": {
+    "asymptotic_sufficient_condition": "log K=o(log n) and bar_delta log(p(n)^2/bar_delta)=o(log n)",
+    "average_certificate": "E I_pi<=log2 K+bar_delta_K log2(p(n)^2/bar_delta_K)",
+    "local_certificate": "I_pi<=log2 K+delta_K log2(p(n)^2/delta_K)",
+    "operator_interface": "a_(mu,nu)<=M||R_(mu,nu)||_op^2/max(l_mu,r_nu)",
+    "relative_overlap": "a=M||R_block||_HS^2/(left_rank right_rank)=pi/(p tensor r)",
+    "scope": "The inequalities are proved, but no natural growing-row 6j tail estimate supplies K_n or bar_delta_n."
+  }
+}

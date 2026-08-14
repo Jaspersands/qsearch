@@ -1,0 +1,147 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Orbit-adaptive syndrome KL also needs to be o(1).",
+      "resolution": "Not for the sublogarithmic rank-transfer gate; it is uniformly bounded by three bits.",
+      "resolved": true
+    },
+    {
+      "objection": "The three-bit term can grow logarithmically through conditioning.",
+      "resolution": "Conditional KL to uniform on eight outcomes is pointwise at most three bits, so averaging cannot increase it.",
+      "resolved": true
+    },
+    {
+      "objection": "Coarse sign orbits are an ad hoc quotient.",
+      "resolution": "They are exactly merged A_n irreducible labels with the matching coarse Plancherel law.",
+      "resolved": true
+    },
+    {
+      "objection": "Rank mixing would eliminate all syndrome information.",
+      "resolution": "The non-Haar conditional cumulants can carry a bounded survivor outside every rank-compatible Markov model.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "adaptive_syndrome_survives_proved": false,
+    "algorithm_claim_allowed": false,
+    "base_law_is_coarse_alternating_tetrahedral_law_proved": true,
+    "classical_separation_proved": false,
+    "coarse_alternating_total_correlation_sublogarithmic_proved": false,
+    "full_sublog_entropy_equivalent_to_base_sublog_entropy_proved": true,
+    "irreducible_racah_cmi_vanishes_proved": false,
+    "orientation_entropy_asymptotic_control_required_for_rank": false,
+    "physical_rank_profile_mixes_proved": false,
+    "reason": "The entropy gate now lies entirely in the coarse A_n base law, whose all-n total correlation remains unbounded.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T22:58:57.684513+00:00",
+  "exact_controls": [
+    {
+      "base_minus_alternating_residual": 0.0,
+      "base_sign_orbit_total_correlation_bits": 0.0,
+      "coarse_alternating_total_correlation_bits": 0.0,
+      "conditional_information_bound_verified": true,
+      "conditional_information_upper_bound_bits": 3.0,
+      "conditional_three_bit_syndrome_information_bits": 3.0,
+      "exact_entropy_reduction_verified": true,
+      "full_minus_base_residual": 0.0,
+      "full_six_label_total_correlation_bits": 3.0,
+      "n": 2,
+      "status": "six-label-entropy-exactly-reduced-to-coarse-alternating-base-plus-three-bits"
+    },
+    {
+      "base_minus_alternating_residual": 1.5543122344752192e-15,
+      "base_sign_orbit_total_correlation_bits": 1.7178504651264326,
+      "coarse_alternating_total_correlation_bits": 1.717850465126431,
+      "conditional_information_bound_verified": true,
+      "conditional_information_upper_bound_bits": 3.0,
+      "conditional_three_bit_syndrome_information_bits": 0.4074074074074071,
+      "exact_entropy_reduction_verified": true,
+      "full_minus_base_residual": 1.2212453270876722e-15,
+      "full_six_label_total_correlation_bits": 2.1252578725338385,
+      "n": 3,
+      "status": "six-label-entropy-exactly-reduced-to-coarse-alternating-base-plus-three-bits"
+    },
+    {
+      "base_minus_alternating_residual": 2.220446049250313e-16,
+      "base_sign_orbit_total_correlation_bits": 1.1998047574716693,
+      "coarse_alternating_total_correlation_bits": 1.199804757471669,
+      "conditional_information_bound_verified": true,
+      "conditional_information_upper_bound_bits": 3.0,
+      "conditional_three_bit_syndrome_information_bits": 0.8740114440685653,
+      "exact_entropy_reduction_verified": true,
+      "full_minus_base_residual": 1.3322676295501878e-15,
+      "full_six_label_total_correlation_bits": 2.073816201540236,
+      "n": 4,
+      "status": "six-label-entropy-exactly-reduced-to-coarse-alternating-base-plus-three-bits"
+    },
+    {
+      "base_minus_alternating_residual": 8.881784197001252e-16,
+      "base_sign_orbit_total_correlation_bits": 0.5066738355911681,
+      "coarse_alternating_total_correlation_bits": 0.506673835591169,
+      "conditional_information_bound_verified": true,
+      "conditional_information_upper_bound_bits": 3.0,
+      "conditional_three_bit_syndrome_information_bits": 0.6258735928161464,
+      "exact_entropy_reduction_verified": true,
+      "full_minus_base_residual": 3.3306690738754696e-15,
+      "full_six_label_total_correlation_bits": 1.1325474284073112,
+      "n": 5,
+      "status": "six-label-entropy-exactly-reduced-to-coarse-alternating-base-plus-three-bits"
+    }
+  ],
+  "falsifiers_triggered": [
+    "The bounded three-bit orientation channel cannot obstruct a sublogarithmic rank-transfer theorem.",
+    "The remaining base entropy is a standard alternating-group law, not an arbitrary quotient.",
+    "Rank-profile mixing would not by itself eliminate irreducible Racah syndrome information."
+  ],
+  "headline_metrics": {
+    "alternating_entropy_reduction_theorem_count": 1,
+    "coarse_alternating_sublog_entropy_theorem_count": 0,
+    "exact_finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "maximum_orientation_entropy_bits": 3,
+    "new_quantum_algorithm_count": 0,
+    "physical_rank_mixing_theorem_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "remove_orientation_entropy_from_sublog_rank_gate",
+      "resolution": "The sufficient orientation statistic has only eight outcomes, so its conditional KL is at most three bits.",
+      "resolved": true
+    },
+    {
+      "obligation": "identify_base_entropy_as_standard_group_law",
+      "resolution": "Sign-orbit averaging restricts all three word inputs to A_n and the coarse weights are A_n Plancherel weights.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_coarse_alternating_tetrahedral_total_correlation_sublogarithmic",
+      "resolution": "Prove D(P_coarse-A_n||Q_coarse-A_n)=o(log n), or construct a logarithmic positive-mass obstruction.",
+      "resolved": false
+    },
+    {
+      "obligation": "decide_irreducible_orbit_adaptive_syndrome_information",
+      "resolution": "A bounded three-bit term is harmless for rank transfer but may remain the only non-Haar measured-label survivor.",
+      "resolved": false
+    }
+  ],
+  "status": "coarse-alternating-total-correlation-is-exact-rank-entropy-target",
+  "summary": "Reduced the sublogarithmic physical rank-transfer condition exactly to the coarse A_n tetrahedral base-label total correlation.",
+  "theorem": {
+    "alternating_group_identification": "D_base is the total correlation of the coarse A_n tetrahedral weak-Fourier label law relative to coarse A_n Plancherel product",
+    "coarse_alternating_entropy_estimate_proved": false,
+    "kl_sandwich": "D_base<=D_full<=D_base+3 bits",
+    "orientation_entropy_asymptotic_estimate_required": false,
+    "rank_transfer_implication": "D_base=o(log n) implies physical Haar rank-profile mixing",
+    "status": "physical-rank-entropy-gate-reduced-to-coarse-alternating-base-law",
+    "sublogarithmic_equivalence": "D_full=o(log n) iff D_base=o(log n)"
+  },
+  "theorem_contract": {
+    "base_law": "D_base is the total correlation of the coarse A_n tetrahedral weak-Fourier label law relative to coarse A_n Plancherel product",
+    "exact_chain_rule": "D_full=D_base+E_O D(P(Y|O)||Uniform(F_2^3)).",
+    "rank_consequence": "D_base=o(log n) implies physical Haar rank-profile mixing",
+    "scope": "No asymptotic entropy bound for the coarse A_n law and no non-Haar Racah-syndrome conclusion is proved.",
+    "sublog_equivalence": "D_full=o(log n) iff D_base=o(log n)",
+    "three_bit_bound": "0<=E_O D(P(Y|O)||U3)<=3 bits."
+  }
+}

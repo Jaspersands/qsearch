@@ -1,0 +1,1442 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The proof silently reuses a fixed-row polynomial bound.",
+      "resolution": "False. It keeps exact finite Kronecker ranks and uses only Hilbert--Schmidt rank and contraction inequalities.",
+      "resolved": true
+    },
+    {
+      "objection": "An exponentially small dimension ratio alone is sufficient.",
+      "resolution": "False. The swapped Kronecker rank multiplies the ratio and may erase the entire deficit.",
+      "resolved": true
+    },
+    {
+      "objection": "Every finite block receives a nontrivial certificate.",
+      "resolution": "False. Only 24 of 51 complete S_6 blocks are certified below one.",
+      "resolved": true
+    },
+    {
+      "objection": "Local 6j contraction bounds the full 3nj sum automatically.",
+      "resolution": "False. Intermediate channel count and coherent interference must be bounded under the natural source measure.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "coherent_recoupling_compiled": false,
+    "complete_s6_racah_controls_respect_bound": true,
+    "dimension_uniform_6j_contraction_bound_proved": true,
+    "fixed_row_assumption_required": false,
+    "generalized_3nj_grid_contraction_proved": false,
+    "natural_plancherel_kronecker_rank_pressure_bounded": false,
+    "reason": "The exact local certificate is dimension-uniform, but natural Kronecker-rank pressure and summed 3nj channels are unbounded.",
+    "speedup_claim_allowed": false,
+    "uniform_residual_pair_quotient_gap_proved": false
+  },
+  "created_at": "2026-08-13T18:53:34.814317+00:00",
+  "falsifiers_triggered": [
+    "Fixed-row Schur--Weyl prefactors are not needed for a local rank-aware bound.",
+    "Dimension ratios without exact multiplicity pressure are insufficient.",
+    "A local 6j certificate is not a global 3nj or compiler theorem."
+  ],
+  "finite_controls": [
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.9999999999999993,
+      "certificate_respected": true,
+      "certificate_slack": 6.661338147750939e-16,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(6,)-(4, 2)-(4, 2)",
+      "final_partition": [
+        6
+      ],
+      "left_intermediate": [
+        4,
+        2
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        4,
+        2
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.41666666666666785,
+      "certificate_respected": true,
+      "certificate_slack": 0.13888888888888773,
+      "certified_operator_norm_upper_bound": 0.5555555555555556,
+      "control_id": "S6-(5, 1)-(5, 1)-(5, 1)",
+      "final_partition": [
+        5,
+        1
+      ],
+      "left_intermediate": [
+        5,
+        1
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        5,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.5590169943749472,
+      "certificate_respected": true,
+      "certificate_slack": 0.18633899812498267,
+      "certified_operator_norm_upper_bound": 0.7453559924999299,
+      "control_id": "S6-(5, 1)-(5, 1)-(4, 2)",
+      "final_partition": [
+        5,
+        1
+      ],
+      "left_intermediate": [
+        5,
+        1
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        4,
+        2
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.263523138347364,
+      "certificate_respected": true,
+      "certificate_slack": 0.5221510629710222,
+      "certified_operator_norm_upper_bound": 0.7856742013183862,
+      "control_id": "S6-(5, 1)-(5, 1)-(4, 1, 1)",
+      "final_partition": [
+        5,
+        1
+      ],
+      "left_intermediate": [
+        5,
+        1
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        4,
+        1,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.666666666666666,
+      "certificate_respected": true,
+      "certificate_slack": 0.32714132333324053,
+      "certified_operator_norm_upper_bound": 0.9938079899999065,
+      "control_id": "S6-(5, 1)-(5, 1)-(3, 2, 1)",
+      "final_partition": [
+        5,
+        1
+      ],
+      "left_intermediate": [
+        5,
+        1
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.5590169943749469,
+      "certificate_respected": true,
+      "certificate_slack": 0.186338998124983,
+      "certified_operator_norm_upper_bound": 0.7453559924999299,
+      "control_id": "S6-(5, 1)-(4, 2)-(5, 1)",
+      "final_partition": [
+        5,
+        1
+      ],
+      "left_intermediate": [
+        4,
+        2
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        5,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.6552343178074638,
+      "certificate_respected": true,
+      "certificate_slack": 0.3447656821925362,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(5, 1)-(4, 2)-(4, 2)",
+      "final_partition": [
+        5,
+        1
+      ],
+      "left_intermediate": [
+        4,
+        2
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        4,
+        2
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.5700877125495674,
+      "certificate_respected": true,
+      "certificate_slack": 0.42991228745043264,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(5, 1)-(4, 2)-(4, 1, 1)",
+      "final_partition": [
+        5,
+        1
+      ],
+      "left_intermediate": [
+        4,
+        2
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        4,
+        1,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.740312423743285,
+      "certificate_respected": true,
+      "certificate_slack": 0.259687576256715,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(5, 1)-(4, 2)-(3, 2, 1)",
+      "final_partition": [
+        5,
+        1
+      ],
+      "left_intermediate": [
+        4,
+        2
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.2635231383473656,
+      "certificate_respected": true,
+      "certificate_slack": 0.5221510629710205,
+      "certified_operator_norm_upper_bound": 0.7856742013183862,
+      "control_id": "S6-(5, 1)-(4, 1, 1)-(5, 1)",
+      "final_partition": [
+        5,
+        1
+      ],
+      "left_intermediate": [
+        4,
+        1,
+        1
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        5,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.5700877125495687,
+      "certificate_respected": true,
+      "certificate_slack": 0.4299122874504313,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(5, 1)-(4, 1, 1)-(4, 2)",
+      "final_partition": [
+        5,
+        1
+      ],
+      "left_intermediate": [
+        4,
+        1,
+        1
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        4,
+        2
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.5000000000000011,
+      "certificate_respected": true,
+      "certificate_slack": 0.4999999999999989,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(5, 1)-(4, 1, 1)-(4, 1, 1)",
+      "final_partition": [
+        5,
+        1
+      ],
+      "left_intermediate": [
+        4,
+        1,
+        1
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        4,
+        1,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.5962847939999434,
+      "certificate_respected": true,
+      "certificate_slack": 0.4037152060000566,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(5, 1)-(4, 1, 1)-(3, 2, 1)",
+      "final_partition": [
+        5,
+        1
+      ],
+      "left_intermediate": [
+        4,
+        1,
+        1
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.6666666666666677,
+      "certificate_respected": true,
+      "certificate_slack": 0.32714132333323875,
+      "certified_operator_norm_upper_bound": 0.9938079899999065,
+      "control_id": "S6-(5, 1)-(3, 2, 1)-(5, 1)",
+      "final_partition": [
+        5,
+        1
+      ],
+      "left_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        5,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.7403124237432853,
+      "certificate_respected": true,
+      "certificate_slack": 0.2596875762567147,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(5, 1)-(3, 2, 1)-(4, 2)",
+      "final_partition": [
+        5,
+        1
+      ],
+      "left_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        4,
+        2
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.5962847939999438,
+      "certificate_respected": true,
+      "certificate_slack": 0.40371520600005617,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(5, 1)-(3, 2, 1)-(4, 1, 1)",
+      "final_partition": [
+        5,
+        1
+      ],
+      "left_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        4,
+        1,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.5801041412477614,
+      "certificate_respected": true,
+      "certificate_slack": 0.41989585875223856,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(5, 1)-(3, 2, 1)-(3, 2, 1)",
+      "final_partition": [
+        5,
+        1
+      ],
+      "left_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.3333333333333339,
+      "certificate_respected": true,
+      "certificate_slack": 0.22222222222222165,
+      "certified_operator_norm_upper_bound": 0.5555555555555556,
+      "control_id": "S6-(3, 3)-(5, 1)-(5, 1)",
+      "final_partition": [
+        3,
+        3
+      ],
+      "left_intermediate": [
+        5,
+        1
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        5,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.6666666666666675,
+      "certificate_respected": true,
+      "certificate_slack": 0.11900753465171865,
+      "certified_operator_norm_upper_bound": 0.7856742013183862,
+      "control_id": "S6-(3, 3)-(5, 1)-(4, 1, 1)",
+      "final_partition": [
+        3,
+        3
+      ],
+      "left_intermediate": [
+        5,
+        1
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        4,
+        1,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.6666666666666675,
+      "certificate_respected": true,
+      "certificate_slack": 0.327141323333239,
+      "certified_operator_norm_upper_bound": 0.9938079899999065,
+      "control_id": "S6-(3, 3)-(5, 1)-(3, 2, 1)",
+      "final_partition": [
+        3,
+        3
+      ],
+      "left_intermediate": [
+        5,
+        1
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.6666666666666676,
+      "certificate_respected": true,
+      "certificate_slack": 0.11900753465171854,
+      "certified_operator_norm_upper_bound": 0.7856742013183862,
+      "control_id": "S6-(3, 3)-(4, 1, 1)-(5, 1)",
+      "final_partition": [
+        3,
+        3
+      ],
+      "left_intermediate": [
+        4,
+        1,
+        1
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        5,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 1.093370642381909e-15,
+      "certificate_respected": true,
+      "certificate_slack": 0.9999999999999989,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(3, 3)-(4, 1, 1)-(4, 1, 1)",
+      "final_partition": [
+        3,
+        3
+      ],
+      "left_intermediate": [
+        4,
+        1,
+        1
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        4,
+        1,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.7453559924999298,
+      "certificate_respected": true,
+      "certificate_slack": 0.2546440075000702,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(3, 3)-(4, 1, 1)-(3, 2, 1)",
+      "final_partition": [
+        3,
+        3
+      ],
+      "left_intermediate": [
+        4,
+        1,
+        1
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.6666666666666663,
+      "certificate_respected": true,
+      "certificate_slack": 0.3271413233332402,
+      "certified_operator_norm_upper_bound": 0.9938079899999065,
+      "control_id": "S6-(3, 3)-(3, 2, 1)-(5, 1)",
+      "final_partition": [
+        3,
+        3
+      ],
+      "left_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        5,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.745355992499929,
+      "certificate_respected": true,
+      "certificate_slack": 0.254644007500071,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(3, 3)-(3, 2, 1)-(4, 1, 1)",
+      "final_partition": [
+        3,
+        3
+      ],
+      "left_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        4,
+        1,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.8538509376029441,
+      "certificate_respected": true,
+      "certificate_slack": 0.14614906239705594,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(3, 3)-(3, 2, 1)-(3, 2, 1)",
+      "final_partition": [
+        3,
+        3
+      ],
+      "left_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.6552343178074638,
+      "certificate_respected": true,
+      "certificate_slack": 0.3447656821925362,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(2, 2, 2)-(4, 2)-(4, 2)",
+      "final_partition": [
+        2,
+        2,
+        2
+      ],
+      "left_intermediate": [
+        4,
+        2
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        4,
+        2
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.7403124237432849,
+      "certificate_respected": true,
+      "certificate_slack": 0.2596875762567151,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(2, 2, 2)-(4, 2)-(3, 2, 1)",
+      "final_partition": [
+        2,
+        2,
+        2
+      ],
+      "left_intermediate": [
+        4,
+        2
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.5700877125495701,
+      "certificate_respected": true,
+      "certificate_slack": 0.42991228745042986,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(2, 2, 2)-(4, 2)-(3, 1, 1, 1)",
+      "final_partition": [
+        2,
+        2,
+        2
+      ],
+      "left_intermediate": [
+        4,
+        2
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.5590169943749459,
+      "certificate_respected": true,
+      "certificate_slack": 0.186338998124984,
+      "certified_operator_norm_upper_bound": 0.7453559924999299,
+      "control_id": "S6-(2, 2, 2)-(4, 2)-(2, 2, 2)",
+      "final_partition": [
+        2,
+        2,
+        2
+      ],
+      "left_intermediate": [
+        4,
+        2
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        2,
+        2,
+        2
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.7403124237432858,
+      "certificate_respected": true,
+      "certificate_slack": 0.25968757625671424,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(2, 2, 2)-(3, 2, 1)-(4, 2)",
+      "final_partition": [
+        2,
+        2,
+        2
+      ],
+      "left_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        4,
+        2
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.5801041412477617,
+      "certificate_respected": true,
+      "certificate_slack": 0.41989585875223834,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(2, 2, 2)-(3, 2, 1)-(3, 2, 1)",
+      "final_partition": [
+        2,
+        2,
+        2
+      ],
+      "left_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.5962847939999368,
+      "certificate_respected": true,
+      "certificate_slack": 0.40371520600006316,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(2, 2, 2)-(3, 2, 1)-(3, 1, 1, 1)",
+      "final_partition": [
+        2,
+        2,
+        2
+      ],
+      "left_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.6666666666666737,
+      "certificate_respected": true,
+      "certificate_slack": 0.32714132333323276,
+      "certified_operator_norm_upper_bound": 0.9938079899999065,
+      "control_id": "S6-(2, 2, 2)-(3, 2, 1)-(2, 2, 2)",
+      "final_partition": [
+        2,
+        2,
+        2
+      ],
+      "left_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        2,
+        2,
+        2
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.5700877125495704,
+      "certificate_respected": true,
+      "certificate_slack": 0.42991228745042964,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(2, 2, 2)-(3, 1, 1, 1)-(4, 2)",
+      "final_partition": [
+        2,
+        2,
+        2
+      ],
+      "left_intermediate": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        4,
+        2
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.5962847939999404,
+      "certificate_respected": true,
+      "certificate_slack": 0.4037152060000596,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(2, 2, 2)-(3, 1, 1, 1)-(3, 2, 1)",
+      "final_partition": [
+        2,
+        2,
+        2
+      ],
+      "left_intermediate": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.5000000000000066,
+      "certificate_respected": true,
+      "certificate_slack": 0.49999999999999345,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(2, 2, 2)-(3, 1, 1, 1)-(3, 1, 1, 1)",
+      "final_partition": [
+        2,
+        2,
+        2
+      ],
+      "left_intermediate": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.26352313834736074,
+      "certificate_respected": true,
+      "certificate_slack": 0.5221510629710254,
+      "certified_operator_norm_upper_bound": 0.7856742013183862,
+      "control_id": "S6-(2, 2, 2)-(3, 1, 1, 1)-(2, 2, 2)",
+      "final_partition": [
+        2,
+        2,
+        2
+      ],
+      "left_intermediate": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        2,
+        2,
+        2
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.5590169943749472,
+      "certificate_respected": true,
+      "certificate_slack": 0.18633899812498267,
+      "certified_operator_norm_upper_bound": 0.7453559924999299,
+      "control_id": "S6-(2, 2, 2)-(2, 2, 2)-(4, 2)",
+      "final_partition": [
+        2,
+        2,
+        2
+      ],
+      "left_intermediate": [
+        2,
+        2,
+        2
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        4,
+        2
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.6666666666666706,
+      "certificate_respected": true,
+      "certificate_slack": 0.32714132333323587,
+      "certified_operator_norm_upper_bound": 0.9938079899999065,
+      "control_id": "S6-(2, 2, 2)-(2, 2, 2)-(3, 2, 1)",
+      "final_partition": [
+        2,
+        2,
+        2
+      ],
+      "left_intermediate": [
+        2,
+        2,
+        2
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.26352313834736674,
+      "certificate_respected": true,
+      "certificate_slack": 0.5221510629710194,
+      "certified_operator_norm_upper_bound": 0.7856742013183862,
+      "control_id": "S6-(2, 2, 2)-(2, 2, 2)-(3, 1, 1, 1)",
+      "final_partition": [
+        2,
+        2,
+        2
+      ],
+      "left_intermediate": [
+        2,
+        2,
+        2
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.4166666666666602,
+      "certificate_respected": true,
+      "certificate_slack": 0.1388888888888954,
+      "certified_operator_norm_upper_bound": 0.5555555555555556,
+      "control_id": "S6-(2, 2, 2)-(2, 2, 2)-(2, 2, 2)",
+      "final_partition": [
+        2,
+        2,
+        2
+      ],
+      "left_intermediate": [
+        2,
+        2,
+        2
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        2,
+        2,
+        2
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.8538509376029434,
+      "certificate_respected": true,
+      "certificate_slack": 0.1461490623970566,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(2, 1, 1, 1, 1)-(3, 2, 1)-(3, 2, 1)",
+      "final_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "left_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.7453559924999326,
+      "certificate_respected": true,
+      "certificate_slack": 0.25464400750006744,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(2, 1, 1, 1, 1)-(3, 2, 1)-(3, 1, 1, 1)",
+      "final_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "left_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 2,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.6666666666666659,
+      "certificate_respected": true,
+      "certificate_slack": 0.32714132333324064,
+      "certified_operator_norm_upper_bound": 0.9938079899999065,
+      "control_id": "S6-(2, 1, 1, 1, 1)-(3, 2, 1)-(2, 2, 2)",
+      "final_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "left_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        2,
+        2,
+        2
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.74535599249993,
+      "certificate_respected": true,
+      "certificate_slack": 0.25464400750007,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(2, 1, 1, 1, 1)-(3, 1, 1, 1)-(3, 2, 1)",
+      "final_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "left_intermediate": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 1.7809776622734546e-15,
+      "certificate_respected": true,
+      "certificate_slack": 0.9999999999999982,
+      "certified_operator_norm_upper_bound": 1.0,
+      "control_id": "S6-(2, 1, 1, 1, 1)-(3, 1, 1, 1)-(3, 1, 1, 1)",
+      "final_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "left_intermediate": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "nontrivial_contraction_certified": false,
+      "right_intermediate": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.6666666666666657,
+      "certificate_respected": true,
+      "certificate_slack": 0.11900753465172043,
+      "certified_operator_norm_upper_bound": 0.7856742013183862,
+      "control_id": "S6-(2, 1, 1, 1, 1)-(3, 1, 1, 1)-(2, 2, 2)",
+      "final_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "left_intermediate": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        2,
+        2,
+        2
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 2,
+      "actual_operator_norm": 0.6666666666666671,
+      "certificate_respected": true,
+      "certificate_slack": 0.3271413233332394,
+      "certified_operator_norm_upper_bound": 0.9938079899999065,
+      "control_id": "S6-(2, 1, 1, 1, 1)-(2, 2, 2)-(3, 2, 1)",
+      "final_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "left_intermediate": [
+        2,
+        2,
+        2
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        3,
+        2,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.6666666666666657,
+      "certificate_respected": true,
+      "certificate_slack": 0.11900753465172043,
+      "certified_operator_norm_upper_bound": 0.7856742013183862,
+      "control_id": "S6-(2, 1, 1, 1, 1)-(2, 2, 2)-(3, 1, 1, 1)",
+      "final_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "left_intermediate": [
+        2,
+        2,
+        2
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "status": "dimension-certificate-respected"
+    },
+    {
+      "actual_block_column_count": 1,
+      "actual_block_row_count": 1,
+      "actual_operator_norm": 0.3333333333333351,
+      "certificate_respected": true,
+      "certificate_slack": 0.2222222222222205,
+      "certified_operator_norm_upper_bound": 0.5555555555555556,
+      "control_id": "S6-(2, 1, 1, 1, 1)-(2, 2, 2)-(2, 2, 2)",
+      "final_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "left_intermediate": [
+        2,
+        2,
+        2
+      ],
+      "nontrivial_contraction_certified": true,
+      "right_intermediate": [
+        2,
+        2,
+        2
+      ],
+      "status": "dimension-certificate-respected"
+    }
+  ],
+  "headline_metrics": {
+    "coherent_recoupling_compiler_count": 0,
+    "complete_s6_block_control_count": 51,
+    "complete_s6_certificate_violation_count": 0,
+    "complete_s6_nontrivial_certificate_count": 24,
+    "dimension_uniform_recoupling_bound_theorem_count": 1,
+    "generalized_3nj_contraction_theorem_count": 0,
+    "natural_plancherel_rank_pressure_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "selected_actual_operator_norm": 0.3333333333333339,
+    "selected_exact_best_squared_bound_denominator": 81,
+    "selected_exact_best_squared_bound_numerator": 25,
+    "selected_operator_norm_upper_bound": 0.5555555555555556
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "christandl-sahinoglu-walter-2016",
+      "title": "Recoupling coefficients and quantum entropies",
+      "url": "https://arxiv.org/abs/1210.0463",
+      "use": "Exact tetrahedral Hilbert--Schmidt norm symmetries. The rank-retaining dimension-uniform consequence is derived here."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "natural_plancherel_kronecker_rank_pressure",
+      "resolution": "Bound the swapped ranks jointly with Specht dimension ratios under the actual source law.",
+      "resolved": false
+    },
+    {
+      "obligation": "lift_block_certificate_to_grid_3nj_network",
+      "resolution": "Control the number, interference, and source mass of intermediate 6j paths in the disjoint row/column grid.",
+      "resolved": false
+    },
+    {
+      "obligation": "coherent_recoupling_compiler",
+      "resolution": "A norm certificate does not construct the required multiplicity transform.",
+      "resolved": false
+    }
+  ],
+  "selected_bound": {
+    "alpha": [
+      4,
+      2
+    ],
+    "beta": [
+      4,
+      2
+    ],
+    "d_alpha": 9,
+    "d_beta": 9,
+    "d_gamma": 9,
+    "d_lambda": 5,
+    "d_mu": 5,
+    "d_nu": 5,
+    "dimension_uniform": true,
+    "exact_best_squared_bound": "25/81",
+    "exact_first_squared_bound": "5/9",
+    "exact_second_squared_bound": "25/81",
+    "final_lambda": [
+      3,
+      3
+    ],
+    "first_swapped_rank_upper_bound": 1,
+    "g_alpha_beta_mu": 1,
+    "g_alpha_nu_lambda": 1,
+    "g_beta_gamma_nu": 1,
+    "g_mu_gamma_lambda": 1,
+    "gamma": [
+      4,
+      2
+    ],
+    "log2_operator_norm_upper_bound": -0.84799690655495,
+    "mu": [
+      5,
+      1
+    ],
+    "n": 6,
+    "nontrivial_contraction_certified": true,
+    "nu": [
+      5,
+      1
+    ],
+    "operator_norm_upper_bound": 0.5555555555555556,
+    "original_codomain_dimension": 1,
+    "original_domain_dimension": 1,
+    "second_swapped_rank_upper_bound": 1,
+    "status": "dimension-uniform-recoupling-contraction-certified"
+  },
+  "status": "dimension-uniform-6j-certificate-proved-natural-rank-pressure-open",
+  "summary": "Derived a fixed-row-free recoupling contraction bound from exact tetrahedral symmetry and swapped Kronecker ranks; all 51 complete S_6 blocks respect it and 24 receive nontrivial bounds.",
+  "theorem_contract": {
+    "asymptotic_use": "An exponential dimension-ratio deficit survives whenever the corresponding swapped Kronecker rank is subexponential relative to it.",
+    "dimension_uniformity": "No bound on partition row count or local Schur--Weyl dimension is used.",
+    "first_bound": "||R||_op^2<=(d_mu d_nu)/(d_beta d_lambda) min(g2*g4,g1*g3).",
+    "rank_replacement": "For every swapped block X, ||X||_HS^2<=rank(X)||X||_op^2<=rank(X).",
+    "scope": "The theorem bounds one 6j block. Summed 3nj paths, natural-source rank pressure, coherent compilation, and decoding remain open.",
+    "second_bound": "||R||_op^2<=(d_mu d_nu)/(d_alpha d_gamma) min(g2*g3,g1*g4).",
+    "tetrahedral_input": "The normalized squared Hilbert--Schmidt recoupling norm is invariant under the two relevant column exchanges."
+  }
+}

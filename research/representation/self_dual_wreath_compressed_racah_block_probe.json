@@ -1,0 +1,1014 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Avoiding the triple tensor eigensolve makes the method polynomial.",
+      "resolution": "False. Typical irrep dimensions and the stored embeddings remain exponential in n.",
+      "resolved": true
+    },
+    {
+      "objection": "One moderate self-block estimates mutual information.",
+      "resolution": "False. Mutual information is a signed sum of pointwise contributions, and omitted blocks can dominate.",
+      "resolved": true
+    },
+    {
+      "objection": "Multiplicity gauges can create an apparent overlap signal.",
+      "resolution": "The reported Hilbert--Schmidt mass and singular values are invariant under every left/right multiplicity-basis rotation.",
+      "resolved": true
+    }
+  ],
+  "block_records": [
+    {
+      "block_hilbert_schmidt_square": 1.4791666666666716,
+      "block_operator_norm_square": 1.000000000000003,
+      "control_id": "s5-exact-(3, 2)-(3, 2)",
+      "dense_three_copy_vector_dimension": 216,
+      "exact_finite_likelihood_block_mass": 1.4791666666666679,
+      "final_irrep_dimension": 6,
+      "finite_likelihood_block_mass_residual": 3.774758283725532e-15,
+      "finite_representation_space_probe_only": true,
+      "independent_rank_block_probability": 0.09467455621301775,
+      "largest_pair_eigensolve_vector_dimension": 36,
+      "left_block_rank": 4,
+      "left_intermediate_partition": [
+        3,
+        2
+      ],
+      "maximum_pair_embedding_isometry_residual": 8.062302555177559e-15,
+      "n": 5,
+      "outer_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "pair_eigensolve_dimension_reduction_factor": 6.0,
+      "physical_block_probability": 0.11378205128205167,
+      "pointwise_mutual_information_contribution_bits": 0.030177769105205598,
+      "racah_block_shape": [
+        4,
+        4
+      ],
+      "relative_block_overlap": 1.2018229166666707,
+      "right_block_rank": 4,
+      "right_intermediate_partition": [
+        3,
+        2
+      ],
+      "status": "compressed-racah-block-mass-verified",
+      "total_multiplicity_dimension": 13
+    },
+    {
+      "block_hilbert_schmidt_square": 1.479166666666671,
+      "block_operator_norm_square": 1.0000000000000022,
+      "control_id": "s5-exact-(3, 2)-(2, 2, 1)",
+      "dense_three_copy_vector_dimension": 216,
+      "exact_finite_likelihood_block_mass": 1.4791666666666679,
+      "final_irrep_dimension": 6,
+      "finite_likelihood_block_mass_residual": 3.1086244689504383e-15,
+      "finite_representation_space_probe_only": true,
+      "independent_rank_block_probability": 0.09467455621301775,
+      "largest_pair_eigensolve_vector_dimension": 36,
+      "left_block_rank": 4,
+      "left_intermediate_partition": [
+        3,
+        2
+      ],
+      "maximum_pair_embedding_isometry_residual": 8.062302555177559e-15,
+      "n": 5,
+      "outer_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "pair_eigensolve_dimension_reduction_factor": 6.0,
+      "physical_block_probability": 0.11378205128205161,
+      "pointwise_mutual_information_contribution_bits": 0.030177769105205487,
+      "racah_block_shape": [
+        4,
+        4
+      ],
+      "relative_block_overlap": 1.20182291666667,
+      "right_block_rank": 4,
+      "right_intermediate_partition": [
+        2,
+        2,
+        1
+      ],
+      "status": "compressed-racah-block-mass-verified",
+      "total_multiplicity_dimension": 13
+    },
+    {
+      "block_hilbert_schmidt_square": 1.4791666666666694,
+      "block_operator_norm_square": 1.0000000000000018,
+      "control_id": "s5-exact-(2, 2, 1)-(3, 2)",
+      "dense_three_copy_vector_dimension": 216,
+      "exact_finite_likelihood_block_mass": 1.4791666666666679,
+      "final_irrep_dimension": 6,
+      "finite_likelihood_block_mass_residual": 1.5543122344752192e-15,
+      "finite_representation_space_probe_only": true,
+      "independent_rank_block_probability": 0.09467455621301775,
+      "largest_pair_eigensolve_vector_dimension": 36,
+      "left_block_rank": 4,
+      "left_intermediate_partition": [
+        2,
+        2,
+        1
+      ],
+      "maximum_pair_embedding_isometry_residual": 9.453515940821094e-15,
+      "n": 5,
+      "outer_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "pair_eigensolve_dimension_reduction_factor": 6.0,
+      "physical_block_probability": 0.11378205128205149,
+      "pointwise_mutual_information_contribution_bits": 0.030177769105205303,
+      "racah_block_shape": [
+        4,
+        4
+      ],
+      "relative_block_overlap": 1.201822916666669,
+      "right_block_rank": 4,
+      "right_intermediate_partition": [
+        3,
+        2
+      ],
+      "status": "compressed-racah-block-mass-verified",
+      "total_multiplicity_dimension": 13
+    },
+    {
+      "block_hilbert_schmidt_square": 1.479166666666667,
+      "block_operator_norm_square": 1.0000000000000004,
+      "control_id": "s5-exact-(2, 2, 1)-(2, 2, 1)",
+      "dense_three_copy_vector_dimension": 216,
+      "exact_finite_likelihood_block_mass": 1.4791666666666679,
+      "final_irrep_dimension": 6,
+      "finite_likelihood_block_mass_residual": 8.881784197001252e-16,
+      "finite_representation_space_probe_only": true,
+      "independent_rank_block_probability": 0.09467455621301775,
+      "largest_pair_eigensolve_vector_dimension": 36,
+      "left_block_rank": 4,
+      "left_intermediate_partition": [
+        2,
+        2,
+        1
+      ],
+      "maximum_pair_embedding_isometry_residual": 9.453515940821094e-15,
+      "n": 5,
+      "outer_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "pair_eigensolve_dimension_reduction_factor": 6.0,
+      "physical_block_probability": 0.11378205128205131,
+      "pointwise_mutual_information_contribution_bits": 0.030177769105204984,
+      "racah_block_shape": [
+        4,
+        4
+      ],
+      "relative_block_overlap": 1.201822916666667,
+      "right_block_rank": 4,
+      "right_intermediate_partition": [
+        2,
+        2,
+        1
+      ],
+      "status": "compressed-racah-block-mass-verified",
+      "total_multiplicity_dimension": 13
+    },
+    {
+      "block_hilbert_schmidt_square": 0.1684027777777782,
+      "block_operator_norm_square": 0.08870010465620493,
+      "control_id": "maxdim-s6-moderate-self-block",
+      "dense_three_copy_vector_dimension": 4096,
+      "exact_finite_likelihood_block_mass": null,
+      "final_irrep_dimension": 16,
+      "finite_likelihood_block_mass_residual": null,
+      "finite_representation_space_probe_only": true,
+      "independent_rank_block_probability": 0.0018499248468030985,
+      "largest_pair_eigensolve_vector_dimension": 256,
+      "left_block_rank": 4,
+      "left_intermediate_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_pair_embedding_isometry_residual": 8.771317705660641e-15,
+      "n": 6,
+      "outer_partitions": [
+        [
+          3,
+          2,
+          1
+        ],
+        [
+          3,
+          2,
+          1
+        ],
+        [
+          3,
+          2,
+          1
+        ],
+        [
+          3,
+          2,
+          1
+        ]
+      ],
+      "pair_eigensolve_dimension_reduction_factor": 16.0,
+      "physical_block_probability": 0.0018107825567503033,
+      "pointwise_mutual_information_contribution_bits": -5.586870464220286e-05,
+      "racah_block_shape": [
+        4,
+        4
+      ],
+      "relative_block_overlap": 0.9788411458333358,
+      "right_block_rank": 4,
+      "right_intermediate_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "status": "compressed-racah-block-mass-verified",
+      "total_multiplicity_dimension": 93
+    },
+    {
+      "block_hilbert_schmidt_square": 0.06133361678004564,
+      "block_operator_norm_square": 0.0472473208462796,
+      "control_id": "maxdim-s7-moderate-self-block",
+      "dense_three_copy_vector_dimension": 42875,
+      "exact_finite_likelihood_block_mass": null,
+      "final_irrep_dimension": 35,
+      "finite_likelihood_block_mass_residual": null,
+      "finite_representation_space_probe_only": true,
+      "independent_rank_block_probability": 0.00017659849229037207,
+      "largest_pair_eigensolve_vector_dimension": 1225,
+      "left_block_rank": 4,
+      "left_intermediate_partition": [
+        6,
+        1
+      ],
+      "maximum_pair_embedding_isometry_residual": 1.5160633032305055e-14,
+      "n": 7,
+      "outer_partitions": [
+        [
+          4,
+          2,
+          1
+        ],
+        [
+          4,
+          2,
+          1
+        ],
+        [
+          4,
+          2,
+          1
+        ],
+        [
+          4,
+          2,
+          1
+        ]
+      ],
+      "pair_eigensolve_dimension_reduction_factor": 35.0,
+      "physical_block_probability": 0.00020376616870447056,
+      "pointwise_mutual_information_contribution_bits": 4.206579651376365e-05,
+      "racah_block_shape": [
+        4,
+        4
+      ],
+      "relative_block_overlap": 1.1538386656746087,
+      "right_block_rank": 4,
+      "right_intermediate_partition": [
+        6,
+        1
+      ],
+      "status": "compressed-racah-block-mass-verified",
+      "total_multiplicity_dimension": 301
+    },
+    {
+      "block_hilbert_schmidt_square": 0.014598765432098704,
+      "block_operator_norm_square": 0.013611111111111053,
+      "control_id": "maxdim-s8-moderate-self-block",
+      "dense_three_copy_vector_dimension": 729000,
+      "exact_finite_likelihood_block_mass": null,
+      "final_irrep_dimension": 90,
+      "finite_likelihood_block_mass_residual": null,
+      "finite_representation_space_probe_only": true,
+      "independent_rank_block_probability": 5.9561012998818835e-06,
+      "largest_pair_eigensolve_vector_dimension": 8100,
+      "left_block_rank": 4,
+      "left_intermediate_partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_pair_embedding_isometry_residual": 3.888089913083684e-14,
+      "n": 8,
+      "outer_partitions": [
+        [
+          4,
+          2,
+          1,
+          1
+        ],
+        [
+          4,
+          2,
+          1,
+          1
+        ],
+        [
+          4,
+          2,
+          1,
+          1
+        ],
+        [
+          4,
+          2,
+          1,
+          1
+        ]
+      ],
+      "pair_eigensolve_dimension_reduction_factor": 90.0,
+      "physical_block_probability": 8.90711740823594e-06,
+      "pointwise_mutual_information_contribution_bits": 5.171386144361242e-06,
+      "racah_block_shape": [
+        4,
+        4
+      ],
+      "relative_block_overlap": 1.495461033950611,
+      "right_block_rank": 4,
+      "right_intermediate_partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "status": "compressed-racah-block-mass-verified",
+      "total_multiplicity_dimension": 1639
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "classical_separation_proved": false,
+    "coherent_racah_transform_polynomial_proved": false,
+    "full_physical_average_racah_mi_computed": false,
+    "independent_s5_racah_block_mass_controls_passed": true,
+    "natural_racah_mi_sublogarithmic_proved": false,
+    "pairwise_yjm_fiber_compiler_verified": true,
+    "reason": "The canonical block observable is now computable without triple-space diagonalization, but finite selected blocks neither prove delocalization nor provide an efficient coherent transform.",
+    "selected_growing_row_blocks_computed": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-14T00:33:07.157435+00:00",
+  "falsifiers_triggered": [
+    "A reduction in eigensolve dimension is not a polynomial-time recoupling algorithm.",
+    "Selected block delocalization is not a bound on physical-average mutual information.",
+    "Finite max-dimension data are conjecture generators, not asymptotic evidence by themselves."
+  ],
+  "headline_metrics": {
+    "control_failure_count": 0,
+    "full_physical_average_racah_mi_estimate_count": 0,
+    "growing_row_delocalization_theorem_count": 0,
+    "independent_s5_exact_block_control_count": 4,
+    "maximum_dense_to_pair_eigensolve_reduction_factor": 90.0,
+    "maximum_probe_n": 8,
+    "new_quantum_algorithm_count": 0,
+    "pair_fiber_compiler_count": 15,
+    "racah_block_probe_count": 7
+  },
+  "pair_fiber_metrics": [
+    {
+      "arpack_subspace_dimension": 12,
+      "direct_invariant_vector_dimension": 180,
+      "eigensolve_vector_dimension": 36,
+      "eliminated_target_dimension_factor": 5,
+      "embedding_isometry_residual": 8.062302555177559e-15,
+      "finite_representation_space_only": true,
+      "left_dimension": 6,
+      "left_partition": [
+        3,
+        1,
+        1
+      ],
+      "maximum_fiber_orthogonality_residual": 3.735690655491582e-15,
+      "maximum_penalty_residual": 1.094822523750014e-14,
+      "maximum_tableau_propagation_residual": 6.910454755480927e-16,
+      "multiplicity": 2,
+      "n": 5,
+      "penalty_gap": 3.9999999999999996,
+      "right_dimension": 6,
+      "right_partition": [
+        3,
+        1,
+        1
+      ],
+      "status": "pairwise-yjm-fiber-compiled",
+      "target_dimension": 5,
+      "target_partition": [
+        3,
+        2
+      ]
+    },
+    {
+      "arpack_subspace_dimension": 12,
+      "direct_invariant_vector_dimension": 180,
+      "eigensolve_vector_dimension": 30,
+      "eliminated_target_dimension_factor": 6,
+      "embedding_isometry_residual": 3.4701748630326295e-15,
+      "finite_representation_space_only": true,
+      "left_dimension": 5,
+      "left_partition": [
+        3,
+        2
+      ],
+      "maximum_fiber_orthogonality_residual": 1.4895204919483639e-15,
+      "maximum_penalty_residual": 9.93234242071461e-15,
+      "maximum_tableau_propagation_residual": 2.6974343203869904e-16,
+      "multiplicity": 2,
+      "n": 5,
+      "penalty_gap": 4.000000000000003,
+      "right_dimension": 6,
+      "right_partition": [
+        3,
+        1,
+        1
+      ],
+      "status": "pairwise-yjm-fiber-compiled",
+      "target_dimension": 6,
+      "target_partition": [
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "arpack_subspace_dimension": 12,
+      "direct_invariant_vector_dimension": 180,
+      "eigensolve_vector_dimension": 30,
+      "eliminated_target_dimension_factor": 6,
+      "embedding_isometry_residual": 2.87252625909481e-15,
+      "finite_representation_space_only": true,
+      "left_dimension": 6,
+      "left_partition": [
+        3,
+        1,
+        1
+      ],
+      "maximum_fiber_orthogonality_residual": 1.2015311424647602e-15,
+      "maximum_penalty_residual": 7.973843407669978e-15,
+      "maximum_tableau_propagation_residual": 2.8921047987336414e-16,
+      "multiplicity": 2,
+      "n": 5,
+      "penalty_gap": 3.9999999999999996,
+      "right_dimension": 5,
+      "right_partition": [
+        3,
+        2
+      ],
+      "status": "pairwise-yjm-fiber-compiled",
+      "target_dimension": 6,
+      "target_partition": [
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "arpack_subspace_dimension": 12,
+      "direct_invariant_vector_dimension": 180,
+      "eigensolve_vector_dimension": 36,
+      "eliminated_target_dimension_factor": 5,
+      "embedding_isometry_residual": 4.940695867499623e-15,
+      "finite_representation_space_only": true,
+      "left_dimension": 6,
+      "left_partition": [
+        3,
+        1,
+        1
+      ],
+      "maximum_fiber_orthogonality_residual": 2.264723925266122e-15,
+      "maximum_penalty_residual": 1.1182437343983179e-14,
+      "maximum_tableau_propagation_residual": 4.3870911254705777e-16,
+      "multiplicity": 2,
+      "n": 5,
+      "penalty_gap": 3.9999999999999942,
+      "right_dimension": 6,
+      "right_partition": [
+        3,
+        1,
+        1
+      ],
+      "status": "pairwise-yjm-fiber-compiled",
+      "target_dimension": 5,
+      "target_partition": [
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "arpack_subspace_dimension": 12,
+      "direct_invariant_vector_dimension": 180,
+      "eigensolve_vector_dimension": 30,
+      "eliminated_target_dimension_factor": 6,
+      "embedding_isometry_residual": 5.06087682664902e-15,
+      "finite_representation_space_only": true,
+      "left_dimension": 6,
+      "left_partition": [
+        3,
+        1,
+        1
+      ],
+      "maximum_fiber_orthogonality_residual": 2.272908815334289e-15,
+      "maximum_penalty_residual": 1.114886655755941e-14,
+      "maximum_tableau_propagation_residual": 2.549874364621412e-16,
+      "multiplicity": 2,
+      "n": 5,
+      "penalty_gap": 3.9999999999999973,
+      "right_dimension": 5,
+      "right_partition": [
+        2,
+        2,
+        1
+      ],
+      "status": "pairwise-yjm-fiber-compiled",
+      "target_dimension": 6,
+      "target_partition": [
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "arpack_subspace_dimension": 12,
+      "direct_invariant_vector_dimension": 180,
+      "eigensolve_vector_dimension": 30,
+      "eliminated_target_dimension_factor": 6,
+      "embedding_isometry_residual": 9.453515940821094e-15,
+      "finite_representation_space_only": true,
+      "left_dimension": 5,
+      "left_partition": [
+        2,
+        2,
+        1
+      ],
+      "maximum_fiber_orthogonality_residual": 4.076622313891423e-15,
+      "maximum_penalty_residual": 1.0229523416721983e-14,
+      "maximum_tableau_propagation_residual": 3.1407784762188523e-16,
+      "multiplicity": 2,
+      "n": 5,
+      "penalty_gap": 4.000000000000018,
+      "right_dimension": 6,
+      "right_partition": [
+        3,
+        1,
+        1
+      ],
+      "status": "pairwise-yjm-fiber-compiled",
+      "target_dimension": 6,
+      "target_partition": [
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "arpack_subspace_dimension": 12,
+      "direct_invariant_vector_dimension": 1280,
+      "eigensolve_vector_dimension": 256,
+      "eliminated_target_dimension_factor": 5,
+      "embedding_isometry_residual": 6.279196953886015e-15,
+      "finite_representation_space_only": true,
+      "left_dimension": 16,
+      "left_partition": [
+        3,
+        2,
+        1
+      ],
+      "maximum_fiber_orthogonality_residual": 2.838745510486115e-15,
+      "maximum_penalty_residual": 4.851310824082394e-14,
+      "maximum_tableau_propagation_residual": 3.400181643903244e-16,
+      "multiplicity": 2,
+      "n": 6,
+      "penalty_gap": 7.999999999999974,
+      "right_dimension": 16,
+      "right_partition": [
+        3,
+        2,
+        1
+      ],
+      "status": "pairwise-yjm-fiber-compiled",
+      "target_dimension": 5,
+      "target_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "arpack_subspace_dimension": 12,
+      "direct_invariant_vector_dimension": 1280,
+      "eigensolve_vector_dimension": 80,
+      "eliminated_target_dimension_factor": 16,
+      "embedding_isometry_residual": 4.760957194087389e-15,
+      "finite_representation_space_only": true,
+      "left_dimension": 5,
+      "left_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_fiber_orthogonality_residual": 1.310734834697939e-15,
+      "maximum_penalty_residual": 1.3860840278236324e-14,
+      "maximum_tableau_propagation_residual": 4.944891467871219e-16,
+      "multiplicity": 2,
+      "n": 6,
+      "penalty_gap": 4.999999999999998,
+      "right_dimension": 16,
+      "right_partition": [
+        3,
+        2,
+        1
+      ],
+      "status": "pairwise-yjm-fiber-compiled",
+      "target_dimension": 16,
+      "target_partition": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "arpack_subspace_dimension": 12,
+      "direct_invariant_vector_dimension": 1280,
+      "eigensolve_vector_dimension": 80,
+      "eliminated_target_dimension_factor": 16,
+      "embedding_isometry_residual": 8.771317705660641e-15,
+      "finite_representation_space_only": true,
+      "left_dimension": 16,
+      "left_partition": [
+        3,
+        2,
+        1
+      ],
+      "maximum_fiber_orthogonality_residual": 2.3039008709639486e-15,
+      "maximum_penalty_residual": 1.1786352866875437e-14,
+      "maximum_tableau_propagation_residual": 4.922681839532998e-16,
+      "multiplicity": 2,
+      "n": 6,
+      "penalty_gap": 4.999999999999995,
+      "right_dimension": 5,
+      "right_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "status": "pairwise-yjm-fiber-compiled",
+      "target_dimension": 16,
+      "target_partition": [
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "arpack_subspace_dimension": 12,
+      "direct_invariant_vector_dimension": 7350,
+      "eigensolve_vector_dimension": 1225,
+      "eliminated_target_dimension_factor": 6,
+      "embedding_isometry_residual": 7.322261967902706e-15,
+      "finite_representation_space_only": true,
+      "left_dimension": 35,
+      "left_partition": [
+        4,
+        2,
+        1
+      ],
+      "maximum_fiber_orthogonality_residual": 3.1291411175851315e-15,
+      "maximum_penalty_residual": 1.1081307102702855e-13,
+      "maximum_tableau_propagation_residual": 2.8215610745849516e-16,
+      "multiplicity": 2,
+      "n": 7,
+      "penalty_gap": 7.0000000000000195,
+      "right_dimension": 35,
+      "right_partition": [
+        4,
+        2,
+        1
+      ],
+      "status": "pairwise-yjm-fiber-compiled",
+      "target_dimension": 6,
+      "target_partition": [
+        6,
+        1
+      ]
+    },
+    {
+      "arpack_subspace_dimension": 12,
+      "direct_invariant_vector_dimension": 7350,
+      "eigensolve_vector_dimension": 210,
+      "eliminated_target_dimension_factor": 35,
+      "embedding_isometry_residual": 1.0215297511706641e-14,
+      "finite_representation_space_only": true,
+      "left_dimension": 6,
+      "left_partition": [
+        6,
+        1
+      ],
+      "maximum_fiber_orthogonality_residual": 1.7026768230692466e-15,
+      "maximum_penalty_residual": 2.0487382452391418e-14,
+      "maximum_tableau_propagation_residual": 7.293414662714484e-16,
+      "multiplicity": 2,
+      "n": 7,
+      "penalty_gap": 3.9999999999999964,
+      "right_dimension": 35,
+      "right_partition": [
+        4,
+        2,
+        1
+      ],
+      "status": "pairwise-yjm-fiber-compiled",
+      "target_dimension": 35,
+      "target_partition": [
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "arpack_subspace_dimension": 12,
+      "direct_invariant_vector_dimension": 7350,
+      "eigensolve_vector_dimension": 210,
+      "eliminated_target_dimension_factor": 35,
+      "embedding_isometry_residual": 1.5160633032305055e-14,
+      "finite_representation_space_only": true,
+      "left_dimension": 35,
+      "left_partition": [
+        4,
+        2,
+        1
+      ],
+      "maximum_fiber_orthogonality_residual": 2.9403813658479143e-15,
+      "maximum_penalty_residual": 1.8642620666583178e-14,
+      "maximum_tableau_propagation_residual": 6.776826180324425e-16,
+      "multiplicity": 2,
+      "n": 7,
+      "penalty_gap": 3.9999999999999996,
+      "right_dimension": 6,
+      "right_partition": [
+        6,
+        1
+      ],
+      "status": "pairwise-yjm-fiber-compiled",
+      "target_dimension": 35,
+      "target_partition": [
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "arpack_subspace_dimension": 12,
+      "direct_invariant_vector_dimension": 56700,
+      "eigensolve_vector_dimension": 8100,
+      "eliminated_target_dimension_factor": 7,
+      "embedding_isometry_residual": 2.2514944639499218e-14,
+      "finite_representation_space_only": true,
+      "left_dimension": 90,
+      "left_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "maximum_fiber_orthogonality_residual": 7.204013420506892e-15,
+      "maximum_penalty_residual": 3.555431405935531e-13,
+      "maximum_tableau_propagation_residual": 2.6427788438975526e-16,
+      "multiplicity": 2,
+      "n": 8,
+      "penalty_gap": 9.999999999999952,
+      "right_dimension": 90,
+      "right_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "pairwise-yjm-fiber-compiled",
+      "target_dimension": 7,
+      "target_partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "arpack_subspace_dimension": 12,
+      "direct_invariant_vector_dimension": 56700,
+      "eigensolve_vector_dimension": 630,
+      "eliminated_target_dimension_factor": 90,
+      "embedding_isometry_residual": 3.888089913083684e-14,
+      "finite_representation_space_only": true,
+      "left_dimension": 7,
+      "left_partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "maximum_fiber_orthogonality_residual": 4.3970042481508685e-15,
+      "maximum_penalty_residual": 3.4424539843959264e-14,
+      "maximum_tableau_propagation_residual": 1.167727202375553e-15,
+      "multiplicity": 2,
+      "n": 8,
+      "penalty_gap": 4.00000000000001,
+      "right_dimension": 90,
+      "right_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "status": "pairwise-yjm-fiber-compiled",
+      "target_dimension": 90,
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "arpack_subspace_dimension": 12,
+      "direct_invariant_vector_dimension": 56700,
+      "eigensolve_vector_dimension": 630,
+      "eliminated_target_dimension_factor": 90,
+      "embedding_isometry_residual": 3.7545107614014435e-14,
+      "finite_representation_space_only": true,
+      "left_dimension": 90,
+      "left_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "maximum_fiber_orthogonality_residual": 4.3037089261528674e-15,
+      "maximum_penalty_residual": 3.3142676340916554e-14,
+      "maximum_tableau_propagation_residual": 1.031835257376107e-15,
+      "multiplicity": 2,
+      "n": 8,
+      "penalty_gap": 4.000000000000017,
+      "right_dimension": 7,
+      "right_partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "status": "pairwise-yjm-fiber-compiled",
+      "target_dimension": 90,
+      "target_partition": [
+        4,
+        2,
+        1,
+        1
+      ]
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "verify_pairwise_yjm_embedding_and_racah_contraction",
+      "resolution": "Pair embeddings are isometries and all S5 block masses agree with the independent six-character physical likelihood.",
+      "resolved": true
+    },
+    {
+      "obligation": "estimate_full_physical_average_racah_mutual_information",
+      "resolution": "Selected blocks do not control omitted block mass; importance sampling or a full coupling contraction remains necessary.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_growing_row_relative_overlap_tail",
+      "resolution": "Finite max-dimension blocks can guide conjectures but cannot establish the required Plancherel-weighted asymptotic rate.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_uniform_coherent_racah_transform",
+      "resolution": "The pair-space vectors and embedding tensors are exponentially large.",
+      "resolved": false
+    }
+  ],
+  "status": "compressed-finite-racah-block-probe-verified",
+  "summary": "Replaced dense three-copy Racah diagonalization by pairwise YJM fibers and gauge-invariant contractions through S8.",
+  "theorem_contract": {
+    "avoided_dense_dimension": "d_alpha d_beta d_gamma",
+    "canonical_block_mass": "x_(mu,nu)=||R_(mu,nu)||_HS^2=Tr(P_lambda P_mu^(12) P_nu^(23))/d_lambda",
+    "compiler": "four pairwise YJM fibers and one gauge-invariant tensor-network contraction",
+    "eigensolve_dimension": "max of pair dimensions d_left d_right",
+    "physical_coupling": "pi_(mu,nu)=x_(mu,nu)/M",
+    "relative_overlap": "a_(mu,nu)=M x_(mu,nu)/(l_mu r_nu)",
+    "scope": "finite exponential-dimension probe; no polynomial CG transform, all-n Racah delocalization theorem, or decoder"
+  }
+}

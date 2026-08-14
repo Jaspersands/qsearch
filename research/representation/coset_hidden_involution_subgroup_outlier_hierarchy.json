@@ -1,0 +1,248 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False: a proper hyperoctahedral subgroup supplies L_m common-free candidate incidences with L_m superpolynomial.",
+      "challenge": "Removing every exact common factor bounds the frame norm.",
+      "resolved": true
+    },
+    {
+      "answer": "Not proved. One witness has a tiny guaranteed mass; the mass of its full conjugacy orbit and its structured resolvability remain open.",
+      "challenge": "The subgroup witness proves the useful signal is hard.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It rules out only a generic globally normalized interval method; blockwise or row-structured methods survive.",
+      "challenge": "A large norm rules out every polar implementation.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "bounded_global_interval_polar_refuted": true,
+    "conjugate_sector_overlap_algebra_compiled": false,
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "hyperoctahedral_incident_count_proved": true,
+    "post_trim_frame_norm_superpolynomial_lower_bound_proved": true,
+    "reason": "Common-factor trimming leaves superpolynomial subgroup-incidence outliers; their structured overlap algebra and natural mass are not yet resolved.",
+    "speedup_claim_allowed": false,
+    "structured_subgroup_polar_compiled": false
+  },
+  "created_at": "2026-08-13T17:09:17.396566+00:00",
+  "falsifiers_triggered": [
+    "Common-factor trimming does not yield a bounded-spectrum synthesis frame.",
+    "The naive one-interval QSVT polar remains superpolynomially conditioned.",
+    "A large frame norm alone does not rule out structured spectral inversion."
+  ],
+  "finite_controls": [
+    {
+      "all_incident_elements_fix_noncommon_sector": true,
+      "centralizer_failure_count": 0,
+      "degree": 4,
+      "direct_fixed_point_free_count": 3,
+      "exact_subgroup_incidence_verified": true,
+      "formula_fixed_point_free_count": 3,
+      "generated_element_count": 8,
+      "half_degree": 2,
+      "hyperoctahedral_order": 8,
+      "matching_index": 3,
+      "noncommon_invariant_dimension": 2,
+      "recurrence_fixed_point_free_count": 3,
+      "status": "exact-hyperoctahedral-subgroup-outlier-verified"
+    },
+    {
+      "all_incident_elements_fix_noncommon_sector": true,
+      "centralizer_failure_count": 0,
+      "degree": 6,
+      "direct_fixed_point_free_count": 7,
+      "exact_subgroup_incidence_verified": true,
+      "formula_fixed_point_free_count": 7,
+      "generated_element_count": 48,
+      "half_degree": 3,
+      "hyperoctahedral_order": 48,
+      "matching_index": 15,
+      "noncommon_invariant_dimension": 14,
+      "recurrence_fixed_point_free_count": 7,
+      "status": "exact-hyperoctahedral-subgroup-outlier-verified"
+    },
+    {
+      "all_incident_elements_fix_noncommon_sector": true,
+      "centralizer_failure_count": 0,
+      "degree": 8,
+      "direct_fixed_point_free_count": 25,
+      "exact_subgroup_incidence_verified": true,
+      "formula_fixed_point_free_count": 25,
+      "generated_element_count": 384,
+      "half_degree": 4,
+      "hyperoctahedral_order": 384,
+      "matching_index": 105,
+      "noncommon_invariant_dimension": 104,
+      "recurrence_fixed_point_free_count": 25,
+      "status": "exact-hyperoctahedral-subgroup-outlier-verified"
+    }
+  ],
+  "headline_metrics": {
+    "bounded_post_trim_global_conditioning_refutation_count": 1,
+    "exact_finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "structured_subgroup_resolution_count": 0,
+    "superpolynomial_frame_norm_lower_bound_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-CONJUGATE-K-SPAN-MASS",
+      "resolved": false,
+      "statement": "Determine the alternative mass and isotypic support of the span of all conjugate K-invariant outlier sectors."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-SUBGROUP-STRATIFIED-POLAR",
+      "resolved": false,
+      "statement": "Construct a coherent stratified inverse or prove that the conjugate-sector overlap algebra remains intractable."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-ORBIT-ROW-POLAR",
+      "resolved": false,
+      "statement": "Compile the canonicalized orbit-row polar without a global interval condition-number dependence."
+    }
+  ],
+  "scaling_records": [
+    {
+      "bounded_global_interval_conditioning_refuted": true,
+      "candidate_count_decimal": "15",
+      "conjugate_sector_aggregate_mass_bounded": false,
+      "copy_count": 10,
+      "degree": 6,
+      "elementary_superpolynomial_lower_bound_decimal": "4",
+      "elementary_superpolynomial_lower_bound_log2": 2.0,
+      "global_polar_condition_proxy_lower_bound_log2": 1.403677461028802,
+      "half_degree": 3,
+      "noncommon_invariant_dimension_decimal": "14",
+      "single_witness_guaranteed_alternative_mass_log2_lower_bound": -47.9043867912054,
+      "status": "post-trim-global-conditioning-superpolynomial-structured-subgroup-resolution-open",
+      "structured_subgroup_spectral_transform_compiled": false,
+      "subgroup_incident_candidate_count_decimal": "7",
+      "subgroup_incident_candidate_count_log2": 2.807354922057604,
+      "trimmed_candidate_rank_decimal": "359",
+      "trimmed_frame_norm_lower_bound_decimal": "7"
+    },
+    {
+      "bounded_global_interval_conditioning_refuted": true,
+      "candidate_count_decimal": "105",
+      "conjugate_sector_aggregate_mass_bounded": false,
+      "copy_count": 13,
+      "degree": 8,
+      "elementary_superpolynomial_lower_bound_decimal": "4",
+      "elementary_superpolynomial_lower_bound_log2": 2.0,
+      "global_polar_condition_proxy_lower_bound_log2": 2.321928094887362,
+      "half_degree": 4,
+      "noncommon_invariant_dimension_decimal": "104",
+      "single_witness_guaranteed_alternative_mass_log2_lower_bound": -100.85251652018883,
+      "status": "post-trim-global-conditioning-superpolynomial-structured-subgroup-resolution-open",
+      "structured_subgroup_spectral_transform_compiled": false,
+      "subgroup_incident_candidate_count_decimal": "25",
+      "subgroup_incident_candidate_count_log2": 4.643856189774724,
+      "trimmed_candidate_rank_decimal": "20158",
+      "trimmed_frame_norm_lower_bound_decimal": "25"
+    },
+    {
+      "bounded_global_interval_conditioning_refuted": true,
+      "candidate_count_decimal": "2027025",
+      "conjugate_sector_aggregate_mass_bounded": false,
+      "copy_count": 27,
+      "degree": 16,
+      "elementary_superpolynomial_lower_bound_decimal": "256",
+      "elementary_superpolynomial_lower_bound_log2": 8.0,
+      "global_polar_condition_proxy_lower_bound_log2": 6.267759198884334,
+      "half_degree": 8,
+      "noncommon_invariant_dimension_decimal": "2027024",
+      "single_witness_guaranteed_alternative_mass_log2_lower_bound": -610.4940497668977,
+      "status": "post-trim-global-conditioning-superpolynomial-structured-subgroup-resolution-open",
+      "structured_subgroup_spectral_transform_compiled": false,
+      "subgroup_incident_candidate_count_decimal": "5937",
+      "subgroup_incident_candidate_count_log2": 12.535518397768667,
+      "trimmed_candidate_rank_decimal": "10461394943998",
+      "trimmed_frame_norm_lower_bound_decimal": "5937"
+    },
+    {
+      "bounded_global_interval_conditioning_refuted": true,
+      "candidate_count_decimal": "191898783962510625",
+      "conjugate_sector_aggregate_mass_bounded": false,
+      "copy_count": 64,
+      "degree": 32,
+      "elementary_superpolynomial_lower_bound_decimal": "16777216",
+      "elementary_superpolynomial_lower_bound_log2": 24.0,
+      "global_polar_condition_proxy_lower_bound_log2": 15.96122062768226,
+      "half_degree": 16,
+      "noncommon_invariant_dimension_decimal": "191898783962510624",
+      "single_witness_guaranteed_alternative_mass_log2_lower_bound": -3817.4996719996007,
+      "status": "post-trim-global-conditioning-superpolynomial-structured-subgroup-resolution-open",
+      "structured_subgroup_spectral_transform_compiled": false,
+      "subgroup_incident_candidate_count_decimal": "4070168161",
+      "subgroup_incident_candidate_count_log2": 31.92244125536452,
+      "trimmed_candidate_rank_decimal": "131565418466846765083609006079999998",
+      "trimmed_frame_norm_lower_bound_decimal": "4070168161"
+    },
+    {
+      "bounded_global_interval_conditioning_refuted": true,
+      "candidate_count_decimal": "112275575285571389562324404930670903477890625",
+      "conjugate_sector_aggregate_mass_bounded": false,
+      "copy_count": 153,
+      "degree": 64,
+      "elementary_superpolynomial_lower_bound_decimal": "18446744073709551616",
+      "elementary_superpolynomial_lower_bound_log2": 64.0,
+      "global_polar_condition_proxy_lower_bound_log2": 39.025806144574105,
+      "half_degree": 32,
+      "noncommon_invariant_dimension_decimal": "112275575285571389562324404930670903477890624",
+      "single_witness_guaranteed_alternative_mass_log2_lower_bound": -22813.759606811345,
+      "status": "post-trim-global-conditioning-superpolynomial-structured-subgroup-resolution-open",
+      "structured_subgroup_spectral_transform_compiled": false,
+      "subgroup_incident_candidate_count_decimal": "313239490554196665052353",
+      "subgroup_incident_candidate_count_log2": 78.05161228914821,
+      "trimmed_candidate_rank_decimal": "63443466092942082051716694667580740401432758087272596099400947187607352115199999999999998",
+      "trimmed_frame_norm_lower_bound_decimal": "313239490554196665052353"
+    },
+    {
+      "bounded_global_interval_conditioning_refuted": true,
+      "candidate_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "conjugate_sector_aggregate_mass_bounded": false,
+      "copy_count": 363,
+      "degree": 128,
+      "elementary_superpolynomial_lower_bound_decimal": "1461501637330902918203684832716283019655932542976",
+      "elementary_superpolynomial_lower_bound_log2": 160.0,
+      "global_polar_condition_proxy_lower_bound_log2": 92.67328158346913,
+      "half_degree": 64,
+      "noncommon_invariant_dimension_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890624",
+      "single_witness_guaranteed_alternative_mass_log2_lower_bound": -130486.05726582077,
+      "status": "post-trim-global-conditioning-superpolynomial-structured-subgroup-resolution-open",
+      "structured_subgroup_spectral_transform_compiled": false,
+      "subgroup_incident_candidate_count_decimal": "62355548887783590634035416782391528712782971379760322945",
+      "subgroup_incident_candidate_count_log2": 185.34656316693827,
+      "trimmed_candidate_rank_decimal": "192810241181290210867838532961731820308746554795111795139414201638186701287582771780343084294253680767015025916529458173796086466131249428883057477622519678880017322354639623846247792639999999999999999999999999999998",
+      "trimmed_frame_norm_lower_bound_decimal": "62355548887783590634035416782391528712782971379760322945"
+    }
+  ],
+  "status": "post-trim-subgroup-outlier-no-go-structured-resolution-open",
+  "summary": "Proved a superpolynomial post-trim frame-norm obstruction from the hyperoctahedral centralizer and redirected the viable architecture from global interval QSVT to subgroup-stratified or orbit-row polar.",
+  "theorem": {
+    "all_copy_frame_norm_lower_bound_proved": true,
+    "architecture_frontier": "Resolve the span/overlap algebra of conjugate K-invariant sectors or bypass it with a structured orbit-row polar.",
+    "bounded_post_trim_global_conditioning_refuted": true,
+    "conjugate_sector_overlap_algebra_compiled": false,
+    "exact_incident_count_proved": true,
+    "frame_norm_witness": "Every h in C intersect K fixes D, so every D^tensor k unit vector has trimmed-frame Rayleigh quotient at least L_m.",
+    "incident_count": "|C intersect K|=L_m=sum_j m!/(j!(m-2j)!), equivalently L_m=L_(m-1)+2(m-1)L_(m-2).",
+    "incident_count_lower_bound": "L_m>=ceil(m/2)^ceil(m/2), hence L_m is superpolynomial.",
+    "noncommon_invariant_sector": "D=C[G/K] minus the trivial vector has dimension (2m-1)!!-1; sign is absent because K contains odd permutations.",
+    "orbit_row_polar_compiled": false,
+    "qsvt_consequence": "The global interval-polar condition proxy is at least sqrt(L_m); common-factor trimming alone cannot yield bounded conditioning.",
+    "status": "post-trim-subgroup-outlier-no-go-structured-resolution-open",
+    "subgroup": "K=C_G(h_0)=C_2 wr S_m inside S_(2m).",
+    "superpolynomial_incident_growth_proved": true,
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "family": "Fixed-point-free involutions in S_(2m).",
+    "operator": "sum_h Pbar_h^tensor k after per-register common trim.",
+    "outside_scope": "Aggregate natural mass of all conjugate witnesses, their exact overlap algebra, structured inversion, and decoding.",
+    "witness": "Nontrivial right-K-invariants for K=C_2 wr S_m."
+  }
+}

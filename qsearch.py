@@ -653,6 +653,98 @@ from self_dual_wreath_vertex_trivialization_criterion import (
 from self_dual_wreath_weighted_overlap_exclusion import (
     write_weighted_overlap_exclusion,
 )
+from coset_hidden_involution_binary_identification_self_reduction import write_binary_identification_self_reduction_report
+from coset_hidden_involution_branch_erasure_normalization_no_go import write_branch_erasure_normalization_report
+from coset_hidden_involution_bulk_conditioning_normalization_no_go import write_bulk_conditioning_normalization_report
+from coset_hidden_involution_common_factor_trim import write_common_factor_trim_report
+from coset_hidden_involution_common_outlier_deflation import write_common_outlier_deflation_report
+from coset_hidden_involution_foulkes_support_mass_probe import write_foulkes_support_mass_report
+from coset_hidden_involution_foulkes_support_projector_no_go import write_foulkes_support_projector_report
+from coset_hidden_involution_fourier_coefficient_normalization_no_go import write_fourier_coefficient_normalization_report
+from coset_hidden_involution_imprimitive_plethysm_boundary import write_imprimitive_plethysm_report
+from coset_hidden_involution_incidence_walk_boundary import write_incidence_walk_report
+from coset_hidden_involution_induced_source_bundle_reduction import write_induced_source_bundle_report
+from coset_hidden_involution_isotypic_support_no_go import write_isotypic_support_no_go_report
+from coset_hidden_involution_matrix_hecke_transfer_reduction import write_matrix_hecke_transfer_report
+from coset_hidden_involution_multiplicity_hard_mass import write_multiplicity_hard_mass_report
+from coset_hidden_involution_orbit_synthesis_flatness import write_orbit_synthesis_flatness_report
+from coset_hidden_involution_pair_polar_holonomy_no_go import write_pair_polar_holonomy_report
+from coset_hidden_involution_pair_polar_phase_compiler import write_pair_polar_phase_report
+from coset_hidden_involution_regular_orbit_row_reduction import write_regular_orbit_row_report
+from coset_hidden_involution_rigid_gi_bridge import write_rigid_gi_hidden_involution_bridge_report
+from coset_hidden_involution_s3_chart_gram_compiler import write_s3_chart_gram_report
+from coset_hidden_involution_source_deflation_no_go import write_source_deflation_no_go_report
+from coset_hidden_involution_spherical_outlier_deflation import write_spherical_outlier_report
+from coset_hidden_involution_subgroup_outlier_hierarchy import write_subgroup_outlier_report
+from coset_hidden_involution_subgroup_support_dichotomy import write_subgroup_support_dichotomy_report
+from coset_hyperoctahedral_cg_kronecker_reduction import write_hyperoctahedral_cg_kronecker_report
+from coset_hyperoctahedral_color_weight_concentration import write_color_weight_concentration_report
+from coset_hyperoctahedral_free_orbit_canonicalization_boundary import write_free_orbit_canonicalization_report
+from coset_hyperoctahedral_source_plancherel_typicality import write_source_plancherel_report
+from coset_hyperoctahedral_trimmed_orbit_canonicalizer import write_trimmed_canonicalizer_report
+from coset_hyperoctahedral_trivial_color_mass_no_go import write_trivial_color_mass_report
+from self_dual_wreath_adaptive_syndrome_trim_transfer import write_adaptive_syndrome_trim_transfer_report
+from self_dual_wreath_alternating_base_orbit_reduction import write_alternating_base_orbit_reduction_report
+from self_dual_wreath_alternating_block_operator_anova import write_alternating_block_operator_anova_report
+from self_dual_wreath_alternating_cycle_type_block_dependence import write_alternating_cycle_type_block_dependence_report
+from self_dual_wreath_alternating_entropy_transfer_reduction import write_alternating_entropy_transfer_reduction_report
+from self_dual_wreath_alternating_even_collision_core_reduction import write_alternating_even_collision_core_reduction_report
+from self_dual_wreath_alternating_even_collision_entropy_bridge import write_alternating_even_collision_entropy_bridge_report
+from self_dual_wreath_alternating_even_collision_support_pressure import write_alternating_even_collision_support_pressure_report
+from self_dual_wreath_alternating_parity_coset_channel import write_alternating_parity_coset_channel_report
+from self_dual_wreath_alternating_product_character_zeta import write_alternating_product_character_zeta_report
+from self_dual_wreath_alternating_sixway_synergy_reduction import write_alternating_sixway_synergy_reduction_report
+from self_dual_wreath_alternating_trimmed_sixway_renyi_transfer import write_alternating_trimmed_sixway_renyi_transfer_report
+from self_dual_wreath_central_fiber_racah_information_reduction import write_central_fiber_racah_information_report
+from self_dual_wreath_character_triangle_barrier import write_character_triangle_barrier_report
+from self_dual_wreath_coherent_branching_transport_boundary import write_coherent_branching_transport_report
+from self_dual_wreath_compressed_orientation_racah_cumulant_probe import write_compressed_orientation_racah_cumulant_report
+from self_dual_wreath_compressed_racah_block_probe import write_compressed_racah_probe_report
+from self_dual_wreath_compressed_racah_coupling_probe import write_complete_compressed_racah_coupling_report
+from self_dual_wreath_dense_automaton_fiber_dyadic_boundary import write_dense_automaton_fiber_dyadic_boundary_report
+from self_dual_wreath_disjoint_grid_recoupling_falsifier import write_disjoint_grid_recoupling_falsifier_report
+from self_dual_wreath_dyadic_modular_fiber_torsion_no_go import write_dyadic_modular_fiber_torsion_no_go_report
+from self_dual_wreath_fractional_haar_enhancement_reduction import write_fractional_haar_enhancement_report
+from self_dual_wreath_free_probability_projector_resolution_boundary import write_free_probability_projector_resolution_report
+from self_dual_wreath_grid_quantum_marginal_boundary import write_grid_quantum_marginal_boundary_report
+from self_dual_wreath_orientation_fixed_support_control_variate import write_orientation_fixed_support_control_variate_report
+from self_dual_wreath_orientation_identity_tail_control_variate import write_orientation_identity_tail_control_variate_report
+from self_dual_wreath_orientation_word_map_classical_baseline import write_orientation_word_map_classical_baseline_report
+from self_dual_wreath_parity_projector_orbit_variance import write_parity_projector_orbit_variance_report
+from self_dual_wreath_parity_projector_tetrahedral_reduction import write_parity_projector_tetrahedral_reduction_report
+from self_dual_wreath_parity_racah_conditional_cumulant import write_parity_racah_conditional_cumulant_report
+from self_dual_wreath_parity_racah_information_projection import write_parity_racah_information_projection_report
+from self_dual_wreath_parity_racah_rank_residual_decomposition import write_parity_racah_rank_residual_report
+from self_dual_wreath_parity_racah_toric_obstruction import write_parity_racah_toric_obstruction_report
+from self_dual_wreath_parity_rank_profile_entropy_transfer import write_parity_rank_profile_entropy_transfer_report
+from self_dual_wreath_parity_rank_profile_physical_transfer_boundary import write_parity_rank_profile_physical_transfer_boundary_report
+from self_dual_wreath_parity_rank_profile_plancherel_mixing import write_parity_rank_profile_plancherel_mixing_report
+from self_dual_wreath_parity_rank_profile_trimmed_likelihood_transfer import write_parity_rank_profile_trimmed_likelihood_transfer_report
+from self_dual_wreath_physical_orientation_racah_sampling import write_physical_orientation_racah_sampling_report
+from self_dual_wreath_physical_outer_racah_sampling import write_physical_outer_racah_sampling_report
+from self_dual_wreath_physical_recoupling_rank_pressure_no_go import write_physical_recoupling_rank_pressure_no_go_report
+from self_dual_wreath_physical_recoupling_tetrahedral_synergy import write_physical_recoupling_tetrahedral_synergy_report
+from self_dual_wreath_plancherel_character_racah_fourier_reduction import write_plancherel_character_racah_fourier_report
+from self_dual_wreath_plancherel_down_up_racah_tail_reduction import write_plancherel_down_up_racah_tail_report
+from self_dual_wreath_plancherel_marginal_compatibility_no_go import write_plancherel_marginal_compatibility_no_go_report
+from self_dual_wreath_plancherel_recoupling_rank_pressure_no_go import write_plancherel_recoupling_rank_pressure_no_go_report
+from self_dual_wreath_projected_parity_coset_kernel import write_projected_parity_coset_kernel_report
+from self_dual_wreath_projected_tetrahedral_word_map import write_projected_tetrahedral_word_map_report
+from self_dual_wreath_racah_entropic_delocalization_certificate import write_racah_entropic_delocalization_report
+from self_dual_wreath_racah_fractional_moment_certificate import write_racah_fractional_moment_report
+from self_dual_wreath_recoupling_channel_flatness_boundary import write_recoupling_channel_flatness_boundary_report
+from self_dual_wreath_recoupling_collision_channel_reduction import write_recoupling_collision_channel_report
+from self_dual_wreath_recoupling_dimension_certificate import write_recoupling_dimension_certificate_report
+from self_dual_wreath_recoupling_haar_gap_reduction import write_recoupling_haar_gap_reduction_report
+from self_dual_wreath_recoupling_mutual_information_reduction import write_recoupling_mutual_information_report
+from self_dual_wreath_separating_surface_target_mixing import write_separating_surface_target_mixing_report
+from self_dual_wreath_sign_orbit_kl_chain_reduction import write_sign_orbit_kl_chain_reduction_report
+from self_dual_wreath_sign_orbit_syndrome_reduction import write_sign_orbit_syndrome_reduction_report
+from self_dual_wreath_sign_syndrome_unconditional_decoupling import write_sign_syndrome_unconditional_decoupling_report
+from self_dual_wreath_source_conditioned_channel_decoupling import write_source_conditioned_channel_decoupling_report
+from self_dual_wreath_tetrahedral_chi_square_tail_no_go import write_tetrahedral_chi_square_tail_no_go_report
+from self_dual_wreath_tetrahedral_collision_growth_scale import write_tetrahedral_collision_growth_scale_report
+from self_dual_wreath_tetrahedral_dimension_trim import write_tetrahedral_dimension_trim_report
 
 
 from coset_arbitrary_covariant_measurement_reduction import write_arbitrary_covariant_measurement_reduction
@@ -11774,6 +11866,1111 @@ def command_code_wreath_vertex_trivialization_criterion(
     return 0
 
 
+def command_coset_hidden_involution_binary_identification_self_reduction(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_binary_identification_self_reduction_report(output_path=output_path)
+        else:
+            payload = write_binary_identification_self_reduction_report()
+    except TypeError:
+        payload = write_binary_identification_self_reduction_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_branch_erasure_normalization_no_go(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_branch_erasure_normalization_report(output_path=output_path)
+        else:
+            payload = write_branch_erasure_normalization_report()
+    except TypeError:
+        payload = write_branch_erasure_normalization_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_bulk_conditioning_normalization_no_go(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_bulk_conditioning_normalization_report(output_path=output_path)
+        else:
+            payload = write_bulk_conditioning_normalization_report()
+    except TypeError:
+        payload = write_bulk_conditioning_normalization_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_common_factor_trim(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_common_factor_trim_report(output_path=output_path)
+        else:
+            payload = write_common_factor_trim_report()
+    except TypeError:
+        payload = write_common_factor_trim_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_common_outlier_deflation(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_common_outlier_deflation_report(output_path=output_path)
+        else:
+            payload = write_common_outlier_deflation_report()
+    except TypeError:
+        payload = write_common_outlier_deflation_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_foulkes_support_mass_probe(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_foulkes_support_mass_report(output_path=output_path)
+        else:
+            payload = write_foulkes_support_mass_report()
+    except TypeError:
+        payload = write_foulkes_support_mass_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_foulkes_support_projector_no_go(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_foulkes_support_projector_report(output_path=output_path)
+        else:
+            payload = write_foulkes_support_projector_report()
+    except TypeError:
+        payload = write_foulkes_support_projector_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_fourier_coefficient_normalization_no_go(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_fourier_coefficient_normalization_report(output_path=output_path)
+        else:
+            payload = write_fourier_coefficient_normalization_report()
+    except TypeError:
+        payload = write_fourier_coefficient_normalization_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_imprimitive_plethysm_boundary(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_imprimitive_plethysm_report(output_path=output_path)
+        else:
+            payload = write_imprimitive_plethysm_report()
+    except TypeError:
+        payload = write_imprimitive_plethysm_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_incidence_walk_boundary(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_incidence_walk_report(output_path=output_path)
+        else:
+            payload = write_incidence_walk_report()
+    except TypeError:
+        payload = write_incidence_walk_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_induced_source_bundle_reduction(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_induced_source_bundle_report(output_path=output_path)
+        else:
+            payload = write_induced_source_bundle_report()
+    except TypeError:
+        payload = write_induced_source_bundle_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_isotypic_support_no_go(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_isotypic_support_no_go_report(output_path=output_path)
+        else:
+            payload = write_isotypic_support_no_go_report()
+    except TypeError:
+        payload = write_isotypic_support_no_go_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_matrix_hecke_transfer_reduction(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_matrix_hecke_transfer_report(output_path=output_path)
+        else:
+            payload = write_matrix_hecke_transfer_report()
+    except TypeError:
+        payload = write_matrix_hecke_transfer_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_multiplicity_hard_mass(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_multiplicity_hard_mass_report(output_path=output_path)
+        else:
+            payload = write_multiplicity_hard_mass_report()
+    except TypeError:
+        payload = write_multiplicity_hard_mass_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_orbit_synthesis_flatness(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_orbit_synthesis_flatness_report(output_path=output_path)
+        else:
+            payload = write_orbit_synthesis_flatness_report()
+    except TypeError:
+        payload = write_orbit_synthesis_flatness_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_pair_polar_holonomy_no_go(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_pair_polar_holonomy_report(output_path=output_path)
+        else:
+            payload = write_pair_polar_holonomy_report()
+    except TypeError:
+        payload = write_pair_polar_holonomy_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_pair_polar_phase_compiler(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_pair_polar_phase_report(output_path=output_path)
+        else:
+            payload = write_pair_polar_phase_report()
+    except TypeError:
+        payload = write_pair_polar_phase_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_regular_orbit_row_reduction(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_regular_orbit_row_report(output_path=output_path)
+        else:
+            payload = write_regular_orbit_row_report()
+    except TypeError:
+        payload = write_regular_orbit_row_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_rigid_gi_bridge(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_rigid_gi_hidden_involution_bridge_report(output_path=output_path)
+        else:
+            payload = write_rigid_gi_hidden_involution_bridge_report()
+    except TypeError:
+        payload = write_rigid_gi_hidden_involution_bridge_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_s3_chart_gram_compiler(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_s3_chart_gram_report(output_path=output_path)
+        else:
+            payload = write_s3_chart_gram_report()
+    except TypeError:
+        payload = write_s3_chart_gram_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_source_deflation_no_go(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_source_deflation_no_go_report(output_path=output_path)
+        else:
+            payload = write_source_deflation_no_go_report()
+    except TypeError:
+        payload = write_source_deflation_no_go_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_spherical_outlier_deflation(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_spherical_outlier_report(output_path=output_path)
+        else:
+            payload = write_spherical_outlier_report()
+    except TypeError:
+        payload = write_spherical_outlier_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_subgroup_outlier_hierarchy(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_subgroup_outlier_report(output_path=output_path)
+        else:
+            payload = write_subgroup_outlier_report()
+    except TypeError:
+        payload = write_subgroup_outlier_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hidden_involution_subgroup_support_dichotomy(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_subgroup_support_dichotomy_report(output_path=output_path)
+        else:
+            payload = write_subgroup_support_dichotomy_report()
+    except TypeError:
+        payload = write_subgroup_support_dichotomy_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hyperoctahedral_cg_kronecker_reduction(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_hyperoctahedral_cg_kronecker_report(output_path=output_path)
+        else:
+            payload = write_hyperoctahedral_cg_kronecker_report()
+    except TypeError:
+        payload = write_hyperoctahedral_cg_kronecker_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hyperoctahedral_color_weight_concentration(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_color_weight_concentration_report(output_path=output_path)
+        else:
+            payload = write_color_weight_concentration_report()
+    except TypeError:
+        payload = write_color_weight_concentration_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hyperoctahedral_free_orbit_canonicalization_boundary(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_free_orbit_canonicalization_report(output_path=output_path)
+        else:
+            payload = write_free_orbit_canonicalization_report()
+    except TypeError:
+        payload = write_free_orbit_canonicalization_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hyperoctahedral_source_plancherel_typicality(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_source_plancherel_report(output_path=output_path)
+        else:
+            payload = write_source_plancherel_report()
+    except TypeError:
+        payload = write_source_plancherel_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hyperoctahedral_trimmed_orbit_canonicalizer(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_trimmed_canonicalizer_report(output_path=output_path)
+        else:
+            payload = write_trimmed_canonicalizer_report()
+    except TypeError:
+        payload = write_trimmed_canonicalizer_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_coset_hyperoctahedral_trivial_color_mass_no_go(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_trivial_color_mass_report(output_path=output_path)
+        else:
+            payload = write_trivial_color_mass_report()
+    except TypeError:
+        payload = write_trivial_color_mass_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_adaptive_syndrome_trim_transfer(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_adaptive_syndrome_trim_transfer_report(output_path=output_path)
+        else:
+            payload = write_adaptive_syndrome_trim_transfer_report()
+    except TypeError:
+        payload = write_adaptive_syndrome_trim_transfer_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_alternating_base_orbit_reduction(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_alternating_base_orbit_reduction_report(output_path=output_path)
+        else:
+            payload = write_alternating_base_orbit_reduction_report()
+    except TypeError:
+        payload = write_alternating_base_orbit_reduction_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_alternating_block_operator_anova(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_alternating_block_operator_anova_report(output_path=output_path)
+        else:
+            payload = write_alternating_block_operator_anova_report()
+    except TypeError:
+        payload = write_alternating_block_operator_anova_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_alternating_cycle_type_block_dependence(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_alternating_cycle_type_block_dependence_report(output_path=output_path)
+        else:
+            payload = write_alternating_cycle_type_block_dependence_report()
+    except TypeError:
+        payload = write_alternating_cycle_type_block_dependence_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_alternating_entropy_transfer_reduction(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_alternating_entropy_transfer_reduction_report(output_path=output_path)
+        else:
+            payload = write_alternating_entropy_transfer_reduction_report()
+    except TypeError:
+        payload = write_alternating_entropy_transfer_reduction_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_alternating_even_collision_core_reduction(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_alternating_even_collision_core_reduction_report(output_path=output_path)
+        else:
+            payload = write_alternating_even_collision_core_reduction_report()
+    except TypeError:
+        payload = write_alternating_even_collision_core_reduction_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_alternating_even_collision_entropy_bridge(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_alternating_even_collision_entropy_bridge_report(output_path=output_path)
+        else:
+            payload = write_alternating_even_collision_entropy_bridge_report()
+    except TypeError:
+        payload = write_alternating_even_collision_entropy_bridge_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_alternating_even_collision_support_pressure(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_alternating_even_collision_support_pressure_report(output_path=output_path)
+        else:
+            payload = write_alternating_even_collision_support_pressure_report()
+    except TypeError:
+        payload = write_alternating_even_collision_support_pressure_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_alternating_parity_coset_channel(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_alternating_parity_coset_channel_report(output_path=output_path)
+        else:
+            payload = write_alternating_parity_coset_channel_report()
+    except TypeError:
+        payload = write_alternating_parity_coset_channel_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_alternating_product_character_zeta(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_alternating_product_character_zeta_report(output_path=output_path)
+        else:
+            payload = write_alternating_product_character_zeta_report()
+    except TypeError:
+        payload = write_alternating_product_character_zeta_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_alternating_sixway_synergy_reduction(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_alternating_sixway_synergy_reduction_report(output_path=output_path)
+        else:
+            payload = write_alternating_sixway_synergy_reduction_report()
+    except TypeError:
+        payload = write_alternating_sixway_synergy_reduction_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_alternating_trimmed_sixway_renyi_transfer(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_alternating_trimmed_sixway_renyi_transfer_report(output_path=output_path)
+        else:
+            payload = write_alternating_trimmed_sixway_renyi_transfer_report()
+    except TypeError:
+        payload = write_alternating_trimmed_sixway_renyi_transfer_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_central_fiber_racah_information_reduction(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_central_fiber_racah_information_report(output_path=output_path)
+        else:
+            payload = write_central_fiber_racah_information_report()
+    except TypeError:
+        payload = write_central_fiber_racah_information_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_character_triangle_barrier(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_character_triangle_barrier_report(output_path=output_path)
+        else:
+            payload = write_character_triangle_barrier_report()
+    except TypeError:
+        payload = write_character_triangle_barrier_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_coherent_branching_transport_boundary(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_coherent_branching_transport_report(output_path=output_path)
+        else:
+            payload = write_coherent_branching_transport_report()
+    except TypeError:
+        payload = write_coherent_branching_transport_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_compressed_orientation_racah_cumulant_probe(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_compressed_orientation_racah_cumulant_report(output_path=output_path)
+        else:
+            payload = write_compressed_orientation_racah_cumulant_report()
+    except TypeError:
+        payload = write_compressed_orientation_racah_cumulant_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_compressed_racah_block_probe(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_compressed_racah_probe_report(output_path=output_path)
+        else:
+            payload = write_compressed_racah_probe_report()
+    except TypeError:
+        payload = write_compressed_racah_probe_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_compressed_racah_coupling_probe(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_complete_compressed_racah_coupling_report(output_path=output_path)
+        else:
+            payload = write_complete_compressed_racah_coupling_report()
+    except TypeError:
+        payload = write_complete_compressed_racah_coupling_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_dense_automaton_fiber_dyadic_boundary(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_dense_automaton_fiber_dyadic_boundary_report(output_path=output_path)
+        else:
+            payload = write_dense_automaton_fiber_dyadic_boundary_report()
+    except TypeError:
+        payload = write_dense_automaton_fiber_dyadic_boundary_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_disjoint_grid_recoupling_falsifier(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_disjoint_grid_recoupling_falsifier_report(output_path=output_path)
+        else:
+            payload = write_disjoint_grid_recoupling_falsifier_report()
+    except TypeError:
+        payload = write_disjoint_grid_recoupling_falsifier_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_dyadic_modular_fiber_torsion_no_go(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_dyadic_modular_fiber_torsion_no_go_report(output_path=output_path)
+        else:
+            payload = write_dyadic_modular_fiber_torsion_no_go_report()
+    except TypeError:
+        payload = write_dyadic_modular_fiber_torsion_no_go_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_fractional_haar_enhancement_reduction(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_fractional_haar_enhancement_report(output_path=output_path)
+        else:
+            payload = write_fractional_haar_enhancement_report()
+    except TypeError:
+        payload = write_fractional_haar_enhancement_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_free_probability_projector_resolution_boundary(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_free_probability_projector_resolution_report(output_path=output_path)
+        else:
+            payload = write_free_probability_projector_resolution_report()
+    except TypeError:
+        payload = write_free_probability_projector_resolution_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_grid_quantum_marginal_boundary(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_grid_quantum_marginal_boundary_report(output_path=output_path)
+        else:
+            payload = write_grid_quantum_marginal_boundary_report()
+    except TypeError:
+        payload = write_grid_quantum_marginal_boundary_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_orientation_fixed_support_control_variate(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_orientation_fixed_support_control_variate_report(output_path=output_path)
+        else:
+            payload = write_orientation_fixed_support_control_variate_report()
+    except TypeError:
+        payload = write_orientation_fixed_support_control_variate_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_orientation_identity_tail_control_variate(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_orientation_identity_tail_control_variate_report(output_path=output_path)
+        else:
+            payload = write_orientation_identity_tail_control_variate_report()
+    except TypeError:
+        payload = write_orientation_identity_tail_control_variate_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_orientation_word_map_classical_baseline(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_orientation_word_map_classical_baseline_report(output_path=output_path)
+        else:
+            payload = write_orientation_word_map_classical_baseline_report()
+    except TypeError:
+        payload = write_orientation_word_map_classical_baseline_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_parity_projector_orbit_variance(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_parity_projector_orbit_variance_report(output_path=output_path)
+        else:
+            payload = write_parity_projector_orbit_variance_report()
+    except TypeError:
+        payload = write_parity_projector_orbit_variance_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_parity_projector_tetrahedral_reduction(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_parity_projector_tetrahedral_reduction_report(output_path=output_path)
+        else:
+            payload = write_parity_projector_tetrahedral_reduction_report()
+    except TypeError:
+        payload = write_parity_projector_tetrahedral_reduction_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_parity_racah_conditional_cumulant(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_parity_racah_conditional_cumulant_report(output_path=output_path)
+        else:
+            payload = write_parity_racah_conditional_cumulant_report()
+    except TypeError:
+        payload = write_parity_racah_conditional_cumulant_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_parity_racah_information_projection(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_parity_racah_information_projection_report(output_path=output_path)
+        else:
+            payload = write_parity_racah_information_projection_report()
+    except TypeError:
+        payload = write_parity_racah_information_projection_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_parity_racah_rank_residual_decomposition(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_parity_racah_rank_residual_report(output_path=output_path)
+        else:
+            payload = write_parity_racah_rank_residual_report()
+    except TypeError:
+        payload = write_parity_racah_rank_residual_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_parity_racah_toric_obstruction(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_parity_racah_toric_obstruction_report(output_path=output_path)
+        else:
+            payload = write_parity_racah_toric_obstruction_report()
+    except TypeError:
+        payload = write_parity_racah_toric_obstruction_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_parity_rank_profile_entropy_transfer(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_parity_rank_profile_entropy_transfer_report(output_path=output_path)
+        else:
+            payload = write_parity_rank_profile_entropy_transfer_report()
+    except TypeError:
+        payload = write_parity_rank_profile_entropy_transfer_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_parity_rank_profile_physical_transfer_boundary(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_parity_rank_profile_physical_transfer_boundary_report(output_path=output_path)
+        else:
+            payload = write_parity_rank_profile_physical_transfer_boundary_report()
+    except TypeError:
+        payload = write_parity_rank_profile_physical_transfer_boundary_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_parity_rank_profile_plancherel_mixing(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_parity_rank_profile_plancherel_mixing_report(output_path=output_path)
+        else:
+            payload = write_parity_rank_profile_plancherel_mixing_report()
+    except TypeError:
+        payload = write_parity_rank_profile_plancherel_mixing_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_parity_rank_profile_trimmed_likelihood_transfer(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_parity_rank_profile_trimmed_likelihood_transfer_report(output_path=output_path)
+        else:
+            payload = write_parity_rank_profile_trimmed_likelihood_transfer_report()
+    except TypeError:
+        payload = write_parity_rank_profile_trimmed_likelihood_transfer_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_physical_orientation_racah_sampling(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_physical_orientation_racah_sampling_report(output_path=output_path)
+        else:
+            payload = write_physical_orientation_racah_sampling_report()
+    except TypeError:
+        payload = write_physical_orientation_racah_sampling_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_physical_outer_racah_sampling(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_physical_outer_racah_sampling_report(output_path=output_path)
+        else:
+            payload = write_physical_outer_racah_sampling_report()
+    except TypeError:
+        payload = write_physical_outer_racah_sampling_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_physical_recoupling_rank_pressure_no_go(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_physical_recoupling_rank_pressure_no_go_report(output_path=output_path)
+        else:
+            payload = write_physical_recoupling_rank_pressure_no_go_report()
+    except TypeError:
+        payload = write_physical_recoupling_rank_pressure_no_go_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_physical_recoupling_tetrahedral_synergy(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_physical_recoupling_tetrahedral_synergy_report(output_path=output_path)
+        else:
+            payload = write_physical_recoupling_tetrahedral_synergy_report()
+    except TypeError:
+        payload = write_physical_recoupling_tetrahedral_synergy_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_plancherel_character_racah_fourier_reduction(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_plancherel_character_racah_fourier_report(output_path=output_path)
+        else:
+            payload = write_plancherel_character_racah_fourier_report()
+    except TypeError:
+        payload = write_plancherel_character_racah_fourier_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_plancherel_down_up_racah_tail_reduction(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_plancherel_down_up_racah_tail_report(output_path=output_path)
+        else:
+            payload = write_plancherel_down_up_racah_tail_report()
+    except TypeError:
+        payload = write_plancherel_down_up_racah_tail_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_plancherel_marginal_compatibility_no_go(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_plancherel_marginal_compatibility_no_go_report(output_path=output_path)
+        else:
+            payload = write_plancherel_marginal_compatibility_no_go_report()
+    except TypeError:
+        payload = write_plancherel_marginal_compatibility_no_go_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_plancherel_recoupling_rank_pressure_no_go(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_plancherel_recoupling_rank_pressure_no_go_report(output_path=output_path)
+        else:
+            payload = write_plancherel_recoupling_rank_pressure_no_go_report()
+    except TypeError:
+        payload = write_plancherel_recoupling_rank_pressure_no_go_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_projected_parity_coset_kernel(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_projected_parity_coset_kernel_report(output_path=output_path)
+        else:
+            payload = write_projected_parity_coset_kernel_report()
+    except TypeError:
+        payload = write_projected_parity_coset_kernel_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_projected_tetrahedral_word_map(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_projected_tetrahedral_word_map_report(output_path=output_path)
+        else:
+            payload = write_projected_tetrahedral_word_map_report()
+    except TypeError:
+        payload = write_projected_tetrahedral_word_map_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_racah_entropic_delocalization_certificate(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_racah_entropic_delocalization_report(output_path=output_path)
+        else:
+            payload = write_racah_entropic_delocalization_report()
+    except TypeError:
+        payload = write_racah_entropic_delocalization_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_racah_fractional_moment_certificate(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_racah_fractional_moment_report(output_path=output_path)
+        else:
+            payload = write_racah_fractional_moment_report()
+    except TypeError:
+        payload = write_racah_fractional_moment_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_recoupling_channel_flatness_boundary(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_recoupling_channel_flatness_boundary_report(output_path=output_path)
+        else:
+            payload = write_recoupling_channel_flatness_boundary_report()
+    except TypeError:
+        payload = write_recoupling_channel_flatness_boundary_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_recoupling_collision_channel_reduction(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_recoupling_collision_channel_report(output_path=output_path)
+        else:
+            payload = write_recoupling_collision_channel_report()
+    except TypeError:
+        payload = write_recoupling_collision_channel_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_recoupling_dimension_certificate(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_recoupling_dimension_certificate_report(output_path=output_path)
+        else:
+            payload = write_recoupling_dimension_certificate_report()
+    except TypeError:
+        payload = write_recoupling_dimension_certificate_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_recoupling_haar_gap_reduction(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_recoupling_haar_gap_reduction_report(output_path=output_path)
+        else:
+            payload = write_recoupling_haar_gap_reduction_report()
+    except TypeError:
+        payload = write_recoupling_haar_gap_reduction_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_recoupling_mutual_information_reduction(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_recoupling_mutual_information_report(output_path=output_path)
+        else:
+            payload = write_recoupling_mutual_information_report()
+    except TypeError:
+        payload = write_recoupling_mutual_information_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_separating_surface_target_mixing(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_separating_surface_target_mixing_report(output_path=output_path)
+        else:
+            payload = write_separating_surface_target_mixing_report()
+    except TypeError:
+        payload = write_separating_surface_target_mixing_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_sign_orbit_kl_chain_reduction(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_sign_orbit_kl_chain_reduction_report(output_path=output_path)
+        else:
+            payload = write_sign_orbit_kl_chain_reduction_report()
+    except TypeError:
+        payload = write_sign_orbit_kl_chain_reduction_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_sign_orbit_syndrome_reduction(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_sign_orbit_syndrome_reduction_report(output_path=output_path)
+        else:
+            payload = write_sign_orbit_syndrome_reduction_report()
+    except TypeError:
+        payload = write_sign_orbit_syndrome_reduction_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_sign_syndrome_unconditional_decoupling(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_sign_syndrome_unconditional_decoupling_report(output_path=output_path)
+        else:
+            payload = write_sign_syndrome_unconditional_decoupling_report()
+    except TypeError:
+        payload = write_sign_syndrome_unconditional_decoupling_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_source_conditioned_channel_decoupling(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_source_conditioned_channel_decoupling_report(output_path=output_path)
+        else:
+            payload = write_source_conditioned_channel_decoupling_report()
+    except TypeError:
+        payload = write_source_conditioned_channel_decoupling_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_tetrahedral_chi_square_tail_no_go(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_tetrahedral_chi_square_tail_no_go_report(output_path=output_path)
+        else:
+            payload = write_tetrahedral_chi_square_tail_no_go_report()
+    except TypeError:
+        payload = write_tetrahedral_chi_square_tail_no_go_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_tetrahedral_collision_growth_scale(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_tetrahedral_collision_growth_scale_report(output_path=output_path)
+        else:
+            payload = write_tetrahedral_collision_growth_scale_report()
+    except TypeError:
+        payload = write_tetrahedral_collision_growth_scale_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+def command_self_dual_wreath_tetrahedral_dimension_trim(args: argparse.Namespace) -> int:
+    output_path = Path(args.output) if args.output else None
+    try:
+        if output_path:
+            payload = write_tetrahedral_dimension_trim_report(output_path=output_path)
+        else:
+            payload = write_tetrahedral_dimension_trim_report()
+    except TypeError:
+        payload = write_tetrahedral_dimension_trim_report()
+    print(payload.get("summary", "Done"))
+    return 0
+
+
 def command_code_wreath_weighted_overlap_exclusion(
     args: argparse.Namespace,
 ) -> int:
@@ -20560,6 +21757,743 @@ def build_parser() -> argparse.ArgumentParser:
     code_wreath_vertex_trivialization_criterion.set_defaults(
         func=command_code_wreath_vertex_trivialization_criterion
     )
+
+    parser_coset_hidden_involution_binary_identification_self_reduction = subparsers.add_parser(
+        "coset-hidden-involution-binary-identification-self-reduction",
+        help="Run Coset Hidden Involution Binary Identification Self Reduction.",
+    )
+    parser_coset_hidden_involution_binary_identification_self_reduction.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_binary_identification_self_reduction.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_binary_identification_self_reduction.set_defaults(func=command_coset_hidden_involution_binary_identification_self_reduction)
+
+    parser_coset_hidden_involution_branch_erasure_normalization_no_go = subparsers.add_parser(
+        "coset-hidden-involution-branch-erasure-normalization-no-go",
+        help="Run Coset Hidden Involution Branch Erasure Normalization No Go.",
+    )
+    parser_coset_hidden_involution_branch_erasure_normalization_no_go.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_branch_erasure_normalization_no_go.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_branch_erasure_normalization_no_go.set_defaults(func=command_coset_hidden_involution_branch_erasure_normalization_no_go)
+
+    parser_coset_hidden_involution_bulk_conditioning_normalization_no_go = subparsers.add_parser(
+        "coset-hidden-involution-bulk-conditioning-normalization-no-go",
+        help="Run Coset Hidden Involution Bulk Conditioning Normalization No Go.",
+    )
+    parser_coset_hidden_involution_bulk_conditioning_normalization_no_go.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_bulk_conditioning_normalization_no_go.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_bulk_conditioning_normalization_no_go.set_defaults(func=command_coset_hidden_involution_bulk_conditioning_normalization_no_go)
+
+    parser_coset_hidden_involution_common_factor_trim = subparsers.add_parser(
+        "coset-hidden-involution-common-factor-trim",
+        help="Run Coset Hidden Involution Common Factor Trim.",
+    )
+    parser_coset_hidden_involution_common_factor_trim.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_common_factor_trim.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_common_factor_trim.set_defaults(func=command_coset_hidden_involution_common_factor_trim)
+
+    parser_coset_hidden_involution_common_outlier_deflation = subparsers.add_parser(
+        "coset-hidden-involution-common-outlier-deflation",
+        help="Run Coset Hidden Involution Common Outlier Deflation.",
+    )
+    parser_coset_hidden_involution_common_outlier_deflation.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_common_outlier_deflation.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_common_outlier_deflation.set_defaults(func=command_coset_hidden_involution_common_outlier_deflation)
+
+    parser_coset_hidden_involution_foulkes_support_mass_probe = subparsers.add_parser(
+        "coset-hidden-involution-foulkes-support-mass-probe",
+        help="Run Coset Hidden Involution Foulkes Support Mass Probe.",
+    )
+    parser_coset_hidden_involution_foulkes_support_mass_probe.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_foulkes_support_mass_probe.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_foulkes_support_mass_probe.set_defaults(func=command_coset_hidden_involution_foulkes_support_mass_probe)
+
+    parser_coset_hidden_involution_foulkes_support_projector_no_go = subparsers.add_parser(
+        "coset-hidden-involution-foulkes-support-projector-no-go",
+        help="Run Coset Hidden Involution Foulkes Support Projector No Go.",
+    )
+    parser_coset_hidden_involution_foulkes_support_projector_no_go.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_foulkes_support_projector_no_go.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_foulkes_support_projector_no_go.set_defaults(func=command_coset_hidden_involution_foulkes_support_projector_no_go)
+
+    parser_coset_hidden_involution_fourier_coefficient_normalization_no_go = subparsers.add_parser(
+        "coset-hidden-involution-fourier-coefficient-normalization-no-go",
+        help="Run Coset Hidden Involution Fourier Coefficient Normalization No Go.",
+    )
+    parser_coset_hidden_involution_fourier_coefficient_normalization_no_go.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_fourier_coefficient_normalization_no_go.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_fourier_coefficient_normalization_no_go.set_defaults(func=command_coset_hidden_involution_fourier_coefficient_normalization_no_go)
+
+    parser_coset_hidden_involution_imprimitive_plethysm_boundary = subparsers.add_parser(
+        "coset-hidden-involution-imprimitive-plethysm-boundary",
+        help="Run Coset Hidden Involution Imprimitive Plethysm Boundary.",
+    )
+    parser_coset_hidden_involution_imprimitive_plethysm_boundary.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_imprimitive_plethysm_boundary.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_imprimitive_plethysm_boundary.set_defaults(func=command_coset_hidden_involution_imprimitive_plethysm_boundary)
+
+    parser_coset_hidden_involution_incidence_walk_boundary = subparsers.add_parser(
+        "coset-hidden-involution-incidence-walk-boundary",
+        help="Run Coset Hidden Involution Incidence Walk Boundary.",
+    )
+    parser_coset_hidden_involution_incidence_walk_boundary.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_incidence_walk_boundary.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_incidence_walk_boundary.set_defaults(func=command_coset_hidden_involution_incidence_walk_boundary)
+
+    parser_coset_hidden_involution_induced_source_bundle_reduction = subparsers.add_parser(
+        "coset-hidden-involution-induced-source-bundle-reduction",
+        help="Run Coset Hidden Involution Induced Source Bundle Reduction.",
+    )
+    parser_coset_hidden_involution_induced_source_bundle_reduction.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_induced_source_bundle_reduction.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_induced_source_bundle_reduction.set_defaults(func=command_coset_hidden_involution_induced_source_bundle_reduction)
+
+    parser_coset_hidden_involution_isotypic_support_no_go = subparsers.add_parser(
+        "coset-hidden-involution-isotypic-support-no-go",
+        help="Run Coset Hidden Involution Isotypic Support No Go.",
+    )
+    parser_coset_hidden_involution_isotypic_support_no_go.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_isotypic_support_no_go.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_isotypic_support_no_go.set_defaults(func=command_coset_hidden_involution_isotypic_support_no_go)
+
+    parser_coset_hidden_involution_matrix_hecke_transfer_reduction = subparsers.add_parser(
+        "coset-hidden-involution-matrix-hecke-transfer-reduction",
+        help="Run Coset Hidden Involution Matrix Hecke Transfer Reduction.",
+    )
+    parser_coset_hidden_involution_matrix_hecke_transfer_reduction.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_matrix_hecke_transfer_reduction.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_matrix_hecke_transfer_reduction.set_defaults(func=command_coset_hidden_involution_matrix_hecke_transfer_reduction)
+
+    parser_coset_hidden_involution_multiplicity_hard_mass = subparsers.add_parser(
+        "coset-hidden-involution-multiplicity-hard-mass",
+        help="Run Coset Hidden Involution Multiplicity Hard Mass.",
+    )
+    parser_coset_hidden_involution_multiplicity_hard_mass.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_multiplicity_hard_mass.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_multiplicity_hard_mass.set_defaults(func=command_coset_hidden_involution_multiplicity_hard_mass)
+
+    parser_coset_hidden_involution_orbit_synthesis_flatness = subparsers.add_parser(
+        "coset-hidden-involution-orbit-synthesis-flatness",
+        help="Run Coset Hidden Involution Orbit Synthesis Flatness.",
+    )
+    parser_coset_hidden_involution_orbit_synthesis_flatness.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_orbit_synthesis_flatness.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_orbit_synthesis_flatness.set_defaults(func=command_coset_hidden_involution_orbit_synthesis_flatness)
+
+    parser_coset_hidden_involution_pair_polar_holonomy_no_go = subparsers.add_parser(
+        "coset-hidden-involution-pair-polar-holonomy-no-go",
+        help="Run Coset Hidden Involution Pair Polar Holonomy No Go.",
+    )
+    parser_coset_hidden_involution_pair_polar_holonomy_no_go.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_pair_polar_holonomy_no_go.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_pair_polar_holonomy_no_go.set_defaults(func=command_coset_hidden_involution_pair_polar_holonomy_no_go)
+
+    parser_coset_hidden_involution_pair_polar_phase_compiler = subparsers.add_parser(
+        "coset-hidden-involution-pair-polar-phase-compiler",
+        help="Run Coset Hidden Involution Pair Polar Phase Compiler.",
+    )
+    parser_coset_hidden_involution_pair_polar_phase_compiler.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_pair_polar_phase_compiler.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_pair_polar_phase_compiler.set_defaults(func=command_coset_hidden_involution_pair_polar_phase_compiler)
+
+    parser_coset_hidden_involution_regular_orbit_row_reduction = subparsers.add_parser(
+        "coset-hidden-involution-regular-orbit-row-reduction",
+        help="Run Coset Hidden Involution Regular Orbit Row Reduction.",
+    )
+    parser_coset_hidden_involution_regular_orbit_row_reduction.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_regular_orbit_row_reduction.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_regular_orbit_row_reduction.set_defaults(func=command_coset_hidden_involution_regular_orbit_row_reduction)
+
+    parser_coset_hidden_involution_rigid_gi_bridge = subparsers.add_parser(
+        "coset-hidden-involution-rigid-gi-bridge",
+        help="Run Coset Hidden Involution Rigid Gi Bridge.",
+    )
+    parser_coset_hidden_involution_rigid_gi_bridge.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_rigid_gi_bridge.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_rigid_gi_bridge.set_defaults(func=command_coset_hidden_involution_rigid_gi_bridge)
+
+    parser_coset_hidden_involution_s3_chart_gram_compiler = subparsers.add_parser(
+        "coset-hidden-involution-s3-chart-gram-compiler",
+        help="Run Coset Hidden Involution S3 Chart Gram Compiler.",
+    )
+    parser_coset_hidden_involution_s3_chart_gram_compiler.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_s3_chart_gram_compiler.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_s3_chart_gram_compiler.set_defaults(func=command_coset_hidden_involution_s3_chart_gram_compiler)
+
+    parser_coset_hidden_involution_source_deflation_no_go = subparsers.add_parser(
+        "coset-hidden-involution-source-deflation-no-go",
+        help="Run Coset Hidden Involution Source Deflation No Go.",
+    )
+    parser_coset_hidden_involution_source_deflation_no_go.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_source_deflation_no_go.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_source_deflation_no_go.set_defaults(func=command_coset_hidden_involution_source_deflation_no_go)
+
+    parser_coset_hidden_involution_spherical_outlier_deflation = subparsers.add_parser(
+        "coset-hidden-involution-spherical-outlier-deflation",
+        help="Run Coset Hidden Involution Spherical Outlier Deflation.",
+    )
+    parser_coset_hidden_involution_spherical_outlier_deflation.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_spherical_outlier_deflation.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_spherical_outlier_deflation.set_defaults(func=command_coset_hidden_involution_spherical_outlier_deflation)
+
+    parser_coset_hidden_involution_subgroup_outlier_hierarchy = subparsers.add_parser(
+        "coset-hidden-involution-subgroup-outlier-hierarchy",
+        help="Run Coset Hidden Involution Subgroup Outlier Hierarchy.",
+    )
+    parser_coset_hidden_involution_subgroup_outlier_hierarchy.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_subgroup_outlier_hierarchy.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_subgroup_outlier_hierarchy.set_defaults(func=command_coset_hidden_involution_subgroup_outlier_hierarchy)
+
+    parser_coset_hidden_involution_subgroup_support_dichotomy = subparsers.add_parser(
+        "coset-hidden-involution-subgroup-support-dichotomy",
+        help="Run Coset Hidden Involution Subgroup Support Dichotomy.",
+    )
+    parser_coset_hidden_involution_subgroup_support_dichotomy.add_argument("--output", help="Optional report output path")
+    parser_coset_hidden_involution_subgroup_support_dichotomy.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hidden_involution_subgroup_support_dichotomy.set_defaults(func=command_coset_hidden_involution_subgroup_support_dichotomy)
+
+    parser_coset_hyperoctahedral_cg_kronecker_reduction = subparsers.add_parser(
+        "coset-hyperoctahedral-cg-kronecker-reduction",
+        help="Run Coset Hyperoctahedral Cg Kronecker Reduction.",
+    )
+    parser_coset_hyperoctahedral_cg_kronecker_reduction.add_argument("--output", help="Optional report output path")
+    parser_coset_hyperoctahedral_cg_kronecker_reduction.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hyperoctahedral_cg_kronecker_reduction.set_defaults(func=command_coset_hyperoctahedral_cg_kronecker_reduction)
+
+    parser_coset_hyperoctahedral_color_weight_concentration = subparsers.add_parser(
+        "coset-hyperoctahedral-color-weight-concentration",
+        help="Run Coset Hyperoctahedral Color Weight Concentration.",
+    )
+    parser_coset_hyperoctahedral_color_weight_concentration.add_argument("--output", help="Optional report output path")
+    parser_coset_hyperoctahedral_color_weight_concentration.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hyperoctahedral_color_weight_concentration.set_defaults(func=command_coset_hyperoctahedral_color_weight_concentration)
+
+    parser_coset_hyperoctahedral_free_orbit_canonicalization_boundary = subparsers.add_parser(
+        "coset-hyperoctahedral-free-orbit-canonicalization-boundary",
+        help="Run Coset Hyperoctahedral Free Orbit Canonicalization Boundary.",
+    )
+    parser_coset_hyperoctahedral_free_orbit_canonicalization_boundary.add_argument("--output", help="Optional report output path")
+    parser_coset_hyperoctahedral_free_orbit_canonicalization_boundary.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hyperoctahedral_free_orbit_canonicalization_boundary.set_defaults(func=command_coset_hyperoctahedral_free_orbit_canonicalization_boundary)
+
+    parser_coset_hyperoctahedral_source_plancherel_typicality = subparsers.add_parser(
+        "coset-hyperoctahedral-source-plancherel-typicality",
+        help="Run Coset Hyperoctahedral Source Plancherel Typicality.",
+    )
+    parser_coset_hyperoctahedral_source_plancherel_typicality.add_argument("--output", help="Optional report output path")
+    parser_coset_hyperoctahedral_source_plancherel_typicality.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hyperoctahedral_source_plancherel_typicality.set_defaults(func=command_coset_hyperoctahedral_source_plancherel_typicality)
+
+    parser_coset_hyperoctahedral_trimmed_orbit_canonicalizer = subparsers.add_parser(
+        "coset-hyperoctahedral-trimmed-orbit-canonicalizer",
+        help="Run Coset Hyperoctahedral Trimmed Orbit Canonicalizer.",
+    )
+    parser_coset_hyperoctahedral_trimmed_orbit_canonicalizer.add_argument("--output", help="Optional report output path")
+    parser_coset_hyperoctahedral_trimmed_orbit_canonicalizer.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hyperoctahedral_trimmed_orbit_canonicalizer.set_defaults(func=command_coset_hyperoctahedral_trimmed_orbit_canonicalizer)
+
+    parser_coset_hyperoctahedral_trivial_color_mass_no_go = subparsers.add_parser(
+        "coset-hyperoctahedral-trivial-color-mass-no-go",
+        help="Run Coset Hyperoctahedral Trivial Color Mass No Go.",
+    )
+    parser_coset_hyperoctahedral_trivial_color_mass_no_go.add_argument("--output", help="Optional report output path")
+    parser_coset_hyperoctahedral_trivial_color_mass_no_go.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_coset_hyperoctahedral_trivial_color_mass_no_go.set_defaults(func=command_coset_hyperoctahedral_trivial_color_mass_no_go)
+
+    parser_self_dual_wreath_adaptive_syndrome_trim_transfer = subparsers.add_parser(
+        "self-dual-wreath-adaptive-syndrome-trim-transfer",
+        help="Run Self Dual Wreath Adaptive Syndrome Trim Transfer.",
+    )
+    parser_self_dual_wreath_adaptive_syndrome_trim_transfer.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_adaptive_syndrome_trim_transfer.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_adaptive_syndrome_trim_transfer.set_defaults(func=command_self_dual_wreath_adaptive_syndrome_trim_transfer)
+
+    parser_self_dual_wreath_alternating_base_orbit_reduction = subparsers.add_parser(
+        "self-dual-wreath-alternating-base-orbit-reduction",
+        help="Run Self Dual Wreath Alternating Base Orbit Reduction.",
+    )
+    parser_self_dual_wreath_alternating_base_orbit_reduction.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_alternating_base_orbit_reduction.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_alternating_base_orbit_reduction.set_defaults(func=command_self_dual_wreath_alternating_base_orbit_reduction)
+
+    parser_self_dual_wreath_alternating_block_operator_anova = subparsers.add_parser(
+        "self-dual-wreath-alternating-block-operator-anova",
+        help="Run Self Dual Wreath Alternating Block Operator Anova.",
+    )
+    parser_self_dual_wreath_alternating_block_operator_anova.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_alternating_block_operator_anova.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_alternating_block_operator_anova.set_defaults(func=command_self_dual_wreath_alternating_block_operator_anova)
+
+    parser_self_dual_wreath_alternating_cycle_type_block_dependence = subparsers.add_parser(
+        "self-dual-wreath-alternating-cycle-type-block-dependence",
+        help="Run Self Dual Wreath Alternating Cycle Type Block Dependence.",
+    )
+    parser_self_dual_wreath_alternating_cycle_type_block_dependence.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_alternating_cycle_type_block_dependence.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_alternating_cycle_type_block_dependence.set_defaults(func=command_self_dual_wreath_alternating_cycle_type_block_dependence)
+
+    parser_self_dual_wreath_alternating_entropy_transfer_reduction = subparsers.add_parser(
+        "self-dual-wreath-alternating-entropy-transfer-reduction",
+        help="Run Self Dual Wreath Alternating Entropy Transfer Reduction.",
+    )
+    parser_self_dual_wreath_alternating_entropy_transfer_reduction.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_alternating_entropy_transfer_reduction.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_alternating_entropy_transfer_reduction.set_defaults(func=command_self_dual_wreath_alternating_entropy_transfer_reduction)
+
+    parser_self_dual_wreath_alternating_even_collision_core_reduction = subparsers.add_parser(
+        "self-dual-wreath-alternating-even-collision-core-reduction",
+        help="Run Self Dual Wreath Alternating Even Collision Core Reduction.",
+    )
+    parser_self_dual_wreath_alternating_even_collision_core_reduction.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_alternating_even_collision_core_reduction.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_alternating_even_collision_core_reduction.set_defaults(func=command_self_dual_wreath_alternating_even_collision_core_reduction)
+
+    parser_self_dual_wreath_alternating_even_collision_entropy_bridge = subparsers.add_parser(
+        "self-dual-wreath-alternating-even-collision-entropy-bridge",
+        help="Run Self Dual Wreath Alternating Even Collision Entropy Bridge.",
+    )
+    parser_self_dual_wreath_alternating_even_collision_entropy_bridge.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_alternating_even_collision_entropy_bridge.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_alternating_even_collision_entropy_bridge.set_defaults(func=command_self_dual_wreath_alternating_even_collision_entropy_bridge)
+
+    parser_self_dual_wreath_alternating_even_collision_support_pressure = subparsers.add_parser(
+        "self-dual-wreath-alternating-even-collision-support-pressure",
+        help="Run Self Dual Wreath Alternating Even Collision Support Pressure.",
+    )
+    parser_self_dual_wreath_alternating_even_collision_support_pressure.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_alternating_even_collision_support_pressure.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_alternating_even_collision_support_pressure.set_defaults(func=command_self_dual_wreath_alternating_even_collision_support_pressure)
+
+    parser_self_dual_wreath_alternating_parity_coset_channel = subparsers.add_parser(
+        "self-dual-wreath-alternating-parity-coset-channel",
+        help="Run Self Dual Wreath Alternating Parity Coset Channel.",
+    )
+    parser_self_dual_wreath_alternating_parity_coset_channel.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_alternating_parity_coset_channel.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_alternating_parity_coset_channel.set_defaults(func=command_self_dual_wreath_alternating_parity_coset_channel)
+
+    parser_self_dual_wreath_alternating_product_character_zeta = subparsers.add_parser(
+        "self-dual-wreath-alternating-product-character-zeta",
+        help="Run Self Dual Wreath Alternating Product Character Zeta.",
+    )
+    parser_self_dual_wreath_alternating_product_character_zeta.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_alternating_product_character_zeta.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_alternating_product_character_zeta.set_defaults(func=command_self_dual_wreath_alternating_product_character_zeta)
+
+    parser_self_dual_wreath_alternating_sixway_synergy_reduction = subparsers.add_parser(
+        "self-dual-wreath-alternating-sixway-synergy-reduction",
+        help="Run Self Dual Wreath Alternating Sixway Synergy Reduction.",
+    )
+    parser_self_dual_wreath_alternating_sixway_synergy_reduction.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_alternating_sixway_synergy_reduction.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_alternating_sixway_synergy_reduction.set_defaults(func=command_self_dual_wreath_alternating_sixway_synergy_reduction)
+
+    parser_self_dual_wreath_alternating_trimmed_sixway_renyi_transfer = subparsers.add_parser(
+        "self-dual-wreath-alternating-trimmed-sixway-renyi-transfer",
+        help="Run Self Dual Wreath Alternating Trimmed Sixway Renyi Transfer.",
+    )
+    parser_self_dual_wreath_alternating_trimmed_sixway_renyi_transfer.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_alternating_trimmed_sixway_renyi_transfer.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_alternating_trimmed_sixway_renyi_transfer.set_defaults(func=command_self_dual_wreath_alternating_trimmed_sixway_renyi_transfer)
+
+    parser_self_dual_wreath_central_fiber_racah_information_reduction = subparsers.add_parser(
+        "self-dual-wreath-central-fiber-racah-information-reduction",
+        help="Run Self Dual Wreath Central Fiber Racah Information Reduction.",
+    )
+    parser_self_dual_wreath_central_fiber_racah_information_reduction.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_central_fiber_racah_information_reduction.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_central_fiber_racah_information_reduction.set_defaults(func=command_self_dual_wreath_central_fiber_racah_information_reduction)
+
+    parser_self_dual_wreath_character_triangle_barrier = subparsers.add_parser(
+        "self-dual-wreath-character-triangle-barrier",
+        help="Run Self Dual Wreath Character Triangle Barrier.",
+    )
+    parser_self_dual_wreath_character_triangle_barrier.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_character_triangle_barrier.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_character_triangle_barrier.set_defaults(func=command_self_dual_wreath_character_triangle_barrier)
+
+    parser_self_dual_wreath_coherent_branching_transport_boundary = subparsers.add_parser(
+        "self-dual-wreath-coherent-branching-transport-boundary",
+        help="Run Self Dual Wreath Coherent Branching Transport Boundary.",
+    )
+    parser_self_dual_wreath_coherent_branching_transport_boundary.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_coherent_branching_transport_boundary.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_coherent_branching_transport_boundary.set_defaults(func=command_self_dual_wreath_coherent_branching_transport_boundary)
+
+    parser_self_dual_wreath_compressed_orientation_racah_cumulant_probe = subparsers.add_parser(
+        "self-dual-wreath-compressed-orientation-racah-cumulant-probe",
+        help="Run Self Dual Wreath Compressed Orientation Racah Cumulant Probe.",
+    )
+    parser_self_dual_wreath_compressed_orientation_racah_cumulant_probe.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_compressed_orientation_racah_cumulant_probe.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_compressed_orientation_racah_cumulant_probe.set_defaults(func=command_self_dual_wreath_compressed_orientation_racah_cumulant_probe)
+
+    parser_self_dual_wreath_compressed_racah_block_probe = subparsers.add_parser(
+        "self-dual-wreath-compressed-racah-block-probe",
+        help="Run Self Dual Wreath Compressed Racah Block Probe.",
+    )
+    parser_self_dual_wreath_compressed_racah_block_probe.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_compressed_racah_block_probe.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_compressed_racah_block_probe.set_defaults(func=command_self_dual_wreath_compressed_racah_block_probe)
+
+    parser_self_dual_wreath_compressed_racah_coupling_probe = subparsers.add_parser(
+        "self-dual-wreath-compressed-racah-coupling-probe",
+        help="Run Self Dual Wreath Compressed Racah Coupling Probe.",
+    )
+    parser_self_dual_wreath_compressed_racah_coupling_probe.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_compressed_racah_coupling_probe.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_compressed_racah_coupling_probe.set_defaults(func=command_self_dual_wreath_compressed_racah_coupling_probe)
+
+    parser_self_dual_wreath_dense_automaton_fiber_dyadic_boundary = subparsers.add_parser(
+        "self-dual-wreath-dense-automaton-fiber-dyadic-boundary",
+        help="Run Self Dual Wreath Dense Automaton Fiber Dyadic Boundary.",
+    )
+    parser_self_dual_wreath_dense_automaton_fiber_dyadic_boundary.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_dense_automaton_fiber_dyadic_boundary.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_dense_automaton_fiber_dyadic_boundary.set_defaults(func=command_self_dual_wreath_dense_automaton_fiber_dyadic_boundary)
+
+    parser_self_dual_wreath_disjoint_grid_recoupling_falsifier = subparsers.add_parser(
+        "self-dual-wreath-disjoint-grid-recoupling-falsifier",
+        help="Run Self Dual Wreath Disjoint Grid Recoupling Falsifier.",
+    )
+    parser_self_dual_wreath_disjoint_grid_recoupling_falsifier.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_disjoint_grid_recoupling_falsifier.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_disjoint_grid_recoupling_falsifier.set_defaults(func=command_self_dual_wreath_disjoint_grid_recoupling_falsifier)
+
+    parser_self_dual_wreath_dyadic_modular_fiber_torsion_no_go = subparsers.add_parser(
+        "self-dual-wreath-dyadic-modular-fiber-torsion-no-go",
+        help="Run Self Dual Wreath Dyadic Modular Fiber Torsion No Go.",
+    )
+    parser_self_dual_wreath_dyadic_modular_fiber_torsion_no_go.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_dyadic_modular_fiber_torsion_no_go.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_dyadic_modular_fiber_torsion_no_go.set_defaults(func=command_self_dual_wreath_dyadic_modular_fiber_torsion_no_go)
+
+    parser_self_dual_wreath_fractional_haar_enhancement_reduction = subparsers.add_parser(
+        "self-dual-wreath-fractional-haar-enhancement-reduction",
+        help="Run Self Dual Wreath Fractional Haar Enhancement Reduction.",
+    )
+    parser_self_dual_wreath_fractional_haar_enhancement_reduction.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_fractional_haar_enhancement_reduction.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_fractional_haar_enhancement_reduction.set_defaults(func=command_self_dual_wreath_fractional_haar_enhancement_reduction)
+
+    parser_self_dual_wreath_free_probability_projector_resolution_boundary = subparsers.add_parser(
+        "self-dual-wreath-free-probability-projector-resolution-boundary",
+        help="Run Self Dual Wreath Free Probability Projector Resolution Boundary.",
+    )
+    parser_self_dual_wreath_free_probability_projector_resolution_boundary.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_free_probability_projector_resolution_boundary.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_free_probability_projector_resolution_boundary.set_defaults(func=command_self_dual_wreath_free_probability_projector_resolution_boundary)
+
+    parser_self_dual_wreath_grid_quantum_marginal_boundary = subparsers.add_parser(
+        "self-dual-wreath-grid-quantum-marginal-boundary",
+        help="Run Self Dual Wreath Grid Quantum Marginal Boundary.",
+    )
+    parser_self_dual_wreath_grid_quantum_marginal_boundary.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_grid_quantum_marginal_boundary.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_grid_quantum_marginal_boundary.set_defaults(func=command_self_dual_wreath_grid_quantum_marginal_boundary)
+
+    parser_self_dual_wreath_orientation_fixed_support_control_variate = subparsers.add_parser(
+        "self-dual-wreath-orientation-fixed-support-control-variate",
+        help="Run Self Dual Wreath Orientation Fixed Support Control Variate.",
+    )
+    parser_self_dual_wreath_orientation_fixed_support_control_variate.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_orientation_fixed_support_control_variate.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_orientation_fixed_support_control_variate.set_defaults(func=command_self_dual_wreath_orientation_fixed_support_control_variate)
+
+    parser_self_dual_wreath_orientation_identity_tail_control_variate = subparsers.add_parser(
+        "self-dual-wreath-orientation-identity-tail-control-variate",
+        help="Run Self Dual Wreath Orientation Identity Tail Control Variate.",
+    )
+    parser_self_dual_wreath_orientation_identity_tail_control_variate.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_orientation_identity_tail_control_variate.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_orientation_identity_tail_control_variate.set_defaults(func=command_self_dual_wreath_orientation_identity_tail_control_variate)
+
+    parser_self_dual_wreath_orientation_word_map_classical_baseline = subparsers.add_parser(
+        "self-dual-wreath-orientation-word-map-classical-baseline",
+        help="Run Self Dual Wreath Orientation Word Map Classical Baseline.",
+    )
+    parser_self_dual_wreath_orientation_word_map_classical_baseline.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_orientation_word_map_classical_baseline.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_orientation_word_map_classical_baseline.set_defaults(func=command_self_dual_wreath_orientation_word_map_classical_baseline)
+
+    parser_self_dual_wreath_parity_projector_orbit_variance = subparsers.add_parser(
+        "self-dual-wreath-parity-projector-orbit-variance",
+        help="Run Self Dual Wreath Parity Projector Orbit Variance.",
+    )
+    parser_self_dual_wreath_parity_projector_orbit_variance.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_parity_projector_orbit_variance.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_parity_projector_orbit_variance.set_defaults(func=command_self_dual_wreath_parity_projector_orbit_variance)
+
+    parser_self_dual_wreath_parity_projector_tetrahedral_reduction = subparsers.add_parser(
+        "self-dual-wreath-parity-projector-tetrahedral-reduction",
+        help="Run Self Dual Wreath Parity Projector Tetrahedral Reduction.",
+    )
+    parser_self_dual_wreath_parity_projector_tetrahedral_reduction.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_parity_projector_tetrahedral_reduction.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_parity_projector_tetrahedral_reduction.set_defaults(func=command_self_dual_wreath_parity_projector_tetrahedral_reduction)
+
+    parser_self_dual_wreath_parity_racah_conditional_cumulant = subparsers.add_parser(
+        "self-dual-wreath-parity-racah-conditional-cumulant",
+        help="Run Self Dual Wreath Parity Racah Conditional Cumulant.",
+    )
+    parser_self_dual_wreath_parity_racah_conditional_cumulant.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_parity_racah_conditional_cumulant.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_parity_racah_conditional_cumulant.set_defaults(func=command_self_dual_wreath_parity_racah_conditional_cumulant)
+
+    parser_self_dual_wreath_parity_racah_information_projection = subparsers.add_parser(
+        "self-dual-wreath-parity-racah-information-projection",
+        help="Run Self Dual Wreath Parity Racah Information Projection.",
+    )
+    parser_self_dual_wreath_parity_racah_information_projection.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_parity_racah_information_projection.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_parity_racah_information_projection.set_defaults(func=command_self_dual_wreath_parity_racah_information_projection)
+
+    parser_self_dual_wreath_parity_racah_rank_residual_decomposition = subparsers.add_parser(
+        "self-dual-wreath-parity-racah-rank-residual-decomposition",
+        help="Run Self Dual Wreath Parity Racah Rank Residual Decomposition.",
+    )
+    parser_self_dual_wreath_parity_racah_rank_residual_decomposition.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_parity_racah_rank_residual_decomposition.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_parity_racah_rank_residual_decomposition.set_defaults(func=command_self_dual_wreath_parity_racah_rank_residual_decomposition)
+
+    parser_self_dual_wreath_parity_racah_toric_obstruction = subparsers.add_parser(
+        "self-dual-wreath-parity-racah-toric-obstruction",
+        help="Run Self Dual Wreath Parity Racah Toric Obstruction.",
+    )
+    parser_self_dual_wreath_parity_racah_toric_obstruction.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_parity_racah_toric_obstruction.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_parity_racah_toric_obstruction.set_defaults(func=command_self_dual_wreath_parity_racah_toric_obstruction)
+
+    parser_self_dual_wreath_parity_rank_profile_entropy_transfer = subparsers.add_parser(
+        "self-dual-wreath-parity-rank-profile-entropy-transfer",
+        help="Run Self Dual Wreath Parity Rank Profile Entropy Transfer.",
+    )
+    parser_self_dual_wreath_parity_rank_profile_entropy_transfer.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_parity_rank_profile_entropy_transfer.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_parity_rank_profile_entropy_transfer.set_defaults(func=command_self_dual_wreath_parity_rank_profile_entropy_transfer)
+
+    parser_self_dual_wreath_parity_rank_profile_physical_transfer_boundary = subparsers.add_parser(
+        "self-dual-wreath-parity-rank-profile-physical-transfer-boundary",
+        help="Run Self Dual Wreath Parity Rank Profile Physical Transfer Boundary.",
+    )
+    parser_self_dual_wreath_parity_rank_profile_physical_transfer_boundary.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_parity_rank_profile_physical_transfer_boundary.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_parity_rank_profile_physical_transfer_boundary.set_defaults(func=command_self_dual_wreath_parity_rank_profile_physical_transfer_boundary)
+
+    parser_self_dual_wreath_parity_rank_profile_plancherel_mixing = subparsers.add_parser(
+        "self-dual-wreath-parity-rank-profile-plancherel-mixing",
+        help="Run Self Dual Wreath Parity Rank Profile Plancherel Mixing.",
+    )
+    parser_self_dual_wreath_parity_rank_profile_plancherel_mixing.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_parity_rank_profile_plancherel_mixing.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_parity_rank_profile_plancherel_mixing.set_defaults(func=command_self_dual_wreath_parity_rank_profile_plancherel_mixing)
+
+    parser_self_dual_wreath_parity_rank_profile_trimmed_likelihood_transfer = subparsers.add_parser(
+        "self-dual-wreath-parity-rank-profile-trimmed-likelihood-transfer",
+        help="Run Self Dual Wreath Parity Rank Profile Trimmed Likelihood Transfer.",
+    )
+    parser_self_dual_wreath_parity_rank_profile_trimmed_likelihood_transfer.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_parity_rank_profile_trimmed_likelihood_transfer.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_parity_rank_profile_trimmed_likelihood_transfer.set_defaults(func=command_self_dual_wreath_parity_rank_profile_trimmed_likelihood_transfer)
+
+    parser_self_dual_wreath_physical_orientation_racah_sampling = subparsers.add_parser(
+        "self-dual-wreath-physical-orientation-racah-sampling",
+        help="Run Self Dual Wreath Physical Orientation Racah Sampling.",
+    )
+    parser_self_dual_wreath_physical_orientation_racah_sampling.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_physical_orientation_racah_sampling.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_physical_orientation_racah_sampling.set_defaults(func=command_self_dual_wreath_physical_orientation_racah_sampling)
+
+    parser_self_dual_wreath_physical_outer_racah_sampling = subparsers.add_parser(
+        "self-dual-wreath-physical-outer-racah-sampling",
+        help="Run Self Dual Wreath Physical Outer Racah Sampling.",
+    )
+    parser_self_dual_wreath_physical_outer_racah_sampling.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_physical_outer_racah_sampling.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_physical_outer_racah_sampling.set_defaults(func=command_self_dual_wreath_physical_outer_racah_sampling)
+
+    parser_self_dual_wreath_physical_recoupling_rank_pressure_no_go = subparsers.add_parser(
+        "self-dual-wreath-physical-recoupling-rank-pressure-no-go",
+        help="Run Self Dual Wreath Physical Recoupling Rank Pressure No Go.",
+    )
+    parser_self_dual_wreath_physical_recoupling_rank_pressure_no_go.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_physical_recoupling_rank_pressure_no_go.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_physical_recoupling_rank_pressure_no_go.set_defaults(func=command_self_dual_wreath_physical_recoupling_rank_pressure_no_go)
+
+    parser_self_dual_wreath_physical_recoupling_tetrahedral_synergy = subparsers.add_parser(
+        "self-dual-wreath-physical-recoupling-tetrahedral-synergy",
+        help="Run Self Dual Wreath Physical Recoupling Tetrahedral Synergy.",
+    )
+    parser_self_dual_wreath_physical_recoupling_tetrahedral_synergy.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_physical_recoupling_tetrahedral_synergy.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_physical_recoupling_tetrahedral_synergy.set_defaults(func=command_self_dual_wreath_physical_recoupling_tetrahedral_synergy)
+
+    parser_self_dual_wreath_plancherel_character_racah_fourier_reduction = subparsers.add_parser(
+        "self-dual-wreath-plancherel-character-racah-fourier-reduction",
+        help="Run Self Dual Wreath Plancherel Character Racah Fourier Reduction.",
+    )
+    parser_self_dual_wreath_plancherel_character_racah_fourier_reduction.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_plancherel_character_racah_fourier_reduction.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_plancherel_character_racah_fourier_reduction.set_defaults(func=command_self_dual_wreath_plancherel_character_racah_fourier_reduction)
+
+    parser_self_dual_wreath_plancherel_down_up_racah_tail_reduction = subparsers.add_parser(
+        "self-dual-wreath-plancherel-down-up-racah-tail-reduction",
+        help="Run Self Dual Wreath Plancherel Down Up Racah Tail Reduction.",
+    )
+    parser_self_dual_wreath_plancherel_down_up_racah_tail_reduction.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_plancherel_down_up_racah_tail_reduction.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_plancherel_down_up_racah_tail_reduction.set_defaults(func=command_self_dual_wreath_plancherel_down_up_racah_tail_reduction)
+
+    parser_self_dual_wreath_plancherel_marginal_compatibility_no_go = subparsers.add_parser(
+        "self-dual-wreath-plancherel-marginal-compatibility-no-go",
+        help="Run Self Dual Wreath Plancherel Marginal Compatibility No Go.",
+    )
+    parser_self_dual_wreath_plancherel_marginal_compatibility_no_go.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_plancherel_marginal_compatibility_no_go.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_plancherel_marginal_compatibility_no_go.set_defaults(func=command_self_dual_wreath_plancherel_marginal_compatibility_no_go)
+
+    parser_self_dual_wreath_plancherel_recoupling_rank_pressure_no_go = subparsers.add_parser(
+        "self-dual-wreath-plancherel-recoupling-rank-pressure-no-go",
+        help="Run Self Dual Wreath Plancherel Recoupling Rank Pressure No Go.",
+    )
+    parser_self_dual_wreath_plancherel_recoupling_rank_pressure_no_go.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_plancherel_recoupling_rank_pressure_no_go.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_plancherel_recoupling_rank_pressure_no_go.set_defaults(func=command_self_dual_wreath_plancherel_recoupling_rank_pressure_no_go)
+
+    parser_self_dual_wreath_projected_parity_coset_kernel = subparsers.add_parser(
+        "self-dual-wreath-projected-parity-coset-kernel",
+        help="Run Self Dual Wreath Projected Parity Coset Kernel.",
+    )
+    parser_self_dual_wreath_projected_parity_coset_kernel.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_projected_parity_coset_kernel.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_projected_parity_coset_kernel.set_defaults(func=command_self_dual_wreath_projected_parity_coset_kernel)
+
+    parser_self_dual_wreath_projected_tetrahedral_word_map = subparsers.add_parser(
+        "self-dual-wreath-projected-tetrahedral-word-map",
+        help="Run Self Dual Wreath Projected Tetrahedral Word Map.",
+    )
+    parser_self_dual_wreath_projected_tetrahedral_word_map.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_projected_tetrahedral_word_map.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_projected_tetrahedral_word_map.set_defaults(func=command_self_dual_wreath_projected_tetrahedral_word_map)
+
+    parser_self_dual_wreath_racah_entropic_delocalization_certificate = subparsers.add_parser(
+        "self-dual-wreath-racah-entropic-delocalization-certificate",
+        help="Run Self Dual Wreath Racah Entropic Delocalization Certificate.",
+    )
+    parser_self_dual_wreath_racah_entropic_delocalization_certificate.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_racah_entropic_delocalization_certificate.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_racah_entropic_delocalization_certificate.set_defaults(func=command_self_dual_wreath_racah_entropic_delocalization_certificate)
+
+    parser_self_dual_wreath_racah_fractional_moment_certificate = subparsers.add_parser(
+        "self-dual-wreath-racah-fractional-moment-certificate",
+        help="Run Self Dual Wreath Racah Fractional Moment Certificate.",
+    )
+    parser_self_dual_wreath_racah_fractional_moment_certificate.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_racah_fractional_moment_certificate.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_racah_fractional_moment_certificate.set_defaults(func=command_self_dual_wreath_racah_fractional_moment_certificate)
+
+    parser_self_dual_wreath_recoupling_channel_flatness_boundary = subparsers.add_parser(
+        "self-dual-wreath-recoupling-channel-flatness-boundary",
+        help="Run Self Dual Wreath Recoupling Channel Flatness Boundary.",
+    )
+    parser_self_dual_wreath_recoupling_channel_flatness_boundary.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_recoupling_channel_flatness_boundary.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_recoupling_channel_flatness_boundary.set_defaults(func=command_self_dual_wreath_recoupling_channel_flatness_boundary)
+
+    parser_self_dual_wreath_recoupling_collision_channel_reduction = subparsers.add_parser(
+        "self-dual-wreath-recoupling-collision-channel-reduction",
+        help="Run Self Dual Wreath Recoupling Collision Channel Reduction.",
+    )
+    parser_self_dual_wreath_recoupling_collision_channel_reduction.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_recoupling_collision_channel_reduction.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_recoupling_collision_channel_reduction.set_defaults(func=command_self_dual_wreath_recoupling_collision_channel_reduction)
+
+    parser_self_dual_wreath_recoupling_dimension_certificate = subparsers.add_parser(
+        "self-dual-wreath-recoupling-dimension-certificate",
+        help="Run Self Dual Wreath Recoupling Dimension Certificate.",
+    )
+    parser_self_dual_wreath_recoupling_dimension_certificate.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_recoupling_dimension_certificate.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_recoupling_dimension_certificate.set_defaults(func=command_self_dual_wreath_recoupling_dimension_certificate)
+
+    parser_self_dual_wreath_recoupling_haar_gap_reduction = subparsers.add_parser(
+        "self-dual-wreath-recoupling-haar-gap-reduction",
+        help="Run Self Dual Wreath Recoupling Haar Gap Reduction.",
+    )
+    parser_self_dual_wreath_recoupling_haar_gap_reduction.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_recoupling_haar_gap_reduction.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_recoupling_haar_gap_reduction.set_defaults(func=command_self_dual_wreath_recoupling_haar_gap_reduction)
+
+    parser_self_dual_wreath_recoupling_mutual_information_reduction = subparsers.add_parser(
+        "self-dual-wreath-recoupling-mutual-information-reduction",
+        help="Run Self Dual Wreath Recoupling Mutual Information Reduction.",
+    )
+    parser_self_dual_wreath_recoupling_mutual_information_reduction.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_recoupling_mutual_information_reduction.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_recoupling_mutual_information_reduction.set_defaults(func=command_self_dual_wreath_recoupling_mutual_information_reduction)
+
+    parser_self_dual_wreath_separating_surface_target_mixing = subparsers.add_parser(
+        "self-dual-wreath-separating-surface-target-mixing",
+        help="Run Self Dual Wreath Separating Surface Target Mixing.",
+    )
+    parser_self_dual_wreath_separating_surface_target_mixing.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_separating_surface_target_mixing.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_separating_surface_target_mixing.set_defaults(func=command_self_dual_wreath_separating_surface_target_mixing)
+
+    parser_self_dual_wreath_sign_orbit_kl_chain_reduction = subparsers.add_parser(
+        "self-dual-wreath-sign-orbit-kl-chain-reduction",
+        help="Run Self Dual Wreath Sign Orbit Kl Chain Reduction.",
+    )
+    parser_self_dual_wreath_sign_orbit_kl_chain_reduction.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_sign_orbit_kl_chain_reduction.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_sign_orbit_kl_chain_reduction.set_defaults(func=command_self_dual_wreath_sign_orbit_kl_chain_reduction)
+
+    parser_self_dual_wreath_sign_orbit_syndrome_reduction = subparsers.add_parser(
+        "self-dual-wreath-sign-orbit-syndrome-reduction",
+        help="Run Self Dual Wreath Sign Orbit Syndrome Reduction.",
+    )
+    parser_self_dual_wreath_sign_orbit_syndrome_reduction.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_sign_orbit_syndrome_reduction.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_sign_orbit_syndrome_reduction.set_defaults(func=command_self_dual_wreath_sign_orbit_syndrome_reduction)
+
+    parser_self_dual_wreath_sign_syndrome_unconditional_decoupling = subparsers.add_parser(
+        "self-dual-wreath-sign-syndrome-unconditional-decoupling",
+        help="Run Self Dual Wreath Sign Syndrome Unconditional Decoupling.",
+    )
+    parser_self_dual_wreath_sign_syndrome_unconditional_decoupling.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_sign_syndrome_unconditional_decoupling.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_sign_syndrome_unconditional_decoupling.set_defaults(func=command_self_dual_wreath_sign_syndrome_unconditional_decoupling)
+
+    parser_self_dual_wreath_source_conditioned_channel_decoupling = subparsers.add_parser(
+        "self-dual-wreath-source-conditioned-channel-decoupling",
+        help="Run Self Dual Wreath Source Conditioned Channel Decoupling.",
+    )
+    parser_self_dual_wreath_source_conditioned_channel_decoupling.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_source_conditioned_channel_decoupling.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_source_conditioned_channel_decoupling.set_defaults(func=command_self_dual_wreath_source_conditioned_channel_decoupling)
+
+    parser_self_dual_wreath_tetrahedral_chi_square_tail_no_go = subparsers.add_parser(
+        "self-dual-wreath-tetrahedral-chi-square-tail-no-go",
+        help="Run Self Dual Wreath Tetrahedral Chi Square Tail No Go.",
+    )
+    parser_self_dual_wreath_tetrahedral_chi_square_tail_no_go.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_tetrahedral_chi_square_tail_no_go.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_tetrahedral_chi_square_tail_no_go.set_defaults(func=command_self_dual_wreath_tetrahedral_chi_square_tail_no_go)
+
+    parser_self_dual_wreath_tetrahedral_collision_growth_scale = subparsers.add_parser(
+        "self-dual-wreath-tetrahedral-collision-growth-scale",
+        help="Run Self Dual Wreath Tetrahedral Collision Growth Scale.",
+    )
+    parser_self_dual_wreath_tetrahedral_collision_growth_scale.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_tetrahedral_collision_growth_scale.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_tetrahedral_collision_growth_scale.set_defaults(func=command_self_dual_wreath_tetrahedral_collision_growth_scale)
+
+    parser_self_dual_wreath_tetrahedral_dimension_trim = subparsers.add_parser(
+        "self-dual-wreath-tetrahedral-dimension-trim",
+        help="Run Self Dual Wreath Tetrahedral Dimension Trim.",
+    )
+    parser_self_dual_wreath_tetrahedral_dimension_trim.add_argument("--output", help="Optional report output path")
+    parser_self_dual_wreath_tetrahedral_dimension_trim.add_argument("--no-write", action="store_true", help="Skip writing report to disk")
+    parser_self_dual_wreath_tetrahedral_dimension_trim.set_defaults(func=command_self_dual_wreath_tetrahedral_dimension_trim)
+
 
     code_wreath_weighted_overlap_exclusion = subparsers.add_parser(
         "code-wreath-weighted-overlap-exclusion",

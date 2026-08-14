@@ -1,0 +1,213 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False as stated: small support mass is information-theoretic; efficient induced-support membership can itself be hard.",
+      "challenge": "Every subgroup outlier is coherently deflatable.",
+      "resolved": true
+    },
+    {
+      "answer": "False in general: it is [G:N_G(L)]. The support theorem and dimension bound use these quantities separately.",
+      "challenge": "The number of conjugates is [G:L].",
+      "resolved": true
+    },
+    {
+      "answer": "False: high-index or approximate-invariance outliers remain.",
+      "challenge": "Low-index control proves a residual norm bound.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "arbitrary_induced_support_membership_compiled": false,
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "general_subgroup_support_span_proved": true,
+    "high_index_high_incidence_subgroups_classified": false,
+    "low_index_subgroup_mass_dichotomy_proved": true,
+    "post_all_strata_frame_norm_bounded": false,
+    "reason": "Low-index subgroup witnesses have negligible all-register support, but efficient support flags and high-index incidence families are not classified.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T17:18:19.292012+00:00",
+  "falsifiers_triggered": [
+    "Subgroup conjugacy-orbit size and subgroup index are not interchangeable.",
+    "Information-theoretic support deflation does not imply an efficient circuit.",
+    "Only high-index, hard-membership, or non-subgroup outliers remain uncontrolled by this theorem."
+  ],
+  "finite_controls": [
+    {
+      "common_dimension_inside_subgroup_invariants": 1,
+      "degree": 6,
+      "exact_induced_multiplicities_integral": true,
+      "global_common_dimension": 1,
+      "group_order": 720,
+      "half_degree": 3,
+      "incident_fixed_point_free_count": 7,
+      "induced_dimension_identity": 15,
+      "induced_support_isotypic_dimension": 107,
+      "induced_support_sector_count": 3,
+      "noncommon_invariant_dimension": 14,
+      "status": "exact-subgroup-support-dichotomy-control-verified",
+      "subgroup_contains_odd_permutation": true,
+      "subgroup_family": "hyperoctahedral",
+      "subgroup_index": 15,
+      "subgroup_order": 48,
+      "subgroup_outlier_witness_verified": true,
+      "support_dimension_bound_squared_rhs": 162000,
+      "support_dimension_bound_verified": true
+    },
+    {
+      "common_dimension_inside_subgroup_invariants": 1,
+      "degree": 8,
+      "exact_induced_multiplicities_integral": true,
+      "global_common_dimension": 2,
+      "group_order": 40320,
+      "half_degree": 4,
+      "incident_fixed_point_free_count": 25,
+      "induced_dimension_identity": 105,
+      "induced_support_isotypic_dimension": 3929,
+      "induced_support_sector_count": 5,
+      "noncommon_invariant_dimension": 104,
+      "status": "exact-subgroup-support-dichotomy-control-verified",
+      "subgroup_contains_odd_permutation": true,
+      "subgroup_family": "hyperoctahedral",
+      "subgroup_index": 105,
+      "subgroup_order": 384,
+      "subgroup_outlier_witness_verified": true,
+      "support_dimension_bound_squared_rhs": 444528000,
+      "support_dimension_bound_verified": true
+    },
+    {
+      "common_dimension_inside_subgroup_invariants": 1,
+      "degree": 8,
+      "exact_induced_multiplicities_integral": true,
+      "global_common_dimension": 2,
+      "group_order": 40320,
+      "half_degree": 4,
+      "incident_fixed_point_free_count": 9,
+      "induced_dimension_identity": 70,
+      "induced_support_isotypic_dimension": 1430,
+      "induced_support_sector_count": 5,
+      "noncommon_invariant_dimension": 69,
+      "status": "exact-subgroup-support-dichotomy-control-verified",
+      "subgroup_contains_odd_permutation": true,
+      "subgroup_family": "young-two-block",
+      "subgroup_index": 70,
+      "subgroup_order": 576,
+      "subgroup_outlier_witness_verified": true,
+      "support_dimension_bound_squared_rhs": 197568000,
+      "support_dimension_bound_verified": true
+    }
+  ],
+  "headline_metrics": {
+    "exact_finite_subgroup_control_count": 3,
+    "finite_control_failure_count": 0,
+    "general_support_dimension_theorem_count": 1,
+    "high_index_subgroup_classification_count": 0,
+    "low_index_mass_dichotomy_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "universal_support_membership_compiler_count": 0
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-HIGH-INDEX-INCIDENCE-CLASSIFICATION",
+      "resolved": false,
+      "statement": "Classify high-index subgroups of S_(2m) with superpolynomial fixed-point-free involution incidence."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-INDUCED-SUPPORT-MEMBERSHIP",
+      "resolved": false,
+      "statement": "Compile or complexity-classify lambda -> dim(V_lambda^L)>0 for every surviving subgroup family."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-NONSUBGROUP-OUTLIERS",
+      "resolved": false,
+      "statement": "Determine whether large residual eigenvalues must admit an approximate subgroup-invariance witness."
+    }
+  ],
+  "scaling_records": [
+    {
+      "all_register_support_mass_log2_upper_bound": -92.47537926867564,
+      "copy_count": 27,
+      "degree": 16,
+      "group_order_decimal": "20922789888000",
+      "half_degree": 8,
+      "high_index_subgroups_classified": false,
+      "index_gap_epsilon": 0.1,
+      "low_index_outlier_mass_information_theoretically_negligible": true,
+      "maximum_low_index_decimal": "207915",
+      "one_register_support_mass_upper_bound": 0.09310393492217878,
+      "status": "low-index-subgroup-support-mass-negligible-membership-or-high-index-open",
+      "support_membership_flag_assumed": true,
+      "universal_coherent_trim_compiled": false
+    },
+    {
+      "all_register_support_mass_log2_upper_bound": -689.044887375106,
+      "copy_count": 64,
+      "degree": 32,
+      "group_order_decimal": "263130836933693530167218012160000000",
+      "half_degree": 16,
+      "high_index_subgroups_classified": false,
+      "index_gap_epsilon": 0.1,
+      "low_index_outlier_mass_information_theoretically_negligible": true,
+      "maximum_low_index_decimal": "147233869885293",
+      "one_register_support_mass_upper_bound": 0.0005741334111460149,
+      "status": "low-index-subgroup-support-mass-negligible-membership-or-high-index-open",
+      "support_membership_flag_assumed": true,
+      "universal_coherent_trim_compiled": false
+    },
+    {
+      "all_register_support_mass_log2_upper_bound": -2111.3628511541892,
+      "copy_count": 153,
+      "degree": 64,
+      "group_order_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "half_degree": 32,
+      "high_index_subgroups_classified": false,
+      "index_gap_epsilon": 0.05,
+      "low_index_outlier_mass_information_theoretically_negligible": true,
+      "maximum_low_index_decimal": "12489023221757927529055740953905700195607",
+      "one_register_support_mass_upper_bound": 7.012278412352999e-05,
+      "status": "low-index-subgroup-support-mass-negligible-membership-or-high-index-open",
+      "support_membership_flag_assumed": true,
+      "universal_coherent_trim_compiled": false
+    },
+    {
+      "all_register_support_mass_log2_upper_bound": -12635.335255817738,
+      "copy_count": 363,
+      "degree": 128,
+      "group_order_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "half_degree": 64,
+      "high_index_subgroups_classified": false,
+      "index_gap_epsilon": 0.05,
+      "low_index_outlier_mass_information_theoretically_negligible": true,
+      "maximum_low_index_decimal": "10322194593073376741596121298652602423615500966007213428211073487440517647282346783663425193105997",
+      "one_register_support_mass_upper_bound": 3.324466729478716e-11,
+      "status": "low-index-subgroup-support-mass-negligible-membership-or-high-index-open",
+      "support_membership_flag_assumed": true,
+      "universal_coherent_trim_compiled": false
+    }
+  ],
+  "status": "subgroup-support-index-dichotomy-proved-high-index-classification-open",
+  "summary": "Generalized subgroup outliers to induced-representation supports and proved a low-index mass dichotomy, isolating high-index incidence and support-membership complexity as the next obstruction.",
+  "theorem": {
+    "arbitrary_support_membership_compiled": false,
+    "conjugate_average": "The sum over distinct conjugates acts by [G:N_G(L)]m_lambda/d_lambda.",
+    "conjugate_span": "The span of conjugate L-invariants is the right-isotypic support {lambda: dim(V_lambda^L)>0}.",
+    "exact_conjugate_support_theorem_proved": true,
+    "general_support_dimension_bound_proved": true,
+    "high_index_subgroups_classified": false,
+    "implementation_boundary": "A coherent trim requires efficient recognition of whether dim(V_lambda^L)>0; this is not supplied for arbitrary L.",
+    "incident_witness": "D_L=Inv_R(L) minus global-common vectors gives frame Rayleigh quotient at least |C intersect L| at every copy count.",
+    "low_index_all_register_mass_bound_proved": true,
+    "low_index_mass_bound": "For [G:L]<=|G|^(1/2-epsilon), the all-register alternative mass is at most [2|G|^-epsilon/(1-2a/|G|)]^k.",
+    "post_all_strata_frame_norm_bounded": false,
+    "residual_frontier": "Classify high-index high-incidence S_n subgroups, hard support-membership families, and non-subgroup spectral outliers.",
+    "status": "subgroup-support-index-dichotomy-proved-high-index-classification-open",
+    "support_dimension_bound": "dim(E_L)/|G|<= [G:L]/sqrt(|G|), from Frobenius reciprocity.",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "family": "Arbitrary proper subgroups L<=S_(2m).",
+    "outlier": "Exact fixed-point-free class incidence C intersect L.",
+    "outside_scope": "Efficient arbitrary support recognition, high-index subgroup classification, residual norm, and algorithmic decoding.",
+    "support": "Fourier support of Ind_L^G(1)."
+  }
+}

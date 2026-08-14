@@ -1,0 +1,364 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The strict 1/15 value is an unexplained dense-matrix artifact.",
+      "resolution": "Its mathematical object is now identified: a block of the unitary change between row-first and column-first coupling schemes.",
+      "resolved": true
+    },
+    {
+      "objection": "The quantum-marginal dichotomy immediately proves natural disjoint cores are exponentially orthogonal.",
+      "resolution": "False. The published polynomial equivalence fixes the maximum row count, while natural Plancherel row counts grow as sqrt(n).",
+      "resolved": true
+    },
+    {
+      "objection": "A large Weyl upper bound proves the true coefficient is large.",
+      "resolution": "False. It proves only that the published proof loses exponential control; the true source-weighted coefficient may still be small.",
+      "resolved": true
+    },
+    {
+      "objection": "Quantum-marginal compatibility supplies a coherent circuit.",
+      "resolution": "False. It is an asymptotic magnitude criterion, not a basis or recoupling compiler.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "coherent_generalized_recoupling_compiled": false,
+    "dimension_uniform_plancherel_recoupling_bound_proved": false,
+    "disjoint_core_is_generalized_recoupling_block": true,
+    "fixed_row_quantum_marginal_dichotomy_literature_linked": true,
+    "natural_source_marginal_compatibility_classified": false,
+    "projector_product_recoupling_norm_identity_verified": true,
+    "published_fixed_row_proof_covers_plancherel_regime": false,
+    "reason": "The correct asymptotic object is identified, but the available quantum-marginal theorem loses control at sqrt(n) row growth and does not provide a coherent transform.",
+    "speedup_claim_allowed": false,
+    "uniform_residual_pair_quotient_gap_proved": false
+  },
+  "created_at": "2026-08-13T18:48:40.378555+00:00",
+  "falsifiers_triggered": [
+    "Disjoint grid contraction is not an unnamed scalar correction; it is 3nj data.",
+    "Fixed-row recoupling asymptotics cannot be silently applied at sqrt(n) rows.",
+    "Quantum-marginal magnitude criteria do not compile recoupling circuits."
+  ],
+  "headline_metrics": {
+    "coherent_generalized_recoupling_compiler_count": 0,
+    "dimension_uniform_plancherel_recoupling_theorem_count": 0,
+    "fixed_row_tail_prefactor_to_suppression_ratio": 0.012185657596717383,
+    "generalized_recoupling_identity_control_count": 2,
+    "generalized_recoupling_identity_failure_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "plancherel_row_tail_prefactor_to_suppression_ratio": 16.566629747250538,
+    "source_weighted_marginal_feasibility_theorem_count": 0
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "christandl-sahinoglu-walter-2016",
+      "title": "Recoupling coefficients and quantum entropies",
+      "url": "https://arxiv.org/abs/1210.0463",
+      "use": "Projector-product/recoupling norm identity, fixed-row quantum-marginal asymptotic dichotomy, and generalized 3nj extension."
+    },
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "keyl-werner-2001",
+      "title": "Estimating the spectrum of a density operator",
+      "url": "https://arxiv.org/abs/quant-ph/0102027",
+      "use": "Spectrum-estimation large-deviation input and explicit fixed-dimension dependence through Weyl representation dimensions."
+    }
+  ],
+  "prefactor_scaling": [
+    {
+      "asymptotic_prefactor_order": "Theta(log n)",
+      "asymptotically_absorbable_into_exp_minus_omega_n": true,
+      "fixed_row_recoupling_theorem_directly_applies": true,
+      "growth_regime": "fixed-four-rows",
+      "maximum_constant_distance_suppression_log2": 92.33248261689366,
+      "n": 64,
+      "prefactor_to_maximum_suppression_ratio": 0.39557884736026,
+      "row_count": 4,
+      "status": "published-fixed-row-proof-exponentially-informative",
+      "weyl_dimension_upper_bound_log2": 36.524777047502035,
+      "weyl_pair_count_exponent": 6
+    },
+    {
+      "asymptotic_prefactor_order": "Theta(sqrt(n) log n)=o(n)",
+      "asymptotically_absorbable_into_exp_minus_omega_n": true,
+      "fixed_row_recoupling_theorem_directly_applies": false,
+      "growth_regime": "fourth-root-rows",
+      "maximum_constant_distance_suppression_log2": 92.33248261689366,
+      "n": 64,
+      "prefactor_to_maximum_suppression_ratio": 0.1970949665339515,
+      "row_count": 3,
+      "status": "published-fixed-row-proof-exponentially-informative",
+      "weyl_dimension_upper_bound_log2": 18.198267571373314,
+      "weyl_pair_count_exponent": 3
+    },
+    {
+      "asymptotic_prefactor_order": "Theta(n)",
+      "asymptotically_absorbable_into_exp_minus_omega_n": false,
+      "fixed_row_recoupling_theorem_directly_applies": false,
+      "growth_regime": "sqrt-n-over-log-n-rows",
+      "maximum_constant_distance_suppression_log2": 92.33248261689366,
+      "n": 64,
+      "prefactor_to_maximum_suppression_ratio": 0.39557884736026,
+      "row_count": 4,
+      "status": "published-prefactor-audit-not-exponentially-informative",
+      "weyl_dimension_upper_bound_log2": 36.524777047502035,
+      "weyl_pair_count_exponent": 6
+    },
+    {
+      "asymptotic_prefactor_order": "Theta(n log n)",
+      "asymptotically_absorbable_into_exp_minus_omega_n": false,
+      "fixed_row_recoupling_theorem_directly_applies": false,
+      "growth_regime": "plancherel-two-sqrt-n-rows",
+      "maximum_constant_distance_suppression_log2": 92.33248261689366,
+      "n": 64,
+      "prefactor_to_maximum_suppression_ratio": 8.216299940013528,
+      "row_count": 16,
+      "status": "published-prefactor-audit-not-exponentially-informative",
+      "weyl_dimension_upper_bound_log2": 758.6313713864835,
+      "weyl_pair_count_exponent": 120
+    },
+    {
+      "asymptotic_prefactor_order": "Theta(log n)",
+      "asymptotically_absorbable_into_exp_minus_omega_n": true,
+      "fixed_row_recoupling_theorem_directly_applies": true,
+      "growth_regime": "fixed-four-rows",
+      "maximum_constant_distance_suppression_log2": 369.3299304675746,
+      "n": 256,
+      "prefactor_to_maximum_suppression_ratio": 0.13032847572692643,
+      "row_count": 4,
+      "status": "published-fixed-row-proof-exponentially-informative",
+      "weyl_dimension_upper_bound_log2": 48.13420687817073,
+      "weyl_pair_count_exponent": 6
+    },
+    {
+      "asymptotic_prefactor_order": "Theta(sqrt(n) log n)=o(n)",
+      "asymptotically_absorbable_into_exp_minus_omega_n": true,
+      "fixed_row_recoupling_theorem_directly_applies": false,
+      "growth_regime": "fourth-root-rows",
+      "maximum_constant_distance_suppression_log2": 369.3299304675746,
+      "n": 256,
+      "prefactor_to_maximum_suppression_ratio": 0.13032847572692643,
+      "row_count": 4,
+      "status": "published-fixed-row-proof-exponentially-informative",
+      "weyl_dimension_upper_bound_log2": 48.13420687817073,
+      "weyl_pair_count_exponent": 6
+    },
+    {
+      "asymptotic_prefactor_order": "Theta(n)",
+      "asymptotically_absorbable_into_exp_minus_omega_n": false,
+      "fixed_row_recoupling_theorem_directly_applies": false,
+      "growth_regime": "sqrt-n-over-log-n-rows",
+      "maximum_constant_distance_suppression_log2": 369.3299304675746,
+      "n": 256,
+      "prefactor_to_maximum_suppression_ratio": 0.45709076045208225,
+      "row_count": 7,
+      "status": "published-prefactor-audit-not-exponentially-informative",
+      "weyl_dimension_upper_bound_log2": 168.81729877513834,
+      "weyl_pair_count_exponent": 21
+    },
+    {
+      "asymptotic_prefactor_order": "Theta(n log n)",
+      "asymptotically_absorbable_into_exp_minus_omega_n": false,
+      "fixed_row_recoupling_theorem_directly_applies": false,
+      "growth_regime": "plancherel-two-sqrt-n-rows",
+      "maximum_constant_distance_suppression_log2": 369.3299304675746,
+      "n": 256,
+      "prefactor_to_maximum_suppression_ratio": 10.971985930263395,
+      "row_count": 32,
+      "status": "published-prefactor-audit-not-exponentially-informative",
+      "weyl_dimension_upper_bound_log2": 4052.2828007153867,
+      "weyl_pair_count_exponent": 496
+    },
+    {
+      "asymptotic_prefactor_order": "Theta(log n)",
+      "asymptotically_absorbable_into_exp_minus_omega_n": true,
+      "fixed_row_recoupling_theorem_directly_applies": true,
+      "growth_regime": "fixed-four-rows",
+      "maximum_constant_distance_suppression_log2": 1477.3197218702985,
+      "n": 1024,
+      "prefactor_to_maximum_suppression_ratio": 0.04063693620711979,
+      "row_count": 4,
+      "status": "published-fixed-row-proof-exponentially-informative",
+      "weyl_dimension_upper_bound_log2": 60.03374729516327,
+      "weyl_pair_count_exponent": 6
+    },
+    {
+      "asymptotic_prefactor_order": "Theta(sqrt(n) log n)=o(n)",
+      "asymptotically_absorbable_into_exp_minus_omega_n": true,
+      "fixed_row_recoupling_theorem_directly_applies": false,
+      "growth_regime": "fourth-root-rows",
+      "maximum_constant_distance_suppression_log2": 1477.3197218702985,
+      "n": 1024,
+      "prefactor_to_maximum_suppression_ratio": 0.10162081173667503,
+      "row_count": 6,
+      "status": "published-fixed-row-proof-exponentially-informative",
+      "weyl_dimension_upper_bound_log2": 150.12642933105872,
+      "weyl_pair_count_exponent": 15
+    },
+    {
+      "asymptotic_prefactor_order": "Theta(n)",
+      "asymptotically_absorbable_into_exp_minus_omega_n": false,
+      "fixed_row_recoupling_theorem_directly_applies": false,
+      "growth_regime": "sqrt-n-over-log-n-rows",
+      "maximum_constant_distance_suppression_log2": 1477.3197218702985,
+      "n": 1024,
+      "prefactor_to_maximum_suppression_ratio": 0.5289441428143585,
+      "row_count": 13,
+      "status": "published-prefactor-audit-not-exponentially-informative",
+      "weyl_dimension_upper_bound_log2": 781.4196139474316,
+      "weyl_pair_count_exponent": 78
+    },
+    {
+      "asymptotic_prefactor_order": "Theta(n log n)",
+      "asymptotically_absorbable_into_exp_minus_omega_n": false,
+      "fixed_row_recoupling_theorem_directly_applies": false,
+      "growth_regime": "plancherel-two-sqrt-n-rows",
+      "maximum_constant_distance_suppression_log2": 1477.3197218702985,
+      "n": 1024,
+      "prefactor_to_maximum_suppression_ratio": 13.765689841475028,
+      "row_count": 64,
+      "status": "published-prefactor-audit-not-exponentially-informative",
+      "weyl_dimension_upper_bound_log2": 20336.325087960682,
+      "weyl_pair_count_exponent": 2016
+    },
+    {
+      "asymptotic_prefactor_order": "Theta(log n)",
+      "asymptotically_absorbable_into_exp_minus_omega_n": true,
+      "fixed_row_recoupling_theorem_directly_applies": true,
+      "growth_regime": "fixed-four-rows",
+      "maximum_constant_distance_suppression_log2": 5909.278887481194,
+      "n": 4096,
+      "prefactor_to_maximum_suppression_ratio": 0.012185657596717383,
+      "row_count": 4,
+      "status": "published-fixed-row-proof-exponentially-informative",
+      "weyl_dimension_upper_bound_log2": 72.00844916635685,
+      "weyl_pair_count_exponent": 6
+    },
+    {
+      "asymptotic_prefactor_order": "Theta(sqrt(n) log n)=o(n)",
+      "asymptotically_absorbable_into_exp_minus_omega_n": true,
+      "fixed_row_recoupling_theorem_directly_applies": false,
+      "growth_regime": "fourth-root-rows",
+      "maximum_constant_distance_suppression_log2": 5909.278887481194,
+      "n": 4096,
+      "prefactor_to_maximum_suppression_ratio": 0.056873068074174055,
+      "row_count": 8,
+      "status": "published-fixed-row-proof-exponentially-informative",
+      "weyl_dimension_upper_bound_log2": 336.0788204369975,
+      "weyl_pair_count_exponent": 28
+    },
+    {
+      "asymptotic_prefactor_order": "Theta(n)",
+      "asymptotically_absorbable_into_exp_minus_omega_n": false,
+      "fixed_row_recoupling_theorem_directly_applies": false,
+      "growth_regime": "sqrt-n-over-log-n-rows",
+      "maximum_constant_distance_suppression_log2": 5909.278887481194,
+      "n": 4096,
+      "prefactor_to_maximum_suppression_ratio": 0.5141141407940254,
+      "row_count": 23,
+      "status": "published-prefactor-audit-not-exponentially-informative",
+      "weyl_dimension_upper_bound_log2": 3038.0438379496686,
+      "weyl_pair_count_exponent": 253
+    },
+    {
+      "asymptotic_prefactor_order": "Theta(n log n)",
+      "asymptotically_absorbable_into_exp_minus_omega_n": false,
+      "fixed_row_recoupling_theorem_directly_applies": false,
+      "growth_regime": "plancherel-two-sqrt-n-rows",
+      "maximum_constant_distance_suppression_log2": 5909.278887481194,
+      "n": 4096,
+      "prefactor_to_maximum_suppression_ratio": 16.566629747250538,
+      "row_count": 128,
+      "status": "published-prefactor-audit-not-exponentially-informative",
+      "weyl_dimension_upper_bound_log2": 97896.83540214552,
+      "weyl_pair_count_exponent": 8128
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "write_explicit_grid_3nj_channel_formula",
+      "resolution": "Index all row/column parity sectors, Kronecker multiplicity spaces, and normalized recoupling maps without dense ambient bases.",
+      "resolved": false
+    },
+    {
+      "obligation": "dimension_uniform_plancherel_recoupling_bound",
+      "resolution": "Replace worst-case Weyl prefactors by a theorem uniform for Theta(sqrt n)-row Plancherel diagrams, or prove this impossible.",
+      "resolved": false
+    },
+    {
+      "obligation": "source_weighted_quantum_marginal_feasibility",
+      "resolution": "Determine whether naturally weighted grid spectra lie inside, near, or a constant distance outside the compatible marginal region.",
+      "resolved": false
+    },
+    {
+      "obligation": "coherent_generalized_recoupling_compiler",
+      "resolution": "No polynomial circuit for the source-relevant 3nj blocks is known.",
+      "resolved": false
+    }
+  ],
+  "recoupling_controls": [
+    {
+      "column_basis_isometry_residual": 1.1102230246251565e-16,
+      "column_coupled_dimension": 81,
+      "control_id": "S6-GRID-RECOUPLING-1",
+      "first_pair": [
+        0,
+        15
+      ],
+      "generalized_recoupling_identity_verified": true,
+      "n": 6,
+      "projector_recoupling_norm_residual": 0.0,
+      "recoupling_block_rank": 1,
+      "recoupling_operator_norm": 0.06666666666666668,
+      "row_basis_isometry_residual": 2.220446049250313e-16,
+      "row_column_basis_are_two_coupling_schemes": true,
+      "row_coupled_dimension": 1,
+      "row_projector_product_norm": 0.06666666666666668,
+      "second_pair": [
+        5,
+        6
+      ],
+      "status": "disjoint-core-is-generalized-recoupling-block",
+      "target_partition": [
+        6
+      ]
+    },
+    {
+      "column_basis_isometry_residual": 4.440892098500626e-16,
+      "column_coupled_dimension": 1,
+      "control_id": "S6-GRID-RECOUPLING-2",
+      "first_pair": [
+        0,
+        15
+      ],
+      "generalized_recoupling_identity_verified": true,
+      "n": 6,
+      "projector_recoupling_norm_residual": 0.0,
+      "recoupling_block_rank": 1,
+      "recoupling_operator_norm": 0.06666666666666668,
+      "row_basis_isometry_residual": 2.220446049250313e-16,
+      "row_column_basis_are_two_coupling_schemes": true,
+      "row_coupled_dimension": 1,
+      "row_projector_product_norm": 0.06666666666666668,
+      "second_pair": [
+        5,
+        9
+      ],
+      "status": "disjoint-core-is-generalized-recoupling-block",
+      "target_partition": [
+        6
+      ]
+    }
+  ],
+  "status": "grid-recoupling-identified-plancherel-marginal-boundary-open",
+  "summary": "Identified disjoint pair-core overlap as a generalized symmetric-group recoupling block and proved that the published fixed-row quantum-marginal asymptotics do not directly control the natural Plancherel row regime.",
+  "theorem_contract": {
+    "dimension_scope": "The theorem's polynomial factors depend on maximum row count d; Weyl dimension contributes at most (n+d)^(d(d-1)/2).",
+    "exact_identification": "Disjoint pair cores are row-coupled and column-coupled one-dimensional output sectors of one membership grid; their basis overlap is a generalized symmetric-group recoupling block.",
+    "natural_source_boundary": "At d=Theta(sqrt n), this proof overhead has log Theta(n log n), larger than its constant-distance Theta(n) suppression.",
+    "norm_identity": "For coupled-basis isometries B_row,B_column, ||P_row P_column||=||B_row^*B_column||.",
+    "published_asymptotic": "At uniformly bounded row count, recoupling blocks are polynomially large on compatible quantum-marginal spectra and exponentially small at constant distance from compatibility.",
+    "scope": "The exact recoupling identification is finite-dimensional. The asymptotic dichotomy is imported only in its published fixed-row scope and is not claimed for Plancherel partitions."
+  }
+}

@@ -1,0 +1,573 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Biane already proves Kronecker tensor products become Plancherel.",
+      "resolution": "That is a limit-shape statement for one decomposition. Fine labels can retain Theta(sqrt(n)) entropy inside the common limit shape.",
+      "resolved": true
+    },
+    {
+      "objection": "Asymptotic freeness of Jucys--Murphy elements directly applies.",
+      "resolution": "The located theorem concerns outer products in S_(2n); even fixed-degree same-n freeness would still require projector-resolution control.",
+      "resolved": true
+    },
+    {
+      "objection": "One exact real-valued moment can encode every partition.",
+      "resolution": "The relevant class-sum eigenvalues are integers with polynomial range at fixed moved support, so their joint range is explicitly bounded.",
+      "resolved": true
+    },
+    {
+      "objection": "Support-three features distinguish almost every partition at the small n accessible to exact computation.",
+      "resolution": "This finite injectivity is transient: two integer coordinates have only polynomial joint range, whereas p(n)=exp(Theta(sqrt(n))).",
+      "resolved": true
+    },
+    {
+      "objection": "Large unresolved entropy proves natural Racah MI survives.",
+      "resolution": "It does not. It only proves that coarse-feature independence cannot upper-bound the hidden conditional dependence.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "cited_fixed_degree_free_probability_results_reach_projector_resolution": false,
+    "classical_separation_proved": false,
+    "coarse_feature_independence_sufficient_for_label_independence": false,
+    "fixed_support_central_feature_count_bound_proved": true,
+    "natural_racah_mi_survives_proved": false,
+    "natural_racah_mi_vanishes_proved": false,
+    "reason": "The cited fixed-degree asymptotics do not resolve fine partition projectors, and unresolved fibers can hide large dependence in principle.",
+    "speedup_claim_allowed": false,
+    "sub_log_squared_support_leaves_plancherel_entropy_unresolved_proved": true
+  },
+  "created_at": "2026-08-14T01:14:04.365887+00:00",
+  "falsifiers_triggered": [
+    "Typical Plancherel limit shape does not identify a partition label.",
+    "Fixed-degree moment factorization does not imply independence of the full central spectral labels.",
+    "Outer-product Jucys--Murphy freeness is not a same-n Kronecker recoupling theorem."
+  ],
+  "finite_controls": [
+    {
+      "central_feature_count": 1,
+      "distinct_feature_vector_count": 9,
+      "entropy_chain_residual_bits": 5.551115123125783e-17,
+      "feature_count_bound_verified": true,
+      "feature_vector_count_upper": 108,
+      "maximum_class_sum_integrality_residual": 0,
+      "maximum_feature_fiber_size": 2,
+      "maximum_moved_support": 2,
+      "n": 6,
+      "partition_count": 11,
+      "plancherel_conditional_entropy_bits": 0.25066947739144524,
+      "plancherel_feature_entropy_bits": 2.4797772892163867,
+      "plancherel_partition_entropy_bits": 2.730446766607832,
+      "status": "finite-central-feature-resolution-bound-verified"
+    },
+    {
+      "central_feature_count": 2,
+      "distinct_feature_vector_count": 11,
+      "entropy_chain_residual_bits": 0.0,
+      "feature_count_bound_verified": true,
+      "feature_vector_count_upper": 419904,
+      "maximum_class_sum_integrality_residual": 0,
+      "maximum_feature_fiber_size": 1,
+      "maximum_moved_support": 3,
+      "n": 6,
+      "partition_count": 11,
+      "plancherel_conditional_entropy_bits": 0.0,
+      "plancherel_feature_entropy_bits": 2.730446766607832,
+      "plancherel_partition_entropy_bits": 2.730446766607832,
+      "status": "finite-central-feature-resolution-bound-verified"
+    },
+    {
+      "central_feature_count": 1,
+      "distinct_feature_vector_count": 19,
+      "entropy_chain_residual_bits": 1.1102230246251565e-16,
+      "feature_count_bound_verified": true,
+      "feature_vector_count_upper": 192,
+      "maximum_class_sum_integrality_residual": 0,
+      "maximum_feature_fiber_size": 2,
+      "maximum_moved_support": 2,
+      "n": 8,
+      "partition_count": 22,
+      "plancherel_conditional_entropy_bits": 0.3850851144547519,
+      "plancherel_feature_entropy_bits": 3.161017352584881,
+      "plancherel_partition_entropy_bits": 3.546102467039633,
+      "status": "finite-central-feature-resolution-bound-verified"
+    },
+    {
+      "central_feature_count": 2,
+      "distinct_feature_vector_count": 22,
+      "entropy_chain_residual_bits": 0.0,
+      "feature_count_bound_verified": true,
+      "feature_vector_count_upper": 2359296,
+      "maximum_class_sum_integrality_residual": 0,
+      "maximum_feature_fiber_size": 1,
+      "maximum_moved_support": 3,
+      "n": 8,
+      "partition_count": 22,
+      "plancherel_conditional_entropy_bits": 0.0,
+      "plancherel_feature_entropy_bits": 3.546102467039633,
+      "plancherel_partition_entropy_bits": 3.546102467039633,
+      "status": "finite-central-feature-resolution-bound-verified"
+    },
+    {
+      "central_feature_count": 1,
+      "distinct_feature_vector_count": 31,
+      "entropy_chain_residual_bits": 2.220446049250313e-16,
+      "feature_count_bound_verified": true,
+      "feature_vector_count_upper": 300,
+      "maximum_class_sum_integrality_residual": 0,
+      "maximum_feature_fiber_size": 3,
+      "maximum_moved_support": 2,
+      "n": 10,
+      "partition_count": 42,
+      "plancherel_conditional_entropy_bits": 0.6452923390971963,
+      "plancherel_feature_entropy_bits": 3.619621706911206,
+      "plancherel_partition_entropy_bits": 4.2649140460084025,
+      "status": "finite-central-feature-resolution-bound-verified"
+    },
+    {
+      "central_feature_count": 2,
+      "distinct_feature_vector_count": 42,
+      "entropy_chain_residual_bits": 0.0,
+      "feature_count_bound_verified": true,
+      "feature_vector_count_upper": 9000000,
+      "maximum_class_sum_integrality_residual": 0,
+      "maximum_feature_fiber_size": 1,
+      "maximum_moved_support": 3,
+      "n": 10,
+      "partition_count": 42,
+      "plancherel_conditional_entropy_bits": 0.0,
+      "plancherel_feature_entropy_bits": 4.2649140460084025,
+      "plancherel_partition_entropy_bits": 4.2649140460084025,
+      "status": "finite-central-feature-resolution-bound-verified"
+    },
+    {
+      "central_feature_count": 1,
+      "distinct_feature_vector_count": 45,
+      "entropy_chain_residual_bits": 0.0,
+      "feature_count_bound_verified": true,
+      "feature_vector_count_upper": 432,
+      "maximum_class_sum_integrality_residual": 0,
+      "maximum_feature_fiber_size": 5,
+      "maximum_moved_support": 2,
+      "n": 12,
+      "partition_count": 77,
+      "plancherel_conditional_entropy_bits": 0.8347843258209124,
+      "plancherel_feature_entropy_bits": 4.090579662514483,
+      "plancherel_partition_entropy_bits": 4.925363988335396,
+      "status": "finite-central-feature-resolution-bound-verified"
+    },
+    {
+      "central_feature_count": 2,
+      "distinct_feature_vector_count": 77,
+      "entropy_chain_residual_bits": 0.0,
+      "feature_count_bound_verified": true,
+      "feature_vector_count_upper": 26873856,
+      "maximum_class_sum_integrality_residual": 0,
+      "maximum_feature_fiber_size": 1,
+      "maximum_moved_support": 3,
+      "n": 12,
+      "partition_count": 77,
+      "plancherel_conditional_entropy_bits": 0.0,
+      "plancherel_feature_entropy_bits": 4.925363988335396,
+      "plancherel_partition_entropy_bits": 4.925363988335396,
+      "status": "finite-central-feature-resolution-bound-verified"
+    },
+    {
+      "central_feature_count": 1,
+      "distinct_feature_vector_count": 87,
+      "entropy_chain_residual_bits": 5.551115123125783e-16,
+      "feature_count_bound_verified": true,
+      "feature_vector_count_upper": 675,
+      "maximum_class_sum_integrality_residual": 0,
+      "maximum_feature_fiber_size": 6,
+      "maximum_moved_support": 2,
+      "n": 15,
+      "partition_count": 176,
+      "plancherel_conditional_entropy_bits": 0.9905112594720059,
+      "plancherel_feature_entropy_bits": 4.872866356176506,
+      "plancherel_partition_entropy_bits": 5.863377615648512,
+      "status": "finite-central-feature-resolution-bound-verified"
+    },
+    {
+      "central_feature_count": 2,
+      "distinct_feature_vector_count": 173,
+      "entropy_chain_residual_bits": 2.1510571102112408e-16,
+      "feature_count_bound_verified": true,
+      "feature_vector_count_upper": 102515625,
+      "maximum_class_sum_integrality_residual": 0,
+      "maximum_feature_fiber_size": 2,
+      "maximum_moved_support": 3,
+      "n": 15,
+      "partition_count": 176,
+      "plancherel_conditional_entropy_bits": 0.025815926986779696,
+      "plancherel_feature_entropy_bits": 5.837561688661732,
+      "plancherel_partition_entropy_bits": 5.863377615648512,
+      "status": "finite-central-feature-resolution-bound-verified"
+    },
+    {
+      "central_feature_count": 1,
+      "distinct_feature_vector_count": 193,
+      "entropy_chain_residual_bits": 2.220446049250313e-16,
+      "feature_count_bound_verified": true,
+      "feature_vector_count_upper": 1200,
+      "maximum_class_sum_integrality_residual": 0,
+      "maximum_feature_fiber_size": 15,
+      "maximum_moved_support": 2,
+      "n": 20,
+      "partition_count": 627,
+      "plancherel_conditional_entropy_bits": 1.6835211375650132,
+      "plancherel_feature_entropy_bits": 5.567737363466545,
+      "plancherel_partition_entropy_bits": 7.2512585010315584,
+      "status": "finite-central-feature-resolution-bound-verified"
+    },
+    {
+      "central_feature_count": 2,
+      "distinct_feature_vector_count": 610,
+      "entropy_chain_residual_bits": 5.551115123125783e-17,
+      "feature_count_bound_verified": true,
+      "feature_vector_count_upper": 576000000,
+      "maximum_class_sum_integrality_residual": 0,
+      "maximum_feature_fiber_size": 2,
+      "maximum_moved_support": 3,
+      "n": 20,
+      "partition_count": 627,
+      "plancherel_conditional_entropy_bits": 0.014958971823324008,
+      "plancherel_feature_entropy_bits": 7.236299529208234,
+      "plancherel_partition_entropy_bits": 7.2512585010315584,
+      "status": "finite-central-feature-resolution-bound-verified"
+    }
+  ],
+  "headline_metrics": {
+    "central_feature_resolution_boundary_theorem_count": 1,
+    "exact_feature_count_identity_control_count": 15,
+    "finite_control_failure_count": 0,
+    "finite_feature_control_count": 12,
+    "fixed_degree_free_probability_suffices_for_label_mi_count": 0,
+    "growing_degree_projector_approximation_theorem_count": 0,
+    "hidden_fiber_countermodel_count": 4,
+    "natural_racah_mi_lower_bound_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "hidden_fiber_countermodels": [
+    {
+      "exact_hidden_fiber_countermodel_verified": true,
+      "expected_hidden_mutual_information_bits": 3.0,
+      "full_label_mutual_information_bits": 3.0,
+      "hidden_information_residual_bits": 0.0,
+      "hidden_label_count_per_feature": 8,
+      "maximum_label_marginal_residual": 0.0,
+      "maximum_visible_joint_independence_residual": 0.0,
+      "status": "independent-central-features-can-hide-label-mutual-information",
+      "total_label_count": 8,
+      "visible_feature_count": 1,
+      "visible_feature_mutual_information_bits": 0.0
+    },
+    {
+      "exact_hidden_fiber_countermodel_verified": true,
+      "expected_hidden_mutual_information_bits": 3.0,
+      "full_label_mutual_information_bits": 3.0,
+      "hidden_information_residual_bits": 0.0,
+      "hidden_label_count_per_feature": 8,
+      "maximum_label_marginal_residual": 0.0,
+      "maximum_visible_joint_independence_residual": 0.0,
+      "status": "independent-central-features-can-hide-label-mutual-information",
+      "total_label_count": 16,
+      "visible_feature_count": 2,
+      "visible_feature_mutual_information_bits": 0.0
+    },
+    {
+      "exact_hidden_fiber_countermodel_verified": true,
+      "expected_hidden_mutual_information_bits": 4.0,
+      "full_label_mutual_information_bits": 4.0,
+      "hidden_information_residual_bits": 0.0,
+      "hidden_label_count_per_feature": 16,
+      "maximum_label_marginal_residual": 0.0,
+      "maximum_visible_joint_independence_residual": 0.0,
+      "status": "independent-central-features-can-hide-label-mutual-information",
+      "total_label_count": 64,
+      "visible_feature_count": 4,
+      "visible_feature_mutual_information_bits": 0.0
+    },
+    {
+      "exact_hidden_fiber_countermodel_verified": true,
+      "expected_hidden_mutual_information_bits": 5.0,
+      "full_label_mutual_information_bits": 5.0,
+      "hidden_information_residual_bits": 0.0,
+      "hidden_label_count_per_feature": 32,
+      "maximum_label_marginal_residual": 0.0,
+      "maximum_visible_joint_independence_residual": 0.0,
+      "status": "independent-central-features-can-hide-label-mutual-information",
+      "total_label_count": 256,
+      "visible_feature_count": 8,
+      "visible_feature_mutual_information_bits": 0.0
+    }
+  ],
+  "literature_boundary": [
+    {
+      "boundary": "Kronecker tensor-product components concentrate at the Plancherel/semicircle limit shape, but the theorem controls fixed moments and typical shapes, not fine pair-channel projector overlap.",
+      "id": "biane-symmetric-groups-free-probability-1998",
+      "primary_source": true,
+      "url": "https://doi.org/10.1006/aima.1998.1745"
+    },
+    {
+      "boundary": "Approximate character factorization gives concentration of component shapes; it does not provide uniform degree growing to the partition-projector resolution scale.",
+      "id": "biane-approximate-factorization-2001",
+      "primary_source": true,
+      "url": "https://arxiv.org/abs/math/0006111"
+    },
+    {
+      "boundary": "Fixed-order Jucys--Murphy cumulant expansions do not control the full central spectral sigma-algebra.",
+      "id": "sniady-free-probability-large-symmetric-groups-2003",
+      "primary_source": true,
+      "url": "https://arxiv.org/abs/math/0304275"
+    },
+    {
+      "boundary": "The proved asymptotic freeness explains outer products induced to S_(2n), not the same-S_n Kronecker Racah associator studied here.",
+      "id": "jankowski-asymptotic-freeness-jucys-murphy-2012",
+      "primary_source": true,
+      "url": "https://arxiv.org/abs/1202.0888"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "prove_low_support_central_feature_cardinality_bound",
+      "resolution": "Each central scalar is an integer in a polynomial interval and T_s=p(s)-1 exactly by telescoping p(m)-p(m-1).",
+      "resolved": true
+    },
+    {
+      "obligation": "show_fixed_feature_independence_does_not_upper_bound_label_mi",
+      "resolution": "The exact shared-hidden-label countermodel has product visible features and arbitrary hidden MI.",
+      "resolved": true
+    },
+    {
+      "obligation": "extend_mixed_moment_control_to_projector_resolution_scale",
+      "resolution": "Need uniform character/Jucys estimates for support or polynomial degree at least comparable to the log-squared boundary, plus approximation error strong enough for entropy.",
+      "resolved": false
+    },
+    {
+      "obligation": "control_information_inside_central_feature_fibers",
+      "resolution": "An alternative proof may bypass high-degree moments by showing natural recoupling is conditionally delocalized within every physically relevant fiber.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "central_feature_count": 1,
+      "exact_feature_count_identity_verified": true,
+      "feature_capacity_can_resolve_plancherel_entropy_proved": false,
+      "feature_log_capacity_over_sqrt_n": 2.2872333921469172,
+      "log2_feature_vector_count_upper": 10.228818690495881,
+      "log2_partition_count": 9.29232163280204,
+      "maximum_moved_support": 2,
+      "n": 20,
+      "status": "low-support-central-feature-algebra-has-unresolved-projector-fibers",
+      "support_is_below_log_squared_boundary": false,
+      "support_is_fixed": true
+    },
+    {
+      "central_feature_count": 2,
+      "exact_feature_count_identity_verified": true,
+      "feature_capacity_can_resolve_plancherel_entropy_proved": false,
+      "feature_log_capacity_over_sqrt_n": 6.507291787100695,
+      "log2_feature_vector_count_upper": 29.10149357076649,
+      "log2_partition_count": 9.29232163280204,
+      "maximum_moved_support": 3,
+      "n": 20,
+      "status": "low-support-central-feature-algebra-has-unresolved-projector-fibers",
+      "support_is_below_log_squared_boundary": false,
+      "support_is_fixed": true
+    },
+    {
+      "central_feature_count": 4,
+      "exact_feature_count_identity_verified": true,
+      "feature_capacity_can_resolve_plancherel_entropy_proved": false,
+      "feature_log_capacity_over_sqrt_n": 16.880233579815112,
+      "log2_feature_vector_count_upper": 75.49069952108243,
+      "log2_partition_count": 9.29232163280204,
+      "maximum_moved_support": 4,
+      "n": 20,
+      "status": "low-support-central-feature-algebra-has-unresolved-projector-fibers",
+      "support_is_below_log_squared_boundary": false,
+      "support_is_fixed": true
+    },
+    {
+      "central_feature_count": 1,
+      "exact_feature_count_identity_verified": true,
+      "feature_capacity_can_resolve_plancherel_entropy_proved": false,
+      "feature_log_capacity_over_sqrt_n": 1.8204711399698146,
+      "log2_feature_vector_count_upper": 12.872674880270605,
+      "log2_partition_count": 17.639807021765453,
+      "maximum_moved_support": 2,
+      "n": 50,
+      "status": "low-support-central-feature-algebra-has-unresolved-projector-fibers",
+      "support_is_below_log_squared_boundary": false,
+      "support_is_fixed": true
+    },
+    {
+      "central_feature_count": 2,
+      "exact_feature_count_identity_verified": true,
+      "feature_capacity_can_resolve_plancherel_entropy_proved": false,
+      "feature_log_capacity_over_sqrt_n": 5.237265873472181,
+      "log2_feature_vector_count_upper": 37.033062140090664,
+      "log2_partition_count": 17.639807021765453,
+      "maximum_moved_support": 3,
+      "n": 50,
+      "status": "low-support-central-feature-algebra-has-unresolved-projector-fibers",
+      "support_is_below_log_squared_boundary": false,
+      "support_is_fixed": true
+    },
+    {
+      "central_feature_count": 4,
+      "exact_feature_count_identity_verified": true,
+      "feature_capacity_can_resolve_plancherel_entropy_proved": false,
+      "feature_log_capacity_over_sqrt_n": 13.667178934009463,
+      "log2_feature_vector_count_upper": 96.64154903928022,
+      "log2_partition_count": 17.639807021765453,
+      "maximum_moved_support": 4,
+      "n": 50,
+      "status": "low-support-central-feature-algebra-has-unresolved-projector-fibers",
+      "support_is_below_log_squared_boundary": false,
+      "support_is_fixed": true
+    },
+    {
+      "central_feature_count": 1,
+      "exact_feature_count_identity_verified": true,
+      "feature_capacity_can_resolve_plancherel_entropy_proved": false,
+      "feature_log_capacity_over_sqrt_n": 1.4872674880270604,
+      "log2_feature_vector_count_upper": 14.872674880270605,
+      "log2_partition_count": 27.50574042373752,
+      "maximum_moved_support": 2,
+      "n": 100,
+      "status": "low-support-central-feature-algebra-has-unresolved-projector-fibers",
+      "support_is_below_log_squared_boundary": true,
+      "support_is_fixed": true
+    },
+    {
+      "central_feature_count": 2,
+      "exact_feature_count_identity_verified": true,
+      "feature_capacity_can_resolve_plancherel_entropy_proved": false,
+      "feature_log_capacity_over_sqrt_n": 4.3033062140090665,
+      "log2_feature_vector_count_upper": 43.033062140090664,
+      "log2_partition_count": 27.50574042373752,
+      "maximum_moved_support": 3,
+      "n": 100,
+      "status": "low-support-central-feature-algebra-has-unresolved-projector-fibers",
+      "support_is_below_log_squared_boundary": false,
+      "support_is_fixed": true
+    },
+    {
+      "central_feature_count": 4,
+      "exact_feature_count_identity_verified": true,
+      "feature_capacity_can_resolve_plancherel_entropy_proved": false,
+      "feature_log_capacity_over_sqrt_n": 11.264154903928022,
+      "log2_feature_vector_count_upper": 112.64154903928022,
+      "log2_partition_count": 27.50574042373752,
+      "maximum_moved_support": 4,
+      "n": 100,
+      "status": "low-support-central-feature-algebra-has-unresolved-projector-fibers",
+      "support_is_below_log_squared_boundary": false,
+      "support_is_fixed": true
+    },
+    {
+      "central_feature_count": 1,
+      "exact_feature_count_identity_verified": true,
+      "feature_capacity_can_resolve_plancherel_entropy_proved": false,
+      "feature_log_capacity_over_sqrt_n": 0.6804124552712318,
+      "log2_feature_vector_count_upper": 21.516531070045332,
+      "log2_partition_count": 104.24649559796923,
+      "maximum_moved_support": 2,
+      "n": 1000,
+      "status": "low-support-central-feature-algebra-has-unresolved-projector-fibers",
+      "support_is_below_log_squared_boundary": true,
+      "support_is_fixed": true
+    },
+    {
+      "central_feature_count": 2,
+      "exact_feature_count_identity_verified": true,
+      "feature_capacity_can_resolve_plancherel_entropy_proved": false,
+      "feature_log_capacity_over_sqrt_n": 1.9911164507313444,
+      "log2_feature_vector_count_upper": 62.964630709414834,
+      "log2_partition_count": 104.24649559796923,
+      "maximum_moved_support": 3,
+      "n": 1000,
+      "status": "low-support-central-feature-algebra-has-unresolved-projector-fibers",
+      "support_is_below_log_squared_boundary": true,
+      "support_is_fixed": true
+    },
+    {
+      "central_feature_count": 4,
+      "exact_feature_count_identity_verified": true,
+      "feature_capacity_can_resolve_plancherel_entropy_proved": false,
+      "feature_log_capacity_over_sqrt_n": 5.242815981840449,
+      "log2_feature_vector_count_upper": 165.792398557478,
+      "log2_partition_count": 104.24649559796923,
+      "maximum_moved_support": 4,
+      "n": 1000,
+      "status": "low-support-central-feature-algebra-has-unresolved-projector-fibers",
+      "support_is_below_log_squared_boundary": true,
+      "support_is_fixed": true
+    },
+    {
+      "central_feature_count": 1,
+      "exact_feature_count_identity_verified": true,
+      "feature_capacity_can_resolve_plancherel_entropy_proved": false,
+      "feature_log_capacity_over_sqrt_n": 0.2816038725982006,
+      "log2_feature_vector_count_upper": 28.160387259820055,
+      "log2_partition_count": 353.9790620168626,
+      "maximum_moved_support": 2,
+      "n": 10000,
+      "status": "low-support-central-feature-algebra-has-unresolved-projector-fibers",
+      "support_is_below_log_squared_boundary": true,
+      "support_is_fixed": true
+    },
+    {
+      "central_feature_count": 2,
+      "exact_feature_count_identity_verified": true,
+      "feature_capacity_can_resolve_plancherel_entropy_proved": false,
+      "feature_log_capacity_over_sqrt_n": 0.82896199278739,
+      "log2_feature_vector_count_upper": 82.896199278739,
+      "log2_partition_count": 353.9790620168626,
+      "maximum_moved_support": 3,
+      "n": 10000,
+      "status": "low-support-central-feature-algebra-has-unresolved-projector-fibers",
+      "support_is_below_log_squared_boundary": true,
+      "support_is_fixed": true
+    },
+    {
+      "central_feature_count": 4,
+      "exact_feature_count_identity_verified": true,
+      "feature_capacity_can_resolve_plancherel_entropy_proved": false,
+      "feature_log_capacity_over_sqrt_n": 2.189432480756758,
+      "log2_feature_vector_count_upper": 218.9432480756758,
+      "log2_partition_count": 353.9790620168626,
+      "maximum_moved_support": 4,
+      "n": 10000,
+      "status": "low-support-central-feature-algebra-has-unresolved-projector-fibers",
+      "support_is_below_log_squared_boundary": true,
+      "support_is_fixed": true
+    }
+  ],
+  "status": "free-probability-route-requires-growing-degree-projector-resolution",
+  "summary": "Proved that fixed-support central asymptotics leave superlogarithmic partition entropy unresolved and cannot alone decide Racah label MI.",
+  "theorem": {
+    "class_sum_feature_bound": "|range(F_s)|<=(3n^s)^T_s",
+    "constant_fraction_resolution_boundary": "The same conclusion holds when limsup s_n/(ln n)^2 < 3/(8 pi^2).",
+    "exact_feature_count_identity": "T_s=p(s)-1",
+    "logical_insufficiency_countermodel": "A,B independent visible features and a shared hidden Z give I(A;B)=0 but I((A,Z);(B,Z))=H(Z).",
+    "low_support_resolution_boundary": "H_Plancherel(lambda|F_s_n)=Theta(sqrt(n)) for s_n=o((log n)^2)",
+    "natural_racah_mi_lower_bound_proved": false,
+    "plancherel_conditional_entropy_identity": "H_Plancherel(lambda|F_s)=H_Plancherel(lambda)-H(F_s)",
+    "status": "fixed-degree-free-probability-insufficient-without-projector-resolution"
+  },
+  "theorem_contract": {
+    "applicability_boundary": "fixed-degree mixed moments control only the coarse F_s algebra, not individual partition projectors",
+    "asymptotic_derivation": "Hardy-Ramanujan gives log T_s=pi sqrt(2s/3)+O(log s); therefore H(F_s)=o(sqrt(n)) if s=o((ln n)^2), and more generally if limsup s/(ln n)^2<3/(8 pi^2).",
+    "central_feature": "integer class-sum eigenvalues for every nonidentity cycle type moving <=s points",
+    "class_size_bound": "|C|<=n^s",
+    "feature_count": "T_s=sum_(m=2)^s p_no_fixed_points(m)",
+    "feature_count_identity": "T_s=sum_(m=2)^s (p(m)-p(m-1))=p(s)-1",
+    "plancherel_entropy_input": "H_Plancherel(lambda)=Theta(sqrt(n)) from maximal irrep dimension asymptotics",
+    "scope": "logical insufficiency theorem; no lower bound on the natural Racah coupling"
+  }
+}

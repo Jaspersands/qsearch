@@ -1,0 +1,418 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Correct left and right rank profiles imply joint mixing.",
+      "resolution": "The identity-block orthogonal countermodel has exact Plancherel marginals but collision p(n).",
+      "resolved": true
+    },
+    {
+      "objection": "Unitarity makes squared block masses independent.",
+      "resolution": "Unitarity fixes only transportation marginals; orthostochastic couplings can be maximally aligned.",
+      "resolved": true
+    },
+    {
+      "objection": "Fixed-row 6j asymptotics cover typical partitions.",
+      "resolution": "Their row-dependent polynomial factors are uncontrolled when the number of rows grows on the Plancherel scale.",
+      "resolved": true
+    },
+    {
+      "objection": "A full-label collision bound proves non-Haar syndrome decay.",
+      "resolution": "It would close only the coarse rank-transfer obstruction; the conditional Racah cumulants remain a separate target.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "canonical_trimmed_sixway_subpolynomial_proved": false,
+    "classical_separation_proved": false,
+    "coarse_trimmed_moment_bounded_by_full_collision_proved": true,
+    "fixed_row_recoupling_theorem_applies_to_plancherel_shapes": false,
+    "irreducible_racah_cmi_vanishes_proved": false,
+    "natural_plancherel_racah_collision_subpolynomial_proved": false,
+    "physical_likelihood_recoupling_collision_factorization_proved": true,
+    "physical_rank_profile_mixes_proved": false,
+    "rank_marginals_suffice_for_joint_recoupling_mixing": false,
+    "reason": "The exact target is now a weighted collision norm of natural 6j block masses, but no growing-row delocalization theorem is known.",
+    "speedup_claim_allowed": false
+  },
+  "countermodel_scaling": [
+    {
+      "abstract_orthogonal_dimension": 120,
+      "block_rank_sum": 120,
+      "collision_inflation": 7.0,
+      "collision_is_n_to_the_o_one": false,
+      "exact_plancherel_column_marginals": true,
+      "exact_plancherel_row_marginals": true,
+      "identity_block_coupling_collision": 7.0,
+      "independent_coupling_collision": 1.0,
+      "log_collision_over_log_n": 1.2090619551221675,
+      "n": 5,
+      "partition_count": 7,
+      "status": "exact-marginals-and-unitarity-permit-partition-count-collision"
+    },
+    {
+      "abstract_orthogonal_dimension": 3628800,
+      "block_rank_sum": 3628800,
+      "collision_inflation": 42.0,
+      "collision_is_n_to_the_o_one": false,
+      "exact_plancherel_column_marginals": true,
+      "exact_plancherel_row_marginals": true,
+      "identity_block_coupling_collision": 42.0,
+      "independent_coupling_collision": 1.0,
+      "log_collision_over_log_n": 1.6232492903979003,
+      "n": 10,
+      "partition_count": 42,
+      "status": "exact-marginals-and-unitarity-permit-partition-count-collision"
+    },
+    {
+      "abstract_orthogonal_dimension": 2432902008176640000,
+      "block_rank_sum": 2432902008176640000,
+      "collision_inflation": 627.0,
+      "collision_is_n_to_the_o_one": false,
+      "exact_plancherel_column_marginals": true,
+      "exact_plancherel_row_marginals": true,
+      "identity_block_coupling_collision": 627.0,
+      "independent_coupling_collision": 1.0,
+      "log_collision_over_log_n": 2.150040775503512,
+      "n": 20,
+      "partition_count": 627,
+      "status": "exact-marginals-and-unitarity-permit-partition-count-collision"
+    },
+    {
+      "abstract_orthogonal_dimension": 265252859812191058636308480000000,
+      "block_rank_sum": 265252859812191058636308480000000,
+      "collision_inflation": 5604.0,
+      "collision_is_n_to_the_o_one": false,
+      "exact_plancherel_column_marginals": true,
+      "exact_plancherel_row_marginals": true,
+      "identity_block_coupling_collision": 5604.0,
+      "independent_coupling_collision": 1.0,
+      "log_collision_over_log_n": 2.5377050899759417,
+      "n": 30,
+      "partition_count": 5604,
+      "status": "exact-marginals-and-unitarity-permit-partition-count-collision"
+    },
+    {
+      "abstract_orthogonal_dimension": 815915283247897734345611269596115894272000000000,
+      "block_rank_sum": 815915283247897734345611269596115894272000000000,
+      "collision_inflation": 37338.0,
+      "collision_is_n_to_the_o_one": false,
+      "exact_plancherel_column_marginals": true,
+      "exact_plancherel_row_marginals": true,
+      "identity_block_coupling_collision": 37338.0,
+      "independent_coupling_collision": 1.0,
+      "log_collision_over_log_n": 2.8539200005726477,
+      "n": 40,
+      "partition_count": 37338,
+      "status": "exact-marginals-and-unitarity-permit-partition-count-collision"
+    },
+    {
+      "abstract_orthogonal_dimension": 30414093201713378043612608166064768844377641568960512000000000000,
+      "block_rank_sum": 30414093201713378043612608166064768844377641568960512000000000000,
+      "collision_inflation": 204226.0,
+      "collision_is_n_to_the_o_one": false,
+      "exact_plancherel_column_marginals": true,
+      "exact_plancherel_row_marginals": true,
+      "identity_block_coupling_collision": 204226.0,
+      "independent_coupling_collision": 1.0,
+      "log_collision_over_log_n": 3.1254883945704415,
+      "n": 50,
+      "partition_count": 204226,
+      "status": "exact-marginals-and-unitarity-permit-partition-count-collision"
+    }
+  ],
+  "created_at": "2026-08-14T00:00:32.855724+00:00",
+  "falsifiers_triggered": [
+    "Exact Plancherel marginals do not imply a product recoupling coupling.",
+    "Orthogonal recoupling can be collision-localized despite perfect rank marginals.",
+    "Bounded-row recoupling asymptotics cannot be silently applied to VKLS shapes."
+  ],
+  "finite_channel_controls": [
+    {
+      "control_id": "S4-STANDARD-OUTER",
+      "coupling_probability_sum": 1.0,
+      "exact_recoupling_collision_channel_verified": true,
+      "maximum_column_marginal_residual": 3.3306690738754696e-16,
+      "maximum_likelihood_factorization_residual": 3.552713678800501e-15,
+      "maximum_negative_block_mass": 0.0,
+      "maximum_row_marginal_residual": 1.6653345369377348e-16,
+      "minimum_intermediate_dimension_exclusive": 1,
+      "n": 4,
+      "outer_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "rank_independent_collision_benchmark": 0.5017361111111112,
+      "recoupling_dependence_collision": 0.5586419753086412,
+      "retained_direct_likelihood_second_moment": 0.93644261545496,
+      "retained_recoupling_collision": 0.666666666666666,
+      "retained_reduced_likelihood_second_moment": 0.9364426154549601,
+      "retained_second_moment_identity_residual": 1.1102230246251565e-16,
+      "status": "physical-likelihood-is-exact-recoupling-collision-density",
+      "total_multiplicity_density": 1.1851851851851851,
+      "total_multiplicity_dimension": 4
+    },
+    {
+      "control_id": "S5-STANDARD-OUTER",
+      "coupling_probability_sum": 1.0000000000000002,
+      "exact_recoupling_collision_channel_verified": true,
+      "maximum_column_marginal_residual": 2.220446049250313e-16,
+      "maximum_likelihood_factorization_residual": 1.7763568394002505e-15,
+      "maximum_negative_block_mass": 0.0,
+      "maximum_row_marginal_residual": 2.220446049250313e-16,
+      "minimum_intermediate_dimension_exclusive": 1,
+      "n": 5,
+      "outer_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "rank_independent_collision_benchmark": 0.9546918402777778,
+      "recoupling_dependence_collision": 0.5567611882716057,
+      "retained_direct_likelihood_second_moment": 4.0957031250000036,
+      "retained_recoupling_collision": 1.1650000000000005,
+      "retained_reduced_likelihood_second_moment": 4.095703125000002,
+      "retained_second_moment_identity_residual": 1.7763568394002505e-15,
+      "status": "physical-likelihood-is-exact-recoupling-collision-density",
+      "total_multiplicity_density": 1.875,
+      "total_multiplicity_dimension": 4
+    },
+    {
+      "control_id": "S5-BALANCED-OUTER",
+      "coupling_probability_sum": 1.0,
+      "exact_recoupling_collision_channel_verified": true,
+      "maximum_column_marginal_residual": 3.0531133177191805e-16,
+      "maximum_likelihood_factorization_residual": 1.4210854715202004e-14,
+      "maximum_negative_block_mass": 0.0,
+      "maximum_row_marginal_residual": 3.608224830031759e-16,
+      "minimum_intermediate_dimension_exclusive": 1,
+      "n": 5,
+      "outer_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "rank_independent_collision_benchmark": 0.6020610425240055,
+      "recoupling_dependence_collision": 1.4041558641975305,
+      "retained_direct_likelihood_second_moment": 1.5539097600000003,
+      "retained_recoupling_collision": 1.1709027777777774,
+      "retained_reduced_likelihood_second_moment": 1.5539097599999994,
+      "retained_second_moment_identity_residual": 8.881784197001252e-16,
+      "status": "physical-likelihood-is-exact-recoupling-collision-density",
+      "total_multiplicity_density": 1.152,
+      "total_multiplicity_dimension": 6
+    },
+    {
+      "control_id": "S5-MIXED-OUTER",
+      "coupling_probability_sum": 0.9999999999999999,
+      "exact_recoupling_collision_channel_verified": true,
+      "maximum_column_marginal_residual": 2.498001805406602e-16,
+      "maximum_likelihood_factorization_residual": 1.7763568394002505e-15,
+      "maximum_negative_block_mass": 0.0,
+      "maximum_row_marginal_residual": 1.1102230246251565e-16,
+      "minimum_intermediate_dimension_exclusive": 1,
+      "n": 5,
+      "outer_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "rank_independent_collision_benchmark": 1.6309418402777778,
+      "recoupling_dependence_collision": 2.0245347415123454,
+      "retained_direct_likelihood_second_moment": 4.2750562500000004,
+      "retained_recoupling_collision": 2.9687890625,
+      "retained_reduced_likelihood_second_moment": 4.27505625,
+      "retained_second_moment_identity_residual": 8.881784197001252e-16,
+      "status": "physical-likelihood-is-exact-recoupling-collision-density",
+      "total_multiplicity_density": 1.2,
+      "total_multiplicity_dimension": 4
+    }
+  ],
+  "full_to_coarse_controls": [
+    {
+      "coarse_graining_slack": 0.0,
+      "coarse_transpose_orbit_trimmed_second_moment": 0.0,
+      "full_collision_decomposition_residual": 0.0,
+      "full_partition_trimmed_second_moment": 0.0,
+      "minimum_dimension_exclusive": 1,
+      "n": 3,
+      "recoupling_collision_decomposition": 0.0,
+      "status": "coarse-trimmed-moment-contracts-below-full-racah-collision",
+      "transpose_orbit_data_processing_verified": true
+    },
+    {
+      "coarse_graining_slack": 0.2962962962962963,
+      "coarse_transpose_orbit_trimmed_second_moment": 1.0123456790123457,
+      "full_collision_decomposition_residual": 2.220446049250313e-16,
+      "full_partition_trimmed_second_moment": 1.308641975308642,
+      "minimum_dimension_exclusive": 1,
+      "n": 4,
+      "recoupling_collision_decomposition": 1.3086419753086422,
+      "status": "coarse-trimmed-moment-contracts-below-full-racah-collision",
+      "transpose_orbit_data_processing_verified": true
+    },
+    {
+      "coarse_graining_slack": -6.938893903907228e-18,
+      "coarse_transpose_orbit_trimmed_second_moment": 0.04938271604938272,
+      "full_collision_decomposition_residual": 1.3877787807814457e-17,
+      "full_partition_trimmed_second_moment": 0.04938271604938271,
+      "minimum_dimension_exclusive": 2,
+      "n": 4,
+      "recoupling_collision_decomposition": 0.0493827160493827,
+      "status": "coarse-trimmed-moment-contracts-below-full-racah-collision",
+      "transpose_orbit_data_processing_verified": true
+    },
+    {
+      "coarse_graining_slack": 0.6845959104938273,
+      "coarse_transpose_orbit_trimmed_second_moment": 1.1437523726851855,
+      "full_collision_decomposition_residual": 3.774758283725532e-15,
+      "full_partition_trimmed_second_moment": 1.8283482831790128,
+      "minimum_dimension_exclusive": 1,
+      "n": 5,
+      "recoupling_collision_decomposition": 1.8283482831790165,
+      "status": "coarse-trimmed-moment-contracts-below-full-racah-collision",
+      "transpose_orbit_data_processing_verified": true
+    },
+    {
+      "coarse_graining_slack": 0.02689382716049385,
+      "coarse_transpose_orbit_trimmed_second_moment": 0.16027970679012352,
+      "full_collision_decomposition_residual": 1.3877787807814457e-16,
+      "full_partition_trimmed_second_moment": 0.18717353395061737,
+      "minimum_dimension_exclusive": 4,
+      "n": 5,
+      "recoupling_collision_decomposition": 0.18717353395061723,
+      "status": "coarse-trimmed-moment-contracts-below-full-racah-collision",
+      "transpose_orbit_data_processing_verified": true
+    },
+    {
+      "coarse_graining_slack": 0.0,
+      "coarse_transpose_orbit_trimmed_second_moment": 4.822530864197528e-05,
+      "full_collision_decomposition_residual": 0.0,
+      "full_partition_trimmed_second_moment": 4.822530864197528e-05,
+      "minimum_dimension_exclusive": 5,
+      "n": 5,
+      "recoupling_collision_decomposition": 4.822530864197528e-05,
+      "status": "coarse-trimmed-moment-contracts-below-full-racah-collision",
+      "transpose_orbit_data_processing_verified": true
+    }
+  ],
+  "headline_metrics": {
+    "finite_channel_control_count": 4,
+    "finite_control_failure_count": 0,
+    "finite_trim_control_count": 6,
+    "full_to_coarse_trim_transfer_theorem_count": 1,
+    "natural_plancherel_racah_delocalization_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "physical_rank_mixing_theorem_count": 0,
+    "rank_marginal_sufficiency_counterexample_count": 6,
+    "recoupling_collision_factorization_theorem_count": 1
+  },
+  "literature_boundary": [
+    {
+      "applicable": false,
+      "boundary": "Its polynomial norm equivalence and quantum-marginal asymptotics depend on a bounded maximal row count; Plancherel rows grow.",
+      "id": "christandl-sahinoglu-walter-recoupling-2016",
+      "url": "https://arxiv.org/abs/1210.0463"
+    },
+    {
+      "applicable": true,
+      "boundary": "Large Plancherel-shaped Kronecker multiplicities show that high irrep dimension alone cannot force sparse recoupling blocks.",
+      "id": "pak-panova-yeliussizov-largest-kronecker-2018",
+      "url": "https://arxiv.org/abs/1804.04693"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "factor_physical_likelihood_through_recoupling_coupling",
+      "resolution": "Racah block masses, unitarity marginals, and Plancherel weights give equation (4) exactly.",
+      "resolved": true
+    },
+    {
+      "obligation": "transfer_full_trimmed_collision_to_coarse_orbit_target",
+      "resolution": "Conditional Jensen under transpose-orbit aggregation contracts the orbit-invariant trimmed second moment.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_natural_plancherel_racah_collision_delocalization",
+      "resolution": "Bound E[Z^2 C_D(pi)] by n^o(1), or bound retained positive likelihood information directly if this Renyi norm has spikes.",
+      "resolved": false
+    },
+    {
+      "obligation": "extend_recoupling_asymptotics_to_growing_row_shapes",
+      "resolution": "Existing fixed-row quantum-marginal asymptotics do not cover VKLS/Plancherel diagrams.",
+      "resolved": false
+    }
+  ],
+  "status": "rank-target-reduced-to-growing-row-racah-collision-delocalization",
+  "summary": "Factored the physical likelihood through a Racah coupling and proved that rank marginals and unitarity alone cannot control its collision norm.",
+  "theorem": {
+    "coarse_graining_inequality": "M_D^coarse<=M_D^full",
+    "fixed_row_asymptotics_applicable_to_plancherel_shapes": false,
+    "likelihood_factorization": "L=Z*pi(mu,nu)/(q_mu q_nu)",
+    "missing_natural_recoupling_condition": "Plancherel-weighted collision delocalization of natural squared 6j blocks",
+    "rank_marginals_sufficient": false,
+    "status": "canonical-rank-target-is-natural-racah-collision-delocalization",
+    "trimmed_second_moment_identity": "M_D^full=E_(q^4)[1_outer Z^2 sum_(mu,nu retained) pi(mu,nu)^2/(q_mu q_nu)]"
+  },
+  "theorem_contract": {
+    "coarse_transfer": "M_D^coarse<=M_D^full",
+    "coupling": "pi(mu,nu)=||R_(mu,nu)||_HS^2/M with exact Kronecker-rank marginals",
+    "likelihood": "L=Z*pi(mu,nu)/(q_mu q_nu)",
+    "remaining_target": "Plancherel-weighted collision delocalization of natural squared 6j blocks",
+    "scope": "The reduction is exact. It supplies no all-n delocalization estimate for natural Plancherel-shaped symmetric-group recoupling.",
+    "trimmed_second_moment": "M_D^full=E_(q^4)[1_outer Z^2 sum_(mu,nu retained) pi(mu,nu)^2/(q_mu q_nu)]"
+  }
+}

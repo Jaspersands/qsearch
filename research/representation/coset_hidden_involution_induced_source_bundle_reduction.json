@@ -1,0 +1,275 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False for covariance organization: the induced bundle and G Fourier transform absorb branch permutation/cocycles directly.",
+      "challenge": "Pair-polar paths must be globally glued first.",
+      "resolved": true
+    },
+    {
+      "answer": "False already on regular S_3: spectra {1,-1,-1} and {1,1,-1} differ.",
+      "challenge": "Canonical pair holonomy is the stabilizer cocycle.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It exposes the multiplicity intertwiners but does not invert, support-project, or physically access them.",
+      "challenge": "Induced-source Fourier organization compiles the PGM polar.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "branch_labeled_induced_fourier_transform_available": true,
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "full_orbit_synthesis_polar_compiled": false,
+    "global_covariance_requires_pair_polar_gluing": false,
+    "orbit_source_is_induced_bundle": true,
+    "pair_polar_holonomy_equals_stabilizer_cocycle": false,
+    "physical_to_branch_source_lift_compiled": false,
+    "reason": "Induction resolves branch covariance without pairwise gluing, but the source-specific multiplicity intertwiners and the costly physical-to-source normalization remain uncompiled.",
+    "speedup_claim_allowed": false,
+    "uniform_multiplicity_support_projector_constructed": false
+  },
+  "created_at": "2026-08-13T16:15:29.892420+00:00",
+  "falsifiers_triggered": [
+    "Canonical pair-polar transport is not the natural induced-bundle cocycle.",
+    "Global branch covariance does not require pathwise pair-polar gluing.",
+    "An efficient branch-labeled induced Fourier transform does not imply an efficient physical support measurement."
+  ],
+  "finite_controls": [
+    {
+      "branch_count": 3,
+      "copy_count": 1,
+      "fiber_dimension": 3,
+      "group_order": 6,
+      "induced_source_normal_form_verified": true,
+      "maximum_synthesis_equivariance_residual": 2.719479911021037e-16,
+      "observed_sign_source_multiplicity": 1,
+      "observed_sign_synthesis_multiplicity_rank": 1,
+      "observed_source_character_identity": 8.999999999999998,
+      "observed_source_character_three_cycle": 0.0,
+      "observed_source_character_transposition": 0.9999999999999998,
+      "observed_standard_source_multiplicity": 3,
+      "observed_standard_synthesis_multiplicity_rank": 1,
+      "observed_total_synthesis_rank": 5,
+      "observed_trivial_source_multiplicity": 2,
+      "observed_trivial_synthesis_multiplicity_rank": 2,
+      "predicted_sign_source_multiplicity": 1,
+      "predicted_sign_synthesis_multiplicity_rank": 1,
+      "predicted_source_character_identity": 9,
+      "predicted_source_character_three_cycle": 0,
+      "predicted_source_character_transposition": 1,
+      "predicted_standard_source_multiplicity": 3,
+      "predicted_standard_synthesis_multiplicity_rank": 1,
+      "predicted_total_synthesis_rank": 5,
+      "predicted_trivial_source_multiplicity": 2,
+      "predicted_trivial_synthesis_multiplicity_rank": 2,
+      "source_dimension": 9,
+      "stabilizer_order": 2,
+      "status": "exact-induced-source-and-synthesis-blocks-verified"
+    },
+    {
+      "branch_count": 3,
+      "copy_count": 2,
+      "fiber_dimension": 9,
+      "group_order": 6,
+      "induced_source_normal_form_verified": true,
+      "maximum_synthesis_equivariance_residual": 7.691850745534255e-16,
+      "observed_sign_source_multiplicity": 4,
+      "observed_sign_synthesis_multiplicity_rank": 4,
+      "observed_source_character_identity": 26.999999999999993,
+      "observed_source_character_three_cycle": 0.0,
+      "observed_source_character_transposition": 0.9999999999999996,
+      "observed_standard_source_multiplicity": 9,
+      "observed_standard_synthesis_multiplicity_rank": 6,
+      "observed_total_synthesis_rank": 21,
+      "observed_trivial_source_multiplicity": 5,
+      "observed_trivial_synthesis_multiplicity_rank": 5,
+      "predicted_sign_source_multiplicity": 4,
+      "predicted_sign_synthesis_multiplicity_rank": 4,
+      "predicted_source_character_identity": 27,
+      "predicted_source_character_three_cycle": 0,
+      "predicted_source_character_transposition": 1,
+      "predicted_standard_source_multiplicity": 9,
+      "predicted_standard_synthesis_multiplicity_rank": 6,
+      "predicted_total_synthesis_rank": 21,
+      "predicted_trivial_source_multiplicity": 5,
+      "predicted_trivial_synthesis_multiplicity_rank": 5,
+      "source_dimension": 27,
+      "stabilizer_order": 2,
+      "status": "exact-induced-source-and-synthesis-blocks-verified"
+    },
+    {
+      "branch_count": 3,
+      "copy_count": 3,
+      "fiber_dimension": 27,
+      "group_order": 6,
+      "induced_source_normal_form_verified": true,
+      "maximum_synthesis_equivariance_residual": 1.0877919644084146e-15,
+      "observed_sign_source_multiplicity": 13,
+      "observed_sign_synthesis_multiplicity_rank": 13,
+      "observed_source_character_identity": 80.99999999999994,
+      "observed_source_character_three_cycle": 0.0,
+      "observed_source_character_transposition": 0.9999999999999993,
+      "observed_standard_source_multiplicity": 27,
+      "observed_standard_synthesis_multiplicity_rank": 23,
+      "observed_total_synthesis_rank": 73,
+      "observed_trivial_source_multiplicity": 14,
+      "observed_trivial_synthesis_multiplicity_rank": 14,
+      "predicted_sign_source_multiplicity": 13,
+      "predicted_sign_synthesis_multiplicity_rank": 13,
+      "predicted_source_character_identity": 81,
+      "predicted_source_character_three_cycle": 0,
+      "predicted_source_character_transposition": 1,
+      "predicted_standard_source_multiplicity": 27,
+      "predicted_standard_synthesis_multiplicity_rank": 23,
+      "predicted_total_synthesis_rank": 73,
+      "predicted_trivial_source_multiplicity": 14,
+      "predicted_trivial_synthesis_multiplicity_rank": 14,
+      "source_dimension": 81,
+      "stabilizer_order": 2,
+      "status": "exact-induced-source-and-synthesis-blocks-verified"
+    }
+  ],
+  "headline_metrics": {
+    "branch_covariance_fourier_transform_count": 1,
+    "exact_induced_source_control_count": 3,
+    "finite_control_failure_count": 0,
+    "frobenius_block_reduction_theorem_count": 1,
+    "multiplicity_polar_compiler_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "pair_connection_cocycle_distinction_count": 1,
+    "physical_to_source_analysis_compiler_count": 0
+  },
+  "pair_connection_control": {
+    "canonical_pair_holonomy_spectrum": [
+      -1,
+      -1,
+      1
+    ],
+    "control_verified": true,
+    "fiber_dimension": 3,
+    "pair_polar_connection_is_induced_bundle_cocycle": false,
+    "spectra_equal": false,
+    "stabilizer_cocycle_spectrum": [
+      -1,
+      1,
+      1
+    ],
+    "status": "pair-polar-connection-distinct-from-induced-cocycle"
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-INDUCED-MULTIPLICITY-BASIS",
+      "resolved": false,
+      "statement": "Compile a uniform basis for Hom_K(V_nu,R) and the natural multiplicity intertwiner S_nu in the k-copy S_n family."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-PHYSICAL-SOURCE-LIFT",
+      "resolved": false,
+      "statement": "Apply the branch-source analysis map to physical input without sqrt(M) amplification or equivalent normalization."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-INDUCED-POLAR",
+      "resolved": false,
+      "statement": "Compile the support/polar of every naturally occupied S_nu with polynomial precision and retained alternative mass."
+    }
+  ],
+  "scaling_records": [
+    {
+      "branch_covariance_fourier_transform_available": true,
+      "copy_count": 1,
+      "multiplicity_polar_compiled": false,
+      "physical_to_source_analysis_compiled": false,
+      "sign_source_multiplicity_decimal": "1",
+      "source_dimension_decimal": "9",
+      "standard_source_multiplicity_decimal": "3",
+      "standard_synthesis_kernel_multiplicity": 2,
+      "standard_synthesis_rank_decimal": "1",
+      "status": "branch-covariance-resolved-multiplicity-polar-open",
+      "total_synthesis_rank_decimal": "5",
+      "trivial_source_multiplicity_decimal": "2"
+    },
+    {
+      "branch_covariance_fourier_transform_available": true,
+      "copy_count": 2,
+      "multiplicity_polar_compiled": false,
+      "physical_to_source_analysis_compiled": false,
+      "sign_source_multiplicity_decimal": "4",
+      "source_dimension_decimal": "27",
+      "standard_source_multiplicity_decimal": "9",
+      "standard_synthesis_kernel_multiplicity": 3,
+      "standard_synthesis_rank_decimal": "6",
+      "status": "branch-covariance-resolved-multiplicity-polar-open",
+      "total_synthesis_rank_decimal": "21",
+      "trivial_source_multiplicity_decimal": "5"
+    },
+    {
+      "branch_covariance_fourier_transform_available": true,
+      "copy_count": 8,
+      "multiplicity_polar_compiled": false,
+      "physical_to_source_analysis_compiled": false,
+      "sign_source_multiplicity_decimal": "3280",
+      "source_dimension_decimal": "19683",
+      "standard_source_multiplicity_decimal": "6561",
+      "standard_synthesis_kernel_multiplicity": 9,
+      "standard_synthesis_rank_decimal": "6552",
+      "status": "branch-covariance-resolved-multiplicity-polar-open",
+      "total_synthesis_rank_decimal": "19665",
+      "trivial_source_multiplicity_decimal": "3281"
+    },
+    {
+      "branch_covariance_fourier_transform_available": true,
+      "copy_count": 32,
+      "multiplicity_polar_compiled": false,
+      "physical_to_source_analysis_compiled": false,
+      "sign_source_multiplicity_decimal": "926510094425920",
+      "source_dimension_decimal": "5559060566555523",
+      "standard_source_multiplicity_decimal": "1853020188851841",
+      "standard_synthesis_kernel_multiplicity": 33,
+      "standard_synthesis_rank_decimal": "1853020188851808",
+      "status": "branch-covariance-resolved-multiplicity-polar-open",
+      "total_synthesis_rank_decimal": "5559060566555457",
+      "trivial_source_multiplicity_decimal": "926510094425921"
+    },
+    {
+      "branch_covariance_fourier_transform_available": true,
+      "copy_count": 128,
+      "multiplicity_polar_compiled": false,
+      "physical_to_source_analysis_compiled": false,
+      "sign_source_multiplicity_decimal": "5895092288869291585760436430706259332839105796137920554548480",
+      "source_dimension_decimal": "35370553733215749514562618584237555997034634776827523327290883",
+      "standard_source_multiplicity_decimal": "11790184577738583171520872861412518665678211592275841109096961",
+      "standard_synthesis_kernel_multiplicity": 129,
+      "standard_synthesis_rank_decimal": "11790184577738583171520872861412518665678211592275841109096832",
+      "status": "branch-covariance-resolved-multiplicity-polar-open",
+      "total_synthesis_rank_decimal": "35370553733215749514562618584237555997034634776827523327290625",
+      "trivial_source_multiplicity_decimal": "5895092288869291585760436430706259332839105796137920554548481"
+    }
+  ],
+  "status": "induced-branch-covariance-resolved-multiplicity-polar-open",
+  "summary": "Identified the full orbit source as an induced homogeneous bundle, separated canonical pair holonomy from the stabilizer cocycle, and reduced global synthesis exactly to source-specific multiplicity intertwiners rather than a local chart-gluing problem.",
+  "theorem": {
+    "associated_bundle_identity": "The orbit source direct sum is the associated bundle G times_K ran(P_0), equivalently Ind_K^G ran(P_0).",
+    "branch_covariance_fourier_transform_constructed": true,
+    "frobenius_block_reduction_proved": true,
+    "frobenius_decomposition": "E=direct_sum_nu V_nu tensor Hom_K(V_nu,R), and S is identity on V_nu tensored with one multiplicity intertwiner S_nu.",
+    "full_orbit_synthesis_polar_compiled": false,
+    "induced_source_identity_proved": true,
+    "multiplicity_support_polar_compiled": false,
+    "operational_branch_transform": "Coset factorization, uniform K preparation, controlled K action, and the G QFT organize a branch-labeled induced source coherently.",
+    "pair_connection_distinction": "The canonical pair-polar connection is not the associated-bundle stabilizer cocycle: their one-copy S_3 spectra differ.",
+    "pair_polar_gluing_required_for_global_covariance": false,
+    "physical_to_source_analysis_compiled": false,
+    "s3_source_multiplicities": "The trivial, sign, and standard multiplicities are respectively (3^k+1)/2, (3^k-1)/2, and 3^k.",
+    "s3_synthesis_ranks": "Trivial and sign blocks are injective; the standard multiplicity rank is 3^k-(k+1), so the kernel is k+1 standard copies.",
+    "scope_limit": "The transform begins with a branch-labeled source. It neither lifts an unknown physical state into that source nor inverts S_nu.",
+    "status": "induced-branch-covariance-resolved-multiplicity-polar-open",
+    "synthesis_equivariance": "S((v_x))=sum_x v_x intertwines the induced source action with the physical G action.",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "constructive_assumptions": "Efficient coherent G/K factorization, uniform K preparation, controlled representation action, and G QFT.",
+    "orbit": "A finite G orbit of a projector P_0 with stabilizer K.",
+    "outside_scope": "Physical-to-source lifting, multiplicity support/polar, full-class normalization, dequantization, and hidden-element recovery.",
+    "source": "The direct sum of candidate ranges with its explicit branch label."
+  }
+}

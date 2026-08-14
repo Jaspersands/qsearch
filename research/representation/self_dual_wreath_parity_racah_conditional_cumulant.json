@@ -1,0 +1,258 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "All seven Walsh coefficients must be controlled separately.",
+      "resolution": "Irreducible rank-incompatible information depends on two quadratic cumulants; large linear coefficients can remain rank-compatible.",
+      "resolved": true
+    },
+    {
+      "objection": "The no-three-factor cube binomial characterizes the Markov family.",
+      "resolution": "It constrains only the product of conditional odds ratios; opposite nontrivial interactions can cancel in that product.",
+      "resolved": true
+    },
+    {
+      "objection": "Small raw determinants imply small conditional information.",
+      "resolution": "False without conditional-marginal lower control; equations (4)--(5) make the necessary denominators explicit.",
+      "resolved": true
+    },
+    {
+      "objection": "A nonzero determinant is already an efficient decoder.",
+      "resolution": "It is a statistical witness only. Source mass, precision, access model, coherent implementation, and classical baselines remain open.",
+      "resolved": true
+    }
+  ],
+  "channel_controls": [
+    {
+      "chi_square_formula_residual": 0.0,
+      "chi_square_upper_bound_bits": 0.0,
+      "conditional_k_masses": [
+        0.5,
+        0.5
+      ],
+      "control_id": "UNIFORM",
+      "determinant_chi_square_formula": 0.0,
+      "determinant_total_variation_formula": 0.0,
+      "direct_conditional_determinants": [
+        0.0,
+        0.0
+      ],
+      "exact_chi_square_from_markov_projection": 0.0,
+      "exact_conditional_cumulant_reduction_verified": true,
+      "exact_total_variation_from_markov_projection": 0.0,
+      "information_bound_violation": 0.0,
+      "irreducible_racah_cmi_bits": 0.0,
+      "maximum_walsh_determinant_residual": 0.0,
+      "pinsker_lower_bound_bits": 0.0,
+      "probabilities": [
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125
+      ],
+      "status": "racah-cmi-reduced-to-two-quadratic-walsh-cumulants",
+      "total_variation_formula_residual": 0.0,
+      "walsh_coefficients": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "walsh_conditional_determinants": [
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "chi_square_formula_residual": 0.0,
+      "chi_square_upper_bound_bits": 1.0,
+      "conditional_k_masses": [
+        0.5,
+        0.5
+      ],
+      "control_id": "EVEN-PARITY-SYNERGY",
+      "determinant_chi_square_formula": 1.0,
+      "determinant_total_variation_formula": 0.5,
+      "direct_conditional_determinants": [
+        0.0625,
+        -0.0625
+      ],
+      "exact_chi_square_from_markov_projection": 1.0,
+      "exact_conditional_cumulant_reduction_verified": true,
+      "exact_total_variation_from_markov_projection": 0.5,
+      "information_bound_violation": 0.0,
+      "irreducible_racah_cmi_bits": 1.0,
+      "maximum_walsh_determinant_residual": 0.0,
+      "pinsker_lower_bound_bits": 0.7213475204444817,
+      "probabilities": [
+        0.25,
+        0.0,
+        0.0,
+        0.25,
+        0.0,
+        0.25,
+        0.25,
+        0.0
+      ],
+      "status": "racah-cmi-reduced-to-two-quadratic-walsh-cumulants",
+      "total_variation_formula_residual": 0.0,
+      "walsh_coefficients": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "walsh_conditional_determinants": [
+        0.0625,
+        -0.0625
+      ]
+    },
+    {
+      "chi_square_formula_residual": 2.7755575615628914e-17,
+      "chi_square_upper_bound_bits": 0.3034871625914092,
+      "conditional_k_masses": [
+        0.5248447204968945,
+        0.47515527950310565
+      ],
+      "control_id": "S5-EXACT-RACAH-WITNESS",
+      "determinant_chi_square_formula": 0.23412383268724926,
+      "determinant_total_variation_formula": 0.2275717593443346,
+      "direct_conditional_determinants": [
+        -0.030380772346745886,
+        0.0265614752517264
+      ],
+      "exact_chi_square_from_markov_projection": 0.23412383268724923,
+      "exact_conditional_cumulant_reduction_verified": true,
+      "exact_total_variation_from_markov_projection": 0.2275717593443346,
+      "information_bound_violation": 0.0,
+      "irreducible_racah_cmi_bits": 0.20489807195522625,
+      "maximum_walsh_determinant_residual": 3.469446951953614e-18,
+      "pinsker_lower_bound_bits": 0.1494311947117468,
+      "probabilities": [
+        0.17468944099378883,
+        0.17468944099378883,
+        0.17468944099378883,
+        0.06288819875776398,
+        0.17468944099378883,
+        0.06288819875776398,
+        0.0007763975155279504,
+        0.17468944099378883
+      ],
+      "status": "racah-cmi-reduced-to-two-quadratic-walsh-cumulants",
+      "total_variation_formula_residual": 0.0,
+      "walsh_coefficients": [
+        1.0,
+        0.049689440993788817,
+        0.1739130434782609,
+        0.1739130434782609,
+        0.1739130434782609,
+        0.1739130434782609,
+        0.049689440993788817,
+        -0.3975155279503106
+      ],
+      "walsh_conditional_determinants": [
+        -0.03038077234674589,
+        0.0265614752517264
+      ]
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "canonical_conditional_cumulants_survive_proved": false,
+    "canonical_conditional_cumulants_vanish_proved": false,
+    "classical_separation_proved": false,
+    "coherent_extraction_implemented": false,
+    "conditional_marginal_denominators_controlled_asymptotically": false,
+    "cube_binomial_alone_sufficient": false,
+    "determinant_tv_chi_square_identities_proved": true,
+    "racah_cmi_reduced_to_two_quadratic_walsh_cumulants": true,
+    "reason": "The irreducible target is now two explicit quadratic parity-coset cumulants, but their source-weighted scale and denominator tails are open.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T22:25:58.210801+00:00",
+  "cube_insufficiency_counterexample": {
+    "conditional_mutual_information_bits": 0.019717701800905738,
+    "conditionally_independent": false,
+    "cube_identity_holds": true,
+    "exact_conditional_determinants": [
+      "-25/3528",
+      "-5/441"
+    ],
+    "exact_cube_binomial_defect": "0",
+    "exact_cube_insufficiency_verified": true,
+    "exact_probabilities": [
+      "5/168",
+      "5/84",
+      "5/56",
+      "5/42",
+      "25/168",
+      "5/28",
+      "5/24",
+      "1/6"
+    ],
+    "status": "cube-binomial-vanishes-but-conditional-minors-survive",
+    "strictly_positive": true
+  },
+  "falsifiers_triggered": [
+    "Large adaptive syndrome KL can be entirely rank-compatible and need not imply a Racah cumulant.",
+    "The even/odd cube binomial is necessary but not sufficient for conditional independence.",
+    "Raw determinant decay is meaningless without controlling small conditional marginals.",
+    "A valid asymptotic theorem must control both conditional slices, not one aggregate interaction."
+  ],
+  "headline_metrics": {
+    "S5_witness_irreducible_racah_cmi_bits": 0.20489807195522625,
+    "canonical_conditional_cumulant_bound_count": 0,
+    "conditional_cumulant_reduction_theorem_count": 1,
+    "cube_binomial_insufficiency_counterexample_count": 1,
+    "exact_tv_chi_square_formula_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "maximum_information_bound_violation": 0.0,
+    "maximum_walsh_determinant_residual": 3.469446951953614e-18,
+    "new_quantum_algorithm_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "express_irreducible_racah_information_in_parity_coset_coordinates",
+      "resolution": "Two explicit quadratic polynomials in the seven F_x/F_0 ratios are exactly the conditional determinants.",
+      "resolved": true
+    },
+    {
+      "obligation": "relate_quadratic_cumulants_to_information_distance",
+      "resolution": "Exact entrywise, TV, and chi-square identities plus Pinsker give two-sided information controls.",
+      "resolved": true
+    },
+    {
+      "obligation": "test_cube_binomial_as_sufficient_asymptotic_target",
+      "resolution": "Rejected by a strictly positive exact rational channel with zero cube defect and two nonzero conditional minors.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_source_weighted_normalized_conditional_cumulants",
+      "resolution": "Control both C_+ and C_- together with lower tails of the four conditional marginals on the canonical physical sector.",
+      "resolved": false
+    }
+  ],
+  "status": "irreducible-racah-information-reduced-to-two-conditional-cumulants",
+  "summary": "Reduced rank-incompatible Racah information to two quadratic Walsh cumulants with exact TV and chi-square formulas.",
+  "theorem_contract": {
+    "chi_square_identity": "chi2(p||Pi_M(p))=sum_k delta_k^2 P(K=k)/[P(0,k)P(1,k)P(0_h,k)P(1_h,k)].",
+    "conditional_minors": "delta_k=p_00k p_11k-p_01k p_10k; the channel is G--K--H Markov iff delta_0=delta_1=0.",
+    "entrywise_projection_residual": "p_ghk-Pi_M(p)_ghk=(-1)^(g+h)delta_k/P(K=k).",
+    "information_bounds": "2TV^2/ln2<=I(G;H|K)<=log2(1+chi2).",
+    "quadratic_walsh_cumulants": "16delta_k=(1+s r001)(r110+s r111)-(r100+s r101)(r010+s r011), s=(-1)^k.",
+    "scope": "This identifies the exact quadratic proof target. It does not bound it asymptotically or establish coherent/classical query complexity.",
+    "total_variation_identity": "TV(p,Pi_M(p))=2sum_k |delta_k|/P(K=k)."
+  }
+}

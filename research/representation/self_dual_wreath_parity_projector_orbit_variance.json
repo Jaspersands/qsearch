@@ -1,0 +1,609 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A trace of three projections is automatically nonnegative.",
+      "resolution": "False in general; positivity here follows specifically from the physical likelihood identity, not abstract projector algebra.",
+      "resolved": true
+    },
+    {
+      "objection": "Asymptotically flat pairwise 6j marginals imply full mixing.",
+      "resolution": "The exact even-parity counterexample has every pair flat and a unit conditional chi-square in the triple channel.",
+      "resolved": true
+    },
+    {
+      "objection": "Positive S5 channel variance proves survival.",
+      "resolution": "It is a finite control only; both amplitudes and the source law change with n.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "adaptive_channel_is_positive_projector_trace_law": true,
+    "adaptive_chi_square_is_exact_channel_variance": true,
+    "algorithm_claim_allowed": false,
+    "canonical_adaptive_syndrome_decouples_proved": false,
+    "canonical_adaptive_syndrome_survives_proved": false,
+    "classical_separation_proved": false,
+    "genuine_tetrahedral_cumulant_required": true,
+    "marginal_rank_proof_strategy_sufficient": false,
+    "pairwise_angle_proof_strategy_sufficient": false,
+    "reason": "The signed target is now positive eight-channel equidistribution, but pairwise data cannot control its genuine three-way cumulant.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T21:44:46.591072+00:00",
+  "falsifiers_triggered": [
+    "Triple-projection positivity is representation-specific, not a generic PSD fact.",
+    "Uniform projector ranks cannot control adaptive syndrome information.",
+    "Even complete pairwise overlap flatness cannot control the tetrahedral channel.",
+    "The next bound must address a genuine three-way 6j cumulant."
+  ],
+  "headline_metrics": {
+    "canonical_channel_equidistribution_theorem_count": 0,
+    "counterexample_conditional_chi_square": 1.0,
+    "finite_control_failure_count": 0,
+    "finite_orbit_control_count": 5,
+    "finite_positive_chi_square_control_count": 4,
+    "maximum_variance_identity_residual": 1.734723475976807e-18,
+    "maximum_walsh_reconstruction_residual": 1.734723475976807e-18,
+    "new_quantum_algorithm_count": 0,
+    "pairwise_flat_triple_synergy_counterexample_count": 1,
+    "positive_channel_variance_normal_form_theorem_count": 1
+  },
+  "orbit_controls": [
+    {
+      "absolute_nonzero_sector_energy": 0.0,
+      "absolute_variance_energy": 0.0,
+      "absolute_variance_residual": 0.0,
+      "conditional_chi_square_from_probabilities": 0.0,
+      "conditional_chi_square_from_signed_traces": 0.0,
+      "conditional_chi_square_residual": 0.0,
+      "conditional_syndrome_probabilities": [
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125,
+        0.125
+      ],
+      "control_id": "S4-PAIRED-0",
+      "dimensions": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "exact_orbit_variance_normal_form_verified": true,
+      "maximum_walsh_reconstruction_residual": 0.0,
+      "minimum_unsigned_amplitude": 0.02777777777777777,
+      "n": 4,
+      "orbit_indices": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "orbit_representatives": [
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "probability_sum_residual": 0.0,
+      "signed_projector_traces": [
+        0.22222222222222215,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "status": "adaptive-syndrome-is-unsigned-projector-channel-variance",
+      "total_unsigned_amplitude": 0.22222222222222215,
+      "unsigned_channel_amplitudes": [
+        0.02777777777777777,
+        0.02777777777777777,
+        0.02777777777777777,
+        0.02777777777777777,
+        0.02777777777777777,
+        0.02777777777777777,
+        0.02777777777777777,
+        0.02777777777777777
+      ]
+    },
+    {
+      "absolute_nonzero_sector_energy": 0.005401234567901234,
+      "absolute_variance_energy": 0.0054012345679012325,
+      "absolute_variance_residual": 1.734723475976807e-18,
+      "conditional_chi_square_from_probabilities": 7.0,
+      "conditional_chi_square_from_signed_traces": 7.0,
+      "conditional_chi_square_residual": 0.0,
+      "conditional_syndrome_probabilities": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "control_id": "S5-PAIRED-0",
+      "dimensions": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "exact_orbit_variance_normal_form_verified": true,
+      "maximum_walsh_reconstruction_residual": 0.0,
+      "minimum_unsigned_amplitude": 0.0,
+      "n": 5,
+      "orbit_indices": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "orbit_representatives": [
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "probability_sum_residual": 0.0,
+      "signed_projector_traces": [
+        0.027777777777777776,
+        0.027777777777777776,
+        -0.027777777777777776,
+        -0.027777777777777776,
+        -0.027777777777777776,
+        -0.027777777777777776,
+        0.027777777777777776,
+        0.027777777777777776
+      ],
+      "status": "adaptive-syndrome-is-unsigned-projector-channel-variance",
+      "total_unsigned_amplitude": 0.027777777777777776,
+      "unsigned_channel_amplitudes": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.027777777777777776,
+        0.0
+      ]
+    },
+    {
+      "absolute_nonzero_sector_energy": 0.0029234567901234585,
+      "absolute_variance_energy": 0.002923456790123458,
+      "absolute_variance_residual": 4.336808689942018e-19,
+      "conditional_chi_square_from_probabilities": 2.0484429065743934,
+      "conditional_chi_square_from_signed_traces": 2.0484429065743934,
+      "conditional_chi_square_residual": 0.0,
+      "conditional_syndrome_probabilities": [
+        0.5955882352941175,
+        0.06617647058823528,
+        0.06617647058823517,
+        0.06617647058823532,
+        0.06617647058823518,
+        0.06617647058823553,
+        0.007352941176470505,
+        0.06617647058823549
+      ],
+      "control_id": "S5-PAIRED-1",
+      "dimensions": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "exact_orbit_variance_normal_form_verified": true,
+      "maximum_walsh_reconstruction_residual": 0.0,
+      "minimum_unsigned_amplitude": 0.0002777777777777748,
+      "n": 5,
+      "orbit_indices": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "orbit_representatives": [
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "probability_sum_residual": 0.0,
+      "signed_projector_traces": [
+        0.0377777777777778,
+        0.017777777777777753,
+        0.022222222222222233,
+        0.022222222222222233,
+        0.022222222222222216,
+        0.022222222222222247,
+        0.017777777777777785,
+        0.01777777777777779
+      ],
+      "status": "adaptive-syndrome-is-unsigned-projector-channel-variance",
+      "total_unsigned_amplitude": 0.0377777777777778,
+      "unsigned_channel_amplitudes": [
+        0.022500000000000006,
+        0.002500000000000001,
+        0.0024999999999999966,
+        0.0025000000000000027,
+        0.0024999999999999974,
+        0.0025000000000000105,
+        0.0002777777777777748,
+        0.0025000000000000087
+      ]
+    },
+    {
+      "absolute_nonzero_sector_energy": 0.005545679012345678,
+      "absolute_variance_energy": 0.005545679012345678,
+      "absolute_variance_residual": 0.0,
+      "conditional_chi_square_from_probabilities": 3.8858131487889236,
+      "conditional_chi_square_from_signed_traces": 3.885813148788924,
+      "conditional_chi_square_residual": 4.440892098500626e-16,
+      "conditional_syndrome_probabilities": [
+        -6.887872625202025e-17,
+        1.607170279213806e-16,
+        0.264705882352941,
+        4.591915083468017e-17,
+        2.2959575417340086e-17,
+        1.607170279213806e-16,
+        0.7352941176470585,
+        9.183830166936035e-17
+      ],
+      "control_id": "S5-PAIRED-2",
+      "dimensions": [
+        4,
+        5,
+        4,
+        5,
+        4,
+        5
+      ],
+      "exact_orbit_variance_normal_form_verified": true,
+      "maximum_walsh_reconstruction_residual": 0.0,
+      "minimum_unsigned_amplitude": -2.6020852139652106e-18,
+      "n": 5,
+      "orbit_indices": [
+        1,
+        2,
+        1,
+        2,
+        1,
+        2
+      ],
+      "orbit_representatives": [
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "probability_sum_residual": 0.0,
+      "signed_projector_traces": [
+        0.03777777777777779,
+        0.03777777777777776,
+        -0.03777777777777777,
+        -0.037777777777777785,
+        -0.017777777777777788,
+        -0.017777777777777785,
+        0.01777777777777778,
+        0.017777777777777778
+      ],
+      "status": "adaptive-syndrome-is-unsigned-projector-channel-variance",
+      "total_unsigned_amplitude": 0.03777777777777779,
+      "unsigned_channel_amplitudes": [
+        -2.6020852139652106e-18,
+        6.071532165918825e-18,
+        0.009999999999999997,
+        1.734723475976807e-18,
+        8.673617379884035e-19,
+        6.071532165918825e-18,
+        0.02777777777777778,
+        3.469446951953614e-18
+      ]
+    },
+    {
+      "absolute_nonzero_sector_energy": 0.0008641975308641978,
+      "absolute_variance_energy": 0.0008641975308641976,
+      "absolute_variance_residual": 2.168404344971009e-19,
+      "conditional_chi_square_from_probabilities": 6.999999999999986,
+      "conditional_chi_square_from_signed_traces": 6.999999999999983,
+      "conditional_chi_square_residual": 2.6645352591003757e-15,
+      "conditional_syndrome_probabilities": [
+        0.0,
+        5.464378949326936e-16,
+        0.0,
+        7.806255641895623e-17,
+        1.5612511283791247e-16,
+        7.806255641895623e-17,
+        0.9999999999999991,
+        1.5612511283791247e-16
+      ],
+      "control_id": "S5-PAIRED-3",
+      "dimensions": [
+        4,
+        4,
+        5,
+        5,
+        4,
+        4
+      ],
+      "exact_orbit_variance_normal_form_verified": true,
+      "maximum_walsh_reconstruction_residual": 1.734723475976807e-18,
+      "minimum_unsigned_amplitude": 0.0,
+      "n": 5,
+      "orbit_indices": [
+        1,
+        1,
+        2,
+        2,
+        1,
+        1
+      ],
+      "orbit_representatives": [
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "probability_sum_residual": 2.220446049250313e-16,
+      "signed_projector_traces": [
+        0.011111111111111125,
+        0.011111111111111106,
+        -0.011111111111111108,
+        -0.011111111111111117,
+        -0.011111111111111112,
+        -0.01111111111111112,
+        0.011111111111111118,
+        0.011111111111111106
+      ],
+      "status": "adaptive-syndrome-is-unsigned-projector-channel-variance",
+      "total_unsigned_amplitude": 0.011111111111111124,
+      "unsigned_channel_amplitudes": [
+        0.0,
+        6.071532165918825e-18,
+        0.0,
+        8.673617379884035e-19,
+        1.734723475976807e-18,
+        8.673617379884035e-19,
+        0.011111111111111113,
+        1.734723475976807e-18
+      ]
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "convert_signed_projector_traces_to_positive_channels",
+      "resolution": "Inverse Walsh transform identifies the eight traces with scaled physical oriented likelihoods.",
+      "resolved": true
+    },
+    {
+      "obligation": "identify_adaptive_chi_square_with_channel_variance",
+      "resolution": "Walsh Parseval gives the exact absolute and relative identities.",
+      "resolved": true
+    },
+    {
+      "obligation": "test_marginal_and_pairwise_projector_control",
+      "resolution": "The even-parity four-atom construction has exactly flat one- and two-coordinate data but pure three-way syndrome information.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_canonical_eight_channel_equidistribution_or_survival",
+      "resolution": "Estimate a true tetrahedral/6j three-projector cumulant on the canonical high-dimensional Plancherel sector.",
+      "resolved": false
+    }
+  ],
+  "status": "adaptive-syndrome-is-positive-tetrahedral-channel-variance",
+  "summary": "Identified orbit-adaptive syndrome information with variance among eight positive projector channels and proved pairwise flatness insufficient.",
+  "synergy_counterexample": {
+    "all_marginals_uniform": true,
+    "all_pairs_uniform": true,
+    "ambient_dimension": 4,
+    "conditional_chi_square": 1.0,
+    "conditional_syndrome_probabilities": [
+      0.25,
+      0.0,
+      0.0,
+      0.25,
+      0.0,
+      0.25,
+      0.25,
+      0.0
+    ],
+    "exact_pairwise_flat_triple_synergy_verified": true,
+    "maximum_pair_intersection_residual": 0.0,
+    "maximum_rank_residual": 0.0,
+    "projector_rank": 2,
+    "status": "pairwise-flat-projectors-retain-pure-three-way-parity-synergy",
+    "surviving_nonzero_walsh_modes": [
+      [
+        1,
+        1,
+        1
+      ]
+    ],
+    "target_pair_intersection_trace": 1.0,
+    "triple_channel_uniform": false,
+    "unsigned_channel_amplitudes": [
+      1.0,
+      0.0,
+      0.0,
+      1.0,
+      0.0,
+      1.0,
+      1.0,
+      0.0
+    ]
+  },
+  "theorem_contract": {
+    "conditional_channel": "P(Y=y|O)=A_y/sum_z A_z.",
+    "pairwise_no_go": "uniform ranks and every pair intersection do not control the eight triple overlaps; an even-parity coordinate model has chi2=1.",
+    "relative_identity": "chi2(P_(Y|O)||U3)=8sum_y(A_y/T0-1/8)^2.",
+    "scope": "This is a positive-channel normal form and proof-strategy no-go, not a canonical asymptotic estimate or algorithm.",
+    "unsigned_channels": "A_y=Tr(P_g^yg P_h^yh P_k^yk)>=0 and equals the physical oriented likelihood times product(d_i)/|S_n|^3.",
+    "variance_identity": "sum_(x!=0)T_x^2=8sum_y(A_y-mean(A))^2.",
+    "walsh_relation": "T_x=sum_y(-1)^(x dot y)A_y, with Q(O)F_x(O)^2=T_x^2."
+  }
+}

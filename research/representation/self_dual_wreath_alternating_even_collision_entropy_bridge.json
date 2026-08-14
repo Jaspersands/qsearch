@@ -1,0 +1,152 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The full eight-sector collision moment is still required.",
+      "resolution": "No. The entropy reduction needs only the even-input base sector.",
+      "resolved": true
+    },
+    {
+      "objection": "The collision moment must remain bounded.",
+      "resolution": "Any subpolynomial growth is sufficient.",
+      "resolved": true
+    },
+    {
+      "objection": "Polynomial collision growth disproves rank mixing.",
+      "resolution": "False: Renyi-two may be tail-dominated while KL and the weak-L1 likelihood tail remain sublogarithmic/subquadratic.",
+      "resolved": true
+    },
+    {
+      "objection": "The finite nonmonotone moments suggest boundedness.",
+      "resolution": "S_2 through S_5 carry no asymptotic force.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "classical_separation_proved": false,
+    "coarse_alternating_renyi_two_collision_identity_proved": true,
+    "coarse_alternating_total_correlation_sublogarithmic_proved": false,
+    "even_collision_subpolynomial_proved": false,
+    "irreducible_racah_cmi_vanishes_proved": false,
+    "physical_rank_profile_mixes_proved": false,
+    "reason": "The sufficient classical collision target is exact but has no all-n subpolynomial estimate.",
+    "speedup_claim_allowed": false,
+    "subpolynomial_even_collision_would_imply_rank_mixing": true
+  },
+  "created_at": "2026-08-13T23:02:42.554654+00:00",
+  "exact_controls": [
+    {
+      "coarse_base_kl_bits": 0.0,
+      "coarse_label_count": 1,
+      "exact_even_class_signature_collision_moment": 1.0,
+      "exact_even_collision_duality_verified": true,
+      "exact_label_likelihood_second_moment": 1.0,
+      "kl_bounded_by_renyi_two": true,
+      "kl_to_renyi_gap_bits": 0.0,
+      "n": 2,
+      "renyi_two_divergence_bits": 0.0,
+      "second_moment_duality_residual": 0.0,
+      "status": "coarse-alternating-renyi-two-equals-even-word-collision"
+    },
+    {
+      "coarse_base_kl_bits": 1.717850465126431,
+      "coarse_label_count": 2,
+      "exact_even_class_signature_collision_moment": 4.5,
+      "exact_even_collision_duality_verified": true,
+      "exact_label_likelihood_second_moment": 4.499999999999999,
+      "kl_bounded_by_renyi_two": true,
+      "kl_to_renyi_gap_bits": 0.4520745363158811,
+      "n": 3,
+      "renyi_two_divergence_bits": 2.169925001442312,
+      "second_moment_duality_residual": 8.881784197001252e-16,
+      "status": "coarse-alternating-renyi-two-equals-even-word-collision"
+    },
+    {
+      "coarse_base_kl_bits": 1.199804757471669,
+      "coarse_label_count": 3,
+      "exact_even_class_signature_collision_moment": 7.771604938271605,
+      "exact_even_collision_duality_verified": true,
+      "exact_label_likelihood_second_moment": 7.7716049382716035,
+      "kl_bounded_by_renyi_two": true,
+      "kl_to_renyi_gap_bits": 1.7584078073627227,
+      "n": 4,
+      "renyi_two_divergence_bits": 2.9582125648343918,
+      "second_moment_duality_residual": 1.7763568394002505e-15,
+      "status": "coarse-alternating-renyi-two-equals-even-word-collision"
+    },
+    {
+      "coarse_base_kl_bits": 0.506673835591169,
+      "coarse_label_count": 4,
+      "exact_even_class_signature_collision_moment": 3.725021122685185,
+      "exact_even_collision_duality_verified": true,
+      "exact_label_likelihood_second_moment": 3.725021122685186,
+      "kl_bounded_by_renyi_two": true,
+      "kl_to_renyi_gap_bits": 1.390574770790816,
+      "n": 5,
+      "renyi_two_divergence_bits": 1.897248606381985,
+      "second_moment_duality_residual": 8.881784197001252e-16,
+      "status": "coarse-alternating-renyi-two-equals-even-word-collision"
+    }
+  ],
+  "falsifiers_triggered": [
+    "The full physical collision moment is not the minimal Renyi target for rank transfer.",
+    "Bounded collision is unnecessarily strong; subpolynomial growth suffices.",
+    "A large collision moment alone cannot certify persistent bounded rank signal."
+  ],
+  "headline_metrics": {
+    "even_collision_duality_theorem_count": 1,
+    "even_collision_subpolynomial_theorem_count": 0,
+    "exact_finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "physical_rank_mixing_theorem_count": 0,
+    "renyi_entropy_bridge_theorem_count": 1
+  },
+  "literature_boundary": [
+    {
+      "boundary": "Fixed stable characters do not directly control a joint full cycle-signature collision norm.",
+      "id": "hanany-puder-word-measures-symmetric-groups",
+      "url": "https://arxiv.org/abs/2009.00897"
+    },
+    {
+      "boundary": "Single-word near-uniformity does not imply joint independence of the six overlapping tetrahedral words.",
+      "id": "larsen-shalev-word-maps",
+      "url": "https://arxiv.org/abs/math/0701334"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "identify_coarse_alternating_renyi_two_as_classical_collision",
+      "resolution": "Same-parity sign-orbit collapse followed by full character orthogonality gives the even class-signature collision sum.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_even_tetrahedral_class_collision_subpolynomial",
+      "resolution": "Show sum_C N_even(C)^2/product_i|C_i|=n^o(1), or use direct entropy/tail control if Renyi-two is dominated by spikes.",
+      "resolved": false
+    },
+    {
+      "obligation": "separate_low_support_and_fully_nonidentity_even_collision_terms",
+      "resolution": "Derive an even-input support-mask expansion and isolate the only term not handled by reciprocal even-class sums.",
+      "resolved": false
+    }
+  ],
+  "status": "even-word-class-collision-is-concrete-renyi-route-to-rank-mixing",
+  "summary": "Reduced the coarse alternating entropy gate to the sufficient classical condition that one even-input class-signature collision norm is n^o(1).",
+  "theorem": {
+    "exact_collision_identity": "E_(Q_O)L_O^2=sum_C N_even(C)^2/product_i|C_i|",
+    "physical_collision_condition_proved": false,
+    "renyi_entropy_bound": "D(P_O||Q_O)<=log2 E_(Q_O)L_O^2",
+    "status": "rank-entropy-gate-has-even-word-subpolynomial-collision-sufficient-condition",
+    "subpolynomial_collision_implies_rank_mixing": true,
+    "subpolynomial_collision_is_necessary": false,
+    "sufficient_collision_condition": "C_n^even=n^o(1)"
+  },
+  "theorem_contract": {
+    "coarse_likelihood": "L_O=sum_(g,h,k in A_n) product_i r_(O_i)(W_i).",
+    "collision_duality": "E_(Q_O)L_O^2=sum_C N_even(C)^2/product_i|C_i|",
+    "rank_sufficient_condition": "C_n^even=n^o(1)",
+    "renyi_monotonicity": "D(P_O||Q_O)<=log2 E_(Q_O)L_O^2",
+    "scope": "No subpolynomial bound on the even collision norm is proved, and the condition is sufficient rather than necessary."
+  }
+}

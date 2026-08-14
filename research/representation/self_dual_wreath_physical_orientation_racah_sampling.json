@@ -1,0 +1,1629 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Selected high-CMI tuples estimate the physical average.",
+      "resolution": "The estimator samples complete six-label tuples from P6 before evaluating their orbit CMI.",
+      "resolved": true
+    },
+    {
+      "objection": "Conditioning on the paired event can ignore its probability.",
+      "resolution": "The primary statistic is zero off-event, so its mean includes source mass; the conditional mean is reported separately.",
+      "resolved": true
+    },
+    {
+      "objection": "A low sample mean proves asymptotic decay.",
+      "resolution": "Each record has a finite Hoeffding interval and asymptotic_inference_allowed=false.",
+      "resolved": true
+    },
+    {
+      "objection": "Exact physical sampling is a polynomial classical algorithm.",
+      "resolution": "The current implementation compiles exponential representation-space Racah blocks.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "S6_confidence_interval_decisive": false,
+    "algorithm_claim_allowed": false,
+    "classical_separation_proved": false,
+    "coherent_extraction_implemented": false,
+    "finite_s5_exact_average_covered_by_interval": true,
+    "full_six_label_sampler_exact_proved": true,
+    "physical_average_orientation_cmi_survives_proved": false,
+    "physical_average_orientation_cmi_vanishes_proved": false,
+    "polynomial_estimator_proved": false,
+    "reason": "The sampling law is exact, but the live higher-n interval is broad and every compiled statistic remains exponential-space.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-14T02:01:03.967694+00:00",
+  "falsifiers_triggered": [
+    "Large conditional CMI on a rare orbit cannot stand in for physical-average information.",
+    "A finite sample mean without a range-based interval supports no scaling claim.",
+    "Measured-label sampling does not establish coherent or classically exclusive access."
+  ],
+  "headline_metrics": {
+    "S6_cmi_hoeffding_radius_bits": 0.554442622077489,
+    "S6_retained_paired_sample_count": 0,
+    "S6_sample_count": 6,
+    "S6_sample_mean_retained_physical_cmi_bits": 0.0,
+    "S6_unique_sign_orbit_tuple_count": 0,
+    "decisive_asymptotic_orientation_cmi_estimate_count": 0,
+    "exact_physical_orientation_sampler_count": 1,
+    "finite_control_failure_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "sampling_record_count": 2
+  },
+  "proof_obligations": [
+    {
+      "obligation": "sample_full_six_label_physical_racah_law",
+      "resolution": "Sequential outer sampling followed by x/M block sampling multiplies to the exact P6 mass.",
+      "resolved": true
+    },
+    {
+      "obligation": "validate_orientation_cmi_monte_carlo_against_exact_finite_average",
+      "resolution": "The exact S5 retained contribution lies in the rigorous finite-sample interval.",
+      "resolved": true
+    },
+    {
+      "obligation": "obtain_decisive_s6_or_larger_confidence_interval",
+      "resolution": "The live S6 sample is deliberately small and its Hoeffding interval is broad.",
+      "resolved": false
+    },
+    {
+      "obligation": "scale_to_s7_physical_average",
+      "resolution": "Requires caching/resume, Rao-Blackwell options, and a cheaper orientation block estimator.",
+      "resolved": false
+    },
+    {
+      "obligation": "compare_classical_word_map_and_coherent_estimation",
+      "resolution": "No query/sample complexity separation follows from measured-label CMI sampling.",
+      "resolved": false
+    }
+  ],
+  "records": [
+    {
+      "all_compiled_objects_verified": true,
+      "asymptotic_inference_allowed": false,
+      "cmi_confidence_lower_bits": 0.0,
+      "cmi_confidence_upper_bits": 0.28575873070354557,
+      "cmi_hoeffding_radius_bits": 0.2772213110387445,
+      "conditional_mean_cmi_on_retained_samples_bits": 0.10244903597761304,
+      "confidence_level": 0.95,
+      "exact_cmi_inside_confidence_interval": true,
+      "exact_finite_retained_physical_cmi_bits": 0.002843022069747372,
+      "exact_finite_retained_physical_mass": 0.10354861111111108,
+      "exact_mass_inside_confidence_interval": true,
+      "maximum_complete_coupling_residual": 1.509903313490213e-14,
+      "maximum_orientation_isometry_residual": 4.673461354915503e-15,
+      "minimum_dimension_exclusive": 1,
+      "n": 5,
+      "paired_mass_hoeffding_radius": 0.2772213110387445,
+      "random_seed": 271828,
+      "retained_paired_sample_count": 2,
+      "sample_count": 24,
+      "sample_mean_retained_physical_cmi_bits": 0.008537419664801087,
+      "sample_retained_paired_mass": 0.08333333333333333,
+      "sample_standard_error_bits": 0.008537419664801087,
+      "samples": [
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 0,
+          "sampled_block_conditional_probability": 0.07866666666666666,
+          "sampled_outer_tuple_probability": 0.001736111111111111,
+          "six_partitions": [
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": false,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 1,
+          "sampled_block_conditional_probability": 1.0,
+          "sampled_outer_tuple_probability": 5.555555555555556e-05,
+          "six_partitions": [
+            [
+              5
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 2,
+          "sampled_block_conditional_probability": 0.004687500000000003,
+          "sampled_outer_tuple_probability": 0.000925925925925926,
+          "six_partitions": [
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 3,
+          "sampled_block_conditional_probability": 0.08000000000000032,
+          "sampled_outer_tuple_probability": 0.001736111111111111,
+          "six_partitions": [
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": false,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 4,
+          "sampled_block_conditional_probability": 0.05000000000000004,
+          "sampled_outer_tuple_probability": 0.004166666666666667,
+          "six_partitions": [
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              5
+            ],
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 5,
+          "sampled_block_conditional_probability": 0.1388888888888887,
+          "sampled_outer_tuple_probability": 0.0006666666666666666,
+          "six_partitions": [
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              4,
+              1
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 6,
+          "sampled_block_conditional_probability": 0.075,
+          "sampled_outer_tuple_probability": 0.001736111111111111,
+          "six_partitions": [
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              4,
+              1
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 7,
+          "sampled_block_conditional_probability": 0.016666666666666677,
+          "sampled_outer_tuple_probability": 0.004166666666666667,
+          "six_partitions": [
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 8,
+          "sampled_block_conditional_probability": 0.04097222222222217,
+          "sampled_outer_tuple_probability": 0.004166666666666667,
+          "six_partitions": [
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": true,
+          "base_sign_orbit_partitions": [
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": true,
+          "orientation_irreducible_cmi_bits": 0.20489807195522608,
+          "retained_cmi_contribution_bits": 0.20489807195522608,
+          "retained_paired_event": true,
+          "sample_index": 9,
+          "sampled_block_conditional_probability": 0.13020833333333343,
+          "sampled_outer_tuple_probability": 0.0006944444444444445,
+          "six_partitions": [
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "status": "retained-physical-orientation-cmi-sample"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 10,
+          "sampled_block_conditional_probability": 0.14062499999999986,
+          "sampled_outer_tuple_probability": 0.0011111111111111111,
+          "six_partitions": [
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              1,
+              1
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 11,
+          "sampled_block_conditional_probability": 0.049603174603174593,
+          "sampled_outer_tuple_probability": 0.0035,
+          "six_partitions": [
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 12,
+          "sampled_block_conditional_probability": 0.049603174603174593,
+          "sampled_outer_tuple_probability": 0.0035,
+          "six_partitions": [
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 13,
+          "sampled_block_conditional_probability": 0.05444444444444448,
+          "sampled_outer_tuple_probability": 0.001736111111111111,
+          "six_partitions": [
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              4,
+              1
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 14,
+          "sampled_block_conditional_probability": 0.09833333333333324,
+          "sampled_outer_tuple_probability": 0.001736111111111111,
+          "six_partitions": [
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 15,
+          "sampled_block_conditional_probability": 0.07638888888888909,
+          "sampled_outer_tuple_probability": 0.0025,
+          "six_partitions": [
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 16,
+          "sampled_block_conditional_probability": 0.09666666666666668,
+          "sampled_outer_tuple_probability": 0.001736111111111111,
+          "six_partitions": [
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": false,
+          "all_labels_nonself_conjugate": true,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 17,
+          "sampled_block_conditional_probability": 1.0,
+          "sampled_outer_tuple_probability": 5.787037037037037e-05,
+          "six_partitions": [
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              5
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": true,
+          "base_sign_orbit_partitions": [
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": true,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": true,
+          "sample_index": 18,
+          "sampled_block_conditional_probability": 0.010416666666666668,
+          "sampled_outer_tuple_probability": 0.002170138888888889,
+          "six_partitions": [
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "status": "retained-physical-orientation-cmi-sample"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 19,
+          "sampled_block_conditional_probability": 0.0416666666666666,
+          "sampled_outer_tuple_probability": 0.0026041666666666665,
+          "six_partitions": [
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 20,
+          "sampled_block_conditional_probability": 0.07000000000000017,
+          "sampled_outer_tuple_probability": 0.001736111111111111,
+          "six_partitions": [
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": false,
+          "all_labels_nonself_conjugate": true,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 21,
+          "sampled_block_conditional_probability": 1.0,
+          "sampled_outer_tuple_probability": 5.787037037037037e-05,
+          "six_partitions": [
+            [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 22,
+          "sampled_block_conditional_probability": 0.08333333333333338,
+          "sampled_outer_tuple_probability": 0.0025,
+          "six_partitions": [
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              4,
+              1
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 23,
+          "sampled_block_conditional_probability": 0.1562499999999998,
+          "sampled_outer_tuple_probability": 0.0011111111111111111,
+          "six_partitions": [
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        }
+      ],
+      "status": "exact-physical-orientation-cmi-sampler-verified",
+      "unique_outer_tuple_count": 24,
+      "unique_retained_sign_orbit_tuple_count": 2,
+      "unpaired_or_trimmed_sample_count": 22
+    },
+    {
+      "all_compiled_objects_verified": true,
+      "asymptotic_inference_allowed": false,
+      "cmi_confidence_lower_bits": 0.0,
+      "cmi_confidence_upper_bits": 0.554442622077489,
+      "cmi_hoeffding_radius_bits": 0.554442622077489,
+      "conditional_mean_cmi_on_retained_samples_bits": 0.0,
+      "confidence_level": 0.95,
+      "exact_cmi_inside_confidence_interval": null,
+      "exact_finite_retained_physical_cmi_bits": null,
+      "exact_finite_retained_physical_mass": null,
+      "exact_mass_inside_confidence_interval": null,
+      "maximum_complete_coupling_residual": 1.4210854715202004e-13,
+      "maximum_orientation_isometry_residual": 0.0,
+      "minimum_dimension_exclusive": 1,
+      "n": 6,
+      "paired_mass_hoeffding_radius": 0.554442622077489,
+      "random_seed": 314159,
+      "retained_paired_sample_count": 0,
+      "sample_count": 6,
+      "sample_mean_retained_physical_cmi_bits": 0.0,
+      "sample_retained_paired_mass": 0.0,
+      "sample_standard_error_bits": 0.0,
+      "samples": [
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 0,
+          "sampled_block_conditional_probability": 0.08833333333333328,
+          "sampled_outer_tuple_probability": 0.00019290123456790122,
+          "six_partitions": [
+            [
+              2,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 1,
+          "sampled_block_conditional_probability": 0.011900871459694987,
+          "sampled_outer_tuple_probability": 0.005037037037037037,
+          "six_partitions": [
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              1
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 2,
+          "sampled_block_conditional_probability": 0.04828125000000004,
+          "sampled_outer_tuple_probability": 0.0019753086419753087,
+          "six_partitions": [
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 3,
+          "sampled_block_conditional_probability": 0.047916666666666684,
+          "sampled_outer_tuple_probability": 0.0007716049382716049,
+          "six_partitions": [
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1
+            ],
+            [
+              4,
+              2
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 4,
+          "sampled_block_conditional_probability": 0.04133928571428567,
+          "sampled_outer_tuple_probability": 0.006145404663923182,
+          "six_partitions": [
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        },
+        {
+          "all_label_dimensions_above_trim": true,
+          "all_labels_nonself_conjugate": false,
+          "base_sign_orbit_partitions": null,
+          "complete_coupling_verified": true,
+          "duplicate_outer_tuple": false,
+          "duplicate_sign_orbit_tuple": false,
+          "orientation_channel_verified": null,
+          "orientation_irreducible_cmi_bits": 0.0,
+          "retained_cmi_contribution_bits": 0.0,
+          "retained_paired_event": false,
+          "sample_index": 5,
+          "sampled_block_conditional_probability": 0.029017857142857085,
+          "sampled_outer_tuple_probability": 0.0015363511659807956,
+          "six_partitions": [
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              2,
+              2,
+              2
+            ]
+          ],
+          "status": "physical-sample-outside-retained-paired-sector"
+        }
+      ],
+      "status": "exact-physical-orientation-cmi-sampler-verified",
+      "unique_outer_tuple_count": 6,
+      "unique_retained_sign_orbit_tuple_count": 0,
+      "unpaired_or_trimmed_sample_count": 6
+    }
+  ],
+  "status": "physical-orientation-cmi-now-has-unbiased-source-weighted-sampler",
+  "summary": "Replaced selected orientation witnesses by an exact physical-law Monte Carlo estimator with source mass and rigorous confidence bounds.",
+  "theorem_contract": {
+    "block_sampler": "(mu,nu) conditional probability x_(mu,nu)/M",
+    "confidence": "Hoeffding radius sqrt(log(2/delta)/(2N))",
+    "joint_identity": "P_outer*pi=d_alpha d_beta d_gamma d_lambda x/|S_n|^3=P_6",
+    "outer_sampler": "alpha,beta,gamma iid Plancherel; lambda conditional proportional to d_lambda M",
+    "range": "the retained statistic lies in [0,1] bits",
+    "retained_statistic": "1[all six labels are nonself and dimension>D] I(Y_g;Y_h|Y_k)",
+    "scope": "finite exact-law Monte Carlo with exponential block compilation"
+  }
+}

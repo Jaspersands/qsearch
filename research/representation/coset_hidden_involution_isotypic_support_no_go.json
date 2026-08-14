@@ -1,0 +1,268 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False for fixed-point-free S_n at threshold: the all-n isotypic TV contradiction forces a proper block.",
+      "challenge": "The finite proper-support witnesses may disappear with n.",
+      "resolved": true
+    },
+    {
+      "answer": "False: whole-sector support would need TV at least 3/4, whereas the exact character law is bounded by 1/9.",
+      "challenge": "A diagonal S_n irrep label can compile the support test.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It demands a multiplicity-side primitive but gives no lower bound on such a transform.",
+      "challenge": "Proper support proves computational hardness.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_n_proper_multiplicity_support_proved": true,
+    "arbitrary_quantum_lower_bound_proved": false,
+    "classical_separation_proved": false,
+    "commutant_side_support_compiler_constructed": false,
+    "commutant_side_support_compiler_refuted": false,
+    "diagonal_group_algebra_support_compiler_refuted": true,
+    "diagonal_irrep_label_support_compiler_refuted": true,
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "reason": "The support test provably needs a proper multiplicity-space projector. Whether that projector has an efficient structured compiler remains the central open question.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T15:32:39.430272+00:00",
+  "falsifiers_triggered": [
+    "Finite proper multiplicity support is no longer merely finite evidence for fixed-point-free S_n.",
+    "Whole diagonal-isotypic labels cannot implement the logarithmic-copy support-span test.",
+    "Any surviving structured compiler must act nontrivially inside global multiplicity spaces.",
+    "Proper multiplicity support alone is not a circuit lower bound or a quantum speedup."
+  ],
+  "finite_controls": [
+    {
+      "alternative_probability_sum": 1.0,
+      "character_bound_respected": true,
+      "character_bound_total_variation_upper_bound": 0.0,
+      "conjugacy_class_count": 3,
+      "conjugacy_class_size": 3,
+      "copy_count": 1,
+      "direct_fixed_point_total_variation": 0.0,
+      "exact_direct_law_residual": 0.0,
+      "exact_isotypic_total_variation": 0.0,
+      "finite_control_verified": true,
+      "n": 3,
+      "nonzero_fixed_point_class_count": 0,
+      "null_probability_sum": 1.0,
+      "status": "exact-isotypic-law-and-fixed-point-formula-verified",
+      "transposition_count": 1
+    },
+    {
+      "alternative_probability_sum": 1.0,
+      "character_bound_respected": true,
+      "character_bound_total_variation_upper_bound": 0.0,
+      "conjugacy_class_count": 3,
+      "conjugacy_class_size": 3,
+      "copy_count": 2,
+      "direct_fixed_point_total_variation": 0.0,
+      "exact_direct_law_residual": 0.0,
+      "exact_isotypic_total_variation": 0.0,
+      "finite_control_verified": true,
+      "n": 3,
+      "nonzero_fixed_point_class_count": 0,
+      "null_probability_sum": 1.0,
+      "status": "exact-isotypic-law-and-fixed-point-formula-verified",
+      "transposition_count": 1
+    },
+    {
+      "alternative_probability_sum": 1.0,
+      "character_bound_respected": true,
+      "character_bound_total_variation_upper_bound": 0.0,
+      "conjugacy_class_count": 3,
+      "conjugacy_class_size": 3,
+      "copy_count": 3,
+      "direct_fixed_point_total_variation": 0.0,
+      "exact_direct_law_residual": 0.0,
+      "exact_isotypic_total_variation": 0.0,
+      "finite_control_verified": true,
+      "n": 3,
+      "nonzero_fixed_point_class_count": 0,
+      "null_probability_sum": 1.0,
+      "status": "exact-isotypic-law-and-fixed-point-formula-verified",
+      "transposition_count": 1
+    },
+    {
+      "alternative_probability_sum": 1.0,
+      "character_bound_respected": true,
+      "character_bound_total_variation_upper_bound": 0.6875,
+      "conjugacy_class_count": 5,
+      "conjugacy_class_size": 3,
+      "copy_count": 2,
+      "direct_fixed_point_total_variation": 0.16666666666666666,
+      "exact_direct_law_residual": 0.0,
+      "exact_isotypic_total_variation": 0.16666666666666666,
+      "finite_control_verified": true,
+      "n": 4,
+      "nonzero_fixed_point_class_count": 4,
+      "null_probability_sum": 1.0,
+      "status": "exact-isotypic-law-and-fixed-point-formula-verified",
+      "transposition_count": 2
+    }
+  ],
+  "headline_metrics": {
+    "all_n_isotypic_tv_bound_theorem_count": 1,
+    "all_n_proper_multiplicity_support_theorem_count": 1,
+    "arbitrary_circuit_lower_bound_count": 0,
+    "commutant_side_compiler_no_go_count": 0,
+    "exact_isotypic_law_theorem_count": 1,
+    "finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "maximum_scaling_elementary_isotypic_tv_bound": 0.1111111111111111,
+    "minimum_whole_isotypic_required_tv": 0.7583597898483276,
+    "new_quantum_algorithm_count": 0
+  },
+  "primary_literature": [
+    {
+      "id": "HAYASHI-KAWACHI-KOBAYASHI-2006-HSP-SAMPLE-COMPLEXITY",
+      "scope": "Provides the support-span test; this theorem proves that its fixed-point-free S_n support cannot be a union of diagonal isotypic sectors at the useful copy threshold.",
+      "title": "Quantum Measurements for Hidden Subgroup Problems with Optimal Sample Complexity",
+      "url": "https://arxiv.org/abs/quant-ph/0604174"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-COMMUTANT-SUPPORT-BASIS",
+      "resolved": false,
+      "statement": "Construct or obstruct a uniform polynomial basis/projector for the proper multiplicity support inside typical sectors."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-RELATIVE-SPECTRAL-GAP",
+      "resolved": false,
+      "statement": "Bound the source-conditioned relative spectrum after the best legal multiplicity-side normalization."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-STRUCTURED-INPUT-REDUCTION",
+      "resolved": false,
+      "statement": "Supply a natural graph/code input reduction and classical comparison before interpreting binary detection as a speedup."
+    }
+  ],
+  "scaling_records": [
+    {
+      "class_count_total_variation_upper_bound": 0.0012859259259259258,
+      "commutant_side_support_compiler_ruled_out": false,
+      "conjugacy_class_size": 15,
+      "copy_count": 6,
+      "diagonal_group_algebra_support_compiler_possible": false,
+      "elementary_total_variation_upper_bound": 0.1111111111111111,
+      "minimum_nonidentity_class_size_lower_bound": 15,
+      "n": 6,
+      "partition_count_upper_bound": 32,
+      "proper_multiplicity_support_forced": true,
+      "status": "all-n-proper-multiplicity-support-forced-commutant-route-open",
+      "support_test_alternative_acceptance": 1.0,
+      "support_test_null_acceptance_upper_bound": 0.234375,
+      "whole_isotypic_support_required_total_variation": 0.765625
+    },
+    {
+      "class_count_total_variation_upper_bound": 8.588758170395322e-08,
+      "commutant_side_support_compiler_ruled_out": false,
+      "conjugacy_class_size": 105,
+      "copy_count": 9,
+      "diagonal_group_algebra_support_compiler_possible": false,
+      "elementary_total_variation_upper_bound": 0.0078125,
+      "minimum_nonidentity_class_size_lower_bound": 28,
+      "n": 8,
+      "partition_count_upper_bound": 128,
+      "proper_multiplicity_support_forced": true,
+      "status": "all-n-proper-multiplicity-support-forced-commutant-route-open",
+      "support_test_alternative_acceptance": 1.0,
+      "support_test_null_acceptance_upper_bound": 0.205078125,
+      "whole_isotypic_support_required_total_variation": 0.794921875
+    },
+    {
+      "class_count_total_variation_upper_bound": 2.4894827477037173e-35,
+      "commutant_side_support_compiler_ruled_out": false,
+      "conjugacy_class_size": 2027025,
+      "copy_count": 23,
+      "diagonal_group_algebra_support_compiler_possible": false,
+      "elementary_total_variation_upper_bound": 1.4901161193847656e-08,
+      "minimum_nonidentity_class_size_lower_bound": 120,
+      "n": 16,
+      "partition_count_upper_bound": 32768,
+      "proper_multiplicity_support_forced": true,
+      "status": "all-n-proper-multiplicity-support-forced-commutant-route-open",
+      "support_test_alternative_acceptance": 1.0,
+      "support_test_null_acceptance_upper_bound": 0.24164021015167236,
+      "whole_isotypic_support_required_total_variation": 0.7583597898483276
+    },
+    {
+      "class_count_total_variation_upper_bound": 1.1462535577181463e-132,
+      "commutant_side_support_compiler_ruled_out": false,
+      "conjugacy_class_size": 191898783962510625,
+      "copy_count": 60,
+      "diagonal_group_algebra_support_compiler_possible": false,
+      "elementary_total_variation_upper_bound": 1.0587911840678754e-22,
+      "minimum_nonidentity_class_size_lower_bound": 496,
+      "n": 32,
+      "partition_count_upper_bound": 2147483648,
+      "proper_multiplicity_support_forced": true,
+      "status": "all-n-proper-multiplicity-support-forced-commutant-route-open",
+      "support_test_alternative_acceptance": 1.0,
+      "support_test_null_acceptance_upper_bound": 0.1664456627755844,
+      "whole_isotypic_support_required_total_variation": 0.8335543372244156
+    },
+    {
+      "class_count_total_variation_upper_bound": 0.0,
+      "commutant_side_support_compiler_ruled_out": false,
+      "conjugacy_class_size": 112275575285571389562324404930670903477890625,
+      "copy_count": 149,
+      "diagonal_group_algebra_support_compiler_possible": false,
+      "elementary_total_variation_upper_bound": 4.078315292499078e-56,
+      "minimum_nonidentity_class_size_lower_bound": 2016,
+      "n": 64,
+      "partition_count_upper_bound": 9223372036854775808,
+      "proper_multiplicity_support_forced": true,
+      "status": "all-n-proper-multiplicity-support-forced-commutant-route-open",
+      "support_test_alternative_acceptance": 1.0,
+      "support_test_null_acceptance_upper_bound": 0.15733159122885657,
+      "whole_isotypic_support_required_total_variation": 0.8426684087711435
+    },
+    {
+      "class_count_total_variation_upper_bound": 0.0,
+      "commutant_side_support_compiler_ruled_out": false,
+      "conjugacy_class_size": 164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625,
+      "copy_count": 359,
+      "diagonal_group_algebra_support_compiler_possible": false,
+      "elementary_total_variation_upper_bound": 7.044203657368268e-133,
+      "minimum_nonidentity_class_size_lower_bound": 8128,
+      "n": 128,
+      "partition_count_upper_bound": 170141183460469231731687303715884105728,
+      "proper_multiplicity_support_forced": true,
+      "status": "all-n-proper-multiplicity-support-forced-commutant-route-open",
+      "support_test_alternative_acceptance": 1.0,
+      "support_test_null_acceptance_upper_bound": 0.14029914692153045,
+      "whole_isotypic_support_required_total_variation": 0.8597008530784696
+    }
+  ],
+  "status": "all-n-diagonal-isotypic-support-compiler-refuted-commutant-route-open",
+  "summary": "Derived the exact diagonal-isotypic binary law and proved an all-n 1/9 total-variation bound at the support-test threshold. This forces proper multiplicity support for every fixed-point-free S_n family with even n>=6, while leaving commutant-side compilation open.",
+  "theorem": {
+    "all_n_proper_multiplicity_support_proved": true,
+    "all_n_total_variation_bound_proved": true,
+    "arbitrary_circuit_lower_bound_proved": false,
+    "character_total_variation_bound": "TV(p,q)<=(2^k-1)(p(n)-1)/(2 s_min^(k-1)).",
+    "commutant_side_compiler_refuted": false,
+    "compiler_consequence": "Diagonal S_n actions, subgroup actions inside the same represented group algebra, and whole-isotypic GPE cannot compile the support test.",
+    "diagonal_group_action_compiler_refuted": true,
+    "exact_isotypic_law": "p_nu=d_nu/|G| sum_K chi_nu(K)/s_K^(k-1), with the alternative summand multiplied by 1+(2^k-1)z_K/M.",
+    "exact_isotypic_law_proved": true,
+    "fixed_point_trace_identity": "Tr(U_g)=|G|/|g^G| and Tr(U_g R_h) equals the same value iff gh is conjugate to g, otherwise zero.",
+    "proper_support_contradiction": "A union of whole isotypic sectors with alternative acceptance one and null acceptance at most 1/4 would force label TV at least 3/4; therefore some support block is proper nonzero.",
+    "scope_limit": "No lower bound is proved for commutant-side recoupling, copy permutations, association-scheme transforms, fused multiplicity support circuits, or arbitrary quantum algorithms.",
+    "status": "all-n-diagonal-isotypic-support-compiler-refuted-commutant-route-open",
+    "symmetric_group_uniform_bound": "For fixed-point-free S_n, even n>=6 and k=ceil(log2(4M)), TV(p,q)<=4/n^((n-2)/2)<=1/9.",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "copy_threshold": "k=ceil(log2(4(n-1)!!)).",
+    "family": "Fixed-point-free involutions in S_n for every even n>=6.",
+    "measurement_under_test": "Measure only the simultaneous-conjugation S_n irrep label and classically decide whether that whole isotypic sector belongs to the support span.",
+    "outside_scope": "Measurements resolving or coherently transforming the global multiplicity space inside an isotypic sector."
+  }
+}

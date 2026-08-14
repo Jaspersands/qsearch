@@ -1,0 +1,402 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A parity coset average is not an invariant projector.",
+      "resolution": "Its normalized indicator is 1+(-1)^x sign, giving the exact difference of the trivial and sign isotypic projectors.",
+      "resolved": true
+    },
+    {
+      "objection": "Near-maximal irrep dimensions force the overlap small enough.",
+      "resolution": "The best dimension-only support-rank bound misses the required scale by factorial powers at the canonical threshold.",
+      "resolved": true
+    },
+    {
+      "objection": "Expected Plancherel projector rank supplies the missing angle.",
+      "resolution": "The exact mean support fraction is 2/n!, but the partition function has prefactor (n!/2)^3; two further powers require relative-angle cancellation.",
+      "resolved": true
+    },
+    {
+      "objection": "The signed-projector identity proves adaptive decoupling.",
+      "resolution": "It isolates the needed 6j overlap but supplies no asymptotic angle estimate.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "canonical_adaptive_syndrome_survives_proved": false,
+    "canonical_face_energy_vanishes_proved": false,
+    "canonical_opposite_energy_vanishes_proved": false,
+    "classical_separation_proved": false,
+    "fully_paired_energy_is_squared_projector_trace_sum": true,
+    "parity_coset_signed_projector_normal_form_proved": true,
+    "projector_rank_only_route_eliminated": true,
+    "reason": "The exact target is now a signed three-projector/6j overlap, but ranks and marginal laws provably do not estimate its relative angles.",
+    "relative_6j_angle_estimate_required": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T21:40:50.038648+00:00",
+  "falsifiers_triggered": [
+    "Parity restriction creates trivial/sign projector differences, not an ordinary positive projector.",
+    "Near-maximal dimensions alone miss the required tetrahedral overlap scale by factorial powers.",
+    "The exact 2/n! Plancherel support fraction is still only marginal information.",
+    "The positive S5 fully paired trace energies are finite controls, not asymptotic survival evidence.",
+    "A valid next proof must control relative projector angles or equivalent 6j cancellation."
+  ],
+  "finite_controls": [
+    {
+      "active_rank_upper_bounds": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "active_support_rank_fractions": [
+        0.25,
+        0.25,
+        0.375
+      ],
+      "control_id": "S3-ALL-STANDARD-EVEN-COSET",
+      "direct_coset_average": 0.0,
+      "exact_signed_projector_normal_form_verified": true,
+      "maximum_character_trace_residual": 2.220446049250313e-16,
+      "maximum_isotypic_projector_residual": 2.09904032637174e-16,
+      "n": 3,
+      "parity": [
+        0,
+        0,
+        0
+      ],
+      "partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "projector_trace_residual": 1.7564075194265172e-17,
+      "signed_projector_trace_average": 1.7564075194265172e-17,
+      "status": "exact-parity-coset-signed-projector-normal-form",
+      "tensor_dimension": 64
+    },
+    {
+      "active_rank_upper_bounds": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "active_support_rank_fractions": [
+        0.25,
+        0.25,
+        0.375
+      ],
+      "control_id": "S3-ALL-STANDARD-FACE-COSET",
+      "direct_coset_average": 0.0,
+      "exact_signed_projector_normal_form_verified": true,
+      "maximum_character_trace_residual": 2.220446049250313e-16,
+      "maximum_isotypic_projector_residual": 2.09904032637174e-16,
+      "n": 3,
+      "parity": [
+        1,
+        0,
+        0
+      ],
+      "partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "projector_trace_residual": 0.0,
+      "signed_projector_trace_average": 0.0,
+      "status": "exact-parity-coset-signed-projector-normal-form",
+      "tensor_dimension": 64
+    },
+    {
+      "active_rank_upper_bounds": [
+        0.5,
+        0.5,
+        0.5
+      ],
+      "active_support_rank_fractions": [
+        1.850371707708594e-17,
+        0.5,
+        0.25
+      ],
+      "control_id": "S3-MIXED-OPPOSITE-COSET",
+      "direct_coset_average": 0.0,
+      "exact_signed_projector_normal_form_verified": true,
+      "maximum_character_trace_residual": 2.220446049250313e-16,
+      "maximum_isotypic_projector_residual": 2.0990403263717385e-16,
+      "n": 3,
+      "parity": [
+        0,
+        0,
+        1
+      ],
+      "partitions": [
+        [
+          2,
+          1
+        ],
+        [
+          3
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1
+        ],
+        [
+          2,
+          1
+        ]
+      ],
+      "projector_trace_residual": 0.0,
+      "signed_projector_trace_average": 0.0,
+      "status": "exact-parity-coset-signed-projector-normal-form",
+      "tensor_dimension": 16
+    }
+  ],
+  "headline_metrics": {
+    "S5_high_dimensional_paired_face_energy": 0.031116743827160495,
+    "S5_high_dimensional_paired_opposite_energy": 0.017794521604938274,
+    "canonical_signed_overlap_bound_count": 0,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "full_plancherel_signed_support_identity_count": 1,
+    "maximum_finite_plancherel_rank_identity_residual": 1.1102230246251565e-16,
+    "maximum_finite_projector_trace_residual": 1.7564075194265172e-17,
+    "maximum_paired_trace_energy_residual": 6.938893903907228e-18,
+    "n100_rank_only_energy_bound_log2": 2244.032400464254,
+    "new_quantum_algorithm_count": 0,
+    "paired_trace_energy_control_count": 2,
+    "projector_rank_method_no_go_theorem_count": 1,
+    "signed_projector_normal_form_theorem_count": 1
+  },
+  "paired_trace_energy_controls": [
+    {
+      "exact_tuplewise_weight_cancellation_verified": true,
+      "face_direct_energy": 0.0,
+      "face_energy_residual": 0.0,
+      "face_maximum_absolute_trace": 0.0,
+      "face_nonzero_trace_count": 0,
+      "face_parity": [
+        1,
+        0,
+        0
+      ],
+      "face_sum_squared_projector_traces": 0.0,
+      "finite_positive_signal_is_asymptotic_evidence": false,
+      "minimum_dimension_exclusive": 1,
+      "n": 4,
+      "opposite_direct_energy": 0.0,
+      "opposite_energy_residual": 0.0,
+      "opposite_maximum_absolute_trace": 0.0,
+      "opposite_nonzero_trace_count": 0,
+      "opposite_parity": [
+        0,
+        0,
+        1
+      ],
+      "opposite_sum_squared_projector_traces": 0.0,
+      "retained_coarse_product_mass": 0.177978515625,
+      "retained_nonself_orbit_count": 1,
+      "retained_orbit_tuple_count": 1,
+      "status": "fully-paired-energy-is-sum-of-squared-projector-traces"
+    },
+    {
+      "exact_tuplewise_weight_cancellation_verified": true,
+      "face_direct_energy": 0.031116743827160495,
+      "face_energy_residual": 6.938893903907228e-18,
+      "face_maximum_absolute_trace": 0.0777777777777777,
+      "face_nonzero_trace_count": 64,
+      "face_parity": [
+        1,
+        0,
+        0
+      ],
+      "face_sum_squared_projector_traces": 0.031116743827160488,
+      "finite_positive_signal_is_asymptotic_evidence": false,
+      "minimum_dimension_exclusive": 1,
+      "n": 5,
+      "opposite_direct_energy": 0.017794521604938274,
+      "opposite_energy_residual": 3.469446951953614e-18,
+      "opposite_maximum_absolute_trace": 0.037777777777777785,
+      "opposite_nonzero_trace_count": 64,
+      "opposite_parity": [
+        0,
+        0,
+        1
+      ],
+      "opposite_sum_squared_projector_traces": 0.01779452160493827,
+      "retained_coarse_product_mass": 0.10181121915723595,
+      "retained_nonself_orbit_count": 2,
+      "retained_orbit_tuple_count": 64,
+      "status": "fully-paired-energy-is-sum-of-squared-projector-traces"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_exact_parity_coset_invariant_projector_normal_form",
+      "resolution": "Three complete parity-restricted group averages are the signed trivial/sign isotypic operators of the overlapping tensor actions.",
+      "resolved": true
+    },
+    {
+      "obligation": "test_projector_rank_only_route_at_canonical_trim",
+      "resolution": "Kronecker dimension bounds leave a growing factorial upper bound; the exact Plancherel mean rank is also insufficient.",
+      "resolved": true
+    },
+    {
+      "obligation": "remove_outer_plancherel_weights_on_paired_sector",
+      "resolution": "The six factors 2d_i^2/n! cancel the squared normalization of F_x exactly, leaving one squared signed projector trace.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_canonical_signed_three_projector_overlap",
+      "resolution": "Prove an L2 overlap estimate at little-o(|S_n|^-3), separately for one face and one opposite-complement parity sector.",
+      "resolved": false
+    },
+    {
+      "obligation": "connect_overlap_to_positive_mass_adaptive_information",
+      "resolution": "Use the denominator-free trim transfer only after the two signed overlap energies are controlled.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "canonical_dimension_threshold_log2": 1.0575485895594774,
+      "exact_full_plancherel_signed_support_fraction": 5.511463844797178e-07,
+      "group_order_log2": 21.791061114716953,
+      "n": 10,
+      "rank_only_method_certifies_decay": false,
+      "rank_only_overlap_bound_log2": -1.1150971791189548,
+      "rank_only_partition_function_bound_log2": 61.258086165031905,
+      "rank_only_seven_sector_energy_bound_log2": 125.32352725212141,
+      "status": "invariant-projector-rank-bound-asymptotically-vacuous"
+    },
+    {
+      "canonical_dimension_threshold_log2": 8.805711063670925,
+      "exact_full_plancherel_signed_support_fraction": 9.55895466477477e-14,
+      "group_order_log2": 44.25014046988262,
+      "n": 16,
+      "rank_only_method_certifies_decay": false,
+      "rank_only_overlap_bound_log2": -16.61142212734185,
+      "rank_only_partition_function_bound_log2": 113.138999282306,
+      "rank_only_seven_sector_energy_bound_log2": 229.08535348666962,
+      "status": "invariant-projector-rank-bound-asymptotically-vacuous"
+    },
+    {
+      "canonical_dimension_threshold_log2": 22.593224313574062,
+      "exact_full_plancherel_signed_support_fraction": 3.2234751421922368e-24,
+      "group_order_log2": 79.03765741910046,
+      "n": 24,
+      "rank_only_method_certifies_decay": false,
+      "rank_only_overlap_bound_log2": -44.186448627148124,
+      "rank_only_partition_function_bound_log2": 189.9265236301532,
+      "rank_only_seven_sector_energy_bound_log2": 382.660402182364,
+      "status": "invariant-projector-rank-bound-asymptotically-vacuous"
+    },
+    {
+      "canonical_dimension_threshold_log2": 38.92572398407758,
+      "exact_full_plancherel_signed_support_fraction": 7.600781509709488e-36,
+      "group_order_log2": 117.6632636523603,
+      "n": 32,
+      "rank_only_method_certifies_decay": false,
+      "rank_only_overlap_bound_log2": -76.85144796815516,
+      "rank_only_partition_function_bound_log2": 273.13834298892573,
+      "rank_only_seven_sector_energy_bound_log2": 549.084040899909,
+      "status": "invariant-projector-rank-bound-asymptotically-vacuous"
+    },
+    {
+      "canonical_dimension_threshold_log2": 81.72139252914455,
+      "exact_full_plancherel_signed_support_fraction": 6.575898833266317e-65,
+      "group_order_log2": 214.2081380635902,
+      "n": 50,
+      "rank_only_method_certifies_decay": false,
+      "rank_only_overlap_bound_log2": -162.4427850582891,
+      "rank_only_partition_function_bound_log2": 477.1816291324815,
+      "rank_only_seven_sector_energy_bound_log2": 957.1706131870205,
+      "status": "invariant-projector-rank-bound-asymptotically-vacuous"
+    },
+    {
+      "canonical_dimension_threshold_log2": 150.2423585174672,
+      "exact_full_plancherel_signed_support_fraction": 8.061544795946156e-110,
+      "group_order_log2": 363.40103411549404,
+      "n": 75,
+      "rank_only_method_certifies_decay": false,
+      "rank_only_overlap_bound_log2": -299.4847170349344,
+      "rank_only_partition_function_bound_log2": 787.7183853115478,
+      "rank_only_seven_sector_energy_bound_log2": 1578.244125545153,
+      "status": "invariant-projector-rank-bound-asymptotically-vacuous"
+    },
+    {
+      "canonical_dimension_threshold_log2": 225.84122854954052,
+      "exact_full_plancherel_signed_support_fraction": 2.143020576250934e-158,
+      "group_order_log2": 524.7649932900597,
+      "n": 100,
+      "rank_only_method_certifies_decay": false,
+      "rank_only_overlap_bound_log2": -450.68245709908103,
+      "rank_only_partition_function_bound_log2": 1120.6125227710982,
+      "rank_only_seven_sector_energy_bound_log2": 2244.032400464254,
+      "status": "invariant-projector-rank-bound-asymptotically-vacuous"
+    }
+  ],
+  "status": "adaptive-parity-energy-reduced-to-signed-three-projector-angle",
+  "summary": "Converted each adaptive parity-coset partition function into an exact signed invariant-projector overlap and eliminated rank-only estimates.",
+  "theorem_contract": {
+    "exact_coset_normal_form": "average_(parity(g,h,k)=x) product_i r_i(W_i)=Tr(J_g J_h J_k)/product_i d_i.",
+    "fully_paired_energy": "For six non-self-conjugate sign orbits, Q(O)F_x(O)^2=Tr(J_g J_h J_k)^2 tuple by tuple.",
+    "methodological_no_go": "Projector ranks, dimensions, and marginal Plancherel laws do not control the signed triple overlap at the required |S_n|^-3 scale.",
+    "plancherel_rank_identity": "For three independent full Plancherel labels, the expected trivial-plus-sign support fraction is exactly 2/|S_n|.",
+    "rank_bound": "rank supp(J_a)/d_total<=min_(active i)2/d_i^2.",
+    "scope": "The remaining object is a relative-angle/6j contraction; no canonical decay, survival, algorithm, or speedup is proved.",
+    "signed_isotypic_projectors": "J_a(x)=P_a(triv)+(-1)^x P_a(sign) for the g, h, and k diagonal tensor actions on coefficient axes ordered (gk,ghk,hk,g,h,k).",
+    "unnormalized_partition_function": "F_x=(|S_n|/2)^3 Tr(J_g J_h J_k)/product_i d_i."
+  }
+}

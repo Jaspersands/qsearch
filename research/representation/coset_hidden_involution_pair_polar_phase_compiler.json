@@ -1,0 +1,263 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False for explicit involutions: phase estimation implements the principal half rotation with O(log r) controlled powers.",
+      "challenge": "A 1/r pair principal angle forces Omega(r) cost.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It is exactly the zero-overlap kernel and is explicitly flagged out of the partial polar.",
+      "challenge": "The phase-pi sector can be rotated as if supported.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Triple holonomy, overlapping kernels, ordering, and measured-sieve simulation remain unresolved.",
+      "challenge": "Pairwise polars compose automatically into the global polar.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "classical_separation_proved": false,
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "exact_pair_polar_phase_formula_proved": true,
+    "full_orbit_synthesis_polar_compiled": false,
+    "global_pair_consistency_proved": false,
+    "mrs_sieve_escape_proved": false,
+    "pair_polar_polynomial_phase_compiler_constructed": true,
+    "reason": "Structured phase estimation compiles every public pair polar, but no theorem composes those local rotations into the full coherent multiplicity-support measurement.",
+    "speedup_claim_allowed": false,
+    "tensor_pair_polar_compiler_constructed": true,
+    "tiny_pair_principal_angle_is_computational_no_go": false
+  },
+  "created_at": "2026-08-13T15:53:27.681518+00:00",
+  "falsifiers_triggered": [
+    "Small pairwise principal angles do not imply computationally expensive pair polars for explicit permutations.",
+    "Generic QSVT degree is not a lower bound on structured phase-estimation compilers.",
+    "The exact phase-pi kernel must be excluded rather than silently rotated.",
+    "A polynomial pair primitive is not a full orbit polar, decoder, or speedup."
+  ],
+  "finite_controls": [
+    {
+      "dihedral_rotation_order": 3,
+      "exact_phase_polar_verified": true,
+      "final_support_residual": 1.9351669390858674e-16,
+      "initial_support_residual": 1.6680441164045478e-16,
+      "maximum_principal_spectrum_residual": 4.440892098500626e-16,
+      "observed_partial_polar_rank": 3,
+      "phase_half_rotation_polar_residual": 1.2899836470641842e-15,
+      "phase_pi_kernel_dimension": 0,
+      "plus_subspace_dimension": 3,
+      "predicted_partial_polar_rank": 3,
+      "predicted_phase_pi_kernel_dimension": 0,
+      "predicted_smallest_positive_principal_cosine": 0.49999999999999983,
+      "regular_dimension": 6,
+      "smallest_positive_principal_cosine": 0.49999999999999994,
+      "status": "dihedral-pair-phase-polar-verified"
+    },
+    {
+      "dihedral_rotation_order": 4,
+      "exact_phase_polar_verified": true,
+      "final_support_residual": 2.1501050276047832e-16,
+      "initial_support_residual": 1.8705904100893737e-16,
+      "maximum_principal_spectrum_residual": 1.1102230246251565e-16,
+      "observed_partial_polar_rank": 3,
+      "phase_half_rotation_polar_residual": 1.001121951612707e-15,
+      "phase_pi_kernel_dimension": 1,
+      "plus_subspace_dimension": 4,
+      "predicted_partial_polar_rank": 3,
+      "predicted_phase_pi_kernel_dimension": 1,
+      "predicted_smallest_positive_principal_cosine": 0.7071067811865475,
+      "regular_dimension": 8,
+      "smallest_positive_principal_cosine": 0.7071067811865475,
+      "status": "dihedral-pair-phase-polar-verified"
+    },
+    {
+      "dihedral_rotation_order": 5,
+      "exact_phase_polar_verified": true,
+      "final_support_residual": 4.662810113885729e-16,
+      "initial_support_residual": 5.644654748193276e-16,
+      "maximum_principal_spectrum_residual": 1.1102230246251565e-16,
+      "observed_partial_polar_rank": 5,
+      "phase_half_rotation_polar_residual": 2.008562076569877e-15,
+      "phase_pi_kernel_dimension": 0,
+      "plus_subspace_dimension": 5,
+      "predicted_partial_polar_rank": 5,
+      "predicted_phase_pi_kernel_dimension": 0,
+      "predicted_smallest_positive_principal_cosine": 0.30901699437494734,
+      "regular_dimension": 10,
+      "smallest_positive_principal_cosine": 0.3090169943749473,
+      "status": "dihedral-pair-phase-polar-verified"
+    },
+    {
+      "dihedral_rotation_order": 8,
+      "exact_phase_polar_verified": true,
+      "final_support_residual": 3.86674948680034e-16,
+      "initial_support_residual": 1.4750288421792212e-15,
+      "maximum_principal_spectrum_residual": 2.220446049250313e-16,
+      "observed_partial_polar_rank": 7,
+      "phase_half_rotation_polar_residual": 2.56207854815724e-15,
+      "phase_pi_kernel_dimension": 1,
+      "plus_subspace_dimension": 8,
+      "predicted_partial_polar_rank": 7,
+      "predicted_phase_pi_kernel_dimension": 1,
+      "predicted_smallest_positive_principal_cosine": 0.3826834323650897,
+      "regular_dimension": 16,
+      "smallest_positive_principal_cosine": 0.3826834323650897,
+      "status": "dihedral-pair-phase-polar-verified"
+    },
+    {
+      "dihedral_rotation_order": 11,
+      "exact_phase_polar_verified": true,
+      "final_support_residual": 5.90471822709439e-16,
+      "initial_support_residual": 2.9522867781907435e-15,
+      "maximum_principal_spectrum_residual": 4.440892098500626e-16,
+      "observed_partial_polar_rank": 11,
+      "phase_half_rotation_polar_residual": 8.743931000530746e-15,
+      "phase_pi_kernel_dimension": 0,
+      "plus_subspace_dimension": 11,
+      "predicted_partial_polar_rank": 11,
+      "predicted_phase_pi_kernel_dimension": 0,
+      "predicted_smallest_positive_principal_cosine": 0.142314838273285,
+      "regular_dimension": 22,
+      "smallest_positive_principal_cosine": 0.1423148382732852,
+      "status": "dihedral-pair-phase-polar-verified"
+    }
+  ],
+  "headline_metrics": {
+    "exact_pair_polar_formula_theorem_count": 1,
+    "finite_control_failure_count": 0,
+    "finite_pair_polar_control_count": 5,
+    "full_orbit_polar_compiler_count": 0,
+    "logarithmic_phase_compiler_count": 1,
+    "maximum_generic_inverse_gap_scale": 1303.7974216405148,
+    "maximum_phase_polar_residual": 8.743931000530746e-15,
+    "maximum_phase_resolution_bits": 35,
+    "new_quantum_algorithm_count": 0,
+    "tensor_pair_polar_compiler_count": 1
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-PAIR-POLAR-CIRCUIT-DETAILS",
+      "resolved": true,
+      "statement": "Compile reversible order finding/rational phase recovery and error accounting for controlled explicit S_n permutations."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-PAIR-POLAR-GLOBAL-CONSISTENCY",
+      "resolved": false,
+      "statement": "Determine the holonomy/compatibility of pair half rotations around triples and larger candidate-range cycles."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-PAIR-TO-ORBIT-POLAR",
+      "resolved": false,
+      "statement": "Construct or refute a coherent merge architecture using the pair compiler that approximates the full orbit-synthesis polar."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-MRS-ESCAPE",
+      "resolved": false,
+      "statement": "Show that any pair-merge architecture retains coherence not simulable by the Moore-Russell-Sniady measured sieve model."
+    }
+  ],
+  "scaling_records": [
+    {
+      "controlled_permutation_power_count": 27,
+      "generic_inverse_gap_scale": 5.1258308954830145,
+      "generic_polynomial_cost_superpolynomial_in_log_order": false,
+      "global_orbit_synthesis_polar_compiled": false,
+      "log2_rotation_order": 4.0,
+      "phase_compiler_polynomial_in_log_order": true,
+      "phase_resolution_bits": 27,
+      "rotation_order": 16,
+      "smallest_positive_principal_cosine": 0.1950903220161282,
+      "status": "pair-polar-phase-compiled-global-orbit-polar-open",
+      "target_operator_error": 1e-06,
+      "tensor_copy_count": 256,
+      "tensor_pair_polar_polynomial_in_copy_count_and_log_order": true
+    },
+    {
+      "controlled_permutation_power_count": 29,
+      "generic_inverse_gap_scale": 20.380016247096115,
+      "generic_polynomial_cost_superpolynomial_in_log_order": false,
+      "global_orbit_synthesis_polar_compiled": false,
+      "log2_rotation_order": 6.0,
+      "phase_compiler_polynomial_in_log_order": true,
+      "phase_resolution_bits": 29,
+      "rotation_order": 64,
+      "smallest_positive_principal_cosine": 0.04906767432741801,
+      "status": "pair-polar-phase-compiled-global-orbit-polar-open",
+      "target_operator_error": 1e-06,
+      "tensor_copy_count": 256,
+      "tensor_pair_polar_polynomial_in_copy_count_and_log_order": true
+    },
+    {
+      "controlled_permutation_power_count": 31,
+      "generic_inverse_gap_scale": 81.48937620670448,
+      "generic_polynomial_cost_superpolynomial_in_log_order": true,
+      "global_orbit_synthesis_polar_compiled": false,
+      "log2_rotation_order": 8.0,
+      "phase_compiler_polynomial_in_log_order": true,
+      "phase_resolution_bits": 31,
+      "rotation_order": 256,
+      "smallest_positive_principal_cosine": 0.012271538285719823,
+      "status": "pair-polar-phase-compiled-global-orbit-polar-open",
+      "target_operator_error": 1e-06,
+      "tensor_copy_count": 256,
+      "tensor_pair_polar_polynomial_in_copy_count_and_log_order": true
+    },
+    {
+      "controlled_permutation_power_count": 33,
+      "generic_inverse_gap_scale": 325.9498347796883,
+      "generic_polynomial_cost_superpolynomial_in_log_order": true,
+      "global_orbit_synthesis_polar_compiled": false,
+      "log2_rotation_order": 10.0,
+      "phase_compiler_polynomial_in_log_order": true,
+      "phase_resolution_bits": 33,
+      "rotation_order": 1024,
+      "smallest_positive_principal_cosine": 0.0030679567629660156,
+      "status": "pair-polar-phase-compiled-global-orbit-polar-open",
+      "target_operator_error": 1e-06,
+      "tensor_copy_count": 256,
+      "tensor_pair_polar_polynomial_in_copy_count_and_log_order": true
+    },
+    {
+      "controlled_permutation_power_count": 35,
+      "generic_inverse_gap_scale": 1303.7974216405148,
+      "generic_polynomial_cost_superpolynomial_in_log_order": true,
+      "global_orbit_synthesis_polar_compiled": false,
+      "log2_rotation_order": 12.0,
+      "phase_compiler_polynomial_in_log_order": true,
+      "phase_resolution_bits": 35,
+      "rotation_order": 4096,
+      "smallest_positive_principal_cosine": 0.0007669903187427239,
+      "status": "pair-polar-phase-compiled-global-orbit-polar-open",
+      "target_operator_error": 1e-06,
+      "tensor_copy_count": 256,
+      "tensor_pair_polar_polynomial_in_copy_count_and_log_order": true
+    }
+  ],
+  "status": "pair-polar-phase-compiler-proved-global-orbit-polar-open",
+  "summary": "Constructed an exact principal-half-phase compiler for every pair of involution projector ranges, bypassing inverse principal-angle cost and tensorizing across copies. Global consistency and orbit-polar composition remain the decisive open gates.",
+  "theorem": {
+    "arbitrary_circuit_lower_bound_proved": false,
+    "dihedral_principal_spectrum": "If r=ord(HG), spec(PQP|ran(P))={cos^2(pi l/r):0<=l<r}, repeated once per regular copy of <h,g>.",
+    "exact_dihedral_spectrum_proved": true,
+    "exact_pair_polar_formula_proved": true,
+    "full_orbit_polar_compiler_constructed": false,
+    "kernel_rule": "The U phase-pi sector is exactly ker(QP) inside ran(P).",
+    "logarithmic_phase_compiler_constructed": true,
+    "phase_estimation_compiler": "Phase-estimate the explicit permutation HG, flag phase pi, and apply the principal negative half phase using O(log r+log(1/e)) controlled powers.",
+    "principal_half_rotation": "polar(QP)=U^-1/2 supp(PQP) for P=(I+H)/2 and Q=(I+G)/2.",
+    "reflection_rotation_relation": "For U=HG, HUH=U^-1 and U^-1/2 H U^1/2=G using the principal phase branch.",
+    "scope_limit": "Pairwise compilation does not make the M-branch orbit polar, prove global consistency, escape MRS sieves, or decode the hidden involution.",
+    "status": "pair-polar-phase-compiler-proved-global-orbit-polar-open",
+    "symmetric_group_complexity": "For h,g in S_n, log ord(hg)<=log(n!)=O(n log n), and each controlled permutation power is explicitly computable in poly(n).",
+    "tensor_pair_polar_compiler_constructed": true,
+    "tensorization": "The polar and support of a tensor product of pair overlaps are the tensor products of their one-register partial polars and supports.",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "cost_model": "Controlled powers of the explicit permutation hg, reversible order/phase arithmetic, and target operator error epsilon.",
+    "input": "Two explicitly represented involutions h,g and quantum access to their right-regular actions.",
+    "outside_scope": "The simultaneous polar of all M candidate ranges and any adaptive measured pairwise sieve.",
+    "target": "The canonical partial polar between the +1 projector ranges of h and g, or its k-fold tensor power."
+  }
+}

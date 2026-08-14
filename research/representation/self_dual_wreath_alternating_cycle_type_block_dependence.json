@@ -1,0 +1,164 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "One output product may have a biased cycle type.",
+      "resolution": "Every output permutation is exactly uniform in A_n.",
+      "resolved": true
+    },
+    {
+      "objection": "Pairwise cycle-type tests can detect the obstruction.",
+      "resolution": "All fifteen coordinate pairs are exactly independent; dependence is genuinely block-level synergy.",
+      "resolved": true
+    },
+    {
+      "objection": "Marginal normal-set mixing composes into joint mixing.",
+      "resolution": "The XOR-style possibility of pairwise-independent block synergy remains; a joint theorem is required.",
+      "resolved": true
+    },
+    {
+      "objection": "Classical cycle-type mutual information equals label KL.",
+      "resolution": "Finite exact controls falsify Shannon preservation; only the quadratic collision norm is preserved by character orthogonality.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "all_scalar_cycle_type_pairs_independent_proved": true,
+    "classical_separation_proved": false,
+    "even_collision_is_joint_block_renyi_dependence_proved": true,
+    "input_output_word_map_bijection_proved": true,
+    "joint_block_collision_subpolynomial_proved": false,
+    "pairwise_mixing_sufficient": false,
+    "physical_rank_profile_mixes_proved": false,
+    "reason": "All marginal questions are exact, but the higher-order joint block collision on growing support remains open.",
+    "shannon_cycle_type_information_equals_label_kl": false,
+    "single_product_mixing_sufficient": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T23:18:37.025894+00:00",
+  "exact_controls": [
+    {
+      "alternating_group_order": 1,
+      "classical_cycle_type_mutual_information_bits": 0.0,
+      "coarse_irrep_label_kl_bits": 0.0,
+      "collision_duality_residual": "0",
+      "exact_block_dependence_structure_verified": true,
+      "exact_cycle_type_collision_moment": "1",
+      "exact_even_collision_moment": "1",
+      "maximum_one_coordinate_marginal_residual": "0",
+      "maximum_pairwise_independence_residual": "0",
+      "n": 2,
+      "occupied_joint_signature_count": 1,
+      "shannon_duality_residual_bits": 0.0,
+      "shannon_information_preserved_by_fourier_transform": true,
+      "status": "cycle-type-blocks-product-marginal-pairwise-independent-with-renyi-dependence"
+    },
+    {
+      "alternating_group_order": 3,
+      "classical_cycle_type_mutual_information_bits": 1.717850465126431,
+      "coarse_irrep_label_kl_bits": 1.717850465126431,
+      "collision_duality_residual": "0",
+      "exact_block_dependence_structure_verified": true,
+      "exact_cycle_type_collision_moment": "9/2",
+      "exact_even_collision_moment": "9/2",
+      "maximum_one_coordinate_marginal_residual": "0",
+      "maximum_pairwise_independence_residual": "0",
+      "n": 3,
+      "occupied_joint_signature_count": 14,
+      "shannon_duality_residual_bits": 0.0,
+      "shannon_information_preserved_by_fourier_transform": true,
+      "status": "cycle-type-blocks-product-marginal-pairwise-independent-with-renyi-dependence"
+    },
+    {
+      "alternating_group_order": 12,
+      "classical_cycle_type_mutual_information_bits": 1.8453323151571732,
+      "coarse_irrep_label_kl_bits": 1.199804757471669,
+      "collision_duality_residual": "0",
+      "exact_block_dependence_structure_verified": true,
+      "exact_cycle_type_collision_moment": "1259/162",
+      "exact_even_collision_moment": "1259/162",
+      "maximum_one_coordinate_marginal_residual": "0",
+      "maximum_pairwise_independence_residual": "0",
+      "n": 4,
+      "occupied_joint_signature_count": 59,
+      "shannon_duality_residual_bits": 0.6455275576855042,
+      "shannon_information_preserved_by_fourier_transform": false,
+      "status": "cycle-type-blocks-product-marginal-pairwise-independent-with-renyi-dependence"
+    },
+    {
+      "alternating_group_order": 60,
+      "classical_cycle_type_mutual_information_bits": 0.5295140101512392,
+      "coarse_irrep_label_kl_bits": 0.506673835591169,
+      "collision_duality_residual": "0",
+      "exact_block_dependence_structure_verified": true,
+      "exact_cycle_type_collision_moment": "12873673/3456000",
+      "exact_even_collision_moment": "12873673/3456000",
+      "maximum_one_coordinate_marginal_residual": "0",
+      "maximum_pairwise_independence_residual": "0",
+      "n": 5,
+      "occupied_joint_signature_count": 821,
+      "shannon_duality_residual_bits": 0.02284017456007026,
+      "shannon_information_preserved_by_fourier_transform": false,
+      "status": "cycle-type-blocks-product-marginal-pairwise-independent-with-renyi-dependence"
+    }
+  ],
+  "falsifiers_triggered": [
+    "No single output cycle type or coordinate pair can witness the obstruction.",
+    "Separate normal-set product-mixing estimates do not imply joint three-output mixing.",
+    "Shannon cycle-type mutual information is not Fourier-dual to coarse irrep-label KL."
+  ],
+  "headline_metrics": {
+    "exact_finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "joint_block_mixing_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "pairwise_independence_theorem_count": 1,
+    "physical_rank_mixing_theorem_count": 0,
+    "renyi_block_dependence_identity_count": 1,
+    "shannon_fourier_counterexample_count": 2,
+    "word_map_bijection_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "identify_output_triple_as_bijective_reparameterization",
+      "resolution": "The explicit inverse in (1) works in every group.",
+      "resolved": true
+    },
+    {
+      "obligation": "remove_all_marginal_and_pairwise_cycle_mixing_questions",
+      "resolution": "Uniform inputs and the relevant two-coordinate word maps are bijective, giving exact pairwise independence.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_joint_three_output_conditional_collision_mixing",
+      "resolution": "Control P(Y|X) in class-level chi-square jointly; separate one-product normal-set mixing theorems are insufficient.",
+      "resolved": false
+    },
+    {
+      "obligation": "bridge_classical_shannon_information_to_label_kl",
+      "resolution": "No Shannon Fourier isometry exists; use Renyi-two, direct label entropy, or prove a new comparison under additional regularity.",
+      "resolved": false
+    }
+  ],
+  "status": "growing-support-target-is-pure-joint-cycle-type-block-synergy",
+  "summary": "Proved exact product block marginals and pairwise independence, isolating the even collision core as higher-order input/output cycle-type synergy.",
+  "theorem": {
+    "collision_identity": "C_even=1+chi2(P_(X,Y)||q_even^3 tensor q_even^3)",
+    "input_output_block_marginals": "Both three-coordinate cycle-type blocks have product coarse-even class law",
+    "inverse_map": "k=bc^-1a, g=cb^-1, h=ba^-1cb^-1",
+    "joint_block_mixing_proved": false,
+    "output_map": "F(g,h,k)=(gk,hk,ghk)",
+    "scalar_coordinate_dependence": "All fifteen scalar coordinate pairs are independent",
+    "shannon_fourier_duality": false,
+    "status": "even-collision-is-pure-higher-order-input-output-block-dependence"
+  },
+  "theorem_contract": {
+    "bijective_word_map": "F(g,h,k)=(gk,hk,ghk)",
+    "block_marginals": "Both three-coordinate cycle-type blocks have product coarse-even class law",
+    "fourier_boundary": "Collision/Renyi-two is dual to the coarse irrep law; Shannon KL is not.",
+    "inverse": "k=bc^-1a, g=cb^-1, h=ba^-1cb^-1",
+    "pairwise_independence": "All fifteen scalar coordinate pairs are independent",
+    "renyi_two_dependence": "C_even=1+chi2(P_(X,Y)||q_even^3 tensor q_even^3)",
+    "scope": "No joint block collision estimate is proved for growing support."
+  }
+}

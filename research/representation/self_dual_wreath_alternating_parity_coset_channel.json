@@ -1,0 +1,177 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Conditional syndrome bias is an opaque information quantity.",
+      "resolution": "False: its Walsh coefficients are explicit parity-coset word-map ratios F_x/F_0.",
+      "resolved": true
+    },
+    {
+      "objection": "Seven unrelated asymptotic estimates are required.",
+      "resolution": "Tetrahedral symmetry reduces them to face and opposite-complement twist types, though orbit labels are permuted.",
+      "resolved": true
+    },
+    {
+      "objection": "A finite nonzero ratio moment proves adaptive survival.",
+      "resolution": "False: low-dimensional base sectors can dominate raw ratios; the canonical trim and direct KL/TV mass are mandatory.",
+      "resolved": true
+    },
+    {
+      "objection": "A twisted A_n word map is automatically quantum.",
+      "resolution": "False: it is a classical finite-group partition function until a natural-input access separation is proved.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "adaptive_syndrome_equals_parity_coset_imbalance_proved": true,
+    "algorithm_claim_allowed": false,
+    "classical_separation_proved": false,
+    "orbit_adaptive_syndrome_survives_proved": false,
+    "reason": "The adaptive channel is reduced to two twisted A_n word-map types, but neither has a positive-mass asymptotic bound.",
+    "seven_twists_reduce_to_two_tetrahedral_types_proved": true,
+    "speedup_claim_allowed": false,
+    "trimmed_face_twist_ratio_vanishes_proved": false,
+    "trimmed_opposite_twist_ratio_vanishes_proved": false
+  },
+  "created_at": "2026-08-13T20:54:47.195073+00:00",
+  "exact_controls": [
+    {
+      "base_orbit_tuple_count": 1,
+      "coarse_label_count": 1,
+      "conditional_kl_residual": 0.0,
+      "exact_parity_coset_channel_verified": true,
+      "expected_conditional_syndrome_chi_square": 7.0,
+      "expected_conditional_syndrome_kl_bits": 3.0,
+      "face_coset_count": 4,
+      "face_type_annealed_ratio_moment": 1.0,
+      "kl_chain_conditional_syndrome_kl_bits": 3.0,
+      "maximum_base_likelihood_residual": 0.0,
+      "maximum_conditional_probability_sum_residual": 0.0,
+      "maximum_face_type_annealed_ratio_moment_residual": 0.0,
+      "maximum_opposite_type_annealed_ratio_moment_residual": 0.0,
+      "maximum_orientation_fourier_reconstruction_residual": 0.0,
+      "minimum_conditional_syndrome_probability": 0.0,
+      "n": 2,
+      "opposite_complement_coset_count": 3,
+      "opposite_type_annealed_ratio_moment": 1.0,
+      "parity_coset_count": 8,
+      "status": "exact-alternating-parity-coset-channel-verified"
+    },
+    {
+      "base_orbit_tuple_count": 64,
+      "coarse_label_count": 2,
+      "conditional_kl_residual": 2.220446049250313e-16,
+      "exact_parity_coset_channel_verified": true,
+      "expected_conditional_syndrome_chi_square": 0.5555555555555554,
+      "expected_conditional_syndrome_kl_bits": 0.40740740740740733,
+      "face_coset_count": 4,
+      "face_type_annealed_ratio_moment": 0.11111111111111108,
+      "kl_chain_conditional_syndrome_kl_bits": 0.4074074074074071,
+      "maximum_base_likelihood_residual": 1.7763568394002505e-14,
+      "maximum_conditional_probability_sum_residual": 0.0,
+      "maximum_face_type_annealed_ratio_moment_residual": 0.0,
+      "maximum_opposite_type_annealed_ratio_moment_residual": 0.0,
+      "maximum_orientation_fourier_reconstruction_residual": 0.0,
+      "minimum_conditional_syndrome_probability": 0.0,
+      "n": 3,
+      "opposite_complement_coset_count": 3,
+      "opposite_type_annealed_ratio_moment": 0.03703703703703701,
+      "parity_coset_count": 8,
+      "status": "exact-alternating-parity-coset-channel-verified"
+    },
+    {
+      "base_orbit_tuple_count": 729,
+      "coarse_label_count": 3,
+      "conditional_kl_residual": 9.992007221626409e-16,
+      "exact_parity_coset_channel_verified": true,
+      "expected_conditional_syndrome_chi_square": 1.2951388888888893,
+      "expected_conditional_syndrome_kl_bits": 0.8740114440685643,
+      "face_coset_count": 4,
+      "face_type_annealed_ratio_moment": 0.19444444444444448,
+      "kl_chain_conditional_syndrome_kl_bits": 0.8740114440685653,
+      "maximum_base_likelihood_residual": 1.1368683772161603e-12,
+      "maximum_conditional_probability_sum_residual": 2.220446049250313e-16,
+      "maximum_face_type_annealed_ratio_moment_residual": 1.1102230246251565e-16,
+      "maximum_opposite_type_annealed_ratio_moment_residual": 2.7755575615628914e-17,
+      "maximum_orientation_fourier_reconstruction_residual": 3.410605131648481e-13,
+      "minimum_conditional_syndrome_probability": -1.4051260155412137e-16,
+      "n": 4,
+      "opposite_complement_coset_count": 3,
+      "opposite_type_annealed_ratio_moment": 0.1724537037037037,
+      "parity_coset_count": 8,
+      "status": "exact-alternating-parity-coset-channel-verified"
+    },
+    {
+      "base_orbit_tuple_count": 4096,
+      "coarse_label_count": 4,
+      "conditional_kl_residual": 5.773159728050814e-15,
+      "exact_parity_coset_channel_verified": true,
+      "expected_conditional_syndrome_chi_square": 0.882703582754885,
+      "expected_conditional_syndrome_kl_bits": 0.6258735928161406,
+      "face_coset_count": 4,
+      "face_type_annealed_ratio_moment": 0.15464845829048424,
+      "kl_chain_conditional_syndrome_kl_bits": 0.6258735928161464,
+      "maximum_base_likelihood_residual": 9.094947017729282e-13,
+      "maximum_conditional_probability_sum_residual": 2.220446049250313e-16,
+      "maximum_face_type_annealed_ratio_moment_residual": 1.1102230246251565e-16,
+      "maximum_opposite_type_annealed_ratio_moment_residual": 5.551115123125783e-17,
+      "maximum_orientation_fourier_reconstruction_residual": 4.092726157978177e-12,
+      "minimum_conditional_syndrome_probability": -1.5612511283791232e-15,
+      "n": 5,
+      "opposite_complement_coset_count": 3,
+      "opposite_type_annealed_ratio_moment": 0.08803658319764815,
+      "parity_coset_count": 8,
+      "status": "exact-alternating-parity-coset-channel-verified"
+    }
+  ],
+  "falsifiers_triggered": [
+    "The adaptive syndrome has no orientation complexity beyond parity-coset imbalance.",
+    "Only two tetrahedral twist types require asymptotic analysis.",
+    "Raw twisted ratio moments remain vulnerable to low-dimensional tails."
+  ],
+  "headline_metrics": {
+    "S5_expected_conditional_syndrome_chi_square": 0.882703582754885,
+    "S5_face_type_annealed_ratio_moment": 0.15464845829048424,
+    "S5_opposite_type_annealed_ratio_moment": 0.08803658319764815,
+    "alternating_parity_coset_channel_theorem_count": 1,
+    "face_twist_type_count": 4,
+    "finite_control_count": 4,
+    "maximum_fourier_reconstruction_residual": 4.092726157978177e-12,
+    "new_quantum_algorithm_count": 0,
+    "opposite_complement_twist_type_count": 3,
+    "parity_coset_count": 8,
+    "trimmed_twisted_mixing_theorem_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "derive_exact_orbit_adaptive_syndrome_partition_functions",
+      "resolution": "Fourier averaging over six transpose bits projects the word input onto each of the eight parity cosets.",
+      "resolved": true
+    },
+    {
+      "obligation": "reduce_seven_twists_by_tetrahedral_symmetry",
+      "resolution": "Word parity supports have the two exact orbit sizes four and three; annealed ratio moments agree within each type in finite controls.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_trimmed_face_type_coset_ratio_moment",
+      "resolution": "Prove F_x/F_0 contracts on positive coarse A_n Plancherel mass for one face-type outer-automorphism twist.",
+      "resolved": false
+    },
+    {
+      "obligation": "bound_trimmed_opposite_type_coset_ratio_moment",
+      "resolution": "Prove the corresponding four-edge twist contracts, or identify a positive-mass retained counterfamily.",
+      "resolved": false
+    }
+  ],
+  "status": "adaptive-syndrome-reduced-to-two-twisted-alternating-word-maps",
+  "summary": "Converted orbit-adaptive syndrome information into two explicit parity-coset alternating-group word-map ratio problems.",
+  "theorem_contract": {
+    "annealed_ratio_moment": "E chi2(P_(Y|O)||U)=sum_O Q_O sum_(x!=0)F_x(O)^2/F_0(O).",
+    "conditional_syndrome": "hat P_(Y|O)(x)=F_x(O)/F_0(O), with F_0 the coarse A_n likelihood.",
+    "coset_partition_function": "F_x(O)=sum_(parity(g,h,k)=x) product_i r_(O_i)(W_i).",
+    "orientation_fourier_expansion": "L_O(z)=sum_x (-1)^(x dot A^Tz)F_x(O).",
+    "scope": "The reduction does not prove either twisted ratio moment vanishes after the canonical dimension trim.",
+    "tetrahedral_types": "The seven nonzero sectors form four face-type and three opposite-complement-type symmetry classes.",
+    "twisted_An_interpretation": "After choosing an odd coset representative, nonzero F_x are outer-automorphism-twisted A_n word maps."
+  }
+}

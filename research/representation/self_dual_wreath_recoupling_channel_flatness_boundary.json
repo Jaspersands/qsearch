@@ -1,0 +1,324 @@
+{
+  "created_at": "2026-08-13T19:13:22.745434+00:00",
+  "theorem_contract": {
+    "physical_joint_law": "p(mu,nu)=||R_(nu,mu)||_HS^2/M.",
+    "physical_marginals": "p(mu)=L_mu/M and p(nu)=R_nu/M.",
+    "flat_benchmark": "q(mu,nu)=L_mu R_nu/M^2 is exactly the product of physical marginals.",
+    "likelihood_ratio": "p/q=M ||R_(nu,mu)||_HS^2/(L_mu R_nu).",
+    "mutual_information": "D_KL(p||q) is the classical mutual information between the two intermediate channel measurements.",
+    "chi_square_identity": "chi^2(p||q)=sum ||R_(nu,mu)||_HS^4/(L_mu R_nu)-1.",
+    "scope": "The controls cover complete finite S6 sectors for one repeated source. They do not determine natural Plancherel asymptotics or phases."
+  },
+  "finite_controls": [
+    {
+      "final_partition": [
+        6
+      ],
+      "total_multiplicity": 2,
+      "channel_count": 1,
+      "channel_dimensions": [
+        {
+          "partition": [
+            4,
+            2
+          ],
+          "dimension": 2
+        }
+      ],
+      "physical_probability_sum_residual": 2.1094237467877974e-15,
+      "product_marginal_probability_sum_residual": 0.0,
+      "maximum_marginal_residual": 2.1094237467877974e-15,
+      "total_variation_from_channel_independence": 1.0547118733938987e-15,
+      "chi_square_from_channel_independence": 4.44966854351227e-30,
+      "mutual_information_bits": 0.0,
+      "product_mass_on_physically_forbidden_channels": 0.0,
+      "minimum_positive_likelihood_ratio": 0.9999999999999979,
+      "maximum_likelihood_ratio": 0.9999999999999979,
+      "exact_channel_flatness": true,
+      "nontrivial_channel_correlation": false,
+      "finite_complete_sector_only": true,
+      "status": "finite-recoupling-channel-flat"
+    },
+    {
+      "final_partition": [
+        5,
+        1
+      ],
+      "total_multiplicity": 6,
+      "channel_count": 4,
+      "channel_dimensions": [
+        {
+          "partition": [
+            5,
+            1
+          ],
+          "dimension": 1
+        },
+        {
+          "partition": [
+            4,
+            2
+          ],
+          "dimension": 2
+        },
+        {
+          "partition": [
+            4,
+            1,
+            1
+          ],
+          "dimension": 1
+        },
+        {
+          "partition": [
+            3,
+            2,
+            1
+          ],
+          "dimension": 2
+        }
+      ],
+      "physical_probability_sum_residual": 0.0,
+      "product_marginal_probability_sum_residual": 0.0,
+      "maximum_marginal_residual": 3.608224830031759e-16,
+      "total_variation_from_channel_independence": 0.11726851851851898,
+      "chi_square_from_channel_independence": 0.08296930941358063,
+      "mutual_information_bits": 0.06511471237526281,
+      "product_mass_on_physically_forbidden_channels": 0.0,
+      "minimum_positive_likelihood_ratio": 0.4166666666666638,
+      "maximum_likelihood_ratio": 1.5000000000000067,
+      "exact_channel_flatness": false,
+      "nontrivial_channel_correlation": true,
+      "finite_complete_sector_only": true,
+      "status": "finite-nonhaar-channel-correlation-detected"
+    },
+    {
+      "final_partition": [
+        3,
+        3
+      ],
+      "total_multiplicity": 4,
+      "channel_count": 3,
+      "channel_dimensions": [
+        {
+          "partition": [
+            5,
+            1
+          ],
+          "dimension": 1
+        },
+        {
+          "partition": [
+            4,
+            1,
+            1
+          ],
+          "dimension": 1
+        },
+        {
+          "partition": [
+            3,
+            2,
+            1
+          ],
+          "dimension": 2
+        }
+      ],
+      "physical_probability_sum_residual": 6.661338147750939e-16,
+      "product_marginal_probability_sum_residual": 0.0,
+      "maximum_marginal_residual": 6.106226635438361e-16,
+      "total_variation_from_channel_independence": 0.12500000000000008,
+      "chi_square_from_channel_independence": 0.163580246913581,
+      "mutual_information_bits": 0.15642516416475646,
+      "product_mass_on_physically_forbidden_channels": 0.0625,
+      "minimum_positive_likelihood_ratio": 0.44444444444444603,
+      "maximum_likelihood_ratio": 1.777777777777783,
+      "exact_channel_flatness": false,
+      "nontrivial_channel_correlation": true,
+      "finite_complete_sector_only": true,
+      "status": "finite-nonhaar-channel-correlation-detected"
+    },
+    {
+      "final_partition": [
+        2,
+        2,
+        2
+      ],
+      "total_multiplicity": 6,
+      "channel_count": 4,
+      "channel_dimensions": [
+        {
+          "partition": [
+            4,
+            2
+          ],
+          "dimension": 2
+        },
+        {
+          "partition": [
+            3,
+            2,
+            1
+          ],
+          "dimension": 2
+        },
+        {
+          "partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "dimension": 1
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2
+          ],
+          "dimension": 1
+        }
+      ],
+      "physical_probability_sum_residual": 6.661338147750939e-16,
+      "product_marginal_probability_sum_residual": 0.0,
+      "maximum_marginal_residual": 4.440892098500626e-16,
+      "total_variation_from_channel_independence": 0.11726851851851901,
+      "chi_square_from_channel_independence": 0.08296930941358309,
+      "mutual_information_bits": 0.06511471237526532,
+      "product_mass_on_physically_forbidden_channels": 0.0,
+      "minimum_positive_likelihood_ratio": 0.41666666666665336,
+      "maximum_likelihood_ratio": 1.5000000000000395,
+      "exact_channel_flatness": false,
+      "nontrivial_channel_correlation": true,
+      "finite_complete_sector_only": true,
+      "status": "finite-nonhaar-channel-correlation-detected"
+    },
+    {
+      "final_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "total_multiplicity": 4,
+      "channel_count": 3,
+      "channel_dimensions": [
+        {
+          "partition": [
+            3,
+            2,
+            1
+          ],
+          "dimension": 2
+        },
+        {
+          "partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "dimension": 1
+        },
+        {
+          "partition": [
+            2,
+            2,
+            2
+          ],
+          "dimension": 1
+        }
+      ],
+      "physical_probability_sum_residual": 4.440892098500626e-16,
+      "product_marginal_probability_sum_residual": 0.0,
+      "maximum_marginal_residual": 6.661338147750939e-16,
+      "total_variation_from_channel_independence": 0.1250000000000001,
+      "chi_square_from_channel_independence": 0.1635802469135792,
+      "mutual_information_bits": 0.15642516416475535,
+      "product_mass_on_physically_forbidden_channels": 0.0625,
+      "minimum_positive_likelihood_ratio": 0.44444444444444914,
+      "maximum_likelihood_ratio": 1.7777777777777728,
+      "exact_channel_flatness": false,
+      "nontrivial_channel_correlation": true,
+      "finite_complete_sector_only": true,
+      "status": "finite-nonhaar-channel-correlation-detected"
+    }
+  ],
+  "asymptotic_decision_rule": {
+    "flat_outcome": "Source-weighted TV and mutual information tend to zero; measured channel labels are asymptotically independent and only coherent multiplicity phases remain as possible leverage.",
+    "structured_outcome": "A nonvanishing source-weighted mutual information or forbidden-channel mass survives; isolate those channels and test an explicit transform.",
+    "required_weighting": "physical Plancherel source and final-sector trace mass",
+    "finite_s6_decides_asymptotic": false
+  },
+  "proof_obligations": [
+    {
+      "obligation": "derive_source_weighted_recoupling_channel_mutual_information",
+      "resolved": false,
+      "resolution": "Requires scalable 6j block fourth moments under physical Plancherel weighting."
+    },
+    {
+      "obligation": "classify_nonhaar_outlier_channel_mass",
+      "resolved": false,
+      "resolution": "If mutual information survives, identify whether its channels have nonvanishing physical mass and a uniform description."
+    },
+    {
+      "obligation": "test_classical_access_to_channel_correlations",
+      "resolved": false,
+      "resolution": "Any surviving label correlation needs a classical sampling and estimation baseline before being treated as quantum leverage."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Unitarity forces exact channel independence.",
+      "resolved": true,
+      "resolution": "Unitarity fixes only row and column marginals. Four of five complete S6 sectors have nonzero mutual information."
+    },
+    {
+      "objection": "A zero recoupling block means one Kronecker coefficient vanishes.",
+      "resolved": true,
+      "resolution": "False in the displayed complete sectors: both channel dimensions are positive while their cross block is forbidden by recoupling."
+    },
+    {
+      "objection": "Nonzero finite mutual information is evidence for an algorithm.",
+      "resolved": false,
+      "resolution": "It may vanish with n, live on negligible source mass, or be classically accessible."
+    },
+    {
+      "objection": "Channel flatness would dequantize coherent recoupling.",
+      "resolved": false,
+      "resolution": "It dequantizes only measured labels; phases and multiplicity-index interference are absent from p(mu,nu)."
+    }
+  ],
+  "headline_metrics": {
+    "recoupling_channel_information_identity_theorem_count": 1,
+    "complete_s6_sector_count": 5,
+    "normalization_failure_count": 0,
+    "nonflat_s6_sector_count": 4,
+    "forbidden_channel_s6_sector_count": 2,
+    "maximum_s6_total_variation": 0.1250000000000001,
+    "maximum_s6_mutual_information_bits": 0.15642516416475646,
+    "maximum_s6_likelihood_ratio": 1.777777777777783,
+    "source_weighted_asymptotic_mutual_information_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "channel_information_identity_proved": true,
+    "exact_channel_flatness_falsified_at_s6": true,
+    "source_weighted_mutual_information_vanishes_proved": false,
+    "source_weighted_mutual_information_survives_proved": false,
+    "nonhaar_outlier_transform_compiled": false,
+    "classical_baseline_separated": false,
+    "algorithm_claim_allowed": false,
+    "speedup_claim_allowed": false,
+    "reason": "Finite arithmetic channel correlations exist, but their physical asymptotic mass, classical accessibility, and coherent use are open."
+  },
+  "status": "finite-channel-nonflatness-proved-asymptotic-information-open",
+  "summary": "Reduced measured recoupling structure to channel mutual information and found finite non-Haar correlations, including forbidden channels.",
+  "falsifiers_triggered": [
+    "Unitarity does not force product-distributed intermediate labels.",
+    "Complete S6 recoupling contains physically forbidden cross channels with positive product-marginal mass.",
+    "Finite channel mutual information does not establish asymptotic or quantum advantage."
+  ]
+}

@@ -1,0 +1,223 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A uniformly bounded tetrahedral second moment is required.",
+      "resolution": "No. It may diverge, provided it grows more slowly than 1/(8V_n+2W_n).",
+      "resolved": true
+    },
+    {
+      "objection": "Convergence under product Plancherel automatically transfers.",
+      "resolution": "The exact rare-event model has vanishing reference signal and unit physical signal when the second moment compensates the rare mass.",
+      "resolved": true
+    },
+    {
+      "objection": "The rare one-dimensional parity tail prevents transfer.",
+      "resolution": "A constant contribution to M_n is harmless because S_n->0; only growth at the reciprocal S_n scale can obstruct this argument.",
+      "resolved": true
+    },
+    {
+      "objection": "Closing the collision threshold proves adaptive decoupling.",
+      "resolution": "It proves only physical rank-profile mixing; deterministic non-Haar Racah conditional cumulants remain independent obligations.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "adaptive_syndrome_decouples_proved": false,
+    "adaptive_syndrome_survives_proved": false,
+    "algorithm_claim_allowed": false,
+    "bounded_tetrahedral_second_moment_required": false,
+    "classical_separation_proved": false,
+    "irreducible_racah_cmi_vanishes_proved": false,
+    "physical_rank_profile_mixes_proved": false,
+    "physical_rank_transfer_threshold_proved": true,
+    "reason": "Physical rank mixing now has an explicit necessary-to-check word-map growth scale, but that collision bound and all non-Haar terms are open.",
+    "reference_mixing_alone_sufficient": false,
+    "speedup_claim_allowed": false,
+    "tetrahedral_collision_growth_condition_verified": false
+  },
+  "created_at": "2026-08-13T22:41:25.986820+00:00",
+  "exact_controls": [
+    {
+      "class_signature_duality_verified": true,
+      "epsilon": 0.5,
+      "exact_fusion_density_variance": "5/6",
+      "exact_signature_second_moment": "27/2",
+      "exact_ten_density_union_variance": "133/18",
+      "exact_tetrahedral_likelihood_second_moment": "27/2",
+      "exact_total_density_variance": "13/36",
+      "finite_bound_numerically_nontrivial": false,
+      "good_event_rank_chi_square_upper": 7.0,
+      "n": 3,
+      "physical_bad_event_probability_upper": 1.0,
+      "physical_expected_rank_chi_square_upper": 7.0,
+      "physical_expected_rank_kl_upper_bits": 3.0,
+      "physical_expected_rank_tv_upper": 1.0,
+      "reciprocal_union_variance_threshold": 0.13533834586466165,
+      "reference_bad_event_probability_upper": 1.0,
+      "second_moment_times_union_variance": 99.75,
+      "status": "finite-transfer-identity-verified-bound-conservative"
+    },
+    {
+      "class_signature_duality_verified": true,
+      "epsilon": 0.5,
+      "exact_fusion_density_variance": "19/24",
+      "exact_signature_second_moment": "3743/162",
+      "exact_ten_density_union_variance": "643/96",
+      "exact_tetrahedral_likelihood_second_moment": "3743/162",
+      "exact_total_density_variance": "35/192",
+      "finite_bound_numerically_nontrivial": false,
+      "good_event_rank_chi_square_upper": 7.0,
+      "n": 4,
+      "physical_bad_event_probability_upper": 1.0,
+      "physical_expected_rank_chi_square_upper": 7.0,
+      "physical_expected_rank_kl_upper_bits": 3.0,
+      "physical_expected_rank_tv_upper": 1.0,
+      "reciprocal_union_variance_threshold": 0.14930015552099532,
+      "reference_bad_event_probability_upper": 1.0,
+      "second_moment_times_union_variance": 154.75495113168725,
+      "status": "finite-transfer-identity-verified-bound-conservative"
+    },
+    {
+      "class_signature_duality_verified": true,
+      "epsilon": 0.5,
+      "exact_fusion_density_variance": "41/120",
+      "exact_signature_second_moment": "857738791/51840000",
+      "exact_ten_density_union_variance": "6667/2400",
+      "exact_tetrahedral_likelihood_second_moment": "857738791/51840000",
+      "exact_total_density_variance": "107/4800",
+      "finite_bound_numerically_nontrivial": false,
+      "good_event_rank_chi_square_upper": 7.0,
+      "n": 5,
+      "physical_bad_event_probability_upper": 1.0,
+      "physical_expected_rank_chi_square_upper": 7.0,
+      "physical_expected_rank_kl_upper_bits": 3.0,
+      "physical_expected_rank_tv_upper": 1.0,
+      "reciprocal_union_variance_threshold": 0.359982000899955,
+      "reference_bad_event_probability_upper": 1.0,
+      "second_moment_times_union_variance": 45.963095740073626,
+      "status": "finite-transfer-identity-verified-bound-conservative"
+    }
+  ],
+  "falsifiers_triggered": [
+    "Reference-law convergence is not stable under arbitrary physical likelihood reweighting.",
+    "A bounded likelihood second moment is sufficient but stronger than necessary.",
+    "The constant rare parity-tail collision contribution does not by itself obstruct rank transfer.",
+    "Even a successful rank transfer cannot remove deterministic non-Haar Racah synergy."
+  ],
+  "headline_metrics": {
+    "all_n_tetrahedral_collision_growth_bound_count": 0,
+    "exact_signature_duality_control_count": 3,
+    "finite_control_failure_count": 0,
+    "irreducible_racah_cumulant_bound_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "physical_rank_transfer_criterion_theorem_count": 1,
+    "rare_event_transfer_counterexample_count": 4,
+    "unconditional_physical_rank_mixing_theorem_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "derive_product_to_physical_rank_transfer_condition",
+      "resolution": "Cauchy--Schwarz transfers the explicit product-law good event; balancing terms yields the M_n S_n threshold.",
+      "resolved": true
+    },
+    {
+      "obligation": "test_whether_reference_mixing_alone_is_sufficient",
+      "resolution": "Rejected by an exact rare-event family at constant M_n S_n.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_tetrahedral_collision_moment_growth_below_reciprocal_variance",
+      "resolution": "Prove M_n=o(1/(8V_n+2W_n)); equivalently control the fully nonidentity classical word-map core Z6_n at this scale.",
+      "resolved": false
+    },
+    {
+      "obligation": "control_irreducible_racah_cumulants_after_rank_transfer",
+      "resolution": "Even successful rank transfer leaves the two non-Haar conditional cumulants and their denominator tails open.",
+      "resolved": false
+    }
+  ],
+  "rare_event_counterexamples": [
+    {
+      "exact_change_of_measure_counterexample_verified": true,
+      "likelihood_normalizes": true,
+      "likelihood_second_moment": "10",
+      "physical_mean_survives_along_family": true,
+      "physical_observable_mean": "1",
+      "rare_likelihood_ratio": "10",
+      "rare_reference_probability": "1/10",
+      "reference_mean_vanishes_along_family": true,
+      "reference_observable_mean": "1/10",
+      "scale": 10,
+      "second_moment_times_reference_mean": "1",
+      "status": "reference-mixing-destroyed-by-threshold-rare-event-reweighting",
+      "threshold_product_constant": true
+    },
+    {
+      "exact_change_of_measure_counterexample_verified": true,
+      "likelihood_normalizes": true,
+      "likelihood_second_moment": "100",
+      "physical_mean_survives_along_family": true,
+      "physical_observable_mean": "1",
+      "rare_likelihood_ratio": "100",
+      "rare_reference_probability": "1/100",
+      "reference_mean_vanishes_along_family": true,
+      "reference_observable_mean": "1/100",
+      "scale": 100,
+      "second_moment_times_reference_mean": "1",
+      "status": "reference-mixing-destroyed-by-threshold-rare-event-reweighting",
+      "threshold_product_constant": true
+    },
+    {
+      "exact_change_of_measure_counterexample_verified": true,
+      "likelihood_normalizes": true,
+      "likelihood_second_moment": "1000",
+      "physical_mean_survives_along_family": true,
+      "physical_observable_mean": "1",
+      "rare_likelihood_ratio": "1000",
+      "rare_reference_probability": "1/1000",
+      "reference_mean_vanishes_along_family": true,
+      "reference_observable_mean": "1/1000",
+      "scale": 1000,
+      "second_moment_times_reference_mean": "1",
+      "status": "reference-mixing-destroyed-by-threshold-rare-event-reweighting",
+      "threshold_product_constant": true
+    },
+    {
+      "exact_change_of_measure_counterexample_verified": true,
+      "likelihood_normalizes": true,
+      "likelihood_second_moment": "10000",
+      "physical_mean_survives_along_family": true,
+      "physical_observable_mean": "1",
+      "rare_likelihood_ratio": "10000",
+      "rare_reference_probability": "1/10000",
+      "reference_mean_vanishes_along_family": true,
+      "reference_observable_mean": "1/10000",
+      "scale": 10000,
+      "second_moment_times_reference_mean": "1",
+      "status": "reference-mixing-destroyed-by-threshold-rare-event-reweighting",
+      "threshold_product_constant": true
+    }
+  ],
+  "status": "physical-rank-mixing-reduced-to-tetrahedral-collision-growth-threshold",
+  "summary": "Reduced transfer of rank-profile mixing to the physical law to the condition M_n(8V_n+2W_n)->0 and proved reference mixing alone insufficient.",
+  "theorem_contract": {
+    "collision_moment": "M_n=E_Q L_n^2 equals the tetrahedral six-word cycle-signature second moment.",
+    "physical_law": "P_n=L_n Q_n with E_Q L_n=1.",
+    "reference_law": "Q_n=Plancherel(S_n)^6.",
+    "scope": "The implication is proved, but the required all-n collision growth bound is open and irreducible Racah cumulants are separate.",
+    "sharp_sufficient_condition": "M_n(8V_n+2W_n)->0",
+    "transfer_bound": "E_P chi2(rank||U3)<=b(epsilon)+7sqrt(M_n(8V_n+2W_n))/epsilon"
+  },
+  "transfer_theorem": {
+    "bounded_second_moment_is_necessary": false,
+    "bounded_second_moment_is_sufficient": true,
+    "change_of_measure_bound": "P(G_epsilon^c)<=sqrt(M_n(8V_n+2W_n))/epsilon",
+    "epsilon_choice": "epsilon_n=[M_n(8V_n+2W_n)]^(1/6)",
+    "physical_expected_chi_square_bound": "E_P chi2(rank||U3)<=b(epsilon)+7sqrt(M_n(8V_n+2W_n))/epsilon",
+    "physical_transfer_proved_without_growth_assumption": false,
+    "reference_good_event_bound": "Q(G_epsilon^c)<=(8V_n+2W_n)/epsilon^2",
+    "status": "physical-rank-transfer-reduced-to-tetrahedral-collision-growth",
+    "sufficient_growth_condition": "M_n(8V_n+2W_n)->0",
+    "theorem_verified": true
+  }
+}

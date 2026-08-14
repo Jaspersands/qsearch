@@ -1,0 +1,260 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "Random full-group conjugation turns any fixed structured involution into the uniform full class before detection.",
+      "challenge": "The GI involutions are too structured for a full-class detector.",
+      "resolved": true
+    },
+    {
+      "answer": "The left-transversal factor is exactly maximally mixed, and the finite controls verify the full density-matrix identity.",
+      "challenge": "Sampling in the wreath subgroup supplies a different state model.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Nonrigid inputs have larger hidden automorphism subgroups outside the order-two solver contract.",
+      "challenge": "Rigid GI coverage implies general GI is in BQP.",
+      "resolved": true
+    },
+    {
+      "answer": "False. The primary construction and subgroup/full-group sampling equivalence are explicit prior art.",
+      "challenge": "This module discovers the GI-to-HSP bridge.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "bridge_new_to_literature": false,
+    "efficient_full_class_binary_detector_constructed": false,
+    "full_class_detector_would_decide_rigid_gi": true,
+    "full_class_identifier_would_recover_rigid_isomorphism": true,
+    "general_gi_quantum_algorithm_constructed": false,
+    "natural_classical_superpolynomial_separation_proved": false,
+    "reason": "The natural rigid-GI bridge is exact prior art, but the required multi-register full-class binary measurement remains uncompiled.",
+    "rigid_gi_hidden_involution_bridge_verified": true,
+    "rigid_gi_quantum_algorithm_constructed": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T18:32:11.740523+00:00",
+  "falsifiers_triggered": [
+    "The fixed-point-free full-class route is not disconnected from natural inputs: it contains the published rigid-GI hidden involutions after symmetrization.",
+    "The structured wreath subgroup does not create an incompatible coset-state model.",
+    "Rigid-GI relevance does not extend automatically to nonrigid or general Graph Isomorphism."
+  ],
+  "finite_controls": [
+    {
+      "all_structured_elements_are_fixed_point_free": true,
+      "all_structured_elements_are_involutions": true,
+      "all_structured_elements_swap_blocks": true,
+      "exact_wreath_to_symmetric_coset_lift_verified": true,
+      "full_group_order": 24,
+      "full_perfect_matching_count": 3,
+      "graph_vertex_count": 2,
+      "hidden_state_lift_residual": 0.0,
+      "left_transversal_size": 3,
+      "null_state_lift_residual": 0.0,
+      "predicted_structured_involution_count": 2,
+      "status": "exact-rigid-gi-wreath-to-perfect-matching-bridge-verified",
+      "structured_class_closed_under_young_conjugation": true,
+      "structured_elements_are_distinct": true,
+      "structured_involution_count": 2,
+      "symmetric_degree": 4,
+      "wreath_subgroup_order": 8
+    },
+    {
+      "all_structured_elements_are_fixed_point_free": true,
+      "all_structured_elements_are_involutions": true,
+      "all_structured_elements_swap_blocks": true,
+      "exact_wreath_to_symmetric_coset_lift_verified": true,
+      "full_group_order": 720,
+      "full_perfect_matching_count": 15,
+      "graph_vertex_count": 3,
+      "hidden_state_lift_residual": 0.0,
+      "left_transversal_size": 10,
+      "null_state_lift_residual": 2.168404344971009e-19,
+      "predicted_structured_involution_count": 6,
+      "status": "exact-rigid-gi-wreath-to-perfect-matching-bridge-verified",
+      "structured_class_closed_under_young_conjugation": true,
+      "structured_elements_are_distinct": true,
+      "structured_involution_count": 6,
+      "symmetric_degree": 6,
+      "wreath_subgroup_order": 72
+    }
+  ],
+  "headline_metrics": {
+    "efficient_full_class_binary_detector_count": 0,
+    "exact_wreath_lift_control_count": 2,
+    "finite_control_failure_count": 0,
+    "general_gi_quantum_algorithm_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "rigid_gi_quantum_algorithm_count": 0,
+    "rigid_gi_search_decoding_reduction_count": 1,
+    "rigid_gi_to_full_class_binary_reduction_count": 1
+  },
+  "literature_links": [
+    {
+      "id": "ARXIV-QUANT-PH-0501056",
+      "title": "The Symmetric Group Defies Strong Fourier Sampling: Part I",
+      "url": "https://arxiv.org/abs/quant-ph/0501056",
+      "use": "Primary source for the rigid-GI full-support involution construction, structured wreath class, and equivalence of coset sampling over K and S_(2n)."
+    },
+    {
+      "id": "ARXIV-1511.08189",
+      "title": "Graph Isomorphism and Circuit Size",
+      "url": "https://arxiv.org/abs/1511.08189",
+      "use": "Records the known reduction of Graph Automorphism to Rigid Graph Isomorphism; it is not used to claim general GI coverage."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-EFFICIENT-BINARY-DETECTOR",
+      "resolved": false,
+      "statement": "Implement the full-class symmetrized binary measurement in polynomial time at the information threshold."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-RIGID-GI-END-TO-END-LEDGER",
+      "resolved": false,
+      "statement": "Compose graph oracle evaluation, coset preparation, random conjugation, binary detection/identification, and verification."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-NONRIGID-GI-COVERAGE",
+      "resolved": false,
+      "statement": "Handle larger automorphism subgroups or prove a valid reduction from general GI to the solved rigid promise."
+    }
+  ],
+  "scaling_records": [
+    {
+      "full_group_order_decimal": "24",
+      "full_perfect_matching_count_decimal": "3",
+      "graph_vertex_count": 2,
+      "nonrigid_gi_covered": false,
+      "polynomial_full_class_binary_detector_implies_rigid_gi": true,
+      "polynomial_full_class_identifier_implies_rigid_gi_search": true,
+      "random_full_conjugation_symmetrizes_structured_hidden": true,
+      "status": "full-class-detector-would-solve-rigid-gi-nonrigid-open",
+      "structured_fraction_log2": -0.5849625007211563,
+      "structured_hidden_count_decimal": "2",
+      "symmetric_degree": 4,
+      "transversal_size_decimal": "3",
+      "wreath_subgroup_order_decimal": "8"
+    },
+    {
+      "full_group_order_decimal": "720",
+      "full_perfect_matching_count_decimal": "15",
+      "graph_vertex_count": 3,
+      "nonrigid_gi_covered": false,
+      "polynomial_full_class_binary_detector_implies_rigid_gi": true,
+      "polynomial_full_class_identifier_implies_rigid_gi_search": true,
+      "random_full_conjugation_symmetrizes_structured_hidden": true,
+      "status": "full-class-detector-would-solve-rigid-gi-nonrigid-open",
+      "structured_fraction_log2": -1.3219280948873622,
+      "structured_hidden_count_decimal": "6",
+      "symmetric_degree": 6,
+      "transversal_size_decimal": "10",
+      "wreath_subgroup_order_decimal": "72"
+    },
+    {
+      "full_group_order_decimal": "40320",
+      "full_perfect_matching_count_decimal": "105",
+      "graph_vertex_count": 4,
+      "nonrigid_gi_covered": false,
+      "polynomial_full_class_binary_detector_implies_rigid_gi": true,
+      "polynomial_full_class_identifier_implies_rigid_gi_search": true,
+      "random_full_conjugation_symmetrizes_structured_hidden": true,
+      "status": "full-class-detector-would-solve-rigid-gi-nonrigid-open",
+      "structured_fraction_log2": -2.1292830169449664,
+      "structured_hidden_count_decimal": "24",
+      "symmetric_degree": 8,
+      "transversal_size_decimal": "35",
+      "wreath_subgroup_order_decimal": "1152"
+    },
+    {
+      "full_group_order_decimal": "20922789888000",
+      "full_perfect_matching_count_decimal": "2027025",
+      "graph_vertex_count": 8,
+      "nonrigid_gi_covered": false,
+      "polynomial_full_class_binary_detector_implies_rigid_gi": true,
+      "polynomial_full_class_identifier_implies_rigid_gi_search": true,
+      "random_full_conjugation_symmetrizes_structured_hidden": true,
+      "status": "full-class-detector-would-solve-rigid-gi-nonrigid-open",
+      "structured_fraction_log2": -5.651724433108064,
+      "structured_hidden_count_decimal": "40320",
+      "symmetric_degree": 16,
+      "transversal_size_decimal": "6435",
+      "wreath_subgroup_order_decimal": "3251404800"
+    },
+    {
+      "full_group_order_decimal": "263130836933693530167218012160000000",
+      "full_perfect_matching_count_decimal": "191898783962510625",
+      "graph_vertex_count": 16,
+      "nonrigid_gi_covered": false,
+      "polynomial_full_class_binary_detector_implies_rigid_gi": true,
+      "polynomial_full_class_identifier_implies_rigid_gi_search": true,
+      "random_full_conjugation_symmetrizes_structured_hidden": true,
+      "status": "full-class-detector-would-solve-rigid-gi-nonrigid-open",
+      "structured_fraction_log2": -13.16298271259506,
+      "structured_hidden_count_decimal": "20922789888000",
+      "symmetric_degree": 32,
+      "transversal_size_decimal": "300540195",
+      "wreath_subgroup_order_decimal": "875526273394790105088000000"
+    },
+    {
+      "full_group_order_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "full_perfect_matching_count_decimal": "112275575285571389562324404930670903477890625",
+      "graph_vertex_count": 32,
+      "nonrigid_gi_covered": false,
+      "polynomial_full_class_binary_detector_implies_rigid_gi": true,
+      "polynomial_full_class_identifier_implies_rigid_gi_search": true,
+      "random_full_conjugation_symmetrizes_structured_hidden": true,
+      "status": "full-class-detector-would-solve-rigid-gi-nonrigid-open",
+      "structured_fraction_log2": -28.66861663700344,
+      "structured_hidden_count_decimal": "263130836933693530167218012160000000",
+      "symmetric_degree": 64,
+      "transversal_size_decimal": "916312070471295267",
+      "wreath_subgroup_order_decimal": "138475674690852030386332397887919167308937026381483815731200000000000000"
+    },
+    {
+      "full_group_order_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "full_perfect_matching_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "graph_vertex_count": 64,
+      "nonrigid_gi_covered": false,
+      "polynomial_full_class_binary_detector_implies_rigid_gi": true,
+      "polynomial_full_class_identifier_implies_rigid_gi_search": true,
+      "random_full_conjugation_symmetrizes_structured_hidden": true,
+      "status": "full-class-detector-would-solve-rigid-gi-nonrigid-open",
+      "structured_fraction_log2": -60.17143420017378,
+      "structured_hidden_count_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "symmetric_degree": 128,
+      "transversal_size_decimal": "11975573020964041433067793888190275875",
+      "wreath_subgroup_order_decimal": "32200587119090333230982618685264948541018971338826678359422191765219929302941719597472011230507255929662891832696584324421568659385478051813103312568320000000000000000000000000000"
+    }
+  ],
+  "status": "rigid-gi-natural-bridge-proved-binary-detector-open",
+  "summary": "Materialized the published rigid-GI wreath/full-symmetric bridge and proved that the active full-class binary detector target would decide rigid GI and, with self-reduction, recover its isomorphism.",
+  "theorem": {
+    "coset_state_lift": "For H<=K<=G, rho_H^G is rho_H^K tensored with a maximally mixed left-transversal coordinate, up to the coset-factorization unitary.",
+    "efficient_full_class_binary_detector_constructed": false,
+    "full_class_detector_to_rigid_gi_reduction_proved": true,
+    "full_class_identifier_to_rigid_gi_search_reduction_proved": true,
+    "full_class_symmetrization": "Uniform random S_(2n) conjugation maps every fixed m_alpha to the uniform full perfect-matching class and leaves the null invariant.",
+    "general_gi_quantum_algorithm_constructed": false,
+    "prior_art_scope": "The rigid-GI HSP construction and K-versus-S_(2n) sampling equivalence are explicitly given in arXiv:quant-ph/0501056.",
+    "rigid_gi_hidden_involution_construction_verified": true,
+    "rigid_gi_quantum_algorithm_constructed": false,
+    "rigid_union_hidden_subgroup": "For two rigid n-vertex graphs, the disjoint-union automorphism subgroup is trivial when nonisomorphic and {1,m_alpha} when isomorphic.",
+    "scope_limit": "Nonrigid graph pairs, general GI, efficient binary measurement, and a classical separation remain unproved.",
+    "search_decoding": "Identifying m_alpha directly recovers its cross-block matching and therefore the unique graph isomorphism alpha.",
+    "status": "rigid-gi-natural-bridge-proved-binary-detector-open",
+    "structured_involution_embedding": "m_alpha swaps the two n-point blocks through alpha and alpha^-1, so it is a fixed-point-free involution in S_(2n).",
+    "structured_involutions_are_perfect_matchings_proved": true,
+    "theorem_verified": true,
+    "wreath_subgroup": "All m_alpha lie in K=S_n wr C_2 and form the structured K-conjugacy class indexed by alpha in S_n.",
+    "wreath_to_full_symmetric_state_lift_proved": true
+  },
+  "theorem_contract": {
+    "outside_scope": "Nonrigid graphs and arbitrary graph automorphism subgroups.",
+    "solver_contract": "Worst-case full-class binary detector for decision; full-class identifier for recovery of the unique isomorphism.",
+    "source_problem": "Rigid Graph Isomorphism for two explicitly represented n-vertex graphs.",
+    "source_promise": "Both graphs have trivial automorphism groups.",
+    "target_access": "Coherent relabeling oracle and independently preparable coset states from the standard disjoint-union automorphism HSP.",
+    "target_problem": "Null versus fixed-point-free order-two HSP in S_(2n)."
+  }
+}

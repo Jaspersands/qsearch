@@ -1,0 +1,257 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False at the target copy width: its full irrep law converges to regular K Plancherel.",
+      "challenge": "The natural fiber might occupy only easy K irreps.",
+      "resolved": true
+    },
+    {
+      "answer": "Unproved. The transfer remains highly structured and source-specific inside each typical multiplicity space.",
+      "challenge": "Wreath Plancherel typicality makes the polar generic random matrix.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It exposes bipartition/carrier labels but is identity on unresolved repeated multiplicity copies.",
+      "challenge": "Efficient K QFT solves the typical multiplicity problem.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "efficient_wreath_qft_available": true,
+    "natural_source_wreath_plancherel_typical": true,
+    "reason": "The occupied K labels are now characterized, but the natural operator inside their large typical multiplicity spaces remains unclassified and uncompiled.",
+    "speedup_claim_allowed": false,
+    "typical_colors_balanced": true,
+    "typical_matrix_hecke_polar_compiled": false,
+    "typical_multiplicity_transfer_classified": false,
+    "typical_partition_labels_independent_plancherel_conditionally": true
+  },
+  "created_at": "2026-08-13T16:36:20.318233+00:00",
+  "falsifiers_triggered": [
+    "The natural source is not confined to a small exceptional wreath-irrep family.",
+    "Trivial-color Kronecker sectors are not representative of typical occupied bipartitions.",
+    "Efficient wreath QFT labels do not resolve typical internal multiplicity transfer."
+  ],
+  "finite_controls": [
+    {
+      "bipartition_count": 10,
+      "class_size_normalized_character_bound": 0.13333333333333333,
+      "color_mass_identity_residual": 1.3877787807814457e-17,
+      "conditional_product_plancherel_residual": 0.0,
+      "degree": 6,
+      "exact_character_and_plancherel_controls_verified": true,
+      "half_degree": 3,
+      "hyperoctahedral_order": 48,
+      "maximum_character_bound_residual": 0.0,
+      "maximum_exact_nonidentity_normalized_character": 0.06666666666666667,
+      "nonidentity_element_count": 47,
+      "status": "source-character-and-wreath-plancherel-controls-verified",
+      "wreath_dimension_square_sum": 48
+    },
+    {
+      "bipartition_count": 20,
+      "class_size_normalized_character_bound": 0.07142857142857142,
+      "color_mass_identity_residual": 2.7755575615628914e-17,
+      "conditional_product_plancherel_residual": 0.0,
+      "degree": 8,
+      "exact_character_and_plancherel_controls_verified": true,
+      "half_degree": 4,
+      "hyperoctahedral_order": 384,
+      "maximum_character_bound_residual": 0.0,
+      "maximum_exact_nonidentity_normalized_character": 0.03571428571428571,
+      "nonidentity_element_count": 383,
+      "status": "source-character-and-wreath-plancherel-controls-verified",
+      "wreath_dimension_square_sum": 384
+    },
+    {
+      "bipartition_count": 36,
+      "class_size_normalized_character_bound": 0.044444444444444446,
+      "color_mass_identity_residual": 5.551115123125783e-17,
+      "conditional_product_plancherel_residual": 5.551115123125783e-17,
+      "degree": 10,
+      "exact_character_and_plancherel_controls_verified": true,
+      "half_degree": 5,
+      "hyperoctahedral_order": 3840,
+      "maximum_character_bound_residual": 0.0,
+      "maximum_exact_nonidentity_normalized_character": 0.022222222222222223,
+      "nonidentity_element_count": 3839,
+      "status": "source-character-and-wreath-plancherel-controls-verified",
+      "wreath_dimension_square_sum": 3840
+    }
+  ],
+  "headline_metrics": {
+    "exact_source_character_control_count": 3,
+    "finite_control_failure_count": 0,
+    "hierarchical_plancherel_factorization_count": 1,
+    "maximum_scaling_irrep_tv_upper_bound": 4.173065758945956e-08,
+    "minimum_scaling_alternative_typical_mass_lower_bound": 0.0,
+    "new_quantum_algorithm_count": 0,
+    "source_to_wreath_plancherel_theorem_count": 1,
+    "typical_sector_matrix_hecke_compiler_count": 0
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HYPEROCTAHEDRAL-TYPICAL-MULTIPLICITY-TRANSFER",
+      "resolved": false,
+      "statement": "Characterize matrix-Hecke support and relative spectrum for typical balanced wreath-Plancherel bipartitions."
+    },
+    {
+      "id": "PO-COSET-HYPEROCTAHEDRAL-TYPICAL-SUBDUCTION-BASIS",
+      "resolved": false,
+      "statement": "Compile a uniform coherent subduction/multiplicity basis on the high-Plancherel source sectors only."
+    },
+    {
+      "id": "PO-COSET-HYPEROCTAHEDRAL-TYPICAL-DEQUANTIZATION",
+      "resolved": false,
+      "statement": "Test whether typical-sector transfer statistics have a classical Plancherel growth/sampling description."
+    }
+  ],
+  "scaling_records": [
+    {
+      "alternative_balanced_plancherel_mass_lower_bound": 0.0,
+      "alternative_outside_balanced_plancherel_upper_bound": 1.0,
+      "balanced_plancherel_tail_upper_bound": 1.0,
+      "copy_count": 10,
+      "degree": 6,
+      "half_degree": 3,
+      "hyperoctahedral_order_decimal": "48",
+      "nonidentity_normalized_character_upper_bound": 0.13333333333333333,
+      "perfect_matching_count_decimal": "15",
+      "source_irrep_law_wreath_plancherel_typical": true,
+      "source_irrep_to_wreath_plancherel_tv_upper_bound": 4.173065758945956e-08,
+      "source_outside_balanced_plancherel_upper_bound": 1.0,
+      "source_specific_matrix_hecke_polar_compiled": false,
+      "status": "wreath-plancherel-typical-matrix-hecke-polar-open",
+      "uniform_wreath_qft_available": true
+    },
+    {
+      "alternative_balanced_plancherel_mass_lower_bound": 0.0,
+      "alternative_outside_balanced_plancherel_upper_bound": 1.0,
+      "balanced_plancherel_tail_upper_bound": 1.0,
+      "copy_count": 13,
+      "degree": 8,
+      "half_degree": 4,
+      "hyperoctahedral_order_decimal": "384",
+      "nonidentity_normalized_character_upper_bound": 0.07142857142857142,
+      "perfect_matching_count_decimal": "105",
+      "source_irrep_law_wreath_plancherel_typical": true,
+      "source_irrep_to_wreath_plancherel_tv_upper_bound": 2.412705501434364e-13,
+      "source_outside_balanced_plancherel_upper_bound": 1.0,
+      "source_specific_matrix_hecke_polar_compiled": false,
+      "status": "wreath-plancherel-typical-matrix-hecke-polar-open",
+      "uniform_wreath_qft_available": true
+    },
+    {
+      "alternative_balanced_plancherel_mass_lower_bound": 0.13578319557795726,
+      "alternative_outside_balanced_plancherel_upper_bound": 0.8642168044220427,
+      "balanced_plancherel_tail_upper_bound": 0.7357588823428847,
+      "copy_count": 27,
+      "degree": 16,
+      "half_degree": 8,
+      "hyperoctahedral_order_decimal": "10321920",
+      "nonidentity_normalized_character_upper_bound": 0.016666666666666666,
+      "perfect_matching_count_decimal": "2027025",
+      "source_irrep_law_wreath_plancherel_typical": true,
+      "source_irrep_to_wreath_plancherel_tv_upper_bound": 5.042509100160738e-42,
+      "source_outside_balanced_plancherel_upper_bound": 0.7357588823428847,
+      "source_specific_matrix_hecke_polar_compiled": false,
+      "status": "wreath-plancherel-typical-matrix-hecke-polar-open",
+      "uniform_wreath_qft_available": true
+    },
+    {
+      "alternative_balanced_plancherel_mass_lower_bound": 0.47704081149899435,
+      "alternative_outside_balanced_plancherel_upper_bound": 0.5229591885010056,
+      "balanced_plancherel_tail_upper_bound": 0.2706705664732254,
+      "copy_count": 64,
+      "degree": 32,
+      "half_degree": 16,
+      "hyperoctahedral_order_decimal": "1371195958099968000",
+      "nonidentity_normalized_character_upper_bound": 0.004032258064516129,
+      "perfect_matching_count_decimal": "191898783962510625",
+      "source_irrep_law_wreath_plancherel_typical": true,
+      "source_irrep_to_wreath_plancherel_tv_upper_bound": 3.90087429848992e-136,
+      "source_outside_balanced_plancherel_upper_bound": 0.2706705664732254,
+      "source_specific_matrix_hecke_polar_compiled": false,
+      "status": "wreath-plancherel-typical-matrix-hecke-polar-open",
+      "uniform_wreath_qft_available": true
+    },
+    {
+      "alternative_balanced_plancherel_mass_lower_bound": 0.8076683038243291,
+      "alternative_outside_balanced_plancherel_upper_bound": 0.19233169617567086,
+      "balanced_plancherel_tail_upper_bound": 0.03663127777746836,
+      "copy_count": 153,
+      "degree": 64,
+      "half_degree": 32,
+      "hyperoctahedral_order_decimal": "1130138339199322632554990773529330319360000000",
+      "nonidentity_normalized_character_upper_bound": 0.000992063492063492,
+      "perfect_matching_count_decimal": "112275575285571389562324404930670903477890625",
+      "source_irrep_law_wreath_plancherel_typical": true,
+      "source_irrep_to_wreath_plancherel_tv_upper_bound": 0.0,
+      "source_outside_balanced_plancherel_upper_bound": 0.03663127777746836,
+      "source_specific_matrix_hecke_polar_compiled": false,
+      "status": "wreath-plancherel-typical-matrix-hecke-polar-open",
+      "uniform_wreath_qft_available": true
+    },
+    {
+      "alternative_balanced_plancherel_mass_lower_bound": 0.9739844585705031,
+      "alternative_outside_balanced_plancherel_upper_bound": 0.026015541429496927,
+      "balanced_plancherel_tail_upper_bound": 0.0006709252558050237,
+      "copy_count": 363,
+      "degree": 128,
+      "half_degree": 64,
+      "hyperoctahedral_order_decimal": "2340650764331144466221345754697091809049283736233503362096217361956854360782374130152842356326400000000000000",
+      "nonidentity_normalized_character_upper_bound": 0.00024606299212598425,
+      "perfect_matching_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "source_irrep_law_wreath_plancherel_typical": true,
+      "source_irrep_to_wreath_plancherel_tv_upper_bound": 0.0,
+      "source_outside_balanced_plancherel_upper_bound": 0.0006709252558050237,
+      "source_specific_matrix_hecke_polar_compiled": false,
+      "status": "wreath-plancherel-typical-matrix-hecke-polar-open",
+      "uniform_wreath_qft_available": true
+    },
+    {
+      "alternative_balanced_plancherel_mass_lower_bound": 0.9995222908094459,
+      "alternative_outside_balanced_plancherel_upper_bound": 0.0004777091905540705,
+      "balanced_plancherel_tail_upper_bound": 2.2507034943851823e-07,
+      "copy_count": 846,
+      "degree": 256,
+      "half_degree": 128,
+      "hyperoctahedral_order_decimal": "131219850471532870280494180543930212298353497441690579517097209908251607023591082012615277517402188915738609914541751378117557938639583265587201015845713170909341970276087443974249733926280327057536337181401018889521520967680000000000000000000000000000000",
+      "nonidentity_normalized_character_upper_bound": 6.127450980392157e-05,
+      "perfect_matching_count_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "source_irrep_law_wreath_plancherel_typical": true,
+      "source_irrep_to_wreath_plancherel_tv_upper_bound": 0.0,
+      "source_outside_balanced_plancherel_upper_bound": 2.2507034943851823e-07,
+      "source_specific_matrix_hecke_polar_compiled": false,
+      "status": "wreath-plancherel-typical-matrix-hecke-polar-open",
+      "uniform_wreath_qft_available": true
+    }
+  ],
+  "status": "natural-source-wreath-plancherel-typical-polar-open",
+  "summary": "Proved that the full natural K-irrep source law converges rapidly to hierarchical wreath Plancherel and transferred typical-set mass to the alternative contribution, isolating typical balanced multiplicity transfer as the remaining representation target.",
+  "theorem": {
+    "alternative_transfer": "For a high-Plancherel branch-fiber event, Cauchy-Schwarz and the global synthesis second moment bound its alternative complement.",
+    "architecture_consequence": "The compiler must handle typical balanced bipartitions rather than a sparse exceptional family.",
+    "exact_normalized_character_formula_proved": true,
+    "hidden_involution_algorithm_constructed": false,
+    "hierarchical_plancherel_law_proved": true,
+    "irrep_law": "p_k(tau)=d_tau/|K| sum_x conjugate(chi_tau(x))q_x^k.",
+    "nonidentity_gap": "For m>=3 and x!=e, q_x<=4/((2m)(2m-1)).",
+    "normalized_character": "q_x=(1+1[xh conjugate to x])/|x^{S_(2m)}| for the canonical plus fiber under K conjugation.",
+    "scope_limit": "Irrep-label typicality neither resolves internal multiplicities nor compiles the source-specific matrix-Hecke polar.",
+    "source_to_wreath_plancherel_convergence_proved": true,
+    "status": "natural-source-wreath-plancherel-typical-polar-open",
+    "theorem_verified": true,
+    "total_variation_bound": "TV(p_k,Plancherel(K))<=((|K|-1)/2)q_max^k.",
+    "typical_alternative_sector_mass_proved": true,
+    "typical_sector_matrix_hecke_polar_compiled": false,
+    "wreath_plancherel_factorization": "Choose r~Binomial(m,1/2), then alpha and beta independently from S_(m-r) and S_r Plancherel."
+  },
+  "theorem_contract": {
+    "alternative_transfer": "The conjugated branchwise event in the induced source, measured only as a contribution bound through S^*S.",
+    "family": "R^tensor k for the canonical fixed-point-free involution fiber restricted to K=C_2 wr S_m.",
+    "law": "K-irrep isotypic dimension under a uniformly random source vector.",
+    "outside_scope": "Internal K multiplicity coordinates, transfer eigenvectors, physical implementation, and classical separation."
+  }
+}

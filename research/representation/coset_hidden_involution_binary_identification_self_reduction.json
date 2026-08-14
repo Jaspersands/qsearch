@@ -1,0 +1,338 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "The right-regular off-diagonal survives a left-coset block exactly iff h is in the subgroup; otherwise it vanishes identically.",
+      "challenge": "Dephasing merely weakens the state and cannot test membership exactly.",
+      "resolved": true
+    },
+    {
+      "answer": "False: factor all known swaps simultaneously and retain the half of characters positive on their product.",
+      "challenge": "Removing one known edge at each level costs 2^-m.",
+      "resolved": true
+    },
+    {
+      "answer": "Randomly conjugating the remaining labels or symmetrizing the effect makes its acceptance identical for every hidden matching.",
+      "challenge": "The detector only has an average conjugacy-class guarantee.",
+      "resolved": true
+    },
+    {
+      "answer": "False: the normalization/recoupling obstruction to the binary detector is unchanged and remains the sole algorithmic gate.",
+      "challenge": "Binary equivalence already supplies an algorithm.",
+      "resolved": true
+    }
+  ],
+  "batched_character_controls": [
+    {
+      "abelian_factor_dimension": 2,
+      "character_count": 2,
+      "exact_batched_character_reduction_verified": true,
+      "known_edge_count": 1,
+      "maximum_character_probability_residual": 1.1102230246251565e-16,
+      "maximum_negative_hidden_state_residual": 0.0,
+      "maximum_null_state_residual": 0.0,
+      "maximum_positive_hidden_state_residual": 0.0,
+      "negative_character_count": 1,
+      "positive_character_count": 1,
+      "positive_character_total_probability": 0.4999999999999999,
+      "positive_character_total_probability_under_null": 0.5,
+      "recursion_depth_compounds_postselection": false,
+      "remaining_degree": 4,
+      "remaining_group_order": 24,
+      "status": "all-known-edges-batched-at-constant-half-success"
+    },
+    {
+      "abelian_factor_dimension": 4,
+      "character_count": 4,
+      "exact_batched_character_reduction_verified": true,
+      "known_edge_count": 2,
+      "maximum_character_probability_residual": 0.0,
+      "maximum_negative_hidden_state_residual": 0.0,
+      "maximum_null_state_residual": 0.0,
+      "maximum_positive_hidden_state_residual": 0.0,
+      "negative_character_count": 2,
+      "positive_character_count": 2,
+      "positive_character_total_probability": 0.5,
+      "positive_character_total_probability_under_null": 0.5,
+      "recursion_depth_compounds_postselection": false,
+      "remaining_degree": 2,
+      "remaining_group_order": 2,
+      "status": "all-known-edges-batched-at-constant-half-success"
+    },
+    {
+      "abelian_factor_dimension": 8,
+      "character_count": 8,
+      "exact_batched_character_reduction_verified": true,
+      "known_edge_count": 3,
+      "maximum_character_probability_residual": 1.3877787807814457e-17,
+      "maximum_negative_hidden_state_residual": 0.0,
+      "maximum_null_state_residual": 0.0,
+      "maximum_positive_hidden_state_residual": 0.0,
+      "negative_character_count": 4,
+      "positive_character_count": 4,
+      "positive_character_total_probability": 0.49999999999999994,
+      "positive_character_total_probability_under_null": 0.5,
+      "recursion_depth_compounds_postselection": false,
+      "remaining_degree": 2,
+      "remaining_group_order": 2,
+      "status": "all-known-edges-batched-at-constant-half-success"
+    },
+    {
+      "abelian_factor_dimension": 16,
+      "character_count": 16,
+      "exact_batched_character_reduction_verified": true,
+      "known_edge_count": 4,
+      "maximum_character_probability_residual": 0.0,
+      "maximum_negative_hidden_state_residual": 0.0,
+      "maximum_null_state_residual": 0.0,
+      "maximum_positive_hidden_state_residual": 0.0,
+      "negative_character_count": 8,
+      "positive_character_count": 8,
+      "positive_character_total_probability": 0.5,
+      "positive_character_total_probability_under_null": 0.5,
+      "recursion_depth_compounds_postselection": false,
+      "remaining_degree": 2,
+      "remaining_group_order": 2,
+      "status": "all-known-edges-batched-at-constant-half-success"
+    }
+  ],
+  "claim_gate": {
+    "binary_identification_polynomial_equivalence_proved": true,
+    "efficient_binary_detector_constructed": false,
+    "efficient_hidden_involution_identifier_constructed": false,
+    "exact_edge_membership_channel_proved": true,
+    "general_decision_search_equivalence_new_to_literature": false,
+    "graph_isomorphism_algorithm_constructed": false,
+    "natural_classical_separation_proved": false,
+    "reason": "The reduction upgrades any future efficient binary detector to identification, but no such detector or natural separation exists.",
+    "recursion_postselection_remains_constant": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T18:32:11.571910+00:00",
+  "edge_controls": [
+    {
+      "exact_edge_membership_channel_verified": true,
+      "false_conditional_subgroup_null_residual": 0.0,
+      "false_dephasing_to_null_residual": 0.0,
+      "false_edge_in_subgroup": false,
+      "false_reduced_null_state_residual": 0.0,
+      "false_test_edge": [
+        0,
+        2
+      ],
+      "group_order": 24,
+      "hidden_edges": [
+        [
+          0,
+          1
+        ],
+        [
+          2,
+          3
+        ]
+      ],
+      "known_swap_plus_probability": 0.4999999999999999,
+      "known_swap_plus_probability_under_null": 0.4999999999999999,
+      "n": 4,
+      "status": "exact-edge-membership-to-smaller-binary-instance-verified",
+      "subgroup_order": 4,
+      "true_conditional_subgroup_state_residual": 0.0,
+      "true_dephasing_preservation_residual": 0.0,
+      "true_edge_in_subgroup": true,
+      "true_reduced_hidden_state_residual": 0.0,
+      "true_test_edge": [
+        0,
+        1
+      ]
+    }
+  ],
+  "falsifiers_triggered": [
+    "For perfect-matching involutions, computationally efficient binary detection would not remain merely a weak decision result.",
+    "Recursive edge peeling need not incur exponentially compounding character postselection.",
+    "The active binary support compiler is sufficient for identification if its normalization barrier is broken."
+  ],
+  "headline_metrics": {
+    "batched_character_control_count": 4,
+    "binary_to_identification_reduction_theorem_count": 1,
+    "efficient_binary_detector_count": 0,
+    "exact_edge_dephasing_control_count": 1,
+    "finite_control_failure_count": 0,
+    "hidden_involution_algorithm_count": 0,
+    "identification_to_binary_reduction_theorem_count": 1,
+    "new_quantum_algorithm_count": 0
+  },
+  "literature_links": [
+    {
+      "id": "ARXIV-CS-0610086",
+      "title": "The central nature of the Hidden Subgroup problem",
+      "url": "https://arxiv.org/abs/cs/0610086",
+      "use": "Fenner and Zhang prove the broader decision/search equivalence for HSP over permutation groups. This module records a narrower explicit coset-state edge-dephasing realization and does not claim novelty for the equivalence."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-EFFICIENT-BINARY-DETECTOR",
+      "resolved": false,
+      "statement": "Compile the symmetrized binary support/Helstrom test in polynomial time on the natural coset-state input."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-SELF-REDUCTION-GATE-LEDGER",
+      "resolved": false,
+      "statement": "Write a reversible gate/error ledger for coset factorization, fresh-state batching, detector amplification, and edge output."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-NATURAL-PROBLEM-REDUCTION",
+      "resolved": false,
+      "statement": "Relate fixed-point-free hidden-involution identification to a natural classical problem without an oracle-model mismatch."
+    }
+  ],
+  "scaling_records": [
+    {
+      "accepted_character_probability": 0.5,
+      "candidate_count_decimal": "3",
+      "candidate_information_log2": 1.584962500721156,
+      "degree": 4,
+      "detector_error_target_order": "O(epsilon/m^2) per edge test",
+      "efficient_binary_detector_constructed": false,
+      "expected_raw_copy_overhead_per_detector_copy": 2.0,
+      "half_degree": 2,
+      "maximum_binary_detector_half_degree": 1,
+      "polynomial_binary_detector_implies_polynomial_identifier": true,
+      "polynomial_identifier_implies_polynomial_binary_detector": true,
+      "status": "binary-identification-polynomial-equivalence-detector-open",
+      "worst_case_edge_membership_test_count": 3
+    },
+    {
+      "accepted_character_probability": 0.5,
+      "candidate_count_decimal": "15",
+      "candidate_information_log2": 3.9068905956085187,
+      "degree": 6,
+      "detector_error_target_order": "O(epsilon/m^2) per edge test",
+      "efficient_binary_detector_constructed": false,
+      "expected_raw_copy_overhead_per_detector_copy": 2.0,
+      "half_degree": 3,
+      "maximum_binary_detector_half_degree": 2,
+      "polynomial_binary_detector_implies_polynomial_identifier": true,
+      "polynomial_identifier_implies_polynomial_binary_detector": true,
+      "status": "binary-identification-polynomial-equivalence-detector-open",
+      "worst_case_edge_membership_test_count": 8
+    },
+    {
+      "accepted_character_probability": 0.5,
+      "candidate_count_decimal": "105",
+      "candidate_information_log2": 6.714245517666122,
+      "degree": 8,
+      "detector_error_target_order": "O(epsilon/m^2) per edge test",
+      "efficient_binary_detector_constructed": false,
+      "expected_raw_copy_overhead_per_detector_copy": 2.0,
+      "half_degree": 4,
+      "maximum_binary_detector_half_degree": 3,
+      "polynomial_binary_detector_implies_polynomial_identifier": true,
+      "polynomial_identifier_implies_polynomial_binary_detector": true,
+      "status": "binary-identification-polynomial-equivalence-detector-open",
+      "worst_case_edge_membership_test_count": 15
+    },
+    {
+      "accepted_character_probability": 0.5,
+      "candidate_count_decimal": "2027025",
+      "candidate_information_log2": 20.950932451495344,
+      "degree": 16,
+      "detector_error_target_order": "O(epsilon/m^2) per edge test",
+      "efficient_binary_detector_constructed": false,
+      "expected_raw_copy_overhead_per_detector_copy": 2.0,
+      "half_degree": 8,
+      "maximum_binary_detector_half_degree": 7,
+      "polynomial_binary_detector_implies_polynomial_identifier": true,
+      "polynomial_identifier_implies_polynomial_binary_detector": true,
+      "status": "binary-identification-polynomial-equivalence-detector-open",
+      "worst_case_edge_membership_test_count": 63
+    },
+    {
+      "accepted_character_probability": 0.5,
+      "candidate_count_decimal": "191898783962510625",
+      "candidate_information_log2": 57.41312318247768,
+      "degree": 32,
+      "detector_error_target_order": "O(epsilon/m^2) per edge test",
+      "efficient_binary_detector_constructed": false,
+      "expected_raw_copy_overhead_per_detector_copy": 2.0,
+      "half_degree": 16,
+      "maximum_binary_detector_half_degree": 15,
+      "polynomial_binary_detector_implies_polynomial_identifier": true,
+      "polynomial_identifier_implies_polynomial_binary_detector": true,
+      "status": "binary-identification-polynomial-equivalence-detector-open",
+      "worst_case_edge_membership_test_count": 255
+    },
+    {
+      "accepted_character_probability": 0.5,
+      "candidate_count_decimal": "112275575285571389562324404930670903477890625",
+      "candidate_information_log2": 146.33188028936374,
+      "degree": 64,
+      "detector_error_target_order": "O(epsilon/m^2) per edge test",
+      "efficient_binary_detector_constructed": false,
+      "expected_raw_copy_overhead_per_detector_copy": 2.0,
+      "half_degree": 32,
+      "maximum_binary_detector_half_degree": 31,
+      "polynomial_binary_detector_implies_polynomial_identifier": true,
+      "polynomial_identifier_implies_polynomial_binary_detector": true,
+      "status": "binary-identification-polynomial-equivalence-detector-open",
+      "worst_case_edge_membership_test_count": 1023
+    },
+    {
+      "accepted_character_probability": 0.5,
+      "candidate_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "candidate_information_log2": 356.16657814189784,
+      "degree": 128,
+      "detector_error_target_order": "O(epsilon/m^2) per edge test",
+      "efficient_binary_detector_constructed": false,
+      "expected_raw_copy_overhead_per_detector_copy": 2.0,
+      "half_degree": 64,
+      "maximum_binary_detector_half_degree": 63,
+      "polynomial_binary_detector_implies_polynomial_identifier": true,
+      "polynomial_identifier_implies_polynomial_binary_detector": true,
+      "status": "binary-identification-polynomial-equivalence-detector-open",
+      "worst_case_edge_membership_test_count": 4095
+    },
+    {
+      "accepted_character_probability": 0.5,
+      "candidate_count_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "candidate_information_log2": 839.8345651405928,
+      "degree": 256,
+      "detector_error_target_order": "O(epsilon/m^2) per edge test",
+      "efficient_binary_detector_constructed": false,
+      "expected_raw_copy_overhead_per_detector_copy": 2.0,
+      "half_degree": 128,
+      "maximum_binary_detector_half_degree": 127,
+      "polynomial_binary_detector_implies_polynomial_identifier": true,
+      "polynomial_identifier_implies_polynomial_binary_detector": true,
+      "status": "binary-identification-polynomial-equivalence-detector-open",
+      "worst_case_edge_membership_test_count": 16383
+    }
+  ],
+  "status": "binary-identification-polynomial-equivalence-proved-detector-open",
+  "summary": "Proved an exact subgroup-dephasing edge test and constant-success batched recursion, making binary detection and identification polynomially equivalent for perfect-matching involution coset states.",
+  "theorem": {
+    "access_model": "Explicit permutation-basis coset states, reversible coset factorization, fresh independent queries, and bounded-error detectors.",
+    "batched_character_reduction": "Fourier filtering all known edge swaps at once retains chi(z)=+1 with probability 1/2 and emits the smaller plus coset state.",
+    "binary_to_identification_polynomial_reduction_proved": true,
+    "conditional_subgroup_reduction": "Conditioned on a coset block, a true edge gives the exact L coset state and a false edge gives the exact maximally mixed L state.",
+    "constant_success_batched_recursion_proved": true,
+    "converse_verification": "Fresh (I+R_hhat)/2 tests accept a correct candidate with probability one and null or a wrong candidate with probability 1/2 per copy.",
+    "edge_membership_equivalence": "A fixed-point-free h lies in S_e x S_(complement e) exactly when the matching of h contains edge e.",
+    "efficient_binary_detector_constructed": false,
+    "exact_edge_membership_reduction_proved": true,
+    "exact_subgroup_dephasing_proved": true,
+    "hidden_involution_algorithm_constructed": false,
+    "identification_recurrence": "Testing all partners of one remaining vertex at each level uses m^2-1 binary membership tests and constant expected state overhead.",
+    "identification_to_binary_polynomial_reduction_proved": true,
+    "scope_limit": "No efficient binary detector, natural classical separation, graph-isomorphism reduction, or arbitrary-HSP equivalence is proved.",
+    "status": "binary-identification-polynomial-equivalence-proved-detector-open",
+    "subgroup_dephasing_lemma": "Left-coset dephasing satisfies Delta_L(R_h)=R_h for h in L and Delta_L(R_h)=0 otherwise.",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "binary_promise": "Maximally mixed null versus any fixed hidden matching coset state.",
+    "detector_requirement": "Polynomial time/query complexity for every smaller degree, with worst-case bounded error after conjugation symmetrization.",
+    "family": "Fixed-point-free involutions/perfect matchings in S_(2m).",
+    "identification_output": "The complete list of m disjoint matching edges.",
+    "outside_scope": "Other conjugacy classes without a recursive block system, noisy states, destructive detectors without reproducible fresh queries, and reductions from external natural problems."
+  }
+}

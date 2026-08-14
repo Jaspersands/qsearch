@@ -1,0 +1,205 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The earlier o(1) class-sum bound already fixes the transfer scale.",
+      "resolution": "No: transfer depends on its reciprocal. The leading transposition term fixes the exact n^2 collision-growth threshold.",
+      "resolved": true
+    },
+    {
+      "objection": "A divergent M_n automatically blocks physical mixing.",
+      "resolution": "False. Every growth rate o(n^2) is sufficient.",
+      "resolved": true
+    },
+    {
+      "objection": "Finite M_n values support a subquadratic theorem.",
+      "resolution": "Values through S_5 cannot distinguish bounded, polynomial, or faster asymptotic collision growth.",
+      "resolved": false
+    },
+    {
+      "objection": "Subquadratic M_n would settle the full adaptive channel.",
+      "resolution": "It settles only rank-profile transfer; non-Haar Racah cumulants remain outside this likelihood argument.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "adaptive_syndrome_decouples_proved": false,
+    "adaptive_syndrome_survives_proved": false,
+    "algorithm_claim_allowed": false,
+    "classical_separation_proved": false,
+    "irreducible_racah_cmi_vanishes_proved": false,
+    "physical_rank_profile_mixes_proved": false,
+    "physical_transfer_equivalent_to_subquadratic_collision_growth": true,
+    "reason": "The exact target is now M_n=o(n^2), but no all-n bound on M_n or the fully nonidentity core Z6_n is available.",
+    "reference_variance_asymptotic_scale_proved": true,
+    "speedup_claim_allowed": false,
+    "tetrahedral_collision_moment_subquadratic_proved": false
+  },
+  "created_at": "2026-08-13T22:49:09.328976+00:00",
+  "exact_controls": [
+    {
+      "exact_inverse_class_square_sum": "35/192",
+      "exact_reciprocal_class_sum": "19/24",
+      "exact_reference_union_variance": "643/96",
+      "exact_support_expansions_verified": true,
+      "n": 4,
+      "n_fourth_scaled_inverse_square_sum": 46.666666666666664,
+      "n_squared_scaled_reciprocal_sum": 12.666666666666666,
+      "n_squared_scaled_reference_union_variance": 107.16666666666667,
+      "status": "exact-support-size-class-expansions-verified",
+      "support_expansion_inverse_class_square_sum": "35/192",
+      "support_expansion_reciprocal_class_sum": "19/24",
+      "transposition_fraction_of_reciprocal_sum": 0.21052631578947367
+    },
+    {
+      "exact_inverse_class_square_sum": "80483/54190080",
+      "exact_reciprocal_class_sum": "481/6720",
+      "exact_reference_union_variance": "15595619/27095040",
+      "exact_support_expansions_verified": true,
+      "n": 8,
+      "n_fourth_scaled_inverse_square_sum": 6.083371126228269,
+      "n_squared_scaled_reciprocal_sum": 4.580952380952381,
+      "n_squared_scaled_reference_union_variance": 36.83772439531368,
+      "status": "exact-support-size-class-expansions-verified",
+      "support_expansion_inverse_class_square_sum": "80483/54190080",
+      "support_expansion_reciprocal_class_sum": "481/6720",
+      "transposition_fraction_of_reciprocal_sum": 0.498960498960499
+    },
+    {
+      "exact_inverse_class_square_sum": "53993207551571/229442532802560000",
+      "exact_reciprocal_class_sum": "9028021/479001600",
+      "exact_reference_union_variance": "17351739222885971/114721266401280000",
+      "exact_support_expansions_verified": true,
+      "n": 12,
+      "n_fourth_scaled_inverse_square_sum": 4.879666982899015,
+      "n_squared_scaled_reciprocal_sum": 2.7140515271765273,
+      "n_squared_scaled_reference_union_variance": 21.780185369952484,
+      "status": "exact-support-size-class-expansions-verified",
+      "support_expansion_inverse_class_square_sum": "53993207551571/229442532802560000",
+      "support_expansion_reciprocal_class_sum": "9028021/479001600",
+      "transposition_fraction_of_reciprocal_sum": 0.8038971110058339
+    },
+    {
+      "exact_inverse_class_square_sum": "165135324353059223776121847561703/5919012181389927685417441689600000000",
+      "exact_reciprocal_class_sum": "14144862056158369/2432902008176640000",
+      "exact_reference_union_variance": "137817388531590071782595187048201703/2959506090694963842708720844800000000",
+      "exact_support_expansions_verified": true,
+      "n": 20,
+      "n_fourth_scaled_inverse_square_sum": 4.463861719961021,
+      "n_squared_scaled_reciprocal_sum": 2.3255950315498914,
+      "n_squared_scaled_reference_union_variance": 18.627079560998936,
+      "status": "exact-support-size-class-expansions-verified",
+      "support_expansion_inverse_class_square_sum": "165135324353059223776121847561703/5919012181389927685417441689600000000",
+      "support_expansion_reciprocal_class_sum": "14144862056158369/2432902008176640000",
+      "transposition_fraction_of_reciprocal_sum": 0.9052578498551768
+    },
+    {
+      "exact_inverse_class_square_sum": "186453872634528466380483056034907930440348520820629163870341/35179539819272941187344623390328059788016080859955200000000000000",
+      "exact_reciprocal_class_sum": "14716023668821555737460902331/6028474086640705878097920000000",
+      "exact_reference_union_variance": "343691581835889778782793307086602474676635566251522514603870341/17589769909636470593672311695164029894008040429977600000000000000",
+      "exact_support_expansions_verified": true,
+      "n": 30,
+      "n_fourth_scaled_inverse_square_sum": 4.293053223829502,
+      "n_squared_scaled_reciprocal_sum": 2.196977396202045,
+      "n_squared_scaled_reference_union_variance": 17.585359287891535,
+      "status": "exact-support-size-class-expansions-verified",
+      "support_expansion_inverse_class_square_sum": "186453872634528466380483056034907930440348520820629163870341/35179539819272941187344623390328059788016080859955200000000000000",
+      "support_expansion_reciprocal_class_sum": "14716023668821555737460902331/6028474086640705878097920000000",
+      "transposition_fraction_of_reciprocal_sum": 0.9417327282556651
+    }
+  ],
+  "falsifiers_triggered": [
+    "Uniform boundedness of the tetrahedral collision moment is stronger than needed.",
+    "Merely proving M_n=O(n^2) does not cross the transfer threshold.",
+    "Stable-character word-measure estimates do not establish the required full-spectrum L2 bound."
+  ],
+  "headline_metrics": {
+    "analytic_tail_bound_control_count": 3,
+    "exact_support_expansion_control_count": 5,
+    "finite_control_failure_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "physical_rank_mixing_theorem_count": 0,
+    "reference_variance_scale_theorem_count": 1,
+    "tetrahedral_subquadratic_growth_theorem_count": 0
+  },
+  "literature_boundary": [
+    {
+      "boundary": "Stable-character and fixed-cycle estimates do not control the full joint cycle-signature L2 norm.",
+      "id": "hanany-puder-word-measures-symmetric-groups",
+      "url": "https://arxiv.org/abs/2009.00897"
+    },
+    {
+      "boundary": "Pointwise normalized-character estimates do not preserve the cancellation in the correlated six-word contraction.",
+      "id": "feray-sniady-character-bounds",
+      "url": "https://arxiv.org/abs/math/0701051"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "identify_exact_reference-variance_polynomial_scale",
+      "resolution": "The support-size expansion and geometric tails give 8V_n+2W_n~16/n^2.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_physical_tetrahedral_collision_moment_is_subquadratic",
+      "resolution": "Control the fully nonidentity six-word class-signature core Z6_n strongly enough to show M_n=o(n^2).",
+      "resolved": false
+    },
+    {
+      "obligation": "replace_full_collision_moment_by_trimmed_bulk_control_if_needed",
+      "resolution": "The bounded rank observable permits removal of vanishing physical-mass label tails before applying change of measure.",
+      "resolved": false
+    }
+  ],
+  "status": "tetrahedral-collision-subquadratic-growth-is-exact-transfer-target",
+  "summary": "Proved that the product-law variance is asymptotic to 16/n^2, making M_n=o(n^2) the exact physical rank-transfer target.",
+  "tail_bound_controls": [
+    {
+      "analytic_v_remainder_upper": 63.453225345967226,
+      "analytic_w_remainder_upper": 0.014080220128417685,
+      "exact_v_remainder_after_support_three": 1.9082711707800544e-05,
+      "exact_w_remainder_after_support_two": 1.535174357483257e-08,
+      "n": 30,
+      "status": "support-tail-bounds-verified",
+      "v_tail_bound_verified": true,
+      "w_tail_bound_verified": true
+    },
+    {
+      "analytic_v_remainder_upper": 2.419155546665267,
+      "analytic_w_remainder_upper": 0.0040587076699426594,
+      "exact_v_remainder_after_support_three": 8.790144050773885e-06,
+      "exact_w_remainder_after_support_two": 4.943981481588693e-09,
+      "n": 36,
+      "status": "support-tail-bounds-verified",
+      "v_tail_bound_verified": true,
+      "w_tail_bound_verified": true
+    },
+    {
+      "analytic_v_remainder_upper": 1.0615715572920328,
+      "analytic_w_remainder_upper": 0.0020165396711306527,
+      "exact_v_remainder_after_support_three": 5.6400521292745995e-06,
+      "exact_w_remainder_after_support_two": 2.5777368377755705e-09,
+      "n": 40,
+      "status": "support-tail-bounds-verified",
+      "v_tail_bound_verified": true,
+      "w_tail_bound_verified": true
+    }
+  ],
+  "theorem": {
+    "equivalence_proved": true,
+    "inverse_square_asymptotic": "W_n=4/(n)_2^2+O(n^-6)=4n^-4(1+O(n^-1))",
+    "reciprocal_class_asymptotic": "V_n=2/(n)_2+3/(n)_3+O(n^-4)=2n^-2(1+O(n^-1))",
+    "reference_union_variance_asymptotic": "S_n=8V_n+2W_n=16n^-2(1+O(n^-1))",
+    "status": "physical-transfer-scale-sharpened-to-subquadratic-collision-growth",
+    "tetrahedral_subquadratic_growth_proved": false,
+    "transfer_condition_equivalent": "M_n=o(n^2)",
+    "transfer_condition_original": "M_n(8V_n+2W_n)->0"
+  },
+  "theorem_contract": {
+    "coefficient_bounds": "A_m<=2^(m-1)m^(m/2), B_m<=2^(m-1)m^m.",
+    "falling_factorial_bound": "(n)_m>=(n/e)^m uniformly for m<=n.",
+    "physical_transfer_target": "M_n=o(n^2)",
+    "reference_scale": "S_n=8V_n+2W_n=16n^-2(1+O(n^-1))",
+    "scope": "The transfer threshold is exact, but no subquadratic bound on the physical tetrahedral collision moment M_n is proved.",
+    "support_decomposition": "Every nonidentity class is uniquely 1^(n-m) union rho with rho fixed-point-free, and |C|=(n)_m/z_rho."
+  }
+}

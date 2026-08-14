@@ -1,0 +1,208 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A full second moment is necessary for change of measure.",
+      "resolution": "False for bounded observables: a likelihood cap plus vanishing physical mass above the cap suffices.",
+      "resolved": true
+    },
+    {
+      "objection": "Any cap tending to infinity is enough.",
+      "resolution": "No. The cap must be o(1/S_n)=o(n^2), unless a sharper reference bad-event estimate replaces Chebyshev.",
+      "resolved": true
+    },
+    {
+      "objection": "Low-dimensional trimming automatically proves the tail condition.",
+      "resolution": "The retained near-maximal-dimensional sector can still contain high-likelihood spikes.",
+      "resolved": false
+    },
+    {
+      "objection": "The n^2 threshold is an artifact with no counterexample.",
+      "resolution": "The exact reference mass n^-2 / likelihood n^2 family preserves unit physical signal at the boundary.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "adaptive_syndrome_decouples_proved": false,
+    "adaptive_syndrome_survives_proved": false,
+    "algorithm_claim_allowed": false,
+    "canonical_low_dimension_tail_removed": true,
+    "classical_separation_proved": false,
+    "full_second_moment_required_for_rank_transfer": false,
+    "irreducible_racah_cmi_vanishes_proved": false,
+    "physical_rank_profile_mixes_proved": false,
+    "reason": "The necessary transfer hypothesis has been weakened to a retained physical likelihood-tail statement, but that statement is open.",
+    "retained_subquadratic_likelihood_tail_vanishes_proved": false,
+    "speedup_claim_allowed": false,
+    "trimmed_weak_l1_transfer_criterion_proved": true
+  },
+  "created_at": "2026-08-13T22:52:08.770913+00:00",
+  "dimension_trim_controls": [
+    {
+      "dimension_threshold_log2": 3.169925001442312,
+      "n": 12,
+      "removed_mass_vanishing_certified": true,
+      "removed_physical_mass_upper": 7.8125e-05,
+      "status": "near-maximal-dimension-tail-tv-kl-bound-certified"
+    },
+    {
+      "dimension_threshold_log2": 15.313768772512146,
+      "n": 20,
+      "removed_mass_vanishing_certified": true,
+      "removed_physical_mass_upper": 2.565084454724534e-06,
+      "status": "near-maximal-dimension-tail-tv-kl-bound-certified"
+    },
+    {
+      "dimension_threshold_log2": 34.65129561035408,
+      "n": 30,
+      "removed_mass_vanishing_certified": true,
+      "removed_physical_mass_upper": 9.228859550971884e-08,
+      "status": "near-maximal-dimension-tail-tv-kl-bound-certified"
+    },
+    {
+      "dimension_threshold_log2": 81.72139250289962,
+      "n": 50,
+      "removed_mass_vanishing_certified": true,
+      "removed_physical_mass_upper": 6.402775445938855e-10,
+      "status": "near-maximal-dimension-tail-tv-kl-bound-certified"
+    }
+  ],
+  "falsifiers_triggered": [
+    "Full tetrahedral chi-square can diverge without obstructing a bounded rank observable.",
+    "Removing low-dimensional labels does not by itself control retained likelihood spikes.",
+    "Likelihood mass at the quadratic scale can preserve unit physical signal despite reference mixing."
+  ],
+  "headline_metrics": {
+    "canonical_dimension_trim_control_count": 4,
+    "finite_control_failure_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "physical_rank_mixing_theorem_count": 0,
+    "quadratic_boundary_counterexample_count": 3,
+    "retained_tetrahedral_likelihood_tail_theorem_count": 0,
+    "synthetic_scaling_control_count": 3,
+    "weak_l1_transfer_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "remove_irrelevant_low_dimension_likelihood_spikes",
+      "resolution": "The canonical dimension trim has vanishing physical mass, and the rank observable is uniformly bounded.",
+      "resolved": true
+    },
+    {
+      "obligation": "replace_full_l2_transfer_by_physical_likelihood_tail_control",
+      "resolution": "Likelihood truncation gives the finite weak-L1 bound (2).",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_retained_subquadratic_likelihood_tail_has_vanishing_physical_mass",
+      "resolution": "Find tau_n=o(n^2) with P(T_n,L_n>tau_n)->0, or construct a positive-mass retained counterfamily.",
+      "resolved": false
+    },
+    {
+      "obligation": "control_irreducible_non_haar_racah_cumulants",
+      "resolution": "Rank transfer does not bound either conditional 2x2 minor.",
+      "resolved": false
+    }
+  ],
+  "quadratic_boundary_controls": [
+    {
+      "bounded_observable_physical_mean": "1",
+      "bounded_observable_reference_mean": "1/100",
+      "exact_quadratic_boundary_verified": true,
+      "n": 10,
+      "physical_mass_above_test_cap": "1",
+      "physical_rare_event_mass": "1",
+      "rare_likelihood": "100",
+      "rare_reference_probability": "1/100",
+      "status": "quadratic-likelihood-boundary-counterexample-verified",
+      "subquadratic_test_cap": 10
+    },
+    {
+      "bounded_observable_physical_mean": "1",
+      "bounded_observable_reference_mean": "1/10000",
+      "exact_quadratic_boundary_verified": true,
+      "n": 100,
+      "physical_mass_above_test_cap": "1",
+      "physical_rare_event_mass": "1",
+      "rare_likelihood": "10000",
+      "rare_reference_probability": "1/10000",
+      "status": "quadratic-likelihood-boundary-counterexample-verified",
+      "subquadratic_test_cap": 100
+    },
+    {
+      "bounded_observable_physical_mean": "1",
+      "bounded_observable_reference_mean": "1/1000000",
+      "exact_quadratic_boundary_verified": true,
+      "n": 1000,
+      "physical_mass_above_test_cap": "1",
+      "physical_rare_event_mass": "1",
+      "rare_likelihood": "1000000",
+      "rare_reference_probability": "1/1000000",
+      "status": "quadratic-likelihood-boundary-counterexample-verified",
+      "subquadratic_test_cap": 1000
+    }
+  ],
+  "status": "retained-subquadratic-likelihood-tail-is-weakest-current-rank-transfer-gate",
+  "summary": "Replaced the full L2 collision requirement by a weaker dimension-trimmed weak-L1 likelihood-tail criterion at the sharp n^2 scale.",
+  "theorem": {
+    "canonical_epsilon": "epsilon_n=(tau_n S_n)^(1/4)",
+    "finite_bound": "E_P f<=7P(T^c)+b(epsilon)+7tau S_n/epsilon^2+7P(T,L>tau)",
+    "physical_rank_mixing_proved_for_tetrahedral_law": false,
+    "quadratic_boundary_counterexample_verified": true,
+    "second_moment_implication": "M_n S_n->0 implies the weak-L1 conditions by choosing tau_n=sqrt(M_n/S_n) and Markov",
+    "status": "physical-rank-transfer-reduced-to-retained-subquadratic-likelihood-tail",
+    "sufficient_conditions": "P(T_n^c)->0, tau_n=o(n^2), and P(T_n,L_n>tau_n)->0",
+    "weak_l1_strictly_weaker_than_full_l2": true
+  },
+  "theorem_contract": {
+    "bounded_observable": "0<=f=chi2(rank-profile||U3)<=7.",
+    "capped_change_of_measure": "P(T,G^c)<=tau Q(G^c)+P(T,L>tau).",
+    "reference_bad_event": "Q(G^c)<=S_n/epsilon^2 with S_n~16/n^2.",
+    "retained_event": "T_n may be the canonical event that all six irrep dimensions exceed sqrt(n!)/(p(n)log2(n!)).",
+    "scope": "The criterion is proved; its retained tetrahedral likelihood-tail hypothesis and all non-Haar Racah terms remain open.",
+    "weak_l1_target": "P(T_n^c)->0, tau_n=o(n^2), and P(T_n,L_n>tau_n)->0"
+  },
+  "weak_l1_scaling_controls": [
+    {
+      "asymptotic_hypotheses_satisfied": true,
+      "cap_times_reference_variance": 1.6e-07,
+      "capped_bad_event_physical_mass_upper": 0.0005,
+      "epsilon": 0.02,
+      "expected_physical_rank_chi_square_upper": 0.05323360854054484,
+      "good_event_rank_chi_square_upper": 0.04903360854054484,
+      "likelihood_cap": 100000000.0,
+      "n": 100000000,
+      "reference_union_variance": 1.6e-15,
+      "removed_physical_mass_upper": 0.0001,
+      "retained_high_likelihood_physical_mass_upper": 0.0001,
+      "status": "synthetic-weak-l1-transfer-bound-vanishing"
+    },
+    {
+      "asymptotic_hypotheses_satisfied": true,
+      "cap_times_reference_variance": 1.6000000000000003e-11,
+      "capped_bad_event_physical_mass_upper": 5e-06,
+      "epsilon": 0.002,
+      "expected_physical_rank_chi_square_upper": 0.0004500952380498229,
+      "good_event_rank_chi_square_upper": 0.0004080952380498229,
+      "likelihood_cap": 1000000000000.0,
+      "n": 1000000000000,
+      "reference_union_variance": 1.6000000000000002e-23,
+      "removed_physical_mass_upper": 1e-06,
+      "retained_high_likelihood_physical_mass_upper": 1e-06,
+      "status": "synthetic-weak-l1-transfer-bound-vanishing"
+    },
+    {
+      "asymptotic_hypotheses_satisfied": true,
+      "cap_times_reference_variance": 1.6e-15,
+      "capped_bad_event_physical_mass_upper": 5e-08,
+      "epsilon": 0.0002,
+      "expected_physical_rank_chi_square_upper": 4.428009448324005e-06,
+      "good_event_rank_chi_square_upper": 4.0080094483240045e-06,
+      "likelihood_cap": 1e+16,
+      "n": 10000000000000000,
+      "reference_union_variance": 1.5999999999999999e-31,
+      "removed_physical_mass_upper": 1e-08,
+      "retained_high_likelihood_physical_mass_upper": 1e-08,
+      "status": "synthetic-weak-l1-transfer-bound-vanishing"
+    }
+  ]
+}

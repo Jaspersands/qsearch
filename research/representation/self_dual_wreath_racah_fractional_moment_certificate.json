@@ -1,0 +1,384 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Taking theta arbitrarily close to zero makes the theorem easy.",
+      "resolution": "False. The 1/theta factor requires the moment logarithm to shrink proportionally faster.",
+      "resolved": true
+    },
+    {
+      "objection": "Perfect Plancherel rank marginals bound every fractional moment.",
+      "resolution": "The identity coupling has exact marginals and moment sum q_lambda^(1-theta).",
+      "resolved": true
+    },
+    {
+      "objection": "A finite estimate of S_theta is robust to missed blocks.",
+      "resolution": "Rare high-a blocks are amplified by a^theta; omitted physical mass needs an explicit upper bound.",
+      "resolved": true
+    },
+    {
+      "objection": "Rank-information control resolves the full quantum signal.",
+      "resolution": "Orientation-syndrome conditional information remains a separate obligation.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "classical_separation_proved": false,
+    "collision_subpolynomial_required": false,
+    "fractional_moment_tail_bound_proved": true,
+    "irreducible_orientation_racah_cmi_vanishes_proved": false,
+    "natural_growing_row_fractional_moment_bound_proved": false,
+    "natural_physical_average_racah_mi_sublogarithmic_proved": false,
+    "physical_average_fractional_renyi_certificate_proved": true,
+    "physical_rank_profile_mixes_proved": false,
+    "reason": "A weaker continuum of sufficient moments is now exact, but no natural Plancherel-growing-row estimate is available at any useful order.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-14T00:43:12.674185+00:00",
+  "falsifiers_triggered": [
+    "Collision growth alone no longer kills the rank-mixing route if lower moments remain controlled.",
+    "Vanishing Renyi order is not a loophole because its reciprocal enters the entropy bound.",
+    "Marginal Plancherel mixing permits exponentially broad dependence moments."
+  ],
+  "finite_physical_average_controls": [
+    {
+      "actual_tail_entropy_upper_bits": 1.0,
+      "averaged_fractional_renyi_upper_bits": 0.06121577205239653,
+      "bad_mass_bound_violation": 0.0,
+      "exact_fractional_certificate_verified": true,
+      "fractional_order_theta": 0.25,
+      "moment_bad_mass_upper": 0.8498640272892473,
+      "moment_tail_entropy_upper_bits": 3.893464964110431,
+      "n": 3,
+      "physical_average_actual_bad_mass": 0.0,
+      "physical_average_fractional_moment": 1.0106643480372395,
+      "physical_average_racah_mutual_information_bits": 0.05591759275284951,
+      "physical_outer_probability_sum": 0.9999999999999999,
+      "positive_outer_tuple_count": 41,
+      "relative_overlap_threshold": 2.0,
+      "renyi_upper_violation_bits": 0.0,
+      "status": "physical-average-racah-information-obeys-fractional-moment-certificate"
+    },
+    {
+      "actual_tail_entropy_upper_bits": 1.0,
+      "averaged_fractional_renyi_upper_bits": 0.06665990085134135,
+      "bad_mass_bound_violation": 0.0,
+      "exact_fractional_certificate_verified": true,
+      "fractional_order_theta": 0.5,
+      "moment_bad_mass_upper": 0.723632921905438,
+      "moment_tail_entropy_upper_bits": 3.631559902554028,
+      "n": 3,
+      "physical_average_actual_bad_mass": 0.0,
+      "physical_average_fractional_moment": 1.0233714923383412,
+      "physical_average_racah_mutual_information_bits": 0.05591759275284951,
+      "physical_outer_probability_sum": 0.9999999999999999,
+      "positive_outer_tuple_count": 41,
+      "relative_overlap_threshold": 2.0,
+      "renyi_upper_violation_bits": 0.0,
+      "status": "physical-average-racah-information-obeys-fractional-moment-certificate"
+    },
+    {
+      "actual_tail_entropy_upper_bits": 1.0,
+      "averaged_fractional_renyi_upper_bits": 0.16030706079476525,
+      "bad_mass_bound_violation": 0.0,
+      "exact_fractional_certificate_verified": true,
+      "fractional_order_theta": 0.25,
+      "moment_bad_mass_upper": 0.8645832341956212,
+      "moment_tail_entropy_upper_bits": 5.1964963129721085,
+      "n": 4,
+      "physical_average_actual_bad_mass": 0.0,
+      "physical_average_fractional_moment": 1.0281685336174966,
+      "physical_average_racah_mutual_information_bits": 0.1404257307173426,
+      "physical_outer_probability_sum": 1.0,
+      "positive_outer_tuple_count": 321,
+      "relative_overlap_threshold": 2.0,
+      "renyi_upper_violation_bits": 0.0,
+      "status": "physical-average-racah-information-obeys-fractional-moment-certificate"
+    },
+    {
+      "actual_tail_entropy_upper_bits": 2.0,
+      "averaged_fractional_renyi_upper_bits": 0.17953548444284895,
+      "bad_mass_bound_violation": 0.0,
+      "exact_fractional_certificate_verified": true,
+      "fractional_order_theta": 0.5,
+      "moment_bad_mass_upper": 0.5320994222705466,
+      "moment_tail_entropy_upper_bits": 4.955327254182628,
+      "n": 4,
+      "physical_average_actual_bad_mass": 0.0,
+      "physical_average_fractional_moment": 1.0641988445410933,
+      "physical_average_racah_mutual_information_bits": 0.1404257307173426,
+      "physical_outer_probability_sum": 1.0,
+      "positive_outer_tuple_count": 321,
+      "relative_overlap_threshold": 4.0,
+      "renyi_upper_violation_bits": 0.0,
+      "status": "physical-average-racah-information-obeys-fractional-moment-certificate"
+    },
+    {
+      "actual_tail_entropy_upper_bits": 1.9885492189738527,
+      "averaged_fractional_renyi_upper_bits": 0.274675239793684,
+      "bad_mass_bound_violation": 0.0,
+      "exact_fractional_certificate_verified": true,
+      "fractional_order_theta": 0.25,
+      "moment_bad_mass_upper": 0.8818888925007965,
+      "moment_tail_entropy_upper_bits": 6.11146420851052,
+      "n": 5,
+      "physical_average_actual_bad_mass": 0.11281330375514369,
+      "physical_average_fractional_moment": 1.048748545603817,
+      "physical_average_racah_mutual_information_bits": 0.23736799519617469,
+      "physical_outer_probability_sum": 1.0,
+      "positive_outer_tuple_count": 1625,
+      "relative_overlap_threshold": 2.0,
+      "renyi_upper_violation_bits": 0.0,
+      "status": "physical-average-racah-information-obeys-fractional-moment-certificate"
+    },
+    {
+      "actual_tail_entropy_upper_bits": 2.0,
+      "averaged_fractional_renyi_upper_bits": 0.3088953677699918,
+      "bad_mass_bound_violation": 0.0,
+      "exact_fractional_certificate_verified": true,
+      "fractional_order_theta": 0.5,
+      "moment_bad_mass_upper": 0.5564977207673681,
+      "moment_tail_entropy_upper_bits": 5.595121167727788,
+      "n": 5,
+      "physical_average_actual_bad_mass": 0.0,
+      "physical_average_fractional_moment": 1.1129954415347363,
+      "physical_average_racah_mutual_information_bits": 0.23736799519617469,
+      "physical_outer_probability_sum": 1.0,
+      "positive_outer_tuple_count": 1625,
+      "relative_overlap_threshold": 4.0,
+      "renyi_upper_violation_bits": 0.0,
+      "status": "physical-average-racah-information-obeys-fractional-moment-certificate"
+    },
+    {
+      "actual_tail_entropy_upper_bits": 2.0,
+      "averaged_fractional_renyi_upper_bits": 0.3709368799449243,
+      "bad_mass_bound_violation": 0.0,
+      "exact_fractional_certificate_verified": true,
+      "fractional_order_theta": 1.0,
+      "moment_bad_mass_upper": 0.32329808788995834,
+      "moment_tail_entropy_upper_bits": 4.3418979484252285,
+      "n": 5,
+      "physical_average_actual_bad_mass": 0.0,
+      "physical_average_fractional_moment": 1.2931923515598334,
+      "physical_average_racah_mutual_information_bits": 0.23736799519617469,
+      "physical_outer_probability_sum": 1.0,
+      "positive_outer_tuple_count": 1625,
+      "relative_overlap_threshold": 4.0,
+      "renyi_upper_violation_bits": 0.0,
+      "status": "physical-average-racah-information-obeys-fractional-moment-certificate"
+    }
+  ],
+  "headline_metrics": {
+    "finite_control_failure_count": 0,
+    "finite_physical_average_control_count": 7,
+    "fractional_moment_certificate_theorem_count": 1,
+    "identity_coupling_countermodel_count": 9,
+    "natural_fractional_moment_bound_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "physical_rank_mixing_theorem_count": 0
+  },
+  "identity_coupling_countermodels": [
+    {
+      "exact_collision_moment": 42.0,
+      "exact_fractional_dependence_moment": 2.153773203661678,
+      "fractional_order_theta": 0.25,
+      "fractional_renyi_upper_bits": 4.427465357598562,
+      "n": 10,
+      "partition_count": 42,
+      "perfect_marginals_imply_fractional_bound": false,
+      "plancherel_entropy_bits": 4.2649140460084025,
+      "status": "perfect-plancherel-marginals-permit-large-fractional-moments"
+    },
+    {
+      "exact_collision_moment": 42.0,
+      "exact_fractional_dependence_moment": 4.984931438466141,
+      "fractional_order_theta": 0.5,
+      "fractional_renyi_upper_bits": 4.6351473245668595,
+      "n": 10,
+      "partition_count": 42,
+      "perfect_marginals_imply_fractional_bound": false,
+      "plancherel_entropy_bits": 4.2649140460084025,
+      "status": "perfect-plancherel-marginals-permit-large-fractional-moments"
+    },
+    {
+      "exact_collision_moment": 42.0,
+      "exact_fractional_dependence_moment": 42.0,
+      "fractional_order_theta": 1.0,
+      "fractional_renyi_upper_bits": 5.392317422778761,
+      "n": 10,
+      "partition_count": 42,
+      "perfect_marginals_imply_fractional_bound": false,
+      "plancherel_entropy_bits": 4.2649140460084025,
+      "status": "perfect-plancherel-marginals-permit-large-fractional-moments"
+    },
+    {
+      "exact_collision_moment": 627.0,
+      "exact_fractional_dependence_moment": 3.6769161450589234,
+      "fractional_order_theta": 0.25,
+      "fractional_renyi_upper_bits": 7.513985100522059,
+      "n": 20,
+      "partition_count": 627,
+      "perfect_marginals_imply_fractional_bound": false,
+      "plancherel_entropy_bits": 7.2512585010315584,
+      "status": "perfect-plancherel-marginals-permit-large-fractional-moments"
+    },
+    {
+      "exact_collision_moment": 627.0,
+      "exact_fractional_dependence_moment": 15.232097432082906,
+      "fractional_order_theta": 0.5,
+      "fractional_renyi_upper_bits": 7.858085413743035,
+      "n": 20,
+      "partition_count": 627,
+      "perfect_marginals_imply_fractional_bound": false,
+      "plancherel_entropy_bits": 7.2512585010315584,
+      "status": "perfect-plancherel-marginals-permit-large-fractional-moments"
+    },
+    {
+      "exact_collision_moment": 627.0,
+      "exact_fractional_dependence_moment": 627.0,
+      "fractional_order_theta": 1.0,
+      "fractional_renyi_upper_bits": 9.29232163280204,
+      "n": 20,
+      "partition_count": 627,
+      "perfect_marginals_imply_fractional_bound": false,
+      "plancherel_entropy_bits": 7.2512585010315584,
+      "status": "perfect-plancherel-marginals-permit-large-fractional-moments"
+    },
+    {
+      "exact_collision_moment": 5604.0,
+      "exact_fractional_dependence_moment": 5.645241445892576,
+      "fractional_order_theta": 0.25,
+      "fractional_renyi_upper_bits": 9.988141144430797,
+      "n": 30,
+      "partition_count": 5604,
+      "perfect_marginals_imply_fractional_bound": false,
+      "plancherel_entropy_bits": 9.644870943873077,
+      "status": "perfect-plancherel-marginals-permit-large-fractional-moments"
+    },
+    {
+      "exact_collision_moment": 5604.0,
+      "exact_fractional_dependence_moment": 37.264856922698954,
+      "fractional_order_theta": 0.5,
+      "fractional_renyi_upper_bits": 10.439487630745996,
+      "n": 30,
+      "partition_count": 5604,
+      "perfect_marginals_imply_fractional_bound": false,
+      "plancherel_entropy_bits": 9.644870943873077,
+      "status": "perfect-plancherel-marginals-permit-large-fractional-moments"
+    },
+    {
+      "exact_collision_moment": 5604.0,
+      "exact_fractional_dependence_moment": 5604.0,
+      "fractional_order_theta": 1.0,
+      "fractional_renyi_upper_bits": 12.452241240430817,
+      "n": 30,
+      "partition_count": 5604,
+      "perfect_marginals_imply_fractional_bound": false,
+      "plancherel_entropy_bits": 9.644870943873077,
+      "status": "perfect-plancherel-marginals-permit-large-fractional-moments"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_physical_average_fractional_renyi_bound",
+      "resolution": "Apply D_1<=D_(1+theta) conditionally and Jensen over physical outer labels.",
+      "resolved": true
+    },
+    {
+      "obligation": "connect_fractional_moment_to_racah_block_masses",
+      "resolution": "Substitute pi=x/M and p r=l r/M^2 into the dependence moment.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_natural_growing_row_fractional_moment",
+      "resolution": "Prove the physical-average block-mass moment rate for some useful theta_n.",
+      "resolved": false
+    },
+    {
+      "obligation": "control_fractional_moment_estimator_tail",
+      "resolution": "Any numerical estimator must report truncation, coverage, and confidence under rare large a.",
+      "resolved": false
+    }
+  ],
+  "status": "natural-racah-search-target-is-fractional-block-mass-moment",
+  "summary": "Replaced collision-only rank transfer by an exact physical-average order-1+theta moment criterion with explicit tail accounting.",
+  "synthetic_scaling_controls": [
+    {
+      "fractional_order_theta": 0.4810178927646654,
+      "n": 20,
+      "natural_fractional_moment_bound_proved": false,
+      "status": "synthetic-fractional-moment-rate-implies-sublog-racah-information",
+      "sufficient_rate_verified": true,
+      "synthetic_average_fractional_moment": 2.0,
+      "synthetic_fractional_renyi_upper_bits": 2.0789247448831243,
+      "upper_over_log2_n": 0.48101789276466544
+    },
+    {
+      "fractional_order_theta": 0.42093208494430295,
+      "n": 50,
+      "natural_fractional_moment_bound_proved": false,
+      "status": "synthetic-fractional-moment-rate-implies-sublog-racah-information",
+      "sufficient_rate_verified": true,
+      "synthetic_average_fractional_moment": 2.0,
+      "synthetic_fractional_renyi_upper_bits": 2.3756801530876848,
+      "upper_over_log2_n": 0.42093208494430306
+    },
+    {
+      "fractional_order_theta": 0.38796262427196593,
+      "n": 100,
+      "natural_fractional_moment_bound_proved": false,
+      "status": "synthetic-fractional-moment-rate-implies-sublog-racah-information",
+      "sufficient_rate_verified": true,
+      "synthetic_average_fractional_moment": 2.0,
+      "synthetic_fractional_renyi_upper_bits": 2.5775678826705466,
+      "upper_over_log2_n": 0.38796262427196593
+    },
+    {
+      "fractional_order_theta": 0.3167701562458082,
+      "n": 1000,
+      "natural_fractional_moment_bound_proved": false,
+      "status": "synthetic-fractional-moment-rate-implies-sublog-racah-information",
+      "sufficient_rate_verified": true,
+      "synthetic_average_fractional_moment": 2.0,
+      "synthetic_fractional_renyi_upper_bits": 3.156863044964429,
+      "upper_over_log2_n": 0.3167701562458082
+    },
+    {
+      "fractional_order_theta": 0.27433100246963577,
+      "n": 10000,
+      "natural_fractional_moment_bound_proved": false,
+      "status": "synthetic-fractional-moment-rate-implies-sublog-racah-information",
+      "sufficient_rate_verified": true,
+      "synthetic_average_fractional_moment": 2.0,
+      "synthetic_fractional_renyi_upper_bits": 3.6452314576099893,
+      "upper_over_log2_n": 0.27433100246963577
+    },
+    {
+      "fractional_order_theta": 0.22399032555893317,
+      "n": 1000000,
+      "natural_fractional_moment_bound_proved": false,
+      "status": "synthetic-fractional-moment-rate-implies-sublog-racah-information",
+      "sufficient_rate_verified": true,
+      "synthetic_average_fractional_moment": 2.0,
+      "synthetic_fractional_renyi_upper_bits": 4.464478532743121,
+      "upper_over_log2_n": 0.22399032555893317
+    }
+  ],
+  "theorem": {
+    "averaged_renyi_bound": "E_o I(pi_o)<=theta^-1 log2(E_o S_theta(o))",
+    "averaged_tail_bound": "E_o pi_o{a_o>K}<=K^-theta E_o S_theta(o)",
+    "block_mass_formula": "S_theta=M^(theta-1)sum x_(mu,nu)^(1+theta)/(l_mu r_nu)^theta",
+    "conditional_moment": "S_theta(o)=sum pi_o(pi_o/(p_o tensor r_o))^theta",
+    "natural_condition_proved": false,
+    "status": "racah-rank-transfer-has-fractional-moment-certificate",
+    "sufficient_asymptotic_condition": "there exists theta_n>0 with log(E S_theta_n)=o(theta_n log n)"
+  },
+  "theorem_contract": {
+    "collision_special_case": "theta=1",
+    "outer_law": "physical four-label marginal P_outer",
+    "reference_coupling": "product of exact conditional rank marginals",
+    "renyi_order": "1+theta, with theta allowed to depend on n",
+    "scope": "sufficient rank-entropy certificate; no natural moment estimate, orientation-syndrome theorem, compiler, or algorithm",
+    "shannon_limit_warning": "theta->0 does not help unless log E S_theta=o(theta log n)"
+  }
+}

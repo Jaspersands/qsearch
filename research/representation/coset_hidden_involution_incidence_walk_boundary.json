@@ -1,0 +1,281 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False for standard local neighbor access: the discriminant is still S/sqrt(M) on the canonicalized coordinates.",
+      "challenge": "Source canonicalization normalizes the incidence walk at O(1).",
+      "resolved": true
+    },
+    {
+      "answer": "False after legal walk normalization: the flat singular window is centered at Theta(M^-1/2).",
+      "challenge": "Relative flatness makes generic QSVT efficient.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Those are black-box state-generation results; the natural symmetric incidence family may admit extra transforms.",
+      "challenge": "Index Erasure lower bounds prove the natural no-go.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "exact_biregular_incidence_model_proved": true,
+    "full_orbit_synthesis_polar_compiled": false,
+    "generic_local_walk_polar_polynomial": false,
+    "generic_local_walk_sqrt_M_obstruction_proved": true,
+    "natural_problem_index_erasure_lower_bound_proved": false,
+    "reason": "Local incidence access retains a Theta(M^-1/2) singular scale on constant alternative mass. Only a representation-specific row transform or other non-generic mechanism can bypass it.",
+    "speedup_claim_allowed": false,
+    "standard_local_walk_discriminant_available": true,
+    "structured_fourier_row_escape_ruled_out": false
+  },
+  "created_at": "2026-08-13T16:59:14.096304+00:00",
+  "falsifiers_triggered": [
+    "Source canonicalization does not improve the normalization of standard local incidence-walk access.",
+    "Relative flatness before legal block-encoding normalization does not imply an efficient generic polar.",
+    "Black-box Index Erasure lower bounds are not natural hidden-involution lower bounds."
+  ],
+  "finite_controls": [
+    {
+      "candidate_count": 3,
+      "copy_count": 1,
+      "discriminant_top_singular_value": 1.0000000000000002,
+      "exact_incidence_model_verified": true,
+      "group_order": 6,
+      "maximum_distinct_candidate_column_intersection": 1,
+      "maximum_physical_row_degree": 3,
+      "maximum_same_candidate_distinct_column_intersection": 0,
+      "maximum_source_column_degree": 2,
+      "minimum_physical_row_degree": 3,
+      "minimum_source_column_degree": 2,
+      "n": 3,
+      "normalized_source_gram_variance": 1.0,
+      "physical_cayley_formula_residual": 0.0,
+      "physical_row_degree": 3,
+      "physical_vertex_count": 6,
+      "predicted_normalized_source_gram_variance": 1.0,
+      "source_column_degree": 2,
+      "source_gram_formula_residual": 0.0,
+      "source_gram_top_eigenvalue": 3.0,
+      "source_vertex_count": 9,
+      "status": "exact-biregular-linear-incidence-model-verified",
+      "transposition_count": 1
+    },
+    {
+      "candidate_count": 3,
+      "copy_count": 2,
+      "discriminant_top_singular_value": 1.0000000000000002,
+      "exact_incidence_model_verified": true,
+      "group_order": 6,
+      "maximum_distinct_candidate_column_intersection": 1,
+      "maximum_physical_row_degree": 3,
+      "maximum_same_candidate_distinct_column_intersection": 0,
+      "maximum_source_column_degree": 4,
+      "minimum_physical_row_degree": 3,
+      "minimum_source_column_degree": 4,
+      "n": 3,
+      "normalized_source_gram_variance": 0.4999999999999999,
+      "physical_cayley_formula_residual": 0.0,
+      "physical_row_degree": 3,
+      "physical_vertex_count": 36,
+      "predicted_normalized_source_gram_variance": 0.5,
+      "source_column_degree": 4,
+      "source_gram_formula_residual": 0.0,
+      "source_gram_top_eigenvalue": 2.999999999999999,
+      "source_vertex_count": 27,
+      "status": "exact-biregular-linear-incidence-model-verified",
+      "transposition_count": 1
+    },
+    {
+      "candidate_count": 3,
+      "copy_count": 1,
+      "discriminant_top_singular_value": 1.0000000000000004,
+      "exact_incidence_model_verified": true,
+      "group_order": 24,
+      "maximum_distinct_candidate_column_intersection": 1,
+      "maximum_physical_row_degree": 3,
+      "maximum_same_candidate_distinct_column_intersection": 0,
+      "maximum_source_column_degree": 2,
+      "minimum_physical_row_degree": 3,
+      "minimum_source_column_degree": 2,
+      "n": 4,
+      "normalized_source_gram_variance": 1.0000000000000002,
+      "physical_cayley_formula_residual": 0.0,
+      "physical_row_degree": 3,
+      "physical_vertex_count": 24,
+      "predicted_normalized_source_gram_variance": 1.0,
+      "source_column_degree": 2,
+      "source_gram_formula_residual": 0.0,
+      "source_gram_top_eigenvalue": 3.0000000000000013,
+      "source_vertex_count": 36,
+      "status": "exact-biregular-linear-incidence-model-verified",
+      "transposition_count": 2
+    }
+  ],
+  "headline_metrics": {
+    "black_box_index_erasure_reduction_count": 0,
+    "exact_incidence_control_count": 3,
+    "finite_control_failure_count": 0,
+    "generic_incidence_qsvt_sqrt_M_obstruction_count": 1,
+    "local_neighbor_access_construction_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "structured_fourier_row_transform_count": 0
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "arxiv:1012.2112",
+      "title": "Symmetry-assisted adversaries for quantum state generation",
+      "url": "https://arxiv.org/abs/1012.2112",
+      "use": "Tight coherent black-box Index Erasure lower bound; analogy only."
+    },
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "arxiv:1902.07336",
+      "title": "A Tight Lower Bound for Non-coherent Index Erasure",
+      "url": "https://arxiv.org/abs/1902.07336",
+      "use": "Tight noncoherent black-box bound; not transferred to the natural family."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-INCIDENCE-FAST-FORWARD",
+      "resolved": false,
+      "statement": "Determine whether the subset-common-involution graph admits structured fast-forwarding or an exact spectral transform."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-ROW-CONVOLUTION-PRECONDITIONER",
+      "resolved": false,
+      "statement": "Construct a Fourier/orbit-row preconditioner that changes the effective normalization on constant alternative mass."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-NATURAL-INDEX-ERASURE-BOUNDARY",
+      "resolved": false,
+      "statement": "Either reduce a valid natural access model to symmetric state generation adversaries or exhibit the structure that evades them."
+    }
+  ],
+  "scaling_records": [
+    {
+      "candidate_count_decimal": "15",
+      "copy_count": 10,
+      "degree": 6,
+      "generic_bounded_polar_degree_lower_order": "Omega(sqrt(M))",
+      "generic_polar_superpolynomial": true,
+      "half_degree": 3,
+      "local_neighbor_oracle_available": true,
+      "physical_row_degree_decimal": "15",
+      "retained_alternative_mass": 0.90625,
+      "retained_walk_singular_lower": 0.18257418583505536,
+      "retained_walk_singular_upper": 0.31622776601683794,
+      "source_column_degree_decimal": "1024",
+      "status": "local-incidence-walk-normalized-too-small-structured-row-escape-open",
+      "structured_fourier_row_escape_ruled_out": false
+    },
+    {
+      "candidate_count_decimal": "105",
+      "copy_count": 13,
+      "degree": 8,
+      "generic_bounded_polar_degree_lower_order": "Omega(sqrt(M))",
+      "generic_polar_superpolynomial": true,
+      "half_degree": 4,
+      "local_neighbor_oracle_available": true,
+      "physical_row_degree_decimal": "105",
+      "retained_alternative_mass": 0.90625,
+      "retained_walk_singular_lower": 0.06900655593423542,
+      "retained_walk_singular_upper": 0.11952286093343936,
+      "source_column_degree_decimal": "8192",
+      "status": "local-incidence-walk-normalized-too-small-structured-row-escape-open",
+      "structured_fourier_row_escape_ruled_out": false
+    },
+    {
+      "candidate_count_decimal": "2027025",
+      "copy_count": 27,
+      "degree": 16,
+      "generic_bounded_polar_degree_lower_order": "Omega(sqrt(M))",
+      "generic_polar_superpolynomial": true,
+      "half_degree": 8,
+      "local_neighbor_oracle_available": true,
+      "physical_row_degree_decimal": "2027025",
+      "retained_alternative_mass": 0.90625,
+      "retained_walk_singular_lower": 0.0004966557291863047,
+      "retained_walk_singular_upper": 0.0008602329568208486,
+      "source_column_degree_decimal": "134217728",
+      "status": "local-incidence-walk-normalized-too-small-structured-row-escape-open",
+      "structured_fourier_row_escape_ruled_out": false
+    },
+    {
+      "candidate_count_decimal": "191898783962510625",
+      "copy_count": 64,
+      "degree": 32,
+      "generic_bounded_polar_degree_lower_order": "Omega(sqrt(M))",
+      "generic_polar_superpolynomial": true,
+      "half_degree": 16,
+      "local_neighbor_oracle_available": true,
+      "physical_row_degree_decimal": "191898783962510625",
+      "retained_alternative_mass": 0.90625,
+      "retained_walk_singular_lower": 1.6141685851015238e-09,
+      "retained_walk_singular_upper": 2.7958220013774065e-09,
+      "source_column_degree_decimal": "18446744073709551616",
+      "status": "local-incidence-walk-normalized-too-small-structured-row-escape-open",
+      "structured_fourier_row_escape_ruled_out": false
+    },
+    {
+      "candidate_count_decimal": "112275575285571389562324404930670903477890625",
+      "copy_count": 153,
+      "degree": 64,
+      "generic_bounded_polar_degree_lower_order": "Omega(sqrt(M))",
+      "generic_polar_superpolynomial": true,
+      "half_degree": 32,
+      "local_neighbor_oracle_available": true,
+      "physical_row_degree_decimal": "112275575285571389562324404930670903477890625",
+      "retained_alternative_mass": 0.90625,
+      "retained_walk_singular_lower": 6.673326253331873e-23,
+      "retained_walk_singular_upper": 1.1558540126254062e-22,
+      "source_column_degree_decimal": "11417981541647679048466287755595961091061972992",
+      "status": "local-incidence-walk-normalized-too-small-structured-row-escape-open",
+      "structured_fourier_row_escape_ruled_out": false
+    },
+    {
+      "candidate_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "copy_count": 363,
+      "degree": 128,
+      "generic_bounded_polar_degree_lower_order": "Omega(sqrt(M))",
+      "generic_polar_superpolynomial": true,
+      "half_degree": 64,
+      "local_neighbor_oracle_available": true,
+      "physical_row_degree_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "retained_alternative_mass": 0.90625,
+      "retained_walk_singular_lower": 1.7421007403309108e-54,
+      "retained_walk_singular_upper": 3.017406994156493e-54,
+      "source_column_degree_decimal": "18788340662190665823115844774314696219005460391266558965658327772257672200916867547709591987078149624255479808",
+      "status": "local-incidence-walk-normalized-too-small-structured-row-escape-open",
+      "structured_fourier_row_escape_ruled_out": false
+    }
+  ],
+  "status": "incidence-walk-sqrt-M-obstruction-structured-row-transform-open",
+  "summary": "Derived the exact linear biregular incidence graph behind source label erasure and proved that its standard Szegedy/QSVT access still costs Omega(sqrt(M)), preserving structured Fourier row synthesis as the sole positive escape rather than overclaiming black-box hardness.",
+  "theorem": {
+    "bernstein_obstruction": "A globally bounded generic polar polynomial responding constantly from zero over this scale has degree Omega(sqrt(M)).",
+    "black_box_index_erasure_reduction_proved": false,
+    "constructive_frontier": "Exploit symmetric-group row convolution, fast-forwarding, or another structured operation not expressible as generic local-walk QSVT.",
+    "exact_incidence_normal_form_proved": true,
+    "flatness_transfer": "At least 29/32 alternative mass has D singular value between 1/sqrt(2M) and sqrt(3/(2M)).",
+    "full_orbit_synthesis_polar_compiled": false,
+    "generic_incidence_qsvt_sqrt_M_obstruction_proved": true,
+    "incidence_degrees": "Every source column has 2^k physical neighbors and every physical tuple has one incident column per candidate, hence degree M.",
+    "index_erasure_scope": "Black-box coherent and noncoherent Index Erasure have tight square-root query lower bounds, but no natural-family reduction is claimed.",
+    "linear_intersections": "Columns for one candidate are disjoint; columns for distinct candidates intersect in at most one physical tuple.",
+    "normalized_local_walk_access_constructed": true,
+    "physical_graph": "BB^*=sum_h tensor_i(I+R_h), the subset-common-involution Cayley-type operator on G^k.",
+    "source_gram": "S^*S=I+2^-k A for the regular clique graph of the linear incidence hypergraph.",
+    "status": "incidence-walk-sqrt-M-obstruction-structured-row-transform-open",
+    "structured_fourier_row_transform_ruled_out": false,
+    "theorem_verified": true,
+    "walk_discriminant": "Standard two-sided neighbor-state preparation yields D=B/sqrt(M2^k)=S/sqrt(M)."
+  },
+  "theorem_contract": {
+    "access_model": "Prepare uniform physical neighbors of a source column and uniform candidate/source neighbors of a physical tuple.",
+    "outside_scope": "Representation-specific rescaling, exact Fourier row transforms, fast-forwarding, and arbitrary natural-input circuits.",
+    "polynomial_model": "Globally norm-bounded generic singular-value polynomial/QSVT on the normalized Szegedy discriminant.",
+    "retained_mass": "The 29/32 alternative-mass relative-flatness window at k=ceil(log2(64M))."
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A sharper constant in a known character-ratio theorem may suffice.",
+      "resolution": "The barrier assumes the stronger ordinary-character bound |chi|<=1; constant improvements cannot change the conclusion.",
+      "resolved": true
+    },
+    {
+      "objection": "Typical random words have few cycles, so triangle inequality should work.",
+      "resolution": "Even the zero-exponent ideal leaves exactly the trim normalizer to the sixth power; typical-cycle corrections only worsen it.",
+      "resolved": true
+    },
+    {
+      "objection": "The barrier proves adaptive energy survives.",
+      "resolution": "It proves only that a lossy proof method is incapable of deciding it.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "canonical_adaptive_energy_survives_proved": false,
+    "canonical_adaptive_energy_vanishes_proved": false,
+    "classical_separation_proved": false,
+    "known_character_bounds_close_adaptive_energy": false,
+    "pointwise_triangle_route_eliminated_proved": true,
+    "reason": "The available pointwise route is provably exponent-vacuous; a cancellation-preserving multilinear estimate is still missing.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T21:12:19.672144+00:00",
+  "falsifiers_triggered": [
+    "Improving constants in pointwise character bounds cannot close this target.",
+    "Typical few-cycle word values do not help after termwise absolute summation.",
+    "Future proofs must preserve cancellation across group inputs or Fourier labels."
+  ],
+  "headline_metrics": {
+    "cancellation_preserving_asymptotic_bound_count": 0,
+    "maximum_scaling_n": 100,
+    "n100_continuous_energy_bound_log2": 441.30257206792953,
+    "n100_idealized_partition_bound_log2": 219.2476085729645,
+    "new_quantum_algorithm_count": 0,
+    "pointwise_triangle_strategy_no_go_theorem_count": 1,
+    "scaling_record_count": 10
+  },
+  "literature_boundary": [
+    {
+      "boundary": "It does not supply cancellation across the |S_n|^3 correlated tetrahedral input triples.",
+      "id": "teyssier-thevenin-sharp-character-bounds-2025",
+      "precise_use": "Theorem 1.6 bounds ordinary characters by a positive power of dimension controlled by the orbit-growth exponent.",
+      "url": "https://arxiv.org/abs/2411.04347"
+    },
+    {
+      "boundary": "Any application that takes termwise absolute values before the six-edge contraction encounters the same exponent barrier.",
+      "id": "lifschitz-marmor-hypercontractive-characters-2023",
+      "precise_use": "Provides strong level/cycle-sensitive character control.",
+      "url": "https://arxiv.org/abs/2308.08694"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "audit_pointwise_triangle_route_at_canonical_trim",
+      "resolution": "Even |chi|<=1 leaves the divergent factor (p(n)log2(n!))^6 before squaring.",
+      "resolved": true
+    },
+    {
+      "obligation": "derive_cancellation_preserving_face_twist_bound",
+      "resolution": "Estimate the projected parity-coset kernel before absolute values.",
+      "resolved": false
+    },
+    {
+      "obligation": "derive_cancellation_preserving_opposite_twist_bound",
+      "resolution": "Exploit the four-edge twist's distinct collision geometry rather than recycling a pointwise ratio estimate.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "canonical_dimension_threshold_log2": 1.0,
+      "continuous_threshold_energy_bound_log2": 120.86313853564559,
+      "continuous_threshold_partition_function_bound_log2": 59.027891806793995,
+      "group_order_log2": 21.791061114716953,
+      "idealized_bound_is_below_one": false,
+      "idealized_partition_function_bound_log2": 59.37318334415086,
+      "idealized_seven_sector_energy_bound_log2": 121.55372161035932,
+      "n": 10,
+      "partition_count": 42,
+      "pointwise_triangle_method_certifies_decay": false,
+      "status": "ideal-pointwise-character-bound-still-triangle-vacuous"
+    },
+    {
+      "canonical_dimension_threshold_log2": 3.169925001442312,
+      "continuous_threshold_energy_bound_log2": 136.2060561351115,
+      "continuous_threshold_partition_function_bound_log2": 66.69935060652695,
+      "group_order_log2": 28.835455234075408,
+      "idealized_bound_is_below_one": false,
+      "idealized_partition_function_bound_log2": 67.48681569357234,
+      "idealized_seven_sector_energy_bound_log2": 137.7809863092023,
+      "n": 12,
+      "partition_count": 77,
+      "pointwise_triangle_method_certifies_decay": false,
+      "status": "ideal-pointwise-character-bound-still-triangle-vacuous"
+    },
+    {
+      "canonical_dimension_threshold_log2": 8.804131021183318,
+      "continuous_threshold_energy_bound_log2": 162.63966497730226,
+      "continuous_threshold_partition_function_bound_log2": 79.91615502762232,
+      "group_order_log2": 44.25014046988262,
+      "idealized_bound_is_below_one": false,
+      "idealized_partition_function_bound_log2": 79.92563528254794,
+      "idealized_seven_sector_energy_bound_log2": 162.6586254871535,
+      "n": 16,
+      "partition_count": 231,
+      "pointwise_triangle_method_certifies_decay": false,
+      "status": "ideal-pointwise-character-bound-still-triangle-vacuous"
+    },
+    {
+      "canonical_dimension_threshold_log2": 15.313768772512146,
+      "continuous_threshold_energy_bound_log2": 185.50601089009243,
+      "continuous_threshold_partition_function_bound_log2": 91.3493279840174,
+      "group_order_log2": 61.07738392090622,
+      "idealized_bound_is_below_one": false,
+      "idealized_partition_function_bound_log2": 91.3495391276458,
+      "idealized_seven_sector_energy_bound_log2": 185.5064331773492,
+      "n": 20,
+      "partition_count": 627,
+      "pointwise_triangle_method_certifies_decay": false,
+      "status": "ideal-pointwise-character-bound-still-triangle-vacuous"
+    },
+    {
+      "canonical_dimension_threshold_log2": 22.59321625581927,
+      "continuous_threshold_energy_bound_log2": 205.9146076737716,
+      "continuous_threshold_partition_function_bound_log2": 101.553626375857,
+      "group_order_log2": 79.03765741910046,
+      "idealized_bound_is_below_one": false,
+      "idealized_partition_function_bound_log2": 101.55367472238572,
+      "idealized_seven_sector_energy_bound_log2": 205.91470436682906,
+      "n": 24,
+      "partition_count": 1575,
+      "pointwise_triangle_method_certifies_decay": false,
+      "status": "ideal-pointwise-character-bound-still-triangle-vacuous"
+    },
+    {
+      "canonical_dimension_threshold_log2": 34.65129561035408,
+      "continuous_threshold_energy_bound_log2": 233.24620056039797,
+      "continuous_threshold_partition_function_bound_log2": 115.21942281917018,
+      "group_order_log2": 107.70906734197342,
+      "idealized_bound_is_below_one": false,
+      "idealized_partition_function_bound_log2": 115.21942836379577,
+      "idealized_seven_sector_energy_bound_log2": 233.24621164964915,
+      "n": 30,
+      "partition_count": 5604,
+      "pointwise_triangle_method_certifies_decay": false,
+      "status": "ideal-pointwise-character-bound-still-triangle-vacuous"
+    },
+    {
+      "canonical_dimension_threshold_log2": 57.07683740285136,
+      "continuous_threshold_energy_bound_log2": 272.83954278668864,
+      "continuous_threshold_partition_function_bound_log2": 135.01609393231553,
+      "group_order_log2": 159.1590398241785,
+      "idealized_bound_is_below_one": false,
+      "idealized_partition_function_bound_log2": 135.01609505542734,
+      "idealized_seven_sector_energy_bound_log2": 272.83954503291227,
+      "n": 40,
+      "partition_count": 37338,
+      "pointwise_triangle_method_certifies_decay": false,
+      "status": "ideal-pointwise-character-bound-still-triangle-vacuous"
+    },
+    {
+      "canonical_dimension_threshold_log2": 81.72139250289962,
+      "continuous_threshold_energy_bound_log2": 307.3994729538643,
+      "continuous_threshold_partition_function_bound_log2": 152.29605901590335,
+      "group_order_log2": 214.2081380635902,
+      "idealized_bound_is_below_one": false,
+      "idealized_partition_function_bound_log2": 152.2960591733729,
+      "idealized_seven_sector_energy_bound_log2": 307.3994732688034,
+      "n": 50,
+      "partition_count": 204226,
+      "pointwise_triangle_method_certifies_decay": false,
+      "status": "ideal-pointwise-character-bound-still-triangle-vacuous"
+    },
+    {
+      "canonical_dimension_threshold_log2": 150.24235851738044,
+      "continuous_threshold_energy_bound_log2": 380.30525740541543,
+      "continuous_threshold_partition_function_bound_log2": 188.74895124167892,
+      "group_order_log2": 363.40103411549404,
+      "idealized_bound_is_below_one": false,
+      "idealized_partition_function_bound_log2": 188.7489512421996,
+      "idealized_seven_sector_energy_bound_log2": 380.3052574064568,
+      "n": 75,
+      "partition_count": 8118264,
+      "pointwise_triangle_method_certifies_decay": false,
+      "status": "ideal-pointwise-character-bound-still-triangle-vacuous"
+    },
+    {
+      "canonical_dimension_threshold_log2": 225.84122854953577,
+      "continuous_threshold_energy_bound_log2": 441.30257206792953,
+      "continuous_threshold_partition_function_bound_log2": 219.24760857293597,
+      "group_order_log2": 524.7649932900597,
+      "idealized_bound_is_below_one": false,
+      "idealized_partition_function_bound_log2": 219.2476085729645,
+      "idealized_seven_sector_energy_bound_log2": 441.3025720679866,
+      "n": 100,
+      "partition_count": 190569292,
+      "pointwise_triangle_method_certifies_decay": false,
+      "status": "ideal-pointwise-character-bound-still-triangle-vacuous"
+    }
+  ],
+  "status": "pointwise-character-triangle-route-eliminated",
+  "summary": "Proved that even ideal pointwise character bounds cannot establish the canonical projected parity-coset energy estimate by triangle inequality.",
+  "theorem_contract": {
+    "canonical_continuous_value": "For D*=sqrt(n!)/(p(n)log2(n!)), the bound equals (p(n)log2(n!))^6.",
+    "idealized_pointwise_assumption": "Assume |chi_lambda(w)|<=1, hence |r_lambda(w)|<=D_n^-1, on every retained nonidentity word.",
+    "methodological_no_go": "Pointwise character bounds followed by triangle inequality cannot prove canonical adaptive-energy decay.",
+    "required_replacement": "Retain cancellation via projected kernels, collision geometry, orthogonality, or a multilinear norm estimate.",
+    "scope": "This rules out a proof strategy, not decay or survival of S_B itself.",
+    "seven_sector_energy_bound": "S_B<=7|S_n|^6D_n^-12.",
+    "triangle_partition_function_bound": "|F_x|<=|S_n|^3 D_n^-6."
+  }
+}

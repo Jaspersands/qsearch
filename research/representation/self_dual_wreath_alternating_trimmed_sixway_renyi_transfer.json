@@ -1,0 +1,267 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Untrimmed E6 must be subpolynomial.",
+      "resolution": "No. Arbitrarily large low-dimensional Renyi spikes are harmless once their physical mass and positive KL vanish.",
+      "resolved": true
+    },
+    {
+      "objection": "Small removed mass cannot control its KL contribution.",
+      "resolution": "The universal likelihood ceiling and canonical threshold give an explicit o(1) positive-KL bound.",
+      "resolved": true
+    },
+    {
+      "objection": "Finite A5 collapse after a dimension cut proves scaling.",
+      "resolution": "It is a diagnostic with no all-n force.",
+      "resolved": false
+    },
+    {
+      "objection": "Trimmed Renyi control proves non-Haar syndrome decay.",
+      "resolution": "It controls only the coarse base entropy and Haar rank component.",
+      "resolved": true
+    }
+  ],
+  "canonical_scaling_controls": [
+    {
+      "canonical_dimension_threshold_log2": 3.169925001442312,
+      "n": 12,
+      "removed_physical_mass_upper": 7.8125e-05,
+      "removed_positive_kl_upper_bits": 0.013516619640972847,
+      "retained_physical_mass_lower": 0.999921875,
+      "status": "synthetic-canonical-trimmed-subpolynomial-renyi-implies-sublog-kl",
+      "subpolynomial_second_moment_hypothesis_satisfied": true,
+      "synthetic_retained_kl_over_log2_n_upper": 0.5281819363083577,
+      "synthetic_retained_second_moment_log2": 1.8933997202706976
+    },
+    {
+      "canonical_dimension_threshold_log2": 15.313768772512146,
+      "n": 20,
+      "removed_physical_mass_upper": 2.565084454724534e-06,
+      "removed_positive_kl_upper_bits": 0.0009400118881845525,
+      "retained_physical_mass_lower": 0.9999974349155453,
+      "status": "synthetic-canonical-trimmed-subpolynomial-renyi-implies-sublog-kl",
+      "subpolynomial_second_moment_hypothesis_satisfied": true,
+      "synthetic_retained_kl_over_log2_n_upper": 0.4810187490119901,
+      "synthetic_retained_second_moment_log2": 2.0789247448831243
+    },
+    {
+      "canonical_dimension_threshold_log2": 34.65129561035408,
+      "n": 30,
+      "removed_physical_mass_upper": 9.228859550971884e-08,
+      "removed_positive_kl_upper_bits": 5.964191129191472e-05,
+      "retained_physical_mass_lower": 0.9999999077114045,
+      "status": "synthetic-canonical-trimmed-subpolynomial-renyi-implies-sublog-kl",
+      "subpolynomial_second_moment_hypothesis_satisfied": true,
+      "synthetic_retained_kl_over_log2_n_upper": 0.451436675059976,
+      "synthetic_retained_second_moment_log2": 2.2151502422202696
+    },
+    {
+      "canonical_dimension_threshold_log2": 81.72139250289962,
+      "n": 50,
+      "removed_physical_mass_upper": 6.402775445938855e-10,
+      "removed_positive_kl_upper_bits": 8.229159640283014e-07,
+      "retained_physical_mass_lower": 0.9999999993597225,
+      "status": "synthetic-canonical-trimmed-subpolynomial-renyi-implies-sublog-kl",
+      "subpolynomial_second_moment_hypothesis_satisfied": true,
+      "synthetic_retained_kl_over_log2_n_upper": 0.4209320851079722,
+      "synthetic_retained_second_moment_log2": 2.3756801530876848
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "canonical_trimmed_renyi_to_sublog_entropy_proved": true,
+    "canonical_trimmed_sixway_subpolynomial_proved": false,
+    "classical_separation_proved": false,
+    "coarse_alternating_total_correlation_sublogarithmic_proved": false,
+    "irreducible_racah_cmi_vanishes_proved": false,
+    "physical_rank_profile_mixes_proved": false,
+    "reason": "Low-dimensional Renyi spikes are now irrelevant, but the canonical high-dimensional six-way collision tensor is unbounded.",
+    "sixway_anova_is_nontrivial_coarse_label_fourier_sector_proved": true,
+    "speedup_claim_allowed": false,
+    "untrimmed_sixway_subpolynomial_required": false
+  },
+  "created_at": "2026-08-13T23:39:08.795585+00:00",
+  "exact_controls": [
+    {
+      "exact_trimmed_renyi_control_verified": true,
+      "jensen_bound_violation": 0.0,
+      "jensen_retained_kl_upper_bits": 0.0,
+      "minimum_dimension_exclusive": 1,
+      "n": 2,
+      "nontrivial_fourier_sector_identity_residual": 0.0,
+      "removed_physical_mass": 1.0,
+      "retained_coarse_label_count": 0,
+      "retained_fraction_of_untrimmed_sixway_energy": 0.0,
+      "retained_likelihood_second_moment": 0.0,
+      "retained_physical_mass": 0.0,
+      "retained_positive_kl_bits": 0.0,
+      "retained_reference_mass": 0.0,
+      "retained_signed_kl_bits": 0.0,
+      "status": "trimmed-sixway-fourier-sector-and-jensen-bound-verified",
+      "untrimmed_nontrivial_sixway_energy": 0.0
+    },
+    {
+      "exact_trimmed_renyi_control_verified": true,
+      "jensen_bound_violation": 0.0,
+      "jensen_retained_kl_upper_bits": 0.0,
+      "minimum_dimension_exclusive": 1,
+      "n": 3,
+      "nontrivial_fourier_sector_identity_residual": 0.0,
+      "removed_physical_mass": 1.0,
+      "retained_coarse_label_count": 1,
+      "retained_fraction_of_untrimmed_sixway_energy": 0.0,
+      "retained_likelihood_second_moment": 0.0,
+      "retained_physical_mass": 0.0,
+      "retained_positive_kl_bits": 0.0,
+      "retained_reference_mass": 0.08779149519890259,
+      "retained_signed_kl_bits": 0.0,
+      "status": "trimmed-sixway-fourier-sector-and-jensen-bound-verified",
+      "untrimmed_nontrivial_sixway_energy": 0.0
+    },
+    {
+      "exact_trimmed_renyi_control_verified": true,
+      "jensen_bound_violation": 0.0,
+      "jensen_retained_kl_upper_bits": 0.47053920199112037,
+      "minimum_dimension_exclusive": 1,
+      "n": 4,
+      "nontrivial_fourier_sector_identity_residual": 1.1102230246251565e-15,
+      "removed_physical_mass": 0.42708333333333337,
+      "retained_coarse_label_count": 2,
+      "retained_fraction_of_untrimmed_sixway_energy": 1.000000000000001,
+      "retained_likelihood_second_moment": 1.0123456790123457,
+      "retained_physical_mass": 0.5729166666666666,
+      "retained_positive_kl_bits": 0.42600234250300073,
+      "retained_reference_mass": 0.593292194465878,
+      "retained_signed_kl_bits": 0.33930117028995876,
+      "status": "trimmed-sixway-fourier-sector-and-jensen-bound-verified",
+      "untrimmed_nontrivial_sixway_energy": 1.0123456790123446
+    },
+    {
+      "exact_trimmed_renyi_control_verified": true,
+      "jensen_bound_violation": 0.0,
+      "jensen_retained_kl_upper_bits": -0.08670117221304195,
+      "minimum_dimension_exclusive": 2,
+      "n": 4,
+      "nontrivial_fourier_sector_identity_residual": null,
+      "removed_physical_mass": 0.90625,
+      "retained_coarse_label_count": 1,
+      "retained_fraction_of_untrimmed_sixway_energy": 0.048780487804878106,
+      "retained_likelihood_second_moment": 0.04938271604938272,
+      "retained_physical_mass": 0.09375,
+      "retained_positive_kl_bits": 0.0,
+      "retained_reference_mass": 0.177978515625,
+      "retained_signed_kl_bits": -0.08670117221304195,
+      "status": "trimmed-sixway-fourier-sector-and-jensen-bound-verified",
+      "untrimmed_nontrivial_sixway_energy": 1.0123456790123446
+    },
+    {
+      "exact_trimmed_renyi_control_verified": true,
+      "jensen_bound_violation": 0.0,
+      "jensen_retained_kl_upper_bits": 0.30787148570424355,
+      "minimum_dimension_exclusive": 1,
+      "n": 5,
+      "nontrivial_fourier_sector_identity_residual": 0.0,
+      "removed_physical_mass": 0.09697222222222224,
+      "retained_coarse_label_count": 3,
+      "retained_fraction_of_untrimmed_sixway_energy": 1.0,
+      "retained_likelihood_second_moment": 1.1437523726851855,
+      "retained_physical_mass": 0.9030277777777778,
+      "retained_positive_kl_bits": 0.3217391740220916,
+      "retained_reference_mass": 0.9040752237868657,
+      "retained_signed_kl_bits": 0.1890224531583409,
+      "status": "trimmed-sixway-fourier-sector-and-jensen-bound-verified",
+      "untrimmed_nontrivial_sixway_energy": 1.1437523726851855
+    },
+    {
+      "exact_trimmed_renyi_control_verified": true,
+      "jensen_bound_violation": 0.0,
+      "jensen_retained_kl_upper_bits": 0.04709669553725597,
+      "minimum_dimension_exclusive": 4,
+      "n": 5,
+      "nontrivial_fourier_sector_identity_residual": null,
+      "removed_physical_mass": 0.8771121399176954,
+      "retained_coarse_label_count": 2,
+      "retained_fraction_of_untrimmed_sixway_energy": 0.14013497206028533,
+      "retained_likelihood_second_moment": 0.16027970679012352,
+      "retained_physical_mass": 0.12288786008230454,
+      "retained_positive_kl_bits": 0.046497591553502374,
+      "retained_reference_mass": 0.13548874847822362,
+      "retained_signed_kl_bits": 0.015058868890070031,
+      "status": "trimmed-sixway-fourier-sector-and-jensen-bound-verified",
+      "untrimmed_nontrivial_sixway_energy": 1.1437523726851855
+    },
+    {
+      "exact_trimmed_renyi_control_verified": true,
+      "jensen_bound_violation": 5.421010862427522e-20,
+      "jensen_retained_kl_upper_bits": -0.0003673177910519426,
+      "minimum_dimension_exclusive": 5,
+      "n": 5,
+      "nontrivial_fourier_sector_identity_residual": null,
+      "removed_physical_mass": 0.9998125,
+      "retained_coarse_label_count": 1,
+      "retained_fraction_of_untrimmed_sixway_energy": 4.2164116808568275e-05,
+      "retained_likelihood_second_moment": 4.822530864197528e-05,
+      "retained_physical_mass": 0.00018749999999999995,
+      "retained_positive_kl_bits": 0.0,
+      "retained_reference_mass": 0.0007289999999999999,
+      "retained_signed_kl_bits": -0.00036731779105194257,
+      "status": "trimmed-sixway-fourier-sector-and-jensen-bound-verified",
+      "untrimmed_nontrivial_sixway_energy": 1.1437523726851855
+    }
+  ],
+  "falsifiers_triggered": [
+    "Low-dimensional sectors may dominate untrimmed Renyi while carrying vanishing relevant entropy.",
+    "The canonical trim controls positive KL, not merely removed probability.",
+    "Finite A5 high-dimension collapse cannot be promoted to an asymptotic theorem."
+  ],
+  "headline_metrics": {
+    "canonical_trimmed_sixway_subpolynomial_theorem_count": 0,
+    "exact_finite_control_count": 7,
+    "finite_control_failure_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "physical_rank_mixing_theorem_count": 0,
+    "sixway_fourier_sector_identity_count": 1,
+    "trimmed_renyi_entropy_transfer_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "identify_sixway_anova_energy_as_nontrivial_label_fourier_sector",
+      "resolution": "Nontrivial coarse characters form the one-coordinate mean-zero class-function basis; tensoring six copies gives equation (1).",
+      "resolved": true
+    },
+    {
+      "obligation": "remove_low_dimension_renyi_spikes_before_entropy_transfer",
+      "resolution": "The canonical dimension trim controls removed mass and positive KL, while retained Jensen uses only M_D.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_canonical_high_dimension_sixway_moment_subpolynomial",
+      "resolution": "Bound the projected six-character/Racah collision tensor on d_lambda>sqrt(n!)/(p(n)log n!).",
+      "resolved": false
+    },
+    {
+      "obligation": "use_direct_entropy_if_trimmed_renyi_still_tail_dominated",
+      "resolution": "The retained sector can contain a second high-dimensional spike; then prove sublogarithmic positive likelihood information directly.",
+      "resolved": false
+    }
+  ],
+  "status": "canonical-high-dimensional-sixway-renyi-is-current-rank-target",
+  "summary": "Identified E6 as the six-nontrivial-label Fourier sector and proved that only its canonical high-dimensional trimmed moment needs subpolynomial control.",
+  "theorem": {
+    "canonical_tail_bound": "P(T_Dn^c)=o(1) and removed positive KL=o(1)",
+    "canonical_trimmed_sixway_subpolynomial_proved": false,
+    "retained_jensen_bound": "integral_T P_O log2 L_O<=P_O(T)log2(M_T/P_O(T))",
+    "sixway_fourier_sector_identity": "E6_n=sum_(all six coarse labels nontrivial)Q_O L_O^2",
+    "status": "physical-rank-transfer-reduced-to-canonical-trimmed-sixway-renyi",
+    "sufficient_trimmed_renyi_condition": "M_(D_n)=n^o(1)",
+    "untrimmed_sixway_subpolynomial_required": false
+  },
+  "theorem_contract": {
+    "canonical_tail": "P(T_Dn^c)=o(1) and removed positive KL=o(1)",
+    "retained_entropy": "integral_T P_O log2 L_O<=P_O(T)log2(M_T/P_O(T))",
+    "scope": "The implication is proved; no all-n bound on the canonical trimmed six-way moment is available.",
+    "sufficient_rank_condition": "M_(D_n)=n^o(1)",
+    "trimmed_moment": "M_D=E_Q[L_O^2 1_(min_i d_i>D)].",
+    "untrimmed_sector": "E6_n=sum_(all six coarse labels nontrivial)Q_O L_O^2"
+  }
+}

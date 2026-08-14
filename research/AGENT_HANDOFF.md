@@ -1,8 +1,21 @@
 # Research Agent Handoff
 
-Last updated: 2026-08-11
+Last updated: 2026-08-13
+
+## Antigravity Mechanical Wiring Completion Note (2026-08-13)
+
+- **Mechanical Wiring Status**: **100% COMPLETE**. All **92 newly generated theorem modules** in `coset_hidden_involution_*`, `coset_hyperoctahedral_*`, and `self_dual_wreath_*` families (including orientation signals, Racah couplings, and tetrahedral word maps) have been fully wired into:
+  - `research_registry.py` (all 92 `ExperimentRecord` blocks registered under `CODE-COSET-COLLECTIVE`)
+  - `experiment_runner.py` (imports, runner dispatchers, priority maps, supported experiment sets, and safe result upsert fallbacks)
+  - `qsearch.py` (CLI subparser commands and execution handlers)
+  - `README.md` (CLI command documentation)
+  - `tests/test_experiment_runner.py` (full unit test dispatch coverage for all 92 experiments)
+- **Repository Milestones**: The research registry now tracks **659 registered experiments**, **663 experiment results**, **1146 dequantization findings** (1142 blocking), and **806 negative result records**.
+- **Validation**: Full workspace validation (`python3 qsearch.py dequantize && python3 qsearch.py validate`), `python3 tools/build_progress_snapshot.py`, `python3 -m compileall -q .`, `node --check site/progress.js`, and `git diff --check` all passed cleanly with **0 issues (`valid: true`)** and **92 newly added dispatch tests passed (100% OK)**.
+- **Claim Gates & Integrity**: All mathematical contracts, constants, formulas, falsifiers, negative result claims, and `speedup_claim_allowed=False` gates remain 100% intact.
 
 ## Antigravity Mechanical Wiring Completion Note (2026-08-11)
+
 
 - **Mechanical Wiring Status**: **100% COMPLETE**. All **136 newly generated theorem modules** across Pass 2 (69 modules) and Pass 3 (67 modules) in `coset_*`, `dcp_*`, `diagram_*`, `self_dual_wreath_*`, `hidden_shift_*`, and `semidirect_*` families have been fully wired into:
   - `research_registry.py` (all 136 `ExperimentRecord` blocks registered)
@@ -56,6 +69,2538 @@ Codex must record the current theorem, exact assumptions, known falsifiers,
 unresolved proof obligations, next high-value derivations, and concrete
 success/failure checks here. Running out of Codex usage is a model handoff, not
 the end of the repository's research goal.
+
+## Current High-Reasoning Result: Orientation Signal Classical Audit (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_coherent_branching_transport_boundary.py`
+- `self_dual_wreath_compressed_orientation_racah_cumulant_probe.py`
+- `self_dual_wreath_physical_orientation_racah_sampling.py`
+- `self_dual_wreath_orientation_word_map_classical_baseline.py`
+- `self_dual_wreath_orientation_identity_tail_control_variate.py`
+- `self_dual_wreath_orientation_fixed_support_control_variate.py`
+- matching focused tests and `research/representation/` artifacts
+
+Experiment IDs:
+
+```text
+EXP-CODE-SELF-DUAL-WREATH-COHERENT-BRANCHING-TRANSPORT-BOUNDARY
+EXP-CODE-SELF-DUAL-WREATH-COMPRESSED-ORIENTATION-RACAH-CUMULANT-PROBE
+EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-ORIENTATION-RACAH-SAMPLING
+EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-WORD-MAP-CLASSICAL-BASELINE
+EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-IDENTITY-TAIL-CONTROL-VARIATE
+EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FIXED-SUPPORT-CONTROL-VARIATE
+```
+
+The branching transport route was first tightened and then blocked at its
+actual missing theorem. Fulman's down/up chain is tensoring with the ordered
+`k`-tuple permutation module. Racah naturality transports all six labels
+coherently under a shared branch, whereas the Fourier-tail inequality needs
+independent `J_k tensor J_k` noise on `mu,nu` with the outer tuple fixed. A
+cyclic identity-coupling countermodel has zero coherent Dirichlet energy but
+maximal independent-noise energy and mutual information. Naturality alone
+therefore cannot prove the required transport inequality.
+
+The compressed pair-fiber compiler now evaluates eight orientation-syndrome
+Racah blocks through selected `S_7` sectors. The repeated dimension-ten `S_6`
+tuple has a numerical two-syndrome channel with nearly one bit of
+`I(Y_g;Y_h|Y_k)` but physical mass only `1.07167e-4`; exact zeros are not
+proved. Repeated `S_7` sectors do not preserve the spike. The highest-mass
+dimension-35 repeated sector has mass `0.0131679` but CMI only
+`2.31523e-5` bits. A first dense `S_8` dimension-70 attempt exited 137 before
+one channel completed; this is an implementation resource boundary, not an
+asymptotic theorem.
+
+The exact physical sampler factors the six-label law as three Plancherel
+source labels, a dimension/multiplicity-weighted final label, and a complete
+Racah block. Its retained orientation-CMI sample is unbiased and Hoeffding
+bounded in `[0,1]`. The current six-draw `S_6` record retained no fully paired
+sample and is nondecisive. Zero retained draws are sampling sparsity, not a
+zero-mass theorem.
+
+The decisive classical reduction is the word-map Walsh identity. In physical
+coefficient order the six character words are
+
+```text
+(alpha,beta,gamma,mu,nu,lambda) -> (gk,ghk,hk,g,h,k).
+```
+
+For `D=product_i d_i` and normalized character product `Z in [-1,1]`, all
+eight amplitudes satisfy
+
+```text
+mu_y=A_y/D=E[Z(g,h,k)(-1)^(<y,parity(g,h,k)>))].
+```
+
+Thus one classical word sample updates all eight syndromes. Simultaneous
+Hoeffding plus clipping gives
+
+```text
+N >= 128 log(16/delta)/(epsilon^2 T^2),  T=sum_y mu_y,
+```
+
+for syndrome TV error at most `epsilon`. Since
+`P_orbit=8 D^2 T/|S_n|^3`, this is also an exact physical-mass sample-cost
+formula. The live sufficient upper bounds are large (`log10 N` about `23.20`
+for resolving the S6 CMI and `37.19` for S7), but they are not lower bounds.
+Importance sampling, control variates, and character-evaluation complexity
+remain separate obligations. Worst-case symmetric-character hardness does
+not prove average-case hardness on these labels and word distributions.
+
+The next two control variates substantially demote the finite signals. The
+single identity triple contributes `|S_n|^-3` to every `mu_y`. Defining
+`ell_y=|S_n|^3 mu_y=1+delta_y` gives exact identities
+
+```text
+Q_orbit=64 D^2/|S_n|^6,
+P_orbit/Q_orbit=(1/8) sum_y ell_y=1+mean_y delta_y,
+p_y=(1+delta_y)/(8 P_orbit/Q_orbit).
+```
+
+The identity contribution is exactly the independent coarse product-law null,
+not Racah structure. The S7 repeated sector has `P/Q=0.9979348224`, so its
+large raw physical mass is aggregate product-like. The S6 sector has
+`P/Q=0.23328` and its one-bit support is generated by near-total signed
+cancellation of the null. Subtracting identity also invalidates any attempt
+to call the raw estimator's factorial variance a classical lower bound.
+
+More strongly, let `B_s` contain permutations moving at most `s` points and
+sum only over `B_s^3`. For fixed `s`, this uses `O(n^(3s))` word triples and
+fixed-support character-polynomial data. At `s=2`, `B_2` is identity plus
+transpositions and its only even element is identity, so the partial Walsh
+likelihoods obey `sum_y ell_y^(2)=8` exactly. For the S7 repeated sector this
+`O(n^6)` classical channel is within TV `0.00620628` of the full channel and
+has CMI `7.06770e-5` bits, the same tiny scale as the full `2.31523e-5` bits.
+The S6 spike is not reproduced (TV `0.73824`, partial CMI `0.001153`), but no
+S6 scaling family exists and its source mass is low.
+
+The correct surviving question is therefore not whether these finite channels
+are non-Haar. It is whether the signed residual outside every fixed-support
+word stratum survives on positive natural mass, admits a scalable coherent
+measurement, and resists fixed/growing-support character-polynomial
+algorithms. No such theorem, decoder, or classical lower bound exists.
+
+### Next Hard Derivations
+
+1. Derive a cancellation-preserving bound or counterfamily for the residual
+   with at least one of `g,h,k` moving more than `s` points. Pointwise
+   character-ratio bounds are insufficient after summing factorially many
+   triples.
+2. Determine the smallest growing support `s(n)` needed to approximate the
+   physical-average syndrome channel. Fixed `s` is classically polynomial;
+   `s=Theta(log n)` is quasipolynomial and may already kill algorithmic upside.
+3. Build an exact fixed-support character-polynomial evaluator and quotient
+   `B_s^3` by overlap type. This is mechanical/algebraic for fixed small `s`,
+   but the theorem-level task is proving a uniform residual error.
+4. Formulate average-case approximation of the signed three-projector/Racah
+   residual as a complexity problem. Do not import worst-case character or
+   Kronecker hardness without a distributional reduction.
+5. Seek a coherent observable whose cost scales with physical preparations
+   rather than `1/T^2`; include postselection probability, QFT/CG transforms,
+   and decoder error. Measured CMI alone is not accessibility.
+6. Unless one of the preceding obligations survives, deprioritize the
+   orientation-syndrome route and return to a different positive-mass
+   nonabelian mechanism rather than enlarging finite Racah tables.
+
+The six-module bundle has 27 focused passing tests and fresh artifacts. No
+registry, runner, CLI, README, broad-suite wiring, or commit was done with
+high-reasoning Codex usage. Keep fixed-support full dequantization, residual
+tail decay/survival, coherent estimator, average-case hardness, algorithm, and
+speedup gates false.
+
+## Current High-Reasoning Result: Character Projectors And Branching Tail (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_free_probability_projector_resolution_boundary.py`
+- `self_dual_wreath_central_fiber_racah_information_reduction.py`
+- `self_dual_wreath_plancherel_character_racah_fourier_reduction.py`
+- `self_dual_wreath_plancherel_down_up_racah_tail_reduction.py`
+- matching tests under `tests/`
+- matching JSON artifacts under `research/representation/`
+
+Experiment IDs:
+
+```text
+EXP-CODE-SELF-DUAL-WREATH-FREE-PROBABILITY-PROJECTOR-RESOLUTION-BOUNDARY
+EXP-CODE-SELF-DUAL-WREATH-CENTRAL-FIBER-RACAH-INFORMATION-REDUCTION
+EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CHARACTER-RACAH-FOURIER-REDUCTION
+EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-DOWN-UP-RACAH-TAIL-REDUCTION
+```
+
+The free-probability applicability boundary is now quantitative.  If `F_s`
+collects all central class-sum scalars from conjugacy classes moving at most
+`s` points, the number of nonconstant coordinates is exactly
+
+```text
+T_s=sum_(m=2)^s (p(m)-p(m-1))=p(s)-1.
+```
+
+Each coordinate is an integer in `[-n^s,n^s]`, so
+
+```text
+H(F_s)<=T_s log2(3n^s).
+```
+
+Hardy--Ramanujan growth and `H_Plancherel(Lambda)=Theta(sqrt(n))` imply
+
+```text
+H_Plancherel(Lambda|F_s)=Theta(sqrt(n))
+```
+
+whenever `s=o((ln n)^2)`, and more generally when
+`limsup s/(ln n)^2 < 3/(8 pi^2)`.  This does not lower-bound natural Racah
+information.  It proves that the cited fixed-degree Biane/Sniady moment and
+free-probability results do not reach partition-projector resolution.  Tiny
+sizes are misleading: support-three features distinguish all partitions
+through `S_12` and 610 of 627 at `S_20`, but their range is asymptotically
+too small.
+
+For outer labels `O`, intermediate labels `X,Y`, and central features
+`U=F_s(X),V=F_s(Y)`, the exact information identity is
+
+```text
+I(X;Y|O)=I(U;V|O)
+          +H(X|U,O)+H(Y|V,O)-H(X,Y|U,V,O).
+```
+
+Thus the route has two independent obligations: growing-support coarse
+feature dependence and the nonnegative fiber-resolution debt.  Since the
+unconditional intermediate labels are Plancherel,
+
+```text
+I(X;Y|O)<=I(U;V|O)+2H_Plancherel(Lambda|F_s).
+```
+
+A cross-swapped coupling `X=(A,B),Y=(B,A)` has independent visible features
+but full information `2 log2 |A|`, saturating both hidden-entropy terms.  A
+product coupling has zero debt with equally large fibers.  Hence neither
+coarse independence nor large fibers decide the natural coupling.  The exact
+`S_3`--`S_5` controls are algebra checks only because support-two already
+separates every label there.
+
+The complete Plancherel partition-label Fourier basis is
+
+```text
+phi_C(lambda)=sqrt(|C|) chi_lambda(C)/d_lambda,
+E_Plancherel phi_C phi_D=1[C=D].
+```
+
+For a coupling `pi` relative to `q tensor q`, Parseval gives
+
+```text
+chi2(pi||q^2)=sum_((C,D)!=(e,e))
+                   (E_pi phi_C(mu)phi_D(nu))^2.
+```
+
+For the natural Racah coupling at
+`o=(alpha,beta,gamma,lambda)`, each coefficient is gauge-free:
+
+```text
+hat L_o(C,D)
+ =1/(M |S_n| sqrt(|C||D|))
+  sum_(h in S_n,g in C,k in D)
+    chi_lambda(h^-1) chi_alpha(hg)
+    chi_beta(hgk) chi_gamma(hk).
+```
+
+Direct compiled-Racah and character-sum values agree in every recorded `S_4`
+class pair and in an additional `S_5` adversarial check below `4e-16`.  The
+formula removes multiplicity gauges but is factorial as written.  The
+Plancherel identity coupling has coefficient matrix equal to the identity,
+full collision `p(n)-1`, and only `p(s)-1` low-support diagonal energy, so the
+remaining Fourier tail cannot be dropped from an abstract argument.
+
+Fulman's down-`k`/up-`k` Plancherel chain gives the concrete tail target.  Its
+exact eigenvalue on `phi_C` is
+
+```text
+beta_k(C)=(n-m(C))_k/(n)_k,
+```
+
+where `m(C)` is moved support.  Therefore for the product-chain Dirichlet form
+
+```text
+D_k(L)=sum_(C,D)(1-beta_k(C)beta_k(D)) hat L(C,D)^2,
+Tail_s(L)<=D_k(L)/(1-(n-s-1)_k/(n)_k).
+```
+
+Choosing `k=ceil(n/(s+1))` makes the denominator at least `1-e^-1`; a
+one-box chain instead loses `n/(s+1)`.  The missing theorem is now explicit:
+prove physical-average natural Racah stability under independently deleting
+and regrowing about `n/log^2(n)` boxes, plus control the retained
+log-squared-support character sector.  Coherent restriction of the entire
+six-label network is not enough: the tail theorem applies independent chains
+to `mu` and `nu` while holding the outer tuple fixed.  A comparison between
+those two operations is itself a missing transport theorem.
+
+Finite selected natural sectors do not supply positive evidence for automatic
+stability.  For maximal-dimension repeated outers at `S_4,S_5,S_6`, the tested
+branching Dirichlet energy is roughly `0.79`--`0.99` of the full conditional
+`q^2` collision.  The `S_6` exact tail controls pass, but they are a theorem
+validation, not a scaling trend.  L2 may still be dominated by rare spikes;
+an entropy or fractional down/up stability inequality remains a separate
+fallback.
+
+The four new modules have eighteen focused passing tests, fresh artifacts,
+syntax checks, and clean diff checks.  No registry, runner, CLI, README, broad
+suite, or commit was done with high-reasoning Codex usage.  Keep every natural
+stability, rank-MI, orientation-syndrome, efficient-estimator, algorithm, and
+speedup gate false.
+
+### Next Hard Derivations
+
+1. Prove or kill a transport inequality comparing coherent six-label Young
+   branching with independent `J_k tensor J_k` branching of the two
+   intermediate labels at fixed outer tuple.
+2. Derive a physical-average expression for `E_O D_k(L_O)` in character sums
+   or branching multiplicities.  Any useful bound must cover
+   `k=Theta(n/log^2 n)`, not only fixed `k`.
+3. Seek an entropy/fractional Dirichlet certificate for rare-spike robustness;
+   do not assume an L2 bound is necessary for sublogarithmic MI.
+4. Bound retained class-pair modes uniformly through at least the
+   projector-resolution threshold.  Fixed-degree cumulants are insufficient.
+5. If branching stability is false on nonnegligible physical mass, record the
+   negative result and return to direct within-fiber delocalization or the
+   separate orientation-syndrome cumulants.
+
+### Gemini/Antigravity Boundary
+
+Gemini 3.6 Flash may wire the four IDs, copy registry/runner/CLI patterns,
+refresh artifacts, add cached selected-outer controls, and run broad tests. It
+must not call coherent branching equivalent to independent intermediate-label
+branching, infer smoothness from the exact spectrum, fit the finite
+Dirichlet ratios, or broaden the cited fixed-degree literature boundary.
+
+Primary sources used for the reasoning are Biane 1998
+`https://doi.org/10.1006/aima.1998.1745`, Biane 2001
+`https://arxiv.org/abs/math/0006111`, Sniady 2003/2004
+`https://arxiv.org/abs/math/0304275` and
+`https://arxiv.org/abs/math/0411647`, Jankowski 2012
+`https://arxiv.org/abs/1202.0888`, and Fulman 2003
+`https://arxiv.org/abs/math/0305423`.
+
+## Current High-Reasoning Result: Compressed Physical Racah Workbench (2026-08-13)
+
+Files:
+
+- `symmetric_yjm_pair_fiber.py`
+- `self_dual_wreath_compressed_racah_block_probe.py`
+- `self_dual_wreath_compressed_racah_coupling_probe.py`
+- `self_dual_wreath_racah_fractional_moment_certificate.py`
+- `self_dual_wreath_fractional_haar_enhancement_reduction.py`
+- `self_dual_wreath_physical_outer_racah_sampling.py`
+- matching tests under `tests/`
+- matching JSON artifacts under `research/representation/`
+
+Experiment IDs:
+
+```text
+EXP-CODE-SELF-DUAL-WREATH-COMPRESSED-RACAH-BLOCK-PROBE
+EXP-CODE-SELF-DUAL-WREATH-COMPRESSED-RACAH-COUPLING-PROBE
+EXP-CODE-SELF-DUAL-WREATH-RACAH-FRACTIONAL-MOMENT-CERTIFICATE
+EXP-CODE-SELF-DUAL-WREATH-FRACTIONAL-HAAR-ENHANCEMENT-REDUCTION
+EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-OUTER-RACAH-SAMPLING
+```
+
+The new pair-fiber compiler isolates one Kronecker multiplicity fiber in
+`V_alpha tensor V_beta` with a sparse diagonal Jucys--Murphy penalty, propagates
+it through target tableaux, and produces equivariant pair embeddings. Four
+embeddings contract to the canonical Racah block mass
+
+```text
+x_(mu,nu)=||R_(mu,nu)||_HS^2
+          =Tr(P_lambda P_mu^(12) P_nu^(23))/d_lambda.
+```
+
+No multiplicity gauge enters `x`. Independent `S_5` six-character likelihood
+controls agree below `4e-15`. Selected outer-growing blocks were computed
+through `S_8`; the largest eigensolve dimension was `8100` instead of the
+`729000` three-copy dimension. This is a finite exponential-space reduction,
+not a polynomial Clebsch--Gordan or Racah transform.
+
+The complete-coupling layer computes every allowed block and verifies
+
+```text
+sum_nu x_(mu,nu)=l_mu,
+sum_mu x_(mu,nu)=r_nu,
+sum_(mu,nu)x_(mu,nu)=M.
+```
+
+For the maximal-dimensional repeated outer sector, conditional Racah mutual
+information is `0.0817042`, `0.205765`, and `0.00594400` bits at `S_4`, `S_5`,
+and `S_6`. The nonmonotonic sequence forbids extrapolation. The `S_6` coupling
+contains 121 blocks, total mass 93, and rank-marginal residual below
+`1.1e-13`.
+
+The collision-only requirement is now replaced by an exact fractional-moment
+certificate. For `theta>0`,
+
+```text
+S_theta(o)=sum pi_o(mu,nu)
+                 [pi_o(mu,nu)/(p_o(mu)r_o(nu))]^theta,
+
+E_(P_outer) I_pi
+ <= theta^-1 log2 E_(P_outer) S_theta,
+
+E_(P_outer) pi_o{a>K}
+ <= K^-theta E_(P_outer) S_theta.
+```
+
+Equivalently,
+
+```text
+S_theta=M^(theta-1)
+        sum x_(mu,nu)^(1+theta)/(l_mu r_nu)^theta.
+```
+
+Hence it is sufficient to find `theta_n>0` with
+`log E S_(theta_n)=o(theta_n log n)`. Letting `theta_n` approach zero is not a
+loophole because of the reciprocal prefactor. Exact physical-average controls
+through `S_5` pass. The identity block coupling has perfect Plancherel
+marginals but large fractional moments, so rank marginals still do not settle
+the theorem.
+
+The existing factorial Haar gap now also survives fractional tail softening.
+For `0<theta<=1`, concavity proves
+
+```text
+S_theta<=S_1^theta<=1+theta(S_1-1),
+E_Haar(S_theta-1)<=theta H(o).
+```
+
+On the existing good physical outer event, `H(o)<=H_n` with
+`H_n=8n^4p(n)^6/(n!)^2`. If the natural good-set fractional excess is at most
+`A_n theta_n H_n`, then
+
+```text
+E_P I<=A_n H_n/ln(2)+(4/n+2V4_n)log2 p(n).
+```
+
+Therefore any `log A_n=o(n log n)` forces measured intermediate-label mutual
+information to vanish. The `theta_n` factor cancels, so slowly vanishing order
+does not weaken this enhancement-normalized conclusion. No natural bound on
+`A_n` is proved.
+
+The exact physical outer law is now sampled without selected-sector bias:
+
+```text
+alpha,beta,gamma iid Plancherel,
+Pr(lambda|alpha,beta,gamma)
+  =d_lambda M(alpha,beta,gamma,lambda)
+   /(d_alpha d_beta d_gamma).
+```
+
+The normalizing identity `sum_lambda d_lambda M=d_alpha d_beta d_gamma` was
+verified for every source triple through `S_6`. The live artifact contains 24
+`S_5` and 12 `S_6` complete-coupling draws. The `S_5` sample mean `0.241784`
+contains the exact physical average `0.237368` in its rigorous Hoeffding
+interval. The `S_6` mean is `0.0657048` bits, but its 95% Hoeffding radius is
+`1.35627` bits, so it is not decisive. All 12 `S_6` natural dependence
+collisions were below their rank-matched Haar-orthogonal means: median
+natural/Haar ratio `0.27025`, maximum `0.609464`. This is finite no-go evidence
+only. At `theta=1/2`, the natural fractional excess divided by the Haar upper
+benchmark `theta H` has median `0.213588` and maximum `0.458609`.
+
+The hard theorem remains exactly the physical-average growing-row estimate
+`E_(P_outer) I_pi=o(log n)`, or the stronger sufficient fractional-moment rate
+above. The existing Haar-gap theorem shows that a surviving measured-label
+signal needs factorial non-Haar enhancement on positive physical mass. The new
+sampler directly probes that enhancement, but no all-`n` bound is known. Even a
+rank-level no-go leaves irreducible orientation-syndrome Racah conditional
+information open.
+
+Twenty-two focused tests for this workbench pass, all report scripts pass,
+syntax checks pass, and `git diff --check` passes. No registry, runner, CLI, or
+README wiring was intentionally done with high-reasoning Codex usage. No
+physical rank-mixing theorem, coherent transform, classical separation,
+algorithm, or speedup claim is allowed.
+
+### Next Hard Derivations
+
+1. Prove or falsify a physical-average bound on `E S_theta` for some fixed or
+   slowly vanishing `theta`, using growing-row symmetric-group harmonic
+   analysis rather than fixed-row Schur--Weyl norms.
+2. Bound the natural/Haar enhancement tail under the exact outer law. A valid
+   positive result must exhibit factorial enhancement on nonvanishing physical
+   mass; isolated low-multiplicity or low-probability sectors do not count.
+3. Derive a character-sum, stochastic-trace, or diagrammatic estimator for
+   complete block moments that avoids storing exponential pair embeddings.
+   Report estimator truncation and rare-`a` coverage explicitly.
+4. If measured rank information vanishes, return to the separate
+   orientation-syndrome CMI/cumulant target; do not conflate it with
+   intermediate-label Racah mutual information.
+
+### Gemini/Antigravity Boundary
+
+Gemini 3.6 Flash may mechanically wire the five experiment IDs, add CLI
+dispatch, refresh registries, rerun tests, and execute larger finite sample
+batches. It may also add parameter plumbing for `n`, sample count, seed,
+confidence, and `theta`, and implement final-label Rao--Blackwellization using
+the exact conditional distribution above. It must not fit an asymptotic law,
+claim Haar universality, mark fractional-moment bounds proved, or promote a low
+sample mean. Those decisions require a new theorem-level pass.
+
+## Current High-Reasoning Result: Canonical Trimmed Six-Way Renyi Transfer (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_alternating_trimmed_sixway_renyi_transfer.py`
+- `research/representation/self_dual_wreath_alternating_trimmed_sixway_renyi_transfer.json`
+- `tests/test_self_dual_wreath_alternating_trimmed_sixway_renyi_transfer.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-TRIMMED-SIXWAY-RENYI-TRANSFER`
+
+The unique six-way ANOVA energy has the exact coarse-label Fourier-sector
+identity
+
+```text
+E6_n = sum_(all six coarse labels nontrivial) Q_O L_O^2.
+```
+
+For `T_D={min_i d(O_i)>D}`, let `M_D=E_Q[L_O^2 1_TD]` and
+`p_D=P_O(T_D)`. Jensen under the retained physical law gives
+
+```text
+integral_TD P_O log2 L_O <= p_D log2(M_D/p_D).
+```
+
+At the canonical dimension threshold
+`D_n=floor(sqrt(n!)/(p(n)log2(n!)))`, the existing dimension-trim theorem
+already makes the removed physical mass and removed positive KL `o(1)`.
+Therefore `M_(D_n)=n^o(1)` is sufficient for sublogarithmic coarse entropy and
+physical Haar rank-profile mixing. Untrimmed `E6_n=n^o(1)` is not required:
+arbitrarily large low-dimensional Renyi spikes may be irrelevant after the
+canonical trim.
+
+The missing theorem is an all-`n` bound on the canonical high-dimensional
+six-way moment. Finite `A_4/A_5` collapse after cutting low-dimensional labels
+is diagnostic only. If the retained second moment remains tail-dominated, the
+correct fallback is a direct retained positive-likelihood-information bound,
+not a renewed attempt to control untrimmed Renyi. Five focused tests, report
+generation, syntax checks, and `git diff --check` pass. No physical rank,
+non-Haar Racah, algorithm, classical-separation, or speedup claim is allowed.
+
+## Current High-Reasoning Result: Physical Rank-Profile Transfer Boundary (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_parity_rank_profile_physical_transfer_boundary.py`
+- `research/representation/self_dual_wreath_parity_rank_profile_physical_transfer_boundary.json`
+- `tests/test_self_dual_wreath_parity_rank_profile_physical_transfer_boundary.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-PARITY-RANK-PROFILE-PHYSICAL-TRANSFER-BOUNDARY`
+
+Let `Q_n=Plancherel(S_n)^6`, let `P_n` be the physical tetrahedral law,
+write `L_n=dP_n/dQ_n`, and set `M_n=E_Q L_n^2`. The preceding product-law
+rank theorem gives a good event with complement probability at most
+`S_n/epsilon^2`, where `S_n=8V_n+2W_n`. Cauchy--Schwarz gives the exact
+change-of-measure reduction
+
+```text
+E_P chi2(rank||U3)
+ <= [((1+epsilon)/(1-epsilon))^5-1]^2
+    +7 sqrt(M_n S_n)/epsilon.
+```
+
+Consequently physical rank-profile mixing follows if `M_n S_n -> 0`; choosing
+`epsilon=(M_n S_n)^(1/6)` makes both terms vanish. Uniform boundedness of
+`M_n` is sufficient but not necessary. Here `M_n` is exactly the tetrahedral
+six-word cycle-signature second moment, so the remaining transfer question is
+
+```text
+M_n=o(1/(8V_n+2W_n)).
+```
+
+Reference mixing cannot be promoted without such uniform-integrability
+control. An exact two-point family with reference rare-event mass `s=1/N`,
+likelihood `N` on that event and zero elsewhere has reference signal `1/N`,
+physical signal `1`, second moment `N`, and threshold product `M_ns=1`.
+
+Exact `S_3/S_4/S_5` controls verify that the likelihood second moment equals
+the independent class-signature expression, but their finite transfer bounds
+are conservative and prove no asymptotic growth estimate. The fully
+nonidentity core `Z6_n` remains uncontrolled. Even proving the transfer
+condition would settle only rank-profile mixing; the two irreducible non-Haar
+Racah conditional cumulants remain separate. Five focused tests and report
+generation pass. Physical mixing, Racah-CMI decay or survival, classical
+separation, algorithm, and speedup gates remain false.
+
+## Current High-Reasoning Result: Tetrahedral Collision Growth Scale (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_tetrahedral_collision_growth_scale.py`
+- `research/representation/self_dual_wreath_tetrahedral_collision_growth_scale.json`
+- `tests/test_self_dual_wreath_tetrahedral_collision_growth_scale.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-TETRAHEDRAL-COLLISION-GROWTH-SCALE`
+
+The transfer threshold is now polynomially sharp. Decomposing each
+nonidentity cycle type as `1^(n-m) union rho`, with `rho` fixed-point-free,
+gives
+
+```text
+V_n=sum_(m>=2) A_m/(n)_m,
+W_n=sum_(m>=2) B_m/(n)_m^2,
+A_m=sum_rho z_rho,
+B_m=sum_rho z_rho^2.
+```
+
+The exact first coefficients and uniform geometric tail bounds prove
+
+```text
+V_n=2/(n)_2+3/(n)_3+O(n^-4),
+W_n=4/(n)_2^2+O(n^-6),
+8V_n+2W_n=16n^-2(1+O(n^-1)).
+```
+
+Therefore the physical rank-transfer condition
+`M_n(8V_n+2W_n)->0` is equivalent to the concrete theorem target
+`M_n=o(n^2)`. A bounded moment is unnecessary, while an `O(n^2)` bound is
+insufficient. Exact support-expansion controls through `n=30` and certified
+tail controls at `n=30,36,40` pass; five focused tests pass.
+
+This module does not bound `M_n`. Existing fixed-cycle and stable-character
+word-measure results do not control the full joint cycle-signature L2 norm.
+The next hard alternatives are (i) prove the fully nonidentity core `Z6_n`
+is subquadratic, or (ii) exploit that the rank observable is bounded and prove
+a weaker trimmed-likelihood transfer theorem after deleting vanishing
+physical-mass label sectors. Physical rank mixing, non-Haar Racah control,
+classical separation, algorithm, and speedup remain false.
+
+## Current High-Reasoning Result: Trimmed Weak-L1 Rank Transfer (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_parity_rank_profile_trimmed_likelihood_transfer.py`
+- `research/representation/self_dual_wreath_parity_rank_profile_trimmed_likelihood_transfer.json`
+- `tests/test_self_dual_wreath_parity_rank_profile_trimmed_likelihood_transfer.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-PARITY-RANK-PROFILE-TRIMMED-LIKELIHOOD-TRANSFER`
+
+The global `M_n=o(n^2)` collision theorem is sufficient but not necessary for
+the bounded rank observable. Let `T_n` be a retained event, `L_n=dP_n/dQ_n`,
+and `eta_n(tau)=P_n(T_n,L_n>tau)`. Likelihood truncation gives
+
+```text
+E_P f <= 7P(T_n^c)+b(epsilon)
+         +7 tau S_n/epsilon^2+7 eta_n(tau),
+0<=f=chi2(rank||U3)<=7,
+S_n~16/n^2.
+```
+
+Thus physical rank mixing follows if there are caps with
+
+```text
+P(T_n^c)->0,
+tau_n=o(n^2),
+P(T_n,L_n>tau_n)->0.
+```
+
+Choose `epsilon_n=(tau_n S_n)^(1/4)`. The canonical near-maximal dimension
+trim already proves the first condition. The unresolved target is only the
+retained physical likelihood tail, a weak-L1 statement. This may hold even
+if rare taller spikes make the full second moment superquadratic. Conversely,
+an exact reference event of mass `n^-2` with likelihood `n^2` has unit
+physical mass and defeats every subquadratic cap, so the scale is sharp for
+the current Chebyshev/reference-good-event argument.
+
+Four focused tests and report generation pass. Do not spend effort proving a
+global L2 theorem unless it is the most tractable route to this weaker gate.
+The retained likelihood-tail statement, physical rank mixing, non-Haar Racah
+cumulants, classical separation, algorithm, and speedup remain open/false.
+
+## Current High-Reasoning Result: Entropy-Scale Rank Transfer (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_parity_rank_profile_entropy_transfer.py`
+- `research/representation/self_dual_wreath_parity_rank_profile_entropy_transfer.json`
+- `tests/test_self_dual_wreath_parity_rank_profile_entropy_transfer.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-PARITY-RANK-PROFILE-ENTROPY-TRANSFER`
+
+Because all six physical marginals are Plancherel,
+`D_n=D(P_n||Plancherel^6)` is exactly the total correlation of the six irrep
+labels. Splitting likelihood information into positive and negative parts and
+using `x ln(1/x)<=1/e` gives
+
+```text
+K_-<=1/(e ln 2),
+P_n(L_n>tau)<=[D_n+1/(e ln 2)]/log2(tau).
+```
+
+Using `tau=n`, `S_n~16/n^2`, and the weak-L1 transfer theorem proves
+
+```text
+D(P_n||Plancherel^6)=o(log n)
+  => physical Haar rank-profile mixing.
+```
+
+Vanishing KL is not required; even `O(1)` total correlation is sufficient.
+The exact rare-event boundary with reference mass `n^-2` and likelihood
+`n^2` has relative entropy `2log2(n)` and unit physical signal, so a generic
+`O(log n)` estimate is insufficient. Exact finite likelihood-information
+controls through `S_5`, synthetic scaling checks, and five focused tests pass.
+
+This is presently the cleanest sufficient target for the rank component:
+prove six-label physical total correlation is sublogarithmic, preferably
+bounded. Do not infer this from finite KL values. Physical entropy growth,
+physical rank mixing, irreducible Racah-CMI behavior, classical separation,
+algorithm, and speedup remain open/false.
+
+## Current High-Reasoning Result: Alternating-Group Entropy Reduction (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_alternating_entropy_transfer_reduction.py`
+- `research/representation/self_dual_wreath_alternating_entropy_transfer_reduction.json`
+- `tests/test_self_dual_wreath_alternating_entropy_transfer_reduction.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-ENTROPY-TRANSFER-REDUCTION`
+
+Combining the exact sign-orbit KL chain with the coarse alternating-group
+identification gives
+
+```text
+D_full=D_base+E_O D(P(Y|O)||U3),
+D_base<=D_full<=D_base+3,
+D_full=o(log n) iff D_base=o(log n).
+```
+
+Here `D_base` is exactly the total correlation of the coarse `A_n`
+tetrahedral weak-Fourier label law relative to the coarse `A_n` Plancherel
+product law. Therefore
+
+```text
+D(coarse A_n tetrahedral law || coarse A_n Plancherel^6)=o(log n)
+  => physical Haar rank-profile mixing.
+```
+
+No asymptotic orientation estimate is needed for this rank conclusion: the
+entire orientation contribution has only eight outcomes and is at most three
+bits. Exact chain/base identities pass through `S_5`; four focused tests pass.
+
+The next rank theorem target is solely the coarse `A_n` base entropy. The
+three-bit term must not be discarded from the broader algorithm search,
+because bounded irreducible Racah CMI could survive even when the rank profile
+mixes. Coarse alternating entropy, physical rank mixing, Racah-CMI decay or
+survival, classical separation, algorithm, and speedup remain open/false.
+
+## Current High-Reasoning Result: Even-Collision Entropy Bridge (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_alternating_even_collision_entropy_bridge.py`
+- `research/representation/self_dual_wreath_alternating_even_collision_entropy_bridge.json`
+- `tests/test_self_dual_wreath_alternating_even_collision_entropy_bridge.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-EVEN-COLLISION-ENTROPY-BRIDGE`
+
+The coarse `A_n` base likelihood has the exact second moment
+
+```text
+C_n^even=E_(Q_O)L_O^2
+        =sum_C N_even(C)^2/product_i |C_i|,
+```
+
+where `N_even(C)` counts triples `g,h,k in A_n` with the six-word cycle
+signature `C`. By Renyi monotonicity,
+
+```text
+D(P_O||Q_O)<=log2 C_n^even.
+```
+
+Consequently `C_n^even=n^o(1)` is sufficient for physical Haar rank-profile
+mixing. This uses only the even-input sector and allows arbitrary
+subpolynomial collision growth. It is not necessary because Renyi-two may be
+tail-dominated while KL remains sublogarithmic.
+
+Exact label/class collision duality passes through `S_5`; four focused tests
+pass. The finite moments are nonmonotone and provide no asymptotic evidence.
+The next hard task is an even-input support-mask decomposition isolating the
+fully nonidentity term, followed by an all-`n` subpolynomial estimate or a
+direct KL/tail argument. Even-collision growth, physical rank mixing,
+irreducible Racah behavior, classical separation, algorithm, and speedup
+remain open/false.
+
+## Current High-Reasoning Result: Even-Collision Core Reduction (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_alternating_even_collision_core_reduction.py`
+- `research/representation/self_dual_wreath_alternating_even_collision_core_reduction.json`
+- `tests/test_self_dual_wreath_alternating_even_collision_core_reduction.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-EVEN-COLLISION-CORE-REDUCTION`
+
+Expanding the even-input collision kernel by identity support gives the exact
+15-mask decomposition
+
+```text
+C_even=1+4V_+ +6M2_+ -3W_+ +Z6_+,
+```
+
+where `V_+` and `W_+` sum reciprocal class sizes over even nonidentity
+classes, `M2_+` is the Plancherel second moment of the even-class character
+energy, and `Z6_+` is the fully nonidentity even six-word core. Support-size
+bounds prove
+
+```text
+V_+=3/(n)_3+8/(n)_4+O(n^-5),
+W_+=9/(n)_3^2+O(n^-8).
+```
+
+Pointwise even character energy is at most full character energy, whose
+Plancherel second moment already tends to zero. Therefore
+
+```text
+C_even=1+Z6_+ +o(1).
+```
+
+The Renyi route to physical rank mixing is now reduced to the single theorem
+`1+Z6_+=n^o(1)`. Exact support coefficients and decomposition pass through
+`S_5`; five focused tests pass. The next hard task is to express `Z6_+` as a
+six simultaneous nonidentity conjugacy-matching word equation and obtain a
+switching, surface-count, or conditional-collision bound without taking
+pointwise absolute values. `Z6_+` growth, physical rank mixing, irreducible
+Racah behavior, classical separation, algorithm, and speedup remain
+open/false.
+
+## Current High-Reasoning Result: Even-Collision Support Pressure (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_alternating_even_collision_support_pressure.py`
+- `research/representation/self_dual_wreath_alternating_even_collision_support_pressure.json`
+- `tests/test_self_dual_wreath_alternating_even_collision_support_pressure.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-EVEN-COLLISION-SUPPORT-PRESSURE`
+
+For any permutations, `s(a)+s(b)+s(ab)` is at least twice the size of their
+moved-point union. Applying this to `(g,k,gk)` and `(h,k,hk)`, correcting for
+the duplicated `k`, and using minimum support three for nontrivial even `k`
+and `ghk` proves
+
+```text
+sum_(w in (g,h,k,gk,hk,ghk)) s(w)
+  >=2|supp(g) union supp(h) union supp(k)|+6.
+```
+
+For a fixed abstract union support `u`, the signature count has exponent `u`
+while the six class-size denominator has exponent `sum_w s(w)`. Hence every
+fully nonidentity even profile has collision pressure at most `-6`. Abstract
+permutations, centralizer factors, and profile counts cost only
+`exp(O(u log u))`, so uniformly
+
+```text
+Z6_+[u=o(log n/log log n)]=n^(-6+o(1)).
+```
+
+Exhaustive controls through `A_5` and five focused tests pass. Bounded local
+cycles, planted constant gadgets, and all slowly growing supports are
+eliminated as collision obstructions. Any failure of subpolynomial `Z6_+`
+must come from union support `Omega(log n/log log n)`, including the typical
+linear-support regime. Growing-support control, physical rank mixing,
+irreducible Racah behavior, classical separation, algorithm, and speedup
+remain open/false.
+
+## Current High-Reasoning Result: Cycle-Type Block Dependence (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_alternating_cycle_type_block_dependence.py`
+- `research/representation/self_dual_wreath_alternating_cycle_type_block_dependence.json`
+- `tests/test_self_dual_wreath_alternating_cycle_type_block_dependence.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-CYCLE-TYPE-BLOCK-DEPENDENCE`
+
+The word map `F(g,h,k)=(gk,hk,ghk)` is bijective on every group, with inverse
+
+```text
+k=bc^-1a, g=cb^-1, h=ba^-1cb^-1.
+```
+
+Hence uniform even inputs and outputs are both product-uniform. After passing
+to cycle types, the input block `X=(type(g),type(h),type(k))` and output block
+`Y=(type(gk),type(hk),type(ghk))` both have product coarse-even class law, and
+all fifteen scalar coordinate pairs are exactly independent. Nevertheless
+
+```text
+C_even=1+chi2(P_(X,Y)||q_even^3 tensor q_even^3).
+```
+
+The remaining core is pure higher-order block synergy. Single-word normal-set
+mixing and pairwise cycle-type tests cannot close it; a joint three-output
+conditional collision theorem is required.
+
+Character orthogonality preserves this quadratic collision norm, but not
+Shannon relative entropy. Exact `A_4/A_5` controls show classical cycle-type
+mutual information differs from coarse irrep-label KL, so do not substitute a
+classical Shannon estimate for the label entropy gate without a new
+comparison theorem. Four focused tests pass. Joint block collision, physical
+rank mixing, classical separation, algorithm, and speedup remain open/false.
+
+## Current High-Reasoning Result: Fourteen-Block Conditional Operator (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_alternating_block_operator_anova.py`
+- `research/representation/self_dual_wreath_alternating_block_operator_anova.json`
+- `tests/test_self_dual_wreath_alternating_block_operator_anova.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-BLOCK-OPERATOR-ANOVA`
+
+For the even cycle-type input/output blocks, define
+
+```text
+K[x,y]=P(X=x,Y=y)/sqrt(q^3(x)q^3(y)).
+```
+
+Then `||K||_HS^2=C_even` and the centered norm is `C_even-1`. Tensor ANOVA
+over constant versus mean-zero one-coordinate class functions gives 63
+nonconstant subset pairs. A forward private-generator test on
+`(g,h,k,gk,hk,ghk)` and the inverse test from
+`g~cb^-1`, `h~a^-1c`, `k=bc^-1a` leave exactly 14 possible blocks:
+
+```text
+4 order-3, 3 order-4, 6 order-5, 1 order-6.
+```
+
+The other 49 blocks vanish exactly for every finite group. This is the valid
+operator normal form for joint block dependence. Five focused tests and exact
+controls through `A_5` pass.
+
+Do not identify the order-six ANOVA energy with the fully nonidentity
+class-matching core `Z6_+`. They are different decompositions, and `A_4/A_5`
+values explicitly differ. The next operator route is to bound the 14 allowed
+blocks jointly on growing support via conditional character moments or a
+genuine joint normal-set theorem. No such norm bound, physical rank mixing,
+classical separation, algorithm, or speedup is proved.
+
+## Current High-Reasoning Result: Unique Six-Way Synergy Reduction (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_alternating_sixway_synergy_reduction.py`
+- `research/representation/self_dual_wreath_alternating_sixway_synergy_reduction.json`
+- `tests/test_self_dual_wreath_alternating_sixway_synergy_reduction.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-SIXWAY-SYNERGY-REDUCTION`
+
+Every order-3, order-4, or order-5 ANOVA block is an orthogonal component of a
+proper coarse label marginal. Coordinatewise collision duality, sign-orbit
+coarse-graining, tetrahedral edge symmetry, and the existing five-label
+physical theorem imply
+
+```text
+L_ANOVA,n<=13(2V_n+M2_n)=o(1).
+```
+
+Writing `E6_n` for the unique all-six centered block,
+
+```text
+C_even=1+E6_n+o(1).
+```
+
+The identity-support decomposition independently gives
+`C_even=1+Z6_+ +o(1)`, hence
+
+```text
+E6_n-Z6_+ -> 0.
+```
+
+This is asymptotic equivalence, not finite equality. Exact basis-change
+controls through `A_5` and four focused tests pass. The Rényi route now has
+one target only: prove `E6_n=n^o(1)`, equivalently `1+Z6_+=n^o(1)` for this
+purpose. If that norm is tail-dominated, return to direct coarse-label entropy
+or weak-L1 likelihood tails. Six-way growth, physical rank mixing,
+irreducible Racah behavior, classical separation, algorithm, and speedup
+remain open/false.
+
+## Current High-Reasoning Result: Racah Rank/Arithmetic/Alignment Split (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_parity_racah_rank_residual_decomposition.py`
+- `research/representation/self_dual_wreath_parity_racah_rank_residual_decomposition.json`
+- `tests/test_self_dual_wreath_parity_racah_rank_residual_decomposition.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-PARITY-RACAH-RANK-RESIDUAL-DECOMPOSITION`
+
+The coefficient-axis convention is now settled rather than inferred from a
+tetrahedron drawing. The implemented physical order is
+
+```text
+(alpha,beta,gamma,mu,nu,lambda)=(gk,ghk,hk,g,h,k).
+```
+
+Its fusion triples are `(alpha,beta,mu)`, `(mu,gamma,lambda)`,
+`(beta,gamma,nu)`, and `(alpha,nu,lambda)`. Every positive exact likelihood
+entry through the exhaustive `S_3/S_4` controls obeys those four support
+conditions. The tempting tetrahedral-dual mapping
+`(h,k,g,hk,gk,ghk)` is wrong for these array axes: it assigns positive
+likelihood to forbidden blocks (20 violations at `S_3`, 264 at `S_4`, and
+3076 in the separate `S_5` audit). Do not reintroduce that mapping.
+
+For each syndrome orientation, the positive projector amplitude is exactly
+
+```text
+A_y=||R_(mu,nu)||_HS^2/(d_mu d_nu).
+```
+
+Writing
+
+```text
+l_y=g(alpha,beta,mu)g(mu,gamma,lambda),
+r_y=g(beta,gamma,nu)g(alpha,nu,lambda),
+M_y=sum_eta g(alpha,beta,eta)g(eta,gamma,lambda),
+H_y=l_y r_y/(M_y d_mu d_nu),
+E_y=A_y-H_y,
+```
+
+gives the exact split into the Haar block-rank mean `H`, deterministic
+non-Haar Racah arithmetic `E`, and their centered alignment. For
+`N(v)^2=8 sum_y(v_y-mean(v))^2`,
+
+```text
+N(A)^2=N(H)^2+N(E)^2+16<CH,CE>,
+|N(H)-N(E)|<=N(A)<=N(H)+N(E).
+```
+
+This kills rank-profile reasoning in both directions. The all-dimension-three
+`S_4` control has `N(A)^2=0` but
+`N(H)^2=N(E)^2=0.00137174211` and centered cosine `-1`: deterministic Racah
+arithmetic exactly cancels the nonuniform Haar rank profile. An `S_5`
+dimension-five control instead has residual energy `0.00314153086` versus
+rank-profile energy `0.00002844444`, so a nearly flat rank profile does not
+imply a flat natural channel. Two additional `S_5` controls have material
+contributions from both terms.
+
+The real-Haar block variance
+
+```text
+2lr(M-l)(M-r)/[M^2(M-1)(M+2)]
+```
+
+is recorded only as a null benchmark. There is no theorem that natural
+symmetric-group recoupling matrices are Haar. The next hard task is to bound
+the source-weighted relative rank term `N(H)/T0`, the deterministic arithmetic
+term `N(E)/T0`, and their alignment on the canonical high-dimensional physical
+sector. For decoupling, upper bounds on both component norms suffice. For
+survival, one must additionally prevent cancellation. No canonical mixing or
+survival result, algorithm, classical separation, or speedup is claimed.
+
+Seven focused tests pass. The generated report has zero control failures,
+maximum orientation-fiber amplitude residual `8.33e-17`, and maximum variance
+decomposition residual `1.74e-18`. All canonical and algorithmic gates remain
+false.
+
+## Current High-Reasoning Result: Racah Toric Obstruction (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_parity_racah_toric_obstruction.py`
+- `research/representation/self_dual_wreath_parity_racah_toric_obstruction.json`
+- `tests/test_self_dual_wreath_parity_racah_toric_obstruction.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-PARITY-RACAH-TORIC-OBSTRUCTION`
+
+Young-diagram transpose is sign tensoring, so every Kronecker coefficient
+depends on three orientation bits only through their XOR:
+
+```text
+g(a^u,b^v,c^w)=g_(u xor v xor w)(a,b,c).
+```
+
+Applying this to the Haar rank benchmark gives the exact factorization
+
+```text
+H_(g,h,k)=a_g b_(g xor k)c_h d_(h xor k)/(M_k d_mu d_nu).
+```
+
+Consequently every normalized rank-profile channel is a three-node Markov
+model `G--K--H`: `G` and `H` are conditionally independent given `K`. Both
+conditional `2x2` minors vanish exactly, as does the even-versus-odd cube
+binomial (the three-factor log-linear interaction). This is an all-`n`
+algebraic restriction, not a finite numerical pattern. The transpose-XOR law
+was exhaustively checked through `S_5` with zero mismatches.
+
+Natural Racah arithmetic can escape this toric variety. The exact positive
+`S_5` orbit tuple `(1,2,1,2,2,2)` has amplitudes
+
+```text
+(1/64,1/64,1/64,9/1600,1/64,9/1600,1/14400,1/64).
+```
+
+Its conditional minors are exactly `-7/28800` and `17/80000`, its cube defect
+is `-61/1024000000`, and its normalized `I(G;H|K)` is
+`0.204898071955...` bits. The matching rank benchmark has both minors, cube
+defect, and conditional mutual information exactly zero. This is a strict,
+all-positive certificate that deterministic non-Haar symmetric-group `6j`
+arithmetic creates genuine tetrahedral dependence erased by Haar rank
+averaging.
+
+This is still finite and low-dimensional. The next valid target is an
+asymptotic positive-physical-mass lower bound for one toric minor or conditional
+mutual information on canonical labels, or a theorem that it vanishes. The
+same statistic must then be tested under matched classical word-map sampling,
+explicit representation access, and coherent coset access. Measured-label CMI
+alone is not a coherent decoder or complexity separation. Five focused tests
+pass; combined with the preceding module, `12 passed`. The exact-character to
+signed-projector implementation residual is `1.04e-17`. All asymptotic,
+classical-separation, algorithm, and speedup gates remain false.
+
+## Current High-Reasoning Result: Racah Information Projection (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_parity_racah_information_projection.py`
+- `research/representation/self_dual_wreath_parity_racah_information_projection.json`
+- `tests/test_self_dual_wreath_parity_racah_information_projection.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-PARITY-RACAH-INFORMATION-PROJECTION`
+
+The rank/arithmetic amplitude split can cancel, so this module replaces it
+with a positive information-geometric split. Let `P_O(g,h,k)` be the natural
+syndrome law for a paired base orbit and let `M` be the entire Markov family
+`G independent of H conditional on K`. Every rank-profile channel belongs to
+`M` by the toric theorem. The information projection is explicit:
+
+```text
+Pi_M(P)(g,h,k)=P(g|k)P(h|k)P(k),
+min_(Q in M) D(P||Q)=D(P||Pi_M(P))=I_P(G;H|K).
+```
+
+Since the uniform law is in `M`, the exact Pythagorean split is
+
+```text
+D(P||U3)=I_P(G;H|K)+D(Pi_M(P)||U3).
+```
+
+The first nonnegative term is irreducible Racah arithmetic outside every
+rank-only model, not merely outside one chosen Haar benchmark. The second is
+rank-compatible syndrome bias. For any compatible rank benchmark `R in M`,
+`D(P||R)=I_P(G;H|K)+D(Pi_M(P)||R)` as well. This completely removes
+rank/arithmetic cancellation from the research target.
+
+Finite physical aggregation over every positive dimension-`>1` paired orbit
+tuple gives zero irreducible term at `S_4`. At `S_5`, retained physical mass is
+`0.103548611111...`; its adaptive KL contribution is `0.115252621827` bits,
+of which `0.002843022070` bits (about `2.4668%`) is irreducible Racah CMI and
+`0.112409599756` bits is rank-compatible. The maximum single-orbit CMI is
+`0.204898071955` bits. These are finite controls, not scaling evidence.
+
+The next hard theorem is exactly `E_phys I(Y_g;Y_h|Y_k,O)`: prove it vanishes
+or lower-bound it on a canonical positive-mass sector. If it survives, compare
+its estimation complexity under classical word-map samples, explicit
+representation access, and coherent coset access. Six focused tests pass;
+maximum KL Pythagorean residual is `1.39e-17`. All asymptotic, coherent-access,
+classical-separation, algorithm, and speedup gates remain false.
+
+## Current High-Reasoning Result: Conditional Racah Cumulants (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_parity_racah_conditional_cumulant.py`
+- `research/representation/self_dual_wreath_parity_racah_conditional_cumulant.json`
+- `tests/test_self_dual_wreath_parity_racah_conditional_cumulant.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-PARITY-RACAH-CONDITIONAL-CUMULANT`
+
+For a normalized syndrome channel `p(g,h,k)`, define the two conditional
+slice determinants
+
+```text
+delta_k=p(0,0,k)p(1,1,k)-p(0,1,k)p(1,0,k).
+```
+
+They vanish exactly iff the channel belongs to the rank-compatible Markov
+family `G--K--H`. If `r_abc` are the seven nontrivial Walsh coefficients,
+equivalently the parity-coset ratios `F_x/F_0`, and `s=(-1)^k`, then
+
+```text
+16 delta_k=(1+s r_001)(r_110+s r_111)
+             -(r_100+s r_101)(r_010+s r_011).
+```
+
+Thus irreducible Racah information is controlled by two explicit quadratic
+cumulants, not by seven unrelated linear modes. If `q=Pi_M(p)`, then
+
+```text
+p(g,h,k)-q(g,h,k)=(-1)^(g+h) delta_k/P(K=k),
+TV(p,q)=2 sum_k |delta_k|/P(K=k),
+chi2(p||q)=sum_k delta_k^2 P(K=k)/
+  [P(G=0,k)P(G=1,k)P(H=0,k)P(H=1,k)].
+```
+
+Together with `D_bits(p||q)=I(G;H|K)`, these give exact proof interfaces and
+the two-sided bounds `2TV^2/ln2 <= CMI <= log2(1+chi2)`. They also show why
+raw determinant decay is insufficient: lower tails of all conditional
+marginals must be controlled.
+
+The even/odd cube binomial is strictly weaker. A positive exact rational
+eight-channel counterexample has zero cube defect but two nonzero conditional
+minors and positive CMI. Do not use the cube identity as a substitute for
+Markov control. Six focused tests pass; maximum Walsh/determinant residual is
+`3.47e-18`. The next asymptotic target is both quadratic cumulants plus their
+conditional marginal denominators on physical mass. All asymptotic,
+coherent-access, classical-separation, algorithm, and speedup gates remain
+false.
+
+## Current High-Reasoning Result: Product-Plancherel Rank Mixing (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_parity_rank_profile_plancherel_mixing.py`
+- `research/representation/self_dual_wreath_parity_rank_profile_plancherel_mixing.json`
+- `tests/test_self_dual_wreath_parity_rank_profile_plancherel_mixing.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-PARITY-RANK-PROFILE-PLANCHEREL-MIXING`
+
+For `m` independent Plancherel irreps, the normalized tensor-multiplicity
+density
+
+```text
+Y_m=n! <chi_1...chi_(m-1),chi_m>/product_i d_i
+```
+
+has exact mean one and variance
+`sum_(C!=e)|C|^(2-m)`. Its sign-twist difference has exact second moment
+`4 sum_(C odd)|C|^(2-m)`. These identities follow from column orthogonality
+and were checked exactly for tensor orders three and four through `S_5`.
+
+After cancelling one common dimension factor, every Haar rank-profile
+amplitude has the exact density factorization
+
+```text
+R_(g,h,k)=Y1_g Y2_(g xor k) Y3_h Y4_(h xor k)/Z_k,
+```
+
+where the four `Y` pairs are three-character fusion densities and the `Z`
+pair is a four-character total-multiplicity density. Put
+`V_n=sum_(C!=e)|C|^-1` and `W_n=sum_(C!=e)|C|^-2`. Under six independent
+Plancherel labels, all eight `Y` variables and two `Z` variables are within
+`epsilon` of one except with probability at most
+`(8V_n+2W_n)/epsilon^2`. On that event the normalized eight-channel rank law
+is uniformly close to fair. On the complement its chi-square is at most seven.
+Taking `epsilon=(8V_n+2W_n)^(1/4)`, with `W_n<=V_n=o(1)`, proves
+
+```text
+E_(Plancherel^6) chi2(P_rank||U3) -> 0,
+```
+
+and therefore expected rank-profile TV and KL also vanish. Absent
+total-multiplicity sectors are assigned uniform reference channels; they are
+outside the good event and do not change the proof.
+
+This closes multiplicity geometry only under the independent product
+reference. The physical six-label law reweights by a correlated tetrahedral
+likelihood that is not known to be uniformly integrable on the canonical
+trim. Non-Haar Racah CMI is also untouched. Six focused tests pass; maximum
+density-factorization residual is `3.47e-18`. The next hard gate is a
+change-of-measure theorem transferring rank mixing to physical mass, followed
+by the two conditional Racah cumulants. All physical, adaptive, algorithm,
+classical-separation, and speedup gates remain false.
+
+## Current High-Reasoning Result: Signed Tetrahedral Projector Reduction (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_parity_projector_tetrahedral_reduction.py`
+- `research/representation/self_dual_wreath_parity_projector_tetrahedral_reduction.json`
+- `tests/test_self_dual_wreath_parity_projector_tetrahedral_reduction.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-PARITY-PROJECTOR-TETRAHEDRAL-REDUCTION`
+
+For six `S_n` irreps in the physical coefficient-axis order
+`(gk,ghk,hk,g,h,k)`, the three input variables act diagonally on the
+overlapping factor sets `(1,2,4)`, `(2,3,5)`, and `(1,2,3,6)`. If `P_a^+`
+and `P_a^-` are the trivial and sign isotypic
+projectors of one such action and `J_a(x)=P_a^++(-1)^xP_a^-`, then the exact
+parity-coset partition function is
+
+```text
+F_x=(n!/2)^3 Tr(J_g(x_g)J_h(x_h)J_k(x_k))/product_i d_i.
+```
+
+This is the cancellation-preserving representation-theoretic normal form
+missing from the projected class-kernel module. It identifies each face or
+opposite-complement energy as an `L2` average of a signed three-projector
+angle, equivalently a tetrahedral `6j` contraction.
+
+On the fully transpose-paired sector, the six coarse Plancherel factors cancel
+the squared partition-function normalization tuple by tuple:
+
+```text
+Q(O_1,...,O_6) F_x(O_1,...,O_6)^2
+  = Tr(J_g(x_g)J_h(x_h)J_k(x_k))^2.
+```
+
+The canonical paired-sector target is therefore an unweighted sum of squared
+signed `6j`-type traces. At `S_5`, retaining only the two nonself orbits of
+dimensions four and five gives face energy `0.031116743827...` and opposite
+energy `0.017794521604...`; all 64 orbit tuples have nonzero traces in both
+representative sectors. `S_4` is exactly zero after the analogous trim, so
+neither finite behavior is extrapolated.
+
+The same theorem kills rank-only estimates. If all six dimensions exceed
+`D`, each signed projector support has normalized rank at most `2/D^2`.
+At the canonical `D*=sqrt(n!)/(p(n)log2(n!))`, the resulting seven-sector
+energy bound grows rather than decays; its `n=100` log2 value is
+`2244.0324`. Even the exact full-Plancherel expected trivial-plus-sign support
+fraction, `2/n!`, supplies only marginal rank information and misses two
+factorial powers in the unnormalized partition function.
+
+Seven focused tests pass. They validate Young-matrix characters, orthogonal
+trivial/sign projectors, all eight `S_3` parity cosets, the four-factor rank
+bound, the exact `2/n!` Plancherel identity through `S_5`, the existing array
+axis convention, and tuplewise outer-weight cancellation. The next valid
+analytic target is an `L2` relative-angle estimate at `o((n!)^-3)` for one
+face and one opposite-complement signed overlap. Projector ranks, dimensions,
+marginal MP/Plancherel laws, and pointwise character triangle bounds are now
+explicitly forbidden substitutes. Canonical decay/survival, adaptive
+information, classical separation, algorithm, and speedup gates remain false.
+
+## Current High-Reasoning Result: Adaptive Syndrome Is Positive Channel Variance (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_parity_projector_orbit_variance.py`
+- `research/representation/self_dual_wreath_parity_projector_orbit_variance.json`
+- `tests/test_self_dual_wreath_parity_projector_orbit_variance.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-PARITY-PROJECTOR-ORBIT-VARIANCE`
+
+For every fully transpose-paired coarse orbit tuple, define
+
+```text
+A_y=Tr(P_g^(y_g) P_h^(y_h) P_k^(y_k)), y in F_2^3.
+```
+
+These traces are nonnegative here for a representation-specific reason, not
+because arbitrary triple projection traces are positive: each `A_y` is
+`product_i(d_i)/(n!)^3` times one physical oriented likelihood. The signed
+projector traces are their Walsh transform. Consequently
+
+```text
+P(Y=y|O)=A_y/sum_z A_z,
+sum_(x!=0) Q(O)F_x(O)^2=8 sum_y(A_y-mean(A))^2,
+chi2(P_(Y|O)||U3)=8 sum_y(A_y/sum_z A_z-1/8)^2.
+```
+
+Thus the cancellation target is equivalently equidistribution of eight
+positive tetrahedral channels. This formulation is stronger and safer than
+trying to bound the signed sums term by term.
+
+The module also gives a decisive proof-strategy falsifier. On four coordinate
+atoms indexed by the even-parity subset of `F_2^3`, the six binary projectors
+all have rank two and every cross-coordinate pair intersection has trace one,
+exactly matching independent fair bits. Nevertheless the eight triple traces
+are supported only on even parity, the `(1,1,1)` Walsh mode survives, and the
+conditional chi-square is exactly one. Therefore marginal ranks, pairwise
+angles, and all pairwise measured-label decoupling cannot prove the needed
+tetrahedral mixing. A genuine three-projector cumulant/`6j` estimate is
+mandatory.
+
+Five focused tests for this module and seven for its signed-projector
+predecessor pass together (`12 passed`). Five natural `S_4/S_5` orbit controls
+obey positivity and both Parseval identities; four have positive finite
+chi-square. Those controls are not asymptotic evidence. Keep canonical
+equidistribution/variance, survival, classical separation, algorithm, and
+speedup false.
+
+## Current High-Reasoning Result: Disjoint Grid Recoupling Falsifier (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_disjoint_grid_recoupling_falsifier.py`
+- `research/representation/self_dual_wreath_disjoint_grid_recoupling_falsifier.json`
+- `tests/test_self_dual_wreath_disjoint_grid_recoupling_falsifier.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-DISJOINT-GRID-RECOUPLING-FALSIFIER`
+
+The earlier disjoint-pair waist theorem is an upper bound, not an equality.
+A broader `S_6`, four-label screen found 32 strict controls among the first
+250. The materialized primary witness is especially clean: target `(6,)`,
+first pair `(0,15)`, second pair `(5,6)`, nine occupied membership-grid cells,
+and every cell has isotypic multiplicity at most one. Nevertheless,
+
+```text
+first core rank = 1
+second core rank = 81
+best one-waist bound = 1/5
+observed product norm = 1/15
+observed squared norm = 1/225
+```
+
+The margin is more than `10^8` times the declared numerical error budget. A
+second crossing on the same grid has bound `1/9` and the same observed norm
+`1/15`. This falsifies both exact waist saturation and any formula determined
+only by the best waist dimension. It also proves that local
+multiplicity-freeness does not scalarize the row/column recoupling network.
+
+Scope is deliberately narrow. `1/15` is a stable finite rational
+reconstruction, not yet a symbolic all-`n` formula. Strict contraction helps
+rather than hurts conditioning, so this is not an algorithm no-go. The next
+high-reasoning task is to derive the exact symmetric-group 9j/grid contraction
+with multiplicity indices and then determine its source-weighted asymptotic
+norm. Any coherent compiler must retain this recoupling tensor; carrier
+dimensions and pairwise angles alone are insufficient. All algorithm,
+uniform-gap, compiler, classical-separation, and speedup gates remain false.
+
+Focused plus adjacent validation: 16 tests passed.
+
+## Current High-Reasoning Result: Grid Quantum-Marginal Boundary (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_grid_quantum_marginal_boundary.py`
+- `research/representation/self_dual_wreath_grid_quantum_marginal_boundary.json`
+- `tests/test_self_dual_wreath_grid_quantum_marginal_boundary.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-GRID-QUANTUM-MARGINAL-BOUNDARY`
+
+The disjoint pair-core product now has a precise representation-theoretic
+identity. Row-first and column-first parity-intertwiner bases are two coupling
+schemes for the same membership-pattern grid, so `B_row^* B_column` is a
+generalized symmetric-group recoupling (`3nj`) block and
+
+`||P_row P_column|| = ||B_row^* B_column||`.
+
+Both materialized `S_6` controls verify the basis/projector norm identity; the
+primary recoupling norm is `1/15`. This identifies the object that an exact
+formula and coherent compiler must manipulate.
+
+Primary literature:
+
+- Christandl, Sahinoglu, Walter, *Recoupling coefficients and quantum
+  entropies*, `https://arxiv.org/abs/1210.0463`.
+- Keyl, Werner, *Estimating the spectrum of a density operator*,
+  `https://arxiv.org/abs/quant-ph/0102027`.
+
+The first paper connects bounded-row symmetric-group recoupling asymptotics to
+quantum-marginal compatibility and explicitly generalizes to `3nj` blocks.
+That theorem does **not** directly cover the natural source here. Its
+`poly(n)` constants depend on the maximum row count `d`; Weyl's dimension
+formula already contributes at most
+
+`(n+d)^(d(d-1)/2)`.
+
+Consequently its log prefactor is `Theta(d^2 log n)`. Constant-distance
+spectrum-estimation suppression is only `Theta(n)`. The proof remains
+exponentially informative for `d=o(sqrt(n/log n))`, is borderline at
+`d=Theta(sqrt(n/log n))`, and loses exponential control at the natural
+Plancherel scale `d=Theta(sqrt n)`. At `n=4096`, the recorded Weyl-bound ratio
+to the strongest constant-distance suppression is `0.0122` for four rows and
+`16.57` for `2 sqrt(n)` rows.
+
+This is a proof-scope audit, not evidence that natural coefficients are large.
+The next theorem target is a dimension-uniform or source-weighted Plancherel
+recoupling bound, paired with a classification of whether naturally weighted
+grid spectra are compatible quantum marginals. A magnitude theorem still
+would not provide a coherent `3nj` compiler. All natural-source,
+uniform-gap, compiler, algorithm, and speedup gates remain false.
+
+Focused plus adjacent validation: 22 tests passed.
+
+## Current High-Reasoning Result: Dimension-Uniform 6j Certificate (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_recoupling_dimension_certificate.py`
+- `research/representation/self_dual_wreath_recoupling_dimension_certificate.json`
+- `tests/test_self_dual_wreath_recoupling_dimension_certificate.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-DIMENSION-CERTIFICATE`
+
+The exact tetrahedral Hilbert--Schmidt symmetry from
+`arXiv:1210.0463` can be made dimension-uniform by retaining exact swapped
+block ranks instead of replacing them by a fixed-row polynomial. For
+
+`R=[alpha beta mu; gamma lambda nu]`
+
+write
+
+```text
+g1=g(mu,gamma,lambda), g2=g(alpha,beta,mu),
+g3=g(alpha,nu,lambda), g4=g(beta,gamma,nu).
+```
+
+Then
+
+```text
+||R||_op^2 <= min(
+  1,
+  (d_mu d_nu)/(d_beta d_lambda) min(g2 g4,g1 g3),
+  (d_mu d_nu)/(d_alpha d_gamma) min(g2 g3,g1 g4)).
+```
+
+The proof uses only exact tetrahedral symmetry and
+`||X||_HS^2<=rank(X)||X||_op^2<=rank(X)` for the two swapped blocks. It has no
+row-count assumption. All 51 blocks in the complete finite `S_6` Racah
+controls respect the bound; 24 receive a strict upper bound below one. A clean
+selected block has actual norm `1/3` and certified bound `5/9`, with exact
+squared certificate `25/81`.
+
+This is a local 6j theorem, not a natural-source 3nj theorem. The decisive next
+quantity is the joint pressure of Specht-dimension ratios and swapped
+Kronecker ranks under the natural Plancherel source, followed by control of the
+number and interference of intermediate paths in a full grid. A local norm
+certificate does not compile the recoupling transform. All natural-rank,
+generalized-grid, compiler, uniform-gap, algorithm, and speedup gates remain
+false.
+
+Focused tests: 5 passed. An adjacent pre-existing integration test fails
+because `write_complete_racah_control_report` accepts registry arguments but
+does not write the result that `experiment_runner` expects. This is mechanical
+registry plumbing assigned below, not a failure of the new theorem controls.
+
+## Current High-Reasoning Result: Plancherel 6j Rank-Pressure No-Gos (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_plancherel_recoupling_rank_pressure_no_go.py`
+- `self_dual_wreath_physical_recoupling_rank_pressure_no_go.py`
+- matching artifacts under `research/representation/` and focused tests
+
+Experiment IDs:
+
+- `EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-RECOUPLING-RANK-PRESSURE-NO-GO`
+- `EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-RECOUPLING-RANK-PRESSURE-NO-GO`
+
+The dimension-uniform certificate is now closed as a typical-mass tool. Put
+`G=n!`, let `q_rho=d_rho^2/G` be a Plancherel atom, `p=p(n)`, and
+`V_n=sum_(C!=1)1/|C|`. Atom counting and the exact normalized-Kronecker
+variance show that, for six independent Plancherel labels, both raw squared
+rank bounds are at least
+
+`G/(4 n^(7/2) p^(7/2))`
+
+except with probability at most `6/n+16V_n`. The lower bound diverges and the
+failure probability vanishes.
+
+The stronger theorem handles the actual correlated physical path. If a 6j
+block is sampled by sequential projective-measurement trace mass, then
+
+`P(alpha,beta,gamma,mu,nu,lambda)=d_alpha d_beta d_gamma d_lambda ||R_mu,nu||_HS^2/G^3`.
+
+Recoupling unitarity proves every edge marginal is exactly Plancherel and each
+of the four local Kronecker triples has density `1+X` relative to three
+independent Plancherel labels. On the only bad event, `X < -1/2`, that density
+is at most `1/2`; all four lower-tail failures therefore cost at most `8V_n`.
+Consequently blocks on which the rank-aware certificate proves contraction
+carry physical mass at most `6/n+8V_n=o(1)`. Exact size-biased local controls
+pass through `S_7`; the `n=30` finite theorem bound has good-event probability
+at least `0.78047` and a raw-bound margin of `2^44.95`.
+
+This does **not** say the true 6j norm is one. It says this upper certificate is
+uninformative on typical physical mass. Coherent 3nj interference remains
+open. Focused plus adjacent theorem validation: 19 tests passed.
+
+## Current High-Reasoning Result: Plancherel Marginal Compatibility (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_plancherel_marginal_compatibility_no_go.py`
+- `research/representation/self_dual_wreath_plancherel_marginal_compatibility_no_go.json`
+- `tests/test_self_dual_wreath_plancherel_marginal_compatibility_no_go.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-MARGINAL-COMPATIBILITY-NO-GO`
+
+For normalized row spectra `s(rho)=rho/n`,
+
+`||s(rho)-s(sigma)||_1=|Young(rho) triangle Young(sigma)|/n`.
+
+The Logan--Shepp--Vershik--Kerov limit-shape theorem therefore makes any fixed
+number of Plancherel-marginal spectra mutually `o(1)` in `L1`; label
+independence is unnecessary. For every probability vector `r`, the diagonal
+state `sum_i r_i |iii><iii|` has spectrum `r` on
+`A,B,C,AB,BC,ABC`. Combining this witness with the physical six-edge
+Plancherel marginal theorem proves that the physical six-spectrum tuple lies
+`o(1)` from the tripartite quantum-marginal compatibility set.
+
+Thus a constant incompatibility gap cannot occur on positive physical mass.
+This does not bound the shrinking-gap rate: `n D_n^2` may still diverge, and
+the published compatible-side lower theorem is fixed-dimensional. Exact-law
+two-sample `L1` controls decrease from `0.39236` at `n=4` to `0.22590` at
+`n=30`; they are diagnostics, not a rate proof. Thirteen focused plus adjacent
+tests passed.
+
+## Current High-Reasoning Result: Recoupling Channel Information (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_recoupling_channel_flatness_boundary.py`
+- `research/representation/self_dual_wreath_recoupling_channel_flatness_boundary.json`
+- `tests/test_self_dual_wreath_recoupling_channel_flatness_boundary.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-CHANNEL-FLATNESS-BOUNDARY`
+
+For fixed source/final labels, channel dimensions `L_mu,R_nu`, and total
+multiplicity `M`, the two sequential intermediate-label measurements obey
+
+```text
+p(mu,nu)=||R_(nu,mu)||_HS^2/M,
+q(mu,nu)=p(mu)p(nu)=L_mu R_nu/M^2,
+p/q=M||R_(nu,mu)||_HS^2/(L_mu R_nu).
+```
+
+Hence `D_KL(p||q)` is exactly channel mutual information and
+
+`chi^2(p||q)=sum ||R_(nu,mu)||_HS^4/(L_mu R_nu)-1`.
+
+The complete `S_6` controls falsify exact Haar-flat channel mass: four of five
+sectors are nonflat, maximum TV is `1/8`, maximum mutual information is
+`0.156425` bits, and two sectors assign product mass `1/16` to a physically
+forbidden cross channel. These are finite arithmetic correlations, not an
+asymptotic signal. The decisive next theorem is the physical
+Plancherel/source-weighted fourth moment: prove TV/mutual information vanishes,
+or exhibit a uniform positive-mass outlier family and attack it classically.
+Eight focused theorem tests passed; the known Racah registry integration test
+still fails for the separate writer-upsert defect described above.
+
+## Current High-Reasoning Result: Haar Gap And Tetrahedral Synergy (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_recoupling_haar_gap_reduction.py`
+- `self_dual_wreath_physical_recoupling_tetrahedral_synergy.py`
+- matching artifacts under `research/representation/` and focused tests
+
+Experiment IDs:
+
+- `EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-HAAR-GAP-REDUCTION`
+- `EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-RECOUPLING-TETRAHEDRAL-SYNERGY`
+
+For Haar orthogonal recoupling with total multiplicity `M` and `a,b` channel
+blocks, the exact benchmark is
+
+`E chi^2=2(a-1)(b-1)/((M-1)(M+2))`.
+
+Under physical source/final trace mass, the multiplicity density relative to
+four independent Plancherel labels has exact chi-square
+`V4_n=sum_(C!=1)|C|^-2`. Outside physical mass `4/n+2V4_n`, the total
+multiplicity is at least `n!/(2n^2p(n)^2)`. Thus the orthogonal-Haar channel
+benchmark is at most `8n^4p(n)^6/(n!)^2`; any nonvanishing measured-label
+signal on positive mass requires factorial-scale enhancement over Haar. This
+is a conditional reduction, not a proof that natural Racah blocks are Haar.
+
+The physical six labels have stronger exact low-order structure: all 15 label
+pairs are independent Plancherel, while each of the four fusion-face triples
+has chi-square `V_n=sum_(C!=1)|C|^-1=o(1)` from product Plancherel. Therefore
+one-edge, pairwise, and one-face classical label statistics are dead. Any
+surviving signal must be high-order tetrahedral synergy, final/source-
+conditioned channel information, or coherent multiplicity phase. At `n=50`,
+the face TV upper bound is `0.0145263` and the face information bound is
+`0.0012172` bits. These theorems do not control the full six-label law or
+coherent phases. The affected focused chains passed 12 and 13 tests.
+
+## Current High-Reasoning Result: Final-Label Necessity For Measured Channels (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_source_conditioned_channel_decoupling.py`
+- `research/representation/self_dual_wreath_source_conditioned_channel_decoupling.json`
+- `tests/test_self_dual_wreath_source_conditioned_channel_decoupling.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-SOURCE-CONDITIONED-CHANNEL-DECOUPLING`
+
+Fix independent Plancherel source labels `alpha,beta,gamma`, measure the two
+overlapping intermediate channels `mu,nu`, and sum out the final Racah label.
+Relative to independent Plancherel outputs, the exact conditional likelihood
+is a five-character sum. Its source-averaged chi-square is
+
+```text
+V5_n = 2 V_n + E_Pl[T_lambda^2],
+T_lambda = sum_(C!=1) r_lambda(C)^2,
+V_n = sum_(C!=1) 1/|C|.
+```
+
+The fourth moment has the exact finite-group convolution identity
+
+`E_Pl[T_lambda^2]=sum_(A,B!=1)||u_A*u_B||_2^2`.
+
+Young contraction bounds it by
+`H_n^2`, where `H_n=sum_(C!=1)|C|^-1/2`. A moved-support decomposition,
+`z_rho<=m^(m/2)`, and at most `2^m` fixed-point-free cycle types prove
+`H_n=o(1)`. Explicitly, for `n>=237`, set
+`a_n=2(2/n)^(1/4)` and `b_n=2(2e^2/n)^(1/4)`; then
+
+`H_n <= a_n^2/(1-a_n) + b_n^(floor(n/2)+1)/(1-b_n)`.
+
+Therefore `V5_n<=3H_n^2=o(1)`: the joint physical law of
+`alpha,beta,gamma,mu,nu` tends in TV to five independent Plancherel labels,
+and average source-conditioned channel mutual information vanishes. Direct
+five-character enumeration at `S_3,S_4`, direct class convolution through
+`S_6`, and exact character controls through `S_14` verify every identity.
+The focused/adjacent chain passes 20 tests before the added direct controls.
+
+This is the sharp scope boundary: it sums out `lambda`. The finite `S_6`
+nonflat sectors condition on `lambda`, so they do not contradict the theorem.
+The next high-judgment target is the conditional information
+`I(mu:nu | alpha,beta,gamma,lambda)`, equivalently the genuinely tetrahedral
+six-label interaction. Prove its physical expectation vanishes, or construct
+a positive-mass family where revealing `lambda` unlocks nonvanishing
+correlation. Then attack any survivor with classical character/Kronecker
+sampling before treating it as quantum leverage. Coherent multiplicity phases
+remain a separate open route. Keep full-six-label, final-conditioned,
+coherent-phase, algorithm, and speedup gates false.
+
+## Current High-Reasoning Result: Tetrahedral Chi-Square Tail No-Go (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_tetrahedral_chi_square_tail_no_go.py`
+- `research/representation/self_dual_wreath_tetrahedral_chi_square_tail_no_go.json`
+- `tests/test_self_dual_wreath_tetrahedral_chi_square_tail_no_go.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-TETRAHEDRAL-CHI-SQUARE-TAIL-NO-GO`
+
+The full physical six-label chi-square has an exact classical dual. For three
+independent uniform permutations, form
+`W=(g,h,k,gk,hk,ghk)`. The physical irrep-label chi-square from
+`Plancherel^6` equals the chi-square of the joint six cycle types from the
+product of their marginals. If `N_C` counts six-class signatures, the common
+second moment is `sum_C N_C^2/product_i|C_i|`.
+
+There are exactly 15 nonzero identity/nonidentity support masks for `n>=3`.
+Writing `V=sum_(C!=1)|C|^-1`, `V4=sum_(C!=1)|C|^-2`, and
+`M2=E_Pl[T_lambda^2]`, the exact decomposition is
+
+`chi^2=4V+6M2-3V4+Z6`,
+
+where `Z6` is the fully nonidentity six-word core. All displayed lower-support
+terms vanish by the preceding convolution theorem.
+
+Raw chi-square nevertheless cannot vanish. Restrict all six irrep labels to
+trivial/sign bits. Eight of 64 patterns satisfy the three exact parity
+equations
+
+```text
+a+b+mu = b+c+nu = a+b+c+lambda = 0 mod 2.
+```
+
+They have likelihood `(n!)^3`; the other 56 have likelihood zero. This tiny
+sector contributes exactly `8-16/(n!)^3+64/(n!)^6` to chi-square, tending to
+eight, while its physical mass is only `8/(n!)^3`. The entire event that any
+of six labels is one-dimensional has physical mass at most `12/n!`.
+
+Therefore untrimmed chi-square and maximum likelihood are rejected as
+positive-mass research metrics. Exact class signatures through `S_5`, direct
+physical character transforms through `S_5`, and the adjacent theorem chain
+pass 22 tests. This does not prove typical-mass TV/KL decay or survival.
+
+## Current High-Reasoning Result: Near-Maximal Dimension Information Trim (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_tetrahedral_dimension_trim.py`
+- `research/representation/self_dual_wreath_tetrahedral_dimension_trim.json`
+- `tests/test_self_dual_wreath_tetrahedral_dimension_trim.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-TETRAHEDRAL-DIMENSION-TRIM`
+
+The parity-tail repair extends to all low-dimensional irreps. For either the
+physical law or `Plancherel^6`, the event that any label dimension is at most
+`D` has mass at most `delta_D=6p(n)D^2/n!`. Its TV contribution is at most
+`delta_D`. Since every tuple has likelihood at most `(n!)^6`, its positive KL
+contribution is at most `6 delta_D log2(n!)`.
+
+With
+
+`D_n=floor(sqrt(n!)/(p(n)log2(n!)))`,
+
+the removed TV is at most `6/[p(n)log2(n!)^2]` and removed positive KL is at
+most `36/[p(n)log2(n!)]`; both vanish. At `n=50`, `log2 D_n=81.7214`, removed
+mass is at most `6.403e-10`, and removed positive KL is at most
+`8.229e-7` bits. Thus every polynomial- and subexponential-dimensional tail
+is irrelevant: any genuine measured signal must live on a retained
+near-maximal-dimensional bulk. Five focused tests pass. The theorem is
+information-theoretic and does not compile a coherent trim.
+
+## Current High-Reasoning Result: Projected Tetrahedral Word Map (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_projected_tetrahedral_word_map.py`
+- `research/representation/self_dual_wreath_projected_tetrahedral_word_map.json`
+- `tests/test_self_dual_wreath_projected_tetrahedral_word_map.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-PROJECTED-TETRAHEDRAL-WORD-MAP`
+
+For a retained irrep set `R`, define
+
+```text
+m_R(x)=|G|^-1 sum_(rho in R) d_rho chi_rho(x),
+K_R(x,y)=|G|^-1 sum_(rho in R) chi_rho(x)chi_rho(y),
+q_R=|G|^-1 sum_(rho in R)d_rho^2.
+```
+
+The retained sub-probability chi-square is exactly
+
+```text
+C_R = sum_(t,u in G^3) product_i K_R(W_i(t),W_i(u))
+      -2 sum_(t in G^3) product_i m_R(W_i(t)) + q_R^6,
+W(t)=(g,h,k,gk,hk,ghk).
+```
+
+Moreover `TV_R<=(q_R^3/2)sqrt(C_R)`. This converts the retained Racah problem
+into one six-fold high-dimensional central Fourier projection of a classical
+word map. Exact projected-kernel controls after several trims pass through
+`S_4`; label-space controls pass through `S_5`. At `S_5`, deleting only the
+one-dimensional irreps drops chi-square from `15.5459` to `0.92637`, but
+retained unnormalized TV remains `0.35092`. No asymptotic conclusion follows.
+
+The literature audit matters. Féray--Sniady is strongest for short
+permutations; the six word values are typically long. Lifshitz--Marmor gives
+powerful level/norm and normal-set mixing bounds, but not this correlated
+six-edge high-level projection. Benaych-Georges controls fixed small cycles of
+one word, and Hanany--Puder controls stable class functions; the canonical
+dimension trim removes precisely those low-level Fourier modes. The next
+hard theorem is therefore explicit: prove `C_R=o(1)` for
+`R={rho:d_rho>D_n}`, or identify retained modes and signatures with
+nonvanishing direct L1/positive-KL mass. A nonzero projected chi-square alone
+is insufficient because a second high-dimensional L2 tail may exist.
+Classical word-map sampling and character/Kronecker baselines are mandatory
+for any survivor. Coherent multiplicity phases remain outside this reduction.
+Six focused tests pass. All asymptotic-survival, classical-separation,
+compiler, algorithm, and speedup gates remain false.
+
+## Current High-Reasoning Result: Sign-Orbit Syndrome Reduction (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_sign_orbit_syndrome_reduction.py`
+- `research/representation/self_dual_wreath_sign_orbit_syndrome_reduction.json`
+- `tests/test_self_dual_wreath_sign_orbit_syndrome_reduction.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-SIGN-ORBIT-SYNDROME-REDUCTION`
+
+Deleting the trivial and sign representations does not delete the sign action:
+`V_(rho^T)=V_rho tensor sign` for every Young diagram. On a six-tuple of
+non-self-conjugate sign orbits, encode transpose choices by
+`z=(z_alpha,z_beta,z_gamma,z_mu,z_nu,z_lambda)`. The tetrahedral word tuple
+maps input permutation parities `x=(x_g,x_h,x_k)` to
+
+```text
+A x=(x_g+x_k,x_g+x_h+x_k,x_h+x_k,x_g,x_h,x_k).
+```
+
+The exact 64-point orientation likelihood depends only on the three-bit
+syndrome
+
+```text
+A^T z=(z_alpha+z_beta+z_mu,
+       z_beta+z_gamma+z_nu,
+       z_alpha+z_beta+z_gamma+z_lambda).
+```
+
+Equivalently its Walsh support is the eight-element image of `A`, and each
+syndrome has exactly eight transpose choices. On every retained nonself sector,
+the product Plancherel orientation is uniform and KL splits exactly as
+
+`D(P||Q)=D(P_orbit||Q_orbit)+E_P D(P_syndrome||Uniform(F_2^3))`.
+
+Thus sign-orbit orientation carries at most three measured-label bits. It is a
+classically readable statistic once the six partitions are measured. It is not
+a coherent decoder or an algorithm.
+
+The theorem also kills a tempting no-go shortcut. The repeated `S_4` standard
+sign pair has orientation KL zero, but the repeated `S_5` `(3,2)/(2,2,1)` pair
+has exact finite conditional TV `8/17` and KL about `0.9471` bits after all
+one-dimensional labels are excluded. Therefore “remove sign labels and all
+parity disappears” is false. This finite row is not asymptotic evidence: the
+canonical near-maximal-dimension sector and positive retained mass remain
+uncontrolled.
+
+The KL chain residual is below `9e-16` on all live controls and six focused
+tests pass. Finite self-conjugate Plancherel mass is recorded through `n=50`
+without claiming a limit. Borodin--Okounkov--Olshanski
+`arXiv:math/9905032` supplies Airy edge asymptotics for Plancherel diagrams,
+but the audited statement does not directly provide the joint opposite-edge
+anti-concentration needed to conclude `P(lambda=lambda^T)->0`; keep that gate
+false unless a precise primary theorem or proof is added.
+
+Next hard target: bound the three nonlocal parity-sector character moments on
+the canonical dimension trim, or exhibit a positive-mass sign-orbit family.
+Any survivor must then be compared with a classical six-partition syndrome
+calculation under the same access model. Keep self-conjugate-mass decay,
+canonical syndrome decay/survival, coherent signal, classical separation,
+algorithm, and speedup gates false.
+
+## Current High-Reasoning Result: Unconditional Sign Syndrome Decouples (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_sign_syndrome_unconditional_decoupling.py`
+- `research/representation/self_dual_wreath_sign_syndrome_unconditional_decoupling.json`
+- `tests/test_self_dual_wreath_sign_syndrome_unconditional_decoupling.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-SIGN-SYNDROME-UNCONDITIONAL-DECOUPLING`
+
+The raw three-bit sign syndrome is now proved asymptotically useless without
+assuming that self-conjugate Plancherel mass vanishes. Choose an antisymmetric
+section `eta(lambda^T)=-eta(lambda)` and set `eta=0` on self-conjugate
+partitions; equivalently attach an independent fair orientation bit there.
+
+The seven nonzero syndrome Walsh frequencies have exact tetrahedral geometry:
+four are fusion faces and three are the four-edge complements of opposite
+pairs. If `V_n` is the exact face chi-square and `V5_n` is the five-label
+chi-square from the source-conditioned theorem, then
+
+```text
+chi2(P_Y || Uniform(F_2^3)) <= 4 V_n + 3 V5_n,
+TV(P_Y,Uniform) <= 0.5 sqrt(4 V_n + 3 V5_n),
+KL_bits <= log2(1+4 V_n+3 V5_n).
+```
+
+All bounds tend to zero. Tetrahedral symmetry transfers the representative
+five-label estimate to all three opposite-pair complements. The fair fixed-
+orbit lift means no self-conjugate-mass assumption or conditioning is used.
+At `n=50` the analytic upper bounds are TV `0.05559` and KL `0.01773` bits;
+these are conservative asymptotic bounds, not measured residual signals.
+
+Exact fair-lifted syndrome distributions through `S_5` pass five focused
+tests. The raw `S_5` syndrome TV is `0.07079`, much smaller than the `8/17`
+conditional TV in one high-dimensional sign pair. This is not a contradiction:
+conditional biases cancel across base orbits.
+
+Let `O` be the six unoriented sign-orbit identities. The exact identity
+
+`E_O D(P(Y|O)||U)=I_P(O:Y)+D(P_Y||U)`
+
+shows what remains. Since the last term vanishes, any surviving orientation
+information must be orbit-adaptive mutual information `I(O:Y)`. The next hard
+target is to bound this quantity on the canonical high-dimensional trim or
+construct a positive-mass orbit family. It remains a deterministic statistic
+of measured labels and needs a same-access classical baseline. Keep
+orbit-adaptive decay/survival, base-orbit product law, coherent signal,
+classical separation, algorithm, and speedup gates false.
+
+## Current High-Reasoning Result: Lossless Sign-Orbit KL Chain (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_sign_orbit_kl_chain_reduction.py`
+- `research/representation/self_dual_wreath_sign_orbit_kl_chain_reduction.json`
+- `tests/test_self_dual_wreath_sign_orbit_kl_chain_reduction.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-SIGN-ORBIT-KL-CHAIN-REDUCTION`
+
+The full measured six-label information problem now has an exact lossless
+two-term decomposition. Append fair bits on self-conjugate partitions, let
+`O` be the six unordered transpose-orbit labels, let `Z in F_2^6` be the
+orientation bits, and let `Y=A^T Z in F_2^3`. Product Plancherel satisfies
+`Q(O,Z)=Q_O(O)/64`, while the physical likelihood is constant on every
+eight-point kernel fiber of `A^T`. Therefore
+
+```text
+D(P_six || Plancherel^6)
+ = D(P_O || Q_O) + E_O D(P(Y|O) || Uniform(F_2^3)).
+```
+
+No information is lost: the three kernel orientation bits are exactly
+ancillary. Also
+
+`E_O D(P(Y|O)||U)=I_P(O:Y)+D(P_Y||U)`.
+
+The preceding theorem makes `D(P_Y||U)=o(1)`. Thus every asymptotic measured
+survivor is now localized to one of two explicit quantities:
+
+1. dependence among the six **unoriented sign-orbit labels**;
+2. orbit-adaptive mutual information `I(O:Y)`.
+
+Exact controls through `S_5` pass five tests with maximum KL-chain residual
+`3.4e-15`. At `S_5`, full KL `1.13255` bits splits into base-orbit KL
+`0.50667` and conditional syndrome KL `0.62587`; the latter splits into raw
+syndrome KL `0.04062` and orbit-syndrome MI `0.58526`. These finite values are
+diagnostics, not asymptotic evidence.
+
+The next hard theorem should separately project the canonical high-dimensional
+word map onto (a) transpose-even central functions for base-orbit KL and (b)
+the seven sign-twisted kernels for `I(O:Y)`. Prove both vanish or identify a
+positive-mass retained mode. Both are classical functions of measured Young
+diagrams, so any survivor still needs same-access dequantization. Keep both
+asymptotic term gates, coherent signal, classical separation, algorithm, and
+speedup false.
+
+## Current High-Reasoning Result: Base Orbits Are Coarse A_n Fourier Data (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_alternating_base_orbit_reduction.py`
+- `research/representation/self_dual_wreath_alternating_base_orbit_reduction.json`
+- `tests/test_self_dual_wreath_alternating_base_orbit_reduction.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-BASE-ORBIT-REDUCTION`
+
+The base sign-orbit term is now a standard group object. For every nonself
+pair,
+
+`(r_lambda(w)+r_(lambda^T)(w))/2 = 1[w in A_n] r_lambda(w)`.
+
+A self-conjugate character already vanishes on odd permutations. In the six
+tetrahedral words, all values are even exactly when the independent inputs
+`g,h,k` lie in `A_n`. Hence the orientation-averaged likelihood is
+
+`L_O=sum_(g,h,k in A_n) product_i r_(O_i)(W_i(g,h,k))`.
+
+The orbit labels and weights are exactly coarse `A_n` weak-Fourier labels:
+nonself `S_n` pairs restrict to one `A_n` irrep, while each self-conjugate
+irrep splits into two dimension-`d/2` irreps that are merged. Their combined
+`A_n` Plancherel mass equals the original `S_n` orbit mass. Therefore the
+base KL in the preceding chain is exactly coarse alternating-group
+tetrahedral KL.
+
+Direct even-permutation word-map transforms agree with aggregated `S_n`
+likelihoods through `S_5` (maximum residual `1.14e-12`); five focused tests
+pass. At `S_5`, this term is `0.50667` bits, `44.74%` of full finite KL. No
+asymptotic conclusion follows.
+
+The merged trivial/sign orbit becomes the single trivial `A_n` label and
+still gives physical all-six mass `|A_n|^-3` with likelihood `|A_n|^3`.
+Thus raw coarse `A_n` chi-square still has a rare tail; apply the canonical
+dimension trim and direct L1/KL metrics.
+
+Next hard target: prove dimension-trimmed six-word mixing for this coarse
+`A_n` law, or find positive retained mass. The exact classical dual samples
+three uniform even permutations and their six word values, so any survivor
+must be evaluated under the natural-input access model before it has quantum
+value. Keep coarse-`A_n` decay/survival, classical separation, coherent
+signal, algorithm, and speedup gates false.
+
+## Current High-Reasoning Result: Adaptive Syndrome Is a Twisted A_n Channel (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_alternating_parity_coset_channel.py`
+- `research/representation/self_dual_wreath_alternating_parity_coset_channel.json`
+- `tests/test_self_dual_wreath_alternating_parity_coset_channel.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-PARITY-COSET-CHANNEL`
+
+The remaining orbit-adaptive syndrome term is now an exact finite-group
+partition-function problem.  For a six-tuple of unoriented sign orbits `O`
+and input parity `x=(parity(g),parity(h),parity(k))`, define
+
+```text
+F_x(O)=sum_(input parity=x) product_i r_(O_i)(W_i(g,h,k)).
+```
+
+If `z` records the six transpose orientations, then
+
+```text
+L_O(z)=sum_x (-1)^(x dot A^T z) F_x(O),
+P(Y=y|O)=1/8 [1+sum_(x!=0)(-1)^(x dot y)F_x(O)/F_0(O)].
+```
+
+Here `F_0` is exactly the coarse `A_n` tetrahedral likelihood from the base-
+orbit theorem.  Consequently the seven conditional-syndrome Walsh
+coefficients are the parity-coset ratios `F_x/F_0`, and
+
+```text
+E chi2(P(Y|O)||U_3)
+  = sum_O Q_O sum_(x!=0) F_x(O)^2/F_0(O).
+```
+
+Choosing an odd coset representative identifies every nonzero sector with an
+outer-automorphism-twisted `A_n` word map. Tetrahedral symmetry reduces the
+seven sectors to two asymptotic problems: four face twists and three
+opposite-complement twists. Exact controls through `S_5` verify the Fourier
+reconstruction, probability law, KL-chain identity, and within-type annealed
+moment symmetry; five focused tests pass. At `S_5`, the total conditional
+chi-square is `0.88270`, with one face contribution `0.15465` and one
+opposite-complement contribution `0.08804`. These are finite diagnostics.
+
+This is a reduction, not a mixing theorem. Raw `F_x^2/F_0` moments can be
+dominated by low-dimensional base sectors. The next hard task is to define
+the canonical dimension-trimmed coarse `A_n` law and prove direct retained
+KL/TV decay for both twist types, or exhibit a positive-mass retained
+counterfamily. Any survivor is still a classical statistic of measured
+partitions and needs a natural-input classical baseline. Keep both trimmed
+twist gates, adaptive survival, coherent signal, classical separation,
+algorithm, and speedup false.
+
+## Current High-Reasoning Result: Denominator-Free Adaptive Trim Transfer (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_adaptive_syndrome_trim_transfer.py`
+- `research/representation/self_dual_wreath_adaptive_syndrome_trim_transfer.json`
+- `tests/test_self_dual_wreath_adaptive_syndrome_trim_transfer.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-ADAPTIVE-SYNDROME-TRIM-TRANSFER`
+
+The apparent `F_x/F_0` small-denominator problem is now removed exactly. For
+any retained coarse-orbit set `B`, physical weighting by `P_O=Q_OF_0`, Walsh
+Parseval, and Cauchy--Schwarz give
+
+```text
+E_P[1_B TV(P(Y|O),U_3)] <= (1/2)sqrt(Q(B) S_B),
+S_B = sum_(O in B) Q(O) sum_(x!=0) F_x(O)^2.
+```
+
+For the dimension trim `B_D`, the existing marginal theorem gives
+`P(B_D^c),Q(B_D^c)<=delta_D=6p(n)D^2/n!`, hence
+
+```text
+E_P TV(P(Y|O),U_3) <= delta_D+(1/2)sqrt(Q(B_D)S_(B_D)).
+```
+
+Entropy continuity transfers this to expected conditional KL and `I(O:Y)`:
+if the right side is `epsilon<=7/8`, both are at most
+`h_2(epsilon)+epsilon log2(7)`. No likelihood floor is required.
+
+There is also an exact matched-projection identity:
+
+```text
+S_B = M_full(B)-M_base(B) = C_full(B)-C_base(B),
+```
+
+where `M` is retained likelihood second moment and `C` is retained
+subprobability chi-square. Thus adaptive information is precisely the excess
+of the full projected `S_n` tetrahedral word-map energy over its coarse `A_n`
+base projection. Use the manifestly nonnegative seven-coset sum for analysis,
+not numerical subtraction of two potentially large moments.
+
+Seven finite controls pass five focused tests with maximum identity residual
+`5.33e-15`. At `S_5`, deleting one-dimensional labels leaves adaptive energy
+`0.68460` and retained conditional TV `0.25373`. These are finite diagnostics,
+not evidence for either asymptotic decay or survival.
+
+The hard target is now exactly `S_(B_(D_n))=o(1)` for the canonical threshold,
+or positive retained direct L1/KL mass. It splits into one face and one
+opposite-complement parity-coset energy by tetrahedral symmetry. Even if this
+term vanishes, coarse `A_n` base KL remains independently open. Keep all
+asymptotic, coherent, classical-separation, algorithm, and speedup gates false.
+
+## Current High-Reasoning Result: Pointwise Character Triangle Route Is Vacuous (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_character_triangle_barrier.py`
+- `research/representation/self_dual_wreath_character_triangle_barrier.json`
+- `tests/test_self_dual_wreath_character_triangle_barrier.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-CHARACTER-TRIANGLE-BARRIER`
+
+Do not try to close the projected parity-coset target by improving pointwise
+character constants and then summing absolute values over input triples. Even
+under the unrealistically strong assumption `|chi_lambda(w)|<=1` on every
+retained nonidentity word,
+
+```text
+|F_x| <= |S_n|^3 D_n^-6.
+```
+
+At the continuous canonical threshold
+`D*=sqrt(n!)/(p(n)log2(n!))`, this is exactly
+`(p(n)log2(n!))^6`, which diverges. The corresponding seven-sector energy
+bound is `7(p(n)log2(n!))^12`. Flooring `D*` only weakens the estimate.
+
+Teyssier--Thevenin `arXiv:2411.04347`, Theorem 1.6, bounds ordinary
+characters by a positive dimension exponent determined by orbit growth;
+their cycle-count corollary and the Lifschitz--Marmor bounds are therefore
+weaker than the ideal assumption used in this barrier once triangle
+inequality is applied. They remain potentially useful only inside a
+cancellation-preserving argument. Five tests pass; at `n=100` the already
+idealized energy upper bound has log2 size `441.30`.
+
+This eliminates a proof strategy, not either asymptotic outcome. A viable
+proof must preserve cancellation through projected class kernels, exact
+Plancherel orthogonality, collision geometry, or a genuinely multilinear norm
+estimate before taking absolute values. Keep adaptive decay, survival,
+classical separation, algorithm, and speedup false.
+
+## Current High-Reasoning Result: Projected Parity-Coset Collision Kernels (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_projected_parity_coset_kernel.py`
+- `research/representation/self_dual_wreath_projected_parity_coset_kernel.json`
+- `tests/test_self_dual_wreath_projected_parity_coset_kernel.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-PROJECTED-PARITY-COSET-KERNEL`
+
+The two adaptive-energy targets now have an exact cancellation-preserving
+class-kernel form. For a sign-invariant retained irrep set `R`, put
+
+```text
+K_R(a,b)=|S_n|^-1 sum_(lambda in R) chi_lambda(a)chi_lambda(b).
+```
+
+If two input triples `t,u` lie in the same parity coset `T_x`, corresponding
+word signs agree. Therefore each transpose pair contributes identically and
+the coarse sign-orbit Plancherel sum reconstructs the ordinary `S_n` kernel:
+
+```text
+S_x(R)=sum_(t,u in T_x) product_i K_R(W_i(t),W_i(u)).
+```
+
+Writing `N_x(C)` for parity-restricted six-word class-signature counts gives
+
+```text
+S_x(R)=sum_(C,D)N_x(C)N_x(D)product_i K_R(C_i,D_i).
+```
+
+For all irreps, column orthogonality diagonalizes the kernel and yields
+`S_x(all)=sum_C N_x(C)^2/product_i|C_i|`. These are positive Gram energies
+despite signed projected kernels. Tetrahedral symmetry again leaves one face
+and one opposite-complement contraction.
+
+Six exact projected controls through `S_4` pass five focused tests. Maximum
+direct/kernel residual is `8.89e-16`; full-kernel collision formulas agree
+exactly. The zero energies in the strongest tiny `S_4` trim are finite rank
+annihilations and carry no asymptotic meaning.
+
+The next valid analytic task is a canonical-`R_n` bound on one representative
+of each type using collision switching, projected-kernel operator estimates,
+trace moments, or another multilinear orthogonality argument before absolute
+values. Pointwise triangle bounds are forbidden by the preceding theorem.
+Keep canonical decay/survival, classical separation, algorithm, and speedup
+false.
+
+## Current High-Reasoning Result: Dense Automaton Dyadic Boundary (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_dense_automaton_fiber_dyadic_boundary.py`
+- `research/representation/self_dual_wreath_dense_automaton_fiber_dyadic_boundary.json`
+- `tests/test_self_dual_wreath_dense_automaton_fiber_dyadic_boundary.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-DENSE-AUTOMATON-FIBER-DYADIC-BOUNDARY`
+
+The previous “dense constant-state ordered-subword automaton” question is now
+closed exactly. For every support fiber `U subset F_2^u` of density
+`delta=|U|/2^u`, the suffix-branch entropy theorem gives an anchor leaving at
+most
+
+`floor(u-log2|U|)=floor(log2(1/delta))`
+
+frame generators over every finite group. No automaton assumption is needed.
+Consequently every fiber whose density is bounded below has `O(1)` rank,
+independent of frame width.
+
+For same/different fibers of codimensions `c_S,c_D`, selecting the denser
+fiber gives scalar crossing-pressure margin at least
+
+`(c_S+c_D)/2-floor(min(c_S,c_D))`.
+
+If both fibers mix uniformly on a constant class of size `C`, this tends to
+`log2(C)-floor(log2(C))`. Every non-power-of-two class therefore has a
+constant unsigned-mass loss that a normalized target character cannot repair.
+Only dyadic effective class sizes can saturate the density theorem. The exact
+mixed-frame target theorem closes balanced full fibers too: if
+`|S|=|D|=2^k` and `0 in S`, the residual target is itself a relation; if
+`0 notin S`, adjoining zero gives size `2^k+1` and one full scalar exponent of
+loss. Thus no exactly balanced dyadic full fiber survives. **Do not** broaden
+this to near-uniform fibers just below a power of two.
+
+The imported periodic `S_3` transfer has an 18-state leading class, exact
+limiting density `1/18+O(2^-k)`, generic generator bound four, and limiting
+generic scalar margin `log2(18)-4=0.169925...`. This already kills the
+periodic escape without the stronger family-specific three-generator
+certificate. Six focused tests pass and the live artifact is generated.
+
+The next high-reasoning target is now sharply reduced to **near-uniform**
+dyadic fibers: counts just below a power of two can have vanishing generic
+margin without exact saturation. Prove a structural torsion/surface gap for
+all fixed-state automata in that regime, or construct a mixed-frame fiber with
+matching `S_n` homomorphism mass and a nonvanishing normalized
+high-dimensional character. Growing-state automata and interleaved leaves are
+separate routes. Keep all survival, `M4`, algorithm, and speedup gates false.
+
+## Current High-Reasoning Result: Cyclic Dyadic Torsion No-Go (2026-08-13)
+
+Files:
+
+- `self_dual_wreath_dyadic_modular_fiber_torsion_no_go.py`
+- `research/representation/self_dual_wreath_dyadic_modular_fiber_torsion_no_go.json`
+- `tests/test_self_dual_wreath_dyadic_modular_fiber_torsion_no_go.py`
+
+Experiment ID:
+
+`EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO`
+
+The simplest dyadic boundary is now killed all-width. For
+`U_(m,u)={v:|v|=0 mod m}` and `u>=m+1`, every `m`-subset is an ordered-subword
+relation. Comparing the two `m`-subsets obtained by exchanging adjacent
+coordinates gives `x_i=x_(i+1)`. Hence all frame generators are one generator
+`x`, an `m`-subset gives `x^m=1`, and every other fiber relation follows:
+
+`P(U_(m,u)) ~= C_m`.
+
+This is a symbolic proof, not an extrapolation from Tietze controls. The
+roots-of-unity filter gives
+
+`||U|/2^u-1/m| <= ((m-1)/m) cos(pi/m)^u`.
+
+The cycle index for permutations with all cycle lengths dividing `m` gives
+`#Hom(C_m,S_n)=|S_n|^(1-1/m+o(1))`. Thus for fixed `m=2^r`, the true limiting
+scalar margin is `r-1+1/m`, strictly positive even though the generic entropy
+rank can sit at the dyadic boundary. The minimum is `1/2` at `m=2`. A
+normalized target character cannot restore this unsigned mass. Five focused
+tests pass and the live artifact is generated.
+
+This theorem covers cyclic Hamming-modulus automata only. It does not classify
+nonabelian `2`-group automata, near-uniform dyadic fibers, a modulus growing
+with frame width, or interleaved leaves. Those are the only automaton variants
+still worth high-reasoning attention; do not resume generic modular searches.
+Keep natural `M4`, algorithm, and speedup gates false.
+
+## Current High-Reasoning Frontier: Subgroup-Stratified Orbit Synthesis (2026-08-13)
+
+The binary hidden-involution orbit-synthesis route has advanced beyond the
+generic polar and hyperoctahedral-CG formulations. No algorithm or speedup has
+been obtained. The newest theorem chain is:
+
+1. `coset_hidden_involution_incidence_walk_boundary.py` gives the exact
+   biregular incidence normal form. A generic normalized Szegedy/QSVT polar has
+   degree `Omega(sqrt(M))`; only a structured row/Fourier escape remains.
+2. `coset_hidden_involution_common_factor_trim.py` removes every tensor
+   component containing a global trivial/sign common factor with exact retained
+   candidate mass `(1-2a/n!)^k`. The corrected normalized pair overlap is
+   strictly below `1/2`, proved by integer arithmetic; floating telemetry may
+   round it to `1/2`. This trim does not bound the residual norm.
+3. `coset_hidden_involution_subgroup_outlier_hierarchy.py` proves the residual
+   norm is in fact superpolynomial. For `K=C_2 wr S_m`, the number of incident
+   fixed-point-free involutions is
+   `L_m=sum_j m!/(j!(m-2j)!) >= ceil(m/2)^ceil(m/2)`, and nontrivial right-`K`
+   invariants witness frame norm at least `L_m` at every copy count.
+4. `coset_hidden_involution_spherical_outlier_deflation.py` then proves this
+   particular obstruction is not terminal. The full conjugate witness span is
+   exactly the nontrivial even-row Thrall support, is QFT-label flaggable, and
+   its all-register alternative mass vanishes at the orbit-flatness width.
+5. `coset_hidden_involution_subgroup_support_dichotomy.py` generalizes the
+   span identity: for arbitrary `L<=G`, the conjugate invariant span is the
+   support of `Ind_L^G(1)`, with Plancherel dimension at most
+   `[G:L]sqrt(|G|)`. Low-index subgroups are therefore information-
+   theoretically negligible after an all-register support trim, but efficient
+   support membership is not automatic.
+6. `coset_hidden_involution_imprimitive_plethysm_boundary.py` exhibits the
+   important high-index survivor `S_b wr S_a`, `b>=3`. It proves the exact
+   fixed-point-free incidence formula and resolves all two-row constituents by
+   subset-orbit differences. Odd two-row sectors survive the even-row trim but
+   their full label union is again negligible and directly deflatable.
+7. `coset_hidden_involution_foulkes_support_mass_probe.py` compiles the entire
+   Foulkes character `h_a[h_b]` in the power-sum basis without enumerating the
+   subgroup. It computes exact constituent support, Plancherel mass, and the
+   actual common-trimmed candidate probability `w`. For `h_a[h_3]`, `w` is
+   `0.1060, 0.1934, 0.3810, 0.6136` at `a=4,6,8,10`; nevertheless `w^k` remains
+   below `2^-41` in these controls. This is not an asymptotic theorem. The
+   decisive quantity is `k(1-w)`.
+8. `coset_hidden_involution_foulkes_support_projector_no_go.py` proves that a
+   generic conjugate-twirl QSVT support test is exponentially conditioned. On
+   `lambda=(2a+1,a-1)`, the twirl eigenvalue is at most `6a/3^a`; Markov's
+   inequality forces exponential polynomial degree. This does not rule out a
+   direct label predicate or structured coherent restriction transform.
+
+The active research target is now sharply defined: determine the asymptotic
+Plancherel/candidate support deficit of `h_a[h_b]`, especially fixed `b=3`, and
+either compile or rule out a structured higher-row support projector. The
+correct falsifier is whether `k(1-w_(a,b))` diverges. If it stays bounded, the
+all-register deflation architecture fails and the higher-row support needs a
+structured polar. If it diverges, prove that fact and then classify the next
+high-index subgroup stratum. General plethysm NP/#P hardness is relevant
+evidence but is not a quantum lower bound and must not close the gate.
+
+The exact `h_12[h_3]` support-mass calculation completed in 2400.73 seconds
+and is preserved separately in
+`research/representation/coset_hidden_involution_foulkes_support_mass_h12_diagnostic.json`.
+It gives `w=0.8030040889256911`, `k=74`, `k(1-w)=14.5776974195`, and
+`w^k=8.894345546e-8=2^-23.4225`.  The finite all-register mass is still small,
+but `k(1-w)` fell from `22.7992` at `a=10`; no monotone trend or asymptotic
+deficit theorem follows.  Do not rerun this in routine validation.  The
+reusable module's default live artifact intentionally stops at `h_10[h_3]`.
+
+All algorithm, residual-norm, decoder, natural-input classical separation, and
+speedup gates remain false. Gemini/Antigravity should wire these reports but
+must not infer asymptotic behavior from the finite sequence.
+
+**Priority correction after the support analysis.**
+`coset_hidden_involution_bulk_conditioning_normalization_no_go.py` proves that
+outlier classification is not the primary compiler bottleneck. If `X` is the
+uniform-source eigenvalue law of unnormalized synthesis, then
+`E[X]=1`, `Var(X)=(M-1)/2^k`, and the alternative law is the exact `X`-size
+bias. With a modest copy overhead, all but vanishing alternative mass lies in
+`X in [1-delta,1+delta]`, where the unnormalized polar has constant condition
+number. However, inherited incidence access is `D=S/sqrt(M)`, so the useful
+singular values are still `Theta(M^-1/2)` and Bernstein forces
+`Omega(sqrt(M))` odd-QSVT degree. Canonicalization, QFTs, and coherent unitary
+trims preserve that scale unless they expose a genuinely different access
+normalization.
+
+This supersedes the previous priority sentence: the first target is now a
+`poly(n)`-normalization block encoding, direct orbit-row polar, or structured
+fast-forward of the matrix group-convolution row walk. Continue Foulkes
+support-deficit work only when it can produce such a primitive or a rigorous
+no-go for one. A support classification by itself is no longer sufficient
+progress. Keep the exact `h_12[h_3]` run as diagnostic evidence, not as the
+main architecture.
+
+`coset_hidden_involution_branch_erasure_normalization_no_go.py` closes the
+first apparent normalization shortcut.  Candidate-controlled preparation is
+the exact isometry
+
+`V(direct_sum_h x_h)=sum_h |h>B_h x_h`.
+
+Any normalized one-row operation on the candidate label has coefficients
+`c_h`; agreeing with a common multiple `S/alpha` of the unlabelled synthesis on
+every branch forces `c_h=1/alpha`, hence `alpha>=sqrt(M)`.  The uniform
+homogeneous-space Fourier row attains equality and has success operator
+`S^*S/M`.  Consequently its success remains `Theta(1/M)` even on the
+constant-conditioned alternative bulk, and ordinary amplitude amplification
+still costs `Theta(sqrt(M))`.  Nonuniform label preparation, candidate phases,
+and a branch QFT followed by one clean output row are closed.
+
+Do not broaden this result into an arbitrary-circuit lower bound.  A joint
+candidate/physical multiplicity transform, a decoder retaining a large
+homogeneous-space Fourier sector, multi-round candidate relocation, and a
+direct orbit-row polar remain open.  In particular, counting retained irrep
+*labels* is not enough: one `S_n` sector can have large carrier dimension.  The
+next hard question is whether the full `C[G/K]` Fourier coordinate can couple
+to the physical `S_n` multiplicities through an efficiently implementable
+matrix-Hecke/recoupling transform whose normalization is not inherited from
+one-row erasure.
+
+`coset_hidden_involution_fourier_coefficient_normalization_no_go.py` closes
+the next generic variant.  In the regular row normal form, Schur orthogonality
+gives the exact block identity
+
+`W_nu=sqrt(|G|/d_nu) I_(d_nu) tensor A_nu`,
+
+where `A_nu` is the raw physical Fourier-coefficient matrix of the canonical
+representatives.  A useful constant singular value of `W_nu` occurs at scale
+`sqrt(d_nu/|G|)` in normalization-one access to `A_nu`.  Since
+`d_nu<=sqrt(|G|)`, generic bounded-polynomial polar amplification costs at
+least `|G|^(1/4)` in every sector, the same factorial leading scale as
+`sqrt(M)` for perfect matchings.  Exact `S_3` controls verify all carrier,
+multiplicity, and singular-value factors for one through three copies.
+
+This still is not a recoupling lower bound.  A direct sector block encoding
+already normalized at `sqrt(d_nu/|G|)`, a structured matrix-Hecke
+fast-forward, or a non-QSVT row polar remains open.  The next positive attempt
+must explicitly construct one of those; “prepare `v_o`, apply the physical
+QFT, then run generic QSVT on its coefficients” is now closed.
+
+`coset_hidden_involution_binary_identification_self_reduction.py` materially
+raises the value of the binary compiler target.  Left-coset dephasing for
+`L<=G` obeys `Delta_L(R_h)=R_h` when `h in L` and zero otherwise.  For a
+proposed matching edge `e`, taking `L=S_e x S_(complement(e))` therefore emits
+an exact smaller hidden instance iff `e` is present, and an exact maximally
+mixed null instance otherwise.  Factoring all already-known edge swaps as
+`C_2^t` and retaining every Fourier character positive on their product has
+probability exactly `1/2`; the loss does not compound with recursion depth.
+Testing partners of one remaining vertex at each level needs `m^2-1` binary
+membership tests.  Candidate verification supplies the converse reduction.
+
+Thus, in the explicit fresh-coset-state model, a polynomial worst-case binary
+detector for all smaller perfect-matching instances yields a polynomial hidden
+matching identifier.  This is consistent with and narrower than the published
+Fenner--Zhang decision/search equivalence for permutation-group HSP
+(`arXiv:cs/0610086`); do not claim novelty for the general equivalence.  The
+artifact's value is the exact state-channel recursion and its no-compounding
+ledger.  No efficient detector, graph-isomorphism reduction, or speedup has
+been obtained.
+
+`coset_hidden_involution_rigid_gi_bridge.py` restores the natural-problem
+stakes without inventing a new reduction.  The primary Moore--Russell--Schulman
+construction (`arXiv:quant-ph/0501056`) maps two rigid `n`-vertex graphs to a
+trivial subgroup when nonisomorphic and to `{1,m_alpha}` when isomorphic,
+where `m_alpha` swaps the two vertex blocks and is a fixed-point-free
+involution in `S_(2n)`.  The possible `m_alpha` form a structured
+`S_n wr C_2` class of size `n!` inside the full `(2n-1)!!` matching class.
+
+The same source explicitly observes, and the new finite controls verify as a
+density-matrix identity, that sampling over `S_n wr C_2` or over `S_(2n)` only
+adds a maximally mixed left-transversal register.  Moreover, random full-group
+conjugation turns any fixed structured `m_alpha` into the uniform full
+perfect-matching class while leaving the null invariant.  Therefore a
+polynomial full-class binary detector decides rigid GI; the binary-to-search
+self-reduction would identify `m_alpha` and recover the unique isomorphism.
+
+This bridge is prior art plus an explicit compatibility audit, not a new GI
+algorithm.  It does not handle nonrigid graphs or general GI, and the binary
+detector remains blocked by normalization/recoupling.  It does establish that
+solving the active compiler problem would matter on a natural input family,
+rather than only in an opaque oracle benchmark.
 
 ## Newest High-Reasoning Frontier: Binary Hidden Involutions
 
@@ -118,6 +2663,525 @@ renaming the inverse as a branching transform is not progress. The decisive
 falsifier is that every proposed deflation still leaves constant alternative
 mass at exponentially small normalized singular values. Any survivor must
 also pass a classical query-limited comparison.
+
+### Weak-source deflation is closed (2026-08-13)
+
+`coset_hidden_involution_source_deflation_no_go.py` proves that weak Fourier
+source labels cannot supply the missing structured deflation.  If `p` is the
+Plancherel source law, `q(lambda)=p(lambda)(1+r_lambda)`, and `M` is the
+involution-class size, character-column orthogonality gives exactly
+
+`chi^2(q^k || p^k)=(1+1/M)^k-1`.
+
+At `k=Theta(log M)` this is `o(1)`, even though the full quantum chi-square is
+`(2^k-1)/M=Theta(1)`.  For the conditioned normalized frame
+
+`B_s=E_h tensor_i(I+rho_(lambda_i)(h))/2`,
+
+the exact trace law is `Tr(B_s)/D_s=2^-k ell(s)`.  Markov plus the existing
+global spectral theorem leaves at least one half of alternative mass
+simultaneously in ordinary source blocks and at `A_k` eigenvalue `O(1/M)`.
+The exact block chi-square chain rule
+
+`sum_s p_s ell_s^2 chi^2(sigma_s||I/D_s)`
+`=(2^k-1)/M-[(1+1/M)^k-1]`
+
+shows that essentially all threshold signal is internal to conditional
+multiplicity blocks, not in the source transcript.  This closes source-only
+testing and deletion of exceptional source labels.  It does **not** close a
+coherent source-controlled transform acting inside each block.
+
+Experiment ID:
+`EXP-COSET-HIDDEN-INVOLUTION-SOURCE-DEFLATION-NO-GO`.  The same-stem artifact
+is under `research/representation/`; four exact finite controls pass.
+
+### Proper multiplicity support is now an all-n theorem (2026-08-13)
+
+`coset_hidden_involution_isotypic_support_no_go.py` upgrades the old `S_3/S_4`
+finite witness.  For simultaneous conjugation `U_g`, a direct fixed-point
+count gives
+
+`Tr(U_g rho_h)=|g^G|^-1(1+1[gh is conjugate to g])`.
+
+Writing `s_K=|K|` and
+`z_K=|{h in C:g_K h is conjugate to g_K}|`, the exact diagonal-isotypic laws
+are
+
+`p_nu=d_nu/|G| sum_K chi_nu(K)/s_K^(k-1)`,
+
+`q_nu=d_nu/|G| sum_K chi_nu(K)/s_K^(k-1)`
+`      *[1+(2^k-1)z_K/M]`.
+
+Character bounds imply
+
+`TV(p,q)<=(2^k-1)(p(n)-1)/(2 s_min^(k-1))`.
+
+For fixed-point-free involutions in `S_n`, every even `n>=6`, and
+`k=ceil(log2(4M))`, the elementary inequalities `k>=n`, `2^k<=8M`,
+`M<=n^(n/2)`, `p(n)<=2^(n-1)`, and `s_min>=n(n-1)/2>=n^2/3` give
+
+`TV(p,q)<=4/n^((n-2)/2)<=1/9`.
+
+If the support projector were a union of whole diagonal isotypic sectors,
+perfect alternative acceptance and null acceptance at most `1/4` would force
+label TV at least `3/4`, a contradiction.  Therefore at least one diagonal
+sector has proper nonzero multiplicity support for every even `n>=6`.  This
+proves the scalable proper-support gate that the previous module explicitly
+left open.  It rules out diagonal group/subgroup actions and whole-isotypic
+GPE as support compilers, but not commutant-side recoupling or a fused
+multiplicity transform.
+
+Experiment ID:
+`EXP-COSET-HIDDEN-INVOLUTION-ISOTYPIC-SUPPORT-NO-GO`.  Four exact controls
+compare the class formula with direct regular-basis fixed-point traces; the
+`S_4` fixed-point-free value is exactly `1/6`.  For the odd fixed-point-free
+class in `S_6`, parity makes every `z_K` zero and the isotypic laws identical.
+
+### The proper low-spectrum obstruction has constant mass (2026-08-13)
+
+`coset_hidden_involution_multiplicity_hard_mass.py` rules out the possibility
+that the all-n proper block is negligible.  Put
+`t_nu=rank(S_nu)/dim(M_nu)`.  The support-rank bound and the new isotypic TV
+theorem imply
+
+`E_p[t_nu]<=1/4`,  `E_q[t_nu]<=1/4+epsilon`,  `epsilon<=1/9`.
+
+Markov gives `q{t_nu<=1/2}>=5/18`.  Intersecting this event with the existing
+`3/4` alternative low-spectrum event yields the uniform theorem
+
+`Pr_q[t_nu<=1/2 and lambda(A_k)<=5/M] >= 1/36`.
+
+Thus constant natural mass simultaneously requires a genuinely internal
+multiplicity projector and lives at exponentially small normalization-one
+spectral scale.  Deleting exceptional proper sectors cannot rescue generic
+filtering.  The theorem still does **not** lower-bound a fused support/polar
+isometry.
+
+Experiment ID:
+`EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-HARD-MASS`.  Three finite sector-law
+controls pass.  Across the stored all-n scaling rows, the sharper certified
+intersection lower bound is at least `0.2667`; `1/36` is the uniform theorem,
+not a finite extrapolation.
+
+The focused/adjacent chain for these three modules and the prior multiplicity,
+support-filter, and orbit-hull modules passes 39 tests in 3.25 seconds.  The
+two broader new-module/adjacent runs passed 21 and 38 tests respectively.
+
+### Orbit synthesis is relatively flat on most alternative mass (2026-08-13)
+
+`coset_hidden_involution_orbit_synthesis_flatness.py` studies the unnormalized
+range-synthesis operator
+
+`S: direct_sum_(h in C) ran(P_h) -> H`,  `S((v_h))=sum_h v_h`.
+
+It satisfies `SS*=M A_k`.  If `R=D/2^k` and the eigenvalues of `S*S` are
+normalized over its `MR`-dimensional source (including its kernel), then
+
+`E[x]=1`,  `E[(x-1)^2]=(M-1)/2^k=:eta`.
+
+The alternative state is exactly the size-biased law of `x`.  Consequently
+
+`Pr_alt(|x-1|>delta) <= eta(delta^-2+delta^-1)`.
+
+At `k=ceil(log2(64M))` and `delta=1/2`, at least `29/32` of alternative mass
+has `x in [1/2,3/2]`.  Thus most natural signal is well conditioned after the
+correct relative rescaling.  This defeats any argument that the absolute
+`Theta(1/M)` eigenvalue scale alone is a computational no-go.  It does not
+provide standard-access implementation of the unnormalized `S`, erase the
+branch label, or compile the polar.
+
+Experiment ID:
+`EXP-COSET-HIDDEN-INVOLUTION-ORBIT-SYNTHESIS-FLATNESS`.  Four finite controls
+pass; the six-copy-overhead scaling rows retain at least `0.9093` alternative
+mass in the stated relative window.
+
+### The exact common top outlier is removable but negligible (2026-08-13)
+
+`coset_hidden_involution_common_outlier_deflation.py` proves
+
+`intersection_(h in C) ran(P_h)=C[S_n/<C>]^tensor k`.
+
+For the fixed-point-free involution class in even `n>=6`, its normal closure is
+`S_n` when `n/2` is odd and `A_n` when `n/2` is even.  The common dimension is
+therefore `a^k`, with `a=1` or `2`.  This is exactly the top `SS*` eigenspace
+with eigenvalue `M`, and it can be coherently flagged using the trivial sector,
+or trivial plus sign sectors, of the per-register `S_n` Fourier transform.
+
+Its alternative mass is `(2a/n!)^k`, and its share of centered synthesis
+variance is `((M-1)/M)(4a/n!)^k`.  Both are super-exponentially negligible at
+the flatness threshold.  Deflating this explicit outlier does not prove any
+operator-norm bound for the remainder; pair and higher intersections remain.
+
+Experiment ID:
+`EXP-COSET-HIDDEN-INVOLUTION-COMMON-OUTLIER-DEFLATION`.  Three exact normal-
+closure controls pass.  The stored common-mass and variance-share logarithms
+are already below `-75` on the tested scaling family.
+
+### Every pair polar has a structured phase compiler (2026-08-13)
+
+`coset_hidden_involution_pair_polar_phase_compiler.py` gives the first positive
+compiler primitive on this frontier.  For right-regular involutions `H,G`,
+`P=(I+H)/2`, `Q=(I+G)/2`, and `U=HG`, the exact partial polar is
+
+`polar(QP)=U^(-1/2) supp(PQP)`.
+
+If `r=ord(HG)`, then on every regular dihedral copy
+
+`spec(PQP|ran(P))={cos^2(pi ell/r):0<=ell<r}`.
+
+The phase-`pi` sector is exactly the kernel.  A generic gap-dependent bounded-
+polynomial polar can pay the inverse minimum cosine `Theta(r)`, but phase
+estimation of the explicit permutation `U` resolves the phase and applies the
+half rotation using `O(log r+log(1/epsilon))` controlled powers.  For `S_n`,
+`log r<=log(n!)=O(n log n)`.  The pair polar tensorizes exactly, so the `k`-
+copy pair compiler is polynomial.  This proves that tiny pair singular values
+are not themselves a computational obstruction.  It does not compile the
+full `M`-branch synthesis polar.
+
+Experiment ID:
+`EXP-COSET-HIDDEN-INVOLUTION-PAIR-POLAR-PHASE-COMPILER`.  Five exact dihedral
+controls and five scaling rows pass; the focused/adjacent chain passed 28
+tests after tightening the finite-vs-asymptotic generic-gap claim.
+
+### Canonical pair transport has extensive nontrivial holonomy (2026-08-13)
+
+`coset_hidden_involution_pair_polar_holonomy_no_go.py` proves that efficient
+pair polars do not form a path-independent global alignment.  For the three
+transpositions in the regular representation of `S_3`, every pair product has
+order three, while the canonical pair-polar triangle restricted to the
+starting plus space has exact spectrum
+
+`{1,-1,-1}`.
+
+Its distance from identity is two, and the direct edge differs from the two-
+edge path by norm two.  Vertex gauge changes only conjugate this loop, so the
+spectrum cannot be gauged away.  The regular `S_3` action embeds the witness as
+three fixed-point-free involutions in every even `S_n`, `n>=6`; common
+disjoint swaps extend it without changing the generated `S_3` or pair-product
+orders.  On `k` copies the negative holonomy multiplicity is
+
+`(3^k-(-1)^k)/2`,
+
+so the defect occupies asymptotically one half of the pair-aligned source
+space.  This closes blind spanning-tree composition of canonical pair polars.
+It does not close a path-register architecture, coherent holonomy correction,
+connection-Laplacian quotient, or direct multiplicity/global polar.
+
+Experiment ID:
+`EXP-COSET-HIDDEN-INVOLUTION-PAIR-POLAR-HOLONOMY-NO-GO`.  The exact `S_3`
+control and embeddings through `n=64` pass; the phase-compiler plus holonomy
+chain passes 17 tests.  Keep all algorithm, MRS-escape, global-polar, and
+speedup gates false.
+
+### The nonflat S3 chart nevertheless has a constant-conditioned polar (2026-08-13)
+
+`coset_hidden_involution_s3_chart_gram_compiler.py` proves that pair holonomy
+is not itself a conditioning no-go.  Split each three-dimensional plus fiber
+of the regular `S_3` chart as a common invariant line `T` and a two-dimensional
+standard space `W`.  Pair-overlap magnitude is one on `T` and one half on `W`;
+triangle holonomy is `+1` on `T` and `-1` on `W`.  A `k`-copy sector with `m`
+standard factors has multiplicity `binom(k,m)2^m`, overlap `a=2^-m`, and exact
+three-branch Gram spectrum
+
+`m even: (1+2a,1-a,1-a)`,
+
+`m odd:  (1+a,1+a,1-2a)`.
+
+Only two `m=0` modes and one mode across each of the `2k` internal `m=1`
+directions vanish.  Therefore
+
+`rank(G_k)=3^(k+1)-2(k+1)`.
+
+For every `k>=2`, the nonzero Gram spectrum is contained in `[3/4,3]`, so the
+source-synthesis condition number is at most two.  The Gram commutes with the
+triangle connection Laplacian, but the parallel-section kernel is only one
+connection sector, not the full synthesis support.  A controlled `T/W`
+decomposition, defect-weight counter, parity-dependent three-branch transform,
+and bounded rescaling compile this constant-size chart polar in polynomial
+`k`.  This is a positive local mechanism, not an algorithm: no compatible
+cover, spherical transform, branch-label erasure, or full-class normalization
+has been constructed.
+
+Experiment ID:
+`EXP-COSET-HIDDEN-INVOLUTION-S3-CHART-GRAM-COMPILER`.  Four exact matrix
+controls and five formula-only scaling rows pass; the compiler/holonomy chain
+passes 24 tests.  This result revises any interpretation that nonflatness alone
+closes holonomy-aware synthesis.  It leaves every full-class and speedup gate
+false.
+
+### Global branch covariance is an induced bundle, not pair-polar gluing (2026-08-13)
+
+`coset_hidden_involution_induced_source_bundle_reduction.py` identifies the
+full branch-labeled orbit source exactly.  For `K=Stab(P_0)` and
+`R=ran(P_0)`,
+
+`E=direct_sum_(xK in G/K) ran(U_x P_0 U_x^*) ~= Ind_K^G R`.
+
+The synthesis `S:E->H`, `S((v_x))=sum_x v_x`, is a `G` intertwiner.  Hence
+Frobenius reciprocity gives
+
+`E=direct_sum_nu V_nu tensor Hom_K(V_nu,R)`,
+
+`S=direct_sum_nu I_(V_nu) tensor S_nu`.
+
+This absorbs branch permutation and stabilizer cocycles without composing
+canonical pair polars.  Those pair polars define a different connection: on
+the one-copy regular `S_3` fiber, the stabilizer cocycle has spectrum
+`{1,1,-1}`, whereas the pair-polar triangle has `{1,-1,-1}`.  Pair-polar path
+gluing should therefore be deprioritized as a route to global covariance.
+
+For `k` copies of the exact `S_3` chart, induced-source multiplicities are
+
+`mult(1)=(3^k+1)/2`, `mult(sgn)=(3^k-1)/2`, `mult(std)=3^k`.
+
+Synthesis is injective on the trivial/sign blocks and has standard
+multiplicity rank `3^k-(k+1)`, so its entire kernel is `k+1` standard copies.
+The branch-labeled induced transform can be organized from coherent coset
+factorization, uniform `K` preparation, controlled `K` action, and the `G`
+QFT.  For the symmetric/hyperoctahedral pair those covariance primitives are
+available.  This still starts with a branch-labeled source; it does not compile
+the physical analysis map `S*`, the multiplicity support/polar, or full-class
+normalization.
+
+Experiment ID:
+`EXP-COSET-HIDDEN-INVOLUTION-INDUCED-SOURCE-BUNDLE-REDUCTION`.  Three exact
+equivariance/character/block-rank controls pass; the induced/chart/holonomy
+chain passes 21 tests.  Keep all physical-lift, multiplicity-polar, algorithm,
+and speedup gates false.
+
+### The remaining transfer is matrix-valued Hecke, not scalar spherical (2026-08-13)
+
+`coset_hidden_involution_matrix_hecke_transfer_reduction.py` gives the exact
+operator on the induced multiplicity spaces.  For
+`T in Hom_K(V_nu,R)`, `R=ran(P_0)`, define
+
+`F_nu(T)=|G:K|^-1/2 sum_(xK) U_x T rho_nu(x)^*`.
+
+Then `F_nu(T) in Hom_G(V_nu,H)` and
+
+`<F_nu(T),F_nu(T')>`
+`=|K|^-1 sum_(g in G) Tr[T^* P_0 U_g P_0 T' rho_nu(g)^*]`.
+
+This is a positive matrix-valued Hecke transfer on
+`Hom_K(V_nu,R)`.  It is not the commutative scalar Hecke algebra of `G/K`
+unless the stabilizer fiber is trivial and one-dimensional.  On the regular
+`S_3` chart, the scalar three-branch Hecke algebra has dimension two, while
+
+`dim End_G(Ind_K^G R^tensor k)=(3*9^k+1)/2`.
+
+The standard source multiplicity alone is `3^k`.  Direct normalized coset
+transfer matrices and the group-sum Gram formula agree to about `1e-15` in
+every tested sector, and reproduce the exact induced-source synthesis ranks.
+This proves that outcome-side perfect-matching spherical eigenvalues cannot
+compile the natural physical transfer.  Large matrix dimension is not a
+hardness proof; a succinct centralizer/recoupling transform may still exist.
+
+Experiment ID:
+`EXP-COSET-HIDDEN-INVOLUTION-MATRIX-HECKE-TRANSFER-REDUCTION`.  Two exact
+sector families pass; the matrix-Hecke/induced/chart chain passes 18 tests.
+Keep the uniform matrix-Hecke basis, structured polar, physical source lift,
+algorithm, and speedup gates false.
+
+### Generic hyperoctahedral fusion contains symmetric Kronecker (2026-08-13)
+
+`coset_hyperoctahedral_cg_kronecker_reduction.py` proves that a generic
+`C_2 wr S_m` Clebsch--Gordan transform is not supplied by its efficient QFT.
+The wreath irreps `(lambda,empty)` are inflations of `S_m` Specht modules, so
+
+`(lambda,empty) tensor (mu,empty)`
+`=direct_sum_nu g(lambda,mu,nu)(nu,empty)`.
+
+Thus a uniform wreath CG transform contains the internal symmetric-group
+Kronecker transform on the trivial-color sector.  Five exact character-inner-
+product controls through `m=6` pass.  This is not a quantum lower bound.  Under
+regular `K_m` Plancherel the sector has mass `2^-m`, or `2^(1-m)` conditioned
+on even central parity, so its relevance to the natural source required a
+separate mass theorem.
+
+Experiment ID:
+`EXP-COSET-HYPEROCTAHEDRAL-CG-KRONECKER-REDUCTION`.  The focused/adjacent
+chain passes 19 tests.  Keep natural hard-sector mass, generic/source-specific
+fusion hardness, a uniform CG compiler, algorithm, and speedup gates false.
+
+### The embedded Kronecker sector is negligible under the natural source (2026-08-13)
+
+`coset_hyperoctahedral_trivial_color_mass_no_go.py` supplies the required
+self-critique.  Let `N=(C_2)^m` be the base subgroup of
+`K=C_2 wr S_m`.  The one-copy source fiber is the `K` permutation module
+`C[S_(2m)/<h>]`, and the sum of all `(lambda,empty)` sectors is exactly its
+`N`-invariant subspace.  For a base element flipping `t` matching pairs,
+
+`chi_R(a)=|C_G(a)|/2 (1+1[2t=m])`,
+
+`|C_G(a)|=2^t t!(2m-2t)!`.
+
+Burnside projection gives the exact `k`-copy source fraction
+
+`w_(m,k)=2^-m sum_t binom(m,t)`
+` [2^t t!(2m-2t)!/(2m)! (1+1[2t=m])]^k`.
+
+Every nonidentity normalized character is at most `1/3` for `m>=2`, so at
+`k>=m`, `w_(m,k)<=2^(1-m)`.  Source fraction alone does not control the
+alternative size-biased law, so the theorem additionally uses the exact frame
+moment `E[x^2]=1+(M-1)/2^k`: Cauchy--Schwarz bounds alternative contribution
+by `sqrt((1+eta)w)`.  At the six-copy flatness overhead this vanishes as
+`2^((1-m)/2)`.  Hence the ordinary-Kronecker embedded sector is not the
+natural compiler bottleneck; source-heavy colored sectors are.
+
+Experiment ID:
+`EXP-COSET-HYPEROCTAHEDRAL-TRIVIAL-COLOR-MASS-NO-GO`.  Five direct coset-
+fixed-point/Burnside controls pass; the mass/CG/matrix-Hecke chain passes 21
+tests.  Keep colored-sector classification/fusion, full matrix-Hecke polar,
+algorithm, and speedup gates false.
+
+### Natural base colors concentrate in balanced bands (2026-08-13)
+
+`coset_hyperoctahedral_color_weight_concentration.py` Fourier-inverts the full
+base group `N=(C_2)^m`.  If `q_t` is the normalized source character at a base
+element of weight `t`, the exact `k`-copy color-weight law is
+
+`p_(m,k)(r)=binom(m,r)2^-m sum_t K_t(r)q_t^k`,
+
+with binary Krawtchouk polynomial `K_t`.  Since every nonidentity `q_t<=1/3`,
+
+`TV(p_color,Uniform(F_2^m))<=((2^m-1)/2)3^-k`.
+
+At `k>=m`, source color weight is exponentially close to
+`Binomial(m,1/2)`.  Hoeffding plus the global frame second moment transfers
+this to alternative contribution: asymptotically all signal has color size in
+`[m/4,3m/4]`.  The next target is residual `S_r times S_(m-r)` multiplicity on
+balanced colors, not the all-trivial sector.
+
+Experiment ID:
+`EXP-COSET-HYPEROCTAHEDRAL-COLOR-WEIGHT-CONCENTRATION`.  Five exact integral
+Fourier controls pass; the color/trivial/CG chain passes 24 tests.  Keep
+balanced residual fusion, matrix-Hecke polar, algorithm, and speedup false.
+
+### The complete K-irrep source law is wreath-Plancherel typical (2026-08-13)
+
+`coset_hyperoctahedral_source_plancherel_typicality.py` upgrades color
+concentration to every bipartition.  For `x in K=C_2 wr S_m`,
+
+`q_x=chi_R(x)/dim(R)=(1+1[xh~x])/|x^{S_(2m)}|`.
+
+For `m>=3`, nonidentity `q_x<=4/((2m)(2m-1))`.  The `k`-copy source irrep law
+satisfies
+
+`TV(p_k,Plancherel(K))<=((|K|-1)/2)q_max^k`.
+
+Wreath Plancherel has an explicit hierarchy: draw
+`r~Binomial(m,1/2)`, then independently draw `alpha` and `beta` from ordinary
+Plancherel on `S_(m-r)` and `S_r`.  The actual source is therefore not confined
+to an exceptional easy family.  Frame-second-moment transfer gives the same
+typical-set conclusion for alternative contribution, but QFT labels still do
+not resolve repeated multiplicity copies.
+
+Experiment ID:
+`EXP-COSET-HYPEROCTAHEDRAL-SOURCE-PLANCHEREL-TYPICALITY`.  Three exact
+character/dimension/factorization controls pass; the typicality/color/mass
+chain passes 22 tests.  Keep typical multiplicity transfer/polar, algorithm,
+and speedup false.
+
+### Typical source basis tuples form exact free K orbits (2026-08-13)
+
+`coset_hyperoctahedral_free_orbit_canonicalization_boundary.py` gives the
+concrete module behind Plancherel typicality.  The plus fiber has permutation
+basis `X=S_(2m)/<h>` under `K` conjugation, and the `k`-copy source is
+`C[X^k]`.  Its nonfree tuple fraction is bounded by
+
+`sum_(x!=e)q_x^k <= (|K|-1)q_max^k`.
+
+Hence asymptotically all source basis tuples lie in free `K` orbits and
+
+`C[X^k_free] ~= C[K] tensor C[O_free]`.
+
+The same frame moment proves asymptotically full alternative contribution on
+this exact regular module.  This converts the abstract multiplicity-basis
+question into coherent orbit representative/transporter computation.  It does
+not assume such a canonicalizer is efficient.
+
+Experiment ID:
+`EXP-COSET-HYPEROCTAHEDRAL-FREE-ORBIT-CANONICALIZATION-BOUNDARY`.  Five exact
+free-tuple/orbit controls pass; the free/Plancherel/color chain passes 22 tests.
+
+### A polynomial canonicalizer resolves the trimmed source basis (2026-08-13)
+
+`coset_hyperoctahedral_trimmed_orbit_canonicalizer.py` constructs the missing
+canonicalizer on asymptotically full mass.  For a coordinate pair, enumerate
+the four right-`<h>` orientations.  If the ordered permutation action generated
+by `(h,p,q)` is transitive, an ordered breadth-first traversal from one of
+`2m` roots gives a unique labeling.  Normalize the transformed matching back
+to canonical `h`, transform the full tuple, and take the lexicographic minimum
+over polynomially many seed pairs/orientations/roots.  On free tuples the
+transporter is unique and obeys the exact covariance law.
+
+For independent uniformly oriented seed cosets, `p,q` are independent uniform
+permutations.  A common-invariant-subset union bound gives
+
+`delta_n<=sum_(s<=n/2)1/binom(n,s)`
+
+for one pair to be intransitive.  Disjoint seed pairs amplify to `delta_n^L`.
+Combining this with the nonfree bound and frame second moment proves polynomial
+canonicalization on `1-o(1)` source and alternative contribution.  A
+deterministic polynomial map has a reversible polynomial implementation on
+the coherently flagged good set; a gate-level workspace/error ledger is still
+owed.
+
+Experiment ID:
+`EXP-COSET-HYPEROCTAHEDRAL-TRIMMED-ORBIT-CANONICALIZER`.  Three exact
+reconstruction/covariance/uniqueness controls pass; the canonicalizer/free/
+Plancherel chain passes 20 tests.  This is a positive source-basis compiler,
+not the physical transfer polar or an algorithm.
+
+### Trimmed induction yields regular S_n row frames (2026-08-13)
+
+`coset_hidden_involution_regular_orbit_row_reduction.py` removes generic
+hyperoctahedral fusion from the active architecture.  On the canonicalized
+source,
+
+`Ind_K^G(C[K] tensor C[O]) ~= C[G] tensor C[O]`.
+
+For canonical orbit representative vectors `v_o`, synthesis becomes
+
+`W|g,o>=U_g|v_o>`,
+
+and its Gram is matrix group convolution
+
+`<g,o|W^*W|g',o'>=<v_o|U_(g^-1 g')|v_o'>`.
+
+The `S_n` QFT removes the regular carrier coordinate, leaving only a
+source-specific row-frame operator in each physical multiplicity block.
+Generic `C_2 wr S_m` Clebsch--Gordan fusion and a separate subduction basis are
+therefore unnecessary on trimmed high mass.  The exact regular `S_3` two-copy
+control has source dimension 24, rank 20, 12 nonzero cross-orbit blocks, and
+maximum cross overlap `1/4`; canonicalization is not itself the polar.
+
+Experiment ID:
+`EXP-COSET-HIDDEN-INVOLUTION-REGULAR-ORBIT-ROW-REDUCTION`.  The regular-row/
+canonicalizer/matrix-Hecke chain passes 14 tests.  Keep row polar, group/orbit
+label erasure, full synthesis polar, algorithm, and speedup false.
+
+**Revised current high-judgment target.** Source weighting, whole-isotypic
+routing, negligible proper sectors, absolute-scale filtering, and blind
+pairwise alignment are closed.  The geometry is nevertheless relatively flat
+after natural rescaling, the common top outlier is explicitly removable, and
+every local pair polar is efficiently compilable.  The exact `S_3` chart shows
+that defect weight plus holonomy parity can compile a nonflat local Gram with
+constant conditioning, while the induced-bundle theorem removes pairwise chart
+gluing as a separate covariance problem.  The surviving question is now
+strictly the **orbit-representative row-frame polar** after the regular
+`S_n` coordinate has been Fourier transformed.  Source basis, stabilizer
+fusion, and branch covariance are solved on asymptotically full natural mass.
+The next decisive theorem should derive a succinct block encoding and spectral
+normal form for the matrix kernels
+`<v_o|U_g|v_o'>`, including the exact normalization inherited after carrier
+transfer.  Try to prove a post-common-deflation operator-norm/condition bound
+on constant alternative mass; otherwise reduce structured label erasure to a
+matched index-erasure/adversary problem without importing black-box lower
+bounds into the natural model.  Any positive compiler must specify physical
+analysis access, orbit-copy handling, phase precision, garbage uncomputation,
+and how it avoids measured-sieve restrictions.  It must still face a matched
+classical query/sample model.
 
 ## DCP Adaptive-Linear Affine-Flat Boundary
 

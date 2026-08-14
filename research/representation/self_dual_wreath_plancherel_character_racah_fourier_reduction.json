@@ -1,0 +1,431 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A few low-support character coefficients represent the full partition label.",
+      "resolution": "Completeness requires all p(n) conjugacy-class modes; low support contains only p(s)-1 nonconstant modes.",
+      "resolved": true
+    },
+    {
+      "objection": "The identity-coupling tail models the natural Racah associator.",
+      "resolution": "It is only an exact marginally correct countermodel showing that Parseval tails cannot be omitted abstractly.",
+      "resolved": true
+    },
+    {
+      "objection": "A collision bound is necessary for sublogarithmic mutual information.",
+      "resolution": "It is sufficient but not necessary; fractional moments remain the preferred fallback for sparse spikes.",
+      "resolved": true
+    },
+    {
+      "objection": "The character sum is already an efficient estimator.",
+      "resolution": "The exact sum has factorial support as written; it is an analytic representation, not a polynomial algorithm.",
+      "resolved": true
+    }
+  ],
+  "basis_controls": [
+    {
+      "basis_is_square": true,
+      "conjugacy_class_count": 3,
+      "exact_plancherel_character_basis_verified": true,
+      "maximum_constant_mode_residual": 0.0,
+      "maximum_orthonormality_residual": 1.1102230246251565e-16,
+      "n": 3,
+      "partition_count": 3,
+      "status": "complete-plancherel-character-basis-verified"
+    },
+    {
+      "basis_is_square": true,
+      "conjugacy_class_count": 5,
+      "exact_plancherel_character_basis_verified": true,
+      "maximum_constant_mode_residual": 0.0,
+      "maximum_orthonormality_residual": 3.3306690738754696e-16,
+      "n": 4,
+      "partition_count": 5,
+      "status": "complete-plancherel-character-basis-verified"
+    },
+    {
+      "basis_is_square": true,
+      "conjugacy_class_count": 7,
+      "exact_plancherel_character_basis_verified": true,
+      "maximum_constant_mode_residual": 0.0,
+      "maximum_orthonormality_residual": 2.220446049250313e-16,
+      "n": 5,
+      "partition_count": 7,
+      "status": "complete-plancherel-character-basis-verified"
+    },
+    {
+      "basis_is_square": true,
+      "conjugacy_class_count": 11,
+      "exact_plancherel_character_basis_verified": true,
+      "maximum_constant_mode_residual": 0.0,
+      "maximum_orthonormality_residual": 2.220446049250313e-16,
+      "n": 6,
+      "partition_count": 11,
+      "status": "complete-plancherel-character-basis-verified"
+    },
+    {
+      "basis_is_square": true,
+      "conjugacy_class_count": 22,
+      "exact_plancherel_character_basis_verified": true,
+      "maximum_constant_mode_residual": 0.0,
+      "maximum_orthonormality_residual": 3.3306690738754696e-16,
+      "n": 8,
+      "partition_count": 22,
+      "status": "complete-plancherel-character-basis-verified"
+    },
+    {
+      "basis_is_square": true,
+      "conjugacy_class_count": 42,
+      "exact_plancherel_character_basis_verified": true,
+      "maximum_constant_mode_residual": 0.0,
+      "maximum_orthonormality_residual": 4.440892098500626e-16,
+      "n": 10,
+      "partition_count": 42,
+      "status": "complete-plancherel-character-basis-verified"
+    }
+  ],
+  "character_sum_controls": [
+    {
+      "character_sum_fourier_coefficient": 0.16666666666666666,
+      "coupling_fourier_coefficient": 0.1666666666666664,
+      "exact_character_sum_formula_verified": true,
+      "formula_residual": 2.498001805406602e-16,
+      "left_class_size": 6,
+      "left_cycle_type": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "outer_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "right_class_size": 6,
+      "right_cycle_type": [
+        2,
+        1,
+        1
+      ],
+      "status": "natural-racah-character-sum-formula-verified"
+    },
+    {
+      "character_sum_fourier_coefficient": 0.0,
+      "coupling_fourier_coefficient": 2.42861286636753e-16,
+      "exact_character_sum_formula_verified": true,
+      "formula_residual": 2.42861286636753e-16,
+      "left_class_size": 6,
+      "left_cycle_type": [
+        2,
+        1,
+        1
+      ],
+      "n": 4,
+      "outer_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "right_class_size": 8,
+      "right_cycle_type": [
+        3,
+        1
+      ],
+      "status": "natural-racah-character-sum-formula-verified"
+    },
+    {
+      "character_sum_fourier_coefficient": 0.0,
+      "coupling_fourier_coefficient": 1.3183898417423734e-16,
+      "exact_character_sum_formula_verified": true,
+      "formula_residual": 1.3183898417423734e-16,
+      "left_class_size": 8,
+      "left_cycle_type": [
+        3,
+        1
+      ],
+      "n": 4,
+      "outer_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "right_class_size": 6,
+      "right_cycle_type": [
+        2,
+        1,
+        1
+      ],
+      "status": "natural-racah-character-sum-formula-verified"
+    },
+    {
+      "character_sum_fourier_coefficient": 0.0,
+      "coupling_fourier_coefficient": 1.1102230246251565e-16,
+      "exact_character_sum_formula_verified": true,
+      "formula_residual": 1.1102230246251565e-16,
+      "left_class_size": 8,
+      "left_cycle_type": [
+        3,
+        1
+      ],
+      "n": 4,
+      "outer_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "right_class_size": 8,
+      "right_cycle_type": [
+        3,
+        1
+      ],
+      "status": "natural-racah-character-sum-formula-verified"
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "classical_separation_proved": false,
+    "efficient_classical_estimator_proved": false,
+    "low_support_fourier_modes_control_full_label_tail": false,
+    "natural_racah_collision_subpolynomial_proved": false,
+    "natural_racah_fourier_coefficient_formula_proved": true,
+    "natural_racah_mutual_information_sublogarithmic_proved": false,
+    "plancherel_character_basis_complete_proved": true,
+    "reason": "The exact Fourier reduction exposes, but does not bound, the growing-support class-pair tail.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-14T01:31:11.853422+00:00",
+  "falsifiers_triggered": [
+    "Fixed-support character modes are not a complete projector basis.",
+    "Plancherel marginals do not bound the diagonal Fourier tail.",
+    "An exact character sum is not by itself a scalable transform or estimator."
+  ],
+  "headline_metrics": {
+    "complete_plancherel_character_basis_theorem_count": 1,
+    "efficient_character_sum_estimator_count": 0,
+    "exact_natural_racah_character_sum_identity_count": 4,
+    "finite_control_failure_count": 0,
+    "growing_support_character_tail_theorem_count": 0,
+    "identity_coupling_tail_countermodel_count": 9,
+    "new_quantum_algorithm_count": 0
+  },
+  "identity_tail_controls": [
+    {
+      "exact_tail_decomposition_verified": true,
+      "full_identity_coupling_chi_square": 41,
+      "identity_coupling_mutual_information_bits": 4.2649140460084025,
+      "maximum_moved_support": 2,
+      "n": 10,
+      "omitted_diagonal_energy": 40,
+      "omitted_nonconstant_mode_count": 40,
+      "partition_count": 42,
+      "retained_energy_fraction": 0.024390243902439025,
+      "retained_low_support_diagonal_energy": 1,
+      "retained_nonconstant_mode_count": 1,
+      "status": "low-support-fourier-truncation-misses-projector-tail"
+    },
+    {
+      "exact_tail_decomposition_verified": true,
+      "full_identity_coupling_chi_square": 41,
+      "identity_coupling_mutual_information_bits": 4.2649140460084025,
+      "maximum_moved_support": 3,
+      "n": 10,
+      "omitted_diagonal_energy": 39,
+      "omitted_nonconstant_mode_count": 39,
+      "partition_count": 42,
+      "retained_energy_fraction": 0.04878048780487805,
+      "retained_low_support_diagonal_energy": 2,
+      "retained_nonconstant_mode_count": 2,
+      "status": "low-support-fourier-truncation-misses-projector-tail"
+    },
+    {
+      "exact_tail_decomposition_verified": true,
+      "full_identity_coupling_chi_square": 41,
+      "identity_coupling_mutual_information_bits": 4.2649140460084025,
+      "maximum_moved_support": 4,
+      "n": 10,
+      "omitted_diagonal_energy": 37,
+      "omitted_nonconstant_mode_count": 37,
+      "partition_count": 42,
+      "retained_energy_fraction": 0.0975609756097561,
+      "retained_low_support_diagonal_energy": 4,
+      "retained_nonconstant_mode_count": 4,
+      "status": "low-support-fourier-truncation-misses-projector-tail"
+    },
+    {
+      "exact_tail_decomposition_verified": true,
+      "full_identity_coupling_chi_square": 626,
+      "identity_coupling_mutual_information_bits": 7.2512585010315584,
+      "maximum_moved_support": 2,
+      "n": 20,
+      "omitted_diagonal_energy": 625,
+      "omitted_nonconstant_mode_count": 625,
+      "partition_count": 627,
+      "retained_energy_fraction": 0.001597444089456869,
+      "retained_low_support_diagonal_energy": 1,
+      "retained_nonconstant_mode_count": 1,
+      "status": "low-support-fourier-truncation-misses-projector-tail"
+    },
+    {
+      "exact_tail_decomposition_verified": true,
+      "full_identity_coupling_chi_square": 626,
+      "identity_coupling_mutual_information_bits": 7.2512585010315584,
+      "maximum_moved_support": 3,
+      "n": 20,
+      "omitted_diagonal_energy": 624,
+      "omitted_nonconstant_mode_count": 624,
+      "partition_count": 627,
+      "retained_energy_fraction": 0.003194888178913738,
+      "retained_low_support_diagonal_energy": 2,
+      "retained_nonconstant_mode_count": 2,
+      "status": "low-support-fourier-truncation-misses-projector-tail"
+    },
+    {
+      "exact_tail_decomposition_verified": true,
+      "full_identity_coupling_chi_square": 626,
+      "identity_coupling_mutual_information_bits": 7.2512585010315584,
+      "maximum_moved_support": 4,
+      "n": 20,
+      "omitted_diagonal_energy": 622,
+      "omitted_nonconstant_mode_count": 622,
+      "partition_count": 627,
+      "retained_energy_fraction": 0.006389776357827476,
+      "retained_low_support_diagonal_energy": 4,
+      "retained_nonconstant_mode_count": 4,
+      "status": "low-support-fourier-truncation-misses-projector-tail"
+    },
+    {
+      "exact_tail_decomposition_verified": true,
+      "full_identity_coupling_chi_square": 5603,
+      "identity_coupling_mutual_information_bits": 9.644870943873077,
+      "maximum_moved_support": 2,
+      "n": 30,
+      "omitted_diagonal_energy": 5602,
+      "omitted_nonconstant_mode_count": 5602,
+      "partition_count": 5604,
+      "retained_energy_fraction": 0.0001784758165268606,
+      "retained_low_support_diagonal_energy": 1,
+      "retained_nonconstant_mode_count": 1,
+      "status": "low-support-fourier-truncation-misses-projector-tail"
+    },
+    {
+      "exact_tail_decomposition_verified": true,
+      "full_identity_coupling_chi_square": 5603,
+      "identity_coupling_mutual_information_bits": 9.644870943873077,
+      "maximum_moved_support": 3,
+      "n": 30,
+      "omitted_diagonal_energy": 5601,
+      "omitted_nonconstant_mode_count": 5601,
+      "partition_count": 5604,
+      "retained_energy_fraction": 0.0003569516330537212,
+      "retained_low_support_diagonal_energy": 2,
+      "retained_nonconstant_mode_count": 2,
+      "status": "low-support-fourier-truncation-misses-projector-tail"
+    },
+    {
+      "exact_tail_decomposition_verified": true,
+      "full_identity_coupling_chi_square": 5603,
+      "identity_coupling_mutual_information_bits": 9.644870943873077,
+      "maximum_moved_support": 4,
+      "n": 30,
+      "omitted_diagonal_energy": 5599,
+      "omitted_nonconstant_mode_count": 5599,
+      "partition_count": 5604,
+      "retained_energy_fraction": 0.0007139032661074424,
+      "retained_low_support_diagonal_energy": 4,
+      "retained_nonconstant_mode_count": 4,
+      "status": "low-support-fourier-truncation-misses-projector-tail"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_multiplicity_gauge_free_racah_fourier_coefficients",
+      "resolution": "Insert pair-channel central class sums and the final isotypic projector, then expand the trace.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_growing_support_character_sum_tail_under_physical_outer_law",
+      "resolution": "Need uniform cancellation after summing all class pairs that carry nonnegligible Fourier energy.",
+      "resolved": false
+    },
+    {
+      "obligation": "replace_collision_tail_by_fractional_or_entropy_tail_if_l2_is_spiky",
+      "resolution": "The exact L2 expansion may be too tail-sensitive; a truncated information inequality is still needed.",
+      "resolved": false
+    },
+    {
+      "obligation": "control_conditional_marginal_modes",
+      "resolution": "Five-label estimates control their physical average asymptotically, but no growing-support uniform rate is inserted here.",
+      "resolved": false
+    }
+  ],
+  "status": "natural-racah-fourier-tail-is-now-explicit-and-uncontrolled",
+  "summary": "Constructed the complete Plancherel label Fourier basis and removed multiplicity gauges from every natural Racah coefficient.",
+  "theorem": {
+    "full_growing_support_tail_control_proved": false,
+    "low_support_mode_count": "number of nonconstant class modes moving <=s is p(s)-1",
+    "natural_racah_character_sum": "hat L_o(C,D)=(M|G|sqrt(|C||D|))^-1 sum_(h,g,k) chi_lambda(h^-1)chi_alpha(hg)chi_beta(hgk)chi_gamma(hk)",
+    "orthonormal_basis": "phi_C(lambda)=sqrt(|C|)chi_lambda(C)/d_lambda is a complete orthonormal Plancherel basis",
+    "parseval_identity": "chi2(pi||q^2)=sum_((C,D)!=(e,e))(E_pi phi_C phi_D)^2",
+    "status": "racah-label-collision-reduced-to-explicit-character-fourier-tail"
+  },
+  "theorem_contract": {
+    "coefficient": "hat L_o(C,D)=E_(pi_o) phi_C(mu)phi_D(nu)",
+    "collision_scope": "the q^2-relative collision includes one-sided marginal modes",
+    "entropy_bridge": "D(pi_o||q^2)<=log2(1+chi2(pi_o||q^2))",
+    "identity_mode": "C=1^n gives phi_C=1",
+    "reference_measure": "q(lambda)=d_lambda^2/n!",
+    "scope": "rank-label collision reduction; no orientation-syndrome estimate"
+  }
+}

@@ -1,0 +1,237 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False: at least 5/18 lies in sectors with support fraction at most one half.",
+      "challenge": "Only negligible alternative mass sees proper support.",
+      "resolved": true
+    },
+    {
+      "answer": "False: the two mass bounds force at least 1/36 in their intersection.",
+      "challenge": "The low spectrum may occur only in full sectors.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It makes multiplicity-side structure unavoidable but does not bound a structured coherent transform.",
+      "challenge": "Constant hard mass proves the support is inefficient.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "arbitrary_quantum_lower_bound_proved": false,
+    "classical_separation_proved": false,
+    "constant_alternative_mass_in_proper_multiplicity_sectors_proved": true,
+    "constant_alternative_mass_simultaneously_proper_and_low_spectrum_proved": true,
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "exceptional_proper_sector_deflation_rescues_generic_filter": false,
+    "fused_multiplicity_support_transform_constructed": false,
+    "fused_multiplicity_support_transform_refuted": false,
+    "reason": "The hard multiplicity and low-spectrum structure has constant natural mass, but no theorem yet constructs or excludes a fused multiplicity-support transform.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T15:36:46.234335+00:00",
+  "falsifiers_triggered": [
+    "The all-n proper-support theorem is not driven by one negligible isotypic sector.",
+    "Removing exceptional multiplicity sectors cannot eliminate all low-spectrum alternative mass.",
+    "A surviving compiler must handle constant natural mass inside proper multiplicity support.",
+    "No arbitrary-circuit lower bound or speedup follows from the constant hard-mass theorem."
+  ],
+  "finite_controls": [
+    {
+      "alternative_average_support_fraction": 0.5833333333333333,
+      "copy_count": 2,
+      "expectation_transfer_residual": 0.0,
+      "expectation_transfer_upper_bound": 0.5833333333333334,
+      "finite_control_verified": true,
+      "isotypic_total_variation": 0.0,
+      "markov_bound_residual": 0.0,
+      "markov_lower_bound": 0.0,
+      "n": 3,
+      "observed_alternative_mass_at_or_below_threshold": 0.3055555555555555,
+      "sector_count": 3,
+      "status": "multiplicity-support-mass-transfer-verified",
+      "support_fraction_threshold": 0.5,
+      "support_null_mass": 0.5833333333333334,
+      "transposition_count": 1
+    },
+    {
+      "alternative_average_support_fraction": 0.3379629629629629,
+      "copy_count": 3,
+      "expectation_transfer_residual": 0.0,
+      "expectation_transfer_upper_bound": 0.33796296296296297,
+      "finite_control_verified": true,
+      "isotypic_total_variation": 0.0,
+      "markov_bound_residual": 0.0,
+      "markov_lower_bound": 0.32407407407407407,
+      "n": 3,
+      "observed_alternative_mass_at_or_below_threshold": 0.9999999999999999,
+      "sector_count": 3,
+      "status": "multiplicity-support-mass-transfer-verified",
+      "support_fraction_threshold": 0.5,
+      "support_null_mass": 0.33796296296296297,
+      "transposition_count": 1
+    },
+    {
+      "alternative_average_support_fraction": 0.6575657192860247,
+      "copy_count": 2,
+      "expectation_transfer_residual": 0.0,
+      "expectation_transfer_upper_bound": 0.7916666666666667,
+      "finite_control_verified": true,
+      "isotypic_total_variation": 0.16666666666666669,
+      "markov_bound_residual": 0.0,
+      "markov_lower_bound": 0.0,
+      "n": 4,
+      "observed_alternative_mass_at_or_below_threshold": 0,
+      "sector_count": 5,
+      "status": "multiplicity-support-mass-transfer-verified",
+      "support_fraction_threshold": 0.5,
+      "support_null_mass": 0.625,
+      "transposition_count": 2
+    }
+  ],
+  "headline_metrics": {
+    "arbitrary_circuit_lower_bound_count": 0,
+    "constant_proper_low_spectrum_intersection_theorem_count": 1,
+    "constant_proper_sector_mass_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "fused_multiplicity_transform_no_go_count": 0,
+    "minimum_alternative_half_support_mass_lower_bound": 0.5167195796966553,
+    "minimum_simultaneous_proper_low_spectrum_mass_lower_bound": 0.2667195796966553,
+    "new_quantum_algorithm_count": 0,
+    "uniform_simultaneous_hard_mass_lower_bound": 0.027777777777777776
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-TYPICAL-MULTIPLICITY-BASIS",
+      "resolved": false,
+      "statement": "Find a uniform basis or succinct relation description for the proper support on the constant-mass typical sectors."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-FUSED-POLAR-COMPILER",
+      "resolved": false,
+      "statement": "Construct or obstruct a fused polar/support isometry that does not expose a standalone inverse at scale 1/M."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-END-TO-END-SEPARATION",
+      "resolved": false,
+      "statement": "Provide a structured input reduction, polynomial gate audit, and legal classical lower bound for any surviving transform."
+    }
+  ],
+  "scaling_records": [
+    {
+      "alternative_low_spectrum_mass_lower_bound": 0.75,
+      "alternative_mass_in_half_support_sectors_lower_bound": 0.5286781481481482,
+      "conjugacy_class_size": 15,
+      "copy_count": 6,
+      "elementary_isotypic_total_variation_upper_bound": 0.1111111111111111,
+      "fused_multiplicity_transform_ruled_out": false,
+      "isotypic_total_variation_upper_bound": 0.0012859259259259258,
+      "low_spectrum_eigenvalue_upper_bound_times_class_size": 5.0,
+      "n": 6,
+      "negligible_proper_sector_escape_possible": false,
+      "simultaneous_half_support_and_low_spectrum_mass_lower_bound": 0.2786781481481482,
+      "status": "constant-proper-low-spectrum-mass-proved-fused-transform-open",
+      "support_fraction_threshold": 0.5,
+      "support_null_mass_upper_bound": 0.234375,
+      "uniform_half_support_mass_lower_bound": 0.2777777777777778,
+      "uniform_simultaneous_hard_mass_lower_bound": 0.027777777777777776
+    },
+    {
+      "alternative_low_spectrum_mass_lower_bound": 0.75,
+      "alternative_mass_in_half_support_sectors_lower_bound": 0.5898435782248366,
+      "conjugacy_class_size": 105,
+      "copy_count": 9,
+      "elementary_isotypic_total_variation_upper_bound": 0.0078125,
+      "fused_multiplicity_transform_ruled_out": false,
+      "isotypic_total_variation_upper_bound": 8.588758170395322e-08,
+      "low_spectrum_eigenvalue_upper_bound_times_class_size": 5.0,
+      "n": 8,
+      "negligible_proper_sector_escape_possible": false,
+      "simultaneous_half_support_and_low_spectrum_mass_lower_bound": 0.3398435782248366,
+      "status": "constant-proper-low-spectrum-mass-proved-fused-transform-open",
+      "support_fraction_threshold": 0.5,
+      "support_null_mass_upper_bound": 0.205078125,
+      "uniform_half_support_mass_lower_bound": 0.2777777777777778,
+      "uniform_simultaneous_hard_mass_lower_bound": 0.027777777777777776
+    },
+    {
+      "alternative_low_spectrum_mass_lower_bound": 0.75,
+      "alternative_mass_in_half_support_sectors_lower_bound": 0.5167195796966553,
+      "conjugacy_class_size": 2027025,
+      "copy_count": 23,
+      "elementary_isotypic_total_variation_upper_bound": 1.4901161193847656e-08,
+      "fused_multiplicity_transform_ruled_out": false,
+      "isotypic_total_variation_upper_bound": 2.4894827477037173e-35,
+      "low_spectrum_eigenvalue_upper_bound_times_class_size": 5.0,
+      "n": 16,
+      "negligible_proper_sector_escape_possible": false,
+      "simultaneous_half_support_and_low_spectrum_mass_lower_bound": 0.2667195796966553,
+      "status": "constant-proper-low-spectrum-mass-proved-fused-transform-open",
+      "support_fraction_threshold": 0.5,
+      "support_null_mass_upper_bound": 0.24164021015167236,
+      "uniform_half_support_mass_lower_bound": 0.2777777777777778,
+      "uniform_simultaneous_hard_mass_lower_bound": 0.027777777777777776
+    },
+    {
+      "alternative_low_spectrum_mass_lower_bound": 0.75,
+      "alternative_mass_in_half_support_sectors_lower_bound": 0.6671086744488313,
+      "conjugacy_class_size": 191898783962510625,
+      "copy_count": 60,
+      "elementary_isotypic_total_variation_upper_bound": 1.0587911840678754e-22,
+      "fused_multiplicity_transform_ruled_out": false,
+      "isotypic_total_variation_upper_bound": 1.1462535577181463e-132,
+      "low_spectrum_eigenvalue_upper_bound_times_class_size": 5.0,
+      "n": 32,
+      "negligible_proper_sector_escape_possible": false,
+      "simultaneous_half_support_and_low_spectrum_mass_lower_bound": 0.41710867444883126,
+      "status": "constant-proper-low-spectrum-mass-proved-fused-transform-open",
+      "support_fraction_threshold": 0.5,
+      "support_null_mass_upper_bound": 0.1664456627755844,
+      "uniform_half_support_mass_lower_bound": 0.2777777777777778,
+      "uniform_simultaneous_hard_mass_lower_bound": 0.027777777777777776
+    },
+    {
+      "alternative_low_spectrum_mass_lower_bound": 0.75,
+      "alternative_mass_in_half_support_sectors_lower_bound": 0.6853368175422869,
+      "conjugacy_class_size": 112275575285571389562324404930670903477890625,
+      "copy_count": 149,
+      "elementary_isotypic_total_variation_upper_bound": 4.078315292499078e-56,
+      "fused_multiplicity_transform_ruled_out": false,
+      "isotypic_total_variation_upper_bound": 0.0,
+      "low_spectrum_eigenvalue_upper_bound_times_class_size": 5.0,
+      "n": 64,
+      "negligible_proper_sector_escape_possible": false,
+      "simultaneous_half_support_and_low_spectrum_mass_lower_bound": 0.4353368175422869,
+      "status": "constant-proper-low-spectrum-mass-proved-fused-transform-open",
+      "support_fraction_threshold": 0.5,
+      "support_null_mass_upper_bound": 0.15733159122885657,
+      "uniform_half_support_mass_lower_bound": 0.2777777777777778,
+      "uniform_simultaneous_hard_mass_lower_bound": 0.027777777777777776
+    }
+  ],
+  "status": "constant-multiplicity-hard-mass-proved-fused-transform-open",
+  "summary": "Proved that proper multiplicity support is a constant-mass, not exceptional, phenomenon and that at least 1/36 of alternative mass is simultaneously proper and at O(1/M) spectral scale.",
+  "theorem": {
+    "arbitrary_circuit_lower_bound_proved": false,
+    "compiler_consequence": "Deleting exceptional proper sectors cannot regularize the generic normalization-one support filter; constant hard mass remains inside genuinely multiplicity-selective sectors.",
+    "constant_proper_low_spectrum_intersection_proved": true,
+    "constant_proper_sector_mass_proved": true,
+    "distribution_transfer": "For 0<=t_nu<=1, E_q[t_nu]<=E_p[t_nu]+TV(p,q).",
+    "fused_multiplicity_transform_refuted": false,
+    "low_spectrum_intersection": "At least 1/36 alternative mass simultaneously has t_nu<=1/2 and lambda(A_k)<=5/M.",
+    "negligible_exceptional_sector_escape_refuted": true,
+    "proper_sector_mass_bound": "At k=ceil(log2(4M)), q{t_nu<=1/2}>=5/18 for every even n>=6.",
+    "scope_limit": "The theorem does not lower-bound a source-controlled transform that directly compiles each S_nu support or fuses the polar operation.",
+    "status": "constant-multiplicity-hard-mass-proved-fused-transform-open",
+    "support_fraction_identity": "For T=direct_sum I_Vnu tensor S_nu and t_nu=rank(S_nu)/dim(M_nu), E_p[t_nu]=rank(T)/dim(H)<=M/2^k.",
+    "support_fraction_identity_proved": true,
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "copy_threshold": "k=ceil(log2(4(n-1)!!)).",
+    "family": "Fixed-point-free involutions in S_n, every even n>=6.",
+    "hard_sector": "An isotypic sector in which the support occupies at most half of the global multiplicity space.",
+    "hard_spectrum": "An A_k eigenvalue at most 5/M under the actual alternative spectral law.",
+    "outside_scope": "Coherent support-specific transforms within multiplicity blocks."
+  }
+}

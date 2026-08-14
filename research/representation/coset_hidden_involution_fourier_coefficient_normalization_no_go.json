@@ -1,0 +1,425 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "No irrep has d_nu>sqrt(|G|), leaving at least a |G|^(1/4) generic amplification in every sector.",
+      "challenge": "A high-dimensional irrep removes the Fourier scalar loss.",
+      "resolved": true
+    },
+    {
+      "answer": "Conditioning on nu does not rescale raw A_nu. A different sector-normalized access primitive would be substantive new structure.",
+      "challenge": "Measuring nu first permits constant normalization conditionally.",
+      "resolved": true
+    },
+    {
+      "answer": "The identity specifies W_nu algebraically; implementing W is the original label-erasure/polar problem, so using it is circular.",
+      "challenge": "The regular QFT itself implements the scalar amplification.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Only normalization-one raw-coefficient access plus generic QSVT is closed. Structured direct polars remain open.",
+      "challenge": "This rules out all Fourier or recoupling algorithms.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "every_sector_quarter_root_obstruction_proved": true,
+    "normalization_one_raw_coefficient_qsvt_polynomial": false,
+    "reason": "The regular QFT moves the missing normalization into the scalar sqrt(|G|/d_nu); raw coefficient access does not supply it.",
+    "regular_fourier_coefficient_identity_proved": true,
+    "sector_normalized_direct_access_compiled": false,
+    "speedup_claim_allowed": false,
+    "structured_row_polar_compiled": false
+  },
+  "created_at": "2026-08-13T18:18:22.241904+00:00",
+  "falsifiers_triggered": [
+    "Preparing canonical orbit representatives and applying a physical QFT does not by itself normalize the row polar.",
+    "Sector conditioning cannot beat the quarter-root group-order barrier under normalization-one raw coefficient access.",
+    "The regular Fourier scalar is an algebraic identity, not a free circuit amplitude."
+  ],
+  "finite_controls": [
+    {
+      "copy_count": 1,
+      "exact_all_sector_formula_verified": true,
+      "free_orbit_representative_count": 1,
+      "group_order": 6,
+      "maximum_fourier_block_formula_residual": 9.171230975472343e-16,
+      "maximum_singular_value_scaling_residual": 3.3306690738754696e-16,
+      "physical_dimension": 6,
+      "regular_source_dimension": 6,
+      "sector_source_dimension_sum": 6,
+      "sectors": [
+        {
+          "carrier_dimension": 1,
+          "coefficient_column_count": 1,
+          "coefficient_row_count": 3,
+          "exact_fourier_coefficient_formula_verified": true,
+          "fourier_block_formula_residual": 7.928578270080922e-16,
+          "fourier_scalar_amplification": 2.449489742783178,
+          "generic_raw_coefficient_polar_degree_lower_scale": 2.449489742783178,
+          "irrep_name": "trivial",
+          "irrep_partition": [
+            3
+          ],
+          "maximum_multiplicity_isometry_residual": 2.220446049250313e-16,
+          "orbit_representative_count": 1,
+          "physical_multiplicity": 3,
+          "raw_coefficient_maximum_singular_value": 0.6454972243679028,
+          "scaled_row_maximum_singular_value": 1.5811388300841898,
+          "singular_value_scaling_residual": 2.220446049250313e-16,
+          "status": "exact-regular-fourier-coefficient-scaling-verified"
+        },
+        {
+          "carrier_dimension": 1,
+          "coefficient_column_count": 1,
+          "coefficient_row_count": 1,
+          "exact_fourier_coefficient_formula_verified": true,
+          "fourier_block_formula_residual": 3.1401849173675503e-16,
+          "fourier_scalar_amplification": 2.449489742783178,
+          "generic_raw_coefficient_polar_degree_lower_scale": 2.449489742783178,
+          "irrep_name": "sign",
+          "irrep_partition": [
+            1,
+            1,
+            1
+          ],
+          "maximum_multiplicity_isometry_residual": 2.220446049250313e-16,
+          "orbit_representative_count": 1,
+          "physical_multiplicity": 1,
+          "raw_coefficient_maximum_singular_value": 0.4999999999999999,
+          "scaled_row_maximum_singular_value": 1.224744871391589,
+          "singular_value_scaling_residual": 2.220446049250313e-16,
+          "status": "exact-regular-fourier-coefficient-scaling-verified"
+        },
+        {
+          "carrier_dimension": 2,
+          "coefficient_column_count": 2,
+          "coefficient_row_count": 1,
+          "exact_fourier_coefficient_formula_verified": true,
+          "fourier_block_formula_residual": 9.171230975472343e-16,
+          "fourier_scalar_amplification": 1.7320508075688772,
+          "generic_raw_coefficient_polar_degree_lower_scale": 1.7320508075688772,
+          "irrep_name": "standard",
+          "irrep_partition": [
+            2,
+            1
+          ],
+          "maximum_multiplicity_isometry_residual": 1.0320143194909954e-15,
+          "orbit_representative_count": 1,
+          "physical_multiplicity": 1,
+          "raw_coefficient_maximum_singular_value": 0.577350269189626,
+          "scaled_row_maximum_singular_value": 1.0,
+          "singular_value_scaling_residual": 3.3306690738754696e-16,
+          "status": "exact-regular-fourier-coefficient-scaling-verified"
+        }
+      ],
+      "status": "exact-all-sector-fourier-coefficient-normal-form-verified"
+    },
+    {
+      "copy_count": 2,
+      "exact_all_sector_formula_verified": true,
+      "free_orbit_representative_count": 4,
+      "group_order": 6,
+      "maximum_fourier_block_formula_residual": 1.3154309538785695e-15,
+      "maximum_singular_value_scaling_residual": 4.440892098500626e-16,
+      "physical_dimension": 36,
+      "regular_source_dimension": 24,
+      "sector_source_dimension_sum": 24,
+      "sectors": [
+        {
+          "carrier_dimension": 1,
+          "coefficient_column_count": 4,
+          "coefficient_row_count": 11,
+          "exact_fourier_coefficient_formula_verified": true,
+          "fourier_block_formula_residual": 1.3154309538785695e-15,
+          "fourier_scalar_amplification": 2.449489742783178,
+          "generic_raw_coefficient_polar_degree_lower_scale": 2.449489742783178,
+          "irrep_name": "trivial",
+          "irrep_partition": [
+            3
+          ],
+          "maximum_multiplicity_isometry_residual": 8.881784197001252e-16,
+          "orbit_representative_count": 4,
+          "physical_multiplicity": 11,
+          "raw_coefficient_maximum_singular_value": 0.6854109843017354,
+          "scaled_row_maximum_singular_value": 1.6789071756380223,
+          "singular_value_scaling_residual": 4.440892098500626e-16,
+          "status": "exact-regular-fourier-coefficient-scaling-verified"
+        },
+        {
+          "carrier_dimension": 1,
+          "coefficient_column_count": 4,
+          "coefficient_row_count": 7,
+          "exact_fourier_coefficient_formula_verified": true,
+          "fourier_block_formula_residual": 1.141832869706652e-15,
+          "fourier_scalar_amplification": 2.449489742783178,
+          "generic_raw_coefficient_polar_degree_lower_scale": 2.449489742783178,
+          "irrep_name": "sign",
+          "irrep_partition": [
+            1,
+            1,
+            1
+          ],
+          "maximum_multiplicity_isometry_residual": 6.661338147750939e-16,
+          "orbit_representative_count": 4,
+          "physical_multiplicity": 7,
+          "raw_coefficient_maximum_singular_value": 0.4999999999999999,
+          "scaled_row_maximum_singular_value": 1.224744871391589,
+          "singular_value_scaling_residual": 2.220446049250313e-16,
+          "status": "exact-regular-fourier-coefficient-scaling-verified"
+        },
+        {
+          "carrier_dimension": 2,
+          "coefficient_column_count": 8,
+          "coefficient_row_count": 9,
+          "exact_fourier_coefficient_formula_verified": true,
+          "fourier_block_formula_residual": 1.1699151440860758e-15,
+          "fourier_scalar_amplification": 1.7320508075688772,
+          "generic_raw_coefficient_polar_degree_lower_scale": 1.7320508075688772,
+          "irrep_name": "standard",
+          "irrep_partition": [
+            2,
+            1
+          ],
+          "maximum_multiplicity_isometry_residual": 1.111010230094361e-15,
+          "orbit_representative_count": 4,
+          "physical_multiplicity": 9,
+          "raw_coefficient_maximum_singular_value": 0.7071067811865475,
+          "scaled_row_maximum_singular_value": 1.2247448713915887,
+          "singular_value_scaling_residual": 4.440892098500626e-16,
+          "status": "exact-regular-fourier-coefficient-scaling-verified"
+        }
+      ],
+      "status": "exact-all-sector-fourier-coefficient-normal-form-verified"
+    },
+    {
+      "copy_count": 3,
+      "exact_all_sector_formula_verified": true,
+      "free_orbit_representative_count": 13,
+      "group_order": 6,
+      "maximum_fourier_block_formula_residual": 2.0030807052494726e-15,
+      "maximum_singular_value_scaling_residual": 1.1102230246251565e-15,
+      "physical_dimension": 216,
+      "regular_source_dimension": 78,
+      "sector_source_dimension_sum": 78,
+      "sectors": [
+        {
+          "carrier_dimension": 1,
+          "coefficient_column_count": 13,
+          "coefficient_row_count": 49,
+          "exact_fourier_coefficient_formula_verified": true,
+          "fourier_block_formula_residual": 1.7251567584566252e-15,
+          "fourier_scalar_amplification": 2.449489742783178,
+          "generic_raw_coefficient_polar_degree_lower_scale": 2.449489742783178,
+          "irrep_name": "trivial",
+          "irrep_partition": [
+            3
+          ],
+          "maximum_multiplicity_isometry_residual": 1.1102230246251565e-15,
+          "orbit_representative_count": 13,
+          "physical_multiplicity": 49,
+          "raw_coefficient_maximum_singular_value": 0.6993821677217134,
+          "scaled_row_maximum_singular_value": 1.7131294461198008,
+          "singular_value_scaling_residual": 6.661338147750939e-16,
+          "status": "exact-regular-fourier-coefficient-scaling-verified"
+        },
+        {
+          "carrier_dimension": 1,
+          "coefficient_column_count": 13,
+          "coefficient_row_count": 41,
+          "exact_fourier_coefficient_formula_verified": true,
+          "fourier_block_formula_residual": 1.856786624174232e-15,
+          "fourier_scalar_amplification": 2.449489742783178,
+          "generic_raw_coefficient_polar_degree_lower_scale": 2.449489742783178,
+          "irrep_name": "sign",
+          "irrep_partition": [
+            1,
+            1,
+            1
+          ],
+          "maximum_multiplicity_isometry_residual": 1.6653345369377348e-15,
+          "orbit_representative_count": 13,
+          "physical_multiplicity": 41,
+          "raw_coefficient_maximum_singular_value": 0.5,
+          "scaled_row_maximum_singular_value": 1.2247448713915892,
+          "singular_value_scaling_residual": 4.440892098500626e-16,
+          "status": "exact-regular-fourier-coefficient-scaling-verified"
+        },
+        {
+          "carrier_dimension": 2,
+          "coefficient_column_count": 26,
+          "coefficient_row_count": 63,
+          "exact_fourier_coefficient_formula_verified": true,
+          "fourier_block_formula_residual": 2.0030807052494726e-15,
+          "fourier_scalar_amplification": 1.7320508075688772,
+          "generic_raw_coefficient_polar_degree_lower_scale": 1.7320508075688772,
+          "irrep_name": "standard",
+          "irrep_partition": [
+            2,
+            1
+          ],
+          "maximum_multiplicity_isometry_residual": 2.227039718205306e-15,
+          "orbit_representative_count": 13,
+          "physical_multiplicity": 63,
+          "raw_coefficient_maximum_singular_value": 0.7071067811865476,
+          "scaled_row_maximum_singular_value": 1.224744871391589,
+          "singular_value_scaling_residual": 1.1102230246251565e-15,
+          "status": "exact-regular-fourier-coefficient-scaling-verified"
+        }
+      ],
+      "status": "exact-all-sector-fourier-coefficient-normal-form-verified"
+    }
+  ],
+  "headline_metrics": {
+    "exact_all_sector_control_count": 3,
+    "finite_control_failure_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "regular_fourier_block_identity_theorem_count": 1,
+    "sector_normalized_direct_access_count": 0,
+    "structured_row_polar_count": 0,
+    "universal_quarter_root_obstruction_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-SECTOR-NORMALIZED-ROW-ACCESS",
+      "resolved": false,
+      "statement": "Construct A_nu access with effective normalization Theta(sqrt(d_nu/|G|)) on constant natural mass."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-ROW-FAST-FORWARD",
+      "resolved": false,
+      "statement": "Exploit matrix-Hecke/recoupling structure to implement the polar without a generic polynomial in raw A_nu."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-SECTOR-NATIVE-SPECTRUM",
+      "resolved": false,
+      "statement": "Determine which nu sectors carry the constant-conditioned alternative bulk and whether their row polars simplify."
+    }
+  ],
+  "scaling_records": [
+    {
+      "branch_erasure_sqrt_M_cost_log2": 1.9534452978042594,
+      "candidate_count_decimal": "15",
+      "copy_count": 24,
+      "degree": 6,
+      "group_order_decimal": "720",
+      "half_degree": 3,
+      "lower_bound_to_branch_erasure_log2_ratio": 0.41951797627815957,
+      "raw_coefficient_qsvt_degree_lower_log2": 2.372963274082419,
+      "same_factorial_leading_exponent": true,
+      "sector_normalized_direct_access_compiled": false,
+      "status": "raw-fourier-QSVT-factorial-scale-direct-sector-access-open",
+      "universal_maximum_irrep_dimension_upper_log2": 4.745926548164838
+    },
+    {
+      "branch_erasure_sqrt_M_cost_log2": 3.357122758833061,
+      "candidate_count_decimal": "105",
+      "copy_count": 27,
+      "degree": 8,
+      "group_order_decimal": "40320",
+      "half_degree": 4,
+      "lower_bound_to_branch_erasure_log2_ratio": 0.46767924576375863,
+      "raw_coefficient_qsvt_degree_lower_log2": 3.82480200459682,
+      "same_factorial_leading_exponent": true,
+      "sector_normalized_direct_access_compiled": false,
+      "status": "raw-fourier-QSVT-factorial-scale-direct-sector-access-open",
+      "universal_maximum_irrep_dimension_upper_log2": 7.64960400919364
+    },
+    {
+      "branch_erasure_sqrt_M_cost_log2": 10.475466225747672,
+      "candidate_count_decimal": "2027025",
+      "copy_count": 41,
+      "degree": 16,
+      "group_order_decimal": "20922789888000",
+      "half_degree": 8,
+      "lower_bound_to_branch_erasure_log2_ratio": 0.5870688917229838,
+      "raw_coefficient_qsvt_degree_lower_log2": 11.062535117470656,
+      "same_factorial_leading_exponent": true,
+      "sector_normalized_direct_access_compiled": false,
+      "status": "raw-fourier-QSVT-factorial-scale-direct-sector-access-open",
+      "universal_maximum_irrep_dimension_upper_log2": 22.12507023494131
+    },
+    {
+      "branch_erasure_sqrt_M_cost_log2": 28.70656159123884,
+      "candidate_count_decimal": "191898783962510625",
+      "copy_count": 78,
+      "degree": 32,
+      "group_order_decimal": "263130836933693530167218012160000000",
+      "half_degree": 16,
+      "lower_bound_to_branch_erasure_log2_ratio": 0.7092543218512333,
+      "raw_coefficient_qsvt_degree_lower_log2": 29.415815913090075,
+      "same_factorial_leading_exponent": true,
+      "sector_normalized_direct_access_compiled": false,
+      "status": "raw-fourier-QSVT-factorial-scale-direct-sector-access-open",
+      "universal_maximum_irrep_dimension_upper_log2": 58.83163182618015
+    },
+    {
+      "branch_erasure_sqrt_M_cost_log2": 73.16594014468187,
+      "candidate_count_decimal": "112275575285571389562324404930670903477890625",
+      "copy_count": 167,
+      "degree": 64,
+      "group_order_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "half_degree": 32,
+      "lower_bound_to_branch_erasure_log2_ratio": 0.8328458407491581,
+      "raw_coefficient_qsvt_degree_lower_log2": 73.99878598543103,
+      "same_factorial_leading_exponent": true,
+      "sector_normalized_direct_access_compiled": false,
+      "status": "raw-fourier-QSVT-factorial-scale-direct-sector-access-open",
+      "universal_maximum_irrep_dimension_upper_log2": 147.99757197086205
+    },
+    {
+      "branch_erasure_sqrt_M_cost_log2": 178.08328907094892,
+      "candidate_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "copy_count": 377,
+      "degree": 128,
+      "group_order_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "half_degree": 64,
+      "lower_bound_to_branch_erasure_log2_ratio": 0.9571414499565662,
+      "raw_coefficient_qsvt_degree_lower_log2": 179.0404305209055,
+      "same_factorial_leading_exponent": true,
+      "sector_normalized_direct_access_compiled": false,
+      "status": "raw-fourier-QSVT-factorial-scale-direct-sector-access-open",
+      "universal_maximum_irrep_dimension_upper_log2": 358.080861041811
+    },
+    {
+      "branch_erasure_sqrt_M_cost_log2": 419.9172825702964,
+      "candidate_count_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "copy_count": 860,
+      "degree": 256,
+      "group_order_decimal": "857817775342842654119082271681232625157781520279485619859655650377269452553147589377440291360451408450375885342336584306157196834693696475322289288497426025679637332563368786442675207626794560187968867971521143307702077526646451464709187326100832876325702818980773671781454170250523018608495319068138257481070252817559459476987034665712738139286205234756808218860701203611083152093501947437109101726968262861606263662435022840944191408424615936000000000000000000000000000000000000000000000000000000000000000",
+      "half_degree": 128,
+      "lower_bound_to_branch_erasure_log2_ratio": 1.0817892357572987,
+      "raw_coefficient_qsvt_degree_lower_log2": 420.9990718060537,
+      "same_factorial_leading_exponent": true,
+      "sector_normalized_direct_access_compiled": false,
+      "status": "raw-fourier-QSVT-factorial-scale-direct-sector-access-open",
+      "universal_maximum_irrep_dimension_upper_log2": 841.9981436121074
+    }
+  ],
+  "status": "raw-fourier-normalization-closed-direct-sector-polar-open",
+  "summary": "Derived and exactly verified the regular Fourier row formula, then proved that generic normalization-one access to its coefficient blocks retains a universal factorial-scale polar amplification cost.",
+  "theorem": {
+    "architecture_rule": "Do not treat prepare-v_o plus physical QFT plus normalization-one QSVT as the structured normalization escape.",
+    "coefficient_block": "A_nu consists exactly of the physical nu-isotypic carrier-row coefficients of the canonical representative vectors v_o.",
+    "every_sector_quarter_root_obstruction_proved": true,
+    "perfect_matching_comparison": "For G=S_(2m), |G|^(1/4) and sqrt((2m-1)!!) differ only by exp(O(log m)) and share the factorial leading exponent.",
+    "raw_coefficient_useful_scale_proved": true,
+    "regular_fourier_block_formula_proved": true,
+    "regular_fourier_identity": "For W|g,o>=U_gv_o, the normalized G QFT gives W_nu=sqrt(|G|/d_nu) I_(d_nu) tensor A_nu.",
+    "same_factorial_scale_as_branch_erasure_proved": true,
+    "scope_limit": "A sector-normalized direct block encoding, structured fast-forward, or direct row polar could bypass raw-coefficient QSVT.",
+    "sector_normalized_direct_access_compiled": false,
+    "status": "raw-fourier-normalization-closed-direct-sector-polar-open",
+    "structured_row_polar_compiled": false,
+    "theorem_verified": true,
+    "universal_dimension_bound": "d_nu^2<=sum_lambda d_lambda^2=|G|, so generic raw-coefficient polar degree is Omega(|G|^(1/4)) in every sector.",
+    "useful_scale_transfer": "A Theta(1) useful singular value of W_nu is Theta(sqrt(d_nu/|G|)) in raw A_nu access."
+  },
+  "theorem_contract": {
+    "access_model": "Normalization-one block access to raw representative Fourier coefficients A_nu, followed by generic bounded odd-polynomial QSVT.",
+    "outside_scope": "Directly normalized coefficient access, exact branching transforms, fast-forwarding, and arbitrary representation-specific circuits.",
+    "physical_action": "Diagonal G action decomposed as direct_sum_nu V_nu tensor M_nu.",
+    "source_normal_form": "C[G] tensor C[O] after trimmed free-orbit canonicalization.",
+    "useful_window": "Any sector singular vectors whose W singular values are Theta(1)."
+  }
+}

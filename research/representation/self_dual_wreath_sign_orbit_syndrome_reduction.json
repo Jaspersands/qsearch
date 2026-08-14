@@ -1,0 +1,971 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Deleting one-dimensional labels deletes sign parity.",
+      "resolution": "False: every non-self-conjugate high-dimensional irrep belongs to a sign pair, and S5 has an exact nonuniform retained control.",
+      "resolved": true
+    },
+    {
+      "objection": "A finite nonuniform syndrome is asymptotic evidence.",
+      "resolution": "False: the finite controls do not establish retained Plancherel mass or a nonvanishing limit under the canonical dimension trim.",
+      "resolved": true
+    },
+    {
+      "objection": "Three syndrome bits constitute a quantum decoder.",
+      "resolution": "False: they are a deterministic classical function of measured partition labels and carry at most three bits per sample.",
+      "resolved": true
+    },
+    {
+      "objection": "Orientation uniformity forces the whole retained law to be product.",
+      "resolution": "False: the base sign-orbit term remains independent in the exact KL split.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "canonical_high_dimension_syndrome_kl_vanishes_proved": false,
+    "canonical_high_dimension_syndrome_survives_proved": false,
+    "classical_separation_proved": false,
+    "coherent_multiplicity_signal_absent_proved": false,
+    "deleting_one_dimensional_labels_removes_all_parity_signal": false,
+    "exact_three_bit_orientation_reduction_proved": true,
+    "reason": "The exact reduction isolates a three-bit measured-label channel, but its positive-mass asymptotics and any nonclassical value remain open.",
+    "self_conjugate_plancherel_mass_vanishes_proved": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T20:20:44.477534+00:00",
+  "exact_fourier_controls": [
+    {
+      "base_dimensions": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "base_partitions": [
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ],
+        [
+          3
+        ]
+      ],
+      "conditional_orientation_kl_bits": 3.0,
+      "conditional_orientation_total_variation": 0.875,
+      "control_id": "one-dimensional-parity-tail",
+      "distinct_likelihood_values": [
+        0.0,
+        216.0
+      ],
+      "exact_three_bit_syndrome_reduction_verified": true,
+      "expected_walsh_support": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_outside_support_coefficient": 0.0,
+      "maximum_within_syndrome_likelihood_residual": 0.0,
+      "n": 3,
+      "orientation_count": 64,
+      "orientations_per_syndrome": 8,
+      "status": "exact-three-bit-sign-orbit-syndrome-verified",
+      "syndrome_count": 8,
+      "walsh_support": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "base_dimensions": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "base_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "conditional_orientation_kl_bits": 1.2012849389306112e-16,
+      "conditional_orientation_total_variation": 5.134781488891349e-16,
+      "control_id": "S4-standard-sign-pair",
+      "distinct_likelihood_values": [
+        0.52674897119341,
+        0.52674897119342
+      ],
+      "exact_three_bit_syndrome_reduction_verified": true,
+      "expected_walsh_support": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_outside_support_coefficient": 0.0,
+      "maximum_within_syndrome_likelihood_residual": 0.0,
+      "n": 4,
+      "orientation_count": 64,
+      "orientations_per_syndrome": 8,
+      "status": "exact-three-bit-sign-orbit-syndrome-verified",
+      "syndrome_count": 8,
+      "walsh_support": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      ]
+    },
+    {
+      "base_dimensions": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "base_partitions": [
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "conditional_orientation_kl_bits": 0.9471239257462711,
+      "conditional_orientation_total_variation": 0.4705882352941171,
+      "control_id": "S5-two-row-sign-pair",
+      "distinct_likelihood_values": [
+        0.03072,
+        0.27648,
+        2.48832
+      ],
+      "exact_three_bit_syndrome_reduction_verified": true,
+      "expected_walsh_support": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_outside_support_coefficient": 0.0,
+      "maximum_within_syndrome_likelihood_residual": 0.0,
+      "n": 5,
+      "orientation_count": 64,
+      "orientations_per_syndrome": 8,
+      "status": "exact-three-bit-sign-orbit-syndrome-verified",
+      "syndrome_count": 8,
+      "walsh_support": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          0,
+          1
+        ]
+      ]
+    },
+    {
+      "base_dimensions": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "base_partitions": [
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          1
+        ]
+      ],
+      "conditional_orientation_kl_bits": 3.0,
+      "conditional_orientation_total_variation": 0.875,
+      "control_id": "S5-standard-sign-pair",
+      "distinct_likelihood_values": [
+        0.0,
+        11.71875
+      ],
+      "exact_three_bit_syndrome_reduction_verified": true,
+      "expected_walsh_support": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          1,
+          1
+        ]
+      ],
+      "maximum_outside_support_coefficient": 0.0,
+      "maximum_within_syndrome_likelihood_residual": 0.0,
+      "n": 5,
+      "orientation_count": 64,
+      "orientations_per_syndrome": 8,
+      "status": "exact-three-bit-sign-orbit-syndrome-verified",
+      "syndrome_count": 8,
+      "walsh_support": [
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          1,
+          0,
+          1
+        ],
+        [
+          0,
+          1,
+          0,
+          1,
+          1,
+          1
+        ],
+        [
+          0,
+          1,
+          1,
+          0,
+          1,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          1,
+          1
+        ],
+        [
+          1,
+          0,
+          1,
+          1,
+          1,
+          0
+        ],
+        [
+          1,
+          1,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          1,
+          1,
+          1,
+          0,
+          0,
+          1
+        ]
+      ]
+    }
+  ],
+  "falsifiers_triggered": [
+    "Removing trivial/sign labels does not remove the sign action on high-dimensional irreps.",
+    "Finite retained sign-orbit bias is not evidence of asymptotic positive mass.",
+    "Any orientation-only survivor is a classical measured-label statistic."
+  ],
+  "headline_metrics": {
+    "S4_standard_orientation_kl_bits": 1.2012849389306112e-16,
+    "S5_two_row_orientation_kl_bits": 0.9471239257462711,
+    "canonical_asymptotic_syndrome_theorem_count": 0,
+    "effective_syndrome_bit_count": 3,
+    "exact_sign_orbit_syndrome_theorem_count": 1,
+    "finite_non_one_dimensional_syndrome_signal_count": 1,
+    "maximum_finite_kl_chain_rule_residual": 8.881784197001252e-16,
+    "maximum_orientation_kl_bits": 3,
+    "new_quantum_algorithm_count": 0,
+    "orientation_bit_count": 6
+  },
+  "proof_obligations": [
+    {
+      "obligation": "reduce_high_dimensional_sign_orientation_to_exact_syndromes",
+      "resolution": "The sign-twist character identity gives the rank-three word-parity map and exact Walsh support im(A).",
+      "resolved": true
+    },
+    {
+      "obligation": "separate_base_orbit_and_orientation_information",
+      "resolution": "The conditional product law is uniform on orientations, so KL splits exactly by the chain rule.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_self_conjugate_plancherel_mass_vanishes",
+      "resolution": "Finite scaling is recorded, but no local-limit or anti-concentration theorem is imported as an asymptotic proof.",
+      "resolved": false
+    },
+    {
+      "obligation": "bound_canonical_high_dimension_syndrome_kl",
+      "resolution": "Prove the three nonlocal parity-sector character moments vanish, or exhibit a retained positive-mass orbit family.",
+      "resolved": false
+    },
+    {
+      "obligation": "establish_nonclassical_value_of_any_syndrome_survivor",
+      "resolution": "The syndrome is computed directly from six measured Young diagrams; a survivor needs an oracle-access separation or coherent extension.",
+      "resolved": false
+    }
+  ],
+  "retained_sector_controls": [
+    {
+      "conditional_base_orbit_kl_bits": 0.0,
+      "conditional_base_orbit_total_variation": 0.0,
+      "conditional_kl_bits": 3.0,
+      "conditional_syndrome_kl_bits": 3.0,
+      "conditional_total_variation": 0.875,
+      "exact_conditional_kl_decomposition_verified": true,
+      "expected_conditional_syndrome_total_variation": 0.875,
+      "kl_chain_rule_residual": 0.0,
+      "maximum_conditional_syndrome_total_variation": 0.875,
+      "maximum_within_syndrome_likelihood_residual": 0.0,
+      "minimum_retained_dimension_exclusive": 0,
+      "n": 3,
+      "nonself_orbit_tuple_count": 1,
+      "nonself_physical_sector_mass": 0.03703703703703703,
+      "nonself_product_sector_mass": 0.0013717421124828531,
+      "retained_paired_plancherel_mass": 0.3333333333333333,
+      "retained_self_conjugate_partition_count": 1,
+      "retained_self_conjugate_plancherel_mass": 0.6666666666666666,
+      "retained_sign_pair_count": 1,
+      "self_conjugate_six_label_union_mass_upper_bound": 1.0,
+      "status": "exact-retained-orbit-syndrome-kl-decomposition"
+    },
+    {
+      "conditional_base_orbit_kl_bits": 0.0,
+      "conditional_base_orbit_total_variation": 0.0,
+      "conditional_kl_bits": 1.801927408395909e-16,
+      "conditional_syndrome_kl_bits": 1.8019274083959095e-16,
+      "conditional_total_variation": 5.204170427930421e-16,
+      "exact_conditional_kl_decomposition_verified": true,
+      "expected_conditional_syndrome_total_variation": 5.204170427930421e-16,
+      "kl_chain_rule_residual": 4.930380657631324e-32,
+      "maximum_conditional_syndrome_total_variation": 5.204170427930421e-16,
+      "maximum_within_syndrome_likelihood_residual": 0.0,
+      "minimum_retained_dimension_exclusive": 1,
+      "n": 4,
+      "nonself_orbit_tuple_count": 1,
+      "nonself_physical_sector_mass": 0.09374999999999999,
+      "nonself_product_sector_mass": 0.177978515625,
+      "retained_paired_plancherel_mass": 0.75,
+      "retained_self_conjugate_partition_count": 1,
+      "retained_self_conjugate_plancherel_mass": 0.16666666666666666,
+      "retained_sign_pair_count": 1,
+      "self_conjugate_six_label_union_mass_upper_bound": 1.0,
+      "status": "exact-retained-orbit-syndrome-kl-decomposition"
+    },
+    {
+      "conditional_base_orbit_kl_bits": 0.0,
+      "conditional_base_orbit_total_variation": 0.0,
+      "conditional_kl_bits": 1.801927408395909e-16,
+      "conditional_syndrome_kl_bits": 1.8019274083959095e-16,
+      "conditional_total_variation": 5.204170427930421e-16,
+      "exact_conditional_kl_decomposition_verified": true,
+      "expected_conditional_syndrome_total_variation": 5.204170427930421e-16,
+      "kl_chain_rule_residual": 4.930380657631324e-32,
+      "maximum_conditional_syndrome_total_variation": 5.204170427930421e-16,
+      "maximum_within_syndrome_likelihood_residual": 0.0,
+      "minimum_retained_dimension_exclusive": 2,
+      "n": 4,
+      "nonself_orbit_tuple_count": 1,
+      "nonself_physical_sector_mass": 0.09374999999999999,
+      "nonself_product_sector_mass": 0.177978515625,
+      "retained_paired_plancherel_mass": 0.75,
+      "retained_self_conjugate_partition_count": 0,
+      "retained_self_conjugate_plancherel_mass": 0,
+      "retained_sign_pair_count": 1,
+      "self_conjugate_six_label_union_mass_upper_bound": 0.0,
+      "status": "exact-retained-orbit-syndrome-kl-decomposition"
+    },
+    {
+      "conditional_base_orbit_kl_bits": 0.2016687674330135,
+      "conditional_base_orbit_total_variation": 0.22437250164981148,
+      "conditional_kl_bits": 1.3146979098810605,
+      "conditional_syndrome_kl_bits": 1.113029142448046,
+      "conditional_total_variation": 0.5632203792696814,
+      "exact_conditional_kl_decomposition_verified": true,
+      "expected_conditional_syndrome_total_variation": 0.46977001815711483,
+      "kl_chain_rule_residual": 8.881784197001252e-16,
+      "maximum_conditional_syndrome_total_variation": 0.875,
+      "maximum_within_syndrome_likelihood_residual": 0.0,
+      "minimum_retained_dimension_exclusive": 1,
+      "n": 5,
+      "nonself_orbit_tuple_count": 64,
+      "nonself_physical_sector_mass": 0.1035486111111111,
+      "nonself_product_sector_mass": 0.10181121915723595,
+      "retained_paired_plancherel_mass": 0.6833333333333333,
+      "retained_self_conjugate_partition_count": 1,
+      "retained_self_conjugate_plancherel_mass": 0.3,
+      "retained_sign_pair_count": 2,
+      "self_conjugate_six_label_union_mass_upper_bound": 1.0,
+      "status": "exact-retained-orbit-syndrome-kl-decomposition"
+    },
+    {
+      "conditional_base_orbit_kl_bits": 0.0,
+      "conditional_base_orbit_total_variation": 0.0,
+      "conditional_kl_bits": 0.9471239257462722,
+      "conditional_syndrome_kl_bits": 0.9471239257462719,
+      "conditional_total_variation": 0.47058823529411686,
+      "exact_conditional_kl_decomposition_verified": true,
+      "expected_conditional_syndrome_total_variation": 0.4705882352941171,
+      "kl_chain_rule_residual": 3.3306690738754696e-16,
+      "maximum_conditional_syndrome_total_variation": 0.4705882352941171,
+      "maximum_within_syndrome_likelihood_residual": 0.0,
+      "minimum_retained_dimension_exclusive": 4,
+      "n": 5,
+      "nonself_orbit_tuple_count": 1,
+      "nonself_physical_sector_mass": 0.0027327674897119347,
+      "nonself_product_sector_mass": 0.005232780885631004,
+      "retained_paired_plancherel_mass": 0.4166666666666667,
+      "retained_self_conjugate_partition_count": 1,
+      "retained_self_conjugate_plancherel_mass": 0.3,
+      "retained_sign_pair_count": 1,
+      "self_conjugate_six_label_union_mass_upper_bound": 1.0,
+      "status": "exact-retained-orbit-syndrome-kl-decomposition"
+    }
+  ],
+  "self_conjugate_mass_scaling": [
+    {
+      "asymptotic_vanishing_proved": false,
+      "n": 3,
+      "self_conjugate_partition_count": 1,
+      "self_conjugate_plancherel_mass": 0.6666666666666666,
+      "six_label_union_mass_upper_bound": 1.0,
+      "status": "finite-self-conjugate-mass-only-asymptotic-gate-open"
+    },
+    {
+      "asymptotic_vanishing_proved": false,
+      "n": 4,
+      "self_conjugate_partition_count": 1,
+      "self_conjugate_plancherel_mass": 0.16666666666666666,
+      "six_label_union_mass_upper_bound": 1.0,
+      "status": "finite-self-conjugate-mass-only-asymptotic-gate-open"
+    },
+    {
+      "asymptotic_vanishing_proved": false,
+      "n": 5,
+      "self_conjugate_partition_count": 1,
+      "self_conjugate_plancherel_mass": 0.3,
+      "six_label_union_mass_upper_bound": 1.0,
+      "status": "finite-self-conjugate-mass-only-asymptotic-gate-open"
+    },
+    {
+      "asymptotic_vanishing_proved": false,
+      "n": 6,
+      "self_conjugate_partition_count": 1,
+      "self_conjugate_plancherel_mass": 0.35555555555555557,
+      "six_label_union_mass_upper_bound": 1.0,
+      "status": "finite-self-conjugate-mass-only-asymptotic-gate-open"
+    },
+    {
+      "asymptotic_vanishing_proved": false,
+      "n": 8,
+      "self_conjugate_partition_count": 2,
+      "self_conjugate_plancherel_mass": 0.24464285714285713,
+      "six_label_union_mass_upper_bound": 1.0,
+      "status": "finite-self-conjugate-mass-only-asymptotic-gate-open"
+    },
+    {
+      "asymptotic_vanishing_proved": false,
+      "n": 10,
+      "self_conjugate_partition_count": 2,
+      "self_conjugate_plancherel_mass": 0.21784832451499117,
+      "six_label_union_mass_upper_bound": 1.0,
+      "status": "finite-self-conjugate-mass-only-asymptotic-gate-open"
+    },
+    {
+      "asymptotic_vanishing_proved": false,
+      "n": 15,
+      "self_conjugate_partition_count": 4,
+      "self_conjugate_plancherel_mass": 0.08464970821849128,
+      "six_label_union_mass_upper_bound": 0.5078982493109477,
+      "status": "finite-self-conjugate-mass-only-asymptotic-gate-open"
+    },
+    {
+      "asymptotic_vanishing_proved": false,
+      "n": 20,
+      "self_conjugate_partition_count": 7,
+      "self_conjugate_plancherel_mass": 0.011719137158121624,
+      "six_label_union_mass_upper_bound": 0.07031482294872975,
+      "status": "finite-self-conjugate-mass-only-asymptotic-gate-open"
+    },
+    {
+      "asymptotic_vanishing_proved": false,
+      "n": 30,
+      "self_conjugate_partition_count": 18,
+      "self_conjugate_plancherel_mass": 0.021724658160998774,
+      "six_label_union_mass_upper_bound": 0.13034794896599264,
+      "status": "finite-self-conjugate-mass-only-asymptotic-gate-open"
+    },
+    {
+      "asymptotic_vanishing_proved": false,
+      "n": 40,
+      "self_conjugate_partition_count": 46,
+      "self_conjugate_plancherel_mass": 0.014542138505667506,
+      "six_label_union_mass_upper_bound": 0.08725283103400504,
+      "status": "finite-self-conjugate-mass-only-asymptotic-gate-open"
+    },
+    {
+      "asymptotic_vanishing_proved": false,
+      "n": 50,
+      "self_conjugate_partition_count": 98,
+      "self_conjugate_plancherel_mass": 0.004595032882564602,
+      "six_label_union_mass_upper_bound": 0.02757019729538761,
+      "status": "finite-self-conjugate-mass-only-asymptotic-gate-open"
+    }
+  ],
+  "status": "sign-orbit-syndrome-reduced-asymptotic-channel-open",
+  "summary": "Reduced all high-dimensional sign-orbit orientation dependence to an exact three-bit syndrome and split its retained KL contribution.",
+  "theorem_contract": {
+    "exact_reduction": "The 64 transpose-choice likelihoods are constant on the eight cosets of ker(A^T), and their Walsh support is im(A).",
+    "kl_chain_rule": "On a retained non-self-conjugate sector, conditional KL equals base sign-orbit KL plus expected three-bit syndrome KL.",
+    "orientation_syndrome": "A^T z=(z_alpha+z_beta+z_mu, z_beta+z_gamma+z_nu, z_alpha+z_beta+z_gamma+z_lambda).",
+    "scope": "The theorem neither proves self-conjugate Plancherel mass vanishes nor bounds the canonical high-dimensional syndrome law.",
+    "sign_twist": "V_(rho^T)=V_rho tensor sign and chi_(rho^T)(g)=sgn(g)chi_rho(g).",
+    "word_parity_map": "A(g,h,k)=(g+k,g+h+k,h+k,g,h,k) over F_2 in label order (alpha,beta,gamma,mu,nu,lambda)."
+  }
+}

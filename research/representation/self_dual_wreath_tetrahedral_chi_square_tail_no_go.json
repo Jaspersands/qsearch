@@ -1,0 +1,310 @@
+{
+  "created_at": "2026-08-13T19:54:39.363195+00:00",
+  "theorem_contract": {
+    "class_signature_duality": "Physical six-label chi-square equals the cycle-type chi-square of (g,h,k,gk,hk,ghk).",
+    "support_decomposition": "chi^2=4V_n+6E_Pl[T_lambda^2]-3V4_n+Z6_n.",
+    "low_support_terms": "All terms outside the fully nonidentity core Z6_n vanish.",
+    "one_dimensional_parity_likelihood": "Eight trivial/sign patterns satisfying three parity equations have likelihood (n!)^3; the other 56 have likelihood zero.",
+    "chi_square_tail": "The all-one-dimensional sector contributes 8-16/(n!)^3+64/(n!)^6 to chi-square.",
+    "tail_mass": "Its physical mass is 8/(n!)^3; any one-dimensional label has physical union mass at most 12/n!.",
+    "scope": "Raw chi-square is invalidated, but dimension-trimmed TV/KL and coherent multiplicity-phase information remain open."
+  },
+  "exact_signature_controls": [
+    {
+      "n": 3,
+      "group_order": 6,
+      "conjugacy_class_count": 3,
+      "occupied_signature_count": 46,
+      "exact_signature_probability_sum": "1",
+      "exact_full_second_moment": "27/2",
+      "exact_full_chi_square": "25/2",
+      "exact_low_support_contribution": "21/2",
+      "exact_fully_nonidentity_core": "2",
+      "exact_decomposition_residual": "0",
+      "support_mask_count": 15,
+      "size_three_mask_count": 4,
+      "size_four_mask_count": 3,
+      "size_five_mask_count": 6,
+      "exact_support_decomposition_verified": true,
+      "exact_class_signature_duality_verified": true,
+      "status": "exact-tetrahedral-class-signature-decomposition-verified"
+    },
+    {
+      "n": 4,
+      "group_order": 24,
+      "conjugacy_class_count": 5,
+      "occupied_signature_count": 513,
+      "exact_signature_probability_sum": "1",
+      "exact_full_second_moment": "3743/162",
+      "exact_full_chi_square": "3581/162",
+      "exact_low_support_contribution": "2435/192",
+      "exact_fully_nonidentity_core": "48847/5184",
+      "exact_decomposition_residual": "0",
+      "support_mask_count": 15,
+      "size_three_mask_count": 4,
+      "size_four_mask_count": 3,
+      "size_five_mask_count": 6,
+      "exact_support_decomposition_verified": true,
+      "exact_class_signature_duality_verified": true,
+      "status": "exact-tetrahedral-class-signature-decomposition-verified"
+    },
+    {
+      "n": 5,
+      "group_order": 120,
+      "conjugacy_class_count": 7,
+      "occupied_signature_count": 5193,
+      "exact_signature_probability_sum": "1",
+      "exact_full_second_moment": "857738791/51840000",
+      "exact_full_chi_square": "805898791/51840000",
+      "exact_low_support_contribution": "76907/14400",
+      "exact_fully_nonidentity_core": "529033591/51840000",
+      "exact_decomposition_residual": "0",
+      "support_mask_count": 15,
+      "size_three_mask_count": 4,
+      "size_four_mask_count": 3,
+      "size_five_mask_count": 6,
+      "exact_support_decomposition_verified": true,
+      "exact_class_signature_duality_verified": true,
+      "status": "exact-tetrahedral-class-signature-decomposition-verified"
+    }
+  ],
+  "finite_physical_controls": [
+    {
+      "n": 2,
+      "partition_count": 2,
+      "label_tuple_count": 64,
+      "physical_probability_sum_residual": 0.0,
+      "minimum_likelihood": 0.0,
+      "maximum_likelihood": 8.0,
+      "total_variation_from_plancherel_product": 0.875,
+      "kl_divergence_bits": 3.0,
+      "chi_square_from_plancherel_product": 7.0,
+      "class_signature_chi_square": 7.0,
+      "chi_square_duality_residual": 0.0,
+      "physical_mass_with_any_one_dimensional_label": 1.0,
+      "union_bound_for_any_one_dimensional_label": 1.0,
+      "physical_mass_with_all_one_dimensional_labels": 1.0,
+      "exact_all_one_dimensional_mass": 1.0,
+      "all_one_dimensional_mass_residual": 0.0,
+      "status": "exact-physical-class-signature-chi-square-duality-verified"
+    },
+    {
+      "n": 3,
+      "partition_count": 3,
+      "label_tuple_count": 729,
+      "physical_probability_sum_residual": 4.440892098500626e-16,
+      "minimum_likelihood": 0.0,
+      "maximum_likelihood": 216.0,
+      "total_variation_from_plancherel_product": 0.648662551440329,
+      "kl_divergence_bits": 2.1252578725338385,
+      "chi_square_from_plancherel_product": 12.499999999999998,
+      "class_signature_chi_square": 12.5,
+      "chi_square_duality_residual": 1.7763568394002505e-15,
+      "physical_mass_with_any_one_dimensional_label": 0.9999999999999996,
+      "union_bound_for_any_one_dimensional_label": 1.0,
+      "physical_mass_with_all_one_dimensional_labels": 0.03703703703703703,
+      "exact_all_one_dimensional_mass": 0.037037037037037035,
+      "all_one_dimensional_mass_residual": 6.938893903907228e-18,
+      "status": "exact-physical-class-signature-chi-square-duality-verified"
+    },
+    {
+      "n": 4,
+      "partition_count": 5,
+      "label_tuple_count": 15625,
+      "physical_probability_sum_residual": 0.0,
+      "minimum_likelihood": 0.0,
+      "maximum_likelihood": 13824.0,
+      "total_variation_from_plancherel_product": 0.6297054840213478,
+      "kl_divergence_bits": 2.073816201540236,
+      "chi_square_from_plancherel_product": 22.10493827160493,
+      "class_signature_chi_square": 22.104938271604937,
+      "chi_square_duality_residual": 7.105427357601002e-15,
+      "physical_mass_with_any_one_dimensional_label": 0.4270833333333335,
+      "union_bound_for_any_one_dimensional_label": 0.5,
+      "physical_mass_with_all_one_dimensional_labels": 0.0005787037037037036,
+      "exact_all_one_dimensional_mass": 0.0005787037037037037,
+      "all_one_dimensional_mass_residual": 1.0842021724855044e-19,
+      "status": "exact-physical-class-signature-chi-square-duality-verified"
+    },
+    {
+      "n": 5,
+      "partition_count": 7,
+      "label_tuple_count": 117649,
+      "physical_probability_sum_residual": 0.0,
+      "minimum_likelihood": 0.0,
+      "maximum_likelihood": 1728000.0,
+      "total_variation_from_plancherel_product": 0.44304629257491,
+      "kl_divergence_bits": 1.1325474284073112,
+      "chi_square_from_plancherel_product": 15.545887172067902,
+      "class_signature_chi_square": 15.545887172067902,
+      "chi_square_duality_residual": 0.0,
+      "physical_mass_with_any_one_dimensional_label": 0.09697222222222222,
+      "union_bound_for_any_one_dimensional_label": 0.1,
+      "physical_mass_with_all_one_dimensional_labels": 4.6296296296296296e-06,
+      "exact_all_one_dimensional_mass": 4.6296296296296296e-06,
+      "all_one_dimensional_mass_residual": 0.0,
+      "status": "exact-physical-class-signature-chi-square-duality-verified"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 6,
+      "group_order_log2": 9.491853096329676,
+      "exact_restricted_chi_square_contribution": 7.99999995713306,
+      "exact_all_one_dimensional_physical_mass": 2.1433470507544582e-08,
+      "any_one_dimensional_physical_mass_upper_bound": 0.016666666666666666,
+      "untrimmed_chi_square_vanishing_falsified": true,
+      "positive_mass_signal_certified": false,
+      "status": "constant-chi-square-parity-tail-has-vanishing-physical-mass"
+    },
+    {
+      "n": 8,
+      "group_order_log2": 15.29920801838728,
+      "exact_restricted_chi_square_contribution": 7.999999999999756,
+      "exact_all_one_dimensional_physical_mass": 1.2204736759489217e-13,
+      "any_one_dimensional_physical_mass_upper_bound": 0.00029761904761904765,
+      "untrimmed_chi_square_vanishing_falsified": true,
+      "positive_mass_signal_certified": false,
+      "status": "constant-chi-square-parity-tail-has-vanishing-physical-mass"
+    },
+    {
+      "n": 10,
+      "group_order_log2": 21.791061114716953,
+      "exact_restricted_chi_square_contribution": 8.0,
+      "exact_all_one_dimensional_physical_mass": 1.674175138475887e-19,
+      "any_one_dimensional_physical_mass_upper_bound": 3.306878306878307e-06,
+      "untrimmed_chi_square_vanishing_falsified": true,
+      "positive_mass_signal_certified": false,
+      "status": "constant-chi-square-parity-tail-has-vanishing-physical-mass"
+    },
+    {
+      "n": 20,
+      "group_order_log2": 61.07738392090622,
+      "exact_restricted_chi_square_contribution": 8.0,
+      "exact_all_one_dimensional_physical_mass": 5.5554102574554424e-55,
+      "any_one_dimensional_physical_mass_upper_bound": 4.932381147974598e-18,
+      "untrimmed_chi_square_vanishing_falsified": true,
+      "positive_mass_signal_certified": false,
+      "status": "constant-chi-square-parity-tail-has-vanishing-physical-mass"
+    },
+    {
+      "n": 30,
+      "group_order_log2": 107.70906734197342,
+      "exact_restricted_chi_square_contribution": 8.0,
+      "exact_all_one_dimensional_physical_mass": 4.2865684408418965e-97,
+      "any_one_dimensional_physical_mass_upper_bound": 4.5239851545790865e-32,
+      "untrimmed_chi_square_vanishing_falsified": true,
+      "positive_mass_signal_certified": false,
+      "status": "constant-chi-square-parity-tail-has-vanishing-physical-mass"
+    },
+    {
+      "n": 50,
+      "group_order_log2": 214.2081380635902,
+      "exact_restricted_chi_square_contribution": 8.0,
+      "exact_all_one_dimensional_physical_mass": 2.8435794668319906e-193,
+      "any_one_dimensional_physical_mass_upper_bound": 3.94553929995979e-64,
+      "untrimmed_chi_square_vanishing_falsified": true,
+      "positive_mass_signal_certified": false,
+      "status": "constant-chi-square-parity-tail-has-vanishing-physical-mass"
+    }
+  ],
+  "support_decomposition": {
+    "allowed_support_mask_count": 15,
+    "size_three_mask_count": 4,
+    "each_size_three_contribution": "V_n",
+    "size_four_mask_count": 3,
+    "each_size_four_contribution": "V4_n",
+    "size_five_mask_count": 6,
+    "each_size_five_contribution": "E_Pl[T_lambda^2]-V4_n",
+    "size_six_mask_count": 1,
+    "size_six_contribution": "Z6_n",
+    "all_lower_support_contributions_vanish": true,
+    "fully_nonidentity_core_chi_square_vanishes": false,
+    "fully_nonidentity_core_positive_mass_signal_proved": false
+  },
+  "proof_obligations": [
+    {
+      "obligation": "derive_physical_class_signature_chi_square_duality",
+      "resolved": true,
+      "resolution": "Expand the six-character likelihood and apply Plancherel column orthogonality independently on every edge."
+    },
+    {
+      "obligation": "decide_untrimmed_six_label_chi_square_vanishing",
+      "resolved": true,
+      "resolution": "It is false: the trivial/sign parity sector contributes 8-o(1)."
+    },
+    {
+      "obligation": "separate_tail_chi_square_from_positive_physical_mass",
+      "resolved": true,
+      "resolution": "The witness mass is 8/(n!)^3 and the entire one-dimensional union has mass at most 12/n!."
+    },
+    {
+      "obligation": "bound_dimension_trimmed_tetrahedral_tv_or_kl",
+      "resolved": false,
+      "resolution": "Choose an explicit Plancherel-typical dimension/shape trim, bound removed physical mass, and estimate TV/KL on the retained law."
+    },
+    {
+      "obligation": "bound_coherent_multiplicity_phase_information",
+      "resolved": false,
+      "resolution": "The class-signature dual sees label probabilities only."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "A nonvanishing full chi-square proves a useful measured-label signal.",
+      "resolved": true,
+      "resolution": "False. A factorially rare sector has factorial likelihood and alone supplies a constant second moment."
+    },
+    {
+      "objection": "The parity equations give three bits on typical physical samples.",
+      "resolved": true,
+      "resolution": "They are exact only on the all-one-dimensional irrep sector, whose physical mass is 8/(n!)^3."
+    },
+    {
+      "objection": "Removing one-dimensional irreps proves the remaining law is flat.",
+      "resolved": false,
+      "resolution": "Other low-dimensional tails and a genuinely typical tetrahedral core may remain; a scalable trim theorem is still required."
+    },
+    {
+      "objection": "Classical word-map duality dequantizes coherent recoupling.",
+      "resolved": false,
+      "resolution": "It evaluates a dephased second moment, not a coherent Racah transform."
+    }
+  ],
+  "headline_metrics": {
+    "class_signature_duality_theorem_count": 1,
+    "support_mask_decomposition_theorem_count": 1,
+    "untrimmed_chi_square_metric_no_go_count": 1,
+    "one_dimensional_parity_tail_theorem_count": 1,
+    "exact_signature_control_count": 3,
+    "finite_physical_control_count": 4,
+    "control_failure_count": 0,
+    "maximum_exact_control_n": 5,
+    "asymptotic_chi_square_lower_bound": 8.0,
+    "n50_all_one_dimensional_physical_mass": 2.8435794668319906e-193,
+    "dimension_trimmed_tv_kl_theorem_count": 0,
+    "positive_mass_measured_signal_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "physical_class_signature_chi_square_duality_proved": true,
+    "all_lower_support_class_word_terms_vanish_proved": true,
+    "untrimmed_six_label_chi_square_vanishing_falsified": true,
+    "constant_chi_square_witness_has_vanishing_physical_mass_proved": true,
+    "untrimmed_chi_square_valid_positive_mass_metric": false,
+    "dimension_trimmed_total_variation_vanishes_proved": false,
+    "dimension_trimmed_total_variation_survives_proved": false,
+    "final_label_conditioned_mutual_information_vanishes_proved": false,
+    "coherent_multiplicity_phase_signal_absent_proved": false,
+    "algorithm_claim_allowed": false,
+    "speedup_claim_allowed": false,
+    "reason": "The only proved asymptotic six-label signal is an L2 tail on factorially rare trivial/sign sectors; typical-mass TV/KL is open."
+  },
+  "status": "tetrahedral-chi-square-tail-metric-rejected-trimmed-core-open",
+  "summary": "Reduced six-label chi-square to a classical six-word cycle-type collision norm and proved that its nonvanishing parity tail has factorially vanishing physical mass, forcing dimension-trimmed metrics.",
+  "falsifiers_triggered": [
+    "Raw six-label chi-square cannot vanish because of exact trivial/sign parity constraints.",
+    "Constant chi-square does not imply positive-mass measured-label correlation.",
+    "All lower-support word-map contributions vanish; only the fully nonidentity core remains after trimming."
+  ]
+}

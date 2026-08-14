@@ -1,0 +1,272 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False at k=Theta(log M): source total variation is o(1), and any source event has nearly equal null and alternative mass.",
+      "challenge": "Rare weak-source sectors carry the binary signal.",
+      "resolved": true
+    },
+    {
+      "answer": "False: at least one half of alternative mass is simultaneously in typical-trace source blocks and at eigenvalues O(1/M).",
+      "challenge": "Deleting atypical source sectors removes the low-spectrum tail.",
+      "resolved": true
+    },
+    {
+      "answer": "Not proved. The theorem fixes absolute trace and signal location but does not lower-bound a fused source-controlled multiplicity transform.",
+      "challenge": "Blockwise rescaling is now impossible.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "arbitrary_circuit_lower_bound_proved": false,
+    "classical_separation_proved": false,
+    "coherent_within_block_rescaling_refuted": false,
+    "conditional_multiplicity_signal_required": true,
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "exceptional_weak_source_deflation_refuted": true,
+    "fused_multiplicity_support_transform_constructed": false,
+    "fused_multiplicity_support_transform_refuted": false,
+    "reason": "Weak-source preprocessing neither distinguishes the hypotheses nor removes the typical low-spectrum mass. The only live route acts coherently inside multiplicity blocks and remains unconstructed.",
+    "speedup_claim_allowed": false,
+    "weak_source_label_binary_test_refuted": true
+  },
+  "created_at": "2026-08-13T15:20:27.366684+00:00",
+  "falsifiers_triggered": [
+    "Rare weak Fourier labels do not carry constant binary hidden-involution signal at the logarithmic-copy threshold.",
+    "Exceptional-source deflation cannot remove the normalization-one support filter's low-spectrum burden.",
+    "The remaining computational question is an internal multiplicity transform, not another source-label weighting.",
+    "No arbitrary-circuit lower bound or quantum speedup follows from this source-deflation theorem."
+  ],
+  "finite_controls": [
+    {
+      "conditional_chain_rule_residual": 1.1102230246251565e-16,
+      "conditional_share_of_full_chi_square": 0.2222222222222221,
+      "conjugacy_class_size": 3,
+      "copy_count": 2,
+      "exact_full_quantum_chi_square": 1.0,
+      "exact_source_chi_square": 0.7777777777777778,
+      "exact_source_total_variation": 0.3055555555555556,
+      "finite_control_verified": true,
+      "maximum_block_trace_identity_residual": 0.0,
+      "maximum_conditional_state_trace_residual": 0.0,
+      "n": 3,
+      "predicted_source_chi_square": 0.7777777777777778,
+      "predicted_weighted_conditional_chi_square": 0.2222222222222222,
+      "source_chi_square_residual": 0.0,
+      "source_total_variation_chi_square_upper_bound": 0.44095855184409843,
+      "source_tuple_count": 9,
+      "status": "exact-source-law-and-conditional-signal-decomposition-verified",
+      "transposition_count": 1,
+      "weighted_conditional_chi_square": 0.2222222222222221
+    },
+    {
+      "conditional_chain_rule_residual": 2.220446049250313e-16,
+      "conditional_share_of_full_chi_square": 0.41269841269841256,
+      "conjugacy_class_size": 3,
+      "copy_count": 3,
+      "exact_full_quantum_chi_square": 2.3333333333333335,
+      "exact_source_chi_square": 1.3703703703703705,
+      "exact_source_total_variation": 0.4212962962962963,
+      "finite_control_verified": true,
+      "maximum_block_trace_identity_residual": 0.0,
+      "maximum_conditional_state_trace_residual": 0.0,
+      "n": 3,
+      "predicted_source_chi_square": 1.3703703703703705,
+      "predicted_weighted_conditional_chi_square": 0.9629629629629629,
+      "source_chi_square_residual": 0.0,
+      "source_total_variation_chi_square_upper_bound": 0.5853140973807077,
+      "source_tuple_count": 27,
+      "status": "exact-source-law-and-conditional-signal-decomposition-verified",
+      "transposition_count": 1,
+      "weighted_conditional_chi_square": 0.9629629629629627
+    },
+    {
+      "conditional_chain_rule_residual": 1.1102230246251565e-16,
+      "conditional_share_of_full_chi_square": 0.27777777777777757,
+      "conjugacy_class_size": 6,
+      "copy_count": 2,
+      "exact_full_quantum_chi_square": 0.5,
+      "exact_source_chi_square": 0.3611111111111111,
+      "exact_source_total_variation": 0.2326388888888889,
+      "finite_control_verified": true,
+      "maximum_block_trace_identity_residual": 1.1102230246251565e-16,
+      "maximum_conditional_state_trace_residual": 1.1102230246251565e-16,
+      "n": 4,
+      "predicted_source_chi_square": 0.3611111111111111,
+      "predicted_weighted_conditional_chi_square": 0.1388888888888889,
+      "source_chi_square_residual": 0.0,
+      "source_total_variation_chi_square_upper_bound": 0.3004626062886658,
+      "source_tuple_count": 25,
+      "status": "exact-source-law-and-conditional-signal-decomposition-verified",
+      "transposition_count": 1,
+      "weighted_conditional_chi_square": 0.13888888888888878
+    },
+    {
+      "conditional_chain_rule_residual": 1.1102230246251565e-16,
+      "conditional_share_of_full_chi_square": 0.2222222222222221,
+      "conjugacy_class_size": 3,
+      "copy_count": 2,
+      "exact_full_quantum_chi_square": 1.0,
+      "exact_source_chi_square": 0.7777777777777778,
+      "exact_source_total_variation": 0.3125,
+      "finite_control_verified": true,
+      "maximum_block_trace_identity_residual": 1.1102230246251565e-16,
+      "maximum_conditional_state_trace_residual": 2.220446049250313e-16,
+      "n": 4,
+      "predicted_source_chi_square": 0.7777777777777778,
+      "predicted_weighted_conditional_chi_square": 0.2222222222222222,
+      "source_chi_square_residual": 0.0,
+      "source_total_variation_chi_square_upper_bound": 0.44095855184409843,
+      "source_tuple_count": 25,
+      "status": "exact-source-law-and-conditional-signal-decomposition-verified",
+      "transposition_count": 2,
+      "weighted_conditional_chi_square": 0.2222222222222221
+    }
+  ],
+  "headline_metrics": {
+    "arbitrary_circuit_lower_bound_count": 0,
+    "coherent_within_block_rescaling_no_go_count": 0,
+    "conditional_chi_square_chain_rule_theorem_count": 1,
+    "exact_source_chi_square_theorem_count": 1,
+    "exceptional_source_deflation_no_go_count": 1,
+    "finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "maximum_scaling_weak_source_total_variation_bound": 0.0016842460915984223,
+    "minimum_scaling_conditional_signal_fraction": 0.9999972581711346,
+    "minimum_simultaneous_hard_mass_lower_bound": 0.5,
+    "new_quantum_algorithm_count": 0,
+    "source_only_threshold_test_no_go_count": 1
+  },
+  "primary_literature": [
+    {
+      "id": "HAYASHI-KAWACHI-KOBAYASHI-2006-HSP-SAMPLE-COMPLEXITY",
+      "scope": "Provides the support-span measurement whose weak-source preprocessing is audited here.",
+      "title": "Quantum Measurements for Hidden Subgroup Problems with Optimal Sample Complexity",
+      "url": "https://arxiv.org/abs/quant-ph/0604174"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-FUSED-MULTIPLICITY-SUPPORT",
+      "resolved": false,
+      "statement": "Construct or obstruct a coherent transform that acts inside the naturally occupied multiplicity blocks and avoids standalone inverse amplification."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-BLOCK-RELATIVE-SPECTRUM",
+      "resolved": false,
+      "statement": "Determine the source-conditioned spectrum after optimal legal block normalization, not merely its absolute trace scale."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-CLASSICAL-COMPARISON",
+      "resolved": false,
+      "statement": "Compare any surviving fused transform against legal classical query/sample access for the same promised input family."
+    }
+  ],
+  "scaling_records": [
+    {
+      "coherent_within_block_rescaling_ruled_out": false,
+      "conditional_chi_square_lower_scale": 4.1383722449773375,
+      "conditional_share_of_full_chi_square": 0.9999972581711346,
+      "conjugacy_class_size": 2027025,
+      "copy_count": 23,
+      "exceptional_source_deflation_removes_low_spectrum_burden": false,
+      "full_quantum_chi_square": 4.138383591716925,
+      "low_spectrum_eigenvalue_times_class_size": 4.966560363769531,
+      "low_spectrum_eigenvalue_upper_bound": 2.450172229631865e-06,
+      "n": 16,
+      "simultaneous_typical_source_and_low_spectrum_mass_lower_bound": 0.5,
+      "source_only_bounded_error_binary_test_possible": false,
+      "status": "source-transcript-negligible-exceptional-deflation-refuted-fused-block-transform-open",
+      "typical_alternative_source_mass": 0.75,
+      "typical_source_frame_trace_times_class_size": 0.9665718079208441,
+      "typical_source_frame_trace_upper_bound": 4.768425687501852e-07,
+      "weak_source_chi_square_upper_scale": 1.1346739588258245e-05,
+      "weak_source_total_variation_upper_bound": 0.0016842460915984223
+    },
+    {
+      "coherent_within_block_rescaling_ruled_out": false,
+      "conditional_chi_square_lower_scale": 6.0079667041146125,
+      "conditional_share_of_full_chi_square": 1.0,
+      "conjugacy_class_size": 191898783962510625,
+      "copy_count": 60,
+      "exceptional_source_deflation_removes_low_spectrum_burden": false,
+      "full_quantum_chi_square": 6.0079667041146125,
+      "low_spectrum_eigenvalue_times_class_size": 4.6657826511023375,
+      "low_spectrum_eigenvalue_upper_bound": 2.4313768720982858e-17,
+      "n": 32,
+      "simultaneous_typical_source_and_low_spectrum_mass_lower_bound": 0.5,
+      "source_only_bounded_error_binary_test_possible": false,
+      "status": "source-transcript-negligible-exceptional-deflation-refuted-fused-block-transform-open",
+      "typical_alternative_source_mass": 0.75,
+      "typical_source_frame_trace_times_class_size": 0.6657826511023377,
+      "typical_source_frame_trace_upper_bound": 3.469446951953615e-18,
+      "weak_source_chi_square_upper_scale": 3.126648265354387e-16,
+      "weak_source_total_variation_upper_bound": 8.84116545676302e-09
+    },
+    {
+      "coherent_within_block_rescaling_ruled_out": false,
+      "conditional_chi_square_lower_scale": 6.356002581486556,
+      "conditional_share_of_full_chi_square": 1.0,
+      "conjugacy_class_size": 112275575285571389562324404930670903477890625,
+      "copy_count": 149,
+      "exceptional_source_deflation_removes_low_spectrum_burden": false,
+      "full_quantum_chi_square": 6.356002581486556,
+      "low_spectrum_eigenvalue_times_class_size": 4.629326364915427,
+      "low_spectrum_eigenvalue_upper_bound": 4.123182048402601e-44,
+      "n": 64,
+      "simultaneous_typical_source_and_low_spectrum_mass_lower_bound": 0.5,
+      "source_only_bounded_error_binary_test_possible": false,
+      "status": "source-transcript-negligible-exceptional-deflation-refuted-fused-block-transform-open",
+      "typical_alternative_source_mass": 0.75,
+      "typical_source_frame_trace_times_class_size": 0.6293263649154263,
+      "typical_source_frame_trace_upper_bound": 5.605193857299268e-45,
+      "weak_source_chi_square_upper_scale": 1.3270918418455711e-42,
+      "weak_source_total_variation_upper_bound": 5.759973615055825e-22
+    },
+    {
+      "coherent_within_block_rescaling_ruled_out": false,
+      "conditional_chi_square_lower_scale": 7.12762708784895,
+      "conditional_share_of_full_chi_square": 1.0,
+      "conjugacy_class_size": 164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625,
+      "copy_count": 359,
+      "exceptional_source_deflation_removes_low_spectrum_burden": false,
+      "full_quantum_chi_square": 7.12762708784895,
+      "low_spectrum_eigenvalue_times_class_size": 4.561196587686122,
+      "low_spectrum_eigenvalue_upper_bound": 2.768568778769858e-107,
+      "n": 128,
+      "simultaneous_typical_source_and_low_spectrum_mass_lower_bound": 0.5,
+      "source_only_bounded_error_binary_test_possible": false,
+      "status": "source-transcript-negligible-exceptional-deflation-refuted-fused-block-transform-open",
+      "typical_alternative_source_mass": 0.75,
+      "typical_source_frame_trace_times_class_size": 0.5611965876861218,
+      "typical_source_frame_trace_upper_bound": 3.4063678720065206e-108,
+      "weak_source_chi_square_upper_scale": 2.1790689624333626e-105,
+      "weak_source_total_variation_upper_bound": 2.3340249369026475e-53
+    }
+  ],
+  "status": "weak-source-deflation-refuted-fused-multiplicity-transform-open",
+  "summary": "Proved that weak-source labels have vanishing threshold-scale signal, localized the constant chi-square signal inside conditional blocks, and showed exceptional-source deletion leaves constant O(1/M) spectral mass. Fused multiplicity-block rescaling remains open.",
+  "theorem": {
+    "arbitrary_circuit_lower_bound_proved": false,
+    "coherent_within_block_rescaling_refuted": false,
+    "conditional_chi_square_chain_rule": "sum_s p_s ell_s^2 chi^2(sigma_s||I/D_s)=(2^k-1)/M-[(1+1/M)^k-1].",
+    "conditional_signal_localization_proved": true,
+    "exact_source_chi_square_proved": true,
+    "exceptional_source_deflation_refuted": true,
+    "joint_hard_mass_consequence": "Combining source-trace and global spectral Markov bounds leaves at least one half of alternative mass in ordinary source blocks and at eigenvalues O(1/M).",
+    "scope_limit": "The theorem excludes source-label-only tests and deletion of exceptional source sectors. It does not exclude coherent within-block rescaling, fused multiplicity transforms, rational methods with new access, or arbitrary circuits.",
+    "source_chi_square_identity": "Character-column orthogonality gives chi^2(q^k||p^k)=(1+1/M)^k-1.",
+    "source_frame_trace_identity": "For B_s=E_h tensor_i(I+rho_i(h))/2, Tr(B_s)/D_s=2^-k ell(s).",
+    "source_only_threshold_test_refuted": true,
+    "source_signal_consequence": "At k=Theta(log M), source-label total variation is O(sqrt(log(M)/M))=o(1), so source-only bounded-error binary discrimination is impossible.",
+    "status": "weak-source-deflation-refuted-fused-multiplicity-transform-open",
+    "theorem_verified": true,
+    "typical_block_consequence": "At least 3/4 alternative source mass has normalized frame trace at most 2^-k(1+1/M)^k/(1/4)=O(1/M).",
+    "weak_source_likelihood": "p(lambda)=d_lambda^2/|G|, q(lambda)=p(lambda)(1+r_lambda), r_lambda=chi_lambda(C)/d_lambda."
+  },
+  "theorem_contract": {
+    "deflation_scope": "Preselection or deletion determined only by weak-source labels, followed by the normalization-one average-projector route.",
+    "outside_scope": "Coherent source labels, source-controlled transforms acting inside multiplicity blocks, and non-polynomial structured circuits.",
+    "source_model": "Weak Fourier irrep labels are measured on each copy; the remaining column/multiplicity state is retained exactly.",
+    "state_model": "The standard mixed coset-state binary problem for a uniform conjugacy class of nonidentity involutions."
+  }
+}

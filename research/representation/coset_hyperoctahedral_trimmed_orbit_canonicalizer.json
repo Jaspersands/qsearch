@@ -1,0 +1,308 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False on the transitive seeded action: one root and ordered generator traversal determine the complete labeling.",
+      "challenge": "Simultaneous conjugacy necessarily requires generic GI canonicalization.",
+      "resolved": true
+    },
+    {
+      "answer": "False: only two seed coordinates are oriented, so four choices suffice; the remaining coordinates are transformed as cosets.",
+      "challenge": "The right-<h> coset ambiguity makes seed search exponential.",
+      "resolved": true
+    },
+    {
+      "answer": "Not alone; the theorem uses the exact frame second moment to control alternative size bias.",
+      "challenge": "Average source success guarantees alternative success.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It resolves source orbit multiplicities but leaves the source-to-physical matrix-Hecke polar untouched.",
+      "challenge": "The canonicalizer compiles the hidden-involution measurement.",
+      "resolved": true
+    }
+  ],
+  "circuit_schema": [
+    {
+      "operation": "Replace each g by min(g,gh) reversibly.",
+      "polynomial": true,
+      "stage": "NORMALIZE_COSET_REPRESENTATIVES"
+    },
+    {
+      "operation": "Enumerate coordinate pairs, four orientations, and roots.",
+      "polynomial": true,
+      "stage": "ENUMERATE_SEEDS"
+    },
+    {
+      "operation": "Build BFS labeling for h,p,p^-1,q,q^-1 and flag transitivity.",
+      "polynomial": true,
+      "stage": "ROOTED_GENERATOR_TRAVERSAL"
+    },
+    {
+      "operation": "Return the least full tuple and its K transporter.",
+      "polynomial": true,
+      "stage": "MATCHING_NORMALIZE_AND_MINIMIZE"
+    },
+    {
+      "operation": "Apply the known efficient hyperoctahedral QFT.",
+      "polynomial": true,
+      "stage": "K_QFT_ON_TRANSPORTER"
+    },
+    {
+      "operation": "Unimplemented source-to-physical multiplicity transfer.",
+      "polynomial": false,
+      "stage": "MATRIX_HECKE_TRANSFER_POLAR"
+    }
+  ],
+  "claim_gate": {
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "full_orbit_synthesis_polar_compiled": false,
+    "gate_level_reversible_circuit_written": false,
+    "good_alternative_contribution_has_asymptotic_full_mass": true,
+    "good_source_set_has_asymptotic_full_mass": true,
+    "matrix_hecke_transfer_compiled_in_trimmed_basis": false,
+    "polynomial_canonicalizer_on_good_source_set": true,
+    "reason": "A high-mass source multiplicity basis is now polynomially canonicalizable, but the physical transfer amplitudes and polar that carry the binary measurement remain uncompiled.",
+    "speedup_claim_allowed": false,
+    "trimmed_regular_source_multiplicity_basis_compiled": true
+  },
+  "created_at": "2026-08-13T16:45:47.397301+00:00",
+  "falsifiers_triggered": [
+    "Generic graph canonicalization is not required on the transitive seeded source event.",
+    "Right-coset orientation ambiguity costs four seed choices, not 2^k choices.",
+    "The source multiplicity-basis obstruction is removable on asymptotically full natural mass.",
+    "Removing the source basis obstruction does not implement the matrix-Hecke transfer or a speedup."
+  ],
+  "finite_controls": [
+    {
+      "copy_count": 2,
+      "covariance_check_count": 760,
+      "covariance_failure_count": 0,
+      "degree": 4,
+      "duplicate_transporter_failure_count": 0,
+      "free_tuple_control_count": 16,
+      "half_degree": 2,
+      "maximum_candidate_count": 16,
+      "reconstruction_failure_count": 0,
+      "status": "trimmed-source-canonicalizer-control-verified",
+      "successful_free_tuple_count": 16,
+      "transporter_centralizer_failure_count": 0,
+      "trimmed_canonicalizer_control_verified": true,
+      "tuple_control_count": 96
+    },
+    {
+      "copy_count": 3,
+      "covariance_check_count": 752,
+      "covariance_failure_count": 0,
+      "degree": 4,
+      "duplicate_transporter_failure_count": 0,
+      "free_tuple_control_count": 35,
+      "half_degree": 2,
+      "maximum_candidate_count": 48,
+      "reconstruction_failure_count": 0,
+      "status": "trimmed-source-canonicalizer-control-verified",
+      "successful_free_tuple_count": 35,
+      "transporter_centralizer_failure_count": 0,
+      "trimmed_canonicalizer_control_verified": true,
+      "tuple_control_count": 96
+    },
+    {
+      "copy_count": 2,
+      "covariance_check_count": 760,
+      "covariance_failure_count": 0,
+      "degree": 6,
+      "duplicate_transporter_failure_count": 0,
+      "free_tuple_control_count": 95,
+      "half_degree": 3,
+      "maximum_candidate_count": 24,
+      "reconstruction_failure_count": 0,
+      "status": "trimmed-source-canonicalizer-control-verified",
+      "successful_free_tuple_count": 95,
+      "transporter_centralizer_failure_count": 0,
+      "trimmed_canonicalizer_control_verified": true,
+      "tuple_control_count": 96
+    }
+  ],
+  "headline_metrics": {
+    "canonicalizer_finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "matrix_hecke_transfer_polar_compiler_count": 0,
+    "minimum_scaling_trimmed_alternative_success_lower_bound": 0.9569767909103859,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_good_set_canonicalizer_theorem_count": 1,
+    "reversible_trimmed_source_basis_compiler_count": 1
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HYPEROCTAHEDRAL-REVERSIBLE-CANONICALIZER-ERROR",
+      "resolved": false,
+      "statement": "Give a gate-level reversible implementation with workspace and coherent bad-subspace flag accounting."
+    },
+    {
+      "id": "PO-COSET-HYPEROCTAHEDRAL-FREE-TRANSFER-NORMAL-FORM",
+      "resolved": false,
+      "statement": "Express the matrix-Hecke transfer after the canonicalizer as an operator on orbit representatives and K Fourier copies."
+    },
+    {
+      "id": "PO-COSET-HYPEROCTAHEDRAL-FREE-TRANSFER-POLAR",
+      "resolved": false,
+      "statement": "Compile or falsify the remaining source-to-physical polar on constant alternative mass."
+    }
+  ],
+  "scaling_records": [
+    {
+      "all_seed_pairs_failure_upper_bound": 0.0018259477880658433,
+      "canonicalizer_classical_cost_order": "poly(k,m) via seed-pair/root traversal",
+      "copy_count": 10,
+      "degree": 6,
+      "disjoint_seed_pair_count": 5,
+      "half_degree": 3,
+      "matrix_hecke_transfer_compiled": false,
+      "nonfree_source_fraction_upper_bound": 8.346131517891926e-08,
+      "one_pair_intransitivity_upper_bound": 0.2833333333333333,
+      "perfect_matching_count_decimal": "15",
+      "regular_source_multiplicity_basis_compiled_on_trimmed_mass": true,
+      "reversible_trimmed_canonicalizer_polynomial": true,
+      "status": "trimmed-canonicalizer-compiled-physical-transfer-open",
+      "total_trimmed_source_failure_upper_bound": 0.0018260312493810222,
+      "trimmed_alternative_failure_upper_bound": 0.0430232090896141,
+      "trimmed_alternative_success_lower_bound": 0.9569767909103859
+    },
+    {
+      "all_seed_pairs_failure_upper_bound": 5.1453434713639736e-05,
+      "canonicalizer_classical_cost_order": "poly(k,m) via seed-pair/root traversal",
+      "copy_count": 13,
+      "degree": 8,
+      "disjoint_seed_pair_count": 6,
+      "half_degree": 4,
+      "matrix_hecke_transfer_compiled": false,
+      "nonfree_source_fraction_upper_bound": 4.825411002868719e-13,
+      "one_pair_intransitivity_upper_bound": 0.19285714285714287,
+      "perfect_matching_count_decimal": "105",
+      "regular_source_multiplicity_basis_compiled_on_trimmed_mass": true,
+      "reversible_trimmed_canonicalizer_polynomial": true,
+      "status": "trimmed-canonicalizer-compiled-physical-transfer-open",
+      "total_trimmed_source_failure_upper_bound": 5.1453435196180833e-05,
+      "trimmed_alternative_failure_upper_bound": 0.007218493792696288,
+      "trimmed_alternative_success_lower_bound": 0.9927815062073038
+    },
+    {
+      "all_seed_pairs_failure_upper_bound": 1.8884863267739868e-15,
+      "canonicalizer_classical_cost_order": "poly(k,m) via seed-pair/root traversal",
+      "copy_count": 27,
+      "degree": 16,
+      "disjoint_seed_pair_count": 13,
+      "half_degree": 8,
+      "matrix_hecke_transfer_compiled": false,
+      "nonfree_source_fraction_upper_bound": 1.0085018200321494e-41,
+      "one_pair_intransitivity_upper_bound": 0.07368742368742369,
+      "perfect_matching_count_decimal": "2027025",
+      "regular_source_multiplicity_basis_compiled_on_trimmed_mass": true,
+      "reversible_trimmed_canonicalizer_polynomial": true,
+      "status": "trimmed-canonicalizer-compiled-physical-transfer-open",
+      "total_trimmed_source_failure_upper_bound": 1.8884863267739868e-15,
+      "trimmed_alternative_failure_upper_bound": 4.3783640806333776e-08,
+      "trimmed_alternative_success_lower_bound": 0.9999999562163592
+    },
+    {
+      "all_seed_pairs_failure_upper_bound": 6.343052445714804e-48,
+      "canonicalizer_classical_cost_order": "poly(k,m) via seed-pair/root traversal",
+      "copy_count": 64,
+      "degree": 32,
+      "disjoint_seed_pair_count": 32,
+      "half_degree": 16,
+      "matrix_hecke_transfer_compiled": false,
+      "nonfree_source_fraction_upper_bound": 7.801748596979855e-136,
+      "one_pair_intransitivity_upper_bound": 0.03350208390302295,
+      "perfect_matching_count_decimal": "191898783962510625",
+      "regular_source_multiplicity_basis_compiled_on_trimmed_mass": true,
+      "reversible_trimmed_canonicalizer_polynomial": true,
+      "status": "trimmed-canonicalizer-compiled-physical-transfer-open",
+      "total_trimmed_source_failure_upper_bound": 6.343052445714804e-48,
+      "trimmed_alternative_failure_upper_bound": 2.5316078475420534e-24,
+      "trimmed_alternative_success_lower_bound": 1.0
+    },
+    {
+      "all_seed_pairs_failure_upper_bound": 6.523436183058721e-137,
+      "canonicalizer_classical_cost_order": "poly(k,m) via seed-pair/root traversal",
+      "copy_count": 153,
+      "degree": 64,
+      "disjoint_seed_pair_count": 76,
+      "half_degree": 32,
+      "matrix_hecke_transfer_compiled": false,
+      "nonfree_source_fraction_upper_bound": 0.0,
+      "one_pair_intransitivity_upper_bound": 0.01614675352751876,
+      "perfect_matching_count_decimal": "112275575285571389562324404930670903477890625",
+      "regular_source_multiplicity_basis_compiled_on_trimmed_mass": true,
+      "reversible_trimmed_canonicalizer_polynomial": true,
+      "status": "trimmed-canonicalizer-compiled-physical-transfer-open",
+      "total_trimmed_source_failure_upper_bound": 6.523436183058721e-137,
+      "trimmed_alternative_failure_upper_bound": 8.11639242227959e-69,
+      "trimmed_alternative_success_lower_bound": 1.0
+    },
+    {
+      "all_seed_pairs_failure_upper_bound": 0.0,
+      "canonicalizer_classical_cost_order": "poly(k,m) via seed-pair/root traversal",
+      "copy_count": 363,
+      "degree": 128,
+      "disjoint_seed_pair_count": 181,
+      "half_degree": 64,
+      "matrix_hecke_transfer_compiled": false,
+      "nonfree_source_fraction_upper_bound": 0.0,
+      "one_pair_intransitivity_upper_bound": 0.007938558531164897,
+      "perfect_matching_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "regular_source_multiplicity_basis_compiled_on_trimmed_mass": true,
+      "reversible_trimmed_canonicalizer_polynomial": true,
+      "status": "trimmed-canonicalizer-compiled-physical-transfer-open",
+      "total_trimmed_source_failure_upper_bound": 0.0,
+      "trimmed_alternative_failure_upper_bound": 0.0,
+      "trimmed_alternative_success_lower_bound": 1.0
+    },
+    {
+      "all_seed_pairs_failure_upper_bound": 0.0,
+      "canonicalizer_classical_cost_order": "poly(k,m) via seed-pair/root traversal",
+      "copy_count": 846,
+      "degree": 256,
+      "disjoint_seed_pair_count": 423,
+      "half_degree": 128,
+      "matrix_hecke_transfer_compiled": false,
+      "nonfree_source_fraction_upper_bound": 0.0,
+      "one_pair_intransitivity_upper_bound": 0.00393725494961317,
+      "perfect_matching_count_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "regular_source_multiplicity_basis_compiled_on_trimmed_mass": true,
+      "reversible_trimmed_canonicalizer_polynomial": true,
+      "status": "trimmed-canonicalizer-compiled-physical-transfer-open",
+      "total_trimmed_source_failure_upper_bound": 0.0,
+      "trimmed_alternative_failure_upper_bound": 0.0,
+      "trimmed_alternative_success_lower_bound": 1.0
+    }
+  ],
+  "status": "trimmed-source-multiplicity-basis-compiled-transfer-polar-open",
+  "summary": "Constructed a polynomial deterministic canonicalizer and unique transporter on an asymptotically full free/transitively-seeded source subspace, yielding an explicit regular K multiplicity basis while leaving the physical matrix-Hecke transfer polar as the sole operator bottleneck.",
+  "theorem": {
+    "asymptotically_full_alternative_success_proved": true,
+    "asymptotically_full_source_success_proved": true,
+    "canonical_form": "Take the lexicographically least transformed full tuple over all seeds, orientations, and roots.",
+    "deterministic_polynomial_canonicalizer_proved_on_good_set": true,
+    "hidden_involution_algorithm_constructed": false,
+    "matching_normalization": "A deterministic pair ordering maps the transformed perfect matching back to canonical h, so every resulting transporter lies in K.",
+    "matrix_hecke_transfer_polar_compiled": false,
+    "reversible_compilation": "The deterministic poly(k,m) classical map and its unique inverse on the good set admit a reversible polynomial implementation.",
+    "reversible_trimmed_source_basis_compiled": true,
+    "rooted_labeling": "If <h,p,q> is transitive, ordered BFS from one root uniquely labels every point of the deterministic generator action.",
+    "scope_limit": "The theorem resolves a source regular-orbit basis only; the physical matrix-Hecke transfer and its polar remain open.",
+    "seed_orientation": "Enumerate coordinate pairs and four representatives g_i h^a, g_j h^b of their plus cosets.",
+    "status": "trimmed-source-multiplicity-basis-compiled-transfer-polar-open",
+    "theorem_verified": true,
+    "transitivity_probability": "A uniform permutation pair is intransitive with probability at most sum_(s<=n/2)1/binom(n,s); disjoint pairs amplify independently.",
+    "transporter_equivariance": "On free tuples, can(aza^-1)=can(z) and t(aza^-1)=t(z)a^-1.",
+    "trimmed_mass": "Union the seed failure with the nonfree source bound and transfer it to alternative contribution by the global Gram second moment.",
+    "unique_transporter_proved_on_free_set": true
+  },
+  "theorem_contract": {
+    "coherent_scope": "Reversible implementation on the good subspace, with the complement coherently flagged and discarded in the mass bound.",
+    "good_set": "Tuples with trivial K stabilizer and at least one transitive oriented seed coordinate pair.",
+    "input": "A computational-basis tuple of canonical plus cosets in X^k.",
+    "output": "Canonical orbit representative and unique K transporter.",
+    "outside_scope": "Physical input lifting, source-transfer amplitudes, polar normalization, dequantization, and hidden-element decoding."
+  }
+}

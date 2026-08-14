@@ -1,0 +1,510 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Strictness requires a high-multiplicity cell.",
+      "resolution": "False. Every occupied cell in the explicit grid has isotypic multiplicity at most one.",
+      "resolved": true
+    },
+    {
+      "objection": "The discrepancy is floating-point noise.",
+      "resolution": "The primary margin is 0.133333, over 10^8 times the declared numerical error budget.",
+      "resolved": true
+    },
+    {
+      "objection": "Strict contraction kills the global algorithm.",
+      "resolution": "False. It can improve conditioning; what it kills is the scalar-waist equality shortcut and any compiler based on it.",
+      "resolved": true
+    },
+    {
+      "objection": "The reconstructed value 1/15 is already an exact all-n law.",
+      "resolution": "False. It is a finite rational reconstruction pending a symbolic 9j derivation.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "coherent_grid_recoupling_compiled": false,
+    "disjoint_overlap_determined_by_carrier_dimensions": false,
+    "exact_all_n_grid_spectrum_proved": false,
+    "finite_multiplicity_free_strict_grid_contraction_verified": true,
+    "full_grid_recoupling_data_required": true,
+    "reason": "The scalar equality shortcut is falsified. The surviving route requires an exact source-weighted 9j formula, asymptotic conditioning, and a coherent compiler.",
+    "single_waist_bound_always_tight": false,
+    "speedup_claim_allowed": false,
+    "uniform_residual_pair_quotient_gap_proved": false
+  },
+  "controls": [
+    {
+      "best_waist_column": "both",
+      "best_waist_row": "first",
+      "control_id": "S6-MULTIPLICITY-FREE-GRID-1",
+      "every_occupied_cell_multiplicity_free": true,
+      "first_core_rank": 1,
+      "first_pair": [
+        0,
+        15
+      ],
+      "grid_cells": [
+        {
+          "factor_dimension": 9,
+          "isotypic_support_size": 1,
+          "maximum_isotypic_multiplicity": 1,
+          "membership_pattern": "0001",
+          "multiplicity_free": true,
+          "partitions": [
+            [
+              4,
+              2
+            ]
+          ]
+        },
+        {
+          "factor_dimension": 9,
+          "isotypic_support_size": 1,
+          "maximum_isotypic_multiplicity": 1,
+          "membership_pattern": "0010",
+          "multiplicity_free": true,
+          "partitions": [
+            [
+              2,
+              2,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "factor_dimension": 5,
+          "isotypic_support_size": 1,
+          "maximum_isotypic_multiplicity": 1,
+          "membership_pattern": "0101",
+          "multiplicity_free": true,
+          "partitions": [
+            [
+              5,
+              1
+            ]
+          ]
+        },
+        {
+          "factor_dimension": 5,
+          "isotypic_support_size": 1,
+          "maximum_isotypic_multiplicity": 1,
+          "membership_pattern": "0110",
+          "multiplicity_free": true,
+          "partitions": [
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "factor_dimension": 1,
+          "isotypic_support_size": 1,
+          "maximum_isotypic_multiplicity": 1,
+          "membership_pattern": "1001",
+          "multiplicity_free": true,
+          "partitions": [
+            [
+              6
+            ]
+          ]
+        },
+        {
+          "factor_dimension": 1,
+          "isotypic_support_size": 1,
+          "maximum_isotypic_multiplicity": 1,
+          "membership_pattern": "1010",
+          "multiplicity_free": true,
+          "partitions": [
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "factor_dimension": 5,
+          "isotypic_support_size": 1,
+          "maximum_isotypic_multiplicity": 1,
+          "membership_pattern": "1101",
+          "multiplicity_free": true,
+          "partitions": [
+            [
+              3,
+              3
+            ]
+          ]
+        },
+        {
+          "factor_dimension": 5,
+          "isotypic_support_size": 1,
+          "maximum_isotypic_multiplicity": 1,
+          "membership_pattern": "1110",
+          "multiplicity_free": true,
+          "partitions": [
+            [
+              2,
+              2,
+              2
+            ]
+          ]
+        },
+        {
+          "factor_dimension": 1,
+          "isotypic_support_size": 1,
+          "maximum_isotypic_multiplicity": 1,
+          "membership_pattern": "1111",
+          "multiplicity_free": true,
+          "partitions": [
+            [
+              6
+            ]
+          ]
+        }
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "nonzero_overlap_rank": 1,
+      "numerical_error_budget": 1e-09,
+      "observed_operator_norm": 0.06666666666666668,
+      "observed_squared_norm": 0.004444444444444446,
+      "occupied_grid_cell_count": 9,
+      "rational_reconstruction_residual": 1.3877787807814457e-17,
+      "reconstructed_operator_norm": "1/15",
+      "reconstructed_squared_norm": "1/225",
+      "second_core_rank": 81,
+      "second_pair": [
+        5,
+        6
+      ],
+      "squared_rational_reconstruction_residual": 1.734723475976807e-18,
+      "status": "multiplicity-free-grid-strictly-below-waist-bound",
+      "strict_contraction_margin": 0.13333333333333333,
+      "strict_waist_saturation_falsifier": true,
+      "target_partition": [
+        6
+      ],
+      "waist_bound": 0.2,
+      "waist_bound_denominator": 5,
+      "waist_bound_numerator": 1,
+      "waist_to_observed_ratio": 2.9999999999999996
+    },
+    {
+      "best_waist_column": "second",
+      "best_waist_row": "first",
+      "control_id": "S6-MULTIPLICITY-FREE-GRID-2",
+      "every_occupied_cell_multiplicity_free": true,
+      "first_core_rank": 1,
+      "first_pair": [
+        0,
+        15
+      ],
+      "grid_cells": [
+        {
+          "factor_dimension": 1,
+          "isotypic_support_size": 1,
+          "maximum_isotypic_multiplicity": 1,
+          "membership_pattern": "0001",
+          "multiplicity_free": true,
+          "partitions": [
+            [
+              6
+            ]
+          ]
+        },
+        {
+          "factor_dimension": 1,
+          "isotypic_support_size": 1,
+          "maximum_isotypic_multiplicity": 1,
+          "membership_pattern": "0010",
+          "multiplicity_free": true,
+          "partitions": [
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "factor_dimension": 5,
+          "isotypic_support_size": 1,
+          "maximum_isotypic_multiplicity": 1,
+          "membership_pattern": "0101",
+          "multiplicity_free": true,
+          "partitions": [
+            [
+              3,
+              3
+            ]
+          ]
+        },
+        {
+          "factor_dimension": 5,
+          "isotypic_support_size": 1,
+          "maximum_isotypic_multiplicity": 1,
+          "membership_pattern": "0110",
+          "multiplicity_free": true,
+          "partitions": [
+            [
+              2,
+              2,
+              2
+            ]
+          ]
+        },
+        {
+          "factor_dimension": 9,
+          "isotypic_support_size": 1,
+          "maximum_isotypic_multiplicity": 1,
+          "membership_pattern": "1001",
+          "multiplicity_free": true,
+          "partitions": [
+            [
+              4,
+              2
+            ]
+          ]
+        },
+        {
+          "factor_dimension": 9,
+          "isotypic_support_size": 1,
+          "maximum_isotypic_multiplicity": 1,
+          "membership_pattern": "1010",
+          "multiplicity_free": true,
+          "partitions": [
+            [
+              2,
+              2,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "factor_dimension": 5,
+          "isotypic_support_size": 1,
+          "maximum_isotypic_multiplicity": 1,
+          "membership_pattern": "1101",
+          "multiplicity_free": true,
+          "partitions": [
+            [
+              5,
+              1
+            ]
+          ]
+        },
+        {
+          "factor_dimension": 5,
+          "isotypic_support_size": 1,
+          "maximum_isotypic_multiplicity": 1,
+          "membership_pattern": "1110",
+          "multiplicity_free": true,
+          "partitions": [
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ]
+          ]
+        },
+        {
+          "factor_dimension": 1,
+          "isotypic_support_size": 1,
+          "maximum_isotypic_multiplicity": 1,
+          "membership_pattern": "1111",
+          "multiplicity_free": true,
+          "partitions": [
+            [
+              6
+            ]
+          ]
+        }
+      ],
+      "labels": [
+        [
+          [
+            6
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            4,
+            2
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 6,
+      "nonzero_overlap_rank": 1,
+      "numerical_error_budget": 1e-09,
+      "observed_operator_norm": 0.06666666666666668,
+      "observed_squared_norm": 0.004444444444444446,
+      "occupied_grid_cell_count": 9,
+      "rational_reconstruction_residual": 1.3877787807814457e-17,
+      "reconstructed_operator_norm": "1/15",
+      "reconstructed_squared_norm": "1/225",
+      "second_core_rank": 1,
+      "second_pair": [
+        5,
+        9
+      ],
+      "squared_rational_reconstruction_residual": 1.734723475976807e-18,
+      "status": "multiplicity-free-grid-strictly-below-waist-bound",
+      "strict_contraction_margin": 0.044444444444444425,
+      "strict_waist_saturation_falsifier": true,
+      "target_partition": [
+        6
+      ],
+      "waist_bound": 0.1111111111111111,
+      "waist_bound_denominator": 9,
+      "waist_bound_numerator": 1,
+      "waist_to_observed_ratio": 1.6666666666666663
+    }
+  ],
+  "created_at": "2026-08-13T18:43:03.988540+00:00",
+  "falsifiers_triggered": [
+    "The first forty saturated waist controls were not representative.",
+    "Multiplicity-free local cells do not make a disjoint grid scalar.",
+    "Carrier dimensions alone do not determine disjoint pair-core overlap."
+  ],
+  "headline_metrics": {
+    "all_n_disjoint_grid_formula_count": 0,
+    "coherent_grid_recoupling_compiler_count": 0,
+    "finite_disjoint_grid_control_count": 2,
+    "new_quantum_algorithm_count": 0,
+    "primary_first_core_rank": 1,
+    "primary_observed_operator_norm": 0.06666666666666668,
+    "primary_occupied_grid_cell_count": 9,
+    "primary_second_core_rank": 81,
+    "primary_waist_bound": 0.2,
+    "primary_waist_to_observed_ratio": 2.9999999999999996,
+    "strict_waist_saturation_falsifier_count": 2
+  },
+  "proof_obligations": [
+    {
+      "obligation": "derive_exact_disjoint_grid_recoupling_formula",
+      "resolution": "Express each block as a symmetric-group 9j contraction with explicit multiplicity indices and normalization.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_uniform_residual_pair_quotient_gap",
+      "resolution": "Strict finite contraction helps but does not bound natural threshold-depth child spans uniformly in n.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_coherent_grid_recoupling",
+      "resolution": "No polynomial circuit for the required 9j/Racah transport or its source-weighted restriction is known.",
+      "resolved": false
+    }
+  ],
+  "status": "scalar-disjoint-waist-equality-falsified-grid-recoupling-open",
+  "summary": "Falsified exact single-waist saturation with a multiplicity-free S_6 grid: the disjoint pair-core norm is 1/15 while the best waist bound is 1/5. Full 9j/Racah coherence is indispensable.",
+  "theorem_contract": {
+    "architectural_consequence": "Disjoint-core analysis and compilation must retain the full row/column recoupling tensor, not just carrier dimensions or pairwise principal angles.",
+    "falsified_extension": "That upper bound is always attained, or is determined by the best waist carrier dimension alone.",
+    "finite_witness": "A fully explicit S_6 grid has nine multiplicity-free occupied cells, first/second core ranks 1 and 81, and product norm 1/15 against a best waist bound 1/5.",
+    "proved_input": "The existing disjoint-pair theorem gives a one-waist upper bound on the pair-core product norm.",
+    "scope": "This is a stable finite numerical counterexample. It is not an all-n norm formula, an asymptotic gap, or a circuit lower bound."
+  }
+}

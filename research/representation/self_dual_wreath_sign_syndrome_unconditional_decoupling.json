@@ -1,0 +1,284 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Self-conjugate partitions prevent a balanced orientation bit.",
+      "resolution": "A fair auxiliary bit on each fixed orbit produces an exact balanced lift and does not condition away physical probability.",
+      "resolved": true
+    },
+    {
+      "objection": "Finite conditional S5 syndrome KL contradicts decoupling.",
+      "resolution": "No: strong conditional biases can cancel across base sign orbits; the theorem bounds only the unconditional syndrome.",
+      "resolved": true
+    },
+    {
+      "objection": "Uniform syndrome proves the full six-label law is product.",
+      "resolution": "False. Base-orbit dependence and orbit-syndrome mutual information remain exact components of the full law.",
+      "resolved": true
+    },
+    {
+      "objection": "A surviving orbit-adaptive syndrome is automatically quantum.",
+      "resolution": "False. It is a deterministic statistic of measured partition labels and still requires a same-access classical lower bound.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "base_sign_orbit_law_is_product_proved": false,
+    "classical_separation_proved": false,
+    "coherent_multiplicity_signal_absent_proved": false,
+    "orbit_adaptive_syndrome_information_vanishes_proved": false,
+    "reason": "Every fixed sign syndrome decouples, but dependence revealed by adapting to the six base sign orbits remains the genuine six-label gate.",
+    "self_conjugate_mass_decay_needed_for_unconditional_result": false,
+    "speedup_claim_allowed": false,
+    "unconditional_sign_syndrome_information_vanishes_proved": true
+  },
+  "created_at": "2026-08-13T20:43:07.955307+00:00",
+  "exact_controls": [
+    {
+      "exact_face_coefficient_bound": 0.9128709291752769,
+      "exact_five_label_coefficient_bound": 1.7440374613713625,
+      "face_walsh_coefficients": [
+        -0.11111111111111108,
+        -0.11111111111111109,
+        -0.11111111111111108,
+        -0.11111111111111108
+      ],
+      "finite_fourier_inversion_verified": true,
+      "marginal_bounds_verified": true,
+      "maximum_face_coefficient": 0.11111111111111109,
+      "maximum_opposite_complement_coefficient": 0.03703703703703703,
+      "n": 3,
+      "opposite_complement_walsh_coefficients": [
+        0.03703703703703703,
+        0.03703703703703703,
+        0.03703703703703703
+      ],
+      "probability_sum_residual": 4.440892098500626e-16,
+      "status": "exact-fair-lifted-syndrome-marginal-control",
+      "syndrome_chi_square": 0.05349794238683124,
+      "syndrome_chi_square_upper_bound": 12.458333333333334,
+      "syndrome_kl_bits": 0.035874432154493444,
+      "syndrome_kl_upper_bound_bits": 3.7504278539727687,
+      "syndrome_probabilities": [
+        0.08333333333333329,
+        0.12037037037037032,
+        0.12037037037037032,
+        0.12037037037037031,
+        0.12037037037037031,
+        0.12037037037037032,
+        0.19444444444444436,
+        0.12037037037037031
+      ],
+      "syndrome_total_variation": 0.06944444444444459,
+      "syndrome_total_variation_upper_bound": 1.7648182153789476
+    },
+    {
+      "exact_face_coefficient_bound": 0.8897565210026093,
+      "exact_five_label_coefficient_bound": 1.8056623900017041,
+      "face_walsh_coefficients": [
+        -0.19444444444444448,
+        -0.19444444444444448,
+        -0.19444444444444453,
+        -0.1944444444444446
+      ],
+      "finite_fourier_inversion_verified": true,
+      "marginal_bounds_verified": true,
+      "maximum_face_coefficient": 0.1944444444444446,
+      "maximum_opposite_complement_coefficient": 0.07870370370370375,
+      "n": 4,
+      "opposite_complement_walsh_coefficients": [
+        0.07870370370370375,
+        0.07870370370370361,
+        0.07870370370370364
+      ],
+      "probability_sum_residual": 0.0,
+      "status": "exact-fair-lifted-syndrome-marginal-control",
+      "syndrome_chi_square": 0.16981738683127587,
+      "syndrome_chi_square_upper_bound": 12.947916666666666,
+      "syndrome_kl_bits": 0.10804956050273386,
+      "syndrome_kl_upper_bound_bits": 3.801977744603154,
+      "syndrome_probabilities": [
+        0.057291666666666616,
+        0.11516203703703703,
+        0.11516203703703703,
+        0.11516203703703703,
+        0.11516203703703709,
+        0.11516203703703703,
+        0.25173611111111116,
+        0.11516203703703702
+      ],
+      "syndrome_total_variation": 0.12673611111111113,
+      "syndrome_total_variation_upper_bound": 1.7991606839486758
+    },
+    {
+      "exact_face_coefficient_bound": 0.5845225972250061,
+      "exact_five_label_coefficient_bound": 1.1648299033351195,
+      "face_walsh_coefficients": [
+        -0.11888888888888888,
+        -0.11888888888888888,
+        -0.11888888888888888,
+        -0.11888888888888888
+      ],
+      "finite_fourier_inversion_verified": true,
+      "marginal_bounds_verified": true,
+      "maximum_face_coefficient": 0.11888888888888888,
+      "maximum_opposite_complement_coefficient": 0.030259259259259236,
+      "n": 5,
+      "opposite_complement_walsh_coefficients": [
+        0.030259259259259205,
+        0.03025925925925923,
+        0.030259259259259236
+      ],
+      "probability_sum_residual": 0.0,
+      "status": "exact-fair-lifted-syndrome-marginal-control",
+      "syndrome_chi_square": 0.05928513991769545,
+      "syndrome_chi_square_upper_bound": 5.4371527777777775,
+      "syndrome_kl_bits": 0.040618046178416564,
+      "syndrome_kl_upper_bound_bits": 2.686422709818066,
+      "syndrome_probabilities": [
+        0.07690277777777776,
+        0.1212175925925926,
+        0.1212175925925926,
+        0.1212175925925926,
+        0.1212175925925926,
+        0.1212175925925926,
+        0.19579166666666664,
+        0.1212175925925926
+      ],
+      "syndrome_total_variation": 0.07079166666666664,
+      "syndrome_total_variation_upper_bound": 1.165885154912114
+    }
+  ],
+  "falsifiers_triggered": [
+    "Finite sign-orbit conditional bias can cancel completely in the raw syndrome.",
+    "Self-conjugate mass is not an obstruction to unconditional orientation decoupling.",
+    "Any surviving orientation information must adapt to all six sign-orbit labels."
+  ],
+  "headline_metrics": {
+    "face_frequency_count": 4,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "opposite_complement_frequency_count": 3,
+    "orbit_adaptive_syndrome_theorem_count": 0,
+    "self_conjugate_mass_assumption_count": 0,
+    "tail_n": 50,
+    "tail_syndrome_kl_upper_bound_bits": 0.01772585833531385,
+    "tail_syndrome_total_variation_upper_bound": 0.05559320875093619,
+    "unconditional_syndrome_decoupling_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "bound_unconditional_three_bit_sign_syndrome",
+      "resolution": "Walsh frequencies reduce to four face and three proper four-edge marginals, all controlled by existing V_n and V5_n theorems.",
+      "resolved": true
+    },
+    {
+      "obligation": "remove_self_conjugate_mass_assumption_from_raw_syndrome",
+      "resolution": "Independent fair bits on fixed transposition orbits make every orientation coordinate balanced without discarding physical mass.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_orbit_adaptive_syndrome_mutual_information",
+      "resolution": "Estimate I(O:Y) on the canonical high-dimensional trim, or build a positive-mass orbit family with nonvanishing conditional bias.",
+      "resolved": false
+    },
+    {
+      "obligation": "dequantize_any_orbit_adaptive_survivor",
+      "resolution": "Compare weak-Fourier syndrome sampling with classical character and word-map access under the same natural-input model.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "five_label_chi_square_upper_bound": 0.9163132621319914,
+      "fusion_face_chi_square": 0.07157738095238095,
+      "n": 8,
+      "self_conjugate_mass_assumption_used": false,
+      "status": "unconditional-sign-syndrome-information-upper-bound-vanishing",
+      "syndrome_chi_square_upper_bound": 3.035249310205498,
+      "syndrome_kl_upper_bound_bits": 2.01265781042644,
+      "syndrome_total_variation_upper_bound": 0.8710983455106401
+    },
+    {
+      "five_label_chi_square_upper_bound": 0.13469682369611496,
+      "fusion_face_chi_square": 0.018847580049836995,
+      "n": 12,
+      "self_conjugate_mass_assumption_used": false,
+      "status": "unconditional-sign-syndrome-information-upper-bound-vanishing",
+      "syndrome_chi_square_upper_bound": 0.4794807912876929,
+      "syndrome_kl_upper_bound_bits": 0.5650909655457669,
+      "syndrome_total_variation_upper_bound": 0.34622275751591375
+    },
+    {
+      "five_label_chi_square_upper_bound": 0.04670086046005746,
+      "fusion_face_chi_square": 0.009538618503045018,
+      "n": 16,
+      "self_conjugate_mass_assumption_used": false,
+      "status": "unconditional-sign-syndrome-information-upper-bound-vanishing",
+      "syndrome_chi_square_upper_bound": 0.17825705539235248,
+      "syndrome_kl_upper_bound_bits": 0.2366543202236945,
+      "syndrome_total_variation_upper_bound": 0.21110249607261428
+    },
+    {
+      "five_label_chi_square_upper_bound": 0.025138773042291594,
+      "fusion_face_chi_square": 0.005813987578874729,
+      "n": 20,
+      "self_conjugate_mass_assumption_used": false,
+      "status": "unconditional-sign-syndrome-information-upper-bound-vanishing",
+      "syndrome_chi_square_upper_bound": 0.0986722694423737,
+      "syndrome_kl_upper_bound_bits": 0.1357610989687713,
+      "syndrome_total_variation_upper_bound": 0.1570607123395072
+    },
+    {
+      "five_label_chi_square_upper_bound": 0.01594050161922097,
+      "fusion_face_chi_square": 0.003920310049449772,
+      "n": 24,
+      "self_conjugate_mass_assumption_used": false,
+      "status": "unconditional-sign-syndrome-information-upper-bound-vanishing",
+      "syndrome_chi_square_upper_bound": 0.063502745055462,
+      "syndrome_kl_upper_bound_bits": 0.08882375710939003,
+      "syndrome_total_variation_upper_bound": 0.12599875500918847
+    },
+    {
+      "five_label_chi_square_upper_bound": 0.009398740138231583,
+      "fusion_face_chi_square": 0.00244108599578005,
+      "n": 30,
+      "self_conjugate_mass_assumption_used": false,
+      "status": "unconditional-sign-syndrome-information-upper-bound-vanishing",
+      "syndrome_chi_square_upper_bound": 0.03796056439781495,
+      "syndrome_kl_upper_bound_bits": 0.05375163191498306,
+      "syndrome_total_variation_upper_bound": 0.09741735522715518
+    },
+    {
+      "five_label_chi_square_upper_bound": 0.004895154886938771,
+      "fusion_face_chi_square": 0.0013382986216299493,
+      "n": 40,
+      "self_conjugate_mass_assumption_used": false,
+      "status": "unconditional-sign-syndrome-information-upper-bound-vanishing",
+      "syndrome_chi_square_upper_bound": 0.02003865914733611,
+      "syndrome_kl_upper_bound_bits": 0.028623830925434496,
+      "syndrome_total_variation_upper_bound": 0.07077898548887253
+    },
+    {
+      "five_label_chi_square_upper_bound": 0.0029953955426267175,
+      "fusion_face_chi_square": 0.0008440582022551307,
+      "n": 50,
+      "self_conjugate_mass_assumption_used": false,
+      "status": "unconditional-sign-syndrome-information-upper-bound-vanishing",
+      "syndrome_chi_square_upper_bound": 0.012362419436900675,
+      "syndrome_kl_upper_bound_bits": 0.01772585833531385,
+      "syndrome_total_variation_upper_bound": 0.05559320875093619
+    }
+  ],
+  "status": "unconditional-sign-syndrome-decoupled-orbit-adaptive-channel-open",
+  "summary": "Proved the fair-lifted three-bit sign syndrome becomes uniform and isolated orbit-adaptive mutual information as the only orientation survivor.",
+  "theorem_contract": {
+    "coefficient_bounds": "Face coefficients are at most sqrt(V_n); opposite-complement coefficients are at most sqrt(V5_n).",
+    "conditional_decomposition": "E_O D(P(Y|O)||U)=I_P(O:Y)+D(P_Y||U); any surviving conditional signal is orbit-adaptive mutual information.",
+    "fair_self_conjugate_lift": "Attach an independent fair orientation bit to every self-conjugate partition, so no self-conjugate mass estimate is assumed.",
+    "scope": "The theorem does not bound I(O:Y), base-orbit dependence, coherent multiplicity phases, or the classical cost under a natural oracle.",
+    "syndrome_information_bound": "chi2(P_Y||U)<=4V_n+3V5_n, TV<=sqrt(4V_n+3V5_n)/2, and KL_bits<=log2(1+4V_n+3V5_n).",
+    "walsh_support_geometry": "The four weight-three sign frequencies are tetrahedral faces; the three weight-four frequencies complement opposite edge pairs."
+  }
+}

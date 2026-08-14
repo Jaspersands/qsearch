@@ -1,0 +1,263 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "Incomplete: vectors with common factors in only some registers inherit lower-copy high eigenvalues. The new trim removes all such excitation sectors.",
+      "challenge": "Deleting only the all-common top eigenspace removes common outliers.",
+      "resolved": true
+    },
+    {
+      "answer": "False: exact loss is 1-(1-2a/n!)^k<=2ak/n!, negligible at k=poly(n).",
+      "challenge": "Per-register trimming loses constant alternative mass.",
+      "resolved": true
+    },
+    {
+      "answer": "Unproved. Relative second moments do not control rare large eigenvalues after the exact common factors are removed.",
+      "challenge": "Common-free trimming bounds the remaining operator norm.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_exact_common_factor_outliers_removed": true,
+    "common_free_operator_norm_bounded": false,
+    "common_free_orbit_row_polar_compiled": false,
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "per_register_common_factor_trim_compiled": true,
+    "reason": "Exact common-factor excitation outliers are removable at negligible loss, but the fully common-free spectrum and physical row polar remain unresolved.",
+    "speedup_claim_allowed": false,
+    "trimmed_alternative_mass_asymptotically_full": true,
+    "trimmed_relative_flatness_proved": true
+  },
+  "created_at": "2026-08-13T17:04:33.171342+00:00",
+  "falsifiers_triggered": [
+    "Deleting only the all-common tensor intersection misses partial common-factor outliers.",
+    "Every exact common-factor excitation can be coherently removed with negligible natural signal loss.",
+    "Improved relative moments still do not prove a post-trim operator-norm bound."
+  ],
+  "finite_controls": [
+    {
+      "common_factor_dimension": 1,
+      "common_factor_qft_flag_available": true,
+      "distinct_pair_overlap_trace": 30,
+      "exact_common_factor_decomposition_verified": true,
+      "group_order": 120,
+      "n": 5,
+      "original_normalized_pair_overlap": 0.5,
+      "plus_projector_rank": 60,
+      "status": "exact-per-register-common-factor-trim-verified",
+      "transposition_count": 1,
+      "trimmed_distinct_pair_overlap_trace": 29,
+      "trimmed_normalized_pair_overlap": 0.4915254237288136,
+      "trimmed_overlap_strictly_improved": true,
+      "trimmed_projector_rank": 59
+    },
+    {
+      "common_factor_dimension": 2,
+      "common_factor_qft_flag_available": true,
+      "distinct_pair_overlap_trace": 30,
+      "exact_common_factor_decomposition_verified": true,
+      "group_order": 120,
+      "n": 5,
+      "original_normalized_pair_overlap": 0.5,
+      "plus_projector_rank": 60,
+      "status": "exact-per-register-common-factor-trim-verified",
+      "transposition_count": 2,
+      "trimmed_distinct_pair_overlap_trace": 28,
+      "trimmed_normalized_pair_overlap": 0.4827586206896552,
+      "trimmed_overlap_strictly_improved": true,
+      "trimmed_projector_rank": 58
+    },
+    {
+      "common_factor_dimension": 1,
+      "common_factor_qft_flag_available": true,
+      "distinct_pair_overlap_trace": 180,
+      "exact_common_factor_decomposition_verified": true,
+      "group_order": 720,
+      "n": 6,
+      "original_normalized_pair_overlap": 0.5,
+      "plus_projector_rank": 360,
+      "status": "exact-per-register-common-factor-trim-verified",
+      "transposition_count": 3,
+      "trimmed_distinct_pair_overlap_trace": 179,
+      "trimmed_normalized_pair_overlap": 0.4986072423398329,
+      "trimmed_overlap_strictly_improved": true,
+      "trimmed_projector_rank": 359
+    }
+  ],
+  "headline_metrics": {
+    "coherent_per_register_trim_count": 1,
+    "exact_common_factor_control_count": 3,
+    "finite_control_failure_count": 0,
+    "maximum_scaling_candidate_mass_loss_upper_bound": 0.027777777777777776,
+    "minimum_scaling_relative_flatness_mass_lower_bound": 0.9093849658966064,
+    "negligible_alternative_loss_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "trimmed_operator_norm_bound_count": 0,
+    "trimmed_relative_flatness_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-COMMON-FREE-OPERATOR-NORM",
+      "resolved": false,
+      "statement": "Bound or construct counterexamples for the synthesis norm on Cperp^tensor k after all common factors are removed."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-APPROXIMATE-INVARIANT-TRIM",
+      "resolved": false,
+      "statement": "Classify near-invariant one-register irreps and determine whether further coherent low-excitation trimming is needed."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-COMMON-FREE-ROW-POLAR",
+      "resolved": false,
+      "statement": "Compile the orbit-representative row polar on the retained common-free alternative mass."
+    }
+  ],
+  "scaling_records": [
+    {
+      "candidate_count_decimal": "15",
+      "candidate_mass_loss_upper_bound": 0.027777777777777776,
+      "common_factor_dimension": 1,
+      "copy_count": 10,
+      "every_register_common_free": true,
+      "exact_retained_candidate_mass": 0.9725668848892616,
+      "exact_trimmed_overlap_ratio": 0.4986072423398329,
+      "group_order_decimal": "720",
+      "half_degree": 3,
+      "n": 6,
+      "retained_relative_flatness_mass_lower_bound": 0.91796875,
+      "status": "common-factor-trimmed-relative-flat-operator-norm-open",
+      "trimmed_operator_norm_bounded": false,
+      "trimmed_orbit_row_polar_compiled": false,
+      "trimmed_overlap_denominator_decimal": "359",
+      "trimmed_overlap_numerator_decimal": "179",
+      "trimmed_overlap_strictly_below_half": true,
+      "trimmed_source_variance_upper_bound": 0.013671875
+    },
+    {
+      "candidate_count_decimal": "105",
+      "candidate_mass_loss_upper_bound": 0.0012896825396825397,
+      "common_factor_dimension": 2,
+      "copy_count": 13,
+      "every_register_common_free": true,
+      "exact_retained_candidate_mass": 0.9987110848493207,
+      "exact_trimmed_overlap_ratio": 0.49995039190395874,
+      "group_order_decimal": "40320",
+      "half_degree": 4,
+      "n": 8,
+      "retained_relative_flatness_mass_lower_bound": 0.923828125,
+      "status": "common-factor-trimmed-relative-flat-operator-norm-open",
+      "trimmed_operator_norm_bounded": false,
+      "trimmed_orbit_row_polar_compiled": false,
+      "trimmed_overlap_denominator_decimal": "20158",
+      "trimmed_overlap_numerator_decimal": "10078",
+      "trimmed_overlap_strictly_below_half": true,
+      "trimmed_source_variance_upper_bound": 0.0126953125
+    },
+    {
+      "candidate_count_decimal": "2027025",
+      "candidate_mass_loss_upper_bound": 5.161835518978376e-12,
+      "common_factor_dimension": 2,
+      "copy_count": 27,
+      "every_register_common_free": true,
+      "exact_retained_candidate_mass": 0.9999999999948381,
+      "exact_trimmed_overlap_ratio": 0.4999999999999044,
+      "group_order_decimal": "20922789888000",
+      "half_degree": 8,
+      "n": 16,
+      "retained_relative_flatness_mass_lower_bound": 0.9093849658966064,
+      "status": "common-factor-trimmed-relative-flat-operator-norm-open",
+      "trimmed_operator_norm_bounded": false,
+      "trimmed_orbit_row_polar_compiled": false,
+      "trimmed_overlap_denominator_decimal": "10461394943998",
+      "trimmed_overlap_numerator_decimal": "5230697471998",
+      "trimmed_overlap_strictly_below_half": true,
+      "trimmed_source_variance_upper_bound": 0.015102505683898926
+    },
+    {
+      "candidate_count_decimal": "191898783962510625",
+      "candidate_mass_loss_upper_bound": 9.729000332428145e-34,
+      "common_factor_dimension": 2,
+      "copy_count": 64,
+      "every_register_common_free": true,
+      "exact_retained_candidate_mass": 1.0,
+      "exact_trimmed_overlap_ratio": 0.5,
+      "group_order_decimal": "263130836933693530167218012160000000",
+      "half_degree": 16,
+      "n": 32,
+      "retained_relative_flatness_mass_lower_bound": 0.9375828764591558,
+      "status": "common-factor-trimmed-relative-flat-operator-norm-open",
+      "trimmed_operator_norm_bounded": false,
+      "trimmed_orbit_row_polar_compiled": false,
+      "trimmed_overlap_denominator_decimal": "131565418466846765083609006079999998",
+      "trimmed_overlap_numerator_decimal": "65782709233423382541804503039999998",
+      "trimmed_overlap_strictly_below_half": true,
+      "trimmed_source_variance_upper_bound": 0.010402853923474025
+    },
+    {
+      "candidate_count_decimal": "112275575285571389562324404930670903477890625",
+      "candidate_mass_loss_upper_bound": 4.823191714521437e-87,
+      "common_factor_dimension": 2,
+      "copy_count": 153,
+      "every_register_common_free": true,
+      "exact_retained_candidate_mass": 1.0,
+      "exact_trimmed_overlap_ratio": 0.5,
+      "group_order_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "half_degree": 32,
+      "n": 64,
+      "retained_relative_flatness_mass_lower_bound": 0.9410006532891788,
+      "status": "common-factor-trimmed-relative-flat-operator-norm-open",
+      "trimmed_operator_norm_bounded": false,
+      "trimmed_orbit_row_polar_compiled": false,
+      "trimmed_overlap_denominator_decimal": "63443466092942082051716694667580740401432758087272596099400947187607352115199999999999998",
+      "trimmed_overlap_numerator_decimal": "31721733046471041025858347333790370200716379043636298049700473593803676057599999999999998",
+      "trimmed_overlap_strictly_below_half": true,
+      "trimmed_source_variance_upper_bound": 0.009833224451803535
+    },
+    {
+      "candidate_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "candidate_mass_loss_upper_bound": 3.765360156971004e-213,
+      "common_factor_dimension": 2,
+      "copy_count": 363,
+      "every_register_common_free": true,
+      "exact_retained_candidate_mass": 1.0,
+      "exact_trimmed_overlap_ratio": 0.5,
+      "group_order_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "half_degree": 64,
+      "n": 128,
+      "retained_relative_flatness_mass_lower_bound": 0.9473878199044261,
+      "status": "common-factor-trimmed-relative-flat-operator-norm-open",
+      "trimmed_operator_norm_bounded": false,
+      "trimmed_orbit_row_polar_compiled": false,
+      "trimmed_overlap_denominator_decimal": "192810241181290210867838532961731820308746554795111795139414201638186701287582771780343084294253680767015025916529458173796086466131249428883057477622519678880017322354639623846247792639999999999999999999999999999998",
+      "trimmed_overlap_numerator_decimal": "96405120590645105433919266480865910154373277397555897569707100819093350643791385890171542147126840383507512958264729086898043233065624714441528738811259839440008661177319811923123896319999999999999999999999999999998",
+      "trimmed_overlap_strictly_below_half": true,
+      "trimmed_source_variance_upper_bound": 0.008768696682595653
+    }
+  ],
+  "status": "per-register-common-factor-trim-compiled-common-free-polar-open",
+  "summary": "Strengthened common-outlier deflation to a per-register common-factor trim, proved negligible exact signal loss and an improved equi-overlap relative-flatness law, and isolated the common-free operator norm and row polar as the remaining spectral problem.",
+  "theorem": {
+    "all_common_factor_excitation_outliers_removed": true,
+    "architecture_consequence": "All outliers using a common factor in any register are coherently removed at negligible signal loss before row-polar synthesis.",
+    "block_decomposition": "P_h=I_C direct_sum Pbar_h, with rank(Pbar_h)=n!/2-dim(C).",
+    "candidate_retained_mass": "Rejecting every tensor component with a common factor retains (1-2a/n!)^k candidate mass and loses at most 2ak/n!.",
+    "coherent_common_factor_trim_available": true,
+    "coherent_flag": "Per-register S_n QFT flags trivial, or trivial plus sign, common sectors.",
+    "exact_per_register_decomposition_proved": true,
+    "negligible_alternative_loss_proved": true,
+    "one_register_common_space": "C=intersection_h ran(P_h)=C[S_n/<C>] has dimension one or two for the fixed-point-free class.",
+    "pair_overlap": "For h!=g, Tr(Pbar_h Pbar_g)=n!/4-a and normalized overlap gamma=(n!/4-a)/(n!/2-a)<1/2.",
+    "scope_limit": "No norm bound on the fully common-free block is proved; approximate invariants and higher intersections remain.",
+    "status": "per-register-common-factor-trim-compiled-common-free-polar-open",
+    "theorem_verified": true,
+    "trimmed_moments": "The trimmed synthesis source law has mean one and variance (M-1)gamma^k; its conditional alternative law is size-biased.",
+    "trimmed_operator_norm_bound_proved": false,
+    "trimmed_orbit_row_polar_compiled": false,
+    "trimmed_relative_flatness_proved": true
+  },
+  "theorem_contract": {
+    "conditional_frame": "Candidate projectors restricted to Cperp^tensor k and normalized by rank (n!/2-a)^k.",
+    "family": "Fixed-point-free involution class in even S_n at the six-copy-overhead orbit-flatness width.",
+    "outside_scope": "Post-trim operator norm, approximate invariant sectors, row polar implementation, and classical separation.",
+    "trim": "Project every regular register onto the orthogonal complement of the normal-closure invariant subspace."
+  }
+}

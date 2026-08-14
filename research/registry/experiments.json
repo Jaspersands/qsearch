@@ -1123,6 +1123,30 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_wreath_adaptive_syndrome_trim_transfer.py"
+    ],
+    "falsifiers": [
+      "No lower bound on the coarse A_n likelihood F_0 is needed.",
+      "Adaptive syndrome energy is not an independent seventh-order object; it is the full-minus-base projected excess.",
+      "Finite retained L2 energy remains insufficient without asymptotic L1/KL mass and dequantization checks."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Adaptive Syndrome Trim Transfer.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ADAPTIVE-SYNDROME-TRIM-TRANSFER",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-adaptive-syndrome-trim-transfer."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Adaptive Syndrome Trim Transfer.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Adaptive Syndrome Trim Transfer"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "self_dual_wreath_affine_core_flag_theorem.py"
     ],
     "falsifiers": [
@@ -1531,6 +1555,270 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_wreath_alternating_base_orbit_reduction.py"
+    ],
+    "falsifiers": [
+      "The sign-orbit quotient is not a new group family; it is coarse A_n Fourier data.",
+      "A_n removes the sign character but retains a rare trivial-label L2 tail.",
+      "Any base-orbit survivor has an explicit classical A_n word-map dual."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Alternating Base Orbit Reduction.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-BASE-ORBIT-REDUCTION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-alternating-base-orbit-reduction."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Alternating Base Orbit Reduction.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Alternating Base Orbit Reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_alternating_block_operator_anova.py"
+    ],
+    "falsifiers": [
+      "Pairwise independence does not eliminate higher-order block synergy.",
+      "Forward generator cancellation alone misses exact inverse-coordinate zeros.",
+      "The highest ANOVA block and fully nonidentity class-matching core are not identical."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Alternating Block Operator Anova.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-BLOCK-OPERATOR-ANOVA",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-alternating-block-operator-anova."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Alternating Block Operator Anova.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Alternating Block Operator Anova"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_alternating_cycle_type_block_dependence.py"
+    ],
+    "falsifiers": [
+      "No single output cycle type or coordinate pair can witness the obstruction.",
+      "Separate normal-set product-mixing estimates do not imply joint three-output mixing.",
+      "Shannon cycle-type mutual information is not Fourier-dual to coarse irrep-label KL."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Alternating Cycle Type Block Dependence.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-CYCLE-TYPE-BLOCK-DEPENDENCE",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-alternating-cycle-type-block-dependence."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Alternating Cycle Type Block Dependence.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Alternating Cycle Type Block Dependence"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_alternating_entropy_transfer_reduction.py"
+    ],
+    "falsifiers": [
+      "The bounded three-bit orientation channel cannot obstruct a sublogarithmic rank-transfer theorem.",
+      "The remaining base entropy is a standard alternating-group law, not an arbitrary quotient.",
+      "Rank-profile mixing would not by itself eliminate irreducible Racah syndrome information."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Alternating Entropy Transfer Reduction.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-ENTROPY-TRANSFER-REDUCTION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-alternating-entropy-transfer-reduction."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Alternating Entropy Transfer Reduction.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Alternating Entropy Transfer Reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_alternating_even_collision_core_reduction.py"
+    ],
+    "falsifiers": [
+      "Odd transposition classes do not set the coarse alternating collision scale.",
+      "No new five-support moment theorem is needed after even/full energy domination.",
+      "Only the fully nonidentity even-word collision core can obstruct the Renyi route asymptotically."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Alternating Even Collision Core Reduction.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-EVEN-COLLISION-CORE-REDUCTION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-alternating-even-collision-core-reduction."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Alternating Even Collision Core Reduction.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Alternating Even Collision Core Reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_alternating_even_collision_entropy_bridge.py"
+    ],
+    "falsifiers": [
+      "The full physical collision moment is not the minimal Renyi target for rank transfer.",
+      "Bounded collision is unnecessarily strong; subpolynomial growth suffices.",
+      "A large collision moment alone cannot certify persistent bounded rank signal."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Alternating Even Collision Entropy Bridge.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-EVEN-COLLISION-ENTROPY-BRIDGE",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-alternating-even-collision-entropy-bridge."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Alternating Even Collision Entropy Bridge.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Alternating Even Collision Entropy Bridge"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_alternating_even_collision_support_pressure.py"
+    ],
+    "falsifiers": [
+      "Bounded-support cycle gadgets cannot produce the coarse alternating collision obstruction.",
+      "Slowly growing planted supports also vanish after summing all abstract profiles.",
+      "Any Renyi obstruction must be a genuinely growing-support word-map phenomenon."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Alternating Even Collision Support Pressure.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-EVEN-COLLISION-SUPPORT-PRESSURE",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-alternating-even-collision-support-pressure."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Alternating Even Collision Support Pressure.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Alternating Even Collision Support Pressure"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_alternating_parity_coset_channel.py"
+    ],
+    "falsifiers": [
+      "The adaptive syndrome has no orientation complexity beyond parity-coset imbalance.",
+      "Only two tetrahedral twist types require asymptotic analysis.",
+      "Raw twisted ratio moments remain vulnerable to low-dimensional tails."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Alternating Parity Coset Channel.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-PARITY-COSET-CHANNEL",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-alternating-parity-coset-channel."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Alternating Parity Coset Channel.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Alternating Parity Coset Channel"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_alternating_product_character_zeta.py"
+    ],
+    "falsifiers": [
+      "Ignoring self-conjugate restriction multiplicity gives wrong finite energies.",
+      "A one-character convolution diagonalization does not extend to six-way synergy.",
+      "Closing lower ANOVA blocks is a no-go refinement, not an algorithmic signal."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Alternating Product Character Zeta.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-PRODUCT-CHARACTER-ZETA",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-alternating-product-character-zeta."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Alternating Product Character Zeta.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Alternating Product Character Zeta"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_alternating_sixway_synergy_reduction.py"
+    ],
+    "falsifiers": [
+      "The fourteen-block operator target does not require fourteen new asymptotic proofs.",
+      "The unique six-way ANOVA block is only asymptotically, not exactly, the nonidentity core.",
+      "Closing the six-way block toward boundedness would eliminate rank-only information rather than produce an algorithm."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Alternating Sixway Synergy Reduction.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-SIXWAY-SYNERGY-REDUCTION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-alternating-sixway-synergy-reduction."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Alternating Sixway Synergy Reduction.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Alternating Sixway Synergy Reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_alternating_trimmed_sixway_renyi_transfer.py"
+    ],
+    "falsifiers": [
+      "Low-dimensional sectors may dominate untrimmed Renyi while carrying vanishing relevant entropy.",
+      "The canonical trim controls positive KL, not merely removed probability.",
+      "Finite A5 high-dimension collapse cannot be promoted to an asymptotic theorem."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Alternating Trimmed Sixway Renyi Transfer.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-TRIMMED-SIXWAY-RENYI-TRANSFER",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-alternating-trimmed-sixway-renyi-transfer."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Alternating Trimmed Sixway Renyi Transfer.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Alternating Trimmed Sixway Renyi Transfer"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "self_dual_wreath_augmented_common_core_cech.py"
     ],
     "falsifiers": [
@@ -1870,6 +2158,30 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_wreath_central_fiber_racah_information_reduction.py"
+    ],
+    "falsifiers": [
+      "Coarse feature independence alone does not control fine Racah labels.",
+      "Plancherel marginal stationarity does not control dependence inside feature fibers.",
+      "Fixed-degree central moments remain below the required projector-resolution scale."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Central Fiber Racah Information Reduction.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-CENTRAL-FIBER-RACAH-INFORMATION-REDUCTION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-central-fiber-racah-information-reduction."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Central Fiber Racah Information Reduction.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Central Fiber Racah Information Reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "self_dual_wreath_central_support_rank_bridge.py"
     ],
     "falsifiers": [
@@ -1984,6 +2296,30 @@
     "protocol": "Factor unequal physical normalized characters into ordinary S_n ratios, validate every small wreath element, stress-test finite F\u00e9ray-Sniady constants, import sharp primary bounds, and formalize the typical-shape and short-word obligations needed by the trace-moment certificate.",
     "status": "planned",
     "title": "Collision-free character-ratio contraction contract"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_character_triangle_barrier.py"
+    ],
+    "falsifiers": [
+      "Improving constants in pointwise character bounds cannot close this target.",
+      "Typical few-cycle word values do not help after termwise absolute summation.",
+      "Future proofs must preserve cancellation across group inputs or Fourier labels."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Character Triangle Barrier.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-CHARACTER-TRIANGLE-BARRIER",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-character-triangle-barrier."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Character Triangle Barrier.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Character Triangle Barrier"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -2111,6 +2447,29 @@
     "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
     "status": "planned",
     "title": "Exp Code Self Dual Wreath Codimension Two Universal No Go"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_coherent_branching_transport_boundary.py"
+    ],
+    "falsifiers": [
+      "Coherent restriction is not the product-chain operation in the projector-tail theorem.",
+      "Shared-noise invariance can coexist with maximal independent-noise sensitivity."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Coherent Branching Transport Boundary.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-COHERENT-BRANCHING-TRANSPORT-BOUNDARY",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-coherent-branching-transport-boundary."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Coherent Branching Transport Boundary.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Coherent Branching Transport Boundary"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -3853,6 +4212,78 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_wreath_compressed_orientation_racah_cumulant_probe.py"
+    ],
+    "falsifiers": [
+      "A large conditional CMI without physical source mass has little aggregate value.",
+      "The repeated-orbit S6 signal does not persist uniformly at S7.",
+      "Current pair-fiber embeddings do not provide a scalable S8 orientation workbench."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Compressed Orientation Racah Cumulant Probe.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-COMPRESSED-ORIENTATION-RACAH-CUMULANT-PROBE",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-compressed-orientation-racah-cumulant-probe."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Compressed Orientation Racah Cumulant Probe.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Compressed Orientation Racah Cumulant Probe"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_compressed_racah_block_probe.py"
+    ],
+    "falsifiers": [
+      "A reduction in eigensolve dimension is not a polynomial-time recoupling algorithm.",
+      "Selected block delocalization is not a bound on physical-average mutual information.",
+      "Finite max-dimension data are conjecture generators, not asymptotic evidence by themselves."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Compressed Racah Block Probe.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-COMPRESSED-RACAH-BLOCK-PROBE",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-compressed-racah-block-probe."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Compressed Racah Block Probe.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Compressed Racah Block Probe"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_compressed_racah_coupling_probe.py"
+    ],
+    "falsifiers": [
+      "Selected low-overlap blocks cannot substitute for complete coupling coverage.",
+      "A small conditional entropy at one outer tuple cannot substitute for physical averaging.",
+      "The finite entropy sequence is nonmonotone and supports no fitted asymptotic law."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Compressed Racah Coupling Probe.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-COMPRESSED-RACAH-COUPLING-PROBE",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-compressed-racah-coupling-probe."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Compressed Racah Coupling Probe.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Compressed Racah Coupling Probe"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "self_dual_wreath_conjugate_pair_admission_no_go.py"
     ],
     "falsifiers": [
@@ -4137,6 +4568,31 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_wreath_dense_automaton_fiber_dyadic_boundary.py"
+    ],
+    "falsifiers": [
+      "Exponential fiber cardinality does not imply high finite-group presentation rank.",
+      "Non-dyadic constant-state mixing has an irreparable scalar pressure loss.",
+      "Exact dyadic full fibers cannot retain a nontrivial target at zero loss.",
+      "Near-uniform dyadic fibers and growing-state algebra remain open."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Dense Automaton Fiber Dyadic Boundary.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-DENSE-AUTOMATON-FIBER-DYADIC-BOUNDARY",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-dense-automaton-fiber-dyadic-boundary."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Dense Automaton Fiber Dyadic Boundary.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Dense Automaton Fiber Dyadic Boundary"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "self_dual_wreath_dependency_homology.py"
     ],
     "falsifiers": [
@@ -4174,6 +4630,54 @@
     "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
     "status": "planned",
     "title": "Exp Code Self Dual Wreath Dependency Homology"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_disjoint_grid_recoupling_falsifier.py"
+    ],
+    "falsifiers": [
+      "The first forty saturated waist controls were not representative.",
+      "Multiplicity-free local cells do not make a disjoint grid scalar.",
+      "Carrier dimensions alone do not determine disjoint pair-core overlap."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Disjoint Grid Recoupling Falsifier.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-DISJOINT-GRID-RECOUPLING-FALSIFIER",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-disjoint-grid-recoupling-falsifier."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Disjoint Grid Recoupling Falsifier.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Disjoint Grid Recoupling Falsifier"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_dyadic_modular_fiber_torsion_no_go.py"
+    ],
+    "falsifiers": [
+      "The entropy generator count can be grossly loose on dyadic fibers.",
+      "Cyclic power-of-two mixing incurs a fixed torsion exponent loss.",
+      "Nonabelian dyadic transition structure remains the relevant boundary."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Dyadic Modular Fiber Torsion No Go.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-dyadic-modular-fiber-torsion-no-go."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Dyadic Modular Fiber Torsion No Go.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Dyadic Modular Fiber Torsion No Go"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -4608,6 +5112,30 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_wreath_fractional_haar_enhancement_reduction.py"
+    ],
+    "falsifiers": [
+      "Rare collision-heavy blocks do not evade the Haar gap if a lower fractional moment has subfactorial enhancement.",
+      "Vanishing fractional order does not weaken the enhancement-normalized information conclusion.",
+      "Any surviving measured-label signal still needs factorial arithmetic enhancement on positive physical mass."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Fractional Haar Enhancement Reduction.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-FRACTIONAL-HAAR-ENHANCEMENT-REDUCTION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-fractional-haar-enhancement-reduction."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Fractional Haar Enhancement Reduction.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Fractional Haar Enhancement Reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "self_dual_wreath_frame_subword_entropy.py"
     ],
     "falsifiers": [
@@ -4639,6 +5167,30 @@
     "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
     "status": "planned",
     "title": "Exp Code Self Dual Wreath Frame Subword Entropy"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_free_probability_projector_resolution_boundary.py"
+    ],
+    "falsifiers": [
+      "Typical Plancherel limit shape does not identify a partition label.",
+      "Fixed-degree moment factorization does not imply independence of the full central spectral labels.",
+      "Outer-product Jucys--Murphy freeness is not a same-n Kronecker recoupling theorem."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Free Probability Projector Resolution Boundary.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-FREE-PROBABILITY-PROJECTOR-RESOLUTION-BOUNDARY",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-free-probability-projector-resolution-boundary."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Free Probability Projector Resolution Boundary.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Free Probability Projector Resolution Boundary"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -5037,6 +5589,30 @@
     "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
     "status": "planned",
     "title": "Exp Code Self Dual Wreath Graded Frobenius Trim"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_grid_quantum_marginal_boundary.py"
+    ],
+    "falsifiers": [
+      "Disjoint grid contraction is not an unnamed scalar correction; it is 3nj data.",
+      "Fixed-row recoupling asymptotics cannot be silently applied at sqrt(n) rows.",
+      "Quantum-marginal magnitude criteria do not compile recoupling circuits."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Grid Quantum Marginal Boundary.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-GRID-QUANTUM-MARGINAL-BOUNDARY",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-grid-quantum-marginal-boundary."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Grid Quantum Marginal Boundary.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Grid Quantum Marginal Boundary"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -6907,6 +7483,30 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_wreath_orientation_fixed_support_control_variate.py"
+    ],
+    "falsifiers": [
+      "The S7 finite CMI is not isolated from polynomially enumerable low-support strata.",
+      "Support-radius truncations are signed and need not converge monotonically.",
+      "The S6 cancellation spike remains a finite low-mass exception, not a scaling mechanism."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Orientation Fixed Support Control Variate.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FIXED-SUPPORT-CONTROL-VARIATE",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-orientation-fixed-support-control-variate."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Orientation Fixed Support Control Variate.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Orientation Fixed Support Control Variate"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "self_dual_wreath_orientation_fourier_reduction.py",
       "self_dual_wreath_subgroup_twirl_reduction.py",
       "self_dual_wreath_collision_free_frame_probe.py",
@@ -6992,6 +7592,30 @@
     "protocol": "Derive the character-convolution formula for Tr(E_a E_b), validate ranks, overlaps, and canonical angles on all collision-free W4 tuples, reconstruct symmetric-group class product counts, and evaluate Tr(F_nu) and Tr(F_nu^2) through the n=12 information threshold without orientation enumeration.",
     "status": "planned",
     "title": "Orientation fusion-frame moment reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_orientation_identity_tail_control_variate.py"
+    ],
+    "falsifiers": [
+      "Raw word-estimator rarity is removable by an exact identity control variate.",
+      "Large physical orbit mass can coincide with an almost unit product-law likelihood ratio.",
+      "A finite one-bit channel created by cancellation is not a robust asymptotic mechanism."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Orientation Identity Tail Control Variate.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-IDENTITY-TAIL-CONTROL-VARIATE",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-orientation-identity-tail-control-variate."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Orientation Identity Tail Control Variate.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Orientation Identity Tail Control Variate"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -7302,6 +7926,30 @@
     "protocol": "Validate fixed-family parity-kernel formula and estimate multi-way incidence fractions via Wilson confidence intervals.",
     "status": "planned",
     "title": "Orientation triple-range family analysis"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_orientation_word_map_classical_baseline.py"
+    ],
+    "falsifiers": [
+      "The eight orientation channels are not eight independent hidden structures.",
+      "Finite high CMI does not imply low classical estimation cost or coherent accessibility.",
+      "Worst-case character complexity cannot substitute for an average-case reduction."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Orientation Word Map Classical Baseline.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-WORD-MAP-CLASSICAL-BASELINE",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-orientation-word-map-classical-baseline."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Orientation Word Map Classical Baseline.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Orientation Word Map Classical Baseline"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -7681,6 +8329,256 @@
     "protocol": "Measure paired-block common-core dimensions after one-dimensional branch filtering.",
     "status": "planned",
     "title": "Paired-block filter bypass analysis"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_parity_projector_orbit_variance.py"
+    ],
+    "falsifiers": [
+      "Triple-projection positivity is representation-specific, not a generic PSD fact.",
+      "Uniform projector ranks cannot control adaptive syndrome information.",
+      "Even complete pairwise overlap flatness cannot control the tetrahedral channel.",
+      "The next bound must address a genuine three-way 6j cumulant."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Parity Projector Orbit Variance.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PARITY-PROJECTOR-ORBIT-VARIANCE",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-parity-projector-orbit-variance."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Parity Projector Orbit Variance.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Parity Projector Orbit Variance"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_parity_projector_tetrahedral_reduction.py"
+    ],
+    "falsifiers": [
+      "Parity restriction creates trivial/sign projector differences, not an ordinary positive projector.",
+      "Near-maximal dimensions alone miss the required tetrahedral overlap scale by factorial powers.",
+      "The exact 2/n! Plancherel support fraction is still only marginal information.",
+      "The positive S5 fully paired trace energies are finite controls, not asymptotic survival evidence.",
+      "A valid next proof must control relative projector angles or equivalent 6j cancellation."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Parity Projector Tetrahedral Reduction.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PARITY-PROJECTOR-TETRAHEDRAL-REDUCTION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-parity-projector-tetrahedral-reduction."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Parity Projector Tetrahedral Reduction.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Parity Projector Tetrahedral Reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_parity_racah_conditional_cumulant.py"
+    ],
+    "falsifiers": [
+      "Large adaptive syndrome KL can be entirely rank-compatible and need not imply a Racah cumulant.",
+      "The even/odd cube binomial is necessary but not sufficient for conditional independence.",
+      "Raw determinant decay is meaningless without controlling small conditional marginals.",
+      "A valid asymptotic theorem must control both conditional slices, not one aggregate interaction."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Parity Racah Conditional Cumulant.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PARITY-RACAH-CONDITIONAL-CUMULANT",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-parity-racah-conditional-cumulant."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Parity Racah Conditional Cumulant.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Parity Racah Conditional Cumulant"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_parity_racah_information_projection.py"
+    ],
+    "falsifiers": [
+      "A single Haar benchmark is unnecessary; the full rank-compatible model class has an exact information projection.",
+      "Amplitude-level rank/arithmetic cancellation does not affect the positive KL split.",
+      "Most finite S5 adaptive KL remains rank-compatible; only a smaller part is irreducibly Racah.",
+      "A finite positive Racah CMI does not establish asymptotic or quantumly exclusive value."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Parity Racah Information Projection.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PARITY-RACAH-INFORMATION-PROJECTION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-parity-racah-information-projection."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Parity Racah Information Projection.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Parity Racah Information Projection"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_parity_racah_rank_residual_decomposition.py"
+    ],
+    "falsifiers": [
+      "The tetrahedral-dual geometric label mapping is incompatible with the implemented physical likelihood axes.",
+      "Kronecker block ranks alone neither prove survival nor prove decoupling.",
+      "Natural symmetric-group recoupling cannot be replaced by an unproved Haar ansatz.",
+      "Rank and arithmetic components can cancel perfectly after centering.",
+      "Canonical progress requires source-weighted asymptotics for both components and their alignment."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Parity Racah Rank Residual Decomposition.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PARITY-RACAH-RANK-RESIDUAL-DECOMPOSITION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-parity-racah-rank-residual-decomposition."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Parity Racah Rank Residual Decomposition.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Parity Racah Rank Residual Decomposition"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_parity_racah_toric_obstruction.py"
+    ],
+    "falsifiers": [
+      "Transpose choices do not generate an unrestricted eight-channel multiplicity model.",
+      "The Haar rank profile cannot reproduce genuine conditional G-H coupling at fixed K.",
+      "The natural finite Racah channel contains exact arithmetic structure erased by Haar averaging.",
+      "Finite conditional mutual information alone does not imply scalable or quantumly exclusive value."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Parity Racah Toric Obstruction.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PARITY-RACAH-TORIC-OBSTRUCTION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-parity-racah-toric-obstruction."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Parity Racah Toric Obstruction.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Parity Racah Toric Obstruction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_parity_rank_profile_entropy_transfer.py"
+    ],
+    "falsifiers": [
+      "Vanishing KL is unnecessarily strong for transfer of the bounded rank observable.",
+      "An unspecified O(log n) entropy estimate does not cross the threshold.",
+      "Finite low-n entropy cannot certify the required all-n sublogarithmic growth."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Parity Rank Profile Entropy Transfer.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PARITY-RANK-PROFILE-ENTROPY-TRANSFER",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-parity-rank-profile-entropy-transfer."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Parity Rank Profile Entropy Transfer.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Parity Rank Profile Entropy Transfer"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_parity_rank_profile_physical_transfer_boundary.py"
+    ],
+    "falsifiers": [
+      "Reference-law convergence is not stable under arbitrary physical likelihood reweighting.",
+      "A bounded likelihood second moment is sufficient but stronger than necessary.",
+      "The constant rare parity-tail collision contribution does not by itself obstruct rank transfer.",
+      "Even a successful rank transfer cannot remove deterministic non-Haar Racah synergy."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Parity Rank Profile Physical Transfer Boundary.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PARITY-RANK-PROFILE-PHYSICAL-TRANSFER-BOUNDARY",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-parity-rank-profile-physical-transfer-boundary."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Parity Rank Profile Physical Transfer Boundary.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Parity Rank Profile Physical Transfer Boundary"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_parity_rank_profile_plancherel_mixing.py"
+    ],
+    "falsifiers": [
+      "Typical Kronecker multiplicity rank geometry alone cannot retain adaptive syndrome information under the reference law.",
+      "Finite rank-profile bias is compatible with asymptotic reference mixing.",
+      "Physical source reweighting cannot be replaced by independent Plancherel averaging.",
+      "Any surviving irreducible signal must come from non-Haar Racah arithmetic or a singular change of measure."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Parity Rank Profile Plancherel Mixing.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PARITY-RANK-PROFILE-PLANCHEREL-MIXING",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-parity-rank-profile-plancherel-mixing."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Parity Rank Profile Plancherel Mixing.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Parity Rank Profile Plancherel Mixing"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_parity_rank_profile_trimmed_likelihood_transfer.py"
+    ],
+    "falsifiers": [
+      "Full tetrahedral chi-square can diverge without obstructing a bounded rank observable.",
+      "Removing low-dimensional labels does not by itself control retained likelihood spikes.",
+      "Likelihood mass at the quadratic scale can preserve unit physical signal despite reference mixing."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Parity Rank Profile Trimmed Likelihood Transfer.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PARITY-RANK-PROFILE-TRIMMED-LIKELIHOOD-TRANSFER",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-parity-rank-profile-trimmed-likelihood-transfer."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Parity Rank Profile Trimmed Likelihood Transfer.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Parity Rank Profile Trimmed Likelihood Transfer"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -8219,6 +9117,54 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_wreath_physical_orientation_racah_sampling.py"
+    ],
+    "falsifiers": [
+      "Large conditional CMI on a rare orbit cannot stand in for physical-average information.",
+      "A finite sample mean without a range-based interval supports no scaling claim.",
+      "Measured-label sampling does not establish coherent or classically exclusive access."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Physical Orientation Racah Sampling.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-ORIENTATION-RACAH-SAMPLING",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-physical-orientation-racah-sampling."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Physical Orientation Racah Sampling.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Physical Orientation Racah Sampling"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_physical_outer_racah_sampling.py"
+    ],
+    "falsifiers": [
+      "Uniform partition sampling is not the physical outer-label law.",
+      "A favorable maximal-dimension sector does not estimate the physical average.",
+      "Finite low means without confidence radii are not evidence of asymptotic delocalization."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Physical Outer Racah Sampling.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-OUTER-RACAH-SAMPLING",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-physical-outer-racah-sampling."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Physical Outer Racah Sampling.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Physical Outer Racah Sampling"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "self_dual_wreath_physical_pgm_intertwiner.py"
     ],
     "falsifiers": [
@@ -8249,6 +9195,54 @@
     "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
     "status": "planned",
     "title": "Exp Code Self Dual Wreath Physical Pgm Intertwiner"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_physical_recoupling_rank_pressure_no_go.py"
+    ],
+    "falsifiers": [
+      "Multiplicity-biased physical paths do not rescue the rank certificate on typical mass.",
+      "Exceptional low-rank channels must overcome a vanishing source-mass bound.",
+      "The result does not determine true 6j norms or coherent 3nj interference."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Physical Recoupling Rank Pressure No Go.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-RECOUPLING-RANK-PRESSURE-NO-GO",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-physical-recoupling-rank-pressure-no-go."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Physical Recoupling Rank Pressure No Go.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Physical Recoupling Rank Pressure No Go"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_physical_recoupling_tetrahedral_synergy.py"
+    ],
+    "falsifiers": [
+      "No pair of physical 6j edge labels carries mutual information after Plancherel averaging.",
+      "Every local Kronecker face approaches three independent Plancherel labels.",
+      "Any surviving measured-label signal must be higher-order and source-conditioned."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Physical Recoupling Tetrahedral Synergy.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-RECOUPLING-TETRAHEDRAL-SYNERGY",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-physical-recoupling-tetrahedral-synergy."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Physical Recoupling Tetrahedral Synergy.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Physical Recoupling Tetrahedral Synergy"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -8362,6 +9356,54 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_wreath_plancherel_character_racah_fourier_reduction.py"
+    ],
+    "falsifiers": [
+      "Fixed-support character modes are not a complete projector basis.",
+      "Plancherel marginals do not bound the diagonal Fourier tail.",
+      "An exact character sum is not by itself a scalable transform or estimator."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Plancherel Character Racah Fourier Reduction.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CHARACTER-RACAH-FOURIER-REDUCTION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-plancherel-character-racah-fourier-reduction."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Plancherel Character Racah Fourier Reduction.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Plancherel Character Racah Fourier Reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_plancherel_down_up_racah_tail_reduction.py"
+    ],
+    "falsifiers": [
+      "Fixed-support moment estimates cannot substitute for a Fourier tail bound.",
+      "The one-box spectral gap is too lossy at the required support scale.",
+      "Known down-up diagonalization supplies no natural Racah smoothness estimate."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Plancherel Down Up Racah Tail Reduction.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-DOWN-UP-RACAH-TAIL-REDUCTION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-plancherel-down-up-racah-tail-reduction."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Plancherel Down Up Racah Tail Reduction.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Plancherel Down Up Racah Tail Reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "self_dual_wreath_plancherel_kronecker_positivity.py"
     ],
     "falsifiers": [
@@ -8393,6 +9435,54 @@
     "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
     "status": "planned",
     "title": "Exp Code Self Dual Wreath Plancherel Kronecker Positivity"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_plancherel_marginal_compatibility_no_go.py"
+    ],
+    "falsifiers": [
+      "Typical physical Plancherel spectra cannot remain a constant L1 distance outside compatibility.",
+      "Near compatibility is not a growing-row lower bound on recoupling coefficients.",
+      "A shrinking incompatibility gap may still create weaker suppression and requires a rate theorem."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Plancherel Marginal Compatibility No Go.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-MARGINAL-COMPATIBILITY-NO-GO",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-plancherel-marginal-compatibility-no-go."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Plancherel Marginal Compatibility No Go.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Plancherel Marginal Compatibility No Go"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_plancherel_recoupling_rank_pressure_no_go.py"
+    ],
+    "falsifiers": [
+      "Generic independent Plancherel labels do not yield nontrivial rank-aware 6j contraction.",
+      "A low-rank exceptional-channel argument must pay its source-mass cost.",
+      "Independent-label triviality must not be promoted to the correlated physical path."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Plancherel Recoupling Rank Pressure No Go.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-RECOUPLING-RANK-PRESSURE-NO-GO",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-plancherel-recoupling-rank-pressure-no-go."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Plancherel Recoupling Rank Pressure No Go.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Plancherel Recoupling Rank Pressure No Go"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -8887,6 +9977,54 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_wreath_projected_parity_coset_kernel.py"
+    ],
+    "falsifiers": [
+      "The sign-orbit quotient does not obstruct a same-parity S_n kernel formula.",
+      "Only two parity-restricted projected collision contractions remain.",
+      "The exact kernel identity alone is not an asymptotic no-go or survivor certificate."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Projected Parity Coset Kernel.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PROJECTED-PARITY-COSET-KERNEL",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-projected-parity-coset-kernel."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Projected Parity Coset Kernel.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Projected Parity Coset Kernel"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_projected_tetrahedral_word_map.py"
+    ],
+    "falsifiers": [
+      "Stable fixed-cycle word-measure theorems do not reach the retained high-dimensional Fourier spectrum.",
+      "Removing trivial/sign modes collapses the S5 chi-square from its raw tail-dominated value but leaves a finite unresolved bulk.",
+      "Projected chi-square alone remains only a sufficient no-go metric, not a positive-signal certificate."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Projected Tetrahedral Word Map.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-PROJECTED-TETRAHEDRAL-WORD-MAP",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-projected-tetrahedral-word-map."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Projected Tetrahedral Word Map.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Projected Tetrahedral Word Map"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "self_dual_wreath_projector_subpovm_transfer.py",
       "self_dual_wreath_pgm_polar_audit.py",
       "self_dual_wreath_physical_frame_blocks.py",
@@ -8926,6 +10064,54 @@
     "protocol": "Transfer the group-general projector and condition-only conclusive theorem to W_n=(S_n x S_n) semidirect Z_2, combine it with exact wreath first/second moments and physical finite frame blocks, and separate valid algebraic transfer from invalid numerical S_n performance transfer.",
     "status": "planned",
     "title": "Physical wreath projector sub-POVM transfer"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_racah_entropic_delocalization_certificate.py"
+    ],
+    "falsifiers": [
+      "Rare large recoupling blocks do not by themselves defeat direct entropy transfer.",
+      "Bad-block mass must be charged against the partition-label support entropy.",
+      "Raw operator contraction is irrelevant unless normalized to the rank-product block mass."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Racah Entropic Delocalization Certificate.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-RACAH-ENTROPIC-DELOCALIZATION-CERTIFICATE",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-racah-entropic-delocalization-certificate."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Racah Entropic Delocalization Certificate.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Racah Entropic Delocalization Certificate"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_racah_fractional_moment_certificate.py"
+    ],
+    "falsifiers": [
+      "Collision growth alone no longer kills the rank-mixing route if lower moments remain controlled.",
+      "Vanishing Renyi order is not a loophole because its reciprocal enters the entropy bound.",
+      "Marginal Plancherel mixing permits exponentially broad dependence moments."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Racah Fractional Moment Certificate.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-RACAH-FRACTIONAL-MOMENT-CERTIFICATE",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-racah-fractional-moment-certificate."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Racah Fractional Moment Certificate.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Racah Fractional Moment Certificate"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -8987,6 +10173,126 @@
     "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
     "status": "planned",
     "title": "Exp Code Self Dual Wreath Reciprocal Carrier Accumulation No Go"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_recoupling_channel_flatness_boundary.py"
+    ],
+    "falsifiers": [
+      "Unitarity does not force product-distributed intermediate labels.",
+      "Complete S6 recoupling contains physically forbidden cross channels with positive product-marginal mass.",
+      "Finite channel mutual information does not establish asymptotic or quantum advantage."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Recoupling Channel Flatness Boundary.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-CHANNEL-FLATNESS-BOUNDARY",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-recoupling-channel-flatness-boundary."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Recoupling Channel Flatness Boundary.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Recoupling Channel Flatness Boundary"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_recoupling_collision_channel_reduction.py"
+    ],
+    "falsifiers": [
+      "Exact Plancherel marginals do not imply a product recoupling coupling.",
+      "Orthogonal recoupling can be collision-localized despite perfect rank marginals.",
+      "Bounded-row recoupling asymptotics cannot be silently applied to VKLS shapes."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Recoupling Collision Channel Reduction.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-COLLISION-CHANNEL-REDUCTION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-recoupling-collision-channel-reduction."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Recoupling Collision Channel Reduction.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Recoupling Collision Channel Reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_recoupling_dimension_certificate.py"
+    ],
+    "falsifiers": [
+      "Fixed-row Schur--Weyl prefactors are not needed for a local rank-aware bound.",
+      "Dimension ratios without exact multiplicity pressure are insufficient.",
+      "A local 6j certificate is not a global 3nj or compiler theorem."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Recoupling Dimension Certificate.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-DIMENSION-CERTIFICATE",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-recoupling-dimension-certificate."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Recoupling Dimension Certificate.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Recoupling Dimension Certificate"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_recoupling_haar_gap_reduction.py"
+    ],
+    "falsifiers": [
+      "Typical physical final multiplicity is not a low-rank escape.",
+      "Subexponential channel count cannot offset factorial Haar mixing.",
+      "A useful measured-label signal must exhibit factorially non-Haar arithmetic structure."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Recoupling Haar Gap Reduction.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-HAAR-GAP-REDUCTION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-recoupling-haar-gap-reduction."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Recoupling Haar Gap Reduction.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Recoupling Haar Gap Reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_recoupling_mutual_information_reduction.py"
+    ],
+    "falsifiers": [
+      "Collision-heavy tails need not block the weaker direct-entropy route.",
+      "Five-label decoupling does not imply outer-conditioned recoupling independence.",
+      "Perfect Plancherel marginals can coexist with superlogarithmic coupling information."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Recoupling Mutual Information Reduction.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-MUTUAL-INFORMATION-REDUCTION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-recoupling-mutual-information-reduction."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Recoupling Mutual Information Reduction.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Recoupling Mutual Information Reduction"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -9324,6 +10630,32 @@
     "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
     "status": "planned",
     "title": "Exp Code Self Dual Wreath Sector Weight Concentration"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_separating_surface_target_mixing.py"
+    ],
+    "falsifiers": [
+      "The exact finite S3 handle-character bias does not survive growing S_n.",
+      "Adding surface genus cannot rescue a nonsign target character.",
+      "Nonseparating simple curves mix even faster, at Witten-zeta-two-tail scale.",
+      "Trivial/sign behavior is only the parity support of commutators.",
+      "Future obstruction searches should reject certified surface-boundary targets before expensive finite character screens."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Separating Surface Target Mixing.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-SEPARATING-SURFACE-TARGET-MIXING",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-separating-surface-target-mixing."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Separating Surface Target Mixing.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Separating Surface Target Mixing"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -9726,6 +11058,78 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_wreath_sign_orbit_kl_chain_reduction.py"
+    ],
+    "falsifiers": [
+      "Three of six orientation bits are exactly ancillary.",
+      "Uniform raw syndrome does not imply zero orbit-adaptive information.",
+      "The surviving measured-label problem has two explicit classical terms."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Sign Orbit Kl Chain Reduction.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-SIGN-ORBIT-KL-CHAIN-REDUCTION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-sign-orbit-kl-chain-reduction."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Sign Orbit Kl Chain Reduction.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Sign Orbit Kl Chain Reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_sign_orbit_syndrome_reduction.py"
+    ],
+    "falsifiers": [
+      "Removing trivial/sign labels does not remove the sign action on high-dimensional irreps.",
+      "Finite retained sign-orbit bias is not evidence of asymptotic positive mass.",
+      "Any orientation-only survivor is a classical measured-label statistic."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Sign Orbit Syndrome Reduction.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-SIGN-ORBIT-SYNDROME-REDUCTION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-sign-orbit-syndrome-reduction."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Sign Orbit Syndrome Reduction.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Sign Orbit Syndrome Reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_sign_syndrome_unconditional_decoupling.py"
+    ],
+    "falsifiers": [
+      "Finite sign-orbit conditional bias can cancel completely in the raw syndrome.",
+      "Self-conjugate mass is not an obstruction to unconditional orientation decoupling.",
+      "Any surviving orientation information must adapt to all six sign-orbit labels."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Sign Syndrome Unconditional Decoupling.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-SIGN-SYNDROME-UNCONDITIONAL-DECOUPLING",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-sign-syndrome-unconditional-decoupling."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Sign Syndrome Unconditional Decoupling.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Sign Syndrome Unconditional Decoupling"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "self_dual_wreath_sign_twist_collective_activation.py"
     ],
     "falsifiers": [
@@ -9912,6 +11316,30 @@
     "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
     "status": "planned",
     "title": "Exp Code Self Dual Wreath Single Pair Point Signal No Go"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_source_conditioned_channel_decoupling.py"
+    ],
+    "falsifiers": [
+      "Large character-ratio energy in low-dimensional irreps does not survive Plancherel convolution averaging.",
+      "Measured intermediate labels without the final irrep have vanishing average correlation.",
+      "Finite S6 nonflatness cannot justify an asymptotic channel signal unless final-label conditioning survives."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Source Conditioned Channel Decoupling.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-SOURCE-CONDITIONED-CHANNEL-DECOUPLING",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-source-conditioned-channel-decoupling."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Source Conditioned Channel Decoupling.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Source Conditioned Channel Decoupling"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -10641,6 +12069,78 @@
     "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
     "status": "planned",
     "title": "Exp Code Self Dual Wreath Target Survival Surface Seed"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_tetrahedral_chi_square_tail_no_go.py"
+    ],
+    "falsifiers": [
+      "Raw six-label chi-square cannot vanish because of exact trivial/sign parity constraints.",
+      "Constant chi-square does not imply positive-mass measured-label correlation.",
+      "All lower-support word-map contributions vanish; only the fully nonidentity core remains after trimming."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Tetrahedral Chi Square Tail No Go.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-TETRAHEDRAL-CHI-SQUARE-TAIL-NO-GO",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-tetrahedral-chi-square-tail-no-go."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Tetrahedral Chi Square Tail No Go.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Tetrahedral Chi Square Tail No Go"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_tetrahedral_collision_growth_scale.py"
+    ],
+    "falsifiers": [
+      "Uniform boundedness of the tetrahedral collision moment is stronger than needed.",
+      "Merely proving M_n=O(n^2) does not cross the transfer threshold.",
+      "Stable-character word-measure estimates do not establish the required full-spectrum L2 bound."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Tetrahedral Collision Growth Scale.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-TETRAHEDRAL-COLLISION-GROWTH-SCALE",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-tetrahedral-collision-growth-scale."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Tetrahedral Collision Growth Scale.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Tetrahedral Collision Growth Scale"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "self_dual_wreath_tetrahedral_dimension_trim.py"
+    ],
+    "falsifiers": [
+      "Factorially large likelihood cannot rescue sectors below the canonical dimension threshold in TV or KL.",
+      "The trivial/sign parity witness is excluded at vanishing information cost.",
+      "Any claimed measured-label signal must now be demonstrated on the retained near-maximal-dimensional bulk."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Tetrahedral Dimension Trim.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-TETRAHEDRAL-DIMENSION-TRIM",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-tetrahedral-dimension-trim."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Tetrahedral Dimension Trim.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Tetrahedral Dimension Trim"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -12318,6 +13818,200 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "coset_hidden_involution_binary_identification_self_reduction.py"
+    ],
+    "falsifiers": [
+      "For perfect-matching involutions, computationally efficient binary detection would not remain merely a weak decision result.",
+      "Recursive edge peeling need not incur exponentially compounding character postselection.",
+      "The active binary support compiler is sufficient for identification if its normalization barrier is broken."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Binary Identification Self Reduction.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-BINARY-IDENTIFICATION-SELF-REDUCTION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-binary-identification-self-reduction."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Binary Identification Self Reduction.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Binary Identification Self Reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hidden_involution_branch_erasure_normalization_no_go.py"
+    ],
+    "falsifiers": [
+      "Changing the candidate-label preparation amplitudes cannot preserve uniform synthesis and improve normalization.",
+      "A candidate-label QFT followed by one-row postselection does not exploit the regular-orbit reduction.",
+      "Bulk conditioning does not turn branch-only erasure into a polynomial primitive."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Branch Erasure Normalization No Go.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-BRANCH-ERASURE-NORMALIZATION-NO-GO",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-branch-erasure-normalization-no-go."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Branch Erasure Normalization No Go.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Branch Erasure Normalization No Go"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hidden_involution_bulk_conditioning_normalization_no_go.py"
+    ],
+    "falsifiers": [
+      "Further outlier classification is not needed to obtain a well-conditioned natural-mass bulk.",
+      "Constant condition number of unnormalized synthesis does not remove sqrt(M) access cost.",
+      "Unitary basis changes alone cannot improve inherited singular-value normalization."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Bulk Conditioning Normalization No Go.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-BULK-CONDITIONING-NORMALIZATION-NO-GO",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-bulk-conditioning-normalization-no-go."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Bulk Conditioning Normalization No Go.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Bulk Conditioning Normalization No Go"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hidden_involution_common_factor_trim.py"
+    ],
+    "falsifiers": [
+      "Deleting only the all-common tensor intersection misses partial common-factor outliers.",
+      "Every exact common-factor excitation can be coherently removed with negligible natural signal loss.",
+      "Improved relative moments still do not prove a post-trim operator-norm bound."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Common Factor Trim.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-COMMON-FACTOR-TRIM",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-common-factor-trim."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Common Factor Trim.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Common Factor Trim"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hidden_involution_common_outlier_deflation.py"
+    ],
+    "falsifiers": [
+      "The universal top synthesis outlier is not an unknown multiplicity phenomenon.",
+      "Trivial/sign deflation removes negligible, not decisive, alternative mass.",
+      "The common outlier does not explain the bulk relative synthesis variance.",
+      "No post-deflation norm bound, recursive trim, polar compiler, or speedup has been proved."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Common Outlier Deflation.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-COMMON-OUTLIER-DEFLATION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-common-outlier-deflation."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Common Outlier Deflation.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Common Outlier Deflation"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hidden_involution_foulkes_support_mass_probe.py"
+    ],
+    "falsifiers": [
+      "All probability distributions must sum to 1.",
+      "Finite sample evidence does not prove asymptotic speedup.",
+      "Dequantization bounds must hold across all dimensions.",
+      "Speedup claims remain blocked without a complete sub-POVM certificate."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Foulkes Support Mass Probe.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-FOULKES-SUPPORT-MASS-PROBE",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-foulkes-support-mass-probe."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Foulkes Support Mass Probe.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Foulkes Support Mass Probe"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hidden_involution_foulkes_support_projector_no_go.py"
+    ],
+    "falsifiers": [
+      "Efficient access to each subgroup projector does not make its conjugate support easy to flag.",
+      "The explicit small-eigenvalue witness is directly label-deflatable and is not a universal lower bound.",
+      "Higher-row structured support access remains unclassified."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Foulkes Support Projector No Go.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-FOULKES-SUPPORT-PROJECTOR-NO-GO",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-foulkes-support-projector-no-go."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Foulkes Support Projector No Go.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Foulkes Support Projector No Go"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hidden_involution_fourier_coefficient_normalization_no_go.py"
+    ],
+    "falsifiers": [
+      "Preparing canonical orbit representatives and applying a physical QFT does not by itself normalize the row polar.",
+      "Sector conditioning cannot beat the quarter-root group-order barrier under normalization-one raw coefficient access.",
+      "The regular Fourier scalar is an algebraic identity, not a free circuit amplitude."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Fourier Coefficient Normalization No Go.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-FOURIER-COEFFICIENT-NORMALIZATION-NO-GO",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-fourier-coefficient-normalization-no-go."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Fourier Coefficient Normalization No Go.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Fourier Coefficient Normalization No Go"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "coset_hidden_involution_fourth_moment_threshold.py"
     ],
     "falsifiers": [
@@ -12346,6 +14040,152 @@
     "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
     "status": "planned",
     "title": "Exp Coset Hidden Involution Fourth Moment Threshold"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hidden_involution_imprimitive_plethysm_boundary.py"
+    ],
+    "falsifiers": [
+      "High-index imprimitive subgroup outliers evade the generic low-index theorem.",
+      "Even-row spherical deflation leaves exact odd two-row witnesses.",
+      "The exposed two-row witnesses are themselves negligible and do not establish hardness."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Imprimitive Plethysm Boundary.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-IMPRIMITIVE-PLETHYSM-BOUNDARY",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-imprimitive-plethysm-boundary."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Imprimitive Plethysm Boundary.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Imprimitive Plethysm Boundary"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hidden_involution_incidence_walk_boundary.py"
+    ],
+    "falsifiers": [
+      "Source canonicalization does not improve the normalization of standard local incidence-walk access.",
+      "Relative flatness before legal block-encoding normalization does not imply an efficient generic polar.",
+      "Black-box Index Erasure lower bounds are not natural hidden-involution lower bounds."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Incidence Walk Boundary.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-INCIDENCE-WALK-BOUNDARY",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-incidence-walk-boundary."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Incidence Walk Boundary.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Incidence Walk Boundary"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hidden_involution_induced_source_bundle_reduction.py"
+    ],
+    "falsifiers": [
+      "Canonical pair-polar transport is not the natural induced-bundle cocycle.",
+      "Global branch covariance does not require pathwise pair-polar gluing.",
+      "An efficient branch-labeled induced Fourier transform does not imply an efficient physical support measurement."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Induced Source Bundle Reduction.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-INDUCED-SOURCE-BUNDLE-REDUCTION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-induced-source-bundle-reduction."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Induced Source Bundle Reduction.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Induced Source Bundle Reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hidden_involution_isotypic_support_no_go.py"
+    ],
+    "falsifiers": [
+      "Finite proper multiplicity support is no longer merely finite evidence for fixed-point-free S_n.",
+      "Whole diagonal-isotypic labels cannot implement the logarithmic-copy support-span test.",
+      "Any surviving structured compiler must act nontrivially inside global multiplicity spaces.",
+      "Proper multiplicity support alone is not a circuit lower bound or a quantum speedup."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Isotypic Support No Go.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-ISOTYPIC-SUPPORT-NO-GO",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-isotypic-support-no-go."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Isotypic Support No Go.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Isotypic Support No Go"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hidden_involution_matrix_hecke_transfer_reduction.py"
+    ],
+    "falsifiers": [
+      "Scalar Gelfand-pair spectra do not diagonalize a nontrivial source fiber.",
+      "The normalized transfer formula does not remove its own small-scale polar cost.",
+      "Large matrix-Hecke dimension is a representation target, not a hardness proof."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Matrix Hecke Transfer Reduction.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-MATRIX-HECKE-TRANSFER-REDUCTION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-matrix-hecke-transfer-reduction."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Matrix Hecke Transfer Reduction.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Matrix Hecke Transfer Reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hidden_involution_multiplicity_hard_mass.py"
+    ],
+    "falsifiers": [
+      "The all-n proper-support theorem is not driven by one negligible isotypic sector.",
+      "Removing exceptional multiplicity sectors cannot eliminate all low-spectrum alternative mass.",
+      "A surviving compiler must handle constant natural mass inside proper multiplicity support.",
+      "No arbitrary-circuit lower bound or speedup follows from the constant hard-mass theorem."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Multiplicity Hard Mass.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-HARD-MASS",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-multiplicity-hard-mass."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Multiplicity Hard Mass.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Multiplicity Hard Mass"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -12409,6 +14249,81 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "coset_hidden_involution_orbit_synthesis_flatness.py"
+    ],
+    "falsifiers": [
+      "The logarithmic-copy support is not broadly ill-conditioned after its canonical M rescaling.",
+      "The normalization-one low spectrum is caused by coherent orbit-label normalization, not a bad relative spectrum on most alternative mass.",
+      "Generic QSVT remains exponential because the available encoding is S/sqrt(M).",
+      "No polar label-erasure circuit, decoder, classical separation, or speedup has been constructed."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Orbit Synthesis Flatness.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-ORBIT-SYNTHESIS-FLATNESS",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-orbit-synthesis-flatness."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Orbit Synthesis Flatness.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Orbit Synthesis Flatness"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hidden_involution_pair_polar_holonomy_no_go.py"
+    ],
+    "falsifiers": [
+      "Efficient exact pair polars do not form a path-independent global frame.",
+      "The pair-polar holonomy defect survives in fixed-point-free involution families at all even degrees.",
+      "Tensoring does not dilute the minimal loop defect; about half the local source space is negative.",
+      "Nonflatness alone is not a no-go for a coherent holonomy resolver or direct global polar."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Pair Polar Holonomy No Go.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-PAIR-POLAR-HOLONOMY-NO-GO",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-pair-polar-holonomy-no-go."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Pair Polar Holonomy No Go.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Pair Polar Holonomy No Go"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hidden_involution_pair_polar_phase_compiler.py"
+    ],
+    "falsifiers": [
+      "Small pairwise principal angles do not imply computationally expensive pair polars for explicit permutations.",
+      "Generic QSVT degree is not a lower bound on structured phase-estimation compilers.",
+      "The exact phase-pi kernel must be excluded rather than silently rotated.",
+      "A polynomial pair primitive is not a full orbit polar, decoder, or speedup."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Pair Polar Phase Compiler.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-PAIR-POLAR-PHASE-COMPILER",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-pair-polar-phase-compiler."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Pair Polar Phase Compiler.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Pair Polar Phase Compiler"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "coset_hidden_involution_query_separation_boundary.py"
     ],
     "falsifiers": [
@@ -12436,6 +14351,175 @@
     "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
     "status": "planned",
     "title": "Exp Coset Hidden Involution Query Separation Boundary"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hidden_involution_regular_orbit_row_reduction.py"
+    ],
+    "falsifiers": [
+      "Generic hyperoctahedral Clebsch-Gordan fusion is not required on the canonicalized high-mass source.",
+      "Regular source covariance does not make the physical synthesis isometric across orbit copies.",
+      "The symmetric-group QFT does not resolve orbit-representative row orientation or polar weights."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Regular Orbit Row Reduction.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-REGULAR-ORBIT-ROW-REDUCTION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-regular-orbit-row-reduction."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Regular Orbit Row Reduction.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Regular Orbit Row Reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hidden_involution_rigid_gi_bridge.py"
+    ],
+    "falsifiers": [
+      "The fixed-point-free full-class route is not disconnected from natural inputs: it contains the published rigid-GI hidden involutions after symmetrization.",
+      "The structured wreath subgroup does not create an incompatible coset-state model.",
+      "Rigid-GI relevance does not extend automatically to nonrigid or general Graph Isomorphism."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Rigid Gi Bridge.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-RIGID-GI-BRIDGE",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-rigid-gi-bridge."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Rigid Gi Bridge.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Rigid Gi Bridge"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hidden_involution_s3_chart_gram_compiler.py"
+    ],
+    "falsifiers": [
+      "Pair-polar nonflatness is not by itself a conditioning obstruction.",
+      "The holonomy-fixed connection kernel is not the full synthesis support.",
+      "A local constant-branch compiler does not remove full-class normalization."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution S3 Chart Gram Compiler.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-S3-CHART-GRAM-COMPILER",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-s3-chart-gram-compiler."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution S3 Chart Gram Compiler.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution S3 Chart Gram Compiler"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hidden_involution_source_deflation_no_go.py"
+    ],
+    "falsifiers": [
+      "Rare weak Fourier labels do not carry constant binary hidden-involution signal at the logarithmic-copy threshold.",
+      "Exceptional-source deflation cannot remove the normalization-one support filter",
+      ",",
+      ","
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Source Deflation No Go.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-SOURCE-DEFLATION-NO-GO",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-source-deflation-no-go."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Source Deflation No Go.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Source Deflation No Go"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hidden_involution_spherical_outlier_deflation.py"
+    ],
+    "falsifiers": [
+      "The hyperoctahedral norm witness is not a terminal obstruction.",
+      "Its conjugate span, not one selected witness, is the correct trim target.",
+      "Removing that span does not establish a bounded residual frame."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Spherical Outlier Deflation.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-SPHERICAL-OUTLIER-DEFLATION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-spherical-outlier-deflation."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Spherical Outlier Deflation.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Spherical Outlier Deflation"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hidden_involution_subgroup_outlier_hierarchy.py"
+    ],
+    "falsifiers": [
+      "Common-factor trimming does not yield a bounded-spectrum synthesis frame.",
+      "The naive one-interval QSVT polar remains superpolynomially conditioned.",
+      "A large frame norm alone does not rule out structured spectral inversion."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Subgroup Outlier Hierarchy.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-SUBGROUP-OUTLIER-HIERARCHY",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-subgroup-outlier-hierarchy."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Subgroup Outlier Hierarchy.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Subgroup Outlier Hierarchy"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hidden_involution_subgroup_support_dichotomy.py"
+    ],
+    "falsifiers": [
+      "Subgroup conjugacy-orbit size and subgroup index are not interchangeable.",
+      "Information-theoretic support deflation does not imply an efficient circuit.",
+      "Only high-index, hard-membership, or non-subgroup outliers remain uncontrolled by this theorem."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Subgroup Support Dichotomy.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-SUBGROUP-SUPPORT-DICHOTOMY",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hidden-involution-subgroup-support-dichotomy."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hidden Involution Subgroup Support Dichotomy.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hidden Involution Subgroup Support Dichotomy"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -12669,6 +14753,154 @@
     "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
     "status": "planned",
     "title": "Exp Coset Hyperoctahedral Branching Polar Boundary"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hyperoctahedral_cg_kronecker_reduction.py"
+    ],
+    "falsifiers": [
+      "Efficient wreath QFT access does not imply efficient wreath fusion.",
+      "Generic hyperoctahedral fusion is not easier than internal symmetric-group Kronecker fusion.",
+      "The embedded hard-looking sector has exponentially small regular even-parity mass.",
+      "No natural-source obstruction or quantum lower bound follows without a source-mass theorem."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hyperoctahedral Cg Kronecker Reduction.",
+    "id": "EXP-COSET-HYPEROCTAHEDRAL-CG-KRONECKER-REDUCTION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hyperoctahedral-cg-kronecker-reduction."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hyperoctahedral Cg Kronecker Reduction.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hyperoctahedral Cg Kronecker Reduction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hyperoctahedral_color_weight_concentration.py"
+    ],
+    "falsifiers": [
+      "The natural source does not concentrate on exceptional or trivial base colors.",
+      "The alternative size bias does not destroy balanced-color concentration at the flatness width.",
+      "Balanced color localization does not itself solve residual symmetric-group multiplicities."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hyperoctahedral Color Weight Concentration.",
+    "id": "EXP-COSET-HYPEROCTAHEDRAL-COLOR-WEIGHT-CONCENTRATION",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hyperoctahedral-color-weight-concentration."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hyperoctahedral Color Weight Concentration.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hyperoctahedral Color Weight Concentration"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hyperoctahedral_free_orbit_canonicalization_boundary.py"
+    ],
+    "falsifiers": [
+      "Source Plancherel behavior is explained by exact free regular orbits, not random-matrix speculation.",
+      "A generic hyperoctahedral Clebsch-Gordan transform is not necessary merely to expose source multiplicity copies.",
+      "Existence of a free regular submodule does not imply an efficient coherent orbit canonicalizer.",
+      "A source multiplicity basis alone does not implement the physical transfer polar."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hyperoctahedral Free Orbit Canonicalization Boundary.",
+    "id": "EXP-COSET-HYPEROCTAHEDRAL-FREE-ORBIT-CANONICALIZATION-BOUNDARY",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hyperoctahedral-free-orbit-canonicalization-boundary."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hyperoctahedral Free Orbit Canonicalization Boundary.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hyperoctahedral Free Orbit Canonicalization Boundary"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hyperoctahedral_source_plancherel_typicality.py"
+    ],
+    "falsifiers": [
+      "The natural source is not confined to a small exceptional wreath-irrep family.",
+      "Trivial-color Kronecker sectors are not representative of typical occupied bipartitions.",
+      "Efficient wreath QFT labels do not resolve typical internal multiplicity transfer."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hyperoctahedral Source Plancherel Typicality.",
+    "id": "EXP-COSET-HYPEROCTAHEDRAL-SOURCE-PLANCHEREL-TYPICALITY",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hyperoctahedral-source-plancherel-typicality."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hyperoctahedral Source Plancherel Typicality.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hyperoctahedral Source Plancherel Typicality"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hyperoctahedral_trimmed_orbit_canonicalizer.py"
+    ],
+    "falsifiers": [
+      "Generic graph canonicalization is not required on the transitive seeded source event.",
+      "Right-coset orientation ambiguity costs four seed choices, not 2^k choices.",
+      "The source multiplicity-basis obstruction is removable on asymptotically full natural mass.",
+      "Removing the source basis obstruction does not implement the matrix-Hecke transfer or a speedup."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hyperoctahedral Trimmed Orbit Canonicalizer.",
+    "id": "EXP-COSET-HYPEROCTAHEDRAL-TRIMMED-ORBIT-CANONICALIZER",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hyperoctahedral-trimmed-orbit-canonicalizer."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hyperoctahedral Trimmed Orbit Canonicalizer.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hyperoctahedral Trimmed Orbit Canonicalizer"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "coset_hyperoctahedral_trivial_color_mass_no_go.py"
+    ],
+    "falsifiers": [
+      "The embedded ordinary Kronecker transform is not a constant-mass natural-source obstruction.",
+      "Regular parity-conditioned mass was not silently substituted for the natural source; the natural fiber was computed exactly.",
+      "Source rank fraction alone was not used as an alternative-mass claim; the frame second moment supplies the transfer bound.",
+      "Colored wreath fusion and the full matrix-Hecke polar remain open."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Coset Hyperoctahedral Trivial Color Mass No Go.",
+    "id": "EXP-COSET-HYPEROCTAHEDRAL-TRIVIAL-COLOR-MASS-NO-GO",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py coset-hyperoctahedral-trivial-color-mass-no-go."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Coset Hyperoctahedral Trivial Color Mass No Go.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Coset Hyperoctahedral Trivial Color Mass No Go"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",

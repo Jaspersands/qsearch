@@ -1,0 +1,542 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Transpose orientations create an arbitrary eight-channel rank model.",
+      "resolution": "They create only four binary face factors and one binary total factor, forcing the G-K-H Markov variety.",
+      "resolved": true
+    },
+    {
+      "objection": "The natural violation could be floating-point noise near zeros.",
+      "resolution": "All eight witness amplitudes are positive exact rationals; the two minors and cube defect are nonzero exact fractions.",
+      "resolved": true
+    },
+    {
+      "objection": "Positive conditional mutual information establishes a quantum speedup.",
+      "resolution": "It establishes only finite measured-label structure. Preparation, estimation complexity, asymptotic mass, and classical hardness are open.",
+      "resolved": true
+    },
+    {
+      "objection": "A Haar approximation can retain this tetrahedral signal.",
+      "resolution": "The block-rank Haar mean lies exactly on the toric variety; the witness lies outside it, so the signal is deterministic 6j arithmetic.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "asymptotic_toric_violation_survives_proved": false,
+    "canonical_source_mass_positive_proved": false,
+    "classical_separation_proved": false,
+    "coherent_extraction_implemented": false,
+    "finite_witness_is_strictly_positive": true,
+    "natural_racah_channel_can_escape_rank_toric_model_proved": true,
+    "rank_profile_has_zero_three_factor_log_interaction_proved": true,
+    "rank_profile_is_G_K_H_markov_channel_proved": true,
+    "reason": "An exact finite natural channel has genuine Racah conditional dependence impossible for rank profiles, but scaling, source mass, coherent access, and classical hardness remain open.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T22:09:33.570128+00:00",
+  "falsifiers_triggered": [
+    "Transpose choices do not generate an unrestricted eight-channel multiplicity model.",
+    "The Haar rank profile cannot reproduce genuine conditional G-H coupling at fixed K.",
+    "The natural finite Racah channel contains exact arithmetic structure erased by Haar averaging.",
+    "Finite conditional mutual information alone does not imply scalable or quantumly exclusive value."
+  ],
+  "headline_metrics": {
+    "asymptotic_positive_mass_toric_witness_count": 0,
+    "exact_natural_toric_counterexample_count": 1,
+    "finite_control_failure_count": 0,
+    "finite_toric_control_count": 3,
+    "kronecker_transpose_xor_theorem_count": 1,
+    "maximum_exact_to_projector_amplitude_residual": 1.0408340855860843e-17,
+    "maximum_rank_factorization_residual": 0.0,
+    "new_quantum_algorithm_count": 0,
+    "primary_witness_conditional_mutual_information_bits": 0.20489807195522636,
+    "primary_witness_minimum_amplitude": 6.944444444444444e-05,
+    "rank_profile_conditional_independence_theorem_count": 1,
+    "transpose_xor_control_count": 3
+  },
+  "primary_witness": {
+    "all_natural_amplitudes_positive": true,
+    "control_id": "S5-EXACT-RACAH-TORIC-WITNESS",
+    "exact_natural_amplitudes": [
+      "1/64",
+      "1/64",
+      "1/64",
+      "9/1600",
+      "1/64",
+      "9/1600",
+      "1/14400",
+      "1/64"
+    ],
+    "exact_natural_conditional_independence_minors": [
+      "-7/28800",
+      "17/80000"
+    ],
+    "exact_natural_cube_binomial_defect": "-61/1024000000",
+    "exact_rank_conditional_independence_minors": [
+      "0",
+      "0"
+    ],
+    "exact_rank_cube_binomial_defect": "0",
+    "exact_rank_factorization_verified": true,
+    "exact_rank_profile_amplitudes": [
+      "1/100",
+      "1/75",
+      "1/100",
+      "1/75",
+      "1/100",
+      "1/75",
+      "1/100",
+      "1/75"
+    ],
+    "exact_toric_obstruction_verified": true,
+    "maximum_exact_to_projector_amplitude_residual": 6.938893903907228e-18,
+    "maximum_rank_factorization_residual": 0.0,
+    "n": 5,
+    "natural_channel_outside_rank_profile_toric_model": true,
+    "natural_conditional_mutual_information_bits": 0.20489807195522636,
+    "orbit_indices": [
+      1,
+      2,
+      1,
+      2,
+      2,
+      2
+    ],
+    "orbit_representatives": [
+      [
+        2,
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        2,
+        1
+      ],
+      [
+        2,
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        2,
+        1
+      ],
+      [
+        2,
+        2,
+        1
+      ],
+      [
+        2,
+        2,
+        1
+      ]
+    ],
+    "rank_conditional_mutual_information_bits": 0.0,
+    "status": "natural-racah-channel-violates-rank-profile-toric-model",
+    "twisted_face_multiplicities": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1
+      ]
+    ],
+    "twisted_total_multiplicities": [
+      4,
+      3
+    ]
+  },
+  "proof_obligations": [
+    {
+      "obligation": "characterize_all_sign_orientation_dependence_of_rank_profile",
+      "resolution": "Sign twisting reduces every face and final multiplicity to one XOR bit, yielding the exact three-node Markov factorization.",
+      "resolved": true
+    },
+    {
+      "obligation": "exhibit_natural_dependence_impossible_for_rank_profile",
+      "resolution": "An exact rational S5 channel violates both toric minors with a strict margin and has positive conditional mutual information.",
+      "resolved": true
+    },
+    {
+      "obligation": "find_asymptotic_positive_mass_toric_violation",
+      "resolution": "Construct a scalable Plancherel-typical family or prove a source-weighted lower bound for natural conditional minors/CMI.",
+      "resolved": false
+    },
+    {
+      "obligation": "test_classical_access_to_racah_toric_witness",
+      "resolution": "Compare estimation of the same conditional minors under classical word-map samples, explicit representation access, and coherent coset access.",
+      "resolved": false
+    }
+  ],
+  "status": "natural-racah-synergy-certified-outside-rank-profile-toric-variety",
+  "summary": "Proved that all Kronecker rank-profile channels are G-K-H Markov and exhibited an exact positive natural Racah channel outside that variety.",
+  "theorem_contract": {
+    "conditional_independence": "The normalized rank-profile channel obeys G independent of H conditional on K; both 2x2 conditional minors vanish exactly.",
+    "natural_counterexample": "The exact positive S5 orbit tuple (1,2,1,2,2,2) violates both conditional minors and the cube identity and has I(G;H|K)>0.2 bits.",
+    "rank_profile_factorization": "H_ghk=a_g b_(g xor k)c_h d_(h xor k)/(M_k d_mu d_nu).",
+    "scope": "This isolates finite deterministic Racah synergy outside every rank-only Haar mean. It is not an asymptotic survival theorem, efficient measurement, classical separation, or algorithm.",
+    "toric_cube_identity": "product_(g+h+k even)H_ghk=product_(g+h+k odd)H_ghk.",
+    "transpose_xor_law": "g(a^u,b^v,c^w)=g_(u xor v xor w)(a,b,c), because Young-diagram transpose tensors an irrep by sign."
+  },
+  "toric_controls": [
+    {
+      "all_natural_amplitudes_positive": true,
+      "control_id": "S4-FLAT-NATURAL",
+      "exact_natural_amplitudes": [
+        "1/36",
+        "1/36",
+        "1/36",
+        "1/36",
+        "1/36",
+        "1/36",
+        "1/36",
+        "1/36"
+      ],
+      "exact_natural_conditional_independence_minors": [
+        "0",
+        "0"
+      ],
+      "exact_natural_cube_binomial_defect": "0",
+      "exact_rank_conditional_independence_minors": [
+        "0",
+        "0"
+      ],
+      "exact_rank_cube_binomial_defect": "0",
+      "exact_rank_factorization_verified": true,
+      "exact_rank_profile_amplitudes": [
+        "1/36",
+        "1/27",
+        "1/36",
+        "1/27",
+        "1/36",
+        "1/27",
+        "1/36",
+        "1/27"
+      ],
+      "exact_toric_obstruction_verified": false,
+      "maximum_exact_to_projector_amplitude_residual": 6.938893903907228e-18,
+      "maximum_rank_factorization_residual": 0.0,
+      "n": 4,
+      "natural_channel_outside_rank_profile_toric_model": false,
+      "natural_conditional_mutual_information_bits": 0.0,
+      "orbit_indices": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "orbit_representatives": [
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "rank_conditional_mutual_information_bits": 0.0,
+      "status": "rank-profile-factorized-without-natural-toric-witness",
+      "twisted_face_multiplicities": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "twisted_total_multiplicities": [
+        4,
+        3
+      ]
+    },
+    {
+      "all_natural_amplitudes_positive": true,
+      "control_id": "S5-ALL-FIVE",
+      "exact_natural_amplitudes": [
+        "9/400",
+        "1/400",
+        "1/400",
+        "1/400",
+        "1/400",
+        "1/400",
+        "1/3600",
+        "1/400"
+      ],
+      "exact_natural_conditional_independence_minors": [
+        "0",
+        "0"
+      ],
+      "exact_natural_cube_binomial_defect": "0",
+      "exact_rank_conditional_independence_minors": [
+        "0",
+        "0"
+      ],
+      "exact_rank_cube_binomial_defect": "0",
+      "exact_rank_factorization_verified": true,
+      "exact_rank_profile_amplitudes": [
+        "1/150",
+        "1/125",
+        "1/150",
+        "1/125",
+        "1/150",
+        "1/125",
+        "1/150",
+        "1/125"
+      ],
+      "exact_toric_obstruction_verified": false,
+      "maximum_exact_to_projector_amplitude_residual": 1.0408340855860843e-17,
+      "maximum_rank_factorization_residual": 0.0,
+      "n": 5,
+      "natural_channel_outside_rank_profile_toric_model": false,
+      "natural_conditional_mutual_information_bits": 0.0,
+      "orbit_indices": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "orbit_representatives": [
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "rank_conditional_mutual_information_bits": 0.0,
+      "status": "rank-profile-factorized-without-natural-toric-witness",
+      "twisted_face_multiplicities": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "twisted_total_multiplicities": [
+        6,
+        5
+      ]
+    },
+    {
+      "all_natural_amplitudes_positive": true,
+      "control_id": "S5-EXACT-RACAH-TORIC-WITNESS",
+      "exact_natural_amplitudes": [
+        "1/64",
+        "1/64",
+        "1/64",
+        "9/1600",
+        "1/64",
+        "9/1600",
+        "1/14400",
+        "1/64"
+      ],
+      "exact_natural_conditional_independence_minors": [
+        "-7/28800",
+        "17/80000"
+      ],
+      "exact_natural_cube_binomial_defect": "-61/1024000000",
+      "exact_rank_conditional_independence_minors": [
+        "0",
+        "0"
+      ],
+      "exact_rank_cube_binomial_defect": "0",
+      "exact_rank_factorization_verified": true,
+      "exact_rank_profile_amplitudes": [
+        "1/100",
+        "1/75",
+        "1/100",
+        "1/75",
+        "1/100",
+        "1/75",
+        "1/100",
+        "1/75"
+      ],
+      "exact_toric_obstruction_verified": true,
+      "maximum_exact_to_projector_amplitude_residual": 6.938893903907228e-18,
+      "maximum_rank_factorization_residual": 0.0,
+      "n": 5,
+      "natural_channel_outside_rank_profile_toric_model": true,
+      "natural_conditional_mutual_information_bits": 0.20489807195522636,
+      "orbit_indices": [
+        1,
+        2,
+        1,
+        2,
+        2,
+        2
+      ],
+      "orbit_representatives": [
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "rank_conditional_mutual_information_bits": 0.0,
+      "status": "natural-racah-channel-violates-rank-profile-toric-model",
+      "twisted_face_multiplicities": [
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          1
+        ]
+      ],
+      "twisted_total_multiplicities": [
+        4,
+        3
+      ]
+    }
+  ],
+  "transpose_xor_controls": [
+    {
+      "mismatch_count": 0,
+      "n": 3,
+      "partition_count": 3,
+      "status": "kronecker-transpose-dependence-is-exactly-one-xor-bit",
+      "tested_oriented_triple_count": 216,
+      "transpose_xor_law_verified": true
+    },
+    {
+      "mismatch_count": 0,
+      "n": 4,
+      "partition_count": 5,
+      "status": "kronecker-transpose-dependence-is-exactly-one-xor-bit",
+      "tested_oriented_triple_count": 1000,
+      "transpose_xor_law_verified": true
+    },
+    {
+      "mismatch_count": 0,
+      "n": 5,
+      "partition_count": 7,
+      "status": "kronecker-transpose-dependence-is-exactly-one-xor-bit",
+      "tested_oriented_triple_count": 2744,
+      "transpose_xor_law_verified": true
+    }
+  ]
+}

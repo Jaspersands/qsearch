@@ -1,0 +1,4722 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "One bit at S6 is evidence of asymptotic survival.",
+      "resolution": "Its orbit mass is about 1.07e-4 and all tested repeated S7 weighted contributions are below 3.3e-7 bits.",
+      "resolved": true
+    },
+    {
+      "objection": "Numerically tiny S6 amplitudes are exact zeros.",
+      "resolution": "The report marks only a numerical two-support pattern; exact_zero_pattern_proved remains false.",
+      "resolved": true
+    },
+    {
+      "objection": "Repeated sign-orbit tuples represent the physical average.",
+      "resolution": "Mixed tuples may dominate both physical mass and CMI; repeated controls are deliberately nonexhaustive.",
+      "resolved": true
+    },
+    {
+      "objection": "A finite measured syndrome channel is a quantum algorithm.",
+      "resolution": "No coherent estimator, classical separation, decoder, or asymptotic source-mass theorem is supplied.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "S6_numerical_two_syndrome_pattern_is_exact_proved": false,
+    "algorithm_claim_allowed": false,
+    "asymptotic_toric_violation_survives_proved": false,
+    "classical_separation_proved": false,
+    "coherent_extraction_implemented": false,
+    "compressed_orientation_amplitude_formula_verified": true,
+    "physical_average_orientation_cmi_positive_proved": false,
+    "physical_orbit_mass_formula_verified": true,
+    "reason": "The finite S6 spike is low-mass and nonpersistent across repeated S7 sectors; mixed physical averaging and access complexity remain open.",
+    "repeated_orbit_sequence_supports_scaling_inference": false,
+    "speedup_claim_allowed": false
+  },
+  "controls": [
+    {
+      "all_base_partitions_equal": false,
+      "base_dimensions": [
+        4,
+        5,
+        4,
+        5,
+        5,
+        5
+      ],
+      "base_partitions": [
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "compressed_orientation_channel_verified": true,
+      "conditional_determinants": [
+        -0.030380772346745865,
+        0.02656147525172641
+      ],
+      "conditional_syndrome_probabilities": [
+        0.17468944099378886,
+        0.17468944099378875,
+        0.1746894409937885,
+        0.06288819875776379,
+        0.17468944099378905,
+        0.06288819875776416,
+        0.0007763975155279484,
+        0.17468944099378897
+      ],
+      "control_id": "S5-EXACT-CROSS-CHECK",
+      "entries": [
+        {
+          "block_hilbert_schmidt_square": 0.390625,
+          "haar_rank_profile_amplitude": 0.01,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 1.0692340723160393e-15,
+          "normalized_syndrome_amplitude": 0.015625,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "block_hilbert_schmidt_square": 0.3906249999999997,
+          "haar_rank_profile_amplitude": 0.013333333333333334,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 2.7189855563881444e-15,
+          "normalized_syndrome_amplitude": 0.01562499999999999,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 3
+        },
+        {
+          "block_hilbert_schmidt_square": 0.39062499999999917,
+          "haar_rank_profile_amplitude": 0.01,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 3.1170685207337474e-15,
+          "normalized_syndrome_amplitude": 0.015624999999999967,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "block_hilbert_schmidt_square": 0.14062499999999956,
+          "haar_rank_profile_amplitude": 0.013333333333333334,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 2.8119594173543938e-15,
+          "normalized_syndrome_amplitude": 0.0056249999999999824,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 3
+        },
+        {
+          "block_hilbert_schmidt_square": 0.39062500000000044,
+          "haar_rank_profile_amplitude": 0.01,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 2.056341040062049e-15,
+          "normalized_syndrome_amplitude": 0.015625000000000017,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "block_hilbert_schmidt_square": 0.1406250000000004,
+          "haar_rank_profile_amplitude": 0.013333333333333334,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 4.673461354915503e-15,
+          "normalized_syndrome_amplitude": 0.005625000000000015,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 3
+        },
+        {
+          "block_hilbert_schmidt_square": 0.0017361111111111062,
+          "haar_rank_profile_amplitude": 0.01,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 3.1170685207337474e-15,
+          "normalized_syndrome_amplitude": 6.944444444444425e-05,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "block_hilbert_schmidt_square": 0.3906250000000003,
+          "haar_rank_profile_amplitude": 0.013333333333333334,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 4.673461354915503e-15,
+          "normalized_syndrome_amplitude": 0.01562500000000001,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 3
+        }
+      ],
+      "exact_zero_pattern_proved": false,
+      "finite_representation_space_probe_only": true,
+      "irreducible_racah_cmi_bits": 0.20489807195522608,
+      "maximum_pair_embedding_isometry_residual": 4.673461354915503e-15,
+      "n": 5,
+      "numerically_nonzero_syndrome_count": 8,
+      "physical_mass_weighted_irreducible_cmi_bits": 0.0008484719543413423,
+      "physical_sign_orbit_tuple_mass": 0.004140946502057612,
+      "rank_profile_cmi_bits": 0.0,
+      "rank_profile_maximum_conditional_determinant": 0.0,
+      "status": "compressed-orientation-racah-cumulant-probe-verified",
+      "total_syndrome_amplitude": 0.08944444444444442
+    },
+    {
+      "all_base_partitions_equal": true,
+      "base_dimensions": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "base_partitions": [
+        [
+          3,
+          1,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1,
+          1
+        ]
+      ],
+      "compressed_orientation_channel_verified": true,
+      "conditional_determinants": [
+        0.24999999999999994,
+        -9.738948176682165e-70
+      ],
+      "conditional_syndrome_probabilities": [
+        0.5000000000000002,
+        7.372700568357318e-37,
+        1.061668881843454e-34,
+        1.1796320909371708e-35,
+        8.666684749742481e-36,
+        8.690758874047321e-35,
+        0.49999999999999967,
+        6.957421924098825e-35
+      ],
+      "control_id": "S6-REPEATED-DIMENSION-10",
+      "entries": [
+        {
+          "block_hilbert_schmidt_square": 0.25000000000000244,
+          "haar_rank_profile_amplitude": 0.000625,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 8.312250803135261e-15,
+          "normalized_syndrome_amplitude": 0.0025000000000000243,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 16
+        },
+        {
+          "block_hilbert_schmidt_square": 3.686350284178693e-37,
+          "haar_rank_profile_amplitude": 0.0007142857142857143,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 8.312250803135261e-15,
+          "normalized_syndrome_amplitude": 3.686350284178693e-39,
+          "numerically_zero_at_threshold": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 14
+        },
+        {
+          "block_hilbert_schmidt_square": 5.308344409217319e-35,
+          "haar_rank_profile_amplitude": 0.000625,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 1.065197971479559e-14,
+          "normalized_syndrome_amplitude": 5.308344409217319e-37,
+          "numerically_zero_at_threshold": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 16
+        },
+        {
+          "block_hilbert_schmidt_square": 5.898160454685909e-36,
+          "haar_rank_profile_amplitude": 0.0007142857142857143,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 8.312250803135261e-15,
+          "normalized_syndrome_amplitude": 5.898160454685909e-38,
+          "numerically_zero_at_threshold": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 14
+        },
+        {
+          "block_hilbert_schmidt_square": 4.3333423748712805e-36,
+          "haar_rank_profile_amplitude": 0.000625,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 8.461033853483775e-15,
+          "normalized_syndrome_amplitude": 4.3333423748712806e-38,
+          "numerically_zero_at_threshold": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 16
+        },
+        {
+          "block_hilbert_schmidt_square": 4.345379437023701e-35,
+          "haar_rank_profile_amplitude": 0.0007142857142857143,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 8.312250803135261e-15,
+          "normalized_syndrome_amplitude": 4.345379437023701e-37,
+          "numerically_zero_at_threshold": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 14
+        },
+        {
+          "block_hilbert_schmidt_square": 0.2500000000000021,
+          "haar_rank_profile_amplitude": 0.000625,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 1.065197971479559e-14,
+          "normalized_syndrome_amplitude": 0.0025000000000000213,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 16
+        },
+        {
+          "block_hilbert_schmidt_square": 3.4787109620494444e-35,
+          "haar_rank_profile_amplitude": 0.0007142857142857143,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 3.592122677274493e-15,
+          "normalized_syndrome_amplitude": 3.478710962049444e-37,
+          "numerically_zero_at_threshold": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 14
+        }
+      ],
+      "exact_zero_pattern_proved": false,
+      "finite_representation_space_probe_only": true,
+      "irreducible_racah_cmi_bits": 0.9999999999999998,
+      "maximum_pair_embedding_isometry_residual": 1.065197971479559e-14,
+      "n": 6,
+      "numerically_nonzero_syndrome_count": 2,
+      "physical_mass_weighted_irreducible_cmi_bits": 0.00010716735253772388,
+      "physical_sign_orbit_tuple_mass": 0.0001071673525377239,
+      "rank_profile_cmi_bits": 0.0,
+      "rank_profile_maximum_conditional_determinant": 0.0,
+      "status": "compressed-orientation-racah-cumulant-probe-verified",
+      "total_syndrome_amplitude": 0.005000000000000046
+    },
+    {
+      "all_base_partitions_equal": true,
+      "base_dimensions": [
+        21,
+        21,
+        21,
+        21,
+        21,
+        21
+      ],
+      "base_partitions": [
+        [
+          3,
+          2,
+          2
+        ],
+        [
+          3,
+          2,
+          2
+        ],
+        [
+          3,
+          2,
+          2
+        ],
+        [
+          3,
+          2,
+          2
+        ],
+        [
+          3,
+          2,
+          2
+        ],
+        [
+          3,
+          2,
+          2
+        ]
+      ],
+      "compressed_orientation_channel_verified": true,
+      "conditional_determinants": [
+        0.00531312167736578,
+        -3.469446951953614e-18
+      ],
+      "conditional_syndrome_probabilities": [
+        0.415822991508817,
+        0.0918517308948398,
+        0.09185173089484014,
+        0.09185173089483985,
+        0.09185173089484011,
+        0.09185173089484026,
+        0.03306662312214249,
+        0.09185173089484026
+      ],
+      "control_id": "S7-REPEATED-ORBIT-0",
+      "entries": [
+        {
+          "block_hilbert_schmidt_square": 0.44210069444444094,
+          "haar_rank_profile_amplitude": 0.0008638375985314761,
+          "left_block_rank": 4,
+          "maximum_pair_embedding_isometry_residual": 1.2173283090812987e-14,
+          "normalized_syndrome_amplitude": 0.0010024959057697075,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ]
+          ],
+          "right_block_rank": 4,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 42
+        },
+        {
+          "block_hilbert_schmidt_square": 0.09765624999999922,
+          "haar_rank_profile_amplitude": 0.00023869196801527628,
+          "left_block_rank": 2,
+          "maximum_pair_embedding_isometry_residual": 1.2173283090812987e-14,
+          "normalized_syndrome_amplitude": 0.00022144274376417058,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              3,
+              1
+            ]
+          ],
+          "right_block_rank": 2,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 38
+        },
+        {
+          "block_hilbert_schmidt_square": 0.09765624999999958,
+          "haar_rank_profile_amplitude": 0.00021595939963286903,
+          "left_block_rank": 4,
+          "maximum_pair_embedding_isometry_residual": 1.2173283090812987e-14,
+          "normalized_syndrome_amplitude": 0.0002214427437641714,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              3,
+              1
+            ],
+            [
+              3,
+              2,
+              2
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 42
+        },
+        {
+          "block_hilbert_schmidt_square": 0.09765624999999928,
+          "haar_rank_profile_amplitude": 0.00023869196801527628,
+          "left_block_rank": 2,
+          "maximum_pair_embedding_isometry_residual": 2.7349073786313728e-14,
+          "normalized_syndrome_amplitude": 0.0002214427437641707,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              3,
+              1
+            ],
+            [
+              3,
+              3,
+              1
+            ]
+          ],
+          "right_block_rank": 2,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 38
+        },
+        {
+          "block_hilbert_schmidt_square": 0.09765624999999956,
+          "haar_rank_profile_amplitude": 0.00021595939963286903,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 1.2173283090812987e-14,
+          "normalized_syndrome_amplitude": 0.00022144274376417132,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              3,
+              1
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ]
+          ],
+          "right_block_rank": 4,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 42
+        },
+        {
+          "block_hilbert_schmidt_square": 0.09765624999999972,
+          "haar_rank_profile_amplitude": 0.00023869196801527628,
+          "left_block_rank": 2,
+          "maximum_pair_embedding_isometry_residual": 2.4321248709063236e-14,
+          "normalized_syndrome_amplitude": 0.0002214427437641717,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              3,
+              1
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              3,
+              1
+            ]
+          ],
+          "right_block_rank": 2,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 38
+        },
+        {
+          "block_hilbert_schmidt_square": 0.03515624999999989,
+          "haar_rank_profile_amplitude": 5.398984990821726e-05,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 8.857640564727833e-15,
+          "normalized_syndrome_amplitude": 7.971938775510179e-05,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              3,
+              1
+            ],
+            [
+              3,
+              3,
+              1
+            ],
+            [
+              3,
+              2,
+              2
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 42
+        },
+        {
+          "block_hilbert_schmidt_square": 0.09765624999999972,
+          "haar_rank_profile_amplitude": 0.00023869196801527628,
+          "left_block_rank": 2,
+          "maximum_pair_embedding_isometry_residual": 2.7349073786313728e-14,
+          "normalized_syndrome_amplitude": 0.0002214427437641717,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              2,
+              2
+            ],
+            [
+              3,
+              3,
+              1
+            ],
+            [
+              3,
+              3,
+              1
+            ],
+            [
+              3,
+              3,
+              1
+            ]
+          ],
+          "right_block_rank": 2,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 38
+        }
+      ],
+      "exact_zero_pattern_proved": false,
+      "finite_representation_space_probe_only": true,
+      "irreducible_racah_cmi_bits": 0.003030744907118515,
+      "maximum_pair_embedding_isometry_residual": 2.7349073786313728e-14,
+      "n": 7,
+      "numerically_nonzero_syndrome_count": 8,
+      "physical_mass_weighted_irreducible_cmi_bits": 3.9159545198674925e-08,
+      "physical_sign_orbit_tuple_mass": 1.2920765817901156e-05,
+      "rank_profile_cmi_bits": 0.0,
+      "rank_profile_maximum_conditional_determinant": 0.0,
+      "status": "compressed-orientation-racah-cumulant-probe-verified",
+      "total_syndrome_amplitude": 0.002410871756109837
+    },
+    {
+      "all_base_partitions_equal": true,
+      "base_dimensions": [
+        35,
+        35,
+        35,
+        35,
+        35,
+        35
+      ],
+      "base_partitions": [
+        [
+          3,
+          2,
+          1,
+          1
+        ],
+        [
+          3,
+          2,
+          1,
+          1
+        ],
+        [
+          3,
+          2,
+          1,
+          1
+        ],
+        [
+          3,
+          2,
+          1,
+          1
+        ],
+        [
+          3,
+          2,
+          1,
+          1
+        ],
+        [
+          3,
+          2,
+          1,
+          1
+        ]
+      ],
+      "compressed_orientation_channel_verified": true,
+      "conditional_determinants": [
+        0.0005020080391158546,
+        2.949029909160572e-17
+      ],
+      "conditional_syndrome_probabilities": [
+        0.09943967009357652,
+        0.12363317416795351,
+        0.12363317416795364,
+        0.12363317416795276,
+        0.12363317416795375,
+        0.1236331741679532,
+        0.1587612848987039,
+        0.12363317416795269
+      ],
+      "control_id": "S7-REPEATED-ORBIT-1",
+      "entries": [
+        {
+          "block_hilbert_schmidt_square": 13.963831018518636,
+          "haar_rank_profile_amplitude": 0.011108549732185233,
+          "left_block_rank": 64,
+          "maximum_pair_embedding_isometry_residual": 4.491599970891196e-14,
+          "normalized_syndrome_amplitude": 0.011399045729402969,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 64,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 301
+        },
+        {
+          "block_hilbert_schmidt_square": 17.36120756172848,
+          "haar_rank_profile_amplitude": 0.014345209270148738,
+          "left_block_rank": 72,
+          "maximum_pair_embedding_isometry_residual": 5.2340553753147414e-14,
+          "normalized_syndrome_amplitude": 0.014172414336104883,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              4,
+              2,
+              1
+            ]
+          ],
+          "right_block_rank": 72,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 295
+        },
+        {
+          "block_hilbert_schmidt_square": 17.3612075617285,
+          "haar_rank_profile_amplitude": 0.014059258254796935,
+          "left_block_rank": 64,
+          "maximum_pair_embedding_isometry_residual": 6.143524281020907e-14,
+          "normalized_syndrome_amplitude": 0.014172414336104897,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              4,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 81,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 301
+        },
+        {
+          "block_hilbert_schmidt_square": 17.361207561728378,
+          "haar_rank_profile_amplitude": 0.014345209270148738,
+          "left_block_rank": 72,
+          "maximum_pair_embedding_isometry_residual": 6.909123591524654e-14,
+          "normalized_syndrome_amplitude": 0.014172414336104798,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              4,
+              2,
+              1
+            ],
+            [
+              4,
+              2,
+              1
+            ]
+          ],
+          "right_block_rank": 72,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 295
+        },
+        {
+          "block_hilbert_schmidt_square": 17.361207561728516,
+          "haar_rank_profile_amplitude": 0.014059258254796935,
+          "left_block_rank": 81,
+          "maximum_pair_embedding_isometry_residual": 5.2340553753147414e-14,
+          "normalized_syndrome_amplitude": 0.01417241433610491,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              4,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 64,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 301
+        },
+        {
+          "block_hilbert_schmidt_square": 17.36120756172844,
+          "haar_rank_profile_amplitude": 0.014345209270148738,
+          "left_block_rank": 72,
+          "maximum_pair_embedding_isometry_residual": 5.470123423836165e-14,
+          "normalized_syndrome_amplitude": 0.014172414336104848,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              4,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              4,
+              2,
+              1
+            ]
+          ],
+          "right_block_rank": 72,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 295
+        },
+        {
+          "block_hilbert_schmidt_square": 22.294077932098865,
+          "haar_rank_profile_amplitude": 0.01779374872872737,
+          "left_block_rank": 81,
+          "maximum_pair_embedding_isometry_residual": 6.143524281020907e-14,
+          "normalized_syndrome_amplitude": 0.018199247291509277,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              4,
+              2,
+              1
+            ],
+            [
+              4,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 81,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 301
+        },
+        {
+          "block_hilbert_schmidt_square": 17.361207561728367,
+          "haar_rank_profile_amplitude": 0.014345209270148738,
+          "left_block_rank": 72,
+          "maximum_pair_embedding_isometry_residual": 6.909123591524654e-14,
+          "normalized_syndrome_amplitude": 0.01417241433610479,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1,
+              1
+            ],
+            [
+              4,
+              2,
+              1
+            ],
+            [
+              4,
+              2,
+              1
+            ],
+            [
+              4,
+              2,
+              1
+            ]
+          ],
+          "right_block_rank": 72,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 295
+        }
+      ],
+      "exact_zero_pattern_proved": false,
+      "finite_representation_space_probe_only": true,
+      "irreducible_racah_cmi_bits": 2.315228572808437e-05,
+      "maximum_pair_embedding_isometry_residual": 6.909123591524654e-14,
+      "n": 7,
+      "numerically_nonzero_syndrome_count": 8,
+      "physical_mass_weighted_irreducible_cmi_bits": 3.0486624273604974e-07,
+      "physical_sign_orbit_tuple_mass": 0.013167868015996299,
+      "rank_profile_cmi_bits": 4.9825299947912306e-17,
+      "rank_profile_maximum_conditional_determinant": 0.0,
+      "status": "compressed-orientation-racah-cumulant-probe-verified",
+      "total_syndrome_amplitude": 0.11463277903754138
+    },
+    {
+      "all_base_partitions_equal": true,
+      "base_dimensions": [
+        15,
+        15,
+        15,
+        15,
+        15,
+        15
+      ],
+      "base_partitions": [
+        [
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "compressed_orientation_channel_verified": true,
+      "conditional_determinants": [
+        -0.01757812500000012,
+        6.938893903907228e-18
+      ],
+      "conditional_syndrome_probabilities": [
+        0.015625000000000125,
+        0.14062499999999997,
+        0.1406250000000006,
+        0.14062499999999972,
+        0.14062500000000036,
+        0.14062499999999978,
+        0.14062499999999986,
+        0.14062499999999958
+      ],
+      "control_id": "S7-REPEATED-ORBIT-2",
+      "entries": [
+        {
+          "block_hilbert_schmidt_square": 0.027777777777778054,
+          "haar_rank_profile_amplitude": 0.0002777777777777778,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 9.530247636340964e-15,
+          "normalized_syndrome_amplitude": 0.000123456790123458,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 16
+        },
+        {
+          "block_hilbert_schmidt_square": 0.25000000000000044,
+          "haar_rank_profile_amplitude": 0.0006349206349206349,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 9.530247636340964e-15,
+          "normalized_syndrome_amplitude": 0.001111111111111113,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              5,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 7
+        },
+        {
+          "block_hilbert_schmidt_square": 0.25000000000000155,
+          "haar_rank_profile_amplitude": 0.0002777777777777778,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 1.1367142452073393e-14,
+          "normalized_syndrome_amplitude": 0.001111111111111118,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              5,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 16
+        },
+        {
+          "block_hilbert_schmidt_square": 0.25,
+          "haar_rank_profile_amplitude": 0.0006349206349206349,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 9.530247636340964e-15,
+          "normalized_syndrome_amplitude": 0.0011111111111111111,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              5,
+              1,
+              1
+            ],
+            [
+              5,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 7
+        },
+        {
+          "block_hilbert_schmidt_square": 0.2500000000000011,
+          "haar_rank_profile_amplitude": 0.0002777777777777778,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 9.530247636340964e-15,
+          "normalized_syndrome_amplitude": 0.001111111111111116,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              5,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 16
+        },
+        {
+          "block_hilbert_schmidt_square": 0.2500000000000001,
+          "haar_rank_profile_amplitude": 0.0006349206349206349,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 9.530247636340964e-15,
+          "normalized_syndrome_amplitude": 0.0011111111111111115,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              5,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              5,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 7
+        },
+        {
+          "block_hilbert_schmidt_square": 0.2500000000000002,
+          "haar_rank_profile_amplitude": 0.0002777777777777778,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 1.1367142452073393e-14,
+          "normalized_syndrome_amplitude": 0.0011111111111111122,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              5,
+              1,
+              1
+            ],
+            [
+              5,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 16
+        },
+        {
+          "block_hilbert_schmidt_square": 0.24999999999999978,
+          "haar_rank_profile_amplitude": 0.0006349206349206349,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 6.403557810802565e-15,
+          "normalized_syndrome_amplitude": 0.00111111111111111,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              5,
+              1,
+              1
+            ],
+            [
+              5,
+              1,
+              1
+            ],
+            [
+              5,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 7
+        }
+      ],
+      "exact_zero_pattern_proved": false,
+      "finite_representation_space_probe_only": true,
+      "irreducible_racah_cmi_bits": 0.056844545420076255,
+      "maximum_pair_embedding_isometry_residual": 1.1367142452073393e-14,
+      "n": 7,
+      "numerically_nonzero_syndrome_count": 8,
+      "physical_mass_weighted_irreducible_cmi_bits": 3.1969046618028765e-07,
+      "physical_sign_orbit_tuple_mass": 5.623942698772642e-06,
+      "rank_profile_cmi_bits": 0.0,
+      "rank_profile_maximum_conditional_determinant": 0.0,
+      "status": "compressed-orientation-racah-cumulant-probe-verified",
+      "total_syndrome_amplitude": 0.00790123456790125
+    },
+    {
+      "all_base_partitions_equal": true,
+      "base_dimensions": [
+        14,
+        14,
+        14,
+        14,
+        14,
+        14
+      ],
+      "base_partitions": [
+        [
+          2,
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          2,
+          1
+        ]
+      ],
+      "compressed_orientation_channel_verified": true,
+      "conditional_determinants": [
+        -0.016124847136690393,
+        6.938893903907228e-18
+      ],
+      "conditional_syndrome_probabilities": [
+        0.05168746454906381,
+        0.1435762904140666,
+        0.14357629041406658,
+        0.14357629041406675,
+        0.14357629041406683,
+        0.14357629041406736,
+        0.08685479296653452,
+        0.14357629041406755
+      ],
+      "control_id": "S7-REPEATED-ORBIT-3",
+      "entries": [
+        {
+          "block_hilbert_schmidt_square": 0.08999999999999952,
+          "haar_rank_profile_amplitude": 0.00046382189239332097,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 5.767136588893482e-15,
+          "normalized_syndrome_amplitude": 0.00045918367346938535,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 11
+        },
+        {
+          "block_hilbert_schmidt_square": 0.2499999999999995,
+          "haar_rank_profile_amplitude": 0.0007288629737609329,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 5.767136588893482e-15,
+          "normalized_syndrome_amplitude": 0.0012755102040816302,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              4,
+              3
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 7
+        },
+        {
+          "block_hilbert_schmidt_square": 0.24999999999999944,
+          "haar_rank_profile_amplitude": 0.00046382189239332097,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 5.767136588893482e-15,
+          "normalized_syndrome_amplitude": 0.0012755102040816297,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 11
+        },
+        {
+          "block_hilbert_schmidt_square": 0.24999999999999972,
+          "haar_rank_profile_amplitude": 0.0007288629737609329,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 5.767136588893482e-15,
+          "normalized_syndrome_amplitude": 0.0012755102040816313,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              4,
+              3
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            0,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 7
+        },
+        {
+          "block_hilbert_schmidt_square": 0.2499999999999999,
+          "haar_rank_profile_amplitude": 0.00046382189239332097,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 6.882855364453565e-15,
+          "normalized_syndrome_amplitude": 0.0012755102040816321,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 11
+        },
+        {
+          "block_hilbert_schmidt_square": 0.2500000000000008,
+          "haar_rank_profile_amplitude": 0.0007288629737609329,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 1.53157047544857e-14,
+          "normalized_syndrome_amplitude": 0.0012755102040816367,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              4,
+              3
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 7
+        },
+        {
+          "block_hilbert_schmidt_square": 0.15123456790123496,
+          "haar_rank_profile_amplitude": 0.00046382189239332097,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 6.882855364453565e-15,
+          "normalized_syndrome_amplitude": 0.000771604938271607,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 11
+        },
+        {
+          "block_hilbert_schmidt_square": 0.2500000000000011,
+          "haar_rank_profile_amplitude": 0.0007288629737609329,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 1.53157047544857e-14,
+          "normalized_syndrome_amplitude": 0.0012755102040816384,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2,
+              1
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              4,
+              3
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 7
+        }
+      ],
+      "exact_zero_pattern_proved": false,
+      "finite_representation_space_probe_only": true,
+      "irreducible_racah_cmi_bits": 0.040537485039310345,
+      "maximum_pair_embedding_isometry_residual": 1.53157047544857e-14,
+      "n": 7,
+      "numerically_nonzero_syndrome_count": 8,
+      "physical_mass_weighted_irreducible_cmi_bits": 1.6944337850603028e-07,
+      "physical_sign_orbit_tuple_mass": 4.179918372876764e-06,
+      "rank_profile_cmi_bits": 0.0,
+      "rank_profile_maximum_conditional_determinant": 0.0,
+      "status": "compressed-orientation-racah-cumulant-probe-verified",
+      "total_syndrome_amplitude": 0.00888384983623079
+    },
+    {
+      "all_base_partitions_equal": true,
+      "base_dimensions": [
+        14,
+        14,
+        14,
+        14,
+        14,
+        14
+      ],
+      "base_partitions": [
+        [
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "compressed_orientation_channel_verified": true,
+      "conditional_determinants": [
+        0.0,
+        0.0
+      ],
+      "conditional_syndrome_probabilities": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "control_id": "S7-REPEATED-ORBIT-4",
+      "entries": [
+        {
+          "block_hilbert_schmidt_square": 0.0,
+          "haar_rank_profile_amplitude": 0.0,
+          "left_block_rank": 0,
+          "maximum_pair_embedding_isometry_residual": 0.0,
+          "normalized_syndrome_amplitude": 0.0,
+          "numerically_zero_at_threshold": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 0,
+          "status": "orientation-channel-forbidden-by-fusion-support",
+          "syndrome": [
+            0,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 15
+        },
+        {
+          "block_hilbert_schmidt_square": 0.0,
+          "haar_rank_profile_amplitude": 0.0,
+          "left_block_rank": 0,
+          "maximum_pair_embedding_isometry_residual": 0.0,
+          "normalized_syndrome_amplitude": 0.0,
+          "numerically_zero_at_threshold": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              5,
+              2
+            ]
+          ],
+          "right_block_rank": 0,
+          "status": "orientation-channel-forbidden-by-fusion-support",
+          "syndrome": [
+            0,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 3
+        },
+        {
+          "block_hilbert_schmidt_square": 0.0,
+          "haar_rank_profile_amplitude": 0.0,
+          "left_block_rank": 0,
+          "maximum_pair_embedding_isometry_residual": 0.0,
+          "normalized_syndrome_amplitude": 0.0,
+          "numerically_zero_at_threshold": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 4,
+          "status": "orientation-channel-forbidden-by-fusion-support",
+          "syndrome": [
+            0,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 15
+        },
+        {
+          "block_hilbert_schmidt_square": 0.0,
+          "haar_rank_profile_amplitude": 0.0,
+          "left_block_rank": 0,
+          "maximum_pair_embedding_isometry_residual": 0.0,
+          "normalized_syndrome_amplitude": 0.0,
+          "numerically_zero_at_threshold": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              5,
+              2
+            ]
+          ],
+          "right_block_rank": 0,
+          "status": "orientation-channel-forbidden-by-fusion-support",
+          "syndrome": [
+            0,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 3
+        },
+        {
+          "block_hilbert_schmidt_square": 0.0,
+          "haar_rank_profile_amplitude": 0.0,
+          "left_block_rank": 4,
+          "maximum_pair_embedding_isometry_residual": 0.0,
+          "normalized_syndrome_amplitude": 0.0,
+          "numerically_zero_at_threshold": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 0,
+          "status": "orientation-channel-forbidden-by-fusion-support",
+          "syndrome": [
+            1,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 15
+        },
+        {
+          "block_hilbert_schmidt_square": 0.0,
+          "haar_rank_profile_amplitude": 0.0,
+          "left_block_rank": 0,
+          "maximum_pair_embedding_isometry_residual": 0.0,
+          "normalized_syndrome_amplitude": 0.0,
+          "numerically_zero_at_threshold": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              5,
+              2
+            ]
+          ],
+          "right_block_rank": 0,
+          "status": "orientation-channel-forbidden-by-fusion-support",
+          "syndrome": [
+            1,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 3
+        },
+        {
+          "block_hilbert_schmidt_square": 0.9234567901234615,
+          "haar_rank_profile_amplitude": 0.005442176870748299,
+          "left_block_rank": 4,
+          "maximum_pair_embedding_isometry_residual": 1.2423355102022948e-14,
+          "normalized_syndrome_amplitude": 0.004711514235323783,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 4,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 15
+        },
+        {
+          "block_hilbert_schmidt_square": 0.0,
+          "haar_rank_profile_amplitude": 0.0,
+          "left_block_rank": 0,
+          "maximum_pair_embedding_isometry_residual": 0.0,
+          "normalized_syndrome_amplitude": 0.0,
+          "numerically_zero_at_threshold": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              5,
+              2
+            ]
+          ],
+          "right_block_rank": 0,
+          "status": "orientation-channel-forbidden-by-fusion-support",
+          "syndrome": [
+            1,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 3
+        }
+      ],
+      "exact_zero_pattern_proved": false,
+      "finite_representation_space_probe_only": true,
+      "irreducible_racah_cmi_bits": 0.0,
+      "maximum_pair_embedding_isometry_residual": 1.2423355102022948e-14,
+      "n": 7,
+      "numerically_nonzero_syndrome_count": 1,
+      "physical_mass_weighted_irreducible_cmi_bits": 0.0,
+      "physical_sign_orbit_tuple_mass": 2.2168029941235357e-06,
+      "rank_profile_cmi_bits": 0.0,
+      "rank_profile_maximum_conditional_determinant": 0.0,
+      "status": "compressed-orientation-racah-cumulant-probe-verified",
+      "total_syndrome_amplitude": 0.004711514235323783
+    },
+    {
+      "all_base_partitions_equal": true,
+      "base_dimensions": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "base_partitions": [
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "compressed_orientation_channel_verified": true,
+      "conditional_determinants": [
+        0.0,
+        0.0
+      ],
+      "conditional_syndrome_probabilities": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      "control_id": "S7-REPEATED-ORBIT-5",
+      "entries": [
+        {
+          "block_hilbert_schmidt_square": 0.0,
+          "haar_rank_profile_amplitude": 0.0,
+          "left_block_rank": 0,
+          "maximum_pair_embedding_isometry_residual": 0.0,
+          "normalized_syndrome_amplitude": 0.0,
+          "numerically_zero_at_threshold": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 0,
+          "status": "orientation-channel-forbidden-by-fusion-support",
+          "syndrome": [
+            0,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "block_hilbert_schmidt_square": 0.0,
+          "haar_rank_profile_amplitude": 0.0,
+          "left_block_rank": 0,
+          "maximum_pair_embedding_isometry_residual": 0.0,
+          "normalized_syndrome_amplitude": 0.0,
+          "numerically_zero_at_threshold": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              6,
+              1
+            ]
+          ],
+          "right_block_rank": 0,
+          "status": "orientation-channel-forbidden-by-fusion-support",
+          "syndrome": [
+            0,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 0
+        },
+        {
+          "block_hilbert_schmidt_square": 0.0,
+          "haar_rank_profile_amplitude": 0.0,
+          "left_block_rank": 0,
+          "maximum_pair_embedding_isometry_residual": 0.0,
+          "normalized_syndrome_amplitude": 0.0,
+          "numerically_zero_at_threshold": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "orientation-channel-forbidden-by-fusion-support",
+          "syndrome": [
+            0,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "block_hilbert_schmidt_square": 0.0,
+          "haar_rank_profile_amplitude": 0.0,
+          "left_block_rank": 0,
+          "maximum_pair_embedding_isometry_residual": 0.0,
+          "normalized_syndrome_amplitude": 0.0,
+          "numerically_zero_at_threshold": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              6,
+              1
+            ]
+          ],
+          "right_block_rank": 0,
+          "status": "orientation-channel-forbidden-by-fusion-support",
+          "syndrome": [
+            0,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 0
+        },
+        {
+          "block_hilbert_schmidt_square": 0.0,
+          "haar_rank_profile_amplitude": 0.0,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 0.0,
+          "normalized_syndrome_amplitude": 0.0,
+          "numerically_zero_at_threshold": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 0,
+          "status": "orientation-channel-forbidden-by-fusion-support",
+          "syndrome": [
+            1,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "block_hilbert_schmidt_square": 0.0,
+          "haar_rank_profile_amplitude": 0.0,
+          "left_block_rank": 0,
+          "maximum_pair_embedding_isometry_residual": 0.0,
+          "normalized_syndrome_amplitude": 0.0,
+          "numerically_zero_at_threshold": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              6,
+              1
+            ]
+          ],
+          "right_block_rank": 0,
+          "status": "orientation-channel-forbidden-by-fusion-support",
+          "syndrome": [
+            1,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 0
+        },
+        {
+          "block_hilbert_schmidt_square": 0.6400000000000011,
+          "haar_rank_profile_amplitude": 0.006944444444444444,
+          "left_block_rank": 1,
+          "maximum_pair_embedding_isometry_residual": 2.5165633598949137e-15,
+          "normalized_syndrome_amplitude": 0.01777777777777781,
+          "numerically_zero_at_threshold": false,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "right_block_rank": 1,
+          "status": "compressed-orientation-racah-block-compiled",
+          "syndrome": [
+            1,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "block_hilbert_schmidt_square": 0.0,
+          "haar_rank_profile_amplitude": 0.0,
+          "left_block_rank": 0,
+          "maximum_pair_embedding_isometry_residual": 0.0,
+          "normalized_syndrome_amplitude": 0.0,
+          "numerically_zero_at_threshold": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "oriented_partitions": [
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              6,
+              1
+            ]
+          ],
+          "right_block_rank": 0,
+          "status": "orientation-channel-forbidden-by-fusion-support",
+          "syndrome": [
+            1,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 0
+        }
+      ],
+      "exact_zero_pattern_proved": false,
+      "finite_representation_space_probe_only": true,
+      "irreducible_racah_cmi_bits": 0.0,
+      "maximum_pair_embedding_isometry_residual": 2.5165633598949137e-15,
+      "n": 7,
+      "numerically_nonzero_syndrome_count": 1,
+      "physical_mass_weighted_irreducible_cmi_bits": 0.0,
+      "physical_sign_orbit_tuple_mass": 5.183025591188865e-08,
+      "rank_profile_cmi_bits": 0.0,
+      "rank_profile_maximum_conditional_determinant": 0.0,
+      "status": "compressed-orientation-racah-cumulant-probe-verified",
+      "total_syndrome_amplitude": 0.01777777777777781
+    }
+  ],
+  "created_at": "2026-08-14T01:57:27.964741+00:00",
+  "exact_cross_check": {
+    "base_partitions": [
+      [
+        2,
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        2,
+        1
+      ],
+      [
+        2,
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        2,
+        1
+      ],
+      [
+        2,
+        2,
+        1
+      ],
+      [
+        2,
+        2,
+        1
+      ]
+    ],
+    "compressed_physical_orbit_mass": 0.004140946502057612,
+    "exact_amplitude_and_mass_formula_verified": true,
+    "exact_coarse_physical_orbit_mass": 0.004140946502057612,
+    "exact_orbit_indices": [
+      1,
+      2,
+      1,
+      2,
+      2,
+      2
+    ],
+    "maximum_exact_amplitude_residual": 3.2959746043559335e-17,
+    "n": 5,
+    "physical_mass_formula_residual": 0.0,
+    "status": "compressed-orientation-amplitudes-and-physical-mass-cross-checked"
+  },
+  "falsifiers_triggered": [
+    "A large conditional CMI without physical source mass has little aggregate value.",
+    "The repeated-orbit S6 signal does not persist uniformly at S7.",
+    "Current pair-fiber embeddings do not provide a scalable S8 orientation workbench."
+  ],
+  "headline_metrics": {
+    "S6_repeated_irreducible_cmi_bits": 0.9999999999999998,
+    "S6_repeated_physical_mass": 0.0001071673525377239,
+    "S6_repeated_weighted_cmi_bits": 0.00010716735253772388,
+    "S7_repeated_maximum_cmi_bits": 0.056844545420076255,
+    "S7_repeated_maximum_weighted_cmi_bits": 3.1969046618028765e-07,
+    "S7_repeated_total_physical_mass": 0.013192861276135885,
+    "S8_completed_orientation_channel_count": 0,
+    "compressed_orientation_channel_count": 8,
+    "finite_control_failure_count": 0,
+    "maximum_completed_n": 7,
+    "new_quantum_algorithm_count": 0,
+    "physical_average_orientation_cmi_estimate_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "extend_orientation_racah_channels_beyond_factorial_character_enumeration",
+      "resolution": "Eight gauge-invariant compressed pair-fiber block contractions produce one selected sign-orbit channel.",
+      "resolved": true
+    },
+    {
+      "obligation": "estimate_physical_average_orientation_cmi",
+      "resolution": "Need exact physical sampling of full six-label tuples, sign-orbit aggregation, duplicate caching, and confidence bounds.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_positive_mass_asymptotic_toric_violation",
+      "resolution": "The S6 spike collapses on tested repeated S7 sectors and gives no scalable family.",
+      "resolved": false
+    },
+    {
+      "obligation": "scale_compressed_orientation_channels_through_s8_and_beyond",
+      "resolution": "The first repeated dimension-70 S8 attempt exited 137 before a channel completed; require a character-sum or stochastic block estimator.",
+      "resolved": false
+    },
+    {
+      "obligation": "compare_classical_and_coherent_estimation_complexity",
+      "resolution": "Physical mass, normalized-character Monte Carlo variance, coherent preparation, and decoder costs must be compared on the same family.",
+      "resolved": false
+    }
+  ],
+  "resource_boundary": {
+    "asymptotic_inference_allowed": false,
+    "completed_orientation_block_count": 0,
+    "dense_three_copy_vector_dimension": 343000,
+    "irrep_dimension": 70,
+    "live_attempt_exit_code": 137,
+    "n": 8,
+    "pair_eigensolve_vector_dimension": 4900,
+    "repeated_base_partition": [
+      3,
+      2,
+      2,
+      1
+    ],
+    "required_orientation_block_count": 8,
+    "status": "current-compressed-compiler-exceeded-s8-repeated-orientation-resource-envelope"
+  },
+  "status": "compressed-orientation-cmi-reaches-s7-with-nonmonotone-finite-signal",
+  "summary": "Extended exact-orientation diagnostics to selected S7 sectors and falsified monotone extrapolation of the low-mass S6 one-bit spike.",
+  "theorem_contract": {
+    "conditional_channel": "p_y=A_y/sum_z A_z",
+    "irreducible_information": "I_p(Y_g;Y_h|Y_k)",
+    "physical_orbit_mass": "8 product_i(d_i) sum_y(A_y)/|S_n|^3",
+    "rank_null": "the Haar multiplicity-rank profile is G--K--H Markov",
+    "scope": "selected finite sign-orbit tuples; no physical-average scaling theorem",
+    "syndrome_amplitude": "A_y=||R_y(mu,nu)||_HS^2/(d_mu d_nu)"
+  }
+}

@@ -1,0 +1,397 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The known spectral gap automatically controls the natural Racah tail.",
+      "resolution": "Only functions with a proved small Dirichlet form benefit; natural Racah branching stability is open.",
+      "resolved": true
+    },
+    {
+      "objection": "The one-box down-up chain is sufficient.",
+      "resolution": "Its tail inequality loses n/(s+1), which is nearly linear at logarithmic-squared support.",
+      "resolved": true
+    },
+    {
+      "objection": "Taking k approximately n/s is a local perturbation.",
+      "resolution": "It changes a mesoscopic number of boxes; compatibility of Racah couplings under that branching is the hard theorem.",
+      "resolved": true
+    },
+    {
+      "objection": "L2 stability settles the entropy target in every regime.",
+      "resolution": "Rare spikes can keep L2 energy huge while contributing little KL; a fractional or entropy form may be necessary.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "classical_separation_proved": false,
+    "low_support_racah_fourier_sector_controlled": false,
+    "natural_racah_collision_subpolynomial_proved": false,
+    "natural_racah_mesoscopic_branching_stability_proved": false,
+    "natural_racah_mutual_information_sublogarithmic_proved": false,
+    "plancherel_down_up_spectrum_verified": true,
+    "projector_tail_dirichlet_reduction_proved": true,
+    "reason": "The spectral reduction is exact, but both natural branching stability and the growing low-support sector remain open.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-14T01:36:14.253524+00:00",
+  "falsifiers_triggered": [
+    "Fixed-support moment estimates cannot substitute for a Fourier tail bound.",
+    "The one-box spectral gap is too lossy at the required support scale.",
+    "Known down-up diagonalization supplies no natural Racah smoothness estimate."
+  ],
+  "headline_metrics": {
+    "entropy_stability_theorem_count": 0,
+    "exact_down_up_spectrum_theorem_count": 1,
+    "exact_fourier_tail_dirichlet_theorem_count": 1,
+    "finite_control_failure_count": 0,
+    "finite_spectrum_control_count": 8,
+    "finite_tail_control_count": 8,
+    "natural_branching_stability_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "literature_basis": [
+    {
+      "id": "fulman-stein-plancherel-2003",
+      "primary_source": true,
+      "url": "https://arxiv.org/abs/math/0305423",
+      "use": "Proposition 5.2 gives the exact J_k eigenvalues and normalized character eigenfunctions."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_exact_support_tail_dirichlet_bound",
+      "resolution": "Apply Parseval in the exact J_k tensor J_k eigenbasis and use the minimum tail spectral gap.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_physical_average_natural_racah_branching_stability",
+      "resolution": "Need E_outer D_k(L_o)=n^o(1) or a stronger decaying bound at k approximately n/log^2(n).",
+      "resolved": false
+    },
+    {
+      "obligation": "control_low_support_character_pair_sector",
+      "resolution": "Growing-support character sums through at least the log-squared scale remain unbounded.",
+      "resolved": false
+    },
+    {
+      "obligation": "derive_entropy_or_fractional_down_up_stability",
+      "resolution": "Needed if rare likelihood spikes make the L2 Dirichlet form factorially large.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "boxes_removed": 34,
+      "constant_gap_verified": true,
+      "exact_cutoff_spectral_gap": 0.7170068027210884,
+      "exponential_gap_lower": 0.6394050598269216,
+      "maximum_retained_moved_support": 2,
+      "mesoscopic_tail_amplification": 1.394686907020873,
+      "n": 100,
+      "one_box_tail_amplification": 33.333333333333336,
+      "status": "mesoscopic-down-up-chain-has-constant-projector-tail-gap"
+    },
+    {
+      "boxes_removed": 25,
+      "constant_gap_verified": true,
+      "exact_cutoff_spectral_gap": 0.6900330891494367,
+      "exponential_gap_lower": 0.6321205588285577,
+      "maximum_retained_moved_support": 3,
+      "mesoscopic_tail_amplification": 1.4492058652326967,
+      "n": 100,
+      "one_box_tail_amplification": 25.0,
+      "status": "mesoscopic-down-up-chain-has-constant-projector-tail-gap"
+    },
+    {
+      "boxes_removed": 334,
+      "constant_gap_verified": true,
+      "exact_cutoff_spectral_gap": 0.7050367401469606,
+      "exponential_gap_lower": 0.632855582442279,
+      "maximum_retained_moved_support": 2,
+      "mesoscopic_tail_amplification": 1.4183658000454786,
+      "n": 1000,
+      "one_box_tail_amplification": 333.3333333333333,
+      "status": "mesoscopic-down-up-chain-has-constant-projector-tail-gap"
+    },
+    {
+      "boxes_removed": 250,
+      "constant_gap_verified": true,
+      "exact_cutoff_spectral_gap": 0.6842276545283361,
+      "exponential_gap_lower": 0.6321205588285577,
+      "maximum_retained_moved_support": 3,
+      "mesoscopic_tail_amplification": 1.4615018749707473,
+      "n": 1000,
+      "one_box_tail_amplification": 250.0,
+      "status": "mesoscopic-down-up-chain-has-constant-projector-tail-gap"
+    },
+    {
+      "boxes_removed": 3334,
+      "constant_gap_verified": true,
+      "exact_cutoff_spectral_gap": 0.7038370340734814,
+      "exponential_gap_lower": 0.6321941273596936,
+      "maximum_retained_moved_support": 2,
+      "mesoscopic_tail_amplification": 1.420783436490213,
+      "n": 10000,
+      "one_box_tail_amplification": 3333.3333333333335,
+      "status": "mesoscopic-down-up-chain-has-constant-projector-tail-gap"
+    },
+    {
+      "boxes_removed": 2000,
+      "constant_gap_verified": true,
+      "exact_cutoff_spectral_gap": 0.6724019374123532,
+      "exponential_gap_lower": 0.6321205588285577,
+      "maximum_retained_moved_support": 4,
+      "mesoscopic_tail_amplification": 1.4872057089073287,
+      "n": 10000,
+      "one_box_tail_amplification": 2000.0,
+      "status": "mesoscopic-down-up-chain-has-constant-projector-tail-gap"
+    }
+  ],
+  "spectrum_controls": [
+    {
+      "boxes_removed": 1,
+      "exact_down_up_spectrum_verified": true,
+      "largest_nonconstant_eigenvalue": 0.5,
+      "maximum_character_eigenfunction_residual": 1.3877787807814457e-17,
+      "maximum_detailed_balance_residual": 0.0,
+      "maximum_row_sum_residual": 0.0,
+      "n": 4,
+      "partition_count": 5,
+      "smallest_nonzero_moved_support": 2,
+      "status": "plancherel-down-up-character-spectrum-verified"
+    },
+    {
+      "boxes_removed": 2,
+      "exact_down_up_spectrum_verified": true,
+      "largest_nonconstant_eigenvalue": 0.16666666666666666,
+      "maximum_character_eigenfunction_residual": 1.1102230246251565e-16,
+      "maximum_detailed_balance_residual": 0.0,
+      "maximum_row_sum_residual": 1.1102230246251565e-16,
+      "n": 4,
+      "partition_count": 5,
+      "smallest_nonzero_moved_support": 2,
+      "status": "plancherel-down-up-character-spectrum-verified"
+    },
+    {
+      "boxes_removed": 1,
+      "exact_down_up_spectrum_verified": true,
+      "largest_nonconstant_eigenvalue": 0.6,
+      "maximum_character_eigenfunction_residual": 4.440892098500626e-16,
+      "maximum_detailed_balance_residual": 6.938893903907228e-18,
+      "maximum_row_sum_residual": 1.1102230246251565e-16,
+      "n": 5,
+      "partition_count": 7,
+      "smallest_nonzero_moved_support": 2,
+      "status": "plancherel-down-up-character-spectrum-verified"
+    },
+    {
+      "boxes_removed": 2,
+      "exact_down_up_spectrum_verified": true,
+      "largest_nonconstant_eigenvalue": 0.3,
+      "maximum_character_eigenfunction_residual": 2.220446049250313e-16,
+      "maximum_detailed_balance_residual": 0.0,
+      "maximum_row_sum_residual": 1.1102230246251565e-16,
+      "n": 5,
+      "partition_count": 7,
+      "smallest_nonzero_moved_support": 2,
+      "status": "plancherel-down-up-character-spectrum-verified"
+    },
+    {
+      "boxes_removed": 1,
+      "exact_down_up_spectrum_verified": true,
+      "largest_nonconstant_eigenvalue": 0.6666666666666666,
+      "maximum_character_eigenfunction_residual": 4.440892098500626e-16,
+      "maximum_detailed_balance_residual": 6.938893903907228e-18,
+      "maximum_row_sum_residual": 1.1102230246251565e-16,
+      "n": 6,
+      "partition_count": 11,
+      "smallest_nonzero_moved_support": 2,
+      "status": "plancherel-down-up-character-spectrum-verified"
+    },
+    {
+      "boxes_removed": 2,
+      "exact_down_up_spectrum_verified": true,
+      "largest_nonconstant_eigenvalue": 0.4,
+      "maximum_character_eigenfunction_residual": 2.220446049250313e-16,
+      "maximum_detailed_balance_residual": 1.734723475976807e-18,
+      "maximum_row_sum_residual": 1.1102230246251565e-16,
+      "n": 6,
+      "partition_count": 11,
+      "smallest_nonzero_moved_support": 2,
+      "status": "plancherel-down-up-character-spectrum-verified"
+    },
+    {
+      "boxes_removed": 1,
+      "exact_down_up_spectrum_verified": true,
+      "largest_nonconstant_eigenvalue": 0.75,
+      "maximum_character_eigenfunction_residual": 1.7763568394002505e-15,
+      "maximum_detailed_balance_residual": 3.469446951953614e-18,
+      "maximum_row_sum_residual": 1.1102230246251565e-16,
+      "n": 8,
+      "partition_count": 22,
+      "smallest_nonzero_moved_support": 2,
+      "status": "plancherel-down-up-character-spectrum-verified"
+    },
+    {
+      "boxes_removed": 2,
+      "exact_down_up_spectrum_verified": true,
+      "largest_nonconstant_eigenvalue": 0.5357142857142857,
+      "maximum_character_eigenfunction_residual": 8.881784197001252e-16,
+      "maximum_detailed_balance_residual": 3.469446951953614e-18,
+      "maximum_row_sum_residual": 2.220446049250313e-16,
+      "n": 8,
+      "partition_count": 22,
+      "smallest_nonzero_moved_support": 2,
+      "status": "plancherel-down-up-character-spectrum-verified"
+    }
+  ],
+  "status": "projector-tail-has-concrete-mesoscopic-branching-falsifier",
+  "summary": "Converted the uncontrolled character-projector tail into an exact mesoscopic Young-graph noise-sensitivity obligation.",
+  "tail_controls": [
+    {
+      "boxes_removed": 1,
+      "cutoff_bound_verified": true,
+      "direct_parseval_residual": 8.881784197001252e-16,
+      "dirichlet_tail_upper": 9.0,
+      "exact_cutoff_spectral_gap": 0.6,
+      "maximum_retained_moved_support": 2,
+      "model": "plancherel-identity-coupling",
+      "n": 5,
+      "omitted_fourier_tail_energy": 5.0,
+      "product_chain_dirichlet_energy": 5.3999999999999995,
+      "retained_fourier_energy": 1.0,
+      "status": "branching-dirichlet-controls-fourier-projector-tail",
+      "tail_bound_slack": 4.0,
+      "total_nonconstant_fourier_energy": 6.0
+    },
+    {
+      "boxes_removed": 2,
+      "cutoff_bound_verified": true,
+      "direct_parseval_residual": 8.881784197001252e-16,
+      "dirichlet_tail_upper": 5.9,
+      "exact_cutoff_spectral_gap": 1.0,
+      "maximum_retained_moved_support": 3,
+      "model": "plancherel-identity-coupling",
+      "n": 5,
+      "omitted_fourier_tail_energy": 3.9999999999999996,
+      "product_chain_dirichlet_energy": 5.9,
+      "retained_fourier_energy": 2.0000000000000004,
+      "status": "branching-dirichlet-controls-fourier-projector-tail",
+      "tail_bound_slack": 1.9000000000000008,
+      "total_nonconstant_fourier_energy": 6.0
+    },
+    {
+      "boxes_removed": 1,
+      "cutoff_bound_verified": true,
+      "direct_parseval_residual": 0.0,
+      "dirichlet_tail_upper": 18.055555555555557,
+      "exact_cutoff_spectral_gap": 0.5,
+      "maximum_retained_moved_support": 2,
+      "model": "plancherel-identity-coupling",
+      "n": 6,
+      "omitted_fourier_tail_energy": 9.0,
+      "product_chain_dirichlet_energy": 9.027777777777779,
+      "retained_fourier_energy": 1.0000000000000004,
+      "status": "branching-dirichlet-controls-fourier-projector-tail",
+      "tail_bound_slack": 9.055555555555557,
+      "total_nonconstant_fourier_energy": 10.0
+    },
+    {
+      "boxes_removed": 2,
+      "cutoff_bound_verified": true,
+      "direct_parseval_residual": 0.0,
+      "dirichlet_tail_upper": 10.490476190476192,
+      "exact_cutoff_spectral_gap": 0.9333333333333333,
+      "maximum_retained_moved_support": 3,
+      "model": "plancherel-identity-coupling",
+      "n": 6,
+      "omitted_fourier_tail_energy": 8.0,
+      "product_chain_dirichlet_energy": 9.791111111111112,
+      "retained_fourier_energy": 2.0000000000000004,
+      "status": "branching-dirichlet-controls-fourier-projector-tail",
+      "tail_bound_slack": 2.4904761904761923,
+      "total_nonconstant_fourier_energy": 10.0
+    },
+    {
+      "boxes_removed": 1,
+      "cutoff_bound_verified": true,
+      "direct_parseval_residual": 3.552713678800501e-15,
+      "dirichlet_tail_upper": 50.541666666666664,
+      "exact_cutoff_spectral_gap": 0.375,
+      "maximum_retained_moved_support": 2,
+      "model": "plancherel-identity-coupling",
+      "n": 8,
+      "omitted_fourier_tail_energy": 19.999999999999996,
+      "product_chain_dirichlet_energy": 18.953125,
+      "retained_fourier_energy": 1.0,
+      "status": "branching-dirichlet-controls-fourier-projector-tail",
+      "tail_bound_slack": 30.541666666666668,
+      "total_nonconstant_fourier_energy": 20.999999999999996
+    },
+    {
+      "boxes_removed": 2,
+      "cutoff_bound_verified": true,
+      "direct_parseval_residual": 3.552713678800501e-15,
+      "dirichlet_tail_upper": 26.047077922077918,
+      "exact_cutoff_spectral_gap": 0.7857142857142857,
+      "maximum_retained_moved_support": 3,
+      "model": "plancherel-identity-coupling",
+      "n": 8,
+      "omitted_fourier_tail_energy": 18.999999999999996,
+      "product_chain_dirichlet_energy": 20.465561224489793,
+      "retained_fourier_energy": 1.9999999999999993,
+      "status": "branching-dirichlet-controls-fourier-projector-tail",
+      "tail_bound_slack": 7.047077922077921,
+      "total_nonconstant_fourier_energy": 20.999999999999996
+    },
+    {
+      "boxes_removed": 1,
+      "cutoff_bound_verified": true,
+      "direct_parseval_residual": 5.551115123125783e-17,
+      "dirichlet_tail_upper": 0.5753405441683836,
+      "exact_cutoff_spectral_gap": 0.5,
+      "maximum_retained_moved_support": 2,
+      "model": "selected-natural-racah-coupling",
+      "n": 6,
+      "omitted_fourier_tail_energy": 0.3662316292185359,
+      "product_chain_dirichlet_energy": 0.2876702720841918,
+      "retained_fourier_energy": 1.6298798692959702e-31,
+      "status": "branching-dirichlet-controls-fourier-projector-tail",
+      "tail_bound_slack": 0.20910891494984774,
+      "total_nonconstant_fourier_energy": 0.3662316292185359
+    },
+    {
+      "boxes_removed": 2,
+      "cutoff_bound_verified": true,
+      "direct_parseval_residual": 5.551115123125783e-17,
+      "dirichlet_tail_upper": 0.36510288436715677,
+      "exact_cutoff_spectral_gap": 0.9333333333333333,
+      "maximum_retained_moved_support": 3,
+      "model": "selected-natural-racah-coupling",
+      "n": 6,
+      "omitted_fourier_tail_energy": 0.24032046896879505,
+      "product_chain_dirichlet_energy": 0.340762692076013,
+      "retained_fourier_energy": 0.12591116024974086,
+      "status": "branching-dirichlet-controls-fourier-projector-tail",
+      "tail_bound_slack": 0.12478241539836171,
+      "total_nonconstant_fourier_energy": 0.3662316292185359
+    }
+  ],
+  "theorem": {
+    "character_mode_eigenvalue": "J_k phi_C=((n-m(C))_k/(n)_k)phi_C",
+    "entropy_stability_analogue_proved": false,
+    "joint_dirichlet_parseval": "D_k(L)=sum_(C,D)(1-beta_k(C)beta_k(D)) hat L(C,D)^2",
+    "mesoscopic_box_choice": "k=ceil(n/(s+1)) gives denominator >=1-e^-1",
+    "natural_racah_branching_stability_proved": false,
+    "status": "racah-projector-tail-reduced-to-mesoscopic-branching-stability",
+    "support_tail_bound": "Tail_s(L)<=D_k(L)/(1-(n-s-1)_k/(n)_k)"
+  },
+  "theorem_contract": {
+    "chain": "remove k boxes through Plancherel down transitions, then regrow k",
+    "joint_operator": "J_k tensor J_k on the two intermediate labels",
+    "scope": "L2 projector-tail certificate; no natural stability estimate",
+    "stationary_measure": "Plancherel(S_n)",
+    "tail": "class-pair Fourier modes with max moved support greater than s",
+    "target_scale": "s at least logarithmic-squared, k approximately n/s"
+  }
+}

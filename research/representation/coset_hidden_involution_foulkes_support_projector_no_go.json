@@ -1,0 +1,219 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False generically: the normalized twirl has exponentially small positive eigenvalues m_lambda/d_lambda.",
+      "challenge": "Averaging efficient subgroup projectors yields an efficient support flag.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It only applies to bounded polynomial thresholding of the conjugate twirl; direct label logic bypasses the witness.",
+      "challenge": "This is a lower bound for every Foulkes support circuit.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It motivates the generic no-go but is itself removed by the already compiled odd-two-row label trim.",
+      "challenge": "The witness remains after the two-row trim.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "conjugate_twirl_spectrum_proved": true,
+    "direct_two_row_label_bypass_available": true,
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "generic_foulkes_support_qsvt_refuted": true,
+    "higher_row_structured_support_projector_compiled": false,
+    "reason": "Generic twirl thresholding is exponentially conditioned, while the direct-label bypass does not yet extend to higher-row support.",
+    "residual_frame_norm_bounded": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T17:36:21.117835+00:00",
+  "falsifiers_triggered": [
+    "Efficient access to each subgroup projector does not make its conjugate support easy to flag.",
+    "The explicit small-eigenvalue witness is directly label-deflatable and is not a universal lower bound.",
+    "Higher-row structured support access remains unclassified."
+  ],
+  "headline_metrics": {
+    "conditioning_control_failure_count": 0,
+    "direct_label_bypass_count": 1,
+    "exact_conditioning_record_count": 6,
+    "generic_support_qsvt_no_go_theorem_count": 1,
+    "higher_row_structured_projector_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-FOULKES-STRUCTURED-SUPPORT-PROJECTOR",
+      "resolved": false,
+      "statement": "Construct a support projector exploiting Foulkes structure without resolving exponentially small twirl eigenvalues."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-HIGHER-ROW-EIGEN-GAP",
+      "resolved": false,
+      "statement": "Determine the smallest m_lambda/d_lambda after all directly recognizable negligible sectors are removed."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-FOULKES-DIRECT-LABEL-PREDICATE",
+      "resolved": false,
+      "statement": "Decide whether the higher-row Foulkes support admits an efficient partition-label predicate in the needed regime."
+    }
+  ],
+  "records": [
+    {
+      "block_count": 4,
+      "degree": 12,
+      "dimension_elementary_lower_bound_decimal": "13",
+      "direct_partition_label_bypass_available": true,
+      "exact_invariant_multiplicity": 1,
+      "exact_irrep_dimension_decimal": "154",
+      "exponential_conditioning_witness_verified": true,
+      "higher_row_structured_bypass_ruled_out": false,
+      "markov_degree_lower_bound_log2": 2.8409120199868725,
+      "multiplicity_upper_bound": 4,
+      "normalized_twirl_eigenvalue": 0.006493506493506494,
+      "normalized_twirl_eigenvalue_log2": -7.266786540694901,
+      "selected_partition": [
+        9,
+        3
+      ],
+      "selected_partition_has_even_rows": false,
+      "selected_second_row": 3,
+      "status": "generic-foulkes-support-threshold-exponential-direct-label-bypass",
+      "support_condition_ratio_log2": 7.266786540694901
+    },
+    {
+      "block_count": 8,
+      "degree": 24,
+      "dimension_elementary_lower_bound_decimal": "1093",
+      "direct_partition_label_bypass_available": true,
+      "exact_invariant_multiplicity": 1,
+      "exact_irrep_dimension_decimal": "211508",
+      "exponential_conditioning_witness_verified": true,
+      "higher_row_structured_bypass_ruled_out": false,
+      "markov_degree_lower_bound_log2": 8.052695103027018,
+      "multiplicity_upper_bound": 8,
+      "normalized_twirl_eigenvalue": 4.7279535525843e-06,
+      "normalized_twirl_eigenvalue_log2": -17.690352706775194,
+      "selected_partition": [
+        17,
+        7
+      ],
+      "selected_partition_has_even_rows": false,
+      "selected_second_row": 7,
+      "status": "generic-foulkes-support-threshold-exponential-direct-label-bypass",
+      "support_condition_ratio_log2": 17.690352706775194
+    },
+    {
+      "block_count": 16,
+      "degree": 48,
+      "dimension_elementary_lower_bound_decimal": "7174453",
+      "direct_partition_label_bypass_available": true,
+      "exact_invariant_multiplicity": 3,
+      "exact_irrep_dimension_decimal": "610939456104",
+      "exponential_conditioning_witness_verified": true,
+      "higher_row_structured_bypass_ruled_out": false,
+      "markov_degree_lower_bound_log2": 17.991156729424898,
+      "multiplicity_upper_bound": 16,
+      "normalized_twirl_eigenvalue": 4.910470211125652e-12,
+      "normalized_twirl_eigenvalue_log2": -37.56727595957095,
+      "selected_partition": [
+        33,
+        15
+      ],
+      "selected_partition_has_even_rows": false,
+      "selected_second_row": 15,
+      "status": "generic-foulkes-support-threshold-exponential-direct-label-bypass",
+      "support_condition_ratio_log2": 37.56727595957095
+    },
+    {
+      "block_count": 32,
+      "degree": 96,
+      "dimension_elementary_lower_bound_decimal": "308836698141973",
+      "direct_partition_label_bypass_available": true,
+      "exact_invariant_multiplicity": 5,
+      "exact_irrep_dimension_decimal": "7754302448899456032423120",
+      "exponential_conditioning_witness_verified": true,
+      "higher_row_structured_bypass_ruled_out": false,
+      "markov_degree_lower_bound_log2": 39.3871903443841,
+      "multiplicity_upper_bound": 32,
+      "normalized_twirl_eigenvalue": 6.448033247284073e-25,
+      "normalized_twirl_eigenvalue_log2": -80.35934318948937,
+      "selected_partition": [
+        65,
+        31
+      ],
+      "selected_partition_has_even_rows": false,
+      "selected_second_row": 31,
+      "status": "generic-foulkes-support-threshold-exponential-direct-label-bypass",
+      "support_condition_ratio_log2": 80.35934318948937
+    },
+    {
+      "block_count": 64,
+      "degree": 192,
+      "dimension_elementary_lower_bound_decimal": "572280636715418747442974848213",
+      "direct_partition_label_bypass_available": true,
+      "exact_invariant_multiplicity": 11,
+      "exact_irrep_dimension_decimal": "1855107806933908153806236187092767389452840649005472",
+      "exponential_conditioning_witness_verified": true,
+      "higher_row_structured_bypass_ruled_out": false,
+      "markov_degree_lower_bound_log2": 82.63272087466792,
+      "multiplicity_upper_bound": 64,
+      "normalized_twirl_eigenvalue": 5.929574528706566e-51,
+      "normalized_twirl_eigenvalue_log2": -166.850404250057,
+      "selected_partition": [
+        129,
+        63
+      ],
+      "selected_partition_has_even_rows": false,
+      "selected_second_row": 63,
+      "status": "generic-foulkes-support-threshold-exponential-direct-label-bypass",
+      "support_condition_ratio_log2": 166.850404250057
+    },
+    {
+      "block_count": 128,
+      "degree": 384,
+      "dimension_elementary_lower_bound_decimal": "1965030762956430528586812143568753110946368598712640184849493",
+      "direct_partition_label_bypass_available": true,
+      "exact_invariant_multiplicity": 21,
+      "exact_irrep_dimension_decimal": "154465751532962852706255849958230633571694408848604182698118159311305477942834625857463827874610480001856",
+      "exponential_conditioning_witness_verified": true,
+      "higher_row_structured_bypass_ruled_out": false,
+      "markov_degree_lower_bound_log2": 170.0652644705166,
+      "multiplicity_upper_bound": 128,
+      "normalized_twirl_eigenvalue": 1.3595246707823526e-103,
+      "normalized_twirl_eigenvalue_log2": -341.71549144175435,
+      "selected_partition": [
+        257,
+        127
+      ],
+      "selected_partition_has_even_rows": false,
+      "selected_second_row": 127,
+      "status": "generic-foulkes-support-threshold-exponential-direct-label-bypass",
+      "support_condition_ratio_log2": 341.71549144175435
+    }
+  ],
+  "status": "generic-foulkes-support-qsvt-no-go-structured-projector-open",
+  "summary": "Proved that naive QSVT thresholding of the conjugate Foulkes twirl has exponential degree, while preserving direct-label and structured higher-row projector routes as the only valid escapes.",
+  "theorem": {
+    "bypass": "This two-row label is directly QFT-recognizable and negligibly deflatable; the no-go targets only generic full-support thresholding.",
+    "conjugate_twirl_spectrum": "The normalized conjugate-L invariant projection twirl acts by m_lambda/d_lambda on each right irrep carrier.",
+    "dimension_bound": "d_(2a+1,a-1)=C(3a,a-1)-C(3a,a-2)>=3^a/6.",
+    "direct_two_row_label_bypass_available": true,
+    "exact_twirl_spectrum_proved": true,
+    "exponential_generic_threshold_degree_proved": true,
+    "full_foulkes_support_projector_via_generic_qsvt_refuted": true,
+    "higher_row_structured_projector_ruled_out": false,
+    "multiplicity": "m_lambda=[x^(a-1)]1/((1-x^2)(1-x^3)), so 1<=m_lambda<=a.",
+    "polynomial_degree_obstruction": "Markov's inequality forces degree Omega(sqrt(d_lambda/m_lambda)) for a bounded polynomial thresholding zero versus m_lambda/d_lambda.",
+    "residual_frame_norm_bounded": false,
+    "scope_limit": "No lower bound covers direct label predicates, structured subgroup verification, or the higher-row residual support.",
+    "selected_constituent": "For even a, lambda=(2a+1,a-1) occurs in h_a[h_3] and has two odd rows.",
+    "status": "generic-foulkes-support-qsvt-no-go-structured-projector-open",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "family": "L=S_3 wr S_a with even a.",
+    "operator": "Normalized average of conjugate right-L invariant projections.",
+    "outside_scope": "Direct Fourier-label predicates, higher-row structured support tests, residual frame norm, and decoding.",
+    "witness": "Two-row constituent (2a+1,a-1)."
+  }
+}

@@ -1,0 +1,3796 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Small S6 conditional MI proves physical rank mixing.",
+      "resolution": "False. The target is an average under the physical outer law, not one tuple.",
+      "resolved": true
+    },
+    {
+      "objection": "The largest-dimension partition is automatically typical enough.",
+      "resolution": "Maximal dimension is only one Plancherel atom; typical-set averaging is still required.",
+      "resolved": true
+    },
+    {
+      "objection": "The observed n sequence supports monotone decay.",
+      "resolution": "It does not: S5 conditional MI exceeds S4 before the sharp S6 drop.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "all_rank_marginal_checks_passed": true,
+    "classical_separation_proved": false,
+    "coherent_racah_transform_polynomial_proved": false,
+    "complete_maxdim_s6_racah_coupling_verified": true,
+    "finite_conditional_mi_is_asymptotic_evidence": false,
+    "natural_racah_mi_sublogarithmic_proved": false,
+    "physical_average_racah_mi_computed": false,
+    "reason": "Complete selected conditional couplings now replace cherry-picked blocks, but physical outer averaging and growing-row asymptotics remain open.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-14T00:40:11.415883+00:00",
+  "falsifiers_triggered": [
+    "Selected low-overlap blocks cannot substitute for complete coupling coverage.",
+    "A small conditional entropy at one outer tuple cannot substitute for physical averaging.",
+    "The finite entropy sequence is nonmonotone and supports no fitted asymptotic law."
+  ],
+  "headline_metrics": {
+    "complete_conditional_coupling_count": 3,
+    "complete_conditional_coupling_failure_count": 0,
+    "growing_row_delocalization_theorem_count": 0,
+    "maximum_complete_block_count": 121,
+    "maximum_complete_coupling_n": 6,
+    "new_quantum_algorithm_count": 0,
+    "physical_outer_average_estimate_count": 0,
+    "s6_maxdim_conditional_racah_mi_bits": 0.005943999907740038
+  },
+  "proof_obligations": [
+    {
+      "obligation": "compute_complete_maxdim_s6_racah_coupling",
+      "resolution": "Every allowed block is contracted and both exact rank marginals close.",
+      "resolved": true
+    },
+    {
+      "obligation": "infer_scaling_from_conditional_couplings",
+      "resolution": "The S4--S6 sequence is nonmonotone and too short for asymptotic inference.",
+      "resolved": false
+    },
+    {
+      "obligation": "estimate_physical_average_over_outer_labels",
+      "resolution": "A single maximal-dimension outer tuple may have vanishing asymptotic weight.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_fractional_dependence_moment_bound",
+      "resolution": "Finite moments identify the observable but do not bound growing-row tails.",
+      "resolved": false
+    }
+  ],
+  "records": [
+    {
+      "bad_mass_above_relative_overlap_2": 0,
+      "bad_mass_above_relative_overlap_4": 0,
+      "block_count": 16,
+      "conditional_racah_mutual_information_bits": 0.08170416594551072,
+      "contribution_to_physical_average_mi_bits": 0.0019149413893479075,
+      "coupling_entries": [
+        {
+          "block_hilbert_schmidt_square": 0.11111111111111122,
+          "independent_rank_block_probability": 0.0625,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            4
+          ],
+          "mutual_information_contribution_bits": -0.03249791670673089,
+          "physical_block_probability": 0.027777777777777804,
+          "relative_block_overlap": 0.44444444444444486,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            4
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.33333333333333354,
+          "independent_rank_block_probability": 0.0625,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            4
+          ],
+          "mutual_information_contribution_bits": 0.03458645827323708,
+          "physical_block_probability": 0.08333333333333338,
+          "relative_block_overlap": 1.3333333333333341,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            3,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.2222222222222219,
+          "independent_rank_block_probability": 0.0625,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            4
+          ],
+          "mutual_information_contribution_bits": -0.009440277857906344,
+          "physical_block_probability": 0.055555555555555476,
+          "relative_block_overlap": 0.8888888888888876,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            2,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.3333333333333338,
+          "independent_rank_block_probability": 0.0625,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            4
+          ],
+          "mutual_information_contribution_bits": 0.03458645827323721,
+          "physical_block_probability": 0.08333333333333345,
+          "relative_block_overlap": 1.3333333333333353,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.33333333333333354,
+          "independent_rank_block_probability": 0.0625,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            3,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.03458645827323708,
+          "physical_block_probability": 0.08333333333333338,
+          "relative_block_overlap": 1.3333333333333341,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            4
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.25,
+          "independent_rank_block_probability": 0.0625,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            3,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.0,
+          "physical_block_probability": 0.0625,
+          "relative_block_overlap": 1.0,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            3,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.1666666666666664,
+          "independent_rank_block_probability": 0.0625,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            3,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.02437343753004823,
+          "physical_block_probability": 0.0416666666666666,
+          "relative_block_overlap": 0.6666666666666656,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            2,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.2500000000000001,
+          "independent_rank_block_probability": 0.0625,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            3,
+            1
+          ],
+          "mutual_information_contribution_bits": 4.004283129768648e-17,
+          "physical_block_probability": 0.06250000000000003,
+          "relative_block_overlap": 1.0000000000000004,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.22222222222222215,
+          "independent_rank_block_probability": 0.0625,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            2,
+            2
+          ],
+          "mutual_information_contribution_bits": -0.009440277857906264,
+          "physical_block_probability": 0.05555555555555554,
+          "relative_block_overlap": 0.8888888888888886,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            4
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.16666666666666657,
+          "independent_rank_block_probability": 0.0625,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            2,
+            2
+          ],
+          "mutual_information_contribution_bits": -0.024373437530048194,
+          "physical_block_probability": 0.041666666666666644,
+          "relative_block_overlap": 0.6666666666666663,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            3,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.44444444444444353,
+          "independent_rank_block_probability": 0.0625,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            2,
+            2
+          ],
+          "mutual_information_contribution_bits": 0.0922305553952981,
+          "physical_block_probability": 0.11111111111111088,
+          "relative_block_overlap": 1.7777777777777741,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            2,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.16666666666666663,
+          "independent_rank_block_probability": 0.0625,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            2,
+            2
+          ],
+          "mutual_information_contribution_bits": -0.024373437530048184,
+          "physical_block_probability": 0.04166666666666666,
+          "relative_block_overlap": 0.6666666666666665,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.3333333333333339,
+          "independent_rank_block_probability": 0.0625,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            2,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.03458645827323726,
+          "physical_block_probability": 0.08333333333333348,
+          "relative_block_overlap": 1.3333333333333357,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            4
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.25000000000000033,
+          "independent_rank_block_probability": 0.0625,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            2,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 1.2012849389305947e-16,
+          "physical_block_probability": 0.06250000000000008,
+          "relative_block_overlap": 1.0000000000000013,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            3,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.16666666666666657,
+          "independent_rank_block_probability": 0.0625,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            2,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.024373437530048194,
+          "physical_block_probability": 0.041666666666666644,
+          "relative_block_overlap": 0.6666666666666663,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            2,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.25000000000000033,
+          "independent_rank_block_probability": 0.0625,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            2,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 1.2012849389305947e-16,
+          "physical_block_probability": 0.06250000000000008,
+          "relative_block_overlap": 1.0000000000000013,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            2,
+            1,
+            1
+          ]
+        }
+      ],
+      "dense_three_copy_vector_dimension": 27,
+      "dense_to_pair_eigensolve_reduction_factor": 3.0,
+      "dependence_collision_moment": 1.1141975308641978,
+      "dependence_collision_renyi_upper_bits": 0.15600502400254662,
+      "exact_complete_coupling_verified": true,
+      "finite_representation_space_probe_only": true,
+      "fractional_dependence_moments": {
+        "0.25": 1.017657891990136,
+        "0.5": 1.0424061697901565,
+        "1.0": 1.1141975308641978
+      },
+      "fractional_renyi_upper_bits": {
+        "0.25": 0.10101059740266029,
+        "0.5": 0.11983505612509114,
+        "1.0": 0.15600502400254662
+      },
+      "largest_pair_eigensolve_vector_dimension": 9,
+      "left_channel_count": 4,
+      "maximum_independent_finite_likelihood_mass_residual": 8.326672684688674e-16,
+      "maximum_left_rank_marginal_residual": 1.3322676295501878e-15,
+      "maximum_pair_embedding_isometry_residual": 1.4923782477250034e-15,
+      "maximum_relative_block_overlap": 1.7777777777777741,
+      "maximum_right_rank_marginal_residual": 1.5543122344752192e-15,
+      "n": 4,
+      "outer_partitions": [
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          1
+        ]
+      ],
+      "physical_outer_tuple_probability": 0.0234375,
+      "right_channel_count": 4,
+      "source_irrep_dimension": 3,
+      "status": "complete-compressed-racah-coupling-verified",
+      "total_block_mass": 4.000000000000001,
+      "total_block_mass_residual": 8.881784197001252e-16,
+      "total_multiplicity_dimension": 4
+    },
+    {
+      "bad_mass_above_relative_overlap_2": 0.14743589743589736,
+      "bad_mass_above_relative_overlap_4": 0,
+      "block_count": 49,
+      "conditional_racah_mutual_information_bits": 0.2057646385899217,
+      "contribution_to_physical_average_mi_bits": 0.0020062052262517366,
+      "coupling_entries": [
+        {
+          "block_hilbert_schmidt_square": 0.027777777777777804,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            5
+          ],
+          "mutual_information_contribution_bits": -0.0031399258190197015,
+          "physical_block_probability": 0.0021367521367521387,
+          "relative_block_overlap": 0.36111111111111144,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            5
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.11111111111111124,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            5
+          ],
+          "mutual_information_contribution_bits": 0.004534313817938309,
+          "physical_block_probability": 0.008547008547008557,
+          "relative_block_overlap": 1.4444444444444462,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            4,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.2777777777777779,
+          "independent_rank_block_probability": 0.023668639053254437,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            5
+          ],
+          "mutual_information_contribution_bits": -0.003152931376364474,
+          "physical_block_probability": 0.02136752136752138,
+          "relative_block_overlap": 0.9027777777777781,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            3,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.1666666666666668,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            5
+          ],
+          "mutual_information_contribution_bits": 0.01430098996692228,
+          "physical_block_probability": 0.01282051282051283,
+          "relative_block_overlap": 2.1666666666666683,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.2777777777777782,
+          "independent_rank_block_probability": 0.023668639053254437,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            5
+          ],
+          "mutual_information_contribution_bits": -0.003152931376364443,
+          "physical_block_probability": 0.0213675213675214,
+          "relative_block_overlap": 0.9027777777777791,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.11111111111111102,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            5
+          ],
+          "mutual_information_contribution_bits": 0.004534313817938276,
+          "physical_block_probability": 0.008547008547008541,
+          "relative_block_overlap": 1.4444444444444433,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.027777777777777776,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            5
+          ],
+          "mutual_information_contribution_bits": -0.003139925819019701,
+          "physical_block_probability": 0.0021367521367521365,
+          "relative_block_overlap": 0.3611111111111111,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.11111111111111102,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            4,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.004534313817938276,
+          "physical_block_probability": 0.008547008547008541,
+          "relative_block_overlap": 1.4444444444444433,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            5
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.24999999999999978,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            4,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.03270076381040557,
+          "physical_block_probability": 0.019230769230769214,
+          "relative_block_overlap": 3.2499999999999973,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            4,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.13888888888888876,
+          "independent_rank_block_probability": 0.023668639053254437,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            4,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.01226022637194293,
+          "physical_block_probability": 0.010683760683760674,
+          "relative_block_overlap": 0.45138888888888845,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            3,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.2037062152420224e-35,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            4,
+            1
+          ],
+          "mutual_information_contribution_bits": -1.0398129129247672e-34,
+          "physical_block_probability": 9.259278578784788e-37,
+          "relative_block_overlap": 1.5648180798146291e-34,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.13888888888888906,
+          "independent_rank_block_probability": 0.023668639053254437,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            4,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.012260226371942922,
+          "physical_block_probability": 0.010683760683760698,
+          "relative_block_overlap": 0.45138888888888945,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.24999999999999933,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            4,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.03270076381040546,
+          "physical_block_probability": 0.01923076923076918,
+          "relative_block_overlap": 3.249999999999991,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.11111111111111091,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            4,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.004534313817938259,
+          "physical_block_probability": 0.008547008547008532,
+          "relative_block_overlap": 1.4444444444444418,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.27777777777777807,
+          "independent_rank_block_probability": 0.023668639053254437,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            3,
+            2
+          ],
+          "mutual_information_contribution_bits": -0.003152931376364457,
+          "physical_block_probability": 0.02136752136752139,
+          "relative_block_overlap": 0.9027777777777787,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            5
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.13888888888888926,
+          "independent_rank_block_probability": 0.023668639053254437,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            3,
+            2
+          ],
+          "mutual_information_contribution_bits": -0.012260226371942917,
+          "physical_block_probability": 0.010683760683760712,
+          "relative_block_overlap": 0.45138888888889006,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            4,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.4791666666666676,
+          "independent_rank_block_probability": 0.09467455621301775,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            3,
+            2
+          ],
+          "mutual_information_contribution_bits": 0.030177769105205057,
+          "physical_block_probability": 0.11378205128205135,
+          "relative_block_overlap": 1.2018229166666674,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            3,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.20833333333333334,
+          "independent_rank_block_probability": 0.023668639053254437,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            3,
+            2
+          ],
+          "mutual_information_contribution_bits": -0.00901594050789586,
+          "physical_block_probability": 0.016025641025641028,
+          "relative_block_overlap": 0.6770833333333334,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.4791666666666694,
+          "independent_rank_block_probability": 0.09467455621301775,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            3,
+            2
+          ],
+          "mutual_information_contribution_bits": 0.030177769105205303,
+          "physical_block_probability": 0.11378205128205149,
+          "relative_block_overlap": 1.201822916666669,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.1388888888888889,
+          "independent_rank_block_probability": 0.023668639053254437,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            3,
+            2
+          ],
+          "mutual_information_contribution_bits": -0.012260226371942925,
+          "physical_block_probability": 0.010683760683760684,
+          "relative_block_overlap": 0.4513888888888889,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.27777777777777757,
+          "independent_rank_block_probability": 0.023668639053254437,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            3,
+            2
+          ],
+          "mutual_information_contribution_bits": -0.0031529313763645037,
+          "physical_block_probability": 0.02136752136752135,
+          "relative_block_overlap": 0.9027777777777771,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.16666666666666677,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            3,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.014300989966922275,
+          "physical_block_probability": 0.012820512820512829,
+          "relative_block_overlap": 2.166666666666668,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            5
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 7.027055400381357e-36,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            3,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -6.112243675546968e-35,
+          "physical_block_probability": 5.4054272310625825e-37,
+          "relative_block_overlap": 9.135172020495763e-35,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            4,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.2083333333333332,
+          "independent_rank_block_probability": 0.023668639053254437,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            3,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.009015940507895868,
+          "physical_block_probability": 0.016025641025641017,
+          "relative_block_overlap": 0.6770833333333329,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            3,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.2500000000000001,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            3,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.032700763810405646,
+          "physical_block_probability": 0.01923076923076924,
+          "relative_block_overlap": 3.2500000000000013,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.20833333333333393,
+          "independent_rank_block_probability": 0.023668639053254437,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            3,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.009015940507895821,
+          "physical_block_probability": 0.016025641025641073,
+          "relative_block_overlap": 0.6770833333333353,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 2.888965007634033e-36,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            3,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -2.541365159445014e-35,
+          "physical_block_probability": 2.2222807751031024e-37,
+          "relative_block_overlap": 3.755654509924243e-35,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.16666666666666663,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            3,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.014300989966922249,
+          "physical_block_probability": 0.012820512820512818,
+          "relative_block_overlap": 2.166666666666666,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.27777777777777746,
+          "independent_rank_block_probability": 0.023668639053254437,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            2,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.003152931376364514,
+          "physical_block_probability": 0.021367521367521344,
+          "relative_block_overlap": 0.9027777777777768,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            5
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.13888888888888873,
+          "independent_rank_block_probability": 0.023668639053254437,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            2,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.012260226371942929,
+          "physical_block_probability": 0.010683760683760672,
+          "relative_block_overlap": 0.4513888888888884,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            4,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.4791666666666652,
+          "independent_rank_block_probability": 0.09467455621301775,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            2,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.030177769105204737,
+          "physical_block_probability": 0.11378205128205117,
+          "relative_block_overlap": 1.2018229166666654,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            3,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.20833333333333345,
+          "independent_rank_block_probability": 0.023668639053254437,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            2,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.009015940507895854,
+          "physical_block_probability": 0.016025641025641035,
+          "relative_block_overlap": 0.6770833333333337,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.479166666666667,
+          "independent_rank_block_probability": 0.09467455621301775,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            2,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.030177769105204984,
+          "physical_block_probability": 0.11378205128205131,
+          "relative_block_overlap": 1.201822916666667,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.13888888888888898,
+          "independent_rank_block_probability": 0.023668639053254437,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            2,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.012260226371942923,
+          "physical_block_probability": 0.010683760683760691,
+          "relative_block_overlap": 0.4513888888888892,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.27777777777777757,
+          "independent_rank_block_probability": 0.023668639053254437,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            2,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.0031529313763645037,
+          "physical_block_probability": 0.02136752136752135,
+          "relative_block_overlap": 0.9027777777777771,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.11111111111111106,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.004534313817938281,
+          "physical_block_probability": 0.008547008547008543,
+          "relative_block_overlap": 1.4444444444444438,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            5
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.25,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.03270076381040562,
+          "physical_block_probability": 0.019230769230769232,
+          "relative_block_overlap": 3.25,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            4,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.13888888888888856,
+          "independent_rank_block_probability": 0.023668639053254437,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.01226022637194293,
+          "physical_block_probability": 0.010683760683760658,
+          "relative_block_overlap": 0.45138888888888784,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            3,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.3374513502689137e-36,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -1.1879601462077514e-35,
+          "physical_block_probability": 1.0288087309760874e-37,
+          "relative_block_overlap": 1.738686755349588e-35,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.13888888888888906,
+          "independent_rank_block_probability": 0.023668639053254437,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.012260226371942922,
+          "physical_block_probability": 0.010683760683760698,
+          "relative_block_overlap": 0.45138888888888945,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.2499999999999994,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.03270076381040547,
+          "physical_block_probability": 0.019230769230769183,
+          "relative_block_overlap": 3.249999999999992,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.11111111111111102,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.004534313817938276,
+          "physical_block_probability": 0.008547008547008541,
+          "relative_block_overlap": 1.4444444444444433,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.027777777777777776,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.003139925819019701,
+          "physical_block_probability": 0.0021367521367521365,
+          "relative_block_overlap": 0.3611111111111111,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            5
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.11111111111111117,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.004534313817938299,
+          "physical_block_probability": 0.008547008547008551,
+          "relative_block_overlap": 1.4444444444444453,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            4,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.2777777777777777,
+          "independent_rank_block_probability": 0.023668639053254437,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.003152931376364494,
+          "physical_block_probability": 0.02136752136752136,
+          "relative_block_overlap": 0.9027777777777775,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            3,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.1666666666666667,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.014300989966922266,
+          "physical_block_probability": 0.012820512820512824,
+          "relative_block_overlap": 2.1666666666666674,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            3,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.2777777777777779,
+          "independent_rank_block_probability": 0.023668639053254437,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.003152931376364474,
+          "physical_block_probability": 0.02136752136752138,
+          "relative_block_overlap": 0.9027777777777781,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            2,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.11111111111111095,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.004534313817938265,
+          "physical_block_probability": 0.008547008547008534,
+          "relative_block_overlap": 1.4444444444444424,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            2,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.027777777777777766,
+          "independent_rank_block_probability": 0.005917159763313609,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.003139925819019701,
+          "physical_block_probability": 0.0021367521367521357,
+          "relative_block_overlap": 0.36111111111111094,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "dense_three_copy_vector_dimension": 216,
+      "dense_to_pair_eigensolve_reduction_factor": 6.0,
+      "dependence_collision_moment": 1.3087504822530862,
+      "dependence_collision_renyi_upper_bits": 0.3881900687656407,
+      "exact_complete_coupling_verified": true,
+      "finite_representation_space_probe_only": true,
+      "fractional_dependence_moments": {
+        "0.25": 1.0442703843088663,
+        "0.5": 1.1076778606143007,
+        "1.0": 1.3087504822530862
+      },
+      "fractional_renyi_upper_bits": {
+        "0.25": 0.24998122156531827,
+        "0.5": 0.29507674387933636,
+        "1.0": 0.3881900687656407
+      },
+      "largest_pair_eigensolve_vector_dimension": 36,
+      "left_channel_count": 7,
+      "maximum_independent_finite_likelihood_mass_residual": 2.6645352591003757e-15,
+      "maximum_left_rank_marginal_residual": 3.552713678800501e-15,
+      "maximum_pair_embedding_isometry_residual": 8.129551874546404e-15,
+      "maximum_relative_block_overlap": 3.2500000000000013,
+      "maximum_right_rank_marginal_residual": 4.440892098500626e-15,
+      "n": 5,
+      "outer_partitions": [
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1
+        ]
+      ],
+      "physical_outer_tuple_probability": 0.00975,
+      "right_channel_count": 7,
+      "source_irrep_dimension": 6,
+      "status": "complete-compressed-racah-coupling-verified",
+      "total_block_mass": 13.000000000000002,
+      "total_block_mass_residual": 1.7763568394002505e-15,
+      "total_multiplicity_dimension": 13
+    },
+    {
+      "bad_mass_above_relative_overlap_2": 0,
+      "bad_mass_above_relative_overlap_4": 0,
+      "block_count": 121,
+      "conditional_racah_mutual_information_bits": 0.005943999907740038,
+      "contribution_to_physical_average_mi_bits": 9.706087092145049e-05,
+      "coupling_entries": [
+        {
+          "block_hilbert_schmidt_square": 0.003906249999999992,
+          "independent_rank_block_probability": 0.00011562030292519366,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            6
+          ],
+          "mutual_information_contribution_bits": -6.135925692590593e-05,
+          "physical_block_probability": 4.2002688172042926e-05,
+          "relative_block_overlap": 0.3632812499999993,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            6
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.03906250000000003,
+          "independent_rank_block_probability": 0.00046248121170077463,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            6
+          ],
+          "mutual_information_contribution_bits": -5.834723370489133e-05,
+          "physical_block_probability": 0.0004200268817204304,
+          "relative_block_overlap": 0.9082031250000007,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            5,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.10546874999999957,
+          "independent_rank_block_probability": 0.001040582726326743,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            6
+          ],
+          "mutual_information_contribution_bits": 0.00014076257641918227,
+          "physical_block_probability": 0.0011340725806451566,
+          "relative_block_overlap": 1.0898437499999956,
+          "right_block_rank": 9,
+          "right_intermediate_partition": [
+            4,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.15624999999999942,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            6
+          ],
+          "mutual_information_contribution_bits": -0.0002333889348195753,
+          "physical_block_probability": 0.0016801075268817142,
+          "relative_block_overlap": 0.9082031249999966,
+          "right_block_rank": 16,
+          "right_intermediate_partition": [
+            4,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.039062499999999896,
+          "independent_rank_block_probability": 0.00046248121170077463,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            6
+          ],
+          "mutual_information_contribution_bits": -5.834723370489321e-05,
+          "physical_block_probability": 0.000420026881720429,
+          "relative_block_overlap": 0.9082031249999976,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            3,
+            3
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.31249999999999856,
+          "independent_rank_block_probability": 0.0028905075731298414,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            6
+          ],
+          "mutual_information_contribution_bits": 0.00072994192278448,
+          "physical_block_probability": 0.0033602150537634253,
+          "relative_block_overlap": 1.1624999999999945,
+          "right_block_rank": 25,
+          "right_intermediate_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.15624999999999997,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            6
+          ],
+          "mutual_information_contribution_bits": -0.00023338893481956725,
+          "physical_block_probability": 0.0016801075268817202,
+          "relative_block_overlap": 0.9082031249999999,
+          "right_block_rank": 16,
+          "right_intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.039062500000000035,
+          "independent_rank_block_probability": 0.00046248121170077463,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            6
+          ],
+          "mutual_information_contribution_bits": -5.834723370489128e-05,
+          "physical_block_probability": 0.0004200268817204305,
+          "relative_block_overlap": 0.9082031250000008,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.10546874999999968,
+          "independent_rank_block_probability": 0.001040582726326743,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            6
+          ],
+          "mutual_information_contribution_bits": 0.00014076257641918412,
+          "physical_block_probability": 0.001134072580645158,
+          "relative_block_overlap": 1.0898437499999967,
+          "right_block_rank": 9,
+          "right_intermediate_partition": [
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.039062500000000125,
+          "independent_rank_block_probability": 0.00046248121170077463,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            6
+          ],
+          "mutual_information_contribution_bits": -5.834723370489e-05,
+          "physical_block_probability": 0.00042002688172043147,
+          "relative_block_overlap": 0.9082031250000029,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.003906250000000002,
+          "independent_rank_block_probability": 0.00011562030292519366,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            6
+          ],
+          "mutual_information_contribution_bits": -6.135925692590593e-05,
+          "physical_block_probability": 4.200268817204303e-05,
+          "relative_block_overlap": 0.36328125000000017,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.039062500000000014,
+          "independent_rank_block_probability": 0.00046248121170077463,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            5,
+            1
+          ],
+          "mutual_information_contribution_bits": -5.834723370489154e-05,
+          "physical_block_probability": 0.0004200268817204303,
+          "relative_block_overlap": 0.9082031250000003,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            6
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.16840277777777835,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            5,
+            1
+          ],
+          "mutual_information_contribution_bits": -5.586870464220083e-05,
+          "physical_block_probability": 0.0018107825567503049,
+          "relative_block_overlap": 0.9788411458333366,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            5,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.32578125000000024,
+          "independent_rank_block_probability": 0.004162330905306972,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            5,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.0008715198824848805,
+          "physical_block_probability": 0.0035030241935483895,
+          "relative_block_overlap": 0.8416015625000006,
+          "right_block_rank": 9,
+          "right_intermediate_partition": [
+            4,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.7248263888888897,
+          "independent_rank_block_probability": 0.007399699387212394,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            5,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.0005834945724841134,
+          "physical_block_probability": 0.007793832138590212,
+          "relative_block_overlap": 1.0532633463541679,
+          "right_block_rank": 16,
+          "right_intermediate_partition": [
+            4,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.20095486111111124,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            5,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.0004842411296143122,
+          "physical_block_probability": 0.002160804958183992,
+          "relative_block_overlap": 1.1680501302083341,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            3,
+            3
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.0819444444444444,
+          "independent_rank_block_probability": 0.011562030292519366,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            5,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.00010387880149147857,
+          "physical_block_probability": 0.011633811230585423,
+          "relative_block_overlap": 1.0062083333333331,
+          "right_block_rank": 25,
+          "right_intermediate_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.7248263888888897,
+          "independent_rank_block_probability": 0.007399699387212394,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            5,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.0005834945724841134,
+          "physical_block_probability": 0.007793832138590212,
+          "relative_block_overlap": 1.0532633463541679,
+          "right_block_rank": 16,
+          "right_intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.20095486111111063,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            5,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.0004842411296143012,
+          "physical_block_probability": 0.0021608049581839854,
+          "relative_block_overlap": 1.1680501302083306,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.32578125000000013,
+          "independent_rank_block_probability": 0.004162330905306972,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            5,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.0008715198824848816,
+          "physical_block_probability": 0.0035030241935483887,
+          "relative_block_overlap": 0.8416015625000004,
+          "right_block_rank": 9,
+          "right_intermediate_partition": [
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.16840277777777873,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            5,
+            1
+          ],
+          "mutual_information_contribution_bits": -5.586870464219473e-05,
+          "physical_block_probability": 0.001810782556750309,
+          "relative_block_overlap": 0.9788411458333389,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.03906250000000009,
+          "independent_rank_block_probability": 0.00046248121170077463,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            5,
+            1
+          ],
+          "mutual_information_contribution_bits": -5.834723370489047e-05,
+          "physical_block_probability": 0.0004200268817204311,
+          "relative_block_overlap": 0.9082031250000021,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.10546875000000026,
+          "independent_rank_block_probability": 0.001040582726326743,
+          "left_block_rank": 9,
+          "left_intermediate_partition": [
+            4,
+            2
+          ],
+          "mutual_information_contribution_bits": 0.0001407625764191939,
+          "physical_block_probability": 0.0011340725806451642,
+          "relative_block_overlap": 1.0898437500000027,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            6
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.3257812500000005,
+          "independent_rank_block_probability": 0.004162330905306972,
+          "left_block_rank": 9,
+          "left_intermediate_partition": [
+            4,
+            2
+          ],
+          "mutual_information_contribution_bits": -0.0008715198824848765,
+          "physical_block_probability": 0.0035030241935483926,
+          "relative_block_overlap": 0.8416015625000014,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            5,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.1535937499999995,
+          "independent_rank_block_probability": 0.009365244536940686,
+          "left_block_rank": 9,
+          "left_intermediate_partition": [
+            4,
+            2
+          ],
+          "mutual_information_contribution_bits": 0.005029222962028734,
+          "physical_block_probability": 0.012404233870967736,
+          "relative_block_overlap": 1.3244965277777772,
+          "right_block_rank": 9,
+          "right_intermediate_partition": [
+            4,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.4781249999999995,
+          "independent_rank_block_probability": 0.01664932362122789,
+          "left_block_rank": 9,
+          "left_intermediate_partition": [
+            4,
+            2
+          ],
+          "mutual_information_contribution_bits": -0.0010648525645263283,
+          "physical_block_probability": 0.01589381720430107,
+          "relative_block_overlap": 0.9546223958333331,
+          "right_block_rank": 16,
+          "right_intermediate_partition": [
+            4,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.32578125,
+          "independent_rank_block_probability": 0.004162330905306972,
+          "left_block_rank": 9,
+          "left_intermediate_partition": [
+            4,
+            2
+          ],
+          "mutual_information_contribution_bits": -0.0008715198824848832,
+          "physical_block_probability": 0.0035030241935483874,
+          "relative_block_overlap": 0.8416015625000001,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            3,
+            3
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 2.2224999999999966,
+          "independent_rank_block_probability": 0.026014568158168574,
+          "left_block_rank": 9,
+          "left_intermediate_partition": [
+            4,
+            2
+          ],
+          "mutual_information_contribution_bits": -0.0029260278595960357,
+          "physical_block_probability": 0.023897849462365554,
+          "relative_block_overlap": 0.918633333333332,
+          "right_block_rank": 25,
+          "right_intermediate_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.4781250000000015,
+          "independent_rank_block_probability": 0.01664932362122789,
+          "left_block_rank": 9,
+          "left_intermediate_partition": [
+            4,
+            2
+          ],
+          "mutual_information_contribution_bits": -0.0010648525645263031,
+          "physical_block_probability": 0.01589381720430109,
+          "relative_block_overlap": 0.9546223958333342,
+          "right_block_rank": 16,
+          "right_intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.3257812499999999,
+          "independent_rank_block_probability": 0.004162330905306972,
+          "left_block_rank": 9,
+          "left_intermediate_partition": [
+            4,
+            2
+          ],
+          "mutual_information_contribution_bits": -0.0008715198824848849,
+          "physical_block_probability": 0.003503024193548386,
+          "relative_block_overlap": 0.8416015624999997,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.153593749999999,
+          "independent_rank_block_probability": 0.009365244536940686,
+          "left_block_rank": 9,
+          "left_intermediate_partition": [
+            4,
+            2
+          ],
+          "mutual_information_contribution_bits": 0.0050292229620287265,
+          "physical_block_probability": 0.012404233870967733,
+          "relative_block_overlap": 1.3244965277777767,
+          "right_block_rank": 9,
+          "right_intermediate_partition": [
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.32578125000000124,
+          "independent_rank_block_probability": 0.004162330905306972,
+          "left_block_rank": 9,
+          "left_intermediate_partition": [
+            4,
+            2
+          ],
+          "mutual_information_contribution_bits": -0.000871519882484867,
+          "physical_block_probability": 0.0035030241935484004,
+          "relative_block_overlap": 0.8416015625000033,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.10546875000000022,
+          "independent_rank_block_probability": 0.001040582726326743,
+          "left_block_rank": 9,
+          "left_intermediate_partition": [
+            4,
+            2
+          ],
+          "mutual_information_contribution_bits": 0.00014076257641919352,
+          "physical_block_probability": 0.0011340725806451638,
+          "relative_block_overlap": 1.0898437500000024,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.15625000000000003,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 16,
+          "left_intermediate_partition": [
+            4,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.0002333889348195667,
+          "physical_block_probability": 0.0016801075268817207,
+          "relative_block_overlap": 0.9082031250000001,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            6
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.7248263888888893,
+          "independent_rank_block_probability": 0.007399699387212394,
+          "left_block_rank": 16,
+          "left_intermediate_partition": [
+            4,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.000583494572484106,
+          "physical_block_probability": 0.0077938321385902076,
+          "relative_block_overlap": 1.0532633463541672,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            5,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.4781249999999992,
+          "independent_rank_block_probability": 0.01664932362122789,
+          "left_block_rank": 16,
+          "left_intermediate_partition": [
+            4,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.0010648525645263335,
+          "physical_block_probability": 0.015893817204301067,
+          "relative_block_overlap": 0.9546223958333329,
+          "right_block_rank": 9,
+          "right_intermediate_partition": [
+            4,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 2.802083333333334,
+          "independent_rank_block_probability": 0.029598797548849577,
+          "left_block_rank": 16,
+          "left_intermediate_partition": [
+            4,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.0007730939764562513,
+          "physical_block_probability": 0.030129928315412193,
+          "relative_block_overlap": 1.0179443359375002,
+          "right_block_rank": 16,
+          "right_intermediate_partition": [
+            4,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.7248263888888885,
+          "independent_rank_block_probability": 0.007399699387212394,
+          "left_block_rank": 16,
+          "left_intermediate_partition": [
+            4,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.0005834945724840936,
+          "physical_block_probability": 0.007793832138590199,
+          "relative_block_overlap": 1.053263346354166,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            3,
+            3
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 4.227777777777767,
+          "independent_rank_block_probability": 0.04624812117007746,
+          "left_block_rank": 16,
+          "left_intermediate_partition": [
+            4,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.001127308827123095,
+          "physical_block_probability": 0.04545997610513728,
+          "relative_block_overlap": 0.9829583333333309,
+          "right_block_rank": 25,
+          "right_intermediate_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 2.802083333333331,
+          "independent_rank_block_probability": 0.029598797548849577,
+          "left_block_rank": 16,
+          "left_intermediate_partition": [
+            4,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.0007730939764562031,
+          "physical_block_probability": 0.03012992831541216,
+          "relative_block_overlap": 1.0179443359374991,
+          "right_block_rank": 16,
+          "right_intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.7248263888888878,
+          "independent_rank_block_probability": 0.007399699387212394,
+          "left_block_rank": 16,
+          "left_intermediate_partition": [
+            4,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.0005834945724840835,
+          "physical_block_probability": 0.007793832138590192,
+          "relative_block_overlap": 1.0532633463541652,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.4781249999999981,
+          "independent_rank_block_probability": 0.01664932362122789,
+          "left_block_rank": 16,
+          "left_intermediate_partition": [
+            4,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.0010648525645263515,
+          "physical_block_probability": 0.015893817204301056,
+          "relative_block_overlap": 0.9546223958333321,
+          "right_block_rank": 9,
+          "right_intermediate_partition": [
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.7248263888888916,
+          "independent_rank_block_probability": 0.007399699387212394,
+          "left_block_rank": 16,
+          "left_intermediate_partition": [
+            4,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.0005834945724841459,
+          "physical_block_probability": 0.007793832138590233,
+          "relative_block_overlap": 1.0532633463541707,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.15625000000000042,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 16,
+          "left_intermediate_partition": [
+            4,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.0002333889348195611,
+          "physical_block_probability": 0.001680107526881725,
+          "relative_block_overlap": 0.9082031250000024,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.03906250000000007,
+          "independent_rank_block_probability": 0.00046248121170077463,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            3,
+            3
+          ],
+          "mutual_information_contribution_bits": -5.8347233704890735e-05,
+          "physical_block_probability": 0.00042002688172043087,
+          "relative_block_overlap": 0.9082031250000017,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            6
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.20095486111111208,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            3,
+            3
+          ],
+          "mutual_information_contribution_bits": 0.0004842411296143272,
+          "physical_block_probability": 0.002160804958184001,
+          "relative_block_overlap": 1.168050130208339,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            5,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.3257812499999988,
+          "independent_rank_block_probability": 0.004162330905306972,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            3,
+            3
+          ],
+          "mutual_information_contribution_bits": -0.0008715198824848986,
+          "physical_block_probability": 0.0035030241935483744,
+          "relative_block_overlap": 0.841601562499997,
+          "right_block_rank": 9,
+          "right_intermediate_partition": [
+            4,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.724826388888887,
+          "independent_rank_block_probability": 0.007399699387212394,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            3,
+            3
+          ],
+          "mutual_information_contribution_bits": 0.0005834945724840687,
+          "physical_block_probability": 0.007793832138590182,
+          "relative_block_overlap": 1.0532633463541639,
+          "right_block_rank": 16,
+          "right_intermediate_partition": [
+            4,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.1684027777777784,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            3,
+            3
+          ],
+          "mutual_information_contribution_bits": -5.586870464219995e-05,
+          "physical_block_probability": 0.0018107825567503053,
+          "relative_block_overlap": 0.9788411458333369,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            3,
+            3
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.0819444444444406,
+          "independent_rank_block_probability": 0.011562030292519366,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            3,
+            3
+          ],
+          "mutual_information_contribution_bits": 0.00010387880149142267,
+          "physical_block_probability": 0.011633811230585383,
+          "relative_block_overlap": 1.0062083333333298,
+          "right_block_rank": 25,
+          "right_intermediate_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.7248263888888887,
+          "independent_rank_block_probability": 0.007399699387212394,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            3,
+            3
+          ],
+          "mutual_information_contribution_bits": 0.0005834945724840985,
+          "physical_block_probability": 0.0077938321385902015,
+          "relative_block_overlap": 1.0532633463541665,
+          "right_block_rank": 16,
+          "right_intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.1684027777777776,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            3,
+            3
+          ],
+          "mutual_information_contribution_bits": -5.5868704642212134e-05,
+          "physical_block_probability": 0.0018107825567502968,
+          "relative_block_overlap": 0.9788411458333323,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.32578124999999913,
+          "independent_rank_block_probability": 0.004162330905306972,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            3,
+            3
+          ],
+          "mutual_information_contribution_bits": -0.0008715198824848941,
+          "physical_block_probability": 0.003503024193548378,
+          "relative_block_overlap": 0.8416015624999978,
+          "right_block_rank": 9,
+          "right_intermediate_partition": [
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.20095486111111113,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            3,
+            3
+          ],
+          "mutual_information_contribution_bits": 0.00048424112961431006,
+          "physical_block_probability": 0.0021608049581839906,
+          "relative_block_overlap": 1.1680501302083335,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.03906250000000005,
+          "independent_rank_block_probability": 0.00046248121170077463,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            3,
+            3
+          ],
+          "mutual_information_contribution_bits": -5.834723370489108e-05,
+          "physical_block_probability": 0.00042002688172043066,
+          "relative_block_overlap": 0.9082031250000011,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.31249999999999967,
+          "independent_rank_block_probability": 0.0028905075731298414,
+          "left_block_rank": 25,
+          "left_intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.0007299419227845003,
+          "physical_block_probability": 0.0033602150537634374,
+          "relative_block_overlap": 1.1624999999999988,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            6
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.081944444444442,
+          "independent_rank_block_probability": 0.011562030292519366,
+          "left_block_rank": 25,
+          "left_intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.00010387880149144131,
+          "physical_block_probability": 0.011633811230585397,
+          "relative_block_overlap": 1.006208333333331,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            5,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 2.2224999999999913,
+          "independent_rank_block_probability": 0.026014568158168574,
+          "left_block_rank": 25,
+          "left_intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.0029260278595961125,
+          "physical_block_probability": 0.0238978494623655,
+          "relative_block_overlap": 0.9186333333333297,
+          "right_block_rank": 9,
+          "right_intermediate_partition": [
+            4,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 4.227777777777759,
+          "independent_rank_block_probability": 0.04624812117007746,
+          "left_block_rank": 25,
+          "left_intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.001127308827123219,
+          "physical_block_probability": 0.0454599761051372,
+          "relative_block_overlap": 0.982958333333329,
+          "right_block_rank": 16,
+          "right_intermediate_partition": [
+            4,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.0819444444444408,
+          "independent_rank_block_probability": 0.011562030292519366,
+          "left_block_rank": 25,
+          "left_intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.00010387880149142639,
+          "physical_block_probability": 0.011633811230585385,
+          "relative_block_overlap": 1.00620833333333,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            3,
+            3
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 7.146666666666621,
+          "independent_rank_block_probability": 0.07226268932824605,
+          "left_block_rank": 25,
+          "left_intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.006817530508239229,
+          "physical_block_probability": 0.07684587813620022,
+          "relative_block_overlap": 1.0634239999999933,
+          "right_block_rank": 25,
+          "right_intermediate_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 4.227777777777765,
+          "independent_rank_block_probability": 0.04624812117007746,
+          "left_block_rank": 25,
+          "left_intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.0011273088271231242,
+          "physical_block_probability": 0.04545997610513726,
+          "relative_block_overlap": 0.9829583333333305,
+          "right_block_rank": 16,
+          "right_intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.08194444444444,
+          "independent_rank_block_probability": 0.011562030292519366,
+          "left_block_rank": 25,
+          "left_intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.0001038788014914115,
+          "physical_block_probability": 0.011633811230585376,
+          "relative_block_overlap": 1.0062083333333292,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 2.2224999999999904,
+          "independent_rank_block_probability": 0.026014568158168574,
+          "left_block_rank": 25,
+          "left_intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.0029260278595961238,
+          "physical_block_probability": 0.02389784946236549,
+          "relative_block_overlap": 0.9186333333333294,
+          "right_block_rank": 9,
+          "right_intermediate_partition": [
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.081944444444445,
+          "independent_rank_block_probability": 0.011562030292519366,
+          "left_block_rank": 25,
+          "left_intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.00010387880149149345,
+          "physical_block_probability": 0.01163381123058543,
+          "relative_block_overlap": 1.006208333333334,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.31250000000000017,
+          "independent_rank_block_probability": 0.0028905075731298414,
+          "left_block_rank": 25,
+          "left_intermediate_partition": [
+            3,
+            2,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.0007299419227845088,
+          "physical_block_probability": 0.0033602150537634426,
+          "relative_block_overlap": 1.1625000000000005,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.15624999999999983,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 16,
+          "left_intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.00023338893481956942,
+          "physical_block_probability": 0.0016801075268817187,
+          "relative_block_overlap": 0.908203124999999,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            6
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.7248263888888884,
+          "independent_rank_block_probability": 0.007399699387212394,
+          "left_block_rank": 16,
+          "left_intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.0005834945724840911,
+          "physical_block_probability": 0.007793832138590198,
+          "relative_block_overlap": 1.0532633463541659,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            5,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.4781249999999968,
+          "independent_rank_block_probability": 0.01664932362122789,
+          "left_block_rank": 16,
+          "left_intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.0010648525645263693,
+          "physical_block_probability": 0.015893817204301042,
+          "relative_block_overlap": 0.9546223958333313,
+          "right_block_rank": 9,
+          "right_intermediate_partition": [
+            4,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 2.802083333333329,
+          "independent_rank_block_probability": 0.029598797548849577,
+          "left_block_rank": 16,
+          "left_intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.0007730939764561741,
+          "physical_block_probability": 0.03012992831541214,
+          "relative_block_overlap": 1.0179443359374984,
+          "right_block_rank": 16,
+          "right_intermediate_partition": [
+            4,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.7248263888888883,
+          "independent_rank_block_probability": 0.007399699387212394,
+          "left_block_rank": 16,
+          "left_intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.000583494572484091,
+          "physical_block_probability": 0.007793832138590196,
+          "relative_block_overlap": 1.0532633463541659,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            3,
+            3
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 4.22777777777776,
+          "independent_rank_block_probability": 0.04624812117007746,
+          "left_block_rank": 16,
+          "left_intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.0011273088271232044,
+          "physical_block_probability": 0.045459976105137204,
+          "relative_block_overlap": 0.9829583333333293,
+          "right_block_rank": 25,
+          "right_intermediate_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 2.8020833333333335,
+          "independent_rank_block_probability": 0.029598797548849577,
+          "left_block_rank": 16,
+          "left_intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.0007730939764562418,
+          "physical_block_probability": 0.03012992831541219,
+          "relative_block_overlap": 1.0179443359375,
+          "right_block_rank": 16,
+          "right_intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.7248263888888878,
+          "independent_rank_block_probability": 0.007399699387212394,
+          "left_block_rank": 16,
+          "left_intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.0005834945724840835,
+          "physical_block_probability": 0.007793832138590192,
+          "relative_block_overlap": 1.0532633463541652,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.4781249999999966,
+          "independent_rank_block_probability": 0.01664932362122789,
+          "left_block_rank": 16,
+          "left_intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.0010648525645263745,
+          "physical_block_probability": 0.01589381720430104,
+          "relative_block_overlap": 0.9546223958333311,
+          "right_block_rank": 9,
+          "right_intermediate_partition": [
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.7248263888888902,
+          "independent_rank_block_probability": 0.007399699387212394,
+          "left_block_rank": 16,
+          "left_intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.000583494572484121,
+          "physical_block_probability": 0.007793832138590217,
+          "relative_block_overlap": 1.0532633463541685,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.15625000000000025,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 16,
+          "left_intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.00023338893481956348,
+          "physical_block_probability": 0.001680107526881723,
+          "relative_block_overlap": 0.9082031250000014,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.03906249999999999,
+          "independent_rank_block_probability": 0.00046248121170077463,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            2,
+            2
+          ],
+          "mutual_information_contribution_bits": -5.834723370489181e-05,
+          "physical_block_probability": 0.00042002688172043006,
+          "relative_block_overlap": 0.9082031249999999,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            6
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.20095486111111102,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            2,
+            2
+          ],
+          "mutual_information_contribution_bits": 0.000484241129614308,
+          "physical_block_probability": 0.0021608049581839893,
+          "relative_block_overlap": 1.1680501302083328,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            5,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.3257812499999986,
+          "independent_rank_block_probability": 0.004162330905306972,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            2,
+            2
+          ],
+          "mutual_information_contribution_bits": -0.000871519882484902,
+          "physical_block_probability": 0.0035030241935483718,
+          "relative_block_overlap": 0.8416015624999963,
+          "right_block_rank": 9,
+          "right_intermediate_partition": [
+            4,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.724826388888887,
+          "independent_rank_block_probability": 0.007399699387212394,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            2,
+            2
+          ],
+          "mutual_information_contribution_bits": 0.0005834945724840687,
+          "physical_block_probability": 0.007793832138590182,
+          "relative_block_overlap": 1.0532633463541639,
+          "right_block_rank": 16,
+          "right_intermediate_partition": [
+            4,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.16840277777777635,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            2,
+            2
+          ],
+          "mutual_information_contribution_bits": -5.5868704642230986e-05,
+          "physical_block_probability": 0.0018107825567502834,
+          "relative_block_overlap": 0.978841145833325,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            3,
+            3
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.0819444444444393,
+          "independent_rank_block_probability": 0.011562030292519366,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            2,
+            2
+          ],
+          "mutual_information_contribution_bits": 0.0001038788014914003,
+          "physical_block_probability": 0.011633811230585368,
+          "relative_block_overlap": 1.0062083333333285,
+          "right_block_rank": 25,
+          "right_intermediate_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.7248263888888882,
+          "independent_rank_block_probability": 0.007399699387212394,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            2,
+            2
+          ],
+          "mutual_information_contribution_bits": 0.0005834945724840885,
+          "physical_block_probability": 0.007793832138590195,
+          "relative_block_overlap": 1.0532633463541656,
+          "right_block_rank": 16,
+          "right_intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.16840277777777712,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            2,
+            2
+          ],
+          "mutual_information_contribution_bits": -5.5868704642219385e-05,
+          "physical_block_probability": 0.0018107825567502916,
+          "relative_block_overlap": 0.9788411458333295,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.32578124999999886,
+          "independent_rank_block_probability": 0.004162330905306972,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            2,
+            2
+          ],
+          "mutual_information_contribution_bits": -0.000871519882484898,
+          "physical_block_probability": 0.003503024193548375,
+          "relative_block_overlap": 0.8416015624999971,
+          "right_block_rank": 9,
+          "right_intermediate_partition": [
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.2009548611111112,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            2,
+            2
+          ],
+          "mutual_information_contribution_bits": 0.0004842411296143109,
+          "physical_block_probability": 0.0021608049581839915,
+          "relative_block_overlap": 1.1680501302083337,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.03906250000000001,
+          "independent_rank_block_probability": 0.00046248121170077463,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            2,
+            2
+          ],
+          "mutual_information_contribution_bits": -5.834723370489168e-05,
+          "physical_block_probability": 0.00042002688172043017,
+          "relative_block_overlap": 0.9082031250000001,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.10546874999999986,
+          "independent_rank_block_probability": 0.001040582726326743,
+          "left_block_rank": 9,
+          "left_intermediate_partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.00014076257641918734,
+          "physical_block_probability": 0.0011340725806451598,
+          "relative_block_overlap": 1.0898437499999987,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            6
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.3257812499999997,
+          "independent_rank_block_probability": 0.004162330905306972,
+          "left_block_rank": 9,
+          "left_intermediate_partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.0008715198824848876,
+          "physical_block_probability": 0.003503024193548384,
+          "relative_block_overlap": 0.8416015624999992,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            5,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.1535937499999975,
+          "independent_rank_block_probability": 0.009365244536940686,
+          "left_block_rank": 9,
+          "left_intermediate_partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.005029222962028696,
+          "physical_block_probability": 0.012404233870967715,
+          "relative_block_overlap": 1.324496527777775,
+          "right_block_rank": 9,
+          "right_intermediate_partition": [
+            4,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.4781249999999972,
+          "independent_rank_block_probability": 0.01664932362122789,
+          "left_block_rank": 9,
+          "left_intermediate_partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.001064852564526364,
+          "physical_block_probability": 0.015893817204301046,
+          "relative_block_overlap": 0.9546223958333315,
+          "right_block_rank": 16,
+          "right_intermediate_partition": [
+            4,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.32578124999999936,
+          "independent_rank_block_probability": 0.004162330905306972,
+          "left_block_rank": 9,
+          "left_intermediate_partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.0008715198824848921,
+          "physical_block_probability": 0.00350302419354838,
+          "relative_block_overlap": 0.8416015624999983,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            3,
+            3
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 2.222499999999992,
+          "independent_rank_block_probability": 0.026014568158168574,
+          "left_block_rank": 9,
+          "left_intermediate_partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.0029260278595961008,
+          "physical_block_probability": 0.023897849462365506,
+          "relative_block_overlap": 0.9186333333333301,
+          "right_block_rank": 25,
+          "right_intermediate_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.478124999999999,
+          "independent_rank_block_probability": 0.01664932362122789,
+          "left_block_rank": 9,
+          "left_intermediate_partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.0010648525645263387,
+          "physical_block_probability": 0.015893817204301063,
+          "relative_block_overlap": 0.9546223958333326,
+          "right_block_rank": 16,
+          "right_intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.3257812499999993,
+          "independent_rank_block_probability": 0.004162330905306972,
+          "left_block_rank": 9,
+          "left_intermediate_partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.0008715198824848926,
+          "physical_block_probability": 0.0035030241935483796,
+          "relative_block_overlap": 0.8416015624999982,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.153593749999997,
+          "independent_rank_block_probability": 0.009365244536940686,
+          "left_block_rank": 9,
+          "left_intermediate_partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.005029222962028684,
+          "physical_block_probability": 0.01240423387096771,
+          "relative_block_overlap": 1.3244965277777743,
+          "right_block_rank": 9,
+          "right_intermediate_partition": [
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.3257812500000006,
+          "independent_rank_block_probability": 0.004162330905306972,
+          "left_block_rank": 9,
+          "left_intermediate_partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.000871519882484876,
+          "physical_block_probability": 0.0035030241935483934,
+          "relative_block_overlap": 0.8416015625000015,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.10546875000000022,
+          "independent_rank_block_probability": 0.001040582726326743,
+          "left_block_rank": 9,
+          "left_intermediate_partition": [
+            2,
+            2,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.00014076257641919352,
+          "physical_block_probability": 0.0011340725806451638,
+          "relative_block_overlap": 1.0898437500000024,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.039062500000000014,
+          "independent_rank_block_probability": 0.00046248121170077463,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -5.834723370489154e-05,
+          "physical_block_probability": 0.0004200268817204303,
+          "relative_block_overlap": 0.9082031250000003,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            6
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.16840277777777865,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -5.586870464219619e-05,
+          "physical_block_probability": 0.0018107825567503081,
+          "relative_block_overlap": 0.9788411458333384,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            5,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.3257812499999999,
+          "independent_rank_block_probability": 0.004162330905306972,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.0008715198824848849,
+          "physical_block_probability": 0.003503024193548386,
+          "relative_block_overlap": 0.8416015624999997,
+          "right_block_rank": 9,
+          "right_intermediate_partition": [
+            4,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.7248263888888894,
+          "independent_rank_block_probability": 0.007399699387212394,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.0005834945724841085,
+          "physical_block_probability": 0.007793832138590208,
+          "relative_block_overlap": 1.0532633463541674,
+          "right_block_rank": 16,
+          "right_intermediate_partition": [
+            4,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.20095486111111127,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.0004842411296143129,
+          "physical_block_probability": 0.0021608049581839923,
+          "relative_block_overlap": 1.1680501302083344,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            3,
+            3
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 1.081944444444443,
+          "independent_rank_block_probability": 0.011562030292519366,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.00010387880149145995,
+          "physical_block_probability": 0.01163381123058541,
+          "relative_block_overlap": 1.006208333333332,
+          "right_block_rank": 25,
+          "right_intermediate_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.7248263888888893,
+          "independent_rank_block_probability": 0.007399699387212394,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.000583494572484106,
+          "physical_block_probability": 0.0077938321385902076,
+          "relative_block_overlap": 1.0532633463541672,
+          "right_block_rank": 16,
+          "right_intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.20095486111111185,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.0004842411296143231,
+          "physical_block_probability": 0.0021608049581839984,
+          "relative_block_overlap": 1.1680501302083377,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.32578125000000013,
+          "independent_rank_block_probability": 0.004162330905306972,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.0008715198824848816,
+          "physical_block_probability": 0.0035030241935483887,
+          "relative_block_overlap": 0.8416015625000004,
+          "right_block_rank": 9,
+          "right_intermediate_partition": [
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.1684027777777782,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -5.586870464220286e-05,
+          "physical_block_probability": 0.0018107825567503033,
+          "relative_block_overlap": 0.9788411458333358,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.03906250000000016,
+          "independent_rank_block_probability": 0.00046248121170077463,
+          "left_block_rank": 4,
+          "left_intermediate_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -5.834723370488954e-05,
+          "physical_block_probability": 0.00042002688172043185,
+          "relative_block_overlap": 0.9082031250000037,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.0039062500000000035,
+          "independent_rank_block_probability": 0.00011562030292519366,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -6.135925692590593e-05,
+          "physical_block_probability": 4.200268817204305e-05,
+          "relative_block_overlap": 0.36328125000000033,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            6
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.03906250000000006,
+          "independent_rank_block_probability": 0.00046248121170077463,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -5.834723370489087e-05,
+          "physical_block_probability": 0.00042002688172043076,
+          "relative_block_overlap": 0.9082031250000014,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            5,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.10546875,
+          "independent_rank_block_probability": 0.001040582726326743,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.00014076257641918954,
+          "physical_block_probability": 0.0011340725806451614,
+          "relative_block_overlap": 1.08984375,
+          "right_block_rank": 9,
+          "right_intermediate_partition": [
+            4,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.15625000000000006,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.00023338893481956617,
+          "physical_block_probability": 0.001680107526881721,
+          "relative_block_overlap": 0.9082031250000003,
+          "right_block_rank": 16,
+          "right_intermediate_partition": [
+            4,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.039062500000000035,
+          "independent_rank_block_probability": 0.00046248121170077463,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -5.834723370489128e-05,
+          "physical_block_probability": 0.0004200268817204305,
+          "relative_block_overlap": 0.9082031250000008,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            3,
+            3
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.3124999999999998,
+          "independent_rank_block_probability": 0.0028905075731298414,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.0007299419227845024,
+          "physical_block_probability": 0.0033602150537634383,
+          "relative_block_overlap": 1.1624999999999992,
+          "right_block_rank": 25,
+          "right_intermediate_partition": [
+            3,
+            2,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.15625000000000042,
+          "independent_rank_block_probability": 0.0018499248468030985,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -0.0002333889348195611,
+          "physical_block_probability": 0.001680107526881725,
+          "relative_block_overlap": 0.9082031250000024,
+          "right_block_rank": 16,
+          "right_intermediate_partition": [
+            3,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.039062500000000014,
+          "independent_rank_block_probability": 0.00046248121170077463,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -5.834723370489154e-05,
+          "physical_block_probability": 0.0004200268817204303,
+          "relative_block_overlap": 0.9082031250000003,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            2,
+            2
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.10546874999999993,
+          "independent_rank_block_probability": 0.001040582726326743,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": 0.0001407625764191881,
+          "physical_block_probability": 0.0011340725806451605,
+          "relative_block_overlap": 1.0898437499999991,
+          "right_block_rank": 9,
+          "right_intermediate_partition": [
+            2,
+            2,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.03906250000000024,
+          "independent_rank_block_probability": 0.00046248121170077463,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -5.834723370488832e-05,
+          "physical_block_probability": 0.0004200268817204327,
+          "relative_block_overlap": 0.9082031250000057,
+          "right_block_rank": 4,
+          "right_intermediate_partition": [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "block_hilbert_schmidt_square": 0.003906250000000012,
+          "independent_rank_block_probability": 0.00011562030292519366,
+          "left_block_rank": 1,
+          "left_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ],
+          "mutual_information_contribution_bits": -6.135925692590594e-05,
+          "physical_block_probability": 4.200268817204314e-05,
+          "relative_block_overlap": 0.3632812500000011,
+          "right_block_rank": 1,
+          "right_intermediate_partition": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "dense_three_copy_vector_dimension": 4096,
+      "dense_to_pair_eigensolve_reduction_factor": 16.0,
+      "dependence_collision_moment": 1.0084723034174825,
+      "dependence_collision_renyi_upper_bits": 0.012171462462584914,
+      "exact_complete_coupling_verified": true,
+      "finite_representation_space_probe_only": true,
+      "fractional_dependence_moments": {
+        "0.25": 1.0012952110837725,
+        "0.5": 1.0031291998293392,
+        "1.0": 1.0084723034174825
+      },
+      "fractional_renyi_upper_bits": {
+        "0.25": 0.007469542156504877,
+        "0.5": 0.009014864839280054,
+        "1.0": 0.012171462462584914
+      },
+      "largest_pair_eigensolve_vector_dimension": 256,
+      "left_channel_count": 11,
+      "maximum_independent_finite_likelihood_mass_residual": null,
+      "maximum_left_rank_marginal_residual": 1.0658141036401503e-13,
+      "maximum_pair_embedding_isometry_residual": 2.5582057395634405e-14,
+      "maximum_relative_block_overlap": 1.3244965277777772,
+      "maximum_right_rank_marginal_residual": 9.592326932761353e-14,
+      "n": 6,
+      "outer_partitions": [
+        [
+          3,
+          2,
+          1
+        ],
+        [
+          3,
+          2,
+          1
+        ],
+        [
+          3,
+          2,
+          1
+        ],
+        [
+          3,
+          2,
+          1
+        ]
+      ],
+      "physical_outer_tuple_probability": 0.016329218106995884,
+      "right_channel_count": 11,
+      "source_irrep_dimension": 16,
+      "status": "complete-compressed-racah-coupling-verified",
+      "total_block_mass": 92.99999999999982,
+      "total_block_mass_residual": 1.8474111129762605e-13,
+      "total_multiplicity_dimension": 93
+    }
+  ],
+  "status": "complete-finite-racah-couplings-verified-physical-average-open",
+  "summary": "Computed complete maximal-dimension conditional Racah couplings through S6.",
+  "theorem_contract": {
+    "block_mass": "x_(mu,nu)=||R_(mu,nu)||_HS^2",
+    "conditional_coupling": "pi_(mu,nu)=x_(mu,nu)/M",
+    "conditional_mutual_information": "I=sum_(mu,nu)pi log2(Mx/(l_mu r_nu))",
+    "fractional_dependence_moment": "S_theta=sum pi(Mx/(l_mu r_nu))^theta",
+    "physical_outer_weight": "P_outer(alpha,beta,gamma,lambda)=M product_outer(d_rho)/|S_n|^3",
+    "rank_marginals": "sum_nu x=l_mu, sum_mu x=r_nu, sum_(mu,nu)x=M",
+    "scope": "complete finite conditional couplings for selected outer tuples; not a physical-average estimate or an asymptotic theorem"
+  }
+}

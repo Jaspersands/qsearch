@@ -1,0 +1,260 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False: QFT/isotypic access does not resolve tensor-product multiplicity, and the trivial-color restriction contains the full S_m Kronecker transform.",
+      "challenge": "An efficient hyperoctahedral QFT supplies its CG transform.",
+      "resolved": true
+    },
+    {
+      "answer": "Unproved. Their regular parity-conditioned mass is exponentially small, and natural source mass is unknown.",
+      "challenge": "The embedded Kronecker sectors block the natural algorithm.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Neither difficult classical counting nor unresolved basis construction proves quantum circuit hardness.",
+      "challenge": "Kronecker multiplicities imply a quantum lower bound.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "efficient_hyperoctahedral_qft_implies_efficient_cg": false,
+    "generic_hyperoctahedral_cg_contains_symmetric_kronecker": true,
+    "natural_source_kronecker_hard_mass_proved": false,
+    "reason": "Generic wreath fusion contains the unresolved symmetric-group Kronecker transform, but those sectors may be negligible or avoidable for the natural source.",
+    "source_specific_matrix_hecke_bypass_ruled_out": false,
+    "speedup_claim_allowed": false,
+    "uniform_hyperoctahedral_cg_compiled": false
+  },
+  "created_at": "2026-08-13T16:24:48.693295+00:00",
+  "falsifiers_triggered": [
+    "Efficient wreath QFT access does not imply efficient wreath fusion.",
+    "Generic hyperoctahedral fusion is not easier than internal symmetric-group Kronecker fusion.",
+    "The embedded hard-looking sector has exponentially small regular even-parity mass.",
+    "No natural-source obstruction or quantum lower bound follows without a source-mass theorem."
+  ],
+  "finite_controls": [
+    {
+      "coefficient_mismatch_count": 0,
+      "even_parity_conditioned_trivial_color_mass": 0.5,
+      "exact_inflation_reduction_verified": true,
+      "expected_symmetric_group_order": 2,
+      "half_degree": 2,
+      "hyperoctahedral_group_order": 8,
+      "maximum_inflated_wreath_coefficient": 1,
+      "maximum_ordinary_kronecker_coefficient": 1,
+      "partition_count": 2,
+      "partition_triple_count": 8,
+      "status": "inflated-wreath-cg-equals-symmetric-kronecker",
+      "sum_inflated_irrep_dimension_squares": 2,
+      "trivial_color_regular_plancherel_mass": 0.25
+    },
+    {
+      "coefficient_mismatch_count": 0,
+      "even_parity_conditioned_trivial_color_mass": 0.25,
+      "exact_inflation_reduction_verified": true,
+      "expected_symmetric_group_order": 6,
+      "half_degree": 3,
+      "hyperoctahedral_group_order": 48,
+      "maximum_inflated_wreath_coefficient": 1,
+      "maximum_ordinary_kronecker_coefficient": 1,
+      "partition_count": 3,
+      "partition_triple_count": 27,
+      "status": "inflated-wreath-cg-equals-symmetric-kronecker",
+      "sum_inflated_irrep_dimension_squares": 6,
+      "trivial_color_regular_plancherel_mass": 0.125
+    },
+    {
+      "coefficient_mismatch_count": 0,
+      "even_parity_conditioned_trivial_color_mass": 0.125,
+      "exact_inflation_reduction_verified": true,
+      "expected_symmetric_group_order": 24,
+      "half_degree": 4,
+      "hyperoctahedral_group_order": 384,
+      "maximum_inflated_wreath_coefficient": 1,
+      "maximum_ordinary_kronecker_coefficient": 1,
+      "partition_count": 5,
+      "partition_triple_count": 125,
+      "status": "inflated-wreath-cg-equals-symmetric-kronecker",
+      "sum_inflated_irrep_dimension_squares": 24,
+      "trivial_color_regular_plancherel_mass": 0.0625
+    },
+    {
+      "coefficient_mismatch_count": 0,
+      "even_parity_conditioned_trivial_color_mass": 0.0625,
+      "exact_inflation_reduction_verified": true,
+      "expected_symmetric_group_order": 120,
+      "half_degree": 5,
+      "hyperoctahedral_group_order": 3840,
+      "maximum_inflated_wreath_coefficient": 2,
+      "maximum_ordinary_kronecker_coefficient": 2,
+      "partition_count": 7,
+      "partition_triple_count": 343,
+      "status": "inflated-wreath-cg-equals-symmetric-kronecker",
+      "sum_inflated_irrep_dimension_squares": 120,
+      "trivial_color_regular_plancherel_mass": 0.03125
+    },
+    {
+      "coefficient_mismatch_count": 0,
+      "even_parity_conditioned_trivial_color_mass": 0.03125,
+      "exact_inflation_reduction_verified": true,
+      "expected_symmetric_group_order": 720,
+      "half_degree": 6,
+      "hyperoctahedral_group_order": 46080,
+      "maximum_inflated_wreath_coefficient": 5,
+      "maximum_ordinary_kronecker_coefficient": 5,
+      "partition_count": 11,
+      "partition_triple_count": 1331,
+      "status": "inflated-wreath-cg-equals-symmetric-kronecker",
+      "sum_inflated_irrep_dimension_squares": 720,
+      "trivial_color_regular_plancherel_mass": 0.015625
+    }
+  ],
+  "headline_metrics": {
+    "efficient_wreath_qft_to_cg_implication_count": 0,
+    "exact_inflation_control_count": 5,
+    "finite_control_failure_count": 0,
+    "generic_wreath_cg_to_kronecker_reduction_count": 1,
+    "natural_source_hard_sector_mass_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "quantum_lower_bound_count": 0
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "arxiv:quant-ph/0304064",
+      "title": "Generic Quantum Fourier Transforms",
+      "url": "https://arxiv.org/abs/quant-ph/0304064",
+      "use": "Efficient QFT framework; does not by itself provide the tensor-product multiplicity transform used here."
+    },
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "arxiv:2302.11454",
+      "title": "Quantum complexity of the Kronecker coefficients",
+      "url": "https://arxiv.org/abs/2302.11454",
+      "use": "Complexity context for Kronecker multiplicity estimation; not used as a circuit lower bound."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HYPEROCTAHEDRAL-NATURAL-COLOR-MASS",
+      "resolved": false,
+      "statement": "Compute the alternative/source-weighted mass of trivial-color and other Kronecker-hard K_m fusion sectors."
+    },
+    {
+      "id": "PO-COSET-HYPEROCTAHEDRAL-SOURCE-SPECIFIC-FUSION",
+      "resolved": false,
+      "statement": "Determine whether the matrix-Hecke transfer needs a general K_m CG transform or only a smaller structured subtransform."
+    },
+    {
+      "id": "PO-COSET-HYPEROCTAHEDRAL-CG-DEQUANTIZATION",
+      "resolved": false,
+      "statement": "Test whether the source-relevant wreath fusion amplitudes are classically computable or sampleable."
+    }
+  ],
+  "scaling_records": [
+    {
+      "efficient_wreath_qft_implies_efficient_wreath_cg": false,
+      "even_parity_conditioned_trivial_color_mass": 0.125,
+      "generic_wreath_cg_contains_symmetric_kronecker": true,
+      "half_degree": 4,
+      "hyperoctahedral_order_decimal": "384",
+      "natural_source_trivial_color_mass_lower_bound_proved": false,
+      "source_specific_matrix_hecke_bypass_ruled_out": false,
+      "status": "generic-wreath-cg-reduced-natural-sector-mass-open",
+      "symmetric_group_order_decimal": "24",
+      "trivial_color_dimension_square_sum_decimal": "24",
+      "trivial_color_regular_plancherel_mass": 0.0625
+    },
+    {
+      "efficient_wreath_qft_implies_efficient_wreath_cg": false,
+      "even_parity_conditioned_trivial_color_mass": 0.0078125,
+      "generic_wreath_cg_contains_symmetric_kronecker": true,
+      "half_degree": 8,
+      "hyperoctahedral_order_decimal": "10321920",
+      "natural_source_trivial_color_mass_lower_bound_proved": false,
+      "source_specific_matrix_hecke_bypass_ruled_out": false,
+      "status": "generic-wreath-cg-reduced-natural-sector-mass-open",
+      "symmetric_group_order_decimal": "40320",
+      "trivial_color_dimension_square_sum_decimal": "40320",
+      "trivial_color_regular_plancherel_mass": 0.00390625
+    },
+    {
+      "efficient_wreath_qft_implies_efficient_wreath_cg": false,
+      "even_parity_conditioned_trivial_color_mass": 3.0517578125e-05,
+      "generic_wreath_cg_contains_symmetric_kronecker": true,
+      "half_degree": 16,
+      "hyperoctahedral_order_decimal": "1371195958099968000",
+      "natural_source_trivial_color_mass_lower_bound_proved": false,
+      "source_specific_matrix_hecke_bypass_ruled_out": false,
+      "status": "generic-wreath-cg-reduced-natural-sector-mass-open",
+      "symmetric_group_order_decimal": "20922789888000",
+      "trivial_color_dimension_square_sum_decimal": "20922789888000",
+      "trivial_color_regular_plancherel_mass": 1.52587890625e-05
+    },
+    {
+      "efficient_wreath_qft_implies_efficient_wreath_cg": false,
+      "even_parity_conditioned_trivial_color_mass": 4.656612873077393e-10,
+      "generic_wreath_cg_contains_symmetric_kronecker": true,
+      "half_degree": 32,
+      "hyperoctahedral_order_decimal": "1130138339199322632554990773529330319360000000",
+      "natural_source_trivial_color_mass_lower_bound_proved": false,
+      "source_specific_matrix_hecke_bypass_ruled_out": false,
+      "status": "generic-wreath-cg-reduced-natural-sector-mass-open",
+      "symmetric_group_order_decimal": "263130836933693530167218012160000000",
+      "trivial_color_dimension_square_sum_decimal": "263130836933693530167218012160000000",
+      "trivial_color_regular_plancherel_mass": 2.3283064365386963e-10
+    },
+    {
+      "efficient_wreath_qft_implies_efficient_wreath_cg": false,
+      "even_parity_conditioned_trivial_color_mass": 1.0842021724855044e-19,
+      "generic_wreath_cg_contains_symmetric_kronecker": true,
+      "half_degree": 64,
+      "hyperoctahedral_order_decimal": "2340650764331144466221345754697091809049283736233503362096217361956854360782374130152842356326400000000000000",
+      "natural_source_trivial_color_mass_lower_bound_proved": false,
+      "source_specific_matrix_hecke_bypass_ruled_out": false,
+      "status": "generic-wreath-cg-reduced-natural-sector-mass-open",
+      "symmetric_group_order_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "trivial_color_dimension_square_sum_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "trivial_color_regular_plancherel_mass": 5.421010862427522e-20
+    },
+    {
+      "efficient_wreath_qft_implies_efficient_wreath_cg": false,
+      "even_parity_conditioned_trivial_color_mass": 5.877471754111438e-39,
+      "generic_wreath_cg_contains_symmetric_kronecker": true,
+      "half_degree": 128,
+      "hyperoctahedral_order_decimal": "131219850471532870280494180543930212298353497441690579517097209908251607023591082012615277517402188915738609914541751378117557938639583265587201015845713170909341970276087443974249733926280327057536337181401018889521520967680000000000000000000000000000000",
+      "natural_source_trivial_color_mass_lower_bound_proved": false,
+      "source_specific_matrix_hecke_bypass_ruled_out": false,
+      "status": "generic-wreath-cg-reduced-natural-sector-mass-open",
+      "symmetric_group_order_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "trivial_color_dimension_square_sum_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "trivial_color_regular_plancherel_mass": 2.938735877055719e-39
+    }
+  ],
+  "status": "generic-wreath-cg-contains-kronecker-natural-mass-open",
+  "summary": "Reduced generic hyperoctahedral Clebsch-Gordan fusion to the ordinary symmetric-group Kronecker transform on trivial-color sectors, while isolating natural source-sector mass as the required next test before treating this as an algorithmic obstruction.",
+  "theorem": {
+    "efficient_qft_sufficient_for_cg": false,
+    "generic_wreath_cg_contains_internal_symmetric_kronecker": true,
+    "inflated_irreps": "The wreath irrep (lambda,empty) is Infl_pi(S^lambda); the base group acts trivially.",
+    "inflated_tensor_identity_proved": true,
+    "natural_source_caveat": "The hidden-involution fiber is not regular K_m Plancherel; its weight on the embedded sectors is not bounded here.",
+    "natural_source_hard_sector_mass_proved": false,
+    "quantum_complexity_lower_bound_proved": false,
+    "quotient": "K_m=(C_2)^m semidirect S_m has quotient pi:K_m->S_m.",
+    "regular_mass": "Trivial-color mass is 2^-m under K_m Plancherel and 2^(1-m) after conditioning on even central parity.",
+    "scope_limit": "No complexity lower bound is proved, and a source-specific matrix-Hecke transform may bypass generic wreath fusion.",
+    "source_specific_fusion_compiler_ruled_out": false,
+    "status": "generic-wreath-cg-contains-kronecker-natural-mass-open",
+    "tensor_product_identity": "(lambda,empty) tensor (mu,empty) decomposes with the ordinary S_m Kronecker coefficients g(lambda,mu,nu).",
+    "theorem_verified": true,
+    "transform_reduction": "Restricting a uniform K_m Clebsch-Gordan transform to trivial color implements the internal S_m Kronecker transform."
+  },
+  "theorem_contract": {
+    "embedded_sector": "Bipartitions (lambda,empty) with trivial base-group color.",
+    "group_family": "K_m=C_2 wr S_m with quotient onto S_m.",
+    "outside_scope": "Natural source weighting, approximate/source-specific fusion, and any lower bound for quantum circuits.",
+    "transform": "A uniform coherent Clebsch-Gordan transform on arbitrary K_m irrep pairs, including multiplicity registers."
+  }
+}

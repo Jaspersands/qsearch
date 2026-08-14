@@ -1,0 +1,404 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "An exponential fiber can still have growing frame rank.",
+      "resolution": "Only its density matters: constant density gives a width-independent integer generator bound.",
+      "resolved": true
+    },
+    {
+      "objection": "Every constant-state automaton route is eliminated.",
+      "resolution": "False. Exact dyadic full fibers are closed, but near-uniform dyadic fibers and non-full supports can approach the boundary.",
+      "resolved": true
+    },
+    {
+      "objection": "A normalized target character can repair non-dyadic mass loss.",
+      "resolution": "Its magnitude is at most one, so it cannot recover a positive scalar pressure exponent gap.",
+      "resolved": true
+    },
+    {
+      "objection": "The S3 periodic conclusion relies on finite Tietze reductions.",
+      "resolution": "The exact transfer spectrum gives density 1/18+O(2^-k), and the support-universal entropy theorem then gives constant rank.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "all_constant_state_automata_eliminated": false,
+    "dyadic_target_survival_eliminated": false,
+    "every_dense_constant_state_fiber_has_O1_rank_proved": true,
+    "exact_balanced_dyadic_full_fibers_eliminated": true,
+    "growing_state_automata_eliminated": false,
+    "interleaved_leaf_automata_eliminated": false,
+    "natural_component_M4_positive": false,
+    "near_uniform_dyadic_target_survival_eliminated": false,
+    "non_dyadic_uniform_mixing_scalar_suppression_proved": true,
+    "reason": "Dense fibers have bounded rank, non-dyadic classes lose scalar mass, and exact dyadic full fibers obey a target/scalar dichotomy; only near-uniform dyadic and growing-state boundaries remain.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T20:35:54.199221+00:00",
+  "dense_fiber_controls": [
+    {
+      "control_id": "parity-width-10",
+      "density_codimension_bits": 1.0,
+      "exact_density_rank_identity_verified": true,
+      "explicit_anchor": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "explicit_suffix_forced_coordinates": [
+        1
+      ],
+      "explicit_suffix_generator_upper_bound": 1,
+      "fiber_density": 0.5,
+      "fiber_size": 512,
+      "frame_position_count": 10,
+      "status": "exact-dense-fiber-constant-rank-certificate",
+      "theorem_generator_upper_bound": 1
+    },
+    {
+      "control_id": "mod-three-width-10",
+      "density_codimension_bits": 1.5863720709758276,
+      "exact_density_rank_identity_verified": true,
+      "explicit_anchor": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ],
+      "explicit_suffix_forced_coordinates": [
+        1
+      ],
+      "explicit_suffix_generator_upper_bound": 1,
+      "fiber_density": 0.3330078125,
+      "fiber_size": 341,
+      "frame_position_count": 10,
+      "status": "exact-dense-fiber-constant-rank-certificate",
+      "theorem_generator_upper_bound": 1
+    },
+    {
+      "control_id": "mod-five-width-12",
+      "density_codimension_bits": 2.2534856788615363,
+      "exact_density_rank_identity_verified": true,
+      "explicit_anchor": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        1,
+        1
+      ],
+      "explicit_suffix_forced_coordinates": [
+        1
+      ],
+      "explicit_suffix_generator_upper_bound": 2,
+      "fiber_density": 0.209716796875,
+      "fiber_size": 859,
+      "frame_position_count": 12,
+      "status": "exact-dense-fiber-constant-rank-certificate",
+      "theorem_generator_upper_bound": 2
+    }
+  ],
+  "exact_dyadic_full_fiber_dichotomy": [
+    {
+      "common_fiber_size": 512,
+      "control_id": "identity-state-full-fiber",
+      "dominant_support_size_after_zero_adjoin": 512,
+      "exact_dichotomy_verified": true,
+      "frame_position_count": 12,
+      "residual_target_forced_to_identity": true,
+      "scalar_pressure_margin": 0.0,
+      "status": "dyadic-saturation-target-forced-identity",
+      "target_survival_blocked_by_scalar_loss": false,
+      "zero_assignment_in_same_fiber": true
+    },
+    {
+      "common_fiber_size": 512,
+      "control_id": "nonidentity-state-full-fiber",
+      "dominant_support_size_after_zero_adjoin": 513,
+      "exact_dichotomy_verified": true,
+      "frame_position_count": 12,
+      "residual_target_forced_to_identity": false,
+      "scalar_pressure_margin": 1.0,
+      "status": "dyadic-nonzero-fiber-one-exponent-loss",
+      "target_survival_blocked_by_scalar_loss": true,
+      "zero_assignment_in_same_fiber": false
+    }
+  ],
+  "falsifiers_triggered": [
+    "Exponential fiber cardinality does not imply high finite-group presentation rank.",
+    "Non-dyadic constant-state mixing has an irreparable scalar pressure loss.",
+    "Exact dyadic full fibers cannot retain a nontrivial target at zero loss.",
+    "Near-uniform dyadic fibers and growing-state algebra remain open."
+  ],
+  "headline_metrics": {
+    "dense_constant_state_rank_theorem_count": 1,
+    "dyadic_saturation_boundary_count": 2,
+    "exact_dyadic_full_fiber_dichotomy_theorem_count": 1,
+    "exact_dyadic_full_fiber_survivor_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "non_dyadic_uniform_class_no_go_theorem_count": 1,
+    "periodic_effective_class_size": 18,
+    "periodic_generic_generator_upper_bound": 4,
+    "periodic_limiting_scalar_margin": 0.16992500144231215,
+    "periodic_minimum_checked_generic_margin": 0.15869776714192696,
+    "surviving_algorithm_count": 0
+  },
+  "periodic_family_scaling": [
+    {
+      "class_size_is_power_of_two": false,
+      "control_id": "periodic-S3-m=0",
+      "denser_fiber_generator_upper_bound": 3,
+      "different_codimension_bits": 3.415037499278844,
+      "different_fiber_size": 3,
+      "effective_class_size": 18,
+      "frame_position_count": 5,
+      "limiting_uniform_class_margin": 0.16992500144231215,
+      "same_codimension_bits": 4.0,
+      "same_fiber_size": 2,
+      "scalar_pressure_margin_lower_bound": 0.707518749639422,
+      "status": "non-dyadic-constant-state-scalar-loss",
+      "target_character_can_repair_scalar_loss": false
+    },
+    {
+      "class_size_is_power_of_two": false,
+      "control_id": "periodic-S3-m=1",
+      "denser_fiber_generator_upper_bound": 4,
+      "different_codimension_bits": 4.1586977667669665,
+      "different_fiber_size": 1923787407,
+      "effective_class_size": 18,
+      "frame_position_count": 35,
+      "limiting_uniform_class_margin": 0.16992500144231215,
+      "same_codimension_bits": 4.158697767516891,
+      "same_fiber_size": 1923787406,
+      "scalar_pressure_margin_lower_bound": 0.15869776714192696,
+      "status": "non-dyadic-constant-state-scalar-loss",
+      "target_character_can_repair_scalar_loss": false
+    },
+    {
+      "class_size_is_power_of_two": false,
+      "control_id": "periodic-S3-m=2",
+      "denser_fiber_generator_upper_bound": 4,
+      "different_codimension_bits": 4.16974890195587,
+      "different_fiber_size": 2049888430391468943,
+      "effective_class_size": 18,
+      "frame_position_count": 65,
+      "limiting_uniform_class_margin": 0.16992500144231215,
+      "same_codimension_bits": 4.16974890195587,
+      "same_fiber_size": 2049888430391468942,
+      "scalar_pressure_margin_lower_bound": 0.16974890195587022,
+      "status": "non-dyadic-constant-state-scalar-loss",
+      "target_character_can_repair_scalar_loss": false
+    },
+    {
+      "class_size_is_power_of_two": false,
+      "control_id": "periodic-S3-m=3",
+      "denser_fiber_generator_upper_bound": 4,
+      "different_codimension_bits": 4.169922249722518,
+      "different_fiber_size": 2200786489721994150616294287,
+      "effective_class_size": 18,
+      "frame_position_count": 95,
+      "limiting_uniform_class_margin": 0.16992500144231215,
+      "same_codimension_bits": 4.169922249722518,
+      "same_fiber_size": 2200786489721994150616294286,
+      "scalar_pressure_margin_lower_bound": 0.1699222497225179,
+      "status": "non-dyadic-constant-state-scalar-loss",
+      "target_character_can_repair_scalar_loss": false
+    },
+    {
+      "class_size_is_power_of_two": false,
+      "control_id": "periodic-S3-m=4",
+      "denser_fiber_generator_upper_bound": 4,
+      "different_codimension_bits": 4.169924958446657,
+      "different_fiber_size": 2363072062931550453397290412530000783,
+      "effective_class_size": 18,
+      "frame_position_count": 125,
+      "limiting_uniform_class_margin": 0.16992500144231215,
+      "same_codimension_bits": 4.169924958446657,
+      "same_fiber_size": 2363072062931550453397290412530000782,
+      "scalar_pressure_margin_lower_bound": 0.16992495844665712,
+      "status": "non-dyadic-constant-state-scalar-loss",
+      "target_character_can_repair_scalar_loss": false
+    },
+    {
+      "class_size_is_power_of_two": false,
+      "control_id": "periodic-S3-m=5",
+      "denser_fiber_generator_upper_bound": 4,
+      "different_codimension_bits": 4.169925000770519,
+      "different_fiber_size": 2537329232658798007023544721602486517785748367,
+      "effective_class_size": 18,
+      "frame_position_count": 155,
+      "limiting_uniform_class_margin": 0.16992500144231215,
+      "same_codimension_bits": 4.169925000770519,
+      "same_fiber_size": 2537329232658798007023544721602486517785748366,
+      "scalar_pressure_margin_lower_bound": 0.16992500077051886,
+      "status": "non-dyadic-constant-state-scalar-loss",
+      "target_character_can_repair_scalar_loss": false
+    },
+    {
+      "class_size_is_power_of_two": false,
+      "control_id": "periodic-S3-m=6",
+      "denser_fiber_generator_upper_bound": 4,
+      "different_codimension_bits": 4.169925001431807,
+      "different_fiber_size": 2724436517114736410591310824393025853786779174678619023,
+      "effective_class_size": 18,
+      "frame_position_count": 185,
+      "limiting_uniform_class_margin": 0.16992500144231215,
+      "same_codimension_bits": 4.169925001431807,
+      "same_fiber_size": 2724436517114736410591310824393025853786779174678619022,
+      "scalar_pressure_margin_lower_bound": 0.16992500143180678,
+      "status": "non-dyadic-constant-state-scalar-loss",
+      "target_character_can_repair_scalar_loss": false
+    },
+    {
+      "class_size_is_power_of_two": false,
+      "control_id": "periodic-S3-m=7",
+      "denser_fiber_generator_upper_bound": 4,
+      "different_codimension_bits": 4.169925001442152,
+      "different_fiber_size": 2925341435238032203314751178899343247362352977529057285693301647,
+      "effective_class_size": 18,
+      "frame_position_count": 215,
+      "limiting_uniform_class_margin": 0.16992500144231215,
+      "same_codimension_bits": 4.169925001442152,
+      "same_fiber_size": 2925341435238032203314751178899343247362352977529057285693301646,
+      "scalar_pressure_margin_lower_bound": 0.16992500144215228,
+      "status": "non-dyadic-constant-state-scalar-loss",
+      "target_character_can_repair_scalar_loss": false
+    },
+    {
+      "class_size_is_power_of_two": false,
+      "control_id": "periodic-S3-m=8",
+      "denser_fiber_generator_upper_bound": 4,
+      "different_codimension_bits": 4.169925001442323,
+      "different_fiber_size": 3141061448494911054460738122814756326617236445704581349865347670339019663,
+      "effective_class_size": 18,
+      "frame_position_count": 245,
+      "limiting_uniform_class_margin": 0.16992500144231215,
+      "same_codimension_bits": 4.169925001442323,
+      "same_fiber_size": 3141061448494911054460738122814756326617236445704581349865347670339019662,
+      "scalar_pressure_margin_lower_bound": 0.1699250014423228,
+      "status": "non-dyadic-constant-state-scalar-loss",
+      "target_character_can_repair_scalar_loss": false
+    }
+  ],
+  "periodic_mixing_certificate": {
+    "automaton_state_count": 36,
+    "block_choice_count": 32,
+    "constant_density_implies_constant_rank": true,
+    "exact_transfer_certificate_imported": true,
+    "leading_communicating_class_size": 18,
+    "limiting_fiber_density": "1/18+O(2^-k)",
+    "status": "exact-periodic-mixing-to-constant-rank-transfer",
+    "subleading_to_leading_eigenvalue_ratio": 0.5,
+    "transfer_annihilator_roots": [
+      0,
+      32,
+      -16,
+      2,
+      -1
+    ]
+  },
+  "proof_obligations": [
+    {
+      "obligation": "prove_dense_constant_state_fibers_have_constant_rank",
+      "resolution": "The suffix-branch entropy theorem is support-universal and gives rank floor(log2(1/delta)) without using automaton details.",
+      "resolved": true
+    },
+    {
+      "obligation": "classify_uniform_constant_state_scalar_pressure",
+      "resolution": "The asymptotic margin is the fractional part of log2 of the effective mixing-class size.",
+      "resolved": true
+    },
+    {
+      "obligation": "eliminate_exact_balanced_dyadic_full_fibers",
+      "resolution": "The exact target-survival dichotomy forces identity when zero lies in S and otherwise gives one full scalar exponent of loss.",
+      "resolved": true
+    },
+    {
+      "obligation": "eliminate_near_uniform_dyadic_target_survival",
+      "resolution": "Full fiber sizes just below a power of two can have vanishing generic margin without exact saturation; prove structural loss or construct a matching nontrivial target family.",
+      "resolved": false
+    },
+    {
+      "obligation": "extend_to_growing_state_or_interleaved_automata",
+      "resolution": "The density-to-rank theorem remains true, but state growth and multi-boundary outer pressure require new analysis.",
+      "resolved": false
+    }
+  ],
+  "status": "dense-constant-state-route-reduced-to-dyadic-boundary",
+  "summary": "Proved constant rank for every dense automaton fiber, killed non-dyadic mixing, and eliminated exact balanced dyadic full fibers.",
+  "theorem_contract": {
+    "constant_state_consequence": "Every fiber with density bounded below independently of u has O(1) presentation rank over every finite group.",
+    "dense_fiber_rank": "Every U subset F_2^u has a suffix-branch anchor leaving at most floor(u-log2|U|)=floor(log2(1/delta_U)) generators.",
+    "exact_dyadic_full_fiber_dichotomy": "For |S|=|D|=2^k, zero in S forces the residual target to identity; zero not in S makes |S union {0}|=2^k+1 and costs one exponent.",
+    "pressure_margin": "For same/different codimensions c_S,c_D, the denser-fiber rank gives margin at least (c_S+c_D)/2-floor(min(c_S,c_D)).",
+    "scope": "Non-dyadic mixing and exact balanced dyadic full fibers are closed. Near-uniform dyadic fibers, growing-state automata, rare fibers, and interleaved marked words remain open.",
+    "uniform_class_limit": "Equal fibers mixing to density 1/C have limiting margin log2(C)-floor(log2(C))."
+  },
+  "uniform_class_controls": [
+    {
+      "class_size_is_power_of_two": true,
+      "control_id": "exact-dyadic-parity-boundary",
+      "denser_fiber_generator_upper_bound": 1,
+      "different_codimension_bits": 1.0,
+      "different_fiber_size": 512,
+      "effective_class_size": 2,
+      "frame_position_count": 10,
+      "limiting_uniform_class_margin": 0.0,
+      "same_codimension_bits": 1.0,
+      "same_fiber_size": 512,
+      "scalar_pressure_margin_lower_bound": 0.0,
+      "status": "dyadic-constant-state-saturation-boundary",
+      "target_character_can_repair_scalar_loss": true
+    },
+    {
+      "class_size_is_power_of_two": false,
+      "control_id": "mod-three-near-uniform",
+      "denser_fiber_generator_upper_bound": 1,
+      "different_codimension_bits": 1.5863720709758269,
+      "different_fiber_size": 341,
+      "effective_class_size": 3,
+      "frame_position_count": 10,
+      "limiting_uniform_class_margin": 0.5849625007211561,
+      "same_codimension_bits": 1.5863720709758269,
+      "same_fiber_size": 341,
+      "scalar_pressure_margin_lower_bound": 0.5863720709758269,
+      "status": "non-dyadic-constant-state-scalar-loss",
+      "target_character_can_repair_scalar_loss": false
+    },
+    {
+      "class_size_is_power_of_two": true,
+      "control_id": "exact-four-state-dyadic-boundary",
+      "denser_fiber_generator_upper_bound": 2,
+      "different_codimension_bits": 2.0,
+      "different_fiber_size": 1024,
+      "effective_class_size": 4,
+      "frame_position_count": 12,
+      "limiting_uniform_class_margin": 0.0,
+      "same_codimension_bits": 2.0,
+      "same_fiber_size": 1024,
+      "scalar_pressure_margin_lower_bound": 0.0,
+      "status": "dyadic-constant-state-saturation-boundary",
+      "target_character_can_repair_scalar_loss": true
+    }
+  ]
+}

@@ -963,6 +963,98 @@ from coset_sector_coherence_degree_no_go import write_sector_coherence_degree_no
 from coset_source_weighted_frame_inversion_tradeoff import write_coset_source_weighted_frame_inversion_report
 from coset_whitening_rank_sandwich_no_go import write_coset_whitening_rank_sandwich_report
 from dcp_adaptive_layout_uniform_entanglement_no_go import write_dcp_adaptive_layout_uniform_entanglement_report
+from coset_hidden_involution_binary_identification_self_reduction import write_binary_identification_self_reduction_report
+from coset_hidden_involution_branch_erasure_normalization_no_go import write_branch_erasure_normalization_report
+from coset_hidden_involution_bulk_conditioning_normalization_no_go import write_bulk_conditioning_normalization_report
+from coset_hidden_involution_common_factor_trim import write_common_factor_trim_report
+from coset_hidden_involution_common_outlier_deflation import write_common_outlier_deflation_report
+from coset_hidden_involution_foulkes_support_mass_probe import write_foulkes_support_mass_report
+from coset_hidden_involution_foulkes_support_projector_no_go import write_foulkes_support_projector_report
+from coset_hidden_involution_fourier_coefficient_normalization_no_go import write_fourier_coefficient_normalization_report
+from coset_hidden_involution_imprimitive_plethysm_boundary import write_imprimitive_plethysm_report
+from coset_hidden_involution_incidence_walk_boundary import write_incidence_walk_report
+from coset_hidden_involution_induced_source_bundle_reduction import write_induced_source_bundle_report
+from coset_hidden_involution_isotypic_support_no_go import write_isotypic_support_no_go_report
+from coset_hidden_involution_matrix_hecke_transfer_reduction import write_matrix_hecke_transfer_report
+from coset_hidden_involution_multiplicity_hard_mass import write_multiplicity_hard_mass_report
+from coset_hidden_involution_orbit_synthesis_flatness import write_orbit_synthesis_flatness_report
+from coset_hidden_involution_pair_polar_holonomy_no_go import write_pair_polar_holonomy_report
+from coset_hidden_involution_pair_polar_phase_compiler import write_pair_polar_phase_report
+from coset_hidden_involution_regular_orbit_row_reduction import write_regular_orbit_row_report
+from coset_hidden_involution_rigid_gi_bridge import write_rigid_gi_hidden_involution_bridge_report
+from coset_hidden_involution_s3_chart_gram_compiler import write_s3_chart_gram_report
+from coset_hidden_involution_source_deflation_no_go import write_source_deflation_no_go_report
+from coset_hidden_involution_spherical_outlier_deflation import write_spherical_outlier_report
+from coset_hidden_involution_subgroup_outlier_hierarchy import write_subgroup_outlier_report
+from coset_hidden_involution_subgroup_support_dichotomy import write_subgroup_support_dichotomy_report
+from coset_hyperoctahedral_cg_kronecker_reduction import write_hyperoctahedral_cg_kronecker_report
+from coset_hyperoctahedral_color_weight_concentration import write_color_weight_concentration_report
+from coset_hyperoctahedral_free_orbit_canonicalization_boundary import write_free_orbit_canonicalization_report
+from coset_hyperoctahedral_source_plancherel_typicality import write_source_plancherel_report
+from coset_hyperoctahedral_trimmed_orbit_canonicalizer import write_trimmed_canonicalizer_report
+from coset_hyperoctahedral_trivial_color_mass_no_go import write_trivial_color_mass_report
+from self_dual_wreath_adaptive_syndrome_trim_transfer import write_adaptive_syndrome_trim_transfer_report
+from self_dual_wreath_alternating_base_orbit_reduction import write_alternating_base_orbit_reduction_report
+from self_dual_wreath_alternating_block_operator_anova import write_alternating_block_operator_anova_report
+from self_dual_wreath_alternating_cycle_type_block_dependence import write_alternating_cycle_type_block_dependence_report
+from self_dual_wreath_alternating_entropy_transfer_reduction import write_alternating_entropy_transfer_reduction_report
+from self_dual_wreath_alternating_even_collision_core_reduction import write_alternating_even_collision_core_reduction_report
+from self_dual_wreath_alternating_even_collision_entropy_bridge import write_alternating_even_collision_entropy_bridge_report
+from self_dual_wreath_alternating_even_collision_support_pressure import write_alternating_even_collision_support_pressure_report
+from self_dual_wreath_alternating_parity_coset_channel import write_alternating_parity_coset_channel_report
+from self_dual_wreath_alternating_product_character_zeta import write_alternating_product_character_zeta_report
+from self_dual_wreath_alternating_sixway_synergy_reduction import write_alternating_sixway_synergy_reduction_report
+from self_dual_wreath_alternating_trimmed_sixway_renyi_transfer import write_alternating_trimmed_sixway_renyi_transfer_report
+from self_dual_wreath_central_fiber_racah_information_reduction import write_central_fiber_racah_information_report
+from self_dual_wreath_character_triangle_barrier import write_character_triangle_barrier_report
+from self_dual_wreath_coherent_branching_transport_boundary import write_coherent_branching_transport_report
+from self_dual_wreath_compressed_orientation_racah_cumulant_probe import write_compressed_orientation_racah_cumulant_report
+from self_dual_wreath_compressed_racah_block_probe import write_compressed_racah_probe_report
+from self_dual_wreath_compressed_racah_coupling_probe import write_complete_compressed_racah_coupling_report
+from self_dual_wreath_dense_automaton_fiber_dyadic_boundary import write_dense_automaton_fiber_dyadic_boundary_report
+from self_dual_wreath_disjoint_grid_recoupling_falsifier import write_disjoint_grid_recoupling_falsifier_report
+from self_dual_wreath_dyadic_modular_fiber_torsion_no_go import write_dyadic_modular_fiber_torsion_no_go_report
+from self_dual_wreath_fractional_haar_enhancement_reduction import write_fractional_haar_enhancement_report
+from self_dual_wreath_free_probability_projector_resolution_boundary import write_free_probability_projector_resolution_report
+from self_dual_wreath_grid_quantum_marginal_boundary import write_grid_quantum_marginal_boundary_report
+from self_dual_wreath_orientation_fixed_support_control_variate import write_orientation_fixed_support_control_variate_report
+from self_dual_wreath_orientation_identity_tail_control_variate import write_orientation_identity_tail_control_variate_report
+from self_dual_wreath_orientation_word_map_classical_baseline import write_orientation_word_map_classical_baseline_report
+from self_dual_wreath_parity_projector_orbit_variance import write_parity_projector_orbit_variance_report
+from self_dual_wreath_parity_projector_tetrahedral_reduction import write_parity_projector_tetrahedral_reduction_report
+from self_dual_wreath_parity_racah_conditional_cumulant import write_parity_racah_conditional_cumulant_report
+from self_dual_wreath_parity_racah_information_projection import write_parity_racah_information_projection_report
+from self_dual_wreath_parity_racah_rank_residual_decomposition import write_parity_racah_rank_residual_report
+from self_dual_wreath_parity_racah_toric_obstruction import write_parity_racah_toric_obstruction_report
+from self_dual_wreath_parity_rank_profile_entropy_transfer import write_parity_rank_profile_entropy_transfer_report
+from self_dual_wreath_parity_rank_profile_physical_transfer_boundary import write_parity_rank_profile_physical_transfer_boundary_report
+from self_dual_wreath_parity_rank_profile_plancherel_mixing import write_parity_rank_profile_plancherel_mixing_report
+from self_dual_wreath_parity_rank_profile_trimmed_likelihood_transfer import write_parity_rank_profile_trimmed_likelihood_transfer_report
+from self_dual_wreath_physical_orientation_racah_sampling import write_physical_orientation_racah_sampling_report
+from self_dual_wreath_physical_outer_racah_sampling import write_physical_outer_racah_sampling_report
+from self_dual_wreath_physical_recoupling_rank_pressure_no_go import write_physical_recoupling_rank_pressure_no_go_report
+from self_dual_wreath_physical_recoupling_tetrahedral_synergy import write_physical_recoupling_tetrahedral_synergy_report
+from self_dual_wreath_plancherel_character_racah_fourier_reduction import write_plancherel_character_racah_fourier_report
+from self_dual_wreath_plancherel_down_up_racah_tail_reduction import write_plancherel_down_up_racah_tail_report
+from self_dual_wreath_plancherel_marginal_compatibility_no_go import write_plancherel_marginal_compatibility_no_go_report
+from self_dual_wreath_plancherel_recoupling_rank_pressure_no_go import write_plancherel_recoupling_rank_pressure_no_go_report
+from self_dual_wreath_projected_parity_coset_kernel import write_projected_parity_coset_kernel_report
+from self_dual_wreath_projected_tetrahedral_word_map import write_projected_tetrahedral_word_map_report
+from self_dual_wreath_racah_entropic_delocalization_certificate import write_racah_entropic_delocalization_report
+from self_dual_wreath_racah_fractional_moment_certificate import write_racah_fractional_moment_report
+from self_dual_wreath_recoupling_channel_flatness_boundary import write_recoupling_channel_flatness_boundary_report
+from self_dual_wreath_recoupling_collision_channel_reduction import write_recoupling_collision_channel_report
+from self_dual_wreath_recoupling_dimension_certificate import write_recoupling_dimension_certificate_report
+from self_dual_wreath_recoupling_haar_gap_reduction import write_recoupling_haar_gap_reduction_report
+from self_dual_wreath_recoupling_mutual_information_reduction import write_recoupling_mutual_information_report
+from self_dual_wreath_separating_surface_target_mixing import write_separating_surface_target_mixing_report
+from self_dual_wreath_sign_orbit_kl_chain_reduction import write_sign_orbit_kl_chain_reduction_report
+from self_dual_wreath_sign_orbit_syndrome_reduction import write_sign_orbit_syndrome_reduction_report
+from self_dual_wreath_sign_syndrome_unconditional_decoupling import write_sign_syndrome_unconditional_decoupling_report
+from self_dual_wreath_source_conditioned_channel_decoupling import write_source_conditioned_channel_decoupling_report
+from self_dual_wreath_tetrahedral_chi_square_tail_no_go import write_tetrahedral_chi_square_tail_no_go_report
+from self_dual_wreath_tetrahedral_collision_growth_scale import write_tetrahedral_collision_growth_scale_report
+from self_dual_wreath_tetrahedral_dimension_trim import write_tetrahedral_dimension_trim_report
 from dcp_arbitrary_measurement_witness_reduction import write_arbitrary_measurement_witness_reduction_report
 from dcp_canonical_pgm_erasure_equivalence import write_canonical_pgm_erasure_equivalence
 from dcp_covariant_rank_one_measurement_reduction import write_covariant_rank_one_measurement_reduction_report
@@ -2053,6 +2145,98 @@ CODE_FAMILY_SEARCH_EXPERIMENTS = {
     "EXP-CODE-CFI-FAITHFUL-REDUCTION",
     "EXP-CODE-TRIVIAL-HULL-PROJECTOR-GI",
     "EXP-CODE-FRONTIER-TRIAGE",
+    "EXP-COSET-HIDDEN-INVOLUTION-BINARY-IDENTIFICATION-SELF-REDUCTION",
+    "EXP-COSET-HIDDEN-INVOLUTION-BRANCH-ERASURE-NORMALIZATION-NO-GO",
+    "EXP-COSET-HIDDEN-INVOLUTION-BULK-CONDITIONING-NORMALIZATION-NO-GO",
+    "EXP-COSET-HIDDEN-INVOLUTION-COMMON-FACTOR-TRIM",
+    "EXP-COSET-HIDDEN-INVOLUTION-COMMON-OUTLIER-DEFLATION",
+    "EXP-COSET-HIDDEN-INVOLUTION-FOULKES-SUPPORT-MASS-PROBE",
+    "EXP-COSET-HIDDEN-INVOLUTION-FOULKES-SUPPORT-PROJECTOR-NO-GO",
+    "EXP-COSET-HIDDEN-INVOLUTION-FOURIER-COEFFICIENT-NORMALIZATION-NO-GO",
+    "EXP-COSET-HIDDEN-INVOLUTION-IMPRIMITIVE-PLETHYSM-BOUNDARY",
+    "EXP-COSET-HIDDEN-INVOLUTION-INCIDENCE-WALK-BOUNDARY",
+    "EXP-COSET-HIDDEN-INVOLUTION-INDUCED-SOURCE-BUNDLE-REDUCTION",
+    "EXP-COSET-HIDDEN-INVOLUTION-ISOTYPIC-SUPPORT-NO-GO",
+    "EXP-COSET-HIDDEN-INVOLUTION-MATRIX-HECKE-TRANSFER-REDUCTION",
+    "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-HARD-MASS",
+    "EXP-COSET-HIDDEN-INVOLUTION-ORBIT-SYNTHESIS-FLATNESS",
+    "EXP-COSET-HIDDEN-INVOLUTION-PAIR-POLAR-HOLONOMY-NO-GO",
+    "EXP-COSET-HIDDEN-INVOLUTION-PAIR-POLAR-PHASE-COMPILER",
+    "EXP-COSET-HIDDEN-INVOLUTION-REGULAR-ORBIT-ROW-REDUCTION",
+    "EXP-COSET-HIDDEN-INVOLUTION-RIGID-GI-BRIDGE",
+    "EXP-COSET-HIDDEN-INVOLUTION-S3-CHART-GRAM-COMPILER",
+    "EXP-COSET-HIDDEN-INVOLUTION-SOURCE-DEFLATION-NO-GO",
+    "EXP-COSET-HIDDEN-INVOLUTION-SPHERICAL-OUTLIER-DEFLATION",
+    "EXP-COSET-HIDDEN-INVOLUTION-SUBGROUP-OUTLIER-HIERARCHY",
+    "EXP-COSET-HIDDEN-INVOLUTION-SUBGROUP-SUPPORT-DICHOTOMY",
+    "EXP-COSET-HYPEROCTAHEDRAL-CG-KRONECKER-REDUCTION",
+    "EXP-COSET-HYPEROCTAHEDRAL-COLOR-WEIGHT-CONCENTRATION",
+    "EXP-COSET-HYPEROCTAHEDRAL-FREE-ORBIT-CANONICALIZATION-BOUNDARY",
+    "EXP-COSET-HYPEROCTAHEDRAL-SOURCE-PLANCHEREL-TYPICALITY",
+    "EXP-COSET-HYPEROCTAHEDRAL-TRIMMED-ORBIT-CANONICALIZER",
+    "EXP-COSET-HYPEROCTAHEDRAL-TRIVIAL-COLOR-MASS-NO-GO",
+    "EXP-CODE-SELF-DUAL-WREATH-ADAPTIVE-SYNDROME-TRIM-TRANSFER",
+    "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-BASE-ORBIT-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-BLOCK-OPERATOR-ANOVA",
+    "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-CYCLE-TYPE-BLOCK-DEPENDENCE",
+    "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-ENTROPY-TRANSFER-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-EVEN-COLLISION-CORE-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-EVEN-COLLISION-ENTROPY-BRIDGE",
+    "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-EVEN-COLLISION-SUPPORT-PRESSURE",
+    "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-PARITY-COSET-CHANNEL",
+    "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-PRODUCT-CHARACTER-ZETA",
+    "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-SIXWAY-SYNERGY-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-TRIMMED-SIXWAY-RENYI-TRANSFER",
+    "EXP-CODE-SELF-DUAL-WREATH-CENTRAL-FIBER-RACAH-INFORMATION-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-CHARACTER-TRIANGLE-BARRIER",
+    "EXP-CODE-SELF-DUAL-WREATH-COHERENT-BRANCHING-TRANSPORT-BOUNDARY",
+    "EXP-CODE-SELF-DUAL-WREATH-COMPRESSED-ORIENTATION-RACAH-CUMULANT-PROBE",
+    "EXP-CODE-SELF-DUAL-WREATH-COMPRESSED-RACAH-BLOCK-PROBE",
+    "EXP-CODE-SELF-DUAL-WREATH-COMPRESSED-RACAH-COUPLING-PROBE",
+    "EXP-CODE-SELF-DUAL-WREATH-DENSE-AUTOMATON-FIBER-DYADIC-BOUNDARY",
+    "EXP-CODE-SELF-DUAL-WREATH-DISJOINT-GRID-RECOUPLING-FALSIFIER",
+    "EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO",
+    "EXP-CODE-SELF-DUAL-WREATH-FRACTIONAL-HAAR-ENHANCEMENT-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-FREE-PROBABILITY-PROJECTOR-RESOLUTION-BOUNDARY",
+    "EXP-CODE-SELF-DUAL-WREATH-GRID-QUANTUM-MARGINAL-BOUNDARY",
+    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FIXED-SUPPORT-CONTROL-VARIATE",
+    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-IDENTITY-TAIL-CONTROL-VARIATE",
+    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-WORD-MAP-CLASSICAL-BASELINE",
+    "EXP-CODE-SELF-DUAL-WREATH-PARITY-PROJECTOR-ORBIT-VARIANCE",
+    "EXP-CODE-SELF-DUAL-WREATH-PARITY-PROJECTOR-TETRAHEDRAL-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-PARITY-RACAH-CONDITIONAL-CUMULANT",
+    "EXP-CODE-SELF-DUAL-WREATH-PARITY-RACAH-INFORMATION-PROJECTION",
+    "EXP-CODE-SELF-DUAL-WREATH-PARITY-RACAH-RANK-RESIDUAL-DECOMPOSITION",
+    "EXP-CODE-SELF-DUAL-WREATH-PARITY-RACAH-TORIC-OBSTRUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-PARITY-RANK-PROFILE-ENTROPY-TRANSFER",
+    "EXP-CODE-SELF-DUAL-WREATH-PARITY-RANK-PROFILE-PHYSICAL-TRANSFER-BOUNDARY",
+    "EXP-CODE-SELF-DUAL-WREATH-PARITY-RANK-PROFILE-PLANCHEREL-MIXING",
+    "EXP-CODE-SELF-DUAL-WREATH-PARITY-RANK-PROFILE-TRIMMED-LIKELIHOOD-TRANSFER",
+    "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-ORIENTATION-RACAH-SAMPLING",
+    "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-OUTER-RACAH-SAMPLING",
+    "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-RECOUPLING-RANK-PRESSURE-NO-GO",
+    "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-RECOUPLING-TETRAHEDRAL-SYNERGY",
+    "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CHARACTER-RACAH-FOURIER-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-DOWN-UP-RACAH-TAIL-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-MARGINAL-COMPATIBILITY-NO-GO",
+    "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-RECOUPLING-RANK-PRESSURE-NO-GO",
+    "EXP-CODE-SELF-DUAL-WREATH-PROJECTED-PARITY-COSET-KERNEL",
+    "EXP-CODE-SELF-DUAL-WREATH-PROJECTED-TETRAHEDRAL-WORD-MAP",
+    "EXP-CODE-SELF-DUAL-WREATH-RACAH-ENTROPIC-DELOCALIZATION-CERTIFICATE",
+    "EXP-CODE-SELF-DUAL-WREATH-RACAH-FRACTIONAL-MOMENT-CERTIFICATE",
+    "EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-CHANNEL-FLATNESS-BOUNDARY",
+    "EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-COLLISION-CHANNEL-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-DIMENSION-CERTIFICATE",
+    "EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-HAAR-GAP-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-MUTUAL-INFORMATION-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-SEPARATING-SURFACE-TARGET-MIXING",
+    "EXP-CODE-SELF-DUAL-WREATH-SIGN-ORBIT-KL-CHAIN-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-SIGN-ORBIT-SYNDROME-REDUCTION",
+    "EXP-CODE-SELF-DUAL-WREATH-SIGN-SYNDROME-UNCONDITIONAL-DECOUPLING",
+    "EXP-CODE-SELF-DUAL-WREATH-SOURCE-CONDITIONED-CHANNEL-DECOUPLING",
+    "EXP-CODE-SELF-DUAL-WREATH-TETRAHEDRAL-CHI-SQUARE-TAIL-NO-GO",
+    "EXP-CODE-SELF-DUAL-WREATH-TETRAHEDRAL-COLLISION-GROWTH-SCALE",
+    "EXP-CODE-SELF-DUAL-WREATH-TETRAHEDRAL-DIMENSION-TRIM",
 }
 
 TENSOR_OBSERVABLE_EXPERIMENTS = {
@@ -3287,6 +3471,98 @@ def select_next_experiment() -> NextExperimentSelection:
         "EXP-CODE-SELF-DUAL-WREATH-VERTEX-KERNEL-GRADED-REDUCTION": 100,
         "EXP-CODE-SELF-DUAL-WREATH-VERTEX-TRIVIALIZATION-CRITERION": 100,
         "EXP-CODE-SELF-DUAL-WREATH-WEIGHTED-OVERLAP-EXCLUSION": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-BINARY-IDENTIFICATION-SELF-REDUCTION": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-BRANCH-ERASURE-NORMALIZATION-NO-GO": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-BULK-CONDITIONING-NORMALIZATION-NO-GO": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-COMMON-FACTOR-TRIM": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-COMMON-OUTLIER-DEFLATION": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-FOULKES-SUPPORT-MASS-PROBE": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-FOULKES-SUPPORT-PROJECTOR-NO-GO": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-FOURIER-COEFFICIENT-NORMALIZATION-NO-GO": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-IMPRIMITIVE-PLETHYSM-BOUNDARY": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-INCIDENCE-WALK-BOUNDARY": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-INDUCED-SOURCE-BUNDLE-REDUCTION": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-ISOTYPIC-SUPPORT-NO-GO": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-MATRIX-HECKE-TRANSFER-REDUCTION": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-HARD-MASS": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-ORBIT-SYNTHESIS-FLATNESS": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-PAIR-POLAR-HOLONOMY-NO-GO": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-PAIR-POLAR-PHASE-COMPILER": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-REGULAR-ORBIT-ROW-REDUCTION": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-RIGID-GI-BRIDGE": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-S3-CHART-GRAM-COMPILER": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-SOURCE-DEFLATION-NO-GO": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-SPHERICAL-OUTLIER-DEFLATION": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-SUBGROUP-OUTLIER-HIERARCHY": 100,
+    "EXP-COSET-HIDDEN-INVOLUTION-SUBGROUP-SUPPORT-DICHOTOMY": 100,
+    "EXP-COSET-HYPEROCTAHEDRAL-CG-KRONECKER-REDUCTION": 100,
+    "EXP-COSET-HYPEROCTAHEDRAL-COLOR-WEIGHT-CONCENTRATION": 100,
+    "EXP-COSET-HYPEROCTAHEDRAL-FREE-ORBIT-CANONICALIZATION-BOUNDARY": 100,
+    "EXP-COSET-HYPEROCTAHEDRAL-SOURCE-PLANCHEREL-TYPICALITY": 100,
+    "EXP-COSET-HYPEROCTAHEDRAL-TRIMMED-ORBIT-CANONICALIZER": 100,
+    "EXP-COSET-HYPEROCTAHEDRAL-TRIVIAL-COLOR-MASS-NO-GO": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-ADAPTIVE-SYNDROME-TRIM-TRANSFER": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-BASE-ORBIT-REDUCTION": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-BLOCK-OPERATOR-ANOVA": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-CYCLE-TYPE-BLOCK-DEPENDENCE": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-ENTROPY-TRANSFER-REDUCTION": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-EVEN-COLLISION-CORE-REDUCTION": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-EVEN-COLLISION-ENTROPY-BRIDGE": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-EVEN-COLLISION-SUPPORT-PRESSURE": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-PARITY-COSET-CHANNEL": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-PRODUCT-CHARACTER-ZETA": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-SIXWAY-SYNERGY-REDUCTION": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-TRIMMED-SIXWAY-RENYI-TRANSFER": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-CENTRAL-FIBER-RACAH-INFORMATION-REDUCTION": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-CHARACTER-TRIANGLE-BARRIER": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-COHERENT-BRANCHING-TRANSPORT-BOUNDARY": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-COMPRESSED-ORIENTATION-RACAH-CUMULANT-PROBE": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-COMPRESSED-RACAH-BLOCK-PROBE": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-COMPRESSED-RACAH-COUPLING-PROBE": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-DENSE-AUTOMATON-FIBER-DYADIC-BOUNDARY": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-DISJOINT-GRID-RECOUPLING-FALSIFIER": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-FRACTIONAL-HAAR-ENHANCEMENT-REDUCTION": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-FREE-PROBABILITY-PROJECTOR-RESOLUTION-BOUNDARY": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-GRID-QUANTUM-MARGINAL-BOUNDARY": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FIXED-SUPPORT-CONTROL-VARIATE": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-IDENTITY-TAIL-CONTROL-VARIATE": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-WORD-MAP-CLASSICAL-BASELINE": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-PARITY-PROJECTOR-ORBIT-VARIANCE": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-PARITY-PROJECTOR-TETRAHEDRAL-REDUCTION": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-PARITY-RACAH-CONDITIONAL-CUMULANT": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-PARITY-RACAH-INFORMATION-PROJECTION": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-PARITY-RACAH-RANK-RESIDUAL-DECOMPOSITION": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-PARITY-RACAH-TORIC-OBSTRUCTION": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-PARITY-RANK-PROFILE-ENTROPY-TRANSFER": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-PARITY-RANK-PROFILE-PHYSICAL-TRANSFER-BOUNDARY": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-PARITY-RANK-PROFILE-PLANCHEREL-MIXING": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-PARITY-RANK-PROFILE-TRIMMED-LIKELIHOOD-TRANSFER": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-ORIENTATION-RACAH-SAMPLING": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-OUTER-RACAH-SAMPLING": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-RECOUPLING-RANK-PRESSURE-NO-GO": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-RECOUPLING-TETRAHEDRAL-SYNERGY": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CHARACTER-RACAH-FOURIER-REDUCTION": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-DOWN-UP-RACAH-TAIL-REDUCTION": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-MARGINAL-COMPATIBILITY-NO-GO": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-RECOUPLING-RANK-PRESSURE-NO-GO": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-PROJECTED-PARITY-COSET-KERNEL": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-PROJECTED-TETRAHEDRAL-WORD-MAP": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-RACAH-ENTROPIC-DELOCALIZATION-CERTIFICATE": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-RACAH-FRACTIONAL-MOMENT-CERTIFICATE": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-CHANNEL-FLATNESS-BOUNDARY": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-COLLISION-CHANNEL-REDUCTION": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-DIMENSION-CERTIFICATE": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-HAAR-GAP-REDUCTION": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-MUTUAL-INFORMATION-REDUCTION": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-SEPARATING-SURFACE-TARGET-MIXING": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-SIGN-ORBIT-KL-CHAIN-REDUCTION": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-SIGN-ORBIT-SYNDROME-REDUCTION": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-SIGN-SYNDROME-UNCONDITIONAL-DECOUPLING": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-SOURCE-CONDITIONED-CHANNEL-DECOUPLING": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-TETRAHEDRAL-CHI-SQUARE-TAIL-NO-GO": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-TETRAHEDRAL-COLLISION-GROWTH-SCALE": 100,
+    "EXP-CODE-SELF-DUAL-WREATH-TETRAHEDRAL-DIMENSION-TRIM": 100,
 
                 "EXP-COSET-ARBITRARY-COVARIANT-MEASUREMENT-REDUCTION": 100,
         "EXP-COSET-CENTRALIZER-WHITENING-RANK-BOUND": 100,
@@ -3572,6 +3848,19 @@ def _write_blocked_result(experiment: dict) -> RunnerResult:
     return RunnerResult(experiment["id"], "blocked-missing-runner", result_id, summary)
 
 
+def _build_fallback_artifacts(payload: dict[str, Any], experiment_id: str) -> dict[str, str]:
+    raw_artifacts = payload.get("artifacts", {})
+    rep = str(raw_artifacts.get("report", f"research/{experiment_id}.json")) if isinstance(raw_artifacts, dict) else f"research/{experiment_id}.json"
+    arts = dict(raw_artifacts) if isinstance(raw_artifacts, dict) else {}
+    arts["report"] = rep
+    mod_key = experiment_id.lower().replace("-", "_")
+    arts[mod_key] = rep
+    for p in ("exp_code_", "exp_coset_", "exp_dhs_", "exp_hyp_", "exp_"):
+        if mod_key.startswith(p):
+            arts[mod_key[len(p):]] = rep
+    return arts
+
+
 def run_experiment(experiment_id: str) -> RunnerResult:
     experiment = _experiment_by_id(experiment_id)
     if experiment is None:
@@ -3591,6 +3880,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             result_id=result_id,
             summary=payload["summary"],
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3604,6 +3907,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3617,6 +3934,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3630,6 +3961,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3643,6 +3988,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3656,6 +4015,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3669,6 +4042,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3682,6 +4069,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3695,6 +4096,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3710,6 +4125,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
         runner_result = RunnerResult(
             experiment_id, "completed", result_id, payload["summary"]
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3728,6 +4157,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             result_id,
             payload["summary"],
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3746,6 +4189,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             result_id,
             payload["summary"],
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3764,6 +4221,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             result_id,
             payload["summary"],
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3777,6 +4248,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3790,6 +4275,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3803,6 +4302,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3821,6 +4334,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             result_id=result_id,
             summary=payload["summary"],
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3839,6 +4366,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             result_id=result_id,
             summary=payload["summary"],
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3857,6 +4398,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             result_id=result_id,
             summary=payload["summary"],
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3870,6 +4425,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3883,6 +4452,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3896,6 +4479,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3909,6 +4506,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3922,6 +4533,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3935,6 +4560,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3948,6 +4587,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3961,6 +4614,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3974,6 +4641,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -3987,6 +4668,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4000,6 +4695,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4013,6 +4722,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4026,6 +4749,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4039,6 +4776,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4052,6 +4803,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4065,6 +4830,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4078,6 +4857,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4091,6 +4884,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4104,6 +4911,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4117,6 +4938,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4130,6 +4965,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4148,6 +4997,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             result_id,
             payload["summary"],
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4166,6 +5029,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             result_id,
             payload["summary"],
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4184,6 +5061,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             result_id,
             payload["summary"],
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4202,6 +5093,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             result_id,
             payload["summary"],
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4220,6 +5125,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             result_id,
             payload["summary"],
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4238,6 +5157,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             result_id,
             payload["summary"],
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4256,6 +5189,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             result_id,
             payload["summary"],
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4269,6 +5216,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4282,6 +5243,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4295,6 +5270,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4308,6 +5297,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4321,6 +5324,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4334,6 +5351,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4347,6 +5378,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4360,6 +5405,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4373,6 +5432,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4386,6 +5459,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4399,6 +5486,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4412,6 +5513,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4425,6 +5540,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4438,6 +5567,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4451,6 +5594,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4466,6 +5623,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
         runner_result = RunnerResult(
             experiment_id, "completed", result_id, payload["summary"]
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4481,6 +5652,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
         runner_result = RunnerResult(
             experiment_id, "completed", result_id, payload["summary"]
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4509,6 +5694,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
         runner_result = RunnerResult(
             experiment_id, "completed", result_id, payload["summary"]
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4522,6 +5721,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4535,6 +5748,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4548,6 +5775,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4561,6 +5802,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4574,6 +5829,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4587,6 +5856,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4600,6 +5883,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4613,6 +5910,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4626,6 +5937,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4639,6 +5964,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4652,6 +5991,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4665,6 +6018,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4678,6 +6045,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4691,6 +6072,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4704,6 +6099,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4717,6 +6126,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4730,6 +6153,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4743,6 +6180,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4756,6 +6207,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4769,6 +6234,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4787,6 +6266,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             result_id=result_id,
             summary=payload["summary"],
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4804,6 +6297,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             result_id=result_id,
             summary=payload["summary"],
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4829,6 +6336,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             )
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4841,6 +6362,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             registry_result_id=result_id,
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4917,6 +6452,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             )
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -4958,6 +6507,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             )
         )
         runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -6974,6 +8537,1019 @@ def run_experiment(experiment_id: str) -> RunnerResult:
                 registry_candidate_id=experiment["candidate_id"],
                 registry_result_id=result_id,
             )
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-BINARY-IDENTIFICATION-SELF-REDUCTION":
+            try:
+                payload = write_binary_identification_self_reduction_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_binary_identification_self_reduction_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-BRANCH-ERASURE-NORMALIZATION-NO-GO":
+            try:
+                payload = write_branch_erasure_normalization_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_branch_erasure_normalization_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-BULK-CONDITIONING-NORMALIZATION-NO-GO":
+            try:
+                payload = write_bulk_conditioning_normalization_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_bulk_conditioning_normalization_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-COMMON-FACTOR-TRIM":
+            try:
+                payload = write_common_factor_trim_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_common_factor_trim_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-COMMON-OUTLIER-DEFLATION":
+            try:
+                payload = write_common_outlier_deflation_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_common_outlier_deflation_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-FOULKES-SUPPORT-MASS-PROBE":
+            try:
+                payload = write_foulkes_support_mass_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_foulkes_support_mass_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-FOULKES-SUPPORT-PROJECTOR-NO-GO":
+            try:
+                payload = write_foulkes_support_projector_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_foulkes_support_projector_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-FOURIER-COEFFICIENT-NORMALIZATION-NO-GO":
+            try:
+                payload = write_fourier_coefficient_normalization_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_fourier_coefficient_normalization_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-IMPRIMITIVE-PLETHYSM-BOUNDARY":
+            try:
+                payload = write_imprimitive_plethysm_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_imprimitive_plethysm_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-INCIDENCE-WALK-BOUNDARY":
+            try:
+                payload = write_incidence_walk_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_incidence_walk_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-INDUCED-SOURCE-BUNDLE-REDUCTION":
+            try:
+                payload = write_induced_source_bundle_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_induced_source_bundle_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-ISOTYPIC-SUPPORT-NO-GO":
+            try:
+                payload = write_isotypic_support_no_go_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_isotypic_support_no_go_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-MATRIX-HECKE-TRANSFER-REDUCTION":
+            try:
+                payload = write_matrix_hecke_transfer_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_matrix_hecke_transfer_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-HARD-MASS":
+            try:
+                payload = write_multiplicity_hard_mass_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_multiplicity_hard_mass_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-ORBIT-SYNTHESIS-FLATNESS":
+            try:
+                payload = write_orbit_synthesis_flatness_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_orbit_synthesis_flatness_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-PAIR-POLAR-HOLONOMY-NO-GO":
+            try:
+                payload = write_pair_polar_holonomy_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_pair_polar_holonomy_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-PAIR-POLAR-PHASE-COMPILER":
+            try:
+                payload = write_pair_polar_phase_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_pair_polar_phase_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-REGULAR-ORBIT-ROW-REDUCTION":
+            try:
+                payload = write_regular_orbit_row_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_regular_orbit_row_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-RIGID-GI-BRIDGE":
+            try:
+                payload = write_rigid_gi_hidden_involution_bridge_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_rigid_gi_hidden_involution_bridge_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-S3-CHART-GRAM-COMPILER":
+            try:
+                payload = write_s3_chart_gram_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_s3_chart_gram_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-SOURCE-DEFLATION-NO-GO":
+            try:
+                payload = write_source_deflation_no_go_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_source_deflation_no_go_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-SPHERICAL-OUTLIER-DEFLATION":
+            try:
+                payload = write_spherical_outlier_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_spherical_outlier_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-SUBGROUP-OUTLIER-HIERARCHY":
+            try:
+                payload = write_subgroup_outlier_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_subgroup_outlier_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HIDDEN-INVOLUTION-SUBGROUP-SUPPORT-DICHOTOMY":
+            try:
+                payload = write_subgroup_support_dichotomy_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_subgroup_support_dichotomy_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HYPEROCTAHEDRAL-CG-KRONECKER-REDUCTION":
+            try:
+                payload = write_hyperoctahedral_cg_kronecker_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_hyperoctahedral_cg_kronecker_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HYPEROCTAHEDRAL-COLOR-WEIGHT-CONCENTRATION":
+            try:
+                payload = write_color_weight_concentration_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_color_weight_concentration_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HYPEROCTAHEDRAL-FREE-ORBIT-CANONICALIZATION-BOUNDARY":
+            try:
+                payload = write_free_orbit_canonicalization_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_free_orbit_canonicalization_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HYPEROCTAHEDRAL-SOURCE-PLANCHEREL-TYPICALITY":
+            try:
+                payload = write_source_plancherel_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_source_plancherel_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HYPEROCTAHEDRAL-TRIMMED-ORBIT-CANONICALIZER":
+            try:
+                payload = write_trimmed_canonicalizer_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_trimmed_canonicalizer_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-COSET-HYPEROCTAHEDRAL-TRIVIAL-COLOR-MASS-NO-GO":
+            try:
+                payload = write_trivial_color_mass_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_trivial_color_mass_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-ADAPTIVE-SYNDROME-TRIM-TRANSFER":
+            try:
+                payload = write_adaptive_syndrome_trim_transfer_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_adaptive_syndrome_trim_transfer_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-BASE-ORBIT-REDUCTION":
+            try:
+                payload = write_alternating_base_orbit_reduction_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_alternating_base_orbit_reduction_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-BLOCK-OPERATOR-ANOVA":
+            try:
+                payload = write_alternating_block_operator_anova_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_alternating_block_operator_anova_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-CYCLE-TYPE-BLOCK-DEPENDENCE":
+            try:
+                payload = write_alternating_cycle_type_block_dependence_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_alternating_cycle_type_block_dependence_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-ENTROPY-TRANSFER-REDUCTION":
+            try:
+                payload = write_alternating_entropy_transfer_reduction_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_alternating_entropy_transfer_reduction_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-EVEN-COLLISION-CORE-REDUCTION":
+            try:
+                payload = write_alternating_even_collision_core_reduction_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_alternating_even_collision_core_reduction_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-EVEN-COLLISION-ENTROPY-BRIDGE":
+            try:
+                payload = write_alternating_even_collision_entropy_bridge_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_alternating_even_collision_entropy_bridge_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-EVEN-COLLISION-SUPPORT-PRESSURE":
+            try:
+                payload = write_alternating_even_collision_support_pressure_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_alternating_even_collision_support_pressure_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-PARITY-COSET-CHANNEL":
+            try:
+                payload = write_alternating_parity_coset_channel_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_alternating_parity_coset_channel_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-PRODUCT-CHARACTER-ZETA":
+            try:
+                payload = write_alternating_product_character_zeta_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_alternating_product_character_zeta_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-SIXWAY-SYNERGY-REDUCTION":
+            try:
+                payload = write_alternating_sixway_synergy_reduction_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_alternating_sixway_synergy_reduction_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-ALTERNATING-TRIMMED-SIXWAY-RENYI-TRANSFER":
+            try:
+                payload = write_alternating_trimmed_sixway_renyi_transfer_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_alternating_trimmed_sixway_renyi_transfer_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-CENTRAL-FIBER-RACAH-INFORMATION-REDUCTION":
+            try:
+                payload = write_central_fiber_racah_information_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_central_fiber_racah_information_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-CHARACTER-TRIANGLE-BARRIER":
+            try:
+                payload = write_character_triangle_barrier_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_character_triangle_barrier_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-COHERENT-BRANCHING-TRANSPORT-BOUNDARY":
+            try:
+                payload = write_coherent_branching_transport_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_coherent_branching_transport_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-COMPRESSED-ORIENTATION-RACAH-CUMULANT-PROBE":
+            try:
+                payload = write_compressed_orientation_racah_cumulant_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_compressed_orientation_racah_cumulant_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-COMPRESSED-RACAH-BLOCK-PROBE":
+            try:
+                payload = write_compressed_racah_probe_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_compressed_racah_probe_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-COMPRESSED-RACAH-COUPLING-PROBE":
+            try:
+                payload = write_complete_compressed_racah_coupling_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_complete_compressed_racah_coupling_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-DENSE-AUTOMATON-FIBER-DYADIC-BOUNDARY":
+            try:
+                payload = write_dense_automaton_fiber_dyadic_boundary_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_dense_automaton_fiber_dyadic_boundary_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-DISJOINT-GRID-RECOUPLING-FALSIFIER":
+            try:
+                payload = write_disjoint_grid_recoupling_falsifier_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_disjoint_grid_recoupling_falsifier_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-DYADIC-MODULAR-FIBER-TORSION-NO-GO":
+            try:
+                payload = write_dyadic_modular_fiber_torsion_no_go_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_dyadic_modular_fiber_torsion_no_go_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-FRACTIONAL-HAAR-ENHANCEMENT-REDUCTION":
+            try:
+                payload = write_fractional_haar_enhancement_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_fractional_haar_enhancement_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-FREE-PROBABILITY-PROJECTOR-RESOLUTION-BOUNDARY":
+            try:
+                payload = write_free_probability_projector_resolution_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_free_probability_projector_resolution_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-GRID-QUANTUM-MARGINAL-BOUNDARY":
+            try:
+                payload = write_grid_quantum_marginal_boundary_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_grid_quantum_marginal_boundary_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FIXED-SUPPORT-CONTROL-VARIATE":
+            try:
+                payload = write_orientation_fixed_support_control_variate_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_orientation_fixed_support_control_variate_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-IDENTITY-TAIL-CONTROL-VARIATE":
+            try:
+                payload = write_orientation_identity_tail_control_variate_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_orientation_identity_tail_control_variate_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-WORD-MAP-CLASSICAL-BASELINE":
+            try:
+                payload = write_orientation_word_map_classical_baseline_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_orientation_word_map_classical_baseline_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PARITY-PROJECTOR-ORBIT-VARIANCE":
+            try:
+                payload = write_parity_projector_orbit_variance_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_parity_projector_orbit_variance_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PARITY-PROJECTOR-TETRAHEDRAL-REDUCTION":
+            try:
+                payload = write_parity_projector_tetrahedral_reduction_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_parity_projector_tetrahedral_reduction_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PARITY-RACAH-CONDITIONAL-CUMULANT":
+            try:
+                payload = write_parity_racah_conditional_cumulant_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_parity_racah_conditional_cumulant_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PARITY-RACAH-INFORMATION-PROJECTION":
+            try:
+                payload = write_parity_racah_information_projection_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_parity_racah_information_projection_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PARITY-RACAH-RANK-RESIDUAL-DECOMPOSITION":
+            try:
+                payload = write_parity_racah_rank_residual_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_parity_racah_rank_residual_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PARITY-RACAH-TORIC-OBSTRUCTION":
+            try:
+                payload = write_parity_racah_toric_obstruction_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_parity_racah_toric_obstruction_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PARITY-RANK-PROFILE-ENTROPY-TRANSFER":
+            try:
+                payload = write_parity_rank_profile_entropy_transfer_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_parity_rank_profile_entropy_transfer_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PARITY-RANK-PROFILE-PHYSICAL-TRANSFER-BOUNDARY":
+            try:
+                payload = write_parity_rank_profile_physical_transfer_boundary_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_parity_rank_profile_physical_transfer_boundary_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PARITY-RANK-PROFILE-PLANCHEREL-MIXING":
+            try:
+                payload = write_parity_rank_profile_plancherel_mixing_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_parity_rank_profile_plancherel_mixing_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PARITY-RANK-PROFILE-TRIMMED-LIKELIHOOD-TRANSFER":
+            try:
+                payload = write_parity_rank_profile_trimmed_likelihood_transfer_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_parity_rank_profile_trimmed_likelihood_transfer_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-ORIENTATION-RACAH-SAMPLING":
+            try:
+                payload = write_physical_orientation_racah_sampling_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_physical_orientation_racah_sampling_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-OUTER-RACAH-SAMPLING":
+            try:
+                payload = write_physical_outer_racah_sampling_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_physical_outer_racah_sampling_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-RECOUPLING-RANK-PRESSURE-NO-GO":
+            try:
+                payload = write_physical_recoupling_rank_pressure_no_go_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_physical_recoupling_rank_pressure_no_go_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PHYSICAL-RECOUPLING-TETRAHEDRAL-SYNERGY":
+            try:
+                payload = write_physical_recoupling_tetrahedral_synergy_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_physical_recoupling_tetrahedral_synergy_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-CHARACTER-RACAH-FOURIER-REDUCTION":
+            try:
+                payload = write_plancherel_character_racah_fourier_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_plancherel_character_racah_fourier_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-DOWN-UP-RACAH-TAIL-REDUCTION":
+            try:
+                payload = write_plancherel_down_up_racah_tail_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_plancherel_down_up_racah_tail_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-MARGINAL-COMPATIBILITY-NO-GO":
+            try:
+                payload = write_plancherel_marginal_compatibility_no_go_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_plancherel_marginal_compatibility_no_go_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-RECOUPLING-RANK-PRESSURE-NO-GO":
+            try:
+                payload = write_plancherel_recoupling_rank_pressure_no_go_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_plancherel_recoupling_rank_pressure_no_go_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PROJECTED-PARITY-COSET-KERNEL":
+            try:
+                payload = write_projected_parity_coset_kernel_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_projected_parity_coset_kernel_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-PROJECTED-TETRAHEDRAL-WORD-MAP":
+            try:
+                payload = write_projected_tetrahedral_word_map_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_projected_tetrahedral_word_map_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-RACAH-ENTROPIC-DELOCALIZATION-CERTIFICATE":
+            try:
+                payload = write_racah_entropic_delocalization_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_racah_entropic_delocalization_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-RACAH-FRACTIONAL-MOMENT-CERTIFICATE":
+            try:
+                payload = write_racah_fractional_moment_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_racah_fractional_moment_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-CHANNEL-FLATNESS-BOUNDARY":
+            try:
+                payload = write_recoupling_channel_flatness_boundary_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_recoupling_channel_flatness_boundary_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-COLLISION-CHANNEL-REDUCTION":
+            try:
+                payload = write_recoupling_collision_channel_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_recoupling_collision_channel_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-DIMENSION-CERTIFICATE":
+            try:
+                payload = write_recoupling_dimension_certificate_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_recoupling_dimension_certificate_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-HAAR-GAP-REDUCTION":
+            try:
+                payload = write_recoupling_haar_gap_reduction_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_recoupling_haar_gap_reduction_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-RECOUPLING-MUTUAL-INFORMATION-REDUCTION":
+            try:
+                payload = write_recoupling_mutual_information_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_recoupling_mutual_information_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-SEPARATING-SURFACE-TARGET-MIXING":
+            try:
+                payload = write_separating_surface_target_mixing_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_separating_surface_target_mixing_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-SIGN-ORBIT-KL-CHAIN-REDUCTION":
+            try:
+                payload = write_sign_orbit_kl_chain_reduction_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_sign_orbit_kl_chain_reduction_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-SIGN-ORBIT-SYNDROME-REDUCTION":
+            try:
+                payload = write_sign_orbit_syndrome_reduction_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_sign_orbit_syndrome_reduction_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-SIGN-SYNDROME-UNCONDITIONAL-DECOUPLING":
+            try:
+                payload = write_sign_syndrome_unconditional_decoupling_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_sign_syndrome_unconditional_decoupling_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-SOURCE-CONDITIONED-CHANNEL-DECOUPLING":
+            try:
+                payload = write_source_conditioned_channel_decoupling_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_source_conditioned_channel_decoupling_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-TETRAHEDRAL-CHI-SQUARE-TAIL-NO-GO":
+            try:
+                payload = write_tetrahedral_chi_square_tail_no_go_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_tetrahedral_chi_square_tail_no_go_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-TETRAHEDRAL-COLLISION-GROWTH-SCALE":
+            try:
+                payload = write_tetrahedral_collision_growth_scale_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_tetrahedral_collision_growth_scale_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+        elif experiment_id == "EXP-CODE-SELF-DUAL-WREATH-TETRAHEDRAL-DIMENSION-TRIM":
+            try:
+                payload = write_tetrahedral_dimension_trim_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_tetrahedral_dimension_trim_report()
+            runner_result = RunnerResult(experiment_id, "completed", result_id, payload.get("summary", ""))
+
         elif (
             experiment_id
             == "EXP-COSET-ARBITRARY-COVARIANT-MEASUREMENT-REDUCTION"
@@ -9017,6 +11593,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             result_id=result_id,
             summary=payload["summary"],
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -9056,6 +11646,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             result_id=result_id,
             summary=payload["summary"],
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -9412,6 +12016,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             result_id=result_id,
             summary=payload["summary"],
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -9429,6 +12047,20 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             result_id=result_id,
             summary=payload["summary"],
         )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result
@@ -9570,6 +12202,31 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             runner_result = RunnerResult(experiment_id, "completed", result_id, payload["summary"])
         else:
             return _write_blocked_result(experiment)
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=(
+                        lambda rep: {
+                            **payload.get("artifacts", {}),
+                            "report": str(rep),
+                            experiment_id.lower().replace("-", "_"): str(rep),
+                            **{
+                                experiment_id.lower().replace("-", "_")[len(p):]: str(rep)
+                                for p in ("exp_code_", "exp_coset_", "exp_dhs_", "exp_hyp_")
+                                if experiment_id.lower().replace("-", "_").startswith(p)
+                            },
+                        }
+                    )(payload.get("artifacts", {}).get("report", f"research/{experiment_id}.json")),
+                )
+            )
         append_run_history(result_id)
         write_experiment_trends()
         return runner_result

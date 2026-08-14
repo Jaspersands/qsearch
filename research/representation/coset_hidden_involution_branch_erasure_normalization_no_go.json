@@ -1,0 +1,255 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False: equality with S/alpha on every candidate summand fixes all coefficients to 1/alpha, and row normalization gives alpha>=sqrt(M).",
+      "challenge": "A nonuniform label state can improve the common coefficient.",
+      "resolved": true
+    },
+    {
+      "answer": "False: the exact success operator is S^*S/M, so the entire constant relative window remains at Theta(1/M) probability.",
+      "challenge": "Constant conditioning of S makes branch postselection constant-success.",
+      "resolved": true
+    },
+    {
+      "answer": "Only by retaining an equally large unresolved character space; a polynomial number of rows still has vanishing uniform acceptance.",
+      "challenge": "Keeping many Fourier rows removes the obstruction.",
+      "resolved": true
+    },
+    {
+      "answer": "False. The theorem is restricted to branch-only erasure and leaves joint representation-specific row transforms open.",
+      "challenge": "This proves hidden involution requires exponential time.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "branch_only_polynomial_normalization_possible": false,
+    "direct_orbit_row_polar_compiled": false,
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "joint_source_physical_transform_ruled_out": false,
+    "labelled_candidate_preparation_isometry_compiled": true,
+    "reason": "Every one-row candidate-label erasure that realizes the common synthesis inherits normalization sqrt(M); only a genuinely joint multiplicity transform or direct polar can escape.",
+    "speedup_claim_allowed": false,
+    "uniform_branch_erasure_equals_S_over_sqrt_M": true
+  },
+  "created_at": "2026-08-13T18:09:30.084633+00:00",
+  "falsifiers_triggered": [
+    "Changing the candidate-label preparation amplitudes cannot preserve uniform synthesis and improve normalization.",
+    "A candidate-label QFT followed by one-row postselection does not exploit the regular-orbit reduction.",
+    "Bulk conditioning does not turn branch-only erasure into a polynomial primitive."
+  ],
+  "finite_controls": [
+    {
+      "candidate_count": 3,
+      "copy_count": 2,
+      "exact_branch_erasure_boundary_verified": true,
+      "exact_success_spectrum_residual": 3.3306690738754696e-16,
+      "labelled_dilation_dimension": 108,
+      "maximum_labelled_isometry_residual": 0.0,
+      "maximum_observed_success_probability": 1.0,
+      "maximum_predicted_success_probability": 0.9999999999999997,
+      "minimum_observed_success_probability": -1.141038336991493e-16,
+      "minimum_predicted_success_probability": -1.757792046546876e-16,
+      "n": 3,
+      "physical_dimension": 36,
+      "source_dimension": 27,
+      "status": "exact-branch-erasure-sqrt-M-boundary-verified",
+      "transposition_count": 1,
+      "uniform_erasure_amplitude": 0.5773502691896258,
+      "uniform_erasure_success_scale": 0.3333333333333333,
+      "uniform_erasure_synthesis_residual": 0.0
+    },
+    {
+      "candidate_count": 3,
+      "copy_count": 3,
+      "exact_branch_erasure_boundary_verified": true,
+      "exact_success_spectrum_residual": 3.3306690738754696e-16,
+      "labelled_dilation_dimension": 648,
+      "maximum_labelled_isometry_residual": 1.1102230246251565e-16,
+      "maximum_observed_success_probability": 1.0,
+      "maximum_predicted_success_probability": 0.9999999999999997,
+      "minimum_observed_success_probability": -1.1737071715915849e-16,
+      "minimum_predicted_success_probability": -1.5678527812559349e-16,
+      "n": 3,
+      "physical_dimension": 216,
+      "source_dimension": 81,
+      "status": "exact-branch-erasure-sqrt-M-boundary-verified",
+      "transposition_count": 1,
+      "uniform_erasure_amplitude": 0.5773502691896258,
+      "uniform_erasure_success_scale": 0.3333333333333333,
+      "uniform_erasure_synthesis_residual": 0.0
+    },
+    {
+      "candidate_count": 3,
+      "copy_count": 2,
+      "exact_branch_erasure_boundary_verified": true,
+      "exact_success_spectrum_residual": 7.771561172376096e-16,
+      "labelled_dilation_dimension": 1728,
+      "maximum_labelled_isometry_residual": 0.0,
+      "maximum_observed_success_probability": 1.000000000000002,
+      "maximum_predicted_success_probability": 1.0000000000000016,
+      "minimum_observed_success_probability": -9.795115501766746e-16,
+      "minimum_predicted_success_probability": -1.0278721102788036e-15,
+      "n": 4,
+      "physical_dimension": 576,
+      "source_dimension": 432,
+      "status": "exact-branch-erasure-sqrt-M-boundary-verified",
+      "transposition_count": 2,
+      "uniform_erasure_amplitude": 0.5773502691896258,
+      "uniform_erasure_success_scale": 0.3333333333333333,
+      "uniform_erasure_synthesis_residual": 0.0
+    }
+  ],
+  "headline_metrics": {
+    "branch_row_sqrt_M_boundary_theorem_count": 1,
+    "bulk_inverse_M_success_theorem_count": 1,
+    "direct_orbit_row_polar_count": 0,
+    "exact_labelled_dilation_control_count": 3,
+    "finite_control_failure_count": 0,
+    "joint_label_multiplicity_relocation_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-JOINT-LABEL-MULTIPLICITY-RELOCATION",
+      "resolved": false,
+      "statement": "Construct or refute a polynomial circuit that moves candidate information into accessible S_n multiplicity coordinates before erasure."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-DIRECT-ORBIT-ROW-POLAR",
+      "resolved": false,
+      "statement": "Compile the orbit-representative row polar without a single candidate-label success row."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-MULTIROW-DECODER",
+      "resolved": false,
+      "statement": "Determine whether retaining polynomially many structured candidate characters supports a complete decoder."
+    }
+  ],
+  "scaling_records": [
+    {
+      "amplitude_amplification_query_log2_lower_order": 1.9534452978042594,
+      "branch_erasure_normalization_log2_lower_bound": 1.9534452978042594,
+      "branch_only_erasure_polynomial": false,
+      "bulk_success_probability_lower_log2": -4.906890595608519,
+      "bulk_success_probability_upper_log2": -3.3219280948873626,
+      "candidate_count_decimal": "15",
+      "copy_count": 24,
+      "degree": 6,
+      "half_degree": 3,
+      "joint_physical_multiplicity_escape_ruled_out": false,
+      "retained_alternative_mass_lower_bound": 0.9999949932098389,
+      "status": "branch-only-erasure-superpolynomial-joint-row-transform-open"
+    },
+    {
+      "amplitude_amplification_query_log2_lower_order": 3.357122758833061,
+      "branch_erasure_normalization_log2_lower_bound": 3.357122758833061,
+      "branch_only_erasure_polynomial": false,
+      "bulk_success_probability_lower_log2": -7.714245517666122,
+      "bulk_success_probability_upper_log2": -6.129283016944966,
+      "candidate_count_decimal": "105",
+      "copy_count": 27,
+      "degree": 8,
+      "half_degree": 4,
+      "joint_physical_multiplicity_escape_ruled_out": false,
+      "retained_alternative_mass_lower_bound": 0.9999953508377075,
+      "status": "branch-only-erasure-superpolynomial-joint-row-transform-open"
+    },
+    {
+      "amplitude_amplification_query_log2_lower_order": 10.475466225747672,
+      "branch_erasure_normalization_log2_lower_bound": 10.475466225747672,
+      "branch_only_erasure_polynomial": false,
+      "bulk_success_probability_lower_log2": -21.950932451495344,
+      "bulk_success_probability_upper_log2": -20.365969950774186,
+      "candidate_count_decimal": "2027025",
+      "copy_count": 41,
+      "degree": 16,
+      "half_degree": 8,
+      "joint_physical_multiplicity_escape_ruled_out": false,
+      "retained_alternative_mass_lower_bound": 0.9999944692972349,
+      "status": "branch-only-erasure-superpolynomial-joint-row-transform-open"
+    },
+    {
+      "amplitude_amplification_query_log2_lower_order": 28.70656159123884,
+      "branch_erasure_normalization_log2_lower_bound": 28.70656159123884,
+      "branch_only_erasure_polynomial": false,
+      "bulk_success_probability_lower_log2": -58.41312318247768,
+      "bulk_success_probability_upper_log2": -56.82816068175653,
+      "candidate_count_decimal": "191898783962510625",
+      "copy_count": 78,
+      "degree": 32,
+      "half_degree": 16,
+      "joint_physical_multiplicity_escape_ruled_out": false,
+      "retained_alternative_mass_lower_bound": 0.999996190361112,
+      "status": "branch-only-erasure-superpolynomial-joint-row-transform-open"
+    },
+    {
+      "amplitude_amplification_query_log2_lower_order": 73.16594014468187,
+      "branch_erasure_normalization_log2_lower_bound": 73.16594014468187,
+      "branch_only_erasure_polynomial": false,
+      "bulk_success_probability_lower_log2": -147.33188028936374,
+      "bulk_success_probability_upper_log2": -145.74691778864258,
+      "candidate_count_decimal": "112275575285571389562324404930670903477890625",
+      "copy_count": 167,
+      "degree": 64,
+      "half_degree": 32,
+      "joint_physical_multiplicity_escape_ruled_out": false,
+      "retained_alternative_mass_lower_bound": 0.9999963989656548,
+      "status": "branch-only-erasure-superpolynomial-joint-row-transform-open"
+    },
+    {
+      "amplitude_amplification_query_log2_lower_order": 178.08328907094892,
+      "branch_erasure_normalization_log2_lower_bound": 178.08328907094892,
+      "branch_only_erasure_polynomial": false,
+      "bulk_success_probability_lower_log2": -357.16657814189784,
+      "bulk_success_probability_upper_log2": -355.5816156411767,
+      "candidate_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "copy_count": 377,
+      "degree": 128,
+      "half_degree": 64,
+      "joint_physical_multiplicity_escape_ruled_out": false,
+      "retained_alternative_mass_lower_bound": 0.9999967888073672,
+      "status": "branch-only-erasure-superpolynomial-joint-row-transform-open"
+    },
+    {
+      "amplitude_amplification_query_log2_lower_order": 419.9172825702964,
+      "branch_erasure_normalization_log2_lower_bound": 419.9172825702964,
+      "branch_only_erasure_polynomial": false,
+      "bulk_success_probability_lower_log2": -840.8345651405928,
+      "bulk_success_probability_upper_log2": -839.2496026398716,
+      "candidate_count_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "copy_count": 860,
+      "degree": 256,
+      "half_degree": 128,
+      "joint_physical_multiplicity_escape_ruled_out": false,
+      "retained_alternative_mass_lower_bound": 0.9999948978821939,
+      "status": "branch-only-erasure-superpolynomial-joint-row-transform-open"
+    }
+  ],
+  "status": "branch-only-normalization-closed-joint-row-transform-open",
+  "summary": "Proved that clean candidate-controlled preparation followed by any branch-only one-row erasure necessarily realizes S/sqrt(M), with Theta(1/M) success on the already well-conditioned alternative bulk.",
+  "theorem": {
+    "arbitrary_branch_row_sqrt_M_boundary_proved": true,
+    "architecture_consequence": "Candidate preparation, branch QFT, one-row erasure, and ordinary amplification cannot provide polynomial normalization.",
+    "branch_only_amplification_superpolynomial": true,
+    "bulk_inverse_M_success_proved": true,
+    "bulk_success_transfer": "On S^*S eigenvalues in [1-delta,1+delta], uniform erasure succeeds in [(1-delta)/M,(1+delta)/M].",
+    "coefficient_norm_obstruction": "T_c=S/alpha on the full direct sum requires c_h=1/alpha for all h, hence alpha>=sqrt(M), with equality for the uniform row.",
+    "direct_orbit_row_polar_compiled": false,
+    "exact_labelled_isometry_proved": true,
+    "joint_source_physical_transform_ruled_out": false,
+    "labelled_dilation": "V:direct_sum_h E_h -> C^C tensor H, Vx=sum_h |h>B_hx_h, is an exact isometry.",
+    "one_row_kraus_map": "A normalized success row c on the candidate label induces T_c x=sum_h conj(c_h)B_hx_h.",
+    "retained_character_boundary": "Keeping r orthogonal candidate characters accepts at most r/M of a uniform branch law; constant acceptance leaves Theta(M) rows.",
+    "scope_limit": "Joint source-physical multiplicity transforms, coherent candidate relocation, direct row polars, and arbitrary natural-input circuits remain open.",
+    "status": "branch-only-normalization-closed-joint-row-transform-open",
+    "theorem_verified": true,
+    "uniform_erasure_equals_S_over_sqrt_M": true
+  },
+  "theorem_contract": {
+    "architecture": "Candidate-controlled physical preparation followed by a unitary on the candidate label and one clean success row.",
+    "family": "Perfect-matching involution candidates in S_(2m).",
+    "mass_window": "The constant-condition alternative bulk certified by the exact source moment and size-bias theorem.",
+    "outside_scope": "Operations coupling the candidate label to physical multiplicity coordinates, multi-round relocation, and direct polar circuits.",
+    "source": "Direct sum of normalized candidate-fiber synthesis spaces."
+  }
+}

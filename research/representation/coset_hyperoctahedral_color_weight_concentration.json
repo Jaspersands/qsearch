@@ -1,0 +1,275 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False at k>=m: its entire color-string law is exponentially close to uniform by the nonidentity character gap.",
+      "challenge": "The source may concentrate on a few exceptional colors.",
+      "resolved": true
+    },
+    {
+      "answer": "Not automatically; the proof explicitly uses the exact second moment to control size bias.",
+      "challenge": "Source concentration automatically transfers to alternative mass.",
+      "resolved": true
+    },
+    {
+      "answer": "Unproved. It only identifies the relevant little groups; their multiplicity transfer may contain the full hardness.",
+      "challenge": "Balanced color makes the remaining transform easy.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "balanced_little_group_qft_available": true,
+    "balanced_matrix_hecke_polar_compiled": false,
+    "balanced_residual_multiplicity_basis_compiled": false,
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "exact_base_color_weight_law_proved": true,
+    "natural_alternative_mass_concentrates_on_balanced_colors": true,
+    "reason": "The natural signal is localized to balanced base colors, but the residual little-group multiplicities and source-specific transfer remain uncompiled.",
+    "speedup_claim_allowed": false,
+    "trivial_color_is_representative_of_natural_source": false
+  },
+  "created_at": "2026-08-13T16:32:16.447370+00:00",
+  "falsifiers_triggered": [
+    "The natural source does not concentrate on exceptional or trivial base colors.",
+    "The alternative size bias does not destroy balanced-color concentration at the flatness width.",
+    "Balanced color localization does not itself solve residual symmetric-group multiplicities."
+  ],
+  "finite_controls": [
+    {
+      "character_tv_upper_bound": 0.5,
+      "color_string_count": 4,
+      "copy_count": 1,
+      "exact_color_tv_from_uniform": 0.25,
+      "exact_fourier_weight_law_verified": true,
+      "exact_weight_multiplicity_sum_decimal": "12",
+      "exact_weight_probability_sum": 1.0,
+      "half_degree": 2,
+      "maximum_equal_weight_probability_residual": 0.0,
+      "minimum_exact_color_multiplicity": 2,
+      "status": "exact-base-color-krawtchouk-law-verified",
+      "tensor_fiber_dimension_decimal": "12",
+      "tv_bound_residual": 0.0,
+      "weight_count": 3
+    },
+    {
+      "character_tv_upper_bound": 0.16666666666666666,
+      "color_string_count": 4,
+      "copy_count": 2,
+      "exact_color_tv_from_uniform": 0.08333333333333333,
+      "exact_fourier_weight_law_verified": true,
+      "exact_weight_multiplicity_sum_decimal": "144",
+      "exact_weight_probability_sum": 1.0,
+      "half_degree": 2,
+      "maximum_equal_weight_probability_residual": 0.0,
+      "minimum_exact_color_multiplicity": 32,
+      "status": "exact-base-color-krawtchouk-law-verified",
+      "tensor_fiber_dimension_decimal": "144",
+      "tv_bound_residual": 0.0,
+      "weight_count": 3
+    },
+    {
+      "character_tv_upper_bound": 1.1666666666666665,
+      "color_string_count": 8,
+      "copy_count": 1,
+      "exact_color_tv_from_uniform": 0.041666666666666664,
+      "exact_fourier_weight_law_verified": true,
+      "exact_weight_multiplicity_sum_decimal": "360",
+      "exact_weight_probability_sum": 1.0,
+      "half_degree": 3,
+      "maximum_equal_weight_probability_residual": 0.0,
+      "minimum_exact_color_multiplicity": 36,
+      "status": "exact-base-color-krawtchouk-law-verified",
+      "tensor_fiber_dimension_decimal": "360",
+      "tv_bound_residual": 0.0,
+      "weight_count": 4
+    },
+    {
+      "character_tv_upper_bound": 0.38888888888888884,
+      "color_string_count": 8,
+      "copy_count": 2,
+      "exact_color_tv_from_uniform": 0.0024074074074074076,
+      "exact_fourier_weight_law_verified": true,
+      "exact_weight_multiplicity_sum_decimal": "129600",
+      "exact_weight_probability_sum": 1.0,
+      "half_degree": 3,
+      "maximum_equal_weight_probability_residual": 0.0,
+      "minimum_exact_color_multiplicity": 15936,
+      "status": "exact-base-color-krawtchouk-law-verified",
+      "tensor_fiber_dimension_decimal": "129600",
+      "tv_bound_residual": 0.0,
+      "weight_count": 4
+    },
+    {
+      "character_tv_upper_bound": 0.8333333333333333,
+      "color_string_count": 16,
+      "copy_count": 2,
+      "exact_color_tv_from_uniform": 0.0009722222222222222,
+      "exact_fourier_weight_law_verified": true,
+      "exact_weight_multiplicity_sum_decimal": "406425600",
+      "exact_weight_probability_sum": 1.0,
+      "half_degree": 4,
+      "maximum_equal_weight_probability_residual": 0.0,
+      "minimum_exact_color_multiplicity": 25287552,
+      "status": "exact-base-color-krawtchouk-law-verified",
+      "tensor_fiber_dimension_decimal": "406425600",
+      "tv_bound_residual": 0.0,
+      "weight_count": 5
+    }
+  ],
+  "headline_metrics": {
+    "balanced_alternative_concentration_theorem_count": 1,
+    "balanced_matrix_hecke_compiler_count": 0,
+    "balanced_source_concentration_theorem_count": 1,
+    "exact_color_weight_control_count": 5,
+    "finite_control_failure_count": 0,
+    "maximum_scaling_alternative_balanced_mass_lower_bound": 0.9995222908094459,
+    "minimum_scaling_alternative_balanced_mass_lower_bound": 0.0,
+    "new_quantum_algorithm_count": 0
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HYPEROCTAHEDRAL-BALANCED-LITTLE-GROUP-BASIS",
+      "resolved": false,
+      "statement": "Compile or rule out a source-specific basis for residual S_r times S_(m-r) multiplicities on balanced colors."
+    },
+    {
+      "id": "PO-COSET-HYPEROCTAHEDRAL-BALANCED-MATRIX-HECKE-POLAR",
+      "resolved": false,
+      "statement": "Determine the support and relative spectrum of the matrix-Hecke transfer on the balanced alternative mass."
+    },
+    {
+      "id": "PO-COSET-HYPEROCTAHEDRAL-BALANCED-DEQUANTIZATION",
+      "resolved": false,
+      "statement": "Test balanced color/fusion statistics against classical matching-intersection and symmetric-group baselines."
+    }
+  ],
+  "scaling_records": [
+    {
+      "alternative_balanced_mass_lower_bound": 0.0,
+      "alternative_outside_balanced_upper_bound": 1.0,
+      "balanced_little_group_qft_available": true,
+      "balanced_matrix_hecke_transfer_compiled": false,
+      "balanced_weight_lower": 1,
+      "balanced_weight_upper": 3,
+      "binomial_tail_upper_bound": 1.0,
+      "color_tv_upper_bound": 4.704191057897302e-06,
+      "color_weight_asymptotically_balanced": true,
+      "copy_count": 13,
+      "degree": 8,
+      "half_degree": 4,
+      "perfect_matching_count_decimal": "105",
+      "source_outside_balanced_upper_bound": 1.0,
+      "status": "balanced-color-mass-proved-residual-transfer-open"
+    },
+    {
+      "alternative_balanced_mass_lower_bound": 0.13578319556813767,
+      "alternative_outside_balanced_upper_bound": 0.8642168044318623,
+      "balanced_little_group_qft_available": true,
+      "balanced_matrix_hecke_transfer_compiled": false,
+      "balanced_weight_lower": 2,
+      "balanced_weight_upper": 6,
+      "binomial_tail_upper_bound": 0.7357588823428847,
+      "color_tv_upper_bound": 1.672000131806293e-11,
+      "color_weight_asymptotically_balanced": true,
+      "copy_count": 27,
+      "degree": 16,
+      "half_degree": 8,
+      "perfect_matching_count_decimal": "2027025",
+      "source_outside_balanced_upper_bound": 0.7357588823596046,
+      "status": "balanced-color-mass-proved-residual-transfer-open"
+    },
+    {
+      "alternative_balanced_mass_lower_bound": 0.47704081149899435,
+      "alternative_outside_balanced_upper_bound": 0.5229591885010056,
+      "balanced_little_group_qft_available": true,
+      "balanced_matrix_hecke_transfer_compiled": false,
+      "balanced_weight_lower": 4,
+      "balanced_weight_upper": 12,
+      "binomial_tail_upper_bound": 0.2706705664732254,
+      "color_tv_upper_bound": 9.542957859529584e-27,
+      "color_weight_asymptotically_balanced": true,
+      "copy_count": 64,
+      "degree": 32,
+      "half_degree": 16,
+      "perfect_matching_count_decimal": "191898783962510625",
+      "source_outside_balanced_upper_bound": 0.2706705664732254,
+      "status": "balanced-color-mass-proved-residual-transfer-open"
+    },
+    {
+      "alternative_balanced_mass_lower_bound": 0.8076683038243291,
+      "alternative_outside_balanced_upper_bound": 0.19233169617567086,
+      "balanced_little_group_qft_available": true,
+      "balanced_matrix_hecke_transfer_compiled": false,
+      "balanced_weight_lower": 8,
+      "balanced_weight_upper": 24,
+      "binomial_tail_upper_bound": 0.03663127777746836,
+      "color_tv_upper_bound": 2.1497001827323798e-64,
+      "color_weight_asymptotically_balanced": true,
+      "copy_count": 153,
+      "degree": 64,
+      "half_degree": 32,
+      "perfect_matching_count_decimal": "112275575285571389562324404930670903477890625",
+      "source_outside_balanced_upper_bound": 0.03663127777746836,
+      "status": "balanced-color-mass-proved-residual-transfer-open"
+    },
+    {
+      "alternative_balanced_mass_lower_bound": 0.9739844585705031,
+      "alternative_outside_balanced_upper_bound": 0.026015541429496927,
+      "balanced_little_group_qft_available": true,
+      "balanced_matrix_hecke_transfer_compiled": false,
+      "balanced_weight_lower": 16,
+      "balanced_weight_upper": 48,
+      "binomial_tail_upper_bound": 0.0006709252558050237,
+      "color_tv_upper_bound": 5.8867319873785825e-155,
+      "color_weight_asymptotically_balanced": true,
+      "copy_count": 363,
+      "degree": 128,
+      "half_degree": 64,
+      "perfect_matching_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "source_outside_balanced_upper_bound": 0.0006709252558050237,
+      "status": "balanced-color-mass-proved-residual-transfer-open"
+    },
+    {
+      "alternative_balanced_mass_lower_bound": 0.9995222908094459,
+      "alternative_outside_balanced_upper_bound": 0.0004777091905540705,
+      "balanced_little_group_qft_available": true,
+      "balanced_matrix_hecke_transfer_compiled": false,
+      "balanced_weight_lower": 32,
+      "balanced_weight_upper": 96,
+      "binomial_tail_upper_bound": 2.2507034943851823e-07,
+      "color_tv_upper_bound": 0.0,
+      "color_weight_asymptotically_balanced": true,
+      "copy_count": 846,
+      "degree": 256,
+      "half_degree": 128,
+      "perfect_matching_count_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "source_outside_balanced_upper_bound": 2.2507034943851823e-07,
+      "status": "balanced-color-mass-proved-residual-transfer-open"
+    }
+  ],
+  "status": "balanced-color-alternative-mass-proved-residual-fusion-open",
+  "summary": "Derived the exact Krawtchouk color-weight law, proved exponential convergence to balanced binomial colors, and transferred that concentration to alternative mass, isolating balanced little-group matrix-Hecke fusion as the next compiler target.",
+  "theorem": {
+    "alternative_transfer": "Global Gram second moment and Cauchy-Schwarz bound alternative outside mass by sqrt((1+eta) times source outside mass).",
+    "balanced_alternative_mass_proved": true,
+    "balanced_residual_fusion_compiled": false,
+    "balanced_source_concentration": "Outside m/4<=r<=3m/4, source mass is at most 2exp(-m/8)+TV.",
+    "balanced_source_mass_proved": true,
+    "character_gap": "For every m>=2 and nonidentity base element, 0<=q_t<=1/3.",
+    "color_dual": "Characters of N=(C_2)^m are bit strings y; S_m orbits are their weights r, equal to wreath color-partition size.",
+    "exact_color_weight_law_proved": true,
+    "exact_fourier_law": "p_(m,k)(r)=binom(m,r)2^-m sum_t K_t(r)q_t^k with q_t the normalized canonical-fiber character.",
+    "exponential_uniform_color_convergence_proved": true,
+    "full_matrix_hecke_polar_compiled": false,
+    "representation_consequence": "Source-relevant fusion lies in balanced little groups S_r times S_(m-r), not trivial color.",
+    "scope_limit": "No residual little-group multiplicity basis, matrix-Hecke polar, physical source lift, or algorithm is constructed.",
+    "status": "balanced-color-alternative-mass-proved-residual-fusion-open",
+    "theorem_verified": true,
+    "total_variation_bound": "TV(color,uniform)<=((2^m-1)/2)3^-k."
+  },
+  "theorem_contract": {
+    "balanced_band": "ceil(m/4)<=|y|<=floor(3m/4).",
+    "distribution": "Uniform source-vector color law and its Gram-size-biased alternative contribution.",
+    "family": "Canonical k-copy plus fiber for fixed-point-free involutions in S_(2m), restricted to the base subgroup N=(C_2)^m.",
+    "outside_scope": "Fine bipartition labels within each color weight, transfer conditioning, dequantization, and hidden-element recovery."
+  }
+}

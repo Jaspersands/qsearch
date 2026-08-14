@@ -1,0 +1,242 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False on the exact S_3 chart: all nonzero Gram eigenvalues are at least 3/4 for k>=2.",
+      "challenge": "Nontrivial pair holonomy forces bad conditioning.",
+      "resolved": true
+    },
+    {
+      "answer": "False: all four connection sectors can carry alternative mass; the defect-weight and branch mode must both be kept.",
+      "challenge": "Taking only parallel sections recovers the support.",
+      "resolved": true
+    },
+    {
+      "answer": "False: exponentially many overlapping charts still require a compatible global transform and branch-label erasure.",
+      "challenge": "A constant-size chart compiler gives the full-class algorithm.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "branch_label_erasure_compiled": false,
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "exact_s3_chart_gram_diagonalized": true,
+    "full_orbit_synthesis_polar_compiled": false,
+    "global_chart_gluing_proved": false,
+    "matching_association_scheme_transform_compiled": false,
+    "nonflat_holonomy_compatible_with_constant_conditioning": true,
+    "polynomial_three_branch_chart_polar_compiled": true,
+    "reason": "Holonomy is exactly resolvable on one three-branch S_3 chart, but no construction globalizes the chart over the exponential perfect-matching branch family or removes label normalization.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T16:08:51.669037+00:00",
+  "falsifiers_triggered": [
+    "Pair-polar nonflatness is not by itself a conditioning obstruction.",
+    "The holonomy-fixed connection kernel is not the full synthesis support.",
+    "A local constant-branch compiler does not remove full-class normalization."
+  ],
+  "finite_controls": [
+    {
+      "ambient_dimension": 6,
+      "copy_count": 1,
+      "exact_sector_diagonalization_verified": true,
+      "gram_connection_commutator_norm": 2.642040082454241e-15,
+      "maximum_gram_eigenvalue": 2.999999999999999,
+      "maximum_predicted_spectrum_residual": 1.1102230246251565e-15,
+      "minimum_positive_gram_eigenvalue": 1.499999999999999,
+      "observed_kernel_dimension": 4,
+      "observed_source_gram_rank": 5,
+      "predicted_kernel_dimension": 4,
+      "predicted_maximum_gram_eigenvalue": 3.0,
+      "predicted_minimum_positive_gram_eigenvalue": 1.5,
+      "predicted_source_gram_rank": 5,
+      "source_dimension": 9,
+      "status": "exact-s3-chart-holonomy-resolved-gram-verified",
+      "synthesis_condition_number": 1.4142135623730954
+    },
+    {
+      "ambient_dimension": 36,
+      "copy_count": 2,
+      "exact_sector_diagonalization_verified": true,
+      "gram_connection_commutator_norm": 4.971754610796594e-15,
+      "maximum_gram_eigenvalue": 3.0000000000000004,
+      "maximum_predicted_spectrum_residual": 1.5543122344752192e-15,
+      "minimum_positive_gram_eigenvalue": 0.7499999999999989,
+      "observed_kernel_dimension": 6,
+      "observed_source_gram_rank": 21,
+      "predicted_kernel_dimension": 6,
+      "predicted_maximum_gram_eigenvalue": 3.0,
+      "predicted_minimum_positive_gram_eigenvalue": 0.75,
+      "predicted_source_gram_rank": 21,
+      "source_dimension": 27,
+      "status": "exact-s3-chart-holonomy-resolved-gram-verified",
+      "synthesis_condition_number": 2.0000000000000013
+    },
+    {
+      "ambient_dimension": 216,
+      "copy_count": 3,
+      "exact_sector_diagonalization_verified": true,
+      "gram_connection_commutator_norm": 7.48008500190599e-15,
+      "maximum_gram_eigenvalue": 2.999999999999998,
+      "maximum_predicted_spectrum_residual": 2.220446049250313e-15,
+      "minimum_positive_gram_eigenvalue": 0.7499999999999984,
+      "observed_kernel_dimension": 8,
+      "observed_source_gram_rank": 73,
+      "predicted_kernel_dimension": 8,
+      "predicted_maximum_gram_eigenvalue": 3.0,
+      "predicted_minimum_positive_gram_eigenvalue": 0.75,
+      "predicted_source_gram_rank": 73,
+      "source_dimension": 81,
+      "status": "exact-s3-chart-holonomy-resolved-gram-verified",
+      "synthesis_condition_number": 2.0000000000000013
+    },
+    {
+      "ambient_dimension": 1296,
+      "copy_count": 4,
+      "exact_sector_diagonalization_verified": true,
+      "gram_connection_commutator_norm": 1.0013092492233634e-14,
+      "maximum_gram_eigenvalue": 2.999999999999995,
+      "maximum_predicted_spectrum_residual": 4.884981308350689e-15,
+      "minimum_positive_gram_eigenvalue": 0.7499999999999979,
+      "observed_kernel_dimension": 10,
+      "observed_source_gram_rank": 233,
+      "predicted_kernel_dimension": 10,
+      "predicted_maximum_gram_eigenvalue": 3.0,
+      "predicted_minimum_positive_gram_eigenvalue": 0.75,
+      "predicted_source_gram_rank": 233,
+      "source_dimension": 243,
+      "status": "exact-s3-chart-holonomy-resolved-gram-verified",
+      "synthesis_condition_number": 2.000000000000001
+    }
+  ],
+  "headline_metrics": {
+    "constant_conditioning_theorem_count": 1,
+    "exact_chart_control_count": 4,
+    "exact_rank_formula_theorem_count": 1,
+    "finite_control_failure_count": 0,
+    "full_class_polar_compiler_count": 0,
+    "maximum_synthesis_condition_number": 2.0,
+    "minimum_positive_gram_eigenvalue": 0.75,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_three_branch_chart_compiler_count": 1
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-S3-CHART-COVER",
+      "resolved": false,
+      "statement": "Construct a polynomial-overlap cover of the full perfect-matching branch space by compatible S_3 charts."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-MATCHING-SCHEME-TRANSFORM",
+      "resolved": false,
+      "statement": "Lift the T/W defect decomposition to the perfect-matching association scheme or its matrix-valued spherical transform."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-GLOBAL-LABEL-ERASURE",
+      "resolved": false,
+      "statement": "Compile full-class branch synthesis without the sqrt(M) postselection/amplitude-amplification burden."
+    }
+  ],
+  "scaling_records": [
+    {
+      "chart_polar_polynomial_in_copy_count": true,
+      "copy_count": 1,
+      "full_class_polar_compiled": false,
+      "holonomy_fixed_alternative_mass": 0.3333333333333333,
+      "kernel_dimension": 4,
+      "kernel_fraction": 0.4444444444444444,
+      "low_connection_sector_alternative_mass": 1.0,
+      "maximum_gram_eigenvalue": 3.0,
+      "minimum_positive_gram_eigenvalue": 1.5,
+      "source_dimension_decimal": "9",
+      "status": "constant-conditioned-three-branch-chart-only",
+      "support_rank_decimal": "5",
+      "synthesis_condition_number": 1.4142135623730951
+    },
+    {
+      "chart_polar_polynomial_in_copy_count": true,
+      "copy_count": 2,
+      "full_class_polar_compiled": false,
+      "holonomy_fixed_alternative_mass": 0.3333333333333333,
+      "kernel_dimension": 6,
+      "kernel_fraction": 0.2222222222222222,
+      "low_connection_sector_alternative_mass": 0.7777777777777778,
+      "maximum_gram_eigenvalue": 3.0,
+      "minimum_positive_gram_eigenvalue": 0.75,
+      "source_dimension_decimal": "27",
+      "status": "constant-conditioned-three-branch-chart-only",
+      "support_rank_decimal": "21",
+      "synthesis_condition_number": 2.0
+    },
+    {
+      "chart_polar_polynomial_in_copy_count": true,
+      "copy_count": 8,
+      "full_class_polar_compiled": false,
+      "holonomy_fixed_alternative_mass": 0.17969821673525377,
+      "kernel_dimension": 18,
+      "kernel_fraction": 0.0009144947416552355,
+      "low_connection_sector_alternative_mass": 0.5259868922420363,
+      "maximum_gram_eigenvalue": 3.0,
+      "minimum_positive_gram_eigenvalue": 0.75,
+      "source_dimension_decimal": "19683",
+      "status": "constant-conditioned-three-branch-chart-only",
+      "support_rank_decimal": "19665",
+      "synthesis_condition_number": 2.0
+    },
+    {
+      "chart_polar_polynomial_in_copy_count": true,
+      "copy_count": 32,
+      "full_class_polar_compiled": false,
+      "holonomy_fixed_alternative_mass": 0.16666743927334096,
+      "kernel_dimension": 66,
+      "kernel_fraction": 1.1872509610179438e-14,
+      "low_connection_sector_alternative_mass": 0.5000015452133483,
+      "maximum_gram_eigenvalue": 3.0,
+      "minimum_positive_gram_eigenvalue": 0.75,
+      "source_dimension_decimal": "5559060566555523",
+      "status": "constant-conditioned-three-branch-chart-only",
+      "support_rank_decimal": "5559060566555457",
+      "synthesis_condition_number": 2.0
+    },
+    {
+      "chart_polar_polynomial_in_copy_count": true,
+      "copy_count": 128,
+      "full_class_polar_compiled": false,
+      "holonomy_fixed_alternative_mass": 0.16666666666666666,
+      "kernel_dimension": 258,
+      "kernel_fraction": 7.294203023961075e-60,
+      "low_connection_sector_alternative_mass": 0.5,
+      "maximum_gram_eigenvalue": 3.0,
+      "minimum_positive_gram_eigenvalue": 0.75,
+      "source_dimension_decimal": "35370553733215749514562618584237555997034634776827523327290883",
+      "status": "constant-conditioned-three-branch-chart-only",
+      "support_rank_decimal": "35370553733215749514562618584237555997034634776827523327290625",
+      "synthesis_condition_number": 2.0
+    }
+  ],
+  "status": "s3-chart-polar-compiled-global-chart-gluing-open",
+  "summary": "Diagonalized the nonflat S_3 chart Gram by defect weight and loop parity, proved constant nonzero conditioning and a polynomial local chart polar, and isolated global matching-scheme gluing and branch erasure as the unresolved full-family bottlenecks.",
+  "theorem": {
+    "branch_label_erasure_compiled": false,
+    "chart_compiler": "A controlled T/W decomposition, defect-weight counter, signed three-branch Fourier transform, and bounded rescaling compile the three-branch polar in polynomial k.",
+    "conditioning": "For k>=2 the nonzero source-Gram spectrum lies in [3/4,3], so the source synthesis condition number is at most two.",
+    "constant_conditioning_proved": true,
+    "exact_rank_formula_proved": true,
+    "exact_sector_spectrum_proved": true,
+    "fiber_decomposition": "Each S_3 transposition plus fiber is T direct_sum W with dimensions one and two.",
+    "full_conjugacy_class_polar_compiled": false,
+    "hidden_involution_algorithm_constructed": false,
+    "kernel_formula": "Only two m=0 branch modes and one mode across each of the 2k m=1 directions vanish, giving kernel dimension 2(k+1).",
+    "overlap_and_holonomy": "Pair-overlap magnitude is one on T and one half on W; triangle holonomy is +1 on T and -1 on W.",
+    "polynomial_three_branch_chart_polar_compiled": true,
+    "scope_limit": "No compatible cover or normalization is supplied for the exponentially large fixed-point-free conjugacy class.",
+    "sector_spectrum": "At defect weight m, a=2^-m and the branch eigenvalues are (1+2a,1-a,1-a) for even m and (1+a,1+a,1-2a) for odd m.",
+    "status": "s3-chart-polar-compiled-global-chart-gluing-open",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "compiler_model": "Explicit constant-size controlled S_3 fiber/branch transforms and arithmetic polynomial in k and precision.",
+    "family": "The three transposition ranges in the regular S_3 chart and their k-fold tensor powers.",
+    "outside_scope": "Global chart consistency, full-class branch SELECT/erasure, natural-input complexity, and classical separation.",
+    "source_gram": "The unnormalized three-branch synthesis Gram, with no claim about normalization across the full involution class."
+  }
+}

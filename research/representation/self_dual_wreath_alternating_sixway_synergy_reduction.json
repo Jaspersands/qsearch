@@ -1,0 +1,189 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "All fourteen ANOVA blocks require new estimates.",
+      "resolution": "Thirteen are proper marginal components and inherit the proved five-label chi-square no-go.",
+      "resolved": true
+    },
+    {
+      "objection": "Sign-orbit aggregation can increase chi-square.",
+      "resolution": "It is a stochastic coarse-graining, so f-divergence contracts.",
+      "resolved": true
+    },
+    {
+      "objection": "E6_n and Z6_+ must be exactly equal.",
+      "resolution": "Finite controls falsify equality; only their difference tends to zero.",
+      "resolved": true
+    },
+    {
+      "objection": "A bounded six-way energy would prove an algorithmic signal.",
+      "resolution": "It would support rank mixing, a no-go for rank-only information, and says nothing about coherent non-Haar Racah access.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "all_proper_anova_blocks_vanish_proved": true,
+    "classical_separation_proved": false,
+    "fully_nonidentity_even_core_subpolynomial_proved": false,
+    "irreducible_racah_cmi_vanishes_proved": false,
+    "physical_rank_profile_mixes_proved": false,
+    "reason": "Every proper marginal interaction vanishes, leaving one all-six-coordinate centered collision block with no growing-support bound.",
+    "sixway_anova_and_z6_asymptotically_equivalent_proved": true,
+    "sixway_anova_block_subpolynomial_proved": false,
+    "speedup_claim_allowed": false,
+    "unique_sixway_anova_block_is_only_collision_obstruction": true
+  },
+  "created_at": "2026-08-13T23:32:25.874371+00:00",
+  "exact_controls": [
+    {
+      "exact_basis_change_identity_residual": 0.0,
+      "exact_even_collision_minus_one": 3.5,
+      "exact_fully_nonidentity_even_core": 0.0,
+      "exact_lower_identity_support_contribution": 3.5,
+      "finite_order_six_equals_core": true,
+      "full_five_label_chi_square": 3.0416666666666665,
+      "lower_anova_bound_verified": true,
+      "lower_anova_energy": 3.5,
+      "lower_support_minus_lower_anova": 0.0,
+      "n": 3,
+      "order_six_anova_energy": 0.0,
+      "order_six_minus_core": 0.0,
+      "status": "proper-anova-blocks-bounded-and-basis-change-identity-verified",
+      "thirteen_five_label_upper_bound": 39.541666666666664
+    },
+    {
+      "exact_basis_change_identity_residual": 2.4424906541753444e-15,
+      "exact_even_collision_minus_one": 6.771604938271605,
+      "exact_fully_nonidentity_even_core": 1.7004243827160495,
+      "exact_lower_identity_support_contribution": 5.071180555555555,
+      "finite_order_six_equals_core": false,
+      "full_five_label_chi_square": 3.2604166666666665,
+      "lower_anova_bound_verified": true,
+      "lower_anova_energy": 5.759259259259258,
+      "lower_support_minus_lower_anova": -0.6880787037037024,
+      "n": 4,
+      "order_six_anova_energy": 1.0123456790123446,
+      "order_six_minus_core": -0.6880787037037048,
+      "status": "proper-anova-blocks-bounded-and-basis-change-identity-verified",
+      "thirteen_five_label_upper_bound": 42.385416666666664
+    },
+    {
+      "exact_basis_change_identity_residual": 2.220446049250313e-16,
+      "exact_even_collision_minus_one": 2.725021122685185,
+      "exact_fully_nonidentity_even_core": 1.1420072337962963,
+      "exact_lower_identity_support_contribution": 1.583013888888889,
+      "finite_order_six_equals_core": false,
+      "full_five_label_chi_square": 1.3568287037037037,
+      "lower_anova_bound_verified": true,
+      "lower_anova_energy": 1.5812687499999996,
+      "lower_support_minus_lower_anova": 0.001745138888889386,
+      "n": 5,
+      "order_six_anova_energy": 1.1437523726851855,
+      "order_six_minus_core": 0.001745138888889164,
+      "status": "proper-anova-blocks-bounded-and-basis-change-identity-verified",
+      "thirteen_five_label_upper_bound": 17.638773148148147
+    }
+  ],
+  "falsifiers_triggered": [
+    "The fourteen-block operator target does not require fourteen new asymptotic proofs.",
+    "The unique six-way ANOVA block is only asymptotically, not exactly, the nonidentity core.",
+    "Closing the six-way block toward boundedness would eliminate rank-only information rather than produce an algorithm."
+  ],
+  "headline_metrics": {
+    "anova_identity_core_asymptotic_bridge_count": 1,
+    "exact_finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "physical_rank_mixing_theorem_count": 0,
+    "proper_anova_block_count": 13,
+    "proper_anova_block_decay_theorem_count": 1,
+    "remaining_sixway_block_count": 1,
+    "sixway_subpolynomial_theorem_count": 0,
+    "sixway_synergy_reduction_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "prove_all_thirteen_proper_anova_blocks_vanish",
+      "resolution": "Coordinatewise collision duality, chi-square data processing, tetrahedral edge symmetry, and the existing five-label theorem.",
+      "resolved": true
+    },
+    {
+      "obligation": "bridge_highest_anova_block_and_nonidentity_core_asymptotically",
+      "resolution": "Both exact decompositions equal C_even; their non-highest remainders vanish independently.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_unique_sixway_centered_block_subpolynomial",
+      "resolution": "Bound the Hilbert--Schmidt norm of the three-input to three-output all-centered class channel on growing support.",
+      "resolved": false
+    },
+    {
+      "obligation": "bypass_sixway_renyi_if_tail_dominated",
+      "resolution": "Use direct coarse-label entropy or retained physical likelihood tails if the six-way Hilbert--Schmidt norm is polynomial.",
+      "resolved": false
+    }
+  ],
+  "scaling_controls": [
+    {
+      "both_error_terms_asymptotically_vanishing": true,
+      "even_lower_identity_support_contribution": 1.583013888888889,
+      "full_character_energy_second_moment": 0.6734953703703703,
+      "full_five_label_chi_square": 1.3568287037037037,
+      "full_reciprocal_class_sum": 0.3416666666666667,
+      "n": 5,
+      "status": "proper-marginal-and-lower-support-errors-vanishing",
+      "thirteen_lower_anova_upper": 17.638773148148147
+    },
+    {
+      "both_error_terms_asymptotically_vanishing": true,
+      "even_lower_identity_support_contribution": 0.16497979609789415,
+      "full_character_energy_second_moment": 0.04009801751801911,
+      "full_five_label_chi_square": 0.183252779422781,
+      "full_reciprocal_class_sum": 0.07157738095238095,
+      "n": 8,
+      "status": "proper-marginal-and-lower-support-errors-vanishing",
+      "thirteen_lower_anova_upper": 2.3822861324961533
+    },
+    {
+      "both_error_terms_asymptotically_vanishing": true,
+      "even_lower_identity_support_contribution": 0.013170293159040095,
+      "full_character_energy_second_moment": 0.0012991021470688164,
+      "full_five_label_chi_square": 0.03899426224674281,
+      "full_reciprocal_class_sum": 0.018847580049836995,
+      "n": 12,
+      "status": "proper-marginal-and-lower-support-errors-vanishing",
+      "thirteen_lower_anova_upper": 0.5069254092076565
+    },
+    {
+      "both_error_terms_asymptotically_vanishing": true,
+      "even_lower_identity_support_contribution": 0.004408884451385183,
+      "full_character_energy_second_moment": 0.00029521351464705865,
+      "full_five_label_chi_square": 0.019372450520737095,
+      "full_reciprocal_class_sum": 0.009538618503045018,
+      "n": 16,
+      "status": "proper-marginal-and-lower-support-errors-vanishing",
+      "thirteen_lower_anova_upper": 0.25184185676958226
+    }
+  ],
+  "status": "unique-sixway-centered-class-synergy-is-final-renyi-rank-obstruction",
+  "summary": "Used the existing five-label theorem to kill all 13 proper ANOVA blocks and isolated one six-way centered class-synergy norm.",
+  "theorem": {
+    "basis_change_asymptotic": "E6_n-Z6_+->0",
+    "identity_support_reduction": "C_even=1+Z6_+ +o(1)",
+    "lower_anova_bound": "L_ANOVA,n<=13(2V_n+M2_n)=o(1)",
+    "proper_marginal_contraction": "Every order<=5 coarse ANOVA block energy is bounded by a full five-label physical chi-square under marginalization and orbit aggregation",
+    "sixway_collision_reduction": "C_even=1+E6_n+o(1)",
+    "sixway_subpolynomial_proved": false,
+    "status": "coarse-even-collision-reduced-to-unique-sixway-anova-synergy"
+  },
+  "theorem_contract": {
+    "anova_reduction": "C_even=1+E6_n+o(1)",
+    "asymptotic_basis_bridge": "E6_n-Z6_+->0",
+    "class_support_reduction": "C_even=1+Z6_+ +o(1)",
+    "lower_anova_decay": "L_ANOVA,n<=13(2V_n+M2_n)=o(1)",
+    "proper_marginal_bound": "Every order<=5 coarse ANOVA block energy is bounded by a full five-label physical chi-square under marginalization and orbit aggregation",
+    "rank_sufficient_target": "E6_n=n^o(1), equivalently 1+Z6_+=n^o(1).",
+    "scope": "No norm estimate for the unique six-way block and no non-Haar Racah-cumulant estimate is proved."
+  }
+}

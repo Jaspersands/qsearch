@@ -1,0 +1,410 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Eight syndrome amplitudes require eight unrelated classical searches.",
+      "resolution": "All are Walsh coefficients of the same sampled normalized-character product.",
+      "resolved": true
+    },
+    {
+      "objection": "A huge Hoeffding count proves classical hardness.",
+      "resolution": "It proves only that this direct bounded estimator has a weak sufficient guarantee; variance reduction can invalidate the inference.",
+      "resolved": true
+    },
+    {
+      "objection": "Worst-case character hardness proves this distribution hard.",
+      "resolution": "The required average-case hardness on selected partitions and word-map cycle types is completely open.",
+      "resolved": true
+    },
+    {
+      "objection": "Positive measured CMI is already coherently accessible.",
+      "resolution": "No efficient observable, decoder, or preparation-to-measurement pipeline is supplied.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "classical_lower_bound_proved": false,
+    "coherent_quantum_estimator_implemented": false,
+    "direct_classical_estimator_available": true,
+    "direct_estimator_polynomial_sample_bound_proved": false,
+    "exact_character_average_case_efficiency_proved": false,
+    "importance_sampling_ruled_out": false,
+    "orientation_word_map_walsh_identity_proved": true,
+    "physical_mass_conversion_verified": true,
+    "reason": "The shared classical estimator is exact but has a severe finite sign problem; neither an efficient classical attack nor a matched quantum separation is proved.",
+    "speedup_claim_allowed": false
+  },
+  "cost_records": [
+    {
+      "base_dimensions": [
+        4,
+        5,
+        4,
+        5,
+        5,
+        5
+      ],
+      "base_partitions": [
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "character_evaluation_is_unit_cost_assumed": true,
+      "classical_lower_bound_proved": false,
+      "cmi_continuity_bound_at_target_bits": 0.10244903597761268,
+      "cmi_resolution_tv_target": 0.002174060966064373,
+      "confidence_level": 0.95,
+      "control_id": "S5-EXACT-CROSS-CHECK",
+      "dimension_product": 10000,
+      "exact_character_evaluations_per_word_sample": 6,
+      "fixed_tv_target": 0.05,
+      "inverse_physical_orbit_mass": 241.49068322981373,
+      "irreducible_racah_cmi_bits": 0.20489807195522608,
+      "log10_word_samples_sufficient_for_fixed_tv": 15.567212639142014,
+      "log10_word_samples_sufficient_to_resolve_cmi": 18.290609210582044,
+      "n": 5,
+      "physical_mass_formula_residual": 0.0,
+      "physical_sign_orbit_tuple_mass": 0.004140946502057612,
+      "polynomial_classical_runtime_proved": false,
+      "quantum_advantage_proved": false,
+      "random_word_sample_updates_all_syndromes": true,
+      "status": "classical-word-map-upper-bound-with-unresolved-sign-and-evaluation-costs",
+      "total_normalized_amplitude": 8.944444444444443e-06,
+      "word_map_estimator_is_classical": true
+    },
+    {
+      "base_dimensions": [
+        10,
+        10,
+        10,
+        10,
+        10,
+        10
+      ],
+      "base_partitions": [
+        [
+          3,
+          1,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1,
+          1
+        ],
+        [
+          3,
+          1,
+          1,
+          1
+        ]
+      ],
+      "character_evaluation_is_unit_cost_assumed": true,
+      "classical_lower_bound_proved": false,
+      "cmi_continuity_bound_at_target_bits": 0.49999999999999983,
+      "cmi_resolution_tv_target": 0.013713086410795034,
+      "confidence_level": 0.95,
+      "control_id": "S6-REPEATED-DIMENSION-10",
+      "dimension_product": 1000000,
+      "exact_character_evaluations_per_word_sample": 6,
+      "fixed_tv_target": 0.05,
+      "inverse_physical_orbit_mass": 9331.199999999913,
+      "irreducible_racah_cmi_bits": 0.9999999999999998,
+      "log10_word_samples_sufficient_for_fixed_tv": 22.072379372327056,
+      "log10_word_samples_sufficient_to_resolve_cmi": 23.196048955691058,
+      "n": 6,
+      "physical_mass_formula_residual": 0.0,
+      "physical_sign_orbit_tuple_mass": 0.0001071673525377239,
+      "polynomial_classical_runtime_proved": false,
+      "quantum_advantage_proved": false,
+      "random_word_sample_updates_all_syndromes": true,
+      "status": "classical-word-map-upper-bound-with-unresolved-sign-and-evaluation-costs",
+      "total_normalized_amplitude": 5.0000000000000464e-09,
+      "word_map_estimator_is_classical": true
+    },
+    {
+      "base_dimensions": [
+        35,
+        35,
+        35,
+        35,
+        35,
+        35
+      ],
+      "base_partitions": [
+        [
+          3,
+          2,
+          1,
+          1
+        ],
+        [
+          3,
+          2,
+          1,
+          1
+        ],
+        [
+          3,
+          2,
+          1,
+          1
+        ],
+        [
+          3,
+          2,
+          1,
+          1
+        ],
+        [
+          3,
+          2,
+          1,
+          1
+        ],
+        [
+          3,
+          2,
+          1,
+          1
+        ]
+      ],
+      "character_evaluation_is_unit_cost_assumed": true,
+      "classical_lower_bound_proved": false,
+      "cmi_continuity_bound_at_target_bits": 1.1576142864042184e-05,
+      "cmi_resolution_tv_target": 1.1114640620886418e-07,
+      "confidence_level": 0.95,
+      "control_id": "S7-REPEATED-DIMENSION-35",
+      "dimension_product": 1838265625,
+      "exact_character_evaluations_per_word_sample": 6,
+      "fixed_tv_target": 0.05,
+      "inverse_physical_orbit_mass": 75.94243796985222,
+      "irreducible_racah_cmi_bits": 2.315228572808437e-05,
+      "log10_word_samples_sufficient_for_fixed_tv": 25.880518270966054,
+      "log10_word_samples_sufficient_to_resolve_cmi": 37.186667429938595,
+      "n": 7,
+      "physical_mass_formula_residual": 0.0,
+      "physical_sign_orbit_tuple_mass": 0.013167868015996299,
+      "polynomial_classical_runtime_proved": false,
+      "quantum_advantage_proved": false,
+      "random_word_sample_updates_all_syndromes": true,
+      "status": "classical-word-map-upper-bound-with-unresolved-sign-and-evaluation-costs",
+      "total_normalized_amplitude": 6.235920286957517e-11,
+      "word_map_estimator_is_classical": true
+    }
+  ],
+  "created_at": "2026-08-14T02:11:32.344311+00:00",
+  "exact_control": {
+    "all_exact_means_nonnegative": true,
+    "base_partitions": [
+      [
+        2,
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        2,
+        1
+      ],
+      [
+        2,
+        1,
+        1,
+        1
+      ],
+      [
+        2,
+        2,
+        1
+      ],
+      [
+        2,
+        2,
+        1
+      ],
+      [
+        2,
+        2,
+        1
+      ]
+    ],
+    "compiled_normalized_amplitudes": [
+      1.5625e-06,
+      1.562499999999999e-06,
+      1.5624999999999967e-06,
+      5.624999999999982e-07,
+      1.5625000000000018e-06,
+      5.625000000000015e-07,
+      6.944444444444425e-09,
+      1.5625000000000011e-06
+    ],
+    "control_id": "S5-EXACT-WALSH-WORD-MAP",
+    "dimension_product": 10000,
+    "exact_normalized_walsh_means": [
+      "1/640000",
+      "1/640000",
+      "1/640000",
+      "9/16000000",
+      "1/640000",
+      "9/16000000",
+      "1/144000000",
+      "1/640000"
+    ],
+    "exact_walsh_identity_verified": true,
+    "maximum_exact_to_compiled_residual": 3.3881317890172014e-21,
+    "n": 5,
+    "status": "orientation-amplitudes-are-exact-word-map-walsh-coefficients"
+  },
+  "falsifiers_triggered": [
+    "The eight orientation channels are not eight independent hidden structures.",
+    "Finite high CMI does not imply low classical estimation cost or coherent accessibility.",
+    "Worst-case character complexity cannot substitute for an average-case reduction."
+  ],
+  "headline_metrics": {
+    "classical_cost_record_count": 3,
+    "classical_lower_bound_count": 0,
+    "coherent_quantum_decoder_count": 0,
+    "exact_walsh_control_verified": 1,
+    "maximum_log10_cmi_resolution_word_samples": 37.186667429938595,
+    "maximum_log10_fixed_tv_word_samples": 25.880518270966054,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_classical_runtime_proof_count": 0
+  },
+  "literature_boundaries": [
+    {
+      "boundary": "Recent classical/quantum character algorithms do not make exact evaluation unit cost on every partition and cycle type.",
+      "literature_id": "ARXIV-2501.12579",
+      "url": "https://arxiv.org/abs/2501.12579"
+    },
+    {
+      "boundary": "Worst-case exact symmetric-group character computation is strongly GapP-complete; this is not an average-case lower bound for these samples.",
+      "literature_id": "ARXIV-2207.05423",
+      "url": "https://arxiv.org/abs/2207.05423"
+    },
+    {
+      "boundary": "Quantum additive approximation results for normalized Kronecker coefficients do not supply the missing coherent orientation decoder.",
+      "literature_id": "ARXIV-2302.11454",
+      "url": "https://arxiv.org/abs/2302.11454"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_shared_orientation_word_map_estimator",
+      "resolution": "Transpose-character signs turn the eight amplitudes into Walsh coefficients of one bounded random variable.",
+      "resolved": true
+    },
+    {
+      "obligation": "give_rigorous_classical_sample_upper_bound",
+      "resolution": "Simultaneous Hoeffding plus clipping and normalization gives an explicit TV guarantee.",
+      "resolved": true
+    },
+    {
+      "obligation": "remove_exact_character_unit_cost_assumption",
+      "resolution": "Need average-case complexity or a concrete evaluator analysis for Plancherel-typical labels and word-map cycle types.",
+      "resolved": false
+    },
+    {
+      "obligation": "test_importance_sampling_and_control_variates",
+      "resolution": "The direct estimator may be far from optimal because known class marginals and parity sectors provide control variates.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_quantum_estimator_beats_best_classical_access_model",
+      "resolution": "No coherent estimator, matched query accounting, or classical lower bound exists.",
+      "resolved": false
+    }
+  ],
+  "query_model_matrix": [
+    {
+      "access_model": "full_table_over_permutation_triples",
+      "conclusion": "exact but factorial-sized classical baseline",
+      "cost": "|S_n|^3 word triples and six exact character evaluations per triple",
+      "legal": true
+    },
+    {
+      "access_model": "uniform_random_word_samples_plus_explicit_character_evaluator",
+      "conclusion": "rigorous Monte Carlo upper bound, conditional on evaluator cost",
+      "cost": "one random triple updates all eight Walsh coefficients",
+      "legal": true
+    },
+    {
+      "access_model": "chosen_word_queries",
+      "conclusion": "open importance-sampling and control-variate attack surface",
+      "cost": "queries may be chosen, but no variance-reducing proposal is proved",
+      "legal": true
+    },
+    {
+      "access_model": "unit_cost_exact_character_oracle",
+      "conclusion": "useful oracle baseline only; cannot establish an implemented runtime",
+      "cost": "strictly stronger than the explicit classical input model",
+      "legal": false
+    },
+    {
+      "access_model": "coherent_coset_state_and_fourier_sampling",
+      "conclusion": "not interchangeable with classical random-word samples",
+      "cost": "quantum source preparation and nonabelian Fourier operations must be counted",
+      "legal": false
+    }
+  ],
+  "status": "orientation-signal-reduced-to-classical-walsh-word-map-sign-problem",
+  "summary": "Reduced all eight orientation amplitudes to one classical word-map Walsh estimator and quantified, without overclaiming, the cancellation and character-evaluation barriers that remain.",
+  "theorem_contract": {
+    "normalization": "clip negatives; TV<=8 eta/T for T=sum_y mu_y and 8 eta<T",
+    "physical_mass_conversion": "P_orbit=8 D^2 T/|S_n|^3",
+    "sample_upper_bound": "N>=128 log(16/delta)/(epsilon^2 T^2)",
+    "scope": "sufficient classical random-word upper bound; no runtime lower bound",
+    "shared_estimator": "mu_y=A_y/D=E[Z(-1)^{<y,p>}] with |Z|<=1",
+    "simultaneous_concentration": "Pr(max_y |mu_hat_y-mu_y|>eta)<=16 exp(-N eta^2/2)"
+  }
+}

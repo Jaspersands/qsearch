@@ -1,0 +1,404 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Density 1/2^r and suffix rank r imply scalar saturation.",
+      "resolution": "False for modular fibers: their exact presentation is C_(2^r), not a free group of rank r.",
+      "resolved": true
+    },
+    {
+      "objection": "Finite Tietze reductions are being extrapolated in width.",
+      "resolution": "False: the adjacent m-subset proof is symbolic for every u>=m+1.",
+      "resolved": true
+    },
+    {
+      "objection": "A target character could restore the torsion loss.",
+      "resolution": "No normalized character exceeds one in magnitude, so it cannot restore missing unsigned homomorphism mass.",
+      "resolved": true
+    },
+    {
+      "objection": "The result eliminates all power-of-two automata.",
+      "resolution": "False: it covers the cyclic Hamming-weight automaton, not arbitrary nonabelian 2-group or non-group transition monoids.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "all_dyadic_automata_eliminated": false,
+    "cyclic_dyadic_scalar_saturation_falsified": true,
+    "cyclic_modular_fiber_presentation_classified": true,
+    "growing_modulus_eliminated": false,
+    "natural_component_M4_positive": false,
+    "nonabelian_dyadic_automata_eliminated": false,
+    "reason": "Fixed cyclic dyadic fibers collapse to C_m and lose scalar mass, but nonabelian and growing-state dyadic mechanisms remain open.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T20:32:16.825782+00:00",
+  "falsifiers_triggered": [
+    "The entropy generator count can be grossly loose on dyadic fibers.",
+    "Cyclic power-of-two mixing incurs a fixed torsion exponent loss.",
+    "Nonabelian dyadic transition structure remains the relevant boundary."
+  ],
+  "headline_metrics": {
+    "all_width_cyclic_presentation_theorem_count": 1,
+    "checked_modulus_count": 5,
+    "dyadic_modular_no_go_theorem_count": 1,
+    "minimum_checked_dyadic_true_scalar_margin": 0.5,
+    "minimum_limiting_dyadic_true_scalar_margin": 0.5,
+    "new_quantum_algorithm_count": 0,
+    "nonabelian_dyadic_survivor_count": 0
+  },
+  "presentation_controls": [
+    {
+      "adjacent_cancellation_witness_count": 2,
+      "adjacent_pair_count": 2,
+      "exact_cyclic_presentation_verified": true,
+      "expected_cyclic_relation_length": 2,
+      "expected_weight_m_relation_count": 3,
+      "fiber_size": 4,
+      "frame_position_count": 3,
+      "modulus": 2,
+      "status": "exact-modular-fiber-cyclic-presentation-control",
+      "tietze_remaining_generator_count": 1,
+      "tietze_residual_relations": [
+        [
+          -3,
+          -3
+        ]
+      ]
+    },
+    {
+      "adjacent_cancellation_witness_count": 3,
+      "adjacent_pair_count": 3,
+      "exact_cyclic_presentation_verified": true,
+      "expected_cyclic_relation_length": 3,
+      "expected_weight_m_relation_count": 4,
+      "fiber_size": 5,
+      "frame_position_count": 4,
+      "modulus": 3,
+      "status": "exact-modular-fiber-cyclic-presentation-control",
+      "tietze_remaining_generator_count": 1,
+      "tietze_residual_relations": [
+        [
+          -4,
+          -4,
+          -4
+        ]
+      ]
+    },
+    {
+      "adjacent_cancellation_witness_count": 4,
+      "adjacent_pair_count": 4,
+      "exact_cyclic_presentation_verified": true,
+      "expected_cyclic_relation_length": 4,
+      "expected_weight_m_relation_count": 5,
+      "fiber_size": 6,
+      "frame_position_count": 5,
+      "modulus": 4,
+      "status": "exact-modular-fiber-cyclic-presentation-control",
+      "tietze_remaining_generator_count": 1,
+      "tietze_residual_relations": [
+        [
+          -5,
+          -5,
+          -5,
+          -5
+        ]
+      ]
+    },
+    {
+      "adjacent_cancellation_witness_count": 5,
+      "adjacent_pair_count": 5,
+      "exact_cyclic_presentation_verified": true,
+      "expected_cyclic_relation_length": 5,
+      "expected_weight_m_relation_count": 6,
+      "fiber_size": 7,
+      "frame_position_count": 6,
+      "modulus": 5,
+      "status": "exact-modular-fiber-cyclic-presentation-control",
+      "tietze_remaining_generator_count": 1,
+      "tietze_residual_relations": [
+        [
+          -6,
+          -6,
+          -6,
+          -6,
+          -6
+        ]
+      ]
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "classify_all_width_modular_zero_fiber_presentation",
+      "resolution": "Adjacent m-subset cancellation proves P(U_(m,u))=C_m for every u>=m+1; Tietze rows are finite fingerprints only.",
+      "resolved": true
+    },
+    {
+      "obligation": "compute_modular_fiber_density",
+      "resolution": "The roots-of-unity filter gives exponential convergence to 1/m.",
+      "resolved": true
+    },
+    {
+      "obligation": "falsify_cyclic_dyadic_scalar_saturation",
+      "resolution": "C_m homomorphisms into S_n have exponent 1-1/m, giving fixed positive pressure loss even when m is a power of two.",
+      "resolved": true
+    },
+    {
+      "obligation": "classify_nonabelian_dyadic_automaton_fibers",
+      "resolution": "Search fixed 2-group transition monoids for a free-rank saturation with nontrivial target, or prove a bounded torsion/surface gap.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "density_codimension_bits": 1.0,
+      "density_deviation": 0.0,
+      "exact_fiber_density": 0.5,
+      "exact_fiber_size": 8,
+      "frame_position_count": 4,
+      "generic_suffix_generator_upper_bound": 1,
+      "limiting_fiber_density": 0.5,
+      "limiting_true_scalar_pressure_margin": 0.5,
+      "modulus": 2,
+      "modulus_is_power_of_two": true,
+      "roots_of_unity_deviation_upper_bound": 7.028998142781071e-66,
+      "status": "cyclic-torsion-gives-positive-scalar-gap",
+      "true_scalar_pressure_margin": 0.5,
+      "true_symmetric_group_frame_solution_exponent": 0.5
+    },
+    {
+      "density_codimension_bits": 1.0,
+      "density_deviation": 0.0,
+      "exact_fiber_density": 0.5,
+      "exact_fiber_size": 128,
+      "frame_position_count": 8,
+      "generic_suffix_generator_upper_bound": 1,
+      "limiting_fiber_density": 0.5,
+      "limiting_true_scalar_pressure_margin": 0.5,
+      "modulus": 2,
+      "modulus_is_power_of_two": true,
+      "roots_of_unity_deviation_upper_bound": 9.881362978243947e-131,
+      "status": "cyclic-torsion-gives-positive-scalar-gap",
+      "true_scalar_pressure_margin": 0.5,
+      "true_symmetric_group_frame_solution_exponent": 0.5
+    },
+    {
+      "density_codimension_bits": 1.0,
+      "density_deviation": 0.0,
+      "exact_fiber_density": 0.5,
+      "exact_fiber_size": 32768,
+      "frame_position_count": 16,
+      "generic_suffix_generator_upper_bound": 1,
+      "limiting_fiber_density": 0.5,
+      "limiting_true_scalar_pressure_margin": 0.5,
+      "modulus": 2,
+      "modulus_is_power_of_two": true,
+      "roots_of_unity_deviation_upper_bound": 1.9528266861562018e-260,
+      "status": "cyclic-torsion-gives-positive-scalar-gap",
+      "true_scalar_pressure_margin": 0.5,
+      "true_symmetric_group_frame_solution_exponent": 0.5
+    },
+    {
+      "density_codimension_bits": 1.5405683813627027,
+      "density_deviation": 0.010416666666666685,
+      "exact_fiber_density": 0.34375,
+      "exact_fiber_size": 22,
+      "frame_position_count": 6,
+      "generic_suffix_generator_upper_bound": 1,
+      "limiting_fiber_density": 0.3333333333333333,
+      "limiting_true_scalar_pressure_margin": 0.9182958340544893,
+      "modulus": 3,
+      "modulus_is_power_of_two": false,
+      "roots_of_unity_deviation_upper_bound": 0.01041666666666668,
+      "status": "cyclic-torsion-gives-positive-scalar-gap",
+      "true_scalar_pressure_margin": 0.873901714696036,
+      "true_symmetric_group_frame_solution_exponent": 0.6666666666666667
+    },
+    {
+      "density_codimension_bits": 1.5842582317099096,
+      "density_deviation": 0.00016276041666668517,
+      "exact_fiber_density": 0.33349609375,
+      "exact_fiber_size": 1366,
+      "frame_position_count": 12,
+      "generic_suffix_generator_upper_bound": 1,
+      "limiting_fiber_density": 0.3333333333333333,
+      "limiting_true_scalar_pressure_margin": 0.9182958340544893,
+      "modulus": 3,
+      "modulus_is_power_of_two": false,
+      "roots_of_unity_deviation_upper_bound": 0.0001627604166666671,
+      "status": "cyclic-torsion-gives-positive-scalar-gap",
+      "true_scalar_pressure_margin": 0.9175915650432429,
+      "true_symmetric_group_frame_solution_exponent": 0.6666666666666667
+    },
+    {
+      "density_codimension_bits": 1.5849623287385155,
+      "density_deviation": 3.9736429868764134e-08,
+      "exact_fiber_density": 0.3333333730697632,
+      "exact_fiber_size": 5592406,
+      "frame_position_count": 24,
+      "generic_suffix_generator_upper_bound": 1,
+      "limiting_fiber_density": 0.3333333333333333,
+      "limiting_true_scalar_pressure_margin": 0.9182958340544893,
+      "modulus": 3,
+      "modulus_is_power_of_two": false,
+      "roots_of_unity_deviation_upper_bound": 3.9736429850260626e-08,
+      "status": "cyclic-torsion-gives-positive-scalar-gap",
+      "true_scalar_pressure_margin": 0.9182956620718488,
+      "true_symmetric_group_frame_solution_exponent": 0.6666666666666667
+    },
+    {
+      "density_codimension_bits": 1.8300749985576876,
+      "density_deviation": 0.03125,
+      "exact_fiber_density": 0.28125,
+      "exact_fiber_size": 72,
+      "frame_position_count": 8,
+      "generic_suffix_generator_upper_bound": 1,
+      "limiting_fiber_density": 0.25,
+      "limiting_true_scalar_pressure_margin": 1.25,
+      "modulus": 4,
+      "modulus_is_power_of_two": true,
+      "roots_of_unity_deviation_upper_bound": 0.04687500000000002,
+      "status": "cyclic-torsion-gives-positive-scalar-gap",
+      "true_scalar_pressure_margin": 1.0800749985576876,
+      "true_symmetric_group_frame_solution_exponent": 0.75
+    },
+    {
+      "density_codimension_bits": 1.9887727445767458,
+      "density_deviation": 0.001953125,
+      "exact_fiber_density": 0.251953125,
+      "exact_fiber_size": 16512,
+      "frame_position_count": 16,
+      "generic_suffix_generator_upper_bound": 1,
+      "limiting_fiber_density": 0.25,
+      "limiting_true_scalar_pressure_margin": 1.25,
+      "modulus": 4,
+      "modulus_is_power_of_two": true,
+      "roots_of_unity_deviation_upper_bound": 0.0029296875000000035,
+      "status": "cyclic-torsion-gives-positive-scalar-gap",
+      "true_scalar_pressure_margin": 1.2387727445767458,
+      "true_symmetric_group_frame_solution_exponent": 0.75
+    },
+    {
+      "density_codimension_bits": 1.9999559731131726,
+      "density_deviation": 7.62939453125e-06,
+      "exact_fiber_density": 0.25000762939453125,
+      "exact_fiber_size": 1073774592,
+      "frame_position_count": 32,
+      "generic_suffix_generator_upper_bound": 1,
+      "limiting_fiber_density": 0.25,
+      "limiting_true_scalar_pressure_margin": 1.25,
+      "modulus": 4,
+      "modulus_is_power_of_two": true,
+      "roots_of_unity_deviation_upper_bound": 1.1444091796875025e-05,
+      "status": "cyclic-torsion-gives-positive-scalar-gap",
+      "true_scalar_pressure_margin": 1.2499559731131726,
+      "true_symmetric_group_frame_solution_exponent": 0.75
+    },
+    {
+      "density_codimension_bits": 2.3480513892765535,
+      "density_deviation": 0.0714111328125,
+      "exact_fiber_density": 0.1964111328125,
+      "exact_fiber_size": 12872,
+      "frame_position_count": 16,
+      "generic_suffix_generator_upper_bound": 2,
+      "limiting_fiber_density": 0.125,
+      "limiting_true_scalar_pressure_margin": 2.125,
+      "modulus": 8,
+      "modulus_is_power_of_two": true,
+      "roots_of_unity_deviation_upper_bound": 0.24652081097831902,
+      "status": "cyclic-torsion-gives-positive-scalar-gap",
+      "true_scalar_pressure_margin": 1.4730513892765535,
+      "true_symmetric_group_frame_solution_exponent": 0.875
+    },
+    {
+      "density_codimension_bits": 2.787389329505126,
+      "density_deviation": 0.019847899675369263,
+      "exact_fiber_density": 0.14484789967536926,
+      "exact_fiber_size": 622116992,
+      "frame_position_count": 32,
+      "generic_suffix_generator_upper_bound": 2,
+      "limiting_fiber_density": 0.125,
+      "limiting_true_scalar_pressure_margin": 2.125,
+      "modulus": 8,
+      "modulus_is_power_of_two": true,
+      "roots_of_unity_deviation_upper_bound": 0.06945429742332353,
+      "status": "cyclic-torsion-gives-positive-scalar-gap",
+      "true_scalar_pressure_margin": 1.912389329505126,
+      "true_symmetric_group_frame_solution_exponent": 0.875
+    },
+    {
+      "density_codimension_bits": 2.9819338907740294,
+      "density_deviation": 0.0015751508926786784,
+      "exact_fiber_density": 0.12657515089267868,
+      "exact_fiber_size": 2334899414608412672,
+      "frame_position_count": 64,
+      "generic_suffix_generator_upper_bound": 2,
+      "limiting_fiber_density": 0.125,
+      "limiting_true_scalar_pressure_margin": 2.125,
+      "modulus": 8,
+      "modulus_is_power_of_two": true,
+      "roots_of_unity_deviation_upper_bound": 0.005513027920648554,
+      "status": "cyclic-torsion-gives-positive-scalar-gap",
+      "true_scalar_pressure_margin": 2.1069338907740294,
+      "true_symmetric_group_frame_solution_exponent": 0.875
+    },
+    {
+      "density_codimension_bits": 2.8370172826046005,
+      "density_deviation": 0.07744993455708027,
+      "exact_fiber_density": 0.13994993455708027,
+      "exact_fiber_size": 601080392,
+      "frame_position_count": 32,
+      "generic_suffix_generator_upper_bound": 2,
+      "limiting_fiber_density": 0.0625,
+      "limiting_true_scalar_pressure_margin": 3.0625,
+      "modulus": 16,
+      "modulus_is_power_of_two": true,
+      "roots_of_unity_deviation_upper_bound": 0.503891851545708,
+      "status": "cyclic-torsion-gives-positive-scalar-gap",
+      "true_scalar_pressure_margin": 1.8995172826046005,
+      "true_symmetric_group_frame_solution_exponent": 0.9375
+    },
+    {
+      "density_codimension_bits": 3.330614402726415,
+      "density_deviation": 0.03689971994461683,
+      "exact_fiber_density": 0.09939971994461683,
+      "exact_fiber_size": 1833601194816749696,
+      "frame_position_count": 64,
+      "generic_suffix_generator_upper_bound": 3,
+      "limiting_fiber_density": 0.0625,
+      "limiting_true_scalar_pressure_margin": 3.0625,
+      "modulus": 16,
+      "modulus_is_power_of_two": true,
+      "roots_of_unity_deviation_upper_bound": 0.27083413125777267,
+      "status": "cyclic-torsion-gives-positive-scalar-gap",
+      "true_scalar_pressure_margin": 2.393114402726415,
+      "true_symmetric_group_frame_solution_exponent": 0.9375
+    },
+    {
+      "density_codimension_bits": 3.7772029070176307,
+      "density_deviation": 0.010437122442434527,
+      "exact_fiber_density": 0.07293712244243453,
+      "exact_fiber_size": 24819216661113918950564121503632228352,
+      "frame_position_count": 128,
+      "generic_suffix_generator_upper_bound": 3,
+      "limiting_fiber_density": 0.0625,
+      "limiting_true_scalar_pressure_margin": 3.0625,
+      "modulus": 16,
+      "modulus_is_power_of_two": true,
+      "roots_of_unity_deviation_upper_bound": 0.07824120176442927,
+      "status": "cyclic-torsion-gives-positive-scalar-gap",
+      "true_scalar_pressure_margin": 2.8397029070176307,
+      "true_symmetric_group_frame_solution_exponent": 0.9375
+    }
+  ],
+  "status": "cyclic-dyadic-automaton-route-falsified",
+  "summary": "Proved every fixed modular zero fiber is cyclic and used its torsion exponent to kill the simplest dyadic saturation route.",
+  "theorem_contract": {
+    "density_bound": "The roots-of-unity filter gives ||U|/2^u-1/m| <= ((m-1)/m)cos(pi/m)^u.",
+    "dyadic_consequence": "For fixed m=2^r, true limiting scalar margin is r-1+1/m>0.",
+    "fiber": "U_(m,u)={v in F_2^u: HammingWeight(v)=0 mod m}.",
+    "presentation_isomorphism": "For u>=m+1, adjacent m-subset relations identify all x_i and an m-subset gives x^m=1; every other relation follows. Thus P(U)=C_m.",
+    "scope": "This kills cyclic Hamming-mod-m automata only. Nonabelian dyadic fibers, growing m, and interleaved leaves are not covered.",
+    "symmetric_group_torsion_exponent": "The cycle index for permutations with cycle lengths dividing m gives #Hom(C_m,S_n)=|S_n|^(1-1/m+o(1))."
+  }
+}

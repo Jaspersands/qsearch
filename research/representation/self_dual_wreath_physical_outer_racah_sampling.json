@@ -1,0 +1,1629 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Uniformly sampling four partitions estimates the physical law.",
+      "resolution": "It does not; equation (1) requires Plancherel source weights and multiplicity-biased final labels.",
+      "resolved": true
+    },
+    {
+      "objection": "A low sample mean is sufficient evidence of decay.",
+      "resolution": "The report includes a support-size Hoeffding radius and forbids asymptotic inference.",
+      "resolved": true
+    },
+    {
+      "objection": "Mutual-information confidence also controls fractional moments.",
+      "resolution": "Fractional moments have a larger multiplicity-dependent range and receive a separate radius.",
+      "resolved": true
+    },
+    {
+      "objection": "Classical compilation of the statistic demonstrates a quantum primitive.",
+      "resolution": "It is a dephased diagnostic only and supplies no coherent associator or decoder.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "classical_separation_proved": false,
+    "coherent_racah_transform_polynomial_proved": false,
+    "exact_physical_outer_sampler_verified": true,
+    "finite_n6_interval_is_asymptotic_evidence": false,
+    "physical_average_racah_mi_sublogarithmic_proved": false,
+    "reason": "The finite estimator now targets the correct physical average, but its confidence and representation cost do not establish a growing-n theorem.",
+    "sampled_complete_couplings_verified": true,
+    "selected_outer_bias_removed_for_finite_runs": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-14T00:59:23.318983+00:00",
+  "falsifiers_triggered": [
+    "Uniform partition sampling is not the physical outer-label law.",
+    "A favorable maximal-dimension sector does not estimate the physical average.",
+    "Finite low means without confidence radii are not evidence of asymptotic delocalization."
+  ],
+  "headline_metrics": {
+    "asymptotically_decisive_sampling_run_count": 0,
+    "exact_outer_sampler_normalization_count": 4,
+    "n6_maximum_fractional_excess_to_theta_haar_upper_ratio": 0.4586085111894021,
+    "n6_maximum_natural_to_haar_chi_ratio": 0.6094637281379065,
+    "n6_median_fractional_excess_to_theta_haar_upper_ratio": 0.21358826949251053,
+    "n6_median_natural_to_haar_chi_ratio": 0.27024950493706656,
+    "n6_mi_hoeffding_radius_bits": 1.3562706429688567,
+    "n6_sample_count": 12,
+    "n6_sample_mean_racah_mi_bits": 0.06570483213434214,
+    "natural_racah_mi_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "physical_outer_sampling_run_count": 2,
+    "sampling_control_failure_count": 0,
+    "total_complete_coupling_sample_count": 36
+  },
+  "normalization_controls": [
+    {
+      "exact_sequential_sampler_verified": true,
+      "maximum_conditional_probability_sum_residual": 0.0,
+      "maximum_dimension_identity_residual": 0,
+      "minimum_positive_conditional_probability": 0.125,
+      "n": 3,
+      "partition_count": 3,
+      "source_triple_count": 27,
+      "status": "physical-outer-sequential-sampler-exactly-normalized"
+    },
+    {
+      "exact_sequential_sampler_verified": true,
+      "maximum_conditional_probability_sum_residual": 0.0,
+      "maximum_dimension_identity_residual": 0,
+      "minimum_positive_conditional_probability": 0.037037037037037035,
+      "n": 4,
+      "partition_count": 5,
+      "source_triple_count": 125,
+      "status": "physical-outer-sequential-sampler-exactly-normalized"
+    },
+    {
+      "exact_sequential_sampler_verified": true,
+      "maximum_conditional_probability_sum_residual": 0.0,
+      "maximum_dimension_identity_residual": 0,
+      "minimum_positive_conditional_probability": 0.004629629629629629,
+      "n": 5,
+      "partition_count": 7,
+      "source_triple_count": 343,
+      "status": "physical-outer-sequential-sampler-exactly-normalized"
+    },
+    {
+      "exact_sequential_sampler_verified": true,
+      "maximum_conditional_probability_sum_residual": 0.0,
+      "maximum_dimension_identity_residual": 0,
+      "minimum_positive_conditional_probability": 0.001,
+      "n": 6,
+      "partition_count": 11,
+      "source_triple_count": 1331,
+      "status": "physical-outer-sequential-sampler-exactly-normalized"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_and_validate_exact_physical_outer_sampler",
+      "resolution": "The triple tensor dimension identity normalizes every conditional final-label law through S6.",
+      "resolved": true
+    },
+    {
+      "obligation": "remove_selected_outer_sector_bias",
+      "resolution": "Outer tuples are sampled from the exact physical marginal before their coupling is compiled.",
+      "resolved": true
+    },
+    {
+      "obligation": "obtain_asymptotically_decisive_confidence",
+      "resolution": "Finite S6 intervals and an exponential representation cost cannot prove an all-n rate.",
+      "resolved": false
+    },
+    {
+      "obligation": "importance_sample_fractional_moment_tails",
+      "resolution": "Worst-case multiplicity makes the current fractional-moment Hoeffding radius broad.",
+      "resolved": false
+    }
+  ],
+  "sampling_records": [
+    {
+      "all_sampled_couplings_verified": true,
+      "asymptotic_inference_allowed": false,
+      "confidence_level": 0.95,
+      "duplicate_sample_count": 0,
+      "exact_average_inside_mi_confidence_interval": true,
+      "exact_finite_physical_average_mi_bits": 0.23736799519617469,
+      "fractional_moment_hoeffding_radius": 0.7223143405628,
+      "fractional_moment_range_upper": 3.605551275463989,
+      "fractional_order_theta": 0.5,
+      "global_maximum_total_multiplicity": 13,
+      "maximum_complete_coupling_residual": 9.769962616701378e-15,
+      "maximum_fractional_excess_to_theta_haar_upper_ratio": 0.4568632345123915,
+      "maximum_natural_to_orthogonal_haar_chi_ratio": 0.5905791859567933,
+      "median_fractional_excess_to_theta_haar_upper_ratio": 0.2901548635681159,
+      "median_natural_to_orthogonal_haar_chi_ratio": 0.35870145318930097,
+      "mutual_information_confidence_lower_bits": 0.0,
+      "mutual_information_confidence_upper_bits": 1.0200423990398144,
+      "mutual_information_hoeffding_radius_bits": 0.7782586120438814,
+      "mutual_information_range_upper_bits": 2.807354922057604,
+      "n": 5,
+      "positive_natural_chi_sample_count": 22,
+      "random_seed": 20260813,
+      "sample_count": 24,
+      "sample_mean_fractional_dependence_moment": 1.1112850720931613,
+      "sample_mean_racah_mutual_information_bits": 0.24178378699593298,
+      "sample_standard_error_bits": 0.022004923037642392,
+      "samples": [
+        {
+          "complete_block_count": 20,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.1160737887389802,
+          "conditional_racah_mutual_information_bits": 0.24054408929610452,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.20833333333333334,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.27083884039095385,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.29683641975308417,
+          "natural_fractional_dependence_excess": 0.11607378873898022,
+          "natural_to_orthogonal_haar_chi_ratio": 0.3463091563785982,
+          "orthogonal_haar_expected_chi_square": 0.8571428571428571,
+          "outer_partitions": [
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.001736111111111111,
+          "sample_index": 0,
+          "total_multiplicity_dimension": 5
+        },
+        {
+          "complete_block_count": 12,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.1115653260834988,
+          "conditional_racah_mutual_information_bits": 0.244418623628148,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.20833333333333334,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.33469597825049635,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.28477044753086367,
+          "natural_fractional_dependence_excess": 0.11156532608349878,
+          "natural_to_orthogonal_haar_chi_ratio": 0.4271556712962955,
+          "orthogonal_haar_expected_chi_square": 0.6666666666666666,
+          "outer_partitions": [
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0011111111111111111,
+          "sample_index": 1,
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "complete_block_count": 25,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.1511812576189369,
+          "conditional_racah_mutual_information_bits": 0.33223094598287106,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.20833333333333334,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.37795314404734215,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.3757716049382698,
+          "natural_fractional_dependence_excess": 0.15118125761893686,
+          "natural_to_orthogonal_haar_chi_ratio": 0.4697145061728372,
+          "orthogonal_haar_expected_chi_square": 0.8,
+          "outer_partitions": [
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0025,
+          "sample_index": 2,
+          "total_multiplicity_dimension": 6
+        },
+        {
+          "complete_block_count": 25,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.151181257618935,
+          "conditional_racah_mutual_information_bits": 0.3322309459828693,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.13333333333333333,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.3779531440473377,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.3757716049382671,
+          "natural_fractional_dependence_excess": 0.15118125761893508,
+          "natural_to_orthogonal_haar_chi_ratio": 0.4697145061728339,
+          "orthogonal_haar_expected_chi_square": 0.8,
+          "outer_partitions": [
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              4,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0025,
+          "sample_index": 3,
+          "total_multiplicity_dimension": 6
+        },
+        {
+          "complete_block_count": 20,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.063132688933504,
+          "conditional_racah_mutual_information_bits": 0.13944456214344456,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.3125,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.14730960751150932,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.15784143518518534,
+          "natural_fractional_dependence_excess": 0.06313268893350399,
+          "natural_to_orthogonal_haar_chi_ratio": 0.1841483410493829,
+          "orthogonal_haar_expected_chi_square": 0.8571428571428571,
+          "outer_partitions": [
+            [
+              4,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0016666666666666668,
+          "sample_index": 4,
+          "total_multiplicity_dimension": 5
+        },
+        {
+          "complete_block_count": 12,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.1115653260834977,
+          "conditional_racah_mutual_information_bits": 0.2444186236281469,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.20833333333333334,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.334695978250493,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.28477044753086145,
+          "natural_fractional_dependence_excess": 0.11156532608349767,
+          "natural_to_orthogonal_haar_chi_ratio": 0.42715567129629217,
+          "orthogonal_haar_expected_chi_square": 0.6666666666666666,
+          "outer_partitions": [
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0011111111111111111,
+          "sample_index": 5,
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "complete_block_count": 9,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.121570859918583,
+          "conditional_racah_mutual_information_bits": 0.28200649877117834,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.1875,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.3039271497964574,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.2968749999999982,
+          "natural_fractional_dependence_excess": 0.12157085991858296,
+          "natural_to_orthogonal_haar_chi_ratio": 0.3710937499999978,
+          "orthogonal_haar_expected_chi_square": 0.8,
+          "outer_partitions": [
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0006944444444444445,
+          "sample_index": 6,
+          "total_multiplicity_dimension": 3
+        },
+        {
+          "complete_block_count": 25,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.1105530309359097,
+          "conditional_racah_mutual_information_bits": 0.23945395389270294,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.2,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.27638257733977434,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.2738160493827162,
+          "natural_fractional_dependence_excess": 0.11055303093590974,
+          "natural_to_orthogonal_haar_chi_ratio": 0.34227006172839525,
+          "orthogonal_haar_expected_chi_square": 0.8,
+          "outer_partitions": [
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0026041666666666665,
+          "sample_index": 7,
+          "total_multiplicity_dimension": 6
+        },
+        {
+          "complete_block_count": 16,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.0619337438069907,
+          "conditional_racah_mutual_information_bits": 0.12376492216939261,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.2,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.12386748761398136,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.1622299382716048,
+          "natural_fractional_dependence_excess": 0.06193374380699068,
+          "natural_to_orthogonal_haar_chi_ratio": 0.1622299382716048,
+          "orthogonal_haar_expected_chi_square": 1.0,
+          "outer_partitions": [
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0011574074074074073,
+          "sample_index": 8,
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "complete_block_count": 25,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.1511812576189395,
+          "conditional_racah_mutual_information_bits": 0.33223094598287384,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.3,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.3779531440473488,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.375771604938274,
+          "natural_fractional_dependence_excess": 0.15118125761893952,
+          "natural_to_orthogonal_haar_chi_ratio": 0.4697145061728425,
+          "orthogonal_haar_expected_chi_square": 0.8,
+          "outer_partitions": [
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0025,
+          "sample_index": 9,
+          "total_multiplicity_dimension": 6
+        },
+        {
+          "complete_block_count": 9,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.1071583560865035,
+          "conditional_racah_mutual_information_bits": 0.23589182051994245,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.28125,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.2678958902162587,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.2623456790123462,
+          "natural_fractional_dependence_excess": 0.10715835608650348,
+          "natural_to_orthogonal_haar_chi_ratio": 0.3279320987654327,
+          "orthogonal_haar_expected_chi_square": 0.8,
+          "outer_partitions": [
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0006666666666666666,
+          "sample_index": 10,
+          "total_multiplicity_dimension": 3
+        },
+        {
+          "complete_block_count": 1,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.0000000000000027,
+          "conditional_racah_mutual_information_bits": 2.5627412030519365e-15,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.4,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.0,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 3.552713678800501e-15,
+          "natural_fractional_dependence_excess": 2.6645352591003757e-15,
+          "natural_to_orthogonal_haar_chi_ratio": 0.0,
+          "orthogonal_haar_expected_chi_square": 0.0,
+          "outer_partitions": [
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.00020833333333333335,
+          "sample_index": 11,
+          "total_multiplicity_dimension": 2
+        },
+        {
+          "complete_block_count": 25,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.1511812576189375,
+          "conditional_racah_mutual_information_bits": 0.33223094598287195,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.3,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.3779531440473438,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.3757716049382711,
+          "natural_fractional_dependence_excess": 0.15118125761893753,
+          "natural_to_orthogonal_haar_chi_ratio": 0.4697145061728389,
+          "orthogonal_haar_expected_chi_square": 0.8,
+          "outer_partitions": [
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0025,
+          "sample_index": 12,
+          "total_multiplicity_dimension": 6
+        },
+        {
+          "complete_block_count": 20,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.1160737887389836,
+          "conditional_racah_mutual_information_bits": 0.24054408929610788,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.3,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.2708388403909616,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.2968364197530893,
+          "natural_fractional_dependence_excess": 0.11607378873898355,
+          "natural_to_orthogonal_haar_chi_ratio": 0.34630915637860415,
+          "orthogonal_haar_expected_chi_square": 0.8571428571428571,
+          "outer_partitions": [
+            [
+              4,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              1,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.001736111111111111,
+          "sample_index": 13,
+          "total_multiplicity_dimension": 5
+        },
+        {
+          "complete_block_count": 16,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.2284316172561958,
+          "conditional_racah_mutual_information_bits": 0.4743380870828943,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.20833333333333334,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.4568632345123915,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.5905791859567933,
+          "natural_fractional_dependence_excess": 0.22843161725619576,
+          "natural_to_orthogonal_haar_chi_ratio": 0.5905791859567933,
+          "orthogonal_haar_expected_chi_square": 1.0,
+          "outer_partitions": [
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "outer_tuple_probability": 0.0011111111111111111,
+          "sample_index": 14,
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "complete_block_count": 25,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.1511812576189366,
+          "conditional_racah_mutual_information_bits": 0.3322309459828709,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.20833333333333334,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.3779531440473416,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.3757716049382698,
+          "natural_fractional_dependence_excess": 0.15118125761893664,
+          "natural_to_orthogonal_haar_chi_ratio": 0.4697145061728372,
+          "orthogonal_haar_expected_chi_square": 0.8,
+          "outer_partitions": [
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0025,
+          "sample_index": 15,
+          "total_multiplicity_dimension": 6
+        },
+        {
+          "complete_block_count": 20,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.0487742961761217,
+          "conditional_racah_mutual_information_bits": 0.1022849554690171,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.20833333333333334,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.1625809872537391,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.12268518518518179,
+          "natural_fractional_dependence_excess": 0.04877429617612172,
+          "natural_to_orthogonal_haar_chi_ratio": 0.20447530864196967,
+          "orthogonal_haar_expected_chi_square": 0.6,
+          "outer_partitions": [
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0025,
+          "sample_index": 16,
+          "total_multiplicity_dimension": 6
+        },
+        {
+          "complete_block_count": 25,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.1511812576189386,
+          "conditional_racah_mutual_information_bits": 0.33223094598287317,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.3,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.3779531440473466,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.3757716049382729,
+          "natural_fractional_dependence_excess": 0.15118125761893864,
+          "natural_to_orthogonal_haar_chi_ratio": 0.4697145061728411,
+          "orthogonal_haar_expected_chi_square": 0.8,
+          "outer_partitions": [
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0025,
+          "sample_index": 17,
+          "total_multiplicity_dimension": 6
+        },
+        {
+          "complete_block_count": 9,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.1215708599185839,
+          "conditional_racah_mutual_information_bits": 0.28200649877117917,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.12,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.30392714979645963,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.29687499999999956,
+          "natural_fractional_dependence_excess": 0.12157085991858385,
+          "natural_to_orthogonal_haar_chi_ratio": 0.37109374999999944,
+          "orthogonal_haar_expected_chi_square": 0.8,
+          "outer_partitions": [
+            [
+              3,
+              2
+            ],
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0006944444444444445,
+          "sample_index": 18,
+          "total_multiplicity_dimension": 3
+        },
+        {
+          "complete_block_count": 1,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 0.9999999999999993,
+          "conditional_racah_mutual_information_bits": 0.0,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.006944444444444444,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.0,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.0,
+          "natural_fractional_dependence_excess": 0.0,
+          "natural_to_orthogonal_haar_chi_ratio": 0.0,
+          "orthogonal_haar_expected_chi_square": 0.0,
+          "outer_partitions": [
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 8.333333333333333e-05,
+          "sample_index": 19,
+          "total_multiplicity_dimension": 1
+        },
+        {
+          "complete_block_count": 12,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.1115653260835,
+          "conditional_racah_mutual_information_bits": 0.2444186236281492,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.3,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.3346959782504997,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.2847704475308652,
+          "natural_fractional_dependence_excess": 0.1115653260834999,
+          "natural_to_orthogonal_haar_chi_ratio": 0.42715567129629783,
+          "orthogonal_haar_expected_chi_square": 0.6666666666666666,
+          "outer_partitions": [
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              1,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0011111111111111111,
+          "sample_index": 20,
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "complete_block_count": 20,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.1160737887389816,
+          "conditional_racah_mutual_information_bits": 0.24054408929610574,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.20833333333333334,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.27083884039095696,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.2968364197530857,
+          "natural_fractional_dependence_excess": 0.11607378873898155,
+          "natural_to_orthogonal_haar_chi_ratio": 0.34630915637860005,
+          "orthogonal_haar_expected_chi_square": 0.8571428571428571,
+          "outer_partitions": [
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.001736111111111111,
+          "sample_index": 21,
+          "total_multiplicity_dimension": 5
+        },
+        {
+          "complete_block_count": 25,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.1105530309359088,
+          "conditional_racah_mutual_information_bits": 0.239453953892702,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.2,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.2763825773397721,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.27381604938271487,
+          "natural_fractional_dependence_excess": 0.11055303093590885,
+          "natural_to_orthogonal_haar_chi_ratio": 0.3422700617283936,
+          "orthogonal_haar_expected_chi_square": 0.8,
+          "outer_partitions": [
+            [
+              2,
+              2,
+              1
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              3,
+              1,
+              1
+            ],
+            [
+              3,
+              2
+            ]
+          ],
+          "outer_tuple_probability": 0.0026041666666666665,
+          "sample_index": 22,
+          "total_multiplicity_dimension": 6
+        },
+        {
+          "complete_block_count": 9,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.1071583560865041,
+          "conditional_racah_mutual_information_bits": 0.23589182051994312,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.28125,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.26789589021626037,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.2623456790123473,
+          "natural_fractional_dependence_excess": 0.10715835608650415,
+          "natural_to_orthogonal_haar_chi_ratio": 0.3279320987654341,
+          "orthogonal_haar_expected_chi_square": 0.8,
+          "outer_partitions": [
+            [
+              4,
+              1
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0006666666666666666,
+          "sample_index": 23,
+          "total_multiplicity_dimension": 3
+        }
+      ],
+      "status": "physical-outer-racah-monte-carlo-complete-couplings-verified",
+      "unique_outer_tuple_count": 24
+    },
+    {
+      "all_sampled_couplings_verified": true,
+      "asymptotic_inference_allowed": false,
+      "confidence_level": 0.95,
+      "duplicate_sample_count": 0,
+      "exact_average_inside_mi_confidence_interval": null,
+      "exact_finite_physical_average_mi_bits": null,
+      "fractional_moment_hoeffding_radius": 3.3887444723731854,
+      "fractional_moment_range_upper": 9.643650760992955,
+      "fractional_order_theta": 0.5,
+      "global_maximum_total_multiplicity": 93,
+      "maximum_complete_coupling_residual": 7.105427357601002e-14,
+      "maximum_fractional_excess_to_theta_haar_upper_ratio": 0.4586085111894021,
+      "maximum_natural_to_orthogonal_haar_chi_ratio": 0.6094637281379065,
+      "median_fractional_excess_to_theta_haar_upper_ratio": 0.21358826949251053,
+      "median_natural_to_orthogonal_haar_chi_ratio": 0.27024950493706656,
+      "mutual_information_confidence_lower_bits": 0.0,
+      "mutual_information_confidence_upper_bits": 1.4219754751031988,
+      "mutual_information_hoeffding_radius_bits": 1.3562706429688567,
+      "mutual_information_range_upper_bits": 3.4594316186372973,
+      "n": 6,
+      "positive_natural_chi_sample_count": 12,
+      "random_seed": 20260814,
+      "sample_count": 12,
+      "sample_mean_fractional_dependence_moment": 1.0320835216976318,
+      "sample_mean_racah_mutual_information_bits": 0.06570483213434214,
+      "sample_standard_error_bits": 0.011466876569991308,
+      "samples": [
+        {
+          "complete_block_count": 25,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.0459314632627468,
+          "conditional_racah_mutual_information_bits": 0.09380694031896132,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.15555555555555556,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.15501868851177036,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.11850694444444176,
+          "natural_fractional_dependence_excess": 0.045931463262746774,
+          "natural_to_orthogonal_haar_chi_ratio": 0.19998046874999548,
+          "orthogonal_haar_expected_chi_square": 0.5925925925925926,
+          "outer_partitions": [
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 8.439429012345679e-05,
+          "sample_index": 0,
+          "total_multiplicity_dimension": 7
+        },
+        {
+          "complete_block_count": 35,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.0081269346078328,
+          "conditional_racah_mutual_information_bits": 0.015971754880035573,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.034722222222222224,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.09142801433811854,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.021273621559930733,
+          "natural_fractional_dependence_excess": 0.008126934607832759,
+          "natural_to_orthogonal_haar_chi_ratio": 0.11966412127461037,
+          "orthogonal_haar_expected_chi_square": 0.17777777777777778,
+          "outer_partitions": [
+            [
+              2,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0004938271604938272,
+          "sample_index": 1,
+          "total_multiplicity_dimension": 16
+        },
+        {
+          "complete_block_count": 49,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.0394973837388002,
+          "conditional_racah_mutual_information_bits": 0.08072013330810197,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.1125,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.4586085111894021,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.10497939814815616,
+          "natural_fractional_dependence_excess": 0.039497383738800185,
+          "natural_to_orthogonal_haar_chi_ratio": 0.6094637281379065,
+          "orthogonal_haar_expected_chi_square": 0.1722488038277512,
+          "outer_partitions": [
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0007716049382716049,
+          "sample_index": 2,
+          "total_multiplicity_dimension": 20
+        },
+        {
+          "complete_block_count": 63,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.0306509197909501,
+          "conditional_racah_mutual_information_bits": 0.05952313363940625,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.1388888888888889,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.26691842651285747,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.08278431230710348,
+          "natural_fractional_dependence_excess": 0.030650919790950137,
+          "natural_to_orthogonal_haar_chi_ratio": 0.36045669317051304,
+          "orthogonal_haar_expected_chi_square": 0.22966507177033493,
+          "outer_partitions": [
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0007716049382716049,
+          "sample_index": 3,
+          "total_multiplicity_dimension": 20
+        },
+        {
+          "complete_block_count": 25,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.0529227210239511,
+          "conditional_racah_mutual_information_bits": 0.10643964367798385,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.035,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.17861418345583505,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.1377782600308637,
+          "natural_fractional_dependence_excess": 0.052922721023951125,
+          "natural_to_orthogonal_haar_chi_ratio": 0.23250081380208248,
+          "orthogonal_haar_expected_chi_square": 0.5925925925925926,
+          "outer_partitions": [
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              5,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 9.377143347050754e-05,
+          "sample_index": 4,
+          "total_multiplicity_dimension": 7
+        },
+        {
+          "complete_block_count": 12,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.0607614940491166,
+          "conditional_racah_mutual_information_bits": 0.13278823465276068,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.03125,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.28355363889587737,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.154791666666664,
+          "natural_fractional_dependence_excess": 0.06076149404911657,
+          "natural_to_orthogonal_haar_chi_ratio": 0.36118055555554934,
+          "orthogonal_haar_expected_chi_square": 0.42857142857142855,
+          "outer_partitions": [
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              2
+            ]
+          ],
+          "outer_tuple_probability": 5.358367626886145e-05,
+          "sample_index": 5,
+          "total_multiplicity_dimension": 5
+        },
+        {
+          "complete_block_count": 63,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.007395929163872,
+          "conditional_racah_mutual_information_bits": 0.015018816751854507,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.35802469135802467,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.13374305238002057,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.01892723866050061,
+          "natural_fractional_dependence_excess": 0.007395929163872106,
+          "natural_to_orthogonal_haar_chi_ratio": 0.17113378288869302,
+          "orthogonal_haar_expected_chi_square": 0.11059907834101383,
+          "outer_partitions": [
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              3,
+              2,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0016111111111111111,
+          "sample_index": 6,
+          "total_multiplicity_dimension": 29
+        },
+        {
+          "complete_block_count": 81,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.0261642627558754,
+          "conditional_racah_mutual_information_bits": 0.053786726734320355,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.352,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.20604356920251843,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.06685689139660522,
+          "natural_fractional_dependence_excess": 0.026164262755875356,
+          "natural_to_orthogonal_haar_chi_ratio": 0.2632490098741331,
+          "orthogonal_haar_expected_chi_square": 0.25396825396825395,
+          "outer_partitions": [
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0009430727023319616,
+          "sample_index": 7,
+          "total_multiplicity_dimension": 22
+        },
+        {
+          "complete_block_count": 81,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.0033538501056694,
+          "conditional_racah_mutual_information_bits": 0.006527117309834289,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.3541666666666667,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.13887035593787167,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.008865987957067833,
+          "natural_fractional_dependence_excess": 0.0033538501056693537,
+          "natural_to_orthogonal_haar_chi_ratio": 0.18355365692367,
+          "orthogonal_haar_expected_chi_square": 0.04830188679245283,
+          "outer_partitions": [
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              3,
+              2,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.005037037037037037,
+          "sample_index": 8,
+          "total_multiplicity_dimension": 51
+        },
+        {
+          "complete_block_count": 25,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.0440420024472583,
+          "conditional_racah_mutual_information_bits": 0.0888756705309185,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.1111111111111111,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.2972835165189936,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.11607950412475532,
+          "natural_fractional_dependence_excess": 0.04404200244725831,
+          "natural_to_orthogonal_haar_chi_ratio": 0.3917683264210492,
+          "orthogonal_haar_expected_chi_square": 0.2962962962962963,
+          "outer_partitions": [
+            [
+              3,
+              1,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              2,
+              2,
+              1,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0001953125,
+          "sample_index": 9,
+          "total_multiplicity_dimension": 10
+        },
+        {
+          "complete_block_count": 25,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.044042002447259,
+          "conditional_racah_mutual_information_bits": 0.08887567053091937,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.1111111111111111,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.2972835165189981,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.11607950412475665,
+          "natural_fractional_dependence_excess": 0.04404200244725898,
+          "natural_to_orthogonal_haar_chi_ratio": 0.3917683264210537,
+          "orthogonal_haar_expected_chi_square": 0.2962962962962963,
+          "outer_partitions": [
+            [
+              2,
+              2,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              1,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 0.0001953125,
+          "sample_index": 10,
+          "total_multiplicity_dimension": 10
+        },
+        {
+          "complete_block_count": 10,
+          "complete_coupling_verified": true,
+          "conditional_fractional_dependence_moment": 1.0221132969782503,
+          "conditional_racah_mutual_information_bits": 0.04612414327700893,
+          "duplicate_outer_tuple": false,
+          "final_conditional_probability": 0.0375,
+          "fractional_excess_to_theta_haar_chi_upper_ratio": 0.22113296978250263,
+          "fractional_order_theta": 0.5,
+          "natural_dependence_chi_square": 0.05545,
+          "natural_fractional_dependence_excess": 0.022113296978250263,
+          "natural_to_orthogonal_haar_chi_ratio": 0.27725,
+          "orthogonal_haar_expected_chi_square": 0.2,
+          "outer_partitions": [
+            [
+              3,
+              2,
+              1
+            ],
+            [
+              4,
+              1,
+              1
+            ],
+            [
+              2,
+              2,
+              2
+            ],
+            [
+              2,
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "outer_tuple_probability": 6.430041152263375e-05,
+          "sample_index": 11,
+          "total_multiplicity_dimension": 6
+        }
+      ],
+      "status": "physical-outer-racah-monte-carlo-complete-couplings-verified",
+      "unique_outer_tuple_count": 12
+    }
+  ],
+  "status": "physical-outer-racah-sampler-verified-asymptotic-rate-open",
+  "summary": "Replaced selected-sector Racah diagnostics by exact physical-law outer sampling with complete couplings.",
+  "theorem_contract": {
+    "confidence_method": "two-sided Hoeffding interval",
+    "estimated_quantity": "E_(P_outer) I_pi(mu;nu|outer)",
+    "nonhaar_target": "(S_1(outer)-1)/E_Haar[S_1(outer)-1] for every sampled outer tuple",
+    "normalization_identity": "sum_lambda d_lambda M=d_alpha d_beta d_gamma",
+    "physical_outer_law": "P_outer=d_alpha d_beta d_gamma d_lambda M/|S_n|^3",
+    "rigorous_mi_range": "0<=I<=log2 p(n)",
+    "scope": "finite classical Monte Carlo with exact conditional couplings; no asymptotic extrapolation",
+    "sequential_sampler": "alpha,beta,gamma iid Plancherel; lambda conditional proportional to d_lambda M"
+  }
+}

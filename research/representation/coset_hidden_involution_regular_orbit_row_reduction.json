@@ -1,0 +1,205 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False after canonicalization: regular K induction fuses exactly into a regular G coordinate.",
+      "challenge": "The high-mass source still needs generic K fusion.",
+      "resolved": true
+    },
+    {
+      "answer": "False: different orbit copies have nonzero cross-Gram blocks, and even the exact S_3 control has a proper source kernel.",
+      "challenge": "A regular G source makes synthesis unitary.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It removes carrier convolution but leaves the full orbit-copy row operator inside multiplicity.",
+      "challenge": "The G QFT implements the row polar.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "full_orbit_synthesis_polar_compiled": false,
+    "generic_hyperoctahedral_cg_required_on_trimmed_source": false,
+    "orbit_representative_row_frame_formalized": true,
+    "orbit_representative_row_polar_compiled": false,
+    "physical_regular_and_orbit_labels_erased": false,
+    "reason": "The source covariance and multiplicity basis reduce to regular G copies, but their coupled physical row-frame polar and label erasure remain the unresolved algorithmic operator.",
+    "speedup_claim_allowed": false,
+    "trimmed_source_induces_to_regular_G_copies": true
+  },
+  "created_at": "2026-08-13T16:53:34.273030+00:00",
+  "falsifiers_triggered": [
+    "Generic hyperoctahedral Clebsch-Gordan fusion is not required on the canonicalized high-mass source.",
+    "Regular source covariance does not make the physical synthesis isometric across orbit copies.",
+    "The symmetric-group QFT does not resolve orbit-representative row orientation or polar weights."
+  ],
+  "finite_control": {
+    "canonicalization_alone_is_polar": false,
+    "copy_count": 2,
+    "exact_regular_orbit_row_reduction_verified": true,
+    "free_fiber_orbit_count": 4,
+    "free_fiber_tuple_count": 8,
+    "group_order": 6,
+    "maximum_column_norm_residual": 4.440892098500626e-16,
+    "maximum_covariance_residual": 0.0,
+    "maximum_cross_orbit_overlap": 0.2499999999999999,
+    "maximum_gram_eigenvalue": 2.8187293044088424,
+    "maximum_group_convolution_residual": 0.0,
+    "minimum_positive_gram_eigenvalue": 0.31698729810778065,
+    "nonzero_cross_orbit_block_count": 12,
+    "one_copy_plus_basis_dimension": 3,
+    "physical_dimension": 36,
+    "regular_source_dimension": 24,
+    "source_kernel_dimension": 4,
+    "stabilizer_order": 2,
+    "status": "exact-regular-orbit-row-normal-form-verified",
+    "synthesis_rank": 20
+  },
+  "headline_metrics": {
+    "exact_regular_orbit_control_count": 1,
+    "finite_control_failure_count": 0,
+    "finite_nonzero_cross_orbit_block_count": 12,
+    "hyperoctahedral_cg_required_count": 0,
+    "induced_regular_source_theorem_count": 1,
+    "matrix_group_convolution_reduction_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "orbit_representative_row_polar_compiler_count": 0
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-ORBIT-ROW-SUCCINCTNESS",
+      "resolved": false,
+      "statement": "Represent canonical orbit-copy labels and their overlap kernels without enumerating exponentially many representatives."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-ORBIT-ROW-POLAR",
+      "resolved": false,
+      "statement": "Compile the row-frame support/polar at constant retained alternative mass and inverse-polynomial error."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-ORBIT-LABEL-ERASURE",
+      "resolved": false,
+      "statement": "Erase the regular group and orbit-copy labels into physical rows without sqrt(M) amplification."
+    }
+  ],
+  "scaling_records": [
+    {
+      "copy_count": 10,
+      "degree": 6,
+      "half_degree": 3,
+      "hyperoctahedral_cg_required_on_trimmed_source": false,
+      "induced_regular_source_normal_form_available": true,
+      "orbit_representative_row_frame_formalized": true,
+      "orbit_representative_row_polar_compiled": false,
+      "physical_label_erasure_compiled": false,
+      "status": "regular-source-row-frame-formalized-row-polar-open",
+      "symmetric_group_qft_available": true,
+      "trimmed_alternative_success_lower_bound": 0.9569767909103859
+    },
+    {
+      "copy_count": 13,
+      "degree": 8,
+      "half_degree": 4,
+      "hyperoctahedral_cg_required_on_trimmed_source": false,
+      "induced_regular_source_normal_form_available": true,
+      "orbit_representative_row_frame_formalized": true,
+      "orbit_representative_row_polar_compiled": false,
+      "physical_label_erasure_compiled": false,
+      "status": "regular-source-row-frame-formalized-row-polar-open",
+      "symmetric_group_qft_available": true,
+      "trimmed_alternative_success_lower_bound": 0.9927815062073038
+    },
+    {
+      "copy_count": 27,
+      "degree": 16,
+      "half_degree": 8,
+      "hyperoctahedral_cg_required_on_trimmed_source": false,
+      "induced_regular_source_normal_form_available": true,
+      "orbit_representative_row_frame_formalized": true,
+      "orbit_representative_row_polar_compiled": false,
+      "physical_label_erasure_compiled": false,
+      "status": "regular-source-row-frame-formalized-row-polar-open",
+      "symmetric_group_qft_available": true,
+      "trimmed_alternative_success_lower_bound": 0.9999999562163592
+    },
+    {
+      "copy_count": 64,
+      "degree": 32,
+      "half_degree": 16,
+      "hyperoctahedral_cg_required_on_trimmed_source": false,
+      "induced_regular_source_normal_form_available": true,
+      "orbit_representative_row_frame_formalized": true,
+      "orbit_representative_row_polar_compiled": false,
+      "physical_label_erasure_compiled": false,
+      "status": "regular-source-row-frame-formalized-row-polar-open",
+      "symmetric_group_qft_available": true,
+      "trimmed_alternative_success_lower_bound": 1.0
+    },
+    {
+      "copy_count": 153,
+      "degree": 64,
+      "half_degree": 32,
+      "hyperoctahedral_cg_required_on_trimmed_source": false,
+      "induced_regular_source_normal_form_available": true,
+      "orbit_representative_row_frame_formalized": true,
+      "orbit_representative_row_polar_compiled": false,
+      "physical_label_erasure_compiled": false,
+      "status": "regular-source-row-frame-formalized-row-polar-open",
+      "symmetric_group_qft_available": true,
+      "trimmed_alternative_success_lower_bound": 1.0
+    },
+    {
+      "copy_count": 363,
+      "degree": 128,
+      "half_degree": 64,
+      "hyperoctahedral_cg_required_on_trimmed_source": false,
+      "induced_regular_source_normal_form_available": true,
+      "orbit_representative_row_frame_formalized": true,
+      "orbit_representative_row_polar_compiled": false,
+      "physical_label_erasure_compiled": false,
+      "status": "regular-source-row-frame-formalized-row-polar-open",
+      "symmetric_group_qft_available": true,
+      "trimmed_alternative_success_lower_bound": 1.0
+    },
+    {
+      "copy_count": 846,
+      "degree": 256,
+      "half_degree": 128,
+      "hyperoctahedral_cg_required_on_trimmed_source": false,
+      "induced_regular_source_normal_form_available": true,
+      "orbit_representative_row_frame_formalized": true,
+      "orbit_representative_row_polar_compiled": false,
+      "physical_label_erasure_compiled": false,
+      "status": "regular-source-row-frame-formalized-row-polar-open",
+      "symmetric_group_qft_available": true,
+      "trimmed_alternative_success_lower_bound": 1.0
+    }
+  ],
+  "status": "regular-orbit-row-frame-reduced-physical-row-polar-open",
+  "summary": "Fused the trimmed regular K source and candidate branch into exact regular S_n copies, derived the matrix group-convolution row frame, and removed generic hyperoctahedral fusion from the active path while isolating orbit-row polar synthesis and label erasure.",
+  "theorem": {
+    "explicit_coordinate_map": "After inverting the canonicalizer transporter to a left-regular K coordinate, g tensor k maps to the full group coordinate gk.",
+    "fourier_normal_form": "The G QFT diagonalizes the regular coordinate, leaving identity on carriers and a source-specific row-frame operator per irrep.",
+    "gram_convolution": "The (o,o') Gram block is the G convolution kernel <v_o|U_(g^-1g')|v_o'>.",
+    "hidden_involution_algorithm_constructed": false,
+    "hyperoctahedral_cg_required_on_trimmed_mass": false,
+    "induced_regular_identity_proved": true,
+    "induction_identity": "Ind_K^G(C[K] tensor C[O]) is C[G] tensor C[O].",
+    "matrix_group_convolution_reduction_proved": true,
+    "orbit_representative_row_polar_compiled": false,
+    "physical_label_erasure_compiled": false,
+    "regular_source_basis_compiled_on_trimmed_mass": true,
+    "remaining_operator": "Compile the polar/support of the orbit-representative row frame and erase regular/orbit labels into the physical state.",
+    "removed_obligations": "Generic hyperoctahedral CG and a separate S_n-to-K source multiplicity basis are unnecessary on trimmed good mass.",
+    "scope_limit": "No row polar, label erasure, decoder, classical separation, or hidden-involution algorithm is supplied.",
+    "status": "regular-orbit-row-frame-reduced-physical-row-polar-open",
+    "synthesis_row_form": "W|g,o>=U_g|v_o> for canonical representative v_o.",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "induction": "Candidate branch induction from K=C_2 wr S_m to G=S_(2m).",
+    "outside_scope": "Bad trimmed mass, row-frame polar implementation, physical output decoding, and natural classical complexity.",
+    "physical_action": "Diagonal conjugation on k regular registers.",
+    "source_subspace": "The free/transitively-seeded trimmed source on which the canonical representative/transporter map is reversible."
+  }
+}

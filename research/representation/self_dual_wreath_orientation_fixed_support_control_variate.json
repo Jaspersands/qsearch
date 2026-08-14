@@ -1,0 +1,300 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The S7 orientation CMI cannot arise from classically enumerable word strata.",
+      "resolution": "The support-two O(n^6) channel lies within 0.00621 TV and has CMI on the same tiny scale.",
+      "resolved": true
+    },
+    {
+      "objection": "A close finite support-two surrogate dequantizes every n.",
+      "resolution": "No uniform tail bound exists and the S6 spike is not approximated by the same stratum.",
+      "resolved": true
+    },
+    {
+      "objection": "Increasing support radius must monotonically improve a signed partial sum.",
+      "resolution": "Signed character contributions are not a probability truncation; only explicit error bounds justify convergence claims.",
+      "resolved": true
+    },
+    {
+      "objection": "Polynomial tuple count alone proves polynomial bit complexity.",
+      "resolution": "A production attack must implement fixed-support character polynomials and exact arithmetic rather than treat character evaluation as unit cost.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "S6_one_bit_spike_explained_by_support_two": false,
+    "S7_finite_channel_has_close_polynomial_low_support_surrogate": true,
+    "algorithm_claim_allowed": false,
+    "all_n_orientation_channel_dequantized": false,
+    "classical_lower_bound_proved": false,
+    "fixed_support_enumeration_polynomial_proved": true,
+    "full_residual_tail_bounded": false,
+    "reason": "The S7 finite signal has a close O(n^6) low-support surrogate, while no growing-support residual theorem or S6 scaling family survives.",
+    "speedup_claim_allowed": false,
+    "support_two_aggregate_product_null_proved": true
+  },
+  "controls": [
+    {
+      "aggregate_support_two_identity_residual": 0.0,
+      "control_id": "S5-EXACT-CROSS-CHECK",
+      "enumerated_word_triple_count": 1331,
+      "exact_partial_rescaled_likelihoods": [
+        "64/125",
+        "96/125",
+        "126/125",
+        "114/125",
+        "126/125",
+        "114/125",
+        "234/125",
+        "126/125"
+      ],
+      "fixed_radius_enumeration_polynomial": true,
+      "full_aggregate_likelihood_ratio": 1.9319999999999997,
+      "full_channel_dequantized": false,
+      "full_conditional_syndrome_probabilities": [
+        0.17468944099378886,
+        0.17468944099378875,
+        0.17468944099378844,
+        0.06288819875776379,
+        0.17468944099378902,
+        0.06288819875776416,
+        0.0007763975155279483,
+        0.17468944099378897
+      ],
+      "full_irreducible_cmi_bits": 0.20489807195522608,
+      "full_rescaled_likelihoods": [
+        2.7,
+        2.6999999999999984,
+        2.699999999999994,
+        0.9719999999999969,
+        2.700000000000003,
+        0.9720000000000028,
+        0.011999999999999967,
+        2.700000000000002
+      ],
+      "full_residual_outside_support_ball_bounded": false,
+      "generator_support_ball_count": 11,
+      "low_support_channel_within_one_percent_tv": false,
+      "maximum_partial_to_full_likelihood_residual": 2.188,
+      "n": 5,
+      "partial_aggregate_likelihood_ratio": 1.0,
+      "partial_channel_is_nonnegative": true,
+      "partial_conditional_syndrome_probabilities": [
+        0.064,
+        0.096,
+        0.126,
+        0.114,
+        0.126,
+        0.114,
+        0.234,
+        0.126
+      ],
+      "partial_irreducible_cmi_bits": 0.00017234560356963,
+      "partial_rescaled_likelihoods": [
+        0.512,
+        0.768,
+        1.008,
+        0.912,
+        1.008,
+        0.912,
+        1.872,
+        1.008
+      ],
+      "partial_to_full_total_variation": 0.3354472049689441,
+      "status": "fixed-support-polynomial-control-channel-audited",
+      "support_radius": 2
+    },
+    {
+      "aggregate_support_two_identity_residual": 0.0,
+      "control_id": "S6-REPEATED-DIMENSION-10",
+      "enumerated_word_triple_count": 4096,
+      "exact_partial_rescaled_likelihoods": [
+        "1532/3125",
+        "3308/3125",
+        "3128/3125",
+        "3032/3125",
+        "3128/3125",
+        "3032/3125",
+        "5012/3125",
+        "2828/3125"
+      ],
+      "fixed_radius_enumeration_polynomial": true,
+      "full_aggregate_likelihood_ratio": 0.23328000000000212,
+      "full_channel_dequantized": false,
+      "full_conditional_syndrome_probabilities": [
+        0.5000000000000003,
+        7.3727005683573195e-37,
+        1.0616688818434542e-34,
+        1.1796320909371711e-35,
+        8.666684749742484e-36,
+        8.690758874047322e-35,
+        0.4999999999999997,
+        6.957421924098825e-35
+      ],
+      "full_irreducible_cmi_bits": 0.9999999999999998,
+      "full_rescaled_likelihoods": [
+        0.933120000000009,
+        1.3759228708691288e-36,
+        1.981328934051546e-34,
+        2.2014765933906061e-35,
+        1.617411374735956e-35,
+        1.6219041841102224e-34,
+        0.9331200000000079,
+        1.298421909163031e-34
+      ],
+      "full_residual_outside_support_ball_bounded": false,
+      "generator_support_ball_count": 16,
+      "low_support_channel_within_one_percent_tv": false,
+      "maximum_partial_to_full_likelihood_residual": 1.05856,
+      "n": 6,
+      "partial_aggregate_likelihood_ratio": 1.0,
+      "partial_channel_is_nonnegative": true,
+      "partial_conditional_syndrome_probabilities": [
+        0.06128,
+        0.13232,
+        0.12512,
+        0.12128,
+        0.12512,
+        0.12128,
+        0.20048,
+        0.11312
+      ],
+      "partial_irreducible_cmi_bits": 0.0011529152156977245,
+      "partial_rescaled_likelihoods": [
+        0.49024,
+        1.05856,
+        1.00096,
+        0.97024,
+        1.00096,
+        0.97024,
+        1.60384,
+        0.90496
+      ],
+      "partial_to_full_total_variation": 0.73824,
+      "status": "fixed-support-polynomial-control-channel-audited",
+      "support_radius": 2
+    },
+    {
+      "aggregate_support_two_identity_residual": 0.0,
+      "control_id": "S7-REPEATED-DIMENSION-35",
+      "enumerated_word_triple_count": 10648,
+      "exact_partial_rescaled_likelihoods": [
+        "321064/420175",
+        "419536/420175",
+        "422896/420175",
+        "414304/420175",
+        "422896/420175",
+        "414304/420175",
+        "528544/420175",
+        "417856/420175"
+      ],
+      "fixed_radius_enumeration_polynomial": true,
+      "full_aggregate_likelihood_ratio": 0.9979348223954342,
+      "full_channel_dequantized": false,
+      "full_conditional_syndrome_probabilities": [
+        0.09943967009357653,
+        0.12363317416795352,
+        0.12363317416795364,
+        0.12363317416795278,
+        0.12363317416795376,
+        0.12363317416795322,
+        0.15876128489870392,
+        0.1236331741679527
+      ],
+      "full_irreducible_cmi_bits": 2.315228572808437e-05,
+      "full_rescaled_likelihoods": [
+        0.7938744761111509,
+        0.9870227976438438,
+        0.9870227976438447,
+        0.9870227976438378,
+        0.9870227976438457,
+        0.9870227976438414,
+        1.267467317189272,
+        0.9870227976438373
+      ],
+      "full_residual_outside_support_ball_bounded": false,
+      "generator_support_ball_count": 22,
+      "low_support_channel_within_one_percent_tv": true,
+      "maximum_partial_to_full_likelihood_residual": 0.02975476408639932,
+      "n": 7,
+      "partial_aggregate_likelihood_ratio": 1.0,
+      "partial_channel_is_nonnegative": true,
+      "partial_conditional_syndrome_probabilities": [
+        0.09551496400309395,
+        0.12480990063663949,
+        0.12580948414351162,
+        0.12325340631879574,
+        0.12580948414351162,
+        0.12325340631879574,
+        0.1572392455524484,
+        0.12431010888320343
+      ],
+      "partial_irreducible_cmi_bits": 7.067702646242101e-05,
+      "partial_rescaled_likelihoods": [
+        0.7641197120247516,
+        0.9984792050931159,
+        1.006475873148093,
+        0.9860272505503659,
+        1.006475873148093,
+        0.9860272505503659,
+        1.2579139644195871,
+        0.9944808710656274
+      ],
+      "partial_to_full_total_variation": 0.006206281135052581,
+      "status": "fixed-support-polynomial-control-channel-audited",
+      "support_radius": 2
+    }
+  ],
+  "created_at": "2026-08-14T02:24:39.852770+00:00",
+  "falsifiers_triggered": [
+    "The S7 finite CMI is not isolated from polynomially enumerable low-support strata.",
+    "Support-radius truncations are signed and need not converge monotonically.",
+    "The S6 cancellation spike remains a finite low-mass exception, not a scaling mechanism."
+  ],
+  "headline_metrics": {
+    "S6_full_cmi_bits": 0.9999999999999998,
+    "S6_support_two_cmi_bits": 0.0011529152156977245,
+    "S6_support_two_to_full_tv": 0.73824,
+    "S7_full_cmi_bits": 2.315228572808437e-05,
+    "S7_support_two_cmi_bits": 7.067702646242101e-05,
+    "S7_support_two_to_full_tv": 0.006206281135052581,
+    "finite_control_failure_count": 0,
+    "fixed_support_control_count": 3,
+    "full_dequantization_count": 0,
+    "full_tail_bound_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "support_radius": 2
+  },
+  "proof_obligations": [
+    {
+      "obligation": "enumerate_fixed_support_generator_strata_without_factorial_group_scan",
+      "resolution": "Direct derangement-on-chosen-support generation has O(n^s) elements for fixed s.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_support_two_preserves_aggregate_product_null",
+      "resolution": "Walsh summation selects the all-even generator stratum, which contains only the identity in B_2^3.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_residual_outside_fixed_support_on_natural_labels",
+      "resolution": "Need character-ratio tail estimates for at least one generator moving more than s points, with cancellation preserved.",
+      "resolved": false
+    },
+    {
+      "obligation": "derive_growing_support_algorithm_or_no_go",
+      "resolution": "Fixed s is polynomial but may miss the scalable Racah residual; growing s changes both runtime and character asymptotics.",
+      "resolved": false
+    }
+  ],
+  "status": "S7-finite-orientation-signal-demoted-by-fixed-support-classical-surrogate",
+  "summary": "Built an exact fixed-support classical control variate and found that the finite S7 orientation channel is closely reproduced by an O(n^6) identity/transposition sum.",
+  "theorem_contract": {
+    "character_boundary": "all words move at most 3s points; fixed-support character polynomials apply",
+    "enumeration_cost": "O(n^(3s)) fixed-support character evaluations",
+    "partial_likelihood": "ell_y^(s)=sum_(g,h,k in B_s) Z(g,h,k)(-1)^{<y,p>}",
+    "scope": "finite classical surrogate and control variate; no tail bound outside B_s^3",
+    "support_ball": "B_s={pi in S_n: moved(pi)<=s}, |B_s|=O(n^s) for fixed s",
+    "support_two_identity": "sum_y ell_y^(2)=8 because B_2 has only one even element"
+  }
+}

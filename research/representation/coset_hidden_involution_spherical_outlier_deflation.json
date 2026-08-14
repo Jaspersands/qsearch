@@ -1,0 +1,224 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "Not for K=C_2 wr S_m: its complete conjugacy orbit has an even-row Fourier flag and vanishing all-register mass.",
+      "challenge": "A superpolynomial subgroup outlier kills the architecture.",
+      "resolved": true
+    },
+    {
+      "answer": "False in general. Here the exact Thrall span identity is what permits a uniform bound on the entire orbit.",
+      "challenge": "One small witness mass bounds the full conjugate orbit.",
+      "resolved": true
+    },
+    {
+      "answer": "Unproved. Other subgroup supports and mixed-sector incidence can still create large eigenvalues.",
+      "challenge": "Deflating even-row tensors bounds the remaining norm.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_subgroup_incidence_strata_classified": false,
+    "conjugate_hyperoctahedral_span_compiled": true,
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "orbit_row_polar_compiled": false,
+    "post_spherical_trim_frame_norm_bounded": false,
+    "reason": "The hyperoctahedral outlier orbit is removable, but no theorem controls all proper-subgroup strata or the retained frame norm.",
+    "speedup_claim_allowed": false,
+    "spherical_outlier_orbit_negligible_and_deflatable": true
+  },
+  "created_at": "2026-08-13T17:15:53.744794+00:00",
+  "falsifiers_triggered": [
+    "The hyperoctahedral norm witness is not a terminal obstruction.",
+    "Its conjugate span, not one selected witness, is the correct trim target.",
+    "Removing that span does not establish a bounded residual frame."
+  ],
+  "finite_controls": [
+    {
+      "central_binomial_probability_upper_bound": 1.1211482895542122,
+      "common_dimension": 1,
+      "degree": 6,
+      "dimension_probability_upper_bound": 0.29526462395543174,
+      "even_row_dimension_sum": 15,
+      "even_row_isotypic_dimension": 107,
+      "even_row_sector_count": 3,
+      "exact_trimmed_even_row_probability": 0.20612813370473537,
+      "expected_dimension_sum": 15,
+      "group_order": 720,
+      "half_degree": 3,
+      "matching_count": 15,
+      "probability_bound_verified": true,
+      "status": "exact-spherical-outlier-span-mass-control-verified",
+      "thrall_dimension_identity_verified": true,
+      "trimmed_candidate_rank": 359
+    },
+    {
+      "central_binomial_probability_upper_bound": 1.04592879594497,
+      "common_dimension": 2,
+      "degree": 8,
+      "dimension_probability_upper_bound": 0.19486060125012403,
+      "even_row_dimension_sum": 105,
+      "even_row_isotypic_dimension": 3929,
+      "even_row_sector_count": 5,
+      "exact_trimmed_even_row_probability": 0.11469391804742533,
+      "expected_dimension_sum": 105,
+      "group_order": 40320,
+      "half_degree": 4,
+      "matching_count": 105,
+      "probability_bound_verified": true,
+      "status": "exact-spherical-outlier-span-mass-control-verified",
+      "thrall_dimension_identity_verified": true,
+      "trimmed_candidate_rank": 20158
+    },
+    {
+      "central_binomial_probability_upper_bound": 0.9921572884731239,
+      "common_dimension": 1,
+      "degree": 10,
+      "dimension_probability_upper_bound": 0.11861668795011461,
+      "even_row_dimension_sum": 945,
+      "even_row_isotypic_dimension": 215219,
+      "even_row_sector_count": 7,
+      "exact_trimmed_even_row_probability": 0.06369271588002419,
+      "expected_dimension_sum": 945,
+      "group_order": 3628800,
+      "half_degree": 5,
+      "matching_count": 945,
+      "probability_bound_verified": true,
+      "status": "exact-spherical-outlier-span-mass-control-verified",
+      "thrall_dimension_identity_verified": true,
+      "trimmed_candidate_rank": 1814399
+    }
+  ],
+  "headline_metrics": {
+    "all_subgroup_strata_classification_count": 0,
+    "coherent_spherical_outlier_deflation_count": 1,
+    "exact_conjugate_span_theorem_count": 1,
+    "exact_finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "post_deflation_frame_norm_bound_count": 0
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-SUBGROUP-STRATA-CLASSIFICATION",
+      "resolved": false,
+      "statement": "Classify proper subgroups containing many fixed-point-free involutions and their induced Fourier supports."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-POST-SPHERICAL-TRIM-NORM",
+      "resolved": false,
+      "statement": "Bound or witness the frame norm after common and all-register even-row outlier deflation."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-ORBIT-ROW-POLAR",
+      "resolved": false,
+      "statement": "Compile the orbit-row polar on the retained natural mass."
+    }
+  ],
+  "scaling_records": [
+    {
+      "all_register_spherical_mass_log2_upper_bound": -4.701720153033688,
+      "all_register_spherical_mass_upper_bound": 0.03842741784240069,
+      "all_subgroup_strata_classified": false,
+      "candidate_count_decimal": "2027025",
+      "central_binomial_ratio": 0.196380615234375,
+      "conjugate_outlier_span_qft_flag_available": true,
+      "copy_count": 27,
+      "degree": 16,
+      "half_degree": 8,
+      "hyperoctahedral_outlier_orbit_removed": false,
+      "one_register_spherical_mass_upper_bound": 0.8862970500559055,
+      "post_deflation_frame_norm_bounded": false,
+      "status": "finite-spherical-deflation-bound-not-yet-negligible",
+      "upper_bound_informative": true
+    },
+    {
+      "all_register_spherical_mass_log2_upper_bound": -26.784553196958086,
+      "all_register_spherical_mass_upper_bound": 8.650596740601498e-09,
+      "all_subgroup_strata_classified": false,
+      "candidate_count_decimal": "191898783962510625",
+      "central_binomial_ratio": 0.13994993409141898,
+      "conjugate_outlier_span_qft_flag_available": true,
+      "copy_count": 64,
+      "degree": 32,
+      "half_degree": 16,
+      "hyperoctahedral_outlier_orbit_removed": true,
+      "one_register_spherical_mass_upper_bound": 0.7481976586208192,
+      "post_deflation_frame_norm_bounded": false,
+      "status": "hyperoctahedral-outlier-orbit-negligible-deflatable-other-subgroups-open",
+      "upper_bound_informative": true
+    },
+    {
+      "all_register_spherical_mass_log2_upper_bound": -101.850827269237,
+      "all_register_spherical_mass_upper_bound": 2.1869855259376926e-31,
+      "all_subgroup_strata_classified": false,
+      "candidate_count_decimal": "112275575285571389562324404930670903477890625",
+      "central_binomial_ratio": 0.09934675374796689,
+      "conjugate_outlier_span_qft_flag_available": true,
+      "copy_count": 153,
+      "degree": 64,
+      "half_degree": 32,
+      "hyperoctahedral_outlier_orbit_removed": true,
+      "one_register_spherical_mass_upper_bound": 0.6303864013379948,
+      "post_deflation_frame_norm_bounded": false,
+      "status": "hyperoctahedral-outlier-orbit-negligible-deflatable-other-subgroups-open",
+      "upper_bound_informative": true
+    },
+    {
+      "all_register_spherical_mass_log2_upper_bound": -331.88469266845885,
+      "all_register_spherical_mass_upper_bound": 1.2380905394835764e-100,
+      "all_subgroup_strata_classified": false,
+      "candidate_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "central_binomial_ratio": 0.07038609217001514,
+      "conjugate_outlier_span_qft_flag_available": true,
+      "copy_count": 363,
+      "degree": 128,
+      "half_degree": 64,
+      "hyperoctahedral_outlier_orbit_removed": true,
+      "one_register_spherical_mass_upper_bound": 0.5306075467613145,
+      "post_deflation_frame_norm_bounded": false,
+      "status": "hyperoctahedral-outlier-orbit-negligible-deflatable-other-subgroups-open",
+      "upper_bound_informative": true
+    },
+    {
+      "all_register_spherical_mass_log2_upper_bound": -984.3873869013182,
+      "all_register_spherical_mass_upper_bound": 4.675942795105708e-297,
+      "all_subgroup_strata_classified": false,
+      "candidate_count_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "central_binomial_ratio": 0.04981910993614015,
+      "conjugate_outlier_span_qft_flag_available": true,
+      "copy_count": 846,
+      "degree": 256,
+      "half_degree": 128,
+      "hyperoctahedral_outlier_orbit_removed": true,
+      "one_register_spherical_mass_upper_bound": 0.4464038975463371,
+      "post_deflation_frame_norm_bounded": false,
+      "status": "hyperoctahedral-outlier-orbit-negligible-deflatable-other-subgroups-open",
+      "upper_bound_informative": true
+    }
+  ],
+  "status": "spherical-outlier-orbit-deflated-subgroup-hierarchy-open",
+  "summary": "Identified the full hyperoctahedral outlier orbit with nontrivial even-row Fourier support and proved that its all-register natural mass vanishes at the required copy width.",
+  "theorem": {
+    "all_subgroup_outliers_classified": false,
+    "central_binomial_bound": "M/sqrt((2m)!)=sqrt(binomial(2m,m)/4^m)<=(pi m)^(-1/4).",
+    "coherent_even_row_flag_available": true,
+    "coherent_flag": "The S_(2m) QFT flags E from the partition label.",
+    "conjugate_projection_average": "sum_(xK) Q_(xKx^-1) acts by M/d_(2mu) on each even-row right carrier and by zero off the Thrall support.",
+    "exact_conjugate_span_proved": true,
+    "hyperoctahedral_outlier_orbit_deflated": true,
+    "post_deflation_frame_norm_bounded": false,
+    "scope_limit": "Only the hyperoctahedral subgroup orbit is removed; other subgroup incidence strata and the post-deflation frame norm remain open.",
+    "source_mass_bound": "The one-register trimmed candidate mass in E is at most 2M/sqrt((2m)!)/(1-2a/(2m)!).",
+    "span_support": "The span of all noncommon conjugate K-invariant sectors is exactly the nontrivial even-row right-isotypic support E.",
+    "status": "spherical-outlier-orbit-deflated-subgroup-hierarchy-open",
+    "tensor_deflation": "Every D_(K_x)^tensor k lies in E^tensor k, whose alternative mass is bounded by the kth power of the one-register bound.",
+    "theorem_verified": true,
+    "vanishing_all_register_mass_proved": true
+  },
+  "theorem_contract": {
+    "family": "Hyperoctahedral centralizers of perfect matchings.",
+    "outside_scope": "Other subgroup incidence sectors, mixed supports, final frame norm, row-polar implementation, and decoding.",
+    "span": "Conjugate right-K invariant sectors in C[S_(2m)].",
+    "trim": "Reject the all-register nontrivial even-row Fourier event."
+  }
+}

@@ -1,0 +1,270 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False: exact size-biased moments put arbitrarily high alternative mass in a constant relative spectral window.",
+      "challenge": "Large subgroup outliers are the main natural-mass obstruction.",
+      "resolved": true
+    },
+    {
+      "answer": "False: the inherited block encoding scales the entire bulk down by sqrt(M), forcing Omega(sqrt(M)) degree.",
+      "challenge": "Constant bulk condition number makes QSVT efficient.",
+      "resolved": true
+    },
+    {
+      "answer": "False by unitary invariance unless those steps also expose a different access normalization or non-polynomial direct polar.",
+      "challenge": "Canonicalization or a QFT changes the singular scale.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "constant_normalization_row_access_compiled": false,
+    "direct_bulk_polar_compiled": false,
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "inherited_incidence_qsvt_is_efficient": false,
+    "natural_alternative_bulk_constant_conditioned": true,
+    "reason": "The useful bulk is already well conditioned before normalization, but every inherited incidence access shrinks it by sqrt(M).",
+    "speedup_claim_allowed": false,
+    "subgroup_outlier_classification_is_active_bottleneck": false
+  },
+  "created_at": "2026-08-13T17:59:03.023419+00:00",
+  "falsifiers_triggered": [
+    "Further outlier classification is not needed to obtain a well-conditioned natural-mass bulk.",
+    "Constant condition number of unnormalized synthesis does not remove sqrt(M) access cost.",
+    "Unitary basis changes alone cannot improve inherited singular-value normalization."
+  ],
+  "finite_controls": [
+    {
+      "candidate_count": 3,
+      "copy_count": 2,
+      "exact_moment_and_size_bias_control_verified": true,
+      "moment_outside_window_upper_bound": 1.0,
+      "n": 3,
+      "normalized_bulk_singular_lower": 0.4999999999999996,
+      "normalized_bulk_singular_upper": 0.7071067811865478,
+      "predicted_source_centered_second_moment": 0.5,
+      "predicted_source_mean_eigenvalue": 1.0,
+      "retained_bulk_condition_number": 1.4142135623730967,
+      "size_biased_outside_window_mass": 0.7777777777777778,
+      "source_centered_second_moment": 0.4999999999999999,
+      "source_dimension": 27,
+      "source_mean_eigenvalue": 1.0,
+      "status": "exact-bulk-conditioning-normalization-control-verified",
+      "transposition_count": 1
+    },
+    {
+      "candidate_count": 3,
+      "copy_count": 3,
+      "exact_moment_and_size_bias_control_verified": true,
+      "moment_outside_window_upper_bound": 1.0,
+      "n": 3,
+      "normalized_bulk_singular_lower": 0.49999999999999956,
+      "normalized_bulk_singular_upper": 0.7071067811865479,
+      "predicted_source_centered_second_moment": 0.25,
+      "predicted_source_mean_eigenvalue": 1.0,
+      "retained_bulk_condition_number": 1.4142135623730971,
+      "size_biased_outside_window_mass": 0.48148148148148145,
+      "source_centered_second_moment": 0.24999999999999994,
+      "source_dimension": 81,
+      "source_mean_eigenvalue": 1.0,
+      "status": "exact-bulk-conditioning-normalization-control-verified",
+      "transposition_count": 1
+    },
+    {
+      "candidate_count": 3,
+      "copy_count": 2,
+      "exact_moment_and_size_bias_control_verified": true,
+      "moment_outside_window_upper_bound": 1.0,
+      "n": 4,
+      "normalized_bulk_singular_lower": 0.5773502691896247,
+      "normalized_bulk_singular_upper": 0.5773502691896266,
+      "predicted_source_centered_second_moment": 0.5,
+      "predicted_source_mean_eigenvalue": 1.0,
+      "retained_bulk_condition_number": 1.000000000000003,
+      "size_biased_outside_window_mass": 0.24999999999999997,
+      "source_centered_second_moment": 0.5000000000000006,
+      "source_dimension": 432,
+      "source_mean_eigenvalue": 0.9999999999999999,
+      "status": "exact-bulk-conditioning-normalization-control-verified",
+      "transposition_count": 2
+    }
+  ],
+  "headline_metrics": {
+    "constant_bulk_conditioning_theorem_count": 1,
+    "constant_normalization_row_access_count": 0,
+    "exact_finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "inherited_sqrt_M_qsvt_obstruction_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "subgroup_classification_required_for_bulk_conditioning_count": 0
+  },
+  "literature_links": [
+    {
+      "id": "ARXIV-2006.16924",
+      "url": "https://arxiv.org/abs/2006.16924",
+      "use": "General Petz/PGM implementation has inverse-small-eigenvalue and environment-size costs and a search-based oracle lower bound. This corroborates the access diagnosis but is not a lower bound for the structured S_n row transform."
+    },
+    {
+      "id": "ARXIV-QUANT-PH-0604174",
+      "url": "https://arxiv.org/abs/quant-ph/0604174",
+      "use": "Establishes logarithmic HSP sample sufficiency via the PGM; the unresolved issue here is computational implementation."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-CONSTANT-NORMALIZATION-ROW-ACCESS",
+      "resolved": false,
+      "statement": "Construct a block encoding or direct transform for the bulk row synthesis with normalization poly(n), not sqrt(M)."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-ROW-FAST-FORWARD",
+      "resolved": false,
+      "statement": "Determine whether the matrix group-convolution row walk can be fast-forwarded using S_n representation structure."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-DIRECT-BULK-POLAR",
+      "resolved": false,
+      "statement": "Compile the bulk polar without first block-encoding the globally normalized incidence discriminant."
+    }
+  ],
+  "scaling_records": [
+    {
+      "bernstein_qsvt_degree_lower_bound_log2": 2.4534452978042594,
+      "candidate_count_decimal": "15",
+      "constant_normalization_row_access_compiled": false,
+      "copy_count": 24,
+      "degree": 6,
+      "half_degree": 3,
+      "inherited_incidence_bulk_singular_scale_log2": -2.4534452978042594,
+      "relative_window_delta": 0.5,
+      "retained_alternative_mass_lower_bound": 0.9999949932098389,
+      "status": "bulk-well-conditioned-incidence-normalization-superpolynomial-structured-access-open",
+      "subgroup_outlier_classification_required_for_bulk_conditioning": false,
+      "target_source_variance": 1e-06,
+      "unitary_basis_changes_improve_inherited_normalization": false,
+      "unnormalized_bulk_condition_number_upper_bound": 1.7320508075688772
+    },
+    {
+      "bernstein_qsvt_degree_lower_bound_log2": 3.857122758833061,
+      "candidate_count_decimal": "105",
+      "constant_normalization_row_access_compiled": false,
+      "copy_count": 27,
+      "degree": 8,
+      "half_degree": 4,
+      "inherited_incidence_bulk_singular_scale_log2": -3.857122758833061,
+      "relative_window_delta": 0.5,
+      "retained_alternative_mass_lower_bound": 0.9999953508377075,
+      "status": "bulk-well-conditioned-incidence-normalization-superpolynomial-structured-access-open",
+      "subgroup_outlier_classification_required_for_bulk_conditioning": false,
+      "target_source_variance": 1e-06,
+      "unitary_basis_changes_improve_inherited_normalization": false,
+      "unnormalized_bulk_condition_number_upper_bound": 1.7320508075688772
+    },
+    {
+      "bernstein_qsvt_degree_lower_bound_log2": 10.975466225747672,
+      "candidate_count_decimal": "2027025",
+      "constant_normalization_row_access_compiled": false,
+      "copy_count": 41,
+      "degree": 16,
+      "half_degree": 8,
+      "inherited_incidence_bulk_singular_scale_log2": -10.975466225747672,
+      "relative_window_delta": 0.5,
+      "retained_alternative_mass_lower_bound": 0.9999944692972349,
+      "status": "bulk-well-conditioned-incidence-normalization-superpolynomial-structured-access-open",
+      "subgroup_outlier_classification_required_for_bulk_conditioning": false,
+      "target_source_variance": 1e-06,
+      "unitary_basis_changes_improve_inherited_normalization": false,
+      "unnormalized_bulk_condition_number_upper_bound": 1.7320508075688772
+    },
+    {
+      "bernstein_qsvt_degree_lower_bound_log2": 29.20656159123884,
+      "candidate_count_decimal": "191898783962510625",
+      "constant_normalization_row_access_compiled": false,
+      "copy_count": 78,
+      "degree": 32,
+      "half_degree": 16,
+      "inherited_incidence_bulk_singular_scale_log2": -29.20656159123884,
+      "relative_window_delta": 0.5,
+      "retained_alternative_mass_lower_bound": 0.999996190361112,
+      "status": "bulk-well-conditioned-incidence-normalization-superpolynomial-structured-access-open",
+      "subgroup_outlier_classification_required_for_bulk_conditioning": false,
+      "target_source_variance": 1e-06,
+      "unitary_basis_changes_improve_inherited_normalization": false,
+      "unnormalized_bulk_condition_number_upper_bound": 1.7320508075688772
+    },
+    {
+      "bernstein_qsvt_degree_lower_bound_log2": 73.66594014468187,
+      "candidate_count_decimal": "112275575285571389562324404930670903477890625",
+      "constant_normalization_row_access_compiled": false,
+      "copy_count": 167,
+      "degree": 64,
+      "half_degree": 32,
+      "inherited_incidence_bulk_singular_scale_log2": -73.66594014468187,
+      "relative_window_delta": 0.5,
+      "retained_alternative_mass_lower_bound": 0.9999963989656548,
+      "status": "bulk-well-conditioned-incidence-normalization-superpolynomial-structured-access-open",
+      "subgroup_outlier_classification_required_for_bulk_conditioning": false,
+      "target_source_variance": 1e-06,
+      "unitary_basis_changes_improve_inherited_normalization": false,
+      "unnormalized_bulk_condition_number_upper_bound": 1.7320508075688772
+    },
+    {
+      "bernstein_qsvt_degree_lower_bound_log2": 178.58328907094892,
+      "candidate_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "constant_normalization_row_access_compiled": false,
+      "copy_count": 377,
+      "degree": 128,
+      "half_degree": 64,
+      "inherited_incidence_bulk_singular_scale_log2": -178.58328907094892,
+      "relative_window_delta": 0.5,
+      "retained_alternative_mass_lower_bound": 0.9999967888073672,
+      "status": "bulk-well-conditioned-incidence-normalization-superpolynomial-structured-access-open",
+      "subgroup_outlier_classification_required_for_bulk_conditioning": false,
+      "target_source_variance": 1e-06,
+      "unitary_basis_changes_improve_inherited_normalization": false,
+      "unnormalized_bulk_condition_number_upper_bound": 1.7320508075688772
+    },
+    {
+      "bernstein_qsvt_degree_lower_bound_log2": 420.4172825702964,
+      "candidate_count_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "constant_normalization_row_access_compiled": false,
+      "copy_count": 860,
+      "degree": 256,
+      "half_degree": 128,
+      "inherited_incidence_bulk_singular_scale_log2": -420.4172825702964,
+      "relative_window_delta": 0.5,
+      "retained_alternative_mass_lower_bound": 0.9999948978821939,
+      "status": "bulk-well-conditioned-incidence-normalization-superpolynomial-structured-access-open",
+      "subgroup_outlier_classification_required_for_bulk_conditioning": false,
+      "target_source_variance": 1e-06,
+      "unitary_basis_changes_improve_inherited_normalization": false,
+      "unnormalized_bulk_condition_number_upper_bound": 1.7320508075688772
+    }
+  ],
+  "status": "bulk-conditioning-resolved-access-normalization-is-active-obstruction",
+  "summary": "Separated natural-mass conditioning from access normalization, proved the former is already constant, and made a new poly(n)-normalization row access or direct polar the sole active compiler target.",
+  "theorem": {
+    "architecture_rule": "Do not prioritize more outlier classifications unless they yield a new normalization, fast-forward, factorization, or direct polar.",
+    "bernstein_obstruction": "An odd bounded polar polynomial rising from zero at that scale has degree Omega(sqrt(M)).",
+    "bulk_conditioning": "On the retained bulk, cond(S)<=sqrt((1+delta)/(1-delta)).",
+    "bulk_mass": "Alternative mass outside |X-1|<delta is at most eta(delta^-2+delta^-1).",
+    "constant_unnormalized_bulk_conditioning_proved": true,
+    "exact_bulk_mass_bound_proved": true,
+    "inherited_incidence_qsvt_sqrt_M_obstruction_proved": true,
+    "inherited_normalization": "The incidence discriminant is D=S/sqrt(M), so useful bulk singular values remain Theta(M^-1/2).",
+    "scope_limit": "Structured group/row transforms may bypass inherited incidence normalization; no such transform is constructed here.",
+    "size_bias": "The alternative eigenvalue law is the exact X-size bias.",
+    "source_moments": "E[X]=1 and Var(X)=(M-1)/2^k exactly.",
+    "status": "bulk-conditioning-resolved-access-normalization-is-active-obstruction",
+    "structured_constant_normalization_access_compiled": false,
+    "subgroup_classification_needed_for_bulk_conditioning": false,
+    "theorem_verified": true,
+    "unitary_trims_change_inherited_singular_scale": false
+  },
+  "theorem_contract": {
+    "access_model": "Inherited biregular incidence discriminant S/sqrt(M).",
+    "alternative_law": "Uniform conjugacy-class mixture of k-copy plus states.",
+    "family": "Any conjugacy class of nonidentity involutions.",
+    "outside_scope": "Non-incidence block encodings, group fast-forwarding, direct row polars, decoding, and natural classical complexity.",
+    "source_law": "Uniform normalized candidate-fiber synthesis columns."
+  }
+}

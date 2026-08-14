@@ -1,0 +1,297 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The Renyi collision target is necessary for rank transfer.",
+      "resolution": "False. Direct entropy needs only average Racah MI=o(log n), even when the collision norm has rare large spikes.",
+      "resolved": true
+    },
+    {
+      "objection": "Five-label mixing already makes mu and nu independent.",
+      "resolution": "It fixes each marginal after outer averaging; dependence can survive after conditioning on all four outer labels.",
+      "resolved": true
+    },
+    {
+      "objection": "Exact Plancherel marginals force small mutual information.",
+      "resolution": "The identity-block coupling has exact marginals and mutual information equal to the superlogarithmic Plancherel entropy.",
+      "resolved": true
+    },
+    {
+      "objection": "Sublogarithmic full-label entropy proves an algorithm.",
+      "resolution": "It removes a rank-only signal and leaves coherent non-Haar Racah syndrome information unresolved.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "classical_separation_proved": false,
+    "coarse_rank_entropy_sublog_if_average_racah_mi_sublog_proved": true,
+    "irreducible_orientation_racah_cmi_vanishes_proved": false,
+    "natural_physical_average_racah_mi_sublogarithmic_proved": false,
+    "physical_rank_profile_mixes_proved": false,
+    "reason": "All rank-entropy terms except growing-row natural recoupling mutual information vanish, but that average has no asymptotic bound.",
+    "six_label_kl_is_average_racah_mi_plus_o_one_proved": true,
+    "speedup_claim_allowed": false,
+    "subpolynomial_collision_required_for_rank_transfer": false
+  },
+  "created_at": "2026-08-14T00:06:08.060060+00:00",
+  "exact_controls": [
+    {
+      "coarse_transpose_orbit_kl_bits": 1.717850465126431,
+      "exact_five_label_chi_square": 3.0416666666666665,
+      "exact_non_mi_remainder_formula_residual_bits": 1.7763568394002505e-15,
+      "exact_recoupling_mutual_information_reduction_verified": true,
+      "five_label_kl_upper_bits": 2.0149503414659713,
+      "full_kl_chain_residual_bits": 1.1102230246251565e-15,
+      "full_six_label_kl_bits": 2.1252578725338385,
+      "full_to_coarse_kl_contraction_slack_bits": 0.40740740740740744,
+      "left_five_label_chain_residual_bits": 1.4432899320127035e-15,
+      "left_five_label_kl_bits": 1.1699250014423117,
+      "maximum_five_label_kl_bound_violation_bits": 0.0,
+      "n": 3,
+      "non_mutual_information_remainder_bits": 2.069340279780989,
+      "outer_four_label_kl_bits": 0.2705097231036362,
+      "physical_average_left_marginal_kl_bits": 0.899415278338677,
+      "physical_average_recoupling_mutual_information_bits": 0.05591759275284951,
+      "physical_average_right_marginal_kl_bits": 0.899415278338677,
+      "right_five_label_chain_residual_bits": 1.4432899320127035e-15,
+      "right_five_label_kl_bits": 1.1699250014423117,
+      "status": "six-label-entropy-is-racah-mutual-information-plus-five-label-remainder"
+    },
+    {
+      "coarse_transpose_orbit_kl_bits": 1.199804757471669,
+      "exact_five_label_chi_square": 3.2604166666666665,
+      "exact_non_mi_remainder_formula_residual_bits": 2.220446049250313e-16,
+      "exact_recoupling_mutual_information_reduction_verified": true,
+      "five_label_kl_upper_bits": 2.0909945322205923,
+      "full_kl_chain_residual_bits": 1.7763568394002505e-15,
+      "full_six_label_kl_bits": 2.073816201540236,
+      "full_to_coarse_kl_contraction_slack_bits": 0.8740114440685669,
+      "left_five_label_chain_residual_bits": 8.881784197001252e-16,
+      "left_five_label_kl_bits": 1.0375937481971098,
+      "maximum_five_label_kl_bound_violation_bits": 0.0,
+      "n": 4,
+      "non_mutual_information_remainder_bits": 1.9333904708228933,
+      "outer_four_label_kl_bits": 0.14179702557132656,
+      "physical_average_left_marginal_kl_bits": 0.8957967226257824,
+      "physical_average_recoupling_mutual_information_bits": 0.1404257307173426,
+      "physical_average_right_marginal_kl_bits": 0.8957967226257826,
+      "right_five_label_chain_residual_bits": 6.661338147750939e-16,
+      "right_five_label_kl_bits": 1.0375937481971098,
+      "status": "six-label-entropy-is-racah-mutual-information-plus-five-label-remainder"
+    },
+    {
+      "coarse_transpose_orbit_kl_bits": 0.506673835591169,
+      "exact_five_label_chi_square": 1.3568287037037037,
+      "exact_non_mi_remainder_formula_residual_bits": 5.551115123125783e-16,
+      "exact_recoupling_mutual_information_reduction_verified": true,
+      "five_label_kl_upper_bits": 1.2368469061070795,
+      "full_kl_chain_residual_bits": 4.9960036108132044e-15,
+      "full_six_label_kl_bits": 1.1325474284073112,
+      "full_to_coarse_kl_contraction_slack_bits": 0.6258735928161422,
+      "left_five_label_chain_residual_bits": 2.220446049250313e-15,
+      "left_five_label_kl_bits": 0.45602845270055015,
+      "maximum_five_label_kl_bound_violation_bits": 0.0,
+      "n": 5,
+      "non_mutual_information_remainder_bits": 0.8951794332111365,
+      "outer_four_label_kl_bits": 0.01687747218996443,
+      "physical_average_left_marginal_kl_bits": 0.4391509805105835,
+      "physical_average_recoupling_mutual_information_bits": 0.23736799519617469,
+      "physical_average_right_marginal_kl_bits": 0.4391509805105835,
+      "right_five_label_chain_residual_bits": 2.220446049250313e-15,
+      "right_five_label_kl_bits": 0.45602845270055015,
+      "status": "six-label-entropy-is-racah-mutual-information-plus-five-label-remainder"
+    }
+  ],
+  "falsifiers_triggered": [
+    "Collision-heavy tails need not block the weaker direct-entropy route.",
+    "Five-label decoupling does not imply outer-conditioned recoupling independence.",
+    "Perfect Plancherel marginals can coexist with superlogarithmic coupling information."
+  ],
+  "headline_metrics": {
+    "exact_finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "natural_racah_mi_sublogarithmic_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "non_mi_entropy_remainder_decay_theorem_count": 1,
+    "physical_rank_mixing_theorem_count": 0,
+    "racah_mutual_information_kl_chain_theorem_count": 1,
+    "rank_marginal_mi_counterexample_count": 6
+  },
+  "literature_basis": [
+    {
+      "applicable": true,
+      "id": "source-conditioned-five-label-decoupling",
+      "precise_use": "Every tetrahedral edge-deleted five-label marginal has common chi-square V5_n=o(1)."
+    },
+    {
+      "applicable": true,
+      "id": "vershik-kerov-maximal-irrep-dimension",
+      "precise_use": "The maximal Plancherel atom is exp(-Omega(sqrt(n))), so the identity-block countermodel has entropy Omega(sqrt(n))."
+    },
+    {
+      "applicable": false,
+      "id": "christandl-sahinoglu-walter-recoupling-2016",
+      "precise_use": "Its bounded-row asymptotics do not prove the required average mutual-information estimate for Plancherel shapes.",
+      "url": "https://arxiv.org/abs/1210.0463"
+    }
+  ],
+  "marginal_countermodels": [
+    {
+      "asymptotic_superlogarithmic_information_certified": true,
+      "column_marginal_kl_to_plancherel_bits": 0.0,
+      "identity_block_mutual_information_bits": 2.354306349436356,
+      "n": 5,
+      "partition_count": 7,
+      "plancherel_entropy_bits": 2.354306349436356,
+      "plancherel_entropy_over_log2_n": 1.0139445552255848,
+      "row_marginal_kl_to_plancherel_bits": 0.0,
+      "status": "perfect-plancherel-marginals-permit-superlog-racah-information"
+    },
+    {
+      "asymptotic_superlogarithmic_information_certified": true,
+      "column_marginal_kl_to_plancherel_bits": 0.0,
+      "identity_block_mutual_information_bits": 4.2649140460084025,
+      "n": 10,
+      "partition_count": 42,
+      "plancherel_entropy_bits": 4.2649140460084025,
+      "plancherel_entropy_over_log2_n": 1.283867056777162,
+      "row_marginal_kl_to_plancherel_bits": 0.0,
+      "status": "perfect-plancherel-marginals-permit-superlog-racah-information"
+    },
+    {
+      "asymptotic_superlogarithmic_information_certified": true,
+      "column_marginal_kl_to_plancherel_bits": 0.0,
+      "identity_block_mutual_information_bits": 7.2512585010315584,
+      "n": 20,
+      "partition_count": 627,
+      "plancherel_entropy_bits": 7.2512585010315584,
+      "plancherel_entropy_over_log2_n": 1.6777832351281956,
+      "row_marginal_kl_to_plancherel_bits": 0.0,
+      "status": "perfect-plancherel-marginals-permit-superlog-racah-information"
+    },
+    {
+      "asymptotic_superlogarithmic_information_certified": true,
+      "column_marginal_kl_to_plancherel_bits": 0.0,
+      "identity_block_mutual_information_bits": 9.644870943873077,
+      "n": 30,
+      "partition_count": 5604,
+      "plancherel_entropy_bits": 9.644870943873077,
+      "plancherel_entropy_over_log2_n": 1.9655769281884685,
+      "row_marginal_kl_to_plancherel_bits": 0.0,
+      "status": "perfect-plancherel-marginals-permit-superlog-racah-information"
+    },
+    {
+      "asymptotic_superlogarithmic_information_certified": true,
+      "column_marginal_kl_to_plancherel_bits": 0.0,
+      "identity_block_mutual_information_bits": 11.707357394004458,
+      "n": 40,
+      "partition_count": 37338,
+      "plancherel_entropy_bits": 11.707357394004458,
+      "plancherel_entropy_over_log2_n": 2.1998338168551,
+      "row_marginal_kl_to_plancherel_bits": 0.0,
+      "status": "perfect-plancherel-marginals-permit-superlog-racah-information"
+    },
+    {
+      "asymptotic_superlogarithmic_information_certified": true,
+      "column_marginal_kl_to_plancherel_bits": 0.0,
+      "identity_block_mutual_information_bits": 13.550102796771482,
+      "n": 50,
+      "partition_count": 204226,
+      "plancherel_entropy_bits": 13.550102796771482,
+      "plancherel_entropy_over_log2_n": 2.4008589767614783,
+      "row_marginal_kl_to_plancherel_bits": 0.0,
+      "status": "perfect-plancherel-marginals-permit-superlog-racah-information"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_exact_racah_mutual_information_kl_chain",
+      "resolution": "Condition on outer labels and apply the KL product-family information projection to the recoupling coupling.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_all_non_mi_entropy_terms_vanish",
+      "resolution": "Two five-label KL bounds dominate the outer and marginal terms.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_physical_average_natural_racah_mi_sublogarithmic",
+      "resolution": "Establish growing-row 6j entropic delocalization under the physical outer-label law, allowing collision-heavy rare tails.",
+      "resolved": false
+    },
+    {
+      "obligation": "separate_any_surviving_racah_mi_from_classical_access",
+      "resolution": "A positive lower bound must be paired with a coherent estimator and same-access classical baseline.",
+      "resolved": false
+    }
+  ],
+  "scaling_controls": [
+    {
+      "five_label_chi_square_upper": 0.04670086046005746,
+      "n": 16,
+      "non_mutual_information_remainder_upper_bits": 0.13169837872212625,
+      "physical_average_racah_mutual_information_sublogarithmic_proved": false,
+      "remainder_asymptotically_vanishing": true,
+      "status": "non-racah-six-label-entropy-remainder-vanishing"
+    },
+    {
+      "five_label_chi_square_upper": 0.025138773042291594,
+      "n": 20,
+      "non_mutual_information_remainder_upper_bits": 0.07163844117517551,
+      "physical_average_racah_mutual_information_sublogarithmic_proved": false,
+      "remainder_asymptotically_vanishing": true,
+      "status": "non-racah-six-label-entropy-remainder-vanishing"
+    },
+    {
+      "five_label_chi_square_upper": 0.01594050161922097,
+      "n": 24,
+      "non_mutual_information_remainder_upper_bits": 0.04563182679420037,
+      "physical_average_racah_mutual_information_sublogarithmic_proved": false,
+      "remainder_asymptotically_vanishing": true,
+      "status": "non-racah-six-label-entropy-remainder-vanishing"
+    },
+    {
+      "five_label_chi_square_upper": 0.009398740138231583,
+      "n": 30,
+      "non_mutual_information_remainder_upper_bits": 0.026992382155652524,
+      "physical_average_racah_mutual_information_sublogarithmic_proved": false,
+      "remainder_asymptotically_vanishing": true,
+      "status": "non-racah-six-label-entropy-remainder-vanishing"
+    },
+    {
+      "five_label_chi_square_upper": 0.004895154886938771,
+      "n": 40,
+      "non_mutual_information_remainder_upper_bits": 0.014089973126447764,
+      "physical_average_racah_mutual_information_sublogarithmic_proved": false,
+      "remainder_asymptotically_vanishing": true,
+      "status": "non-racah-six-label-entropy-remainder-vanishing"
+    },
+    {
+      "five_label_chi_square_upper": 0.0029953955426267175,
+      "n": 50,
+      "non_mutual_information_remainder_upper_bits": 0.00862996595190009,
+      "physical_average_racah_mutual_information_sublogarithmic_proved": false,
+      "remainder_asymptotically_vanishing": true,
+      "status": "non-racah-six-label-entropy-remainder-vanishing"
+    }
+  ],
+  "status": "rank-entropy-target-is-sublog-natural-racah-mutual-information",
+  "summary": "Reduced full six-label entropy, up to o(1), to mutual information in the squared natural Racah block coupling.",
+  "theorem": {
+    "asymptotic_identity": "D(P6||q6)=E_(Pouter)I_pi(mu;nu)+o(1)",
+    "condition_weaker_than_subpolynomial_collision": true,
+    "exact_kl_chain": "D(P6||q6)=D(Pouter||q4)+E[I_pi+D(p||q)+D(r||q)]",
+    "five_label_remainder_bound": "0<=D(P6||q6)-E I_pi<=2log2(1+V5_n)=o(1)",
+    "natural_racah_mutual_information_sublogarithmic_proved": false,
+    "status": "physical-rank-entropy-reduced-to-natural-racah-mutual-information",
+    "sufficient_rank_transfer_condition": "E_(Pouter)I_pi(mu;nu)=o(log n)"
+  },
+  "theorem_contract": {
+    "asymptotic_target": "D(P6||q6)=E_(Pouter)I_pi(mu;nu)+o(1)",
+    "coarse_transfer": "D(coarse transpose-orbit law)<=D(full six-partition law).",
+    "exact_chain": "D(P6||q6)=D(Pouter||q4)+E[I_pi+D(p||q)+D(r||q)]",
+    "rank_sufficient_condition": "E_(Pouter)I_pi(mu;nu)=o(log n)",
+    "scope": "This is a rank-entropy reduction. It does not control conditional orientation-syndrome Racah CMI or construct a measurement.",
+    "vanishing_remainder": "0<=D(P6||q6)-E I_pi<=2log2(1+V5_n)=o(1)"
+  }
+}

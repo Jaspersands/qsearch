@@ -1,0 +1,208 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False: fixed block size b>=3 has index exponent 1-1/b>1/2.",
+      "challenge": "The low-index dichotomy covers all imprimitive subgroups.",
+      "resolved": true
+    },
+    {
+      "answer": "False: odd two-row labels (n-t,t) occur with exact positive multiplicity and survive that trim.",
+      "challenge": "The prior even-row trim removes their subgroup witnesses.",
+      "resolved": true
+    },
+    {
+      "answer": "False: their whole QFT-flagged union has vanishing all-register alternative mass. The higher-row support is the real unknown.",
+      "challenge": "Those explicit survivors are a terminal obstruction.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "high_index_high_incidence_imprimitive_family_proved": true,
+    "higher_row_plethysm_support_classified": false,
+    "imprimitive_incident_formula_proved": true,
+    "odd_two_row_survivors_exhibited_and_deflated": true,
+    "post_plethysm_trim_frame_norm_bounded": false,
+    "reason": "Explicit two-row imprimitive outliers are removable, but the higher-row plethysm support and residual conditioning are open.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T17:22:54.688605+00:00",
+  "falsifiers_triggered": [
+    "High-index imprimitive subgroup outliers evade the generic low-index theorem.",
+    "Even-row spherical deflation leaves exact odd two-row witnesses.",
+    "The exposed two-row witnesses are themselves negligible and do not establish hardness."
+  ],
+  "finite_controls": [
+    {
+      "block_count": 4,
+      "block_size": 3,
+      "character_average_multiplicities": {
+        "(10, 2)": 1,
+        "(11, 1)": 0,
+        "(12,)": 1,
+        "(6, 6)": 1,
+        "(7, 5)": 0,
+        "(8, 4)": 1,
+        "(9, 3)": 1
+      },
+      "degree": 12,
+      "direct_fixed_point_free_count": 108,
+      "exact_incidence_formula_verified": true,
+      "exact_two_row_multiplicity_formula_verified": true,
+      "expected_wreath_order": 31104,
+      "formula_fixed_point_free_count": 108,
+      "generated_wreath_element_count": 31104,
+      "multiplicity_mismatch_count": 0,
+      "odd_two_row_survivor_count": 1,
+      "status": "exact-imprimitive-incidence-and-two-row-plethysm-verified",
+      "subset_orbit_multiplicities": {
+        "(10, 2)": 1,
+        "(11, 1)": 0,
+        "(12,)": 1,
+        "(6, 6)": 1,
+        "(7, 5)": 0,
+        "(8, 4)": 1,
+        "(9, 3)": 1
+      },
+      "two_row_control_count": 7
+    }
+  ],
+  "headline_metrics": {
+    "coherent_negligible_two_row_deflation_count": 1,
+    "exact_finite_control_count": 1,
+    "finite_control_failure_count": 0,
+    "high_index_high_incidence_family_theorem_count": 1,
+    "higher_row_plethysm_classification_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "post_spherical_survivor_family_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-IMPRIMITIVE-PLETHYSM-MASS",
+      "resolved": false,
+      "statement": "Bound the natural alternative mass of the higher-row support of h_a[h_b] for fixed and growing block sizes."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-IMPRIMITIVE-SUPPORT-MEMBERSHIP",
+      "resolved": false,
+      "statement": "Compile or prove hardness of coherent membership in the nonzero plethysm support of Ind_(S_b wr S_a)^S_n(1)."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-POST-PLETHYSM-TRIM-NORM",
+      "resolved": false,
+      "statement": "Bound or witness the frame norm after every negligible, efficiently flaggable imprimitive support trim."
+    }
+  ],
+  "scaling_records": [
+    {
+      "all_register_odd_two_row_mass_log2_upper_bound": -1781.881337832501,
+      "block_count": 8,
+      "block_size": 3,
+      "degree": 24,
+      "group_order_decimal": "620448401733239439360000",
+      "higher_row_plethysm_support_classified": false,
+      "incident_candidate_count_decimal": "136080",
+      "incident_candidate_count_log2": 17.054095520550746,
+      "incident_elementary_lower_bound_decimal": "136080",
+      "low_index_support_bound_informative": false,
+      "odd_two_row_outliers_negligible_and_qft_deflatable": true,
+      "odd_two_row_support_dimension_decimal": "372976649541",
+      "odd_two_row_survivor_sector_count": 4,
+      "one_register_odd_two_row_mass_upper_bound": 1.202280958413559e-12,
+      "residual_frame_norm_bounded": false,
+      "status": "odd-two-row-outliers-deflatable-higher-row-plethysm-open",
+      "subgroup_index_decimal": "9161680528000",
+      "subgroup_index_log_group_order_ratio": 0.5447877733347172,
+      "wreath_order_decimal": "67722117120"
+    },
+    {
+      "all_register_odd_two_row_mass_log2_upper_bound": -12347.42506575224,
+      "block_count": 16,
+      "block_size": 3,
+      "degree": 48,
+      "group_order_decimal": "12413915592536072670862289047373375038521486354677760000000000",
+      "higher_row_plethysm_support_classified": false,
+      "incident_candidate_count_decimal": "3404623622400",
+      "incident_candidate_count_log2": 41.63063245726459,
+      "incident_elementary_lower_bound_decimal": "3404623622400",
+      "low_index_support_bound_informative": false,
+      "odd_two_row_outliers_negligible_and_qft_deflatable": true,
+      "odd_two_row_support_dimension_decimal": "53377344276993577296059525",
+      "odd_two_row_survivor_sector_count": 10,
+      "one_register_odd_two_row_mass_upper_bound": 8.599598390871445e-36,
+      "residual_frame_norm_bounded": false,
+      "status": "odd-two-row-outliers-deflatable-higher-row-plethysm-open",
+      "subgroup_index_decimal": "210314486592266380347977873920000000",
+      "subgroup_index_log_group_order_ratio": 0.5781733382079133,
+      "wreath_order_decimal": "59025489844657012604928000"
+    },
+    {
+      "all_register_odd_two_row_mass_log2_upper_bound": -27240.897061476142,
+      "block_count": 16,
+      "block_size": 4,
+      "degree": 64,
+      "group_order_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "higher_row_plethysm_support_classified": false,
+      "incident_candidate_count_decimal": "1232322909349201281",
+      "incident_candidate_count_log2": 60.09608604734632,
+      "incident_elementary_lower_bound_decimal": "223125413717606400",
+      "low_index_support_bound_informative": false,
+      "odd_two_row_outliers_negligible_and_qft_deflatable": true,
+      "odd_two_row_support_dimension_decimal": "160500944532048957766006090850845072",
+      "odd_two_row_survivor_sector_count": 14,
+      "one_register_odd_two_row_mass_upper_bound": 2.529826228234782e-54,
+      "residual_frame_norm_bounded": false,
+      "status": "odd-two-row-outliers-deflatable-higher-row-plethysm-open",
+      "subgroup_index_decimal": "500515390382288612806973790341575266406256851025390625",
+      "subgroup_index_log_group_order_ratio": 0.6026639528093871,
+      "wreath_order_decimal": "253512548513181989475225528434688000"
+    },
+    {
+      "all_register_odd_two_row_mass_log2_upper_bound": -49520.49669736815,
+      "block_count": 16,
+      "block_size": 5,
+      "degree": 80,
+      "group_order_decimal": "71569457046263802294811533723186532165584657342365752577109445058227039255480148842668944867280814080000000000000000000",
+      "higher_row_plethysm_support_classified": false,
+      "incident_candidate_count_decimal": "87158364733440000000000",
+      "incident_candidate_count_log2": 76.20605721636349,
+      "incident_elementary_lower_bound_decimal": "87158364733440000000000",
+      "low_index_support_bound_informative": false,
+      "odd_two_row_outliers_negligible_and_qft_deflatable": true,
+      "odd_two_row_support_dimension_decimal": "570034527467606116851651349855444223310209809",
+      "odd_two_row_survivor_sector_count": 19,
+      "one_register_odd_two_row_mass_upper_bound": 1.5929547351438628e-74,
+      "residual_frame_norm_bounded": false,
+      "status": "odd-two-row-outliers-deflatable-higher-row-plethysm-open",
+      "subgroup_index_decimal": "1850155333332565691862604612438504840489598409403595463907676319416549376",
+      "subgroup_index_log_group_order_ratio": 0.6080297315617664,
+      "wreath_order_decimal": "38682945024594419780765614080000000000000000000"
+    }
+  ],
+  "status": "imprimitive-two-row-boundary-proved-higher-row-plethysm-open",
+  "summary": "Located a high-index high-incidence imprimitive subgroup family, resolved its exact two-row plethysm survivors, and showed that those survivors are negligible while higher-row plethysm remains the barrier.",
+  "theorem": {
+    "exact_incident_count_proved": true,
+    "exact_two_row_plethysm_multiplicity_proved": true,
+    "high_index_high_incidence_family_proved": true,
+    "higher_row_plethysm_support_classified": false,
+    "incident_count": "R_(a,b)=sum_j a!/(2^j j!(a-2j)!)(b!)^j F_b^(a-2j).",
+    "index_phase": "For fixed b>=3, log([S_(ab):S_b wr S_a])/log((ab)!) tends to 1-1/b>1/2.",
+    "odd_two_row_outliers_deflated_at_vanishing_mass": true,
+    "post_spherical_two_row_outliers_exhibited": true,
+    "residual_frame_norm_bounded": false,
+    "scope_limit": "Higher-row h_a[h_b] plethysm support, its natural mass, and the post-deflation frame norm remain unresolved.",
+    "spherical_trim_survivors": "Odd t gives non-even-row L-invariant sectors with frame Rayleigh quotient at least R_(a,b) after the even-row trim.",
+    "status": "imprimitive-two-row-boundary-proved-higher-row-plethysm-open",
+    "subset_orbits": "L-orbits on t-subsets are bounded occupancy partitions of t.",
+    "theorem_verified": true,
+    "two_row_deflation": "The union of odd two-row survivor sectors is QFT-flagged and its all-register alternative mass vanishes at orbit-flatness width.",
+    "two_row_multiplicity": "mult_(n-t,t)(Ind_L^G 1)=O_t-O_(t-1), positive for a linear range generated by occupancy parts two and three."
+  },
+  "theorem_contract": {
+    "explicit_support": "Two-row constituents from t-subset orbit counts.",
+    "family": "Imprimitive subgroups S_b wr S_a <= S_(ab), b>=3.",
+    "incidence": "Fixed-point-free involutions inside the wreath subgroup.",
+    "outside_scope": "Higher-row plethysm support, support membership complexity, aggregate mass, residual norm, and decoding."
+  }
+}

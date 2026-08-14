@@ -1,0 +1,1332 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The geometric edge labeling is equivalent and harmless.",
+      "resolution": "It is the tetrahedral-dual incidence, not this table convention; it assigns positive exact likelihoods to forbidden fusion blocks.",
+      "resolved": true
+    },
+    {
+      "objection": "A nonuniform Kronecker rank profile proves syndrome survival.",
+      "resolution": "An S4 control has nonzero rank-profile variance cancelled exactly by an antiparallel non-Haar residual, leaving a flat natural channel.",
+      "resolved": true
+    },
+    {
+      "objection": "A flat Haar rank profile proves syndrome decoupling.",
+      "resolution": "Finite S5 controls have arithmetic-residual energy much larger than their rank-profile energy.",
+      "resolved": true
+    },
+    {
+      "objection": "The Haar variance formula models natural 6j symbols.",
+      "resolution": "No such distributional theorem is assumed; equation (5) is only a calibrated null against which deterministic arithmetic can be tested.",
+      "resolved": true
+    }
+  ],
+  "axis_mapping_controls": [
+    {
+      "competing_dual_mapping_rejected": true,
+      "direct_coefficient_axis_mapping_verified": true,
+      "direct_mapping_unsupported_positive_count": 0,
+      "dual_geometric_mapping_unsupported_positive_count": 20,
+      "maximum_direct_mapping_unsupported_likelihood": 0.0,
+      "maximum_dual_geometric_mapping_unsupported_likelihood": 216.0,
+      "n": 3,
+      "positive_likelihood_entry_count": 48,
+      "status": "direct-physical-axis-order-verified-and-dual-rejected"
+    },
+    {
+      "competing_dual_mapping_rejected": true,
+      "direct_coefficient_axis_mapping_verified": true,
+      "direct_mapping_unsupported_positive_count": 0,
+      "dual_geometric_mapping_unsupported_positive_count": 264,
+      "maximum_direct_mapping_unsupported_likelihood": 0.0,
+      "maximum_dual_geometric_mapping_unsupported_likelihood": 13824.0,
+      "n": 4,
+      "positive_likelihood_entry_count": 656,
+      "status": "direct-physical-axis-order-verified-and-dual-rejected"
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "canonical_adaptive_syndrome_decouples_proved": false,
+    "canonical_adaptive_syndrome_survives_proved": false,
+    "canonical_kronecker_rank_profile_mixes_proved": false,
+    "canonical_nonhaar_racah_residual_vanishes_proved": false,
+    "canonical_rank_arithmetic_alignment_controlled": false,
+    "classical_separation_proved": false,
+    "haar_null_is_natural_racah_distribution_theorem": false,
+    "haar_rank_profile_alone_determines_natural_channel": false,
+    "physical_coefficient_axis_mapping_verified": true,
+    "positive_channels_are_normalized_racah_block_masses": true,
+    "rank_arithmetic_alignment_decomposition_proved": true,
+    "reason": "Adaptive information is now split into explicit multiplicity, deterministic 6j arithmetic, and alignment obligations, but none has the required canonical source-weighted asymptotic bound.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T22:00:21.148381+00:00",
+  "falsifiers_triggered": [
+    "The tetrahedral-dual geometric label mapping is incompatible with the implemented physical likelihood axes.",
+    "Kronecker block ranks alone neither prove survival nor prove decoupling.",
+    "Natural symmetric-group recoupling cannot be replaced by an unproved Haar ansatz.",
+    "Rank and arithmetic components can cancel perfectly after centering.",
+    "Canonical progress requires source-weighted asymptotics for both components and their alignment."
+  ],
+  "headline_metrics": {
+    "canonical_racah_residual_bound_count": 0,
+    "canonical_rank_profile_bound_count": 0,
+    "exact_rank_arithmetic_cancellation_control_count": 1,
+    "finite_arithmetic_dominated_control_count": 1,
+    "finite_control_failure_count": 0,
+    "finite_orbit_control_count": 4,
+    "maximum_axis_mapping_support_residual": 0.0,
+    "maximum_orientation_fiber_amplitude_residual": 8.326672684688674e-17,
+    "maximum_variance_decomposition_residual": 1.734723475976807e-18,
+    "new_quantum_algorithm_count": 0,
+    "physical_axis_mapping_control_count": 2,
+    "rank_arithmetic_energy_decomposition_theorem_count": 1
+  },
+  "orbit_controls": [
+    {
+      "all_fusion_associativity_identities_verified": true,
+      "all_orientation_fusion_profiles_invariant": true,
+      "centered_alignment_cosine": -1.0,
+      "channels": [
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.027777777777777776,
+          "intermediate_dimensions": [
+            3,
+            3
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 1.3877787807814457e-17,
+          "natural_normalized_block_mass": 0.02777777777777777,
+          "nonhaar_arithmetic_residual": -6.938893903907228e-18,
+          "normalized_haar_block_variance": 0.0007716049382716049,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "right_block_rank": 1,
+          "syndrome": [
+            0,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.037037037037037035,
+          "intermediate_dimensions": [
+            3,
+            3
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 1.734723475976807e-17,
+          "natural_normalized_block_mass": 0.02777777777777777,
+          "nonhaar_arithmetic_residual": -0.009259259259259266,
+          "normalized_haar_block_variance": 0.0010973936899862826,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "right_block_rank": 1,
+          "syndrome": [
+            0,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 3
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.027777777777777776,
+          "intermediate_dimensions": [
+            3,
+            3
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 3.469446951953614e-18,
+          "natural_normalized_block_mass": 0.02777777777777777,
+          "nonhaar_arithmetic_residual": -6.938893903907228e-18,
+          "normalized_haar_block_variance": 0.0007716049382716049,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "right_block_rank": 1,
+          "syndrome": [
+            0,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.037037037037037035,
+          "intermediate_dimensions": [
+            3,
+            3
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 1.734723475976807e-17,
+          "natural_normalized_block_mass": 0.02777777777777777,
+          "nonhaar_arithmetic_residual": -0.009259259259259266,
+          "normalized_haar_block_variance": 0.0010973936899862826,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "right_block_rank": 1,
+          "syndrome": [
+            0,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 3
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.027777777777777776,
+          "intermediate_dimensions": [
+            3,
+            3
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 7.979727989493313e-17,
+          "natural_normalized_block_mass": 0.02777777777777777,
+          "nonhaar_arithmetic_residual": -6.938893903907228e-18,
+          "normalized_haar_block_variance": 0.0007716049382716049,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "right_block_rank": 1,
+          "syndrome": [
+            1,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.037037037037037035,
+          "intermediate_dimensions": [
+            3,
+            3
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 1.734723475976807e-17,
+          "natural_normalized_block_mass": 0.02777777777777777,
+          "nonhaar_arithmetic_residual": -0.009259259259259266,
+          "normalized_haar_block_variance": 0.0010973936899862826,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "right_block_rank": 1,
+          "syndrome": [
+            1,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 3
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.027777777777777776,
+          "intermediate_dimensions": [
+            3,
+            3
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 8.326672684688674e-17,
+          "natural_normalized_block_mass": 0.02777777777777777,
+          "nonhaar_arithmetic_residual": -6.938893903907228e-18,
+          "normalized_haar_block_variance": 0.0007716049382716049,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "right_block_rank": 1,
+          "syndrome": [
+            1,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.037037037037037035,
+          "intermediate_dimensions": [
+            3,
+            3
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 1.734723475976807e-17,
+          "natural_normalized_block_mass": 0.02777777777777777,
+          "nonhaar_arithmetic_residual": -0.009259259259259266,
+          "normalized_haar_block_variance": 0.0010973936899862826,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "right_block_rank": 1,
+          "syndrome": [
+            1,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 3
+        }
+      ],
+      "conditional_syndrome_chi_square": 0.0,
+      "control_id": "S4-RACAH-0",
+      "exact_rank_residual_decomposition_verified": true,
+      "finite_mechanism_diagnosis": "rank-profile-nonuniformity-exactly-cancelled-by-racah-arithmetic",
+      "haar_rank_profile_centered_energy": 0.0013717421124828531,
+      "independent_haar_null_energy_upper_benchmark": 0.0598079561042524,
+      "maximum_forbidden_support_amplitude_residual": 0.0,
+      "maximum_orientation_fiber_amplitude_residual": 8.326672684688674e-17,
+      "minkowski_lower_bound": 0.0,
+      "minkowski_upper_bound": 0.07407407407407407,
+      "minkowski_violation": 0.0,
+      "n": 4,
+      "natural_centered_energy": 0.0,
+      "nonhaar_residual_centered_energy": 0.0013717421124828531,
+      "nonhaar_residual_relative_scale": 0.1666666666666667,
+      "orbit_indices": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "orbit_representatives": [
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "rank_profile_relative_scale": 0.1666666666666667,
+      "rank_residual_centered_cross_term": -0.0013717421124828531,
+      "status": "adaptive-channel-split-into-rank-profile-and-racah-arithmetic",
+      "total_natural_amplitude": 0.22222222222222215,
+      "variance_decomposition_residual": 0.0
+    },
+    {
+      "all_fusion_associativity_identities_verified": true,
+      "all_orientation_fusion_profiles_invariant": true,
+      "centered_alignment_cosine": 1.0,
+      "channels": [
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.0,
+          "intermediate_dimensions": [
+            4,
+            4
+          ],
+          "left_block_rank": 0,
+          "maximum_orientation_fiber_amplitude_residual": 0.0,
+          "natural_normalized_block_mass": 0.0,
+          "nonhaar_arithmetic_residual": 0.0,
+          "normalized_haar_block_variance": 0.0,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "right_block_rank": 0,
+          "syndrome": [
+            0,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.0,
+          "intermediate_dimensions": [
+            4,
+            4
+          ],
+          "left_block_rank": 0,
+          "maximum_orientation_fiber_amplitude_residual": 0.0,
+          "natural_normalized_block_mass": 0.0,
+          "nonhaar_arithmetic_residual": 0.0,
+          "normalized_haar_block_variance": 0.0,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "right_block_rank": 0,
+          "syndrome": [
+            0,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 1
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.0,
+          "intermediate_dimensions": [
+            4,
+            4
+          ],
+          "left_block_rank": 0,
+          "maximum_orientation_fiber_amplitude_residual": 0.0,
+          "natural_normalized_block_mass": 0.0,
+          "nonhaar_arithmetic_residual": 0.0,
+          "normalized_haar_block_variance": 0.0,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "right_block_rank": 1,
+          "syndrome": [
+            0,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.0,
+          "intermediate_dimensions": [
+            4,
+            4
+          ],
+          "left_block_rank": 0,
+          "maximum_orientation_fiber_amplitude_residual": 0.0,
+          "natural_normalized_block_mass": 0.0,
+          "nonhaar_arithmetic_residual": 0.0,
+          "normalized_haar_block_variance": 0.0,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "right_block_rank": 0,
+          "syndrome": [
+            0,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 1
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.0,
+          "intermediate_dimensions": [
+            4,
+            4
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 0.0,
+          "natural_normalized_block_mass": 0.0,
+          "nonhaar_arithmetic_residual": 0.0,
+          "normalized_haar_block_variance": 0.0,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "right_block_rank": 0,
+          "syndrome": [
+            1,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.0,
+          "intermediate_dimensions": [
+            4,
+            4
+          ],
+          "left_block_rank": 0,
+          "maximum_orientation_fiber_amplitude_residual": 0.0,
+          "natural_normalized_block_mass": 0.0,
+          "nonhaar_arithmetic_residual": 0.0,
+          "normalized_haar_block_variance": 0.0,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "right_block_rank": 0,
+          "syndrome": [
+            1,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 1
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.015625,
+          "intermediate_dimensions": [
+            4,
+            4
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 0.0,
+          "natural_normalized_block_mass": 0.027777777777777776,
+          "nonhaar_arithmetic_residual": 0.012152777777777776,
+          "normalized_haar_block_variance": 0.000244140625,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "right_block_rank": 1,
+          "syndrome": [
+            1,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.0,
+          "intermediate_dimensions": [
+            4,
+            4
+          ],
+          "left_block_rank": 0,
+          "maximum_orientation_fiber_amplitude_residual": 0.0,
+          "natural_normalized_block_mass": 0.0,
+          "nonhaar_arithmetic_residual": 0.0,
+          "normalized_haar_block_variance": 0.0,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "right_block_rank": 0,
+          "syndrome": [
+            1,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 1
+        }
+      ],
+      "conditional_syndrome_chi_square": 6.999999999999997,
+      "control_id": "S5-RACAH-0",
+      "exact_rank_residual_decomposition_verified": true,
+      "finite_mechanism_diagnosis": "rank-profile-and-racah-arithmetic-both-material-at-finite-n",
+      "haar_rank_profile_centered_energy": 0.001708984375,
+      "independent_haar_null_energy_upper_benchmark": 0.001953125,
+      "maximum_forbidden_support_amplitude_residual": 0.0,
+      "maximum_orientation_fiber_amplitude_residual": 0.0,
+      "minkowski_lower_bound": 0.009186636496752054,
+      "minkowski_upper_bound": 0.0734930919740164,
+      "minkowski_violation": 0.0,
+      "n": 5,
+      "natural_centered_energy": 0.0054012345679012325,
+      "nonhaar_residual_centered_energy": 0.0010338300540123455,
+      "nonhaar_residual_relative_scale": 1.1575161985907585,
+      "orbit_indices": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "orbit_representatives": [
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ]
+      ],
+      "rank_profile_relative_scale": 1.4882351124738324,
+      "rank_residual_centered_cross_term": 0.0013292100694444443,
+      "status": "adaptive-channel-split-into-rank-profile-and-racah-arithmetic",
+      "total_natural_amplitude": 0.027777777777777776,
+      "variance_decomposition_residual": 1.734723475976807e-18
+    },
+    {
+      "all_fusion_associativity_identities_verified": true,
+      "all_orientation_fusion_profiles_invariant": true,
+      "centered_alignment_cosine": -0.41233496180210777,
+      "channels": [
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.006666666666666667,
+          "intermediate_dimensions": [
+            5,
+            5
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 2.7755575615628914e-17,
+          "natural_normalized_block_mass": 0.022500000000000006,
+          "nonhaar_arithmetic_residual": 0.015833333333333338,
+          "normalized_haar_block_variance": 5.555555555555556e-05,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "right_block_rank": 1,
+          "syndrome": [
+            0,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 6
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.008,
+          "intermediate_dimensions": [
+            5,
+            5
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 8.673617379884035e-19,
+          "natural_normalized_block_mass": 0.002500000000000001,
+          "nonhaar_arithmetic_residual": -0.0055,
+          "normalized_haar_block_variance": 7.314285714285714e-05,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "right_block_rank": 1,
+          "syndrome": [
+            0,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 5
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.006666666666666667,
+          "intermediate_dimensions": [
+            5,
+            5
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 2.168404344971009e-18,
+          "natural_normalized_block_mass": 0.0024999999999999966,
+          "nonhaar_arithmetic_residual": -0.004166666666666671,
+          "normalized_haar_block_variance": 5.555555555555556e-05,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "right_block_rank": 1,
+          "syndrome": [
+            0,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 6
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.008,
+          "intermediate_dimensions": [
+            5,
+            5
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 5.204170427930421e-18,
+          "natural_normalized_block_mass": 0.0025000000000000027,
+          "nonhaar_arithmetic_residual": -0.005499999999999998,
+          "normalized_haar_block_variance": 7.314285714285714e-05,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "right_block_rank": 1,
+          "syndrome": [
+            0,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 5
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.006666666666666667,
+          "intermediate_dimensions": [
+            5,
+            5
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 1.8214596497756474e-17,
+          "natural_normalized_block_mass": 0.0024999999999999974,
+          "nonhaar_arithmetic_residual": -0.004166666666666669,
+          "normalized_haar_block_variance": 5.555555555555556e-05,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "right_block_rank": 1,
+          "syndrome": [
+            1,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 6
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.008,
+          "intermediate_dimensions": [
+            5,
+            5
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 9.974659986866641e-18,
+          "natural_normalized_block_mass": 0.0025000000000000105,
+          "nonhaar_arithmetic_residual": -0.005499999999999989,
+          "normalized_haar_block_variance": 7.314285714285714e-05,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "right_block_rank": 1,
+          "syndrome": [
+            1,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 5
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.006666666666666667,
+          "intermediate_dimensions": [
+            5,
+            5
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 1.691355389077387e-17,
+          "natural_normalized_block_mass": 0.0002777777777777748,
+          "nonhaar_arithmetic_residual": -0.006388888888888892,
+          "normalized_haar_block_variance": 5.555555555555556e-05,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "right_block_rank": 1,
+          "syndrome": [
+            1,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 6
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.008,
+          "intermediate_dimensions": [
+            5,
+            5
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 1.5178830414797062e-17,
+          "natural_normalized_block_mass": 0.0025000000000000087,
+          "nonhaar_arithmetic_residual": -0.005499999999999991,
+          "normalized_haar_block_variance": 7.314285714285714e-05,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "right_block_rank": 1,
+          "syndrome": [
+            1,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 5
+        }
+      ],
+      "conditional_syndrome_chi_square": 2.048442906574393,
+      "control_id": "S5-RACAH-1",
+      "exact_rank_residual_decomposition_verified": true,
+      "finite_mechanism_diagnosis": "nonhaar-racah-arithmetic-dominates-finite-centered-energy",
+      "haar_rank_profile_centered_energy": 2.8444444444444434e-05,
+      "independent_haar_null_energy_upper_benchmark": 0.004118349206349206,
+      "maximum_forbidden_support_amplitude_residual": 0.0,
+      "maximum_orientation_fiber_amplitude_residual": 2.7755575615628914e-17,
+      "minkowski_lower_bound": 0.05071602762821137,
+      "minkowski_upper_bound": 0.06138269429487804,
+      "minkowski_violation": 0.0,
+      "n": 5,
+      "natural_centered_energy": 0.002923456790123458,
+      "nonhaar_residual_centered_energy": 0.0031415308641975317,
+      "nonhaar_residual_relative_scale": 1.4836595548644178,
+      "orbit_indices": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "orbit_representatives": [
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "rank_profile_relative_scale": 0.14117647058823518,
+      "rank_residual_centered_cross_term": -0.0001232592592592591,
+      "status": "adaptive-channel-split-into-rank-profile-and-racah-arithmetic",
+      "total_natural_amplitude": 0.0377777777777778,
+      "variance_decomposition_residual": 4.336808689942018e-19
+    },
+    {
+      "all_fusion_associativity_identities_verified": true,
+      "all_orientation_fusion_profiles_invariant": true,
+      "centered_alignment_cosine": 0.5284448080789905,
+      "channels": [
+        {
+          "forbidden_support_amplitude_residual": 2.6020852139652106e-18,
+          "haar_rank_profile_benchmark": 0.0,
+          "intermediate_dimensions": [
+            5,
+            4
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 2.6020852139652106e-18,
+          "natural_normalized_block_mass": -2.6020852139652106e-18,
+          "nonhaar_arithmetic_residual": -2.6020852139652106e-18,
+          "normalized_haar_block_variance": 0.0,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "right_block_rank": 0,
+          "syndrome": [
+            0,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "forbidden_support_amplitude_residual": 6.071532165918825e-18,
+          "haar_rank_profile_benchmark": 0.0,
+          "intermediate_dimensions": [
+            5,
+            4
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 6.071532165918825e-18,
+          "natural_normalized_block_mass": 6.071532165918825e-18,
+          "nonhaar_arithmetic_residual": 6.071532165918825e-18,
+          "normalized_haar_block_variance": 0.0,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            1
+          ],
+          "right_block_rank": 0,
+          "syndrome": [
+            0,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 3
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.0125,
+          "intermediate_dimensions": [
+            5,
+            4
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 3.469446951953614e-18,
+          "natural_normalized_block_mass": 0.009999999999999997,
+          "nonhaar_arithmetic_residual": -0.002500000000000004,
+          "normalized_haar_block_variance": 0.00015625,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            0
+          ],
+          "right_block_rank": 1,
+          "syndrome": [
+            0,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "forbidden_support_amplitude_residual": 1.734723475976807e-18,
+          "haar_rank_profile_benchmark": 0.0,
+          "intermediate_dimensions": [
+            5,
+            4
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 1.734723475976807e-18,
+          "natural_normalized_block_mass": 1.734723475976807e-18,
+          "nonhaar_arithmetic_residual": 1.734723475976807e-18,
+          "normalized_haar_block_variance": 0.0,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            0,
+            1,
+            1
+          ],
+          "right_block_rank": 0,
+          "syndrome": [
+            0,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 3
+        },
+        {
+          "forbidden_support_amplitude_residual": 8.673617379884035e-19,
+          "haar_rank_profile_benchmark": 0.0,
+          "intermediate_dimensions": [
+            5,
+            4
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 8.673617379884035e-19,
+          "natural_normalized_block_mass": 8.673617379884035e-19,
+          "nonhaar_arithmetic_residual": 8.673617379884035e-19,
+          "normalized_haar_block_variance": 0.0,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            0
+          ],
+          "right_block_rank": 0,
+          "syndrome": [
+            1,
+            0,
+            0
+          ],
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "forbidden_support_amplitude_residual": 6.071532165918825e-18,
+          "haar_rank_profile_benchmark": 0.0,
+          "intermediate_dimensions": [
+            5,
+            4
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 6.071532165918825e-18,
+          "natural_normalized_block_mass": 6.071532165918825e-18,
+          "nonhaar_arithmetic_residual": 6.071532165918825e-18,
+          "normalized_haar_block_variance": 0.0,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            0,
+            1
+          ],
+          "right_block_rank": 0,
+          "syndrome": [
+            1,
+            0,
+            1
+          ],
+          "total_multiplicity_dimension": 3
+        },
+        {
+          "forbidden_support_amplitude_residual": 0.0,
+          "haar_rank_profile_benchmark": 0.0125,
+          "intermediate_dimensions": [
+            5,
+            4
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 0.0,
+          "natural_normalized_block_mass": 0.02777777777777778,
+          "nonhaar_arithmetic_residual": 0.015277777777777779,
+          "normalized_haar_block_variance": 0.00015625,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            0
+          ],
+          "right_block_rank": 1,
+          "syndrome": [
+            1,
+            1,
+            0
+          ],
+          "total_multiplicity_dimension": 4
+        },
+        {
+          "forbidden_support_amplitude_residual": 3.469446951953614e-18,
+          "haar_rank_profile_benchmark": 0.0,
+          "intermediate_dimensions": [
+            5,
+            4
+          ],
+          "left_block_rank": 1,
+          "maximum_orientation_fiber_amplitude_residual": 3.469446951953614e-18,
+          "natural_normalized_block_mass": 3.469446951953614e-18,
+          "nonhaar_arithmetic_residual": 3.469446951953614e-18,
+          "normalized_haar_block_variance": 0.0,
+          "orientation_fiber_profile_invariant": true,
+          "orientation_representative": [
+            0,
+            0,
+            0,
+            1,
+            1,
+            1
+          ],
+          "right_block_rank": 0,
+          "syndrome": [
+            1,
+            1,
+            1
+          ],
+          "total_multiplicity_dimension": 3
+        }
+      ],
+      "conditional_syndrome_chi_square": 3.885813148788924,
+      "control_id": "S5-RACAH-2",
+      "exact_rank_residual_decomposition_verified": true,
+      "finite_mechanism_diagnosis": "rank-profile-and-racah-arithmetic-both-material-at-finite-n",
+      "haar_rank_profile_centered_energy": 0.0018750000000000004,
+      "independent_haar_null_energy_upper_benchmark": 0.0025,
+      "maximum_forbidden_support_amplitude_residual": 6.071532165918825e-18,
+      "maximum_orientation_fiber_amplitude_residual": 6.071532165918825e-18,
+      "minkowski_lower_bound": 0.0014203396160002851,
+      "minkowski_upper_bound": 0.0851822007624436,
+      "minkowski_violation": 0.0,
+      "n": 5,
+      "natural_centered_energy": 0.005545679012345678,
+      "nonhaar_residual_centered_energy": 0.0017540123456790124,
+      "nonhaar_residual_relative_scale": 1.1086128681146905,
+      "orbit_indices": [
+        1,
+        2,
+        1,
+        2,
+        1,
+        2
+      ],
+      "orbit_representatives": [
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          1
+        ],
+        [
+          2,
+          2,
+          1
+        ]
+      ],
+      "rank_profile_relative_scale": 1.1462100932441097,
+      "rank_residual_centered_cross_term": 0.000958333333333333,
+      "status": "adaptive-channel-split-into-rank-profile-and-racah-arithmetic",
+      "total_natural_amplitude": 0.03777777777777779,
+      "variance_decomposition_residual": 8.673617379884035e-19
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "fix_physical_coefficient_axis_to_racah_label_mapping",
+      "resolution": "The direct mapping has no unsupported positive exact likelihoods; the competing tetrahedral-dual mapping fails finite support tests.",
+      "resolved": true
+    },
+    {
+      "obligation": "split_adaptive_energy_into_rank_arithmetic_and_alignment",
+      "resolution": "The physical trace-mass law and centered Hilbert-space identity give the exact decomposition and Minkowski bounds.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_canonical_kronecker_rank_profile_variance",
+      "resolution": "Control the source-weighted relative norm N(H)/T0 on the dimension-trimmed physical Plancherel sector.",
+      "resolved": false
+    },
+    {
+      "obligation": "bound_canonical_nonhaar_racah_arithmetic_residual",
+      "resolution": "Prove or falsify a source-weighted estimate for N(E)/T0; Haar entry moments do not apply to deterministic symmetric-group 6j blocks.",
+      "resolved": false
+    },
+    {
+      "obligation": "control_rank_arithmetic_alignment_for_survival",
+      "resolution": "A survival lower bound requires preventing asymptotic cancellation between the centered rank profile and arithmetic residual.",
+      "resolved": false
+    }
+  ],
+  "status": "adaptive-parity-split-into-rank-profile-racah-arithmetic-and-alignment",
+  "summary": "Separated adaptive parity variance into Kronecker rank-profile and non-Haar Racah arithmetic terms and exposed exact finite cancellation.",
+  "theorem_contract": {
+    "arithmetic_residual": "E_y=A_y-H_y isolates non-Haar 6j arithmetic.",
+    "energy_decomposition": "N(A)^2=N(H)^2+N(E)^2+2<C H,C E>_N, where N(v)^2=8||Cv||_2^2 and <.,.>_N=8<.,.>.",
+    "haar_null_variance": "Var(||R_block||_HS^2)=2lr(M-l)(M-r)/[M^2(M-1)(M+2)] for a real Haar M-dimensional recoupling matrix.",
+    "haar_rank_profile": "H_y=l_y r_y/(M_y d_mu d_nu), the exact Haar-orthogonal mean for the corresponding recoupling block dimensions.",
+    "minkowski_boundary": "|N(H)-N(E)|<=N(A)<=N(H)+N(E).",
+    "normalized_racah_mass": "A_y=||R_(mu,nu)||_HS^2/(d_mu d_nu).",
+    "physical_axis_order": "(alpha,beta,gamma,mu,nu,lambda)=(gk,ghk,hk,g,h,k); the four fusion triples are (alpha,beta,mu), (mu,gamma,lambda), (beta,gamma,nu), and (alpha,nu,lambda).",
+    "scope": "The Haar law is a null benchmark only. No natural random-matrix limit, canonical rank mixing, arithmetic decay, survival, algorithm, or speedup is proved."
+  }
+}

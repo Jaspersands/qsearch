@@ -1,0 +1,214 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False: the minimal S_3 triangle has two negative holonomy directions and path discrepancy two.",
+      "challenge": "Exact pair polars define a flat global alignment.",
+      "resolved": true
+    },
+    {
+      "answer": "False: regular S_3 transpositions are fixed-point-free on six points and embed in every larger even degree.",
+      "challenge": "The defect is confined to S_3 or fixed points.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It rules out path-independent local composition; a coherent holonomy-aware global transform remains open.",
+      "challenge": "Nontrivial holonomy rules out the global polar.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_n_fixed_point_free_holonomy_witness_proved": true,
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "full_orbit_synthesis_polar_compiled": false,
+    "holonomy_resolver_constructed": false,
+    "mrs_sieve_escape_proved": false,
+    "pair_polar_connection_flat": false,
+    "path_independent_pair_alignment_refuted": true,
+    "reason": "Pair polars are individually efficient but form a nonflat connection. A viable global route must retain and resolve this holonomy coherently rather than compose local alignments blindly.",
+    "speedup_claim_allowed": false,
+    "tensor_holonomy_extensive": true
+  },
+  "created_at": "2026-08-13T16:00:41.006864+00:00",
+  "embedding_records": [
+    {
+      "copy_count": 10,
+      "embedded_subgroup_order": 6,
+      "fixed_point_free_generator_count": 3,
+      "holonomy_aware_global_transform_ruled_out": false,
+      "n": 6,
+      "one_copy_negative_holonomy_multiplicity": 2,
+      "one_copy_positive_holonomy_multiplicity": 1,
+      "pair_product_orders": [
+        3,
+        3,
+        3
+      ],
+      "path_independent_pair_alignment_possible": false,
+      "status": "all-n-fixed-point-free-extensive-pair-holonomy",
+      "tensor_negative_holonomy_dimension_decimal": "29524",
+      "tensor_negative_holonomy_fraction": 0.4999915324560958,
+      "tensor_starting_plus_dimension_decimal": "59049",
+      "transpositions_per_generator": 3
+    },
+    {
+      "copy_count": 13,
+      "embedded_subgroup_order": 6,
+      "fixed_point_free_generator_count": 3,
+      "holonomy_aware_global_transform_ruled_out": false,
+      "n": 8,
+      "one_copy_negative_holonomy_multiplicity": 2,
+      "one_copy_positive_holonomy_multiplicity": 1,
+      "pair_product_orders": [
+        3,
+        3,
+        3
+      ],
+      "path_independent_pair_alignment_possible": false,
+      "status": "all-n-fixed-point-free-extensive-pair-holonomy",
+      "tensor_negative_holonomy_dimension_decimal": "797162",
+      "tensor_negative_holonomy_fraction": 0.5000003136127372,
+      "tensor_starting_plus_dimension_decimal": "1594323",
+      "transpositions_per_generator": 4
+    },
+    {
+      "copy_count": 27,
+      "embedded_subgroup_order": 6,
+      "fixed_point_free_generator_count": 3,
+      "holonomy_aware_global_transform_ruled_out": false,
+      "n": 16,
+      "one_copy_negative_holonomy_multiplicity": 2,
+      "one_copy_positive_holonomy_multiplicity": 1,
+      "pair_product_orders": [
+        3,
+        3,
+        3
+      ],
+      "path_independent_pair_alignment_possible": false,
+      "status": "all-n-fixed-point-free-extensive-pair-holonomy",
+      "tensor_negative_holonomy_dimension_decimal": "3812798742494",
+      "tensor_negative_holonomy_fraction": 0.5000000000000656,
+      "tensor_starting_plus_dimension_decimal": "7625597484987",
+      "transpositions_per_generator": 8
+    },
+    {
+      "copy_count": 64,
+      "embedded_subgroup_order": 6,
+      "fixed_point_free_generator_count": 3,
+      "holonomy_aware_global_transform_ruled_out": false,
+      "n": 32,
+      "one_copy_negative_holonomy_multiplicity": 2,
+      "one_copy_positive_holonomy_multiplicity": 1,
+      "pair_product_orders": [
+        3,
+        3,
+        3
+      ],
+      "path_independent_pair_alignment_possible": false,
+      "status": "all-n-fixed-point-free-extensive-pair-holonomy",
+      "tensor_negative_holonomy_dimension_decimal": "1716841910146256242328924544640",
+      "tensor_negative_holonomy_fraction": 0.5,
+      "tensor_starting_plus_dimension_decimal": "3433683820292512484657849089281",
+      "transpositions_per_generator": 16
+    },
+    {
+      "copy_count": 153,
+      "embedded_subgroup_order": 6,
+      "fixed_point_free_generator_count": 3,
+      "holonomy_aware_global_transform_ruled_out": false,
+      "n": 64,
+      "one_copy_negative_holonomy_multiplicity": 2,
+      "one_copy_positive_holonomy_multiplicity": 1,
+      "pair_product_orders": [
+        3,
+        3,
+        3
+      ],
+      "path_independent_pair_alignment_possible": false,
+      "status": "all-n-fixed-point-free-extensive-pair-holonomy",
+      "tensor_negative_holonomy_dimension_decimal": "4994844547974214134483460563097904696517386855261260146504989471573601362",
+      "tensor_negative_holonomy_fraction": 0.5,
+      "tensor_starting_plus_dimension_decimal": "9989689095948428268966921126195809393034773710522520293009978943147202723",
+      "transpositions_per_generator": 32
+    }
+  ],
+  "falsifiers_triggered": [
+    "Efficient exact pair polars do not form a path-independent global frame.",
+    "The pair-polar holonomy defect survives in fixed-point-free involution families at all even degrees.",
+    "Tensoring does not dilute the minimal loop defect; about half the local source space is negative.",
+    "Nonflatness alone is not a no-go for a coherent holonomy resolver or direct global polar."
+  ],
+  "finite_control": {
+    "direct_vs_two_edge_path_operator_distance": 2.0000000000000018,
+    "group_order": 6,
+    "involution_count": 3,
+    "loop_distance_from_identity": 2.0000000000000013,
+    "loop_starting_space_invariance_residual": 8.266478657682463e-16,
+    "loop_unitarity_residual": 2.9031260861321738e-15,
+    "maximum_holonomy_eigenvalue_residual": 1.554560032361923e-15,
+    "maximum_pair_polar_support_residual": 2.186848756373252e-15,
+    "negative_holonomy_multiplicity": 2,
+    "nontrivial_holonomy_verified": true,
+    "pair_rotation_orders": [
+      3,
+      3,
+      3
+    ],
+    "positive_holonomy_multiplicity": 1,
+    "starting_plus_dimension": 3,
+    "status": "exact-s3-pair-polar-holonomy-verified"
+  },
+  "headline_metrics": {
+    "all_n_fixed_point_free_embedding_theorem_count": 1,
+    "direct_vs_two_edge_path_distance": 2.0000000000000018,
+    "exact_s3_holonomy_control_count": 1,
+    "finite_control_failure_count": 0,
+    "holonomy_aware_global_polar_compiler_count": 0,
+    "loop_distance_from_identity": 2.0000000000000013,
+    "minimum_tensor_negative_holonomy_fraction": 0.4999915324560958,
+    "new_quantum_algorithm_count": 0,
+    "path_independent_pair_alignment_count": 0,
+    "tensor_extensive_holonomy_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-HOLONOMY-RESOLVER",
+      "resolved": false,
+      "statement": "Construct a coherent path/loop register and correct the nonabelian pair-polar holonomy without measuring merge labels."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-GLOBAL-POLAR-FROM-CONNECTION",
+      "resolved": false,
+      "statement": "Determine whether a connection Laplacian or Cech quotient of the pair polars yields the full orbit-synthesis polar."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-HOLONOMY-MRS-BOUNDARY",
+      "resolved": false,
+      "statement": "Prove whether coherent holonomy resolution escapes the Moore-Russell-Sniady measured sieve model."
+    }
+  ],
+  "status": "pair-polar-connection-nonflat-holonomy-aware-global-route-open",
+  "summary": "Proved exact nontrivial S_3 triangle holonomy for canonical pair polars, embedded it into every fixed-point-free even S_n family, and showed the defect remains extensive under tensoring. Holonomy-aware global polar synthesis remains open.",
+  "theorem": {
+    "all_n_fixed_point_free_embedding_proved": true,
+    "architecture_consequence": "Canonical pair half rotations cannot be composed as a path-independent spanning-tree alignment.",
+    "exact_loop_spectrum": "V_(a<-c)V_(c<-b)V_(b<-a) restricted to ran(P_a) has spectrum {1,-1,-1}; direct and two-edge paths differ by norm two.",
+    "exact_nontrivial_triangle_holonomy_proved": true,
+    "fixed_point_free_embedding": "The regular S_3 action on six points maps transpositions to perfect matchings; multiplying by common disjoint swaps embeds the witness in every even S_n, n>=6.",
+    "gauge_invariance": "Vertex basis changes conjugate every loop holonomy, so the nontrivial loop spectrum cannot be gauged to identity.",
+    "holonomy_aware_global_polar_refuted": false,
+    "mrs_sieve_separation_proved": false,
+    "path_independent_pair_alignment_refuted": true,
+    "scope_limit": "A path-aware holonomy resolver, direct global multiplicity polar, or coherent non-MRS architecture is not ruled out.",
+    "status": "pair-polar-connection-nonflat-holonomy-aware-global-route-open",
+    "tensor_extensive_holonomy_proved": true,
+    "tensor_holonomy": "On k copies the negative multiplicity is (3^k-(-1)^k)/2, hence the negative fraction tends to one half.",
+    "theorem_verified": true,
+    "triangle": "The three transposition projectors in the regular S_3 representation have order-three pair rotations and exact phase-compiled polars."
+  },
+  "theorem_contract": {
+    "all_n_family": "An explicit regular-S_3 perfect-matching triple embedded in fixed-point-free involutions of every even S_n, n>=6.",
+    "local_edges": "The exact principal half-rotation pair polars from the phase compiler, not arbitrary isometries between equal-rank ranges.",
+    "loop": "The oriented a->b->c->a triangle.",
+    "outside_scope": "Architectures retaining and coherently correcting loop/path holonomy or compiling the full polar without local alignment."
+  }
+}

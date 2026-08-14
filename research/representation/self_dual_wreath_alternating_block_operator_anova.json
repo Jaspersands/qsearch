@@ -1,0 +1,2574 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Pairwise independence makes every nonconstant block zero.",
+      "resolution": "It kills only one-by-one blocks; fourteen higher-order blocks survive the dual private-generator tests.",
+      "resolved": true
+    },
+    {
+      "objection": "Forward private-generator cancellation is complete.",
+      "resolution": "The inverse bijection supplies additional exact zeros not visible from the original generators.",
+      "resolved": true
+    },
+    {
+      "objection": "The order-six ANOVA energy is Z6_+.",
+      "resolution": "False: ANOVA centers by class probability, whereas Z6_+ selects nonidentity matching classes. S4/S5 values differ explicitly.",
+      "resolved": true
+    },
+    {
+      "objection": "A large finite singular value proves asymptotic survival.",
+      "resolution": "Finite spectra through A5 have no scaling force.",
+      "resolved": false
+    }
+  ],
+  "allowed_blocks": [
+    {
+      "forward_test": true,
+      "input_subset_mask": 5,
+      "inverse_test": true,
+      "output_subset_mask": 1,
+      "selected_word_count": 3,
+      "six_word_mask": 13
+    },
+    {
+      "forward_test": true,
+      "input_subset_mask": 6,
+      "inverse_test": true,
+      "output_subset_mask": 2,
+      "selected_word_count": 3,
+      "six_word_mask": 22
+    },
+    {
+      "forward_test": true,
+      "input_subset_mask": 3,
+      "inverse_test": true,
+      "output_subset_mask": 3,
+      "selected_word_count": 4,
+      "six_word_mask": 27
+    },
+    {
+      "forward_test": true,
+      "input_subset_mask": 7,
+      "inverse_test": true,
+      "output_subset_mask": 3,
+      "selected_word_count": 5,
+      "six_word_mask": 31
+    },
+    {
+      "forward_test": true,
+      "input_subset_mask": 7,
+      "inverse_test": true,
+      "output_subset_mask": 4,
+      "selected_word_count": 4,
+      "six_word_mask": 39
+    },
+    {
+      "forward_test": true,
+      "input_subset_mask": 2,
+      "inverse_test": true,
+      "output_subset_mask": 5,
+      "selected_word_count": 3,
+      "six_word_mask": 42
+    },
+    {
+      "forward_test": true,
+      "input_subset_mask": 7,
+      "inverse_test": true,
+      "output_subset_mask": 5,
+      "selected_word_count": 5,
+      "six_word_mask": 47
+    },
+    {
+      "forward_test": true,
+      "input_subset_mask": 1,
+      "inverse_test": true,
+      "output_subset_mask": 6,
+      "selected_word_count": 3,
+      "six_word_mask": 49
+    },
+    {
+      "forward_test": true,
+      "input_subset_mask": 7,
+      "inverse_test": true,
+      "output_subset_mask": 6,
+      "selected_word_count": 5,
+      "six_word_mask": 55
+    },
+    {
+      "forward_test": true,
+      "input_subset_mask": 3,
+      "inverse_test": true,
+      "output_subset_mask": 7,
+      "selected_word_count": 5,
+      "six_word_mask": 59
+    },
+    {
+      "forward_test": true,
+      "input_subset_mask": 4,
+      "inverse_test": true,
+      "output_subset_mask": 7,
+      "selected_word_count": 4,
+      "six_word_mask": 60
+    },
+    {
+      "forward_test": true,
+      "input_subset_mask": 5,
+      "inverse_test": true,
+      "output_subset_mask": 7,
+      "selected_word_count": 5,
+      "six_word_mask": 61
+    },
+    {
+      "forward_test": true,
+      "input_subset_mask": 6,
+      "inverse_test": true,
+      "output_subset_mask": 7,
+      "selected_word_count": 5,
+      "six_word_mask": 62
+    },
+    {
+      "forward_test": true,
+      "input_subset_mask": 7,
+      "inverse_test": true,
+      "output_subset_mask": 7,
+      "selected_word_count": 6,
+      "six_word_mask": 63
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "classical_separation_proved": false,
+    "dual_private_generator_sparsity_proved": true,
+    "fourteen_block_anova_normal_form_proved": true,
+    "growing_support_allowed_blocks_subpolynomial_proved": false,
+    "normalized_conditional_collision_operator_proved": true,
+    "order_six_anova_equals_z6_core": false,
+    "physical_rank_profile_mixes_proved": false,
+    "reason": "The exact operator and sparsity pattern are known, but all fourteen allowed growing-support interaction blocks lack norm estimates.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T23:26:24.807419+00:00",
+  "exact_controls": [
+    {
+      "allowed_anova_block_count": 14,
+      "centered_operator_hilbert_schmidt_square": 0.0,
+      "constant_block_energy": 1.0,
+      "even_cycle_type_count": 1,
+      "exact_anova_energy_decomposition_residual": 0.0,
+      "exact_even_collision_moment": 1.0,
+      "exact_private_generator_sparsity_verified": true,
+      "maximum_forbidden_anova_block_energy": 0.0,
+      "maximum_nonconstant_singular_value": 0.0,
+      "n": 2,
+      "nonzero_allowed_anova_block_count": 0,
+      "normalized_operator_dimension": 1,
+      "normalized_operator_hilbert_schmidt_square": 1.0,
+      "order_five_total_energy": 0.0,
+      "order_four_total_energy": 0.0,
+      "order_six_anova_minus_z6_core": 0.0,
+      "order_six_total_energy": 0.0,
+      "order_three_total_energy": 0.0,
+      "status": "even-cycle-channel-has-exact-fourteen-block-anova-normal-form"
+    },
+    {
+      "allowed_anova_block_count": 14,
+      "centered_operator_hilbert_schmidt_square": 3.5,
+      "constant_block_energy": 1.0,
+      "even_cycle_type_count": 2,
+      "exact_anova_energy_decomposition_residual": 0.0,
+      "exact_even_collision_moment": 4.5,
+      "exact_private_generator_sparsity_verified": true,
+      "maximum_forbidden_anova_block_energy": 7.23294647524769e-33,
+      "maximum_nonconstant_singular_value": 0.9999999999999999,
+      "n": 3,
+      "nonzero_allowed_anova_block_count": 13,
+      "normalized_operator_dimension": 8,
+      "normalized_operator_hilbert_schmidt_square": 4.5,
+      "order_five_total_energy": 0.75,
+      "order_four_total_energy": 0.7500000000000001,
+      "order_six_anova_minus_z6_core": 0.0,
+      "order_six_total_energy": 0.0,
+      "order_three_total_energy": 2.0,
+      "status": "even-cycle-channel-has-exact-fourteen-block-anova-normal-form"
+    },
+    {
+      "allowed_anova_block_count": 14,
+      "centered_operator_hilbert_schmidt_square": 6.771604938271601,
+      "constant_block_energy": 0.9999999999999998,
+      "even_cycle_type_count": 3,
+      "exact_anova_energy_decomposition_residual": 4.440892098500626e-15,
+      "exact_even_collision_moment": 7.771604938271605,
+      "exact_private_generator_sparsity_verified": true,
+      "maximum_forbidden_anova_block_energy": 2.840576816612142e-32,
+      "maximum_nonconstant_singular_value": 1.0,
+      "n": 4,
+      "nonzero_allowed_anova_block_count": 14,
+      "normalized_operator_dimension": 27,
+      "normalized_operator_hilbert_schmidt_square": 7.771604938271605,
+      "order_five_total_energy": 2.527777777777777,
+      "order_four_total_energy": 0.7870370370370372,
+      "order_six_anova_minus_z6_core": -0.6880787037037048,
+      "order_six_total_energy": 1.0123456790123446,
+      "order_three_total_energy": 2.4444444444444438,
+      "status": "even-cycle-channel-has-exact-fourteen-block-anova-normal-form"
+    },
+    {
+      "allowed_anova_block_count": 14,
+      "centered_operator_hilbert_schmidt_square": 2.7250211226851855,
+      "constant_block_energy": 0.9999999999999996,
+      "even_cycle_type_count": 4,
+      "exact_anova_energy_decomposition_residual": 0.0,
+      "exact_even_collision_moment": 3.725021122685185,
+      "exact_private_generator_sparsity_verified": true,
+      "maximum_forbidden_anova_block_energy": 9.824496505663902e-32,
+      "maximum_nonconstant_singular_value": 1.0,
+      "n": 5,
+      "nonzero_allowed_anova_block_count": 14,
+      "normalized_operator_dimension": 64,
+      "normalized_operator_hilbert_schmidt_square": 3.725021122685185,
+      "order_five_total_energy": 0.9232685185185183,
+      "order_four_total_energy": 0.025778009259259264,
+      "order_six_anova_minus_z6_core": 0.001745138888889164,
+      "order_six_total_energy": 1.1437523726851855,
+      "order_three_total_energy": 0.6322222222222221,
+      "status": "even-cycle-channel-has-exact-fourteen-block-anova-normal-form"
+    }
+  ],
+  "falsifiers_triggered": [
+    "Pairwise independence does not eliminate higher-order block synergy.",
+    "Forward generator cancellation alone misses exact inverse-coordinate zeros.",
+    "The highest ANOVA block and fully nonidentity class-matching core are not identical."
+  ],
+  "finite_block_energies": {
+    "n=2": [
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 0,
+        "output_subset_mask": 1,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 0,
+        "output_subset_mask": 2,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 0,
+        "output_subset_mask": 3,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 0,
+        "output_subset_mask": 4,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 0,
+        "output_subset_mask": 5,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 0,
+        "output_subset_mask": 6,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 0,
+        "output_subset_mask": 7,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 1,
+        "output_subset_mask": 0,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 1,
+        "output_subset_mask": 1,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 1,
+        "output_subset_mask": 2,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 1,
+        "output_subset_mask": 3,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 1,
+        "output_subset_mask": 4,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 1,
+        "output_subset_mask": 5,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 1,
+        "output_subset_mask": 6,
+        "selected_word_count": 3,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 1,
+        "output_subset_mask": 7,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 2,
+        "output_subset_mask": 0,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 2,
+        "output_subset_mask": 1,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 2,
+        "output_subset_mask": 2,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 2,
+        "output_subset_mask": 3,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 2,
+        "output_subset_mask": 4,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 2,
+        "output_subset_mask": 5,
+        "selected_word_count": 3,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 2,
+        "output_subset_mask": 6,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 2,
+        "output_subset_mask": 7,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 3,
+        "output_subset_mask": 0,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 3,
+        "output_subset_mask": 1,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 3,
+        "output_subset_mask": 2,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 3,
+        "output_subset_mask": 3,
+        "selected_word_count": 4,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 3,
+        "output_subset_mask": 4,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 3,
+        "output_subset_mask": 5,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 3,
+        "output_subset_mask": 6,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 3,
+        "output_subset_mask": 7,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 4,
+        "output_subset_mask": 0,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 4,
+        "output_subset_mask": 1,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 4,
+        "output_subset_mask": 2,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 4,
+        "output_subset_mask": 3,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 4,
+        "output_subset_mask": 4,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 4,
+        "output_subset_mask": 5,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 4,
+        "output_subset_mask": 6,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 4,
+        "output_subset_mask": 7,
+        "selected_word_count": 4,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 5,
+        "output_subset_mask": 0,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 5,
+        "output_subset_mask": 1,
+        "selected_word_count": 3,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 5,
+        "output_subset_mask": 2,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 5,
+        "output_subset_mask": 3,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 5,
+        "output_subset_mask": 4,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 5,
+        "output_subset_mask": 5,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 5,
+        "output_subset_mask": 6,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 5,
+        "output_subset_mask": 7,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 6,
+        "output_subset_mask": 0,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 6,
+        "output_subset_mask": 1,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 6,
+        "output_subset_mask": 2,
+        "selected_word_count": 3,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 6,
+        "output_subset_mask": 3,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 6,
+        "output_subset_mask": 4,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 6,
+        "output_subset_mask": 5,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 6,
+        "output_subset_mask": 6,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 6,
+        "output_subset_mask": 7,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 7,
+        "output_subset_mask": 0,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 7,
+        "output_subset_mask": 1,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 7,
+        "output_subset_mask": 2,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 7,
+        "output_subset_mask": 3,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 7,
+        "output_subset_mask": 4,
+        "selected_word_count": 4,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 7,
+        "output_subset_mask": 5,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 7,
+        "output_subset_mask": 6,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 7,
+        "output_subset_mask": 7,
+        "selected_word_count": 6,
+        "status": "allowed-higher-order-anova-block"
+      }
+    ],
+    "n=3": [
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 0,
+        "output_subset_mask": 1,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.1833440094267867e-33,
+        "input_subset_mask": 0,
+        "output_subset_mask": 2,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 5.083323166452267e-34,
+        "input_subset_mask": 0,
+        "output_subset_mask": 3,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 0,
+        "output_subset_mask": 4,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 0,
+        "output_subset_mask": 5,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 2.1869877139593434e-34,
+        "input_subset_mask": 0,
+        "output_subset_mask": 6,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.8485778109891e-33,
+        "input_subset_mask": 0,
+        "output_subset_mask": 7,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 2.5976838714447498e-33,
+        "input_subset_mask": 1,
+        "output_subset_mask": 0,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 8.408599227874088e-34,
+        "input_subset_mask": 1,
+        "output_subset_mask": 1,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 1,
+        "output_subset_mask": 2,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 7.703719777548943e-34,
+        "input_subset_mask": 1,
+        "output_subset_mask": 3,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 9.096031588178851e-35,
+        "input_subset_mask": 1,
+        "output_subset_mask": 4,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 5.220781038926018e-35,
+        "input_subset_mask": 1,
+        "output_subset_mask": 5,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.5000000000000001,
+        "input_subset_mask": 1,
+        "output_subset_mask": 6,
+        "selected_word_count": 3,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.925929944387236e-34,
+        "input_subset_mask": 1,
+        "output_subset_mask": 7,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 7.703719777548943e-34,
+        "input_subset_mask": 2,
+        "output_subset_mask": 0,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 3.0814879110195774e-33,
+        "input_subset_mask": 2,
+        "output_subset_mask": 1,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 8.408599227874088e-34,
+        "input_subset_mask": 2,
+        "output_subset_mask": 2,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 5.387924386089069e-34,
+        "input_subset_mask": 2,
+        "output_subset_mask": 3,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 2,
+        "output_subset_mask": 4,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.4999999999999999,
+        "input_subset_mask": 2,
+        "output_subset_mask": 5,
+        "selected_word_count": 3,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 5.220781038926018e-35,
+        "input_subset_mask": 2,
+        "output_subset_mask": 6,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 2.714653535533298e-34,
+        "input_subset_mask": 2,
+        "output_subset_mask": 7,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.1725476889499429e-33,
+        "input_subset_mask": 3,
+        "output_subset_mask": 0,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.2026227910428309e-36,
+        "input_subset_mask": 3,
+        "output_subset_mask": 1,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.925929944387236e-34,
+        "input_subset_mask": 3,
+        "output_subset_mask": 2,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.25,
+        "input_subset_mask": 3,
+        "output_subset_mask": 3,
+        "selected_word_count": 4,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 8.504300888878848e-34,
+        "input_subset_mask": 3,
+        "output_subset_mask": 4,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.3075718568634068e-34,
+        "input_subset_mask": 3,
+        "output_subset_mask": 5,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.925929944387236e-34,
+        "input_subset_mask": 3,
+        "output_subset_mask": 6,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.12499999999999997,
+        "input_subset_mask": 3,
+        "output_subset_mask": 7,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 7.23294647524769e-33,
+        "input_subset_mask": 4,
+        "output_subset_mask": 0,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 2.0662733666046584e-36,
+        "input_subset_mask": 4,
+        "output_subset_mask": 1,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 4,
+        "output_subset_mask": 2,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 4,
+        "output_subset_mask": 3,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.1326726170078952e-34,
+        "input_subset_mask": 4,
+        "output_subset_mask": 4,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 3.4865364811807803e-38,
+        "input_subset_mask": 4,
+        "output_subset_mask": 5,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 4,
+        "output_subset_mask": 6,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.25,
+        "input_subset_mask": 4,
+        "output_subset_mask": 7,
+        "selected_word_count": 4,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 5,
+        "output_subset_mask": 0,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.5000000000000001,
+        "input_subset_mask": 5,
+        "output_subset_mask": 1,
+        "selected_word_count": 3,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 5,
+        "output_subset_mask": 2,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 7.703719777548943e-34,
+        "input_subset_mask": 5,
+        "output_subset_mask": 3,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 5,
+        "output_subset_mask": 4,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 5,
+        "output_subset_mask": 5,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 7.703719777548943e-34,
+        "input_subset_mask": 5,
+        "output_subset_mask": 6,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.12500000000000003,
+        "input_subset_mask": 5,
+        "output_subset_mask": 7,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 5.224542702001391e-35,
+        "input_subset_mask": 6,
+        "output_subset_mask": 0,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.0381445289914166e-35,
+        "input_subset_mask": 6,
+        "output_subset_mask": 1,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.5000000000000001,
+        "input_subset_mask": 6,
+        "output_subset_mask": 2,
+        "selected_word_count": 3,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 7.703719777548943e-34,
+        "input_subset_mask": 6,
+        "output_subset_mask": 3,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 4.500988252427275e-35,
+        "input_subset_mask": 6,
+        "output_subset_mask": 4,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 4.5192529807207494e-34,
+        "input_subset_mask": 6,
+        "output_subset_mask": 5,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 6,
+        "output_subset_mask": 6,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.12500000000000003,
+        "input_subset_mask": 6,
+        "output_subset_mask": 7,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.0,
+        "input_subset_mask": 7,
+        "output_subset_mask": 0,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 7.703719777548943e-34,
+        "input_subset_mask": 7,
+        "output_subset_mask": 1,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 7.703719777548943e-34,
+        "input_subset_mask": 7,
+        "output_subset_mask": 2,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.12499999999999997,
+        "input_subset_mask": 7,
+        "output_subset_mask": 3,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.2500000000000001,
+        "input_subset_mask": 7,
+        "output_subset_mask": 4,
+        "selected_word_count": 4,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.12500000000000003,
+        "input_subset_mask": 7,
+        "output_subset_mask": 5,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.12500000000000003,
+        "input_subset_mask": 7,
+        "output_subset_mask": 6,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 6.933347799794049e-33,
+        "input_subset_mask": 7,
+        "output_subset_mask": 7,
+        "selected_word_count": 6,
+        "status": "allowed-higher-order-anova-block"
+      }
+    ],
+    "n=4": [
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.9941485506190595e-32,
+        "input_subset_mask": 0,
+        "output_subset_mask": 1,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.289689726211719e-32,
+        "input_subset_mask": 0,
+        "output_subset_mask": 2,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.438270770954905e-32,
+        "input_subset_mask": 0,
+        "output_subset_mask": 3,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.3778214709131077e-32,
+        "input_subset_mask": 0,
+        "output_subset_mask": 4,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.815385494811849e-33,
+        "input_subset_mask": 0,
+        "output_subset_mask": 5,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 2.186453995370102e-33,
+        "input_subset_mask": 0,
+        "output_subset_mask": 6,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 9.67425803534271e-34,
+        "input_subset_mask": 0,
+        "output_subset_mask": 7,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 7.896312771987667e-33,
+        "input_subset_mask": 1,
+        "output_subset_mask": 0,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 2.8528073633124775e-34,
+        "input_subset_mask": 1,
+        "output_subset_mask": 1,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.4433120626825216e-34,
+        "input_subset_mask": 1,
+        "output_subset_mask": 2,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 8.357597471248003e-34,
+        "input_subset_mask": 1,
+        "output_subset_mask": 3,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.9411052334661043e-33,
+        "input_subset_mask": 1,
+        "output_subset_mask": 4,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.5924614735519344e-33,
+        "input_subset_mask": 1,
+        "output_subset_mask": 5,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.611111111111111,
+        "input_subset_mask": 1,
+        "output_subset_mask": 6,
+        "selected_word_count": 3,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.5996475750220352e-32,
+        "input_subset_mask": 1,
+        "output_subset_mask": 7,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.7959296731410974e-32,
+        "input_subset_mask": 2,
+        "output_subset_mask": 0,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 5.620002430451559e-34,
+        "input_subset_mask": 2,
+        "output_subset_mask": 1,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 5.374985109040022e-34,
+        "input_subset_mask": 2,
+        "output_subset_mask": 2,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 3.637126597484553e-33,
+        "input_subset_mask": 2,
+        "output_subset_mask": 3,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.7945071956364544e-33,
+        "input_subset_mask": 2,
+        "output_subset_mask": 4,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.6111111111111112,
+        "input_subset_mask": 2,
+        "output_subset_mask": 5,
+        "selected_word_count": 3,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 9.478573008495178e-34,
+        "input_subset_mask": 2,
+        "output_subset_mask": 6,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.4026090981129783e-32,
+        "input_subset_mask": 2,
+        "output_subset_mask": 7,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 3.346303278372822e-33,
+        "input_subset_mask": 3,
+        "output_subset_mask": 0,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 7.76027791651482e-34,
+        "input_subset_mask": 3,
+        "output_subset_mask": 1,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 2.1923065315975896e-33,
+        "input_subset_mask": 3,
+        "output_subset_mask": 2,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.2623456790123457,
+        "input_subset_mask": 3,
+        "output_subset_mask": 3,
+        "selected_word_count": 4,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.4396009186211606e-34,
+        "input_subset_mask": 3,
+        "output_subset_mask": 4,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.4838948567911646e-32,
+        "input_subset_mask": 3,
+        "output_subset_mask": 5,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.2344157065948468e-32,
+        "input_subset_mask": 3,
+        "output_subset_mask": 6,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.4212962962962961,
+        "input_subset_mask": 3,
+        "output_subset_mask": 7,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 8.137054015036071e-33,
+        "input_subset_mask": 4,
+        "output_subset_mask": 0,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 6.933088928300485e-34,
+        "input_subset_mask": 4,
+        "output_subset_mask": 1,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 6.101417685305292e-34,
+        "input_subset_mask": 4,
+        "output_subset_mask": 2,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.1997529506171292e-33,
+        "input_subset_mask": 4,
+        "output_subset_mask": 3,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 4.281604333470421e-34,
+        "input_subset_mask": 4,
+        "output_subset_mask": 4,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.2903227901937953e-33,
+        "input_subset_mask": 4,
+        "output_subset_mask": 5,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.780056162463739e-33,
+        "input_subset_mask": 4,
+        "output_subset_mask": 6,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.26234567901234573,
+        "input_subset_mask": 4,
+        "output_subset_mask": 7,
+        "selected_word_count": 4,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 5.807882488542758e-34,
+        "input_subset_mask": 5,
+        "output_subset_mask": 0,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.6111111111111107,
+        "input_subset_mask": 5,
+        "output_subset_mask": 1,
+        "selected_word_count": 3,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.0531510074226696e-33,
+        "input_subset_mask": 5,
+        "output_subset_mask": 2,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 1.526594151516117e-32,
+        "input_subset_mask": 5,
+        "output_subset_mask": 3,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 8.719079521024557e-34,
+        "input_subset_mask": 5,
+        "output_subset_mask": 4,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 1.6066953391280452e-32,
+        "input_subset_mask": 5,
+        "output_subset_mask": 5,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.878999672349924e-32,
+        "input_subset_mask": 5,
+        "output_subset_mask": 6,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.42129629629629606,
+        "input_subset_mask": 5,
+        "output_subset_mask": 7,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.925929944387236e-33,
+        "input_subset_mask": 6,
+        "output_subset_mask": 0,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.3009659843790377e-33,
+        "input_subset_mask": 6,
+        "output_subset_mask": 1,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.6111111111111107,
+        "input_subset_mask": 6,
+        "output_subset_mask": 2,
+        "selected_word_count": 3,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 1.576635493288829e-32,
+        "input_subset_mask": 6,
+        "output_subset_mask": 3,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 3.2313541130964145e-34,
+        "input_subset_mask": 6,
+        "output_subset_mask": 4,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 2.840576816612142e-32,
+        "input_subset_mask": 6,
+        "output_subset_mask": 5,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 9.815186189981943e-33,
+        "input_subset_mask": 6,
+        "output_subset_mask": 6,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.42129629629629606,
+        "input_subset_mask": 6,
+        "output_subset_mask": 7,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 1.2518544638517033e-33,
+        "input_subset_mask": 7,
+        "output_subset_mask": 0,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 1.4296797186569137e-32,
+        "input_subset_mask": 7,
+        "output_subset_mask": 1,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 1.6120669378093402e-32,
+        "input_subset_mask": 7,
+        "output_subset_mask": 2,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.4212962962962961,
+        "input_subset_mask": 7,
+        "output_subset_mask": 3,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.26234567901234573,
+        "input_subset_mask": 7,
+        "output_subset_mask": 4,
+        "selected_word_count": 4,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.42129629629629617,
+        "input_subset_mask": 7,
+        "output_subset_mask": 5,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.42129629629629617,
+        "input_subset_mask": 7,
+        "output_subset_mask": 6,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 1.0123456790123446,
+        "input_subset_mask": 7,
+        "output_subset_mask": 7,
+        "selected_word_count": 6,
+        "status": "allowed-higher-order-anova-block"
+      }
+    ],
+    "n=5": [
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 2.785785121514937e-32,
+        "input_subset_mask": 0,
+        "output_subset_mask": 1,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 6.832947057693951e-32,
+        "input_subset_mask": 0,
+        "output_subset_mask": 2,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 2.825498692974258e-32,
+        "input_subset_mask": 0,
+        "output_subset_mask": 3,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 9.824496505663902e-32,
+        "input_subset_mask": 0,
+        "output_subset_mask": 4,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 6.008601873740753e-33,
+        "input_subset_mask": 0,
+        "output_subset_mask": 5,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 7.14482326821475e-33,
+        "input_subset_mask": 0,
+        "output_subset_mask": 6,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 3.4581481537487306e-32,
+        "input_subset_mask": 0,
+        "output_subset_mask": 7,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 6.204120946775186e-32,
+        "input_subset_mask": 1,
+        "output_subset_mask": 0,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.2389298782288733e-33,
+        "input_subset_mask": 1,
+        "output_subset_mask": 1,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 7.30508731443844e-34,
+        "input_subset_mask": 1,
+        "output_subset_mask": 2,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.9797502710958632e-33,
+        "input_subset_mask": 1,
+        "output_subset_mask": 3,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 2.252277214184129e-33,
+        "input_subset_mask": 1,
+        "output_subset_mask": 4,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.758809968544224e-33,
+        "input_subset_mask": 1,
+        "output_subset_mask": 5,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.1580555555555555,
+        "input_subset_mask": 1,
+        "output_subset_mask": 6,
+        "selected_word_count": 3,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 2.239406967165438e-32,
+        "input_subset_mask": 1,
+        "output_subset_mask": 7,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 7.580681550768935e-32,
+        "input_subset_mask": 2,
+        "output_subset_mask": 0,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.6273118953413576e-34,
+        "input_subset_mask": 2,
+        "output_subset_mask": 1,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 4.390107271973065e-34,
+        "input_subset_mask": 2,
+        "output_subset_mask": 2,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 4.420475733523296e-34,
+        "input_subset_mask": 2,
+        "output_subset_mask": 3,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.568492254747901e-33,
+        "input_subset_mask": 2,
+        "output_subset_mask": 4,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.1580555555555556,
+        "input_subset_mask": 2,
+        "output_subset_mask": 5,
+        "selected_word_count": 3,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 9.085526453951292e-34,
+        "input_subset_mask": 2,
+        "output_subset_mask": 6,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.5692143933692516e-32,
+        "input_subset_mask": 2,
+        "output_subset_mask": 7,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 3.209757240826591e-33,
+        "input_subset_mask": 3,
+        "output_subset_mask": 0,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 2.3328496957767957e-34,
+        "input_subset_mask": 3,
+        "output_subset_mask": 1,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 2.1179739644452644e-34,
+        "input_subset_mask": 3,
+        "output_subset_mask": 2,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.008592669753086422,
+        "input_subset_mask": 3,
+        "output_subset_mask": 3,
+        "selected_word_count": 4,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 3.929211737595808e-34,
+        "input_subset_mask": 3,
+        "output_subset_mask": 4,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.3940921981628314e-32,
+        "input_subset_mask": 3,
+        "output_subset_mask": 5,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.4226923068858018e-32,
+        "input_subset_mask": 3,
+        "output_subset_mask": 6,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.15387808641975304,
+        "input_subset_mask": 3,
+        "output_subset_mask": 7,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 6.848846732573023e-32,
+        "input_subset_mask": 4,
+        "output_subset_mask": 0,
+        "selected_word_count": 1,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.129799873431444e-34,
+        "input_subset_mask": 4,
+        "output_subset_mask": 1,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.0885045809673726e-34,
+        "input_subset_mask": 4,
+        "output_subset_mask": 2,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 6.067295216750074e-34,
+        "input_subset_mask": 4,
+        "output_subset_mask": 3,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 6.730615313130428e-35,
+        "input_subset_mask": 4,
+        "output_subset_mask": 4,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 2.369876908607255e-34,
+        "input_subset_mask": 4,
+        "output_subset_mask": 5,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 2.2129251529962675e-34,
+        "input_subset_mask": 4,
+        "output_subset_mask": 6,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.008592669753086422,
+        "input_subset_mask": 4,
+        "output_subset_mask": 7,
+        "selected_word_count": 4,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 5.864679833512578e-34,
+        "input_subset_mask": 5,
+        "output_subset_mask": 0,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.1580555555555555,
+        "input_subset_mask": 5,
+        "output_subset_mask": 1,
+        "selected_word_count": 3,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 5.219604170522202e-34,
+        "input_subset_mask": 5,
+        "output_subset_mask": 2,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 1.6087391406884673e-32,
+        "input_subset_mask": 5,
+        "output_subset_mask": 3,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 3.5675697904498593e-34,
+        "input_subset_mask": 5,
+        "output_subset_mask": 4,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 1.4420137882337342e-32,
+        "input_subset_mask": 5,
+        "output_subset_mask": 5,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.4121391631536932e-32,
+        "input_subset_mask": 5,
+        "output_subset_mask": 6,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.15387808641975306,
+        "input_subset_mask": 5,
+        "output_subset_mask": 7,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 3.995628115781354e-34,
+        "input_subset_mask": 6,
+        "output_subset_mask": 0,
+        "selected_word_count": 2,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 7.478092043785063e-34,
+        "input_subset_mask": 6,
+        "output_subset_mask": 1,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.15805555555555553,
+        "input_subset_mask": 6,
+        "output_subset_mask": 2,
+        "selected_word_count": 3,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 1.7758431389471892e-32,
+        "input_subset_mask": 6,
+        "output_subset_mask": 3,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 6.306219583140738e-34,
+        "input_subset_mask": 6,
+        "output_subset_mask": 4,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": false,
+        "hilbert_schmidt_energy": 1.4618524668889933e-32,
+        "input_subset_mask": 6,
+        "output_subset_mask": 5,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 1.6555639083237233e-32,
+        "input_subset_mask": 6,
+        "output_subset_mask": 6,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.1538780864197531,
+        "input_subset_mask": 6,
+        "output_subset_mask": 7,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 1.6783972827269556e-33,
+        "input_subset_mask": 7,
+        "output_subset_mask": 0,
+        "selected_word_count": 3,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 1.3327714898992935e-32,
+        "input_subset_mask": 7,
+        "output_subset_mask": 1,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": false,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 1.3441431890904685e-32,
+        "input_subset_mask": 7,
+        "output_subset_mask": 2,
+        "selected_word_count": 4,
+        "status": "exact-private-generator-zero-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.15387808641975306,
+        "input_subset_mask": 7,
+        "output_subset_mask": 3,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.00859266975308642,
+        "input_subset_mask": 7,
+        "output_subset_mask": 4,
+        "selected_word_count": 4,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.15387808641975306,
+        "input_subset_mask": 7,
+        "output_subset_mask": 5,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 0.15387808641975304,
+        "input_subset_mask": 7,
+        "output_subset_mask": 6,
+        "selected_word_count": 5,
+        "status": "allowed-higher-order-anova-block"
+      },
+      {
+        "allowed_by_forward_private_generator_test": true,
+        "allowed_by_inverse_private_generator_test": true,
+        "hilbert_schmidt_energy": 1.1437523726851855,
+        "input_subset_mask": 7,
+        "output_subset_mask": 7,
+        "selected_word_count": 6,
+        "status": "allowed-higher-order-anova-block"
+      }
+    ]
+  },
+  "headline_metrics": {
+    "allowed_nonconstant_anova_block_count": 14,
+    "block_operator_theorem_count": 1,
+    "exact_finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "forbidden_nonconstant_anova_block_count": 49,
+    "growing_support_operator_bound_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "physical_rank_mixing_theorem_count": 0,
+    "private_generator_sparsity_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "derive_normalized_conditional_collision_operator",
+      "resolution": "Product input/output class marginals make the quadratic collision exactly its Hilbert--Schmidt norm.",
+      "resolved": true
+    },
+    {
+      "obligation": "classify_all_exact_zero_anova_blocks",
+      "resolution": "Intersect forward and inverse private-generator criteria; only fourteen of sixty-three nonconstant subset pairs survive.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_fourteen_allowed_blocks_on_growing_support",
+      "resolution": "Use joint character moments, conditional normal-set mixing, or operator hypercontractivity without composing marginal estimates.",
+      "resolved": false
+    },
+    {
+      "obligation": "relate_anova_blocks_to_z6_core_without_false_identity",
+      "resolution": "Only aggregate asymptotic comparisons are valid until an explicit M\u00f6bius transform between the two decompositions is derived.",
+      "resolved": false
+    }
+  ],
+  "status": "joint-block-dependence-has-fourteen-block-operator-normal-form",
+  "summary": "Converted even cycle-type collision into a normalized conditional operator and proved that dual private-generator cancellation leaves 14 ANOVA blocks.",
+  "theorem": {
+    "allowed_block_orbit_sizes": "4 order-3, 3 order-4, 6 order-5, 1 order-6",
+    "centered_hilbert_schmidt_identity": "||K-Pi_const||_HS^2=C_even-1",
+    "forward_private_generator_test": "A selected-word coefficient vanishes if g,h,or k occurs exactly once",
+    "growing_support_operator_bound_proved": false,
+    "inverse_private_generator_test": "Apply the same rule to a,b,c using g~cb^-1,h~a^-1c,k=bc^-1a",
+    "normalized_operator": "K[x,y]=P(X=x,Y=y)/sqrt(q^3(x)q^3(y))",
+    "order_six_anova_equals_identity_support_core": false,
+    "status": "joint-cycle-channel-reduced-to-fourteen-higher-order-anova-blocks"
+  },
+  "theorem_contract": {
+    "basis_warning": "The order-six ANOVA block is not the fully nonidentity class-matching core Z6_+; finite controls explicitly falsify equality.",
+    "collision_norm": "||K-Pi_const||_HS^2=C_even-1",
+    "forward_zero_test": "A selected-word coefficient vanishes if g,h,or k occurs exactly once",
+    "inverse_zero_test": "Apply the same rule to a,b,c using g~cb^-1,h~a^-1c,k=bc^-1a",
+    "operator": "K[x,y]=P(X=x,Y=y)/sqrt(q^3(x)q^3(y))",
+    "remaining_blocks": "4 order-3, 3 order-4, 6 order-5, 1 order-6",
+    "scope": "No asymptotic norm estimate is proved on any growing-support block."
+  }
+}

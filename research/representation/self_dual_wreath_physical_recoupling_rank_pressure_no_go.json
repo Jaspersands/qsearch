@@ -1,0 +1,231 @@
+{
+  "created_at": "2026-08-13T19:02:38.605065+00:00",
+  "theorem_contract": {
+    "physical_block_law": "P(alpha,beta,gamma,mu,nu,lambda)=d_alpha d_beta d_gamma d_lambda ||R_mu,nu||_HS^2/|S_n|^3.",
+    "recoupling_marginals": "Block-row and block-column Hilbert--Schmidt sums equal the left- and right-tree Kronecker path multiplicities.",
+    "local_triple_law": "Each of the four local triples has exact density 1+X relative to three independent Plancherel labels.",
+    "six_label_marginals": "Every individual edge label in the tetrahedral network is exactly Plancherel.",
+    "physical_lower_tail": "For one local triple, P_phys[X< -1/2]<=2 V_n; all four cost at most 8 V_n.",
+    "certificate_mass_no_go": "The physical mass of blocks on which the rank-aware certificate is nontrivial is at most 6/n+8 V_n=o(1).",
+    "scope": "This bounds one measured 6j block under physical trace mass. It does not lower-bound the true norm or analyze coherent 3nj interference."
+  },
+  "exact_local_controls": [
+    {
+      "n": 3,
+      "partition_count": 3,
+      "exact_total_physical_mass": "1",
+      "maximum_exact_plancherel_marginal_residual": "0",
+      "exact_bad_lower_tail_physical_mass": "0",
+      "exact_two_variance_upper_bound": "5/3",
+      "density_identity_verified": true,
+      "plancherel_marginals_verified": true,
+      "lower_tail_bound_verified": true,
+      "status": "exact-size-biased-kronecker-law-verified"
+    },
+    {
+      "n": 4,
+      "partition_count": 5,
+      "exact_total_physical_mass": "1",
+      "maximum_exact_plancherel_marginal_residual": "0",
+      "exact_bad_lower_tail_physical_mass": "0",
+      "exact_two_variance_upper_bound": "19/12",
+      "density_identity_verified": true,
+      "plancherel_marginals_verified": true,
+      "lower_tail_bound_verified": true,
+      "status": "exact-size-biased-kronecker-law-verified"
+    },
+    {
+      "n": 5,
+      "partition_count": 7,
+      "exact_total_physical_mass": "1",
+      "maximum_exact_plancherel_marginal_residual": "0",
+      "exact_bad_lower_tail_physical_mass": "0",
+      "exact_two_variance_upper_bound": "41/60",
+      "density_identity_verified": true,
+      "plancherel_marginals_verified": true,
+      "lower_tail_bound_verified": true,
+      "status": "exact-size-biased-kronecker-law-verified"
+    },
+    {
+      "n": 6,
+      "partition_count": 11,
+      "exact_total_physical_mass": "1",
+      "maximum_exact_plancherel_marginal_residual": "0",
+      "exact_bad_lower_tail_physical_mass": "0",
+      "exact_two_variance_upper_bound": "181/360",
+      "density_identity_verified": true,
+      "plancherel_marginals_verified": true,
+      "lower_tail_bound_verified": true,
+      "status": "exact-size-biased-kronecker-law-verified"
+    },
+    {
+      "n": 7,
+      "partition_count": 15,
+      "exact_total_physical_mass": "1",
+      "maximum_exact_plancherel_marginal_residual": "0",
+      "exact_bad_lower_tail_physical_mass": "0",
+      "exact_two_variance_upper_bound": "77/360",
+      "density_identity_verified": true,
+      "plancherel_marginals_verified": true,
+      "lower_tail_bound_verified": true,
+      "status": "exact-size-biased-kronecker-law-verified"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 8,
+      "partition_count": 22,
+      "reciprocal_class_variance": 0.07157738095238095,
+      "physical_good_event_probability_lower_bound": 0.0,
+      "certificate_nontrivial_mass_upper_bound": 1.0,
+      "raw_squared_bound_lower_log2": -12.808802646843262,
+      "raw_squared_bound_lower_exceeds_one": false,
+      "status": "finite-n-factorial-margin-not-yet-positive"
+    },
+    {
+      "n": 12,
+      "partition_count": 77,
+      "reciprocal_class_variance": 0.018847580049836995,
+      "physical_good_event_probability_lower_bound": 0.349219359601304,
+      "certificate_nontrivial_mass_upper_bound": 1.0,
+      "raw_squared_bound_lower_log2": -7.645666410880793,
+      "raw_squared_bound_lower_exceeds_one": false,
+      "status": "finite-n-factorial-margin-not-yet-positive"
+    },
+    {
+      "n": 16,
+      "partition_count": 231,
+      "reciprocal_class_variance": 0.009538618503045018,
+      "physical_good_event_probability_lower_bound": 0.5486910519756398,
+      "certificate_nontrivial_mass_upper_bound": 0.45130894802436017,
+      "raw_squared_bound_lower_log2": 0.7690188249264232,
+      "raw_squared_bound_lower_exceeds_one": true,
+      "status": "physical-certificate-nontrivial-mass-bounded"
+    },
+    {
+      "n": 20,
+      "partition_count": 627,
+      "reciprocal_class_variance": 0.005813987578874729,
+      "physical_good_event_probability_lower_bound": 0.6534880993690022,
+      "certificate_nontrivial_mass_upper_bound": 0.3465119006309978,
+      "raw_squared_bound_lower_log2": 11.427509873993316,
+      "raw_squared_bound_lower_exceeds_one": true,
+      "status": "physical-certificate-nontrivial-mass-bounded"
+    },
+    {
+      "n": 24,
+      "partition_count": 1575,
+      "reciprocal_class_variance": 0.003920310049449772,
+      "physical_good_event_probability_lower_bound": 0.7186375196044018,
+      "certificate_nontrivial_mass_upper_bound": 0.2813624803955982,
+      "raw_squared_bound_lower_log2": 23.816312270115162,
+      "raw_squared_bound_lower_exceeds_one": true,
+      "status": "physical-certificate-nontrivial-mass-bounded"
+    },
+    {
+      "n": 30,
+      "partition_count": 5604,
+      "reciprocal_class_variance": 0.00244108599578005,
+      "physical_good_event_probability_lower_bound": 0.7804713120337596,
+      "certificate_nontrivial_mass_upper_bound": 0.21952868796624042,
+      "raw_squared_bound_lower_log2": 44.95210591583575,
+      "raw_squared_bound_lower_exceeds_one": true,
+      "status": "physical-certificate-nontrivial-mass-bounded"
+    }
+  ],
+  "asymptotic_proof": {
+    "physical_joint_normalized": true,
+    "all_six_marginals_plancherel": true,
+    "four_local_triples_size_biased": true,
+    "bad_local_density_upper_on_event": "1+X<=1/2",
+    "four_local_failure_bound": "8 V_n",
+    "six_dimension_failure_bound": "6/n",
+    "raw_bound_lower": "n!/(4 n^(7/2) p(n)^(7/2))",
+    "raw_bound_diverges": true,
+    "certificate_nontrivial_physical_mass_tends_to_zero": true
+  },
+  "literature_links": [
+    {
+      "paper_id": "christandl-sahinoglu-walter-2016",
+      "title": "Recoupling coefficients and quantum entropies",
+      "url": "https://arxiv.org/abs/1210.0463",
+      "use": "Symmetric-group recoupling block definition and tetrahedral Hilbert--Schmidt identities; the physical trace-mass no-go is derived here.",
+      "external_theorem_not_reproved_here": true
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "physical_coupling_path_rank_pressure",
+      "resolved": true,
+      "resolution": "The exact trace-mass law makes every local Kronecker triple size-biased Plancherel, whose bad lower tail is at most 2 V_n."
+    },
+    {
+      "obligation": "dimension_uniform_certificate_typical_mass_useful",
+      "resolved": true,
+      "resolution": "Falsified: its nontrivial blocks carry o(1) physical mass."
+    },
+    {
+      "obligation": "true_typical_6j_operator_norm",
+      "resolved": false,
+      "resolution": "A trivial upper certificate does not determine the actual norm."
+    },
+    {
+      "obligation": "coherent_shared_source_3nj_analysis",
+      "resolved": false,
+      "resolution": "The sequential block law does not control coherent path sums."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Intermediate labels are correlated, invalidating independent-Plancherel concentration.",
+      "resolved": true,
+      "resolution": "Their exact local law is the independent law tilted by 1+X; on the only bad event used, this tilt is at most one half."
+    },
+    {
+      "objection": "The six dimension lower-tail bounds require label independence.",
+      "resolved": true,
+      "resolution": "A union bound uses only the six exact Plancherel marginals."
+    },
+    {
+      "objection": "Certificate triviality implies typical recoupling blocks have norm one.",
+      "resolved": false,
+      "resolution": "False. It says this rank upper bound cannot witness contraction; the actual norm can be much smaller."
+    },
+    {
+      "objection": "Measured-block mass controls a coherent generalized 3nj transform.",
+      "resolved": false,
+      "resolution": "Coherent interference and source reuse are outside the sequential law."
+    }
+  ],
+  "headline_metrics": {
+    "physical_trace_mass_rank_pressure_no_go_theorem_count": 1,
+    "exact_size_biased_local_control_count": 5,
+    "exact_local_control_failure_count": 0,
+    "tail_n": 30,
+    "tail_physical_good_event_probability_lower_bound": 0.7804713120337596,
+    "tail_certificate_nontrivial_mass_upper_bound": 0.21952868796624042,
+    "tail_raw_squared_bound_lower_log2": 44.95210591583575,
+    "true_typical_6j_norm_theorem_count": 0,
+    "coherent_3nj_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "physical_trace_mass_law_derived": true,
+    "all_six_edge_marginals_plancherel_proved": true,
+    "local_size_biased_kronecker_law_proved": true,
+    "rank_certificate_nontrivial_physical_mass_vanishes_proved": true,
+    "true_typical_6j_contraction_proved": false,
+    "coherent_generalized_3nj_contraction_proved": false,
+    "coherent_recoupling_compiled": false,
+    "algorithm_claim_allowed": false,
+    "speedup_claim_allowed": false,
+    "reason": "The rank certificate is now closed as a typical-mass tool, but the actual recoupling norm and coherent shared-source network remain open."
+  },
+  "status": "physical-rank-certificate-typical-mass-no-go-proved",
+  "summary": "Proved that blocks where the dimension-uniform rank certificate is nontrivial have vanishing physical 6j trace mass.",
+  "falsifiers_triggered": [
+    "Multiplicity-biased physical paths do not rescue the rank certificate on typical mass.",
+    "Exceptional low-rank channels must overcome a vanishing source-mass bound.",
+    "The result does not determine true 6j norms or coherent 3nj interference."
+  ]
+}

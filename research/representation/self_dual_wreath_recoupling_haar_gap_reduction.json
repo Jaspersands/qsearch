@@ -1,0 +1,250 @@
+{
+  "created_at": "2026-08-13T19:18:05.032188+00:00",
+  "theorem_contract": {
+    "orthogonal_haar_second_moment": "For block ranks L_i,R_j summing to M, Haar orthogonal mixing gives E chi^2=2(a-1)(b-1)/((M-1)(M+2)).",
+    "physical_source_final_density": "Relative to four independent Plancherel labels, the physical source/final law has density Y=n! M/(d_alpha d_beta d_gamma d_lambda).",
+    "four_label_variance": "E[(Y-1)^2]=V4_n=sum_(C!=1)1/|C|^2.",
+    "multiplicity_lower_bound": "Outside physical mass 4/n+2V4_n, M>=n!/(2n^2p(n)^2).",
+    "haar_gap": "With at most p(n) channels per tree, Haar E chi^2 is at most 8n^4p(n)^6/(n!)^2.",
+    "conditional_consequence": "Any exp(o(n log n)) enhancement over Haar still forces measured channel TV and mutual information to vanish.",
+    "scope": "No Haar universality or enhancement bound for natural symmetric-group recoupling is proved."
+  },
+  "finite_controls": [
+    {
+      "final_partition": [
+        6
+      ],
+      "total_multiplicity": 2,
+      "left_channel_count": 1,
+      "right_channel_count": 1,
+      "observed_chi_square": 4.44966854351227e-30,
+      "orthogonal_haar_expected_chi_square": 0.0,
+      "observed_to_orthogonal_haar_ratio": 0.0,
+      "observed_total_variation": 1.0547118733938987e-15,
+      "status": "finite-observed-chi-below-orthogonal-haar-mean"
+    },
+    {
+      "final_partition": [
+        5,
+        1
+      ],
+      "total_multiplicity": 6,
+      "left_channel_count": 4,
+      "right_channel_count": 4,
+      "observed_chi_square": 0.08296930941358063,
+      "orthogonal_haar_expected_chi_square": 0.45,
+      "observed_to_orthogonal_haar_ratio": 0.18437624314129028,
+      "observed_total_variation": 0.11726851851851898,
+      "status": "finite-observed-chi-below-orthogonal-haar-mean"
+    },
+    {
+      "final_partition": [
+        3,
+        3
+      ],
+      "total_multiplicity": 4,
+      "left_channel_count": 3,
+      "right_channel_count": 3,
+      "observed_chi_square": 0.163580246913581,
+      "orthogonal_haar_expected_chi_square": 0.4444444444444444,
+      "observed_to_orthogonal_haar_ratio": 0.36805555555555725,
+      "observed_total_variation": 0.12500000000000008,
+      "status": "finite-observed-chi-below-orthogonal-haar-mean"
+    },
+    {
+      "final_partition": [
+        2,
+        2,
+        2
+      ],
+      "total_multiplicity": 6,
+      "left_channel_count": 4,
+      "right_channel_count": 4,
+      "observed_chi_square": 0.08296930941358309,
+      "orthogonal_haar_expected_chi_square": 0.45,
+      "observed_to_orthogonal_haar_ratio": 0.18437624314129575,
+      "observed_total_variation": 0.11726851851851901,
+      "status": "finite-observed-chi-below-orthogonal-haar-mean"
+    },
+    {
+      "final_partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "total_multiplicity": 4,
+      "left_channel_count": 3,
+      "right_channel_count": 3,
+      "observed_chi_square": 0.1635802469135792,
+      "orthogonal_haar_expected_chi_square": 0.4444444444444444,
+      "observed_to_orthogonal_haar_ratio": 0.3680555555555532,
+      "observed_total_variation": 0.1250000000000001,
+      "status": "finite-observed-chi-below-orthogonal-haar-mean"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 8,
+      "partition_count": 22,
+      "four_label_variance": 0.0014851980288643233,
+      "good_physical_mass_lower_bound": 0.49702960394227136,
+      "multiplicity_lower_bound_log2": -0.6196552188873152,
+      "orthogonal_haar_chi_square_upper_log2": 11.158173675049227,
+      "inverse_haar_chi_square_lower_log2": -11.158173675049227,
+      "status": "finite-n-haar-gap-not-yet-separated"
+    },
+    {
+      "n": 12,
+      "partition_count": 77,
+      "four_label_variance": 0.00023532344632036148,
+      "good_physical_mass_lower_bound": 0.666196019774026,
+      "multiplicity_lower_bound_log2": 8.131957151243293,
+      "orthogonal_haar_chi_square_upper_log2": -2.7303412210967863,
+      "inverse_haar_chi_square_lower_log2": 2.7303412210967863,
+      "status": "factorial-haar-channel-flatness-benchmark"
+    },
+    {
+      "n": 16,
+      "partition_count": 231,
+      "four_label_variance": 7.028387348770897e-05,
+      "good_physical_mass_lower_bound": 0.7498594322530245,
+      "multiplicity_lower_bound_log2": 19.54664238705051,
+      "orthogonal_haar_chi_square_upper_log2": -22.38978669126891,
+      "inverse_haar_chi_square_lower_log2": 22.38978669126891,
+      "status": "factorial-haar-channel-flatness-benchmark"
+    },
+    {
+      "n": 20,
+      "partition_count": 627,
+      "four_label_variance": 2.7899135749756378e-05,
+      "good_physical_mass_lower_bound": 0.7999442017285006,
+      "multiplicity_lower_bound_log2": 32.84888446552742,
+      "orthogonal_haar_chi_square_upper_log2": -46.11312566545075,
+      "inverse_haar_chi_square_lower_log2": 46.11312566545075,
+      "status": "factorial-haar-channel-flatness-benchmark"
+    },
+    {
+      "n": 24,
+      "partition_count": 1575,
+      "four_label_variance": 1.3189753498525791e-05,
+      "good_physical_mass_lower_bound": 0.8333069538263363,
+      "multiplicity_lower_bound_log2": 47.625460191108864,
+      "orthogonal_haar_chi_square_upper_log2": -73.00864815566844,
+      "inverse_haar_chi_square_lower_log2": 73.00864815566844,
+      "status": "factorial-haar-channel-flatness-benchmark"
+    },
+    {
+      "n": 30,
+      "partition_count": 5604,
+      "four_label_variance": 5.3000657084314845e-06,
+      "good_physical_mass_lower_bound": 0.8666560665352498,
+      "multiplicity_lower_bound_log2": 71.99080366989476,
+      "orthogonal_haar_chi_square_upper_log2": -118.07712485892786,
+      "inverse_haar_chi_square_lower_log2": 118.07712485892786,
+      "status": "factorial-haar-channel-flatness-benchmark"
+    },
+    {
+      "n": 40,
+      "partition_count": 37338,
+      "four_label_variance": 1.6462332266471116e-06,
+      "good_physical_mass_lower_bound": 0.8999967075335468,
+      "multiplicity_lower_bound_log2": 117.1384695711867,
+      "orthogonal_haar_chi_square_upper_log2": -202.90022507915637,
+      "inverse_haar_chi_square_lower_log2": 202.90022507915637,
+      "status": "factorial-haar-channel-flatness-benchmark"
+    },
+    {
+      "n": 50,
+      "partition_count": 204226,
+      "four_label_variance": 6.670423947212837e-07,
+      "good_physical_mass_lower_bound": 0.9199986659152106,
+      "multiplicity_lower_bound_log2": 166.64081164050987,
+      "orthogonal_haar_chi_square_upper_log2": -297.0020092374888,
+      "inverse_haar_chi_square_lower_log2": 297.0020092374888,
+      "status": "factorial-haar-channel-flatness-benchmark"
+    }
+  ],
+  "asymptotic_proof": {
+    "physical_bad_mass_upper": "4/n+2V4_n=o(1)",
+    "physical_multiplicity_lower": "n!/(2n^2p(n)^2)",
+    "channel_count_upper_each_tree": "p(n)",
+    "orthogonal_haar_chi_upper": "8n^4p(n)^6/(n!)^2",
+    "haar_chi_log_scale": "-2n log n+O(n)",
+    "subfactorial_enhancement_definition": "log A_n=o(n log n)",
+    "subfactorial_enhancement_implies_channel_independence": true,
+    "nonvanishing_signal_requires_factorial_enhancement": true
+  },
+  "proof_obligations": [
+    {
+      "obligation": "bound_natural_recoupling_haar_enhancement",
+      "resolved": false,
+      "resolution": "Prove chi^2_actual/chi^2_Haar=exp(o(n log n)) on positive physical mass, or construct a factorially enhanced outlier family."
+    },
+    {
+      "obligation": "source_weighted_channel_mutual_information",
+      "resolved": false,
+      "resolution": "The conditional reduction decides it once the enhancement factor is controlled."
+    },
+    {
+      "obligation": "coherent_phase_observable_after_label_flatness",
+      "resolved": false,
+      "resolution": "Vanishing measured-label information would leave phase-sensitive multiplicity observables as the only recoupling route."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Typical final multiplicity may be small despite large Specht dimensions.",
+      "resolved": true,
+      "resolution": "The exact four-label normalized multiplicity variance and physical size bias give the factorial lower bound outside o(1) mass."
+    },
+    {
+      "objection": "There may be factorially many channel labels.",
+      "resolved": true,
+      "resolution": "Intermediate labels are partitions of n, so each tree has at most p(n)=exp(O(sqrt n)) channels."
+    },
+    {
+      "objection": "Finite S6 nonflatness contradicts the Haar-gap reduction.",
+      "resolved": true,
+      "resolution": "No: every complete S6 observed chi-square is below the corresponding orthogonal-Haar mean, and no asymptotic universality is inferred."
+    },
+    {
+      "objection": "Associators are generic random orthogonal matrices.",
+      "resolved": false,
+      "resolution": "Unproved and likely false pointwise; only a source-weighted fourth-moment bound is required."
+    }
+  ],
+  "headline_metrics": {
+    "orthogonal_haar_channel_chi_identity_count": 1,
+    "physical_final_multiplicity_lower_bound_theorem_count": 1,
+    "conditional_subfactorial_enhancement_reduction_count": 1,
+    "complete_s6_control_count": 5,
+    "complete_s6_observed_below_haar_mean_count": 5,
+    "tail_n": 50,
+    "tail_good_physical_mass_lower_bound": 0.9199986659152106,
+    "tail_multiplicity_lower_bound_log2": 166.64081164050987,
+    "tail_haar_chi_square_upper_log2": -297.0020092374888,
+    "natural_enhancement_bound_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "physical_final_multiplicity_factorial_lower_bound_proved": true,
+    "haar_channel_chi_factorially_small_proved": true,
+    "subfactorial_enhancement_would_force_label_independence_proved": true,
+    "natural_recoupling_subfactorial_enhancement_proved": false,
+    "factorially_enhanced_outlier_family_constructed": false,
+    "source_weighted_channel_mutual_information_vanishes_proved": false,
+    "coherent_phase_route_dequantized": false,
+    "algorithm_claim_allowed": false,
+    "speedup_claim_allowed": false,
+    "reason": "The required non-Haar enhancement scale is now factorially sharp, but the actual symmetric-group 6j fourth moment remains open."
+  },
+  "status": "factorial-haar-gap-proved-natural-enhancement-open",
+  "summary": "Proved that any surviving measured 6j channel signal requires factorial enhancement over orthogonal-Haar mixing on positive physical mass.",
+  "falsifiers_triggered": [
+    "Typical physical final multiplicity is not a low-rank escape.",
+    "Subexponential channel count cannot offset factorial Haar mixing.",
+    "A useful measured-label signal must exhibit factorially non-Haar arithmetic structure."
+  ]
+}

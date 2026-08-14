@@ -1,0 +1,143 @@
+{
+  "created_at": "2026-08-13T18:59:29.600805+00:00",
+  "theorem_contract": {
+    "atom_event": "For rho~Plancherel, Pr[q_rho<delta/p(n)]<=delta; union over six labels costs at most 6 delta.",
+    "kronecker_event": "For each of four independent-Plancherel triples, g=d_a d_b d_c(1+X)/n! and E[X^2]=V_n; unioned Chebyshev at |X|=1/2 costs at most 16 V_n.",
+    "pressure_substitution": "On the joint event, each of the two raw squared 6j dimension-rank bounds is at least n! delta^(7/2)/(4 p(n)^(7/2)).",
+    "asymptotic_conclusion": "With delta=1/n, the event probability tends to one and the raw lower bound diverges, so the clipped certificate equals one.",
+    "scope": "All six labels are independent Plancherel draws. Natural dimension-weighted coupling paths and shared-source 3nj networks are correlated and are not covered."
+  },
+  "scaling_records": [
+    {
+      "n": 8,
+      "partition_count": 22,
+      "delta": 0.125,
+      "reciprocal_class_variance": 0.07157738095238095,
+      "simultaneous_good_event_probability_lower_bound": 0.0,
+      "raw_squared_bound_lower_log2": -12.808802646843262,
+      "raw_squared_bound_lower_exceeds_one": false,
+      "status": "finite-n-asymptotic-bound-not-yet-informative"
+    },
+    {
+      "n": 12,
+      "partition_count": 77,
+      "delta": 0.08333333333333333,
+      "reciprocal_class_variance": 0.018847580049836995,
+      "simultaneous_good_event_probability_lower_bound": 0.19843871920260808,
+      "raw_squared_bound_lower_log2": -7.645666410880793,
+      "raw_squared_bound_lower_exceeds_one": false,
+      "status": "finite-n-asymptotic-bound-not-yet-informative"
+    },
+    {
+      "n": 16,
+      "partition_count": 231,
+      "delta": 0.0625,
+      "reciprocal_class_variance": 0.009538618503045018,
+      "simultaneous_good_event_probability_lower_bound": 0.4723821039512797,
+      "raw_squared_bound_lower_log2": 0.7690188249264232,
+      "raw_squared_bound_lower_exceeds_one": true,
+      "status": "certified-independent-bulk-certificate-triviality-event"
+    },
+    {
+      "n": 20,
+      "partition_count": 627,
+      "delta": 0.05,
+      "reciprocal_class_variance": 0.005813987578874729,
+      "simultaneous_good_event_probability_lower_bound": 0.6069761987380042,
+      "raw_squared_bound_lower_log2": 11.427509873993316,
+      "raw_squared_bound_lower_exceeds_one": true,
+      "status": "certified-independent-bulk-certificate-triviality-event"
+    },
+    {
+      "n": 24,
+      "partition_count": 1575,
+      "delta": 0.041666666666666664,
+      "reciprocal_class_variance": 0.003920310049449772,
+      "simultaneous_good_event_probability_lower_bound": 0.6872750392088036,
+      "raw_squared_bound_lower_log2": 23.816312270115162,
+      "raw_squared_bound_lower_exceeds_one": true,
+      "status": "certified-independent-bulk-certificate-triviality-event"
+    },
+    {
+      "n": 30,
+      "partition_count": 5604,
+      "delta": 0.03333333333333333,
+      "reciprocal_class_variance": 0.00244108599578005,
+      "simultaneous_good_event_probability_lower_bound": 0.7609426240675192,
+      "raw_squared_bound_lower_log2": 44.95210591583575,
+      "raw_squared_bound_lower_exceeds_one": true,
+      "status": "certified-independent-bulk-certificate-triviality-event"
+    }
+  ],
+  "asymptotic_proof": {
+    "partition_atom_count": "p(n)",
+    "atom_tail_bound": "Pr[q<delta/p(n)]<=delta",
+    "six_label_union_bound": "6 delta",
+    "four_remainder_union_bound": "16 V_n",
+    "reciprocal_class_variance": "V_n=o(1)",
+    "partition_count_bound": "p(n)<=2^(n-1)",
+    "factorial_dominance": "n!/(n 2^(n-1))^(7/2) tends to infinity",
+    "independent_bulk_certificate_trivial_with_probability_one_minus_o_one": true
+  },
+  "proof_obligations": [
+    {
+      "obligation": "independent_plancherel_6j_rank_pressure",
+      "resolved": true,
+      "resolution": "Atom counting, the exact normalized-Kronecker variance, and direct substitution force both raw bounds above one."
+    },
+    {
+      "obligation": "physical_coupling_path_rank_pressure",
+      "resolved": false,
+      "resolution": "Derive the joint law after conditioning intermediate labels on dimension-weighted Kronecker transitions."
+    },
+    {
+      "obligation": "shared_source_3nj_contraction",
+      "resolved": false,
+      "resolution": "Control correlated channel sums and interference across the full row/column recoupling network."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The four Kronecker remainders share labels, so their union bound is invalid.",
+      "resolved": true,
+      "resolution": "A union bound needs no mutual independence; each triple has three independent Plancherel labels under the six-label law."
+    },
+    {
+      "objection": "Typical dimensions require an unproved limit-shape estimate.",
+      "resolved": true,
+      "resolution": "The lower tail uses only that Plancherel measure has p(n) atoms."
+    },
+    {
+      "objection": "This proves the physical recoupling certificate is asymptotically trivial.",
+      "resolved": false,
+      "resolution": "False: physical intermediate labels are multiplicity-biased and the two trees share leaves and final output."
+    }
+  ],
+  "headline_metrics": {
+    "independent_plancherel_rank_pressure_no_go_theorem_count": 1,
+    "finite_scaling_record_count": 6,
+    "tail_n": 30,
+    "tail_good_event_probability_lower_bound": 0.7609426240675192,
+    "tail_raw_squared_bound_lower_log2": 44.95210591583575,
+    "physical_path_rank_pressure_theorem_count": 0,
+    "shared_source_3nj_contraction_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "independent_plancherel_bulk_certificate_trivial_aas_proved": true,
+    "physical_dimension_weighted_path_certificate_trivial_proved": false,
+    "physical_dimension_weighted_path_contraction_proved": false,
+    "generalized_3nj_contraction_proved": false,
+    "coherent_recoupling_compiled": false,
+    "algorithm_claim_allowed": false,
+    "speedup_claim_allowed": false,
+    "reason": "The generic independent bulk is closed, but the correlated physical path and its coherent 3nj transform remain unresolved."
+  },
+  "status": "independent-plancherel-rank-pressure-no-go-physical-path-open",
+  "summary": "Proved that typical independent Plancherel Kronecker ranks erase the dimension-uniform 6j contraction certificate by a factorial margin.",
+  "falsifiers_triggered": [
+    "Generic independent Plancherel labels do not yield nontrivial rank-aware 6j contraction.",
+    "A low-rank exceptional-channel argument must pay its source-mass cost.",
+    "Independent-label triviality must not be promoted to the correlated physical path."
+  ]
+}

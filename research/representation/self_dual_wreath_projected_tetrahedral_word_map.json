@@ -1,0 +1,291 @@
+{
+  "created_at": "2026-08-13T20:04:04.969561+00:00",
+  "theorem_contract": {
+    "projected_mean": "m_R(x)=|G|^-1 sum_(rho in R)d_rho chi_rho(x).",
+    "projected_kernel": "K_R(x,y)=|G|^-1 sum_(rho in R)chi_rho(x)chi_rho(y).",
+    "retained_mass": "q_R=|G|^-1 sum_(rho in R)d_rho^2.",
+    "projected_word_map_identity": "C_R=sum_(t,u)prod_i K_R(W_i(t),W_i(u))-2sum_t prod_i m_R(W_i(t))+q_R^6.",
+    "retained_tv_bound": "TV_R<=(q_R^3/2)sqrt(C_R).",
+    "canonical_research_target": "Take R={rho:d_rho>D_n} for the canonical near-maximal dimension trim.",
+    "scope": "C_R=o(1) is sufficient but not necessary for retained TV decay; coherent multiplicity phases are absent."
+  },
+  "finite_controls": [
+    {
+      "n": 2,
+      "minimum_retained_dimension_exclusive": 0,
+      "retained_partition_count": 2,
+      "retained_plancherel_mass": 1.0,
+      "retained_product_mass": 1.0,
+      "retained_physical_mass": 1.0,
+      "removed_product_mass": 0.0,
+      "removed_physical_mass": 0.0,
+      "label_space_subprobability_chi_square": 7.0,
+      "projected_kernel_subprobability_chi_square": 7.0,
+      "projected_kernel_identity_residual": 0.0,
+      "retained_unnormalized_total_variation": 0.875,
+      "chi_square_total_variation_upper_bound": 1.3228756555322954,
+      "conditional_retained_total_variation": 0.875,
+      "retained_positive_kl_contribution_bits": 3.0,
+      "exact_projected_kernel_identity_verified": true,
+      "status": "exact-projected-word-map-identity-verified"
+    },
+    {
+      "n": 3,
+      "minimum_retained_dimension_exclusive": 0,
+      "retained_partition_count": 3,
+      "retained_plancherel_mass": 1.0,
+      "retained_product_mass": 0.9999999999999997,
+      "retained_physical_mass": 0.9999999999999996,
+      "removed_product_mass": 3.3306690738754696e-16,
+      "removed_physical_mass": 4.440892098500626e-16,
+      "label_space_subprobability_chi_square": 12.499999999999998,
+      "projected_kernel_subprobability_chi_square": 12.5,
+      "projected_kernel_identity_residual": 1.7763568394002505e-15,
+      "retained_unnormalized_total_variation": 0.648662551440329,
+      "chi_square_total_variation_upper_bound": 1.7677669529663687,
+      "conditional_retained_total_variation": 0.6486625514403292,
+      "retained_positive_kl_contribution_bits": 2.1252578725338385,
+      "exact_projected_kernel_identity_verified": true,
+      "status": "exact-projected-word-map-identity-verified"
+    },
+    {
+      "n": 3,
+      "minimum_retained_dimension_exclusive": 1,
+      "retained_partition_count": 1,
+      "retained_plancherel_mass": 0.6666666666666666,
+      "retained_product_mass": 0.08779149519890259,
+      "retained_physical_mass": 0.0,
+      "removed_product_mass": 0.9122085048010974,
+      "removed_physical_mass": 1.0,
+      "label_space_subprobability_chi_square": 0.08779149519890259,
+      "projected_kernel_subprobability_chi_square": 0.0877914951989026,
+      "projected_kernel_identity_residual": 1.3877787807814457e-17,
+      "retained_unnormalized_total_variation": 0.04389574759945129,
+      "chi_square_total_variation_upper_bound": 0.04389574759945129,
+      "conditional_retained_total_variation": 0.0,
+      "retained_positive_kl_contribution_bits": 0.0,
+      "exact_projected_kernel_identity_verified": true,
+      "status": "exact-projected-word-map-identity-verified"
+    },
+    {
+      "n": 4,
+      "minimum_retained_dimension_exclusive": 0,
+      "retained_partition_count": 5,
+      "retained_plancherel_mass": 1.0,
+      "retained_product_mass": 1.0,
+      "retained_physical_mass": 1.0,
+      "removed_product_mass": 0.0,
+      "removed_physical_mass": 0.0,
+      "label_space_subprobability_chi_square": 22.10493827160493,
+      "projected_kernel_subprobability_chi_square": 22.104938271604937,
+      "projected_kernel_identity_residual": 7.105427357601002e-15,
+      "retained_unnormalized_total_variation": 0.6297054840213478,
+      "chi_square_total_variation_upper_bound": 2.350794454626187,
+      "conditional_retained_total_variation": 0.6297054840213478,
+      "retained_positive_kl_contribution_bits": 2.1923783115237114,
+      "exact_projected_kernel_identity_verified": true,
+      "status": "exact-projected-word-map-identity-verified"
+    },
+    {
+      "n": 4,
+      "minimum_retained_dimension_exclusive": 1,
+      "retained_partition_count": 3,
+      "retained_plancherel_mass": 0.9166666666666666,
+      "retained_product_mass": 0.5932921944658779,
+      "retained_physical_mass": 0.5729166666666666,
+      "removed_product_mass": 0.4067078055341221,
+      "removed_physical_mass": 0.42708333333333337,
+      "label_space_subprobability_chi_square": 0.7561008364411865,
+      "projected_kernel_subprobability_chi_square": 0.7561008364411865,
+      "projected_kernel_identity_residual": 0.0,
+      "retained_unnormalized_total_variation": 0.25595599306627237,
+      "chi_square_total_variation_upper_bound": 0.33488383227982105,
+      "conditional_retained_total_variation": 0.43734841758200826,
+      "retained_positive_kl_contribution_bits": 0.5911339836012597,
+      "exact_projected_kernel_identity_verified": true,
+      "status": "exact-projected-word-map-identity-verified"
+    },
+    {
+      "n": 4,
+      "minimum_retained_dimension_exclusive": 2,
+      "retained_partition_count": 2,
+      "retained_plancherel_mass": 0.75,
+      "retained_product_mass": 0.177978515625,
+      "retained_physical_mass": 0.09374999999999999,
+      "removed_product_mass": 0.822021484375,
+      "removed_physical_mass": 0.90625,
+      "label_space_subprobability_chi_square": 0.03986123167438273,
+      "projected_kernel_subprobability_chi_square": 0.03986123167438271,
+      "projected_kernel_identity_residual": 1.3877787807814457e-17,
+      "retained_unnormalized_total_variation": 0.04211425781250001,
+      "chi_square_total_variation_upper_bound": 0.04211425781250001,
+      "conditional_retained_total_variation": 5.204170427930421e-16,
+      "retained_positive_kl_contribution_bits": 0.0,
+      "exact_projected_kernel_identity_verified": true,
+      "status": "exact-projected-word-map-identity-verified"
+    },
+    {
+      "n": 5,
+      "minimum_retained_dimension_exclusive": 0,
+      "retained_partition_count": 7,
+      "retained_plancherel_mass": 1.0,
+      "retained_product_mass": 1.0,
+      "retained_physical_mass": 1.0,
+      "removed_product_mass": 0.0,
+      "removed_physical_mass": 0.0,
+      "label_space_subprobability_chi_square": 15.545887172067902,
+      "projected_kernel_subprobability_chi_square": null,
+      "projected_kernel_identity_residual": null,
+      "retained_unnormalized_total_variation": 0.44304629257491,
+      "chi_square_total_variation_upper_bound": 1.9714136534520033,
+      "conditional_retained_total_variation": 0.44304629257491,
+      "retained_positive_kl_contribution_bits": 1.238187061126822,
+      "exact_projected_kernel_identity_verified": null,
+      "status": "exact-projected-word-map-identity-verified"
+    },
+    {
+      "n": 5,
+      "minimum_retained_dimension_exclusive": 1,
+      "retained_partition_count": 5,
+      "retained_plancherel_mass": 0.9833333333333333,
+      "retained_product_mass": 0.9040752237868657,
+      "retained_physical_mass": 0.9030277777777779,
+      "removed_product_mass": 0.09592477621313433,
+      "removed_physical_mass": 0.09697222222222213,
+      "label_space_subprobability_chi_square": 0.9263679514103225,
+      "projected_kernel_subprobability_chi_square": null,
+      "projected_kernel_identity_residual": null,
+      "retained_unnormalized_total_variation": 0.3509177352618099,
+      "chi_square_total_variation_upper_bound": 0.45757685501461587,
+      "conditional_retained_total_variation": 0.3885637479989589,
+      "retained_positive_kl_contribution_bits": 0.7756467898051049,
+      "exact_projected_kernel_identity_verified": null,
+      "status": "exact-projected-word-map-identity-verified"
+    },
+    {
+      "n": 5,
+      "minimum_retained_dimension_exclusive": 4,
+      "retained_partition_count": 3,
+      "retained_plancherel_mass": 0.7166666666666667,
+      "retained_product_mass": 0.1354887484782236,
+      "retained_physical_mass": 0.12288786008230455,
+      "removed_product_mass": 0.8645112515217764,
+      "removed_physical_mass": 0.8771121399176954,
+      "label_space_subprobability_chi_square": 0.07688656226423188,
+      "projected_kernel_subprobability_chi_square": null,
+      "projected_kernel_identity_residual": null,
+      "retained_unnormalized_total_variation": 0.034379130152070475,
+      "chi_square_total_variation_upper_bound": 0.05103249968396069,
+      "conditional_retained_total_variation": 0.2843859208780425,
+      "retained_positive_kl_contribution_bits": 0.06164422635670345,
+      "exact_projected_kernel_identity_verified": null,
+      "status": "exact-projected-word-map-identity-verified"
+    }
+  ],
+  "projected_kernel_contract": {
+    "word_tuple": "(g,h,k,gk,hk,ghk)",
+    "input_randomness": "three independent uniform S_n permutations",
+    "edge_projection": "central Fourier projector onto retained irreps R",
+    "quantity": "six-fold projected class-signature collision norm",
+    "sufficient_no_go": "C_R=o(1)",
+    "positive_result_requirement": "nonvanishing retained TV or positive KL on positive physical mass",
+    "raw_untrimmed_chi_square_accepted_as_evidence": false
+  },
+  "literature_boundary": [
+    {
+      "id": "feray-sniady-character-bounds-2007",
+      "url": "https://arxiv.org/abs/math/0701051",
+      "boundary": "Pointwise bounds are strongest for short permutations; the six word values are typically long and require correlated summation."
+    },
+    {
+      "id": "lifshitz-marmor-hypercontractive-characters-2023",
+      "url": "https://arxiv.org/abs/2308.08694",
+      "boundary": "Normal-set mixing and level-based norm bounds do not directly bound this six-edge high-level projected word-map tensor."
+    },
+    {
+      "id": "benaych-georges-free-word-cycles-2010",
+      "url": "https://arxiv.org/abs/math/0611500",
+      "boundary": "Fixed small-cycle asymptotics for one word do not control the joint full cycle types or high-dimensional Fourier projection."
+    },
+    {
+      "id": "hanany-puder-word-measures-2026",
+      "url": "https://arxiv.org/abs/2009.00897",
+      "boundary": "Stable class-function estimates concern fixed-level Fourier data, whereas the canonical trim retains near-maximal-dimensional modes."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_exact_high_dimension_projected_word_map_identity",
+      "resolved": true,
+      "resolution": "Expand retained label-space chi-square and apply six independent Plancherel character sums; finite controls verify the class kernel."
+    },
+    {
+      "obligation": "bound_canonical_projected_collision_norm",
+      "resolved": false,
+      "resolution": "Prove C_R=o(1) for d_rho>D_n, or identify the retained Fourier modes and word signatures causing a nonvanishing term."
+    },
+    {
+      "obligation": "rule_out_a_second_high_dimension_likelihood_tail",
+      "resolved": false,
+      "resolution": "If C_R does not vanish, test direct retained L1 and positive KL before declaring a positive-mass signal."
+    },
+    {
+      "obligation": "classical_baseline_for_retained_word_map_signal",
+      "resolved": false,
+      "resolution": "Compare any survivor with random-permutation cycle-type sampling and character/Kronecker computations under the same access model."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Full character orthogonality already evaluates the retained projection.",
+      "resolved": true,
+      "resolution": "Only the untrimmed kernel collapses to conjugacy matching; the high-dimensional projector is a signed nonlocal class kernel."
+    },
+    {
+      "objection": "A nonzero finite projected chi-square is asymptotic evidence.",
+      "resolved": false,
+      "resolution": "Finite retained TV is sizable through S5 but has no scaling theorem."
+    },
+    {
+      "objection": "C_R bounded away from zero would prove useful information.",
+      "resolved": false,
+      "resolution": "A high-dimensional likelihood tail can still separate L2 from L1/KL."
+    },
+    {
+      "objection": "Projected word-map mixing supplies a coherent Racah compiler.",
+      "resolved": false,
+      "resolution": "It decides dephased information only; implementation and phase access remain separate proof obligations."
+    }
+  ],
+  "headline_metrics": {
+    "projected_word_map_identity_theorem_count": 1,
+    "finite_control_count": 9,
+    "finite_control_failure_count": 0,
+    "maximum_finite_control_n": 5,
+    "n5_full_chi_square": 15.545887172067902,
+    "n5_after_one_dimensional_trim_chi_square": 0.9263679514103225,
+    "n5_after_one_dimensional_trim_total_variation": 0.3509177352618099,
+    "canonical_projected_collision_asymptotic_theorem_count": 0,
+    "positive_mass_measured_signal_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "high_dimension_projected_word_map_identity_proved": true,
+    "raw_parity_chi_square_tail_excluded_by_projection": true,
+    "canonical_projected_collision_norm_vanishes_proved": false,
+    "canonical_projected_collision_norm_survives_proved": false,
+    "retained_positive_kl_survives_proved": false,
+    "classical_baseline_separated": false,
+    "coherent_multiplicity_transform_compiled": false,
+    "algorithm_claim_allowed": false,
+    "speedup_claim_allowed": false,
+    "reason": "The exact retained harmonic-analysis target is now explicit, but neither decay nor positive-mass survival has been proved."
+  },
+  "status": "high-dimensional-projected-word-map-reduced-asymptotic-open",
+  "summary": "Converted dimension-trimmed six-label recoupling into an exact six-fold central Fourier projection of a three-permutation word map, isolating the remaining measured-label harmonic-analysis theorem.",
+  "falsifiers_triggered": [
+    "Stable fixed-cycle word-measure theorems do not reach the retained high-dimensional Fourier spectrum.",
+    "Removing trivial/sign modes collapses the S5 chi-square from its raw tail-dominated value but leaves a finite unresolved bulk.",
+    "Projected chi-square alone remains only a sufficient no-go metric, not a positive-signal certificate."
+  ]
+}

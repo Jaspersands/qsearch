@@ -1,0 +1,279 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False at the flatness width: its entire trivial-color source and alternative contributions vanish exponentially.",
+      "challenge": "The generic wreath-CG Kronecker reduction is naturally decisive.",
+      "resolved": true
+    },
+    {
+      "answer": "Not alone. The conclusion uses the exact global Gram second moment and Cauchy-Schwarz to control size bias.",
+      "challenge": "Small source rank fraction alone implies small alternative mass.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Colored sectors dominate the remaining source and their transfer structure is unclassified.",
+      "challenge": "All wreath fusion is therefore irrelevant.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "colored_matrix_hecke_transform_compiled": false,
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "embedded_symmetric_kronecker_sector_negligible": true,
+    "full_orbit_synthesis_polar_compiled": false,
+    "generic_wreath_cg_is_natural_source_bottleneck": false,
+    "reason": "The generic Kronecker-containing trivial-color sector has vanishing alternative mass. The dominant colored source transfer remains unclassified and uncompiled.",
+    "source_heavy_colored_sectors_classified": false,
+    "speedup_claim_allowed": false,
+    "trivial_color_source_fraction_formula_proved": true
+  },
+  "created_at": "2026-08-13T16:28:21.709016+00:00",
+  "falsifiers_triggered": [
+    "The embedded ordinary Kronecker transform is not a constant-mass natural-source obstruction.",
+    "Regular parity-conditioned mass was not silently substituted for the natural source; the natural fiber was computed exactly.",
+    "Source rank fraction alone was not used as an alternative-mass claim; the frame second moment supplies the transfer bound.",
+    "Colored wreath fusion and the full matrix-Hecke polar remain open."
+  ],
+  "finite_controls": [
+    {
+      "base_subgroup_order": 2,
+      "character_formula_source_fraction": 1.0,
+      "copy_count": 1,
+      "degree": 2,
+      "direct_character_mismatch_count": 0,
+      "exact_burnside_formula_verified": true,
+      "exact_invariant_dimension_decimal": "1",
+      "exact_source_fraction": 1.0,
+      "exact_tensor_fiber_dimension_decimal": "1",
+      "group_order": 2,
+      "half_degree": 1,
+      "one_copy_fiber_dimension": 1,
+      "source_fraction_residual": 0.0,
+      "status": "exact-trivial-color-source-mass-verified"
+    },
+    {
+      "base_subgroup_order": 4,
+      "character_formula_source_fraction": 0.5,
+      "copy_count": 1,
+      "degree": 4,
+      "direct_character_mismatch_count": 0,
+      "exact_burnside_formula_verified": true,
+      "exact_invariant_dimension_decimal": "6",
+      "exact_source_fraction": 0.5,
+      "exact_tensor_fiber_dimension_decimal": "12",
+      "group_order": 24,
+      "half_degree": 2,
+      "one_copy_fiber_dimension": 12,
+      "source_fraction_residual": 0.0,
+      "status": "exact-trivial-color-source-mass-verified"
+    },
+    {
+      "base_subgroup_order": 4,
+      "character_formula_source_fraction": 0.3333333333333333,
+      "copy_count": 2,
+      "degree": 4,
+      "direct_character_mismatch_count": 0,
+      "exact_burnside_formula_verified": true,
+      "exact_invariant_dimension_decimal": "48",
+      "exact_source_fraction": 0.3333333333333333,
+      "exact_tensor_fiber_dimension_decimal": "144",
+      "group_order": 24,
+      "half_degree": 2,
+      "one_copy_fiber_dimension": 12,
+      "source_fraction_residual": 0.0,
+      "status": "exact-trivial-color-source-mass-verified"
+    },
+    {
+      "base_subgroup_order": 8,
+      "character_formula_source_fraction": 0.16666666666666666,
+      "copy_count": 1,
+      "degree": 6,
+      "direct_character_mismatch_count": 0,
+      "exact_burnside_formula_verified": true,
+      "exact_invariant_dimension_decimal": "60",
+      "exact_source_fraction": 0.16666666666666666,
+      "exact_tensor_fiber_dimension_decimal": "360",
+      "group_order": 720,
+      "half_degree": 3,
+      "one_copy_fiber_dimension": 360,
+      "source_fraction_residual": 0.0,
+      "status": "exact-trivial-color-source-mass-verified"
+    },
+    {
+      "base_subgroup_order": 8,
+      "character_formula_source_fraction": 0.1274074074074074,
+      "copy_count": 2,
+      "degree": 6,
+      "direct_character_mismatch_count": 0,
+      "exact_burnside_formula_verified": true,
+      "exact_invariant_dimension_decimal": "16512",
+      "exact_source_fraction": 0.1274074074074074,
+      "exact_tensor_fiber_dimension_decimal": "129600",
+      "group_order": 720,
+      "half_degree": 3,
+      "one_copy_fiber_dimension": 360,
+      "source_fraction_residual": 0.0,
+      "status": "exact-trivial-color-source-mass-verified"
+    }
+  ],
+  "headline_metrics": {
+    "exact_burnside_control_count": 5,
+    "exponential_alternative_mass_no_go_count": 1,
+    "exponential_source_mass_no_go_count": 1,
+    "finite_control_failure_count": 0,
+    "maximum_scaling_alternative_contribution_upper_bound": 0.3559620546854383,
+    "minimum_scaling_alternative_contribution_log2_upper_bound": -63.990019419632674,
+    "new_quantum_algorithm_count": 0,
+    "source_heavy_colored_fusion_compiler_count": 0
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HYPEROCTAHEDRAL-COLORED-SOURCE-MASS",
+      "resolved": false,
+      "statement": "Identify which nontrivial base-color bipartition sectors carry constant natural alternative mass."
+    },
+    {
+      "id": "PO-COSET-HYPEROCTAHEDRAL-COLORED-TRANSFER-BASIS",
+      "resolved": false,
+      "statement": "Find a succinct transform for only those source-heavy colored matrix-Hecke sectors."
+    },
+    {
+      "id": "PO-COSET-HYPEROCTAHEDRAL-COLOR-DEQUANTIZATION",
+      "resolved": false,
+      "statement": "Compare any surviving colored-sector observable with classical matching-cycle and representation invariants."
+    }
+  ],
+  "scaling_records": [
+    {
+      "alternative_contribution_log2_upper_bound": -1.4902046358160557,
+      "alternative_contribution_upper_bound": 0.3559620546854383,
+      "colored_source_fusion_compiled": false,
+      "copy_count": 10,
+      "degree": 6,
+      "elementary_source_fraction_upper_bound": 0.12501481820183238,
+      "embedded_kronecker_sector_has_constant_alternative_mass": false,
+      "exact_source_fraction": 0.1250000000008671,
+      "exact_source_fraction_log2": -2.9999999999899924,
+      "generic_wreath_cg_is_natural_source_bottleneck": false,
+      "half_degree": 3,
+      "perfect_matching_count_decimal": "15",
+      "status": "trivial-color-sector-negligible-colored-fusion-open"
+    },
+    {
+      "alternative_contribution_log2_upper_bound": -1.9908999105933873,
+      "alternative_contribution_upper_bound": 0.25158190918913464,
+      "colored_source_fusion_compiled": false,
+      "copy_count": 13,
+      "degree": 8,
+      "elementary_source_fraction_upper_bound": 0.06250058802388224,
+      "embedded_kronecker_sector_has_constant_alternative_mass": false,
+      "exact_source_fraction": 0.0625,
+      "exact_source_fraction_log2": -4.0,
+      "generic_wreath_cg_is_natural_source_bottleneck": false,
+      "half_degree": 4,
+      "perfect_matching_count_decimal": "105",
+      "status": "trivial-color-sector-negligible-colored-fusion-open"
+    },
+    {
+      "alternative_contribution_log2_upper_bound": -3.98918729049436,
+      "alternative_contribution_upper_bound": 0.06297018471330484,
+      "colored_source_fusion_compiled": false,
+      "copy_count": 27,
+      "degree": 16,
+      "elementary_source_fraction_upper_bound": 0.003906250000130625,
+      "embedded_kronecker_sector_has_constant_alternative_mass": false,
+      "exact_source_fraction": 0.003906250000000001,
+      "exact_source_fraction_log2": -8.0,
+      "generic_wreath_cg_is_natural_source_bottleneck": false,
+      "half_degree": 8,
+      "perfect_matching_count_decimal": "2027025",
+      "status": "trivial-color-sector-negligible-colored-fusion-open"
+    },
+    {
+      "alternative_contribution_log2_upper_bound": -7.992534690403005,
+      "alternative_contribution_upper_bound": 0.003926515505657185,
+      "colored_source_fusion_compiled": false,
+      "copy_count": 64,
+      "degree": 32,
+      "elementary_source_fraction_upper_bound": 1.52587890625e-05,
+      "embedded_kronecker_sector_has_constant_alternative_mass": false,
+      "exact_source_fraction": 1.5258789062500007e-05,
+      "exact_source_fraction_log2": -16.0,
+      "generic_wreath_cg_is_natural_source_bottleneck": false,
+      "half_degree": 16,
+      "perfect_matching_count_decimal": "191898783962510625",
+      "status": "trivial-color-sector-negligible-colored-fusion-open"
+    },
+    {
+      "alternative_contribution_log2_upper_bound": -15.992941475354773,
+      "alternative_contribution_upper_bound": 1.5333627086641183e-05,
+      "colored_source_fusion_compiled": false,
+      "copy_count": 153,
+      "degree": 64,
+      "elementary_source_fraction_upper_bound": 2.3283064365386963e-10,
+      "embedded_kronecker_sector_has_constant_alternative_mass": false,
+      "exact_source_fraction": 2.328306436538698e-10,
+      "exact_source_fraction_log2": -32.0,
+      "generic_wreath_cg_is_natural_source_bottleneck": false,
+      "half_degree": 32,
+      "perfect_matching_count_decimal": "112275575285571389562324404930670903477890625",
+      "status": "trivial-color-sector-negligible-colored-fusion-open"
+    },
+    {
+      "alternative_contribution_log2_upper_bound": -31.993702293552662,
+      "alternative_contribution_upper_bound": 2.3384922626327446e-10,
+      "colored_source_fusion_compiled": false,
+      "copy_count": 363,
+      "degree": 128,
+      "elementary_source_fraction_upper_bound": 5.421010862427522e-20,
+      "embedded_kronecker_sector_has_constant_alternative_mass": false,
+      "exact_source_fraction": 5.42101086242753e-20,
+      "exact_source_fraction_log2": -64.0,
+      "generic_wreath_cg_is_natural_source_bottleneck": false,
+      "half_degree": 64,
+      "perfect_matching_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "status": "trivial-color-sector-negligible-colored-fusion-open"
+    },
+    {
+      "alternative_contribution_log2_upper_bound": -63.990019419632674,
+      "alternative_contribution_upper_bound": 5.458643497380593e-20,
+      "colored_source_fusion_compiled": false,
+      "copy_count": 846,
+      "degree": 256,
+      "elementary_source_fraction_upper_bound": 2.938735877055719e-39,
+      "embedded_kronecker_sector_has_constant_alternative_mass": false,
+      "exact_source_fraction": 2.938735877055727e-39,
+      "exact_source_fraction_log2": -128.0,
+      "generic_wreath_cg_is_natural_source_bottleneck": false,
+      "half_degree": 128,
+      "perfect_matching_count_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "status": "trivial-color-sector-negligible-colored-fusion-open"
+    }
+  ],
+  "status": "embedded-kronecker-sector-negligible-colored-transfer-open",
+  "summary": "Computed the exact Burnside mass of the trivial-color wreath sector and used global frame moments to prove its alternative contribution vanishes exponentially, redirecting the compiler search to source-heavy colored matrix-Hecke sectors.",
+  "theorem": {
+    "alternative_mass_transfer": "Cauchy-Schwarz with E_source[x^2]=1+(M-1)/2^k bounds the alternative contribution by sqrt((1+eta)w).",
+    "architecture_consequence": "The trivial-color embedded S_m Kronecker transform has vanishing natural alternative mass and is not the next compiler target.",
+    "base_invariant_identity": "The direct sum of K irreps (lambda,empty) is exactly the invariant subspace for the normal base group N=(C_2)^m.",
+    "burnside_fraction": "w_(m,k)=2^-m sum_t binom(m,t)[2^t t!(2m-2t)!/(2m)! times (1+1[2t=m])]^k.",
+    "character_formula": "For a in N with t swaps, chi_R(a)=|C_G(a)|/2 times (1+1[2t=m]).",
+    "exact_source_fraction_proved": true,
+    "exponential_alternative_mass_upper_bound_proved": true,
+    "exponential_source_mass_upper_bound_proved": true,
+    "full_matrix_hecke_polar_compiled": false,
+    "generic_kronecker_sector_natural_bottleneck": false,
+    "scope_limit": "No claim is made about source-heavy colored sectors, their wreath fusion complexity, or the complete matrix-Hecke polar.",
+    "source_heavy_colored_fusion_compiled": false,
+    "source_permutation_module": "ran((I+R_h)/2) has basis (|g>+|gh>)/sqrt(2), hence is the K permutation module C[G/<h>] under conjugation.",
+    "status": "embedded-kronecker-sector-negligible-colored-transfer-open",
+    "theorem_verified": true,
+    "uniform_bound": "For m>=2 and k>=m, every nonidentity term is at most 3^-k, so w_(m,k)<=2^(1-m)."
+  },
+  "theorem_contract": {
+    "copy_width": "k=ceil(log2(64(2m-1)!!)) for the asymptotic alternative bound.",
+    "family": "Fixed-point-free involutions in S_(2m), canonical centralizer K=C_2 wr S_m, and k-copy canonical plus fiber.",
+    "outside_scope": "Colored wreath sectors, arbitrary source subspaces, and any algorithmic lower bound.",
+    "sector": "All trivial-base-color K irreps (lambda,empty), equivalently the N-invariant source subspace."
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "created_at": "2026-08-13T19:21:29.532775+00:00",
+  "theorem_contract": {
+    "six_edge_law": "P=d_alpha d_beta d_gamma d_lambda ||R_mu,nu||_HS^2/|S_n|^3.",
+    "all_pair_marginals": "Every one of the 15 label pairs is exactly the product of two Plancherel laws.",
+    "fusion_face_density": "Each of four fusion faces has density Y=n!g/(d_a d_b d_c)=1+X relative to three independent Plancherel labels.",
+    "face_chi_square": "Each face has exact chi-square divergence V_n=sum_(C!=1)1/|C|.",
+    "face_information_bounds": "TV<=sqrt(V_n)/2 and KL_bits<=log2(1+V_n), both tending to zero.",
+    "scope": "Full six-label total correlation, conditional channel information, and coherent multiplicity phases are not bounded."
+  },
+  "exact_face_controls": [
+    {
+      "n": 3,
+      "partition_count": 3,
+      "exact_face_probability_sum": "1",
+      "maximum_exact_pair_marginal_residual": "0",
+      "exact_face_chi_square": "5/6",
+      "exact_reciprocal_class_variance": "5/6",
+      "exact_chi_square_identity_verified": true,
+      "exact_pairwise_independence_verified": true,
+      "face_total_variation": 0.3148148148148148,
+      "face_total_variation_upper_bound": 0.45643546458763845,
+      "face_mutual_information_bits": 0.5849625007211561,
+      "face_mutual_information_upper_bound_bits": 0.8744691179161412,
+      "status": "exact-fusion-face-synergy-identity-verified"
+    },
+    {
+      "n": 4,
+      "partition_count": 5,
+      "exact_face_probability_sum": "1",
+      "maximum_exact_pair_marginal_residual": "0",
+      "exact_face_chi_square": "19/24",
+      "exact_reciprocal_class_variance": "19/24",
+      "exact_chi_square_identity_verified": true,
+      "exact_pairwise_independence_verified": true,
+      "face_total_variation": 0.26157407407407407,
+      "face_total_variation_upper_bound": 0.44487826050130463,
+      "face_mutual_information_bits": 0.5187968740985547,
+      "face_mutual_information_upper_bound_bits": 0.8413022539809416,
+      "status": "exact-fusion-face-synergy-identity-verified"
+    },
+    {
+      "n": 5,
+      "partition_count": 7,
+      "exact_face_probability_sum": "1",
+      "maximum_exact_pair_marginal_residual": "0",
+      "exact_face_chi_square": "41/120",
+      "exact_reciprocal_class_variance": "41/120",
+      "exact_chi_square_identity_verified": true,
+      "exact_pairwise_independence_verified": true,
+      "face_total_variation": 0.15062037037037038,
+      "face_total_variation_upper_bound": 0.29226129861250305,
+      "face_mutual_information_bits": 0.22801422635027518,
+      "face_mutual_information_upper_bound_bits": 0.4240262825060986,
+      "status": "exact-fusion-face-synergy-identity-verified"
+    },
+    {
+      "n": 6,
+      "partition_count": 11,
+      "exact_face_probability_sum": "1",
+      "maximum_exact_pair_marginal_residual": "0",
+      "exact_face_chi_square": "181/720",
+      "exact_reciprocal_class_variance": "181/720",
+      "exact_chi_square_identity_verified": true,
+      "exact_pairwise_independence_verified": true,
+      "face_total_variation": 0.1233015367798354,
+      "face_total_variation_upper_bound": 0.25069348260818874,
+      "face_mutual_information_bits": 0.18489146481249905,
+      "face_mutual_information_upper_bound_bits": 0.32353019948386386,
+      "status": "exact-fusion-face-synergy-identity-verified"
+    },
+    {
+      "n": 7,
+      "partition_count": 15,
+      "exact_face_probability_sum": "1",
+      "maximum_exact_pair_marginal_residual": "0",
+      "exact_face_chi_square": "77/720",
+      "exact_reciprocal_class_variance": "77/720",
+      "exact_chi_square_identity_verified": true,
+      "exact_pairwise_independence_verified": true,
+      "face_total_variation": 0.08202718551412334,
+      "face_total_variation_upper_bound": 0.16351180725290484,
+      "face_mutual_information_bits": 0.08362330827589072,
+      "face_mutual_information_upper_bound_bits": 0.14658281766079714,
+      "status": "exact-fusion-face-synergy-identity-verified"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 8,
+      "reciprocal_class_variance": 0.07157738095238095,
+      "face_total_variation_upper_bound": 0.13376974709587827,
+      "face_mutual_information_upper_bound_bits": 0.09973603394855458,
+      "pairwise_mutual_information_bits": 0.0,
+      "status": "pairwise-exactly-independent-face-synergy-vanishing"
+    },
+    {
+      "n": 12,
+      "reciprocal_class_variance": 0.018847580049836995,
+      "face_total_variation_upper_bound": 0.06864324447794734,
+      "face_mutual_information_upper_bound_bits": 0.02693823996924731,
+      "pairwise_mutual_information_bits": 0.0,
+      "status": "pairwise-exactly-independent-face-synergy-vanishing"
+    },
+    {
+      "n": 16,
+      "reciprocal_class_variance": 0.009538618503045018,
+      "face_total_variation_upper_bound": 0.04883292563180353,
+      "face_mutual_information_upper_bound_bits": 0.013696100027653918,
+      "pairwise_mutual_information_bits": 0.0,
+      "status": "pairwise-exactly-independent-face-synergy-vanishing"
+    },
+    {
+      "n": 20,
+      "reciprocal_class_variance": 0.005813987578874729,
+      "face_total_variation_upper_bound": 0.03812475435617497,
+      "face_mutual_information_upper_bound_bits": 0.008363521832534816,
+      "pairwise_mutual_information_bits": 0.0,
+      "status": "pairwise-exactly-independent-face-synergy-vanishing"
+    },
+    {
+      "n": 24,
+      "reciprocal_class_variance": 0.003920310049449772,
+      "face_total_variation_upper_bound": 0.03130618968131451,
+      "face_mutual_information_upper_bound_bits": 0.0056447544885184315,
+      "pairwise_mutual_information_bits": 0.0,
+      "status": "pairwise-exactly-independent-face-synergy-vanishing"
+    },
+    {
+      "n": 30,
+      "reciprocal_class_variance": 0.00244108599578005,
+      "face_total_variation_upper_bound": 0.024703673794498917,
+      "face_mutual_information_upper_bound_bits": 0.0035174512046070258,
+      "pairwise_mutual_information_bits": 0.0,
+      "status": "pairwise-exactly-independent-face-synergy-vanishing"
+    },
+    {
+      "n": 40,
+      "reciprocal_class_variance": 0.0013382986216299493,
+      "face_total_variation_upper_bound": 0.018291381998293277,
+      "face_mutual_information_upper_bound_bits": 0.0019294659716160912,
+      "pairwise_mutual_information_bits": 0.0,
+      "status": "pairwise-exactly-independent-face-synergy-vanishing"
+    },
+    {
+      "n": 50,
+      "reciprocal_class_variance": 0.0008440582022551307,
+      "face_total_variation_upper_bound": 0.014526339888760096,
+      "face_mutual_information_upper_bound_bits": 0.0012172049589347473,
+      "pairwise_mutual_information_bits": 0.0,
+      "status": "pairwise-exactly-independent-face-synergy-vanishing"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "prove_all_physical_six_edge_pairs_independent",
+      "resolved": true,
+      "resolution": "Fusion identities handle face pairs; regular-representation identities handle the three opposite pairs."
+    },
+    {
+      "obligation": "bound_local_fusion_face_dependence",
+      "resolved": true,
+      "resolution": "The exact density has chi-square V_n=o(1)."
+    },
+    {
+      "obligation": "bound_full_tetrahedral_total_correlation",
+      "resolved": false,
+      "resolution": "Pairwise independence and vanishing face dependence do not exclude parity-like six-way synergy."
+    },
+    {
+      "obligation": "bound_source_conditioned_channel_information",
+      "resolved": false,
+      "resolution": "This is the nonlocal fourth-moment/enhancement question isolated by the Haar-gap reduction."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The shared source beta necessarily correlates mu and nu.",
+      "resolved": true,
+      "resolution": "After full physical Plancherel averaging, regular-character traces force the opposite pair (mu,nu) to independent Plancherel law."
+    },
+    {
+      "objection": "Pairwise independence implies the full six-label law is a product.",
+      "resolved": false,
+      "resolution": "False in general; high-order parity-like distributions provide counterexamples, and conditional S6 channel correlations are nonzero."
+    },
+    {
+      "objection": "Vanishing local face KL dequantizes coherent recoupling.",
+      "resolved": false,
+      "resolution": "Classical label probabilities omit multiplicity indices and phases."
+    }
+  ],
+  "headline_metrics": {
+    "exact_pairwise_independence_theorem_count": 1,
+    "independent_label_pair_count": 15,
+    "fusion_face_chi_square_identity_count": 4,
+    "exact_face_control_count": 5,
+    "exact_face_control_failure_count": 0,
+    "tail_n": 50,
+    "tail_face_total_variation_upper_bound": 0.014526339888760096,
+    "tail_face_mutual_information_upper_bound_bits": 0.0012172049589347473,
+    "full_tetrahedral_synergy_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "all_physical_edge_pairs_independent_proved": true,
+    "all_four_fusion_face_dependencies_vanish_proved": true,
+    "full_six_label_product_law_proved": false,
+    "source_conditioned_channel_information_vanishes_proved": false,
+    "coherent_multiplicity_phase_signal_absent_proved": false,
+    "algorithm_claim_allowed": false,
+    "speedup_claim_allowed": false,
+    "reason": "Every local label statistic is closed, but global tetrahedral synergy and coherent multiplicity phases remain possible."
+  },
+  "status": "local-label-dependence-vanishes-tetrahedral-synergy-open",
+  "summary": "Proved exact pairwise independence and vanishing fusion-face dependence for physical Plancherel 6j labels, isolating nonlocal synergy.",
+  "falsifiers_triggered": [
+    "No pair of physical 6j edge labels carries mutual information after Plancherel averaging.",
+    "Every local Kronecker face approaches three independent Plancherel labels.",
+    "Any surviving measured-label signal must be higher-order and source-conditioned."
+  ]
+}

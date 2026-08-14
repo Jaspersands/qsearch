@@ -1,0 +1,165 @@
+{
+  "created_at": "2026-08-13T19:06:49.326202+00:00",
+  "theorem_contract": {
+    "row_area_identity": "||rho/n-sigma/n||_1 equals normalized area of the symmetric difference of their left-justified Young diagrams.",
+    "plancherel_limit_shape": "VKLS normalized-area convergence implies that any fixed number of labels with Plancherel marginals are mutually o(1) in L1.",
+    "diagonal_compatibility_witness": "omega_ABC=sum_i r_i |iii><iii| has spectrum r on A,B,C,AB,BC,ABC.",
+    "physical_transfer": "The physical 6j trace-mass law gives exact Plancherel marginals for alpha,beta,gamma,mu,nu,lambda; dependence is harmless for a fixed six-label union bound.",
+    "conclusion": "The L1 distance D_n from a physical six-spectrum tuple to the tripartite quantum-marginal compatibility set tends to zero in probability.",
+    "scope": "No rate for D_n, recoupling norm lower bound, growing-row converse, or growing-size generalized 3nj compatibility theorem is claimed."
+  },
+  "finite_distance_records": [
+    {
+      "n": 4,
+      "partition_count": 5,
+      "expected_two_sample_l1_distance": 0.39236111111111105,
+      "expected_two_sample_l1_distance_log2": -1.349746039027125,
+      "status": "finite-plancherel-spectrum-concentration-control"
+    },
+    {
+      "n": 6,
+      "partition_count": 11,
+      "expected_two_sample_l1_distance": 0.3596090534979424,
+      "expected_two_sample_l1_distance_log2": -1.4754987523660203,
+      "status": "finite-plancherel-spectrum-concentration-control"
+    },
+    {
+      "n": 8,
+      "partition_count": 22,
+      "expected_two_sample_l1_distance": 0.3391473261034738,
+      "expected_two_sample_l1_distance_log2": -1.5600159764906376,
+      "status": "finite-plancherel-spectrum-concentration-control"
+    },
+    {
+      "n": 12,
+      "partition_count": 77,
+      "expected_two_sample_l1_distance": 0.30053940524697803,
+      "expected_two_sample_l1_distance_log2": -1.7343739324789968,
+      "status": "finite-plancherel-spectrum-concentration-control"
+    },
+    {
+      "n": 16,
+      "partition_count": 231,
+      "expected_two_sample_l1_distance": 0.27734394011034946,
+      "expected_two_sample_l1_distance_log2": -1.8502518915739365,
+      "status": "finite-plancherel-spectrum-concentration-control"
+    },
+    {
+      "n": 20,
+      "partition_count": 627,
+      "expected_two_sample_l1_distance": 0.2588527996761809,
+      "expected_two_sample_l1_distance_log2": -1.949796172836486,
+      "status": "finite-plancherel-spectrum-concentration-control"
+    },
+    {
+      "n": 24,
+      "partition_count": 1575,
+      "expected_two_sample_l1_distance": 0.24287891455059568,
+      "expected_two_sample_l1_distance_log2": -2.0416908465508743,
+      "status": "finite-plancherel-spectrum-concentration-control"
+    },
+    {
+      "n": 30,
+      "partition_count": 5604,
+      "expected_two_sample_l1_distance": 0.2259002115222829,
+      "expected_two_sample_l1_distance_log2": -2.1462424732842726,
+      "status": "finite-plancherel-spectrum-concentration-control"
+    }
+  ],
+  "asymptotic_proof": {
+    "external_limit_shape_input": "Plancherel Young diagrams converge in normalized area to the VKLS shape.",
+    "l1_equals_normalized_symmetric_difference_area": true,
+    "fixed_six_label_union_requires_independence": false,
+    "diagonal_tripartite_state_is_compatible": true,
+    "physical_six_spectrum_distance_to_compatibility_tends_to_zero": true,
+    "constant_positive_incompatibility_gap_on_positive_mass": false
+  },
+  "literature_links": [
+    {
+      "paper_id": "vershik-kerov-1977-limit-shape",
+      "title": "Asymptotics of the Plancherel measure of the symmetric group and the limiting form of Young tableaux",
+      "url": "https://www.mathnet.ru/eng/dan40430",
+      "use": "Plancherel normalized Young-diagram limit shape.",
+      "external_theorem_not_reproved_here": true
+    },
+    {
+      "paper_id": "christandl-sahinoglu-walter-2016",
+      "title": "Recoupling coefficients and quantum entropies",
+      "url": "https://arxiv.org/abs/1210.0463",
+      "use": "Tripartite marginal interpretation and L1 incompatibility distance in the recoupling suppression theorem.",
+      "external_theorem_not_reproved_here": true
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "classify_natural_six_spectrum_marginal_distance",
+      "resolved": true,
+      "resolution": "It converges to zero under physical trace mass by VKLS and the diagonal-state compatibility witness."
+    },
+    {
+      "obligation": "derive_marginal_distance_rate",
+      "resolved": false,
+      "resolution": "A rate is needed to decide whether n D_n^2 can still diverge."
+    },
+    {
+      "obligation": "dimension_growing_compatible_recoupling_lower_bound",
+      "resolved": false,
+      "resolution": "The published polynomial lower branch assumes bounded local dimensions."
+    },
+    {
+      "obligation": "growing_generalized_3nj_marginal_geometry",
+      "resolved": false,
+      "resolution": "A growing network has more than a fixed six labels and may not inherit the same union-bound conclusion."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "Six correlated labels cannot share a limit-shape conclusion.",
+      "resolved": true,
+      "resolution": "Each marginal is Plancherel and there are only six events, so a union bound needs no independence."
+    },
+    {
+      "objection": "Six nearly equal spectra need not be quantum-marginal compatible.",
+      "resolved": true,
+      "resolution": "They are near the explicit compatible diagonal tuple (r,r,r,r,r,r)."
+    },
+    {
+      "objection": "D_n=o(1) rules out every exponential or stretched-exponential suppression.",
+      "resolved": false,
+      "resolution": "False. A shrinking D_n can still satisfy n D_n^2 -> infinity."
+    },
+    {
+      "objection": "Near compatibility proves a large physical recoupling norm.",
+      "resolved": false,
+      "resolution": "The converse is fixed-dimensional and no dimension-uniform lower bound is available."
+    }
+  ],
+  "headline_metrics": {
+    "plancherel_marginal_compatibility_no_go_theorem_count": 1,
+    "finite_distance_record_count": 8,
+    "finite_expected_distance_strictly_decreasing": 1,
+    "tail_n": 30,
+    "tail_expected_two_sample_l1_distance": 0.2259002115222829,
+    "marginal_distance_rate_theorem_count": 0,
+    "dimension_growing_recoupling_lower_bound_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "physical_six_spectra_approach_compatibility_proved": true,
+    "constant_incompatibility_gap_on_positive_physical_mass_possible": false,
+    "marginal_distance_rate_proved": false,
+    "typical_recoupling_norm_lower_bound_proved": false,
+    "typical_recoupling_contraction_proved": false,
+    "coherent_generalized_3nj_contraction_proved": false,
+    "algorithm_claim_allowed": false,
+    "speedup_claim_allowed": false,
+    "reason": "Typical physical spectra are asymptotically near compatible, but neither the shrinking-gap rate nor the true growing-row norm is controlled."
+  },
+  "status": "constant-marginal-incompatibility-route-closed-shrinking-gap-open",
+  "summary": "Proved that physical Plancherel 6j spectra approach the tripartite quantum-marginal compatibility set, closing constant-gap suppression.",
+  "falsifiers_triggered": [
+    "Typical physical Plancherel spectra cannot remain a constant L1 distance outside compatibility.",
+    "Near compatibility is not a growing-row lower bound on recoupling coefficients.",
+    "A shrinking incompatibility gap may still create weaker suppression and requires a rate theorem."
+  ]
+}

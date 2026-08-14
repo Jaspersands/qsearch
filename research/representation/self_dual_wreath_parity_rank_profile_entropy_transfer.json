@@ -1,0 +1,228 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "KL must vanish to transfer a bounded statistic.",
+      "resolution": "No. Sublogarithmic KL suffices because the reference failure event is polynomially small.",
+      "resolved": true
+    },
+    {
+      "objection": "The positive part of likelihood information equals KL.",
+      "resolution": "They differ by the negative part, but that part is universally at most 1/(e ln 2) bits.",
+      "resolved": true
+    },
+    {
+      "objection": "An O(log n) entropy bound is automatically enough.",
+      "resolution": "False without constants or stronger tails; the quadratic rare-event family has entropy exactly 2 log2 n and unit signal.",
+      "resolved": true
+    },
+    {
+      "objection": "Finite S_2 through S_5 KL values imply O(1) entropy.",
+      "resolution": "They provide no asymptotic control.",
+      "resolved": false
+    }
+  ],
+  "asymptotic_scaling_controls": [
+    {
+      "assumed_total_correlation_bits": 5.155135765341093,
+      "capped_reference_bad_mass_upper": 0.00039999999999999996,
+      "epsilon": 0.02,
+      "expected_physical_rank_chi_square_upper": 1.5494998033855336,
+      "good_event_rank_chi_square_upper": 0.04903360854054484,
+      "high_likelihood_physical_mass_upper": 0.21395231354928412,
+      "likelihood_cap": 100000000.0,
+      "n": 100000000,
+      "reference_union_variance": 1.6e-15,
+      "status": "synthetic-sublog-entropy-rank-transfer-bound-vanishing",
+      "sublogarithmic_entropy_hypothesis_satisfied": true,
+      "total_correlation_over_log2_n": 0.19398131213598296
+    },
+    {
+      "assumed_total_correlation_bits": 7.290462915219979,
+      "capped_reference_bad_mass_upper": 4e-08,
+      "epsilon": 0.0002,
+      "expected_physical_rank_chi_square_upper": 1.0300613015997278,
+      "good_event_rank_chi_square_upper": 4.0080094483240045e-06,
+      "high_likelihood_physical_mass_upper": 0.14715100194146846,
+      "likelihood_cap": 1e+16,
+      "n": 10000000000000000,
+      "reference_union_variance": 1.5999999999999999e-31,
+      "status": "synthetic-sublog-entropy-rank-transfer-bound-vanishing",
+      "sublogarithmic_entropy_hypothesis_satisfied": true,
+      "total_correlation_over_log2_n": 0.13716550123481788
+    },
+    {
+      "assumed_total_correlation_bits": 10.310271530682186,
+      "capped_reference_bad_mass_upper": 4e-16,
+      "epsilon": 2e-08,
+      "expected_physical_rank_chi_square_upper": 0.7138838449492604,
+      "good_event_rank_chi_square_upper": 4.0000008129133405e-14,
+      "high_likelihood_physical_mass_upper": 0.10198340642131679,
+      "likelihood_cap": 1e+32,
+      "n": 100000000000000000000000000000000,
+      "reference_union_variance": 1.6e-63,
+      "status": "synthetic-sublog-entropy-rank-transfer-bound-vanishing",
+      "sublogarithmic_entropy_hypothesis_satisfied": true,
+      "total_correlation_over_log2_n": 0.09699065606799148
+    }
+  ],
+  "claim_gate": {
+    "adaptive_syndrome_decouples_proved": false,
+    "adaptive_syndrome_survives_proved": false,
+    "algorithm_claim_allowed": false,
+    "bounded_total_correlation_would_suffice": true,
+    "classical_separation_proved": false,
+    "entropy_to_rank_transfer_criterion_proved": true,
+    "irreducible_racah_cmi_vanishes_proved": false,
+    "physical_rank_profile_mixes_proved": false,
+    "physical_total_correlation_sublogarithmic_proved": false,
+    "reason": "Sublogarithmic total correlation is sufficient, but no such physical-law entropy theorem is currently available.",
+    "speedup_claim_allowed": false,
+    "vanishing_kl_required_for_rank_transfer": false
+  },
+  "created_at": "2026-08-13T22:56:18.760333+00:00",
+  "falsifiers_triggered": [
+    "Vanishing KL is unnecessarily strong for transfer of the bounded rank observable.",
+    "An unspecified O(log n) entropy estimate does not cross the threshold.",
+    "Finite low-n entropy cannot certify the required all-n sublogarithmic growth."
+  ],
+  "finite_information_controls": [
+    {
+      "exact_physical_mass_above_threshold": 1.0,
+      "information_tail_mass_upper": 1.0,
+      "kl_decomposition_residual": 0.0,
+      "kl_divergence_bits": 3.0,
+      "likelihood_tail_bound_verified": true,
+      "n": 2,
+      "negative_information_bound_verified": true,
+      "negative_likelihood_information_bits": 0.0,
+      "positive_likelihood_information_bits": 3.0,
+      "status": "finite-likelihood-information-identities-verified",
+      "tail_threshold": 2.0,
+      "universal_negative_information_upper_bits": 0.530737845423043
+    },
+    {
+      "exact_physical_mass_above_threshold": 0.5555555555555555,
+      "information_tail_mass_upper": 1.0,
+      "kl_decomposition_residual": 0.0,
+      "kl_divergence_bits": 2.1252578725338385,
+      "likelihood_tail_bound_verified": true,
+      "n": 3,
+      "negative_information_bound_verified": true,
+      "negative_likelihood_information_bits": 0.0,
+      "positive_likelihood_information_bits": 2.1252578725338385,
+      "status": "finite-likelihood-information-identities-verified",
+      "tail_threshold": 2.0,
+      "universal_negative_information_upper_bits": 0.530737845423043
+    },
+    {
+      "exact_physical_mass_above_threshold": 0.8125000000000001,
+      "information_tail_mass_upper": 1.0,
+      "kl_decomposition_residual": 0.0,
+      "kl_divergence_bits": 2.073816201540236,
+      "likelihood_tail_bound_verified": true,
+      "n": 4,
+      "negative_information_bound_verified": true,
+      "negative_likelihood_information_bits": 0.11856210998347563,
+      "positive_likelihood_information_bits": 2.1923783115237114,
+      "status": "finite-likelihood-information-identities-verified",
+      "tail_threshold": 2.0,
+      "universal_negative_information_upper_bits": 0.530737845423043
+    },
+    {
+      "exact_physical_mass_above_threshold": 0.4502622492283951,
+      "information_tail_mass_upper": 1.0,
+      "kl_decomposition_residual": 0.0,
+      "kl_divergence_bits": 1.1325474284073112,
+      "likelihood_tail_bound_verified": true,
+      "n": 5,
+      "negative_information_bound_verified": true,
+      "negative_likelihood_information_bits": 0.1056396327195108,
+      "positive_likelihood_information_bits": 1.238187061126822,
+      "status": "finite-likelihood-information-identities-verified",
+      "tail_threshold": 2.0,
+      "universal_negative_information_upper_bits": 0.530737845423043
+    }
+  ],
+  "headline_metrics": {
+    "entropy_transfer_theorem_count": 1,
+    "finite_control_failure_count": 0,
+    "finite_information_control_count": 4,
+    "logarithmic_boundary_counterexample_count": 3,
+    "new_quantum_algorithm_count": 0,
+    "physical_rank_mixing_theorem_count": 0,
+    "physical_sublog_total_correlation_theorem_count": 0,
+    "synthetic_sublog_scaling_control_count": 3
+  },
+  "logarithmic_boundary_controls": [
+    {
+      "bounded_observable_physical_mean": 1.0,
+      "exact_logarithmic_boundary_verified": true,
+      "n": 10,
+      "physical_rare_mass": 1.0,
+      "rare_likelihood": 100.0,
+      "reference_rare_mass": 0.01,
+      "relative_entropy_bits": 6.643856189774724,
+      "relative_entropy_over_log2_n": 2.0,
+      "status": "logarithmic-relative-entropy-boundary-counterexample-verified"
+    },
+    {
+      "bounded_observable_physical_mean": 1.0,
+      "exact_logarithmic_boundary_verified": true,
+      "n": 100,
+      "physical_rare_mass": 1.0,
+      "rare_likelihood": 10000.0,
+      "reference_rare_mass": 0.0001,
+      "relative_entropy_bits": 13.287712379549449,
+      "relative_entropy_over_log2_n": 2.0,
+      "status": "logarithmic-relative-entropy-boundary-counterexample-verified"
+    },
+    {
+      "bounded_observable_physical_mean": 1.0,
+      "exact_logarithmic_boundary_verified": true,
+      "n": 1000,
+      "physical_rare_mass": 1.0,
+      "rare_likelihood": 1000000.0,
+      "reference_rare_mass": 1e-06,
+      "relative_entropy_bits": 19.931568569324174,
+      "relative_entropy_over_log2_n": 2.0,
+      "status": "logarithmic-relative-entropy-boundary-counterexample-verified"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "convert_relative_entropy_to_subquadratic_likelihood_tail",
+      "resolution": "The universal negative information bound controls the positive likelihood-information tail.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_physical_six_label_total_correlation_is_sublogarithmic",
+      "resolution": "Establish D(P_n||Plancherel^6)=o(log n), preferably O(1), using entropy or typical-shape recoupling methods.",
+      "resolved": false
+    },
+    {
+      "obligation": "control_irreducible_racah_conditional_information",
+      "resolution": "Total label correlation does not isolate the two syndrome conditional cumulants or their coherent accessibility.",
+      "resolved": false
+    }
+  ],
+  "status": "sublogarithmic-six-label-total-correlation-is-current-entropy-gate",
+  "summary": "Reduced physical rank transfer to the sublogarithmic total correlation condition D(P_n||Plancherel^6)=o(log n).",
+  "theorem": {
+    "bounded_total_correlation_sufficient": true,
+    "finite_rank_bound": "E_P f<=b(epsilon)+7nS_n/epsilon^2+7[D_n+1/(e ln 2)]/log2(n)",
+    "likelihood_tail_bound": "P(L>tau)<=[D(P||Q)+1/(e ln 2)]/log2(tau)",
+    "negative_information_bound_bits": 0.530737845423043,
+    "physical_entropy_condition_proved": false,
+    "status": "physical-rank-transfer-reduced-to-sublogarithmic-total-correlation",
+    "sufficient_entropy_condition": "D(P_n||Plancherel^6)=o(log n)",
+    "vanishing_total_correlation_required": false
+  },
+  "theorem_contract": {
+    "likelihood_tail": "P(L>tau)<=[D(P||Q)+1/(e ln 2)]/log2(tau)",
+    "negative_information_bound": "K_-<=1/(e ln 2) bits.",
+    "rank_transfer": "E_P f<=b(epsilon)+7nS_n/epsilon^2+7[D_n+1/(e ln 2)]/log2(n)",
+    "scope": "The entropy implication is proved, but no all-n physical total-correlation bound or non-Haar Racah estimate is proved.",
+    "sufficient_condition": "D(P_n||Plancherel^6)=o(log n)",
+    "total_correlation_identity": "All six physical marginals are Plancherel, hence D(P_n||Plancherel^6) is their total correlation."
+  }
+}

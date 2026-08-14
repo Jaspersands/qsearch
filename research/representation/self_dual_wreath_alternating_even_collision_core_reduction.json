@@ -1,0 +1,195 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Even restriction leaves transposition-scale n^-2 terms.",
+      "resolution": "Transpositions are odd. The leading even class is the 3-cycle, so V_+ is Theta(n^-3).",
+      "resolved": true
+    },
+    {
+      "objection": "The five-support energy needs a new asymptotic theorem.",
+      "resolution": "Its even class energy is pointwise bounded by the full class energy whose Plancherel second moment already vanishes.",
+      "resolved": true
+    },
+    {
+      "objection": "Finite Z6_+ near one proves boundedness.",
+      "resolution": "No all-n estimate follows from S_4/S_5 values.",
+      "resolved": false
+    },
+    {
+      "objection": "Subpolynomial Z6_+ would settle non-Haar syndrome CMI.",
+      "resolution": "It settles only the base entropy route to Haar rank-profile mixing.",
+      "resolved": true
+    }
+  ],
+  "asymptotic_controls": [
+    {
+      "even_energy_dominated_by_full": true,
+      "exact_even_character_energy_second_moment": 0.16262037037037036,
+      "exact_even_inverse_class_square_sum": 0.008680555555555556,
+      "exact_even_reciprocal_class_sum": 0.15833333333333333,
+      "full_character_energy_second_moment": 0.6734953703703703,
+      "n": 5,
+      "n_cubed_scaled_even_reciprocal_sum": 19.791666666666664,
+      "n_sixth_scaled_even_inverse_square_sum": 135.63368055555557,
+      "status": "even-class-lower-support-terms-controlled"
+    },
+    {
+      "even_energy_dominated_by_full": true,
+      "exact_even_character_energy_second_moment": 0.009274450689525253,
+      "exact_even_inverse_class_square_sum": 0.0001958476532974301,
+      "exact_even_reciprocal_class_sum": 0.02748015873015873,
+      "full_character_energy_second_moment": 0.04009801751801911,
+      "n": 8,
+      "n_cubed_scaled_even_reciprocal_sum": 14.06984126984127,
+      "n_sixth_scaled_even_inverse_square_sum": 51.340287226001514,
+      "status": "even-class-lower-support-terms-controlled"
+    },
+    {
+      "even_energy_dominated_by_full": true,
+      "exact_even_character_energy_second_moment": 7.918722603327868e-05,
+      "exact_even_inverse_class_square_sum": 5.6320982141136036e-06,
+      "exact_even_reciprocal_class_sum": 0.003178016524370691,
+      "full_character_energy_second_moment": 0.0012991021470688164,
+      "n": 12,
+      "n_cubed_scaled_even_reciprocal_sum": 5.491612554112554,
+      "n_sixth_scaled_even_inverse_square_sum": 16.817355153771793,
+      "status": "even-class-lower-support-terms-controlled"
+    },
+    {
+      "even_energy_dominated_by_full": true,
+      "exact_even_character_energy_second_moment": 7.167551438305739e-06,
+      "exact_even_inverse_class_square_sum": 8.308415210948702e-07,
+      "exact_even_reciprocal_class_sum": 0.0010920929168296582,
+      "full_character_energy_second_moment": 0.00029521351464705865,
+      "n": 16,
+      "n_cubed_scaled_even_reciprocal_sum": 4.47321258733428,
+      "n_sixth_scaled_even_inverse_square_sum": 13.939207661177194,
+      "status": "even-class-lower-support-terms-controlled"
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "all_lower_support_even_terms_vanish_proved": true,
+    "classical_separation_proved": false,
+    "coarse_alternating_total_correlation_sublogarithmic_proved": false,
+    "even_collision_support_decomposition_proved": true,
+    "fully_nonidentity_even_core_is_only_renyi_obstruction": true,
+    "fully_nonidentity_even_core_subpolynomial_proved": false,
+    "irreducible_racah_cmi_vanishes_proved": false,
+    "physical_rank_profile_mixes_proved": false,
+    "reason": "Every lower-support term vanishes, but the fully nonidentity even six-word collision core has no all-n estimate.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T23:06:43.925838+00:00",
+  "exact_support_controls": [
+    {
+      "exact_decomposition_residual": "0",
+      "exact_even_character_energy_second_moment": "3/8",
+      "exact_even_collision_moment": "9/2",
+      "exact_even_inverse_class_square_sum": "1/4",
+      "exact_even_reciprocal_class_sum": "1/2",
+      "exact_fully_nonidentity_even_core": "0",
+      "exact_lower_support_contribution": "7/2",
+      "exact_support_decomposition_verified": true,
+      "n": 3,
+      "size_five_mask_count": 6,
+      "size_four_mask_count": 3,
+      "size_six_mask_count": 0,
+      "size_three_mask_count": 4,
+      "status": "even-collision-support-decomposition-verified",
+      "support_coefficients_verified": true,
+      "support_mask_count": 14
+    },
+    {
+      "exact_decomposition_residual": "0",
+      "exact_even_character_energy_second_moment": "521/864",
+      "exact_even_collision_moment": "1259/162",
+      "exact_even_inverse_class_square_sum": "73/576",
+      "exact_even_reciprocal_class_sum": "11/24",
+      "exact_fully_nonidentity_even_core": "8815/5184",
+      "exact_lower_support_contribution": "2921/576",
+      "exact_support_decomposition_verified": true,
+      "n": 4,
+      "size_five_mask_count": 6,
+      "size_four_mask_count": 3,
+      "size_six_mask_count": 1,
+      "size_three_mask_count": 4,
+      "status": "even-collision-support-decomposition-verified",
+      "support_coefficients_verified": true,
+      "support_mask_count": 15
+    },
+    {
+      "exact_decomposition_residual": "0",
+      "exact_even_character_energy_second_moment": "17563/108000",
+      "exact_even_collision_moment": "12873673/3456000",
+      "exact_even_inverse_class_square_sum": "5/576",
+      "exact_even_reciprocal_class_sum": "19/120",
+      "exact_fully_nonidentity_even_core": "3946777/3456000",
+      "exact_lower_support_contribution": "113977/72000",
+      "exact_support_decomposition_verified": true,
+      "n": 5,
+      "size_five_mask_count": 6,
+      "size_four_mask_count": 3,
+      "size_six_mask_count": 1,
+      "size_three_mask_count": 4,
+      "status": "even-collision-support-decomposition-verified",
+      "support_coefficients_verified": true,
+      "support_mask_count": 15
+    }
+  ],
+  "falsifiers_triggered": [
+    "Odd transposition classes do not set the coarse alternating collision scale.",
+    "No new five-support moment theorem is needed after even/full energy domination.",
+    "Only the fully nonidentity even-word collision core can obstruct the Renyi route asymptotically."
+  ],
+  "headline_metrics": {
+    "even_collision_support_decomposition_theorem_count": 1,
+    "exact_support_control_count": 3,
+    "finite_control_failure_count": 0,
+    "fully_nonidentity_even_core_subpolynomial_theorem_count": 0,
+    "lower_support_vanishing_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "physical_rank_mixing_theorem_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "derive_even_input_support_mask_decomposition",
+      "resolution": "Exact kernel expansion gives the same tetrahedral masks with all nonidentity class sums restricted to even classes.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_all_lower_support_even_terms_vanish",
+      "resolution": "Support-size class bounds handle V_+,W_+; pointwise energy domination transfers the existing M2=o(1) theorem.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_fully_nonidentity_even_core_subpolynomial",
+      "resolution": "Bound the six simultaneous nonidentity class matches for two even permutation triples, preserving word-map cancellation.",
+      "resolved": false
+    },
+    {
+      "obligation": "bypass_renyi_core_with_direct_entropy_if_tail_dominated",
+      "resolution": "If Z6_+ grows polynomially, test whether its physical mass has sublogarithmic positive likelihood information.",
+      "resolved": false
+    }
+  ],
+  "status": "fully-nonidentity-even-word-core-is-single-renyi-rank-obstruction",
+  "summary": "Decomposed the even collision norm and proved all lower-support terms vanish, isolating Z6_+ as the sole Renyi obstruction.",
+  "theorem": {
+    "collision_reduction": "C_even=1+Z6_+ +o(1)",
+    "even_energy_second_moment_vanishes": true,
+    "even_inverse_square_asymptotic": "W_+=9/(n)_3^2+O(n^-8)=9n^-6(1+O(n^-1))",
+    "even_reciprocal_asymptotic": "V_+=3/(n)_3+8/(n)_4+O(n^-5)=3n^-3(1+O(n^-1))",
+    "exact_decomposition": "C_even=1+4V_+ +6M2_+ -3W_+ +Z6_+",
+    "fully_nonidentity_even_core_subpolynomial_proved": false,
+    "status": "even-collision-renyi-obstruction-is-fully-nonidentity-core"
+  },
+  "theorem_contract": {
+    "exact_decomposition": "C_even=1+4V_+ +6M2_+ -3W_+ +Z6_+",
+    "lower_support_asymptotics": "V_+=Theta(n^-3), W_+=Theta(n^-6), and M2_+<=M2=o(1).",
+    "rank_sufficient_target": "1+Z6_+=n^o(1).",
+    "scope": "No estimate of Z6_+ is proved and collision control remains only a sufficient Renyi route to rank mixing.",
+    "single_open_core": "C_even=1+Z6_+ +o(1)",
+    "support_masks": "Four size-three, three size-four, six size-five, and one possible fully nonidentity tetrahedral mask survive."
+  }
+}

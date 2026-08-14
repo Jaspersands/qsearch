@@ -1,0 +1,578 @@
+{
+  "created_at": "2026-08-13T19:40:11.648105+00:00",
+  "theorem_contract": {
+    "conditional_channel_law": "P(mu,nu|alpha,beta,gamma)=q_mu q_nu[1+X], with 1+X the five-character sum over (g,h).",
+    "annealed_chi_square": "E_source chi^2(P(.|source)||Plancherel^2)=2V_n+E_Pl[T_lambda^2].",
+    "convolution_identity": "E_Pl[T_lambda^2]=sum_(A,B!=e)||u_A*u_B||_2^2.",
+    "convolution_contraction": "Young contraction bounds the fourth moment by [sum_(C!=e)|C|^-1/2]^2.",
+    "symmetric_group_asymptotic": "Moved-support centralizer bounds prove the half-reciprocal class sum is o(1).",
+    "five_label_consequence": "The physical law of alpha,beta,gamma,mu,nu approaches five independent Plancherel labels in total variation.",
+    "scope": "The final label is summed out. Six-label synergy, lambda-conditioned channel information, and coherent multiplicity phases remain open."
+  },
+  "exact_controls": [
+    {
+      "n": 3,
+      "partition_count": 3,
+      "exact_reciprocal_class_variance": "5/6",
+      "exact_mean_character_energy": "5/6",
+      "exact_character_energy_second_moment": "11/8",
+      "exact_source_averaged_conditional_chi_square": "73/24",
+      "exact_nonidentity_class_convolution_energy": "11/8",
+      "exact_direct_five_character_variance": "73/24",
+      "exact_first_moment_identity_verified": true,
+      "exact_variance_decomposition_verified": true,
+      "exact_convolution_identity_verified": true,
+      "exact_direct_five_character_identity_verified": true,
+      "half_reciprocal_class_sum": 1.2844570503761732,
+      "convolution_contraction_upper_bound": 1.649829914261059,
+      "source_averaged_chi_square_upper_bound": 3.316496580927726,
+      "average_total_variation_upper_bound": 0.8720187306856813,
+      "average_conditional_mutual_information_upper_bound_bits": 2.0149503414659713,
+      "maximum_character_energy": 2.0,
+      "maximum_character_energy_partition": [
+        3
+      ],
+      "maximum_nonlinear_character_energy": 0.25,
+      "maximum_nonlinear_character_energy_partition": [
+        2,
+        1
+      ],
+      "uniform_character_energy_bound_falsified": false,
+      "status": "exact-source-conditioned-channel-variance-identity-verified"
+    },
+    {
+      "n": 4,
+      "partition_count": 5,
+      "exact_reciprocal_class_variance": "19/24",
+      "exact_mean_character_energy": "19/24",
+      "exact_character_energy_second_moment": "161/96",
+      "exact_source_averaged_conditional_chi_square": "313/96",
+      "exact_nonidentity_class_convolution_energy": "161/96",
+      "exact_direct_five_character_variance": "313/96",
+      "exact_first_moment_identity_verified": true,
+      "exact_variance_decomposition_verified": true,
+      "exact_convolution_identity_verified": true,
+      "exact_direct_five_character_identity_verified": true,
+      "half_reciprocal_class_sum": 1.7474002407106255,
+      "convolution_contraction_upper_bound": 3.053407601235552,
+      "source_averaged_chi_square_upper_bound": 4.636740934568885,
+      "average_total_variation_upper_bound": 0.9028311950008521,
+      "average_conditional_mutual_information_upper_bound_bits": 2.0909945322205923,
+      "maximum_character_energy": 4.0,
+      "maximum_character_energy_partition": [
+        4
+      ],
+      "maximum_nonlinear_character_energy": 1.25,
+      "maximum_nonlinear_character_energy_partition": [
+        2,
+        2
+      ],
+      "uniform_character_energy_bound_falsified": true,
+      "status": "exact-source-conditioned-channel-variance-identity-verified"
+    },
+    {
+      "n": 5,
+      "partition_count": 7,
+      "exact_reciprocal_class_variance": "41/120",
+      "exact_mean_character_energy": "41/120",
+      "exact_character_energy_second_moment": "5819/8640",
+      "exact_source_averaged_conditional_chi_square": "11723/8640",
+      "exact_nonidentity_class_convolution_energy": "5819/8640",
+      "exact_direct_five_character_variance": null,
+      "exact_first_moment_identity_verified": true,
+      "exact_variance_decomposition_verified": true,
+      "exact_convolution_identity_verified": true,
+      "exact_direct_five_character_identity_verified": null,
+      "half_reciprocal_class_sum": 1.408338582330944,
+      "convolution_contraction_upper_bound": 1.9834175624819332,
+      "source_averaged_chi_square_upper_bound": 2.666750895815267,
+      "average_total_variation_upper_bound": 0.5824149516675597,
+      "average_conditional_mutual_information_upper_bound_bits": 1.2368469061070795,
+      "maximum_character_energy": 6.0,
+      "maximum_character_energy_partition": [
+        5
+      ],
+      "maximum_nonlinear_character_energy": 0.4375,
+      "maximum_nonlinear_character_energy_partition": [
+        4,
+        1
+      ],
+      "uniform_character_energy_bound_falsified": false,
+      "status": "exact-source-conditioned-channel-variance-identity-verified"
+    },
+    {
+      "n": 6,
+      "partition_count": 11,
+      "exact_reciprocal_class_variance": "181/720",
+      "exact_mean_character_energy": "181/720",
+      "exact_character_energy_second_moment": "142636217/373248000",
+      "exact_source_averaged_conditional_chi_square": "330297017/373248000",
+      "exact_nonidentity_class_convolution_energy": "142636217/373248000",
+      "exact_direct_five_character_variance": null,
+      "exact_first_moment_identity_verified": true,
+      "exact_variance_decomposition_verified": true,
+      "exact_convolution_identity_verified": true,
+      "exact_direct_five_character_identity_verified": null,
+      "half_reciprocal_class_sum": 1.458422773857427,
+      "convolution_contraction_upper_bound": 2.1269969873059913,
+      "source_averaged_chi_square_upper_bound": 2.629774765083769,
+      "average_total_variation_upper_bound": 0.4703526394033873,
+      "average_conditional_mutual_information_upper_bound_bits": 0.9145082087455303,
+      "maximum_character_energy": 10.0,
+      "maximum_character_energy_partition": [
+        6
+      ],
+      "maximum_nonlinear_character_energy": 0.76,
+      "maximum_nonlinear_character_energy_partition": [
+        5,
+        1
+      ],
+      "uniform_character_energy_bound_falsified": false,
+      "status": "exact-source-conditioned-channel-variance-identity-verified"
+    },
+    {
+      "n": 7,
+      "partition_count": 15,
+      "exact_reciprocal_class_variance": "77/720",
+      "exact_mean_character_energy": "77/720",
+      "exact_character_energy_second_moment": "97007081/889056000",
+      "exact_source_averaged_conditional_chi_square": "287166281/889056000",
+      "exact_nonidentity_class_convolution_energy": null,
+      "exact_direct_five_character_variance": null,
+      "exact_first_moment_identity_verified": true,
+      "exact_variance_decomposition_verified": true,
+      "exact_convolution_identity_verified": null,
+      "exact_direct_five_character_identity_verified": null,
+      "half_reciprocal_class_sum": 1.0289844272632511,
+      "convolution_contraction_upper_bound": 1.058808951550281,
+      "source_averaged_chi_square_upper_bound": 1.2726978404391698,
+      "average_total_variation_upper_bound": 0.2841660350361774,
+      "average_conditional_mutual_information_upper_bound_bits": 0.40381452489107833,
+      "maximum_character_energy": 14.0,
+      "maximum_character_energy_partition": [
+        7
+      ],
+      "maximum_nonlinear_character_energy": 1.0833333333333333,
+      "maximum_nonlinear_character_energy_partition": [
+        6,
+        1
+      ],
+      "uniform_character_energy_bound_falsified": true,
+      "status": "exact-source-conditioned-channel-variance-identity-verified"
+    },
+    {
+      "n": 8,
+      "partition_count": 22,
+      "exact_reciprocal_class_variance": "481/6720",
+      "exact_mean_character_energy": "481/6720",
+      "exact_character_energy_second_moment": "63376681/1580544000",
+      "exact_source_averaged_conditional_chi_square": "289639081/1580544000",
+      "exact_nonidentity_class_convolution_energy": null,
+      "exact_direct_five_character_variance": null,
+      "exact_first_moment_identity_verified": true,
+      "exact_variance_decomposition_verified": true,
+      "exact_convolution_identity_verified": null,
+      "exact_direct_five_character_identity_verified": null,
+      "half_reciprocal_class_sum": 0.8792943194557948,
+      "convolution_contraction_upper_bound": 0.7731585002272294,
+      "source_averaged_chi_square_upper_bound": 0.9163132621319914,
+      "average_total_variation_upper_bound": 0.21404017112611187,
+      "average_conditional_mutual_information_upper_bound_bits": 0.24275831092457834,
+      "maximum_character_energy": 21.0,
+      "maximum_character_energy_partition": [
+        8
+      ],
+      "maximum_nonlinear_character_energy": 1.5918367346938775,
+      "maximum_nonlinear_character_energy_partition": [
+        7,
+        1
+      ],
+      "uniform_character_energy_bound_falsified": true,
+      "status": "exact-source-conditioned-channel-variance-identity-verified"
+    },
+    {
+      "n": 9,
+      "partition_count": 30,
+      "exact_reciprocal_class_variance": "43/1008",
+      "exact_mean_character_energy": "43/1008",
+      "exact_character_energy_second_moment": "4559742773233/373318170624000",
+      "exact_source_averaged_conditional_chi_square": "36410300981233/373318170624000",
+      "exact_nonidentity_class_convolution_energy": null,
+      "exact_direct_five_character_variance": null,
+      "exact_first_moment_identity_verified": true,
+      "exact_variance_decomposition_verified": true,
+      "exact_convolution_identity_verified": null,
+      "exact_direct_five_character_identity_verified": null,
+      "half_reciprocal_class_sum": 0.6333670782297748,
+      "convolution_contraction_upper_bound": 0.40115385578532164,
+      "source_averaged_chi_square_upper_bound": 0.48647131610278194,
+      "average_total_variation_upper_bound": 0.15615021061427292,
+      "average_conditional_mutual_information_upper_bound_bits": 0.13426241661334778,
+      "maximum_character_energy": 29.0,
+      "maximum_character_energy_partition": [
+        9
+      ],
+      "maximum_nonlinear_character_energy": 2.171875,
+      "maximum_nonlinear_character_energy_partition": [
+        8,
+        1
+      ],
+      "uniform_character_energy_bound_falsified": true,
+      "status": "exact-source-conditioned-channel-variance-identity-verified"
+    },
+    {
+      "n": 10,
+      "partition_count": 42,
+      "exact_reciprocal_class_variance": "56969/1814400",
+      "exact_mean_character_energy": "56969/1814400",
+      "exact_character_energy_second_moment": "231338264913046889/47784725839872000000",
+      "exact_source_averaged_conditional_chi_square": "3232052601742486889/47784725839872000000",
+      "exact_nonidentity_class_convolution_energy": null,
+      "exact_direct_five_character_variance": null,
+      "exact_first_moment_identity_verified": true,
+      "exact_variance_decomposition_verified": true,
+      "exact_convolution_identity_verified": null,
+      "exact_direct_five_character_identity_verified": null,
+      "half_reciprocal_class_sum": 0.5047554475560507,
+      "convolution_contraction_upper_bound": 0.25477806183750906,
+      "source_averaged_chi_square_upper_bound": 0.31757457859235916,
+      "average_total_variation_upper_bound": 0.13003631838936838,
+      "average_conditional_mutual_information_upper_bound_bits": 0.09442225860886246,
+      "maximum_character_energy": 41.0,
+      "maximum_character_energy_partition": [
+        10
+      ],
+      "maximum_nonlinear_character_energy": 2.9382716049382718,
+      "maximum_nonlinear_character_energy_partition": [
+        9,
+        1
+      ],
+      "uniform_character_energy_bound_falsified": true,
+      "status": "exact-source-conditioned-channel-variance-identity-verified"
+    },
+    {
+      "n": 11,
+      "partition_count": 56,
+      "exact_reciprocal_class_variance": "1301/55440",
+      "exact_mean_character_energy": "1301/55440",
+      "exact_character_energy_second_moment": "7756427035034537/3450600590976000000",
+      "exact_source_averaged_conditional_chi_square": "169705610615834537/3450600590976000000",
+      "exact_nonidentity_class_convolution_energy": null,
+      "exact_direct_five_character_variance": null,
+      "exact_first_moment_identity_verified": true,
+      "exact_variance_decomposition_verified": true,
+      "exact_convolution_identity_verified": null,
+      "exact_direct_five_character_identity_verified": null,
+      "half_reciprocal_class_sum": 0.37762465572037474,
+      "convolution_contraction_upper_bound": 0.14260038060793154,
+      "source_averaged_chi_square_upper_bound": 0.18953400254155348,
+      "average_total_variation_upper_bound": 0.11088447855619134,
+      "average_conditional_mutual_information_upper_bound_bits": 0.06926423341081794,
+      "maximum_character_energy": 55.0,
+      "maximum_character_energy_partition": [
+        11
+      ],
+      "maximum_nonlinear_character_energy": 3.85,
+      "maximum_nonlinear_character_energy_partition": [
+        10,
+        1
+      ],
+      "uniform_character_energy_bound_falsified": true,
+      "status": "exact-source-conditioned-channel-variance-identity-verified"
+    },
+    {
+      "n": 12,
+      "partition_count": 77,
+      "exact_reciprocal_class_variance": "9028021/479001600",
+      "exact_mean_character_energy": "9028021/479001600",
+      "exact_character_energy_second_moment": "41312403177190030327/31800735046434816000000",
+      "exact_source_averaged_conditional_chi_square": "1240046202039863950327/31800735046434816000000",
+      "exact_nonidentity_class_convolution_energy": null,
+      "exact_direct_five_character_variance": null,
+      "exact_first_moment_identity_verified": true,
+      "exact_variance_decomposition_verified": true,
+      "exact_convolution_identity_verified": null,
+      "exact_direct_five_character_identity_verified": null,
+      "half_reciprocal_class_sum": 0.31145090077962684,
+      "convolution_contraction_upper_bound": 0.09700166359644097,
+      "source_averaged_chi_square_upper_bound": 0.13469682369611496,
+      "average_total_variation_upper_bound": 0.09873482446272795,
+      "average_conditional_mutual_information_upper_bound_bits": 0.05518768710927888,
+      "maximum_character_energy": 76.0,
+      "maximum_character_energy_partition": [
+        12
+      ],
+      "maximum_nonlinear_character_energy": 5.016528925619835,
+      "maximum_nonlinear_character_energy_partition": [
+        11,
+        1
+      ],
+      "uniform_character_energy_bound_falsified": true,
+      "status": "exact-source-conditioned-channel-variance-identity-verified"
+    },
+    {
+      "n": 13,
+      "partition_count": 101,
+      "exact_reciprocal_class_variance": "96133747/6227020800",
+      "exact_mean_character_energy": "96133747/6227020800",
+      "exact_character_energy_second_moment": "492981009511656784463/595450695145033728000000",
+      "exact_source_averaged_conditional_chi_square": "18878307899072327824463/595450695145033728000000",
+      "exact_nonidentity_class_convolution_energy": null,
+      "exact_direct_five_character_variance": null,
+      "exact_first_moment_identity_verified": true,
+      "exact_variance_decomposition_verified": true,
+      "exact_convolution_identity_verified": null,
+      "exact_direct_five_character_identity_verified": null,
+      "half_reciprocal_class_sum": 0.2514341259466889,
+      "convolution_contraction_upper_bound": 0.06321911969057542,
+      "source_averaged_chi_square_upper_bound": 0.09409544083599379,
+      "average_total_variation_upper_bound": 0.08902841335454943,
+      "average_conditional_mutual_information_upper_bound_bits": 0.045029441724991875,
+      "maximum_character_energy": 100.0,
+      "maximum_character_energy_partition": [
+        13
+      ],
+      "maximum_nonlinear_character_energy": 6.395833333333333,
+      "maximum_nonlinear_character_energy_partition": [
+        12,
+        1
+      ],
+      "uniform_character_energy_bound_falsified": true,
+      "status": "exact-source-conditioned-channel-variance-identity-verified"
+    },
+    {
+      "n": 14,
+      "partition_count": 135,
+      "exact_reciprocal_class_variance": "20547901/1585059840",
+      "exact_mean_character_energy": "20547901/1585059840",
+      "exact_character_energy_second_moment": "936881943000577134396489881/1656399401372869451914936320000",
+      "exact_source_averaged_conditional_chi_square": "43882302749156369440474185881/1656399401372869451914936320000",
+      "exact_nonidentity_class_convolution_energy": null,
+      "exact_direct_five_character_variance": null,
+      "exact_first_moment_identity_verified": true,
+      "exact_variance_decomposition_verified": true,
+      "exact_convolution_identity_verified": null,
+      "exact_direct_five_character_identity_verified": null,
+      "half_reciprocal_class_sum": 0.21578291081871,
+      "convolution_contraction_upper_bound": 0.046562264601395356,
+      "source_averaged_chi_square_upper_bound": 0.07248923654461234,
+      "average_total_variation_upper_bound": 0.08138271544319244,
+      "average_conditional_mutual_information_upper_bound_bits": 0.03772320668364324,
+      "maximum_character_energy": 134.0,
+      "maximum_character_energy_partition": [
+        14
+      ],
+      "maximum_nonlinear_character_energy": 8.124260355029586,
+      "maximum_nonlinear_character_energy_partition": [
+        13,
+        1
+      ],
+      "uniform_character_energy_bound_falsified": true,
+      "status": "exact-source-conditioned-channel-variance-identity-verified"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 16,
+      "conjugacy_class_count": 231,
+      "reciprocal_class_variance": 0.009538618503045018,
+      "half_reciprocal_class_sum": 0.16620356029269479,
+      "source_averaged_chi_square_upper_bound": 0.04670086046005746,
+      "average_total_variation_upper_bound": 0.10805190935385808,
+      "average_conditional_mutual_information_upper_bound_bits": 0.06584918936106313,
+      "typical_source_bad_probability_upper_at_tv_0_1": 1.0,
+      "exact_source_averaged_chi_square_computed": false,
+      "status": "source-conditioned-channel-information-upper-bound-vanishing"
+    },
+    {
+      "n": 20,
+      "conjugacy_class_count": 627,
+      "reciprocal_class_variance": 0.005813987578874729,
+      "half_reciprocal_class_sum": 0.11623595779509083,
+      "source_averaged_chi_square_upper_bound": 0.025138773042291594,
+      "average_total_variation_upper_bound": 0.07927605729709884,
+      "average_conditional_mutual_information_upper_bound_bits": 0.035819220587587755,
+      "typical_source_bad_probability_upper_at_tv_0_1": 0.6284693260572897,
+      "exact_source_averaged_chi_square_computed": false,
+      "status": "source-conditioned-channel-information-upper-bound-vanishing"
+    },
+    {
+      "n": 24,
+      "conjugacy_class_count": 1575,
+      "reciprocal_class_variance": 0.003920310049449772,
+      "half_reciprocal_class_sum": 0.08999934177715649,
+      "source_averaged_chi_square_upper_bound": 0.01594050161922097,
+      "average_total_variation_upper_bound": 0.06312784967670958,
+      "average_conditional_mutual_information_upper_bound_bits": 0.022815913397100186,
+      "typical_source_bad_probability_upper_at_tv_0_1": 0.39851254048052415,
+      "exact_source_averaged_chi_square_computed": false,
+      "status": "source-conditioned-channel-information-upper-bound-vanishing"
+    },
+    {
+      "n": 30,
+      "conjugacy_class_count": 5604,
+      "reciprocal_class_variance": 0.00244108599578005,
+      "half_reciprocal_class_sum": 0.06720541753959634,
+      "source_averaged_chi_square_upper_bound": 0.009398740138231583,
+      "average_total_variation_upper_bound": 0.048473549844816353,
+      "average_conditional_mutual_information_upper_bound_bits": 0.013496191077826262,
+      "typical_source_bad_probability_upper_at_tv_0_1": 0.23496850345578954,
+      "exact_source_averaged_chi_square_computed": false,
+      "status": "source-conditioned-channel-information-upper-bound-vanishing"
+    },
+    {
+      "n": 40,
+      "conjugacy_class_count": 37338,
+      "reciprocal_class_variance": 0.0013382986216299493,
+      "half_reciprocal_class_sum": 0.04710156731658589,
+      "source_averaged_chi_square_upper_bound": 0.004895154886938771,
+      "average_total_variation_upper_bound": 0.034982691745128656,
+      "average_conditional_mutual_information_upper_bound_bits": 0.007044986563223882,
+      "typical_source_bad_probability_upper_at_tv_0_1": 0.12237887217346925,
+      "exact_source_averaged_chi_square_computed": false,
+      "status": "source-conditioned-channel-information-upper-bound-vanishing"
+    },
+    {
+      "n": 50,
+      "conjugacy_class_count": 204226,
+      "reciprocal_class_variance": 0.0008440582022551307,
+      "half_reciprocal_class_sum": 0.036156315328258436,
+      "source_averaged_chi_square_upper_bound": 0.0029953955426267175,
+      "average_total_variation_upper_bound": 0.02736510342857632,
+      "average_conditional_mutual_information_upper_bound_bits": 0.004314982975950045,
+      "typical_source_bad_probability_upper_at_tv_0_1": 0.07488488856566793,
+      "exact_source_averaged_chi_square_computed": false,
+      "status": "source-conditioned-channel-information-upper-bound-vanishing"
+    }
+  ],
+  "asymptotic_records": [
+    {
+      "n": 300,
+      "small_support_geometric_ratio": 0.57148808593976,
+      "large_support_geometric_ratio": 0.942224563240585,
+      "analytic_half_reciprocal_sum_upper_bound": 0.7643348969949759,
+      "analytic_source_averaged_chi_square_upper_bound": 1.7526235042929614,
+      "geometric_majorants_valid": true,
+      "status": "half-reciprocal-class-sum-geometric-majorant-verified"
+    },
+    {
+      "n": 1000,
+      "small_support_geometric_ratio": 0.42294850537622564,
+      "large_support_geometric_ratio": 0.6973241972246107,
+      "analytic_half_reciprocal_sum_upper_bound": 0.30999908997136,
+      "analytic_source_averaged_chi_square_upper_bound": 0.288298307349214,
+      "geometric_majorants_valid": true,
+      "status": "half-reciprocal-class-sum-geometric-majorant-verified"
+    },
+    {
+      "n": 10000,
+      "small_support_geometric_ratio": 0.23784142300054423,
+      "large_support_geometric_ratio": 0.3921342131545839,
+      "analytic_half_reciprocal_sum_upper_bound": 0.0742214864492225,
+      "analytic_source_averaged_chi_square_upper_bound": 0.016526487152196356,
+      "geometric_majorants_valid": true,
+      "status": "half-reciprocal-class-sum-geometric-majorant-verified"
+    },
+    {
+      "n": 100000,
+      "small_support_geometric_ratio": 0.1337480609952844,
+      "large_support_geometric_ratio": 0.22051327307782354,
+      "analytic_half_reciprocal_sum_upper_bound": 0.020650509412482757,
+      "analytic_source_averaged_chi_square_upper_bound": 0.0012793306169851168,
+      "geometric_majorants_valid": true,
+      "status": "half-reciprocal-class-sum-geometric-majorant-verified"
+    }
+  ],
+  "asymptotic_proof": {
+    "half_reciprocal_support_decomposition": "H_n=sum_(m=2)^n sum_(rho no ones) sqrt(z_rho/(n)_m)",
+    "centralizer_bound": "z_rho<=m^(m/2)",
+    "type_count_bound": "q_fixed_point_free(m)<=2^m",
+    "small_support_ratio": "a_n=2(2/n)^(1/4)",
+    "large_support_ratio": "b_n=2(2e^2/n)^(1/4)",
+    "geometric_bound": "H_n<=a_n^2/(1-a_n)+b_n^(floor(n/2)+1)/(1-b_n)",
+    "half_reciprocal_sum_tends_to_zero": true,
+    "source_averaged_chi_square_tends_to_zero": true,
+    "five_label_total_variation_tends_to_zero": true,
+    "average_source_conditioned_mutual_information_tends_to_zero": true
+  },
+  "proof_obligations": [
+    {
+      "obligation": "derive_exact_source_conditioned_channel_law",
+      "resolved": true,
+      "resolution": "Expand the two overlapping central isotypic projectors on V_alpha tensor V_beta tensor V_gamma."
+    },
+    {
+      "obligation": "bound_source_averaged_channel_information_without_final_label",
+      "resolved": true,
+      "resolution": "The exact fourth moment is a sum of class-convolution L2 energies controlled by a vanishing half-reciprocal class sum."
+    },
+    {
+      "obligation": "bound_final_label_conditioned_channel_information",
+      "resolved": false,
+      "resolution": "Finite S6 sectors show that revealing lambda can unlock correlation; an all-n tetrahedral estimate is still required."
+    },
+    {
+      "obligation": "bound_coherent_multiplicity_phase_information",
+      "resolved": false,
+      "resolution": "All calculations dephase intermediate labels and discard Racah matrix phases."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "A uniform bound on T_lambda is needed.",
+      "resolved": true,
+      "resolution": "False. Low-dimensional irreps have growing T_lambda; the Plancherel fourth moment is instead controlled after class convolution."
+    },
+    {
+      "objection": "Finite nonzero Racah channel mutual information contradicts decoupling.",
+      "resolved": true,
+      "resolution": "The finite channel observable conditions on lambda; this theorem sums lambda out and identifies that conditioning as essential."
+    },
+    {
+      "objection": "An annealed bound proves every source triple is good.",
+      "resolved": false,
+      "resolution": "It proves average and high-probability control by Markov, not a uniform statement over exponentially many source triples."
+    },
+    {
+      "objection": "Measured-label decoupling rules out coherent recoupling algorithms.",
+      "resolved": false,
+      "resolution": "Coherent multiplicity indices and phases are absent from the law."
+    }
+  ],
+  "headline_metrics": {
+    "exact_source_conditioned_variance_identity_theorem_count": 1,
+    "class_convolution_fourth_moment_theorem_count": 1,
+    "half_reciprocal_class_sum_asymptotic_theorem_count": 1,
+    "five_label_plancherel_decoupling_theorem_count": 1,
+    "final_label_necessity_reduction_count": 1,
+    "exact_control_count": 12,
+    "exact_control_failure_count": 0,
+    "maximum_exact_control_n": 14,
+    "tail_scaling_n": 50,
+    "tail_source_averaged_chi_square_upper_bound": 0.0029953955426267175,
+    "tail_average_total_variation_upper_bound": 0.02736510342857632,
+    "final_conditioned_channel_theorem_count": 0,
+    "coherent_phase_no_go_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "exact_source_conditioned_channel_law_proved": true,
+    "source_averaged_channel_chi_square_vanishes_proved": true,
+    "five_label_plancherel_product_law_in_total_variation_proved": true,
+    "average_source_conditioned_channel_mutual_information_vanishes_proved": true,
+    "dephased_channel_route_without_final_label_closed": true,
+    "final_label_conditioned_channel_information_vanishes_proved": false,
+    "full_six_label_product_law_proved": false,
+    "coherent_multiplicity_phase_signal_absent_proved": false,
+    "algorithm_claim_allowed": false,
+    "speedup_claim_allowed": false,
+    "reason": "All pre-final measured-label dependence vanishes, but the final label can unlock tetrahedral synergy and coherent phases are untouched."
+  },
+  "status": "source-conditioned-measured-channels-decouple-final-label-open",
+  "summary": "Proved that source-conditioned intermediate labels decouple after summing the final irrep, isolating final-label synergy and coherent multiplicity phase as the only surviving recoupling targets.",
+  "falsifiers_triggered": [
+    "Large character-ratio energy in low-dimensional irreps does not survive Plancherel convolution averaging.",
+    "Measured intermediate labels without the final irrep have vanishing average correlation.",
+    "Finite S6 nonflatness cannot justify an asymptotic channel signal unless final-label conditioning survives."
+  ]
+}

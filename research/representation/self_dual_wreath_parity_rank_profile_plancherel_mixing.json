@@ -1,0 +1,463 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Kronecker multiplicities can have zeros, invalidating ratio concentration.",
+      "resolution": "On the high-probability good event every normalized density is at least 1-epsilon>0; all zero/low-tail cases are charged to the bad event.",
+      "resolved": true
+    },
+    {
+      "objection": "Convergence in probability does not imply expected chi-square mixing.",
+      "resolution": "Every distribution on eight points has chi-square from uniform at most seven, so the bad event is uniformly bounded.",
+      "resolved": true
+    },
+    {
+      "objection": "Reference-law mixing proves physical adaptive decoupling.",
+      "resolution": "False. The physical law multiplies by a correlated tetrahedral likelihood whose uniform integrability is exactly the open gate.",
+      "resolved": true
+    },
+    {
+      "objection": "Rank-profile mixing controls natural Racah CMI.",
+      "resolution": "False. Natural channels can leave the entire rank-compatible Markov family through deterministic non-Haar conditional cumulants.",
+      "resolved": true
+    }
+  ],
+  "analytic_scaling_records": [
+    {
+      "bad_event_probability_upper": 1.0,
+      "bound_asymptotically_vanishing": true,
+      "bound_numerically_nontrivial": false,
+      "epsilon": 1.0,
+      "expected_rank_chi_square_upper": 7.0,
+      "expected_rank_kl_upper_bits": 3.0,
+      "expected_rank_total_variation_upper": 1.0,
+      "fusion_density_variance_upper": 0.5842078347643205,
+      "good_event_rank_chi_square_upper": 7.0,
+      "n": 300,
+      "physical_measure_transfer_proved": false,
+      "status": "product-plancherel-rank-profile-bound-asymptotic-only",
+      "ten_density_union_variance_upper": 5.842078347643205,
+      "total_density_variance_upper": 0.5842078347643205,
+      "variance_source": "analytic H_n^2 upper bound for both V_n and W_n"
+    },
+    {
+      "bad_event_probability_upper": 0.9803031968889593,
+      "bound_asymptotically_vanishing": true,
+      "bound_numerically_nontrivial": false,
+      "epsilon": 0.9901026193728402,
+      "expected_rank_chi_square_upper": 7.0,
+      "expected_rank_kl_upper_bits": 3.0,
+      "expected_rank_total_variation_upper": 1.0,
+      "fusion_density_variance_upper": 0.09609943578307135,
+      "good_event_rank_chi_square_upper": 7.0,
+      "n": 1000,
+      "physical_measure_transfer_proved": false,
+      "status": "product-plancherel-rank-profile-bound-asymptotic-only",
+      "ten_density_union_variance_upper": 0.9609943578307135,
+      "total_density_variance_upper": 0.09609943578307135,
+      "variance_source": "analytic H_n^2 upper bound for both V_n and W_n"
+    },
+    {
+      "bad_event_probability_upper": 0.23470894850286642,
+      "bound_asymptotically_vanishing": true,
+      "bound_numerically_nontrivial": false,
+      "epsilon": 0.4844676960364503,
+      "expected_rank_chi_square_upper": 7.0,
+      "expected_rank_kl_upper_bits": 3.0,
+      "expected_rank_total_variation_upper": 1.0,
+      "fusion_density_variance_upper": 0.005508829050732119,
+      "good_event_rank_chi_square_upper": 7.0,
+      "n": 10000,
+      "physical_measure_transfer_proved": false,
+      "status": "product-plancherel-rank-profile-bound-asymptotic-only",
+      "ten_density_union_variance_upper": 0.05508829050732119,
+      "total_density_variance_upper": 0.005508829050732119,
+      "variance_source": "analytic H_n^2 upper bound for both V_n and W_n"
+    },
+    {
+      "bad_event_probability_upper": 0.06530264458619107,
+      "bound_asymptotically_vanishing": true,
+      "bound_numerically_nontrivial": false,
+      "epsilon": 0.25554382126396846,
+      "expected_rank_chi_square_upper": 7.0,
+      "expected_rank_kl_upper_bits": 3.0,
+      "expected_rank_total_variation_upper": 1.0,
+      "fusion_density_variance_upper": 0.00042644353899503896,
+      "good_event_rank_chi_square_upper": 7.0,
+      "n": 100000,
+      "physical_measure_transfer_proved": false,
+      "status": "product-plancherel-rank-profile-bound-asymptotic-only",
+      "ten_density_union_variance_upper": 0.004264435389950389,
+      "total_density_variance_upper": 0.00042644353899503896,
+      "variance_source": "analytic H_n^2 upper bound for both V_n and W_n"
+    }
+  ],
+  "asymptotic_proof": {
+    "V_n_tends_to_zero": true,
+    "W_n_leq_V_n": true,
+    "bad_event_probability_tends_to_zero": true,
+    "epsilon_choice": "epsilon_n=(8V_n+2W_n)^(1/4)",
+    "expected_product_plancherel_rank_chi_square_tends_to_zero": true,
+    "expected_product_plancherel_rank_kl_tends_to_zero": true,
+    "expected_product_plancherel_rank_tv_tends_to_zero": true,
+    "good_event_rank_chi_square_tends_to_zero": true,
+    "physical_measure_transfer_proved": false,
+    "ten_density_union_variance_tends_to_zero": true,
+    "universal_eight_channel_chi_square_upper": "7"
+  },
+  "claim_gate": {
+    "adaptive_syndrome_decouples_proved": false,
+    "adaptive_syndrome_survives_proved": false,
+    "algorithm_claim_allowed": false,
+    "classical_separation_proved": false,
+    "irreducible_racah_cmi_vanishes_proved": false,
+    "physical_measure_change_uniform_integrability_proved": false,
+    "physical_rank_profile_mixes_proved": false,
+    "product_plancherel_expected_rank_chi_square_vanishes_proved": true,
+    "product_plancherel_expected_rank_kl_vanishes_proved": true,
+    "rank_profile_density_ratio_factorization_proved": true,
+    "reason": "Multiplicity geometry mixes under independent Plancherel labels; physical likelihood reweighting and non-Haar Racah cumulants remain open.",
+    "speedup_claim_allowed": false,
+    "tensor_multiplicity_class_power_moments_proved": true
+  },
+  "created_at": "2026-08-13T22:34:02.375245+00:00",
+  "exact_moment_controls": [
+    {
+      "density_mean_identity_verified": true,
+      "density_variance_identity_verified": true,
+      "exact_class_power_sum": "5/6",
+      "exact_density_mean": "1",
+      "exact_density_variance": "5/6",
+      "exact_odd_class_power_sum_times_four": "4/3",
+      "exact_sign_twist_difference_second_moment": "4/3",
+      "n": 3,
+      "partition_count": 3,
+      "sign_twist_moment_identity_verified": true,
+      "status": "plancherel-tensor-density-moments-match-class-power-sums",
+      "tensor_order": 3
+    },
+    {
+      "density_mean_identity_verified": true,
+      "density_variance_identity_verified": true,
+      "exact_class_power_sum": "13/36",
+      "exact_density_mean": "1",
+      "exact_density_variance": "13/36",
+      "exact_odd_class_power_sum_times_four": "4/9",
+      "exact_sign_twist_difference_second_moment": "4/9",
+      "n": 3,
+      "partition_count": 3,
+      "sign_twist_moment_identity_verified": true,
+      "status": "plancherel-tensor-density-moments-match-class-power-sums",
+      "tensor_order": 4
+    },
+    {
+      "density_mean_identity_verified": true,
+      "density_variance_identity_verified": true,
+      "exact_class_power_sum": "19/24",
+      "exact_density_mean": "1",
+      "exact_density_variance": "19/24",
+      "exact_odd_class_power_sum_times_four": "4/3",
+      "exact_sign_twist_difference_second_moment": "4/3",
+      "n": 4,
+      "partition_count": 5,
+      "sign_twist_moment_identity_verified": true,
+      "status": "plancherel-tensor-density-moments-match-class-power-sums",
+      "tensor_order": 3
+    },
+    {
+      "density_mean_identity_verified": true,
+      "density_variance_identity_verified": true,
+      "exact_class_power_sum": "35/192",
+      "exact_density_mean": "1",
+      "exact_density_variance": "35/192",
+      "exact_odd_class_power_sum_times_four": "2/9",
+      "exact_sign_twist_difference_second_moment": "2/9",
+      "n": 4,
+      "partition_count": 5,
+      "sign_twist_moment_identity_verified": true,
+      "status": "plancherel-tensor-density-moments-match-class-power-sums",
+      "tensor_order": 4
+    },
+    {
+      "density_mean_identity_verified": true,
+      "density_variance_identity_verified": true,
+      "exact_class_power_sum": "41/120",
+      "exact_density_mean": "1",
+      "exact_density_variance": "41/120",
+      "exact_odd_class_power_sum_times_four": "11/15",
+      "exact_sign_twist_difference_second_moment": "11/15",
+      "n": 5,
+      "partition_count": 7,
+      "sign_twist_moment_identity_verified": true,
+      "status": "plancherel-tensor-density-moments-match-class-power-sums",
+      "tensor_order": 3
+    },
+    {
+      "density_mean_identity_verified": true,
+      "density_variance_identity_verified": true,
+      "exact_class_power_sum": "107/4800",
+      "exact_density_mean": "1",
+      "exact_density_variance": "107/4800",
+      "exact_odd_class_power_sum_times_four": "49/900",
+      "exact_sign_twist_difference_second_moment": "49/900",
+      "n": 5,
+      "partition_count": 7,
+      "sign_twist_moment_identity_verified": true,
+      "status": "plancherel-tensor-density-moments-match-class-power-sums",
+      "tensor_order": 4
+    }
+  ],
+  "factorization_controls": [
+    {
+      "control_id": "S4-FACTOR",
+      "density_ratio_factorization": [
+        0.02777777777777778,
+        0.037037037037037035,
+        0.02777777777777778,
+        0.037037037037037035,
+        0.02777777777777778,
+        0.037037037037037035,
+        0.02777777777777778,
+        0.037037037037037035
+      ],
+      "exact_density_ratio_factorization_verified": true,
+      "exact_rank_profile_from_module": [
+        0.027777777777777776,
+        0.037037037037037035,
+        0.027777777777777776,
+        0.037037037037037035,
+        0.027777777777777776,
+        0.037037037037037035,
+        0.027777777777777776,
+        0.037037037037037035
+      ],
+      "maximum_factorization_residual": 3.469446951953614e-18,
+      "n": 4,
+      "orbit_indices": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "status": "rank-profile-factorizes-into-four-fusion-densities-over-total-density"
+    },
+    {
+      "control_id": "S5-FACTOR-A",
+      "density_ratio_factorization": [
+        0.006666666666666667,
+        0.008,
+        0.006666666666666667,
+        0.008,
+        0.006666666666666667,
+        0.008,
+        0.006666666666666667,
+        0.008
+      ],
+      "exact_density_ratio_factorization_verified": true,
+      "exact_rank_profile_from_module": [
+        0.006666666666666667,
+        0.008,
+        0.006666666666666667,
+        0.008,
+        0.006666666666666667,
+        0.008,
+        0.006666666666666667,
+        0.008
+      ],
+      "maximum_factorization_residual": 0.0,
+      "n": 5,
+      "orbit_indices": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "status": "rank-profile-factorizes-into-four-fusion-densities-over-total-density"
+    },
+    {
+      "control_id": "S5-FACTOR-B",
+      "density_ratio_factorization": [
+        0.009999999999999998,
+        0.01333333333333333,
+        0.009999999999999998,
+        0.01333333333333333,
+        0.009999999999999998,
+        0.01333333333333333,
+        0.009999999999999998,
+        0.01333333333333333
+      ],
+      "exact_density_ratio_factorization_verified": true,
+      "exact_rank_profile_from_module": [
+        0.01,
+        0.013333333333333334,
+        0.01,
+        0.013333333333333334,
+        0.01,
+        0.013333333333333334,
+        0.01,
+        0.013333333333333334
+      ],
+      "maximum_factorization_residual": 3.469446951953614e-18,
+      "n": 5,
+      "orbit_indices": [
+        1,
+        2,
+        1,
+        2,
+        2,
+        2
+      ],
+      "status": "rank-profile-factorizes-into-four-fusion-densities-over-total-density"
+    }
+  ],
+  "falsifiers_triggered": [
+    "Typical Kronecker multiplicity rank geometry alone cannot retain adaptive syndrome information under the reference law.",
+    "Finite rank-profile bias is compatible with asymptotic reference mixing.",
+    "Physical source reweighting cannot be replaced by independent Plancherel averaging.",
+    "Any surviving irreducible signal must come from non-Haar Racah arithmetic or a singular change of measure."
+  ],
+  "finite_scaling_records": [
+    {
+      "bad_event_probability_upper": 0.7586761124991193,
+      "bound_asymptotically_vanishing": true,
+      "bound_numerically_nontrivial": false,
+      "epsilon": 0.8710201561956642,
+      "expected_rank_chi_square_upper": 7.0,
+      "expected_rank_kl_upper_bits": 3.0,
+      "expected_rank_total_variation_upper": 1.0,
+      "fusion_density_variance_upper": 0.07157738095238095,
+      "good_event_rank_chi_square_upper": 7.0,
+      "n": 8,
+      "physical_measure_transfer_proved": false,
+      "status": "product-plancherel-rank-profile-bound-asymptotic-only",
+      "ten_density_union_variance_upper": 0.5755894436767762,
+      "total_density_variance_upper": 0.0014851980288643235,
+      "variance_source": "exact conjugacy-class power sums"
+    },
+    {
+      "bad_event_probability_upper": 0.3889103846535043,
+      "bound_asymptotically_vanishing": true,
+      "bound_numerically_nontrivial": false,
+      "epsilon": 0.6236267991784064,
+      "expected_rank_chi_square_upper": 7.0,
+      "expected_rank_kl_upper_bits": 3.0,
+      "expected_rank_total_variation_upper": 1.0,
+      "fusion_density_variance_upper": 0.018847580049836995,
+      "good_event_rank_chi_square_upper": 7.0,
+      "n": 12,
+      "physical_measure_transfer_proved": false,
+      "status": "product-plancherel-rank-profile-bound-asymptotic-only",
+      "ten_density_union_variance_upper": 0.1512512872913367,
+      "total_density_variance_upper": 0.00023532344632036146,
+      "variance_source": "exact conjugacy-class power sums"
+    },
+    {
+      "bad_event_probability_upper": 0.27649505560016,
+      "bound_asymptotically_vanishing": true,
+      "bound_numerically_nontrivial": false,
+      "epsilon": 0.5258279714889271,
+      "expected_rank_chi_square_upper": 7.0,
+      "expected_rank_kl_upper_bits": 3.0,
+      "expected_rank_total_variation_upper": 1.0,
+      "fusion_density_variance_upper": 0.009538618503045018,
+      "good_event_rank_chi_square_upper": 7.0,
+      "n": 16,
+      "physical_measure_transfer_proved": false,
+      "status": "product-plancherel-rank-profile-bound-asymptotic-only",
+      "ten_density_union_variance_upper": 0.07644951577133556,
+      "total_density_variance_upper": 7.028387348770897e-05,
+      "variance_source": "exact conjugacy-class power sums"
+    },
+    {
+      "bad_event_probability_upper": 0.21579550250757623,
+      "bound_asymptotically_vanishing": true,
+      "bound_numerically_nontrivial": false,
+      "epsilon": 0.46453794517517755,
+      "expected_rank_chi_square_upper": 7.0,
+      "expected_rank_kl_upper_bits": 3.0,
+      "expected_rank_total_variation_upper": 1.0,
+      "fusion_density_variance_upper": 0.005813987578874729,
+      "good_event_rank_chi_square_upper": 7.0,
+      "n": 20,
+      "physical_measure_transfer_proved": false,
+      "status": "product-plancherel-rank-profile-bound-asymptotic-only",
+      "ten_density_union_variance_upper": 0.046567698902497345,
+      "total_density_variance_upper": 2.789913574975638e-05,
+      "variance_source": "exact conjugacy-class power sums"
+    },
+    {
+      "bad_event_probability_upper": 0.17716901507485788,
+      "bound_asymptotically_vanishing": true,
+      "bound_numerically_nontrivial": false,
+      "epsilon": 0.42091449853249047,
+      "expected_rank_chi_square_upper": 7.0,
+      "expected_rank_kl_upper_bits": 3.0,
+      "expected_rank_total_variation_upper": 1.0,
+      "fusion_density_variance_upper": 0.003920310049449772,
+      "good_event_rank_chi_square_upper": 7.0,
+      "n": 24,
+      "physical_measure_transfer_proved": false,
+      "status": "product-plancherel-rank-profile-bound-asymptotic-only",
+      "ten_density_union_variance_upper": 0.031388859902595226,
+      "total_density_variance_upper": 1.318975349852579e-05,
+      "variance_source": "exact conjugacy-class power sums"
+    },
+    {
+      "bad_event_probability_upper": 0.13978300360793963,
+      "bound_asymptotically_vanishing": true,
+      "bound_numerically_nontrivial": false,
+      "epsilon": 0.37387565260115513,
+      "expected_rank_chi_square_upper": 7.0,
+      "expected_rank_kl_upper_bits": 3.0,
+      "expected_rank_total_variation_upper": 1.0,
+      "fusion_density_variance_upper": 0.00244108599578005,
+      "good_event_rank_chi_square_upper": 7.0,
+      "n": 30,
+      "physical_measure_transfer_proved": false,
+      "status": "product-plancherel-rank-profile-bound-asymptotic-only",
+      "ten_density_union_variance_upper": 0.019539288097657263,
+      "total_density_variance_upper": 5.3000657084314845e-06,
+      "variance_source": "exact conjugacy-class power sums"
+    }
+  ],
+  "headline_metrics": {
+    "finite_control_failure_count": 0,
+    "irreducible_racah_cumulant_bound_count": 0,
+    "maximum_factorization_residual": 3.469446951953614e-18,
+    "new_quantum_algorithm_count": 0,
+    "physical_measure_rank_profile_mixing_theorem_count": 0,
+    "product_plancherel_rank_profile_mixing_theorem_count": 1,
+    "rank_density_factorization_control_count": 3,
+    "tensor_density_moment_control_count": 6
+  },
+  "proof_obligations": [
+    {
+      "obligation": "prove_rank_profile_mixing_under_independent_plancherel_reference",
+      "resolution": "Exact class-power moments, ten-variable concentration, and the universal chi-square bound seven prove mean mixing.",
+      "resolved": true
+    },
+    {
+      "obligation": "transfer_rank_profile_mixing_to_physical_six_label_law",
+      "resolution": "Prove uniform integrability/change-of-measure control for the tetrahedral physical likelihood on the canonical trim.",
+      "resolved": false
+    },
+    {
+      "obligation": "bound_irreducible_racah_conditional_cumulants",
+      "resolution": "The rank theorem says nothing about deterministic 6j arithmetic; use the two conditional cumulants from the companion module.",
+      "resolved": false
+    }
+  ],
+  "status": "rank-profile-mixes-under-product-plancherel-physical-transfer-open",
+  "summary": "Proved that Haar Kronecker rank-profile syndrome information vanishes under independent Plancherel reference labels.",
+  "theorem_contract": {
+    "concentration": "All ten densities lie in [1-epsilon,1+epsilon] except with probability <=(8V_n+2W_n)/epsilon^2.",
+    "rank_profile_factorization": "After a common dimension factor cancels, R_ghk=Y1_gY2_(g xor k)Y3_hY4_(h xor k)/Z_k.",
+    "reference_mixing": "E_(Pl^6)chi2(P_rank||U3)->0, hence expected TV and KL vanish; absent total-multiplicity sectors are assigned the uniform channel.",
+    "scope": "The theorem is under independent Plancherel reference labels. Physical likelihood reweighting and irreducible Racah arithmetic are not controlled.",
+    "sign_twist_moment": "E(Y_m-Y_m^sign)^2=4sum_(C odd)|C|^(2-m).",
+    "tensor_density_moments": "For m independent Plancherel labels, E Y_m=1 and Var(Y_m)=sum_(C!=e)|C|^(2-m)."
+  }
+}

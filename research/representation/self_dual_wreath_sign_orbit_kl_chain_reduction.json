@@ -1,0 +1,181 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Six orientation bits may contain information beyond Y.",
+      "resolution": "False: the exact likelihood is constant on all eight z values with the same syndrome, so the kernel coordinates are ancillary.",
+      "resolved": true
+    },
+    {
+      "objection": "Artificial self-conjugate bits change the original KL.",
+      "resolution": "False: the same independent fair kernel is appended to P and Q, which leaves relative entropy invariant.",
+      "resolved": true
+    },
+    {
+      "objection": "Vanishing unconditional syndrome closes orientation dependence.",
+      "resolution": "False: the exact split leaves I(O:Y), which can remain nonzero even when P_Y is uniform.",
+      "resolved": true
+    },
+    {
+      "objection": "Either remaining KL term is automatically quantum leverage.",
+      "resolution": "False: both are statistics of measured Young diagrams and require natural-input classical comparison.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "base_sign_orbit_kl_vanishes_proved": false,
+    "classical_separation_proved": false,
+    "full_six_label_kl_chain_decomposition_proved": true,
+    "measured_label_signal_survives_proved": false,
+    "orbit_syndrome_mutual_information_vanishes_proved": false,
+    "orientation_information_reduces_losslessly_to_three_bits": true,
+    "reason": "The exact decomposition removes ancillary orientations but leaves two high-dimensional classical label-information terms unbounded.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T20:46:16.664199+00:00",
+  "exact_controls": [
+    {
+      "augmented_probability_sum_residual": 0.0,
+      "augmented_product_sum_residual": 0.0,
+      "base_orbit_fraction_of_full_kl": 0.0,
+      "base_sign_orbit_kl_bits": 0.0,
+      "conditional_syndrome_information_identity_residual": 0.0,
+      "exact_lossless_orientation_reduction_verified": true,
+      "expected_conditional_syndrome_kl_bits": 3.0,
+      "full_six_label_kl_bits": 3.0,
+      "kl_chain_rule_residual": 0.0,
+      "maximum_orbit_conditional_syndrome_kl_bits": 3.0,
+      "maximum_within_syndrome_likelihood_residual": 0.0,
+      "n": 2,
+      "nonself_sign_orbit_count": 1,
+      "orbit_adaptive_fraction_of_full_kl": 1.0,
+      "orbit_syndrome_mutual_information_bits": 0.0,
+      "partition_count": 2,
+      "self_conjugate_sign_orbit_count": 0,
+      "sign_orbit_count": 1,
+      "sign_orbit_tuple_count": 1,
+      "status": "exact-sign-orbit-syndrome-kl-chain-verified",
+      "unconditional_syndrome_kl_bits": 3.0
+    },
+    {
+      "augmented_probability_sum_residual": 8.215650382226158e-15,
+      "augmented_product_sum_residual": 9.992007221626409e-15,
+      "base_orbit_fraction_of_full_kl": 0.8083021299802671,
+      "base_sign_orbit_kl_bits": 1.7178504651264326,
+      "conditional_syndrome_information_identity_residual": 1.1657341758564144e-15,
+      "exact_lossless_orientation_reduction_verified": true,
+      "expected_conditional_syndrome_kl_bits": 0.4074074074074071,
+      "full_six_label_kl_bits": 2.1252578725338385,
+      "kl_chain_rule_residual": 1.2212453270876722e-15,
+      "maximum_orbit_conditional_syndrome_kl_bits": 3.0,
+      "maximum_within_syndrome_likelihood_residual": 0.0,
+      "n": 3,
+      "nonself_sign_orbit_count": 1,
+      "orbit_adaptive_fraction_of_full_kl": 0.19169787001973349,
+      "orbit_syndrome_mutual_information_bits": 0.37153297525291223,
+      "partition_count": 3,
+      "self_conjugate_sign_orbit_count": 1,
+      "sign_orbit_count": 2,
+      "sign_orbit_tuple_count": 64,
+      "status": "exact-sign-orbit-syndrome-kl-chain-verified",
+      "unconditional_syndrome_kl_bits": 0.03587443215449368
+    },
+    {
+      "augmented_probability_sum_residual": 2.1649348980190553e-14,
+      "augmented_product_sum_residual": 2.793321129956894e-13,
+      "base_orbit_fraction_of_full_kl": 0.578549225616314,
+      "base_sign_orbit_kl_bits": 1.1998047574716693,
+      "conditional_syndrome_information_identity_residual": 6.661338147750939e-16,
+      "exact_lossless_orientation_reduction_verified": true,
+      "expected_conditional_syndrome_kl_bits": 0.8740114440685653,
+      "full_six_label_kl_bits": 2.073816201540236,
+      "kl_chain_rule_residual": 1.3322676295501878e-15,
+      "maximum_orbit_conditional_syndrome_kl_bits": 3.0,
+      "maximum_within_syndrome_likelihood_residual": 0.0,
+      "n": 4,
+      "nonself_sign_orbit_count": 2,
+      "orbit_adaptive_fraction_of_full_kl": 0.42145077438368533,
+      "orbit_syndrome_mutual_information_bits": 0.7659618835658317,
+      "partition_count": 5,
+      "self_conjugate_sign_orbit_count": 1,
+      "sign_orbit_count": 3,
+      "sign_orbit_tuple_count": 729,
+      "status": "exact-sign-orbit-syndrome-kl-chain-verified",
+      "unconditional_syndrome_kl_bits": 0.1080495605027343
+    },
+    {
+      "augmented_probability_sum_residual": 1.7985612998927536e-14,
+      "augmented_product_sum_residual": 1.921796055626146e-13,
+      "base_orbit_fraction_of_full_kl": 0.4473753795050313,
+      "base_sign_orbit_kl_bits": 0.5066738355911681,
+      "conditional_syndrome_information_identity_residual": 3.219646771412954e-15,
+      "exact_lossless_orientation_reduction_verified": true,
+      "expected_conditional_syndrome_kl_bits": 0.6258735928161464,
+      "full_six_label_kl_bits": 1.1325474284073112,
+      "kl_chain_rule_residual": 3.3306690738754696e-15,
+      "maximum_orbit_conditional_syndrome_kl_bits": 3.0,
+      "maximum_within_syndrome_likelihood_residual": 0.0,
+      "n": 5,
+      "nonself_sign_orbit_count": 3,
+      "orbit_adaptive_fraction_of_full_kl": 0.5526246204949716,
+      "orbit_syndrome_mutual_information_bits": 0.5852555466377313,
+      "partition_count": 7,
+      "self_conjugate_sign_orbit_count": 1,
+      "sign_orbit_count": 4,
+      "sign_orbit_tuple_count": 4096,
+      "status": "exact-sign-orbit-syndrome-kl-chain-verified",
+      "unconditional_syndrome_kl_bits": 0.0406180461784184
+    }
+  ],
+  "falsifiers_triggered": [
+    "Three of six orientation bits are exactly ancillary.",
+    "Uniform raw syndrome does not imply zero orbit-adaptive information.",
+    "The surviving measured-label problem has two explicit classical terms."
+  ],
+  "headline_metrics": {
+    "S5_base_sign_orbit_kl_bits": 0.5066738355911681,
+    "S5_full_six_label_kl_bits": 1.1325474284073112,
+    "S5_orbit_adaptive_syndrome_kl_bits": 0.6258735928161464,
+    "S5_orbit_syndrome_mutual_information_bits": 0.5852555466377313,
+    "asymptotic_surviving_term_count": 0,
+    "discarded_ancillary_orientation_bit_count": 3,
+    "finite_control_count": 4,
+    "lossless_sign_orbit_kl_chain_theorem_count": 1,
+    "maximum_finite_chain_residual": 3.3306690738754696e-15,
+    "new_quantum_algorithm_count": 0,
+    "orientation_input_bit_count": 6,
+    "sufficient_orientation_syndrome_bit_count": 3
+  },
+  "proof_obligations": [
+    {
+      "obligation": "prove_three_bit_syndrome_is_sufficient_for_all_orientation_information",
+      "resolution": "Sign twisting gives likelihood invariance on ker(A^T), including fairly lifted self-conjugate coordinates.",
+      "resolved": true
+    },
+    {
+      "obligation": "decompose_full_six_label_kl_losslessly",
+      "resolution": "Apply the KL chain rule to (O,Z), then use the sufficient statistic Y.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_high_dimensional_base_sign_orbit_kl",
+      "resolution": "Project the tetrahedral word map onto transposition-even central functions and prove mixing or find positive retained mass.",
+      "resolved": false
+    },
+    {
+      "obligation": "bound_high_dimensional_orbit_syndrome_mutual_information",
+      "resolution": "Control the seven parity-sector Fourier kernels after conditioning on six base orbits, or construct a positive-mass survivor.",
+      "resolved": false
+    }
+  ],
+  "status": "six-label-kl-reduced-to-base-orbits-and-adaptive-syndrome",
+  "summary": "Decomposed all measured tetrahedral KL into base sign-orbit dependence and a three-bit orbit-adaptive syndrome channel.",
+  "theorem_contract": {
+    "augmented_coordinates": "O is the unordered transposition-orbit tuple and Z has one fair orientation bit per label, including artificial bits on fixed orbits.",
+    "kl_chain": "D(P_six||Pl^6)=D(P_O||Q_O)+E_O D(P(Y|O)||Uniform(F_2^3)).",
+    "mutual_information_split": "E_O D(P(Y|O)||U)=I_P(O:Y)+D(P_Y||U).",
+    "orientation_sufficiency": "The physical likelihood depends on Z only through Y=A^T Z and is constant on every eight-point kernel fiber.",
+    "product_factorization": "Under Plancherel^6, Q(O,Z)=Q_O(O)/64.",
+    "scope": "The reduction is exact but does not bound base-orbit KL or orbit-syndrome mutual information asymptotically."
+  }
+}

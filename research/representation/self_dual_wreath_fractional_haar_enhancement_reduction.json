@@ -1,0 +1,421 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Fractional moments lose the factorial Haar benchmark.",
+      "resolution": "They retain it up to the explicit theta factor, which cancels in the Renyi information bound.",
+      "resolved": true
+    },
+    {
+      "objection": "A vanishing theta weakens the final conclusion.",
+      "resolution": "Under the enhancement-normalized assumption, theta cancels and the same A_n H_n bound remains.",
+      "resolved": true
+    },
+    {
+      "objection": "The o(1) bad outer mass can carry O(log p(n)) information harmlessly.",
+      "resolution": "Its explicit contribution is O(log p(n)/n)+2V4_n log p(n)=o(1).",
+      "resolved": true
+    },
+    {
+      "objection": "Finite natural/Haar ratios estimate A_n asymptotically.",
+      "resolution": "No. They are conditional diagnostics at n<=6 and have no tail theorem.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "classical_separation_proved": false,
+    "collision_enhancement_bound_required": false,
+    "factorially_enhanced_positive_mass_family_found": false,
+    "fractional_haar_excess_bound_proved": true,
+    "natural_fractional_enhancement_subfactorial_proved": false,
+    "orientation_syndrome_dequantized": false,
+    "physical_average_racah_mi_vanishes_proved": false,
+    "reason": "The factorial Haar gap survives fractional tail softening, but natural symmetric-group enhancement remains unbounded.",
+    "speedup_claim_allowed": false,
+    "subfactorial_fractional_enhancement_would_force_mi_decay_proved": true
+  },
+  "created_at": "2026-08-14T00:58:48.271194+00:00",
+  "falsifiers_triggered": [
+    "Rare collision-heavy blocks do not evade the Haar gap if a lower fractional moment has subfactorial enhancement.",
+    "Vanishing fractional order does not weaken the enhancement-normalized information conclusion.",
+    "Any surviving measured-label signal still needs factorial arithmetic enhancement on positive physical mass."
+  ],
+  "finite_controls": [
+    {
+      "channel_count": 4,
+      "collision_interpolation_upper": 1.0274023338281628,
+      "collision_interpolation_violation": 0.0,
+      "conditional_racah_mutual_information_bits": 0.08170416594551072,
+      "exact_fractional_interpolation_verified": true,
+      "finite_natural_ratio_is_asymptotic_evidence": false,
+      "fractional_excess_to_theta_haar_upper_ratio": 0.07063156796054404,
+      "fractional_order_theta": 0.25,
+      "n": 4,
+      "natural_collision_dependence_moment": 1.1141975308641978,
+      "natural_fractional_dependence_moment": 1.017657891990136,
+      "natural_fractional_excess": 0.01765789199013601,
+      "orthogonal_haar_expected_chi_square": 1.0,
+      "outer_partition": [
+        3,
+        1
+      ],
+      "status": "finite-natural-fractional-moment-obeys-collision-interpolation",
+      "total_multiplicity_dimension": 4
+    },
+    {
+      "channel_count": 4,
+      "collision_interpolation_upper": 1.0555555555555556,
+      "collision_interpolation_violation": 0.0,
+      "conditional_racah_mutual_information_bits": 0.08170416594551072,
+      "exact_fractional_interpolation_verified": true,
+      "finite_natural_ratio_is_asymptotic_evidence": false,
+      "fractional_excess_to_theta_haar_upper_ratio": 0.08481233958031309,
+      "fractional_order_theta": 0.5,
+      "n": 4,
+      "natural_collision_dependence_moment": 1.1141975308641978,
+      "natural_fractional_dependence_moment": 1.0424061697901565,
+      "natural_fractional_excess": 0.042406169790156545,
+      "orthogonal_haar_expected_chi_square": 1.0,
+      "outer_partition": [
+        3,
+        1
+      ],
+      "status": "finite-natural-fractional-moment-obeys-collision-interpolation",
+      "total_multiplicity_dimension": 4
+    },
+    {
+      "channel_count": 4,
+      "collision_interpolation_upper": 1.1141975308641978,
+      "collision_interpolation_violation": 0.0,
+      "conditional_racah_mutual_information_bits": 0.08170416594551072,
+      "exact_fractional_interpolation_verified": true,
+      "finite_natural_ratio_is_asymptotic_evidence": false,
+      "fractional_excess_to_theta_haar_upper_ratio": 0.11419753086419782,
+      "fractional_order_theta": 1.0,
+      "n": 4,
+      "natural_collision_dependence_moment": 1.1141975308641978,
+      "natural_fractional_dependence_moment": 1.1141975308641978,
+      "natural_fractional_excess": 0.11419753086419782,
+      "orthogonal_haar_expected_chi_square": 1.0,
+      "outer_partition": [
+        3,
+        1
+      ],
+      "status": "finite-natural-fractional-moment-obeys-collision-interpolation",
+      "total_multiplicity_dimension": 4
+    },
+    {
+      "channel_count": 7,
+      "collision_interpolation_upper": 1.0695823155038413,
+      "collision_interpolation_violation": 0.0,
+      "conditional_racah_mutual_information_bits": 0.2057646385899217,
+      "exact_fractional_interpolation_verified": true,
+      "finite_natural_ratio_is_asymptotic_evidence": false,
+      "fractional_excess_to_theta_haar_upper_ratio": 0.4427038430886632,
+      "fractional_order_theta": 0.25,
+      "n": 5,
+      "natural_collision_dependence_moment": 1.3087504822530862,
+      "natural_fractional_dependence_moment": 1.0442703843088663,
+      "natural_fractional_excess": 0.04427038430886632,
+      "orthogonal_haar_expected_chi_square": 0.4,
+      "outer_partition": [
+        3,
+        1,
+        1
+      ],
+      "status": "finite-natural-fractional-moment-obeys-collision-interpolation",
+      "total_multiplicity_dimension": 13
+    },
+    {
+      "channel_count": 7,
+      "collision_interpolation_upper": 1.1440063296385585,
+      "collision_interpolation_violation": 0.0,
+      "conditional_racah_mutual_information_bits": 0.2057646385899217,
+      "exact_fractional_interpolation_verified": true,
+      "finite_natural_ratio_is_asymptotic_evidence": false,
+      "fractional_excess_to_theta_haar_upper_ratio": 0.5383893030715037,
+      "fractional_order_theta": 0.5,
+      "n": 5,
+      "natural_collision_dependence_moment": 1.3087504822530862,
+      "natural_fractional_dependence_moment": 1.1076778606143007,
+      "natural_fractional_excess": 0.10767786061430074,
+      "orthogonal_haar_expected_chi_square": 0.4,
+      "outer_partition": [
+        3,
+        1,
+        1
+      ],
+      "status": "finite-natural-fractional-moment-obeys-collision-interpolation",
+      "total_multiplicity_dimension": 13
+    },
+    {
+      "channel_count": 7,
+      "collision_interpolation_upper": 1.3087504822530862,
+      "collision_interpolation_violation": 0.0,
+      "conditional_racah_mutual_information_bits": 0.2057646385899217,
+      "exact_fractional_interpolation_verified": true,
+      "finite_natural_ratio_is_asymptotic_evidence": false,
+      "fractional_excess_to_theta_haar_upper_ratio": 0.7718762056327155,
+      "fractional_order_theta": 1.0,
+      "n": 5,
+      "natural_collision_dependence_moment": 1.3087504822530862,
+      "natural_fractional_dependence_moment": 1.3087504822530862,
+      "natural_fractional_excess": 0.3087504822530862,
+      "orthogonal_haar_expected_chi_square": 0.4,
+      "outer_partition": [
+        3,
+        1,
+        1
+      ],
+      "status": "finite-natural-fractional-moment-obeys-collision-interpolation",
+      "total_multiplicity_dimension": 13
+    },
+    {
+      "channel_count": 11,
+      "collision_interpolation_upper": 1.0021113795516172,
+      "collision_interpolation_violation": 0.0,
+      "conditional_racah_mutual_information_bits": 0.005943999907740038,
+      "exact_fractional_interpolation_verified": true,
+      "finite_natural_ratio_is_asymptotic_evidence": false,
+      "fractional_excess_to_theta_haar_upper_ratio": 0.22640289744343428,
+      "fractional_order_theta": 0.25,
+      "n": 6,
+      "natural_collision_dependence_moment": 1.0084723034174825,
+      "natural_fractional_dependence_moment": 1.0012952110837725,
+      "natural_fractional_excess": 0.0012952110837725073,
+      "orthogonal_haar_expected_chi_square": 0.02288329519450801,
+      "outer_partition": [
+        3,
+        2,
+        1
+      ],
+      "status": "finite-natural-fractional-moment-obeys-collision-interpolation",
+      "total_multiplicity_dimension": 93
+    },
+    {
+      "channel_count": 11,
+      "collision_interpolation_upper": 1.0042272170268451,
+      "collision_interpolation_violation": 0.0,
+      "conditional_racah_mutual_information_bits": 0.005943999907740038,
+      "exact_fractional_interpolation_verified": true,
+      "finite_natural_ratio_is_asymptotic_evidence": false,
+      "fractional_excess_to_theta_haar_upper_ratio": 0.27349206508424917,
+      "fractional_order_theta": 0.5,
+      "n": 6,
+      "natural_collision_dependence_moment": 1.0084723034174825,
+      "natural_fractional_dependence_moment": 1.0031291998293392,
+      "natural_fractional_excess": 0.0031291998293392354,
+      "orthogonal_haar_expected_chi_square": 0.02288329519450801,
+      "outer_partition": [
+        3,
+        2,
+        1
+      ],
+      "status": "finite-natural-fractional-moment-obeys-collision-interpolation",
+      "total_multiplicity_dimension": 93
+    },
+    {
+      "channel_count": 11,
+      "collision_interpolation_upper": 1.0084723034174825,
+      "collision_interpolation_violation": 0.0,
+      "conditional_racah_mutual_information_bits": 0.005943999907740038,
+      "exact_fractional_interpolation_verified": true,
+      "finite_natural_ratio_is_asymptotic_evidence": false,
+      "fractional_excess_to_theta_haar_upper_ratio": 0.37023965934398556,
+      "fractional_order_theta": 1.0,
+      "n": 6,
+      "natural_collision_dependence_moment": 1.0084723034174825,
+      "natural_fractional_dependence_moment": 1.0084723034174825,
+      "natural_fractional_excess": 0.008472303417482507,
+      "orthogonal_haar_expected_chi_square": 0.02288329519450801,
+      "outer_partition": [
+        3,
+        2,
+        1
+      ],
+      "status": "finite-natural-fractional-moment-obeys-collision-interpolation",
+      "total_multiplicity_dimension": 93
+    }
+  ],
+  "headline_metrics": {
+    "finite_control_failure_count": 0,
+    "finite_interpolation_control_count": 9,
+    "fractional_haar_gap_theorem_count": 1,
+    "natural_subfactorial_enhancement_bound_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "physical_rank_mixing_theorem_count": 0,
+    "scaling_control_count": 10
+  },
+  "proof_obligations": [
+    {
+      "obligation": "derive_fractional_haar_excess_upper",
+      "resolution": "Concavity interpolates the fractional moment through the exact Haar collision mean.",
+      "resolved": true
+    },
+    {
+      "obligation": "transfer_good_set_fractional_excess_to_physical_information",
+      "resolution": "Conditional Jensen handles the good subprobability; support entropy bounds the bad set.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_natural_fractional_haar_enhancement",
+      "resolution": "Show A_n=exp(o(n log n)) for some theta_n, or find a factorially enhanced positive-mass family.",
+      "resolved": false
+    },
+    {
+      "obligation": "separate_rank_no_go_from_orientation_signal",
+      "resolution": "Even a successful enhancement bound leaves phase/orientation syndrome information open.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "bad_mass_information_upper_bits": 2.242962087418359,
+      "haar_chi_square_upper_log2": 11.158173675049227,
+      "n": 8,
+      "natural_enhancement_bound_proved": false,
+      "partition_count": 22,
+      "physical_bad_mass_upper": 0.5029703960577286,
+      "status": "synthetic-subfactorial-fractional-enhancement-forces-information-decay",
+      "synthetic_enhancement_is_subfactorial": true,
+      "synthetic_enhancement_log2": 4.898979485566356,
+      "synthetic_good_information_upper_log2": 16.58591953356048,
+      "synthetic_total_information_upper_bits": 98371.4759913793
+    },
+    {
+      "bad_mass_information_upper_bits": 2.091878290510521,
+      "haar_chi_square_upper_log2": -2.7303412210967863,
+      "n": 12,
+      "natural_enhancement_bound_proved": false,
+      "partition_count": 77,
+      "physical_bad_mass_upper": 0.333803980225974,
+      "status": "synthetic-subfactorial-fractional-enhancement-forces-information-decay",
+      "synthetic_enhancement_is_subfactorial": true,
+      "synthetic_enhancement_log2": 6.558929029091097,
+      "synthetic_good_information_upper_log2": 4.357354180939208,
+      "synthetic_total_information_upper_bits": 22.589067504255887
+    },
+    {
+      "bad_mass_information_upper_bits": 1.9640409630265825,
+      "haar_chi_square_upper_log2": -22.38978669126891,
+      "n": 16,
+      "natural_enhancement_bound_proved": false,
+      "partition_count": 231,
+      "physical_bad_mass_upper": 0.2501405677469754,
+      "status": "synthetic-subfactorial-fractional-enhancement-forces-information-decay",
+      "synthetic_enhancement_is_subfactorial": true,
+      "synthetic_enhancement_log2": 8.0,
+      "synthetic_good_information_upper_log2": -13.861020318324012,
+      "synthetic_total_information_upper_bits": 1.9641081704295478
+    },
+    {
+      "bad_mass_information_upper_bits": 1.8589828220457358,
+      "haar_chi_square_upper_log2": -46.11312566545075,
+      "n": 20,
+      "natural_enhancement_bound_proved": false,
+      "partition_count": 627,
+      "physical_bad_mass_upper": 0.20005579827149952,
+      "status": "synthetic-subfactorial-fractional-enhancement-forces-information-decay",
+      "synthetic_enhancement_is_subfactorial": true,
+      "synthetic_enhancement_log2": 9.297234099330147,
+      "synthetic_good_information_upper_log2": -36.287125193175704,
+      "synthetic_total_information_upper_bits": 1.8589828220576616
+    },
+    {
+      "bad_mass_information_upper_bits": 2.0110910406386497,
+      "haar_chi_square_upper_log2": -118.07712485892786,
+      "n": 30,
+      "natural_enhancement_bound_proved": false,
+      "partition_count": 5604,
+      "physical_bad_mass_upper": 0.1615043430180984,
+      "status": "synthetic-subfactorial-fractional-enhancement-forces-information-decay",
+      "synthetic_enhancement_is_subfactorial": true,
+      "synthetic_enhancement_log2": 12.132877559270742,
+      "synthetic_good_information_upper_log2": -105.41548092671222,
+      "synthetic_total_information_upper_bits": 2.0110910406386497
+    },
+    {
+      "bad_mass_information_upper_bits": 1.580141481000755,
+      "haar_chi_square_upper_log2": -202.90022507915637,
+      "n": 40,
+      "natural_enhancement_bound_proved": false,
+      "partition_count": 37338,
+      "physical_bad_mass_upper": 0.10403636665324092,
+      "status": "synthetic-subfactorial-fractional-enhancement-forces-information-decay",
+      "synthetic_enhancement_is_subfactorial": true,
+      "synthetic_enhancement_log2": 14.590309242627262,
+      "synthetic_good_information_upper_log2": -187.78114946358423,
+      "synthetic_total_information_upper_bits": 1.580141481000755
+    },
+    {
+      "bad_mass_information_upper_bits": 1.4279014999522408,
+      "haar_chi_square_upper_log2": -297.0020092374888,
+      "n": 50,
+      "natural_enhancement_bound_proved": false,
+      "partition_count": 204226,
+      "physical_bad_mass_upper": 0.08094768260165079,
+      "status": "synthetic-subfactorial-fractional-enhancement-forces-information-decay",
+      "synthetic_enhancement_is_subfactorial": true,
+      "synthetic_enhancement_log2": 16.798595461785972,
+      "synthetic_good_information_upper_log2": -279.6746474027579,
+      "synthetic_total_information_upper_bits": 1.4279014999522408
+    },
+    {
+      "bad_mass_information_upper_bits": 1.1005680535079518,
+      "haar_chi_square_upper_log2": -854.9201192785954,
+      "n": 100,
+      "natural_enhancement_bound_proved": false,
+      "partition_count": 190569292,
+      "physical_bad_mass_upper": 0.04001230421552873,
+      "status": "synthetic-subfactorial-fractional-enhancement-forces-information-decay",
+      "synthetic_enhancement_is_subfactorial": true,
+      "synthetic_enhancement_log2": 25.775678826705466,
+      "synthetic_good_information_upper_log2": -828.6156740789451,
+      "synthetic_total_information_upper_bits": 1.1005680535079518
+    },
+    {
+      "bad_mass_information_upper_bits": 0.4169859843296724,
+      "haar_chi_square_upper_log2": -16390.453897683085,
+      "n": 1000,
+      "natural_enhancement_bound_proved": false,
+      "partition_count": 24061467864032622473692149727991,
+      "physical_bad_mass_upper": 0.004000000018588591,
+      "status": "synthetic-subfactorial-fractional-enhancement-forces-information-decay",
+      "synthetic_enhancement_is_subfactorial": true,
+      "synthetic_enhancement_log2": 99.8287748330214,
+      "synthetic_good_information_upper_log2": -16290.096356477117,
+      "synthetic_total_information_upper_bits": 0.4169859843296724
+    },
+    {
+      "bad_mass_information_upper_bits": 0.141591624807032,
+      "haar_chi_square_upper_log2": -234736.2607841443,
+      "n": 10000,
+      "natural_enhancement_bound_proved": false,
+      "partition_count": 36167251325636293988820471890953695495016030339315650422081868605887952568754066420592310556052906916435144,
+      "physical_bad_mass_upper": 0.0004000000000008106,
+      "status": "synthetic-subfactorial-fractional-enhancement-forces-information-decay",
+      "synthetic_enhancement_is_subfactorial": true,
+      "synthetic_enhancement_log2": 364.52314576099894,
+      "synthetic_good_information_upper_log2": -234371.20887201038,
+      "synthetic_total_information_upper_bits": 0.141591624807032
+    }
+  ],
+  "status": "fractional-haar-enhancement-is-sharp-rank-search-target",
+  "summary": "Extended the factorial Haar-gap no-go from collision to tail-tolerant order-1+theta Racah dependence moments.",
+  "theorem": {
+    "haar_fractional_excess": "E_Haar[S_theta-1]<=theta H(o)",
+    "interpolation": "S_theta<=S_1^theta<=1+theta(S_1-1)",
+    "natural_condition_proved": false,
+    "natural_good_set_assumption": "E_P[1_G(S_theta-1)]<=A_n theta H_n",
+    "physical_average_information_bound": "E_P I<=A_n H_n/ln 2+(4/n+2V4_n)log2 p(n)",
+    "status": "fractional-haar-gap-reduction-proved-natural-enhancement-open",
+    "sufficient_enhancement_condition": "log A_n=o(n log n)"
+  },
+  "theorem_contract": {
+    "fractional_order": "0<theta_n<=1 may depend on n",
+    "good_outer_event": "physical multiplicity/dimension event from the existing Haar-gap theorem",
+    "haar_good_event_bound": "H(o)<=H_n=8n^4p(n)^6/(n!)^2",
+    "natural_enhancement": "A_n=E_P[1_G(S_theta-1)]/(theta H_n)",
+    "scope": "rank-label mutual-information no-go criterion only; no natural enhancement estimate or orientation-syndrome conclusion"
+  }
+}

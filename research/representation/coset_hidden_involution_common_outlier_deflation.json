@@ -1,0 +1,221 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False: it is exactly the normal-closure invariant space and is coherently recognizable by trivial/sign Fourier labels.",
+      "challenge": "The eigenvalue-M outlier is mysterious or inaccessible.",
+      "resolved": true
+    },
+    {
+      "answer": "False: its exact alternative mass is (2a/n!)^k and is super-exponentially negligible at threshold.",
+      "challenge": "The common outlier carries the binary signal.",
+      "resolved": true
+    },
+    {
+      "answer": "Not proved. Other subgroup intersections can support further large singular values.",
+      "challenge": "Removing it yields a constant-norm synthesis map.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "common_eigenvalue_M_outlier_coherently_deflatable": true,
+    "common_intersection_exactly_classified": true,
+    "common_outlier_carries_non_negligible_alternative_mass": false,
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "polar_label_erasure_compiled": false,
+    "post_common_deflation_operator_norm_bounded": false,
+    "reason": "The obvious top outlier can be removed at negligible signal cost, but no norm bound or polar compiler exists for the remaining pairwise and higher intersection hierarchy.",
+    "recursive_intersection_deflation_constructed": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T15:47:05.391857+00:00",
+  "falsifiers_triggered": [
+    "The universal top synthesis outlier is not an unknown multiplicity phenomenon.",
+    "Trivial/sign deflation removes negligible, not decisive, alternative mass.",
+    "The common outlier does not explain the bulk relative synthesis variance.",
+    "No post-deflation norm bound, recursive trim, polar compiler, or speedup has been proved."
+  ],
+  "finite_controls": [
+    {
+      "exact_normal_closure_verified": true,
+      "expected_normal_closure": "S_n",
+      "expected_normal_closure_index": 1,
+      "generated_subgroup_index": 1,
+      "generated_subgroup_order": 120,
+      "involution_class_size": 10,
+      "involution_parity": -1,
+      "n": 5,
+      "status": "involution-class-normal-closure-verified",
+      "symmetric_group_order": 120,
+      "transposition_count": 1
+    },
+    {
+      "exact_normal_closure_verified": true,
+      "expected_normal_closure": "A_n",
+      "expected_normal_closure_index": 2,
+      "generated_subgroup_index": 2,
+      "generated_subgroup_order": 60,
+      "involution_class_size": 15,
+      "involution_parity": 1,
+      "n": 5,
+      "status": "involution-class-normal-closure-verified",
+      "symmetric_group_order": 120,
+      "transposition_count": 2
+    },
+    {
+      "exact_normal_closure_verified": true,
+      "expected_normal_closure": "S_n",
+      "expected_normal_closure_index": 1,
+      "generated_subgroup_index": 1,
+      "generated_subgroup_order": 720,
+      "involution_class_size": 15,
+      "involution_parity": -1,
+      "n": 6,
+      "status": "involution-class-normal-closure-verified",
+      "symmetric_group_order": 720,
+      "transposition_count": 3
+    }
+  ],
+  "headline_metrics": {
+    "all_n_common_intersection_theorem_count": 1,
+    "coherent_common_outlier_deflation_count": 1,
+    "finite_control_failure_count": 0,
+    "finite_normal_closure_control_count": 3,
+    "maximum_common_alternative_mass_log2": -84.91853096329675,
+    "maximum_common_variance_fraction_log2": -75.01806663684766,
+    "new_quantum_algorithm_count": 0,
+    "polar_label_erasure_compiler_count": 0,
+    "post_deflation_operator_norm_theorem_count": 0
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-POST-COMMON-DEFLATION-NORM",
+      "resolved": false,
+      "statement": "Bound or exhibit the largest synthesis singular value after removing the common trivial/sign intersection."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-INTERSECTION-HIERARCHY",
+      "resolved": false,
+      "statement": "Classify pairwise and higher candidate-range intersections by generated dihedral/subgroup type and quantify their mass."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-TRIMMED-LABEL-ERASURE",
+      "resolved": false,
+      "statement": "Turn the recursively trimmed orbit synthesis into a coherent constant-normalization polar map."
+    }
+  ],
+  "scaling_records": [
+    {
+      "coherent_common_outlier_flag_available": true,
+      "common_alternative_mass_log2": -84.91853096329675,
+      "common_centered_variance_fraction_log2_upper_bound": -75.01806663684766,
+      "common_frame_eigenvalue": 15,
+      "common_intersection_dimension_decimal": "1",
+      "common_outlier_deflation_removes_non_negligible_signal": false,
+      "common_synthesis_singular_value": 3.872983346207417,
+      "conjugacy_class_size": 15,
+      "copy_count": 10,
+      "half_degree_parity": "odd",
+      "n": 6,
+      "normal_closure": "S_n",
+      "normal_closure_index": 1,
+      "post_deflation_operator_norm_bounded": false,
+      "status": "common-outlier-efficiently-deflatable-negligible-mass-post-deflation-norm-open"
+    },
+    {
+      "coherent_common_outlier_flag_available": true,
+      "common_alternative_mass_log2": -172.88970423903464,
+      "common_centered_variance_fraction_log2_upper_bound": -159.90351003855966,
+      "common_frame_eigenvalue": 105,
+      "common_intersection_dimension_decimal": "8192",
+      "common_outlier_deflation_removes_non_negligible_signal": false,
+      "common_synthesis_singular_value": 10.246950765959598,
+      "conjugacy_class_size": 105,
+      "copy_count": 13,
+      "half_degree_parity": "even",
+      "n": 8,
+      "normal_closure": "A_n",
+      "normal_closure_index": 2,
+      "post_deflation_operator_norm_bounded": false,
+      "status": "common-outlier-efficiently-deflatable-negligible-mass-post-deflation-norm-open"
+    },
+    {
+      "coherent_common_outlier_flag_available": true,
+      "common_alternative_mass_log2": -1140.7537926868308,
+      "common_centered_variance_fraction_log2_upper_bound": -1113.7537933985614,
+      "common_frame_eigenvalue": 2027025,
+      "common_intersection_dimension_decimal": "134217728",
+      "common_outlier_deflation_removes_non_negligible_signal": false,
+      "common_synthesis_singular_value": 1423.7362817600738,
+      "conjugacy_class_size": 2027025,
+      "copy_count": 27,
+      "half_degree_parity": "even",
+      "n": 16,
+      "normal_closure": "A_n",
+      "normal_closure_index": 2,
+      "post_deflation_operator_norm_bounded": false,
+      "status": "common-outlier-efficiently-deflatable-negligible-mass-post-deflation-norm-open"
+    },
+    {
+      "coherent_common_outlier_flag_available": true,
+      "common_alternative_mass_log2": -7402.448873751059,
+      "common_centered_variance_fraction_log2_upper_bound": -7338.448873751059,
+      "common_frame_eigenvalue": 191898783962510625,
+      "common_intersection_dimension_decimal": "18446744073709551616",
+      "common_outlier_deflation_removes_non_negligible_signal": false,
+      "common_synthesis_singular_value": 438062534.3059032,
+      "conjugacy_class_size": 191898783962510625,
+      "copy_count": 64,
+      "half_degree_parity": "even",
+      "n": 32,
+      "normal_closure": "A_n",
+      "normal_closure_index": 2,
+      "post_deflation_operator_norm_bounded": false,
+      "status": "common-outlier-efficiently-deflatable-negligible-mass-post-deflation-norm-open"
+    },
+    {
+      "coherent_common_outlier_flag_available": true,
+      "common_alternative_mass_log2": -44981.25702308378,
+      "common_centered_variance_fraction_log2_upper_bound": -44828.25702308378,
+      "common_frame_eigenvalue": 112275575285571389562324404930670903477890625,
+      "common_intersection_dimension_decimal": "11417981541647679048466287755595961091061972992",
+      "common_outlier_deflation_removes_non_negligible_signal": false,
+      "common_synthesis_singular_value": 1.059601695381672e+22,
+      "conjugacy_class_size": 112275575285571389562324404930670903477890625,
+      "copy_count": 153,
+      "half_degree_parity": "even",
+      "n": 64,
+      "normal_closure": "A_n",
+      "normal_closure_index": 2,
+      "post_deflation_operator_norm_bounded": false,
+      "status": "common-outlier-efficiently-deflatable-negligible-mass-post-deflation-norm-open"
+    }
+  ],
+  "status": "common-outlier-deflation-compiled-post-deflation-spectrum-open",
+  "summary": "Classified and made coherently deflatable the exact eigenvalue-M common intersection. Its natural mass and variance share are negligible, leaving the post-deflation intersection hierarchy as the next spectral and compiler frontier.",
+  "theorem": {
+    "alternative_mass": "The exact common alternative mass is (2[S_n:<C>]/n!)^k.",
+    "coherent_deflation": "S_n QFT flags the per-register trivial sector for <C>=S_n and the trivial-plus-sign sectors for <C>=A_n.",
+    "coherent_trivial_sign_deflation_available": true,
+    "common_dimension": "The common dimension is [S_n:<C>]^k, hence 1 or 2^k.",
+    "common_intersection": "intersection_h ran(P_h)=C[S_n/<C>]^tensor k because every right involution acts trivially on every register.",
+    "common_intersection_proved": true,
+    "common_outlier_eigenvalue_proved": true,
+    "common_outlier_natural_mass_negligible": true,
+    "exact_normal_closure_proved": true,
+    "outlier_eigenvalue": "sum_h P_h equals M times identity on the common intersection, so the synthesis singular value is sqrt(M).",
+    "polar_label_erasure_compiled": false,
+    "post_deflation_operator_norm_bound_proved": false,
+    "scope_limit": "Removing the common block does not bound the remaining operator norm; pairwise/higher intersections and polar label erasure remain open.",
+    "status": "common-outlier-deflation-compiled-post-deflation-spectrum-open",
+    "symmetric_group_normal_closure": "For even n>=6, the fixed-point-free class normally generates S_n when n/2 is odd and A_n when n/2 is even.",
+    "theorem_verified": true,
+    "variance_share": "Its share of the centered synthesis variance is ((M-1)/M)(4[S_n:<C>]/n!)^k."
+  },
+  "theorem_contract": {
+    "deflation_primitive": "Coherent per-register S_n Fourier tests for trivial, or trivial-plus-sign, right-invariant sectors.",
+    "family": "Fixed-point-free involutions in S_n, every even n>=6.",
+    "outlier": "The exact intersection of every candidate range, not an empirically selected high-eigenvalue sector.",
+    "outside_scope": "The spectrum on the orthogonal complement and recursive pairwise/higher-intersection deflation.",
+    "synthesis_operator": "SS^*=sum_h P_h=M A_k."
+  }
+}

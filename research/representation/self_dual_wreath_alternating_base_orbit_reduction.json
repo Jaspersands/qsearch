@@ -1,0 +1,178 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The sign-orbit quotient is an artificial S_n construction.",
+      "resolution": "False: it is precisely coarse weak Fourier sampling over A_n.",
+      "resolved": true
+    },
+    {
+      "objection": "Self-conjugate partitions invalidate the A_n reduction.",
+      "resolution": "False: restriction splits them into an equal-dimensional pair whose merged normalized character and Plancherel mass are exact.",
+      "resolved": true
+    },
+    {
+      "objection": "A_n simplicity or quasirandomness proves the base law mixes.",
+      "resolution": "False: the six correlated word values require a dimension-trimmed high-level Fourier estimate not supplied by minimal degree alone.",
+      "resolved": true
+    },
+    {
+      "objection": "Removing sign representations removes all rare L2 tails.",
+      "resolution": "False: the merged trivial/sign orbit is the trivial A_n label and has physical all-six mass |A_n|^-3 with likelihood |A_n|^3.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "base_sign_orbit_law_equals_coarse_An_law_proved": true,
+    "classical_separation_proved": false,
+    "coherent_multiplicity_signal_absent_proved": false,
+    "dimension_trimmed_coarse_An_kl_vanishes_proved": false,
+    "dimension_trimmed_coarse_An_signal_survives_proved": false,
+    "reason": "The base term is now a standard coarse A_n word-map law, but its high-dimensional mixing and computational value remain unproved.",
+    "self_conjugate_labels_handled_exactly": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T20:49:54.577335+00:00",
+  "exact_controls": [
+    {
+      "alternating_group_order": 1,
+      "base_fraction_of_full_kl": 0.0,
+      "base_probability_sum_residual": 0.0,
+      "base_sign_orbit_kl_bits": 0.0,
+      "coarse_alternating_label_count": 1,
+      "coarse_trivial_label_physical_mass": 1.0,
+      "coarse_trivial_label_product_mass": 1.0,
+      "direct_even_input_triple_count": 1,
+      "exact_alternating_group_reduction_verified": true,
+      "exact_coarse_plancherel_probability_sum": 1.0,
+      "exact_coarse_trivial_physical_mass": 1.0,
+      "expected_even_input_triple_count": 1,
+      "full_six_label_kl_bits": 3.0,
+      "maximum_base_likelihood_residual": 0.0,
+      "maximum_coarse_plancherel_weight_residual": 0.0,
+      "merged_split_label_count": 0,
+      "n": 2,
+      "nonself_restriction_label_count": 1,
+      "partition_count": 2,
+      "status": "exact-coarse-alternating-tetrahedral-law-verified",
+      "symmetric_group_order": 2
+    },
+    {
+      "alternating_group_order": 3,
+      "base_fraction_of_full_kl": 0.8083021299802663,
+      "base_probability_sum_residual": 2.220446049250313e-16,
+      "base_sign_orbit_kl_bits": 1.717850465126431,
+      "coarse_alternating_label_count": 2,
+      "coarse_trivial_label_physical_mass": 0.03703703703703703,
+      "coarse_trivial_label_product_mass": 0.001371742112482852,
+      "direct_even_input_triple_count": 27,
+      "exact_alternating_group_reduction_verified": true,
+      "exact_coarse_plancherel_probability_sum": 1.0,
+      "exact_coarse_trivial_physical_mass": 0.037037037037037035,
+      "expected_even_input_triple_count": 27,
+      "full_six_label_kl_bits": 2.1252578725338385,
+      "maximum_base_likelihood_residual": 1.7763568394002505e-14,
+      "maximum_coarse_plancherel_weight_residual": 0.0,
+      "merged_split_label_count": 1,
+      "n": 3,
+      "nonself_restriction_label_count": 1,
+      "partition_count": 3,
+      "status": "exact-coarse-alternating-tetrahedral-law-verified",
+      "symmetric_group_order": 6
+    },
+    {
+      "alternating_group_order": 12,
+      "base_fraction_of_full_kl": 0.578549225616314,
+      "base_probability_sum_residual": 0.0,
+      "base_sign_orbit_kl_bits": 1.199804757471669,
+      "coarse_alternating_label_count": 3,
+      "coarse_trivial_label_physical_mass": 0.0005787037037037036,
+      "coarse_trivial_label_product_mass": 3.348979766803838e-07,
+      "direct_even_input_triple_count": 1728,
+      "exact_alternating_group_reduction_verified": true,
+      "exact_coarse_plancherel_probability_sum": 1.0,
+      "exact_coarse_trivial_physical_mass": 0.0005787037037037037,
+      "expected_even_input_triple_count": 1728,
+      "full_six_label_kl_bits": 2.073816201540236,
+      "maximum_base_likelihood_residual": 1.1368683772161603e-12,
+      "maximum_coarse_plancherel_weight_residual": 0.0,
+      "merged_split_label_count": 1,
+      "n": 4,
+      "nonself_restriction_label_count": 2,
+      "partition_count": 5,
+      "status": "exact-coarse-alternating-tetrahedral-law-verified",
+      "symmetric_group_order": 24
+    },
+    {
+      "alternating_group_order": 60,
+      "base_fraction_of_full_kl": 0.4473753795050321,
+      "base_probability_sum_residual": 2.220446049250313e-16,
+      "base_sign_orbit_kl_bits": 0.506673835591169,
+      "coarse_alternating_label_count": 4,
+      "coarse_trivial_label_physical_mass": 4.6296296296296296e-06,
+      "coarse_trivial_label_product_mass": 2.1433470507544583e-11,
+      "direct_even_input_triple_count": 216000,
+      "exact_alternating_group_reduction_verified": true,
+      "exact_coarse_plancherel_probability_sum": 1.0,
+      "exact_coarse_trivial_physical_mass": 4.6296296296296296e-06,
+      "expected_even_input_triple_count": 216000,
+      "full_six_label_kl_bits": 1.1325474284073112,
+      "maximum_base_likelihood_residual": 9.094947017729282e-13,
+      "maximum_coarse_plancherel_weight_residual": 0.0,
+      "merged_split_label_count": 1,
+      "n": 5,
+      "nonself_restriction_label_count": 3,
+      "partition_count": 7,
+      "status": "exact-coarse-alternating-tetrahedral-law-verified",
+      "symmetric_group_order": 120
+    }
+  ],
+  "falsifiers_triggered": [
+    "The sign-orbit quotient is not a new group family; it is coarse A_n Fourier data.",
+    "A_n removes the sign character but retains a rare trivial-label L2 tail.",
+    "Any base-orbit survivor has an explicit classical A_n word-map dual."
+  ],
+  "headline_metrics": {
+    "S5_base_fraction_of_full_kl": 0.4473753795050321,
+    "S5_base_sign_orbit_kl_bits": 0.506673835591169,
+    "S5_coarse_alternating_label_count": 4,
+    "coarse_alternating_group_reduction_theorem_count": 1,
+    "dimension_trimmed_An_mixing_theorem_count": 0,
+    "finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "maximum_base_likelihood_residual": 1.1368683772161603e-12,
+    "new_quantum_algorithm_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "identify_base_sign_orbit_law_as_standard_group_object",
+      "resolution": "Character averaging restricts all word inputs to A_n and the orbit weights match coarse A_n Plancherel exactly.",
+      "resolved": true
+    },
+    {
+      "obligation": "retain_self_conjugate_labels_without_assumption",
+      "resolution": "Their A_n split pair is merged with exactly the original S_n Plancherel mass; no label is discarded.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_dimension_trimmed_coarse_An_tetrahedral_kl",
+      "resolution": "Establish high-dimensional six-word mixing for A_n or identify a positive-mass coarse irrep family.",
+      "resolved": false
+    },
+    {
+      "obligation": "compare_coarse_An_signal_with_classical_word_map_sampling",
+      "resolution": "Any survivor has a classical dual using three uniform A_n elements; match access and computation costs before a quantum claim.",
+      "resolved": false
+    }
+  ],
+  "status": "base-sign-orbit-law-reduced-to-coarse-alternating-group",
+  "summary": "Identified the entire base sign-orbit tetrahedral law with coarse alternating-group weak Fourier sampling.",
+  "theorem_contract": {
+    "base_law_identity": "The base sign-orbit law is exactly the coarse A_n tetrahedral weak-Fourier law.",
+    "coarse_label_identification": "Nonself sign pairs restrict to one A_n irrep; self-conjugate labels split into two equal-dimensional A_n irreps and are merged.",
+    "plancherel_identity": "The resulting coarse A_n Plancherel weights equal S_n sign-orbit weights.",
+    "scope": "No mixing, positive-mass, coherent-transform, or complexity theorem for the coarse A_n law follows from the reduction alone.",
+    "sign_orbit_character_average": "(r_lambda(w)+r_(lambda^T)(w))/2=1[w in A_n]r_lambda(w); self-conjugate characters vanish on odd w.",
+    "word_parity_restriction": "All six tetrahedral words are even iff the independent inputs g,h,k belong to A_n."
+  }
+}

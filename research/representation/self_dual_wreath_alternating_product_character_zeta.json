@@ -1,0 +1,296 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Self-conjugate partitions can be counted like ordinary orbits.",
+      "resolution": "False. Restriction splits, producing factors two and four in the triangle and three-input energies.",
+      "resolved": true
+    },
+    {
+      "objection": "Finite ANOVA agreement establishes asymptotic decay.",
+      "resolution": "Decay comes from the external Witten-zeta and minimal-degree theorems, not from S2-S5 numerics.",
+      "resolved": true
+    },
+    {
+      "objection": "The same diagonal formula controls the six-way block.",
+      "resolution": "False. The tetrahedral six-way contraction couples several character labels and is the remaining target.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "canonical_trimmed_sixway_subpolynomial_proved": false,
+    "classical_separation_proved": false,
+    "coarse_product_character_formulas_proved": true,
+    "irreducible_racah_cmi_vanishes_proved": false,
+    "order_five_anova_energy_vanishes_from_this_theorem": false,
+    "order_four_anova_energy_vanishes_proved": true,
+    "order_three_anova_energy_vanishes_proved": true,
+    "physical_rank_profile_mixes_proved": false,
+    "reason": "The lower product blocks vanish exactly as zeta tails, but the unique canonical high-dimensional six-way synergy remains unbounded.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-13T23:45:37.161368+00:00",
+  "exact_controls": [
+    {
+      "exact_one_order_four_energy": "0",
+      "exact_one_order_three_energy": "0",
+      "exact_product_character_formulas_verified": true,
+      "maximum_order_four_formula_residual": 0.0,
+      "maximum_order_three_formula_residual": 0.0,
+      "n": 2,
+      "nonconstant_nonself_orbit_count": 0,
+      "nonconstant_self_conjugate_count": 0,
+      "numerical_one_order_four_energy": 0.0,
+      "numerical_one_order_three_energy": 0.0,
+      "numerical_order_four_total_energy": 0.0,
+      "numerical_order_three_total_energy": 0.0,
+      "order_four_block_count": 3,
+      "order_four_total_formula_residual": 0.0,
+      "order_three_block_count": 4,
+      "order_three_total_formula_residual": 0.0,
+      "status": "exact-coarse-product-character-zeta-formulas-verified"
+    },
+    {
+      "exact_one_order_four_energy": "1/4",
+      "exact_one_order_three_energy": "1/2",
+      "exact_product_character_formulas_verified": true,
+      "maximum_order_four_formula_residual": 1.1102230246251565e-16,
+      "maximum_order_three_formula_residual": 1.1102230246251565e-16,
+      "n": 3,
+      "nonconstant_nonself_orbit_count": 0,
+      "nonconstant_self_conjugate_count": 1,
+      "numerical_one_order_four_energy": 0.25,
+      "numerical_one_order_three_energy": 0.5,
+      "numerical_order_four_total_energy": 0.7500000000000001,
+      "numerical_order_three_total_energy": 2.0,
+      "order_four_block_count": 3,
+      "order_four_total_formula_residual": 1.1102230246251565e-16,
+      "order_three_block_count": 4,
+      "order_three_total_formula_residual": 0.0,
+      "status": "exact-coarse-product-character-zeta-formulas-verified"
+    },
+    {
+      "exact_one_order_four_energy": "85/324",
+      "exact_one_order_three_energy": "11/18",
+      "exact_product_character_formulas_verified": true,
+      "maximum_order_four_formula_residual": 5.551115123125783e-17,
+      "maximum_order_three_formula_residual": 4.440892098500626e-16,
+      "n": 4,
+      "nonconstant_nonself_orbit_count": 1,
+      "nonconstant_self_conjugate_count": 1,
+      "numerical_one_order_four_energy": 0.2623456790123457,
+      "numerical_one_order_three_energy": 0.6111111111111112,
+      "numerical_order_four_total_energy": 0.7870370370370372,
+      "numerical_order_three_total_energy": 2.4444444444444438,
+      "order_four_block_count": 3,
+      "order_four_total_formula_residual": 2.220446049250313e-16,
+      "order_three_block_count": 4,
+      "order_three_total_formula_residual": 8.881784197001252e-16,
+      "status": "exact-coarse-product-character-zeta-formulas-verified"
+    },
+    {
+      "exact_one_order_four_energy": "111361/12960000",
+      "exact_one_order_three_energy": "569/3600",
+      "exact_product_character_formulas_verified": true,
+      "maximum_order_four_formula_residual": 1.734723475976807e-18,
+      "maximum_order_three_formula_residual": 5.551115123125783e-17,
+      "n": 5,
+      "nonconstant_nonself_orbit_count": 2,
+      "nonconstant_self_conjugate_count": 1,
+      "numerical_one_order_four_energy": 0.00859266975308642,
+      "numerical_one_order_three_energy": 0.15805555555555556,
+      "numerical_order_four_total_energy": 0.025778009259259264,
+      "numerical_order_three_total_energy": 0.6322222222222221,
+      "order_four_block_count": 3,
+      "order_four_total_formula_residual": 3.469446951953614e-18,
+      "order_three_block_count": 4,
+      "order_three_total_formula_residual": 1.1102230246251565e-16,
+      "status": "exact-coarse-product-character-zeta-formulas-verified"
+    }
+  ],
+  "falsifiers_triggered": [
+    "Ignoring self-conjugate restriction multiplicity gives wrong finite energies.",
+    "A one-character convolution diagonalization does not extend to six-way synergy.",
+    "Closing lower ANOVA blocks is a no-go refinement, not an algorithmic signal."
+  ],
+  "headline_metrics": {
+    "canonical_trimmed_sixway_bound_count": 0,
+    "coarse_convolution_diagonalization_theorem_count": 1,
+    "exact_finite_control_count": 4,
+    "exact_order_four_energy_formula_count": 1,
+    "exact_order_three_energy_formula_count": 1,
+    "finite_control_failure_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "order_four_decay_theorem_count": 1,
+    "order_three_decay_theorem_count": 1
+  },
+  "literature_basis": [
+    {
+      "id": "teyssier-thevenin-witten-zeta-2025",
+      "precise_use": "Section 6 recalls the fixed-s symmetric-group Witten-zeta tail O(n^-s) and sharpens its range; this theorem uses s=2.",
+      "url": "https://arxiv.org/abs/2411.04347"
+    },
+    {
+      "id": "symmetric-group-minimal-degree",
+      "precise_use": "For n>=5 the least nontrivial nonsign S_n irrep degree is n-1, which transfers the zeta-two tail to zeta four."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "diagonalize_coarse_multiplication_channel",
+      "resolution": "Character idempotents diagonalize convolution; self-conjugate restriction contributes the explicit split multiplicity.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_order_three_and_four_anova_decay",
+      "resolution": "Exact energy formulas plus Witten-zeta and minimum-degree bounds.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_canonical_trimmed_sixway_energy",
+      "resolution": "No one-label convolution diagonalization survives the all-six tetrahedral coupling; a multilinear projected bound is required.",
+      "resolved": false
+    }
+  ],
+  "scaling_controls": [
+    {
+      "minimum_degree_transfer_verified": true,
+      "minimum_nontrivial_nonsign_dimension": 4,
+      "n": 5,
+      "n_fourth_order_four_energy": 5.370418595679013,
+      "n_squared_order_three_energy": 3.951388888888889,
+      "one_order_four_energy": 0.00859266975308642,
+      "one_order_three_energy": 0.15805555555555556,
+      "order_four_minimum_degree_upper": 0.014548611111111111,
+      "order_four_zeta_upper": 0.04713641975308642,
+      "order_three_zeta_upper": 0.46555555555555556,
+      "partition_count": 7,
+      "status": "product-character-energies-dominated-by-witten-zeta-tails",
+      "witten_zeta_four_tail": 0.011784104938271605,
+      "witten_zeta_two_tail": 0.23277777777777778,
+      "zeta_domination_verified": true
+    },
+    {
+      "minimum_degree_transfer_verified": true,
+      "minimum_nontrivial_nonsign_dimension": 7,
+      "n": 8,
+      "n_fourth_order_four_energy": 1.8749789384322186,
+      "n_squared_order_three_energy": 2.2091145439657343,
+      "one_order_four_energy": 0.0004577585298906784,
+      "one_order_three_energy": 0.0345174147494646,
+      "order_four_minimum_degree_upper": 0.0013666077317642854,
+      "order_four_zeta_upper": 0.0036526431665946184,
+      "order_three_zeta_upper": 0.13392755771289996,
+      "partition_count": 22,
+      "status": "product-character-energies-dominated-by-witten-zeta-tails",
+      "witten_zeta_four_tail": 0.0009131607916486546,
+      "witten_zeta_two_tail": 0.06696377885644998,
+      "zeta_domination_verified": true
+    },
+    {
+      "minimum_degree_transfer_verified": true,
+      "minimum_nontrivial_nonsign_dimension": 11,
+      "n": 12,
+      "n_fourth_order_four_energy": 1.4211457497629876,
+      "n_squared_order_three_energy": 1.3158504021106232,
+      "one_order_four_energy": 6.853519240755149e-05,
+      "one_order_three_energy": 0.009137850014657105,
+      "order_four_minimum_degree_upper": 0.00015102924560067866,
+      "order_four_zeta_upper": 0.000548281537236293,
+      "order_three_zeta_upper": 0.03654907743536424,
+      "partition_count": 77,
+      "status": "product-character-energies-dominated-by-witten-zeta-tails",
+      "witten_zeta_four_tail": 0.00013707038430907324,
+      "witten_zeta_two_tail": 0.01827453871768212,
+      "zeta_domination_verified": true
+    },
+    {
+      "minimum_degree_transfer_verified": true,
+      "minimum_nontrivial_nonsign_dimension": 15,
+      "n": 16,
+      "n_fourth_order_four_energy": 1.2956410874691533,
+      "n_squared_order_three_energy": 1.1881774751632517,
+      "one_order_four_energy": 1.9769914054399922e-05,
+      "one_order_three_energy": 0.004641318262356452,
+      "order_four_minimum_degree_upper": 4.1256131376696346e-05,
+      "order_four_zeta_upper": 0.00015815931243510633,
+      "order_three_zeta_upper": 0.018565259119513355,
+      "partition_count": 231,
+      "status": "product-character-energies-dominated-by-witten-zeta-tails",
+      "witten_zeta_four_tail": 3.953982810877658e-05,
+      "witten_zeta_two_tail": 0.009282629559756677,
+      "zeta_domination_verified": true
+    },
+    {
+      "minimum_degree_transfer_verified": true,
+      "minimum_nontrivial_nonsign_dimension": 19,
+      "n": 20,
+      "n_fourth_order_four_energy": 1.2281167496880072,
+      "n_squared_order_three_energy": 1.1366111045323357,
+      "one_order_four_energy": 7.675729685550045e-06,
+      "one_order_three_energy": 0.0028415277613308395,
+      "order_four_minimum_degree_upper": 1.5742536060398842e-05,
+      "order_four_zeta_upper": 6.140583748440036e-05,
+      "order_three_zeta_upper": 0.011366111035607964,
+      "partition_count": 627,
+      "status": "product-character-energies-dominated-by-witten-zeta-tails",
+      "witten_zeta_four_tail": 1.535145937110009e-05,
+      "witten_zeta_two_tail": 0.005683055517803982,
+      "zeta_domination_verified": true
+    },
+    {
+      "minimum_degree_transfer_verified": true,
+      "minimum_nontrivial_nonsign_dimension": 23,
+      "n": 24,
+      "n_fourth_order_four_energy": 1.1857508490772894,
+      "n_squared_order_three_energy": 1.107354637659905,
+      "one_order_four_energy": 3.573950041827285e-06,
+      "one_order_three_energy": 0.0019224906903817797,
+      "order_four_minimum_degree_upper": 7.2683958048179824e-06,
+      "order_four_zeta_upper": 2.859160033461828e-05,
+      "order_three_zeta_upper": 0.007689962761497426,
+      "partition_count": 1575,
+      "status": "product-character-energies-dominated-by-witten-zeta-tails",
+      "witten_zeta_four_tail": 7.14790008365457e-06,
+      "witten_zeta_two_tail": 0.003844981380748713,
+      "zeta_domination_verified": true
+    },
+    {
+      "minimum_degree_transfer_verified": true,
+      "minimum_nontrivial_nonsign_dimension": 29,
+      "n": 30,
+      "n_fourth_order_four_energy": 1.145290748214099,
+      "n_squared_order_three_energy": 1.0812585670998607,
+      "one_order_four_energy": 1.413939195326048e-06,
+      "one_order_three_energy": 0.001201398407888734,
+      "order_four_minimum_degree_upper": 2.85707112458676e-06,
+      "order_four_zeta_upper": 1.1311513562608385e-05,
+      "order_three_zeta_upper": 0.00480559363155493,
+      "partition_count": 5604,
+      "status": "product-character-energies-dominated-by-witten-zeta-tails",
+      "witten_zeta_four_tail": 2.827878390652096e-06,
+      "witten_zeta_two_tail": 0.002402796815777465,
+      "zeta_domination_verified": true
+    }
+  ],
+  "status": "order-three-and-order-four-coarse-blocks-closed-by-character-zeta",
+  "summary": "Derived exact transpose-orbit character formulas and zeta decay for all seven order-three/order-four ANOVA blocks.",
+  "theorem": {
+    "coarse_character_convolution_diagonalization": "Projected normalized convolution is diagonal in transpose-orbit characters",
+    "one_order_four_block_formula": "E4=sum_nonself d^-4+4 sum_self d^-4",
+    "one_order_three_block_formula": "E3=sum_nonself d^-2+2 sum_self d^-2",
+    "order_five_blocks_controlled_by_this_theorem": false,
+    "order_four_total_asymptotic": "3E4=O(n^-4)",
+    "order_six_block_controlled_by_this_theorem": false,
+    "order_three_total_asymptotic": "4E3=O(n^-2)",
+    "status": "lower-product-anova-blocks-have-exact-zeta-decay"
+  },
+  "theorem_contract": {
+    "block_multiplicities": "four order-three and three order-four blocks",
+    "coarse_basis": "Projected normalized convolution is diagonal in transpose-orbit characters",
+    "scope": "Exact only for coarse cycle-type ANOVA blocks; order five, order six, split alternating labels, and non-Haar multiplicity data are untouched.",
+    "three_input_energy": "E4=sum_nonself d^-4+4 sum_self d^-4",
+    "triangle_energy": "E3=sum_nonself d^-2+2 sum_self d^-2",
+    "zeta_bounds": "E3<=2 Zeta_2^*=O(n^-2); E4<=4 Zeta_4^*=O(n^-4)"
+  }
+}

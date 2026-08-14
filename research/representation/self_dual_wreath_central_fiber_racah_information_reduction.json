@@ -1,0 +1,258 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Coarse central-feature independence implies label independence.",
+      "resolution": "The cross-swapped model has zero coarse MI and saturates both hidden-entropy terms.",
+      "resolved": true
+    },
+    {
+      "objection": "Large unresolved fibers force natural Racah dependence.",
+      "resolution": "A product label coupling has zero debt regardless of fiber size; a natural lower bound is not proved.",
+      "resolved": true
+    },
+    {
+      "objection": "The two marginal hidden entropies can be replaced by their minimum.",
+      "resolution": "The cross-swapped model has debt equal to their sum, so the factor-two budget is sharp in general.",
+      "resolved": true
+    },
+    {
+      "objection": "Fixed-degree asymptotic freeness can close the coarse route.",
+      "resolution": "The projector-resolution theorem leaves Theta(sqrt(n)) Plancherel entropy unresolved below the log-squared scale.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "algorithm_claim_allowed": false,
+    "classical_separation_proved": false,
+    "exact_information_decomposition_proved": true,
+    "fixed_degree_free_probability_closes_rank_mi": false,
+    "natural_racah_rank_mi_survives_proved": false,
+    "natural_racah_rank_mi_vanishes_proved": false,
+    "orientation_syndrome_signal_proved": false,
+    "plancherel_fiber_entropy_upper_proved": true,
+    "reason": "Both growing-support coarse dependence and natural within-fiber delocalization remain unproved.",
+    "speedup_claim_allowed": false
+  },
+  "countermodels": [
+    {
+      "entropy_budget_slack_bits": 0.0,
+      "exact_two_fiber_budget_saturation_verified": true,
+      "fiber_resolution_debt_bits": 2.0,
+      "full_label_mutual_information_bits": 2.0,
+      "joint_hidden_entropy_bits": 0.0,
+      "left_hidden_entropy_bits": 1.0,
+      "maximum_uniform_marginal_residual": 0.0,
+      "right_hidden_entropy_bits": 1.0,
+      "status": "two-unresolved-fibers-can-hide-the-entire-information-budget",
+      "total_label_count": 4,
+      "visible_feature_count": 2,
+      "visible_feature_mutual_information_bits": 0.0
+    },
+    {
+      "entropy_budget_slack_bits": 0.0,
+      "exact_two_fiber_budget_saturation_verified": true,
+      "fiber_resolution_debt_bits": 4.0,
+      "full_label_mutual_information_bits": 4.0,
+      "joint_hidden_entropy_bits": 0.0,
+      "left_hidden_entropy_bits": 2.0,
+      "maximum_uniform_marginal_residual": 0.0,
+      "right_hidden_entropy_bits": 2.0,
+      "status": "two-unresolved-fibers-can-hide-the-entire-information-budget",
+      "total_label_count": 16,
+      "visible_feature_count": 4,
+      "visible_feature_mutual_information_bits": 0.0
+    },
+    {
+      "entropy_budget_slack_bits": 0.0,
+      "exact_two_fiber_budget_saturation_verified": true,
+      "fiber_resolution_debt_bits": 6.0,
+      "full_label_mutual_information_bits": 6.0,
+      "joint_hidden_entropy_bits": 0.0,
+      "left_hidden_entropy_bits": 3.0,
+      "maximum_uniform_marginal_residual": 0.0,
+      "right_hidden_entropy_bits": 3.0,
+      "status": "two-unresolved-fibers-can-hide-the-entire-information-budget",
+      "total_label_count": 64,
+      "visible_feature_count": 8,
+      "visible_feature_mutual_information_bits": 0.0
+    },
+    {
+      "entropy_budget_slack_bits": 0.0,
+      "exact_two_fiber_budget_saturation_verified": true,
+      "fiber_resolution_debt_bits": 8.0,
+      "full_label_mutual_information_bits": 8.0,
+      "joint_hidden_entropy_bits": 0.0,
+      "left_hidden_entropy_bits": 4.0,
+      "maximum_uniform_marginal_residual": 0.0,
+      "right_hidden_entropy_bits": 4.0,
+      "status": "two-unresolved-fibers-can-hide-the-entire-information-budget",
+      "total_label_count": 256,
+      "visible_feature_count": 16,
+      "visible_feature_mutual_information_bits": 0.0
+    }
+  ],
+  "created_at": "2026-08-14T01:20:50.357467+00:00",
+  "falsifiers_triggered": [
+    "Coarse feature independence alone does not control fine Racah labels.",
+    "Plancherel marginal stationarity does not control dependence inside feature fibers.",
+    "Fixed-degree central moments remain below the required projector-resolution scale."
+  ],
+  "finite_controls": [
+    {
+      "distinct_central_feature_count": 3,
+      "exact_central_fiber_reduction_verified": true,
+      "exact_information_decomposition_residual_bits": 0.0,
+      "fiber_entropy_upper_bound_slack_bits": 0.0,
+      "maximum_intermediate_plancherel_marginal_residual": 2.220446049250313e-16,
+      "maximum_moved_support": 2,
+      "n": 3,
+      "partition_count": 3,
+      "physical_average_central_feature_mi_bits": 0.055917592752849556,
+      "physical_average_fiber_resolution_debt_bits": 0.0,
+      "physical_average_full_racah_mi_bits": 0.055917592752849556,
+      "physical_average_joint_hidden_entropy_bits": 0.0,
+      "physical_average_left_hidden_entropy_bits": 0.0,
+      "physical_average_right_hidden_entropy_bits": 0.0,
+      "plancherel_hidden_entropy_bits": 0.0,
+      "status": "exact-central-fiber-racah-information-reduction-verified"
+    },
+    {
+      "distinct_central_feature_count": 3,
+      "exact_central_fiber_reduction_verified": true,
+      "exact_information_decomposition_residual_bits": 0.0,
+      "fiber_entropy_upper_bound_slack_bits": 0.0,
+      "maximum_intermediate_plancherel_marginal_residual": 2.220446049250313e-16,
+      "maximum_moved_support": 3,
+      "n": 3,
+      "partition_count": 3,
+      "physical_average_central_feature_mi_bits": 0.055917592752849556,
+      "physical_average_fiber_resolution_debt_bits": 0.0,
+      "physical_average_full_racah_mi_bits": 0.055917592752849556,
+      "physical_average_joint_hidden_entropy_bits": 0.0,
+      "physical_average_left_hidden_entropy_bits": 0.0,
+      "physical_average_right_hidden_entropy_bits": 0.0,
+      "plancherel_hidden_entropy_bits": 0.0,
+      "status": "exact-central-fiber-racah-information-reduction-verified"
+    },
+    {
+      "distinct_central_feature_count": 5,
+      "exact_central_fiber_reduction_verified": true,
+      "exact_information_decomposition_residual_bits": 2.220446049250313e-16,
+      "fiber_entropy_upper_bound_slack_bits": 0.0,
+      "maximum_intermediate_plancherel_marginal_residual": 1.1102230246251565e-16,
+      "maximum_moved_support": 2,
+      "n": 4,
+      "partition_count": 5,
+      "physical_average_central_feature_mi_bits": 0.1404257307173425,
+      "physical_average_fiber_resolution_debt_bits": 0.0,
+      "physical_average_full_racah_mi_bits": 0.1404257307173425,
+      "physical_average_joint_hidden_entropy_bits": 3.851859888774472e-34,
+      "physical_average_left_hidden_entropy_bits": 0.0,
+      "physical_average_right_hidden_entropy_bits": -2.0816681711721688e-17,
+      "plancherel_hidden_entropy_bits": 0.0,
+      "status": "exact-central-fiber-racah-information-reduction-verified"
+    },
+    {
+      "distinct_central_feature_count": 5,
+      "exact_central_fiber_reduction_verified": true,
+      "exact_information_decomposition_residual_bits": 2.220446049250313e-16,
+      "fiber_entropy_upper_bound_slack_bits": 0.0,
+      "maximum_intermediate_plancherel_marginal_residual": 1.1102230246251565e-16,
+      "maximum_moved_support": 3,
+      "n": 4,
+      "partition_count": 5,
+      "physical_average_central_feature_mi_bits": 0.1404257307173425,
+      "physical_average_fiber_resolution_debt_bits": 0.0,
+      "physical_average_full_racah_mi_bits": 0.1404257307173425,
+      "physical_average_joint_hidden_entropy_bits": 3.851859888774472e-34,
+      "physical_average_left_hidden_entropy_bits": 0.0,
+      "physical_average_right_hidden_entropy_bits": -2.0816681711721688e-17,
+      "plancherel_hidden_entropy_bits": 0.0,
+      "status": "exact-central-fiber-racah-information-reduction-verified"
+    },
+    {
+      "distinct_central_feature_count": 7,
+      "exact_central_fiber_reduction_verified": true,
+      "exact_information_decomposition_residual_bits": 4.440892098500626e-16,
+      "fiber_entropy_upper_bound_slack_bits": 2.7755575615628914e-17,
+      "maximum_intermediate_plancherel_marginal_residual": 1.6653345369377348e-16,
+      "maximum_moved_support": 2,
+      "n": 5,
+      "partition_count": 7,
+      "physical_average_central_feature_mi_bits": 0.23736799519617466,
+      "physical_average_fiber_resolution_debt_bits": -2.7755575615628914e-17,
+      "physical_average_full_racah_mi_bits": 0.23736799519617463,
+      "physical_average_joint_hidden_entropy_bits": 6.486580819800732e-19,
+      "physical_average_left_hidden_entropy_bits": 1.5640780851547916e-18,
+      "physical_average_right_hidden_entropy_bits": 1.1462024744972675e-18,
+      "plancherel_hidden_entropy_bits": 0.0,
+      "status": "exact-central-fiber-racah-information-reduction-verified"
+    },
+    {
+      "distinct_central_feature_count": 7,
+      "exact_central_fiber_reduction_verified": true,
+      "exact_information_decomposition_residual_bits": 4.440892098500626e-16,
+      "fiber_entropy_upper_bound_slack_bits": 2.7755575615628914e-17,
+      "maximum_intermediate_plancherel_marginal_residual": 1.6653345369377348e-16,
+      "maximum_moved_support": 3,
+      "n": 5,
+      "partition_count": 7,
+      "physical_average_central_feature_mi_bits": 0.23736799519617466,
+      "physical_average_fiber_resolution_debt_bits": -2.7755575615628914e-17,
+      "physical_average_full_racah_mi_bits": 0.23736799519617463,
+      "physical_average_joint_hidden_entropy_bits": 6.486580819800732e-19,
+      "physical_average_left_hidden_entropy_bits": 1.5640780851547916e-18,
+      "physical_average_right_hidden_entropy_bits": 1.1462024744972675e-18,
+      "plancherel_hidden_entropy_bits": 0.0,
+      "status": "exact-central-fiber-racah-information-reduction-verified"
+    }
+  ],
+  "headline_metrics": {
+    "exact_central_fiber_information_reduction_count": 1,
+    "finite_control_failure_count": 0,
+    "finite_natural_racah_control_count": 6,
+    "growing_support_coarse_mi_theorem_count": 0,
+    "natural_within_fiber_delocalization_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "tight_two_fiber_countermodel_count": 4
+  },
+  "proof_obligations": [
+    {
+      "obligation": "derive_exact_central_fiber_information_chain",
+      "resolution": "Apply H(X)=H(U)+H(X|U) and its joint analogue conditionally on O.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_coarse_growing_support_racah_information",
+      "resolution": "Needs same-n mixed central-character control at support at least logarithmic-squared in n.",
+      "resolved": false
+    },
+    {
+      "obligation": "bound_natural_fiber_resolution_debt",
+      "resolution": "Need conditional delocalization inside central-feature fibers; large fiber entropy alone gives no bound.",
+      "resolved": false
+    },
+    {
+      "obligation": "translate_rank_no_go_to_orientation_syndrome_channel",
+      "resolution": "This reduction does not touch the two irreducible non-Haar parity cumulants.",
+      "resolved": false
+    }
+  ],
+  "status": "natural-racah-rank-information-split-into-coarse-and-fiber-debt",
+  "summary": "Reduced central-moment approaches to an exact coarse Racah term plus a fiber-resolution debt, and proved that both unresolved sides can matter.",
+  "theorem": {
+    "exact_decomposition": "I(X;Y|O)=I(F_s(X);F_s(Y)|O)+H(X|F_s(X),O)+H(Y|F_s(Y),O)-H(X,Y|F_s(X),F_s(Y),O)",
+    "fixed_degree_route_closes_rank_mi_proved": false,
+    "natural_within_fiber_delocalization_proved": false,
+    "plancherel_entropy_upper": "I(X;Y|O)<=I(F_s(X);F_s(Y)|O)+2 H_Plancherel(Lambda|F_s)",
+    "status": "central-feature-route-reduced-to-growing-resolution-or-within-fiber-delocalization",
+    "sufficient_condition": "coarse feature MI=o(log n) and the physical-average fiber-resolution debt=o(log n)"
+  },
+  "theorem_contract": {
+    "features": "U=F_s(X), V=F_s(Y) are deterministic central class-sum vectors",
+    "intermediate_labels": "X=mu and Y=nu under the natural squared Racah coupling",
+    "marginal_input": "unconditional X and Y are exactly Plancherel",
+    "outer_label": "O=(alpha,beta,gamma,lambda)",
+    "scope": "rank-label information only; orientation-syndrome CMI remains separate"
+  }
+}

@@ -1,0 +1,273 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The identity event itself is a quantum structural signal.",
+      "resolution": "It reconstructs exactly the independent coarse product-law mass and a uniform syndrome contribution.",
+      "resolved": true
+    },
+    {
+      "objection": "The raw estimator variance is a classical lower bound.",
+      "resolution": "Subtracting the known identity event removes that variance term exactly; other estimators remain possible.",
+      "resolved": true
+    },
+    {
+      "objection": "High S7 physical orbit mass means a large non-Haar effect.",
+      "resolution": "Its physical/product likelihood ratio is about 0.997935 and its irreducible CMI is about 2.3e-5 bits.",
+      "resolved": true
+    },
+    {
+      "objection": "The S6 one-bit channel is robust positive structure.",
+      "resolution": "Six amplitudes result from near-total signed cancellation of the identity baseline, the orbit mass is about 1.07e-4, and exact zero is still unproved.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "S6_spike_survives_identity_audit_as_scalable_signal": false,
+    "S7_high_mass_sector_has_large_aggregate_nonhaar_likelihood": false,
+    "algorithm_claim_allowed": false,
+    "classical_lower_bound_proved": false,
+    "efficient_classical_residual_estimator_proved": false,
+    "fixed_support_residuals_subtracted": false,
+    "identity_control_variate_available": true,
+    "identity_is_exact_product_null_proved": true,
+    "reason": "The product null is now explicit; only a signed nonidentity Racah residual remains, with no scalable positive-mass family or complexity separation.",
+    "residual_positive_mass_scaling_proved": false,
+    "speedup_claim_allowed": false
+  },
+  "controls": [
+    {
+      "coarse_product_orbit_mass": 0.0021433470507544582,
+      "conditional_syndrome_probabilities_from_residual": [
+        0.17468944099378886,
+        0.17468944099378875,
+        0.17468944099378847,
+        0.06288819875776379,
+        0.17468944099378902,
+        0.06288819875776415,
+        0.0007763975155279483,
+        0.17468944099378897
+      ],
+      "control_id": "S5-EXACT-CROSS-CHECK",
+      "dimension_product": 10000,
+      "exact_identity_product_null_verified": true,
+      "group_order": 120,
+      "identity_rescaled_likelihoods": [
+        2.7,
+        2.6999999999999984,
+        2.6999999999999944,
+        0.9719999999999969,
+        2.700000000000003,
+        0.9720000000000026,
+        0.011999999999999967,
+        2.700000000000002
+      ],
+      "identity_subtracted_residual_efficiently_computable": false,
+      "irreducible_racah_cmi_bits": 0.20489807195522608,
+      "likelihood_identity_residual": 2.220446049250313e-16,
+      "likelihood_ratio_from_residual_mean": 1.9319999999999997,
+      "maximum_absolute_nonidentity_residual": 1.7000000000000028,
+      "maximum_conditional_probability_residual": 2.7755575615628914e-17,
+      "mean_nonidentity_residual": 0.9319999999999997,
+      "n": 5,
+      "negative_nonidentity_residual_count": 3,
+      "nonidentity_residuals": [
+        1.7000000000000002,
+        1.6999999999999984,
+        1.6999999999999944,
+        -0.028000000000003133,
+        1.7000000000000028,
+        -0.02799999999999736,
+        -0.988,
+        1.700000000000002
+      ],
+      "normalized_amplitudes": [
+        1.5625e-06,
+        1.562499999999999e-06,
+        1.5624999999999967e-06,
+        5.624999999999982e-07,
+        1.5625000000000018e-06,
+        5.625000000000015e-07,
+        6.944444444444425e-09,
+        1.5625000000000011e-06
+      ],
+      "physical_orbit_mass": 0.004140946502057612,
+      "physical_to_product_likelihood_ratio": 1.9319999999999995,
+      "raw_estimator_maximum_relative_variance_lower_bound": 11999999999.000067,
+      "raw_estimator_minimum_relative_variance_lower_bound": 237036.03703703647,
+      "status": "identity-triple-is-exact-product-null-control-variate"
+    },
+    {
+      "coarse_product_orbit_mass": 0.0004593936579977834,
+      "conditional_syndrome_probabilities_from_residual": [
+        0.5000000000000003,
+        7.372700568357318e-37,
+        1.061668881843454e-34,
+        1.1796320909371708e-35,
+        8.666684749742481e-36,
+        8.690758874047321e-35,
+        0.49999999999999967,
+        6.957421924098824e-35
+      ],
+      "control_id": "S6-REPEATED-DIMENSION-10",
+      "dimension_product": 1000000,
+      "exact_identity_product_null_verified": true,
+      "group_order": 720,
+      "identity_rescaled_likelihoods": [
+        0.9331200000000092,
+        1.3759228708691288e-36,
+        1.981328934051546e-34,
+        2.2014765933906061e-35,
+        1.6174113747359557e-35,
+        1.6219041841102224e-34,
+        0.9331200000000079,
+        1.298421909163031e-34
+      ],
+      "identity_subtracted_residual_efficiently_computable": false,
+      "irreducible_racah_cmi_bits": 0.9999999999999998,
+      "likelihood_identity_residual": 2.7755575615628914e-17,
+      "likelihood_ratio_from_residual_mean": 0.23328000000000215,
+      "maximum_absolute_nonidentity_residual": 1.0,
+      "maximum_conditional_probability_residual": 1.1102230246251565e-16,
+      "mean_nonidentity_residual": -0.7667199999999978,
+      "n": 6,
+      "negative_nonidentity_residual_count": 8,
+      "nonidentity_residuals": [
+        -0.06687999999999084,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -1.0,
+        -0.06687999999999206,
+        -1.0
+      ],
+      "normalized_amplitudes": [
+        2.5000000000000245e-09,
+        3.686350284178693e-45,
+        5.3083444092173186e-43,
+        5.898160454685909e-44,
+        4.3333423748712806e-44,
+        4.345379437023701e-43,
+        2.500000000000021e-09,
+        3.478710962049444e-43
+      ],
+      "physical_orbit_mass": 0.0001071673525377239,
+      "physical_to_product_likelihood_ratio": 0.23328000000000218,
+      "raw_estimator_maximum_relative_variance_lower_bound": 1.9715568749619548e+80,
+      "raw_estimator_minimum_relative_variance_lower_bound": 428669409.15088326,
+      "status": "identity-triple-is-exact-product-null-control-variate"
+    },
+    {
+      "coarse_product_orbit_mass": 0.01319511827875518,
+      "conditional_syndrome_probabilities_from_residual": [
+        0.09943967009357652,
+        0.12363317416795352,
+        0.12363317416795362,
+        0.12363317416795278,
+        0.12363317416795376,
+        0.1236331741679532,
+        0.1587612848987039,
+        0.12363317416795269
+      ],
+      "control_id": "S7-REPEATED-DIMENSION-35",
+      "dimension_product": 1838265625,
+      "exact_identity_product_null_verified": true,
+      "group_order": 5040,
+      "identity_rescaled_likelihoods": [
+        0.7938744761111509,
+        0.9870227976438439,
+        0.9870227976438447,
+        0.9870227976438379,
+        0.9870227976438458,
+        0.9870227976438414,
+        1.267467317189272,
+        0.9870227976438373
+      ],
+      "identity_subtracted_residual_efficiently_computable": false,
+      "irreducible_racah_cmi_bits": 2.315228572808437e-05,
+      "likelihood_identity_residual": 0.0,
+      "likelihood_ratio_from_residual_mean": 0.9979348223954343,
+      "maximum_absolute_nonidentity_residual": 0.2674673171892721,
+      "maximum_conditional_probability_residual": 1.3877787807814457e-17,
+      "mean_nonidentity_residual": -0.002065177604565746,
+      "n": 7,
+      "negative_nonidentity_residual_count": 7,
+      "nonidentity_residuals": [
+        -0.20612552388884908,
+        -0.01297720235615607,
+        -0.012977202356155293,
+        -0.012977202356162065,
+        -0.012977202356154183,
+        -0.012977202356158624,
+        0.2674673171892721,
+        -0.012977202356162731
+      ],
+      "normalized_amplitudes": [
+        6.2009785606489645e-12,
+        7.709666189348933e-12,
+        7.70966618934894e-12,
+        7.709666189348886e-12,
+        7.709666189348947e-12,
+        7.709666189348913e-12,
+        9.900227172832695e-12,
+        7.709666189348881e-12
+      ],
+      "physical_orbit_mass": 0.013167868015996299,
+      "physical_to_product_likelihood_ratio": 0.9979348223954343,
+      "raw_estimator_maximum_relative_variance_lower_bound": 203136483936.8524,
+      "raw_estimator_minimum_relative_variance_lower_bound": 79692613638.66954,
+      "status": "identity-triple-is-exact-product-null-control-variate"
+    }
+  ],
+  "created_at": "2026-08-14T02:19:43.043409+00:00",
+  "falsifiers_triggered": [
+    "Raw word-estimator rarity is removable by an exact identity control variate.",
+    "Large physical orbit mass can coincide with an almost unit product-law likelihood ratio.",
+    "A finite one-bit channel created by cancellation is not a robust asymptotic mechanism."
+  ],
+  "headline_metrics": {
+    "S6_maximum_absolute_nonidentity_residual": 1.0,
+    "S6_physical_to_product_likelihood_ratio": 0.23328000000000218,
+    "S7_irreducible_cmi_bits": 2.315228572808437e-05,
+    "S7_maximum_absolute_nonidentity_residual": 0.2674673171892721,
+    "S7_physical_to_product_likelihood_ratio": 0.9979348223954343,
+    "classical_lower_bound_count": 0,
+    "efficient_nonidentity_residual_estimator_count": 0,
+    "exact_identity_product_null_control_count": 3,
+    "finite_control_failure_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "separate_product_null_from_nonhaar_orientation_signal",
+      "resolution": "The identity triple contributes exactly the entire independent coarse-orbit product null.",
+      "resolved": true
+    },
+    {
+      "obligation": "subtract_all_polynomially_enumerable_low_support_word_strata",
+      "resolution": "Identity subtraction is only the first control variate; fixed-support conjugacy strata may explain further residual mass.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_residual_survives_on_positive_natural_mass",
+      "resolution": "S6 is low mass and S7 is nearly product in aggregate; no scalable residual family exists.",
+      "resolved": false
+    },
+    {
+      "obligation": "give_efficient_classical_or_coherent_residual_estimator",
+      "resolution": "The signed nonidentity correction remains a Racah/three-projector contraction.",
+      "resolved": false
+    }
+  ],
+  "status": "orientation-signals-reduced-to-signed-nonidentity-racah-residual",
+  "summary": "Proved that the identity word triple is exactly the independent sign-orbit product null and demoted both finite orientation signals to unresolved signed nonidentity residuals.",
+  "theorem_contract": {
+    "coarse_product_mass": "Q_orbit=64 D^2/|S_n|^6",
+    "conditional_channel": "p_y=(1+delta_y)/(8 P_orbit/Q_orbit)",
+    "identity_contribution": "mu_y^(identity)=|S_n|^-3 for every syndrome y",
+    "physical_likelihood": "P_orbit/Q_orbit=(1/8) sum_y ell_y=1+mean_y delta_y",
+    "raw_variance_warning": "Var(X_y)>=|S_n|^-3-mu_y^2 before control-variate subtraction",
+    "rescaled_amplitude": "ell_y=|S_n|^3 mu_y=1+delta_y",
+    "scope": "exact null decomposition; no efficient residual algorithm or lower bound"
+  }
+}

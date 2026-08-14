@@ -1,0 +1,291 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False in general: the nontrivial fiber R produces a large matrix-valued commutant even when scalar G/K is Gelfand.",
+      "challenge": "The perfect-matching Gelfand transform diagonalizes the source Gram.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It gives an exact positive operator and access model, not a condition bound or structured polar circuit.",
+      "challenge": "The transfer formula itself supplies an efficient inverse.",
+      "resolved": true
+    },
+    {
+      "answer": "False. A succinct recoupling transform may exist; dimension alone is not a circuit lower bound.",
+      "challenge": "Large commutant dimension proves hardness.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "efficient_binary_hidden_involution_algorithm_constructed": false,
+    "matrix_valued_hecke_transfer_formula_proved": true,
+    "physical_to_source_lift_compiled": false,
+    "reason": "The exact source transfer is matrix-valued on large stabilizer multiplicity spaces. Its structured basis, polar, and physical access remain open.",
+    "scalar_matching_association_scheme_sufficient": false,
+    "source_specific_physical_multiplicity_operator_isolated": true,
+    "speedup_claim_allowed": false,
+    "structured_multiplicity_polar_compiled": false,
+    "uniform_matrix_hecke_basis_compiled": false
+  },
+  "created_at": "2026-08-13T16:20:46.614116+00:00",
+  "falsifiers_triggered": [
+    "Scalar Gelfand-pair spectra do not diagonalize a nontrivial source fiber.",
+    "The normalized transfer formula does not remove its own small-scale polar cost.",
+    "Large matrix-Hecke dimension is a representation target, not a hardness proof."
+  ],
+  "finite_controls": [
+    {
+      "copy_count": 1,
+      "finite_control_verified": true,
+      "matrix_valued_extension_noncommutative": true,
+      "maximum_equivariance_residual": 5.775556423766216e-16,
+      "maximum_gram_formula_residual": 1.263512011353891e-15,
+      "maximum_source_multiplicity": 3,
+      "scalar_branch_hecke_dimension": 2,
+      "sectors": [
+        {
+          "carrier_dimension": 1,
+          "copy_count": 1,
+          "direct_vs_matrix_hecke_gram_residual": 7.088956984906975e-16,
+          "exact_matrix_hecke_transfer_verified": true,
+          "irrep_name": "trivial",
+          "irrep_partition": [
+            3
+          ],
+          "maximum_transfer_equivariance_residual": 0.0,
+          "maximum_transfer_gram_eigenvalue": 3.0,
+          "minimum_positive_transfer_gram_eigenvalue": 1.4999999999999998,
+          "observed_transfer_rank": 2,
+          "physical_multiplicity": 3,
+          "predicted_transfer_rank": 2,
+          "source_multiplicity": 2,
+          "status": "exact-matrix-hecke-transfer-sector-verified"
+        },
+        {
+          "carrier_dimension": 1,
+          "copy_count": 1,
+          "direct_vs_matrix_hecke_gram_residual": 4.440892098500626e-16,
+          "exact_matrix_hecke_transfer_verified": true,
+          "irrep_name": "sign",
+          "irrep_partition": [
+            1,
+            1,
+            1
+          ],
+          "maximum_transfer_equivariance_residual": 0.0,
+          "maximum_transfer_gram_eigenvalue": 1.4999999999999991,
+          "minimum_positive_transfer_gram_eigenvalue": 1.4999999999999991,
+          "observed_transfer_rank": 1,
+          "physical_multiplicity": 1,
+          "predicted_transfer_rank": 1,
+          "source_multiplicity": 1,
+          "status": "exact-matrix-hecke-transfer-sector-verified"
+        },
+        {
+          "carrier_dimension": 2,
+          "copy_count": 1,
+          "direct_vs_matrix_hecke_gram_residual": 1.263512011353891e-15,
+          "exact_matrix_hecke_transfer_verified": true,
+          "irrep_name": "standard",
+          "irrep_partition": [
+            2,
+            1
+          ],
+          "maximum_transfer_equivariance_residual": 5.775556423766216e-16,
+          "maximum_transfer_gram_eigenvalue": 1.500000000000001,
+          "minimum_positive_transfer_gram_eigenvalue": 1.500000000000001,
+          "observed_transfer_rank": 1,
+          "physical_multiplicity": 1,
+          "predicted_transfer_rank": 1,
+          "source_multiplicity": 3,
+          "status": "exact-matrix-hecke-transfer-sector-verified"
+        }
+      ],
+      "status": "matrix-valued-hecke-transfer-reduction-verified",
+      "vector_bundle_commutant_dimension": 14
+    },
+    {
+      "copy_count": 2,
+      "finite_control_verified": true,
+      "matrix_valued_extension_noncommutative": true,
+      "maximum_equivariance_residual": 8.867544944077363e-16,
+      "maximum_gram_formula_residual": 1.5008613727028667e-15,
+      "maximum_source_multiplicity": 9,
+      "scalar_branch_hecke_dimension": 2,
+      "sectors": [
+        {
+          "carrier_dimension": 1,
+          "copy_count": 2,
+          "direct_vs_matrix_hecke_gram_residual": 1.5008613727028667e-15,
+          "exact_matrix_hecke_transfer_verified": true,
+          "irrep_name": "trivial",
+          "irrep_partition": [
+            3
+          ],
+          "maximum_transfer_equivariance_residual": 0.0,
+          "maximum_transfer_gram_eigenvalue": 3.0000000000000004,
+          "minimum_positive_transfer_gram_eigenvalue": 0.7500000000000006,
+          "observed_transfer_rank": 5,
+          "physical_multiplicity": 11,
+          "predicted_transfer_rank": 5,
+          "source_multiplicity": 5,
+          "status": "exact-matrix-hecke-transfer-sector-verified"
+        },
+        {
+          "carrier_dimension": 1,
+          "copy_count": 2,
+          "direct_vs_matrix_hecke_gram_residual": 9.821490622435068e-16,
+          "exact_matrix_hecke_transfer_verified": true,
+          "irrep_name": "sign",
+          "irrep_partition": [
+            1,
+            1,
+            1
+          ],
+          "maximum_transfer_equivariance_residual": 0.0,
+          "maximum_transfer_gram_eigenvalue": 1.5000000000000002,
+          "minimum_positive_transfer_gram_eigenvalue": 0.7499999999999997,
+          "observed_transfer_rank": 4,
+          "physical_multiplicity": 7,
+          "predicted_transfer_rank": 4,
+          "source_multiplicity": 4,
+          "status": "exact-matrix-hecke-transfer-sector-verified"
+        },
+        {
+          "carrier_dimension": 2,
+          "copy_count": 2,
+          "direct_vs_matrix_hecke_gram_residual": 1.3088254721933639e-15,
+          "exact_matrix_hecke_transfer_verified": true,
+          "irrep_name": "standard",
+          "irrep_partition": [
+            2,
+            1
+          ],
+          "maximum_transfer_equivariance_residual": 8.867544944077363e-16,
+          "maximum_transfer_gram_eigenvalue": 1.5000000000000007,
+          "minimum_positive_transfer_gram_eigenvalue": 0.7499999999999996,
+          "observed_transfer_rank": 6,
+          "physical_multiplicity": 9,
+          "predicted_transfer_rank": 6,
+          "source_multiplicity": 9,
+          "status": "exact-matrix-hecke-transfer-sector-verified"
+        }
+      ],
+      "status": "matrix-valued-hecke-transfer-reduction-verified",
+      "vector_bundle_commutant_dimension": 122
+    }
+  ],
+  "headline_metrics": {
+    "exact_transfer_formula_control_count": 2,
+    "finite_control_failure_count": 0,
+    "matrix_valued_hecke_reduction_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "scalar_spherical_transform_sufficient_count": 0,
+    "structured_transfer_polar_compiler_count": 0,
+    "uniform_matrix_hecke_basis_compiler_count": 0
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-MATRIX-HECKE-BASIS",
+      "resolved": false,
+      "statement": "Construct a polynomial coherent basis for the natural Hom_K(V_nu,R^tensor k) matrix-Hecke modules."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-MATRIX-HECKE-POLAR",
+      "resolved": false,
+      "statement": "Exploit source-specific coefficient structure to compile support/polar without generic small-scale QSVT."
+    },
+    {
+      "id": "PO-COSET-HIDDEN-INVOLUTION-MATRIX-HECKE-DEQUANTIZATION",
+      "resolved": false,
+      "statement": "Determine whether the same matrix-valued transfer admits a polynomial classical representation or sampling algorithm."
+    }
+  ],
+  "scaling_records": [
+    {
+      "copy_count": 1,
+      "matrix_hecke_basis_compiled": false,
+      "scalar_branch_hecke_dimension": 2,
+      "scalar_spherical_transform_sufficient": false,
+      "standard_source_multiplicity_decimal": "3",
+      "standard_transfer_kernel_multiplicity": 2,
+      "status": "matrix-hecke-operator-formalized-transform-open",
+      "structured_transfer_polar_compiled": false,
+      "vector_bundle_commutant_dimension_decimal": "14",
+      "vector_to_scalar_dimension_ratio": 7.0
+    },
+    {
+      "copy_count": 2,
+      "matrix_hecke_basis_compiled": false,
+      "scalar_branch_hecke_dimension": 2,
+      "scalar_spherical_transform_sufficient": false,
+      "standard_source_multiplicity_decimal": "9",
+      "standard_transfer_kernel_multiplicity": 3,
+      "status": "matrix-hecke-operator-formalized-transform-open",
+      "structured_transfer_polar_compiled": false,
+      "vector_bundle_commutant_dimension_decimal": "122",
+      "vector_to_scalar_dimension_ratio": 61.0
+    },
+    {
+      "copy_count": 8,
+      "matrix_hecke_basis_compiled": false,
+      "scalar_branch_hecke_dimension": 2,
+      "scalar_spherical_transform_sufficient": false,
+      "standard_source_multiplicity_decimal": "6561",
+      "standard_transfer_kernel_multiplicity": 9,
+      "status": "matrix-hecke-operator-formalized-transform-open",
+      "structured_transfer_polar_compiled": false,
+      "vector_bundle_commutant_dimension_decimal": "64570082",
+      "vector_to_scalar_dimension_ratio": 32285041.0
+    },
+    {
+      "copy_count": 32,
+      "matrix_hecke_basis_compiled": false,
+      "scalar_branch_hecke_dimension": 2,
+      "scalar_spherical_transform_sufficient": false,
+      "standard_source_multiplicity_decimal": "1853020188851841",
+      "standard_transfer_kernel_multiplicity": 33,
+      "status": "matrix-hecke-operator-formalized-transform-open",
+      "structured_transfer_polar_compiled": false,
+      "vector_bundle_commutant_dimension_decimal": "5150525730438768726986773633922",
+      "vector_to_scalar_dimension_ratio": 2.5752628652193845e+30
+    },
+    {
+      "copy_count": 128,
+      "matrix_hecke_basis_compiled": false,
+      "scalar_branch_hecke_dimension": 2,
+      "scalar_spherical_transform_sufficient": false,
+      "standard_source_multiplicity_decimal": "11790184577738583171520872861412518665678211592275841109096961",
+      "standard_transfer_kernel_multiplicity": 129,
+      "status": "matrix-hecke-operator-formalized-transform-open",
+      "structured_transfer_polar_compiled": false,
+      "vector_bundle_commutant_dimension_decimal": "208512678565717099147409680184491954671328276212793706987407236645054108944649653911502653731164414282717498310823349153282",
+      "vector_to_scalar_dimension_ratio": 1.0425633928285855e+122
+    }
+  ],
+  "status": "matrix-hecke-transfer-formalized-structured-polar-open",
+  "summary": "Derived the exact matrix-valued Hecke Gram for induced orbit synthesis, verified it against direct transfers, and proved that the scalar matching spherical transform omits the source-specific multiplicity operator that must actually be compiled.",
+  "theorem": {
+    "computational_target": "Compile the support/polar of this positive matrix-valued transfer in a uniform Hom_K multiplicity basis.",
+    "double_coset_structure": "K-equivariance groups the operator-valued coefficients by K double cosets, producing End_G(Ind_K^G R), a matrix-valued Hecke algebra.",
+    "exact_transfer_formula_proved": true,
+    "gram_formula": "<F(T),F(T')>=|K|^-1 sum_g Tr[T^* P_0 U_g P_0 T' rho_nu(g)^*].",
+    "matrix_valued_hecke_reduction_proved": true,
+    "normalized_transfer": "F_nu(T)=|G:K|^-1/2 sum_(xK) U_x T rho_nu(x)^*.",
+    "physical_to_source_lift_compiled": false,
+    "s3_commutant_growth": "On k regular S_3 chart copies, the vector-bundle commutant dimension is (3*9^k+1)/2 versus scalar branch dimension two.",
+    "scalar_hecke_boundary": "The commutative scalar Hecke algebra of G/K applies only to the trivial stabilizer fiber and cannot determine physical row orientation.",
+    "scalar_spherical_transform_sufficient": false,
+    "scope_limit": "No such basis, structured inverse, physical source lift, decoder, classical separation, or algorithm is constructed.",
+    "status": "matrix-hecke-transfer-formalized-structured-polar-open",
+    "structured_multiplicity_polar_compiled": false,
+    "theorem_verified": true,
+    "uniform_matrix_hecke_basis_compiled": false
+  },
+  "theorem_contract": {
+    "normalization": "The explicit |G:K|^-1/2 branch normalization; changing it rescales the Gram but not its support.",
+    "operator": "The normalized induced synthesis transfer on each Hom_K(V_nu,R) multiplicity space.",
+    "outside_scope": "A scalar outcome Hecke transform, abstract arbitrary row orientation, and any unproved full-class compiler.",
+    "representation": "A finite G representation H, K-invariant projector P_0, and fiber R=ran(P_0)."
+  }
+}
