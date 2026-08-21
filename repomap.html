@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive repository architecture map, module taxonomy, and subsystem explorer for the Q-Search quantum algorithm search program.">
+    <title>Q-Search | Repository Map</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Q-Search home">
+            <span class="brand-mark" aria-hidden="true">Q</span>
+            <span>Q-Search</span>
+        </a>
+        <nav aria-label="Main site navigation">
+            <a href="index.html">Progress</a>
+            <a href="methodology.html">Methodology</a>
+            <a href="frontier.html">Frontier Map</a>
+            <a href="negative-results.html">Negative Results</a>
+            <a href="proof-debt.html">Proof Debt</a>
+            <a href="repomap.html" class="active">Repo Map</a>
+        </nav>
+        <a class="github-link" href="https://github.com/Jaspersands/qsearch" target="_blank" rel="noreferrer">GitHub</a>
+    </header>
+
+    <main id="top">
+        <section class="hero" aria-labelledby="page-title">
+            <div class="hero-copy">
+                <p class="eyebrow">Architecture & Codebase Taxonomy</p>
+                <h1 id="page-title">Repository Map</h1>
+                <p class="hero-lede">
+                    A structural breakdown of Q-Search's 724 scientific theorem verification modules, core proof-gate operating system, classical attack suites, and canonical research registries.
+                </p>
+                <div class="hero-actions">
+                    <a class="primary-action" href="index.html">← Back to live progress</a>
+                    <a class="secondary-action" href="docs/REPOSITORY_MAP.md" target="_blank">View raw REPOSITORY_MAP.md</a>
+                </div>
+            </div>
+            <div class="verdict-block" aria-label="Architecture design overview">
+                <p class="eyebrow">Namespace Architecture</p>
+                <strong id="verdict-title">Flat Scientific Namespace</strong>
+                <p id="verdict-detail">All scientific modules use strict domain prefixes to prevent circular dependency churn while exposing uniform CLI and runner entry points.</p>
+                <div class="updated-row">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    <span>724 Registered Python Modules</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="metric-strip" aria-label="Repository metrics summary">
+            <div><strong>724</strong><span>scientific modules</span></div>
+            <div><strong>6</strong><span>research domains</span></div>
+            <div><strong>1</strong><span>central registry</span></div>
+            <div><strong>807</strong><span>negative results</span></div>
+            <div><strong>0</strong><span>unregistered files</span></div>
+        </section>
+
+        <!-- Section 1: Architecture Policy Note -->
+        <section class="content-section" style="padding-bottom: 20px;">
+            <div class="section-heading compact">
+                <p class="eyebrow">Design Rationale</p>
+                <h2>Why the repository uses a flat module layout</h2>
+            </div>
+            <div class="detail-card">
+                <p>
+                    Q-Search contains over 720 interconnected theorem verification modules, algebraic reductions, and classical baselines. The repository deliberately maintains a flat root import namespace with domain-specific prefixes (e.g., <code>dcp_*</code>, <code>coset_*</code>, <code>self_dual_wreath_*</code>, <code>code_*</code>).
+                </p>
+                <p>
+                    This architecture ensures that all theorem scripts, unit test runners, and the unified CLI toolchain (<code>python3 qsearch.py &lt;command&gt;</code>) execute with zero packaging friction, identical path resolution, and no relative import ambiguity across diverse compute environments.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 2: Interactive Subsystem Explorer -->
+        <section class="content-section" id="subsystems">
+            <div class="section-heading compact">
+                <p class="eyebrow">Subsystem Breakdown</p>
+                <h2>Interactive domain explorer</h2>
+            </div>
+
+            <div class="explorer-controls">
+                <input type="text" id="repo-search" class="search-input" placeholder="Filter modules by name or prefix (e.g. dcp, wreath, racah, goppa)..." oninput="filterRepoMap()">
+                <div class="filter-btn-group">
+                    <button class="filter-btn active" onclick="setDomainFilter('all', this)">All (724)</button>
+                    <button class="filter-btn" onclick="setDomainFilter('dcp', this)">DCP / Dihedral</button>
+                    <button class="filter-btn" onclick="setDomainFilter('coset', this)">Coset / Symmetric</button>
+                    <button class="filter-btn" onclick="setDomainFilter('wreath', this)">Self-Dual Wreath</button>
+                    <button class="filter-btn" onclick="setDomainFilter('code', this)">Linear Codes</button>
+                    <button class="filter-btn" onclick="setDomainFilter('core', this)">Core Engine</button>
+                </div>
+            </div>
+
+            <div id="repo-tree-container">
+                <!-- 1. Core Operating System -->
+                <div class="tree-card" data-domain="core">
+                    <div class="tree-card-title">
+                        <h3>1. Core Research OS & Proof Engine</h3>
+                        <span class="badge badge-green">Core Infrastructure</span>
+                    </div>
+                    <p>The central workflow orchestrator, proof gate verifier, mutation engine, and registry persistence system.</p>
+                    <div class="module-chip-grid">
+                        <span class="module-chip"><strong>qsearch.py</strong> (Unified CLI & subparser dispatch)</span>
+                        <span class="module-chip"><strong>research_registry.py</strong> (Candidate, experiment & result schema)</span>
+                        <span class="module-chip"><strong>experiment_runner.py</strong> (Execution dispatcher & history)</span>
+                        <span class="module-chip"><strong>proof_gate.py</strong> (Candidate proof obligation engine)</span>
+                        <span class="module-chip"><strong>proof_tracker.py</strong> (Proof status & lemma tracking)</span>
+                        <span class="module-chip"><strong>dequantization_checks.py</strong> (Classical attack matrix & scanner)</span>
+                        <span class="module-chip"><strong>mutation_engine.py</strong> (Automated hypothesis mutation generator)</span>
+                        <span class="module-chip"><strong>conjecture_tracker.py</strong> (Mathematical conjecture management)</span>
+                        <span class="module-chip"><strong>scaling_runner.py</strong> (Asymptotic scaling benchmarks)</span>
+                        <span class="module-chip"><strong>reduction_gate.py</strong> (Complexity reduction verification)</span>
+                        <span class="module-chip"><strong>problem_ontology.py</strong> (Problem family hierarchy)</span>
+                        <span class="module-chip"><strong>candidate_quarantine.py</strong> (Quarantined candidate management)</span>
+                    </div>
+                </div>
+
+                <!-- 2. Dihedral Coset Problem -->
+                <div class="tree-card" data-domain="dcp">
+                    <div class="tree-card-title">
+                        <h3>2. Dihedral Coset Problem (DCP) & State-Native Sieve</h3>
+                        <span class="badge badge-amber">43 Modules</span>
+                    </div>
+                    <p>Workbenches for dihedral hidden subgroup problem (DHSP), phase-state sieving, subset-sum reductions, carry ANF invariance, and multi-scale aliasing.</p>
+                    <div class="module-chip-grid">
+                        <span class="module-chip">dcp_sample_native_sieve.py</span>
+                        <span class="module-chip">dcp_recursive_decoder.py</span>
+                        <span class="module-chip">dcp_hadamard_scaling.py</span>
+                        <span class="module-chip">dcp_clifford_witness_search.py</span>
+                        <span class="module-chip">dcp_carry_high_part_no_go.py</span>
+                        <span class="module-chip">dcp_carry_affine_degree_invariance.py</span>
+                        <span class="module-chip">dcp_subset_sum_carry_anf.py</span>
+                        <span class="module-chip">dcp_marker_aware_list_decoder.py</span>
+                        <span class="module-chip">dcp_pgm_gram_block_encoding.py</span>
+                        <span class="module-chip">dcp_coherent_fiber_erasure_boundary.py</span>
+                        <span class="module-chip">dcp_global_erasure_inversion_reduction.py</span>
+                        <span class="module-chip">dcp_odd_unit_orbit_geometry.py</span>
+                    </div>
+                </div>
+
+                <!-- 3. Non-Abelian Coset States & Representation Theory -->
+                <div class="tree-card" data-domain="coset">
+                    <div class="tree-card-title">
+                        <h3>3. Non-Abelian Coset States & S_n Representation Theory</h3>
+                        <span class="badge badge-blue">155 Modules</span>
+                    </div>
+                    <p>Collective coset-state observables, Jucys-Murphy elements, commutant algebras, Gelfand-Tsetlin bases, and CFI graph isomorphism reductions.</p>
+                    <div class="module-chip-grid">
+                        <span class="module-chip">coset_state_workbench.py</span>
+                        <span class="module-chip">collective_observable_search.py</span>
+                        <span class="module-chip">coset_pgm_capacity.py</span>
+                        <span class="module-chip">coset_holevo_information.py</span>
+                        <span class="module-chip">coset_stable_fourth_moment_certificate.py</span>
+                        <span class="module-chip">coset_hidden_involution_matching_charge_*.py</span>
+                        <span class="module-chip">coset_hidden_involution_pair_gaudin_hierarchy.py</span>
+                        <span class="module-chip">symmetric_yjm_pair_fiber.py</span>
+                        <span class="module-chip">cfi_code_reduction.py</span>
+                        <span class="module-chip">cfi_structural_decoder.py</span>
+                    </div>
+                </div>
+
+                <!-- 4. Self-Dual Wreath Products & Carrier Decoders -->
+                <div class="tree-card" data-domain="wreath">
+                    <div class="tree-card-title">
+                        <h3>4. Self-Dual Wreath Product Equivariance & Carrier Algebras</h3>
+                        <span class="badge badge-green">189 Modules</span>
+                    </div>
+                    <p>Representation theory of hyperoctahedral wreath products, PGM polar audits, Racah recoupling, Walsh flatness obstructions, and MRS escape theorems.</p>
+                    <div class="module-chip-grid">
+                        <span class="module-chip">self_dual_wreath_spectrum.py</span>
+                        <span class="module-chip">self_dual_wreath_hecke_audit.py</span>
+                        <span class="module-chip">self_dual_wreath_pgm_polar_audit.py</span>
+                        <span class="module-chip">self_dual_wreath_mrs_identification_escape_theorem.py</span>
+                        <span class="module-chip">self_dual_wreath_regular_master_walsh_flatness_no_go.py</span>
+                        <span class="module-chip">self_dual_wreath_source_adaptive_walsh_collision_reduction.py</span>
+                        <span class="module-chip">self_dual_wreath_gpe_fusion_tree_cs_boundary.py</span>
+                        <span class="module-chip">self_dual_wreath_orientation_fixed_space_recoupling.py</span>
+                        <span class="module-chip">self_dual_wreath_connected_clifford_normal_form.py</span>
+                    </div>
+                </div>
+
+                <!-- 5. Linear Code Equivalence & Automorphisms -->
+                <div class="tree-card" data-domain="code">
+                    <div class="tree-card-title">
+                        <h3>5. Linear Code Equivalence & Classical Invariants</h3>
+                        <span class="badge badge-rust">128 Modules</span>
+                    </div>
+                    <p>Algebraic code equivalence testing, Goppa codes, Reed-Muller codes, Cyclic/BCH codes, support-splitting, and information-set decoders.</p>
+                    <div class="module-chip-grid">
+                        <span class="module-chip">code_equivalence_workbench.py</span>
+                        <span class="module-chip">goppa_code_search.py</span>
+                        <span class="module-chip">reed_muller_code_search.py</span>
+                        <span class="module-chip">cyclic_code_search.py</span>
+                        <span class="module-chip">bch_code_search.py</span>
+                        <span class="module-chip">quasi_cyclic_code_search.py</span>
+                        <span class="module-chip">code_structural_invariants.py</span>
+                        <span class="module-chip">code_tuple_profile_baseline.py</span>
+                        <span class="module-chip">code_schur_filtration.py</span>
+                    </div>
+                </div>
+
+                <!-- 6. Persistent Registries & Datasets -->
+                <div class="tree-card" data-domain="core">
+                    <div class="tree-card-title">
+                        <h3>6. Canonical Registries & Research Datasets</h3>
+                        <span class="badge badge-neutral">research/ Directory</span>
+                    </div>
+                    <p>Machine-readable JSON registries recording all candidate hypotheses, experimental evaluations, attack matrices, and no-go records.</p>
+                    <div class="module-chip-grid">
+                        <span class="module-chip"><strong>research/registry/candidates.json</strong> (8 active & tested candidates)</span>
+                        <span class="module-chip"><strong>research/registry/experiments.json</strong> (724 specified experiments)</span>
+                        <span class="module-chip"><strong>research/registry/experiment_results.json</strong> (728 verified results)</span>
+                        <span class="module-chip"><strong>research/registry/negative_results.json</strong> (807 retained negative results)</span>
+                        <span class="module-chip"><strong>research/registry/dequantization_checks.json</strong> (1,211 attack findings)</span>
+                        <span class="module-chip"><strong>research/progress_snapshot.json</strong> (Public website data feed)</span>
+                        <span class="module-chip"><strong>research/frontier_map.json</strong> (Active research frontiers & topologies)</span>
+                        <span class="module-chip"><strong>research/proof_debt_report.json</strong> (Formal proof debts & obligations)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Operations Band -->
+        <section class="content-section operations-band" aria-labelledby="operations-title">
+            <div>
+                <p class="eyebrow">Quick Navigation</p>
+                <h2 id="operations-title">Explore Q-Search pages</h2>
+            </div>
+            <p id="execution-copy">
+                Access interactive dashboards for live progress, research methodology, frontier data, negative results, proof debt, and repository architecture.
+            </p>
+            <div class="operations-links">
+                <a href="index.html">Live progress</a>
+                <a href="methodology.html">Methodology</a>
+                <a href="frontier.html">Frontier map</a>
+                <a href="negative-results.html">Negative results</a>
+                <a href="proof-debt.html">Proof debt</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span>Q-Search repository architecture map</span>
+        <span>No breakthrough claim is made without a proof-complete complexity separation.</span>
+    </footer>
+
+    <script>
+        let currentDomain = 'all';
+
+        function setDomainFilter(domain, btn) {
+            currentDomain = domain;
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            filterRepoMap();
+        }
+
+        function filterRepoMap() {
+            const query = document.getElementById('repo-search').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.tree-card');
+
+            cards.forEach(card => {
+                const cardDomain = card.getAttribute('data-domain');
+                const domainMatch = currentDomain === 'all' || cardDomain === currentDomain;
+                
+                const chips = card.querySelectorAll('.module-chip');
+                let chipMatchCount = 0;
+
+                chips.forEach(chip => {
+                    const text = chip.textContent.toLowerCase();
+                    if (!query || text.includes(query)) {
+                        chip.style.display = '';
+                        chipMatchCount++;
+                    } else {
+                        chip.style.display = 'none';
+                    }
+                });
+
+                const titleText = card.querySelector('h3').textContent.toLowerCase();
+                const descText = card.querySelector('p').textContent.toLowerCase();
+                const cardTextMatch = !query || titleText.includes(query) || descText.includes(query);
+
+                if (domainMatch && (cardTextMatch || chipMatchCount > 0)) {
+                    card.style.display = '';
+                    if (cardTextMatch && query) {
+                        chips.forEach(chip => chip.style.display = '');
+                    }
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>

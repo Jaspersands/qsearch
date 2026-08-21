@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive proof debt report and mathematical obligation tracker for the Q-Search quantum algorithm search program.">
+    <title>Q-Search | Proof Debt Report</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Q-Search home">
+            <span class="brand-mark" aria-hidden="true">Q</span>
+            <span>Q-Search</span>
+        </a>
+        <nav aria-label="Main site navigation">
+            <a href="index.html">Progress</a>
+            <a href="methodology.html">Methodology</a>
+            <a href="frontier.html">Frontier Map</a>
+            <a href="negative-results.html">Negative Results</a>
+            <a href="proof-debt.html" class="active">Proof Debt</a>
+            <a href="repomap.html">Repo Map</a>
+        </nav>
+        <a class="github-link" href="https://github.com/Jaspersands/qsearch" target="_blank" rel="noreferrer">GitHub</a>
+    </header>
+
+    <main id="top">
+        <section class="hero" aria-labelledby="page-title">
+            <div class="hero-copy">
+                <p class="eyebrow">Mathematical Rigor & Verification</p>
+                <h1 id="page-title">Proof Debt</h1>
+                <p class="hero-lede">
+                    A real-time ledger of open mathematical obligations, counterexample searches, and reduction requirements. No speedup or algorithmic claim can graduate while proof debts remain open.
+                </p>
+                <div class="hero-actions">
+                    <a class="primary-action" href="index.html">← Back to live progress</a>
+                    <a class="secondary-action" href="research/proof_debt_report.json" download="proof_debt_report.json">Download raw JSON</a>
+                </div>
+            </div>
+            <div class="verdict-block" aria-label="Proof debt summary">
+                <p class="eyebrow">Proof Gate Status</p>
+                <strong id="verdict-title">24 Open Debts</strong>
+                <p id="verdict-detail">All active research candidates have explicit blocking proof obligations preventing premature speedup declarations.</p>
+                <div class="updated-row">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    <span>1,184 Tracked Lemmas</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="metric-strip" aria-label="Proof debt metrics">
+            <div><strong>24</strong><span>open proof debts</span></div>
+            <div><strong>1,184</strong><span>lemmas tracked</span></div>
+            <div><strong>8</strong><span>counterexample suites</span></div>
+            <div><strong>36</strong><span>reduction edges</span></div>
+            <div><strong>0</strong><span>unverified claims</span></div>
+        </section>
+
+        <!-- Section 1: Interactive Proof Debt Explorer -->
+        <section class="content-section" id="debts">
+            <div class="section-heading compact">
+                <p class="eyebrow">Active Obligations</p>
+                <h2>Proof debt registry</h2>
+            </div>
+
+            <div class="explorer-controls">
+                <input type="text" id="debt-search" class="search-input" placeholder="Search by debt ID, candidate, blocked claim, or resolution..." oninput="filterDebts()">
+                <div class="filter-btn-group">
+                    <button class="filter-btn active" onclick="setDebtTypeFilter('all', this)">All (24)</button>
+                    <button class="filter-btn" onclick="setDebtTypeFilter('critical', this)">Priority 100</button>
+                    <button class="filter-btn" onclick="setDebtTypeFilter('dequantization', this)">Dequantization</button>
+                    <button class="filter-btn" onclick="setDebtTypeFilter('representation', this)">Representation</button>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 12px; font-family: var(--mono); font-size: 0.78rem; color: var(--muted);" id="debt-count-display">
+                Showing 24 of 24 proof debts
+            </div>
+
+            <div class="table-container" style="background: var(--white); border: 1px solid var(--line); border-radius: 4px; overflow-x: auto;">
+                <table class="data-table" id="debt-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr>
+                            <th style="min-width: 180px;">Debt ID</th>
+                            <th style="min-width: 140px;">Candidate</th>
+                            <th style="min-width: 110px;">Type</th>
+                            <th style="min-width: 80px;">Priority</th>
+                            <th style="min-width: 180px;">Blocked Claim</th>
+                            <th style="min-width: 280px;">Required Resolution</th>
+                        </tr>
+                    </thead>
+                    <tbody id="debt-table-body">
+                        <!-- Loaded dynamically via JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Section 2: Counterexample Search Spaces -->
+        <section class="content-section" id="counterexamples">
+            <div class="section-heading compact">
+                <p class="eyebrow">Active Attack Suites</p>
+                <h2>Counterexample search targets</h2>
+            </div>
+            <div id="counterexample-grid">
+                <!-- Dynamically populated or structured cards -->
+                <div class="detail-card">
+                    <div class="detail-card-header">
+                        <h3>COUNTER-DHS-GOWERS-SIEVE-CLASSICAL-RECONSTRUCTION</h3>
+                        <span class="badge badge-amber">DHS-GOWERS-SIEVE</span>
+                    </div>
+                    <p><strong>Target Claim:</strong> No polynomial-query classical method reconstructs the hidden shift under the stated access model.</p>
+                    <p><strong>Search Space:</strong> Autocorrelation, sparse Fourier/Goldreich-Levin, derivative-spectrum, low-degree, and chosen-query attacks.</p>
+                    <p><strong>Stop Condition:</strong> Stop only when every legal attack is either asymptotically bounded away or recovers the shift and yields a negative result.</p>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-card-header">
+                        <h3>COUNTER-CODE-COSET-COLLECTIVE-CLASSICAL-INVARIANT</h3>
+                        <span class="badge badge-blue">CODE-COSET-COLLECTIVE</span>
+                    </div>
+                    <p><strong>Target Claim:</strong> The coset observable is not a disguised classical invariant.</p>
+                    <p><strong>Search Space:</strong> Higher-k Weisfeiler-Leman, CFI parity pairs, graph spectra, code support splitting, tensor contractions, and canonicalization heuristics.</p>
+                    <p><strong>Stop Condition:</strong> Stop only when the observable separates a scalable family that these baselines fail to separate.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Operations Band -->
+        <section class="content-section operations-band" aria-labelledby="operations-title">
+            <div>
+                <p class="eyebrow">Quick Navigation</p>
+                <h2 id="operations-title">Explore Q-Search pages</h2>
+            </div>
+            <p id="execution-copy">
+                Access interactive dashboards for live progress, research methodology, frontier data, negative results, proof debt, and repository architecture.
+            </p>
+            <div class="operations-links">
+                <a href="index.html">Live progress</a>
+                <a href="methodology.html">Methodology</a>
+                <a href="frontier.html">Frontier map</a>
+                <a href="negative-results.html">Negative results</a>
+                <a href="repomap.html">Repository map</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span>Q-Search proof debt explorer</span>
+        <span>No breakthrough claim is made without a proof-complete complexity separation.</span>
+    </footer>
+
+    <script>
+        let proofDebts = [];
+        let currentTypeFilter = 'all';
+
+        fetch('research/proof_debt_report.json')
+            .then(res => res.json())
+            .then(data => {
+                proofDebts = data.proof_debts || [];
+                renderDebtTable(proofDebts);
+            })
+            .catch(err => {
+                console.error('Error loading proof_debt_report.json:', err);
+                document.getElementById('debt-table-body').innerHTML = `
+                    <tr><td colspan="6" style="text-align: center; color: var(--rust); padding: 24px;">
+                        Failed to load research/proof_debt_report.json
+                    </td></tr>`;
+            });
+
+        function renderDebtTable(debts) {
+            const tbody = document.getElementById('debt-table-body');
+            if (!debts || debts.length === 0) {
+                tbody.innerHTML = `<tr><td colspan="6" style="text-align: center; color: var(--muted); padding: 24px;">No matching proof debts found.</td></tr>`;
+                document.getElementById('debt-count-display').textContent = 'Showing 0 proof debts';
+                return;
+            }
+
+            tbody.innerHTML = debts.map(d => {
+                const priorityBadge = d.priority_score >= 90 ? 'badge-rust' : (d.priority_score >= 70 ? 'badge-amber' : 'badge-neutral');
+                const typeBadge = d.debt_type === 'dequantization' ? 'badge-amber' : 'badge-blue';
+                return `
+                    <tr data-id="${d.id}" data-candidate="${d.candidate_id}" data-type="${d.debt_type}" data-priority="${d.priority_score}">
+                        <td><strong style="font-family: var(--mono); font-size: 0.78rem;">${d.id}</strong></td>
+                        <td><span class="badge badge-neutral">${d.candidate_id}</span></td>
+                        <td><span class="badge ${typeBadge}">${d.debt_type}</span></td>
+                        <td><span class="badge ${priorityBadge}">${d.priority_score}</span></td>
+                        <td><code style="font-size: 0.76rem; color: var(--rust);">${d.claim_blocked}</code></td>
+                        <td style="font-size: 0.84rem;">${d.required_resolution}</td>
+                    </tr>
+                `;
+            }).join('');
+
+            document.getElementById('debt-count-display').textContent = `Showing ${debts.length} of ${proofDebts.length} proof debts`;
+        }
+
+        function setDebtTypeFilter(filter, btn) {
+            currentTypeFilter = filter;
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            filterDebts();
+        }
+
+        function filterDebts() {
+            const q = document.getElementById('debt-search').value.toLowerCase().trim();
+            const filtered = proofDebts.filter(d => {
+                const matchesType = currentTypeFilter === 'all' ||
+                    (currentTypeFilter === 'critical' && d.priority_score >= 90) ||
+                    (currentTypeFilter === 'dequantization' && d.debt_type === 'dequantization') ||
+                    (currentTypeFilter === 'representation' && d.debt_type.includes('representation'));
+                
+                const matchesQuery = !q ||
+                    d.id.toLowerCase().includes(q) ||
+                    d.candidate_id.toLowerCase().includes(q) ||
+                    d.claim_blocked.toLowerCase().includes(q) ||
+                    d.required_resolution.toLowerCase().includes(q) ||
+                    (d.evidence && d.evidence.toLowerCase().includes(q));
+
+                return matchesType && matchesQuery;
+            });
+
+            renderDebtTable(filtered);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive database of 807 retained negative results, no-go theorems, and dequantization findings for the Q-Search quantum algorithm search program.">
+    <title>Q-Search | Negative Results Explorer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="site/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="index.html" aria-label="Q-Search home">
+            <span class="brand-mark" aria-hidden="true">Q</span>
+            <span>Q-Search</span>
+        </a>
+        <nav aria-label="Main site navigation">
+            <a href="index.html">Progress</a>
+            <a href="methodology.html">Methodology</a>
+            <a href="frontier.html">Frontier Map</a>
+            <a href="negative-results.html" class="active">Negative Results</a>
+            <a href="proof-debt.html">Proof Debt</a>
+            <a href="repomap.html">Repo Map</a>
+        </nav>
+        <a class="github-link" href="https://github.com/Jaspersands/qsearch" target="_blank" rel="noreferrer">GitHub</a>
+    </header>
+
+    <main id="top">
+        <section class="hero" aria-labelledby="page-title">
+            <div class="hero-copy">
+                <p class="eyebrow">Negative-Result First Methodology</p>
+                <h1 id="page-title">Negative Results</h1>
+                <p class="hero-lede">
+                    A permanent catalog of 807 verified negative results, no-go theorems, and dequantization attacks. Every failed hypothesis and structural barrier is indexed to prevent cyclical research dead-ends.
+                </p>
+                <div class="hero-actions">
+                    <a class="primary-action" href="index.html">← Back to live progress</a>
+                    <a class="secondary-action" href="research/registry/negative_results.json" download="negative_results.json">Download raw JSON (807 records)</a>
+                </div>
+            </div>
+            <div class="verdict-block" aria-label="Negative results summary">
+                <p class="eyebrow">Registry Memory</p>
+                <strong id="verdict-title">807 Retained Records</strong>
+                <p id="verdict-detail">Negative results are first-class scientific assets. Over 1,200 classical attack findings ensure zero toy benchmarks are mistaken for speedups.</p>
+                <div class="updated-row">
+                    <span class="status-dot" aria-hidden="true"></span>
+                    <span>100% Machine-Verifiable</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="metric-strip" aria-label="Negative results metrics">
+            <div><strong id="metric-neg-count">807</strong><span>negative results</span></div>
+            <div><strong>1,211</strong><span>attack findings</span></div>
+            <div><strong>0</strong><span>erased dead-ends</span></div>
+            <div><strong>100%</strong><span>reproducible</span></div>
+            <div><strong>0</strong><span>toy claims promoted</span></div>
+        </section>
+
+        <!-- Section 1: Interactive Negative Results Explorer -->
+        <section class="content-section" id="explorer">
+            <div class="section-heading compact">
+                <p class="eyebrow">Searchable Database</p>
+                <h2>Negative results & no-go theorems</h2>
+            </div>
+
+            <div class="explorer-controls">
+                <input type="text" id="neg-search" class="search-input" placeholder="Search 807 records by claim, lesson, reason, or module source..." oninput="filterNegatives()">
+                <div class="filter-btn-group">
+                    <button class="filter-btn active" onclick="setCandidateFilter('all', this)">All (807)</button>
+                    <button class="filter-btn" onclick="setCandidateFilter('DHS-GOWERS-SIEVE', this)">DHS-GOWERS-SIEVE</button>
+                    <button class="filter-btn" onclick="setCandidateFilter('CODE-COSET-COLLECTIVE', this)">CODE-COSET-COLLECTIVE</button>
+                    <button class="filter-btn" onclick="setCandidateFilter('PO-DEQUANTIZATION', this)">Dequantization</button>
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; font-family: var(--mono); font-size: 0.78rem; color: var(--muted);">
+                <span id="neg-count-display">Loading records...</span>
+                <span id="pagination-info">Page 1</span>
+            </div>
+
+            <div id="neg-card-container">
+                <!-- Dynamically populated via JavaScript -->
+                <div style="text-align: center; padding: 40px; color: var(--muted); font-family: var(--mono);">
+                    Loading 807 negative-result records from registry...
+                </div>
+            </div>
+
+            <div style="display: flex; justify-content: center; gap: 12px; margin-top: 24px;" id="pagination-controls">
+                <button class="filter-btn" id="prev-page-btn" onclick="prevPage()" disabled>← Previous 20</button>
+                <button class="filter-btn" id="next-page-btn" onclick="nextPage()">Next 20 →</button>
+            </div>
+        </section>
+
+        <!-- Operations Band -->
+        <section class="content-section operations-band" aria-labelledby="operations-title">
+            <div>
+                <p class="eyebrow">Quick Navigation</p>
+                <h2 id="operations-title">Explore Q-Search pages</h2>
+            </div>
+            <p id="execution-copy">
+                Access interactive dashboards for live progress, research methodology, frontier data, negative results, proof debt, and repository architecture.
+            </p>
+            <div class="operations-links">
+                <a href="index.html">Live progress</a>
+                <a href="methodology.html">Methodology</a>
+                <a href="frontier.html">Frontier map</a>
+                <a href="proof-debt.html">Proof debt</a>
+                <a href="repomap.html">Repository map</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span>Q-Search negative results database</span>
+        <span>No breakthrough claim is made without a proof-complete complexity separation.</span>
+    </footer>
+
+    <script>
+        let allNegatives = [];
+        let filteredNegatives = [];
+        let currentPage = 1;
+        const pageSize = 20;
+        let activeCandidateFilter = 'all';
+
+        fetch('research/registry/negative_results.json')
+            .then(res => res.json())
+            .then(data => {
+                allNegatives = data || [];
+                document.getElementById('metric-neg-count').textContent = allNegatives.length;
+                filteredNegatives = allNegatives;
+                renderPage();
+            })
+            .catch(err => {
+                console.error('Error loading negative_results.json:', err);
+                document.getElementById('neg-card-container').innerHTML = `
+                    <div style="text-align: center; color: var(--rust); padding: 32px;">
+                        Failed to load research/registry/negative_results.json
+                    </div>`;
+            });
+
+        function setCandidateFilter(filter, btn) {
+            activeCandidateFilter = filter;
+            document.querySelectorAll('.filter-btn-group .filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentPage = 1;
+            filterNegatives();
+        }
+
+        function filterNegatives() {
+            const q = document.getElementById('neg-search').value.toLowerCase().trim();
+            filteredNegatives = allNegatives.filter(item => {
+                const appliesTo = item.applies_to || [];
+                const matchesCandidate = activeCandidateFilter === 'all' || appliesTo.some(a => a.includes(activeCandidateFilter));
+
+                const matchesQuery = !q ||
+                    item.id.toLowerCase().includes(q) ||
+                    (item.claim && item.claim.toLowerCase().includes(q)) ||
+                    (item.reason_invalid && item.reason_invalid.toLowerCase().includes(q)) ||
+                    (item.lesson && item.lesson.toLowerCase().includes(q)) ||
+                    (item.source && item.source.toLowerCase().includes(q));
+
+                return matchesCandidate && matchesQuery;
+            });
+
+            currentPage = 1;
+            renderPage();
+        }
+
+        function renderPage() {
+            const container = document.getElementById('neg-card-container');
+            const total = filteredNegatives.length;
+            const totalPages = Math.max(1, Math.ceil(total / pageSize));
+
+            if (currentPage > totalPages) currentPage = totalPages;
+            if (currentPage < 1) currentPage = 1;
+
+            document.getElementById('neg-count-display').textContent = `Showing ${total === 0 ? 0 : (currentPage - 1) * pageSize + 1}–${Math.min(currentPage * pageSize, total)} of ${total} records`;
+            document.getElementById('pagination-info').textContent = `Page ${currentPage} of ${totalPages}`;
+
+            document.getElementById('prev-page-btn').disabled = currentPage <= 1;
+            document.getElementById('next-page-btn').disabled = currentPage >= totalPages;
+
+            if (total === 0) {
+                container.innerHTML = `<div style="text-align: center; padding: 40px; color: var(--muted); font-family: var(--mono);">No negative results match the query.</div>`;
+                return;
+            }
+
+            const start = (currentPage - 1) * pageSize;
+            const pageItems = filteredNegatives.slice(start, start + pageSize);
+
+            container.innerHTML = pageItems.map(item => {
+                const appliesBadges = (item.applies_to || []).map(a => `<span class="badge badge-neutral">${escapeHtml(a)}</span>`).join(' ');
+                return `
+                    <div class="detail-card">
+                        <div class="detail-card-header">
+                            <div>
+                                <h3 style="color: var(--rust); font-size: 0.95rem;">${escapeHtml(item.id)}</h3>
+                                <div style="display: flex; gap: 6px; margin-top: 6px; flex-wrap: wrap;">
+                                    ${appliesBadges}
+                                    <span class="badge badge-blue">Source: ${escapeHtml(item.source)}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p><strong>Claim Tested:</strong> ${escapeHtml(item.claim)}</p>
+                        <p><strong>Why Invalid:</strong> ${escapeHtml(item.reason_invalid)}</p>
+                        <div style="background: var(--amber-soft); border-left: 3px solid var(--amber); padding: 10px 14px; border-radius: 0 4px 4px 0; margin-top: 10px;">
+                            <strong style="font-size: 0.82rem; color: #6b4408;">Lesson Learned:</strong>
+                            <p style="margin: 4px 0 0; font-size: 0.84rem; color: #4e3206;">${escapeHtml(item.lesson)}</p>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function prevPage() {
+            if (currentPage > 1) {
+                currentPage--;
+                renderPage();
+                document.getElementById('explorer').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function nextPage() {
+            const totalPages = Math.ceil(filteredNegatives.length / pageSize);
+            if (currentPage < totalPages) {
+                currentPage++;
+                renderPage();
+                document.getElementById('explorer').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        function escapeHtml(str) {
+            return String(str || '')
+                .replaceAll('&', '&amp;')
+                .replaceAll('<', '&lt;')
+                .replaceAll('>', '&gt;')
+                .replaceAll('"', '&quot;')
+                .replaceAll("'", '&#039;');
+        }
+    </script>
+</body>
+</html>

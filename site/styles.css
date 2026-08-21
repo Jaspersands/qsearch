@@ -66,7 +66,9 @@ a { color: inherit; }
 nav {
     display: flex;
     justify-content: center;
-    gap: 24px;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 nav a,
@@ -75,10 +77,17 @@ nav a,
     font-size: 0.82rem;
     font-weight: 700;
     text-decoration: none;
+    transition: color 0.15s ease;
 }
 
 nav a:hover,
 .github-link:hover { color: var(--ink); }
+
+nav a.active {
+    color: var(--ink);
+    border-bottom: 2px solid var(--green);
+    padding-bottom: 2px;
+}
 
 .github-link {
     color: var(--white);
@@ -578,6 +587,150 @@ h3 {
     max-height: 480px;
     overflow: auto;
     border: 1px solid #232722;
+}
+
+/* Data Explorer & Filter Bar Components */
+.explorer-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding: 16px 20px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+}
+
+.search-input {
+    flex: 1 1 280px;
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    font-family: var(--sans);
+    font-size: 0.88rem;
+    background: var(--paper);
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.15s ease;
+}
+
+.search-input:focus {
+    border-color: var(--green);
+    background: var(--white);
+}
+
+.filter-btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.filter-btn {
+    padding: 6px 12px;
+    border: 1px solid var(--line);
+    background: var(--paper);
+    color: var(--muted);
+    border-radius: 3px;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.filter-btn:hover {
+    color: var(--ink);
+    border-color: var(--ink);
+}
+
+.filter-btn.active {
+    background: var(--ink);
+    color: var(--white);
+    border-color: var(--ink);
+}
+
+.badge {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 3px;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.badge-green { color: var(--green); background: var(--green-soft); }
+.badge-rust { color: var(--rust); background: var(--rust-soft); }
+.badge-amber { color: var(--amber); background: var(--amber-soft); }
+.badge-blue { color: var(--blue); background: #e8f0f6; }
+.badge-neutral { color: var(--muted); background: #ecefe9; }
+
+.tree-card {
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    padding: 24px;
+    margin-bottom: 20px;
+}
+
+.tree-card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--line);
+}
+
+.tree-card-title h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    font-family: var(--mono);
+}
+
+.module-chip-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.module-chip {
+    padding: 4px 10px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 3px;
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    color: #2b3028;
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+
+.module-chip:hover {
+    background: var(--white);
+    border-color: var(--green);
+    color: var(--green);
+}
+
+.copy-btn {
+    padding: 4px 8px;
+    background: #282e25;
+    color: #cdd4c9;
+    border: 1px solid #3c4438;
+    border-radius: 3px;
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.copy-btn:hover {
+    background: #3c4438;
+    color: #ffffff;
 }
 
 footer {
