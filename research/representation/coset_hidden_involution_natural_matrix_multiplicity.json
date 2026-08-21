@@ -1,0 +1,280 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "Resolved negatively: blocks below |S_n|^(k/4) multiplicity have super-exponentially vanishing source fraction.",
+      "challenge": "Non-multiplicity-free blocks might have negligible source mass.",
+      "resolved": true
+    },
+    {
+      "answer": "The exact size-bias law and the x<=3/2 flat window transfer all but at most 3/32 plus 1.5 delta_low.",
+      "challenge": "Source dimension mass need not transfer to the alternative.",
+      "resolved": true
+    },
+    {
+      "answer": "Not proved. Most B-fixed directions could be kernel or admit a succinct structured basis.",
+      "challenge": "Huge m_B means the polar has huge occupied rank.",
+      "resolved": true
+    },
+    {
+      "answer": "False: representation-theoretic transforms routinely act on exponentially large spaces with polynomial circuits.",
+      "challenge": "Large matrix blocks imply quantum hardness.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "binary_hidden_involution_detector_constructed": false,
+    "low_multiplicity_blocks_negligible_on_alternative": true,
+    "matrix_cosine_sine_transform_compiled": false,
+    "natural_matrix_multiplicity_mass_proved": true,
+    "occupied_cosine_sine_rank_lower_bound_proved": false,
+    "reason": "Natural signal reaches enormous matrix multiplicity blocks, but their occupied principal-angle rank and efficient transform remain open.",
+    "scalar_spherical_transform_sufficient": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-20T17:21:56.454850+00:00",
+  "dimension_sum_controls": [
+    {
+      "exact_irrep_dimension_sum": 4,
+      "involution_recurrence_count": 4,
+      "n": 3,
+      "partition_count": 3,
+      "robinson_schensted_dimension_sum_verified": true,
+      "status": "exact-robinson-schensted-dimension-sum-verified"
+    },
+    {
+      "exact_irrep_dimension_sum": 10,
+      "involution_recurrence_count": 10,
+      "n": 4,
+      "partition_count": 5,
+      "robinson_schensted_dimension_sum_verified": true,
+      "status": "exact-robinson-schensted-dimension-sum-verified"
+    },
+    {
+      "exact_irrep_dimension_sum": 26,
+      "involution_recurrence_count": 26,
+      "n": 5,
+      "partition_count": 7,
+      "robinson_schensted_dimension_sum_verified": true,
+      "status": "exact-robinson-schensted-dimension-sum-verified"
+    },
+    {
+      "exact_irrep_dimension_sum": 76,
+      "involution_recurrence_count": 76,
+      "n": 6,
+      "partition_count": 11,
+      "robinson_schensted_dimension_sum_verified": true,
+      "status": "exact-robinson-schensted-dimension-sum-verified"
+    },
+    {
+      "exact_irrep_dimension_sum": 232,
+      "involution_recurrence_count": 232,
+      "n": 7,
+      "partition_count": 15,
+      "robinson_schensted_dimension_sum_verified": true,
+      "status": "exact-robinson-schensted-dimension-sum-verified"
+    },
+    {
+      "exact_irrep_dimension_sum": 764,
+      "involution_recurrence_count": 764,
+      "n": 8,
+      "partition_count": 22,
+      "robinson_schensted_dimension_sum_verified": true,
+      "status": "exact-robinson-schensted-dimension-sum-verified"
+    }
+  ],
+  "falsifiers_triggered": [
+    "Finite non-Gelfand witnesses were not enough; the natural-mass counting theorem is required.",
+    "Scalar spherical processing cannot be justified by trimming all high-multiplicity source blocks.",
+    "Ambient multiplicity alone does not certify occupied rank or computational hardness."
+  ],
+  "headline_metrics": {
+    "constant_high_multiplicity_alternative_mass_scaling_count": 7,
+    "matrix_cosine_sine_transform_compiler_count": 0,
+    "minimum_high_multiplicity_alternative_mass_lower_bound": 0.9028788830427265,
+    "new_quantum_algorithm_count": 0,
+    "occupied_cosine_sine_rank_theorem_count": 0,
+    "robinson_schensted_control_count": 6,
+    "robinson_schensted_control_failure_count": 0,
+    "tail_low_multiplicity_fraction_log2_upper_bound": -59864.26431114596,
+    "tail_multiplicity_threshold_log2": 64991.67627908869
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-HIDDEN-INVOLUTION-OCCUPIED-CS-RANK",
+      "resolved": false,
+      "statement": "Lower-bound the rank or entropy of the nonzero principal-angle spectrum inside naturally occupied high-multiplicity L blocks."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-MATRIX-CS-BASIS",
+      "resolved": false,
+      "statement": "Construct a succinct basis and direct Cosine-Sine transform for the A/B invariant spaces, or prove a natural access obstruction."
+    }
+  ],
+  "scaling_records": [
+    {
+      "candidate_count_decimal": "105",
+      "copy_count": 13,
+      "degree": 8,
+      "flat_alternative_mass_lower_bound": 0.90625,
+      "group_order_log2": 15.29920801838728,
+      "half_degree": 4,
+      "high_multiplicity_alternative_mass_lower_bound": 0.9028788830427265,
+      "high_multiplicity_blocks_carry_constant_alternative_mass": true,
+      "high_multiplicity_threshold_superpolynomial": true,
+      "low_multiplicity_source_fraction_log2_upper_bound": -8.797520104441588,
+      "low_multiplicity_source_fraction_upper_bound": 0.0022474113048490084,
+      "multiplicity_threshold_formula": "T=|S_n|^(k/4)",
+      "multiplicity_threshold_log2": 49.72242605975866,
+      "occupied_cosine_sine_rank_lower_bound_proved": false,
+      "source_module_dimension_log2": 192.60394975670076,
+      "status": "constant-alternative-mass-in-huge-matrix-blocks",
+      "symmetric_group_involution_count_decimal": "764",
+      "symmetric_group_involution_count_log2": 9.57742882803575
+    },
+    {
+      "candidate_count_decimal": "10395",
+      "copy_count": 20,
+      "degree": 12,
+      "flat_alternative_mass_lower_bound": 0.90625,
+      "group_order_log2": 28.835455234075408,
+      "half_degree": 6,
+      "high_multiplicity_alternative_mass_lower_bound": 0.90625,
+      "high_multiplicity_blocks_carry_constant_alternative_mass": true,
+      "high_multiplicity_threshold_superpolynomial": true,
+      "low_multiplicity_source_fraction_log2_upper_bound": -66.84614171172495,
+      "low_multiplicity_source_fraction_upper_bound": 7.538869929644467e-21,
+      "multiplicity_threshold_formula": "T=|S_n|^(k/4)",
+      "multiplicity_threshold_log2": 144.17727617037704,
+      "occupied_cosine_sine_rank_lower_bound_proved": false,
+      "source_module_dimension_log2": 570.0527068192539,
+      "status": "constant-alternative-mass-in-huge-matrix-blocks",
+      "symmetric_group_involution_count_decimal": "140152",
+      "symmetric_group_involution_count_log2": 17.096632806531044
+    },
+    {
+      "candidate_count_decimal": "2027025",
+      "copy_count": 27,
+      "degree": 16,
+      "flat_alternative_mass_lower_bound": 0.90625,
+      "group_order_log2": 44.25014046988262,
+      "half_degree": 8,
+      "high_multiplicity_alternative_mass_lower_bound": 0.90625,
+      "high_multiplicity_blocks_carry_constant_alternative_mass": true,
+      "high_multiplicity_threshold_superpolynomial": true,
+      "low_multiplicity_source_fraction_log2_upper_bound": -177.09148125884826,
+      "low_multiplicity_source_fraction_upper_bound": 4.8995045410040424e-54,
+      "multiplicity_threshold_formula": "T=|S_n|^(k/4)",
+      "multiplicity_threshold_log2": 298.6884481717077,
+      "occupied_cosine_sine_rank_lower_bound_proved": false,
+      "source_module_dimension_log2": 1188.7047251383262,
+      "status": "constant-alternative-mass-in-huge-matrix-blocks",
+      "symmetric_group_involution_count_decimal": "46206736",
+      "symmetric_group_involution_count_log2": 25.46159984670608
+    },
+    {
+      "candidate_count_decimal": "316234143225",
+      "copy_count": 45,
+      "degree": 24,
+      "flat_alternative_mass_lower_bound": 0.90625,
+      "group_order_log2": 79.03765741910046,
+      "half_degree": 12,
+      "high_multiplicity_alternative_mass_lower_bound": 0.90625,
+      "high_multiplicity_blocks_carry_constant_alternative_mass": true,
+      "high_multiplicity_threshold_superpolynomial": true,
+      "low_multiplicity_source_fraction_log2_upper_bound": -637.1014346344527,
+      "low_multiplicity_source_fraction_upper_bound": 1.6343982720613998e-192,
+      "multiplicity_threshold_formula": "T=|S_n|^(k/4)",
+      "multiplicity_threshold_log2": 889.1736459648802,
+      "occupied_cosine_sine_rank_lower_bound_proved": false,
+      "source_module_dimension_log2": 3549.8967860445455,
+      "status": "constant-alternative-mass-in-huge-matrix-blocks",
+      "symmetric_group_involution_count_decimal": "17492190577600",
+      "symmetric_group_involution_count_log2": 43.99177620533071
+    },
+    {
+      "candidate_count_decimal": "191898783962510625",
+      "copy_count": 64,
+      "degree": 32,
+      "flat_alternative_mass_lower_bound": 0.90625,
+      "group_order_log2": 117.6632636523603,
+      "half_degree": 16,
+      "high_multiplicity_alternative_mass_lower_bound": 0.90625,
+      "high_multiplicity_blocks_carry_constant_alternative_mass": true,
+      "high_multiplicity_threshold_superpolynomial": true,
+      "low_multiplicity_source_fraction_log2_upper_bound": -1462.7024297191329,
+      "low_multiplicity_source_fraction_upper_bound": 0.0,
+      "multiplicity_threshold_formula": "T=|S_n|^(k/4)",
+      "multiplicity_threshold_log2": 1882.6122184377648,
+      "occupied_cosine_sine_rank_lower_bound_proved": false,
+      "source_module_dimension_log2": 7523.861996933537,
+      "status": "constant-alternative-mass-in-huge-matrix-blocks",
+      "symmetric_group_involution_count_decimal": "22481059424730751232",
+      "symmetric_group_involution_count_log2": 64.28534382733291
+    },
+    {
+      "candidate_count_decimal": "112275575285571389562324404930670903477890625",
+      "copy_count": 153,
+      "degree": 64,
+      "flat_alternative_mass_lower_bound": 0.90625,
+      "group_order_log2": 295.9951439417241,
+      "half_degree": 32,
+      "high_multiplicity_alternative_mass_lower_bound": 0.90625,
+      "high_multiplicity_blocks_carry_constant_alternative_mass": true,
+      "high_multiplicity_threshold_superpolynomial": true,
+      "low_multiplicity_source_fraction_log2_upper_bound": -9847.915244131756,
+      "low_multiplicity_source_fraction_upper_bound": 0.0,
+      "multiplicity_threshold_formula": "T=|S_n|^(k/4)",
+      "multiplicity_threshold_log2": 11321.814255770947,
+      "occupied_cosine_sine_rank_lower_bound_proved": false,
+      "source_module_dimension_log2": 45280.58890337315,
+      "status": "constant-alternative-mass-in-huge-matrix-blocks",
+      "symmetric_group_involution_count_decimal": "135041388282796985771272553475002706667235246080",
+      "symmetric_group_involution_count_log2": 156.56402210045746
+    },
+    {
+      "candidate_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "copy_count": 363,
+      "degree": 128,
+      "flat_alternative_mass_lower_bound": 0.90625,
+      "group_order_log2": 716.161722083622,
+      "half_degree": 64,
+      "high_multiplicity_alternative_mass_lower_bound": 0.90625,
+      "high_multiplicity_blocks_carry_constant_alternative_mass": true,
+      "high_multiplicity_threshold_superpolynomial": true,
+      "low_multiplicity_source_fraction_log2_upper_bound": -59864.26431114596,
+      "low_multiplicity_source_fraction_upper_bound": 0.0,
+      "multiplicity_threshold_formula": "T=|S_n|^(k/4)",
+      "multiplicity_threshold_log2": 64991.67627908869,
+      "occupied_cosine_sine_rank_lower_bound_proved": false,
+      "source_module_dimension_log2": 259959.87169449666,
+      "status": "constant-alternative-mass-in-huge-matrix-blocks",
+      "symmetric_group_involution_count_decimal": "5391278204075391354568253023229655921370142671388586075937736698667444395805138812903649656844450530044101525504",
+      "symmetric_group_involution_count_log2": 371.1646458908297
+    }
+  ],
+  "status": "natural-huge-matrix-multiplicity-mass-proved-occupied-rank-open",
+  "summary": "Proved by exact module counting and alternative size bias that huge B-fixed matrix blocks carry constant natural mass, eliminating the possibility that non-scalar double-coset structure is negligible.",
+  "theorem": {
+    "alternative_transfer": "The alternative is the x-size-biased source law, and at least 29/32 of its mass has x<=3/2, giving high-block mass at least 29/32-(3/2)delta_low.",
+    "binary_hidden_involution_detector_constructed": false,
+    "block_multiplicity": "Each L-irrep pi occurs with m_B(pi)=dim(pi^B).",
+    "conclusion": "Huge matrix B-fixed spaces carry constant natural alternative mass; they cannot be discarded as exceptional sectors.",
+    "constant_alternative_mass_in_huge_multiplicity_blocks_proved": true,
+    "exact_dimension_bound_proved": true,
+    "involution_dimension_sum": "Robinson--Schensted gives sum_lambda d_lambda=I_n, the exact number of involutions in S_n.",
+    "low_multiplicity_dimension_bound": "The source fraction in m_B<=T blocks is at most T (sum_lambda d_lambda)^(k+1)/|L:B|.",
+    "matrix_cosine_sine_transform_compiled": false,
+    "natural_threshold": "At k=ceil(log2(64M)), set T=|S_n|^(k/4); the low-multiplicity source fraction vanishes super-exponentially.",
+    "occupied_cosine_sine_rank_lower_bound_proved": false,
+    "robinson_schensted_sum_used": true,
+    "scope_limit": "No lower bound is proved on occupied Cosine-Sine rank inside a block, transform complexity, or classical simulation.",
+    "source_module": "The source is Ind_B^L(1) with dimension M(|S_n|/2)^k.",
+    "status": "natural-huge-matrix-multiplicity-mass-proved-occupied-rank-open",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "flatness_dependency": "Uses the proved 29/32 alternative x-size-biased flatness at k=ceil(log2(64M)).",
+    "module_law": "Fourier block weights are representation dimensions times B-fixed multiplicities in the exact permutation module L/B.",
+    "threshold_scope": "The multiplicity threshold is a counting theorem, not a claim that all those directions are in the synthesis support."
+  }
+}

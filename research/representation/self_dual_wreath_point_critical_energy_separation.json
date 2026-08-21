@@ -1,0 +1,281 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False. The spiky simplex has that exact S but only (n-1)/sqrt(nD) optimal excess.",
+      "challenge": "S=n-1 forces inverse-polynomial point advantage.",
+      "resolved": true
+    },
+    {
+      "answer": "False. The flat partition ensemble has the same S and perfect success.",
+      "challenge": "S=n-1 is necessarily operationally useless.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Its exact excess is a relative collision weighted by B^-1/2.",
+      "challenge": "The PGM is determined by ambient Hilbert--Schmidt energy.",
+      "resolved": true
+    },
+    {
+      "answer": "Too strong. It rules out only an inference from the existing energy theorem; the natural relative operator remains open.",
+      "challenge": "The counterexample rules out the natural point route.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "classical_separation_proved": false,
+    "critical_ambient_energy_determines_point_advantage": false,
+    "critical_energy_alone_supports_algorithmic_progress": false,
+    "critical_harmonic_naimark_compiled": false,
+    "full_hidden_permutation_decoder_constructed": false,
+    "natural_critical_relative_collision_proved": false,
+    "natural_signal_weighted_spectral_window_proved": false,
+    "reason": "The factor-two ambient-energy phase transition is operationally underdetermined. Only a natural-family relative-spectrum theorem can distinguish useful flat signal from a spiky false positive.",
+    "relative_collision_is_correct_pgm_scalar": true,
+    "same_energy_allows_perfect_or_negligible_optimal_success": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-21T03:20:59.949399+00:00",
+  "falsifiers_triggered": [
+    "Critical normalized Hilbert--Schmidt energy cannot be promoted to point advantage.",
+    "Critical normalized Hilbert--Schmidt energy cannot be promoted to a no-go either.",
+    "Global average-state purity or top norm is not a substitute for signal-weighted relative spectrum.",
+    "Future critical work must evaluate relative child-star collision before attempting a decoder claim."
+  ],
+  "finite_controls": [
+    {
+      "ambient_dimension": 384,
+      "common_normalized_energy": 2.0,
+      "flat_optimal_success": 1.0,
+      "flat_perfectly_distinguishable": true,
+      "flat_relative_collision": 2.0000000000000124,
+      "n": 3,
+      "normalized_energy_residual": 6.661338147750939e-16,
+      "predicted_spiky_optimal_success": 0.3922588984322123,
+      "same_energy_opposite_operational_behavior_verified": true,
+      "spiky_excess_smaller_than_inverse_dimension_quarter": true,
+      "spiky_optimal_success": 0.39225889843221234,
+      "spiky_relative_collision": 0.015624999999999995,
+      "spiky_success_formula_residual": 5.551115123125783e-17,
+      "status": "same-critical-energy-perfect-versus-negligible-success"
+    },
+    {
+      "ambient_dimension": 24576,
+      "common_normalized_energy": 3.0,
+      "flat_optimal_success": 1.0,
+      "flat_perfectly_distinguishable": true,
+      "flat_relative_collision": 2.9999999999986184,
+      "n": 4,
+      "normalized_energy_residual": 1.1546319456101628e-14,
+      "predicted_spiky_optimal_success": 0.25956831930774676,
+      "same_energy_opposite_operational_behavior_verified": true,
+      "spiky_excess_smaller_than_inverse_dimension_quarter": true,
+      "spiky_optimal_success": 0.25956831930774676,
+      "spiky_relative_collision": 0.00048828124999999816,
+      "spiky_success_formula_residual": 0.0,
+      "status": "same-critical-energy-perfect-versus-negligible-success"
+    }
+  ],
+  "headline_metrics": {
+    "exact_pgm_relative_collision_identity_count": 1,
+    "factorially_small_success_same_energy_family_count": 1,
+    "finite_control_count": 2,
+    "finite_control_failure_count": 0,
+    "natural_harmonic_measurement_count": 0,
+    "natural_relative_collision_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "perfect_success_same_energy_family_count": 1,
+    "same_energy_operational_separation_theorem_count": 1,
+    "tail_n": 512,
+    "tail_spiky_optimal_excess_log2": -5808.585881490663
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-POINT-CRITICAL-RELATIVE-COLLISION",
+      "resolved": false,
+      "statement": "Bound the natural critical average of Tr(B^-1/2 Delta_j B^-1/2 Delta_j) on typical public labels."
+    },
+    {
+      "id": "PO-POINT-CRITICAL-SIGNAL-WEIGHTED-SPECTRUM",
+      "resolved": false,
+      "statement": "Locate critical Delta mass across the eigenvalue windows of B; a global top-eigenvalue or purity bound is insufficient."
+    },
+    {
+      "id": "PO-POINT-CRITICAL-HARMONIC-NAIMARK",
+      "resolved": false,
+      "statement": "Compile the information-carrying child-star relative effect without factorial scalar amplification."
+    }
+  ],
+  "scaling_records": [
+    {
+      "common_normalized_energy": 4.0,
+      "critical_copy_count": 14,
+      "flat_normalized_average_top_eigenvalue": 1.0,
+      "flat_optimal_success": 1.0,
+      "flat_relative_collision": 4.0,
+      "hidden_label_count_decimal": "120",
+      "n": 5,
+      "natural_harmonic_measurement_compiled": false,
+      "natural_relative_collision_proved": false,
+      "retained_dimension_decimal": "1966080",
+      "retained_dimension_log2": 20.90689059560852,
+      "spiky_excess_superpolynomially_small": true,
+      "spiky_normalized_average_top_eigenvalue_log2": 18.584962500721158,
+      "spiky_optimal_excess": 0.0012757759076995718,
+      "spiky_optimal_excess_log2": -9.61440934524794,
+      "spiky_relative_collision_log2": -16.584962500721158,
+      "status": "critical-energy-underdetermined-relative-spectrum-required"
+    },
+    {
+      "common_normalized_energy": 7.0,
+      "critical_copy_count": 31,
+      "flat_normalized_average_top_eigenvalue": 1.0,
+      "flat_optimal_success": 1.0,
+      "flat_relative_collision": 7.0,
+      "hidden_label_count_decimal": "40320",
+      "n": 8,
+      "natural_harmonic_measurement_compiled": false,
+      "natural_relative_collision_proved": false,
+      "retained_dimension_decimal": "86586540687360",
+      "retained_dimension_log2": 46.299208018387276,
+      "spiky_excess_superpolynomially_small": true,
+      "spiky_normalized_average_top_eigenvalue_log2": 43.299208018387276,
+      "spiky_optimal_excess": 2.6596705962310705e-07,
+      "spiky_optimal_excess_log2": -21.842249087136032,
+      "spiky_relative_collision_log2": -40.49185309632967,
+      "status": "critical-energy-underdetermined-relative-spectrum-required"
+    },
+    {
+      "common_normalized_energy": 15.0,
+      "critical_copy_count": 89,
+      "flat_normalized_average_top_eigenvalue": 1.0,
+      "flat_optimal_success": 1.0,
+      "flat_relative_collision": 15.0,
+      "hidden_label_count_decimal": "20922789888000",
+      "n": 16,
+      "natural_harmonic_measurement_compiled": false,
+      "natural_relative_collision_proved": false,
+      "retained_dimension_decimal": "12950579667955238580947028266981523456000",
+      "retained_dimension_log2": 133.25014046988264,
+      "spiky_excess_superpolynomially_small": true,
+      "spiky_normalized_average_top_eigenvalue_log2": 129.25014046988264,
+      "spiky_optimal_excess": 3.295237063845612e-20,
+      "spiky_optimal_excess_log2": -64.7181796393328,
+      "spiky_relative_collision_log2": -125.34324987427412,
+      "status": "critical-energy-underdetermined-relative-spectrum-required"
+    },
+    {
+      "common_normalized_energy": 31.0,
+      "critical_copy_count": 236,
+      "flat_normalized_average_top_eigenvalue": 1.0,
+      "flat_optimal_success": 1.0,
+      "flat_relative_collision": 31.0,
+      "hidden_label_count_decimal": "263130836933693530167218012160000000",
+      "n": 32,
+      "natural_harmonic_measurement_compiled": false,
+      "natural_relative_collision_proved": false,
+      "retained_dimension_decimal": "29056996680561006034441849334717463824238223144929417035841826255146713911907170882983123838839029760000000",
+      "retained_dimension_log2": 353.6632636523603,
+      "spiky_excess_superpolynomially_small": true,
+      "spiky_normalized_average_top_eigenvalue_log2": 348.6632636523603,
+      "spiky_optimal_excess": 3.214854652971806e-53,
+      "spiky_optimal_excess_log2": -174.37743551579328,
+      "spiky_relative_collision_log2": -343.7090673419734,
+      "status": "critical-energy-underdetermined-relative-spectrum-required"
+    },
+    {
+      "common_normalized_energy": 63.0,
+      "critical_copy_count": 592,
+      "flat_normalized_average_top_eigenvalue": 1.0,
+      "flat_optimal_success": 1.0,
+      "flat_relative_collision": 63.0,
+      "hidden_label_count_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "n": 64,
+      "natural_harmonic_measurement_compiled": false,
+      "natural_relative_collision_proved": false,
+      "retained_dimension_decimal": "2056716017940910556933081909092941700795268311678916530479631087700004887533119785018507859662281757023836405540013157215907326587935992722188465696268490208010502756501324207689231864578720583833839774256181629648119304989575902469775333940004450100838400000000000000",
+      "retained_dimension_log2": 887.9951439417241,
+      "spiky_excess_superpolynomially_small": true,
+      "spiky_normalized_average_top_eigenvalue_log2": 881.9951439417241,
+      "spiky_optimal_excess": 1.7364544568097685e-133,
+      "spiky_optimal_excess_log2": -441.02029204736215,
+      "spiky_relative_collision_log2": -876.0178640182241,
+      "status": "critical-energy-underdetermined-relative-spectrum-required"
+    },
+    {
+      "common_normalized_energy": 127.0,
+      "critical_copy_count": 1433,
+      "flat_normalized_average_top_eigenvalue": 1.0,
+      "flat_optimal_success": 1.0,
+      "flat_relative_collision": 127.0,
+      "hidden_label_count_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "n": 128,
+      "natural_harmonic_measurement_compiled": false,
+      "natural_relative_collision_proved": false,
+      "retained_dimension_decimal": "91652408059688161027592066411745098631100207997692767208818381196689520161165572425983984979738835918212669675947958261921356006988934432468664298337688039062797671362172778671339773933335078555219198990828998556743981628733394098849248365670027431107297232262306205221779138735663291804204029397282122462023206956745071938082437167706906212086495505677379450278814352844347409903291337510127154296124585270496483895688825096735440068642403631396449425222983139741473301886427895796194776750640107544714324327487747513538027747146159289061659446259024878607119915789363166797804797405793836917972554774770408499445760000000000000000000000000000000",
+      "retained_dimension_log2": 2149.161722083622,
+      "spiky_excess_superpolynomially_small": true,
+      "spiky_normalized_average_top_eigenvalue_log2": 2142.161722083622,
+      "spiky_optimal_excess": 4e-323,
+      "spiky_optimal_excess_log2": -1071.0921763550389,
+      "spiky_relative_collision_log2": -2135.17303739685,
+      "status": "critical-energy-underdetermined-relative-spectrum-required"
+    },
+    {
+      "common_normalized_energy": 255.0,
+      "critical_copy_count": 3368,
+      "flat_normalized_average_top_eigenvalue": 1.0,
+      "flat_optimal_success": 1.0,
+      "flat_relative_collision": 255.0,
+      "hidden_label_count_decimal": "857817775342842654119082271681232625157781520279485619859655650377269452553147589377440291360451408450375885342336584306157196834693696475322289288497426025679637332563368786442675207626794560187968867971521143307702077526646451464709187326100832876325702818980773671781454170250523018608495319068138257481070252817559459476987034665712738139286205234756808218860701203611083152093501947437109101726968262861606263662435022840944191408424615936000000000000000000000000000000000000000000000000000000000000000",
+      "n": 256,
+      "natural_harmonic_measurement_compiled": false,
+      "natural_relative_collision_proved": false,
+      "retained_dimension_decimal": "634483653371485342098437971927325939358131996552932065043014018635228040537909554311860434068466244903086000807216658525375586102173363155085414836483592392746166649004489659566439009845395216031605265359592314270780814532425233109561013815847116166987575829491279162764345517739047124408189134018594219755174124010877460074055461887440643541068899927884154204903122044701110899822063237600743339636401409980376497750122145569078612952907791814499554700447114691597384114819209360731350224681509194270161421619499342074897826632897888786080293371654675296719511656303045041591733570035357537741193500994836432806795059965199106736942766741292516511987472348205528700776103355991710779300549678449762074259660344105293377766265728691761361542835499595331114888197025067609190618096027282967511166657196702221117354969525570389129806173694616051239863248576932601136907689053782019662714747986981259922805468340829910579600111670995079218749486813916430822248109099824862176726215273829590330320382227838859079626954855136570043572082371778534885524679691736504448066065697106308894551395647895996692134105304885592751842229592919775948891012599824104803145677161292926736962249029268408572177439654707118730528874240865817233541214528121930898532245511077105437303415001381749506110253377346847836415910994947994825083298560108897337916447599045329937855429259650345557363333136396219959502974251448626752556140353132022731718751848244515180578359006478729216000000000000000000000000000000000000000000000000000000000000000",
+      "retained_dimension_log2": 5051.996287224215,
+      "spiky_excess_superpolynomially_small": true,
+      "spiky_normalized_average_top_eigenvalue_log2": 5043.996287224215,
+      "spiky_optimal_excess": 0.0,
+      "spiky_optimal_excess_log2": -2522.0037901752485,
+      "spiky_relative_collision_log2": -5036.001933787356,
+      "status": "critical-energy-underdetermined-relative-spectrum-required"
+    },
+    {
+      "common_normalized_energy": 511.0,
+      "critical_copy_count": 7751,
+      "flat_normalized_average_top_eigenvalue": 1.0,
+      "flat_optimal_success": 1.0,
+      "flat_relative_collision": 511.0,
+      "hidden_label_count_decimal": "347728979313260536328304591754560471199225065564351457034247483155161041206635254347320985033950225364432243311021394545295001702070069013264153113260937941358711864044716186861040899557497361427588282356254968425012480396855239725120562512065555822121708786443620799246550959187232026838081415178588172535280020786313470076859739980965720873849904291373826841584712798618430387338042329771801724767691095019545758986942732515033551529595009876999279553931070378592917099002397061907147143424113252117585950817850896618433994140232823316432187410356341262386332496954319973130407342567282027398579382543048456876800862349928140411905431276197435674603281842530744177527365885721629512253872386613118821540847897493107398381956081763695236422795880296204301770808809477147632428639299038833046264585834888158847387737841843413664892833586209196366979775748895821826924040057845140287522238675082137570315954526727437094904914796782641000740777897919134093393530422760955140211387173650047358347353379234387609261306673773281412893026941927424000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "n": 512,
+      "natural_harmonic_measurement_compiled": false,
+      "natural_relative_collision_proved": false,
+      "retained_dimension_decimal": "66793973092940570826139493272105420524096131989680691930980200056946652400694882284649139934605052555719696933567931627026389334138658366206785871288990960441493767896606232133043386077701530536538134933262172124888932871069285094171511617110565583362688362915336349497827294913887685361341051244280385833033529060935842327741669049422345008906770387827854023508648019313528009448427092598644100819797528702686613769437487345015170071257212317519102531241875395862538903707286470948998647513220704939673064578447965607573017375398708641889434187992128749160183744340640038344988256113318994246338002770494714398730583622837495689340060523121158243424845875411802258727575069776754687222535543863719114073650420624292568623692029733398264662038725874695572029251818711633659304071645333175212578946683250998182877420045831922682388304250106255508090704843635213226486794158155222894494358834891609282168434696518975283528068935160360963104887953151727248316375338389790311616551358676733340767040702299961381252435206064743406080746584295182168268579681727879376271249118207324104939860855169916343002718178073577879412664175698297129755187888610656201921921676756153333507789424648248857076490877774481976046583631569655964623240870165717243726280872838495860949060598676426871356602812163981867244373686010939729310997229486965997913106538924994573990776890240095436769835848650161017266839298946712371688044812912531989419875608883489817670507244386000240979975239555296485924141370805927787122347727737378623950439335602326463274752318427834737144812606627238814381612180229590207478084860609369640365313736081782248955515188796157263057776057316536613326357171830259011133640842400732507441691630239393520212190926634727346402247031740215649777674028597298558164731985039931865566725019182082947568666836932643433313144695202897493273732078589620601290713751029421309159779263787168648183129779737312508569227779867024952187378867393151657035944046257142218311651080554729213416106687284899327514635693958442001308434260666115042671288371746388778143479867914620497158860898794343252652012211593326447391327704638466591780030834723065884831056763089363925375039722963695002824711190792796992136927107232424617994426445934477955320382218354150121105364243425010776520210951079802612783947418703189327048981808895793179435519140192317614482227771943561262616201889950443308063849917245726359411140081544127536706316998857336482716721296594287696152187767640436613145002409009189624252370646265578752242701444720023556043184820099319320701908701718949593065012281223044280109055989129647404132530040203117121437049235519034244443109496199797401701362957971138415455009276513802435454802592672758252987098229905988066939088322171223485126977106438535341210619553951320948871869345966097485502105939749166456208525905910809452953328516496486235517337491854588229572167179052429305048753860587092353897381898648043728504883244878788240555141320004840075366962160860338120650068753805894916626139520495347926036943281900205675116546930049397889550032039306719417260715235008766963172591017015265912470328934397609552095220467931493780623854285997509010040403642788921999898756456032360962434187767883408602478312669264883496908285280093242803264399850981624738478097374198232041240757873156967857469552993850550706365752198226846380042754444494683294578580070020941397887025152000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "retained_dimension_log2": 11626.166121943203,
+      "spiky_excess_superpolynomially_small": true,
+      "spiky_normalized_average_top_eigenvalue_log2": 11617.166121943203,
+      "spiky_optimal_excess": 0.0,
+      "spiky_optimal_excess_log2": -5808.585881490663,
+      "spiky_relative_collision_log2": -11608.168942462265,
+      "status": "critical-energy-underdetermined-relative-spectrum-required"
+    }
+  ],
+  "status": "critical-energy-only-inference-falsified-relative-spectrum-open",
+  "summary": "Constructed exact covariant commuting ensembles with identical critical point energy and opposite distinguishability, and isolated relative collision as the PGM quantity the natural theorem must control.",
+  "theorem": {
+    "equal_energy": "Both families have exactly D||rho_j-B||_2^2=n-1.",
+    "flat_family": "Uniform distributions on n disjoint blocks have B=I/D, S=n-1, relative collision n-1, and perfect success.",
+    "natural_family_boundary": "No conclusion about the natural wreath point ensemble follows until its signal-weighted relative spectrum is bounded.",
+    "operational_separation": "The spiky family has optimal success 1/n+(n-1)/sqrt(nD), while the flat family has success one.",
+    "pgm_relative_collision_identity": "p_PGM=1/n+n^-2 sum_j Tr(B^-1/2 Delta_j B^-1/2 Delta_j).",
+    "spiky_family": "rho_j=I_n/n+sqrt(n/D)(|j><j|-I_n/n), embedded in D dimensions.",
+    "status": "critical-energy-only-inference-falsified-relative-spectrum-open",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "ambient_dimension": "D=n! 2^ceil(2log2(n!)) for natural-width scaling",
+    "claim_boundary": "counterexample to energy-only inference, not a natural-family decoder no-go",
+    "decisive_relative_scalar": "Tr(B^-1/2 Delta_j B^-1/2 Delta_j), not ambient energy",
+    "fixed_scalar": "D||rho_j-B||_2^2=n-1",
+    "scope": "uniform point ensembles, including commuting covariant counterexamples"
+  }
+}

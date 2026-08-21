@@ -1,0 +1,1307 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False algebraically: C[G]^K acts as the full matrix algebra on each branching-copy factor, whereas C[K] acts as identity there.",
+      "challenge": "K-invariant ambient operators are as blind as K operators.",
+      "resolved": true
+    },
+    {
+      "answer": "False in every repeated S_8 sector; support two and three both generate proper subalgebras, while support four first closes them.",
+      "challenge": "Support-two Casimirs already solve the finite problem.",
+      "resolved": true
+    },
+    {
+      "answer": "False: generated words may be long, generators do not commute, and no uniform spectral-gap or eigenbasis circuit is known.",
+      "challenge": "Full finite algebra generation gives an efficient basis transform.",
+      "resolved": true
+    },
+    {
+      "answer": "False: that work states its two charge families are degenerate in the multiplicity label and leaves the required Q_m family open.",
+      "challenge": "The 2014 embedding-chain charges already resolve these copies.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_S8_irrep_commutants_generated_by_support_four": true,
+    "binary_hidden_involution_detector_constructed": false,
+    "coherent_missing_label_transform_compiled": false,
+    "coherent_orbit_sum_block_encoding_compiled": false,
+    "exact_orbit_sum_commutant_identity_proved": true,
+    "fixed_support_orbit_cardinality_polynomial": true,
+    "inverse_polynomial_spectral_gap_proved": false,
+    "natural_mass_full_generation_proved": false,
+    "reason": "Support-four orbit sums exactly generate every finite S_8 commutant, but uniform generation, natural gaps, coherent basis preparation, polar normalization, and decoding are open.",
+    "repeated_S8_branch_commutants_generated_by_support_four": true,
+    "source_aware_normalized_subduction_transform_compiled": false,
+    "speedup_claim_allowed": false,
+    "uniform_all_rank_generation_proved": false
+  },
+  "controls": [
+    {
+      "exact_commutant_dimension": 1,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "hyperoctahedral_branch_block_count": 1,
+      "maximum_K_generator_commutator_residual": 0.0,
+      "maximum_branching_multiplicity": 1,
+      "maximum_character_trace_residual": 0.0,
+      "maximum_orbit_sum_hermiticity_residual": 0.0,
+      "noncommutative_copy_dimension_excess": 0,
+      "repeated_branch_count": 0,
+      "status": "support-four-generates-exact-S8-hyperoctahedral-commutant",
+      "support_four_generates_full_commutant": true,
+      "support_steps": [
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 1,
+          "generated_algebra_dimension_tolerance_1e7": 1,
+          "generated_algebra_dimension_tolerance_1e8": 1,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 3,
+          "maximum_moved_points": 2,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 1,
+          "generated_algebra_dimension_tolerance_1e7": 1,
+          "generated_algebra_dimension_tolerance_1e8": 1,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 5,
+          "maximum_moved_points": 3,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 1,
+          "generated_algebra_dimension_tolerance_1e7": 1,
+          "generated_algebra_dimension_tolerance_1e8": 1,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 15,
+          "maximum_moved_points": 4,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        }
+      ],
+      "symmetric_irrep_dimension": 1,
+      "symmetric_partition": [
+        8
+      ]
+    },
+    {
+      "exact_commutant_dimension": 2,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "hyperoctahedral_branch_block_count": 2,
+      "maximum_K_generator_commutator_residual": 2.269950129588127e-15,
+      "maximum_branching_multiplicity": 1,
+      "maximum_character_trace_residual": 8.881784197001252e-16,
+      "maximum_orbit_sum_hermiticity_residual": 0.0,
+      "noncommutative_copy_dimension_excess": 0,
+      "repeated_branch_count": 0,
+      "status": "support-four-generates-exact-S8-hyperoctahedral-commutant",
+      "support_four_generates_full_commutant": true,
+      "support_steps": [
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 2,
+          "generated_algebra_dimension_tolerance_1e7": 2,
+          "generated_algebra_dimension_tolerance_1e8": 2,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 3,
+          "maximum_moved_points": 2,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 2,
+          "generated_algebra_dimension_tolerance_1e7": 2,
+          "generated_algebra_dimension_tolerance_1e8": 2,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 5,
+          "maximum_moved_points": 3,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 2,
+          "generated_algebra_dimension_tolerance_1e7": 2,
+          "generated_algebra_dimension_tolerance_1e8": 2,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 15,
+          "maximum_moved_points": 4,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        }
+      ],
+      "symmetric_irrep_dimension": 7,
+      "symmetric_partition": [
+        7,
+        1
+      ]
+    },
+    {
+      "exact_commutant_dimension": 5,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "hyperoctahedral_branch_block_count": 5,
+      "maximum_K_generator_commutator_residual": 9.503671404289909e-16,
+      "maximum_branching_multiplicity": 1,
+      "maximum_character_trace_residual": 1.7763568394002505e-15,
+      "maximum_orbit_sum_hermiticity_residual": 0.0,
+      "noncommutative_copy_dimension_excess": 0,
+      "repeated_branch_count": 0,
+      "status": "support-four-generates-exact-S8-hyperoctahedral-commutant",
+      "support_four_generates_full_commutant": true,
+      "support_steps": [
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 5,
+          "generated_algebra_dimension_tolerance_1e7": 3,
+          "generated_algebra_dimension_tolerance_1e8": 3,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 3,
+          "maximum_moved_points": 2,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 5,
+          "generated_algebra_dimension_tolerance_1e7": 3,
+          "generated_algebra_dimension_tolerance_1e8": 3,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 5,
+          "maximum_moved_points": 3,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 5,
+          "generated_algebra_dimension_tolerance_1e7": 5,
+          "generated_algebra_dimension_tolerance_1e8": 5,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 15,
+          "maximum_moved_points": 4,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        }
+      ],
+      "symmetric_irrep_dimension": 20,
+      "symmetric_partition": [
+        6,
+        2
+      ]
+    },
+    {
+      "exact_commutant_dimension": 4,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "hyperoctahedral_branch_block_count": 4,
+      "maximum_K_generator_commutator_residual": 1.1841556117115336e-15,
+      "maximum_branching_multiplicity": 1,
+      "maximum_character_trace_residual": 3.552713678800501e-15,
+      "maximum_orbit_sum_hermiticity_residual": 0.0,
+      "noncommutative_copy_dimension_excess": 0,
+      "repeated_branch_count": 0,
+      "status": "support-four-generates-exact-S8-hyperoctahedral-commutant",
+      "support_four_generates_full_commutant": true,
+      "support_steps": [
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 4,
+          "generated_algebra_dimension_tolerance_1e7": 3,
+          "generated_algebra_dimension_tolerance_1e8": 3,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 3,
+          "maximum_moved_points": 2,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 4,
+          "generated_algebra_dimension_tolerance_1e7": 4,
+          "generated_algebra_dimension_tolerance_1e8": 4,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 5,
+          "maximum_moved_points": 3,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 4,
+          "generated_algebra_dimension_tolerance_1e7": 4,
+          "generated_algebra_dimension_tolerance_1e8": 4,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 15,
+          "maximum_moved_points": 4,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        }
+      ],
+      "symmetric_irrep_dimension": 21,
+      "symmetric_partition": [
+        6,
+        1,
+        1
+      ]
+    },
+    {
+      "exact_commutant_dimension": 6,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "hyperoctahedral_branch_block_count": 6,
+      "maximum_K_generator_commutator_residual": 9.9156809433224e-16,
+      "maximum_branching_multiplicity": 1,
+      "maximum_character_trace_residual": 1.7763568394002505e-15,
+      "maximum_orbit_sum_hermiticity_residual": 0.0,
+      "noncommutative_copy_dimension_excess": 0,
+      "repeated_branch_count": 0,
+      "status": "support-four-generates-exact-S8-hyperoctahedral-commutant",
+      "support_four_generates_full_commutant": true,
+      "support_steps": [
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 6,
+          "generated_algebra_dimension_tolerance_1e7": 4,
+          "generated_algebra_dimension_tolerance_1e8": 4,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 3,
+          "maximum_moved_points": 2,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 6,
+          "generated_algebra_dimension_tolerance_1e7": 4,
+          "generated_algebra_dimension_tolerance_1e8": 4,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 5,
+          "maximum_moved_points": 3,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 6,
+          "generated_algebra_dimension_tolerance_1e7": 6,
+          "generated_algebra_dimension_tolerance_1e8": 6,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 15,
+          "maximum_moved_points": 4,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        }
+      ],
+      "symmetric_irrep_dimension": 28,
+      "symmetric_partition": [
+        5,
+        3
+      ]
+    },
+    {
+      "exact_commutant_dimension": 14,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "hyperoctahedral_branch_block_count": 11,
+      "maximum_K_generator_commutator_residual": 7.396155465001418e-16,
+      "maximum_branching_multiplicity": 2,
+      "maximum_character_trace_residual": 3.552713678800501e-15,
+      "maximum_orbit_sum_hermiticity_residual": 0.0,
+      "noncommutative_copy_dimension_excess": 3,
+      "repeated_branch_count": 1,
+      "status": "support-four-generates-exact-S8-hyperoctahedral-commutant",
+      "support_four_generates_full_commutant": true,
+      "support_steps": [
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 14,
+          "generated_algebra_dimension_tolerance_1e7": 4,
+          "generated_algebra_dimension_tolerance_1e8": 4,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 3,
+          "maximum_moved_points": 2,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 14,
+          "generated_algebra_dimension_tolerance_1e7": 9,
+          "generated_algebra_dimension_tolerance_1e8": 9,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 5,
+          "maximum_moved_points": 3,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 14,
+          "generated_algebra_dimension_tolerance_1e7": 14,
+          "generated_algebra_dimension_tolerance_1e8": 14,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 15,
+          "maximum_moved_points": 4,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        }
+      ],
+      "symmetric_irrep_dimension": 64,
+      "symmetric_partition": [
+        5,
+        2,
+        1
+      ]
+    },
+    {
+      "exact_commutant_dimension": 7,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "hyperoctahedral_branch_block_count": 7,
+      "maximum_K_generator_commutator_residual": 7.100140141622448e-16,
+      "maximum_branching_multiplicity": 1,
+      "maximum_character_trace_residual": 2.6645352591003757e-15,
+      "maximum_orbit_sum_hermiticity_residual": 0.0,
+      "noncommutative_copy_dimension_excess": 0,
+      "repeated_branch_count": 0,
+      "status": "support-four-generates-exact-S8-hyperoctahedral-commutant",
+      "support_four_generates_full_commutant": true,
+      "support_steps": [
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 7,
+          "generated_algebra_dimension_tolerance_1e7": 4,
+          "generated_algebra_dimension_tolerance_1e8": 4,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 3,
+          "maximum_moved_points": 2,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 7,
+          "generated_algebra_dimension_tolerance_1e7": 7,
+          "generated_algebra_dimension_tolerance_1e8": 7,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 5,
+          "maximum_moved_points": 3,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 7,
+          "generated_algebra_dimension_tolerance_1e7": 7,
+          "generated_algebra_dimension_tolerance_1e8": 7,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 15,
+          "maximum_moved_points": 4,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        }
+      ],
+      "symmetric_irrep_dimension": 35,
+      "symmetric_partition": [
+        5,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "exact_commutant_dimension": 5,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "hyperoctahedral_branch_block_count": 5,
+      "maximum_K_generator_commutator_residual": 6.742547769649541e-16,
+      "maximum_branching_multiplicity": 1,
+      "maximum_character_trace_residual": 1.3322676295501878e-15,
+      "maximum_orbit_sum_hermiticity_residual": 0.0,
+      "noncommutative_copy_dimension_excess": 0,
+      "repeated_branch_count": 0,
+      "status": "support-four-generates-exact-S8-hyperoctahedral-commutant",
+      "support_four_generates_full_commutant": true,
+      "support_steps": [
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 5,
+          "generated_algebra_dimension_tolerance_1e7": 4,
+          "generated_algebra_dimension_tolerance_1e8": 4,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 3,
+          "maximum_moved_points": 2,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 5,
+          "generated_algebra_dimension_tolerance_1e7": 4,
+          "generated_algebra_dimension_tolerance_1e8": 4,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 5,
+          "maximum_moved_points": 3,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 5,
+          "generated_algebra_dimension_tolerance_1e7": 5,
+          "generated_algebra_dimension_tolerance_1e8": 5,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 15,
+          "maximum_moved_points": 4,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        }
+      ],
+      "symmetric_irrep_dimension": 14,
+      "symmetric_partition": [
+        4,
+        4
+      ]
+    },
+    {
+      "exact_commutant_dimension": 16,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "hyperoctahedral_branch_block_count": 13,
+      "maximum_K_generator_commutator_residual": 7.621787711199926e-16,
+      "maximum_branching_multiplicity": 2,
+      "maximum_character_trace_residual": 3.552713678800501e-15,
+      "maximum_orbit_sum_hermiticity_residual": 0.0,
+      "noncommutative_copy_dimension_excess": 3,
+      "repeated_branch_count": 1,
+      "status": "support-four-generates-exact-S8-hyperoctahedral-commutant",
+      "support_four_generates_full_commutant": true,
+      "support_steps": [
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 16,
+          "generated_algebra_dimension_tolerance_1e7": 5,
+          "generated_algebra_dimension_tolerance_1e8": 5,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 3,
+          "maximum_moved_points": 2,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 16,
+          "generated_algebra_dimension_tolerance_1e7": 10,
+          "generated_algebra_dimension_tolerance_1e8": 10,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 5,
+          "maximum_moved_points": 3,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 16,
+          "generated_algebra_dimension_tolerance_1e7": 16,
+          "generated_algebra_dimension_tolerance_1e8": 16,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 15,
+          "maximum_moved_points": 4,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        }
+      ],
+      "symmetric_irrep_dimension": 70,
+      "symmetric_partition": [
+        4,
+        3,
+        1
+      ]
+    },
+    {
+      "exact_commutant_dimension": 14,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "hyperoctahedral_branch_block_count": 11,
+      "maximum_K_generator_commutator_residual": 6.57716731000733e-16,
+      "maximum_branching_multiplicity": 2,
+      "maximum_character_trace_residual": 2.220446049250313e-15,
+      "maximum_orbit_sum_hermiticity_residual": 0.0,
+      "noncommutative_copy_dimension_excess": 3,
+      "repeated_branch_count": 1,
+      "status": "support-four-generates-exact-S8-hyperoctahedral-commutant",
+      "support_four_generates_full_commutant": true,
+      "support_steps": [
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 14,
+          "generated_algebra_dimension_tolerance_1e7": 5,
+          "generated_algebra_dimension_tolerance_1e8": 5,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 3,
+          "maximum_moved_points": 2,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 14,
+          "generated_algebra_dimension_tolerance_1e7": 10,
+          "generated_algebra_dimension_tolerance_1e8": 10,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 5,
+          "maximum_moved_points": 3,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 14,
+          "generated_algebra_dimension_tolerance_1e7": 14,
+          "generated_algebra_dimension_tolerance_1e8": 14,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 15,
+          "maximum_moved_points": 4,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        }
+      ],
+      "symmetric_irrep_dimension": 56,
+      "symmetric_partition": [
+        4,
+        2,
+        2
+      ]
+    },
+    {
+      "exact_commutant_dimension": 26,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "hyperoctahedral_branch_block_count": 11,
+      "maximum_K_generator_commutator_residual": 6.819499248805711e-16,
+      "maximum_branching_multiplicity": 2,
+      "maximum_character_trace_residual": 5.329070518200751e-15,
+      "maximum_orbit_sum_hermiticity_residual": 0.0,
+      "noncommutative_copy_dimension_excess": 15,
+      "repeated_branch_count": 5,
+      "status": "support-four-generates-exact-S8-hyperoctahedral-commutant",
+      "support_four_generates_full_commutant": true,
+      "support_steps": [
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 26,
+          "generated_algebra_dimension_tolerance_1e7": 5,
+          "generated_algebra_dimension_tolerance_1e8": 5,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 3,
+          "maximum_moved_points": 2,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 26,
+          "generated_algebra_dimension_tolerance_1e7": 11,
+          "generated_algebra_dimension_tolerance_1e8": 11,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 5,
+          "maximum_moved_points": 3,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 26,
+          "generated_algebra_dimension_tolerance_1e7": 26,
+          "generated_algebra_dimension_tolerance_1e8": 26,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 15,
+          "maximum_moved_points": 4,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        }
+      ],
+      "symmetric_irrep_dimension": 90,
+      "symmetric_partition": [
+        4,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "exact_commutant_dimension": 7,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "hyperoctahedral_branch_block_count": 7,
+      "maximum_K_generator_commutator_residual": 6.92651901763942e-16,
+      "maximum_branching_multiplicity": 1,
+      "maximum_character_trace_residual": 2.6645352591003757e-15,
+      "maximum_orbit_sum_hermiticity_residual": 0.0,
+      "noncommutative_copy_dimension_excess": 0,
+      "repeated_branch_count": 0,
+      "status": "support-four-generates-exact-S8-hyperoctahedral-commutant",
+      "support_four_generates_full_commutant": true,
+      "support_steps": [
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 7,
+          "generated_algebra_dimension_tolerance_1e7": 4,
+          "generated_algebra_dimension_tolerance_1e8": 4,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 3,
+          "maximum_moved_points": 2,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 7,
+          "generated_algebra_dimension_tolerance_1e7": 7,
+          "generated_algebra_dimension_tolerance_1e8": 7,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 5,
+          "maximum_moved_points": 3,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 7,
+          "generated_algebra_dimension_tolerance_1e7": 7,
+          "generated_algebra_dimension_tolerance_1e8": 7,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 15,
+          "maximum_moved_points": 4,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        }
+      ],
+      "symmetric_irrep_dimension": 35,
+      "symmetric_partition": [
+        4,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "exact_commutant_dimension": 8,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "hyperoctahedral_branch_block_count": 8,
+      "maximum_K_generator_commutator_residual": 7.576285221958154e-16,
+      "maximum_branching_multiplicity": 1,
+      "maximum_character_trace_residual": 2.6645352591003757e-15,
+      "maximum_orbit_sum_hermiticity_residual": 0.0,
+      "noncommutative_copy_dimension_excess": 0,
+      "repeated_branch_count": 0,
+      "status": "support-four-generates-exact-S8-hyperoctahedral-commutant",
+      "support_four_generates_full_commutant": true,
+      "support_steps": [
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 8,
+          "generated_algebra_dimension_tolerance_1e7": 5,
+          "generated_algebra_dimension_tolerance_1e8": 5,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 3,
+          "maximum_moved_points": 2,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 8,
+          "generated_algebra_dimension_tolerance_1e7": 7,
+          "generated_algebra_dimension_tolerance_1e8": 7,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 5,
+          "maximum_moved_points": 3,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 8,
+          "generated_algebra_dimension_tolerance_1e7": 8,
+          "generated_algebra_dimension_tolerance_1e8": 8,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 15,
+          "maximum_moved_points": 4,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        }
+      ],
+      "symmetric_irrep_dimension": 42,
+      "symmetric_partition": [
+        3,
+        3,
+        2
+      ]
+    },
+    {
+      "exact_commutant_dimension": 14,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "hyperoctahedral_branch_block_count": 11,
+      "maximum_K_generator_commutator_residual": 6.443582026791981e-16,
+      "maximum_branching_multiplicity": 2,
+      "maximum_character_trace_residual": 2.6645352591003757e-15,
+      "maximum_orbit_sum_hermiticity_residual": 0.0,
+      "noncommutative_copy_dimension_excess": 3,
+      "repeated_branch_count": 1,
+      "status": "support-four-generates-exact-S8-hyperoctahedral-commutant",
+      "support_four_generates_full_commutant": true,
+      "support_steps": [
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 14,
+          "generated_algebra_dimension_tolerance_1e7": 5,
+          "generated_algebra_dimension_tolerance_1e8": 5,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 3,
+          "maximum_moved_points": 2,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 14,
+          "generated_algebra_dimension_tolerance_1e7": 10,
+          "generated_algebra_dimension_tolerance_1e8": 10,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 5,
+          "maximum_moved_points": 3,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 14,
+          "generated_algebra_dimension_tolerance_1e7": 14,
+          "generated_algebra_dimension_tolerance_1e8": 14,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 15,
+          "maximum_moved_points": 4,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        }
+      ],
+      "symmetric_irrep_dimension": 56,
+      "symmetric_partition": [
+        3,
+        3,
+        1,
+        1
+      ]
+    },
+    {
+      "exact_commutant_dimension": 16,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "hyperoctahedral_branch_block_count": 13,
+      "maximum_K_generator_commutator_residual": 7.114232584598314e-16,
+      "maximum_branching_multiplicity": 2,
+      "maximum_character_trace_residual": 2.6645352591003757e-15,
+      "maximum_orbit_sum_hermiticity_residual": 0.0,
+      "noncommutative_copy_dimension_excess": 3,
+      "repeated_branch_count": 1,
+      "status": "support-four-generates-exact-S8-hyperoctahedral-commutant",
+      "support_four_generates_full_commutant": true,
+      "support_steps": [
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 16,
+          "generated_algebra_dimension_tolerance_1e7": 5,
+          "generated_algebra_dimension_tolerance_1e8": 5,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 3,
+          "maximum_moved_points": 2,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 16,
+          "generated_algebra_dimension_tolerance_1e7": 10,
+          "generated_algebra_dimension_tolerance_1e8": 10,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 5,
+          "maximum_moved_points": 3,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 16,
+          "generated_algebra_dimension_tolerance_1e7": 16,
+          "generated_algebra_dimension_tolerance_1e8": 16,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 15,
+          "maximum_moved_points": 4,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        }
+      ],
+      "symmetric_irrep_dimension": 70,
+      "symmetric_partition": [
+        3,
+        2,
+        2,
+        1
+      ]
+    },
+    {
+      "exact_commutant_dimension": 14,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "hyperoctahedral_branch_block_count": 11,
+      "maximum_K_generator_commutator_residual": 7.700504443098725e-16,
+      "maximum_branching_multiplicity": 2,
+      "maximum_character_trace_residual": 3.552713678800501e-15,
+      "maximum_orbit_sum_hermiticity_residual": 0.0,
+      "noncommutative_copy_dimension_excess": 3,
+      "repeated_branch_count": 1,
+      "status": "support-four-generates-exact-S8-hyperoctahedral-commutant",
+      "support_four_generates_full_commutant": true,
+      "support_steps": [
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 14,
+          "generated_algebra_dimension_tolerance_1e7": 4,
+          "generated_algebra_dimension_tolerance_1e8": 4,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 3,
+          "maximum_moved_points": 2,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 14,
+          "generated_algebra_dimension_tolerance_1e7": 9,
+          "generated_algebra_dimension_tolerance_1e8": 9,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 5,
+          "maximum_moved_points": 3,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 14,
+          "generated_algebra_dimension_tolerance_1e7": 14,
+          "generated_algebra_dimension_tolerance_1e8": 14,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 15,
+          "maximum_moved_points": 4,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        }
+      ],
+      "symmetric_irrep_dimension": 64,
+      "symmetric_partition": [
+        3,
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "exact_commutant_dimension": 4,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "hyperoctahedral_branch_block_count": 4,
+      "maximum_K_generator_commutator_residual": 1.1010380400594996e-15,
+      "maximum_branching_multiplicity": 1,
+      "maximum_character_trace_residual": 1.7763568394002505e-15,
+      "maximum_orbit_sum_hermiticity_residual": 0.0,
+      "noncommutative_copy_dimension_excess": 0,
+      "repeated_branch_count": 0,
+      "status": "support-four-generates-exact-S8-hyperoctahedral-commutant",
+      "support_four_generates_full_commutant": true,
+      "support_steps": [
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 4,
+          "generated_algebra_dimension_tolerance_1e7": 3,
+          "generated_algebra_dimension_tolerance_1e8": 3,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 3,
+          "maximum_moved_points": 2,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 4,
+          "generated_algebra_dimension_tolerance_1e7": 4,
+          "generated_algebra_dimension_tolerance_1e8": 4,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 5,
+          "maximum_moved_points": 3,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 4,
+          "generated_algebra_dimension_tolerance_1e7": 4,
+          "generated_algebra_dimension_tolerance_1e8": 4,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 15,
+          "maximum_moved_points": 4,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        }
+      ],
+      "symmetric_irrep_dimension": 21,
+      "symmetric_partition": [
+        3,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "exact_commutant_dimension": 5,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "hyperoctahedral_branch_block_count": 5,
+      "maximum_K_generator_commutator_residual": 6.760482958020687e-16,
+      "maximum_branching_multiplicity": 1,
+      "maximum_character_trace_residual": 1.1102230246251565e-15,
+      "maximum_orbit_sum_hermiticity_residual": 0.0,
+      "noncommutative_copy_dimension_excess": 0,
+      "repeated_branch_count": 0,
+      "status": "support-four-generates-exact-S8-hyperoctahedral-commutant",
+      "support_four_generates_full_commutant": true,
+      "support_steps": [
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 5,
+          "generated_algebra_dimension_tolerance_1e7": 4,
+          "generated_algebra_dimension_tolerance_1e8": 4,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 3,
+          "maximum_moved_points": 2,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 5,
+          "generated_algebra_dimension_tolerance_1e7": 4,
+          "generated_algebra_dimension_tolerance_1e8": 4,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 5,
+          "maximum_moved_points": 3,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 5,
+          "generated_algebra_dimension_tolerance_1e7": 5,
+          "generated_algebra_dimension_tolerance_1e8": 5,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 15,
+          "maximum_moved_points": 4,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        }
+      ],
+      "symmetric_irrep_dimension": 14,
+      "symmetric_partition": [
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "exact_commutant_dimension": 6,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "hyperoctahedral_branch_block_count": 6,
+      "maximum_K_generator_commutator_residual": 9.86226435566219e-16,
+      "maximum_branching_multiplicity": 1,
+      "maximum_character_trace_residual": 1.7763568394002505e-15,
+      "maximum_orbit_sum_hermiticity_residual": 0.0,
+      "noncommutative_copy_dimension_excess": 0,
+      "repeated_branch_count": 0,
+      "status": "support-four-generates-exact-S8-hyperoctahedral-commutant",
+      "support_four_generates_full_commutant": true,
+      "support_steps": [
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 6,
+          "generated_algebra_dimension_tolerance_1e7": 4,
+          "generated_algebra_dimension_tolerance_1e8": 4,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 3,
+          "maximum_moved_points": 2,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 6,
+          "generated_algebra_dimension_tolerance_1e7": 4,
+          "generated_algebra_dimension_tolerance_1e8": 4,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 5,
+          "maximum_moved_points": 3,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 6,
+          "generated_algebra_dimension_tolerance_1e7": 6,
+          "generated_algebra_dimension_tolerance_1e8": 6,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 15,
+          "maximum_moved_points": 4,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        }
+      ],
+      "symmetric_irrep_dimension": 28,
+      "symmetric_partition": [
+        2,
+        2,
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "exact_commutant_dimension": 5,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "hyperoctahedral_branch_block_count": 5,
+      "maximum_K_generator_commutator_residual": 9.573118484531554e-16,
+      "maximum_branching_multiplicity": 1,
+      "maximum_character_trace_residual": 1.7763568394002505e-15,
+      "maximum_orbit_sum_hermiticity_residual": 0.0,
+      "noncommutative_copy_dimension_excess": 0,
+      "repeated_branch_count": 0,
+      "status": "support-four-generates-exact-S8-hyperoctahedral-commutant",
+      "support_four_generates_full_commutant": true,
+      "support_steps": [
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 5,
+          "generated_algebra_dimension_tolerance_1e7": 3,
+          "generated_algebra_dimension_tolerance_1e8": 3,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 3,
+          "maximum_moved_points": 2,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 5,
+          "generated_algebra_dimension_tolerance_1e7": 3,
+          "generated_algebra_dimension_tolerance_1e8": 3,
+          "generates_full_commutant": false,
+          "hermitian_orbit_sum_count": 5,
+          "maximum_moved_points": 3,
+          "status": "bounded-support-orbits-generate-proper-subalgebra"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 5,
+          "generated_algebra_dimension_tolerance_1e7": 5,
+          "generated_algebra_dimension_tolerance_1e8": 5,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 15,
+          "maximum_moved_points": 4,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        }
+      ],
+      "symmetric_irrep_dimension": 20,
+      "symmetric_partition": [
+        2,
+        2,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "exact_commutant_dimension": 2,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "hyperoctahedral_branch_block_count": 2,
+      "maximum_K_generator_commutator_residual": 2.271657765261044e-15,
+      "maximum_branching_multiplicity": 1,
+      "maximum_character_trace_residual": 4.440892098500626e-16,
+      "maximum_orbit_sum_hermiticity_residual": 0.0,
+      "noncommutative_copy_dimension_excess": 0,
+      "repeated_branch_count": 0,
+      "status": "support-four-generates-exact-S8-hyperoctahedral-commutant",
+      "support_four_generates_full_commutant": true,
+      "support_steps": [
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 2,
+          "generated_algebra_dimension_tolerance_1e7": 2,
+          "generated_algebra_dimension_tolerance_1e8": 2,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 3,
+          "maximum_moved_points": 2,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 2,
+          "generated_algebra_dimension_tolerance_1e7": 2,
+          "generated_algebra_dimension_tolerance_1e8": 2,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 5,
+          "maximum_moved_points": 3,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 2,
+          "generated_algebra_dimension_tolerance_1e7": 2,
+          "generated_algebra_dimension_tolerance_1e8": 2,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 15,
+          "maximum_moved_points": 4,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        }
+      ],
+      "symmetric_irrep_dimension": 7,
+      "symmetric_partition": [
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "exact_commutant_dimension": 1,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "hyperoctahedral_branch_block_count": 1,
+      "maximum_K_generator_commutator_residual": 0.0,
+      "maximum_branching_multiplicity": 1,
+      "maximum_character_trace_residual": 0.0,
+      "maximum_orbit_sum_hermiticity_residual": 0.0,
+      "noncommutative_copy_dimension_excess": 0,
+      "repeated_branch_count": 0,
+      "status": "support-four-generates-exact-S8-hyperoctahedral-commutant",
+      "support_four_generates_full_commutant": true,
+      "support_steps": [
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 1,
+          "generated_algebra_dimension_tolerance_1e7": 1,
+          "generated_algebra_dimension_tolerance_1e8": 1,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 3,
+          "maximum_moved_points": 2,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 1,
+          "generated_algebra_dimension_tolerance_1e7": 1,
+          "generated_algebra_dimension_tolerance_1e8": 1,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 5,
+          "maximum_moved_points": 3,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        },
+        {
+          "dimension_stable": true,
+          "exact_commutant_dimension": 1,
+          "generated_algebra_dimension_tolerance_1e7": 1,
+          "generated_algebra_dimension_tolerance_1e8": 1,
+          "generates_full_commutant": true,
+          "hermitian_orbit_sum_count": 15,
+          "maximum_moved_points": 4,
+          "status": "bounded-support-orbits-generate-full-commutant"
+        }
+      ],
+      "symmetric_irrep_dimension": 1,
+      "symmetric_partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "created_at": "2026-08-21T13:06:40.497747+00:00",
+  "falsifiers_triggered": [
+    "K-group operators are copy-blind, but K-conjugation-invariant ambient operators are not.",
+    "Support two and support three fail to generate any repeated S_8 commutant fully.",
+    "Support-four finite generation does not imply uniform all-rank generation or useful spectral gaps.",
+    "Existing embedding-chain charges do not supply the missing multiplicity-resolving family."
+  ],
+  "headline_metrics": {
+    "S8_irrep_control_count": 22,
+    "S8_repeated_branch_irrep_count": 7,
+    "S8_repeated_support_four_full_count": 7,
+    "S8_repeated_support_three_full_count": 0,
+    "S8_repeated_support_two_full_count": 0,
+    "S8_support_four_full_commutant_count": 22,
+    "coherent_missing_label_transform_count": 0,
+    "inverse_polynomial_gap_theorem_count": 0,
+    "maximum_K_commutator_residual": 2.271657765261044e-15,
+    "maximum_exact_commutant_dimension": 26,
+    "new_quantum_algorithm_count": 0,
+    "uniform_all_rank_generation_theorem_count": 0
+  },
+  "literature_links": [
+    {
+      "id": "kimura-ramgoolam-generalized-casimirs-2008",
+      "url": "https://arxiv.org/abs/0807.3696",
+      "use": "Primary mechanism precedent: subgroup-invariant ambient algebra elements mix and can diagonalize multiplicity spaces in related symmetric/Brauer restrictions."
+    },
+    {
+      "id": "diaz-embedding-chain-charges-2014",
+      "url": "https://arxiv.org/abs/1406.7671",
+      "use": "Primary scope boundary: the constructed commuting charge families do not resolve multiplicity labels; the needed Q_m charges are open."
+    }
+  ],
+  "orbit_inventory": [
+    {
+      "hermitian_orbit_sum_count": 1,
+      "maximum_moved_points": 0,
+      "permutation_count_upper_bound": 1
+    },
+    {
+      "hermitian_orbit_sum_count": 3,
+      "maximum_moved_points": 2,
+      "permutation_count_upper_bound": 65
+    },
+    {
+      "hermitian_orbit_sum_count": 5,
+      "maximum_moved_points": 3,
+      "permutation_count_upper_bound": 401
+    },
+    {
+      "hermitian_orbit_sum_count": 15,
+      "maximum_moved_points": 4,
+      "permutation_count_upper_bound": 2081
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-HIDDEN-INVOLUTION-BOUNDED-SUPPORT-UNIFORM-GENERATION",
+      "resolved": false,
+      "statement": "Prove or falsify that the support-four K_m orbit sums generate End_K(V_lambda) on asymptotically natural branching blocks."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-COMMUTANT-GENERIC-GAP",
+      "resolved": false,
+      "statement": "Construct an explicitly weighted Hermitian combination whose copy-space eigenvalue gaps are inverse polynomial on natural mass."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-ORBIT-SUM-BLOCK-ENCODING",
+      "resolved": false,
+      "statement": "Compile uniform PREPARE/SELECT circuits for every required support-four K-orbit sum and control normalization."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-COMMUTANT-EIGENBASIS-RECOUPLING",
+      "resolved": false,
+      "statement": "Relate the commutant eigenbasis coherently to the multicopy A/B invariant overlap and remove its 1/M normalization."
+    }
+  ],
+  "status": "bounded-support-four-generates-all-S8-hyperoctahedral-commutants-uniform-theorem-open",
+  "summary": "Found a concrete positive missing-label mechanism: polynomial-size support-four hyperoctahedral orbit sums generate the full branching commutant in every S_8 irrep. This promotes ambient commutant Casimirs above paired branching as the active route, while retaining all uniformity, gap, normalization, and speedup gates.",
+  "theorem": {
+    "all_S8_irrep_commutants_generated_by_support_four": true,
+    "all_rank_boundary": "S_8 algebra generation does not prove a uniform generator theorem, natural spectral separation, or efficient eigenbasis preparation.",
+    "coherent_missing_label_transform_compiled": false,
+    "exact_full_commutant": "C[S_(2m)]^K is the direct sum over lambda,mu of full matrix algebras M_(b(lambda,mu)); K-conjugacy orbit sums span it exactly.",
+    "exact_orbit_sum_commutant_identity_proved": true,
+    "finite_generation_result": "For every lambda partition 8, Hermitian K_4-orbit sums moving at most four points generate End_(K_4)(V_lambda).",
+    "fixed_support_orbit_cardinality_polynomial": true,
+    "inverse_polynomial_spectral_gap_proved": false,
+    "literature_transfer": "Generalized-Casimir work shows subgroup-invariant ambient algebra elements can mix multiplicity spaces in related restrictions; later embedding-chain charges explicitly leave multiplicity unresolved.",
+    "polynomial_orbit_size": "At fixed support s, each inventory and each K-orbit has O(m^s) elements and admits a pair-pattern description.",
+    "positive_compiler_target": "Prove fixed support-four orbit sums generate natural End_K blocks for all m and construct a generic Hermitian combination with inverse-poly gap.",
+    "repeated_S8_branch_commutants_generated_by_support_four": true,
+    "status": "bounded-support-four-generates-all-S8-hyperoctahedral-commutants-uniform-theorem-open",
+    "theorem_verified": true,
+    "uniform_all_rank_generation_proved": false
+  },
+  "theorem_contract": {
+    "Fourier_block": "End_K(V_lambda)=direct_sum_mu M_(b(lambda,mu)) tensor I_(d_mu)",
+    "ambient_algebra": "K-conjugation invariants C[S_(2m)]^K",
+    "claim_boundary": "Exact finite algebra generation, not uniform gaps, a coherent subduction transform, or a hidden-involution speedup.",
+    "finite_generator_family": "Hermitianized K-orbit sums of permutations moving at most four points"
+  }
+}

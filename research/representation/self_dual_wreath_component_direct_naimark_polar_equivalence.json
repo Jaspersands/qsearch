@@ -1,0 +1,210 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Every component effect must be square-rooted separately.",
+      "resolution": "False algebraically. The direct coefficient embedding B is already a Naimark isometry for every coordinate effect at once.",
+      "resolved": true
+    },
+    {
+      "objection": "The identity B=UJ compiles the component measurement.",
+      "resolution": "False. It identifies B with the unresolved restricted orientation polar and does not supply normalization-one access.",
+      "resolved": true
+    },
+    {
+      "objection": "The POVM effects determine the coherent output needed by a decoder.",
+      "resolution": "False. The gauge countercontrol has identical effects and coordinate probabilities but orthogonal coherent outputs.",
+      "resolved": true
+    },
+    {
+      "objection": "Vanishing normalized Frobenius error controls every input state.",
+      "resolution": "False. A rank-one error is 1/r on the uniform input and one on a concentrated input; the flatness factor is sharp.",
+      "resolved": true
+    },
+    {
+      "objection": "Compiling B would by itself decode the hidden permutation.",
+      "resolution": "False. B preserves a candidate carrier but no label-sensitive covariant observable or Fourier normalization follows.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "classical_separation_proved": false,
+    "coherent_component_threshold_support_select_compiled": false,
+    "component_effects_determine_coherent_output_gauge": false,
+    "coordinate_measurement_realizes_component_povm": true,
+    "direct_component_naimark_equals_restricted_orientation_polar": true,
+    "flatness_weighted_state_error_bound_proved": true,
+    "independent_effect_square_root_synthesis_is_fundamental_gate": false,
+    "label_sensitive_information_gain_proved": false,
+    "natural_all_level_state_weighted_component_trim_proved": true,
+    "natural_coherent_block_gauges_compiled": false,
+    "natural_restricted_orientation_polar_compiled": false,
+    "reason": "The natural component dilation is exactly restricted orientation-polar access. Native all-level trimming is already controlled, but the coherent threshold/support router, natural block gauges, and complete polar remain open. A complete polar would feed the already-compiled physical PGM.",
+    "separate_post_polar_hidden_label_decoder_required": false,
+    "speedup_claim_allowed": false,
+    "uniform_frobenius_scalarization_controls_arbitrary_inputs": false
+  },
+  "coherent_gauge_countercontrol": {
+    "coherent_dilation_determined_by_effects_alone": false,
+    "coherent_map_operator_distance": 1.414213562373095,
+    "coherent_output_overlap": 0.0,
+    "coherent_output_trace_distance": 1.0,
+    "fiber_dimension": 2,
+    "identical_povm_effects": true,
+    "leaf_count": 2,
+    "maximum_component_effect_residual": 0.0,
+    "maximum_coordinate_probability_residual": 0.0,
+    "status": "identical-effects-orthogonal-coherent-output-gauge-countercontrol"
+  },
+  "created_at": "2026-08-21T04:10:28.545990+00:00",
+  "falsifiers_triggered": [
+    "The component POVM is not a separate factorial family of square-root synthesis tasks.",
+    "Reproducing component outcome probabilities does not preserve the coherent carrier needed for decoding.",
+    "Average support scalarization is not a worst-case physical-state compiler guarantee.",
+    "The remaining access problem is a normalization-one restricted orientation polar or an equivalent direct coefficient router."
+  ],
+  "finite_controls": [
+    {
+      "analysis_polar_final_projection_residual": 4.056073731484942e-15,
+      "analysis_polar_initial_projection_residual": 2.6063798461650785e-15,
+      "child_frame_rank": 9,
+      "coefficient_dimension": 14,
+      "coefficient_projection_normal_form_residual": 2.7597770239894063e-15,
+      "coefficient_support_rank": 9,
+      "common_fiber_dimension": 4,
+      "common_metric_embedding_isometry_residual": 1.9514310661527775e-15,
+      "component_effect_sum_identity_residual": 2.069546566814181e-15,
+      "control_id": "REDUNDANT-P9-N14-R4",
+      "coordinate_measurement_probability_residual": 1.1102230246251565e-16,
+      "direct_coefficient_embedding_isometry_residual": 2.0693572714298726e-15,
+      "direct_restricted_polar_factorization_residual": 1.401283878554771e-15,
+      "exact_direct_naimark_polar_equivalence_verified": true,
+      "leaf_count": 4,
+      "maximum_component_polar_reconstruction_residual": 4.6544772896368995e-15,
+      "physical_dimension": 9,
+      "restricted_polar_recovery_residual": 1.3852750016397689e-15,
+      "status": "exact-direct-naimark-restricted-polar-equivalence"
+    },
+    {
+      "analysis_polar_final_projection_residual": 4.496340645981663e-15,
+      "analysis_polar_initial_projection_residual": 3.456316482033832e-15,
+      "child_frame_rank": 7,
+      "coefficient_dimension": 7,
+      "coefficient_projection_normal_form_residual": 4.953148767885775e-15,
+      "coefficient_support_rank": 7,
+      "common_fiber_dimension": 5,
+      "common_metric_embedding_isometry_residual": 2.582111580166911e-15,
+      "component_effect_sum_identity_residual": 4.063430771043414e-15,
+      "control_id": "RANK-DEFICIENT-P10-N7-R5",
+      "coordinate_measurement_probability_residual": 1.1102230246251565e-16,
+      "direct_coefficient_embedding_isometry_residual": 4.022112146766148e-15,
+      "direct_restricted_polar_factorization_residual": 1.764562824659393e-15,
+      "exact_direct_naimark_polar_equivalence_verified": true,
+      "leaf_count": 3,
+      "maximum_component_polar_reconstruction_residual": 2.998830353982389e-15,
+      "physical_dimension": 10,
+      "restricted_polar_recovery_residual": 1.75279881377511e-15,
+      "status": "exact-direct-naimark-restricted-polar-equivalence"
+    },
+    {
+      "analysis_polar_final_projection_residual": 4.6138307643334916e-15,
+      "analysis_polar_initial_projection_residual": 2.0297011135605754e-15,
+      "child_frame_rank": 8,
+      "coefficient_dimension": 12,
+      "coefficient_projection_normal_form_residual": 3.09194680134865e-15,
+      "coefficient_support_rank": 8,
+      "common_fiber_dimension": 3,
+      "common_metric_embedding_isometry_residual": 1.426214507860848e-15,
+      "component_effect_sum_identity_residual": 1.5930607622004148e-15,
+      "control_id": "SPARSE-BLOCK-P8-N12-R3",
+      "coordinate_measurement_probability_residual": 5.551115123125783e-17,
+      "direct_coefficient_embedding_isometry_residual": 1.5715697453762942e-15,
+      "direct_restricted_polar_factorization_residual": 9.340393507655605e-16,
+      "exact_direct_naimark_polar_equivalence_verified": true,
+      "leaf_count": 12,
+      "maximum_component_polar_reconstruction_residual": 1.27285487251697e-15,
+      "physical_dimension": 8,
+      "restricted_polar_recovery_residual": 9.523583308395163e-16,
+      "status": "exact-direct-naimark-restricted-polar-equivalence"
+    }
+  ],
+  "headline_metrics": {
+    "coherent_gauge_countercontrol_count": 1,
+    "concentrated_to_uniform_error_ratio": 64.0,
+    "coordinate_component_povm_dilation_theorem_count": 1,
+    "direct_naimark_restricted_polar_equivalence_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "gauge_countercontrol_trace_distance": 1.0,
+    "independent_matrix_square_root_gate_removed_count": 1,
+    "label_sensitive_decoder_count": 0,
+    "maximum_finite_factorization_residual": 1.764562824659393e-15,
+    "maximum_finite_projection_residual": 4.953148767885775e-15,
+    "natural_restricted_orientation_polar_circuit_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "state_weighted_frobenius_boundary_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "identify_direct_natural_component_dilation",
+      "resolution": "The normalized minimum-norm coefficient embedding is exactly the child orientation analysis polar restricted through J.",
+      "resolved": true
+    },
+    {
+      "obligation": "remove_independent_matrix_square_root_compiler_gate",
+      "resolution": "Coordinate measurement after B realizes the component POVM directly; effect square roots are only one factorization of B.",
+      "resolved": true
+    },
+    {
+      "obligation": "compile_restricted_natural_orientation_polar",
+      "resolution": "Need a normalization-one structured router for U on Ran(J), or a direct implementation of B preserving coefficient gauges.",
+      "resolved": false
+    },
+    {
+      "obligation": "transfer_average_support_scalarization_to_physical_inputs",
+      "resolution": "The companion all-level component-trim theorem supplies a sharper native-state estimate from the exact root-frame second moment and fixed coefficient-register rank budget; no input-flatness premise is needed.",
+      "resolved": true
+    },
+    {
+      "obligation": "require_a_separate_post_polar_hidden_label_decoder",
+      "resolution": "Resolved negatively by the companion physical-PGM closure: once all coherent restricted maps compose to the complete orientation polar, the row-copy intertwiner implements the known constant-success covariant PGM.",
+      "resolved": true
+    }
+  ],
+  "state_weighted_boundary": {
+    "concentrated_input_exact_error": 1.0,
+    "concentrated_input_flatness": 64.0,
+    "concentrated_input_flatness_upper_bound": 1.0,
+    "fiber_dimension": 64,
+    "flatness_weighted_bound_verified": true,
+    "normalized_frobenius_error": 0.015625,
+    "status": "flatness-factor-necessary-and-sufficient-for-generic-frobenius-transfer",
+    "uniform_error_controls_concentrated_input_without_flatness": false,
+    "uniform_input_exact_error": 0.015625,
+    "uniform_input_flatness": 1.0,
+    "uniform_input_flatness_upper_bound": 0.015625
+  },
+  "status": "component-dilation-identified-with-restricted-orientation-polar-access-open",
+  "summary": "Eliminated effect-by-effect square roots as an independent gate by identifying the direct component Naimark map with a restricted orientation polar, while proving that coherent gauge and input flatness remain indispensable.",
+  "theorem": {
+    "arbitrary_common_subspace_inside_child_range": true,
+    "arbitrary_leaf_ranks": true,
+    "coefficient_projection": "BB*=supp(R*R)-supp(R*(I-XX*)R)",
+    "common_metric_embedding": "J=F^(+/2)X(X*F^+X)^(-1/2), with J*J=I",
+    "compiler_boundary": "Component dilation is restricted orientation-polar access, not an independent matrix-square-root task; U, J, coherent block gauges, and label-sensitive decoding remain uncompiled.",
+    "component_povm": "H_e=B*D_eB and sum_e H_e=I",
+    "direct_factorization": "B=R*F^+X(X*F^+X)^(-1/2)=UJ and UJJ*=BJ*",
+    "exact_theorem_verified": true,
+    "minimal_naimark_gauge": "D_eB=V_e sqrt(H_e); the direct coefficient dilation is the minimal square-root dilation followed by block gauges V_e",
+    "orientation_polar": "U=R*F^(+/2), U*U=supp(F), UU*=supp(R*R)",
+    "state_weighted_error": "Tr(rho E*E)<=r||rho||_infinity ||E||F^2/r for E=B-B_tilde",
+    "status": "direct-component-naimark-equals-restricted-orientation-polar"
+  },
+  "theorem_contract": {
+    "coefficient_projection": "BB*=supp(R*R)-supp(R*(I-XX*)R)",
+    "component_povm": "H_e=B*D_eB and sum_e H_e=I",
+    "direct_factorization": "B=R*F^+X(X*F^+X)^(-1/2)=UJ and UJJ*=BJ*",
+    "minimal_naimark_gauge": "D_eB=V_e sqrt(H_e); the direct coefficient dilation is the minimal square-root dilation followed by block gauges V_e",
+    "scope": "Component dilation is restricted orientation-polar access, not an independent matrix-square-root task; U, J, coherent block gauges, and label-sensitive decoding remain uncompiled.",
+    "state_weighted_error": "Tr(rho E*E)<=r||rho||_infinity ||E||F^2/r for E=B-B_tilde"
+  }
+}

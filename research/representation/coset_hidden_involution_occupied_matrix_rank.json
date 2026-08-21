@@ -1,0 +1,247 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "Resolved negatively on natural mass: the global kernel fraction is at most 1/64 and half-rank blocks at most 1/32.",
+      "challenge": "Huge B-fixed blocks could be almost entirely kernel.",
+      "resolved": true
+    },
+    {
+      "answer": "False: QFTs and Schur transforms have high rank but succinct circuits. Basis and matrix structure remain decisive.",
+      "challenge": "High occupied rank proves the transform is hard.",
+      "resolved": true
+    },
+    {
+      "answer": "The block dimension and kernel accounting force constant alternative mass into huge-rank blocks after size bias.",
+      "challenge": "A few flat eigenvectors could carry all alternative mass.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "binary_hidden_involution_detector_constructed": false,
+    "constant_alternative_mass_in_huge_occupied_rank_blocks": true,
+    "global_source_kernel_fraction_small": true,
+    "half_rank_deficient_blocks_negligible": true,
+    "matrix_cosine_sine_transform_compiled": false,
+    "occupied_cosine_sine_rank_lower_bound_proved": true,
+    "reason": "Natural signal occupies enormous-rank matrix blocks, but their basis, principal-angle transform, and physical implementation remain unresolved.",
+    "speedup_claim_allowed": false,
+    "succinct_occupied_block_basis_constructed": false
+  },
+  "created_at": "2026-08-20T17:24:23.743301+00:00",
+  "falsifiers_triggered": [
+    "The natural high-multiplicity blocks are not mostly synthesis kernel.",
+    "A scalar or bounded-rank treatment cannot be justified by natural-mass trimming.",
+    "Occupied rank alone remains insufficient evidence of computational hardness."
+  ],
+  "finite_controls": [
+    {
+      "candidate_count": 3,
+      "centered_second_moment": 1.0,
+      "copy_count": 1,
+      "exact_kernel_fraction": 0.4444444444444444,
+      "kernel_dimension": 4,
+      "kernel_fraction_bound_verified": true,
+      "n": 3,
+      "source_dimension": 9,
+      "status": "exact-kernel-fraction-below-second-moment",
+      "synthesis_rank": 5,
+      "theorem_kernel_fraction_upper_bound": 1.0,
+      "transposition_count": 1
+    },
+    {
+      "candidate_count": 3,
+      "centered_second_moment": 0.5,
+      "copy_count": 2,
+      "exact_kernel_fraction": 0.2222222222222222,
+      "kernel_dimension": 6,
+      "kernel_fraction_bound_verified": true,
+      "n": 3,
+      "source_dimension": 27,
+      "status": "exact-kernel-fraction-below-second-moment",
+      "synthesis_rank": 21,
+      "theorem_kernel_fraction_upper_bound": 0.5,
+      "transposition_count": 1
+    }
+  ],
+  "headline_metrics": {
+    "constant_huge_occupied_rank_scaling_count": 7,
+    "finite_kernel_control_count": 2,
+    "finite_kernel_control_failure_count": 0,
+    "matrix_cosine_sine_transform_compiler_count": 0,
+    "minimum_huge_occupied_rank_alternative_mass_lower_bound": 0.8609424829483032,
+    "new_quantum_algorithm_count": 0,
+    "succinct_occupied_block_basis_count": 0,
+    "tail_occupied_rank_threshold_log2": 64990.67627908869,
+    "tail_source_kernel_fraction_upper_bound": 0.008768696682595653
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-HIDDEN-INVOLUTION-OCCUPIED-BLOCK-BASIS",
+      "resolved": false,
+      "statement": "Find a succinct basis/recoupling description for the huge occupied A/B invariant overlap blocks."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-OCCUPIED-BLOCK-CS-TRANSFORM",
+      "resolved": false,
+      "statement": "Compile their matrix Cosine-Sine transform with polynomial normalization and coherent physical label handling."
+    }
+  ],
+  "scaling_records": [
+    {
+      "candidate_count_decimal": "105",
+      "constant_alternative_mass_in_huge_occupied_rank_blocks": true,
+      "copy_count": 13,
+      "degree": 8,
+      "flat_alternative_mass_lower_bound": 0.90625,
+      "half_degree": 4,
+      "half_rank_deficient_block_source_fraction_upper_bound": 0.025390625,
+      "huge_half_rank_source_fraction_lower_bound": 0.972361963695151,
+      "huge_occupied_rank_alternative_mass_lower_bound": 0.8647929455427265,
+      "low_multiplicity_source_fraction_log2_upper_bound": -8.797520104441588,
+      "low_multiplicity_source_fraction_upper_bound": 0.0022474113048490084,
+      "multiplicity_threshold_log2": 49.72242605975866,
+      "occupied_rank_threshold_log2": 48.72242605975866,
+      "source_kernel_fraction_upper_bound": 0.0126953125,
+      "status": "constant-alternative-mass-in-huge-occupied-matrix-rank",
+      "succinct_occupied_block_basis_constructed": false,
+      "synthesis_centered_second_moment": 0.0126953125
+    },
+    {
+      "candidate_count_decimal": "10395",
+      "constant_alternative_mass_in_huge_occupied_rank_blocks": true,
+      "copy_count": 20,
+      "degree": 12,
+      "flat_alternative_mass_lower_bound": 0.90625,
+      "half_degree": 6,
+      "half_rank_deficient_block_source_fraction_upper_bound": 0.019824981689453125,
+      "huge_half_rank_source_fraction_lower_bound": 0.9801750183105469,
+      "huge_occupied_rank_alternative_mass_lower_bound": 0.8765125274658203,
+      "low_multiplicity_source_fraction_log2_upper_bound": -66.84614171172495,
+      "low_multiplicity_source_fraction_upper_bound": 7.538869929644467e-21,
+      "multiplicity_threshold_log2": 144.17727617037704,
+      "occupied_rank_threshold_log2": 143.17727617037704,
+      "source_kernel_fraction_upper_bound": 0.009912490844726562,
+      "status": "constant-alternative-mass-in-huge-occupied-matrix-rank",
+      "succinct_occupied_block_basis_constructed": false,
+      "synthesis_centered_second_moment": 0.009912490844726562
+    },
+    {
+      "candidate_count_decimal": "2027025",
+      "constant_alternative_mass_in_huge_occupied_rank_blocks": true,
+      "copy_count": 27,
+      "degree": 16,
+      "flat_alternative_mass_lower_bound": 0.90625,
+      "half_degree": 8,
+      "half_rank_deficient_block_source_fraction_upper_bound": 0.03020501136779785,
+      "huge_half_rank_source_fraction_lower_bound": 0.9697949886322021,
+      "huge_occupied_rank_alternative_mass_lower_bound": 0.8609424829483032,
+      "low_multiplicity_source_fraction_log2_upper_bound": -177.09148125884826,
+      "low_multiplicity_source_fraction_upper_bound": 4.8995045410040424e-54,
+      "multiplicity_threshold_log2": 298.6884481717077,
+      "occupied_rank_threshold_log2": 297.6884481717077,
+      "source_kernel_fraction_upper_bound": 0.015102505683898926,
+      "status": "constant-alternative-mass-in-huge-occupied-matrix-rank",
+      "succinct_occupied_block_basis_constructed": false,
+      "synthesis_centered_second_moment": 0.015102505683898926
+    },
+    {
+      "candidate_count_decimal": "316234143225",
+      "constant_alternative_mass_in_huge_occupied_rank_blocks": true,
+      "copy_count": 45,
+      "degree": 24,
+      "flat_alternative_mass_lower_bound": 0.90625,
+      "half_degree": 12,
+      "half_rank_deficient_block_source_fraction_upper_bound": 0.017975829861370585,
+      "huge_half_rank_source_fraction_lower_bound": 0.9820241701386294,
+      "huge_occupied_rank_alternative_mass_lower_bound": 0.8792862552079441,
+      "low_multiplicity_source_fraction_log2_upper_bound": -637.1014346344527,
+      "low_multiplicity_source_fraction_upper_bound": 1.6343982720613998e-192,
+      "multiplicity_threshold_log2": 889.1736459648802,
+      "occupied_rank_threshold_log2": 888.1736459648802,
+      "source_kernel_fraction_upper_bound": 0.008987914930685292,
+      "status": "constant-alternative-mass-in-huge-occupied-matrix-rank",
+      "succinct_occupied_block_basis_constructed": false,
+      "synthesis_centered_second_moment": 0.008987914930685292
+    },
+    {
+      "candidate_count_decimal": "191898783962510625",
+      "constant_alternative_mass_in_huge_occupied_rank_blocks": true,
+      "copy_count": 64,
+      "degree": 32,
+      "flat_alternative_mass_lower_bound": 0.90625,
+      "half_degree": 16,
+      "half_rank_deficient_block_source_fraction_upper_bound": 0.02080570784694805,
+      "huge_half_rank_source_fraction_lower_bound": 0.979194292153052,
+      "huge_occupied_rank_alternative_mass_lower_bound": 0.8750414382295779,
+      "low_multiplicity_source_fraction_log2_upper_bound": -1462.7024297191329,
+      "low_multiplicity_source_fraction_upper_bound": 0.0,
+      "multiplicity_threshold_log2": 1882.6122184377648,
+      "occupied_rank_threshold_log2": 1881.6122184377648,
+      "source_kernel_fraction_upper_bound": 0.010402853923474025,
+      "status": "constant-alternative-mass-in-huge-occupied-matrix-rank",
+      "succinct_occupied_block_basis_constructed": false,
+      "synthesis_centered_second_moment": 0.010402853923474025
+    },
+    {
+      "candidate_count_decimal": "112275575285571389562324404930670903477890625",
+      "constant_alternative_mass_in_huge_occupied_rank_blocks": true,
+      "copy_count": 153,
+      "degree": 64,
+      "flat_alternative_mass_lower_bound": 0.90625,
+      "half_degree": 32,
+      "half_rank_deficient_block_source_fraction_upper_bound": 0.01966644890360707,
+      "huge_half_rank_source_fraction_lower_bound": 0.980333551096393,
+      "huge_occupied_rank_alternative_mass_lower_bound": 0.8767503266445894,
+      "low_multiplicity_source_fraction_log2_upper_bound": -9847.915244131756,
+      "low_multiplicity_source_fraction_upper_bound": 0.0,
+      "multiplicity_threshold_log2": 11321.814255770947,
+      "occupied_rank_threshold_log2": 11320.814255770947,
+      "source_kernel_fraction_upper_bound": 0.009833224451803535,
+      "status": "constant-alternative-mass-in-huge-occupied-matrix-rank",
+      "succinct_occupied_block_basis_constructed": false,
+      "synthesis_centered_second_moment": 0.009833224451803535
+    },
+    {
+      "candidate_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "constant_alternative_mass_in_huge_occupied_rank_blocks": true,
+      "copy_count": 363,
+      "degree": 128,
+      "flat_alternative_mass_lower_bound": 0.90625,
+      "half_degree": 64,
+      "half_rank_deficient_block_source_fraction_upper_bound": 0.017537393365191306,
+      "huge_half_rank_source_fraction_lower_bound": 0.9824626066348087,
+      "huge_occupied_rank_alternative_mass_lower_bound": 0.879943909952213,
+      "low_multiplicity_source_fraction_log2_upper_bound": -59864.26431114596,
+      "low_multiplicity_source_fraction_upper_bound": 0.0,
+      "multiplicity_threshold_log2": 64991.67627908869,
+      "occupied_rank_threshold_log2": 64990.67627908869,
+      "source_kernel_fraction_upper_bound": 0.008768696682595653,
+      "status": "constant-alternative-mass-in-huge-occupied-matrix-rank",
+      "succinct_occupied_block_basis_constructed": false,
+      "synthesis_centered_second_moment": 0.008768696682595653
+    }
+  ],
+  "status": "natural-huge-occupied-matrix-rank-proved-basis-transform-open",
+  "summary": "Combined exact synthesis variance, source multiplicity counting, and alternative size bias to prove constant natural mass in enormous occupied matrix Cosine-Sine blocks.",
+  "theorem": {
+    "alternative_size_bias_transfer": "On the x<=3/2 flat window, alternative bad-block mass is at most 1.5 times bad source dimension, plus the 3/32 tail.",
+    "binary_hidden_involution_detector_constructed": false,
+    "block_kernel_accounting": "A block with CS rank r<=m_B/2 contributes at least half its source dimension to the kernel, so such blocks have source fraction at most 2 eta.",
+    "constant_alternative_mass_in_huge_occupied_rank_blocks_proved": true,
+    "global_kernel_fraction_bound_proved": true,
+    "half_rank_block_fraction_bound_proved": true,
+    "kernel_moment_bound": "Kernel fraction is at most E[(x-1)^2]=(M-1)/2^k because every zero eigenvalue contributes one.",
+    "matrix_cosine_sine_transform_compiled": false,
+    "multiplicity_intersection": "Intersect with the proved m_B>|S_n|^(k/4) source mass; the remaining blocks have r>|S_n|^(k/4)/2.",
+    "occupied_rank_conclusion": "A constant natural alternative mass lies in blocks of occupied matrix rank greater than |S_n|^(k/4)/2.",
+    "scope_limit": "Rank does not imply a hard basis change; no circuit or classical lower bound follows.",
+    "status": "natural-huge-occupied-matrix-rank-proved-basis-transform-open",
+    "succinct_occupied_block_basis_constructed": false,
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "block_rank": "In each L-irrep, W is identity on the carrier tensored with a matrix from the B-fixed source multiplicity to the A-fixed physical multiplicity; r is that matrix rank.",
+    "claim_boundary": "Proves occupied dimension on natural mass, not transform complexity or a speedup.",
+    "source_spectral_law": "Uniform source dimension includes the synthesis kernel and has exact mean one and centered second moment eta."
+  }
+}

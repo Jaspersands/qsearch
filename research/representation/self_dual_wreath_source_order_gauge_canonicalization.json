@@ -1,0 +1,593 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Keeping source blocks coherent lets branch Hadamards mix all orientations.",
+      "resolution": "Branch shifts mix order gauges only. The selected pattern q is a superselection label for that action.",
+      "resolved": true
+    },
+    {
+      "objection": "Sorting all source pairs makes every leaf equivalent.",
+      "resolution": "It makes source order canonical; the selected partition in each pair remains q-dependent, with nonuniform leaf ranks.",
+      "resolved": true
+    },
+    {
+      "objection": "A Fourier transform on the order gauge reveals hidden-label signal.",
+      "resolution": "The gauge is source-order nuisance and branch operations do not change q. No hidden involution information is added.",
+      "resolved": true
+    },
+    {
+      "objection": "This proves the selected-pattern polar hard.",
+      "resolution": "No. The theorem only removes a covariance shortcut; direct matrix CS or representation-specific transforms remain open.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "branch_gauge_operations_mix_selected_patterns": false,
+    "classical_separation_proved": false,
+    "coherent_source_pair_sorting_polynomial": true,
+    "complete_natural_orientation_polar_compiled": false,
+    "direct_matrix_selected_pattern_transform_rejected": false,
+    "reason": "Sorting quotients the redundant source-order bit, but the canonically selected-label pattern is invariant and retains the nonuniform orientation frame.",
+    "selected_pattern_complete_branch_orbit_invariant": true,
+    "source_order_gauge_quotient_proved": true,
+    "source_order_sorting_compiles_rectangular_cs_polar": false,
+    "source_order_sorting_flattens_selected_pattern_frame": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-21T05:22:51.596872+00:00",
+  "falsifiers_triggered": [
+    "Coherent source-block orbit handling does not let branch shifts mix selected-label patterns.",
+    "Source-pair sorting removes only an order gauge and preserves the nonuniform leaf-rank profile.",
+    "The source-order register is nuisance, not a new hidden-involution signal."
+  ],
+  "finite_controls": [
+    {
+      "canonical_labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "control_id": "S3-ONE-PAIR-ORDER-GAUGE",
+      "diagonal_branch_orbit_count": 2,
+      "diagonal_branch_orbit_size": 2,
+      "distinct_selected_pattern_rank_count": 2,
+      "exact_source_order_gauge_reduction_verified": true,
+      "maximum_order_gauge_rank_residual": 0,
+      "maximum_selected_pattern_invariance_residual": 0,
+      "maximum_selected_pattern_leaf_rank": 2,
+      "minimum_selected_pattern_leaf_rank": 0,
+      "n": 3,
+      "selected_pattern_count": 2,
+      "selected_pattern_is_complete_orbit_invariant": true,
+      "selected_pattern_rank_profile": [
+        [
+          0,
+          2
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "selected_pattern_rank_profile_nonuniform": true,
+      "source_order_gauge_action_free": true,
+      "source_order_orientation_pair_count": 4,
+      "source_pair_count": 1,
+      "status": "source-order-gauge-removed-selected-pattern-frame-remains",
+      "target_partition": [
+        3
+      ]
+    },
+    {
+      "canonical_labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "control_id": "S4-TWO-PAIR-ORDER-GAUGE",
+      "diagonal_branch_orbit_count": 4,
+      "diagonal_branch_orbit_size": 4,
+      "distinct_selected_pattern_rank_count": 3,
+      "exact_source_order_gauge_reduction_verified": true,
+      "maximum_order_gauge_rank_residual": 0,
+      "maximum_selected_pattern_invariance_residual": 0,
+      "maximum_selected_pattern_leaf_rank": 9,
+      "minimum_selected_pattern_leaf_rank": 0,
+      "n": 4,
+      "selected_pattern_count": 4,
+      "selected_pattern_is_complete_orbit_invariant": true,
+      "selected_pattern_rank_profile": [
+        [
+          0,
+          9
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          2
+        ]
+      ],
+      "selected_pattern_rank_profile_nonuniform": true,
+      "source_order_gauge_action_free": true,
+      "source_order_orientation_pair_count": 16,
+      "source_pair_count": 2,
+      "status": "source-order-gauge-removed-selected-pattern-frame-remains",
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "canonical_labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "control_id": "S5-TWO-PAIR-ORDER-GAUGE",
+      "diagonal_branch_orbit_count": 4,
+      "diagonal_branch_orbit_size": 4,
+      "distinct_selected_pattern_rank_count": 3,
+      "exact_source_order_gauge_reduction_verified": true,
+      "maximum_order_gauge_rank_residual": 0,
+      "maximum_selected_pattern_invariance_residual": 0,
+      "maximum_selected_pattern_leaf_rank": 4,
+      "minimum_selected_pattern_leaf_rank": 0,
+      "n": 5,
+      "selected_pattern_count": 4,
+      "selected_pattern_is_complete_orbit_invariant": true,
+      "selected_pattern_rank_profile": [
+        [
+          0,
+          4
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          4
+        ]
+      ],
+      "selected_pattern_rank_profile_nonuniform": true,
+      "source_order_gauge_action_free": true,
+      "source_order_orientation_pair_count": 16,
+      "source_pair_count": 2,
+      "status": "source-order-gauge-removed-selected-pattern-frame-remains",
+      "target_partition": [
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "canonical_labels": [
+        [
+          [
+            6
+          ],
+          [
+            4,
+            2
+          ]
+        ],
+        [
+          [
+            5,
+            1
+          ],
+          [
+            2,
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            3
+          ],
+          [
+            2,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "control_id": "S6-MATRIX-PARTIAL-SUPPORT-ORDER-GAUGE",
+      "diagonal_branch_orbit_count": 16,
+      "diagonal_branch_orbit_size": 16,
+      "distinct_selected_pattern_rank_count": 5,
+      "exact_source_order_gauge_reduction_verified": true,
+      "maximum_order_gauge_rank_residual": 0,
+      "maximum_selected_pattern_invariance_residual": 0,
+      "maximum_selected_pattern_leaf_rank": 2025,
+      "minimum_selected_pattern_leaf_rank": 0,
+      "n": 6,
+      "selected_pattern_count": 16,
+      "selected_pattern_is_complete_orbit_invariant": true,
+      "selected_pattern_rank_profile": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          50
+        ],
+        [
+          2,
+          225
+        ],
+        [
+          3,
+          125
+        ],
+        [
+          4,
+          225
+        ],
+        [
+          5,
+          125
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          50
+        ],
+        [
+          8,
+          0
+        ],
+        [
+          9,
+          0
+        ],
+        [
+          10,
+          2025
+        ],
+        [
+          11,
+          225
+        ],
+        [
+          12,
+          2025
+        ],
+        [
+          13,
+          225
+        ],
+        [
+          14,
+          0
+        ],
+        [
+          15,
+          0
+        ]
+      ],
+      "selected_pattern_rank_profile_nonuniform": true,
+      "source_order_gauge_action_free": true,
+      "source_order_orientation_pair_count": 256,
+      "source_pair_count": 4,
+      "status": "source-order-gauge-removed-selected-pattern-frame-remains",
+      "target_partition": [
+        6
+      ]
+    }
+  ],
+  "headline_metrics": {
+    "coherent_source_pair_sort_compiler_count": 1,
+    "complete_orientation_polar_compiler_count": 0,
+    "finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "maximum_order_gauge_rank_residual": 0,
+    "maximum_selected_pattern_invariance_residual": 0,
+    "new_quantum_algorithm_count": 0,
+    "nonuniform_selected_pattern_rank_control_count": 4,
+    "s6_distinct_selected_pattern_rank_count": 5,
+    "s6_maximum_selected_pattern_leaf_rank": 2025,
+    "s6_minimum_selected_pattern_leaf_rank": 0,
+    "s6_selected_pattern_count": 16,
+    "scaling_record_count": 13,
+    "selected_pattern_rectangular_cs_compiler_count": 0,
+    "source_order_gauge_quotient_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "identify_complete_branch_orbit_invariant",
+      "resolution": "The free diagonal XOR action has one orbit for each q=e+s.",
+      "resolved": true
+    },
+    {
+      "obligation": "compile_coherent_source_pair_sorting",
+      "resolution": "Reversible partition comparison, controlled carrier swaps, and XOR updates use polynomial-size registers and gates.",
+      "resolved": true
+    },
+    {
+      "obligation": "test_whether_sorting_flattens_orientation_rank_profile",
+      "resolution": "All order gauges match the canonical q rank, while every control retains a nonuniform rank profile across q.",
+      "resolved": true
+    },
+    {
+      "obligation": "compile_selected_pattern_rectangular_cs_polar",
+      "resolution": "The quotient removes a replicated gauge but leaves exactly the selected-label frame whose normalization was open.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "branch_fourier_transform_polynomial": true,
+      "branch_operations_mix_selected_patterns": false,
+      "coherent_carrier_swap_polynomial": true,
+      "coherent_partition_pair_sort_polynomial": true,
+      "complete_orientation_polar_compiled": false,
+      "information_threshold_copy_count": 9,
+      "n": 5,
+      "selected_pattern_qubit_count": 9,
+      "source_order_gauge_qubit_count": 9,
+      "source_order_sorting_compiles_rectangular_cs_polar": false,
+      "status": "source-order-canonicalization-polynomial-selected-pattern-cs-open"
+    },
+    {
+      "branch_fourier_transform_polynomial": true,
+      "branch_operations_mix_selected_patterns": false,
+      "coherent_carrier_swap_polynomial": true,
+      "coherent_partition_pair_sort_polynomial": true,
+      "complete_orientation_polar_compiled": false,
+      "information_threshold_copy_count": 12,
+      "n": 6,
+      "selected_pattern_qubit_count": 12,
+      "source_order_gauge_qubit_count": 12,
+      "source_order_sorting_compiles_rectangular_cs_polar": false,
+      "status": "source-order-canonicalization-polynomial-selected-pattern-cs-open"
+    },
+    {
+      "branch_fourier_transform_polynomial": true,
+      "branch_operations_mix_selected_patterns": false,
+      "coherent_carrier_swap_polynomial": true,
+      "coherent_partition_pair_sort_polynomial": true,
+      "complete_orientation_polar_compiled": false,
+      "information_threshold_copy_count": 18,
+      "n": 8,
+      "selected_pattern_qubit_count": 18,
+      "source_order_gauge_qubit_count": 18,
+      "source_order_sorting_compiles_rectangular_cs_polar": false,
+      "status": "source-order-canonicalization-polynomial-selected-pattern-cs-open"
+    },
+    {
+      "branch_fourier_transform_polynomial": true,
+      "branch_operations_mix_selected_patterns": false,
+      "coherent_carrier_swap_polynomial": true,
+      "coherent_partition_pair_sort_polynomial": true,
+      "complete_orientation_polar_compiled": false,
+      "information_threshold_copy_count": 24,
+      "n": 10,
+      "selected_pattern_qubit_count": 24,
+      "source_order_gauge_qubit_count": 24,
+      "source_order_sorting_compiles_rectangular_cs_polar": false,
+      "status": "source-order-canonicalization-polynomial-selected-pattern-cs-open"
+    },
+    {
+      "branch_fourier_transform_polynomial": true,
+      "branch_operations_mix_selected_patterns": false,
+      "coherent_carrier_swap_polynomial": true,
+      "coherent_partition_pair_sort_polynomial": true,
+      "complete_orientation_polar_compiled": false,
+      "information_threshold_copy_count": 31,
+      "n": 12,
+      "selected_pattern_qubit_count": 31,
+      "source_order_gauge_qubit_count": 31,
+      "source_order_sorting_compiles_rectangular_cs_polar": false,
+      "status": "source-order-canonicalization-polynomial-selected-pattern-cs-open"
+    },
+    {
+      "branch_fourier_transform_polynomial": true,
+      "branch_operations_mix_selected_patterns": false,
+      "coherent_carrier_swap_polynomial": true,
+      "coherent_partition_pair_sort_polynomial": true,
+      "complete_orientation_polar_compiled": false,
+      "information_threshold_copy_count": 47,
+      "n": 16,
+      "selected_pattern_qubit_count": 47,
+      "source_order_gauge_qubit_count": 47,
+      "source_order_sorting_compiles_rectangular_cs_polar": false,
+      "status": "source-order-canonicalization-polynomial-selected-pattern-cs-open"
+    },
+    {
+      "branch_fourier_transform_polynomial": true,
+      "branch_operations_mix_selected_patterns": false,
+      "coherent_carrier_swap_polynomial": true,
+      "coherent_partition_pair_sort_polynomial": true,
+      "complete_orientation_polar_compiled": false,
+      "information_threshold_copy_count": 64,
+      "n": 20,
+      "selected_pattern_qubit_count": 64,
+      "source_order_gauge_qubit_count": 64,
+      "source_order_sorting_compiles_rectangular_cs_polar": false,
+      "status": "source-order-canonicalization-polynomial-selected-pattern-cs-open"
+    },
+    {
+      "branch_fourier_transform_polynomial": true,
+      "branch_operations_mix_selected_patterns": false,
+      "coherent_carrier_swap_polynomial": true,
+      "coherent_partition_pair_sort_polynomial": true,
+      "complete_orientation_polar_compiled": false,
+      "information_threshold_copy_count": 82,
+      "n": 24,
+      "selected_pattern_qubit_count": 82,
+      "source_order_gauge_qubit_count": 82,
+      "source_order_sorting_compiles_rectangular_cs_polar": false,
+      "status": "source-order-canonicalization-polynomial-selected-pattern-cs-open"
+    },
+    {
+      "branch_fourier_transform_polynomial": true,
+      "branch_operations_mix_selected_patterns": false,
+      "coherent_carrier_swap_polynomial": true,
+      "coherent_partition_pair_sort_polynomial": true,
+      "complete_orientation_polar_compiled": false,
+      "information_threshold_copy_count": 120,
+      "n": 32,
+      "selected_pattern_qubit_count": 120,
+      "source_order_gauge_qubit_count": 120,
+      "source_order_sorting_compiles_rectangular_cs_polar": false,
+      "status": "source-order-canonicalization-polynomial-selected-pattern-cs-open"
+    },
+    {
+      "branch_fourier_transform_polynomial": true,
+      "branch_operations_mix_selected_patterns": false,
+      "coherent_carrier_swap_polynomial": true,
+      "coherent_partition_pair_sort_polynomial": true,
+      "complete_orientation_polar_compiled": false,
+      "information_threshold_copy_count": 205,
+      "n": 48,
+      "selected_pattern_qubit_count": 205,
+      "source_order_gauge_qubit_count": 205,
+      "source_order_sorting_compiles_rectangular_cs_polar": false,
+      "status": "source-order-canonicalization-polynomial-selected-pattern-cs-open"
+    },
+    {
+      "branch_fourier_transform_polynomial": true,
+      "branch_operations_mix_selected_patterns": false,
+      "coherent_carrier_swap_polynomial": true,
+      "coherent_partition_pair_sort_polynomial": true,
+      "complete_orientation_polar_compiled": false,
+      "information_threshold_copy_count": 298,
+      "n": 64,
+      "selected_pattern_qubit_count": 298,
+      "source_order_gauge_qubit_count": 298,
+      "source_order_sorting_compiles_rectangular_cs_polar": false,
+      "status": "source-order-canonicalization-polynomial-selected-pattern-cs-open"
+    },
+    {
+      "branch_fourier_transform_polynomial": true,
+      "branch_operations_mix_selected_patterns": false,
+      "coherent_carrier_swap_polynomial": true,
+      "coherent_partition_pair_sort_polynomial": true,
+      "complete_orientation_polar_compiled": false,
+      "information_threshold_copy_count": 501,
+      "n": 96,
+      "selected_pattern_qubit_count": 501,
+      "source_order_gauge_qubit_count": 501,
+      "source_order_sorting_compiles_rectangular_cs_polar": false,
+      "status": "source-order-canonicalization-polynomial-selected-pattern-cs-open"
+    },
+    {
+      "branch_fourier_transform_polynomial": true,
+      "branch_operations_mix_selected_patterns": false,
+      "coherent_carrier_swap_polynomial": true,
+      "coherent_partition_pair_sort_polynomial": true,
+      "complete_orientation_polar_compiled": false,
+      "information_threshold_copy_count": 719,
+      "n": 128,
+      "selected_pattern_qubit_count": 719,
+      "source_order_gauge_qubit_count": 719,
+      "source_order_sorting_compiles_rectangular_cs_polar": false,
+      "status": "source-order-canonicalization-polynomial-selected-pattern-cs-open"
+    }
+  ],
+  "status": "source-order-gauge-quotient-proved-selected-pattern-polar-open",
+  "summary": "Compiled coherent source-order canonicalization and proved that it leaves the selected-label orientation polar unchanged.",
+  "theorem": {
+    "branch_action": "t:(s,e)->(s+t,e+t), so q is invariant",
+    "coherent_sort": "(s,e)->(0,q) with reversible order-gauge record s",
+    "orbit_quotient": "F_2^K acts freely and its orbits are exactly the q fibers",
+    "rank_invariance": "rank(E_e^(sLambda))=rank(E_q^Lambda_canonical)",
+    "scope": "sorting and branch Fourier transforms remove source order only; they do not mix or normalize the q-indexed selected-label frame",
+    "selected_pattern": "q=e+s in F_2^K",
+    "source_order_bit": "s_i=0 for canonical order and 1 for reversed order",
+    "status": "source-order-gauge-quotient-proved-selected-pattern-polar-open",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "branch_action": "t:(s,e)->(s+t,e+t), so q is invariant",
+    "coherent_sort": "(s,e)->(0,q) with reversible order-gauge record s",
+    "orbit_quotient": "F_2^K acts freely and its orbits are exactly the q fibers",
+    "rank_invariance": "rank(E_e^(sLambda))=rank(E_q^Lambda_canonical)",
+    "scope": "sorting and branch Fourier transforms remove source order only; they do not mix or normalize the q-indexed selected-label frame",
+    "selected_pattern": "q=e+s in F_2^K",
+    "source_order_bit": "s_i=0 for canonical order and 1 for reversed order",
+    "status": "source-order-gauge-quotient-proved-selected-pattern-polar-open",
+    "theorem_verified": true
+  }
+}

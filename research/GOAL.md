@@ -33,6 +33,27 @@ passing tests into an algorithmic speedup claim.
 Running out of one model's usage is a handoff event, not completion of this
 research goal.
 
+## Continuous Handoff Invariant
+
+The repository must remain resumable by Gemini 3.6 Flash through Antigravity
+at every meaningful research checkpoint, because Codex usage may end without a
+final cleanup pass. After each hard derivation, Codex must immediately record:
+
+- the exact claim proved, refuted, or left conditional;
+- assumptions, quantifiers, asymptotic regime, and access model;
+- the strongest known counterexample or classical baseline;
+- false claim gates that must remain false;
+- the next theorem-level question reserved for a high-reasoning model; and
+- mechanical source, registry, CLI, artifact, test, and validation work that
+  Gemini can execute without making a new mathematical judgment.
+
+Handoff readiness is part of the research objective, not optional project
+documentation. `research/AGENT_HANDOFF.md` is the mathematical continuation
+state. `research/MECHANICAL_FOLLOW_UP_PLAN.md` is the executable low-reasoning
+queue. If Codex usage ends, Gemini 3.6 Flash must continue that queue
+immediately, preserve every proof boundary and falsifier, and leave unresolved
+theorem selection or claim promotion for a high-reasoning model.
+
 This allocation is mandatory during autonomous runs: repeatedly choose the
 highest-value unresolved theorem, counterexample, asymptotic boundary, or
 research-direction decision for Codex. Do not consume the remaining
@@ -48,6 +69,18 @@ enough that Gemini 3.6 Flash can execute it in Antigravity without rediscovering
 the mathematical intent. At Codex exhaustion, Gemini continues the mechanical
 queue; it does not reinterpret open conjectures, weaken falsifiers, or promote
 experimental evidence into theorem or speedup claims.
+
+For autonomous task selection, rank work by **expected research impact times
+dependence on high-end reasoning**. Codex should take the highest-ranked hard
+item and perform only the minimum inseparable plumbing needed to test or record
+it. Small, repetitive, schema-preserving, or already-specified tasks belong in
+the mechanical queue even when Codex could complete them quickly. This is a
+deliberate model handoff: when Codex usage ends, Gemini 3.6 Flash in Antigravity
+must resume from `research/AGENT_HANDOFF.md` and
+`research/MECHANICAL_FOLLOW_UP_PLAN.md` without waiting for a new research
+plan. Those files must therefore remain current enough to identify the exact
+next command, expected artifact, acceptance test, and mathematical claim
+boundary.
 
 ## Nonnegotiable Research Discipline
 

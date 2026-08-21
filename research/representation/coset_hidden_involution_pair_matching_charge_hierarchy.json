@@ -1,0 +1,327 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False. Its exact local minimal relation makes it C_m plus a K-center element, so it cannot refine fixed K,C labels.",
+      "challenge": "The edge-square power sum supplies a second charge.",
+      "resolved": true
+    },
+    {
+      "answer": "False: it adds a joint copy label at m=5 and has an exact inverse-polynomial gap on the all-rank stable multiplicity-two branch.",
+      "challenge": "The disjoint matching charge is only formally different.",
+      "resolved": true
+    },
+    {
+      "answer": "False: an explicit S_12 coefficient in [D_m,M_3] is nonzero.",
+      "challenge": "Matching charges form an automatic full commuting hierarchy.",
+      "resolved": true
+    },
+    {
+      "answer": "False: the worst finite sector is unchanged and no natural-mass, gap, source-correlation, or circuit theorem is known.",
+      "challenge": "One additional split implies a scalable subduction transform.",
+      "resolved": true
+    }
+  ],
+  "branch_controls": [
+    {
+      "C_D_resolves_all_copy_labels": false,
+      "C_resolves_all_copy_labels": false,
+      "D_added_copy_label_count": 0,
+      "K_branch_block_count": 11,
+      "center_joint_eigenspace_count": 11,
+      "center_plus_C_D_joint_eigenspace_count": 15,
+      "center_plus_C_joint_eigenspace_count": 15,
+      "finite_numerical_control_only": true,
+      "half_degree": 4,
+      "status": "D-leaves-residual-copy-degeneracy",
+      "symmetric_irrep_dimension": 90,
+      "symmetric_partition": [
+        4,
+        2,
+        1,
+        1
+      ],
+      "target_copy_label_count": 16
+    },
+    {
+      "C_D_resolves_all_copy_labels": true,
+      "C_resolves_all_copy_labels": false,
+      "D_added_copy_label_count": 1,
+      "K_branch_block_count": 19,
+      "center_joint_eigenspace_count": 19,
+      "center_plus_C_D_joint_eigenspace_count": 26,
+      "center_plus_C_joint_eigenspace_count": 25,
+      "finite_numerical_control_only": true,
+      "half_degree": 5,
+      "status": "C-D-resolve-all-controlled-copy-labels",
+      "symmetric_irrep_dimension": 315,
+      "symmetric_partition": [
+        6,
+        3,
+        1
+      ],
+      "target_copy_label_count": 26
+    },
+    {
+      "C_D_resolves_all_copy_labels": false,
+      "C_resolves_all_copy_labels": false,
+      "D_added_copy_label_count": 1,
+      "K_branch_block_count": 25,
+      "center_joint_eigenspace_count": 25,
+      "center_plus_C_D_joint_eigenspace_count": 35,
+      "center_plus_C_joint_eigenspace_count": 34,
+      "finite_numerical_control_only": true,
+      "half_degree": 5,
+      "status": "D-strictly-improves-partial-copy-resolution",
+      "symmetric_irrep_dimension": 450,
+      "symmetric_partition": [
+        5,
+        3,
+        2
+      ],
+      "target_copy_label_count": 37
+    },
+    {
+      "C_D_resolves_all_copy_labels": false,
+      "C_resolves_all_copy_labels": false,
+      "D_added_copy_label_count": 0,
+      "K_branch_block_count": 32,
+      "center_joint_eigenspace_count": 32,
+      "center_plus_C_D_joint_eigenspace_count": 50,
+      "center_plus_C_joint_eigenspace_count": 50,
+      "finite_numerical_control_only": true,
+      "half_degree": 5,
+      "status": "D-leaves-residual-copy-degeneracy",
+      "symmetric_irrep_dimension": 768,
+      "symmetric_partition": [
+        4,
+        3,
+        2,
+        1
+      ],
+      "target_copy_label_count": 62
+    }
+  ],
+  "claim_gate": {
+    "all_rank_K_adapted_commuting_pair_proved": true,
+    "asymptotic_natural_copy_resolution_proved": false,
+    "coherent_subduction_transform_compiled": false,
+    "complete_control_resolution": false,
+    "edge_power_sum_redundancy_proved": true,
+    "hidden_involution_detector_constructed": false,
+    "inverse_polynomial_conditional_gaps_proved": false,
+    "polynomial_permutation_expansions_proved": true,
+    "reason": "C_m,D_m are the first terminal K-adapted commuting pair with strict copy-space improvement, but residual degeneracy and every natural algorithmic obligation remain open.",
+    "source_signal_correlation_proved": false,
+    "speedup_claim_allowed": false,
+    "stable_branch_natural_source_mass_nonnegligible": false,
+    "stable_inverse_polynomial_gap_proved": true,
+    "stable_multiplicity_two_resolver_proved": true,
+    "strict_finite_copy_resolution_improvement": true
+  },
+  "created_at": "2026-08-20T20:27:58.648232+00:00",
+  "falsifiers_triggered": [
+    "Symmetric edge power sums do not extend the copy-label algebra beyond C_m and the K center.",
+    "Disjoint matching products do add genuine terminal copy information.",
+    "The disjoint matching charge is an all-rank inverse-polynomial resolver on the stable multiplicity-two branch, but that branch has factorially negligible natural source mass.",
+    "Higher matching sums are not automatically mutually commuting.",
+    "The current commuting pair leaves the largest controlled multiplicity sector unresolved."
+  ],
+  "headline_metrics": {
+    "all_rank_K_adapted_commuting_charge_pair_count": 1,
+    "all_rank_stable_branch_resolver_count": 1,
+    "asymptotic_natural_resolution_count": 0,
+    "finite_branch_control_count": 4,
+    "finite_branch_full_resolution_count": 1,
+    "finite_branch_strict_improvement_count": 2,
+    "hidden_involution_detector_count": 0,
+    "higher_matching_noncommutation_witness_count": 1,
+    "inverse_polynomial_conditional_gap_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_sparse_charge_count": 2,
+    "redundant_edge_power_charge_count": 1,
+    "stable_inverse_polynomial_gap_count": 1
+  },
+  "higher_matching_boundary": {
+    "D_M3_commute": false,
+    "D_term_count": 2880,
+    "M3_term_count": 7680,
+    "commutator_witness_coefficient": -1,
+    "commutator_witness_permutation": [
+      0,
+      2,
+      1,
+      4,
+      3,
+      6,
+      7,
+      8,
+      5,
+      10,
+      9,
+      11
+    ],
+    "half_degree": 6,
+    "matching_charge_family_pairwise_commuting": false,
+    "status": "third-matching-charge-fails-to-commute-with-D"
+  },
+  "literature_links": [
+    {
+      "id": "arXiv:0710.4971",
+      "role": "Gaudin/Jucys-Murphy commuting-algebra mechanism; the present K-adapted matching charge is a distinct finite-group construction."
+    },
+    {
+      "id": "arXiv:1001.2345",
+      "role": "Odd Jucys-Murphy and hyperoctahedral Hecke-algebra comparison; its multiplicity-free double-coset setting does not resolve the present repeated K branches."
+    },
+    {
+      "id": "arXiv:1807.00481",
+      "role": "Perfect-matching association-scheme eigenvalue recurrences for the trivial K branch; useful boundary, not a general subduction compiler."
+    }
+  ],
+  "local_power_collapse": {
+    "global_center_controls_verified": true,
+    "local_center_is_subgroup_sum": true,
+    "local_center_term_count": 4,
+    "pair_interaction_term_count": 8,
+    "power_sum_adds_copy_labels_beyond_C_and_K_center": false,
+    "square_relation_nonzero_count": 0,
+    "square_term_count": 12,
+    "status": "edge-power-sum-collapses-to-C-plus-K-center"
+  },
+  "matching_controls": [
+    {
+      "C_D_commutator_nonzero_count": 0,
+      "C_K_commutator_failure_count": 0,
+      "C_pair_commutator_failure_count": 0,
+      "C_term_count": 48,
+      "D_K_commutator_failure_count": 0,
+      "D_term_count": 192,
+      "expected_C_term_count": 48,
+      "expected_D_term_count": 192,
+      "half_degree": 4,
+      "polynomial_sparse_K_adapted_commuting_pair_verified": true,
+      "status": "polynomial-sparse-K-adapted-commuting-pair-verified"
+    },
+    {
+      "C_D_commutator_nonzero_count": 0,
+      "C_K_commutator_failure_count": 0,
+      "C_pair_commutator_failure_count": 0,
+      "C_term_count": 80,
+      "D_K_commutator_failure_count": 0,
+      "D_term_count": 960,
+      "expected_C_term_count": 80,
+      "expected_D_term_count": 960,
+      "half_degree": 5,
+      "polynomial_sparse_K_adapted_commuting_pair_verified": true,
+      "status": "polynomial-sparse-K-adapted-commuting-pair-verified"
+    },
+    {
+      "C_D_commutator_nonzero_count": 0,
+      "C_K_commutator_failure_count": 0,
+      "C_pair_commutator_failure_count": 0,
+      "C_term_count": 120,
+      "D_K_commutator_failure_count": 0,
+      "D_term_count": 2880,
+      "expected_C_term_count": 120,
+      "expected_D_term_count": 2880,
+      "half_degree": 6,
+      "polynomial_sparse_K_adapted_commuting_pair_verified": true,
+      "status": "polynomial-sparse-K-adapted-commuting-pair-verified"
+    },
+    {
+      "C_D_commutator_nonzero_count": 0,
+      "C_K_commutator_failure_count": 0,
+      "C_pair_commutator_failure_count": 0,
+      "C_term_count": 168,
+      "D_K_commutator_failure_count": 0,
+      "D_term_count": 6720,
+      "expected_C_term_count": 168,
+      "expected_D_term_count": 6720,
+      "half_degree": 7,
+      "polynomial_sparse_K_adapted_commuting_pair_verified": true,
+      "status": "polynomial-sparse-K-adapted-commuting-pair-verified"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-HIDDEN-INVOLUTION-MATCHING-CENTRALIZER-COMPLETION",
+      "resolved": false,
+      "statement": "Classify or construct additional polynomial K-adapted charges commuting with C_m and D_m that split the residual natural copy spaces."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-MATCHING-NATURAL-RESOLUTION",
+      "resolved": false,
+      "statement": "Prove a source-weighted lower bound on the fraction of natural branching copies separated by the C_m,D_m joint spectrum."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-MATCHING-CONDITIONAL-GAPS",
+      "resolved": false,
+      "statement": "Prove inverse-polynomial conditional gaps or bounded local branching for a completed hierarchy."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-MATCHING-SOURCE-CORRELATION",
+      "resolved": false,
+      "statement": "Show that the resolved labels correlate with the source-aware CS likelihood rather than nuisance multiplicity."
+    }
+  ],
+  "stable_branch_resolution": {
+    "action_preserves_top_harmonic_copy_space": true,
+    "all_holdouts_match": true,
+    "all_rank_stable_branch_resolver_proved": true,
+    "branching_multiplicity": 2,
+    "closed_formula_matches_interpolation": true,
+    "gap_squared_ratio_to_support_five_resolver": "16/25",
+    "holdout_rows": [
+      11,
+      12
+    ],
+    "interpolation_rows": [
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "inverse_polynomial_gap_lower_bound": "gap(D_m) >= 2/(5m^2)",
+    "maximum_interpolated_degree": 4,
+    "natural_source_mass_nonnegligible": false,
+    "normalized_gap_squared": "4*(m**4 - 14*m**3 + 75*m**2 - 166*m + 129)/(m**2*(m - 3)**2*(m - 2)**2*(m - 1)**2)",
+    "normalized_orbit_size": "192*binomial(m,4)",
+    "predicted_degree_upper_bound": 4,
+    "restricted_action_reconstruction_verified": true,
+    "stable_K_partition": "mu_m=((m-2,2),empty)",
+    "stable_symmetric_partition": "lambda_m=(2m-4,4)",
+    "status": "all-rank-disjoint-matching-stable-resolver-proved"
+  },
+  "status": "K-adapted-commuting-pair-proved-partial-copy-resolution",
+  "summary": "Proved an all-rank polynomial K-adapted commuting charge pair and demonstrated strict but incomplete hyperoctahedral copy-space resolution.",
+  "theorem": {
+    "all_rank_commutation_proof": "For fixed ij, disjoint terms commute and each triangle contributes [c_ik+c_jk,c_ij]=0; hence [C_m,c_ij]=0 and [C_m,D_m]=0.",
+    "asymptotic_natural_copy_resolution_proved": false,
+    "central_pair_charge": "C_m=sum_(i<j)c_ij is central in the algebra generated by the pair interactions.",
+    "coherent_subduction_transform_compiled": false,
+    "complete_finite_copy_resolution_on_every_control": false,
+    "disjoint_matching_charge": "D_m is the sum of c_ij c_kl over disjoint pair-label edges and has 192*binomial(m,4) terms.",
+    "edge_power_sum_redundancy_proved": true,
+    "exact_all_rank_K_adapted_commuting_pair_proved": true,
+    "finite_copy_resolution_strictly_improved": true,
+    "finite_resolution_evidence": "D_m adds terminal K-copy labels at m=5 and fully repairs lambda=(6,3,1), but leaves large residual sectors.",
+    "hidden_involution_detector_constructed": false,
+    "higher_matching_boundary": "The three-edge matching charge M_3 does not commute with D_m; matching sums are not a commuting hierarchy.",
+    "inverse_polynomial_conditional_gaps_proved": false,
+    "polynomial_permutation_expansions_proved": true,
+    "power_sum_collapse": "sum c_ij^2=4C_m+8Z_m with Z_m in the center of C[K_m].",
+    "source_signal_correlation_proved": false,
+    "speedup_claim_allowed": false,
+    "stable_inverse_polynomial_gap_proved": true,
+    "stable_multiplicity_two_resolver_proved": true,
+    "status": "K-adapted-commuting-pair-proved-partial-copy-resolution",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "claim_boundary": "A polynomial K-adapted commuting pair with strict finite copy-space improvement; not a complete hierarchy, gap theorem, transform, or detector.",
+    "family": "S_(2m) down C_2 wr S_m with canonical pair interactions",
+    "finite_resolution_scope": "Young-basis controls at m=4,5 only",
+    "range": "exact charge identities for every m>=4"
+  }
+}

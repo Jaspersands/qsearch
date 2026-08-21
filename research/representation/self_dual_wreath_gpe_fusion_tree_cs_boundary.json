@@ -1,0 +1,443 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "GPE is only weak Fourier sampling and cannot recouple opaque multiplicity.",
+      "resolution": "False. Kept coherent, its row output can be recursively fused; tree changes implement Racah unitaries implicitly.",
+      "resolved": true
+    },
+    {
+      "objection": "An efficient full Racah unitary automatically gives the fixed-space polar.",
+      "resolution": "False. The polar is that unitary's rectangular fixed-label subblock with all active singular values replaced by one.",
+      "resolved": true
+    },
+    {
+      "objection": "The pair-GPE success proves every higher subblock has a direct reassociation.",
+      "resolution": "False. Pair blocks are scalar times partial isometries; the two-pair S3 control has multiple active singular levels.",
+      "resolved": true
+    },
+    {
+      "objection": "This rules out all GPE-based global circuits.",
+      "resolution": "Not proved. A GPE-derived direct CS basis, multi-pass holonomy network, or structured singular-vector pairing remains open.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "classical_separation_proved": false,
+    "complete_natural_orientation_polar_compiled": false,
+    "connected_fixed_space_overlap_is_rectangular_racah_subblock": true,
+    "direct_global_rectangular_cs_polar_compiled": false,
+    "full_gpe_tree_recoupling_unitary_polynomial": true,
+    "full_recoupling_unitary_automatically_compiles_subblock_polar": false,
+    "pair_gpe_direct_reassociation_available": true,
+    "reason": "Recursive GPE can compile full fusion-tree recouplings, but the orientation gate is the polar of a non-isometric rectangular fixed-label subblock. Its direct CS pairing remains open.",
+    "recursive_gpe_fusion_tree_transform_polynomial": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-21T04:57:53.911437+00:00",
+  "falsifiers_triggered": [
+    "GPE is capable of coherent fusion-tree recoupling; lack of named multiplicity coordinates is not the blocker.",
+    "A full Racah recoupling unitary is not the polar of its fixed-space rectangular subblock.",
+    "The pair scalar-reassociation mechanism does not extend automatically to the first matrix-valued higher block."
+  ],
+  "finite_controls": [
+    {
+      "active_singular_condition_ratio": 1.0,
+      "active_singular_value_count": 1,
+      "active_subblock_already_partial_isometry": false,
+      "active_subblock_is_scalar_times_partial_isometry": true,
+      "base_dimension": 4,
+      "control_id": "S3-SCALAR-PAIR",
+      "distinct_active_singular_value_count": 1,
+      "exact_subblock_polar_identity_verified": true,
+      "fixed_space_cross_map_dimension": [
+        8,
+        4
+      ],
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "maximum_active_singular_value": 0.7071067811865475,
+      "minimum_active_singular_value": 0.7071067811865475,
+      "minimum_one_crossing_unitary_only_polar_distance": 0.29289321881345254,
+      "n": 3,
+      "orientation_count": 2,
+      "status": "scalar-pair-subblock-direct-reassociation-possible",
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "active_singular_condition_ratio": 1.7320508075688772,
+      "active_singular_value_count": 5,
+      "active_subblock_already_partial_isometry": false,
+      "active_subblock_is_scalar_times_partial_isometry": false,
+      "base_dimension": 8,
+      "control_id": "S3-MATRIX-TWO-PAIR",
+      "distinct_active_singular_value_count": 3,
+      "exact_subblock_polar_identity_verified": true,
+      "fixed_space_cross_map_dimension": [
+        32,
+        8
+      ],
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_active_singular_value": 0.6123724356957945,
+      "minimum_active_singular_value": 0.35355339059327373,
+      "minimum_one_crossing_unitary_only_polar_distance": 0.6464466094067263,
+      "n": 3,
+      "orientation_count": 4,
+      "status": "matrix-valued-rectangular-racah-subblock-direct-cs-polar-open",
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "active_singular_condition_ratio": 1.000000000000001,
+      "active_singular_value_count": 5,
+      "active_subblock_already_partial_isometry": false,
+      "active_subblock_is_scalar_times_partial_isometry": true,
+      "base_dimension": 54,
+      "control_id": "S4-SCALAR-TWO-PAIR-CONTROL",
+      "distinct_active_singular_value_count": 1,
+      "exact_subblock_polar_identity_verified": true,
+      "fixed_space_cross_map_dimension": [
+        216,
+        54
+      ],
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_active_singular_value": 0.5000000000000002,
+      "minimum_active_singular_value": 0.4999999999999997,
+      "minimum_one_crossing_unitary_only_polar_distance": 0.5000000000000002,
+      "n": 4,
+      "orientation_count": 4,
+      "status": "scalar-pair-subblock-direct-reassociation-possible",
+      "target_partition": [
+        3,
+        1
+      ]
+    }
+  ],
+  "headline_metrics": {
+    "complete_orientation_polar_compiler_count": 0,
+    "direct_global_rectangular_cs_polar_compiler_count": 0,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "full_gpe_tree_recoupling_unitary_compiler_count": 1,
+    "matrix_valued_subblock_control_count": 1,
+    "minimum_finite_one_crossing_polar_distance": 0.29289321881345254,
+    "new_quantum_algorithm_count": 0,
+    "rectangular_subblock_cs_boundary_theorem_count": 1,
+    "recursive_gpe_fusion_tree_compiler_count": 1,
+    "scalar_direct_reassociation_control_count": 2,
+    "scaling_record_count": 13
+  },
+  "proof_obligations": [
+    {
+      "obligation": "compile_recursive_gpe_fusion_tree_transform",
+      "resolution": "Every internal node uses one coherent GPE on the current exported carrier and next factor; opaque multiplicity is spectator.",
+      "resolved": true
+    },
+    {
+      "obligation": "compile_full_fusion_tree_recoupling_unitary",
+      "resolution": "Compose one tree inverse with the other tree forward; the number of GPE calls is linear in the tensor-factor count.",
+      "resolved": true
+    },
+    {
+      "obligation": "separate_full_recoupling_from_fixed_space_cs_polar",
+      "resolution": "The exact controls recover the orientation polar as polar(C); the higher S3 subblock has multiple singular levels.",
+      "resolved": true
+    },
+    {
+      "obligation": "compile_direct_rectangular_racah_subblock_polar",
+      "resolution": "Need singular-vector pairing or a direct higher-order partial isometry; tree unitaries and fixed-label projection are insufficient.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "binary_fusion_internal_node_count": 18,
+      "coherent_opaque_multiplicity_preserved": true,
+      "copy_count": 9,
+      "direct_global_rectangular_cs_polar_available": false,
+      "direct_pair_reassociation_available": true,
+      "flat_normalized_subblock_singular_amplitude_log2": -3.45344529780426,
+      "full_tree_recoupling_unitary_polynomial": true,
+      "generic_reflection_query_scale_log2": 3.45344529780426,
+      "gpe_call_count_for_tree_change_upper_bound": 36,
+      "gpe_call_count_per_tree_upper_bound": 18,
+      "group_ancilla_qubit_count_upper_bound": 252,
+      "n": 5,
+      "status": "gpe-tree-recoupling-polynomial-rectangular-cs-polar-open",
+      "tensor_factor_count": 19
+    },
+    {
+      "binary_fusion_internal_node_count": 24,
+      "coherent_opaque_multiplicity_preserved": true,
+      "copy_count": 12,
+      "direct_global_rectangular_cs_polar_available": false,
+      "direct_pair_reassociation_available": true,
+      "flat_normalized_subblock_singular_amplitude_log2": -4.745926548164838,
+      "full_tree_recoupling_unitary_polynomial": true,
+      "generic_reflection_query_scale_log2": 4.745926548164838,
+      "gpe_call_count_for_tree_change_upper_bound": 48,
+      "gpe_call_count_per_tree_upper_bound": 24,
+      "group_ancilla_qubit_count_upper_bound": 480,
+      "n": 6,
+      "status": "gpe-tree-recoupling-polynomial-rectangular-cs-polar-open",
+      "tensor_factor_count": 25
+    },
+    {
+      "binary_fusion_internal_node_count": 36,
+      "coherent_opaque_multiplicity_preserved": true,
+      "copy_count": 18,
+      "direct_global_rectangular_cs_polar_available": false,
+      "direct_pair_reassociation_available": true,
+      "flat_normalized_subblock_singular_amplitude_log2": -7.64960400919364,
+      "full_tree_recoupling_unitary_polynomial": true,
+      "generic_reflection_query_scale_log2": 7.64960400919364,
+      "gpe_call_count_for_tree_change_upper_bound": 72,
+      "gpe_call_count_per_tree_upper_bound": 36,
+      "group_ancilla_qubit_count_upper_bound": 1152,
+      "n": 8,
+      "status": "gpe-tree-recoupling-polynomial-rectangular-cs-polar-open",
+      "tensor_factor_count": 37
+    },
+    {
+      "binary_fusion_internal_node_count": 48,
+      "coherent_opaque_multiplicity_preserved": true,
+      "copy_count": 24,
+      "direct_global_rectangular_cs_polar_available": false,
+      "direct_pair_reassociation_available": true,
+      "flat_normalized_subblock_singular_amplitude_log2": -10.895530557358477,
+      "full_tree_recoupling_unitary_polynomial": true,
+      "generic_reflection_query_scale_log2": 10.895530557358477,
+      "gpe_call_count_for_tree_change_upper_bound": 96,
+      "gpe_call_count_per_tree_upper_bound": 48,
+      "group_ancilla_qubit_count_upper_bound": 2112,
+      "n": 10,
+      "status": "gpe-tree-recoupling-polynomial-rectangular-cs-polar-open",
+      "tensor_factor_count": 49
+    },
+    {
+      "binary_fusion_internal_node_count": 62,
+      "coherent_opaque_multiplicity_preserved": true,
+      "copy_count": 31,
+      "direct_global_rectangular_cs_polar_available": false,
+      "direct_pair_reassociation_available": true,
+      "flat_normalized_subblock_singular_amplitude_log2": -14.417727617037704,
+      "full_tree_recoupling_unitary_polynomial": true,
+      "generic_reflection_query_scale_log2": 14.417727617037704,
+      "gpe_call_count_for_tree_change_upper_bound": 124,
+      "gpe_call_count_per_tree_upper_bound": 62,
+      "group_ancilla_qubit_count_upper_bound": 3596,
+      "n": 12,
+      "status": "gpe-tree-recoupling-polynomial-rectangular-cs-polar-open",
+      "tensor_factor_count": 63
+    },
+    {
+      "binary_fusion_internal_node_count": 94,
+      "coherent_opaque_multiplicity_preserved": true,
+      "copy_count": 47,
+      "direct_global_rectangular_cs_polar_available": false,
+      "direct_pair_reassociation_available": true,
+      "flat_normalized_subblock_singular_amplitude_log2": -22.12507023494131,
+      "full_tree_recoupling_unitary_polynomial": true,
+      "generic_reflection_query_scale_log2": 22.12507023494131,
+      "gpe_call_count_for_tree_change_upper_bound": 188,
+      "gpe_call_count_per_tree_upper_bound": 94,
+      "group_ancilla_qubit_count_upper_bound": 8460,
+      "n": 16,
+      "status": "gpe-tree-recoupling-polynomial-rectangular-cs-polar-open",
+      "tensor_factor_count": 95
+    },
+    {
+      "binary_fusion_internal_node_count": 128,
+      "coherent_opaque_multiplicity_preserved": true,
+      "copy_count": 64,
+      "direct_global_rectangular_cs_polar_available": false,
+      "direct_pair_reassociation_available": true,
+      "flat_normalized_subblock_singular_amplitude_log2": -30.53869196045311,
+      "full_tree_recoupling_unitary_polynomial": true,
+      "generic_reflection_query_scale_log2": 30.53869196045311,
+      "gpe_call_count_for_tree_change_upper_bound": 256,
+      "gpe_call_count_per_tree_upper_bound": 128,
+      "group_ancilla_qubit_count_upper_bound": 15872,
+      "n": 20,
+      "status": "gpe-tree-recoupling-polynomial-rectangular-cs-polar-open",
+      "tensor_factor_count": 129
+    },
+    {
+      "binary_fusion_internal_node_count": 164,
+      "coherent_opaque_multiplicity_preserved": true,
+      "copy_count": 82,
+      "direct_global_rectangular_cs_polar_available": false,
+      "direct_pair_reassociation_available": true,
+      "flat_normalized_subblock_singular_amplitude_log2": -39.51882870955023,
+      "full_tree_recoupling_unitary_polynomial": true,
+      "generic_reflection_query_scale_log2": 39.51882870955023,
+      "gpe_call_count_for_tree_change_upper_bound": 328,
+      "gpe_call_count_per_tree_upper_bound": 164,
+      "group_ancilla_qubit_count_upper_bound": 26240,
+      "n": 24,
+      "status": "gpe-tree-recoupling-polynomial-rectangular-cs-polar-open",
+      "tensor_factor_count": 165
+    },
+    {
+      "binary_fusion_internal_node_count": 240,
+      "coherent_opaque_multiplicity_preserved": true,
+      "copy_count": 120,
+      "direct_global_rectangular_cs_polar_available": false,
+      "direct_pair_reassociation_available": true,
+      "flat_normalized_subblock_singular_amplitude_log2": -58.83163182618015,
+      "full_tree_recoupling_unitary_polynomial": true,
+      "generic_reflection_query_scale_log2": 58.83163182618015,
+      "gpe_call_count_for_tree_change_upper_bound": 480,
+      "gpe_call_count_per_tree_upper_bound": 240,
+      "group_ancilla_qubit_count_upper_bound": 56640,
+      "n": 32,
+      "status": "gpe-tree-recoupling-polynomial-rectangular-cs-polar-open",
+      "tensor_factor_count": 241
+    },
+    {
+      "binary_fusion_internal_node_count": 410,
+      "coherent_opaque_multiplicity_preserved": true,
+      "copy_count": 205,
+      "direct_global_rectangular_cs_polar_available": false,
+      "direct_pair_reassociation_available": true,
+      "flat_normalized_subblock_singular_amplitude_log2": -101.47478601485012,
+      "full_tree_recoupling_unitary_polynomial": true,
+      "generic_reflection_query_scale_log2": 101.47478601485012,
+      "gpe_call_count_for_tree_change_upper_bound": 820,
+      "gpe_call_count_per_tree_upper_bound": 410,
+      "group_ancilla_qubit_count_upper_bound": 166460,
+      "n": 48,
+      "status": "gpe-tree-recoupling-polynomial-rectangular-cs-polar-open",
+      "tensor_factor_count": 411
+    },
+    {
+      "binary_fusion_internal_node_count": 596,
+      "coherent_opaque_multiplicity_preserved": true,
+      "copy_count": 298,
+      "direct_global_rectangular_cs_polar_available": false,
+      "direct_pair_reassociation_available": true,
+      "flat_normalized_subblock_singular_amplitude_log2": -147.99757197086205,
+      "full_tree_recoupling_unitary_polynomial": true,
+      "generic_reflection_query_scale_log2": 147.99757197086205,
+      "gpe_call_count_for_tree_change_upper_bound": 1192,
+      "gpe_call_count_per_tree_upper_bound": 596,
+      "group_ancilla_qubit_count_upper_bound": 352832,
+      "n": 64,
+      "status": "gpe-tree-recoupling-polynomial-rectangular-cs-polar-open",
+      "tensor_factor_count": 597
+    },
+    {
+      "binary_fusion_internal_node_count": 1002,
+      "coherent_opaque_multiplicity_preserved": true,
+      "copy_count": 501,
+      "direct_global_rectangular_cs_polar_available": false,
+      "direct_pair_reassociation_available": true,
+      "flat_normalized_subblock_singular_amplitude_log2": -249.13857889695151,
+      "full_tree_recoupling_unitary_polynomial": true,
+      "generic_reflection_query_scale_log2": 249.13857889695151,
+      "gpe_call_count_for_tree_change_upper_bound": 2004,
+      "gpe_call_count_per_tree_upper_bound": 1002,
+      "group_ancilla_qubit_count_upper_bound": 999996,
+      "n": 96,
+      "status": "gpe-tree-recoupling-polynomial-rectangular-cs-polar-open",
+      "tensor_factor_count": 1003
+    },
+    {
+      "binary_fusion_internal_node_count": 1438,
+      "coherent_opaque_multiplicity_preserved": true,
+      "copy_count": 719,
+      "direct_global_rectangular_cs_polar_available": false,
+      "direct_pair_reassociation_available": true,
+      "flat_normalized_subblock_singular_amplitude_log2": -358.080861041811,
+      "full_tree_recoupling_unitary_polynomial": true,
+      "generic_reflection_query_scale_log2": 358.080861041811,
+      "gpe_call_count_for_tree_change_upper_bound": 2876,
+      "gpe_call_count_per_tree_upper_bound": 1438,
+      "group_ancilla_qubit_count_upper_bound": 2062092,
+      "n": 128,
+      "status": "gpe-tree-recoupling-polynomial-rectangular-cs-polar-open",
+      "tensor_factor_count": 1439
+    }
+  ],
+  "status": "gpe-fusion-trees-compile-recoupling-rectangular-cs-polar-open",
+  "summary": "Upgraded GPE from pair transport to full coherent fusion-tree recoupling, then proved that the orientation compiler remains the distinct rectangular Racah-subblock polar problem.",
+  "theorem": {
+    "fixed_space_subblock": "The connected overlap is C=Q U_T P, a rectangular Racah subblock.",
+    "global_target": "Find a direct polar of the occupied rectangular subblock, or a holonomy network proved to equal it with the physical output gauge.",
+    "gpe_isometry": "Coherent GPE exports irrep and carrier row, leaves multiplicity untouched, and parks column/residual carrier in a fixed EPR state.",
+    "pair_exception": "Pair GPE has C=cU on each active carrier and implements the known U directly.",
+    "recursive_tree": "Exported carrier rows can be fused recursively, giving a polynomial coherent association-tree transform.",
+    "scope": "No global CS singular-vector pairing, complete orientation polar, classical separation, or speedup.",
+    "status": "gpe-fusion-trees-compile-recoupling-rectangular-cs-polar-open",
+    "theorem_verified": true,
+    "tree_change": "Uncompute one tree and compute another to implement the full Racah recoupling unitary without naming multiplicity coordinates.",
+    "unitary_only_boundary": "Tree unitaries before/after C preserve its singular values and do not implement polar(C) for a non-isometric subblock."
+  },
+  "theorem_contract": {
+    "fixed_space_subblock": "The connected overlap is C=Q U_T P, a rectangular Racah subblock.",
+    "global_target": "Find a direct polar of the occupied rectangular subblock, or a holonomy network proved to equal it with the physical output gauge.",
+    "gpe_isometry": "Coherent GPE exports irrep and carrier row, leaves multiplicity untouched, and parks column/residual carrier in a fixed EPR state.",
+    "pair_exception": "Pair GPE has C=cU on each active carrier and implements the known U directly.",
+    "recursive_tree": "Exported carrier rows can be fused recursively, giving a polynomial coherent association-tree transform.",
+    "scope": "No global CS singular-vector pairing, complete orientation polar, classical separation, or speedup.",
+    "status": "gpe-fusion-trees-compile-recoupling-rectangular-cs-polar-open",
+    "theorem_verified": true,
+    "tree_change": "Uncompute one tree and compute another to implement the full Racah recoupling unitary without naming multiplicity coordinates.",
+    "unitary_only_boundary": "Tree unitaries before/after C preserve its singular values and do not implement polar(C) for a non-isometric subblock."
+  }
+}

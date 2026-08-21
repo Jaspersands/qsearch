@@ -1,0 +1,212 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "Yes, but its unit-normalized linear likelihood bias is exactly 2^(-k), inverse in the candidate count at natural k.",
+      "challenge": "An all-copy diagonal element already escapes the proper-marginal no-go.",
+      "resolved": true
+    },
+    {
+      "answer": "After the coefficient l1 normalization required by a direct LCU block encoding, the same 2^(-k) upper bound remains.",
+      "challenge": "A conjugacy-class sum contains many diagonal elements.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Interleaved powers e_B y e_B y e_B contain new double-coset paths and are explicitly outside the linear theorem.",
+      "challenge": "The theorem proves every diagonal recoupling walk useless.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "exact_diagonal_element_bias_formula_proved": true,
+    "hidden_involution_detector_constructed": false,
+    "interleaved_recoupling_walk_ruled_out": false,
+    "nonlinear_spectral_decoder_constructed": false,
+    "normalized_diagonal_class_charge_detector_possible": false,
+    "reason": "The first all-copy diagonal escape has only 2^-k normalized linear bias; stronger interleaved/nonlinear structure is unresolved.",
+    "speedup_claim_allowed": false,
+    "unit_normalized_diagonal_LCU_inverse_candidate_bias_proved": true
+  },
+  "created_at": "2026-08-21T13:08:03.865447+00:00",
+  "falsifiers_triggered": [
+    "A normalized diagonal conjugacy-class charge does not evade orbit-label normalization.",
+    "All-copy support alone is insufficient for a useful likelihood statistic.",
+    "The next viable search space is interleaved or nonlinear recoupling walks."
+  ],
+  "finite_controls": [
+    {
+      "centralizer_element_count": 2,
+      "centralizer_order": 2,
+      "conjugacy_class_size": 3,
+      "copy_count": 2,
+      "degree": 3,
+      "exact_elementwise_bias_formula_verified": true,
+      "expected_inside_centralizer_weighted_trace": "1",
+      "expected_outside_centralizer_weighted_trace": "1/4",
+      "group_order": 6,
+      "maximum_baseline_formula_residual": 0.0,
+      "maximum_likelihood_formula_residual": 0.0,
+      "noncentralizer_element_count": 4,
+      "status": "exact-diagonal-element-bias-formula-verified",
+      "transposition_count": 1
+    },
+    {
+      "centralizer_element_count": 8,
+      "centralizer_order": 8,
+      "conjugacy_class_size": 3,
+      "copy_count": 2,
+      "degree": 4,
+      "exact_elementwise_bias_formula_verified": true,
+      "expected_inside_centralizer_weighted_trace": "1",
+      "expected_outside_centralizer_weighted_trace": "1/4",
+      "group_order": 24,
+      "maximum_baseline_formula_residual": 0.0,
+      "maximum_likelihood_formula_residual": 0.0,
+      "noncentralizer_element_count": 16,
+      "status": "exact-diagonal-element-bias-formula-verified",
+      "transposition_count": 2
+    },
+    {
+      "centralizer_element_count": 2,
+      "centralizer_order": 2,
+      "conjugacy_class_size": 3,
+      "copy_count": 3,
+      "degree": 3,
+      "exact_elementwise_bias_formula_verified": true,
+      "expected_inside_centralizer_weighted_trace": "1",
+      "expected_outside_centralizer_weighted_trace": "1/8",
+      "group_order": 6,
+      "maximum_baseline_formula_residual": 0.0,
+      "maximum_likelihood_formula_residual": 0.0,
+      "noncentralizer_element_count": 4,
+      "status": "exact-diagonal-element-bias-formula-verified",
+      "transposition_count": 1
+    }
+  ],
+  "headline_metrics": {
+    "exact_elementwise_control_count": 3,
+    "maximum_elementwise_formula_residual": 0.0,
+    "minimum_unit_LCU_bias_log2_upper_bound": -363.0,
+    "natural_scaling_row_count": 5
+  },
+  "literature_links": [
+    {
+      "id": "DOUBLE-COSET-POLAR-REDUCTION",
+      "role": "Provides A, B, and the likelihood operator Z."
+    },
+    {
+      "id": "ORBIT-SYNTHESIS-FLATNESS",
+      "role": "Provides the natural copy count k=ceil(log2(64M))."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-HIDDEN-INVOLUTION-INTERLEAVED-DIAGONAL-WALK",
+      "resolved": false,
+      "statement": "Determine whether powers or polynomial filters of e_B y e_B amplify likelihood bias with polynomial degree and normalization."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-NONDIAGONAL-ALL-COPY-CHARGE",
+      "resolved": false,
+      "statement": "Search for B-compatible all-copy charges outside the diagonal A convolution span with inverse-polynomial normalized bias."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-RECOUPLING-FAST-FORWARD",
+      "resolved": false,
+      "statement": "Find a fast-forwardable recoupling walk whose spectral filter approximates the source polar without M-scale normalization."
+    }
+  ],
+  "scaling_records": [
+    {
+      "bound_at_most_inverse_64_candidates": true,
+      "conjugacy_class_size_decimal": "105",
+      "constant_bias_LCU_norm_lower_bound_decimal": "8192",
+      "copy_count": 13,
+      "degree": 8,
+      "half_degree": 4,
+      "inverse_candidate_bound": 0.00014880952380952382,
+      "normalized_diagonal_LCU_has_constant_bias": false,
+      "status": "diagonal-LCU-bias-below-inverse-candidate-scale",
+      "unit_LCU_bias_log2_upper_bound": -13.0,
+      "unit_LCU_bias_upper_bound": 0.0001220703125
+    },
+    {
+      "bound_at_most_inverse_64_candidates": true,
+      "conjugacy_class_size_decimal": "2027025",
+      "constant_bias_LCU_norm_lower_bound_decimal": "134217728",
+      "copy_count": 27,
+      "degree": 16,
+      "half_degree": 8,
+      "inverse_candidate_bound": 7.708341041674375e-09,
+      "normalized_diagonal_LCU_has_constant_bias": false,
+      "status": "diagonal-LCU-bias-below-inverse-candidate-scale",
+      "unit_LCU_bias_log2_upper_bound": -27.0,
+      "unit_LCU_bias_upper_bound": 7.450580596923828e-09
+    },
+    {
+      "bound_at_most_inverse_64_candidates": true,
+      "conjugacy_class_size_decimal": "191898783962510625",
+      "constant_bias_LCU_norm_lower_bound_decimal": "18446744073709551616",
+      "copy_count": 64,
+      "degree": 32,
+      "half_degree": 16,
+      "inverse_candidate_bound": 8.142313191027048e-20,
+      "normalized_diagonal_LCU_has_constant_bias": false,
+      "status": "diagonal-LCU-bias-below-inverse-candidate-scale",
+      "unit_LCU_bias_log2_upper_bound": -64.0,
+      "unit_LCU_bias_upper_bound": 5.421010862427522e-20
+    },
+    {
+      "bound_at_most_inverse_64_candidates": true,
+      "conjugacy_class_size_decimal": "112275575285571389562324404930670903477890625",
+      "constant_bias_LCU_norm_lower_bound_decimal": "11417981541647679048466287755595961091061972992",
+      "copy_count": 153,
+      "degree": 64,
+      "half_degree": 32,
+      "inverse_candidate_bound": 1.3916651026065133e-46,
+      "normalized_diagonal_LCU_has_constant_bias": false,
+      "status": "diagonal-LCU-bias-below-inverse-candidate-scale",
+      "unit_LCU_bias_log2_upper_bound": -153.0,
+      "unit_LCU_bias_upper_bound": 8.758115402030107e-47
+    },
+    {
+      "bound_at_most_inverse_64_candidates": true,
+      "conjugacy_class_size_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "constant_bias_LCU_norm_lower_bound_decimal": "18788340662190665823115844774314696219005460391266558965658327772257672200916867547709591987078149624255479808",
+      "copy_count": 363,
+      "degree": 128,
+      "half_degree": 64,
+      "inverse_candidate_bound": 9.484109342067211e-110,
+      "normalized_diagonal_LCU_has_constant_bias": false,
+      "status": "diagonal-LCU-bias-below-inverse-candidate-scale",
+      "unit_LCU_bias_log2_upper_bound": -363.0,
+      "unit_LCU_bias_upper_bound": 5.3224498000101884e-110
+    }
+  ],
+  "status": "normalized-diagonal-all-copy-charge-bias-no-go-proved",
+  "summary": "Proved that every unit-normalized all-copy diagonal LCU has only inverse-candidate likelihood bias at the natural copy count.",
+  "theorem": {
+    "baseline_trace": "tr_B(X_t)=1[t in K]",
+    "compressed_observable": "X_t=e_B a_t e_B on the B-fixed source space",
+    "diagonal_element": "a_t=(t,...,t;t) in the diagonal subgroup A",
+    "exact_all_finite_groups_elementwise_formula_proved": true,
+    "hidden_involution_detector_constructed": false,
+    "interleaved_recoupling_walk_ruled_out": false,
+    "likelihood_weighted_trace": "tr_B(X_t Z)=1 for t in K and 2^(-k) for t outside K",
+    "natural_copy_bias_inverse_candidate_bound_proved": true,
+    "natural_copy_consequence": "At k=ceil(log2(64M)), every ||alpha||_1<=1 diagonal LCU has bias at most 1/(64M).",
+    "nonlinear_spectral_decoder_constructed": false,
+    "normalized_diagonal_class_charge_detector_ruled_out": true,
+    "scope_limit": "Does not cover powers/interleavings of e_B y e_B, nonlinear spectral tests, or non-diagonal all-copy recoupling operators.",
+    "signed_LCU_bias": "tr_B(X_alpha Z)-tr_B(X_alpha)=2^(-k) sum_(t outside K) alpha_t",
+    "speedup_claim_allowed": false,
+    "status": "normalized-diagonal-all-copy-charge-bias-no-go-proved",
+    "theorem_verified": true,
+    "unit_LCU_bias_upper_bound_proved": true
+  },
+  "theorem_contract": {
+    "claim_boundary": "Exact linear-bias no-go only; interleaved and nonlinear all-copy recoupling mechanisms remain open.",
+    "natural_copy_count": "k=ceil(log2(64[G:C_G(h)]))",
+    "observable": "Hermitian B-compressions of diagonal A-group LCUs with coefficient l1 normalization",
+    "scope": "finite-group hidden-involution double-coset polar"
+  }
+}

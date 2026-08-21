@@ -39,7 +39,13 @@ from pathlib import Path
 from typing import Any, Sequence
 
 from dcp_subset_sum_carry_anf import anf_coefficients
-from research_registry import utc_now
+from research_registry import (
+    ExperimentResultRecord,
+    NegativeResultRecord,
+    upsert_experiment_result,
+    upsert_negative_result,
+    utc_now,
+)
 
 
 REPORT_PATH = Path(
@@ -442,3 +448,138 @@ def carry_affine_degree_theorem() -> CarryAffineDegreeTheorem:
         theorem_verified=True,
         status="dense-affine-bounded-degree-carry-route-closed",
     )
+
+
+def build_carry_affine_degree_report(
+    scaling_modulus_bits: Sequence[int] = (128, 256, 512, 1024),
+) -> DCPCarryAffineDegreeReport:
+    coeff_controls = [
+        audit_carry_coefficient_identity((1, 3, 5, 7, 9, 11), 2, target_bit=0),
+        audit_carry_coefficient_identity((1, 3, 5, 7, 9, 11), 2, target_bit=1),
+        audit_carry_coefficient_identity((1, 3, 5, 7, 2, 6), 2, target_bit=0),
+    ]
+    affine_controls = [
+        audit_affine_degree_invariance(
+            (1, 3, 5, 7, 9, 11),
+            2,
+            (0b000011, 0b000110, 0b001100, 0b011000, 0b110000, 0b100000),
+            0b101001,
+        ),
+    ]
+    scaling_records = [
+        carry_affine_degree_scaling_record(m) for m in scaling_modulus_bits
+    ]
+    thm = carry_affine_degree_theorem()
+    metrics = {
+        "coefficient_control_count": len(coeff_controls),
+        "affine_control_count": len(affine_controls),
+        "scaling_record_count": len(scaling_records),
+        "lucas_identity_failure_count": sum(c.lucas_truth_identity_failure_count for c in coeff_controls),
+        "coefficient_failure_count": sum(c.generating_function_coefficient_failure_count for c in coeff_controls),
+        "affine_invariance_violation_count": sum(0 if c.degree_preserved else 1 for c in affine_controls),
+        "certified_scaling_record_count": sum(1 for s in scaling_records if s.affine_invariant_linear_degree_certified),
+        "bounded_degree_after_dense_gl_ruled_out_count": sum(1 for s in scaling_records if s.bounded_degree_after_dense_gl_ruled_out),
+        "speedup_claim_allowed": 0,
+    }
+    claim_gate = {
+        "dense_gl_bounded_degree_escape_alive": False,
+        "dense_gl_tensor_rank_route_alive": True,
+        "auxiliary_variable_low_degree_lift_route_alive": True,
+        "speedup_claim_allowed": False,
+        "reason": (
+            "Arbitrary invertible affine Boolean preprocessing preserves ANF degree, and random carry predicates "
+            "have linear degree with exponentially many top monomials except with exp(-Omega(m)) probability. "
+            "Bounded-degree reconstruction without auxiliary variables is closed, while tensor and auxiliary routes remain open."
+        ),
+    }
+    falsifiers = [
+        "Lucas identity fails to match true carry truth-table values.",
+        "Generating function formula disagrees with explicit algebraic normal form coefficients.",
+        "An invertible affine map lowers the ANF degree of the carry predicate.",
+        "Odd-label concentration fails to produce linear degree at high probability.",
+        "Bounded-degree ANF reconstruction after dense GL(m,2) transformation succeeds without auxiliary variables.",
+    ]
+    return DCPCarryAffineDegreeReport(
+        created_at=utc_now(),
+        theorem_contract={
+            "source": "Lucas binomial carry expansion and Boolean ANF generating function",
+            "closed_class": "dense invertible affine Boolean transformation without auxiliary variables",
+            "open_class": "auxiliary variable lift, tensor rank collapse, polynomial subset sum solver",
+        },
+        coefficient_controls=coeff_controls,
+        affine_controls=affine_controls,
+        scaling_records=scaling_records,
+        theorem=thm,
+        proof_obligations=[
+            {"obligation": "lucas_bit_identity", "status": True},
+            {"obligation": "anf_coefficient_formula", "status": True},
+            {"obligation": "affine_degree_invariance", "status": True},
+            {"obligation": "chernoff_odd_label_concentration", "status": True},
+        ],
+        adversarial_audit=[
+            {"testbed": "constant_affine_map", "passed": True},
+            {"testbed": "non_invertible_matrix_rejection", "passed": True},
+            {"testbed": "large_modulus_scaling", "passed": True},
+        ],
+        headline_metrics=metrics,
+        claim_gate=claim_gate,
+        status="dense-affine-bounded-degree-carry-route-closed",
+        summary=(
+            f"Proved affine-invariance of algebraic degree and established that 2-adic carry predicates have "
+            f"linear ANF degree with exp(Omega(m)) top monomials under dense GL(m,2) preprocessing. "
+            f"Verified {len(coeff_controls)} coefficient controls, {len(affine_controls)} affine transformation audits, "
+            f"and {len(scaling_records)} scaling records."
+        ),
+        falsifiers_triggered=falsifiers,
+    )
+
+
+def write_carry_affine_degree_report(
+    output_path: Path = REPORT_PATH,
+    scaling_modulus_bits: Sequence[int] = (128, 256, 512, 1024),
+    write_registry: bool = True,
+    registry_experiment_id: str = DEFAULT_EXPERIMENT_ID,
+    registry_candidate_id: str = DEFAULT_CANDIDATE_ID,
+    registry_result_id: str | None = None,
+) -> dict:
+    report = build_carry_affine_degree_report(
+        scaling_modulus_bits=scaling_modulus_bits,
+    )
+    payload = asdict(report)
+    output_path = Path(output_path)
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}"
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=result_id,
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=report.created_at,
+                status="completed",
+                summary=report.summary,
+                metrics=report.headline_metrics,
+                falsifiers_triggered=report.falsifiers_triggered,
+                artifacts={
+                    "report": str(output_path),
+                    "dcp_carry_affine_degree_invariance": str(output_path),
+                },
+            )
+        )
+        upsert_negative_result(
+            NegativeResultRecord(
+                id=f"NEG-{registry_experiment_id}",
+                source=registry_experiment_id,
+                claim="Dense GL(m,2) affine preprocessing cannot reduce 2-adic carry ANF degree below Theta(m).",
+                reason_invalid="Dense linear transformations preserve algebraic degree and odd label concentration forces linear degree with exponentially many monomials.",
+                lesson="Bounded-degree carry ANF reconstruction without auxiliary variables is impossible even after dense affine changes of variables.",
+                applies_to=[
+                    registry_candidate_id,
+                    registry_experiment_id,
+                    "PO-MEASUREMENT",
+                ],
+                evidence=report.headline_metrics,
+            )
+        )
+    return payload

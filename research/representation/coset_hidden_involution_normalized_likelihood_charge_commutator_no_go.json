@@ -1,0 +1,246 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "Only in principle; the exact centered second moment bounds the entire normalized off-diagonal resource by eta/M^2.",
+      "challenge": "Likelihood-independent D outcomes allow large [A,D] off-diagonal mass.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Fixed conditioned covariance can sit in factorially small source weight and cannot exceed the global M^-2 budget for A.",
+      "challenge": "The finite S_10 D/CS covariance proves a natural matrix signal.",
+      "resolved": true
+    },
+    {
+      "answer": "It removes M^-2 algebraically but reintroduces the exact M block-encoding/negativity normalization.",
+      "challenge": "Using Z instead of A removes the bound for free.",
+      "resolved": true
+    },
+    {
+      "answer": "Too strong. It is a normalized-oracle energy theorem, not a circuit lower bound for an explicit integrable transform.",
+      "challenge": "The no-go proves every direct matrix basis transform impossible.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "charge_conditional_expectation_of_Z_is_identity": true,
+    "direct_non_black_box_matrix_transform_ruled_out": false,
+    "finite_conditioned_covariance_is_natural_signal": false,
+    "hidden_involution_detector_constructed": false,
+    "inverse_polynomial_normalized_commutator_mass_ruled_out": true,
+    "normalized_A_D_commutator_energy_at_most_4eta_over_M2": true,
+    "reason": "All D-diagonal likelihood information cancels and the entire normalization-one A/D noncommutative energy is O(eta/M^2).",
+    "speedup_claim_allowed": false,
+    "unnormalized_Z_structured_fast_forward_compiled": false
+  },
+  "created_at": "2026-08-21T02:47:54.066585+00:00",
+  "falsifiers_triggered": [
+    "The normalized A/D commutator cannot be inverse-polynomial on inverse-polynomial natural mass.",
+    "Finite conditioned D/CS covariance does not transfer to the natural source globally.",
+    "Any surviving charge-assisted route must fast-forward the unnormalized Z scale or use a direct basis transform."
+  ],
+  "finite_controls": [
+    {
+      "candidate_count": 3,
+      "copy_count": 1,
+      "degree": 3,
+      "exact_synthesis_moment_verified": true,
+      "maximum_bound_residual": 0.0,
+      "maximum_random_contraction_commutator_energy": 0.10721638921789439,
+      "normalized_source_centered_second_moment": 1.0,
+      "normalized_source_mean_Z": 1.0,
+      "predicted_eta": 1.0,
+      "source_dimension": 9,
+      "status": "normalized-likelihood-commutator-bound-verified",
+      "transposition_count": 1,
+      "universal_commutator_energy_upper_bound": 0.4444444444444444,
+      "universal_contraction_commutator_bound_verified": true
+    },
+    {
+      "candidate_count": 3,
+      "copy_count": 2,
+      "degree": 3,
+      "exact_synthesis_moment_verified": true,
+      "maximum_bound_residual": 0.0,
+      "maximum_random_contraction_commutator_energy": 0.032971148649528784,
+      "normalized_source_centered_second_moment": 0.5,
+      "normalized_source_mean_Z": 1.0,
+      "predicted_eta": 0.5,
+      "source_dimension": 27,
+      "status": "normalized-likelihood-commutator-bound-verified",
+      "transposition_count": 1,
+      "universal_commutator_energy_upper_bound": 0.2222222222222222,
+      "universal_contraction_commutator_bound_verified": true
+    },
+    {
+      "candidate_count": 3,
+      "copy_count": 1,
+      "degree": 4,
+      "exact_synthesis_moment_verified": true,
+      "maximum_bound_residual": 0.0,
+      "maximum_random_contraction_commutator_energy": 0.07682860442857348,
+      "normalized_source_centered_second_moment": 1.0,
+      "normalized_source_mean_Z": 1.0,
+      "predicted_eta": 1.0,
+      "source_dimension": 36,
+      "status": "normalized-likelihood-commutator-bound-verified",
+      "transposition_count": 2,
+      "universal_commutator_energy_upper_bound": 0.4444444444444444,
+      "universal_contraction_commutator_bound_verified": true
+    }
+  ],
+  "headline_metrics": {
+    "exact_normalized_commutator_energy_bound_count": 1,
+    "hidden_involution_detector_count": 0,
+    "inverse_polynomial_natural_commutator_mass_no_go_count": 1,
+    "tail_commutator_energy_log2_upper_bound": -1683.8345651405928,
+    "tail_mass_log2_upper_bound": -1620.8345651405928,
+    "unnormalized_Z_fast_forward_count": 0
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-NORMALIZED-COMMUTATOR-UNNORMALIZED-FAST-FORWARD",
+      "resolved": false,
+      "statement": "Any remaining charge-assisted proposal must explain how it accesses Z-scale matrix coherence without paying normalization M."
+    },
+    {
+      "id": "PO-NORMALIZED-COMMUTATOR-DIRECT-BASIS-TRANSFORM",
+      "resolved": false,
+      "statement": "Alternatively compile a direct matrix-CS/subduction transform that is not a query algorithm in A and D."
+    },
+    {
+      "id": "PO-NORMALIZED-COMMUTATOR-CONDITIONED-MATRIX-LOWER-BOUND",
+      "resolved": false,
+      "statement": "A finite conditioned block can have covariance; prove any claimed family has enough total source weight to beat the M^-2 energy budget."
+    }
+  ],
+  "scaling_records": [
+    {
+      "copy_count": 13,
+      "degree": 8,
+      "eta": 0.0126953125,
+      "half_degree": 4,
+      "hidden_matching_count_decimal": "105",
+      "inverse_polynomial_commutator_mass_possible": false,
+      "inverse_polynomial_energy_threshold": 3.814697265625e-06,
+      "normalized_A_charge_commutator_energy_log2_upper_bound": -17.728051317191152,
+      "normalized_A_charge_commutator_energy_upper_bound": 4.6060090702947875e-06,
+      "normalized_A_charge_commutator_norm_log2_upper_bound": -8.864025658595576,
+      "normalized_A_charge_commutator_norm_upper_bound": 0.0021461614734904705,
+      "source_mass_above_threshold_log2_upper_bound": 0.0,
+      "source_mass_above_threshold_upper_bound": 1.0,
+      "status": "normalized-A-charge-commutator-natural-mass-factorially-small",
+      "unnormalized_Z_charge_commutator_energy_upper_bound": 0.05078125
+    },
+    {
+      "copy_count": 27,
+      "degree": 16,
+      "eta": 0.015102505683898926,
+      "half_degree": 8,
+      "hidden_matching_count_decimal": "2027025",
+      "inverse_polynomial_commutator_mass_possible": false,
+      "inverse_polynomial_energy_threshold": 7.450580596923828e-09,
+      "normalized_A_charge_commutator_energy_log2_upper_bound": -45.950933163225784,
+      "normalized_A_charge_commutator_energy_upper_bound": 1.4702486493852597e-14,
+      "normalized_A_charge_commutator_norm_log2_upper_bound": -22.975466581612892,
+      "normalized_A_charge_commutator_norm_upper_bound": 1.2125381022406097e-07,
+      "source_mass_above_threshold_log2_upper_bound": -18.950933163225784,
+      "source_mass_above_threshold_upper_bound": 1.9733343331555815e-06,
+      "status": "normalized-A-charge-commutator-natural-mass-factorially-small",
+      "unnormalized_Z_charge_commutator_energy_upper_bound": 0.0604100227355957
+    },
+    {
+      "copy_count": 64,
+      "degree": 32,
+      "eta": 0.010402853923474025,
+      "half_degree": 16,
+      "hidden_matching_count_decimal": "191898783962510625",
+      "inverse_polynomial_commutator_mass_possible": false,
+      "inverse_polynomial_energy_threshold": 1.4551915228366852e-11,
+      "normalized_A_charge_commutator_energy_log2_upper_bound": -119.41312318247769,
+      "normalized_A_charge_commutator_energy_upper_bound": 1.129972947298413e-36,
+      "normalized_A_charge_commutator_norm_log2_upper_bound": -59.706561591238845,
+      "normalized_A_charge_commutator_norm_upper_bound": 1.0630018566768418e-18,
+      "source_mass_above_threshold_log2_upper_bound": -83.41312318247769,
+      "source_mass_above_threshold_upper_bound": 7.765114966418264e-26,
+      "status": "normalized-A-charge-commutator-natural-mass-factorially-small",
+      "unnormalized_Z_charge_commutator_energy_upper_bound": 0.0416114156938961
+    },
+    {
+      "copy_count": 153,
+      "degree": 64,
+      "eta": 0.009833224451803535,
+      "half_degree": 32,
+      "hidden_matching_count_decimal": "112275575285571389562324404930670903477890625",
+      "inverse_polynomial_commutator_mass_possible": false,
+      "inverse_polynomial_energy_threshold": 2.842170943040401e-14,
+      "normalized_A_charge_commutator_energy_log2_upper_bound": -297.3318802893637,
+      "normalized_A_charge_commutator_energy_upper_bound": 3.120221073819182e-90,
+      "normalized_A_charge_commutator_norm_log2_upper_bound": -148.66594014468185,
+      "normalized_A_charge_commutator_norm_upper_bound": 1.7664147513591428e-45,
+      "source_mass_above_threshold_log2_upper_bound": -252.3318802893637,
+      "source_mass_above_threshold_upper_bound": 1.0978301926066904e-76,
+      "status": "normalized-A-charge-commutator-natural-mass-factorially-small",
+      "unnormalized_Z_charge_commutator_energy_upper_bound": 0.03933289780721414
+    },
+    {
+      "copy_count": 363,
+      "degree": 128,
+      "eta": 0.008768696682595653,
+      "half_degree": 64,
+      "hidden_matching_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "inverse_polynomial_commutator_mass_possible": false,
+      "inverse_polynomial_energy_threshold": 5.551115123125783e-17,
+      "normalized_A_charge_commutator_energy_log2_upper_bound": -717.1665781418978,
+      "normalized_A_charge_commutator_energy_upper_bound": 1.2922546142965692e-216,
+      "normalized_A_charge_commutator_norm_log2_upper_bound": -358.5832890709489,
+      "normalized_A_charge_commutator_norm_upper_bound": 1.1367737744584756e-108,
+      "source_mass_above_threshold_log2_upper_bound": -663.1665781418978,
+      "source_mass_above_threshold_upper_bound": 2.3279189597655332e-200,
+      "status": "normalized-A-charge-commutator-natural-mass-factorially-small",
+      "unnormalized_Z_charge_commutator_energy_upper_bound": 0.03507478673038261
+    },
+    {
+      "copy_count": 846,
+      "degree": 256,
+      "eta": 0.01393218302246228,
+      "half_degree": 128,
+      "hidden_matching_count_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "inverse_polynomial_commutator_mass_possible": false,
+      "inverse_polynomial_energy_threshold": 1.0842021724855044e-19,
+      "normalized_A_charge_commutator_energy_log2_upper_bound": -1683.8345651405928,
+      "normalized_A_charge_commutator_energy_upper_bound": 0.0,
+      "normalized_A_charge_commutator_norm_log2_upper_bound": -841.9172825702964,
+      "normalized_A_charge_commutator_norm_upper_bound": 3.61113794247561e-254,
+      "source_mass_above_threshold_log2_upper_bound": -1620.8345651405928,
+      "source_mass_above_threshold_upper_bound": 0.0,
+      "status": "normalized-A-charge-commutator-natural-mass-factorially-small",
+      "unnormalized_Z_charge_commutator_energy_upper_bound": 0.05572873208984912
+    }
+  ],
+  "status": "normalized-likelihood-charge-commutator-natural-mass-no-go",
+  "summary": "Proved that normalized likelihood/charge noncommutativity has only inverse-candidate-squared total source energy, killing the natural-mass criterion.",
+  "theorem": {
+    "charge_spectral_conditional_expectation_of_Z_is_identity_proved": true,
+    "commutator_bound": "For every contraction S, ||[A,S]||_(2,tau)^2<=4eta/M^2; in particular this holds for D_m.",
+    "conditional_expectation": "Complete source-local measurement independence implies E_Alg(D)(Z)=I and E_Alg(D)(A)=I/M under the source trace.",
+    "direct_non_black_box_matrix_transform_ruled_out": false,
+    "exact_source_centered_second_moment_proved": true,
+    "finite_conditioned_charge_covariance_promotes_to_natural_matrix_signal": false,
+    "hidden_involution_detector_constructed": false,
+    "inverse_polynomial_A_D_energy_on_inverse_polynomial_mass_ruled_out": true,
+    "natural_mass_consequence": "At natural k, mass with inverse-polynomial block commutator energy is at most polynomial(m)/(16M^2), hence factorially small.",
+    "normalization_boundary": "The unnormalized Z commutator can have O(eta) energy, but access to Z rather than A=Z/M is exactly the missing M-scale fast-forward.",
+    "normalized_A_D_commutator_energy_inverse_candidate_squared_proved": true,
+    "source_moments": "tau_B(Z)=1 and tau_B((Z-I)^2)=eta=(M-1)/2^k exactly.",
+    "speedup_claim_allowed": false,
+    "status": "normalized-likelihood-charge-commutator-natural-mass-no-go",
+    "theorem_verified": true,
+    "unnormalized_Z_structured_fast_forward_compiled": false
+  },
+  "theorem_contract": {
+    "claim_boundary": "Rules out inverse-polynomial normalized commutator mass; does not rule out direct access to an implicit unnormalized transform.",
+    "normalized_likelihood_oracle": "A=Z/M=e_B e_A e_B",
+    "source_law": "Uniform right-B invariant source trace at natural copy count",
+    "third_operator": "Any B-compatible source-local Hermitian contraction, including D_m"
+  }
+}

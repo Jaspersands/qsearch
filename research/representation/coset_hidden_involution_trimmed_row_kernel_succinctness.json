@@ -1,0 +1,273 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "Not on the canonical free mass: regular K induction fuses exactly into a regular G coordinate before the G QFT.",
+      "challenge": "Natural hyperoctahedral multiplicities still force a K-subduction compiler.",
+      "resolved": true
+    },
+    {
+      "answer": "False on robust mass: endpoint orientations and rooted transitive propagation leave at most 16n terms.",
+      "challenge": "The orbit-row Fourier entries require summing over n! conjugators.",
+      "resolved": true
+    },
+    {
+      "answer": "False: the orbit-copy matrix is exponentially wide, and no coherent row transform, conditioning theorem, or normalization bypass follows from entry access.",
+      "challenge": "Polynomial entry access gives an efficient polar transform.",
+      "resolved": true
+    },
+    {
+      "answer": "False: it removes factorial pairwise summation, while the global A=Z/M fast-forward remains exactly open.",
+      "challenge": "The theorem removes the candidate normalization.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "generic_K_subduction_required_on_trimmed_mass": false,
+    "global_orbit_copy_polar_compiled": false,
+    "hidden_involution_detector_constructed": false,
+    "pairwise_kernel_evaluation_is_quantum_advantage": false,
+    "pairwise_row_kernel_classically_polynomial": true,
+    "pairwise_row_kernel_has_at_most_16n_terms": true,
+    "reason": "The correct residual matrix has succinct pairwise entries, but its coherent global orbit-copy transform and M-scale normalization remain unresolved.",
+    "regular_G_architecture_is_active_on_trimmed_mass": true,
+    "speedup_claim_allowed": false,
+    "unnormalized_Z_scale_fast_forward_compiled": false
+  },
+  "created_at": "2026-08-21T02:47:54.361567+00:00",
+  "falsifiers_triggered": [
+    "Generic S_(2m)-to-K_m subduction is not the active high-mass bottleneck after free-fiber canonicalization.",
+    "Factorial enumeration is unnecessary for individual orbit-row Fourier kernels.",
+    "Pairwise kernel estimation is classically dequantized and cannot support a quantum-advantage claim.",
+    "Succinct dense entries do not compile the global row polar or remove candidate normalization."
+  ],
+  "finite_controls": [
+    {
+      "control_pair_count": 6,
+      "degree": 4,
+      "factorial_group_enumeration_needed_for_pairwise_kernel": false,
+      "half_degree": 2,
+      "maximum_bruteforce_support_size": 10,
+      "maximum_fourier_matrix_residual": 0.0,
+      "maximum_polynomial_support_size": 10,
+      "maximum_rooted_conjugator_count_per_orientation": 2,
+      "maximum_support_set_mismatch_count": 0,
+      "robust_right_seed_count": 6,
+      "rooted_pairwise_kernel_reconstruction_verified": true,
+      "status": "rooted-pairwise-row-kernel-reconstruction-verified",
+      "theorem_support_upper_bound": 64
+    },
+    {
+      "control_pair_count": 8,
+      "degree": 6,
+      "factorial_group_enumeration_needed_for_pairwise_kernel": false,
+      "half_degree": 3,
+      "maximum_bruteforce_support_size": 2,
+      "maximum_fourier_matrix_residual": 0.0,
+      "maximum_polynomial_support_size": 2,
+      "maximum_rooted_conjugator_count_per_orientation": 1,
+      "maximum_support_set_mismatch_count": 0,
+      "robust_right_seed_count": 8,
+      "rooted_pairwise_kernel_reconstruction_verified": true,
+      "status": "rooted-pairwise-row-kernel-reconstruction-verified",
+      "theorem_support_upper_bound": 96
+    }
+  ],
+  "headline_metrics": {
+    "exact_rooted_kernel_control_count": 2,
+    "generic_K_subduction_required_on_trimmed_mass_count": 0,
+    "global_orbit_row_polar_compiler_count": 0,
+    "maximum_finite_pairwise_support": 10,
+    "maximum_theorem_pairwise_support": 96,
+    "new_quantum_algorithm_count": 0,
+    "pairwise_kernel_classical_evaluator_count": 1,
+    "tail_robust_alternative_success_lower_bound": 1.0
+  },
+  "literature_links": [
+    {
+      "id": "arXiv:2302.11454",
+      "role": "Generalized phase estimation efficiently measures symmetric-group Kronecker projectors, but does not provide the present relative polar."
+    },
+    {
+      "id": "arXiv:quant-ph/0304064",
+      "role": "Bratteli-path QFT framework; motivates separating regular carrier Fourier structure from unresolved orbit-copy multiplicity."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-HIDDEN-INVOLUTION-ORBIT-ROW-COHERENT-INDEX",
+      "resolved": false,
+      "statement": "Construct a reversible index and row-state preparation for canonical orbit copies without factorial enumeration or QRAM."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-ORBIT-ROW-GLOBAL-POLAR",
+      "resolved": false,
+      "statement": "Exploit structure beyond pairwise entry access to compile the global R_lambda polar on constant alternative mass."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-ORBIT-ROW-M-SCALE",
+      "resolved": false,
+      "statement": "Factor the candidate count M analytically; black-box use of A=Z/M remains subject to the square-root-M lower bound."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-ORBIT-ROW-CLASSICAL-BASELINE",
+      "resolved": false,
+      "statement": "Compare any global spectral statistic with classical kernel methods using the polynomial pairwise evaluator proved here."
+    }
+  ],
+  "scaling_records": [
+    {
+      "all_pairs_not_robust_log2_upper_bound": -6.751046384661745,
+      "all_pairs_not_robust_upper_bound": 0.009283944511668314,
+      "copy_count": 16,
+      "degree": 10,
+      "disjoint_seed_pair_count": 8,
+      "global_orbit_row_polar_compiled": false,
+      "half_degree": 5,
+      "nonfree_source_fraction_log2_upper_bound": -59.96313469642784,
+      "nonfree_source_fraction_upper_bound": 8.89811106675555e-19,
+      "one_orientation_intransitivity_upper_bound": 0.1392857142857143,
+      "one_pair_not_robust_upper_bound": 0.5571428571428572,
+      "pairwise_conjugator_support_upper_bound": 160,
+      "pairwise_kernel_classically_polynomial": true,
+      "robust_trim_alternative_failure_log2_upper_bound": -3.365206811502019,
+      "robust_trim_alternative_failure_upper_bound": 0.09704469694210709,
+      "robust_trim_alternative_success_lower_bound": 0.902955303057893,
+      "status": "robust-trimmed-pairwise-kernel-succinct-global-polar-open",
+      "total_robust_trim_failure_log2_upper_bound": -6.751046384661745,
+      "total_robust_trim_failure_upper_bound": 0.009283944511668314
+    },
+    {
+      "all_pairs_not_robust_log2_upper_bound": -22.91169108505354,
+      "all_pairs_not_robust_upper_bound": 1.2673417206933528e-07,
+      "copy_count": 27,
+      "degree": 16,
+      "disjoint_seed_pair_count": 13,
+      "global_orbit_row_polar_compiled": false,
+      "half_degree": 8,
+      "nonfree_source_fraction_log2_upper_bound": -136.18683820281277,
+      "nonfree_source_fraction_upper_bound": 1.0085018200321385e-41,
+      "one_orientation_intransitivity_upper_bound": 0.07368742368742369,
+      "one_pair_not_robust_upper_bound": 0.29474969474969476,
+      "pairwise_conjugator_support_upper_bound": 256,
+      "pairwise_kernel_classically_polynomial": true,
+      "robust_trim_alternative_failure_log2_upper_bound": -11.44503283302113,
+      "robust_trim_alternative_failure_upper_bound": 0.00035867558548548657,
+      "robust_trim_alternative_success_lower_bound": 0.9996413244145145,
+      "status": "robust-trimmed-pairwise-kernel-succinct-global-polar-open",
+      "total_robust_trim_failure_log2_upper_bound": -22.91169108505354,
+      "total_robust_trim_failure_upper_bound": 1.2673417206933528e-07
+    },
+    {
+      "all_pairs_not_robust_log2_upper_bound": -92.78737128386202,
+      "all_pairs_not_robust_upper_bound": 1.170086651122183e-28,
+      "copy_count": 64,
+      "degree": 32,
+      "disjoint_seed_pair_count": 32,
+      "global_orbit_row_polar_compiled": false,
+      "half_degree": 16,
+      "nonfree_source_fraction_log2_upper_bound": -448.81842339487736,
+      "nonfree_source_fraction_upper_bound": 7.801748596980074e-136,
+      "one_orientation_intransitivity_upper_bound": 0.03350208390302295,
+      "one_pair_not_robust_upper_bound": 0.1340083356120918,
+      "pairwise_conjugator_support_upper_bound": 512,
+      "pairwise_kernel_classically_polynomial": true,
+      "robust_trim_alternative_failure_log2_upper_bound": -46.38622033233401,
+      "robust_trim_alternative_failure_upper_bound": 1.0873172911490069e-14,
+      "robust_trim_alternative_success_lower_bound": 0.9999999999999891,
+      "status": "robust-trimmed-pairwise-kernel-succinct-global-polar-open",
+      "total_robust_trim_failure_log2_upper_bound": -92.78737128386202,
+      "total_robust_trim_failure_upper_bound": 1.170086651122183e-28
+    },
+    {
+      "all_pairs_not_robust_log2_upper_bound": -300.39851690345625,
+      "all_pairs_not_robust_upper_bound": 3.72422369631406e-91,
+      "copy_count": 153,
+      "degree": 64,
+      "disjoint_seed_pair_count": 76,
+      "global_orbit_row_polar_compiled": false,
+      "half_degree": 32,
+      "nonfree_source_fraction_log2_upper_bound": -1376.860564643127,
+      "nonfree_source_fraction_upper_bound": 0.0,
+      "one_orientation_intransitivity_upper_bound": 0.01614675352751876,
+      "one_pair_not_robust_upper_bound": 0.06458701411007504,
+      "pairwise_conjugator_support_upper_bound": 1024,
+      "pairwise_kernel_classically_polynomial": true,
+      "robust_trim_alternative_failure_log2_upper_bound": -150.1921999270829,
+      "robust_trim_alternative_failure_upper_bound": 6.132572725886471e-46,
+      "robust_trim_alternative_success_lower_bound": 1.0,
+      "status": "robust-trimmed-pairwise-kernel-succinct-global-polar-open",
+      "total_robust_trim_failure_log2_upper_bound": -300.39851690345625,
+      "total_robust_trim_failure_upper_bound": 3.72422369631406e-91
+    },
+    {
+      "all_pairs_not_robust_log2_upper_bound": -900.8202059912921,
+      "all_pairs_not_robust_upper_bound": 6.700347026711188e-272,
+      "copy_count": 363,
+      "degree": 128,
+      "disjoint_seed_pair_count": 181,
+      "global_orbit_row_polar_compiled": false,
+      "half_degree": 64,
+      "nonfree_source_fraction_log2_upper_bound": -3991.897397356572,
+      "nonfree_source_fraction_upper_bound": 0.0,
+      "one_orientation_intransitivity_upper_bound": 0.007938558531164897,
+      "one_pair_not_robust_upper_bound": 0.03175423412465959,
+      "pairwise_conjugator_support_upper_bound": 2048,
+      "pairwise_kernel_classically_polynomial": true,
+      "robust_trim_alternative_failure_log2_upper_bound": -450.4038052891987,
+      "robust_trim_alternative_failure_upper_bound": 2.5998269822156882e-136,
+      "robust_trim_alternative_success_lower_bound": 1.0,
+      "status": "robust-trimmed-pairwise-kernel-succinct-global-polar-open",
+      "total_robust_trim_failure_log2_upper_bound": -900.8202059912921,
+      "total_robust_trim_failure_upper_bound": 6.700347026711188e-272
+    },
+    {
+      "all_pairs_not_robust_log2_upper_bound": -2533.175325496239,
+      "all_pairs_not_robust_upper_bound": 0.0,
+      "copy_count": 846,
+      "degree": 256,
+      "disjoint_seed_pair_count": 423,
+      "global_orbit_row_polar_compiled": false,
+      "half_degree": 128,
+      "nonfree_source_fraction_log2_upper_bound": -10995.061285498972,
+      "nonfree_source_fraction_upper_bound": 0.0,
+      "one_orientation_intransitivity_upper_bound": 0.00393725494961317,
+      "one_pair_not_robust_upper_bound": 0.01574901979845268,
+      "pairwise_conjugator_support_upper_bound": 4096,
+      "pairwise_kernel_classically_polynomial": true,
+      "robust_trim_alternative_failure_log2_upper_bound": -1266.5776821677523,
+      "robust_trim_alternative_failure_upper_bound": 0.0,
+      "robust_trim_alternative_success_lower_bound": 1.0,
+      "status": "robust-trimmed-pairwise-kernel-succinct-global-polar-open",
+      "total_robust_trim_failure_log2_upper_bound": -2533.175325496239,
+      "total_robust_trim_failure_upper_bound": 0.0
+    }
+  ],
+  "status": "regular-row-pairwise-kernel-succinct-global-polar-open",
+  "summary": "Redirected the trimmed hidden-involution architecture from generic hyperoctahedral subduction to the regular-G orbit-row polar and proved that every pairwise Fourier kernel has a polynomial rooted-conjugator description.",
+  "theorem": {
+    "architecture_correction": "The free-fiber canonicalizer and Ind_K^G(C[K] tensor C[O])=C[G] tensor C[O] remove generic K-subduction from the active trimmed architecture; only orbit-copy row polar remains.",
+    "asymptotically_full_robust_trimmed_mass_proved": true,
+    "dequantization_consequence": "Pairwise scalar or matrix kernel evaluation is classically polynomial and cannot itself be claimed as quantum leverage.",
+    "exact_product_overlap_formula_proved": true,
+    "global_orbit_copy_transform_compiled": false,
+    "hidden_involution_detector_constructed": false,
+    "natural_robust_mass": "One seed-pair failure is at most four times the transitivity union bound; disjoint coordinate pairs amplify, and the source second moment transfers the trim to alternative contribution.",
+    "pairwise_fourier_kernel": "Every R_lambda(o,o') is a sum of at most 16n efficiently computable representation matrices.",
+    "pairwise_fourier_kernel_succinct": true,
+    "polynomial_pairwise_conjugator_reconstruction_proved": true,
+    "product_overlap": "kappa_(o,o')(g) is exactly the product of endpoint-set intersection sizes divided by two.",
+    "regular_G_reduction_supersedes_generic_K_subduction_on_trimmed_mass": true,
+    "remaining_global_operator": "Compile the coherent exponentially wide orbit-copy polar and label erasure while factoring out the M likelihood scale analytically.",
+    "rooted_conjugator_bound": "A robust two-coordinate seed gives 16 endpoint orientations; each ordered transitive pair has at most n conjugators, reconstructed from the image of one root.",
+    "speedup_claim_allowed": false,
+    "status": "regular-row-pairwise-kernel-succinct-global-polar-open",
+    "theorem_verified": true,
+    "unnormalized_likelihood_fast_forward_compiled": false
+  },
+  "theorem_contract": {
+    "claim_boundary": "Pairwise kernel succinctness and architecture correction, not a coherent global transform or hidden-involution detector.",
+    "finite_control": "Exact S_4 and S_6 enumeration",
+    "kernel": "<v_o|U_g|v_o'> after regular-G induction",
+    "source_mass": "Free canonical source tuples with at least one robustly transitive disjoint coordinate pair"
+  }
+}

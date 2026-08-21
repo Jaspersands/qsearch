@@ -1,0 +1,320 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "No asymptotically: their total Plancherel mass is factorially smaller than the inverse-polynomial good-event lower bound.",
+      "challenge": "The commutator may be supported only on the solved fixed-defect families.",
+      "resolved": true
+    },
+    {
+      "answer": "The integrand is bounded by four, forcing irrep mass at least delta_m/(8-delta_m)=Theta(m^-6).",
+      "challenge": "A nonzero regular commutator could have exponentially rare irrep support.",
+      "resolved": true
+    },
+    {
+      "answer": "Direct h-even projector weighting leaves the exact mean unchanged because coefficient_h(X^*X)=0.",
+      "challenge": "Plancherel relevance does not imply hidden-involution source relevance.",
+      "resolved": true
+    },
+    {
+      "answer": "It proves inverse-polynomial variance and spectral diameter for one local charge, but not minimum adjacent gaps, a hierarchical basis, normalization, or decoding.",
+      "challenge": "Noncommutativity proves an efficient missing-label transform.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_repeated_branches_detected_by_local_pair": false,
+    "bounded_support_reaches_growing_defect_natural_mass": true,
+    "exact_local_support_decomposition_proved": true,
+    "hidden_involution_detector_constructed": false,
+    "hierarchical_missing_label_transform_compiled": false,
+    "inverse_polynomial_copy_space_eigenvalue_gap_proved": false,
+    "reason": "Local noncommutative action now reaches natural mass, but Hilbert-Schmidt energy does not provide resolvable labels or source correlation.",
+    "source_aware_normalized_recoupling_compiled": false,
+    "speedup_claim_allowed": false,
+    "support_three_copy_space_spectral_diameter_inverse_polynomial": true,
+    "support_three_copy_space_variance_inverse_polynomial": true
+  },
+  "created_at": "2026-08-20T19:35:18.478903+00:00",
+  "falsifiers_triggered": [
+    "Bounded-support commutant action is not confined to polynomial-dimensional stable shapes.",
+    "The finite support-threshold sequence does not imply an asymptotic support lower bound.",
+    "Regular noncommutator energy alone does not imply a useful eigenbasis or hidden signal."
+  ],
+  "finite_controls": [
+    {
+      "degree": 8,
+      "every_repeated_partition_detected": true,
+      "exact_plancherel_commutator_expectation": 3.616898148148148e-05,
+      "expectation_residual": 0.0,
+      "finite_dense_control_only": true,
+      "half_degree": 4,
+      "no_multiplicity_free_partition_detected": true,
+      "nonzero_commutator_plancherel_mass": 0.8026785714285714,
+      "nonzero_local_commutator_partition_count": 7,
+      "partition_count": 22,
+      "predicted_group_algebra_expectation": 3.616898148148148e-05,
+      "repeated_branch_partition_count": 7,
+      "status": "local-pair-detects-every-repeated-finite-branch"
+    },
+    {
+      "degree": 10,
+      "every_repeated_partition_detected": true,
+      "exact_plancherel_commutator_expectation": 1.0416666666666666e-05,
+      "expectation_residual": 0.0,
+      "finite_dense_control_only": true,
+      "half_degree": 5,
+      "no_multiplicity_free_partition_detected": true,
+      "nonzero_commutator_plancherel_mass": 0.9530842151675486,
+      "nonzero_local_commutator_partition_count": 22,
+      "partition_count": 42,
+      "predicted_group_algebra_expectation": 1.0416666666666666e-05,
+      "repeated_branch_partition_count": 22,
+      "status": "local-pair-detects-every-repeated-finite-branch"
+    }
+  ],
+  "headline_metrics": {
+    "coherent_missing_label_transform_count": 0,
+    "commutator_squared_norm_exponent": 6,
+    "exact_all_rank_local_commutator_norm_count": 1,
+    "finite_repeated_branch_detection_control_count": 2,
+    "finite_repeated_branch_detection_failure_count": 0,
+    "growing_defect_natural_commutator_mass_count": 1,
+    "hidden_involution_detector_count": 0,
+    "inverse_polynomial_copy_space_diameter_count": 1,
+    "inverse_polynomial_copy_space_variance_count": 1,
+    "inverse_polynomial_gap_theorem_count": 0,
+    "inverse_polynomial_plancherel_natural_mass_count": 1,
+    "minimum_positive_growing_defect_half_degree": 11,
+    "minimum_positive_natural_half_degree": 4,
+    "new_quantum_algorithm_count": 0
+  },
+  "literature_links": [
+    {
+      "id": "DOI:10.1145/258533.258548",
+      "role": "Efficient symmetric-group QFT and Young-basis representation controls."
+    },
+    {
+      "id": "arXiv:math/0302203",
+      "role": "Partial-permutation filtrations and stable local-support algebra context."
+    },
+    {
+      "id": "arXiv:1212.5375",
+      "role": "Hyperoctahedral partial-bijection locality and polynomial structure coefficients; double-coset rather than conjugation algebra."
+    }
+  ],
+  "local_certificate": {
+    "disjoint_global_support_by_four_pair_set": true,
+    "every_nonzero_term_touches_all_four_pairs": true,
+    "four_pair_C_orbit_size": 48,
+    "four_pair_D_orbit_size": 96,
+    "four_pair_commutator_nonzero_coefficient_count": 768,
+    "four_pair_negative_coefficient_count": 384,
+    "four_pair_positive_coefficient_count": 384,
+    "four_pair_unnormalized_squared_norm": 768,
+    "local_decomposition_proved": true,
+    "status": "exact-four-pair-local-commutator-certificate",
+    "three_pair_C_orbit_size": 24,
+    "three_pair_D_orbit_size": 24,
+    "three_pair_commutator_nonzero_coefficient_count": 0
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-HIDDEN-INVOLUTION-LOCAL-COMMUTATOR-GAP-DISTRIBUTION",
+      "resolved": false,
+      "statement": "Bound copy-space eigenvalue gaps or local branching widths for C_m,D_m on the certified natural event."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-LOCAL-CHARGE-HIERARCHY",
+      "resolved": false,
+      "statement": "Construct a nested polynomial charge family that resolves exponentially large natural multiplicities with polynomial precision."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-LOCAL-COMMUTATOR-SOURCE-CORRELATION",
+      "resolved": false,
+      "statement": "Prove that the local copy-space labels correlate with the source-aware CS signal rather than merely resolving nuisance multiplicity."
+    }
+  ],
+  "scaling_records": [
+    {
+      "commutator_energy_threshold": 1.808449074074074e-05,
+      "commutator_rank_fraction_lower_bound": 4.521122685185185e-06,
+      "coordinate_source_good_mass_lower_bound": 4.521143125827934e-06,
+      "coordinate_source_plancherel_tv_upper_bound": 0.048795003647426664,
+      "copy_space_spectral_diameter_lower_bound": 0.004252586358998573,
+      "copy_space_variance_threshold": 4.521122685185185e-06,
+      "degree": 8,
+      "fixed_defect_four_row_or_column_mass_upper_bound": 2.0,
+      "growing_defect_natural_mass_certified": false,
+      "growing_defect_source_good_mass_lower_bound": 0.0,
+      "half_degree": 4,
+      "hidden_even_commutator_expectation": 3.616898148148148e-05,
+      "hidden_even_correction_coefficient": 0.0,
+      "natural_inverse_polynomial_mass_certified": true,
+      "normalized_commutator_squared_norm": 3.616898148148148e-05,
+      "plancherel_good_mass_lower_bound": 4.521143125827934e-06,
+      "status": "natural-local-noncommutativity-certified"
+    },
+    {
+      "commutator_energy_threshold": 5.208333333333333e-06,
+      "commutator_rank_fraction_lower_bound": 1.3020833333333333e-06,
+      "coordinate_source_good_mass_lower_bound": 1.302085028756548e-06,
+      "coordinate_source_plancherel_tv_upper_bound": 0.016265001215808886,
+      "copy_space_spectral_diameter_lower_bound": 0.002282177322938192,
+      "copy_space_variance_threshold": 1.3020833333333333e-06,
+      "degree": 10,
+      "fixed_defect_four_row_or_column_mass_upper_bound": 2.0,
+      "growing_defect_natural_mass_certified": false,
+      "growing_defect_source_good_mass_lower_bound": 0.0,
+      "half_degree": 5,
+      "hidden_even_commutator_expectation": 1.0416666666666666e-05,
+      "hidden_even_correction_coefficient": 0.0,
+      "natural_inverse_polynomial_mass_certified": true,
+      "normalized_commutator_squared_norm": 1.0416666666666666e-05,
+      "plancherel_good_mass_lower_bound": 1.302085028756548e-06,
+      "status": "natural-local-noncommutativity-certified"
+    },
+    {
+      "commutator_energy_threshold": 2.9657510325558795e-07,
+      "commutator_rank_fraction_lower_bound": 7.414377581389699e-08,
+      "coordinate_source_good_mass_lower_bound": 7.414378131119689e-08,
+      "coordinate_source_plancherel_tv_upper_bound": 0.0003511886340227855,
+      "copy_space_spectral_diameter_lower_bound": 0.0005445870942793154,
+      "copy_space_variance_threshold": 7.414377581389699e-08,
+      "degree": 16,
+      "fixed_defect_four_row_or_column_mass_upper_bound": 0.009853295440597026,
+      "growing_defect_natural_mass_certified": false,
+      "growing_defect_source_good_mass_lower_bound": 0.0,
+      "half_degree": 8,
+      "hidden_even_commutator_expectation": 5.931502065111759e-07,
+      "hidden_even_correction_coefficient": 0.0,
+      "natural_inverse_polynomial_mass_certified": true,
+      "normalized_commutator_squared_norm": 5.931502065111759e-07,
+      "plancherel_good_mass_lower_bound": 7.414378131119689e-08,
+      "status": "natural-local-noncommutativity-certified"
+    },
+    {
+      "commutator_energy_threshold": 7.501714677640603e-08,
+      "commutator_rank_fraction_lower_bound": 1.8754286694101508e-08,
+      "coordinate_source_good_mass_lower_bound": 1.8754287045824783e-08,
+      "coordinate_source_plancherel_tv_upper_bound": 1.954065830881254e-05,
+      "copy_space_spectral_diameter_lower_bound": 0.00027389258255090815,
+      "copy_space_variance_threshold": 1.8754286694101508e-08,
+      "degree": 20,
+      "fixed_defect_four_row_or_column_mass_upper_bound": 5.050758295525981e-07,
+      "growing_defect_natural_mass_certified": false,
+      "growing_defect_source_good_mass_lower_bound": 0.0,
+      "half_degree": 10,
+      "hidden_even_commutator_expectation": 1.5003429355281207e-07,
+      "hidden_even_correction_coefficient": 0.0,
+      "natural_inverse_polynomial_mass_certified": true,
+      "normalized_commutator_squared_norm": 1.5003429355281207e-07,
+      "plancherel_good_mass_lower_bound": 1.8754287045824783e-08,
+      "status": "natural-local-noncommutativity-certified"
+    },
+    {
+      "commutator_energy_threshold": 4.1739711161198766e-08,
+      "commutator_rank_fraction_lower_bound": 1.0434927790299692e-08,
+      "coordinate_source_good_mass_lower_bound": 1.0434927899187411e-08,
+      "coordinate_source_plancherel_tv_upper_bound": 4.264121229971488e-06,
+      "copy_space_spectral_diameter_lower_bound": 0.00020430298862522488,
+      "copy_space_variance_threshold": 1.0434927790299692e-08,
+      "degree": 22,
+      "fixed_defect_four_row_or_column_mass_upper_bound": 2.3434521567758087e-09,
+      "growing_defect_natural_mass_certified": true,
+      "growing_defect_source_good_mass_lower_bound": 8.091475742411602e-09,
+      "half_degree": 11,
+      "hidden_even_commutator_expectation": 8.347942232239753e-08,
+      "hidden_even_correction_coefficient": 0.0,
+      "natural_inverse_polynomial_mass_certified": true,
+      "normalized_commutator_squared_norm": 8.347942232239753e-08,
+      "plancherel_good_mass_lower_bound": 1.0434927899187411e-08,
+      "status": "growing-defect-natural-local-noncommutativity-certified"
+    },
+    {
+      "commutator_energy_threshold": 2.8987454627179593e-09,
+      "commutator_rank_fraction_lower_bound": 7.246863656794898e-10,
+      "coordinate_source_good_mass_lower_bound": 7.246863662046601e-10,
+      "coordinate_source_plancherel_tv_upper_bound": 1.986904178321465e-10,
+      "copy_space_spectral_diameter_lower_bound": 5.383999872509247e-05,
+      "copy_space_variance_threshold": 7.246863656794898e-10,
+      "degree": 34,
+      "fixed_defect_four_row_or_column_mass_upper_bound": 2.9034073352909834e-25,
+      "growing_defect_natural_mass_certified": true,
+      "growing_defect_source_good_mass_lower_bound": 7.246863662046598e-10,
+      "half_degree": 17,
+      "hidden_even_commutator_expectation": 5.797490925435919e-09,
+      "hidden_even_correction_coefficient": 0.0,
+      "natural_inverse_polynomial_mass_certified": true,
+      "normalized_commutator_squared_norm": 5.797490925435919e-09,
+      "plancherel_good_mass_lower_bound": 7.246863662046601e-10,
+      "status": "growing-defect-natural-local-noncommutativity-certified"
+    },
+    {
+      "commutator_energy_threshold": 6.189017975402247e-11,
+      "commutator_rank_fraction_lower_bound": 1.5472544938505618e-11,
+      "coordinate_source_good_mass_lower_bound": 1.5472544938745015e-11,
+      "coordinate_source_plancherel_tv_upper_bound": 4.718754246801185e-23,
+      "copy_space_spectral_diameter_lower_bound": 7.867031190609483e-06,
+      "copy_space_variance_threshold": 1.5472544938505618e-11,
+      "degree": 64,
+      "fixed_defect_four_row_or_column_mass_upper_bound": 1.0647904121693497e-73,
+      "growing_defect_natural_mass_certified": true,
+      "growing_defect_source_good_mass_lower_bound": 1.5472544938745015e-11,
+      "half_degree": 32,
+      "hidden_even_commutator_expectation": 1.2378035950804494e-10,
+      "hidden_even_correction_coefficient": 0.0,
+      "natural_inverse_polynomial_mass_certified": true,
+      "normalized_commutator_squared_norm": 1.2378035950804494e-10,
+      "plancherel_good_mass_lower_bound": 1.5472544938745015e-11,
+      "status": "growing-defect-natural-local-noncommutativity-certified"
+    },
+    {
+      "commutator_energy_threshold": 9.381161067651742e-13,
+      "commutator_rank_fraction_lower_bound": 2.3452902669129355e-13,
+      "coordinate_source_good_mass_lower_bound": 2.3452902669134853e-13,
+      "coordinate_source_plancherel_tv_upper_bound": 1.2318512469980919e-54,
+      "copy_space_spectral_diameter_lower_bound": 9.685639404629795e-07,
+      "copy_space_variance_threshold": 2.3452902669129355e-13,
+      "degree": 128,
+      "fixed_defect_four_row_or_column_mass_upper_bound": 8.969348548680976e-198,
+      "growing_defect_natural_mass_certified": true,
+      "growing_defect_source_good_mass_lower_bound": 2.3452902669134853e-13,
+      "half_degree": 64,
+      "hidden_even_commutator_expectation": 1.8762322135303484e-12,
+      "hidden_even_correction_coefficient": 0.0,
+      "natural_inverse_polynomial_mass_certified": true,
+      "normalized_commutator_squared_norm": 1.8762322135303484e-12,
+      "plancherel_good_mass_lower_bound": 2.3452902669134853e-13,
+      "status": "growing-defect-natural-local-noncommutativity-certified"
+    }
+  ],
+  "status": "bounded-support-noncommutativity-on-growing-defect-natural-mass-proved",
+  "summary": "Proved that two support-at-most-four hyperoctahedral orbit averages act noncommutatively on inverse-polynomial, growing-defect natural Fourier mass.",
+  "theorem": {
+    "all_repeated_branches_detected_by_this_pair_proved": false,
+    "coherent_missing_label_transform_compiled": false,
+    "exact_all_rank_commutator_norm_proved": true,
+    "exact_group_algebra_norm": "delta_m=(m-3)/[8 m^3 (m-2) (m-1)^3]=Theta(m^-6).",
+    "fixed_defect_exclusion": "Row-or-column defect at most four has source mass at most 48(2m)^8/(2m)!, leaving growing-defect natural mass from m>=11.",
+    "growing_defect_natural_noncommutative_mass_proved": true,
+    "hidden_involution_detector_constructed": false,
+    "inverse_polynomial_copy_space_eigenvalue_gap_proved": false,
+    "inverse_polynomial_copy_space_spectral_diameter_proved": true,
+    "inverse_polynomial_copy_space_variance_proved": true,
+    "inverse_polynomial_natural_noncommutative_mass_proved": true,
+    "inverse_polynomial_plancherel_noncommutative_mass_proved": true,
+    "local_cancellation": "The three-pair commutator vanishes; each four-pair set contributes 768 orthogonal +/-1 coefficients.",
+    "natural_source_transfer": "Source-weighting by P_+=(I+rho(h))/2 changes the mean by coefficient_h(X^*X), which is exactly zero; the occupied even-space mean is delta_m.",
+    "observables": "C_m is the full-pair-plus-single 3-cycle average; D_m is the three-pair path-matching average.",
+    "plancherel_transfer": "Regular Fourier decomposition and the operator-norm bound four give mass at least delta_m/(8-delta_m) above energy delta_m/2.",
+    "speedup_claim_allowed": false,
+    "status": "bounded-support-noncommutativity-on-growing-defect-natural-mass-proved",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "access_model": "Normalized polynomial-size K-conjugacy orbit averages in Young-basis Fourier blocks.",
+    "claim_boundary": "Inverse-polynomial natural mass with noncommutative local action; not an eigenbasis transform or detector.",
+    "group_pair": "S_(2m) >= C_2 wr S_m",
+    "range": "every integer m>=4, with positive growing-defect source mass from m>=11"
+  }
+}

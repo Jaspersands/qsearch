@@ -1,0 +1,668 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False at degree five: a unique c=16 branch survives as 1/(2^k r^4).",
+      "challenge": "The degree-four transporter cancellation repeats at all degrees.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It retains the original inverse-candidate factor and has an additional r^-4 path-mass suppression.",
+      "challenge": "A surviving order-2^-k term is evidence of useful amplification.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Every path activates at most eight unaffected pairs; the nine canonical all-active cores are enumerated exactly and lifted by a deletion/insertion bijection.",
+      "challenge": "The histogram is polynomial interpolation.",
+      "resolved": true
+    }
+  ],
+  "branch_controls": [
+    {
+      "alternative_identity_histogram": {
+        "1": 440,
+        "2": 564,
+        "4": 252,
+        "8": 39,
+        "16": 1
+      },
+      "baseline_closure_histogram": {
+        "1": 48,
+        "2": 20,
+        "4": 5
+      },
+      "exact_degree_five_return_classification_verified": true,
+      "half_degree": 3,
+      "histogram_sums_to_all_paths": true,
+      "maximum_alternative_identity_count": 16,
+      "maximum_baseline_identity_count": 4,
+      "odd_exception_identity_occurrence_count": 0,
+      "odd_exception_path_count": 0,
+      "stable_histogram_formula_applies": true,
+      "status": "exact-cross-transposition-degree-five-return-classification",
+      "support_deletion_bijection_verified": true,
+      "total_four_switch_path_count": 1296,
+      "unaffected_pair_parameter": 1
+    },
+    {
+      "alternative_identity_histogram": {
+        "1": 12880,
+        "2": 6376,
+        "4": 1386,
+        "8": 93,
+        "16": 1
+      },
+      "baseline_closure_histogram": {
+        "1": 96,
+        "2": 60,
+        "4": 5
+      },
+      "exact_degree_five_return_classification_verified": true,
+      "half_degree": 4,
+      "histogram_sums_to_all_paths": true,
+      "maximum_alternative_identity_count": 16,
+      "maximum_baseline_identity_count": 4,
+      "odd_exception_identity_occurrence_count": 216,
+      "odd_exception_path_count": 156,
+      "stable_histogram_formula_applies": false,
+      "status": "exact-cross-transposition-degree-five-return-classification",
+      "support_deletion_bijection_verified": true,
+      "total_four_switch_path_count": 20736,
+      "unaffected_pair_parameter": 2
+    },
+    {
+      "alternative_identity_histogram": {
+        "1": 119856,
+        "2": 35544,
+        "4": 4422,
+        "8": 177,
+        "16": 1
+      },
+      "baseline_closure_histogram": {
+        "1": 144,
+        "2": 120,
+        "4": 5
+      },
+      "exact_degree_five_return_classification_verified": true,
+      "half_degree": 5,
+      "histogram_sums_to_all_paths": true,
+      "maximum_alternative_identity_count": 16,
+      "maximum_baseline_identity_count": 4,
+      "odd_exception_identity_occurrence_count": 0,
+      "odd_exception_path_count": 0,
+      "stable_histogram_formula_applies": true,
+      "status": "exact-cross-transposition-degree-five-return-classification",
+      "support_deletion_bijection_verified": true,
+      "total_four_switch_path_count": 160000,
+      "unaffected_pair_parameter": 3
+    },
+    {
+      "alternative_identity_histogram": {
+        "1": 661736,
+        "2": 136632,
+        "4": 11340,
+        "8": 291,
+        "16": 1
+      },
+      "baseline_closure_histogram": {
+        "1": 192,
+        "2": 200,
+        "4": 5
+      },
+      "exact_degree_five_return_classification_verified": true,
+      "half_degree": 6,
+      "histogram_sums_to_all_paths": true,
+      "maximum_alternative_identity_count": 16,
+      "maximum_baseline_identity_count": 4,
+      "odd_exception_identity_occurrence_count": 0,
+      "odd_exception_path_count": 0,
+      "stable_histogram_formula_applies": true,
+      "status": "exact-cross-transposition-degree-five-return-classification",
+      "support_deletion_bijection_verified": true,
+      "total_four_switch_path_count": 810000,
+      "unaffected_pair_parameter": 4
+    },
+    {
+      "alternative_identity_histogram": {
+        "1": 8736360,
+        "2": 1050684,
+        "4": 46842,
+        "8": 609,
+        "16": 1
+      },
+      "baseline_closure_histogram": {
+        "1": 288,
+        "2": 420,
+        "4": 5
+      },
+      "exact_degree_five_return_classification_verified": true,
+      "half_degree": 8,
+      "histogram_sums_to_all_paths": true,
+      "maximum_alternative_identity_count": 16,
+      "maximum_baseline_identity_count": 4,
+      "odd_exception_identity_occurrence_count": 0,
+      "odd_exception_path_count": 0,
+      "stable_histogram_formula_applies": true,
+      "status": "exact-cross-transposition-degree-five-return-classification",
+      "support_deletion_bijection_verified": true,
+      "total_four_switch_path_count": 9834496,
+      "unaffected_pair_parameter": 6
+    },
+    {
+      "alternative_identity_histogram": {
+        "1": 286948160,
+        "2": 16336500,
+        "4": 309510,
+        "8": 1605,
+        "16": 1
+      },
+      "baseline_closure_histogram": {
+        "1": 480,
+        "2": 1100,
+        "4": 5
+      },
+      "exact_degree_five_return_classification_verified": true,
+      "half_degree": 12,
+      "histogram_sums_to_all_paths": true,
+      "maximum_alternative_identity_count": 16,
+      "maximum_baseline_identity_count": 4,
+      "odd_exception_identity_occurrence_count": 0,
+      "odd_exception_path_count": 0,
+      "stable_histogram_formula_applies": true,
+      "status": "exact-cross-transposition-degree-five-return-classification",
+      "support_deletion_bijection_verified": true,
+      "total_four_switch_path_count": 303595776,
+      "unaffected_pair_parameter": 10
+    }
+  ],
+  "claim_gate": {
+    "all_degree_normalized_moment_no_go_proved_by_follow_up": true,
+    "degree_four_leading_cancellation_extends_to_degree_five": false,
+    "exact_cross_Hecke_fifth_moment_proved": true,
+    "full_spectral_no_go_proved": false,
+    "hidden_involution_detector_constructed": false,
+    "leading_degree_five_transporter_term_is_inverse_candidate": true,
+    "normalized_quintic_filter_constant_bias": false,
+    "reason": "The first uncancelled transporter term remains 1/(2^k r^4); it is not an amplification mechanism.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-21T13:08:00.093354+00:00",
+  "falsifiers_triggered": [
+    "Leading transporter cancellation is special to degree four.",
+    "The first surviving transporter term remains inverse-candidate biased.",
+    "A normalized quintic filter in the single switch operator cannot have constant bias."
+  ],
+  "headline_metrics": {
+    "canonical_support_core_count": 9,
+    "exact_branch_control_count": 6,
+    "exact_moment_control_count": 9,
+    "m4_odd_exception_path_count": 156,
+    "maximum_active_unaffected_pair_count": 8,
+    "maximum_natural_fifth_moment_bias": 5.950232834673849e-09,
+    "natural_scaling_row_count": 5
+  },
+  "moment_controls": [
+    {
+      "baseline_fifth_moment": "1/192",
+      "copy_count": 1,
+      "exact_fifth_moment_formula_verified": true,
+      "fifth_moment_bias": "7/108",
+      "half_degree": 3,
+      "leading_copy_weight_cancels_against_baseline": false,
+      "likelihood_fifth_moment": "121/1728",
+      "pair_crossing_index": 6,
+      "remaining_bias_after_leading_term": "167/2592",
+      "status": "exact-degree-five-moment-leading-transporter-survives",
+      "surviving_leading_transporter_term": "1/2592"
+    },
+    {
+      "baseline_fifth_moment": "13/20736",
+      "copy_count": 2,
+      "exact_fifth_moment_formula_verified": true,
+      "fifth_moment_bias": "1081/165888",
+      "half_degree": 3,
+      "leading_copy_weight_cancels_against_baseline": false,
+      "likelihood_fifth_moment": "395/55296",
+      "pair_crossing_index": 6,
+      "remaining_bias_after_leading_term": "1049/165888",
+      "status": "exact-degree-five-moment-leading-transporter-survives",
+      "surviving_leading_transporter_term": "1/5184"
+    },
+    {
+      "baseline_fifth_moment": "121/28311552",
+      "copy_count": 5,
+      "exact_fifth_moment_formula_verified": true,
+      "fifth_moment_bias": "100717/1811939328",
+      "half_degree": 3,
+      "leading_copy_weight_cancels_against_baseline": false,
+      "likelihood_fifth_moment": "108461/1811939328",
+      "pair_crossing_index": 6,
+      "remaining_bias_after_leading_term": "171079/5435817984",
+      "status": "exact-degree-five-moment-leading-transporter-survives",
+      "surviving_leading_transporter_term": "1/41472"
+    },
+    {
+      "baseline_fifth_moment": "59/82944",
+      "copy_count": 1,
+      "exact_fifth_moment_formula_verified": true,
+      "fifth_moment_bias": "437/9216",
+      "half_degree": 4,
+      "leading_copy_weight_cancels_against_baseline": false,
+      "likelihood_fifth_moment": "499/10368",
+      "pair_crossing_index": 12,
+      "remaining_bias_after_leading_term": "3931/82944",
+      "status": "exact-degree-five-moment-leading-transporter-survives",
+      "surviving_leading_transporter_term": "1/41472"
+    },
+    {
+      "baseline_fifth_moment": "13/165888",
+      "copy_count": 2,
+      "exact_fifth_moment_formula_verified": true,
+      "fifth_moment_bias": "4069/1327104",
+      "half_degree": 4,
+      "leading_copy_weight_cancels_against_baseline": false,
+      "likelihood_fifth_moment": "1391/442368",
+      "pair_crossing_index": 12,
+      "remaining_bias_after_leading_term": "1351/442368",
+      "status": "exact-degree-five-moment-leading-transporter-survives",
+      "surviving_leading_transporter_term": "1/82944"
+    },
+    {
+      "baseline_fifth_moment": "223/679477248",
+      "copy_count": 5,
+      "exact_fifth_moment_formula_verified": true,
+      "fifth_moment_bias": "38221/4831838208",
+      "half_degree": 4,
+      "leading_copy_weight_cancels_against_baseline": false,
+      "likelihood_fifth_moment": "358261/43486543872",
+      "pair_crossing_index": 12,
+      "remaining_bias_after_leading_term": "278453/43486543872",
+      "status": "exact-degree-five-moment-leading-transporter-survives",
+      "surviving_leading_transporter_term": "1/663552"
+    },
+    {
+      "baseline_fifth_moment": "101/640000",
+      "copy_count": 1,
+      "exact_fifth_moment_formula_verified": true,
+      "fifth_moment_bias": "26157/640000",
+      "half_degree": 5,
+      "leading_copy_weight_cancels_against_baseline": false,
+      "likelihood_fifth_moment": "13129/320000",
+      "pair_crossing_index": 20,
+      "remaining_bias_after_leading_term": "5231/128000",
+      "status": "exact-degree-five-moment-leading-transporter-survives",
+      "surviving_leading_transporter_term": "1/320000"
+    },
+    {
+      "baseline_fifth_moment": "11/640000",
+      "copy_count": 2,
+      "exact_fifth_moment_formula_verified": true,
+      "fifth_moment_bias": "21347/10240000",
+      "half_degree": 5,
+      "leading_copy_weight_cancels_against_baseline": false,
+      "likelihood_fifth_moment": "21523/10240000",
+      "pair_crossing_index": 20,
+      "remaining_bias_after_leading_term": "21331/10240000",
+      "status": "exact-degree-five-moment-leading-transporter-survives",
+      "surviving_leading_transporter_term": "1/640000"
+    },
+    {
+      "baseline_fifth_moment": "569/10485760000",
+      "copy_count": 5,
+      "exact_fifth_moment_formula_verified": true,
+      "fifth_moment_bias": "771411/335544320000",
+      "half_degree": 5,
+      "leading_copy_weight_cancels_against_baseline": false,
+      "likelihood_fifth_moment": "789619/335544320000",
+      "pair_crossing_index": 20,
+      "remaining_bias_after_leading_term": "5647/2684354560",
+      "status": "exact-degree-five-moment-leading-transporter-survives",
+      "surviving_leading_transporter_term": "1/5120000"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-HIDDEN-INVOLUTION-CROSS-HECKE-ARBITRARY-DEGREE",
+      "resolved": true,
+      "statement": "Resolved for normalized moments and polynomial LCUs by the adjacent-pair one-quarter product-fiber injection."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-CROSS-HECKE-SPECTRAL-TAIL",
+      "resolved": false,
+      "statement": "Determine whether degree growing with m can concentrate alternative mass on rare eigenvalues despite every fixed degree remaining inverse-candidate biased."
+    }
+  ],
+  "scaling_records": [
+    {
+      "conjugacy_class_size_decimal": "105",
+      "copy_count": 13,
+      "degree": 8,
+      "fifth_bias_at_most_twice_inverse_copy_scale": true,
+      "fifth_moment_absolute_bias": 5.950232834673849e-09,
+      "half_degree": 4,
+      "inverse_copy_scale": 0.0001220703125,
+      "leading_transporter_bias": 5.886878496334876e-09,
+      "pair_crossing_index": 12,
+      "quintic_bias_at_most_six_times_inverse_64_candidates": true,
+      "quintic_unit_coefficient_bias_upper_bound": 0.0001229403681690218,
+      "remainder_after_leading_transporter": 6.335433833897262e-11,
+      "remainder_at_most_four_over_copy_scale_squared": true,
+      "status": "cross-Hecke-quintic-bias-remains-inverse-candidate"
+    },
+    {
+      "conjugacy_class_size_decimal": "2027025",
+      "copy_count": 27,
+      "degree": 16,
+      "fifth_bias_at_most_twice_inverse_copy_scale": true,
+      "fifth_moment_absolute_bias": 7.575999955339218e-16,
+      "half_degree": 8,
+      "inverse_copy_scale": 7.450580596923828e-09,
+      "leading_transporter_bias": 7.575965862331764e-16,
+      "pair_crossing_index": 56,
+      "quintic_bias_at_most_six_times_inverse_64_candidates": true,
+      "quintic_unit_coefficient_bias_upper_bound": 7.452957234470994e-09,
+      "remainder_after_leading_transporter": 3.4093007453882776e-21,
+      "remainder_at_most_four_over_copy_scale_squared": true,
+      "status": "cross-Hecke-quintic-bias-remains-inverse-candidate"
+    },
+    {
+      "conjugacy_class_size_decimal": "191898783962510625",
+      "copy_count": 64,
+      "degree": 32,
+      "fifth_bias_at_most_twice_inverse_copy_scale": true,
+      "fifth_moment_absolute_bias": 1.6339370124504253e-29,
+      "half_degree": 16,
+      "inverse_copy_scale": 5.421010862427522e-20,
+      "leading_transporter_bias": 1.633937012450425e-29,
+      "pair_crossing_index": 240,
+      "quintic_bias_at_most_six_times_inverse_64_candidates": true,
+      "quintic_unit_coefficient_bias_upper_bound": 5.421104978833377e-20,
+      "remainder_after_leading_transporter": 2.802596928649634e-45,
+      "remainder_at_most_four_over_copy_scale_squared": true,
+      "status": "cross-Hecke-quintic-bias-remains-inverse-candidate"
+    },
+    {
+      "conjugacy_class_size_decimal": "112275575285571389562324404930670903477890625",
+      "copy_count": 153,
+      "degree": 64,
+      "fifth_bias_at_most_twice_inverse_copy_scale": true,
+      "fifth_moment_absolute_bias": 9.044071243683805e-59,
+      "half_degree": 32,
+      "inverse_copy_scale": 8.758115402030107e-47,
+      "leading_transporter_bias": 9.044071243683805e-59,
+      "pair_crossing_index": 992,
+      "quintic_bias_at_most_six_times_inverse_64_candidates": true,
+      "quintic_unit_coefficient_bias_upper_bound": 8.758124301984076e-47,
+      "remainder_after_leading_transporter": 0.0,
+      "remainder_at_most_four_over_copy_scale_squared": true,
+      "status": "cross-Hecke-quintic-bias-remains-inverse-candidate"
+    },
+    {
+      "conjugacy_class_size_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "copy_count": 363,
+      "degree": 128,
+      "fifth_bias_at_most_twice_inverse_copy_scale": true,
+      "fifth_moment_absolute_bias": 2.0138609475669758e-124,
+      "half_degree": 64,
+      "inverse_copy_scale": 5.3224498000101884e-110,
+      "leading_transporter_bias": 2.0138609475669758e-124,
+      "pair_crossing_index": 4032,
+      "quintic_bias_at_most_six_times_inverse_64_candidates": true,
+      "quintic_unit_coefficient_bias_upper_bound": 5.322450127404067e-110,
+      "remainder_after_leading_transporter": 0.0,
+      "remainder_at_most_four_over_copy_scale_squared": true,
+      "status": "cross-Hecke-quintic-bias-remains-inverse-candidate"
+    }
+  ],
+  "status": "cross-Hecke-quintic-no-go-leading-transporter-survives-sparsely",
+  "summary": "Proved the exact fifth-moment law and falsified all-degree transporter cancellation without finding useful amplification.",
+  "support_controls": [
+    {
+      "active_unaffected_pair_count": 0,
+      "baseline_closure_histogram": {
+        "4": 5
+      },
+      "canonical_all_active_path_count": 16,
+      "canonical_half_degree": 2,
+      "even_identity_histogram": {
+        "8": 15,
+        "16": 1
+      },
+      "exact_canonical_support_enumeration_verified": true,
+      "expected_all_active_path_count": 16,
+      "expected_baseline_closure_histogram": {
+        "4": 5
+      },
+      "expected_even_identity_histogram": {
+        "8": 15,
+        "16": 1
+      },
+      "expected_odd_identity_occurrence_count": 120,
+      "expected_odd_identity_path_count": 15,
+      "odd_identity_occurrence_count": 120,
+      "odd_identity_path_count": 15,
+      "status": "exact-degree-five-canonical-support-core"
+    },
+    {
+      "active_unaffected_pair_count": 1,
+      "baseline_closure_histogram": {
+        "1": 48,
+        "2": 20
+      },
+      "canonical_all_active_path_count": 1280,
+      "canonical_half_degree": 3,
+      "even_identity_histogram": {
+        "1": 440,
+        "2": 564,
+        "4": 252,
+        "8": 24
+      },
+      "exact_canonical_support_enumeration_verified": true,
+      "expected_all_active_path_count": 1280,
+      "expected_baseline_closure_histogram": {
+        "1": 48,
+        "2": 20
+      },
+      "expected_even_identity_histogram": {
+        "1": 440,
+        "2": 564,
+        "4": 252,
+        "8": 24
+      },
+      "expected_odd_identity_occurrence_count": 0,
+      "expected_odd_identity_path_count": 0,
+      "odd_identity_occurrence_count": 0,
+      "odd_identity_path_count": 0,
+      "status": "exact-degree-five-canonical-support-core"
+    },
+    {
+      "active_unaffected_pair_count": 2,
+      "baseline_closure_histogram": {
+        "2": 20
+      },
+      "canonical_all_active_path_count": 18160,
+      "canonical_half_degree": 4,
+      "even_identity_histogram": {
+        "1": 12096,
+        "2": 5212,
+        "4": 822,
+        "8": 30
+      },
+      "exact_canonical_support_enumeration_verified": true,
+      "expected_all_active_path_count": 18160,
+      "expected_baseline_closure_histogram": {
+        "2": 20
+      },
+      "expected_even_identity_histogram": {
+        "1": 12096,
+        "2": 5212,
+        "4": 822,
+        "8": 30
+      },
+      "expected_odd_identity_occurrence_count": 216,
+      "expected_odd_identity_path_count": 156,
+      "odd_identity_occurrence_count": 216,
+      "odd_identity_path_count": 156,
+      "status": "exact-degree-five-canonical-support-core"
+    },
+    {
+      "active_unaffected_pair_count": 3,
+      "baseline_closure_histogram": {},
+      "canonical_all_active_path_count": 101664,
+      "canonical_half_degree": 5,
+      "even_identity_histogram": {
+        "1": 82248,
+        "2": 18216,
+        "4": 1200
+      },
+      "exact_canonical_support_enumeration_verified": true,
+      "expected_all_active_path_count": 101664,
+      "expected_baseline_closure_histogram": {},
+      "expected_even_identity_histogram": {
+        "1": 82248,
+        "2": 18216,
+        "4": 1200
+      },
+      "expected_odd_identity_occurrence_count": 0,
+      "expected_odd_identity_path_count": 0,
+      "odd_identity_occurrence_count": 0,
+      "odd_identity_path_count": 0,
+      "status": "exact-degree-five-canonical-support-core"
+    },
+    {
+      "active_unaffected_pair_count": 4,
+      "baseline_closure_histogram": {},
+      "canonical_all_active_path_count": 289248,
+      "canonical_half_degree": 6,
+      "even_identity_histogram": {
+        "1": 258408,
+        "2": 30240,
+        "4": 600
+      },
+      "exact_canonical_support_enumeration_verified": true,
+      "expected_all_active_path_count": 289248,
+      "expected_baseline_closure_histogram": {},
+      "expected_even_identity_histogram": {
+        "1": 258408,
+        "2": 30240,
+        "4": 600
+      },
+      "expected_odd_identity_occurrence_count": 0,
+      "expected_odd_identity_path_count": 0,
+      "odd_identity_occurrence_count": 0,
+      "odd_identity_path_count": 0,
+      "status": "exact-degree-five-canonical-support-core"
+    },
+    {
+      "active_unaffected_pair_count": 5,
+      "baseline_closure_histogram": {},
+      "canonical_all_active_path_count": 460800,
+      "canonical_half_degree": 7,
+      "even_identity_histogram": {
+        "1": 436800,
+        "2": 24000
+      },
+      "exact_canonical_support_enumeration_verified": true,
+      "expected_all_active_path_count": 460800,
+      "expected_baseline_closure_histogram": {},
+      "expected_even_identity_histogram": {
+        "1": 436800,
+        "2": 24000
+      },
+      "expected_odd_identity_occurrence_count": 0,
+      "expected_odd_identity_path_count": 0,
+      "odd_identity_occurrence_count": 0,
+      "odd_identity_path_count": 0,
+      "status": "exact-degree-five-canonical-support-core"
+    },
+    {
+      "active_unaffected_pair_count": 6,
+      "baseline_closure_histogram": {},
+      "canonical_all_active_path_count": 417600,
+      "canonical_half_degree": 8,
+      "even_identity_histogram": {
+        "1": 410400,
+        "2": 7200
+      },
+      "exact_canonical_support_enumeration_verified": true,
+      "expected_all_active_path_count": 417600,
+      "expected_baseline_closure_histogram": {},
+      "expected_even_identity_histogram": {
+        "1": 410400,
+        "2": 7200
+      },
+      "expected_odd_identity_occurrence_count": 0,
+      "expected_odd_identity_path_count": 0,
+      "odd_identity_occurrence_count": 0,
+      "odd_identity_path_count": 0,
+      "status": "exact-degree-five-canonical-support-core"
+    },
+    {
+      "active_unaffected_pair_count": 7,
+      "baseline_closure_histogram": {},
+      "canonical_all_active_path_count": 201600,
+      "canonical_half_degree": 9,
+      "even_identity_histogram": {
+        "1": 201600
+      },
+      "exact_canonical_support_enumeration_verified": true,
+      "expected_all_active_path_count": 201600,
+      "expected_baseline_closure_histogram": {},
+      "expected_even_identity_histogram": {
+        "1": 201600
+      },
+      "expected_odd_identity_occurrence_count": 0,
+      "expected_odd_identity_path_count": 0,
+      "odd_identity_occurrence_count": 0,
+      "odd_identity_path_count": 0,
+      "status": "exact-degree-five-canonical-support-core"
+    },
+    {
+      "active_unaffected_pair_count": 8,
+      "baseline_closure_histogram": {},
+      "canonical_all_active_path_count": 40320,
+      "canonical_half_degree": 10,
+      "even_identity_histogram": {
+        "1": 40320
+      },
+      "exact_canonical_support_enumeration_verified": true,
+      "expected_all_active_path_count": 40320,
+      "expected_baseline_closure_histogram": {},
+      "expected_even_identity_histogram": {
+        "1": 40320
+      },
+      "expected_odd_identity_occurrence_count": 0,
+      "expected_odd_identity_path_count": 0,
+      "odd_identity_occurrence_count": 0,
+      "odd_identity_path_count": 0,
+      "status": "exact-degree-five-canonical-support-core"
+    }
+  ],
+  "theorem": {
+    "alternative_histogram": "N16=1; N8=15+24n+30C(n,2); N4=252n+822C(n,2)+1200C(n,3)+600C(n,4); N2 and N1 follow the recorded eight-support binomial formulas.",
+    "baseline_fifth_moment": "tr_B(X^5)=[Q1+Q2*x+Q4*x^2]/[x^4*r^4]",
+    "baseline_histogram": "Q1=48n, Q2=20n+20C(n,2), Q4=5",
+    "blanket_leading_transporter_cancellation_conjecture_falsified": true,
+    "cancellation_boundary": "The degree-four leading transporter cancellation is not all-degree: the unique degree-five c=16 branch has no baseline term of equal copy weight.",
+    "exact_all_rank_degree_five_histogram_proved": true,
+    "exact_baseline_fifth_moment_proved": true,
+    "exact_likelihood_fifth_moment_proved": true,
+    "exact_nine_core_support_catalog_proved": true,
+    "fifth_moment_excess": "1/(x*r^4)+O(x^-2), with every coefficient given exactly by the support catalog",
+    "full_spectral_no_go_proved": false,
+    "hidden_involution_detector_constructed": false,
+    "likelihood_fifth_moment": "tr_B(X^5 Z)=[N1+N2*x+N4*x^2+N8*x^3+x^4]/[x^5*r^4]",
+    "natural_copy_consequence": "At x=2^k>=64M, the fifth-moment bias is at most 2/x and the unit-coefficient quintic total remains O(1/M).",
+    "normalized_quintic_filter_amplifies_to_constant_bias": false,
+    "speedup_claim_allowed": false,
+    "status": "cross-Hecke-quintic-no-go-leading-transporter-survives-sparsely",
+    "support_reduction": "Four switches activate at most eight unaffected pairs; even identity words lift from nine exact cores, while odd identity words require a fully active core.",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "claim_boundary": "Exact fifth moment only; no full spectral or growing-degree no-go and no detector.",
+    "copy_count": "arbitrary k>=1; natural rows use ceil(log2(64M))",
+    "degree": 5,
+    "group_family": "S_(2m), m>=3",
+    "operator": "single canonical cross-transposition B-Hecke walk"
+  }
+}

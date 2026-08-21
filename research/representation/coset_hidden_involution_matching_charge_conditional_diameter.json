@@ -1,0 +1,210 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False. D and T centralize K, and both preserve C eigenspaces, so the energy is internal to actual multiplicity blocks.",
+      "challenge": "Commutator energy might lie between different K labels.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It guarantees one separated pair but allows exponentially many tightly clustered or exactly degenerate remaining copies.",
+      "challenge": "A nonzero spectral diameter is a complete gap theorem.",
+      "resolved": true
+    },
+    {
+      "answer": "False from m>=13: the event lower bound exceeds the total row/column defect-four source-mass upper bound.",
+      "challenge": "The event may be confined to stable low-defect shapes.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Source-CS likelihood correlation and a physical detector remain unproved.",
+      "challenge": "A resolvable D direction is automatically useful for decision.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "coherent_D_diagonalization_compiled": false,
+    "event_reaches_growing_defect_source_mass": true,
+    "full_joint_minimum_gap_proved": false,
+    "hidden_involution_detector_constructed": false,
+    "natural_conditional_two_eigenvalue_separation_proved": true,
+    "reason": "D_m has an inverse-polynomial separated direction inside actual natural multiplicity blocks, but completeness, compilation, and decision relevance remain open.",
+    "residual_multiplicity_bounded": false,
+    "source_CS_likelihood_correlation_proved": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-21T13:08:04.057921+00:00",
+  "falsifiers_triggered": [
+    "The natural D_m independence signal is not purely infinitesimal: it forces a separated eigenvalue pair.",
+    "The separated direction is not confined to fixed-defect stable representations.",
+    "Spectral diameter alone does not resolve the exponentially large branching multiplicity."
+  ],
+  "headline_metrics": {
+    "beyond_defect_four_diameter_theorem_count": 1,
+    "coherent_diagonalization_count": 0,
+    "exact_natural_conditional_diameter_theorem_count": 1,
+    "full_joint_minimum_gap_theorem_count": 0,
+    "hidden_involution_detector_count": 0,
+    "tail_conditional_diameter_lower_bound": 2.2523493942791812e-11,
+    "tail_good_source_mass_lower_bound": 1.2682694484774484e-22
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-MATCHING-D-CONDITIONAL-MINIMUM-GAP",
+      "resolved": false,
+      "statement": "Bound the minimum relevant adjacent gap and residual degeneracy of the joint C_m,D_m spectrum, not only its diameter."
+    },
+    {
+      "id": "PO-MATCHING-D-COHERENT-DIAGONALIZATION",
+      "resolved": false,
+      "statement": "Compile D_m phase estimation or a local multiplicity transform with polynomial precision, labels, and garbage uncomputation."
+    },
+    {
+      "id": "PO-MATCHING-D-LIKELIHOOD-CORRELATION",
+      "resolved": false,
+      "statement": "Prove or falsify correlation between the separated D_m direction and the source-aware matrix-CS likelihood on natural mass."
+    }
+  ],
+  "scaling_records": [
+    {
+      "beyond_defect_four_good_mass_lower_bound": 0.0,
+      "conditional_D_spectral_diameter_lower_bound": 1.9907077774207424e-06,
+      "degree": 22,
+      "exact_mean_commutator_energy": 7.925834910166866e-12,
+      "explicit_inverse_polynomial_diameter_lower_bound": 6.105260415393366e-07,
+      "explicit_inverse_polynomial_mass_lower_bound": 9.318551184942295e-14,
+      "fixed_defect_four_source_mass_upper_bound": 2.3434521567758087e-09,
+      "good_block_energy_threshold": 3.962917455083433e-12,
+      "good_block_source_mass_lower_bound": 9.907293637718399e-13,
+      "half_degree": 11,
+      "inverse_polynomial_bounds_verified": true,
+      "physical_h_even_transfer_exact": true,
+      "scalar_distance_squared_threshold": 9.907293637708582e-13,
+      "status": "natural-conditional-D-diameter-certified"
+    },
+    {
+      "beyond_defect_four_good_mass_lower_bound": 0.0,
+      "conditional_D_spectral_diameter_lower_bound": 1.303224153795408e-06,
+      "degree": 24,
+      "exact_mean_commutator_energy": 3.396786390071514e-12,
+      "explicit_inverse_polynomial_diameter_lower_bound": 4.127201466540422e-07,
+      "explicit_inverse_polynomial_mass_lower_bound": 4.258447986353354e-14,
+      "fixed_defect_four_source_mass_upper_bound": 8.515800936368092e-12,
+      "good_block_energy_threshold": 1.698393195035757e-12,
+      "good_block_source_mass_lower_bound": 4.245982987591195e-13,
+      "half_degree": 12,
+      "inverse_polynomial_bounds_verified": true,
+      "physical_h_even_transfer_exact": true,
+      "scalar_distance_squared_threshold": 4.2459829875893924e-13,
+      "status": "natural-conditional-D-diameter-certified"
+    },
+    {
+      "beyond_defect_four_good_mass_lower_bound": 1.7082382459964255e-13,
+      "conditional_D_spectral_diameter_lower_bound": 8.84711368596066e-07,
+      "degree": 26,
+      "exact_mean_commutator_energy": 1.5654284114462485e-12,
+      "explicit_inverse_polynomial_diameter_lower_bound": 2.878897423410734e-07,
+      "explicit_inverse_polynomial_mass_lower_bound": 2.0720125936302415e-14,
+      "fixed_defect_four_source_mass_upper_bound": 2.4854726831176796e-14,
+      "good_block_energy_threshold": 7.827142057231242e-13,
+      "good_block_source_mass_lower_bound": 1.9567855143081935e-13,
+      "half_degree": 13,
+      "inverse_polynomial_bounds_verified": true,
+      "physical_h_even_transfer_exact": true,
+      "scalar_distance_squared_threshold": 1.9567855143078106e-13,
+      "status": "natural-conditional-D-diameter-beyond-defect-four"
+    },
+    {
+      "beyond_defect_four_good_mass_lower_bound": 1.5020603880184e-14,
+      "conditional_D_spectral_diameter_lower_bound": 2.451171465277296e-07,
+      "degree": 34,
+      "exact_mean_commutator_energy": 1.2016483104379295e-13,
+      "explicit_inverse_polynomial_diameter_lower_bound": 8.608968726959803e-08,
+      "explicit_inverse_polynomial_mass_lower_bound": 1.8528585635442978e-15,
+      "fixed_defect_four_source_mass_upper_bound": 2.9034073352909834e-25,
+      "good_block_energy_threshold": 6.008241552189647e-14,
+      "good_block_source_mass_lower_bound": 1.5020603880474343e-14,
+      "half_degree": 17,
+      "inverse_polynomial_bounds_verified": true,
+      "physical_h_even_transfer_exact": true,
+      "scalar_distance_squared_threshold": 1.502060388047412e-14,
+      "status": "natural-conditional-D-diameter-beyond-defect-four"
+    },
+    {
+      "beyond_defect_four_good_mass_lower_bound": 4.0245174854912056e-17,
+      "conditional_D_spectral_diameter_lower_bound": 1.2687816968243521e-08,
+      "degree": 64,
+      "exact_mean_commutator_energy": 3.2196139883929645e-16,
+      "explicit_inverse_polynomial_diameter_lower_bound": 4.998001405968792e-09,
+      "explicit_inverse_polynomial_mass_lower_bound": 6.245004513516506e-18,
+      "fixed_defect_four_source_mass_upper_bound": 1.0647904121693497e-73,
+      "good_block_energy_threshold": 1.6098069941964822e-16,
+      "good_block_source_mass_lower_bound": 4.0245174854912056e-17,
+      "half_degree": 32,
+      "inverse_polynomial_bounds_verified": true,
+      "physical_h_even_transfer_exact": true,
+      "scalar_distance_squared_threshold": 4.0245174854912056e-17,
+      "status": "natural-conditional-D-diameter-beyond-defect-four"
+    },
+    {
+      "beyond_defect_four_good_mass_lower_bound": 6.91731164539518e-20,
+      "conditional_D_spectral_diameter_lower_bound": 5.260156516833004e-10,
+      "degree": 128,
+      "exact_mean_commutator_energy": 5.533849316316144e-19,
+      "explicit_inverse_polynomial_diameter_lower_bound": 2.2088254290877696e-10,
+      "explicit_inverse_polynomial_mass_lower_bound": 1.2197274440461925e-20,
+      "fixed_defect_four_source_mass_upper_bound": 8.969348548680976e-198,
+      "good_block_energy_threshold": 2.766924658158072e-19,
+      "good_block_source_mass_lower_bound": 6.91731164539518e-20,
+      "half_degree": 64,
+      "inverse_polynomial_bounds_verified": true,
+      "physical_h_even_transfer_exact": true,
+      "scalar_distance_squared_threshold": 6.91731164539518e-20,
+      "status": "natural-conditional-D-diameter-beyond-defect-four"
+    },
+    {
+      "beyond_defect_four_good_mass_lower_bound": 1.2682694484774484e-22,
+      "conditional_D_spectral_diameter_lower_bound": 2.2523493942791812e-11,
+      "degree": 256,
+      "exact_mean_commutator_energy": 1.0146155587819587e-21,
+      "explicit_inverse_polynomial_diameter_lower_bound": 9.761721496032797e-12,
+      "explicit_inverse_polynomial_mass_lower_bound": 2.3822801641527198e-23,
+      "fixed_defect_four_source_mass_upper_bound": 0.0,
+      "good_block_energy_threshold": 5.073077793909794e-22,
+      "good_block_source_mass_lower_bound": 1.2682694484774484e-22,
+      "half_degree": 128,
+      "inverse_polynomial_bounds_verified": true,
+      "physical_h_even_transfer_exact": true,
+      "scalar_distance_squared_threshold": 1.2682694484774484e-22,
+      "status": "natural-conditional-D-diameter-beyond-defect-four"
+    }
+  ],
+  "status": "matching-charge-natural-conditional-diameter-proved",
+  "summary": "Converted exact natural matching/triangle commutator energy into an inverse-polynomial conditional D_m spectral-diameter theorem.",
+  "theorem": {
+    "beyond_defect_four_event_proved": true,
+    "blockwise_commutator_bound": "For Hermitian contractions D,T on a q-dimensional block, ||[D,T]||_F^2/q <= diam(D)^2.",
+    "coherent_D_diagonalization_compiled": false,
+    "common_block_decomposition": "Because C,D,T centralize K and [C,D]=[C,T]=0, they act inside common (lambda,mu,C-eigenvalue) multiplicity blocks.",
+    "conditional_diameter_bound": "Every good block has two D_m eigenvalues separated by at least sqrt(delta_m/2), and distance squared from scalars at least delta_m/8.",
+    "conditional_two_eigenvalue_separation_proved": true,
+    "event_mass_bound": "Mean delta_m and range [0,4] imply source mass at least delta_m/(8-delta_m) with block energy at least delta_m/2.",
+    "exact_common_block_reduction_proved": true,
+    "explicit_asymptotic_bounds": "Good mass >=9/(40960m^9) and conditional diameter >=3/(sqrt(10240)m^(9/2)).",
+    "full_joint_minimum_gap_proved": false,
+    "hidden_involution_detector_constructed": false,
+    "inverse_polynomial_source_event_mass_proved": true,
+    "repeated_copy_dimension_on_good_event_proved": true,
+    "residual_multiplicity_bounded": false,
+    "source_CS_likelihood_correlation_proved": false,
+    "source_transfer": "The h-even correction vanishes for m>=11; some event mass is outside row/column defect four for every m>=13.",
+    "speedup_claim_allowed": false,
+    "status": "matching-charge-natural-conditional-diameter-proved",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "claim_boundary": "One separated eigenvalue pair on inverse-polynomial source mass, not a minimum-gap or complete-spectrum theorem.",
+    "conditioned_blocks": "(lambda,mu,C_m-eigenvalue) multiplicity spaces",
+    "group_pair": "S_(2m) >= C_2 wr S_m",
+    "physical_measure": "h-even hidden-involution source block weight"
+  }
+}

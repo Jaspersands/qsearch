@@ -1003,6 +1003,7 @@ from dcp_subset_sum_affine_cvp_scaling import write_affine_cvp_scaling
 from dcp_subset_sum_affine_bdd_geometry import write_affine_bdd_geometry
 from dcp_subset_sum_carry_slice_lattice import write_carry_slice_lattice_search
 from dcp_carry_high_part_no_go import write_carry_high_part_no_go
+from dcp_carry_affine_degree_invariance import write_carry_affine_degree_report
 from dcp_subset_sum_boolean_coset_separation import write_boolean_coset_separation
 from dcp_marker_aware_list_decoder import (
     load_and_register_marker_aware_list_decoder,
@@ -1424,6 +1425,71 @@ from research_frontier_map import write_frontier_map
 from research_lab import write_research_audit
 from trace_function_search import write_trace_function_search_report
 from weak_fourier_signal import write_weak_fourier_signal_report
+from coset_hidden_involution_all_copy_target_lcu_no_go import write_all_copy_target_LCU_no_go_report
+from coset_hidden_involution_bounded_support_commutant_generation import write_bounded_support_commutant_report
+from coset_hidden_involution_colour_resolved_paired_tower_boundary import write_colour_resolved_paired_tower_report
+from coset_hidden_involution_commutant_support_growth_boundary import write_commutant_support_growth_report
+from coset_hidden_involution_commuting_square_recoupling_boundary import write_commuting_square_recoupling_report
+from coset_hidden_involution_cross_transposition_hecke_degree_five_no_go import write_degree_five_report
+from coset_hidden_involution_cross_transposition_hecke_moment_no_go import write_cross_transposition_Hecke_moment_report
+from coset_hidden_involution_diagonal_charge_bias_no_go import write_diagonal_charge_bias_no_go_report
+from coset_hidden_involution_double_coset_polar_reduction import write_double_coset_polar_report
+from coset_hidden_involution_hyperoctahedral_branching_mass import write_hyperoctahedral_branching_mass_report
+from coset_hidden_involution_joint_primitive_ambient_lift_obstruction import write_ambient_lift_report
+from coset_hidden_involution_joint_primitive_representation_cone_obstruction import write_representation_cone_report
+from coset_hidden_involution_matching_charge_coherent_label_compiler import write_coherent_label_compiler_report
+from coset_hidden_involution_matching_charge_conditional_diameter import write_conditional_diameter_report
+from coset_hidden_involution_matching_charge_cs_correlation import write_matching_charge_CS_correlation_report
+from coset_hidden_involution_matching_charge_natural_independence import write_matching_charge_natural_independence_report
+from coset_hidden_involution_matching_charge_orbit_recoupling_reduction import write_charge_orbit_recoupling_report
+from coset_hidden_involution_matching_charge_pairwise_kernel_dequantization import write_pairwise_kernel_dequantization_report
+from coset_hidden_involution_matching_charge_target_gauge_trivialization import write_target_gauge_trivialization_report
+from coset_hidden_involution_matching_charge_word_moment_dequantization import write_word_moment_dequantization_report
+from coset_hidden_involution_mixed_hecke_word_lcu_no_go import write_mixed_word_LCU_report
+from coset_hidden_involution_natural_matrix_multiplicity import write_natural_matrix_multiplicity_report
+from coset_hidden_involution_natural_recoupling_boundary import write_natural_recoupling_boundary_report
+from coset_hidden_involution_normalized_likelihood_charge_commutator_no_go import write_normalized_likelihood_charge_no_go_report
+from coset_hidden_involution_occupied_matrix_rank import write_occupied_matrix_rank_report
+from coset_hidden_involution_pair_gaudin_hierarchy import write_pair_gaudin_hierarchy_report
+from coset_hidden_involution_pair_matching_charge_hierarchy import write_pair_matching_charge_report
+from coset_hidden_involution_paired_tower_joint_primitive_projector import write_joint_primitive_projector_report
+from coset_hidden_involution_paired_tower_missing_label_boundary import write_paired_tower_missing_label_report
+from coset_hidden_involution_physical_target_convolution_normal_form import write_physical_target_convolution_report
+from coset_hidden_involution_plancherel_local_commutant_certificate import write_plancherel_local_commutant_report
+from coset_hidden_involution_rank_tracking_commutant_witness import write_rank_tracking_commutant_report
+from coset_hidden_involution_shared_conjugation_qsvt_lower_bound import write_shared_conjugation_QSVT_report
+from coset_hidden_involution_single_hecke_all_degree_moment_no_go import write_all_degree_moment_report
+from coset_hidden_involution_single_hecke_bounded_spectral_no_go import write_bounded_spectral_report
+from coset_hidden_involution_source_local_likelihood_no_go import write_source_local_likelihood_no_go_report
+from coset_hidden_involution_stable_support_six_certificate import write_stable_support_six_report
+from coset_hidden_involution_standard_block_recoupling import write_standard_block_recoupling_report
+from coset_hidden_involution_target_interference_negativity_barrier import write_negativity_barrier_report
+from coset_hidden_involution_trimmed_row_block_encoding_no_go import write_trimmed_row_block_encoding_report
+from coset_hidden_involution_trimmed_row_kernel_succinctness import write_trimmed_row_kernel_report
+from coset_hidden_involution_two_subgroup_projector_algebra_no_go import write_two_projector_algebra_report
+from self_dual_wreath_component_direct_naimark_polar_equivalence import write_component_direct_naimark_polar_equivalence_report
+from self_dual_wreath_component_polar_physical_pgm_closure import write_component_polar_physical_pgm_closure_report
+from self_dual_wreath_connected_clifford_normal_form import write_connected_clifford_normal_form_report
+from self_dual_wreath_connected_quotient_heisenberg_reduction import write_connected_quotient_heisenberg_reduction_report
+from self_dual_wreath_gpe_fusion_tree_cs_boundary import write_gpe_fusion_tree_cs_boundary_report
+from self_dual_wreath_latent_master_polar_tradeoff import write_latent_master_polar_tradeoff_report
+from self_dual_wreath_mrs_identification_escape_theorem import write_mrs_identification_escape_report
+from self_dual_wreath_orientation_fixed_space_recoupling import write_fixed_space_recoupling_report
+from self_dual_wreath_orientation_homogeneous_space_polar import write_orientation_homogeneous_space_polar_report
+from self_dual_wreath_orientation_syndrome_component_reduction import write_syndrome_component_reduction_report
+from self_dual_wreath_pair_relation_common_support_no_go import write_pair_relation_common_support_no_go_report
+from self_dual_wreath_pair_sheaf_metric_incompatibility import write_pair_sheaf_metric_incompatibility_report
+from self_dual_wreath_point_centered_residual_no_go import write_point_centered_residual_report
+from self_dual_wreath_point_child_star_relative_collision import write_point_child_star_relative_collision_report
+from self_dual_wreath_point_copy_threshold import write_point_copy_threshold_report
+from self_dual_wreath_point_critical_energy_separation import write_critical_energy_separation_report
+from self_dual_wreath_point_critical_identity_atom import write_critical_identity_atom_report
+from self_dual_wreath_regular_master_walsh_flatness_no_go import write_regular_master_walsh_flatness_report
+from self_dual_wreath_source_adaptive_walsh_collision_reduction import write_source_adaptive_walsh_collision_report
+from self_dual_wreath_source_block_branch_covariance_boundary import write_source_block_branch_covariance_boundary_report
+from self_dual_wreath_source_order_gauge_canonicalization import write_source_order_gauge_canonicalization_report
+from self_dual_wreath_trace_biased_adaptive_walsh_no_go import write_trace_biased_adaptive_walsh_report
+
 from research_registry import (
     CANDIDATES_PATH,
     EXPERIMENTS_PATH,
@@ -3717,6 +3783,28 @@ def command_dcp_carry_high_part(args: argparse.Namespace) -> int:
     print(f"Conditional product-uniformity theorems: {metrics['conditional_product_uniformity_theorem_count']}")
     print(f"Polynomial carry union-bound theorems: {metrics['polynomial_carry_union_bound_theorem_count']}")
     print(f"Joint low/high no-go theorems: {metrics['joint_low_high_geometry_no_go_count']}")
+    print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_dcp_carry_affine_degree_invariance(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    modulus_bits = [int(v.strip()) for v in args.modulus_bits.split(",") if v.strip()]
+    payload = write_carry_affine_degree_report(
+        scaling_modulus_bits=modulus_bits,
+        write_registry=not args.no_registry,
+    )
+    validation = validate_registry()
+    metrics = payload["headline_metrics"]
+    print("DCP carry affine-degree invariance complete")
+    print("Artifact: research/classical_baselines/dcp_carry_affine_degree_invariance.json")
+    print(f"Scaling records: {metrics['scaling_record_count']}")
+    print(f"Coefficient controls: {metrics['coefficient_control_count']}")
+    print(f"Affine controls: {metrics['affine_control_count']}")
     print(f"Speedup claim allowed: {payload['claim_gate']['speedup_claim_allowed']}")
     print(f"Registry valid: {validation['valid']}")
     if validation["issues"]:
@@ -17528,6 +17616,838 @@ def command_list(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_coset_hidden_involution_all_copy_target_lcu_no_go(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_all_copy_target_LCU_no_go_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_all_copy_target_LCU_no_go_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_all_copy_target_lcu_no_go complete")
+    print("Artifact: research/representation/coset_hidden_involution_all_copy_target_lcu_no_go.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_bounded_support_commutant_generation(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_bounded_support_commutant_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_bounded_support_commutant_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_bounded_support_commutant_generation complete")
+    print("Artifact: research/representation/coset_hidden_involution_bounded_support_commutant_generation.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_colour_resolved_paired_tower_boundary(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_colour_resolved_paired_tower_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_colour_resolved_paired_tower_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_colour_resolved_paired_tower_boundary complete")
+    print("Artifact: research/representation/coset_hidden_involution_colour_resolved_paired_tower_boundary.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_commutant_support_growth_boundary(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_commutant_support_growth_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_commutant_support_growth_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_commutant_support_growth_boundary complete")
+    print("Artifact: research/representation/coset_hidden_involution_commutant_support_growth_boundary.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_commuting_square_recoupling_boundary(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_commuting_square_recoupling_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_commuting_square_recoupling_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_commuting_square_recoupling_boundary complete")
+    print("Artifact: research/representation/coset_hidden_involution_commuting_square_recoupling_boundary.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_cross_transposition_hecke_degree_five_no_go(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_degree_five_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_degree_five_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_cross_transposition_hecke_degree_five_no_go complete")
+    print("Artifact: research/representation/coset_hidden_involution_cross_transposition_hecke_degree_five_no_go.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_cross_transposition_hecke_moment_no_go(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_cross_transposition_Hecke_moment_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_cross_transposition_Hecke_moment_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_cross_transposition_hecke_moment_no_go complete")
+    print("Artifact: research/representation/coset_hidden_involution_cross_transposition_hecke_moment_no_go.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_diagonal_charge_bias_no_go(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_diagonal_charge_bias_no_go_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_diagonal_charge_bias_no_go_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_diagonal_charge_bias_no_go complete")
+    print("Artifact: research/representation/coset_hidden_involution_diagonal_charge_bias_no_go.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_double_coset_polar_reduction(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_double_coset_polar_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_double_coset_polar_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_double_coset_polar_reduction complete")
+    print("Artifact: research/representation/coset_hidden_involution_double_coset_polar_reduction.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_hyperoctahedral_branching_mass(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_hyperoctahedral_branching_mass_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_hyperoctahedral_branching_mass_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_hyperoctahedral_branching_mass complete")
+    print("Artifact: research/representation/coset_hidden_involution_hyperoctahedral_branching_mass.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_joint_primitive_ambient_lift_obstruction(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_ambient_lift_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_ambient_lift_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_joint_primitive_ambient_lift_obstruction complete")
+    print("Artifact: research/representation/coset_hidden_involution_joint_primitive_ambient_lift_obstruction.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_joint_primitive_representation_cone_obstruction(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_representation_cone_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_representation_cone_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_joint_primitive_representation_cone_obstruction complete")
+    print("Artifact: research/representation/coset_hidden_involution_joint_primitive_representation_cone_obstruction.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_matching_charge_coherent_label_compiler(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_coherent_label_compiler_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_coherent_label_compiler_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_matching_charge_coherent_label_compiler complete")
+    print("Artifact: research/representation/coset_hidden_involution_matching_charge_coherent_label_compiler.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_matching_charge_conditional_diameter(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_conditional_diameter_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_conditional_diameter_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_matching_charge_conditional_diameter complete")
+    print("Artifact: research/representation/coset_hidden_involution_matching_charge_conditional_diameter.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_matching_charge_cs_correlation(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_matching_charge_CS_correlation_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_matching_charge_CS_correlation_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_matching_charge_cs_correlation complete")
+    print("Artifact: research/representation/coset_hidden_involution_matching_charge_cs_correlation.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_matching_charge_natural_independence(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_matching_charge_natural_independence_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_matching_charge_natural_independence_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_matching_charge_natural_independence complete")
+    print("Artifact: research/representation/coset_hidden_involution_matching_charge_natural_independence.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_matching_charge_orbit_recoupling_reduction(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_charge_orbit_recoupling_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_charge_orbit_recoupling_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_matching_charge_orbit_recoupling_reduction complete")
+    print("Artifact: research/representation/coset_hidden_involution_matching_charge_orbit_recoupling_reduction.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_matching_charge_pairwise_kernel_dequantization(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_pairwise_kernel_dequantization_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_pairwise_kernel_dequantization_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_matching_charge_pairwise_kernel_dequantization complete")
+    print("Artifact: research/representation/coset_hidden_involution_matching_charge_pairwise_kernel_dequantization.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_matching_charge_target_gauge_trivialization(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_target_gauge_trivialization_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_target_gauge_trivialization_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_matching_charge_target_gauge_trivialization complete")
+    print("Artifact: research/representation/coset_hidden_involution_matching_charge_target_gauge_trivialization.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_matching_charge_word_moment_dequantization(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_word_moment_dequantization_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_word_moment_dequantization_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_matching_charge_word_moment_dequantization complete")
+    print("Artifact: research/representation/coset_hidden_involution_matching_charge_word_moment_dequantization.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_mixed_hecke_word_lcu_no_go(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_mixed_word_LCU_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_mixed_word_LCU_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_mixed_hecke_word_lcu_no_go complete")
+    print("Artifact: research/representation/coset_hidden_involution_mixed_hecke_word_lcu_no_go.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_natural_matrix_multiplicity(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_natural_matrix_multiplicity_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_natural_matrix_multiplicity_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_natural_matrix_multiplicity complete")
+    print("Artifact: research/representation/coset_hidden_involution_natural_matrix_multiplicity.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_natural_recoupling_boundary(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_natural_recoupling_boundary_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_natural_recoupling_boundary_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_natural_recoupling_boundary complete")
+    print("Artifact: research/representation/coset_hidden_involution_natural_recoupling_boundary.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_normalized_likelihood_charge_commutator_no_go(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_normalized_likelihood_charge_no_go_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_normalized_likelihood_charge_no_go_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_normalized_likelihood_charge_commutator_no_go complete")
+    print("Artifact: research/representation/coset_hidden_involution_normalized_likelihood_charge_commutator_no_go.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_occupied_matrix_rank(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_occupied_matrix_rank_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_occupied_matrix_rank_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_occupied_matrix_rank complete")
+    print("Artifact: research/representation/coset_hidden_involution_occupied_matrix_rank.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_pair_gaudin_hierarchy(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_pair_gaudin_hierarchy_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_pair_gaudin_hierarchy_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_pair_gaudin_hierarchy complete")
+    print("Artifact: research/representation/coset_hidden_involution_pair_gaudin_hierarchy.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_pair_matching_charge_hierarchy(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_pair_matching_charge_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_pair_matching_charge_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_pair_matching_charge_hierarchy complete")
+    print("Artifact: research/representation/coset_hidden_involution_pair_matching_charge_hierarchy.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_paired_tower_joint_primitive_projector(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_joint_primitive_projector_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_joint_primitive_projector_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_paired_tower_joint_primitive_projector complete")
+    print("Artifact: research/representation/coset_hidden_involution_paired_tower_joint_primitive_projector.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_paired_tower_missing_label_boundary(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_paired_tower_missing_label_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_paired_tower_missing_label_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_paired_tower_missing_label_boundary complete")
+    print("Artifact: research/representation/coset_hidden_involution_paired_tower_missing_label_boundary.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_physical_target_convolution_normal_form(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_physical_target_convolution_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_physical_target_convolution_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_physical_target_convolution_normal_form complete")
+    print("Artifact: research/representation/coset_hidden_involution_physical_target_convolution_normal_form.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_plancherel_local_commutant_certificate(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_plancherel_local_commutant_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_plancherel_local_commutant_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_plancherel_local_commutant_certificate complete")
+    print("Artifact: research/representation/coset_hidden_involution_plancherel_local_commutant_certificate.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_rank_tracking_commutant_witness(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_rank_tracking_commutant_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_rank_tracking_commutant_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_rank_tracking_commutant_witness complete")
+    print("Artifact: research/representation/coset_hidden_involution_rank_tracking_commutant_witness.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_shared_conjugation_qsvt_lower_bound(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_shared_conjugation_QSVT_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_shared_conjugation_QSVT_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_shared_conjugation_qsvt_lower_bound complete")
+    print("Artifact: research/representation/coset_hidden_involution_shared_conjugation_QSVT_lower_bound.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_single_hecke_all_degree_moment_no_go(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_all_degree_moment_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_all_degree_moment_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_single_hecke_all_degree_moment_no_go complete")
+    print("Artifact: research/representation/coset_hidden_involution_single_hecke_all_degree_moment_no_go.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_single_hecke_bounded_spectral_no_go(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_bounded_spectral_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_bounded_spectral_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_single_hecke_bounded_spectral_no_go complete")
+    print("Artifact: research/representation/coset_hidden_involution_single_hecke_bounded_spectral_no_go.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_source_local_likelihood_no_go(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_source_local_likelihood_no_go_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_source_local_likelihood_no_go_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_source_local_likelihood_no_go complete")
+    print("Artifact: research/representation/coset_hidden_involution_source_local_likelihood_no_go.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_stable_support_six_certificate(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_stable_support_six_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_stable_support_six_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_stable_support_six_certificate complete")
+    print("Artifact: research/representation/coset_hidden_involution_stable_support_six_certificate.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_standard_block_recoupling(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_standard_block_recoupling_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_standard_block_recoupling_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_standard_block_recoupling complete")
+    print("Artifact: research/representation/coset_hidden_involution_standard_block_recoupling.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_target_interference_negativity_barrier(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_negativity_barrier_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_negativity_barrier_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_target_interference_negativity_barrier complete")
+    print("Artifact: research/representation/coset_hidden_involution_target_interference_negativity_barrier.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_trimmed_row_block_encoding_no_go(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_trimmed_row_block_encoding_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_trimmed_row_block_encoding_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_trimmed_row_block_encoding_no_go complete")
+    print("Artifact: research/representation/coset_hidden_involution_trimmed_row_block_encoding_no_go.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_trimmed_row_kernel_succinctness(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_trimmed_row_kernel_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_trimmed_row_kernel_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_trimmed_row_kernel_succinctness complete")
+    print("Artifact: research/representation/coset_hidden_involution_trimmed_row_kernel_succinctness.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_coset_hidden_involution_two_subgroup_projector_algebra_no_go(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_two_projector_algebra_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_two_projector_algebra_report()
+    validation = validate_registry()
+    print("coset_hidden_involution_two_subgroup_projector_algebra_no_go complete")
+    print("Artifact: research/representation/coset_hidden_involution_two_subgroup_projector_algebra_no_go.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_self_dual_wreath_component_direct_naimark_polar_equivalence(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_component_direct_naimark_polar_equivalence_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_component_direct_naimark_polar_equivalence_report()
+    validation = validate_registry()
+    print("self_dual_wreath_component_direct_naimark_polar_equivalence complete")
+    print("Artifact: research/representation/self_dual_wreath_component_direct_naimark_polar_equivalence.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_self_dual_wreath_component_polar_physical_pgm_closure(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_component_polar_physical_pgm_closure_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_component_polar_physical_pgm_closure_report()
+    validation = validate_registry()
+    print("self_dual_wreath_component_polar_physical_pgm_closure complete")
+    print("Artifact: research/representation/self_dual_wreath_component_polar_physical_pgm_closure.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_self_dual_wreath_connected_clifford_normal_form(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_connected_clifford_normal_form_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_connected_clifford_normal_form_report()
+    validation = validate_registry()
+    print("self_dual_wreath_connected_clifford_normal_form complete")
+    print("Artifact: research/representation/self_dual_wreath_connected_clifford_normal_form.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_self_dual_wreath_connected_quotient_heisenberg_reduction(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_connected_quotient_heisenberg_reduction_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_connected_quotient_heisenberg_reduction_report()
+    validation = validate_registry()
+    print("self_dual_wreath_connected_quotient_heisenberg_reduction complete")
+    print("Artifact: research/representation/self_dual_wreath_connected_quotient_heisenberg_reduction.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_self_dual_wreath_gpe_fusion_tree_cs_boundary(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_gpe_fusion_tree_cs_boundary_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_gpe_fusion_tree_cs_boundary_report()
+    validation = validate_registry()
+    print("self_dual_wreath_gpe_fusion_tree_cs_boundary complete")
+    print("Artifact: research/representation/self_dual_wreath_gpe_fusion_tree_cs_boundary.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_self_dual_wreath_latent_master_polar_tradeoff(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_latent_master_polar_tradeoff_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_latent_master_polar_tradeoff_report()
+    validation = validate_registry()
+    print("self_dual_wreath_latent_master_polar_tradeoff complete")
+    print("Artifact: research/representation/self_dual_wreath_latent_master_polar_tradeoff.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_self_dual_wreath_mrs_identification_escape_theorem(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_mrs_identification_escape_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_mrs_identification_escape_report()
+    validation = validate_registry()
+    print("self_dual_wreath_mrs_identification_escape_theorem complete")
+    print("Artifact: research/representation/self_dual_wreath_mrs_identification_escape_theorem.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_self_dual_wreath_orientation_fixed_space_recoupling(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_fixed_space_recoupling_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_fixed_space_recoupling_report()
+    validation = validate_registry()
+    print("self_dual_wreath_orientation_fixed_space_recoupling complete")
+    print("Artifact: research/representation/self_dual_wreath_orientation_fixed_space_recoupling.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_self_dual_wreath_orientation_homogeneous_space_polar(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_orientation_homogeneous_space_polar_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_orientation_homogeneous_space_polar_report()
+    validation = validate_registry()
+    print("self_dual_wreath_orientation_homogeneous_space_polar complete")
+    print("Artifact: research/representation/self_dual_wreath_orientation_homogeneous_space_polar.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_self_dual_wreath_orientation_syndrome_component_reduction(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_syndrome_component_reduction_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_syndrome_component_reduction_report()
+    validation = validate_registry()
+    print("self_dual_wreath_orientation_syndrome_component_reduction complete")
+    print("Artifact: research/representation/self_dual_wreath_orientation_syndrome_component_reduction.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_self_dual_wreath_pair_relation_common_support_no_go(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_pair_relation_common_support_no_go_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_pair_relation_common_support_no_go_report()
+    validation = validate_registry()
+    print("self_dual_wreath_pair_relation_common_support_no_go complete")
+    print("Artifact: research/representation/self_dual_wreath_pair_relation_common_support_no_go.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_self_dual_wreath_pair_sheaf_metric_incompatibility(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_pair_sheaf_metric_incompatibility_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_pair_sheaf_metric_incompatibility_report()
+    validation = validate_registry()
+    print("self_dual_wreath_pair_sheaf_metric_incompatibility complete")
+    print("Artifact: research/representation/self_dual_wreath_pair_sheaf_metric_incompatibility.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_self_dual_wreath_point_centered_residual_no_go(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_point_centered_residual_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_point_centered_residual_report()
+    validation = validate_registry()
+    print("self_dual_wreath_point_centered_residual_no_go complete")
+    print("Artifact: research/representation/self_dual_wreath_point_centered_residual_no_go.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_self_dual_wreath_point_child_star_relative_collision(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_point_child_star_relative_collision_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_point_child_star_relative_collision_report()
+    validation = validate_registry()
+    print("self_dual_wreath_point_child_star_relative_collision complete")
+    print("Artifact: research/representation/self_dual_wreath_point_child_star_relative_collision.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_self_dual_wreath_point_copy_threshold(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_point_copy_threshold_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_point_copy_threshold_report()
+    validation = validate_registry()
+    print("self_dual_wreath_point_copy_threshold complete")
+    print("Artifact: research/representation/self_dual_wreath_point_copy_threshold.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_self_dual_wreath_point_critical_energy_separation(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_critical_energy_separation_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_critical_energy_separation_report()
+    validation = validate_registry()
+    print("self_dual_wreath_point_critical_energy_separation complete")
+    print("Artifact: research/representation/self_dual_wreath_point_critical_energy_separation.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_self_dual_wreath_point_critical_identity_atom(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_critical_identity_atom_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_critical_identity_atom_report()
+    validation = validate_registry()
+    print("self_dual_wreath_point_critical_identity_atom complete")
+    print("Artifact: research/representation/self_dual_wreath_point_critical_identity_atom.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_self_dual_wreath_regular_master_walsh_flatness_no_go(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_regular_master_walsh_flatness_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_regular_master_walsh_flatness_report()
+    validation = validate_registry()
+    print("self_dual_wreath_regular_master_walsh_flatness_no_go complete")
+    print("Artifact: research/representation/self_dual_wreath_regular_master_walsh_flatness_no_go.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_self_dual_wreath_source_adaptive_walsh_collision_reduction(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_source_adaptive_walsh_collision_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_source_adaptive_walsh_collision_report()
+    validation = validate_registry()
+    print("self_dual_wreath_source_adaptive_walsh_collision_reduction complete")
+    print("Artifact: research/representation/self_dual_wreath_source_adaptive_walsh_collision_reduction.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_self_dual_wreath_source_block_branch_covariance_boundary(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_source_block_branch_covariance_boundary_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_source_block_branch_covariance_boundary_report()
+    validation = validate_registry()
+    print("self_dual_wreath_source_block_branch_covariance_boundary complete")
+    print("Artifact: research/representation/self_dual_wreath_source_block_branch_covariance_boundary.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_self_dual_wreath_source_order_gauge_canonicalization(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_source_order_gauge_canonicalization_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_source_order_gauge_canonicalization_report()
+    validation = validate_registry()
+    print("self_dual_wreath_source_order_gauge_canonicalization complete")
+    print("Artifact: research/representation/self_dual_wreath_source_order_gauge_canonicalization.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
+def command_self_dual_wreath_trace_biased_adaptive_walsh_no_go(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_trace_biased_adaptive_walsh_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_trace_biased_adaptive_walsh_report()
+    validation = validate_registry()
+    print("self_dual_wreath_trace_biased_adaptive_walsh_no_go complete")
+    print("Artifact: research/representation/self_dual_wreath_trace_biased_adaptive_walsh_no_go.json")
+    print(f"Registry valid: {validation['valid']}")
+    return 0 if validation["valid"] else 1
+
+
 def build_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path.cwd())
@@ -18143,6 +19063,14 @@ def build_parser() -> argparse.ArgumentParser:
     dcp_carry_high_part.add_argument("--generic-event-exponent", type=float, default=0.05)
     dcp_carry_high_part.add_argument("--no-registry", action="store_true")
     dcp_carry_high_part.set_defaults(func=command_dcp_carry_high_part)
+
+    dcp_carry_affine = subparsers.add_parser(
+        "dcp-carry-affine-degree-invariance",
+        help="Prove dense GL(m,2) preprocessing preserves linear ANF degree for 2-adic carries.",
+    )
+    dcp_carry_affine.add_argument("--modulus-bits", default="128,256,512,1024")
+    dcp_carry_affine.add_argument("--no-registry", action="store_true")
+    dcp_carry_affine.set_defaults(func=command_dcp_carry_affine_degree_invariance)
 
     dcp_boolean_coset = subparsers.add_parser(
         "dcp-boolean-coset-separation",
@@ -24296,6 +25224,391 @@ def build_parser() -> argparse.ArgumentParser:
     reductions.add_argument("--max-verbose-issues", type=int, default=4)
     reductions.add_argument("--verbose", action="store_true")
     reductions.set_defaults(func=command_reductions)
+
+    parser_coset_hidden_involution_all_copy_target_lcu_no_go = subparsers.add_parser(
+        "coset-hidden-involution-all-copy-target-lcu-no-go",
+        help="All-copy target-coupled normalized-LCU no-go.",
+    )
+    parser_coset_hidden_involution_all_copy_target_lcu_no_go.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_all_copy_target_lcu_no_go.set_defaults(func=command_coset_hidden_involution_all_copy_target_lcu_no_go)
+    parser_coset_hidden_involution_bounded_support_commutant_generation = subparsers.add_parser(
+        "coset-hidden-involution-bounded-support-commutant-generation",
+        help="Bounded-support generators for hyperoctahedral branching commutants.",
+    )
+    parser_coset_hidden_involution_bounded_support_commutant_generation.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_bounded_support_commutant_generation.set_defaults(func=command_coset_hidden_involution_bounded_support_commutant_generation)
+    parser_coset_hidden_involution_colour_resolved_paired_tower_boundary = subparsers.add_parser(
+        "coset-hidden-involution-colour-resolved-paired-tower-boundary",
+        help="Colour-resolved paired-tower boundary for hyperoctahedral subduction.",
+    )
+    parser_coset_hidden_involution_colour_resolved_paired_tower_boundary.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_colour_resolved_paired_tower_boundary.set_defaults(func=command_coset_hidden_involution_colour_resolved_paired_tower_boundary)
+    parser_coset_hidden_involution_commutant_support_growth_boundary = subparsers.add_parser(
+        "coset-hidden-involution-commutant-support-growth-boundary",
+        help="First support-growth boundary for hyperoctahedral commutant generators.",
+    )
+    parser_coset_hidden_involution_commutant_support_growth_boundary.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_commutant_support_growth_boundary.set_defaults(func=command_coset_hidden_involution_commutant_support_growth_boundary)
+    parser_coset_hidden_involution_commuting_square_recoupling_boundary = subparsers.add_parser(
+        "coset-hidden-involution-commuting-square-recoupling-boundary",
+        help="Commuting-square architecture and its vertical-multiplicity boundary.",
+    )
+    parser_coset_hidden_involution_commuting_square_recoupling_boundary.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_commuting_square_recoupling_boundary.set_defaults(func=command_coset_hidden_involution_commuting_square_recoupling_boundary)
+    parser_coset_hidden_involution_cross_transposition_hecke_degree_five_no_go = subparsers.add_parser(
+        "coset-hidden-involution-cross-transposition-hecke-degree-five-no-go",
+        help="Exact degree-five no-go for the canonical cross-transposition Hecke walk.",
+    )
+    parser_coset_hidden_involution_cross_transposition_hecke_degree_five_no_go.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_cross_transposition_hecke_degree_five_no_go.set_defaults(func=command_coset_hidden_involution_cross_transposition_hecke_degree_five_no_go)
+    parser_coset_hidden_involution_cross_transposition_hecke_moment_no_go = subparsers.add_parser(
+        "coset-hidden-involution-cross-transposition-hecke-moment-no-go",
+        help="Degree-four moment no-go for the cross-transposition recoupling walk.",
+    )
+    parser_coset_hidden_involution_cross_transposition_hecke_moment_no_go.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_cross_transposition_hecke_moment_no_go.set_defaults(func=command_coset_hidden_involution_cross_transposition_hecke_moment_no_go)
+    parser_coset_hidden_involution_diagonal_charge_bias_no_go = subparsers.add_parser(
+        "coset-hidden-involution-diagonal-charge-bias-no-go",
+        help="Exact bias bound for the simplest all-copy target-coupled charges.",
+    )
+    parser_coset_hidden_involution_diagonal_charge_bias_no_go.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_diagonal_charge_bias_no_go.set_defaults(func=command_coset_hidden_involution_diagonal_charge_bias_no_go)
+    parser_coset_hidden_involution_double_coset_polar_reduction = subparsers.add_parser(
+        "coset-hidden-involution-double-coset-polar-reduction",
+        help="Double-coset normal form for the hidden-involution row polar.",
+    )
+    parser_coset_hidden_involution_double_coset_polar_reduction.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_double_coset_polar_reduction.set_defaults(func=command_coset_hidden_involution_double_coset_polar_reduction)
+    parser_coset_hidden_involution_hyperoctahedral_branching_mass = subparsers.add_parser(
+        "coset-hidden-involution-hyperoctahedral-branching-mass",
+        help="Natural mass in large hyperoctahedral branching multiplicities.",
+    )
+    parser_coset_hidden_involution_hyperoctahedral_branching_mass.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_hyperoctahedral_branching_mass.set_defaults(func=command_coset_hidden_involution_hyperoctahedral_branching_mass)
+    parser_coset_hidden_involution_joint_primitive_ambient_lift_obstruction = subparsers.add_parser(
+        "coset-hidden-involution-joint-primitive-ambient-lift-obstruction",
+        help="Schur-block obstruction to lifting the paired-tower label projector.",
+    )
+    parser_coset_hidden_involution_joint_primitive_ambient_lift_obstruction.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_joint_primitive_ambient_lift_obstruction.set_defaults(func=command_coset_hidden_involution_joint_primitive_ambient_lift_obstruction)
+    parser_coset_hidden_involution_joint_primitive_representation_cone_obstruction = subparsers.add_parser(
+        "coset-hidden-involution-joint-primitive-representation-cone-obstruction",
+        help="Representation-cone obstruction for paired-tower primitive labels.",
+    )
+    parser_coset_hidden_involution_joint_primitive_representation_cone_obstruction.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_joint_primitive_representation_cone_obstruction.set_defaults(func=command_coset_hidden_involution_joint_primitive_representation_cone_obstruction)
+    parser_coset_hidden_involution_matching_charge_coherent_label_compiler = subparsers.add_parser(
+        "coset-hidden-involution-matching-charge-coherent-label-compiler",
+        help="Coherent sparse-LCU compiler for the natural matching-charge label.",
+    )
+    parser_coset_hidden_involution_matching_charge_coherent_label_compiler.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_matching_charge_coherent_label_compiler.set_defaults(func=command_coset_hidden_involution_matching_charge_coherent_label_compiler)
+    parser_coset_hidden_involution_matching_charge_conditional_diameter = subparsers.add_parser(
+        "coset-hidden-involution-matching-charge-conditional-diameter",
+        help="Natural conditional spectral diameter for the matching charge ``D_m``.",
+    )
+    parser_coset_hidden_involution_matching_charge_conditional_diameter.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_matching_charge_conditional_diameter.set_defaults(func=command_coset_hidden_involution_matching_charge_conditional_diameter)
+    parser_coset_hidden_involution_matching_charge_cs_correlation = subparsers.add_parser(
+        "coset-hidden-involution-matching-charge-cs-correlation",
+        help="Finite matrix-CS correlation test for the natural matching charge.",
+    )
+    parser_coset_hidden_involution_matching_charge_cs_correlation.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_matching_charge_cs_correlation.set_defaults(func=command_coset_hidden_involution_matching_charge_cs_correlation)
+    parser_coset_hidden_involution_matching_charge_natural_independence = subparsers.add_parser(
+        "coset-hidden-involution-matching-charge-natural-independence",
+        help="Natural-mass independence certificate for the matching charge ``D_m``.",
+    )
+    parser_coset_hidden_involution_matching_charge_natural_independence.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_matching_charge_natural_independence.set_defaults(func=command_coset_hidden_involution_matching_charge_natural_independence)
+    parser_coset_hidden_involution_matching_charge_orbit_recoupling_reduction = subparsers.add_parser(
+        "coset-hidden-involution-matching-charge-orbit-recoupling-reduction",
+        help="Faithful matching-charge orbit and target-recoupling reduction.",
+    )
+    parser_coset_hidden_involution_matching_charge_orbit_recoupling_reduction.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_matching_charge_orbit_recoupling_reduction.set_defaults(func=command_coset_hidden_involution_matching_charge_orbit_recoupling_reduction)
+    parser_coset_hidden_involution_matching_charge_pairwise_kernel_dequantization = subparsers.add_parser(
+        "coset-hidden-involution-matching-charge-pairwise-kernel-dequantization",
+        help="Classical dequantization of the matching-charge pairwise kernel.",
+    )
+    parser_coset_hidden_involution_matching_charge_pairwise_kernel_dequantization.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_matching_charge_pairwise_kernel_dequantization.set_defaults(func=command_coset_hidden_involution_matching_charge_pairwise_kernel_dequantization)
+    parser_coset_hidden_involution_matching_charge_target_gauge_trivialization = subparsers.add_parser(
+        "coset-hidden-involution-matching-charge-target-gauge-trivialization",
+        help="Gauge trivialization of naive target-controlled matching charges.",
+    )
+    parser_coset_hidden_involution_matching_charge_target_gauge_trivialization.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_matching_charge_target_gauge_trivialization.set_defaults(func=command_coset_hidden_involution_matching_charge_target_gauge_trivialization)
+    parser_coset_hidden_involution_matching_charge_word_moment_dequantization = subparsers.add_parser(
+        "coset-hidden-involution-matching-charge-word-moment-dequantization",
+        help="All-degree classical estimator for matching-charge scalar word moments.",
+    )
+    parser_coset_hidden_involution_matching_charge_word_moment_dequantization.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_matching_charge_word_moment_dequantization.set_defaults(func=command_coset_hidden_involution_matching_charge_word_moment_dequantization)
+    parser_coset_hidden_involution_mixed_hecke_word_lcu_no_go = subparsers.add_parser(
+        "coset-hidden-involution-mixed-hecke-word-lcu-no-go",
+        help="Mixed-word LCU no-go for diagonal all-copy hidden-involution charges.",
+    )
+    parser_coset_hidden_involution_mixed_hecke_word_lcu_no_go.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_mixed_hecke_word_lcu_no_go.set_defaults(func=command_coset_hidden_involution_mixed_hecke_word_lcu_no_go)
+    parser_coset_hidden_involution_natural_matrix_multiplicity = subparsers.add_parser(
+        "coset-hidden-involution-natural-matrix-multiplicity",
+        help="Natural-mass theorem for matrix-valued double-coset multiplicities.",
+    )
+    parser_coset_hidden_involution_natural_matrix_multiplicity.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_natural_matrix_multiplicity.set_defaults(func=command_coset_hidden_involution_natural_matrix_multiplicity)
+    parser_coset_hidden_involution_natural_recoupling_boundary = subparsers.add_parser(
+        "coset-hidden-involution-natural-recoupling-boundary",
+        help="Natural Kronecker-to-hyperoctahedral recoupling boundary.",
+    )
+    parser_coset_hidden_involution_natural_recoupling_boundary.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_natural_recoupling_boundary.set_defaults(func=command_coset_hidden_involution_natural_recoupling_boundary)
+    parser_coset_hidden_involution_normalized_likelihood_charge_commutator_no_go = subparsers.add_parser(
+        "coset-hidden-involution-normalized-likelihood-charge-commutator-no-go",
+        help="Natural-mass no-go for charge noncommutativity with normalized likelihood.",
+    )
+    parser_coset_hidden_involution_normalized_likelihood_charge_commutator_no_go.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_normalized_likelihood_charge_commutator_no_go.set_defaults(func=command_coset_hidden_involution_normalized_likelihood_charge_commutator_no_go)
+    parser_coset_hidden_involution_occupied_matrix_rank = subparsers.add_parser(
+        "coset-hidden-involution-occupied-matrix-rank",
+        help="Natural occupied-rank theorem for hidden-involution matrix CS blocks.",
+    )
+    parser_coset_hidden_involution_occupied_matrix_rank.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_occupied_matrix_rank.set_defaults(func=command_coset_hidden_involution_occupied_matrix_rank)
+    parser_coset_hidden_involution_pair_gaudin_hierarchy = subparsers.add_parser(
+        "coset-hidden-involution-pair-gaudin-hierarchy",
+        help="A commuting pair-Gaudin hierarchy for hyperoctahedral recoupling.",
+    )
+    parser_coset_hidden_involution_pair_gaudin_hierarchy.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_pair_gaudin_hierarchy.set_defaults(func=command_coset_hidden_involution_pair_gaudin_hierarchy)
+    parser_coset_hidden_involution_pair_matching_charge_hierarchy = subparsers.add_parser(
+        "coset-hidden-involution-pair-matching-charge-hierarchy",
+        help="A K-adapted commuting charge pair from pair-Gaudin interactions.",
+    )
+    parser_coset_hidden_involution_pair_matching_charge_hierarchy.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_pair_matching_charge_hierarchy.set_defaults(func=command_coset_hidden_involution_pair_matching_charge_hierarchy)
+    parser_coset_hidden_involution_paired_tower_joint_primitive_projector = subparsers.add_parser(
+        "coset-hidden-involution-paired-tower-joint-primitive-projector",
+        help="Polynomial-query projector for paired-tower joint primitive labels.",
+    )
+    parser_coset_hidden_involution_paired_tower_joint_primitive_projector.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_paired_tower_joint_primitive_projector.set_defaults(func=command_coset_hidden_involution_paired_tower_joint_primitive_projector)
+    parser_coset_hidden_involution_paired_tower_missing_label_boundary = subparsers.add_parser(
+        "coset-hidden-involution-paired-tower-missing-label-boundary",
+        help="Paired Young-tower boundary for hyperoctahedral missing labels.",
+    )
+    parser_coset_hidden_involution_paired_tower_missing_label_boundary.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_paired_tower_missing_label_boundary.set_defaults(func=command_coset_hidden_involution_paired_tower_missing_label_boundary)
+    parser_coset_hidden_involution_physical_target_convolution_normal_form = subparsers.add_parser(
+        "coset-hidden-involution-physical-target-convolution-normal-form",
+        help="Physical quotient normal form for genuine target-changing convolution.",
+    )
+    parser_coset_hidden_involution_physical_target_convolution_normal_form.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_physical_target_convolution_normal_form.set_defaults(func=command_coset_hidden_involution_physical_target_convolution_normal_form)
+    parser_coset_hidden_involution_plancherel_local_commutant_certificate = subparsers.add_parser(
+        "coset-hidden-involution-plancherel-local-commutant-certificate",
+        help="Natural-mass certificate for a local hyperoctahedral commutator.",
+    )
+    parser_coset_hidden_involution_plancherel_local_commutant_certificate.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_plancherel_local_commutant_certificate.set_defaults(func=command_coset_hidden_involution_plancherel_local_commutant_certificate)
+    parser_coset_hidden_involution_rank_tracking_commutant_witness = subparsers.add_parser(
+        "coset-hidden-involution-rank-tracking-commutant-witness",
+        help="Rank-tracking support witness for hyperoctahedral commutant generation.",
+    )
+    parser_coset_hidden_involution_rank_tracking_commutant_witness.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_rank_tracking_commutant_witness.set_defaults(func=command_coset_hidden_involution_rank_tracking_commutant_witness)
+    parser_coset_hidden_involution_shared_conjugation_qsvt_lower_bound = subparsers.add_parser(
+        "coset-hidden-involution-shared-conjugation-qsvt-lower-bound",
+        help="QSVT lower bound for the shared-conjugation likelihood average.",
+    )
+    parser_coset_hidden_involution_shared_conjugation_qsvt_lower_bound.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_shared_conjugation_qsvt_lower_bound.set_defaults(func=command_coset_hidden_involution_shared_conjugation_qsvt_lower_bound)
+    parser_coset_hidden_involution_single_hecke_all_degree_moment_no_go = subparsers.add_parser(
+        "coset-hidden-involution-single-hecke-all-degree-moment-no-go",
+        help="All-degree moment no-go for a single nontrivial binary Hecke walk.",
+    )
+    parser_coset_hidden_involution_single_hecke_all_degree_moment_no_go.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_single_hecke_all_degree_moment_no_go.set_defaults(func=command_coset_hidden_involution_single_hecke_all_degree_moment_no_go)
+    parser_coset_hidden_involution_single_hecke_bounded_spectral_no_go = subparsers.add_parser(
+        "coset-hidden-involution-single-hecke-bounded-spectral-no-go",
+        help="Bounded-polynomial spectral no-go for one hidden-involution Hecke walk.",
+    )
+    parser_coset_hidden_involution_single_hecke_bounded_spectral_no_go.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_single_hecke_bounded_spectral_no_go.set_defaults(func=command_coset_hidden_involution_single_hecke_bounded_spectral_no_go)
+    parser_coset_hidden_involution_source_local_likelihood_no_go = subparsers.add_parser(
+        "coset-hidden-involution-source-local-likelihood-no-go",
+        help="Exact no-go theorem for source-local hidden-involution charges.",
+    )
+    parser_coset_hidden_involution_source_local_likelihood_no_go.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_source_local_likelihood_no_go.set_defaults(func=command_coset_hidden_involution_source_local_likelihood_no_go)
+    parser_coset_hidden_involution_stable_support_six_certificate = subparsers.add_parser(
+        "coset-hidden-involution-stable-support-six-certificate",
+        help="All-rank low-support certificate for one hyperoctahedral copy space.",
+    )
+    parser_coset_hidden_involution_stable_support_six_certificate.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_stable_support_six_certificate.set_defaults(func=command_coset_hidden_involution_stable_support_six_certificate)
+    parser_coset_hidden_involution_standard_block_recoupling = subparsers.add_parser(
+        "coset-hidden-involution-standard-block-recoupling",
+        help="Exact recoupling spectrum of the all-standard hidden-involution block.",
+    )
+    parser_coset_hidden_involution_standard_block_recoupling.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_standard_block_recoupling.set_defaults(func=command_coset_hidden_involution_standard_block_recoupling)
+    parser_coset_hidden_involution_target_interference_negativity_barrier = subparsers.add_parser(
+        "coset-hidden-involution-target-interference-negativity-barrier",
+        help="Exact group-basis negativity barrier for any useful detector.",
+    )
+    parser_coset_hidden_involution_target_interference_negativity_barrier.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_target_interference_negativity_barrier.set_defaults(func=command_coset_hidden_involution_target_interference_negativity_barrier)
+    parser_coset_hidden_involution_trimmed_row_block_encoding_no_go = subparsers.add_parser(
+        "coset-hidden-involution-trimmed-row-block-encoding-no-go",
+        help="Normalization no-go for coherent access to the trimmed orbit-row kernel.",
+    )
+    parser_coset_hidden_involution_trimmed_row_block_encoding_no_go.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_trimmed_row_block_encoding_no_go.set_defaults(func=command_coset_hidden_involution_trimmed_row_block_encoding_no_go)
+    parser_coset_hidden_involution_trimmed_row_kernel_succinctness = subparsers.add_parser(
+        "coset-hidden-involution-trimmed-row-kernel-succinctness",
+        help="Pairwise succinctness and the true trimmed row-polar boundary.",
+    )
+    parser_coset_hidden_involution_trimmed_row_kernel_succinctness.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_trimmed_row_kernel_succinctness.set_defaults(func=command_coset_hidden_involution_trimmed_row_kernel_succinctness)
+    parser_coset_hidden_involution_two_subgroup_projector_algebra_no_go = subparsers.add_parser(
+        "coset-hidden-involution-two-subgroup-projector-algebra-no-go",
+        help="Two-subgroup-projector algebra reduces to one-variable likelihood QSVT.",
+    )
+    parser_coset_hidden_involution_two_subgroup_projector_algebra_no_go.add_argument("--no-registry", action="store_true")
+    parser_coset_hidden_involution_two_subgroup_projector_algebra_no_go.set_defaults(func=command_coset_hidden_involution_two_subgroup_projector_algebra_no_go)
+    parser_self_dual_wreath_component_direct_naimark_polar_equivalence = subparsers.add_parser(
+        "self-dual-wreath-component-direct-naimark-polar-equivalence",
+        help="Direct component Naimark dilation is a restricted orientation polar.",
+    )
+    parser_self_dual_wreath_component_direct_naimark_polar_equivalence.add_argument("--no-registry", action="store_true")
+    parser_self_dual_wreath_component_direct_naimark_polar_equivalence.set_defaults(func=command_self_dual_wreath_component_direct_naimark_polar_equivalence)
+    parser_self_dual_wreath_component_polar_physical_pgm_closure = subparsers.add_parser(
+        "self-dual-wreath-component-polar-physical-pgm-closure",
+        help="The complete orientation polar closes the physical PGM and decoder gate.",
+    )
+    parser_self_dual_wreath_component_polar_physical_pgm_closure.add_argument("--no-registry", action="store_true")
+    parser_self_dual_wreath_component_polar_physical_pgm_closure.set_defaults(func=command_self_dual_wreath_component_polar_physical_pgm_closure)
+    parser_self_dual_wreath_connected_clifford_normal_form = subparsers.add_parser(
+        "self-dual-wreath-connected-clifford-normal-form",
+        help="Clifford theory exposes, but does not solve, the connected CS polar.",
+    )
+    parser_self_dual_wreath_connected_clifford_normal_form.add_argument("--no-registry", action="store_true")
+    parser_self_dual_wreath_connected_clifford_normal_form.set_defaults(func=command_self_dual_wreath_connected_clifford_normal_form)
+    parser_self_dual_wreath_connected_quotient_heisenberg_reduction = subparsers.add_parser(
+        "self-dual-wreath-connected-quotient-heisenberg-reduction",
+        help="The connected orientation group has an easy class-two parity quotient.",
+    )
+    parser_self_dual_wreath_connected_quotient_heisenberg_reduction.add_argument("--no-registry", action="store_true")
+    parser_self_dual_wreath_connected_quotient_heisenberg_reduction.set_defaults(func=command_self_dual_wreath_connected_quotient_heisenberg_reduction)
+    parser_self_dual_wreath_gpe_fusion_tree_cs_boundary = subparsers.add_parser(
+        "self-dual-wreath-gpe-fusion-tree-cs-boundary",
+        help="Recursive GPE compiles recoupling unitaries, not their CS subblock polar.",
+    )
+    parser_self_dual_wreath_gpe_fusion_tree_cs_boundary.add_argument("--no-registry", action="store_true")
+    parser_self_dual_wreath_gpe_fusion_tree_cs_boundary.set_defaults(func=command_self_dual_wreath_gpe_fusion_tree_cs_boundary)
+    parser_self_dual_wreath_latent_master_polar_tradeoff = subparsers.add_parser(
+        "self-dual-wreath-latent-master-polar-tradeoff",
+        help="A latent master fiber moves, but does not remove, polar normalization cost.",
+    )
+    parser_self_dual_wreath_latent_master_polar_tradeoff.add_argument("--no-registry", action="store_true")
+    parser_self_dual_wreath_latent_master_polar_tradeoff.set_defaults(func=command_self_dual_wreath_latent_master_polar_tradeoff)
+    parser_self_dual_wreath_mrs_identification_escape_theorem = subparsers.add_parser(
+        "self-dual-wreath-mrs-identification-escape-theorem",
+        help="Identification success separates the target PGM from every MRS sieve.",
+    )
+    parser_self_dual_wreath_mrs_identification_escape_theorem.add_argument("--no-registry", action="store_true")
+    parser_self_dual_wreath_mrs_identification_escape_theorem.set_defaults(func=command_self_dual_wreath_mrs_identification_escape_theorem)
+    parser_self_dual_wreath_orientation_fixed_space_recoupling = subparsers.add_parser(
+        "self-dual-wreath-orientation-fixed-space-recoupling",
+        help="Exact fixed-space recoupling target inside the homogeneous orientation polar.",
+    )
+    parser_self_dual_wreath_orientation_fixed_space_recoupling.add_argument("--no-registry", action="store_true")
+    parser_self_dual_wreath_orientation_fixed_space_recoupling.set_defaults(func=command_self_dual_wreath_orientation_fixed_space_recoupling)
+    parser_self_dual_wreath_orientation_homogeneous_space_polar = subparsers.add_parser(
+        "self-dual-wreath-orientation-homogeneous-space-polar",
+        help="Homogeneous-space flattening of the complete orientation polar.",
+    )
+    parser_self_dual_wreath_orientation_homogeneous_space_polar.add_argument("--no-registry", action="store_true")
+    parser_self_dual_wreath_orientation_homogeneous_space_polar.set_defaults(func=command_self_dual_wreath_orientation_homogeneous_space_polar)
+    parser_self_dual_wreath_orientation_syndrome_component_reduction = subparsers.add_parser(
+        "self-dual-wreath-orientation-syndrome-component-reduction",
+        help="Parity-component reduction of the homogeneous orientation incidence.",
+    )
+    parser_self_dual_wreath_orientation_syndrome_component_reduction.add_argument("--no-registry", action="store_true")
+    parser_self_dual_wreath_orientation_syndrome_component_reduction.set_defaults(func=command_self_dual_wreath_orientation_syndrome_component_reduction)
+    parser_self_dual_wreath_pair_relation_common_support_no_go = subparsers.add_parser(
+        "self-dual-wreath-pair-relation-common-support-no-go",
+        help="Every exact two-vertex relation is confined to literal common support.",
+    )
+    parser_self_dual_wreath_pair_relation_common_support_no_go.add_argument("--no-registry", action="store_true")
+    parser_self_dual_wreath_pair_relation_common_support_no_go.set_defaults(func=command_self_dual_wreath_pair_relation_common_support_no_go)
+    parser_self_dual_wreath_pair_sheaf_metric_incompatibility = subparsers.add_parser(
+        "self-dual-wreath-pair-sheaf-metric-incompatibility",
+        help="Noncommon pair-polars cannot be glued into the global frame polar.",
+    )
+    parser_self_dual_wreath_pair_sheaf_metric_incompatibility.add_argument("--no-registry", action="store_true")
+    parser_self_dual_wreath_pair_sheaf_metric_incompatibility.set_defaults(func=command_self_dual_wreath_pair_sheaf_metric_incompatibility)
+    parser_self_dual_wreath_point_centered_residual_no_go = subparsers.add_parser(
+        "self-dual-wreath-point-centered-residual-no-go",
+        help="Centered residual no-go for carrier-traced point decoding.",
+    )
+    parser_self_dual_wreath_point_centered_residual_no_go.add_argument("--no-registry", action="store_true")
+    parser_self_dual_wreath_point_centered_residual_no_go.set_defaults(func=command_self_dual_wreath_point_centered_residual_no_go)
+    parser_self_dual_wreath_point_child_star_relative_collision = subparsers.add_parser(
+        "self-dual-wreath-point-child-star-relative-collision",
+        help="Positive Young-star decomposition of the point PGM relative collision.",
+    )
+    parser_self_dual_wreath_point_child_star_relative_collision.add_argument("--no-registry", action="store_true")
+    parser_self_dual_wreath_point_child_star_relative_collision.set_defaults(func=command_self_dual_wreath_point_child_star_relative_collision)
+    parser_self_dual_wreath_point_copy_threshold = subparsers.add_parser(
+        "self-dual-wreath-point-copy-threshold",
+        help="Sharp copy threshold for the annealed point-quotient signal.",
+    )
+    parser_self_dual_wreath_point_copy_threshold.add_argument("--no-registry", action="store_true")
+    parser_self_dual_wreath_point_copy_threshold.set_defaults(func=command_self_dual_wreath_point_copy_threshold)
+    parser_self_dual_wreath_point_critical_energy_separation = subparsers.add_parser(
+        "self-dual-wreath-point-critical-energy-separation",
+        help="Critical point energy does not determine operational distinguishability.",
+    )
+    parser_self_dual_wreath_point_critical_energy_separation.add_argument("--no-registry", action="store_true")
+    parser_self_dual_wreath_point_critical_energy_separation.set_defaults(func=command_self_dual_wreath_point_critical_energy_separation)
+    parser_self_dual_wreath_point_critical_identity_atom = subparsers.add_parser(
+        "self-dual-wreath-point-critical-identity-atom",
+        help="The critical ambient point-energy spike is a factorially rare atom.",
+    )
+    parser_self_dual_wreath_point_critical_identity_atom.add_argument("--no-registry", action="store_true")
+    parser_self_dual_wreath_point_critical_identity_atom.set_defaults(func=command_self_dual_wreath_point_critical_identity_atom)
+    parser_self_dual_wreath_regular_master_walsh_flatness_no_go = subparsers.add_parser(
+        "self-dual-wreath-regular-master-walsh-flatness-no-go",
+        help="Regular-source Walsh output is flat, killing fixed sparse-mode truncation.",
+    )
+    parser_self_dual_wreath_regular_master_walsh_flatness_no_go.add_argument("--no-registry", action="store_true")
+    parser_self_dual_wreath_regular_master_walsh_flatness_no_go.set_defaults(func=command_self_dual_wreath_regular_master_walsh_flatness_no_go)
+    parser_self_dual_wreath_source_adaptive_walsh_collision_reduction = subparsers.add_parser(
+        "self-dual-wreath-source-adaptive-walsh-collision-reduction",
+        help="Reduce source-adaptive Walsh routing to an autocorrelation collision bound.",
+    )
+    parser_self_dual_wreath_source_adaptive_walsh_collision_reduction.add_argument("--no-registry", action="store_true")
+    parser_self_dual_wreath_source_adaptive_walsh_collision_reduction.set_defaults(func=command_self_dual_wreath_source_adaptive_walsh_collision_reduction)
+    parser_self_dual_wreath_source_block_branch_covariance_boundary = subparsers.add_parser(
+        "self-dual-wreath-source-block-branch-covariance-boundary",
+        help="Branch covariance moves the source block; it is not a sibling compiler.",
+    )
+    parser_self_dual_wreath_source_block_branch_covariance_boundary.add_argument("--no-registry", action="store_true")
+    parser_self_dual_wreath_source_block_branch_covariance_boundary.set_defaults(func=command_self_dual_wreath_source_block_branch_covariance_boundary)
+    parser_self_dual_wreath_source_order_gauge_canonicalization = subparsers.add_parser(
+        "self-dual-wreath-source-order-gauge-canonicalization",
+        help="Coherent source-pair sorting removes order gauge, not orientation structure.",
+    )
+    parser_self_dual_wreath_source_order_gauge_canonicalization.add_argument("--no-registry", action="store_true")
+    parser_self_dual_wreath_source_order_gauge_canonicalization.set_defaults(func=command_self_dual_wreath_source_order_gauge_canonicalization)
+    parser_self_dual_wreath_trace_biased_adaptive_walsh_no_go = subparsers.add_parser(
+        "self-dual-wreath-trace-biased-adaptive-walsh-no-go",
+        help="Reject source-adaptive sparse Walsh routing under the physical block law.",
+    )
+    parser_self_dual_wreath_trace_biased_adaptive_walsh_no_go.add_argument("--no-registry", action="store_true")
+    parser_self_dual_wreath_trace_biased_adaptive_walsh_no_go.set_defaults(func=command_self_dual_wreath_trace_biased_adaptive_walsh_no_go)
 
     reduction_contracts = subparsers.add_parser(
         "reduction-contracts",

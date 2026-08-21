@@ -1,0 +1,232 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False on inverse-polynomial natural mass: T_m commutes with that entire algebra, while [D_m,T_m] has exact inverse-polynomial energy.",
+      "challenge": "D_m may be only a polynomial in C_m and K-center labels on natural representations.",
+      "resolved": true
+    },
+    {
+      "answer": "For m>=11 the source correction coefficient is structurally zero by moved-point support.",
+      "challenge": "The regular commutator may live outside the hidden h-even source space.",
+      "resolved": true
+    },
+    {
+      "answer": "For every m>=13 the inverse-polynomial lower bound exceeds the factorial upper bound on all row/column defect-four source mass.",
+      "challenge": "The mass may be entirely the previously solved defect-four stable branch.",
+      "resolved": true
+    },
+    {
+      "answer": "False: no correlation with the CS likelihood, conditional gap hierarchy, normalized transform, or detector is proved.",
+      "challenge": "New copy information is automatically useful for hidden-involution decision.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "D_independent_of_C_and_K_center_on_hidden_source_mass": true,
+    "D_independent_of_C_and_K_center_on_plancherel_mass": true,
+    "coherent_subduction_transform_compiled": false,
+    "complete_commuting_charge_hierarchy_constructed": false,
+    "conditional_joint_gaps_proved": false,
+    "exact_local_five_pair_decomposition_proved": true,
+    "hidden_involution_detector_constructed": false,
+    "independence_beyond_defect_four_source_mass": true,
+    "reason": "D_m now has certified new natural copy information, but there is no complete label hierarchy or evidence that those labels correlate with the hidden-source decision statistic.",
+    "source_CS_likelihood_correlation_proved": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-20T20:43:12.788114+00:00",
+  "falsifiers_triggered": [
+    "The new matching charge is not merely a stable-family artifact.",
+    "The matching charge is not a function of the previous commuting labels on all natural mass.",
+    "Natural algebraic independence still does not imply detector relevance or a speedup."
+  ],
+  "headline_metrics": {
+    "beyond_defect_four_independence_count": 1,
+    "complete_commuting_hierarchy_count": 0,
+    "conditional_joint_gap_count": 0,
+    "exact_all_rank_matching_triangle_norm_count": 1,
+    "hidden_involution_detector_count": 0,
+    "inverse_polynomial_hidden_source_independence_count": 1,
+    "inverse_polynomial_plancherel_independence_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "new_terminal_charge_information_count": 1,
+    "source_CS_correlation_count": 0
+  },
+  "literature_links": [
+    {
+      "id": "arXiv:0710.4971",
+      "role": "Gaudin commuting-algebra context for the central pair charge; not a proof of the present matching/triangle norm."
+    },
+    {
+      "id": "arXiv:math/0302203",
+      "role": "Stable partial-permutation filtration context for local injection decompositions."
+    },
+    {
+      "id": "arXiv:1212.5375",
+      "role": "Hyperoctahedral polynomial local-algebra context; double-coset rather than this conjugation-centralizer calculation."
+    }
+  ],
+  "local_certificate": {
+    "C_triangle_commutator_nonzero_count": 0,
+    "every_term_touches_all_five_pair_labels": true,
+    "exact_all_rank_five_pair_decomposition_proved": true,
+    "five_pair_coefficient_absolute_value": 12,
+    "five_pair_commutator_nonzero_count": 122880,
+    "five_pair_matching_expansion_l1": 960,
+    "five_pair_negative_coefficient_count": 61440,
+    "five_pair_positive_coefficient_count": 61440,
+    "five_pair_triangle_expansion_l1": 30720,
+    "five_pair_unnormalized_squared_norm": 17694720,
+    "four_pair_commutator_nonzero_count": 0,
+    "maximum_moved_point_count": 10,
+    "minimum_moved_point_count": 8,
+    "six_pair_commutator_nonzero_count": 737280,
+    "six_pair_equals_sum_of_five_pair_embeddings": true,
+    "status": "exact-five-pair-matching-triangle-commutator-decomposition",
+    "triangle_K_commutator_failure_count": 0
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-HIDDEN-INVOLUTION-NATURAL-D-THIRD-COMMUTING-CHARGE",
+      "resolved": false,
+      "statement": "Construct a third K-adapted charge commuting with C_m,D_m that resolves a residual controlled sector and remains independent on natural mass."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-NATURAL-D-JOINT-GAPS",
+      "resolved": false,
+      "statement": "Bound conditional gaps and residual multiplicities for the C_m,D_m joint spectrum on the certified event."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-NATURAL-D-SOURCE-CORRELATION",
+      "resolved": false,
+      "statement": "Relate the genuinely new D_m labels to the source-aware CS likelihood or prove they are nuisance labels."
+    }
+  ],
+  "scaling_records": [
+    {
+      "beyond_defect_four_independence_certified": false,
+      "beyond_defect_four_source_mass_lower_bound": 0.0,
+      "block_energy_threshold": 3.962917455083433e-12,
+      "degree": 22,
+      "distance_from_C_K_center_algebra_squared_threshold": 9.907293637708582e-13,
+      "fixed_defect_four_source_mass_upper_bound": 2.3434521567758087e-09,
+      "half_degree": 11,
+      "hidden_even_correction_coefficient": 0.0,
+      "hidden_even_source_expectation": 7.925834910166866e-12,
+      "hidden_source_good_mass_lower_bound": 9.907293637718399e-13,
+      "hidden_source_independence_certified": true,
+      "normalized_commutator_squared_norm": 7.925834910166866e-12,
+      "plancherel_good_mass_lower_bound": 9.907293637718399e-13,
+      "status": "natural-D-independence-certified"
+    },
+    {
+      "beyond_defect_four_independence_certified": false,
+      "beyond_defect_four_source_mass_lower_bound": 0.0,
+      "block_energy_threshold": 1.698393195035757e-12,
+      "degree": 24,
+      "distance_from_C_K_center_algebra_squared_threshold": 4.2459829875893924e-13,
+      "fixed_defect_four_source_mass_upper_bound": 8.515800936368092e-12,
+      "half_degree": 12,
+      "hidden_even_correction_coefficient": 0.0,
+      "hidden_even_source_expectation": 3.396786390071514e-12,
+      "hidden_source_good_mass_lower_bound": 4.245982987591195e-13,
+      "hidden_source_independence_certified": true,
+      "normalized_commutator_squared_norm": 3.396786390071514e-12,
+      "plancherel_good_mass_lower_bound": 4.245982987591195e-13,
+      "status": "natural-D-independence-certified"
+    },
+    {
+      "beyond_defect_four_independence_certified": true,
+      "beyond_defect_four_source_mass_lower_bound": 1.7082382459964255e-13,
+      "block_energy_threshold": 7.827142057231242e-13,
+      "degree": 26,
+      "distance_from_C_K_center_algebra_squared_threshold": 1.9567855143078106e-13,
+      "fixed_defect_four_source_mass_upper_bound": 2.4854726831176796e-14,
+      "half_degree": 13,
+      "hidden_even_correction_coefficient": 0.0,
+      "hidden_even_source_expectation": 1.5654284114462485e-12,
+      "hidden_source_good_mass_lower_bound": 1.9567855143081935e-13,
+      "hidden_source_independence_certified": true,
+      "normalized_commutator_squared_norm": 1.5654284114462485e-12,
+      "plancherel_good_mass_lower_bound": 1.9567855143081935e-13,
+      "status": "natural-D-independence-beyond-defect-four-certified"
+    },
+    {
+      "beyond_defect_four_independence_certified": true,
+      "beyond_defect_four_source_mass_lower_bound": 1.5020603880184e-14,
+      "block_energy_threshold": 6.008241552189647e-14,
+      "degree": 34,
+      "distance_from_C_K_center_algebra_squared_threshold": 1.502060388047412e-14,
+      "fixed_defect_four_source_mass_upper_bound": 2.9034073352909834e-25,
+      "half_degree": 17,
+      "hidden_even_correction_coefficient": 0.0,
+      "hidden_even_source_expectation": 1.2016483104379295e-13,
+      "hidden_source_good_mass_lower_bound": 1.5020603880474343e-14,
+      "hidden_source_independence_certified": true,
+      "normalized_commutator_squared_norm": 1.2016483104379295e-13,
+      "plancherel_good_mass_lower_bound": 1.5020603880474343e-14,
+      "status": "natural-D-independence-beyond-defect-four-certified"
+    },
+    {
+      "beyond_defect_four_independence_certified": true,
+      "beyond_defect_four_source_mass_lower_bound": 4.0245174854912056e-17,
+      "block_energy_threshold": 1.6098069941964822e-16,
+      "degree": 64,
+      "distance_from_C_K_center_algebra_squared_threshold": 4.0245174854912056e-17,
+      "fixed_defect_four_source_mass_upper_bound": 1.0647904121693497e-73,
+      "half_degree": 32,
+      "hidden_even_correction_coefficient": 0.0,
+      "hidden_even_source_expectation": 3.2196139883929645e-16,
+      "hidden_source_good_mass_lower_bound": 4.0245174854912056e-17,
+      "hidden_source_independence_certified": true,
+      "normalized_commutator_squared_norm": 3.2196139883929645e-16,
+      "plancherel_good_mass_lower_bound": 4.0245174854912056e-17,
+      "status": "natural-D-independence-beyond-defect-four-certified"
+    },
+    {
+      "beyond_defect_four_independence_certified": true,
+      "beyond_defect_four_source_mass_lower_bound": 6.91731164539518e-20,
+      "block_energy_threshold": 2.766924658158072e-19,
+      "degree": 128,
+      "distance_from_C_K_center_algebra_squared_threshold": 6.91731164539518e-20,
+      "fixed_defect_four_source_mass_upper_bound": 8.969348548680976e-198,
+      "half_degree": 64,
+      "hidden_even_correction_coefficient": 0.0,
+      "hidden_even_source_expectation": 5.533849316316144e-19,
+      "hidden_source_good_mass_lower_bound": 6.91731164539518e-20,
+      "hidden_source_independence_certified": true,
+      "normalized_commutator_squared_norm": 5.533849316316144e-19,
+      "plancherel_good_mass_lower_bound": 6.91731164539518e-20,
+      "status": "natural-D-independence-beyond-defect-four-certified"
+    }
+  ],
+  "status": "matching-charge-natural-independence-proved-hierarchy-open",
+  "summary": "Proved that the disjoint matching charge contributes information beyond C_m and K-center labels on inverse-polynomial hidden-source mass.",
+  "theorem": {
+    "D_outside_C_K_center_algebra_on_inverse_polynomial_hidden_source_mass_proved": true,
+    "D_outside_C_K_center_algebra_on_inverse_polynomial_plancherel_mass_proved": true,
+    "algebraic_independence": "On the good event, dist_F(D_m,Alg(C_m,Z(C[K_m])))^2/d >= delta_m/8.",
+    "beyond_defect_four_hidden_source_mass_proved": true,
+    "coherent_subduction_transform_compiled": false,
+    "commutation_boundary": "C_m commutes with T_m, while D_m does not; T_m and D_m both centralize K_m.",
+    "complete_commuting_charge_hierarchy_constructed": false,
+    "conditional_joint_gap_theorem_proved": false,
+    "exact_all_rank_local_norm_proved": true,
+    "exact_norm": "delta_m=9(m-4)/[1024 m^3(m-3)(m-2)^3(m-1)^3]=Theta(m^-9).",
+    "fixed_defect_exclusion": "For every m>=13, positive certified source mass remains after removing row/column defect at most four.",
+    "hidden_involution_detector_constructed": false,
+    "hidden_source_transfer": "For m>=11, coefficient_h(X^*X)=0 because X terms move at most ten points and h moves 2m>20.",
+    "plancherel_transfer": "Plancherel mass at least delta_m/(8-delta_m) has commutator energy at least delta_m/2.",
+    "source_CS_likelihood_correlation_proved": false,
+    "speedup_claim_allowed": false,
+    "status": "matching-charge-natural-independence-proved-hierarchy-open",
+    "theorem_verified": true,
+    "triangle_charge": "T_m is the normalized Hermitian average of all six orders of c_ij c_ik c_jk over pair-label triples."
+  },
+  "theorem_contract": {
+    "charge_algebra": "Alg(C_m,Z(C[K_m])) inside the K_m centralizer",
+    "claim_boundary": "Inverse-polynomial natural mass where D_m supplies information outside the old commuting labels; no complete hierarchy, source likelihood, or detector.",
+    "group_pair": "S_(2m) >= C_2 wr S_m",
+    "range": "Plancherel for m>=5; hidden h-even source for m>=11; beyond defect four for m>=13"
+  }
+}

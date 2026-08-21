@@ -1,0 +1,269 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False: the exact dimension-sum bound puts all logarithmically many source coordinates above M^(1/4) multiplicity on overwhelming asymptotic mass.",
+      "challenge": "Repeated K branches may be a negligible natural event.",
+      "resolved": true
+    },
+    {
+      "answer": "False: every K operator acts identically on the branching multiplicity factor. A commutant missing-label algebra is required.",
+      "challenge": "A K QFT labels the repeated copies.",
+      "resolved": true
+    },
+    {
+      "answer": "False: a Bratteli path label uses only polynomially many bits, and a local paired-tower recurrence remains possible.",
+      "challenge": "Huge multiplicity proves the transform is hard.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "K_qft_resolves_branching_missing_labels": false,
+    "binary_hidden_involution_detector_constructed": false,
+    "exact_even_branch_joint_law_proved": true,
+    "natural_mass_in_superpolynomial_branching_proved": true,
+    "paired_young_graph_recursion_compiled": false,
+    "reason": "Natural source mass requires enormous repeated K branches; their commutant labels and normalized multicopy recoupling remain uncompiled.",
+    "source_aware_normalized_subduction_transform_compiled": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-21T13:08:03.874010+00:00",
+  "dimension_sum_controls": [
+    {
+      "dimension_sum_identities_verified": true,
+      "even_bipartition_count": 4,
+      "even_dimension_convolution_sum": 4,
+      "even_hyperoctahedral_irrep_dimension_sum": 4,
+      "even_hyperoctahedral_regular_dimension_sum": 4,
+      "expected_even_hyperoctahedral_regular_dimension_sum": 4,
+      "half_degree": 2,
+      "status": "even-branch-dimension-sum-identities-verified",
+      "symmetric_involution_count": 10,
+      "symmetric_irrep_dimension_sum": 10,
+      "symmetric_partition_count": 5
+    },
+    {
+      "dimension_sum_identities_verified": true,
+      "even_bipartition_count": 5,
+      "even_dimension_convolution_sum": 10,
+      "even_hyperoctahedral_irrep_dimension_sum": 10,
+      "even_hyperoctahedral_regular_dimension_sum": 24,
+      "expected_even_hyperoctahedral_regular_dimension_sum": 24,
+      "half_degree": 3,
+      "status": "even-branch-dimension-sum-identities-verified",
+      "symmetric_involution_count": 76,
+      "symmetric_irrep_dimension_sum": 76,
+      "symmetric_partition_count": 11
+    },
+    {
+      "dimension_sum_identities_verified": true,
+      "even_bipartition_count": 14,
+      "even_dimension_convolution_sum": 44,
+      "even_hyperoctahedral_irrep_dimension_sum": 44,
+      "even_hyperoctahedral_regular_dimension_sum": 192,
+      "expected_even_hyperoctahedral_regular_dimension_sum": 192,
+      "half_degree": 4,
+      "status": "even-branch-dimension-sum-identities-verified",
+      "symmetric_involution_count": 764,
+      "symmetric_irrep_dimension_sum": 764,
+      "symmetric_partition_count": 22
+    },
+    {
+      "dimension_sum_identities_verified": true,
+      "even_bipartition_count": 18,
+      "even_dimension_convolution_sum": 156,
+      "even_hyperoctahedral_irrep_dimension_sum": 156,
+      "even_hyperoctahedral_regular_dimension_sum": 1920,
+      "expected_even_hyperoctahedral_regular_dimension_sum": 1920,
+      "half_degree": 5,
+      "status": "even-branch-dimension-sum-identities-verified",
+      "symmetric_involution_count": 9496,
+      "symmetric_irrep_dimension_sum": 9496,
+      "symmetric_partition_count": 42
+    },
+    {
+      "dimension_sum_identities_verified": true,
+      "even_bipartition_count": 42,
+      "even_dimension_convolution_sum": 752,
+      "even_hyperoctahedral_irrep_dimension_sum": 752,
+      "even_hyperoctahedral_regular_dimension_sum": 23040,
+      "expected_even_hyperoctahedral_regular_dimension_sum": 23040,
+      "half_degree": 6,
+      "status": "even-branch-dimension-sum-identities-verified",
+      "symmetric_involution_count": 140152,
+      "symmetric_irrep_dimension_sum": 140152,
+      "symmetric_partition_count": 77
+    },
+    {
+      "dimension_sum_identities_verified": true,
+      "even_bipartition_count": 113,
+      "even_dimension_convolution_sum": 17040,
+      "even_hyperoctahedral_irrep_dimension_sum": 17040,
+      "even_hyperoctahedral_regular_dimension_sum": 5160960,
+      "expected_even_hyperoctahedral_regular_dimension_sum": 5160960,
+      "half_degree": 8,
+      "status": "even-branch-dimension-sum-identities-verified",
+      "symmetric_involution_count": 46206736,
+      "symmetric_irrep_dimension_sum": 46206736,
+      "symmetric_partition_count": 231
+    }
+  ],
+  "falsifiers_triggered": [
+    "Natural hyperoctahedral restriction is not multiplicity-free or low-multiplicity.",
+    "K Fourier labels cannot resolve the repeated branch copies.",
+    "Multiplicity size alone remains insufficient for a circuit lower bound."
+  ],
+  "headline_metrics": {
+    "dimension_sum_control_count": 6,
+    "dimension_sum_control_failure_count": 0,
+    "joint_high_branching_natural_mass_scaling_count": 3,
+    "new_quantum_algorithm_count": 0,
+    "normalized_subduction_transform_count": 0,
+    "paired_young_graph_recursion_count": 0,
+    "tail_branching_threshold_log2": 89.04164453547446,
+    "tail_joint_high_branching_mass_lower_bound": 1.0,
+    "tail_missing_label_commutant_dimension_log2_lower_bound": 178.08328907094892
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-HIDDEN-INVOLUTION-PAIRED-YOUNG-MISSING-LABEL-ALGEBRA",
+      "resolved": false,
+      "statement": "Construct a maximal efficiently measurable commutative subalgebra of End_K([lambda]) that labels natural repeated hyperoctahedral branches."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-PAIRED-YOUNG-LOCAL-ROTATIONS",
+      "resolved": false,
+      "statement": "Derive polynomial-time computable local rotations for the S_(2m) to C_2 wr S_m paired Bratteli recursion."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-MULTICOPY-NORMALIZED-RECOUPLING",
+      "resolved": false,
+      "statement": "Compose per-coordinate missing-label transforms with the multicopy invariant overlap at poly(n) normalization."
+    }
+  ],
+  "scaling_records": [
+    {
+      "K_qft_resolves_branching_multiplicity_copy": false,
+      "all_source_coordinates_high_branching_on_natural_mass": false,
+      "branching_multiplicity_threshold_formula": "T=|h^G|^(1/4)",
+      "branching_multiplicity_threshold_log2": 9.550550546256261,
+      "candidate_count_decimal": "316234143225",
+      "copy_count": 45,
+      "degree": 24,
+      "even_hyperoctahedral_irrep_dimension_sum_log2": 23.9031463337095,
+      "half_degree": 12,
+      "joint_all_source_high_multiplicity_probability_lower_bound": 0.0,
+      "joint_any_source_low_multiplicity_probability_upper_bound": 1.0,
+      "low_branching_multiplicity_probability_log2_upper_bound": -0.5921843338039849,
+      "low_branching_multiplicity_probability_upper_bound": 0.6633378099089642,
+      "missing_label_commutant_dimension_log2_lower_bound": 19.101101092512522,
+      "paired_young_graph_recursion_compiled": false,
+      "status": "preasymptotic-branching-multiplicity-bound",
+      "symmetric_irrep_dimension_sum_log2": 43.99177620533071,
+      "threshold_superpolynomial": true
+    },
+    {
+      "K_qft_resolves_branching_multiplicity_copy": false,
+      "all_source_coordinates_high_branching_on_natural_mass": false,
+      "branching_multiplicity_threshold_formula": "T=|h^G|^(1/4)",
+      "branching_multiplicity_threshold_log2": 14.35328079561942,
+      "candidate_count_decimal": "191898783962510625",
+      "copy_count": 64,
+      "degree": 32,
+      "even_hyperoctahedral_irrep_dimension_sum_log2": 34.56480377897697,
+      "half_degree": 16,
+      "joint_all_source_high_multiplicity_probability_lower_bound": 0.0,
+      "joint_any_source_low_multiplicity_probability_upper_bound": 1.0,
+      "low_branching_multiplicity_probability_log2_upper_bound": -3.4598352504309986,
+      "low_branching_multiplicity_probability_upper_bound": 0.09088366026308492,
+      "missing_label_commutant_dimension_log2_lower_bound": 28.70656159123884,
+      "paired_young_graph_recursion_compiled": false,
+      "status": "preasymptotic-branching-multiplicity-bound",
+      "symmetric_irrep_dimension_sum_log2": 64.28534382733291,
+      "threshold_superpolynomial": true
+    },
+    {
+      "K_qft_resolves_branching_multiplicity_copy": false,
+      "all_source_coordinates_high_branching_on_natural_mass": true,
+      "branching_multiplicity_threshold_formula": "T=|h^G|^(1/4)",
+      "branching_multiplicity_threshold_log2": 24.97797865264995,
+      "candidate_count_decimal": "1192568192774434123539907640625",
+      "copy_count": 106,
+      "degree": 48,
+      "even_hyperoctahedral_irrep_dimension_sum_log2": 57.611957624966124,
+      "half_degree": 24,
+      "joint_all_source_high_multiplicity_probability_lower_bound": 0.9386260063734359,
+      "joint_any_source_low_multiplicity_probability_upper_bound": 0.0613739936265641,
+      "low_branching_multiplicity_probability_log2_upper_bound": -10.754149181152854,
+      "low_branching_multiplicity_probability_upper_bound": 0.0005789999398732463,
+      "missing_label_commutant_dimension_log2_lower_bound": 49.9559573052999,
+      "paired_young_graph_recursion_compiled": false,
+      "status": "all-source-coordinates-have-huge-branching-multiplicity-on-natural-mass",
+      "symmetric_irrep_dimension_sum_log2": 108.60548657093133,
+      "threshold_superpolynomial": true
+    },
+    {
+      "K_qft_resolves_branching_multiplicity_copy": false,
+      "all_source_coordinates_high_branching_on_natural_mass": true,
+      "branching_multiplicity_threshold_formula": "T=|h^G|^(1/4)",
+      "branching_multiplicity_threshold_log2": 36.582970072340935,
+      "candidate_count_decimal": "112275575285571389562324404930670903477890625",
+      "copy_count": 153,
+      "degree": 64,
+      "even_hyperoctahedral_irrep_dimension_sum_log2": 82.34955407394055,
+      "half_degree": 32,
+      "joint_all_source_high_multiplicity_probability_lower_bound": 0.9997934483582592,
+      "joint_any_source_low_multiplicity_probability_upper_bound": 0.0002065516417407619,
+      "low_branching_multiplicity_probability_log2_upper_bound": -19.498597694985165,
+      "low_branching_multiplicity_probability_upper_bound": 1.350010730331777e-06,
+      "missing_label_commutant_dimension_log2_lower_bound": 73.16594014468187,
+      "paired_young_graph_recursion_compiled": false,
+      "status": "all-source-coordinates-have-huge-branching-multiplicity-on-natural-mass",
+      "symmetric_irrep_dimension_sum_log2": 156.56402210045746,
+      "threshold_superpolynomial": true
+    },
+    {
+      "K_qft_resolves_branching_multiplicity_copy": false,
+      "all_source_coordinates_high_branching_on_natural_mass": true,
+      "branching_multiplicity_threshold_formula": "T=|h^G|^(1/4)",
+      "branching_multiplicity_threshold_log2": 89.04164453547446,
+      "candidate_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "copy_count": 363,
+      "degree": 128,
+      "even_hyperoctahedral_irrep_dimension_sum_log2": 192.01505809140355,
+      "half_degree": 64,
+      "joint_all_source_high_multiplicity_probability_lower_bound": 1.0,
+      "joint_any_source_low_multiplicity_probability_upper_bound": 4.101722201089053e-17,
+      "low_branching_multiplicity_probability_log2_upper_bound": -62.94037356591423,
+      "low_branching_multiplicity_probability_upper_bound": 1.1299510195837612e-19,
+      "missing_label_commutant_dimension_log2_lower_bound": 178.08328907094892,
+      "paired_young_graph_recursion_compiled": false,
+      "status": "all-source-coordinates-have-huge-branching-multiplicity-on-natural-mass",
+      "symmetric_irrep_dimension_sum_log2": 371.1646458908297,
+      "threshold_superpolynomial": true
+    }
+  ],
+  "status": "natural-huge-hyperoctahedral-branching-mass-proved-missing-label-recursion-open",
+  "summary": "Proved that every natural source coordinate has superpolynomial hyperoctahedral branching multiplicity on overwhelming mass and localized the missing information to the K-commutant copy labels.",
+  "theorem": {
+    "K_qft_missing_label_boundary": "C[K] acts as identity on each branching-copy factor C^b, so K Fourier labels and K observables cannot resolve missing labels.",
+    "K_qft_resolves_missing_labels": false,
+    "exact_joint_law": "For even-central-parity mu, q(lambda,mu)=2 d_lambda d_mu b(lambda,mu)/|S_(2m)|.",
+    "exact_joint_law_proved": true,
+    "exact_marginals": "The lambda marginal is H-spherical Plancherel; the mu marginal is K-Plancherel conditioned on even central parity.",
+    "joint_source_conclusion": "A union bound over k=ceil(log2(64M)) source coordinates leaves overwhelming mass with every branching multiplicity above T.",
+    "low_multiplicity_bound": "Pr[b<=T] <= 2 T I_(2m) J_m^+/(2m)!, with J_m^+=sum_(b even) binom(m,b) I_(m-b)I_b.",
+    "low_multiplicity_counting_bound_proved": true,
+    "natural_mass_in_superpolynomial_branching_proved": true,
+    "natural_threshold": "For T=M^(1/4), the low-multiplicity probability vanishes; T is superpolynomial in the permutation input length.",
+    "paired_tower_escape": "A recursive missing-label basis along the paired S_(2m)/K_m Bratteli square could still be efficient; large b alone is not a circuit lower bound.",
+    "paired_young_graph_recursion_compiled": false,
+    "source_aware_normalized_subduction_transform_compiled": false,
+    "status": "natural-huge-hyperoctahedral-branching-mass-proved-missing-label-recursion-open",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "branching_coefficient": "b(lambda;alpha,beta)=<s_lambda,s_alpha[h_2]s_beta[e_2]> for K=C_2 wr S_m.",
+    "claim_boundary": "Natural missing-label multiplicity and K-QFT blindness, not a lower bound on recursive subduction circuits.",
+    "source_refinement": "Measure one source coordinate's G irrep and then refine its h-even carrier into K irreps."
+  }
+}

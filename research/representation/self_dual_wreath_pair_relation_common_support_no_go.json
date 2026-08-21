@@ -1,0 +1,456 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Positive endpoint weights can repair the pair sheaf.",
+      "resolution": "Arbitrary endpoint maps are already allowed in R_u,R_v; their common relation image cannot exceed literal common support.",
+      "resolved": true
+    },
+    {
+      "objection": "Pair GPE creates an exact relation on every active channel.",
+      "resolution": "It creates a transport between carrier subspaces, not an equality between the two canonical global-polar coordinates.",
+      "resolved": true
+    },
+    {
+      "objection": "A sufficiently dense graph of pair relations may recover noncommon channels.",
+      "resolution": "Every individual pair row lies in a common-support channel; density cannot create a pair row outside the span of those rows.",
+      "resolved": true
+    },
+    {
+      "objection": "This rejects all dependency-based compilers.",
+      "resolution": "No. Relations involving three or more vertices can cancel without any pairwise row-space intersection.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "classical_separation_proved": false,
+    "coherent_higher_arity_parity_check_compiled": false,
+    "complete_natural_orientation_polar_compiled": false,
+    "direct_rectangular_cs_polar_compiled": false,
+    "higher_arity_relations_mathematically_required_for_noncommon_dependencies": true,
+    "maximum_exact_pair_relation_rank_equals_common_support": true,
+    "operator_weighted_pair_relations_recover_noncommon_channels": false,
+    "pair_only_sheaf_compiles_complete_polar": false,
+    "reason": "All exact two-vertex relation rows live in literal common projector support, so noncommon frame dependencies require higher arity or a direct transform.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-21T05:13:02.386917+00:00",
+  "falsifiers_triggered": [
+    "Operator-valued endpoint metrics do not extend pair relations beyond common channels.",
+    "Exact pair-GPE transport is not an exact dependency among global-polar coordinates.",
+    "The complete dependency space cannot be sought inside pair-only sheaf edges."
+  ],
+  "finite_controls": [
+    {
+      "active_pair_principal_channel_rank": 2,
+      "common_principal_channel_rank": 0,
+      "constructed_maximal_relation_rank": 0,
+      "constructed_maximal_relation_residual": 0.0,
+      "control_id": "S4-CORRELATION-ONE-HALF",
+      "coordinate_row_space_intersection_rank": 0,
+      "exact_pair_relation_rank_theorem_verified": true,
+      "frame_support_rank": 11,
+      "intersection_common_rank_residual": 0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_coordinate_rank": 9,
+      "left_orientation_mask": 0,
+      "maximum_exact_pair_relation_rank": 0,
+      "n": 4,
+      "noncommon_channel_rank_uncovered_by_pair_relations": 2,
+      "noncommon_principal_channel_rank": 2,
+      "right_coordinate_rank": 2,
+      "right_orientation_mask": 3,
+      "status": "pair-relations-confined-to-common-support-noncommon-uncovered",
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "active_pair_principal_channel_rank": 3,
+      "common_principal_channel_rank": 0,
+      "constructed_maximal_relation_rank": 0,
+      "constructed_maximal_relation_residual": 0.0,
+      "control_id": "S4-CORRELATION-ONE-THIRD",
+      "coordinate_row_space_intersection_rank": 0,
+      "exact_pair_relation_rank_theorem_verified": true,
+      "frame_support_rank": 11,
+      "intersection_common_rank_residual": 0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_coordinate_rank": 3,
+      "left_orientation_mask": 1,
+      "maximum_exact_pair_relation_rank": 0,
+      "n": 4,
+      "noncommon_channel_rank_uncovered_by_pair_relations": 3,
+      "noncommon_principal_channel_rank": 3,
+      "right_coordinate_rank": 6,
+      "right_orientation_mask": 2,
+      "status": "pair-relations-confined-to-common-support-noncommon-uncovered",
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "active_pair_principal_channel_rank": 4,
+      "common_principal_channel_rank": 0,
+      "constructed_maximal_relation_rank": 0,
+      "constructed_maximal_relation_residual": 0.0,
+      "control_id": "S5-CORRELATION-ONE-QUARTER",
+      "coordinate_row_space_intersection_rank": 0,
+      "exact_pair_relation_rank_theorem_verified": true,
+      "frame_support_rank": 9,
+      "intersection_common_rank_residual": 0,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_coordinate_rank": 4,
+      "left_orientation_mask": 0,
+      "maximum_exact_pair_relation_rank": 0,
+      "n": 5,
+      "noncommon_channel_rank_uncovered_by_pair_relations": 4,
+      "noncommon_principal_channel_rank": 4,
+      "right_coordinate_rank": 4,
+      "right_orientation_mask": 3,
+      "status": "pair-relations-confined-to-common-support-noncommon-uncovered",
+      "target_partition": [
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "active_pair_principal_channel_rank": 1,
+      "common_principal_channel_rank": 1,
+      "constructed_maximal_relation_rank": 1,
+      "constructed_maximal_relation_residual": 6.678450504078177e-16,
+      "control_id": "S4-COMMON-CHANNEL-CONTROL",
+      "coordinate_row_space_intersection_rank": 1,
+      "exact_pair_relation_rank_theorem_verified": true,
+      "frame_support_rank": 9,
+      "intersection_common_rank_residual": 0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_coordinate_rank": 1,
+      "left_orientation_mask": 1,
+      "maximum_exact_pair_relation_rank": 1,
+      "n": 4,
+      "noncommon_channel_rank_uncovered_by_pair_relations": 0,
+      "noncommon_principal_channel_rank": 0,
+      "right_coordinate_rank": 9,
+      "right_orientation_mask": 2,
+      "status": "common-support-pair-relation-rank-tight",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "headline_metrics": {
+    "coherent_higher_arity_parity_check_compiler_count": 0,
+    "common_pair_control_count": 1,
+    "complete_orientation_polar_compiler_count": 0,
+    "direct_rectangular_cs_compiler_count": 0,
+    "finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "maximum_constructed_relation_residual": 6.678450504078177e-16,
+    "maximum_intersection_common_rank_residual": 0,
+    "new_quantum_algorithm_count": 0,
+    "noncommon_pair_control_count": 3,
+    "pair_relation_common_support_theorem_count": 1,
+    "scaling_record_count": 13,
+    "total_noncommon_channel_rank_uncovered": 9
+  },
+  "proof_obligations": [
+    {
+      "obligation": "classify_all_exact_two_vertex_relations",
+      "resolution": "Their shared row image is exactly the intersection of the two canonical coordinate row spaces.",
+      "resolved": true
+    },
+    {
+      "obligation": "relate_coordinate_row_intersection_to_projector_common_range",
+      "resolution": "The common invertible map F^(+/2) preserves intersection dimension.",
+      "resolved": true
+    },
+    {
+      "obligation": "construct_coherent_higher_arity_dependency_checks",
+      "resolution": "Need sparse polynomial SELECT, exact full-range kernel, and an inverse-polynomial nonzero singular gap.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_direct_rectangular_cs_polar",
+      "resolution": "No normalization-one higher recoupling transform is supplied.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "coherent_higher_arity_parity_check_compiled": false,
+      "direct_rectangular_cs_transform_open": true,
+      "genuinely_higher_arity_relations_required": true,
+      "information_threshold_copy_count": 9,
+      "maximum_pair_relation_rank_equals_common_support": true,
+      "n": 5,
+      "operator_endpoint_metrics_recover_noncommon_channels": false,
+      "orientation_vertex_count_log2": 9,
+      "pair_only_sheaf_compiles_complete_polar": false,
+      "status": "pair-only-relations-closed-higher-arity-preconditioner-open"
+    },
+    {
+      "coherent_higher_arity_parity_check_compiled": false,
+      "direct_rectangular_cs_transform_open": true,
+      "genuinely_higher_arity_relations_required": true,
+      "information_threshold_copy_count": 12,
+      "maximum_pair_relation_rank_equals_common_support": true,
+      "n": 6,
+      "operator_endpoint_metrics_recover_noncommon_channels": false,
+      "orientation_vertex_count_log2": 12,
+      "pair_only_sheaf_compiles_complete_polar": false,
+      "status": "pair-only-relations-closed-higher-arity-preconditioner-open"
+    },
+    {
+      "coherent_higher_arity_parity_check_compiled": false,
+      "direct_rectangular_cs_transform_open": true,
+      "genuinely_higher_arity_relations_required": true,
+      "information_threshold_copy_count": 18,
+      "maximum_pair_relation_rank_equals_common_support": true,
+      "n": 8,
+      "operator_endpoint_metrics_recover_noncommon_channels": false,
+      "orientation_vertex_count_log2": 18,
+      "pair_only_sheaf_compiles_complete_polar": false,
+      "status": "pair-only-relations-closed-higher-arity-preconditioner-open"
+    },
+    {
+      "coherent_higher_arity_parity_check_compiled": false,
+      "direct_rectangular_cs_transform_open": true,
+      "genuinely_higher_arity_relations_required": true,
+      "information_threshold_copy_count": 24,
+      "maximum_pair_relation_rank_equals_common_support": true,
+      "n": 10,
+      "operator_endpoint_metrics_recover_noncommon_channels": false,
+      "orientation_vertex_count_log2": 24,
+      "pair_only_sheaf_compiles_complete_polar": false,
+      "status": "pair-only-relations-closed-higher-arity-preconditioner-open"
+    },
+    {
+      "coherent_higher_arity_parity_check_compiled": false,
+      "direct_rectangular_cs_transform_open": true,
+      "genuinely_higher_arity_relations_required": true,
+      "information_threshold_copy_count": 31,
+      "maximum_pair_relation_rank_equals_common_support": true,
+      "n": 12,
+      "operator_endpoint_metrics_recover_noncommon_channels": false,
+      "orientation_vertex_count_log2": 31,
+      "pair_only_sheaf_compiles_complete_polar": false,
+      "status": "pair-only-relations-closed-higher-arity-preconditioner-open"
+    },
+    {
+      "coherent_higher_arity_parity_check_compiled": false,
+      "direct_rectangular_cs_transform_open": true,
+      "genuinely_higher_arity_relations_required": true,
+      "information_threshold_copy_count": 47,
+      "maximum_pair_relation_rank_equals_common_support": true,
+      "n": 16,
+      "operator_endpoint_metrics_recover_noncommon_channels": false,
+      "orientation_vertex_count_log2": 47,
+      "pair_only_sheaf_compiles_complete_polar": false,
+      "status": "pair-only-relations-closed-higher-arity-preconditioner-open"
+    },
+    {
+      "coherent_higher_arity_parity_check_compiled": false,
+      "direct_rectangular_cs_transform_open": true,
+      "genuinely_higher_arity_relations_required": true,
+      "information_threshold_copy_count": 64,
+      "maximum_pair_relation_rank_equals_common_support": true,
+      "n": 20,
+      "operator_endpoint_metrics_recover_noncommon_channels": false,
+      "orientation_vertex_count_log2": 64,
+      "pair_only_sheaf_compiles_complete_polar": false,
+      "status": "pair-only-relations-closed-higher-arity-preconditioner-open"
+    },
+    {
+      "coherent_higher_arity_parity_check_compiled": false,
+      "direct_rectangular_cs_transform_open": true,
+      "genuinely_higher_arity_relations_required": true,
+      "information_threshold_copy_count": 82,
+      "maximum_pair_relation_rank_equals_common_support": true,
+      "n": 24,
+      "operator_endpoint_metrics_recover_noncommon_channels": false,
+      "orientation_vertex_count_log2": 82,
+      "pair_only_sheaf_compiles_complete_polar": false,
+      "status": "pair-only-relations-closed-higher-arity-preconditioner-open"
+    },
+    {
+      "coherent_higher_arity_parity_check_compiled": false,
+      "direct_rectangular_cs_transform_open": true,
+      "genuinely_higher_arity_relations_required": true,
+      "information_threshold_copy_count": 120,
+      "maximum_pair_relation_rank_equals_common_support": true,
+      "n": 32,
+      "operator_endpoint_metrics_recover_noncommon_channels": false,
+      "orientation_vertex_count_log2": 120,
+      "pair_only_sheaf_compiles_complete_polar": false,
+      "status": "pair-only-relations-closed-higher-arity-preconditioner-open"
+    },
+    {
+      "coherent_higher_arity_parity_check_compiled": false,
+      "direct_rectangular_cs_transform_open": true,
+      "genuinely_higher_arity_relations_required": true,
+      "information_threshold_copy_count": 205,
+      "maximum_pair_relation_rank_equals_common_support": true,
+      "n": 48,
+      "operator_endpoint_metrics_recover_noncommon_channels": false,
+      "orientation_vertex_count_log2": 205,
+      "pair_only_sheaf_compiles_complete_polar": false,
+      "status": "pair-only-relations-closed-higher-arity-preconditioner-open"
+    },
+    {
+      "coherent_higher_arity_parity_check_compiled": false,
+      "direct_rectangular_cs_transform_open": true,
+      "genuinely_higher_arity_relations_required": true,
+      "information_threshold_copy_count": 298,
+      "maximum_pair_relation_rank_equals_common_support": true,
+      "n": 64,
+      "operator_endpoint_metrics_recover_noncommon_channels": false,
+      "orientation_vertex_count_log2": 298,
+      "pair_only_sheaf_compiles_complete_polar": false,
+      "status": "pair-only-relations-closed-higher-arity-preconditioner-open"
+    },
+    {
+      "coherent_higher_arity_parity_check_compiled": false,
+      "direct_rectangular_cs_transform_open": true,
+      "genuinely_higher_arity_relations_required": true,
+      "information_threshold_copy_count": 501,
+      "maximum_pair_relation_rank_equals_common_support": true,
+      "n": 96,
+      "operator_endpoint_metrics_recover_noncommon_channels": false,
+      "orientation_vertex_count_log2": 501,
+      "pair_only_sheaf_compiles_complete_polar": false,
+      "status": "pair-only-relations-closed-higher-arity-preconditioner-open"
+    },
+    {
+      "coherent_higher_arity_parity_check_compiled": false,
+      "direct_rectangular_cs_transform_open": true,
+      "genuinely_higher_arity_relations_required": true,
+      "information_threshold_copy_count": 719,
+      "maximum_pair_relation_rank_equals_common_support": true,
+      "n": 128,
+      "operator_endpoint_metrics_recover_noncommon_channels": false,
+      "orientation_vertex_count_log2": 719,
+      "pair_only_sheaf_compiles_complete_polar": false,
+      "status": "pair-only-relations-closed-higher-arity-preconditioner-open"
+    }
+  ],
+  "status": "pair-relations-exactly-common-support-higher-arity-required",
+  "summary": "Classified all exact pair relations of the canonical orientation polar and proved that their maximum rank is exactly common-support rank.",
+  "theorem": {
+    "canonical_row_spaces": "Ran(B_v^*)=F^(+/2)Ran(E_v)",
+    "consequence": "operator-valued two-vertex relations cannot carry noncommon principal channels",
+    "exact_maximum_rank": "max rank(T)=dim(Ran(E_u) intersect Ran(E_v)), attained by pseudoinverse lifts",
+    "general_pair_relation": "R_uB_u+R_vB_v=0 with T=R_uB_u=-R_vB_v",
+    "row_space_bound": "Ran(T^*) is contained in Ran(B_u^*) intersect Ran(B_v^*)",
+    "status": "pair-relations-exactly-common-support-higher-arity-required",
+    "surviving_target": "genuinely higher-arity parity checks/preconditioners or a direct rectangular CS transform",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "canonical_row_spaces": "Ran(B_v^*)=F^(+/2)Ran(E_v)",
+    "consequence": "operator-valued two-vertex relations cannot carry noncommon principal channels",
+    "exact_maximum_rank": "max rank(T)=dim(Ran(E_u) intersect Ran(E_v)), attained by pseudoinverse lifts",
+    "general_pair_relation": "R_uB_u+R_vB_v=0 with T=R_uB_u=-R_vB_v",
+    "row_space_bound": "Ran(T^*) is contained in Ran(B_u^*) intersect Ran(B_v^*)",
+    "status": "pair-relations-exactly-common-support-higher-arity-required",
+    "surviving_target": "genuinely higher-arity parity checks/preconditioners or a direct rectangular CS transform",
+    "theorem_verified": true
+  }
+}

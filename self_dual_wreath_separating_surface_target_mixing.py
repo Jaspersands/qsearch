@@ -435,6 +435,29 @@ def audit_unconditioned_surface_target(
         float(_normalized_character_expectation(n, density, partition))
         for partition in _nonsign_partitions(n)
     )
+    maximum = max(map(abs, expectations), default=0.0)
+    verified = bool(
+        probability_sum == 1
+        and odd_mass == 0
+        and tv <= bound + 1e-12
+        and maximum <= 2.0 * tv + 1e-12
+    )
+    return UnconditionedSurfaceTargetControl(
+        n=n,
+        commutator_genus=genus,
+        exact_density_probability_sum=str(probability_sum),
+        exact_odd_density_mass=str(odd_mass),
+        exact_total_variation_from_uniform_alternating=tv,
+        total_variation_upper_bound=bound,
+        maximum_nonsign_normalized_character_expectation=maximum,
+        maximum_nonsign_character_bound=2.0 * bound,
+        exact_density_and_bound_verified=verified,
+        status=(
+            "unconditioned-surface-boundary-mixes-to-uniform-alternating"
+            if verified
+            else "unconditioned-surface-density-control-failure"
+        ),
+    )
 
 
 def audit_nonseparating_surface_target(
@@ -487,29 +510,6 @@ def audit_nonseparating_surface_target(
             "nonseparating-surface-target-mixes-to-uniform-symmetric"
             if verified
             else "nonseparating-surface-density-control-failure"
-        ),
-    )
-    maximum = max(map(abs, expectations), default=0.0)
-    verified = bool(
-        probability_sum == 1
-        and odd_mass == 0
-        and tv <= bound + 1e-12
-        and maximum <= 2.0 * tv + 1e-12
-    )
-    return UnconditionedSurfaceTargetControl(
-        n=n,
-        commutator_genus=genus,
-        exact_density_probability_sum=str(probability_sum),
-        exact_odd_density_mass=str(odd_mass),
-        exact_total_variation_from_uniform_alternating=tv,
-        total_variation_upper_bound=bound,
-        maximum_nonsign_normalized_character_expectation=maximum,
-        maximum_nonsign_character_bound=2.0 * bound,
-        exact_density_and_bound_verified=verified,
-        status=(
-            "unconditioned-surface-boundary-mixes-to-uniform-alternating"
-            if verified
-            else "unconditioned-surface-density-control-failure"
         ),
     )
 

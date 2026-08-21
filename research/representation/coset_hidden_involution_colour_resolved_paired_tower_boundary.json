@@ -1,0 +1,320 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False: the stacked colour-specific map has the exact positive joint-primitive nullity h_m.",
+      "challenge": "The missing kernel is only caused by failing to resolve the C_2 colour.",
+      "resolved": true
+    },
+    {
+      "answer": "False: its fraction is asymptotic to pi^2/(3m). The absolute space is still superpolynomial, so both facts must be retained.",
+      "challenge": "The joint primitive is asymptotically a constant fraction.",
+      "resolved": true
+    },
+    {
+      "answer": "False: controlled p_H mass is high through m=6, but no asymptotic lower bound on component norm or operational signal exists.",
+      "challenge": "A nonzero finite primitive component proves natural asymptotic relevance.",
+      "resolved": true
+    },
+    {
+      "answer": "False: the label needs only Theta(sqrt m) bits and may admit succinct commutant generators.",
+      "challenge": "A large primitive dimension proves a hard transform.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "asymptotic_natural_source_primitive_mass_bounded": false,
+    "binary_hidden_involution_detector_constructed": false,
+    "colour_resolved_split_recurrence_proved": true,
+    "exact_joint_primitive_kernel_proved": true,
+    "finite_source_primitive_occupancy_verified": true,
+    "joint_primitive_fraction_asymptotic_proved": true,
+    "primitive_commutant_generators_compiled": false,
+    "primitive_local_rotations_compiled": false,
+    "reason": "The full last-pair colour recurrence still loses joint primitive data. Its asymptotic source mass, commutant access, normalization, and decoding remain unresolved.",
+    "source_aware_normalized_subduction_transform_compiled": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-21T13:06:42.502260+00:00",
+  "falsifiers_triggered": [
+    "Last-pair C_2 Fourier resolution does not make the paired branching recurrence injective.",
+    "The joint primitive is high-dimensional but occupies a vanishing fraction of bipartition labels.",
+    "High finite source occupancy is not an asymptotic norm or detector theorem.",
+    "No circuit-hardness or speedup claim follows from primitive dimension alone."
+  ],
+  "headline_metrics": {
+    "controlled_irrep_count": 157,
+    "controlled_nonzero_primitive_irrep_count": 151,
+    "kernel_control_count": 7,
+    "kernel_control_failure_count": 0,
+    "minimum_controlled_source_primitive_occupancy": 0.775,
+    "new_quantum_algorithm_count": 0,
+    "normalized_subduction_transform_count": 0,
+    "primitive_commutant_generator_count": 0,
+    "split_recurrence_control_count": 5,
+    "split_recurrence_failure_count": 0,
+    "tail_joint_primitive_dimension": 3083028152791,
+    "tail_joint_primitive_label_bits": 41.487485202179236,
+    "tail_scaled_primitive_fraction": 2.463222942750468
+  },
+  "kernel_controls": [
+    {
+      "colour_resolved_recurrence_is_injective": false,
+      "expected_joint_primitive_nullity": 2,
+      "half_degree": 2,
+      "joint_primitive_nullity": 2,
+      "lower_bipartition_count": 2,
+      "primitive_convolution_count": 2,
+      "stacked_colour_down_rank": 3,
+      "stacked_rank_formula_verified": true,
+      "status": "colour-resolved-down-map-has-joint-primitive-kernel",
+      "upper_bipartition_count": 5
+    },
+    {
+      "colour_resolved_recurrence_is_injective": false,
+      "expected_joint_primitive_nullity": 2,
+      "half_degree": 3,
+      "joint_primitive_nullity": 2,
+      "lower_bipartition_count": 5,
+      "primitive_convolution_count": 2,
+      "stacked_colour_down_rank": 8,
+      "stacked_rank_formula_verified": true,
+      "status": "colour-resolved-down-map-has-joint-primitive-kernel",
+      "upper_bipartition_count": 10
+    },
+    {
+      "colour_resolved_recurrence_is_injective": false,
+      "expected_joint_primitive_nullity": 5,
+      "half_degree": 4,
+      "joint_primitive_nullity": 5,
+      "lower_bipartition_count": 10,
+      "primitive_convolution_count": 5,
+      "stacked_colour_down_rank": 15,
+      "stacked_rank_formula_verified": true,
+      "status": "colour-resolved-down-map-has-joint-primitive-kernel",
+      "upper_bipartition_count": 20
+    },
+    {
+      "colour_resolved_recurrence_is_injective": false,
+      "expected_joint_primitive_nullity": 6,
+      "half_degree": 5,
+      "joint_primitive_nullity": 6,
+      "lower_bipartition_count": 20,
+      "primitive_convolution_count": 6,
+      "stacked_colour_down_rank": 30,
+      "stacked_rank_formula_verified": true,
+      "status": "colour-resolved-down-map-has-joint-primitive-kernel",
+      "upper_bipartition_count": 36
+    },
+    {
+      "colour_resolved_recurrence_is_injective": false,
+      "expected_joint_primitive_nullity": 13,
+      "half_degree": 6,
+      "joint_primitive_nullity": 13,
+      "lower_bipartition_count": 36,
+      "primitive_convolution_count": 13,
+      "stacked_colour_down_rank": 52,
+      "stacked_rank_formula_verified": true,
+      "status": "colour-resolved-down-map-has-joint-primitive-kernel",
+      "upper_bipartition_count": 65
+    },
+    {
+      "colour_resolved_recurrence_is_injective": false,
+      "expected_joint_primitive_nullity": 30,
+      "half_degree": 8,
+      "joint_primitive_nullity": 30,
+      "lower_bipartition_count": 110,
+      "primitive_convolution_count": 30,
+      "stacked_colour_down_rank": 155,
+      "stacked_rank_formula_verified": true,
+      "status": "colour-resolved-down-map-has-joint-primitive-kernel",
+      "upper_bipartition_count": 185
+    },
+    {
+      "colour_resolved_recurrence_is_injective": false,
+      "expected_joint_primitive_nullity": 66,
+      "half_degree": 10,
+      "joint_primitive_nullity": 66,
+      "lower_bipartition_count": 300,
+      "primitive_convolution_count": 66,
+      "stacked_colour_down_rank": 415,
+      "stacked_rank_formula_verified": true,
+      "status": "colour-resolved-down-map-has-joint-primitive-kernel",
+      "upper_bipartition_count": 481
+    }
+  ],
+  "plethysm_controls": [
+    {
+      "controlled_source_uses_joint_primitive_space": true,
+      "exact_spherical_source_mass": "1",
+      "half_degree": 2,
+      "horizontal_recurrence_equation_count": 10,
+      "horizontal_recurrence_failure_count": 0,
+      "irreps_with_nonzero_joint_primitive_component": 5,
+      "irreps_with_zero_joint_primitive_component": 0,
+      "maximum_branching_multiplicity": 1,
+      "spherical_source_mass_on_nonzero_primitive_irreps": 1.0,
+      "split_recurrence_verified": true,
+      "status": "split-recurrence-exact-controlled-source-occupies-joint-primitives",
+      "symmetric_partition_count": 5,
+      "vertical_recurrence_equation_count": 10,
+      "vertical_recurrence_failure_count": 0
+    },
+    {
+      "controlled_source_uses_joint_primitive_space": true,
+      "exact_spherical_source_mass": "31/40",
+      "half_degree": 3,
+      "horizontal_recurrence_equation_count": 55,
+      "horizontal_recurrence_failure_count": 0,
+      "irreps_with_nonzero_joint_primitive_component": 9,
+      "irreps_with_zero_joint_primitive_component": 2,
+      "maximum_branching_multiplicity": 1,
+      "spherical_source_mass_on_nonzero_primitive_irreps": 0.775,
+      "split_recurrence_verified": true,
+      "status": "split-recurrence-exact-controlled-source-occupies-joint-primitives",
+      "symmetric_partition_count": 11,
+      "vertical_recurrence_equation_count": 55,
+      "vertical_recurrence_failure_count": 0
+    },
+    {
+      "controlled_source_uses_joint_primitive_space": true,
+      "exact_spherical_source_mass": "251/315",
+      "half_degree": 4,
+      "horizontal_recurrence_equation_count": 220,
+      "horizontal_recurrence_failure_count": 0,
+      "irreps_with_nonzero_joint_primitive_component": 20,
+      "irreps_with_zero_joint_primitive_component": 2,
+      "maximum_branching_multiplicity": 2,
+      "spherical_source_mass_on_nonzero_primitive_irreps": 0.7968253968253968,
+      "split_recurrence_verified": true,
+      "status": "split-recurrence-exact-controlled-source-occupies-joint-primitives",
+      "symmetric_partition_count": 22,
+      "vertical_recurrence_equation_count": 220,
+      "vertical_recurrence_failure_count": 0
+    },
+    {
+      "controlled_source_uses_joint_primitive_space": true,
+      "exact_spherical_source_mass": "1",
+      "half_degree": 5,
+      "horizontal_recurrence_equation_count": 840,
+      "horizontal_recurrence_failure_count": 0,
+      "irreps_with_nonzero_joint_primitive_component": 42,
+      "irreps_with_zero_joint_primitive_component": 0,
+      "maximum_branching_multiplicity": 4,
+      "spherical_source_mass_on_nonzero_primitive_irreps": 1.0,
+      "split_recurrence_verified": true,
+      "status": "split-recurrence-exact-controlled-source-occupies-joint-primitives",
+      "symmetric_partition_count": 42,
+      "vertical_recurrence_equation_count": 840,
+      "vertical_recurrence_failure_count": 0
+    },
+    {
+      "controlled_source_uses_joint_primitive_space": true,
+      "exact_spherical_source_mass": "1901/1925",
+      "half_degree": 6,
+      "horizontal_recurrence_equation_count": 2772,
+      "horizontal_recurrence_failure_count": 0,
+      "irreps_with_nonzero_joint_primitive_component": 75,
+      "irreps_with_zero_joint_primitive_component": 2,
+      "maximum_branching_multiplicity": 14,
+      "spherical_source_mass_on_nonzero_primitive_irreps": 0.9875324675324675,
+      "split_recurrence_verified": true,
+      "status": "split-recurrence-exact-controlled-source-occupies-joint-primitives",
+      "symmetric_partition_count": 77,
+      "vertical_recurrence_equation_count": 2772,
+      "vertical_recurrence_failure_count": 0
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-HIDDEN-INVOLUTION-JOINT-PRIMITIVE-NATURAL-MASS",
+      "resolved": false,
+      "statement": "Prove or disprove nonvanishing asymptotic p_H mass on restriction vectors with quantitatively large joint-primitive components."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-PRIMITIVE-COMMUTANT-GENERATORS",
+      "resolved": false,
+      "statement": "Identify explicit K-centralizing ambient operators that generate a maximal algebra on the joint-primitive copy spaces."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-PRIMITIVE-LOCAL-ROTATIONS",
+      "resolved": false,
+      "statement": "Compile polynomial-cost local rotations for those generators without a classical plethysm table."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-MULTICOPY-NORMALIZED-RECOUPLING",
+      "resolved": false,
+      "statement": "Show that primitive copy resolution removes the 1/M polar normalization in the full multicopy overlap."
+    }
+  ],
+  "scaling_records": [
+    {
+      "asymptotic_constant": 3.289868133696453,
+      "bipartition_count": 5822,
+      "colour_resolved_recurrence_is_injective": false,
+      "half_degree": 16,
+      "half_degree_times_primitive_fraction": 1.580212985228444,
+      "joint_primitive_dimension": 575,
+      "joint_primitive_fraction": 0.09876331157677774,
+      "primitive_label_bits": 9.167418145831737,
+      "status": "joint-primitive-fraction-vanishes-but-dimension-grows"
+    },
+    {
+      "asymptotic_constant": 3.289868133696453,
+      "bipartition_count": 1046705,
+      "colour_resolved_recurrence_is_injective": false,
+      "half_degree": 32,
+      "half_degree_times_primitive_fraction": 1.9017392675109033,
+      "joint_primitive_dimension": 62205,
+      "joint_primitive_fraction": 0.05942935210971573,
+      "primitive_label_bits": 15.92474292751448,
+      "status": "joint-primitive-fraction-vanishes-but-dimension-grows"
+    },
+    {
+      "asymptotic_constant": 3.289868133696453,
+      "bipartition_count": 2238075315,
+      "colour_resolved_recurrence_is_injective": false,
+      "half_degree": 64,
+      "half_degree_times_primitive_fraction": 2.2047376721100203,
+      "joint_primitive_dimension": 77099515,
+      "joint_primitive_fraction": 0.034449026126719066,
+      "primitive_label_bits": 26.200218449004304,
+      "status": "joint-primitive-fraction-vanishes-but-dimension-grows"
+    },
+    {
+      "asymptotic_constant": 3.289868133696453,
+      "bipartition_count": 160207830443720,
+      "colour_resolved_recurrence_is_injective": false,
+      "half_degree": 128,
+      "half_degree_times_primitive_fraction": 2.463222942750468,
+      "joint_primitive_dimension": 3083028152791,
+      "joint_primitive_fraction": 0.01924392924023803,
+      "primitive_label_bits": 41.487485202179236,
+      "status": "joint-primitive-fraction-vanishes-but-dimension-grows"
+    }
+  ],
+  "status": "last-pair-colour-resolution-insufficient-joint-primitive-data-open",
+  "summary": "Proved that resolving the final C_2 branch colour strengthens but does not close the paired-tower recursion. The remaining joint-primitive space has an exact second-difference formula and high finite source occupancy, sharpening the next target to its commutant generators.",
+  "theorem": {
+    "asymptotic_joint_kernel": "The two-coloured partition asymptotic gives h_m/p_2(m)~pi^2/(3m): vanishing fraction but exp(Theta(sqrt m)) absolute dimension.",
+    "asymptotic_natural_source_primitive_mass_bounded": false,
+    "exact_all_rank_joint_kernel_proved": true,
+    "exact_joint_kernel": "ker D_alpha intersect ker D_beta has dimension h_m=p_2(m)-2p_2(m-1)+p_2(m-2).",
+    "finite_source_occupancy_verified": true,
+    "finite_source_witness": "For m=2,...,6, exact source mass on irreps with nonzero joint-primitive restriction component is at least 31/40.",
+    "joint_kernel_asymptotic_proved": true,
+    "no_go_scope": "Lower-rank multiplicities plus the final C_2 colour cannot recover the restriction vector; this is not an arbitrary-circuit lower bound.",
+    "normalized_subduction_transform_compiled": false,
+    "positive_target": "Find ambient-group commutant generators whose local rotations create the joint primitive component and survive natural source weighting.",
+    "primitive_commutant_generators_compiled": false,
+    "split_recurrence": "The last-pair C_2 label splits the down recurrence into horizontal two-strip D_alpha and vertical two-strip D_beta equations.",
+    "split_recurrence_proved": true,
+    "status": "last-pair-colour-resolution-insufficient-joint-primitive-data-open",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "claim_boundary": "Insufficiency of colour-resolved coefficient recurrences, not hardness of source-aware commutant rotations.",
+    "remaining_space": "ker D_alpha intersect ker D_beta",
+    "resolved_local_label": "The final K_1=C_2 type, equivalently horizontal h_2 versus vertical e_2 plethystic branching.",
+    "source_measure": "p_H(lambda)=d_lambda(d_lambda+chi_lambda(2^m))/(2m)!"
+  }
+}

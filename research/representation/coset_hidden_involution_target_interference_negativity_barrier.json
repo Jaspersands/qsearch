@@ -1,0 +1,188 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False. Destructive interference can keep operator norm at most one; that interference is exactly the required resource.",
+      "challenge": "Large group-basis L1 implies large operator norm.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Fourier transforms and polynomial functional calculus can implement huge implicit L1 without coefficient-state preparation.",
+      "challenge": "The L1 lower bound is already a quantum circuit lower bound.",
+      "resolved": true
+    },
+    {
+      "answer": "False for coefficient PREP/SELECT: its block normalization is the prepared coefficient L1 regardless of the final operator norm.",
+      "challenge": "Standard LCU can ignore its normalization because X is bounded.",
+      "resolved": true
+    },
+    {
+      "answer": "No. It must include normalization, precision, success probability, garbage uncomputation, and a matched classical-access analysis.",
+      "challenge": "Any claimed structured fast-forward should be accepted as progress.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "constant_bias_requires_factorial_group_basis_L1": true,
+    "direct_signed_sampling_has_factorial_range": true,
+    "hidden_involution_detector_constructed": false,
+    "matrix_CS_fast_forward_compiled": false,
+    "reason": "A useful detector needs factorial implicit group-basis cancellation; generic LCU pays it, while no structured fast-forward is known.",
+    "speedup_claim_allowed": false,
+    "standard_coefficient_PREP_SELECT_route_ruled_out": true,
+    "structured_quantum_fast_forward_ruled_out": false
+  },
+  "created_at": "2026-08-21T02:13:59.027164+00:00",
+  "falsifiers_triggered": [
+    "Polynomial group-basis L1 can never provide constant natural-copy bias.",
+    "Standard sparse-LCU target recoupling necessarily pays the candidate normalization.",
+    "Only an implicit structured interference compiler can evade the barrier."
+  ],
+  "headline_metrics": {
+    "exact_group_basis_negativity_lower_bound_count": 1,
+    "hidden_involution_detector_count": 0,
+    "standard_LCU_normalization_no_go_count": 1,
+    "structured_fast_forward_count": 0,
+    "tail_required_L1_decimal": "156406600600097912775421992510799265235854639030643566981885505125382740371939968181147559062048477307480030514845047733042984970348431570702319948420408075777707784414875514508109992297150739757866393717281793345708683969828583192991517948853349311840256",
+    "tail_required_L1_log2_lower_bound": 844.4150374992788
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-TARGET-NEGATIVITY-STRUCTURED-FAST-FORWARD",
+      "resolved": false,
+      "statement": "Construct a polynomial circuit whose implicit group-basis L1 is Omega(M), or prove the matrix-CS reflections cannot fast-forward it."
+    },
+    {
+      "id": "PO-TARGET-NEGATIVITY-SIGN-STRUCTURE",
+      "resolved": false,
+      "statement": "Derive the sign/phase organization of the optimal or candidate polar observable and test whether it has an integrable transform."
+    },
+    {
+      "id": "PO-TARGET-NEGATIVITY-CLASSICAL-MATCHED-BASELINE",
+      "resolved": false,
+      "statement": "For every proposed structured cancellation, identify the matched classical estimator rather than relying only on generic L1 sampling."
+    }
+  ],
+  "scaling_records": [
+    {
+      "coefficient_sampling_range_lower_bound_decimal": "2731",
+      "copy_count": 13,
+      "degree": 8,
+      "half_degree": 4,
+      "hidden_matching_count_decimal": "105",
+      "hidden_matching_label_bits": 6.714245517666122,
+      "normalization_is_factorial_in_half_degree": true,
+      "required_L1_over_candidate_count": 26.00952380952381,
+      "required_group_basis_L1_norm_log2_lower_bound": 11.415213598765286,
+      "required_group_basis_L1_norm_lower_bound_decimal": "2731",
+      "standard_LCU_amplitude_amplification_query_lower_bound_decimal": "2731",
+      "standard_LCU_raw_postselection_probability_upper_bound": 1.340777149295938e-07,
+      "status": "constant-bias-requires-factorial-group-basis-negativity",
+      "target_bias": 0.3333333333333333
+    },
+    {
+      "coefficient_sampling_range_lower_bound_decimal": "44739243",
+      "copy_count": 27,
+      "degree": 16,
+      "half_degree": 8,
+      "hidden_matching_count_decimal": "2027025",
+      "hidden_matching_label_bits": 20.950932451495344,
+      "normalization_is_factorial_in_half_degree": true,
+      "required_L1_over_candidate_count": 22.07138195138195,
+      "required_group_basis_L1_norm_log2_lower_bound": 25.41503751002776,
+      "required_group_basis_L1_norm_lower_bound_decimal": "44739243",
+      "standard_LCU_amplitude_amplification_query_lower_bound_decimal": "44739243",
+      "standard_LCU_raw_postselection_probability_upper_bound": 4.99600353636695e-16,
+      "status": "constant-bias-requires-factorial-group-basis-negativity",
+      "target_bias": 0.3333333333333333
+    },
+    {
+      "coefficient_sampling_range_lower_bound_decimal": "6148914691236516864",
+      "copy_count": 64,
+      "degree": 32,
+      "half_degree": 16,
+      "hidden_matching_count_decimal": "191898783962510625",
+      "hidden_matching_label_bits": 57.41312318247768,
+      "normalization_is_factorial_in_half_degree": true,
+      "required_L1_over_candidate_count": 32.04248908861126,
+      "required_group_basis_L1_norm_log2_lower_bound": 62.415037499278846,
+      "required_group_basis_L1_norm_lower_bound_decimal": "6148914691236516864",
+      "standard_LCU_amplitude_amplification_query_lower_bound_decimal": "6148914691236516864",
+      "standard_LCU_raw_postselection_probability_upper_bound": 2.644862289350147e-38,
+      "status": "constant-bias-requires-factorial-group-basis-negativity",
+      "target_bias": 0.3333333333333333
+    },
+    {
+      "coefficient_sampling_range_lower_bound_decimal": "3805993847215892804880329213827086780903456768",
+      "copy_count": 153,
+      "degree": 64,
+      "half_degree": 32,
+      "hidden_matching_count_decimal": "112275575285571389562324404930670903477890625",
+      "hidden_matching_label_bits": 146.33188028936374,
+      "normalization_is_factorial_in_half_degree": true,
+      "required_L1_over_candidate_count": 33.898680434594965,
+      "required_group_basis_L1_norm_log2_lower_bound": 151.41503749927884,
+      "required_group_basis_L1_norm_lower_bound_decimal": "3805993847215892804880329213827086780903456768",
+      "standard_LCU_amplitude_amplification_query_lower_bound_decimal": "3805993847215892804880329213827086780903456768",
+      "standard_LCU_raw_postselection_probability_upper_bound": 6.903412685574928e-92,
+      "status": "constant-bias-requires-factorial-group-basis-negativity",
+      "target_bias": 0.3333333333333333
+    },
+    {
+      "coefficient_sampling_range_lower_bound_decimal": "6262780220730221593384474963685940016520422641888313502435503405099437291737652492755455502749918686118674432",
+      "copy_count": 363,
+      "degree": 128,
+      "half_degree": 64,
+      "hidden_matching_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "hidden_matching_label_bits": 356.16657814189784,
+      "normalization_is_factorial_in_half_degree": true,
+      "required_L1_over_candidate_count": 38.014011135194394,
+      "required_group_basis_L1_norm_log2_lower_bound": 361.41503749927887,
+      "required_group_basis_L1_norm_lower_bound_decimal": "6262780220730221593384474963685940016520422641888313502435503405099437291737652492755455502749918686118674432",
+      "standard_LCU_amplitude_amplification_query_lower_bound_decimal": "6262780220730221593384474963685940016520422641888313502435503405099437291737652492755455502749918686118674432",
+      "standard_LCU_raw_postselection_probability_upper_bound": 2.5495624686265645e-218,
+      "status": "constant-bias-requires-factorial-group-basis-negativity",
+      "target_bias": 0.3333333333333333
+    },
+    {
+      "coefficient_sampling_range_lower_bound_decimal": "156406600600097912775421992510799265235854639030643566981885505125382740371939968181147559062048477307480030514845047733042984970348431570702319948420408075777707784414875514508109992297150739757866393717281793345708683969828583192991517948853349311840256",
+      "copy_count": 846,
+      "degree": 256,
+      "half_degree": 128,
+      "hidden_matching_count_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "hidden_matching_label_bits": 839.8345651405928,
+      "normalization_is_factorial_in_half_degree": true,
+      "required_L1_over_candidate_count": 23.925420215619752,
+      "required_group_basis_L1_norm_log2_lower_bound": 844.4150374992788,
+      "required_group_basis_L1_norm_lower_bound_decimal": "156406600600097912775421992510799265235854639030643566981885505125382740371939968181147559062048477307480030514845047733042984970348431570702319948420408075777707784414875514508109992297150739757866393717281793345708683969828583192991517948853349311840256",
+      "standard_LCU_amplitude_amplification_query_lower_bound_decimal": "156406600600097912775421992510799265235854639030643566981885505125382740371939968181147559062048477307480030514845047733042984970348431570702319948420408075777707784414875514508109992297150739757866393717281793345708683969828583192991517948853349311840256",
+      "standard_LCU_raw_postselection_probability_upper_bound": 0.0,
+      "status": "constant-bias-requires-factorial-group-basis-negativity",
+      "target_bias": 0.3333333333333333
+    }
+  ],
+  "status": "factorial-target-interference-negativity-barrier-proved-fast-forward-open",
+  "summary": "Proved that every constant-bias detector requires factorial group-basis negativity and ruled out ordinary coefficient PREP/SELECT as the escape.",
+  "theorem": {
+    "all_structured_quantum_compilers_ruled_out": false,
+    "bias_duality": "The exact pointwise basis bias bound gives beta(X)<=2^-k ||X||_(group-basis L1), hence L1>=beta 2^k.",
+    "classical_sampling_consequence": "Direct signed coefficient sampling has range proportional to L1 and does not efficiently estimate constant bias without extra structure.",
+    "constant_bias_requires_Omega_candidate_count_L1_proved": true,
+    "direct_quasiprobability_sampling_has_exponential_range": true,
+    "exact_group_basis_L1_lower_bound_proved": true,
+    "hidden_involution_detector_constructed": false,
+    "matrix_CS_fast_forward_compiled": false,
+    "natural_copy_bound": "At k=ceil(log2(64M)), constant beta requires L1>=64 beta M, factorial for the perfect-matching candidate orbit.",
+    "speedup_claim_allowed": false,
+    "standard_LCU_consequence": "Coefficient PREP/SELECT has normalization at least this L1, raw postselection at most L1^-2, and generic amplification cost at least L1.",
+    "standard_coefficient_PREP_SELECT_route_ruled_out": true,
+    "status": "factorial-target-interference-negativity-barrier-proved-fast-forward-open",
+    "surviving_quantum_route": "A positive compiler must fast-forward the factorial cancellation via structured QFT/QSVT/reflection/polar dynamics rather than enumerate coefficients.",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "claim_boundary": "Rules out generic coefficient PREP/SELECT normalization, not structured circuits whose group-basis expansion is implicit.",
+    "observable": "Any group-algebra element on G^k x G",
+    "resource": "Coefficient L1 norm in the canonical group basis",
+    "target": "Constant baseline-versus-likelihood linear bias"
+  }
+}

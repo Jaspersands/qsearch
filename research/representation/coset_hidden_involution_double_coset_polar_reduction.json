@@ -1,0 +1,294 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False generically: kernel phase pi is separated from the natural bulk by Theta(M^-1/2).",
+      "challenge": "Efficient subgroup reflections compile the polar.",
+      "resolved": true
+    },
+    {
+      "answer": "False: diagonal invariant multiplicities exceed one already for four standard factors.",
+      "challenge": "The tensor G QFT makes the double-coset transform scalar.",
+      "resolved": true
+    },
+    {
+      "answer": "False: partition-algebra or other structured transforms can act on large multiplicity spaces succinctly.",
+      "challenge": "Large invariant multiplicity proves computational hardness.",
+      "resolved": true
+    },
+    {
+      "answer": "False: it isolates the exact matrix transform and preserves all normalization and label-erasure debt.",
+      "challenge": "The homogeneous-space reformulation is itself a detector.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "binary_hidden_involution_detector_constructed": false,
+    "double_coset_incidence_normal_form_proved": true,
+    "efficient_subgroup_reflections_available": true,
+    "generic_alternating_reflection_polar_polynomial": false,
+    "matrix_cosine_sine_transform_compiled": false,
+    "natural_problem_speedup_proved": false,
+    "reason": "The row polar is now an exact two-subgroup matrix Cosine-Sine problem, but neither its matrix multiplicity transform nor a normalization-preserving fast-forward is compiled.",
+    "row_polar_is_subgroup_cosine_sine_alignment": true,
+    "scalar_spherical_transform_sufficient": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-21T13:08:03.870759+00:00",
+  "falsifiers_triggered": [
+    "The row-frame operator is not an unstructured list of orbit representatives; it is one homogeneous double-coset incidence operator.",
+    "Efficient preparation of both subgroup projectors does not remove the natural principal-angle scale.",
+    "A scalar perfect-matching spherical transform cannot represent the growing diagonal tensor multiplicities.",
+    "The remaining positive escape must be a direct matrix transform or structured fast-forward, not generic QSVT under a new name."
+  ],
+  "finite_controls": [
+    {
+      "ambient_product_group_order": 36,
+      "candidate_count": 3,
+      "copy_count": 1,
+      "diagonal_subgroup_order": 6,
+      "discriminant_top_singular_value": 1.0000000000000002,
+      "exact_double_coset_incidence_verified": true,
+      "exact_homogeneous_space_bijections_verified": true,
+      "group_order": 6,
+      "maximum_coset_embedding_residual": 0.0,
+      "maximum_incidence_formula_residual": 0.0,
+      "n": 3,
+      "nonzero_coset_overlap": 0.4082482904638631,
+      "physical_coset_count": 6,
+      "physical_incidence_degree": 3,
+      "predicted_nonzero_coset_overlap": 0.4082482904638631,
+      "predicted_physical_coset_count": 6,
+      "predicted_source_coset_count": 9,
+      "source_coset_count": 9,
+      "source_incidence_degree": 2,
+      "source_stabilizer_order": 4,
+      "status": "exact-double-coset-incidence-normal-form-verified",
+      "subgroup_intersection_order": 2,
+      "transposition_count": 1
+    },
+    {
+      "ambient_product_group_order": 216,
+      "candidate_count": 3,
+      "copy_count": 2,
+      "diagonal_subgroup_order": 6,
+      "discriminant_top_singular_value": 1.0000000000000002,
+      "exact_double_coset_incidence_verified": true,
+      "exact_homogeneous_space_bijections_verified": true,
+      "group_order": 6,
+      "maximum_coset_embedding_residual": 0.0,
+      "maximum_incidence_formula_residual": 0.0,
+      "n": 3,
+      "nonzero_coset_overlap": 0.2886751345948129,
+      "physical_coset_count": 36,
+      "physical_incidence_degree": 3,
+      "predicted_nonzero_coset_overlap": 0.2886751345948129,
+      "predicted_physical_coset_count": 36,
+      "predicted_source_coset_count": 27,
+      "source_coset_count": 27,
+      "source_incidence_degree": 4,
+      "source_stabilizer_order": 8,
+      "status": "exact-double-coset-incidence-normal-form-verified",
+      "subgroup_intersection_order": 2,
+      "transposition_count": 1
+    }
+  ],
+  "headline_metrics": {
+    "exact_double_coset_finite_control_count": 2,
+    "finite_control_failure_count": 0,
+    "matrix_cosine_sine_transform_compiler_count": 0,
+    "matrix_multiplicity_control_count": 2,
+    "matrix_multiplicity_failure_count": 0,
+    "maximum_finite_diagonal_standard_multiplicity": 4,
+    "new_quantum_algorithm_count": 0,
+    "tail_generic_reflection_query_log2_lower_order": 177.79080782058836,
+    "tail_log2_standard_invariant_multiplicity_lower_bound": 1827.7195039014464
+  },
+  "multiplicity_controls": [
+    {
+      "exact_character_average_verified": true,
+      "exact_diagonal_invariant_multiplicity": 3,
+      "identity_term_multiplicity_lower_bound": 2.6666666666666665,
+      "n": 3,
+      "scalar_gelfand_multiplicity_free": false,
+      "standard_dimension": 2,
+      "status": "diagonal-invariant-multiplicity-is-matrix-valued",
+      "tensor_order": 4
+    },
+    {
+      "exact_character_average_verified": true,
+      "exact_diagonal_invariant_multiplicity": 4,
+      "identity_term_multiplicity_lower_bound": 3.375,
+      "n": 4,
+      "scalar_gelfand_multiplicity_free": false,
+      "standard_dimension": 3,
+      "status": "diagonal-invariant-multiplicity-is-matrix-valued",
+      "tensor_order": 4
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-HIDDEN-INVOLUTION-MATRIX-CS-TRANSFORM",
+      "resolved": false,
+      "statement": "Construct the matrix Cosine-Sine transform between A- and B-fixed multiplicity spaces without enumerating tensor invariants."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-STRUCTURED-FAST-FORWARD",
+      "resolved": false,
+      "statement": "Fast-forward the subgroup-reflection product near phase pi, or expose a direct normalization that avoids sqrt(M)."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-NATURAL-CLASSICAL-SEPARATION",
+      "resolved": false,
+      "statement": "After any positive compiler, compare against matched query/sample-limited classical access on rigid GI or code equivalence instances."
+    }
+  ],
+  "scaling_records": [
+    {
+      "candidate_count_decimal": "3",
+      "copy_count": 8,
+      "degree": 4,
+      "efficient_subgroup_reflections_available": true,
+      "even_standard_tensor_order": 8,
+      "generic_reflection_phase_query_log2_lower_order": 0.49999999999999994,
+      "half_degree": 2,
+      "log2_identity_term_invariant_multiplicity_lower_bound": 8.094737505048094,
+      "matrix_cosine_sine_transform_compiled": false,
+      "matrix_tensor_order": 9,
+      "retained_alternative_mass": 0.90625,
+      "retained_principal_cosine_lower": 0.4082482904638631,
+      "retained_principal_cosine_upper": 0.7071067811865476,
+      "scalar_spherical_transform_sufficient": false,
+      "status": "matrix-double-coset-polar-open-generic-reflections-superpolynomial"
+    },
+    {
+      "candidate_count_decimal": "15",
+      "copy_count": 10,
+      "degree": 6,
+      "efficient_subgroup_reflections_available": true,
+      "even_standard_tensor_order": 10,
+      "generic_reflection_phase_query_log2_lower_order": 1.6609640474436813,
+      "half_degree": 3,
+      "log2_identity_term_invariant_multiplicity_lower_bound": 13.727427852543945,
+      "matrix_cosine_sine_transform_compiled": false,
+      "matrix_tensor_order": 11,
+      "retained_alternative_mass": 0.90625,
+      "retained_principal_cosine_lower": 0.18257418583505536,
+      "retained_principal_cosine_upper": 0.31622776601683794,
+      "scalar_spherical_transform_sufficient": false,
+      "status": "matrix-double-coset-polar-open-generic-reflections-superpolynomial"
+    },
+    {
+      "candidate_count_decimal": "105",
+      "copy_count": 13,
+      "degree": 8,
+      "efficient_subgroup_reflections_available": true,
+      "even_standard_tensor_order": 14,
+      "generic_reflection_phase_query_log2_lower_order": 3.064641508472483,
+      "half_degree": 4,
+      "log2_identity_term_invariant_multiplicity_lower_bound": 24.003760890419176,
+      "matrix_cosine_sine_transform_compiled": false,
+      "matrix_tensor_order": 14,
+      "retained_alternative_mass": 0.90625,
+      "retained_principal_cosine_lower": 0.06900655593423542,
+      "retained_principal_cosine_upper": 0.11952286093343936,
+      "scalar_spherical_transform_sufficient": false,
+      "status": "matrix-double-coset-polar-open-generic-reflections-superpolynomial"
+    },
+    {
+      "candidate_count_decimal": "2027025",
+      "copy_count": 27,
+      "degree": 16,
+      "efficient_subgroup_reflections_available": true,
+      "even_standard_tensor_order": 28,
+      "generic_reflection_phase_query_log2_lower_order": 10.182984975387093,
+      "half_degree": 8,
+      "log2_identity_term_invariant_multiplicity_lower_bound": 65.1427962071559,
+      "matrix_cosine_sine_transform_compiled": false,
+      "matrix_tensor_order": 28,
+      "retained_alternative_mass": 0.90625,
+      "retained_principal_cosine_lower": 0.0004966557291863047,
+      "retained_principal_cosine_upper": 0.0008602329568208486,
+      "scalar_spherical_transform_sufficient": false,
+      "status": "matrix-double-coset-polar-open-generic-reflections-superpolynomial"
+    },
+    {
+      "candidate_count_decimal": "191898783962510625",
+      "copy_count": 64,
+      "degree": 32,
+      "efficient_subgroup_reflections_available": true,
+      "even_standard_tensor_order": 64,
+      "generic_reflection_phase_query_log2_lower_order": 28.414080340878265,
+      "half_degree": 16,
+      "log2_identity_term_invariant_multiplicity_lower_bound": 199.4053002123997,
+      "matrix_cosine_sine_transform_compiled": false,
+      "matrix_tensor_order": 65,
+      "retained_alternative_mass": 0.90625,
+      "retained_principal_cosine_lower": 1.6141685851015238e-09,
+      "retained_principal_cosine_upper": 2.7958220013774065e-09,
+      "scalar_spherical_transform_sufficient": false,
+      "status": "matrix-double-coset-polar-open-generic-reflections-superpolynomial"
+    },
+    {
+      "candidate_count_decimal": "112275575285571389562324404930670903477890625",
+      "copy_count": 153,
+      "degree": 64,
+      "efficient_subgroup_reflections_available": true,
+      "even_standard_tensor_order": 154,
+      "generic_reflection_phase_query_log2_lower_order": 72.87345889432129,
+      "half_degree": 32,
+      "log2_identity_term_invariant_multiplicity_lower_bound": 624.505964277263,
+      "matrix_cosine_sine_transform_compiled": false,
+      "matrix_tensor_order": 154,
+      "retained_alternative_mass": 0.90625,
+      "retained_principal_cosine_lower": 6.673326253331873e-23,
+      "retained_principal_cosine_upper": 1.1558540126254062e-22,
+      "scalar_spherical_transform_sufficient": false,
+      "status": "matrix-double-coset-polar-open-generic-reflections-superpolynomial"
+    },
+    {
+      "candidate_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "copy_count": 363,
+      "degree": 128,
+      "efficient_subgroup_reflections_available": true,
+      "even_standard_tensor_order": 364,
+      "generic_reflection_phase_query_log2_lower_order": 177.79080782058836,
+      "half_degree": 64,
+      "log2_identity_term_invariant_multiplicity_lower_bound": 1827.7195039014464,
+      "matrix_cosine_sine_transform_compiled": false,
+      "matrix_tensor_order": 364,
+      "retained_alternative_mass": 0.90625,
+      "retained_principal_cosine_lower": 1.7421007403309108e-54,
+      "retained_principal_cosine_upper": 3.017406994156493e-54,
+      "scalar_spherical_transform_sufficient": false,
+      "status": "matrix-double-coset-polar-open-generic-reflections-superpolynomial"
+    }
+  ],
+  "status": "double-coset-cosine-sine-normal-form-proved-matrix-polar-open",
+  "summary": "Converted the hidden-involution row frame into an exact double-coset overlap between diagonal and source stabilizers, exposing the required matrix Cosine-Sine transform and preserving the sqrt(M) generic phase barrier.",
+  "theorem": {
+    "ambient_group": "L=G^k x G with componentwise multiplication.",
+    "binary_hidden_involution_detector_constructed": false,
+    "coset_embedding_identity": "For normalized right-coset embeddings V_A,V_B, V_A^*V_B=I_incidence/sqrt(2^k [G:C_G(h)]).",
+    "efficient_subgroup_reflections_available": true,
+    "exact_double_coset_normal_form_proved": true,
+    "fourier_multiplicity": "The L-Fourier A-fixed block is Inv_G(nu_1 tensor ... tensor nu_k tensor tau), which is already non-multiplicity-free on four standard factors and grows rapidly at natural k.",
+    "generic_alternating_reflection_polar_polynomial": false,
+    "generic_phase_boundary": "Natural-bulk principal cosines are Theta(M^-1/2), so generic alternating-reflection phase resolution costs Omega(sqrt(M)).",
+    "homogeneous_spaces": "L/A is the physical G^k basis and L/B is the full hidden-involution/coset-tuple source basis.",
+    "matrix_cosine_sine_transform_compiled": false,
+    "physical_stabilizer": "A=Delta(G)={(r,...,r;r)}.",
+    "principal_angle_form": "The row polar is the Cosine-Sine alignment of the right-A and right-B invariant subspaces in C[L].",
+    "remaining_transform": "Construct a direct matrix Cosine-Sine/partition-algebra transform with physical normalization, or prove a natural-model obstruction.",
+    "scalar_spherical_transform_sufficient": false,
+    "source_stabilizer": "B={(eps_1 r,...,eps_k r;r): r in C_G(h), eps_i in <h>}",
+    "status": "double-coset-cosine-sine-normal-form-proved-matrix-polar-open",
+    "subgroup_reflection_access": "Uniform A and B preparation gives exact invariant-subspace reflections for the symmetric/hyperoctahedral family.",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "claim_boundary": "Exact homogeneous-space structure and generic-reflection no-go; no arbitrary-circuit lower bound or algorithm.",
+    "input_model": "Fresh right-coset states for a uniformly conjugated involution; no evaluator or chosen hidden label access.",
+    "normalization": "The source synthesis is sqrt(M) times V_A^*V_B; scalar rescaling does not change its polar.",
+    "scope": "The reduction covers the full untrimmed incidence operator. Trimmed orbit canonicalization is a source reindexing on its good subspace, not a different polar normalization."
+  }
+}

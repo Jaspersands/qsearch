@@ -1,0 +1,171 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False: A_5 and B_6 reach the exact upper bound 15 from the same vectors, proving their full-commutant cyclicity.",
+      "challenge": "Support five may fail only because the test vector is noncyclic.",
+      "resolved": true
+    },
+    {
+      "answer": "False: the complete K_6 center does not increase reach beyond 13.",
+      "challenge": "The two missing dimensions are unresolved K labels.",
+      "resolved": true
+    },
+    {
+      "answer": "False: B_6 alone reaches 11 and A_5 alone reaches 10; their noncommutative interaction is required.",
+      "challenge": "One support-six orbit alone supplies the full algebra.",
+      "resolved": true
+    },
+    {
+      "answer": "False: the evidence falsifies cutoffs <=5 only. Support six could still be uniform at later ranks.",
+      "challenge": "Thresholds 4,5,6 prove support must grow forever.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "binary_hidden_involution_detector_constructed": false,
+    "coherent_missing_label_transform_compiled": false,
+    "explicit_support_six_pair_generates_target": true,
+    "inverse_polynomial_spectral_gap_proved": false,
+    "natural_mass_generation_proved": false,
+    "reason": "Cutoffs <=5 are not uniform, while one support-six pair repairs the finite target. Uniform support, gaps, natural mass, coherent recoupling, and decoding remain open.",
+    "source_aware_normalized_subduction_transform_compiled": false,
+    "speedup_claim_allowed": false,
+    "support_five_deficit_survives_full_K_center": true,
+    "unbounded_support_requirement_proved": false,
+    "universal_support_cutoff_at_most_five_falsified": true,
+    "universal_support_six_generation_proved": false
+  },
+  "control": {
+    "K_center_class_count": 65,
+    "exact_commutant_dimension": 15,
+    "finite_dense_control_only": true,
+    "full_commutant_generic_cyclic_capacity": 15,
+    "half_degree": 6,
+    "maximum_branching_multiplicity": 2,
+    "maximum_witness_K_commutator_residual": 1.4472608106411992e-14,
+    "maximum_witness_hermiticity_residual": 0.0,
+    "occupied_K_block_count": 12,
+    "repeated_K_block_count": 1,
+    "status": "support-at-most-five-fails-explicit-support-six-pair-closes-S12-target",
+    "support_at_most_five_generates_full_commutant": false,
+    "support_five_cyclic_reaches": [
+      13,
+      13,
+      13
+    ],
+    "support_five_deficit_survives_K_center": true,
+    "support_five_orbit_inventory_count": 28,
+    "support_five_plus_K_center_cyclic_reaches": [
+      13,
+      13,
+      13
+    ],
+    "support_five_witness_cyclic_reaches": [
+      10,
+      10,
+      10
+    ],
+    "support_five_witness_orbit_size": 4608,
+    "support_four_cyclic_reaches": [
+      13,
+      13,
+      13
+    ],
+    "support_six_witness_cyclic_reaches": [
+      11,
+      11,
+      11
+    ],
+    "support_six_witness_orbit_size": 2880,
+    "support_three_cyclic_reaches": [
+      5,
+      5,
+      5
+    ],
+    "support_two_cyclic_reaches": [
+      5,
+      5,
+      5
+    ],
+    "symmetric_irrep_dimension": 275,
+    "symmetric_partition": [
+      8,
+      4
+    ],
+    "witness_pair_cyclic_reaches": [
+      15,
+      15,
+      15
+    ],
+    "witness_pair_generates_full_commutant": true
+  },
+  "created_at": "2026-08-20T18:53:06.762291+00:00",
+  "falsifiers_triggered": [
+    "No universal hyperoctahedral commutant generator theorem with support cutoff at most five can hold.",
+    "The rank-six support-five deficit lies inside a multiplicity-two copy space.",
+    "A support-six coupled-cycle orbit repairs the deficit only through noncommutative interaction with a support-five orbit.",
+    "Three finite thresholds do not prove an unbounded-support lower bound or a speedup."
+  ],
+  "headline_metrics": {
+    "exact_target_commutant_dimension": 15,
+    "inverse_polynomial_gap_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "support_five_cyclic_reach": 13,
+    "support_five_inventory_count": 28,
+    "support_five_plus_K_center_reach": 13,
+    "support_five_witness_orbit_size": 4608,
+    "support_five_witness_reach": 10,
+    "support_six_witness_orbit_size": 2880,
+    "support_six_witness_reach": 11,
+    "target_irrep_dimension": 275,
+    "unbounded_support_lower_bound_count": 0,
+    "uniform_support_six_theorem_count": 0,
+    "witness_pair_cyclic_reach": 15
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-HIDDEN-INVOLUTION-SUPPORT-SIX-UNIFORMITY",
+      "resolved": false,
+      "statement": "Prove or falsify that the 82 support-six orbit types generate all asymptotically natural branching commutants."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-SUPPORT-FILTRATION-INVARIANT",
+      "resolved": false,
+      "statement": "Construct a scalable multiplicity family and an invariant that all orbit sums below a growing support threshold preserve."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-COMMUTANT-WITNESS-GAP",
+      "resolved": false,
+      "statement": "Find explicit weights for A_5,B_6 or a uniform successor family with inverse-polynomial copy-space eigenvalue gap."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-COMMUTANT-NATURAL-RECOUPLING",
+      "resolved": false,
+      "statement": "Transfer generator and gap control to natural source mass and compose it with the multicopy normalized polar."
+    }
+  ],
+  "status": "universal-support-at-most-five-falsified-support-six-uniformity-open",
+  "summary": "Extended the commutant-generator threshold sequence to 4,5,6 and isolated two explicit polynomial-size orbit sums that close the S_12 target. This falsifies all universal cutoffs through five and turns support-growth into the active asymptotic make-or-break question.",
+  "theorem": {
+    "asymptotic_cost_boundary": "Every fixed cutoff is polynomial inventory, but a cutoff growing linearly with m would make direct orbit preparation superpolynomial.",
+    "explicit_repair": "The support-five five-cycle orbit A_5 and support-six coupled-3-cycle orbit B_6 have reaches 10 and 11 separately but 15 jointly.",
+    "explicit_support_six_pair_generates_target": true,
+    "finite_threshold_sequence": "Successful controlled cutoffs rise from four at m=4, to five in the m=5 lambda=(6,3,1) target, to six in the m=6 lambda=(8,4) target.",
+    "internal_copy_space_certificate": "Adding all 65 K_6 central class sums leaves reach 13, localizing the deficit inside the unique multiplicity-two branch.",
+    "next_decisive_test": "Prove a support-degree filtration invariant for a scalable lambda_m family, or prove support six generates all natural blocks uniformly.",
+    "rank_six_deficit": "All 28 Hermitian orbit types through support five reach 13 rather than the exact commutant cyclic capacity 15.",
+    "status": "universal-support-at-most-five-falsified-support-six-uniformity-open",
+    "support_five_deficit_is_only_K_label_collision": false,
+    "theorem_verified": true,
+    "unbounded_support_requirement_proved": false,
+    "universal_support_cutoff_at_most_five_falsified": true,
+    "universal_support_six_generation_proved": false
+  },
+  "theorem_contract": {
+    "claim_boundary": "Finite falsification of universal cutoffs <=5, not proof of unbounded support or a coherent algorithm.",
+    "multiplicity_structure": "12 occupied K blocks, one b=2 block, exact commutant dimension 15",
+    "support_five_witness": "Hermitian K orbit of cycle (3 4 6 8 10), size 4608",
+    "support_six_witness": "Hermitian K orbit of (5 6 8)(7 9 10), size 2880",
+    "target": "S_12 irrep lambda=(8,4) restricted to K_6=C_2 wr S_6"
+  }
+}

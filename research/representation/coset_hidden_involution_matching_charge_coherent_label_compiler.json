@@ -1,0 +1,214 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "Here the explicit combinadic/local index is bijective and every coefficient is exactly 1/N_m, so PREP/SELECT normalization is one.",
+      "challenge": "Orbit size polynomial does not give coherent normalized access.",
+      "resolved": true
+    },
+    {
+      "answer": "False for phase labeling: right-regular D_m access acts directly on the physical group register and phase estimation supplies its label.",
+      "challenge": "The inverse-polynomial spectral direction may require subduction first.",
+      "resolved": true
+    },
+    {
+      "answer": "False exactly: every standalone source-local K-charge measurement has the same likelihood-weighted and baseline distribution.",
+      "challenge": "The compiled D_m label is already a hidden-involution detector.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Minimum gaps and residual degeneracies remain uncontrolled.",
+      "challenge": "One separated pair resolves the full multiplicity space.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_copy_target_coupled_use_compiled": false,
+    "coherent_inverse_polynomial_D_label_compiled": true,
+    "conditional_natural_D_direction_resolvable": true,
+    "full_joint_minimum_gap_proved": false,
+    "hidden_involution_detector_constructed": false,
+    "normalization_one_D_block_encoding_compiled": true,
+    "reason": "The first natural within-mu spectral direction is coherently accessible, but its measured distribution is exactly blind and no target-coupled recoupling use is known.",
+    "residual_multiplicity_bounded": false,
+    "speedup_claim_allowed": false,
+    "standalone_D_measurement_likelihood_blind": true
+  },
+  "created_at": "2026-08-21T13:08:04.057043+00:00",
+  "falsifiers_triggered": [
+    "Hyperoctahedral subduction is not required merely to access the D_m eigenvalue label.",
+    "The natural D_m separated direction is polynomially phase-resolvable.",
+    "A standalone D_m measurement remains exactly likelihood blind."
+  ],
+  "headline_metrics": {
+    "coherent_inverse_polynomial_D_label_count": 1,
+    "maximum_dense_index_control_half_degree": 6,
+    "new_quantum_algorithm_count": 0,
+    "normalization_one_D_block_encoding_count": 1,
+    "standalone_D_detector_count": 0,
+    "tail_SELECT_query_log2_upper_bound": 43.439552596556496,
+    "target_coupled_decoder_count": 0
+  },
+  "index_controls": [
+    {
+      "distinct_term_count": 192,
+      "expected_term_count": 192,
+      "four_subset_count": 1,
+      "half_degree": 4,
+      "indexed_term_count": 192,
+      "inverse_closed": true,
+      "local_orbit_size": 192,
+      "maximum_moved_point_count": 6,
+      "status": "matching-charge-reversible-orbit-index-verified",
+      "subset_rank_unrank_verified": true,
+      "term_index_is_bijective": true
+    },
+    {
+      "distinct_term_count": 960,
+      "expected_term_count": 960,
+      "four_subset_count": 5,
+      "half_degree": 5,
+      "indexed_term_count": 960,
+      "inverse_closed": true,
+      "local_orbit_size": 192,
+      "maximum_moved_point_count": 6,
+      "status": "matching-charge-reversible-orbit-index-verified",
+      "subset_rank_unrank_verified": true,
+      "term_index_is_bijective": true
+    },
+    {
+      "distinct_term_count": 2880,
+      "expected_term_count": 2880,
+      "four_subset_count": 15,
+      "half_degree": 6,
+      "indexed_term_count": 2880,
+      "inverse_closed": true,
+      "local_orbit_size": 192,
+      "maximum_moved_point_count": 6,
+      "status": "matching-charge-reversible-orbit-index-verified",
+      "subset_rank_unrank_verified": true,
+      "term_index_is_bijective": true
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-MATCHING-D-TARGET-COUPLED-USE",
+      "resolved": false,
+      "statement": "Construct an all-copy target-controlled operation using the coherent D_m label before measurement, or prove all such uses dequantize."
+    },
+    {
+      "id": "PO-MATCHING-D-RESIDUAL-DEGENERACY",
+      "resolved": false,
+      "statement": "Bound residual branching-copy multiplicity after the coherent C_m,D_m labels on natural source mass."
+    },
+    {
+      "id": "PO-MATCHING-D-PHYSICAL-END-TO-END-COST",
+      "resolved": false,
+      "statement": "Compose label extraction with target recoupling, uncompute all ancillas, and audit copies, precision, memory, and classical access."
+    }
+  ],
+  "scaling_records": [
+    {
+      "SELECT_query_log2": 27.50699488445355,
+      "SELECT_query_upper_bound": 190735069,
+      "conditional_diameter_lower_bound": 6.105260415393366e-07,
+      "good_source_mass_lower_bound": 9.318551184942295e-14,
+      "half_degree": 11,
+      "local_SELECT_moved_point_upper_bound": 6,
+      "matching_charge_term_count": 63360,
+      "query_bound_polynomial_in_half_degree": true,
+      "standalone_label_distribution_likelihood_blind": true,
+      "status": "coherent-D-label-polynomial-query-standalone-blind",
+      "target_failure_probability": 9.5367431640625e-07,
+      "target_phase_precision": 1.5263151038483416e-07,
+      "term_index_qubits": 16
+    },
+    {
+      "SELECT_query_log2": 29.939552597739894,
+      "SELECT_query_upper_bound": 1029682635,
+      "conditional_diameter_lower_bound": 1.130918619692938e-07,
+      "good_source_mass_lower_bound": 3.197442310920451e-15,
+      "half_degree": 16,
+      "local_SELECT_moved_point_upper_bound": 6,
+      "matching_charge_term_count": 349440,
+      "query_bound_polynomial_in_half_degree": true,
+      "standalone_label_distribution_likelihood_blind": true,
+      "status": "coherent-D-label-polynomial-query-standalone-blind",
+      "target_failure_probability": 9.5367431640625e-07,
+      "target_phase_precision": 2.827296549232345e-08,
+      "term_index_qubits": 19
+    },
+    {
+      "SELECT_query_log2": 34.439552596581166,
+      "SELECT_query_upper_bound": 23299058339,
+      "conditional_diameter_lower_bound": 4.998001405968792e-09,
+      "good_source_mass_lower_bound": 6.245004513516506e-18,
+      "half_degree": 32,
+      "local_SELECT_moved_point_upper_bound": 6,
+      "matching_charge_term_count": 6904320,
+      "query_bound_polynomial_in_half_degree": true,
+      "standalone_label_distribution_likelihood_blind": true,
+      "status": "coherent-D-label-polynomial-query-standalone-blind",
+      "target_failure_probability": 9.5367431640625e-07,
+      "target_phase_precision": 1.249500351492198e-09,
+      "term_index_qubits": 23
+    },
+    {
+      "SELECT_query_log2": 38.93955259655771,
+      "SELECT_query_upper_bound": 527197508688,
+      "conditional_diameter_lower_bound": 2.2088254290877696e-10,
+      "good_source_mass_lower_bound": 1.2197274440461925e-20,
+      "half_degree": 64,
+      "local_SELECT_moved_point_upper_bound": 6,
+      "matching_charge_term_count": 121992192,
+      "query_bound_polynomial_in_half_degree": true,
+      "standalone_label_distribution_likelihood_blind": true,
+      "status": "coherent-D-label-polynomial-query-standalone-blind",
+      "target_failure_probability": 9.5367431640625e-07,
+      "target_phase_precision": 5.522063572719424e-11,
+      "term_index_qubits": 27
+    },
+    {
+      "SELECT_query_log2": 43.439552596556496,
+      "SELECT_query_upper_bound": 11929117869364,
+      "conditional_diameter_lower_bound": 9.761721496032797e-12,
+      "good_source_mass_lower_bound": 2.3822801641527198e-23,
+      "half_degree": 128,
+      "local_SELECT_moved_point_upper_bound": 6,
+      "matching_charge_term_count": 2048256000,
+      "query_bound_polynomial_in_half_degree": true,
+      "standalone_label_distribution_likelihood_blind": true,
+      "status": "coherent-D-label-polynomial-query-standalone-blind",
+      "target_failure_probability": 9.5367431640625e-07,
+      "target_phase_precision": 2.4404303740081993e-12,
+      "term_index_qubits": 31
+    }
+  ],
+  "status": "coherent-natural-D-label-compiled-target-recoupling-open",
+  "summary": "Compiled a normalization-one block-encoding and coherent polynomial-precision label for the natural matching charge D_m.",
+  "theorem": {
+    "all_copy_target_coupled_use_compiled": false,
+    "block_encoding": "Uniform PREP and constant-support right-regular SELECT give an exact normalization-one Hermitian block-encoding of D_m.",
+    "coherent_inverse_polynomial_precision_D_label_compiled": true,
+    "conditional_natural_separated_direction_resolvable": true,
+    "conditional_resolution": "The natural separated direction gamma>=3/(sqrt(10240)m^(9/2)) is therefore resolvable with polynomial query and gate complexity.",
+    "exact_uniform_orbit_indexing_compiled": true,
+    "full_joint_minimum_gap_proved": false,
+    "hidden_involution_detector_constructed": false,
+    "hyperoctahedral_subduction_required_for_D_label": false,
+    "indexed_orbit": "D_m has 192*C(m,4) distinct inverse-closed terms indexed by a lexicographic four-subset and one of 192 fixed local permutations.",
+    "likelihood_boundary": "Standalone C_m,D_m outcome distributions are exactly likelihood blind; only coherent all-copy target recoupling can use the label.",
+    "normalization_one_Hermitian_block_encoding_compiled": true,
+    "phase_label": "Qubitization/phase estimation coherently writes a D_m eigenvalue to precision gamma using O(gamma^-1 log(1/epsilon)) SELECT calls.",
+    "residual_multiplicity_bounded": false,
+    "speedup_claim_allowed": false,
+    "standalone_D_measurement_is_detector": false,
+    "status": "coherent-natural-D-label-compiled-target-recoupling-open",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "access_model": "Coherent right multiplication on one-line encoded S_(2m) group basis plus reversible arithmetic and clean ancillas",
+    "claim_boundary": "Coherent eigenvalue label only; no standalone measurement signal and no full subduction or target-recoupling compiler.",
+    "compiled_operator": "Normalized disjoint matching charge D_m",
+    "precision_target": "One quarter of the proved conditional diameter"
+  }
+}

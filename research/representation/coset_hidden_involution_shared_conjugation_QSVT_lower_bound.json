@@ -1,0 +1,183 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False under bounded polynomial functional calculus: constant variation across width 1/M requires degree Omega(sqrt(M)).",
+      "challenge": "Normalization-one access to A makes multiplication by M easy.",
+      "resolved": true
+    },
+    {
+      "answer": "Using squared principal cosines x=Theta(1/M), rather than singular values Theta(1/sqrt(M)), gives exactly D>=Omega(sqrt(M)).",
+      "challenge": "Markov's D^2 derivative bound is too weak to recover sqrt(M).",
+      "resolved": true
+    },
+    {
+      "answer": "It has no kernel-to-bulk variation and cannot implement support projection, polar amplification, or bulk-selective response.",
+      "challenge": "A constant polynomial evades the derivative lower bound.",
+      "resolved": true
+    },
+    {
+      "answer": "Too strong. A direct basis transform need not be a polynomial in A.",
+      "challenge": "The theorem proves the full matrix polar impossible.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "generic_alternating_reflection_sqrt_M_cost_recovered": true,
+    "hidden_involution_detector_constructed": false,
+    "integrable_recoupling_fast_forward_ruled_out": false,
+    "multioperator_matrix_CS_transform_ruled_out": false,
+    "rational_postselected_filter_ruled_out": false,
+    "reason": "Bounded polynomial amplification of A=Z/M requires sqrt(M) degree; only a non-polynomial or multioperator structured transform can escape.",
+    "single_operator_shared_average_QSVT_no_go_proved": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-21T02:13:59.495837+00:00",
+  "falsifiers_triggered": [
+    "Single-operator QSVT on the normalized shared-conjugation average is not a polynomial fast-forward.",
+    "Kernel suppression and bulk rescaling inherit the generic sqrt(M) cost.",
+    "Only multioperator or independently integrable matrix recoupling remains open."
+  ],
+  "headline_metrics": {
+    "hidden_involution_detector_count": 0,
+    "multioperator_fast_forward_count": 0,
+    "retained_alternative_mass": 0.90625,
+    "single_operator_QSVT_sqrt_M_lower_bound_count": 1,
+    "tail_candidate_log2": 839.8345651405928,
+    "tail_degree_log2_lower_bound": 419.4172825702964
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-SHARED-QSVT-MULTIOPERATOR-ESCAPE",
+      "resolved": false,
+      "statement": "Any proposed escape must use additional noncommuting structure, not a polynomial solely in A, and must prove normalization."
+    },
+    {
+      "id": "PO-SHARED-QSVT-RATIONAL-POSTSELECTION-COST",
+      "resolved": false,
+      "statement": "For rational or postselected filters, include success probability and prove total cost beats the sqrt(M) boundary."
+    },
+    {
+      "id": "PO-SHARED-QSVT-INTEGRABLE-RECOUPLING",
+      "resolved": false,
+      "statement": "Identify a commuting/matrix-valued transform that directly aligns A- and B-fixed spaces without resolving the 1/sqrt(M) angle."
+    }
+  ],
+  "scaling_records": [
+    {
+      "block_encoding_query_lower_order": "Omega(sqrt(M))",
+      "degree": 8,
+      "half_degree": 4,
+      "hidden_matching_count_decimal": "105",
+      "hidden_matching_count_log2": 6.714245517666122,
+      "normalized_bulk_eigenvalue_lower": 0.004761904761904762,
+      "normalized_bulk_eigenvalue_upper": 0.014285714285714285,
+      "polynomial_degree_log2_lower_bound": 2.857122758833061,
+      "polynomial_degree_lower_bound": 7.245688373094719,
+      "required_response_variation": 0.5,
+      "retained_alternative_mass": 0.90625,
+      "single_operator_QSVT_polynomial_time": false,
+      "status": "shared-conjugation-single-operator-QSVT-sqrt-M-lower-bound"
+    },
+    {
+      "block_encoding_query_lower_order": "Omega(sqrt(M))",
+      "degree": 16,
+      "half_degree": 8,
+      "hidden_matching_count_decimal": "2027025",
+      "hidden_matching_count_log2": 20.950932451495344,
+      "normalized_bulk_eigenvalue_lower": 2.4666691333358e-07,
+      "normalized_bulk_eigenvalue_upper": 7.4000074000074e-07,
+      "polynomial_degree_log2_lower_bound": 9.975466225747672,
+      "polynomial_degree_lower_bound": 1006.7335794538692,
+      "required_response_variation": 0.5,
+      "retained_alternative_mass": 0.90625,
+      "single_operator_QSVT_polynomial_time": false,
+      "status": "shared-conjugation-single-operator-QSVT-sqrt-M-lower-bound"
+    },
+    {
+      "block_encoding_query_lower_order": "Omega(sqrt(M))",
+      "degree": 32,
+      "half_degree": 16,
+      "hidden_matching_count_decimal": "191898783962510625",
+      "hidden_matching_count_log2": 57.41312318247768,
+      "normalized_bulk_eigenvalue_lower": 2.6055402211286555e-18,
+      "normalized_bulk_eigenvalue_upper": 7.816620663385967e-18,
+      "polynomial_degree_log2_lower_bound": 28.20656159123884,
+      "polynomial_degree_lower_bound": 309756988.59146875,
+      "required_response_variation": 0.5,
+      "retained_alternative_mass": 0.90625,
+      "single_operator_QSVT_polynomial_time": false,
+      "status": "shared-conjugation-single-operator-QSVT-sqrt-M-lower-bound"
+    },
+    {
+      "block_encoding_query_lower_order": "Omega(sqrt(M))",
+      "degree": 64,
+      "half_degree": 32,
+      "hidden_matching_count_decimal": "112275575285571389562324404930670903477890625",
+      "hidden_matching_count_log2": 146.33188028936374,
+      "normalized_bulk_eigenvalue_lower": 4.453328328340842e-45,
+      "normalized_bulk_eigenvalue_upper": 1.3359984985022525e-44,
+      "polynomial_degree_log2_lower_bound": 72.66594014468187,
+      "polynomial_degree_lower_bound": 7.492515441611428e+21,
+      "required_response_variation": 0.5,
+      "retained_alternative_mass": 0.90625,
+      "single_operator_QSVT_polynomial_time": false,
+      "status": "shared-conjugation-single-operator-QSVT-sqrt-M-lower-bound"
+    },
+    {
+      "block_encoding_query_lower_order": "Omega(sqrt(M))",
+      "degree": 128,
+      "half_degree": 64,
+      "hidden_matching_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "hidden_matching_count_log2": 356.16657814189784,
+      "normalized_bulk_eigenvalue_lower": 3.0349149894615076e-108,
+      "normalized_bulk_eigenvalue_upper": 9.104744968384523e-108,
+      "polynomial_degree_log2_lower_bound": 177.58328907094892,
+      "polynomial_degree_lower_bound": 2.8700980857457496e+53,
+      "required_response_variation": 0.5,
+      "retained_alternative_mass": 0.90625,
+      "single_operator_QSVT_polynomial_time": false,
+      "status": "shared-conjugation-single-operator-QSVT-sqrt-M-lower-bound"
+    },
+    {
+      "block_encoding_query_lower_order": "Omega(sqrt(M))",
+      "degree": 256,
+      "half_degree": 128,
+      "hidden_matching_count_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "hidden_matching_count_log2": 839.8345651405928,
+      "normalized_bulk_eigenvalue_lower": 7.648468838214994e-254,
+      "normalized_bulk_eigenvalue_upper": 2.2945406514644985e-253,
+      "polynomial_degree_log2_lower_bound": 419.4172825702964,
+      "polynomial_degree_lower_bound": 1.807934754968382e+126,
+      "required_response_variation": 0.5,
+      "retained_alternative_mass": 0.90625,
+      "single_operator_QSVT_polynomial_time": false,
+      "status": "shared-conjugation-single-operator-QSVT-sqrt-M-lower-bound"
+    }
+  ],
+  "status": "shared-conjugation-single-operator-QSVT-sqrt-M-no-go",
+  "summary": "Proved an Omega(sqrt(M)) bounded-polynomial/QSVT query lower bound for amplifying the natural shared-conjugation likelihood bulk.",
+  "theorem": {
+    "Markov_bound": "For |p|<=1 on [0,1], ||p'||<=2D^2; mean value then gives D>=sqrt(M beta).",
+    "approximation_obligation": "Any kernel-suppressing or bulk-amplifying p(A) needs constant variation between 0 and 1/(2M).",
+    "constant_bulk_response_single_operator_QSVT_superpolynomial_proved": true,
+    "exact_polynomial_degree_lower_bound_proved": true,
+    "generic_alternating_reflection_cost_recovered": true,
+    "hidden_involution_detector_constructed": false,
+    "integrable_recoupling_fast_forward_ruled_out": false,
+    "low_degree_kernel_suppression_ruled_out": true,
+    "multioperator_matrix_CS_transform_ruled_out": false,
+    "natural_bulk": "At least 29/32 alternative mass has A eigenvalues in [1/(2M),3/(2M)].",
+    "normalized_operator": "A=Z/M=e_B e_A e_B is a positive contraction with a normalization-one shared-conjugation PREP/SELECT block encoding.",
+    "query_consequence": "Constant-response single-operator polynomial/QSVT filtering needs Omega(sqrt(M)) block-encoding calls.",
+    "rational_postselected_filter_ruled_out": false,
+    "speedup_claim_allowed": false,
+    "status": "shared-conjugation-single-operator-QSVT-sqrt-M-no-go",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "algorithm_class": "Bounded real polynomial or standard single-operator QSVT transform p(A)",
+    "claim_boundary": "No lower bound for multioperator recoupling, rational postselection, or an independently compiled matrix-CS basis change.",
+    "oracle": "Normalization-one block encoding of A=Z/M",
+    "success_condition": "Constant response variation between kernel x=0 and natural bulk edge x=1/(2M)"
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "Not on L/A without choosing a nonphysical representative; only gauge-covariant operations descend to the quotient.",
+      "challenge": "The target coordinate can be measured and used as a classical control.",
+      "resolved": true
+    },
+    {
+      "answer": "False after exact gauge fixing: it becomes the fixed source-local D action.",
+      "challenge": "Conjugating D by the target makes the action nonlocal.",
+      "resolved": true
+    },
+    {
+      "answer": "No. Its stabilizer/injectivity result is valid for an explicitly supplied conjugator; the physical quotient target is not that resource.",
+      "challenge": "The faithful external charge orbit theorem was wrong.",
+      "resolved": true
+    },
+    {
+      "answer": "Too strong. Operations that change the target coordinate become genuine all-source transformations in relative coordinates.",
+      "challenge": "Every target-coupled operation is gauge trivial.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_copy_target_recoupling_compiled": false,
+    "external_candidate_charge_orbit_remains_valid": true,
+    "hidden_involution_detector_constructed": false,
+    "physical_target_diagonal_D_label_is_detector": false,
+    "reason": "The physical target representative is gauge; its covariant charge control reduces exactly to a source-local likelihood-blind action.",
+    "speedup_claim_allowed": false,
+    "target_changing_convolution_route_ruled_out": false,
+    "target_diagonal_conjugated_charge_is_source_local_after_gauge_fixing": true
+  },
+  "created_at": "2026-08-21T02:13:59.142137+00:00",
+  "falsifiers_triggered": [
+    "The physical quotient target is not a free candidate-matching control register.",
+    "Target-diagonal conjugated D phase estimation is source-local after gauge fixing.",
+    "A viable charge recoupling must change the target coordinate genuinely."
+  ],
+  "finite_controls": [
+    {
+      "controlled_action_gauge_covariance_failure_count": 0,
+      "copy_count": 2,
+      "degree": 3,
+      "exact_gauge_trivialization_verified": true,
+      "quotient_coordinate_gauge_failure_count": 0,
+      "relative_source_action_failure_count": 0,
+      "status": "target-controlled-charge-action-gauge-trivialized",
+      "target_coordinate_changed_by_controlled_action": false,
+      "tested_charge_term_count": 6,
+      "tested_gauge_count": 6,
+      "tested_source_tuple_count": 4,
+      "tested_target_count": 6
+    },
+    {
+      "controlled_action_gauge_covariance_failure_count": 0,
+      "copy_count": 2,
+      "degree": 4,
+      "exact_gauge_trivialization_verified": true,
+      "quotient_coordinate_gauge_failure_count": 0,
+      "relative_source_action_failure_count": 0,
+      "status": "target-controlled-charge-action-gauge-trivialized",
+      "target_coordinate_changed_by_controlled_action": false,
+      "tested_charge_term_count": 6,
+      "tested_gauge_count": 6,
+      "tested_source_tuple_count": 4,
+      "tested_target_count": 6
+    },
+    {
+      "controlled_action_gauge_covariance_failure_count": 0,
+      "copy_count": 3,
+      "degree": 4,
+      "exact_gauge_trivialization_verified": true,
+      "quotient_coordinate_gauge_failure_count": 0,
+      "relative_source_action_failure_count": 0,
+      "status": "target-controlled-charge-action-gauge-trivialized",
+      "target_coordinate_changed_by_controlled_action": false,
+      "tested_charge_term_count": 6,
+      "tested_gauge_count": 6,
+      "tested_source_tuple_count": 4,
+      "tested_target_count": 6
+    }
+  ],
+  "headline_metrics": {
+    "exact_all_finite_groups_gauge_trivialization_count": 1,
+    "finite_gauge_control_count": 3,
+    "hidden_involution_detector_count": 0,
+    "physical_target_diagonal_charge_detector_count": 0,
+    "target_changing_recoupling_count": 0
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-MATCHING-CHARGE-TARGET-CHANGING-RECOUPLING",
+      "resolved": false,
+      "statement": "Construct a quotient-well-defined operation that changes the target coordinate and couples all sources before gauge fixing."
+    },
+    {
+      "id": "PO-MATCHING-CHARGE-EXTERNAL-CANDIDATE-ACCESS",
+      "resolved": false,
+      "statement": "If an external candidate-matching register is used, include its preparation/search cost and compare against classical candidate access."
+    },
+    {
+      "id": "PO-MATCHING-CHARGE-GAUGE-NONLINEAR-POLAR",
+      "resolved": false,
+      "statement": "Express any proposed matrix polar directly on quotient-relative coordinates to verify it is not another source-local gauge artifact."
+    }
+  ],
+  "status": "physical-target-controlled-charge-gauge-trivialized",
+  "summary": "Proved that naive physical-target-controlled matching-charge labels are gauge-equivalent to source-local operations and cannot detect the likelihood.",
+  "theorem": {
+    "all_copy_target_recoupling_compiled": false,
+    "coherent_D_phase_label_from_physical_target_is_detector": false,
+    "exact_all_finite_groups_gauge_trivialization_proved": true,
+    "external_candidate_charge_orbit_invalidated": false,
+    "gauge_fixed_action": "Under Phi, g_j->g_j t^-1 d t becomes x_j->x_j d: an ordinary source-local right action.",
+    "hidden_involution_detector_constructed": false,
+    "likelihood_consequence": "Target-diagonal coherent charge labels and their spectral functions are source-local after gauge fixing and therefore likelihood blind.",
+    "physical_quotient": "The physical basis is L/A with (g_i;t)~(g_i r;t r), so the target representative is a gauge coordinate.",
+    "relative_coordinates": "Phi([(g_i;t)])=(g_i t^-1)_i is an exact bijection L/A -> G^k.",
+    "representative_covariant_action": "Leaving t fixed while acting on source j requires the multiplier t^-1 d t to remain well defined under t->tr.",
+    "speedup_claim_allowed": false,
+    "status": "physical-target-controlled-charge-gauge-trivialized",
+    "target_changing_convolution_route_ruled_out": false,
+    "target_diagonal_charge_control_is_genuinely_target_coupled": false,
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "claim_boundary": "Rules out only the gauge-trivial target control; target-changing convolution and externally supplied candidate registers remain open.",
+    "physical_space": "Right-coset quotient (G^k x G)/diag(G)",
+    "tested_operation": "Representative-target-diagonal conjugated right charge action that leaves the target coordinate unchanged"
+  }
+}

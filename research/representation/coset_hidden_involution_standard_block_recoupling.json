@@ -1,0 +1,309 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False in this scalable family: leg-permutation symmetry reduces it to two scalar directions and one 2-by-2 sector.",
+      "challenge": "A nonflat matrix CS block is evidence of hardness.",
+      "resolved": true
+    },
+    {
+      "answer": "False: its source and alternative isotypic masses are super-exponentially small.",
+      "challenge": "The exact transform supplies a detector.",
+      "resolved": true
+    },
+    {
+      "answer": "False: the exact all-m spectrum converges to a nonuniform constant limit.",
+      "challenge": "Observed nonuniformity is a small-group artifact.",
+      "resolved": true
+    },
+    {
+      "answer": "Unsupported: natural signal was proved to occupy blocks of super-exponential multiplicity and rank.",
+      "challenge": "A four-dimensional success extrapolates to natural blocks.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "binary_hidden_involution_detector_constructed": false,
+    "coherent_fourier_block_transform_compiled": false,
+    "natural_huge_block_transform_resolved": false,
+    "natural_mass_detector_constructed": false,
+    "reason": "The exact scalable block is tractable but negligible; the natural huge-rank matrix CS transform remains open.",
+    "scalable_full_rank_nonuniform_matrix_block_proved": true,
+    "speedup_claim_allowed": false,
+    "succinct_standard_block_multiplicity_diagonalization_proved": true,
+    "universal_scalarization_falsified": true
+  },
+  "created_at": "2026-08-20T17:41:52.662442+00:00",
+  "falsifiers_triggered": [
+    "Universal scalarization of three-copy hidden-involution CS blocks is false.",
+    "Matrix nonuniformity and occupied rank alone are not hardness evidence.",
+    "The all-standard tractable block cannot carry a natural detector."
+  ],
+  "finite_controls": [
+    {
+      "analytic_squared_principal_cosines": [
+        0.024827323598142673,
+        0.14285714285714285,
+        0.14285714285714285,
+        0.24660124783042875
+      ],
+      "candidate_count": 105,
+      "degree": 8,
+      "full_rank_verified": true,
+      "half_degree": 4,
+      "invariant_tensor_formula_verified": true,
+      "maximum_spectrum_residual": 6.2450045135165055e-15,
+      "nonuniform_spectrum_verified": true,
+      "physical_fixed_multiplicity": 4,
+      "source_fixed_multiplicity": 4,
+      "status": "exact-invariant-tensor-spectrum-verified",
+      "tensor_squared_principal_cosines": [
+        0.02482732359814413,
+        0.14285714285714057,
+        0.14285714285714748,
+        0.246601247830435
+      ]
+    },
+    {
+      "analytic_squared_principal_cosines": [
+        0.04287567335293972,
+        0.16666666666666666,
+        0.16666666666666666,
+        0.24680686632959997
+      ],
+      "candidate_count": 945,
+      "degree": 10,
+      "full_rank_verified": true,
+      "half_degree": 5,
+      "invariant_tensor_formula_verified": true,
+      "maximum_spectrum_residual": 1.715294573045867e-14,
+      "nonuniform_spectrum_verified": true,
+      "physical_fixed_multiplicity": 4,
+      "source_fixed_multiplicity": 4,
+      "status": "exact-invariant-tensor-spectrum-verified",
+      "tensor_squared_principal_cosines": [
+        0.04287567335293975,
+        0.1666666666666662,
+        0.1666666666666838,
+        0.24680686632960439
+      ]
+    },
+    {
+      "analytic_squared_principal_cosines": [
+        0.05568855575247336,
+        0.18181818181818182,
+        0.18181818181818182,
+        0.24734174727782968
+      ],
+      "candidate_count": 10395,
+      "degree": 12,
+      "full_rank_verified": true,
+      "half_degree": 6,
+      "invariant_tensor_formula_verified": true,
+      "maximum_spectrum_residual": 4.157785227221211e-14,
+      "nonuniform_spectrum_verified": true,
+      "physical_fixed_multiplicity": 4,
+      "source_fixed_multiplicity": 4,
+      "status": "exact-invariant-tensor-spectrum-verified",
+      "tensor_squared_principal_cosines": [
+        0.055688555752486234,
+        0.18181818181820883,
+        0.1818181818182234,
+        0.24734174727784944
+      ]
+    }
+  ],
+  "headline_metrics": {
+    "coherent_block_transform_compiler_count": 0,
+    "finite_tensor_control_count": 3,
+    "finite_tensor_control_failure_count": 0,
+    "natural_mass_block_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "scalable_nonflat_block_count": 6,
+    "tail_log2_alternative_isotypic_mass": -2117.754161005041,
+    "tail_log2_source_isotypic_fraction": -2471.697005645675,
+    "tail_maximum_squared_principal_cosine": 0.24995695725447664,
+    "tail_minimum_squared_principal_cosine": 0.11820052306048402
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-HIDDEN-INVOLUTION-NATURAL-BLOCK-BRANCHING",
+      "resolved": false,
+      "statement": "Find an asymptotically controlled basis for the natural huge-multiplicity A/B fixed spaces, not only fixed-row blocks."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-NATURAL-BLOCK-RECOUPLING",
+      "resolved": false,
+      "statement": "Determine whether partition/wreath recoupling reduces the natural matrix CS transform to polynomial local sectors."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-COHERENT-MULTIPLICITY-BASIS",
+      "resolved": false,
+      "statement": "Compile any multiplicity diagonalization coherently from the physical tuple representation with controlled normalization."
+    }
+  ],
+  "scaling_records": [
+    {
+      "candidate_count_decimal": "105",
+      "coherent_fourier_block_transform_compiled": false,
+      "degree": 8,
+      "first_principal_angle_moment": 0.5571428571428572,
+      "full_rank_nonuniform_matrix_block": true,
+      "half_degree": 4,
+      "log2_alternative_isotypic_mass": -32.51208516501414,
+      "log2_source_isotypic_fraction": -36.38244988459755,
+      "maximum_squared_principal_cosine": 0.24660124783042875,
+      "minimum_squared_principal_cosine": 0.024827323598142673,
+      "natural_mass_block": false,
+      "physical_fixed_multiplicity": 4,
+      "principal_angle_effective_rank": 3.035928143712575,
+      "repeated_pair_squared_cosine": 0.14285714285714285,
+      "second_principal_angle_moment": 0.10224489795918368,
+      "source_fixed_multiplicity": 4,
+      "squared_cosine_condition_number": 9.932655320482347,
+      "status": "succinct-nonflat-standard-block-negligible-natural-mass",
+      "succinct_multiplicity_diagonalization_proved": true,
+      "symmetric_squared_cosine_lower": 0.024827323598142673,
+      "symmetric_squared_cosine_upper": 0.24660124783042875
+    },
+    {
+      "candidate_count_decimal": "945",
+      "coherent_fourier_block_transform_compiled": false,
+      "degree": 10,
+      "first_principal_angle_moment": 0.623015873015873,
+      "full_rank_nonuniform_matrix_block": true,
+      "half_degree": 5,
+      "log2_alternative_isotypic_mass": -50.3761425129899,
+      "log2_source_isotypic_fraction": -57.57765385749005,
+      "maximum_squared_principal_cosine": 0.24680686632959997,
+      "minimum_squared_principal_cosine": 0.04287567335293972,
+      "natural_mass_block": false,
+      "physical_fixed_multiplicity": 4,
+      "principal_angle_effective_rank": 3.280846532676694,
+      "repeated_pair_squared_cosine": 0.16666666666666666,
+      "second_principal_angle_moment": 0.11830750818846057,
+      "source_fixed_multiplicity": 4,
+      "squared_cosine_condition_number": 5.756337965772797,
+      "status": "succinct-nonflat-standard-block-negligible-natural-mass",
+      "succinct_multiplicity_diagonalization_proved": true,
+      "symmetric_squared_cosine_lower": 0.04287567335293972,
+      "symmetric_squared_cosine_upper": 0.24680686632959997
+    },
+    {
+      "candidate_count_decimal": "2027025",
+      "coherent_fourier_block_transform_compiled": false,
+      "degree": 16,
+      "first_principal_angle_moment": 0.7205128205128205,
+      "full_rank_nonuniform_matrix_block": true,
+      "half_degree": 8,
+      "log2_alternative_isotypic_mass": -114.5957630207425,
+      "log2_source_isotypic_fraction": -133.07379147870915,
+      "maximum_squared_principal_cosine": 0.24819615712637189,
+      "minimum_squared_principal_cosine": 0.07231666338644864,
+      "natural_mass_block": false,
+      "physical_fixed_multiplicity": 4,
+      "principal_angle_effective_rank": 3.535619934625889,
+      "repeated_pair_squared_cosine": 0.2,
+      "second_principal_angle_moment": 0.1468310322156476,
+      "source_fixed_multiplicity": 4,
+      "squared_cosine_condition_number": 3.4320742343994977,
+      "status": "succinct-nonflat-standard-block-negligible-natural-mass",
+      "succinct_multiplicity_diagonalization_proved": true,
+      "symmetric_squared_cosine_lower": 0.07231666338644864,
+      "symmetric_squared_cosine_upper": 0.24819615712637189
+    },
+    {
+      "candidate_count_decimal": "191898783962510625",
+      "coherent_fourier_block_transform_compiled": false,
+      "degree": 32,
+      "first_principal_angle_moment": 0.7992213570634037,
+      "full_rank_nonuniform_matrix_block": true,
+      "half_degree": 16,
+      "log2_alternative_isotypic_mass": -330.4963386745905,
+      "log2_source_isotypic_fraction": -385.5861288980111,
+      "maximum_squared_principal_cosine": 0.24942388747864258,
+      "minimum_squared_principal_cosine": 0.09818456635895473,
+      "natural_mass_block": false,
+      "physical_fixed_multiplicity": 4,
+      "principal_angle_effective_rank": 3.674603216972117,
+      "repeated_pair_squared_cosine": 0.22580645161290322,
+      "second_principal_angle_moment": 0.17382959189607533,
+      "source_fixed_multiplicity": 4,
+      "squared_cosine_condition_number": 2.540357377215165,
+      "status": "succinct-nonflat-standard-block-negligible-natural-mass",
+      "succinct_multiplicity_diagonalization_proved": true,
+      "symmetric_squared_cosine_lower": 0.09818456635895473,
+      "symmetric_squared_cosine_upper": 0.24942388747864258
+    },
+    {
+      "candidate_count_decimal": "112275575285571389562324404930670903477890625",
+      "coherent_fourier_block_transform_compiled": false,
+      "degree": 64,
+      "first_principal_angle_moment": 0.8374967473328129,
+      "full_rank_nonuniform_matrix_block": true,
+      "half_degree": 32,
+      "log2_alternative_isotypic_mass": -861.3321566387258,
+      "log2_source_isotypic_fraction": -1005.4081924205365,
+      "maximum_squared_principal_cosine": 0.24983787893000753,
+      "minimum_squared_principal_cosine": 0.11146839221232917,
+      "natural_mass_block": false,
+      "physical_fixed_multiplicity": 4,
+      "principal_angle_effective_rank": 3.726438052271618,
+      "repeated_pair_squared_cosine": 0.23809523809523808,
+      "second_principal_angle_moment": 0.18822285301790298,
+      "source_fixed_multiplicity": 4,
+      "squared_cosine_condition_number": 2.24133383438515,
+      "status": "succinct-nonflat-standard-block-negligible-natural-mass",
+      "succinct_multiplicity_diagonalization_proved": true,
+      "symmetric_squared_cosine_lower": 0.11146839221232917,
+      "symmetric_squared_cosine_upper": 0.24983787893000753
+    },
+    {
+      "candidate_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "coherent_fourier_block_transform_compiled": false,
+      "degree": 128,
+      "first_principal_angle_moment": 0.8563464566929134,
+      "full_rank_nonuniform_matrix_block": true,
+      "half_degree": 64,
+      "log2_alternative_isotypic_mass": -2117.754161005041,
+      "log2_source_isotypic_fraction": -2471.697005645675,
+      "maximum_squared_principal_cosine": 0.24995695725447664,
+      "minimum_squared_principal_cosine": 0.11820052306048402,
+      "natural_mass_block": false,
+      "physical_fixed_multiplicity": 4,
+      "principal_angle_effective_rank": 3.7488571613439117,
+      "repeated_pair_squared_cosine": 0.2440944881889764,
+      "second_principal_angle_moment": 0.19561408246016496,
+      "source_fixed_multiplicity": 4,
+      "squared_cosine_condition_number": 2.1146857118946247,
+      "status": "succinct-nonflat-standard-block-negligible-natural-mass",
+      "succinct_multiplicity_diagonalization_proved": true,
+      "symmetric_squared_cosine_lower": 0.11820052306048402,
+      "symmetric_squared_cosine_upper": 0.24995695725447664
+    }
+  ],
+  "status": "scalable-matrix-nonuniformity-proved-standard-block-succinct-but-negligible",
+  "summary": "Derived the exact scalable all-standard matrix CS spectrum and showed that its genuine nonuniformity is succinctly diagonalizable but carries negligible natural mass.",
+  "theorem": {
+    "asymptotic_spectrum": "The squared principal cosines converge to {1/8,1/4,1/4,1/4}; nonflatness persists at constant scale.",
+    "binary_hidden_involution_detector_constructed": false,
+    "coherent_fourier_block_transform_compiled": false,
+    "invariant_tensor_basis": "Each fixed space is spanned by its centered-simplex fourth moment and the three metric pairings. Their exact Gram and cross-Gram matrices give the principal-angle formulas.",
+    "mass_boundary": "The all-standard isotypic source and alternative masses decay super-exponentially. This tractable block does not control the proved natural huge-rank mass.",
+    "natural_huge_block_transform_resolved": false,
+    "pair_standard_sector": "The two-dimensional nontrivial permutation sector of the three pairings has squared cosine (m-2)/(2(2m-1)), with multiplicity two.",
+    "physical_fixed_space": "For V=Std(S_(2m)), pi^A=Inv_(S_(2m))(V^tensor4), of dimension four for m>=2.",
+    "scalable_full_rank_nonuniformity_proved": true,
+    "source_fixed_space": "V restricted to C_2 wr S_m is U plus the signed pair-difference module. The three H averages retain U, and base-sign averaging kills the signed target summand, so pi^B=Inv_(S_m)(U^tensor4).",
+    "status": "scalable-matrix-nonuniformity-proved-standard-block-succinct-but-negligible",
+    "succinct_multiplicity_diagonalization_proved": true,
+    "symmetric_sector": "The fourth moments and symmetric sum of pairings leave one explicit 2-by-2 generalized eigensystem with the recorded trace and determinant.",
+    "theorem_verified": true,
+    "universal_scalarization_falsified": true
+  },
+  "theorem_contract": {
+    "block": "Std(S_(2m)) tensor power four in L=S_(2m)^4",
+    "claim_boundary": "A scalable exact multiplicity-space diagonalization, not a coherent Fourier-block circuit or natural-mass detector.",
+    "family": "S_(2m), fixed-point-free involution, three copies",
+    "principal_angle_operator": "The overlap between A-fixed and B-fixed multiplicity spaces; squared singular values are eigenvalues of P_A P_B P_A."
+  }
+}

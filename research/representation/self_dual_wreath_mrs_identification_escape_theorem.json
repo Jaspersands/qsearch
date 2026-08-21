@@ -1,0 +1,335 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Binary transcript indistinguishability does not bound hidden-label recovery.",
+      "resolution": "The MRS proof is fixed-hidden: summing the TV expectation bound over labels yields equation (2). An averaged binary bound alone would not suffice.",
+      "resolved": true
+    },
+    {
+      "objection": "Covariance can make the averaged PGM output uniform, so no separation follows.",
+      "resolution": "The separation uses correlation between each fixed hidden label and the output, not the unconditioned output marginal.",
+      "resolved": true
+    },
+    {
+      "objection": "The PGM uses too many copies for the MRS theorem.",
+      "resolution": "Theta(n log n)=exp(o(sqrt(n))), below every fixed positive exp(a sqrt(n)) threshold eventually.",
+      "resolved": true
+    },
+    {
+      "objection": "Information-theoretic PGM escape supplies an efficient circuit.",
+      "resolution": "False. It only removes a necessity gate; the complete orientation polar remains the implementation bottleneck.",
+      "resolved": true
+    },
+    {
+      "objection": "Escaping the MRS class proves a quantum speedup.",
+      "resolution": "False. MRS is one restricted quantum model, and no classical complexity lower bound follows from leaving it.",
+      "resolved": true
+    },
+    {
+      "objection": "The primary theorem's printed success wording is enough without checking its proof.",
+      "resolution": "The argument relies on the proof's explicit transcript-TV conclusion, avoiding the theorem statement's ambiguous use of success probability.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "arbitrary_quantum_algorithm_lower_bound_proved": false,
+    "classical_separation_proved": false,
+    "complete_natural_orientation_polar_compiled": false,
+    "current_executable_complete_pgm_circuit_exists": false,
+    "explicit_finite_n_mrs_crossover_proved": false,
+    "explicit_transcript_zonotope_separation_required_for_model_escape": false,
+    "fixed_hidden_tv_implies_label_identification_bound": true,
+    "mrs_source_scope_verified_from_primary_paper": true,
+    "reason": "The target PGM is asymptotically outside the entire adaptive MRS transcript class, but no complete orientation-polar circuit or classical hardness theorem is known.",
+    "speedup_claim_allowed": false,
+    "target_physical_pgm_outside_all_mrs_transcript_postprocessings_asymptotically": true,
+    "uniformly_accurate_constant_success_pgm_compiler_automatically_escapes_mrs": true
+  },
+  "created_at": "2026-08-21T05:31:35.790091+00:00",
+  "falsifiers_triggered": [
+    "The explicit fixed-policy transcript zonotope is not a prerequisite for asymptotic target-PGM model escape.",
+    "Averaged output uniformity does not erase fixed-hidden label correlation.",
+    "MRS escape is already a property of the target measurement, not evidence that its circuit is compiled.",
+    "Leaving the MRS class does not establish classical hardness or a quantum speedup."
+  ],
+  "headline_metrics": {
+    "all_policy_target_pgm_mrs_separation_theorem_count": 1,
+    "classical_separation_theorem_count": 0,
+    "complete_orientation_polar_compiler_count": 0,
+    "explicit_finite_n_mrs_crossover_count": 0,
+    "explicit_zonotope_prerequisite_removed_count": 1,
+    "fixed_hidden_tv_to_identification_theorem_count": 1,
+    "identification_control_count": 1,
+    "identification_control_failure_count": 0,
+    "identification_control_saturation_residual": 0.0,
+    "minimum_pgm_success_lower_bound": 0.8005380103116027,
+    "minimum_robust_compiled_success_lower_bound": 0.6755380103116027,
+    "new_quantum_algorithm_count": 0,
+    "scaling_record_count": 12
+  },
+  "identification_control": {
+    "average_fixed_label_tv_distance": 0.07999999999999999,
+    "decoder_identification_success": 0.28,
+    "exact_average_tv_upper_bound": 0.28,
+    "hidden_label_count": 5,
+    "identification_transfer_bound_verified": true,
+    "maximum_fixed_label_tv_distance": 0.07999999999999999,
+    "requested_tv_radius": 0.08,
+    "saturation_residual": 0.0,
+    "status": "fixed-label-tv-to-identification-bound-saturated",
+    "transcript_outcome_count": 5,
+    "uniform_radius_upper_bound": 0.28
+  },
+  "primary_literature": [
+    {
+      "authors": "Cristopher Moore; Alexander Russell; Piotr Sniady",
+      "id": "MRS-2007-SIEVE-NO-GO",
+      "title": "On the impossibility of a quantum sieve algorithm for graph isomorphism: unconditional results",
+      "url": "https://arxiv.org/abs/quant-ph/0612089",
+      "used_result": "Section 3 sieve definition and Theorem 10 proof: arbitrary adaptive pair selection, fewer than exp(a sqrt(n)) coset states, and exponentially small fixed-hidden transcript TV"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "separate_target_pgm_from_all_mrs_transcript_postprocessings",
+      "resolution": "Fixed-hidden transcript TV transfers to the label-decoding bound 1/n!+exp(-b sqrt(n)), contradicting constant PGM success.",
+      "resolved": true
+    },
+    {
+      "obligation": "construct_explicit_transcript_zonotope_witness_before_claiming_mrs_escape",
+      "resolution": "Resolved negatively as a prerequisite. The all-policy identification contradiction already proves target-POVM escape.",
+      "resolved": true
+    },
+    {
+      "obligation": "compile_complete_natural_orientation_polar",
+      "resolution": "The model-class separation supplies no implementation of the restricted child routers, endpoint mixers, or full polar.",
+      "resolved": false
+    },
+    {
+      "obligation": "certify_explicit_finite_n_mrs_crossover",
+      "resolution": "The primary theorem leaves its positive character-bound constants and sufficiently-large-n threshold nonexplicit.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_classical_complexity_separation",
+      "resolution": "Leaving one restricted quantum sieve class does not lower-bound classical graph isomorphism or code equivalence.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "allowed_uniform_output_tv_error": 0.125,
+      "asymptotic_constant_success_contradicts_mrs_bound": true,
+      "complete_orientation_polar_compiled": false,
+      "copy_count": 5,
+      "copy_schedule_is_exp_o_sqrt_n": true,
+      "explicit_mrs_crossover_certified": false,
+      "extra_copy_count": 2,
+      "hidden_label_count_decimal": "6",
+      "log_copy_count_over_sqrt_n": 0.9292094119878171,
+      "mrs_identification_upper_bound_symbolic": "1/n! + exp(-b*sqrt(n))",
+      "n": 3,
+      "pgm_identification_success_lower_bound": 0.8648648648648649,
+      "robust_compiled_identification_success_lower_bound": 0.7398648648648649,
+      "status": "target-pgm-asymptotically-outside-mrs-compiler-open"
+    },
+    {
+      "allowed_uniform_output_tv_error": 0.125,
+      "asymptotic_constant_success_contradicts_mrs_bound": true,
+      "complete_orientation_polar_compiled": false,
+      "copy_count": 7,
+      "copy_schedule_is_exp_o_sqrt_n": true,
+      "explicit_mrs_crossover_certified": false,
+      "extra_copy_count": 2,
+      "hidden_label_count_decimal": "24",
+      "log_copy_count_over_sqrt_n": 0.9729550745276566,
+      "mrs_identification_upper_bound_symbolic": "1/n! + exp(-b*sqrt(n))",
+      "n": 4,
+      "pgm_identification_success_lower_bound": 0.847682119205298,
+      "robust_compiled_identification_success_lower_bound": 0.722682119205298,
+      "status": "target-pgm-asymptotically-outside-mrs-compiler-open"
+    },
+    {
+      "allowed_uniform_output_tv_error": 0.125,
+      "asymptotic_constant_success_contradicts_mrs_bound": true,
+      "complete_orientation_polar_compiled": false,
+      "copy_count": 9,
+      "copy_schedule_is_exp_o_sqrt_n": true,
+      "explicit_mrs_crossover_certified": false,
+      "extra_copy_count": 2,
+      "hidden_label_count_decimal": "120",
+      "log_copy_count_over_sqrt_n": 0.9826287033514061,
+      "mrs_identification_upper_bound_symbolic": "1/n! + exp(-b*sqrt(n))",
+      "n": 5,
+      "pgm_identification_success_lower_bound": 0.8114104595879557,
+      "robust_compiled_identification_success_lower_bound": 0.6864104595879557,
+      "status": "target-pgm-asymptotically-outside-mrs-compiler-open"
+    },
+    {
+      "allowed_uniform_output_tv_error": 0.125,
+      "asymptotic_constant_success_contradicts_mrs_bound": true,
+      "complete_orientation_polar_compiled": false,
+      "copy_count": 18,
+      "copy_schedule_is_exp_o_sqrt_n": true,
+      "explicit_mrs_crossover_certified": false,
+      "extra_copy_count": 2,
+      "hidden_label_count_decimal": "40320",
+      "log_copy_count_over_sqrt_n": 1.02190073507923,
+      "mrs_identification_upper_bound_symbolic": "1/n! + exp(-b*sqrt(n))",
+      "n": 8,
+      "pgm_identification_success_lower_bound": 0.8666977448481302,
+      "robust_compiled_identification_success_lower_bound": 0.7416977448481302,
+      "status": "target-pgm-asymptotically-outside-mrs-compiler-open"
+    },
+    {
+      "allowed_uniform_output_tv_error": 0.125,
+      "asymptotic_constant_success_contradicts_mrs_bound": true,
+      "complete_orientation_polar_compiled": false,
+      "copy_count": 31,
+      "copy_schedule_is_exp_o_sqrt_n": true,
+      "explicit_mrs_crossover_certified": false,
+      "extra_copy_count": 2,
+      "hidden_label_count_decimal": "479001600",
+      "log_copy_count_over_sqrt_n": 0.9913067184516149,
+      "mrs_identification_upper_bound_symbolic": "1/n! + exp(-b*sqrt(n))",
+      "n": 12,
+      "pgm_identification_success_lower_bound": 0.8176263888985781,
+      "robust_compiled_identification_success_lower_bound": 0.6926263888985781,
+      "status": "target-pgm-asymptotically-outside-mrs-compiler-open"
+    },
+    {
+      "allowed_uniform_output_tv_error": 0.125,
+      "asymptotic_constant_success_contradicts_mrs_bound": true,
+      "complete_orientation_polar_compiled": false,
+      "copy_count": 47,
+      "copy_schedule_is_exp_o_sqrt_n": true,
+      "explicit_mrs_crossover_certified": false,
+      "extra_copy_count": 2,
+      "hidden_label_count_decimal": "20922789888000",
+      "log_copy_count_over_sqrt_n": 0.9625369004275146,
+      "mrs_identification_upper_bound_symbolic": "1/n! + exp(-b*sqrt(n))",
+      "n": 16,
+      "pgm_identification_success_lower_bound": 0.8705755667665835,
+      "robust_compiled_identification_success_lower_bound": 0.7455755667665835,
+      "status": "target-pgm-asymptotically-outside-mrs-compiler-open"
+    },
+    {
+      "allowed_uniform_output_tv_error": 0.125,
+      "asymptotic_constant_success_contradicts_mrs_bound": true,
+      "complete_orientation_polar_compiled": false,
+      "copy_count": 82,
+      "copy_schedule_is_exp_o_sqrt_n": true,
+      "explicit_mrs_crossover_certified": false,
+      "extra_copy_count": 2,
+      "hidden_label_count_decimal": "620448401733239439360000",
+      "log_copy_count_over_sqrt_n": 0.8995177996249164,
+      "mrs_identification_upper_bound_symbolic": "1/n! + exp(-b*sqrt(n))",
+      "n": 24,
+      "pgm_identification_success_lower_bound": 0.8862846126536875,
+      "robust_compiled_identification_success_lower_bound": 0.7612846126536875,
+      "status": "target-pgm-asymptotically-outside-mrs-compiler-open"
+    },
+    {
+      "allowed_uniform_output_tv_error": 0.125,
+      "asymptotic_constant_success_contradicts_mrs_bound": true,
+      "complete_orientation_polar_compiled": false,
+      "copy_count": 120,
+      "copy_schedule_is_exp_o_sqrt_n": true,
+      "explicit_mrs_crossover_certified": false,
+      "extra_copy_count": 2,
+      "hidden_label_count_decimal": "263130836933693530167218012160000000",
+      "log_copy_count_over_sqrt_n": 0.8463169690489467,
+      "mrs_identification_upper_bound_symbolic": "1/n! + exp(-b*sqrt(n))",
+      "n": 32,
+      "pgm_identification_success_lower_bound": 0.8347540569832151,
+      "robust_compiled_identification_success_lower_bound": 0.7097540569832151,
+      "status": "target-pgm-asymptotically-outside-mrs-compiler-open"
+    },
+    {
+      "allowed_uniform_output_tv_error": 0.125,
+      "asymptotic_constant_success_contradicts_mrs_bound": true,
+      "complete_orientation_polar_compiled": false,
+      "copy_count": 205,
+      "copy_schedule_is_exp_o_sqrt_n": true,
+      "explicit_mrs_crossover_certified": false,
+      "extra_copy_count": 2,
+      "hidden_label_count_decimal": "12413915592536072670862289047373375038521486354677760000000000",
+      "log_copy_count_over_sqrt_n": 0.7683103110886561,
+      "mrs_identification_upper_bound_symbolic": "1/n! + exp(-b*sqrt(n))",
+      "n": 48,
+      "pgm_identification_success_lower_bound": 0.8055340463055478,
+      "robust_compiled_identification_success_lower_bound": 0.6805340463055478,
+      "status": "target-pgm-asymptotically-outside-mrs-compiler-open"
+    },
+    {
+      "allowed_uniform_output_tv_error": 0.125,
+      "asymptotic_constant_success_contradicts_mrs_bound": true,
+      "complete_orientation_polar_compiled": false,
+      "copy_count": 298,
+      "copy_schedule_is_exp_o_sqrt_n": true,
+      "explicit_mrs_crossover_certified": false,
+      "extra_copy_count": 2,
+      "hidden_label_count_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "log_copy_count_over_sqrt_n": 0.7121366858131756,
+      "mrs_identification_upper_bound_symbolic": "1/n! + exp(-b*sqrt(n))",
+      "n": 64,
+      "pgm_identification_success_lower_bound": 0.8005380103116027,
+      "robust_compiled_identification_success_lower_bound": 0.6755380103116027,
+      "status": "target-pgm-asymptotically-outside-mrs-compiler-open"
+    },
+    {
+      "allowed_uniform_output_tv_error": 0.125,
+      "asymptotic_constant_success_contradicts_mrs_bound": true,
+      "complete_orientation_polar_compiled": false,
+      "copy_count": 501,
+      "copy_schedule_is_exp_o_sqrt_n": true,
+      "explicit_mrs_crossover_certified": false,
+      "extra_copy_count": 2,
+      "hidden_label_count_decimal": "991677934870949689209571401541893801158183648651267795444376054838492222809091499987689476037000748982075094738965754305639874560000000000000000000000",
+      "log_copy_count_over_sqrt_n": 0.6344797033137792,
+      "mrs_identification_upper_bound_symbolic": "1/n! + exp(-b*sqrt(n))",
+      "n": 96,
+      "pgm_identification_success_lower_bound": 0.868450844522557,
+      "robust_compiled_identification_success_lower_bound": 0.743450844522557,
+      "status": "target-pgm-asymptotically-outside-mrs-compiler-open"
+    },
+    {
+      "allowed_uniform_output_tv_error": 0.125,
+      "asymptotic_constant_success_contradicts_mrs_bound": true,
+      "complete_orientation_polar_compiled": false,
+      "copy_count": 719,
+      "copy_schedule_is_exp_o_sqrt_n": true,
+      "explicit_mrs_crossover_certified": false,
+      "extra_copy_count": 2,
+      "hidden_label_count_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "log_copy_count_over_sqrt_n": 0.5814062964686878,
+      "mrs_identification_upper_bound_symbolic": "1/n! + exp(-b*sqrt(n))",
+      "n": 128,
+      "pgm_identification_success_lower_bound": 0.8773255824814262,
+      "robust_compiled_identification_success_lower_bound": 0.7523255824814262,
+      "status": "target-pgm-asymptotically-outside-mrs-compiler-open"
+    }
+  ],
+  "status": "target-pgm-mrs-identification-separation-proved-polar-compiler-open",
+  "summary": "Converted the MRS fixed-hidden transcript-TV theorem into an all-policy hidden-label identification bound, proving that the constant-success target PGM is outside the sieve class without a separate transcript-zonotope construction.",
+  "theorem": {
+    "copy_schedule": "K=Theta(n log n)=exp(o(sqrt(n))), so K<exp(a sqrt(n)) for every fixed a>0 eventually",
+    "decoder_transfer": "uniform-prior transcript identification success is at most 1/M + M^-1 sum_s TV(P_s,P_0)",
+    "fixed_hidden_tv_hypothesis": "for every legal hidden flip s, TV(P_s,P_0)<=exp(-b sqrt(n)) when the sieve uses fewer than exp(a sqrt(n)) coset states",
+    "nonclaim": "no orientation-polar circuit, explicit MRS constants or finite-n crossover, arbitrary-quantum lower bound, classical hardness, or speedup follows",
+    "pgm_success": "the physical hidden-bridge PGM has success at least 4/5 at K=ceil(log2(n!))+2 copies",
+    "separation_conclusion": "the target PGM POVM and every uniformly accurate constant-success implementation lie outside all MRS transcript postprocessings",
+    "source_scope": "adaptive pair selection from the entire classical history, weak Fourier sampling at leaves, isotypic sampling after every merge, and final classical transcript postprocessing",
+    "status": "target-pgm-mrs-identification-separation-proved",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "conclusion": "the target PGM POVM and every uniformly accurate constant-success implementation lie outside all MRS transcript postprocessings",
+    "copy_schedule": "K=Theta(n log n)=exp(o(sqrt(n))), so K<exp(a sqrt(n)) for every fixed a>0 eventually",
+    "fixed_hidden_tv": "for every legal hidden flip s, TV(P_s,P_0)<=exp(-b sqrt(n)) when the sieve uses fewer than exp(a sqrt(n)) coset states",
+    "identification_transfer": "uniform-prior transcript identification success is at most 1/M + M^-1 sum_s TV(P_s,P_0)",
+    "pgm_success": "the physical hidden-bridge PGM has success at least 4/5 at K=ceil(log2(n!))+2 copies",
+    "scope_boundary": "no orientation-polar circuit, explicit MRS constants or finite-n crossover, arbitrary-quantum lower bound, classical hardness, or speedup follows",
+    "source_scope": "adaptive pair selection from the entire classical history, weak Fourier sampling at leaves, isotypic sampling after every merge, and final classical transcript postprocessing"
+  }
+}

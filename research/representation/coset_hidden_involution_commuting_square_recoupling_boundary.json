@@ -1,0 +1,254 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False: connection cells are repeated by vertical b(lambda,mu) edges, which are superpolynomial on natural mass.",
+      "challenge": "The two horizontal multiplicity-free towers automatically give a polynomial recoupling circuit.",
+      "resolved": true
+    },
+    {
+      "answer": "The intersection, equal-index, and full product identities prove symmetry at every rank.",
+      "challenge": "The subgroup square may fail to be symmetric.",
+      "resolved": true
+    },
+    {
+      "answer": "It is exactly the dimension identity for opposite path spaces around the commuting square.",
+      "challenge": "The paired-tower recurrence is unrelated to a unitary connection.",
+      "resolved": true
+    },
+    {
+      "answer": "No: it supplies an algebraic target, not succinct coefficients, spectral conditioning, or a circuit.",
+      "challenge": "Abstract connection existence supplies amplitudes and conditioning.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "abstract_unitary_connection_exists": true,
+    "exact_connection_dimension_identity_proved": true,
+    "hidden_involution_detector_constructed": false,
+    "natural_cells_inherit_huge_vertical_multiplicity": true,
+    "polynomial_connection_cells_compiled": false,
+    "reason": "The correct recoupling architecture is now exact, but its raw cells are as large as the unresolved natural multiplicity spaces.",
+    "source_aware_normalized_subduction_transform_compiled": false,
+    "speedup_claim_allowed": false,
+    "symmetric_commuting_square_proved": true,
+    "vertical_edges_factored_into_local_labels": false
+  },
+  "created_at": "2026-08-21T13:06:57.848745+00:00",
+  "falsifiers_triggered": [
+    "Multiplicity-free horizontal branching does not imply small recoupling cells.",
+    "An abstract biunitary connection is not an efficient basis transform.",
+    "The next compiler must factor vertical multiplicity edges before synthesizing connection cells."
+  ],
+  "group_controls": [
+    {
+      "equal_horizontal_index": 4,
+      "expected_intersection_order": 2,
+      "half_degree": 2,
+      "hyperoctahedral_order": 8,
+      "intersection_order": 2,
+      "intersection_verified": true,
+      "point_stabilizer_order": 6,
+      "product_factorization_verified": true,
+      "product_set_order": 24,
+      "status": "symmetric-group-factorization-square-verified",
+      "symmetric_commuting_square_verified": true,
+      "symmetric_group_order": 24
+    },
+    {
+      "equal_horizontal_index": 6,
+      "expected_intersection_order": 8,
+      "half_degree": 3,
+      "hyperoctahedral_order": 48,
+      "intersection_order": 8,
+      "intersection_verified": true,
+      "point_stabilizer_order": 120,
+      "product_factorization_verified": true,
+      "product_set_order": 720,
+      "status": "symmetric-group-factorization-square-verified",
+      "symmetric_commuting_square_verified": true,
+      "symmetric_group_order": 720
+    }
+  ],
+  "headline_metrics": {
+    "all_rank_symmetric_commuting_square_count": 1,
+    "exact_incidence_identity_count": 1,
+    "finite_incidence_control_count": 4,
+    "finite_incidence_failure_count": 0,
+    "hidden_involution_detector_count": 0,
+    "natural_superpolynomial_cell_obstruction_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_connection_cell_compiler_count": 0,
+    "source_aware_subduction_transform_count": 0,
+    "vertical_edge_factorization_count": 0
+  },
+  "incidence_controls": [
+    {
+      "equation_count": 10,
+      "equation_failure_count": 0,
+      "half_degree": 2,
+      "horizontal_symmetric_branching_multiplicity_free": true,
+      "horizontal_wreath_branching_multiplicity_free": true,
+      "incidence_identity_verified": true,
+      "lower_bipartition_count": 2,
+      "maximum_connection_cell_dimension": 2,
+      "maximum_vertical_branching_multiplicity": 1,
+      "status": "exact-commuting-square-incidence-identity-verified",
+      "symmetric_partition_count": 5
+    },
+    {
+      "equation_count": 55,
+      "equation_failure_count": 0,
+      "half_degree": 3,
+      "horizontal_symmetric_branching_multiplicity_free": true,
+      "horizontal_wreath_branching_multiplicity_free": true,
+      "incidence_identity_verified": true,
+      "lower_bipartition_count": 5,
+      "maximum_connection_cell_dimension": 4,
+      "maximum_vertical_branching_multiplicity": 1,
+      "status": "exact-commuting-square-incidence-identity-verified",
+      "symmetric_partition_count": 11
+    },
+    {
+      "equation_count": 220,
+      "equation_failure_count": 0,
+      "half_degree": 4,
+      "horizontal_symmetric_branching_multiplicity_free": true,
+      "horizontal_wreath_branching_multiplicity_free": true,
+      "incidence_identity_verified": true,
+      "lower_bipartition_count": 10,
+      "maximum_connection_cell_dimension": 7,
+      "maximum_vertical_branching_multiplicity": 2,
+      "status": "exact-commuting-square-incidence-identity-verified",
+      "symmetric_partition_count": 22
+    },
+    {
+      "equation_count": 840,
+      "equation_failure_count": 0,
+      "half_degree": 5,
+      "horizontal_symmetric_branching_multiplicity_free": true,
+      "horizontal_wreath_branching_multiplicity_free": true,
+      "incidence_identity_verified": true,
+      "lower_bipartition_count": 20,
+      "maximum_connection_cell_dimension": 16,
+      "maximum_vertical_branching_multiplicity": 4,
+      "status": "exact-commuting-square-incidence-identity-verified",
+      "symmetric_partition_count": 42
+    }
+  ],
+  "literature_links": [
+    {
+      "id": "arXiv:2211.03822",
+      "role": "Unitary connections on tracial Bratteli diagrams and their operator-algebraic realization."
+    },
+    {
+      "id": "arXiv:0810.2767",
+      "role": "Centralizer constructions for wreath-product towers; architectural analogy, not this ambient inclusion."
+    },
+    {
+      "id": "arXiv:1406.7671",
+      "role": "Multiplicity-resolving charge motivation and the explicit limitation of known embedding-chain charges."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-HIDDEN-INVOLUTION-VERTICAL-EDGE-FACTORIZATION",
+      "resolved": false,
+      "statement": "Construct polynomial-length labels and local isometries that factor every naturally occupied b(lambda,mu)-dimensional vertical edge."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-CONNECTION-CELL-FORMULA",
+      "resolved": false,
+      "statement": "Derive uniformly computable connection coefficients after vertical-edge factorization, with controlled precision and normalization."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-CONNECTION-CIRCUIT",
+      "resolved": false,
+      "statement": "Compile the factored cells coherently and prove total error and gate complexity polynomial."
+    }
+  ],
+  "scaling_records": [
+    {
+      "abstract_connection_is_polynomial_cell_compiler": false,
+      "degree": 24,
+      "half_degree": 12,
+      "inherited_connection_cell_dimension_log2_lower_bound": 9.550550546256261,
+      "joint_source_high_multiplicity_mass_lower_bound": 0.0,
+      "natural_vertical_multiplicity_threshold_log2": 9.550550546256261,
+      "shape_adjacency_count_polynomial": true,
+      "status": "abstract-connection-cell-inherits-superpolynomial-vertical-edge",
+      "vertical_edge_dimension_superpolynomial": true
+    },
+    {
+      "abstract_connection_is_polynomial_cell_compiler": false,
+      "degree": 32,
+      "half_degree": 16,
+      "inherited_connection_cell_dimension_log2_lower_bound": 14.35328079561942,
+      "joint_source_high_multiplicity_mass_lower_bound": 0.0,
+      "natural_vertical_multiplicity_threshold_log2": 14.35328079561942,
+      "shape_adjacency_count_polynomial": true,
+      "status": "abstract-connection-cell-inherits-superpolynomial-vertical-edge",
+      "vertical_edge_dimension_superpolynomial": true
+    },
+    {
+      "abstract_connection_is_polynomial_cell_compiler": false,
+      "degree": 48,
+      "half_degree": 24,
+      "inherited_connection_cell_dimension_log2_lower_bound": 24.97797865264995,
+      "joint_source_high_multiplicity_mass_lower_bound": 0.9386260063734359,
+      "natural_vertical_multiplicity_threshold_log2": 24.97797865264995,
+      "shape_adjacency_count_polynomial": true,
+      "status": "abstract-connection-cell-inherits-superpolynomial-vertical-edge",
+      "vertical_edge_dimension_superpolynomial": true
+    },
+    {
+      "abstract_connection_is_polynomial_cell_compiler": false,
+      "degree": 64,
+      "half_degree": 32,
+      "inherited_connection_cell_dimension_log2_lower_bound": 36.582970072340935,
+      "joint_source_high_multiplicity_mass_lower_bound": 0.9997934483582592,
+      "natural_vertical_multiplicity_threshold_log2": 36.582970072340935,
+      "shape_adjacency_count_polynomial": true,
+      "status": "abstract-connection-cell-inherits-superpolynomial-vertical-edge",
+      "vertical_edge_dimension_superpolynomial": true
+    },
+    {
+      "abstract_connection_is_polynomial_cell_compiler": false,
+      "degree": 128,
+      "half_degree": 64,
+      "inherited_connection_cell_dimension_log2_lower_bound": 89.04164453547446,
+      "joint_source_high_multiplicity_mass_lower_bound": 1.0,
+      "natural_vertical_multiplicity_threshold_log2": 89.04164453547446,
+      "shape_adjacency_count_polynomial": true,
+      "status": "abstract-connection-cell-inherits-superpolynomial-vertical-edge",
+      "vertical_edge_dimension_superpolynomial": true
+    }
+  ],
+  "status": "symmetric-commuting-square-proved-vertical-edge-factorization-open",
+  "summary": "Proved the symmetric commuting-square architecture for S_(2m) down K_m and showed that abstract connection cells inherit superpolynomial natural vertical multiplicity.",
+  "theorem": {
+    "abstract_unitary_connection_exists": true,
+    "all_rank_symmetric_commuting_square_proved": true,
+    "commuting_square": "Coordinate conditional expectations onto subgroup algebras commute, and the factorization makes the square symmetric/nondegenerate.",
+    "connection_opportunity": "A source-adapted subduction transform should factor through unitary connection cells for this square.",
+    "exact_incidence_identity_proved": true,
+    "group_factorization": "K_m intersect S_(2m-1)=K_(m-1), both indices are 2m, and K_m S_(2m-1)=S_(2m).",
+    "hidden_involution_detector_constructed": false,
+    "horizontal_branching": "S_n down S_(n-1) and (C_2 wr S_m) down (C_2 wr S_(m-1)) both remove one box multiplicity-free.",
+    "horizontal_branchings_multiplicity_free": true,
+    "incidence_identity": "sum_(tau<lambda)b_odd(tau,nu)=sum_(mu>nu)b_even(lambda,mu) for every lambda,nu.",
+    "polynomial_size_connection_cells_proved": false,
+    "required_escape": "Factor vertical edges into rank-local harmonic/charge labels before attempting coherent connection cells.",
+    "source_aware_subduction_transform_compiled": false,
+    "speedup_claim_allowed": false,
+    "status": "symmetric-commuting-square-proved-vertical-edge-factorization-open",
+    "theorem_verified": true,
+    "vertical_multiplicity_factorization_compiled": false,
+    "vertical_multiplicity_obstruction": "Cell dimensions include the vertical b(lambda,mu) edge multiplicities and are superpolynomial on natural mass."
+  },
+  "theorem_contract": {
+    "claim_boundary": "Exact architecture and cell-size obstruction; no explicit vertical-edge factorization or quantum circuit.",
+    "connection_target": "Change from symmetric Young paths to hyperoctahedral branching-copy paths.",
+    "range": "every integer m>=2",
+    "tower": "K_(m-1) <= K_m inside S_(2m-1) <= S_(2m)"
+  }
+}

@@ -17,23 +17,25 @@
     },
     {
       "objection": "Every marked target with a surface relator is a separating curve.",
-      "resolution": "A target word needs an explicit topological certificate; arbitrary nonseparating or self-intersecting words remain outside scope.",
+      "resolution": "Separating and nonseparating simple curves are both controlled, but a target still needs an explicit simple-curve certificate; self-intersecting words remain outside scope.",
       "resolved": true
     }
   ],
   "claim_gate": {
     "all_nonsign_surface_target_characters_vanish": true,
     "all_pressure_saturating_marked_targets_are_surface_curves": false,
+    "all_simple_surface_target_characters_vanish": true,
     "frobenius_separating_density_proved": true,
     "natural_component_M4_positive": false,
     "non_surface_target_characters_controlled": false,
-    "reason": "Every certified surface-boundary target is asymptotically alternating-uniform; only unclassified non-surface/interleaved target words can still support the marked Green signal.",
+    "nonseparating_surface_targets_mix_genus_uniformly": true,
+    "reason": "Every certified simple surface target is asymptotically uniform on S_n or A_n; only self-intersecting, non-surface, or unclassified interleaved target words can still support the marked Green signal.",
     "separating_surface_targets_mix_genus_uniformly": true,
+    "simple_surface_target_class_dequantized": true,
     "speedup_claim_allowed": false,
-    "surface_target_class_dequantized": true,
     "unconditioned_surface_targets_mix_genus_uniformly": true
   },
-  "created_at": "2026-08-14T02:33:02.933978+00:00",
+  "created_at": "2026-08-20T16:58:52.200435+00:00",
   "direct_count_control": {
     "direct_frobenius_formula_verified": true,
     "exact_surface_homomorphism_count": 16038,
@@ -48,14 +50,17 @@
   "falsifiers_triggered": [
     "The exact finite S3 handle-character bias does not survive growing S_n.",
     "Adding surface genus cannot rescue a nonsign target character.",
+    "Nonseparating simple curves mix even faster, at Witten-zeta-two-tail scale.",
     "Trivial/sign behavior is only the parity support of commutators.",
     "Future obstruction searches should reject certified surface-boundary targets before expensive finite character screens."
   ],
   "headline_metrics": {
     "all_marked_target_classification_theorem_count": 0,
+    "degree_30_genus_uniform_nonseparating_tv_upper_bound": 0.001199956781721637,
     "degree_30_genus_uniform_nonsign_character_upper_bound": 0.10031893665675794,
     "degree_30_genus_uniform_separating_tv_upper_bound": 0.05015946832837897,
     "direct_frobenius_count_control_count": 1,
+    "exact_nonseparating_surface_control_count": 18,
     "exact_separating_surface_control_count": 18,
     "exact_unconditioned_surface_control_count": 18,
     "finite_control_failure_count": 0,
@@ -64,6 +69,260 @@
     "new_quantum_algorithm_count": 0,
     "surface_target_class_dequantization_theorem_count": 1
   },
+  "nonseparating_controls": [
+    {
+      "exact_density_and_bound_verified": true,
+      "exact_density_probability_sum": "1",
+      "exact_total_variation_from_uniform_symmetric": 0.05555555555555555,
+      "maximum_character_bound": 0.2222222222222222,
+      "maximum_nontrivial_normalized_character_expectation": 0.1111111111111111,
+      "n": 3,
+      "standard_normalized_character_expectation": 0.05555555555555555,
+      "status": "nonseparating-surface-target-mixes-to-uniform-symmetric",
+      "surface_genus": 2,
+      "total_variation_upper_bound": 0.1111111111111111,
+      "witten_zeta_denominator": 2.25,
+      "witten_zeta_tail": 0.25
+    },
+    {
+      "exact_density_and_bound_verified": true,
+      "exact_density_probability_sum": "1",
+      "exact_total_variation_from_uniform_symmetric": 0.015151515151515152,
+      "maximum_character_bound": 0.06060606060606061,
+      "maximum_nontrivial_normalized_character_expectation": 0.030303030303030304,
+      "n": 3,
+      "standard_normalized_character_expectation": 0.015151515151515152,
+      "status": "nonseparating-surface-target-mixes-to-uniform-symmetric",
+      "surface_genus": 3,
+      "total_variation_upper_bound": 0.030303030303030304,
+      "witten_zeta_denominator": 2.0625,
+      "witten_zeta_tail": 0.0625
+    },
+    {
+      "exact_density_and_bound_verified": true,
+      "exact_density_probability_sum": "1",
+      "exact_total_variation_from_uniform_symmetric": 0.003875968992248062,
+      "maximum_character_bound": 0.015503875968992248,
+      "maximum_nontrivial_normalized_character_expectation": 0.007751937984496124,
+      "n": 3,
+      "standard_normalized_character_expectation": 0.003875968992248062,
+      "status": "nonseparating-surface-target-mixes-to-uniform-symmetric",
+      "surface_genus": 4,
+      "total_variation_upper_bound": 0.007751937984496124,
+      "witten_zeta_denominator": 2.015625,
+      "witten_zeta_tail": 0.015625
+    },
+    {
+      "exact_density_and_bound_verified": true,
+      "exact_density_probability_sum": "1",
+      "exact_total_variation_from_uniform_symmetric": 0.08052434456928839,
+      "maximum_character_bound": 0.38202247191011235,
+      "maximum_nontrivial_normalized_character_expectation": 0.10112359550561797,
+      "n": 4,
+      "standard_normalized_character_expectation": 0.0299625468164794,
+      "status": "nonseparating-surface-target-mixes-to-uniform-symmetric",
+      "surface_genus": 2,
+      "total_variation_upper_bound": 0.19101123595505617,
+      "witten_zeta_denominator": 2.4722222222222223,
+      "witten_zeta_tail": 0.4722222222222222
+    },
+    {
+      "exact_density_and_bound_verified": true,
+      "exact_density_probability_sum": "1",
+      "exact_total_variation_from_uniform_symmetric": 0.01891558841651263,
+      "maximum_character_bound": 0.08354898336414047,
+      "maximum_nontrivial_normalized_character_expectation": 0.029944547134935304,
+      "n": 4,
+      "standard_normalized_character_expectation": 0.003943314849044978,
+      "status": "nonseparating-surface-target-mixes-to-uniform-symmetric",
+      "surface_genus": 3,
+      "total_variation_upper_bound": 0.04177449168207024,
+      "witten_zeta_denominator": 2.0871913580246915,
+      "witten_zeta_tail": 0.08719135802469136
+    },
+    {
+      "exact_density_and_bound_verified": true,
+      "exact_density_probability_sum": "1",
+      "exact_total_variation_from_uniform_symmetric": 0.0043237866672330245,
+      "maximum_character_bound": 0.018201318905372257,
+      "maximum_nontrivial_normalized_character_expectation": 0.00774140109802589,
+      "n": 4,
+      "standard_normalized_character_expectation": 0.0004530861182200795,
+      "status": "nonseparating-surface-target-mixes-to-uniform-symmetric",
+      "surface_genus": 4,
+      "total_variation_upper_bound": 0.009100659452686129,
+      "witten_zeta_denominator": 2.0183684842249656,
+      "witten_zeta_tail": 0.018368484224965707
+    },
+    {
+      "exact_density_and_bound_verified": true,
+      "exact_density_probability_sum": "1",
+      "exact_total_variation_from_uniform_symmetric": 0.03075184540101186,
+      "maximum_character_bound": 0.2085095794973874,
+      "maximum_nontrivial_normalized_character_expectation": 0.026063697437173426,
+      "n": 5,
+      "standard_normalized_character_expectation": 0.026063697437173426,
+      "status": "nonseparating-surface-target-mixes-to-uniform-symmetric",
+      "surface_genus": 2,
+      "total_variation_upper_bound": 0.1042547897486937,
+      "witten_zeta_denominator": 2.2327777777777778,
+      "witten_zeta_tail": 0.23277777777777778
+    },
+    {
+      "exact_density_and_bound_verified": true,
+      "exact_density_probability_sum": "1",
+      "exact_total_variation_from_uniform_symmetric": 0.001854293668813457,
+      "maximum_character_bound": 0.011715079077665924,
+      "maximum_nontrivial_normalized_character_expectation": 0.0014643848847082403,
+      "n": 5,
+      "standard_normalized_character_expectation": 0.0014643848847082403,
+      "status": "nonseparating-surface-target-mixes-to-uniform-symmetric",
+      "surface_genus": 3,
+      "total_variation_upper_bound": 0.005857539538832962,
+      "witten_zeta_denominator": 2.0117841049382714,
+      "witten_zeta_tail": 0.011784104938271605
+    },
+    {
+      "exact_density_and_bound_verified": true,
+      "exact_density_probability_sum": "1",
+      "exact_total_variation_from_uniform_symmetric": 0.00010655141285063636,
+      "maximum_character_bound": 0.0006375114452909676,
+      "maximum_nontrivial_normalized_character_expectation": 7.968893066137094e-05,
+      "n": 5,
+      "standard_normalized_character_expectation": 7.968893066137094e-05,
+      "status": "nonseparating-surface-target-mixes-to-uniform-symmetric",
+      "surface_genus": 4,
+      "total_variation_upper_bound": 0.0003187557226454838,
+      "witten_zeta_denominator": 2.0006377147205074,
+      "witten_zeta_tail": 0.0006377147205075446
+    },
+    {
+      "exact_density_and_bound_verified": true,
+      "exact_density_probability_sum": "1",
+      "exact_total_variation_from_uniform_symmetric": 0.035396110586579585,
+      "maximum_character_bound": 0.18889598292307788,
+      "maximum_nontrivial_normalized_character_expectation": 0.013135608722964185,
+      "n": 6,
+      "standard_normalized_character_expectation": 0.011998913477335435,
+      "status": "nonseparating-surface-target-mixes-to-uniform-symmetric",
+      "surface_genus": 2,
+      "total_variation_upper_bound": 0.09444799146153894,
+      "witten_zeta_denominator": 2.208597608024691,
+      "witten_zeta_tail": 0.20859760802469135
+    },
+    {
+      "exact_density_and_bound_verified": true,
+      "exact_density_probability_sum": "1",
+      "exact_total_variation_from_uniform_symmetric": 0.0012691975958716887,
+      "maximum_character_bound": 0.006896229105305108,
+      "maximum_nontrivial_normalized_character_expectation": 0.00041276290659761496,
+      "n": 6,
+      "standard_normalized_character_expectation": 0.00037224692468834734,
+      "status": "nonseparating-surface-target-mixes-to-uniform-symmetric",
+      "surface_genus": 3,
+      "total_variation_upper_bound": 0.003448114552652554,
+      "witten_zeta_denominator": 2.006920090369614,
+      "witten_zeta_tail": 0.006920090369614245
+    },
+    {
+      "exact_density_and_bound_verified": true,
+      "exact_density_probability_sum": "1",
+      "exact_total_variation_from_uniform_symmetric": 4.802165690966128e-05,
+      "maximum_character_bound": 0.0002617886863470447,
+      "maximum_nontrivial_normalized_character_expectation": 1.487058213826702e-05,
+      "n": 6,
+      "standard_normalized_character_expectation": 1.3386503766583546e-05,
+      "status": "nonseparating-surface-target-mixes-to-uniform-symmetric",
+      "surface_genus": 4,
+      "total_variation_upper_bound": 0.00013089434317352234,
+      "witten_zeta_denominator": 2.000261822957491,
+      "witten_zeta_tail": 0.00026182295749109324
+    },
+    {
+      "exact_density_and_bound_verified": true,
+      "exact_density_probability_sum": "1",
+      "exact_total_variation_from_uniform_symmetric": 0.016075785304820473,
+      "maximum_character_bound": 0.0893427241488558,
+      "maximum_nontrivial_normalized_character_expectation": 0.007575203697836701,
+      "n": 7,
+      "standard_normalized_character_expectation": 0.007575203697836701,
+      "status": "nonseparating-surface-target-mixes-to-uniform-symmetric",
+      "surface_genus": 2,
+      "total_variation_upper_bound": 0.0446713620744279,
+      "witten_zeta_denominator": 2.0935204081632652,
+      "witten_zeta_tail": 0.0935204081632653
+    },
+    {
+      "exact_density_and_bound_verified": true,
+      "exact_density_probability_sum": "1",
+      "exact_total_variation_from_uniform_symmetric": 0.0003088274552681671,
+      "maximum_character_bound": 0.0017032541166299828,
+      "maximum_nontrivial_normalized_character_expectation": 0.00014204881330077753,
+      "n": 7,
+      "standard_normalized_character_expectation": 0.00014204881330077753,
+      "status": "nonseparating-surface-target-mixes-to-uniform-symmetric",
+      "surface_genus": 3,
+      "total_variation_upper_bound": 0.0008516270583149914,
+      "witten_zeta_denominator": 2.0017047058902926,
+      "witten_zeta_tail": 0.001704705890292625
+    },
+    {
+      "exact_density_and_bound_verified": true,
+      "exact_density_probability_sum": "1",
+      "exact_total_variation_from_uniform_symmetric": 8.005222431840056e-06,
+      "maximum_character_bound": 4.361284639227534e-05,
+      "maximum_nontrivial_normalized_character_expectation": 3.634494529216553e-06,
+      "n": 7,
+      "standard_normalized_character_expectation": 3.634494529216553e-06,
+      "status": "nonseparating-surface-target-mixes-to-uniform-symmetric",
+      "surface_genus": 4,
+      "total_variation_upper_bound": 2.180642319613767e-05,
+      "witten_zeta_denominator": 2.000043613797453,
+      "witten_zeta_tail": 4.361379745319979e-05
+    },
+    {
+      "exact_density_and_bound_verified": true,
+      "exact_density_probability_sum": "1",
+      "exact_total_variation_from_uniform_symmetric": 0.012528701407071238,
+      "maximum_character_bound": 0.06479434186650118,
+      "maximum_nontrivial_normalized_character_expectation": 0.003993407357087183,
+      "n": 8,
+      "standard_normalized_character_expectation": 0.003993407357087183,
+      "status": "nonseparating-surface-target-mixes-to-uniform-symmetric",
+      "surface_genus": 2,
+      "total_variation_upper_bound": 0.03239717093325059,
+      "witten_zeta_denominator": 2.06696377885645,
+      "witten_zeta_tail": 0.06696377885644998
+    },
+    {
+      "exact_density_and_bound_verified": true,
+      "exact_density_probability_sum": "1",
+      "exact_total_variation_from_uniform_symmetric": 0.0001708258809359043,
+      "maximum_character_bound": 0.0009127440506087414,
+      "maximum_nontrivial_normalized_character_expectation": 6.149455851583764e-05,
+      "n": 8,
+      "standard_normalized_character_expectation": 6.149455851583764e-05,
+      "status": "nonseparating-surface-target-mixes-to-uniform-symmetric",
+      "surface_genus": 3,
+      "total_variation_upper_bound": 0.0004563720253043707,
+      "witten_zeta_denominator": 2.0009131607916486,
+      "witten_zeta_tail": 0.0009131607916486546
+    },
+    {
+      "exact_density_and_bound_verified": true,
+      "exact_density_probability_sum": "1",
+      "exact_total_variation_from_uniform_symmetric": 3.2025794846029707e-06,
+      "maximum_character_bound": 1.7325292588547314e-05,
+      "maximum_nontrivial_normalized_character_expectation": 1.2185515897911185e-06,
+      "n": 8,
+      "standard_normalized_character_expectation": 1.2185515897911185e-06,
+      "status": "nonseparating-surface-target-mixes-to-uniform-symmetric",
+      "surface_genus": 4,
+      "total_variation_upper_bound": 8.662646294273657e-06,
+      "witten_zeta_denominator": 2.0000173254426725,
+      "witten_zeta_tail": 1.7325442672729078e-05
+    }
+  ],
   "proof_obligations": [
     {
       "obligation": "derive_exact_separating_curve_target_density",
@@ -73,6 +332,11 @@
     {
       "obligation": "prove_genus_uniform_nonsign_character_decay",
       "resolution": "The worst remainder is genus one; zeta_Sn^*(2)=O(n^-2) gives a uniform O(1/n) TV bound.",
+      "resolved": true
+    },
+    {
+      "obligation": "derive_nonseparating_simple_curve_density_and_decay",
+      "resolution": "Fixing one handle generator and applying the commutator character average gives a positive squared-character density whose nonsign mass is the Witten-zeta tail.",
       "resolved": true
     },
     {
@@ -90,6 +354,7 @@
     {
       "asymptotic_order": "O(1/n) uniformly over positive genera",
       "genus_uniform_decay_proved_using_external_zeta_bound": true,
+      "genus_uniform_nonseparating_tv_upper_bound": 0.1042547897486937,
       "genus_uniform_nonsign_character_upper_bound": 1.0728508480396195,
       "genus_uniform_separating_tv_upper_bound": 0.5364254240198097,
       "genus_uniform_unconditioned_tv_upper_bound": 0.24123524710216881,
@@ -100,6 +365,7 @@
     {
       "asymptotic_order": "O(1/n) uniformly over positive genera",
       "genus_uniform_decay_proved_using_external_zeta_bound": true,
+      "genus_uniform_nonseparating_tv_upper_bound": 0.09444799146153894,
       "genus_uniform_nonsign_character_upper_bound": 1.0160722319555076,
       "genus_uniform_separating_tv_upper_bound": 0.5080361159777538,
       "genus_uniform_unconditioned_tv_upper_bound": 0.22836243562848255,
@@ -110,6 +376,7 @@
     {
       "asymptotic_order": "O(1/n) uniformly over positive genera",
       "genus_uniform_decay_proved_using_external_zeta_bound": true,
+      "genus_uniform_nonseparating_tv_upper_bound": 0.0446713620744279,
       "genus_uniform_nonsign_character_upper_bound": 0.6736428626724968,
       "genus_uniform_separating_tv_upper_bound": 0.3368214313362484,
       "genus_uniform_unconditioned_tv_upper_bound": 0.1529055330614832,
@@ -120,6 +387,7 @@
     {
       "asymptotic_order": "O(1/n) uniformly over positive genera",
       "genus_uniform_decay_proved_using_external_zeta_bound": true,
+      "genus_uniform_nonseparating_tv_upper_bound": 0.03239717093325059,
       "genus_uniform_nonsign_character_upper_bound": 0.5655744872298918,
       "genus_uniform_separating_tv_upper_bound": 0.2827872436149459,
       "genus_uniform_unconditioned_tv_upper_bound": 0.12938680270457453,
@@ -130,6 +398,7 @@
     {
       "asymptotic_order": "O(1/n) uniformly over positive genera",
       "genus_uniform_decay_proved_using_external_zeta_bound": true,
+      "genus_uniform_nonseparating_tv_upper_bound": 0.019994438363879888,
       "genus_uniform_nonsign_character_upper_bound": 0.43591473643781103,
       "genus_uniform_separating_tv_upper_bound": 0.21795736821890552,
       "genus_uniform_unconditioned_tv_upper_bound": 0.10100092162973358,
@@ -140,6 +409,7 @@
     {
       "asymptotic_order": "O(1/n) uniformly over positive genera",
       "genus_uniform_decay_proved_using_external_zeta_bound": true,
+      "genus_uniform_nonseparating_tv_upper_bound": 0.014933716191240926,
       "genus_uniform_nonsign_character_upper_bound": 0.37292078464081957,
       "genus_uniform_separating_tv_upper_bound": 0.18646039232040978,
       "genus_uniform_unconditioned_tv_upper_bound": 0.08706351996231204,
@@ -150,6 +420,7 @@
     {
       "asymptotic_order": "O(1/n) uniformly over positive genera",
       "genus_uniform_decay_proved_using_external_zeta_bound": true,
+      "genus_uniform_nonseparating_tv_upper_bound": 0.01121816812085141,
       "genus_uniform_nonsign_character_upper_bound": 0.3203265284248457,
       "genus_uniform_separating_tv_upper_bound": 0.16016326421242286,
       "genus_uniform_unconditioned_tv_upper_bound": 0.07531747211035723,
@@ -160,6 +431,7 @@
     {
       "asymptotic_order": "O(1/n) uniformly over positive genera",
       "genus_uniform_decay_proved_using_external_zeta_bound": true,
+      "genus_uniform_nonseparating_tv_upper_bound": 0.009054535627889809,
       "genus_uniform_nonsign_character_upper_bound": 0.2860277307396323,
       "genus_uniform_separating_tv_upper_bound": 0.14301386536981614,
       "genus_uniform_unconditioned_tv_upper_bound": 0.06759167611045408,
@@ -170,6 +442,7 @@
     {
       "asymptotic_order": "O(1/n) uniformly over positive genera",
       "genus_uniform_decay_proved_using_external_zeta_bound": true,
+      "genus_uniform_nonseparating_tv_upper_bound": 0.007428700262284231,
       "genus_uniform_nonsign_character_upper_bound": 0.25773209537271213,
       "genus_uniform_separating_tv_upper_bound": 0.12886604768635607,
       "genus_uniform_unconditioned_tv_upper_bound": 0.06117311041340877,
@@ -180,6 +453,7 @@
     {
       "asymptotic_order": "O(1/n) uniformly over positive genera",
       "genus_uniform_decay_proved_using_external_zeta_bound": true,
+      "genus_uniform_nonseparating_tv_upper_bound": 0.006253947476204541,
       "genus_uniform_nonsign_character_upper_bound": 0.23548476580980396,
       "genus_uniform_separating_tv_upper_bound": 0.11774238290490198,
       "genus_uniform_unconditioned_tv_upper_bound": 0.05609503310506373,
@@ -190,6 +464,7 @@
     {
       "asymptotic_order": "O(1/n) uniformly over positive genera",
       "genus_uniform_decay_proved_using_external_zeta_bound": true,
+      "genus_uniform_nonseparating_tv_upper_bound": 0.005339686736240856,
       "genus_uniform_nonsign_character_upper_bound": 0.2168089343180756,
       "genus_uniform_separating_tv_upper_bound": 0.1084044671590378,
       "genus_uniform_unconditioned_tv_upper_bound": 0.0518090342242632,
@@ -200,6 +475,7 @@
     {
       "asymptotic_order": "O(1/n) uniformly over positive genera",
       "genus_uniform_decay_proved_using_external_zeta_bound": true,
+      "genus_uniform_nonseparating_tv_upper_bound": 0.004619872497375118,
       "genus_uniform_nonsign_character_upper_bound": 0.20104233674956698,
       "genus_uniform_separating_tv_upper_bound": 0.10052116837478349,
       "genus_uniform_unconditioned_tv_upper_bound": 0.04817320198968685,
@@ -210,6 +486,7 @@
     {
       "asymptotic_order": "O(1/n) uniformly over positive genera",
       "genus_uniform_decay_proved_using_external_zeta_bound": true,
+      "genus_uniform_nonseparating_tv_upper_bound": 0.0040383813793709936,
       "genus_uniform_nonsign_character_upper_bound": 0.18745508597993268,
       "genus_uniform_separating_tv_upper_bound": 0.09372754298996634,
       "genus_uniform_unconditioned_tv_upper_bound": 0.045026414639758705,
@@ -220,6 +497,7 @@
     {
       "asymptotic_order": "O(1/n) uniformly over positive genera",
       "genus_uniform_decay_proved_using_external_zeta_bound": true,
+      "genus_uniform_nonseparating_tv_upper_bound": 0.0035620083014611314,
       "genus_uniform_nonsign_character_upper_bound": 0.17563088051822884,
       "genus_uniform_separating_tv_upper_bound": 0.08781544025911442,
       "genus_uniform_unconditioned_tv_upper_bound": 0.0422773081012467,
@@ -230,6 +508,7 @@
     {
       "asymptotic_order": "O(1/n) uniformly over positive genera",
       "genus_uniform_decay_proved_using_external_zeta_bound": true,
+      "genus_uniform_nonseparating_tv_upper_bound": 0.0031661486654722846,
       "genus_uniform_nonsign_character_upper_bound": 0.16523161559506838,
       "genus_uniform_separating_tv_upper_bound": 0.08261580779753419,
       "genus_uniform_unconditioned_tv_upper_bound": 0.03985100376843009,
@@ -240,6 +519,7 @@
     {
       "asymptotic_order": "O(1/n) uniformly over positive genera",
       "genus_uniform_decay_proved_using_external_zeta_bound": true,
+      "genus_uniform_nonseparating_tv_upper_bound": 0.0028334763571788747,
       "genus_uniform_nonsign_character_upper_bound": 0.15601183008401562,
       "genus_uniform_separating_tv_upper_bound": 0.07800591504200781,
       "genus_uniform_unconditioned_tv_upper_bound": 0.037693021628028116,
@@ -250,6 +530,7 @@
     {
       "asymptotic_order": "O(1/n) uniformly over positive genera",
       "genus_uniform_decay_proved_using_external_zeta_bound": true,
+      "genus_uniform_nonseparating_tv_upper_bound": 0.001759938671122591,
       "genus_uniform_nonsign_character_upper_bound": 0.12207252512360774,
       "genus_uniform_separating_tv_upper_bound": 0.06103626256180387,
       "genus_uniform_unconditioned_tv_upper_bound": 0.029690415255310167,
@@ -260,6 +541,7 @@
     {
       "asymptotic_order": "O(1/n) uniformly over positive genera",
       "genus_uniform_decay_proved_using_external_zeta_bound": true,
+      "genus_uniform_nonseparating_tv_upper_bound": 0.001199956781721637,
       "genus_uniform_nonsign_character_upper_bound": 0.10031893665675794,
       "genus_uniform_separating_tv_upper_bound": 0.05015946832837897,
       "genus_uniform_unconditioned_tv_upper_bound": 0.02450916571294026,
@@ -594,13 +876,15 @@
       "witten_zeta_denominator": 2.0000173254426725
     }
   ],
-  "status": "surface-boundary-marked-target-class-dequantized-genus-uniformly",
-  "summary": "Proved genus-uniform alternating mixing for unconditioned surface boundaries and separating curves, eliminating every high-dimensional character signal in that certified target class.",
+  "status": "all-simple-surface-marked-targets-dequantized-genus-uniformly",
+  "summary": "Proved genus-uniform mixing for unconditioned boundaries and every simple curve on orientable surfaces, eliminating all high-dimensional character signal in that certified target class.",
   "theorem_contract": {
     "alternating_null": "u(x)=1+sgn(x), the uniform-A_n density relative to uniform S_n",
     "character_consequence": "every normalized nonsign nontrivial character expectation is at most 2TV",
     "commutator_product_density": "A_h(x)=sum_rho chi_rho(x)/d_rho^(2h-1)",
-    "genus_uniform_asymptotic": "TV=O(1/n) uniformly for all a,b>=1",
+    "genus_uniform_asymptotic": "separating TV=O(1/n); nonseparating TV=O(1/n^2), uniformly in genus",
+    "nonseparating_density": "f_g(x)=sum_rho |chi_rho(x)|^2/d_rho^(2g-2)/zeta_G(2g-2)",
+    "nonseparating_tv_bound": "zeta_Sn^*(2g-2)/zeta_Sn(2g-2)=O(n^-2) uniformly for g>=2",
     "remainder_energy": "||A_h-u||_2^2=zeta_Sn^*(4h-2)",
     "scope": "requires an actual unconditioned-boundary or separating-curve certificate",
     "separating_curve_density": "f_(a,b)(x)=A_a(x)A_b(x^-1)/zeta_G(2a+2b-2)",

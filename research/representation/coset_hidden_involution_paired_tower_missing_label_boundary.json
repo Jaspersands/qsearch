@@ -1,0 +1,288 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False in every controlled rank: every S_(2m) irrep has a nonzero exact harmonic residual for m=2,3,4. Asymptotic source-weighted mass remains open.",
+      "challenge": "The incidence kernel may be absent from real restriction vectors.",
+      "resolved": true
+    },
+    {
+      "answer": "False for the one-level linear recurrence: D_m has nullity p_2(m)-p_2(m-1). Additional global or local data is required.",
+      "challenge": "All lower-rank branching data uniquely determines b_m.",
+      "resolved": true
+    },
+    {
+      "answer": "False: its basis label still needs only polynomially many bits, and an efficient structured rotation has not been excluded.",
+      "challenge": "The fresh harmonic dimension proves circuit hardness.",
+      "resolved": true
+    },
+    {
+      "answer": "False: coefficient hardness is neither a coherent-transform lower bound nor specific enough to this natural inner-size-two family.",
+      "challenge": "Classical plethysm hardness supplies the missing no-go.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "actual_branching_harmonic_component_verified": true,
+    "binary_hidden_involution_detector_constructed": false,
+    "exact_paired_branching_recurrence_proved": true,
+    "natural_source_harmonic_mass_bounded": false,
+    "paired_young_local_rotations_compiled": false,
+    "reason": "The naive recurrence loses a fresh harmonic component. Its natural mass, coherent local generation, normalized fusion, and decoding remain unresolved.",
+    "source_aware_normalized_subduction_transform_compiled": false,
+    "speedup_claim_allowed": false,
+    "two_colour_differential_poset_underdetermination_proved": true
+  },
+  "created_at": "2026-08-20T18:09:37.793619+00:00",
+  "falsifiers_triggered": [
+    "Lower-rank branching data does not uniquely determine the next hyperoctahedral restriction vector.",
+    "The bipartition incidence kernel is not irrelevant to actual controlled restriction vectors.",
+    "Neither growing multiplicity nor general plethysm hardness establishes a coherent circuit lower bound.",
+    "No detector or speedup claim is permitted without natural-mass and normalized-transform theorems."
+  ],
+  "headline_metrics": {
+    "controlled_irrep_count": 38,
+    "controlled_irrep_nonzero_harmonic_count": 38,
+    "incidence_control_count": 6,
+    "incidence_control_failure_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "normalized_subduction_transform_count": 0,
+    "paired_young_local_rotation_count": 0,
+    "plethysm_control_count": 3,
+    "plethysm_recurrence_failure_count": 0,
+    "restriction_dimension_failure_count": 0,
+    "tail_harmonic_label_bits_lower_bound": 28.650478620169004,
+    "tail_harmonic_nullity": 421360145
+  },
+  "incidence_controls": [
+    {
+      "differential_poset_identity_verified": true,
+      "down_incidence_rank": 2,
+      "expected_harmonic_nullity": 3,
+      "full_row_rank_proved": true,
+      "half_degree": 2,
+      "harmonic_nullity": 3,
+      "lower_bipartition_count": 2,
+      "status": "two-colour-differential-poset-identity-verified",
+      "upper_bipartition_count": 5
+    },
+    {
+      "differential_poset_identity_verified": true,
+      "down_incidence_rank": 5,
+      "expected_harmonic_nullity": 5,
+      "full_row_rank_proved": true,
+      "half_degree": 3,
+      "harmonic_nullity": 5,
+      "lower_bipartition_count": 5,
+      "status": "two-colour-differential-poset-identity-verified",
+      "upper_bipartition_count": 10
+    },
+    {
+      "differential_poset_identity_verified": true,
+      "down_incidence_rank": 10,
+      "expected_harmonic_nullity": 10,
+      "full_row_rank_proved": true,
+      "half_degree": 4,
+      "harmonic_nullity": 10,
+      "lower_bipartition_count": 10,
+      "status": "two-colour-differential-poset-identity-verified",
+      "upper_bipartition_count": 20
+    },
+    {
+      "differential_poset_identity_verified": true,
+      "down_incidence_rank": 20,
+      "expected_harmonic_nullity": 16,
+      "full_row_rank_proved": true,
+      "half_degree": 5,
+      "harmonic_nullity": 16,
+      "lower_bipartition_count": 20,
+      "status": "two-colour-differential-poset-identity-verified",
+      "upper_bipartition_count": 36
+    },
+    {
+      "differential_poset_identity_verified": true,
+      "down_incidence_rank": 36,
+      "expected_harmonic_nullity": 29,
+      "full_row_rank_proved": true,
+      "half_degree": 6,
+      "harmonic_nullity": 29,
+      "lower_bipartition_count": 36,
+      "status": "two-colour-differential-poset-identity-verified",
+      "upper_bipartition_count": 65
+    },
+    {
+      "differential_poset_identity_verified": true,
+      "down_incidence_rank": 110,
+      "expected_harmonic_nullity": 75,
+      "full_row_rank_proved": true,
+      "half_degree": 8,
+      "harmonic_nullity": 75,
+      "lower_bipartition_count": 110,
+      "status": "two-colour-differential-poset-identity-verified",
+      "upper_bipartition_count": 185
+    }
+  ],
+  "literature_links": [
+    {
+      "id": "stanley-differential-posets-1988",
+      "url": "https://doi.org/10.2307/1990969",
+      "use": "Primary differential-poset framework; the bipartition lattice is the product of two 1-differential Young lattices."
+    },
+    {
+      "id": "fischer-ikenmeyer-plethysm-hardness-2020",
+      "url": "https://arxiv.org/abs/2002.00788",
+      "use": "General plethysm positivity and coefficient hardness; explicitly not promoted to a circuit lower bound here."
+    },
+    {
+      "id": "christandl-et-al-plethysm-quantum-2026",
+      "url": "https://arxiv.org/abs/2602.08441",
+      "use": "Quantum verification evidence for plethysm multiplicities; it does not provide the normalized missing-label basis transform."
+    }
+  ],
+  "plethysm_controls": [
+    {
+      "actual_branching_uses_harmonic_component": true,
+      "bipartition_count": 5,
+      "branching_coefficient_count": 25,
+      "exact_plethysm_recurrence_verified": true,
+      "half_degree": 2,
+      "irreps_with_nonzero_harmonic_residual": 5,
+      "irreps_with_zero_harmonic_residual": 0,
+      "maximum_branching_multiplicity": 1,
+      "maximum_harmonic_residual_squared": "3/2",
+      "nonintegral_or_negative_coefficient_count": 0,
+      "recurrence_equation_count": 10,
+      "recurrence_failure_count": 0,
+      "restriction_dimension_failure_count": 0,
+      "standard_minus_branch_multiplicity": 1,
+      "standard_plus_branch_multiplicity": 1,
+      "status": "exact-recurrence-verified-all-controlled-irreps-use-harmonic-data",
+      "symmetric_partition_count": 5
+    },
+    {
+      "actual_branching_uses_harmonic_component": true,
+      "bipartition_count": 10,
+      "branching_coefficient_count": 110,
+      "exact_plethysm_recurrence_verified": true,
+      "half_degree": 3,
+      "irreps_with_nonzero_harmonic_residual": 11,
+      "irreps_with_zero_harmonic_residual": 0,
+      "maximum_branching_multiplicity": 1,
+      "maximum_harmonic_residual_squared": "101/48",
+      "nonintegral_or_negative_coefficient_count": 0,
+      "recurrence_equation_count": 55,
+      "recurrence_failure_count": 0,
+      "restriction_dimension_failure_count": 0,
+      "standard_minus_branch_multiplicity": 1,
+      "standard_plus_branch_multiplicity": 1,
+      "status": "exact-recurrence-verified-all-controlled-irreps-use-harmonic-data",
+      "symmetric_partition_count": 11
+    },
+    {
+      "actual_branching_uses_harmonic_component": true,
+      "bipartition_count": 20,
+      "branching_coefficient_count": 440,
+      "exact_plethysm_recurrence_verified": true,
+      "half_degree": 4,
+      "irreps_with_nonzero_harmonic_residual": 22,
+      "irreps_with_zero_harmonic_residual": 0,
+      "maximum_branching_multiplicity": 2,
+      "maximum_harmonic_residual_squared": "13/3",
+      "nonintegral_or_negative_coefficient_count": 0,
+      "recurrence_equation_count": 220,
+      "recurrence_failure_count": 0,
+      "restriction_dimension_failure_count": 0,
+      "standard_minus_branch_multiplicity": 1,
+      "standard_plus_branch_multiplicity": 1,
+      "status": "exact-recurrence-verified-all-controlled-irreps-use-harmonic-data",
+      "symmetric_partition_count": 22
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-HIDDEN-INVOLUTION-HARMONIC-NATURAL-MASS",
+      "resolved": false,
+      "statement": "Bound the harmonic projection of b_m(lambda,-) under the exact source-refined law, not unweighted finite controls."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-MISSING-LABEL-COMMUTANT",
+      "resolved": false,
+      "statement": "Construct a maximal efficiently measurable commutative subalgebra of End_K([lambda]) that resolves repeated branches."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-HARMONIC-LOCAL-ROTATIONS",
+      "resolved": false,
+      "statement": "Derive uniformly polynomial local rotations that create the new ker D_m component at each paired-tower step."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-MULTICOPY-NORMALIZED-RECOUPLING",
+      "resolved": false,
+      "statement": "Show that harmonic missing-label access yields the normalized multicopy polar transform without sqrt(|h^G|) amplification."
+    }
+  ],
+  "scaling_records": [
+    {
+      "branching_recurrence_uniquely_determines_upper_vector": false,
+      "half_degree": 8,
+      "harmonic_fraction": 0.40540540540540543,
+      "harmonic_label_bits_lower_bound": 6.22881869049588,
+      "harmonic_nullity": 75,
+      "lower_bipartition_count": 110,
+      "status": "fresh-harmonic-kernel-at-this-rank",
+      "upper_bipartition_count": 185
+    },
+    {
+      "branching_recurrence_uniquely_determines_upper_vector": false,
+      "half_degree": 16,
+      "harmonic_fraction": 0.32050841635176913,
+      "harmonic_label_bits_lower_bound": 10.86573327085176,
+      "harmonic_nullity": 1866,
+      "lower_bipartition_count": 3956,
+      "status": "fresh-harmonic-kernel-at-this-rank",
+      "upper_bipartition_count": 5822
+    },
+    {
+      "branching_recurrence_uniquely_determines_upper_vector": false,
+      "half_degree": 32,
+      "harmonic_fraction": 0.2482944095996484,
+      "harmonic_label_bits_lower_bound": 17.987547148723312,
+      "harmonic_nullity": 259891,
+      "lower_bipartition_count": 786814,
+      "status": "fresh-harmonic-kernel-at-this-rank",
+      "upper_bipartition_count": 1046705
+    },
+    {
+      "branching_recurrence_uniquely_determines_upper_vector": false,
+      "half_degree": 64,
+      "harmonic_fraction": 0.18826897476414908,
+      "harmonic_label_bits_lower_bound": 28.650478620169004,
+      "harmonic_nullity": 421360145,
+      "lower_bipartition_count": 1816715170,
+      "status": "fresh-harmonic-kernel-at-this-rank",
+      "upper_bipartition_count": 2238075315
+    }
+  ],
+  "status": "paired-tower-recurrence-underdetermined-harmonic-plethysm-data-open",
+  "summary": "Proved that paired Young-tower branching recurrences leave a fresh harmonic bipartition component at every rank and verified that exact small-degree hyperoctahedral restriction vectors use it. This kills the naive branching-only compiler but leaves structured harmonic rotations as the precise positive target.",
+  "theorem": {
+    "actual_branching_harmonic_component_verified": true,
+    "all_rank_harmonic_kernel_proved": true,
+    "complexity_boundary": "A growing kernel and classically hard general plethysm do not imply a quantum circuit lower bound; global consistency or local harmonic rotations may recover the data efficiently.",
+    "differential_poset_identity": "The product of two Young lattices obeys D_m D_m^T-D_(m-1)^T D_(m-1)=2I; hence D_m has full row rank.",
+    "exact_branching_recurrence": "D_m b_m(lambda,-)[nu] = sum_gamma f^(lambda/gamma) b_(m-1)(gamma,nu), by restricting through K_m or S_(2m-2).",
+    "exact_branching_recurrence_proved": true,
+    "finite_natural_witness": "Exact inner-size-two plethysm controls show every tested actual restriction vector has nonzero orthogonal projection to ker D_m.",
+    "natural_source_harmonic_mass_bounded": false,
+    "paired_young_local_rotations_compiled": false,
+    "positive_compiler_target": "Construct a source-aware maximal commutant algebra and local rotations that propagate the harmonic component coherently.",
+    "source_aware_normalized_subduction_transform_compiled": false,
+    "status": "paired-tower-recurrence-underdetermined-harmonic-plethysm-data-open",
+    "theorem_verified": true,
+    "underdetermination": "The recurrence fixes only the down image and leaves a kernel of dimension p_2(m)-p_2(m-1) at every rank."
+  },
+  "theorem_contract": {
+    "ambient_pair": "S_(2m) >= K_m=C_2 wr S_m >= K_(m-1)",
+    "branching_coefficient": "b_m(lambda;alpha,beta)=<s_lambda,s_alpha[h_2]s_beta[e_2]>",
+    "claim_boundary": "Failure of the naive lower-rank recurrence, not hardness of all coherent subduction transforms.",
+    "harmonic_space": "ker D_m for the rank-m bipartition down-map"
+  }
+}

@@ -45586,6 +45586,29 @@
   },
   {
     "applies_to": [
+      "DHS-GOWERS-SIEVE",
+      "EXP-DHS-DCP-CARRY-AFFINE-DEGREE-INVARIANCE",
+      "PO-MEASUREMENT"
+    ],
+    "claim": "Dense GL(m,2) affine preprocessing cannot reduce 2-adic carry ANF degree below Theta(m).",
+    "evidence": {
+      "affine_control_count": 1,
+      "affine_invariance_violation_count": 0,
+      "bounded_degree_after_dense_gl_ruled_out_count": 4,
+      "certified_scaling_record_count": 4,
+      "coefficient_control_count": 3,
+      "coefficient_failure_count": 0,
+      "lucas_identity_failure_count": 0,
+      "scaling_record_count": 4,
+      "speedup_claim_allowed": 0
+    },
+    "id": "NEG-EXP-DHS-DCP-CARRY-AFFINE-DEGREE-INVARIANCE",
+    "lesson": "Bounded-degree carry ANF reconstruction without auxiliary variables is impossible even after dense affine changes of variables.",
+    "reason_invalid": "Dense linear transformations preserve algebraic degree and odd label concentration forces linear degree with exponentially many monomials.",
+    "source": "EXP-DHS-DCP-CARRY-AFFINE-DEGREE-INVARIANCE"
+  },
+  {
+    "applies_to": [
       "CODE-COSET-COLLECTIVE",
       "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS"
     ],

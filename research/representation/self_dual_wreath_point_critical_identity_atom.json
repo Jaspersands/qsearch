@@ -1,0 +1,318 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False. It is asymptotically the energy of the explicit rare event z=0,s=g with total mass 1/n!.",
+      "challenge": "The critical identity witness is diffuse collective information.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Its exact excess is (n-1)/(n n!), factorially small.",
+      "challenge": "The rare atom gives an inverse-polynomial point decoder.",
+      "resolved": true
+    },
+    {
+      "answer": "Too strong. A diffuse residual can have o(1) normalized-HS energy and still carry large trace or relative signal.",
+      "challenge": "Atom dominance proves the full point state is useless.",
+      "resolved": true
+    },
+    {
+      "answer": "Not proved. The atom itself survives unchanged, but signed residual control requires a separate conditional theorem.",
+      "challenge": "Annealed dominance automatically transfers to globally distinct labels.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "annealed_critical_ambient_energy_atom_dominated": true,
+    "classical_separation_proved": false,
+    "collision_free_residual_dominance_proved": false,
+    "critical_harmonic_point_measurement_compiled": false,
+    "critical_identity_energy_is_algorithmic_evidence": false,
+    "critical_identity_witness_physical_atom_identified": true,
+    "full_hidden_permutation_decoder_constructed": false,
+    "identity_atom_mass_is_one_over_factorial": true,
+    "identity_atom_operational_excess_factorially_small": true,
+    "reason": "The entire known critical ambient-energy witness is explained by a factorially rare classical atom. Only the low-HS residual can still support a carrier-traced point mechanism.",
+    "residual_relative_collision_controlled": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-21T03:33:14.076938+00:00",
+  "falsifiers_triggered": [
+    "The c=2 identity witness is not diffuse operational evidence.",
+    "Theta(n) normalized Hilbert--Schmidt energy can come from total probability 1/n!.",
+    "Critical point work must subtract the identity atom before evaluating relative signal.",
+    "A residual o(1) ambient-energy bound is not a trace-distance or decoder no-go."
+  ],
+  "finite_controls": [
+    {
+      "atom_completed_optimal_success": 0.4444444444444444,
+      "atom_minus_identity_witness_energy": 0.055555555555555525,
+      "atom_normalized_hilbert_schmidt_energy": 0.4444444444444444,
+      "atom_relative_collision": 0.3333333333333333,
+      "atom_total_mass": 0.16666666666666666,
+      "control_id": "W3-INFORMATION-THRESHOLD",
+      "copy_count": 3,
+      "exact_identity_atom_channel_verified": true,
+      "group_order": 6,
+      "identity_witness_energy": 0.3888888888888889,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_diagonal_channel_residual": 2.7755575615628914e-17,
+      "minimum_full_minus_atom_probability": 0.0,
+      "n": 3,
+      "orientation_count": 8,
+      "predicted_atom_completed_optimal_success": 0.4444444444444444,
+      "predicted_atom_minus_witness": 0.05555555555555555,
+      "predicted_atom_normalized_energy": 0.4444444444444444,
+      "predicted_atom_relative_collision": 0.3333333333333333,
+      "predicted_atom_total_mass": 0.16666666666666666,
+      "retained_dimension": 48,
+      "status": "exact-factorially-rare-critical-identity-atom"
+    },
+    {
+      "atom_completed_optimal_success": 0.28125,
+      "atom_minus_identity_witness_energy": 0.005208333333333336,
+      "atom_normalized_hilbert_schmidt_energy": 0.020833333333333336,
+      "atom_relative_collision": 0.12499999999999994,
+      "atom_total_mass": 0.04166666666666667,
+      "control_id": "W4-COLLISION-FREE-PAIR",
+      "copy_count": 2,
+      "exact_identity_atom_channel_verified": true,
+      "group_order": 24,
+      "identity_witness_energy": 0.015625,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_diagonal_channel_residual": 1.0408340855860843e-17,
+      "minimum_full_minus_atom_probability": 0.006944444444444444,
+      "n": 4,
+      "orientation_count": 4,
+      "predicted_atom_completed_optimal_success": 0.28125,
+      "predicted_atom_minus_witness": 0.005208333333333333,
+      "predicted_atom_normalized_energy": 0.020833333333333332,
+      "predicted_atom_relative_collision": 0.125,
+      "predicted_atom_total_mass": 0.041666666666666664,
+      "retained_dimension": 96,
+      "status": "exact-factorially-rare-critical-identity-atom"
+    }
+  ],
+  "headline_metrics": {
+    "annealed_critical_atom_dominance_theorem_count": 1,
+    "collision_free_residual_transfer_theorem_count": 0,
+    "exact_identity_atom_channel_theorem_count": 1,
+    "finite_control_count": 2,
+    "finite_control_failure_count": 0,
+    "harmonic_point_measurement_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "residual_relative_collision_theorem_count": 0,
+    "tail_atom_operational_excess_log2": -716.1730373968497,
+    "tail_n": 128,
+    "tail_total_energy_distance_from_atom_log2_upper_bound": -666.6694729341122
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-POINT-CRITICAL-IDENTITY-ATOM",
+      "resolved": true,
+      "statement": "Identify the exact physical channel behind the critical identity witness."
+    },
+    {
+      "id": "PO-POINT-CRITICAL-ANNEALED-ATOM-DOMINANCE",
+      "resolved": true,
+      "statement": "Prove the atom exhausts annealed critical ambient energy up to o(1)."
+    },
+    {
+      "id": "PO-POINT-CRITICAL-RESIDUAL-RELATIVE-COLLISION",
+      "resolved": false,
+      "statement": "Remove the identity atom and bound the signal-weighted relative collision of the residual on typical globally distinct labels."
+    },
+    {
+      "id": "PO-POINT-CRITICAL-COLLISION-FREE-RESIDUAL-TRANSFER",
+      "resolved": false,
+      "statement": "Transfer a residual, not merely total-energy, theorem through global source distinctness conditioning."
+    }
+  ],
+  "scaling_records": [
+    {
+      "annealed_critical_ambient_energy_atom_dominated": false,
+      "atom_mass_log2": -6.90689059560852,
+      "atom_minus_witness_energy_log2": -11.81378119121704,
+      "atom_normalized_energy": 4.551111111111104,
+      "atom_operational_excess_log2": -7.228818690495881,
+      "atom_operational_excess_superpolynomially_small": true,
+      "atom_relative_collision_log2": -4.90689059560852,
+      "collision_free_residual_dominance_transfer_proved": false,
+      "critical_copy_count": 14,
+      "hidden_label_count_decimal": "120",
+      "identity_witness_energy": 4.550833333333326,
+      "n": 5,
+      "residual_relative_collision_controlled": false,
+      "retained_dimension_log2": 20.90689059560852,
+      "status": "critical-ambient-energy-rare-atom-dominated-residual-relative-open",
+      "total_energy_distance_from_atom_log2_upper_bound": 1.8045807415589512,
+      "total_energy_distance_from_atom_upper_bound": 3.4932762627921705
+    },
+    {
+      "annealed_critical_ambient_energy_atom_dominated": true,
+      "atom_mass_log2": -15.29920801838728,
+      "atom_minus_witness_energy_log2": -27.791061114716953,
+      "atom_normalized_energy": 9.246701940035265,
+      "atom_operational_excess_log2": -15.491853096329676,
+      "atom_operational_excess_superpolynomially_small": true,
+      "atom_relative_collision_log2": -12.491853096329676,
+      "collision_free_residual_dominance_transfer_proved": false,
+      "critical_copy_count": 31,
+      "hidden_label_count_decimal": "40320",
+      "identity_witness_energy": 9.246701935729435,
+      "n": 8,
+      "residual_relative_collision_controlled": false,
+      "retained_dimension_log2": 46.299208018387276,
+      "status": "critical-ambient-energy-rare-atom-dominated-residual-relative-open",
+      "total_energy_distance_from_atom_log2_upper_bound": -3.050461106657111,
+      "total_energy_distance_from_atom_upper_bound": 0.12070345634124116
+    },
+    {
+      "annealed_critical_ambient_energy_atom_dominated": true,
+      "atom_mass_log2": -44.25014046988262,
+      "atom_minus_witness_energy_log2": -84.59339034415673,
+      "atom_normalized_energy": 21.2090729353904,
+      "atom_operational_excess_log2": -44.34324987427411,
+      "atom_operational_excess_superpolynomially_small": true,
+      "atom_relative_collision_log2": -40.34324987427411,
+      "collision_free_residual_dominance_transfer_proved": false,
+      "critical_copy_count": 89,
+      "hidden_label_count_decimal": "20922789888000",
+      "identity_witness_energy": 21.2090729353904,
+      "n": 16,
+      "residual_relative_collision_controlled": false,
+      "retained_dimension_log2": 133.25014046988264,
+      "status": "critical-ambient-energy-rare-atom-dominated-residual-relative-open",
+      "total_energy_distance_from_atom_log2_upper_bound": -26.011356677621954,
+      "total_energy_distance_from_atom_upper_bound": 1.478432197558334e-08
+    },
+    {
+      "annealed_critical_ambient_energy_atom_dominated": true,
+      "atom_mass_log2": -117.6632636523603,
+      "atom_minus_witness_energy_log2": -230.37233099433374,
+      "atom_normalized_energy": 49.44213047743734,
+      "atom_operational_excess_log2": -117.70906734197342,
+      "atom_operational_excess_superpolynomially_small": true,
+      "atom_relative_collision_log2": -112.70906734197342,
+      "collision_free_residual_dominance_transfer_proved": false,
+      "critical_copy_count": 236,
+      "hidden_label_count_decimal": "263130836933693530167218012160000000",
+      "identity_witness_energy": 49.44213047743734,
+      "n": 32,
+      "residual_relative_collision_controlled": false,
+      "retained_dimension_log2": 353.6632636523603,
+      "status": "critical-ambient-energy-rare-atom-dominated-residual-relative-open",
+      "total_energy_distance_from_atom_log2_upper_bound": -91.79834749731576,
+      "total_energy_distance_from_atom_upper_bound": 2.3224365137065363e-28
+    },
+    {
+      "annealed_critical_ambient_energy_atom_dominated": true,
+      "atom_mass_log2": -295.9951439417241,
+      "atom_minus_witness_energy_log2": -586.0130079599483,
+      "atom_normalized_energy": 63.42554210285245,
+      "atom_operational_excess_log2": -296.0178640182242,
+      "atom_operational_excess_superpolynomially_small": true,
+      "atom_relative_collision_log2": -290.0178640182242,
+      "collision_free_residual_dominance_transfer_proved": false,
+      "critical_copy_count": 592,
+      "hidden_label_count_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "identity_witness_energy": 63.42554210285245,
+      "n": 64,
+      "residual_relative_collision_controlled": false,
+      "retained_dimension_log2": 887.9951439417241,
+      "status": "critical-ambient-energy-rare-atom-dominated-residual-relative-open",
+      "total_energy_distance_from_atom_log2_upper_bound": -260.07629902430546,
+      "total_energy_distance_from_atom_upper_bound": 5.1195623012860904e-79
+    },
+    {
+      "annealed_critical_ambient_energy_atom_dominated": true,
+      "atom_mass_log2": -716.161722083622,
+      "atom_minus_witness_energy_log2": -1425.3347594804718,
+      "atom_normalized_energy": 202.9865771465599,
+      "atom_operational_excess_log2": -716.1730373968497,
+      "atom_operational_excess_superpolynomially_small": true,
+      "atom_relative_collision_log2": -709.1730373968497,
+      "collision_free_residual_dominance_transfer_proved": false,
+      "critical_copy_count": 1433,
+      "hidden_label_count_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "identity_witness_energy": 202.9865771465599,
+      "n": 128,
+      "residual_relative_collision_controlled": false,
+      "retained_dimension_log2": 2149.161722083622,
+      "status": "critical-ambient-energy-rare-atom-dominated-residual-relative-open",
+      "total_energy_distance_from_atom_log2_upper_bound": -666.6694729341122,
+      "total_energy_distance_from_atom_upper_bound": 2.0534846146690515e-201
+    }
+  ],
+  "status": "critical-identity-energy-atomized-residual-relative-signal-open",
+  "summary": "Identified the critical identity term as the exact z=0,s=g atom, proved it asymptotically exhausts annealed ambient energy, and showed its operational point excess is factorially small.",
+  "theorem": {
+    "atom_energy": "S_atom=(n-1)2^k/N^2.",
+    "copy_threshold_witness": "S_witness=(n-1)(2^k-1)/N^2 differs from S_atom by (n-1)/N^2.",
+    "critical_dominance": "At k=ceil(2log2 N), the copy-threshold remainder bounds imply |E S_total-S_atom|=o(1).",
+    "identity_atom": "K_0(e)=I and K_z(e)=0 for z!=0, so (s=g,z=0) has exact mass 1/N.",
+    "measured_channel": "Pr[s,z|g]=N^-1 p(z|s^-1g).",
+    "operational_value": "The atom has relative collision (n-1)/N and completed optimal success 1/n+(n-1)/(nN).",
+    "residual_boundary": "Vanishing normalized-HS residual energy does not control residual trace norm or relative collision.",
+    "status": "critical-identity-energy-atomized-residual-relative-signal-open",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "claim_boundary": "identity witness rejected as operational evidence; residual trace/relative signal open",
+    "critical_width": "k=ceil(2log2(n!))",
+    "dominance_scope": "unconditioned annealed normalized Hilbert--Schmidt energy",
+    "measurement": "time basis plus orientation Walsh character",
+    "source": "independent natural public labels for annealed dominance; atom is source independent"
+  }
+}

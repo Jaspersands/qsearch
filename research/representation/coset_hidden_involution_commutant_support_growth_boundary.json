@@ -1,0 +1,149 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False: support five reaches the exact upper bound 42 from the same vectors, certifying their full-commutant cyclicity.",
+      "challenge": "The support-four reach 40 may be a noncyclic-vector artifact.",
+      "resolved": true
+    },
+    {
+      "answer": "False: adjoining the complete 36-dimensional K center does not increase cyclic reach above 40.",
+      "challenge": "Support four only fails to separate K-irrep blocks.",
+      "resolved": true
+    },
+    {
+      "answer": "False: support five generates the exact target and remains a fixed-support polynomial-size family. Only cutoff four is killed.",
+      "challenge": "The S_10 counterexample kills bounded-support commutants.",
+      "resolved": true
+    },
+    {
+      "answer": "False: no all-rank generation, natural-mass, spectral-gap, or coherent eigenbasis theorem has been established.",
+      "challenge": "Support five at one sector proves a uniform compiler.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "binary_hidden_involution_detector_constructed": false,
+    "coherent_missing_label_transform_compiled": false,
+    "inverse_polynomial_spectral_gap_proved": false,
+    "natural_mass_generation_proved": false,
+    "reason": "The minimum successful cutoff increases from four in S_8 to at least five in this S_10 sector. Uniform cutoff, gaps, natural mass, normalization, and decoding remain open.",
+    "source_aware_normalized_subduction_transform_compiled": false,
+    "speedup_claim_allowed": false,
+    "support_five_target_sector_generation_verified": true,
+    "support_four_deficit_survives_full_K_center": true,
+    "support_requirement_unbounded_proved": false,
+    "uniform_support_five_generation_proved": false,
+    "uniform_support_four_generation_falsified": true
+  },
+  "control": {
+    "K_conjugacy_class_count": 36,
+    "all_occupied_carrier_dimensions_at_least_multiplicity": true,
+    "exact_commutant_dimension": 42,
+    "finite_dense_control_only": true,
+    "full_commutant_generic_cyclic_capacity": 42,
+    "half_degree": 5,
+    "maximum_K_generator_commutator_residual": 3.758737420327896e-15,
+    "maximum_orbit_sum_hermiticity_residual": 0.0,
+    "status": "support-four-falsified-support-five-closes-S10-target-commutant",
+    "support_five_cyclic_reaches": [
+      42,
+      42
+    ],
+    "support_five_generates_full_commutant": true,
+    "support_five_hermitian_orbit_count": 28,
+    "support_four_cyclic_reaches": [
+      40,
+      40
+    ],
+    "support_four_deficit_survives_K_center": true,
+    "support_four_generates_full_commutant": false,
+    "support_four_hermitian_orbit_count": 15,
+    "support_four_plus_K_center_cyclic_reaches": [
+      40,
+      40
+    ],
+    "support_three_cyclic_reaches": [
+      14,
+      14
+    ],
+    "support_three_hermitian_orbit_count": 5,
+    "support_two_cyclic_reaches": [
+      5,
+      5
+    ],
+    "support_two_hermitian_orbit_count": 3,
+    "symmetric_irrep_dimension": 315,
+    "symmetric_partition": [
+      6,
+      3,
+      1
+    ]
+  },
+  "created_at": "2026-08-21T13:06:57.828773+00:00",
+  "falsifiers_triggered": [
+    "The S_8 support-four generation phenomenon is not uniform across rank.",
+    "The S_10 support-four deficit is internal to multiplicity spaces, not merely a K-label collision.",
+    "Support five rescues the target, so the counterexample is not a no-go for bounded-support orbit sums generally.",
+    "No speedup claim is allowed from finite algebra generation without uniform gaps and normalized recoupling."
+  ],
+  "headline_metrics": {
+    "exact_target_commutant_dimension": 42,
+    "inverse_polynomial_gap_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "support_five_cyclic_reach": 42,
+    "support_five_orbit_sum_count": 28,
+    "support_four_cyclic_reach": 40,
+    "support_four_orbit_sum_count": 15,
+    "support_four_plus_K_center_cyclic_reach": 40,
+    "target_irrep_dimension": 315,
+    "uniform_support_five_theorem_count": 0,
+    "uniform_support_four_theorem_count": 0
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-HIDDEN-INVOLUTION-UNIFORM-SUPPORT-FIVE-GENERATION",
+      "resolved": false,
+      "statement": "Prove or falsify support-five generation on an asymptotically natural family of S_(2m) restriction blocks."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-SUPPORT-GROWTH-LOWER-BOUND",
+      "resolved": false,
+      "statement": "If no constant cutoff suffices, exhibit an explicit lambda_m,mu_m family and an invariant that bounded-support orbit algebras preserve."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-COMMUTANT-GENERIC-GAP",
+      "resolved": false,
+      "statement": "For a generating cutoff, construct an explicit Hermitian combination with inverse-polynomial copy-space eigenvalue gaps."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-COMMUTANT-NATURAL-MASS",
+      "resolved": false,
+      "statement": "Transfer generation and gap bounds from selected sectors to the exact source-refined natural law."
+    }
+  ],
+  "status": "uniform-support-four-falsified-support-five-uniformity-open",
+  "summary": "Falsified the apparent uniform support-four commutant compiler with an S_10 copy-space counterexample, then showed support five exactly repairs that sector. The ambient-Casimir route remains active, but support growth is now a mandatory asymptotic gate.",
+  "theorem": {
+    "K_center_falsifier": "Adjoining all 36 central K_5 class sums leaves cyclic reach 40, so the deficit occurs inside copy spaces rather than between K labels.",
+    "S10_counterexample": "For lambda=(6,3,1), support-four reaches only 40 dimensions from vectors certified cyclic for the 42-dimensional full commutant.",
+    "S8_baseline": "Support-four Hermitian K_4 orbit sums generate every S_8 branching commutant, including all repeated sectors.",
+    "complexity_boundary": "Fixed support five still has polynomial O(m^5) inventory, but no uniform cutoff, word-length, spectral-gap, or natural-mass theorem follows.",
+    "inverse_polynomial_gap_proved": false,
+    "natural_mass_generation_proved": false,
+    "next_conjecture": "Determine whether a constant support cutoff generates natural blocks for all m, or construct a family forcing support to diverge.",
+    "status": "uniform-support-four-falsified-support-five-uniformity-open",
+    "support_five_rescue": "The 28 Hermitian orbit sums through support five reach all 42 dimensions for both deterministic seeds and therefore generate the exact target commutant.",
+    "support_five_target_sector_generation_verified": true,
+    "support_four_deficit_is_only_K_label_collision": false,
+    "support_requirement_unbounded_proved": false,
+    "theorem_verified": true,
+    "uniform_support_five_generation_proved": false,
+    "uniform_support_four_generation_falsified": true
+  },
+  "theorem_contract": {
+    "claim_boundary": "One exact finite support-threshold increase, not an all-rank lower bound or a coherent transform.",
+    "cyclic_certificate": "Support-five reaches 42 from the same vectors used to falsify support four, proving those vectors are full-commutant cyclic.",
+    "exact_upper_bound": "sum_mu b(lambda,mu)^2=42",
+    "target": "S_10 irrep lambda=(6,3,1) restricted to K_5=C_2 wr S_5"
+  }
+}

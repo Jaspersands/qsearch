@@ -11202,5 +11202,1111 @@ class ExperimentRunnerTests(unittest.TestCase):
 
 
 
+    def test_coset_hidden_involution_all_copy_target_lcu_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-ALL-COPY-TARGET-LCU-NO-GO")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_all_copy_target_lcu_no_go", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_bounded_support_commutant_generation_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-BOUNDED-SUPPORT-COMMUTANT-GENERATION")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_bounded_support_commutant_generation", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_colour_resolved_paired_tower_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-COLOUR-RESOLVED-PAIRED-TOWER-BOUNDARY")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_colour_resolved_paired_tower_boundary", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_commutant_support_growth_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-COMMUTANT-SUPPORT-GROWTH-BOUNDARY")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_commutant_support_growth_boundary", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_commuting_square_recoupling_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-COMMUTING-SQUARE-RECOUPLING-BOUNDARY")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_commuting_square_recoupling_boundary", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_cross_transposition_hecke_degree_five_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-CROSS-TRANSPOSITION-HECKE-DEGREE-FIVE-NO-GO")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_cross_transposition_hecke_degree_five_no_go", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_cross_transposition_hecke_moment_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-CROSS-TRANSPOSITION-HECKE-MOMENT-NO-GO")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_cross_transposition_hecke_moment_no_go", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_diagonal_charge_bias_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-DIAGONAL-CHARGE-BIAS-NO-GO")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_diagonal_charge_bias_no_go", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_double_coset_polar_reduction_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-DOUBLE-COSET-POLAR-REDUCTION")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_double_coset_polar_reduction", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_hyperoctahedral_branching_mass_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-HYPEROCTAHEDRAL-BRANCHING-MASS")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_hyperoctahedral_branching_mass", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_joint_primitive_ambient_lift_obstruction_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-JOINT-PRIMITIVE-AMBIENT-LIFT-OBSTRUCTION")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_joint_primitive_ambient_lift_obstruction", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_joint_primitive_representation_cone_obstruction_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-JOINT-PRIMITIVE-REPRESENTATION-CONE-OBSTRUCTION")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_joint_primitive_representation_cone_obstruction", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_matching_charge_coherent_label_compiler_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-COHERENT-LABEL-COMPILER")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_matching_charge_coherent_label_compiler", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_matching_charge_conditional_diameter_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-CONDITIONAL-DIAMETER")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_matching_charge_conditional_diameter", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_matching_charge_cs_correlation_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-CS-CORRELATION")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_matching_charge_cs_correlation", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_matching_charge_natural_independence_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-NATURAL-INDEPENDENCE")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_matching_charge_natural_independence", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_matching_charge_orbit_recoupling_reduction_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-ORBIT-RECOUPLING-REDUCTION")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_matching_charge_orbit_recoupling_reduction", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_matching_charge_pairwise_kernel_dequantization_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-PAIRWISE-KERNEL-DEQUANTIZATION")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_matching_charge_pairwise_kernel_dequantization", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_matching_charge_target_gauge_trivialization_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-TARGET-GAUGE-TRIVIALIZATION")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_matching_charge_target_gauge_trivialization", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_matching_charge_word_moment_dequantization_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-WORD-MOMENT-DEQUANTIZATION")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_matching_charge_word_moment_dequantization", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_mixed_hecke_word_lcu_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-MIXED-HECKE-WORD-LCU-NO-GO")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_mixed_hecke_word_lcu_no_go", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_natural_matrix_multiplicity_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-NATURAL-MATRIX-MULTIPLICITY")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_natural_matrix_multiplicity", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_natural_recoupling_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-NATURAL-RECOUPLING-BOUNDARY")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_natural_recoupling_boundary", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_normalized_likelihood_charge_commutator_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-NORMALIZED-LIKELIHOOD-CHARGE-COMMUTATOR-NO-GO")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_normalized_likelihood_charge_commutator_no_go", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_occupied_matrix_rank_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-OCCUPIED-MATRIX-RANK")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_occupied_matrix_rank", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_pair_gaudin_hierarchy_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-PAIR-GAUDIN-HIERARCHY")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_pair_gaudin_hierarchy", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_pair_matching_charge_hierarchy_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-PAIR-MATCHING-CHARGE-HIERARCHY")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_pair_matching_charge_hierarchy", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_paired_tower_joint_primitive_projector_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-PAIRED-TOWER-JOINT-PRIMITIVE-PROJECTOR")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_paired_tower_joint_primitive_projector", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_paired_tower_missing_label_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-PAIRED-TOWER-MISSING-LABEL-BOUNDARY")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_paired_tower_missing_label_boundary", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_physical_target_convolution_normal_form_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-PHYSICAL-TARGET-CONVOLUTION-NORMAL-FORM")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_physical_target_convolution_normal_form", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_plancherel_local_commutant_certificate_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-PLANCHEREL-LOCAL-COMMUTANT-CERTIFICATE")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_plancherel_local_commutant_certificate", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_rank_tracking_commutant_witness_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-RANK-TRACKING-COMMUTANT-WITNESS")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_rank_tracking_commutant_witness", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_shared_conjugation_qsvt_lower_bound_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-SHARED-CONJUGATION-QSVT-LOWER-BOUND")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_shared_conjugation_qsvt_lower_bound", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_single_hecke_all_degree_moment_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-SINGLE-HECKE-ALL-DEGREE-MOMENT-NO-GO")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_single_hecke_all_degree_moment_no_go", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_single_hecke_bounded_spectral_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-SINGLE-HECKE-BOUNDED-SPECTRAL-NO-GO")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_single_hecke_bounded_spectral_no_go", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_source_local_likelihood_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-SOURCE-LOCAL-LIKELIHOOD-NO-GO")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_source_local_likelihood_no_go", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_stable_support_six_certificate_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-STABLE-SUPPORT-SIX-CERTIFICATE")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_stable_support_six_certificate", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_standard_block_recoupling_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-STANDARD-BLOCK-RECOUPLING")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_standard_block_recoupling", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_target_interference_negativity_barrier_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-TARGET-INTERFERENCE-NEGATIVITY-BARRIER")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_target_interference_negativity_barrier", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_trimmed_row_block_encoding_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-TRIMMED-ROW-BLOCK-ENCODING-NO-GO")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_trimmed_row_block_encoding_no_go", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_trimmed_row_kernel_succinctness_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-TRIMMED-ROW-KERNEL-SUCCINCTNESS")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_trimmed_row_kernel_succinctness", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_coset_hidden_involution_two_subgroup_projector_algebra_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-COSET-HIDDEN-INVOLUTION-TWO-SUBGROUP-PROJECTOR-ALGEBRA-NO-GO")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("coset_hidden_involution_two_subgroup_projector_algebra_no_go", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_component_direct_naimark_polar_equivalence_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DIRECT-NAIMARK-POLAR-EQUIVALENCE")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("self_dual_wreath_component_direct_naimark_polar_equivalence", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_component_polar_physical_pgm_closure_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POLAR-PHYSICAL-PGM-CLOSURE")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("self_dual_wreath_component_polar_physical_pgm_closure", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_connected_clifford_normal_form_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-CONNECTED-CLIFFORD-NORMAL-FORM")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("self_dual_wreath_connected_clifford_normal_form", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_connected_quotient_heisenberg_reduction_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-CONNECTED-QUOTIENT-HEISENBERG-REDUCTION")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("self_dual_wreath_connected_quotient_heisenberg_reduction", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_gpe_fusion_tree_cs_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-GPE-FUSION-TREE-CS-BOUNDARY")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("self_dual_wreath_gpe_fusion_tree_cs_boundary", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_latent_master_polar_tradeoff_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-LATENT-MASTER-POLAR-TRADEOFF")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("self_dual_wreath_latent_master_polar_tradeoff", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_mrs_identification_escape_theorem_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-MRS-IDENTIFICATION-ESCAPE-THEOREM")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("self_dual_wreath_mrs_identification_escape_theorem", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_orientation_fixed_space_recoupling_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FIXED-SPACE-RECOUPLING")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("self_dual_wreath_orientation_fixed_space_recoupling", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_orientation_homogeneous_space_polar_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-HOMOGENEOUS-SPACE-POLAR")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("self_dual_wreath_orientation_homogeneous_space_polar", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_orientation_syndrome_component_reduction_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-SYNDROME-COMPONENT-REDUCTION")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("self_dual_wreath_orientation_syndrome_component_reduction", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_pair_relation_common_support_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-PAIR-RELATION-COMMON-SUPPORT-NO-GO")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("self_dual_wreath_pair_relation_common_support_no_go", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_pair_sheaf_metric_incompatibility_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-PAIR-SHEAF-METRIC-INCOMPATIBILITY")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("self_dual_wreath_pair_sheaf_metric_incompatibility", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_point_centered_residual_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-POINT-CENTERED-RESIDUAL-NO-GO")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("self_dual_wreath_point_centered_residual_no_go", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_point_child_star_relative_collision_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-POINT-CHILD-STAR-RELATIVE-COLLISION")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("self_dual_wreath_point_child_star_relative_collision", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_point_copy_threshold_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-POINT-COPY-THRESHOLD")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("self_dual_wreath_point_copy_threshold", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_point_critical_energy_separation_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-POINT-CRITICAL-ENERGY-SEPARATION")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("self_dual_wreath_point_critical_energy_separation", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_point_critical_identity_atom_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-POINT-CRITICAL-IDENTITY-ATOM")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("self_dual_wreath_point_critical_identity_atom", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_regular_master_walsh_flatness_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-REGULAR-MASTER-WALSH-FLATNESS-NO-GO")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("self_dual_wreath_regular_master_walsh_flatness_no_go", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_source_adaptive_walsh_collision_reduction_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-SOURCE-ADAPTIVE-WALSH-COLLISION-REDUCTION")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("self_dual_wreath_source_adaptive_walsh_collision_reduction", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_source_block_branch_covariance_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-SOURCE-BLOCK-BRANCH-COVARIANCE-BOUNDARY")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("self_dual_wreath_source_block_branch_covariance_boundary", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_source_order_gauge_canonicalization_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-SOURCE-ORDER-GAUGE-CANONICALIZATION")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("self_dual_wreath_source_order_gauge_canonicalization", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_trace_biased_adaptive_walsh_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-TRACE-BIASED-ADAPTIVE-WALSH-NO-GO")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("self_dual_wreath_trace_biased_adaptive_walsh_no_go", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_dcp_carry_affine_degree_invariance_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-DHS-DCP-CARRY-AFFINE-DEGREE-INVARIANCE")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertIn("dcp_carry_affine_degree_invariance", record["artifacts"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
 if __name__ == "__main__":
     unittest.main()

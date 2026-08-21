@@ -1,0 +1,333 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False. The decomposition Delta_L=M+R_L is operator exact for every L; only the residual second moment is averaged. The POVM may depend arbitrarily on L before applying the trace bound.",
+      "challenge": "Subtracting the annealed atom is invalid for label-adaptive measurements.",
+      "resolved": true
+    },
+    {
+      "answer": "It does after retaining the ambient factor D explicitly: E||R||_1<=sqrt(D E||R||_2^2)=sqrt(R_(n,k)).",
+      "challenge": "Small residual Hilbert--Schmidt norm does not control trace norm.",
+      "resolved": true
+    },
+    {
+      "answer": "The transferred object is ||R_L||_2^2>=0, so conditioning costs at most the reciprocal event probability.",
+      "challenge": "Global distinctness may amplify a signed residual.",
+      "resolved": true
+    },
+    {
+      "answer": "Too strong. It closes only carrier-traced point coarse graining; carrier-retaining and non-point global measurements remain open.",
+      "challenge": "The theorem rules out every code-equivalence quantum algorithm.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Higher-degree schedules are outside the present character-ratio bound.",
+      "challenge": "The k=O(n^5) statement covers every polynomial sample schedule.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_fixed_log_factorial_copy_multipliers_closed": true,
+    "all_polynomial_sample_schedules_ruled_out": false,
+    "carrier_retaining_global_decoder_ruled_out": false,
+    "carrier_traced_point_route_closed_through_k_O_n5": true,
+    "centered_residual_second_moment_bound_proved": true,
+    "classical_separation_proved": false,
+    "critical_copy_multiplier_two_point_route_viable": false,
+    "global_distinct_conditioning_reopens_point_route": false,
+    "mean_zero_character_simplex_proved": true,
+    "nonpoint_collective_decoder_ruled_out": false,
+    "public_label_adaptive_point_povm_no_go_proved": true,
+    "reason": "After removing the factorially rare mean z=0 simplex, every remaining carrier-traced point matrix entry has a superpolynomial trace-norm bound through k=O(n^5).",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-21T03:43:13.098832+00:00",
+  "falsifiers_triggered": [
+    "The c=2 carrier-traced point route is not an open relative-spectrum mechanism.",
+    "Increasing the fused copy width by any fixed log-factorial multiplier does not rescue point decoding.",
+    "The identity atom plus residual trace bound closes the route despite positive ambient energy.",
+    "Future code-equivalence work must retain the carrier or abandon point coarse graining."
+  ],
+  "finite_controls": [
+    {
+      "copy_count": 1,
+      "exact_mean_zero_character_simplex_verified": true,
+      "maximum_mean_channel_formula_residual": 2.7755575615628914e-17,
+      "maximum_operator_mean_projection_residual": 2.4037033579794548e-17,
+      "n": 3,
+      "residual_pythagorean_variance_residual": 8.673617379884035e-19,
+      "source_tuple_count": 9,
+      "status": "exact-plancherel-mean-z0-simplex-and-residual-variance"
+    },
+    {
+      "copy_count": 2,
+      "exact_mean_zero_character_simplex_verified": true,
+      "maximum_mean_channel_formula_residual": 8.326672684688674e-17,
+      "maximum_operator_mean_projection_residual": 6.834017936133213e-17,
+      "n": 3,
+      "residual_pythagorean_variance_residual": 5.204170427930421e-18,
+      "source_tuple_count": 81,
+      "status": "exact-plancherel-mean-z0-simplex-and-residual-variance"
+    }
+  ],
+  "headline_metrics": {
+    "arbitrary_point_povm_residual_no_go_count": 1,
+    "carrier_retaining_global_decoder_count": 0,
+    "exact_mean_z0_simplex_theorem_count": 1,
+    "finite_control_count": 2,
+    "finite_control_failure_count": 0,
+    "global_distinct_residual_transfer_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "orthogonal_residual_variance_theorem_count": 1,
+    "scaling_record_count": 15,
+    "superpolynomial_scaling_record_count": 9,
+    "tail_critical_excess_log2_upper_bound": -334.33473646705613,
+    "tail_quartic_excess_log2_upper_bound": -323.6699730203854,
+    "tail_quintic_sixteenth_excess_log2_upper_bound": -303.1404057011376
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-POINT-MEAN-Z0-SIMPLEX",
+      "resolved": true,
+      "statement": "Derive the exact Plancherel mean diagonal z=0 signal."
+    },
+    {
+      "id": "PO-POINT-CENTERED-RESIDUAL-ENERGY",
+      "resolved": true,
+      "statement": "Subtract the mean simplex by Hilbert--Schmidt orthogonal variance."
+    },
+    {
+      "id": "PO-POINT-ARBITRARY-POVM-RESIDUAL-NO-GO",
+      "resolved": true,
+      "statement": "Convert the residual second moment into a public-label-adaptive trace bound."
+    },
+    {
+      "id": "PO-POINT-GLOBAL-DISTINCT-RESIDUAL-TRANSFER",
+      "resolved": true,
+      "statement": "Transfer the nonnegative residual second moment through global distinctness."
+    },
+    {
+      "id": "PO-CARRIER-RETAINING-GLOBAL-DECODER",
+      "resolved": false,
+      "statement": "Analyze the original carrier-retaining state without point coarse graining."
+    }
+  ],
+  "scaling_records": [
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -2.5250503324574143,
+      "arbitrary_point_povm_excess_superpolynomially_small": false,
+      "carrier_retaining_measurements_covered": false,
+      "copy_count": 31,
+      "globally_distinct_conditioning_transfer_available": true,
+      "log2_group_order": 15.29920801838728,
+      "n": 8,
+      "public_label_adaptive_measurements_covered": true,
+      "residual_normalized_energy_log2_upper_bound": -3.0504611066571132,
+      "schedule": "critical-two-log-factorial",
+      "status": "finite-rank-residual-bound-not-yet-separated"
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": 0.0,
+      "arbitrary_point_povm_excess_superpolynomially_small": false,
+      "carrier_retaining_measurements_covered": false,
+      "copy_count": 4096,
+      "globally_distinct_conditioning_transfer_available": true,
+      "log2_group_order": 15.29920801838728,
+      "n": 8,
+      "public_label_adaptive_measurements_covered": true,
+      "residual_normalized_energy_log2_upper_bound": 9.10745652692683,
+      "schedule": "quartic",
+      "status": "finite-rank-residual-bound-not-yet-separated"
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": 0.0,
+      "arbitrary_point_povm_excess_superpolynomially_small": false,
+      "carrier_retaining_measurements_covered": false,
+      "copy_count": 2048,
+      "globally_distinct_conditioning_transfer_available": true,
+      "log2_group_order": 15.29920801838728,
+      "n": 8,
+      "public_label_adaptive_measurements_covered": true,
+      "residual_normalized_energy_log2_upper_bound": 5.238670706978294,
+      "schedule": "quintic-sixteenth",
+      "status": "finite-rank-residual-bound-not-yet-separated"
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -14.005678293570975,
+      "arbitrary_point_povm_excess_superpolynomially_small": false,
+      "carrier_retaining_measurements_covered": false,
+      "copy_count": 89,
+      "globally_distinct_conditioning_transfer_available": true,
+      "log2_group_order": 44.25014046988262,
+      "n": 16,
+      "public_label_adaptive_measurements_covered": true,
+      "residual_normalized_energy_log2_upper_bound": -26.011356589268548,
+      "schedule": "critical-two-log-factorial",
+      "status": "finite-rank-residual-bound-not-yet-separated"
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -7.063695942063954,
+      "arbitrary_point_povm_excess_superpolynomially_small": false,
+      "carrier_retaining_measurements_covered": false,
+      "copy_count": 65536,
+      "globally_distinct_conditioning_transfer_available": true,
+      "log2_group_order": 44.25014046988262,
+      "n": 16,
+      "public_label_adaptive_measurements_covered": true,
+      "residual_normalized_energy_log2_upper_bound": -12.127391884145204,
+      "schedule": "quartic",
+      "status": "finite-rank-residual-bound-not-yet-separated"
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -7.063695942063954,
+      "arbitrary_point_povm_excess_superpolynomially_small": false,
+      "carrier_retaining_measurements_covered": false,
+      "copy_count": 65536,
+      "globally_distinct_conditioning_transfer_available": true,
+      "log2_group_order": 44.25014046988262,
+      "n": 16,
+      "public_label_adaptive_measurements_covered": true,
+      "residual_normalized_energy_log2_upper_bound": -12.127391884145204,
+      "schedule": "quintic-sixteenth",
+      "status": "finite-rank-residual-bound-not-yet-separated"
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -46.899173748306524,
+      "arbitrary_point_povm_excess_superpolynomially_small": true,
+      "carrier_retaining_measurements_covered": false,
+      "copy_count": 236,
+      "globally_distinct_conditioning_transfer_available": true,
+      "log2_group_order": 117.6632636523603,
+      "n": 32,
+      "public_label_adaptive_measurements_covered": true,
+      "residual_normalized_energy_log2_upper_bound": -91.79834749661305,
+      "schedule": "critical-two-log-factorial",
+      "status": "carrier-traced-point-povm-excess-superpolynomially-small"
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -38.822339803149234,
+      "arbitrary_point_povm_excess_superpolynomially_small": true,
+      "carrier_retaining_measurements_covered": false,
+      "copy_count": 1048576,
+      "globally_distinct_conditioning_transfer_available": true,
+      "log2_group_order": 117.6632636523603,
+      "n": 32,
+      "public_label_adaptive_measurements_covered": true,
+      "residual_normalized_energy_log2_upper_bound": -75.64467960629847,
+      "schedule": "quartic",
+      "status": "carrier-traced-point-povm-excess-superpolynomially-small"
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -35.73770571506089,
+      "arbitrary_point_povm_excess_superpolynomially_small": true,
+      "carrier_retaining_measurements_covered": false,
+      "copy_count": 2097152,
+      "globally_distinct_conditioning_transfer_available": true,
+      "log2_group_order": 117.6632636523603,
+      "n": 32,
+      "public_label_adaptive_measurements_covered": true,
+      "residual_normalized_energy_log2_upper_bound": -69.47541143012178,
+      "schedule": "quintic-sixteenth",
+      "status": "carrier-traced-point-povm-excess-superpolynomially-small"
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -131.03814951215261,
+      "arbitrary_point_povm_excess_superpolynomially_small": true,
+      "carrier_retaining_measurements_covered": false,
+      "copy_count": 592,
+      "globally_distinct_conditioning_transfer_available": true,
+      "log2_group_order": 295.9951439417241,
+      "n": 64,
+      "public_label_adaptive_measurements_covered": true,
+      "residual_normalized_energy_log2_upper_bound": -260.07629902430523,
+      "schedule": "critical-two-log-factorial",
+      "status": "carrier-traced-point-povm-excess-superpolynomially-small"
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -121.6996516928807,
+      "arbitrary_point_povm_excess_superpolynomially_small": true,
+      "carrier_retaining_measurements_covered": false,
+      "copy_count": 16777216,
+      "globally_distinct_conditioning_transfer_available": true,
+      "log2_group_order": 295.9951439417241,
+      "n": 64,
+      "public_label_adaptive_measurements_covered": true,
+      "residual_normalized_energy_log2_upper_bound": -241.3993033857614,
+      "schedule": "quartic",
+      "status": "carrier-traced-point-povm-excess-superpolynomially-small"
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -112.75478323893844,
+      "arbitrary_point_povm_excess_superpolynomially_small": true,
+      "carrier_retaining_measurements_covered": false,
+      "copy_count": 67108864,
+      "globally_distinct_conditioning_transfer_available": true,
+      "log2_group_order": 295.9951439417241,
+      "n": 64,
+      "public_label_adaptive_measurements_covered": true,
+      "residual_normalized_energy_log2_upper_bound": -223.5095664778769,
+      "schedule": "quintic-sixteenth",
+      "status": "carrier-traced-point-povm-excess-superpolynomially-small"
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -334.33473646705613,
+      "arbitrary_point_povm_excess_superpolynomially_small": true,
+      "carrier_retaining_measurements_covered": false,
+      "copy_count": 1433,
+      "globally_distinct_conditioning_transfer_available": true,
+      "log2_group_order": 716.161722083622,
+      "n": 128,
+      "public_label_adaptive_measurements_covered": true,
+      "residual_normalized_energy_log2_upper_bound": -666.6694729341123,
+      "schedule": "critical-two-log-factorial",
+      "status": "carrier-traced-point-povm-excess-superpolynomially-small"
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -323.6699730203854,
+      "arbitrary_point_povm_excess_superpolynomially_small": true,
+      "carrier_retaining_measurements_covered": false,
+      "copy_count": 268435456,
+      "globally_distinct_conditioning_transfer_available": true,
+      "log2_group_order": 716.161722083622,
+      "n": 128,
+      "public_label_adaptive_measurements_covered": true,
+      "residual_normalized_energy_log2_upper_bound": -645.3399460407708,
+      "schedule": "quartic",
+      "status": "carrier-traced-point-povm-excess-superpolynomially-small"
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -303.1404057011376,
+      "arbitrary_point_povm_excess_superpolynomially_small": true,
+      "carrier_retaining_measurements_covered": false,
+      "copy_count": 2147483648,
+      "globally_distinct_conditioning_transfer_available": true,
+      "log2_group_order": 716.161722083622,
+      "n": 128,
+      "public_label_adaptive_measurements_covered": true,
+      "residual_normalized_energy_log2_upper_bound": -604.2808114022752,
+      "schedule": "quintic-sixteenth",
+      "status": "carrier-traced-point-povm-excess-superpolynomially-small"
+    }
+  ],
+  "status": "carrier-traced-point-route-closed-through-quintic-samples",
+  "summary": "Subtracted the exact Plancherel mean identity simplex, bounded the orthogonal residual, and closed every public-label-adaptive carrier-traced point POVM through quintic sample schedules.",
+  "theorem": {
+    "arbitrary_measurement_bound": "E[P_point-1/n]<=(n-1)(1-2^-k)/(n n!)+sqrt(R_(n,k))/2.",
+    "collision_free_transfer": "Conditioning all polynomially many source draws distinct multiplies the nonnegative residual second moment by only 1/(1-o(1)).",
+    "mean_simplex": "D||M_j||_2^2=(n-1)2^k/(n!)^2(1-2^-k)^2 and ||M_j||_1/2=(n-1)(1-2^-k)/(n n!).",
+    "orthogonal_variance": "E||Delta_(j,L)-M_j||_2^2=E||Delta_(j,L)||_2^2-||M_j||_2^2.",
+    "plancherel_zero_character_mean": "E p_L(0|e)=1 and E p_L(0|h)=2^-k for every h!=e.",
+    "residual_bound": "The explicit positive remainder is at most exp(O(sqrt(n))) k exp(O(k/n^4))/n! up to smaller terms.",
+    "sample_window": "For k=O(n^5), every public-label-adaptive carrier-traced point POVM has superpolynomially small average excess.",
+    "scope": "The theorem does not cover carrier-retaining measurements, non-point global decoders, or sample schedules beyond the proved residual window.",
+    "status": "carrier-traced-point-route-closed-through-quintic-samples",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "claim_boundary": "point quotient only; carrier-retaining global route remains open",
+    "measurement_scope": "arbitrary point POVM adaptive to every public source label",
+    "retained_state": "carrier-traced group--orientation point quotient",
+    "sample_scope": "k=O(n^5), including every fixed multiple of log2(n!)",
+    "source": "virtual iid Plancherel pairs, transferring on the global-distinct event"
+  }
+}

@@ -1,0 +1,550 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The B-fixed multiplicity basis is itself the hard part.",
+      "resolution": "False. It factors locally into unequal swap-orbit and equal symmetric/exterior pair bases with polynomial index circuits.",
+      "resolved": true
+    },
+    {
+      "objection": "Efficient GPE marking of Fix_D implements the CS polar.",
+      "resolution": "False. Projection access block-encodes the overlap at small principal angle; it does not apply its polar partial isometry.",
+      "resolved": true
+    },
+    {
+      "objection": "The pair-GPE carrier swap composes automatically to equation (5).",
+      "resolution": "False without a higher-order multiplicity alignment theorem. The finite global block already has a non-scalar CS spectrum.",
+      "resolved": true
+    },
+    {
+      "objection": "Large occupied rank proves that no succinct transform exists.",
+      "resolution": "False. Rank is a falsifier of low-rank escape, not a circuit lower bound.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "branch_fixed_space_local_basis_compiled": true,
+    "classical_separation_proved": false,
+    "complete_natural_orientation_polar_compiled": false,
+    "diagonal_fixed_space_many_way_kronecker_formula_proved": true,
+    "global_compressed_orientation_kernel_formula_proved": true,
+    "global_fixed_space_overlap_scalar_in_outer_labels": false,
+    "normalization_one_global_matrix_cs_polar_compiled": false,
+    "pair_gpe_automatically_compiles_global_matrix_cs_polar": false,
+    "published_semisimple_algebra_qft_applies_in_natural_regime": false,
+    "reason": "Both fixed spaces and the exact matrix kernel are explicit. The remaining operation is a high-rank many-way Kronecker subduction polar, for which no normalized circuit is known.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-21T04:38:12.071832+00:00",
+  "falsifiers_triggered": [
+    "The local B-fixed basis is not the orientation-polar bottleneck.",
+    "GPE isotypic marking and solved pair-carrier reassociation do not by themselves implement the global matrix CS polar.",
+    "The 2026 semisimple-algebra QFT is outside its proved unitary regime at the natural order and loop parameter.",
+    "Huge occupied rank rules out low-rank escape but does not prove computational hardness."
+  ],
+  "global_controls": [
+    {
+      "branch_fixed_dimension": 12,
+      "control_id": "S3-STANDARD-UNEQUAL-PLUS-EQUAL",
+      "diagonal_fixed_dimension": 6,
+      "distinct_positive_principal_cosine_squared_count": 3,
+      "exact_global_fixed_space_formula_verified": true,
+      "local_specs": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          null
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            2,
+            1
+          ],
+          1
+        ]
+      ],
+      "matrix_cs_block_non_scalar": true,
+      "maximum_diagonal_projector_residual": 1.3877787807814457e-16,
+      "maximum_global_compressed_kernel_residual": 1.3909639389848942e-16,
+      "maximum_positive_principal_cosine_squared": 0.5,
+      "minimum_positive_principal_cosine_squared": 0.25000000000000006,
+      "n": 3,
+      "occupied_overlap_rank": 6,
+      "omega_irrep_carrier_dimension": 32,
+      "status": "exact-global-fixed-space-kernel-matrix-valued",
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "branch_fixed_dimension": 4,
+      "control_id": "S3-TRIVIAL-TWO-UNEQUAL",
+      "diagonal_fixed_dimension": 5,
+      "distinct_positive_principal_cosine_squared_count": 2,
+      "exact_global_fixed_space_formula_verified": true,
+      "local_specs": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          null
+        ],
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ],
+          null
+        ]
+      ],
+      "matrix_cs_block_non_scalar": true,
+      "maximum_diagonal_projector_residual": 1.1102230246251565e-16,
+      "maximum_global_compressed_kernel_residual": 2.220446049250313e-16,
+      "maximum_positive_principal_cosine_squared": 0.5,
+      "minimum_positive_principal_cosine_squared": 0.25,
+      "n": 3,
+      "occupied_overlap_rank": 4,
+      "omega_irrep_carrier_dimension": 16,
+      "status": "exact-global-fixed-space-kernel-matrix-valued",
+      "target_partition": [
+        3
+      ]
+    }
+  ],
+  "headline_metrics": {
+    "finite_control_failure_count": 0,
+    "global_compressed_kernel_theorem_count": 1,
+    "global_control_count": 2,
+    "global_matrix_cs_polar_compiler_count": 0,
+    "local_branch_fixed_basis_compiler_count": 1,
+    "local_control_count": 6,
+    "local_fixed_space_factorization_theorem_count": 1,
+    "matrix_valued_global_control_count": 2,
+    "maximum_global_kernel_residual": 2.220446049250313e-16,
+    "maximum_local_compression_residual": 2.595468893900715e-16,
+    "minimum_high_occupied_rank_native_mass_lower_bound": 0.9997523534727242,
+    "new_quantum_algorithm_count": 0,
+    "scaling_record_count": 13
+  },
+  "literature_links": [
+    {
+      "directly_applies": false,
+      "paper": "Efficient Quantum Fourier Transforms For Semisimple Algebras",
+      "reason": "Its error contains a polynomial in diagram-algebra dimension over sqrt(loop parameter); the natural order is Theta(n log n) with loop n and arbitrary S_n irrep factors.",
+      "url": "https://arxiv.org/abs/2605.05337"
+    },
+    {
+      "directly_applies": true,
+      "paper": "Quantum complexity of the Kronecker coefficients",
+      "reason": "Supports efficient GPE/isotypic-projector access, not a full multiplicity-basis CS transform.",
+      "url": "https://arxiv.org/abs/2302.11454"
+    }
+  ],
+  "local_controls": [
+    {
+      "branch_fixed_dimension": 2,
+      "exact_local_fixed_space_formula_verified": true,
+      "extension_sign": null,
+      "left_dimension": 1,
+      "left_partition": [
+        3
+      ],
+      "maximum_branch_embedding_isometry_residual": 2.220446049250313e-16,
+      "maximum_compressed_selected_action_residual": 2.220446049250313e-16,
+      "n": 3,
+      "predicted_branch_fixed_dimension": 2,
+      "predicted_selected_restriction_dimension": 4,
+      "right_dimension": 2,
+      "right_partition": [
+        2,
+        1
+      ],
+      "selected_restriction_dimension": 4,
+      "status": "exact-local-wreath-fixed-space-and-selected-compression",
+      "wreath_carrier_dimension": 4
+    },
+    {
+      "branch_fixed_dimension": 3,
+      "exact_local_fixed_space_formula_verified": true,
+      "extension_sign": 1,
+      "left_dimension": 2,
+      "left_partition": [
+        2,
+        1
+      ],
+      "maximum_branch_embedding_isometry_residual": 2.220446049250313e-16,
+      "maximum_compressed_selected_action_residual": 2.2371143170757382e-17,
+      "n": 3,
+      "predicted_branch_fixed_dimension": 3,
+      "predicted_selected_restriction_dimension": 4,
+      "right_dimension": 2,
+      "right_partition": [
+        2,
+        1
+      ],
+      "selected_restriction_dimension": 4,
+      "status": "exact-local-wreath-fixed-space-and-selected-compression",
+      "wreath_carrier_dimension": 4
+    },
+    {
+      "branch_fixed_dimension": 1,
+      "exact_local_fixed_space_formula_verified": true,
+      "extension_sign": -1,
+      "left_dimension": 2,
+      "left_partition": [
+        2,
+        1
+      ],
+      "maximum_branch_embedding_isometry_residual": 2.220446049250313e-16,
+      "maximum_compressed_selected_action_residual": 0.0,
+      "n": 3,
+      "predicted_branch_fixed_dimension": 1,
+      "predicted_selected_restriction_dimension": 4,
+      "right_dimension": 2,
+      "right_partition": [
+        2,
+        1
+      ],
+      "selected_restriction_dimension": 4,
+      "status": "exact-local-wreath-fixed-space-and-selected-compression",
+      "wreath_carrier_dimension": 4
+    },
+    {
+      "branch_fixed_dimension": 6,
+      "exact_local_fixed_space_formula_verified": true,
+      "extension_sign": null,
+      "left_dimension": 3,
+      "left_partition": [
+        3,
+        1
+      ],
+      "maximum_branch_embedding_isometry_residual": 2.220446049250313e-16,
+      "maximum_compressed_selected_action_residual": 2.595468893900715e-16,
+      "n": 4,
+      "predicted_branch_fixed_dimension": 6,
+      "predicted_selected_restriction_dimension": 12,
+      "right_dimension": 2,
+      "right_partition": [
+        2,
+        2
+      ],
+      "selected_restriction_dimension": 12,
+      "status": "exact-local-wreath-fixed-space-and-selected-compression",
+      "wreath_carrier_dimension": 12
+    },
+    {
+      "branch_fixed_dimension": 6,
+      "exact_local_fixed_space_formula_verified": true,
+      "extension_sign": 1,
+      "left_dimension": 3,
+      "left_partition": [
+        3,
+        1
+      ],
+      "maximum_branch_embedding_isometry_residual": 2.220446049250313e-16,
+      "maximum_compressed_selected_action_residual": 5.551115123125783e-17,
+      "n": 4,
+      "predicted_branch_fixed_dimension": 6,
+      "predicted_selected_restriction_dimension": 9,
+      "right_dimension": 3,
+      "right_partition": [
+        3,
+        1
+      ],
+      "selected_restriction_dimension": 9,
+      "status": "exact-local-wreath-fixed-space-and-selected-compression",
+      "wreath_carrier_dimension": 9
+    },
+    {
+      "branch_fixed_dimension": 3,
+      "exact_local_fixed_space_formula_verified": true,
+      "extension_sign": -1,
+      "left_dimension": 3,
+      "left_partition": [
+        3,
+        1
+      ],
+      "maximum_branch_embedding_isometry_residual": 2.220446049250313e-16,
+      "maximum_compressed_selected_action_residual": 5.551115123125783e-17,
+      "n": 4,
+      "predicted_branch_fixed_dimension": 3,
+      "predicted_selected_restriction_dimension": 9,
+      "right_dimension": 3,
+      "right_partition": [
+        3,
+        1
+      ],
+      "selected_restriction_dimension": 9,
+      "status": "exact-local-wreath-fixed-space-and-selected-compression",
+      "wreath_carrier_dimension": 9
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "construct_local_branch_fixed_basis",
+      "resolution": "Unequal swap-orbit and equal symmetric/exterior embeddings satisfy the exact compression identities in six controls.",
+      "resolved": true
+    },
+    {
+      "obligation": "identify_diagonal_fixed_space_in_same_basis",
+      "resolution": "It is exactly the invariant space of the target times all selected-coordinate restrictions; compression gives equation (5).",
+      "resolved": true
+    },
+    {
+      "obligation": "show_global_overlap_is_not_only_scalar_filtering",
+      "resolution": "The mixed S3 control has multiple distinct positive principal cosine squares in one fixed outer-label block.",
+      "resolved": true
+    },
+    {
+      "obligation": "compile_global_matrix_cs_polar",
+      "resolution": "Need a normalization-one subduction/recoupling transform; GPE marking plus local fixed bases retains inverse-width angles.",
+      "resolved": false
+    },
+    {
+      "obligation": "apply_semisimple_algebra_qft_in_natural_regime",
+      "resolution": "The published approximation regime is not met and arbitrary Plancherel irrep factors are outside the fixed tensor-power model.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "arbitrary_plancherel_irrep_factors_present": true,
+      "copy_count": 9,
+      "diagonal_fixed_projector_gpe_polynomial": true,
+      "diagram_order_lower_bound": 10,
+      "high_occupied_rank_native_regular_master_mass_lower_bound": 0.9997523534727242,
+      "local_branch_fixed_basis_polynomial": true,
+      "loop_parameter": 5,
+      "matrix_cs_polar_compiled": false,
+      "n": 5,
+      "native_occupied_rank_threshold_log2": 15.540503840119166,
+      "pair_gpe_carrier_reassociation_polynomial": true,
+      "published_semisimple_qft_unitary_regime_verified": false,
+      "status": "local-fixed-bases-accessible-global-matrix-cs-polar-open"
+    },
+    {
+      "arbitrary_plancherel_irrep_factors_present": true,
+      "copy_count": 12,
+      "diagonal_fixed_projector_gpe_polynomial": true,
+      "diagram_order_lower_bound": 13,
+      "high_occupied_rank_native_regular_master_mass_lower_bound": 0.9999999736522457,
+      "local_branch_fixed_basis_polynomial": true,
+      "loop_parameter": 6,
+      "matrix_cs_polar_compiled": false,
+      "n": 6,
+      "native_occupied_rank_threshold_log2": 28.47555928898902,
+      "pair_gpe_carrier_reassociation_polynomial": true,
+      "published_semisimple_qft_unitary_regime_verified": false,
+      "status": "local-fixed-bases-accessible-global-matrix-cs-polar-open"
+    },
+    {
+      "arbitrary_plancherel_irrep_factors_present": true,
+      "copy_count": 18,
+      "diagonal_fixed_projector_gpe_polynomial": true,
+      "diagram_order_lower_bound": 19,
+      "high_occupied_rank_native_regular_master_mass_lower_bound": 1.0,
+      "local_branch_fixed_basis_polynomial": true,
+      "loop_parameter": 8,
+      "matrix_cs_polar_compiled": false,
+      "n": 8,
+      "native_occupied_rank_threshold_log2": 68.84643608274276,
+      "pair_gpe_carrier_reassociation_polynomial": true,
+      "published_semisimple_qft_unitary_regime_verified": false,
+      "status": "local-fixed-bases-accessible-global-matrix-cs-polar-open"
+    },
+    {
+      "arbitrary_plancherel_irrep_factors_present": true,
+      "copy_count": 24,
+      "diagonal_fixed_projector_gpe_polynomial": true,
+      "diagram_order_lower_bound": 25,
+      "high_occupied_rank_native_regular_master_mass_lower_bound": 1.0,
+      "local_branch_fixed_basis_polynomial": true,
+      "loop_parameter": 10,
+      "matrix_cs_polar_compiled": false,
+      "n": 10,
+      "native_occupied_rank_threshold_log2": 130.74636668830172,
+      "pair_gpe_carrier_reassociation_polynomial": true,
+      "published_semisimple_qft_unitary_regime_verified": false,
+      "status": "local-fixed-bases-accessible-global-matrix-cs-polar-open"
+    },
+    {
+      "arbitrary_plancherel_irrep_factors_present": true,
+      "copy_count": 31,
+      "diagonal_fixed_projector_gpe_polynomial": true,
+      "diagram_order_lower_bound": 32,
+      "high_occupied_rank_native_regular_master_mass_lower_bound": 1.0,
+      "local_branch_fixed_basis_polynomial": true,
+      "loop_parameter": 12,
+      "matrix_cs_polar_compiled": false,
+      "n": 12,
+      "native_occupied_rank_threshold_log2": 223.4747780640844,
+      "pair_gpe_carrier_reassociation_polynomial": true,
+      "published_semisimple_qft_unitary_regime_verified": false,
+      "status": "local-fixed-bases-accessible-global-matrix-cs-polar-open"
+    },
+    {
+      "arbitrary_plancherel_irrep_factors_present": true,
+      "copy_count": 47,
+      "diagonal_fixed_projector_gpe_polynomial": true,
+      "diagram_order_lower_bound": 48,
+      "high_occupied_rank_native_regular_master_mass_lower_bound": 1.0,
+      "local_branch_fixed_basis_polynomial": true,
+      "loop_parameter": 16,
+      "matrix_cs_polar_compiled": false,
+      "n": 16,
+      "native_occupied_rank_threshold_log2": 519.9391505211208,
+      "pair_gpe_carrier_reassociation_polynomial": true,
+      "published_semisimple_qft_unitary_regime_verified": false,
+      "status": "local-fixed-bases-accessible-global-matrix-cs-polar-open"
+    },
+    {
+      "arbitrary_plancherel_irrep_factors_present": true,
+      "copy_count": 64,
+      "diagonal_fixed_projector_gpe_polynomial": true,
+      "diagram_order_lower_bound": 65,
+      "high_occupied_rank_native_regular_master_mass_lower_bound": 1.0,
+      "local_branch_fixed_basis_polynomial": true,
+      "loop_parameter": 20,
+      "matrix_cs_polar_compiled": false,
+      "n": 20,
+      "native_occupied_rank_threshold_log2": 977.2381427344995,
+      "pair_gpe_carrier_reassociation_polynomial": true,
+      "published_semisimple_qft_unitary_regime_verified": false,
+      "status": "local-fixed-bases-accessible-global-matrix-cs-polar-open"
+    },
+    {
+      "arbitrary_plancherel_irrep_factors_present": true,
+      "copy_count": 82,
+      "diagonal_fixed_projector_gpe_polynomial": true,
+      "diagram_order_lower_bound": 83,
+      "high_occupied_rank_native_regular_master_mass_lower_bound": 1.0,
+      "local_branch_fixed_basis_polynomial": true,
+      "loop_parameter": 24,
+      "matrix_cs_polar_compiled": false,
+      "n": 24,
+      "native_occupied_rank_threshold_log2": 1620.271977091559,
+      "pair_gpe_carrier_reassociation_polynomial": true,
+      "published_semisimple_qft_unitary_regime_verified": false,
+      "status": "local-fixed-bases-accessible-global-matrix-cs-polar-open"
+    },
+    {
+      "arbitrary_plancherel_irrep_factors_present": true,
+      "copy_count": 120,
+      "diagonal_fixed_projector_gpe_polynomial": true,
+      "diagram_order_lower_bound": 121,
+      "high_occupied_rank_native_regular_master_mass_lower_bound": 1.0,
+      "local_branch_fixed_basis_polynomial": true,
+      "loop_parameter": 32,
+      "matrix_cs_polar_compiled": false,
+      "n": 32,
+      "native_occupied_rank_threshold_log2": 3529.897909570809,
+      "pair_gpe_carrier_reassociation_polynomial": true,
+      "published_semisimple_qft_unitary_regime_verified": false,
+      "status": "local-fixed-bases-accessible-global-matrix-cs-polar-open"
+    },
+    {
+      "arbitrary_plancherel_irrep_factors_present": true,
+      "copy_count": 205,
+      "diagonal_fixed_projector_gpe_polynomial": true,
+      "diagram_order_lower_bound": 206,
+      "high_occupied_rank_native_regular_master_mass_lower_bound": 1.0,
+      "local_branch_fixed_basis_polynomial": true,
+      "loop_parameter": 48,
+      "matrix_cs_polar_compiled": false,
+      "n": 48,
+      "native_occupied_rank_threshold_log2": 10401.165566522137,
+      "pair_gpe_carrier_reassociation_polynomial": true,
+      "published_semisimple_qft_unitary_regime_verified": false,
+      "status": "local-fixed-bases-accessible-global-matrix-cs-polar-open"
+    },
+    {
+      "arbitrary_plancherel_irrep_factors_present": true,
+      "copy_count": 298,
+      "diagonal_fixed_projector_gpe_polynomial": true,
+      "diagram_order_lower_bound": 299,
+      "high_occupied_rank_native_regular_master_mass_lower_bound": 1.0,
+      "local_branch_fixed_basis_polynomial": true,
+      "loop_parameter": 64,
+      "matrix_cs_polar_compiled": false,
+      "n": 64,
+      "native_occupied_rank_threshold_log2": 22051.638223658443,
+      "pair_gpe_carrier_reassociation_polynomial": true,
+      "published_semisimple_qft_unitary_regime_verified": false,
+      "status": "local-fixed-bases-accessible-global-matrix-cs-polar-open"
+    },
+    {
+      "arbitrary_plancherel_irrep_factors_present": true,
+      "copy_count": 501,
+      "diagonal_fixed_projector_gpe_polynomial": true,
+      "diagram_order_lower_bound": 502,
+      "high_occupied_rank_native_regular_master_mass_lower_bound": 1.0,
+      "local_branch_fixed_basis_polynomial": true,
+      "loop_parameter": 96,
+      "matrix_cs_polar_compiled": false,
+      "n": 96,
+      "native_occupied_rank_threshold_log2": 62409.21401368635,
+      "pair_gpe_carrier_reassociation_polynomial": true,
+      "published_semisimple_qft_unitary_regime_verified": false,
+      "status": "local-fixed-bases-accessible-global-matrix-cs-polar-open"
+    },
+    {
+      "arbitrary_plancherel_irrep_factors_present": true,
+      "copy_count": 719,
+      "diagonal_fixed_projector_gpe_polynomial": true,
+      "diagram_order_lower_bound": 720,
+      "high_occupied_rank_native_regular_master_mass_lower_bound": 1.0,
+      "local_branch_fixed_basis_polynomial": true,
+      "loop_parameter": 128,
+      "matrix_cs_polar_compiled": false,
+      "n": 128,
+      "native_occupied_rank_threshold_log2": 128730.06954453103,
+      "pair_gpe_carrier_reassociation_polynomial": true,
+      "published_semisimple_qft_unitary_regime_verified": false,
+      "status": "local-fixed-bases-accessible-global-matrix-cs-polar-open"
+    }
+  ],
+  "status": "fixed-spaces-explicit-global-kronecker-cs-polar-open",
+  "summary": "Compiled the local branch-fixed basis and expressed the opposite diagonal fixed space as an exact many-way Kronecker recoupling, isolating the global matrix CS polar as the remaining transform.",
+  "theorem": {
+    "branch_fixed_factorization": "Fix_B(rho)=V_tau tensor_i Fix_C2(zeta_i), with a local coherent basis.",
+    "coherent_access_boundary": "Local B basis and D-isotypic marking are polynomial, but composing them exposes the inverse-width overlap rather than its polar.",
+    "compiler_target": "Implement the occupied polar of the explicit many-way fixed-space kernel while preserving the local B-fixed output gauge.",
+    "compressed_kernel": "CC*=|G|^-1 sum_s rho_tau(s) tensor_i K_i(s), with every K_i the half-sum of selected left/right irrep actions in the B-fixed gauge.",
+    "diagonal_fixed_factorization": "Fix_D(rho)=Inv_G(V_tau tensor_i Res_sel(zeta_i)), a many-way Kronecker invariant space.",
+    "equal_local_space": "Fix_C2(zeta_lambda^+) is Sym^2(V_lambda), Fix_C2(zeta_lambda^-) is wedge^2(V_lambda), and selected restriction is d_lambda V_lambda.",
+    "pair_gpe_scope": "Pair GPE implements canonical one-carrier reassociation and leaves opaque multiplicity untouched; it does not diagonalize the global matrix CC*.",
+    "semisimple_qft_scope": "The published partition/Brauer QFT large-loop approximation is not verified at diagram order Theta(n log n), loop n, or arbitrary irrep factors.",
+    "status": "fixed-spaces-explicit-global-kronecker-cs-polar-open",
+    "theorem_verified": true,
+    "unequal_local_space": "Fix_C2(zeta_(lambda,mu)) is V_lambda tensor V_mu; selected restriction is d_mu V_lambda plus d_lambda V_mu."
+  },
+  "theorem_contract": {
+    "branch_fixed_factorization": "Fix_B(rho)=V_tau tensor_i Fix_C2(zeta_i), with a local coherent basis.",
+    "coherent_access_boundary": "Local B basis and D-isotypic marking are polynomial, but composing them exposes the inverse-width overlap rather than its polar.",
+    "compiler_target": "Implement the occupied polar of the explicit many-way fixed-space kernel while preserving the local B-fixed output gauge.",
+    "compressed_kernel": "CC*=|G|^-1 sum_s rho_tau(s) tensor_i K_i(s), with every K_i the half-sum of selected left/right irrep actions in the B-fixed gauge.",
+    "diagonal_fixed_factorization": "Fix_D(rho)=Inv_G(V_tau tensor_i Res_sel(zeta_i)), a many-way Kronecker invariant space.",
+    "equal_local_space": "Fix_C2(zeta_lambda^+) is Sym^2(V_lambda), Fix_C2(zeta_lambda^-) is wedge^2(V_lambda), and selected restriction is d_lambda V_lambda.",
+    "pair_gpe_scope": "Pair GPE implements canonical one-carrier reassociation and leaves opaque multiplicity untouched; it does not diagonalize the global matrix CC*.",
+    "semisimple_qft_scope": "The published partition/Brauer QFT large-loop approximation is not verified at diagram order Theta(n log n), loop n, or arbitrary irrep factors.",
+    "status": "fixed-spaces-explicit-global-kronecker-cs-polar-open",
+    "theorem_verified": true,
+    "unequal_local_space": "Fix_C2(zeta_(lambda,mu)) is V_lambda tensor V_mu; selected restriction is d_mu V_lambda plus d_lambda V_mu."
+  }
+}

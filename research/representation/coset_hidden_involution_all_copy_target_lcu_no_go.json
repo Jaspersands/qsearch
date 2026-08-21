@@ -1,0 +1,232 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False. This theorem allows arbitrary and independently varying source coordinates g_i, not only (t,...,t;t).",
+      "challenge": "The earlier diagonal theorem already covered every target coupling.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Exact BAB multiplicity is one per source coordinate outside K, giving the same 2^-k pointwise bias.",
+      "challenge": "An off-diagonal basis element can have larger linear bias.",
+      "resolved": true
+    },
+    {
+      "answer": "Not with unit L1 normalization. Constant bias requires aggregate coefficient norm at least 2^k.",
+      "challenge": "A polynomial number of arbitrary target-coupled LCU terms can add to constant bias.",
+      "resolved": true
+    },
+    {
+      "answer": "Too strong. Operator norm can remain bounded while group-basis L1 is exponential; nonlinear spectral/polar constructions are outside scope.",
+      "challenge": "This rules out every bounded quantum observable.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "adaptive_postselection_no_go_proved": false,
+    "arbitrary_all_copy_target_unit_L1_bias_no_go_proved": true,
+    "basis_bias_classically_computable": true,
+    "bounded_operator_large_L1_no_go_proved": false,
+    "hidden_involution_detector_constructed": false,
+    "matrix_CS_polar_no_go_proved": false,
+    "nonlinear_spectral_function_no_go_proved": false,
+    "reason": "Every linear group-basis LCU has at most 2^-k times its L1 norm in bias; only nonlinear bounded-operator interference remains.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-21T13:06:39.549844+00:00",
+  "falsifiers_triggered": [
+    "Off-diagonal all-copy target basis terms do not exceed 2^-k linear bias.",
+    "Polynomial normalized sparse target recoupling cannot provide constant linear signal.",
+    "Future positive work must analyze nonlinear matrix polar interference directly."
+  ],
+  "finite_controls": [
+    {
+      "all_basis_elements_have_zero_or_two_to_minus_k_bias": true,
+      "centralizer_order": 2,
+      "copy_count": 2,
+      "degree": 3,
+      "exact_basis_formula_verified": true,
+      "exact_two_to_minus_k_bias_basis_element_count": 64,
+      "group_order": 6,
+      "inside_K_basis_element_count": 72,
+      "maximum_baseline_formula_residual": 0.0,
+      "maximum_bias_formula_residual": 0.0,
+      "maximum_likelihood_formula_residual": 0.0,
+      "outside_K_local_double_coset_multiplicity_always_one": true,
+      "outside_K_supported_basis_element_count": 64,
+      "product_basis_element_count": 216,
+      "status": "all-copy-target-basis-bias-formula-verified",
+      "transposition_count": 1,
+      "zero_bias_basis_element_count": 152
+    },
+    {
+      "all_basis_elements_have_zero_or_two_to_minus_k_bias": true,
+      "centralizer_order": 2,
+      "copy_count": 3,
+      "degree": 3,
+      "exact_basis_formula_verified": true,
+      "exact_two_to_minus_k_bias_basis_element_count": 256,
+      "group_order": 6,
+      "inside_K_basis_element_count": 432,
+      "maximum_baseline_formula_residual": 0.0,
+      "maximum_bias_formula_residual": 0.0,
+      "maximum_likelihood_formula_residual": 0.0,
+      "outside_K_local_double_coset_multiplicity_always_one": true,
+      "outside_K_supported_basis_element_count": 256,
+      "product_basis_element_count": 1296,
+      "status": "all-copy-target-basis-bias-formula-verified",
+      "transposition_count": 1,
+      "zero_bias_basis_element_count": 1040
+    },
+    {
+      "all_basis_elements_have_zero_or_two_to_minus_k_bias": true,
+      "centralizer_order": 8,
+      "copy_count": 2,
+      "degree": 4,
+      "exact_basis_formula_verified": true,
+      "exact_two_to_minus_k_bias_basis_element_count": 256,
+      "group_order": 24,
+      "inside_K_basis_element_count": 4608,
+      "maximum_baseline_formula_residual": 0.0,
+      "maximum_bias_formula_residual": 0.0,
+      "maximum_likelihood_formula_residual": 0.0,
+      "outside_K_local_double_coset_multiplicity_always_one": true,
+      "outside_K_supported_basis_element_count": 256,
+      "product_basis_element_count": 13824,
+      "status": "all-copy-target-basis-bias-formula-verified",
+      "transposition_count": 2,
+      "zero_bias_basis_element_count": 13568
+    }
+  ],
+  "headline_metrics": {
+    "arbitrary_all_copy_target_L1_no_go_count": 1,
+    "exact_all_finite_groups_basis_formula_count": 1,
+    "hidden_involution_detector_count": 0,
+    "matrix_polar_no_go_count": 0,
+    "tail_constant_bias_L1_norm_lower_bound_decimal": "469219801800293764373197355969328553831984974596843971042368711922664472663701981746713137411270711303034626199044091413698918166643890203860091306664994072502482932661931411083539271868071588269998735494868914134645646190292788569954038367952474854129664",
+    "tail_unit_L1_bias_log2_upper_bound": -846.0
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-ALL-COPY-TARGET-BOUNDED-OPERATOR-LARGE-L1",
+      "resolved": false,
+      "statement": "Determine whether bounded coherent noncommutative polynomials with exponentially large word/basis L1 can amplify without reintroducing sqrt(M) normalization."
+    },
+    {
+      "id": "PO-ALL-COPY-TARGET-MATRIX-POLAR",
+      "resolved": false,
+      "statement": "Analyze the matrix-CS polar or spectral projector transition directly; linear LCU bias is no longer a viable proxy."
+    },
+    {
+      "id": "PO-ALL-COPY-TARGET-POSTSELECTION",
+      "resolved": false,
+      "statement": "Charge any postselected escape for success probability and compare its total normalization with the classical estimator."
+    }
+  ],
+  "scaling_records": [
+    {
+      "coefficient_weight_classically_computable_in_copy_linear_time": true,
+      "constant_bias_L1_norm_lower_bound_decimal": "8192",
+      "copy_count": 13,
+      "degree": 8,
+      "half_degree": 4,
+      "hidden_matching_count_decimal": "105",
+      "inverse_64_candidates": 0.00014880952380952382,
+      "normalized_LCU_has_useful_linear_bias": false,
+      "status": "normalized-all-copy-target-LCU-inverse-candidate-bias",
+      "unit_L1_bias_log2_upper_bound": -13.0,
+      "unit_L1_bias_upper_bound": 0.0001220703125
+    },
+    {
+      "coefficient_weight_classically_computable_in_copy_linear_time": true,
+      "constant_bias_L1_norm_lower_bound_decimal": "134217728",
+      "copy_count": 27,
+      "degree": 16,
+      "half_degree": 8,
+      "hidden_matching_count_decimal": "2027025",
+      "inverse_64_candidates": 7.708341041674375e-09,
+      "normalized_LCU_has_useful_linear_bias": false,
+      "status": "normalized-all-copy-target-LCU-inverse-candidate-bias",
+      "unit_L1_bias_log2_upper_bound": -27.0,
+      "unit_L1_bias_upper_bound": 7.450580596923828e-09
+    },
+    {
+      "coefficient_weight_classically_computable_in_copy_linear_time": true,
+      "constant_bias_L1_norm_lower_bound_decimal": "18446744073709551616",
+      "copy_count": 64,
+      "degree": 32,
+      "half_degree": 16,
+      "hidden_matching_count_decimal": "191898783962510625",
+      "inverse_64_candidates": 8.142313191027048e-20,
+      "normalized_LCU_has_useful_linear_bias": false,
+      "status": "normalized-all-copy-target-LCU-inverse-candidate-bias",
+      "unit_L1_bias_log2_upper_bound": -64.0,
+      "unit_L1_bias_upper_bound": 5.421010862427522e-20
+    },
+    {
+      "coefficient_weight_classically_computable_in_copy_linear_time": true,
+      "constant_bias_L1_norm_lower_bound_decimal": "11417981541647679048466287755595961091061972992",
+      "copy_count": 153,
+      "degree": 64,
+      "half_degree": 32,
+      "hidden_matching_count_decimal": "112275575285571389562324404930670903477890625",
+      "inverse_64_candidates": 1.3916651026065133e-46,
+      "normalized_LCU_has_useful_linear_bias": false,
+      "status": "normalized-all-copy-target-LCU-inverse-candidate-bias",
+      "unit_L1_bias_log2_upper_bound": -153.0,
+      "unit_L1_bias_upper_bound": 8.758115402030107e-47
+    },
+    {
+      "coefficient_weight_classically_computable_in_copy_linear_time": true,
+      "constant_bias_L1_norm_lower_bound_decimal": "18788340662190665823115844774314696219005460391266558965658327772257672200916867547709591987078149624255479808",
+      "copy_count": 363,
+      "degree": 128,
+      "half_degree": 64,
+      "hidden_matching_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "inverse_64_candidates": 9.484109342067211e-110,
+      "normalized_LCU_has_useful_linear_bias": false,
+      "status": "normalized-all-copy-target-LCU-inverse-candidate-bias",
+      "unit_L1_bias_log2_upper_bound": -363.0,
+      "unit_L1_bias_upper_bound": 5.3224498000101884e-110
+    },
+    {
+      "coefficient_weight_classically_computable_in_copy_linear_time": true,
+      "constant_bias_L1_norm_lower_bound_decimal": "469219801800293764373197355969328553831984974596843971042368711922664472663701981746713137411270711303034626199044091413698918166643890203860091306664994072502482932661931411083539271868071588269998735494868914134645646190292788569954038367952474854129664",
+      "copy_count": 846,
+      "degree": 256,
+      "half_degree": 128,
+      "hidden_matching_count_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "inverse_64_candidates": 2.390146511942186e-255,
+      "normalized_LCU_has_useful_linear_bias": false,
+      "status": "normalized-all-copy-target-LCU-inverse-candidate-bias",
+      "unit_L1_bias_log2_upper_bound": -846.0,
+      "unit_L1_bias_upper_bound": 2.131197353912215e-255
+    }
+  ],
+  "status": "all-copy-target-normalized-LCU-no-go-proved-nonlinear-polar-open",
+  "summary": "Extended the inverse-candidate bias no-go from diagonal/Hecke terms to every normalized all-copy target-coupled group-algebra LCU.",
+  "theorem": {
+    "adaptive_postselection_no_go_proved": false,
+    "arbitrary_LCU_bound": "For every X=sum alpha_ell ell, absolute linear bias is at most 2^-k ||alpha||_1.",
+    "arbitrary_all_copy_target_L1_LCU_bound_proved": true,
+    "basis_trace_formula": "tr_B(ell Z)=2^-k product_i c_H(g_i^-1,t^-1), while tr_B(ell)=1[ell^-1 in B].",
+    "bounded_operator_large_L1_no_go_proved": false,
+    "classical_evaluation": "The basis weight uses k independent four-element HtH membership checks and is classically computable in O(k) group operations.",
+    "efficiently_sampleable_LCU_expectation_classically_estimable": true,
+    "exact_all_finite_groups_basis_formula_proved": true,
+    "hidden_involution_detector_constructed": false,
+    "matrix_CS_polar_no_go_proved": false,
+    "natural_copy_consequence": "At k=ceil(log2(64M)), unit-L1 bias is at most 1/(64M); constant bias requires L1 norm at least 2^k>=64M.",
+    "nonlinear_spectral_function_no_go_proved": false,
+    "normalized_sparse_target_recoupling_linear_detector_ruled_out": true,
+    "pointwise_bias": "Every basis element has bias zero when t is in K or support fails, and exactly 2^-k otherwise.",
+    "speedup_claim_allowed": false,
+    "status": "all-copy-target-normalized-LCU-no-go-proved-nonlinear-polar-open",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "claim_boundary": "Linear expectation bias only; bounded-operator nonlinear spectral and matrix-polar operations may have exponentially large basis L1.",
+    "group": "Any finite group G with an involution h",
+    "normalization": "Group-basis coefficient L1 norm",
+    "observable_class": "Arbitrary linear group-algebra LCU on all k source coordinates and the target coordinate"
+  }
+}

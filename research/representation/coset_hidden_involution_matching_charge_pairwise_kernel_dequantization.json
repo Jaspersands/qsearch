@@ -1,0 +1,260 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False. Their exact overlap and Theta(1/m) deficit have a direct O(m^4) classical calculation.",
+      "challenge": "Near-parallel neighboring charge states imply hardness.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It enumerates only 192*C(m,4) constant-support terms.",
+      "challenge": "The kernel algorithm requires enumerating S_(2m).",
+      "resolved": true
+    },
+    {
+      "answer": "Too strong. Spectral projector transitions depend on matrix structure not captured by the regular pairwise overlap.",
+      "challenge": "Pairwise-kernel dequantization kills the charge route.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_copy_target_interference_dequantized": false,
+    "hidden_involution_detector_constructed": false,
+    "matrix_valued_spectral_transition_dequantized": false,
+    "nearest_switch_kernel_formula_proved": true,
+    "noncommuting_higher_transition_moments_dequantized": false,
+    "pairwise_charge_fidelity_quantum_advantage": false,
+    "pairwise_charge_kernel_classically_computable": true,
+    "reason": "The faithful charge orbit has a classically computable pairwise Gram geometry; only stronger matrix-valued transitions can matter.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-21T02:13:56.991414+00:00",
+  "falsifiers_triggered": [
+    "Pairwise matching-charge fidelity is not a source of quantum advantage.",
+    "Nearest hidden matchings have only Theta(1/m) charge-kernel separation.",
+    "A viable charge algorithm must use matrix-valued or higher-order target recoupling."
+  ],
+  "headline_metrics": {
+    "classical_time_exponent": 4,
+    "exact_nearest_switch_kernel_theorem_count": 1,
+    "hidden_involution_detector_count": 0,
+    "matrix_transition_dequantization_count": 0,
+    "polynomial_classical_pairwise_kernel_algorithm_count": 1,
+    "tail_nearest_kernel_deficit": 0.015548406862745057
+  },
+  "nearest_switch_controls": [
+    {
+      "charge_term_count": 192,
+      "exact_local_support_formula_verified": true,
+      "expected_four_unaffected_contribution": 0,
+      "expected_intersection_count": 80,
+      "expected_normalized_kernel": "5/12",
+      "expected_three_unaffected_contribution": 0,
+      "expected_two_unaffected_contribution": 80,
+      "half_degree": 4,
+      "normalized_kernel": "5/12",
+      "normalized_kernel_deficit": "7/12",
+      "observed_intersection_count": 80,
+      "status": "nearest-switch-charge-kernel-exact",
+      "unaffected_edge_count": 2
+    },
+    {
+      "charge_term_count": 960,
+      "exact_local_support_formula_verified": true,
+      "expected_four_unaffected_contribution": 0,
+      "expected_intersection_count": 432,
+      "expected_normalized_kernel": "9/20",
+      "expected_three_unaffected_contribution": 192,
+      "expected_two_unaffected_contribution": 240,
+      "half_degree": 5,
+      "normalized_kernel": "9/20",
+      "normalized_kernel_deficit": "11/20",
+      "observed_intersection_count": 432,
+      "status": "nearest-switch-charge-kernel-exact",
+      "unaffected_edge_count": 3
+    },
+    {
+      "charge_term_count": 2880,
+      "exact_local_support_formula_verified": true,
+      "expected_four_unaffected_contribution": 192,
+      "expected_intersection_count": 1440,
+      "expected_normalized_kernel": "1/2",
+      "expected_three_unaffected_contribution": 768,
+      "expected_two_unaffected_contribution": 480,
+      "half_degree": 6,
+      "normalized_kernel": "1/2",
+      "normalized_kernel_deficit": "1/2",
+      "observed_intersection_count": 1440,
+      "status": "nearest-switch-charge-kernel-exact",
+      "unaffected_edge_count": 4
+    },
+    {
+      "charge_term_count": 6720,
+      "exact_local_support_formula_verified": true,
+      "expected_four_unaffected_contribution": 960,
+      "expected_intersection_count": 3680,
+      "expected_normalized_kernel": "23/42",
+      "expected_three_unaffected_contribution": 1920,
+      "expected_two_unaffected_contribution": 800,
+      "half_degree": 7,
+      "normalized_kernel": "23/42",
+      "normalized_kernel_deficit": "19/42",
+      "observed_intersection_count": 3680,
+      "status": "nearest-switch-charge-kernel-exact",
+      "unaffected_edge_count": 5
+    },
+    {
+      "charge_term_count": 13440,
+      "exact_local_support_formula_verified": true,
+      "expected_four_unaffected_contribution": 2880,
+      "expected_intersection_count": 7920,
+      "expected_normalized_kernel": "33/56",
+      "expected_three_unaffected_contribution": 3840,
+      "expected_two_unaffected_contribution": 1200,
+      "half_degree": 8,
+      "normalized_kernel": "33/56",
+      "normalized_kernel_deficit": "23/56",
+      "observed_intersection_count": 7920,
+      "status": "nearest-switch-charge-kernel-exact",
+      "unaffected_edge_count": 6
+    },
+    {
+      "charge_term_count": 24192,
+      "exact_local_support_formula_verified": true,
+      "expected_four_unaffected_contribution": 6720,
+      "expected_intersection_count": 15120,
+      "expected_normalized_kernel": "5/8",
+      "expected_three_unaffected_contribution": 6720,
+      "expected_two_unaffected_contribution": 1680,
+      "half_degree": 9,
+      "normalized_kernel": "5/8",
+      "normalized_kernel_deficit": "3/8",
+      "observed_intersection_count": 15120,
+      "status": "nearest-switch-charge-kernel-exact",
+      "unaffected_edge_count": 7
+    },
+    {
+      "charge_term_count": 40320,
+      "exact_local_support_formula_verified": true,
+      "expected_four_unaffected_contribution": 13440,
+      "expected_intersection_count": 26432,
+      "expected_normalized_kernel": "59/90",
+      "expected_three_unaffected_contribution": 10752,
+      "expected_two_unaffected_contribution": 2240,
+      "half_degree": 10,
+      "normalized_kernel": "59/90",
+      "normalized_kernel_deficit": "31/90",
+      "observed_intersection_count": 26432,
+      "status": "nearest-switch-charge-kernel-exact",
+      "unaffected_edge_count": 8
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-MATCHING-CHARGE-MATRIX-TRANSITION-KERNEL",
+      "resolved": false,
+      "statement": "Compute source-weighted spectral-projector transition matrices, not merely regular Hilbert-Schmidt overlaps."
+    },
+    {
+      "id": "PO-MATCHING-CHARGE-HIGHER-KERNEL-DEQUANTIZATION",
+      "resolved": false,
+      "statement": "Determine whether fixed-order noncommuting charge transition moments are also finite-support character polynomials."
+    },
+    {
+      "id": "PO-MATCHING-CHARGE-ALL-COPY-TRANSITION",
+      "resolved": false,
+      "statement": "Isolate an all-copy target-coupled transition statistic that escapes both pairwise-kernel and source-local no-go theorems."
+    }
+  ],
+  "scaling_records": [
+    {
+      "charge_term_count": 13440,
+      "classical_membership_tests": 13440,
+      "classical_time_exponent": 4,
+      "half_degree": 8,
+      "nearest_orbit_vector_distance_squared": 0.8214285714285714,
+      "nearest_switch_kernel": 0.5892857142857143,
+      "nearest_switch_kernel_deficit": 0.4107142857142857,
+      "pairwise_kernel_classically_computable": true,
+      "status": "pairwise-charge-kernel-polynomial-classical"
+    },
+    {
+      "charge_term_count": 349440,
+      "classical_membership_tests": 349440,
+      "classical_time_exponent": 4,
+      "half_degree": 16,
+      "nearest_orbit_vector_distance_squared": 0.45833333333333326,
+      "nearest_switch_kernel": 0.7708333333333334,
+      "nearest_switch_kernel_deficit": 0.22916666666666663,
+      "pairwise_kernel_classically_computable": true,
+      "status": "pairwise-charge-kernel-polynomial-classical"
+    },
+    {
+      "charge_term_count": 6904320,
+      "classical_membership_tests": 6904320,
+      "classical_time_exponent": 4,
+      "half_degree": 32,
+      "nearest_orbit_vector_distance_squared": 0.23991935483870974,
+      "nearest_switch_kernel": 0.8800403225806451,
+      "nearest_switch_kernel_deficit": 0.11995967741935487,
+      "pairwise_kernel_classically_computable": true,
+      "status": "pairwise-charge-kernel-polynomial-classical"
+    },
+    {
+      "charge_term_count": 121992192,
+      "classical_membership_tests": 121992192,
+      "classical_time_exponent": 4,
+      "half_degree": 64,
+      "nearest_orbit_vector_distance_squared": 0.12251984126984117,
+      "nearest_switch_kernel": 0.9387400793650794,
+      "nearest_switch_kernel_deficit": 0.061259920634920584,
+      "pairwise_kernel_classically_computable": true,
+      "status": "pairwise-charge-kernel-polynomial-classical"
+    },
+    {
+      "charge_term_count": 2048256000,
+      "classical_membership_tests": 2048256000,
+      "classical_time_exponent": 4,
+      "half_degree": 128,
+      "nearest_orbit_vector_distance_squared": 0.06188484251968496,
+      "nearest_switch_kernel": 0.9690575787401575,
+      "nearest_switch_kernel_deficit": 0.03094242125984248,
+      "pairwise_kernel_classically_computable": true,
+      "status": "pairwise-charge-kernel-polynomial-classical"
+    },
+    {
+      "charge_term_count": 33560186880,
+      "classical_membership_tests": 33560186880,
+      "classical_time_exponent": 4,
+      "half_degree": 256,
+      "nearest_orbit_vector_distance_squared": 0.031096813725490113,
+      "nearest_switch_kernel": 0.9844515931372549,
+      "nearest_switch_kernel_deficit": 0.015548406862745057,
+      "pairwise_kernel_classically_computable": true,
+      "status": "pairwise-charge-kernel-polynomial-classical"
+    }
+  ],
+  "status": "matching-charge-pairwise-kernel-dequantized-matrix-transition-open",
+  "summary": "Derived the exact nearest-switch charge overlap and dequantized the arbitrary pairwise matching-charge kernel in O(m^4) classical time.",
+  "theorem": {
+    "all_copy_target_interference_dequantized": false,
+    "arbitrary_pairwise_kernel_polynomial_time_classical": true,
+    "charge_orbit_pairwise_fidelity_is_quantum_advantage": false,
+    "classical_algorithm": "Build point-to-edge labels, enumerate 192*C(m,4) reference terms, and apply the constant-time membership predicate: O(m^4) time.",
+    "exact_all_rank_nearest_switch_kernel_proved": true,
+    "hidden_involution_detector_constructed": false,
+    "matrix_valued_spectral_transition_dequantized": false,
+    "mechanism_boundary": "Pairwise charge fidelity is dequantized; only matrix-valued spectral transitions, noncommuting higher moments, or all-copy target interference remain.",
+    "membership_test": "A charge term is two disjoint 3-cycles; each cycle must span exactly two target-matching edges and the two edge pairs must be disjoint.",
+    "nearest_switch_formula": "I_m=80*C(m-2,2)+192*C(m-2,3)+192*C(m-2,4), so kappa=(m^2-5m+9)/(m(m-1)).",
+    "noncommuting_higher_transition_moments_dequantized": false,
+    "speedup_claim_allowed": false,
+    "status": "matching-charge-pairwise-kernel-dequantized-matrix-transition-open",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "claim_boundary": "Dequantizes only the pairwise charge Gram kernel, not spectral projector transitions or coherent likelihood interference.",
+    "classical_access": "Read both matching edge lists and enumerate polynomial orbit terms",
+    "input": "Two explicitly represented perfect matchings on 2m points",
+    "kernel": "Normalized regular Hilbert-Schmidt overlap of D_h and D_h'"
+  }
+}

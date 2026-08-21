@@ -1,0 +1,695 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False. Quarter-whitening turns it into a Frobenius square, and the parent-diagonal average refines it into nonnegative blocks.",
+      "challenge": "Relative collision can cancel across Young channels.",
+      "resolved": true
+    },
+    {
+      "answer": "False for the mathematical PGM effect: simultaneous rescaling of seed and average cancels exactly. A structured transform is still open.",
+      "challenge": "The 1/(2^k dim(C)) density scalar forces factorial QSVT amplification.",
+      "resolved": true
+    },
+    {
+      "answer": "False. Their total and typical source mass have no all-n bound.",
+      "challenge": "Exact positive channels prove natural critical advantage.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It removes one normalization objection but leaves wide, source-dependent orientation kernels and their spectral transform.",
+      "challenge": "Scalar cancellation compiles the inverse square root.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "classical_separation_proved": false,
+    "common_density_scalar_cancels_from_pgm_effect": true,
+    "critical_harmonic_point_measurement_compiled": false,
+    "dimensionless_orientation_kernel_transform_compiled": false,
+    "full_hidden_permutation_decoder_constructed": false,
+    "generic_factorial_scalar_amplification_is_intrinsic": false,
+    "natural_critical_relative_collision_lower_bound_proved": false,
+    "natural_critical_relative_collision_upper_bound_proved": false,
+    "point_pgm_relative_collision_identity_proved": true,
+    "positive_child_star_relative_decomposition_proved": true,
+    "positive_parent_pair_relative_decomposition_proved": true,
+    "reason": "The exact relative signal is now localized in positive dimensionless Young channels, but no natural all-rank mass theorem or coherent kernel transform exists.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-21T03:28:20.311010+00:00",
+  "falsifiers_triggered": [
+    "Critical relative collision cannot be inferred from ambient child energy.",
+    "The common 1/(2^k dim(C)) density scalar is not itself a PGM-effect obstruction.",
+    "Positive finite relative channels do not imply typical natural critical mass.",
+    "The next asymptotic target is a signal-weighted orientation-kernel theorem, not a global norm bound."
+  ],
+  "finite_controls": [
+    {
+      "carrier_dimension": 4,
+      "child_records": [
+        {
+          "active_offdiagonal_parent_pair_count": 2,
+          "active_parent_pair_count": 3,
+          "child": [
+            2
+          ],
+          "child_irrep_dimension": 1,
+          "child_star_dimension": 24,
+          "offdiagonal_relative_fraction": 0.7031675648787513,
+          "parent_diagonal_relative_collision": 0.1138354503153701,
+          "parent_offdiagonal_relative_collision": 0.26966526202717134,
+          "parent_partitions": [
+            [
+              3
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "relative_collision": 0.3835007123425414,
+          "strongest_parent_pair": [
+            [
+              3
+            ],
+            [
+              2,
+              1
+            ]
+          ],
+          "strongest_parent_pair_relative_collision": 0.1348326310135857
+        },
+        {
+          "active_offdiagonal_parent_pair_count": 2,
+          "active_parent_pair_count": 3,
+          "child": [
+            1,
+            1
+          ],
+          "child_irrep_dimension": 1,
+          "child_star_dimension": 24,
+          "offdiagonal_relative_fraction": 0.7031675648787521,
+          "parent_diagonal_relative_collision": 0.11383545031536993,
+          "parent_offdiagonal_relative_collision": 0.26966526202717184,
+          "parent_partitions": [
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "relative_collision": 0.3835007123425417,
+          "strongest_parent_pair": [
+            [
+              2,
+              1
+            ],
+            [
+              1,
+              1,
+              1
+            ]
+          ],
+          "strongest_parent_pair_relative_collision": 0.13483263101358592
+        }
+      ],
+      "control_id": "W3-INFORMATION-THRESHOLD",
+      "copy_count": 3,
+      "decomposed_relative_collision": 0.7670014246850831,
+      "direct_pgm_success": 0.5890004748950276,
+      "direct_relative_collision": 0.7670014246850825,
+      "exact_child_star_relative_collision_verified": true,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_child_factorization_residual": 3.0831000324687246e-17,
+      "maximum_parent_diagonal_average_residual": 2.019608678943192e-17,
+      "maximum_rescaled_effect_cancellation_residual": 5.558125251381559e-16,
+      "n": 3,
+      "orientation_count": 8,
+      "parent_diagonal_relative_collision": 0.22767090063074003,
+      "parent_offdiagonal_relative_collision": 0.5393305240543431,
+      "parent_offdiagonal_relative_fraction": 0.7031675648787516,
+      "register_dimension": 48,
+      "relative_collision_decomposition_residual": 6.661338147750939e-16,
+      "relative_collision_predicted_pgm_success": 0.5890004748950275,
+      "status": "exact-positive-child-star-relative-collision-decomposition",
+      "strongest_child": [
+        1,
+        1
+      ],
+      "strongest_parent_pair": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ],
+      "strongest_parent_pair_relative_collision": 0.13483263101358592
+    },
+    {
+      "carrier_dimension": 18,
+      "child_records": [
+        {
+          "active_offdiagonal_parent_pair_count": 0,
+          "active_parent_pair_count": 1,
+          "child": [
+            3
+          ],
+          "child_irrep_dimension": 1,
+          "child_star_dimension": 16,
+          "offdiagonal_relative_fraction": 1.0475091541350395e-31,
+          "parent_diagonal_relative_collision": 0.0014175287863328564,
+          "parent_offdiagonal_relative_collision": 1.4848743799335998e-34,
+          "parent_partitions": [
+            [
+              4
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "relative_collision": 0.0014175287863328566,
+          "strongest_parent_pair": [
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "strongest_parent_pair_relative_collision": 0.0014175287863328564
+        },
+        {
+          "active_offdiagonal_parent_pair_count": 6,
+          "active_parent_pair_count": 8,
+          "child": [
+            2,
+            1
+          ],
+          "child_irrep_dimension": 2,
+          "child_star_dimension": 32,
+          "offdiagonal_relative_fraction": 0.9397103394877943,
+          "parent_diagonal_relative_collision": 0.00504962975439904,
+          "parent_offdiagonal_relative_collision": 0.0787065186713617,
+          "parent_partitions": [
+            [
+              3,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              1,
+              1
+            ]
+          ],
+          "relative_collision": 0.08375614842576073,
+          "strongest_parent_pair": [
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              1,
+              1
+            ]
+          ],
+          "strongest_parent_pair_relative_collision": 0.020583792556953348
+        },
+        {
+          "active_offdiagonal_parent_pair_count": 2,
+          "active_parent_pair_count": 3,
+          "child": [
+            1,
+            1,
+            1
+          ],
+          "child_irrep_dimension": 1,
+          "child_star_dimension": 16,
+          "offdiagonal_relative_fraction": 0.23695971967728066,
+          "parent_diagonal_relative_collision": 0.008681730722465187,
+          "parent_offdiagonal_relative_collision": 0.002696083721083385,
+          "parent_partitions": [
+            [
+              2,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "relative_collision": 0.011377814443548573,
+          "strongest_parent_pair": [
+            [
+              2,
+              1,
+              1
+            ],
+            [
+              2,
+              1,
+              1
+            ]
+          ],
+          "strongest_parent_pair_relative_collision": 0.008681730722465187
+        }
+      ],
+      "control_id": "W4-COLLISION-FREE-PAIR",
+      "copy_count": 2,
+      "decomposed_relative_collision": 0.09655149165564217,
+      "direct_pgm_success": 0.2741378729139107,
+      "direct_relative_collision": 0.09655149165564215,
+      "exact_child_star_relative_collision_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_child_factorization_residual": 4.794366299983577e-17,
+      "maximum_parent_diagonal_average_residual": 1.6758593567775153e-17,
+      "maximum_rescaled_effect_cancellation_residual": 2.6404371177180716e-15,
+      "n": 4,
+      "orientation_count": 4,
+      "parent_diagonal_relative_collision": 0.015148889263197083,
+      "parent_offdiagonal_relative_collision": 0.0814026023924451,
+      "parent_offdiagonal_relative_fraction": 0.843100411983,
+      "register_dimension": 96,
+      "relative_collision_decomposition_residual": 1.1102230246251565e-16,
+      "relative_collision_predicted_pgm_success": 0.27413787291391056,
+      "status": "exact-positive-child-star-relative-collision-decomposition",
+      "strongest_child": [
+        2,
+        1
+      ],
+      "strongest_parent_pair": [
+        [
+          2,
+          2
+        ],
+        [
+          2,
+          1,
+          1
+        ]
+      ],
+      "strongest_parent_pair_relative_collision": 0.020583792556953348
+    },
+    {
+      "carrier_dimension": 6,
+      "child_records": [
+        {
+          "active_offdiagonal_parent_pair_count": 0,
+          "active_parent_pair_count": 0,
+          "child": [
+            3
+          ],
+          "child_irrep_dimension": 1,
+          "child_star_dimension": 16,
+          "offdiagonal_relative_fraction": 0.0,
+          "parent_diagonal_relative_collision": 2.0062069628685953e-33,
+          "parent_offdiagonal_relative_collision": 4.775562992315685e-65,
+          "parent_partitions": [
+            [
+              4
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "relative_collision": 2.0062069628685953e-33,
+          "strongest_parent_pair": [
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "strongest_parent_pair_relative_collision": 2.0062069628685953e-33
+        },
+        {
+          "active_offdiagonal_parent_pair_count": 2,
+          "active_parent_pair_count": 2,
+          "child": [
+            2,
+            1
+          ],
+          "child_irrep_dimension": 2,
+          "child_star_dimension": 32,
+          "offdiagonal_relative_fraction": 0.9999999999999999,
+          "parent_diagonal_relative_collision": 1.889813220201357e-33,
+          "parent_offdiagonal_relative_collision": 0.013888888888888853,
+          "parent_partitions": [
+            [
+              3,
+              1
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              1,
+              1
+            ]
+          ],
+          "relative_collision": 0.013888888888888855,
+          "strongest_parent_pair": [
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          "strongest_parent_pair_relative_collision": 0.006944444444444428
+        },
+        {
+          "active_offdiagonal_parent_pair_count": 2,
+          "active_parent_pair_count": 2,
+          "child": [
+            1,
+            1,
+            1
+          ],
+          "child_irrep_dimension": 1,
+          "child_star_dimension": 16,
+          "offdiagonal_relative_fraction": 1.0,
+          "parent_diagonal_relative_collision": 1.1161564688548483e-33,
+          "parent_offdiagonal_relative_collision": 0.01964185503295964,
+          "parent_partitions": [
+            [
+              2,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "relative_collision": 0.01964185503295964,
+          "strongest_parent_pair": [
+            [
+              2,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1
+            ]
+          ],
+          "strongest_parent_pair_relative_collision": 0.00982092751647982
+        }
+      ],
+      "control_id": "W4-COLLECTIVE-PARENT-COHERENCE",
+      "copy_count": 2,
+      "decomposed_relative_collision": 0.033530743921848495,
+      "direct_pgm_success": 0.2583826859804619,
+      "direct_relative_collision": 0.033530743921848516,
+      "exact_child_star_relative_collision_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_child_factorization_residual": 6.469294267307819e-17,
+      "maximum_parent_diagonal_average_residual": 2.4557883695543268e-17,
+      "maximum_rescaled_effect_cancellation_residual": 1.4505274835376903e-15,
+      "n": 4,
+      "orientation_count": 4,
+      "parent_diagonal_relative_collision": 5.0121766519248005e-33,
+      "parent_offdiagonal_relative_collision": 0.033530743921848495,
+      "parent_offdiagonal_relative_fraction": 1.0,
+      "register_dimension": 96,
+      "relative_collision_decomposition_residual": 2.220446049250313e-16,
+      "relative_collision_predicted_pgm_success": 0.2583826859804621,
+      "status": "exact-positive-child-star-relative-collision-decomposition",
+      "strongest_child": [
+        1,
+        1,
+        1
+      ],
+      "strongest_parent_pair": [
+        [
+          2,
+          1,
+          1
+        ],
+        [
+          1,
+          1,
+          1,
+          1
+        ]
+      ],
+      "strongest_parent_pair_relative_collision": 0.00982092751647982
+    }
+  ],
+  "headline_metrics": {
+    "density_scalar_cancellation_theorem_count": 1,
+    "dimensionless_kernel_transform_count": 0,
+    "exact_positive_child_star_relative_decomposition_count": 1,
+    "exact_positive_parent_pair_relative_decomposition_count": 1,
+    "exact_relative_collision_pgm_identity_count": 1,
+    "finite_active_offdiagonal_relative_parent_pair_count": 16,
+    "finite_active_relative_parent_pair_count": 22,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "harmonic_point_measurement_count": 0,
+    "maximum_finite_relative_collision": 0.7670014246850825,
+    "natural_critical_relative_mass_theorem_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-POINT-RELATIVE-CHILD-STAR-DECOMPOSITION",
+      "resolved": true,
+      "statement": "Derive the exact positive child and parent-pair formula."
+    },
+    {
+      "id": "PO-POINT-CRITICAL-NATURAL-RELATIVE-MASS",
+      "resolved": false,
+      "statement": "At k=ceil(2log2 n!), prove a typical natural lower or upper bound on the sum of information-carrying relative channels."
+    },
+    {
+      "id": "PO-POINT-DIMENSIONLESS-ORIENTATION-KERNEL-TRANSFORM",
+      "resolved": false,
+      "statement": "Compile or obstruct the child-star relative effect after the q dim(C) scalar cancellation."
+    }
+  ],
+  "scaling_records": [
+    {
+      "common_density_normalization_cancels_from_pgm_effect": true,
+      "critical_copy_count": 31,
+      "dimensionless_orientation_kernel_transform_compiled": false,
+      "exact_positive_relative_channel_formula_available": true,
+      "harmonic_point_measurement_compiled": false,
+      "maximum_parent_count_per_child_upper_bound": 5.0,
+      "n": 8,
+      "natural_critical_relative_collision_lower_bound_proved": false,
+      "natural_critical_relative_collision_upper_bound_proved": false,
+      "orientation_log2_width": 31,
+      "status": "relative-child-channels-exact-natural-critical-asymptotics-open",
+      "young_child_count": 15
+    },
+    {
+      "common_density_normalization_cancels_from_pgm_effect": true,
+      "critical_copy_count": 89,
+      "dimensionless_orientation_kernel_transform_compiled": false,
+      "exact_positive_relative_channel_formula_available": true,
+      "harmonic_point_measurement_compiled": false,
+      "maximum_parent_count_per_child_upper_bound": 6.656854249492381,
+      "n": 16,
+      "natural_critical_relative_collision_lower_bound_proved": false,
+      "natural_critical_relative_collision_upper_bound_proved": false,
+      "orientation_log2_width": 89,
+      "status": "relative-child-channels-exact-natural-critical-asymptotics-open",
+      "young_child_count": 176
+    },
+    {
+      "common_density_normalization_cancels_from_pgm_effect": true,
+      "critical_copy_count": 236,
+      "dimensionless_orientation_kernel_transform_compiled": false,
+      "exact_positive_relative_channel_formula_available": true,
+      "harmonic_point_measurement_compiled": false,
+      "maximum_parent_count_per_child_upper_bound": 9.0,
+      "n": 32,
+      "natural_critical_relative_collision_lower_bound_proved": false,
+      "natural_critical_relative_collision_upper_bound_proved": false,
+      "orientation_log2_width": 236,
+      "status": "relative-child-channels-exact-natural-critical-asymptotics-open",
+      "young_child_count": 6842
+    },
+    {
+      "common_density_normalization_cancels_from_pgm_effect": true,
+      "critical_copy_count": 592,
+      "dimensionless_orientation_kernel_transform_compiled": false,
+      "exact_positive_relative_channel_formula_available": true,
+      "harmonic_point_measurement_compiled": false,
+      "maximum_parent_count_per_child_upper_bound": 12.313708498984761,
+      "n": 64,
+      "natural_critical_relative_collision_lower_bound_proved": false,
+      "natural_critical_relative_collision_upper_bound_proved": false,
+      "orientation_log2_width": 592,
+      "status": "relative-child-channels-exact-natural-critical-asymptotics-open",
+      "young_child_count": 1505499
+    },
+    {
+      "common_density_normalization_cancels_from_pgm_effect": true,
+      "critical_copy_count": 1433,
+      "dimensionless_orientation_kernel_transform_compiled": false,
+      "exact_positive_relative_channel_formula_available": true,
+      "harmonic_point_measurement_compiled": false,
+      "maximum_parent_count_per_child_upper_bound": 17.0,
+      "n": 128,
+      "natural_critical_relative_collision_lower_bound_proved": false,
+      "natural_critical_relative_collision_upper_bound_proved": false,
+      "orientation_log2_width": 1433,
+      "status": "relative-child-channels-exact-natural-critical-asymptotics-open",
+      "young_child_count": 3913864295
+    },
+    {
+      "common_density_normalization_cancels_from_pgm_effect": true,
+      "critical_copy_count": 3368,
+      "dimensionless_orientation_kernel_transform_compiled": false,
+      "exact_positive_relative_channel_formula_available": true,
+      "harmonic_point_measurement_compiled": false,
+      "maximum_parent_count_per_child_upper_bound": 23.627416997969522,
+      "n": 256,
+      "natural_critical_relative_collision_lower_bound_proved": false,
+      "natural_critical_relative_collision_upper_bound_proved": false,
+      "orientation_log2_width": 3368,
+      "status": "relative-child-channels-exact-natural-critical-asymptotics-open",
+      "young_child_count": 338854264248680
+    },
+    {
+      "common_density_normalization_cancels_from_pgm_effect": true,
+      "critical_copy_count": 7751,
+      "dimensionless_orientation_kernel_transform_compiled": false,
+      "exact_positive_relative_channel_formula_available": true,
+      "harmonic_point_measurement_compiled": false,
+      "maximum_parent_count_per_child_upper_bound": 33.0,
+      "n": 512,
+      "natural_critical_relative_collision_lower_bound_proved": false,
+      "natural_critical_relative_collision_upper_bound_proved": false,
+      "orientation_log2_width": 7751,
+      "status": "relative-child-channels-exact-natural-critical-asymptotics-open",
+      "young_child_count": 4216199393504640098482
+    }
+  ],
+  "status": "relative-child-star-channels-exact-critical-asymptotics-open",
+  "summary": "Converted the point PGM signal into positive whitened Young-child and parent-pair channels and proved exact cancellation of the common density normalization, leaving natural critical channel mass and kernel access open.",
+  "theorem": {
+    "asymptotic_boundary": "The natural critical relative-channel mass and a coherent transform for the dimensionless orientation kernels remain unproved.",
+    "child_star_decomposition": "Xi=sum_alpha d_alpha ||(Z_alpha^G)^-1/4 Delta_alpha (Z_alpha^G)^-1/4||_F^2.",
+    "orientation_gram_normalization": "D_nu/d_nu=(q dim(C))^-1[I_dnu tensor W H_nu W^*].",
+    "parent_pair_decomposition": "Because Z_alpha^G=direct_sum_(nu covers alpha)D_nu/d_nu, Xi is the sum of nonnegative whitened (alpha,nu,mu) block energies.",
+    "pgm_signal": "Xi=Tr(B^-1/2 Delta B^-1/2 Delta) and p_point_PGM=1/n+Xi/n.",
+    "scalar_cancellation": "Rescaling Z_alpha^H and Z_alpha^G by q dim(C) leaves every PGM child effect exactly unchanged.",
+    "status": "relative-child-star-channels-exact-critical-asymptotics-open",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "claim_boundary": "exact positive channel decomposition, not natural c=2 asymptotics or a circuit",
+    "measurement": "uniform point PGM",
+    "point_seed": "omega=T_Stab(n)(tau), B=T_Sn(tau)",
+    "relative_quantity": "Tr(B^-1/2(omega-B)B^-1/2(omega-B))",
+    "source": "fixed public source labels; finite exact controls"
+  }
+}

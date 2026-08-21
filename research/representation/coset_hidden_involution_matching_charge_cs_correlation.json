@@ -1,0 +1,184 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "Not universally: this exact nonflat matrix block has nonzero basis-independent D/CS covariance and incremental regression signal.",
+      "challenge": "Natural algebraic independence may be pure nuisance for the CS likelihood.",
+      "resolved": true
+    },
+    {
+      "answer": "False: all six principal values are occupied and their squared-value range exceeds 0.14.",
+      "challenge": "The correlation is an artifact of a scalar CS block.",
+      "resolved": true
+    },
+    {
+      "answer": "False: its compressed commutator and occupied-range leakage are both nonzero.",
+      "challenge": "D_5 already diagonalizes the block likelihood.",
+      "resolved": true
+    },
+    {
+      "answer": "False: this is finite evidence and the block has no proved nonnegligible source mass.",
+      "challenge": "One degree-ten block proves natural asymptotic correlation.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "D_adds_copy_label_in_lambda_restriction": true,
+    "D_diagonalizes_finite_CS_operator": false,
+    "asymptotic_natural_CS_correlation_proved": false,
+    "coherent_subduction_transform_compiled": false,
+    "exact_invariant_space_construction_verified": true,
+    "finite_D_CS_correlation_verified": true,
+    "finite_full_rank_nonflat_CS_block_verified": true,
+    "hidden_involution_detector_constructed": false,
+    "reason": "The matching charge correlates with one exact matrix CS block, but leakage, scaling, likelihood decoding, and natural source mass remain open.",
+    "source_likelihood_decoder_constructed": false,
+    "speedup_claim_allowed": false
+  },
+  "correlation_control": {
+    "central_charge_centered_CS_correlation": -0.2654619217486136,
+    "central_charge_only_regression_R2": 0.0704700318984669,
+    "central_plus_matching_regression_R2": 0.07893663573149878,
+    "finite_numerical_control_only": true,
+    "matching_charge_CS_commutator_norm": 0.0016776943110174602,
+    "matching_charge_centered_CS_correlation": 0.23973148042840914,
+    "matching_charge_compressed_eigenvalues": [
+      -0.06753138926352169,
+      -0.053114869067477005,
+      -0.04437751004016789,
+      -0.03672572054690503,
+      -0.032469673302578335,
+      -0.027389274982336745
+    ],
+    "matching_charge_compression_frobenius_norm": 0.11182250161485975,
+    "matching_charge_correlates_with_CS_operator": true,
+    "matching_charge_diagonalizes_CS_operator": false,
+    "matching_charge_distinct_compressed_eigenvalue_count": 6,
+    "matching_charge_incremental_regression_R2": 0.008466603833031883,
+    "matching_charge_nontrivial_in_occupied_block": true,
+    "matching_charge_occupied_subspace_leakage_norm": 0.12892548015730815,
+    "maximum_squared_principal_cosine": 0.23754090594336785,
+    "minimum_squared_principal_cosine": 0.09566174784640405,
+    "occupied_CS_rank": 6,
+    "principal_cosine_squared_range": 0.1418791580969638,
+    "principal_spectrum_nonflat": true,
+    "squared_principal_cosines": [
+      0.09566174784640405,
+      0.09880952380955198,
+      0.1261963839367485,
+      0.12930724529143633,
+      0.14423022491861995,
+      0.23754090594336785
+    ],
+    "status": "finite-matrix-CS-correlation-for-matching-charge"
+  },
+  "created_at": "2026-08-20T23:59:58.095908+00:00",
+  "falsifiers_triggered": [
+    "The new natural matching label is not universally pure nuisance.",
+    "The matching charge does not by itself diagonalize the matrix CS likelihood.",
+    "Finite correlation is not evidence of asymptotic detector performance."
+  ],
+  "headline_metrics": {
+    "asymptotic_natural_CS_correlation_count": 0,
+    "exact_three_source_matrix_block_count": 1,
+    "finite_D_CS_correlation_count": 1,
+    "finite_D_CS_diagonalization_count": 0,
+    "full_rank_nonflat_CS_block_count": 1,
+    "hidden_involution_detector_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "source_likelihood_decoder_count": 0
+  },
+  "invariant_basis": {
+    "S8_commutant_dimension": 7,
+    "S9_commutant_dimension": 2,
+    "construction_verified": true,
+    "degree": 10,
+    "expected_A_invariant_dimension": 6,
+    "half_degree": 5,
+    "maximum_A_generator_invariance_residual": 6.129792919925024e-16,
+    "maximum_A_orthonormality_residual": 4.4827726882519793e-13,
+    "maximum_B_K_generator_invariance_residual": 3.155179397399741e-16,
+    "maximum_B_projection_gram_residual": 3.152301920608981e-14,
+    "maximum_B_source_parity_residual": 1.3729731260717923e-16,
+    "point_orbit_candidate_count": 9,
+    "repeated_irrep_dimension": 225,
+    "repeated_symmetric_partition": [
+      6,
+      2,
+      2
+    ],
+    "source_standard_partition": [
+      9,
+      1
+    ],
+    "standard_standard_A_invariant_dimension": 6,
+    "status": "exact-S10-three-source-A-B-block-constructed",
+    "target_standard_partition": [
+      9,
+      1
+    ]
+  },
+  "literature_links": [
+    {
+      "id": "DOI:10.1145/258533.258548",
+      "role": "Young-basis symmetric-group Fourier representation used for exact block controls."
+    },
+    {
+      "id": "arXiv:0710.4971",
+      "role": "Commuting-charge motivation; not a source-CS correlation theorem."
+    },
+    {
+      "id": "arXiv:1807.00481",
+      "role": "Perfect-matching harmonic and stabilizer context for the standard point modules."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-HIDDEN-INVOLUTION-D-CS-CORRELATION-SCALING",
+      "resolved": false,
+      "statement": "Construct an all-rank block family or source-weighted moment identity with nonvanishing D/CS covariance."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-D-CS-LEAKAGE-COMPLETION",
+      "resolved": false,
+      "statement": "Determine whether additional commuting charges control the observed leakage outside the occupied CS range."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-D-CS-DECODER",
+      "resolved": false,
+      "statement": "Turn charge statistics into a source-likelihood estimator and compare it with classical baselines."
+    }
+  ],
+  "status": "finite-D-CS-correlation-proved-natural-scaling-open",
+  "summary": "Constructed a full-rank nonflat three-source CS block where the new matching charge has nonzero likelihood correlation.",
+  "theorem": {
+    "A_basis": "Diagonal/off-diagonal point-pair orbit induction from End_(S_9)(V_lambda) and End_(S_8)(V_lambda), projected to Std tensor Std.",
+    "B_projector": "Three h-even source projectors followed by the exact C_2 wr S_5 Reynolds projector.",
+    "D_adds_branch_copy_label_verified": true,
+    "D_diagonalizes_finite_CS_operator": false,
+    "D_nontrivial_on_occupied_CS_space_verified": true,
+    "asymptotic_natural_CS_correlation_proved": false,
+    "block": "S_10 block ((6,2,2),(6,2,2),(9,1); target (9,1)) with A-dimension six.",
+    "coherent_subduction_transform_compiled": false,
+    "exact_invariant_space_construction_verified": true,
+    "finite_D_CS_correlation_verified": true,
+    "finite_result": "The occupied CS spectrum is nonflat and compressed D_5 has six eigenvalues with nonzero centered CS covariance.",
+    "full_rank_nonflat_matrix_CS_block_verified": true,
+    "hidden_involution_detector_constructed": false,
+    "interpretation": "D_5 is not pure nuisance in this exact matrix block, but it neither diagonalizes the CS operator nor preserves its occupied range.",
+    "source_likelihood_decoder_constructed": false,
+    "speedup_claim_allowed": false,
+    "status": "finite-D-CS-correlation-proved-natural-scaling-open",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "access": "Exact Young orthogonal representations and subgroup Reynolds projectors",
+    "claim_boundary": "Finite mechanism correlation in one matrix block; no natural-mass scaling or detector.",
+    "group": "S_10",
+    "source_irreps": [
+      "(6,2,2)",
+      "(6,2,2)",
+      "(9,1)"
+    ],
+    "target_irrep": "(9,1)"
+  }
+}

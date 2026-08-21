@@ -1,0 +1,172 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "It evades exact enumeration, but not Monte Carlo: one sample costs only polynomial work when the word degree is polynomial.",
+      "challenge": "Growing word degree evades fixed-degree enumeration.",
+      "resolved": true
+    },
+    {
+      "answer": "False. The return estimator never constructs a Fourier or branching block.",
+      "challenge": "Huge branching multiplicity makes the scalar moment hard.",
+      "resolved": true
+    },
+    {
+      "answer": "Not for inverse-polynomial additive accuracy: it gives at most a polynomial quadratic improvement in epsilon.",
+      "challenge": "Quantum amplitude estimation restores an exponential advantage.",
+      "resolved": true
+    },
+    {
+      "answer": "Too strong. Conditioning on large multiplicity blocks can retain matrix information absent from scalar return probabilities.",
+      "challenge": "Scalar-moment dequantization kills matrix recoupling.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_copy_target_interference_dequantized": false,
+    "conditioned_matrix_transition_dequantized": false,
+    "hidden_involution_detector_constructed": false,
+    "reason": "Every inverse-polynomial scalar charge-word signal is a classically estimable return probability; only conditioned matrix data can escape.",
+    "scalar_charge_word_moments_classically_estimable": true,
+    "scalar_commutator_moment_quantum_advantage": false,
+    "spectral_projector_transition_dequantized": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-21T02:13:58.282466+00:00",
+  "exact_controls": [
+    {
+      "Monte_Carlo_hidden_even_estimate": 0.01018,
+      "Monte_Carlo_regular_estimate": 0.00532,
+      "charge_term_count": 192,
+      "enumerated_term_tuple_count": 36864,
+      "estimator_absolute_error_bound": 0.004294694083467375,
+      "exact_hidden_even_trace": 0.010416666666666666,
+      "exact_regular_trace": 0.005208333333333333,
+      "half_degree": 4,
+      "hidden_even_estimate_within_bound": true,
+      "hidden_return_count": 192,
+      "identity_return_count": 192,
+      "regular_estimate_within_bound": true,
+      "return_probability_identity_verified": true,
+      "status": "charge-word-return-probability-identity-verified",
+      "word_degree": 2
+    }
+  ],
+  "falsifiers_triggered": [
+    "Growing-degree scalar charge moments do not evade classical sampling at inverse-polynomial accuracy.",
+    "Large Fourier multiplicity does not make regular or h-even scalar traces hard.",
+    "A viable mechanism must expose conditioned matrix information or all-copy target interference."
+  ],
+  "headline_metrics": {
+    "all_copy_target_interference_estimator_count": 0,
+    "all_degree_return_probability_theorem_count": 1,
+    "conditioned_matrix_estimator_count": 0,
+    "inverse_polynomial_scalar_moment_classical_estimator_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "tail_classical_sample_bound_log2": 134.04939045277857
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-MATCHING-CHARGE-CONDITIONED-MATRIX-ESTIMATOR",
+      "resolved": false,
+      "statement": "Determine whether natural source-conditioned spectral-projector transition matrices admit a comparable classical sampler."
+    },
+    {
+      "id": "PO-MATCHING-CHARGE-EXPONENTIAL-PRECISION-SCOPE",
+      "resolved": false,
+      "statement": "If a proposed signal is exponentially small, compare quantum amplitude-estimation cost with the exact normalization bottleneck."
+    },
+    {
+      "id": "PO-MATCHING-CHARGE-TARGET-INTERFERENCE-RETURN-MAP",
+      "resolved": false,
+      "statement": "Prove or falsify a return-probability representation for the full all-copy target-coupled likelihood statistic."
+    }
+  ],
+  "scaling_records": [
+    {
+      "Hoeffding_sample_upper_bound": 4772300023535271936,
+      "half_degree": 8,
+      "inverse_polynomial_signal_classically_estimable": true,
+      "permutation_multiplication_work_upper_bound": 305427201506257403904,
+      "quantum_amplitude_estimation_exponential_advantage_possible": false,
+      "sample_upper_bound_log2": 62.04939045277857,
+      "status": "inverse-polynomial-charge-word-moment-classically-estimable",
+      "target_additive_error": 7.450580596923829e-10,
+      "target_failure_probability": 0.01,
+      "word_degree": 4
+    },
+    {
+      "Hoeffding_sample_upper_bound": 1251029817369630326390784,
+      "half_degree": 16,
+      "inverse_polynomial_signal_classically_estimable": true,
+      "permutation_multiplication_work_upper_bound": 160131816623312681778020352,
+      "quantum_amplitude_estimation_exponential_advantage_possible": false,
+      "sample_upper_bound_log2": 80.04939045277857,
+      "status": "inverse-polynomial-charge-word-moment-classically-estimable",
+      "target_additive_error": 1.4551915228366853e-12,
+      "target_failure_probability": 0.01,
+      "word_degree": 4
+    },
+    {
+      "Hoeffding_sample_upper_bound": 327949960444544372281385680896,
+      "half_degree": 32,
+      "inverse_polynomial_signal_classically_estimable": true,
+      "permutation_multiplication_work_upper_bound": 104943987342254199130043417886720,
+      "quantum_amplitude_estimation_exponential_advantage_possible": false,
+      "sample_upper_bound_log2": 98.04939045277857,
+      "status": "inverse-polynomial-charge-word-moment-classically-estimable",
+      "target_additive_error": 2.842170943040401e-15,
+      "target_failure_probability": 0.01,
+      "word_degree": 5
+    },
+    {
+      "Hoeffding_sample_upper_bound": 85970114430774639927331567932801024,
+      "half_degree": 64,
+      "inverse_polynomial_signal_classically_estimable": true,
+      "permutation_multiplication_work_upper_bound": 66025047882834923464190644172391186432,
+      "quantum_amplitude_estimation_exponential_advantage_possible": false,
+      "sample_upper_bound_log2": 116.04939045277857,
+      "status": "inverse-polynomial-charge-word-moment-classically-estimable",
+      "target_additive_error": 5.551115123125783e-18,
+      "target_failure_probability": 0.01,
+      "word_degree": 6
+    },
+    {
+      "Hoeffding_sample_upper_bound": 22536549677340987209110406544176191635456,
+      "half_degree": 128,
+      "inverse_polynomial_signal_classically_estimable": true,
+      "permutation_multiplication_work_upper_bound": 40385497021795049078725848527163735410737152,
+      "quantum_amplitude_estimation_exponential_advantage_possible": false,
+      "sample_upper_bound_log2": 134.04939045277857,
+      "status": "inverse-polynomial-charge-word-moment-classically-estimable",
+      "target_additive_error": 1.0842021724855045e-20,
+      "target_failure_probability": 0.01,
+      "word_degree": 7
+    }
+  ],
+  "status": "all-degree-scalar-charge-word-moments-dequantized-matrix-data-open",
+  "summary": "Reduced arbitrary-degree scalar matching-charge moments to classical return-probability estimation and closed them as speedup evidence.",
+  "theorem": {
+    "all_copy_target_interference_dequantized": false,
+    "classical_estimator": "Sample indexed constant-support terms, multiply permutations, and test the return event; Hoeffding costs O(epsilon^-2 log(1/delta)).",
+    "complexity_consequence": "Polynomial word length and inverse-polynomial additive signal give a polynomial classical estimator, even when branching blocks are huge.",
+    "conditioned_matrix_transition_dequantized": false,
+    "exact_all_degree_return_probability_reduction_proved": true,
+    "hidden_even_trace_identity": "The h-even source trace is the probability that the same product equals either identity or the reference hidden involution h.",
+    "hidden_involution_reconstruction_algorithm_constructed": false,
+    "inverse_polynomial_scalar_word_moments_classically_estimable": true,
+    "polynomial_signed_moment_combinations_classically_estimable": true,
+    "regular_trace_identity": "tr_reg(product_j D_(h_j)) is the probability that independent uniform orbit terms multiply to identity.",
+    "scalar_commutator_moment_advantage_ruled_out": true,
+    "scope_limit": "Does not recover an unknown matching or estimate conditioned matrix transition blocks and coherent all-copy target interference.",
+    "spectral_projector_transition_dequantized": false,
+    "speedup_claim_allowed": false,
+    "status": "all-degree-scalar-charge-word-moments-dequantized-matrix-data-open",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "access_model": "Explicit candidate matchings and classical access to the same reversible constant-support charge-term sampler used by the quantum LCU",
+    "accuracy": "Additive inverse-polynomial",
+    "claim_boundary": "No claim for exponentially small relative error or conditioned matrix-valued Fourier transition data.",
+    "observable_class": "Scalar regular or h-even traces of arbitrary charge words and polynomial signed combinations thereof"
+  }
+}

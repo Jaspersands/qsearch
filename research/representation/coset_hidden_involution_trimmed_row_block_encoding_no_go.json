@@ -1,0 +1,249 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False: normalized row/column state access block-encodes D and A=Z/M, so the useful singular scale remains M^-1/2.",
+      "challenge": "Polynomial pairwise kernel evaluation gives a standard efficient quantum linear-algebra algorithm.",
+      "resolved": true
+    },
+    {
+      "answer": "False: reversible canonicalization and the G QFT are unitary basis changes and preserve every singular value.",
+      "challenge": "Canonicalizing source orbits amplifies the singular values.",
+      "resolved": true
+    },
+    {
+      "answer": "False: normalized edge states divide independently by the row and column degrees, producing sqrt(M2^k).",
+      "challenge": "The small row norm M/2^k=O(1) removes normalization.",
+      "resolved": true
+    },
+    {
+      "answer": "Too strong. An explicit analytic basis transform can bypass black-box singular-value processing, as Fourier transforms do.",
+      "challenge": "This proves every direct structured transform impossible.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "canonicalizer_or_G_QFT_improves_normalization": false,
+    "coherent_trimmed_row_access_block_encodes_A_equals_Z_over_M": true,
+    "coherent_trimmed_row_access_compiled": true,
+    "direct_analytically_normalized_transform_ruled_out": false,
+    "generic_kernel_SVT_is_polynomial": false,
+    "hidden_involution_detector_constructed": false,
+    "reason": "All normalized coherent edge access retains the candidate factor M; only a direct analytic transform outside this black-box access model remains viable.",
+    "speedup_claim_allowed": false,
+    "unnormalized_Z_fast_forward_compiled": false
+  },
+  "created_at": "2026-08-21T02:47:54.049442+00:00",
+  "falsifiers_triggered": [
+    "Polynomial coherent row-state preparation does not fast-forward the likelihood scale.",
+    "The trimmed canonicalizer and symmetric-group QFT cannot change singular-value normalization.",
+    "Generic kernel QSVT or polar routines remain factorial at natural rank.",
+    "Only a direct analytically normalized transform remains outside this no-go."
+  ],
+  "finite_controls": [
+    {
+      "candidate_count": 3,
+      "coherent_edge_states_block_encode_A_not_Z": true,
+      "copy_count": 1,
+      "degree": 3,
+      "discriminant_overlap_residual": 1.3597399555105185e-16,
+      "edge_count": 18,
+      "maximum_column_isometry_residual": 2.220446049250313e-16,
+      "maximum_row_isometry_residual": 2.220446049250313e-16,
+      "normalized_gram_identity_residual": 3.3306690738754696e-16,
+      "physical_row_count": 6,
+      "physical_row_degree": 3,
+      "source_column_count": 9,
+      "source_column_degree": 2,
+      "status": "coherent-edge-states-block-encode-A-equals-Z-over-M",
+      "transposition_count": 1,
+      "unnormalized_likelihood_scale_ratio": 3.0
+    },
+    {
+      "candidate_count": 3,
+      "coherent_edge_states_block_encode_A_not_Z": true,
+      "copy_count": 2,
+      "degree": 3,
+      "discriminant_overlap_residual": 0.0,
+      "edge_count": 108,
+      "maximum_column_isometry_residual": 0.0,
+      "maximum_row_isometry_residual": 2.220446049250313e-16,
+      "normalized_gram_identity_residual": 3.330669073875469e-16,
+      "physical_row_count": 36,
+      "physical_row_degree": 3,
+      "source_column_count": 27,
+      "source_column_degree": 4,
+      "status": "coherent-edge-states-block-encode-A-equals-Z-over-M",
+      "transposition_count": 1,
+      "unnormalized_likelihood_scale_ratio": 3.0
+    },
+    {
+      "candidate_count": 3,
+      "coherent_edge_states_block_encode_A_not_Z": true,
+      "copy_count": 1,
+      "degree": 4,
+      "discriminant_overlap_residual": 1.3597399555105182e-16,
+      "edge_count": 72,
+      "maximum_column_isometry_residual": 2.220446049250313e-16,
+      "maximum_row_isometry_residual": 2.220446049250313e-16,
+      "normalized_gram_identity_residual": 3.33066907387547e-16,
+      "physical_row_count": 24,
+      "physical_row_degree": 3,
+      "source_column_count": 36,
+      "source_column_degree": 2,
+      "status": "coherent-edge-states-block-encode-A-equals-Z-over-M",
+      "transposition_count": 2,
+      "unnormalized_likelihood_scale_ratio": 3.0
+    }
+  ],
+  "headline_metrics": {
+    "coherent_row_state_compiler_count": 1,
+    "direct_analytic_transform_count": 0,
+    "edge_state_control_failure_count": 0,
+    "exact_edge_state_block_encoding_control_count": 3,
+    "new_quantum_algorithm_count": 0,
+    "tail_generic_polar_query_log2_lower_order": 419.9172825702964,
+    "unnormalized_Z_fast_forward_count": 0
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-HIDDEN-INVOLUTION-ROW-DIRECT-ORTHOGONALIZER",
+      "resolved": false,
+      "statement": "Derive local rotations or a combinatorial orthogonalizer that implements the row polar without querying D at its small singular scale."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-ROW-ANALYTIC-M-FACTOR",
+      "resolved": false,
+      "statement": "Exhibit an exact block formula in which the factor M cancels symbolically before amplitudes are normalized."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-ROW-DIRECT-CIRCUIT-LOWER-BOUND",
+      "resolved": false,
+      "statement": "If no transform exists, prove a natural-model lower bound; the present black-box normalization theorem is insufficient."
+    }
+  ],
+  "scaling_records": [
+    {
+      "candidate_count_decimal": "105",
+      "canonicalizer_or_QFT_changes_candidate_normalization": false,
+      "coherent_row_state_preparation_polynomial": true,
+      "column_degree_log2": 13,
+      "copy_count": 13,
+      "degree": 8,
+      "flat_bulk_discriminant_singular_lower_log2": -3.857122758833061,
+      "flat_bulk_discriminant_singular_upper_log2": -3.064641508472483,
+      "generic_polar_query_log2_lower_order": 3.357122758833061,
+      "half_degree": 4,
+      "pairwise_kernel_evaluation_polynomial": true,
+      "row_degree_log2": 6.714245517666122,
+      "status": "trimmed-row-edge-access-retains-sqrt-M-polar-boundary",
+      "unnormalized_Z_fast_forward_compiled": false
+    },
+    {
+      "candidate_count_decimal": "2027025",
+      "canonicalizer_or_QFT_changes_candidate_normalization": false,
+      "coherent_row_state_preparation_polynomial": true,
+      "column_degree_log2": 27,
+      "copy_count": 27,
+      "degree": 16,
+      "flat_bulk_discriminant_singular_lower_log2": -10.975466225747672,
+      "flat_bulk_discriminant_singular_upper_log2": -10.182984975387093,
+      "generic_polar_query_log2_lower_order": 10.475466225747672,
+      "half_degree": 8,
+      "pairwise_kernel_evaluation_polynomial": true,
+      "row_degree_log2": 20.950932451495344,
+      "status": "trimmed-row-edge-access-retains-sqrt-M-polar-boundary",
+      "unnormalized_Z_fast_forward_compiled": false
+    },
+    {
+      "candidate_count_decimal": "191898783962510625",
+      "canonicalizer_or_QFT_changes_candidate_normalization": false,
+      "coherent_row_state_preparation_polynomial": true,
+      "column_degree_log2": 64,
+      "copy_count": 64,
+      "degree": 32,
+      "flat_bulk_discriminant_singular_lower_log2": -29.20656159123884,
+      "flat_bulk_discriminant_singular_upper_log2": -28.414080340878265,
+      "generic_polar_query_log2_lower_order": 28.70656159123884,
+      "half_degree": 16,
+      "pairwise_kernel_evaluation_polynomial": true,
+      "row_degree_log2": 57.41312318247768,
+      "status": "trimmed-row-edge-access-retains-sqrt-M-polar-boundary",
+      "unnormalized_Z_fast_forward_compiled": false
+    },
+    {
+      "candidate_count_decimal": "112275575285571389562324404930670903477890625",
+      "canonicalizer_or_QFT_changes_candidate_normalization": false,
+      "coherent_row_state_preparation_polynomial": true,
+      "column_degree_log2": 153,
+      "copy_count": 153,
+      "degree": 64,
+      "flat_bulk_discriminant_singular_lower_log2": -73.66594014468187,
+      "flat_bulk_discriminant_singular_upper_log2": -72.87345889432129,
+      "generic_polar_query_log2_lower_order": 73.16594014468187,
+      "half_degree": 32,
+      "pairwise_kernel_evaluation_polynomial": true,
+      "row_degree_log2": 146.33188028936374,
+      "status": "trimmed-row-edge-access-retains-sqrt-M-polar-boundary",
+      "unnormalized_Z_fast_forward_compiled": false
+    },
+    {
+      "candidate_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "canonicalizer_or_QFT_changes_candidate_normalization": false,
+      "coherent_row_state_preparation_polynomial": true,
+      "column_degree_log2": 363,
+      "copy_count": 363,
+      "degree": 128,
+      "flat_bulk_discriminant_singular_lower_log2": -178.58328907094892,
+      "flat_bulk_discriminant_singular_upper_log2": -177.79080782058836,
+      "generic_polar_query_log2_lower_order": 178.08328907094892,
+      "half_degree": 64,
+      "pairwise_kernel_evaluation_polynomial": true,
+      "row_degree_log2": 356.16657814189784,
+      "status": "trimmed-row-edge-access-retains-sqrt-M-polar-boundary",
+      "unnormalized_Z_fast_forward_compiled": false
+    },
+    {
+      "candidate_count_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "canonicalizer_or_QFT_changes_candidate_normalization": false,
+      "coherent_row_state_preparation_polynomial": true,
+      "column_degree_log2": 846,
+      "copy_count": 846,
+      "degree": 256,
+      "flat_bulk_discriminant_singular_lower_log2": -420.4172825702964,
+      "flat_bulk_discriminant_singular_upper_log2": -419.6248013199358,
+      "generic_polar_query_log2_lower_order": 419.9172825702964,
+      "half_degree": 128,
+      "pairwise_kernel_evaluation_polynomial": true,
+      "row_degree_log2": 839.8345651405928,
+      "status": "trimmed-row-edge-access-retains-sqrt-M-polar-boundary",
+      "unnormalized_Z_fast_forward_compiled": false
+    }
+  ],
+  "status": "trimmed-row-coherent-access-retains-Z-over-M-normalization",
+  "summary": "Proved that coherent access to the succinct trimmed orbit-row kernel block-encodes A=Z/M exactly, so generic dense-kernel quantum linear algebra inherits the square-root-M barrier.",
+  "theorem": {
+    "algorithmic_consequence": "Generic block-encoding polar/SVT routines using coherent row access retain Omega(sqrt(M)) scale even though rows and pairwise kernels are polynomially computable.",
+    "basis_invariance": "The free-fiber canonicalizer, regular induction coordinate map, and G QFT are unitary and preserve D's singular values.",
+    "biregular_degrees": "Every physical row is incident to M source columns and every source column to 2^k physical rows.",
+    "canonicalization_or_QFT_removes_M_normalization": false,
+    "direct_analytically_normalized_transform_ruled_out": false,
+    "edge_state_discriminant": "Normalized row/column edge isometries overlap as D=I/sqrt(M2^k).",
+    "exact_edge_state_block_encoding_proved": true,
+    "generic_kernel_quantum_linear_algebra_is_polynomial": false,
+    "gram_identity": "D^*D=I^*I/(M2^k)=Z/M=A exactly.",
+    "hidden_involution_detector_constructed": false,
+    "natural_bulk": "At least 29/32 alternative mass has D singular values in [1/sqrt(2M),sqrt(3/(2M))].",
+    "required_escape": "Compile a direct analytically normalized orbit-copy transform whose local rotations factor M before amplitude encoding.",
+    "speedup_claim_allowed": false,
+    "status": "trimmed-row-coherent-access-retains-Z-over-M-normalization",
+    "theorem_verified": true,
+    "trimmed_row_kernel_block_encoding_is_A_proved": true,
+    "unnormalized_Z_fast_forward_compiled": false
+  },
+  "theorem_contract": {
+    "access": "Normalized coherent row-edge and column-edge state preparation",
+    "claim_boundary": "Normalization theorem for coherent kernel access, not a lower bound on direct analytic recoupling circuits.",
+    "matrix": "Physical/source incidence after any trimmed unitary basis changes",
+    "natural_copy_count": "k=ceil(log2(64M))"
+  }
+}

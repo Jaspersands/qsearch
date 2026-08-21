@@ -1,0 +1,177 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False after Q compression: every word is exactly a power of QPQ.",
+      "challenge": "Noncommuting P and Q automatically generate a rich matrix algebra on Q space.",
+      "resolved": true
+    },
+    {
+      "answer": "They change scalar coefficients into ancilla matrices, but each matrix entry still has the same degree-bounded word expansion.",
+      "challenge": "Ancilla controls evade the word reduction.",
+      "resolved": true
+    },
+    {
+      "answer": "Its finite-query response is a bounded trigonometric/polynomial function of the same principal angle and inherits sqrt(M) resolution.",
+      "challenge": "Alternating-reflection phase estimation is outside polynomial methods.",
+      "resolved": true
+    },
+    {
+      "answer": "No. A third operator can enlarge the compressed algebra if it is used in a non-gauge-trivial target-changing operation.",
+      "challenge": "The theorem rules out matching-charge assistance.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "Q_compressed_two_projector_algebra_is_univariate": true,
+    "direct_non_black_box_basis_transform_ruled_out": false,
+    "hidden_involution_detector_constructed": false,
+    "reason": "Using only the two subgroup projectors reduces exactly to a bounded polynomial in QPQ and inherits the sqrt(M) bulk-resolution cost.",
+    "speedup_claim_allowed": false,
+    "third_operator_matrix_recoupling_ruled_out": false,
+    "two_projector_black_box_fast_forward_ruled_out": true
+  },
+  "created_at": "2026-08-21T02:13:59.648953+00:00",
+  "falsifiers_triggered": [
+    "Noncommutativity of the two subgroup projectors does not create extra source-block labels.",
+    "Ancilla-controlled two-reflection circuits remain polynomial functions of the same principal angles.",
+    "A viable recoupling mechanism must add a third physical operator or an explicit basis transform."
+  ],
+  "finite_controls": [
+    {
+      "P_rank": 4,
+      "Q_rank": 3,
+      "every_Q_compressed_word_is_A_power": true,
+      "exact_symbolic_normal_form_verified": true,
+      "matrix_dimension": 7,
+      "maximum_matrix_residual": 3.2618267318920338e-15,
+      "maximum_predicted_power": 4,
+      "maximum_word_length": 8,
+      "status": "two-projector-Q-compressed-word-normal-form-verified",
+      "tested_word_count": 511
+    },
+    {
+      "P_rank": 6,
+      "Q_rank": 5,
+      "every_Q_compressed_word_is_A_power": true,
+      "exact_symbolic_normal_form_verified": true,
+      "matrix_dimension": 9,
+      "maximum_matrix_residual": 3.0825065857173316e-15,
+      "maximum_predicted_power": 5,
+      "maximum_word_length": 9,
+      "status": "two-projector-Q-compressed-word-normal-form-verified",
+      "tested_word_count": 1023
+    }
+  ],
+  "headline_metrics": {
+    "exact_two_projector_word_normal_form_count": 1,
+    "hidden_involution_detector_count": 0,
+    "maximum_tested_word_length": 9,
+    "tail_query_log2_lower_bound": 419.4172825702964,
+    "third_operator_escape_count": 0,
+    "two_projector_sqrt_M_query_no_go_count": 1
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-TWO-PROJECTOR-THIRD-OPERATOR-CLOSURE",
+      "resolved": false,
+      "statement": "Add a physically target-changing charge/recoupling operator and prove its compressed algebra is not reducible to p(QPQ)."
+    },
+    {
+      "id": "PO-TWO-PROJECTOR-DIRECT-MATRIX-CS-TRANSFORM",
+      "resolved": false,
+      "statement": "If using a direct basis change, specify coherent labels, local rotations, precision, normalization, and garbage uncomputation."
+    },
+    {
+      "id": "PO-TWO-PROJECTOR-POSTSELECTED-ESCAPE",
+      "resolved": false,
+      "statement": "For measurements/postselection outside bounded query polynomials, charge success probability and total expected query cost."
+    }
+  ],
+  "scaling_records": [
+    {
+      "degree": 8,
+      "half_degree": 4,
+      "hidden_matching_count_decimal": "105",
+      "required_response_variation": 0.5,
+      "status": "two-subgroup-projector-query-algebra-sqrt-M-no-go",
+      "subgroup_projector_query_log2_lower_bound": 2.857122758833061,
+      "subgroup_projector_query_lower_bound": 7.245688373094719,
+      "two_projector_query_algorithm_polynomial_time": false
+    },
+    {
+      "degree": 16,
+      "half_degree": 8,
+      "hidden_matching_count_decimal": "2027025",
+      "required_response_variation": 0.5,
+      "status": "two-subgroup-projector-query-algebra-sqrt-M-no-go",
+      "subgroup_projector_query_log2_lower_bound": 9.975466225747672,
+      "subgroup_projector_query_lower_bound": 1006.7335794538692,
+      "two_projector_query_algorithm_polynomial_time": false
+    },
+    {
+      "degree": 32,
+      "half_degree": 16,
+      "hidden_matching_count_decimal": "191898783962510625",
+      "required_response_variation": 0.5,
+      "status": "two-subgroup-projector-query-algebra-sqrt-M-no-go",
+      "subgroup_projector_query_log2_lower_bound": 28.20656159123884,
+      "subgroup_projector_query_lower_bound": 309756988.59146875,
+      "two_projector_query_algorithm_polynomial_time": false
+    },
+    {
+      "degree": 64,
+      "half_degree": 32,
+      "hidden_matching_count_decimal": "112275575285571389562324404930670903477890625",
+      "required_response_variation": 0.5,
+      "status": "two-subgroup-projector-query-algebra-sqrt-M-no-go",
+      "subgroup_projector_query_log2_lower_bound": 72.66594014468187,
+      "subgroup_projector_query_lower_bound": 7.492515441611428e+21,
+      "two_projector_query_algorithm_polynomial_time": false
+    },
+    {
+      "degree": 128,
+      "half_degree": 64,
+      "hidden_matching_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "required_response_variation": 0.5,
+      "status": "two-subgroup-projector-query-algebra-sqrt-M-no-go",
+      "subgroup_projector_query_log2_lower_bound": 177.58328907094892,
+      "subgroup_projector_query_lower_bound": 2.8700980857457496e+53,
+      "two_projector_query_algorithm_polynomial_time": false
+    },
+    {
+      "degree": 256,
+      "half_degree": 128,
+      "hidden_matching_count_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "required_response_variation": 0.5,
+      "status": "two-subgroup-projector-query-algebra-sqrt-M-no-go",
+      "subgroup_projector_query_log2_lower_bound": 419.4172825702964,
+      "subgroup_projector_query_lower_bound": 1.807934754968382e+126,
+      "two_projector_query_algorithm_polynomial_time": false
+    }
+  ],
+  "status": "two-subgroup-projector-algebra-sqrt-M-no-go-third-operator-open",
+  "summary": "Proved that the full source-compressed two-subgroup-projector query algebra is univariate and cannot fast-forward the natural bulk.",
+  "theorem": {
+    "ancilla_controlled_two_projector_query_bound_proved": true,
+    "ancilla_query_extension": "Expanding an ancilla-controlled P/Q query circuit in query words makes every Q-to-Q ancilla block a degree-bounded polynomial in A.",
+    "compressed_algebra": "The source-compressed algebra Q Alg(P,Q) Q is the commutative univariate polynomial algebra generated by A=QPQ.",
+    "direct_non_black_box_basis_transform_ruled_out": false,
+    "escape_condition": "Use a third physical operator outside Alg(P,Q) in genuine target recoupling, or compile a direct non-black-box matrix-CS basis transform.",
+    "exact_all_word_Q_compression_normal_form_proved": true,
+    "hidden_involution_detector_constructed": false,
+    "lower_bound_transfer": "The Markov bulk-amplification bound therefore forces Omega(sqrt(M)) queries throughout the two-projector black-box algebra.",
+    "speedup_claim_allowed": false,
+    "status": "two-subgroup-projector-algebra-sqrt-M-no-go-third-operator-open",
+    "theorem_verified": true,
+    "third_operator_matrix_recoupling_ruled_out": false,
+    "two_projector_B_to_B_algebra_is_univariate_proved": true,
+    "two_projector_constant_bulk_response_requires_sqrt_M_queries": true,
+    "word_normal_form": "Idempotence reduces every word to alternating form, and Q w(P,Q) Q=(QPQ)^r exactly."
+  },
+  "theorem_contract": {
+    "algorithm_class": "Scalar/ancilla-controlled black-box circuits and LCUs using only P and Q",
+    "claim_boundary": "No claim for a third operator or a direct explicit matrix-CS transform.",
+    "observable_block": "Q-to-Q/source-compressed response",
+    "projectors": "P=e_A and Q=e_B"
+  }
+}

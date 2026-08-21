@@ -1,0 +1,260 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False for target-changing convolution: it becomes the shared right multiplier s^-1 on every relative source coordinate.",
+      "challenge": "The target disappears completely after quotient gauge fixing.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It is a positive average with L1 norm one and a product PREP conditioned on s.",
+      "challenge": "Each Q_s has exponential 4^k normalization.",
+      "resolved": true
+    },
+    {
+      "answer": "It implements Z/M. Recovering Z by generic LCU pays the exact candidate count M.",
+      "challenge": "Uniform coherent access to s immediately implements Z.",
+      "resolved": true
+    },
+    {
+      "answer": "Too strong. An implicit transform can realize large basis L1; no such transform or lower bound is proved here.",
+      "challenge": "The positive L1 barrier rules out structured Fourier fast-forwarding.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "conditioned_Q_normalization_one": true,
+    "full_Z_positive_L1_equals_candidate_count": true,
+    "hidden_involution_detector_constructed": false,
+    "likelihood_is_shared_conjugation_average_proved": true,
+    "matched_classical_separation_proved": false,
+    "physical_target_convolution_normal_form_proved": true,
+    "reason": "The exact remaining interference is a candidate-normalized shared conjugation average; its local channels are easy but no structured fast-forward or separation is known.",
+    "speedup_claim_allowed": false,
+    "structured_shared_orbit_fast_forward_compiled": false
+  },
+  "created_at": "2026-08-21T02:13:59.395940+00:00",
+  "expansion_controls": [
+    {
+      "Z_equals_M_times_uniform_Q_average": true,
+      "centralizer_order": 2,
+      "conjugacy_class_size": 3,
+      "copy_count": 2,
+      "degree": 3,
+      "distinct_group_basis_term_count": 72,
+      "every_conditioned_Q_has_L1_one": true,
+      "exact_expansion_verified": true,
+      "expected_positive_group_basis_L1_norm": 3,
+      "group_order": 6,
+      "inside_K_conditioned_distinct_term_count_maximum": 4,
+      "inside_K_conditioned_distinct_term_count_minimum": 4,
+      "outside_K_conditioned_distinct_term_count_maximum": 16,
+      "outside_K_conditioned_distinct_term_count_minimum": 16,
+      "positive_group_basis_L1_norm": "3",
+      "raw_expansion_term_count": 96,
+      "status": "shared-conjugation-likelihood-expansion-verified",
+      "transposition_count": 1
+    },
+    {
+      "Z_equals_M_times_uniform_Q_average": true,
+      "centralizer_order": 2,
+      "conjugacy_class_size": 3,
+      "copy_count": 3,
+      "degree": 3,
+      "distinct_group_basis_term_count": 272,
+      "every_conditioned_Q_has_L1_one": true,
+      "exact_expansion_verified": true,
+      "expected_positive_group_basis_L1_norm": 3,
+      "group_order": 6,
+      "inside_K_conditioned_distinct_term_count_maximum": 8,
+      "inside_K_conditioned_distinct_term_count_minimum": 8,
+      "outside_K_conditioned_distinct_term_count_maximum": 64,
+      "outside_K_conditioned_distinct_term_count_minimum": 64,
+      "positive_group_basis_L1_norm": "3",
+      "raw_expansion_term_count": 384,
+      "status": "shared-conjugation-likelihood-expansion-verified",
+      "transposition_count": 1
+    },
+    {
+      "Z_equals_M_times_uniform_Q_average": true,
+      "centralizer_order": 8,
+      "conjugacy_class_size": 3,
+      "copy_count": 2,
+      "degree": 4,
+      "distinct_group_basis_term_count": 288,
+      "every_conditioned_Q_has_L1_one": true,
+      "exact_expansion_verified": true,
+      "expected_positive_group_basis_L1_norm": 3,
+      "group_order": 24,
+      "inside_K_conditioned_distinct_term_count_maximum": 4,
+      "inside_K_conditioned_distinct_term_count_minimum": 4,
+      "outside_K_conditioned_distinct_term_count_maximum": 16,
+      "outside_K_conditioned_distinct_term_count_minimum": 16,
+      "positive_group_basis_L1_norm": "3",
+      "raw_expansion_term_count": 384,
+      "status": "shared-conjugation-likelihood-expansion-verified",
+      "transposition_count": 2
+    }
+  ],
+  "falsifiers_triggered": [
+    "The physical target-changing action does not vanish under gauge fixing.",
+    "Conditioned local H twirls are not the normalization bottleneck.",
+    "Generic uniform target PREP/SELECT produces Z/M and does not fast-forward M."
+  ],
+  "headline_metrics": {
+    "conditioned_normalization_one_channel_count": 1,
+    "exact_quotient_action_theorem_count": 1,
+    "exact_shared_conjugation_expansion_count": 1,
+    "hidden_involution_detector_count": 0,
+    "structured_fast_forward_count": 0,
+    "tail_full_Z_L1_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625"
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-SHARED-CONJUGATION-FAST-FORWARD",
+      "resolved": false,
+      "statement": "Find a transform that realizes the M-weighted shared-orbit interference without coefficient normalization M, or prove none exists in the subgroup-reflection/query model."
+    },
+    {
+      "id": "PO-SHARED-CONJUGATION-CHARGE-RECOUPLING",
+      "resolved": false,
+      "statement": "Express Q_s transitions in the coherent C_m,D_m phase labels and test whether matrix structure survives source averaging."
+    },
+    {
+      "id": "PO-SHARED-CONJUGATION-CLASSICAL-BASELINE",
+      "resolved": false,
+      "statement": "Compare any proposed spectral statistic with classical sampling of s and local H insertions under the same access and precision."
+    }
+  ],
+  "quotient_controls": [
+    {
+      "copy_count": 2,
+      "degree": 3,
+      "exact_quotient_action_verified": true,
+      "nonidentity_target_changes_every_relative_coordinate": true,
+      "quotient_action_formula_failure_count": 0,
+      "status": "physical-target-convolution-relative-action-verified",
+      "tested_convolution_element_count": 6,
+      "tested_input_count": 24
+    },
+    {
+      "copy_count": 2,
+      "degree": 4,
+      "exact_quotient_action_verified": true,
+      "nonidentity_target_changes_every_relative_coordinate": true,
+      "quotient_action_formula_failure_count": 0,
+      "status": "physical-target-convolution-relative-action-verified",
+      "tested_convolution_element_count": 6,
+      "tested_input_count": 24
+    },
+    {
+      "copy_count": 3,
+      "degree": 4,
+      "exact_quotient_action_verified": true,
+      "nonidentity_target_changes_every_relative_coordinate": true,
+      "quotient_action_formula_failure_count": 0,
+      "status": "physical-target-convolution-relative-action-verified",
+      "tested_convolution_element_count": 6,
+      "tested_input_count": 24
+    }
+  ],
+  "scaling_records": [
+    {
+      "conditioned_Q_L1_norm": 1.0,
+      "conditioned_Q_raw_term_count_decimal": "67108864",
+      "copy_count": 13,
+      "degree": 8,
+      "full_Z_positive_L1_norm_decimal": "105",
+      "generic_normalization_is_candidate_count": true,
+      "generic_uniform_group_block_encoding_normalization_decimal": "105",
+      "half_degree": 4,
+      "hidden_matching_count_decimal": "105",
+      "status": "shared-conjugation-local-channels-easy-global-normalization-open"
+    },
+    {
+      "conditioned_Q_L1_norm": 1.0,
+      "conditioned_Q_raw_term_count_decimal": "18014398509481984",
+      "copy_count": 27,
+      "degree": 16,
+      "full_Z_positive_L1_norm_decimal": "2027025",
+      "generic_normalization_is_candidate_count": true,
+      "generic_uniform_group_block_encoding_normalization_decimal": "2027025",
+      "half_degree": 8,
+      "hidden_matching_count_decimal": "2027025",
+      "status": "shared-conjugation-local-channels-easy-global-normalization-open"
+    },
+    {
+      "conditioned_Q_L1_norm": 1.0,
+      "conditioned_Q_raw_term_count_decimal": "340282366920938463463374607431768211456",
+      "copy_count": 64,
+      "degree": 32,
+      "full_Z_positive_L1_norm_decimal": "191898783962510625",
+      "generic_normalization_is_candidate_count": true,
+      "generic_uniform_group_block_encoding_normalization_decimal": "191898783962510625",
+      "half_degree": 16,
+      "hidden_matching_count_decimal": "191898783962510625",
+      "status": "shared-conjugation-local-channels-easy-global-normalization-open"
+    },
+    {
+      "conditioned_Q_L1_norm": 1.0,
+      "conditioned_Q_raw_term_count_decimal": "130370302485407109521180524058200202307293977194619920040712988758680403184853549195737432064",
+      "copy_count": 153,
+      "degree": 64,
+      "full_Z_positive_L1_norm_decimal": "112275575285571389562324404930670903477890625",
+      "generic_normalization_is_candidate_count": true,
+      "generic_uniform_group_block_encoding_normalization_decimal": "112275575285571389562324404930670903477890625",
+      "half_degree": 32,
+      "hidden_matching_count_decimal": "112275575285571389562324404930670903477890625",
+      "status": "shared-conjugation-local-channels-easy-global-normalization-open"
+    },
+    {
+      "conditioned_Q_L1_norm": 1.0,
+      "conditioned_Q_raw_term_count_decimal": "353001744838527187118638605275578482918919238981447190585425241357836728795149812488234240124403749621362233187285499572265412108234798868453319136060868263303849511435339515071579009061587940965469669934854316295716864",
+      "copy_count": 363,
+      "degree": 128,
+      "full_Z_positive_L1_norm_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "generic_normalization_is_candidate_count": true,
+      "generic_uniform_group_block_encoding_normalization_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "half_degree": 64,
+      "hidden_matching_count_decimal": "164749260436028300985882145742271020352352323765318815064452725844663571025238239569133424206748199462890625",
+      "status": "shared-conjugation-local-channels-easy-global-normalization-open"
+    },
+    {
+      "conditioned_Q_L1_norm": 1.0,
+      "conditioned_Q_raw_term_count_decimal": "220167222401506963361935215497931741851683454730891855235946966478942537847923263109263201530850567083605508118217763788502525007616611482988163470448047603522353879424254306230105181145555144826419259011060016190146225731164804547576615578353537327887697818814566001287570318674312842206213699492197837358468009281346017429481993653422495540459101416196634401775922276584857934736755122655065919205301343536683993404422522220729266647007996864549635753714136436779189007783957924813696045386700714954924752896",
+      "copy_count": 846,
+      "degree": 256,
+      "full_Z_positive_L1_norm_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "generic_normalization_is_candidate_count": true,
+      "generic_uniform_group_block_encoding_normalization_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "half_degree": 128,
+      "hidden_matching_count_decimal": "6537256156445168127472031390784012790976081721191252400924510089038323279351219359607493746481117847060897396843121499382013181689204739112626893248251494219283641558307674830456073042673717342005838768103257372002215545075555285834707319736480712890625",
+      "status": "shared-conjugation-local-channels-easy-global-normalization-open"
+    }
+  ],
+  "status": "physical-shared-conjugation-normal-form-proved-fast-forward-open",
+  "summary": "Derived the exact quotient action and shared-conjugation tensor-network normal form for the physical likelihood operator.",
+  "theorem": {
+    "compiler_boundary": "A useful algorithm must fast-forward the shared-orbit factor M; local Q_s access and generic uniform PREP/SELECT do not do so.",
+    "conditioned_Q_normalization_one_proved": true,
+    "conditioned_channel": "For fixed s, Q_s is a normalization-one product twirl over H insertions around a shared conjugation by s.",
+    "exact_all_finite_groups_quotient_action_proved": true,
+    "exact_shared_conjugation_likelihood_expansion_proved": true,
+    "full_Z_positive_L1_equals_candidate_count_proved": true,
+    "generic_PREP_SELECT_fast_forward_compiled": false,
+    "hidden_involution_detector_constructed": false,
+    "likelihood_expansion": "Z=[1/(4^k|K|)] sum_(s,eps,eps') (eps_i s eps'_i;s).",
+    "matched_classical_separation_proved": false,
+    "normalization_identity": "Z=(1/|K|)sum_s Q_s=M E_(s uniform G)Q_s and has positive group-basis L1 norm exactly M.",
+    "quotient_action": "On (G^k x G)/diag(G), left convolution by (a_i;s) acts on relative coordinates as x_i->a_i x_i s^-1.",
+    "speedup_claim_allowed": false,
+    "status": "physical-shared-conjugation-normal-form-proved-fast-forward-open",
+    "structured_shared_orbit_fast_forward_compiled": false,
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "claim_boundary": "Exact factorization and normalization only; no fast-forward, measurement, decoder, or classical separation.",
+    "normal_form": "Shared target conjugation s with independent local H insertions",
+    "operator": "Exact likelihood size-bias Z=M e_B e_A e_B",
+    "physical_space": "(G^k x G)/diag(G) identified with G^k"
+  }
+}

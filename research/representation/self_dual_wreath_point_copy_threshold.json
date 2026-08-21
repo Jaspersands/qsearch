@@ -1,0 +1,513 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False after carrier trace: every point POVM has factorially small average excess throughout every fixed c<2 regime.",
+      "challenge": "The k=ceil(log2 n!) point signal only needs a better measurement.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It proves ambient normalized Hilbert--Schmidt energy, not relative spectrum, trace distance, or circuit access.",
+      "challenge": "The identity witness at c=2 is already a decoder.",
+      "resolved": true
+    },
+    {
+      "answer": "False for an upper bound: sourcewise nonnegativity permits conditioning at the sole multiplicative cost 1/P_cf=1+o(1).",
+      "challenge": "Global source distinctness reopens the subcritical point route.",
+      "resolved": true
+    },
+    {
+      "answer": "Too strong. The theorem applies only after the carrier is traced and only to point coarse graining.",
+      "challenge": "The theorem rules out carrier-retaining global decoders.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_fixed_copy_multipliers_below_two_closed": true,
+    "carrier_retaining_global_decoder_ruled_out": false,
+    "classical_separation_proved": false,
+    "critical_child_star_relative_spectrum_proved": false,
+    "critical_copy_multiplier_two_energy_positive": true,
+    "critical_energy_is_operational_advantage": false,
+    "critical_harmonic_naimark_compiled": false,
+    "full_hidden_permutation_decoder_constructed": false,
+    "point_decoder_at_information_threshold_viable": false,
+    "reason": "Point decoding below twice log2(n!) copies is information-theoretically blocked after carrier trace. Exactly at factor two, normalized energy appears, but its relative spectrum and direct measurement remain open.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-21T03:07:33.378015+00:00",
+  "falsifiers_triggered": [
+    "The existing k=ceil(log2 n!) point workbench cannot yield an inverse-polynomial point decoder after carrier trace.",
+    "Finite positive point PGM excess below the factor-two threshold is pre-asymptotic.",
+    "Positive critical Hilbert--Schmidt energy is not sufficient evidence for a quantum measurement.",
+    "Future point work must move to k near 2log2(n!) and analyze relative child-star spectra, or retain the carrier."
+  ],
+  "finite_controls": [
+    {
+      "certified_signal_lower_bound": 0.0,
+      "certified_signal_upper_bound": 1.7208938396199704,
+      "copy_count": 7,
+      "copy_multiplier": 1.0,
+      "exact_normalized_point_signal": 0.0361458561109014,
+      "exact_signal_inside_certified_interval": true,
+      "lower_bound_residual": 0.0361458561109014,
+      "n": 5,
+      "status": "exact-point-signal-inside-copy-threshold-bounds",
+      "upper_bound_residual": 1.684747983509069
+    },
+    {
+      "certified_signal_lower_bound": 0.0,
+      "certified_signal_upper_bound": 3.2715557302175244,
+      "copy_count": 11,
+      "copy_multiplier": 1.5,
+      "exact_normalized_point_signal": 0.569993757004258,
+      "exact_signal_inside_certified_interval": true,
+      "lower_bound_residual": 0.569993757004258,
+      "n": 5,
+      "status": "exact-point-signal-inside-copy-threshold-bounds",
+      "upper_bound_residual": 2.7015619732132663
+    },
+    {
+      "certified_signal_lower_bound": 1.063101691122141,
+      "certified_signal_upper_bound": 8.04383181834772,
+      "copy_count": 14,
+      "copy_multiplier": 2.0,
+      "exact_normalized_point_signal": 4.552611256168045,
+      "exact_signal_inside_certified_interval": true,
+      "lower_bound_residual": 3.489509565045904,
+      "n": 5,
+      "status": "exact-point-signal-inside-copy-threshold-bounds",
+      "upper_bound_residual": 3.4912205621796746
+    },
+    {
+      "certified_signal_lower_bound": 0.0,
+      "certified_signal_upper_bound": 0.7895368139757729,
+      "copy_count": 10,
+      "copy_multiplier": 1.0,
+      "exact_normalized_point_signal": 0.009941049862374207,
+      "exact_signal_inside_certified_interval": true,
+      "lower_bound_residual": 0.009941049862374207,
+      "n": 6,
+      "status": "exact-point-signal-inside-copy-threshold-bounds",
+      "upper_bound_residual": 0.7795957641133987
+    },
+    {
+      "certified_signal_lower_bound": 0.0,
+      "certified_signal_upper_bound": 1.498708952853554,
+      "copy_count": 15,
+      "copy_multiplier": 1.5,
+      "exact_normalized_point_signal": 0.31615168671502547,
+      "exact_signal_inside_certified_interval": true,
+      "lower_bound_residual": 0.31615168671502547,
+      "n": 6,
+      "status": "exact-point-signal-inside-copy-threshold-bounds",
+      "upper_bound_residual": 1.1825572661385286
+    },
+    {
+      "certified_signal_lower_bound": 3.545847550229024,
+      "certified_signal_upper_bound": 6.568347672753571,
+      "copy_count": 19,
+      "copy_multiplier": 2.0,
+      "exact_normalized_point_signal": 5.056923020810586,
+      "exact_signal_inside_certified_interval": true,
+      "lower_bound_residual": 1.5110754705815626,
+      "n": 6,
+      "status": "exact-point-signal-inside-copy-threshold-bounds",
+      "upper_bound_residual": 1.5114246519429848
+    }
+  ],
+  "headline_metrics": {
+    "critical_energy_phase_transition_count": 1,
+    "critical_harmonic_naimark_count": 0,
+    "critical_operational_point_measurement_count": 0,
+    "finite_bound_control_count": 6,
+    "finite_bound_failure_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "subcritical_arbitrary_point_povm_no_go_count": 1,
+    "tail_c1_signal_log2_upper_bound": -667.6684743375939,
+    "tail_c2_signal_log2_lower_bound": 7.665240519528259,
+    "word_density_identity_control_count": 3
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-POINT-CRITICAL-CHILD-STAR-RELATIVE-SPECTRUM",
+      "resolved": false,
+      "statement": "At k=ceil(2log2 n!), bound the critical child-star effect spectrum relative to the average state, not ambient Hilbert--Schmidt norm."
+    },
+    {
+      "id": "PO-POINT-CRITICAL-HARMONIC-NAIMARK",
+      "resolved": false,
+      "statement": "Compile or obstruct the S_(n-1) child-star square roots at critical copy width without scalar QSVT normalization."
+    },
+    {
+      "id": "PO-POINT-CRITICAL-COLLISION-FREE-LOWER-TRANSFER",
+      "resolved": false,
+      "statement": "Prove the critical energy lower bound directly under global distinctness or show that pairwise-unequal natural access suffices."
+    },
+    {
+      "id": "PO-POINT-FULL-RECOVERY-INTERFACE",
+      "resolved": false,
+      "statement": "If a critical point decoder exists, prove a full hidden-permutation recovery interface under ordinary mixed coset-state access."
+    }
+  ],
+  "scaling_records": [
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -3.0059684315338844,
+      "collision_free_upper_bound_transfer_asymptotically_lossless": true,
+      "copy_count": 16,
+      "copy_multiplier": 1.0,
+      "critical_harmonic_measurement_compiled": false,
+      "critical_normalized_energy_lower_bound": false,
+      "log2_group_order": 15.29920801838728,
+      "n": 8,
+      "signal_lower_bound_log2": -Infinity,
+      "signal_upper_bound_log2": -4.011936863067769,
+      "status": "subcritical-point-povm-excess-factorially-small",
+      "subcritical_point_decoder_excess_superpolynomial": true
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -2.4987545236958795,
+      "collision_free_upper_bound_transfer_asymptotically_lossless": true,
+      "copy_count": 23,
+      "copy_multiplier": 1.5,
+      "critical_harmonic_measurement_compiled": false,
+      "critical_normalized_energy_lower_bound": false,
+      "log2_group_order": 15.29920801838728,
+      "n": 8,
+      "signal_lower_bound_log2": -Infinity,
+      "signal_upper_bound_log2": -2.9975090473917585,
+      "status": "subcritical-point-povm-excess-factorially-small",
+      "subcritical_point_decoder_excess_superpolynomial": true
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": 0.0,
+      "collision_free_upper_bound_transfer_asymptotically_lossless": true,
+      "copy_count": 30,
+      "copy_multiplier": 1.9,
+      "critical_harmonic_measurement_compiled": false,
+      "critical_normalized_energy_lower_bound": false,
+      "log2_group_order": 15.29920801838728,
+      "n": 8,
+      "signal_lower_bound_log2": 2.1720467599017192,
+      "signal_upper_bound_log2": 2.2449131877077684,
+      "status": "subcritical-point-povm-excess-factorially-small",
+      "subcritical_point_decoder_excess_superpolynomial": true
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": 0.0,
+      "collision_free_upper_bound_transfer_asymptotically_lossless": false,
+      "copy_count": 31,
+      "copy_multiplier": 2.0,
+      "critical_harmonic_measurement_compiled": false,
+      "critical_normalized_energy_lower_bound": true,
+      "log2_group_order": 15.29920801838728,
+      "n": 8,
+      "signal_lower_bound_log2": 3.189983541570266,
+      "signal_upper_bound_log2": 3.227649501186171,
+      "status": "critical-point-energy-positive-operational-transform-open",
+      "subcritical_point_decoder_excess_superpolynomial": false
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -14.498604830444721,
+      "collision_free_upper_bound_transfer_asymptotically_lossless": true,
+      "copy_count": 45,
+      "copy_multiplier": 1.0,
+      "critical_harmonic_measurement_compiled": false,
+      "critical_normalized_energy_lower_bound": false,
+      "log2_group_order": 44.25014046988262,
+      "n": 16,
+      "signal_lower_bound_log2": -Infinity,
+      "signal_upper_bound_log2": -26.997209660889443,
+      "status": "subcritical-point-povm-excess-factorially-small",
+      "subcritical_point_decoder_excess_superpolynomial": true
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -9.795110425536663,
+      "collision_free_upper_bound_transfer_asymptotically_lossless": true,
+      "copy_count": 67,
+      "copy_multiplier": 1.5,
+      "critical_harmonic_measurement_compiled": false,
+      "critical_normalized_energy_lower_bound": false,
+      "log2_group_order": 44.25014046988262,
+      "n": 16,
+      "signal_lower_bound_log2": -17.596566814755167,
+      "signal_upper_bound_log2": -17.590220851073326,
+      "status": "subcritical-point-povm-excess-factorially-small",
+      "subcritical_point_decoder_excess_superpolynomial": true
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -0.796695164395683,
+      "collision_free_upper_bound_transfer_asymptotically_lossless": true,
+      "copy_count": 85,
+      "copy_multiplier": 1.9,
+      "critical_harmonic_measurement_compiled": false,
+      "critical_normalized_energy_lower_bound": false,
+      "log2_group_order": 44.25014046988262,
+      "n": 16,
+      "signal_lower_bound_log2": 0.4066096404779133,
+      "signal_upper_bound_log2": 0.4066096712086339,
+      "status": "subcritical-point-povm-excess-factorially-small",
+      "subcritical_point_decoder_excess_superpolynomial": true
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": 0.0,
+      "collision_free_upper_bound_transfer_asymptotically_lossless": false,
+      "copy_count": 89,
+      "copy_multiplier": 2.0,
+      "critical_harmonic_measurement_compiled": false,
+      "critical_normalized_energy_lower_bound": true,
+      "log2_group_order": 44.25014046988262,
+      "n": 16,
+      "signal_lower_bound_log2": 4.406609654837604,
+      "signal_upper_bound_log2": 4.406609656848938,
+      "status": "critical-point-energy-positive-operational-transform-open",
+      "subcritical_point_decoder_excess_superpolynomial": false
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -47.39934583909102,
+      "collision_free_upper_bound_transfer_asymptotically_lossless": true,
+      "copy_count": 118,
+      "copy_multiplier": 1.0,
+      "critical_harmonic_measurement_compiled": false,
+      "critical_normalized_energy_lower_bound": false,
+      "log2_group_order": 117.6632636523603,
+      "n": 32,
+      "signal_lower_bound_log2": -Infinity,
+      "signal_upper_bound_log2": -92.79869167818204,
+      "status": "subcritical-point-povm-excess-factorially-small",
+      "subcritical_point_decoder_excess_superpolynomial": true
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -27.686165497165398,
+      "collision_free_upper_bound_transfer_asymptotically_lossless": true,
+      "copy_count": 177,
+      "copy_multiplier": 1.5,
+      "critical_harmonic_measurement_compiled": false,
+      "critical_normalized_energy_lower_bound": false,
+      "log2_group_order": 117.6632636523603,
+      "n": 32,
+      "signal_lower_bound_log2": -53.37233099433666,
+      "signal_upper_bound_log2": -53.372330994330795,
+      "status": "subcritical-point-povm-excess-factorially-small",
+      "subcritical_point_decoder_excess_superpolynomial": true
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -4.186165497166862,
+      "collision_free_upper_bound_transfer_asymptotically_lossless": true,
+      "copy_count": 224,
+      "copy_multiplier": 1.9,
+      "critical_harmonic_measurement_compiled": false,
+      "critical_normalized_energy_lower_bound": false,
+      "log2_group_order": 117.6632636523603,
+      "n": 32,
+      "signal_lower_bound_log2": -6.3723309943337245,
+      "signal_upper_bound_log2": -6.3723309943337245,
+      "status": "subcritical-point-povm-excess-factorially-small",
+      "subcritical_point_decoder_excess_superpolynomial": true
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": 0.0,
+      "collision_free_upper_bound_transfer_asymptotically_lossless": false,
+      "copy_count": 236,
+      "copy_multiplier": 2.0,
+      "critical_harmonic_measurement_compiled": false,
+      "critical_normalized_energy_lower_bound": true,
+      "log2_group_order": 117.6632636523603,
+      "n": 32,
+      "signal_lower_bound_log2": 5.6276690056662755,
+      "signal_upper_bound_log2": 5.6276690056662755,
+      "status": "critical-point-energy-positive-operational-transform-open",
+      "subcritical_point_decoder_excess_superpolynomial": false
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -131.5381757791146,
+      "collision_free_upper_bound_transfer_asymptotically_lossless": true,
+      "copy_count": 296,
+      "copy_multiplier": 1.0,
+      "critical_harmonic_measurement_compiled": false,
+      "critical_normalized_energy_lower_bound": false,
+      "log2_group_order": 295.9951439417241,
+      "n": 64,
+      "signal_lower_bound_log2": -Infinity,
+      "signal_upper_bound_log2": -261.0763515582292,
+      "status": "subcritical-point-povm-excess-factorially-small",
+      "subcritical_point_decoder_excess_superpolynomial": true
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -72.00650397997416,
+      "collision_free_upper_bound_transfer_asymptotically_lossless": true,
+      "copy_count": 444,
+      "copy_multiplier": 1.5,
+      "critical_harmonic_measurement_compiled": false,
+      "critical_normalized_energy_lower_bound": false,
+      "log2_group_order": 295.9951439417241,
+      "n": 64,
+      "signal_lower_bound_log2": -142.0130079599483,
+      "signal_upper_bound_log2": -142.0130079599483,
+      "status": "subcritical-point-povm-excess-factorially-small",
+      "subcritical_point_decoder_excess_superpolynomial": true
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -12.50650397997415,
+      "collision_free_upper_bound_transfer_asymptotically_lossless": true,
+      "copy_count": 563,
+      "copy_multiplier": 1.9,
+      "critical_harmonic_measurement_compiled": false,
+      "critical_normalized_energy_lower_bound": false,
+      "log2_group_order": 295.9951439417241,
+      "n": 64,
+      "signal_lower_bound_log2": -23.0130079599483,
+      "signal_upper_bound_log2": -23.0130079599483,
+      "status": "subcritical-point-povm-excess-factorially-small",
+      "subcritical_point_decoder_excess_superpolynomial": true
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": 0.0,
+      "collision_free_upper_bound_transfer_asymptotically_lossless": false,
+      "copy_count": 592,
+      "copy_multiplier": 2.0,
+      "critical_harmonic_measurement_compiled": false,
+      "critical_normalized_energy_lower_bound": true,
+      "log2_group_order": 295.9951439417241,
+      "n": 64,
+      "signal_lower_bound_log2": 5.986992040051699,
+      "signal_upper_bound_log2": 5.986992040051699,
+      "status": "critical-point-energy-positive-operational-transform-open",
+      "subcritical_point_decoder_excess_superpolynomial": false
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -334.83423716879696,
+      "collision_free_upper_bound_transfer_asymptotically_lossless": true,
+      "copy_count": 717,
+      "copy_multiplier": 1.0,
+      "critical_harmonic_measurement_compiled": false,
+      "critical_normalized_energy_lower_bound": false,
+      "log2_group_order": 716.161722083622,
+      "n": 128,
+      "signal_lower_bound_log2": -Infinity,
+      "signal_upper_bound_log2": -667.6684743375939,
+      "status": "subcritical-point-povm-excess-factorially-small",
+      "subcritical_point_decoder_excess_superpolynomial": true
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -176.16737974023587,
+      "collision_free_upper_bound_transfer_asymptotically_lossless": true,
+      "copy_count": 1075,
+      "copy_multiplier": 1.5,
+      "critical_harmonic_measurement_compiled": false,
+      "critical_normalized_energy_lower_bound": false,
+      "log2_group_order": 716.161722083622,
+      "n": 128,
+      "signal_lower_bound_log2": -350.33475948047175,
+      "signal_upper_bound_log2": -350.33475948047175,
+      "status": "subcritical-point-povm-excess-factorially-small",
+      "subcritical_point_decoder_excess_superpolynomial": true
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": -33.16737974023587,
+      "collision_free_upper_bound_transfer_asymptotically_lossless": true,
+      "copy_count": 1361,
+      "copy_multiplier": 1.9,
+      "critical_harmonic_measurement_compiled": false,
+      "critical_normalized_energy_lower_bound": false,
+      "log2_group_order": 716.161722083622,
+      "n": 128,
+      "signal_lower_bound_log2": -64.33475948047175,
+      "signal_upper_bound_log2": -64.33475948047175,
+      "status": "subcritical-point-povm-excess-factorially-small",
+      "subcritical_point_decoder_excess_superpolynomial": true
+    },
+    {
+      "arbitrary_point_povm_excess_log2_upper_bound": 0.0,
+      "collision_free_upper_bound_transfer_asymptotically_lossless": false,
+      "copy_count": 1433,
+      "copy_multiplier": 2.0,
+      "critical_harmonic_measurement_compiled": false,
+      "critical_normalized_energy_lower_bound": true,
+      "log2_group_order": 716.161722083622,
+      "n": 128,
+      "signal_lower_bound_log2": 7.665240519528259,
+      "signal_upper_bound_log2": 7.665240519528259,
+      "status": "critical-point-energy-positive-operational-transform-open",
+      "subcritical_point_decoder_excess_superpolynomial": false
+    }
+  ],
+  "status": "point-copy-threshold-two-proved-critical-harmonic-measurement-open",
+  "summary": "Proved a factor-two copy threshold for carrier-traced point information: every subcritical point POVM has factorially small excess, while the critical normalized energy is positive but not yet operational.",
+  "theorem": {
+    "collision_free_transfer": "The point energy is nonnegative sourcewise, so conditioning on global distinctness divides its upper bound by P_cf=1-o(1).",
+    "critical_harmonic_naimark_compiled": false,
+    "critical_lower_bound": "At k=ceil(2log2 N), the identity witness gives S>=n-1-o(1).",
+    "critical_normalized_energy_phase_transition_proved": true,
+    "critical_operational_point_advantage_proved": false,
+    "exact_signal": "S_(n,k)=N^-2 sum_(u,s,t) chi_std(u) [a(s^-1t)+c_u(s)d_u(t)]^k.",
+    "full_hidden_permutation_decoder_constructed": false,
+    "nonidentity_bound": "The entire u!=e contribution has magnitude at most (n-1)zeta(2)N^-1((1+q^2)^k-1)/q^2.",
+    "operational_boundary": "Critical Hilbert--Schmidt energy does not imply trace distance, a child-star spectral window, or a harmonic Naimark circuit.",
+    "speedup_claim_allowed": false,
+    "status": "point-copy-threshold-two-proved-critical-harmonic-measurement-open",
+    "subcritical_arbitrary_point_povm_no_go_proved": true,
+    "subcritical_consequence": "For fixed c<2 and k<=c log2(N)+O(1), S=N^{-(2-c)+o(1)} and every public-label-adaptive point POVM has excess at most sqrt(S)/2.",
+    "theorem_verified": true,
+    "word_density_identity": "Both incidence sums equal A(u), the commutator density; products of two conjugates and commutators have the same S_n law."
+  },
+  "theorem_contract": {
+    "claim_boundary": "sharp normalized-energy threshold, not a critical-point measurement circuit",
+    "copy_regime": "k=c log2(n!) with fixed c",
+    "measurement_scope": "arbitrary point POVM adaptive to public source labels",
+    "retained_state": "carrier-traced group--orientation point quotient",
+    "source": "independent Plancherel source pairs; subcritical upper transfers to globally distinct trim"
+  },
+  "word_density_controls": [
+    {
+      "commutator_class_counts": {
+        "(1, 1, 1)": 18,
+        "(3,)": 18
+      },
+      "conjugate_product_class_counts": {
+        "(1, 1, 1)": 18,
+        "(3,)": 18
+      },
+      "direct_word_laws_identical": true,
+      "group_order": 6,
+      "maximum_class_count_mismatch": 0,
+      "n": 3,
+      "status": "commutator-and-conjugate-product-laws-identical"
+    },
+    {
+      "commutator_class_counts": {
+        "(1, 1, 1, 1)": 120,
+        "(2, 2)": 168,
+        "(3, 1)": 288
+      },
+      "conjugate_product_class_counts": {
+        "(1, 1, 1, 1)": 120,
+        "(2, 2)": 168,
+        "(3, 1)": 288
+      },
+      "direct_word_laws_identical": true,
+      "group_order": 24,
+      "maximum_class_count_mismatch": 0,
+      "n": 4,
+      "status": "commutator-and-conjugate-product-laws-identical"
+    },
+    {
+      "commutator_class_counts": {
+        "(1, 1, 1, 1, 1)": 840,
+        "(2, 2, 1)": 3720,
+        "(3, 1, 1)": 5040,
+        "(5,)": 4800
+      },
+      "conjugate_product_class_counts": {
+        "(1, 1, 1, 1, 1)": 840,
+        "(2, 2, 1)": 3720,
+        "(3, 1, 1)": 5040,
+        "(5,)": 4800
+      },
+      "direct_word_laws_identical": true,
+      "group_order": 120,
+      "maximum_class_count_mismatch": 0,
+      "n": 5,
+      "status": "commutator-and-conjugate-product-laws-identical"
+    }
+  ]
+}

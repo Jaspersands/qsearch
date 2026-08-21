@@ -1,0 +1,330 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "After compiling component supports, a new hidden-label decoder must still be designed.",
+      "resolution": "Only if component labels were measured or gauges discarded. Coherent composition to Q followed by the physical PGM intertwiner already outputs the covariant label.",
+      "resolved": true
+    },
+    {
+      "objection": "The scalar component M4 itself decodes the label.",
+      "resolution": "False. M4 is a compiler-mechanism witness. Identification comes from the full coherent PGM after Q is implemented.",
+      "resolved": true
+    },
+    {
+      "objection": "Measuring each recursive component is harmless by deferred measurement.",
+      "resolution": "False unless the pulled-back final effect is dephasing invariant. The exact polar chain requires coherent block gauges.",
+      "resolved": true
+    },
+    {
+      "objection": "Inverse-polynomial per-level error necessarily destroys constant success over Theta(n log n) levels.",
+      "resolution": "False with an explicit error budget: epsilon_l<=1/(8L) keeps total error at most 1/8 and success at least 3/8.",
+      "resolved": true
+    },
+    {
+      "objection": "Conditional PGM closure proves a speedup.",
+      "resolution": "False. The orientation polar and classical separation are open.",
+      "resolved": true
+    }
+  ],
+  "approximation_control": {
+    "approximate_map_isometry_residual": 0.0,
+    "event_difference_bound_verified": true,
+    "exact_map_isometry_residual": 0.0,
+    "input_dimension": 2,
+    "map_operator_error": 0.1996668332936563,
+    "measurement_total_variation_upper_bound": 0.1996668332936563,
+    "output_dimension": 4,
+    "rotation_angle": 0.2,
+    "status": "coherent-map-error-controls-final-measurement-distribution",
+    "witness_event_probability_difference": 0.03946950299855745
+  },
+  "claim_gate": {
+    "classical_separation_proved": false,
+    "complete_natural_orientation_polar_compiled": false,
+    "complete_orientation_polar_suffices_for_physical_pgm": true,
+    "component_labels_may_be_measured_during_recursive_compilation": false,
+    "constant_success_robust_to_summed_error_one_eighth": true,
+    "mrs_model_escape_proved": false,
+    "physical_output_intertwiner_compiled_conditionally": true,
+    "reason": "The complete coherent orientation polar would finish the known constant-success physical PGM, but that polar and every classical-complexity separation remain unproved.",
+    "separate_post_polar_hidden_label_decoder_required": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-21T04:08:30.224032+00:00",
+  "falsifiers_triggered": [
+    "A separate post-polar decoder is not an independent research gate.",
+    "The positive component M4 is a compiler witness, not a hidden-label statistic.",
+    "Recursive component outcomes must remain coherent to compose the physical PGM.",
+    "The sole quantum implementation gate is the complete natural orientation polar; classical separation remains separate."
+  ],
+  "finite_controls": [
+    {
+      "carrier_dimension": 4,
+      "control_id": "PROJECTOR-FRAME-5101",
+      "exact_orientation_polar_closes_physical_pgm_verified": true,
+      "exact_pgm_coisometry_identity_residual": 9.641724810018062e-16,
+      "orientation_analysis_rank": 2,
+      "orientation_count": 2,
+      "orientation_polar_isometry_residual": 1.3266059367208078e-15,
+      "physical_analysis_gram_residual": 1.2787336346476139e-16,
+      "physical_input_dimension": 4,
+      "physical_pgm_coisometry_residual": 8.854598951121346e-16,
+      "row_copy_isometry_residual": 5.641418727669428e-16,
+      "row_copy_output_dimension": 8,
+      "row_copy_range_contains_orientation_analysis_residual": 4.659435597051276e-16,
+      "status": "exact-orientation-polar-to-physical-pgm-closure"
+    },
+    {
+      "carrier_dimension": 5,
+      "control_id": "PROJECTOR-FRAME-5113",
+      "exact_orientation_polar_closes_physical_pgm_verified": true,
+      "exact_pgm_coisometry_identity_residual": 1.4996466047392119e-15,
+      "orientation_analysis_rank": 5,
+      "orientation_count": 4,
+      "orientation_polar_isometry_residual": 1.9923294975282825e-15,
+      "physical_analysis_gram_residual": 2.832328344335153e-16,
+      "physical_input_dimension": 8,
+      "physical_pgm_coisometry_residual": 4.531136560920363e-15,
+      "row_copy_isometry_residual": 7.478849091978104e-16,
+      "row_copy_output_dimension": 20,
+      "row_copy_range_contains_orientation_analysis_residual": 7.657480491828783e-16,
+      "status": "exact-orientation-polar-to-physical-pgm-closure"
+    },
+    {
+      "carrier_dimension": 6,
+      "control_id": "PROJECTOR-FRAME-5129",
+      "exact_orientation_polar_closes_physical_pgm_verified": true,
+      "exact_pgm_coisometry_identity_residual": 1.6534506605438992e-15,
+      "orientation_analysis_rank": 6,
+      "orientation_count": 8,
+      "orientation_polar_isometry_residual": 1.4940368961493328e-15,
+      "physical_analysis_gram_residual": 3.672183225999962e-16,
+      "physical_input_dimension": 10,
+      "physical_pgm_coisometry_residual": 1.4399732895108313e-15,
+      "row_copy_isometry_residual": 5.79411132630242e-16,
+      "row_copy_output_dimension": 48,
+      "row_copy_range_contains_orientation_analysis_residual": 1.2235349516821685e-15,
+      "status": "exact-orientation-polar-to-physical-pgm-closure"
+    }
+  ],
+  "headline_metrics": {
+    "classical_separation_theorem_count": 0,
+    "coherent_hybrid_error_theorem_count": 1,
+    "complete_orientation_polar_compiler_count": 0,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "maximum_exact_coisometry_identity_residual": 1.6534506605438992e-15,
+    "minimum_robust_conditional_success_lower_bound": 0.3758414899811672,
+    "new_quantum_algorithm_count": 0,
+    "orientation_polar_to_physical_pgm_closure_theorem_count": 1,
+    "scaling_record_count": 12,
+    "separate_post_polar_decoder_gate_removed_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "close_physical_output_given_complete_orientation_polar",
+      "resolution": "The row-copy containment identity gives equation (3); all remaining output operations are standard coherent group operations.",
+      "resolved": true
+    },
+    {
+      "obligation": "show_separate_post_polar_decoder_is_required",
+      "resolution": "Resolved negatively: the orientation polar plugs directly into the already-derived covariant PGM Naimark measurement.",
+      "resolved": true
+    },
+    {
+      "obligation": "control_recursive_coherent_approximation_error",
+      "resolution": "A contraction telescoping hybrid bounds map and final measurement error by the sum of per-factor errors.",
+      "resolved": true
+    },
+    {
+      "obligation": "compile_complete_natural_orientation_polar",
+      "resolution": "Need normalization-one restricted child routers, endpoint mixers, and all-level coherent composition.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_classical_complexity_separation",
+      "resolution": "Constant quantum PGM success does not establish classical hardness for code equivalence or graph isomorphism.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "allowed_total_coherent_compiler_error": 0.125,
+      "complete_orientation_polar_compiled": false,
+      "hidden_label_count_decimal": "6",
+      "ideal_pgm_success_lower_bound": 0.6153846153846154,
+      "information_threshold_copy_count": 3,
+      "n": 3,
+      "robust_constant_success_conditional_on_polar_compiler": true,
+      "robust_pgm_success_lower_bound": 0.4903846153846154,
+      "status": "constant-pgm-success-conditional-on-coherent-polar-approximation",
+      "tree_level_count": 3,
+      "uniform_per_level_error_budget": 0.041666666666666664
+    },
+    {
+      "allowed_total_coherent_compiler_error": 0.125,
+      "complete_orientation_polar_compiled": false,
+      "hidden_label_count_decimal": "24",
+      "ideal_pgm_success_lower_bound": 0.5818181818181818,
+      "information_threshold_copy_count": 5,
+      "n": 4,
+      "robust_constant_success_conditional_on_polar_compiler": true,
+      "robust_pgm_success_lower_bound": 0.4568181818181818,
+      "status": "constant-pgm-success-conditional-on-coherent-polar-approximation",
+      "tree_level_count": 5,
+      "uniform_per_level_error_budget": 0.025
+    },
+    {
+      "allowed_total_coherent_compiler_error": 0.125,
+      "complete_orientation_polar_compiled": false,
+      "hidden_label_count_decimal": "120",
+      "ideal_pgm_success_lower_bound": 0.5182186234817814,
+      "information_threshold_copy_count": 7,
+      "n": 5,
+      "robust_constant_success_conditional_on_polar_compiler": true,
+      "robust_pgm_success_lower_bound": 0.3932186234817814,
+      "status": "constant-pgm-success-conditional-on-coherent-polar-approximation",
+      "tree_level_count": 7,
+      "uniform_per_level_error_budget": 0.017857142857142856
+    },
+    {
+      "allowed_total_coherent_compiler_error": 0.125,
+      "complete_orientation_polar_compiled": false,
+      "hidden_label_count_decimal": "40320",
+      "ideal_pgm_success_lower_bound": 0.6191110481318786,
+      "information_threshold_copy_count": 16,
+      "n": 8,
+      "robust_constant_success_conditional_on_polar_compiler": true,
+      "robust_pgm_success_lower_bound": 0.49411104813187856,
+      "status": "constant-pgm-success-conditional-on-coherent-polar-approximation",
+      "tree_level_count": 16,
+      "uniform_per_level_error_budget": 0.0078125
+    },
+    {
+      "allowed_total_coherent_compiler_error": 0.125,
+      "complete_orientation_polar_compiled": false,
+      "hidden_label_count_decimal": "479001600",
+      "ideal_pgm_success_lower_bound": 0.5284825666475781,
+      "information_threshold_copy_count": 29,
+      "n": 12,
+      "robust_constant_success_conditional_on_polar_compiler": true,
+      "robust_pgm_success_lower_bound": 0.4034825666475781,
+      "status": "constant-pgm-success-conditional-on-coherent-polar-approximation",
+      "tree_level_count": 29,
+      "uniform_per_level_error_budget": 0.004310344827586207
+    },
+    {
+      "allowed_total_coherent_compiler_error": 0.125,
+      "complete_orientation_polar_compiled": false,
+      "hidden_label_count_decimal": "20922789888000",
+      "ideal_pgm_success_lower_bound": 0.6270923505872762,
+      "information_threshold_copy_count": 45,
+      "n": 16,
+      "robust_constant_success_conditional_on_polar_compiler": true,
+      "robust_pgm_success_lower_bound": 0.5020923505872762,
+      "status": "constant-pgm-success-conditional-on-coherent-polar-approximation",
+      "tree_level_count": 45,
+      "uniform_per_level_error_budget": 0.002777777777777778
+    },
+    {
+      "allowed_total_coherent_compiler_error": 0.125,
+      "complete_orientation_polar_compiled": false,
+      "hidden_label_count_decimal": "620448401733239439360000",
+      "ideal_pgm_success_lower_bound": 0.660841180282896,
+      "information_threshold_copy_count": 80,
+      "n": 24,
+      "robust_constant_success_conditional_on_polar_compiler": true,
+      "robust_pgm_success_lower_bound": 0.535841180282896,
+      "status": "constant-pgm-success-conditional-on-coherent-polar-approximation",
+      "tree_level_count": 80,
+      "uniform_per_level_error_budget": 0.0015625
+    },
+    {
+      "allowed_total_coherent_compiler_error": 0.125,
+      "complete_orientation_polar_compiled": false,
+      "hidden_label_count_decimal": "263130836933693530167218012160000000",
+      "ideal_pgm_success_lower_bound": 0.5580884836704312,
+      "information_threshold_copy_count": 118,
+      "n": 32,
+      "robust_constant_success_conditional_on_polar_compiler": true,
+      "robust_pgm_success_lower_bound": 0.4330884836704312,
+      "status": "constant-pgm-success-conditional-on-coherent-polar-approximation",
+      "tree_level_count": 118,
+      "uniform_per_level_error_budget": 0.001059322033898305
+    },
+    {
+      "allowed_total_coherent_compiler_error": 0.125,
+      "complete_orientation_polar_compiled": false,
+      "hidden_label_count_decimal": "12413915592536072670862289047373375038521486354677760000000000",
+      "ideal_pgm_success_lower_bound": 0.5087376117550163,
+      "information_threshold_copy_count": 203,
+      "n": 48,
+      "robust_constant_success_conditional_on_polar_compiler": true,
+      "robust_pgm_success_lower_bound": 0.3837376117550163,
+      "status": "constant-pgm-success-conditional-on-coherent-polar-approximation",
+      "tree_level_count": 203,
+      "uniform_per_level_error_budget": 0.0006157635467980296
+    },
+    {
+      "allowed_total_coherent_compiler_error": 0.125,
+      "complete_orientation_polar_compiled": false,
+      "hidden_label_count_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "ideal_pgm_success_lower_bound": 0.5008414899811672,
+      "information_threshold_copy_count": 296,
+      "n": 64,
+      "robust_constant_success_conditional_on_polar_compiler": true,
+      "robust_pgm_success_lower_bound": 0.3758414899811672,
+      "status": "constant-pgm-success-conditional-on-coherent-polar-approximation",
+      "tree_level_count": 296,
+      "uniform_per_level_error_budget": 0.0004222972972972973
+    },
+    {
+      "allowed_total_coherent_compiler_error": 0.125,
+      "complete_orientation_polar_compiled": false,
+      "hidden_label_count_decimal": "991677934870949689209571401541893801158183648651267795444376054838492222809091499987689476037000748982075094738965754305639874560000000000000000000000",
+      "ideal_pgm_success_lower_bound": 0.6227027728693014,
+      "information_threshold_copy_count": 499,
+      "n": 96,
+      "robust_constant_success_conditional_on_polar_compiler": true,
+      "robust_pgm_success_lower_bound": 0.4977027728693014,
+      "status": "constant-pgm-success-conditional-on-coherent-polar-approximation",
+      "tree_level_count": 499,
+      "uniform_per_level_error_budget": 0.000250501002004008
+    },
+    {
+      "allowed_total_coherent_compiler_error": 0.125,
+      "complete_orientation_polar_compiled": false,
+      "hidden_label_count_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "ideal_pgm_success_lower_bound": 0.6413089695971319,
+      "information_threshold_copy_count": 717,
+      "n": 128,
+      "robust_constant_success_conditional_on_polar_compiler": true,
+      "robust_pgm_success_lower_bound": 0.5163089695971319,
+      "status": "constant-pgm-success-conditional-on-coherent-polar-approximation",
+      "tree_level_count": 717,
+      "uniform_per_level_error_budget": 0.00017433751743375174
+    }
+  ],
+  "status": "physical-pgm-and-decoder-closed-conditionally-orientation-polar-open",
+  "summary": "Collapsed the component compiler and physical decoder into one gate: a coherent complete orientation polar, with a linear hybrid error budget preserving constant PGM success.",
+  "theorem": {
+    "algorithmic_boundary": "the complete natural orientation polar is the sole PGM circuit gate; its implementation and classical separation remain open",
+    "approximation": "total coherent map error and final measurement TV are at most sum_l epsilon_l",
+    "coherent_requirement": "component labels remain quantum registers until Q and the group-label Fourier measurement are complete",
+    "gram_identity": "AA*=R*R/q=S/q",
+    "pgm_coisometry": "(AA*)^(+/2)A=Q*C_U for Q=RS^(+/2)",
+    "physical_analysis": "A=q^(-1/2)R*C_U with C_U C_U*R=R",
+    "recursive_composition": "child restricted polars and relative merge isometries compose to the complete Q by the exact polar chain rule",
+    "status": "orientation-polar-suffices-for-physical-pgm-and-decoder",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "approximation": "total coherent map error and final measurement TV are at most sum_l epsilon_l",
+    "coherence": "component labels remain quantum registers until Q and the group-label Fourier measurement are complete",
+    "gram": "AA*=R*R/q=S/q",
+    "pgm": "(AA*)^(+/2)A=Q*C_U for Q=RS^(+/2)",
+    "physical_analysis": "A=q^(-1/2)R*C_U with C_U C_U*R=R",
+    "recursive_composition": "child restricted polars and relative merge isometries compose to the complete Q by the exact polar chain rule",
+    "scope": "the complete natural orientation polar is the sole PGM circuit gate; its implementation and classical separation remain open"
+  }
+}

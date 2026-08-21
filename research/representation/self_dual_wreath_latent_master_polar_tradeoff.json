@@ -1,0 +1,724 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A large identity block makes the polar constant-conditioned.",
+      "resolution": "It simultaneously suppresses the orientation branch by p(x), moving the inverse-sqrt cost into spectral flattening.",
+      "resolved": true
+    },
+    {
+      "objection": "Set a=0 so no branch amplification is needed.",
+      "resolution": "Then the graph polar is exactly polar(C), whose normalized singular threshold is sqrt(x_min).",
+      "resolved": true
+    },
+    {
+      "objection": "Postselecting the orientation flag always gives W.",
+      "resolution": "Only on one X eigenspace. A superposition is distorted by the eigenvalue-dependent probability p(x).",
+      "resolved": true
+    },
+    {
+      "objection": "This rules out a direct GPE/recoupling circuit.",
+      "resolution": "No. The theorem is restricted to generic normalized analyzer and latent-graph access.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "classical_separation_proved": false,
+    "complete_natural_orientation_polar_compiled": false,
+    "conditioning_postselection_product_tradeoff_proved": true,
+    "constant_conditioning_alone_compiles_orientation_polar": false,
+    "direct_rectangular_cs_polar_compiled": false,
+    "latent_graph_polar_formula_proved": true,
+    "latent_master_improves_generic_analyzer_query_exponent": false,
+    "natural_typical_x_min_bound_proved": false,
+    "reason": "The identity master can regularize the graph or preserve output amplitude, but the exact product identity prevents doing both without the original inverse singular scale.",
+    "representation_specific_direct_bypass_rejected": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-21T05:09:10.619678+00:00",
+  "falsifiers_triggered": [
+    "Constant graph conditioning does not imply constant orientation-output probability.",
+    "Orientation postselection is spectrally biased on superpositions of frame eigenvalues.",
+    "No choice of latent-master weight improves the normalized-analyzer inverse-singular exponent."
+  ],
+  "finite_controls": [
+    {
+      "analyzer_weight": 1.0,
+      "combined_graph_and_flattening_scale": 2.8284271247461903,
+      "control_id": "S3-TWO-PAIR-A0-B1",
+      "direct_normalized_analyzer_polar_scale": 2.8284271247461903,
+      "exact_latent_master_tradeoff_verified": true,
+      "flagged_access_normalization": 1.0,
+      "flattened_orientation_polar_residual": 7.567533894825037e-16,
+      "frame_support_rank": 5,
+      "graph_polar_formula_residual": 5.622539901477547e-16,
+      "graph_polar_threshold_scale": 2.8284271247461903,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "master_weight": 0.0,
+      "maximum_normalized_frame_eigenvalue": 0.3750000000000001,
+      "minimum_normalized_frame_eigenvalue": 0.12499999999999996,
+      "minimum_normalized_graph_singular_value": 0.35355339059327373,
+      "minimum_orientation_branch_probability": 1.0,
+      "n": 3,
+      "orientation_count": 4,
+      "spectral_flattening_gain": 1.0,
+      "status": "latent-master-normalization-cost-conservation-verified",
+      "target_partition": [
+        2,
+        1
+      ],
+      "tradeoff_product_identity_residual": 0.0
+    },
+    {
+      "analyzer_weight": 1.0,
+      "combined_graph_and_flattening_scale": 4.000000000000002,
+      "control_id": "S3-TWO-PAIR-A1-B1",
+      "direct_normalized_analyzer_polar_scale": 2.8284271247461903,
+      "exact_latent_master_tradeoff_verified": true,
+      "flagged_access_normalization": 1.4142135623730951,
+      "flattened_orientation_polar_residual": 1.3420216171232023e-15,
+      "frame_support_rank": 5,
+      "graph_polar_formula_residual": 8.581673560274077e-16,
+      "graph_polar_threshold_scale": 1.3333333333333335,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "master_weight": 1.0,
+      "maximum_normalized_frame_eigenvalue": 0.3750000000000001,
+      "minimum_normalized_frame_eigenvalue": 0.12499999999999996,
+      "minimum_normalized_graph_singular_value": 0.7499999999999999,
+      "minimum_orientation_branch_probability": 0.11111111111111108,
+      "n": 3,
+      "orientation_count": 4,
+      "spectral_flattening_gain": 3.000000000000001,
+      "status": "latent-master-normalization-cost-conservation-verified",
+      "target_partition": [
+        2,
+        1
+      ],
+      "tradeoff_product_identity_residual": 8.881784197001252e-16
+    },
+    {
+      "analyzer_weight": 1.0,
+      "combined_graph_and_flattening_scale": 2.850438562747845,
+      "control_id": "S3-TWO-PAIR-A0.125-B1",
+      "direct_normalized_analyzer_polar_scale": 2.8284271247461903,
+      "exact_latent_master_tradeoff_verified": true,
+      "flagged_access_normalization": 1.0077822185373186,
+      "flattened_orientation_polar_residual": 8.148460047083353e-16,
+      "frame_support_rank": 5,
+      "graph_polar_formula_residual": 5.932162419748671e-16,
+      "graph_polar_threshold_scale": 2.68741924943285,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "master_weight": 0.125,
+      "maximum_normalized_frame_eigenvalue": 0.3750000000000001,
+      "minimum_normalized_frame_eigenvalue": 0.12499999999999996,
+      "minimum_normalized_graph_singular_value": 0.3721042037676253,
+      "minimum_orientation_branch_probability": 0.888888888888889,
+      "n": 3,
+      "orientation_count": 4,
+      "spectral_flattening_gain": 1.0606601717798212,
+      "status": "latent-master-normalization-cost-conservation-verified",
+      "target_partition": [
+        2,
+        1
+      ],
+      "tradeoff_product_identity_residual": 0.0
+    },
+    {
+      "analyzer_weight": 1.0,
+      "combined_graph_and_flattening_scale": 2.828427124746192,
+      "control_id": "S4-TWO-PAIR-A0-B1",
+      "direct_normalized_analyzer_polar_scale": 2.828427124746192,
+      "exact_latent_master_tradeoff_verified": true,
+      "flagged_access_normalization": 1.0,
+      "flattened_orientation_polar_residual": 1.741250828937787e-15,
+      "frame_support_rank": 11,
+      "graph_polar_formula_residual": 1.978786273029512e-15,
+      "graph_polar_threshold_scale": 2.828427124746192,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "master_weight": 0.0,
+      "maximum_normalized_frame_eigenvalue": 0.37500000000000006,
+      "minimum_normalized_frame_eigenvalue": 0.1249999999999998,
+      "minimum_normalized_graph_singular_value": 0.3535533905932735,
+      "minimum_orientation_branch_probability": 1.0,
+      "n": 4,
+      "orientation_count": 4,
+      "spectral_flattening_gain": 1.0,
+      "status": "latent-master-normalization-cost-conservation-verified",
+      "target_partition": [
+        2,
+        2
+      ],
+      "tradeoff_product_identity_residual": 0.0
+    },
+    {
+      "analyzer_weight": 1.0,
+      "combined_graph_and_flattening_scale": 4.0000000000000036,
+      "control_id": "S4-TWO-PAIR-A1-B1",
+      "direct_normalized_analyzer_polar_scale": 2.828427124746192,
+      "exact_latent_master_tradeoff_verified": true,
+      "flagged_access_normalization": 1.4142135623730951,
+      "flattened_orientation_polar_residual": 2.30912737641706e-15,
+      "frame_support_rank": 11,
+      "graph_polar_formula_residual": 1.722871370674274e-15,
+      "graph_polar_threshold_scale": 1.3333333333333335,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "master_weight": 1.0,
+      "maximum_normalized_frame_eigenvalue": 0.37500000000000006,
+      "minimum_normalized_frame_eigenvalue": 0.1249999999999998,
+      "minimum_normalized_graph_singular_value": 0.7499999999999999,
+      "minimum_orientation_branch_probability": 0.11111111111111097,
+      "n": 4,
+      "orientation_count": 4,
+      "spectral_flattening_gain": 3.000000000000002,
+      "status": "latent-master-normalization-cost-conservation-verified",
+      "target_partition": [
+        2,
+        2
+      ],
+      "tradeoff_product_identity_residual": 0.0
+    },
+    {
+      "analyzer_weight": 1.0,
+      "combined_graph_and_flattening_scale": 2.8504385627478475,
+      "control_id": "S4-TWO-PAIR-A0.125-B1",
+      "direct_normalized_analyzer_polar_scale": 2.828427124746192,
+      "exact_latent_master_tradeoff_verified": true,
+      "flagged_access_normalization": 1.0077822185373186,
+      "flattened_orientation_polar_residual": 1.804262412809317e-15,
+      "frame_support_rank": 11,
+      "graph_polar_formula_residual": 1.9504731255919913e-15,
+      "graph_polar_threshold_scale": 2.687419249432852,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "master_weight": 0.125,
+      "maximum_normalized_frame_eigenvalue": 0.37500000000000006,
+      "minimum_normalized_frame_eigenvalue": 0.1249999999999998,
+      "minimum_normalized_graph_singular_value": 0.3721042037676251,
+      "minimum_orientation_branch_probability": 0.8888888888888887,
+      "n": 4,
+      "orientation_count": 4,
+      "spectral_flattening_gain": 1.0606601717798214,
+      "status": "latent-master-normalization-cost-conservation-verified",
+      "target_partition": [
+        2,
+        2
+      ],
+      "tradeoff_product_identity_residual": 4.440892098500626e-16
+    },
+    {
+      "analyzer_weight": 1.0,
+      "combined_graph_and_flattening_scale": 2.3094010767585043,
+      "control_id": "S5-TWO-PAIR-A0-B1",
+      "direct_normalized_analyzer_polar_scale": 2.3094010767585043,
+      "exact_latent_master_tradeoff_verified": true,
+      "flagged_access_normalization": 1.0,
+      "flattened_orientation_polar_residual": 2.393896067460206e-15,
+      "frame_support_rank": 9,
+      "graph_polar_formula_residual": 1.8351355641966044e-15,
+      "graph_polar_threshold_scale": 2.3094010767585043,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "master_weight": 0.0,
+      "maximum_normalized_frame_eigenvalue": 0.3125,
+      "minimum_normalized_frame_eigenvalue": 0.18749999999999983,
+      "minimum_normalized_graph_singular_value": 0.43301270189221913,
+      "minimum_orientation_branch_probability": 1.0,
+      "n": 5,
+      "orientation_count": 4,
+      "spectral_flattening_gain": 1.0,
+      "status": "latent-master-normalization-cost-conservation-verified",
+      "target_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "tradeoff_product_identity_residual": 0.0
+    },
+    {
+      "analyzer_weight": 1.0,
+      "combined_graph_and_flattening_scale": 3.265986323710906,
+      "control_id": "S5-TWO-PAIR-A1-B1",
+      "direct_normalized_analyzer_polar_scale": 2.3094010767585043,
+      "exact_latent_master_tradeoff_verified": true,
+      "flagged_access_normalization": 1.4142135623730951,
+      "flattened_orientation_polar_residual": 2.3618714372775105e-15,
+      "frame_support_rank": 9,
+      "graph_polar_formula_residual": 1.01130992434879e-15,
+      "graph_polar_threshold_scale": 1.2977713690461006,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "master_weight": 1.0,
+      "maximum_normalized_frame_eigenvalue": 0.3125,
+      "minimum_normalized_frame_eigenvalue": 0.18749999999999983,
+      "minimum_normalized_graph_singular_value": 0.7705517503711219,
+      "minimum_orientation_branch_probability": 0.15789473684210514,
+      "n": 5,
+      "orientation_count": 4,
+      "spectral_flattening_gain": 2.516611478423584,
+      "status": "latent-master-normalization-cost-conservation-verified",
+      "target_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "tradeoff_product_identity_residual": 0.0
+    },
+    {
+      "analyzer_weight": 1.0,
+      "combined_graph_and_flattening_scale": 2.3273733406281583,
+      "control_id": "S5-TWO-PAIR-A0.125-B1",
+      "direct_normalized_analyzer_polar_scale": 2.3094010767585043,
+      "exact_latent_master_tradeoff_verified": true,
+      "flagged_access_normalization": 1.0077822185373186,
+      "flattened_orientation_polar_residual": 1.4851659731651026e-15,
+      "frame_support_rank": 9,
+      "graph_polar_formula_residual": 1.857270861414656e-15,
+      "graph_polar_threshold_scale": 2.2360679774997907,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "master_weight": 0.125,
+      "maximum_normalized_frame_eigenvalue": 0.3125,
+      "minimum_normalized_frame_eigenvalue": 0.18749999999999983,
+      "minimum_normalized_graph_singular_value": 0.44721359549995776,
+      "minimum_orientation_branch_probability": 0.923076923076923,
+      "n": 5,
+      "orientation_count": 4,
+      "spectral_flattening_gain": 1.0408329997330665,
+      "status": "latent-master-normalization-cost-conservation-verified",
+      "target_partition": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "tradeoff_product_identity_residual": 4.440892098500626e-16
+    }
+  ],
+  "headline_metrics": {
+    "complete_orientation_polar_compiler_count": 0,
+    "direct_rectangular_cs_compiler_count": 0,
+    "finite_control_count": 9,
+    "finite_control_failure_count": 0,
+    "generic_latent_master_query_exponent_improvement_count": 0,
+    "latent_master_tradeoff_theorem_count": 1,
+    "maximum_flattened_orientation_polar_residual": 2.393896067460206e-15,
+    "maximum_graph_polar_formula_residual": 1.978786273029512e-15,
+    "maximum_tradeoff_product_identity_residual": 8.881784197001252e-16,
+    "minimum_combined_to_direct_scale_ratio": 1.0,
+    "new_quantum_algorithm_count": 0,
+    "scaling_record_count": 13
+  },
+  "proof_obligations": [
+    {
+      "obligation": "derive_exact_latent_graph_polar",
+      "resolution": "The graph Gram is a^2I+b^2X, so its polar and branch probabilities follow by functional calculus.",
+      "resolved": true
+    },
+    {
+      "obligation": "test_conditioning_postselection_tradeoff",
+      "resolution": "The graph threshold scale times the exact spectral flattening gain obeys the stated identity on every control.",
+      "resolved": true
+    },
+    {
+      "obligation": "find_representation_specific_rectangular_cs_bypass",
+      "resolution": "Need a normalization-one transform using more than generic flagged access to C; pair GPE is only the local precedent.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_natural_occupied_x_min_bound",
+      "resolution": "The factorial flat row is an access benchmark, not a new typical-sector spectral-edge theorem.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "best_latent_master_scale_log2_lower_bound": 3.45344529780426,
+      "complete_orientation_polar_compiled": false,
+      "constant_graph_condition_and_constant_output_possible": false,
+      "direct_normalized_analyzer_scale_log2": 3.45344529780426,
+      "flat_benchmark_x_min_log2": -6.90689059560852,
+      "information_threshold_copy_count": 9,
+      "master_weight_improves_generic_query_exponent": false,
+      "n": 5,
+      "representation_specific_direct_bypass_open": true,
+      "status": "latent-master-generic-access-no-bypass-direct-structure-open",
+      "symmetric_group_order_log2": 6.90689059560852
+    },
+    {
+      "best_latent_master_scale_log2_lower_bound": 4.745926548164838,
+      "complete_orientation_polar_compiled": false,
+      "constant_graph_condition_and_constant_output_possible": false,
+      "direct_normalized_analyzer_scale_log2": 4.745926548164838,
+      "flat_benchmark_x_min_log2": -9.491853096329676,
+      "information_threshold_copy_count": 12,
+      "master_weight_improves_generic_query_exponent": false,
+      "n": 6,
+      "representation_specific_direct_bypass_open": true,
+      "status": "latent-master-generic-access-no-bypass-direct-structure-open",
+      "symmetric_group_order_log2": 9.491853096329676
+    },
+    {
+      "best_latent_master_scale_log2_lower_bound": 7.64960400919364,
+      "complete_orientation_polar_compiled": false,
+      "constant_graph_condition_and_constant_output_possible": false,
+      "direct_normalized_analyzer_scale_log2": 7.64960400919364,
+      "flat_benchmark_x_min_log2": -15.29920801838728,
+      "information_threshold_copy_count": 18,
+      "master_weight_improves_generic_query_exponent": false,
+      "n": 8,
+      "representation_specific_direct_bypass_open": true,
+      "status": "latent-master-generic-access-no-bypass-direct-structure-open",
+      "symmetric_group_order_log2": 15.29920801838728
+    },
+    {
+      "best_latent_master_scale_log2_lower_bound": 10.895530557358477,
+      "complete_orientation_polar_compiled": false,
+      "constant_graph_condition_and_constant_output_possible": false,
+      "direct_normalized_analyzer_scale_log2": 10.895530557358477,
+      "flat_benchmark_x_min_log2": -21.791061114716953,
+      "information_threshold_copy_count": 24,
+      "master_weight_improves_generic_query_exponent": false,
+      "n": 10,
+      "representation_specific_direct_bypass_open": true,
+      "status": "latent-master-generic-access-no-bypass-direct-structure-open",
+      "symmetric_group_order_log2": 21.791061114716953
+    },
+    {
+      "best_latent_master_scale_log2_lower_bound": 14.417727617037704,
+      "complete_orientation_polar_compiled": false,
+      "constant_graph_condition_and_constant_output_possible": false,
+      "direct_normalized_analyzer_scale_log2": 14.417727617037704,
+      "flat_benchmark_x_min_log2": -28.835455234075408,
+      "information_threshold_copy_count": 31,
+      "master_weight_improves_generic_query_exponent": false,
+      "n": 12,
+      "representation_specific_direct_bypass_open": true,
+      "status": "latent-master-generic-access-no-bypass-direct-structure-open",
+      "symmetric_group_order_log2": 28.835455234075408
+    },
+    {
+      "best_latent_master_scale_log2_lower_bound": 22.12507023494131,
+      "complete_orientation_polar_compiled": false,
+      "constant_graph_condition_and_constant_output_possible": false,
+      "direct_normalized_analyzer_scale_log2": 22.12507023494131,
+      "flat_benchmark_x_min_log2": -44.25014046988262,
+      "information_threshold_copy_count": 47,
+      "master_weight_improves_generic_query_exponent": false,
+      "n": 16,
+      "representation_specific_direct_bypass_open": true,
+      "status": "latent-master-generic-access-no-bypass-direct-structure-open",
+      "symmetric_group_order_log2": 44.25014046988262
+    },
+    {
+      "best_latent_master_scale_log2_lower_bound": 30.53869196045311,
+      "complete_orientation_polar_compiled": false,
+      "constant_graph_condition_and_constant_output_possible": false,
+      "direct_normalized_analyzer_scale_log2": 30.53869196045311,
+      "flat_benchmark_x_min_log2": -61.07738392090622,
+      "information_threshold_copy_count": 64,
+      "master_weight_improves_generic_query_exponent": false,
+      "n": 20,
+      "representation_specific_direct_bypass_open": true,
+      "status": "latent-master-generic-access-no-bypass-direct-structure-open",
+      "symmetric_group_order_log2": 61.07738392090622
+    },
+    {
+      "best_latent_master_scale_log2_lower_bound": 39.51882870955023,
+      "complete_orientation_polar_compiled": false,
+      "constant_graph_condition_and_constant_output_possible": false,
+      "direct_normalized_analyzer_scale_log2": 39.51882870955023,
+      "flat_benchmark_x_min_log2": -79.03765741910046,
+      "information_threshold_copy_count": 82,
+      "master_weight_improves_generic_query_exponent": false,
+      "n": 24,
+      "representation_specific_direct_bypass_open": true,
+      "status": "latent-master-generic-access-no-bypass-direct-structure-open",
+      "symmetric_group_order_log2": 79.03765741910046
+    },
+    {
+      "best_latent_master_scale_log2_lower_bound": 58.83163182618015,
+      "complete_orientation_polar_compiled": false,
+      "constant_graph_condition_and_constant_output_possible": false,
+      "direct_normalized_analyzer_scale_log2": 58.83163182618015,
+      "flat_benchmark_x_min_log2": -117.6632636523603,
+      "information_threshold_copy_count": 120,
+      "master_weight_improves_generic_query_exponent": false,
+      "n": 32,
+      "representation_specific_direct_bypass_open": true,
+      "status": "latent-master-generic-access-no-bypass-direct-structure-open",
+      "symmetric_group_order_log2": 117.6632636523603
+    },
+    {
+      "best_latent_master_scale_log2_lower_bound": 101.47478601485012,
+      "complete_orientation_polar_compiled": false,
+      "constant_graph_condition_and_constant_output_possible": false,
+      "direct_normalized_analyzer_scale_log2": 101.47478601485012,
+      "flat_benchmark_x_min_log2": -202.94957202970025,
+      "information_threshold_copy_count": 205,
+      "master_weight_improves_generic_query_exponent": false,
+      "n": 48,
+      "representation_specific_direct_bypass_open": true,
+      "status": "latent-master-generic-access-no-bypass-direct-structure-open",
+      "symmetric_group_order_log2": 202.94957202970025
+    },
+    {
+      "best_latent_master_scale_log2_lower_bound": 147.99757197086205,
+      "complete_orientation_polar_compiled": false,
+      "constant_graph_condition_and_constant_output_possible": false,
+      "direct_normalized_analyzer_scale_log2": 147.99757197086205,
+      "flat_benchmark_x_min_log2": -295.9951439417241,
+      "information_threshold_copy_count": 298,
+      "master_weight_improves_generic_query_exponent": false,
+      "n": 64,
+      "representation_specific_direct_bypass_open": true,
+      "status": "latent-master-generic-access-no-bypass-direct-structure-open",
+      "symmetric_group_order_log2": 295.9951439417241
+    },
+    {
+      "best_latent_master_scale_log2_lower_bound": 249.13857889695151,
+      "complete_orientation_polar_compiled": false,
+      "constant_graph_condition_and_constant_output_possible": false,
+      "direct_normalized_analyzer_scale_log2": 249.13857889695151,
+      "flat_benchmark_x_min_log2": -498.27715779390303,
+      "information_threshold_copy_count": 501,
+      "master_weight_improves_generic_query_exponent": false,
+      "n": 96,
+      "representation_specific_direct_bypass_open": true,
+      "status": "latent-master-generic-access-no-bypass-direct-structure-open",
+      "symmetric_group_order_log2": 498.27715779390303
+    },
+    {
+      "best_latent_master_scale_log2_lower_bound": 358.080861041811,
+      "complete_orientation_polar_compiled": false,
+      "constant_graph_condition_and_constant_output_possible": false,
+      "direct_normalized_analyzer_scale_log2": 358.080861041811,
+      "flat_benchmark_x_min_log2": -716.161722083622,
+      "information_threshold_copy_count": 719,
+      "master_weight_improves_generic_query_exponent": false,
+      "n": 128,
+      "representation_specific_direct_bypass_open": true,
+      "status": "latent-master-generic-access-no-bypass-direct-structure-open",
+      "symmetric_group_order_log2": 716.161722083622
+    }
+  ],
+  "status": "latent-master-polar-normalization-tradeoff-proved",
+  "summary": "Proved that a latent identity master only redistributes the generic orientation-polar normalization cost between graph filtering and spectral flattening.",
+  "theorem": {
+    "access_model_scope": "applies to flagged identity-plus-normalized-analyzer graph access; does not lower-bound representation-specific direct transforms",
+    "flattening_gain": "q_flat(x)=sqrt(a^2+b^2x)/(b sqrt(x))",
+    "graph_polar": "polar([aI;bC])=[aI;bC](a^2I+b^2X)^(-1/2)",
+    "normalized_analyzer": "C=stack_v(E_v)/sqrt(m), X=C^*C=F/m",
+    "orientation_probability": "p(x)=b^2x/(a^2+b^2x)",
+    "product_identity": "q_graph q_flat(x_min)=sqrt(a^2+b^2)/(b sqrt(x_min)) >=1/sqrt(x_min)",
+    "status": "latent-master-polar-normalization-tradeoff-proved",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "access_model_scope": "applies to flagged identity-plus-normalized-analyzer graph access; does not lower-bound representation-specific direct transforms",
+    "flattening_gain": "q_flat(x)=sqrt(a^2+b^2x)/(b sqrt(x))",
+    "graph_polar": "polar([aI;bC])=[aI;bC](a^2I+b^2X)^(-1/2)",
+    "normalized_analyzer": "C=stack_v(E_v)/sqrt(m), X=C^*C=F/m",
+    "orientation_probability": "p(x)=b^2x/(a^2+b^2x)",
+    "product_identity": "q_graph q_flat(x_min)=sqrt(a^2+b^2)/(b sqrt(x_min)) >=1/sqrt(x_min)",
+    "status": "latent-master-polar-normalization-tradeoff-proved",
+    "theorem_verified": true
+  }
+}

@@ -1,0 +1,412 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Completing the full connected-group QFT automatically diagonalizes the polar.",
+      "resolution": "False for the ordinary Clifford transform: it yields exactly the branch basis in which the cross Gram is F/2^K.",
+      "resolved": true
+    },
+    {
+      "objection": "The Clifford branch orbit removes inverse-width normalization.",
+      "resolution": "False. The uniform B-fixed embedding contributes the explicit 1/2^K factor in equation (4).",
+      "resolved": true
+    },
+    {
+      "objection": "This proves no L-based circuit can work.",
+      "resolution": "Not proved. An L transform augmented by a direct fixed-space CS basis or holonomy network could still implement the polar.",
+      "resolved": true
+    },
+    {
+      "objection": "A-collision-free nonsplit tuples are already proved to have full natural mass.",
+      "resolution": "Equality/conjugate collisions are asymptotically controlled, but self-conjugate split incidence remains an explicit open condition.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "classical_separation_proved": false,
+    "clifford_fixed_space_cross_gram_equals_normalized_orientation_frame": true,
+    "clifford_fixed_space_cross_polar_equals_orientation_polar": true,
+    "complete_natural_orientation_polar_compiled": false,
+    "direct_matrix_cs_polar_compiled": false,
+    "generic_nonsplit_connected_clifford_normal_form_proved": true,
+    "ordinary_connected_group_qft_labels_compile_cs_polar": false,
+    "reason": "Clifford theory gives an efficient-looking branch orbit but its fixed-space overlap is exactly the original normalized orientation frame. The matrix CS normalization remains the whole gate.",
+    "self_conjugate_split_sectors_resolved": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-21T04:52:30.286954+00:00",
+  "falsifiers_triggered": [
+    "An ordinary connected-group Clifford/QFT basis change only exposes the original F/2^K cross Gram.",
+    "The uniform branch orbit retains the inverse-width normalization explicitly.",
+    "This equivalence is not an arbitrary-circuit lower bound; direct CS and holonomy transforms remain open."
+  ],
+  "finite_controls": [
+    {
+      "base_carrier_dimension": 4,
+      "branch_fixed_dimension": 4,
+      "control_id": "S3-ONE-UNEQUAL-PAIR",
+      "cross_gram_identity_residual": 1.1102230246251565e-16,
+      "diagonal_fixed_dimension": 1,
+      "distinct_positive_cross_gram_eigenvalue_count": 1,
+      "exact_clifford_fixed_space_normal_form_verified": true,
+      "frame_rank": 1,
+      "induced_carrier_dimension": 8,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "maximum_branch_fixed_isometry_residual": 2.220446049250313e-16,
+      "maximum_diagonal_projector_residual": 5.551115123125783e-17,
+      "maximum_positive_cross_gram_eigenvalue": 0.4999999999999999,
+      "minimum_positive_cross_gram_eigenvalue": 0.4999999999999999,
+      "n": 3,
+      "normalized_overlap_already_partial_isometry": false,
+      "orientation_count": 2,
+      "polar_orientation_analysis_residual": 1.570092458683775e-16,
+      "status": "exact-clifford-fixed-space-cross-gram-recovers-orientation-frame",
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "base_carrier_dimension": 8,
+      "branch_fixed_dimension": 8,
+      "control_id": "S3-TWO-MIXED-PAIRS",
+      "cross_gram_identity_residual": 0.0,
+      "diagonal_fixed_dimension": 5,
+      "distinct_positive_cross_gram_eigenvalue_count": 3,
+      "exact_clifford_fixed_space_normal_form_verified": true,
+      "frame_rank": 5,
+      "induced_carrier_dimension": 32,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_branch_fixed_isometry_residual": 0.0,
+      "maximum_diagonal_projector_residual": 5.551115123125783e-17,
+      "maximum_positive_cross_gram_eigenvalue": 0.3750000000000001,
+      "minimum_positive_cross_gram_eigenvalue": 0.12499999999999999,
+      "n": 3,
+      "normalized_overlap_already_partial_isometry": false,
+      "orientation_count": 4,
+      "polar_orientation_analysis_residual": 5.620446316584222e-16,
+      "status": "exact-clifford-fixed-space-cross-gram-recovers-orientation-frame",
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "base_carrier_dimension": 54,
+      "branch_fixed_dimension": 54,
+      "control_id": "S4-TWO-UNEQUAL-PAIRS",
+      "cross_gram_identity_residual": 0.0,
+      "diagonal_fixed_dimension": 5,
+      "distinct_positive_cross_gram_eigenvalue_count": 1,
+      "exact_clifford_fixed_space_normal_form_verified": true,
+      "frame_rank": 5,
+      "induced_carrier_dimension": 216,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_branch_fixed_isometry_residual": 0.0,
+      "maximum_diagonal_projector_residual": 1.6265801220755906e-16,
+      "maximum_positive_cross_gram_eigenvalue": 0.25000000000000006,
+      "minimum_positive_cross_gram_eigenvalue": 0.24999999999999992,
+      "n": 4,
+      "normalized_overlap_already_partial_isometry": false,
+      "orientation_count": 4,
+      "polar_orientation_analysis_residual": 3.136493806386679e-15,
+      "status": "exact-clifford-fixed-space-cross-gram-recovers-orientation-frame",
+      "target_partition": [
+        3,
+        1
+      ]
+    }
+  ],
+  "headline_metrics": {
+    "clifford_cross_gram_orientation_frame_identity_count": 1,
+    "clifford_cross_polar_orientation_polar_identity_count": 1,
+    "complete_orientation_polar_compiler_count": 0,
+    "connected_clifford_normal_form_theorem_count": 1,
+    "direct_matrix_cs_polar_compiler_count": 0,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "maximum_cross_gram_residual": 1.1102230246251565e-16,
+    "maximum_cross_polar_residual": 3.136493806386679e-15,
+    "new_quantum_algorithm_count": 0,
+    "nontrivial_normalized_overlap_control_count": 3,
+    "ordinary_clifford_transform_cs_compiler_count": 0,
+    "scaling_record_count": 13
+  },
+  "proof_obligations": [
+    {
+      "obligation": "derive_generic_nonsplit_clifford_induced_carrier",
+      "resolution": "The sign code is the inertia quotient and B acts freely, giving the regular branch-orbit normal form.",
+      "resolved": true
+    },
+    {
+      "obligation": "compute_B_and_D_fixed_spaces_in_clifford_basis",
+      "resolution": "B fixes the uniform branch vector and D is block diagonal with orientation invariant projectors E_e.",
+      "resolved": true
+    },
+    {
+      "obligation": "identify_clifford_fixed_space_cs_polar",
+      "resolution": "Its cross Gram is F/2^K and its exact polar is the original stacked orientation polar in all three controls.",
+      "resolved": true
+    },
+    {
+      "obligation": "compile_matrix_cs_normalization_inside_L_transform",
+      "resolution": "A conventional orbit/stabilizer QFT exposes the two fixed spaces but does not apply the inverse square root of F.",
+      "resolved": false
+    },
+    {
+      "obligation": "handle_self_conjugate_split_A_n_constituents",
+      "resolution": "Odd conjugation swaps split constituents and no natural-tuple absence theorem is assumed.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "branch_orbit_dimension_log2": 9,
+      "copy_count": 9,
+      "induced_branch_basis_polynomial": true,
+      "inertia_sign_code_dimension": 10,
+      "n": 5,
+      "normalized_flat_overlap_singular_amplitude_log2": -3.4534452978042594,
+      "ordinary_clifford_labels_compile_cs_polar": false,
+      "ordinary_clifford_orbit_transform_polynomial_if_a_qft_available": true,
+      "orientation_count_log2": 9,
+      "self_conjugate_tuple_absence_proved": false,
+      "status": "clifford-orbit-basis-exposes-original-frame-cs-polar-open"
+    },
+    {
+      "branch_orbit_dimension_log2": 12,
+      "copy_count": 12,
+      "induced_branch_basis_polynomial": true,
+      "inertia_sign_code_dimension": 13,
+      "n": 6,
+      "normalized_flat_overlap_singular_amplitude_log2": -4.745926548164837,
+      "ordinary_clifford_labels_compile_cs_polar": false,
+      "ordinary_clifford_orbit_transform_polynomial_if_a_qft_available": true,
+      "orientation_count_log2": 12,
+      "self_conjugate_tuple_absence_proved": false,
+      "status": "clifford-orbit-basis-exposes-original-frame-cs-polar-open"
+    },
+    {
+      "branch_orbit_dimension_log2": 18,
+      "copy_count": 18,
+      "induced_branch_basis_polynomial": true,
+      "inertia_sign_code_dimension": 19,
+      "n": 8,
+      "normalized_flat_overlap_singular_amplitude_log2": -7.64960400919364,
+      "ordinary_clifford_labels_compile_cs_polar": false,
+      "ordinary_clifford_orbit_transform_polynomial_if_a_qft_available": true,
+      "orientation_count_log2": 18,
+      "self_conjugate_tuple_absence_proved": false,
+      "status": "clifford-orbit-basis-exposes-original-frame-cs-polar-open"
+    },
+    {
+      "branch_orbit_dimension_log2": 24,
+      "copy_count": 24,
+      "induced_branch_basis_polynomial": true,
+      "inertia_sign_code_dimension": 25,
+      "n": 10,
+      "normalized_flat_overlap_singular_amplitude_log2": -10.895530557358477,
+      "ordinary_clifford_labels_compile_cs_polar": false,
+      "ordinary_clifford_orbit_transform_polynomial_if_a_qft_available": true,
+      "orientation_count_log2": 24,
+      "self_conjugate_tuple_absence_proved": false,
+      "status": "clifford-orbit-basis-exposes-original-frame-cs-polar-open"
+    },
+    {
+      "branch_orbit_dimension_log2": 31,
+      "copy_count": 31,
+      "induced_branch_basis_polynomial": true,
+      "inertia_sign_code_dimension": 32,
+      "n": 12,
+      "normalized_flat_overlap_singular_amplitude_log2": -14.417727617037704,
+      "ordinary_clifford_labels_compile_cs_polar": false,
+      "ordinary_clifford_orbit_transform_polynomial_if_a_qft_available": true,
+      "orientation_count_log2": 31,
+      "self_conjugate_tuple_absence_proved": false,
+      "status": "clifford-orbit-basis-exposes-original-frame-cs-polar-open"
+    },
+    {
+      "branch_orbit_dimension_log2": 47,
+      "copy_count": 47,
+      "induced_branch_basis_polynomial": true,
+      "inertia_sign_code_dimension": 48,
+      "n": 16,
+      "normalized_flat_overlap_singular_amplitude_log2": -22.12507023494131,
+      "ordinary_clifford_labels_compile_cs_polar": false,
+      "ordinary_clifford_orbit_transform_polynomial_if_a_qft_available": true,
+      "orientation_count_log2": 47,
+      "self_conjugate_tuple_absence_proved": false,
+      "status": "clifford-orbit-basis-exposes-original-frame-cs-polar-open"
+    },
+    {
+      "branch_orbit_dimension_log2": 64,
+      "copy_count": 64,
+      "induced_branch_basis_polynomial": true,
+      "inertia_sign_code_dimension": 65,
+      "n": 20,
+      "normalized_flat_overlap_singular_amplitude_log2": -30.53869196045311,
+      "ordinary_clifford_labels_compile_cs_polar": false,
+      "ordinary_clifford_orbit_transform_polynomial_if_a_qft_available": true,
+      "orientation_count_log2": 64,
+      "self_conjugate_tuple_absence_proved": false,
+      "status": "clifford-orbit-basis-exposes-original-frame-cs-polar-open"
+    },
+    {
+      "branch_orbit_dimension_log2": 82,
+      "copy_count": 82,
+      "induced_branch_basis_polynomial": true,
+      "inertia_sign_code_dimension": 83,
+      "n": 24,
+      "normalized_flat_overlap_singular_amplitude_log2": -39.51882870955022,
+      "ordinary_clifford_labels_compile_cs_polar": false,
+      "ordinary_clifford_orbit_transform_polynomial_if_a_qft_available": true,
+      "orientation_count_log2": 82,
+      "self_conjugate_tuple_absence_proved": false,
+      "status": "clifford-orbit-basis-exposes-original-frame-cs-polar-open"
+    },
+    {
+      "branch_orbit_dimension_log2": 120,
+      "copy_count": 120,
+      "induced_branch_basis_polynomial": true,
+      "inertia_sign_code_dimension": 121,
+      "n": 32,
+      "normalized_flat_overlap_singular_amplitude_log2": -58.83163182618015,
+      "ordinary_clifford_labels_compile_cs_polar": false,
+      "ordinary_clifford_orbit_transform_polynomial_if_a_qft_available": true,
+      "orientation_count_log2": 120,
+      "self_conjugate_tuple_absence_proved": false,
+      "status": "clifford-orbit-basis-exposes-original-frame-cs-polar-open"
+    },
+    {
+      "branch_orbit_dimension_log2": 205,
+      "copy_count": 205,
+      "induced_branch_basis_polynomial": true,
+      "inertia_sign_code_dimension": 206,
+      "n": 48,
+      "normalized_flat_overlap_singular_amplitude_log2": -101.47478601485012,
+      "ordinary_clifford_labels_compile_cs_polar": false,
+      "ordinary_clifford_orbit_transform_polynomial_if_a_qft_available": true,
+      "orientation_count_log2": 205,
+      "self_conjugate_tuple_absence_proved": false,
+      "status": "clifford-orbit-basis-exposes-original-frame-cs-polar-open"
+    },
+    {
+      "branch_orbit_dimension_log2": 298,
+      "copy_count": 298,
+      "induced_branch_basis_polynomial": true,
+      "inertia_sign_code_dimension": 299,
+      "n": 64,
+      "normalized_flat_overlap_singular_amplitude_log2": -147.99757197086203,
+      "ordinary_clifford_labels_compile_cs_polar": false,
+      "ordinary_clifford_orbit_transform_polynomial_if_a_qft_available": true,
+      "orientation_count_log2": 298,
+      "self_conjugate_tuple_absence_proved": false,
+      "status": "clifford-orbit-basis-exposes-original-frame-cs-polar-open"
+    },
+    {
+      "branch_orbit_dimension_log2": 501,
+      "copy_count": 501,
+      "induced_branch_basis_polynomial": true,
+      "inertia_sign_code_dimension": 502,
+      "n": 96,
+      "normalized_flat_overlap_singular_amplitude_log2": -249.13857889695151,
+      "ordinary_clifford_labels_compile_cs_polar": false,
+      "ordinary_clifford_orbit_transform_polynomial_if_a_qft_available": true,
+      "orientation_count_log2": 501,
+      "self_conjugate_tuple_absence_proved": false,
+      "status": "clifford-orbit-basis-exposes-original-frame-cs-polar-open"
+    },
+    {
+      "branch_orbit_dimension_log2": 719,
+      "copy_count": 719,
+      "induced_branch_basis_polynomial": true,
+      "inertia_sign_code_dimension": 720,
+      "n": 128,
+      "normalized_flat_overlap_singular_amplitude_log2": -358.0808610418109,
+      "ordinary_clifford_labels_compile_cs_polar": false,
+      "ordinary_clifford_orbit_transform_polynomial_if_a_qft_available": true,
+      "orientation_count_log2": 719,
+      "self_conjugate_tuple_absence_proved": false,
+      "status": "clifford-orbit-basis-exposes-original-frame-cs-polar-open"
+    }
+  ],
+  "status": "connected-clifford-normal-form-reconstructs-orientation-cs-polar-open",
+  "summary": "Derived the generic connected-group Clifford normal form and proved that its B/D fixed-space CS problem is exactly the original orientation polar, closing ordinary full-group QFT completion as a shortcut.",
+  "theorem": {
+    "branch_fixed_space": "Fix_B=|+_B> tensor V_alpha.",
+    "cross_gram": "S_B^*P_DS_B=(1/2^K)sum_e E_e=F/2^K.",
+    "cross_polar": "polar(P_DS_B)=stack_e E_e F^(+/2), the orientation analysis polar.",
+    "diagonal_fixed_space": "P_D=direct_sum_e E_e and Fix_D=direct_sum_e |e> Ran(E_e).",
+    "induced_carrier": "Ind_H^L(alpha_tilde)=direct_sum_(e in B)V_alpha.",
+    "inertia_group": "H=A_n^(2K+1) semidirect C, with C the orientation sign code.",
+    "qft_boundary": "Ordinary Clifford orbit/stabilizer labels reconstruct this cross Gram but do not perform its matrix CS normalization.",
+    "scope": "Split self-conjugate sectors, a direct CS transform, complete orientation polar, classical separation, and speedup remain open.",
+    "sector_condition": "All A_n coordinate constituents are nonsplit and distinct up to odd conjugation.",
+    "status": "connected-clifford-normal-form-reconstructs-orientation-cs-polar-open",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "branch_fixed_space": "Fix_B=|+_B> tensor V_alpha.",
+    "cross_gram": "S_B^*P_DS_B=(1/2^K)sum_e E_e=F/2^K.",
+    "cross_polar": "polar(P_DS_B)=stack_e E_e F^(+/2), the orientation analysis polar.",
+    "diagonal_fixed_space": "P_D=direct_sum_e E_e and Fix_D=direct_sum_e |e> Ran(E_e).",
+    "induced_carrier": "Ind_H^L(alpha_tilde)=direct_sum_(e in B)V_alpha.",
+    "inertia_group": "H=A_n^(2K+1) semidirect C, with C the orientation sign code.",
+    "qft_boundary": "Ordinary Clifford orbit/stabilizer labels reconstruct this cross Gram but do not perform its matrix CS normalization.",
+    "scope": "Split self-conjugate sectors, a direct CS transform, complete orientation polar, classical separation, and speedup remain open.",
+    "sector_condition": "All A_n coordinate constituents are nonsplit and distinct up to odd conjugation.",
+    "status": "connected-clifford-normal-form-reconstructs-orientation-cs-polar-open",
+    "theorem_verified": true
+  }
+}

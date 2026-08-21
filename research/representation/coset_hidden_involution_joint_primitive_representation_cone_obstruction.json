@@ -1,0 +1,408 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False. The obstruction is not entrywise negativity alone; the coordinates are multiplicities of inequivalent irreps, not an existing common physical label register.",
+      "challenge": "Negative matrix entries make every quantum projector unphysical.",
+      "resolved": true
+    },
+    {
+      "answer": "False. The trivial S_(2m) representation has a nonzero signed residual at every rank but zero repeated-copy dimension.",
+      "challenge": "A nonzero primitive residual measures missing copy mass.",
+      "resolved": true
+    },
+    {
+      "answer": "False. It invalidates one coefficient-space shortcut and leaves within-mu commutant and full non-equivariant subduction routes open.",
+      "challenge": "This proves hyperoctahedral subduction is hard.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "full_nonequivariant_subduction_route_remains_open": true,
+    "hidden_involution_detector_constructed": false,
+    "joint_primitive_projector_exact_on_coefficient_space": true,
+    "joint_primitive_projector_preserves_representation_cone": false,
+    "physical_joint_primitive_measurement_compiled": false,
+    "primitive_residual_is_physical_source_mass": false,
+    "reason": "The exact primitive projector acts on multiplicity coefficients; an all-rank trivial-representation witness gives a signed residual without any physical repeated copy.",
+    "speedup_claim_allowed": false,
+    "within_mu_commutant_route_remains_open": true
+  },
+  "created_at": "2026-08-21T13:08:04.034954+00:00",
+  "falsifiers_triggered": [
+    "Nonzero joint-primitive coefficient residual does not imply a repeated branching copy.",
+    "Primitive coefficient norm cannot be interpreted as physical hidden-source mass.",
+    "Sparse partition-label reflection does not by itself compile hyperoctahedral subduction."
+  ],
+  "headline_metrics": {
+    "all_rank_symbolic_lemma_count": 2,
+    "exact_hook_control_count": 8,
+    "exact_physical_restriction_counterexample_count": 7,
+    "minimum_counterexample_half_degree": 2,
+    "physical_missing_copy_dimension_in_counterfamily": 0,
+    "physical_primitive_measurement_count": 0
+  },
+  "hook_controls": [
+    {
+      "adjacent_coefficient_is_negative_diagonal": true,
+      "adjacent_hook_projector_coefficient": "-1/2",
+      "all_rank_proof_instantiated": true,
+      "alternating_hook_in_down_kernel": true,
+      "alternating_hook_support_size": 2,
+      "partition_count": 2,
+      "projector_preserves_nonnegative_cone": false,
+      "rank": 2,
+      "status": "Young-primitive-projector-leaves-representation-cone",
+      "top_cover_sum_in_up_image": true,
+      "top_projector_diagonal": "1/2"
+    },
+    {
+      "adjacent_coefficient_is_negative_diagonal": true,
+      "adjacent_hook_projector_coefficient": "-1/3",
+      "all_rank_proof_instantiated": true,
+      "alternating_hook_in_down_kernel": true,
+      "alternating_hook_support_size": 3,
+      "partition_count": 3,
+      "projector_preserves_nonnegative_cone": false,
+      "rank": 3,
+      "status": "Young-primitive-projector-leaves-representation-cone",
+      "top_cover_sum_in_up_image": true,
+      "top_projector_diagonal": "1/3"
+    },
+    {
+      "adjacent_coefficient_is_negative_diagonal": true,
+      "adjacent_hook_projector_coefficient": "-3/8",
+      "all_rank_proof_instantiated": true,
+      "alternating_hook_in_down_kernel": true,
+      "alternating_hook_support_size": 4,
+      "partition_count": 5,
+      "projector_preserves_nonnegative_cone": false,
+      "rank": 4,
+      "status": "Young-primitive-projector-leaves-representation-cone",
+      "top_cover_sum_in_up_image": true,
+      "top_projector_diagonal": "3/8"
+    },
+    {
+      "adjacent_coefficient_is_negative_diagonal": true,
+      "adjacent_hook_projector_coefficient": "-11/30",
+      "all_rank_proof_instantiated": true,
+      "alternating_hook_in_down_kernel": true,
+      "alternating_hook_support_size": 5,
+      "partition_count": 7,
+      "projector_preserves_nonnegative_cone": false,
+      "rank": 5,
+      "status": "Young-primitive-projector-leaves-representation-cone",
+      "top_cover_sum_in_up_image": true,
+      "top_projector_diagonal": "11/30"
+    },
+    {
+      "adjacent_coefficient_is_negative_diagonal": true,
+      "adjacent_hook_projector_coefficient": "-53/144",
+      "all_rank_proof_instantiated": true,
+      "alternating_hook_in_down_kernel": true,
+      "alternating_hook_support_size": 6,
+      "partition_count": 11,
+      "projector_preserves_nonnegative_cone": false,
+      "rank": 6,
+      "status": "Young-primitive-projector-leaves-representation-cone",
+      "top_cover_sum_in_up_image": true,
+      "top_projector_diagonal": "53/144"
+    },
+    {
+      "adjacent_coefficient_is_negative_diagonal": true,
+      "adjacent_hook_projector_coefficient": "-103/280",
+      "all_rank_proof_instantiated": true,
+      "alternating_hook_in_down_kernel": true,
+      "alternating_hook_support_size": 7,
+      "partition_count": 15,
+      "projector_preserves_nonnegative_cone": false,
+      "rank": 7,
+      "status": "Young-primitive-projector-leaves-representation-cone",
+      "top_cover_sum_in_up_image": true,
+      "top_projector_diagonal": "103/280"
+    },
+    {
+      "adjacent_coefficient_is_negative_diagonal": true,
+      "adjacent_hook_projector_coefficient": "-2119/5760",
+      "all_rank_proof_instantiated": true,
+      "alternating_hook_in_down_kernel": true,
+      "alternating_hook_support_size": 8,
+      "partition_count": 22,
+      "projector_preserves_nonnegative_cone": false,
+      "rank": 8,
+      "status": "Young-primitive-projector-leaves-representation-cone",
+      "top_cover_sum_in_up_image": true,
+      "top_projector_diagonal": "2119/5760"
+    },
+    {
+      "adjacent_coefficient_is_negative_diagonal": true,
+      "adjacent_hook_projector_coefficient": "-16687/45360",
+      "all_rank_proof_instantiated": true,
+      "alternating_hook_in_down_kernel": true,
+      "alternating_hook_support_size": 9,
+      "partition_count": 30,
+      "projector_preserves_nonnegative_cone": false,
+      "rank": 9,
+      "status": "Young-primitive-projector-leaves-representation-cone",
+      "top_cover_sum_in_up_image": true,
+      "top_projector_diagonal": "16687/45360"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-JOINT-PRIMITIVE-WITHIN-MU-PHYSICAL-GENERATORS",
+      "resolved": false,
+      "statement": "Replace coefficient-space harmonics by explicit K-commutant operators acting on C^b(lambda,mu), with natural-mass gap bounds."
+    },
+    {
+      "id": "PO-JOINT-PRIMITIVE-SUBDUCTION-ISOMETRY-INDEPENDENCE",
+      "resolved": false,
+      "statement": "Any non-equivariant label mixing must provide carrier and copy isometries independently, without assuming multiplicity tables are amplitudes."
+    }
+  ],
+  "status": "joint-primitive-coefficient-projector-diagnostic-only",
+  "summary": "Proved that the paired-tower primitive projector is a recurrence diagnostic, not a physical missing-copy projector or source-mass observable.",
+  "theorem": {
+    "all_rank_negative_entry": "For n>=2, P_n[(n-1,1),(n)]=-P_n[(n),(n)]<0, proved by the top cover relation and the alternating-hook kernel vector.",
+    "all_rank_negative_projector_entry_proved": true,
+    "alternating_hook_kernel_proved": true,
+    "coefficient_space": "The recurrence kernel lives in the Euclidean vector space of multiplicity tables, not in Res_K V_lambda.",
+    "full_nonequivariant_subduction_route_obstructed": false,
+    "hidden_involution_detector_constructed": false,
+    "joint_projector_preserves_representation_cone": false,
+    "nonzero_primitive_residual_implies_physical_missing_copy": false,
+    "physical_counterexample": "Res_(K_m) 1_(S_2m)=1_(K_m), but its nonzero joint-primitive coefficient residual is signed for every m>=2 and no copy repeats.",
+    "polynomial_query_label_reflection_is_physical_measurement": false,
+    "primitive_coefficient_norm_is_physical_source_mass": false,
+    "source_mass_boundary": "Euclidean norm of a projected multiplicity table is not Hilbert-space source mass and cannot certify a measurable primitive sector.",
+    "speedup_claim_allowed": false,
+    "status": "joint-primitive-coefficient-projector-diagnostic-only",
+    "surviving_use": "The projector remains an exact recurrence-information diagnostic; physical work must use within-mu commutant operators or an independently compiled full subduction isometry.",
+    "theorem_verified": true,
+    "within_mu_commutant_route_obstructed": false
+  },
+  "theorem_contract": {
+    "claim_boundary": "Rules out that interpretation; does not rule out arbitrary non-K-equivariant circuits or within-mu commutant generators.",
+    "input": "Hyperoctahedral branching multiplicity vectors b(lambda,mu)",
+    "operator": "Paired Young-lattice joint primitive coefficient projector",
+    "physical_question": "Whether its image is a K-stable summand or source-weighted missing-copy space"
+  },
+  "trivial_restriction_controls": [
+    {
+      "bipartition_count": 5,
+      "branching_vector_is_single_trivial_irrep": true,
+      "half_degree": 2,
+      "maximum_branching_multiplicity": 1,
+      "negative_residual_coefficient": "-1/2",
+      "negative_residual_label": [
+        [
+          1,
+          1
+        ],
+        []
+      ],
+      "occupied_branch_count": 1,
+      "physical_missing_copy_dimension": 0,
+      "primitive_residual_has_negative_coefficient": true,
+      "primitive_residual_is_nonnegative_integral_branching_vector": false,
+      "primitive_residual_nonzero": true,
+      "primitive_residual_squared_norm": "1/2",
+      "repeated_branch_count": 0,
+      "status": "nonzero-primitive-residual-with-no-physical-missing-copy",
+      "symmetric_partition": [
+        4
+      ],
+      "trivial_branch_label": [
+        [
+          2
+        ],
+        []
+      ]
+    },
+    {
+      "bipartition_count": 10,
+      "branching_vector_is_single_trivial_irrep": true,
+      "half_degree": 3,
+      "maximum_branching_multiplicity": 1,
+      "negative_residual_coefficient": "-1/3",
+      "negative_residual_label": [
+        [
+          2,
+          1
+        ],
+        []
+      ],
+      "occupied_branch_count": 1,
+      "physical_missing_copy_dimension": 0,
+      "primitive_residual_has_negative_coefficient": true,
+      "primitive_residual_is_nonnegative_integral_branching_vector": false,
+      "primitive_residual_nonzero": true,
+      "primitive_residual_squared_norm": "1/3",
+      "repeated_branch_count": 0,
+      "status": "nonzero-primitive-residual-with-no-physical-missing-copy",
+      "symmetric_partition": [
+        6
+      ],
+      "trivial_branch_label": [
+        [
+          3
+        ],
+        []
+      ]
+    },
+    {
+      "bipartition_count": 20,
+      "branching_vector_is_single_trivial_irrep": true,
+      "half_degree": 4,
+      "maximum_branching_multiplicity": 1,
+      "negative_residual_coefficient": "-3/8",
+      "negative_residual_label": [
+        [
+          3,
+          1
+        ],
+        []
+      ],
+      "occupied_branch_count": 1,
+      "physical_missing_copy_dimension": 0,
+      "primitive_residual_has_negative_coefficient": true,
+      "primitive_residual_is_nonnegative_integral_branching_vector": false,
+      "primitive_residual_nonzero": true,
+      "primitive_residual_squared_norm": "3/8",
+      "repeated_branch_count": 0,
+      "status": "nonzero-primitive-residual-with-no-physical-missing-copy",
+      "symmetric_partition": [
+        8
+      ],
+      "trivial_branch_label": [
+        [
+          4
+        ],
+        []
+      ]
+    },
+    {
+      "bipartition_count": 36,
+      "branching_vector_is_single_trivial_irrep": true,
+      "half_degree": 5,
+      "maximum_branching_multiplicity": 1,
+      "negative_residual_coefficient": "-11/30",
+      "negative_residual_label": [
+        [
+          4,
+          1
+        ],
+        []
+      ],
+      "occupied_branch_count": 1,
+      "physical_missing_copy_dimension": 0,
+      "primitive_residual_has_negative_coefficient": true,
+      "primitive_residual_is_nonnegative_integral_branching_vector": false,
+      "primitive_residual_nonzero": true,
+      "primitive_residual_squared_norm": "11/30",
+      "repeated_branch_count": 0,
+      "status": "nonzero-primitive-residual-with-no-physical-missing-copy",
+      "symmetric_partition": [
+        10
+      ],
+      "trivial_branch_label": [
+        [
+          5
+        ],
+        []
+      ]
+    },
+    {
+      "bipartition_count": 65,
+      "branching_vector_is_single_trivial_irrep": true,
+      "half_degree": 6,
+      "maximum_branching_multiplicity": 1,
+      "negative_residual_coefficient": "-53/144",
+      "negative_residual_label": [
+        [
+          5,
+          1
+        ],
+        []
+      ],
+      "occupied_branch_count": 1,
+      "physical_missing_copy_dimension": 0,
+      "primitive_residual_has_negative_coefficient": true,
+      "primitive_residual_is_nonnegative_integral_branching_vector": false,
+      "primitive_residual_nonzero": true,
+      "primitive_residual_squared_norm": "53/144",
+      "repeated_branch_count": 0,
+      "status": "nonzero-primitive-residual-with-no-physical-missing-copy",
+      "symmetric_partition": [
+        12
+      ],
+      "trivial_branch_label": [
+        [
+          6
+        ],
+        []
+      ]
+    },
+    {
+      "bipartition_count": 110,
+      "branching_vector_is_single_trivial_irrep": true,
+      "half_degree": 7,
+      "maximum_branching_multiplicity": 1,
+      "negative_residual_coefficient": "-103/280",
+      "negative_residual_label": [
+        [
+          6,
+          1
+        ],
+        []
+      ],
+      "occupied_branch_count": 1,
+      "physical_missing_copy_dimension": 0,
+      "primitive_residual_has_negative_coefficient": true,
+      "primitive_residual_is_nonnegative_integral_branching_vector": false,
+      "primitive_residual_nonzero": true,
+      "primitive_residual_squared_norm": "103/280",
+      "repeated_branch_count": 0,
+      "status": "nonzero-primitive-residual-with-no-physical-missing-copy",
+      "symmetric_partition": [
+        14
+      ],
+      "trivial_branch_label": [
+        [
+          7
+        ],
+        []
+      ]
+    },
+    {
+      "bipartition_count": 185,
+      "branching_vector_is_single_trivial_irrep": true,
+      "half_degree": 8,
+      "maximum_branching_multiplicity": 1,
+      "negative_residual_coefficient": "-2119/5760",
+      "negative_residual_label": [
+        [
+          7,
+          1
+        ],
+        []
+      ],
+      "occupied_branch_count": 1,
+      "physical_missing_copy_dimension": 0,
+      "primitive_residual_has_negative_coefficient": true,
+      "primitive_residual_is_nonnegative_integral_branching_vector": false,
+      "primitive_residual_nonzero": true,
+      "primitive_residual_squared_norm": "2119/5760",
+      "repeated_branch_count": 0,
+      "status": "nonzero-primitive-residual-with-no-physical-missing-copy",
+      "symmetric_partition": [
+        16
+      ],
+      "trivial_branch_label": [
+        [
+          8
+        ],
+        []
+      ]
+    }
+  ]
+}

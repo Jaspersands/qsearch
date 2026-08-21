@@ -1,0 +1,469 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A different local gauge can make noncommon edges flat.",
+      "resolution": "Local gauges cancel from B_v^*Q_vB_v and B_u^*P_uB_u; the unequal endpoint metrics are gauge invariant.",
+      "resolved": true
+    },
+    {
+      "objection": "A good sheaf-Laplacian gap would fix the mismatch.",
+      "resolution": "A gap only projects onto the specified kernel. The canonical polar range is not in that kernel on a noncommon edge.",
+      "resolved": true
+    },
+    {
+      "objection": "Pair GPE is therefore useless.",
+      "resolution": "False. It still gives exact local reassociation and may enter a weighted, higher-arity, or direct CS construction.",
+      "resolved": true
+    },
+    {
+      "objection": "This proves all holonomy architectures impossible.",
+      "resolution": "No. The theorem rejects unweighted pair-equality gluing with noncommon channels, not operator metrics or latent variables.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_partial_holonomy_architectures_rejected": false,
+    "classical_separation_proved": false,
+    "common_pair_channels_unweighted_compatible": true,
+    "complete_natural_orientation_polar_compiled": false,
+    "endpoint_metric_obstruction_vertex_gauge_invariant": true,
+    "noncommon_pair_gpe_edges_unweighted_compatible": false,
+    "operator_metric_or_higher_relation_compiler_proved": false,
+    "pair_edge_endpoint_metric_equality_necessary": true,
+    "reason": "Noncommon pair-polars align principal vectors but impose unequal canonical endpoint metrics, so the current unweighted sheaf projects onto the wrong section space.",
+    "speedup_claim_allowed": false,
+    "unweighted_noncommon_pair_sheaf_compiles_global_polar": false
+  },
+  "created_at": "2026-08-21T05:04:53.106560+00:00",
+  "falsifiers_triggered": [
+    "Exact pair transport does not imply that global-polar coordinates satisfy an edge equality.",
+    "Vertex-local output gauges cannot repair unequal pulled-back endpoint metrics.",
+    "A sheaf gap for the unweighted pair connection would efficiently project onto the wrong subspace."
+  ],
+  "finite_controls": [
+    {
+      "active_pair_channel_rank": 2,
+      "canonical_section_residual": 1.4142135623730974,
+      "common_channel_compatibility_verified": true,
+      "common_pair_channel_rank": 0,
+      "control_id": "S4-CORRELATION-ONE-HALF",
+      "endpoint_metric_difference_norm": 1.000000000000003,
+      "endpoint_metric_identity_residual": 7.347623318621807e-16,
+      "exact_metric_obstruction_verified": true,
+      "frame_rank": 11,
+      "initial_final_projection_distance": 0.866025403784439,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "maximum_active_principal_correlation": 0.49999999999999994,
+      "minimum_active_principal_correlation": 0.49999999999999983,
+      "n": 4,
+      "noncommon_channel_incompatibility_verified": true,
+      "noncommon_pair_channel_rank": 2,
+      "right_orientation_mask": 3,
+      "status": "noncommon-pair-polar-unweighted-sheaf-incompatible",
+      "target_partition": [
+        2,
+        2
+      ]
+    },
+    {
+      "active_pair_channel_rank": 3,
+      "canonical_section_residual": 1.4142135623730956,
+      "common_channel_compatibility_verified": true,
+      "common_pair_channel_rank": 0,
+      "control_id": "S4-CORRELATION-ONE-THIRD",
+      "endpoint_metric_difference_norm": 1.0000000000000004,
+      "endpoint_metric_identity_residual": 7.490279084658943e-16,
+      "exact_metric_obstruction_verified": true,
+      "frame_rank": 11,
+      "initial_final_projection_distance": 0.9428090415820637,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 1,
+      "maximum_active_principal_correlation": 0.33333333333333326,
+      "minimum_active_principal_correlation": 0.33333333333333315,
+      "n": 4,
+      "noncommon_channel_incompatibility_verified": true,
+      "noncommon_pair_channel_rank": 3,
+      "right_orientation_mask": 2,
+      "status": "noncommon-pair-polar-unweighted-sheaf-incompatible",
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "active_pair_channel_rank": 4,
+      "canonical_section_residual": 1.414213562373096,
+      "common_channel_compatibility_verified": true,
+      "common_pair_channel_rank": 0,
+      "control_id": "S5-CORRELATION-ONE-QUARTER",
+      "endpoint_metric_difference_norm": 1.0000000000000004,
+      "endpoint_metric_identity_residual": 1.0342981103583513e-15,
+      "exact_metric_obstruction_verified": true,
+      "frame_rank": 9,
+      "initial_final_projection_distance": 0.9682458365518549,
+      "labels": [
+        [
+          [
+            5
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 0,
+      "maximum_active_principal_correlation": 0.25000000000000017,
+      "minimum_active_principal_correlation": 0.24999999999999964,
+      "n": 5,
+      "noncommon_channel_incompatibility_verified": true,
+      "noncommon_pair_channel_rank": 4,
+      "right_orientation_mask": 3,
+      "status": "noncommon-pair-polar-unweighted-sheaf-incompatible",
+      "target_partition": [
+        2,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "active_pair_channel_rank": 1,
+      "canonical_section_residual": 3.3921808999604186e-16,
+      "common_channel_compatibility_verified": true,
+      "common_pair_channel_rank": 1,
+      "control_id": "S4-COMMON-CHANNEL-CONTROL",
+      "endpoint_metric_difference_norm": 2.5422059755888813e-16,
+      "endpoint_metric_identity_residual": 5.738492932907696e-16,
+      "exact_metric_obstruction_verified": true,
+      "frame_rank": 9,
+      "initial_final_projection_distance": 6.008812785290872e-16,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "left_orientation_mask": 1,
+      "maximum_active_principal_correlation": 0.9999999999999999,
+      "minimum_active_principal_correlation": 0.9999999999999999,
+      "n": 4,
+      "noncommon_channel_incompatibility_verified": true,
+      "noncommon_pair_channel_rank": 0,
+      "right_orientation_mask": 2,
+      "status": "common-channel-unweighted-gluing-compatible",
+      "target_partition": [
+        1,
+        1,
+        1,
+        1
+      ]
+    }
+  ],
+  "headline_metrics": {
+    "common_pair_compatibility_control_count": 1,
+    "complete_orientation_polar_compiler_count": 0,
+    "finite_control_count": 4,
+    "finite_control_failure_count": 0,
+    "maximum_endpoint_metric_identity_residual": 1.0342981103583513e-15,
+    "minimum_noncommon_canonical_section_residual": 1.4142135623730956,
+    "minimum_noncommon_endpoint_metric_obstruction": 1.0000000000000004,
+    "new_quantum_algorithm_count": 0,
+    "noncommon_pair_incompatibility_control_count": 3,
+    "operator_metric_or_higher_relation_compiler_count": 0,
+    "pair_edge_metric_necessity_theorem_count": 1,
+    "scaling_record_count": 13
+  },
+  "proof_obligations": [
+    {
+      "obligation": "derive_pair_edge_endpoint_metric_necessity",
+      "resolution": "Taking adjoint products of the sheaf edge equation gives equality of the two pulled-back active endpoint effects.",
+      "resolved": true
+    },
+    {
+      "obligation": "test_canonical_orientation_polar_against_pair_edges",
+      "resolution": "Injectivity of F^(+/2) on support reduces compatibility to P=Q; three noncommon physical controls fail and one common control passes exactly.",
+      "resolved": true
+    },
+    {
+      "obligation": "construct_metric_weighted_or_higher_relation_resolver",
+      "resolution": "A replacement must reproduce the canonical coordinate effects without assuming one vertex coordinate determines another.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_direct_rectangular_cs_polar",
+      "resolution": "No normalization-one singular-vector pairing is supplied.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "common_edges_cover_complete_natural_frame_proved": false,
+      "complete_orientation_polar_compiled": false,
+      "endpoint_metric_equality_necessary": true,
+      "information_threshold_copy_count": 9,
+      "n": 5,
+      "noncommon_pair_edges_compile_global_polar": false,
+      "operator_metric_or_higher_relation_compiler_proved": false,
+      "orientation_vertex_count_log2": 9,
+      "pair_gpe_noncommon_transport_polynomial": true,
+      "status": "unweighted-noncommon-pair-sheaf-rejected-weighted-or-higher-relations-open",
+      "vertex_local_gauge_can_repair_metric_mismatch": false
+    },
+    {
+      "common_edges_cover_complete_natural_frame_proved": false,
+      "complete_orientation_polar_compiled": false,
+      "endpoint_metric_equality_necessary": true,
+      "information_threshold_copy_count": 12,
+      "n": 6,
+      "noncommon_pair_edges_compile_global_polar": false,
+      "operator_metric_or_higher_relation_compiler_proved": false,
+      "orientation_vertex_count_log2": 12,
+      "pair_gpe_noncommon_transport_polynomial": true,
+      "status": "unweighted-noncommon-pair-sheaf-rejected-weighted-or-higher-relations-open",
+      "vertex_local_gauge_can_repair_metric_mismatch": false
+    },
+    {
+      "common_edges_cover_complete_natural_frame_proved": false,
+      "complete_orientation_polar_compiled": false,
+      "endpoint_metric_equality_necessary": true,
+      "information_threshold_copy_count": 18,
+      "n": 8,
+      "noncommon_pair_edges_compile_global_polar": false,
+      "operator_metric_or_higher_relation_compiler_proved": false,
+      "orientation_vertex_count_log2": 18,
+      "pair_gpe_noncommon_transport_polynomial": true,
+      "status": "unweighted-noncommon-pair-sheaf-rejected-weighted-or-higher-relations-open",
+      "vertex_local_gauge_can_repair_metric_mismatch": false
+    },
+    {
+      "common_edges_cover_complete_natural_frame_proved": false,
+      "complete_orientation_polar_compiled": false,
+      "endpoint_metric_equality_necessary": true,
+      "information_threshold_copy_count": 24,
+      "n": 10,
+      "noncommon_pair_edges_compile_global_polar": false,
+      "operator_metric_or_higher_relation_compiler_proved": false,
+      "orientation_vertex_count_log2": 24,
+      "pair_gpe_noncommon_transport_polynomial": true,
+      "status": "unweighted-noncommon-pair-sheaf-rejected-weighted-or-higher-relations-open",
+      "vertex_local_gauge_can_repair_metric_mismatch": false
+    },
+    {
+      "common_edges_cover_complete_natural_frame_proved": false,
+      "complete_orientation_polar_compiled": false,
+      "endpoint_metric_equality_necessary": true,
+      "information_threshold_copy_count": 31,
+      "n": 12,
+      "noncommon_pair_edges_compile_global_polar": false,
+      "operator_metric_or_higher_relation_compiler_proved": false,
+      "orientation_vertex_count_log2": 31,
+      "pair_gpe_noncommon_transport_polynomial": true,
+      "status": "unweighted-noncommon-pair-sheaf-rejected-weighted-or-higher-relations-open",
+      "vertex_local_gauge_can_repair_metric_mismatch": false
+    },
+    {
+      "common_edges_cover_complete_natural_frame_proved": false,
+      "complete_orientation_polar_compiled": false,
+      "endpoint_metric_equality_necessary": true,
+      "information_threshold_copy_count": 47,
+      "n": 16,
+      "noncommon_pair_edges_compile_global_polar": false,
+      "operator_metric_or_higher_relation_compiler_proved": false,
+      "orientation_vertex_count_log2": 47,
+      "pair_gpe_noncommon_transport_polynomial": true,
+      "status": "unweighted-noncommon-pair-sheaf-rejected-weighted-or-higher-relations-open",
+      "vertex_local_gauge_can_repair_metric_mismatch": false
+    },
+    {
+      "common_edges_cover_complete_natural_frame_proved": false,
+      "complete_orientation_polar_compiled": false,
+      "endpoint_metric_equality_necessary": true,
+      "information_threshold_copy_count": 64,
+      "n": 20,
+      "noncommon_pair_edges_compile_global_polar": false,
+      "operator_metric_or_higher_relation_compiler_proved": false,
+      "orientation_vertex_count_log2": 64,
+      "pair_gpe_noncommon_transport_polynomial": true,
+      "status": "unweighted-noncommon-pair-sheaf-rejected-weighted-or-higher-relations-open",
+      "vertex_local_gauge_can_repair_metric_mismatch": false
+    },
+    {
+      "common_edges_cover_complete_natural_frame_proved": false,
+      "complete_orientation_polar_compiled": false,
+      "endpoint_metric_equality_necessary": true,
+      "information_threshold_copy_count": 82,
+      "n": 24,
+      "noncommon_pair_edges_compile_global_polar": false,
+      "operator_metric_or_higher_relation_compiler_proved": false,
+      "orientation_vertex_count_log2": 82,
+      "pair_gpe_noncommon_transport_polynomial": true,
+      "status": "unweighted-noncommon-pair-sheaf-rejected-weighted-or-higher-relations-open",
+      "vertex_local_gauge_can_repair_metric_mismatch": false
+    },
+    {
+      "common_edges_cover_complete_natural_frame_proved": false,
+      "complete_orientation_polar_compiled": false,
+      "endpoint_metric_equality_necessary": true,
+      "information_threshold_copy_count": 120,
+      "n": 32,
+      "noncommon_pair_edges_compile_global_polar": false,
+      "operator_metric_or_higher_relation_compiler_proved": false,
+      "orientation_vertex_count_log2": 120,
+      "pair_gpe_noncommon_transport_polynomial": true,
+      "status": "unweighted-noncommon-pair-sheaf-rejected-weighted-or-higher-relations-open",
+      "vertex_local_gauge_can_repair_metric_mismatch": false
+    },
+    {
+      "common_edges_cover_complete_natural_frame_proved": false,
+      "complete_orientation_polar_compiled": false,
+      "endpoint_metric_equality_necessary": true,
+      "information_threshold_copy_count": 205,
+      "n": 48,
+      "noncommon_pair_edges_compile_global_polar": false,
+      "operator_metric_or_higher_relation_compiler_proved": false,
+      "orientation_vertex_count_log2": 205,
+      "pair_gpe_noncommon_transport_polynomial": true,
+      "status": "unweighted-noncommon-pair-sheaf-rejected-weighted-or-higher-relations-open",
+      "vertex_local_gauge_can_repair_metric_mismatch": false
+    },
+    {
+      "common_edges_cover_complete_natural_frame_proved": false,
+      "complete_orientation_polar_compiled": false,
+      "endpoint_metric_equality_necessary": true,
+      "information_threshold_copy_count": 298,
+      "n": 64,
+      "noncommon_pair_edges_compile_global_polar": false,
+      "operator_metric_or_higher_relation_compiler_proved": false,
+      "orientation_vertex_count_log2": 298,
+      "pair_gpe_noncommon_transport_polynomial": true,
+      "status": "unweighted-noncommon-pair-sheaf-rejected-weighted-or-higher-relations-open",
+      "vertex_local_gauge_can_repair_metric_mismatch": false
+    },
+    {
+      "common_edges_cover_complete_natural_frame_proved": false,
+      "complete_orientation_polar_compiled": false,
+      "endpoint_metric_equality_necessary": true,
+      "information_threshold_copy_count": 501,
+      "n": 96,
+      "noncommon_pair_edges_compile_global_polar": false,
+      "operator_metric_or_higher_relation_compiler_proved": false,
+      "orientation_vertex_count_log2": 501,
+      "pair_gpe_noncommon_transport_polynomial": true,
+      "status": "unweighted-noncommon-pair-sheaf-rejected-weighted-or-higher-relations-open",
+      "vertex_local_gauge_can_repair_metric_mismatch": false
+    },
+    {
+      "common_edges_cover_complete_natural_frame_proved": false,
+      "complete_orientation_polar_compiled": false,
+      "endpoint_metric_equality_necessary": true,
+      "information_threshold_copy_count": 719,
+      "n": 128,
+      "noncommon_pair_edges_compile_global_polar": false,
+      "operator_metric_or_higher_relation_compiler_proved": false,
+      "orientation_vertex_count_log2": 719,
+      "pair_gpe_noncommon_transport_polynomial": true,
+      "status": "unweighted-noncommon-pair-sheaf-rejected-weighted-or-higher-relations-open",
+      "vertex_local_gauge_can_repair_metric_mismatch": false
+    }
+  ],
+  "status": "noncommon-pair-polar-unweighted-sheaf-no-go",
+  "summary": "Rejected unweighted noncommon pair-polar gluing as a global orientation-polar architecture and isolated weighted or higher-arity relations as the surviving holonomy route.",
+  "theorem": {
+    "canonical_coordinate_maps": "W_v=E_v F^(+/2), F=sum_v E_v",
+    "edge_gluing_condition": "Q W_v=U P W_u for U=polar(E_vE_u)",
+    "endpoint_metric_necessity": "edge gluing implies W_u^*P W_u=W_v^*Q W_v",
+    "gauge_invariance": "vertex-local output isometries conjugate edge supports but leave the pulled-back endpoint metrics unchanged",
+    "injective_support_consequence": "F^(+/2)(P-Q)F^(+/2)=0 iff P=Q on supp(F)",
+    "status": "noncommon-pair-polar-unweighted-sheaf-no-go",
+    "surviving_architectures": "operator-valued endpoint metrics, latent master fibers, higher-arity relations, and direct rectangular CS transforms remain open",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "canonical_coordinate_maps": "W_v=E_v F^(+/2), F=sum_v E_v",
+    "edge_gluing_condition": "Q W_v=U P W_u for U=polar(E_vE_u)",
+    "endpoint_metric_necessity": "edge gluing implies W_u^*P W_u=W_v^*Q W_v",
+    "gauge_invariance": "vertex-local output isometries conjugate edge supports but leave the pulled-back endpoint metrics unchanged",
+    "injective_support_consequence": "F^(+/2)(P-Q)F^(+/2)=0 iff P=Q on supp(F)",
+    "status": "noncommon-pair-polar-unweighted-sheaf-no-go",
+    "surviving_architectures": "operator-valued endpoint metrics, latent master fibers, higher-arity relations, and direct rectangular CS transforms remain open",
+    "theorem_verified": true
+  }
+}

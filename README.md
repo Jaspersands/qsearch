@@ -162,6 +162,7 @@ python qsearch.py dcp-subset-sum-low-bit-bdd
 python qsearch.py dcp-subset-sum-conditioned-quotient
 python qsearch.py dcp-subset-sum-carry-slice-lattice
 python qsearch.py dcp-carry-high-part
+python qsearch.py dcp-carry-affine-degree-invariance
 python qsearch.py dcp-boolean-coset-separation
 python qsearch.py dcp-marker-list-decoder
 python qsearch.py dcp-marker-deviations
@@ -5158,6 +5159,327 @@ Evaluate Self Dual Wreath Tetrahedral Collision Growth Scale theorem contract an
 python3 qsearch.py self-dual-wreath-tetrahedral-dimension-trim
 ```
 Evaluate Self Dual Wreath Tetrahedral Dimension Trim theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-all-copy-target-lcu-no-go
+```
+Evaluate Coset Hidden Involution All Copy Target Lcu No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-bounded-support-commutant-generation
+```
+Evaluate Coset Hidden Involution Bounded Support Commutant Generation theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-colour-resolved-paired-tower-boundary
+```
+Evaluate Coset Hidden Involution Colour Resolved Paired Tower Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-commutant-support-growth-boundary
+```
+Evaluate Coset Hidden Involution Commutant Support Growth Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-commuting-square-recoupling-boundary
+```
+Evaluate Coset Hidden Involution Commuting Square Recoupling Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-cross-transposition-hecke-degree-five-no-go
+```
+Evaluate Coset Hidden Involution Cross Transposition Hecke Degree Five No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-cross-transposition-hecke-moment-no-go
+```
+Evaluate Coset Hidden Involution Cross Transposition Hecke Moment No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-diagonal-charge-bias-no-go
+```
+Evaluate Coset Hidden Involution Diagonal Charge Bias No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-double-coset-polar-reduction
+```
+Evaluate Coset Hidden Involution Double Coset Polar Reduction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-hyperoctahedral-branching-mass
+```
+Evaluate Coset Hidden Involution Hyperoctahedral Branching Mass theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-joint-primitive-ambient-lift-obstruction
+```
+Evaluate Coset Hidden Involution Joint Primitive Ambient Lift Obstruction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-joint-primitive-representation-cone-obstruction
+```
+Evaluate Coset Hidden Involution Joint Primitive Representation Cone Obstruction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-matching-charge-coherent-label-compiler
+```
+Evaluate Coset Hidden Involution Matching Charge Coherent Label Compiler theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-matching-charge-conditional-diameter
+```
+Evaluate Coset Hidden Involution Matching Charge Conditional Diameter theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-matching-charge-cs-correlation
+```
+Evaluate Coset Hidden Involution Matching Charge Cs Correlation theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-matching-charge-natural-independence
+```
+Evaluate Coset Hidden Involution Matching Charge Natural Independence theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-matching-charge-orbit-recoupling-reduction
+```
+Evaluate Coset Hidden Involution Matching Charge Orbit Recoupling Reduction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-matching-charge-pairwise-kernel-dequantization
+```
+Evaluate Coset Hidden Involution Matching Charge Pairwise Kernel Dequantization theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-matching-charge-target-gauge-trivialization
+```
+Evaluate Coset Hidden Involution Matching Charge Target Gauge Trivialization theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-matching-charge-word-moment-dequantization
+```
+Evaluate Coset Hidden Involution Matching Charge Word Moment Dequantization theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-mixed-hecke-word-lcu-no-go
+```
+Evaluate Coset Hidden Involution Mixed Hecke Word Lcu No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-natural-matrix-multiplicity
+```
+Evaluate Coset Hidden Involution Natural Matrix Multiplicity theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-natural-recoupling-boundary
+```
+Evaluate Coset Hidden Involution Natural Recoupling Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-normalized-likelihood-charge-commutator-no-go
+```
+Evaluate Coset Hidden Involution Normalized Likelihood Charge Commutator No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-occupied-matrix-rank
+```
+Evaluate Coset Hidden Involution Occupied Matrix Rank theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-pair-gaudin-hierarchy
+```
+Evaluate Coset Hidden Involution Pair Gaudin Hierarchy theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-pair-matching-charge-hierarchy
+```
+Evaluate Coset Hidden Involution Pair Matching Charge Hierarchy theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-paired-tower-joint-primitive-projector
+```
+Evaluate Coset Hidden Involution Paired Tower Joint Primitive Projector theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-paired-tower-missing-label-boundary
+```
+Evaluate Coset Hidden Involution Paired Tower Missing Label Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-physical-target-convolution-normal-form
+```
+Evaluate Coset Hidden Involution Physical Target Convolution Normal Form theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-plancherel-local-commutant-certificate
+```
+Evaluate Coset Hidden Involution Plancherel Local Commutant Certificate theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-rank-tracking-commutant-witness
+```
+Evaluate Coset Hidden Involution Rank Tracking Commutant Witness theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-shared-conjugation-qsvt-lower-bound
+```
+Evaluate Coset Hidden Involution Shared Conjugation Qsvt Lower Bound theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-single-hecke-all-degree-moment-no-go
+```
+Evaluate Coset Hidden Involution Single Hecke All Degree Moment No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-single-hecke-bounded-spectral-no-go
+```
+Evaluate Coset Hidden Involution Single Hecke Bounded Spectral No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-source-local-likelihood-no-go
+```
+Evaluate Coset Hidden Involution Source Local Likelihood No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-stable-support-six-certificate
+```
+Evaluate Coset Hidden Involution Stable Support Six Certificate theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-standard-block-recoupling
+```
+Evaluate Coset Hidden Involution Standard Block Recoupling theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-target-interference-negativity-barrier
+```
+Evaluate Coset Hidden Involution Target Interference Negativity Barrier theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-trimmed-row-block-encoding-no-go
+```
+Evaluate Coset Hidden Involution Trimmed Row Block Encoding No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-trimmed-row-kernel-succinctness
+```
+Evaluate Coset Hidden Involution Trimmed Row Kernel Succinctness theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py coset-hidden-involution-two-subgroup-projector-algebra-no-go
+```
+Evaluate Coset Hidden Involution Two Subgroup Projector Algebra No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-direct-naimark-polar-equivalence
+```
+Evaluate Self Dual Wreath Component Direct Naimark Polar Equivalence theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-component-polar-physical-pgm-closure
+```
+Evaluate Self Dual Wreath Component Polar Physical Pgm Closure theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-connected-clifford-normal-form
+```
+Evaluate Self Dual Wreath Connected Clifford Normal Form theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-connected-quotient-heisenberg-reduction
+```
+Evaluate Self Dual Wreath Connected Quotient Heisenberg Reduction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-gpe-fusion-tree-cs-boundary
+```
+Evaluate Self Dual Wreath Gpe Fusion Tree Cs Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-latent-master-polar-tradeoff
+```
+Evaluate Self Dual Wreath Latent Master Polar Tradeoff theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-mrs-identification-escape-theorem
+```
+Evaluate Self Dual Wreath Mrs Identification Escape Theorem theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-orientation-fixed-space-recoupling
+```
+Evaluate Self Dual Wreath Orientation Fixed Space Recoupling theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-orientation-homogeneous-space-polar
+```
+Evaluate Self Dual Wreath Orientation Homogeneous Space Polar theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-orientation-syndrome-component-reduction
+```
+Evaluate Self Dual Wreath Orientation Syndrome Component Reduction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-pair-relation-common-support-no-go
+```
+Evaluate Self Dual Wreath Pair Relation Common Support No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-pair-sheaf-metric-incompatibility
+```
+Evaluate Self Dual Wreath Pair Sheaf Metric Incompatibility theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-centered-residual-no-go
+```
+Evaluate Self Dual Wreath Point Centered Residual No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-child-star-relative-collision
+```
+Evaluate Self Dual Wreath Point Child Star Relative Collision theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-copy-threshold
+```
+Evaluate Self Dual Wreath Point Copy Threshold theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-critical-energy-separation
+```
+Evaluate Self Dual Wreath Point Critical Energy Separation theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-point-critical-identity-atom
+```
+Evaluate Self Dual Wreath Point Critical Identity Atom theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-regular-master-walsh-flatness-no-go
+```
+Evaluate Self Dual Wreath Regular Master Walsh Flatness No Go theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-source-adaptive-walsh-collision-reduction
+```
+Evaluate Self Dual Wreath Source Adaptive Walsh Collision Reduction theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-source-block-branch-covariance-boundary
+```
+Evaluate Self Dual Wreath Source Block Branch Covariance Boundary theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-source-order-gauge-canonicalization
+```
+Evaluate Self Dual Wreath Source Order Gauge Canonicalization theorem contract and headline metrics.
+
+```bash
+python3 qsearch.py self-dual-wreath-trace-biased-adaptive-walsh-no-go
+```
+Evaluate Self Dual Wreath Trace Biased Adaptive Walsh No Go theorem contract and headline metrics.
+
 
 ```bash
 python qsearch.py code-wreath-weighted-overlap-exclusion

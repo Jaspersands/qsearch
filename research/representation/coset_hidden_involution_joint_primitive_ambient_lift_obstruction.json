@@ -1,0 +1,222 @@
+{
+  "Schur_controls": [
+    {
+      "K_commutant_dimension": 2,
+      "Schur_block_formula_verified": true,
+      "allowed_diagonal_multiplicity_block_dimension": 2,
+      "branching_multiplicities": [
+        1,
+        1
+      ],
+      "forbidden_cross_irrep_block_dimension": 2,
+      "full_endomorphism_dimension": 4,
+      "irrep_count": 2,
+      "irrep_dimensions": [
+        1,
+        1
+      ],
+      "offdiagonal_irrep_blocks_in_K_commutant": 0,
+      "restricted_carrier_dimension": 2,
+      "status": "Schur-block-diagonal-K-commutant-verified"
+    },
+    {
+      "K_commutant_dimension": 14,
+      "Schur_block_formula_verified": true,
+      "allowed_diagonal_multiplicity_block_dimension": 14,
+      "branching_multiplicities": [
+        2,
+        1,
+        3
+      ],
+      "forbidden_cross_irrep_block_dimension": 80,
+      "full_endomorphism_dimension": 169,
+      "irrep_count": 3,
+      "irrep_dimensions": [
+        1,
+        2,
+        3
+      ],
+      "offdiagonal_irrep_blocks_in_K_commutant": 0,
+      "restricted_carrier_dimension": 13,
+      "status": "Schur-block-diagonal-K-commutant-verified"
+    },
+    {
+      "K_commutant_dimension": 30,
+      "Schur_block_formula_verified": true,
+      "allowed_diagonal_multiplicity_block_dimension": 30,
+      "branching_multiplicities": [
+        4,
+        2,
+        3,
+        1
+      ],
+      "forbidden_cross_irrep_block_dimension": 922,
+      "full_endomorphism_dimension": 1296,
+      "irrep_count": 4,
+      "irrep_dimensions": [
+        2,
+        3,
+        5,
+        7
+      ],
+      "offdiagonal_irrep_blocks_in_K_commutant": 0,
+      "restricted_carrier_dimension": 36,
+      "status": "Schur-block-diagonal-K-commutant-verified"
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "answer": "False. It mixes inequivalent K irreps, while a K-centralizing operator has no cross-irrep blocks.",
+      "challenge": "A polynomial-query label reflection is automatically physical.",
+      "resolved": true
+    },
+    {
+      "answer": "Too strong. It remains an exact recursion diagnostic and may be used inside a deliberately non-equivariant subduction circuit.",
+      "challenge": "The obstruction makes the label projector useless.",
+      "resolved": true
+    },
+    {
+      "answer": "False. The full polar need not commute with K; only the proposed commutant shortcut is ruled out.",
+      "challenge": "Schur block diagonality rules out the full polar.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "K_centralizing_ambient_lift_exists": false,
+    "hidden_involution_detector_constructed": false,
+    "non_K_equivariant_subduction_lift_compiled": false,
+    "primitive_label_projector_crosses_inequivalent_K_labels": true,
+    "reason": "The abstract primitive projector is off-diagonal in inequivalent K labels and cannot be the missing commutant observable.",
+    "source_aware_normalized_subduction_transform_compiled": false,
+    "speedup_claim_allowed": false,
+    "within_mu_primitive_commutant_generators_compiled": false
+  },
+  "created_at": "2026-08-21T13:08:03.897290+00:00",
+  "falsifiers_triggered": [
+    "The label-space primitive projector is not itself a K-commutant generator.",
+    "Sparse label projection does not compile the physical missing-copy measurement.",
+    "A valid positive route must act within multiplicity blocks or explicitly change K carriers."
+  ],
+  "headline_metrics": {
+    "K_centralizing_label_projector_lift_count": 0,
+    "exact_Schur_block_control_count": 3,
+    "exact_offdiagonal_projector_control_count": 7,
+    "normalized_subduction_transform_count": 0,
+    "within_mu_primitive_generator_count": 0
+  },
+  "offdiagonal_controls": [
+    {
+      "nonzero_primitive_requires_cross_label_superposition": true,
+      "partition_label_count": 2,
+      "primitive_dimension": 1,
+      "projector_coupled_label_count": 2,
+      "projector_is_label_diagonal": false,
+      "projector_nonzero_entry_count": 4,
+      "projector_offdiagonal_nonzero_entry_count": 2,
+      "rank": 2,
+      "status": "primitive-projector-crosses-inequivalent-labels"
+    },
+    {
+      "nonzero_primitive_requires_cross_label_superposition": true,
+      "partition_label_count": 3,
+      "primitive_dimension": 1,
+      "projector_coupled_label_count": 3,
+      "projector_is_label_diagonal": false,
+      "projector_nonzero_entry_count": 9,
+      "projector_offdiagonal_nonzero_entry_count": 6,
+      "rank": 3,
+      "status": "primitive-projector-crosses-inequivalent-labels"
+    },
+    {
+      "nonzero_primitive_requires_cross_label_superposition": true,
+      "partition_label_count": 5,
+      "primitive_dimension": 2,
+      "projector_coupled_label_count": 5,
+      "projector_is_label_diagonal": false,
+      "projector_nonzero_entry_count": 25,
+      "projector_offdiagonal_nonzero_entry_count": 20,
+      "rank": 4,
+      "status": "primitive-projector-crosses-inequivalent-labels"
+    },
+    {
+      "nonzero_primitive_requires_cross_label_superposition": true,
+      "partition_label_count": 7,
+      "primitive_dimension": 2,
+      "projector_coupled_label_count": 7,
+      "projector_is_label_diagonal": false,
+      "projector_nonzero_entry_count": 45,
+      "projector_offdiagonal_nonzero_entry_count": 38,
+      "rank": 5,
+      "status": "primitive-projector-crosses-inequivalent-labels"
+    },
+    {
+      "nonzero_primitive_requires_cross_label_superposition": true,
+      "partition_label_count": 11,
+      "primitive_dimension": 4,
+      "projector_coupled_label_count": 11,
+      "projector_is_label_diagonal": false,
+      "projector_nonzero_entry_count": 117,
+      "projector_offdiagonal_nonzero_entry_count": 106,
+      "rank": 6,
+      "status": "primitive-projector-crosses-inequivalent-labels"
+    },
+    {
+      "nonzero_primitive_requires_cross_label_superposition": true,
+      "partition_label_count": 15,
+      "primitive_dimension": 4,
+      "projector_coupled_label_count": 15,
+      "projector_is_label_diagonal": false,
+      "projector_nonzero_entry_count": 225,
+      "projector_offdiagonal_nonzero_entry_count": 210,
+      "rank": 7,
+      "status": "primitive-projector-crosses-inequivalent-labels"
+    },
+    {
+      "nonzero_primitive_requires_cross_label_superposition": true,
+      "partition_label_count": 22,
+      "primitive_dimension": 7,
+      "projector_coupled_label_count": 22,
+      "projector_is_label_diagonal": false,
+      "projector_nonzero_entry_count": 480,
+      "projector_offdiagonal_nonzero_entry_count": 458,
+      "rank": 8,
+      "status": "primitive-projector-crosses-inequivalent-labels"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "id": "PO-JOINT-PRIMITIVE-WITHIN-MU-GENERATORS",
+      "resolved": false,
+      "statement": "Construct explicit ambient orbit sums whose restrictions act inside each C^b(lambda,mu) and resolve primitive copy data."
+    },
+    {
+      "id": "PO-JOINT-PRIMITIVE-NONEQUIVARIANT-LIFT",
+      "resolved": false,
+      "statement": "Alternatively compile carrier-changing maps between mu sectors as part of a normalized full subduction transform."
+    }
+  ],
+  "status": "joint-primitive-label-projector-K-commutant-lift-obstructed",
+  "summary": "Proved that the polynomial-query primitive label projector has no K-centralizing ambient lift, isolating the required within-copy or non-equivariant subduction construction.",
+  "theorem": {
+    "K_centralizing_label_projector_lift_exists": false,
+    "K_commutant": "End_K(Res_K V_lambda)=direct_sum_mu End(C^b(lambda,mu)) tensor I_(V_mu); every cross-mu block is zero.",
+    "exact_Schur_block_obstruction_proved": true,
+    "hidden_involution_detector_constructed": false,
+    "label_projector_boundary": "The paired-tower primitive projector mixes distinct mu labels, so it is not an element of this K commutant.",
+    "non_K_equivariant_subduction_lift_compiled": false,
+    "primitive_projector_crosses_inequivalent_labels_proved": true,
+    "required_physical_escape": "Construct within-mu multiplicity generators, or a non-K-equivariant carrier-changing subduction isometry with explicit normalization.",
+    "restriction_normal_form": "Res_K V_lambda=direct_sum_mu C^b(lambda,mu) tensor V_mu.",
+    "source_aware_normalized_subduction_transform_compiled": false,
+    "speedup_claim_allowed": false,
+    "status": "joint-primitive-label-projector-K-commutant-lift-obstructed",
+    "theorem_verified": true,
+    "within_mu_primitive_commutant_generators_compiled": false
+  },
+  "theorem_contract": {
+    "allowed_shortcut": "K-centralizing ambient operators only",
+    "ambient_space": "A fixed symmetric-group irrep restricted to K=C_2 wr S_m",
+    "claim_boundary": "Obstructs only a K-equivariant label-projector lift; does not rule out non-equivariant subduction or the full matrix polar.",
+    "tested_label_operator": "The Young/joint-primitive projector acting across partition labels"
+  }
+}

@@ -1,6 +1,18 @@
 # Research Agent Handoff
 
-Last updated: 2026-08-13
+Last updated: 2026-08-21
+
+## Antigravity Mechanical Wiring Completion Note (2026-08-21 - Pass 5)
+
+- **Mechanical Wiring Status**: **100% COMPLETE**. All **64 newly generated theorem modules** in `coset_hidden_involution_*` and `self_dual_wreath_*` families (including adaptive Walsh routing, regular-master Walsh flatness no-go, MRS identification escape theorem, and shared-conjugation QSVT lower bounds) have been fully wired into:
+  - `research_registry.py` (all 64 `ExperimentRecord` blocks registered under `CODE-COSET-COLLECTIVE` in `seed_candidate_records()`)
+  - `experiment_runner.py` (imports, runner dispatchers, priority maps, supported experiment sets, and safe result upsert fallbacks)
+  - `qsearch.py` (CLI subparser commands and execution handlers)
+  - `README.md` (CLI command documentation)
+  - `tests/test_experiment_runner.py` (full clean-registry unit test dispatch coverage for all 64 experiments)
+- **Repository Milestones**: The research registry now tracks **723 registered experiments**, **727 experiment results**, **1210 dequantization findings** (1206 blocking), and **806 negative result records**.
+- **Validation**: Full workspace validation (`python3 qsearch.py dequantize && python3 qsearch.py validate`), `python3 tools/build_progress_snapshot.py`, `python3 -m compileall -q .`, `node --check site/progress.js`, and `git diff --check` all passed cleanly with **0 issues (`valid: true`)** and **64 newly added dispatch tests passed (100% OK)**.
+- **Claim Gates & Integrity**: All mathematical contracts, constants, formulas, falsifiers, negative result claims, and `speedup_claim_allowed=False` gates remain 100% intact.
 
 ## Antigravity Mechanical Wiring Completion Note (2026-08-13)
 
@@ -44,6 +56,12 @@ formatting, and other low-reasoning work should be batched or left clearly
 specified for Gemini 3.6 Flash running through Antigravity after Codex usage is
 exhausted.
 
+This model-allocation policy is part of the research goal, not an optional
+workflow preference. Codex should continue choosing the highest-value hard
+reasoning problem until its usage is exhausted, leave exact assumptions,
+falsifiers, claim gates, and acceptance tests, and treat exhaustion as a
+handoff to Gemini rather than completion of the research objective.
+
 This model allocation is part of the research goal, not an optional efficiency
 preference. While high-capability Codex usage remains, choose work whose main
 bottleneck is mathematical judgment: prove or kill a mechanism, find the
@@ -69,6 +87,2983 @@ Codex must record the current theorem, exact assumptions, known falsifiers,
 unresolved proof obligations, next high-value derivations, and concrete
 success/failure checks here. Running out of Codex usage is a model handoff, not
 the end of the repository's research goal.
+
+## Current High-Reasoning Result: Adaptive Walsh Routing Reduces To Collision Strata (2026-08-21)
+
+Files and experiment ID:
+
+```text
+self_dual_wreath_source_adaptive_walsh_collision_reduction.py
+tests/test_self_dual_wreath_source_adaptive_walsh_collision_reduction.py
+research/representation/self_dual_wreath_source_adaptive_walsh_collision_reduction.json
+EXP-CODE-SELF-DUAL-WREATH-SOURCE-ADAPTIVE-WALSH-COLLISION-REDUCTION
+```
+
+For an arbitrary fixed source block with `q=2^K` orientation projectors
+`{E_e}`, set `F=sum_e E_e` and let `p_S` be the ideal polar output
+probability after a Walsh transform of the orientation register. Define
+
+```text
+b_z = Tr(F)^(-1) sum_e Tr(E_e E_(e+z)).
+```
+
+Scalar Walsh inversion and Parseval give the exact identities
+
+```text
+p_S = q^(-1) sum_z (-1)^(S.z) b_z,
+C := sum_S p_S^2 = q^(-1) sum_z b_z^2.
+```
+
+Consequently, every source-label-dependent set of at most `m` Walsh modes
+retains at most `sqrt(m C_Lambda)` ideal mass in block `Lambda`, and Jensen
+gives average retained mass at most `sqrt(m E C_Lambda)`. This eliminates the
+previous exponential union bound over adaptive mode choices. Under any
+pair-exchangeable source law, `E b_z^2` depends only on `|z|`, so the entire
+adaptive sparse-routing question reduces to `K+1` Hamming strata:
+
+```text
+E C = q^(-1) sum_(j=0)^K binom(K,j) E b_(z_j)^2.
+```
+
+The regular benchmark has `b_0=1`, `b_z=1/|G|` for `z!=0`, hence
+`C=q^(-1)[1+(q-1)/|G|^2]`; polynomial adaptive mode budgets retain vanishing
+mass on the factorial schedule. Five globally distinct physical controls
+validate both exact formulas: maximum Parseval residual is `1.67e-16`, the
+largest W4 single-mode probability is `0.30`, and the largest selected W5
+single-mode probability is `0.127`. Seven focused tests pass.
+
+The physical theorem is deliberately still open. Regular first-moment
+flatness and finite W4/W5 controls do not prove
+`E C_Lambda <= poly(K)/2^K` for globally distinct Plancherel source blocks.
+The result therefore neither rejects nor compiles a source-adaptive sparse
+router. Dense recoupling, complete orientation polar, classical separation,
+algorithm, and speedup gates remain false.
+
+### Refined Next High-Reasoning Task
+
+1. Derive `b_z` as an exact character-convolution expression under independent
+   Plancherel source pairs, stratified by `j=|z|`.
+2. Compute or bound `E b_(z_j)^2` uniformly in `j`, including rare source
+   blocks. Then transfer the independent law to globally distinct sources.
+3. A sufficient no-go target is
+   `q^(-1) sum_j binom(K,j) E b_(z_j)^2 <= poly(K)/q`.
+4. If the bound fails, identify the heavy Hamming strata and source labels;
+   then test whether their heavy Walsh modes are computable reversibly from
+   the source labels. Collision concentration alone is not a compiler.
+5. Do not infer an asymptotic theorem from the finite controls, and do not
+   conflate sparse-output rejection with a dense-polar lower bound.
+
+Routine registry, runner, CLI, README, and broad validation are assigned to
+Gemini 3.6 Flash through Antigravity.
+
+## Current High-Reasoning Result: Native Polar Walsh Output Is Regular-Master Flat (2026-08-21)
+
+Files and experiment ID:
+
+```text
+self_dual_wreath_regular_master_walsh_flatness_no_go.py
+tests/test_self_dual_wreath_regular_master_walsh_flatness_no_go.py
+research/representation/self_dual_wreath_regular_master_walsh_flatness_no_go.json
+EXP-CODE-SELF-DUAL-WREATH-REGULAR-MASTER-WALSH-FLATNESS-NO-GO
+```
+
+For a finite group of order `d`, any target representation of dimension `t`,
+and `K` regular source pairs, the branch-resolved invariant projectors `E_e`
+have rank `r=t d^(2K-1)`. Their normalized Walsh modes obey exactly
+
+```text
+||Ehat_0||F^2 = t d^(2K-2) [1+(d-1)/2^K],
+||Ehat_S||F^2 = t d^(2K-2) (d-1)/2^K,  S!=0.
+```
+
+The proof uses only the regular character in each source pair. More
+importantly, for `R=[E_e]_e`, `F=R*R`, exact polar `Q=R F^(+/2)`, and native
+input `rho=F/Tr(F)`, a Walsh transform of the orientation output has
+
+```text
+Pr[S]=||Ehat_S||F^2/r.
+```
+
+Thus at `d=n!`, `K=ceil(log2 d)+2`, ideal native output is asymptotically
+flat over all `2^K` Walsh characters. A fixed set of `m` nonzero modes retains
+at most
+
+```text
+1/d + (d-1)(m+1)/(d 2^K).
+```
+
+Every fixed polynomial mode set and every degree-`K/4` truncation loses
+asymptotically all ideal native PGM mass. At `n=128`, the live scaling artifact
+gives retained masses about `5.01e-200` for a `K^6` budget and `3.19e-43` for
+the degree-`K/4` ball; 90 percent mass requires 90 percent of all modes.
+Three exact controls have energy residual below `1.6e-13` and native
+probability residual below `7.8e-16`; seven focused tests pass.
+
+Scope is critical. `F=sum_e E_e` is itself only the zero Walsh mode, so this
+is not a dense-storage lower bound for the frame. A dense Hadamard is easy.
+The theorem rejects fixed sparse/low-degree branch-output truncation, not a
+source-label-adaptive sparse set, dense structured recoupling, direct
+rectangular CS, or arbitrary circuits. Complete-polar, classical-separation,
+algorithm, and speedup gates remain false.
+
+### Refined Next High-Reasoning Task
+
+1. Reduce source-label-adaptive mode selection to the blockwise collision
+   `C_Lambda=sum_S p_S(Lambda)^2`. A size-`m` adaptive set has retained mass
+   at most `sqrt(m C_Lambda)`.
+2. Express `C_Lambda` by Walsh Parseval through scalar orientation
+   autocorrelations
+   `c_z=q^-1 sum_e Tr(E_e E_(e+z))`, avoiding mode enumeration.
+3. Under exchangeable independent Plancherel source pairs, reduce the
+   annealed collision to `K+1` Hamming strata. Prove or falsify
+   `E C_Lambda=2^(-K+o(K))` from exact character-convolution formulas.
+4. Do not infer the asymptotic collision theorem from the nearly flat finite
+   W4/W5 controls. If the collision is large, inspect which source labels and
+   Hamming strata concentrate it and attempt a reversible adaptive router.
+5. Dense structured transforms and the restricted orientation-polar compiler
+   remain the positive route regardless of the collision result.
+
+Routine wiring and broad validation are assigned to Gemini 3.6 Flash through
+Antigravity.
+
+## Current High-Reasoning Result: Target PGM Escapes Every MRS Transcript Sieve (2026-08-21)
+
+Files and experiment ID:
+
+```text
+self_dual_wreath_mrs_identification_escape_theorem.py
+tests/test_self_dual_wreath_mrs_identification_escape_theorem.py
+research/representation/self_dual_wreath_mrs_identification_escape_theorem.json
+EXP-CODE-SELF-DUAL-WREATH-MRS-IDENTIFICATION-ESCAPE-THEOREM
+```
+
+The separate all-policy transcript-zonotope gate was artificial. The primary
+Moore--Russell--Sniady proof gives a statement for each fixed legal hidden
+flip, not only for the hidden-label average. For every allowed adaptive sieve
+using fewer than `exp(a sqrt(n))` coset states,
+
+```text
+TV(P_s,P_0) <= exp(-b sqrt(n))
+```
+
+for every hidden bridge `s`, with positive `a,b` below the theorem's
+character-bound threshold and sufficiently large `n`. The sieve may choose
+pairs from its entire classical history, but every merge measures an isotypic
+label and the final answer is a classical transcript postprocessing.
+
+For `M=n!` equiprobable bridges and any randomized transcript decoder
+`D(s|t)`, summing the fixed-label TV expectation bounds gives
+
+```text
+p_id <= 1/M + M^(-1) sum_s TV(P_s,P_0)
+     <= 1/n! + exp(-b sqrt(n)).
+```
+
+The physical hidden-bridge PGM has success at least `4/5` with
+`K=ceil(log2(n!))+2` copies. Since
+`K=Theta(n log n)=exp(o(sqrt(n)))`, this schedule lies below every fixed
+positive MRS threshold `exp(a sqrt(n))` eventually. Therefore the target PGM
+POVM is asymptotically outside the union of all adaptive MRS transcript
+postprocessings. Any uniformly accurate constant-success implementation of
+that PGM automatically escapes the MRS class. A separate explicit fixed-
+policy zonotope witness is useful geometry but is no longer a prerequisite
+for the algorithmic route.
+
+This result relies on the proof's explicit transcript total-variation
+conclusion, not the primary theorem statement's ambiguous printed phrase
+about success probability. It supplies no explicit MRS constants or finite-n
+crossover. It also does not compile the PGM, lower-bound arbitrary quantum
+algorithms, prove classical hardness, or permit a speedup claim. Seven focused
+tests pass; the exact identification-transfer control saturates its bound and
+the generated artifact keeps all implementation and speedup gates false.
+
+### Refined Next High-Reasoning Task
+
+1. Remove all-policy MRS effect separation from the prerequisite list. Do not
+   spend high-capability reasoning on enumerating transcript zonotopes unless
+   needed to diagnose a concrete proposed circuit.
+2. Concentrate the circuit route on the complete natural orientation polar.
+   The surviving local question is a direct, normalization-one implementation
+   of the restricted child coefficient map/support SELECT, including coherent
+   gauges and endpoint rectangular-CS transforms.
+3. Derive either a representation-specific recursive compiler using the
+   known matrix-POVM/recoupling structure or a no-go that reduces every such
+   compiler in the current access model to the unresolved inverse-square-root
+   normalization.
+4. Test any positive compiler against the existing pair-common-support,
+   latent-master tradeoff, source-order gauge, and connected-Clifford no-go
+   theorems. Do not reintroduce any of those closed shortcuts under new names.
+5. Keep classical separation independent and false. MRS escape only says the
+   target measurement is outside one restricted quantum algorithm class.
+
+Routine registry, runner, CLI, README, stale cross-reference, and broad
+validation work is assigned to Gemini 3.6 Flash through Antigravity.
+
+## Current High-Reasoning Result: Source-Order Sorting Quotients Only A Gauge (2026-08-21)
+
+Files and experiment ID:
+
+```text
+self_dual_wreath_source_order_gauge_canonicalization.py
+tests/test_self_dual_wreath_source_order_gauge_canonicalization.py
+research/representation/self_dual_wreath_source_order_gauge_canonicalization.json
+EXP-CODE-SELF-DUAL-WREATH-SOURCE-ORDER-GAUGE-CANONICALIZATION
+```
+
+The coherent source-block loophole is now reduced exactly. Canonically order
+each unequal source pair, let `s_i` record whether the observed ordered block
+is reversed, and let `e_i` record which observed member enters the diagonal
+invariant. The canonically selected-label pattern is
+
+```text
+q=e+s in F_2^K.
+```
+
+A branch flip acts by `(s,e)->(s+t,e+t)`, so `q` is invariant. The `2^(2K)`
+pairs `(s,e)` split into `2^K` free branch orbits of size `2^K`, with one
+orbit for each `q`. Reversible partition comparison, controlled carrier
+swaps, and XOR updates compile
+
+```text
+(s,e)->(0,q)
+```
+
+while retaining `s` as a reversible gauge record.
+
+The exact leaf-rank identity is
+
+```text
+rank(E_e^(s Lambda))=rank(E_q^(Lambda_canonical)).
+```
+
+Thus sorting makes all order gauges agree but preserves the full selected-
+pattern frame. Branch shifts and branch Fourier transforms act only inside a
+fixed `q` orbit and cannot normalize across `q`. In the `S_6` control, the 16
+selected patterns retain five distinct leaf ranks from zero to `2025`.
+
+Four controls have zero order-gauge rank residual, zero orbit-invariance
+residual, and nonuniform selected-pattern rank profiles. Seven focused tests
+pass.
+
+This is a positive polynomial gauge compiler but not a polar compiler. It is
+consistent with the connected-Clifford theorem: quotienting redundant branch
+order does not implement the remaining rectangular CS transform. Keep direct
+matrix selected-pattern transforms open and every complete-polar, decoder,
+classical-separation, algorithm, and speedup gate false.
+
+### Refined Next High-Reasoning Task
+
+1. Stop revisiting pair transport, source-order sorting, branch Hadamards, or
+   ordinary connected-group Fourier labels as complete-polar shortcuts. Their
+   exact scope is now closed.
+2. For the circuit route, the only local survivor is the existing matrix-POVM
+   recursive compiler: derive direct structured square-root/support SELECT or
+   prove a natural state-weighted trim. Generic graph, pair, and gauge access
+   no longer help.
+3. In parallel, return to the independent necessity gate: positive natural
+   component commutator/MRS separation. The current exact reduction is the
+   growing mixed marked-word functional in the Green kernel.
+4. Spend high-reasoning effort on a new target-survival or cancellation
+   theorem, not more finite wiring. Use the existing pressure/topology modules
+   and preserve their fixed-word versus growing-degree boundaries.
+5. Any promising component signal must still be attacked by transcript-cone
+   or classical simulation checks before promotion.
+
+Routine wiring is assigned to Gemini 3.6 Flash through Antigravity.
+
+## Previous High-Reasoning Result: Branch Covariance Crosses Source Blocks And Gives No Fixed-Block Hadamard (2026-08-21)
+
+Files and experiment ID:
+
+```text
+self_dual_wreath_source_block_branch_covariance_boundary.py
+tests/test_self_dual_wreath_source_block_branch_covariance_boundary.py
+research/representation/self_dual_wreath_source_block_branch_covariance_boundary.json
+EXP-CODE-SELF-DUAL-WREATH-SOURCE-BLOCK-BRANCH-COVARIANCE-BOUNDARY
+```
+
+A tempting all-depth shortcut has been rejected with the correct covariance
+scope. For an ordered source tuple `Lambda`, orientation `e`, and branch flip
+`t`, canonical carrier-factor swaps give
+
+```text
+U_t E_e^Lambda U_t* = E_(e+t)^(t Lambda),
+```
+
+where `t Lambda` swaps the ordered source labels in every selected pair. This
+is an exact unitary between different Fourier source blocks. It is not an
+internal unitary from `E_e^Lambda` to `E_(e+t)^Lambda`.
+
+Every nonzero branch flip changes an ordered tuple of unequal source pairs;
+the branch stabilizer is trivial. Independent Plancherel sampling is invariant
+under these swaps, but that gives equality in distribution, not blockwise
+short-metric equality or a coherent Hadamard endpoint mixer after the source
+block is fixed.
+
+Four physical controls have zero cross-block covariance rank mismatches and a
+within-block sibling rank mismatch. In the matrix partial-support `S_6` node,
+the affine translation pairs leaf ranks
+
+```text
+(225,125) with (225,2025),
+```
+
+so the child leaf-coefficient dimensions are `350` and `2250`; the maximum
+paired mismatch is `1900`. Seven focused tests pass.
+
+This does not reject an induced orbit transform that coherently carries all
+swapped source blocks. The connected-Clifford normal form already shows that
+such an orbit transform still faces the rectangular fixed-space CS polar.
+Keep matrix child POVM dilation and direct CS transforms open, and every
+complete-polar, decoder, classical-separation, algorithm, and speedup gate
+false.
+
+### Refined Next High-Reasoning Task
+
+1. Analyze coherent source-pair sorting. Define the source-order bit `s_i` and
+   selected-label bit `z_i=e_i+s_i`; prove which combination is branch-gauge
+   invariant and how leaf ranks depend on it.
+2. Determine whether sorting merely canonicalizes `s` while leaving the hard
+   `z`-indexed orientation frame unchanged. If so, close the coherent orbit-
+   sorting shortcut without claiming arbitrary-circuit hardness.
+3. Reconcile the result explicitly with the syndrome-component and connected-
+   Clifford theorems; do not create a second independent component label.
+4. If a nontrivial coherent transform does act on `z`, exhibit it on the S6
+   rank-mismatched control before proposing an all-n endpoint mixer.
+5. Otherwise return to the matrix child-POVM effect dilation or the natural
+   component-commutator/MRS separation gate; pair and source-order symmetries
+   are exhausted.
+
+Routine wiring is assigned to Gemini 3.6 Flash through Antigravity.
+
+## Previous High-Reasoning Result: Exact Pair Relations Equal Literal Common Support (2026-08-21)
+
+Files and experiment ID:
+
+```text
+self_dual_wreath_pair_relation_common_support_no_go.py
+tests/test_self_dual_wreath_pair_relation_common_support_no_go.py
+research/representation/self_dual_wreath_pair_relation_common_support_no_go.json
+EXP-CODE-SELF-DUAL-WREATH-PAIR-RELATION-COMMON-SUPPORT-NO-GO
+```
+
+The operator-metric extension of the pair sheaf is now closed. Let
+`B_v=E_vF^(+/2)` be the canonical coordinate maps. For the most general exact
+two-vertex linear relation
+
+```text
+R_uB_u+R_vB_v=0,
+```
+
+put `T=R_uB_u=-R_vB_v`. Then
+
+```text
+Ran(T*) subset Ran(B_u*) intersect Ran(B_v*).
+```
+
+Since `F^(+/2)` is invertible on the frame support,
+
+```text
+Ran(B_v*)=F^(+/2)Ran(E_v),
+dim(Ran(B_u*) intersect Ran(B_v*))
+ =dim(Ran(E_u) intersect Ran(E_v)).
+```
+
+The rank bound is tight: pseudoinverse lifts of an orthonormal common-space
+basis make both endpoint images equal to that basis. Therefore the maximum
+rank of any exact pair relation is exactly the principal-angle-one
+multiplicity. Arbitrary positive/operator endpoint weights cannot extend a
+pair relation into any noncommon principal-angle channel.
+
+This does not contradict pair GPE. Pair GPE transports a carrier between two
+local subspaces; it does not make the two canonical global-polar coordinates
+equal. Nor does it reject recursive child relations: those are higher-arity
+relations between aggregate child syntheses, not original two-leaf relations.
+
+Three physical noncommon controls leave all nine active channels uncovered;
+one common control attains the exact rank-one relation. The constructed
+maximal relation residual is at most `6.68e-16`, with zero rank-identity
+residual. Seven focused tests pass.
+
+Pair-only sheaves are now closed, including operator-valued pair metrics.
+Keep genuinely higher-arity hierarchical cokernel relations and direct
+rectangular CS transforms open. Every complete-polar, decoder, classical-
+separation, algorithm, and speedup gate remains false.
+
+### Refined Next High-Reasoning Task
+
+1. Reuse, do not duplicate, `self_dual_wreath_hierarchical_cokernel_resolution.py`
+   and `self_dual_wreath_gpe_recursive_node_compiler.py`. They already prove
+   information-theoretic completeness of aggregate-child relations and give
+   the exact normalized parent relation.
+2. Reassess the physical sibling symmetry at each affine split. Determine
+   whether the two shorted metrics are equal, efficiently unitarily conjugate,
+   or merely isospectral. Equality gives a Hadamard endpoint mixer; known
+   conjugacy plus coherent carrier access may give a direct matrix mixer.
+3. If natural sibling metrics can be exponentially imbalanced despite branch
+   symmetry, produce an explicit physical family rather than reusing the
+   abstract repeated-line counterexample.
+4. Prove whether recursive normalized child embeddings plus endpoint mixers
+   compose to the same rectangular CS polar and output gauge identified by the
+   homogeneous-space theorem. Do not accept kernel completeness alone.
+5. Reserve a sparse higher-arity parity-check route only if its SELECT and gap
+   can be proved on natural occupied mass; abstract exactness is already known.
+
+Routine wiring is assigned to Gemini 3.6 Flash through Antigravity.
+
+## Previous High-Reasoning Result: Latent Master Fibers Conserve Generic Polar Normalization Cost (2026-08-21)
+
+Files and experiment ID:
+
+```text
+self_dual_wreath_latent_master_polar_tradeoff.py
+tests/test_self_dual_wreath_latent_master_polar_tradeoff.py
+research/representation/self_dual_wreath_latent_master_polar_tradeoff.json
+EXP-CODE-SELF-DUAL-WREATH-LATENT-MASTER-POLAR-TRADEOFF
+```
+
+The obvious latent-master repair of the failed pair sheaf is now resolved in
+the normalized-analyzer access model. Put
+
+```text
+C=stack_v(E_v)/sqrt(m),  X=C*C=F/m,
+G_(a,b)=[aI; bC].
+```
+
+On `supp(F)`, the graph polar and its orientation-branch probability are
+
+```text
+polar(G)=G(a^2I+b^2X)^(-1/2),
+p(x)=b^2x/(a^2+b^2x).
+```
+
+The master identity can regularize the graph, but recovering the desired
+orientation polar on a superposition of `X` eigenspaces requires spectral
+gain
+
+```text
+q_flat(x)=sqrt(a^2+b^2x)/(b sqrt(x)).
+```
+
+For the flagged access normalization `alpha=sqrt(a^2+b^2)`, at the smallest
+occupied eigenvalue `x_min`,
+
+```text
+q_graph q_flat
+ = alpha/(b sqrt(x_min))
+ >= 1/sqrt(x_min).
+```
+
+Thus `a=0` puts all cost in polarizing `C`; large `a` makes the graph polar
+easy but moves the same cost into spectral flattening/postselection. No master
+weight improves the generic inverse-singular exponent. Merely postselecting
+the orientation flag is invalid on spectral superpositions because `p(x)` is
+not constant.
+
+Nine physical controls pass with maximum graph-polar residual `1.98e-15`,
+flattened-polar residual `2.40e-15`, and product-identity residual `8.89e-16`.
+The minimum combined/direct scale ratio is exactly one. Seven focused tests
+pass.
+
+This is an access-model theorem, not arbitrary-circuit hardness. Pair GPE is
+already a local representation-specific bypass. Keep a direct rectangular CS
+transform and other non-black-box use of the group action open. The factorial
+flat scaling rows are benchmarks, not a newly proved natural `x_min` law.
+Keep every complete-polar, decoder, classical-separation, algorithm, and
+speedup gate false.
+
+### Refined Next High-Reasoning Task
+
+1. Prove the general pair-relation rank theorem. For canonical coordinate
+   maps `B_v=E_vF^(+/2)`, show any exact two-vertex relation
+   `R_uB_u+R_vB_v=0` has rank at most
+   `dim(Ran(E_u) intersect Ran(E_v))`; hence operator-valued metrics cannot
+   recover noncommon principal-angle channels either.
+2. Quantify the common-channel pair-relation rank on physical controls and
+   compare it to the full dependency codimension. If common channels do not
+   span the dependency space, stop pursuing all pair-only sheaves.
+3. Recast the surviving target as a sparse, coherently selectable higher-arity
+   parity-check/preconditioner `D` with `ker D=Ran(stack E_v)`, inverse-
+   polynomial nonzero singular gap, and normalization-one access.
+4. Determine whether any such `D` derived from fusion-tree associativity has
+   local arity and polynomial degree, or whether constructing it is equivalent
+   to the original rectangular CS polar.
+5. Continue to reserve direct representation-specific transforms; the graph
+   theorem does not reject them.
+
+Routine wiring is assigned to Gemini 3.6 Flash through Antigravity.
+
+## Previous High-Reasoning Result: Noncommon Pair-GPE Edges Cannot Form The Unweighted Polar Sheaf (2026-08-21)
+
+Files and experiment ID:
+
+```text
+self_dual_wreath_pair_sheaf_metric_incompatibility.py
+tests/test_self_dual_wreath_pair_sheaf_metric_incompatibility.py
+research/representation/self_dual_wreath_pair_sheaf_metric_incompatibility.json
+EXP-CODE-SELF-DUAL-WREATH-PAIR-SHEAF-METRIC-INCOMPATIBILITY
+```
+
+The current partial-holonomy sheaf has been tested against the actual target,
+not merely against abstract noncommuting POVMs. Let `E_v` be the orientation
+projectors, `F=sum_v E_v`, and
+
+```text
+W_v=E_v F^(+/2)
+```
+
+the coordinate maps of the canonical global analysis polar. For a pair edge,
+put
+
+```text
+U=polar(E_vE_u),  P=U*U,  Q=UU*.
+```
+
+The unweighted sheaf equation `Q x_v=U P x_u` can hold on the canonical polar
+range only if its two endpoint Gram operators agree. Exactly,
+
+```text
+W_u* P W_u = W_v* Q W_v
+iff F^(+/2)(P-Q)F^(+/2)=0
+iff P=Q.
+```
+
+The final equivalence uses that `F^(+/2)` is injective on `supp(F)` and both
+edge supports lie there. Thus only literal common channels are compatible.
+Every noncommon principal-angle channel has `P!=Q`, including the exact
+inverse-dimension channels for which pair GPE gives a polynomial direct polar.
+Pair GPE aligns their principal vectors but cannot glue their global-polar
+coordinate amplitudes by equality.
+
+The obstruction survives arbitrary vertex-local output gauges: the local
+isometries cancel from the pulled-back endpoint metrics. It also precedes any
+gap question. A perfect coherent SELECT and an inverse-polynomial sheaf gap
+would efficiently project onto the wrong section space.
+
+Physical controls at correlations `1/2`, `1/3`, and `1/4` have endpoint metric
+obstruction `1` and canonical section residual `sqrt(2)`; a genuine common
+channel has zero residual. All four controls verify the exact metric identity
+to at most `1.04e-15`. Seven focused tests pass; the joint newest suite has 14
+passing tests.
+
+This is a restricted architecture no-go, not an all-holonomy lower bound.
+Operator-valued endpoint metrics, latent master fibers, higher-arity
+relations, and a direct rectangular CS transform remain open. Keep every
+complete-polar, decoder, classical-separation, algorithm, and speedup gate
+false.
+
+### Refined Next High-Reasoning Task
+
+1. Analyze the latent-master incidence exactly. For
+   `G_a=[aI; (b/sqrt(m)) stack_v(E_v)]`, derive its polar, condition number,
+   output probability, and the minimum amplitude amplification cost required
+   to recover `stack_v(E_v)F^(+/2)`.
+2. Test whether any choice of `a,b` gives both constant-conditioned graph
+   preparation and constant native output probability. Prove the tradeoff or
+   exhibit a normalization-one bypass.
+3. Formulate the most general operator-metric edge relation compatible with
+   the canonical coordinate effects. Determine whether its positive endpoint
+   factors are exactly another representation of `F^(+/2)`; if so, close that
+   weighted local architecture as circular.
+4. Leave higher-arity relations open unless their incidence can be block-
+   encoded without a normalization or postselection cost exponential in
+   `log|S_n|`.
+5. Do not spend high-capability time proving a gap for the rejected unweighted
+   pair connection.
+
+Routine wiring is assigned to Gemini 3.6 Flash through Antigravity.
+
+## Previous High-Reasoning Result: GPE Fusion Trees Compile Full Recoupling, Not The Rectangular CS Polar (2026-08-21)
+
+Files and experiment ID:
+
+```text
+self_dual_wreath_gpe_fusion_tree_cs_boundary.py
+tests/test_self_dual_wreath_gpe_fusion_tree_cs_boundary.py
+research/representation/self_dual_wreath_gpe_fusion_tree_cs_boundary.json
+EXP-CODE-SELF-DUAL-WREATH-GPE-FUSION-TREE-CS-BOUNDARY
+```
+
+Coherent generalized phase estimation is stronger than weak Fourier sampling
+in the relevant sense. Given an efficient group QFT and controlled factor
+actions, it exports an irrep/carrier row while preserving opaque multiplicity.
+Repeating this operation along a binary association tree compiles a coherent
+fusion-tree transform with one GPE call per internal node. Uncomputing one
+tree and computing another therefore compiles the full Racah recoupling
+unitary without naming a classical multiplicity basis.
+
+This does not compile the orientation polar. If `U_T` is the full tree-change
+unitary and `P,Q` select the branch-fixed and diagonal-fixed labels, the
+physical overlap is the rectangular subblock
+
+```text
+C = Q U_T P.
+```
+
+The decoder needs `polar(C)`, not `U_T`. Pre- and post-composition by fusion-
+tree unitaries preserves the singular values of `C`; it cannot turn a
+non-isometric subblock into its polar. Pair GPE is the exceptional direct
+case because every active pair block is `cU` with one scalar singular level
+and a known reassociation `U`. The first two-pair `S_3` control already has
+five active singular values on three levels, from `sqrt(1/8)` to
+`sqrt(3/8)`. Its minimum one-crossing unitary-only distance to the polar is
+`1-1/sqrt(2)=0.292893...`.
+
+The exact finite identity
+
+```text
+polar(C) = stack_e(E_e) [sum_e E_e]^(+/2)
+```
+
+passes on all three controls. Two controls have scalar active spectra and one
+is genuinely matrix-valued. Seven focused tests pass. Keep direct global
+rectangular-CS polar, complete orientation polar, classical separation,
+algorithm, and speedup gates false.
+
+This is not an arbitrary-circuit lower bound. A GPE-derived direct CS basis,
+a structured singular-vector pairing, or a partial-support holonomy/F-move
+network may still implement the polar without generic inverse-angle
+amplification.
+
+### Refined Next High-Reasoning Task
+
+1. Characterize products of exact pair-GPE polar transports on the induced
+   branch carrier. Derive a necessary and sufficient flatness/holonomy
+   condition for the product to equal the global rectangular-subblock polar,
+   including the output gauge.
+2. Reuse the existing partial-holonomy/sheaf and holonomy-resolver reductions;
+   do not duplicate finite path enumeration. Determine whether their kernel
+   projector is exactly the CS singular-vector pairing or merely another
+   normalized frame requiring `F^(+/2)`.
+3. Search for a polynomial natural generator set and an inverse-polynomial
+   gap only after proving the target fixed space equals the global polar
+   range. A gap for the wrong flat connection is not progress.
+4. Audit self-conjugate split `A_n` sectors separately. The current fusion-
+   tree boundary does not prove their natural mass negligible.
+5. If every pair-transport/sheaf construction algebraically recreates the
+   same frame inverse square root, close that restricted architecture and
+   redirect high-reasoning effort to another nonabelian mechanism.
+
+Routine registry/runner/CLI/README wiring is assigned to Gemini 3.6 Flash
+through Antigravity in `research/MECHANICAL_FOLLOW_UP_PLAN.md`.
+
+## Current High-Reasoning Result: Ordinary Connected-Group Clifford QFT Reconstructs The Original CS Gate (2026-08-21)
+
+Files and experiment ID:
+
+```text
+self_dual_wreath_connected_clifford_normal_form.py
+tests/test_self_dual_wreath_connected_clifford_normal_form.py
+research/representation/self_dual_wreath_connected_clifford_normal_form.json
+EXP-CODE-SELF-DUAL-WREATH-CONNECTED-CLIFFORD-NORMAL-FORM
+```
+
+The full connected-group Clifford-theory shortcut is now resolved in the
+generic nonsplit orbit. Assume the `A_n^(2K+1)` coordinate constituents are
+not self-conjugate and are distinct up to odd conjugation. Their inertia group
+in `L` is
+
+```text
+H=A_n^(2K+1) semidirect C,
+```
+
+where `C` is the orientation sign code. The branch group acts freely, so the
+corresponding Clifford carrier is
+
+```text
+Ind_H^L(alpha_tilde)=direct_sum_(e in B) V_alpha.
+```
+
+In this basis, `B` is regular translation and
+
+```text
+Fix_B={|+_B> tensor v : v in V_alpha}.
+```
+
+The zero diagonal `D` lies in the inertia group. On branch `e`, it acts as the
+conjugate orientation diagonal `H_e`; if `E_e` is its invariant projector,
+
+```text
+P_D=direct_sum_e E_e,
+Fix_D=direct_sum_e |e> tensor Ran(E_e).
+```
+
+For the uniform branch embedding `S_B`, the fixed-space CS problem is exactly
+
+```text
+S_B* P_D S_B = (1/2^K) sum_e E_e = F/2^K,
+polar(P_D S_B) = stack_e E_e F^(+/2).
+```
+
+The second expression is the complete orientation analysis polar. Therefore
+an ordinary coherent `L` QFT/Clifford transform that exposes orbit,
+stabilizer, and subgroup-fixed labels has only reconstructed the original
+matrix CS gate. It has not normalized it. The explicit uniform branch orbit
+retains the inverse-width factor.
+
+This is not an arbitrary-circuit lower bound. A connected-group transform
+augmented with the actual fixed-space CS SVD would solve the gate by
+definition, and a direct GPE/holonomy factorization may avoid conventional
+Clifford labels. Self-conjugate split `A_n` sectors also remain unresolved;
+the theorem does not assume their natural mass vanishes.
+
+Three physical controls pass with zero failures. The cross Gram residual is at
+most `1.12e-16`, the cross-polar/orientation-polar residual at most `3.14e-15`,
+and all three normalized overlaps are non-isometric. The two-pair `S_3`
+control has three positive cross-Gram levels from `1/8` to `3/8`. Seven
+focused tests, syntax, and diff checks pass. Keep ordinary Clifford CS
+compiler, direct matrix CS polar, complete orientation polar, classical
+separation, algorithm, and speedup gates false.
+
+### Refined Next High-Reasoning Task
+
+1. Stop treating completion of an ordinary `L` QFT as progress unless it
+   includes a normalization-one implementation of `polar(P_D S_B)`.
+2. Attack the direct many-way `A_n`/`S_n` subduction polar. Try recursive GPE
+   fusion trees as physical isometries, not as labels; prove whether their
+   composition implements the CS SVD or just alternating projections.
+3. Formulate the holonomy network on the induced branch carrier. Pair-GPE
+   gives exact edge partial isometries; derive a polynomial generator set,
+   active coverage, path independence or correctable loop gauge, and equality
+   with the global polar.
+4. Audit split self-conjugate sectors separately. They may alter inertia
+   groups and cocycles, but cannot be discarded without a natural-mass theorem.
+5. If GPE fusion and holonomy both reduce algebraically to `F^(+/2)`, record a
+   restricted-architecture no-go and redirect to another nonabelian mechanism
+   rather than generating more group-QFT labels.
+
+Routine wiring remains queued for Gemini 3.6 Flash through Antigravity.
+
+## Current High-Reasoning Result: Connected Parity Quotient Solved, Alternating Recoupling Remains (2026-08-21)
+
+Files and experiment ID:
+
+```text
+self_dual_wreath_connected_quotient_heisenberg_reduction.py
+tests/test_self_dual_wreath_connected_quotient_heisenberg_reduction.py
+research/representation/self_dual_wreath_connected_quotient_heisenberg_reduction.json
+EXP-CODE-SELF-DUAL-WREATH-CONNECTED-QUOTIENT-HEISENBERG-REDUCTION
+```
+
+After syndrome canonicalization, put `A=A_n^(2K+1)` inside the connected group
+`L=<B,D>`. The quotient `P_K=L/A` has generators `a` (the zero-orientation
+sign), branch swaps `b_i`, and central pair signs `c_i`, with
+
+```text
+a^2=b_i^2=c_i^2=1,
+[a,b_i]=c_i,
+[b_i,b_j]=1,
+all c_i central.
+```
+
+Therefore
+
+```text
+|P_K|=2^(2K+1),
+Z(P_K)=[P_K,P_K]=<c_1,...,c_K> ~= C_2^K,
+P_K/[P_K,P_K] ~= C_2^(K+1).
+```
+
+This class-two multi-center Heisenberg/dihedral quotient has a complete irrep
+classification:
+
+```text
+2^(K+1) one-dimensional irreps,
+(2^K-1)2^(K-1) two-dimensional irreps,
+no larger irreps.
+```
+
+For each nonzero central character `theta`, the commutator form has rank two
+and a `(K-1)`-dimensional radical; radical characters index the
+`2^(K-1)` two-dimensional blocks. The square sum is exactly `|P_K|`.
+Consequently the entire parity/branch quotient QFT is polynomial via binary
+linear algebra and one-qubit Pauli/Hadamard blocks. It is not the missing
+high-rank transform.
+
+The native homogeneous theorem puts nearly all frame mass in occupied CS
+blocks of rank at least `|S_n|^(K/4)`, while every `P_K` carrier has dimension
+at most two. Thus the residual multiplicity necessarily sits in the
+`A_n^(2K+1)` orbit/stabilizer and many-way subduction spaces. This localizes
+the compiler gate but does not prove hardness. Non-self-conjugate `S_n`
+partitions restrict irreducibly to `A_n` up to extension gauge;
+self-conjugate partitions split and their constituents are exchanged by odd
+conjugation. A coherent Clifford-theory transform for the full `L` may still
+exist.
+
+Exact controls for `K=1..4` have zero failures; the largest checked quotient
+has order 512, center/derived order 16, 32 one-dimensional and 120
+two-dimensional irreps, 152 conjugacy classes, and exact square sum 512.
+Seven focused tests, syntax, and diff checks pass. Keep full `L` Clifford
+transform, alternating subduction polar, complete orientation polar,
+classical separation, algorithm, and speedup gates false.
+
+### Refined Next High-Reasoning Task
+
+1. Build the Clifford-theory normal form for `L=A_n^(2K+1) semidirect P_K`.
+   Start with collision-free non-self-conjugate source labels, where branch
+   swaps have free coordinate orbits and odd signs change extension gauges.
+2. Derive the stabilizer cocycle and a coherent orbit basis. Determine whether
+   its F-moves are only binary-linear/Pauli operations or whether many-way
+   `A_n` Kronecker multiplicity reappears explicitly.
+3. Add self-conjugate split sectors rather than assuming them negligible; no
+   all-natural absence theorem is available.
+4. Test whether the full `L` QFT plus fixed-space marking yields the CS polar
+   at normalization one. Merely exposing irrep/stabilizer labels is not enough.
+5. If Clifford theory only repackages equation `CC*`, prove the equivalence and
+   stop treating group-QFT completion as progress. Return to a direct
+   alternating-subduction polar or GPE holonomy network.
+
+Routine wiring remains queued for Gemini 3.6 Flash through Antigravity.
+
+## Current High-Reasoning Result: Complete Polar Reduces To One Syndrome Component (2026-08-21)
+
+Files and experiment ID:
+
+```text
+self_dual_wreath_orientation_syndrome_component_reduction.py
+tests/test_self_dual_wreath_orientation_syndrome_component_reduction.py
+research/representation/self_dual_wreath_orientation_syndrome_component_reduction.json
+EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-SYNDROME-COMPONENT-REDUCTION
+```
+
+The homogeneous incidence has an exact `K`-bit conserved charge. For
+`gamma=(t,x_1,y_1,...,x_K,y_K)`, define
+
+```text
+z_i(gamma)=sgn(t)+sgn(x_i)+sgn(y_i) mod 2.
+```
+
+Pair swaps preserve this vector, so `z:Omega->F_2^K` is a homomorphism. Both
+the branch subgroup `B` and zero-orientation diagonal `D` lie in its kernel.
+For `n>=5`, the affine generated-subgroup theorem plus `B` conjugacy gives
+
+```text
+L=<B,D>=ker(z),
+|L|=|S_n|^(2K+1),
+[Omega:L]=2^K.
+```
+
+The connected components of the `Omega/D` to `Omega/B` incidence are the
+right `L` cosets. Consequently
+
+```text
+T ~= I_(2^K) tensor T_0,
+polar(T) ~= I_(2^K) tensor polar(T_0),
+T_0: L/D -> L/B.
+```
+
+The zero-component source and physical dimensions are
+`|S_n|^(2K)` and `|S_n|^(2K+1)/2^K`. The syndrome is polynomially computable
+from permutation parity. A transposition in the first coordinate of pair `i`
+represents syndrome bit `i`; controlled multiplication maps every component
+coherently to syndrome zero. Therefore the apparent `2^K` replicated
+component cost is not an independent compiler barrier. Future work only needs
+one connected `L/D -> L/B` CS polar.
+
+This does not solve normalization. Branch-controlled translations, syndrome
+Fourier transforms, and all other pre/post unitaries preserve the singular
+values of `T_0/sqrt(2^K)`. They cannot turn it into a partial isometry. The
+three finite controls remain at least `0.292893` away from their component
+polar under any unitary-only correction; the nonabelian `S_3` control has
+normalized singular values from `1/2` to `1`. In the natural flat benchmark
+the amplitude is `Theta(|S_n|^-1/2)`.
+
+The syndrome is a conserved gauge/component label, not hidden-permutation
+information. Three exact controls have zero generated-kernel mismatch, zero
+off-syndrome incidence, zero canonicalization failures, and component-spectrum
+residual at most `4.45e-16`. Seven focused tests, syntax, and diff checks pass.
+Keep connected-component CS polar, complete orientation polar, classical
+separation, algorithm, and speedup gates false.
+
+### Refined Next High-Reasoning Task
+
+1. Replace `Omega` by the connected group `L=ker(z)` in the fixed-space
+   recoupling analysis. Derive irreps or an efficient subgroup-chain transform
+   for `L=N semidirect B`, where `N` is the parity-code preimage containing
+   `A_n^(2K+1)`.
+2. Determine whether the `L` Fourier transform exposes a smaller multiplicity
+   algebra than the `Omega` fixed-space CS blocks. A global QFT alone is not
+   enough; the test is a normalization-one polar in the physical `B` gauge.
+3. Formulate and test global GPE row relocation inside the zero-syndrome block.
+   Syndrome translations may be used only for canonicalization, not counted as
+   progress on singular-value normalization.
+4. Prove or kill a polynomial holonomy/F-move network on the connected block.
+   Pair-GPE edges are available, but active coverage and higher-order gauge
+   consistency remain mandatory.
+5. If `L` recoupling is no simpler, record the exact equivalence and return to
+   a direct many-way Kronecker CS transform. Do not infer arbitrary-circuit
+   hardness from connectedness, huge rank, or worst-case Kronecker results.
+
+Routine wiring remains queued for Gemini 3.6 Flash through Antigravity.
+
+## Current High-Reasoning Result: Fixed Spaces Explicit, Global Kronecker CS Polar Open (2026-08-21)
+
+Files and experiment ID:
+
+```text
+self_dual_wreath_orientation_fixed_space_recoupling.py
+tests/test_self_dual_wreath_orientation_fixed_space_recoupling.py
+research/representation/self_dual_wreath_orientation_fixed_space_recoupling.json
+EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-FIXED-SPACE-RECOUPLING
+```
+
+The two fixed spaces in the homogeneous orientation polar are now explicit in
+one common local gauge. For
+
+```text
+Omega = G x (((G x G) semidirect C_2)^K), G=S_n,
+rho = tau tensor zeta_1 tensor ... tensor zeta_K,
+```
+
+irreps of a local two-factor wreath group have two forms. If `lambda!=mu`,
+the induced carrier is
+
+```text
+(V_lambda tensor V_mu) direct_sum (V_mu tensor V_lambda),
+```
+
+its swap-fixed space is one `V_lambda tensor V_mu`, and its restriction to
+the selected first `G` coordinate is
+
+```text
+d_mu V_lambda direct_sum d_lambda V_mu.
+```
+
+For equal `lambda` and extension sign `sigma`, the swap-fixed space is
+`Sym^2(V_lambda)` for `sigma=+1` and `wedge^2(V_lambda)` for `sigma=-1`; the
+selected restriction is `d_lambda V_lambda`. Therefore
+
+```text
+Fix_B(rho) = V_tau tensor_i Fix_C2(zeta_i),
+Fix_D(rho) = Inv_G(V_tau tensor_i Res_selected(zeta_i)).
+```
+
+The `B`-fixed basis is polynomially coherent. Unequal blocks need one branch
+Hadamard and controlled tensor swap. Equal blocks use a reversible index
+comparison and symmetric/exterior pair basis. This local basis is not the
+bottleneck.
+
+Compressing selected-coordinate action to that basis gives
+
+```text
+K_(lambda,mu)(s)
+  = [rho_lambda(s) tensor I + I tensor rho_mu(s)]/2,
+CC* = |G|^-1 sum_s rho_tau(s) tensor_i K_i(s).
+```
+
+The equal-label formula is the same half-sum restricted to the symmetric or
+exterior square. The second identity is exactly the orientation Fourier frame
+in the flattened `B`-fixed gauge. Thus the remaining operation is sharply
+identified as the polar of a high-rank, many-way symmetric-group Kronecker
+subduction kernel.
+
+Coherent GPE can mark `Fix_D`, and the companion pair-GPE theorem implements a
+single canonical carrier reassociation while preserving opaque multiplicity.
+Neither supplies the global matrix CS polar: their direct composition retains
+the inverse-square-root-width principal angles. Two exact global `S_3`
+controls have respectively three and two distinct positive principal-cosine
+levels inside one outer-label block (`1/4` through `1/2`). This directly
+falsifies scalar outer-label filtering and automatic composition of pair
+carrier swaps.
+
+The May 2026 semisimple-algebra QFT does not currently close this gate. Its
+proved unitary approximation has error `(d^-1/2+epsilon)poly(|A|)`, while the
+natural diagram order is `Theta(K)=Theta(n log n)`, the loop parameter is only
+`d=n`, and the factors are arbitrary Plancherel `S_n` irreps rather than one
+fixed low tensor power of the permutation module. This is an applicability
+failure, not a hardness theorem.
+
+Six local controls and two global controls pass with zero failures. Maximum
+local compression residual is `2.60e-16`; maximum global kernel residual is
+`2.22e-16`. Both global controls are matrix-valued. Seven focused tests,
+syntax, and diff checks pass. Keep global CS compiler, complete orientation
+polar, classical separation, algorithm, and speedup gates false.
+
+### Refined Next High-Reasoning Task
+
+1. Formulate a global GPE row-relocation ansatz for the matrix kernel `CC*`.
+   It must act on the full many-way invariant multiplicity coherently and end
+   in the explicit physical `B`-fixed gauge.
+2. Determine whether recursive GPE fusion trees provide a direct CS basis
+   change or merely alternate two projectors at principal angle `Theta(g^-1/2)`.
+   A positive theorem needs normalization one; a negative theorem must state
+   the restricted circuit/oracle model.
+3. Search the subgroup chain generated by `B` and `D` for a multiplicity-space
+   Fourier transform, association scheme, or partition/centralizer algebra
+   whose F-moves are polynomial at `K=Theta(n log n)`. Reject fixed-degree or
+   large-loop results that do not reach this regime.
+4. Try to express the CS polar as a product of direct pair-GPE reassociations
+   plus a polynomial set of holonomy corrections. Prove active coverage and
+   gauge consistency; finite path connectivity is insufficient.
+5. If all such direct transforms fail, derive a natural-mass obstruction for
+   the restricted GPE/local-swap architecture. Do not promote worst-case
+   Kronecker hardness or huge rank to an arbitrary-circuit lower bound.
+
+Routine registry, runner, CLI, README, ledger, and broad validation remains a
+Gemini 3.6 Flash/Antigravity task.
+
+## Current High-Reasoning Result: One Homogeneous-Space Polar Replaces The Orientation List (2026-08-21)
+
+Files and experiment ID:
+
+```text
+self_dual_wreath_orientation_homogeneous_space_polar.py
+tests/test_self_dual_wreath_orientation_homogeneous_space_polar.py
+research/representation/self_dual_wreath_orientation_homogeneous_space_polar.json
+EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-HOMOGENEOUS-SPACE-POLAR
+```
+
+The complete regular-master orientation polar now has one exact global group
+model. Put `G=S_n`, `Gamma=G^(2K+1)`, let `B=C_2^K` swap the two entries in
+each source pair, and form
+
+```text
+Omega = Gamma semidirect B
+      = G x (((G x G) semidirect C_2)^K).
+```
+
+Let `D` be the zero-orientation diagonal copy of `G`, acting on the target and
+the zero-selected coordinate of every pair. Conjugating `D` by the branch
+group gives every orientation subgroup `H_e`. There are canonical quotient
+identifications
+
+```text
+Omega/D = disjoint_union_e Gamma/H_e,
+Omega/B = Gamma.
+```
+
+For normalized right-coset embeddings `J_D,J_B` into `C[Omega]`, the full
+orientation synthesis is exactly
+
+```text
+T = sqrt(2^K) J_B* J_D,
+TT* = 2^K J_B* P_D J_B,
+T*T = 2^K J_D* P_B J_D.
+```
+
+Thus every natural orientation polar is one Fourier block of the polar of
+this single homogeneous-space incidence. This is the first exact flattened
+representation-specific target that does not describe the compiler as an
+explicit factorial list or a recursively nested black-box QSVT.
+
+The `Omega` Fourier transform only removes the outer row action. In each
+irrep `rho`, the remaining block is the matrix overlap
+
+```text
+sqrt(2^K) [Fix_D(rho) -> Fix_B(rho)],
+```
+
+and the required operation is its Cosine-Sine/subduction polar. It is not a
+scalar spherical filter. With `g=n!`, `p=p(n)`, and
+`I_n=sum_lambda d_lambda` equal to the number of involutions in `S_n`, exact
+dimension formulas are
+
+```text
+#Irr(Omega) = p [p(p+3)/2]^K,
+#(B\Omega/B) = g [(g^2+g)/2]^K,
+sum_rho d_rho = I_n (I_n^2+g)^K.
+```
+
+For `m_B(rho)=dim Fix_B(rho)`, the physical quotient dimension fraction in
+blocks with `m_B<=L` is at most
+
+```text
+L I_n (I_n^2+g)^K / g^(2K+1).
+```
+
+The source quotient has the same numerator and denominator `2^K g^(2K)`.
+At `K=ceil(log2 g)+2` and `L=g^(K/4)`, both bounds are already below `2^-24`
+at `n=5` and then fall rapidly; the `n=128` physical log2 bound is below
+`-367720`. Therefore low multiplicity and scalar outer-label filtering are
+not the typical uniform-dimension regime on either quotient.
+
+Uniform dimension alone is not the native frame law, but the exact incidence
+moments close that gap at the regular-master level. For `F=TT*`,
+
+```text
+Tr(F)   = (2^K/g) dim(C[Gamma]),
+Tr(F^2) = [1+(2^K-1)/g] Tr(F).
+```
+
+If `r_rho` is the occupied CS rank in block `rho`, blocks with `r_rho<=R`
+have total ambient rank at most `R sum_rho d_rho`. Hilbert--Schmidt
+Cauchy--Schwarz bounds their native frame mass by
+
+```text
+sqrt((gamma/c) R I_n(I_n^2+g)^K/g^(2K+1)),
+c=2^K/g, gamma=1+(2^K-1)/g.
+```
+
+At `R=g^(K/4)` this is negligible. The weakest recorded high-rank native-mass
+lower bound is `0.999752`. Therefore low occupied overlap rank is no longer a
+viable typical-native escape. A stronger conditioned per-sector
+central-support transfer is not proved.
+
+This is still not a hardness theorem. Huge occupied QFT multiplicity can have
+a succinct basis and fast transform. Generic alternating reflections still
+see the inverse-factorial principal-angle normalization, while a direct
+fixed-space CS transform could bypass that boundary.
+
+Three exact controls (`S_2,K=1`, `S_2,K=2`, `S_3,K=1`) have zero incidence
+and equivariance residual. The largest polar-support residual is `9.24e-15`
+and the largest frame-moment residual is `7.11e-14`. Seven focused tests pass;
+syntax and diff checks pass. Native regular-master huge occupied rank is true.
+Keep conditioned physical-sector rank transfer, normalized CS compiler,
+complete orientation polar, classical separation, MRS escape, algorithm, and
+speedup gates false.
+
+### Refined Next High-Reasoning Task
+
+1. Write an explicit coherent basis for `Fix_B(rho)`. This side factors over
+   the `K` local two-factor wreath irreps: unequal labels give one swap-fixed
+   copy of `V_lambda tensor V_mu`, while equal labels give symmetric or
+   exterior squares.
+2. Express `Fix_D(rho)` in the same basis. Restriction to the selected source
+   coordinate produces a many-way diagonal `S_n` invariant/Kronecker space.
+3. Search for a subgroup-chain or partition-algebra factorization of the
+   fixed-space CS polar whose query count is polynomial and whose output gauge
+   is the physical `B`-fixed basis. Kill the route if unrestricted Kronecker
+   subduction reappears on constant native mass without a succinct transform.
+4. Decide whether an annealed native-mass compiler is sufficient for the PGM
+   error budget or whether a conditioned central-support theorem is needed.
+   Do not reopen occupied-rank work unless the circuit requires per-sector
+   guarantees.
+5. If a direct CS transform is found, compose it with the already compiled
+   physical PGM row-copy. Do not create a separate decoder project.
+
+Routine registry, runner, CLI, README, ledger, and broad test wiring belongs
+to Gemini 3.6 Flash through Antigravity and is specified in the mechanical
+plan.
+
+## Current High-Reasoning Result: Complete Polar Already Closes The Physical Decoder (2026-08-21)
+
+Files and experiment ID:
+
+```text
+self_dual_wreath_component_polar_physical_pgm_closure.py
+tests/test_self_dual_wreath_component_polar_physical_pgm_closure.py
+research/representation/self_dual_wreath_component_polar_physical_pgm_closure.json
+EXP-CODE-SELF-DUAL-WREATH-COMPONENT-POLAR-PHYSICAL-PGM-CLOSURE
+```
+
+This theorem removes another redundant research gate. For the complete
+orientation analysis `R`, `S=R*R`, polar `Q=RS^(+/2)`, and generalized Fourier
+row-copy isometry `C_U`, the exact physical intertwiner has
+
+```text
+C_U C_U* R = R,
+A = q^(-1/2) R* C_U,
+AA* = S/q,
+(AA*)^(+/2) A = Q* C_U.
+```
+
+The final expression is the physical PGM coisometry. The coherent row-copy,
+`S_n` Fourier transforms, and group-label output are already compiled by the
+physical intertwiner theorem. Therefore a coherent implementation of the
+**complete** natural orientation polar `Q` finishes the known constant-success
+PGM. There is no independent post-polar hidden-permutation decoder to invent.
+
+The component maps from the preceding direct-Naimark theorem are recursive
+factors of this same `Q`. They must remain coherent. Measuring leaf/component
+labels during recursion destroys the block gauges needed by the polar chain
+unless a separate dephasing-invariance theorem is proved; no such theorem is
+available and it is not the intended architecture.
+
+Approximation is also settled at the correct level. If exact contraction
+factors `T_L...T_1` are replaced by coherent approximations with operator
+errors `epsilon_l`, telescoping gives
+
+```text
+||T_L...T_1-Ttilde_L...Ttilde_1|| <= sum_l epsilon_l.
+```
+
+Every final measurement distribution differs in total variation by at most
+the same sum. At `k=ceil(log2 n!)`, ideal PGM success is at least `1/2`, so a
+total coherent compiler budget `1/8` leaves success at least `3/8`. A uniform
+per-level budget `1/(8k)` is sufficient; inverse-polynomial accuracy per level
+does not itself destroy the algorithm.
+
+Focused verification: seven tests pass, both theorem files compile, three
+finite controls have zero failures, the largest exact PGM-coisometry identity
+residual is `1.66e-15`, 12 scaling rows retain robust success above `0.375`,
+and `git diff --check` is clean.
+
+**Corrected sole quantum implementation gate:** compile the complete natural
+orientation polar coherently. This includes restricted child routers,
+endpoint mixers, all-level composition, and natural gauge preservation. Once
+that succeeds, use the existing physical PGM intertwiner. Do not open a new
+sectorwise or post-polar decoder project. The positive component `M4` is a
+compiler-mechanism witness, not a hidden-label statistic.
+
+After a complete circuit exists, the remaining independent research gates are
+classical complexity separation and a valid MRS-model audit. Keep complete
+polar, classical separation, MRS escape, algorithm, and speedup gates false.
+
+## Current High-Reasoning Result: Component Dilation Is Restricted Orientation-Polar Access (2026-08-21)
+
+Files and experiment ID:
+
+```text
+self_dual_wreath_component_direct_naimark_polar_equivalence.py
+tests/test_self_dual_wreath_component_direct_naimark_polar_equivalence.py
+research/representation/self_dual_wreath_component_direct_naimark_polar_equivalence.json
+EXP-CODE-SELF-DUAL-WREATH-COMPONENT-DIRECT-NAIMARK-POLAR-EQUIVALENCE
+```
+
+This theorem removes a redundant compiler objective from the carrier-retaining
+route. Let `R=[Q_e]_e` be one child leaf synthesis, `F=RR*`, and let
+`X:K->H` be an isometry into `Ran(R)`. Define
+
+```text
+A = X*F^+X,
+U = R*F^(+/2),
+J = F^(+/2)X A^(-1/2),
+B = R*F^+X A^(-1/2).
+```
+
+Then exactly
+
+```text
+U*U=supp(F),
+UU*=supp(R*R),
+J*J=I,
+B=UJ,
+UJJ*=BJ*.
+```
+
+Thus `B` is the orientation analysis polar restricted to `Ran(J)`. If `D_e`
+is the coefficient coordinate projection, then
+
+```text
+H_e=B*D_eB,
+sum_e H_e=I.
+```
+
+Applying `B` and reading the coefficient coordinate is already a simultaneous
+Naimark dilation of the natural component POVM. The factorization
+`D_eB=V_e sqrt(H_e)` recovers the usual minimal square-root dilation followed
+by controlled block gauges. Therefore **effect-by-effect matrix square-root
+synthesis is not an independent natural compiler gate**. The remaining access
+operation is a normalization-one implementation of the restricted orientation
+polar `UJ`, or an equivalent direct coefficient router preserving the natural
+block gauges.
+
+The coefficient image is also exactly
+
+```text
+BB*=supp(R*R)-supp(R*(I-XX*)R),
+```
+
+so this result identifies the earlier dependency-support projection with the
+range of the direct Naimark map; it does not introduce a second support object.
+
+Two adversarial boundaries are part of the theorem and must not be weakened:
+
+1. Component effects do not determine coherent output. The exact two-leaf
+   countercontrol has identical effects and coordinate probabilities but
+   orthogonal coherent outputs after changing one block gauge. A classical
+   leaf transcript or an arbitrary Naimark dilation cannot replace the natural
+   coefficient gauge in a label-sensitive decoder.
+2. For `E=B-B_tilde` and an actual fiber input `rho`,
+
+   ```text
+   Tr(rho E*E) <= kappa ||E||_F^2/r,
+   kappa=r||rho||_infinity.
+   ```
+
+   The rank-one countercontrol has normalized Frobenius error `1/r`, uniform-
+   input error `1/r`, and concentrated-input error one. Hence the existing
+   trace-weighted support scalarization becomes operational only after proving
+   node-state flatness or a sharper state-specific weighted estimate.
+
+Focused verification: seven tests pass, both theorem files compile, the live
+artifact has three finite controls and zero failures, the largest `B=UJ`
+residual is `1.77e-15`, the largest dependency-projection residual is
+`4.96e-15`, and `git diff --check` is clean.
+
+### Correct Frontier After This Theorem
+
+The positive natural component `M4`, constant trace-weighted effect edge, and
+support noncommutativity are already proved. Do not spend high-reasoning work
+on another scalar signal or on separate effect square roots. The next hard
+questions, in order, are:
+
+1. Construct or rule out a normalization-one implementation of `U` on
+   `Ran(J)` using the natural nested orientation structure. Generic uniform
+   GPE exposes only `R*/sqrt(q)` and pays the forbidden width normalization.
+2. Determine whether the restricted domain `Ran(J)` has additional structure
+   that makes it easier than the full orientation polar. A proof must retain
+   the exact common-metric embedding, not replace it by a Haar surrogate.
+3. Use the already-proved all-level native-state trim: the exact frame second
+   moment and fixed coefficient-register rank budget give an inverse-polynomial
+   threshold without input flatness, a lower root cutoff, or a root high cap.
+   The unresolved operation is coherent threshold/support SELECT and natural
+   partial-isometry gauge transport, not state-error accounting.
+4. Preserve the outer `S_n` carrier row and natural block gauges through the
+   router, then use the already-compiled physical PGM intertwiner. Do not
+   design a separate post-polar sector decoder. Leaf probabilities and scalar
+   `M4` are hidden-label blind, but the complete coherent polar is sufficient.
+5. After the complete circuit exists, audit its decision effect against the full adaptive MRS
+   transcript model. Merely remaining coherent or lying outside the paper's
+   syntax is not a separation theorem.
+
+Keep these gates false: natural restricted-polar circuit, coherent natural
+block-gauge compiler, complete orientation polar, MRS escape, classical
+separation, algorithm, and speedup. A separate post-polar decoder gate is not
+open; it has been reduced away conditionally on the complete polar.
+
+The companion `self_dual_wreath_all_level_component_trim.py` supersedes any
+older statement in this file that lists natural input flatness, retained root
+rank, a lower root spectral window, or a root high-cap filter as a prerequisite
+for average-state component trimming. Those information-theoretic gates are
+closed. The coherent selector/access gate is not.
+
+## Current High-Reasoning Result: Carrier-Traced Point Route Closed Through Quintic Samples (2026-08-21)
+
+Files and experiment IDs:
+
+```text
+self_dual_wreath_point_critical_identity_atom.py
+EXP-CODE-SELF-DUAL-WREATH-POINT-CRITICAL-IDENTITY-ATOM
+
+self_dual_wreath_point_centered_residual_no_go.py
+EXP-CODE-SELF-DUAL-WREATH-POINT-CENTERED-RESIDUAL-NO-GO
+```
+
+This bundle resolves the critical `c=2` point question left by the copy-
+threshold theorem. Let `N=n!`, `Q=2^k`, `D=NQ`, and for public iid
+Plancherel source labels `L` put
+
+```text
+Delta_(j,L)=omega_(j,L)-B_L,
+B_L=n^-1 sum_j omega_(j,L).
+```
+
+The diagonal event `z=0,s=g` has exact probability `1/N` for every source
+tuple. In the point quotient it is a classical simplex atom with
+
+```text
+D||Delta_atom,j||_2^2=(n-1)Q/N^2,
+Xi_atom=(n-1)/N,
+P_atom=1/n+(n-1)/(nN).
+```
+
+At `k=ceil(2log2 N)`, this atom asymptotically explains all previously known
+annealed ambient Hilbert--Schmidt energy. The energy transition was therefore
+not evidence for an operational point decoder.
+
+The stronger centered theorem removes the atom at operator-mean level. For
+every nonidentity `h`, regular-character orthogonality gives
+
+```text
+E_L p_L(0|h)=2^-k,       p_L(0|e)=1.
+```
+
+The diagonal `z=0` projection of `E_L Delta_(j,L)` is an exact point simplex
+`M_j` satisfying
+
+```text
+D||M_j||_2^2=(n-1)Q/N^2(1-Q^-1)^2,
+||M_j||_1/2=(n-1)(1-Q^-1)/(nN).
+```
+
+Since this is an orthogonal Hilbert--Schmidt projection,
+
+```text
+E||Delta_(j,L)-M_j||_2^2
+  =E||Delta_(j,L)||_2^2-||M_j||_2^2.
+```
+
+Subtracting from the positive copy-threshold upper bound yields an explicit
+residual `R_(n,k)` with dominant scale
+
+```text
+R_(n,k) <= exp(O(sqrt(n))) k exp(O(k/n^4))/n!
+```
+
+up to smaller terms. Therefore, for an arbitrary point POVM selected after
+seeing every public source label,
+
+```text
+E[P_point-1/n]
+ <= (n-1)(1-2^-k)/(n n!) + sqrt(R_(n,k))/2.
+```
+
+This is superpolynomially small for every `k=O(n^5)`, including all fixed
+multiples of `log2(n!)`. The squared residual is nonnegative, so conditioning
+on globally distinct Plancherel source draws costs only `1/(1-o(1))` for any
+polynomial number of draws. The result is information theoretic and covers
+every public-label-adaptive POVM on the carrier-traced point quotient; it is
+not merely a PGM, QSVT, or circuit lower bound.
+
+The virtual iid calculation includes equal partition pairs only as an
+algebraic regular-character extension. The physical statement is obtained by
+conditioning onto the all-unequal/global-distinct event, where the source
+state is the actual unequal-pair irrep state. Do not route equal pairs through
+the unequal physical constructor.
+
+Focused verification: the centered module has five passing tests, two exact
+`S_3` regular-character/mean-projection controls with zero failures, and 15
+scaling records. At `n=128`, the arbitrary-point-POVM excess has log2 upper
+bounds `-334.33`, `-323.67`, and `-303.14` at the critical, quartic, and
+`n^5/16` schedules. Artifact status is
+`carrier-traced-point-route-closed-through-quintic-samples`.
+
+Keep these gates false:
+
+- carrier-retaining global decoder ruled out;
+- non-point collective decoder ruled out;
+- all polynomial sample schedules ruled out;
+- classical separation proved;
+- speedup claim allowed.
+
+**Research-direction decision:** stop work on carrier-traced point decoding,
+including child-star relative-spectrum compilation. The relative collision
+of the full point state is already bounded by the arbitrary-POVM theorem in
+the proved window. The highest-value code-equivalence frontier is now an
+explicit carrier-retaining global transform or a proof that carrier/source
+entanglement also has superpolynomially small accessible information. In
+parallel, the independent DCP frontier remains the density-one subset-sum
+witness solver. Do not spend high-capability reasoning on more point-channel
+finite controls or CLI plumbing.
+
+## Current High-Reasoning Result: Trimmed Regular-Row Architecture Correction (2026-08-21)
+
+Files and experiment IDs:
+
+```text
+coset_hidden_involution_normalized_likelihood_charge_commutator_no_go.py
+EXP-COSET-HIDDEN-INVOLUTION-NORMALIZED-LIKELIHOOD-CHARGE-COMMUTATOR-NO-GO
+
+coset_hidden_involution_trimmed_row_kernel_succinctness.py
+EXP-COSET-HIDDEN-INVOLUTION-TRIMMED-ROW-KERNEL-SUCCINCTNESS
+
+coset_hidden_involution_trimmed_row_block_encoding_no_go.py
+EXP-COSET-HIDDEN-INVOLUTION-TRIMMED-ROW-BLOCK-ENCODING-NO-GO
+```
+
+This bundle corrects the active hidden-involution architecture. On the
+asymptotically full free source fiber, the existing reversible canonicalizer
+and exact induction identity
+
+```text
+Ind_K^G(C[K] tensor C[O]) ~= C[G] tensor C[O]
+```
+
+fuse the `K=C_2 wr S_m` regular coordinate into a regular `G=S_(2m)`
+coordinate before the `G` QFT. Generic `S_(2m) down K_m` subduction is
+therefore **not** the remaining high-mass compiler. The residual object is the
+orbit-copy Fourier row kernel
+
+```text
+R_lambda(o,o') = sum_g kappa_(o,o')(g) rho_lambda(g).
+```
+
+For product plus-coset rows, two robustly transitive seed coordinates give 16
+endpoint orientations. For each orientation, an ordered transitive pair
+conjugator is determined by one root image, giving at most `2m` possibilities.
+Rooted propagation constructs them, and later coordinates filter them. Hence
+`support(kappa_(o,o')) <= 16(2m)` and every pairwise matrix Fourier entry is a
+polynomial-size sum of efficiently computable representation matrices on
+asymptotically full alternative mass. Exact `S_4` and `S_6` controls reproduce
+the full-group support and Fourier sums. Pairwise row-kernel evaluation is
+classically dequantized; factorial entry summation cannot be used as quantum
+leverage.
+
+Coherent access does not rescue the route. If `I` is the physical/source
+incidence matrix, normalized row- and column-edge isometries overlap as
+
+```text
+D = I/sqrt(M 2^k),        D^*D = Z/M = A.
+```
+
+The canonicalizer, induction map, and `G` QFT are unitary and preserve this
+normalization. On the proved flat bulk, singular values remain
+`Theta(M^-1/2)`, so generic dense-kernel polar/QSVT processing costs
+`Omega(sqrt(M))`. Polynomial pairwise entries and polynomial coherent row
+preparation do not fast-forward the unnormalized likelihood.
+
+The independent charge route closes at the same boundary. Under the source
+trace, `tau(Z)=1`, `tau((Z-I)^2)=eta=(M-1)/2^k`, and complete source-local
+likelihood independence gives `E_Alg(D_m)(Z)=I`. Thus for every source-local
+contraction `S`,
+
+```text
+||[A,S]||_(2,tau)^2 <= 4 eta/M^2.
+```
+
+At natural copy count, inverse-polynomial normalized commutator energy can
+only lie on factorially small mass. A finite conditioned covariance is not a
+natural signal.
+
+The only surviving hidden-involution mechanism in this architecture is a
+**direct analytically normalized global orbit-row orthogonalizer/recoupling
+transform** that factors `M` symbolically before amplitude normalization. The
+current theorems do not rule such a transform out, but they close all of these
+proxies:
+
+- generic hyperoctahedral subduction as the trimmed bottleneck;
+- factorial pairwise kernel evaluation;
+- scalar or matrix pairwise kernel estimation as an advantage;
+- normalized likelihood/charge commutator mass;
+- generic block-encoding, QSVT, or polar processing of coherent row states.
+
+Keep direct-transform, detector, classical-separation, and speedup gates
+false. Do not return to fixed-rank subduction catalogs or pairwise kernel
+benchmarks. A future positive proposal must give explicit local rotations or
+an exact combinatorial factorization of the global orbit-copy transform and
+must explain where the `M` normalization cancels before state preparation.
+
+Focused verification on 2026-08-21: all three modules compile, all 18 focused
+tests pass, and live artifacts have statuses
+`normalized-likelihood-charge-commutator-natural-mass-no-go`,
+`regular-row-pairwise-kernel-succinct-global-polar-open`, and
+`trimmed-row-coherent-access-retains-Z-over-M-normalization`. The robust-mass
+artifact carries log-domain failure bounds through `m=128`; its final
+alternative failure has log2 upper bound below `-1266`, rather than an
+unexplained floating-point zero.
+
+**DCP audit correction:** do not resume the proposed global-robustness theorem.
+The committed repository already contains
+`dcp_contaminated_pgm_audit.py`, which proves constant all-good information
+mass for `O(n)` registers at exact `f=1`, and
+`dcp_arbitrary_measurement_witness_reduction.py`, which proves the stronger
+statement that every useful accessible standard-circuit DCP measurement
+reduces to average density-one subset-sum witness preparation. The remaining
+DCP frontier is the subset-sum solver itself, not a PGM/noise loophole.
+
+## Current High-Reasoning Result: Point Copy Threshold Is Exactly Two (2026-08-21)
+
+File and experiment ID:
+
+```text
+self_dual_wreath_point_copy_threshold.py
+EXP-CODE-SELF-DUAL-WREATH-POINT-COPY-THRESHOLD
+```
+
+This theorem closes the existing carrier-traced point program at its old copy
+width and identifies the only critical window worth studying. Put `N=n!` and
+let
+
+```text
+S_(n,k)=N 2^k E ||omega_0-bar(omega)||_2^2.
+```
+
+The exact Plancherel point-kernel formula can be written
+
+```text
+S_(n,k)=N^-2 sum_(u,s,t) chi_(n-1,1)(u)
+        [a(s^-1t)+c_u(s)d_u(t)]^k.
+```
+
+For `n>=5`, every nonidentity conjugacy class has size at least
+`n(n-1)/2`; set `q=2/[n(n-1)]`. Both incidence sums
+`sum_s c_u(s)` and `sum_t d_u(t)` equal the commutator density `A(u)`. The
+second identity is non-obvious: products of two conjugates and commutators
+have the same `S_n` law. Direct `S_3,S_4,S_5` counts verify it, while the
+all-rank proof is the character calculation. Frobenius orthogonality gives
+
+```text
+N^-1 sum_u A(u)^2 = zeta_(S_n)(2).
+```
+
+After cancelling the `u`-independent zeroth binomial term, every `u!=e`
+contribution is bounded in absolute value by
+
+```text
+B_non <= (n-1) zeta(2)/N * ((1+q^2)^k-1)/q^2.
+```
+
+The `u=e,s=t=e` term is exactly
+
+```text
+(n-1)(2^k-1)/N^2.
+```
+
+Separating equal nonidentity pairs, one-identity pairs, and distinct
+nonidentity pairs gives a matching explicit upper bound. Therefore for every
+fixed `c<2` and `k<=c log2(N)+O(1)`,
+
+```text
+S_(n,k) <= N^{-(2-c)+o(1)}.
+```
+
+This is an arbitrary-measurement no-go, not a QSVT no-go. For every point POVM
+that may depend on all public source labels,
+
+```text
+P_point-1/n <= 0.5 E||omega_0-bar(omega)||_1
+            <= 0.5 sqrt(S_(n,k)).
+```
+
+The point energy is nonnegative sourcewise, so conditioning all source
+partitions to be globally distinct costs only `1/P_cf=1+o(1)` in this upper
+bound. Thus **every fixed copy multiplier below two is closed** after carrier
+trace. In particular, the old `k=ceil(log2 n!)` point PGM, linear POVM,
+Young-star Naimark, and child-energy signals cannot have inverse-polynomial
+average excess. Their finite positive controls are pre-asymptotic.
+
+At the exact critical width `k=ceil(2log2 N)`, the same theorem reverses:
+
+```text
+S_(n,k) >= n-1-o(1).
+```
+
+This is a real normalized Hilbert--Schmidt energy phase transition, but it is
+**not operational evidence**. It supplies no trace-distance lower bound,
+relative child-star spectral window, Naimark circuit, full-permutation
+decoder, or classical separation. The artifact keeps all such gates false.
+The `n=128` scaling record has subcritical `c=1` log2 signal upper bound below
+`-667` and critical `c=2` log2 lower bound above `7.66`.
+
+Focused verification: six tests pass; all six exact `S_5/S_6` point signals
+lie inside the theorem interval; exact nonidentity class bounds hold through
+`S_12`; and the live artifact status is
+`point-copy-threshold-two-proved-critical-harmonic-measurement-open`.
+
+**Next high-reasoning task:** analyze the `c=2` relative operator, not ambient
+energy. In the exact `S_(n-1)` Young-star decomposition, bound
+`bar(omega)^(-1/2) Delta bar(omega)^(-1/2)` or the equivalent child-star PGM
+seed on natural pairwise-unequal sources. Either prove an inverse-polynomial
+operational spectral window and a direct harmonic Naimark route, or show that
+the identity spike lies in factorially inaccessible relative eigenvalues.
+Do not run more `c<2` point experiments and do not promote the critical
+Hilbert--Schmidt lower bound by itself.
+
+## Current High-Reasoning Result: Critical Energy Is Operationally Underdetermined (2026-08-21)
+
+File and experiment ID:
+
+```text
+self_dual_wreath_point_critical_energy_separation.py
+EXP-CODE-SELF-DUAL-WREATH-POINT-CRITICAL-ENERGY-SEPARATION
+```
+
+This theorem proves that the new `c=2` energy phase transition cannot by
+itself support either a positive algorithm claim or a point-decoding no-go.
+For a uniform point ensemble on an ambient `D`-dimensional register, put
+
+```text
+B=n^-1 sum_j rho_j,       Delta_j=rho_j-B.
+```
+
+The PGM has the exact relative-collision identity
+
+```text
+p_PGM = 1/n + n^-2 sum_j
+  Tr(B^-1/2 Delta_j B^-1/2 Delta_j),
+```
+
+with Moore--Penrose inverses on `supp(B)`. For a covariant ensemble all `n`
+relative-collision terms are equal. Ambient energy
+`D||Delta_j||_2^2` does not determine this quantity.
+
+The module constructs two exact commuting `S_n`-covariant ensembles whenever
+`n` divides `D`. Both satisfy
+
+```text
+D||Delta_j||_2^2=n-1.
+```
+
+The flat-partition ensemble divides the basis into `n` disjoint blocks. It
+has `B=I/D`, relative collision `n-1`, PGM success one, and optimal success
+one. The spiky-simplex ensemble is supported on only `n` basis vectors:
+
+```text
+rho_j=I_n/n+sqrt(n/D)(|j><j|-I_n/n).
+```
+
+It has relative collision `n(n-1)/D`, PGM success
+`1/n+(n-1)/D`, and exact optimal success
+
+```text
+1/n+(n-1)/sqrt(nD).
+```
+
+At the natural critical width
+`D=n! 2^ceil(2log2(n!))`, that optimal excess is factorially small. The
+`n=512` scaling record puts its log2 value below `-5808`, while the
+same-energy flat family is still perfectly distinguishable. Therefore the
+critical ambient-energy theorem is genuinely underdetermined, not merely
+missing a loose norm inequality.
+
+Focused verification: five tests pass, the two natural-width finite controls
+have zero formula failures, the live artifact status is
+`critical-energy-only-inference-falsified-relative-spectrum-open`, and every
+natural-family measurement/speedup gate remains false.
+
+**Refined next high-reasoning task:** derive the natural child-star formula
+for
+
+```text
+Xi_j=Tr(B^-1/2 Delta_j B^-1/2 Delta_j)
+```
+
+at `k=ceil(2log2 n!)`, and control it on typical globally distinct public
+labels. In the Young-star form this requires signal-weighted spectral
+control relative to the parent-diagonal average blocks `D_nu/d_nu`; a global
+top-eigenvalue or purity bound is not enough. Prove either
+`Xi_j>=n^-O(1)` on sufficient mass (then point-PGM excess is `Xi_j/n` and a
+harmonic Naimark compiler becomes meaningful) or a superpolynomial upper
+bound. Do not infer either conclusion from ambient Hilbert--Schmidt energy.
+
+## Current High-Reasoning Result: Relative Point Signal Has Positive Young Channels (2026-08-21)
+
+File and experiment ID:
+
+```text
+self_dual_wreath_point_child_star_relative_collision.py
+EXP-CODE-SELF-DUAL-WREATH-POINT-CHILD-STAR-RELATIVE-COLLISION
+```
+
+The relative quantity from the preceding falsifier now has an exact
+representation-theoretic decomposition. Let `omega=T_H(tau)`,
+`B=T_G(tau)`, and `Delta=omega-B`. Point covariance gives
+
+```text
+Xi=Tr(B^-1/2 Delta B^-1/2 Delta),
+p_point_PGM=1/n+Xi/n.
+```
+
+In the `H=S_(n-1)` Young basis,
+
+```text
+omega=direct_sum_alpha I_(d_alpha) tensor Z^H_alpha,
+B    =direct_sum_alpha I_(d_alpha) tensor Z^G_alpha,
+Z^G_alpha=direct_sum_(nu covers alpha) D_nu/d_nu.
+```
+
+Therefore
+
+```text
+Xi=sum_alpha d_alpha
+   ||(Z^G_alpha)^-1/4 (Z^H_alpha-Z^G_alpha)
+     (Z^G_alpha)^-1/4||_F^2.
+```
+
+Because the average is parent diagonal, this refines into nonnegative
+`(alpha,nu,mu)` terms
+
+```text
+d_alpha ||(D_nu/d_nu)^-1/4 Delta_(alpha;nu,mu)
+          (D_mu/d_mu)^-1/4||_F^2.
+```
+
+Thus relative point signal cannot cancel between child stars or parent pairs.
+The orientation projection-Gram theorem further gives
+
+```text
+D_nu/d_nu=(2^k dim(C))^-1
+  [I_(d_nu) tensor W H_nu W^*].
+```
+
+Multiplying both `Z^H_alpha` and `Z^G_alpha` by `2^k dim(C)` leaves the PGM
+child effect exactly unchanged. The common density normalization is therefore
+**not** an intrinsic factorial scalar-amplification obstruction for the
+mathematical point PGM. What remains is a wide, source-dependent,
+dimensionless orientation-kernel transform and its signal-weighted relative
+spectrum.
+
+Focused verification: five tests pass; all three exact controls pass; 22
+finite parent-pair channels are active, 16 off diagonal; the largest finite
+relative collision is about `0.767`; rescaled effect residuals are numerical
+zero; and artifact status is
+`relative-child-star-channels-exact-critical-asymptotics-open`. Natural
+critical mass, harmonic compilation, full recovery, and speedup remain false.
+
+**Next high-reasoning task:** express each dimensionless relative parent-pair
+channel directly in the orientation projector-Gram data `H_nu` and the
+cross-parent native purification Gram. Then derive a Plancherel expectation
+and concentration theorem at `k=ceil(2log2 n!)` after globally distinct
+conditioning. The theorem must be signal weighted: existing global frame-norm
+obstructions can be caused by common cores in sectors carrying little or no
+`Delta` mass. Determine whether an inverse-polynomial fraction of `Xi` lies in
+an efficiently describable spectral window, or prove that every such natural
+window has superpolynomially small mass.
+
+## Current High-Reasoning Result: Pair-Gaudin And K-Adapted Matching Charges (2026-08-20)
+
+Files and experiment IDs:
+
+```text
+coset_hidden_involution_pair_gaudin_hierarchy.py
+EXP-COSET-HIDDEN-INVOLUTION-PAIR-GAUDIN-HIERARCHY
+
+coset_hidden_involution_pair_matching_charge_hierarchy.py
+EXP-COSET-HIDDEN-INVOLUTION-PAIR-MATCHING-CHARGE-HIERARCHY
+```
+
+The first module proves an exact all-rank infinitesimal-braid hierarchy.  For
+the eight-term pair interaction `c_ij`, disjoint interactions commute and
+`[c_ij,c_ik+c_jk]=0`.  Therefore
+
+```text
+J_r=sum_(i<r)c_ir
+```
+
+commute and have only `8(r-1)` permutation terms.  Their aggregate is the
+natural support-three charge `C_m`.  Individual `J_r` are not `K_m` adapted,
+and every repeated `S_8` and `S_10` control retains joint-spectrum degeneracy.
+This is an intermediate Gaudin basis, not a hyperoctahedral subduction basis.
+
+The second module derives the first terminal `K_m`-adapted commuting extension:
+
+```text
+C_m = sum_(i<j)c_ij,
+D_m = sum_{{i,j} disjoint {k,l}} c_ij c_kl.
+```
+
+`C_m` is central in the algebra generated by all `c_ij`, so `[C_m,D_m]=0`
+at every rank.  Both charges commute with `K_m` and have exactly
+`8*binomial(m,2)` and `192*binomial(m,4)` distinct terms.  The obvious edge
+power sum is provably redundant:
+
+```text
+c_ij^2=4c_ij+8z_ij,
+sum c_ij^2=4C_m+8Z_m,  Z_m in Z(C[K_m]).
+```
+
+Finite branch-resolved controls show genuine but incomplete progress.  At
+`m=5`, adjoining `D_m` changes the copy-label counts from `25` to `26` for
+`lambda=(6,3,1)` (the exact target is `26`) and from `34` to `35` for
+`lambda=(5,3,2)` (target `37`).  It leaves the worst controlled
+`lambda=(4,3,2,1)` sector at `50` of `62` labels.  At `m=6`, it closes the
+stable `lambda=(8,4)` and the tested `(9,2,1)` and `(8,2,2)` restrictions.
+
+More strongly, occupancy-channel interpolation proves that normalized `D_m`
+resolves the all-rank stable branch
+
+```text
+lambda_m=(2m-4,4), mu_m=((m-2,2),empty), b(lambda_m,mu_m)=2
+```
+
+with exact squared gap
+
+```text
+4(m^4-14m^3+75m^2-166m+129)
+ / [m^2(m-3)^2(m-2)^2(m-1)^2]
+```
+
+and `gap(D_m)>=2/(5m^2)`.  This is `16/25` of the previously proved
+support-five squared gap.  The stable branch has factorially negligible
+natural source mass, so this is not a speedup mechanism by itself.
+
+The naive third matching charge `M_3` fails: at `m=6`, an explicit coefficient
+of `[D_m,M_3]` is `-1`.  An exact degree-three motif search found corrected
+commuting combinations, but the strongest six-label correction adds no label
+after `C_m,D_m` on the tested `m=5` and `m=6` sectors.  Do not promote it to a
+third independent charge.  The next high-reasoning obligations are:
+
+1. Prove or falsify that `D_m` contributes copy information beyond `C_m` and
+   the `K_m` center on inverse-polynomial hidden-source mass.
+2. Classify the low-degree `K_m`-invariant centralizer of `D_m`, separating
+   true new charges from polynomials in `C_m,D_m` and `K_m`-center elements.
+3. Find a third charge that splits a controlled residual sector before seeking
+   an all-rank hierarchy.
+4. Prove conditional gap and source-CS likelihood correlation.  Stable gaps,
+   finite copy splits, and exact commutation do not imply either.
+
+Focused verification currently reports six passing pair-Gaudin tests and
+eight passing pair-matching tests.  The pair-matching artifact status is
+`K-adapted-commuting-pair-proved-partial-copy-resolution`.  All natural-mass
+completion, conditional-gap, source-correlation, coherent-transform,
+detector, and speedup gates remain false.
+
+### Natural-mass independence of `D_m`
+
+The next theorem closes the natural-relevance part of that list, but not the
+algorithmic gates:
+
+```text
+coset_hidden_involution_matching_charge_natural_independence.py
+EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-NATURAL-INDEPENDENCE
+```
+
+Define `T_m` as the normalized Hermitian average of all six orders of
+`c_ij c_ik c_jk` over pair-label triples.  `T_m` commutes with `C_m` and
+centralizes `K_m`, but it does not commute with `D_m`.  Exact local expansion
+proves
+
+```text
+delta_m = ||[D_m,T_m]||^2_reg
+        = 9(m-4)/[1024 m^3(m-3)(m-2)^3(m-1)^3]
+        = Theta(m^-9).
+```
+
+The commutator vanishes on four pair labels.  Every five-label set contributes
+exactly 122,880 terms, split evenly between coefficients `+12` and `-12`;
+the unnormalized squared norm is 17,694,720.  The complete six-label
+commutator is exactly the sum of its six embedded five-label copies, proving
+that all overlap-one contributions cancel.  Disjoint seven-label words
+commute termwise.  This is an all-rank local decomposition, not interpolation.
+
+Because `T_m` commutes with `Alg(C_m,Z(C[K_m]))`, blockwise
+
+```text
+dist_F(D_m,Alg(C_m,Z(C[K_m])))^2/d
+  >= ||[D_m,T_m]||_F^2/(4d).
+```
+
+Thus Plancherel mass at least `delta_m/(8-delta_m)` has commutator energy at
+least `delta_m/2` and squared distance at least `delta_m/8`.  Every commutator
+term moves at most ten points, so `coefficient_h(X^*X)=0` for `m>=11`; the
+same mean and mass are present in the occupied h-even source space.  A
+factorial tail comparison proves that for every `m>=13`, positive certified
+mass remains after excluding all row/column defect-four partitions.  This
+falsifies the hypothesis that `D_m` supplies only stable-family or
+`C_m`/K-center information.
+
+Six focused tests pass and the artifact status is
+`matching-charge-natural-independence-proved-hierarchy-open`.  The result does
+not provide a third commuting charge, conditional joint gaps, source-CS
+likelihood correlation, a normalized subduction transform, a detector, or a
+speedup.  Those gates remain false.  In particular, one- and two-copy tests
+cannot validate the needed correlation because their exact Helstrom normal
+forms are already scalar/target-label sufficient; the next correlation
+experiment must use a genuinely matrix-valued three-or-more-copy A/B block.
+
+### Matching-charge correlation and exact collective no-go boundary
+
+Files and experiment IDs:
+
+```text
+coset_hidden_involution_matching_charge_cs_correlation.py
+EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-CS-CORRELATION
+
+coset_hidden_involution_source_local_likelihood_no_go.py
+EXP-COSET-HIDDEN-INVOLUTION-SOURCE-LOCAL-LIKELIHOOD-NO-GO
+
+coset_hidden_involution_diagonal_charge_bias_no_go.py
+EXP-COSET-HIDDEN-INVOLUTION-DIAGONAL-CHARGE-BIAS-NO-GO
+
+coset_hidden_involution_cross_transposition_hecke_moment_no_go.py
+EXP-COSET-HIDDEN-INVOLUTION-CROSS-TRANSPOSITION-HECKE-MOMENT-NO-GO
+```
+
+The first module constructs the smallest honest matrix-valued conditioned
+block found so far.  In `S_10`, with sources
+`(6,2,2),(6,2,2),(9,1)` and target `(9,1)`, exact `S_9/S_8` restriction
+matrix units and the exact `K_5` Reynolds projector give a six-dimensional
+occupied A/B block.  Its squared principal cosines range from
+`0.0956617478` to `0.2375409059`.  Compressed `D_5` has six distinct
+eigenvalues, centered CS correlation `0.2397314804`, and raises regression
+`R^2` from `0.0704700319` to `0.0789366357`.  It also has occupied-range
+leakage `0.1289254802` and CS commutator norm `0.0016776943`; it does not
+diagonalize the likelihood.  This proves only that `D_5` is not pure nuisance
+after conditioning on this target block.  The family is fixed-defect and
+factorially negligible, so it is not natural scaling evidence.
+
+The second module then proves the decisive all-group cancellation theorem.
+For the exact double-coset normal form
+
+```text
+A={(r,...,r;r):r in G},
+B={(eps_1 r,...,eps_k r;r):r in K=C_G(h), eps_i in H=<h>},
+Z=[G:K] e_B e_A e_B,
+```
+
+the target-identity slice of `B A B` is exactly `H^k`, every element with
+constant multiplicity `2^k|K|^2`.  Therefore, for every source-coordinate
+group-algebra element `x`,
+
+```text
+tr_B(x Z)=tr_B(x).
+```
+
+For every B-compatible Hermitian `x`, this applies to all spectral
+projectors, so the complete measurement distribution, not just its mean, is
+likelihood independent.  It includes every joint per-source measurement of
+`C_m,D_m` and any other K-centralizing charge hierarchy.
+
+The stronger slice identity is
+
+```text
+b(eps,r) a_g b(eps',r')
+  =(eps_1 t eps'_1,...,eps_k t eps'_k;t),  t=r g r'.
+```
+
+If an observable leaves any source coordinate untouched, identity there
+forces `t in H`; hence every proper source-plus-target marginal has the same
+factorization.  A sum of terms touching at most `s` source copies has all
+likelihood-weighted moments through degree `d` identical whenever `sd<k`.
+Any group-algebra escape must be genuinely target-coupled across all `k`
+copies.  The positive finite `D_5` covariance therefore cancels across
+omitted target/outer sectors and cannot be promoted into a source-only
+detector.
+
+The third module kills the simplest all-copy escape.  For
+`a_t=(t,...,t;t)`, `X_t=e_B a_t e_B`, exact factorization gives
+
+```text
+tr_B(X_t)=1[t in K],
+tr_B(X_t Z)=1       if t in K,
+              2^-k if t not in K.
+```
+
+Thus a Hermitian diagonal LCU with coefficient `l1` norm at most one has bias
+at most `2^-k`.  At `k=ceil(log2(64M))` this is at most `1/(64M)`; constant
+linear bias requires LCU normalization at least `2^k` and merely recreates
+the orbit-label normalization barrier.  This does not rule out interleaved
+powers `e_B y e_B y e_B`, nonlinear spectral tests, or nondiagonal all-copy
+recoupling charges.  Those are now the correct high-reasoning search space.
+
+The fourth module evaluates the first interleaving exactly for the canonical
+perfect-matching switch.  Let `t` transpose points in two different h-pairs
+and `X=e_B a_t e_B`.  For every `m>=3`,
+
+```text
+|K intersect tKt|=2^m(m-2)!,
+tr_B(X^2)=1/[2^k m(m-1)].
+```
+
+The likelihood-weighted binary return count has one universal branch and one
+extra branch exactly on `K intersect tKt`; all other six binary patterns are
+impossible.  Hence
+
+```text
+tr_B(X^2 Z)=4^-k[1+(2^k-1)/(m(m-1))],
+tr_B(X^2 Z)-tr_B(X^2)=4^-k[1-1/(m(m-1))].
+```
+
+The next binary-return layer also closes exactly.  Put
+`r=m(m-1)` and `a=3m^2-7m+5`.  Switching the distinguished four-point
+matching gives one full-product branch and switching two unaffected pairs
+gives `(m-2)(m-3)` more.  The resulting cubic moments are
+
+```text
+tr_B(X^3)=1/(4^k r^2),
+tr_B(X^3 Z)=[r^2-a-1+a 2^k+4^k]/(8^k r^2).
+```
+
+The degree-four layer is now also closed exactly.  A three-switch path activates
+at most six of the `n=m-2` unaffected base pairs.  Deleting inactive pairs is a
+bijection for every even-cardinality identity subword, reducing all ranks to
+seven exact support cores.  Their binomial lift gives
+
+```text
+N8 = 1,
+N4 = 7 + 16n + 14*C(n,2),
+N2 = 84n + 260*C(n,2) + 336*C(n,3) + 144*C(n,4),
+N1 = r^3-N2-N4-N8.
+```
+
+These counts hold at `m=3` and every `m>=5`.  At `m=4`, exactly six paths gain
+one odd-cardinality identity subword, moving six paths from `N1` to `N2`.
+This exception list is itself all-rank: an odd identity subword cannot leave
+an inactive common pair, while three switches activate at most six pairs; the
+same exact core catalog through `m=8` finds only the `m=4` exception.
+
+The independently enumerated baseline closure histogram is
+
+```text
+Q1=8n,  Q2=2+8n+6*C(n,2)=3m^2-7m+4,  Q4=1.
+```
+
+Writing `x=2^k`, the exact moments are
+
+```text
+tr_B(X^4)   = [Q1+Q2*x+x^2]/[x^3*r^3],
+tr_B(X^4 Z) = [N1+N2*x+N4*x^2+x^3]/[x^4*r^3].
+```
+
+The unique alternative `N8` transporter branch and unique baseline `Q4`
+closure branch contribute the same `x^3` term.  They cancel exactly in the
+likelihood bias, leaving
+
+```text
+tr_B(X^4 Z)-tr_B(X^4)
+ = [N1+(N2-Q1)x+(N4-Q2)x^2]/[x^4*r^3]
+ = O(x^-2).
+```
+
+At natural `k`, the relative second-moment excess vanishes, the new
+degree-four contribution is `O(M^-2)`, and every unit-coefficient quartic
+filter in the single cross-transposition operator still has only
+inverse-candidate total bias.  This is not a full-spectrum theorem: rare large
+eigenvalues, degree five and higher, and mixtures of double cosets remain open.
+
+An attempted all-degree proof by excluding subgroup transporters is false.
+There is an explicit three-switch path on six points, lifting unchanged to
+every `m>=3`, whose selected middle bits `(0,1,1)` give a word `x` with
+`x h x^-1=t h t`.  Nevertheless the complete five-involution subword law has
+support 28 of 32 and maximum multiplicity only two (`1/16`); its identity
+multiplicity is one.  Exactly `12(m-2)` of the `[m(m-1)]^3` three-switch
+paths realize this selected transporter, a fraction `Theta(m^-5)`.  A
+transporter is therefore necessary for endpoint collision but not sufficient
+for large concentration.  Any all-degree theorem must bound the total mass and
+alignment of transporter subwords, not assert that they do not exist.
+
+### Exact degree-five continuation and cancellation falsifier
+
+Files and experiment ID:
+
+```text
+coset_hidden_involution_cross_transposition_hecke_degree_five_no_go.py
+EXP-COSET-HIDDEN-INVOLUTION-CROSS-TRANSPOSITION-HECKE-DEGREE-FIVE-NO-GO
+```
+
+Four switches activate at most eight unaffected base pairs.  The new module
+enumerates all nine canonical all-active support cores exactly, using
+meet-in-the-middle identity-subword counting, and lifts them by the same
+delete/insert bijection.  With `n=m-2`, the stable degree-five histogram is
+
+```text
+N16 = 1,
+N8  = 15 + 24n + 30*C(n,2),
+N4  = 252n + 822*C(n,2) + 1200*C(n,3) + 600*C(n,4),
+N2  = 564n + 5212*C(n,2) + 18216*C(n,3) + 30240*C(n,4)
+      + 24000*C(n,5) + 7200*C(n,6),
+N1  = 440n + 12096*C(n,2) + 82248*C(n,3) + 258408*C(n,4)
+      + 436800*C(n,5) + 410400*C(n,6) + 201600*C(n,7)
+      + 40320*C(n,8).
+```
+
+It holds at `m=3` and every `m>=5`.  At `m=4`, exact odd-word accounting
+moves 96 paths from `N1` to `N2` and 60 from `N2` to `N4`; there are 156
+exceptional paths and 216 odd identity occurrences.  The independently
+enumerated baseline closure histogram is
+
+```text
+Q1=48n,  Q2=20n+20*C(n,2),  Q4=5.
+```
+
+Therefore, for `x=2^k` and `r=m(m-1)`,
+
+```text
+tr_B(X^5)   = [Q1+Q2*x+Q4*x^2]/[x^4*r^4],
+tr_B(X^5 Z) = [N1+N2*x+N4*x^2+N8*x^3+x^4]/[x^5*r^4].
+```
+
+The degree-four leading cancellation does **not** extend to degree five.  The
+unique `c=16` branch has no baseline term of equal copy weight and survives as
+`1/(x*r^4)`.  This is a useful falsifier, not a positive signal: at natural
+`x>=64M` it retains the full inverse-candidate penalty and an additional
+`r^-4` path-mass suppression; the remainder is at most `4/x^2`.  A normalized
+quintic filter still cannot have constant bias.
+
+Seven focused tests pass.  The live artifact status is
+`cross-Hecke-quintic-no-go-leading-transporter-survives-sparsely`; theorem
+verification is true while all full-spectrum, detector, algorithm, and speedup
+gates remain false.
+
+### All-degree single-Hecke moment and polynomial-LCU no-go
+
+Files and experiment ID:
+
+```text
+coset_hidden_involution_single_hecke_all_degree_moment_no_go.py
+EXP-COSET-HIDDEN-INVOLUTION-SINGLE-HECKE-ALL-DEGREE-MOMENT-NO-GO
+```
+
+The fixed-degree catalogs are superseded for bounding purposes by a simple
+all-degree injection.  In every nontrivial loopless orbital path, the first two
+involutions `a,b` are distinct.  Fix all other subword bits.  The four products
+obtained from the first two bits are, up to common factors,
+
+```text
+e, a, b, ab.
+```
+
+They are pairwise distinct because `a,b` are distinct nonidentity
+involutions.  Every ordered-subword product fiber therefore meets each
+four-bit block at most once and has at most one-quarter of the full cube,
+independently of degree and even when degree grows with `m`.
+
+In the exact binary path normal form, the alternative degree-`d` moment is an
+average of `(c_path/2^d)^k`, so it is at most `2^-k`.  On a baseline closure
+path the duplicated terminal involution pairs identity subwords, giving binary
+count `c_path/2` with denominator `2^(d-1)` and the same bound.  Degree one
+saturates the bound directly.  Thus for every `d>=1`,
+
+```text
+0 <= tr_B(X^d), tr_B(X^d Z) <= 2^-k,
+|tr_B(X^d Z)-tr_B(X^d)| <= 2^-k.
+```
+
+For every finite or absolutely summable polynomial
+`P(X)=sum_d alpha_d X^d` with `sum|alpha_d|<=1`, the likelihood bias is also
+at most `2^-k<=1/(64M)` at natural copy count.  Transporters do not evade this
+argument; it never attempts to exclude them.
+
+Eight focused tests pass.  The live artifact status is
+`single-Hecke-all-degree-moment-and-normalized-polynomial-no-go`.  This closes
+all normalized moments and polynomial LCUs in one loopless Hecke operator.  It
+does **not** close discontinuous spectral projectors, polynomial approximants
+with large coefficient `l1` norm, adaptive postselection, or noncommuting
+mixtures of multiple double cosets.  All detector, algorithm, and speedup gates
+remain false.
+
+### Bounded-polynomial/QSVT spectral no-go
+
+Files and experiment ID:
+
+```text
+coset_hidden_involution_single_hecke_bounded_spectral_no_go.py
+EXP-COSET-HIDDEN-INVOLUTION-SINGLE-HECKE-BOUNDED-SPECTRAL-NO-GO
+```
+
+Large monomial coefficient norm does not rescue an efficiently bounded
+single-operator filter.  For `r=m(m-1)` and `x=2^k`, the exact second moments
+of the baseline and likelihood-weighted spectral laws are
+
+```text
+s0=1/(x*r),
+s1=(x+r-1)/(x^2*r).
+```
+
+If a real degree-`D` polynomial satisfies `||p||_infinity<=1` on `[-1,1]`,
+Markov's brothers inequality gives `||p'||_infinity<=D^2`.  The constant
+`p(0)` cancels because both spectral laws have total mass one.  Applying
+Cauchy--Schwarz separately to both laws gives the exact query-model bound
+
+```text
+|E_1 p(X)-E_0 p(X)| <= D^2*(sqrt(s0)+sqrt(s1)).
+```
+
+Bias at least `beta` therefore requires
+
+```text
+D >= sqrt(beta/(sqrt(s0)+sqrt(s1))).
+```
+
+At natural `x>=64M` and `x>=r`, this implies
+
+```text
+D >= sqrt(beta)*(x*r)^(1/4)/sqrt(1+sqrt(2))
+  = Omega(M^(1/4)).
+```
+
+This is superpolynomial in `m`.  It rules out efficient bounded-polynomial
+single-`X` spectral transformations, including the standard QSVT/block-query
+route.  Six focused tests pass and the live artifact status is
+`single-Hecke-bounded-spectral-QSVT-no-go`.
+
+The scope is important: small moments alone do not bound unrestricted total
+variation.  The theorem does not grant or analyze free exact eigenbasis access,
+a stronger oracle than block access to `X`, unbounded postselection, or
+noncommuting multi-operator algorithms.  Those gates remain open/false; no
+detector or speedup is claimed.
+
+Focused tests currently report five passing finite-correlation tests, six
+passing collective-no-go tests, four passing diagonal-bias tests, and eleven
+passing first-four-moment Hecke tests plus seven degree-five tests.  Artifact
+statuses are
+`finite-D-CS-correlation-proved-natural-scaling-open`,
+`source-local-likelihood-independence-proved-target-recoupling-mandatory`, and
+`normalized-diagonal-all-copy-charge-bias-no-go-proved`, and
+`cross-Hecke-quartic-no-go-transporter-leading-term-cancelled`.  All transform,
+decoder, detector, and speedup gates remain false.  The Hecke artifact was
+regenerated after the degree-four proof and has seven exact support-core
+controls and six all-rank branch controls.
+
+The next theorem-level obligations are:
+
+1. Do **not** continue fixed-degree moment catalogs merely by increasing the
+   degree.  The adjacent-pair theorem closes normalized moments at every degree,
+   including growing degree.  The Markov/Cauchy--Schwarz theorem also closes
+   efficient bounded-polynomial/QSVT filtering of a single operator.  The next
+   hard task is now multi-operator: determine whether a normalized family of
+   different double-coset operators can create joint second-moment width or
+   noncommuting signal without using exponentially large coefficient norm.
+   First separate the commutative `(S_(2m),K_m)` orbital algebra from the
+   source-lifted B-Hecke algebra and count the physically accessible dimension.
+2. Search for B-compatible all-copy charges outside the diagonal A-convolution
+   span, with an inverse-polynomial normalized likelihood signal.
+3. Resolve conditioned-block cancellation by target sector and determine
+   whether an efficiently computable sign/reweighting rule exists on natural
+   mass.
+4. Do not spend high-reasoning Codex usage on registry, CLI, README, or broad
+   repetitive validation for these modules; those are mechanical handoff work.
+
+The old `Periodic Frame Rank Collapse` footer says the dense constant-state
+suffix-branch theorem is open.  That sentence is superseded by `Dense
+Automaton Dyadic Boundary (2026-08-13)`, which proves the general entropy
+bound.  Do not resume the stale footer task; the remaining automaton frontier
+is only the near-uniform dyadic regime recorded in the newer section.
+
+## Current High-Reasoning Result: Natural Hyperoctahedral Recoupling (2026-08-20)
+
+Files and experiment IDs:
+
+```text
+coset_hidden_involution_natural_recoupling_boundary.py
+EXP-COSET-HIDDEN-INVOLUTION-NATURAL-RECOUPLING-BOUNDARY
+
+coset_hidden_involution_hyperoctahedral_branching_mass.py
+EXP-COSET-HIDDEN-INVOLUTION-HYPEROCTAHEDRAL-BRANCHING-MASS
+```
+
+The first module derives the actual natural-block map. Every source coordinate
+has exact `H=<h>`-spherical Fourier law
+
+```text
+p_H(lambda)=d_lambda(d_lambda+chi_lambda(h))/|S_(2m)|.
+```
+
+Its total variation from Plancherel is at most `1/(2 sqrt(M))`, where
+`M=|h^G|`, and Plancherel character orthogonality gives
+`Pr[|chi(h)|/d>=epsilon] <= 1/(M epsilon^2)`. Thus all logarithmically many
+coordinate labels are jointly Plancherel-typical on overwhelming mass. The
+exact matrix block is the restriction/recoupling overlap
+
+```text
+Hom_G(1, tensor_i lambda_i tensor tau)
+  <--> Hom_K(1, tensor_i lambda_i^+ tensor Res_K(tau)),
+lambda_i^+ = direct_sum_(|beta| even)
+               b(lambda_i;alpha,beta)[alpha,beta].
+```
+
+Efficient symmetric and hyperoctahedral QFTs expose outer/isotypic labels but
+do not supply the symmetric-group Kronecker multiplicity basis or the
+branching-copy basis. Even granting arbitrary unitary basis changes,
+projection retains exact average success `1/M`, hence generic
+reflection/postselection cost `Omega(sqrt(M))`. Bacon-Chuang-Harrow
+`quant-ph/0407082` provides a generic irrep-label projector, not a full `S_n`
+Kronecker multiplicity transform. The 2026 diagram QFT's large-loop regime
+does not match natural tensor order `Theta(n log n)` with loop parameter `n`.
+
+The second module proves that this missing-label problem is present on natural
+mass. Refining one source coordinate into a `K=C_2 wr S_m` irrep gives
+
+```text
+q(lambda,mu)=2 d_lambda d_mu b(lambda,mu)/(2m)!,  |beta(mu)| even.
+```
+
+For `I_N=sum_lambda d_lambda` and
+`J_m^+=sum_(b even) binom(m,b) I_(m-b)I_b`,
+
+```text
+Pr_q[b(lambda,mu)<=T] <= 2 T I_(2m) J_m^+/(2m)!.
+```
+
+Taking `T=M^(1/4)` and union-bounding over the natural logarithmic copy width
+puts every coordinate in superpolynomial branching multiplicity on
+overwhelming mass. At degree 128 the missing-label commutant dimension lower
+bound exceeds `2^178`. A `K` QFT cannot resolve these copies because every
+`C[K]` operator acts as identity on the multiplicity factor. This is not a
+circuit lower bound: a paired-tower path can still use polynomially many bits.
+
+Eleven natural-recoupling tests and ten branching-mass tests pass. Artifacts
+have statuses
+`natural-recoupling-map-proved-known-basis-transforms-retain-sqrt-M-normalization`
+and
+`natural-huge-hyperoctahedral-branching-mass-proved-missing-label-recursion-open`.
+All detector, normalized-transform, and speedup gates remain false.
+
+## Current High-Reasoning Result: Paired-Tower Primitive Boundary (2026-08-20)
+
+Files and experiment IDs:
+
+```text
+coset_hidden_involution_paired_tower_missing_label_boundary.py
+EXP-COSET-HIDDEN-INVOLUTION-PAIRED-TOWER-MISSING-LABEL-BOUNDARY
+
+coset_hidden_involution_colour_resolved_paired_tower_boundary.py
+EXP-COSET-HIDDEN-INVOLUTION-COLOUR-RESOLVED-PAIRED-TOWER-BOUNDARY
+```
+
+The first module proves the exact restriction recurrence
+
+```text
+sum_(mu covers nu) b_m(lambda,mu)
+  = sum_gamma f^(lambda/gamma)b_(m-1)(gamma,nu).
+```
+
+For the bipartition down-incidence matrix `D_m`, the product Young lattice is
+a 2-differential poset:
+
+```text
+D_m D_m^T-D_(m-1)^T D_(m-1)=2I.
+```
+
+Therefore the recurrence fixes only `D_m b_m` and leaves a fresh kernel of
+dimension `p_2(m)-p_2(m-1)`. Exact power-sum plethysm controls have zero
+recurrence or dimension failures, and all 38 controlled `S_(2m)` irreps for
+`m=2,3,4` have nonzero harmonic residual. At `m=64`, the kernel dimension is
+`421,360,145`.
+
+The second module gives the strongest obvious local repair and falsifies it.
+Resolving the last `K_1=C_2` label splits the recurrence into horizontal and
+vertical two-strip equations `D_alpha b` and `D_beta b`. Their common kernel is
+
+```text
+ker D_alpha intersect ker D_beta
+  = direct_sum_(a+b=m) ker D_a^Y tensor ker D_b^Y,
+h_m=p_2(m)-2p_2(m-1)+p_2(m-2).
+```
+
+The exact asymptotic is `h_m/p_2(m)~pi^2/(3m)`: its fraction vanishes, but its
+dimension remains `exp(Theta(sqrt(m)))`. Exact controls for `m=2,...,6` have
+zero split-recurrence failures. The hidden-source mass on irreps with nonzero
+joint-primitive component is respectively
+`1,31/40,251/315,1,1901/1925`; this is finite evidence only, not an asymptotic
+component-norm theorem. Nineteen focused tests pass for each module.
+
+This kills lower-rank coefficient recursion, even with the complete last-pair
+colour, as a self-contained compiler. It does not prove subduction hardness.
+The follow-up work below sharpens this boundary and supersedes any reading of
+the joint primitive kernel as a physical source subspace.
+
+### Joint-primitive coefficient projector is diagnostic only
+
+Files and experiment IDs:
+
+```text
+coset_hidden_involution_paired_tower_joint_primitive_projector.py
+EXP-COSET-HIDDEN-INVOLUTION-PAIRED-TOWER-JOINT-PRIMITIVE-PROJECTOR
+
+coset_hidden_involution_joint_primitive_ambient_lift_obstruction.py
+EXP-COSET-HIDDEN-INVOLUTION-JOINT-PRIMITIVE-AMBIENT-LIFT-OBSTRUCTION
+
+coset_hidden_involution_joint_primitive_representation_cone_obstruction.py
+EXP-COSET-HIDDEN-INVOLUTION-JOINT-PRIMITIVE-REPRESENTATION-CONE-OBSTRUCTION
+```
+
+Young-lattice differential-poset theory gives the exact auxiliary projector
+
+```text
+P_n^prim=product_(j=1)^n (I-D_n^T D_n/j),
+P_m^joint=direct_sum_(a+b=m) P_a^prim tensor P_b^prim.
+```
+
+Its normalized zero gap is at least `1/n`, and add/remove-corner access is
+polynomially sparse. This proves an efficient query reflection on the
+Euclidean vector space of recurrence coefficients. It does **not** produce a
+physical branching-copy reflection.
+
+There are two exact all-rank obstructions. First, Schur's lemma gives
+
+```text
+Res_K V_lambda=direct_sum_mu C^b(lambda,mu) tensor V_mu,
+End_K(Res_K V_lambda)
+  =direct_sum_mu End(C^b(lambda,mu)) tensor I_(V_mu).
+```
+
+The primitive coefficient projector has off-diagonal entries between
+inequivalent `mu`, so it has no `K`-centralizing ambient lift. This does not
+rule out a deliberately non-`K`-equivariant full subduction circuit.
+
+Second, the coefficient projector does not preserve the representation cone.
+For every `n>=2`, the alternating hook vector
+
+```text
+h_n=sum_(r=0)^(n-1) (-1)^r e_(n-r,1^r)
+```
+
+lies in `ker D_n`, while
+`U e_(n-1)=e_(n)+e_(n-1,1)`. Therefore
+
+```text
+P_n[(n-1,1),(n)] = -P_n[(n),(n)] < 0.
+```
+
+This has a physical restriction counterexample at every rank. The trivial
+`S_(2m)` representation restricts to the single trivial `K_m` irrep
+`((m),empty)`, with maximum branching multiplicity one and no repeated copy.
+Nevertheless its joint-primitive coefficient residual is nonzero, signed,
+and fractional. Thus nonzero primitive residual and its Euclidean norm do not
+imply a physical missing-copy subspace or hidden-source mass. Earlier finite
+statements about the fraction of `lambda` with nonzero residual are
+coefficient-table diagnostics only.
+
+The three focused suites pass 18 tests. Their statuses are
+`paired-tower-joint-primitive-coefficient-projector-diagnostic-only`,
+`joint-primitive-label-projector-K-commutant-lift-obstructed`, and
+`joint-primitive-coefficient-projector-diagnostic-only`. Keep physical
+primitive measurement, source primitive mass, normalized subduction,
+detector, and speedup gates false.
+
+The next high-reasoning task is no longer to lift this coefficient projector.
+Use the existing bounded-support commutant, stable support-six, natural local
+commutator, and matching-charge results to attack the actual spaces
+`C^b(lambda,mu)`. The decisive positive theorem is a polynomially described
+within-`mu` generator hierarchy with inverse-polynomial **conditional** gaps
+on inverse-polynomial natural source mass and a coherent local diagonalization.
+The decisive falsifier is that bounded-complexity generators leave growing
+joint degeneracy on that mass, or that resolving it reconstructs unrestricted
+plethysm/subduction data. Do not use coefficient-kernel dimension or norm as
+a proxy for either condition.
+
+### Natural matching charge is accessible, but every scalar/linear use is closed
+
+Files and experiment IDs:
+
+```text
+coset_hidden_involution_matching_charge_conditional_diameter.py
+EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-CONDITIONAL-DIAMETER
+
+coset_hidden_involution_matching_charge_coherent_label_compiler.py
+EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-COHERENT-LABEL-COMPILER
+
+coset_hidden_involution_matching_charge_orbit_recoupling_reduction.py
+EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-ORBIT-RECOUPLING-REDUCTION
+
+coset_hidden_involution_matching_charge_pairwise_kernel_dequantization.py
+EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-PAIRWISE-KERNEL-DEQUANTIZATION
+
+coset_hidden_involution_matching_charge_word_moment_dequantization.py
+EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-WORD-MOMENT-DEQUANTIZATION
+```
+
+The exact matching/triangle commutator energy does more than prove algebraic
+independence. In each common `(lambda,mu,C_m-eigenvalue)` multiplicity block,
+
+```text
+e=||[D_m,T_m]||_F^2/q <= diam(D_m)^2.
+```
+
+Therefore hidden-source mass at least `delta_m/(8-delta_m)` contains two
+`D_m` eigenvalues separated by at least `sqrt(delta_m/2)`, where
+
+```text
+delta_m=9(m-4)/[1024m^3(m-3)(m-2)^3(m-1)^3].
+```
+
+Explicitly, good mass is at least `9/(40960m^9)` and the conditional
+diameter is at least `3/(sqrt(10240)m^(9/2))`. Some of this mass is outside
+all row/column defect-four sectors for every `m>=13`. This is one separated
+eigenvalue pair, not a minimum-gap or residual-multiplicity theorem.
+
+The direction is coherently accessible. `D_m` is the uniform Hermitian orbit
+sum over exactly
+
+```text
+192*C(m,4)=8m(m-1)(m-2)(m-3)
+```
+
+constant-support permutations. A combinadic four-subset index and one of 192
+local terms give a bijective reversible PREP/SELECT specification with block
+normalization one. Phase labeling to the proved precision costs
+`O(m^(9/2)log(1/epsilon))` SELECT calls. Hyperoctahedral subduction is not
+needed merely to obtain the `D_m` eigenvalue label. Measuring that label is
+still exactly likelihood blind by the source-local theorem.
+
+The conjugation stabilizer of `D_h` is exactly `K=C_G(h)` for every `m>=4`.
+The proof combines one all-rank cross-transposition noncentral witness with
+the elementary maximality theorem for the perfect-matching stabilizer. Hence
+
+```text
+tK -> D_(t h t^-1)=tD_ht^-1
+```
+
+is an injective orbit coordinate for all `M=(2m)!/(2^m m!)` candidates, and
+the orbit has normalization-one coherent access when an **external** candidate
+permutation is supplied. The physical quotient target is not that register;
+the gauge theorem below closes the naive identification.
+
+The orbit's scalar geometry is dequantized. For a nearest two-edge matching
+switch,
+
+```text
+|O_h intersect O_h'|
+ =80*C(m-2,2)+192*C(m-2,3)+192*C(m-2,4),
+kappa(h,h')=(m^2-5m+9)/[m(m-1)].
+```
+
+For arbitrary explicit matchings, enumerate the `O(m^4)` orbit terms and use
+the constant-time two-disjoint-3-cycle membership test. More generally, every
+scalar word moment of any polynomial-length charge word is a classical return
+probability `Pr[g_1...g_d=e]`; the h-even trace also accepts product `h`.
+Hoeffding estimates every inverse-polynomial scalar signal in polynomial
+time. Pairwise fidelity, commutator scalar moments, and growing-degree scalar
+word heuristics are not quantum leverage. Conditioned matrix transitions
+remain open.
+
+### Exact all-copy LCU, negativity, gauge, and two-projector boundaries
+
+Files and experiment IDs:
+
+```text
+coset_hidden_involution_all_copy_target_lcu_no_go.py
+EXP-COSET-HIDDEN-INVOLUTION-ALL-COPY-TARGET-LCU-NO-GO
+
+coset_hidden_involution_target_interference_negativity_barrier.py
+EXP-COSET-HIDDEN-INVOLUTION-TARGET-INTERFERENCE-NEGATIVITY-BARRIER
+
+coset_hidden_involution_matching_charge_target_gauge_trivialization.py
+EXP-COSET-HIDDEN-INVOLUTION-MATCHING-CHARGE-TARGET-GAUGE-TRIVIALIZATION
+
+coset_hidden_involution_physical_target_convolution_normal_form.py
+EXP-COSET-HIDDEN-INVOLUTION-PHYSICAL-TARGET-CONVOLUTION-NORMAL-FORM
+
+coset_hidden_involution_shared_conjugation_QSVT_lower_bound.py
+EXP-COSET-HIDDEN-INVOLUTION-SHARED-CONJUGATION-QSVT-LOWER-BOUND
+
+coset_hidden_involution_two_subgroup_projector_algebra_no_go.py
+EXP-COSET-HIDDEN-INVOLUTION-TWO-SUBGROUP-PROJECTOR-ALGEBRA-NO-GO
+```
+
+The exact `BAB` factorization now closes every normalized **linear**
+all-copy target LCU, not just diagonal or Hecke terms. For a basis element
+`ell=(g_1,...,g_k;t)` and
+
+```text
+c_H(g,t)=#{(eps,eps') in H^2:g=eps t eps'},
+```
+
+one has
+
+```text
+tr_B(ell Z)=2^-k product_i c_H(g_i^-1,t^-1),
+tr_B(ell)=1[ell^-1 in B].
+```
+
+Inside `K` the traces agree. Outside `K`, every supported local multiplicity
+is one, so each basis bias is exactly `2^-k`. Thus for arbitrary coefficients
+
+```text
+|tr_B(XZ)-tr_B(X)| <= 2^-k ||X||_(group-basis L1).
+```
+
+At natural copy count, unit-L1 bias is at most `1/(64M)`. Constant bias
+requires L1 norm at least `beta*2^k>=64 beta M`, factorial in `m`. This is the
+exact negativity/sign resource. Standard coefficient PREP/SELECT has that
+normalization and raw success at most its inverse square. This is not a
+general circuit lower bound: an implicit Fourier/QSVT/polar transform may
+have huge group-basis L1 without preparing the coefficients.
+
+The physical target coordinate is gauge. Under
+
+```text
+(g_i;t)~(g_i r;t r),   x_i=g_i t^-1,
+```
+
+representative-covariant target-diagonal charge control necessarily acts as
+`g_j->g_j t^-1 d t`, which becomes `x_j->x_j d`. It is exactly source-local
+and likelihood blind. A useful operation must change the target coordinate.
+For genuine left convolution by `(a_1,...,a_k;s)`, quotient coordinates give
+
+```text
+x_i -> a_i x_i s^-1.
+```
+
+The full normalized likelihood has the exact shared-conjugation normal form
+
+```text
+Z = 1/(4^k|K|) sum_(s in G) sum_(eps,eps' in H^k)
+      (eps_1 s eps'_1,...,eps_k s eps'_k;s)
+  = 1/|K| sum_s Q_s
+  = M E_(s uniform G) Q_s.
+```
+
+Each conditioned `Q_s` is a product twirl with positive L1 normalization one;
+the full `Z` has positive L1 exactly `M`. Generic uniform PREP/SELECT gives
+`Z/M`, not a fast-forward of `Z`.
+
+Put `P=e_A`, `Q=e_B`, and `A=QPQ=Z/M`. At least `29/32` alternative mass has
+`A` eigenvalues in `[1/(2M),3/(2M)]`. A bounded degree-`D` polynomial with
+constant variation from zero to `1/(2M)` obeys Markov's inequality
+
+```text
+2D^2 >= ||p'|| >= 2M beta,
+D >= sqrt(M beta).
+```
+
+This is not merely a single-operator QSVT boundary. Every source-compressed
+word in the two subgroup projectors satisfies
+
+```text
+Q w(P,Q) Q = (QPQ)^r,
+```
+
+so the entire ancilla-controlled two-projector query algebra is univariate
+and inherits the `Omega(sqrt(M))` cost. Alternating reflections, ordinary
+amplitude amplification, and two-projector word LCUs are closed. A direct
+non-black-box matrix-CS transform or a genuinely third physical operator
+remains open.
+
+The 11 focused suites in this charge/target bundle pass 66 tests; the full
+primitive-plus-charge focused integration suite passes 84 tests in 8.29
+seconds. All artifacts were regenerated. Keep minimum-gap, residual-copy,
+physical target control, structured fast-forward, matrix-polar, detector, and
+speedup gates false.
+
+**Next high-reasoning derivation:** let `A=QPQ` on the physical `Q` space and
+let `D` be the normalization-one source matching charge, which commutes with
+`Q`. Determine the natural source-weighted matrix quantity
+
+```text
+||[A,D]||_F^2
+```
+
+after resolving actual `(lambda,mu)` multiplicity blocks and excluding scalar
+return-moment information. A useful positive result needs inverse-polynomial
+mass and singular/eigenvalue separation for the noncommutative algebra
+`Alg(A,D)` in a **target-changing** quotient implementation. A decisive
+falsifier is exact commutation, inverse-candidate/factorial total energy, or a
+classical return/kernel representation for every conditioned matrix entry.
+Do not count the fixed `S_10` covariance example, regular scalar commutator
+moments, or external-candidate charge access as this theorem. If positive,
+the next obligation is a matrix-valued signal-processing compiler with
+normalization and classical baselines; if negative, abandon charge-assisted
+polar fast-forward and return to an explicit non-black-box subduction basis.
+
+## Current High-Reasoning Result: Standard-Block Matrix Recoupling (2026-08-20)
+
+Files:
+
+- `coset_hidden_involution_standard_block_recoupling.py`
+- `tests/test_coset_hidden_involution_standard_block_recoupling.py`
+- `research/representation/coset_hidden_involution_standard_block_recoupling.json`
+
+Experiment ID:
+
+```text
+EXP-COSET-HIDDEN-INVOLUTION-STANDARD-BLOCK-RECOUPLING
+```
+
+This pass tested whether the exact double-coset Cosine-Sine reduction secretly
+scalarizes inside every `L=S_n^(k+1)` irrep. It does not. Exact character
+moments found 585 nonflat or rank-deficient matrix blocks among 665 blocks with
+both multiplicities at least two for `S_5`, three copies. More importantly,
+the perfect-matching family has a scalable exact witness and an adversarially
+useful closed form.
+
+Let `G=S_(2m)`, let `h` be fixed-point-free, use three copies, and put the
+standard representation `V=Std(S_(2m))` in all four `L` factors. Then
+
+```text
+pi^A = Inv_(S_(2m))(V^tensor4).
+```
+
+Under `K=C_G(h)=C_2 wr S_m`, the `+1` eigenspace of `h` in `V` is the embedded
+standard `S_m` module `U`; the complement is the signed pair-difference
+module. The three `<h>` averages retain `U` in the source factors, and the
+base-sign average kills the signed target summand. Hence
+
+```text
+pi^B = Inv_(S_m)(U^tensor4).
+```
+
+For `m>=4`, both spaces have dimension four. Each is spanned by the centered
+simplex fourth moment and the three metric pairings. The exact Gram and
+cross-Gram matrices split under tensor-leg permutations into a two-dimensional
+pair-standard sector and a two-dimensional symmetric sector. The squared
+principal cosines are
+
+```text
+p_m, p_m, lambda_-(m), lambda_+(m),
+p_m = (m-2)/(2(2m-1)),
+lambda_- + lambda_+
+  = (6m^2-19m+18)/(4(2m-3)(2m-1)),
+lambda_- lambda_+
+  = (m-3)(m-2)(m-1)/(4(2m-3)(2m-1)^2).
+```
+
+They are positive and nonuniform for every `m>=4`, and converge to
+`{1/8,1/4,1/4,1/4}`. Dense tensor controls for `m=4,5,6` agree with the exact
+formula below `1e-14` and all eight focused tests pass.
+
+This is also a no-go for a weak hardness argument. The multiplicity transform
+in this scalable matrix block is succinct: two directions are scalar and only
+one explicit `2x2` generalized eigensystem remains. Matrix multiplicity,
+occupied rank, and nonuniform principal angles therefore do not imply a hard
+transform. The block is not naturally useful either: at degree 128 its source
+fraction is below `2^-2471` and its alternative mass below `2^-2117`.
+
+The 2026 partition/Brauer-algebra QFT does not close the natural-block problem.
+Its approximation requires the loop parameter much larger than a polynomial
+in the diagram-algebra dimension. Here the natural copy/tensor order is
+`Theta(n log n)` while the loop parameter is only `n`; moreover arbitrary
+source irreps require generalized symmetric-group Kronecker spaces rather than
+one fixed standard-tensor centralizer.
+
+The next theorem-level target is not another fixed-row block. It is to derive
+the natural overlap as an explicit restriction/recoupling map
+
+```text
+Hom_(S_n)(tau*, tensor_i lambda_i)
+  --> Hom_(C_2 wr S_(n/2))(tau*|K, tensor_i lambda_i^+),
+lambda_i^+ = ker(rho_lambda_i(h)-I),
+```
+
+and decide whether a subgroup-chain basis makes its polar local. The decisive
+falsifier is reappearance of unrestricted Kronecker multiplicity transforms,
+exponential branching width, or a required diagram-QFT parameter outside its
+unitary regime on constant natural mass. A positive result needs a coherent
+physical basis change and normalization, not just character moments or an
+abstract block diagonalization. Every detector and speedup gate remains false.
+
+## Current High-Reasoning Result: Natural Matrix Double-Coset Polar (2026-08-20)
+
+Files:
+
+- `coset_hidden_involution_double_coset_polar_reduction.py`
+- `coset_hidden_involution_natural_matrix_multiplicity.py`
+- `coset_hidden_involution_occupied_matrix_rank.py`
+- matching focused tests and `research/representation/` artifacts
+
+Experiment IDs:
+
+```text
+EXP-COSET-HIDDEN-INVOLUTION-DOUBLE-COSET-POLAR-REDUCTION
+EXP-COSET-HIDDEN-INVOLUTION-NATURAL-MATRIX-MULTIPLICITY
+EXP-COSET-HIDDEN-INVOLUTION-OCCUPIED-MATRIX-RANK
+```
+
+This pass replaces the informal orbit-representative row-frame problem by one
+exact homogeneous-space operator. Let `G` be the candidate group, `h` the
+reference involution, `H=<h>`, `K=C_G(h)`, `M=[G:K]`, and use `k` coset-state
+copies. Put `L=G^k x G` and
+
+```text
+A={(r,...,r;r): r in G},
+B={(eps_1 r,...,eps_k r;r): r in K, eps_i in H}.
+```
+
+The physical tuple basis is `L/A`; the full hidden-involution/coset-tuple
+source basis is `L/B`. If `V_A,V_B` are normalized right-coset embeddings into
+`C[L]`, then
+
+```text
+D = V_A^* V_B = I_incidence / sqrt(2^k M).
+```
+
+The source synthesis is `sqrt(M) D`, so it has the same polar. The missing
+physical compiler is exactly the Cosine-Sine alignment between the right-`A`
+and right-`B` invariant subspaces. Both subgroup factorizations/reflections are
+efficient for the symmetric/perfect-matching family, but this alone does not
+help: on at least `29/32` of alternative mass the principal cosines of `D` are
+`Theta(M^-1/2)`, so generic alternating-reflection phase resolution still costs
+`Omega(sqrt(M))`.
+
+The transform is genuinely matrix-valued, not a scalar Gelfand/spherical
+transform. In an `L` Fourier block its physical multiplicity is
+
+```text
+Inv_G(nu_1 tensor ... tensor nu_k tensor tau),
+```
+
+while its source multiplicity is the corresponding `B`-fixed space. Even four
+standard `S_n` factors have diagonal invariant multiplicity four for `n>=4`.
+That finite witness alone would be weak, so the next theorem proves natural
+mass.
+
+For `m_B(pi)=dim(pi^B)`, the fraction of `Ind_B^L(1)` in blocks with
+`m_B<=T` is at most
+
+```text
+delta_low <= T (sum_(lambda|-n) d_lambda)^(k+1) / |L:B|.
+```
+
+Robinson--Schensted gives the exact identity `sum d_lambda=I_n`, the number of
+involutions in `S_n`. At `k=ceil(log2(64M))`, choosing
+`T=|S_n|^(k/4)` makes `delta_low` super-exponentially small. Alternative mass
+is the exact size bias of the unnormalized synthesis eigenvalue `x`, so at
+least `29/32-(3/2)delta_low` alternative mass reaches these huge source blocks.
+
+They are not mostly kernel. The exact source moment
+
+```text
+E[(x-1)^2] = eta = (M-1)/2^k
+```
+
+bounds the total kernel fraction by `eta<=1/64`. Any block whose occupied CS
+rank `r` is at most `m_B/2` contributes at least half its source dimension to
+the kernel, so all such blocks occupy at most `2eta`. Therefore alternative
+mass at least
+
+```text
+29/32 - (3/2)(delta_low + 2 eta)
+```
+
+lies in blocks with `r>|S_n|^(k/4)/2`. The stored minimum is
+`0.86094`; the degree-128 rank threshold has log2 greater than `64990`.
+
+Research consequence: scalar spherical labels, low-multiplicity trimming, and
+the claim that large multiplicity is mostly kernel are all closed on constant
+natural mass. This is still not a hardness theorem. QFTs routinely act on huge
+rank spaces, and no lower bound is proved for a succinct partition-algebra,
+recoupling, or matrix-CS basis change.
+
+The next and only worthwhile positive compiler task on this chain is:
+
+1. Derive an explicit basis and block formula for the occupied overlap between
+   `Inv_G(nu_1 tensor ... tensor nu_k tensor tau)` and the `B`-fixed space.
+2. Search for a recursive/partition-algebra CS transform or an exact
+   fast-forward of the two subgroup reflections that preserves the physical
+   normalization.
+3. Kill it if every recursion reintroduces generic symmetric Kronecker data,
+   factorial normalization, or exponential orbit-copy enumeration.
+4. A positive result must include coherent input/output labels, precision,
+   garbage uncomputation, and a matched classical access model. Large rank or
+   passing finite controls alone is not progress.
+
+No binary detector, rigid-GI algorithm, code-equivalence algorithm, or speedup
+is claimed.
+
+## Current High-Reasoning Result: All Simple Surface Targets Mix (2026-08-20)
+
+Files:
+
+- `self_dual_wreath_separating_surface_target_mixing.py`
+- `tests/test_self_dual_wreath_separating_surface_target_mixing.py`
+- `research/representation/self_dual_wreath_separating_surface_target_mixing.json`
+
+Experiment ID:
+
+```text
+EXP-CODE-SELF-DUAL-WREATH-SEPARATING-SURFACE-TARGET-MIXING
+```
+
+The marked-word search had left open whether a target carried by a surface
+relation could retain a high-dimensional `S_n` character bias. This pass proves
+that every certified simple curve on a closed orientable surface is a classical
+no-go, uniformly over growing genus.
+
+For the product of `h` independent commutators, its density relative to uniform
+measure is
+
+```text
+A_h(x) = sum_rho chi_rho(x) / d_rho^(2h-1).
+```
+
+For a separating simple curve splitting the surface into genera `a,b`, the
+exact target density is
+
+```text
+f_ab(x) = A_a(x) A_b(x^-1) / zeta_G(2a+2b-2).
+```
+
+Writing `A_h=1+sgn+r_h` for `G=S_n` gives
+
+```text
+||r_h||_2^2 = zeta*_Sn(4h-2),
+TV(f_ab, Uniform(A_n))
+ <= [2 eps_a + 2 eps_b + eps_a eps_b + (Z-2)] / (2Z),
+eps_h = sqrt(zeta*_Sn(4h-2)),  Z = zeta_Sn(2a+2b-2).
+```
+
+The worst genus is `a=b=1`; fixed-exponent Witten-zeta tails imply an
+`O(1/n)` genus-uniform bound. For a nonseparating simple curve on genus
+`g>=2`, summing over its conjugate handle gives the exact density
+
+```text
+f_nonsep,g(x)
+ = [sum_rho |chi_rho(x)|^2 / d_rho^(2g-2)] / zeta_G(2g-2),
+TV(f_nonsep,g, Uniform(S_n)) <= t/(2+t),
+t = zeta*_Sn(2g-2).
+```
+
+This is `O(n^-2)` uniformly over growing genus. Every normalized nontrivial
+character expectation is at most twice the corresponding TV distance. Exact
+controls cover `S_3` through `S_8`, three genus choices in each class, plus a
+direct Frobenius count check; all 54 density controls and the direct check pass.
+
+Research consequence: certified contractible, separating, nonseparating, and
+unconditioned surface-boundary targets cannot support the needed asymptotic
+marked-character signal. This is a target-class cut theorem, not a proof about
+all marked words. Self-intersecting curves, genuinely non-surface words, and
+unclassified interleavings remain outside scope. There is no natural component
+`M4` lower bound and no speedup claim.
+
+Next high-reasoning task: classify pressure-saturating marked relators by
+surface topology and isolate the first self-intersecting target family that is
+not reducible to this theorem. Then derive or falsify a character-mixing bound
+for that family. A useful positive result must exhibit a growing-word family
+whose normalized target character survives after scalar pressure and all
+known classical word-measure bounds; another finite small-`n` bias is not
+progress.
 
 ## Current High-Reasoning Result: Orientation Signal Classical Audit (2026-08-13)
 

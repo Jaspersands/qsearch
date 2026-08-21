@@ -1,0 +1,189 @@
+{
+  "adversarial_audit": [
+    {
+      "answer": "False.  This stable family has an all-rank support-five resolver and support-six full algebra.",
+      "challenge": "The finite 4,5,6 threshold sequence proves support must grow.",
+      "resolved": true
+    },
+    {
+      "answer": "The unnormalized orbit entries are degree-r injection-count polynomials; r+1 exact rows determine them, and independent rows are checked.",
+      "challenge": "Interpolation at six ranks is only numerology.",
+      "resolved": true
+    },
+    {
+      "answer": "Not in general.  Here the stronger support-five eigen-gap formula is inverse polynomial and the orbit average has a succinct LCU description.",
+      "challenge": "Noncommutation alone supplies an efficient basis transform.",
+      "resolved": true
+    },
+    {
+      "answer": "Only as a mechanism proof.  Its polynomial dimension gives factorially negligible natural Fourier mass.",
+      "challenge": "A polynomial compiler on this branch advances hidden-involution decoding.",
+      "resolved": true
+    }
+  ],
+  "channel_certificate": {
+    "channel_evaluation_determinant": -1,
+    "fixed_pair_harmonic": "e_01-e_02-e_13+e_23",
+    "johnson_characteristic_polynomial": "lambda**4 - 6*lambda**3*m + 32*lambda**3 + 8*lambda**2*m**2 - 116*lambda**2*m + 348*lambda**2 + 64*lambda*m**2 - 640*lambda*m + 1504*lambda + 128*m**2 - 1088*m + 2240",
+    "occupancy_profiles": [
+      "2+2",
+      "2+1+1 (two channels)",
+      "1+1+1+1"
+    ],
+    "orbit_actions_commute_with_projector": true,
+    "proved": true,
+    "stable_branching_argument": "Four independent K-intertwiners exhaust the three occupancy orbits. The Johnson spectrum has multiplicities 1,1,2 for j=2,3,4, so the S^(2m-4,4) branch has multiplicity two.",
+    "top_harmonic_projector_idempotent": true,
+    "top_harmonic_projector_trace": 2
+  },
+  "claim_gate": {
+    "hidden_involution_detector_constructed": false,
+    "natural_source_mass_nonnegligible": false,
+    "reason": "The first all-rank local commutant compiler has been proved only on a factorially rare two-row family.",
+    "source_aware_normalized_recoupling_compiled": false,
+    "speedup_claim_allowed": false,
+    "stable_multiplicity_two_proved": true,
+    "succinct_polynomial_lcu_reduction_proved": true,
+    "support_five_inverse_polynomial_resolver_proved": true,
+    "support_six_full_copy_algebra_proved": true,
+    "typical_shape_coverage_proved": false
+  },
+  "compiler_boundary": {
+    "gate_level_end_to_end_hidden_involution_circuit": false,
+    "lcu_normalization": 1,
+    "phase_estimation_resolution_calls": "O(m^2 log(1/error))",
+    "restricted_coherent_resolver": true,
+    "select_cost": "Each term moves at most six points and has an O(m)-length adjacent-transposition word.",
+    "support_five_prepare": "Reversibly choose five pair labels, five endpoint bits, and one of 24 oriented 5-cycles.",
+    "support_six_prepare": "Reversibly choose four pair labels and one of 192 canonical coupled-cycle patterns."
+  },
+  "created_at": "2026-08-20T19:17:24.243158+00:00",
+  "falsifiers_triggered": [
+    "Unbounded support is not forced by the finite threshold sequence.",
+    "Full noncommutative closure is stronger than needed for a missing-label measurement.",
+    "A coherent compiler on a factorially rare branch is not evidence of hidden-involution speedup."
+  ],
+  "headline_metrics": {
+    "all_rank_full_copy_algebra_generator_count": 1,
+    "all_rank_inverse_polynomial_missing_label_gap_count": 1,
+    "all_rank_stable_branching_theorem_count": 1,
+    "hidden_involution_decoder_count": 0,
+    "minimum_proved_half_degree": 6,
+    "missing_label_gap_exponent_upper_bound": 2,
+    "new_quantum_algorithm_count": 0,
+    "plancherel_typical_family_count": 0,
+    "support_five_lcu_orbit_degree": 5,
+    "support_six_lcu_orbit_degree": 4
+  },
+  "injection_certificates": [
+    {
+      "all_holdouts_match": true,
+      "canonical_orbit_size": 768,
+      "closed_formula_matches_interpolation": true,
+      "holdout_rows": [
+        12
+      ],
+      "interpolation_rows": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "maximum_interpolated_degree": 5,
+      "orbit_name": "support-five-cycle",
+      "predicted_degree_upper_bound": 5,
+      "proved": true,
+      "template_pair_count": 5
+    },
+    {
+      "all_holdouts_match": true,
+      "canonical_orbit_size": 192,
+      "closed_formula_matches_interpolation": true,
+      "holdout_rows": [
+        11,
+        12
+      ],
+      "interpolation_rows": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "maximum_interpolated_degree": 4,
+      "orbit_name": "support-six-coupled-cycles",
+      "predicted_degree_upper_bound": 4,
+      "proved": true,
+      "template_pair_count": 4
+    }
+  ],
+  "literature_links": [
+    {
+      "id": "DOI:10.1145/258533.258548",
+      "role": "Efficient symmetric-group QFT and Young-basis representation controls."
+    },
+    {
+      "id": "arXiv:1210.5579",
+      "role": "Partition-algebra and stable-multiplicity context for subset-harmonic calculations."
+    },
+    {
+      "id": "arXiv:1406.7671",
+      "role": "Motivates multiplicity-resolving charges while explicitly leaving general multiplicity labels unresolved."
+    }
+  ],
+  "natural_mass_obstruction": {
+    "consequence": "The proved branch has factorially vanishing natural mass and cannot by itself yield a speedup.",
+    "dimension": "-binomial(2*m, 3) + binomial(2*m, 4)",
+    "dimension_growth": "Theta(m^4)",
+    "plancherel_typical": false,
+    "single_coset_irrep_probability_upper_bound": "2*dim(lambda)^2/(2m)! for an order-two hidden subgroup"
+  },
+  "proof_obligations": [
+    {
+      "id": "PO-HIDDEN-INVOLUTION-TYPICAL-SHAPE-LOCAL-COMMUTANT",
+      "resolved": false,
+      "statement": "Find a bounded-support orbit family with inverse-polynomial copy-space gaps on Plancherel-typical shapes."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-NATURAL-MASS-RECOUPLING",
+      "resolved": false,
+      "statement": "Compose a typical-shape missing-label transform with source-aware multicopy normalization."
+    },
+    {
+      "id": "PO-HIDDEN-INVOLUTION-COPY-LABEL-DECODER",
+      "resolved": false,
+      "statement": "Prove that the resulting labels retain inverse-polynomial information about the hidden involution."
+    }
+  ],
+  "status": "all-rank-support-five-resolver-and-support-six-M2-generation-proved",
+  "summary": "Proved that one support-five orbit average resolves a stable multiplicity-two hyperoctahedral branch with inverse-quadratic gap, and that adding one support-six orbit generates its full M_2 algebra.",
+  "theorem": {
+    "channel_dimension": 4,
+    "commutator_determinant": "25*(m - 5)*(m - 4)*(2*m - 5)/(2*m**4*(m - 3)**3*(m - 2)**2*(m - 1)**3)",
+    "family": "G_m=S_(2m), K_m=C_2 wr S_m, m>=6",
+    "natural_source_mass_nonnegligible": false,
+    "speedup_claim_allowed": false,
+    "stable_branch": "lambda=(2m-4,4), mu=((m-2,2),empty)",
+    "stable_branching_multiplicity": 2,
+    "stable_multiplicity_two_proved": true,
+    "status": "all-rank-support-five-resolver-and-support-six-M2-generation-proved",
+    "succinct_polynomial_lcu_description_proved": true,
+    "support_five_gap_lower_bound": "gap(A_m) >= 1/(2m^2)",
+    "support_five_gap_squared": "25*(m**4 - 14*m**3 + 75*m**2 - 166*m + 129)/(4*m**2*(m - 3)**2*(m - 2)**2*(m - 1)**2)",
+    "support_five_inverse_polynomial_gap_proved": true,
+    "support_five_missing_label_resolver_proved": true,
+    "support_five_orbit_size": "768*binomial(m,5)",
+    "support_six_orbit_size": "192*binomial(m,4)",
+    "support_six_pair_generates_full_copy_algebra": true,
+    "top_harmonic_copy_dimension": 2
+  },
+  "theorem_contract": {
+    "claim_boundary": "A polynomial missing-label resolver and full M_2 generator on one stable branch; not a typical-shape compiler or hidden-involution decoder.",
+    "group_pair": "S_(2m) >= C_2 wr S_m",
+    "range": "every integer m>=6",
+    "restricted_irrep": "W^((m-2,2),empty)",
+    "source_irrep": "S^(2m-4,4)"
+  }
+}
