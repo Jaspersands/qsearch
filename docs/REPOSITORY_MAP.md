@@ -1,58 +1,44 @@
 # Repository Map
 
-Q-Search currently keeps its Python modules in a flat import namespace. That is
-not aesthetically ideal, but moving hundreds of interconnected modules without
-a staged package migration would create import churn with no research benefit.
-New non-core material is organized by purpose while the package boundary is
-introduced gradually.
+Q-Search organizes its 723 scientific theorem verification modules within a dedicated `theorems/` package, while maintaining core workflow entry points at the root.
 
-## Entry Points
+## Entry Points & Core OS
 
-- `qsearch.py` - command-line interface for every registered workflow.
-- `research_registry.py` - proof-gated candidates, experiments, results, and
-  negative-result persistence.
+- `qsearch.py` - unified command-line interface for every registered workflow.
+- `research_registry.py` - proof-gated candidates, experiments, results, and negative-result persistence.
 - `experiment_runner.py` - supported experiment dispatch and run history.
 - `proof_gate.py` - mandatory candidate proof obligations.
+- `dequantization_checks.py` - automated classical attack matrix scanner.
 
-## Research Domains
+## Research Domains (`theorems/`)
 
-- `dcp_*.py` - dihedral hidden subgroup, phase-state, subset-sum, and decoder
-  workbenches.
-- `coset_*.py`, `cfi_*.py` - nonabelian coset states, symmetric-group
-  representation theory, and graph-isomorphism reductions.
-- `coset_stable_*_certificate.py` - exact falling-cycle and relative-orbit
-  certificates for stable Racah characteristic coefficients.
-- `code_*.py` plus named code-family modules - code-equivalence generators and
-  classical attacks.
-- `character_*.py`, `phase_*.py`, `trace_function_search.py` - hidden-shift
-  families and dequantization checks.
-- `literature_*.py`, `paper_ingestion.py` - literature records and hypothesis
-  extraction.
+- `theorems/dcp_*.py` - dihedral hidden subgroup (DHSP), phase-state, subset-sum, and decoder workbenches.
+- `theorems/coset_*.py`, `theorems/cfi_*.py` - nonabelian coset states, symmetric-group representation theory, and graph-isomorphism reductions.
+- `theorems/self_dual_wreath_*.py` - hyperoctahedral wreath product representations, Racah recoupling, and PGM polar audits.
+- `theorems/code_*.py`, `theorems/goppa_*.py`, `theorems/bch_*.py` - linear code equivalence generators and classical attacks.
+- `theorems/character_*.py`, `theorems/phase_*.py`, `theorems/trace_*.py` - hidden-shift families and dequantization checks.
 
-## Persistent Artifacts
+## Persistent Artifacts (`research/`)
 
-- `research/registry/` - canonical structured registries.
+- `research/registry/` - canonical structured JSON registries (`candidates.json`, `experiments.json`, `negative_results.json`, `experiment_results.json`, `dequantization_checks.json`).
 - `research/classical_baselines/` - dequantization and attack outputs.
 - `research/phase_workbench/` - hidden-shift and DHSP outputs.
-- `research/representation/` - symmetric-group and collective-measurement
-  outputs.
+- `research/representation/` - symmetric-group and collective-measurement outputs.
 - `research/code_equivalence/` - code-family and reduction outputs.
 - `research/progress_snapshot.json` - small curated website data file.
+- `research/frontier_map.json` - active research frontiers topology.
 
-## Supporting Material
+## Supporting Directories
 
-- `site/` - public progress-page styles and behavior.
-- `tools/` - maintenance and artifact-generation utilities.
+- `site/` - public progress-page styles, assets, and frontend behavior.
+- `tools/` - maintenance and artifact-generation utilities (`build_progress_snapshot.py`).
 - `docs/` - human-readable project maps and research documentation.
 - `tests/` - unit, integration, theorem-contract, and registry tests.
 
 ## Organization Policy
 
-1. New generated research data belongs under `research/`, never at repository
-   root.
-2. New website assets belong under `site/`.
-3. Maintenance scripts belong under `tools/`.
-4. New scientific modules should use an existing domain prefix until a tested
-   package migration replaces the flat namespace.
-5. Cached papers, Python bytecode, credentials, logs, and local environments
-   remain untracked.
+1. All new scientific theorem verification modules belong under `theorems/`.
+2. New generated research data belongs under `research/`, never at repository root.
+3. New website assets belong under `site/`.
+4. Maintenance scripts belong under `tools/`.
+5. Core operating system entry points (`qsearch.py`, `research_registry.py`, `experiment_runner.py`) remain at the repository root.

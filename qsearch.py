@@ -240,6 +240,13 @@ Commands:
 
 from __future__ import annotations
 
+import os
+import sys
+
+_THEOREMS_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "theorems")
+if _THEOREMS_DIR not in sys.path:
+    sys.path.insert(0, _THEOREMS_DIR)
+
 import argparse
 import json
 from collections import Counter
