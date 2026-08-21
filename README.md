@@ -64,17 +64,19 @@ Q-Search contains **724 scientific verification modules**. The codebase intentio
 
 ```text
 quantum-algorithm-search/
-├── qsearch.py                     # Unified CLI entry point for all 724 subcommands
-├── research_registry.py           # Canonical schema for candidates, experiments, results, and debts
-├── experiment_runner.py           # Experiment execution dispatcher and run history
-├── proof_gate.py                  # Formal candidate proof obligation and verification engine
-├── dequantization_checks.py       # Automated classical attack matrix scanner
+├── core/                          # 22 Core Operating System & Proof Engine modules
+│   ├── research_registry.py       # Canonical schema for candidates, experiments & results
+│   ├── experiment_runner.py       # Experiment execution dispatcher and run history
+│   ├── proof_gate.py              # Formal candidate proof obligation and verification engine
+│   ├── dequantization_checks.py   # Automated classical attack matrix scanner
+│   └── mutation_engine.py         # Automated hypothesis mutation generator
 │
-├── dcp_*.py                       # Dihedral Coset Problem (DHSP) & state-native sieves (43 modules)
-├── coset_*.py, cfi_*.py           # Non-abelian coset observables & S_n representation theory (155 modules)
-├── self_dual_wreath_*.py          # Self-dual wreath product representations & polar audits (189 modules)
-├── code_*.py, goppa_*, bch_*      # Linear code equivalence & automorphism baselines (128 modules)
-├── character_*, phase_*           # Phase family naturalness & Fourier bridge baselines (112 modules)
+├── theorems/                      # 723 Scientific Theorem Verification modules
+│   ├── dcp_*.py                   # Dihedral Coset Problem (DHSP) & state-native sieves
+│   ├── coset_*.py, cfi_*.py       # Non-abelian coset observables & S_n representation theory
+│   ├── self_dual_wreath_*.py      # Self-dual wreath product representations & polar audits
+│   ├── code_*.py, goppa_*, bch_*  # Linear code equivalence & automorphism baselines
+│   └── character_*, phase_*       # Phase family naturalness & Fourier bridge baselines
 │
 ├── research/                      # Canonical JSON registries & empirical attack artifacts
 │   ├── registry/                  # candidates.json, experiments.json, negative_results.json, etc.
@@ -85,13 +87,18 @@ quantum-algorithm-search/
 ├── site/                          # Frontend dashboard assets (styles.css, progress.js)
 ├── tools/                         # Maintenance utilities (build_progress_snapshot.py, etc.)
 ├── docs/                          # Human-readable repository maps and specifications
-└── tests/                         # Unit tests, integration tests, and runner dispatch suites
+├── tests/                         # Unit tests, integration tests, and runner dispatch suites
+│
+├── qsearch.py                     # The ONLY Python script at root (unified CLI entry point)
+├── README.md                      # Modernized project guide
+├── requirements.txt               # Dependencies
+└── [6 HTML Dashboards]            # index.html, methodology.html, frontier.html, etc.
 ```
 
 **Benefits of this Architecture:**
-1. **Zero Packaging Friction**: Any module can be run directly via `python3 <module>.py` or through the unified CLI `python3 qsearch.py <command>`.
-2. **Path Uniformity**: No relative import ambiguity (`..`) across diverse local environments, cloud runners, and CI pipelines.
-3. **Domain Segregation by Prefix**: Clear functional ownership (`dcp_`, `coset_`, `self_dual_wreath_`, `code_`).
+1. **Uncluttered Root**: Only `qsearch.py` and configuration files reside at root.
+2. **Zero Packaging Friction**: All 724 workflows execute seamlessly via `python3 qsearch.py <command>`.
+3. **Clean Separation of Concerns**: Core platform orchestration (`core/`) is cleanly separated from domain theorem proofs (`theorems/`).
 
 ---
 
