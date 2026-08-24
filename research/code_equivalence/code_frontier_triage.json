@@ -1,18 +1,18 @@
 {
-  "created_at": "2026-08-06T06:38:46.655647+00:00",
+  "created_at": "2026-08-24T20:23:07.063195+00:00",
   "falsifiers_triggered": [
     "Some code-equivalence rows are already separated by classical code baselines.",
     "Some code searches find only equivalent controls or no nontrivial hard row.",
     "Some code-equivalence rows remain proof debt, not positive evidence."
   ],
   "headline_metrics": {
-    "control_or_no_hard_row_count": 29,
+    "control_or_no_hard_row_count": 30,
     "dequantizing_evidence_count": 55,
     "evidence_count": 288,
     "proof_debt_evidence_count": 61,
     "proof_debt_row_count": 7,
-    "record_count": 52,
-    "rejected_row_count": 16,
+    "record_count": 54,
+    "rejected_row_count": 17,
     "unclassified_row_count": 0
   },
   "records": [
@@ -125,18 +125,6 @@
     {
       "evidence": [
         {
-          "detail": "BCH-code collisions found so far are equivalent controls under decimation/canonicalization.",
-          "source": "bch_code_search",
-          "status": "bch-collisions-all-equivalent-controls",
-          "verdict": "control"
-        },
-        {
-          "detail": "All 1 evaluated pair(s) are known equivalent controls.",
-          "source": "code_closure_attack",
-          "status": "equivalent-controls-under-closure",
-          "verdict": "control"
-        },
-        {
           "detail": "Low-weight support hypergraph signatures match on a row already certified as an equivalent/control case by a source automorphism, information-set, or canonicalization baseline.",
           "source": "code_low_weight_structure",
           "status": "low-weight-matroid-equivalent-control",
@@ -157,17 +145,25 @@
     {
       "evidence": [
         {
-          "detail": "BCH-code collisions are rejected by structural, tuple, low-weight, or canonical baselines.",
+          "detail": "BCH-code collisions found so far are equivalent controls under decimation/canonicalization.",
           "source": "bch_code_search",
-          "status": "bch-code-search-dequantized",
-          "verdict": "dequantizing"
+          "status": "bch-collisions-all-equivalent-controls",
+          "verdict": "control"
         },
         {
-          "detail": "Conductor/t-closure attacks classically separate 3 pair(s) in this family.",
+          "detail": "All 1 evaluated pair(s) are known equivalent controls.",
           "source": "code_closure_attack",
-          "status": "rejected-by-t-closure-conductor",
-          "verdict": "dequantizing"
-        },
+          "status": "equivalent-controls-under-closure",
+          "verdict": "control"
+        }
+      ],
+      "final_status": "control-or-no-hard-row-not-positive-evidence",
+      "required_next_step": "Treat equivalent controls and no-collision searches as negative search information; broaden the family generator.",
+      "row_family": "bch-code-family",
+      "row_id": "bch-family-bch-m4-d3-9-shifted"
+    },
+    {
+      "evidence": [
         {
           "detail": "Low-weight support enumeration exceeded a cap; this row remains proof debt and must not be used as positive quantum evidence without a scalable classical lower-bound argument.",
           "source": "code_low_weight_structure",
@@ -239,6 +235,26 @@
       "required_next_step": "Do not use this code row for coset-state measurement design; mutate to a family that survives all listed baselines.",
       "row_family": "bch-code-family",
       "row_id": "bch-family-bch-m5-d3-11"
+    },
+    {
+      "evidence": [
+        {
+          "detail": "BCH-code collisions are rejected by structural, tuple, low-weight, or canonical baselines.",
+          "source": "bch_code_search",
+          "status": "bch-code-search-dequantized",
+          "verdict": "dequantizing"
+        },
+        {
+          "detail": "Conductor/t-closure attacks classically separate 3 pair(s) in this family.",
+          "source": "code_closure_attack",
+          "status": "rejected-by-t-closure-conductor",
+          "verdict": "dequantizing"
+        }
+      ],
+      "final_status": "rejected-by-classical-code-baseline",
+      "required_next_step": "Do not use this code row for coset-state measurement design; mutate to a family that survives all listed baselines.",
+      "row_family": "bch-code-family",
+      "row_id": "bch-family-bch-m5-d3-11-shifted"
     },
     {
       "evidence": [
@@ -2162,5 +2178,5 @@
     }
   ],
   "status": "code-frontier-proof-debt",
-  "summary": "Triage aggregated 52 code-equivalence row(s) across 288 evidence items. 16 row(s) are rejected by classical baselines, 7 remain proof debt, and 29 are equivalent controls or no-hard-row searches."
+  "summary": "Triage aggregated 54 code-equivalence row(s) across 288 evidence items. 17 row(s) are rejected by classical baselines, 7 remain proof debt, and 30 are equivalent controls or no-hard-row searches."
 }

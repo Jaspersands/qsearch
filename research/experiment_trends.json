@@ -1,13 +1,14 @@
 {
-  "created_at": "2026-08-21T13:16:23.689682+00:00",
+  "created_at": "2026-08-24T20:23:28.725648+00:00",
   "history_artifact": "research/experiment_run_history.json",
-  "history_count": 459,
-  "trend_count": 366,
+  "history_count": 470,
+  "trend_count": 367,
   "trends": [
     {
-      "blocking_run_count": 1,
+      "blocking_run_count": 2,
       "experiment_id": "EXP-CODE-AFFINE-GEOMETRY-SEARCH",
       "falsifier_count_sequence": [
+        1,
         1
       ],
       "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
@@ -21,7 +22,7 @@
           "latest": 7.0,
           "max": 7.0,
           "min": 7.0,
-          "observations": 1
+          "observations": 2
         },
         "canonicalization_rejection_count": {
           "delta": 0.0,
@@ -29,7 +30,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "code_count": {
           "delta": 0.0,
@@ -37,7 +38,7 @@
           "latest": 18.0,
           "max": 18.0,
           "min": 18.0,
-          "observations": 1
+          "observations": 2
         },
         "equivalent_control_count": {
           "delta": 0.0,
@@ -45,7 +46,7 @@
           "latest": 2.0,
           "max": 2.0,
           "min": 2.0,
-          "observations": 1
+          "observations": 2
         },
         "low_weight_rejection_count": {
           "delta": 0.0,
@@ -53,7 +54,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "max_ambient_point_count": {
           "delta": 0.0,
@@ -61,7 +62,7 @@
           "latest": 9.0,
           "max": 9.0,
           "min": 9.0,
-          "observations": 1
+          "observations": 2
         },
         "negative_results_written": {
           "delta": 0.0,
@@ -69,7 +70,7 @@
           "latest": 2.0,
           "max": 2.0,
           "min": 2.0,
-          "observations": 1
+          "observations": 2
         },
         "no_collision_count": {
           "delta": 0.0,
@@ -77,7 +78,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "proof_debt_collision_count": {
           "delta": 0.0,
@@ -85,7 +86,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "search_count": {
           "delta": 0.0,
@@ -93,7 +94,7 @@
           "latest": 2.0,
           "max": 2.0,
           "min": 2.0,
-          "observations": 1
+          "observations": 2
         },
         "structural_rejection_count": {
           "delta": 0.0,
@@ -101,7 +102,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "support_affine_profile_collision_count": {
           "delta": 0.0,
@@ -109,7 +110,7 @@
           "latest": 5.0,
           "max": 5.0,
           "min": 5.0,
-          "observations": 1
+          "observations": 2
         },
         "tuple_collision_count": {
           "delta": 0.0,
@@ -117,7 +118,7 @@
           "latest": 9.0,
           "max": 9.0,
           "min": 9.0,
-          "observations": 1
+          "observations": 2
         },
         "tuple_profile_rejection_count": {
           "delta": 0.0,
@@ -125,24 +126,26 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         }
       },
-      "run_count": 1,
+      "run_count": 2,
       "status_sequence": [
+        "affine-geometry-code-search-dequantized-or-controls",
         "affine-geometry-code-search-dequantized-or-controls"
       ]
     },
     {
-      "blocking_run_count": 1,
+      "blocking_run_count": 2,
       "experiment_id": "EXP-CODE-BCH-ALGEBRAIC-SEARCH",
       "falsifier_count_sequence": [
+        3,
         3
       ],
       "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
       "latest_result_id": "RESULT-EXP-CODE-BCH-ALGEBRAIC-SEARCH-BCH-CODE",
-      "latest_status": "bch-code-search-proof-debt",
-      "latest_summary": "Searched 2 BCH parameter window(s), generating 23 unique code(s) and 66 duplicate defining-set control(s). Found 11 tuple-profile collision(s): 3 decimation control(s), 0 canonical equivalent control(s), 0 classical rejection(s), and 8 proof-debt row(s).",
+      "latest_status": "bch-code-search-dequantized-or-controls",
+      "latest_summary": "Searched 2 BCH parameter window(s), generating 23 unique code(s) and 66 duplicate defining-set control(s). Found 11 tuple-profile collision(s): 3 decimation control(s), 0 canonical equivalent control(s), 8 classical rejection(s), and 0 proof-debt row(s).",
       "numeric_metric_trends": {
         "canonicalization_rejection_count": {
           "delta": 0.0,
@@ -150,6 +153,22 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
+          "observations": 2
+        },
+        "dual_higher_tuple_rejection_count": {
+          "delta": 0.0,
+          "first": 5.0,
+          "latest": 5.0,
+          "max": 5.0,
+          "min": 5.0,
+          "observations": 1
+        },
+        "dual_rejection_count": {
+          "delta": 0.0,
+          "first": 8.0,
+          "latest": 8.0,
+          "max": 8.0,
+          "min": 8.0,
           "observations": 1
         },
         "duplicate_code_count": {
@@ -158,7 +177,7 @@
           "latest": 66.0,
           "max": 66.0,
           "min": 66.0,
-          "observations": 1
+          "observations": 2
         },
         "equivalent_control_count": {
           "delta": 0.0,
@@ -166,7 +185,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "generated_code_count": {
           "delta": 0.0,
@@ -174,7 +193,7 @@
           "latest": 23.0,
           "max": 23.0,
           "min": 23.0,
-          "observations": 1
+          "observations": 2
         },
         "low_weight_rejection_count": {
           "delta": 0.0,
@@ -182,7 +201,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "max_length": {
           "delta": 0.0,
@@ -190,7 +209,7 @@
           "latest": 31.0,
           "max": 31.0,
           "min": 31.0,
-          "observations": 1
+          "observations": 2
         },
         "multiplier_equivalent_count": {
           "delta": 0.0,
@@ -198,15 +217,15 @@
           "latest": 3.0,
           "max": 3.0,
           "min": 3.0,
-          "observations": 1
+          "observations": 2
         },
         "negative_results_written": {
-          "delta": 0.0,
+          "delta": 1.0,
           "first": 1.0,
-          "latest": 1.0,
-          "max": 1.0,
+          "latest": 2.0,
+          "max": 2.0,
           "min": 1.0,
-          "observations": 1
+          "observations": 2
         },
         "no_collision_count": {
           "delta": 0.0,
@@ -214,15 +233,15 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "proof_debt_collision_count": {
-          "delta": 0.0,
+          "delta": -8.0,
           "first": 8.0,
-          "latest": 8.0,
+          "latest": 0.0,
           "max": 8.0,
-          "min": 8.0,
-          "observations": 1
+          "min": 0.0,
+          "observations": 2
         },
         "search_count": {
           "delta": 0.0,
@@ -230,7 +249,7 @@
           "latest": 2.0,
           "max": 2.0,
           "min": 2.0,
-          "observations": 1
+          "observations": 2
         },
         "structural_rejection_count": {
           "delta": 0.0,
@@ -238,7 +257,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "tuple_collision_count": {
           "delta": 0.0,
@@ -246,7 +265,7 @@
           "latest": 11.0,
           "max": 11.0,
           "min": 11.0,
-          "observations": 1
+          "observations": 2
         },
         "tuple_profile_rejection_count": {
           "delta": 0.0,
@@ -254,18 +273,20 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         }
       },
-      "run_count": 1,
+      "run_count": 2,
       "status_sequence": [
-        "bch-code-search-proof-debt"
+        "bch-code-search-proof-debt",
+        "bch-code-search-dequantized-or-controls"
       ]
     },
     {
-      "blocking_run_count": 1,
+      "blocking_run_count": 2,
       "experiment_id": "EXP-CODE-CANONICALIZATION-BASELINE",
       "falsifier_count_sequence": [
+        1,
         1
       ],
       "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
@@ -279,7 +300,7 @@
           "latest": 1.0,
           "max": 1.0,
           "min": 1.0,
-          "observations": 1
+          "observations": 2
         },
         "canonical_form_rejection_count": {
           "delta": 0.0,
@@ -287,7 +308,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "max_estimated_assignments": {
           "delta": 0.0,
@@ -295,7 +316,7 @@
           "latest": 5040.0,
           "max": 5040.0,
           "min": 5040.0,
-          "observations": 1
+          "observations": 2
         },
         "negative_results_written": {
           "delta": 0.0,
@@ -303,7 +324,7 @@
           "latest": 5.0,
           "max": 5.0,
           "min": 5.0,
-          "observations": 1
+          "observations": 2
         },
         "profile_rejection_count": {
           "delta": 0.0,
@@ -311,7 +332,7 @@
           "latest": 5.0,
           "max": 5.0,
           "min": 5.0,
-          "observations": 1
+          "observations": 2
         },
         "proof_debt_count": {
           "delta": 0.0,
@@ -319,7 +340,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "record_count": {
           "delta": 0.0,
@@ -327,7 +348,7 @@
           "latest": 6.0,
           "max": 6.0,
           "min": 6.0,
-          "observations": 1
+          "observations": 2
         },
         "weak_invariant_match_count": {
           "delta": 0.0,
@@ -335,18 +356,133 @@
           "latest": 5.0,
           "max": 5.0,
           "min": 5.0,
-          "observations": 1
+          "observations": 2
         }
       },
-      "run_count": 1,
+      "run_count": 2,
       "status_sequence": [
+        "code-pairs-dequantized-by-canonicalization",
         "code-pairs-dequantized-by-canonicalization"
       ]
     },
     {
       "blocking_run_count": 1,
+      "experiment_id": "EXP-CODE-CFI-FAITHFUL-REDUCTION",
+      "falsifier_count_sequence": [
+        1
+      ],
+      "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
+      "latest_result_id": "RESULT-EXP-CODE-CFI-FAITHFUL-REDUCTION-CFI-CODE-REDUCTION",
+      "latest_status": "faithful-cfi-code-reduction-current-promised-families-dequantized",
+      "latest_summary": "Certified both directions of the tagged graph/code reduction on 6 CFI family row(s); 6 were dequantized after legal graph recovery and 0 remain only transferred GI proof debt.",
+      "numeric_metric_trends": {
+        "base_count": {
+          "delta": 0.0,
+          "first": 6.0,
+          "latest": 6.0,
+          "max": 6.0,
+          "min": 6.0,
+          "observations": 1
+        },
+        "equivalent_control_verified_count": {
+          "delta": 0.0,
+          "first": 6.0,
+          "latest": 6.0,
+          "max": 6.0,
+          "min": 6.0,
+          "observations": 1
+        },
+        "graph_invariant_rejection_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "invalid_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "max_code_dimension": {
+          "delta": 0.0,
+          "first": 98.0,
+          "latest": 98.0,
+          "max": 98.0,
+          "min": 98.0,
+          "observations": 1
+        },
+        "max_code_length": {
+          "delta": 0.0,
+          "first": 364.0,
+          "latest": 364.0,
+          "max": 364.0,
+          "min": 364.0,
+          "observations": 1
+        },
+        "negative_results_written": {
+          "delta": 0.0,
+          "first": 6.0,
+          "latest": 6.0,
+          "max": 6.0,
+          "min": 6.0,
+          "observations": 1
+        },
+        "positive_quantum_evidence_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        },
+        "promised_decoder_dequantized_count": {
+          "delta": 0.0,
+          "first": 6.0,
+          "latest": 6.0,
+          "max": 6.0,
+          "min": 6.0,
+          "observations": 1
+        },
+        "recovery_verified_count": {
+          "delta": 0.0,
+          "first": 6.0,
+          "latest": 6.0,
+          "max": 6.0,
+          "min": 6.0,
+          "observations": 1
+        },
+        "theorem_direction_count": {
+          "delta": 0.0,
+          "first": 2.0,
+          "latest": 2.0,
+          "max": 2.0,
+          "min": 2.0,
+          "observations": 1
+        },
+        "transferred_gi_proof_debt_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
+          "observations": 1
+        }
+      },
+      "run_count": 1,
+      "status_sequence": [
+        "faithful-cfi-code-reduction-current-promised-families-dequantized"
+      ]
+    },
+    {
+      "blocking_run_count": 2,
       "experiment_id": "EXP-CODE-CLOSURE-CONDUCTOR-ATTACK",
       "falsifier_count_sequence": [
+        1,
         1
       ],
       "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
@@ -360,7 +496,7 @@
           "latest": 1.0,
           "max": 1.0,
           "min": 1.0,
-          "observations": 1
+          "observations": 2
         },
         "closure_proof_debt_count": {
           "delta": 0.0,
@@ -368,7 +504,7 @@
           "latest": 8.0,
           "max": 8.0,
           "min": 8.0,
-          "observations": 1
+          "observations": 2
         },
         "closure_rejection_count": {
           "delta": 0.0,
@@ -376,7 +512,7 @@
           "latest": 8.0,
           "max": 8.0,
           "min": 8.0,
-          "observations": 1
+          "observations": 2
         },
         "equivalent_control_count": {
           "delta": 0.0,
@@ -384,7 +520,7 @@
           "latest": 95.0,
           "max": 95.0,
           "min": 95.0,
-          "observations": 1
+          "observations": 2
         },
         "family_count": {
           "delta": 0.0,
@@ -392,7 +528,7 @@
           "latest": 29.0,
           "max": 29.0,
           "min": 29.0,
-          "observations": 1
+          "observations": 2
         },
         "input_pair_count": {
           "delta": 0.0,
@@ -400,7 +536,7 @@
           "latest": 111.0,
           "max": 111.0,
           "min": 111.0,
-          "observations": 1
+          "observations": 2
         },
         "positive_evidence_count": {
           "delta": 0.0,
@@ -408,18 +544,20 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         }
       },
-      "run_count": 1,
+      "run_count": 2,
       "status_sequence": [
+        "closure-proof-debt",
         "closure-proof-debt"
       ]
     },
     {
-      "blocking_run_count": 3,
+      "blocking_run_count": 4,
       "experiment_id": "EXP-CODE-COSET-RANK",
       "falsifier_count_sequence": [
+        1,
         1,
         1,
         1
@@ -435,7 +573,7 @@
           "latest": 2.0,
           "max": 2.0,
           "min": 1.0,
-          "observations": 3
+          "observations": 4
         },
         "equivalent_control_verified_count": {
           "delta": 0.0,
@@ -443,7 +581,7 @@
           "latest": 1.0,
           "max": 1.0,
           "min": 1.0,
-          "observations": 3
+          "observations": 4
         },
         "exact_nonequivalence_certificate_count": {
           "delta": 0.0,
@@ -451,7 +589,7 @@
           "latest": 2.0,
           "max": 2.0,
           "min": 2.0,
-          "observations": 1
+          "observations": 2
         },
         "negative_results_written": {
           "delta": 1.0,
@@ -459,7 +597,7 @@
           "latest": 2.0,
           "max": 2.0,
           "min": 1.0,
-          "observations": 3
+          "observations": 4
         },
         "pair_audit_count": {
           "delta": 1.0,
@@ -467,7 +605,7 @@
           "latest": 3.0,
           "max": 3.0,
           "min": 2.0,
-          "observations": 3
+          "observations": 4
         },
         "support_splitting_distinguishes_count": {
           "delta": 1.0,
@@ -475,7 +613,7 @@
           "latest": 2.0,
           "max": 2.0,
           "min": 1.0,
-          "observations": 3
+          "observations": 4
         },
         "weak_invariant_collision_count": {
           "delta": 0.0,
@@ -483,26 +621,28 @@
           "latest": 1.0,
           "max": 1.0,
           "min": 1.0,
-          "observations": 1
+          "observations": 2
         }
       },
-      "run_count": 3,
+      "run_count": 4,
       "status_sequence": [
+        "blocked-by-code-invariants",
         "blocked-by-code-invariants",
         "blocked-by-code-invariants",
         "blocked-by-code-invariants"
       ]
     },
     {
-      "blocking_run_count": 1,
+      "blocking_run_count": 2,
       "experiment_id": "EXP-CODE-CYCLIC-ALGEBRAIC-SEARCH",
       "falsifier_count_sequence": [
+        1,
         1
       ],
       "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
       "latest_result_id": "RESULT-EXP-CODE-CYCLIC-ALGEBRAIC-SEARCH-CYCLIC-CODE",
       "latest_status": "cyclic-code-search-dequantized-or-controls",
-      "latest_summary": "Searched 3 cyclic-code length window(s), enumerating 53 code(s). Found 17 tuple-profile collision(s): 17 dihedral control(s), 0 classical rejection(s), and 0 proof-debt row(s).",
+      "latest_summary": "Searched 3 cyclic-code length window(s), enumerating 53 code(s). Found 17 tuple-profile collision(s): 17 dihedral control(s), 0 multiplier-affine control(s), 0 classical rejection(s), and 0 proof-debt row(s).",
       "numeric_metric_trends": {
         "canonicalization_rejection_count": {
           "delta": 0.0,
@@ -510,7 +650,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "code_count": {
           "delta": 0.0,
@@ -518,7 +658,7 @@
           "latest": 53.0,
           "max": 53.0,
           "min": 53.0,
-          "observations": 1
+          "observations": 2
         },
         "dihedral_equivalent_count": {
           "delta": 0.0,
@@ -526,7 +666,7 @@
           "latest": 17.0,
           "max": 17.0,
           "min": 17.0,
-          "observations": 1
+          "observations": 2
         },
         "max_length": {
           "delta": 0.0,
@@ -534,6 +674,14 @@
           "latest": 21.0,
           "max": 21.0,
           "min": 21.0,
+          "observations": 2
+        },
+        "multiplier_equivalent_count": {
+          "delta": 0.0,
+          "first": 0.0,
+          "latest": 0.0,
+          "max": 0.0,
+          "min": 0.0,
           "observations": 1
         },
         "negative_results_written": {
@@ -542,7 +690,7 @@
           "latest": 3.0,
           "max": 3.0,
           "min": 3.0,
-          "observations": 1
+          "observations": 2
         },
         "no_collision_count": {
           "delta": 0.0,
@@ -550,7 +698,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "proof_debt_collision_count": {
           "delta": 0.0,
@@ -558,7 +706,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "search_count": {
           "delta": 0.0,
@@ -566,7 +714,7 @@
           "latest": 3.0,
           "max": 3.0,
           "min": 3.0,
-          "observations": 1
+          "observations": 2
         },
         "structural_rejection_count": {
           "delta": 0.0,
@@ -574,7 +722,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "tuple_collision_count": {
           "delta": 0.0,
@@ -582,7 +730,7 @@
           "latest": 17.0,
           "max": 17.0,
           "min": 17.0,
-          "observations": 1
+          "observations": 2
         },
         "tuple_profile_rejection_count": {
           "delta": 0.0,
@@ -590,90 +738,92 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         }
       },
-      "run_count": 1,
+      "run_count": 2,
       "status_sequence": [
+        "cyclic-code-search-dequantized-or-controls",
         "cyclic-code-search-dequantized-or-controls"
       ]
     },
     {
-      "blocking_run_count": 3,
+      "blocking_run_count": 4,
       "experiment_id": "EXP-CODE-FRONTIER-TRIAGE",
       "falsifier_count_sequence": [
         2,
         3,
-        2
+        2,
+        3
       ],
       "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
       "latest_result_id": "RESULT-EXP-CODE-FRONTIER-TRIAGE-CODE-FRONTIER",
-      "latest_status": "code-frontier-dequantized-or-control",
-      "latest_summary": "Triage aggregated 22 code-equivalence row(s) across 55 evidence items. 5 row(s) are rejected by classical baselines, 0 remain proof debt, and 17 are equivalent controls or no-hard-row searches.",
+      "latest_status": "code-frontier-proof-debt",
+      "latest_summary": "Triage aggregated 54 code-equivalence row(s) across 288 evidence items. 17 row(s) are rejected by classical baselines, 7 remain proof debt, and 30 are equivalent controls or no-hard-row searches.",
       "numeric_metric_trends": {
         "control_or_no_hard_row_count": {
-          "delta": 7.0,
+          "delta": 20.0,
           "first": 10.0,
-          "latest": 17.0,
-          "max": 17.0,
+          "latest": 30.0,
+          "max": 30.0,
           "min": 10.0,
-          "observations": 3
+          "observations": 4
         },
         "dequantizing_evidence_count": {
-          "delta": -1.0,
+          "delta": 29.0,
           "first": 26.0,
-          "latest": 25.0,
-          "max": 26.0,
-          "min": 25.0,
-          "observations": 3
-        },
-        "evidence_count": {
-          "delta": 9.0,
-          "first": 46.0,
           "latest": 55.0,
           "max": 55.0,
+          "min": 25.0,
+          "observations": 4
+        },
+        "evidence_count": {
+          "delta": 242.0,
+          "first": 46.0,
+          "latest": 288.0,
+          "max": 288.0,
           "min": 46.0,
-          "observations": 3
+          "observations": 4
         },
         "negative_results_written": {
-          "delta": 6.0,
+          "delta": 31.0,
           "first": 16.0,
-          "latest": 22.0,
-          "max": 22.0,
+          "latest": 47.0,
+          "max": 47.0,
           "min": 16.0,
-          "observations": 3
+          "observations": 4
         },
         "proof_debt_evidence_count": {
-          "delta": 3.0,
+          "delta": 58.0,
           "first": 3.0,
-          "latest": 6.0,
-          "max": 6.0,
+          "latest": 61.0,
+          "max": 61.0,
           "min": 3.0,
-          "observations": 3
+          "observations": 4
         },
         "proof_debt_row_count": {
-          "delta": 0.0,
+          "delta": 7.0,
           "first": 0.0,
-          "latest": 0.0,
-          "max": 1.0,
+          "latest": 7.0,
+          "max": 7.0,
           "min": 0.0,
-          "observations": 3
+          "observations": 4
         },
         "record_count": {
-          "delta": 6.0,
+          "delta": 38.0,
           "first": 16.0,
-          "latest": 22.0,
-          "max": 22.0,
+          "latest": 54.0,
+          "max": 54.0,
           "min": 16.0,
-          "observations": 3
+          "observations": 4
         },
         "rejected_row_count": {
-          "delta": -1.0,
+          "delta": 11.0,
           "first": 6.0,
-          "latest": 5.0,
-          "max": 6.0,
+          "latest": 17.0,
+          "max": 17.0,
           "min": 5.0,
-          "observations": 3
+          "observations": 4
         },
         "unclassified_row_count": {
           "delta": 0.0,
@@ -681,20 +831,22 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 3
+          "observations": 4
         }
       },
-      "run_count": 3,
+      "run_count": 4,
       "status_sequence": [
         "code-frontier-dequantized-or-control",
         "code-frontier-proof-debt",
-        "code-frontier-dequantized-or-control"
+        "code-frontier-dequantized-or-control",
+        "code-frontier-proof-debt"
       ]
     },
     {
-      "blocking_run_count": 2,
+      "blocking_run_count": 3,
       "experiment_id": "EXP-CODE-GOPPA-ALGEBRAIC-SEARCH",
       "falsifier_count_sequence": [
+        1,
         1,
         1
       ],
@@ -709,7 +861,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 2
+          "observations": 3
         },
         "code_count": {
           "delta": 0.0,
@@ -717,7 +869,7 @@
           "latest": 252.0,
           "max": 252.0,
           "min": 252.0,
-          "observations": 2
+          "observations": 3
         },
         "no_collision_count": {
           "delta": 0.0,
@@ -725,7 +877,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 2
+          "observations": 3
         },
         "proof_debt_collision_count": {
           "delta": 0.0,
@@ -733,7 +885,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 2
+          "observations": 3
         },
         "search_count": {
           "delta": 0.0,
@@ -741,7 +893,7 @@
           "latest": 3.0,
           "max": 3.0,
           "min": 3.0,
-          "observations": 2
+          "observations": 3
         },
         "semilinear_control_count": {
           "delta": 0.0,
@@ -749,7 +901,7 @@
           "latest": 15.0,
           "max": 15.0,
           "min": 15.0,
-          "observations": 2
+          "observations": 3
         },
         "structural_rejection_count": {
           "delta": 0.0,
@@ -757,7 +909,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 2
+          "observations": 3
         },
         "tuple_collision_count": {
           "delta": 0.0,
@@ -765,7 +917,7 @@
           "latest": 12.0,
           "max": 12.0,
           "min": 12.0,
-          "observations": 2
+          "observations": 3
         },
         "tuple_profile_key_count": {
           "delta": 0.0,
@@ -773,7 +925,7 @@
           "latest": 4.0,
           "max": 4.0,
           "min": 4.0,
-          "observations": 2
+          "observations": 3
         },
         "tuple_profile_rejection_count": {
           "delta": 0.0,
@@ -781,19 +933,21 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 2
+          "observations": 3
         }
       },
-      "run_count": 2,
+      "run_count": 3,
       "status_sequence": [
+        "goppa-code-search-dequantized-or-controls",
         "goppa-code-search-dequantized-or-controls",
         "goppa-code-search-dequantized-or-controls"
       ]
     },
     {
-      "blocking_run_count": 1,
+      "blocking_run_count": 2,
       "experiment_id": "EXP-CODE-GOPPA-HULL-PROJECTOR",
       "falsifier_count_sequence": [
+        5,
         5
       ],
       "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
@@ -807,7 +961,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "code_native_hard_pair_count": {
           "delta": 0.0,
@@ -815,7 +969,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "control_failure_count": {
           "delta": 0.0,
@@ -823,7 +977,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "control_inapplicable_count": {
           "delta": 0.0,
@@ -831,7 +985,7 @@
           "latest": 2.0,
           "max": 2.0,
           "min": 2.0,
-          "observations": 1
+          "observations": 2
         },
         "equivalent_or_automorphic_count": {
           "delta": 0.0,
@@ -839,7 +993,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "exact_graph_rejection_count": {
           "delta": 0.0,
@@ -847,7 +1001,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "family_count": {
           "delta": 0.0,
@@ -855,7 +1009,7 @@
           "latest": 3.0,
           "max": 3.0,
           "min": 3.0,
-          "observations": 1
+          "observations": 2
         },
         "frontier_pair_count": {
           "delta": 0.0,
@@ -863,7 +1017,7 @@
           "latest": 1.0,
           "max": 1.0,
           "min": 1.0,
-          "observations": 1
+          "observations": 2
         },
         "instance_count": {
           "delta": 0.0,
@@ -871,7 +1025,7 @@
           "latest": 13.0,
           "max": 13.0,
           "min": 13.0,
-          "observations": 1
+          "observations": 2
         },
         "known_permutation_control_count": {
           "delta": 0.0,
@@ -879,7 +1033,7 @@
           "latest": 3.0,
           "max": 3.0,
           "min": 3.0,
-          "observations": 1
+          "observations": 2
         },
         "nonabelian_measurement_necessity_proof_count": {
           "delta": 0.0,
@@ -887,7 +1041,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "polynomial_projector_rejection_count": {
           "delta": 0.0,
@@ -895,7 +1049,7 @@
           "latest": 1.0,
           "max": 1.0,
           "min": 1.0,
-          "observations": 1
+          "observations": 2
         },
         "projector_proof_debt_count": {
           "delta": 0.0,
@@ -903,7 +1057,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "trivial_hull_certificate_count": {
           "delta": 0.0,
@@ -911,18 +1065,20 @@
           "latest": 4.0,
           "max": 4.0,
           "min": 4.0,
-          "observations": 1
+          "observations": 2
         }
       },
-      "run_count": 1,
+      "run_count": 2,
       "status_sequence": [
+        "goppa-projector-frontier-resolved-no-code-native-hard-row",
         "goppa-projector-frontier-resolved-no-code-native-hard-row"
       ]
     },
     {
-      "blocking_run_count": 1,
+      "blocking_run_count": 2,
       "experiment_id": "EXP-CODE-GOPPA-SCALING-FRONTIER",
       "falsifier_count_sequence": [
+        6,
         6
       ],
       "interpretation": "Repeated runs continue to trigger falsifiers; this is proof debt, not progress.",
@@ -936,7 +1092,7 @@
           "latest": 1.0,
           "max": 1.0,
           "min": 1.0,
-          "observations": 1
+          "observations": 2
         },
         "classical_superpolynomial_lower_bound_count": {
           "delta": 0.0,
@@ -944,7 +1100,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "coarse_collision_pair_count": {
           "delta": 0.0,
@@ -952,7 +1108,7 @@
           "latest": 4.0,
           "max": 4.0,
           "min": 4.0,
-          "observations": 1
+          "observations": 2
         },
         "control_failure_count": {
           "delta": 0.0,
@@ -960,7 +1116,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "exact_dual_signature_count": {
           "delta": 0.0,
@@ -968,7 +1124,7 @@
           "latest": 10.0,
           "max": 10.0,
           "min": 10.0,
-          "observations": 1
+          "observations": 2
         },
         "exact_invariant_rejection_count": {
           "delta": 0.0,
@@ -976,7 +1132,7 @@
           "latest": 14.0,
           "max": 14.0,
           "min": 14.0,
-          "observations": 1
+          "observations": 2
         },
         "family_count": {
           "delta": 0.0,
@@ -984,7 +1140,7 @@
           "latest": 3.0,
           "max": 3.0,
           "min": 3.0,
-          "observations": 1
+          "observations": 2
         },
         "instance_count": {
           "delta": 0.0,
@@ -992,7 +1148,7 @@
           "latest": 13.0,
           "max": 13.0,
           "min": 13.0,
-          "observations": 1
+          "observations": 2
         },
         "known_permutation_control_count": {
           "delta": 0.0,
@@ -1000,7 +1156,7 @@
           "latest": 3.0,
           "max": 3.0,
           "min": 3.0,
-          "observations": 1
+          "observations": 2
         },
         "maximum_length": {
           "delta": 0.0,
@@ -1008,7 +1164,7 @@
           "latest": 160.0,
           "max": 160.0,
           "min": 160.0,
-          "observations": 1
+          "observations": 2
         },
         "natural_scaling_family_count": {
           "delta": 0.0,
@@ -1016,7 +1172,7 @@
           "latest": 3.0,
           "max": 3.0,
           "min": 3.0,
-          "observations": 1
+          "observations": 2
         },
         "nonabelian_measurement_required_pair_count": {
           "delta": 0.0,
@@ -1024,7 +1180,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "proof_debt_pair_count": {
           "delta": 0.0,
@@ -1032,7 +1188,7 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         },
         "semilinear_support_control_count": {
           "delta": 0.0,
@@ -1040,11 +1196,12 @@
           "latest": 0.0,
           "max": 0.0,
           "min": 0.0,
-          "observations": 1
+          "observations": 2
         }
       },
-      "run_count": 1,
+      "run_count": 2,
       "status_sequence": [
+        "natural-goppa-scaling-frontier-generated-classical-proof-debt-only",
         "natural-goppa-scaling-frontier-generated-classical-proof-debt-only"
       ]
     },

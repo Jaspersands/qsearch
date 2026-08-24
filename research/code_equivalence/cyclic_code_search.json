@@ -1,11 +1,11 @@
 {
-  "created_at": "2026-08-06T06:33:51.357057+00:00",
+  "created_at": "2026-08-24T20:23:06.849514+00:00",
   "falsifiers_triggered": [
     "Cyclic-code collisions are explained by the natural cyclic dihedral automorphism group."
   ],
   "headline_metrics": {
     "canonicalization_rejection_count": 0,
-    "code_count": 58,
+    "code_count": 53,
     "dihedral_equivalent_count": 17,
     "max_length": 21,
     "multiplier_equivalent_count": 0,
@@ -223,8 +223,8 @@
       "spec": {
         "id": "cyclic-n7",
         "length": 7,
-        "max_collisions": 8,
-        "max_dimension": 10,
+        "max_collisions": 6,
+        "max_dimension": 6,
         "min_dimension": 2,
         "tuple_size": 2
       },
@@ -235,7 +235,7 @@
     },
     {
       "canonicalization_rejection_count": 0,
-      "code_count": 23,
+      "code_count": 22,
       "collision_audits": [
         {
           "canonical_equal": null,
@@ -2139,14 +2139,14 @@
       "divisor_count": 32,
       "interpretation": "Cyclic-code collisions found so far are equivalent controls under the natural dihedral automorphism group.",
       "multiplier_equivalent_count": 0,
-      "profile_key_count": 16,
+      "profile_key_count": 15,
       "proof_debt_collision_count": 0,
       "spec": {
         "id": "cyclic-n15",
         "length": 15,
         "max_collisions": 8,
         "max_dimension": 10,
-        "min_dimension": 2,
+        "min_dimension": 3,
         "tuple_size": 2
       },
       "status": "cyclic-collisions-all-dihedral-controls",
@@ -2156,7 +2156,7 @@
     },
     {
       "canonicalization_rejection_count": 0,
-      "code_count": 30,
+      "code_count": 26,
       "collision_audits": [
         {
           "canonical_equal": null,
@@ -5555,14 +5555,14 @@
       "divisor_count": 64,
       "interpretation": "Cyclic-code collisions found so far are equivalent controls under the natural dihedral automorphism group.",
       "multiplier_equivalent_count": 0,
-      "profile_key_count": 18,
+      "profile_key_count": 15,
       "proof_debt_collision_count": 0,
       "spec": {
         "id": "cyclic-n21",
         "length": 21,
         "max_collisions": 8,
         "max_dimension": 10,
-        "min_dimension": 2,
+        "min_dimension": 4,
         "tuple_size": 2
       },
       "status": "cyclic-collisions-all-dihedral-controls",
@@ -5572,5 +5572,5 @@
     }
   ],
   "status": "cyclic-code-search-dequantized-or-controls",
-  "summary": "Searched 3 cyclic-code length window(s), enumerating 58 code(s). Found 17 tuple-profile collision(s): 17 dihedral control(s), 0 multiplier-affine control(s), 0 classical rejection(s), and 0 proof-debt row(s)."
+  "summary": "Searched 3 cyclic-code length window(s), enumerating 53 code(s). Found 17 tuple-profile collision(s): 17 dihedral control(s), 0 multiplier-affine control(s), 0 classical rejection(s), and 0 proof-debt row(s)."
 }

@@ -1,5 +1,5 @@
 {
-  "created_at": "2026-08-06T06:35:59.228904+00:00",
+  "created_at": "2026-08-24T20:22:14.088534+00:00",
   "falsifiers_triggered": [
     "Many BCH defining intervals close to duplicate cyclotomic defining sets.",
     "Some BCH collisions are explained by decimation/multiplier or canonical equivalence controls.",
@@ -64,7 +64,7 @@
             "dimension": 5,
             "extension_degree": 4,
             "generator_poly": "0b10100110111",
-            "id": "bch-m4-d3-9-s3-d4",
+            "id": "bch-m4-d3-9-shifted-s3-d4",
             "length": 15,
             "start": 3
           },
@@ -103,7 +103,7 @@
             "dimension": 5,
             "extension_degree": 4,
             "generator_poly": "0b11101100101",
-            "id": "bch-m4-d3-9-s5-d4",
+            "id": "bch-m4-d3-9-shifted-s5-d4",
             "length": 15,
             "start": 5
           },
@@ -289,7 +289,7 @@
               1
             ]
           ],
-          "id": "bch-m4-d3-9-s3-d4--bch-m4-d3-9-s5-d4",
+          "id": "bch-m4-d3-9-shifted-s3-d4--bch-m4-d3-9-shifted-s5-d4",
           "interpretation": "The BCH defining sets are equivalent under a cyclotomic decimation/multiplier (multiplier=7); this is an algebraic automorphism control, not hardness evidence.",
           "length": 15,
           "low_weight_status": "skipped-after-earlier-baseline",
@@ -317,8 +317,8 @@
       "proof_debt_collision_count": 0,
       "spec": {
         "extension_degree": 4,
-        "id": "bch-m4-d3-9",
-        "max_collisions": 10,
+        "id": "bch-m4-d3-9-shifted",
+        "max_collisions": 8,
         "max_designed_distance": 9,
         "min_designed_distance": 3,
         "starts": [
@@ -374,7 +374,7 @@
             "dimension": 21,
             "extension_degree": 5,
             "generator_poly": "0b11101101001",
-            "id": "bch-m5-d3-11-s2-d3",
+            "id": "bch-m5-d3-11-shifted-s2-d3",
             "length": 31,
             "start": 2
           },
@@ -411,7 +411,7 @@
             "dimension": 21,
             "extension_degree": 5,
             "generator_poly": "0b10011000011",
-            "id": "bch-m5-d3-11-s5-d3",
+            "id": "bch-m5-d3-11-shifted-s5-d3",
             "length": 31,
             "start": 5
           },
@@ -1813,7 +1813,7 @@
               1
             ]
           ],
-          "id": "bch-m5-d3-11-s2-d3--bch-m5-d3-11-s5-d3",
+          "id": "bch-m5-d3-11-shifted-s2-d3--bch-m5-d3-11-shifted-s5-d3",
           "interpretation": "The BCH defining sets are equivalent under a cyclotomic decimation/multiplier (multiplier=3); this is an algebraic automorphism control, not hardness evidence.",
           "length": 31,
           "low_weight_status": "skipped-after-earlier-baseline",
@@ -1862,7 +1862,7 @@
             "dimension": 21,
             "extension_degree": 5,
             "generator_poly": "0b11101101001",
-            "id": "bch-m5-d3-11-s2-d3",
+            "id": "bch-m5-d3-11-shifted-s2-d3",
             "length": 31,
             "start": 2
           },
@@ -1899,7 +1899,7 @@
             "dimension": 21,
             "extension_degree": 5,
             "generator_poly": "0b10101110011",
-            "id": "bch-m5-d3-11-s7-d3",
+            "id": "bch-m5-d3-11-shifted-s7-d3",
             "length": 31,
             "start": 7
           },
@@ -3963,7 +3963,7 @@
               1
             ]
           ],
-          "id": "bch-m5-d3-11-s2-d3--bch-m5-d3-11-s7-d3",
+          "id": "bch-m5-d3-11-shifted-s2-d3--bch-m5-d3-11-shifted-s7-d3",
           "interpretation": "BCH high-rate primal rows are separated by a dual 4-coordinate tuple profile digest.",
           "length": 31,
           "low_weight_status": "low-weight-matroid-survivor-proof-debt",
@@ -4012,7 +4012,7 @@
             "dimension": 21,
             "extension_degree": 5,
             "generator_poly": "0b11101101001",
-            "id": "bch-m5-d3-11-s2-d3",
+            "id": "bch-m5-d3-11-shifted-s2-d3",
             "length": 31,
             "start": 2
           },
@@ -4049,7 +4049,7 @@
             "dimension": 21,
             "extension_degree": 5,
             "generator_poly": "0b10111011111",
-            "id": "bch-m5-d3-11-s11-d3",
+            "id": "bch-m5-d3-11-shifted-s11-d3",
             "length": 31,
             "start": 11
           },
@@ -6113,7 +6113,7 @@
               1
             ]
           ],
-          "id": "bch-m5-d3-11-s2-d3--bch-m5-d3-11-s11-d3",
+          "id": "bch-m5-d3-11-shifted-s2-d3--bch-m5-d3-11-shifted-s11-d3",
           "interpretation": "BCH high-rate primal rows are separated by a dual 4-coordinate tuple profile digest.",
           "length": 31,
           "low_weight_status": "low-weight-matroid-survivor-proof-debt",
@@ -6162,7 +6162,7 @@
             "dimension": 21,
             "extension_degree": 5,
             "generator_poly": "0b10011000011",
-            "id": "bch-m5-d3-11-s5-d3",
+            "id": "bch-m5-d3-11-shifted-s5-d3",
             "length": 31,
             "start": 5
           },
@@ -6199,7 +6199,7 @@
             "dimension": 21,
             "extension_degree": 5,
             "generator_poly": "0b10101110011",
-            "id": "bch-m5-d3-11-s7-d3",
+            "id": "bch-m5-d3-11-shifted-s7-d3",
             "length": 31,
             "start": 7
           },
@@ -8263,7 +8263,7 @@
               1
             ]
           ],
-          "id": "bch-m5-d3-11-s5-d3--bch-m5-d3-11-s7-d3",
+          "id": "bch-m5-d3-11-shifted-s5-d3--bch-m5-d3-11-shifted-s7-d3",
           "interpretation": "BCH high-rate primal rows are separated by a dual 4-coordinate tuple profile digest.",
           "length": 31,
           "low_weight_status": "low-weight-matroid-survivor-proof-debt",
@@ -8312,7 +8312,7 @@
             "dimension": 21,
             "extension_degree": 5,
             "generator_poly": "0b10011000011",
-            "id": "bch-m5-d3-11-s5-d3",
+            "id": "bch-m5-d3-11-shifted-s5-d3",
             "length": 31,
             "start": 5
           },
@@ -8349,7 +8349,7 @@
             "dimension": 21,
             "extension_degree": 5,
             "generator_poly": "0b10111011111",
-            "id": "bch-m5-d3-11-s11-d3",
+            "id": "bch-m5-d3-11-shifted-s11-d3",
             "length": 31,
             "start": 11
           },
@@ -10413,7 +10413,7 @@
               1
             ]
           ],
-          "id": "bch-m5-d3-11-s5-d3--bch-m5-d3-11-s11-d3",
+          "id": "bch-m5-d3-11-shifted-s5-d3--bch-m5-d3-11-shifted-s11-d3",
           "interpretation": "BCH high-rate primal rows are separated by a dual 4-coordinate tuple profile digest.",
           "length": 31,
           "low_weight_status": "low-weight-matroid-survivor-proof-debt",
@@ -10462,7 +10462,7 @@
             "dimension": 21,
             "extension_degree": 5,
             "generator_poly": "0b10101110011",
-            "id": "bch-m5-d3-11-s7-d3",
+            "id": "bch-m5-d3-11-shifted-s7-d3",
             "length": 31,
             "start": 7
           },
@@ -10499,7 +10499,7 @@
             "dimension": 21,
             "extension_degree": 5,
             "generator_poly": "0b10111011111",
-            "id": "bch-m5-d3-11-s11-d3",
+            "id": "bch-m5-d3-11-shifted-s11-d3",
             "length": 31,
             "start": 11
           },
@@ -11901,7 +11901,7 @@
               1
             ]
           ],
-          "id": "bch-m5-d3-11-s7-d3--bch-m5-d3-11-s11-d3",
+          "id": "bch-m5-d3-11-shifted-s7-d3--bch-m5-d3-11-shifted-s11-d3",
           "interpretation": "The BCH defining sets are equivalent under a cyclotomic decimation/multiplier (multiplier=3); this is an algebraic automorphism control, not hardness evidence.",
           "length": 31,
           "low_weight_status": "skipped-after-earlier-baseline",
@@ -11962,7 +11962,7 @@
             "dimension": 16,
             "extension_degree": 5,
             "generator_poly": "0b1000111110101111",
-            "id": "bch-m5-d3-11-s3-d4",
+            "id": "bch-m5-d3-11-shifted-s3-d4",
             "length": 31,
             "start": 3
           },
@@ -12011,7 +12011,7 @@
             "dimension": 16,
             "extension_degree": 5,
             "generator_poly": "0b1010000000110001",
-            "id": "bch-m5-d3-11-s5-d4",
+            "id": "bch-m5-d3-11-shifted-s5-d4",
             "length": 31,
             "start": 5
           },
@@ -14075,7 +14075,7 @@
               1
             ]
           ],
-          "id": "bch-m5-d3-11-s3-d4--bch-m5-d3-11-s5-d4",
+          "id": "bch-m5-d3-11-shifted-s3-d4--bch-m5-d3-11-shifted-s5-d4",
           "interpretation": "BCH high-rate primal rows are separated by structural invariants on their low-dimensional dual codes: support_splitting_fingerprint, hull_dimension, punctured_weight_profile, shortened_weight_profile",
           "length": 31,
           "low_weight_status": "skipped-after-earlier-baseline",
@@ -14141,7 +14141,7 @@
             "dimension": 16,
             "extension_degree": 5,
             "generator_poly": "0b1000111110101111",
-            "id": "bch-m5-d3-11-s3-d4",
+            "id": "bch-m5-d3-11-shifted-s3-d4",
             "length": 31,
             "start": 3
           },
@@ -14190,7 +14190,7 @@
             "dimension": 16,
             "extension_degree": 5,
             "generator_poly": "0b1110001100001001",
-            "id": "bch-m5-d3-11-s7-d4",
+            "id": "bch-m5-d3-11-shifted-s7-d4",
             "length": 31,
             "start": 7
           },
@@ -16254,7 +16254,7 @@
               1
             ]
           ],
-          "id": "bch-m5-d3-11-s3-d4--bch-m5-d3-11-s7-d4",
+          "id": "bch-m5-d3-11-shifted-s3-d4--bch-m5-d3-11-shifted-s7-d4",
           "interpretation": "BCH high-rate primal rows are separated by a dual 3-coordinate tuple profile digest.",
           "length": 31,
           "low_weight_status": "low-weight-matroid-survivor-proof-debt",
@@ -16315,7 +16315,7 @@
             "dimension": 16,
             "extension_degree": 5,
             "generator_poly": "0b1000111110101111",
-            "id": "bch-m5-d3-11-s3-d4",
+            "id": "bch-m5-d3-11-shifted-s3-d4",
             "length": 31,
             "start": 3
           },
@@ -16364,7 +16364,7 @@
             "dimension": 16,
             "extension_degree": 5,
             "generator_poly": "0b1000110000000101",
-            "id": "bch-m5-d3-11-s11-d5",
+            "id": "bch-m5-d3-11-shifted-s11-d5",
             "length": 31,
             "start": 11
           },
@@ -18428,7 +18428,7 @@
               1
             ]
           ],
-          "id": "bch-m5-d3-11-s3-d4--bch-m5-d3-11-s11-d5",
+          "id": "bch-m5-d3-11-shifted-s3-d4--bch-m5-d3-11-shifted-s11-d5",
           "interpretation": "BCH high-rate primal rows are separated by structural invariants on their low-dimensional dual codes: support_splitting_fingerprint, hull_dimension, punctured_weight_profile, shortened_weight_profile",
           "length": 31,
           "low_weight_status": "skipped-after-earlier-baseline",
@@ -18494,7 +18494,7 @@
             "dimension": 16,
             "extension_degree": 5,
             "generator_poly": "0b1010000000110001",
-            "id": "bch-m5-d3-11-s5-d4",
+            "id": "bch-m5-d3-11-shifted-s5-d4",
             "length": 31,
             "start": 5
           },
@@ -18543,7 +18543,7 @@
             "dimension": 16,
             "extension_degree": 5,
             "generator_poly": "0b1110001100001001",
-            "id": "bch-m5-d3-11-s7-d4",
+            "id": "bch-m5-d3-11-shifted-s7-d4",
             "length": 31,
             "start": 7
           },
@@ -20607,7 +20607,7 @@
               1
             ]
           ],
-          "id": "bch-m5-d3-11-s5-d4--bch-m5-d3-11-s7-d4",
+          "id": "bch-m5-d3-11-shifted-s5-d4--bch-m5-d3-11-shifted-s7-d4",
           "interpretation": "BCH high-rate primal rows are separated by structural invariants on their low-dimensional dual codes: support_splitting_fingerprint, hull_dimension, punctured_weight_profile, shortened_weight_profile",
           "length": 31,
           "low_weight_status": "skipped-after-earlier-baseline",
@@ -20640,7 +20640,7 @@
       "proof_debt_collision_count": 0,
       "spec": {
         "extension_degree": 5,
-        "id": "bch-m5-d3-11",
+        "id": "bch-m5-d3-11-shifted",
         "max_collisions": 10,
         "max_designed_distance": 11,
         "min_designed_distance": 3,

@@ -14808,5 +14808,339 @@
     "run_id": "RUN-EXP-CODE-SELF-DUAL-WREATH-TRACE-BIASED-ADAPTIVE-WALSH-NO-GO-00459",
     "status": "marker-filter-reduced-to-original-subset-sum-search",
     "summary": "Proved exact standard and carry-sliced marker-coset radius equivalences. Marker normalization is easy; short marker-one extraction remains exactly the binary subset-sum search problem."
+  },
+  {
+    "artifacts": {
+      "affine_geometry_code_search": "research/code_equivalence/affine_geometry_code_search.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-CODE-AFFINE-GEOMETRY-SEARCH",
+    "falsifier_count": 1,
+    "falsifiers_triggered": [
+      "Some affine-geometry collisions are explained by AGL(2,q) support automorphisms."
+    ],
+    "metrics": {
+      "affine_control_count": 7,
+      "canonicalization_rejection_count": 0,
+      "code_count": 18,
+      "equivalent_control_count": 2,
+      "low_weight_rejection_count": 0,
+      "max_ambient_point_count": 9,
+      "negative_results_written": 2,
+      "no_collision_count": 0,
+      "proof_debt_collision_count": 0,
+      "search_count": 2,
+      "structural_rejection_count": 0,
+      "support_affine_profile_collision_count": 5,
+      "tuple_collision_count": 9,
+      "tuple_profile_rejection_count": 0
+    },
+    "recorded_at": "2026-08-24T20:20:00.620629+00:00",
+    "result_id": "RESULT-EXP-CODE-AFFINE-GEOMETRY-SEARCH-AFFINE-GEOMETRY",
+    "run_id": "RUN-EXP-CODE-AFFINE-GEOMETRY-SEARCH-00460",
+    "status": "affine-geometry-code-search-dequantized-or-controls",
+    "summary": "Searched 2 affine-geometry parameter window(s), sampling 18 code(s). Found 9 tuple-profile/control collision(s), including 5 support affine-profile candidate(s): 7 affine-linear control(s), 0 rejection(s), and 0 proof-debt row(s)."
+  },
+  {
+    "artifacts": {
+      "bch_code_search": "research/code_equivalence/bch_code_search.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-CODE-BCH-ALGEBRAIC-SEARCH",
+    "falsifier_count": 3,
+    "falsifiers_triggered": [
+      "Many BCH defining intervals close to duplicate cyclotomic defining sets.",
+      "Some BCH collisions are explained by decimation/multiplier or canonical equivalence controls.",
+      "Some BCH collisions are rejected by classical structural, tuple, dual-side, low-weight, or canonical baselines."
+    ],
+    "metrics": {
+      "canonicalization_rejection_count": 0,
+      "dual_higher_tuple_rejection_count": 5,
+      "dual_rejection_count": 8,
+      "duplicate_code_count": 66,
+      "equivalent_control_count": 0,
+      "generated_code_count": 23,
+      "low_weight_rejection_count": 0,
+      "max_length": 31,
+      "multiplier_equivalent_count": 3,
+      "negative_results_written": 2,
+      "no_collision_count": 0,
+      "proof_debt_collision_count": 0,
+      "search_count": 2,
+      "structural_rejection_count": 0,
+      "tuple_collision_count": 11,
+      "tuple_profile_rejection_count": 0
+    },
+    "recorded_at": "2026-08-24T20:22:14.151204+00:00",
+    "result_id": "RESULT-EXP-CODE-BCH-ALGEBRAIC-SEARCH-BCH-CODE",
+    "run_id": "RUN-EXP-CODE-BCH-ALGEBRAIC-SEARCH-00461",
+    "status": "bch-code-search-dequantized-or-controls",
+    "summary": "Searched 2 BCH parameter window(s), generating 23 unique code(s) and 66 duplicate defining-set control(s). Found 11 tuple-profile collision(s): 3 decimation control(s), 0 canonical equivalent control(s), 8 classical rejection(s), and 0 proof-debt row(s)."
+  },
+  {
+    "artifacts": {
+      "code_canonicalization_baseline": "research/code_equivalence/code_canonicalization_baseline.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-CODE-CANONICALIZATION-BASELINE",
+    "falsifier_count": 1,
+    "falsifiers_triggered": [
+      "Code-equivalence rows are separated by profile or exact canonical-form baselines."
+    ],
+    "metrics": {
+      "canonical_equivalent_count": 1,
+      "canonical_form_rejection_count": 0,
+      "max_estimated_assignments": 5040,
+      "negative_results_written": 5,
+      "profile_rejection_count": 5,
+      "proof_debt_count": 0,
+      "record_count": 6,
+      "weak_invariant_match_count": 5
+    },
+    "recorded_at": "2026-08-24T20:22:14.560505+00:00",
+    "result_id": "RESULT-EXP-CODE-CANONICALIZATION-BASELINE-CODE-CANONICALIZATION",
+    "run_id": "RUN-EXP-CODE-CANONICALIZATION-BASELINE-00462",
+    "status": "code-pairs-dequantized-by-canonicalization",
+    "summary": "Audited 6 code-pair row(s) with profile-pruned canonicalization. 5 row(s) were rejected by canonicalization/profile baselines; 0 row(s) exceeded the assignment cap."
+  },
+  {
+    "artifacts": {
+      "cfi_code_reduction": "research/code_equivalence/cfi_code_reduction.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-CODE-CFI-FAITHFUL-REDUCTION",
+    "falsifier_count": 1,
+    "falsifiers_triggered": [
+      "Explicit tagged-code recovery exposes a graph on which the promised CFI parity decoder succeeds."
+    ],
+    "metrics": {
+      "base_count": 6,
+      "equivalent_control_verified_count": 6,
+      "graph_invariant_rejection_count": 0,
+      "invalid_count": 0,
+      "max_code_dimension": 98,
+      "max_code_length": 364,
+      "negative_results_written": 6,
+      "positive_quantum_evidence_count": 0,
+      "promised_decoder_dequantized_count": 6,
+      "recovery_verified_count": 6,
+      "theorem_direction_count": 2,
+      "transferred_gi_proof_debt_count": 0
+    },
+    "recorded_at": "2026-08-24T20:22:18.833915+00:00",
+    "result_id": "RESULT-EXP-CODE-CFI-FAITHFUL-REDUCTION-CFI-CODE-REDUCTION",
+    "run_id": "RUN-EXP-CODE-CFI-FAITHFUL-REDUCTION-00463",
+    "status": "faithful-cfi-code-reduction-current-promised-families-dequantized",
+    "summary": "Certified both directions of the tagged graph/code reduction on 6 CFI family row(s); 6 were dequantized after legal graph recovery and 0 remain only transferred GI proof debt."
+  },
+  {
+    "artifacts": {
+      "code_closure_attack": "research/code_equivalence/code_closure_attack.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-CODE-CLOSURE-CONDUCTOR-ATTACK",
+    "falsifier_count": 1,
+    "falsifiers_triggered": [
+      "A polynomial-time conductor/t-closure invariant separates a proposed hard code-equivalence row."
+    ],
+    "metrics": {
+      "ambient_recovery_calibration_count": 1,
+      "closure_proof_debt_count": 8,
+      "closure_rejection_count": 8,
+      "equivalent_control_count": 95,
+      "family_count": 29,
+      "input_pair_count": 111,
+      "positive_evidence_count": 0
+    },
+    "recorded_at": "2026-08-24T20:22:36.068711+00:00",
+    "result_id": "RESULT-EXP-CODE-CLOSURE-CONDUCTOR-ATTACK-CLOSURE-CONDUCTOR",
+    "run_id": "RUN-EXP-CODE-CLOSURE-CONDUCTOR-ATTACK-00464",
+    "status": "closure-proof-debt",
+    "summary": "Audited 111 code pair(s) with conductor and local 2-closure signatures: 8 rejected, 95 controls, 8 proof-debt; 1/1 ambient-code recovery calibration(s) passed."
+  },
+  {
+    "artifacts": {
+      "code_equivalence_audit": "research/code_equivalence/code_equivalence_audit.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-CODE-COSET-RANK",
+    "falsifier_count": 1,
+    "falsifiers_triggered": [
+      "A classical code invariant distinguishes the pair; any matching coset observable is dequantized."
+    ],
+    "metrics": {
+      "classically_distinguished_pair_count": 2,
+      "equivalent_control_verified_count": 1,
+      "exact_nonequivalence_certificate_count": 2,
+      "negative_results_written": 2,
+      "pair_audit_count": 3,
+      "support_splitting_distinguishes_count": 2,
+      "weak_invariant_collision_count": 1
+    },
+    "recorded_at": "2026-08-24T20:22:36.824613+00:00",
+    "result_id": "RESULT-EXP-CODE-COSET-RANK-CODE-EQUIVALENCE",
+    "run_id": "RUN-EXP-CODE-COSET-RANK-00465",
+    "status": "blocked-by-code-invariants",
+    "summary": "Audited 3 code-equivalence pairs. 1 equivalent control pair(s) verified; 2 non-equivalent control pair(s) classically distinguished."
+  },
+  {
+    "artifacts": {
+      "cyclic_code_search": "research/code_equivalence/cyclic_code_search.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-CODE-CYCLIC-ALGEBRAIC-SEARCH",
+    "falsifier_count": 1,
+    "falsifiers_triggered": [
+      "Cyclic-code collisions are explained by the natural cyclic dihedral automorphism group."
+    ],
+    "metrics": {
+      "canonicalization_rejection_count": 0,
+      "code_count": 53,
+      "dihedral_equivalent_count": 17,
+      "max_length": 21,
+      "multiplier_equivalent_count": 0,
+      "negative_results_written": 3,
+      "no_collision_count": 0,
+      "proof_debt_collision_count": 0,
+      "search_count": 3,
+      "structural_rejection_count": 0,
+      "tuple_collision_count": 17,
+      "tuple_profile_rejection_count": 0
+    },
+    "recorded_at": "2026-08-24T20:23:06.976610+00:00",
+    "result_id": "RESULT-EXP-CODE-CYCLIC-ALGEBRAIC-SEARCH-CYCLIC-CODE",
+    "run_id": "RUN-EXP-CODE-CYCLIC-ALGEBRAIC-SEARCH-00466",
+    "status": "cyclic-code-search-dequantized-or-controls",
+    "summary": "Searched 3 cyclic-code length window(s), enumerating 53 code(s). Found 17 tuple-profile collision(s): 17 dihedral control(s), 0 multiplier-affine control(s), 0 classical rejection(s), and 0 proof-debt row(s)."
+  },
+  {
+    "artifacts": {
+      "code_frontier_triage": "research/code_equivalence/code_frontier_triage.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-CODE-FRONTIER-TRIAGE",
+    "falsifier_count": 3,
+    "falsifiers_triggered": [
+      "Some code-equivalence rows are already separated by classical code baselines.",
+      "Some code searches find only equivalent controls or no nontrivial hard row.",
+      "Some code-equivalence rows remain proof debt, not positive evidence."
+    ],
+    "metrics": {
+      "control_or_no_hard_row_count": 30,
+      "dequantizing_evidence_count": 55,
+      "evidence_count": 288,
+      "negative_results_written": 47,
+      "proof_debt_evidence_count": 61,
+      "proof_debt_row_count": 7,
+      "record_count": 54,
+      "rejected_row_count": 17,
+      "unclassified_row_count": 0
+    },
+    "recorded_at": "2026-08-24T20:23:08.131565+00:00",
+    "result_id": "RESULT-EXP-CODE-FRONTIER-TRIAGE-CODE-FRONTIER",
+    "run_id": "RUN-EXP-CODE-FRONTIER-TRIAGE-00467",
+    "status": "code-frontier-proof-debt",
+    "summary": "Triage aggregated 54 code-equivalence row(s) across 288 evidence items. 17 row(s) are rejected by classical baselines, 7 remain proof debt, and 30 are equivalent controls or no-hard-row searches."
+  },
+  {
+    "artifacts": {
+      "goppa_code_search": "research/code_equivalence/goppa_code_search.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-CODE-GOPPA-ALGEBRAIC-SEARCH",
+    "falsifier_count": 1,
+    "falsifiers_triggered": [
+      "Semilinear field automorphisms explain some Goppa rows as controls."
+    ],
+    "metrics": {
+      "canonicalization_rejection_count": 0,
+      "code_count": 252,
+      "no_collision_count": 0,
+      "proof_debt_collision_count": 0,
+      "search_count": 3,
+      "semilinear_control_count": 15,
+      "structural_rejection_count": 0,
+      "tuple_collision_count": 12,
+      "tuple_profile_key_count": 4,
+      "tuple_profile_rejection_count": 0
+    },
+    "recorded_at": "2026-08-24T20:23:18.280878+00:00",
+    "result_id": "RESULT-EXP-CODE-GOPPA-ALGEBRAIC-SEARCH-GOPPA-CODE",
+    "run_id": "RUN-EXP-CODE-GOPPA-ALGEBRAIC-SEARCH-00468",
+    "status": "goppa-code-search-dequantized-or-controls",
+    "summary": "Searched 3 Goppa/alternant parameter window(s), enumerating 252 code(s). Found 12 tuple-profile collision(s): 15 semilinear/equivalent control(s), 0 classical rejection(s), and 0 proof-debt row(s)."
+  },
+  {
+    "artifacts": {
+      "goppa_hull_projector_frontier": "research/code_equivalence/goppa_hull_projector_frontier.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-CODE-GOPPA-HULL-PROJECTOR",
+    "falsifier_count": 5,
+    "falsifiers_triggered": [
+      "A trivial-hull public generator exposes the exact basis-independent projector reduction.",
+      "Different loop/degree/WL projector signatures prove nonequivalence in polynomial time.",
+      "A verified projector-graph mapping proves the row is equivalent rather than hard.",
+      "A projector signature collision only transfers the row to graph-isomorphism debt.",
+      "A finite exact matcher timeout is not a classical lower bound or quantum signal."
+    ],
+    "metrics": {
+      "classical_superpolynomial_lower_bound_count": 0,
+      "code_native_hard_pair_count": 0,
+      "control_failure_count": 0,
+      "control_inapplicable_count": 2,
+      "equivalent_or_automorphic_count": 0,
+      "exact_graph_rejection_count": 0,
+      "family_count": 3,
+      "frontier_pair_count": 1,
+      "instance_count": 13,
+      "known_permutation_control_count": 3,
+      "nonabelian_measurement_necessity_proof_count": 0,
+      "polynomial_projector_rejection_count": 1,
+      "projector_proof_debt_count": 0,
+      "trivial_hull_certificate_count": 4
+    },
+    "recorded_at": "2026-08-24T20:23:19.651548+00:00",
+    "result_id": "RESULT-EXP-CODE-GOPPA-HULL-PROJECTOR-GOPPA-PROJECTOR",
+    "run_id": "RUN-EXP-CODE-GOPPA-HULL-PROJECTOR-00469",
+    "status": "goppa-projector-frontier-resolved-no-code-native-hard-row",
+    "summary": "Applied the trivial-hull projector reduction to 1 scalable Goppa frontier pair(s); resolved=1, remaining proof debt=0."
+  },
+  {
+    "artifacts": {
+      "goppa_scaling_frontier": "research/code_equivalence/goppa_scaling_frontier.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-CODE-GOPPA-SCALING-FRONTIER",
+    "falsifier_count": 6,
+    "falsifiers_triggered": [
+      "Length-8/16 semilinear controls are not retained as the Goppa frontier.",
+      "Known coordinate permutations must preserve every exact signature.",
+      "Exact dual weight/incidence mismatches are classical separations.",
+      "Sampled or cap-limited dual data is never used as an exact rejection or hardness claim.",
+      "A surviving invariant collision is proof debt until support recovery and canonicalization are exhausted.",
+      "No finite collision is promoted to a nonabelian measurement necessity or speedup."
+    ],
+    "metrics": {
+      "baseline_cap_pair_count": 1,
+      "classical_superpolynomial_lower_bound_count": 0,
+      "coarse_collision_pair_count": 4,
+      "control_failure_count": 0,
+      "exact_dual_signature_count": 10,
+      "exact_invariant_rejection_count": 14,
+      "family_count": 3,
+      "instance_count": 13,
+      "known_permutation_control_count": 3,
+      "maximum_length": 160,
+      "natural_scaling_family_count": 3,
+      "nonabelian_measurement_required_pair_count": 0,
+      "proof_debt_pair_count": 0,
+      "semilinear_support_control_count": 0
+    },
+    "recorded_at": "2026-08-24T20:23:28.709485+00:00",
+    "result_id": "RESULT-EXP-CODE-GOPPA-SCALING-FRONTIER-CODE-FAMILY-SEARCH",
+    "run_id": "RUN-EXP-CODE-GOPPA-SCALING-FRONTIER-00470",
+    "status": "natural-goppa-scaling-frontier-generated-classical-proof-debt-only",
+    "summary": "Generated 13 punctured Goppa/alternant codes through length 160; exact rejections/proof-debt/cap pairs=14/0/1."
   }
 ]
