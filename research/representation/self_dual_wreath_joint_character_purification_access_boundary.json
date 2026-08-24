@@ -1,0 +1,406 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The joint state lacks an efficient density block encoding.",
+      "resolution": "False at the global-average level: its native purification and coherent twirl provide one with normalization one.",
+      "resolved": true
+    },
+    {
+      "objection": "A block encoding of bar(tau) is a block encoding of D_nu.",
+      "resolution": "False: Schur row depolarization exposes D_nu/d_nu.",
+      "resolved": true
+    },
+    {
+      "objection": "Postselecting the irrep sector removes the d_nu factor.",
+      "resolution": "It only divides by Tr(D_nu); the row marginal remains maximally mixed and selecting one row still costs probability 1/d_nu.",
+      "resolved": true
+    },
+    {
+      "objection": "The exponential polynomial degree is a circuit lower bound.",
+      "resolution": "It is not. Direct representation-specific normalization and fused polar implementations are outside the black-box polynomial model.",
+      "resolved": false
+    },
+    {
+      "objection": "Balanced two-row dimension proves a natural obstruction.",
+      "resolution": "Not without a source-weighted mass and information theorem for that sector. The report deliberately leaves that gate false.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "classical_separation_proved": false,
+    "direct_structured_multiplicity_polar_ruled_out": false,
+    "generic_uniform_rescaling_costs_omega_d_nu": true,
+    "global_average_block_encoding_has_normalization_one": true,
+    "global_average_density_block_encoding_proved": true,
+    "global_density_directly_exposes_D_nu": false,
+    "global_density_exposes_D_nu_over_d_nu": true,
+    "large_row_sector_natural_information_mass_proved": false,
+    "native_joint_purification_proved": true,
+    "normalization_one_D_nu_block_encoding_proved": false,
+    "polynomial_joint_decoder_proved": false,
+    "reason": "Purification solves global density access but leaves exact 1/d_nu Schur row dilution. Generic polynomial rescaling is exponential on growing balanced sectors; only a direct structured or fused polar can bypass this boundary, and no such decoder is compiled.",
+    "sector_conditioning_removes_schur_row_dilution": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-24T16:03:05.744092+00:00",
+  "falsifiers_triggered": [
+    "The old statement that no coherent block encoding exists was too broad: bar(tau) has exact normalization-one purification access.",
+    "That access does not supply D_nu itself; it supplies D_nu/d_nu in each Fourier row.",
+    "Irrep-sector conditioning does not repair the row normalization.",
+    "A generic density-oracle/QSVT route cannot be called polynomial on growing-row sectors without a direct normalization bypass."
+  ],
+  "finite_controls": [
+    {
+      "active_sector_count": 2,
+      "control_id": "W3-SINGLE-UNEQUAL",
+      "exact_purification_schur_normalization_verified": true,
+      "group_order": 6,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "maximum_active_irrep_dimension": 2,
+      "maximum_covariant_purification_residual": 0.0,
+      "maximum_fourier_cross_row_residual": 1.9062006937402563e-17,
+      "maximum_fourier_row_block_residual": 3.0065054293501853e-17,
+      "maximum_generic_row_rescaling_degree_lower_bound": 2,
+      "maximum_sector_conditioned_row_uniformity_residual": 0.0,
+      "maximum_seed_density_residual": 0.0,
+      "minimum_active_sector_probability": 0.5,
+      "minimum_unconditioned_row_probability": 0.25,
+      "n": 3,
+      "orientation_character_count": 2,
+      "schur_factorization_residual": 7.743301529425831e-17,
+      "seed_purification_environment_dimension": 4,
+      "source_carrier_dimension": 2,
+      "status": "global-purification-access-proved-schur-row-dilution-exact",
+      "system_dimension": 12,
+      "twirled_density_residual": 1.8183700317717833e-16,
+      "twirled_purification_environment_dimension": 24
+    },
+    {
+      "active_sector_count": 3,
+      "control_id": "W3-INFORMATION-THRESHOLD",
+      "exact_purification_schur_normalization_verified": true,
+      "group_order": 6,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_active_irrep_dimension": 2,
+      "maximum_covariant_purification_residual": 0.0,
+      "maximum_fourier_cross_row_residual": 2.854363386889066e-18,
+      "maximum_fourier_row_block_residual": 1.3839080091007318e-17,
+      "maximum_generic_row_rescaling_degree_lower_bound": 2,
+      "maximum_sector_conditioned_row_uniformity_residual": 0.0,
+      "maximum_seed_density_residual": 0.0,
+      "minimum_active_sector_probability": 0.1875,
+      "minimum_unconditioned_row_probability": 0.1875,
+      "n": 3,
+      "orientation_character_count": 8,
+      "schur_factorization_residual": 2.8677305607864804e-17,
+      "seed_purification_environment_dimension": 16,
+      "source_carrier_dimension": 4,
+      "status": "global-purification-access-proved-schur-row-dilution-exact",
+      "system_dimension": 48,
+      "twirled_density_residual": 6.966721375827513e-17,
+      "twirled_purification_environment_dimension": 96
+    },
+    {
+      "active_sector_count": 4,
+      "control_id": "W4-COLLISION-FREE-PAIR",
+      "exact_purification_schur_normalization_verified": true,
+      "group_order": 24,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_active_irrep_dimension": 3,
+      "maximum_covariant_purification_residual": 0.0,
+      "maximum_fourier_cross_row_residual": 4.747533016587411e-18,
+      "maximum_fourier_row_block_residual": 1.6697944589959012e-17,
+      "maximum_generic_row_rescaling_degree_lower_bound": 3,
+      "maximum_sector_conditioned_row_uniformity_residual": 2.220446049250313e-16,
+      "maximum_seed_density_residual": 0.0,
+      "minimum_active_sector_probability": 0.027777777777777773,
+      "minimum_unconditioned_row_probability": 0.027777777777777773,
+      "n": 4,
+      "orientation_character_count": 4,
+      "schur_factorization_residual": 5.0136123587488424e-17,
+      "seed_purification_environment_dimension": 324,
+      "source_carrier_dimension": 18,
+      "status": "global-purification-access-proved-schur-row-dilution-exact",
+      "system_dimension": 96,
+      "twirled_density_residual": 4.360598005538981e-16,
+      "twirled_purification_environment_dimension": 7776
+    }
+  ],
+  "headline_metrics": {
+    "direct_fused_polar_compiler_count": 0,
+    "exact_schur_row_dilution_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "generic_rescaling_lower_bound_theorem_count": 1,
+    "global_average_density_block_encoding_theorem_count": 1,
+    "maximum_finite_active_irrep_dimension": 3,
+    "maximum_finite_generic_rescaling_degree_lower_bound": 3,
+    "maximum_scaling_witness_irrep_log2_dimension": 499.1679229455799,
+    "native_joint_purification_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "normalization_one_D_nu_block_encoding_count": 0,
+    "sector_conditioning_bypass_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "construct_native_joint_state_purification",
+      "resolution": "The operator-valued branch-character amplitudes are an explicit purification matrix for every hidden label.",
+      "resolved": true
+    },
+    {
+      "obligation": "block_encode_global_covariant_average",
+      "resolution": "Coherent left twirling plus the existing purification-SWAP theorem gives normalization-one access to bar(tau).",
+      "resolved": true
+    },
+    {
+      "obligation": "audit_schur_sector_normalization",
+      "resolution": "Every active Fourier row contains D_nu/d_nu exactly, and sector conditioning leaves the 1/d_nu row factor unchanged.",
+      "resolved": true
+    },
+    {
+      "obligation": "construct_normalization_one_D_nu_access",
+      "resolution": "The global density oracle exposes D_nu/d_nu. Generic uniform polynomial rescaling costs Omega(d_nu).",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_natural_information_mass_on_large_row_sectors",
+      "resolution": "The balanced two-row family witnesses possible exponential row dilution, but its probability and decoder information are unproved.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_direct_fused_multiplicity_polar",
+      "resolution": "A structured polar may bypass generic density rescaling and remains the correct algorithmic target.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "balanced_two_row_dimension_exponential": true,
+      "constant_error": 0.01,
+      "direct_structured_polar_ruled_out": false,
+      "exposed_multiplicity_block": "D_nu/d_nu",
+      "generic_uniform_rescaling_degree_log2_lower_bound": 3.4594316186372973,
+      "generic_uniform_rescaling_degree_lower_bound_decimal": "11",
+      "global_average_purification_block_encoding_polynomial": true,
+      "n": 8,
+      "schur_row_dilution_factor_decimal": "14",
+      "sector_conditioning_removes_row_dilution": false,
+      "status": "global-density-access-polynomial-generic-sector-rescaling-exponential",
+      "witness_irrep_dimension_decimal": "14",
+      "witness_irrep_dimension_log2": 3.807354922057604,
+      "witness_partition": [
+        4,
+        4
+      ],
+      "witness_sector_natural_mass_proved": false
+    },
+    {
+      "balanced_two_row_dimension_exponential": true,
+      "constant_error": 0.01,
+      "direct_structured_polar_ruled_out": false,
+      "exposed_multiplicity_block": "D_nu/d_nu",
+      "generic_uniform_rescaling_degree_log2_lower_bound": 10.131856960608793,
+      "generic_uniform_rescaling_degree_lower_bound_decimal": "1122",
+      "global_average_purification_block_encoding_polynomial": true,
+      "n": 16,
+      "schur_row_dilution_factor_decimal": "1430",
+      "sector_conditioning_removes_row_dilution": false,
+      "status": "global-density-access-polynomial-generic-sector-rescaling-exponential",
+      "witness_irrep_dimension_decimal": "1430",
+      "witness_irrep_dimension_log2": 10.481799431665753,
+      "witness_partition": [
+        8,
+        8
+      ],
+      "witness_sector_natural_mass_proved": false
+    },
+    {
+      "balanced_two_row_dimension_exponential": true,
+      "constant_error": 0.01,
+      "direct_structured_polar_ruled_out": false,
+      "exposed_multiplicity_block": "D_nu/d_nu",
+      "generic_uniform_rescaling_degree_log2_lower_bound": 24.72444546826988,
+      "generic_uniform_rescaling_degree_lower_bound_decimal": "27720414",
+      "global_average_purification_block_encoding_polynomial": true,
+      "n": 32,
+      "schur_row_dilution_factor_decimal": "35357670",
+      "sector_conditioning_removes_row_dilution": false,
+      "status": "global-density-access-polynomial-generic-sector-rescaling-exponential",
+      "witness_irrep_dimension_decimal": "35357670",
+      "witness_irrep_dimension_log2": 25.07551987134472,
+      "witness_partition": [
+        16,
+        16
+      ],
+      "witness_sector_natural_mass_proved": false
+    },
+    {
+      "balanced_two_row_dimension_exponential": true,
+      "constant_error": 0.01,
+      "direct_structured_polar_ruled_out": false,
+      "exposed_multiplicity_block": "D_nu/d_nu",
+      "generic_uniform_rescaling_degree_log2_lower_bound": 55.27314807709811,
+      "generic_uniform_rescaling_degree_lower_bound_decimal": "43538706863605788",
+      "global_average_purification_block_encoding_polynomial": true,
+      "n": 64,
+      "schur_row_dilution_factor_decimal": "55534064877048198",
+      "sector_conditioning_removes_row_dilution": false,
+      "status": "global-density-access-polynomial-generic-sector-rescaling-exponential",
+      "witness_irrep_dimension_decimal": "55534064877048198",
+      "witness_irrep_dimension_log2": 55.62422251764499,
+      "witness_partition": [
+        32,
+        32
+      ],
+      "witness_sector_natural_mass_proved": false
+    },
+    {
+      "balanced_two_row_dimension_exponential": true,
+      "constant_error": 0.01,
+      "direct_structured_polar_ruled_out": false,
+      "exposed_multiplicity_block": "D_nu/d_nu",
+      "generic_uniform_rescaling_degree_log2_lower_bound": 117.79799194659844,
+      "generic_uniform_rescaling_degree_lower_bound_decimal": "288887669182640261031543089487420809",
+      "global_average_purification_block_encoding_polynomial": true,
+      "n": 128,
+      "schur_row_dilution_factor_decimal": "368479169875816659479009042713546950",
+      "sector_conditioning_removes_row_dilution": false,
+      "status": "global-density-access-polynomial-generic-sector-rescaling-exponential",
+      "witness_irrep_dimension_decimal": "368479169875816659479009042713546950",
+      "witness_irrep_dimension_log2": 118.14906638714533,
+      "witness_partition": [
+        64,
+        64
+      ],
+      "witness_sector_natural_mass_proved": false
+    },
+    {
+      "balanced_two_row_dimension_exponential": true,
+      "constant_error": 0.01,
+      "direct_structured_polar_ruled_out": false,
+      "exposed_multiplicity_block": "D_nu/d_nu",
+      "generic_uniform_rescaling_degree_log2_lower_bound": 244.31054136100076,
+      "generic_uniform_rescaling_degree_lower_bound_decimal": "35059135795226184256297385368713433488281596700376178554767552470816920160",
+      "global_average_purification_block_encoding_polynomial": true,
+      "n": 256,
+      "schur_row_dilution_factor_decimal": "44718285453094622775889522153971216184032648852520635911693306722980765510",
+      "sector_conditioning_removes_row_dilution": false,
+      "status": "global-density-access-polynomial-generic-sector-rescaling-exponential",
+      "witness_irrep_dimension_decimal": "44718285453094622775889522153971216184032648852520635911693306722980765510",
+      "witness_irrep_dimension_log2": 244.6616158015476,
+      "witness_partition": [
+        128,
+        128
+      ],
+      "witness_sector_natural_mass_proved": false
+    },
+    {
+      "balanced_two_row_dimension_exponential": true,
+      "constant_error": 0.01,
+      "direct_structured_polar_ruled_out": false,
+      "exposed_multiplicity_block": "D_nu/d_nu",
+      "generic_uniform_rescaling_degree_log2_lower_bound": 498.816848505033,
+      "generic_uniform_rescaling_degree_lower_bound_decimal": "1441563383943550588293305160000506339886837358224536170975197764888699607563688027479400135848632389635674031756779129840061171089588294082494322928032",
+      "global_average_purification_block_encoding_polynomial": true,
+      "n": 512,
+      "schur_row_dilution_factor_decimal": "1838728806050447178945542295919013188631170099776194095631629802153953581076132688111479765113051517392441367036708073775588228430597313880732554755142",
+      "sector_conditioning_removes_row_dilution": false,
+      "status": "global-density-access-polynomial-generic-sector-rescaling-exponential",
+      "witness_irrep_dimension_decimal": "1838728806050447178945542295919013188631170099776194095631629802153953581076132688111479765113051517392441367036708073775588228430597313880732554755142",
+      "witness_irrep_dimension_log2": 499.1679229455799,
+      "witness_partition": [
+        256,
+        256
+      ],
+      "witness_sector_natural_mass_proved": false
+    }
+  ],
+  "status": "global-density-access-closed-sector-rescaling-boundary-proved",
+  "summary": "Closed the global joint-average block-encoding gate and proved why it does not close normalization-one access to the multiplicity operators.",
+  "theorem": {
+    "coherent_twirl": "A uniform coherent hidden-label register and controlled left action prepare a purification of bar(tau)=|G|^-1 sum_g tau_g.",
+    "density_block_encoding": "The purification-SWAP projected unitary block-encodes bar(tau) with normalization one.",
+    "exponential_witness": "For nu=(n/2,n/2), d_nu=Catalan(n/2)=2^Theta(n)/poly(n).",
+    "generic_rescaling_lower_bound": "A bounded polynomial uniformly mapping D/d to D at error epsilon<1/2 has degree at least (1-2epsilon)d sqrt(1-d^-2)=Omega(d).",
+    "native_purification": "Psi_g[(s,z),a]=vec(K_z(s^-1 g))[a]/sqrt(|G|dim(C)) and tau_g=Psi_g Psi_g^*.",
+    "schur_normalization": "After the S_n QFT, a fixed Fourier row exposes D_nu/d_nu, not D_nu.",
+    "scope": "This is a generic purification/QSVT access boundary. It proves no natural mass for the witness sector and no lower bound against direct restriction-map polars or fused representation-specific circuits.",
+    "sector_conditioning": "Conditioning on nu leaves I/d_nu tensor D_nu/Tr(D_nu); selecting a row has conditional probability 1/d_nu.",
+    "status": "global-density-access-closed-sector-rescaling-boundary-proved",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "coherent_twirl": "A uniform coherent hidden-label register and controlled left action prepare a purification of bar(tau)=|G|^-1 sum_g tau_g.",
+    "density_block_encoding": "The purification-SWAP projected unitary block-encodes bar(tau) with normalization one.",
+    "exponential_witness": "For nu=(n/2,n/2), d_nu=Catalan(n/2)=2^Theta(n)/poly(n).",
+    "generic_rescaling_lower_bound": "A bounded polynomial uniformly mapping D/d to D at error epsilon<1/2 has degree at least (1-2epsilon)d sqrt(1-d^-2)=Omega(d).",
+    "native_purification": "Psi_g[(s,z),a]=vec(K_z(s^-1 g))[a]/sqrt(|G|dim(C)) and tau_g=Psi_g Psi_g^*.",
+    "schur_normalization": "After the S_n QFT, a fixed Fourier row exposes D_nu/d_nu, not D_nu.",
+    "scope": "This is a generic purification/QSVT access boundary. It proves no natural mass for the witness sector and no lower bound against direct restriction-map polars or fused representation-specific circuits.",
+    "sector_conditioning": "Conditioning on nu leaves I/d_nu tensor D_nu/Tr(D_nu); selecting a row has conditional probability 1/d_nu.",
+    "status": "global-density-access-closed-sector-rescaling-boundary-proved",
+    "theorem_verified": true
+  }
+}

@@ -1,0 +1,434 @@
+{
+  "created_at": "2026-08-24T19:50:28.184719+00:00",
+  "theorem_contract": {
+    "encoded_raw_merger": "For branch inclusions J_e and any orthogonal branchwise Schur encoding B=direct_sum_e B_e, the raw merger is S_B=S B^*.",
+    "frame_identity": "S_B S_B^*=sum_e E_e=A and S_B^*S_B=B(S^*S)B^*; all nonzero singular values and conditioning are unchanged.",
+    "polar_equivalence": "polar(S_B)=A^(+/2)S B^*=polar(S)B^*, exactly the physical orientation-polar coisometry in Schur coordinates.",
+    "conditional_compiler_reduction": "If coherent B and B^* interfaces between the physical invariant ranges and Schur branches are compiled, physical and encoded polar compilers reduce to one another by one use of that interface.",
+    "orientation_kernel_equivalence": "For every isometric Schur flag embedding C, the joint-character factor obeys Gram(L C^*)=C(I tensor H_nu)C^* and polar(L C^*)=polar(L)C^*.",
+    "physical_schur_interface": "On Inv(V_nu^* tensor sigma_e), the source Schur decomposition has the exact form |Omega_nu> tensor B_e|m>. Unpreparing the canonical Bell invariant yields the opaque companion multiplicity state without exposing its basis.",
+    "deterministic_environment_constraint": "A branch-faithful isometry J_e x tensor eta_e requires <eta_e,eta_f>J_e^*J_f=0, so overlapping branches retain orthogonal which-path tags.",
+    "raw_contraction_boundary": "The largest scalar c making cS_B a contraction is 1/sqrt(||A||); the norm-one replacement is the unresolved polar.",
+    "scope": "This rejects Schur encoding as a free merger. It does not lower-bound a structured direct polar, a multi-round companion transform, or a decoder that retains orientation characters.",
+    "theorem_verified": true,
+    "status": "schur-branch-encoding-is-polar-equivalent-no-free-merger"
+  },
+  "theorem": {
+    "encoded_raw_merger": "For branch inclusions J_e and any orthogonal branchwise Schur encoding B=direct_sum_e B_e, the raw merger is S_B=S B^*.",
+    "frame_identity": "S_B S_B^*=sum_e E_e=A and S_B^*S_B=B(S^*S)B^*; all nonzero singular values and conditioning are unchanged.",
+    "polar_equivalence": "polar(S_B)=A^(+/2)S B^*=polar(S)B^*, exactly the physical orientation-polar coisometry in Schur coordinates.",
+    "conditional_compiler_reduction": "If coherent B and B^* interfaces between the physical invariant ranges and Schur branches are compiled, physical and encoded polar compilers reduce to one another by one use of that interface.",
+    "orientation_kernel_equivalence": "For every isometric Schur flag embedding C, the joint-character factor obeys Gram(L C^*)=C(I tensor H_nu)C^* and polar(L C^*)=polar(L)C^*.",
+    "physical_schur_interface": "On Inv(V_nu^* tensor sigma_e), the source Schur decomposition has the exact form |Omega_nu> tensor B_e|m>. Unpreparing the canonical Bell invariant yields the opaque companion multiplicity state without exposing its basis.",
+    "deterministic_environment_constraint": "A branch-faithful isometry J_e x tensor eta_e requires <eta_e,eta_f>J_e^*J_f=0, so overlapping branches retain orthogonal which-path tags.",
+    "raw_contraction_boundary": "The largest scalar c making cS_B a contraction is 1/sqrt(||A||); the norm-one replacement is the unresolved polar.",
+    "scope": "This rejects Schur encoding as a free merger. It does not lower-bound a structured direct polar, a multi-round companion transform, or a decoder that retains orientation characters.",
+    "theorem_verified": true,
+    "status": "schur-branch-encoding-is-polar-equivalent-no-free-merger"
+  },
+  "finite_controls": [
+    {
+      "control_id": "W3-INFORMATION-THRESHOLD",
+      "n": 3,
+      "target_partition": [
+        2,
+        1
+      ],
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "orientation_count": 8,
+      "active_orientation_count": 6,
+      "carrier_dimension": 4,
+      "total_active_multiplicity_dimension": 10,
+      "encoded_branch_companion_dimension": 16,
+      "active_multiplicity_ranks": [
+        2,
+        1,
+        2,
+        1,
+        2,
+        2
+      ],
+      "overlapping_branch_pair_count": 4,
+      "overlap_graph_clique_lower_bound": 2,
+      "physical_frame_rank": 8,
+      "physical_frame_maximum_eigenvalue": 1.9999999999999998,
+      "largest_contractive_raw_merger_amplitude": 0.7071067811865476,
+      "largest_contractive_raw_merger_probability_scale": 0.5000000000000001,
+      "raw_frame_identity_residual": 3.3306690738754696e-16,
+      "encoded_output_frame_residual": 5.777609937908145e-16,
+      "encoded_domain_gram_transport_residual": 3.666684166921118e-16,
+      "nonzero_singular_spectrum_transport_residual": 6.661338147750939e-16,
+      "physical_polar_transport_residual": 1.204953756086422e-15,
+      "physical_polar_left_support_residual": 1.624352034528661e-15,
+      "maximum_source_isotypic_embedding_residual": 3.330669073875469e-16,
+      "maximum_invariant_bell_factorization_residual": 1.9229626863835638e-16,
+      "maximum_invariant_companion_interface_residual": 2.220446049250313e-16,
+      "common_environment_isometry_defect": 0.9999999999999999,
+      "orthogonal_environment_isometry_residual": 2.220446049250313e-16,
+      "orientation_kernel_factor_residual": 1.1102230246251565e-16,
+      "encoded_orientation_kernel_transport_residual": 1.454141056246557e-16,
+      "orientation_kernel_spectrum_transport_residual": 4.440892098500626e-16,
+      "orientation_kernel_polar_transport_residual": 4.1180844473952255e-15,
+      "exact_schur_branch_polar_equivalence_verified": true,
+      "status": "exact-schur-branch-polar-equivalence"
+    },
+    {
+      "control_id": "W4-OVERLAPPING-BRANCH-PAIR-A",
+      "n": 4,
+      "target_partition": [
+        2,
+        1,
+        1
+      ],
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "orientation_count": 4,
+      "active_orientation_count": 3,
+      "carrier_dimension": 18,
+      "total_active_multiplicity_dimension": 11,
+      "encoded_branch_companion_dimension": 14,
+      "active_multiplicity_ranks": [
+        3,
+        6,
+        2
+      ],
+      "overlapping_branch_pair_count": 1,
+      "overlap_graph_clique_lower_bound": 2,
+      "physical_frame_rank": 11,
+      "physical_frame_maximum_eigenvalue": 1.3333333333333335,
+      "largest_contractive_raw_merger_amplitude": 0.8660254037844385,
+      "largest_contractive_raw_merger_probability_scale": 0.7499999999999997,
+      "raw_frame_identity_residual": 1.2002347170386175e-15,
+      "encoded_output_frame_residual": 1.1993011882788246e-15,
+      "encoded_domain_gram_transport_residual": 3.5182979443635955e-16,
+      "nonzero_singular_spectrum_transport_residual": 4.440892098500626e-16,
+      "physical_polar_transport_residual": 7.882545809034113e-15,
+      "physical_polar_left_support_residual": 7.90477213495246e-15,
+      "maximum_source_isotypic_embedding_residual": 1.2438962765257403e-15,
+      "maximum_invariant_bell_factorization_residual": 8.419702586714023e-16,
+      "maximum_invariant_companion_interface_residual": 8.881784278046408e-16,
+      "common_environment_isometry_defect": 0.3333333333333338,
+      "orthogonal_environment_isometry_residual": 8.881784278046408e-16,
+      "orientation_kernel_factor_residual": 1.1106961767439527e-15,
+      "encoded_orientation_kernel_transport_residual": 9.098665970128764e-16,
+      "orientation_kernel_spectrum_transport_residual": 8.881784197001252e-16,
+      "orientation_kernel_polar_transport_residual": 7.63045412015048e-15,
+      "exact_schur_branch_polar_equivalence_verified": true,
+      "status": "exact-schur-branch-polar-equivalence"
+    },
+    {
+      "control_id": "W4-OVERLAPPING-BRANCH-PAIR-B",
+      "n": 4,
+      "target_partition": [
+        3,
+        1
+      ],
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "orientation_count": 4,
+      "active_orientation_count": 3,
+      "carrier_dimension": 18,
+      "total_active_multiplicity_dimension": 12,
+      "encoded_branch_companion_dimension": 15,
+      "active_multiplicity_ranks": [
+        6,
+        3,
+        3
+      ],
+      "overlapping_branch_pair_count": 1,
+      "overlap_graph_clique_lower_bound": 2,
+      "physical_frame_rank": 12,
+      "physical_frame_maximum_eigenvalue": 1.333333333333333,
+      "largest_contractive_raw_merger_amplitude": 0.8660254037844387,
+      "largest_contractive_raw_merger_probability_scale": 0.7500000000000001,
+      "raw_frame_identity_residual": 1.1842818448804758e-15,
+      "encoded_output_frame_residual": 1.4751840670359771e-15,
+      "encoded_domain_gram_transport_residual": 3.0378034896631184e-16,
+      "nonzero_singular_spectrum_transport_residual": 5.551115123125783e-16,
+      "physical_polar_transport_residual": 4.280378496038547e-15,
+      "physical_polar_left_support_residual": 2.246346601669004e-15,
+      "maximum_source_isotypic_embedding_residual": 1.3823472929127476e-15,
+      "maximum_invariant_bell_factorization_residual": 1.348826791422714e-15,
+      "maximum_invariant_companion_interface_residual": 1.110228050969699e-15,
+      "common_environment_isometry_defect": 0.33333333333333354,
+      "orthogonal_environment_isometry_residual": 1.1102230476873886e-15,
+      "orientation_kernel_factor_residual": 9.046083883920349e-16,
+      "encoded_orientation_kernel_transport_residual": 8.283638856672885e-16,
+      "orientation_kernel_spectrum_transport_residual": 4.440892098500626e-16,
+      "orientation_kernel_polar_transport_residual": 2.010360667139663e-15,
+      "exact_schur_branch_polar_equivalence_verified": true,
+      "status": "exact-schur-branch-polar-equivalence"
+    }
+  ],
+  "scaling_records": [
+    {
+      "n": 8,
+      "information_threshold_copy_count": 48,
+      "orientation_log2_count": 48,
+      "base_local_dimension": 8,
+      "joint_schur_local_log2_dimension": 144.0,
+      "fixed_source_schur_carrier_encoding_polynomial": true,
+      "physical_invariant_to_schur_companion_interface_compiled": true,
+      "branch_encoding_changes_nonzero_singular_values": false,
+      "branch_encoding_removes_inverse_square_root": false,
+      "direct_structured_branch_polar_compiled": false,
+      "branch_character_retaining_decoder_ruled_out": false,
+      "status": "polynomial-encoding-polar-complexity-unchanged"
+    },
+    {
+      "n": 16,
+      "information_threshold_copy_count": 135,
+      "orientation_log2_count": 135,
+      "base_local_dimension": 16,
+      "joint_schur_local_log2_dimension": 540.0,
+      "fixed_source_schur_carrier_encoding_polynomial": true,
+      "physical_invariant_to_schur_companion_interface_compiled": true,
+      "branch_encoding_changes_nonzero_singular_values": false,
+      "branch_encoding_removes_inverse_square_root": false,
+      "direct_structured_branch_polar_compiled": false,
+      "branch_character_retaining_decoder_ruled_out": false,
+      "status": "polynomial-encoding-polar-complexity-unchanged"
+    },
+    {
+      "n": 32,
+      "information_threshold_copy_count": 355,
+      "orientation_log2_count": 355,
+      "base_local_dimension": 32,
+      "joint_schur_local_log2_dimension": 1775.0,
+      "fixed_source_schur_carrier_encoding_polynomial": true,
+      "physical_invariant_to_schur_companion_interface_compiled": true,
+      "branch_encoding_changes_nonzero_singular_values": false,
+      "branch_encoding_removes_inverse_square_root": false,
+      "direct_structured_branch_polar_compiled": false,
+      "branch_character_retaining_decoder_ruled_out": false,
+      "status": "polynomial-encoding-polar-complexity-unchanged"
+    },
+    {
+      "n": 64,
+      "information_threshold_copy_count": 890,
+      "orientation_log2_count": 890,
+      "base_local_dimension": 64,
+      "joint_schur_local_log2_dimension": 5340.0,
+      "fixed_source_schur_carrier_encoding_polynomial": true,
+      "physical_invariant_to_schur_companion_interface_compiled": true,
+      "branch_encoding_changes_nonzero_singular_values": false,
+      "branch_encoding_removes_inverse_square_root": false,
+      "direct_structured_branch_polar_compiled": false,
+      "branch_character_retaining_decoder_ruled_out": false,
+      "status": "polynomial-encoding-polar-complexity-unchanged"
+    },
+    {
+      "n": 128,
+      "information_threshold_copy_count": 2151,
+      "orientation_log2_count": 2151,
+      "base_local_dimension": 128,
+      "joint_schur_local_log2_dimension": 15057.0,
+      "fixed_source_schur_carrier_encoding_polynomial": true,
+      "physical_invariant_to_schur_companion_interface_compiled": true,
+      "branch_encoding_changes_nonzero_singular_values": false,
+      "branch_encoding_removes_inverse_square_root": false,
+      "direct_structured_branch_polar_compiled": false,
+      "branch_character_retaining_decoder_ruled_out": false,
+      "status": "polynomial-encoding-polar-complexity-unchanged"
+    },
+    {
+      "n": 256,
+      "information_threshold_copy_count": 5054,
+      "orientation_log2_count": 5054,
+      "base_local_dimension": 256,
+      "joint_schur_local_log2_dimension": 40432.0,
+      "fixed_source_schur_carrier_encoding_polynomial": true,
+      "physical_invariant_to_schur_companion_interface_compiled": true,
+      "branch_encoding_changes_nonzero_singular_values": false,
+      "branch_encoding_removes_inverse_square_root": false,
+      "direct_structured_branch_polar_compiled": false,
+      "branch_character_retaining_decoder_ruled_out": false,
+      "status": "polynomial-encoding-polar-complexity-unchanged"
+    },
+    {
+      "n": 512,
+      "information_threshold_copy_count": 11628,
+      "orientation_log2_count": 11628,
+      "base_local_dimension": 512,
+      "joint_schur_local_log2_dimension": 104652.0,
+      "fixed_source_schur_carrier_encoding_polynomial": true,
+      "physical_invariant_to_schur_companion_interface_compiled": true,
+      "branch_encoding_changes_nonzero_singular_values": false,
+      "branch_encoding_removes_inverse_square_root": false,
+      "direct_structured_branch_polar_compiled": false,
+      "branch_character_retaining_decoder_ruled_out": false,
+      "status": "polynomial-encoding-polar-complexity-unchanged"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "transport_physical_orientation_merger_into_schur_branches",
+      "resolved": true,
+      "resolution": "The encoded raw merger and its polar are exact right-isometric transports of S and polar(S)."
+    },
+    {
+      "obligation": "transport_joint_character_kernel_into_schur_flags",
+      "resolved": true,
+      "resolution": "Every isometric flag embedding conjugates I tensor H_nu and leaves the analysis polar unchanged up to that embedding."
+    },
+    {
+      "obligation": "test_deterministic_branch_faithful_erasure",
+      "resolved": true,
+      "resolution": "Overlapping physical ranges force orthogonal environment tags; deterministic transfer retains which-path information."
+    },
+    {
+      "obligation": "compile_structured_polar_inside_joint_schur_companion",
+      "resolved": false,
+      "resolution": "The equivalence identifies the exact target but supplies no circuit for A^(-1/2) or H_nu^(-1/2)."
+    },
+    {
+      "obligation": "compile_physical_invariant_to_schur_companion_interface",
+      "resolved": true,
+      "resolution": "Schur orthogonality forces the invariant range to |Omega_nu> tensor multiplicity after the source decomposition; canonical Bell unpreparation gives the interface using the predecessor's uniform Schur circuit."
+    },
+    {
+      "obligation": "construct_branch_character_retaining_hidden_involution_decoder",
+      "resolved": false,
+      "resolution": "A decoder may avoid erasure by retaining characters; no all-n information extraction or classical separation is known."
+    }
+  ],
+  "adversarial_audit": [
+    {
+      "objection": "The larger Schur companion workspace makes cross-branch erasure unitary.",
+      "resolved": true,
+      "resolution": "A branchwise isometry only conjugates the merger Gram and polar; orthogonal workspace does not create the missing overlaps."
+    },
+    {
+      "objection": "Using the Schur carrier requires first exposing a standard Kronecker multiplicity basis.",
+      "resolved": true,
+      "resolution": "No. On the invariant support, the target/source irrep pair is the known Bell invariant and unprepares independently of the opaque companion multiplicity state."
+    },
+    {
+      "objection": "A deterministic Stinespring dilation can erase the branch into an unobserved environment.",
+      "resolved": true,
+      "resolution": "For every nonzero cross-range overlap, isometry forces the corresponding environment tags to be orthogonal, so tracing them destroys the desired coherence."
+    },
+    {
+      "objection": "Scaling the raw merger to a contraction avoids inverse square roots.",
+      "resolved": true,
+      "resolution": "It produces a lossy raw analysis map. Its normalized partial-isometric replacement is exactly A^(+/2)S_B."
+    },
+    {
+      "objection": "Polar equivalence proves the Schur companion route is computationally hard.",
+      "resolved": true,
+      "resolution": "No circuit lower bound follows. The companion may expose structure useful for directly compiling the same polar."
+    },
+    {
+      "objection": "Every viable decoder must merge branches.",
+      "resolved": true,
+      "resolution": "False. The retained-character route keeps the full Walsh register and remains a separate open architecture."
+    }
+  ],
+  "headline_metrics": {
+    "exact_schur_branch_polar_equivalence_theorem_count": 1,
+    "physical_invariant_schur_companion_interface_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "overlapping_branch_pair_control_count": 6,
+    "maximum_overlap_graph_clique_lower_bound": 2,
+    "direct_structured_branch_polar_compiler_count": 0,
+    "branch_character_retaining_decoder_count": 0,
+    "new_quantum_algorithm_count": 0
+  },
+  "claim_gate": {
+    "schur_branch_encoding_preserves_nonzero_singular_spectrum": true,
+    "encoded_raw_merger_frame_equals_physical_frame": true,
+    "encoded_merger_polar_equals_physical_orientation_polar": true,
+    "encoded_joint_character_polar_equals_original_polar": true,
+    "overlapping_branch_faithful_transfer_requires_which_path_environment": true,
+    "physical_encoded_polar_compilers_interreduce_given_interface": true,
+    "physical_encoded_polar_compilers_polynomially_interreducible": true,
+    "physical_invariant_to_schur_companion_interface_compiled": true,
+    "schur_dilation_alone_compiles_cross_orientation_merger": false,
+    "schur_dilation_removes_orientation_inverse_square_root": false,
+    "direct_structured_branch_polar_compiled": false,
+    "multi_round_companion_transform_ruled_out": false,
+    "branch_character_retaining_decoder_ruled_out": false,
+    "physical_pgm_compiled": false,
+    "classical_separation_proved": false,
+    "speedup_claim_allowed": false
+  },
+  "status": "schur-branch-encoding-is-polar-equivalent-no-free-merger",
+  "summary": "Closed the free-Schur-merger loophole: orthogonal fixed-source Schur encodings preserve the full physical and joint-character Gram spectra, and their normalized mergers are exactly the existing orientation polars in encoded coordinates. A useful Schur route must therefore compile that polar using companion structure or avoid branch erasure.",
+  "falsifiers_triggered": [
+    "Polynomial Schur isotypic routing does not itself produce cross-orientation coherence.",
+    "Deterministic branch-faithful transfer preserves purity only by retaining which-path tags on overlapping ranges.",
+    "An isometric coordinate enlargement cannot remove A^(-1/2) or H_nu^(-1/2)."
+  ]
+}

@@ -47,6 +47,23 @@
       "uniform_polynomial_gate_complexity_proved": true
     },
     {
+      "availability": "proved-polynomial-encoded-carrier-only",
+      "classical_comparison": "This is a coherent access primitive, not a task separation; the companion encoding can also retain exponentially difficult state-dependent contraction data.",
+      "handles_overlapping_k_copy_associators": false,
+      "id": "CAP-SCHUR-DILATED-KRONECKER-CARRIER",
+      "literature_ids": [
+        "bacon-chuang-harrow-schur-2004",
+        "burchardt-high-dimensional-schur-2025",
+        "christandl-et-al-plethysm-sharp-bqp-2026"
+      ],
+      "primitive": "Separate-to-joint Schur dilation of diagonal S_n tensor products",
+      "proved_scope": "After adjoining fixed Schur--Weyl companion states, separate inverse Schur transforms, sitewise regrouping, and one high-dimensional joint Schur transform route polynomially many Specht factors into the diagonal irrep label and an opaque companion subspace carrying the full Kronecker multiplicity.",
+      "resolves_internal_sn_kronecker_basis": false,
+      "scope_limit": "The circuit does not factor the companion into fixed source companions and standard multiplicity coordinates. Distinct source-label tuples land in orthogonal subgroup-branch sectors, so the controlled router does not realize the physical cross-orientation Gram H_nu. A common output-coordinate isometry would preserve H_nu rather than whiten it. The branch intertwiner, orientation polar, Racah associator, and decoder remain uncompiled.",
+      "supplies_hidden_involution_decoder": false,
+      "uniform_polynomial_gate_complexity_proved": true
+    },
+    {
       "availability": "proved-label-or-projector-only",
       "classical_comparison": "Projection can estimate representation statistics but does not establish a natural-problem separation.",
       "handles_overlapping_k_copy_associators": false,
@@ -268,7 +285,18 @@
     "internal_sn_kronecker_transform_polynomial_proved": false,
     "kcopy_associator_polynomial_proved": false,
     "multiplicity_counting_implies_coherent_transform": false,
-    "reason": "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable family. Complete encoded labels and left/right relabelling are proved on one stable final branch, and its three-copy frame is directly block-encoded, all-n conditioned, and inverse-filterable, but the fixed branch is factorially rare under natural input. Known primitives still stop before transfer to typical irreps, full-sector coverage, an outcome-information theorem, hidden-involution decoding, and separation.",
+    "physical_encoded_orientation_polar_compilers_interreducible": true,
+    "physical_invariant_to_schur_companion_interface_compiled": true,
+    "reason": "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable family. Complete encoded labels and left/right relabelling are proved on one stable final branch, and its three-copy frame is directly block-encoded, all-n conditioned, and inverse-filterable, but the fixed branch is factorially rare under natural input. Known primitives still stop before transfer to a structured orientation polar on the now-available Schur-dilated companion carrier, an outcome-information theorem, hidden-involution decoding, and separation.",
+    "schur_branch_encoding_removes_orientation_inverse_square_root": false,
+    "schur_branch_merger_polar_equivalence_proved": true,
+    "schur_branch_structured_direct_polar_compiled": false,
+    "schur_dilated_controlled_router_realizes_orientation_gram": false,
+    "schur_dilated_cross_orientation_branch_intertwiner_compiled": false,
+    "schur_dilated_encoded_multiplicity_carrier_proved": true,
+    "schur_dilated_global_isotypic_router_polynomial_proved": true,
+    "schur_dilated_standard_multiplicity_coordinates_exposed": false,
+    "schur_dilation_improves_orientation_gram_conditioning": false,
     "schur_transform_implies_internal_kronecker_transform": false,
     "sn_qft_is_open_bottleneck": false,
     "speedup_claim_allowed": false,
@@ -289,7 +317,7 @@
     "typical_irrep_uniform_joint_spectral_separation_proved": false,
     "typical_irrep_uniform_recoupling_transfer_proved": false
   },
-  "created_at": "2026-07-24T03:07:23.180059+00:00",
+  "created_at": "2026-08-24T19:50:37.385208+00:00",
   "false_transfer_rules": [
     {
       "from": "exact Holevo/Fano copy lower bound",
@@ -347,6 +375,11 @@
       "reason": "These are distinct representation-theoretic decompositions."
     },
     {
+      "from": "polynomial separate-to-joint Schur dilation",
+      "invalid_to": "exposed Kronecker coordinates, improved orientation conditioning, or the physical PGM",
+      "reason": "The multiplicity is carried by an opaque subspace of the joint companion register. Controlled source tuples occupy orthogonal branch sectors and therefore do not realize the cross-orientation Gram. The natural encoded merger polar is exactly the original physical orientation polar conjugated by the branch encoder; an isometric flag embedding likewise preserves H_nu."
+    },
+    {
       "from": "restricted quantum multiplicity estimator",
       "invalid_to": "superpolynomial advantage or Shor-level mechanism",
       "reason": "Many proposed restricted families now have polynomial classical algorithms."
@@ -362,6 +395,7 @@
     "Exact Holevo/Fano accounting charges copies but does not construct a collective measurement or decoder.",
     "#BQP multiplicity counting does not construct a coherent Kronecker basis.",
     "Schur-Weyl Clebsch-Gordan circuits do not automatically solve internal Specht tensor products.",
+    "Separate-to-joint Schur dilation carries fixed-source Kronecker multiplicity coherently, but its natural normalized branch merger is the original orientation polar in encoded coordinates.",
     "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
     "An encoded stable shape router does not construct a compressed Clebsch channel isometry.",
     "An encoded left/right relabelling isometry does not construct the state-dependent frame filter or decoder.",
@@ -581,7 +615,7 @@
   "headline_metrics": {
     "bounded_support_commutant_block_encoding_poly_proof_count": 1,
     "bounded_tail_natural_access_no_go_theorem_count": 1,
-    "capability_count": 16,
+    "capability_count": 17,
     "diagonal_jm_label_transform_poly_proof_count": 1,
     "exact_holevo_copy_budget_theorem_count": 1,
     "exact_stable_nine_shape_sector_classification_count": 1,
@@ -594,8 +628,11 @@
     "maximum_multiplicity_register_bits": 7,
     "maximum_n": 10,
     "maximum_partition_count": 42,
-    "proved_polynomial_primitive_count": 10,
+    "physical_invariant_schur_companion_interface_count": 1,
+    "proved_polynomial_primitive_count": 11,
     "restricted_multiplicity_classical_match_count": 1,
+    "schur_branch_merger_polar_equivalence_theorem_count": 1,
+    "schur_dilated_kronecker_carrier_polynomial_count": 1,
     "stable_branch_direct_conditioned_preparation_count": 0,
     "stable_branch_natural_input_accessible_count": 0,
     "stable_branch_superpolynomial_rarity_theorem_count": 1,
@@ -680,8 +717,12 @@
     {
       "id": "yoshida-random-dilation-2025",
       "url": "https://arxiv.org/abs/2512.21260"
+    },
+    {
+      "id": "christandl-et-al-plethysm-sharp-bqp-2026",
+      "url": "https://arxiv.org/abs/2602.08441"
     }
   ],
-  "status": "known-primitives-separated-from-open-recoupling-and-decoder",
-  "summary": "Classified 16 representation primitives and exact finite Kronecker growth through n=10 without transferring solved QFT/counting results to the open decoder."
+  "status": "dilated-isotypic-routing-available-polar-and-decoder-open",
+  "summary": "Classified 17 representation primitives and exact finite Kronecker growth through n=10. Separate-to-joint Schur dilation now supplies an encoded multiplicity carrier, but no exposed coordinates, orientation polar, or decoder."
 }

@@ -1,0 +1,241 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Not measuring weak Fourier labels supplies useful cross-label phases.",
+      "resolution": "False for mixed HSP coset states: inequivalent labels are exact direct-sum blocks, not a coherent superposition.",
+      "resolved": true
+    },
+    {
+      "objection": "The norm-one full power-map isometry makes every output block useful.",
+      "resolution": "False for a source-label-preserving target: wrong labels are orthogonal leakage and cannot be reinterpreted as the desired carrier.",
+      "resolved": true
+    },
+    {
+      "objection": "This rules out any coherent use of the full quadrant expansion.",
+      "resolution": "No. A recursion that combines all exponent terms before exposing labels is outside the theorem.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "branch_field_preserves_source_irrep_tuple": true,
+    "classical_separation_proved": false,
+    "direct_equivariant_multiplier_compiled": false,
+    "label_coherence_escape_rejected": true,
+    "physical_coset_source_cross_irrep_coherence_available": false,
+    "physical_decoder_compiled": false,
+    "plancherel_label_average_cancels_termwise_normalization": false,
+    "speedup_claim_allowed": false,
+    "whole_quadrant_sum_factorized": false,
+    "wrong_power_map_output_labels_are_useful_target_paths": false
+  },
+  "coset_superselection_control": {
+    "coset_state_minimum_eigenvalue": 0.0,
+    "coset_state_trace_residual": 1.1102230246251565e-16,
+    "exact_irrep_label_block_diagonality_verified": true,
+    "group_order": 6,
+    "irrep_count": 3,
+    "maximum_cross_irrep_block_norm": 1.1655992566142947e-17,
+    "n": 3,
+    "qft_unitarity_residual": 1.2628530391404534e-16,
+    "status": "coset-state-irrep-label-superselection-verified",
+    "subgroup_order": 2
+  },
+  "created_at": "2026-08-24T18:00:58.285201+00:00",
+  "cyclic_controls": [
+    {
+      "copy_count": 1,
+      "exact_label_retention_identity_verified": true,
+      "expected_nonzero_block_mass": 0.3333333333333333,
+      "expected_nonzero_output_blocks_per_input": 3,
+      "exponent_parameters": [
+        2
+      ],
+      "group_order": 3,
+      "inverse_normalization_squared": 0.1111111111111111,
+      "maximum_nonzero_block_mass": 0.3333333333333337,
+      "mean_matching_physical_block_mass": 0.1111111111111111,
+      "minimum_nonzero_block_mass": 0.33333333333333354,
+      "nonzero_output_blocks_per_input": 3,
+      "output_factor_count": 2,
+      "selection_probability_for_random_physical_labels": 0.3333333333333333,
+      "status": "coherent-label-retention-does-not-cancel-block-normalization",
+      "transformed_isometry_residual": 1.2640128533790862e-15
+    },
+    {
+      "copy_count": 2,
+      "exact_label_retention_identity_verified": true,
+      "expected_nonzero_block_mass": 0.008,
+      "expected_nonzero_output_blocks_per_input": 125,
+      "exponent_parameters": [
+        2,
+        1
+      ],
+      "group_order": 5,
+      "inverse_normalization_squared": 0.0016,
+      "maximum_nonzero_block_mass": 0.008,
+      "mean_matching_physical_block_mass": 0.0016,
+      "minimum_nonzero_block_mass": 0.007999999999999993,
+      "nonzero_output_blocks_per_input": 125,
+      "output_factor_count": 4,
+      "selection_probability_for_random_physical_labels": 0.2,
+      "status": "coherent-label-retention-does-not-cancel-block-normalization",
+      "transformed_isometry_residual": 8.585836639730735e-16
+    }
+  ],
+  "falsifiers_triggered": [
+    "Source Plancherel amplitudes cannot be harvested as cross-irrep interference in a mixed coset state.",
+    "Retaining all power-map output labels preserves total norm but mostly produces wrong physical source sectors.",
+    "The only surviving power-map route must combine the full quadrant sum before label selection."
+  ],
+  "headline_metrics": {
+    "coset_irrep_superselection_theorem_count": 1,
+    "cyclic_exact_control_count": 2,
+    "label_coherence_normalization_no_go_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "plancherel_exact_control_count": 2,
+    "tail_copy_count": 2151,
+    "tail_log2_inverse_normalization_mean_upper_bound": -1540105.7833408287,
+    "tail_n": 128,
+    "whole_quadrant_factorization_count": 0
+  },
+  "plancherel_controls": [
+    {
+      "brute_force_inverse_normalization_mean": 0.0016000000000000784,
+      "copy_count": 2,
+      "dimension_cube_sum": 5,
+      "dimension_square_sum": 5,
+      "exact_formula_residual": 7.827939685345342e-17,
+      "exact_inverse_normalization_mean": 0.0016,
+      "family": "C5",
+      "group_order": 5,
+      "irrep_dimensions": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "status": "plancherel-label-average-preserves-superpolynomial-normalization-loss",
+      "universal_upper_bound": 0.08944271909999159,
+      "upper_bound_verified": true
+    },
+    {
+      "brute_force_inverse_normalization_mean": 0.00992290301275215,
+      "copy_count": 2,
+      "dimension_cube_sum": 10,
+      "dimension_square_sum": 6,
+      "exact_formula_residual": 2.949029909160572e-17,
+      "exact_inverse_normalization_mean": 0.00992290301275212,
+      "family": "S3",
+      "group_order": 6,
+      "irrep_dimensions": [
+        1,
+        2,
+        1
+      ],
+      "status": "plancherel-label-average-preserves-superpolynomial-normalization-loss",
+      "universal_upper_bound": 0.06804138174397717,
+      "upper_bound_verified": true
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "test_source_label_coherence_as_power_map_normalization_resource",
+      "resolution": "Rejected: the physical source is an exact irrep-block mixture, the desired map preserves those blocks, and the Plancherel mean inverse normalization is superpolynomially small.",
+      "resolved": true
+    },
+    {
+      "obligation": "factor_complete_quadrant_sum_before_block_selection",
+      "resolution": "The term coefficients and exponent tuples must be combined by one structured recursion; label retention alone does not do it.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_physical_input_transform_and_hidden_label_decoder",
+      "resolution": "No end-to-end physical circuit or decoder is established.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "copy_count": 48,
+      "globally_distinct_conditioning_probability_tends_to_one": true,
+      "label_coherence_cancellation_superpolynomially_rejected": true,
+      "log2_amplitude_amplification_lower_bound": 363.3561904366979,
+      "log2_group_order": 15.29920801838728,
+      "log2_inverse_normalization_mean_upper_bound": -726.7123808733958,
+      "n": 8,
+      "polynomial_benchmark_log2": 60.0,
+      "status": "plancherel-label-coherence-cancellation-superpolynomially-rejected"
+    },
+    {
+      "copy_count": 135,
+      "globally_distinct_conditioning_probability_tends_to_one": true,
+      "label_coherence_cancellation_superpolynomially_rejected": true,
+      "log2_amplitude_amplification_lower_bound": 2975.8219465996062,
+      "log2_group_order": 44.25014046988262,
+      "log2_inverse_normalization_mean_upper_bound": -5951.6438931992125,
+      "n": 16,
+      "polynomial_benchmark_log2": 80.0,
+      "status": "plancherel-label-coherence-cancellation-superpolynomially-rejected"
+    },
+    {
+      "copy_count": 355,
+      "globally_distinct_conditioning_probability_tends_to_one": true,
+      "label_coherence_cancellation_superpolynomially_rejected": true,
+      "log2_amplitude_amplification_lower_bound": 20855.81348238086,
+      "log2_group_order": 117.6632636523603,
+      "log2_inverse_normalization_mean_upper_bound": -41711.62696476172,
+      "n": 32,
+      "polynomial_benchmark_log2": 100.0,
+      "status": "plancherel-label-coherence-cancellation-superpolynomially-rejected"
+    },
+    {
+      "copy_count": 890,
+      "globally_distinct_conditioning_probability_tends_to_one": true,
+      "label_coherence_cancellation_superpolynomially_rejected": true,
+      "log2_amplitude_amplification_lower_bound": 131643.84026808178,
+      "log2_group_order": 295.99514394172405,
+      "log2_inverse_normalization_mean_upper_bound": -263287.68053616356,
+      "n": 64,
+      "polynomial_benchmark_log2": 120.0,
+      "status": "plancherel-label-coherence-cancellation-superpolynomially-rejected"
+    },
+    {
+      "copy_count": 2151,
+      "globally_distinct_conditioning_probability_tends_to_one": true,
+      "label_coherence_cancellation_superpolynomially_rejected": true,
+      "log2_amplitude_amplification_lower_bound": 770052.8916704144,
+      "log2_group_order": 716.1617220836218,
+      "log2_inverse_normalization_mean_upper_bound": -1540105.7833408287,
+      "n": 128,
+      "polynomial_benchmark_log2": 140.0,
+      "status": "plancherel-label-coherence-cancellation-superpolynomially-rejected"
+    }
+  ],
+  "status": "label-coherent-power-map-normalization-cancellation-rejected",
+  "summary": "Keeping weak Fourier labels coherent does not repair the power-map normalization: physical coset states have exact irrep-label superselection, and Plancherel averaging leaves a superpolynomially small matching-block coefficient. The whole-quadrant recursion remains open.",
+  "theorem": {
+    "coset_label_superselection": "The mixed HSP coset state is |G|^-1 sum_(h in H) R_h and is exactly block diagonal in inequivalent QFT irrep labels.",
+    "cyclic_control": "For C_m, retaining all Fourier labels restores total norm one but the mean mass in the matching physical block remains m^(-2k).",
+    "dimension_bound": "S_3<=d_max|G|<=|G|^(3/2), so the mean is at most |G|^(-k+1/2).",
+    "plancherel_inverse_normalization_mean": "For independent Plancherel labels, E[alpha^-2] equals S_3^(2k+1)/|G|^(4k+1).",
+    "scope": "This rejects Plancherel label-coherence cancellation, not arbitrary label-mixing circuits, direct polars, or coherent whole-sum factorizations.",
+    "source_block_conservation": "Every branch field J_h and candidate convolution C_Lambda acts within one fixed source-irrep tuple Lambda.",
+    "status": "label-coherent-power-map-normalization-cancellation-rejected",
+    "surviving_escape": "A whole-quadrant FFT-like recursion may still combine exponent terms before any source-block selection.",
+    "theorem_verified": true,
+    "wrong_block_interpretation": "Other output-irrep blocks of the power-map isometry are orthogonal leakage, not coherent paths to the required Lambda-preserving output."
+  },
+  "theorem_contract": {
+    "coset_label_superselection": "The mixed HSP coset state is |G|^-1 sum_(h in H) R_h and is exactly block diagonal in inequivalent QFT irrep labels.",
+    "cyclic_control": "For C_m, retaining all Fourier labels restores total norm one but the mean mass in the matching physical block remains m^(-2k).",
+    "dimension_bound": "S_3<=d_max|G|<=|G|^(3/2), so the mean is at most |G|^(-k+1/2).",
+    "plancherel_inverse_normalization_mean": "For independent Plancherel labels, E[alpha^-2] equals S_3^(2k+1)/|G|^(4k+1).",
+    "scope": "This rejects Plancherel label-coherence cancellation, not arbitrary label-mixing circuits, direct polars, or coherent whole-sum factorizations.",
+    "source_block_conservation": "Every branch field J_h and candidate convolution C_Lambda acts within one fixed source-irrep tuple Lambda.",
+    "status": "label-coherent-power-map-normalization-cancellation-rejected",
+    "surviving_escape": "A whole-quadrant FFT-like recursion may still combine exponent terms before any source-block selection.",
+    "theorem_verified": true,
+    "wrong_block_interpretation": "Other output-irrep blocks of the power-map isometry are orthogonal leakage, not coherent paths to the required Lambda-preserving output."
+  }
+}

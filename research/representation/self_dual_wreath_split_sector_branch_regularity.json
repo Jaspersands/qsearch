@@ -1,0 +1,568 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Self-conjugate S_n partitions must have vanishing tuple incidence.",
+      "resolution": "False. Split them rather than discard them; the refined A_n law is exact and pair-swap freeness follows from A_n collisions.",
+      "resolved": true
+    },
+    {
+      "objection": "The maximal S_n atom alone bounds self-conjugate mass enough.",
+      "resolution": "That inference is unsupported because the number of self-conjugate partitions is stretched exponential. It is unnecessary.",
+      "resolved": true
+    },
+    {
+      "objection": "The extra split sign creates a large hard quotient.",
+      "resolution": "Its local diagonal action is one odd involution and one parity projection; the remaining high rank is still multiplicity CS.",
+      "resolved": true
+    },
+    {
+      "objection": "Factoring the odd projection compiles the polar.",
+      "resolution": "False. The exact branch cross Gram remains F/2^K and retains the same dense rectangular-CS normalization.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "classical_separation_proved": false,
+    "complete_natural_orientation_polar_compiled": false,
+    "dense_matrix_cs_polar_compiled": false,
+    "full_connected_group_clifford_transform_compiled": false,
+    "natural_pair_swap_branch_action_asymptotically_free": true,
+    "physical_native_refined_source_marginal_is_product_An_plancherel": true,
+    "reason": "Split sectors no longer block branch regularity, but their exact parity reassembly returns the same unresolved dense F/2^K CS polar.",
+    "refined_Sn_to_An_plancherel_restriction_proved": true,
+    "self_conjugate_absence_required_for_free_branch_orbit": false,
+    "speedup_claim_allowed": false,
+    "split_diagonal_projector_parity_factorization_proved": true,
+    "split_sectors_change_original_fixed_space_cs_polar": false
+  },
+  "created_at": "2026-08-24T15:31:59.917513+00:00",
+  "falsifiers_triggered": [
+    "Self-conjugate Plancherel mass need not be bounded to obtain a free natural branch orbit.",
+    "A crude maximum-atom times self-conjugate-count estimate is not a valid closure route.",
+    "Split A_n constituents add parity bookkeeping, not a scalarization of the occupied CS multiplicity.",
+    "Ordinary connected Fourier completion still reconstructs the original orientation polar problem."
+  ],
+  "fixed_space_controls": [
+    {
+      "branch_cross_gram_residual": 1.1102230246251565e-16,
+      "branch_cross_polar_residual": 1.570092458683775e-16,
+      "carrier_dimension": 4,
+      "control_id": "S3-SELF-CONJUGATE-TARGET-AND-SOURCE",
+      "exact_branch_fixed_space_boundary_verified": true,
+      "exact_split_sector_projector_factorization_verified": true,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "maximum_alternating_projector_idempotence_residual": 5.551115123125783e-17,
+      "maximum_odd_involution_residual": 2.2595295908525826e-16,
+      "maximum_odd_normalizer_commutator_residual": 0.0,
+      "maximum_symmetric_from_alternating_factorization_residual": 1.1102230246251563e-16,
+      "n": 3,
+      "orientation_count": 2,
+      "self_conjugate_coordinate_count": 2,
+      "status": "split-sector-parity-factorization-reconstructs-original-cs-polar",
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "branch_cross_gram_residual": 0.0,
+      "branch_cross_polar_residual": 0.0,
+      "carrier_dimension": 36,
+      "control_id": "S4-MULTIPLE-SPLIT-AND-TRANSPOSE-COORDINATES",
+      "exact_branch_fixed_space_boundary_verified": true,
+      "exact_split_sector_projector_factorization_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_alternating_projector_idempotence_residual": 8.403766771007585e-17,
+      "maximum_odd_involution_residual": 1.1103238855684377e-16,
+      "maximum_odd_normalizer_commutator_residual": 5.0646775869775554e-17,
+      "maximum_symmetric_from_alternating_factorization_residual": 6.366799323006302e-17,
+      "n": 4,
+      "orientation_count": 4,
+      "self_conjugate_coordinate_count": 2,
+      "status": "split-sector-parity-factorization-reconstructs-original-cs-polar",
+      "target_partition": [
+        2,
+        2
+      ]
+    }
+  ],
+  "headline_metrics": {
+    "alternating_collision_constant_factor_theorem_count": 1,
+    "complete_orientation_polar_compiler_count": 0,
+    "dense_matrix_cs_polar_compiler_count": 0,
+    "finite_control_failure_count": 0,
+    "fixed_space_control_count": 2,
+    "fixed_space_original_cs_boundary_theorem_count": 1,
+    "full_connected_clifford_transform_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "physical_refined_source_marginal_theorem_count": 1,
+    "plancherel_control_count": 14,
+    "refined_alternating_plancherel_theorem_count": 1,
+    "scaling_record_count": 7,
+    "self_conjugate_safe_free_branch_orbit_theorem_count": 1,
+    "split_constituent_fairness_theorem_count": 1,
+    "split_diagonal_parity_factorization_theorem_count": 1
+  },
+  "literature_links": [
+    {
+      "paper": "On the maximal dimension of an irreducible representation of the symmetric group",
+      "self_conjugate_mass_bound_inferred": false,
+      "url": "https://arxiv.org/abs/2605.25995",
+      "used_for": "max S_n Plancherel atom exp(-Theta(sqrt(n))), transferred within factor two to refined A_n atoms"
+    }
+  ],
+  "plancherel_controls": [
+    {
+      "collision_constant_factor_bound_verified": true,
+      "exact_all_source_pairs_refined_distinct_probability": 0.13168724279835398,
+      "exact_predicted_refined_collision_probability": "1/3",
+      "exact_refined_alternating_collision_probability": "1/3",
+      "exact_restriction_plancherel_identity_verified": true,
+      "exact_symmetric_collision_probability": "1/2",
+      "exact_weight_sum": "1",
+      "maximum_refined_alternating_plancherel_atom": 0.3333333333333333,
+      "maximum_symmetric_plancherel_atom": 0.6666666666666666,
+      "n": 3,
+      "natural_copy_count": 5,
+      "refined_alternating_irrep_count": 3,
+      "refined_to_symmetric_collision_ratio": 0.6666666666666666,
+      "self_conjugate_partition_count": 1,
+      "source_pair_collision_union_upper_bound": 1.0,
+      "split_constituents_exactly_fair_verified": true,
+      "status": "exact-refined-alternating-plancherel-and-collision-identity",
+      "symmetric_partition_count": 3
+    },
+    {
+      "collision_constant_factor_bound_verified": true,
+      "exact_all_source_pairs_refined_distinct_probability": 0.002180325369012916,
+      "exact_predicted_refined_collision_probability": "7/12",
+      "exact_refined_alternating_collision_probability": "7/12",
+      "exact_restriction_plancherel_identity_verified": true,
+      "exact_symmetric_collision_probability": "5/16",
+      "exact_weight_sum": "1",
+      "maximum_refined_alternating_plancherel_atom": 0.75,
+      "maximum_symmetric_plancherel_atom": 0.375,
+      "n": 4,
+      "natural_copy_count": 7,
+      "refined_alternating_irrep_count": 4,
+      "refined_to_symmetric_collision_ratio": 1.8666666666666667,
+      "self_conjugate_partition_count": 1,
+      "source_pair_collision_union_upper_bound": 1.0,
+      "split_constituents_exactly_fair_verified": true,
+      "status": "exact-refined-alternating-plancherel-and-collision-identity",
+      "symmetric_partition_count": 5
+    },
+    {
+      "collision_constant_factor_bound_verified": true,
+      "exact_all_source_pairs_refined_distinct_probability": 0.04584850071844901,
+      "exact_predicted_refined_collision_probability": "29/100",
+      "exact_refined_alternating_collision_probability": "29/100",
+      "exact_restriction_plancherel_identity_verified": true,
+      "exact_symmetric_collision_probability": "17/80",
+      "exact_weight_sum": "1",
+      "maximum_refined_alternating_plancherel_atom": 0.4166666666666667,
+      "maximum_symmetric_plancherel_atom": 0.3,
+      "n": 5,
+      "natural_copy_count": 9,
+      "refined_alternating_irrep_count": 5,
+      "refined_to_symmetric_collision_ratio": 1.3647058823529412,
+      "self_conjugate_partition_count": 1,
+      "source_pair_collision_union_upper_bound": 1.0,
+      "split_constituents_exactly_fair_verified": true,
+      "status": "exact-refined-alternating-plancherel-and-collision-identity",
+      "symmetric_partition_count": 7
+    },
+    {
+      "collision_constant_factor_bound_verified": true,
+      "exact_all_source_pairs_refined_distinct_probability": 0.06805433977964122,
+      "exact_predicted_refined_collision_probability": "2167/10800",
+      "exact_refined_alternating_collision_probability": "2167/10800",
+      "exact_restriction_plancherel_identity_verified": true,
+      "exact_symmetric_collision_probability": "281/1440",
+      "exact_weight_sum": "1",
+      "maximum_refined_alternating_plancherel_atom": 0.2777777777777778,
+      "maximum_symmetric_plancherel_atom": 0.35555555555555557,
+      "n": 6,
+      "natural_copy_count": 12,
+      "refined_alternating_irrep_count": 7,
+      "refined_to_symmetric_collision_ratio": 1.028232502965599,
+      "self_conjugate_partition_count": 1,
+      "source_pair_collision_union_upper_bound": 1.0,
+      "split_constituents_exactly_fair_verified": true,
+      "status": "exact-refined-alternating-plancherel-and-collision-identity",
+      "symmetric_partition_count": 11
+    },
+    {
+      "collision_constant_factor_bound_verified": true,
+      "exact_all_source_pairs_refined_distinct_probability": 0.005829512390810875,
+      "exact_predicted_refined_collision_probability": "30731/105840",
+      "exact_refined_alternating_collision_probability": "30731/105840",
+      "exact_restriction_plancherel_identity_verified": true,
+      "exact_symmetric_collision_probability": "1511/10080",
+      "exact_weight_sum": "1",
+      "maximum_refined_alternating_plancherel_atom": 0.4861111111111111,
+      "maximum_symmetric_plancherel_atom": 0.24305555555555555,
+      "n": 7,
+      "natural_copy_count": 15,
+      "refined_alternating_irrep_count": 9,
+      "refined_to_symmetric_collision_ratio": 1.936970155368567,
+      "self_conjugate_partition_count": 1,
+      "source_pair_collision_union_upper_bound": 1.0,
+      "split_constituents_exactly_fair_verified": true,
+      "status": "exact-refined-alternating-plancherel-and-collision-identity",
+      "symmetric_partition_count": 15
+    },
+    {
+      "collision_constant_factor_bound_verified": true,
+      "exact_all_source_pairs_refined_distinct_probability": 0.051564915928650056,
+      "exact_predicted_refined_collision_probability": "857257/5644800",
+      "exact_refined_alternating_collision_probability": "857257/5644800",
+      "exact_restriction_plancherel_identity_verified": true,
+      "exact_symmetric_collision_probability": "69439/645120",
+      "exact_weight_sum": "1",
+      "maximum_refined_alternating_plancherel_atom": 0.24305555555555555,
+      "maximum_symmetric_plancherel_atom": 0.20089285714285715,
+      "n": 8,
+      "natural_copy_count": 18,
+      "refined_alternating_irrep_count": 14,
+      "refined_to_symmetric_collision_ratio": 1.4109107068279867,
+      "self_conjugate_partition_count": 2,
+      "source_pair_collision_union_upper_bound": 1.0,
+      "split_constituents_exactly_fair_verified": true,
+      "status": "exact-refined-alternating-plancherel-and-collision-identity",
+      "symmetric_partition_count": 22
+    },
+    {
+      "collision_constant_factor_bound_verified": true,
+      "exact_all_source_pairs_refined_distinct_probability": 0.02432084223325341,
+      "exact_predicted_refined_collision_probability": "31783373/195955200",
+      "exact_refined_alternating_collision_probability": "31783373/195955200",
+      "exact_restriction_plancherel_identity_verified": true,
+      "exact_symmetric_collision_probability": "283057/3483648",
+      "exact_weight_sum": "1",
+      "maximum_refined_alternating_plancherel_atom": 0.2571428571428571,
+      "maximum_symmetric_plancherel_atom": 0.12857142857142856,
+      "n": 9,
+      "natural_copy_count": 21,
+      "refined_alternating_irrep_count": 18,
+      "refined_to_symmetric_collision_ratio": 1.9961977348103817,
+      "self_conjugate_partition_count": 2,
+      "source_pair_collision_union_upper_bound": 1.0,
+      "split_constituents_exactly_fair_verified": true,
+      "status": "exact-refined-alternating-plancherel-and-collision-identity",
+      "symmetric_partition_count": 30
+    },
+    {
+      "collision_constant_factor_bound_verified": true,
+      "exact_all_source_pairs_refined_distinct_probability": 0.08712925258924288,
+      "exact_predicted_refined_collision_probability": "13261880567/137168640000",
+      "exact_refined_alternating_collision_probability": "13261880567/137168640000",
+      "exact_restriction_plancherel_identity_verified": true,
+      "exact_symmetric_collision_probability": "61355893/870912000",
+      "exact_weight_sum": "1",
+      "maximum_refined_alternating_plancherel_atom": 0.1771875,
+      "maximum_symmetric_plancherel_atom": 0.16253968253968254,
+      "n": 10,
+      "natural_copy_count": 24,
+      "refined_alternating_irrep_count": 24,
+      "refined_to_symmetric_collision_ratio": 1.3723607005184115,
+      "self_conjugate_partition_count": 2,
+      "source_pair_collision_union_upper_bound": 1.0,
+      "split_constituents_exactly_fair_verified": true,
+      "status": "exact-refined-alternating-plancherel-and-collision-identity",
+      "symmetric_partition_count": 42
+    },
+    {
+      "collision_constant_factor_bound_verified": true,
+      "exact_all_source_pairs_refined_distinct_probability": 0.03029171050206825,
+      "exact_predicted_refined_collision_probability": "216512773903/1844156160000",
+      "exact_refined_alternating_collision_probability": "216512773903/1844156160000",
+      "exact_restriction_plancherel_identity_verified": true,
+      "exact_symmetric_collision_probability": "571371223/9580032000",
+      "exact_weight_sum": "1",
+      "maximum_refined_alternating_plancherel_atom": 0.2673611111111111,
+      "maximum_symmetric_plancherel_atom": 0.13368055555555555,
+      "n": 11,
+      "natural_copy_count": 28,
+      "refined_alternating_irrep_count": 31,
+      "refined_to_symmetric_collision_ratio": 1.9684955022892132,
+      "self_conjugate_partition_count": 2,
+      "source_pair_collision_union_upper_bound": 1.0,
+      "split_constituents_exactly_fair_verified": true,
+      "status": "exact-refined-alternating-plancherel-and-collision-identity",
+      "symmetric_partition_count": 56
+    },
+    {
+      "collision_constant_factor_bound_verified": true,
+      "exact_all_source_pairs_refined_distinct_probability": 0.09983720199347733,
+      "exact_predicted_refined_collision_probability": "17120774761799/239002638336000",
+      "exact_refined_alternating_collision_probability": "17120774761799/239002638336000",
+      "exact_restriction_plancherel_identity_verified": true,
+      "exact_symmetric_collision_probability": "3642732727/76640256000",
+      "exact_weight_sum": "1",
+      "maximum_refined_alternating_plancherel_atom": 0.1392505787037037,
+      "maximum_symmetric_plancherel_atom": 0.12377829218106996,
+      "n": 12,
+      "natural_copy_count": 31,
+      "refined_alternating_irrep_count": 43,
+      "refined_to_symmetric_collision_ratio": 1.5071287616002311,
+      "self_conjugate_partition_count": 3,
+      "source_pair_collision_union_upper_bound": 1.0,
+      "split_constituents_exactly_fair_verified": true,
+      "status": "exact-refined-alternating-plancherel-and-collision-identity",
+      "symmetric_partition_count": 77
+    },
+    {
+      "collision_constant_factor_bound_verified": true,
+      "exact_all_source_pairs_refined_distinct_probability": 0.07566196861452558,
+      "exact_predicted_refined_collision_probability": "1305418554613241/18359748126720000",
+      "exact_refined_alternating_collision_probability": "1305418554613241/18359748126720000",
+      "exact_restriction_plancherel_identity_verified": true,
+      "exact_symmetric_collision_probability": "36792836131/996323328000",
+      "exact_weight_sum": "1",
+      "maximum_refined_alternating_plancherel_atom": 0.14777612433862433,
+      "maximum_symmetric_plancherel_atom": 0.07388806216931217,
+      "n": 13,
+      "natural_copy_count": 35,
+      "refined_alternating_irrep_count": 55,
+      "refined_to_symmetric_collision_ratio": 1.9253961328840228,
+      "self_conjugate_partition_count": 3,
+      "source_pair_collision_union_upper_bound": 1.0,
+      "split_constituents_exactly_fair_verified": true,
+      "status": "exact-refined-alternating-plancherel-and-collision-identity",
+      "symmetric_partition_count": 101
+    },
+    {
+      "collision_constant_factor_bound_verified": true,
+      "exact_all_source_pairs_refined_distinct_probability": 0.1259686028667254,
+      "exact_predicted_refined_collision_probability": "4213685943022261/81447771525120000",
+      "exact_refined_alternating_collision_probability": "4213685943022261/81447771525120000",
+      "exact_restriction_plancherel_identity_verified": true,
+      "exact_symmetric_collision_probability": "81820776809/2789705318400",
+      "exact_weight_sum": "1",
+      "maximum_refined_alternating_plancherel_atom": 0.11080676020408163,
+      "maximum_symmetric_plancherel_atom": 0.055403380102040815,
+      "n": 14,
+      "natural_copy_count": 39,
+      "refined_alternating_irrep_count": 72,
+      "refined_to_symmetric_collision_ratio": 1.763915145436407,
+      "self_conjugate_partition_count": 3,
+      "source_pair_collision_union_upper_bound": 1.0,
+      "split_constituents_exactly_fair_verified": true,
+      "status": "exact-refined-alternating-plancherel-and-collision-identity",
+      "symmetric_partition_count": 135
+    },
+    {
+      "collision_constant_factor_bound_verified": true,
+      "exact_all_source_pairs_refined_distinct_probability": 0.15312398953236744,
+      "exact_predicted_refined_collision_probability": "14627316789482995379/342550531395072000000",
+      "exact_refined_alternating_collision_probability": "14627316789482995379/342550531395072000000",
+      "exact_restriction_plancherel_identity_verified": true,
+      "exact_symmetric_collision_probability": "8660972866397/348713164800000",
+      "exact_weight_sum": "1",
+      "maximum_refined_alternating_plancherel_atom": 0.0904921875,
+      "maximum_symmetric_plancherel_atom": 0.06558920522941687,
+      "n": 15,
+      "natural_copy_count": 43,
+      "refined_alternating_irrep_count": 94,
+      "refined_to_symmetric_collision_ratio": 1.719260506347219,
+      "self_conjugate_partition_count": 4,
+      "source_pair_collision_union_upper_bound": 1.0,
+      "split_constituents_exactly_fair_verified": true,
+      "status": "exact-refined-alternating-plancherel-and-collision-identity",
+      "symmetric_partition_count": 176
+    },
+    {
+      "collision_constant_factor_bound_verified": true,
+      "exact_all_source_pairs_refined_distinct_probability": 0.14320697963529389,
+      "exact_predicted_refined_collision_probability": "1884831020707764232291/46530945652359168000000",
+      "exact_refined_alternating_collision_probability": "1884831020707764232291/46530945652359168000000",
+      "exact_restriction_plancherel_identity_verified": true,
+      "exact_symmetric_collision_probability": "7706087568809453/357082280755200000",
+      "exact_weight_sum": "1",
+      "maximum_refined_alternating_plancherel_atom": 0.12711111111111112,
+      "maximum_symmetric_plancherel_atom": 0.06355555555555556,
+      "n": 16,
+      "natural_copy_count": 47,
+      "refined_alternating_irrep_count": 123,
+      "refined_to_symmetric_collision_ratio": 1.8770027209288542,
+      "self_conjugate_partition_count": 5,
+      "source_pair_collision_union_upper_bound": 1.0,
+      "split_constituents_exactly_fair_verified": true,
+      "status": "exact-refined-alternating-plancherel-and-collision-identity",
+      "symmetric_partition_count": 231
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "remove_self_conjugate_absence_from_branch_freeness",
+      "resolution": "Regular-master target trace gives the source identity; refined restriction is therefore product A_n Plancherel, whose collision differs from the S_n collision by at most factor two.",
+      "resolved": true
+    },
+    {
+      "obligation": "factor_split_diagonal_projectors_uniformly",
+      "resolution": "Index-two subgroup averaging gives the exact alternating projector followed by one odd-parity projection.",
+      "resolved": true
+    },
+    {
+      "obligation": "compile_full_split_sector_connected_clifford_transform",
+      "resolution": "Need coherent orbit/stabilizer labels and the parity-coupled multiplicity transform; the projector identity is not a QFT.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_dense_fixed_space_matrix_cs_polar",
+      "resolution": "Reassembly returns the original F/2^K cross Gram and does not supply its inverse-square-root normalization.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "asymptotic_any_pair_collision_order": "Theta(n log n) exp(-Theta(sqrt(n)))=o(1)",
+      "asymptotic_collision_order": "exp(-Theta(sqrt(n)))",
+      "branch_swap_action_asymptotically_free": true,
+      "exact_all_pairs_distinct_probability": 0.051564915928650056,
+      "n": 8,
+      "natural_copy_count": 18,
+      "refined_alternating_collision_probability": 0.15186667375283447,
+      "self_conjugate_absence_required": false,
+      "source_pair_collision_union_upper_bound": 1.0,
+      "source_pair_count": 18,
+      "status": "refined-alternating-source-pair-branch-orbit-asymptotically-free"
+    },
+    {
+      "asymptotic_any_pair_collision_order": "Theta(n log n) exp(-Theta(sqrt(n)))=o(1)",
+      "asymptotic_collision_order": "exp(-Theta(sqrt(n)))",
+      "branch_swap_action_asymptotically_free": true,
+      "exact_all_pairs_distinct_probability": 0.09983720199347733,
+      "n": 12,
+      "natural_copy_count": 31,
+      "refined_alternating_collision_probability": 0.07163425006936489,
+      "self_conjugate_absence_required": false,
+      "source_pair_collision_union_upper_bound": 1.0,
+      "source_pair_count": 31,
+      "status": "refined-alternating-source-pair-branch-orbit-asymptotically-free"
+    },
+    {
+      "asymptotic_any_pair_collision_order": "Theta(n log n) exp(-Theta(sqrt(n)))=o(1)",
+      "asymptotic_collision_order": "exp(-Theta(sqrt(n)))",
+      "branch_swap_action_asymptotically_free": true,
+      "exact_all_pairs_distinct_probability": 0.14320697963529389,
+      "n": 16,
+      "natural_copy_count": 47,
+      "refined_alternating_collision_probability": 0.04050704309320654,
+      "self_conjugate_absence_required": false,
+      "source_pair_collision_union_upper_bound": 1.0,
+      "source_pair_count": 47,
+      "status": "refined-alternating-source-pair-branch-orbit-asymptotically-free"
+    },
+    {
+      "asymptotic_any_pair_collision_order": "Theta(n log n) exp(-Theta(sqrt(n)))=o(1)",
+      "asymptotic_collision_order": "exp(-Theta(sqrt(n)))",
+      "branch_swap_action_asymptotically_free": true,
+      "exact_all_pairs_distinct_probability": 0.267517087522158,
+      "n": 20,
+      "natural_copy_count": 64,
+      "refined_alternating_collision_probability": 0.020391899688315226,
+      "self_conjugate_absence_required": false,
+      "source_pair_collision_union_upper_bound": 1.0,
+      "source_pair_count": 64,
+      "status": "refined-alternating-source-pair-branch-orbit-asymptotically-free"
+    },
+    {
+      "asymptotic_any_pair_collision_order": "Theta(n log n) exp(-Theta(sqrt(n)))=o(1)",
+      "asymptotic_collision_order": "exp(-Theta(sqrt(n)))",
+      "branch_swap_action_asymptotically_free": true,
+      "exact_all_pairs_distinct_probability": 0.3923828006216332,
+      "n": 24,
+      "natural_copy_count": 82,
+      "refined_alternating_collision_probability": 0.011343915595717966,
+      "self_conjugate_absence_required": false,
+      "source_pair_collision_union_upper_bound": 0.9302010788488732,
+      "source_pair_count": 82,
+      "status": "refined-alternating-source-pair-branch-orbit-asymptotically-free"
+    },
+    {
+      "asymptotic_any_pair_collision_order": "Theta(n log n) exp(-Theta(sqrt(n)))=o(1)",
+      "asymptotic_collision_order": "exp(-Theta(sqrt(n)))",
+      "branch_swap_action_asymptotically_free": true,
+      "exact_all_pairs_distinct_probability": 0.5594135662223686,
+      "n": 28,
+      "natural_copy_count": 100,
+      "refined_alternating_collision_probability": 0.005791824808631524,
+      "self_conjugate_absence_required": false,
+      "source_pair_collision_union_upper_bound": 0.5791824808631524,
+      "source_pair_count": 100,
+      "status": "refined-alternating-source-pair-branch-orbit-asymptotically-free"
+    },
+    {
+      "asymptotic_any_pair_collision_order": "Theta(n log n) exp(-Theta(sqrt(n)))=o(1)",
+      "asymptotic_collision_order": "exp(-Theta(sqrt(n)))",
+      "branch_swap_action_asymptotically_free": true,
+      "exact_all_pairs_distinct_probability": 0.6671862860410376,
+      "n": 32,
+      "natural_copy_count": 120,
+      "refined_alternating_collision_probability": 0.003366703091460592,
+      "self_conjugate_absence_required": false,
+      "source_pair_collision_union_upper_bound": 0.40400437097527103,
+      "source_pair_count": 120,
+      "status": "refined-alternating-source-pair-branch-orbit-asymptotically-free"
+    }
+  ],
+  "status": "split-sector-safe-branch-regularity-original-cs-polar-remains",
+  "summary": "Removed the unsupported self-conjugate-absence premise from the connected branch orbit and isolated split handling to an exact odd-parity projection that leaves the original dense CS gate unchanged.",
+  "theorem": {
+    "collision_bound": "C_S/2<=C_A<=2C_S and max A_n atom<=2 max S_n atom",
+    "collision_identity": "C_A=2 sum_nonself p_lambda^2+(1/2)sum_self p_lambda^2",
+    "diagonal_parity_factorization": "E_e^(S_n)=((I+rho_e(t))/2)E_e^(A_n) for any odd involution t",
+    "fixed_space_boundary": "after split-sector reassembly the branch cross Gram is F/2^K and its polar is the original orientation analysis polar",
+    "free_branch_orbit": "with K=ceil(log2(n!))+2 independent pairs, pair collisions have probability at most K C_A=o(1), so C_2^K pair swaps act freely",
+    "physical_source_marginal": "partial trace of every regular-master diagonal subgroup projector is the source identity, so native refined source labels are product A_n Plancherel",
+    "refined_restriction_law": "S_n Plancherel restricts exactly to refined A_n Plancherel; self-conjugate constituents have equal conditional weight",
+    "scope": "removes self-conjugate absence from branch regularity and isolates odd parity; it does not compile the full connected Clifford QFT, dense matrix CS, complete polar, decoder, or speedup",
+    "status": "split-sector-safe-branch-regularity-original-cs-polar-remains",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "collision_bound": "C_S/2<=C_A<=2C_S and max A_n atom<=2 max S_n atom",
+    "collision_identity": "C_A=2 sum_nonself p_lambda^2+(1/2)sum_self p_lambda^2",
+    "diagonal_parity_factorization": "E_e^(S_n)=((I+rho_e(t))/2)E_e^(A_n) for any odd involution t",
+    "fixed_space_boundary": "after split-sector reassembly the branch cross Gram is F/2^K and its polar is the original orientation analysis polar",
+    "free_branch_orbit": "with K=ceil(log2(n!))+2 independent pairs, pair collisions have probability at most K C_A=o(1), so C_2^K pair swaps act freely",
+    "physical_source_marginal": "partial trace of every regular-master diagonal subgroup projector is the source identity, so native refined source labels are product A_n Plancherel",
+    "refined_restriction_law": "S_n Plancherel restricts exactly to refined A_n Plancherel; self-conjugate constituents have equal conditional weight",
+    "scope": "removes self-conjugate absence from branch regularity and isolates odd parity; it does not compile the full connected Clifford QFT, dense matrix CS, complete polar, decoder, or speedup",
+    "status": "split-sector-safe-branch-regularity-original-cs-polar-remains",
+    "theorem_verified": true
+  }
+}

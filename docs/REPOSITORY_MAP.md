@@ -1,14 +1,14 @@
 # Repository Map
 
-Q-Search organizes its 723 scientific theorem verification modules within a dedicated `theorems/` package, while maintaining core workflow entry points at the root.
+Q-Search organizes its 745 scientific theorem verification modules within a dedicated `theorems/` package, while keeping core framework engine modules in `core/` and the unified CLI at the repository root.
 
-## Entry Points & Core OS
+## Entry Points & Core Framework (`core/`)
 
-- `qsearch.py` - unified command-line interface for every registered workflow.
-- `research_registry.py` - proof-gated candidates, experiments, results, and negative-result persistence.
-- `experiment_runner.py` - supported experiment dispatch and run history.
-- `proof_gate.py` - mandatory candidate proof obligations.
-- `dequantization_checks.py` - automated classical attack matrix scanner.
+- `qsearch.py` - unified command-line interface for every registered workflow (at root).
+- `core/research_registry.py` - proof-gated candidates, experiments, results, and negative-result persistence.
+- `core/experiment_runner.py` - supported experiment dispatch and run history.
+- `core/proof_gate.py` - mandatory candidate proof obligations.
+- `core/dequantization_checks.py` - automated classical attack matrix scanner.
 
 ## Research Domains (`theorems/`)
 
@@ -38,7 +38,8 @@ Q-Search organizes its 723 scientific theorem verification modules within a dedi
 ## Organization Policy
 
 1. All new scientific theorem verification modules belong under `theorems/`.
-2. New generated research data belongs under `research/`, never at repository root.
-3. New website assets belong under `site/`.
-4. Maintenance scripts belong under `tools/`.
-5. Core operating system entry points (`qsearch.py`, `research_registry.py`, `experiment_runner.py`) remain at the repository root.
+2. All framework and OS modules belong under `core/`.
+3. New generated research data belongs under `research/`, never at repository root.
+4. New website assets belong under `site/`.
+5. Maintenance scripts belong under `tools/`.
+6. Only `qsearch.py` and configuration files reside at the repository root.

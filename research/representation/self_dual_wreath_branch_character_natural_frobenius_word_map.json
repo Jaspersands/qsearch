@@ -1,0 +1,590 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The shared h average factorizes across copies.",
+      "resolution": "False. Only source-label expectation factorizes; h,h' remain shared inside the kth moment.",
+      "resolved": true
+    },
+    {
+      "objection": "Conditioning can be transferred by total variation after summing |G| offsets.",
+      "resolution": "That can lose |G|. Positivity gives the multiplicative conditional-expectation transfer instead.",
+      "resolved": true
+    },
+    {
+      "objection": "Finite observation alone proves the 3/4 ceiling.",
+      "resolution": "No. The successor theorem separately proves it using proper-subgroup Fourier mass and an all-order half-interval count.",
+      "resolved": true
+    },
+    {
+      "objection": "Vanishing annealed Frobenius residual compiles the decoder.",
+      "resolution": "No. It would still require source-typical transfer, physical density control, and structured coherent access.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_n_natural_frobenius_contraction_proved": true,
+    "all_order_three_quarter_range_overlap_proved": true,
+    "classical_separation_proved": false,
+    "finite_three_quarter_stress_passed": true,
+    "independent_source_frobenius_moment_identity_proved": true,
+    "normalization_one_dense_transform_compiled": false,
+    "physical_input_fourier_domination_proved": false,
+    "physical_pgm_decoder_compiled": false,
+    "physical_source_typical_bad_mass_vanishes_proved": true,
+    "positive_conditioning_transfer_identity_proved": true,
+    "regular_word_collision_formula_proved": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-24T17:28:00.195463+00:00",
+  "falsifiers_triggered": [
+    "The shared group average cannot be factorized copy by copy.",
+    "Total-variation transfer is unnecessarily weak for the nonnegative Frobenius residual.",
+    "Finite 3/4 range-overlap stress was not used as the all-order proof.",
+    "Annealed state-weighted contraction would not by itself supply coherent access or a speedup."
+  ],
+  "headline_metrics": {
+    "all_n_natural_state_weighted_contraction_theorem_count": 1,
+    "all_order_three_quarter_range_overlap_theorem_count": 1,
+    "exact_independent_source_moment_reduction_count": 1,
+    "exact_regular_word_map_reduction_count": 1,
+    "finite_natural_moment_control_count": 3,
+    "maximum_tested_cyclic_range_overlap": 0.75,
+    "new_quantum_algorithm_count": 0,
+    "normalization_one_dense_transform_count": 0,
+    "range_overlap_stress_control_count": 2,
+    "tail_information_threshold_copy_count": 9,
+    "tail_information_threshold_expected_residual": 0.008559535048494545,
+    "tail_n": 5,
+    "tail_triple_threshold_copy_count": 23,
+    "tail_triple_threshold_expected_residual": 2.461042743608639e-06,
+    "word_map_validation_count": 3,
+    "word_map_validation_failure_count": 0
+  },
+  "natural_moment_controls": [
+    {
+      "all_n_contraction_proved": true,
+      "conditional_three_quarter_upper_bound_at_triple_threshold": 0.2815675735473633,
+      "cycle_contributions": [
+        {
+          "class_size": 2,
+          "cycle_type": [
+            3
+          ],
+          "information_threshold_residual_contribution": 0.046031950160036535,
+          "maximum_absolute_scalar_kernel": 0.6666666666666665,
+          "triple_threshold_residual_contribution": 0.004346658755687358
+        },
+        {
+          "class_size": 3,
+          "cycle_type": [
+            2,
+            1
+          ],
+          "information_threshold_residual_contribution": 0.02911153762273693,
+          "maximum_absolute_scalar_kernel": 0.5,
+          "triple_threshold_residual_contribution": 0.0008566276641352601
+        }
+      ],
+      "finite_contraction_observed": true,
+      "group_order": 6,
+      "information_threshold_copy_count": 5,
+      "information_threshold_expected_residual": 0.07514348778277347,
+      "information_threshold_half_window_bad_mass_upper_bound": 0.30057395113109386,
+      "maximum_absolute_scalar_kernel": 0.6666666666666665,
+      "moment_points": [
+        {
+          "copy_count": 1,
+          "expected_normalized_gram_frobenius_residual": 0.9864319812588696,
+          "log2_expected_residual": -0.019708520556564295
+        },
+        {
+          "copy_count": 2,
+          "expected_normalized_gram_frobenius_residual": 0.4973420020760843,
+          "log2_expected_residual": -1.0076898185264307
+        },
+        {
+          "copy_count": 3,
+          "expected_normalized_gram_frobenius_residual": 0.25826585723592876,
+          "log2_expected_residual": -1.9530711632092006
+        },
+        {
+          "copy_count": 4,
+          "expected_normalized_gram_frobenius_residual": 0.13757680477925907,
+          "log2_expected_residual": -2.8616908403323293
+        },
+        {
+          "copy_count": 5,
+          "expected_normalized_gram_frobenius_residual": 0.07514348778277347,
+          "log2_expected_residual": -3.7342081095931032
+        },
+        {
+          "copy_count": 6,
+          "expected_normalized_gram_frobenius_residual": 0.042072616650205424,
+          "log2_expected_residual": -4.570974642386319
+        },
+        {
+          "copy_count": 7,
+          "expected_normalized_gram_frobenius_residual": 0.024135557463957034,
+          "log2_expected_residual": -5.372696040381965
+        },
+        {
+          "copy_count": 8,
+          "expected_normalized_gram_frobenius_residual": 0.014171904397388118,
+          "log2_expected_residual": -6.140822551486362
+        },
+        {
+          "copy_count": 9,
+          "expected_normalized_gram_frobenius_residual": 0.008503777197794526,
+          "log2_expected_residual": -6.877680486458141
+        },
+        {
+          "copy_count": 10,
+          "expected_normalized_gram_frobenius_residual": 0.005203286419822618,
+          "log2_expected_residual": -7.586361160648549
+        }
+      ],
+      "n": 3,
+      "partition_count": 3,
+      "status": "finite-natural-regular-word-moment-contracts-all-n-bound-proved",
+      "tensor_carrier_materialized": false,
+      "triple_threshold_copy_count": 10,
+      "triple_threshold_expected_residual": 0.005203286419822618,
+      "triple_threshold_half_window_bad_mass_upper_bound": 0.020813145679290473
+    },
+    {
+      "all_n_contraction_proved": true,
+      "conditional_three_quarter_upper_bound_at_triple_threshold": 0.23051970242522657,
+      "cycle_contributions": [
+        {
+          "class_size": 6,
+          "cycle_type": [
+            4
+          ],
+          "information_threshold_residual_contribution": 0.00673797030277668,
+          "maximum_absolute_scalar_kernel": 0.5,
+          "triple_threshold_residual_contribution": 1.1286636224025056e-05
+        },
+        {
+          "class_size": 8,
+          "cycle_type": [
+            3,
+            1
+          ],
+          "information_threshold_residual_contribution": 0.009961997811324945,
+          "maximum_absolute_scalar_kernel": 0.6666666666666665,
+          "triple_threshold_residual_contribution": 9.881717055968004e-05
+        },
+        {
+          "class_size": 3,
+          "cycle_type": [
+            2,
+            2
+          ],
+          "information_threshold_residual_contribution": 0.0077173479847184425,
+          "maximum_absolute_scalar_kernel": 0.5555555555555555,
+          "triple_threshold_residual_contribution": 1.626743463742048e-05
+        },
+        {
+          "class_size": 6,
+          "cycle_type": [
+            2,
+            1,
+            1
+          ],
+          "information_threshold_residual_contribution": 0.00673797030277668,
+          "maximum_absolute_scalar_kernel": 0.5,
+          "triple_threshold_residual_contribution": 1.1286636224025056e-05
+        }
+      ],
+      "finite_contraction_observed": true,
+      "group_order": 24,
+      "information_threshold_copy_count": 7,
+      "information_threshold_expected_residual": 0.031155286401596764,
+      "information_threshold_half_window_bad_mass_upper_bound": 0.12462114560638705,
+      "maximum_absolute_scalar_kernel": 0.6666666666666665,
+      "moment_points": [
+        {
+          "copy_count": 1,
+          "expected_normalized_gram_frobenius_residual": 1.9773160833418297,
+          "log2_expected_residual": 0.9835435111379324
+        },
+        {
+          "copy_count": 2,
+          "expected_normalized_gram_frobenius_residual": 0.9745666174459555,
+          "log2_expected_residual": -0.03716728921533961
+        },
+        {
+          "copy_count": 3,
+          "expected_normalized_gram_frobenius_residual": 0.48410485214691334,
+          "log2_expected_residual": -1.0466085405910759
+        },
+        {
+          "copy_count": 4,
+          "expected_normalized_gram_frobenius_residual": 0.2416178803452076,
+          "log2_expected_residual": -2.0492008731264573
+        },
+        {
+          "copy_count": 5,
+          "expected_normalized_gram_frobenius_residual": 0.1212389915146093,
+          "log2_expected_residual": -3.0440743381714794
+        },
+        {
+          "copy_count": 6,
+          "expected_normalized_gram_frobenius_residual": 0.061223239531575165,
+          "log2_expected_residual": -4.02977680494761
+        },
+        {
+          "copy_count": 7,
+          "expected_normalized_gram_frobenius_residual": 0.031155286401596764,
+          "log2_expected_residual": -5.004379210529034
+        },
+        {
+          "copy_count": 8,
+          "expected_normalized_gram_frobenius_residual": 0.016003313636757274,
+          "log2_expected_residual": -5.9654855301400795
+        },
+        {
+          "copy_count": 9,
+          "expected_normalized_gram_frobenius_residual": 0.008313795971415796,
+          "log2_expected_residual": -6.910276941395307
+        },
+        {
+          "copy_count": 10,
+          "expected_normalized_gram_frobenius_residual": 0.004377676212247895,
+          "log2_expected_residual": -7.835619032806313
+        },
+        {
+          "copy_count": 11,
+          "expected_normalized_gram_frobenius_residual": 0.0023416580708207624,
+          "log2_expected_residual": -8.738253855938797
+        },
+        {
+          "copy_count": 12,
+          "expected_normalized_gram_frobenius_residual": 0.0012751815464654066,
+          "log2_expected_residual": -9.615081627742612
+        },
+        {
+          "copy_count": 13,
+          "expected_normalized_gram_frobenius_residual": 0.0007082240513102625,
+          "log2_expected_residual": -10.463506541021339
+        },
+        {
+          "copy_count": 14,
+          "expected_normalized_gram_frobenius_residual": 0.00040164676248447836,
+          "log2_expected_residual": -11.281785131981403
+        },
+        {
+          "copy_count": 15,
+          "expected_normalized_gram_frobenius_residual": 0.0002326918098237774,
+          "log2_expected_residual": -12.069291947209985
+        },
+        {
+          "copy_count": 16,
+          "expected_normalized_gram_frobenius_residual": 0.00013765787764515063,
+          "log2_expected_residual": -12.826625207215706
+        }
+      ],
+      "n": 4,
+      "partition_count": 5,
+      "status": "finite-natural-regular-word-moment-contracts-all-n-bound-proved",
+      "tensor_carrier_materialized": false,
+      "triple_threshold_copy_count": 16,
+      "triple_threshold_expected_residual": 0.00013765787764515063,
+      "triple_threshold_half_window_bad_mass_upper_bound": 0.0005506315105806025
+    },
+    {
+      "all_n_contraction_proved": true,
+      "conditional_three_quarter_upper_bound_at_triple_threshold": 0.15920474937179563,
+      "cycle_contributions": [
+        {
+          "class_size": 24,
+          "cycle_type": [
+            5
+          ],
+          "information_threshold_residual_contribution": 0.0015558361474637184,
+          "maximum_absolute_scalar_kernel": 0.6000000000000001,
+          "triple_threshold_residual_contribution": 1.8929237108398082e-07
+        },
+        {
+          "class_size": 30,
+          "cycle_type": [
+            4,
+            1
+          ],
+          "information_threshold_residual_contribution": 0.0013122205918899234,
+          "maximum_absolute_scalar_kernel": 0.5000000000000001,
+          "triple_threshold_residual_contribution": 5.5587505647496316e-08
+        },
+        {
+          "class_size": 20,
+          "cycle_type": [
+            3,
+            2
+          ],
+          "information_threshold_residual_contribution": 0.0012275573768807861,
+          "maximum_absolute_scalar_kernel": 0.5000000000000001,
+          "triple_threshold_residual_contribution": 4.785703744001974e-08
+        },
+        {
+          "class_size": 20,
+          "cycle_type": [
+            3,
+            1,
+            1
+          ],
+          "information_threshold_residual_contribution": 0.0018855817752428403,
+          "maximum_absolute_scalar_kernel": 0.6666666666666665,
+          "triple_threshold_residual_contribution": 2.0511316715327235e-06
+        },
+        {
+          "class_size": 15,
+          "cycle_type": [
+            2,
+            2,
+            1
+          ],
+          "information_threshold_residual_contribution": 0.0013675743688761229,
+          "maximum_absolute_scalar_kernel": 0.5555555555555555,
+          "triple_threshold_residual_contribution": 7.231506752174883e-08
+        },
+        {
+          "class_size": 10,
+          "cycle_type": [
+            2,
+            1,
+            1,
+            1
+          ],
+          "information_threshold_residual_contribution": 0.0012107647881411502,
+          "maximum_absolute_scalar_kernel": 0.5000000000000001,
+          "triple_threshold_residual_contribution": 4.4859090382669204e-08
+        }
+      ],
+      "finite_contraction_observed": true,
+      "group_order": 120,
+      "information_threshold_copy_count": 9,
+      "information_threshold_expected_residual": 0.008559535048494545,
+      "information_threshold_half_window_bad_mass_upper_bound": 0.03423814019397818,
+      "maximum_absolute_scalar_kernel": 0.6666666666666665,
+      "moment_points": [
+        {
+          "copy_count": 1,
+          "expected_normalized_gram_frobenius_residual": 2.859965396305876,
+          "log2_expected_residual": 1.515997691451244
+        },
+        {
+          "copy_count": 2,
+          "expected_normalized_gram_frobenius_residual": 1.3558424596901801,
+          "log2_expected_residual": 0.43918955618251143
+        },
+        {
+          "copy_count": 3,
+          "expected_normalized_gram_frobenius_residual": 0.6481767256177565,
+          "log2_expected_residual": -0.6255408768213693
+        },
+        {
+          "copy_count": 4,
+          "expected_normalized_gram_frobenius_residual": 0.31114138434467076,
+          "log2_expected_residual": -1.6843577970320223
+        },
+        {
+          "copy_count": 5,
+          "expected_normalized_gram_frobenius_residual": 0.14998469816321916,
+          "log2_expected_residual": -2.7371127742336863
+        },
+        {
+          "copy_count": 6,
+          "expected_normalized_gram_frobenius_residual": 0.07264008963074786,
+          "log2_expected_residual": -3.783090207000582
+        },
+        {
+          "copy_count": 7,
+          "expected_normalized_gram_frobenius_residual": 0.03537180147490834,
+          "log2_expected_residual": -4.821256492852578
+        },
+        {
+          "copy_count": 8,
+          "expected_normalized_gram_frobenius_residual": 0.017334215265972484,
+          "log2_expected_residual": -5.85023366373388
+        },
+        {
+          "copy_count": 9,
+          "expected_normalized_gram_frobenius_residual": 0.008559535048494545,
+          "log2_expected_residual": -6.868251852690948
+        },
+        {
+          "copy_count": 10,
+          "expected_normalized_gram_frobenius_residual": 0.00426538900336127,
+          "log2_expected_residual": -7.873106963369846
+        },
+        {
+          "copy_count": 11,
+          "expected_normalized_gram_frobenius_residual": 0.002148961612964165,
+          "log2_expected_residual": -8.862144572618059
+        },
+        {
+          "copy_count": 12,
+          "expected_normalized_gram_frobenius_residual": 0.0010969427036084,
+          "log2_expected_residual": -9.832296112958172
+        },
+        {
+          "copy_count": 13,
+          "expected_normalized_gram_frobenius_residual": 0.000568640303322459,
+          "log2_expected_residual": -10.780196023511817
+        },
+        {
+          "copy_count": 14,
+          "expected_normalized_gram_frobenius_residual": 0.00030007234299315864,
+          "log2_expected_residual": -11.702402024509736
+        },
+        {
+          "copy_count": 15,
+          "expected_normalized_gram_frobenius_residual": 0.0001615514432507019,
+          "log2_expected_residual": -12.595718740296656
+        },
+        {
+          "copy_count": 16,
+          "expected_normalized_gram_frobenius_residual": 8.889198681746275e-05,
+          "log2_expected_residual": -13.457587101498277
+        },
+        {
+          "copy_count": 17,
+          "expected_normalized_gram_frobenius_residual": 5.0043420025659214e-05,
+          "log2_expected_residual": -14.286460086103045
+        },
+        {
+          "copy_count": 18,
+          "expected_normalized_gram_frobenius_residual": 2.883012824492358e-05,
+          "log2_expected_residual": -15.082063220056169
+        },
+        {
+          "copy_count": 19,
+          "expected_normalized_gram_frobenius_residual": 1.698407509989111e-05,
+          "log2_expected_residual": -15.845457818782666
+        },
+        {
+          "copy_count": 20,
+          "expected_normalized_gram_frobenius_residual": 1.0215465002090237e-05,
+          "log2_expected_residual": -16.57888559822266
+        },
+        {
+          "copy_count": 21,
+          "expected_normalized_gram_frobenius_residual": 6.25982834555323e-06,
+          "log2_expected_residual": -17.285445472615876
+        },
+        {
+          "copy_count": 22,
+          "expected_normalized_gram_frobenius_residual": 3.898366853075738e-06,
+          "log2_expected_residual": -17.968698708536056
+        },
+        {
+          "copy_count": 23,
+          "expected_normalized_gram_frobenius_residual": 2.461042743608639e-06,
+          "log2_expected_residual": -18.632298854455083
+        }
+      ],
+      "n": 5,
+      "partition_count": 7,
+      "status": "finite-natural-regular-word-moment-contracts-all-n-bound-proved",
+      "tensor_carrier_materialized": false,
+      "triple_threshold_copy_count": 23,
+      "triple_threshold_expected_residual": 2.461042743608639e-06,
+      "triple_threshold_half_window_bad_mass_upper_bound": 9.844170974434556e-06
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_natural_source_frobenius_moment_without_tensor_carrier",
+      "resolution": "Independent-source factorization plus regular word collisions gives the exact scalar moment.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_all_order_cyclic_quadrant_correlation_at_most_one_half",
+      "resolution": "The cyclic-quadrant-overlap theorem proves the equivalent q<=3/4 bound for every distinct finite-group pair; order eight is sharp.",
+      "resolved": true
+    },
+    {
+      "obligation": "transfer_unconditioned_contraction_to_physical_source_event",
+      "resolution": "Combine E R<=(|G|-1)(3/4)^k with E[R|D]<=E[R]/Pr(D) and the existing Pr(D)=1-o(1) global-distinct theorem.",
+      "resolved": true
+    },
+    {
+      "obligation": "identify_physical_input_fourier_mass_and_compile_dense_transform",
+      "resolution": "State-weighted spectral mass and normalization-one structured access remain separate gates.",
+      "resolved": false
+    }
+  ],
+  "range_overlap_stress_controls": [
+    {
+      "all_order_three_quarter_proved": true,
+      "all_tested_pairs_obey_three_quarter": true,
+      "family": "cyclic-quadrant-code",
+      "maximizing_order_or_degree": 8,
+      "maximum_order_tested": 512,
+      "maximum_regular_range_overlap": 0.75,
+      "status": "cyclic-three-quarter-stress-validates-all-order-proof",
+      "tested_element_pair_count": 1024984,
+      "three_quarter_boundary_residual": 0.0
+    },
+    {
+      "all_order_three_quarter_proved": true,
+      "all_tested_pairs_obey_three_quarter": true,
+      "family": "symmetric-group-regular-field",
+      "maximizing_order_or_degree": 5,
+      "maximum_order_tested": 720,
+      "maximum_regular_range_overlap": 0.6666666666666667,
+      "status": "symmetric-three-quarter-stress-validates-all-group-proof",
+      "tested_element_pair_count": 532544,
+      "three_quarter_boundary_residual": 0.0
+    }
+  ],
+  "status": "natural-frobenius-contraction-proved-structured-access-open",
+  "summary": "Converted the natural k-copy Naimark Gram residual into an exact scalar moment of regular-representation word collisions. The sharp all-order four-ray overlap theorem proves natural source-typical state-weighted contraction; structured dense access and physical decoding are now the decisive gates.",
+  "theorem": {
+    "conditional_copy_bound": "The all-order q<=3/4 theorem implies E R<=(|G|-1)(3/4)^k and o(1) residual for k=ceil(3log2|G|)+O(1).",
+    "conditioning_transfer": "For nonnegative R and event E, E[R|E]<=E[R]/Pr(E); collision-free conditioning therefore preserves any o(1) unconditioned theorem.",
+    "cyclic_power_expansion": "The exact Naimark isometry is a cyclic Fourier sum of paired regular translations L_(h^(1-r)) tensor L_(h^r).",
+    "independent_source_moment": "E_Lambda R=sum_(x!=e) E_(h,h')[E_L Tr(K_L(h,x)^*K_L(h',x))/d_L]^k.",
+    "range_overlap_reduction": "Cauchy reduces off-diagonal scalar kernels to regular Naimark range overlaps, themselves four-ray cyclic group-algebra coefficient collisions.",
+    "regular_representation_average": "Two independent Plancherel partition averages equal normalized trace in Reg(G) tensor Reg(G).",
+    "scope": "Equations (2)-(7), global-distinct source-typical normalized-Frobenius contraction, and maximally-mixed-domain spectral-tail contraction are proved. Physical input domination, uniform conditioning, structured access, decoder, and speedup remain unproved.",
+    "status": "natural-frobenius-contraction-proved-structured-access-open",
+    "theorem_verified": true,
+    "word_collision_formula": "Regular trace reduces the scalar kernel to simultaneous collisions of u=h^(r-1)(xh)^(1-t) and v=h^(-r)(xh)^t."
+  },
+  "theorem_contract": {
+    "conditional_copy_bound": "The all-order q<=3/4 theorem implies E R<=(|G|-1)(3/4)^k and o(1) residual for k=ceil(3log2|G|)+O(1).",
+    "conditioning_transfer": "For nonnegative R and event E, E[R|E]<=E[R]/Pr(E); collision-free conditioning therefore preserves any o(1) unconditioned theorem.",
+    "cyclic_power_expansion": "The exact Naimark isometry is a cyclic Fourier sum of paired regular translations L_(h^(1-r)) tensor L_(h^r).",
+    "independent_source_moment": "E_Lambda R=sum_(x!=e) E_(h,h')[E_L Tr(K_L(h,x)^*K_L(h',x))/d_L]^k.",
+    "range_overlap_reduction": "Cauchy reduces off-diagonal scalar kernels to regular Naimark range overlaps, themselves four-ray cyclic group-algebra coefficient collisions.",
+    "regular_representation_average": "Two independent Plancherel partition averages equal normalized trace in Reg(G) tensor Reg(G).",
+    "scope": "Equations (2)-(7), global-distinct source-typical normalized-Frobenius contraction, and maximally-mixed-domain spectral-tail contraction are proved. Physical input domination, uniform conditioning, structured access, decoder, and speedup remain unproved.",
+    "status": "natural-frobenius-contraction-proved-structured-access-open",
+    "theorem_verified": true,
+    "word_collision_formula": "Regular trace reduces the scalar kernel to simultaneous collisions of u=h^(r-1)(xh)^(1-t) and v=h^(-r)(xh)^t."
+  },
+  "word_map_validations": [
+    {
+      "exact_regular_word_map_verified": true,
+      "maximum_regular_to_plancherel_residual": 0.0,
+      "n": 2,
+      "status": "regular-word-map-equals-two-plancherel-average",
+      "tested_triple_count": 8
+    },
+    {
+      "exact_regular_word_map_verified": true,
+      "maximum_regular_to_plancherel_residual": 4.440892098500626e-16,
+      "n": 3,
+      "status": "regular-word-map-equals-two-plancherel-average",
+      "tested_triple_count": 64
+    },
+    {
+      "exact_regular_word_map_verified": true,
+      "maximum_regular_to_plancherel_residual": 4.440892098500626e-16,
+      "n": 4,
+      "status": "regular-word-map-equals-two-plancherel-average",
+      "tested_triple_count": 64
+    }
+  ]
+}

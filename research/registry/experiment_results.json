@@ -9109,6 +9109,33 @@
   },
   {
     "artifacts": {
+      "self_dual_wreath_plancherel_recoupling_stationarity": "/private/var/folders/y_/k55rjs0x7nb045dsgq61qw000000gn/T/pytest-of-jaspersands/pytest-278/test_report_writer_emits_valid0/plancherel_recoupling_stationarity.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "created_at": "2026-08-24T16:19:50.207132+00:00",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-RECOUPLING-STATIONARITY",
+    "falsifiers_triggered": [
+      "Random independent Kronecker trees do not change the natural irrep label law at any depth.",
+      "A useful collective mechanism must exploit overlap between coupling trees, shared source labels, or multiplicity coherence.",
+      "Classical label stationarity must not be reported as a dequantization of coherent Racah processing."
+    ],
+    "id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-PLANCHEREL-RECOUPLING-STATIONARITY-LATEST",
+    "metrics": {
+      "disjoint_tree_root_law_theorem_count": 1,
+      "finite_control_count": 9,
+      "finite_control_failure_count": 0,
+      "independent_recoupling_rare_channel_focuser_count": 0,
+      "natural_collective_decoder_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "plancherel_recoupling_stationarity_theorem_count": 1,
+      "regular_multiplicity_identity_theorem_count": 1,
+      "shared_source_correlation_theorem_count": 0
+    },
+    "status": "plancherel-recoupling-stationarity-proved-shared-correlation-open",
+    "summary": "Proved exact Plancherel stationarity under dimension-weighted Kronecker recoupling. Independent/disjoint trees cannot focus rare useful channels; the surviving target is shared-source coherent recoupling."
+  },
+  {
+    "artifacts": {
       "code_self_dual_wreath_point_centered_residual_no_go": "research/EXP-CODE-SELF-DUAL-WREATH-POINT-CENTERED-RESIDUAL-NO-GO.json",
       "exp_code_self_dual_wreath_point_centered_residual_no_go": "research/EXP-CODE-SELF-DUAL-WREATH-POINT-CENTERED-RESIDUAL-NO-GO.json",
       "report": "research/EXP-CODE-SELF-DUAL-WREATH-POINT-CENTERED-RESIDUAL-NO-GO.json",
@@ -15401,13 +15428,14 @@
       "coset_recoupling_capability_ledger": "research/representation/coset_recoupling_capability_ledger.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-07-24T03:07:23.180059+00:00",
+    "created_at": "2026-08-24T19:50:37.385208+00:00",
     "experiment_id": "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "falsifiers_triggered": [
       "The S_n QFT is already polynomial and cannot be presented as the missing breakthrough.",
       "Exact Holevo/Fano accounting charges copies but does not construct a collective measurement or decoder.",
       "#BQP multiplicity counting does not construct a coherent Kronecker basis.",
       "Schur-Weyl Clebsch-Gordan circuits do not automatically solve internal Specht tensor products.",
+      "Separate-to-joint Schur dilation carries fixed-source Kronecker multiplicity coherently, but its natural normalized branch merger is the original orientation polar in encoded coordinates.",
       "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
       "An encoded stable shape router does not construct a compressed Clebsch channel isometry.",
       "An encoded left/right relabelling isometry does not construct the state-dependent frame filter or decoder.",
@@ -15421,7 +15449,7 @@
     "metrics": {
       "bounded_support_commutant_block_encoding_poly_proof_count": 1,
       "bounded_tail_natural_access_no_go_theorem_count": 1,
-      "capability_count": 16,
+      "capability_count": 17,
       "diagonal_jm_label_transform_poly_proof_count": 1,
       "exact_holevo_copy_budget_theorem_count": 1,
       "exact_stable_nine_shape_sector_classification_count": 1,
@@ -15434,8 +15462,11 @@
       "maximum_multiplicity_register_bits": 7,
       "maximum_n": 10,
       "maximum_partition_count": 42,
-      "proved_polynomial_primitive_count": 10,
+      "physical_invariant_schur_companion_interface_count": 1,
+      "proved_polynomial_primitive_count": 11,
       "restricted_multiplicity_classical_match_count": 1,
+      "schur_branch_merger_polar_equivalence_theorem_count": 1,
+      "schur_dilated_kronecker_carrier_polynomial_count": 1,
       "stable_branch_direct_conditioned_preparation_count": 0,
       "stable_branch_natural_input_accessible_count": 0,
       "stable_branch_superpolynomial_rarity_theorem_count": 1,
@@ -15484,8 +15515,8 @@
       "typical_irrep_uniform_encoded_tree_transform_count": 0,
       "unresolved_required_capability_count": 3
     },
-    "status": "known-primitives-separated-from-open-recoupling-and-decoder",
-    "summary": "Classified 16 representation primitives and exact finite Kronecker growth through n=10 without transferring solved QFT/counting results to the open decoder."
+    "status": "dilated-isotypic-routing-available-polar-and-decoder-open",
+    "summary": "Classified 17 representation primitives and exact finite Kronecker growth through n=10. Separate-to-joint Schur dilation now supplies an encoded multiplicity carrier, but no exposed coordinates, orientation polar, or decoder."
   },
   {
     "artifacts": {
@@ -18492,11 +18523,11 @@
   },
   {
     "artifacts": {
-      "dcp_carry_affine_degree_invariance": "/private/var/folders/y_/k55rjs0x7nb045dsgq61qw000000gn/T/pytest-of-jaspersands/pytest-205/test_report_keeps_hardness_ten0/carry-affine-degree.json",
-      "report": "/private/var/folders/y_/k55rjs0x7nb045dsgq61qw000000gn/T/pytest-of-jaspersands/pytest-205/test_report_keeps_hardness_ten0/carry-affine-degree.json"
+      "dcp_carry_affine_degree_invariance": "/private/var/folders/y_/k55rjs0x7nb045dsgq61qw000000gn/T/pytest-of-jaspersands/pytest-351/test_report_keeps_hardness_ten0/carry-affine-degree.json",
+      "report": "/private/var/folders/y_/k55rjs0x7nb045dsgq61qw000000gn/T/pytest-of-jaspersands/pytest-351/test_report_keeps_hardness_ten0/carry-affine-degree.json"
     },
     "candidate_id": "DHS-GOWERS-SIEVE",
-    "created_at": "2026-08-21T18:23:32.041499+00:00",
+    "created_at": "2026-08-24T18:38:34.673166+00:00",
     "experiment_id": "EXP-DHS-DCP-CARRY-AFFINE-DEGREE-INVARIANCE",
     "falsifiers_triggered": [
       "Lucas identity fails to match true carry truth-table values.",

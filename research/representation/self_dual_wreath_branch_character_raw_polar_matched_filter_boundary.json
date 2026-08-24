@@ -1,0 +1,221 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Both local fields are isometries, so the polar matched filter should accept the raw field.",
+      "resolution": "False asymptotically: tensor copies drive their natural global overlap, and therefore unwhitened correct success, to zero.",
+      "resolved": true
+    },
+    {
+      "objection": "Near-isometry of C_J guarantees its polar works on the native state.",
+      "resolution": "False without state alignment. The exact correction term is bounded by kappa R, which can be large if the raw state concentrates on bad modes.",
+      "resolved": true
+    },
+    {
+      "objection": "Proving physical-input domination would complete this decoder.",
+      "resolution": "The direction is reversed: polynomial domination plus raw/polar separation proves decoder failure.",
+      "resolved": true
+    },
+    {
+      "objection": "This rejects the known constant-success physical PGM information-theoretically.",
+      "resolution": "No. That PGM may use a different multiplicity whitening and is not identified with Q=polar(C_J) here.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "actual_physical_pgm_rejected": false,
+    "branch_polar_whitened_decoder_succeeds": false,
+    "classical_separation_proved": false,
+    "local_raw_polar_cross_map_positive_contraction": true,
+    "natural_raw_bad_sector_concentration_proved": false,
+    "physical_input_domination_is_positive_completion_gate": false,
+    "polynomial_raw_domination_would_force_whitened_decoder_failure": true,
+    "raw_field_is_native_joint_character_dilation": true,
+    "speedup_claim_allowed": false,
+    "unwhitened_polar_matched_filter_success_vanishes": true
+  },
+  "created_at": "2026-08-24T18:18:02.984839+00:00",
+  "falsifiers_triggered": [
+    "The polar-completed near-isometry is not automatically matched to the native raw joint-character state.",
+    "A flat or polynomially dominated native input would prove failure, not success, for this decoder.",
+    "Any rescue must demonstrate structured raw-state concentration or use a different physical PGM."
+  ],
+  "finite_controls": [
+    {
+      "carrier_dimension": 2,
+      "control_id": "S3-SINGLE-PAIR-RAW-POLAR-MATCHED-FILTER",
+      "correct_block_identity_residual": 3.380187020497506e-16,
+      "exact_raw_polar_matched_filter_boundary_verified": true,
+      "global_overlap_identity_residual": 3.3306690738754696e-16,
+      "group_order": 6,
+      "matched_cross_hermiticity_residual": 5.905038867197423e-17,
+      "matched_cross_maximum_eigenvalue": 0.988641942096356,
+      "matched_cross_minimum_eigenvalue": 0.988641942096356,
+      "matched_success_upper_bound_residual": 0.0,
+      "maximum_local_cross_eigenvalue": 1.0,
+      "maximum_local_cross_hermiticity_residual": 2.4155340991541604e-16,
+      "minimum_local_cross_eigenvalue": 1.0,
+      "n": 3,
+      "normalized_raw_polar_overlap": 0.9886419420963564,
+      "polar_convolution_gram_residual": 0.848870563244934,
+      "polar_distance_below_gram_residual": true,
+      "polar_to_convolution_distance": 0.22569504398648718,
+      "raw_convolution_concentration": 3.0000000000000013,
+      "source_pair_count": 1,
+      "status": "raw-polar-matched-filter-and-whitening-dichotomy-verified",
+      "unwhitened_matched_filter_success": 0.9774128896720546,
+      "whitened_correct_success": 0.7368138900131723,
+      "whitened_success_bound_verified": true,
+      "whitened_success_upper_bound": 6.6793952964772485
+    },
+    {
+      "carrier_dimension": 4,
+      "control_id": "S3-THRESHOLD-RAW-POLAR-MATCHED-FILTER",
+      "correct_block_identity_residual": 2.3109977626689226e-16,
+      "exact_raw_polar_matched_filter_boundary_verified": true,
+      "global_overlap_identity_residual": 2.220446049250313e-16,
+      "group_order": 6,
+      "matched_cross_hermiticity_residual": 4.270833395489631e-17,
+      "matched_cross_maximum_eigenvalue": 0.9776709006307398,
+      "matched_cross_minimum_eigenvalue": 0.9776709006307392,
+      "matched_success_upper_bound_residual": 0.0,
+      "maximum_local_cross_eigenvalue": 1.0000000000000016,
+      "maximum_local_cross_hermiticity_residual": 3.751730447899715e-16,
+      "minimum_local_cross_eigenvalue": 1.0,
+      "n": 3,
+      "normalized_raw_polar_overlap": 0.9776709006307396,
+      "polar_convolution_gram_residual": 0.10763888888888895,
+      "polar_distance_below_gram_residual": true,
+      "polar_to_convolution_distance": 0.025580954425070815,
+      "raw_convolution_concentration": 1.500000000000002,
+      "source_pair_count": 3,
+      "status": "raw-polar-matched-filter-and-whitening-dichotomy-verified",
+      "unwhitened_matched_filter_success": 0.9558403899401218,
+      "whitened_correct_success": 0.9403429364028507,
+      "whitened_success_bound_verified": true,
+      "whitened_success_upper_bound": 1.902991783679148
+    }
+  ],
+  "headline_metrics": {
+    "finite_control_count": 2,
+    "finite_control_failure_count": 0,
+    "natural_raw_concentration_theorem_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "positive_raw_polar_cross_map_theorem_count": 1,
+    "tail_n": 512,
+    "tail_polynomial_concentration_degree": 20,
+    "tail_whitened_success_upper_bound": 1.507571504929585e-36,
+    "three_quarter_power_exponent": -0.24511249783653133,
+    "unwhitened_native_matched_filter_no_go_count": 1,
+    "whitening_concentration_dichotomy_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "evaluate_polar_completed_convolution_on_native_raw_ensemble",
+      "resolution": "The unwhitened correct probability is at most the proved vanishing raw/polar overlap.",
+      "resolved": true
+    },
+    {
+      "obligation": "determine_when_global_polar_whitening_can_rescue_overlap",
+      "resolution": "It can matter only through kappa R: concentration of the raw state on the Frobenius-small bad singular sector.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_or_refute_natural_raw_convolution_concentration",
+      "resolution": "Bound ||C_K||^2 and, more sharply, the joint spectral alignment of C_K C_K^* with |polar(C_J)-C_J|^2 on natural portfolios.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_actual_physical_pgm_and_prove_classical_separation",
+      "resolution": "Other multiplicity-whitened decoders remain outside scope.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "copy_count": 890,
+      "finite_polynomial_domination_failure_visible": false,
+      "log2_concentration_times_gram_upper_bound": 46.61176958355304,
+      "log2_group_order": 295.99514394172405,
+      "log2_polar_gram_residual_upper_bound": -73.38823041644696,
+      "log2_polynomial_raw_concentration_bound": 120.0,
+      "n": 64,
+      "polynomial_concentration_degree": 20,
+      "polynomial_domination_forces_decoder_failure_asymptotically": true,
+      "raw_polar_overlap_upper_bound": 0.0009918226026410628,
+      "status": "asymptotic-raw-domination-separation-not-yet-visible",
+      "three_quarter_power_exponent": -0.24511249783653133,
+      "whitened_success_upper_bound": 107532761351299.44
+    },
+    {
+      "copy_count": 2151,
+      "finite_polynomial_domination_failure_visible": true,
+      "log2_concentration_times_gram_upper_bound": -36.58393886517115,
+      "log2_group_order": 716.1617220836218,
+      "log2_polar_gram_residual_upper_bound": -176.58393886517115,
+      "log2_polynomial_raw_concentration_bound": 140.0,
+      "n": 128,
+      "polynomial_concentration_degree": 20,
+      "polynomial_domination_forces_decoder_failure_asymptotically": true,
+      "raw_polar_overlap_upper_bound": 3.0035153031349526e-08,
+      "status": "polynomially-dominated-raw-state-forces-polar-decoder-failure",
+      "three_quarter_power_exponent": -0.24511249783653133,
+      "whitened_success_upper_bound": 3.1124835544810506e-08
+    },
+    {
+      "copy_count": 5054,
+      "finite_polynomial_domination_failure_visible": true,
+      "log2_concentration_times_gram_upper_bound": -253.60323413106175,
+      "log2_group_order": 1683.9962872242147,
+      "log2_polar_gram_residual_upper_bound": -413.60323413106175,
+      "log2_polynomial_raw_concentration_bound": 160.0,
+      "n": 256,
+      "polynomial_concentration_degree": 20,
+      "polynomial_domination_forces_decoder_failure_asymptotically": true,
+      "raw_polar_overlap_upper_bound": 1.3931997916438775e-17,
+      "status": "polynomially-dominated-raw-state-forces-polar-decoder-failure",
+      "three_quarter_power_exponent": -0.24511249783653133,
+      "whitened_success_upper_bound": 1.3931997916438778e-17
+    },
+    {
+      "copy_count": 11628,
+      "finite_polynomial_domination_failure_visible": true,
+      "log2_concentration_times_gram_upper_bound": -770.8899196711932,
+      "log2_group_order": 3875.166121943203,
+      "log2_polar_gram_residual_upper_bound": -950.8899196711932,
+      "log2_polynomial_raw_concentration_bound": 180.0,
+      "n": 512,
+      "polynomial_concentration_degree": 20,
+      "polynomial_domination_forces_decoder_failure_asymptotically": true,
+      "raw_polar_overlap_upper_bound": 1.507571504929585e-36,
+      "status": "polynomially-dominated-raw-state-forces-polar-decoder-failure",
+      "three_quarter_power_exponent": -0.24511249783653133,
+      "whitened_success_upper_bound": 1.507571504929585e-36
+    }
+  ],
+  "status": "raw-polar-native-matched-filter-rejected-whitening-requires-concentration",
+  "summary": "Converted raw/polar transform separation into an operational decoder boundary: the native unwhitened matched filter fails, and global polar whitening can rescue it only through strong raw-state concentration on the polar bad sector. Polynomial physical domination would kill the route.",
+  "theorem": {
+    "correct_block": "Every correct-label block of C_J^*C_K equals A=|G|^-1 sum_h J_h^*K_h.",
+    "local_cross_map": "J_h^*K_h=F_h^-1/2(|M_+|+|M_-|) is a positive contraction; the k-pair cross map is its tensor product.",
+    "natural_consequence": "The overlap vanishes and E R=O(|G|^-0.245...); any uniform polynomial-in-n raw concentration bound forces P_Q to vanish.",
+    "polar_distance": "For Q=polar(C_J), ||Q-C_J||_F^2/(|G|D) is at most the normalized Gram Frobenius residual R.",
+    "revised_physical_gate": "A flat/dominated native raw state kills this polar decoder. A rescue requires structured concentration on the polar bad singular sector.",
+    "scope": "This rejects the unwhitened matched filter and conditionally rejects its global polar under raw-state domination. It does not analyze every physical PGM or prove the required concentration absent.",
+    "status": "raw-polar-native-matched-filter-rejected-whitening-requires-concentration",
+    "theorem_verified": true,
+    "unwhitened_success": "P_match=Tr(A^2)/D<=Tr(A)/D, exactly the normalized raw/polar overlap.",
+    "whitened_success": "With kappa=||C_K||^2, sqrt(P_Q)<=sqrt(P_match)+sqrt(kappa R)."
+  },
+  "theorem_contract": {
+    "correct_block": "Every correct-label block of C_J^*C_K equals A=|G|^-1 sum_h J_h^*K_h.",
+    "local_cross_map": "J_h^*K_h=F_h^-1/2(|M_+|+|M_-|) is a positive contraction; the k-pair cross map is its tensor product.",
+    "natural_consequence": "The overlap vanishes and E R=O(|G|^-0.245...); any uniform polynomial-in-n raw concentration bound forces P_Q to vanish.",
+    "polar_distance": "For Q=polar(C_J), ||Q-C_J||_F^2/(|G|D) is at most the normalized Gram Frobenius residual R.",
+    "revised_physical_gate": "A flat/dominated native raw state kills this polar decoder. A rescue requires structured concentration on the polar bad singular sector.",
+    "scope": "This rejects the unwhitened matched filter and conditionally rejects its global polar under raw-state domination. It does not analyze every physical PGM or prove the required concentration absent.",
+    "status": "raw-polar-native-matched-filter-rejected-whitening-requires-concentration",
+    "theorem_verified": true,
+    "unwhitened_success": "P_match=Tr(A^2)/D<=Tr(A)/D, exactly the normalized raw/polar overlap.",
+    "whitened_success": "With kappa=||C_K||^2, sqrt(P_Q)<=sqrt(P_match)+sqrt(kappa R)."
+  }
+}

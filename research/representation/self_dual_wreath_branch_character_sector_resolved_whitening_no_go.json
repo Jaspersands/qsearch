@@ -1,0 +1,507 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A tiny low-dimensional mass can coherently cancel a large high-sector matched amplitude.",
+      "resolution": "The proof bounds the whitening correction before sectors interfere. Each sector costs r_nu, and coherent summation costs only p(n).",
+      "resolved": true
+    },
+    {
+      "objection": "The global raw norm may be factorial, invalidating the correction bound.",
+      "resolution": "The exact |G|/d_nu^2 factor cancels the Fourier inversion and partial-trace dimensions sector by sector. No global kappa appears.",
+      "resolved": true
+    },
+    {
+      "objection": "Frobenius near-isometry alone gives an operator-norm decoder theorem.",
+      "resolution": "Not in general. The conclusion additionally uses equivariant Fourier inversion and the exact central raw multiplier bound.",
+      "resolved": true
+    },
+    {
+      "objection": "Failure of this purified branch-polar decoder rejects the physical PGM.",
+      "resolution": "No. The physical multiplicity inverse is a different analysis map.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "actual_physical_pgm_rejected": false,
+    "alternate_multiplicity_whitening_rejected": false,
+    "arbitrary_circuit_lower_bound_proved": false,
+    "branch_polar_whitened_decoder_rejected": true,
+    "classical_separation_proved": false,
+    "global_raw_concentration_escape_closed": true,
+    "low_sector_coherent_alignment_escape_closed": true,
+    "natural_branch_polar_whitened_decoder_success_vanishes": true,
+    "sector_correct_block_fourier_formula_proved": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-24T18:41:05.325040+00:00",
+  "falsifiers_triggered": [
+    "Factorial raw operator concentration cannot rescue this decoder after sector-resolved Fourier inversion.",
+    "The vanishing-mass low-dimensional tail cannot create a constant whitening correction through coherent sector summation.",
+    "Further optimization of polar(C_J)^* is deprioritized; progress requires a different physical analysis map."
+  ],
+  "finite_controls": [
+    {
+      "carrier_dimension": 2,
+      "control_id": "S3-SINGLE-PAIR-SECTOR-WHITENING",
+      "correction_below_partition_times_distance": true,
+      "correction_reconstruction_residual": 5.605695278195255e-16,
+      "direct_correction_success": 0.01696852781159756,
+      "direct_polar_distance_residual": 0.22569504398648718,
+      "direct_polar_gram_residual": 0.848870563244934,
+      "direct_whitened_correct_success": 0.7368138900131722,
+      "exact_sector_resolved_whitening_no_go_verified": true,
+      "group_order": 6,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "matched_reconstruction_residual": 1.5716889285155956e-16,
+      "matched_success_below_overlap": true,
+      "n": 3,
+      "normalized_raw_polar_overlap": 0.9886419420963564,
+      "partition_count": 3,
+      "partition_times_gram_success_bound": 6.708697897423167,
+      "partition_times_polar_distance_bound": 0.6770851319594619,
+      "polar_distance_below_gram_residual": true,
+      "polar_distance_parseval_residual": 1.1102230246251565e-16,
+      "polar_distance_residual": 0.2256950439864873,
+      "polar_gram_parseval_residual": 2.220446049250313e-16,
+      "polar_gram_residual": 0.8488705632449343,
+      "reconstructed_correction_success": 0.016968527811597574,
+      "reconstructed_matched_filter_success": 0.9774128896720551,
+      "reconstructed_whitened_correct_success": 0.7368138900131717,
+      "sector_controls": [
+        {
+          "central_raw_bound_residual": 1.3322676295501878e-15,
+          "central_raw_concentration_upper_bound": 3.0,
+          "correction_amplitude_success": 0.04268172568019075,
+          "correction_below_polar_distance_contribution": true,
+          "correction_bound_residual": 0.0,
+          "irrep_dimension": 1,
+          "partition": [
+            3
+          ],
+          "polar_distance_contribution": 0.08592791687593915,
+          "raw_multiplier_concentration": 3.0000000000000013,
+          "status": "sector-dimension-cancellation-verified"
+        },
+        {
+          "central_raw_bound_residual": 3.3306690738754696e-16,
+          "central_raw_concentration_upper_bound": 0.75,
+          "correction_amplitude_success": 0.005826613731872604,
+          "correction_below_polar_distance_contribution": true,
+          "correction_bound_residual": 0.0,
+          "irrep_dimension": 2,
+          "partition": [
+            2,
+            1
+          ],
+          "polar_distance_contribution": 0.01668062479524564,
+          "raw_multiplier_concentration": 0.7500000000000003,
+          "status": "sector-dimension-cancellation-verified"
+        },
+        {
+          "central_raw_bound_residual": 0.0,
+          "central_raw_concentration_upper_bound": 0.0,
+          "correction_amplitude_success": 0.0,
+          "correction_below_polar_distance_contribution": true,
+          "correction_bound_residual": 0.0,
+          "irrep_dimension": 1,
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "polar_distance_contribution": 0.1230865023153025,
+          "raw_multiplier_concentration": 0.0,
+          "status": "sector-dimension-cancellation-verified"
+        }
+      ],
+      "status": "exact-sector-resolved-whitening-boundary",
+      "unwhitened_matched_filter_success": 0.9774128896720551,
+      "whitened_reconstruction_residual": 6.023393935251983e-16,
+      "whitened_success_bound_verified": true
+    },
+    {
+      "carrier_dimension": 4,
+      "control_id": "S3-THRESHOLD-SECTOR-WHITENING",
+      "correction_below_partition_times_distance": true,
+      "correction_reconstruction_residual": 1.2839693939361548e-15,
+      "direct_correction_success": 8.64029351124595e-05,
+      "direct_polar_distance_residual": 0.025580954425070815,
+      "direct_polar_gram_residual": 0.10763888888888895,
+      "direct_whitened_correct_success": 0.9403429364028517,
+      "exact_sector_resolved_whitening_no_go_verified": true,
+      "group_order": 6,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "matched_reconstruction_residual": 5.120234953623522e-16,
+      "matched_success_below_overlap": true,
+      "n": 3,
+      "normalized_raw_polar_overlap": 0.9776709006307396,
+      "partition_count": 3,
+      "partition_times_gram_success_bound": 2.424342395235737,
+      "partition_times_polar_distance_bound": 0.07674286327521262,
+      "polar_distance_below_gram_residual": true,
+      "polar_distance_parseval_residual": 5.898059818321144e-17,
+      "polar_distance_residual": 0.025580954425070874,
+      "polar_gram_parseval_residual": 2.7755575615628914e-17,
+      "polar_gram_residual": 0.10763888888888892,
+      "reconstructed_correction_success": 8.64029351124685e-05,
+      "reconstructed_matched_filter_success": 0.9558403899401219,
+      "reconstructed_whitened_correct_success": 0.9403429364028513,
+      "sector_controls": [
+        {
+          "central_raw_bound_residual": 8.881784197001252e-16,
+          "central_raw_concentration_upper_bound": 1.5,
+          "correction_amplitude_success": 0.001569366813540992,
+          "correction_below_polar_distance_contribution": true,
+          "correction_bound_residual": 0.0,
+          "irrep_dimension": 1,
+          "partition": [
+            3
+          ],
+          "polar_distance_contribution": 0.0076503637652280965,
+          "raw_multiplier_concentration": 1.5000000000000009,
+          "status": "sector-dimension-cancellation-verified"
+        },
+        {
+          "central_raw_bound_residual": 2.220446049250313e-16,
+          "central_raw_concentration_upper_bound": 1.125,
+          "correction_amplitude_success": 0.00519803573824584,
+          "correction_below_polar_distance_contribution": true,
+          "correction_bound_residual": 0.0,
+          "irrep_dimension": 2,
+          "partition": [
+            2,
+            1
+          ],
+          "polar_distance_contribution": 0.010280226894614683,
+          "raw_multiplier_concentration": 1.1250000000000002,
+          "status": "sector-dimension-cancellation-verified"
+        },
+        {
+          "central_raw_bound_residual": 8.881784197001252e-16,
+          "central_raw_concentration_upper_bound": 1.5,
+          "correction_amplitude_success": 0.0015693668135409909,
+          "correction_below_polar_distance_contribution": true,
+          "correction_bound_residual": 0.0,
+          "irrep_dimension": 1,
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "polar_distance_contribution": 0.007650363765228093,
+          "raw_multiplier_concentration": 1.5000000000000009,
+          "status": "sector-dimension-cancellation-verified"
+        }
+      ],
+      "status": "exact-sector-resolved-whitening-boundary",
+      "unwhitened_matched_filter_success": 0.9558403899401214,
+      "whitened_reconstruction_residual": 8.874105164473344e-16,
+      "whitened_success_bound_verified": true
+    },
+    {
+      "carrier_dimension": 18,
+      "control_id": "S4-COLLISION-FREE-SECTOR-WHITENING",
+      "correction_below_partition_times_distance": true,
+      "correction_reconstruction_residual": 1.1363294468721634e-14,
+      "direct_correction_success": 0.02009072284471418,
+      "direct_polar_distance_residual": 0.20175886695097028,
+      "direct_polar_gram_residual": 0.6013776627875068,
+      "direct_whitened_correct_success": 0.7553505151143359,
+      "exact_sector_resolved_whitening_no_go_verified": true,
+      "group_order": 24,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "matched_reconstruction_residual": 8.320854273819496e-15,
+      "matched_success_below_overlap": true,
+      "n": 4,
+      "normalized_raw_polar_overlap": 0.9850279301009321,
+      "partition_count": 5,
+      "partition_times_gram_success_bound": 7.433932497296372,
+      "partition_times_polar_distance_bound": 1.0087943347548531,
+      "polar_distance_below_gram_residual": true,
+      "polar_distance_parseval_residual": 3.3306690738754696e-16,
+      "polar_distance_residual": 0.20175886695097062,
+      "polar_gram_parseval_residual": 2.3869795029440866e-14,
+      "polar_gram_residual": 0.6013776627875307,
+      "reconstructed_correction_success": 0.020090722844713835,
+      "reconstructed_matched_filter_success": 0.970280025544469,
+      "reconstructed_whitened_correct_success": 0.7553505151143364,
+      "sector_controls": [
+        {
+          "central_raw_bound_residual": 0.0,
+          "central_raw_concentration_upper_bound": 6.138387966702567e-16,
+          "correction_amplitude_success": 3.858848663964116e-36,
+          "correction_below_polar_distance_contribution": true,
+          "correction_bound_residual": 0.0,
+          "irrep_dimension": 1,
+          "partition": [
+            4
+          ],
+          "polar_distance_contribution": 0.031282491032224975,
+          "raw_multiplier_concentration": 4.042341700528755e-32,
+          "status": "sector-dimension-cancellation-verified"
+        },
+        {
+          "central_raw_bound_residual": 1.3322676295501878e-15,
+          "central_raw_concentration_upper_bound": 1.2440169358562931,
+          "correction_amplitude_success": 0.0028388745329534382,
+          "correction_below_polar_distance_contribution": true,
+          "correction_bound_residual": 0.0,
+          "irrep_dimension": 3,
+          "partition": [
+            3,
+            1
+          ],
+          "polar_distance_contribution": 0.08899543197547083,
+          "raw_multiplier_concentration": 1.2440169358562945,
+          "status": "sector-dimension-cancellation-verified"
+        },
+        {
+          "central_raw_bound_residual": 1.7763568394002505e-15,
+          "central_raw_concentration_upper_bound": 3.0,
+          "correction_amplitude_success": 0.01115467502887377,
+          "correction_below_polar_distance_contribution": true,
+          "correction_bound_residual": 0.0,
+          "irrep_dimension": 2,
+          "partition": [
+            2,
+            2
+          ],
+          "polar_distance_contribution": 0.025934409917594357,
+          "raw_multiplier_concentration": 3.0000000000000018,
+          "status": "sector-dimension-cancellation-verified"
+        },
+        {
+          "central_raw_bound_residual": 4.440892098500626e-16,
+          "central_raw_concentration_upper_bound": 1.9106836025229594,
+          "correction_amplitude_success": 0.010524760569601452,
+          "correction_below_polar_distance_contribution": true,
+          "correction_bound_residual": 0.0,
+          "irrep_dimension": 3,
+          "partition": [
+            2,
+            1,
+            1
+          ],
+          "polar_distance_contribution": 0.018975754585721916,
+          "raw_multiplier_concentration": 1.9106836025229599,
+          "status": "sector-dimension-cancellation-verified"
+        },
+        {
+          "central_raw_bound_residual": 0.0,
+          "central_raw_concentration_upper_bound": 6.0000000000000036,
+          "correction_amplitude_success": 0.0022527306618337693,
+          "correction_below_polar_distance_contribution": true,
+          "correction_bound_residual": 0.0,
+          "irrep_dimension": 1,
+          "partition": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "polar_distance_contribution": 0.03657077943995855,
+          "raw_multiplier_concentration": 6.000000000000001,
+          "status": "sector-dimension-cancellation-verified"
+        }
+      ],
+      "status": "exact-sector-resolved-whitening-boundary",
+      "unwhitened_matched_filter_success": 0.9702800255444713,
+      "whitened_reconstruction_residual": 5.565454040653615e-15,
+      "whitened_success_bound_verified": true
+    }
+  ],
+  "headline_metrics": {
+    "actual_physical_pgm_no_go_count": 0,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "global_branch_polar_whitening_no_go_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "sector_correct_block_inversion_theorem_count": 1,
+    "sector_dimension_cancellation_theorem_count": 1,
+    "tail_expected_whitened_success_upper_bound": 1.507571504929585e-36,
+    "tail_log2_partition_weighted_correction_upper_bound": -878.9744655621221,
+    "tail_n": 512
+  },
+  "proof_obligations": [
+    {
+      "obligation": "resolve_low_sector_coherent_alignment_escape",
+      "resolution": "Sector Fourier inversion and the exact d_nu^-2 raw multiplier bound reduce every correction amplitude to its polar-distance mass.",
+      "resolved": true
+    },
+    {
+      "obligation": "remove_global_raw_concentration_from_whitening_bound",
+      "resolution": "The new bound pays only the number p(n) of Fourier sectors, not max_nu ||M_K,nu||^2.",
+      "resolved": true
+    },
+    {
+      "obligation": "decide_branch_polar_global_whitening_route",
+      "resolution": "Its natural correct probability vanishes at the proved copy scale.",
+      "resolved": true
+    },
+    {
+      "obligation": "analyze_actual_joint_character_multiplicity_PGM",
+      "resolution": "The physical PGM uses D_nu^-1/2 after discarding the carrier and is not identified with polar(C_J)^*.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "conditioned_expected_whitened_success_tends_to_zero": true,
+      "copy_count": 355,
+      "expected_whitened_success_upper_bound": 0.13144614949450006,
+      "global_distinct_conditioning_probability_tends_to_one": true,
+      "log2_expected_polar_gram_residual_upper_bound": -29.67504859162925,
+      "log2_group_order": 117.6632636523603,
+      "log2_partition_weighted_correction_upper_bound": -16.647660897576486,
+      "n": 32,
+      "partition_count_decimal": "8349",
+      "raw_polar_overlap_upper_bound": 0.12919290642726902,
+      "source_typical_whitened_success_tends_to_zero": true,
+      "status": "natural-branch-polar-whitened-success-vanishes"
+    },
+    {
+      "conditioned_expected_whitened_success_tends_to_zero": true,
+      "copy_count": 890,
+      "expected_whitened_success_upper_bound": 0.000991823350286495,
+      "global_distinct_conditioning_probability_tends_to_one": true,
+      "log2_expected_polar_gram_residual_upper_bound": -73.38823041644696,
+      "log2_group_order": 295.99514394172405,
+      "log2_partition_weighted_correction_upper_bound": -52.656223683497316,
+      "n": 64,
+      "partition_count_decimal": "1741630",
+      "raw_polar_overlap_upper_bound": 0.0009918226026410628,
+      "source_typical_whitened_success_tends_to_zero": true,
+      "status": "natural-branch-polar-whitened-success-vanishes"
+    },
+    {
+      "conditioned_expected_whitened_success_tends_to_zero": true,
+      "copy_count": 2151,
+      "expected_whitened_success_upper_bound": 3.003515303134953e-08,
+      "global_distinct_conditioning_probability_tends_to_one": true,
+      "log2_expected_polar_gram_residual_upper_bound": -176.58393886517115,
+      "log2_group_order": 716.1617220836218,
+      "log2_partition_weighted_correction_upper_bound": -144.56521293252615,
+      "n": 128,
+      "partition_count_decimal": "4351078600",
+      "raw_polar_overlap_upper_bound": 3.0035153031349526e-08,
+      "source_typical_whitened_success_tends_to_zero": true,
+      "status": "natural-branch-polar-whitened-success-vanishes"
+    },
+    {
+      "conditioned_expected_whitened_success_tends_to_zero": true,
+      "copy_count": 5054,
+      "expected_whitened_success_upper_bound": 1.3931997916438778e-17,
+      "global_distinct_conditioning_probability_tends_to_one": true,
+      "log2_expected_polar_gram_residual_upper_bound": -413.60323413106175,
+      "log2_group_order": 1683.9962872242147,
+      "log2_partition_weighted_correction_upper_bound": -365.2253846467472,
+      "n": 256,
+      "partition_count_decimal": "365749566870782",
+      "raw_polar_overlap_upper_bound": 1.3931997916438775e-17,
+      "source_typical_whitened_success_tends_to_zero": true,
+      "status": "natural-branch-polar-whitened-success-vanishes"
+    },
+    {
+      "conditioned_expected_whitened_success_tends_to_zero": true,
+      "copy_count": 11628,
+      "expected_whitened_success_upper_bound": 1.507571504929585e-36,
+      "global_distinct_conditioning_probability_tends_to_one": true,
+      "log2_expected_polar_gram_residual_upper_bound": -950.8899196711932,
+      "log2_group_order": 3875.166121943203,
+      "log2_partition_weighted_correction_upper_bound": -878.9744655621221,
+      "n": 512,
+      "partition_count_decimal": "4453575699570940947378",
+      "raw_polar_overlap_upper_bound": 1.507571504929585e-36,
+      "source_typical_whitened_success_tends_to_zero": true,
+      "status": "natural-branch-polar-whitened-success-vanishes"
+    }
+  ],
+  "status": "natural-branch-polar-global-whitening-asymptotically-rejected",
+  "summary": "Resolved the last concentration escape for the branch-polar decoder. Fourier-sector dimension cancellation replaces the global kappa R bound by p(n)R, proving natural global-whitening success vanishes. The actual joint-character multiplicity PGM remains the next distinct route.",
+  "theorem": {
+    "central_raw_multiplier": "M_K,nu^*M_K,nu=|G|/d_nu^2 I tensor Q_nu with 0<=Q_nu<=I.",
+    "correct_block_fourier_inversion": "A=|G|^-1 sum_nu d_nu Tr_(V_nu)(M_L,nu^*M_R,nu) for the common diagonal block of equivariant convolutions.",
+    "natural_source_consequence": "At k=ceil(3log2(n!))+2, annealed and globally-distinct conditioned success vanish; Markov gives source-typical failure.",
+    "partition_count_sum": "Minkowski and Cauchy over the p(n) irreps give P_E<=p(n)R.",
+    "pointwise_success_bound": "P_polar<=[sqrt(raw/polar overlap)+sqrt(p(n)R)]^2.",
+    "route_decision": "Low-sector concentration and coherent cross-sector cancellation do not rescue polar(C_J)^* on the native raw ensemble.",
+    "scope": "This terminates the branch-polar whitening decoder, not arbitrary circuits, alternate state preparations, or the physical multiplicity PGM.",
+    "sector_dimension_cancellation": "For A_E,nu=d_nu/|G| Tr_(V_nu)(E_nu^*M_K,nu), ||A_E,nu||_F^2/D<=d_nu||E_nu||_F^2/(|G|D)=r_nu.",
+    "status": "natural-branch-polar-global-whitening-asymptotically-rejected",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "central_raw_multiplier": "M_K,nu^*M_K,nu=|G|/d_nu^2 I tensor Q_nu with 0<=Q_nu<=I.",
+    "correct_block_fourier_inversion": "A=|G|^-1 sum_nu d_nu Tr_(V_nu)(M_L,nu^*M_R,nu) for the common diagonal block of equivariant convolutions.",
+    "natural_source_consequence": "At k=ceil(3log2(n!))+2, annealed and globally-distinct conditioned success vanish; Markov gives source-typical failure.",
+    "partition_count_sum": "Minkowski and Cauchy over the p(n) irreps give P_E<=p(n)R.",
+    "pointwise_success_bound": "P_polar<=[sqrt(raw/polar overlap)+sqrt(p(n)R)]^2.",
+    "route_decision": "Low-sector concentration and coherent cross-sector cancellation do not rescue polar(C_J)^* on the native raw ensemble.",
+    "scope": "This terminates the branch-polar whitening decoder, not arbitrary circuits, alternate state preparations, or the physical multiplicity PGM.",
+    "sector_dimension_cancellation": "For A_E,nu=d_nu/|G| Tr_(V_nu)(E_nu^*M_K,nu), ||A_E,nu||_F^2/D<=d_nu||E_nu||_F^2/(|G|D)=r_nu.",
+    "status": "natural-branch-polar-global-whitening-asymptotically-rejected",
+    "theorem_verified": true
+  }
+}

@@ -6912,6 +6912,101 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     ),
                 ),
                 LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Separate inverse Schur transforms and one joint high-dimensional Schur transform give "
+                        "uniform polynomial global isotypic routing with Kronecker multiplicity coherently encoded "
+                        "in an opaque fixed-source companion subspace. Distinct source-label tuples occupy orthogonal "
+                        "branch sectors, so the controlled router does not itself realize the cross-orientation Gram H_nu."
+                    ),
+                    depends_on=["PO-MEASUREMENT", "PO-COMPLEXITY", "PO-NO-GO"],
+                    status=(
+                        "proved-polynomial-schur-dilated-multiplicity-carrier"
+                        if int(
+                            capability_metrics.get(
+                                "schur_dilated_kronecker_carrier_polynomial_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "blocked-schur-dilated-carrier-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify the separate-to-joint Schur circuit, the GL branching/Kronecker dimension identity, "
+                        "a multiplicity-greater-than-one projector rank, polynomial log(d^k) scaling, and exact "
+                        "orthogonality of distinct source branch sectors. A common coordinate isometry must preserve "
+                        "Gram, but the controlled router must not be counted as the physical orientation map."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-PHYSICAL-SCHUR-COMPANION-INTERFACE",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "On Inv(V_nu^* tensor sigma_e), the uniform fixed-source Schur decomposition factors as "
+                        "the canonical Bell invariant |Omega_nu> tensored with the opaque companion multiplicity "
+                        "state. Bell unpreparation therefore compiles a coherent physical-invariant-to-companion "
+                        "interface without exposing standard Kronecker coordinates."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
+                        "PO-MEASUREMENT",
+                        "PO-COMPLEXITY",
+                    ],
+                    status=(
+                        "proved-polynomial-physical-invariant-schur-companion-interface"
+                        if int(
+                            capability_metrics.get(
+                                "physical_invariant_schur_companion_interface_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "blocked-physical-schur-companion-interface-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "For every active orientation block, verify source isotypic synthesis is an isometry, "
+                        "the invariant subspace factors exactly as |Omega_nu> tensor multiplicity, and Bell "
+                        "contraction is identity on multiplicity. Preserve the opaque companion basis."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-SCHUR-BRANCH-MERGER-POLAR-EQUIVALENCE",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For every orthogonal branchwise Schur encoding B, the natural raw merger S_B=S B^* "
+                        "has the same nonzero singular spectrum as the physical merger S, and "
+                        "polar(S_B)=polar(S)B^*. The analogous joint-character flag embedding conjugates "
+                        "I tensor H_nu and preserves its analysis polar."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
+                        f"LEMMA-{candidate_id}-COSET-PHYSICAL-SCHUR-COMPANION-INTERFACE",
+                        "PO-MEASUREMENT",
+                        "PO-NO-GO",
+                    ],
+                    status=(
+                        "proved-schur-branch-merger-is-orientation-polar-in-encoded-coordinates"
+                        if int(
+                            capability_metrics.get(
+                                "schur_branch_merger_polar_equivalence_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "blocked-schur-branch-polar-equivalence-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify S_B S_B^*=sum_e E_e, conjugation of the domain Gram, equality of all nonzero "
+                        "singular values, polar transport for both the full subspace merger and L_nu, and the "
+                        "which-path environment constraint on every nonzero cross-range overlap. Do not promote "
+                        "this equivalence to a circuit lower bound or a compiled polar."
+                    ),
+                ),
+                LemmaRecord(
                     id=f"LEMMA-{candidate_id}-COSET-INTERNAL-KRONECKER-TRANSFORM",
                     candidate_id=candidate_id,
                     statement=(

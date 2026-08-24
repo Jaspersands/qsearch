@@ -1,0 +1,371 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "H_nu is a Boolean convolution because orientations are bit strings.",
+      "resolution": "Bit labels do not imply XOR covariance; unequal source irreps make the orientation diagonal and overlap depend on absolute bits.",
+      "resolved": true
+    },
+    {
+      "objection": "The character formula is efficient because characters are polynomial-time computable.",
+      "resolution": "Entry evaluation and coherent global contraction are different. The simultaneous-conjugacy quotient still has at least n! terms.",
+      "resolved": true
+    },
+    {
+      "objection": "A fixed local rotation diagonalizes every Q_i(x,y).",
+      "resolution": "Exact local commutators are nonzero in every control.",
+      "resolved": true
+    },
+    {
+      "objection": "Finite maximal Schmidt rank proves every tensor network is exponential.",
+      "resolution": "No. Source-dependent recoupling trees with polynomial internal bond descriptions remain possible and require an asymptotic theorem.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "actual_physical_pgm_rejected": false,
+    "boolean_walsh_diagonalization_is_universal": false,
+    "classical_separation_proved": false,
+    "direct_orientation_kernel_polar_compiled": false,
+    "explicit_pair_orbit_enumeration_polynomial": false,
+    "fixed_local_diagonalizing_basis_exists": false,
+    "global_kronecker_racah_transform_compiled": false,
+    "orientation_kernel_character_tensor_network_identified": true,
+    "polynomial_joint_decoder_proved": false,
+    "product_orientation_transform_is_universal": false,
+    "simultaneous_conjugacy_orbit_formula_proved": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-24T18:56:16.136031+00:00",
+  "falsifiers_triggered": [
+    "Orientation bit strings do not make the physical kernel an XOR convolution.",
+    "Polynomial character evaluation does not collapse the factorial simultaneous-pair orbit space.",
+    "A direct physical polar cannot be assembled from one fixed local orientation basis."
+  ],
+  "finite_controls": [
+    {
+      "boolean_translation_invariance_residual": 0.9999999999999999,
+      "boolean_walsh_diagonalization_valid": false,
+      "character_pair_summand_count": 36,
+      "character_tensor_formula_residual": 2.7666340196582035e-16,
+      "control_id": "W3-THRESHOLD-STANDARD-CHARACTER-TENSOR",
+      "exact_character_tensor_boundary_verified": true,
+      "fixed_local_simultaneous_diagonalization_valid": false,
+      "group_order": 6,
+      "hermiticity_residual": 0.0,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_local_character_factor_commutator_norm": 13.416407864998739,
+      "minimum_kernel_eigenvalue": 0.0,
+      "n": 3,
+      "operator_schmidt_maximum_possible_ranks": [
+        4,
+        4
+      ],
+      "operator_schmidt_ranks": [
+        4,
+        4
+      ],
+      "orientation_dimension": 8,
+      "orientation_qubit_count": 3,
+      "pair_orbit_count_residual": 0,
+      "product_orientation_kernel_valid": false,
+      "simultaneous_pair_orbit_count_direct": 11,
+      "simultaneous_pair_orbit_count_formula": 11,
+      "status": "exact-character-tensor-network-simple-transforms-rejected",
+      "target": [
+        2,
+        1
+      ],
+      "walsh_offdiagonal_fraction": 0.570087712549569,
+      "walsh_offdiagonal_frobenius_norm": 1.274754878398196
+    },
+    {
+      "boolean_translation_invariance_residual": 4.499999999999999,
+      "boolean_walsh_diagonalization_valid": false,
+      "character_pair_summand_count": 576,
+      "character_tensor_formula_residual": 9.952302659327946e-16,
+      "control_id": "W4-COLLISION-FREE-22-CHARACTER-TENSOR",
+      "exact_character_tensor_boundary_verified": true,
+      "fixed_local_simultaneous_diagonalization_valid": false,
+      "group_order": 24,
+      "hermiticity_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_local_character_factor_commutator_norm": 101.19288512538812,
+      "minimum_kernel_eigenvalue": -4.314905058009437e-32,
+      "n": 4,
+      "operator_schmidt_maximum_possible_ranks": [
+        4
+      ],
+      "operator_schmidt_ranks": [
+        4
+      ],
+      "orientation_dimension": 4,
+      "orientation_qubit_count": 2,
+      "pair_orbit_count_residual": 0,
+      "product_orientation_kernel_valid": false,
+      "simultaneous_pair_orbit_count_direct": 43,
+      "simultaneous_pair_orbit_count_formula": 43,
+      "status": "exact-character-tensor-network-simple-transforms-rejected",
+      "target": [
+        2,
+        2
+      ],
+      "walsh_offdiagonal_fraction": 0.8020441719763131,
+      "walsh_offdiagonal_frobenius_norm": 3.7080992435478306
+    },
+    {
+      "boolean_translation_invariance_residual": 1.999999999999999,
+      "boolean_walsh_diagonalization_valid": false,
+      "character_pair_summand_count": 576,
+      "character_tensor_formula_residual": 1.202117586742099e-15,
+      "control_id": "W4-COLLISION-FREE-211-CHARACTER-TENSOR",
+      "exact_character_tensor_boundary_verified": true,
+      "fixed_local_simultaneous_diagonalization_valid": false,
+      "group_order": 24,
+      "hermiticity_residual": 0.0,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_local_character_factor_commutator_norm": 101.19288512538812,
+      "minimum_kernel_eigenvalue": 1.6268603212697667e-32,
+      "n": 4,
+      "operator_schmidt_maximum_possible_ranks": [
+        4
+      ],
+      "operator_schmidt_ranks": [
+        4
+      ],
+      "orientation_dimension": 4,
+      "orientation_qubit_count": 2,
+      "pair_orbit_count_residual": 0,
+      "product_orientation_kernel_valid": false,
+      "simultaneous_pair_orbit_count_direct": 43,
+      "simultaneous_pair_orbit_count_formula": 43,
+      "status": "exact-character-tensor-network-simple-transforms-rejected",
+      "target": [
+        2,
+        1,
+        1
+      ],
+      "walsh_offdiagonal_fraction": 0.6190176445334917,
+      "walsh_offdiagonal_frobenius_norm": 1.4476460245328195
+    }
+  ],
+  "headline_metrics": {
+    "boolean_walsh_shortcut_falsifier_count": 3,
+    "exact_character_tensor_network_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "fixed_local_basis_shortcut_falsifier_count": 3,
+    "global_kronecker_racah_transform_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "product_kernel_shortcut_falsifier_count": 3,
+    "simultaneous_pair_orbit_formula_count": 1,
+    "tail_log2_pair_orbit_lower_bound": 3875.166121943203,
+    "tail_n": 512
+  },
+  "proof_obligations": [
+    {
+      "obligation": "derive_exact_orientation_kernel_character_network",
+      "resolution": "Expanding both invariant projectors factors every source pair into the local 2x2 matrix Q_i(x,y).",
+      "resolved": true
+    },
+    {
+      "obligation": "test_boolean_walsh_diagonalization_shortcut",
+      "resolution": "Rejected by exact nontranslation-invariant controls.",
+      "resolved": true
+    },
+    {
+      "obligation": "test_product_or_fixed_local_basis_shortcuts",
+      "resolution": "Operator-Schmidt ranks and local factor commutators reject both universal ansatzes.",
+      "resolved": true
+    },
+    {
+      "obligation": "compile_global_kronecker_racah_character_contraction",
+      "resolution": "Neither pair-orbit enumeration nor the label-only S_n QFT resolves internal multiplicity spaces.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "direct_orientation_kernel_polar_compiled": false,
+      "information_threshold_orientation_qubits": 16,
+      "internal_kronecker_multiplicity_transform_compiled": false,
+      "log2_group_order": 15.29920801838728,
+      "log2_raw_character_pair_summand_count": 30.59841603677456,
+      "log2_simultaneous_pair_orbit_count_lower_bound": 15.29920801838728,
+      "n": 8,
+      "simultaneous_conjugacy_orbit_enumeration_polynomial": false,
+      "status": "character-network-exact-global-recoupling-transform-open",
+      "symmetric_group_qft_alone_contracts_pair_network": false
+    },
+    {
+      "direct_orientation_kernel_polar_compiled": false,
+      "information_threshold_orientation_qubits": 45,
+      "internal_kronecker_multiplicity_transform_compiled": false,
+      "log2_group_order": 44.25014046988262,
+      "log2_raw_character_pair_summand_count": 88.50028093976525,
+      "log2_simultaneous_pair_orbit_count_lower_bound": 44.25014046988262,
+      "n": 16,
+      "simultaneous_conjugacy_orbit_enumeration_polynomial": false,
+      "status": "character-network-exact-global-recoupling-transform-open",
+      "symmetric_group_qft_alone_contracts_pair_network": false
+    },
+    {
+      "direct_orientation_kernel_polar_compiled": false,
+      "information_threshold_orientation_qubits": 118,
+      "internal_kronecker_multiplicity_transform_compiled": false,
+      "log2_group_order": 117.6632636523603,
+      "log2_raw_character_pair_summand_count": 235.3265273047206,
+      "log2_simultaneous_pair_orbit_count_lower_bound": 117.6632636523603,
+      "n": 32,
+      "simultaneous_conjugacy_orbit_enumeration_polynomial": false,
+      "status": "character-network-exact-global-recoupling-transform-open",
+      "symmetric_group_qft_alone_contracts_pair_network": false
+    },
+    {
+      "direct_orientation_kernel_polar_compiled": false,
+      "information_threshold_orientation_qubits": 296,
+      "internal_kronecker_multiplicity_transform_compiled": false,
+      "log2_group_order": 295.99514394172405,
+      "log2_raw_character_pair_summand_count": 591.9902878834481,
+      "log2_simultaneous_pair_orbit_count_lower_bound": 295.99514394172405,
+      "n": 64,
+      "simultaneous_conjugacy_orbit_enumeration_polynomial": false,
+      "status": "character-network-exact-global-recoupling-transform-open",
+      "symmetric_group_qft_alone_contracts_pair_network": false
+    },
+    {
+      "direct_orientation_kernel_polar_compiled": false,
+      "information_threshold_orientation_qubits": 717,
+      "internal_kronecker_multiplicity_transform_compiled": false,
+      "log2_group_order": 716.1617220836218,
+      "log2_raw_character_pair_summand_count": 1432.3234441672437,
+      "log2_simultaneous_pair_orbit_count_lower_bound": 716.1617220836218,
+      "n": 128,
+      "simultaneous_conjugacy_orbit_enumeration_polynomial": false,
+      "status": "character-network-exact-global-recoupling-transform-open",
+      "symmetric_group_qft_alone_contracts_pair_network": false
+    },
+    {
+      "direct_orientation_kernel_polar_compiled": false,
+      "information_threshold_orientation_qubits": 1684,
+      "internal_kronecker_multiplicity_transform_compiled": false,
+      "log2_group_order": 1683.9962872242147,
+      "log2_raw_character_pair_summand_count": 3367.9925744484294,
+      "log2_simultaneous_pair_orbit_count_lower_bound": 1683.9962872242147,
+      "n": 256,
+      "simultaneous_conjugacy_orbit_enumeration_polynomial": false,
+      "status": "character-network-exact-global-recoupling-transform-open",
+      "symmetric_group_qft_alone_contracts_pair_network": false
+    },
+    {
+      "direct_orientation_kernel_polar_compiled": false,
+      "information_threshold_orientation_qubits": 3876,
+      "internal_kronecker_multiplicity_transform_compiled": false,
+      "log2_group_order": 3875.166121943203,
+      "log2_raw_character_pair_summand_count": 7750.332243886406,
+      "log2_simultaneous_pair_orbit_count_lower_bound": 3875.166121943203,
+      "n": 512,
+      "simultaneous_conjugacy_orbit_enumeration_polynomial": false,
+      "status": "character-network-exact-global-recoupling-transform-open",
+      "symmetric_group_qft_alone_contracts_pair_network": false
+    }
+  ],
+  "status": "orientation-character-network-identified-global-recoupling-open",
+  "summary": "Identified the exact two-group character tensor network for H_nu and rejected Walsh, product-kernel, fixed-local-basis, and explicit orbit enumeration shortcuts. The remaining target is a genuinely global Kronecker/Racah multiplicity transform.",
+  "theorem": {
+    "exact_character_network": "H_nu[e,f]=(d_nu|G|^2)^-1 sum_(x,y) chi_nu(xy) product_i Q_i(x,y)[e_i,f_i].",
+    "local_basis_boundary": "The local Q_i(x,y) family has nonzero commutators, excluding a fixed one-qubit simultaneous eigenbasis.",
+    "orbit_count": "The simultaneous-pair orbit count is |G|^-1 sum_z |C_G(z)|^2; for S_n it is sum_alpha z_alpha>=n!.",
+    "scope": "The finite structural falsifiers reject universal simple ansatzes, not source-dependent polynomial-bond tensor networks or arbitrary circuits.",
+    "simultaneous_conjugacy": "Every summand is invariant under (x,y)->(gxg^-1,gyg^-1).",
+    "status": "orientation-character-network-identified-global-recoupling-open",
+    "surviving_transform": "A positive route must coherently contract the global character network through internal Kronecker/Racah multiplicity registers.",
+    "tensor_product_boundary": "Exact controls attain nontrivial and sometimes maximal operator-Schmidt rank across orientation cuts.",
+    "theorem_verified": true,
+    "walsh_boundary": "Exact controls violate H[e xor a,f xor a]=H[e,f], so Boolean Walsh diagonalization is not a universal source-conditioned transform."
+  },
+  "theorem_contract": {
+    "exact_character_network": "H_nu[e,f]=(d_nu|G|^2)^-1 sum_(x,y) chi_nu(xy) product_i Q_i(x,y)[e_i,f_i].",
+    "local_basis_boundary": "The local Q_i(x,y) family has nonzero commutators, excluding a fixed one-qubit simultaneous eigenbasis.",
+    "orbit_count": "The simultaneous-pair orbit count is |G|^-1 sum_z |C_G(z)|^2; for S_n it is sum_alpha z_alpha>=n!.",
+    "scope": "The finite structural falsifiers reject universal simple ansatzes, not source-dependent polynomial-bond tensor networks or arbitrary circuits.",
+    "simultaneous_conjugacy": "Every summand is invariant under (x,y)->(gxg^-1,gyg^-1).",
+    "status": "orientation-character-network-identified-global-recoupling-open",
+    "surviving_transform": "A positive route must coherently contract the global character network through internal Kronecker/Racah multiplicity registers.",
+    "tensor_product_boundary": "Exact controls attain nontrivial and sometimes maximal operator-Schmidt rank across orientation cuts.",
+    "theorem_verified": true,
+    "walsh_boundary": "Exact controls violate H[e xor a,f xor a]=H[e,f], so Boolean Walsh diagonalization is not a universal source-conditioned transform."
+  }
+}

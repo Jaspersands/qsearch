@@ -1,0 +1,489 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Conjugation covariance makes Jhat_nu block diagonal and therefore efficient.",
+      "resolution": "Block diagonalization leaves arbitrary reduced maps on Kronecker multiplicity spaces; their parameter algebra remains enormous.",
+      "resolved": true
+    },
+    {
+      "objection": "Using one seed per conjugacy class removes the sqrt(|G|) LCU cost.",
+      "resolution": "The exact class-size coefficients have one-norm sqrt(|G|); fewer labels do not change that normalization.",
+      "resolved": true
+    },
+    {
+      "objection": "The regular-master parameter count is a physical average-case circuit lower bound.",
+      "resolution": "False. It proves covariance-only underdetermination; the explicit natural field may have an additional succinct factorization.",
+      "resolved": true
+    },
+    {
+      "objection": "Near-isometry determines the reduced singular vectors.",
+      "resolution": "It constrains singular values in weighted average but leaves arbitrary multiplicity-space polar factors.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "branch_field_conjugation_covariance_proved": true,
+    "class_twirl_reconstruction_proved": true,
+    "classical_separation_proved": false,
+    "covariance_and_near_isometry_sufficient_for_compilation": false,
+    "direct_class_lcu_normalization_bypass_rejected": true,
+    "direct_equivariant_multiplier_compiled": false,
+    "equivariant_multiplier_intertwiner_form_proved": true,
+    "physical_decoder_compiled": false,
+    "specific_quadrant_reduced_maps_factorized": false,
+    "speedup_claim_allowed": false,
+    "wigner_eckart_reduced_map_form_proved": true
+  },
+  "created_at": "2026-08-24T17:45:05.142064+00:00",
+  "falsifiers_triggered": [
+    "Block diagonal does not mean efficiently synthesized when multiplicity maps are unrestricted.",
+    "Conjugacy-class compression does not improve direct LCU normalization.",
+    "The result leaves a direct explicit reduced-map circuit open and is not a universal lower bound."
+  ],
+  "finite_controls": [
+    {
+      "branch_dimension": 2,
+      "class_reconstruction_residual": 2.6029481525141727e-16,
+      "control_id": "S3-STANDARD-ONE-PAIR",
+      "exact_equivariant_normal_form_verified": true,
+      "fourier_partition": [
+        2,
+        1
+      ],
+      "group_order": 6,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "maximum_class_twirl_residual": 1.7097135372855755e-16,
+      "maximum_field_covariance_residual": 1.3352164265592358e-16,
+      "maximum_multiplier_intertwining_residual": 1.9977011555337036e-16,
+      "maximum_multiplier_singular_value": 0.9928253927028234,
+      "minimum_multiplier_singular_value": 0.7559687149759711,
+      "multiplier_input_dimension": 4,
+      "multiplier_output_dimension": 8,
+      "n": 3,
+      "source_carrier_dimension": 2,
+      "status": "equivariant-multiplier-and-class-twirl-normal-form-verified"
+    },
+    {
+      "branch_dimension": 2,
+      "class_reconstruction_residual": 8.8830199442164e-16,
+      "control_id": "S4-STANDARD-ONE-PAIR",
+      "exact_equivariant_normal_form_verified": true,
+      "fourier_partition": [
+        3,
+        1
+      ],
+      "group_order": 24,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ]
+      ],
+      "maximum_class_twirl_residual": 4.180964433177936e-16,
+      "maximum_field_covariance_residual": 1.2897273114776119e-15,
+      "maximum_multiplier_intertwining_residual": 1.0128833020079961e-15,
+      "maximum_multiplier_singular_value": 1.236987207619485,
+      "minimum_multiplier_singular_value": 1.0079582866346282,
+      "multiplier_input_dimension": 9,
+      "multiplier_output_dimension": 18,
+      "n": 4,
+      "source_carrier_dimension": 3,
+      "status": "equivariant-multiplier-and-class-twirl-normal-form-verified"
+    }
+  ],
+  "headline_metrics": {
+    "class_twirl_reconstruction_theorem_count": 1,
+    "covariance_only_insufficiency_theorem_count": 1,
+    "equivariant_multiplier_normal_form_theorem_count": 1,
+    "explicit_reduced_map_factorization_count": 0,
+    "finite_multiplier_control_count": 2,
+    "maximum_finite_class_twirl_residual": 4.180964433177936e-16,
+    "maximum_finite_intertwining_residual": 1.0128833020079961e-15,
+    "multiplicity_freedom_control_count": 3,
+    "new_quantum_algorithm_count": 0,
+    "tail_class_lcu_normalization_log2": 358.0808610418109,
+    "tail_n": 128,
+    "tail_reduced_parameter_count_log2": 6163526.593218173
+  },
+  "multiplicity_controls": [
+    {
+      "branch_dimension": 2,
+      "cauchy_lower_bound": "8/3",
+      "cauchy_ratio": 1.125,
+      "class_lcu_coefficient_one_norm": 2.449489742783178,
+      "control_id": "S3-MULTIPLICITY",
+      "covariance_alone_determines_reduced_maps": false,
+      "decomposition_dimension_sum": 4,
+      "exact_multiplicity_decomposition_verified": true,
+      "fourier_irrep_dimension": 2,
+      "fourier_partition": [
+        2,
+        1
+      ],
+      "group_order": 6,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "n": 3,
+      "reduced_rectangular_parameter_count": 6,
+      "reduced_square_multiplicity_sum": 3,
+      "representation_dimension": 4,
+      "source_carrier_dimension": 2,
+      "status": "multiplicity-algebra-freedom-and-cauchy-pressure-verified",
+      "target_multiplicities": [
+        [
+          [
+            3
+          ],
+          1
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          1
+        ],
+        [
+          [
+            1,
+            1,
+            1
+          ],
+          1
+        ]
+      ]
+    },
+    {
+      "branch_dimension": 2,
+      "cauchy_lower_bound": "27/8",
+      "cauchy_ratio": 1.1851851851851851,
+      "class_lcu_coefficient_one_norm": 4.898979485566356,
+      "control_id": "S4-MULTIPLICITY",
+      "covariance_alone_determines_reduced_maps": false,
+      "decomposition_dimension_sum": 9,
+      "exact_multiplicity_decomposition_verified": true,
+      "fourier_irrep_dimension": 3,
+      "fourier_partition": [
+        3,
+        1
+      ],
+      "group_order": 24,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "reduced_rectangular_parameter_count": 8,
+      "reduced_square_multiplicity_sum": 4,
+      "representation_dimension": 9,
+      "source_carrier_dimension": 3,
+      "status": "multiplicity-algebra-freedom-and-cauchy-pressure-verified",
+      "target_multiplicities": [
+        [
+          [
+            4
+          ],
+          1
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          1
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          1
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          1
+        ]
+      ]
+    },
+    {
+      "branch_dimension": 4,
+      "cauchy_lower_bound": "54",
+      "cauchy_ratio": 1.037037037037037,
+      "class_lcu_coefficient_one_norm": 4.898979485566356,
+      "control_id": "S4-TWO-PAIR-MULTIPLICITY",
+      "covariance_alone_determines_reduced_maps": false,
+      "decomposition_dimension_sum": 36,
+      "exact_multiplicity_decomposition_verified": true,
+      "fourier_irrep_dimension": 2,
+      "fourier_partition": [
+        2,
+        2
+      ],
+      "group_order": 24,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 4,
+      "reduced_rectangular_parameter_count": 224,
+      "reduced_square_multiplicity_sum": 56,
+      "representation_dimension": 36,
+      "source_carrier_dimension": 18,
+      "status": "multiplicity-algebra-freedom-and-cauchy-pressure-verified",
+      "target_multiplicities": [
+        [
+          [
+            4
+          ],
+          2
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          4
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          4
+        ],
+        [
+          [
+            2,
+            1,
+            1
+          ],
+          4
+        ],
+        [
+          [
+            1,
+            1,
+            1,
+            1
+          ],
+          2
+        ]
+      ]
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_conjugation_equivariant_multiplier_normal_form",
+      "resolution": "The multiplier is an exact intertwiner and decomposes into identity irrep rows tensor reduced multiplicity maps.",
+      "resolved": true
+    },
+    {
+      "obligation": "test_conjugacy_class_compression_as_normalization_bypass",
+      "resolution": "Rejected for direct class LCU: the class-size coefficients still sum to sqrt(|G|).",
+      "resolved": true
+    },
+    {
+      "obligation": "determine_whether_covariance_and_near_isometry_fix_reduced_maps",
+      "resolution": "They do not: the allowed reduced-map algebra has dimension |Z| sum m_tau^2, with the exact Cauchy lower bound.",
+      "resolved": true
+    },
+    {
+      "obligation": "factor_explicit_quadrant_reduced_maps_in_young_tower",
+      "resolution": "Compute or bound the specific R_(nu,tau) using cyclic power maps, centralizer induction, and sequential recoupling.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_physical_decoder_and_classical_separation",
+      "resolution": "No direct multiplier circuit, physical-input theorem, decoder, or end-to-end speedup is proved.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "branch_dimension_log2": 48,
+      "copy_count": 48,
+      "covariance_and_gap_imply_polynomial_compiler": false,
+      "covariance_reduction_factor_log2": 15.29920801838728,
+      "direct_class_lcu_normalization_log2": 7.64960400919364,
+      "explicit_reduced_map_factorization_open": true,
+      "log2_group_order": 15.29920801838728,
+      "multiplier_domain_dimension_log2": 1472.5313246872365,
+      "n": 8,
+      "reduced_rectangular_parameter_count_log2": 2977.7634413560854,
+      "reduced_square_multiplicity_sum_log2": 2929.7634413560854,
+      "regular_master_cauchy_bound_is_exact": true,
+      "regular_master_source_dimension_log2": 1468.723969765179,
+      "status": "regular-master-multiplicity-algebra-remains-exponentially-free",
+      "witness_fourier_dimension_log2": 3.807354922057604,
+      "witness_fourier_partition": [
+        4,
+        4
+      ]
+    },
+    {
+      "branch_dimension_log2": 135,
+      "copy_count": 135,
+      "covariance_and_gap_imply_polynomial_compiler": false,
+      "covariance_reduction_factor_log2": 44.25014046988262,
+      "direct_class_lcu_normalization_log2": 22.12507023494131,
+      "explicit_reduced_map_factorization_open": true,
+      "log2_group_order": 44.25014046988262,
+      "multiplier_domain_dimension_log2": 11958.019726299974,
+      "n": 16,
+      "reduced_rectangular_parameter_count_log2": 24006.789312130066,
+      "reduced_square_multiplicity_sum_log2": 23871.789312130066,
+      "regular_master_cauchy_bound_is_exact": true,
+      "regular_master_source_dimension_log2": 11947.537926868308,
+      "status": "regular-master-multiplicity-algebra-remains-exponentially-free",
+      "witness_fourier_dimension_log2": 10.481799431665753,
+      "witness_fourier_partition": [
+        8,
+        8
+      ]
+    },
+    {
+      "branch_dimension_log2": 355,
+      "copy_count": 355,
+      "covariance_and_gap_imply_polynomial_compiler": false,
+      "covariance_reduction_factor_log2": 117.6632636523603,
+      "direct_class_lcu_normalization_log2": 58.83163182618015,
+      "explicit_reduced_map_factorization_open": true,
+      "log2_group_order": 117.6632636523603,
+      "multiplier_domain_dimension_log2": 83565.99271304716,
+      "n": 32,
+      "reduced_rectangular_parameter_count_log2": 167369.32216244197,
+      "reduced_square_multiplicity_sum_log2": 167014.32216244197,
+      "regular_master_cauchy_bound_is_exact": true,
+      "regular_master_source_dimension_log2": 83540.91719317582,
+      "status": "regular-master-multiplicity-algebra-remains-exponentially-free",
+      "witness_fourier_dimension_log2": 25.07551987134472,
+      "witness_fourier_partition": [
+        16,
+        16
+      ]
+    },
+    {
+      "branch_dimension_log2": 890,
+      "copy_count": 890,
+      "covariance_and_gap_imply_polynomial_compiler": false,
+      "covariance_reduction_factor_log2": 295.99514394172405,
+      "direct_class_lcu_normalization_log2": 147.99757197086203,
+      "explicit_reduced_map_factorization_open": true,
+      "log2_group_order": 295.99514394172405,
+      "multiplier_domain_dimension_log2": 526926.9804387864,
+      "n": 64,
+      "reduced_rectangular_parameter_count_log2": 1054447.965733631,
+      "reduced_square_multiplicity_sum_log2": 1053557.965733631,
+      "regular_master_cauchy_bound_is_exact": true,
+      "regular_master_source_dimension_log2": 526871.3562162688,
+      "status": "regular-master-multiplicity-algebra-remains-exponentially-free",
+      "witness_fourier_dimension_log2": 55.62422251764499,
+      "witness_fourier_partition": [
+        32,
+        32
+      ]
+    },
+    {
+      "branch_dimension_log2": 2151,
+      "copy_count": 2151,
+      "covariance_and_gap_imply_polynomial_compiler": false,
+      "covariance_reduction_factor_log2": 716.1617220836218,
+      "direct_class_lcu_normalization_log2": 358.0808610418109,
+      "explicit_reduced_map_factorization_open": true,
+      "log2_group_order": 716.1617220836218,
+      "multiplier_domain_dimension_log2": 3081045.8774701282,
+      "n": 128,
+      "reduced_rectangular_parameter_count_log2": 6163526.593218173,
+      "reduced_square_multiplicity_sum_log2": 6161375.593218173,
+      "regular_master_cauchy_bound_is_exact": true,
+      "regular_master_source_dimension_log2": 3080927.728403741,
+      "status": "regular-master-multiplicity-algebra-remains-exponentially-free",
+      "witness_fourier_dimension_log2": 118.14906638714533,
+      "witness_fourier_partition": [
+        64,
+        64
+      ]
+    }
+  ],
+  "status": "equivariant-multiplier-normal-form-proved-reduced-map-factorization-open",
+  "summary": "Reduced every polar Fourier multiplier to explicit Kronecker multiplicity maps and proved that covariance, class compression, and state-weighted near-isometry alone do not compile them. The remaining high-value task is a Young-tower factorization of the specific quadrant maps.",
+  "theorem": {
+    "class_lcu_boundary": "The direct class-twirl LCU has coefficient one-norm sqrt(|G|), so conjugacy compression alone leaves the generic normalization.",
+    "class_twirl_form": "Each conjugacy-class kernel average is a left-right representation twirl of one representative, and their size-weighted sum is Jhat_nu.",
+    "field_covariance": "J_(xhx^-1)=Q_x J_h P_x^* follows from conjugation covariance of Young actions, cyclic functional calculus, and local Naimark completion.",
+    "multiplicity_freedom": "The reduced intertwiner space has |Z| sum_tau m_tau^2 parameters, with sum m_tau^2 >= (d_nu dim(P))^2/|G|.",
+    "multiplier_intertwining": "Jhat_nu intertwines rho_nu tensor P with rho_nu tensor Q.",
+    "reduced_wigner_eckart_form": "In the tau-isotypic decomposition, Jhat_nu=direct_sum_tau I_(d_tau) tensor R_(nu,tau).",
+    "regular_master_pressure": "For P=Reg^(tensor 2k), m_tau=|G|^(2k-1)d_nu d_tau and the Cauchy lower bound is exact.",
+    "scope": "This is an exact normal form and covariance-only insufficiency result, not a circuit lower bound for the explicit reduced maps.",
+    "status": "equivariant-multiplier-normal-form-proved-reduced-map-factorization-open",
+    "surviving_target": "A positive compiler must factor the specific reduced maps using quadrant cyclic phases and Young/Racah structure; symmetry and gap alone are insufficient.",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "class_lcu_boundary": "The direct class-twirl LCU has coefficient one-norm sqrt(|G|), so conjugacy compression alone leaves the generic normalization.",
+    "class_twirl_form": "Each conjugacy-class kernel average is a left-right representation twirl of one representative, and their size-weighted sum is Jhat_nu.",
+    "field_covariance": "J_(xhx^-1)=Q_x J_h P_x^* follows from conjugation covariance of Young actions, cyclic functional calculus, and local Naimark completion.",
+    "multiplicity_freedom": "The reduced intertwiner space has |Z| sum_tau m_tau^2 parameters, with sum m_tau^2 >= (d_nu dim(P))^2/|G|.",
+    "multiplier_intertwining": "Jhat_nu intertwines rho_nu tensor P with rho_nu tensor Q.",
+    "reduced_wigner_eckart_form": "In the tau-isotypic decomposition, Jhat_nu=direct_sum_tau I_(d_tau) tensor R_(nu,tau).",
+    "regular_master_pressure": "For P=Reg^(tensor 2k), m_tau=|G|^(2k-1)d_nu d_tau and the Cauchy lower bound is exact.",
+    "scope": "This is an exact normal form and covariance-only insufficiency result, not a circuit lower bound for the explicit reduced maps.",
+    "status": "equivariant-multiplier-normal-form-proved-reduced-map-factorization-open",
+    "surviving_target": "A positive compiler must factor the specific reduced maps using quadrant cyclic phases and Young/Racah structure; symmetry and gap alone are insufficient.",
+    "theorem_verified": true
+  }
+}

@@ -204,6 +204,20 @@
       "year": 2025
     },
     {
+      "id": "christandl-et-al-plethysm-sharp-bqp-2026",
+      "tags": [
+        "schur-transform",
+        "branching-multiplicity",
+        "sharp-bqp",
+        "multiplicity-space",
+        "representation-theory"
+      ],
+      "title": "Plethysm is in #BQP",
+      "url": "https://arxiv.org/abs/2602.08441",
+      "why_it_matters": "Uses multiple high-dimensional Schur-transform embeddings and strong Fourier sampling to place broad branching multiplicities in #BQP. The verifier fixes an irrep basis vector while leaving the witness multiplicity space invariant, so it supports efficient dilated isotypic access but does not expose standard Kronecker multiplicity coordinates or a decoder.",
+      "year": 2026
+    },
+    {
       "id": "code-equivalence-fourier-2011",
       "tags": [
         "code-equivalence",
@@ -583,19 +597,6 @@
       "url": "https://arxiv.org/abs/2010.01240",
       "why_it_matters": "Points toward proof-checking candidate algorithms rather than trusting generated explanations.",
       "year": 2020
-    },
-    {
-      "id": "sellke-2020",
-      "tags": [
-        "symmetric-group",
-        "representation-theory",
-        "plancherel",
-        "tensor-covering"
-      ],
-      "title": "Covering Irrep(S_n) With Tensor Products and Powers",
-      "url": "https://arxiv.org/abs/2004.05283",
-      "why_it_matters": "A fixed absolute number C of arbitrarily coupled Plancherel irreps of S_n tensor together to cover every irrep with probability 1-o(1), which supplies the block-covering step used by the Plancherel block obstruction and the multistar degree obstruction.",
-      "year": 2020
     }
   ],
   "tag_index": {
@@ -643,6 +644,9 @@
     "block-encoding": [
       "qsvt-2018",
       "cs-guide-qsvt-2023"
+    ],
+    "branching-multiplicity": [
+      "christandl-et-al-plethysm-sharp-bqp-2026"
     ],
     "breakthrough-template": [
       "shor-1994"
@@ -865,7 +869,8 @@
     ],
     "multiplicity-space": [
       "burchardt-high-dimensional-schur-2025",
-      "yoshida-random-dilation-2025"
+      "yoshida-random-dilation-2025",
+      "christandl-et-al-plethysm-sharp-bqp-2026"
     ],
     "multiregister": [
       "moore-russell-multiregister-2005"
@@ -984,7 +989,8 @@
       "aggarwal-elboim-maximal-dimension-2026",
       "feray-sniady-character-bounds-2007",
       "burchardt-high-dimensional-schur-2025",
-      "yoshida-random-dilation-2025"
+      "yoshida-random-dilation-2025",
+      "christandl-et-al-plethysm-sharp-bqp-2026"
     ],
     "schur-product": [
       "bardet-high-rate-alternant-2023",
@@ -995,10 +1001,12 @@
     "schur-transform": [
       "bacon-chuang-harrow-schur-2004",
       "burchardt-high-dimensional-schur-2025",
-      "yoshida-random-dilation-2025"
+      "yoshida-random-dilation-2025",
+      "christandl-et-al-plethysm-sharp-bqp-2026"
     ],
     "sharp-bqp": [
-      "ikenmeyer-subramanian-kronecker-2023"
+      "ikenmeyer-subramanian-kronecker-2023",
+      "christandl-et-al-plethysm-sharp-bqp-2026"
     ],
     "shifted-character": [
       "van-dam-hallgren-shifted-character-2000",

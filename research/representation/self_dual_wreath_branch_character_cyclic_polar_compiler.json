@@ -1,0 +1,2052 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Tiny singular values force QSVT-style inverse-gap cost for every character factor.",
+      "resolution": "False for known h: cyclic eigenphase labels directly compile the polar phase, just as a structured reassociation can bypass correlation size.",
+      "resolved": true
+    },
+    {
+      "objection": "Tensoring many local polar compilers reintroduces condition-number cost.",
+      "resolution": "Polar commutes exactly with tensor products; gate errors add, while no singular magnitudes are multiplied or inverted.",
+      "resolved": true
+    },
+    {
+      "objection": "Known-relative compilation immediately strips the physical row-copy phases.",
+      "resolution": "False: h=s^-1 g contains the unknown hidden label, and the norm-two S3 cocycle defect prevents factorization into known-s and hidden-g pieces.",
+      "resolved": true
+    },
+    {
+      "objection": "The cocycle counterexample rules out all carrier-dependent decoders.",
+      "resolution": "No. It rejects one-pass phase stripping. Coherent path registers, holonomy resolution, and direct joint multiplicity CS remain open.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "classical_separation_proved": false,
+    "complete_orientation_polar_compiled": false,
+    "hidden_relative_covariant_assembly_compiled": false,
+    "joint_multiplicity_inverse_compiled": false,
+    "known_relative_local_character_polar_polynomial": true,
+    "known_relative_tensor_character_polar_polynomial": true,
+    "minimum_singular_value_amplification_required": false,
+    "observed_time_only_phase_stripping_compiles_decoder": false,
+    "polar_field_is_cocycle": false,
+    "reason": "Known-relative matrix-valued character phases are now directly compilable, but the relative element contains the hidden label and the polar field has norm-two holonomy/cocycle failure.",
+    "speedup_claim_allowed": false
+  },
+  "cocycle_countercontrol": {
+    "cocycle_operator_norm_defect": 1.9999999999999996,
+    "exact_norm_two_cocycle_failure_verified": true,
+    "generator": [
+      1,
+      2,
+      0
+    ],
+    "generator_order": 3,
+    "generator_polar_rank": 2,
+    "generator_polar_unitarity_residual": 4.86718953609029e-16,
+    "left_partition": [
+      3
+    ],
+    "n": 3,
+    "observed_time_only_phase_stripping_possible": false,
+    "right_partition": [
+      2,
+      1
+    ],
+    "squared_generator": [
+      2,
+      0,
+      1
+    ],
+    "squared_generator_polar_rank": 2,
+    "squared_generator_polar_unitarity_residual": 4.86718953609029e-16,
+    "status": "natural-full-rank-cyclic-polar-cocycle-failure"
+  },
+  "created_at": "2026-08-24T15:51:58.625751+00:00",
+  "falsifiers_triggered": [
+    "Small character-factor singular values are not a barrier when the relative permutation is known.",
+    "Local tensor polar compilation does not imply a hidden-label-independent covariant decoder.",
+    "The first cyclic three-cycle control already carries maximal polar holonomy."
+  ],
+  "headline_metrics": {
+    "cocycle_operator_norm_defect": 1.9999999999999996,
+    "finite_local_control_count": 18,
+    "finite_local_control_failure_count": 0,
+    "finite_tensor_control_count": 24,
+    "finite_tensor_control_failure_count": 0,
+    "hidden_relative_covariant_assembly_count": 0,
+    "inverse_singular_value_amplification_count": 0,
+    "joint_multiplicity_inverse_compiler_count": 0,
+    "known_relative_local_cyclic_polar_theorem_count": 1,
+    "known_relative_tensor_character_polar_theorem_count": 1,
+    "natural_full_rank_cocycle_counterexample_count": 1,
+    "new_quantum_algorithm_count": 0
+  },
+  "local_controls": [
+    {
+      "active_singular_value_count": 2,
+      "carrier_dimension": 2,
+      "character_sign": 1,
+      "control_id": "S3-TRIVIAL-STANDARD-0-SIGN-1",
+      "cyclic_projector_idempotence_residual": 0.0,
+      "cyclic_projector_resolution_residual": 0.0,
+      "direct_to_cyclic_polar_residual": 0.0,
+      "exact_known_relative_cyclic_polar_verified": true,
+      "final_support_residual": 0.0,
+      "initial_support_residual": 0.0,
+      "inverse_singular_value_amplification_used": false,
+      "left_partition": [
+        3
+      ],
+      "maximum_positive_singular_value": 1.0,
+      "minimum_positive_singular_value": 1.0,
+      "n": 3,
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "permutation_order": 1,
+      "relative_unitary_order_residual": 0.0,
+      "right_partition": [
+        2,
+        1
+      ],
+      "status": "exact-known-relative-cyclic-phase-polar"
+    },
+    {
+      "active_singular_value_count": 0,
+      "carrier_dimension": 2,
+      "character_sign": -1,
+      "control_id": "S3-TRIVIAL-STANDARD-0-SIGN--1",
+      "cyclic_projector_idempotence_residual": 0.0,
+      "cyclic_projector_resolution_residual": 0.0,
+      "direct_to_cyclic_polar_residual": 0.0,
+      "exact_known_relative_cyclic_polar_verified": true,
+      "final_support_residual": 0.0,
+      "initial_support_residual": 0.0,
+      "inverse_singular_value_amplification_used": false,
+      "left_partition": [
+        3
+      ],
+      "maximum_positive_singular_value": null,
+      "minimum_positive_singular_value": null,
+      "n": 3,
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "permutation_order": 1,
+      "relative_unitary_order_residual": 0.0,
+      "right_partition": [
+        2,
+        1
+      ],
+      "status": "exact-known-relative-cyclic-phase-polar"
+    },
+    {
+      "active_singular_value_count": 1,
+      "carrier_dimension": 2,
+      "character_sign": 1,
+      "control_id": "S3-TRIVIAL-STANDARD-1-SIGN-1",
+      "cyclic_projector_idempotence_residual": 6.72292453803368e-17,
+      "cyclic_projector_resolution_residual": 6.123233995736766e-17,
+      "direct_to_cyclic_polar_residual": 3.925231146709438e-16,
+      "exact_known_relative_cyclic_polar_verified": true,
+      "final_support_residual": 1.3877787807814457e-16,
+      "initial_support_residual": 1.3877787807814457e-16,
+      "inverse_singular_value_amplification_used": false,
+      "left_partition": [
+        3
+      ],
+      "maximum_positive_singular_value": 1.0,
+      "minimum_positive_singular_value": 1.0,
+      "n": 3,
+      "permutation": [
+        0,
+        2,
+        1
+      ],
+      "permutation_order": 2,
+      "relative_unitary_order_residual": 1.1102230246251565e-16,
+      "right_partition": [
+        2,
+        1
+      ],
+      "status": "exact-known-relative-cyclic-phase-polar"
+    },
+    {
+      "active_singular_value_count": 1,
+      "carrier_dimension": 2,
+      "character_sign": -1,
+      "control_id": "S3-TRIVIAL-STANDARD-1-SIGN--1",
+      "cyclic_projector_idempotence_residual": 6.72292453803368e-17,
+      "cyclic_projector_resolution_residual": 6.123233995736766e-17,
+      "direct_to_cyclic_polar_residual": 5.606979963131422e-16,
+      "exact_known_relative_cyclic_polar_verified": true,
+      "final_support_residual": 1.3877787807814457e-16,
+      "initial_support_residual": 1.3877787807814457e-16,
+      "inverse_singular_value_amplification_used": false,
+      "left_partition": [
+        3
+      ],
+      "maximum_positive_singular_value": 1.0,
+      "minimum_positive_singular_value": 1.0,
+      "n": 3,
+      "permutation": [
+        0,
+        2,
+        1
+      ],
+      "permutation_order": 2,
+      "relative_unitary_order_residual": 1.1102230246251565e-16,
+      "right_partition": [
+        2,
+        1
+      ],
+      "status": "exact-known-relative-cyclic-phase-polar"
+    },
+    {
+      "active_singular_value_count": 1,
+      "carrier_dimension": 2,
+      "character_sign": 1,
+      "control_id": "S3-TRIVIAL-STANDARD-2-SIGN-1",
+      "cyclic_projector_idempotence_residual": 6.123233995736766e-17,
+      "cyclic_projector_resolution_residual": 6.123233995736766e-17,
+      "direct_to_cyclic_polar_residual": 0.0,
+      "exact_known_relative_cyclic_polar_verified": true,
+      "final_support_residual": 0.0,
+      "initial_support_residual": 0.0,
+      "inverse_singular_value_amplification_used": false,
+      "left_partition": [
+        3
+      ],
+      "maximum_positive_singular_value": 1.0,
+      "minimum_positive_singular_value": 1.0,
+      "n": 3,
+      "permutation": [
+        1,
+        0,
+        2
+      ],
+      "permutation_order": 2,
+      "relative_unitary_order_residual": 0.0,
+      "right_partition": [
+        2,
+        1
+      ],
+      "status": "exact-known-relative-cyclic-phase-polar"
+    },
+    {
+      "active_singular_value_count": 1,
+      "carrier_dimension": 2,
+      "character_sign": -1,
+      "control_id": "S3-TRIVIAL-STANDARD-2-SIGN--1",
+      "cyclic_projector_idempotence_residual": 6.123233995736766e-17,
+      "cyclic_projector_resolution_residual": 6.123233995736766e-17,
+      "direct_to_cyclic_polar_residual": 6.123233995736766e-17,
+      "exact_known_relative_cyclic_polar_verified": true,
+      "final_support_residual": 3.749399456654644e-33,
+      "initial_support_residual": 3.749399456654644e-33,
+      "inverse_singular_value_amplification_used": false,
+      "left_partition": [
+        3
+      ],
+      "maximum_positive_singular_value": 1.0,
+      "minimum_positive_singular_value": 1.0,
+      "n": 3,
+      "permutation": [
+        1,
+        0,
+        2
+      ],
+      "permutation_order": 2,
+      "relative_unitary_order_residual": 0.0,
+      "right_partition": [
+        2,
+        1
+      ],
+      "status": "exact-known-relative-cyclic-phase-polar"
+    },
+    {
+      "active_singular_value_count": 2,
+      "carrier_dimension": 2,
+      "character_sign": 1,
+      "control_id": "S3-TRIVIAL-STANDARD-3-SIGN-1",
+      "cyclic_projector_idempotence_residual": 2.775557561562892e-16,
+      "cyclic_projector_resolution_residual": 2.3185091043601313e-16,
+      "direct_to_cyclic_polar_residual": 3.002224531865041e-16,
+      "exact_known_relative_cyclic_polar_verified": true,
+      "final_support_residual": 4.86718953609029e-16,
+      "initial_support_residual": 4.86718953609029e-16,
+      "inverse_singular_value_amplification_used": false,
+      "left_partition": [
+        3
+      ],
+      "maximum_positive_singular_value": 0.5,
+      "minimum_positive_singular_value": 0.5,
+      "n": 3,
+      "permutation": [
+        1,
+        2,
+        0
+      ],
+      "permutation_order": 3,
+      "relative_unitary_order_residual": 2.5212772296842455e-16,
+      "right_partition": [
+        2,
+        1
+      ],
+      "status": "exact-known-relative-cyclic-phase-polar"
+    },
+    {
+      "active_singular_value_count": 2,
+      "carrier_dimension": 2,
+      "character_sign": -1,
+      "control_id": "S3-TRIVIAL-STANDARD-3-SIGN--1",
+      "cyclic_projector_idempotence_residual": 2.775557561562892e-16,
+      "cyclic_projector_resolution_residual": 2.3185091043601313e-16,
+      "direct_to_cyclic_polar_residual": 1.0007415106216801e-16,
+      "exact_known_relative_cyclic_polar_verified": true,
+      "final_support_residual": 2.3492601239732273e-16,
+      "initial_support_residual": 2.3492601239732273e-16,
+      "inverse_singular_value_amplification_used": false,
+      "left_partition": [
+        3
+      ],
+      "maximum_positive_singular_value": 0.8660254037844386,
+      "minimum_positive_singular_value": 0.8660254037844386,
+      "n": 3,
+      "permutation": [
+        1,
+        2,
+        0
+      ],
+      "permutation_order": 3,
+      "relative_unitary_order_residual": 2.5212772296842455e-16,
+      "right_partition": [
+        2,
+        1
+      ],
+      "status": "exact-known-relative-cyclic-phase-polar"
+    },
+    {
+      "active_singular_value_count": 2,
+      "carrier_dimension": 2,
+      "character_sign": 1,
+      "control_id": "S3-TRIVIAL-STANDARD-4-SIGN-1",
+      "cyclic_projector_idempotence_residual": 2.775557561562892e-16,
+      "cyclic_projector_resolution_residual": 2.3185091043601313e-16,
+      "direct_to_cyclic_polar_residual": 3.002224531865041e-16,
+      "exact_known_relative_cyclic_polar_verified": true,
+      "final_support_residual": 4.86718953609029e-16,
+      "initial_support_residual": 4.86718953609029e-16,
+      "inverse_singular_value_amplification_used": false,
+      "left_partition": [
+        3
+      ],
+      "maximum_positive_singular_value": 0.5,
+      "minimum_positive_singular_value": 0.5,
+      "n": 3,
+      "permutation": [
+        2,
+        0,
+        1
+      ],
+      "permutation_order": 3,
+      "relative_unitary_order_residual": 2.5212772296842455e-16,
+      "right_partition": [
+        2,
+        1
+      ],
+      "status": "exact-known-relative-cyclic-phase-polar"
+    },
+    {
+      "active_singular_value_count": 2,
+      "carrier_dimension": 2,
+      "character_sign": -1,
+      "control_id": "S3-TRIVIAL-STANDARD-4-SIGN--1",
+      "cyclic_projector_idempotence_residual": 2.775557561562892e-16,
+      "cyclic_projector_resolution_residual": 2.3185091043601313e-16,
+      "direct_to_cyclic_polar_residual": 1.0007415106216801e-16,
+      "exact_known_relative_cyclic_polar_verified": true,
+      "final_support_residual": 2.3492601239732273e-16,
+      "initial_support_residual": 2.3492601239732273e-16,
+      "inverse_singular_value_amplification_used": false,
+      "left_partition": [
+        3
+      ],
+      "maximum_positive_singular_value": 0.8660254037844386,
+      "minimum_positive_singular_value": 0.8660254037844386,
+      "n": 3,
+      "permutation": [
+        2,
+        0,
+        1
+      ],
+      "permutation_order": 3,
+      "relative_unitary_order_residual": 2.5212772296842455e-16,
+      "right_partition": [
+        2,
+        1
+      ],
+      "status": "exact-known-relative-cyclic-phase-polar"
+    },
+    {
+      "active_singular_value_count": 1,
+      "carrier_dimension": 2,
+      "character_sign": 1,
+      "control_id": "S3-TRIVIAL-STANDARD-5-SIGN-1",
+      "cyclic_projector_idempotence_residual": 6.72292453803368e-17,
+      "cyclic_projector_resolution_residual": 6.123233995736766e-17,
+      "direct_to_cyclic_polar_residual": 3.925231146709438e-16,
+      "exact_known_relative_cyclic_polar_verified": true,
+      "final_support_residual": 1.3877787807814457e-16,
+      "initial_support_residual": 1.3877787807814457e-16,
+      "inverse_singular_value_amplification_used": false,
+      "left_partition": [
+        3
+      ],
+      "maximum_positive_singular_value": 1.0,
+      "minimum_positive_singular_value": 1.0,
+      "n": 3,
+      "permutation": [
+        2,
+        1,
+        0
+      ],
+      "permutation_order": 2,
+      "relative_unitary_order_residual": 1.1102230246251565e-16,
+      "right_partition": [
+        2,
+        1
+      ],
+      "status": "exact-known-relative-cyclic-phase-polar"
+    },
+    {
+      "active_singular_value_count": 1,
+      "carrier_dimension": 2,
+      "character_sign": -1,
+      "control_id": "S3-TRIVIAL-STANDARD-5-SIGN--1",
+      "cyclic_projector_idempotence_residual": 6.72292453803368e-17,
+      "cyclic_projector_resolution_residual": 6.123233995736766e-17,
+      "direct_to_cyclic_polar_residual": 5.606979963131422e-16,
+      "exact_known_relative_cyclic_polar_verified": true,
+      "final_support_residual": 1.3877787807814457e-16,
+      "initial_support_residual": 1.3877787807814457e-16,
+      "inverse_singular_value_amplification_used": false,
+      "left_partition": [
+        3
+      ],
+      "maximum_positive_singular_value": 1.0,
+      "minimum_positive_singular_value": 1.0,
+      "n": 3,
+      "permutation": [
+        2,
+        1,
+        0
+      ],
+      "permutation_order": 2,
+      "relative_unitary_order_residual": 1.1102230246251565e-16,
+      "right_partition": [
+        2,
+        1
+      ],
+      "status": "exact-known-relative-cyclic-phase-polar"
+    },
+    {
+      "active_singular_value_count": 2,
+      "carrier_dimension": 2,
+      "character_sign": 1,
+      "control_id": "S3-STANDARD-SIGN-0-SIGN-1",
+      "cyclic_projector_idempotence_residual": 0.0,
+      "cyclic_projector_resolution_residual": 0.0,
+      "direct_to_cyclic_polar_residual": 0.0,
+      "exact_known_relative_cyclic_polar_verified": true,
+      "final_support_residual": 0.0,
+      "initial_support_residual": 0.0,
+      "inverse_singular_value_amplification_used": false,
+      "left_partition": [
+        2,
+        1
+      ],
+      "maximum_positive_singular_value": 1.0,
+      "minimum_positive_singular_value": 1.0,
+      "n": 3,
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "permutation_order": 1,
+      "relative_unitary_order_residual": 0.0,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "exact-known-relative-cyclic-phase-polar"
+    },
+    {
+      "active_singular_value_count": 0,
+      "carrier_dimension": 2,
+      "character_sign": -1,
+      "control_id": "S3-STANDARD-SIGN-0-SIGN--1",
+      "cyclic_projector_idempotence_residual": 0.0,
+      "cyclic_projector_resolution_residual": 0.0,
+      "direct_to_cyclic_polar_residual": 0.0,
+      "exact_known_relative_cyclic_polar_verified": true,
+      "final_support_residual": 0.0,
+      "initial_support_residual": 0.0,
+      "inverse_singular_value_amplification_used": false,
+      "left_partition": [
+        2,
+        1
+      ],
+      "maximum_positive_singular_value": null,
+      "minimum_positive_singular_value": null,
+      "n": 3,
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "permutation_order": 1,
+      "relative_unitary_order_residual": 0.0,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "exact-known-relative-cyclic-phase-polar"
+    },
+    {
+      "active_singular_value_count": 1,
+      "carrier_dimension": 2,
+      "character_sign": 1,
+      "control_id": "S3-STANDARD-SIGN-1-SIGN-1",
+      "cyclic_projector_idempotence_residual": 6.72292453803368e-17,
+      "cyclic_projector_resolution_residual": 6.123233995736766e-17,
+      "direct_to_cyclic_polar_residual": 5.721623458231226e-16,
+      "exact_known_relative_cyclic_polar_verified": true,
+      "final_support_residual": 1.4533008067806857e-16,
+      "initial_support_residual": 1.4533008067806857e-16,
+      "inverse_singular_value_amplification_used": false,
+      "left_partition": [
+        2,
+        1
+      ],
+      "maximum_positive_singular_value": 1.0,
+      "minimum_positive_singular_value": 1.0,
+      "n": 3,
+      "permutation": [
+        0,
+        2,
+        1
+      ],
+      "permutation_order": 2,
+      "relative_unitary_order_residual": 1.1102230246251565e-16,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "exact-known-relative-cyclic-phase-polar"
+    },
+    {
+      "active_singular_value_count": 1,
+      "carrier_dimension": 2,
+      "character_sign": -1,
+      "control_id": "S3-STANDARD-SIGN-1-SIGN--1",
+      "cyclic_projector_idempotence_residual": 6.72292453803368e-17,
+      "cyclic_projector_resolution_residual": 6.123233995736766e-17,
+      "direct_to_cyclic_polar_residual": 4.114415636946812e-16,
+      "exact_known_relative_cyclic_polar_verified": true,
+      "final_support_residual": 1.340157741654466e-16,
+      "initial_support_residual": 1.453300806780686e-16,
+      "inverse_singular_value_amplification_used": false,
+      "left_partition": [
+        2,
+        1
+      ],
+      "maximum_positive_singular_value": 1.0,
+      "minimum_positive_singular_value": 1.0,
+      "n": 3,
+      "permutation": [
+        0,
+        2,
+        1
+      ],
+      "permutation_order": 2,
+      "relative_unitary_order_residual": 1.1102230246251565e-16,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "exact-known-relative-cyclic-phase-polar"
+    },
+    {
+      "active_singular_value_count": 2,
+      "carrier_dimension": 2,
+      "character_sign": 1,
+      "control_id": "S3-STANDARD-SIGN-2-SIGN-1",
+      "cyclic_projector_idempotence_residual": 2.775557561562892e-16,
+      "cyclic_projector_resolution_residual": 2.3185091043601313e-16,
+      "direct_to_cyclic_polar_residual": 4.1481801024967563e-16,
+      "exact_known_relative_cyclic_polar_verified": true,
+      "final_support_residual": 4.4294669258551684e-16,
+      "initial_support_residual": 4.4294669258551684e-16,
+      "inverse_singular_value_amplification_used": false,
+      "left_partition": [
+        2,
+        1
+      ],
+      "maximum_positive_singular_value": 0.5,
+      "minimum_positive_singular_value": 0.5,
+      "n": 3,
+      "permutation": [
+        1,
+        2,
+        0
+      ],
+      "permutation_order": 3,
+      "relative_unitary_order_residual": 2.5212772296842455e-16,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "exact-known-relative-cyclic-phase-polar"
+    },
+    {
+      "active_singular_value_count": 2,
+      "carrier_dimension": 2,
+      "character_sign": -1,
+      "control_id": "S3-STANDARD-SIGN-2-SIGN--1",
+      "cyclic_projector_idempotence_residual": 2.775557561562892e-16,
+      "cyclic_projector_resolution_residual": 2.3185091043601313e-16,
+      "direct_to_cyclic_polar_residual": 1.0358521839084691e-16,
+      "exact_known_relative_cyclic_polar_verified": true,
+      "final_support_residual": 3.4683791489621964e-16,
+      "initial_support_residual": 3.4683791489621964e-16,
+      "inverse_singular_value_amplification_used": false,
+      "left_partition": [
+        2,
+        1
+      ],
+      "maximum_positive_singular_value": 0.8660254037844386,
+      "minimum_positive_singular_value": 0.8660254037844386,
+      "n": 3,
+      "permutation": [
+        1,
+        2,
+        0
+      ],
+      "permutation_order": 3,
+      "relative_unitary_order_residual": 2.5212772296842455e-16,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "exact-known-relative-cyclic-phase-polar"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "compile_each_known_relative_local_character_polar",
+      "resolution": "Finite-order spectral projectors and the exact phases in equation (2) reproduce every selected S3 SVD polar.",
+      "resolved": true
+    },
+    {
+      "obligation": "remove_inverse_singular_value_cost",
+      "resolution": "The circuit changes phases after exact cyclic eigenphase labeling and never amplifies a singular magnitude.",
+      "resolved": true
+    },
+    {
+      "obligation": "compile_tensor_character_kraus_polar",
+      "resolution": "Tensor-product polar factorization passes all threshold-copy S3 controls.",
+      "resolved": true
+    },
+    {
+      "obligation": "assemble_known_relative_polars_covariantly_without_hidden_g",
+      "resolution": "The polar field is not a cocycle. A multi-round connection, joint multiplicity transform, or different covariant assembly is required.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_joint_character_multiplicity_inverse",
+      "resolution": "Local phase normalization leaves positive singular magnitudes and does not block-encode or invert the D_nu operators.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "controlled_power_actions_all_factors_upper_bound": 576,
+      "controlled_power_actions_per_local_factor_upper_bound": 32,
+      "cyclic_qft_gate_complexity": "poly(log ord(h), log(1/error))",
+      "hidden_relative_element_available_to_decoder": false,
+      "information_threshold_copy_count": 18,
+      "joint_multiplicity_inverse_compiled": false,
+      "known_relative_tensor_character_polar_polynomial": true,
+      "minimum_singular_value_dependence": "none; cyclic eigenphase labels flag exact zero modes directly",
+      "n": 8,
+      "permutation_order_register_qubit_upper_bound": 16,
+      "polar_field_cocycle_proved": false,
+      "status": "known-relative-polar-polynomial-hidden-relative-assembly-open",
+      "young_representation_action_polynomial": true
+    },
+    {
+      "controlled_power_actions_all_factors_upper_bound": 4230,
+      "controlled_power_actions_per_local_factor_upper_bound": 90,
+      "cyclic_qft_gate_complexity": "poly(log ord(h), log(1/error))",
+      "hidden_relative_element_available_to_decoder": false,
+      "information_threshold_copy_count": 47,
+      "joint_multiplicity_inverse_compiled": false,
+      "known_relative_tensor_character_polar_polynomial": true,
+      "minimum_singular_value_dependence": "none; cyclic eigenphase labels flag exact zero modes directly",
+      "n": 16,
+      "permutation_order_register_qubit_upper_bound": 45,
+      "polar_field_cocycle_proved": false,
+      "status": "known-relative-polar-polynomial-hidden-relative-assembly-open",
+      "young_representation_action_polynomial": true
+    },
+    {
+      "controlled_power_actions_all_factors_upper_bound": 28320,
+      "controlled_power_actions_per_local_factor_upper_bound": 236,
+      "cyclic_qft_gate_complexity": "poly(log ord(h), log(1/error))",
+      "hidden_relative_element_available_to_decoder": false,
+      "information_threshold_copy_count": 120,
+      "joint_multiplicity_inverse_compiled": false,
+      "known_relative_tensor_character_polar_polynomial": true,
+      "minimum_singular_value_dependence": "none; cyclic eigenphase labels flag exact zero modes directly",
+      "n": 32,
+      "permutation_order_register_qubit_upper_bound": 118,
+      "polar_field_cocycle_proved": false,
+      "status": "known-relative-polar-polynomial-hidden-relative-assembly-open",
+      "young_representation_action_polynomial": true
+    },
+    {
+      "controlled_power_actions_all_factors_upper_bound": 176416,
+      "controlled_power_actions_per_local_factor_upper_bound": 592,
+      "cyclic_qft_gate_complexity": "poly(log ord(h), log(1/error))",
+      "hidden_relative_element_available_to_decoder": false,
+      "information_threshold_copy_count": 298,
+      "joint_multiplicity_inverse_compiled": false,
+      "known_relative_tensor_character_polar_polynomial": true,
+      "minimum_singular_value_dependence": "none; cyclic eigenphase labels flag exact zero modes directly",
+      "n": 64,
+      "permutation_order_register_qubit_upper_bound": 296,
+      "polar_field_cocycle_proved": false,
+      "status": "known-relative-polar-polynomial-hidden-relative-assembly-open",
+      "young_representation_action_polynomial": true
+    },
+    {
+      "controlled_power_actions_all_factors_upper_bound": 1031046,
+      "controlled_power_actions_per_local_factor_upper_bound": 1434,
+      "cyclic_qft_gate_complexity": "poly(log ord(h), log(1/error))",
+      "hidden_relative_element_available_to_decoder": false,
+      "information_threshold_copy_count": 719,
+      "joint_multiplicity_inverse_compiled": false,
+      "known_relative_tensor_character_polar_polynomial": true,
+      "minimum_singular_value_dependence": "none; cyclic eigenphase labels flag exact zero modes directly",
+      "n": 128,
+      "permutation_order_register_qubit_upper_bound": 717,
+      "polar_field_cocycle_proved": false,
+      "status": "known-relative-polar-polynomial-hidden-relative-assembly-open",
+      "young_representation_action_polynomial": true
+    },
+    {
+      "controlled_power_actions_all_factors_upper_bound": 5678448,
+      "controlled_power_actions_per_local_factor_upper_bound": 3368,
+      "cyclic_qft_gate_complexity": "poly(log ord(h), log(1/error))",
+      "hidden_relative_element_available_to_decoder": false,
+      "information_threshold_copy_count": 1686,
+      "joint_multiplicity_inverse_compiled": false,
+      "known_relative_tensor_character_polar_polynomial": true,
+      "minimum_singular_value_dependence": "none; cyclic eigenphase labels flag exact zero modes directly",
+      "n": 256,
+      "permutation_order_register_qubit_upper_bound": 1684,
+      "polar_field_cocycle_proved": false,
+      "status": "known-relative-polar-polynomial-hidden-relative-assembly-open",
+      "young_representation_action_polynomial": true
+    },
+    {
+      "controlled_power_actions_all_factors_upper_bound": 30062256,
+      "controlled_power_actions_per_local_factor_upper_bound": 7752,
+      "cyclic_qft_gate_complexity": "poly(log ord(h), log(1/error))",
+      "hidden_relative_element_available_to_decoder": false,
+      "information_threshold_copy_count": 3878,
+      "joint_multiplicity_inverse_compiled": false,
+      "known_relative_tensor_character_polar_polynomial": true,
+      "minimum_singular_value_dependence": "none; cyclic eigenphase labels flag exact zero modes directly",
+      "n": 512,
+      "permutation_order_register_qubit_upper_bound": 3876,
+      "polar_field_cocycle_proved": false,
+      "status": "known-relative-polar-polynomial-hidden-relative-assembly-open",
+      "young_representation_action_polynomial": true
+    }
+  ],
+  "status": "known-relative-character-polar-compiled-covariant-assembly-open",
+  "summary": "Compiled every known-relative tensor character Kraus polar by cyclic phase estimation without inverse-gap cost, then proved a natural full-rank S3 norm-two cocycle obstruction to one-pass hidden-relative assembly.",
+  "tensor_controls": [
+    {
+      "active_singular_value_count": 4,
+      "carrier_dimension": 4,
+      "character_mask": 0,
+      "control_id": "S3-THRESHOLD-PERM-0-CHAR-0",
+      "direct_to_tensor_cyclic_polar_residual": 0.0,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": 1.0,
+      "n": 3,
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "permutation_order": 1,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 0.0,
+      "tensor_initial_support_residual": 0.0
+    },
+    {
+      "active_singular_value_count": 0,
+      "carrier_dimension": 4,
+      "character_mask": 1,
+      "control_id": "S3-THRESHOLD-PERM-0-CHAR-1",
+      "direct_to_tensor_cyclic_polar_residual": 0.0,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": null,
+      "n": 3,
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "permutation_order": 1,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 0.0,
+      "tensor_initial_support_residual": 0.0
+    },
+    {
+      "active_singular_value_count": 0,
+      "carrier_dimension": 4,
+      "character_mask": 2,
+      "control_id": "S3-THRESHOLD-PERM-0-CHAR-2",
+      "direct_to_tensor_cyclic_polar_residual": 0.0,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": null,
+      "n": 3,
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "permutation_order": 1,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 0.0,
+      "tensor_initial_support_residual": 0.0
+    },
+    {
+      "active_singular_value_count": 0,
+      "carrier_dimension": 4,
+      "character_mask": 3,
+      "control_id": "S3-THRESHOLD-PERM-0-CHAR-3",
+      "direct_to_tensor_cyclic_polar_residual": 0.0,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": null,
+      "n": 3,
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "permutation_order": 1,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 0.0,
+      "tensor_initial_support_residual": 0.0
+    },
+    {
+      "active_singular_value_count": 0,
+      "carrier_dimension": 4,
+      "character_mask": 4,
+      "control_id": "S3-THRESHOLD-PERM-0-CHAR-4",
+      "direct_to_tensor_cyclic_polar_residual": 0.0,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": null,
+      "n": 3,
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "permutation_order": 1,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 0.0,
+      "tensor_initial_support_residual": 0.0
+    },
+    {
+      "active_singular_value_count": 0,
+      "carrier_dimension": 4,
+      "character_mask": 5,
+      "control_id": "S3-THRESHOLD-PERM-0-CHAR-5",
+      "direct_to_tensor_cyclic_polar_residual": 0.0,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": null,
+      "n": 3,
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "permutation_order": 1,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 0.0,
+      "tensor_initial_support_residual": 0.0
+    },
+    {
+      "active_singular_value_count": 0,
+      "carrier_dimension": 4,
+      "character_mask": 6,
+      "control_id": "S3-THRESHOLD-PERM-0-CHAR-6",
+      "direct_to_tensor_cyclic_polar_residual": 0.0,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": null,
+      "n": 3,
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "permutation_order": 1,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 0.0,
+      "tensor_initial_support_residual": 0.0
+    },
+    {
+      "active_singular_value_count": 0,
+      "carrier_dimension": 4,
+      "character_mask": 7,
+      "control_id": "S3-THRESHOLD-PERM-0-CHAR-7",
+      "direct_to_tensor_cyclic_polar_residual": 0.0,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": null,
+      "n": 3,
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "permutation_order": 1,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 0.0,
+      "tensor_initial_support_residual": 0.0
+    },
+    {
+      "active_singular_value_count": 0,
+      "carrier_dimension": 4,
+      "character_mask": 0,
+      "control_id": "S3-THRESHOLD-PERM-1-CHAR-0",
+      "direct_to_tensor_cyclic_polar_residual": 0.0,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": null,
+      "n": 3,
+      "permutation": [
+        0,
+        2,
+        1
+      ],
+      "permutation_order": 2,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 0.0,
+      "tensor_initial_support_residual": 0.0
+    },
+    {
+      "active_singular_value_count": 0,
+      "carrier_dimension": 4,
+      "character_mask": 1,
+      "control_id": "S3-THRESHOLD-PERM-1-CHAR-1",
+      "direct_to_tensor_cyclic_polar_residual": 0.0,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": null,
+      "n": 3,
+      "permutation": [
+        0,
+        2,
+        1
+      ],
+      "permutation_order": 2,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 0.0,
+      "tensor_initial_support_residual": 0.0
+    },
+    {
+      "active_singular_value_count": 1,
+      "carrier_dimension": 4,
+      "character_mask": 2,
+      "control_id": "S3-THRESHOLD-PERM-1-CHAR-2",
+      "direct_to_tensor_cyclic_polar_residual": 2.0341460026149084e-16,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": 1.0,
+      "n": 3,
+      "permutation": [
+        0,
+        2,
+        1
+      ],
+      "permutation_order": 2,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 1.3660502071514336e-16,
+      "tensor_initial_support_residual": 1.3660502071514336e-16
+    },
+    {
+      "active_singular_value_count": 1,
+      "carrier_dimension": 4,
+      "character_mask": 3,
+      "control_id": "S3-THRESHOLD-PERM-1-CHAR-3",
+      "direct_to_tensor_cyclic_polar_residual": 1.9479479427409077e-16,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": 1.0,
+      "n": 3,
+      "permutation": [
+        0,
+        2,
+        1
+      ],
+      "permutation_order": 2,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 2.3607377828336725e-16,
+      "tensor_initial_support_residual": 2.3607377828336725e-16
+    },
+    {
+      "active_singular_value_count": 0,
+      "carrier_dimension": 4,
+      "character_mask": 4,
+      "control_id": "S3-THRESHOLD-PERM-1-CHAR-4",
+      "direct_to_tensor_cyclic_polar_residual": 0.0,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": null,
+      "n": 3,
+      "permutation": [
+        0,
+        2,
+        1
+      ],
+      "permutation_order": 2,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 0.0,
+      "tensor_initial_support_residual": 0.0
+    },
+    {
+      "active_singular_value_count": 0,
+      "carrier_dimension": 4,
+      "character_mask": 5,
+      "control_id": "S3-THRESHOLD-PERM-1-CHAR-5",
+      "direct_to_tensor_cyclic_polar_residual": 0.0,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": null,
+      "n": 3,
+      "permutation": [
+        0,
+        2,
+        1
+      ],
+      "permutation_order": 2,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 0.0,
+      "tensor_initial_support_residual": 0.0
+    },
+    {
+      "active_singular_value_count": 1,
+      "carrier_dimension": 4,
+      "character_mask": 6,
+      "control_id": "S3-THRESHOLD-PERM-1-CHAR-6",
+      "direct_to_tensor_cyclic_polar_residual": 1.182241082836116e-16,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": 0.9999999999999999,
+      "n": 3,
+      "permutation": [
+        0,
+        2,
+        1
+      ],
+      "permutation_order": 2,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 2.4448929184251395e-16,
+      "tensor_initial_support_residual": 2.5595982265636224e-16
+    },
+    {
+      "active_singular_value_count": 1,
+      "carrier_dimension": 4,
+      "character_mask": 7,
+      "control_id": "S3-THRESHOLD-PERM-1-CHAR-7",
+      "direct_to_tensor_cyclic_polar_residual": 2.5536643676232995e-16,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": 0.9999999999999999,
+      "n": 3,
+      "permutation": [
+        0,
+        2,
+        1
+      ],
+      "permutation_order": 2,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 3.44996830334138e-16,
+      "tensor_initial_support_residual": 3.775238542139516e-16
+    },
+    {
+      "active_singular_value_count": 4,
+      "carrier_dimension": 4,
+      "character_mask": 0,
+      "control_id": "S3-THRESHOLD-PERM-2-CHAR-0",
+      "direct_to_tensor_cyclic_polar_residual": 7.5256004716955705e-16,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": 0.24999999999999994,
+      "n": 3,
+      "permutation": [
+        1,
+        2,
+        0
+      ],
+      "permutation_order": 3,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 1.2235695990433615e-15,
+      "tensor_initial_support_residual": 1.2235695990433615e-15
+    },
+    {
+      "active_singular_value_count": 4,
+      "carrier_dimension": 4,
+      "character_mask": 1,
+      "control_id": "S3-THRESHOLD-PERM-2-CHAR-1",
+      "direct_to_tensor_cyclic_polar_residual": 7.904433775691947e-16,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": 0.43301270189221924,
+      "n": 3,
+      "permutation": [
+        1,
+        2,
+        0
+      ],
+      "permutation_order": 3,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 1.194146257293105e-15,
+      "tensor_initial_support_residual": 1.194146257293105e-15
+    },
+    {
+      "active_singular_value_count": 0,
+      "carrier_dimension": 4,
+      "character_mask": 2,
+      "control_id": "S3-THRESHOLD-PERM-2-CHAR-2",
+      "direct_to_tensor_cyclic_polar_residual": 2.3587890672284115e-16,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": null,
+      "n": 3,
+      "permutation": [
+        1,
+        2,
+        0
+      ],
+      "permutation_order": 3,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 5.56388586367628e-32,
+      "tensor_initial_support_residual": 5.56388586367628e-32
+    },
+    {
+      "active_singular_value_count": 0,
+      "carrier_dimension": 4,
+      "character_mask": 3,
+      "control_id": "S3-THRESHOLD-PERM-2-CHAR-3",
+      "direct_to_tensor_cyclic_polar_residual": 2.3587890672284115e-16,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": null,
+      "n": 3,
+      "permutation": [
+        1,
+        2,
+        0
+      ],
+      "permutation_order": 3,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 5.56388586367628e-32,
+      "tensor_initial_support_residual": 5.56388586367628e-32
+    },
+    {
+      "active_singular_value_count": 4,
+      "carrier_dimension": 4,
+      "character_mask": 4,
+      "control_id": "S3-THRESHOLD-PERM-2-CHAR-4",
+      "direct_to_tensor_cyclic_polar_residual": 6.088173274677623e-16,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": 0.4330127018922193,
+      "n": 3,
+      "permutation": [
+        1,
+        2,
+        0
+      ],
+      "permutation_order": 3,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 1.2863301320653514e-15,
+      "tensor_initial_support_residual": 1.2863301320653514e-15
+    },
+    {
+      "active_singular_value_count": 4,
+      "carrier_dimension": 4,
+      "character_mask": 5,
+      "control_id": "S3-THRESHOLD-PERM-2-CHAR-5",
+      "direct_to_tensor_cyclic_polar_residual": 6.022240801715109e-16,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": 0.75,
+      "n": 3,
+      "permutation": [
+        1,
+        2,
+        0
+      ],
+      "permutation_order": 3,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 1.055068086368095e-15,
+      "tensor_initial_support_residual": 1.055068086368095e-15
+    },
+    {
+      "active_singular_value_count": 0,
+      "carrier_dimension": 4,
+      "character_mask": 6,
+      "control_id": "S3-THRESHOLD-PERM-2-CHAR-6",
+      "direct_to_tensor_cyclic_polar_residual": 2.3587890672284115e-16,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": null,
+      "n": 3,
+      "permutation": [
+        1,
+        2,
+        0
+      ],
+      "permutation_order": 3,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 5.563885863676279e-32,
+      "tensor_initial_support_residual": 5.563885863676279e-32
+    },
+    {
+      "active_singular_value_count": 0,
+      "carrier_dimension": 4,
+      "character_mask": 7,
+      "control_id": "S3-THRESHOLD-PERM-2-CHAR-7",
+      "direct_to_tensor_cyclic_polar_residual": 2.3587890672284115e-16,
+      "exact_tensor_polar_factorization_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "minimum_positive_singular_value": null,
+      "n": 3,
+      "permutation": [
+        1,
+        2,
+        0
+      ],
+      "permutation_order": 3,
+      "status": "exact-tensor-character-cyclic-polar-factorization",
+      "tensor_final_support_residual": 5.563885863676282e-32,
+      "tensor_initial_support_residual": 5.563885863676282e-32
+    }
+  ],
+  "theorem_contract": {
+    "cocycle_boundary": "For the S3 trivial-standard plus channel and a three-cycle c, both V(c) and V(c^2) are unitary but ||V(c)^2-V(c^2)||=2.",
+    "complexity": "Controlled powers use h^r and h^-r representation actions; log ord(h)<=log(n!), so cost is polynomial and independent of the smallest positive singular value.",
+    "cyclic_phase_polar": "Z_ord(h) phase estimation labels omega^j; equation (2) applies the exact partial-polar phase and flags the one possible kernel label.",
+    "local_factor": "M_s=(A+sB)/2=A(I+sU)/2 with U=A^*B and A,B commuting finite-order representation unitaries.",
+    "scope": "The compiler requires a known relative h. The physical h contains the hidden label, and the norm-two cocycle defect rejects a one-pass observed-time-only phase stripping argument.",
+    "tensor_factorization": "polar(tensor_i M_i)=tensor_i polar(M_i), including rank-deficient factors."
+  }
+}

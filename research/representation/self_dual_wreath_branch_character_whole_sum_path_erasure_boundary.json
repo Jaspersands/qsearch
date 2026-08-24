@@ -1,0 +1,219 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Summing all quadrant coefficients before projection removes the group normalization.",
+      "resolution": "False for the canonical dilation: the exact uniform-path block remains C/sqrt(|G|).",
+      "resolved": true
+    },
+    {
+      "objection": "Near-isometry of C makes path projection high amplitude.",
+      "resolution": "False. It makes every relevant principal amplitude approximately 1/sqrt(|G|).",
+      "resolved": true
+    },
+    {
+      "objection": "The sqrt(|G|) boundary is an arbitrary-circuit lower bound.",
+      "resolution": "False. The exact orthogonal-range classifier control erases the path deterministically.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "arbitrary_whole_sum_circuit_lower_bound_proved": false,
+    "classical_separation_proved": false,
+    "coherent_range_classifier_is_sufficient": true,
+    "complete_quadrant_sum_explicit_path_dilation_compiled": true,
+    "direct_equivariant_multiplier_compiled": false,
+    "generic_reflection_path_unpreparation_superpolynomial": true,
+    "natural_wreath_range_classifier_compiled": false,
+    "physical_decoder_compiled": false,
+    "speedup_claim_allowed": false,
+    "uniform_path_block_identity_proved": true
+  },
+  "classifier_control": {
+    "classifier_action_residual": 0.0,
+    "classifier_unitarity_residual": 0.0,
+    "coherent_classifier_path_erasure_residual": 0.0,
+    "direct_convolution_isometry_residual": 0.0,
+    "exact_classifier_bypass_verified": true,
+    "field_output_dimension": 8,
+    "generic_uniform_path_amplitude": 0.5,
+    "group_order": 4,
+    "input_carrier_dimension": 2,
+    "maximum_cross_range_overlap": 0.0,
+    "status": "coherent-range-classifier-bypasses-generic-path-projection"
+  },
+  "created_at": "2026-08-24T18:11:35.463881+00:00",
+  "falsifiers_triggered": [
+    "Whole-sum coefficient preparation does not by itself erase the relative-element path.",
+    "State-weighted near-isometry of C does not improve the canonical path projection amplitude.",
+    "A coherent carrier range classifier would bypass the generic barrier, so no universal circuit no-go is claimed."
+  ],
+  "finite_controls": [
+    {
+      "canonical_half_overlap_iteration_lower_bound": 5,
+      "control_id": "S3-SINGLE-PAIR-WHOLE-SUM-PATH",
+      "convolution_maximum_singular_value": 1.7180302927144755,
+      "convolution_minimum_singular_value": 0.140628710107316,
+      "dilation_input_dimension": 12,
+      "dilation_isometry_residual": 2.310042657480241e-16,
+      "dilation_output_dimension": 144,
+      "exact_whole_sum_path_identity_verified": true,
+      "field_output_dimension": 4,
+      "group_order": 6,
+      "input_carrier_dimension": 2,
+      "maximum_principal_amplitude": 0.701382929965815,
+      "minimum_principal_amplitude": 0.057411430491449936,
+      "path_projection_block_residual": 0.0,
+      "projected_maximum_singular_value": 0.701382929965815,
+      "projected_minimum_singular_value": 0.057411430491449936,
+      "singular_scale_identity_residual": 2.220446049250313e-16,
+      "source_pair_count": 1,
+      "status": "whole-sum-dilation-exact-generic-path-erasure-subnormalized"
+    },
+    {
+      "canonical_half_overlap_iteration_lower_bound": 1,
+      "control_id": "S3-THRESHOLD-WHOLE-SUM-PATH",
+      "convolution_maximum_singular_value": 1.258305739211792,
+      "convolution_minimum_singular_value": 0.8416254115301728,
+      "dilation_input_dimension": 24,
+      "dilation_isometry_residual": 2.4532740866488e-16,
+      "dilation_output_dimension": 1152,
+      "exact_whole_sum_path_identity_verified": true,
+      "field_output_dimension": 32,
+      "group_order": 6,
+      "input_carrier_dimension": 4,
+      "maximum_principal_amplitude": 0.5137011669140815,
+      "minimum_principal_amplitude": 0.34359213546813827,
+      "path_projection_block_residual": 0.0,
+      "projected_maximum_singular_value": 0.5137011669140815,
+      "projected_minimum_singular_value": 0.34359213546813827,
+      "singular_scale_identity_residual": 1.1102230246251565e-16,
+      "source_pair_count": 3,
+      "status": "whole-sum-dilation-exact-generic-path-erasure-subnormalized"
+    }
+  ],
+  "headline_metrics": {
+    "canonical_path_erasure_no_go_count": 1,
+    "coherent_classifier_escape_theorem_count": 1,
+    "finite_control_failure_count": 0,
+    "finite_wreath_control_count": 2,
+    "natural_range_classifier_compiler_count": 0,
+    "new_quantum_algorithm_count": 0,
+    "tail_copy_count": 2151,
+    "tail_log2_canonical_query_lower_bound": 357.4958985410898,
+    "tail_n": 128,
+    "whole_sum_path_dilation_theorem_count": 1
+  },
+  "proof_obligations": [
+    {
+      "obligation": "compile_complete_quadrant_sum_with_explicit_relative_path",
+      "resolution": "The existing controlled cyclic compiler supplies every J_h; uniform h preparation and group multiplication give D.",
+      "resolved": true
+    },
+    {
+      "obligation": "test_generic_uniform_path_unpreparation",
+      "resolution": "Rejected: its exact singular amplitudes are sigma(C)/sqrt(|G|), so the natural order-one sector still has sqrt(|G|) query cost.",
+      "resolved": true
+    },
+    {
+      "obligation": "compile_coherent_natural_range_classifier",
+      "resolution": "The orthogonal control proves sufficiency, but the actual J_h ranges overlap and no efficient representation-specific classifier is known.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_physical_decoder_and_prove_classical_separation",
+      "resolution": "No end-to-end hidden-label algorithm or speedup is established.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "coherent_range_classifier_compiled": false,
+      "generic_path_unpreparation_superpolynomial": false,
+      "log2_canonical_reflection_query_lower_bound": 7.064641508472484,
+      "log2_group_order": 15.29920801838728,
+      "log2_uniform_path_amplitude_upper_bound": -7.064641508472484,
+      "n": 8,
+      "natural_copy_count": 48,
+      "polynomial_benchmark_log2": 60.0,
+      "retained_convolution_singular_lower_bound": 0.5,
+      "retained_convolution_singular_upper_bound": 1.5,
+      "status": "finite-path-erasure-separation-not-yet-visible"
+    },
+    {
+      "coherent_range_classifier_compiled": false,
+      "generic_path_unpreparation_superpolynomial": false,
+      "log2_canonical_reflection_query_lower_bound": 21.540107734220154,
+      "log2_group_order": 44.25014046988262,
+      "log2_uniform_path_amplitude_upper_bound": -21.540107734220154,
+      "n": 16,
+      "natural_copy_count": 135,
+      "polynomial_benchmark_log2": 80.0,
+      "retained_convolution_singular_lower_bound": 0.5,
+      "retained_convolution_singular_upper_bound": 1.5,
+      "status": "finite-path-erasure-separation-not-yet-visible"
+    },
+    {
+      "coherent_range_classifier_compiled": false,
+      "generic_path_unpreparation_superpolynomial": false,
+      "log2_canonical_reflection_query_lower_bound": 58.246669325458996,
+      "log2_group_order": 117.6632636523603,
+      "log2_uniform_path_amplitude_upper_bound": -58.246669325458996,
+      "n": 32,
+      "natural_copy_count": 355,
+      "polynomial_benchmark_log2": 100.0,
+      "retained_convolution_singular_lower_bound": 0.5,
+      "retained_convolution_singular_upper_bound": 1.5,
+      "status": "finite-path-erasure-separation-not-yet-visible"
+    },
+    {
+      "coherent_range_classifier_compiled": false,
+      "generic_path_unpreparation_superpolynomial": true,
+      "log2_canonical_reflection_query_lower_bound": 147.41260947014086,
+      "log2_group_order": 295.99514394172405,
+      "log2_uniform_path_amplitude_upper_bound": -147.41260947014086,
+      "n": 64,
+      "natural_copy_count": 890,
+      "polynomial_benchmark_log2": 120.0,
+      "retained_convolution_singular_lower_bound": 0.5,
+      "retained_convolution_singular_upper_bound": 1.5,
+      "status": "canonical-whole-sum-path-unpreparation-superpolynomial"
+    },
+    {
+      "coherent_range_classifier_compiled": false,
+      "generic_path_unpreparation_superpolynomial": true,
+      "log2_canonical_reflection_query_lower_bound": 357.4958985410898,
+      "log2_group_order": 716.1617220836218,
+      "log2_uniform_path_amplitude_upper_bound": -357.4958985410898,
+      "n": 128,
+      "natural_copy_count": 2151,
+      "polynomial_benchmark_log2": 140.0,
+      "retained_convolution_singular_lower_bound": 0.5,
+      "retained_convolution_singular_upper_bound": 1.5,
+      "status": "canonical-whole-sum-path-unpreparation-superpolynomial"
+    }
+  ],
+  "status": "whole-sum-path-dilation-compiled-generic-erasure-rejected-classifier-open",
+  "summary": "Compiled the complete quadrant field into an explicit which-h path dilation, proved that canonical path removal retains the exact sqrt(|G|) normalization barrier, and isolated a coherent range classifier as the carrier-aware escape. No such natural classifier is compiled.",
+  "theorem": {
+    "actual_wreath_obligation": "Compile an approximate coherent classifier for the natural overlapping ranges, or an equivalent direct multiplier/polar transform.",
+    "canonical_reflection_boundary": "On an order-one singular window, alternating-reflection or generic QSVT path unpreparation needs Omega(sqrt(|G|)) dilation uses.",
+    "classifier_escape": "A coherent W with W J_h|psi>=|h>|psi> erases the path exactly by decode, subtract, and re-encode.",
+    "exact_path_block": "Uniform projection of the which-h path gives exactly C/sqrt(|G|).",
+    "principal_amplitudes": "The restricted principal amplitudes are sigma_j(C)/sqrt(|G|).",
+    "scope": "This rejects canonical path projection/reflection schemes, not arbitrary carrier-aware circuits or direct representation-specific compilers.",
+    "status": "whole-sum-path-dilation-compiled-generic-erasure-rejected-classifier-open",
+    "theorem_verified": true,
+    "whole_sum_dilation": "Uniform h preparation, multiplication, and controlled complete cyclic phase compilation implement D at normalization one."
+  },
+  "theorem_contract": {
+    "actual_wreath_obligation": "Compile an approximate coherent classifier for the natural overlapping ranges, or an equivalent direct multiplier/polar transform.",
+    "canonical_reflection_boundary": "On an order-one singular window, alternating-reflection or generic QSVT path unpreparation needs Omega(sqrt(|G|)) dilation uses.",
+    "classifier_escape": "A coherent W with W J_h|psi>=|h>|psi> erases the path exactly by decode, subtract, and re-encode.",
+    "exact_path_block": "Uniform projection of the which-h path gives exactly C/sqrt(|G|).",
+    "principal_amplitudes": "The restricted principal amplitudes are sigma_j(C)/sqrt(|G|).",
+    "scope": "This rejects canonical path projection/reflection schemes, not arbitrary carrier-aware circuits or direct representation-specific compilers.",
+    "status": "whole-sum-path-dilation-compiled-generic-erasure-rejected-classifier-open",
+    "theorem_verified": true,
+    "whole_sum_dilation": "Uniform h preparation, multiplication, and controlled complete cyclic phase compilation implement D at normalization one."
+  }
+}

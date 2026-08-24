@@ -233,6 +233,25 @@ DEFAULT_LITERATURE = [
         ),
     ),
     PaperSeed(
+        id="christandl-et-al-plethysm-sharp-bqp-2026",
+        title="Plethysm is in #BQP",
+        url="https://arxiv.org/abs/2602.08441",
+        year=2026,
+        tags=[
+            "schur-transform",
+            "branching-multiplicity",
+            "sharp-bqp",
+            "multiplicity-space",
+            "representation-theory",
+        ],
+        why_it_matters=(
+            "Uses multiple high-dimensional Schur-transform embeddings and strong Fourier sampling to place broad "
+            "branching multiplicities in #BQP. The verifier fixes an irrep basis vector while leaving the witness "
+            "multiplicity space invariant, so it supports efficient dilated isotypic access but does not expose "
+            "standard Kronecker multiplicity coordinates or a decoder."
+        ),
+    ),
+    PaperSeed(
         id="code-equivalence-fourier-2011",
         title="Quantum Fourier sampling, Code Equivalence, and the quantum security of the McEliece and Sidelnikov cryptosystems",
         url="https://arxiv.org/abs/1111.4382",

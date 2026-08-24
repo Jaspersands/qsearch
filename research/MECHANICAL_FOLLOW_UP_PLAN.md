@@ -24,6 +24,431 @@
 > obligations, and acceptance checks before handoff. Exhausting one model's
 > usage is a handoff event, not completion of the research goal.
 
+> **Newest unwired label-coherent power-map boundary (2026-08-24):**
+> mechanically wire
+> `EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-LABEL-COHERENT-POWER-MAP-BOUNDARY`
+> from
+> `theorems/self_dual_wreath_branch_character_label_coherent_power_map_boundary.py`.
+> Suggested CLI:
+> `code-wreath-branch-character-label-coherent-power-map-boundary`. Dispatch to
+> `write_label_coherent_power_map_boundary_report`; add the standard
+> `CODE-COSET-COLLECTIVE` registry record, runner entry, CLI parser/handler,
+> README command, and clean-registry dispatch test. Preserve the exact scope:
+> mixed HSP coset states are irrep-label block diagonal; the branch field
+> preserves each source tuple; independent Plancherel averaging has exact
+> inverse-normalization mean
+> `S_3^(2k+1)/|G|^(4k+1)<=|G|^(-k+1/2)`; and cyclic matching-block mass is
+> `m^(-2k)`. This rejects only label-coherence cancellation. Whole-quadrant
+> recursion, arbitrary label-mixing circuits, direct polar synthesis, physical
+> decoder, classical separation, algorithm, and speedup remain open/false.
+> Acceptance: seven focused tests, module artifact generation, `py_compile`,
+> `git diff --check`, full registry validation, and adjacent power-map tests.
+> Never convert the result into a universal circuit lower bound.
+
+> **Unwired power-map Fourier access boundary (2026-08-24):** mechanically
+> wire
+> `EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-POWER-MAP-FOURIER-ACCESS-BOUNDARY`
+> from
+> `theorems/self_dual_wreath_branch_character_power_map_fourier_access_boundary.py`.
+> Suggested CLI: `code-wreath-branch-character-power-map-fourier-boundary`.
+> Dispatch to `write_power_map_fourier_access_boundary_report`; add the
+> standard registry/runner/CLI/README/dispatch-test wiring. Preserve the exact
+> result: paired power maps are injective and efficiently reversible; their
+> QFT conjugates contain each monomial multiplier as a block; extracting a
+> fixed term has normalization
+> `|G|^k/sqrt(d_nu D)>=|G|^(k/2-1/4)`. This rejects termwise extraction only.
+> Coherent whole-quadrant factorization, direct multiplier compilation,
+> physical decoder, classical separation, algorithm, and speedup remain
+> open/false. Acceptance: eight focused tests, artifact generation,
+> `py_compile`, `git diff --check`, full registry validation, and the new
+> label-coherence suite.
+
+> **Newest unwired equivariant multiplier normal-form theorem (2026-08-24):**
+> mechanically wire
+> `EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-EQUIVARIANT-MULTIPLIER-NORMAL-FORM`
+> from
+> `theorems/self_dual_wreath_branch_character_equivariant_multiplier_normal_form.py`.
+> Suggested CLI: `code-wreath-branch-character-equivariant-multiplier`.
+> Dispatch to `write_equivariant_multiplier_normal_form_report`; add the
+> standard `CODE-COSET-COLLECTIVE` registry record, runner entry, CLI
+> parser/handler, README command, and clean-registry dispatch test. Preserve
+> the exact scope: conjugation covariance, multiplier intertwining,
+> Wigner-Eckart reduced-map form, class-twirl reconstruction, and the
+> multiplicity-space Cauchy pressure are proved. Direct class LCU retains
+> `sqrt(|S_n|)` normalization. This proves covariance-only underdetermination,
+> not a circuit lower bound for the explicit quadrant reduced maps. Specific
+> reduced-map factorization, direct compiler, physical decoder, classical
+> separation, algorithm, and speedup remain false/open. Acceptance: eight
+> focused tests, module generation, `py_compile`, `git diff --check`, full
+> registry validation, and adjacent branch-character tests.
+
+> **Unwired raw-GPE dilation separation theorem (2026-08-24):**
+> mechanically wire
+> `EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-GPE-DILATION-SEPARATION`
+> from
+> `theorems/self_dual_wreath_branch_character_gpe_dilation_separation.py`.
+> Suggested CLI: `code-wreath-branch-character-gpe-dilation-separation`.
+> Dispatch to `write_gpe_dilation_separation_report`; add the standard
+> `CODE-COSET-COLLECTIVE` registry record, runner entry, CLI parser/handler,
+> README command, and clean-registry dispatch test. Preserve the exact scope:
+> the raw field has a representation dilation, but its conditioned natural
+> normalized overlap with the polar convolution vanishes; raw GPE substitution
+> is rejected; canonical controlled-field LCU/QSVT costs
+> `Omega(sqrt(|S_n|))`. This is not an arbitrary-circuit lower bound. Direct
+> conjugation-equivariant multiplier synthesis, physical input domination,
+> decoder, classical separation, algorithm, and speedup remain false/open.
+> Acceptance: eight focused tests, module generation, `py_compile`,
+> `git diff --check`, full registry validation, and adjacent branch-character
+> tests. Do not describe the raw convolution itself as an efficiently compiled
+> unitary; only its local representation dilation is normalization one.
+
+> **Newest unwired all-order quadrant-overlap theorem (2026-08-24):**
+> mechanically wire
+> `EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-CYCLIC-QUADRANT-OVERLAP`
+> from
+> `theorems/self_dual_wreath_branch_character_cyclic_quadrant_overlap.py`.
+> Suggested CLI: `code-wreath-branch-character-cyclic-quadrant-overlap`.
+> Dispatch to `write_cyclic_quadrant_overlap_report`; add the standard
+> `CODE-COSET-COLLECTIVE` registry record, runner entry, CLI parser/handler,
+> README command, and clean-registry dispatch test. Regenerate both
+> `self_dual_wreath_branch_character_cyclic_quadrant_overlap.json` and the
+> predecessor
+> `self_dual_wreath_branch_character_natural_frobenius_word_map.json`.
+> Preserve the exact claims: proper-subgroup mass is zero/even-index and
+> inverse-square/odd-index; every distinct finite-group pair has range overlap
+> at most `3/4`; natural global-distinct source portfolios have vanishing
+> normalized Frobenius residual at `k=ceil(3log2|S_n|)+2`. Uniform minimum
+> singular value, arbitrary physical-input domination, normalization-one
+> coherent access, decoder, classical separation, algorithm, and speedup all
+> remain false. Acceptance: nine new focused tests plus eight predecessor
+> tests, module generation, `py_compile`, `git diff --check`, full registry
+> validation, and existing adjacent branch-character tests. Do not promote the
+> theorem beyond state-weighted contraction.
+
+> **Newest unwired branch-character autocorrelation Fourier boundary
+> (2026-08-24):** mechanically wire
+> `EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-NAIMARK-AUTOCORRELATION-FOURIER-BOUNDARY`
+> from
+> `theorems/self_dual_wreath_branch_character_naimark_autocorrelation_fourier_boundary.py`.
+> Suggested CLI:
+> `code-wreath-branch-character-naimark-autocorrelation-fourier`. Dispatch to
+> `write_naimark_autocorrelation_fourier_boundary_report`; add the standard
+> `CODE-COSET-COLLECTIVE` registry record, runner entry, CLI parser/handler,
+> README command, and clean-registry dispatch test. Preserve the exact split:
+> nonabelian Fourier diagonalization and Parseval are proved; completed
+> Legendre phases refute `O(1/|G|)` pointwise autocorrelation as a uniform-gap
+> criterion; normalized Frobenius error controls only state-weighted bad
+> spectral mass. Keep natural `S_n` tail, physical input domination,
+> normalization-one multiplier access, decoder, algorithm, and speedup false.
+> Acceptance: eight focused tests, module generation, `py_compile`,
+> `git diff --check`, and `python qsearch.py validate`. Do not rewrite the
+> Legendre example as a no-go for state-weighted trimming.
+
+> **Newest unwired known-relative branch-character polar Naimark completion
+> (2026-08-24):** mechanically wire
+> `EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-POLAR-NAIMARK-COMPLETION`
+> from
+> `theorems/self_dual_wreath_branch_character_polar_naimark_completion.py`.
+> Suggested CLI: `code-wreath-branch-character-polar-naimark`. Dispatch to
+> `write_branch_character_polar_naimark_completion_report`; add standard
+> registry/runner/CLI/README/test wiring. Preserve `I<=P_++P_-<=2I`, exact
+> local and tensor Naimark isometries, full coefficient rank, and zero inverse
+> minimum-singular-value use. Keep unknown-relative assembly, all-`n`
+> autocorrelation, physical polar, decoder, separation, and speedup false.
+> Acceptance: eight tests, 19 local controls, six tensor controls, zero
+> failures, maximum local condition two, module generation, `py_compile`,
+> `git diff --check`, and `python qsearch.py validate`.
+
+> **Newest unwired joint-character natural-sector mass theorem (2026-08-24):**
+> mechanically wire
+> `EXP-CODE-SELF-DUAL-WREATH-JOINT-CHARACTER-NATURAL-SECTOR-MASS`
+> from
+> `theorems/self_dual_wreath_joint_character_natural_sector_mass.py`.
+> Suggested CLI: `code-wreath-joint-character-natural-sector-mass`. Add the
+> standard experiment record, runner dispatch to
+> `write_joint_character_natural_sector_mass_report`, CLI parser/handler,
+> README command, and clean-registry dispatch test. Preserve the exact claims:
+> `Tr(D_nu)` is the orientation-averaged dimension-weighted Kronecker law; its
+> independent-source annealed law is exactly Plancherel; global-distinct
+> conditioning perturbs it by at most source-collision TV; and
+> `d_nu>sqrt(n!)/p(n)` on `1-o(1)` natural source-sector mass. Preserve the
+> negative gates: target mass is not hidden-label information, no extensive
+> Holevo theorem is proved, no normalization-one `A_nu` access or direct polar
+> is compiled, and no speedup follows. Run the six focused tests, module
+> script, compileall, `node --check site/progress.js`, `git diff --check`, and
+> `python qsearch.py validate`. Do not weaken the source-typical Markov
+> quantifier into a pointwise statement and do not spend high-reasoning Codex
+> usage on this wiring.
+
+> **Newest unwired joint-analysis normalization theorem (2026-08-24):**
+> mechanically wire
+> `EXP-CODE-SELF-DUAL-WREATH-JOINT-CHARACTER-ANALYSIS-MAP-NORMALIZATION`
+> from
+> `theorems/self_dual_wreath_joint_character_analysis_map_normalization.py`.
+> Suggested CLI: `code-wreath-joint-character-analysis-normalization`. Add the
+> standard experiment record, runner dispatch to
+> `write_joint_analysis_map_normalization_report`, CLI parser/handler, README
+> command, and clean-registry dispatch test. Preserve the exact equations
+> `A_nu^*A_nu=D_nu` and
+> `N_nu=A_nu/sqrt(d_nu)`, `N_nu^*N_nu=D_nu/d_nu`. Preserve the claim boundary:
+> only uniform bounded-polynomial amplification has the
+> `Omega(sqrt(d_nu))` boundary; scalar dilution leaves the polar unchanged, so
+> direct structured polar synthesis, natural large-row mass, decoder,
+> algorithm, and speedup remain open/false. Run the six focused tests, module
+> script, compileall, `node --check site/progress.js`, `git diff --check`, and
+> `python qsearch.py validate`. Do not reinterpret this as a circuit lower
+> bound or spend high-reasoning Codex usage on the wiring.
+
+> **Newest unwired joint-purification normalization boundary (2026-08-24):**
+> mechanically wire
+> `EXP-CODE-SELF-DUAL-WREATH-JOINT-CHARACTER-PURIFICATION-ACCESS-BOUNDARY`
+> from
+> `theorems/self_dual_wreath_joint_character_purification_access_boundary.py`.
+> Suggested CLI: `code-wreath-joint-character-purification-access`. Add the
+> standard `CODE-COSET-COLLECTIVE` experiment record, runner dispatch to
+> `write_joint_purification_access_boundary_report`, CLI parser/handler, README
+> command line, and clean-registry dispatch test by copying an adjacent theorem
+> report pattern. Preserve the exact claim split: global average density access
+> is normalization one and proved; a Fourier row exposes `D_nu/d_nu`, not
+> `D_nu`; sector conditioning does not remove `1/d_nu`; generic uniform
+> polynomial rescaling costs `Omega(d_nu)`; balanced two-row natural mass,
+> normalization-one `D_nu` access, direct structured polar, decoder, algorithm,
+> and speedup remain false. Run the six focused tests, the module script,
+> `python -m compileall -q .`, `node --check site/progress.js`,
+> `git diff --check`, and `python qsearch.py validate`. Do not spend
+> high-reasoning Codex usage on this wiring and do not infer a circuit lower
+> bound from the generic polynomial-transform theorem.
+
+> **Newest unwired known-relative branch-character cyclic-polar compiler
+> (2026-08-24):** mechanically wire this experiment without changing theorem
+> scope:
+>
+> ```text
+> EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-CYCLIC-POLAR-COMPILER
+> ```
+>
+> Suggested CLI name: `code-wreath-branch-character-cyclic-polar`. Paths:
+>
+> ```text
+> theorems/self_dual_wreath_branch_character_cyclic_polar_compiler.py
+> tests/test_self_dual_wreath_branch_character_cyclic_polar_compiler.py
+> research/representation/self_dual_wreath_branch_character_cyclic_polar_compiler.json
+> ```
+>
+> Preserve these exact boundaries:
+>
+> - For a known relative permutation `h`, cyclic phase estimation over
+>   `Z_ord(h)` directly implements every local `polar((A+sB)/2)` without an
+>   inverse-smallest-singular-value cost.
+> - Polar commutes with the tensor product, so the full known-relative
+>   character Kraus polar is polynomial under efficient controlled Young
+>   representation actions.
+> - The native hidden-relative element is `s_time^-1 g_hidden` and is not
+>   available to the circuit.
+> - The natural full-rank `S3` plus-character control has
+>   `||V(c)^2-V(c^2)||=2`; the polar field is not a cocycle, and one-pass
+>   observed-time-only phase stripping is rejected.
+> - Keep hidden-relative assembly, joint multiplicity inverse, complete polar,
+>   classical-separation, algorithm, and speedup gates false.
+>
+> Mechanical acceptance checks:
+>
+> ```text
+> python -m py_compile \
+>   theorems/self_dual_wreath_branch_character_cyclic_polar_compiler.py \
+>   tests/test_self_dual_wreath_branch_character_cyclic_polar_compiler.py
+> PYTHONPATH=.:core:theorems python -m pytest -q \
+>   tests/test_self_dual_wreath_branch_character_cyclic_polar_compiler.py
+> PYTHONPATH=.:core:theorems python \
+>   theorems/self_dual_wreath_branch_character_cyclic_polar_compiler.py
+> git diff --check
+> python qsearch.py validate
+> ```
+>
+> The focused suite must report seven passing tests. Artifact status must be
+> `known-relative-character-polar-compiled-covariant-assembly-open`, with 18
+> local controls, 24 tensor controls, zero failures, zero inverse-singular
+> amplification count, one known-relative local theorem, one tensor theorem,
+> one natural full-rank cocycle counterexample, cocycle defect `2` up to
+> numerical tolerance, and zero hidden-relative assembly, multiplicity-inverse,
+> and new-algorithm counts. Add registry, runner, CLI, clean-registry dispatch
+> test, concise README command, and ledger refresh in the same mechanical batch
+> as the other 2026-08-24 unwired experiments. Do not alter theorem code or
+> broaden its covariance claim.
+
+> **Newest unwired split-sector branch-regularity theorem (2026-08-24):**
+> mechanically wire this experiment without changing theorem scope:
+>
+> ```text
+> EXP-CODE-SELF-DUAL-WREATH-SPLIT-SECTOR-BRANCH-REGULARITY
+> ```
+>
+> Suggested CLI name: `code-wreath-split-sector-branch`. Paths:
+>
+> ```text
+> theorems/self_dual_wreath_split_sector_branch_regularity.py
+> tests/test_self_dual_wreath_split_sector_branch_regularity.py
+> research/representation/self_dual_wreath_split_sector_branch_regularity.json
+> ```
+>
+> Preserve these exact boundaries:
+>
+> - Restriction maps physical source regular registers to exact refined `A_n`
+>   Plancherel labels; self-conjugate split constituents are equiprobable.
+> - The refined collision probability lies between one half and twice the
+>   `S_n` collision, so natural pair-swap branch action is asymptotically free
+>   without assuming self-conjugate tuple absence.
+> - `S_n` diagonal invariance is exactly `A_n` diagonal invariance followed by
+>   one odd-parity projection.
+> - Split reassembly returns the original `F/2^K` cross Gram and orientation
+>   polar. It does not compile a full connected QFT or dense matrix CS.
+> - Keep connected-transform, dense-CS, complete-polar, classical-separation,
+>   algorithm, and speedup gates false.
+>
+> Mechanical acceptance checks:
+>
+> ```text
+> python -m py_compile \
+>   theorems/self_dual_wreath_split_sector_branch_regularity.py \
+>   tests/test_self_dual_wreath_split_sector_branch_regularity.py
+> python -m pytest -q \
+>   tests/test_self_dual_wreath_split_sector_branch_regularity.py
+> PYTHONPATH=.:core:theorems python \
+>   theorems/self_dual_wreath_split_sector_branch_regularity.py
+> git diff --check
+> python qsearch.py validate
+> ```
+>
+> The focused suite must report seven passing tests. Artifact status must be
+> `split-sector-safe-branch-regularity-original-cs-polar-remains`, with 14
+> Plancherel controls, two fixed-space controls, zero failures, seven scaling
+> rows, one refined-source-marginal theorem, one split-safe free-branch theorem,
+> one parity factorization, one original-CS boundary, and zero connected-QFT,
+> dense-CS, complete-polar, and new-algorithm counts. Add registry, runner, CLI,
+> clean-registry dispatch test, concise README command, and ledger refresh in
+> the same routine batch as the two trace-biased no-gos below.
+>
+> Reconcile stale split-sector gates in
+> `theorems/self_dual_wreath_connected_clifford_normal_form.py` and
+> `theorems/self_dual_wreath_orientation_covariant_quotient_obstruction.py` by
+> cross-referencing this theorem. Do not claim that their original nonself
+> proofs suddenly cover the full refined Clifford transform. Only branch-orbit
+> freeness and the parity-projector reduction are resolved externally; coherent
+> orbit/stabilizer compilation and dense multiplicity CS remain open.
+
+> **Newest unwired trace-biased arbitrary-basis coefficient-rank no-go
+> (2026-08-24):** mechanically wire this experiment without changing theorem
+> scope:
+>
+> ```text
+> EXP-CODE-SELF-DUAL-WREATH-TRACE-BIASED-COEFFICIENT-RANK-NO-GO
+> ```
+>
+> Suggested CLI name: `code-wreath-trace-biased-coefficient-rank`. Paths:
+>
+> ```text
+> theorems/self_dual_wreath_trace_biased_coefficient_rank_no_go.py
+> tests/test_self_dual_wreath_trace_biased_coefficient_rank_no_go.py
+> research/representation/self_dual_wreath_trace_biased_coefficient_rank_no_go.json
+> ```
+>
+> Preserve these exact boundaries:
+>
+> - The native complete-polar coefficient output is the normalized projector
+>   Gram `rho[e,f]=Tr(E_e E_f)/Tr(F)`.
+> - Uniform orientation-rank concentration plus physical trace-biased total
+>   coherence makes its globally-distinct average purity `O(2^-K)`.
+> - Every source-and-target-adaptive arbitrary-basis effect of rank `o(2^K)`
+>   retains vanishing average native PGM mass.
+> - This is output-rank obstruction only. It is not a circuit lower bound and
+>   does not reject dense recoupling, tensor transforms, direct rectangular
+>   CS, or complete polar.
+> - Keep dense-transform, complete-polar, classical-separation, algorithm, and
+>   speedup gates false.
+>
+> Mechanical acceptance checks:
+>
+> ```text
+> python -m py_compile \
+>   theorems/self_dual_wreath_trace_biased_coefficient_rank_no_go.py \
+>   tests/test_self_dual_wreath_trace_biased_coefficient_rank_no_go.py
+> python -m pytest -q \
+>   tests/test_self_dual_wreath_trace_biased_coefficient_rank_no_go.py
+> PYTHONPATH=.:core:theorems python \
+>   theorems/self_dual_wreath_trace_biased_coefficient_rank_no_go.py
+> git diff --check
+> python qsearch.py validate
+> ```
+>
+> The focused suite must report seven passing tests. Artifact status must be
+> `physical-arbitrary-basis-sublinear-coefficient-rank-rejected`, with two
+> finite controls, zero failures, nine scaling rows, exact `S3,K=1` average
+> coherence `7/6`, exact `S4,K=2` globally-distinct source mass `89/1536`, one
+> arbitrary-basis sublinear-rank no-go, and zero dense-transform no-go,
+> complete-polar compiler, and new-algorithm counts. Add registry, runner, CLI,
+> clean-registry dispatch test, concise README command, and ledger refresh in
+> the same routine batch as the companion adaptive-Walsh theorem.
+
+> **Newest unwired trace-biased adaptive-Walsh no-go (2026-08-24):**
+> mechanically wire this experiment without changing theorem scope:
+>
+> ```text
+> EXP-CODE-SELF-DUAL-WREATH-TRACE-BIASED-ADAPTIVE-WALSH-NO-GO
+> ```
+>
+> Suggested CLI name: `code-wreath-trace-biased-adaptive-walsh`. The
+> reorganized source, test, and artifact paths are:
+>
+> ```text
+> theorems/self_dual_wreath_trace_biased_adaptive_walsh_no_go.py
+> tests/test_self_dual_wreath_trace_biased_adaptive_walsh_no_go.py
+> research/representation/self_dual_wreath_trace_biased_adaptive_walsh_no_go.json
+> ```
+>
+> Preserve these exact boundaries:
+>
+> - The native physical block law is proportional to block multiplicity times
+>   `Tr(F_beta)`; after summing target sectors its source marginal is exactly
+>   product Plancherel.
+> - Projector positivity contracts every autocorrelation second moment to its
+>   regular-master first moment `1/|G|`.
+> - After globally-distinct conditioning, ideal Walsh collision is `O(2^-K)`;
+>   even source-and-target-label-adaptive `o(2^K)` mode sets retain vanishing
+>   average native PGM mass.
+> - This rejects sparse Walsh retention only. It is not dense-transform
+>   hardness and does not reject non-Walsh recoupling or direct CS.
+> - Keep dense-recouping, complete-polar, classical-separation, algorithm, and
+>   speedup gates false.
+>
+> Mechanical acceptance checks for the reorganized repository:
+>
+> ```text
+> python -m py_compile \
+>   theorems/self_dual_wreath_trace_biased_adaptive_walsh_no_go.py \
+>   tests/test_self_dual_wreath_trace_biased_adaptive_walsh_no_go.py
+> python -m pytest -q \
+>   tests/test_self_dual_wreath_trace_biased_adaptive_walsh_no_go.py
+> PYTHONPATH=.:core:theorems python \
+>   theorems/self_dual_wreath_trace_biased_adaptive_walsh_no_go.py
+> git diff --check
+> python qsearch.py validate
+> ```
+>
+> The focused suite must report seven passing tests. Artifact status must be
+> `physical-source-adaptive-sparse-walsh-routing-rejected`, with two exact
+> controls, zero failures, nine scaling rows, one trace-biased block-law
+> theorem, one exact source-marginal theorem, one second-to-first-moment
+> contraction, one adaptive sparse-Walsh no-go, and zero non-Walsh no-go,
+> complete-polar, and new-algorithm counts. Add registry, runner, CLI, clean-
+> registry dispatch test, concise README command, and ledger refresh in one
+> routine batch.
+>
+> Reconcile the now-stale gate in the already-wired source-adaptive collision
+> reduction: retain its exact blockwise Parseval and Cauchy--Schwarz theorem,
+> but cross-reference this new physical trace-biased result and mark the
+> physical adaptive sparse-Walsh rejection as resolved externally. Do not
+> change its finite W4/W5 claims or imply non-Walsh/dense-polar hardness.
+
 > **Newest unwired source-adaptive Walsh-collision reduction (2026-08-21):**
 > mechanically wire this experiment without changing theorem scope:
 >
@@ -4373,6 +4798,91 @@ artifact under `research/representation/`:
       algorithm, and speedup false. Add the four literature records/links only
       with the scope boundaries stated in the report; fixed-cycle/stable-
       character theorems do not solve the high-level projection.
+44. `self_dual_wreath_branch_character_whole_sum_path_erasure_boundary.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-WHOLE-SUM-PATH-ERASURE-BOUNDARY`
+    - Writer: `write_whole_sum_path_erasure_boundary_report`
+    - Preserve the canonical `Omega(sqrt(|G|))` path-erasure boundary and the
+      exact orthogonal-range classifier bypass. This is not an arbitrary-circuit
+      lower bound. Keep natural classifier, direct multiplier, algorithm,
+      classical separation, and speedup false.
+45. `self_dual_wreath_branch_character_raw_polar_matched_filter_boundary.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-RAW-POLAR-MATCHED-FILTER-BOUNDARY`
+    - Writer: `write_raw_polar_matched_filter_boundary_report`
+    - Preserve the positive raw/polar cross map, vanishing unwhitened matched
+      success, and whitening bound through `kappa R`. Polynomial raw domination
+      is a decoder falsifier, not a success gate. Do not mark the actual physical
+      PGM rejected.
+46. `self_dual_wreath_branch_character_raw_concentration_central_fourier_bridge.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-RAW-CONCENTRATION-CENTRAL-FOURIER-BRIDGE`
+    - Writer: `write_central_raw_concentration_bridge_report`
+    - Preserve `M_nu^*M_nu=|G|/d_nu^2 I tensor Q_nu` with
+      `Q_nu=E^*Pi_nu E`. Never substitute the noncentral `F_nu`; only the trace
+      identity `Tr(Q_nu)=d_nu Tr(F_nu)` survives. Preserve high-dimensional bulk
+      suppression. This artifact leaves low-sector alignment open historically;
+      module 47 closes it. Keep physical PGM rejection, algorithm, and speedup false.
+47. `self_dual_wreath_branch_character_sector_resolved_whitening_no_go.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-SECTOR-RESOLVED-WHITENING-NO-GO`
+    - Writer: `write_sector_resolved_whitening_no_go_report`
+    - Preserve the exact correct-block Fourier partial-trace formula,
+      `||A_E,nu||_F^2/D<=r_nu`, and `P_E<=p(n)R`. This closes both global raw
+      concentration and low-sector coherent-alignment escapes for
+      `polar(C_J)^*` on the native raw ensemble. It is not an arbitrary-circuit
+      lower bound and does not reject the physical multiplicity PGM or alternate
+      state preparations. Keep those gates, classical separation, algorithm,
+      and speedup false.
+48. `self_dual_wreath_orientation_kernel_hash_normalization_no_go.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-KERNEL-HASH-NORMALIZATION-NO-GO`
+    - Writer: `write_hash_normalization_no_go_report`
+    - Preserve the exact conditioned Gram `I tensor H_S/(|S|dim(C))`, the mean
+      identity `Tr(H)/q=dim(C)Tr(D_nu)/d_nu^2`, and the natural generic degree
+      lower bound `Omega(n!sqrt(p_hash)/p(n))`. The theorem grants ideal
+      almost-scalar hash conditioning and still rejects only canonical scalar
+      whitening. Keep structured direct polar, physical PGM rejection,
+      arbitrary-circuit lower bound, classical separation, algorithm, and
+      speedup false.
+49. `self_dual_wreath_orientation_kernel_character_tensor_boundary.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-KERNEL-CHARACTER-TENSOR-BOUNDARY`
+    - Writer: `write_character_tensor_boundary_report`
+    - Preserve the exact two-group-variable character tensor formula, the
+      simultaneous-conjugacy orbit identity, and the factorial `S_n` orbit
+      lower bound. Preserve the finite Walsh, operator-Schmidt-rank, and local
+      commutator controls only as falsifiers for those simple ansatzes. They
+      are not asymptotic tensor-network lower bounds. Keep global coherent
+      Kronecker/Racah contraction, the physical PGM, arbitrary-circuit lower
+      bound, classical separation, algorithm, and speedup false.
+50. `self_dual_wreath_schur_dilated_multiplicity_access.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-SCHUR-DILATED-MULTIPLICITY-ACCESS`
+    - Writer: `write_schur_dilated_multiplicity_access_report`
+    - Preserve the positive fixed-source result: separate inverse Schur
+      transforms, site regrouping, and a joint high-dimensional Schur
+      transform give polynomial global isotypic routing and an opaque encoded
+      Kronecker multiplicity carrier. Preserve the exact `S_3/S_4/S_5`
+      branching and projector-rank controls, including the multiplicity-two
+      `S_5` branch. Distinct source-label tuples occupy orthogonal subgroup
+      branch sectors, so the controlled router does not realize the physical
+      cross-orientation Gram `H_nu`; a separate branch-mixing/erasure
+      intertwiner is open. A hypothetical common coordinate isometry would
+      preserve, not whiten, `H_nu`. Keep standard multiplicity coordinates,
+      Racah associator, orientation polar, physical PGM, decoder, classical
+      separation, algorithm, and speedup false/open. Acceptance: the eight
+      focused tests, capability-ledger tests, artifact generation,
+      `compileall`, `git diff --check`, and full registry validation. Never
+      rewrite the result as a generic internal `S_n` Clebsch--Gordan transform
+      or as proof that Schur routing itself preserves cross-orientation
+      overlaps.
+51. `self_dual_wreath_schur_branch_merger_polar_equivalence.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-SCHUR-BRANCH-MERGER-POLAR-EQUIVALENCE`
+    - Writer: `write_schur_branch_merger_polar_equivalence_report`
+    - Preserve the exact identities `S_B=S B^*`,
+      `polar(S_B)=polar(S)B^*`, and
+      `polar(L C^*)=polar(L)C^*`. Preserve the positive Bell-factor theorem:
+      the physical invariant range interfaces polynomially with the opaque
+      Schur companion without exposing multiplicity coordinates. Physical and
+      encoded polar compilers are therefore interreducible, not compiled.
+      Keep direct polar, physical PGM, multi-round decoder, classical
+      separation, algorithm, and speedup false/open. Acceptance: eight focused
+      tests, capability-ledger tests, artifact generation, `compileall`,
+      `git diff --check`, and registry validation.
 
 Mechanical actions:
 
@@ -4382,7 +4892,7 @@ Mechanical actions:
   parsers/handlers, clean-registry dispatch tests, and concise README command
   blocks by copying the existing hidden-involution theorem pattern.
 - Refresh `dequantize`, `proofs`, `query-models`, `frontiers`, `conjectures`,
-  `mutate`, the progress snapshot, and `validate` after wiring all forty-three as one
+  `mutate`, the progress snapshot, and `validate` after wiring all fifty-one as one
   batch.
 - Repair the pre-existing clean-registry defect in
   `write_complete_racah_control_report`: it currently accepts
@@ -4390,7 +4900,19 @@ Mechanical actions:
   `tests/test_coset_complete_racah_control.py::CompleteRacahControlTests::test_writer_runner_and_ledgers_record_finite_uniform_boundary`
   fails when `experiment_runner` appends the missing result. Copy a neighboring
   report writer's result/negative upsert pattern without changing Racah claims.
-- Run the forty-three focused test files first, then adjacent hidden-involution
+- Repair the older clean-registry writer regressions exposed by the 2026-08-24
+  broad pytest checkpoint. The failing tests are
+  `test_character_decoder_search`, `test_character_moment_obstruction`,
+  `test_character_query_information`, `test_character_shift_baselines`,
+  `test_character_shift_complexity`, `test_character_shift_lower_bound`,
+  `test_classical_baseline_suite`, and `test_code_closure_attack`. Each writer
+  produces its JSON artifact but fails to upsert the expected scaling run or
+  experiment result into a freshly initialized registry. At least
+  `write_character_decoder_search_report` has an unconditional return before
+  any registry update. Restore the existing neighboring writer pattern and
+  preserve every current claim gate; this is registry plumbing, not research
+  evidence. Run each named clean-registry test before another broad suite.
+- Run the fifty-one focused test files first, then adjacent hidden-involution
   tests, `python -m compileall -q .`, `node --check site/progress.js`,
   `git diff --check`, and `python qsearch.py validate`.
 - Make no separate commit per theorem.  Include these in the next rare coherent

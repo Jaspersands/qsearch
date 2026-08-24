@@ -1,0 +1,409 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The projection-Gram factor already gives normalization-one A_nu.",
+      "resolution": "Algebraically yes, operationally no: the canonical coherent projector-erasure top block is A_nu/sqrt(d_nu).",
+      "resolved": true
+    },
+    {
+      "objection": "Direct analysis has the same Omega(d_nu) cost as density access.",
+      "resolution": "False: the rectangular factor exposes square-root singular values, improving the generic burden to Omega(sqrt(d_nu)).",
+      "resolved": true
+    },
+    {
+      "objection": "The scalar loss changes the desired polar.",
+      "resolution": "It does not: polar(A_nu/sqrt(d_nu))=polar(A_nu) exactly.",
+      "resolved": true
+    },
+    {
+      "objection": "Small normalized singular values prove the polar is hard.",
+      "resolution": "They prove only a generic polynomial-transform boundary. Structured direct polars can bypass small normalized singular scales.",
+      "resolved": false
+    },
+    {
+      "objection": "The balanced dimension alone closes the physical route.",
+      "resolution": "No natural source-mass theorem or all-circuit lower bound is supplied.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "canonical_access_gram_equals_D_nu_over_d_nu": true,
+    "canonical_access_normalization_is_sqrt_d_nu": true,
+    "canonical_projector_erasure_access_constructed": true,
+    "classical_separation_proved": false,
+    "direct_structured_polar_compiled": false,
+    "direct_structured_polar_ruled_out": false,
+    "generic_direct_analysis_amplification_costs_omega_sqrt_d_nu": true,
+    "joint_rectangular_analysis_factor_identified": true,
+    "joint_rectangular_analysis_gram_equals_D_nu": true,
+    "large_row_sector_natural_information_mass_proved": false,
+    "normalization_one_A_nu_access_constructed": false,
+    "polynomial_joint_decoder_proved": false,
+    "reason": "The exact direct factor is known, but its canonical coherent access is A_nu/sqrt(d_nu). Generic amplification remains exponential on growing balanced sectors, while a direct structured polar remains open.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-24T16:11:37.122185+00:00",
+  "falsifiers_triggered": [
+    "Writing D_nu as an explicit Gram does not by itself supply normalization-one coherent access to its factor.",
+    "Direct factor access is strictly better normalized than density rescaling but is still generically exponential on growing-row sectors.",
+    "The normalization barrier cannot be promoted to a polar or circuit lower bound because scalar rescaling leaves the polar unchanged."
+  ],
+  "finite_controls": [
+    {
+      "analysis_input_dimension": 16,
+      "analysis_output_dimension": 32,
+      "canonical_analysis_normalization_sqrt_irrep": 1.4142135623730951,
+      "canonical_erasure_map_residual": 1.3320146250198385e-16,
+      "canonical_gram_residual": 3.3630193352283855e-17,
+      "control_id": "W3-THRESHOLD-STANDARD",
+      "exact_analysis_normalization_theorem_verified": true,
+      "generic_amplification_degree_lower_bound": 1,
+      "irrep_dimension": 2,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_multiplicity_eigenvalue": 0.09374999999999997,
+      "maximum_target_analysis_singular_value": 0.30618621784789724,
+      "minimum_positive_multiplicity_eigenvalue": 0.03124999999999998,
+      "minimum_positive_target_analysis_singular_value": 0.17677669529663675,
+      "multiplicity_operator_rank": 12,
+      "n": 3,
+      "orientation_count": 8,
+      "polar_scale_invariance_residual": 7.565424334230454e-15,
+      "singular_value_scaling_residual": 1.5202354861220294e-16,
+      "source_carrier_dimension": 4,
+      "status": "exact-joint-analysis-map-sqrt-row-normalization",
+      "target_gram_residual": 3.1807807349378726e-17,
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "analysis_input_dimension": 12,
+      "analysis_output_dimension": 972,
+      "canonical_analysis_normalization_sqrt_irrep": 1.7320508075688772,
+      "canonical_erasure_map_residual": 1.9630799692295873e-17,
+      "canonical_gram_residual": 2.0754194847578247e-17,
+      "control_id": "W4-COLLISION-FREE-31",
+      "exact_analysis_normalization_theorem_verified": true,
+      "generic_amplification_degree_lower_bound": 1,
+      "irrep_dimension": 3,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_multiplicity_eigenvalue": 0.04166666666666667,
+      "maximum_target_analysis_singular_value": 0.20412414523193145,
+      "minimum_positive_multiplicity_eigenvalue": 0.02777777777777777,
+      "minimum_positive_target_analysis_singular_value": 0.16666666666666663,
+      "multiplicity_operator_rank": 6,
+      "n": 4,
+      "orientation_count": 4,
+      "polar_scale_invariance_residual": 5.758322250298368e-15,
+      "singular_value_scaling_residual": 2.0206364052201326e-16,
+      "source_carrier_dimension": 18,
+      "status": "exact-joint-analysis-map-sqrt-row-normalization",
+      "target_gram_residual": 7.585391235917113e-17,
+      "target_partition": [
+        3,
+        1
+      ]
+    },
+    {
+      "analysis_input_dimension": 8,
+      "analysis_output_dimension": 648,
+      "canonical_analysis_normalization_sqrt_irrep": 1.4142135623730951,
+      "canonical_erasure_map_residual": 2.25180204096786e-17,
+      "canonical_gram_residual": 7.585325114230021e-17,
+      "control_id": "W4-COLLISION-FREE-22",
+      "exact_analysis_normalization_theorem_verified": true,
+      "generic_amplification_degree_lower_bound": 1,
+      "irrep_dimension": 2,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_multiplicity_eigenvalue": 0.125493526471288,
+      "maximum_target_analysis_singular_value": 0.35425065486359797,
+      "minimum_positive_multiplicity_eigenvalue": 0.02728425130648974,
+      "minimum_positive_target_analysis_singular_value": 0.16517945182888133,
+      "multiplicity_operator_rank": 4,
+      "n": 4,
+      "orientation_count": 4,
+      "polar_scale_invariance_residual": 1.6615523823982568e-15,
+      "singular_value_scaling_residual": 2.1677797545656835e-16,
+      "source_carrier_dimension": 18,
+      "status": "exact-joint-analysis-map-sqrt-row-normalization",
+      "target_gram_residual": 1.0949389893418967e-16,
+      "target_partition": [
+        2,
+        2
+      ]
+    }
+  ],
+  "headline_metrics": {
+    "canonical_projector_erasure_normalization_theorem_count": 1,
+    "direct_density_gram_equivalence_theorem_count": 1,
+    "direct_structured_polar_compiler_count": 0,
+    "exact_rectangular_analysis_factor_theorem_count": 1,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "generic_sqrt_row_amplification_boundary_count": 1,
+    "maximum_finite_irrep_dimension": 3,
+    "maximum_generic_direct_analysis_degree_log2_lower_bound": 249.55481512713044,
+    "maximum_scaling_witness_irrep_log2_dimension": 499.1679229455799,
+    "new_quantum_algorithm_count": 0
+  },
+  "proof_obligations": [
+    {
+      "obligation": "identify_rectangular_joint_multiplicity_analysis",
+      "resolution": "The projection-Gram factor and branch Walsh rotation give A_nu with Gram D_nu exactly.",
+      "resolved": true
+    },
+    {
+      "obligation": "charge_canonical_projector_erasure_normalization",
+      "resolution": "The carrier EPR contributes 1/sqrt(dim(C)) and selected Walsh-row erasure contributes 1/sqrt(q), yielding A_nu/sqrt(d_nu).",
+      "resolved": true
+    },
+    {
+      "obligation": "reconcile_direct_and_density_access",
+      "resolution": "The canonical direct Gram is D_nu/d_nu, exactly the Schur-row density block.",
+      "resolved": true
+    },
+    {
+      "obligation": "construct_direct_structured_polar",
+      "resolution": "The scalar normalization leaves polar(A_nu) unchanged, but no circuit implements that polar without generic amplification.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_large_row_natural_information_mass",
+      "resolution": "The balanced irrep is an access witness only; source probability and hidden-label information remain unproved.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "balanced_two_row_dimension_exponential": true,
+      "canonical_direct_analysis_normalization": "sqrt(d_nu)",
+      "density_rescaling_degree_order": "Omega(d_nu)",
+      "direct_analysis_amplification_degree_order": "Omega(sqrt(d_nu))",
+      "direct_polar_compiled": false,
+      "direct_structured_polar_ruled_out": false,
+      "generic_direct_analysis_degree_log2_lower_bound": 1.584962500721156,
+      "generic_direct_analysis_degree_lower_bound_decimal": "3",
+      "n": 8,
+      "status": "canonical-analysis-access-has-exponential-generic-amplification",
+      "witness_irrep_dimension_decimal": "14",
+      "witness_irrep_dimension_log2": 3.807354922057604,
+      "witness_partition": [
+        4,
+        4
+      ],
+      "witness_sector_natural_mass_proved": false
+    },
+    {
+      "balanced_two_row_dimension_exponential": true,
+      "canonical_direct_analysis_normalization": "sqrt(d_nu)",
+      "density_rescaling_degree_order": "Omega(d_nu)",
+      "direct_analysis_amplification_degree_order": "Omega(sqrt(d_nu))",
+      "direct_polar_compiled": false,
+      "direct_structured_polar_ruled_out": false,
+      "generic_direct_analysis_degree_log2_lower_bound": 5.20945336562895,
+      "generic_direct_analysis_degree_lower_bound_decimal": "37",
+      "n": 16,
+      "status": "canonical-analysis-access-has-exponential-generic-amplification",
+      "witness_irrep_dimension_decimal": "1430",
+      "witness_irrep_dimension_log2": 10.481799431665753,
+      "witness_partition": [
+        8,
+        8
+      ],
+      "witness_sector_natural_mass_proved": false
+    },
+    {
+      "balanced_two_row_dimension_exponential": true,
+      "canonical_direct_analysis_normalization": "sqrt(d_nu)",
+      "density_rescaling_degree_order": "Omega(d_nu)",
+      "direct_analysis_amplification_degree_order": "Omega(sqrt(d_nu))",
+      "direct_polar_compiled": false,
+      "direct_structured_polar_ruled_out": false,
+      "generic_direct_analysis_degree_log2_lower_bound": 12.508785162064513,
+      "generic_direct_analysis_degree_lower_bound_decimal": "5828",
+      "n": 32,
+      "status": "canonical-analysis-access-has-exponential-generic-amplification",
+      "witness_irrep_dimension_decimal": "35357670",
+      "witness_irrep_dimension_log2": 25.07551987134472,
+      "witness_partition": [
+        16,
+        16
+      ],
+      "witness_sector_natural_mass_proved": false
+    },
+    {
+      "balanced_two_row_dimension_exponential": true,
+      "canonical_direct_analysis_normalization": "sqrt(d_nu)",
+      "density_rescaling_degree_order": "Omega(d_nu)",
+      "direct_analysis_amplification_degree_order": "Omega(sqrt(d_nu))",
+      "direct_polar_compiled": false,
+      "direct_structured_polar_ruled_out": false,
+      "generic_direct_analysis_degree_log2_lower_bound": 27.782964913007334,
+      "generic_direct_analysis_degree_lower_bound_decimal": "230943534",
+      "n": 64,
+      "status": "canonical-analysis-access-has-exponential-generic-amplification",
+      "witness_irrep_dimension_decimal": "55534064877048198",
+      "witness_irrep_dimension_log2": 55.62422251764499,
+      "witness_partition": [
+        32,
+        32
+      ],
+      "witness_sector_natural_mass_proved": false
+    },
+    {
+      "balanced_two_row_dimension_exponential": true,
+      "canonical_direct_analysis_normalization": "sqrt(d_nu)",
+      "density_rescaling_degree_order": "Omega(d_nu)",
+      "direct_analysis_amplification_degree_order": "Omega(sqrt(d_nu))",
+      "direct_polar_compiled": false,
+      "direct_structured_polar_ruled_out": false,
+      "generic_direct_analysis_degree_log2_lower_bound": 59.04538684791314,
+      "generic_direct_analysis_degree_lower_bound_decimal": "594884354096436394",
+      "n": 128,
+      "status": "canonical-analysis-access-has-exponential-generic-amplification",
+      "witness_irrep_dimension_decimal": "368479169875816659479009042713546950",
+      "witness_irrep_dimension_log2": 118.14906638714533,
+      "witness_partition": [
+        64,
+        64
+      ],
+      "witness_sector_natural_mass_proved": false
+    },
+    {
+      "balanced_two_row_dimension_exponential": true,
+      "canonical_direct_analysis_normalization": "sqrt(d_nu)",
+      "density_rescaling_degree_order": "Omega(d_nu)",
+      "direct_analysis_amplification_degree_order": "Omega(sqrt(d_nu))",
+      "direct_polar_compiled": false,
+      "direct_structured_polar_ruled_out": false,
+      "generic_direct_analysis_degree_log2_lower_bound": 122.3016615551143,
+      "generic_direct_analysis_degree_lower_bound_decimal": "6553429739392349334441407908137591178",
+      "n": 256,
+      "status": "canonical-analysis-access-has-exponential-generic-amplification",
+      "witness_irrep_dimension_decimal": "44718285453094622775889522153971216184032648852520635911693306722980765510",
+      "witness_irrep_dimension_log2": 244.6616158015476,
+      "witness_partition": [
+        128,
+        128
+      ],
+      "witness_sector_natural_mass_proved": false
+    },
+    {
+      "balanced_two_row_dimension_exponential": true,
+      "canonical_direct_analysis_normalization": "sqrt(d_nu)",
+      "density_rescaling_degree_order": "Omega(d_nu)",
+      "direct_analysis_amplification_degree_order": "Omega(sqrt(d_nu))",
+      "direct_polar_compiled": false,
+      "direct_structured_polar_ruled_out": false,
+      "generic_direct_analysis_degree_log2_lower_bound": 249.55481512713044,
+      "generic_direct_analysis_degree_lower_bound_decimal": "1328877400413916840819164984627965793510609834296419337289184531197024759753",
+      "n": 512,
+      "status": "canonical-analysis-access-has-exponential-generic-amplification",
+      "witness_irrep_dimension_decimal": "1838728806050447178945542295919013188631170099776194095631629802153953581076132688111479765113051517392441367036708073775588228430597313880732554755142",
+      "witness_irrep_dimension_log2": 499.1679229455799,
+      "witness_partition": [
+        256,
+        256
+      ],
+      "witness_sector_natural_mass_proved": false
+    }
+  ],
+  "status": "joint-analysis-map-exact-canonical-sqrt-row-boundary",
+  "summary": "Identified the exact rectangular joint-character analysis map and proved the sqrt(d_nu) normalization of its canonical coherent implementation.",
+  "theorem": {
+    "canonical_circuit": "Walsh preparation, carrier EPR preparation, controlled E_e, and one Walsh-row work-label erasure implement N_nu.",
+    "canonical_normalization": "N_nu=A_nu/sqrt(d_nu), so N_nu^*N_nu=D_nu/d_nu.",
+    "density_access_equivalence": "The canonical direct-analysis Gram is exactly the fixed-row block of the global purification density encoding.",
+    "exact_analysis_factor": "A_nu=sqrt(d_nu/(q dim(C))) L_nu(I tensor W)^*.",
+    "exact_gram": "A_nu^*A_nu=D_nu.",
+    "generic_amplification_boundary": "Uniform bounded-polynomial amplification from N_nu to A_nu has degree Omega(sqrt(d_nu)); balanced two-row dimensions make this exponential.",
+    "scope": "The bound applies to this normalized access plus uniform polynomial transformation. It does not rule out direct polar synthesis, multi-round branch relocation, or a fused representation-specific isometry.",
+    "status": "joint-analysis-map-exact-canonical-sqrt-row-boundary",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "canonical_circuit": "Walsh preparation, carrier EPR preparation, controlled E_e, and one Walsh-row work-label erasure implement N_nu.",
+    "canonical_normalization": "N_nu=A_nu/sqrt(d_nu), so N_nu^*N_nu=D_nu/d_nu.",
+    "density_access_equivalence": "The canonical direct-analysis Gram is exactly the fixed-row block of the global purification density encoding.",
+    "exact_analysis_factor": "A_nu=sqrt(d_nu/(q dim(C))) L_nu(I tensor W)^*.",
+    "exact_gram": "A_nu^*A_nu=D_nu.",
+    "generic_amplification_boundary": "Uniform bounded-polynomial amplification from N_nu to A_nu has degree Omega(sqrt(d_nu)); balanced two-row dimensions make this exponential.",
+    "scope": "The bound applies to this normalized access plus uniform polynomial transformation. It does not rule out direct polar synthesis, multi-round branch relocation, or a fused representation-specific isometry.",
+    "status": "joint-analysis-map-exact-canonical-sqrt-row-boundary",
+    "theorem_verified": true
+  }
+}

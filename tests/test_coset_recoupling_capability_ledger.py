@@ -32,6 +32,7 @@ class RecouplingCapabilityLedgerTests(unittest.TestCase):
             "panova-classical-multiplicities-2025",
             "burchardt-high-dimensional-schur-2025",
             "yoshida-random-dilation-2025",
+            "christandl-et-al-plethysm-sharp-bqp-2026",
         ):
             self.assertIn(literature_id, records)
             self.assertIn("Kronecker", records[literature_id].reusable_abstraction)
@@ -56,6 +57,10 @@ class RecouplingCapabilityLedgerTests(unittest.TestCase):
         self.assertFalse(
             capabilities["CAP-KCOPY-RACAH-ASSOCIATOR"].uniform_polynomial_gate_complexity_proved
         )
+        dilated = capabilities["CAP-SCHUR-DILATED-KRONECKER-CARRIER"]
+        self.assertTrue(dilated.uniform_polynomial_gate_complexity_proved)
+        self.assertFalse(dilated.resolves_internal_sn_kronecker_basis)
+        self.assertFalse(dilated.handles_overlapping_k_copy_associators)
         self.assertFalse(report.claim_gate["sn_qft_is_open_bottleneck"])
         self.assertTrue(report.claim_gate["exact_holevo_copy_budget_proved"])
         self.assertFalse(report.claim_gate["holevo_copy_budget_constructs_measurement"])
@@ -64,6 +69,47 @@ class RecouplingCapabilityLedgerTests(unittest.TestCase):
         self.assertFalse(diagonal_jm.resolves_internal_sn_kronecker_basis)
         self.assertTrue(report.claim_gate["diagonal_jm_label_transform_polynomial_proved"])
         self.assertFalse(report.claim_gate["diagonal_jm_labels_resolve_multiplicity_basis"])
+        self.assertTrue(
+            report.claim_gate["schur_dilated_global_isotypic_router_polynomial_proved"]
+        )
+        self.assertTrue(
+            report.claim_gate["schur_dilated_encoded_multiplicity_carrier_proved"]
+        )
+        self.assertFalse(
+            report.claim_gate["schur_dilated_standard_multiplicity_coordinates_exposed"]
+        )
+        self.assertFalse(
+            report.claim_gate["schur_dilated_controlled_router_realizes_orientation_gram"]
+        )
+        self.assertFalse(
+            report.claim_gate[
+                "schur_dilated_cross_orientation_branch_intertwiner_compiled"
+            ]
+        )
+        self.assertTrue(
+            report.claim_gate["schur_branch_merger_polar_equivalence_proved"]
+        )
+        self.assertFalse(
+            report.claim_gate[
+                "schur_branch_encoding_removes_orientation_inverse_square_root"
+            ]
+        )
+        self.assertTrue(
+            report.claim_gate[
+                "physical_invariant_to_schur_companion_interface_compiled"
+            ]
+        )
+        self.assertTrue(
+            report.claim_gate[
+                "physical_encoded_orientation_polar_compilers_interreducible"
+            ]
+        )
+        self.assertFalse(
+            report.claim_gate["schur_branch_structured_direct_polar_compiled"]
+        )
+        self.assertFalse(
+            report.claim_gate["schur_dilation_improves_orientation_gram_conditioning"]
+        )
         self.assertFalse(report.claim_gate["speedup_claim_allowed"])
 
     def test_restricted_multiplicity_route_is_classically_checked(self):
@@ -105,6 +151,7 @@ class RecouplingCapabilityLedgerTests(unittest.TestCase):
         self.assertIn("NEG-COSET-SN-QFT-AS-MULTICOPY-DECODER", negative_ids)
         self.assertIn("NEG-COSET-KRONECKER-COUNT-AS-TRANSFORM", negative_ids)
         self.assertIn("NEG-COSET-RESTRICTED-MULTIPLICITY-AS-BREAKTHROUGH", negative_ids)
+        self.assertIn("NEG-COSET-SCHUR-ENCODING-AS-FREE-BRANCH-POLAR", negative_ids)
         self.assertTrue(
             any(
                 item["id"] == "DEQ-COSET-SOLVED-QFT-COUNTING-NOT-RECOUPLING-DECODER"
@@ -112,6 +159,24 @@ class RecouplingCapabilityLedgerTests(unittest.TestCase):
             )
         )
         lemmas = {item["id"]: item for item in proofs["proof_debt"]["lemmas"]}
+        self.assertEqual(
+            lemmas[
+                "LEMMA-CODE-COSET-COLLECTIVE-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER"
+            ]["status"],
+            "proved-polynomial-schur-dilated-multiplicity-carrier",
+        )
+        self.assertEqual(
+            lemmas[
+                "LEMMA-CODE-COSET-COLLECTIVE-COSET-PHYSICAL-SCHUR-COMPANION-INTERFACE"
+            ]["status"],
+            "proved-polynomial-physical-invariant-schur-companion-interface",
+        )
+        self.assertEqual(
+            lemmas[
+                "LEMMA-CODE-COSET-COLLECTIVE-COSET-SCHUR-BRANCH-MERGER-POLAR-EQUIVALENCE"
+            ]["status"],
+            "proved-schur-branch-merger-is-orientation-polar-in-encoded-coordinates",
+        )
         self.assertEqual(
             lemmas["LEMMA-CODE-COSET-COLLECTIVE-COSET-SN-QFT-SCOPE-SEPARATION"]["status"],
             "proved-known-qft-scope-separated",

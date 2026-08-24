@@ -315,32 +315,35 @@ MECHANISM_RULES: list[tuple[set[str], dict[str, str]]] = [
         },
         {
             "mechanism": (
-                "Separate the efficient S_n QFT and weak irrep projectors from the internal Kronecker transform, "
-                "overlapping Racah/associator moves, state-dependent transition weights, and outcome decoding."
+                "Separate efficient S_n QFT and Schur-dilated isotypic routing from exposed Kronecker coordinates, "
+                "overlapping Racah/associator moves, state-dependent orientation polars, and outcome decoding."
             ),
             "problem_family": (
                 "Multi-register symmetric-group involution coset states and representation-theoretic multiplicity "
                 "problems with explicit partition, dimension-ratio, and multiplicity-space promises."
             ),
             "reduction": (
-                "Kronecker multiplicity projectors count invariant-space dimensions; they do not reduce hidden "
-                "involution recovery to a coherent Kronecker basis transform or compressed decoder."
+                "Separate inverse Schur transforms followed by a joint Schur transform coherently encode Kronecker "
+                "multiplicity in a companion register, while multiplicity projectors count its dimension. Neither "
+                "operation alone reduces hidden-involution recovery to the required orientation polar or decoder."
             ),
             "no_go_barrier": (
                 "The ordinary S_n QFT is already efficient, restricted multiplicity speedups are classically matched "
-                "on many families, and multiplicity-space isometries cannot be assumed to be classical relabelings."
+                "on many families, Schur dilation preserves the physical orientation Gram spectrum, and encoded "
+                "multiplicity-space isometries cannot be treated as exposed classical coordinates."
             ),
             "proof_technique": (
                 "Subgroup-tower QFT, generalized phase estimation, commuting invariant projectors, Schur-Weyl duality, "
                 "Kronecker multiplicities, F-moves, and classical combinatorial multiplicity algorithms."
             ),
             "open_question": (
-                "Is there a uniform polynomial internal S_n Kronecker/Racah transform, including multiplicity bases "
-                "and state-transition amplitudes, that supports a hidden-involution decoder for k growing with n?"
+                "Can the physical orientation polar be implemented directly through structured operations on the "
+                "Schur-encoded companion register, or does every such implementation reintroduce the same "
+                "normalization barrier before hidden-involution decoding?"
             ),
             "reusable_abstraction": (
-                "Kronecker/recoupling capability ledger separating QFT, label projection, multiplicity counting, "
-                "coherent basis transforms, associators, transition amplitudes, decoding, and classical comparison."
+                "Kronecker/recoupling capability ledger separating QFT, dilated isotypic routing, opaque versus "
+                "exposed multiplicity carriers, associators, orientation polars, decoding, and classical comparison."
             ),
         },
     ),

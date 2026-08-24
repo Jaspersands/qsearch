@@ -1,0 +1,324 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The regular first moment cannot control adaptive blockwise modes.",
+      "resolution": "It cannot pointwise, but positivity contracts the second moment to the first, exactly the quantity adaptive retention needs.",
+      "resolved": true
+    },
+    {
+      "objection": "Trace bias destroys the product Plancherel source law.",
+      "resolution": "Only at fixed target. The physical joint target-sector mixture sums by dimension and restores the source marginal exactly.",
+      "resolved": true
+    },
+    {
+      "objection": "Conditioning all source labels distinct needs tiny-scale TV transfer.",
+      "resolution": "No observable TV estimate is used: positivity gives the direct event inequality E[b^2|D]<=E[b]/Pr(D).",
+      "resolved": true
+    },
+    {
+      "objection": "Exponential Walsh support proves exponential circuit complexity.",
+      "resolution": "False. Tensor Hadamards are dense and efficient. The theorem rejects sparse retention, not structured dense compilation.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "classical_separation_proved": false,
+    "complete_natural_orientation_polar_compiled": false,
+    "conditioned_walsh_collision_is_O_of_two_to_minus_K": true,
+    "dense_structured_recoupling_compiled": false,
+    "dense_structured_recoupling_rejected": false,
+    "joint_target_mixture_has_product_plancherel_source_marginal": true,
+    "non_walsh_adaptive_sparse_router_rejected": false,
+    "physical_native_trace_biased_block_law_proved": true,
+    "reason": "All sparse Walsh-output routes are closed under the physical block law, but dense structured orientation-polar compilation and classical hardness remain open.",
+    "source_and_target_label_adaptive_o_of_two_to_K_walsh_router_rejected": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-24T14:59:11.286861+00:00",
+  "falsifiers_triggered": [
+    "Source-dependent heavy Walsh modes cannot retain constant average native PGM mass with sublinear mode support.",
+    "No blockwise character-ratio second-moment theorem is needed for this Walsh no-go.",
+    "Fixed-target trace bias is not the physical source marginal; the joint target mixture is essential.",
+    "Dense Walsh support is not evidence of dense circuit complexity."
+  ],
+  "finite_controls": [
+    {
+      "active_fourier_block_count": 15,
+      "adaptive_mode_budget": 1,
+      "autocorrelation_unit_interval_verified": true,
+      "collision_and_adaptive_bounds_verified": true,
+      "control_id": "S3-K1-TRACE-BIASED-MIXTURE",
+      "copy_count": 1,
+      "direct_trace_biased_global_distinct_probability": "1/2",
+      "exact_joint_trace_normalization": "72",
+      "exact_source_marginal_plancherel_verified": true,
+      "exact_trace_biased_first_moment_verified": true,
+      "global_distinct_probability": "1/2",
+      "globally_distinct_active_block_count": 12,
+      "globally_distinct_adaptive_mass_upper_bound": 0.816496580927726,
+      "globally_distinct_best_adaptive_mass": 0.5,
+      "globally_distinct_collision_probability": 0.5,
+      "globally_distinct_collision_upper_bound": 0.6666666666666666,
+      "maximum_block_autocorrelation": 1.0,
+      "maximum_nonzero_first_moment_residual": 0.0,
+      "n": 3,
+      "orientation_count": 2,
+      "partition_count": 3,
+      "predicted_joint_trace_normalization": "72",
+      "second_moment_contraction_verified": true,
+      "source_marginal_identity_failure_count": 0,
+      "source_tuple_count": 9,
+      "status": "trace-biased-adaptive-walsh-collision-bound-verified",
+      "unconditioned_adaptive_mass_upper_bound": 0.7637626158259734,
+      "unconditioned_best_adaptive_mass": 0.5833333333333334,
+      "unconditioned_collision_probability": 0.5416666666666666,
+      "unconditioned_collision_upper_bound": 0.5833333333333334,
+      "unconditioned_expected_autocorrelations": [
+        "1",
+        "1/6"
+      ],
+      "unconditioned_expected_squared_autocorrelations": [
+        "1",
+        "1/12"
+      ]
+    },
+    {
+      "active_fourier_block_count": 2235,
+      "adaptive_mode_budget": 1,
+      "autocorrelation_unit_interval_verified": true,
+      "collision_and_adaptive_bounds_verified": true,
+      "control_id": "S4-K2-TRACE-BIASED-MIXTURE",
+      "copy_count": 2,
+      "direct_trace_biased_global_distinct_probability": "89/1536",
+      "exact_joint_trace_normalization": "1327104",
+      "exact_source_marginal_plancherel_verified": true,
+      "exact_trace_biased_first_moment_verified": true,
+      "global_distinct_probability": "89/1536",
+      "globally_distinct_active_block_count": 416,
+      "globally_distinct_adaptive_mass_upper_bound": 0.8884401176762726,
+      "globally_distinct_best_adaptive_mass": 0.2640449438202247,
+      "globally_distinct_collision_probability": 0.2511560225043371,
+      "globally_distinct_collision_upper_bound": 0.7893258426966292,
+      "maximum_block_autocorrelation": 1.0,
+      "maximum_nonzero_first_moment_residual": 0.0,
+      "n": 4,
+      "orientation_count": 4,
+      "partition_count": 5,
+      "predicted_joint_trace_normalization": "1327104",
+      "second_moment_contraction_verified": true,
+      "source_marginal_identity_failure_count": 0,
+      "source_tuple_count": 625,
+      "status": "trace-biased-adaptive-walsh-collision-bound-verified",
+      "unconditioned_adaptive_mass_upper_bound": 0.5303300858899106,
+      "unconditioned_best_adaptive_mass": 0.28125,
+      "unconditioned_collision_probability": 0.2549743264668395,
+      "unconditioned_collision_upper_bound": 0.28125,
+      "unconditioned_expected_autocorrelations": [
+        "1",
+        "1/24",
+        "1/24",
+        "1/24"
+      ],
+      "unconditioned_expected_squared_autocorrelations": [
+        "1",
+        "5/576",
+        "5/576",
+        "421145/166053888"
+      ]
+    }
+  ],
+  "headline_metrics": {
+    "autocorrelation_second_to_first_moment_theorem_count": 1,
+    "complete_orientation_polar_compiler_count": 0,
+    "exact_plancherel_source_marginal_theorem_count": 1,
+    "finite_control_count": 2,
+    "finite_control_failure_count": 0,
+    "maximum_block_autocorrelation": 1.0,
+    "maximum_nonzero_first_moment_residual": 0.0,
+    "new_quantum_algorithm_count": 0,
+    "non_walsh_sparse_router_no_go_count": 0,
+    "physical_trace_biased_block_law_theorem_count": 1,
+    "scaling_record_count": 9,
+    "source_adaptive_sparse_walsh_no_go_count": 1,
+    "tail_adaptive_polynomial_retained_mass_upper_bound": 8.755803911258626e-100
+  },
+  "proof_obligations": [
+    {
+      "obligation": "identify_the_physical_native_block_law",
+      "resolution": "Regular target/source decomposition and the native F/Tr(F) state give equation (2), matching the physical PGM bridge.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_the_trace_biased_source_marginal_is_plancherel",
+      "resolution": "Target dimension-weighted rank completeness makes every source tuple weight proportional to product_j d_j^2.",
+      "resolved": true
+    },
+    {
+      "obligation": "control_blockwise_autocorrelation_second_moments",
+      "resolution": "Projector positivity gives 0<=b<=1, so b^2<=b; regular Walsh flatness supplies the exact first moment.",
+      "resolved": true
+    },
+    {
+      "obligation": "reject_source_and_target_adaptive_sparse_walsh_modes",
+      "resolution": "Collision plus Cauchy--Schwarz applies after arbitrary block-dependent mode selection; global distinctness costs 1/P_D.",
+      "resolved": true
+    },
+    {
+      "obligation": "compile_dense_structured_orientation_polar",
+      "resolution": "The no-go forces linear Walsh support but does not make a dense Hadamard or representation-specific recoupling hard.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "adaptive_polynomial_retained_mass_upper_bound": 1.0,
+      "asymptotic_global_distinct_probability_lower_bound": 0.5,
+      "asymptotic_sparse_walsh_no_go_applies_once_mass_bound_holds": false,
+      "conditioned_collision_upper_bound": 5.341768264770508e-05,
+      "constant_retention_requires_linear_mode_count": true,
+      "copy_count": 18,
+      "finite_n_collision_free_lower_bound_certified": false,
+      "group_order_decimal": "40320",
+      "n": 8,
+      "orientation_count_decimal": "262144",
+      "polynomial_mode_budget": 262144,
+      "status": "asymptotic-collision-free-envelope-not-finite-n-certification"
+    },
+    {
+      "adaptive_polynomial_retained_mass_upper_bound": 1.0,
+      "asymptotic_global_distinct_probability_lower_bound": 0.5,
+      "asymptotic_sparse_walsh_no_go_applies_once_mass_bound_holds": true,
+      "conditioned_collision_upper_bound": 4.64101268293706e-09,
+      "constant_retention_requires_linear_mode_count": true,
+      "copy_count": 31,
+      "finite_n_collision_free_lower_bound_certified": false,
+      "group_order_decimal": "479001600",
+      "n": 12,
+      "orientation_count_decimal": "2147483648",
+      "polynomial_mode_budget": 887503681,
+      "status": "asymptotic-collision-free-envelope-not-finite-n-certification"
+    },
+    {
+      "adaptive_polynomial_retained_mass_upper_bound": 0.0332711772861993,
+      "asymptotic_global_distinct_probability_lower_bound": 0.5,
+      "asymptotic_sparse_walsh_no_go_applies_once_mass_bound_holds": true,
+      "conditioned_collision_upper_bound": 1.0269497400534803e-13,
+      "constant_retention_requires_linear_mode_count": true,
+      "copy_count": 47,
+      "finite_n_collision_free_lower_bound_certified": false,
+      "group_order_decimal": "20922789888000",
+      "n": 16,
+      "orientation_count_decimal": "140737488355328",
+      "polynomial_mode_budget": 10779215329,
+      "status": "asymptotic-collision-free-envelope-not-finite-n-certification"
+    },
+    {
+      "adaptive_polynomial_retained_mass_upper_bound": 1.0211880603336708e-06,
+      "asymptotic_global_distinct_probability_lower_bound": 0.5,
+      "asymptotic_sparse_walsh_no_go_applies_once_mass_bound_holds": true,
+      "conditioned_collision_upper_bound": 3.430270295330494e-24,
+      "constant_retention_requires_linear_mode_count": true,
+      "copy_count": 82,
+      "finite_n_collision_free_lower_bound_certified": false,
+      "group_order_decimal": "620448401733239439360000",
+      "n": 24,
+      "orientation_count_decimal": "4835703278458516698824704",
+      "polynomial_mode_budget": 304006671424,
+      "status": "asymptotic-collision-free-envelope-not-finite-n-certification"
+    },
+    {
+      "adaptive_polynomial_retained_mass_upper_bound": 4.994218323483831e-12,
+      "asymptotic_global_distinct_probability_lower_bound": 0.5,
+      "asymptotic_sparse_walsh_no_go_applies_once_mass_bound_holds": true,
+      "conditioned_collision_upper_bound": 8.353097894235751e-36,
+      "constant_retention_requires_linear_mode_count": true,
+      "copy_count": 120,
+      "finite_n_collision_free_lower_bound_certified": false,
+      "group_order_decimal": "263130836933693530167218012160000000",
+      "n": 32,
+      "orientation_count_decimal": "1329227995784915872903807060280344576",
+      "polynomial_mode_budget": 2985984000000,
+      "status": "asymptotic-collision-free-envelope-not-finite-n-certification"
+    },
+    {
+      "adaptive_polynomial_retained_mass_upper_bound": 3.6607332153554255e-24,
+      "asymptotic_global_distinct_probability_lower_bound": 0.5,
+      "asymptotic_sparse_walsh_no_go_applies_once_mass_bound_holds": true,
+      "conditioned_collision_upper_bound": 1.805564441583408e-61,
+      "constant_retention_requires_linear_mode_count": true,
+      "copy_count": 205,
+      "finite_n_collision_free_lower_bound_certified": false,
+      "group_order_decimal": "12413915592536072670862289047373375038521486354677760000000000",
+      "n": 48,
+      "orientation_count_decimal": "51422017416287688817342786954917203280710495801049370729644032",
+      "polynomial_mode_budget": 74220378765625,
+      "status": "asymptotic-collision-free-envelope-not-finite-n-certification"
+    },
+    {
+      "adaptive_polynomial_retained_mass_upper_bound": 1.1141675661441685e-37,
+      "asymptotic_global_distinct_probability_lower_bound": 0.5,
+      "asymptotic_sparse_walsh_no_go_applies_once_mass_bound_holds": true,
+      "conditioned_collision_upper_bound": 1.7725701812659737e-89,
+      "constant_retention_requires_linear_mode_count": true,
+      "copy_count": 298,
+      "finite_n_collision_free_lower_bound_certified": false,
+      "group_order_decimal": "126886932185884164103433389335161480802865516174545192198801894375214704230400000000000000",
+      "n": 64,
+      "orientation_count_decimal": "509258994083621521567111422102344540262867098416484062659035112338595324940834176545849344",
+      "polynomial_mode_budget": 700321701542464,
+      "status": "asymptotic-collision-free-envelope-not-finite-n-certification"
+    },
+    {
+      "adaptive_polynomial_retained_mass_upper_bound": 1.8522349301490303e-67,
+      "asymptotic_global_distinct_probability_lower_bound": 0.5,
+      "asymptotic_sparse_walsh_no_go_applies_once_mass_bound_holds": true,
+      "conditioned_collision_upper_bound": 2.1695306243612767e-150,
+      "constant_retention_requires_linear_mode_count": true,
+      "copy_count": 501,
+      "finite_n_collision_free_lower_bound_certified": false,
+      "group_order_decimal": "991677934870949689209571401541893801158183648651267795444376054838492222809091499987689476037000748982075094738965754305639874560000000000000000000000",
+      "n": 96,
+      "orientation_count_decimal": "6546781215792283740026379393655198304433284092086129578966582736192267592809349109766540184651808314301773368255120142018434513091770786106657055178752",
+      "polynomial_mode_budget": 15813440003753001,
+      "status": "asymptotic-collision-free-envelope-not-finite-n-certification"
+    },
+    {
+      "adaptive_polynomial_retained_mass_upper_bound": 8.755803911258626e-100,
+      "asymptotic_global_distinct_probability_lower_bound": 0.5,
+      "asymptotic_sparse_walsh_no_go_applies_once_mass_bound_holds": true,
+      "conditioned_collision_upper_bound": 5.549050937187684e-216,
+      "constant_retention_requires_linear_mode_count": true,
+      "copy_count": 719,
+      "finite_n_collision_free_lower_bound_certified": false,
+      "group_order_decimal": "385620482362580421735677065923463640617493109590223590278828403276373402575165543560686168588507361534030051833058916347592172932262498857766114955245039357760034644709279247692495585280000000000000000000000000000000",
+      "n": 128,
+      "orientation_count_decimal": "2757826131550993649364364103715456897804056554542556176448634698108099443712107910064330000971904293916892446775667965408323532095584366159791555750475533307061324308088589961496711008293655788792731796366049346060288",
+      "polynomial_mode_budget": 138157142546011681,
+      "status": "asymptotic-collision-free-envelope-not-finite-n-certification"
+    }
+  ],
+  "status": "physical-source-adaptive-sparse-walsh-routing-rejected",
+  "summary": "Closed the source-adaptive Walsh loophole: physical trace bias, projector positivity, and regular-master first moments force O(2^-K) collision even after globally-distinct conditioning.",
+  "theorem": {
+    "adaptive_retention": "every block-adaptive size-m Walsh set retains average mass at most sqrt(m E[C_beta|D])",
+    "asymptotic_consequence": "for S_n, K=ceil(log2(n!))+2 and global distinctness, every m=o(2^K) adaptive Walsh set has vanishing native PGM mass",
+    "autocorrelation_range": "0<=b_beta(z)<=1 for every active block and z",
+    "conditioned_collision": "E[C_beta|D]<=2^-K[1+(2^K-1)/(|G| Pr(D))]",
+    "physical_block_law": "pi(beta)=m_beta Tr(F_beta)/(2^K |G|^(2K))",
+    "regular_first_moment": "E_pi b_beta(0)=1 and E_pi b_beta(z)=1/|G| for z!=0",
+    "scope": "physical native trace-weighted Walsh truncation only; non-Walsh recoupling, dense transforms, direct CS, and complete polar remain open",
+    "source_marginal": "sum_nu d_nu Tr(F_(nu,Lambda))=2^K product_j d_Lambda_j, so Lambda is product Plancherel",
+    "status": "physical-source-adaptive-sparse-walsh-routing-rejected",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "adaptive_retention": "every block-adaptive size-m Walsh set retains average mass at most sqrt(m E[C_beta|D])",
+    "asymptotic": "for S_n, K=ceil(log2(n!))+2 and global distinctness, every m=o(2^K) adaptive Walsh set has vanishing native PGM mass",
+    "autocorrelation_range": "0<=b_beta(z)<=1 for every active block and z",
+    "collision": "E[C_beta|D]<=2^-K[1+(2^K-1)/(|G| Pr(D))]",
+    "first_moment": "E_pi b_beta(0)=1 and E_pi b_beta(z)=1/|G| for z!=0",
+    "physical_block_law": "pi(beta)=m_beta Tr(F_beta)/(2^K |G|^(2K))",
+    "scope": "physical native trace-weighted Walsh truncation only; non-Walsh recoupling, dense transforms, direct CS, and complete polar remain open",
+    "source_marginal": "sum_nu d_nu Tr(F_(nu,Lambda))=2^K product_j d_Lambda_j, so Lambda is product Plancherel"
+  }
+}

@@ -251,6 +251,29 @@ for _p in [_ROOT_DIR, _CORE_DIR, _THEOREMS_DIR]:
     if _p not in sys.path:
         sys.path.insert(0, _p)
 
+from self_dual_wreath_branch_character_cyclic_polar_compiler import write_branch_character_cyclic_polar_report
+from self_dual_wreath_branch_character_cyclic_quadrant_overlap import write_cyclic_quadrant_overlap_report
+from self_dual_wreath_branch_character_equivariant_multiplier_normal_form import write_equivariant_multiplier_normal_form_report
+from self_dual_wreath_branch_character_gpe_dilation_separation import write_gpe_dilation_separation_report
+from self_dual_wreath_branch_character_label_coherent_power_map_boundary import write_label_coherent_power_map_boundary_report
+from self_dual_wreath_branch_character_naimark_autocorrelation_fourier_boundary import write_naimark_autocorrelation_fourier_boundary_report
+from self_dual_wreath_branch_character_natural_frobenius_word_map import write_natural_frobenius_word_map_report
+from self_dual_wreath_branch_character_polar_naimark_completion import write_branch_character_polar_naimark_completion_report
+from self_dual_wreath_branch_character_power_map_fourier_access_boundary import write_power_map_fourier_access_boundary_report
+from self_dual_wreath_branch_character_raw_concentration_central_fourier_bridge import write_central_raw_concentration_bridge_report
+from self_dual_wreath_branch_character_raw_polar_matched_filter_boundary import write_raw_polar_matched_filter_boundary_report
+from self_dual_wreath_branch_character_sector_resolved_whitening_no_go import write_sector_resolved_whitening_no_go_report
+from self_dual_wreath_branch_character_whole_sum_path_erasure_boundary import write_whole_sum_path_erasure_boundary_report
+from self_dual_wreath_joint_character_analysis_map_normalization import write_joint_analysis_map_normalization_report
+from self_dual_wreath_joint_character_natural_sector_mass import write_joint_character_natural_sector_mass_report
+from self_dual_wreath_joint_character_purification_access_boundary import write_joint_purification_access_boundary_report
+from self_dual_wreath_orientation_kernel_character_tensor_boundary import write_character_tensor_boundary_report
+from self_dual_wreath_orientation_kernel_hash_normalization_no_go import write_hash_normalization_no_go_report
+from self_dual_wreath_schur_branch_merger_polar_equivalence import write_schur_branch_merger_polar_equivalence_report
+from self_dual_wreath_schur_dilated_multiplicity_access import write_schur_dilated_multiplicity_access_report
+from self_dual_wreath_split_sector_branch_regularity import write_split_sector_branch_regularity_report
+from self_dual_wreath_trace_biased_coefficient_rank_no_go import write_trace_biased_coefficient_rank_report
+
 import argparse
 import json
 from collections import Counter
@@ -1525,6 +1548,381 @@ from research_registry import (
     validate_registry,
 )
 from scaling_runner import parse_int_csv, write_hidden_shift_sweep
+
+
+
+def command_sdw_branch_character_cyclic_polar_compiler(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_branch_character_cyclic_polar_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_branch_character_cyclic_polar_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_branch_character_cyclic_polar_compiler complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_branch_character_cyclic_quadrant_overlap(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_cyclic_quadrant_overlap_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_cyclic_quadrant_overlap_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_branch_character_cyclic_quadrant_overlap complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_branch_character_equivariant_multiplier_normal_form(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_equivariant_multiplier_normal_form_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_equivariant_multiplier_normal_form_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_branch_character_equivariant_multiplier_normal_form complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_branch_character_gpe_dilation_separation(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_gpe_dilation_separation_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_gpe_dilation_separation_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_branch_character_gpe_dilation_separation complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_branch_character_label_coherent_power_map_boundary(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_label_coherent_power_map_boundary_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_label_coherent_power_map_boundary_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_branch_character_label_coherent_power_map_boundary complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_branch_character_naimark_autocorrelation_fourier_boundary(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_naimark_autocorrelation_fourier_boundary_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_naimark_autocorrelation_fourier_boundary_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_branch_character_naimark_autocorrelation_fourier_boundary complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_branch_character_natural_frobenius_word_map(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_natural_frobenius_word_map_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_natural_frobenius_word_map_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_branch_character_natural_frobenius_word_map complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_branch_character_polar_naimark_completion(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_branch_character_polar_naimark_completion_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_branch_character_polar_naimark_completion_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_branch_character_polar_naimark_completion complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_branch_character_power_map_fourier_access_boundary(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_power_map_fourier_access_boundary_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_power_map_fourier_access_boundary_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_branch_character_power_map_fourier_access_boundary complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_branch_character_raw_concentration_central_fourier_bridge(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_central_raw_concentration_bridge_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_central_raw_concentration_bridge_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_branch_character_raw_concentration_central_fourier_bridge complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_branch_character_raw_polar_matched_filter_boundary(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_raw_polar_matched_filter_boundary_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_raw_polar_matched_filter_boundary_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_branch_character_raw_polar_matched_filter_boundary complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_branch_character_sector_resolved_whitening_no_go(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_sector_resolved_whitening_no_go_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_sector_resolved_whitening_no_go_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_branch_character_sector_resolved_whitening_no_go complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_branch_character_whole_sum_path_erasure_boundary(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_whole_sum_path_erasure_boundary_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_whole_sum_path_erasure_boundary_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_branch_character_whole_sum_path_erasure_boundary complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_joint_character_analysis_map_normalization(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_joint_analysis_map_normalization_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_joint_analysis_map_normalization_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_joint_character_analysis_map_normalization complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_joint_character_natural_sector_mass(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_joint_character_natural_sector_mass_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_joint_character_natural_sector_mass_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_joint_character_natural_sector_mass complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_joint_character_purification_access_boundary(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_joint_purification_access_boundary_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_joint_purification_access_boundary_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_joint_character_purification_access_boundary complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_orientation_kernel_character_tensor_boundary(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_character_tensor_boundary_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_character_tensor_boundary_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_orientation_kernel_character_tensor_boundary complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_orientation_kernel_hash_normalization_no_go(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_hash_normalization_no_go_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_hash_normalization_no_go_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_orientation_kernel_hash_normalization_no_go complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_schur_branch_merger_polar_equivalence(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_schur_branch_merger_polar_equivalence_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_schur_branch_merger_polar_equivalence_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_schur_branch_merger_polar_equivalence complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_schur_dilated_multiplicity_access(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_schur_dilated_multiplicity_access_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_schur_dilated_multiplicity_access_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_schur_dilated_multiplicity_access complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_split_sector_branch_regularity(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_split_sector_branch_regularity_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_split_sector_branch_regularity_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_split_sector_branch_regularity complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_trace_biased_coefficient_rank_no_go(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_trace_biased_coefficient_rank_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_trace_biased_coefficient_rank_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_trace_biased_coefficient_rank_no_go complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
 
 
 def command_audit(args: argparse.Namespace) -> int:

@@ -1,0 +1,1115 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Branchwise polar support normalization may be exponentially ill-conditioned.",
+      "resolution": "Its exact condition number is at most two for every finite-order U.",
+      "resolved": true
+    },
+    {
+      "objection": "Using all characters requires exponentially many separate branch circuits.",
+      "resolution": "The complete isometry is a tensor product of k two-output local isometries.",
+      "resolved": true
+    },
+    {
+      "objection": "Pointwise isometries automatically assemble a global covariant isometry.",
+      "resolution": "False. Both exact S3 convolutions have nonzero off-diagonal operator autocorrelation and fail the isometry identity.",
+      "resolved": true
+    },
+    {
+      "objection": "Constant conditioning in the S3 threshold proves an all-n decoder.",
+      "resolution": "It is only a finite mechanism witness; natural asymptotics and access are open.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_n_natural_autocorrelation_gap_proved": false,
+    "classical_separation_proved": false,
+    "finite_threshold_candidate_convolution_constant_condition_observed": true,
+    "full_coefficient_rank_used": true,
+    "hidden_relative_covariance_solved": false,
+    "inverse_minimum_singular_value_used": false,
+    "known_relative_local_polar_naimark_isometry_compiled": true,
+    "known_relative_tensor_polar_naimark_isometry_compiled": true,
+    "normalization_one_candidate_convolution_compiled": false,
+    "physical_orientation_polar_compiled": false,
+    "pointwise_completion_implies_global_isometry": false,
+    "speedup_claim_allowed": false
+  },
+  "convolution_controls": [
+    {
+      "autocorrelation_gram_residual": 8.324154854547328e-16,
+      "character_output_count": 2,
+      "condition_number": 12.216781988567051,
+      "control_id": "S3-SINGLE-PAIR-CANDIDATE-CONVOLUTION",
+      "convolution_isometry_residual": 1.9516280866845852,
+      "factor_count": 1,
+      "finite_constant_condition_observed": false,
+      "group_order": 6,
+      "input_dimension": 12,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "maximum_nonidentity_autocorrelation_norm": 0.5576775358252053,
+      "maximum_singular_value": 1.7180302927144755,
+      "minimum_singular_value": 0.140628710107316,
+      "n": 3,
+      "output_dimension": 24,
+      "pointwise_isometries_do_not_imply_global_isometry": true,
+      "status": "candidate-relative-autocorrelation-boundary"
+    },
+    {
+      "autocorrelation_gram_residual": 2.7657310453545106e-16,
+      "character_output_count": 8,
+      "condition_number": 1.4950900031928052,
+      "control_id": "S3-THRESHOLD-CANDIDATE-CONVOLUTION",
+      "convolution_isometry_residual": 0.5833333333333336,
+      "factor_count": 3,
+      "finite_constant_condition_observed": true,
+      "group_order": 6,
+      "input_dimension": 24,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_nonidentity_autocorrelation_norm": 0.2916666666666667,
+      "maximum_singular_value": 1.258305739211792,
+      "minimum_singular_value": 0.8416254115301728,
+      "n": 3,
+      "output_dimension": 192,
+      "pointwise_isometries_do_not_imply_global_isometry": true,
+      "status": "candidate-relative-autocorrelation-nontrivial-finite-gap-observed"
+    }
+  ],
+  "created_at": "2026-08-24T16:41:02.116014+00:00",
+  "falsifiers_triggered": [
+    "Local branch-polar completion does not require singular-value amplification.",
+    "Exponential coefficient dimension does not force exponential local gate count.",
+    "Pointwise isometry is insufficient for hidden-relative covariant assembly.",
+    "Finite constant conditioning is not an asymptotic decoder theorem."
+  ],
+  "headline_metrics": {
+    "all_n_natural_autocorrelation_gap_theorem_count": 0,
+    "candidate_relative_convolution_compiler_count": 0,
+    "exact_local_polar_naimark_theorem_count": 1,
+    "exact_tensor_polar_naimark_theorem_count": 1,
+    "finite_control_failure_count": 0,
+    "finite_convolution_control_count": 2,
+    "finite_local_control_count": 19,
+    "finite_tensor_control_count": 6,
+    "maximum_local_support_frame_condition_number": 2.0000000000000004,
+    "new_quantum_algorithm_count": 0,
+    "physical_pgm_compiler_count": 0,
+    "threshold_convolution_condition_number": 1.4950900031928052,
+    "threshold_maximum_nonidentity_autocorrelation_norm": 0.2916666666666667
+  },
+  "local_controls": [
+    {
+      "carrier_dimension": 2,
+      "control_id": "S3-LOCAL-0-0",
+      "direct_support_frame_residual": 0.0,
+      "exact_local_polar_naimark_completion_verified": true,
+      "left_partition": [
+        3
+      ],
+      "minus_support_rank": 0,
+      "n": 3,
+      "naimark_isometry_residual": 0.0,
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "plus_support_rank": 2,
+      "right_partition": [
+        2,
+        1
+      ],
+      "status": "exact-known-relative-local-polar-naimark-isometry",
+      "support_frame_condition_number": 1.0,
+      "support_frame_integer_spectrum_residual": 0.0,
+      "support_frame_maximum_eigenvalue": 1.0,
+      "support_frame_minimum_eigenvalue": 1.0
+    },
+    {
+      "carrier_dimension": 2,
+      "control_id": "S3-LOCAL-0-1",
+      "direct_support_frame_residual": 0.0,
+      "exact_local_polar_naimark_completion_verified": true,
+      "left_partition": [
+        3
+      ],
+      "minus_support_rank": 1,
+      "n": 3,
+      "naimark_isometry_residual": 2.7755575615628914e-17,
+      "permutation": [
+        0,
+        2,
+        1
+      ],
+      "plus_support_rank": 1,
+      "right_partition": [
+        2,
+        1
+      ],
+      "status": "exact-known-relative-local-polar-naimark-isometry",
+      "support_frame_condition_number": 1.0,
+      "support_frame_integer_spectrum_residual": 0.0,
+      "support_frame_maximum_eigenvalue": 1.0,
+      "support_frame_minimum_eigenvalue": 1.0
+    },
+    {
+      "carrier_dimension": 2,
+      "control_id": "S3-LOCAL-0-2",
+      "direct_support_frame_residual": 0.0,
+      "exact_local_polar_naimark_completion_verified": true,
+      "left_partition": [
+        3
+      ],
+      "minus_support_rank": 1,
+      "n": 3,
+      "naimark_isometry_residual": 0.0,
+      "permutation": [
+        1,
+        0,
+        2
+      ],
+      "plus_support_rank": 1,
+      "right_partition": [
+        2,
+        1
+      ],
+      "status": "exact-known-relative-local-polar-naimark-isometry",
+      "support_frame_condition_number": 1.0,
+      "support_frame_integer_spectrum_residual": 0.0,
+      "support_frame_maximum_eigenvalue": 1.0,
+      "support_frame_minimum_eigenvalue": 1.0
+    },
+    {
+      "carrier_dimension": 2,
+      "control_id": "S3-LOCAL-0-3",
+      "direct_support_frame_residual": 0.0,
+      "exact_local_polar_naimark_completion_verified": true,
+      "left_partition": [
+        3
+      ],
+      "minus_support_rank": 2,
+      "n": 3,
+      "naimark_isometry_residual": 1.6928581187347192e-17,
+      "permutation": [
+        1,
+        2,
+        0
+      ],
+      "plus_support_rank": 2,
+      "right_partition": [
+        2,
+        1
+      ],
+      "status": "exact-known-relative-local-polar-naimark-isometry",
+      "support_frame_condition_number": 1.0,
+      "support_frame_integer_spectrum_residual": 4.440892098500626e-16,
+      "support_frame_maximum_eigenvalue": 1.9999999999999996,
+      "support_frame_minimum_eigenvalue": 1.9999999999999996
+    },
+    {
+      "carrier_dimension": 2,
+      "control_id": "S3-LOCAL-0-4",
+      "direct_support_frame_residual": 0.0,
+      "exact_local_polar_naimark_completion_verified": true,
+      "left_partition": [
+        3
+      ],
+      "minus_support_rank": 2,
+      "n": 3,
+      "naimark_isometry_residual": 1.6928581187347192e-17,
+      "permutation": [
+        2,
+        0,
+        1
+      ],
+      "plus_support_rank": 2,
+      "right_partition": [
+        2,
+        1
+      ],
+      "status": "exact-known-relative-local-polar-naimark-isometry",
+      "support_frame_condition_number": 1.0,
+      "support_frame_integer_spectrum_residual": 4.440892098500626e-16,
+      "support_frame_maximum_eigenvalue": 1.9999999999999996,
+      "support_frame_minimum_eigenvalue": 1.9999999999999996
+    },
+    {
+      "carrier_dimension": 2,
+      "control_id": "S3-LOCAL-0-5",
+      "direct_support_frame_residual": 0.0,
+      "exact_local_polar_naimark_completion_verified": true,
+      "left_partition": [
+        3
+      ],
+      "minus_support_rank": 1,
+      "n": 3,
+      "naimark_isometry_residual": 2.7755575615628914e-17,
+      "permutation": [
+        2,
+        1,
+        0
+      ],
+      "plus_support_rank": 1,
+      "right_partition": [
+        2,
+        1
+      ],
+      "status": "exact-known-relative-local-polar-naimark-isometry",
+      "support_frame_condition_number": 1.0,
+      "support_frame_integer_spectrum_residual": 0.0,
+      "support_frame_maximum_eigenvalue": 1.0,
+      "support_frame_minimum_eigenvalue": 1.0
+    },
+    {
+      "carrier_dimension": 1,
+      "control_id": "S3-LOCAL-1-0",
+      "direct_support_frame_residual": 0.0,
+      "exact_local_polar_naimark_completion_verified": true,
+      "left_partition": [
+        3
+      ],
+      "minus_support_rank": 0,
+      "n": 3,
+      "naimark_isometry_residual": 0.0,
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "plus_support_rank": 1,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "exact-known-relative-local-polar-naimark-isometry",
+      "support_frame_condition_number": 1.0,
+      "support_frame_integer_spectrum_residual": 0.0,
+      "support_frame_maximum_eigenvalue": 1.0,
+      "support_frame_minimum_eigenvalue": 1.0
+    },
+    {
+      "carrier_dimension": 1,
+      "control_id": "S3-LOCAL-1-1",
+      "direct_support_frame_residual": 0.0,
+      "exact_local_polar_naimark_completion_verified": true,
+      "left_partition": [
+        3
+      ],
+      "minus_support_rank": 1,
+      "n": 3,
+      "naimark_isometry_residual": 0.0,
+      "permutation": [
+        0,
+        2,
+        1
+      ],
+      "plus_support_rank": 0,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "exact-known-relative-local-polar-naimark-isometry",
+      "support_frame_condition_number": 1.0,
+      "support_frame_integer_spectrum_residual": 0.0,
+      "support_frame_maximum_eigenvalue": 1.0,
+      "support_frame_minimum_eigenvalue": 1.0
+    },
+    {
+      "carrier_dimension": 1,
+      "control_id": "S3-LOCAL-1-2",
+      "direct_support_frame_residual": 0.0,
+      "exact_local_polar_naimark_completion_verified": true,
+      "left_partition": [
+        3
+      ],
+      "minus_support_rank": 1,
+      "n": 3,
+      "naimark_isometry_residual": 0.0,
+      "permutation": [
+        1,
+        0,
+        2
+      ],
+      "plus_support_rank": 0,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "exact-known-relative-local-polar-naimark-isometry",
+      "support_frame_condition_number": 1.0,
+      "support_frame_integer_spectrum_residual": 0.0,
+      "support_frame_maximum_eigenvalue": 1.0,
+      "support_frame_minimum_eigenvalue": 1.0
+    },
+    {
+      "carrier_dimension": 1,
+      "control_id": "S3-LOCAL-1-3",
+      "direct_support_frame_residual": 5.76001494251404e-33,
+      "exact_local_polar_naimark_completion_verified": true,
+      "left_partition": [
+        3
+      ],
+      "minus_support_rank": 0,
+      "n": 3,
+      "naimark_isometry_residual": 0.0,
+      "permutation": [
+        1,
+        2,
+        0
+      ],
+      "plus_support_rank": 1,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "exact-known-relative-local-polar-naimark-isometry",
+      "support_frame_condition_number": 1.0,
+      "support_frame_integer_spectrum_residual": 4.440892098500626e-16,
+      "support_frame_maximum_eigenvalue": 0.9999999999999996,
+      "support_frame_minimum_eigenvalue": 0.9999999999999996
+    },
+    {
+      "carrier_dimension": 1,
+      "control_id": "S3-LOCAL-1-4",
+      "direct_support_frame_residual": 5.76001494251404e-33,
+      "exact_local_polar_naimark_completion_verified": true,
+      "left_partition": [
+        3
+      ],
+      "minus_support_rank": 0,
+      "n": 3,
+      "naimark_isometry_residual": 0.0,
+      "permutation": [
+        2,
+        0,
+        1
+      ],
+      "plus_support_rank": 1,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "exact-known-relative-local-polar-naimark-isometry",
+      "support_frame_condition_number": 1.0,
+      "support_frame_integer_spectrum_residual": 4.440892098500626e-16,
+      "support_frame_maximum_eigenvalue": 0.9999999999999996,
+      "support_frame_minimum_eigenvalue": 0.9999999999999996
+    },
+    {
+      "carrier_dimension": 1,
+      "control_id": "S3-LOCAL-1-5",
+      "direct_support_frame_residual": 0.0,
+      "exact_local_polar_naimark_completion_verified": true,
+      "left_partition": [
+        3
+      ],
+      "minus_support_rank": 1,
+      "n": 3,
+      "naimark_isometry_residual": 0.0,
+      "permutation": [
+        2,
+        1,
+        0
+      ],
+      "plus_support_rank": 0,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "exact-known-relative-local-polar-naimark-isometry",
+      "support_frame_condition_number": 1.0,
+      "support_frame_integer_spectrum_residual": 0.0,
+      "support_frame_maximum_eigenvalue": 1.0,
+      "support_frame_minimum_eigenvalue": 1.0
+    },
+    {
+      "carrier_dimension": 2,
+      "control_id": "S3-LOCAL-2-0",
+      "direct_support_frame_residual": 0.0,
+      "exact_local_polar_naimark_completion_verified": true,
+      "left_partition": [
+        2,
+        1
+      ],
+      "minus_support_rank": 0,
+      "n": 3,
+      "naimark_isometry_residual": 0.0,
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "plus_support_rank": 2,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "exact-known-relative-local-polar-naimark-isometry",
+      "support_frame_condition_number": 1.0,
+      "support_frame_integer_spectrum_residual": 0.0,
+      "support_frame_maximum_eigenvalue": 1.0,
+      "support_frame_minimum_eigenvalue": 1.0
+    },
+    {
+      "carrier_dimension": 2,
+      "control_id": "S3-LOCAL-2-1",
+      "direct_support_frame_residual": 0.0,
+      "exact_local_polar_naimark_completion_verified": true,
+      "left_partition": [
+        2,
+        1
+      ],
+      "minus_support_rank": 1,
+      "n": 3,
+      "naimark_isometry_residual": 1.0159245771980096e-17,
+      "permutation": [
+        0,
+        2,
+        1
+      ],
+      "plus_support_rank": 1,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "exact-known-relative-local-polar-naimark-isometry",
+      "support_frame_condition_number": 1.0,
+      "support_frame_integer_spectrum_residual": 0.0,
+      "support_frame_maximum_eigenvalue": 1.0,
+      "support_frame_minimum_eigenvalue": 1.0
+    },
+    {
+      "carrier_dimension": 2,
+      "control_id": "S3-LOCAL-2-2",
+      "direct_support_frame_residual": 0.0,
+      "exact_local_polar_naimark_completion_verified": true,
+      "left_partition": [
+        2,
+        1
+      ],
+      "minus_support_rank": 1,
+      "n": 3,
+      "naimark_isometry_residual": 0.0,
+      "permutation": [
+        1,
+        0,
+        2
+      ],
+      "plus_support_rank": 1,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "exact-known-relative-local-polar-naimark-isometry",
+      "support_frame_condition_number": 1.0,
+      "support_frame_integer_spectrum_residual": 0.0,
+      "support_frame_maximum_eigenvalue": 1.0,
+      "support_frame_minimum_eigenvalue": 1.0
+    },
+    {
+      "carrier_dimension": 2,
+      "control_id": "S3-LOCAL-2-3",
+      "direct_support_frame_residual": 0.0,
+      "exact_local_polar_naimark_completion_verified": true,
+      "left_partition": [
+        2,
+        1
+      ],
+      "minus_support_rank": 2,
+      "n": 3,
+      "naimark_isometry_residual": 2.0043176972106154e-17,
+      "permutation": [
+        1,
+        2,
+        0
+      ],
+      "plus_support_rank": 2,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "exact-known-relative-local-polar-naimark-isometry",
+      "support_frame_condition_number": 1.0,
+      "support_frame_integer_spectrum_residual": 4.440892098500626e-16,
+      "support_frame_maximum_eigenvalue": 1.9999999999999996,
+      "support_frame_minimum_eigenvalue": 1.9999999999999996
+    },
+    {
+      "carrier_dimension": 2,
+      "control_id": "S3-LOCAL-2-4",
+      "direct_support_frame_residual": 0.0,
+      "exact_local_polar_naimark_completion_verified": true,
+      "left_partition": [
+        2,
+        1
+      ],
+      "minus_support_rank": 2,
+      "n": 3,
+      "naimark_isometry_residual": 2.0043176972106154e-17,
+      "permutation": [
+        2,
+        0,
+        1
+      ],
+      "plus_support_rank": 2,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "exact-known-relative-local-polar-naimark-isometry",
+      "support_frame_condition_number": 1.0,
+      "support_frame_integer_spectrum_residual": 4.440892098500626e-16,
+      "support_frame_maximum_eigenvalue": 1.9999999999999996,
+      "support_frame_minimum_eigenvalue": 1.9999999999999996
+    },
+    {
+      "carrier_dimension": 2,
+      "control_id": "S3-LOCAL-2-5",
+      "direct_support_frame_residual": 0.0,
+      "exact_local_polar_naimark_completion_verified": true,
+      "left_partition": [
+        2,
+        1
+      ],
+      "minus_support_rank": 1,
+      "n": 3,
+      "naimark_isometry_residual": 1.0159245771980096e-17,
+      "permutation": [
+        2,
+        1,
+        0
+      ],
+      "plus_support_rank": 1,
+      "right_partition": [
+        1,
+        1,
+        1
+      ],
+      "status": "exact-known-relative-local-polar-naimark-isometry",
+      "support_frame_condition_number": 1.0,
+      "support_frame_integer_spectrum_residual": 0.0,
+      "support_frame_maximum_eigenvalue": 1.0,
+      "support_frame_minimum_eigenvalue": 1.0
+    },
+    {
+      "carrier_dimension": 3,
+      "control_id": "S4-MIXED-ONE-TWO-SUPPORT-FRAME",
+      "direct_support_frame_residual": 0.0,
+      "exact_local_polar_naimark_completion_verified": true,
+      "left_partition": [
+        3,
+        1
+      ],
+      "minus_support_rank": 2,
+      "n": 4,
+      "naimark_isometry_residual": 7.707367547543843e-16,
+      "permutation": [
+        0,
+        2,
+        3,
+        1
+      ],
+      "plus_support_rank": 3,
+      "right_partition": [
+        4
+      ],
+      "status": "exact-known-relative-local-polar-naimark-isometry",
+      "support_frame_condition_number": 2.0000000000000004,
+      "support_frame_integer_spectrum_residual": 6.661338147750939e-16,
+      "support_frame_maximum_eigenvalue": 1.9999999999999996,
+      "support_frame_minimum_eigenvalue": 0.9999999999999996
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "complete_both_local_character_polars_to_one_isometry",
+      "resolution": "The support sum has exact spectrum in {1,2}; its inverse square root is a constant cyclic phase function.",
+      "resolved": true
+    },
+    {
+      "obligation": "respect_full_coefficient_rank_requirement",
+      "resolution": "The tensor completion emits all 2^k characters and uses only k local cyclic compilers.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_natural_candidate_convolution_autocorrelation_gap",
+      "resolution": "The exact S3 threshold is constant-conditioned, but no source-weighted all-n operator bound is proved.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_candidate_relative_convolution_without_sqrt_group_normalization",
+      "resolution": "Efficient pointwise J_h does not itself erase the time label or implement the dense group convolution at normalization one.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "all_n_natural_autocorrelation_gap_proved": false,
+      "candidate_relative_convolution_compiled": false,
+      "character_output_dimension_decimal": "262144",
+      "character_output_qubit_count": 18,
+      "full_coefficient_rank_used": true,
+      "hidden_relative_decoder_compiled": false,
+      "information_threshold_copy_count": 18,
+      "known_relative_tensor_naimark_polynomial": true,
+      "local_cyclic_compilers_required": 18,
+      "local_support_frame_condition_upper_bound": 2.0,
+      "n": 8,
+      "status": "known-relative-dense-isometry-compiled-global-autocorrelation-open"
+    },
+    {
+      "all_n_natural_autocorrelation_gap_proved": false,
+      "candidate_relative_convolution_compiled": false,
+      "character_output_dimension_decimal": "140737488355328",
+      "character_output_qubit_count": 47,
+      "full_coefficient_rank_used": true,
+      "hidden_relative_decoder_compiled": false,
+      "information_threshold_copy_count": 47,
+      "known_relative_tensor_naimark_polynomial": true,
+      "local_cyclic_compilers_required": 47,
+      "local_support_frame_condition_upper_bound": 2.0,
+      "n": 16,
+      "status": "known-relative-dense-isometry-compiled-global-autocorrelation-open"
+    },
+    {
+      "all_n_natural_autocorrelation_gap_proved": false,
+      "candidate_relative_convolution_compiled": false,
+      "character_output_dimension_decimal": "1329227995784915872903807060280344576",
+      "character_output_qubit_count": 120,
+      "full_coefficient_rank_used": true,
+      "hidden_relative_decoder_compiled": false,
+      "information_threshold_copy_count": 120,
+      "known_relative_tensor_naimark_polynomial": true,
+      "local_cyclic_compilers_required": 120,
+      "local_support_frame_condition_upper_bound": 2.0,
+      "n": 32,
+      "status": "known-relative-dense-isometry-compiled-global-autocorrelation-open"
+    },
+    {
+      "all_n_natural_autocorrelation_gap_proved": false,
+      "candidate_relative_convolution_compiled": false,
+      "character_output_dimension_decimal": "509258994083621521567111422102344540262867098416484062659035112338595324940834176545849344",
+      "character_output_qubit_count": 298,
+      "full_coefficient_rank_used": true,
+      "hidden_relative_decoder_compiled": false,
+      "information_threshold_copy_count": 298,
+      "known_relative_tensor_naimark_polynomial": true,
+      "local_cyclic_compilers_required": 298,
+      "local_support_frame_condition_upper_bound": 2.0,
+      "n": 64,
+      "status": "known-relative-dense-isometry-compiled-global-autocorrelation-open"
+    },
+    {
+      "all_n_natural_autocorrelation_gap_proved": false,
+      "candidate_relative_convolution_compiled": false,
+      "character_output_dimension_decimal": "2757826131550993649364364103715456897804056554542556176448634698108099443712107910064330000971904293916892446775667965408323532095584366159791555750475533307061324308088589961496711008293655788792731796366049346060288",
+      "character_output_qubit_count": 719,
+      "full_coefficient_rank_used": true,
+      "hidden_relative_decoder_compiled": false,
+      "information_threshold_copy_count": 719,
+      "known_relative_tensor_naimark_polynomial": true,
+      "local_cyclic_compilers_required": 719,
+      "local_support_frame_condition_upper_bound": 2.0,
+      "n": 128,
+      "status": "known-relative-dense-isometry-compiled-global-autocorrelation-open"
+    },
+    {
+      "all_n_natural_autocorrelation_gap_proved": false,
+      "candidate_relative_convolution_compiled": false,
+      "character_output_dimension_decimal": "3440112850023546302530237742155183466432553980170185238061671351233477153873800986082237523919540110681336064347152559195351953244009554421690054225750743805036779366003973534845393455399299137912800922047812752971034777049450071055884618411774020748245278418977593770118286229286138159472089054565591208726062645021031522335656150834726492819673459628072412527748785571638405230261798791485404987582833492760687396944101909698894791359499951008588058651783381824674828246624342575214000709167198671170699264",
+      "character_output_qubit_count": 1686,
+      "full_coefficient_rank_used": true,
+      "hidden_relative_decoder_compiled": false,
+      "information_threshold_copy_count": 1686,
+      "known_relative_tensor_naimark_polynomial": true,
+      "local_cyclic_compilers_required": 1686,
+      "local_support_frame_condition_upper_bound": 2.0,
+      "n": 256,
+      "status": "known-relative-dense-isometry-compiled-global-autocorrelation-open"
+    },
+    {
+      "all_n_natural_autocorrelation_gap_proved": false,
+      "candidate_relative_convolution_compiled": false,
+      "character_output_dimension_decimal": "2479266344094221581320199381461657792437997190375287050867622597598728093140475733188752705535522333775429747710938439800330667045118742741825769049177539992590582449184153052909219515465228793980418703880984691923782591452440474390526995225692396990623441310536733419360926062227422279074248632022264248251144307605706787493675287994502523025575771982425806504866357349010818544018239821207766187632649547621027064851116201506791010013280139560486243330961153277266104221437265557309312267805629872319282527650015048869115716993007157848963928697053414808542007927148739824526166236628637061604865209135373143455762001846662561875020137751738238401635459857135779106709468360114584532364337983887808762473959120381240728456417430562440043060924398833612916703147376674251334327288950345118941294678942063950867441061002860690040441241060267324650162568541676718153143287166258069334343919272796548379719214543702486259664126626978978519572164410430437088737733869187450530461634176561448257850657794688422865167098768784223877370564613297591907738151726069047963396072139051783933697849156492929785877794077113882839860579269178079019726559764863424955844210190188544",
+      "character_output_qubit_count": 3878,
+      "full_coefficient_rank_used": true,
+      "hidden_relative_decoder_compiled": false,
+      "information_threshold_copy_count": 3878,
+      "known_relative_tensor_naimark_polynomial": true,
+      "local_cyclic_compilers_required": 3878,
+      "local_support_frame_condition_upper_bound": 2.0,
+      "n": 512,
+      "status": "known-relative-dense-isometry-compiled-global-autocorrelation-open"
+    }
+  ],
+  "status": "known-relative-character-polar-naimark-compiled-autocorrelation-open",
+  "summary": "Completed all known-relative cyclic character polars into one exact full-rank tensor Naimark isometry with local condition at most two. The remaining positive target is the natural operator-autocorrelation gap and a normalization-one structured group convolution.",
+  "tensor_controls": [
+    {
+      "carrier_dimension": 4,
+      "character_output_count": 8,
+      "control_id": "S3-THRESHOLD-TENSOR-0",
+      "direct_tensor_factorization_residual": 0.0,
+      "exact_tensor_polar_naimark_completion_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 3,
+      "output_dimension": 32,
+      "permutation": [
+        0,
+        1,
+        2
+      ],
+      "status": "exact-known-relative-tensor-polar-naimark-isometry",
+      "tensor_isometry_residual": 0.0
+    },
+    {
+      "carrier_dimension": 4,
+      "character_output_count": 8,
+      "control_id": "S3-THRESHOLD-TENSOR-1",
+      "direct_tensor_factorization_residual": 0.0,
+      "exact_tensor_polar_naimark_completion_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 3,
+      "output_dimension": 32,
+      "permutation": [
+        0,
+        2,
+        1
+      ],
+      "status": "exact-known-relative-tensor-polar-naimark-isometry",
+      "tensor_isometry_residual": 6.720581289688743e-17
+    },
+    {
+      "carrier_dimension": 4,
+      "character_output_count": 8,
+      "control_id": "S3-THRESHOLD-TENSOR-2",
+      "direct_tensor_factorization_residual": 0.0,
+      "exact_tensor_polar_naimark_completion_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 3,
+      "output_dimension": 32,
+      "permutation": [
+        1,
+        0,
+        2
+      ],
+      "status": "exact-known-relative-tensor-polar-naimark-isometry",
+      "tensor_isometry_residual": 0.0
+    },
+    {
+      "carrier_dimension": 4,
+      "character_output_count": 8,
+      "control_id": "S3-THRESHOLD-TENSOR-3",
+      "direct_tensor_factorization_residual": 0.0,
+      "exact_tensor_polar_naimark_completion_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 3,
+      "output_dimension": 32,
+      "permutation": [
+        1,
+        2,
+        0
+      ],
+      "status": "exact-known-relative-tensor-polar-naimark-isometry",
+      "tensor_isometry_residual": 5.3781517620239344e-17
+    },
+    {
+      "carrier_dimension": 4,
+      "character_output_count": 8,
+      "control_id": "S3-THRESHOLD-TENSOR-4",
+      "direct_tensor_factorization_residual": 0.0,
+      "exact_tensor_polar_naimark_completion_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 3,
+      "output_dimension": 32,
+      "permutation": [
+        2,
+        0,
+        1
+      ],
+      "status": "exact-known-relative-tensor-polar-naimark-isometry",
+      "tensor_isometry_residual": 5.3781517620239344e-17
+    },
+    {
+      "carrier_dimension": 4,
+      "character_output_count": 8,
+      "control_id": "S3-THRESHOLD-TENSOR-5",
+      "direct_tensor_factorization_residual": 0.0,
+      "exact_tensor_polar_naimark_completion_verified": true,
+      "factor_count": 3,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 3,
+      "output_dimension": 32,
+      "permutation": [
+        2,
+        1,
+        0
+      ],
+      "status": "exact-known-relative-tensor-polar-naimark-isometry",
+      "tensor_isometry_residual": 6.720581289688743e-17
+    }
+  ],
+  "theorem": {
+    "candidate_convolution_gram": "For C[g,s]=|G|^-1/2 J_(s^-1g), (C^*C)[s,t] is the exact operator-valued autocorrelation in equation (3).",
+    "cyclic_implementation": "The existing cyclic phase register applies the extra weight one or 1/sqrt(2), so no inverse minimum singular value is used.",
+    "local_naimark_isometry": "J_h=(|0>V_++|1>V_-)(P_++P_-)^-1/2 satisfies J_h^*J_h=I.",
+    "local_support_frame": "P_++P_- has eigenvalue one on U phases +/-1 and eigenvalue two on every other phase.",
+    "scope": "Known-relative dense Naimark access is solved. An all-n natural autocorrelation gap, a structured convolution circuit, unknown-relative covariance, and the physical PGM remain open.",
+    "status": "known-relative-character-polar-naimark-compiled-autocorrelation-open",
+    "tensor_completion": "J_h^(k)=tensor_i J_(i,h) is a full-2^k-output isometry using k local known-relative compilers.",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "candidate_convolution_gram": "For C[g,s]=|G|^-1/2 J_(s^-1g), (C^*C)[s,t] is the exact operator-valued autocorrelation in equation (3).",
+    "cyclic_implementation": "The existing cyclic phase register applies the extra weight one or 1/sqrt(2), so no inverse minimum singular value is used.",
+    "local_naimark_isometry": "J_h=(|0>V_++|1>V_-)(P_++P_-)^-1/2 satisfies J_h^*J_h=I.",
+    "local_support_frame": "P_++P_- has eigenvalue one on U phases +/-1 and eigenvalue two on every other phase.",
+    "scope": "Known-relative dense Naimark access is solved. An all-n natural autocorrelation gap, a structured convolution circuit, unknown-relative covariance, and the physical PGM remain open.",
+    "status": "known-relative-character-polar-naimark-compiled-autocorrelation-open",
+    "tensor_completion": "J_h^(k)=tensor_i J_(i,h) is a full-2^k-output isometry using k local known-relative compilers.",
+    "theorem_verified": true
+  }
+}

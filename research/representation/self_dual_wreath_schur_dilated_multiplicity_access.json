@@ -1,0 +1,402 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "BCH already gives a generic finite-group Clebsch--Gordan transform.",
+      "resolution": "Its explicit efficient CG recursion is for U(d). The finite-group circuit measures the irrep label and leaves multiplicity unchanged.",
+      "resolved": true
+    },
+    {
+      "objection": "The corrected Krovi F-moves compile arbitrary S_n Kronecker recoupling.",
+      "resolution": "The compiled V is a split-to-Young basis isometry for permutation modules and uses the multiplicity-free special branch relevant there.",
+      "resolved": true
+    },
+    {
+      "objection": "Schur transforms are irrelevant because they do not expose a bare multiplicity register.",
+      "resolution": "The composite circuit still supplies a coherent encoded carrier and global k-copy isotypic routing in polynomial space and time.",
+      "resolved": true
+    },
+    {
+      "objection": "The dilated carrier automatically fixes the physical PGM normalization.",
+      "resolution": "No: fixed-source branch sectors remain orthogonal. A common coordinate isometry would preserve H_nu rather than whiten it.",
+      "resolved": true
+    },
+    {
+      "objection": "Opaque encoded multiplicity can never be useful.",
+      "resolution": "A structured operation expressed directly through U(d^k) companion generators could still implement the polar without exposing coordinates.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "actual_physical_pgm_rejected": false,
+    "bare_internal_kronecker_basis_transform_compiled": false,
+    "classical_separation_proved": false,
+    "common_coordinate_isometry_preserves_orientation_gram": true,
+    "controlled_source_schur_router_realizes_orientation_gram": false,
+    "cross_orientation_branch_intertwiner_compiled": false,
+    "direct_orientation_kernel_polar_compiled": false,
+    "encoded_kronecker_multiplicity_carrier_proved": true,
+    "global_k_copy_isotypic_router_polynomial_proved": true,
+    "k_copy_racah_associator_compiled": false,
+    "orientation_gram_conditioning_improved": false,
+    "polynomial_joint_decoder_proved": false,
+    "separate_joint_schur_dilation_identity_proved": true,
+    "speedup_claim_allowed": false,
+    "standard_multiplicity_coordinates_exposed": false
+  },
+  "common_isometry_gram_invariance_residual": 2.0205125849986882e-16,
+  "created_at": "2026-08-24T19:27:36.323377+00:00",
+  "falsifiers_triggered": [
+    "The blanket claim that every internal S_n multiplicity carrier is uncompiled is too strong.",
+    "Finite-group GPE and #BQP projector circuits still do not expose multiplicity coordinates.",
+    "An efficient fixed-source Schur dilation neither realizes nor whitens the physical cross-orientation kernel."
+  ],
+  "finite_controls": [
+    {
+      "branching_dimension_residual": 0,
+      "branching_dimension_rhs": 20,
+      "control_id": "S3-STANDARD-SQUARED-STANDARD",
+      "direct_isotypic_projector_rank": 2,
+      "exact_schur_dilation_control_verified": true,
+      "expected_isotypic_projector_rank": 2,
+      "fixed_companion_encoded_multiplicity_dimension": 1,
+      "full_branch_companion_dimension": 4,
+      "kronecker_multiplicity": 1,
+      "left": [
+        2,
+        1
+      ],
+      "left_local_dimension": 2,
+      "left_specht_dimension": 2,
+      "left_weyl_dimension": 2,
+      "n": 3,
+      "projector_hermiticity_residual": 0.0,
+      "projector_idempotence_residual": 2.220446049250313e-16,
+      "projector_rank_residual": 0,
+      "right": [
+        2,
+        1
+      ],
+      "right_local_dimension": 2,
+      "right_specht_dimension": 2,
+      "right_weyl_dimension": 2,
+      "status": "exact-dilated-multiplicity-carrier-verified",
+      "target": [
+        2,
+        1
+      ],
+      "target_joint_branch_sector_count": 3,
+      "target_joint_weyl_dimension": 20,
+      "target_specht_dimension": 2
+    },
+    {
+      "branching_dimension_residual": 0,
+      "branching_dimension_rhs": 210,
+      "control_id": "S4-TWO-ROW-BY-STANDARD",
+      "direct_isotypic_projector_rank": 3,
+      "exact_schur_dilation_control_verified": true,
+      "expected_isotypic_projector_rank": 3,
+      "fixed_companion_encoded_multiplicity_dimension": 1,
+      "full_branch_companion_dimension": 15,
+      "kronecker_multiplicity": 1,
+      "left": [
+        2,
+        2
+      ],
+      "left_local_dimension": 2,
+      "left_specht_dimension": 2,
+      "left_weyl_dimension": 1,
+      "n": 4,
+      "projector_hermiticity_residual": 1.1359458890015176e-16,
+      "projector_idempotence_residual": 3.8178470308941395e-16,
+      "projector_rank_residual": 0,
+      "right": [
+        3,
+        1
+      ],
+      "right_local_dimension": 3,
+      "right_specht_dimension": 3,
+      "right_weyl_dimension": 15,
+      "status": "exact-dilated-multiplicity-carrier-verified",
+      "target": [
+        3,
+        1
+      ],
+      "target_joint_branch_sector_count": 7,
+      "target_joint_weyl_dimension": 210,
+      "target_specht_dimension": 3
+    },
+    {
+      "branching_dimension_residual": 0,
+      "branching_dimension_rhs": 2772,
+      "control_id": "S5-GENUINE-MULTIPLICITY-TWO",
+      "direct_isotypic_projector_rank": 12,
+      "exact_schur_dilation_control_verified": true,
+      "expected_isotypic_projector_rank": 12,
+      "fixed_companion_encoded_multiplicity_dimension": 2,
+      "full_branch_companion_dimension": 180,
+      "kronecker_multiplicity": 2,
+      "left": [
+        3,
+        2
+      ],
+      "left_local_dimension": 3,
+      "left_specht_dimension": 5,
+      "left_weyl_dimension": 15,
+      "n": 5,
+      "projector_hermiticity_residual": 6.921919710402522e-16,
+      "projector_idempotence_residual": 1.2335596234842966e-15,
+      "projector_rank_residual": 0,
+      "right": [
+        3,
+        1,
+        1
+      ],
+      "right_local_dimension": 3,
+      "right_specht_dimension": 6,
+      "right_weyl_dimension": 6,
+      "status": "exact-dilated-multiplicity-carrier-verified",
+      "target": [
+        3,
+        1,
+        1
+      ],
+      "target_joint_branch_sector_count": 18,
+      "target_joint_weyl_dimension": 2772,
+      "target_specht_dimension": 6
+    }
+  ],
+  "headline_metrics": {
+    "common_isometry_gram_invariance_residual": 2.0205125849986882e-16,
+    "compiled_orientation_polar_count": 0,
+    "exact_branching_identity_control_count": 3,
+    "exact_isotypic_rank_control_count": 3,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "genuine_multiplicity_greater_than_one_control_count": 1,
+    "minimum_target_joint_branch_sector_count": 3,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_dilated_router_count": 1,
+    "tail_copy_count": 11628,
+    "tail_log2_joint_local_dimension": 104652.0,
+    "tail_n": 512,
+    "tail_physical_input_qubit_upper_bound": 53581824
+  },
+  "literature_scope": [
+    {
+      "id": "bacon-chuang-harrow-schur-2004",
+      "multiplicity_verdict": "GPE preserves the multiplicity index; it does not choose its basis.",
+      "proved_primitive": "Efficient U(d) Schur/CG recursion and finite-group irrep-label GPE.",
+      "supports_dilated_router": true,
+      "url": "https://arxiv.org/abs/quant-ph/0407082"
+    },
+    {
+      "id": "bravyi-et-al-kronecker-2023",
+      "multiplicity_verdict": "Projector rank and label sampling do not expose multiplicity coordinates.",
+      "proved_primitive": "Efficient Kronecker-sector projectors and normalized label sampling.",
+      "supports_dilated_router": false,
+      "url": "https://arxiv.org/abs/2302.11454"
+    },
+    {
+      "id": "burchardt-high-dimensional-schur-2025",
+      "multiplicity_verdict": "Its compiled isometry concerns induced/permutation-module Kostka spaces, not unrestricted internal Kronecker coordinates.",
+      "proved_primitive": "Corrected high-dimensional Schur transform with explicit Kostka-space isometry and special F-moves.",
+      "supports_dilated_router": true,
+      "url": "https://arxiv.org/abs/2509.22640"
+    },
+    {
+      "id": "yoshida-random-dilation-2025",
+      "multiplicity_verdict": "The alternate construction defines a Kronecker-transform gate; it does not synthesize that gate from Schur transforms.",
+      "proved_primitive": "Efficient random-dilation circuit using Schur transforms and S_n QFT.",
+      "supports_dilated_router": true,
+      "url": "https://arxiv.org/abs/2512.21260"
+    },
+    {
+      "id": "christandl-et-al-plethysm-sharp-bqp-2026",
+      "multiplicity_verdict": "The verifier fixes an irrep basis vector and leaves the witness multiplicity space invariant; it counts rather than coordinates it.",
+      "proved_primitive": "Multiple Schur-transform embeddings and strong Fourier sampling place broad branching multiplicities in #BQP.",
+      "supports_dilated_router": true,
+      "url": "https://arxiv.org/abs/2602.08441"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "compile_global_k_copy_isotypic_routing",
+      "resolution": "Separate inverse Schur transforms, site regrouping, and one high-dimensional joint Schur transform give the circuit (1).",
+      "resolved": true
+    },
+    {
+      "obligation": "certify_encoded_kronecker_multiplicity_carrier",
+      "resolution": "Equivariance gives (2); exact rank and branching controls include a multiplicity-two branch.",
+      "resolved": true
+    },
+    {
+      "obligation": "expose_standard_multiplicity_coordinates",
+      "resolution": "The encoded image B_nu(C^g) is not factored from the companion Gelfand--Tsetlin register by the known circuits.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_cross_orientation_branch_intertwiner",
+      "resolution": "Distinct source tuples occupy orthogonal subgroup-branch summands; the Schur router retains rather than erases that label.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_orientation_kernel_polar_on_encoded_carrier",
+      "resolution": "A common isometric coordinate change preserves H_nu, while the actual controlled router still needs the branch intertwiner before H_nu appears.",
+      "resolved": false
+    },
+    {
+      "obligation": "derive_end_to_end_hidden_involution_decoder_and_classical_separation",
+      "resolution": "No outcome decoder or classical lower bound follows from access alone.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "base_local_dimension": 8,
+      "direct_orientation_polar_compiled": false,
+      "encoded_multiplicity_carrier_available": true,
+      "global_k_copy_isotypic_router_polynomial": true,
+      "high_dimensional_schur_gate_complexity_polynomial": true,
+      "information_threshold_copy_count": 48,
+      "joint_high_dimensional_schur_transform_count": 1,
+      "log2_joint_local_dimension": 144.0,
+      "n": 8,
+      "orientation_gram_conditioning_improved": false,
+      "physical_input_qubit_count_upper_bound": 1152,
+      "racah_associator_compiled": false,
+      "separate_inverse_schur_transform_count": 48,
+      "standard_multiplicity_coordinates_exposed": false,
+      "status": "polynomial-dilated-router-opaque-carrier-polar-open"
+    },
+    {
+      "base_local_dimension": 16,
+      "direct_orientation_polar_compiled": false,
+      "encoded_multiplicity_carrier_available": true,
+      "global_k_copy_isotypic_router_polynomial": true,
+      "high_dimensional_schur_gate_complexity_polynomial": true,
+      "information_threshold_copy_count": 135,
+      "joint_high_dimensional_schur_transform_count": 1,
+      "log2_joint_local_dimension": 540.0,
+      "n": 16,
+      "orientation_gram_conditioning_improved": false,
+      "physical_input_qubit_count_upper_bound": 8640,
+      "racah_associator_compiled": false,
+      "separate_inverse_schur_transform_count": 135,
+      "standard_multiplicity_coordinates_exposed": false,
+      "status": "polynomial-dilated-router-opaque-carrier-polar-open"
+    },
+    {
+      "base_local_dimension": 32,
+      "direct_orientation_polar_compiled": false,
+      "encoded_multiplicity_carrier_available": true,
+      "global_k_copy_isotypic_router_polynomial": true,
+      "high_dimensional_schur_gate_complexity_polynomial": true,
+      "information_threshold_copy_count": 355,
+      "joint_high_dimensional_schur_transform_count": 1,
+      "log2_joint_local_dimension": 1775.0,
+      "n": 32,
+      "orientation_gram_conditioning_improved": false,
+      "physical_input_qubit_count_upper_bound": 56800,
+      "racah_associator_compiled": false,
+      "separate_inverse_schur_transform_count": 355,
+      "standard_multiplicity_coordinates_exposed": false,
+      "status": "polynomial-dilated-router-opaque-carrier-polar-open"
+    },
+    {
+      "base_local_dimension": 64,
+      "direct_orientation_polar_compiled": false,
+      "encoded_multiplicity_carrier_available": true,
+      "global_k_copy_isotypic_router_polynomial": true,
+      "high_dimensional_schur_gate_complexity_polynomial": true,
+      "information_threshold_copy_count": 890,
+      "joint_high_dimensional_schur_transform_count": 1,
+      "log2_joint_local_dimension": 5340.0,
+      "n": 64,
+      "orientation_gram_conditioning_improved": false,
+      "physical_input_qubit_count_upper_bound": 341760,
+      "racah_associator_compiled": false,
+      "separate_inverse_schur_transform_count": 890,
+      "standard_multiplicity_coordinates_exposed": false,
+      "status": "polynomial-dilated-router-opaque-carrier-polar-open"
+    },
+    {
+      "base_local_dimension": 128,
+      "direct_orientation_polar_compiled": false,
+      "encoded_multiplicity_carrier_available": true,
+      "global_k_copy_isotypic_router_polynomial": true,
+      "high_dimensional_schur_gate_complexity_polynomial": true,
+      "information_threshold_copy_count": 2151,
+      "joint_high_dimensional_schur_transform_count": 1,
+      "log2_joint_local_dimension": 15057.0,
+      "n": 128,
+      "orientation_gram_conditioning_improved": false,
+      "physical_input_qubit_count_upper_bound": 1927296,
+      "racah_associator_compiled": false,
+      "separate_inverse_schur_transform_count": 2151,
+      "standard_multiplicity_coordinates_exposed": false,
+      "status": "polynomial-dilated-router-opaque-carrier-polar-open"
+    },
+    {
+      "base_local_dimension": 256,
+      "direct_orientation_polar_compiled": false,
+      "encoded_multiplicity_carrier_available": true,
+      "global_k_copy_isotypic_router_polynomial": true,
+      "high_dimensional_schur_gate_complexity_polynomial": true,
+      "information_threshold_copy_count": 5054,
+      "joint_high_dimensional_schur_transform_count": 1,
+      "log2_joint_local_dimension": 40432.0,
+      "n": 256,
+      "orientation_gram_conditioning_improved": false,
+      "physical_input_qubit_count_upper_bound": 10350592,
+      "racah_associator_compiled": false,
+      "separate_inverse_schur_transform_count": 5054,
+      "standard_multiplicity_coordinates_exposed": false,
+      "status": "polynomial-dilated-router-opaque-carrier-polar-open"
+    },
+    {
+      "base_local_dimension": 512,
+      "direct_orientation_polar_compiled": false,
+      "encoded_multiplicity_carrier_available": true,
+      "global_k_copy_isotypic_router_polynomial": true,
+      "high_dimensional_schur_gate_complexity_polynomial": true,
+      "information_threshold_copy_count": 11628,
+      "joint_high_dimensional_schur_transform_count": 1,
+      "log2_joint_local_dimension": 104652.0,
+      "n": 512,
+      "orientation_gram_conditioning_improved": false,
+      "physical_input_qubit_count_upper_bound": 53581824,
+      "racah_associator_compiled": false,
+      "separate_inverse_schur_transform_count": 11628,
+      "standard_multiplicity_coordinates_exposed": false,
+      "status": "polynomial-dilated-router-opaque-carrier-polar-open"
+    }
+  ],
+  "status": "dilated-kronecker-carrier-compiled-orientation-polar-open",
+  "summary": "Corrected the recoupling boundary: separate-to-joint Schur transforms compile polynomial fixed-source global isotypic routing and an opaque encoded Kronecker multiplicity carrier. Distinct orientation source tuples remain in orthogonal branching sectors, so a branch intertwiner and then a structured orientation polar are still required.",
+  "theorem": {
+    "branching_identity": "dim Q_nu^(d_A d_B)=sum_(lambda,mu) g(lambda,mu,nu) dim Q_lambda^(d_A) dim Q_mu^(d_B).",
+    "dilation_circuit": "T=Schur_(n,d^k) R_site (Schur_(n,d)^dagger)^tensor-k after adjoining fixed valid Schur--Weyl companion states.",
+    "equivariant_normal_form": "Diagonal S_n equivariance forces T=direct_sum_nu I_(P_nu) tensor B_nu on each fixed source-label block.",
+    "fixed_companion_encoding": "Fixing one efficiently preparable companion basis state per source leaves a g(lambda,mu,nu)-dimensional encoded image in Q_nu.",
+    "gram_invariance": "If one common Schur coordinate isometry acts on the orientation column-analysis map L, then (TL)^*(TL)=L^*L=H. It cannot whiten H.",
+    "k_copy_complexity": "For d=n and polynomial k, log(d^k)=k log n; corrected high-dimensional Schur transforms make global isotypic routing polynomial.",
+    "literature_boundary": "Known Schur circuits, finite-group GPE, and #BQP multiplicity projectors support routing/counting claims, not a standard exposed Kronecker basis or the physical orientation polar.",
+    "orientation_branch_boundary": "Distinct source-label tuples are orthogonal U(d)^k branching summands inside Q_nu^(d^k). A controlled Schur router retains this which-path information and does not realize the cross-orientation kernel without an additional branch-mixing/erasure intertwiner.",
+    "scope": "This is a positive encoded-access theorem and a coordinate-change no-shortcut theorem. It is not a lower bound against structured operations on the encoded companion register.",
+    "status": "dilated-kronecker-carrier-compiled-orientation-polar-open",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "branching_identity": "dim Q_nu^(d_A d_B)=sum_(lambda,mu) g(lambda,mu,nu) dim Q_lambda^(d_A) dim Q_mu^(d_B).",
+    "dilation_circuit": "T=Schur_(n,d^k) R_site (Schur_(n,d)^dagger)^tensor-k after adjoining fixed valid Schur--Weyl companion states.",
+    "equivariant_normal_form": "Diagonal S_n equivariance forces T=direct_sum_nu I_(P_nu) tensor B_nu on each fixed source-label block.",
+    "fixed_companion_encoding": "Fixing one efficiently preparable companion basis state per source leaves a g(lambda,mu,nu)-dimensional encoded image in Q_nu.",
+    "gram_invariance": "If one common Schur coordinate isometry acts on the orientation column-analysis map L, then (TL)^*(TL)=L^*L=H. It cannot whiten H.",
+    "k_copy_complexity": "For d=n and polynomial k, log(d^k)=k log n; corrected high-dimensional Schur transforms make global isotypic routing polynomial.",
+    "literature_boundary": "Known Schur circuits, finite-group GPE, and #BQP multiplicity projectors support routing/counting claims, not a standard exposed Kronecker basis or the physical orientation polar.",
+    "orientation_branch_boundary": "Distinct source-label tuples are orthogonal U(d)^k branching summands inside Q_nu^(d^k). A controlled Schur router retains this which-path information and does not realize the cross-orientation kernel without an additional branch-mixing/erasure intertwiner.",
+    "scope": "This is a positive encoded-access theorem and a coordinate-change no-shortcut theorem. It is not a lower bound against structured operations on the encoded companion register.",
+    "status": "dilated-kronecker-carrier-compiled-orientation-polar-open",
+    "theorem_verified": true
+  }
+}

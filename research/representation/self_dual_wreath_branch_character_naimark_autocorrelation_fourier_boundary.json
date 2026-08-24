@@ -1,0 +1,450 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Autocorrelation O(1/|G|) should make the Gram close to identity.",
+      "resolution": "False without signed global control: the Legendre off-diagonal blocks add coherently in the trivial Fourier sector.",
+      "resolved": true
+    },
+    {
+      "objection": "The divergent condition number kills every state-weighted decoder.",
+      "resolution": "Also false: the bad Legendre sector has only 1/p regular input mass and the Frobenius tail bound permits trimming.",
+      "resolved": true
+    },
+    {
+      "objection": "A small normalized Frobenius residual proves a uniform inverse.",
+      "resolution": "False; it proves only a spectral-mass tail bound, not a minimum singular value.",
+      "resolved": true
+    },
+    {
+      "objection": "Fourier block diagonalization supplies an efficient circuit.",
+      "resolution": "No. The dense matrix-valued multipliers still require normalization-one structured access.",
+      "resolved": true
+    }
+  ],
+  "branch_controls": [
+    {
+      "autocorrelation_to_global_parseval_residual": 8.881784197001252e-16,
+      "bad_spectral_mass_fraction": 0.3333333333333333,
+      "carrier_dimension": 2,
+      "character_output_dimension": 4,
+      "control_id": "S3-SINGLE-PAIR-FOURIER-BOUNDARY",
+      "convolution_condition_number": 12.216781988567051,
+      "convolution_maximum_singular_value": 1.7180302927144755,
+      "convolution_minimum_singular_value": 0.140628710107316,
+      "direct_to_fourier_singular_spectrum_residual": 3.3306690738754696e-16,
+      "exact_nonabelian_fourier_boundary_verified": true,
+      "fourier_to_global_parseval_residual": 1.1102230246251565e-16,
+      "frobenius_markov_bad_mass_upper_bound": 1.0,
+      "gram_operator_norm_residual": 1.9516280866845852,
+      "group_order": 6,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "n": 3,
+      "normalized_gram_frobenius_residual": 0.848870563244934,
+      "sector_controls": [
+        {
+          "condition_number": 1.0,
+          "irrep_dimension": 1,
+          "maximum_gram_eigenvalue": 2.9516280866845857,
+          "minimum_gram_eigenvalue": 2.9516280866845857,
+          "multiplier_input_dimension": 2,
+          "multiplier_output_dimension": 4,
+          "normalized_sector_frobenius_residual": 3.808852188736137,
+          "partition": [
+            3
+          ],
+          "regular_input_mass": 0.16666666666666666,
+          "status": "finite-fourier-sector-nonsingular",
+          "uniformly_inverse_polynomial_sector_gap_observed": true
+        },
+        {
+          "condition_number": 1.3133154494817698,
+          "irrep_dimension": 2,
+          "maximum_gram_eigenvalue": 0.9857022603955157,
+          "minimum_gram_eigenvalue": 0.571488698022421,
+          "multiplier_input_dimension": 4,
+          "multiplier_output_dimension": 8,
+          "normalized_sector_frobenius_residual": 0.08088323790009924,
+          "partition": [
+            2,
+            1
+          ],
+          "regular_input_mass": 0.6666666666666666,
+          "status": "finite-fourier-sector-nonsingular",
+          "uniformly_inverse_polynomial_sector_gap_observed": true
+        },
+        {
+          "condition_number": 1.0000000000000002,
+          "irrep_dimension": 1,
+          "maximum_gram_eigenvalue": 0.019776434106447555,
+          "minimum_gram_eigenvalue": 0.01977643410644754,
+          "multiplier_input_dimension": 2,
+          "multiplier_output_dimension": 4,
+          "normalized_sector_frobenius_residual": 0.9608382391330715,
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "regular_input_mass": 0.16666666666666666,
+          "status": "finite-fourier-sector-nonsingular",
+          "uniformly_inverse_polynomial_sector_gap_observed": true
+        }
+      ],
+      "status": "exact-nonabelian-fourier-autocorrelation-boundary",
+      "trim_epsilon": 0.75
+    },
+    {
+      "autocorrelation_to_global_parseval_residual": 5.551115123125783e-17,
+      "bad_spectral_mass_fraction": 0.0,
+      "carrier_dimension": 4,
+      "character_output_dimension": 32,
+      "control_id": "S3-THRESHOLD-FOURIER-BOUNDARY",
+      "convolution_condition_number": 1.4950900031928052,
+      "convolution_maximum_singular_value": 1.258305739211792,
+      "convolution_minimum_singular_value": 0.8416254115301728,
+      "direct_to_fourier_singular_spectrum_residual": 4.440892098500626e-16,
+      "exact_nonabelian_fourier_boundary_verified": true,
+      "fourier_to_global_parseval_residual": 1.3877787807814457e-17,
+      "frobenius_markov_bad_mass_upper_bound": 0.19135802469135813,
+      "gram_operator_norm_residual": 0.5833333333333336,
+      "group_order": 6,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "n": 3,
+      "normalized_gram_frobenius_residual": 0.10763888888888895,
+      "sector_controls": [
+        {
+          "condition_number": 1.4950900031928043,
+          "irrep_dimension": 1,
+          "maximum_gram_eigenvalue": 1.5833333333333335,
+          "minimum_gram_eigenvalue": 0.7083333333333333,
+          "multiplier_input_dimension": 4,
+          "multiplier_output_dimension": 32,
+          "normalized_sector_frobenius_residual": 0.21267361111111122,
+          "partition": [
+            3
+          ],
+          "regular_input_mass": 0.16666666666666666,
+          "status": "finite-fourier-sector-nonsingular",
+          "uniformly_inverse_polynomial_sector_gap_observed": true
+        },
+        {
+          "condition_number": 1.306094312422031,
+          "irrep_dimension": 2,
+          "maximum_gram_eigenvalue": 1.2083333333333335,
+          "minimum_gram_eigenvalue": 0.7083333333333328,
+          "multiplier_input_dimension": 8,
+          "multiplier_output_dimension": 64,
+          "normalized_sector_frobenius_residual": 0.05512152777777779,
+          "partition": [
+            2,
+            1
+          ],
+          "regular_input_mass": 0.6666666666666666,
+          "status": "finite-fourier-sector-nonsingular",
+          "uniformly_inverse_polynomial_sector_gap_observed": true
+        },
+        {
+          "condition_number": 1.4950900031928043,
+          "irrep_dimension": 1,
+          "maximum_gram_eigenvalue": 1.5833333333333335,
+          "minimum_gram_eigenvalue": 0.7083333333333335,
+          "multiplier_input_dimension": 4,
+          "multiplier_output_dimension": 32,
+          "normalized_sector_frobenius_residual": 0.21267361111111122,
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "regular_input_mass": 0.16666666666666666,
+          "status": "finite-fourier-sector-nonsingular",
+          "uniformly_inverse_polynomial_sector_gap_observed": true
+        }
+      ],
+      "status": "exact-nonabelian-fourier-autocorrelation-boundary",
+      "trim_epsilon": 0.75
+    }
+  ],
+  "claim_gate": {
+    "classical_separation_proved": false,
+    "frobenius_error_controls_maximally_mixed_bad_mass": true,
+    "matrix_autocorrelation_parseval_proved": true,
+    "natural_branch_state_weighted_fourier_tail_proved": false,
+    "nonabelian_fourier_block_criterion_proved": true,
+    "normalization_one_dense_fourier_multiplier_compiled": false,
+    "order_inverse_pointwise_autocorrelation_suffices_for_uniform_gap": false,
+    "physical_input_maximally_mixed_or_dominated_proved": false,
+    "physical_pgm_decoder_compiled": false,
+    "speedup_claim_allowed": false,
+    "uniform_natural_branch_fourier_gap_proved": false,
+    "vanishing_frobenius_error_suffices_for_uniform_gap": false
+  },
+  "created_at": "2026-08-24T16:51:44.489185+00:00",
+  "falsifiers_triggered": [
+    "O(1/|G|) pointwise operator autocorrelation is not by itself a uniform conditioning theorem.",
+    "Vanishing normalized Gram Frobenius error is not a minimum-singular-value theorem.",
+    "A divergent uniform condition number does not by itself refute state-weighted trimming.",
+    "Fourier diagonalization is a mathematical reduction, not a dense multiplier compiler."
+  ],
+  "headline_metrics": {
+    "all_n_natural_state_weighted_fourier_tail_theorem_count": 0,
+    "exact_nonabelian_fourier_boundary_theorem_count": 1,
+    "finite_branch_fourier_control_count": 2,
+    "finite_control_failure_count": 0,
+    "legendre_uniform_gap_counterexample_count": 8,
+    "new_quantum_algorithm_count": 0,
+    "normalization_one_fourier_multiplier_compiler_count": 0,
+    "tail_bad_spectral_mass_fraction": 0.006134969325153374,
+    "tail_convolution_condition_number": 12.806248474865706,
+    "tail_maximum_nonidentity_autocorrelation": 0.006134969325153374,
+    "tail_prime": 163,
+    "threshold_branch_condition_number": 1.4950900031928052,
+    "threshold_branch_normalized_frobenius_residual": 0.10763888888888895
+  },
+  "legendre_countercontrols": [
+    {
+      "convolution_condition_number": 2.000000000000001,
+      "exact_legendre_counterexample_verified": true,
+      "expected_condition_number": 2.0,
+      "expected_gram_operator_norm_residual": 0.6666666666666667,
+      "expected_nonidentity_autocorrelation": -0.3333333333333333,
+      "expected_normalized_gram_frobenius_residual": 0.2222222222222222,
+      "gram_operator_norm_residual": 0.6666666666666666,
+      "group_order": 3,
+      "half_window_bad_spectral_mass_fraction": 0.3333333333333333,
+      "maximum_convolution_singular_value": 1.1547005383792517,
+      "maximum_nonidentity_autocorrelation_magnitude": 0.3333333333333333,
+      "minimum_convolution_singular_value": 0.5773502691896256,
+      "normalized_gram_frobenius_residual": 0.22222222222222235,
+      "pointwise_order_inverse_autocorrelation_sufficient_for_uniform_gap": false,
+      "prime": 3,
+      "status": "order-inverse-autocorrelation-uniform-gap-counterexample",
+      "vanishing_frobenius_error_allows_state_weighted_trimming": true
+    },
+    {
+      "convolution_condition_number": 2.8284271247461907,
+      "exact_legendre_counterexample_verified": true,
+      "expected_condition_number": 2.8284271247461903,
+      "expected_gram_operator_norm_residual": 0.8571428571428572,
+      "expected_nonidentity_autocorrelation": -0.14285714285714285,
+      "expected_normalized_gram_frobenius_residual": 0.12244897959183673,
+      "gram_operator_norm_residual": 0.8571428571428573,
+      "group_order": 7,
+      "half_window_bad_spectral_mass_fraction": 0.14285714285714285,
+      "maximum_convolution_singular_value": 1.0690449676496976,
+      "maximum_nonidentity_autocorrelation_magnitude": 0.14285714285714285,
+      "minimum_convolution_singular_value": 0.37796447300922714,
+      "normalized_gram_frobenius_residual": 0.12244897959183673,
+      "pointwise_order_inverse_autocorrelation_sufficient_for_uniform_gap": false,
+      "prime": 7,
+      "status": "order-inverse-autocorrelation-uniform-gap-counterexample",
+      "vanishing_frobenius_error_allows_state_weighted_trimming": true
+    },
+    {
+      "convolution_condition_number": 3.4641016151377544,
+      "exact_legendre_counterexample_verified": true,
+      "expected_condition_number": 3.4641016151377544,
+      "expected_gram_operator_norm_residual": 0.9090909090909091,
+      "expected_nonidentity_autocorrelation": -0.09090909090909091,
+      "expected_normalized_gram_frobenius_residual": 0.08264462809917356,
+      "gram_operator_norm_residual": 0.9090909090909092,
+      "group_order": 11,
+      "half_window_bad_spectral_mass_fraction": 0.09090909090909091,
+      "maximum_convolution_singular_value": 1.0444659357341872,
+      "maximum_nonidentity_autocorrelation_magnitude": 0.09090909090909091,
+      "minimum_convolution_singular_value": 0.3015113445777637,
+      "normalized_gram_frobenius_residual": 0.08264462809917356,
+      "pointwise_order_inverse_autocorrelation_sufficient_for_uniform_gap": false,
+      "prime": 11,
+      "status": "order-inverse-autocorrelation-uniform-gap-counterexample",
+      "vanishing_frobenius_error_allows_state_weighted_trimming": true
+    },
+    {
+      "convolution_condition_number": 4.472135954999582,
+      "exact_legendre_counterexample_verified": true,
+      "expected_condition_number": 4.47213595499958,
+      "expected_gram_operator_norm_residual": 0.9473684210526316,
+      "expected_nonidentity_autocorrelation": -0.05263157894736842,
+      "expected_normalized_gram_frobenius_residual": 0.04986149584487535,
+      "gram_operator_norm_residual": 0.9473684210526322,
+      "group_order": 19,
+      "half_window_bad_spectral_mass_fraction": 0.05263157894736842,
+      "maximum_convolution_singular_value": 1.0259783520851544,
+      "maximum_nonidentity_autocorrelation_magnitude": 0.05263157894736842,
+      "minimum_convolution_singular_value": 0.2294157338705617,
+      "normalized_gram_frobenius_residual": 0.04986149584487535,
+      "pointwise_order_inverse_autocorrelation_sufficient_for_uniform_gap": false,
+      "prime": 19,
+      "status": "order-inverse-autocorrelation-uniform-gap-counterexample",
+      "vanishing_frobenius_error_allows_state_weighted_trimming": true
+    },
+    {
+      "convolution_condition_number": 6.6332495807108,
+      "exact_legendre_counterexample_verified": true,
+      "expected_condition_number": 6.6332495807108,
+      "expected_gram_operator_norm_residual": 0.9767441860465116,
+      "expected_nonidentity_autocorrelation": -0.023255813953488372,
+      "expected_normalized_gram_frobenius_residual": 0.022714981070849107,
+      "gram_operator_norm_residual": 0.976744186046511,
+      "group_order": 43,
+      "half_window_bad_spectral_mass_fraction": 0.023255813953488372,
+      "maximum_convolution_singular_value": 1.0115610777177466,
+      "maximum_nonidentity_autocorrelation_magnitude": 0.023255813953488372,
+      "minimum_convolution_singular_value": 0.15249857033260472,
+      "normalized_gram_frobenius_residual": 0.022714981070848923,
+      "pointwise_order_inverse_autocorrelation_sufficient_for_uniform_gap": false,
+      "prime": 43,
+      "status": "order-inverse-autocorrelation-uniform-gap-counterexample",
+      "vanishing_frobenius_error_allows_state_weighted_trimming": true
+    },
+    {
+      "convolution_condition_number": 8.24621125123532,
+      "exact_legendre_counterexample_verified": true,
+      "expected_condition_number": 8.246211251235321,
+      "expected_gram_operator_norm_residual": 0.9850746268656716,
+      "expected_nonidentity_autocorrelation": -0.014925373134328358,
+      "expected_normalized_gram_frobenius_residual": 0.014702606371129428,
+      "gram_operator_norm_residual": 0.9850746268656708,
+      "group_order": 67,
+      "half_window_bad_spectral_mass_fraction": 0.014925373134328358,
+      "maximum_convolution_singular_value": 1.007435046608132,
+      "maximum_nonidentity_autocorrelation_magnitude": 0.014925373134328358,
+      "minimum_convolution_singular_value": 0.1221694443563053,
+      "normalized_gram_frobenius_residual": 0.014702606371129606,
+      "pointwise_order_inverse_autocorrelation_sufficient_for_uniform_gap": false,
+      "prime": 67,
+      "status": "order-inverse-autocorrelation-uniform-gap-counterexample",
+      "vanishing_frobenius_error_allows_state_weighted_trimming": true
+    },
+    {
+      "convolution_condition_number": 10.19803902718557,
+      "exact_legendre_counterexample_verified": true,
+      "expected_condition_number": 10.198039027185569,
+      "expected_gram_operator_norm_residual": 0.9902912621359223,
+      "expected_nonidentity_autocorrelation": -0.009708737864077669,
+      "expected_normalized_gram_frobenius_residual": 0.009614478273164294,
+      "gram_operator_norm_residual": 0.9902912621359233,
+      "group_order": 103,
+      "half_window_bad_spectral_mass_fraction": 0.009708737864077669,
+      "maximum_convolution_singular_value": 1.0048426433348052,
+      "maximum_nonidentity_autocorrelation_magnitude": 0.009708737864077669,
+      "minimum_convolution_singular_value": 0.09853292781642935,
+      "normalized_gram_frobenius_residual": 0.009614478273164792,
+      "pointwise_order_inverse_autocorrelation_sufficient_for_uniform_gap": false,
+      "prime": 103,
+      "status": "order-inverse-autocorrelation-uniform-gap-counterexample",
+      "vanishing_frobenius_error_allows_state_weighted_trimming": true
+    },
+    {
+      "convolution_condition_number": 12.806248474865706,
+      "exact_legendre_counterexample_verified": true,
+      "expected_condition_number": 12.806248474865697,
+      "expected_gram_operator_norm_residual": 0.9938650306748467,
+      "expected_nonidentity_autocorrelation": -0.006134969325153374,
+      "expected_normalized_gram_frobenius_residual": 0.006097331476532801,
+      "gram_operator_norm_residual": 0.9938650306748472,
+      "group_order": 163,
+      "half_window_bad_spectral_mass_fraction": 0.006134969325153374,
+      "maximum_convolution_singular_value": 1.0030627943080905,
+      "maximum_nonidentity_autocorrelation_magnitude": 0.006134969325153374,
+      "minimum_convolution_singular_value": 0.07832604499879574,
+      "normalized_gram_frobenius_residual": 0.006097331476532367,
+      "pointwise_order_inverse_autocorrelation_sufficient_for_uniform_gap": false,
+      "prime": 163,
+      "status": "order-inverse-autocorrelation-uniform-gap-counterexample",
+      "vanishing_frobenius_error_allows_state_weighted_trimming": true
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "replace_pointwise_autocorrelation_target_by_fourier_extreme_or_tail_control",
+      "resolution": "Equations (3)-(4) give the exact uniform and state-weighted criteria.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_natural_branch_field_state_weighted_fourier_tail",
+      "resolution": "Bound the source-conditioned normalized Gram Frobenius residual and identify the physical Fourier-sector mass law.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_or_refute_uniform_natural_branch_fourier_gap",
+      "resolution": "The Legendre family shows that order-inverse pointwise autocorrelation alone cannot prove this.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_dense_branch_fourier_multipliers_at_normalization_one",
+      "resolution": "Need a representation-specific QFT/Clebsch-Gordan/Racah transform, not generic pointwise PREPARE/SELECT.",
+      "resolved": false
+    },
+    {
+      "obligation": "compose_with_physical_pgm_and_classical_falsifiers",
+      "resolution": "No physical decoder or complexity separation is supplied here.",
+      "resolved": false
+    }
+  ],
+  "status": "autocorrelation-reduced-to-fourier-extremes-and-state-weighted-tail",
+  "summary": "Reduced candidate-relative Naimark convolution exactly to nonabelian Fourier multipliers. A Legendre family refutes order-inverse pointwise autocorrelation as a uniform-gap criterion, while its vanishing bad sector mass redirects the viable target to a physical state-weighted Fourier-tail theorem plus structured normalization-one access.",
+  "theorem": {
+    "access_boundary": "Fourier concentration or conditioning does not compile the dense multiplier at normalization one from pointwise J_h access.",
+    "block_diagonalization": "C is unitarily equivalent to direct_sum_nu I_(d_nu) tensor [|G|^-1/2 sum_h rho_nu(h^-1) tensor J_h].",
+    "legendre_uniform_counterexample": "For p=3 mod 4, the completed Legendre phase has A_x=-1/p for x!=0 but convolution condition sqrt(p+1).",
+    "matrix_parseval_identity": "The normalized Gram Frobenius residual equals both the sum of squared operator-autocorrelation errors and the dimension-weighted Fourier-block residual.",
+    "scope": "The theorem refines the required spectral target. It neither proves nor refutes a state-weighted natural S_n gap, physical input domination, a structured Fourier multiplier circuit, a decoder, or a speedup.",
+    "state_weighted_tail_bound": "If normalized Gram Frobenius error is R, maximally mixed mass outside the epsilon Gram window is at most R/epsilon^2.",
+    "status": "autocorrelation-reduced-to-fourier-extremes-and-state-weighted-tail",
+    "theorem_verified": true,
+    "uniform_conditioning_criterion": "C has singular spectrum equal to the union of each Fourier-multiplier spectrum repeated d_nu times; a uniform gap requires every sector."
+  },
+  "theorem_contract": {
+    "access_boundary": "Fourier concentration or conditioning does not compile the dense multiplier at normalization one from pointwise J_h access.",
+    "block_diagonalization": "C is unitarily equivalent to direct_sum_nu I_(d_nu) tensor [|G|^-1/2 sum_h rho_nu(h^-1) tensor J_h].",
+    "legendre_uniform_counterexample": "For p=3 mod 4, the completed Legendre phase has A_x=-1/p for x!=0 but convolution condition sqrt(p+1).",
+    "matrix_parseval_identity": "The normalized Gram Frobenius residual equals both the sum of squared operator-autocorrelation errors and the dimension-weighted Fourier-block residual.",
+    "scope": "The theorem refines the required spectral target. It neither proves nor refutes a state-weighted natural S_n gap, physical input domination, a structured Fourier multiplier circuit, a decoder, or a speedup.",
+    "state_weighted_tail_bound": "If normalized Gram Frobenius error is R, maximally mixed mass outside the epsilon Gram window is at most R/epsilon^2.",
+    "status": "autocorrelation-reduced-to-fourier-extremes-and-state-weighted-tail",
+    "theorem_verified": true,
+    "uniform_conditioning_criterion": "C has singular spectrum equal to the union of each Fourier-multiplier spectrum repeated d_nu times; a uniform gap requires every sector."
+  }
+}

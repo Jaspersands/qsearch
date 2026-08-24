@@ -1,0 +1,199 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Different cyclic subgroups can share a large coefficient sector.",
+      "resolution": "Any proper intersection has zero mass at even index or inverse-square mass at odd index; Cauchy caps correlation at 1/3.",
+      "resolved": true
+    },
+    {
+      "objection": "Replacing u by min(u,m-u) silently changes the crossing count.",
+      "resolution": "The proof bounds both positive and negative half-images for the smaller multiplier; negation swaps them exactly.",
+      "resolved": true
+    },
+    {
+      "objection": "Axis points invalidate the square-wave mismatch formula for even order.",
+      "resolution": "Every unit fixes 0 and m/2; their two +1 contributions give the same exact identity T=m-4d.",
+      "resolved": true
+    },
+    {
+      "objection": "Vanishing normalized Frobenius residual gives a uniform condition number.",
+      "resolution": "False. It gives only a maximally-mixed-domain tail bound; small exceptional singular sectors can remain.",
+      "resolved": true
+    },
+    {
+      "objection": "The theorem supplies an efficient quantum algorithm.",
+      "resolution": "False. Structured access, physical input domination, decoding, and a classical separation remain open gates.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "all_finite_group_three_quarters_range_overlap_proved": true,
+    "all_n_unconditioned_natural_frobenius_contraction_proved": true,
+    "classical_separation_proved": false,
+    "collision_free_source_typical_frobenius_contraction_proved": true,
+    "different_generated_subgroup_two_thirds_bound_proved": true,
+    "equal_generated_subgroup_three_quarters_bound_proved": true,
+    "maximally_mixed_domain_bad_spectral_mass_vanishes_proved": true,
+    "normalization_one_dense_transform_compiled": false,
+    "physical_input_fourier_domination_proved": false,
+    "physical_pgm_decoder_compiled": false,
+    "proper_subgroup_fourier_mass_formula_proved": true,
+    "quotient_coset_symbol_identity_proved": true,
+    "speedup_claim_allowed": false,
+    "uniform_minimum_singular_value_proved": false
+  },
+  "created_at": "2026-08-24T17:25:22.910537+00:00",
+  "falsifiers_triggered": [
+    "Pointwise finite stress is no longer used as the proof of the 3/4 ceiling.",
+    "The theorem does not imply a uniform singular-value gap.",
+    "The theorem does not identify arbitrary physical input mass with the maximally mixed domain.",
+    "No algorithm or speedup is promoted without a structured transform and decoder."
+  ],
+  "headline_metrics": {
+    "all_finite_group_three_quarter_range_overlap_theorem_count": 1,
+    "all_n_natural_frobenius_contraction_theorem_count": 1,
+    "asymptotic_group_order_power_exponent": -0.24511249783653133,
+    "maximum_tested_multiplier_range_overlap": 0.75,
+    "new_quantum_algorithm_count": 0,
+    "normalization_one_dense_transform_count": 0,
+    "proper_subgroup_fourier_mass_theorem_count": 1,
+    "quotient_coset_identity_theorem_count": 1,
+    "sharp_multiplier": 3,
+    "sharp_multiplier_order": 8,
+    "tail_log2_expected_residual_upper_bound": -176.58393886517115,
+    "tail_n": 128,
+    "tested_coset_identity_count": 7656,
+    "tested_nonidentity_multiplier_count": 79340,
+    "tested_subgroup_mass_count": 363
+  },
+  "multiplier_correlation_audit": {
+    "maximizing_multiplier": 3,
+    "maximizing_order": 8,
+    "maximum_normalized_correlation": 0.5,
+    "maximum_order_tested": 512,
+    "maximum_range_overlap": 0.75,
+    "minimum_half_interval_crossing_margin": 0,
+    "sharp_order_eight_control_verified": true,
+    "status": "cyclic-multiplier-three-quarter-bound-sharp-at-order-eight",
+    "tested_nonidentity_unit_count": 79340,
+    "three_quarter_bound_verified": true
+  },
+  "natural_contraction_scaling": [
+    {
+      "asymptotic_power_exponent": -0.24511249783653133,
+      "conditioned_expected_residual_tends_to_zero": true,
+      "copy_count": 48,
+      "global_distinct_conditioning_probability_tends_to_one": true,
+      "log2_group_order": 15.29920801838728,
+      "log2_unconditioned_expected_residual_upper_bound": -4.6226277285679505,
+      "n": 8,
+      "status": "natural-collision-free-state-weighted-residual-contracts"
+    },
+    {
+      "asymptotic_power_exponent": -0.24511249783653133,
+      "conditioned_expected_residual_tends_to_zero": true,
+      "copy_count": 135,
+      "global_distinct_conditioning_probability_tends_to_one": true,
+      "log2_group_order": 44.25014046988262,
+      "log2_unconditioned_expected_residual_upper_bound": -11.779921932761361,
+      "n": 16,
+      "status": "natural-collision-free-state-weighted-residual-contracts"
+    },
+    {
+      "asymptotic_power_exponent": -0.24511249783653133,
+      "conditioned_expected_residual_tends_to_zero": true,
+      "copy_count": 355,
+      "global_distinct_conditioning_probability_tends_to_one": true,
+      "log2_group_order": 117.6632636523603,
+      "log2_unconditioned_expected_residual_upper_bound": -29.67504859162925,
+      "n": 32,
+      "status": "natural-collision-free-state-weighted-residual-contracts"
+    },
+    {
+      "asymptotic_power_exponent": -0.24511249783653133,
+      "conditioned_expected_residual_tends_to_zero": true,
+      "copy_count": 890,
+      "global_distinct_conditioning_probability_tends_to_one": true,
+      "log2_group_order": 295.99514394172405,
+      "log2_unconditioned_expected_residual_upper_bound": -73.38823041644696,
+      "n": 64,
+      "status": "natural-collision-free-state-weighted-residual-contracts"
+    },
+    {
+      "asymptotic_power_exponent": -0.24511249783653133,
+      "conditioned_expected_residual_tends_to_zero": true,
+      "copy_count": 2151,
+      "global_distinct_conditioning_probability_tends_to_one": true,
+      "log2_group_order": 716.1617220836218,
+      "log2_unconditioned_expected_residual_upper_bound": -176.58393886517115,
+      "n": 128,
+      "status": "natural-collision-free-state-weighted-residual-contracts"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "prove_proper_cyclic_subgroup_coefficient_mass",
+      "resolution": "The exact coset identity and quotient Parseval prove zero/even and inverse-square/odd mass.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_equal_cyclic_subgroup_multiplier_bound",
+      "resolution": "Alternating half-interval counting proves T_m(u)<=m/2 for every nonidentity unit.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_all_n_natural_state_weighted_contraction",
+      "resolution": "The range-overlap theorem closes the word-moment bound; positivity transfers it to global-distinct sources.",
+      "resolved": true
+    },
+    {
+      "obligation": "compile_normalization_one_dense_relative_transform",
+      "resolution": "A mathematical state-weighted near-isometry does not provide coherent access to the dense convolution or its polar factor.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_physical_input_domination_and_decode_hidden_involution",
+      "resolution": "Maximally mixed domain mass is not yet identified with every physical input distribution, and no efficient decoder is compiled.",
+      "resolved": false
+    }
+  ],
+  "proper_subgroup_audit": {
+    "even_index_mass_zero_verified": true,
+    "maximum_coset_identity_residual": 0.0,
+    "maximum_fourier_mass_formula_residual": 6.496192472837947e-14,
+    "maximum_order_tested": 96,
+    "maximum_proper_subgroup_coefficient_mass": 0.11111111111117607,
+    "odd_index_inverse_square_mass_verified": true,
+    "status": "proper-subgroup-mass-zero-even-inverse-square-odd-verified",
+    "tested_coset_identity_count": 7656,
+    "tested_subgroup_mass_count": 363
+  },
+  "status": "all-order-quadrant-overlap-and-natural-frobenius-contraction-proved",
+  "summary": "Closed the all-order four-ray range-overlap lemma and the resulting natural collision-free normalized-Frobenius contraction theorem. The research bottleneck moves from spectral mass to structured dense transform access and physical decoding.",
+  "theorem": {
+    "all_finite_group_range_overlap": "Every distinct finite-group pair obeys Tr(P_aP_b)/|G|^2<=3/4; the bound is sharp for C_8 generators a and a^3.",
+    "conditioning_transfer": "For S_n, global source distinctness has probability 1-o(1), so E[R|D]<=E[R]/Pr(D)=o(1); Markov gives source-typical contraction.",
+    "different_subgroup_bound": "Cauchy on <a> intersect <b> gives |tau(S_a^*S_b)|<=1/3 when the generated cyclic subgroups differ, hence q(a,b)<=2/3.",
+    "equal_subgroup_correlation": "For b=a^u, T_m(u)=m-4d_m(u), where d_m(u) counts positive half-circle residues mapped to the negative half-circle.",
+    "half_interval_count": "Alternating intervals of length m/(2 min(u,m-u)) prove d_m(u)>=m/8 for every nonidentity unit u.",
+    "natural_frobenius_consequence": "The regular word-moment identity now gives E R<=(|G|-1)(3/4)^k, which is o(1) for k=ceil(3log2|G|)+2.",
+    "proper_subgroup_fourier_mass": "Parseval gives coefficient mass zero on an even-index subgroup and exactly 1/q^2 on an odd-index subgroup.",
+    "quotient_coset_identity": "For m=dq, sum_l s_m(a+ld) is zero for even q and s_d(a) for odd q.",
+    "scope": "This proves normalized Frobenius and maximally-mixed-domain spectral tail contraction, not a minimum singular value, physical input domination, structured transform, decoder, or speedup.",
+    "status": "all-order-quadrant-overlap-and-natural-frobenius-contraction-proved",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "all_finite_group_range_overlap": "Every distinct finite-group pair obeys Tr(P_aP_b)/|G|^2<=3/4; the bound is sharp for C_8 generators a and a^3.",
+    "conditioning_transfer": "For S_n, global source distinctness has probability 1-o(1), so E[R|D]<=E[R]/Pr(D)=o(1); Markov gives source-typical contraction.",
+    "different_subgroup_bound": "Cauchy on <a> intersect <b> gives |tau(S_a^*S_b)|<=1/3 when the generated cyclic subgroups differ, hence q(a,b)<=2/3.",
+    "equal_subgroup_correlation": "For b=a^u, T_m(u)=m-4d_m(u), where d_m(u) counts positive half-circle residues mapped to the negative half-circle.",
+    "half_interval_count": "Alternating intervals of length m/(2 min(u,m-u)) prove d_m(u)>=m/8 for every nonidentity unit u.",
+    "natural_frobenius_consequence": "The regular word-moment identity now gives E R<=(|G|-1)(3/4)^k, which is o(1) for k=ceil(3log2|G|)+2.",
+    "proper_subgroup_fourier_mass": "Parseval gives coefficient mass zero on an even-index subgroup and exactly 1/q^2 on an odd-index subgroup.",
+    "quotient_coset_identity": "For m=dq, sum_l s_m(a+ld) is zero for even q and s_d(a) for odd q.",
+    "scope": "This proves normalized Frobenius and maximally-mixed-domain spectral tail contraction, not a minimum singular value, physical input domination, structured transform, decoder, or speedup.",
+    "status": "all-order-quadrant-overlap-and-natural-frobenius-contraction-proved",
+    "theorem_verified": true
+  }
+}

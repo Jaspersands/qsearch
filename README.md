@@ -35,7 +35,7 @@ The central question driving Q-Search is: **Can genuine polynomial or super-poly
 
 ### The Q-Search Solution: Proof-Gated Defense
 Q-Search enforces a strict **claim-gating policy**:
-- **724 Verified Theorem Modules**: Every hypothesis is codified into an executable verification module with explicit mathematical kill criteria.
+- **745 Verified Theorem Modules**: Every hypothesis is codified into an executable verification module with explicit mathematical kill criteria.
 - **1,211 Dequantization Attacks**: Automated classical attack scanners test every quantum state-access model against correlation attacks, derivative spectra, and algebraic invariant learners.
 - **807 Retained Negative Results**: Every falsified claim or classical collision is permanently recorded in the registry (`research/registry/negative_results.json`).
 - **Speedup Claims Blocked**: The registry actively gates `speedup_claim_allowed = False` until a candidate provably defeats all named classical baselines across asymptotic families.
@@ -53,14 +53,14 @@ Interactive data portals are deployed via GitHub Pages:
 | **Frontier Map** | Machine-readable topological map of active research frontiers and kill criteria | [frontier.html](https://jaspersands.github.io/qsearch/frontier.html) |
 | **Negative Results** | Searchable database of 807 retained no-go theorems and dequantization findings | [negative-results.html](https://jaspersands.github.io/qsearch/negative-results.html) |
 | **Proof Debt** | Live ledger of 24 open proof obligations, 1,184 lemmas, and reduction edges | [proof-debt.html](https://jaspersands.github.io/qsearch/proof-debt.html) |
-| **Repository Map** | Interactive codebase architecture explorer and 724-module taxonomy | [repomap.html](https://jaspersands.github.io/qsearch/repomap.html) |
+| **Repository Map** | Interactive codebase architecture explorer and 745-module taxonomy | [repomap.html](https://jaspersands.github.io/qsearch/repomap.html) |
 
 ---
 
 ## Repository Architecture & Codebase Layout
 
 ### Why is the Root Directory Structured with Flat Modules?
-Q-Search contains **724 scientific verification modules**. The codebase intentionally maintains a flat module namespace with explicit domain prefixes rather than deep nested packaging:
+Q-Search contains **745 scientific verification modules**. The codebase organizes modules into domain-specific packages (`core/` and `theorems/`):
 
 ```text
 quantum-algorithm-search/
@@ -71,7 +71,7 @@ quantum-algorithm-search/
 │   ├── dequantization_checks.py   # Automated classical attack matrix scanner
 │   └── mutation_engine.py         # Automated hypothesis mutation generator
 │
-├── theorems/                      # 723 Scientific Theorem Verification modules
+├── theorems/                      # 745 Scientific Theorem Verification modules
 │   ├── dcp_*.py                   # Dihedral Coset Problem (DHSP) & state-native sieves
 │   ├── coset_*.py, cfi_*.py       # Non-abelian coset observables & S_n representation theory
 │   ├── self_dual_wreath_*.py      # Self-dual wreath product representations & polar audits
@@ -97,7 +97,7 @@ quantum-algorithm-search/
 
 **Benefits of this Architecture:**
 1. **Uncluttered Root**: Only `qsearch.py` and configuration files reside at root.
-2. **Zero Packaging Friction**: All 724 workflows execute seamlessly via `python3 qsearch.py <command>`.
+2. **Zero Packaging Friction**: All 745 workflows execute seamlessly via `python3 qsearch.py <command>`.
 3. **Clean Separation of Concerns**: Core platform orchestration (`core/`) is cleanly separated from domain theorem proofs (`theorems/`).
 
 ---
@@ -183,7 +183,7 @@ python3 -m pytest tests/test_experiment_runner.py
 
 ## Categorized CLI Command Reference
 
-All 724 research workflows are accessible via `python3 qsearch.py <subcommand>`.
+All 745 research workflows are accessible via `python3 qsearch.py <subcommand>`.
 
 ### Core Operating System Commands
 ```bash
@@ -273,6 +273,28 @@ python3 qsearch.py self-dual-wreath-orientation-fixed-space-recoupling
 python3 qsearch.py self-dual-wreath-racah-decoupling-gauge-uniqueness
 python3 qsearch.py self-dual-wreath-source-adaptive-walsh-collision-reduction
 python3 qsearch.py self-dual-wreath-trace-biased-adaptive-walsh-no-go
+python3 qsearch.py self-dual-wreath-branch-character-cyclic-polar-compiler
+python3 qsearch.py self-dual-wreath-branch-character-cyclic-quadrant-overlap
+python3 qsearch.py self-dual-wreath-branch-character-equivariant-multiplier-normal-form
+python3 qsearch.py self-dual-wreath-branch-character-gpe-dilation-separation
+python3 qsearch.py self-dual-wreath-branch-character-label-coherent-power-map-boundary
+python3 qsearch.py self-dual-wreath-branch-character-naimark-autocorrelation-fourier-boundary
+python3 qsearch.py self-dual-wreath-branch-character-natural-frobenius-word-map
+python3 qsearch.py self-dual-wreath-branch-character-polar-naimark-completion
+python3 qsearch.py self-dual-wreath-branch-character-power-map-fourier-access-boundary
+python3 qsearch.py self-dual-wreath-branch-character-raw-concentration-central-fourier-bridge
+python3 qsearch.py self-dual-wreath-branch-character-raw-polar-matched-filter-boundary
+python3 qsearch.py self-dual-wreath-branch-character-sector-resolved-whitening-no-go
+python3 qsearch.py self-dual-wreath-branch-character-whole-sum-path-erasure-boundary
+python3 qsearch.py self-dual-wreath-joint-character-analysis-map-normalization
+python3 qsearch.py self-dual-wreath-joint-character-natural-sector-mass
+python3 qsearch.py self-dual-wreath-joint-character-purification-access-boundary
+python3 qsearch.py self-dual-wreath-orientation-kernel-character-tensor-boundary
+python3 qsearch.py self-dual-wreath-orientation-kernel-hash-normalization-no-go
+python3 qsearch.py self-dual-wreath-schur-branch-merger-polar-equivalence
+python3 qsearch.py self-dual-wreath-schur-dilated-multiplicity-access
+python3 qsearch.py self-dual-wreath-split-sector-branch-regularity
+python3 qsearch.py self-dual-wreath-trace-biased-coefficient-rank-no-go
 ```
 </details>
 

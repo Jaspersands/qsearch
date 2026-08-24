@@ -1,0 +1,350 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The raw full-character stack and polar stack are both isometries, so they should be close.",
+      "resolution": "False. Their local overlap is strictly below one away from orders 1,2,4, and tensor copies drive the natural global overlap to zero.",
+      "resolved": true
+    },
+    {
+      "objection": "Order-four permutations invalidate exponential separation.",
+      "resolution": "Their probability is at most (n+1)2^(-n/4) because they require at least n/4 cycles.",
+      "resolved": true
+    },
+    {
+      "objection": "Global-distinct conditioning could concentrate the exceptional overlap.",
+      "resolution": "The overlap is nonnegative and bounded; conditioning costs only 1/Pr(D)=1+o(1).",
+      "resolved": true
+    },
+    {
+      "objection": "State-weighted conditioning of C removes the generic block-encoding normalization.",
+      "resolution": "It proves C has order-one singulars on most domain mass, so C/sqrt(|G|) still needs square-root amplification there.",
+      "resolved": true
+    },
+    {
+      "objection": "This is a circuit lower bound for every representation-theoretic transform.",
+      "resolution": "No. A direct equivariant Fourier multiplier circuit remains explicitly open.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "classical_separation_proved": false,
+    "conjugation_equivariant_multiplier_normal_form_derived": false,
+    "direct_equivariant_multiplier_compiled": false,
+    "generic_controlled_field_lcu_qsvt_superpolynomial_proved": true,
+    "natural_raw_polar_convolution_overlap_vanishes_proved": true,
+    "physical_decoder_compiled": false,
+    "physical_input_fourier_domination_proved": false,
+    "raw_character_representation_dilation_proved": true,
+    "raw_gpe_substitution_rejected": true,
+    "raw_polar_local_overlap_formula_proved": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-24T17:38:42.115443+00:00",
+  "cyclic_overlap_audit": {
+    "exceptional_equal_order_count": 3,
+    "exceptional_equal_orders": [
+      1,
+      2,
+      4
+    ],
+    "maximizing_nonexceptional_order": 3,
+    "maximum_closed_form_residual": 4.440892098500626e-16,
+    "maximum_nonexceptional_overlap": 0.9772838841927122,
+    "maximum_order_tested": 1024,
+    "status": "raw-polar-overlap-one-only-orders-one-two-four-gamma-elsewhere",
+    "tested_order_count": 1024,
+    "universal_gamma": 0.9772838841927122,
+    "universal_nonexceptional_bound_verified": true
+  },
+  "falsifiers_triggered": [
+    "Raw generalized phase estimation cannot substitute for branch-polar completion.",
+    "Natural state-weighted conditioning does not repair generic sqrt(|S_n|) subnormalization.",
+    "The result does not rule out a direct representation-specific Fourier multiplier transform."
+  ],
+  "headline_metrics": {
+    "direct_equivariant_multiplier_compiler_count": 0,
+    "generic_controlled_field_qsvt_no_go_count": 1,
+    "local_control_count": 3,
+    "maximum_nonexceptional_local_overlap": 0.9772838841927122,
+    "maximum_tested_cyclic_order": 1024,
+    "natural_raw_polar_separation_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "raw_representation_dilation_theorem_count": 1,
+    "tail_annealed_overlap_upper_bound": 1.3931997916438775e-17,
+    "tail_generic_qsvt_degree_log2_lower_bound": 839.9981436121074,
+    "tail_n": 256,
+    "tail_typical_frobenius_distance_squared_lower_bound": 1.9999999925348817,
+    "universal_nonexceptional_gamma": 0.9772838841927122
+  },
+  "local_controls": [
+    {
+      "carrier_dimension": 2,
+      "control_id": "S3-THREE-CYCLE",
+      "direct_to_phase_formula_residual": 1.1102230246251565e-16,
+      "left_partition": [
+        3
+      ],
+      "n": 3,
+      "permutation": [
+        1,
+        2,
+        0
+      ],
+      "polar_isometry_residual": 1.6928581187347192e-17,
+      "raw_and_polar_fields_equal": false,
+      "raw_isometry_residual": 2.7755575615628914e-17,
+      "raw_representation_dilation_verified": true,
+      "raw_to_polar_normalized_overlap": 0.9659258262890683,
+      "representation_dilation_residual": 1.4686870114880517e-16,
+      "right_partition": [
+        2,
+        1
+      ],
+      "status": "raw-representation-dilation-and-polar-overlap-verified"
+    },
+    {
+      "carrier_dimension": 6,
+      "control_id": "S4-FOUR-CYCLE",
+      "direct_to_phase_formula_residual": 0.0,
+      "left_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "permutation": [
+        1,
+        2,
+        3,
+        0
+      ],
+      "polar_isometry_residual": 1.2526747184659638e-15,
+      "raw_and_polar_fields_equal": true,
+      "raw_isometry_residual": 1.29966110154625e-16,
+      "raw_representation_dilation_verified": true,
+      "raw_to_polar_normalized_overlap": 1.0,
+      "representation_dilation_residual": 2.0764928097449779e-16,
+      "right_partition": [
+        2,
+        2
+      ],
+      "status": "raw-representation-dilation-and-polar-overlap-verified"
+    },
+    {
+      "carrier_dimension": 6,
+      "control_id": "S4-THREE-CYCLE",
+      "direct_to_phase_formula_residual": 1.1102230246251565e-16,
+      "left_partition": [
+        3,
+        1
+      ],
+      "n": 4,
+      "permutation": [
+        1,
+        2,
+        0,
+        3
+      ],
+      "polar_isometry_residual": 5.24378333436655e-16,
+      "raw_and_polar_fields_equal": false,
+      "raw_isometry_residual": 2.7755575615628914e-17,
+      "raw_representation_dilation_verified": true,
+      "raw_to_polar_normalized_overlap": 0.9772838841927123,
+      "representation_dilation_residual": 1.5740717995011618e-16,
+      "right_partition": [
+        2,
+        2
+      ],
+      "status": "raw-representation-dilation-and-polar-overlap-verified"
+    }
+  ],
+  "order_four_probability_controls": [
+    {
+      "cycle_moment_markov_upper_bound": 1.0,
+      "exact_order_dividing_four_count": 2,
+      "exact_order_dividing_four_probability": 1.0,
+      "exact_probability_below_bound": true,
+      "group_order": 2,
+      "n": 2,
+      "status": "order-dividing-four-probability-obeys-cycle-moment-bound"
+    },
+    {
+      "cycle_moment_markov_upper_bound": 1.0,
+      "exact_order_dividing_four_count": 4,
+      "exact_order_dividing_four_probability": 0.6666666666666666,
+      "exact_probability_below_bound": true,
+      "group_order": 6,
+      "n": 3,
+      "status": "order-dividing-four-probability-obeys-cycle-moment-bound"
+    },
+    {
+      "cycle_moment_markov_upper_bound": 1.0,
+      "exact_order_dividing_four_count": 16,
+      "exact_order_dividing_four_probability": 0.6666666666666666,
+      "exact_probability_below_bound": true,
+      "group_order": 24,
+      "n": 4,
+      "status": "order-dividing-four-probability-obeys-cycle-moment-bound"
+    },
+    {
+      "cycle_moment_markov_upper_bound": 1.0,
+      "exact_order_dividing_four_count": 56,
+      "exact_order_dividing_four_probability": 0.4666666666666667,
+      "exact_probability_below_bound": true,
+      "group_order": 120,
+      "n": 5,
+      "status": "order-dividing-four-probability-obeys-cycle-moment-bound"
+    },
+    {
+      "cycle_moment_markov_upper_bound": 1.0,
+      "exact_order_dividing_four_count": 256,
+      "exact_order_dividing_four_probability": 0.35555555555555557,
+      "exact_probability_below_bound": true,
+      "group_order": 720,
+      "n": 6,
+      "status": "order-dividing-four-probability-obeys-cycle-moment-bound"
+    },
+    {
+      "cycle_moment_markov_upper_bound": 1.0,
+      "exact_order_dividing_four_count": 1072,
+      "exact_order_dividing_four_probability": 0.2126984126984127,
+      "exact_probability_below_bound": true,
+      "group_order": 5040,
+      "n": 7,
+      "status": "order-dividing-four-probability-obeys-cycle-moment-bound"
+    },
+    {
+      "cycle_moment_markov_upper_bound": 1.0,
+      "exact_order_dividing_four_count": 6224,
+      "exact_order_dividing_four_probability": 0.15436507936507937,
+      "exact_probability_below_bound": true,
+      "group_order": 40320,
+      "n": 8,
+      "status": "order-dividing-four-probability-obeys-cycle-moment-bound"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "test_raw_character_gpe_as_polar_transform_substitute",
+      "resolution": "Rejected: their conditioned natural normalized Hilbert--Schmidt overlap vanishes at the theorem copy scale.",
+      "resolved": true
+    },
+    {
+      "obligation": "test_generic_controlled_J_lcu_qsvt_compiler",
+      "resolution": "Rejected in that access model: the exact block has 1/sqrt(|G|) good-sector amplitudes and needs Omega(sqrt(|G|)) degree.",
+      "resolved": true
+    },
+    {
+      "obligation": "derive_conjugation_equivariant_multiplier_normal_form",
+      "resolution": "Decompose Jhat_nu as an intertwiner between nu tensor source representations and identify efficiently synthesizable reduced blocks.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_structured_polar_fourier_transform_and_decoder",
+      "resolution": "No direct equivariant multiplier circuit, physical-input domination theorem, or hidden-label decoder is known.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "copy_count": 135,
+      "generic_controlled_field_qsvt_superpolynomial": true,
+      "generic_qsvt_degree_log2_lower_bound": 20.12507023494131,
+      "log2_group_order": 44.25014046988262,
+      "low_order_probability_log2_upper_bound": 0.0874628412503391,
+      "n": 16,
+      "nonexceptional_overlap_log2_upper_bound": -4.47530314541339,
+      "normalized_frobenius_distance_squared_lower_bound": 0.0,
+      "raw_gpe_substitution_asymptotically_rejected": true,
+      "status": "raw-gpe-substitution-and-generic-qsvt-rejected",
+      "total_annealed_overlap_upper_bound": 1.0,
+      "typical_failure_probability_upper_bound": 1.0,
+      "typical_overlap_threshold": 1.0
+    },
+    {
+      "copy_count": 355,
+      "generic_controlled_field_qsvt_superpolynomial": true,
+      "generic_qsvt_degree_log2_lower_bound": 56.83163182618015,
+      "log2_group_order": 117.6632636523603,
+      "low_order_probability_log2_upper_bound": -2.9556058806415466,
+      "n": 32,
+      "nonexceptional_overlap_log2_upper_bound": -11.768389752753729,
+      "normalized_frobenius_distance_squared_lower_bound": 1.281131704893674,
+      "raw_gpe_substitution_asymptotically_rejected": true,
+      "status": "raw-gpe-substitution-and-generic-qsvt-rejected",
+      "total_annealed_overlap_upper_bound": 0.12919290642726902,
+      "typical_failure_probability_upper_bound": 0.3594341475531631,
+      "typical_overlap_threshold": 0.3594341475531631
+    },
+    {
+      "copy_count": 890,
+      "generic_controlled_field_qsvt_superpolynomial": true,
+      "generic_qsvt_degree_log2_lower_bound": 145.99757197086203,
+      "log2_group_order": 295.99514394172405,
+      "low_order_probability_log2_upper_bound": -9.977632186971546,
+      "n": 64,
+      "nonexceptional_overlap_log2_upper_bound": -29.503850366058646,
+      "normalized_frobenius_distance_squared_lower_bound": 1.9370135696315132,
+      "raw_gpe_substitution_asymptotically_rejected": true,
+      "status": "raw-gpe-substitution-and-generic-qsvt-rejected",
+      "total_annealed_overlap_upper_bound": 0.0009918226026410628,
+      "typical_failure_probability_upper_bound": 0.03149321518424346,
+      "typical_overlap_threshold": 0.03149321518424346
+    },
+    {
+      "copy_count": 2151,
+      "generic_controlled_field_qsvt_superpolynomial": true,
+      "generic_qsvt_degree_log2_lower_bound": 356.0808610418109,
+      "log2_group_order": 716.1617220836218,
+      "low_order_probability_log2_upper_bound": -24.988772744576746,
+      "n": 128,
+      "nonexceptional_overlap_log2_upper_bound": -71.30649678358668,
+      "normalized_frobenius_distance_squared_lower_bound": 1.9996533869417847,
+      "raw_gpe_substitution_asymptotically_rejected": true,
+      "status": "raw-gpe-substitution-and-generic-qsvt-rejected",
+      "total_annealed_overlap_upper_bound": 3.0035153031349526e-08,
+      "typical_failure_probability_upper_bound": 0.00017330652910767537,
+      "typical_overlap_threshold": 0.00017330652910767537
+    },
+    {
+      "copy_count": 5054,
+      "generic_controlled_field_qsvt_superpolynomial": true,
+      "generic_qsvt_degree_log2_lower_bound": 839.9981436121074,
+      "log2_group_order": 1683.9962872242147,
+      "low_order_probability_log2_upper_bound": -55.99437545080612,
+      "n": 256,
+      "nonexceptional_overlap_log2_upper_bound": -167.54208960680944,
+      "normalized_frobenius_distance_squared_lower_bound": 1.9999999925348817,
+      "raw_gpe_substitution_asymptotically_rejected": true,
+      "status": "raw-gpe-substitution-and-generic-qsvt-rejected",
+      "total_annealed_overlap_upper_bound": 1.3931997916438775e-17,
+      "typical_failure_probability_upper_bound": 3.732559164492745e-09,
+      "typical_overlap_threshold": 3.732559164492745e-09
+    }
+  ],
+  "status": "raw-gpe-dilation-asymptotically-separated-generic-qsvt-closed",
+  "summary": "Proved that the easy raw representation dilation is asymptotically orthogonal to the polar-completed transform on natural source portfolios, and that generic controlled-field QSVT remains factorially normalized. The surviving task is direct equivariant multiplier synthesis.",
+  "theorem": {
+    "generic_block_encoding": "Canonical controlled-field PREPARE isometries expose C/sqrt(|G|); uniform QSVT amplification on the good sector costs Omega(sqrt(|G|)).",
+    "local_phase_overlap": "The regular local raw/polar overlap is a_m; it equals one only at orders 1,2,4 and is at most gamma=a_3=a_6<0.978 otherwise.",
+    "low_order_probability": "Pr[ord(h)|4]<=Pr[cycles(h)>=n/4]<=(n+1)2^(-n/4), using E[2^cycles]=n+1.",
+    "natural_source_separation": "The annealed raw/polar convolution overlap is at most the low-order probability plus gamma^k and vanishes after global-distinct conditioning.",
+    "raw_representation_dilation": "K_h=(H tensor I)(|0><0| tensor A_h+|1><1| tensor B_h)(|+> tensor I), and the controlled middle family is a representation.",
+    "regular_plancherel_reduction": "Two independent Plancherel labels replace each local carrier by Reg(S_n) tensor Reg(S_n), so k source pairs contribute a_ord(h)^k.",
+    "scope": "The theorem rejects raw-GPE substitution and generic LCU/QSVT. It is not a lower bound against arbitrary equivariant circuits and does not compile the polar transform or decoder.",
+    "status": "raw-gpe-dilation-asymptotically-separated-generic-qsvt-closed",
+    "structured_escape": "Only direct synthesis of the conjugation-equivariant Fourier multipliers, or another representation-specific polar circuit, remains.",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "generic_block_encoding": "Canonical controlled-field PREPARE isometries expose C/sqrt(|G|); uniform QSVT amplification on the good sector costs Omega(sqrt(|G|)).",
+    "local_phase_overlap": "The regular local raw/polar overlap is a_m; it equals one only at orders 1,2,4 and is at most gamma=a_3=a_6<0.978 otherwise.",
+    "low_order_probability": "Pr[ord(h)|4]<=Pr[cycles(h)>=n/4]<=(n+1)2^(-n/4), using E[2^cycles]=n+1.",
+    "natural_source_separation": "The annealed raw/polar convolution overlap is at most the low-order probability plus gamma^k and vanishes after global-distinct conditioning.",
+    "raw_representation_dilation": "K_h=(H tensor I)(|0><0| tensor A_h+|1><1| tensor B_h)(|+> tensor I), and the controlled middle family is a representation.",
+    "regular_plancherel_reduction": "Two independent Plancherel labels replace each local carrier by Reg(S_n) tensor Reg(S_n), so k source pairs contribute a_ord(h)^k.",
+    "scope": "The theorem rejects raw-GPE substitution and generic LCU/QSVT. It is not a lower bound against arbitrary equivariant circuits and does not compile the polar transform or decoder.",
+    "status": "raw-gpe-dilation-asymptotically-separated-generic-qsvt-closed",
+    "structured_escape": "Only direct synthesis of the conjugation-equivariant Fourier multipliers, or another representation-specific polar circuit, remains.",
+    "theorem_verified": true
+  }
+}

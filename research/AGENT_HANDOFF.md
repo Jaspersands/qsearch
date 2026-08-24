@@ -1,6 +1,18 @@
 # Research Agent Handoff
 
-Last updated: 2026-08-21
+Last updated: 2026-08-24
+
+## Antigravity Mechanical Wiring Completion Note (2026-08-24 - Pass 6)
+
+- **Mechanical Wiring Status**: **100% COMPLETE**. All **22 newly generated theorem modules** in `self_dual_wreath_*` families (including branch-character cyclic polar compilers, quadrant overlaps, equivariant multiplier normal forms, GPE dilation separations, label-coherent power-map boundaries, Naimark Fourier bridges, and Schur dilated multiplicity access boundaries) have been fully wired into:
+  - `core/research_registry.py` (all 22 `ExperimentRecord` blocks registered under `CODE-COSET-COLLECTIVE` in `seed_candidate_records()`)
+  - `core/experiment_runner.py` (imports, runner dispatchers, priority maps, supported experiment sets, and safe result upsert fallbacks)
+  - `qsearch.py` (CLI subparser commands and execution handlers)
+  - `README.md` & `repomap.html` & `docs/REPOSITORY_MAP.md` (CLI command documentation & 745 module updates)
+  - `tests/test_experiment_runner.py` (full clean-registry unit test dispatch coverage for all 22 experiments)
+- **Repository Milestones**: The research registry now tracks **746 registered experiments**, **729 experiment results**, **1,212 dequantization findings** (1,208 blocking), and **809 negative result records**.
+- **Validation**: Full workspace validation (`python3 qsearch.py dequantize && python3 qsearch.py validate`), `python3 tools/build_progress_snapshot.py`, `python3 -m compileall -q .`, `node --check site/progress.js`, and `git diff --check` all passed cleanly with **0 issues (`valid: true`)** and **22 newly added dispatch tests passed (100% OK)**.
+- **Claim Gates & Integrity**: All mathematical contracts, constants, formulas, falsifiers, negative result claims, and `speedup_claim_allowed=False` gates remain 100% intact.
 
 ## Antigravity Mechanical Wiring Completion Note (2026-08-21 - Pass 5)
 
@@ -88,7 +100,1217 @@ unresolved proof obligations, next high-value derivations, and concrete
 success/failure checks here. Running out of Codex usage is a model handoff, not
 the end of the repository's research goal.
 
+## Current High-Reasoning Result: Schur Branch Merger Is the Orientation Polar in Encoded Coordinates (2026-08-24)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_schur_branch_merger_polar_equivalence.py
+tests/test_self_dual_wreath_schur_branch_merger_polar_equivalence.py
+research/representation/self_dual_wreath_schur_branch_merger_polar_equivalence.json
+EXP-CODE-SELF-DUAL-WREATH-SCHUR-BRANCH-MERGER-POLAR-EQUIVALENCE
+```
+
+Let `J_e:M_e->X` include the physical invariant range
+`M_e=ran(E_e)`, let `S=[J_e]_e`, and let `B=direct_sum_e B_e` be the
+orthogonal Schur companion encoding. The natural encoded merger
+`S_B=S B^*` obeys
+
+```text
+S_B S_B^* = sum_e E_e = A,
+S_B^* S_B = B(S^*S)B^*,
+polar(S_B) = polar(S)B^*.
+```
+
+The retained-character factor has the parallel identity
+`polar(L C^*)=polar(L)C^*`, with its Gram equal to an isometric conjugate of
+`I tensor H_nu`. Thus Schur encoding preserves every nonzero singular value
+and does not remove either `A^(-1/2)` or `H_nu^(-1/2)`.
+
+The physical-to-companion interface is nevertheless positive: after source
+Schur decomposition, `Inv(V_nu^* tensor sigma_e)` factors exactly as the
+canonical Bell invariant `|Omega_nu>` tensored with the opaque multiplicity
+state. Bell unpreparation enters or leaves the companion without exposing a
+standard Kronecker basis. Therefore physical and encoded polar compilers are
+polynomially interreducible. The carrier interface is solved; the polar is
+not.
+
+A branch-faithful deterministic Stinespring map must retain orthogonal
+environment tags whenever `J_e^*J_f` is nonzero. This rejects free unitary
+which-path erasure, but not a structured direct polar, multi-round companion
+transform, or decoder retaining branch characters. Three exact `S_3/S_4`
+controls and eight focused tests pass. No physical PGM, decoder, classical
+separation, algorithm, or speedup is claimed.
+
+## Current High-Reasoning Result: Schur-Dilated Fixed-Source Multiplicity Access Boundary (2026-08-24)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_schur_dilated_multiplicity_access.py
+tests/test_self_dual_wreath_schur_dilated_multiplicity_access.py
+research/representation/self_dual_wreath_schur_dilated_multiplicity_access.json
+EXP-CODE-SELF-DUAL-WREATH-SCHUR-DILATED-MULTIPLICITY-ACCESS
+```
+
+The blanket claim that no efficient internal symmetric-group multiplicity
+carrier is known is too strong. For fixed source Specht labels, append fixed
+Schur--Weyl companion basis states and apply
+
+```text
+T = Schur_(n,d^k) R_site (Schur_(n,d)^dagger)^tensor-k.
+```
+
+Diagonal `S_n` equivariance gives
+
+```text
+T = direct_sum_nu I_(P_nu) tensor B_nu,
+```
+
+where `B_nu` coherently embeds the generalized Kronecker multiplicity into an
+opaque joint companion subspace. With `d=n` and polynomial `k`, the corrected
+high-dimensional Schur transform makes this global isotypic router
+polynomial. Exact `S_3`, `S_4`, and `S_5` controls verify the
+`GL(d_A d_B)` branching identity, diagonal isotypic projector ranks, at least
+three active branch sectors per target, and the genuine multiplicity-two case
+`g((3,2),(3,1,1),(3,1,1))=2`.
+
+The important correction is that different source-label tuples occupy
+orthogonal `U(d)^k` subgroup-branch sectors of the joint companion. A
+source-controlled Schur router therefore retains orientation which-path
+information and does **not** realize the physical cross-orientation kernel
+`H_nu`. A separate coherent branch-mixing/erasure intertwiner is required
+before `H_nu` appears. If one instead assumes a common output-coordinate
+isometry on the orientation analysis map `L_nu`, it preserves
+`L_nu^*L_nu=H_nu` and cannot whiten it. These are distinct statements and must
+not be conflated.
+
+Claim boundary:
+
+```text
+fixed-source encoded Kronecker carrier:             PROVED POLYNOMIAL
+global fixed-source isotypic routing:                PROVED POLYNOMIAL
+standard multiplicity coordinates:                  NOT EXPOSED
+cross-orientation branch intertwiner:                OPEN
+controlled Schur router realizes H_nu:               FALSE
+common coordinate isometry improves H_nu:            FALSE
+Racah associator / orientation polar / decoder:      OPEN
+physical PGM / classical separation / speedup:       OPEN
+```
+
+The next high-judgment task is to characterize the minimum branch intertwiner
+needed to map the orthogonal source sectors into a common orientation carrier.
+Derive its equivariance constraints and normalization before attempting a
+circuit. A useful positive result must compile the intertwiner with polynomial
+normalization and then implement or bypass the `H_nu^(-1/2)` polar. A useful
+negative result must prove that every allowed branch-erasure implementation
+inherits factorial normalization, vanishing physical support, or a classical
+simulation; dimension counting or opacity of the companion basis is not
+enough. Do not claim that the Schur construction itself preserves the
+cross-orientation Gram: only a common coordinate isometry would do that.
+
+## Current High-Reasoning Result: Coherent Source Labels Do Not Cancel Power-Map Normalization (2026-08-24)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_branch_character_label_coherent_power_map_boundary.py
+tests/test_self_dual_wreath_branch_character_label_coherent_power_map_boundary.py
+research/representation/self_dual_wreath_branch_character_label_coherent_power_map_boundary.json
+EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-LABEL-COHERENT-POWER-MAP-BOUNDARY
+```
+
+The apparent escape from the termwise power-map normalization is now sharply
+rejected. A mixed hidden-subgroup coset state is
+
+```text
+rho_H = |G|^-1 sum_(h in H) R_h.
+```
+
+Under the group QFT it is exactly block diagonal in inequivalent irrep labels.
+Not measuring weak Fourier labels therefore does not supply cross-label
+amplitudes: it retains a classical direct-sum block. The branch field also
+preserves every fixed source tuple `Lambda`, so the global desired convolution
+is `direct_sum_Lambda C_Lambda`. Wrong output-irrep blocks of the full
+power-map isometry are orthogonal leakage, not paths to the same physical
+output.
+
+For the predecessor normalization
+
+```text
+alpha_(nu,Lambda)=|G|^k/sqrt(d_nu D_Lambda),
+S_3=sum_lambda d_lambda^3,
+```
+
+independent Plancherel averaging gives the exact squared inverse coefficient
+
+```text
+E[alpha^-2] = S_3^(2k+1)/|G|^(4k+1)
+              <= |G|^(-k+1/2).
+```
+
+Conditioning on global source distinctness changes this by at most the inverse
+conditioning probability, which is `1+o(1)` at the natural copy scale. Cyclic
+controls make the mechanism explicit: the norm-one transformed paired power
+map spreads one input character over `m^(2k-1)` output tuples, but the mean
+mass in the matching physical source block remains exactly `m^(-2k)`. Seven
+focused tests pass, including an exact `S_3` coset-state QFT block-diagonality
+control and nonabelian Plancherel enumeration.
+
+Claim boundary:
+
+```text
+mixed-coset irrep-label superselection:             PROVED
+source tuple conservation by the branch field:      PROVED
+Plancherel label average cancels normalization:      FALSE
+all output label blocks are useful target paths:     FALSE
+whole-quadrant FFT-like factorization:                OPEN
+arbitrary label-mixing direct polar/compiler:         OPEN
+physical decoder / classical separation / speedup:   OPEN
+```
+
+This is not a no-go for a circuit that combines the complete quadrant
+coefficient sum before labels are exposed, mixes and later restores labels, or
+implements the direct polar by another representation-specific mechanism.
+
+## Predecessor High-Reasoning Result: Power-Map Fourier Primitive Has Fatal Termwise Normalization (2026-08-24)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_branch_character_power_map_fourier_access_boundary.py
+tests/test_self_dual_wreath_branch_character_power_map_fourier_access_boundary.py
+research/representation/self_dual_wreath_branch_character_power_map_fourier_access_boundary.json
+EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-POWER-MAP-FOURIER-ACCESS-BOUNDARY
+```
+
+For a fixed exponent tuple `r`, the paired power map
+
+```text
+Phi_r(h)=(h^(1-r_1),h^r_1,...,h^(1-r_k),h^r_k)
+```
+
+is injective because either adjacent pair multiplies to `h`. It is efficiently
+reversible, and QFT conjugation makes it a normalization-one nonlinear Fourier
+isometry. The desired representation monomial is an exact selected block, but
+
+```text
+M_(nu,r) = alpha_(nu,Lambda) block(V_r),
+alpha_(nu,Lambda)=|G|^k/sqrt(d_nu D_Lambda)
+                 >= |G|^(k/2-1/4).
+```
+
+At `k=Theta(log|G|)`, extracting exponent terms independently is therefore
+superpolynomial. Eight cyclic controls verify injectivity, the transformed
+isometry, nonzero selection blocks, zero selection blocks, and exact scale.
+The theorem deliberately does not reject coherent summation of all exponent
+tuples before block selection.
+
+### Next Codex Work After This Pause
+
+Do not revisit source-label coherence. The two live theorem-level questions
+are:
+
+1. Derive or falsify a normalization-one whole-quadrant recursion. Work with
+   the controlled field `|h>|psi> -> |h>J_h|psi>` and the complete cyclic
+   coefficient tensor, not isolated power-map monomials. A positive result
+   must erase the path/exponent workspace coherently, preserve the physical
+   source tuple, and avoid any `sqrt(|G|)` or `|G|^(Omega(k))` postselection.
+   A negative result must state an explicit architecture class, such as
+   prepare-exponent/power-map/unprepare circuits of bounded recursion width;
+   do not claim an arbitrary circuit lower bound.
+2. Identify the exact native input density for the candidate convolution and
+   compare it with the maximally mixed domain used by the Frobenius theorem.
+   Prove the transfer if covariance makes it exact, or produce the missing
+   Radon-Nikodym/operator-domination quantity if it does not. Do not infer this
+   from average dimensions alone.
+
+The physical relative element `h=s^-1g` is a summation path, not a native
+register. Merely making `Phi_r(h)` reversible leaves the path-erasure problem
+untouched. No implementation of either next theorem has been started.
+
+### Gemini / Antigravity Boundary
+
+Gemini 3.6 Flash should wire both new experiments, run broad validation, and
+refresh registry/UI artifacts from the mechanical plan. It must preserve the
+distinction between a termwise no-go, a label-coherence no-go, and the still
+open whole-sum transform. It must not describe either theorem as a general
+circuit lower bound or algorithmic speedup.
+
+## Current High-Reasoning Result: Equivariant Multiplier Normal Form and Covariance-Only Insufficiency (2026-08-24)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_branch_character_equivariant_multiplier_normal_form.py
+tests/test_self_dual_wreath_branch_character_equivariant_multiplier_normal_form.py
+research/representation/self_dual_wreath_branch_character_equivariant_multiplier_normal_form.json
+EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-EQUIVARIANT-MULTIPLIER-NORMAL-FORM
+```
+
+For input source representation `P_x`, branch-completed output representation
+`Q_x`, and Fourier irrep `rho_nu`, the exact field covariance and multiplier
+equation are
+
+```text
+J_(x h x^-1) = Q_x J_h P_x^*,
+(rho_nu(x) tensor Q_x) Jhat_nu
+  = Jhat_nu (rho_nu(x) tensor P_x).
+```
+
+Thus `Jhat_nu` is an intertwiner. If
+
+```text
+rho_nu tensor P = direct_sum_tau rho_tau tensor C^(m_tau),
+```
+
+then Schur/Wigner-Eckart gives the exact normal form
+
+```text
+Jhat_nu = direct_sum_tau I_(d_tau) tensor R_(nu,tau),
+R_(nu,tau): C^(m_tau) -> C^(2^k) tensor C^(m_tau).
+```
+
+Every reduced singular value is repeated `d_tau` times. The new Frobenius
+contraction theorem controls their dimension-weighted spectral tail but does
+not determine or synthesize their multiplicity-space singular vectors.
+
+Conjugacy compression is also exact but does not solve access. For a class
+representative `c`, the left-right representation twirl `T_c` equals the
+average Fourier kernel over that class, and
+
+```text
+Jhat_nu = |G|^-1/2 sum_classes |class(c)| T_c.
+```
+
+The direct class-LCU coefficient one-norm is still `sqrt(|G|)`.
+
+The reduced intertwiner algebra has complex dimension
+
+```text
+2^k sum_tau m_tau^2,
+sum_tau m_tau^2 >= (d_nu dim(P))^2/|G|.
+```
+
+For the regular Plancherel master `P=Reg(G)^(tensor 2k)`, the bound is exact:
+
+```text
+m_tau = |G|^(2k-1) d_nu d_tau,
+sum_tau m_tau^2 = |G|^(4k-1) d_nu^2.
+```
+
+Therefore covariance, an efficient `S_n` QFT, and state-weighted near-isometry
+do not by themselves imply an efficient transform. They leave arbitrary huge
+reduced maps. This is a structural underdetermination theorem, not a circuit
+lower bound for the explicit quadrant field. Eight focused tests directly
+verify covariance, intertwining, class twirls, character multiplicities, and
+the Cauchy pressure; all 33 tests in the current theorem chain pass.
+
+Claim boundary:
+
+```text
+field conjugation covariance:                       PROVED
+equivariant/Wigner-Eckart multiplier normal form:   PROVED
+class-twirl reconstruction:                         PROVED
+direct class-LCU normalization bypass:              REJECTED
+covariance plus near-isometry sufficient to compile: FALSE
+specific quadrant reduced-map factorization:        OPEN
+direct multiplier compiler / decoder / speedup:     OPEN
+```
+
+### Next Codex Work
+
+Analyze the explicit reduced maps rather than their symmetry envelope. Expand
+the local quadrant symbol into cyclic power-map coefficients, substitute that
+expansion into `Jhat_nu`, and determine whether the reduced maps factor through
+polynomially many Young-tower/Jucys-Murphy/centralizer-induction primitives.
+The first decisive theorem should either:
+
+1. exhibit a sequential reduced-map factorization with polynomial ancilla and
+   normalization; or
+2. prove that the power-map Fourier tensors have high operator Schmidt rank,
+   high recoupling width, or a query lower bound on natural high-mass sectors.
+
+Do not count a formal Wigner-Eckart decomposition as algorithmic progress.
+
+### Gemini / Antigravity Boundary
+
+Gemini 3.6 Flash should wire this theorem, regenerate its artifact, and run
+broad validation without converting covariance-only underdetermination into a
+universal circuit lower bound.
+
+## Current High-Reasoning Result: Raw GPE Dilation Is Asymptotically Orthogonal to the Polar Transform (2026-08-24)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_branch_character_gpe_dilation_separation.py
+tests/test_self_dual_wreath_branch_character_gpe_dilation_separation.py
+research/representation/self_dual_wreath_branch_character_gpe_dilation_separation.json
+EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-GPE-DILATION-SEPARATION
+```
+
+The raw full-character Kraus field has an exact representation dilation. For
+one source pair,
+
+```text
+K_h = [M_+(h);M_-(h)]
+    = (H tensor I)(|0><0| tensor A_h + |1><1| tensor B_h)(|+> tensor I).
+```
+
+The controlled middle family is a genuine representation, so this raw field
+is the obvious generalized-phase-estimation access substitute for the polar
+field `J_h`. The substitute is now rejected asymptotically.
+
+On an order-`m` cyclic eigenphase, the raw/polar branch overlap is one at the
+`+/-1` axes and otherwise
+
+```text
+(|cos(pi t/m)|+|sin(pi t/m)|)/sqrt(2).
+```
+
+Uniform regular spectral multiplicity gives a closed-form local average
+`a_m`. It equals one only for `m in {1,2,4}`. For every other order,
+
+```text
+a_m <= gamma = a_3 = a_6
+               = [1+(1+sqrt(3))/sqrt(2)]/3
+               = 0.9772838841927122...
+```
+
+Two independent Plancherel labels exactly reproduce the normalized
+`Reg(S_n) tensor Reg(S_n)` trace. Therefore `k` independent source pairs have
+annealed normalized global convolution overlap
+
+```text
+E_Lambda overlap(C_raw,C_polar)
+  = (1/n!) sum_(h in S_n) a_ord(h)^k.
+```
+
+An order-dividing-four permutation has at least `n/4` cycles. The exact cycle
+moment `E[2^cycles]=n+1` gives
+
+```text
+Pr[ord(h) divides 4] <= (n+1)2^(-n/4),
+E overlap <= (n+1)2^(-n/4)+gamma^k.
+```
+
+At `k=ceil(3log2(n!))+2` this vanishes. Nonnegativity and the existing
+`Pr(global distinct)=1-o(1)` theorem transfer it to physical collision-free
+source portfolios. Markov then gives
+
+```text
+||C_raw-C_polar||_F^2/(n! D) -> 2
+```
+
+for typical natural portfolios. Eight focused tests pass, including the exact
+two-Plancherel-to-regular reduction at `S_3`, cyclic closed forms through
+order 1024, and direct low-order permutation controls.
+
+The canonical pair of controlled-`J_h` PREPARE isometries exposes
+`C_polar/sqrt(n!)`. The new quadrant theorem says `C_polar` has order-one
+singular values on almost all normalized domain mass, so bounded uniform QSVT
+still requires `Omega(sqrt(n!))` degree on that good sector. State-weighted
+conditioning does not repair the generic subnormalization.
+
+Claim boundary:
+
+```text
+raw representation dilation:                         PROVED
+raw-to-polar natural convolution overlap vanishes:   PROVED
+raw GPE substitution:                                REJECTED
+generic controlled-field LCU/QSVT:                   SUPERPOLYNOMIAL
+direct conjugation-equivariant multiplier normal form: OPEN
+direct representation-specific multiplier compiler: OPEN
+physical decoder / classical separation / speedup:   OPEN
+```
+
+### Next Codex Work
+
+Derive the conjugation-equivariant Fourier multiplier normal form. From
+
+```text
+J_(x h x^-1) = (I_character tensor P_x) J_h P_x^*,
+Jhat_nu = |G|^-1/2 sum_h rho_nu(h^-1) tensor J_h,
+```
+
+show exactly which irreducible and multiplicity blocks `Jhat_nu` couples,
+which reduced matrices must be synthesized, and whether generalized phase
+estimation plus symmetric-group QFT/CG primitives can implement them without
+`sqrt(n!)` or `sqrt(d_nu)` normalization. Try to prove a reduced-matrix rank,
+entropy, or query obstruction before assuming this is a positive route.
+
+### Gemini / Antigravity Boundary
+
+Gemini 3.6 Flash should wire and validate this module mechanically. It must
+not rewrite an access-model QSVT lower bound as an arbitrary-circuit lower
+bound, and it must leave direct equivariant synthesis explicitly open.
+
+## Current High-Reasoning Result: All-Order Quadrant Overlap and Natural Frobenius Contraction (2026-08-24)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_branch_character_cyclic_quadrant_overlap.py
+tests/test_self_dual_wreath_branch_character_cyclic_quadrant_overlap.py
+research/representation/self_dual_wreath_branch_character_cyclic_quadrant_overlap.json
+EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-CYCLIC-QUADRANT-OVERLAP
+```
+
+This pass closes the all-order lemma left open by the natural Frobenius
+word-map reduction. For the four-ray branch-polar symbol `s_m`, if `H<C_m`
+has index `q`, its group-algebra coefficient mass on `H` is exactly zero for
+even `q` and `1/q^2` for odd `q`. The proof is the quotient-fiber identity
+
+```text
+sum_(l=0)^(q-1) s_(dq)(a+ld) = 0       q even
+                              = s_d(a) q odd,
+```
+
+followed by quotient Parseval. Therefore two elements generating different
+cyclic subgroups have branch-symbol correlation at most `1/3` and Naimark
+range overlap at most `2/3`.
+
+If two distinct elements generate the same order-`m` cyclic subgroup, write
+the second generator as the `u`th power of the first. The exact correlation
+numerator is
+
+```text
+T_m(u) = m - 4 d_m(u),
+```
+
+where `d_m(u)` counts positive open-half residues mapped to the negative open
+half. Alternating preimage intervals of length `m/(2 min(u,m-u))`, with
+separate exact cases for even multipliers, odd multipliers, `a=3`, and the
+antipodal multiplier, prove `d_m(u)>=m/8`. Hence `T_m(u)<=m/2` and every
+distinct pair in every finite group obeys
+
+```text
+Tr(P_a P_b)/|G|^2 <= 3/4.
+```
+
+The bound is sharp at cyclic order eight with multiplier three. The direct
+symbol identity, quotient identity, proper-subgroup Fourier mass, and every
+nonidentity unit through order 512 were checked; `S_3` and `S_4` regular
+controls also pass. These checks are falsifiers, not the proof.
+
+Combining the theorem with the exact regular word-moment identity proves
+
+```text
+E R <= (|G|-1)(3/4)^k.
+```
+
+For `k=ceil(3 log2 |G|)+2`, the exponent is
+`1+3 log2(3/4)=-0.245112...`. For `G=S_n`, the existing global-distinct
+source theorem has `Pr(D)=1-o(1)` at this scale, and positivity gives
+`E[R|D]<=E[R]/Pr(D)=o(1)`. Markov plus the Frobenius tail inequality proves
+source-typical normalized-Frobenius contraction and vanishing bad spectral
+mass for a maximally mixed domain.
+
+Claim boundary:
+
+```text
+all finite-group q<=3/4 range overlap:              PROVED
+all-n natural collision-free Frobenius contraction: PROVED
+maximally mixed domain bad spectral mass vanishes:  PROVED
+uniform minimum singular value:                     NOT PROVED
+physical input Fourier domination:                  NOT PROVED
+normalization-one dense transform access:           NOT COMPILED
+physical decoder:                                    NOT COMPILED
+classical separation / speedup:                      NOT PROVED
+```
+
+The predecessor
+`self_dual_wreath_branch_character_natural_frobenius_word_map.py` and its
+artifact now reflect the closed all-order gate. Seventeen focused tests pass.
+
+### Next Codex Work
+
+Do not spend high-capability usage on registry wiring. The bottleneck has
+moved to structured coherent access. Derive or kill a factorization of the
+dense relative convolution `C` (or an equivalent block encoding) using the
+nonabelian Fourier multiplier decomposition, cyclic branch-symbol support,
+and Young/Racah transforms. The decisive target is a normalization-one or
+polynomial-normalization block encoding whose preparation and selection costs
+are polynomial in `n` and `k`, on the proven state-weighted good sector. Try
+to prove lower bounds against generic LCU/QSVT constructions before treating
+any factorization as progress. Physical input domination and decoding remain
+separate proof obligations.
+
+### Gemini / Antigravity Boundary
+
+Gemini 3.6 Flash should wire the new experiment ID through the registry,
+runner, `qsearch.py`, README command table, and dispatch tests, regenerate the
+new and predecessor artifacts, run broad validation, and preserve every gate
+above exactly. It must not rewrite normalized-Frobenius contraction as a
+minimum-singular-value theorem or algorithmic speedup. Exact commands and
+acceptance checks are in `research/MECHANICAL_FOLLOW_UP_PLAN.md`.
+
+## Current High-Reasoning Result: Autocorrelation Is a Fourier-Tail Problem, Not a Pointwise-Norm Problem (2026-08-24)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_branch_character_naimark_autocorrelation_fourier_boundary.py
+tests/test_self_dual_wreath_branch_character_naimark_autocorrelation_fourier_boundary.py
+research/representation/self_dual_wreath_branch_character_naimark_autocorrelation_fourier_boundary.json
+EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-NAIMARK-AUTOCORRELATION-FOURIER-BOUNDARY
+```
+
+For the candidate-relative convolution and its autocorrelations,
+
+```text
+C[g,s]=|G|^-1/2 J_(s^-1 g),
+A_x=|G|^-1 sum_h J_h^*J_(xh),
+```
+
+the exact nonabelian Fourier multipliers are
+
+```text
+Jhat_nu=|G|^-1/2 sum_h rho_nu(h^-1) tensor J_h,
+C ~= direct_sum_nu I_(d_nu) tensor Jhat_nu.
+```
+
+Thus the convolution singular spectrum is the union of each multiplier
+spectrum repeated `d_nu` times. Uniform conditioning is an extreme-block
+problem, not a bound on one autocorrelation at a time. Matrix-valued Parseval
+gives the exact identity
+
+```text
+||C^*C-I||_F^2/(|G| dim H)
+ = sum_x ||A_x-delta_(x,e)I||_F^2/dim H
+ = sum_nu d_nu||Jhat_nu^*Jhat_nu-I||_F^2/(|G|dim H).
+```
+
+The decisive counterexample is the completed Legendre phase on `Z_p`, for
+prime `p=3 mod 4`. Every pointwise value is an isometry and every nonidentity
+autocorrelation is exactly `-1/p`, but the convolution singular values are
+`1/sqrt(p)` once and `sqrt(1+1/p)` otherwise. Its condition number is
+`sqrt(p+1)` and its Gram operator-norm error is `1-1/p`. This refutes the
+planned implication that maximum nonidentity autocorrelation `O(1/|G|)` gives
+a uniform constant gap.
+
+The counterexample also shows why uniform conditioning is too strong as the
+only target. Its normalized Frobenius error is `(p-1)/p^2`, and the bad
+Fourier sector has normalized regular-input mass exactly `1/p`. In general,
+normalized Gram Frobenius error `R` bounds maximally mixed mass outside an
+`epsilon` Gram window by `R/epsilon^2`. State-weighted trimming can therefore
+remain viable even when the minimum singular value vanishes asymptotically.
+
+Exact `S3` controls reproduce the complete direct convolution spectrum from
+the Fourier blocks. The three-pair threshold control still has condition
+`1.4950900031928052` and normalized Gram Frobenius residual
+`0.10763888888888895`. Eight focused tests and 42 adjacent tests pass, the live
+artifact is generated, and `git diff --check` is clean.
+
+Strict false gates:
+
+- no all-`n` natural state-weighted Fourier-tail theorem;
+- no proof that the physical input is maximally mixed or suitably dominated;
+- no uniform natural branch Fourier gap;
+- no normalization-one dense multiplier compiler;
+- no physical PGM decoder, classical separation, algorithm, or speedup.
+
+### Refined Next High-Reasoning Task
+
+1. Derive the exact annealed formula for the natural-source normalized Gram
+   Frobenius residual. Expand `||A_x||_F^2` over shared `h,h'` and factor only
+   across independent source labels, never across the shared group average.
+2. Condition on unequal/global-distinct Plancherel pairs and quantify the
+   total-variation perturbation.
+3. Identify the actual physical input density in the group Fourier sectors;
+   prove maximally mixed input or a domination bound before applying the tail
+   lemma.
+4. If the residual is `o(1)` at `k=ceil(log2(n!))+O(1)`, retain the
+   state-weighted route and attack structured access separately. If it stays
+   constant, close this Naimark-convolution route.
+5. Do not return to a maximum-per-offset operator-norm target; the Legendre
+   family has falsified that proof strategy.
+
+## Current High-Reasoning Result: Exact Known-Relative Polar Naimark Completion (2026-08-24)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_branch_character_polar_naimark_completion.py
+tests/test_self_dual_wreath_branch_character_polar_naimark_completion.py
+research/representation/self_dual_wreath_branch_character_polar_naimark_completion.json
+EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-POLAR-NAIMARK-COMPLETION
+```
+
+For one unequal pair and known relative permutation `h`, let
+
+```text
+V_s(h)=polar((A(h)+sB(h))/2), P_s=V_s^*V_s, F=P_+ + P_-.
+```
+
+On every eigenphase of `U=A^*B`, `F` is one at `+/-1` and two otherwise.
+Hence `I<=F<=2I` and
+
+```text
+J_h=(|0>V_+ + |1>V_-)F^-1/2
+```
+
+is an exact isometry. The cyclic phase register applies the extra factor, so
+no inverse minimum singular value is used. Tensoring over `k` source pairs
+gives the full `2^k` coefficient-output isometry with `k` local cyclic
+compilers. An `S4` mixed-phase witness attains the sharp frame condition two.
+Eight focused tests pass, 19 local controls and six tensor controls have zero
+failures, and the artifact is generated.
+
+This is only a known-relative dense primitive. Pointwise isometries do not
+automatically assemble the unknown-relative convolution, and neither the
+physical orientation polar nor a decoder follows.
+
+## Current High-Reasoning Result: Almost All Natural Joint-Target Mass Has Factorial-Scale Row Dimension (2026-08-24)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_joint_character_natural_sector_mass.py
+tests/test_self_dual_wreath_joint_character_natural_sector_mass.py
+research/representation/self_dual_wreath_joint_character_natural_sector_mass.json
+EXP-CODE-SELF-DUAL-WREATH-JOINT-CHARACTER-NATURAL-SECTOR-MASS
+```
+
+For fixed source pairs `Lambda=((lambda_i,mu_i))`, orientation `e` selects one
+partition `alpha_i(e)` per pair. The exact target-sector law is
+
+```text
+p_nu(Lambda)=Tr(D_nu)
+ =2^-k sum_e d_nu g(alpha_1(e),...,alpha_k(e);nu)
+              /product_i d_(alpha_i(e)).
+```
+
+The unselected carrier dimensions cancel. Each orientation is therefore the
+dimension-weighted Kronecker transition from the existing Plancherel
+recoupling theorem. With all `2k` source partitions independent Plancherel,
+the annealed target law is exactly Plancherel for every `k>=1`:
+
+```text
+E_Lambda p_nu(Lambda)=d_nu^2/n!.
+```
+
+Conditioning all sources globally distinct changes the source law in total
+variation by exactly the collision probability. Data processing gives the
+same upper bound on the target-law perturbation. The existing collision-free
+mass theorem makes this `o(1)` at `k=ceil(log2(n!))+O(1)`.
+
+Let `p(n)` be the partition number and
+`R_n=floor(sqrt(n!)/p(n))`. Counting irreps gives the exact tail bound
+
+```text
+Plancherel[d_nu<=R_n] <= 1/p(n).
+```
+
+Hence the collision-conditioned annealed low-row mass is
+`delta_n<=1/p(n)+Pr(collision)=exp(-Theta(sqrt(n)))`. Markov then gives
+low-row mass at most `sqrt(delta_n)` for at least `1-sqrt(delta_n)` of natural
+source tuples. Thus `1-o(1)` physical sector mass lies on
+`d_nu>sqrt(n!)/p(n)`. At `n=512`, the exact threshold has log2
+`1865.6676...`, and the canonical direct-analysis generic degree lower bound
+on that mass has log2 `932.8046...`.
+
+This closes the mass loophole in the previous theorem: the
+`sqrt(d_nu)` canonical normalization is not confined to an arbitrary balanced
+witness. It occurs on almost all natural sector mass, so rare low-dimensional
+sectors cannot provide an inverse-polynomial-mass decoder for that
+architecture.
+
+The target irrep marginal is hidden-label independent. High-dimensional mass
+does **not** prove extensive hidden information inside `D_nu`, nor does it
+rule out a fused direct polar. Those gates remain false. Fifty-one adjacent
+tests pass, the live artifact is generated, and `git diff --check` is clean.
+
+### Refined Next High-Reasoning Task
+
+1. Decompose joint Holevo information or PGM success by the high-dimensional
+   target sectors and prove an all-`n` lower bound, or produce a dequantizing
+   upper bound.
+2. Use the exact source-conditioned `D_nu` projection-Gram formula; target
+   Plancherel mass alone is not information.
+3. If extensive information survives, attack `polar(A_nu)` directly through
+   the orientation kernel, multi-round branch relocation, or a fused
+   covariant transform. Generic density/direct amplification is now closed on
+   typical mass.
+4. If the high-row blocks carry only `o(log n!)` Holevo information, close the
+   retained-character route and redirect to a different nonabelian mechanism.
+
+Routine registry, runner, CLI, README, ledger, and broad repetitive validation
+belongs to Gemini 3.6 Flash through Antigravity.
+
+## Current High-Reasoning Result: The Canonical Joint Analysis Map Has Exact `sqrt(d_nu)` Dilution (2026-08-24)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_joint_character_analysis_map_normalization.py
+tests/test_self_dual_wreath_joint_character_analysis_map_normalization.py
+research/representation/self_dual_wreath_joint_character_analysis_map_normalization.json
+EXP-CODE-SELF-DUAL-WREATH-JOINT-CHARACTER-ANALYSIS-MAP-NORMALIZATION
+```
+
+Let `r=d_nu`, `q=2^k`, `d=dim(C)`, let `G_nu=L_nu^*L_nu` be the exact
+projection Gram, and let `W` be the branch Walsh transform. The rectangular
+factor whose Gram is the joint multiplicity operator is
+
+```text
+A_nu=sqrt(r/(q d)) L_nu(I_r tensor W)^*,
+A_nu^*A_nu=D_nu.
+```
+
+This is the correct direct-polar target. The canonical coherent circuit is
+more weakly normalized: Walsh preparation, a maximally entangled carrier
+pair, controlled invariant projection `E_e`, and selected-row Walsh erasure
+produce
+
+```text
+N_nu=L_nu(I_r tensor W)^*/sqrt(q d)=A_nu/sqrt(r),
+N_nu^*N_nu=D_nu/r.
+```
+
+Thus the direct canonical map and the global purification theorem expose the
+same Schur-row Gram exactly. Direct rectangular access improves generic
+rescaling from `Omega(r)` to `Omega(sqrt(r))`, but does not remove it. A
+Bernstein argument proves that a single bounded singular-value polynomial
+uniformly amplifying `A/sqrt(r)` to `A` has degree `Omega(sqrt(r))`. Balanced
+two-row dimensions make this exponential; the live `n=512` witness has a
+degree lower bound with log2 approximately `249.5548`.
+
+Scalar dilution does not change the mathematical polar:
+`polar(A/sqrt(r))=polar(A)`. Consequently this is not a circuit lower bound.
+A representation-specific polar, multi-round branch relocation, or fused
+covariant isometry could bypass generic amplification. Natural large-row
+sector mass was not established by this module, and no decoder or speedup is
+claimed. Sixty-six adjacent tests pass and the live artifact is generated.
+
+### Refined Next High-Reasoning Task
+
+1. Transfer the exact Plancherel recoupling stationarity theorem to the
+   physical target law `p_nu=Tr(D_nu)`.
+2. Under globally distinct source conditioning, use total-variation
+   contraction and the collision-free mass theorem to prove or falsify that
+   `d_nu` is superpolynomial on `1-o(1)` physical sector mass.
+3. Keep target-sector mass separate from hidden-label information inside each
+   multiplicity block.
+4. If high-row natural mass is proved, the canonical-access no-go becomes
+   operational on typical input mass, but direct structured polar synthesis
+   remains the only legitimate escape.
+
+Routine registry, runner, CLI, README, ledger, and broad repetitive validation
+belongs to Gemini 3.6 Flash through Antigravity.
+
+## Current High-Reasoning Result: Global Joint Purification Access Is Easy, But It Exposes `D_nu/d_nu` (2026-08-24)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_joint_character_purification_access_boundary.py
+tests/test_self_dual_wreath_joint_character_purification_access_boundary.py
+research/representation/self_dual_wreath_joint_character_purification_access_boundary.json
+EXP-CODE-SELF-DUAL-WREATH-JOINT-CHARACTER-PURIFICATION-ACCESS-BOUNDARY
+```
+
+The native retained group--orientation-character amplitudes give the exact
+purification
+
+```text
+Psi_g[(s,z),a]=vec(K_z(s^-1 g))[a]/sqrt(|G| dim(C)),
+tau_g=Psi_g Psi_g^*.
+```
+
+A uniform coherent hidden-label register and controlled left translation
+therefore purify `bar(tau)=|G|^-1 sum_g tau_g`. Reusing the exact
+purification--SWAP theorem gives a normalization-one block encoding of this
+global average in polynomially many gates under the already assumed native
+branch-character preparation and efficient `S_n` action. The old blanket
+statement that coherent access to the average state was open is false.
+
+This does **not** block-encode the multiplicity operator with normalization
+one. After the `S_n` QFT,
+
+```text
+bar(tau)=direct_sum_nu I_(d_nu)/d_nu tensor D_nu.
+```
+
+Every fixed Fourier row exposes `D_nu/d_nu`. Conditioning on the whole `nu`
+sector divides by `p_nu=Tr(D_nu)` but leaves
+`I/d_nu tensor D_nu/p_nu`; selecting a row still has conditional probability
+`1/d_nu`. Three exact `S3/S4` controls verify the native purification, coherent
+twirl, Schur row blocks, zero cross-row blocks, and failure of sector
+conditioning to remove the row factor.
+
+There is also an exact generic polynomial-transform boundary. A bounded
+polynomial that uniformly converts `D/d` to `D` at constant error has degree
+`Omega(d)` by Bernstein's inequality. For the balanced two-row irrep
+`nu=(m,m)` of `S_(2m)`, `d_nu=Catalan(m)=2^Theta(n)/poly(n)`. The generated
+scaling witness reaches `log2 d_nu=499.1679...` at `n=512`.
+
+Scope is strict. The theorem does not prove that a balanced two-row sector has
+natural source mass or identification information. It is not a circuit lower
+bound and does not rule out a normalization-one restriction map, a direct
+representation-specific polar, or a fused covariant isometry that never
+materializes `D_nu`. Normalization-one `D_nu` access, direct fused polar,
+all-`n` information, classical separation, algorithm, and speedup gates remain
+false. Forty-one adjacent tests pass and `git diff --check` is clean.
+
+### Refined Next High-Reasoning Task
+
+1. Stop treating global density access as an open problem or as a decoder.
+2. Work in the stronger direct-analysis access model: identify the exact
+   restriction/analysis map whose Gram is the joint-character `D_nu`, not
+   `D_nu/d_nu`.
+3. Determine whether the known-relative cyclic local polars can assemble its
+   polar without learning `s^-1 g_hidden`, while respecting the exact norm-two
+   `S3` cocycle defect.
+4. If direct assembly still recreates an exponentially small normalized
+   singular scale, prove that equivalence and close this restricted route.
+5. Do not infer a natural obstruction from the balanced witness until a
+   source-weighted large-row mass theorem is proved.
+
+Routine registry, runner, CLI, README, ledger, and broad repetitive validation
+belongs to Gemini 3.6 Flash through Antigravity.
+
+## Current High-Reasoning Result: Known-Relative Character Polars Compile, But Their Phase Field Has Maximal Holonomy (2026-08-24)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_branch_character_cyclic_polar_compiler.py
+tests/test_self_dual_wreath_branch_character_cyclic_polar_compiler.py
+research/representation/self_dual_wreath_branch_character_cyclic_polar_compiler.json
+EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-CYCLIC-POLAR-COMPILER
+```
+
+For one unequal source pair and a **known** relative permutation `h`, the
+orientation-character carrier factor is
+
+```text
+M_s(h)=(A(h)+sB(h))/2=A(h)(I+sU(h))/2,
+U(h)=A(h)^*B(h), s in {+1,-1}.
+```
+
+If `m=ord(h)` and `U(h)` has eigenvalue `omega^j`, the exact partial-polar
+phase is
+
+```text
+s=+1: exp(pi i j/m) sign(cos(pi j/m)), j != m/2;
+s=-1: -i exp(pi i j/m),                j != 0,
+```
+
+with the excluded eigenphase sent to zero. Coherent phase estimation over
+`Z_m`, followed by this phase and uncomputation, therefore implements
+`polar(M_s(h))` directly. Controlled powers use representation actions of
+`h^r` and `h^-r`; `log ord(h)<=log(n!)`, so the circuit is polynomial under
+the same efficient Young-representation action assumptions already used by
+GPE. It never amplifies a singular magnitude and has no inverse-minimum-
+singular-value cost.
+
+The complete character Kraus operator is a tensor product of the local
+factors, and polar commutes exactly with tensor products, including
+rank-deficient factors. Eighteen local and twenty-four threshold-copy `S3`
+controls match direct SVD polars with zero failures. Seven focused tests pass.
+
+This does **not** compile the physical hidden-label decoder. In the native
+row-copy state the relative element is `h=s_time^-1 g_hidden`, so the circuit
+does not know it. A one-pass correction based only on `s_time` would require
+the local polar field to satisfy a cocycle law. The natural `S3`
+`(trivial,standard)` plus-character channel gives an exact full-rank
+counterexample: for a three-cycle `c`,
+
+```text
+||V(c)^2-V(c^2)||=2.
+```
+
+Both `V(c)` and `V(c^2)` are unitaries. This is a branch-cut/holonomy defect,
+not a small singular-value effect. Known-relative local phase normalization is
+now solved; hidden-relative covariant assembly, the joint `D_nu` multiplicity
+inverse, complete orientation polar, classical separation, algorithm, and
+speedup gates remain false.
+
+### Refined Next High-Reasoning Task
+
+1. Use the compiler only where the relative group element is coherently known.
+   Do not claim it can condition on `s^-1 g_hidden`.
+2. Determine whether a path/holonomy register can assemble the cyclic polars
+   into the joint group-character multiplicity transform, including output
+   gauge and physical success mass.
+3. Alternatively derive a normalization-one block encoding of the Schur
+   multiplicity operators `D_nu` whose positive part uses these local cyclic
+   phase primitives and whose conditioning survives the native law.
+4. Test any assembly against the exact norm-two `S3` cocycle counterexample,
+   the arbitrary-basis sublinear-rank no-go, and the existing generic
+   normalized-access lower bounds.
+5. Keep all decoder and speedup gates false until the unknown-relative
+   covariance problem is solved end to end.
+
+Routine registry, runner, CLI, README, and ledger wiring is assigned to Gemini
+3.6 Flash through Antigravity.
+
+## Current High-Reasoning Result: Split Sectors Do Not Obstruct Natural Branch Regularity (2026-08-24)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_split_sector_branch_regularity.py
+tests/test_self_dual_wreath_split_sector_branch_regularity.py
+research/representation/self_dual_wreath_split_sector_branch_regularity.json
+EXP-CODE-SELF-DUAL-WREATH-SPLIT-SECTOR-BRANCH-REGULARITY
+```
+
+The connected-Clifford route no longer needs an unsupported theorem saying
+that an `O(n log n)` Plancherel tuple contains no self-conjugate partitions.
+Restriction gives an exact refined `A_n` Plancherel law:
+
+- a nonself transpose pair restricts to one `A_n` irrep with weight twice
+  either `S_n` atom;
+- a self-conjugate `S_n` irrep splits into two constituents of half its
+  dimension, each with half its `S_n` Plancherel weight.
+
+If `C_S=sum_lambda p_lambda^2` and `C_A` is the refined alternating collision,
+then exactly
+
+```text
+C_A=2 sum_(lambda nonself) p_lambda^2
+    +(1/2) sum_(lambda self) p_lambda^2,
+C_S/2 <= C_A <= 2 C_S,
+max A_n atom <= 2 max S_n atom.
+```
+
+This is the physical native source law. In the regular master, partial trace
+of every lifted diagonal subgroup projector over the target is the source
+identity because `Tr(L_s)=|S_n| 1[s=1]`. Refining the trace-biased source
+marginal therefore gives independent `A_n` Plancherel labels, not an auxiliary
+sampling model.
+
+The maximal-dimension theorem makes `C_A=exp(-Theta(sqrt(n)))`. At
+`K=ceil(log2(n!))+2`, the probability that any source pair has equal refined
+`A_n` labels is at most `K C_A=o(1)`. Whenever the labels in every pair differ,
+every nonzero pair-swap mask changes an `A_n^(2K)` coordinate irrep. Hence the
+branch group `C_2^K` acts freely with probability tending to one even if many
+coordinates originate from self-conjugate `S_n` partitions.
+
+Split diagonal action also has the exact index-two factorization
+
+```text
+E_e^(S_n)=((I+rho_e(t))/2) E_e^(A_n)
+```
+
+for any odd involution `t`. Reassembling this parity projection gives the same
+branch cross Gram `F/2^K` and the same orientation analysis polar as before.
+Thus split constituents add coherent parity bookkeeping but do not scalarize
+or compile the dense matrix-CS multiplicity transform.
+
+Fourteen exact Plancherel controls and actual `S3`/`S4` split-sector matrix
+controls pass with zero failures; seven focused tests pass. Full connected-
+group Clifford transform, dense CS polar, complete orientation polar,
+classical separation, and speedup gates remain false.
+
+### Refined Next High-Reasoning Task
+
+1. Delete self-conjugate mass decay from the connected branch-orbit premise.
+   Do not spend further theorem effort trying to prove tuple-level absence.
+2. Treat the easy parity quotient and split projection as solved bookkeeping.
+   The sole quantum gate remains the dense `A_n` multiplicity/subduction CS
+   polar after those labels are exposed.
+3. Seek a direct normalization-one recoupling or a recursive child-coefficient
+   factorization that uses all `2^K` output dimensions but has polynomial gate
+   complexity.
+4. Test every candidate against the arbitrary-basis sublinear-rank no-go,
+   generic normalized-access lower bounds, GPE subblock boundary, and existing
+   pair/common-support no-gos.
+5. Do not infer circuit hardness from full rank, split-sector parity, or QFT
+   label exposure.
+
+Routine wiring is assigned to Gemini 3.6 Flash through Antigravity.
+
+## Previous High-Reasoning Result: Physical Trace Bias Closes Every Sublinear-Rank Coefficient Router (2026-08-24)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_trace_biased_coefficient_rank_no_go.py
+tests/test_self_dual_wreath_trace_biased_coefficient_rank_no_go.py
+research/representation/self_dual_wreath_trace_biased_coefficient_rank_no_go.json
+EXP-CODE-SELF-DUAL-WREATH-TRACE-BIASED-COEFFICIENT-RANK-NO-GO
+```
+
+This result upgrades the adaptive Walsh no-go to an arbitrary-basis output-
+rank theorem. For each active native Fourier block `beta`, with orientation
+projectors `E_e` and `F_beta=sum_e E_e`, complete polar cancellation identifies
+the exact reduced coefficient state
+
+```text
+rho_beta[e,f]=Tr(E_e E_f)/Tr(F_beta).
+```
+
+It is positive with trace one. If
+`a_beta=max_e Tr(E_e)/Tr(F_beta)`, projector positivity gives the pointwise
+bound
+
+```text
+Tr(rho_beta^2)
+  <= a_beta Tr(F_beta^2)/Tr(F_beta).
+```
+
+The existing simultaneous orientation-rank concentration theorem implies,
+outside a product-Plancherel source event of probability
+`delta_n=o(2^-K)`,
+
+```text
+a_beta <= (1+epsilon)/(2^K(1-epsilon))
+```
+
+for every orientation and target. Under the physical trace-biased block law,
+the source marginal is exactly product Plancherel and regular-master trace
+cancellation gives
+
+```text
+E[Tr(F_beta^2)/Tr(F_beta)] = 1+(2^K-1)/|S_n| = O(1).
+```
+
+After conditioning all sources to be globally distinct, whose probability
+tends to one at `K=ceil(log2(n!))+2`, the average output purity is `O(2^-K)`.
+For every block-dependent effect `0<=A_beta<=I` with `Tr(A_beta)<=m`, in any
+basis and depending arbitrarily on measured source and target labels,
+
+```text
+E Tr(A_beta rho_beta) <= sqrt(m E Tr(rho_beta^2)).
+```
+
+Therefore every `m=o(2^K)` coefficient-output router retains vanishing native
+PGM mass; constant mass requires `Omega(2^K)` coefficient dimension. This
+strictly subsumes sparse adaptive Walsh routing as an output-retention claim.
+
+Exact `S3,K=1` and `S4,K=2` controls verify positivity, trace one, the
+pointwise purity inequality, trace-biased normalization, product-Plancherel
+source marginal, and the arbitrary-rank Hilbert--Schmidt bound. The `S3`
+average total coherence is exactly `7/6`; the `S4,K=2` globally-distinct mass
+is exactly `89/1536`. Seven focused tests pass, zero controls fail, and the
+`n=128` `K^6`-rank retained-mass envelope is about `1.57e-99`.
+
+Claim scope is intentionally narrow. This is an output-rank theorem, not a
+gate lower bound. A tensor Hadamard, dense representation-specific recoupling,
+direct rectangular-CS transform, or complete orientation polar can use all
+`2^K` coefficient dimensions in a polynomial-size circuit. None is rejected
+or compiled here. Classical separation, an end-to-end algorithm, and every
+speedup gate remain false.
+
+### Refined Next High-Reasoning Task
+
+1. Stop searching for sparse coefficient bases: arbitrary-basis sublinear
+   output rank is now closed under the physical source law.
+2. Analyze only succinct dense mechanisms. Seek an exact recursive
+   factorization of the restricted child coefficient map using representation-
+   specific recoupling or a normalization-one block encoding.
+3. Explicitly test every proposed factorization against the existing pair-
+   GPE, common-support, latent-master, source-gauge, connected-Clifford, and
+   generic-access no-go theorems.
+4. If the positive route fails, prove a circuit lower bound only for a sharply
+   specified representation-specific transform class. Do not infer gate
+   complexity from output rank or dense support.
+5. Preserve false complete-polar, classical-separation, algorithm, and speedup
+   gates until a coherent compiler and independent classical lower bound both
+   exist.
+
+Routine registry, runner, CLI, README, artifact-ledger, and broad validation
+work is assigned to Gemini 3.6 Flash through Antigravity.
+
+## Previous High-Reasoning Result: Physical Trace Bias Closes Adaptive Sparse Walsh Routing (2026-08-24)
+
+Files and experiment ID:
+
+```text
+theorems/self_dual_wreath_trace_biased_adaptive_walsh_no_go.py
+tests/test_self_dual_wreath_trace_biased_adaptive_walsh_no_go.py
+research/representation/self_dual_wreath_trace_biased_adaptive_walsh_no_go.json
+EXP-CODE-SELF-DUAL-WREATH-TRACE-BIASED-ADAPTIVE-WALSH-NO-GO
+```
+
+The open source-adaptive Walsh collision gate is resolved without a
+blockwise character `L4` estimate. For block
+`beta=(nu;lambda_1,mu_1,...,lambda_K,mu_K)`, define
+
+```text
+F_beta=sum_e E_(beta,e),
+b_beta(z)=Tr(F_beta)^(-1) sum_e Tr(E_(beta,e) E_(beta,e+z)).
+```
+
+The physically relevant native sector law is trace biased:
+
+```text
+pi(beta)=m_beta Tr(F_beta)/(q |G|^(2K)),
+m_beta=d_nu product_i d_lambda_i d_mu_i, q=2^K.
+```
+
+Target-dimension-weighted rank completeness gives exactly
+
+```text
+sum_nu d_nu Tr(F_(nu,Lambda))=q product_j d_(Lambda_j),
+```
+
+so the source marginal under `pi` is the product Plancherel law, despite the
+fixed-target trace bias. For projectors, `0<=Tr(PQ)<=Tr(P)`, hence every
+`b_beta(z)` lies in `[0,1]`. Regular-master decomposition and the exact Walsh
+flatness theorem give
+
+```text
+E_pi b_beta(0)=1,
+E_pi b_beta(z)=1/|G| for z!=0.
+```
+
+Thus `E b_beta(z)^2<=E b_beta(z)`. For any source event `D` of product-
+Plancherel probability `P_D`, the exact collision reduction now yields
+
+```text
+E[C_beta|D] <= q^(-1)[1+(q-1)/(|G| P_D)].
+```
+
+Every block-dependent set of at most `m` Walsh modes therefore retains
+average native mass at most `sqrt(m E[C_beta|D])`. For global distinctness,
+`P_D->1`; at `K=ceil(log2(n!))+2`, `q=Theta(n!)`, so collision is `O(1/q)`.
+Every source-and-target-label-adaptive `m=o(q)` Walsh set has vanishing mass,
+and constant retention requires `Omega(q)` modes.
+
+Exact `S3,K=1` and `S4,K=2` controls verify the complete regular block
+normalization, first moments, source marginal, collision contraction, and
+adaptive-set bound. In the latter control the direct trace-biased globally
+distinct mass is exactly `89/1536`. Seven focused tests pass; the artifact has
+zero control failures and tail `K^6` retention upper bound about `8.76e-100`.
+
+Scope remains strict. This closes sparse Walsh-output retention, including
+block-adaptive choices. It does not prove Walsh circuit hardness, reject a
+dense Hadamard, reject non-Walsh recoupling, compile direct rectangular CS,
+compile the complete orientation polar, prove classical hardness, or permit a
+speedup claim.
+
+### Refined Next High-Reasoning Task
+
+1. Remove adaptive sparse Walsh routing from the positive-route queue. No
+   further character-collision theorem is needed for this no-go.
+2. Focus on dense structured recoupling or direct restricted rectangular-CS
+   compilation. The output must use `Omega(2^K)` Walsh support, but that alone
+   is not a circuit lower bound because tensor Hadamards are efficient.
+3. Derive a normalization-one block encoding or exact recursive factorization
+   of the restricted child coefficient map. Test it against the existing
+   pair-GPE, common-support, latent-master, gauge, and connected-Clifford
+   no-go theorems.
+4. If no positive factorization exists, seek a representation-specific lower
+   bound for the endpoint inverse-square-root/rectangular-CS map, not a generic
+   dense-support argument.
+5. Keep complete-polar, classical-separation, algorithm, and speedup gates
+   false until an executable coherent compiler and an independent classical
+   lower bound both exist.
+
+Routine registry, runner, CLI, README, stale cross-reference, and broad
+validation work is assigned to Gemini 3.6 Flash through Antigravity.
+
 ## Current High-Reasoning Result: Adaptive Walsh Routing Reduces To Collision Strata (2026-08-21)
+
+**Superseded open gate:** the blockwise collision identity below remains
+correct, but its physical collision obligation is now resolved by the
+trace-biased positivity theorem above. Do not continue the proposed character
+`L4` route merely to close adaptive Walsh routing.
 
 Files and experiment ID:
 
@@ -10595,6 +11817,209 @@ the outer conjugacy pressure accounting. Do not spend Codex reasoning on CLI,
 registry, or README plumbing for these modules; that is explicitly assigned to
 Gemini 3.6 Flash through Antigravity in
 `research/MECHANICAL_FOLLOW_UP_PLAN.md`.
+
+## Branch-Polar Access And Concentration Boundary (2026-08-24)
+
+Four linked theorem modules close the current branch-polar pass without
+claiming an algorithm or a general decoder lower bound.
+
+1. `self_dual_wreath_branch_character_whole_sum_path_erasure_boundary.py`
+   proves that the local cyclic compiler can assemble the complete coefficient
+   sum when the relative group element is explicit, but erasing that path by
+   the canonical uniform coisometry exposes amplitudes
+   `sigma_j(C)/sqrt(|G|)`. Alternating-reflection/QSVT unpreparation therefore
+   costs `Omega(sqrt(|G|))` on order-one retained singular sectors. An exact
+   orthogonal-range classifier bypass shows this is architecture-scoped. The
+   remaining constructive escape is a coherent natural range classifier or an
+   equivalent direct Fourier multiplier/polar.
+2. `self_dual_wreath_branch_character_raw_polar_matched_filter_boundary.py`
+   proves that the native raw field and locally polar-completed field have a
+   positive-contraction cross map. The unwhitened matched-filter correct
+   probability is bounded by the already-vanishing raw/polar overlap. For
+   global polar whitening,
+   `sqrt(P_Q)<=sqrt(P_match)+sqrt(kappa R)`, where
+   `kappa=||C_K||^2` and `R` is the normalized polar Gram residual. Polynomial
+   raw domination would kill this decoder; it is not a positive completion
+   gate. The actual physical PGM remains outside scope.
+3. `self_dual_wreath_branch_character_raw_concentration_central_fourier_bridge.py`
+   corrects a tempting but false bridge. The existing noncentral orientation
+   block `F_nu` does **not** control the actual right-convolution multiplier.
+   With `Q_nu=E^*Pi_nu^(R)E`, the exact identity is
+
+   ```text
+   M_nu^*M_nu = |G|/d_nu^2 I_(d_nu) tensor Q_nu,
+   ||C_K||^2 = max_nu |G| ||Q_nu||/d_nu^2.
+   ```
+
+   The surviving bridge is trace-only:
+   `Tr(Q_nu)=d_nu Tr(F_nu)` and
+   `Tr(Q_nu)/D=Tr(D_nu)`, exactly the native Fourier-sector mass. On the
+   natural high-dimensional bulk `d_nu>sqrt(n!)/p(n)`, concentration is below
+   `p(n)^2`; multiplying by the polar Gram residual tends to zero (the live
+   `n=512` log2 upper bound is about `-807.06`). Thus the high-dimensional
+   `1-o(1)` mass cannot supply the whitening rescue. At this stage coherent
+   alignment with the low-dimensional tail was the sole remaining escape.
+4. `self_dual_wreath_branch_character_sector_resolved_whitening_no_go.py`
+   closes that escape without a global operator-norm assumption. Fourier
+   inversion expresses each correct-label correction amplitude as a partial
+   trace. The exact raw multiplier bound cancels the irrep dimension:
+
+   ```text
+   ||A_E,nu||_F^2/D <= r_nu,
+   P_E <= p(n) sum_nu r_nu <= p(n) R.
+   ```
+
+   Therefore
+   `P_polar<=(sqrt(raw/polar overlap)+sqrt(p(n)R))^2`. At
+   `k=ceil(3log2(n!))+2`, both annealed terms vanish, global-distinct
+   conditioning costs `1+o(1)`, and Markov gives source-typical failure. The
+   live `n=512` partition-weighted correction has log2 upper bound about
+   `-878.97`, and the final expected success upper bound is about `1.51e-36`.
+   This terminates `polar(C_J)^*` on the native raw ensemble. It does not reject
+   the actual joint-character multiplicity PGM.
+
+The four experiment IDs are:
+
+```text
+EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-WHOLE-SUM-PATH-ERASURE-BOUNDARY
+EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-RAW-POLAR-MATCHED-FILTER-BOUNDARY
+EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-RAW-CONCENTRATION-CENTRAL-FOURIER-BRIDGE
+EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-SECTOR-RESOLVED-WHITENING-NO-GO
+```
+
+**Next high-reasoning task:** return to the genuinely different physical
+joint-character PGM. Its Schur multiplicity blocks are
+`D_nu=r/(qD) I_r tensor W H_nu W^*`, and the physical analysis polar is
+`A_nu D_nu^-1/2`. Determine whether the scalar orientation kernel `H_nu`
+admits a natural bulk inverse, a representation-ring transform, or a new
+state-weighted no-go. Do not reuse `polar(C_J)` under another name, and do not
+identify `Q_nu` with `F_nu`. Keep `actual_physical_pgm_rejected` and
+`speedup_claim_allowed` false until this distinct multiplicity route is
+resolved.
+
+Focused validation at this checkpoint: the sector no-go has seven passing
+tests across three finite controls and a live JSON artifact. The combined affected chain and repository
+validation are listed in the final checkpoint notes for this session.
+
+## Physical Orientation Hash Normalization Boundary (2026-08-24)
+
+`self_dual_wreath_orientation_kernel_hash_normalization_no_go.py` charges the
+normalization omitted by the existing orientation-kernel hash-thinning route.
+In orientation coordinates, the canonical physical analysis map has
+
+```text
+N_nu^*N_nu = I_(d_nu) tensor H_nu/(q dim(C)).
+```
+
+For a full-rank affine fiber `S` of density `p` and size `s=pq`, even after
+conditioning on successful hash acceptance,
+
+```text
+N_(nu,S)^*N_(nu,S) = I_(d_nu) tensor H_(nu,S)/(s dim(C)).
+```
+
+The kernel mean is exactly tied to physical target mass:
+`m_nu=Tr(H_nu)/q=dim(C)Tr(D_nu)/d_nu^2`. Grant the hash proposal its ideal
+premise `H_(nu,S)<=(1+epsilon)m_nu I`. On the natural high-row event
+`d_nu>sqrt(n!)/p(n)` and at `q>=n!`, the canonical singular scale is at most
+
+```text
+sqrt(1+epsilon) p(n)/(n! sqrt(p)).
+```
+
+Generic bounded-polynomial scalar whitening therefore needs degree
+`Omega(n! sqrt(p)/p(n))`, still factorial for every inverse-polynomial hash
+density. At `n=512`, the live log2 singular upper bound is `-3766.9784...` and
+the generic degree lower bound is `3766.9492...`.
+
+Uniform full-rank affine hashes preserve each orientation's inclusion
+probability exactly; because the hash projector commutes with diagonal
+isotypic resolution, the conditioned target law is preserved in expectation.
+Three finite `S3/S4` controls verify the conditioned Gram, polar scale
+invariance, kernel-mean identity, and exact full-rank hash mass transfer.
+
+This kills **hash thinning plus canonical scalar QSVT/amplitude whitening**.
+It does not kill hash thinning as a preprocessing step for a genuinely
+structured direct polar, nor the actual physical multiplicity PGM under a
+different access architecture.
+
+Experiment ID:
+
+```text
+EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-KERNEL-HASH-NORMALIZATION-NO-GO
+```
+
+## Orientation-Kernel Character Tensor Boundary (2026-08-24)
+
+`self_dual_wreath_orientation_kernel_character_tensor_boundary.py` derives
+the exact representation-theoretic tensor network underlying the remaining
+physical orientation kernel. For source pair `(lambda_i,mu_i)`, define
+
+```text
+Q_i(x,y) = [[d_mu chi_lambda(xy), chi_lambda(x)chi_mu(y)],
+            [chi_lambda(y)chi_mu(x), d_lambda chi_mu(xy)]].
+```
+
+Then the physical scalar kernel is exactly
+
+```text
+H_nu[e,f] = 1/(d_nu |G|^2) sum_(x,y in G)
+              chi_nu(xy) product_i Q_i(x,y)[e_i,f_i].
+```
+
+This identifies `H_nu` as a `|G|^2`-term sum of tensor-product operators on
+the orientation qubits. The summand is invariant under simultaneous
+conjugation, but the exact pair-orbit count is
+
+```text
+orb_2(G) = |G|^-1 sum_z |C_G(z)|^2.
+```
+
+For `S_n`, this is `sum_(alpha partition n) z_alpha >= n!`, so explicit
+pair-orbit enumeration remains factorial even after exhausting this symmetry.
+Exact `S3/S4` controls also falsify three universal shortcuts: `H_nu` is not
+generally XOR-translation invariant, the Boolean Walsh transform does not
+generally diagonalize it, operator-Schmidt ranks can be maximal across
+orientation cuts, and the local `Q_i(x,y)` matrices do not share a fixed
+one-qubit eigenbasis.
+
+These controls are ansatz falsifiers, not asymptotic tensor-network lower
+bounds. The remaining constructive target is a globally coherent contraction
+of this `S_n x S_n` character network, equivalently an internal
+Kronecker/Racah multiplicity transform. Efficient character evaluation, an
+efficient symmetric-group QFT, and explicit simultaneous-conjugacy orbit
+listing do not by themselves provide that transform.
+
+Experiment ID:
+
+```text
+EXP-CODE-SELF-DUAL-WREATH-ORIENTATION-KERNEL-CHARACTER-TENSOR-BOUNDARY
+```
+
+**Next high-reasoning task:** audit the exact capability boundary of known
+Schur/Clebsch-Gordan transforms before deriving another compiler. In
+particular, determine from the primary literature whether the finite-group
+Clebsch-Gordan construction of Bacon-Chuang-Harrow, the high-dimensional
+Schur transform, or the Kronecker-projector algorithms provide a coherent
+multiplicity-basis transform for arbitrary `S_n` irrep tensor products in the
+input model required here. Distinguish isotypic projection and normalized
+Kronecker-coefficient estimation from multiplicity-basis resolution. If none
+does, formulate the unresolved contraction as a precise oracle/compiler
+problem and test a globally coherent Racah network without intermediate
+measurements. Keep the physical PGM, arbitrary-circuit lower bound, classical
+separation, algorithm, and speedup gates false.
+
+Pause validation checkpoint: the new physical-PGM dependency chain passes 48
+tests, repository compilation and JavaScript syntax checks pass, `qsearch.py
+validate` reports zero issues, and `git diff --check` passes. A broad pytest
+run was stopped after 88 tests because eight older clean-registry writer tests
+had already failed. The first isolated defect is confirmed mechanical:
+`write_character_decoder_search_report` returns immediately after writing its
+artifact, leaving its imported `upsert_scaling_run` unreachable/unused. The
+other failures have the same missing-upsert symptom and are enumerated in
+`research/MECHANICAL_FOLLOW_UP_PLAN.md`. They predate and are outside this
+character-tensor theorem pass; do not infer that the repository-wide suite is
+green.
 
 ## Resume Commands
 

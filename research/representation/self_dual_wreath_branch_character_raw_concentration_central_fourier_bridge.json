@@ -1,0 +1,395 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The existing noncentral orientation block F_nu directly gives raw multiplier concentration.",
+      "resolution": "False. Right-convolution squaring conjugacy-twirls the target irrep and produces I tensor Q_nu. Finite standard-sector controls show a nonzero spectral substitution residual.",
+      "resolved": true
+    },
+    {
+      "objection": "High-dimensional target sectors may still have factorial raw concentration.",
+      "resolution": "Q_nu is a contraction, so |G| ||Q_nu||/d_nu^2<P(n)^2 above the natural dimension threshold.",
+      "resolved": true
+    },
+    {
+      "objection": "Vanishing low-sector mass completes a decoder no-go.",
+      "resolution": "Not without controlling coherent interference between Fourier sectors in the correct-label amplitude. The report keeps this gate open.",
+      "resolved": false
+    },
+    {
+      "objection": "This rejects the actual multiplicity-whitened physical PGM.",
+      "resolution": "The theorem concerns the branch-polar convolution only.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "actual_physical_pgm_rejected": false,
+    "classical_separation_proved": false,
+    "full_branch_polar_decoder_rejected": false,
+    "high_dimensional_bulk_can_rescue_branch_polar_whitening": false,
+    "low_dimensional_coherent_alignment_bounded": false,
+    "native_raw_sector_mass_matches_joint_D_nu_mass": true,
+    "noncentral_orientation_block_substitution_rejected": true,
+    "raw_concentration_formula_proved": true,
+    "raw_convolution_central_fourier_block_identified": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-24T18:30:07.505580+00:00",
+  "falsifiers_triggered": [
+    "The raw multiplier Gram is not a scalar multiple of the existing noncentral F_nu block.",
+    "Large raw concentration on the natural high-dimensional bulk cannot offset the proved polar Gram decay.",
+    "Vanishing low-dimensional sector mass is insufficient by itself to conclude a full decoder no-go."
+  ],
+  "finite_controls": [
+    {
+      "carrier_dimension": 2,
+      "control_id": "S3-SINGLE-PAIR-CENTRAL-RAW-BRIDGE",
+      "exact_central_fourier_bridge_verified": true,
+      "global_concentration_residual": 1.3322676295501878e-15,
+      "group_order": 6,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ]
+      ],
+      "maximum_multiplier_gram_identity_residual": 6.280369834735101e-16,
+      "maximum_native_sector_probability_residual": 0.0,
+      "maximum_trace_bridge_residual": 0.0,
+      "n": 3,
+      "naive_noncentral_F_failure_count": 1,
+      "native_sector_probability_sum": 1.0,
+      "predicted_raw_convolution_concentration": 3.0,
+      "raw_convolution_concentration": 3.0000000000000013,
+      "sector_controls": [
+        {
+          "carrier_dimension": 2,
+          "central_compression_is_positive_contraction": true,
+          "central_to_orientation_trace_residual": 0.0,
+          "expected_native_sector_probability": 0.5,
+          "irrep_dimension": 1,
+          "maximum_central_compression_eigenvalue": 0.5,
+          "minimum_central_compression_eigenvalue": 0.5,
+          "multiplier_gram_identity_residual": 6.280369834735101e-16,
+          "naive_noncentral_F_gram_residual": 6.280369834735101e-16,
+          "naive_noncentral_F_substitution_valid": true,
+          "native_sector_probability": 0.5,
+          "native_sector_probability_residual": 0.0,
+          "partition": [
+            3
+          ],
+          "predicted_raw_sector_concentration": 3.0,
+          "raw_sector_concentration": 3.0000000000000004,
+          "raw_sector_concentration_residual": 4.440892098500626e-16,
+          "status": "central-raw-sector-bridge-verified"
+        },
+        {
+          "carrier_dimension": 2,
+          "central_compression_is_positive_contraction": true,
+          "central_to_orientation_trace_residual": 0.0,
+          "expected_native_sector_probability": 0.5,
+          "irrep_dimension": 2,
+          "maximum_central_compression_eigenvalue": 0.5,
+          "minimum_central_compression_eigenvalue": 0.5,
+          "multiplier_gram_identity_residual": 2.2291027918243403e-16,
+          "naive_noncentral_F_gram_residual": 1.299038105676658,
+          "naive_noncentral_F_substitution_valid": false,
+          "native_sector_probability": 0.5,
+          "native_sector_probability_residual": 0.0,
+          "partition": [
+            2,
+            1
+          ],
+          "predicted_raw_sector_concentration": 0.75,
+          "raw_sector_concentration": 0.7500000000000001,
+          "raw_sector_concentration_residual": 1.1102230246251565e-16,
+          "status": "central-raw-sector-bridge-verified"
+        },
+        {
+          "carrier_dimension": 2,
+          "central_compression_is_positive_contraction": true,
+          "central_to_orientation_trace_residual": 0.0,
+          "expected_native_sector_probability": 0.0,
+          "irrep_dimension": 1,
+          "maximum_central_compression_eigenvalue": 0.0,
+          "minimum_central_compression_eigenvalue": 0.0,
+          "multiplier_gram_identity_residual": 0.0,
+          "naive_noncentral_F_gram_residual": 0.0,
+          "naive_noncentral_F_substitution_valid": true,
+          "native_sector_probability": 0.0,
+          "native_sector_probability_residual": 0.0,
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "predicted_raw_sector_concentration": 0.0,
+          "raw_sector_concentration": 0.0,
+          "raw_sector_concentration_residual": 0.0,
+          "status": "central-raw-sector-bridge-verified"
+        }
+      ],
+      "source_pair_count": 1,
+      "status": "exact-central-raw-concentration-bridge"
+    },
+    {
+      "carrier_dimension": 4,
+      "control_id": "S3-THRESHOLD-CENTRAL-RAW-BRIDGE",
+      "exact_central_fourier_bridge_verified": true,
+      "global_concentration_residual": 1.9984014443252818e-15,
+      "group_order": 6,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_multiplier_gram_identity_residual": 4.965068306494546e-16,
+      "maximum_native_sector_probability_residual": 0.0,
+      "maximum_trace_bridge_residual": 0.0,
+      "n": 3,
+      "naive_noncentral_F_failure_count": 1,
+      "native_sector_probability_sum": 1.0,
+      "predicted_raw_convolution_concentration": 1.5,
+      "raw_convolution_concentration": 1.500000000000002,
+      "sector_controls": [
+        {
+          "carrier_dimension": 4,
+          "central_compression_is_positive_contraction": true,
+          "central_to_orientation_trace_residual": 0.0,
+          "expected_native_sector_probability": 0.1875,
+          "irrep_dimension": 1,
+          "maximum_central_compression_eigenvalue": 0.25,
+          "minimum_central_compression_eigenvalue": 0.125,
+          "multiplier_gram_identity_residual": 4.965068306494546e-16,
+          "naive_noncentral_F_gram_residual": 4.577566798522237e-16,
+          "naive_noncentral_F_substitution_valid": true,
+          "native_sector_probability": 0.1875,
+          "native_sector_probability_residual": 0.0,
+          "partition": [
+            3
+          ],
+          "predicted_raw_sector_concentration": 1.5,
+          "raw_sector_concentration": 1.5000000000000002,
+          "raw_sector_concentration_residual": 2.220446049250313e-16,
+          "status": "central-raw-sector-bridge-verified"
+        },
+        {
+          "carrier_dimension": 4,
+          "central_compression_is_positive_contraction": true,
+          "central_to_orientation_trace_residual": 0.0,
+          "expected_native_sector_probability": 0.625,
+          "irrep_dimension": 2,
+          "maximum_central_compression_eigenvalue": 0.75,
+          "minimum_central_compression_eigenvalue": 0.5,
+          "multiplier_gram_identity_residual": 4.920933683425806e-16,
+          "naive_noncentral_F_gram_residual": 2.036771342100041,
+          "naive_noncentral_F_substitution_valid": false,
+          "native_sector_probability": 0.625,
+          "native_sector_probability_residual": 0.0,
+          "partition": [
+            2,
+            1
+          ],
+          "predicted_raw_sector_concentration": 1.125,
+          "raw_sector_concentration": 1.1250000000000009,
+          "raw_sector_concentration_residual": 8.881784197001252e-16,
+          "status": "central-raw-sector-bridge-verified"
+        },
+        {
+          "carrier_dimension": 4,
+          "central_compression_is_positive_contraction": true,
+          "central_to_orientation_trace_residual": 0.0,
+          "expected_native_sector_probability": 0.1875,
+          "irrep_dimension": 1,
+          "maximum_central_compression_eigenvalue": 0.25,
+          "minimum_central_compression_eigenvalue": 0.125,
+          "multiplier_gram_identity_residual": 4.965068306494546e-16,
+          "naive_noncentral_F_gram_residual": 4.577566798522237e-16,
+          "naive_noncentral_F_substitution_valid": true,
+          "native_sector_probability": 0.1875,
+          "native_sector_probability_residual": 0.0,
+          "partition": [
+            1,
+            1,
+            1
+          ],
+          "predicted_raw_sector_concentration": 1.5,
+          "raw_sector_concentration": 1.5000000000000002,
+          "raw_sector_concentration_residual": 2.220446049250313e-16,
+          "status": "central-raw-sector-bridge-verified"
+        }
+      ],
+      "source_pair_count": 3,
+      "status": "exact-central-raw-concentration-bridge"
+    }
+  ],
+  "headline_metrics": {
+    "exact_central_multiplier_gram_theorem_count": 1,
+    "finite_control_count": 2,
+    "finite_control_failure_count": 0,
+    "low_sector_alignment_theorem_count": 0,
+    "naive_noncentral_F_substitution_failure_count": 2,
+    "native_sector_mass_bridge_theorem_count": 1,
+    "natural_high_sector_concentration_bound_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "tail_log2_high_sector_concentration_upper_bound": 143.83090821814227,
+    "tail_log2_high_sector_whitening_correction_upper_bound": -807.059011453051,
+    "tail_n": 512
+  },
+  "proof_obligations": [
+    {
+      "obligation": "identify_exact_raw_convolution_fourier_concentration",
+      "resolution": "The exact multiplier Gram is the central compression Q_nu, with the dimension-weighted norm formula in equation (3).",
+      "resolved": true
+    },
+    {
+      "obligation": "link_raw_concentration_to_native_sector_mass",
+      "resolution": "Tr(Q_nu)/D equals both the orientation recoupling law and Tr(D_nu).",
+      "resolved": true
+    },
+    {
+      "obligation": "exclude_high_dimensional_bulk_as_whitening_rescue",
+      "resolution": "Q_nu<=I gives kappa_nu<P(n)^2 on 1-o(1) natural mass, and P(n)^2 E R tends to zero.",
+      "resolved": true
+    },
+    {
+      "obligation": "bound_low_dimensional_cross_sector_coherence",
+      "resolution": "Vanishing marginal mass does not alone control coherent Fourier interference in group-label decoding. A state-weighted alignment or trace-distance theorem is still required.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "copy_count": 355,
+      "full_branch_polar_decoder_no_go_proved": false,
+      "high_sector_whitening_correction_tends_to_zero": true,
+      "log2_group_order": 117.6632636523603,
+      "log2_high_sector_raw_concentration_upper_bound": 26.054775388105526,
+      "log2_high_sector_whitening_correction_upper_bound": -3.6202732035237233,
+      "log2_low_dimension_threshold": 45.80424413212737,
+      "log2_polar_gram_residual_upper_bound": -29.67504859162925,
+      "low_sector_coherent_alignment_bounded": false,
+      "n": 32,
+      "natural_high_dimension_sector_mass_tends_to_one": true,
+      "partition_count_decimal": "8349",
+      "status": "high-dimensional-raw-concentration-cannot-rescue-polar-whitening"
+    },
+    {
+      "copy_count": 890,
+      "full_branch_polar_decoder_no_go_proved": false,
+      "high_sector_whitening_correction_tends_to_zero": true,
+      "log2_group_order": 295.99514394172405,
+      "log2_high_sector_raw_concentration_upper_bound": 41.46401346589929,
+      "log2_high_sector_whitening_correction_upper_bound": -31.924216950547667,
+      "log2_low_dimension_threshold": 127.26556523791237,
+      "log2_polar_gram_residual_upper_bound": -73.38823041644696,
+      "low_sector_coherent_alignment_bounded": false,
+      "n": 64,
+      "natural_high_dimension_sector_mass_tends_to_one": true,
+      "partition_count_decimal": "1741630",
+      "status": "high-dimensional-raw-concentration-cannot-rescue-polar-whitening"
+    },
+    {
+      "copy_count": 2151,
+      "full_branch_polar_decoder_no_go_proved": false,
+      "high_sector_whitening_correction_tends_to_zero": true,
+      "log2_group_order": 716.1617220836218,
+      "log2_high_sector_raw_concentration_upper_bound": 64.03745186528997,
+      "log2_high_sector_whitening_correction_upper_bound": -112.54648699988118,
+      "log2_low_dimension_threshold": 326.062135109166,
+      "log2_polar_gram_residual_upper_bound": -176.58393886517115,
+      "low_sector_coherent_alignment_bounded": false,
+      "n": 128,
+      "natural_high_dimension_sector_mass_tends_to_one": true,
+      "partition_count_decimal": "4351078600",
+      "status": "high-dimensional-raw-concentration-cannot-rescue-polar-whitening"
+    },
+    {
+      "copy_count": 5054,
+      "full_branch_polar_decoder_no_go_proved": false,
+      "high_sector_whitening_correction_tends_to_zero": true,
+      "log2_group_order": 1683.9962872242147,
+      "log2_high_sector_raw_concentration_upper_bound": 96.75569896862906,
+      "log2_high_sector_whitening_correction_upper_bound": -316.8475351624327,
+      "log2_low_dimension_threshold": 793.6202941277928,
+      "log2_polar_gram_residual_upper_bound": -413.60323413106175,
+      "low_sector_coherent_alignment_bounded": false,
+      "n": 256,
+      "natural_high_dimension_sector_mass_tends_to_one": true,
+      "partition_count_decimal": "365749566870782",
+      "status": "high-dimensional-raw-concentration-cannot-rescue-polar-whitening"
+    },
+    {
+      "copy_count": 11628,
+      "full_branch_polar_decoder_no_go_proved": false,
+      "high_sector_whitening_correction_tends_to_zero": true,
+      "log2_group_order": 3875.166121943203,
+      "log2_high_sector_raw_concentration_upper_bound": 143.83090821814227,
+      "log2_high_sector_whitening_correction_upper_bound": -807.059011453051,
+      "log2_low_dimension_threshold": 1865.6676068625304,
+      "log2_polar_gram_residual_upper_bound": -950.8899196711932,
+      "low_sector_coherent_alignment_bounded": false,
+      "n": 512,
+      "natural_high_dimension_sector_mass_tends_to_one": true,
+      "partition_count_decimal": "4453575699570940947378",
+      "status": "high-dimensional-raw-concentration-cannot-rescue-polar-whitening"
+    }
+  ],
+  "status": "raw-concentration-localized-to-low-dimensional-coherent-tail",
+  "summary": "Corrected the raw-concentration Fourier bridge: the central compression Q_nu, not the noncentral orientation block F_nu, controls the multiplier. The natural high-dimensional bulk cannot supply the whitening rescue; only the unresolved low-dimensional coherent tail remains.",
+  "theorem": {
+    "central_compression": "Q_nu=E^*Pi_nu^(R)E is a positive contraction obtained by central character projection of the uniform-orientation compression.",
+    "concentration": "||C_K||^2=max_nu |G| ||Q_nu||/d_nu^2.",
+    "multiplier_gram": "For the actual right convolution, M_nu^*M_nu=|G|/d_nu^2 I_(d_nu) tensor Q_nu.",
+    "native_sector_mass": "p_nu=Tr(Q_nu)/D=d_nu Tr(F_nu)/D=Tr(D_nu), exactly the native joint-character Fourier-sector law.",
+    "natural_bulk_bound": "On d_nu>sqrt(|G|)/P(n), raw concentration is below P(n)^2; therefore its product with the natural polar Gram residual vanishes.",
+    "orientation_trace_bridge": "Tr(Q_nu)=d_nu Tr(F_nu), but Q_nu and the noncentral F_nu are not spectrally interchangeable.",
+    "remaining_boundary": "Only coherent alignment with the vanishing-mass low-dimensional sectors can still rescue the branch-polar whitening correction.",
+    "scope": "This localizes the remaining concentration escape. It does not bound cross-sector coherent decoding through the low-dimensional tail, reject the physical PGM, or prove a classical separation.",
+    "status": "raw-concentration-localized-to-low-dimensional-coherent-tail",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "central_compression": "Q_nu=E^*Pi_nu^(R)E is a positive contraction obtained by central character projection of the uniform-orientation compression.",
+    "concentration": "||C_K||^2=max_nu |G| ||Q_nu||/d_nu^2.",
+    "multiplier_gram": "For the actual right convolution, M_nu^*M_nu=|G|/d_nu^2 I_(d_nu) tensor Q_nu.",
+    "native_sector_mass": "p_nu=Tr(Q_nu)/D=d_nu Tr(F_nu)/D=Tr(D_nu), exactly the native joint-character Fourier-sector law.",
+    "natural_bulk_bound": "On d_nu>sqrt(|G|)/P(n), raw concentration is below P(n)^2; therefore its product with the natural polar Gram residual vanishes.",
+    "orientation_trace_bridge": "Tr(Q_nu)=d_nu Tr(F_nu), but Q_nu and the noncentral F_nu are not spectrally interchangeable.",
+    "remaining_boundary": "Only coherent alignment with the vanishing-mass low-dimensional sectors can still rescue the branch-polar whitening correction.",
+    "scope": "This localizes the remaining concentration escape. It does not bound cross-sector coherent decoding through the low-dimensional tail, reject the physical PGM, or prove a classical separation.",
+    "status": "raw-concentration-localized-to-low-dimensional-coherent-tail",
+    "theorem_verified": true
+  }
+}

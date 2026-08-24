@@ -1,0 +1,407 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The balanced two-row witness may have negligible natural mass.",
+      "resolution": "A particular balanced shape is unnecessary: all dimensions below sqrt(n!)/p(n) have vanishing aggregate natural mass.",
+      "resolved": true
+    },
+    {
+      "objection": "Conditioning source labels distinct destroys stationarity.",
+      "resolution": "It perturbs the target law, but data processing bounds the perturbation by the source-collision probability, which is o(1).",
+      "resolved": true
+    },
+    {
+      "objection": "An annealed mass theorem implies every source tuple is good.",
+      "resolution": "False pointwise. Markov supplies the correct 1-o(1) source-typical statement with a square-root loss.",
+      "resolved": true
+    },
+    {
+      "objection": "High-dimensional target mass proves useful hidden information.",
+      "resolution": "It does not. The target label itself is hidden-label independent; useful information must be proved inside multiplicity correlations.",
+      "resolved": false
+    },
+    {
+      "objection": "Typical high dimension rules out every decoder.",
+      "resolution": "Only the canonical density/direct-analysis polynomial routes inherit the normalization burden. Direct fused polars remain open.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "annealed_joint_target_law_is_exact_plancherel": true,
+    "canonical_sqrt_d_nu_normalization_hits_one_minus_o_one_mass": true,
+    "classical_separation_proved": false,
+    "collision_free_conditioned_target_law_is_asymptotically_plancherel": true,
+    "direct_structured_polar_compiled": false,
+    "direct_structured_polar_ruled_out": false,
+    "high_dimension_sectors_carry_extensive_hidden_information_proved": false,
+    "joint_target_sector_law_identified": true,
+    "low_dimension_sectors_support_inverse_polynomial_mass_decoder": false,
+    "natural_target_sector_mass_is_high_dimensional": true,
+    "normalization_one_A_nu_access_constructed": false,
+    "polynomial_joint_decoder_proved": false,
+    "reason": "The canonical sqrt(d_nu) normalization now applies on 1-o(1) natural sector mass, so low-dimensional sectors cannot rescue that route. Hidden-label information inside the high-dimensional blocks and a direct fused polar remain unproved.",
+    "speedup_claim_allowed": false
+  },
+  "conditioning_controls": [
+    {
+      "exact_collision_free_probability": "89/1536",
+      "exact_collision_probability": "1447/1536",
+      "exact_conditioning_contraction_verified": true,
+      "n": 4,
+      "pair_count": 2,
+      "partition_count": 5,
+      "source_conditioning_total_variation_bound": "1447/1536",
+      "source_draw_count": 4,
+      "status": "collision-conditioning-target-tv-contraction",
+      "target_total_variation_from_plancherel": "1/24",
+      "target_tv_below_source_tv": true
+    },
+    {
+      "exact_collision_free_probability": "106031/576000",
+      "exact_collision_probability": "469969/576000",
+      "exact_conditioning_contraction_verified": true,
+      "n": 5,
+      "pair_count": 2,
+      "partition_count": 7,
+      "source_conditioning_total_variation_bound": "469969/576000",
+      "source_draw_count": 4,
+      "status": "collision-conditioning-target-tv-contraction",
+      "target_total_variation_from_plancherel": "58811/2120620",
+      "target_tv_below_source_tv": true
+    }
+  ],
+  "created_at": "2026-08-24T16:19:59.513864+00:00",
+  "falsifiers_triggered": [
+    "The canonical normalization boundary is not confined to an arbitrary balanced witness; it occurs on 1-o(1) natural sector mass.",
+    "Global distinctness does not asymptotically move target mass into rare low-dimensional sectors.",
+    "High-dimensional mass alone is not evidence for hidden-label information or an algorithmic speedup."
+  ],
+  "fixed_source_controls": [
+    {
+      "control_id": "W3-INFORMATION-THRESHOLD",
+      "exact_law_sum": "1",
+      "exact_source_sector_law_verified": true,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projection_gram_trace_residual": 2.220446049250313e-16,
+      "n": 3,
+      "orientation_count": 8,
+      "status": "exact-joint-target-sector-recoupling-law",
+      "target_count": 3
+    },
+    {
+      "control_id": "W4-COLLISION-FREE-PAIR",
+      "exact_law_sum": "1",
+      "exact_source_sector_law_verified": true,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_projection_gram_trace_residual": 1.6653345369377348e-16,
+      "n": 4,
+      "orientation_count": 4,
+      "status": "exact-joint-target-sector-recoupling-law",
+      "target_count": 5
+    }
+  ],
+  "headline_metrics": {
+    "annealed_target_plancherel_stationarity_theorem_count": 1,
+    "collision_conditioning_tv_transfer_theorem_count": 1,
+    "conditioning_control_count": 2,
+    "direct_structured_polar_compiler_count": 0,
+    "exact_fixed_source_sector_law_theorem_count": 1,
+    "finite_control_failure_count": 0,
+    "fixed_source_control_count": 2,
+    "high_dimension_information_theorem_count": 0,
+    "maximum_high_mass_generic_degree_log2_lower_bound": 932.8046570856056,
+    "maximum_low_dimension_threshold_log2": 1865.6676068625304,
+    "maximum_scaling_n": 512,
+    "new_quantum_algorithm_count": 0,
+    "source_typical_high_dimension_mass_theorem_count": 1,
+    "stationarity_control_count": 4
+  },
+  "literature_links": [
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "aggarwal-elboim-maximal-dimension-2026",
+      "url": "https://arxiv.org/abs/2605.25995",
+      "use": "The maximal Plancherel atom is exp(-Theta(sqrt(n))), making polynomially many source collisions asymptotically negligible."
+    },
+    {
+      "external_theorem_not_reproved_here": true,
+      "paper_id": "hardy-ramanujan-partition-asymptotic-1918",
+      "url": "https://doi.org/10.1112/plms/s2-17.1.75",
+      "use": "p(n)=exp(Theta(sqrt(n))) for the low-dimension tail threshold."
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "derive_joint_target_sector_probability",
+      "resolution": "Unselected carrier dimensions cancel from Tr(D_nu), leaving the dimension-weighted tensor-product decomposition in equation (1).",
+      "resolved": true
+    },
+    {
+      "obligation": "transfer_plancherel_stationarity_to_joint_D_nu_mass",
+      "resolution": "Every orientation selects independent Plancherel factors, so the annealed target law is exactly Plancherel.",
+      "resolved": true
+    },
+    {
+      "obligation": "survive_global_distinct_source_conditioning",
+      "resolution": "Total-variation contraction loses at most the collision event, whose mass vanishes at the information-threshold copy count.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_high_row_natural_sector_mass",
+      "resolution": "A counting tail plus Markov puts 1-o(1) sector mass above sqrt(n!)/p(n) for 1-o(1) conditioned source tuples.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_high_row_hidden_label_information",
+      "resolution": "The irrep marginal is label independent. No extensive Holevo lower bound inside the high-row D_nu blocks is known.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_direct_structured_polar",
+      "resolution": "The mass theorem strengthens the canonical-access obstruction but does not rule out a fused representation-specific polar.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "collision_conditioned_low_dimension_mass_upper_bound": "delta_n=1/p(n)+Pr(any collision)=exp(-Theta(sqrt(n)))",
+      "direct_structured_polar_ruled_out": false,
+      "high_dimension_natural_sector_mass_tends_to_one": true,
+      "high_dimension_sector_information_proved": false,
+      "information_threshold_copy_count": 16,
+      "low_dimension_only_inverse_polynomial_decoder_possible": false,
+      "low_dimension_threshold_decimal": "9",
+      "low_dimension_threshold_log2": 3.169925001442312,
+      "minimum_high_mass_canonical_normalization_log2": 1.660964047443681,
+      "minimum_high_mass_generic_analysis_degree_log2_lower_bound": 1.584962500721156,
+      "n": 8,
+      "partition_count_decimal": "22",
+      "source_typical_failure_probability_upper_bound": "sqrt(delta_n)",
+      "source_typical_low_dimension_mass_upper_bound": "sqrt(delta_n)",
+      "status": "natural-sector-mass-high-dimensional-canonical-polar-open",
+      "unconditioned_low_dimension_mass_upper_bound": 0.045454545454545456
+    },
+    {
+      "collision_conditioned_low_dimension_mass_upper_bound": "delta_n=1/p(n)+Pr(any collision)=exp(-Theta(sqrt(n)))",
+      "direct_structured_polar_ruled_out": false,
+      "high_dimension_natural_sector_mass_tends_to_one": true,
+      "high_dimension_sector_information_proved": false,
+      "information_threshold_copy_count": 45,
+      "low_dimension_only_inverse_polynomial_decoder_possible": false,
+      "low_dimension_threshold_decimal": "19801",
+      "low_dimension_threshold_log2": 14.273285671400314,
+      "minimum_high_mass_canonical_normalization_log2": 7.136679264633349,
+      "minimum_high_mass_generic_analysis_degree_log2_lower_bound": 7.108524456778169,
+      "n": 16,
+      "partition_count_decimal": "231",
+      "source_typical_failure_probability_upper_bound": "sqrt(delta_n)",
+      "source_typical_low_dimension_mass_upper_bound": "sqrt(delta_n)",
+      "status": "natural-sector-mass-high-dimensional-canonical-polar-open",
+      "unconditioned_low_dimension_mass_upper_bound": 0.004329004329004329
+    },
+    {
+      "collision_conditioned_low_dimension_mass_upper_bound": "delta_n=1/p(n)+Pr(any collision)=exp(-Theta(sqrt(n)))",
+      "direct_structured_polar_ruled_out": false,
+      "high_dimension_natural_sector_mass_tends_to_one": true,
+      "high_dimension_sector_information_proved": false,
+      "information_threshold_copy_count": 118,
+      "low_dimension_only_inverse_polynomial_decoder_possible": false,
+      "low_dimension_threshold_decimal": "61440029066997",
+      "low_dimension_threshold_log2": 45.80424413212737,
+      "minimum_high_mass_canonical_normalization_log2": 22.902122066063697,
+      "minimum_high_mass_generic_analysis_degree_log2_lower_bound": 22.87297578605685,
+      "n": 32,
+      "partition_count_decimal": "8349",
+      "source_typical_failure_probability_upper_bound": "sqrt(delta_n)",
+      "source_typical_low_dimension_mass_upper_bound": "sqrt(delta_n)",
+      "status": "natural-sector-mass-high-dimensional-canonical-polar-open",
+      "unconditioned_low_dimension_mass_upper_bound": 0.00011977482333213559
+    },
+    {
+      "collision_conditioned_low_dimension_mass_upper_bound": "delta_n=1/p(n)+Pr(any collision)=exp(-Theta(sqrt(n)))",
+      "direct_structured_polar_ruled_out": false,
+      "high_dimension_natural_sector_mass_tends_to_one": true,
+      "high_dimension_sector_information_proved": false,
+      "information_threshold_copy_count": 296,
+      "low_dimension_only_inverse_polynomial_decoder_possible": false,
+      "low_dimension_threshold_decimal": "204527896471110172070834702828556226626",
+      "low_dimension_threshold_log2": 127.26556523791237,
+      "minimum_high_mass_canonical_normalization_log2": 63.632782618956185,
+      "minimum_high_mass_generic_analysis_degree_log2_lower_bound": 63.60363627329667,
+      "n": 64,
+      "partition_count_decimal": "1741630",
+      "source_typical_failure_probability_upper_bound": "sqrt(delta_n)",
+      "source_typical_low_dimension_mass_upper_bound": "sqrt(delta_n)",
+      "status": "natural-sector-mass-high-dimensional-canonical-polar-open",
+      "unconditioned_low_dimension_mass_upper_bound": 5.741747673156755e-07
+    },
+    {
+      "collision_conditioned_low_dimension_mass_upper_bound": "delta_n=1/p(n)+Pr(any collision)=exp(-Theta(sqrt(n)))",
+      "direct_structured_polar_ruled_out": false,
+      "high_dimension_natural_sector_mass_tends_to_one": true,
+      "high_dimension_sector_information_proved": false,
+      "information_threshold_copy_count": 717,
+      "low_dimension_only_inverse_polynomial_decoder_possible": false,
+      "low_dimension_threshold_decimal": "142719435117391835222305770841048070322230261308187734859613430536160926982860044319981476879871504",
+      "low_dimension_threshold_log2": 326.062135109166,
+      "minimum_high_mass_canonical_normalization_log2": 163.031067554583,
+      "minimum_high_mass_generic_analysis_degree_log2_lower_bound": 163.00192120892345,
+      "n": 128,
+      "partition_count_decimal": "4351078600",
+      "source_typical_failure_probability_upper_bound": "sqrt(delta_n)",
+      "source_typical_low_dimension_mass_upper_bound": "sqrt(delta_n)",
+      "status": "natural-sector-mass-high-dimensional-canonical-polar-open",
+      "unconditioned_low_dimension_mass_upper_bound": 2.2982807067654444e-10
+    },
+    {
+      "collision_conditioned_low_dimension_mass_upper_bound": "delta_n=1/p(n)+Pr(any collision)=exp(-Theta(sqrt(n)))",
+      "direct_structured_polar_ruled_out": false,
+      "high_dimension_natural_sector_mass_tends_to_one": true,
+      "high_dimension_sector_information_proved": false,
+      "information_threshold_copy_count": 1684,
+      "low_dimension_only_inverse_polynomial_decoder_possible": false,
+      "low_dimension_threshold_decimal": "80078088932686133142488698862683127951706144030827544332561498884353927075775970800665283420852809606516510285657152279255889021586279136284271288450523179250057202239303564868148897899883938997617979143598019752384196039975880655195320084",
+      "low_dimension_threshold_log2": 793.6202941277928,
+      "minimum_high_mass_canonical_normalization_log2": 396.8101470638964,
+      "minimum_high_mass_generic_analysis_degree_log2_lower_bound": 396.7810007182369,
+      "n": 256,
+      "partition_count_decimal": "365749566870782",
+      "source_typical_failure_probability_upper_bound": "sqrt(delta_n)",
+      "source_typical_low_dimension_mass_upper_bound": "sqrt(delta_n)",
+      "status": "natural-sector-mass-high-dimensional-canonical-polar-open",
+      "unconditioned_low_dimension_mass_upper_bound": 2.7341112350607276e-15
+    },
+    {
+      "collision_conditioned_low_dimension_mass_upper_bound": "delta_n=1/p(n)+Pr(any collision)=exp(-Theta(sqrt(n)))",
+      "direct_structured_polar_ruled_out": false,
+      "high_dimension_natural_sector_mass_tends_to_one": true,
+      "high_dimension_sector_information_proved": false,
+      "information_threshold_copy_count": 3876,
+      "low_dimension_only_inverse_polynomial_decoder_possible": false,
+      "low_dimension_threshold_decimal": "4187083330866516299003628068073952023533452535034201073382772841281889433798036275245683496617290501390322168069280717782530156433050204331748106014174659354706425946681219742862492410027010730270461306912640681178234857561546413032726408998050060217430139741323806471674048962984657908376311899428146146483853034983363714391275750870432910120212766888590746993262416860275274010384580712471736601873980785831597923206100799703008722048308622520987630192968331240984788035405012188743029231399077893050453470796035195493914294971555184015777520997617216097310759",
+      "low_dimension_threshold_log2": 1865.6676068625304,
+      "minimum_high_mass_canonical_normalization_log2": 932.8338034312652,
+      "minimum_high_mass_generic_analysis_degree_log2_lower_bound": 932.8046570856056,
+      "n": 512,
+      "partition_count_decimal": "4453575699570940947378",
+      "source_typical_failure_probability_upper_bound": "sqrt(delta_n)",
+      "source_typical_low_dimension_mass_upper_bound": "sqrt(delta_n)",
+      "status": "natural-sector-mass-high-dimensional-canonical-polar-open",
+      "unconditioned_low_dimension_mass_upper_bound": 2.245386780101976e-22
+    }
+  ],
+  "stationarity_controls": [
+    {
+      "exact_annealed_plancherel_stationarity_verified": true,
+      "exact_probability_sum": "1",
+      "maximum_plancherel_residual": "0",
+      "n": 2,
+      "partition_count": 2,
+      "selected_factor_count": 1,
+      "status": "exact-annealed-joint-target-plancherel"
+    },
+    {
+      "exact_annealed_plancherel_stationarity_verified": true,
+      "exact_probability_sum": "1",
+      "maximum_plancherel_residual": "0",
+      "n": 3,
+      "partition_count": 3,
+      "selected_factor_count": 2,
+      "status": "exact-annealed-joint-target-plancherel"
+    },
+    {
+      "exact_annealed_plancherel_stationarity_verified": true,
+      "exact_probability_sum": "1",
+      "maximum_plancherel_residual": "0",
+      "n": 4,
+      "partition_count": 5,
+      "selected_factor_count": 2,
+      "status": "exact-annealed-joint-target-plancherel"
+    },
+    {
+      "exact_annealed_plancherel_stationarity_verified": true,
+      "exact_probability_sum": "1",
+      "maximum_plancherel_residual": "0",
+      "n": 5,
+      "partition_count": 7,
+      "selected_factor_count": 2,
+      "status": "exact-annealed-joint-target-plancherel"
+    }
+  ],
+  "status": "natural-joint-target-mass-high-dimensional-proved-information-open",
+  "summary": "Transferred Plancherel stationarity to Tr(D_nu) and proved that almost all collision-free natural sector mass has factorial-scale irrep dimension.",
+  "theorem": {
+    "annealed_stationarity": "Independent Plancherel source partitions give the exact annealed target law d_nu^2/n! for every k>=1.",
+    "canonical_access_consequence": "The canonical sqrt(d_nu) analysis normalization is superpolynomial on 1-o(1) natural source-sector mass.",
+    "conditioning_transfer": "Conditioning all 2k sources distinct changes the target law in TV by at most Pr(any source collision)=o(1) at information-threshold k.",
+    "fixed_source_law": "Tr(D_nu)=q^-1 sum_e d_nu g(alpha_1(e),...,alpha_k(e);nu)/product_i d_(alpha_i(e)).",
+    "low_dimension_tail": "For R_n=floor(sqrt(n!)/p(n)), Plancherel[d_nu<=R_n]<=1/p(n).",
+    "scope": "Target mass is not target information. Internal multiplicity Holevo information and direct structured polar synthesis remain open.",
+    "source_typical_transfer": "If delta_n=1/p(n)+Pr(collision), Markov gives low-row physical mass <=sqrt(delta_n) for at least 1-sqrt(delta_n) of conditioned sources.",
+    "status": "natural-joint-target-mass-high-dimensional-proved-information-open",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "annealed_stationarity": "Independent Plancherel source partitions give the exact annealed target law d_nu^2/n! for every k>=1.",
+    "canonical_access_consequence": "The canonical sqrt(d_nu) analysis normalization is superpolynomial on 1-o(1) natural source-sector mass.",
+    "conditioning_transfer": "Conditioning all 2k sources distinct changes the target law in TV by at most Pr(any source collision)=o(1) at information-threshold k.",
+    "fixed_source_law": "Tr(D_nu)=q^-1 sum_e d_nu g(alpha_1(e),...,alpha_k(e);nu)/product_i d_(alpha_i(e)).",
+    "low_dimension_tail": "For R_n=floor(sqrt(n!)/p(n)), Plancherel[d_nu<=R_n]<=1/p(n).",
+    "scope": "Target mass is not target information. Internal multiplicity Holevo information and direct structured polar synthesis remain open.",
+    "source_typical_transfer": "If delta_n=1/p(n)+Pr(collision), Markov gives low-row physical mass <=sqrt(delta_n) for at least 1-sqrt(delta_n) of conditioned sources.",
+    "status": "natural-joint-target-mass-high-dimensional-proved-information-open",
+    "theorem_verified": true
+  }
+}

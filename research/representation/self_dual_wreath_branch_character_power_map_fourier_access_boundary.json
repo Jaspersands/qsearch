@@ -1,0 +1,319 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Efficient reversible power maps immediately compile the Fourier multipliers.",
+      "resolution": "False. The desired representation block is smaller than the isometry block by the exact factor in equation (3).",
+      "resolved": true
+    },
+    {
+      "objection": "Typical maximal irrep dimensions cancel the block normalization.",
+      "resolution": "Even assigning sqrt(|G|) to every input and source irrep leaves |G|^(k/2-1/4).",
+      "resolved": true
+    },
+    {
+      "objection": "A huge termwise factor proves the coherent full sum is hard.",
+      "resolution": "No. Fourier transforms themselves combine tiny entries efficiently; a whole-sum recursion remains open.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "classical_separation_proved": false,
+    "coherent_full_quadrant_sum_factorized": false,
+    "direct_equivariant_multiplier_compiled": false,
+    "paired_power_map_injective_isometry_proved": true,
+    "physical_decoder_compiled": false,
+    "power_map_fourier_block_identity_proved": true,
+    "speedup_claim_allowed": false,
+    "termwise_block_normalization_formula_proved": true,
+    "termwise_power_map_compiler_superpolynomial_proved": true
+  },
+  "created_at": "2026-08-24T17:50:18.080506+00:00",
+  "falsifiers_triggered": [
+    "An efficient power-map basis circuit is not by itself an efficient selected Fourier block.",
+    "Maximal irrep dimensions do not cancel termwise normalization at natural copy count.",
+    "The no-go does not cover coherent whole-sum recursions."
+  ],
+  "headline_metrics": {
+    "coherent_full_quadrant_sum_compiler_count": 0,
+    "injective_power_map_fourier_primitive_theorem_count": 1,
+    "maximum_control_normalization": 9.0,
+    "new_quantum_algorithm_count": 0,
+    "nonzero_fourier_block_control_count": 2,
+    "selection_rule_zero_control_count": 2,
+    "tail_copy_count": 2151,
+    "tail_n": 128,
+    "tail_termwise_normalization_log2_lower_bound": 770052.8916704144,
+    "termwise_power_map_normalization_no_go_count": 1
+  },
+  "nonzero_controls": [
+    {
+      "control_id": "C5-ONE-PAIR-NONZERO",
+      "copy_count": 1,
+      "direct_multiplier_monomial": [
+        2.23606797749979,
+        -5.601270828695527e-17
+      ],
+      "direct_to_scaled_block_residual": 4.706590213848132e-16,
+      "exact_power_map_fourier_normalization_verified": true,
+      "exponent_parameters": [
+        2
+      ],
+      "group_order": 5,
+      "input_character": 1,
+      "output_characters": [
+        1,
+        1
+      ],
+      "power_map_image_size": 5,
+      "power_map_is_injective": true,
+      "power_tuple": [
+        -1,
+        2
+      ],
+      "predicted_block_normalization": 5.0,
+      "selection_rule_satisfied": true,
+      "status": "injective-power-map-fourier-block-normalization-verified",
+      "transformed_fourier_block": [
+        0.44721359549995787,
+        -4.2382463469773506e-17
+      ],
+      "transformed_isometry_residual": 5.881757006344605e-16
+    },
+    {
+      "control_id": "C3-TWO-PAIR-NONZERO",
+      "copy_count": 2,
+      "direct_multiplier_monomial": [
+        1.7320508075688776,
+        -1.5182449292009337e-17
+      ],
+      "direct_to_scaled_block_residual": 1.2314547666542915e-15,
+      "exact_power_map_fourier_normalization_verified": true,
+      "exponent_parameters": [
+        2,
+        1
+      ],
+      "group_order": 3,
+      "input_character": 0,
+      "output_characters": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "power_map_image_size": 3,
+      "power_map_is_injective": true,
+      "power_tuple": [
+        -1,
+        2,
+        0,
+        1
+      ],
+      "predicted_block_normalization": 9.0,
+      "selection_rule_satisfied": true,
+      "status": "injective-power-map-fourier-block-normalization-verified",
+      "transformed_fourier_block": [
+        0.1924500897298754,
+        -9.646542891400491e-17
+      ],
+      "transformed_isometry_residual": 1.8488431070407703e-15
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "realize_each_quadrant_power_monomial_as_fast_fourier_primitive",
+      "resolution": "The paired power map is injective and reversible; QFT conjugation contains the monomial as an exact block.",
+      "resolved": true
+    },
+    {
+      "obligation": "test_termwise_power_map_block_extraction_as_compiler",
+      "resolution": "Rejected: the exact block normalization is |G|^k/sqrt(d_nu D), at least |G|^(k/2-1/4).",
+      "resolved": true
+    },
+    {
+      "obligation": "factor_full_quadrant_coefficient_tensor_before_block_selection",
+      "resolution": "Search for an FFT-like recursion or shared cyclic-phase register that sums exponent tuples without termwise postselection.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_direct_multiplier_and_hidden_label_decoder",
+      "resolution": "No normalization-one whole-sum transform, physical decoder, or speedup is established.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "coherent_full_quadrant_sum_compiled": false,
+      "copy_count": 48,
+      "generic_amplification_query_log2_lower_bound": 363.3561904366979,
+      "log2_group_order": 15.29920801838728,
+      "maximum_possible_fourier_dimension_log2": 7.64960400919364,
+      "maximum_possible_source_carrier_dimension_log2": 734.3619848825895,
+      "n": 8,
+      "polynomial_benchmark_degree": 20,
+      "polynomial_benchmark_log2": 60.0,
+      "source_factor_count": 96,
+      "status": "termwise-power-map-fourier-block-extraction-superpolynomial",
+      "termwise_block_normalization_log2_lower_bound": 363.3561904366979,
+      "termwise_power_map_block_extraction_superpolynomial": true
+    },
+    {
+      "coherent_full_quadrant_sum_compiled": false,
+      "copy_count": 135,
+      "generic_amplification_query_log2_lower_bound": 2975.8219465996062,
+      "log2_group_order": 44.25014046988262,
+      "maximum_possible_fourier_dimension_log2": 22.12507023494131,
+      "maximum_possible_source_carrier_dimension_log2": 5973.768963434154,
+      "n": 16,
+      "polynomial_benchmark_degree": 20,
+      "polynomial_benchmark_log2": 80.0,
+      "source_factor_count": 270,
+      "status": "termwise-power-map-fourier-block-extraction-superpolynomial",
+      "termwise_block_normalization_log2_lower_bound": 2975.8219465996062,
+      "termwise_power_map_block_extraction_superpolynomial": true
+    },
+    {
+      "coherent_full_quadrant_sum_compiled": false,
+      "copy_count": 355,
+      "generic_amplification_query_log2_lower_bound": 20855.81348238086,
+      "log2_group_order": 117.6632636523603,
+      "maximum_possible_fourier_dimension_log2": 58.83163182618015,
+      "maximum_possible_source_carrier_dimension_log2": 41770.45859658791,
+      "n": 32,
+      "polynomial_benchmark_degree": 20,
+      "polynomial_benchmark_log2": 100.0,
+      "source_factor_count": 710,
+      "status": "termwise-power-map-fourier-block-extraction-superpolynomial",
+      "termwise_block_normalization_log2_lower_bound": 20855.81348238086,
+      "termwise_power_map_block_extraction_superpolynomial": true
+    },
+    {
+      "coherent_full_quadrant_sum_compiled": false,
+      "copy_count": 890,
+      "generic_amplification_query_log2_lower_bound": 131643.84026808178,
+      "log2_group_order": 295.99514394172405,
+      "maximum_possible_fourier_dimension_log2": 147.99757197086203,
+      "maximum_possible_source_carrier_dimension_log2": 263435.6781081344,
+      "n": 64,
+      "polynomial_benchmark_degree": 20,
+      "polynomial_benchmark_log2": 120.0,
+      "source_factor_count": 1780,
+      "status": "termwise-power-map-fourier-block-extraction-superpolynomial",
+      "termwise_block_normalization_log2_lower_bound": 131643.84026808178,
+      "termwise_power_map_block_extraction_superpolynomial": true
+    },
+    {
+      "coherent_full_quadrant_sum_compiled": false,
+      "copy_count": 2151,
+      "generic_amplification_query_log2_lower_bound": 770052.8916704144,
+      "log2_group_order": 716.1617220836218,
+      "maximum_possible_fourier_dimension_log2": 358.0808610418109,
+      "maximum_possible_source_carrier_dimension_log2": 1540463.8642018705,
+      "n": 128,
+      "polynomial_benchmark_degree": 20,
+      "polynomial_benchmark_log2": 140.0,
+      "source_factor_count": 4302,
+      "status": "termwise-power-map-fourier-block-extraction-superpolynomial",
+      "termwise_block_normalization_log2_lower_bound": 770052.8916704144,
+      "termwise_power_map_block_extraction_superpolynomial": true
+    }
+  ],
+  "status": "power-map-fourier-primitive-proved-termwise-normalization-fatal",
+  "summary": "Identified every quadrant monomial as a block of an efficient injective power-map Fourier isometry, then proved that extracting those blocks term by term is catastrophically subnormalized. The remaining positive target is an FFT-like coherent whole-sum factorization.",
+  "theorem": {
+    "branch_power_expansion": "Each branch-polar field is a coherent cyclic Fourier sum of paired source actions h^(1-r_i) and h^r_i.",
+    "dimension_lower_bound": "Since every irrep dimension is at most sqrt(|G|), the block normalization is at least |G|^(k/2-1/4).",
+    "exact_block_normalization": "M_(nu,r)=|G|^k/sqrt(d_nu D_Lambda) times the selected Fourier block.",
+    "injective_power_map": "Phi_r(h) is injective because either adjacent output pair multiplies to h, so its group-basis isometry is efficiently reversible.",
+    "natural_copy_consequence": "At k=Theta(log|G|), termwise block extraction or amplification has log cost Omega((log|G|)^2).",
+    "nonlinear_fourier_isometry": "Applying one input and 2k output group QFTs gives an efficient power-map Fourier tensor containing every multiplier monomial block.",
+    "scope": "This rejects termwise power-map block compilation, not an FFT-like whole-sum recursion or arbitrary structured multiplier circuit.",
+    "status": "power-map-fourier-primitive-proved-termwise-normalization-fatal",
+    "surviving_escape": "Only a coherent factorization of the full quadrant coefficient sum, before tiny block selection, can use the efficient power-map isometry.",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "branch_power_expansion": "Each branch-polar field is a coherent cyclic Fourier sum of paired source actions h^(1-r_i) and h^r_i.",
+    "dimension_lower_bound": "Since every irrep dimension is at most sqrt(|G|), the block normalization is at least |G|^(k/2-1/4).",
+    "exact_block_normalization": "M_(nu,r)=|G|^k/sqrt(d_nu D_Lambda) times the selected Fourier block.",
+    "injective_power_map": "Phi_r(h) is injective because either adjacent output pair multiplies to h, so its group-basis isometry is efficiently reversible.",
+    "natural_copy_consequence": "At k=Theta(log|G|), termwise block extraction or amplification has log cost Omega((log|G|)^2).",
+    "nonlinear_fourier_isometry": "Applying one input and 2k output group QFTs gives an efficient power-map Fourier tensor containing every multiplier monomial block.",
+    "scope": "This rejects termwise power-map block compilation, not an FFT-like whole-sum recursion or arbitrary structured multiplier circuit.",
+    "status": "power-map-fourier-primitive-proved-termwise-normalization-fatal",
+    "surviving_escape": "Only a coherent factorization of the full quadrant coefficient sum, before tiny block selection, can use the efficient power-map isometry.",
+    "theorem_verified": true
+  },
+  "zero_controls": [
+    {
+      "control_id": "C5-ONE-PAIR-ZERO",
+      "copy_count": 1,
+      "direct_multiplier_monomial": [
+        -4.965068306494546e-17,
+        0.0
+      ],
+      "direct_to_scaled_block_residual": 8.36819734896752e-18,
+      "exact_power_map_fourier_normalization_verified": true,
+      "exponent_parameters": [
+        2
+      ],
+      "group_order": 5,
+      "input_character": 3,
+      "output_characters": [
+        1,
+        1
+      ],
+      "power_map_image_size": 5,
+      "power_map_is_injective": true,
+      "power_tuple": [
+        -1,
+        2
+      ],
+      "predicted_block_normalization": 5.0,
+      "selection_rule_satisfied": false,
+      "status": "injective-power-map-fourier-block-normalization-verified",
+      "transformed_fourier_block": [
+        -1.0059776145983162e-17,
+        -1.6686109991054715e-18
+      ],
+      "transformed_isometry_residual": 5.881757006344605e-16
+    },
+    {
+      "control_id": "C3-TWO-PAIR-ZERO",
+      "copy_count": 2,
+      "direct_multiplier_monomial": [
+        -1.2819751242557095e-16,
+        -1.9229626863835643e-16
+      ],
+      "direct_to_scaled_block_residual": 3.2803660852883715e-16,
+      "exact_power_map_fourier_normalization_verified": true,
+      "exponent_parameters": [
+        2,
+        1
+      ],
+      "group_order": 3,
+      "input_character": 1,
+      "output_characters": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "power_map_image_size": 3,
+      "power_map_is_injective": true,
+      "power_tuple": [
+        -1,
+        2,
+        0,
+        1
+      ],
+      "predicted_block_normalization": 9.0,
+      "selection_rule_satisfied": false,
+      "status": "injective-power-map-fourier-block-normalization-verified",
+      "transformed_fourier_block": [
+        -1.4629662153058326e-17,
+        1.5080221360556816e-17
+      ],
+      "transformed_isometry_residual": 1.8488431070407703e-15
+    }
+  ]
+}

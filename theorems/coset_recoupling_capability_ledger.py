@@ -30,6 +30,9 @@ from research_registry import (
     upsert_negative_result,
     utc_now,
 )
+from self_dual_wreath_schur_branch_merger_polar_equivalence import (
+    run_schur_branch_merger_polar_equivalence,
+)
 from symmetric_character import kronecker_coefficient
 
 
@@ -151,6 +154,36 @@ CAPABILITIES = (
         supplies_hidden_involution_decoder=False,
         classical_comparison="Not a speedup claim; it is a known circuit primitive in a different tensor decomposition.",
         scope_limit="Schur-Weyl/U(d) coupling is not the internal Kronecker product of two S_n irreps.",
+    ),
+    RepresentationCapability(
+        id="CAP-SCHUR-DILATED-KRONECKER-CARRIER",
+        literature_ids=[
+            "bacon-chuang-harrow-schur-2004",
+            "burchardt-high-dimensional-schur-2025",
+            "christandl-et-al-plethysm-sharp-bqp-2026",
+        ],
+        primitive="Separate-to-joint Schur dilation of diagonal S_n tensor products",
+        proved_scope=(
+            "After adjoining fixed Schur--Weyl companion states, separate inverse Schur transforms, sitewise "
+            "regrouping, and one high-dimensional joint Schur transform route polynomially many Specht factors "
+            "into the diagonal irrep label and an opaque companion subspace carrying the full Kronecker multiplicity."
+        ),
+        availability="proved-polynomial-encoded-carrier-only",
+        uniform_polynomial_gate_complexity_proved=True,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "This is a coherent access primitive, not a task separation; the companion encoding can also retain "
+            "exponentially difficult state-dependent contraction data."
+        ),
+        scope_limit=(
+            "The circuit does not factor the companion into fixed source companions and standard multiplicity "
+            "coordinates. Distinct source-label tuples land in orthogonal subgroup-branch sectors, so the "
+            "controlled router does not realize the physical cross-orientation Gram H_nu. A common output-coordinate "
+            "isometry would preserve H_nu rather than whiten it. The branch intertwiner, orientation polar, Racah "
+            "associator, and decoder remain uncompiled."
+        ),
     ),
     RepresentationCapability(
         id="CAP-WEAK-IRREP-PROJECTION",
@@ -514,6 +547,9 @@ def build_recoupling_capability_report(
     except (json.JSONDecodeError, OSError):
         typical_n9_payload = {}
     typical_n9_metrics = typical_n9_payload.get("headline_metrics", {})
+    schur_branch_merger_metrics = (
+        run_schur_branch_merger_polar_equivalence().headline_metrics
+    )
     unresolved = [
         capability
         for capability in CAPABILITIES
@@ -752,6 +788,25 @@ def build_recoupling_capability_report(
         "unresolved_required_capability_count": len(unresolved),
         "restricted_multiplicity_classical_match_count": 1,
         "exact_holevo_copy_budget_theorem_count": 1,
+        "schur_dilated_kronecker_carrier_polynomial_count": sum(
+            capability.id == "CAP-SCHUR-DILATED-KRONECKER-CARRIER"
+            and capability.uniform_polynomial_gate_complexity_proved
+            for capability in CAPABILITIES
+        ),
+        "schur_branch_merger_polar_equivalence_theorem_count": int(
+            schur_branch_merger_metrics.get(
+                "exact_schur_branch_polar_equivalence_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "physical_invariant_schur_companion_interface_count": int(
+            schur_branch_merger_metrics.get(
+                "physical_invariant_schur_companion_interface_count",
+                0,
+            )
+            or 0
+        ),
         "growth_record_count": len(growth),
         "maximum_n": max(n_values),
         "maximum_partition_count": max(record.partition_count for record in growth),
@@ -776,6 +831,7 @@ def build_recoupling_capability_report(
                 ("panova-classical-multiplicities-2025", "https://arxiv.org/abs/2502.20253"),
                 ("burchardt-high-dimensional-schur-2025", "https://arxiv.org/abs/2509.22640"),
                 ("yoshida-random-dilation-2025", "https://arxiv.org/abs/2512.21260"),
+                ("christandl-et-al-plethysm-sharp-bqp-2026", "https://arxiv.org/abs/2602.08441"),
             )
         ],
         capabilities=list(CAPABILITIES),
@@ -859,6 +915,16 @@ def build_recoupling_capability_report(
                 "reason": "These are distinct representation-theoretic decompositions.",
             },
             {
+                "from": "polynomial separate-to-joint Schur dilation",
+                "invalid_to": "exposed Kronecker coordinates, improved orientation conditioning, or the physical PGM",
+                "reason": (
+                    "The multiplicity is carried by an opaque subspace of the joint companion register. Controlled "
+                    "source tuples occupy orthogonal branch sectors and therefore do not realize the cross-orientation "
+                    "Gram. The natural encoded merger polar is exactly the original physical orientation polar "
+                    "conjugated by the branch encoder; an isometric flag embedding likewise preserves H_nu."
+                ),
+            },
+            {
                 "from": "restricted quantum multiplicity estimator",
                 "invalid_to": "superpolynomial advantage or Shor-level mechanism",
                 "reason": "Many proposed restricted families now have polynomial classical algorithms.",
@@ -875,6 +941,32 @@ def build_recoupling_capability_report(
             "holevo_copy_budget_constructs_measurement": False,
             "multiplicity_counting_implies_coherent_transform": False,
             "schur_transform_implies_internal_kronecker_transform": False,
+            "schur_dilated_global_isotypic_router_polynomial_proved": True,
+            "schur_dilated_encoded_multiplicity_carrier_proved": True,
+            "schur_dilated_standard_multiplicity_coordinates_exposed": False,
+            "schur_dilated_controlled_router_realizes_orientation_gram": False,
+            "schur_dilated_cross_orientation_branch_intertwiner_compiled": False,
+            "schur_dilation_improves_orientation_gram_conditioning": False,
+            "schur_branch_merger_polar_equivalence_proved": bool(
+                schur_branch_merger_metrics.get(
+                    "exact_schur_branch_polar_equivalence_theorem_count",
+                    0,
+                )
+            ),
+            "physical_invariant_to_schur_companion_interface_compiled": bool(
+                schur_branch_merger_metrics.get(
+                    "physical_invariant_schur_companion_interface_count",
+                    0,
+                )
+            ),
+            "physical_encoded_orientation_polar_compilers_interreducible": bool(
+                schur_branch_merger_metrics.get(
+                    "physical_invariant_schur_companion_interface_count",
+                    0,
+                )
+            ),
+            "schur_branch_encoding_removes_orientation_inverse_square_root": False,
+            "schur_branch_structured_direct_polar_compiled": False,
             "diagonal_jm_label_transform_polynomial_proved": True,
             "diagonal_jm_labels_resolve_multiplicity_basis": False,
             "bounded_support_commutant_block_encoding_polynomial_proved": True,
@@ -910,20 +1002,22 @@ def build_recoupling_capability_report(
                 "family. Complete encoded labels and left/right relabelling are proved on one stable final branch, "
                 "and its three-copy frame is directly block-encoded, all-n conditioned, and inverse-filterable, but "
                 "the fixed branch is factorially rare under natural input. Known primitives still stop before transfer "
-                "to typical irreps, full-sector coverage, an outcome-information theorem, hidden-involution decoding, "
-                "and separation."
+                "to a structured orientation polar on the now-available Schur-dilated companion carrier, an "
+                "outcome-information theorem, hidden-involution decoding, and separation."
             ),
         },
-        status="known-primitives-separated-from-open-recoupling-and-decoder",
+        status="dilated-isotypic-routing-available-polar-and-decoder-open",
         summary=(
             f"Classified {len(CAPABILITIES)} representation primitives and exact finite Kronecker growth through "
-            f"n={max(n_values)} without transferring solved QFT/counting results to the open decoder."
+            f"n={max(n_values)}. Separate-to-joint Schur dilation now supplies an encoded multiplicity carrier, "
+            "but no exposed coordinates, orientation polar, or decoder."
         ),
         falsifiers_triggered=[
             "The S_n QFT is already polynomial and cannot be presented as the missing breakthrough.",
             "Exact Holevo/Fano accounting charges copies but does not construct a collective measurement or decoder.",
             "#BQP multiplicity counting does not construct a coherent Kronecker basis.",
             "Schur-Weyl Clebsch-Gordan circuits do not automatically solve internal Specht tensor products.",
+            "Separate-to-joint Schur dilation carries fixed-source Kronecker multiplicity coherently, but its natural normalized branch merger is the original orientation polar in encoded coordinates.",
             "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
             "An encoded stable shape router does not construct a compressed Clebsch channel isometry.",
             "An encoded left/right relabelling isometry does not construct the state-dependent frame filter or decoder.",
@@ -947,4 +1041,75 @@ def write_recoupling_capability_report(
     payload = asdict(build_recoupling_capability_report(n_values=n_values))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        result_id = registry_result_id or f"RESULT-{registry_experiment_id}-LATEST"
+        upsert_experiment_result(
+            ExperimentResultRecord(
+                id=result_id,
+                experiment_id=registry_experiment_id,
+                candidate_id=registry_candidate_id,
+                created_at=payload["created_at"],
+                status=payload["status"],
+                summary=payload["summary"],
+                metrics=payload["headline_metrics"],
+                falsifiers_triggered=payload["falsifiers_triggered"],
+                artifacts={"coset_recoupling_capability_ledger": str(output_path)},
+            )
+        )
+        for negative in (
+            NegativeResultRecord(
+                id="NEG-COSET-SN-QFT-AS-MULTICOPY-DECODER",
+                source=registry_experiment_id,
+                claim="An efficient S_n QFT supplies the missing multiregister decoder.",
+                reason_invalid=(
+                    "The QFT resolves regular-representation labels and matrix indices but does not implement the "
+                    "orientation polar, a multiplicity-space associator, or hidden-involution reconstruction."
+                ),
+                lesson="Treat the QFT as an available basis change and charge every subsequent collective operation.",
+                applies_to=[registry_candidate_id, registry_experiment_id, "PO-MEASUREMENT"],
+                evidence=payload["claim_gate"],
+            ),
+            NegativeResultRecord(
+                id="NEG-COSET-KRONECKER-COUNT-AS-TRANSFORM",
+                source=registry_experiment_id,
+                claim="#BQP membership or a Kronecker projector supplies a coherent multiplicity transform.",
+                reason_invalid=(
+                    "Counting or projecting an invariant space does not expose its basis or state-dependent "
+                    "transition amplitudes. Schur dilation adds fixed-source encoded carriers in orthogonal branch "
+                    "sectors; a separate branch intertwiner is required before the cross-orientation H_nu kernel appears."
+                ),
+                lesson="Separate dimension, isotypic routing, encoded carriers, exposed coordinates, and polars.",
+                applies_to=[registry_candidate_id, registry_experiment_id, "PO-MEASUREMENT"],
+                evidence=payload["claim_gate"],
+            ),
+            NegativeResultRecord(
+                id="NEG-COSET-RESTRICTED-MULTIPLICITY-AS-BREAKTHROUGH",
+                source=registry_experiment_id,
+                claim="Restricted multiplicity estimation alone is a Shor-level quantum advantage.",
+                reason_invalid=(
+                    "Known promises cover restricted dimension-ratio regimes, and polynomial classical algorithms "
+                    "match many proposed families without producing a natural hidden-involution decoder."
+                ),
+                lesson="Require a natural input model, end-to-end decoder, and explicit classical separation.",
+                applies_to=[registry_candidate_id, registry_experiment_id, "PO-CLASSICAL-BASELINE"],
+                evidence=payload["claim_gate"],
+            ),
+            NegativeResultRecord(
+                id="NEG-COSET-SCHUR-ENCODING-AS-FREE-BRANCH-POLAR",
+                source=registry_experiment_id,
+                claim="Polynomial Schur-dilated multiplicity access automatically compiles the cross-orientation branch merger.",
+                reason_invalid=(
+                    "A branchwise Schur isometry conjugates the raw merger Gram and preserves every nonzero singular "
+                    "value. Its normalized merger is exactly the physical orientation polar in encoded coordinates; "
+                    "the inverse-square-root operation is not removed."
+                ),
+                lesson=(
+                    "Use Schur companion structure only if it yields a direct polar compiler or a decoder that "
+                    "retains branch characters; isotypic routing alone is not the missing measurement."
+                ),
+                applies_to=[registry_candidate_id, registry_experiment_id, "PO-MEASUREMENT"],
+                evidence=payload["claim_gate"],
+            ),
+        ):
+            upsert_negative_result(negative)
     return payload

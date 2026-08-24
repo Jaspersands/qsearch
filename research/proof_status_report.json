@@ -2,8 +2,8 @@
   "blocking_status_count": 24,
   "candidate_count": 8,
   "counterexample_search_count": 8,
-  "created_at": "2026-08-10T22:07:23.793227+00:00",
-  "lemma_count": 1184,
+  "created_at": "2026-08-24T19:50:53.821462+00:00",
+  "lemma_count": 1202,
   "needs_evidence_count": 0,
   "proof_debt": {
     "counterexample_search_count": 8,
@@ -73,8 +73,8 @@
         "target_claim": "The coset observable is not a disguised classical invariant."
       }
     ],
-    "created_at": "2026-08-10T22:07:23.790965+00:00",
-    "lemma_count": 1184,
+    "created_at": "2026-08-24T19:50:53.818749+00:00",
+    "lemma_count": 1202,
     "lemmas": [
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -1930,6 +1930,43 @@
         "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-STABLE-RACAH-NINE-SHAPE-TRACES",
         "statement": "The support-intersection-two orbit Hamiltonian has an exact cubic-or-lower all-n trace polynomial on every second-stage block in the exact nine-shape stable family.",
         "status": "proved-exact-all-nine-stable-shape-traces"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the separate-to-joint Schur circuit, the GL branching/Kronecker dimension identity, a multiplicity-greater-than-one projector rank, polynomial log(d^k) scaling, and exact orthogonality of distinct source branch sectors. A common coordinate isometry must preserve Gram, but the controlled router must not be counted as the physical orientation map.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
+        "statement": "Separate inverse Schur transforms and one joint high-dimensional Schur transform give uniform polynomial global isotypic routing with Kronecker multiplicity coherently encoded in an opaque fixed-source companion subspace. Distinct source-label tuples occupy orthogonal branch sectors, so the controlled router does not itself realize the cross-orientation Gram H_nu.",
+        "status": "proved-polynomial-schur-dilated-multiplicity-carrier"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "LEMMA-CODE-COSET-COLLECTIVE-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY"
+        ],
+        "falsification_test": "For every active orientation block, verify source isotypic synthesis is an isometry, the invariant subspace factors exactly as |Omega_nu> tensor multiplicity, and Bell contraction is identity on multiplicity. Preserve the opaque companion basis.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-PHYSICAL-SCHUR-COMPANION-INTERFACE",
+        "statement": "On Inv(V_nu^* tensor sigma_e), the uniform fixed-source Schur decomposition factors as the canonical Bell invariant |Omega_nu> tensored with the opaque companion multiplicity state. Bell unpreparation therefore compiles a coherent physical-invariant-to-companion interface without exposing standard Kronecker coordinates.",
+        "status": "proved-polynomial-physical-invariant-schur-companion-interface"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "LEMMA-CODE-COSET-COLLECTIVE-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
+          "LEMMA-CODE-COSET-COLLECTIVE-COSET-PHYSICAL-SCHUR-COMPANION-INTERFACE",
+          "PO-MEASUREMENT",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify S_B S_B^*=sum_e E_e, conjugation of the domain Gram, equality of all nonzero singular values, polar transport for both the full subspace merger and L_nu, and the which-path environment constraint on every nonzero cross-range overlap. Do not promote this equivalence to a circuit lower bound or a compiled polar.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-SCHUR-BRANCH-MERGER-POLAR-EQUIVALENCE",
+        "statement": "For every orthogonal branchwise Schur encoding B, the natural raw merger S_B=S B^* has the same nonzero singular spectrum as the physical merger S, and polar(S_B)=polar(S)B^*. The analogous joint-character flag embedding conjugates I tensor H_nu and preserves its analysis polar.",
+        "status": "proved-schur-branch-merger-is-orientation-polar-in-encoded-coordinates"
       },
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -5156,6 +5193,43 @@
           "PO-COMPLEXITY",
           "PO-NO-GO"
         ],
+        "falsification_test": "Verify the separate-to-joint Schur circuit, the GL branching/Kronecker dimension identity, a multiplicity-greater-than-one projector rank, polynomial log(d^k) scaling, and exact orthogonality of distinct source branch sectors. A common coordinate isometry must preserve Gram, but the controlled router must not be counted as the physical orientation map.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
+        "statement": "Separate inverse Schur transforms and one joint high-dimensional Schur transform give uniform polynomial global isotypic routing with Kronecker multiplicity coherently encoded in an opaque fixed-source companion subspace. Distinct source-label tuples occupy orthogonal branch sectors, so the controlled router does not itself realize the cross-orientation Gram H_nu.",
+        "status": "proved-polynomial-schur-dilated-multiplicity-carrier"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY"
+        ],
+        "falsification_test": "For every active orientation block, verify source isotypic synthesis is an isometry, the invariant subspace factors exactly as |Omega_nu> tensor multiplicity, and Bell contraction is identity on multiplicity. Preserve the opaque companion basis.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-PHYSICAL-SCHUR-COMPANION-INTERFACE",
+        "statement": "On Inv(V_nu^* tensor sigma_e), the uniform fixed-source Schur decomposition factors as the canonical Bell invariant |Omega_nu> tensored with the opaque companion multiplicity state. Bell unpreparation therefore compiles a coherent physical-invariant-to-companion interface without exposing standard Kronecker coordinates.",
+        "status": "proved-polynomial-physical-invariant-schur-companion-interface"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
+          "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-PHYSICAL-SCHUR-COMPANION-INTERFACE",
+          "PO-MEASUREMENT",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify S_B S_B^*=sum_e E_e, conjugation of the domain Gram, equality of all nonzero singular values, polar transport for both the full subspace merger and L_nu, and the which-path environment constraint on every nonzero cross-range overlap. Do not promote this equivalence to a circuit lower bound or a compiled polar.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-SCHUR-BRANCH-MERGER-POLAR-EQUIVALENCE",
+        "statement": "For every orthogonal branchwise Schur encoding B, the natural raw merger S_B=S B^* has the same nonzero singular spectrum as the physical merger S, and polar(S_B)=polar(S)B^*. The analogous joint-character flag embedding conjugates I tensor H_nu and preserves its analysis polar.",
+        "status": "proved-schur-branch-merger-is-orientation-polar-in-encoded-coordinates"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
         "falsification_test": "Require a cited circuit theorem with gate count, precision, multiplicity basis, promises, and uniformity; a unitary definition, #BQP count, or Schur-Weyl transform does not satisfy it.",
         "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-INTERNAL-KRONECKER-TRANSFORM",
         "statement": "There is a uniform polynomial-gate internal S_n Kronecker transform with explicit multiplicity basis and state-transition access for unrestricted relevant irreps.",
@@ -8374,6 +8448,43 @@
           "PO-COMPLEXITY",
           "PO-NO-GO"
         ],
+        "falsification_test": "Verify the separate-to-joint Schur circuit, the GL branching/Kronecker dimension identity, a multiplicity-greater-than-one projector rank, polynomial log(d^k) scaling, and exact orthogonality of distinct source branch sectors. A common coordinate isometry must preserve Gram, but the controlled router must not be counted as the physical orientation map.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
+        "statement": "Separate inverse Schur transforms and one joint high-dimensional Schur transform give uniform polynomial global isotypic routing with Kronecker multiplicity coherently encoded in an opaque fixed-source companion subspace. Distinct source-label tuples occupy orthogonal branch sectors, so the controlled router does not itself realize the cross-orientation Gram H_nu.",
+        "status": "proved-polynomial-schur-dilated-multiplicity-carrier"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY"
+        ],
+        "falsification_test": "For every active orientation block, verify source isotypic synthesis is an isometry, the invariant subspace factors exactly as |Omega_nu> tensor multiplicity, and Bell contraction is identity on multiplicity. Preserve the opaque companion basis.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-PHYSICAL-SCHUR-COMPANION-INTERFACE",
+        "statement": "On Inv(V_nu^* tensor sigma_e), the uniform fixed-source Schur decomposition factors as the canonical Bell invariant |Omega_nu> tensored with the opaque companion multiplicity state. Bell unpreparation therefore compiles a coherent physical-invariant-to-companion interface without exposing standard Kronecker coordinates.",
+        "status": "proved-polynomial-physical-invariant-schur-companion-interface"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
+          "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-PHYSICAL-SCHUR-COMPANION-INTERFACE",
+          "PO-MEASUREMENT",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify S_B S_B^*=sum_e E_e, conjugation of the domain Gram, equality of all nonzero singular values, polar transport for both the full subspace merger and L_nu, and the which-path environment constraint on every nonzero cross-range overlap. Do not promote this equivalence to a circuit lower bound or a compiled polar.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-SCHUR-BRANCH-MERGER-POLAR-EQUIVALENCE",
+        "statement": "For every orthogonal branchwise Schur encoding B, the natural raw merger S_B=S B^* has the same nonzero singular spectrum as the physical merger S, and polar(S_B)=polar(S)B^*. The analogous joint-character flag embedding conjugates I tensor H_nu and preserves its analysis polar.",
+        "status": "proved-schur-branch-merger-is-orientation-polar-in-encoded-coordinates"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
         "falsification_test": "Require a cited circuit theorem with gate count, precision, multiplicity basis, promises, and uniformity; a unitary definition, #BQP count, or Schur-Weyl transform does not satisfy it.",
         "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-INTERNAL-KRONECKER-TRANSFORM",
         "statement": "There is a uniform polynomial-gate internal S_n Kronecker transform with explicit multiplicity basis and state-transition access for unrestricted relevant irreps.",
@@ -10345,6 +10456,43 @@
         "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-STABLE-RACAH-NINE-SHAPE-TRACES",
         "statement": "The support-intersection-two orbit Hamiltonian has an exact cubic-or-lower all-n trace polynomial on every second-stage block in the exact nine-shape stable family.",
         "status": "proved-exact-all-nine-stable-shape-traces"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the separate-to-joint Schur circuit, the GL branching/Kronecker dimension identity, a multiplicity-greater-than-one projector rank, polynomial log(d^k) scaling, and exact orthogonality of distinct source branch sectors. A common coordinate isometry must preserve Gram, but the controlled router must not be counted as the physical orientation map.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
+        "statement": "Separate inverse Schur transforms and one joint high-dimensional Schur transform give uniform polynomial global isotypic routing with Kronecker multiplicity coherently encoded in an opaque fixed-source companion subspace. Distinct source-label tuples occupy orthogonal branch sectors, so the controlled router does not itself realize the cross-orientation Gram H_nu.",
+        "status": "proved-polynomial-schur-dilated-multiplicity-carrier"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY"
+        ],
+        "falsification_test": "For every active orientation block, verify source isotypic synthesis is an isometry, the invariant subspace factors exactly as |Omega_nu> tensor multiplicity, and Bell contraction is identity on multiplicity. Preserve the opaque companion basis.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-PHYSICAL-SCHUR-COMPANION-INTERFACE",
+        "statement": "On Inv(V_nu^* tensor sigma_e), the uniform fixed-source Schur decomposition factors as the canonical Bell invariant |Omega_nu> tensored with the opaque companion multiplicity state. Bell unpreparation therefore compiles a coherent physical-invariant-to-companion interface without exposing standard Kronecker coordinates.",
+        "status": "proved-polynomial-physical-invariant-schur-companion-interface"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
+          "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-PHYSICAL-SCHUR-COMPANION-INTERFACE",
+          "PO-MEASUREMENT",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify S_B S_B^*=sum_e E_e, conjugation of the domain Gram, equality of all nonzero singular values, polar transport for both the full subspace merger and L_nu, and the which-path environment constraint on every nonzero cross-range overlap. Do not promote this equivalence to a circuit lower bound or a compiled polar.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-SCHUR-BRANCH-MERGER-POLAR-EQUIVALENCE",
+        "statement": "For every orthogonal branchwise Schur encoding B, the natural raw merger S_B=S B^* has the same nonzero singular spectrum as the physical merger S, and polar(S_B)=polar(S)B^*. The analogous joint-character flag embedding conjugates I tensor H_nu and preserves its analysis polar.",
+        "status": "proved-schur-branch-merger-is-orientation-polar-in-encoded-coordinates"
       },
       {
         "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
@@ -12332,6 +12480,43 @@
           "PO-COMPLEXITY",
           "PO-NO-GO"
         ],
+        "falsification_test": "Verify the separate-to-joint Schur circuit, the GL branching/Kronecker dimension identity, a multiplicity-greater-than-one projector rank, polynomial log(d^k) scaling, and exact orthogonality of distinct source branch sectors. A common coordinate isometry must preserve Gram, but the controlled router must not be counted as the physical orientation map.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
+        "statement": "Separate inverse Schur transforms and one joint high-dimensional Schur transform give uniform polynomial global isotypic routing with Kronecker multiplicity coherently encoded in an opaque fixed-source companion subspace. Distinct source-label tuples occupy orthogonal branch sectors, so the controlled router does not itself realize the cross-orientation Gram H_nu.",
+        "status": "proved-polynomial-schur-dilated-multiplicity-carrier"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY"
+        ],
+        "falsification_test": "For every active orientation block, verify source isotypic synthesis is an isometry, the invariant subspace factors exactly as |Omega_nu> tensor multiplicity, and Bell contraction is identity on multiplicity. Preserve the opaque companion basis.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-PHYSICAL-SCHUR-COMPANION-INTERFACE",
+        "statement": "On Inv(V_nu^* tensor sigma_e), the uniform fixed-source Schur decomposition factors as the canonical Bell invariant |Omega_nu> tensored with the opaque companion multiplicity state. Bell unpreparation therefore compiles a coherent physical-invariant-to-companion interface without exposing standard Kronecker coordinates.",
+        "status": "proved-polynomial-physical-invariant-schur-companion-interface"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
+          "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-PHYSICAL-SCHUR-COMPANION-INTERFACE",
+          "PO-MEASUREMENT",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify S_B S_B^*=sum_e E_e, conjugation of the domain Gram, equality of all nonzero singular values, polar transport for both the full subspace merger and L_nu, and the which-path environment constraint on every nonzero cross-range overlap. Do not promote this equivalence to a circuit lower bound or a compiled polar.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-SCHUR-BRANCH-MERGER-POLAR-EQUIVALENCE",
+        "statement": "For every orthogonal branchwise Schur encoding B, the natural raw merger S_B=S B^* has the same nonzero singular spectrum as the physical merger S, and polar(S_B)=polar(S)B^*. The analogous joint-character flag embedding conjugates I tensor H_nu and preserves its analysis polar.",
+        "status": "proved-schur-branch-merger-is-orientation-polar-in-encoded-coordinates"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
         "falsification_test": "Require a cited circuit theorem with gate count, precision, multiplicity basis, promises, and uniformity; a unitary definition, #BQP count, or Schur-Weyl transform does not satisfy it.",
         "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-INTERNAL-KRONECKER-TRANSFORM",
         "statement": "There is a uniform polynomial-gate internal S_n Kronecker transform with explicit multiplicity basis and state-transition access for unrestricted relevant irreps.",
@@ -14303,6 +14488,43 @@
         "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-STABLE-RACAH-NINE-SHAPE-TRACES",
         "statement": "The support-intersection-two orbit Hamiltonian has an exact cubic-or-lower all-n trace polynomial on every second-stage block in the exact nine-shape stable family.",
         "status": "proved-exact-all-nine-stable-shape-traces"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the separate-to-joint Schur circuit, the GL branching/Kronecker dimension identity, a multiplicity-greater-than-one projector rank, polynomial log(d^k) scaling, and exact orthogonality of distinct source branch sectors. A common coordinate isometry must preserve Gram, but the controlled router must not be counted as the physical orientation map.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
+        "statement": "Separate inverse Schur transforms and one joint high-dimensional Schur transform give uniform polynomial global isotypic routing with Kronecker multiplicity coherently encoded in an opaque fixed-source companion subspace. Distinct source-label tuples occupy orthogonal branch sectors, so the controlled router does not itself realize the cross-orientation Gram H_nu.",
+        "status": "proved-polynomial-schur-dilated-multiplicity-carrier"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY"
+        ],
+        "falsification_test": "For every active orientation block, verify source isotypic synthesis is an isometry, the invariant subspace factors exactly as |Omega_nu> tensor multiplicity, and Bell contraction is identity on multiplicity. Preserve the opaque companion basis.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-PHYSICAL-SCHUR-COMPANION-INTERFACE",
+        "statement": "On Inv(V_nu^* tensor sigma_e), the uniform fixed-source Schur decomposition factors as the canonical Bell invariant |Omega_nu> tensored with the opaque companion multiplicity state. Bell unpreparation therefore compiles a coherent physical-invariant-to-companion interface without exposing standard Kronecker coordinates.",
+        "status": "proved-polynomial-physical-invariant-schur-companion-interface"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
+          "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-PHYSICAL-SCHUR-COMPANION-INTERFACE",
+          "PO-MEASUREMENT",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify S_B S_B^*=sum_e E_e, conjugation of the domain Gram, equality of all nonzero singular values, polar transport for both the full subspace merger and L_nu, and the which-path environment constraint on every nonzero cross-range overlap. Do not promote this equivalence to a circuit lower bound or a compiled polar.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-SCHUR-BRANCH-MERGER-POLAR-EQUIVALENCE",
+        "statement": "For every orthogonal branchwise Schur encoding B, the natural raw merger S_B=S B^* has the same nonzero singular spectrum as the physical merger S, and polar(S_B)=polar(S)B^*. The analogous joint-character flag embedding conjugates I tensor H_nu and preserves its analysis polar.",
+        "status": "proved-schur-branch-merger-is-orientation-polar-in-encoded-coordinates"
       },
       {
         "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
