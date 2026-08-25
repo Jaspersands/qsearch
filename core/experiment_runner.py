@@ -1494,6 +1494,7 @@ DCP_SUBSET_SUM_CARRY_RELATION_EXPERIMENTS = {
 }
 
 DCP_SUBSET_SUM_MARKER_COSET_EXPERIMENTS = {
+    "EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
     "EXP-CODE-SELF-DUAL-WREATH-SCHUR-COMPANION-TRANSFORM-SCOPE-BOUNDARY",
     "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-CYCLIC-POLAR-COMPILER",
     "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-CYCLIC-QUADRANT-OVERLAP",
@@ -2408,6 +2409,7 @@ def supported_experiment_ids() -> list[str]:
         | {"EXP-CODE-SELF-DUAL-WREATH-SPLIT-SECTOR-BRANCH-REGULARITY"}
         | {"EXP-CODE-SELF-DUAL-WREATH-TRACE-BIASED-COEFFICIENT-RANK-NO-GO"}
         | {"EXP-CODE-SELF-DUAL-WREATH-SCHUR-COMPANION-TRANSFORM-SCOPE-BOUNDARY"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY"}
         | DCP_RECURSIVE_DECODER_EXPERIMENTS
         | DCP_RECURRENCE_EXPERIMENTS
         | DCP_SCHEDULE_SEARCH_EXPERIMENTS
@@ -13746,6 +13748,22 @@ def run_experiment(experiment_id: str) -> RunnerResult:
                 )
             except TypeError:
                 payload = write_schur_companion_transform_scope_boundary_report()
+            runner_result = RunnerResult(
+                experiment_id, "completed", result_id, payload.get("summary", "")
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY"
+        ):
+            try:
+                payload = write_addressed_cross_map_pair_polar_gram_boundary_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_addressed_cross_map_pair_polar_gram_boundary_report()
             runner_result = RunnerResult(
                 experiment_id, "completed", result_id, payload.get("summary", "")
             )

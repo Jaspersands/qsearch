@@ -1,0 +1,400 @@
+{
+  "addressed_cross_map_control": {
+    "addressed_cross_map_block_encoding_normalization": 1.0,
+    "ambient_dimension": 6,
+    "branch_count": 3,
+    "branch_dimension": 3,
+    "exact_addressed_cross_map_oracle_verified": true,
+    "maximum_decoded_cross_map_residual": 1.1102230246251565e-16,
+    "maximum_pair_polar_unitarity_residual": 2.5740863769159825e-15,
+    "maximum_projector_lcu_unitarity_residual": 4.440892098500627e-16,
+    "maximum_projector_signal_block_residual": 0.0,
+    "ordered_pair_query_count": 9,
+    "status": "normalization-one-addressed-cross-map-verified"
+  },
+  "adversarial_audit": [
+    {
+      "objection": "The companion stack cannot implement even a queried raw J_f^*J_e block.",
+      "resolution": "That companion-only closure omits the already-compiled physical interface; decoding, E_f projection, and re-encoding supply the raw block at alpha one.",
+      "resolved": true
+    },
+    {
+      "objection": "Alpha-one entry access compiles the complete dense orientation matrix.",
+      "resolution": "False. A SELECT query retains e,f; converting entry queries into an address-transition sum still requires a global assembly and normalization theorem.",
+      "resolved": true
+    },
+    {
+      "objection": "Direct pair polars may replace every cross-map magnitude by one.",
+      "resolution": "False on nonflat cycles: the resulting identity-diagonal block kernel is indefinite.",
+      "resolved": true
+    },
+    {
+      "objection": "Indefiniteness is an arbitrary-circuit lower bound.",
+      "resolution": "It kills only the phase-only Gram ansatz; metric-aware holonomy resolvers and direct global transforms remain open.",
+      "resolved": true
+    },
+    {
+      "objection": "The all-n fixed-point-free embedding proves natural-mass failure.",
+      "resolution": "It does not. Natural Plancherel weight for the witness is explicitly open.",
+      "resolved": true
+    }
+  ],
+  "circuit_contract": [
+    {
+      "normalization": 1.0,
+      "operation": "Retain e,f and compute factor membership controls bitwise.",
+      "polynomial": true,
+      "step": "coherent_pair_address"
+    },
+    {
+      "normalization": 1.0,
+      "operation": "Apply the proved branch-e Schur/Bell interface in reverse.",
+      "polynomial": true,
+      "step": "decode_source_companion"
+    },
+    {
+      "normalization": 1.0,
+      "operation": "Use one LCU ancilla and supplied-label reflection 2E_f-I.",
+      "polynomial": true,
+      "step": "project_target_range"
+    },
+    {
+      "normalization": 1.0,
+      "operation": "Apply the branch-f Schur/Bell interface and uncompute masks.",
+      "polynomial": true,
+      "step": "encode_target_companion"
+    },
+    {
+      "normalization": 1.0,
+      "operation": "Use coherent GPE row reassociation instead of amplifying the raw cross map.",
+      "polynomial": true,
+      "step": "optional_pair_polar"
+    }
+  ],
+  "claim_gate": {
+    "addressed_raw_cross_map_block_encoding_normalization_one": true,
+    "classical_separation_proved": false,
+    "direct_gpe_pair_polar_compiled": true,
+    "global_address_transition_kernel_polynomial_normalization_proved": false,
+    "global_operator_valued_metric_assembly_compiled": false,
+    "hidden_involution_decoder_proved": false,
+    "operator_valued_cross_metric_retention_required": true,
+    "pair_polar_inverse_carrier_amplification_required": false,
+    "phase_only_pair_polar_block_kernel_positive_semidefinite": false,
+    "phase_only_pair_polar_global_gram_ansatz_refuted": true,
+    "physical_pgm_compiled": false,
+    "physical_schur_interface_supplies_addressed_raw_cross_map_block_encoding": true,
+    "positive_natural_mass_holonomy_metric_event_proved": false,
+    "reason": "Raw addressed cross maps and their pair polars are polynomially accessible at alpha one, but pair phases alone form an indefinite block kernel on nonflat cycles. The global positive metric assembly and its natural spectral window remain the bottleneck.",
+    "speedup_claim_allowed": false,
+    "uniform_coherent_pair_query_without_exponential_table": true
+  },
+  "created_at": "2026-08-25T15:26:59.103468+00:00",
+  "falsifiers_triggered": [
+    "The physical-interface/projector sandwich already block-encodes each queried raw cross map at alpha one.",
+    "Small pair principal correlations do not obstruct the direct coherent-GPE pair polar.",
+    "Entry-query normalization does not equal full dense address-transition normalization.",
+    "Pair polar phases cannot be promoted to a global Gram without retaining the positive metric factors.",
+    "A scalable fixed-point-free holonomy witness is not automatically a positive-natural-mass obstruction."
+  ],
+  "headline_metrics": {
+    "addressed_raw_cross_map_block_encoding_normalization": 1.0,
+    "addressed_raw_cross_map_block_encoding_theorem_count": 1,
+    "complete_orientation_polar_compiler_count": 0,
+    "direct_gpe_pair_polar_compiler_count": 1,
+    "finite_control_failure_count": 0,
+    "finite_phase_only_negative_eigenvalue_count": 2,
+    "global_operator_valued_metric_assembly_compiler_count": 0,
+    "hidden_involution_decoder_count": 0,
+    "minimum_tensor_phase_only_negative_fraction": 0.16666384415203192,
+    "new_quantum_algorithm_count": 0,
+    "phase_only_global_pair_polar_gram_no_go_theorem_count": 1,
+    "uniform_coherent_pair_query_theorem_count": 1
+  },
+  "pair_polar_gram_control": {
+    "branch_count": 3,
+    "branch_dimension": 3,
+    "exact_metric_retention_boundary_verified": true,
+    "maximum_nontrivial_pair_correlation": 0.4999999999999999,
+    "maximum_phase_only_spectrum_residual": 9.793829988234617e-16,
+    "maximum_physical_spectrum_residual": 1.1102230246251565e-15,
+    "minimum_nontrivial_pair_correlation": 0.4999999999999999,
+    "negative_holonomy_multiplicity": 2,
+    "phase_only_kernel_minimum_eigenvalue": -1.0000000000000004,
+    "phase_only_kernel_negative_eigenvalue_count": 2,
+    "phase_only_kernel_positive_semidefinite": false,
+    "phase_only_kernel_zero_eigenvalue_count": 2,
+    "physical_gram_dimension": 9,
+    "physical_gram_minimum_eigenvalue": -2.3057489517499797e-16,
+    "physical_gram_minimum_positive_eigenvalue": 1.499999999999999,
+    "physical_gram_rank": 5,
+    "positive_holonomy_multiplicity": 1,
+    "status": "phase-only-pair-polar-gram-indefinite-metric-required"
+  },
+  "primary_literature": [
+    {
+      "id": "bacon-chuang-harrow-schur-2004",
+      "url": "https://arxiv.org/abs/quant-ph/0407082",
+      "use": "coherent generalized phase estimation and Schur carrier-row access"
+    },
+    {
+      "id": "beals-symmetric-qft-1997",
+      "url": "https://doi.org/10.1145/258533.258548",
+      "use": "uniform polynomial S_n Fourier transform"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "compile_addressed_raw_cross_map",
+      "resolution": "Physical-interface/projector/interface sandwich gives an alpha-one signal block.",
+      "resolved": true
+    },
+    {
+      "obligation": "make_pair_query_uniform_without_exponential_table",
+      "resolution": "Orientation masks control O(n log n) factor actions bitwise.",
+      "resolved": true
+    },
+    {
+      "obligation": "compile_each_pair_polar_without_inverse_correlation",
+      "resolution": "The existing coherent-GPE carrier row swap implements the partial polar directly.",
+      "resolved": true
+    },
+    {
+      "obligation": "test_phase_only_global_pair_polar_gram",
+      "resolution": "The exact S3 holonomy block has two eigenvalues -1 and tensor-extensive negativity.",
+      "resolved": true
+    },
+    {
+      "obligation": "compile_global_operator_valued_metric_assembly",
+      "resolution": "No coherent PSD assembly of all |J_f^*J_e| factors and pair phases is known.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_polynomial_full_kernel_normalization_and_window",
+      "resolution": "Entry-query alpha=1 does not set the normalization or hard edge of the full address-transition operator.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_positive_natural_mass_holonomy_metric_event",
+      "resolution": "The scalable S3 witness has no proved positive Plancherel mass in the physical Schur ensemble.",
+      "resolved": false
+    },
+    {
+      "obligation": "decode_hidden_involution_and_separate_classically",
+      "resolution": "No outcome-information, decoder, or classical lower bound is supplied.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "addressed_raw_cross_map_normalization": 1.0,
+      "coherent_pair_query_qubit_count": 96,
+      "complete_orientation_polar_polynomial": false,
+      "direct_gpe_pair_polar_polynomial": true,
+      "full_address_transition_gram_normalization_one_proved": false,
+      "information_threshold_copy_count": 48,
+      "invariant_reflection_call_count": 1,
+      "n": 8,
+      "orientation_pair_count_expression": "2^96",
+      "orientation_pair_table_enumerated": false,
+      "schur_companion_interface_call_count": 2,
+      "source_factor_mask_controls": 96,
+      "status": "addressed-cross-map-and-pair-polar-polynomial-global-metric-open",
+      "uniform_coherent_pair_query_polynomial": true
+    },
+    {
+      "addressed_raw_cross_map_normalization": 1.0,
+      "coherent_pair_query_qubit_count": 270,
+      "complete_orientation_polar_polynomial": false,
+      "direct_gpe_pair_polar_polynomial": true,
+      "full_address_transition_gram_normalization_one_proved": false,
+      "information_threshold_copy_count": 135,
+      "invariant_reflection_call_count": 1,
+      "n": 16,
+      "orientation_pair_count_expression": "2^270",
+      "orientation_pair_table_enumerated": false,
+      "schur_companion_interface_call_count": 2,
+      "source_factor_mask_controls": 270,
+      "status": "addressed-cross-map-and-pair-polar-polynomial-global-metric-open",
+      "uniform_coherent_pair_query_polynomial": true
+    },
+    {
+      "addressed_raw_cross_map_normalization": 1.0,
+      "coherent_pair_query_qubit_count": 710,
+      "complete_orientation_polar_polynomial": false,
+      "direct_gpe_pair_polar_polynomial": true,
+      "full_address_transition_gram_normalization_one_proved": false,
+      "information_threshold_copy_count": 355,
+      "invariant_reflection_call_count": 1,
+      "n": 32,
+      "orientation_pair_count_expression": "2^710",
+      "orientation_pair_table_enumerated": false,
+      "schur_companion_interface_call_count": 2,
+      "source_factor_mask_controls": 710,
+      "status": "addressed-cross-map-and-pair-polar-polynomial-global-metric-open",
+      "uniform_coherent_pair_query_polynomial": true
+    },
+    {
+      "addressed_raw_cross_map_normalization": 1.0,
+      "coherent_pair_query_qubit_count": 1780,
+      "complete_orientation_polar_polynomial": false,
+      "direct_gpe_pair_polar_polynomial": true,
+      "full_address_transition_gram_normalization_one_proved": false,
+      "information_threshold_copy_count": 890,
+      "invariant_reflection_call_count": 1,
+      "n": 64,
+      "orientation_pair_count_expression": "2^1780",
+      "orientation_pair_table_enumerated": false,
+      "schur_companion_interface_call_count": 2,
+      "source_factor_mask_controls": 1780,
+      "status": "addressed-cross-map-and-pair-polar-polynomial-global-metric-open",
+      "uniform_coherent_pair_query_polynomial": true
+    },
+    {
+      "addressed_raw_cross_map_normalization": 1.0,
+      "coherent_pair_query_qubit_count": 4302,
+      "complete_orientation_polar_polynomial": false,
+      "direct_gpe_pair_polar_polynomial": true,
+      "full_address_transition_gram_normalization_one_proved": false,
+      "information_threshold_copy_count": 2151,
+      "invariant_reflection_call_count": 1,
+      "n": 128,
+      "orientation_pair_count_expression": "2^4302",
+      "orientation_pair_table_enumerated": false,
+      "schur_companion_interface_call_count": 2,
+      "source_factor_mask_controls": 4302,
+      "status": "addressed-cross-map-and-pair-polar-polynomial-global-metric-open",
+      "uniform_coherent_pair_query_polynomial": true
+    },
+    {
+      "addressed_raw_cross_map_normalization": 1.0,
+      "coherent_pair_query_qubit_count": 10108,
+      "complete_orientation_polar_polynomial": false,
+      "direct_gpe_pair_polar_polynomial": true,
+      "full_address_transition_gram_normalization_one_proved": false,
+      "information_threshold_copy_count": 5054,
+      "invariant_reflection_call_count": 1,
+      "n": 256,
+      "orientation_pair_count_expression": "2^10108",
+      "orientation_pair_table_enumerated": false,
+      "schur_companion_interface_call_count": 2,
+      "source_factor_mask_controls": 10108,
+      "status": "addressed-cross-map-and-pair-polar-polynomial-global-metric-open",
+      "uniform_coherent_pair_query_polynomial": true
+    },
+    {
+      "addressed_raw_cross_map_normalization": 1.0,
+      "coherent_pair_query_qubit_count": 23256,
+      "complete_orientation_polar_polynomial": false,
+      "direct_gpe_pair_polar_polynomial": true,
+      "full_address_transition_gram_normalization_one_proved": false,
+      "information_threshold_copy_count": 11628,
+      "invariant_reflection_call_count": 1,
+      "n": 512,
+      "orientation_pair_count_expression": "2^23256",
+      "orientation_pair_table_enumerated": false,
+      "schur_companion_interface_call_count": 2,
+      "source_factor_mask_controls": 23256,
+      "status": "addressed-cross-map-and-pair-polar-polynomial-global-metric-open",
+      "uniform_coherent_pair_query_polynomial": true
+    }
+  ],
+  "status": "addressed-cross-map-and-pair-polar-proved-phase-only-global-gram-refuted",
+  "summary": "Corrected the cross-map access boundary: addressed raw J_f^*J_e blocks and direct pair polars are polynomially accessible with normalization one. Falsified the normalization-one phase-only global Gram construction by an exact, tensor-extensive holonomy-induced negative spectrum.",
+  "tensor_boundary_records": [
+    {
+      "copy_count": 10,
+      "fixed_point_free_embedding": true,
+      "n": 6,
+      "phase_only_kernel_dimension_decimal": "177147",
+      "phase_only_minimum_eigenvalue": -1.0,
+      "phase_only_negative_eigenvalue_count_decimal": "29524",
+      "phase_only_negative_eigenvalue_fraction": 0.16666384415203192,
+      "positive_natural_plancherel_mass_proved": false,
+      "status": "extensive-phase-only-indefiniteness-natural-mass-open",
+      "tensor_starting_plus_dimension_decimal": "59049"
+    },
+    {
+      "copy_count": 13,
+      "fixed_point_free_embedding": true,
+      "n": 8,
+      "phase_only_kernel_dimension_decimal": "4782969",
+      "phase_only_minimum_eigenvalue": -1.0,
+      "phase_only_negative_eigenvalue_count_decimal": "797162",
+      "phase_only_negative_eigenvalue_fraction": 0.16666677120424572,
+      "positive_natural_plancherel_mass_proved": false,
+      "status": "extensive-phase-only-indefiniteness-natural-mass-open",
+      "tensor_starting_plus_dimension_decimal": "1594323"
+    },
+    {
+      "copy_count": 27,
+      "fixed_point_free_embedding": true,
+      "n": 16,
+      "phase_only_kernel_dimension_decimal": "22876792454961",
+      "phase_only_minimum_eigenvalue": -1.0,
+      "phase_only_negative_eigenvalue_count_decimal": "3812798742494",
+      "phase_only_negative_eigenvalue_fraction": 0.16666666666668853,
+      "positive_natural_plancherel_mass_proved": false,
+      "status": "extensive-phase-only-indefiniteness-natural-mass-open",
+      "tensor_starting_plus_dimension_decimal": "7625597484987"
+    },
+    {
+      "copy_count": 64,
+      "fixed_point_free_embedding": true,
+      "n": 32,
+      "phase_only_kernel_dimension_decimal": "10301051460877537453973547267843",
+      "phase_only_minimum_eigenvalue": -1.0,
+      "phase_only_negative_eigenvalue_count_decimal": "1716841910146256242328924544640",
+      "phase_only_negative_eigenvalue_fraction": 0.16666666666666666,
+      "positive_natural_plancherel_mass_proved": false,
+      "status": "extensive-phase-only-indefiniteness-natural-mass-open",
+      "tensor_starting_plus_dimension_decimal": "3433683820292512484657849089281"
+    },
+    {
+      "copy_count": 153,
+      "fixed_point_free_embedding": true,
+      "n": 64,
+      "phase_only_kernel_dimension_decimal": "29969067287845284806900763378587428179104321131567560879029936829441608169",
+      "phase_only_minimum_eigenvalue": -1.0,
+      "phase_only_negative_eigenvalue_count_decimal": "4994844547974214134483460563097904696517386855261260146504989471573601362",
+      "phase_only_negative_eigenvalue_fraction": 0.16666666666666666,
+      "positive_natural_plancherel_mass_proved": false,
+      "status": "extensive-phase-only-indefiniteness-natural-mass-open",
+      "tensor_starting_plus_dimension_decimal": "9989689095948428268966921126195809393034773710522520293009978943147202723"
+    }
+  ],
+  "theorem": {
+    "addressed_cross_map_identity": "B_f J_f^* E_f E_e J_e B_e^*=B_f J_f^*J_e B_e^* on branch-e input.",
+    "block_encoding_circuit": "Decode the e companion, use one Hadamard-LCU ancilla and the reflection 2E_f-I to block-encode E_f=(I+R_f)/2, then encode branch f.",
+    "classical_alternative": "Finite cross maps and spectra are classically contractible. No polynomial all-n classical global metric assembly, decoder, or quantum/classical separation follows.",
+    "corrected_bottleneck": "Coherently assemble the positive metric factors |J_f^*J_e| with the GPE pair phases into the global PSD address-transition kernel, then prove polynomial normalization and a useful natural spectral window.",
+    "direct_pair_polar": "The predecessor coherent-GPE row-swap circuit implements the support polar of each addressed cross map without inverse-correlation amplification.",
+    "input_space": "Coherent query masks |e,f>, a vector in the encoded companion branch K_(nu,e), and clean invariant-reflection/Schur-interface ancillas.",
+    "natural_relevance": "The addressed oracle and pair polar are uniform for arbitrary coherently supplied Plancherel labels and masks. The S3 holonomy embedding is scalable but is not assigned positive natural Schur mass.",
+    "normalization": "The addressed raw cross map has alpha=1. Small principal correlations remain signal singular values, not LCU normalization.",
+    "output_space": "The companion branch K_(nu,f), with the signal block equal to B_f J_f^*J_e B_e^* and the query masks retained.",
+    "positivity_flatness_criterion": "A Hermitian identity-diagonal block matrix with unitary pair blocks is PSD iff the pair connection is flat on every cycle.",
+    "scalable_counterexample": "The regular-S3 transposition triangle has holonomy {1,-1,-1}; its phase-only block kernel has two eigenvalues -1, and k copies have (3^k-(-1)^k)/2 negative eigenvalues.",
+    "scope": "This corrects the raw-cross-map access ledger and kills only the phase-only pair-polar Gram ansatz. Holonomy-aware metric assembly, direct global Racah transforms, multi-round decoders, and new circuits remain open.",
+    "status": "addressed-cross-map-and-pair-polar-proved-phase-only-global-gram-refuted",
+    "theorem_verified": true,
+    "uniformity": "The e,f bits control factorwise diagonal S_n actions across O(n log n) source factors; no orientation-pair table is enumerated."
+  },
+  "theorem_contract": {
+    "addressed_cross_map_identity": "B_f J_f^* E_f E_e J_e B_e^*=B_f J_f^*J_e B_e^* on branch-e input.",
+    "block_encoding_circuit": "Decode the e companion, use one Hadamard-LCU ancilla and the reflection 2E_f-I to block-encode E_f=(I+R_f)/2, then encode branch f.",
+    "classical_alternative": "Finite cross maps and spectra are classically contractible. No polynomial all-n classical global metric assembly, decoder, or quantum/classical separation follows.",
+    "corrected_bottleneck": "Coherently assemble the positive metric factors |J_f^*J_e| with the GPE pair phases into the global PSD address-transition kernel, then prove polynomial normalization and a useful natural spectral window.",
+    "direct_pair_polar": "The predecessor coherent-GPE row-swap circuit implements the support polar of each addressed cross map without inverse-correlation amplification.",
+    "input_space": "Coherent query masks |e,f>, a vector in the encoded companion branch K_(nu,e), and clean invariant-reflection/Schur-interface ancillas.",
+    "natural_relevance": "The addressed oracle and pair polar are uniform for arbitrary coherently supplied Plancherel labels and masks. The S3 holonomy embedding is scalable but is not assigned positive natural Schur mass.",
+    "normalization": "The addressed raw cross map has alpha=1. Small principal correlations remain signal singular values, not LCU normalization.",
+    "output_space": "The companion branch K_(nu,f), with the signal block equal to B_f J_f^*J_e B_e^* and the query masks retained.",
+    "positivity_flatness_criterion": "A Hermitian identity-diagonal block matrix with unitary pair blocks is PSD iff the pair connection is flat on every cycle.",
+    "scalable_counterexample": "The regular-S3 transposition triangle has holonomy {1,-1,-1}; its phase-only block kernel has two eigenvalues -1, and k copies have (3^k-(-1)^k)/2 negative eigenvalues.",
+    "scope": "This corrects the raw-cross-map access ledger and kills only the phase-only pair-polar Gram ansatz. Holonomy-aware metric assembly, direct global Racah transforms, multi-round decoders, and new circuits remain open.",
+    "status": "addressed-cross-map-and-pair-polar-proved-phase-only-global-gram-refuted",
+    "theorem_verified": true,
+    "uniformity": "The e,f bits control factorwise diagonal S_n actions across O(n log n) source factors; no orientation-pair table is enumerated."
+  }
+}

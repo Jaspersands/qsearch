@@ -16,6 +16,11 @@
       "resolved": true
     },
     {
+      "objection": "The companion-only closure rules out queried raw cross-map access.",
+      "resolution": "It does not: the compiled physical interface leaves A_br, block-encodes E_f, and returns through branch f. The closure still rules out obtaining this transition without such a detour.",
+      "resolved": true
+    },
+    {
       "objection": "The finite offdiagonal controls prove an approximate circuit lower bound.",
       "resolution": "They do not. The theorem is an exact access-type boundary; no asymptotic approximation lower bound for new structured circuits is claimed.",
       "resolved": true
@@ -33,26 +38,30 @@
   ],
   "claim_gate": {
     "actual_orientation_inverse_sqrt_requires_cross_branch_action": true,
+    "addressed_raw_cross_map_block_encoding_normalization_one": true,
     "branch_character_retaining_decoder_ruled_out": false,
     "branch_preserving_stack_closed_under_coherent_composition": true,
     "classical_separation_proved": false,
-    "cross_branch_block_encoding_normalization_charged": false,
+    "coherent_gpe_supplies_direct_pair_polar": true,
+    "companion_only_stack_supplies_cross_branch_action": false,
     "direct_structured_companion_polar_ruled_out": false,
+    "full_global_cross_branch_block_encoding_normalization_charged": false,
+    "global_operator_valued_metric_assembly_compiled": false,
     "high_dimensional_hidden_information_proved": false,
     "high_dimensional_schur_f_moves_equal_internal_kronecker_racah": false,
     "known_schur_qft_and_projector_interfaces_typed": true,
     "known_transform_stack_compiles_orientation_polar": false,
-    "known_transform_stack_supplies_cross_branch_action": false,
     "multi_round_companion_transform_ruled_out": false,
     "multiplicity_counting_implies_coherent_basis": false,
     "natural_cross_orientation_overlap_density_one_proved": true,
     "natural_high_dimensional_target_mass_proved": true,
+    "physical_interface_supplies_addressed_raw_cross_map_block_encoding": true,
     "physical_pgm_compiled": false,
-    "polynomial_normalized_cross_branch_oracle_compiled": false,
-    "reason": "Known transforms expose Schur coordinates and invariant labels but no normalization-one cross-source-branch operation. Actual orientation whitening has cross blocks, so a new typed Racah/intertwiner oracle or equivalent direct polar remains mandatory.",
+    "polynomial_normalized_global_cross_branch_whitening_oracle_compiled": false,
+    "reason": "The companion-only stack is branch preserving, while the physical interface supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. Neither result assembles the global positive address kernel or compiles its inverse-square-root polar.",
     "speedup_claim_allowed": false
   },
-  "created_at": "2026-08-25T02:55:30.192532+00:00",
+  "created_at": "2026-08-25T15:26:59.073960+00:00",
   "falsifiers_triggered": [
     "A Schur--Weyl F-move is not automatically an internal S_n Kronecker/Racah move.",
     "A #BQP invariant-space projector does not expose multiplicity coordinates.",
@@ -217,8 +226,10 @@
     }
   ],
   "headline_metrics": {
+    "addressed_raw_cross_map_block_encoding_count": 1,
     "branch_algebra_closure_theorem_count": 1,
     "cross_branch_inverse_sqrt_control_count": 3,
+    "direct_gpe_pair_polar_compiler_count": 1,
     "direct_structured_orientation_polar_compiler_count": 0,
     "finite_control_count": 3,
     "finite_control_failure_count": 0,
@@ -226,7 +237,7 @@
     "known_transform_stack_scope_theorem_count": 1,
     "maximum_finite_inverse_sqrt_branch_commutator_norm": 0.21905455228638457,
     "new_quantum_algorithm_count": 0,
-    "polynomial_cross_branch_oracle_count": 0,
+    "polynomial_global_cross_branch_whitening_oracle_count": 0,
     "primary_literature_scope_count": 5
   },
   "primary_literature": [
@@ -283,13 +294,13 @@
       "resolved": true
     },
     {
-      "obligation": "compile_polynomial_normalized_cross_branch_oracle",
-      "resolution": "No coherent J_e^*J_f block encoding, internal Kronecker/Racah basis transition, or equivalent normalization-one polar is known.",
-      "resolved": false
+      "obligation": "compile_addressed_raw_cross_map_oracle",
+      "resolution": "The physical-interface/projector/interface sandwich has signal block J_f^*J_e at alpha one for coherent e,f queries.",
+      "resolved": true
     },
     {
-      "obligation": "charge_cross_oracle_normalization",
-      "resolution": "The cited stack has no cross-source-branch SELECT/block encoding whose alpha can be charged. Any new construction must prove alpha=poly(n) and a useful inverse-polynomial window.",
+      "obligation": "compile_global_operator_valued_metric_assembly",
+      "resolution": "Entry-query access and direct pair polars do not construct the dense PSD address-transition kernel. The full assembly must retain positive cross metrics and charge its normalization.",
       "resolved": false
     },
     {
@@ -300,6 +311,8 @@
   ],
   "scaling_records": [
     {
+      "addressed_raw_cross_map_block_encoding_normalization": 1.0,
+      "coherent_gpe_supplies_direct_pair_polar": true,
       "collision_free_source_probability_tends_one": true,
       "direct_non_branch_preserving_companion_circuit_ruled_out": false,
       "high_dimensional_schur_transform_polynomial": true,
@@ -313,10 +326,13 @@
       "natural_balanced_pair_cross_overlap_density_tends_one": true,
       "natural_high_dimensional_target_mass_tends_one": true,
       "orientation_log2_width": 48,
-      "status": "known-transform-stack-typed-insufficient-cross-oracle-open",
+      "physical_interface_supplies_addressed_raw_cross_map_block_encoding": true,
+      "status": "companion-only-stack-insufficient-global-whitening-open",
       "symmetric_group_qft_polynomial": true
     },
     {
+      "addressed_raw_cross_map_block_encoding_normalization": 1.0,
+      "coherent_gpe_supplies_direct_pair_polar": true,
       "collision_free_source_probability_tends_one": true,
       "direct_non_branch_preserving_companion_circuit_ruled_out": false,
       "high_dimensional_schur_transform_polynomial": true,
@@ -330,10 +346,13 @@
       "natural_balanced_pair_cross_overlap_density_tends_one": true,
       "natural_high_dimensional_target_mass_tends_one": true,
       "orientation_log2_width": 135,
-      "status": "known-transform-stack-typed-insufficient-cross-oracle-open",
+      "physical_interface_supplies_addressed_raw_cross_map_block_encoding": true,
+      "status": "companion-only-stack-insufficient-global-whitening-open",
       "symmetric_group_qft_polynomial": true
     },
     {
+      "addressed_raw_cross_map_block_encoding_normalization": 1.0,
+      "coherent_gpe_supplies_direct_pair_polar": true,
       "collision_free_source_probability_tends_one": true,
       "direct_non_branch_preserving_companion_circuit_ruled_out": false,
       "high_dimensional_schur_transform_polynomial": true,
@@ -347,10 +366,13 @@
       "natural_balanced_pair_cross_overlap_density_tends_one": true,
       "natural_high_dimensional_target_mass_tends_one": true,
       "orientation_log2_width": 355,
-      "status": "known-transform-stack-typed-insufficient-cross-oracle-open",
+      "physical_interface_supplies_addressed_raw_cross_map_block_encoding": true,
+      "status": "companion-only-stack-insufficient-global-whitening-open",
       "symmetric_group_qft_polynomial": true
     },
     {
+      "addressed_raw_cross_map_block_encoding_normalization": 1.0,
+      "coherent_gpe_supplies_direct_pair_polar": true,
       "collision_free_source_probability_tends_one": true,
       "direct_non_branch_preserving_companion_circuit_ruled_out": false,
       "high_dimensional_schur_transform_polynomial": true,
@@ -364,10 +386,13 @@
       "natural_balanced_pair_cross_overlap_density_tends_one": true,
       "natural_high_dimensional_target_mass_tends_one": true,
       "orientation_log2_width": 890,
-      "status": "known-transform-stack-typed-insufficient-cross-oracle-open",
+      "physical_interface_supplies_addressed_raw_cross_map_block_encoding": true,
+      "status": "companion-only-stack-insufficient-global-whitening-open",
       "symmetric_group_qft_polynomial": true
     },
     {
+      "addressed_raw_cross_map_block_encoding_normalization": 1.0,
+      "coherent_gpe_supplies_direct_pair_polar": true,
       "collision_free_source_probability_tends_one": true,
       "direct_non_branch_preserving_companion_circuit_ruled_out": false,
       "high_dimensional_schur_transform_polynomial": true,
@@ -381,10 +406,13 @@
       "natural_balanced_pair_cross_overlap_density_tends_one": true,
       "natural_high_dimensional_target_mass_tends_one": true,
       "orientation_log2_width": 2151,
-      "status": "known-transform-stack-typed-insufficient-cross-oracle-open",
+      "physical_interface_supplies_addressed_raw_cross_map_block_encoding": true,
+      "status": "companion-only-stack-insufficient-global-whitening-open",
       "symmetric_group_qft_polynomial": true
     },
     {
+      "addressed_raw_cross_map_block_encoding_normalization": 1.0,
+      "coherent_gpe_supplies_direct_pair_polar": true,
       "collision_free_source_probability_tends_one": true,
       "direct_non_branch_preserving_companion_circuit_ruled_out": false,
       "high_dimensional_schur_transform_polynomial": true,
@@ -398,10 +426,13 @@
       "natural_balanced_pair_cross_overlap_density_tends_one": true,
       "natural_high_dimensional_target_mass_tends_one": true,
       "orientation_log2_width": 5054,
-      "status": "known-transform-stack-typed-insufficient-cross-oracle-open",
+      "physical_interface_supplies_addressed_raw_cross_map_block_encoding": true,
+      "status": "companion-only-stack-insufficient-global-whitening-open",
       "symmetric_group_qft_polynomial": true
     },
     {
+      "addressed_raw_cross_map_block_encoding_normalization": 1.0,
+      "coherent_gpe_supplies_direct_pair_polar": true,
       "collision_free_source_probability_tends_one": true,
       "direct_non_branch_preserving_companion_circuit_ruled_out": false,
       "high_dimensional_schur_transform_polynomial": true,
@@ -415,40 +446,41 @@
       "natural_balanced_pair_cross_overlap_density_tends_one": true,
       "natural_high_dimensional_target_mass_tends_one": true,
       "orientation_log2_width": 11628,
-      "status": "known-transform-stack-typed-insufficient-cross-oracle-open",
+      "physical_interface_supplies_addressed_raw_cross_map_block_encoding": true,
+      "status": "companion-only-stack-insufficient-global-whitening-open",
       "symmetric_group_qft_polynomial": true
     }
   ],
-  "status": "known-schur-projector-stack-insufficient-cross-oracle-open",
-  "summary": "Falsified the hypothesis that published Schur/CG and invariant-projector primitives already compile the physical orientation polar: their proved interface is branch preserving, while the required inverse-square-root multiplier crosses natural source branches.",
+  "status": "companion-only-schur-stack-insufficient-global-whitening-open",
+  "summary": "Falsified the hypothesis that companion-only Schur/CG and invariant-projector primitives already compile the physical orientation polar. The physical detour does supply addressed raw cross maps and pair polars; global positive metric assembly and whitening remain open.",
   "theorem": {
-    "access_model": "Schur/QFT coordinate changes, source and target label controls, and supplied-label invariant membership reflections, with no oracle having Z_f O Z_e nonzero for e!=f",
+    "access_model": "Companion-only Schur/QFT coordinate changes, source and target label controls, and supplied-label invariant membership reflections, before the separate physical-interface detour is admitted",
     "classical_alternative": "Exact character and representation-ring contractions form H_nu and diagonalize the finite controls classically. No polynomial all-n classical polar construction or quantum/classical separation is inferred from this finite computation.",
     "closure_theorem": "Every product, adjoint, coherent label control, and selected workspace top block in A_br=direct_sum_e End(K_e tensor W) commutes with every source-branch projector Z_e.",
     "input_space": "K_nu=direct_sum_e K_(nu,e), the orthogonal fixed-source subspaces inside the joint Schur companion, with polynomial workspace W",
     "literature_type_boundary": "Schur--Weyl/Pieri F-moves and #BQP invariant-space projectors do not, by their proved interfaces, furnish internal Specht Kronecker branch transition amplitudes.",
-    "minimal_surviving_oracle": "A coherent polynomial-normalized block encoding of the cross maps J_e^*J_f with an inverse-polynomial useful spectral window, or a direct compiler for the equivalent merger polar.",
+    "minimal_surviving_oracle": "A coherent polynomial-normalized global PSD assembly of the operator-valued J_e^*J_f entries, with their positive metrics and holonomy retained, or a direct compiler for the equivalent merger polar.",
     "natural_relevance": "Existing target-uniform Plancherel covering gives nonzero cross overlaps on a density-one set of balanced natural orientation pairs; the joint-sector theorem puts 1-o(1) mass on large rows.",
-    "normalization_boundary": "The known stack supplies no cross-branch block encoding at any normalization. A surviving construction must state an explicit alpha=poly(n) normalization and an inverse-polynomial useful spectral window before QSVT or amplitude amplification is charged.",
+    "normalization_boundary": "The physical-interface/projector detour supplies each addressed raw J_f^*J_e query at alpha=1, but entry-query normalization does not set the normalization or hard edge of the full dense address kernel. A surviving global assembly must state alpha=poly(n) and an inverse-polynomial useful spectral window.",
     "output_space": "the physical invariant span or, equivalently, the normalized Schur-branch merger range from the predecessor equivalence theorem",
     "required_multiplier": "If H_nu has a cross entry, H_nu^(+/2) is not branch preserving; the orientation polar therefore requires a cross-branch primitive or an equivalent direct non-branch-preserving construction.",
     "scope": "This rejects only the claim that the cited transform/projector stack already supplies the cross operation. It does not reject new entangling companion circuits, a noncommuting Racah network, multi-round branch relocation, or a character-retaining decoder.",
-    "status": "known-schur-projector-stack-insufficient-cross-oracle-open",
+    "status": "companion-only-schur-stack-insufficient-global-whitening-open",
     "theorem_verified": true
   },
   "theorem_contract": {
-    "access_model": "Schur/QFT coordinate changes, source and target label controls, and supplied-label invariant membership reflections, with no oracle having Z_f O Z_e nonzero for e!=f",
+    "access_model": "Companion-only Schur/QFT coordinate changes, source and target label controls, and supplied-label invariant membership reflections, before the separate physical-interface detour is admitted",
     "classical_alternative": "Exact character and representation-ring contractions form H_nu and diagonalize the finite controls classically. No polynomial all-n classical polar construction or quantum/classical separation is inferred from this finite computation.",
     "closure_theorem": "Every product, adjoint, coherent label control, and selected workspace top block in A_br=direct_sum_e End(K_e tensor W) commutes with every source-branch projector Z_e.",
     "input_space": "K_nu=direct_sum_e K_(nu,e), the orthogonal fixed-source subspaces inside the joint Schur companion, with polynomial workspace W",
     "literature_type_boundary": "Schur--Weyl/Pieri F-moves and #BQP invariant-space projectors do not, by their proved interfaces, furnish internal Specht Kronecker branch transition amplitudes.",
-    "minimal_surviving_oracle": "A coherent polynomial-normalized block encoding of the cross maps J_e^*J_f with an inverse-polynomial useful spectral window, or a direct compiler for the equivalent merger polar.",
+    "minimal_surviving_oracle": "A coherent polynomial-normalized global PSD assembly of the operator-valued J_e^*J_f entries, with their positive metrics and holonomy retained, or a direct compiler for the equivalent merger polar.",
     "natural_relevance": "Existing target-uniform Plancherel covering gives nonzero cross overlaps on a density-one set of balanced natural orientation pairs; the joint-sector theorem puts 1-o(1) mass on large rows.",
-    "normalization_boundary": "The known stack supplies no cross-branch block encoding at any normalization. A surviving construction must state an explicit alpha=poly(n) normalization and an inverse-polynomial useful spectral window before QSVT or amplitude amplification is charged.",
+    "normalization_boundary": "The physical-interface/projector detour supplies each addressed raw J_f^*J_e query at alpha=1, but entry-query normalization does not set the normalization or hard edge of the full dense address kernel. A surviving global assembly must state alpha=poly(n) and an inverse-polynomial useful spectral window.",
     "output_space": "the physical invariant span or, equivalently, the normalized Schur-branch merger range from the predecessor equivalence theorem",
     "required_multiplier": "If H_nu has a cross entry, H_nu^(+/2) is not branch preserving; the orientation polar therefore requires a cross-branch primitive or an equivalent direct non-branch-preserving construction.",
     "scope": "This rejects only the claim that the cited transform/projector stack already supplies the cross operation. It does not reject new entangling companion circuits, a noncommuting Racah network, multi-round branch relocation, or a character-retaining decoder.",
-    "status": "known-schur-projector-stack-insufficient-cross-oracle-open",
+    "status": "companion-only-schur-stack-insufficient-global-whitening-open",
     "theorem_verified": true
   }
 }

@@ -85,6 +85,9 @@ def test_natural_scaling_keeps_new_cross_oracle_as_the_missing_gate() -> None:
     assert row.invariant_membership_reflections_polynomial
     assert not row.known_stack_exposes_internal_kronecker_coordinates
     assert not row.known_stack_supplies_cross_branch_multiplier
+    assert row.physical_interface_supplies_addressed_raw_cross_map_block_encoding
+    assert row.addressed_raw_cross_map_block_encoding_normalization == 1.0
+    assert row.coherent_gpe_supplies_direct_pair_polar
     assert not row.known_stack_supplies_normalization_one_orientation_polar
     assert not row.direct_non_branch_preserving_companion_circuit_ruled_out
 
@@ -103,10 +106,22 @@ def test_report_falsifies_only_the_known_transform_stack_hypothesis() -> None:
     ]
     assert report.claim_gate["natural_cross_orientation_overlap_density_one_proved"]
     assert report.claim_gate["natural_high_dimensional_target_mass_proved"]
-    assert not report.claim_gate["known_transform_stack_supplies_cross_branch_action"]
+    assert not report.claim_gate["companion_only_stack_supplies_cross_branch_action"]
     assert not report.claim_gate["known_transform_stack_compiles_orientation_polar"]
-    assert not report.claim_gate["polynomial_normalized_cross_branch_oracle_compiled"]
-    assert not report.claim_gate["cross_branch_block_encoding_normalization_charged"]
+    assert report.claim_gate[
+        "physical_interface_supplies_addressed_raw_cross_map_block_encoding"
+    ]
+    assert report.claim_gate[
+        "addressed_raw_cross_map_block_encoding_normalization_one"
+    ]
+    assert report.claim_gate["coherent_gpe_supplies_direct_pair_polar"]
+    assert not report.claim_gate[
+        "polynomial_normalized_global_cross_branch_whitening_oracle_compiled"
+    ]
+    assert not report.claim_gate[
+        "full_global_cross_branch_block_encoding_normalization_charged"
+    ]
+    assert not report.claim_gate["global_operator_valued_metric_assembly_compiled"]
     assert not report.claim_gate["direct_structured_companion_polar_ruled_out"]
     assert not report.claim_gate["multi_round_companion_transform_ruled_out"]
     assert not report.claim_gate["physical_pgm_compiled"]

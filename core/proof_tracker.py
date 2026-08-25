@@ -7010,10 +7010,10 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     id=f"LEMMA-{candidate_id}-COSET-SCHUR-COMPANION-KNOWN-TRANSFORM-SCOPE",
                     candidate_id=candidate_id,
                     statement=(
-                        "The published Schur/QFT/CG and supplied-label invariant-projector interfaces generate a "
-                        "branch-preserving direct-sum algebra on the Schur companion, while the physical "
-                        "H_nu^(+/2) multiplier has cross-source-branch blocks whenever H_nu does. Thus that known "
-                        "typed stack does not by itself compile the orientation polar."
+                        "The companion-only Schur/QFT/CG and supplied-label invariant-projector interfaces generate "
+                        "a branch-preserving direct-sum algebra, while H_nu^(+/2) has cross-source-branch blocks. "
+                        "A separate physical-interface detour can query raw cross maps, but the companion-only "
+                        "typed stack does not by itself compile the global orientation polar."
                     ),
                     depends_on=[
                         f"LEMMA-{candidate_id}-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
@@ -7022,7 +7022,7 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                         "PO-NO-GO",
                     ],
                     status=(
-                        "proved-known-transform-stack-branch-preserving-cross-oracle-open"
+                        "proved-companion-only-stack-branch-preserving-global-whitening-open"
                         if int(
                             capability_metrics.get(
                                 "known_schur_projector_stack_scope_boundary_theorem_count",
@@ -7033,7 +7033,7 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                         > 0
                         and not int(
                             capability_metrics.get(
-                                "known_schur_projector_stack_cross_branch_multiplier_count",
+                                "known_schur_projector_stack_global_whitening_multiplier_count",
                                 0,
                             )
                             or 0
@@ -7045,6 +7045,58 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                         "adjoints, coherent label controls, workspaces, and selected top blocks, and independently "
                         "check a nonzero cross block of H_nu^(+/2). A new non-branch-preserving companion circuit "
                         "would evade this access-model boundary and must be audited separately."
+                    ),
+                ),
+                LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The physical Schur interface and supplied-label projector give an alpha-one block encoding "
+                        "of each coherently addressed J_f^*J_e query, and GPE gives its direct pair polar. Replacing "
+                        "all positive cross metrics by these pair polars does not yield a global Gram: on nonflat "
+                        "cycles the identity-diagonal unitary block kernel is indefinite."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-COSET-PHYSICAL-SCHUR-COMPANION-INTERFACE",
+                        f"LEMMA-{candidate_id}-COSET-SCHUR-BRANCH-MERGER-POLAR-EQUIVALENCE",
+                        f"LEMMA-{candidate_id}-COSET-SCHUR-COMPANION-KNOWN-TRANSFORM-SCOPE",
+                        "PO-MEASUREMENT",
+                        "PO-COMPLEXITY",
+                        "PO-NO-GO",
+                    ],
+                    status=(
+                        "proved-addressed-cross-map-and-pair-polar-phase-only-global-gram-refuted"
+                        if int(
+                            capability_metrics.get(
+                                "addressed_raw_cross_map_block_encoding_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        and int(
+                            capability_metrics.get(
+                                "direct_gpe_pair_polar_compiler_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        and int(
+                            capability_metrics.get(
+                                "phase_only_global_pair_polar_gram_no_go_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "blocked-addressed-cross-map-pair-polar-gram-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify the physical-interface/projector signal block and alpha, uniform coherent mask "
+                        "control, the direct GPE pair polar, the PSD-flatness criterion, the exact S3 spectra, and "
+                        "tensor negative multiplicity. Do not equate entry-query alpha with dense-kernel alpha or "
+                        "assign positive Plancherel mass to the S3 witness without a separate theorem."
                     ),
                 ),
                 LemmaRecord(

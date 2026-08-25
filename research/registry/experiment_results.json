@@ -15460,7 +15460,7 @@
       "coset_recoupling_capability_ledger": "research/representation/coset_recoupling_capability_ledger.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-08-25T02:55:33.481098+00:00",
+    "created_at": "2026-08-25T15:27:02.285220+00:00",
     "experiment_id": "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "falsifiers_triggered": [
       "The S_n QFT is already polynomial and cannot be presented as the missing breakthrough.",
@@ -15468,7 +15468,8 @@
       "#BQP multiplicity counting does not construct a coherent Kronecker basis.",
       "Schur-Weyl Clebsch-Gordan circuits do not automatically solve internal Specht tensor products.",
       "Separate-to-joint Schur dilation carries fixed-source Kronecker multiplicity coherently, but its natural normalized branch merger is the original orientation polar in encoded coordinates.",
-      "The published Schur/QFT/CG plus projector stack is branch preserving and does not supply the cross-source-branch orientation multiplier.",
+      "The companion-only Schur/QFT/CG plus projector stack is branch preserving, but a physical-interface detour does supply raw addressed cross-map entries.",
+      "Normalization-one addressed pair polars cannot replace cross metrics globally: nonflat holonomy makes the phase-only block kernel indefinite.",
       "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
       "An encoded stable shape router does not construct a compressed Clebsch channel isometry.",
       "An encoded left/right relabelling isometry does not construct the state-dependent frame filter or decoder.",
@@ -15480,25 +15481,30 @@
     ],
     "id": "RESULT-EXP-COSET-RECOUPLING-CAPABILITY-LEDGER-LATEST",
     "metrics": {
+      "addressed_raw_cross_map_block_encoding_count": 1,
+      "addressed_raw_cross_map_block_encoding_normalization": 1.0,
       "bounded_support_commutant_block_encoding_poly_proof_count": 1,
       "bounded_tail_natural_access_no_go_theorem_count": 1,
-      "capability_count": 18,
+      "capability_count": 19,
       "diagonal_jm_label_transform_poly_proof_count": 1,
+      "direct_gpe_pair_polar_compiler_count": 1,
       "exact_holevo_copy_budget_theorem_count": 1,
       "exact_stable_nine_shape_sector_classification_count": 1,
       "gapped_kronecker_multiplicity_transform_poly_proof_count": 0,
+      "global_operator_valued_metric_assembly_compiler_count": 0,
       "growth_record_count": 7,
       "hidden_involution_decoder_count": 0,
       "internal_kronecker_transform_poly_proof_count": 0,
       "kcopy_associator_poly_proof_count": 0,
-      "known_schur_projector_stack_cross_branch_multiplier_count": 0,
+      "known_schur_projector_stack_global_whitening_multiplier_count": 0,
       "known_schur_projector_stack_scope_boundary_theorem_count": 1,
       "maximum_kronecker_multiplicity": 117,
       "maximum_multiplicity_register_bits": 7,
       "maximum_n": 10,
       "maximum_partition_count": 42,
+      "phase_only_global_pair_polar_gram_no_go_theorem_count": 1,
       "physical_invariant_schur_companion_interface_count": 1,
-      "proved_polynomial_primitive_count": 11,
+      "proved_polynomial_primitive_count": 12,
       "restricted_multiplicity_classical_match_count": 1,
       "schur_branch_merger_polar_equivalence_theorem_count": 1,
       "schur_dilated_kronecker_carrier_polynomial_count": 1,
@@ -15550,8 +15556,8 @@
       "typical_irrep_uniform_encoded_tree_transform_count": 0,
       "unresolved_required_capability_count": 3
     },
-    "status": "known-schur-stack-typed-cross-branch-oracle-polar-and-decoder-open",
-    "summary": "Classified 18 representation primitives and exact finite Kronecker growth through n=10. Separate-to-joint Schur dilation now supplies an encoded multiplicity carrier, but the published Schur/QFT/CG plus projector stack is branch preserving and cannot supply the certified cross-branch orientation multiplier without a new typed Racah/intertwiner primitive."
+    "status": "addressed-cross-maps-and-pair-polars-proved-global-metric-polar-open",
+    "summary": "Classified 19 representation primitives and exact finite Kronecker growth through n=10. Separate-to-joint Schur dilation now supplies an encoded multiplicity carrier, the physical interface supplies alpha-one addressed raw cross maps, and GPE supplies direct pair polars. The remaining bottleneck is a positive, polynomial-normalized global metric assembly and polar."
   },
   {
     "artifacts": {

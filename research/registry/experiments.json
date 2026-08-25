@@ -1147,6 +1147,30 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_wreath_addressed_cross_map_pair_polar_gram_boundary.py"
+    ],
+    "falsifiers": [
+      "Observable in self_dual_wreath_addressed_cross_map_pair_polar_gram_boundary matches classical baseline.",
+      "Representation scaling in self_dual_wreath_addressed_cross_map_pair_polar_gram_boundary collapses under classical contraction.",
+      "Asymptotic separation in self_dual_wreath_addressed_cross_map_pair_polar_gram_boundary fails to defeat ISD/WL baselines."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Addressed Cross Map Pair Polar Gram Boundary.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-addressed-cross-map-pair-polar-gram-boundary."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Addressed Cross Map Pair Polar Gram Boundary.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Addressed Cross Map Pair Polar Gram Boundary"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "self_dual_wreath_affine_core_flag_theorem.py"
     ],
     "falsifiers": [

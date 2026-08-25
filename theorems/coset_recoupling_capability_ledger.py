@@ -36,6 +36,9 @@ from self_dual_wreath_schur_branch_merger_polar_equivalence import (
 from self_dual_wreath_schur_companion_transform_scope_boundary import (
     run_schur_companion_transform_scope_boundary,
 )
+from self_dual_wreath_addressed_cross_map_pair_polar_gram_boundary import (
+    run_addressed_cross_map_pair_polar_gram_boundary,
+)
 from symmetric_character import kronecker_coefficient
 
 
@@ -205,9 +208,9 @@ CAPABILITIES = (
             "The cited primitives supply polynomial Schur coordinate changes, irrep/source labels, and "
             "supplied-label invariant membership reflections. Their proved typed interface is branch preserving; "
             "products, adjoints, coherent label controls, workspace extensions, and selected top blocks remain in "
-            "the direct-sum source-branch algebra."
+            "the direct-sum source-branch algebra when the computation stays inside the companion."
         ),
-        availability="proved-typed-stack-insufficient-cross-oracle-open",
+        availability="proved-companion-only-stack-insufficient-global-whitening-open",
         uniform_polynomial_gate_complexity_proved=False,
         resolves_internal_sn_kronecker_basis=False,
         handles_overlapping_k_copy_associators=False,
@@ -218,9 +221,40 @@ CAPABILITIES = (
         ),
         scope_limit=(
             "Actual finite H_nu and H_nu^(+/2) controls have nonzero cross-source-branch blocks, and natural "
-            "Plancherel covering makes cross overlaps density one on balanced pairs. The stack therefore does not "
-            "supply the required J_e^*J_f multiplier or orientation polar. New entangling companion circuits, "
-            "noncommuting Racah networks, multi-round transforms, and character-retaining decoders remain open."
+            "Plancherel covering makes cross overlaps density one on balanced pairs. The companion-only stack "
+            "therefore does not supply the orientation whitening multiplier. A physical-interface detour does "
+            "supply addressed raw cross maps, but global metric assembly, noncommuting Racah networks, "
+            "multi-round transforms, and character-retaining decoders remain open."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-ADDRESSED-CROSS-MAP-AND-DIRECT-PAIR-POLAR",
+        literature_ids=[
+            "beals-symmetric-qft-1997",
+            "bacon-chuang-harrow-schur-2004",
+            "bravyi-et-al-kronecker-2023",
+        ],
+        primitive=(
+            "Uniform addressed J_f^*J_e block encoding and coherent-GPE pair polar"
+        ),
+        proved_scope=(
+            "Decode branch e through the physical Schur/Bell interface, block-encode E_f=(I+R_f)/2 with one "
+            "supplied-label reflection, and encode branch f. This gives an alpha-one signal block J_f^*J_e for "
+            "coherent mask queries. Coherent GPE row reassociation directly compiles polar(J_f^*J_e) on its support."
+        ),
+        availability="proved-polynomial-addressed-query-and-pair-polar-only",
+        uniform_polynomial_gate_complexity_proved=True,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "Finite queried cross maps are classically contractible; no polynomial all-n global kernel assembly or "
+            "quantum/classical separation is proved."
+        ),
+        scope_limit=(
+            "An alpha-one entry query is not a normalization-one dense address-transition block encoding. Replacing "
+            "all positive cross metrics by pair polars makes the block kernel indefinite on nonflat holonomy cycles. "
+            "Global operator-valued metric assembly, whitening, natural spectral mass, and decoding remain open."
         ),
     ),
     RepresentationCapability(
@@ -591,6 +625,9 @@ def build_recoupling_capability_report(
     schur_companion_scope_metrics = (
         run_schur_companion_transform_scope_boundary().headline_metrics
     )
+    addressed_cross_map_metrics = (
+        run_addressed_cross_map_pair_polar_gram_boundary().headline_metrics
+    )
     unresolved = [
         capability
         for capability in CAPABILITIES
@@ -855,9 +892,44 @@ def build_recoupling_capability_report(
             )
             or 0
         ),
-        "known_schur_projector_stack_cross_branch_multiplier_count": int(
+        "known_schur_projector_stack_global_whitening_multiplier_count": int(
             schur_companion_scope_metrics.get(
-                "polynomial_cross_branch_oracle_count",
+                "polynomial_global_cross_branch_whitening_oracle_count",
+                0,
+            )
+            or 0
+        ),
+        "addressed_raw_cross_map_block_encoding_count": int(
+            addressed_cross_map_metrics.get(
+                "addressed_raw_cross_map_block_encoding_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "addressed_raw_cross_map_block_encoding_normalization": float(
+            addressed_cross_map_metrics.get(
+                "addressed_raw_cross_map_block_encoding_normalization",
+                0.0,
+            )
+            or 0.0
+        ),
+        "direct_gpe_pair_polar_compiler_count": int(
+            addressed_cross_map_metrics.get(
+                "direct_gpe_pair_polar_compiler_count",
+                0,
+            )
+            or 0
+        ),
+        "phase_only_global_pair_polar_gram_no_go_theorem_count": int(
+            addressed_cross_map_metrics.get(
+                "phase_only_global_pair_polar_gram_no_go_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "global_operator_valued_metric_assembly_compiler_count": int(
+            addressed_cross_map_metrics.get(
+                "global_operator_valued_metric_assembly_compiler_count",
                 0,
             )
             or 0
@@ -981,17 +1053,25 @@ def build_recoupling_capability_report(
             },
             {
                 "from": (
-                    "the published Schur/QFT/CG stack together with invariant-space "
-                    "membership projectors"
+                    "the companion-only Schur/QFT/CG stack together with "
+                    "within-branch invariant-space controls"
                 ),
                 "invalid_to": (
-                    "a normalization-one internal cross-source-branch multiplier or "
-                    "orientation polar"
+                    "the global cross-source-branch whitening multiplier or orientation polar"
                 ),
                 "reason": (
-                    "The proved interfaces give branch isometries, labels, and membership reflections. Their "
-                    "coherent branch-preserving closure has zero Z_f O Z_e blocks for e!=f, whereas H_nu^(+/2) "
-                    "has certified cross blocks. A new typed J_e^*J_f/Racah primitive is required."
+                    "The companion-only closure has zero Z_f O Z_e blocks for e!=f, whereas H_nu^(+/2) has "
+                    "certified cross blocks. A physical-interface detour supplies raw addressed entries, but not "
+                    "their global PSD metric assembly or whitening."
+                ),
+            },
+            {
+                "from": "alpha-one addressed raw cross maps and direct coherent-GPE pair polars",
+                "invalid_to": "a normalization-one global orientation Gram or physical PGM polar",
+                "reason": (
+                    "Entry-query normalization does not normalize the dense address-transition operator. Pair "
+                    "phases alone make an indefinite block kernel on nonflat holonomy cycles; the positive "
+                    "operator-valued cross metrics must be retained and assembled coherently."
                 ),
             },
             {
@@ -1041,8 +1121,35 @@ def build_recoupling_capability_report(
                     0,
                 )
             ),
-            "known_schur_projector_stack_supplies_cross_branch_multiplier": False,
+            "companion_only_stack_supplies_global_cross_branch_whitening_multiplier": False,
             "known_schur_projector_stack_compiles_orientation_polar": False,
+            "physical_interface_supplies_addressed_raw_cross_map_block_encoding": bool(
+                addressed_cross_map_metrics.get(
+                    "addressed_raw_cross_map_block_encoding_theorem_count",
+                    0,
+                )
+            ),
+            "addressed_raw_cross_map_block_encoding_normalization_one": bool(
+                addressed_cross_map_metrics.get(
+                    "addressed_raw_cross_map_block_encoding_normalization",
+                    0.0,
+                )
+                == 1.0
+            ),
+            "direct_gpe_pair_polar_compiled": bool(
+                addressed_cross_map_metrics.get(
+                    "direct_gpe_pair_polar_compiler_count",
+                    0,
+                )
+            ),
+            "phase_only_pair_polar_global_gram_ansatz_refuted": bool(
+                addressed_cross_map_metrics.get(
+                    "phase_only_global_pair_polar_gram_no_go_theorem_count",
+                    0,
+                )
+            ),
+            "global_operator_valued_metric_assembly_compiled": False,
+            "global_address_transition_kernel_polynomial_normalization_proved": False,
             "natural_cross_orientation_overlap_density_one_proved": True,
             "schur_branch_encoding_removes_orientation_inverse_square_root": False,
             "schur_branch_structured_direct_polar_compiled": False,
@@ -1081,18 +1188,19 @@ def build_recoupling_capability_report(
                 "family. Complete encoded labels and left/right relabelling are proved on one stable final branch, "
                 "and its three-copy frame is directly block-encoded, all-n conditioned, and inverse-filterable, but "
                 "the fixed branch is factorially rare under natural input. The known Schur/QFT/CG plus "
-                "invariant-projector stack is now typed exactly: it preserves orthogonal source branches, while "
-                "the required H_nu^(+/2) multiplier crosses those branches on finite controls and natural balanced "
-                "pairs. A new polynomial-normalized J_e^*J_f/Racah oracle or equivalent direct polar, an "
-                "outcome-information theorem, hidden-involution decoding, and separation remain open."
+                "invariant-projector stack is now typed exactly. Its companion-only closure preserves source "
+                "branches, but the physical-interface detour supplies alpha-one addressed raw cross maps and GPE "
+                "supplies their pair polars. Phase-only global assembly is refuted by holonomy-induced "
+                "indefiniteness. A polynomial-normalized global operator-valued metric assembly or equivalent "
+                "direct polar, an outcome-information theorem, decoding, and separation remain open."
             ),
         },
-        status="known-schur-stack-typed-cross-branch-oracle-polar-and-decoder-open",
+        status="addressed-cross-maps-and-pair-polars-proved-global-metric-polar-open",
         summary=(
             f"Classified {len(CAPABILITIES)} representation primitives and exact finite Kronecker growth through "
             f"n={max(n_values)}. Separate-to-joint Schur dilation now supplies an encoded multiplicity carrier, "
-            "but the published Schur/QFT/CG plus projector stack is branch preserving and cannot supply the "
-            "certified cross-branch orientation multiplier without a new typed Racah/intertwiner primitive."
+            "the physical interface supplies alpha-one addressed raw cross maps, and GPE supplies direct pair "
+            "polars. The remaining bottleneck is a positive, polynomial-normalized global metric assembly and polar."
         ),
         falsifiers_triggered=[
             "The S_n QFT is already polynomial and cannot be presented as the missing breakthrough.",
@@ -1100,7 +1208,8 @@ def build_recoupling_capability_report(
             "#BQP multiplicity counting does not construct a coherent Kronecker basis.",
             "Schur-Weyl Clebsch-Gordan circuits do not automatically solve internal Specht tensor products.",
             "Separate-to-joint Schur dilation carries fixed-source Kronecker multiplicity coherently, but its natural normalized branch merger is the original orientation polar in encoded coordinates.",
-            "The published Schur/QFT/CG plus projector stack is branch preserving and does not supply the cross-source-branch orientation multiplier.",
+            "The companion-only Schur/QFT/CG plus projector stack is branch preserving, but a physical-interface detour does supply raw addressed cross-map entries.",
+            "Normalization-one addressed pair polars cannot replace cross metrics globally: nonflat holonomy makes the phase-only block kernel indefinite.",
             "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
             "An encoded stable shape router does not construct a compressed Clebsch channel isometry.",
             "An encoded left/right relabelling isometry does not construct the state-dependent frame filter or decoder.",
@@ -1159,9 +1268,13 @@ def write_recoupling_capability_report(
                 reason_invalid=(
                     "Counting or projecting an invariant space does not expose its basis or state-dependent "
                     "transition amplitudes. Schur dilation adds fixed-source encoded carriers in orthogonal branch "
-                    "sectors; a separate branch intertwiner is required before the cross-orientation H_nu kernel appears."
+                    "sectors. A physical-interface detour supplies addressed raw cross maps, but multiplicity "
+                    "counting still does not assemble their global positive metric or orientation polar."
                 ),
-                lesson="Separate dimension, isotypic routing, encoded carriers, exposed coordinates, and polars.",
+                lesson=(
+                    "Separate dimension, isotypic routing, addressed entry access, pair polars, global metric "
+                    "assembly, and the physical polar."
+                ),
                 applies_to=[registry_candidate_id, registry_experiment_id, "PO-MEASUREMENT"],
                 evidence=payload["claim_gate"],
             ),

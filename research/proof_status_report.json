@@ -2,8 +2,8 @@
   "blocking_status_count": 24,
   "candidate_count": 8,
   "counterexample_search_count": 8,
-  "created_at": "2026-08-25T02:56:13.030720+00:00",
-  "lemma_count": 1208,
+  "created_at": "2026-08-25T15:27:55.297887+00:00",
+  "lemma_count": 1214,
   "needs_evidence_count": 0,
   "proof_debt": {
     "counterexample_search_count": 8,
@@ -73,8 +73,8 @@
         "target_claim": "The coset observable is not a disguised classical invariant."
       }
     ],
-    "created_at": "2026-08-25T02:56:13.028103+00:00",
-    "lemma_count": 1208,
+    "created_at": "2026-08-25T15:27:55.295599+00:00",
+    "lemma_count": 1214,
     "lemmas": [
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -1978,8 +1978,23 @@
         ],
         "falsification_test": "Type every cited primitive on the internal companion input, verify closure under products, adjoints, coherent label controls, workspaces, and selected top blocks, and independently check a nonzero cross block of H_nu^(+/2). A new non-branch-preserving companion circuit would evade this access-model boundary and must be audited separately.",
         "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-SCHUR-COMPANION-KNOWN-TRANSFORM-SCOPE",
-        "statement": "The published Schur/QFT/CG and supplied-label invariant-projector interfaces generate a branch-preserving direct-sum algebra on the Schur companion, while the physical H_nu^(+/2) multiplier has cross-source-branch blocks whenever H_nu does. Thus that known typed stack does not by itself compile the orientation polar.",
-        "status": "proved-known-transform-stack-branch-preserving-cross-oracle-open"
+        "statement": "The companion-only Schur/QFT/CG and supplied-label invariant-projector interfaces generate a branch-preserving direct-sum algebra, while H_nu^(+/2) has cross-source-branch blocks. A separate physical-interface detour can query raw cross maps, but the companion-only typed stack does not by itself compile the global orientation polar.",
+        "status": "proved-companion-only-stack-branch-preserving-global-whitening-open"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "LEMMA-CODE-COSET-COLLECTIVE-COSET-PHYSICAL-SCHUR-COMPANION-INTERFACE",
+          "LEMMA-CODE-COSET-COLLECTIVE-COSET-SCHUR-BRANCH-MERGER-POLAR-EQUIVALENCE",
+          "LEMMA-CODE-COSET-COLLECTIVE-COSET-SCHUR-COMPANION-KNOWN-TRANSFORM-SCOPE",
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the physical-interface/projector signal block and alpha, uniform coherent mask control, the direct GPE pair polar, the PSD-flatness criterion, the exact S3 spectra, and tensor negative multiplicity. Do not equate entry-query alpha with dense-kernel alpha or assign positive Plancherel mass to the S3 witness without a separate theorem.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
+        "statement": "The physical Schur interface and supplied-label projector give an alpha-one block encoding of each coherently addressed J_f^*J_e query, and GPE gives its direct pair polar. Replacing all positive cross metrics by these pair polars does not yield a global Gram: on nonflat cycles the identity-diagonal unitary block kernel is indefinite.",
+        "status": "proved-addressed-cross-map-and-pair-polar-phase-only-global-gram-refuted"
       },
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -5246,8 +5261,23 @@
         ],
         "falsification_test": "Type every cited primitive on the internal companion input, verify closure under products, adjoints, coherent label controls, workspaces, and selected top blocks, and independently check a nonzero cross block of H_nu^(+/2). A new non-branch-preserving companion circuit would evade this access-model boundary and must be audited separately.",
         "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-SCHUR-COMPANION-KNOWN-TRANSFORM-SCOPE",
-        "statement": "The published Schur/QFT/CG and supplied-label invariant-projector interfaces generate a branch-preserving direct-sum algebra on the Schur companion, while the physical H_nu^(+/2) multiplier has cross-source-branch blocks whenever H_nu does. Thus that known typed stack does not by itself compile the orientation polar.",
-        "status": "proved-known-transform-stack-branch-preserving-cross-oracle-open"
+        "statement": "The companion-only Schur/QFT/CG and supplied-label invariant-projector interfaces generate a branch-preserving direct-sum algebra, while H_nu^(+/2) has cross-source-branch blocks. A separate physical-interface detour can query raw cross maps, but the companion-only typed stack does not by itself compile the global orientation polar.",
+        "status": "proved-companion-only-stack-branch-preserving-global-whitening-open"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
+          "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-PHYSICAL-SCHUR-COMPANION-INTERFACE",
+          "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-SCHUR-BRANCH-MERGER-POLAR-EQUIVALENCE",
+          "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-SCHUR-COMPANION-KNOWN-TRANSFORM-SCOPE",
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the physical-interface/projector signal block and alpha, uniform coherent mask control, the direct GPE pair polar, the PSD-flatness criterion, the exact S3 spectra, and tensor negative multiplicity. Do not equate entry-query alpha with dense-kernel alpha or assign positive Plancherel mass to the S3 witness without a separate theorem.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
+        "statement": "The physical Schur interface and supplied-label projector give an alpha-one block encoding of each coherently addressed J_f^*J_e query, and GPE gives its direct pair polar. Replacing all positive cross metrics by these pair polars does not yield a global Gram: on nonflat cycles the identity-diagonal unitary block kernel is indefinite.",
+        "status": "proved-addressed-cross-map-and-pair-polar-phase-only-global-gram-refuted"
       },
       {
         "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
@@ -8514,8 +8544,23 @@
         ],
         "falsification_test": "Type every cited primitive on the internal companion input, verify closure under products, adjoints, coherent label controls, workspaces, and selected top blocks, and independently check a nonzero cross block of H_nu^(+/2). A new non-branch-preserving companion circuit would evade this access-model boundary and must be audited separately.",
         "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-SCHUR-COMPANION-KNOWN-TRANSFORM-SCOPE",
-        "statement": "The published Schur/QFT/CG and supplied-label invariant-projector interfaces generate a branch-preserving direct-sum algebra on the Schur companion, while the physical H_nu^(+/2) multiplier has cross-source-branch blocks whenever H_nu does. Thus that known typed stack does not by itself compile the orientation polar.",
-        "status": "proved-known-transform-stack-branch-preserving-cross-oracle-open"
+        "statement": "The companion-only Schur/QFT/CG and supplied-label invariant-projector interfaces generate a branch-preserving direct-sum algebra, while H_nu^(+/2) has cross-source-branch blocks. A separate physical-interface detour can query raw cross maps, but the companion-only typed stack does not by itself compile the global orientation polar.",
+        "status": "proved-companion-only-stack-branch-preserving-global-whitening-open"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
+          "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-PHYSICAL-SCHUR-COMPANION-INTERFACE",
+          "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-SCHUR-BRANCH-MERGER-POLAR-EQUIVALENCE",
+          "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-SCHUR-COMPANION-KNOWN-TRANSFORM-SCOPE",
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the physical-interface/projector signal block and alpha, uniform coherent mask control, the direct GPE pair polar, the PSD-flatness criterion, the exact S3 spectra, and tensor negative multiplicity. Do not equate entry-query alpha with dense-kernel alpha or assign positive Plancherel mass to the S3 witness without a separate theorem.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
+        "statement": "The physical Schur interface and supplied-label projector give an alpha-one block encoding of each coherently addressed J_f^*J_e query, and GPE gives its direct pair polar. Replacing all positive cross metrics by these pair polars does not yield a global Gram: on nonflat cycles the identity-diagonal unitary block kernel is indefinite.",
+        "status": "proved-addressed-cross-map-and-pair-polar-phase-only-global-gram-refuted"
       },
       {
         "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
@@ -10543,8 +10588,23 @@
         ],
         "falsification_test": "Type every cited primitive on the internal companion input, verify closure under products, adjoints, coherent label controls, workspaces, and selected top blocks, and independently check a nonzero cross block of H_nu^(+/2). A new non-branch-preserving companion circuit would evade this access-model boundary and must be audited separately.",
         "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-SCHUR-COMPANION-KNOWN-TRANSFORM-SCOPE",
-        "statement": "The published Schur/QFT/CG and supplied-label invariant-projector interfaces generate a branch-preserving direct-sum algebra on the Schur companion, while the physical H_nu^(+/2) multiplier has cross-source-branch blocks whenever H_nu does. Thus that known typed stack does not by itself compile the orientation polar.",
-        "status": "proved-known-transform-stack-branch-preserving-cross-oracle-open"
+        "statement": "The companion-only Schur/QFT/CG and supplied-label invariant-projector interfaces generate a branch-preserving direct-sum algebra, while H_nu^(+/2) has cross-source-branch blocks. A separate physical-interface detour can query raw cross maps, but the companion-only typed stack does not by itself compile the global orientation polar.",
+        "status": "proved-companion-only-stack-branch-preserving-global-whitening-open"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-PHYSICAL-SCHUR-COMPANION-INTERFACE",
+          "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-SCHUR-BRANCH-MERGER-POLAR-EQUIVALENCE",
+          "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-SCHUR-COMPANION-KNOWN-TRANSFORM-SCOPE",
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the physical-interface/projector signal block and alpha, uniform coherent mask control, the direct GPE pair polar, the PSD-flatness criterion, the exact S3 spectra, and tensor negative multiplicity. Do not equate entry-query alpha with dense-kernel alpha or assign positive Plancherel mass to the S3 witness without a separate theorem.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
+        "statement": "The physical Schur interface and supplied-label projector give an alpha-one block encoding of each coherently addressed J_f^*J_e query, and GPE gives its direct pair polar. Replacing all positive cross metrics by these pair polars does not yield a global Gram: on nonflat cycles the identity-diagonal unitary block kernel is indefinite.",
+        "status": "proved-addressed-cross-map-and-pair-polar-phase-only-global-gram-refuted"
       },
       {
         "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
@@ -12572,8 +12632,23 @@
         ],
         "falsification_test": "Type every cited primitive on the internal companion input, verify closure under products, adjoints, coherent label controls, workspaces, and selected top blocks, and independently check a nonzero cross block of H_nu^(+/2). A new non-branch-preserving companion circuit would evade this access-model boundary and must be audited separately.",
         "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-SCHUR-COMPANION-KNOWN-TRANSFORM-SCOPE",
-        "statement": "The published Schur/QFT/CG and supplied-label invariant-projector interfaces generate a branch-preserving direct-sum algebra on the Schur companion, while the physical H_nu^(+/2) multiplier has cross-source-branch blocks whenever H_nu does. Thus that known typed stack does not by itself compile the orientation polar.",
-        "status": "proved-known-transform-stack-branch-preserving-cross-oracle-open"
+        "statement": "The companion-only Schur/QFT/CG and supplied-label invariant-projector interfaces generate a branch-preserving direct-sum algebra, while H_nu^(+/2) has cross-source-branch blocks. A separate physical-interface detour can query raw cross maps, but the companion-only typed stack does not by itself compile the global orientation polar.",
+        "status": "proved-companion-only-stack-branch-preserving-global-whitening-open"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-PHYSICAL-SCHUR-COMPANION-INTERFACE",
+          "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-SCHUR-BRANCH-MERGER-POLAR-EQUIVALENCE",
+          "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-SCHUR-COMPANION-KNOWN-TRANSFORM-SCOPE",
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the physical-interface/projector signal block and alpha, uniform coherent mask control, the direct GPE pair polar, the PSD-flatness criterion, the exact S3 spectra, and tensor negative multiplicity. Do not equate entry-query alpha with dense-kernel alpha or assign positive Plancherel mass to the S3 witness without a separate theorem.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
+        "statement": "The physical Schur interface and supplied-label projector give an alpha-one block encoding of each coherently addressed J_f^*J_e query, and GPE gives its direct pair polar. Replacing all positive cross metrics by these pair polars does not yield a global Gram: on nonflat cycles the identity-diagonal unitary block kernel is indefinite.",
+        "status": "proved-addressed-cross-map-and-pair-polar-phase-only-global-gram-refuted"
       },
       {
         "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
@@ -14601,8 +14676,23 @@
         ],
         "falsification_test": "Type every cited primitive on the internal companion input, verify closure under products, adjoints, coherent label controls, workspaces, and selected top blocks, and independently check a nonzero cross block of H_nu^(+/2). A new non-branch-preserving companion circuit would evade this access-model boundary and must be audited separately.",
         "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-SCHUR-COMPANION-KNOWN-TRANSFORM-SCOPE",
-        "statement": "The published Schur/QFT/CG and supplied-label invariant-projector interfaces generate a branch-preserving direct-sum algebra on the Schur companion, while the physical H_nu^(+/2) multiplier has cross-source-branch blocks whenever H_nu does. Thus that known typed stack does not by itself compile the orientation polar.",
-        "status": "proved-known-transform-stack-branch-preserving-cross-oracle-open"
+        "statement": "The companion-only Schur/QFT/CG and supplied-label invariant-projector interfaces generate a branch-preserving direct-sum algebra, while H_nu^(+/2) has cross-source-branch blocks. A separate physical-interface detour can query raw cross maps, but the companion-only typed stack does not by itself compile the global orientation polar.",
+        "status": "proved-companion-only-stack-branch-preserving-global-whitening-open"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
+          "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-PHYSICAL-SCHUR-COMPANION-INTERFACE",
+          "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-SCHUR-BRANCH-MERGER-POLAR-EQUIVALENCE",
+          "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-SCHUR-COMPANION-KNOWN-TRANSFORM-SCOPE",
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the physical-interface/projector signal block and alpha, uniform coherent mask control, the direct GPE pair polar, the PSD-flatness criterion, the exact S3 spectra, and tensor negative multiplicity. Do not equate entry-query alpha with dense-kernel alpha or assign positive Plancherel mass to the S3 witness without a separate theorem.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
+        "statement": "The physical Schur interface and supplied-label projector give an alpha-one block encoding of each coherently addressed J_f^*J_e query, and GPE gives its direct pair polar. Replacing all positive cross metrics by these pair polars does not yield a global Gram: on nonflat cycles the identity-diagonal unitary block kernel is indefinite.",
+        "status": "proved-addressed-cross-map-and-pair-polar-phase-only-global-gram-refuted"
       },
       {
         "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
@@ -15286,7 +15376,7 @@
     },
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
-      "evidence": "Search for a polynomial-normalized cross-source-branch J_e^*J_f/Racah oracle or an equivalent direct orientation polar on the Schur companion, followed by a hidden-involution information and outcome decoder theorem.",
+      "evidence": "Use the alpha-one addressed J_f^*J_e query oracle and direct GPE pair polars to construct a polynomial-normalized, holonomy-aware operator-valued global metric assembly or equivalent direct orientation polar, followed by a hidden-involution information and outcome-decoder theorem.",
       "field": "quantum_mechanism",
       "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
       "obligation_id": "PO-MECHANISM",
@@ -15334,7 +15424,7 @@
     },
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
-      "evidence": "Strong Fourier sampling alone is ruled out. Published Schur/QFT/CG transforms and invariant-space projectors provide branch isometries, labels, and membership reflections but no normalization-one cross-source-branch multiplier; their proved branch-preserving stack cannot implement the certified cross blocks of H_nu^(+/2). New entangling companion/Racah structure remains open.",
+      "evidence": "Strong Fourier sampling alone is ruled out. The companion-only Schur stack is branch preserving, but the physical-interface/projector detour supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. Pair phases alone cannot form the global Gram on nonflat cycles: the exact S3 kernel is indefinite. Positive metric assembly and whitening remain open.",
       "field": "no_go_analysis",
       "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
       "obligation_id": "PO-NOGO",

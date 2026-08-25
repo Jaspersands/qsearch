@@ -461,8 +461,9 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "explicitly bypass strong Fourier sampling no-go barriers."
             ),
             quantum_mechanism=(
-                "Search for a polynomial-normalized cross-source-branch J_e^*J_f/Racah oracle or an equivalent direct "
-                "orientation polar on the Schur companion, followed by a hidden-involution information and outcome decoder theorem."
+                "Use the alpha-one addressed J_f^*J_e query oracle and direct GPE pair polars to construct a "
+                "polynomial-normalized, holonomy-aware operator-valued global metric assembly or equivalent direct "
+                "orientation polar, followed by a hidden-involution information and outcome-decoder theorem."
             ),
             cost_model=(
                 "Count coset-state preparation, number of registers, tensor bond dimension, measurement synthesis, "
@@ -486,10 +487,10 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "verification; compare against canonicalization and automorphism baselines."
             ),
             no_go_analysis=(
-                "Strong Fourier sampling alone is ruled out. Published Schur/QFT/CG transforms and invariant-space "
-                "projectors provide branch isometries, labels, and membership reflections but no normalization-one "
-                "cross-source-branch multiplier; their proved branch-preserving stack cannot implement the certified "
-                "cross blocks of H_nu^(+/2). New entangling companion/Racah structure remains open."
+                "Strong Fourier sampling alone is ruled out. The companion-only Schur stack is branch preserving, "
+                "but the physical-interface/projector detour supplies alpha-one addressed raw cross maps and GPE "
+                "supplies their pair polars. Pair phases alone cannot form the global Gram on nonflat cycles: the "
+                "exact S3 kernel is indefinite. Positive metric assembly and whitening remain open."
             ),
             dequantization_check=(
                 "Check whether each separating observable is equivalent to classical color refinement, code invariants, "
@@ -667,6 +668,7 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "EXP-CODE-SELF-DUAL-WREATH-SPLIT-SECTOR-BRANCH-REGULARITY",
                 "EXP-CODE-SELF-DUAL-WREATH-TRACE-BIASED-COEFFICIENT-RANK-NO-GO",
                 "EXP-CODE-SELF-DUAL-WREATH-SCHUR-COMPANION-TRANSFORM-SCOPE-BOUNDARY",
+                "EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
                 "EXP-CODE-TENSOR-MEASUREMENT",
             ],
             notes="High upside but high no-go risk; registry keeps the no-go analysis mandatory.",
@@ -21961,6 +21963,19 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             metrics=["speedup_claim_allowed", "new_quantum_algorithm_count"],
             dependencies=["self_dual_wreath_schur_companion_transform_scope_boundary.py"],
             next_actions=["Run qsearch.py self-dual-wreath-schur-companion-transform-scope-boundary."],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Self Dual Wreath Addressed Cross Map Pair Polar Gram Boundary",
+            status="planned",
+            hypothesis="Proved representation-theoretic properties and certified reductions for Self Dual Wreath Addressed Cross Map Pair Polar Gram Boundary.",
+            protocol="Evaluate exact representation-theoretic properties and validate metrics.",
+            positive_signal="Proved representation-theoretic properties and certified reductions for Self Dual Wreath Addressed Cross Map Pair Polar Gram Boundary.",
+            falsifiers=["Observable in self_dual_wreath_addressed_cross_map_pair_polar_gram_boundary matches classical baseline.", "Representation scaling in self_dual_wreath_addressed_cross_map_pair_polar_gram_boundary collapses under classical contraction.", "Asymptotic separation in self_dual_wreath_addressed_cross_map_pair_polar_gram_boundary fails to defeat ISD/WL baselines."],
+            metrics=["speedup_claim_allowed", "new_quantum_algorithm_count"],
+            dependencies=["self_dual_wreath_addressed_cross_map_pair_polar_gram_boundary.py"],
+            next_actions=["Run qsearch.py self-dual-wreath-addressed-cross-map-pair-polar-gram-boundary."],
         ),
     ]
     return candidates, experiments

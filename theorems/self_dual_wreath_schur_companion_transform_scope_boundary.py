@@ -1,4 +1,4 @@
-"""Known Schur-transform stacks do not supply the orientation cross multiplier.
+"""The companion-only Schur stack does not supply the orientation polar.
 
 The separate-to-joint Schur dilation gives, in a fixed target sector ``nu``,
 orthogonal encoded source branches
@@ -15,7 +15,7 @@ or Clebsch--Gordan transforms, their inverses, source/target label controls,
 and generalized-phase-estimation membership reflections, and regard the
 result as a compiler for the polar of (1).
 
-The exact access model is the branch-preserving algebra
+The exact companion-only access model is the branch-preserving algebra
 
     A_br = direct_sum_e End(K_(nu,e) tensor W),             (2)
 
@@ -25,9 +25,18 @@ product, adjoint, label-controlled operation, and selected workspace top block
 from (2) still commutes with every source-branch projector ``Z_e``.  Published
 Schur transforms provide the coordinate changes defining the ``B_(nu,e)``;
 published invariant-projector/#BQP constructions provide labels or membership
-reflections.  None of those results supplies a normalization-one operator with
-nonzero ``Z_f O Z_e`` for ``e != f`` in this internal Specht-product input
-model.
+reflections.  If the computation stays inside this encoded companion algebra,
+none supplies a deterministic normalization-one operator with nonzero
+``Z_f O Z_e`` for ``e != f``.
+
+The successor addressed-cross-map theorem records an important distinction.
+Once the already-compiled physical-invariant interface is used as a detour,
+``decode e -> block-encode E_f -> encode f`` has signal block ``J_f^*J_e``
+with LCU normalization one, and coherent GPE directly compiles each pair
+polar.  This does not contradict the algebra statement because the detour
+leaves ``A_br``.  Raw queried cross-map access is available; the unresolved
+operation is the global positive metric assembly and its inverse-square-root
+polar action across the address register.
 
 By contrast, if ``H_nu`` has a cross-branch entry, its Moore--Penrose inverse
 square root cannot lie in (2).  Indeed, with ``K=H_nu^(+/2)``,
@@ -50,10 +59,10 @@ This is a capability and typed-oracle no-go, not an arbitrary-circuit lower
 bound.  High-dimensional Schur ``F``-moves are Schur--Weyl/Pieri basis changes;
 they are not a published internal ``S_n`` Kronecker/Racah transition oracle.
 A new non-branch-preserving companion operation could still compile the polar.
-The minimal surviving target is therefore explicit: coherently block-encode
-the cross maps ``J_e^* J_f`` (or compile the equivalent merger polar) with a
-normalization and useful spectral window both inverse-polynomial on natural
-mass.
+The minimal surviving target is therefore explicit: assemble the operator-
+valued factors in all ``J_e^*J_f`` queries into the global positive address
+kernel and compile its merger polar with polynomial normalization and an
+inverse-polynomial useful spectral window on natural mass.
 """
 
 from __future__ import annotations
@@ -172,6 +181,9 @@ class SchurCompanionScopeScalingRecord:
     invariant_membership_reflections_polynomial: bool
     known_stack_exposes_internal_kronecker_coordinates: bool
     known_stack_supplies_cross_branch_multiplier: bool
+    physical_interface_supplies_addressed_raw_cross_map_block_encoding: bool
+    addressed_raw_cross_map_block_encoding_normalization: float
+    coherent_gpe_supplies_direct_pair_polar: bool
     known_stack_supplies_normalization_one_orientation_polar: bool
     direct_non_branch_preserving_companion_circuit_ruled_out: bool
     status: str
@@ -433,9 +445,12 @@ def schur_companion_scope_scaling(
         invariant_membership_reflections_polynomial=True,
         known_stack_exposes_internal_kronecker_coordinates=False,
         known_stack_supplies_cross_branch_multiplier=False,
+        physical_interface_supplies_addressed_raw_cross_map_block_encoding=True,
+        addressed_raw_cross_map_block_encoding_normalization=1.0,
+        coherent_gpe_supplies_direct_pair_polar=True,
         known_stack_supplies_normalization_one_orientation_polar=False,
         direct_non_branch_preserving_companion_circuit_ruled_out=False,
-        status="known-transform-stack-typed-insufficient-cross-oracle-open",
+        status="companion-only-stack-insufficient-global-whitening-open",
     )
 
 
@@ -481,9 +496,9 @@ def run_schur_companion_transform_scope_boundary() -> SchurCompanionScopeReport:
             "Schur-branch merger range from the predecessor equivalence theorem"
         ),
         access_model=(
-            "Schur/QFT coordinate changes, source and target label controls, "
-            "and supplied-label invariant membership reflections, with no "
-            "oracle having Z_f O Z_e nonzero for e!=f"
+            "Companion-only Schur/QFT coordinate changes, source and target "
+            "label controls, and supplied-label invariant membership reflections, "
+            "before the separate physical-interface detour is admitted"
         ),
         closure_theorem=(
             "Every product, adjoint, coherent label control, and selected "
@@ -506,10 +521,11 @@ def run_schur_companion_transform_scope_boundary() -> SchurCompanionScopeReport:
             "pairs; the joint-sector theorem puts 1-o(1) mass on large rows."
         ),
         normalization_boundary=(
-            "The known stack supplies no cross-branch block encoding at any "
-            "normalization. A surviving construction must state an explicit "
-            "alpha=poly(n) normalization and an inverse-polynomial useful "
-            "spectral window before QSVT or amplitude amplification is charged."
+            "The physical-interface/projector detour supplies each addressed raw "
+            "J_f^*J_e query at alpha=1, but entry-query normalization does not "
+            "set the normalization or hard edge of the full dense address kernel. "
+            "A surviving global assembly must state alpha=poly(n) and an "
+            "inverse-polynomial useful spectral window."
         ),
         classical_alternative=(
             "Exact character and representation-ring contractions form H_nu "
@@ -518,9 +534,9 @@ def run_schur_companion_transform_scope_boundary() -> SchurCompanionScopeReport:
             "is inferred from this finite computation."
         ),
         minimal_surviving_oracle=(
-            "A coherent polynomial-normalized block encoding of the cross "
-            "maps J_e^*J_f with an inverse-polynomial useful spectral window, "
-            "or a direct compiler for the equivalent merger polar."
+            "A coherent polynomial-normalized global PSD assembly of the "
+            "operator-valued J_e^*J_f entries, with their positive metrics and "
+            "holonomy retained, or a direct compiler for the equivalent merger polar."
         ),
         scope=(
             "This rejects only the claim that the cited transform/projector "
@@ -530,7 +546,7 @@ def run_schur_companion_transform_scope_boundary() -> SchurCompanionScopeReport:
         ),
         theorem_verified=verified,
         status=(
-            "known-schur-projector-stack-insufficient-cross-oracle-open"
+            "companion-only-schur-stack-insufficient-global-whitening-open"
             if verified
             else "schur-companion-transform-scope-validation-failure"
         ),
@@ -577,20 +593,20 @@ def run_schur_companion_transform_scope_boundary() -> SchurCompanionScopeReport:
                 ),
             },
             {
-                "obligation": "compile_polynomial_normalized_cross_branch_oracle",
-                "resolved": False,
+                "obligation": "compile_addressed_raw_cross_map_oracle",
+                "resolved": True,
                 "resolution": (
-                    "No coherent J_e^*J_f block encoding, internal Kronecker/Racah "
-                    "basis transition, or equivalent normalization-one polar is known."
+                    "The physical-interface/projector/interface sandwich has "
+                    "signal block J_f^*J_e at alpha one for coherent e,f queries."
                 ),
             },
             {
-                "obligation": "charge_cross_oracle_normalization",
+                "obligation": "compile_global_operator_valued_metric_assembly",
                 "resolved": False,
                 "resolution": (
-                    "The cited stack has no cross-source-branch SELECT/block "
-                    "encoding whose alpha can be charged. Any new construction "
-                    "must prove alpha=poly(n) and a useful inverse-polynomial window."
+                    "Entry-query access and direct pair polars do not construct "
+                    "the dense PSD address-transition kernel. The full assembly "
+                    "must retain positive cross metrics and charge its normalization."
                 ),
             },
             {
@@ -625,6 +641,15 @@ def run_schur_companion_transform_scope_boundary() -> SchurCompanionScopeReport:
                 "resolution": (
                     "Control changes the within-branch block but has no nonzero "
                     "Z_f O Z_e block unless a cross-branch primitive is separately supplied."
+                ),
+            },
+            {
+                "objection": "The companion-only closure rules out queried raw cross-map access.",
+                "resolved": True,
+                "resolution": (
+                    "It does not: the compiled physical interface leaves A_br, "
+                    "block-encodes E_f, and returns through branch f. The closure "
+                    "still rules out obtaining this transition without such a detour."
                 ),
             },
             {
@@ -665,7 +690,9 @@ def run_schur_companion_transform_scope_boundary() -> SchurCompanionScopeReport:
                 row.maximum_inverse_sqrt_branch_commutator_norm for row in controls
             ),
             "primary_literature_scope_count": len(PRIMARY_LITERATURE),
-            "polynomial_cross_branch_oracle_count": 0,
+            "polynomial_global_cross_branch_whitening_oracle_count": 0,
+            "addressed_raw_cross_map_block_encoding_count": 1,
+            "direct_gpe_pair_polar_compiler_count": 1,
             "direct_structured_orientation_polar_compiler_count": 0,
             "hidden_involution_decoder_count": 0,
             "new_quantum_algorithm_count": 0,
@@ -674,14 +701,18 @@ def run_schur_companion_transform_scope_boundary() -> SchurCompanionScopeReport:
             "known_schur_qft_and_projector_interfaces_typed": verified,
             "branch_preserving_stack_closed_under_coherent_composition": verified,
             "actual_orientation_inverse_sqrt_requires_cross_branch_action": verified,
-            "known_transform_stack_supplies_cross_branch_action": False,
+            "companion_only_stack_supplies_cross_branch_action": False,
             "known_transform_stack_compiles_orientation_polar": False,
+            "physical_interface_supplies_addressed_raw_cross_map_block_encoding": True,
+            "addressed_raw_cross_map_block_encoding_normalization_one": True,
+            "coherent_gpe_supplies_direct_pair_polar": True,
             "high_dimensional_schur_f_moves_equal_internal_kronecker_racah": False,
             "multiplicity_counting_implies_coherent_basis": False,
             "natural_cross_orientation_overlap_density_one_proved": True,
             "natural_high_dimensional_target_mass_proved": True,
-            "polynomial_normalized_cross_branch_oracle_compiled": False,
-            "cross_branch_block_encoding_normalization_charged": False,
+            "polynomial_normalized_global_cross_branch_whitening_oracle_compiled": False,
+            "full_global_cross_branch_block_encoding_normalization_charged": False,
+            "global_operator_valued_metric_assembly_compiled": False,
             "direct_structured_companion_polar_ruled_out": False,
             "multi_round_companion_transform_ruled_out": False,
             "branch_character_retaining_decoder_ruled_out": False,
@@ -690,18 +721,18 @@ def run_schur_companion_transform_scope_boundary() -> SchurCompanionScopeReport:
             "classical_separation_proved": False,
             "speedup_claim_allowed": False,
             "reason": (
-                "Known transforms expose Schur coordinates and invariant labels "
-                "but no normalization-one cross-source-branch operation. Actual "
-                "orientation whitening has cross blocks, so a new typed Racah/"
-                "intertwiner oracle or equivalent direct polar remains mandatory."
+                "The companion-only stack is branch preserving, while the physical "
+                "interface supplies alpha-one addressed raw cross maps and GPE "
+                "supplies their pair polars. Neither result assembles the global "
+                "positive address kernel or compiles its inverse-square-root polar."
             ),
         },
         status=theorem.status,
         summary=(
-            "Falsified the hypothesis that published Schur/CG and invariant-"
-            "projector primitives already compile the physical orientation polar: "
-            "their proved interface is branch preserving, while the required "
-            "inverse-square-root multiplier crosses natural source branches."
+            "Falsified the hypothesis that companion-only Schur/CG and invariant-"
+            "projector primitives already compile the physical orientation polar. "
+            "The physical detour does supply addressed raw cross maps and pair "
+            "polars; global positive metric assembly and whitening remain open."
         ),
         falsifiers_triggered=[
             "A Schur--Weyl F-move is not automatically an internal S_n Kronecker/Racah move.",
@@ -734,13 +765,14 @@ def write_schur_companion_transform_scope_boundary_report(
                     "joint-character orientation polar."
                 ),
                 reason_invalid=(
-                    "Their proved typed interface is branch preserving, whereas "
-                    "the actual H_nu^(+/2) multiplier has nonzero cross-branch blocks."
+                    "The companion-only interface is branch preserving. The physical "
+                    "detour supplies raw cross maps, but neither it nor pair GPE "
+                    "assembles the global positive kernel or its H_nu^(+/2) action."
                 ),
                 lesson=(
-                    "Require an explicit polynomial-normalized J_e^*J_f/Racah "
-                    "oracle or a direct non-branch-preserving polar circuit; labels, "
-                    "multiplicity counts, and Schur--Weyl F-moves are insufficient."
+                    "Require an explicit polynomial-normalized operator-valued "
+                    "global metric assembly or a direct non-branch-preserving polar; "
+                    "raw entry queries and pair phases are insufficient."
                 ),
                 applies_to=[
                     DEFAULT_CANDIDATE_ID,

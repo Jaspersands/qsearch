@@ -12069,13 +12069,23 @@ The literature boundary is exact and deliberately narrow:
 - The efficient `S_n` QFT supplies carrier coordinates, not an internal
   multiplicity multiplier.
 
-The smallest surviving constructive target is now the typed oracle
+Successor correction: the closure statement above applies only while the
+computation stays inside `A_br`. The already-compiled physical-invariant
+interface permits a detour
 
 ```text
-coherently block-encode J_e^*J_f (or the equivalent merger polar)
-with polynomial normalization and an inverse-polynomial useful spectral
-window on natural mass.
+decode branch e -> block-encode E_f -> encode branch f,
 ```
+
+whose signal block is `J_f^*J_e` with LCU normalization one. Coherent GPE also
+compiles each addressed pair polar directly. Thus the raw cross-map query is
+not open; the companion-only algebra theorem still explains why it cannot be
+obtained without leaving that algebra.
+
+The surviving constructive target is global: assemble all operator-valued
+cross metrics and pair phases into the positive address-transition kernel,
+with polynomial full-kernel normalization and an inverse-polynomial useful
+spectral window on natural mass.
 
 No new entangling companion circuit, noncommuting Racah network, multi-round
 branch relocation, or character-retaining decoder is ruled out. No approximate
@@ -12089,13 +12099,86 @@ Experiment ID reserved for mechanical wiring:
 EXP-CODE-SELF-DUAL-WREATH-SCHUR-COMPANION-TRANSFORM-SCOPE-BOUNDARY
 ```
 
-**Next high-reasoning task:** construct or falsify a globally coherent,
-non-branch-preserving Racah network for the explicit `J_e^*J_f` cross maps.
-The construction must specify its companion input basis, SELECT oracle,
-block-encoding normalization, useful spectral window, natural source/target
-mass, and state-dependent output information. Do not begin with another Schur
-coordinate transform or membership projector: this theorem proves that those
-typed primitives remain inside the wrong algebra.
+The next section records the resulting oracle construction and global
+phase-only falsifier.
+
+## Addressed Cross Maps And Pair-Polar Gram Boundary (2026-08-25)
+
+`self_dual_wreath_addressed_cross_map_pair_polar_gram_boundary.py` advances the
+cross-branch frontier and corrects the raw-access part of the previous target.
+For branch inclusions `J_e:M_e->X`, use the physical Schur/Bell interfaces and
+
+```text
+E_f = (I + (2E_f-I))/2.
+```
+
+One Hadamard-LCU ancilla around the supplied-label invariant reflection gives
+the exact addressed signal block
+
+```text
+B_f J_f^* E_f E_e J_e B_e^* = B_f J_f^*J_e B_e^*
+```
+
+at normalization `alpha=1`. The coherent query masks `(e,f)` control which of
+the `O(n log n)` factor registers participate in each diagonal `S_n` action;
+the circuit never enumerates the `4^k` possible orientation pairs. The
+existing GPE row-reassociation theorem then supplies the direct support polar
+`U_(f<-e)=polar(J_f^*J_e)` without inverse-carrier amplification.
+
+This does **not** normalize the full dense address-transition operator.
+The tempting phase-only global kernel
+
+```text
+K_pol[e,e]=I,       K_pol[e,f]=U_(e<-f)
+```
+
+is a Gram operator only when the pair connection is flat. In any PSD Gram
+factorization, a unitary off-diagonal overlap forces the corresponding branch
+isometry ranges to coincide; consequently every loop product must be the
+identity. Conversely, a flat family has a common-range Gram factorization.
+
+The exact regular-`S3` transposition triangle has holonomy spectrum
+`{1,-1,-1}`. Its physical overlap Gram retains the nonflat metric `1/2` and
+has spectrum
+
+```text
+{0,0,0,0, 3/2,3/2,3/2,3/2, 3}.
+```
+
+Replacing all nonzero cross metrics by their pair polars gives
+
+```text
+{-1,-1, 0,0, 2,2,2,2, 3},
+```
+
+so the phase-only kernel is indefinite. Under `k` tensor copies the negative
+eigenvalue multiplicity is `(3^k-(-1)^k)/2`, asymptotically one sixth of the
+three-branch coefficient space. The witness embeds in fixed-point-free
+involutions for every even `n>=6`, but no positive natural Plancherel mass for
+this chart is claimed.
+
+The corrected bottleneck is the **operator-valued positive metric assembly**:
+retain `|J_f^*J_e|` together with the GPE pair phases, construct the full PSD
+address kernel at polynomial normalization, and prove a useful natural
+spectral window. Entry-query `alpha=1` is not full-matrix `alpha=1`.
+
+No global polar, physical PGM, natural-mass holonomy obstruction, hidden-label
+information theorem, decoder, classical separation, algorithm, or speedup is
+proved. `speedup_claim_allowed` remains false.
+
+Experiment ID reserved for mechanical wiring:
+
+```text
+EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY
+```
+
+**Next high-reasoning task:** construct or falsify a coherent global PSD metric
+assembly from the addressed raw cross-map oracle. The construction must expose
+the address-transition PREPARE/SELECT normalization, retain the positive
+operator factors rather than only pair phases, resolve nonabelian holonomy,
+prove an inverse-polynomial useful spectral window on positive natural PGM
+mass, and state what information its output carries about the hidden
+involution. A finite S3 chart or alpha-one entry query is not enough.
 
 ## Resume Commands
 

@@ -4896,11 +4896,26 @@ artifact under `research/representation/`:
       `H_nu^(+/2)` outside that algebra. Preserve the primary-literature scope:
       Schur--Weyl/Pieri `F`-moves and invariant-projector `#BQP` witnesses do
       not provide arbitrary internal `S_n` Kronecker/Racah transition
-      amplitudes. Keep new entangling companion circuits, cross-map oracle,
-      approximate-circuit lower bound, physical PGM, hidden-information
+      amplitudes. Preserve the successor correction that the physical-interface
+      detour supplies alpha-one addressed raw cross maps and GPE supplies pair
+      polars; the companion-only closure still excludes a within-algebra polar.
+      Keep global metric assembly, approximate-circuit lower bound, physical PGM, hidden-information
       theorem, decoder, classical separation, algorithm, and speedup
       false/open. The negative-result writer is already live; routine
       experiment/runner/CLI/README dispatch remains mechanical.
+53. `self_dual_wreath_addressed_cross_map_pair_polar_gram_boundary.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY`
+    - Writer: `write_addressed_cross_map_pair_polar_gram_boundary_report`
+    - Preserve the alpha-one physical-interface/projector/interface signal
+      block `J_f^*J_e`, coherent bit-mask query uniformity without a `4^k`
+      table, and the existing direct GPE pair polar. Preserve the exact PSD
+      flatness criterion and the regular-`S3` spectra: the physical metric Gram
+      is PSD while the phase-only pair-polar kernel has two eigenvalues `-1`;
+      its tensor negative multiplicity is `(3^k-(-1)^k)/2`. Keep positive
+      natural mass for this witness, global operator-valued metric assembly,
+      full-kernel normalization/window, physical PGM, decoder, classical
+      separation, algorithm, and speedup false/open. The negative-result
+      writer is live; routine dispatch remains mechanical.
 
 Mechanical actions:
 
@@ -4910,7 +4925,7 @@ Mechanical actions:
   parsers/handlers, clean-registry dispatch tests, and concise README command
   blocks by copying the existing hidden-involution theorem pattern.
 - Refresh `dequantize`, `proofs`, `query-models`, `frontiers`, `conjectures`,
-  `mutate`, the progress snapshot, and `validate` after wiring all fifty-two as one
+  `mutate`, the progress snapshot, and `validate` after wiring all fifty-three as one
   batch.
 - Repair the pre-existing clean-registry defect in
   `write_complete_racah_control_report`: it currently accepts
@@ -4930,7 +4945,7 @@ Mechanical actions:
   any registry update. Restore the existing neighboring writer pattern and
   preserve every current claim gate; this is registry plumbing, not research
   evidence. Run each named clean-registry test before another broad suite.
-- Run the fifty-two focused test files first, then adjacent hidden-involution
+- Run the fifty-three focused test files first, then adjacent hidden-involution
   tests, `python -m compileall -q .`, `node --check site/progress.js`,
   `git diff --check`, and `python qsearch.py validate`.
 - Make no separate commit per theorem.  Include these in the next rare coherent
