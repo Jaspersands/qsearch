@@ -7100,6 +7100,54 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     ),
                 ),
                 LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "Uniform output-address preparation, an alpha-one addressed J_f^*J_e query, and uniform "
+                        "input-address erasure compile the exact positive dense Gram G/q without an entry table. "
+                        "For any equal-coefficient linear address mixer, contractivity of 11^*/alpha proves the "
+                        "sharp normalization lower bound alpha>=q."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-COSET-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
+                        "PO-MEASUREMENT",
+                        "PO-COMPLEXITY",
+                        "PO-NO-GO",
+                    ],
+                    status=(
+                        "proved-linear-global-metric-assembly-alpha-q-boundary"
+                        if int(
+                            capability_metrics.get(
+                                "canonical_linear_global_metric_assembly_compiler_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        and int(
+                            capability_metrics.get(
+                                "linear_dense_assembly_alpha_q_lower_bound_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        and not int(
+                            capability_metrics.get(
+                                "global_operator_valued_metric_assembly_compiler_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-linear-global-assembly-normalization-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify the prepare/query/erase signal G/q, coefficient-matrix norm q/alpha, exact S3 "
+                        "normalized spectrum, and orthogonal-flat 1/sqrt(q) analysis amplitude. Do not extend the "
+                        "coefficient-only statement to hierarchical/multi-query circuits or infer natural spectral mass."
+                    ),
+                ),
+                LemmaRecord(
                     id=f"LEMMA-{candidate_id}-COSET-INTERNAL-KRONECKER-TRANSFORM",
                     candidate_id=candidate_id,
                     statement=(

@@ -118,9 +118,11 @@ def test_report_falsifies_only_the_known_transform_stack_hypothesis() -> None:
     assert not report.claim_gate[
         "polynomial_normalized_global_cross_branch_whitening_oracle_compiled"
     ]
-    assert not report.claim_gate[
+    assert report.claim_gate[
         "full_global_cross_branch_block_encoding_normalization_charged"
     ]
+    assert report.claim_gate["canonical_linear_global_psd_metric_assembly_compiled"]
+    assert report.claim_gate["canonical_linear_global_metric_normalization"] == "q"
     assert not report.claim_gate["global_operator_valued_metric_assembly_compiled"]
     assert not report.claim_gate["direct_structured_companion_polar_ruled_out"]
     assert not report.claim_gate["multi_round_companion_transform_ruled_out"]

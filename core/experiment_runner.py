@@ -62,6 +62,15 @@ from self_dual_wreath_hecke_audit import write_self_dual_wreath_hecke_audit
 from self_dual_wreath_pgm_polar_audit import (
     write_self_dual_wreath_pgm_polar_audit,
 )
+from self_dual_wreath_addressed_cross_map_linear_assembly_normalization_boundary import (
+    write_linear_assembly_normalization_boundary_report,
+)
+from self_dual_wreath_addressed_cross_map_pair_polar_gram_boundary import (
+    write_addressed_cross_map_pair_polar_gram_boundary_report,
+)
+from self_dual_wreath_schur_companion_transform_scope_boundary import (
+    write_schur_companion_transform_scope_boundary_report,
+)
 from self_dual_wreath_subset_carrier_algebra import (
     write_self_dual_wreath_subset_carrier_algebra,
 )
@@ -1494,8 +1503,6 @@ DCP_SUBSET_SUM_CARRY_RELATION_EXPERIMENTS = {
 }
 
 DCP_SUBSET_SUM_MARKER_COSET_EXPERIMENTS = {
-    "EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
-    "EXP-CODE-SELF-DUAL-WREATH-SCHUR-COMPANION-TRANSFORM-SCOPE-BOUNDARY",
     "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-CYCLIC-POLAR-COMPILER",
     "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-CYCLIC-QUADRANT-OVERLAP",
     "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-EQUIVARIANT-MULTIPLIER-NORMAL-FORM",
@@ -2410,6 +2417,7 @@ def supported_experiment_ids() -> list[str]:
         | {"EXP-CODE-SELF-DUAL-WREATH-TRACE-BIASED-COEFFICIENT-RANK-NO-GO"}
         | {"EXP-CODE-SELF-DUAL-WREATH-SCHUR-COMPANION-TRANSFORM-SCOPE-BOUNDARY"}
         | {"EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY"}
         | DCP_RECURSIVE_DECODER_EXPERIMENTS
         | DCP_RECURRENCE_EXPERIMENTS
         | DCP_SCHEDULE_SEARCH_EXPERIMENTS
@@ -12205,6 +12213,49 @@ def run_experiment(experiment_id: str) -> RunnerResult:
             status="completed",
             result_id=result_id,
             summary=payload["summary"],
+        )
+        if not any(r["id"] == result_id for r in load_experiment_results()):
+            upsert_experiment_result(
+                ExperimentResultRecord(
+                    id=result_id,
+                    experiment_id=experiment_id,
+                    candidate_id=experiment["candidate_id"],
+                    created_at=utc_now(),
+                    status=payload.get("status", "completed"),
+                    summary=payload.get("summary", ""),
+                    metrics=payload.get("headline_metrics", {}),
+                    falsifiers_triggered=payload.get("falsifiers_triggered", []),
+                    artifacts=_build_fallback_artifacts(payload, experiment_id),
+                )
+            )
+        append_run_history(result_id)
+        write_experiment_trends()
+        return runner_result
+    boundary_writers = {
+        "EXP-CODE-SELF-DUAL-WREATH-SCHUR-COMPANION-TRANSFORM-SCOPE-BOUNDARY": (
+            write_schur_companion_transform_scope_boundary_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY": (
+            write_addressed_cross_map_pair_polar_gram_boundary_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY": (
+            write_linear_assembly_normalization_boundary_report
+        ),
+    }
+    if experiment_id in boundary_writers:
+        result_id = _latest_result_id_for_experiment(experiment_id)
+        writer = boundary_writers[experiment_id]
+        try:
+            payload = writer(
+                write_registry=True,
+                registry_experiment_id=experiment_id,
+                registry_candidate_id=experiment["candidate_id"],
+                registry_result_id=result_id,
+            )
+        except TypeError:
+            payload = writer()
+        runner_result = RunnerResult(
+            experiment_id, "completed", result_id, payload.get("summary", "")
         )
         if not any(r["id"] == result_id for r in load_experiment_results()):
             upsert_experiment_result(

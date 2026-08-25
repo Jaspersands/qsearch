@@ -66,8 +66,8 @@
       "target_claim": "The coset observable is not a disguised classical invariant."
     }
   ],
-  "created_at": "2026-08-25T15:27:55.295599+00:00",
-  "lemma_count": 1214,
+  "created_at": "2026-08-25T16:25:16.285134+00:00",
+  "lemma_count": 1220,
   "lemmas": [
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -1988,6 +1988,19 @@
       "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
       "statement": "The physical Schur interface and supplied-label projector give an alpha-one block encoding of each coherently addressed J_f^*J_e query, and GPE gives its direct pair polar. Replacing all positive cross metrics by these pair polars does not yield a global Gram: on nonflat cycles the identity-diagonal unitary block kernel is indefinite.",
       "status": "proved-addressed-cross-map-and-pair-polar-phase-only-global-gram-refuted"
+    },
+    {
+      "candidate_id": "CODE-COSET-COLLECTIVE",
+      "depends_on": [
+        "LEMMA-CODE-COSET-COLLECTIVE-COSET-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the prepare/query/erase signal G/q, coefficient-matrix norm q/alpha, exact S3 normalized spectrum, and orthogonal-flat 1/sqrt(q) analysis amplitude. Do not extend the coefficient-only statement to hierarchical/multi-query circuits or infer natural spectral mass.",
+      "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY",
+      "statement": "Uniform output-address preparation, an alpha-one addressed J_f^*J_e query, and uniform input-address erasure compile the exact positive dense Gram G/q without an entry table. For any equal-coefficient linear address mixer, contractivity of 11^*/alpha proves the sharp normalization lower bound alpha>=q.",
+      "status": "proved-linear-global-metric-assembly-alpha-q-boundary"
     },
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -5275,6 +5288,19 @@
     {
       "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
       "depends_on": [
+        "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the prepare/query/erase signal G/q, coefficient-matrix norm q/alpha, exact S3 normalized spectrum, and orthogonal-flat 1/sqrt(q) analysis amplitude. Do not extend the coefficient-only statement to hierarchical/multi-query circuits or infer natural spectral mass.",
+      "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY",
+      "statement": "Uniform output-address preparation, an alpha-one addressed J_f^*J_e query, and uniform input-address erasure compile the exact positive dense Gram G/q without an entry table. For any equal-coefficient linear address mixer, contractivity of 11^*/alpha proves the sharp normalization lower bound alpha>=q.",
+      "status": "proved-linear-global-metric-assembly-alpha-q-boundary"
+    },
+    {
+      "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+      "depends_on": [
         "PO-MEASUREMENT",
         "PO-COMPLEXITY",
         "PO-NO-GO"
@@ -8558,6 +8584,19 @@
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
       "depends_on": [
+        "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the prepare/query/erase signal G/q, coefficient-matrix norm q/alpha, exact S3 normalized spectrum, and orthogonal-flat 1/sqrt(q) analysis amplitude. Do not extend the coefficient-only statement to hierarchical/multi-query circuits or infer natural spectral mass.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY",
+      "statement": "Uniform output-address preparation, an alpha-one addressed J_f^*J_e query, and uniform input-address erasure compile the exact positive dense Gram G/q without an entry table. For any equal-coefficient linear address mixer, contractivity of 11^*/alpha proves the sharp normalization lower bound alpha>=q.",
+      "status": "proved-linear-global-metric-assembly-alpha-q-boundary"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+      "depends_on": [
         "PO-MEASUREMENT",
         "PO-COMPLEXITY",
         "PO-NO-GO"
@@ -10598,6 +10637,19 @@
       "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
       "statement": "The physical Schur interface and supplied-label projector give an alpha-one block encoding of each coherently addressed J_f^*J_e query, and GPE gives its direct pair polar. Replacing all positive cross metrics by these pair polars does not yield a global Gram: on nonflat cycles the identity-diagonal unitary block kernel is indefinite.",
       "status": "proved-addressed-cross-map-and-pair-polar-phase-only-global-gram-refuted"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+      "depends_on": [
+        "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the prepare/query/erase signal G/q, coefficient-matrix norm q/alpha, exact S3 normalized spectrum, and orthogonal-flat 1/sqrt(q) analysis amplitude. Do not extend the coefficient-only statement to hierarchical/multi-query circuits or infer natural spectral mass.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY",
+      "statement": "Uniform output-address preparation, an alpha-one addressed J_f^*J_e query, and uniform input-address erasure compile the exact positive dense Gram G/q without an entry table. For any equal-coefficient linear address mixer, contractivity of 11^*/alpha proves the sharp normalization lower bound alpha>=q.",
+      "status": "proved-linear-global-metric-assembly-alpha-q-boundary"
     },
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
@@ -12646,6 +12698,19 @@
     {
       "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
       "depends_on": [
+        "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the prepare/query/erase signal G/q, coefficient-matrix norm q/alpha, exact S3 normalized spectrum, and orthogonal-flat 1/sqrt(q) analysis amplitude. Do not extend the coefficient-only statement to hierarchical/multi-query circuits or infer natural spectral mass.",
+      "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY",
+      "statement": "Uniform output-address preparation, an alpha-one addressed J_f^*J_e query, and uniform input-address erasure compile the exact positive dense Gram G/q without an entry table. For any equal-coefficient linear address mixer, contractivity of 11^*/alpha proves the sharp normalization lower bound alpha>=q.",
+      "status": "proved-linear-global-metric-assembly-alpha-q-boundary"
+    },
+    {
+      "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+      "depends_on": [
         "PO-MEASUREMENT",
         "PO-COMPLEXITY",
         "PO-NO-GO"
@@ -14686,6 +14751,19 @@
       "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
       "statement": "The physical Schur interface and supplied-label projector give an alpha-one block encoding of each coherently addressed J_f^*J_e query, and GPE gives its direct pair polar. Replacing all positive cross metrics by these pair polars does not yield a global Gram: on nonflat cycles the identity-diagonal unitary block kernel is indefinite.",
       "status": "proved-addressed-cross-map-and-pair-polar-phase-only-global-gram-refuted"
+    },
+    {
+      "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+      "depends_on": [
+        "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
+        "PO-MEASUREMENT",
+        "PO-COMPLEXITY",
+        "PO-NO-GO"
+      ],
+      "falsification_test": "Verify the prepare/query/erase signal G/q, coefficient-matrix norm q/alpha, exact S3 normalized spectrum, and orthogonal-flat 1/sqrt(q) analysis amplitude. Do not extend the coefficient-only statement to hierarchical/multi-query circuits or infer natural spectral mass.",
+      "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY",
+      "statement": "Uniform output-address preparation, an alpha-one addressed J_f^*J_e query, and uniform input-address erasure compile the exact positive dense Gram G/q without an entry table. For any equal-coefficient linear address mixer, contractivity of 11^*/alpha proves the sharp normalization lower bound alpha>=q.",
+      "status": "proved-linear-global-metric-assembly-alpha-q-boundary"
     },
     {
       "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",

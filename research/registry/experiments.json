@@ -1147,6 +1147,36 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_wreath_addressed_cross_map_linear_assembly_normalization_boundary.py",
+      "self_dual_wreath_addressed_cross_map_pair_polar_gram_boundary.py",
+      "self_dual_wreath_native_frame_access_boundary.py"
+    ],
+    "falsifiers": [
+      "Alpha-one addressed entries do not imply alpha-one dense assembly under uniform linear mixing.",
+      "The q^2 ordered blocks require alpha=q rather than alpha=q^2 under two-sided uniform preparation.",
+      "The orthogonal flat-frame witness is not a representation-specific or arbitrary-circuit lower bound.",
+      "Dense natural support alone does not prove a q-scale retained spectral window."
+    ],
+    "hypothesis": "The alpha-one addressed cross-map oracle compiles the exact positive dense Gram table-free, but uniform equal-coefficient linear address mixing has sharp normalization alpha=q.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY",
+    "metrics": [
+      "canonical_linear_global_metric_assembly_compiler_count",
+      "linear_dense_assembly_alpha_q_lower_bound_theorem_count",
+      "superpolynomial_scaling_row_count",
+      "polynomial_normalized_global_metric_assembly_compiler_count",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-addressed-cross-map-linear-assembly-normalization-boundary."
+    ],
+    "positive_signal": "A natural retained Omega(q/poly(n)) spectral window or a hierarchical/direct global polar bypasses the one-query equal-coefficient normalization.",
+    "protocol": "Verify the prepare/query/erase signal G/q, coefficient-mixer contraction lower bound, exact S3 normalized spectrum, orthogonal-flat stress frame, and factorial-width scaling while preserving the hierarchical/direct-polar scope boundary.",
+    "status": "planned",
+    "title": "Self Dual Wreath Addressed Cross Map Linear Assembly Normalization Boundary"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "self_dual_wreath_addressed_cross_map_pair_polar_gram_boundary.py"
     ],
     "falsifiers": [

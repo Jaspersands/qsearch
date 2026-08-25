@@ -39,6 +39,9 @@ from self_dual_wreath_schur_companion_transform_scope_boundary import (
 from self_dual_wreath_addressed_cross_map_pair_polar_gram_boundary import (
     run_addressed_cross_map_pair_polar_gram_boundary,
 )
+from self_dual_wreath_addressed_cross_map_linear_assembly_normalization_boundary import (
+    run_linear_assembly_normalization_boundary,
+)
 from symmetric_character import kronecker_coefficient
 
 
@@ -223,7 +226,7 @@ CAPABILITIES = (
             "Actual finite H_nu and H_nu^(+/2) controls have nonzero cross-source-branch blocks, and natural "
             "Plancherel covering makes cross overlaps density one on balanced pairs. The companion-only stack "
             "therefore does not supply the orientation whitening multiplier. A physical-interface detour does "
-            "supply addressed raw cross maps, but global metric assembly, noncommuting Racah networks, "
+            "supply addressed raw cross maps, but tightly normalized metric whitening, noncommuting Racah networks, "
             "multi-round transforms, and character-retaining decoders remain open."
         ),
     ),
@@ -254,7 +257,37 @@ CAPABILITIES = (
         scope_limit=(
             "An alpha-one entry query is not a normalization-one dense address-transition block encoding. Replacing "
             "all positive cross metrics by pair polars makes the block kernel indefinite on nonflat holonomy cycles. "
-            "Global operator-valued metric assembly, whitening, natural spectral mass, and decoding remain open."
+            "Uniform linear assembly gives G/q, but a natural q-scale window, hierarchical/direct whitening, and decoding remain open."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-LINEAR-DENSE-METRIC-ASSEMBLY-ALPHA-Q",
+        literature_ids=[
+            "bacon-chuang-harrow-schur-2004",
+            "gilyen-su-low-wiebe-qsvt-2018",
+        ],
+        primitive=(
+            "Table-free uniform linear assembly of the addressed cross-map Gram"
+        ),
+        proved_scope=(
+            "Uniform output-address preparation, one alpha-one addressed cross-map query, and uniform input-address "
+            "erasure give the exact positive dense signal G/q using O(log q) address gates. Equal-coefficient linear "
+            "mixing has coefficient matrix 11^*/alpha, so contraction on identical entries proves the sharp lower "
+            "bound alpha>=q."
+        ),
+        availability="proved-polynomial-gates-alpha-q-normalization-only",
+        uniform_polynomial_gate_complexity_proved=True,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "Finite G/q matrices are classically formable and diagonalizable with exponential address width. No "
+            "all-n quantum/classical separation follows from table-free oracle access."
+        ),
+        scope_limit=(
+            "The compiler has alpha=q=2^Theta(n log n), and no natural Omega(q/poly(n)) retained spectral window is "
+            "proved. The lower bound applies only to equal-coefficient linear address mixing; hierarchical shorted "
+            "metrics, nonlinear multi-query routing, direct global polars, the physical PGM, and decoding remain open."
         ),
     ),
     RepresentationCapability(
@@ -628,6 +661,9 @@ def build_recoupling_capability_report(
     addressed_cross_map_metrics = (
         run_addressed_cross_map_pair_polar_gram_boundary().headline_metrics
     )
+    linear_assembly_metrics = (
+        run_linear_assembly_normalization_boundary().headline_metrics
+    )
     unresolved = [
         capability
         for capability in CAPABILITIES
@@ -928,8 +964,22 @@ def build_recoupling_capability_report(
             or 0
         ),
         "global_operator_valued_metric_assembly_compiler_count": int(
-            addressed_cross_map_metrics.get(
-                "global_operator_valued_metric_assembly_compiler_count",
+            linear_assembly_metrics.get(
+                "polynomial_normalized_global_metric_assembly_compiler_count",
+                0,
+            )
+            or 0
+        ),
+        "canonical_linear_global_metric_assembly_compiler_count": int(
+            linear_assembly_metrics.get(
+                "canonical_linear_global_metric_assembly_compiler_count",
+                0,
+            )
+            or 0
+        ),
+        "linear_dense_assembly_alpha_q_lower_bound_theorem_count": int(
+            linear_assembly_metrics.get(
+                "linear_dense_assembly_alpha_q_lower_bound_theorem_count",
                 0,
             )
             or 0
@@ -1148,8 +1198,28 @@ def build_recoupling_capability_report(
                     0,
                 )
             ),
+            "canonical_linear_global_psd_metric_assembly_compiled": bool(
+                linear_assembly_metrics.get(
+                    "canonical_linear_global_metric_assembly_compiler_count",
+                    0,
+                )
+            ),
+            "canonical_linear_global_metric_normalization_is_q": bool(
+                linear_assembly_metrics.get(
+                    "linear_dense_assembly_alpha_q_lower_bound_theorem_count",
+                    0,
+                )
+            ),
+            "linear_equal_coefficient_dense_assembly_alpha_lower_bound_q": bool(
+                linear_assembly_metrics.get(
+                    "linear_dense_assembly_alpha_q_lower_bound_theorem_count",
+                    0,
+                )
+            ),
             "global_operator_valued_metric_assembly_compiled": False,
             "global_address_transition_kernel_polynomial_normalization_proved": False,
+            "natural_retained_spectrum_at_q_over_polynomial_scale_proved": False,
+            "nonlinear_hierarchical_metric_assembly_ruled_out": False,
             "natural_cross_orientation_overlap_density_one_proved": True,
             "schur_branch_encoding_removes_orientation_inverse_square_root": False,
             "schur_branch_structured_direct_polar_compiled": False,
@@ -1191,8 +1261,9 @@ def build_recoupling_capability_report(
                 "invariant-projector stack is now typed exactly. Its companion-only closure preserves source "
                 "branches, but the physical-interface detour supplies alpha-one addressed raw cross maps and GPE "
                 "supplies their pair polars. Phase-only global assembly is refuted by holonomy-induced "
-                "indefiniteness. A polynomial-normalized global operator-valued metric assembly or equivalent "
-                "direct polar, an outcome-information theorem, decoding, and separation remain open."
+                "indefiniteness. Uniform linear address mixing now compiles the exact PSD Gram G/q and proves that "
+                "alpha=q is sharp for equal coefficients; it does not supply a natural q-scale retained window. A "
+                "hierarchical or direct global polar, an outcome-information theorem, decoding, and separation remain open."
             ),
         },
         status="addressed-cross-maps-and-pair-polars-proved-global-metric-polar-open",
@@ -1200,7 +1271,8 @@ def build_recoupling_capability_report(
             f"Classified {len(CAPABILITIES)} representation primitives and exact finite Kronecker growth through "
             f"n={max(n_values)}. Separate-to-joint Schur dilation now supplies an encoded multiplicity carrier, "
             "the physical interface supplies alpha-one addressed raw cross maps, and GPE supplies direct pair "
-            "polars. The remaining bottleneck is a positive, polynomial-normalized global metric assembly and polar."
+            "polars. Uniform linear assembly now gives G/q at sharp alpha=q; the remaining bottleneck is a natural "
+            "q-scale retained window or a hierarchical/direct global polar."
         ),
         falsifiers_triggered=[
             "The S_n QFT is already polynomial and cannot be presented as the missing breakthrough.",

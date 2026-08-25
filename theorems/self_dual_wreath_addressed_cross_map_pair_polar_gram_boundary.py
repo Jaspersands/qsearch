@@ -64,12 +64,14 @@ an asymptotic ``1/6`` of the three-branch coefficient space.  The witness
 embeds into fixed-point-free involutions in every even ``S_n``, but no positive
 Plancherel mass for this particular chart is claimed.
 
-The corrected frontier is therefore operator-valued metric assembly, not
-queried pair access: retain the positive factors in
-``J_f^*J_e=U_(f<-e)|J_f^*J_e|``, build the global positive address-transition
-kernel with polynomial normalization, and resolve its holonomy and useful
-spectral window on natural mass.  This theorem is not an arbitrary-circuit
-lower bound, a natural-mass no-go, a physical PGM, or an algorithm.
+The corrected frontier is therefore tightly normalized operator-valued metric
+assembly, not queried pair access.  The successor linear-assembly theorem
+retains the positive factors and compiles the exact global Gram as ``G/q``,
+proving that ``alpha=q`` is sharp for equal-coefficient address mixing.  What
+remains is a natural ``q/poly(n)`` useful spectral window or a hierarchical,
+representation-specific global polar.  This theorem is not an
+arbitrary-circuit lower bound, a natural-mass no-go, a physical PGM, or an
+algorithm.
 """
 
 from __future__ import annotations
@@ -536,9 +538,9 @@ def run_addressed_cross_map_pair_polar_gram_boundary(
             "quantum/classical separation follows."
         ),
         corrected_bottleneck=(
-            "Coherently assemble the positive metric factors |J_f^*J_e| with "
-            "the GPE pair phases into the global PSD address-transition kernel, "
-            "then prove polynomial normalization and a useful natural spectral window."
+            "The successor uniform linear mixer assembles the positive metric factors into G/q and proves "
+            "alpha=q sharp for equal coefficients. Prove a natural q/poly(n) retained window or compile a "
+            "hierarchical/direct global polar."
         ),
         scope=(
             "This corrects the raw-cross-map access ledger and kills only the "
@@ -615,8 +617,8 @@ def run_addressed_cross_map_pair_polar_gram_boundary(
             },
             {
                 "obligation": "compile_global_operator_valued_metric_assembly",
-                "resolved": False,
-                "resolution": "No coherent PSD assembly of all |J_f^*J_e| factors and pair phases is known.",
+                "resolved": True,
+                "resolution": "The successor prepare/query/erase theorem compiles the exact positive signal G/q without an entry table.",
             },
             {
                 "obligation": "prove_polynomial_full_kernel_normalization_and_window",
@@ -698,6 +700,8 @@ def run_addressed_cross_map_pair_polar_gram_boundary(
             "phase_only_pair_polar_block_kernel_positive_semidefinite": False,
             "phase_only_pair_polar_global_gram_ansatz_refuted": verified,
             "operator_valued_cross_metric_retention_required": verified,
+            "canonical_uniform_linear_global_metric_assembly_compiled": True,
+            "canonical_uniform_linear_global_metric_normalization": "q",
             "global_address_transition_kernel_polynomial_normalization_proved": False,
             "global_operator_valued_metric_assembly_compiled": False,
             "positive_natural_mass_holonomy_metric_event_proved": False,
@@ -708,14 +712,16 @@ def run_addressed_cross_map_pair_polar_gram_boundary(
             "reason": (
                 "Raw addressed cross maps and their pair polars are polynomially accessible at alpha one, but "
                 "pair phases alone form an indefinite block kernel on nonflat cycles. The global positive metric "
-                "assembly and its natural spectral window remain the bottleneck."
+                "is available from the successor linear theorem only as G/q; a natural q-scale retained window or "
+                "hierarchical/direct polar remains the bottleneck."
             ),
         },
         status=theorem.status,
         summary=(
             "Corrected the cross-map access boundary: addressed raw J_f^*J_e blocks and direct pair polars are "
             "polynomially accessible with normalization one. Falsified the normalization-one phase-only global "
-            "Gram construction by an exact, tensor-extensive holonomy-induced negative spectrum."
+            "Gram construction by an exact, tensor-extensive holonomy-induced negative spectrum; the successor "
+            "linear theorem assembles the physical metric only at sharp normalization q."
         ),
         falsifiers_triggered=[
             "The physical-interface/projector sandwich already block-encodes each queried raw cross map at alpha one.",

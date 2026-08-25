@@ -78,7 +78,7 @@
       "primitive": "Published Schur/QFT/CG plus invariant-projector stack on the joint companion",
       "proved_scope": "The cited primitives supply polynomial Schur coordinate changes, irrep/source labels, and supplied-label invariant membership reflections. Their proved typed interface is branch preserving; products, adjoints, coherent label controls, workspace extensions, and selected top blocks remain in the direct-sum source-branch algebra when the computation stays inside the companion.",
       "resolves_internal_sn_kronecker_basis": false,
-      "scope_limit": "Actual finite H_nu and H_nu^(+/2) controls have nonzero cross-source-branch blocks, and natural Plancherel covering makes cross overlaps density one on balanced pairs. The companion-only stack therefore does not supply the orientation whitening multiplier. A physical-interface detour does supply addressed raw cross maps, but global metric assembly, noncommuting Racah networks, multi-round transforms, and character-retaining decoders remain open.",
+      "scope_limit": "Actual finite H_nu and H_nu^(+/2) controls have nonzero cross-source-branch blocks, and natural Plancherel covering makes cross overlaps density one on balanced pairs. The companion-only stack therefore does not supply the orientation whitening multiplier. A physical-interface detour does supply addressed raw cross maps, but tightly normalized metric whitening, noncommuting Racah networks, multi-round transforms, and character-retaining decoders remain open.",
       "supplies_hidden_involution_decoder": false,
       "uniform_polynomial_gate_complexity_proved": false
     },
@@ -95,7 +95,23 @@
       "primitive": "Uniform addressed J_f^*J_e block encoding and coherent-GPE pair polar",
       "proved_scope": "Decode branch e through the physical Schur/Bell interface, block-encode E_f=(I+R_f)/2 with one supplied-label reflection, and encode branch f. This gives an alpha-one signal block J_f^*J_e for coherent mask queries. Coherent GPE row reassociation directly compiles polar(J_f^*J_e) on its support.",
       "resolves_internal_sn_kronecker_basis": false,
-      "scope_limit": "An alpha-one entry query is not a normalization-one dense address-transition block encoding. Replacing all positive cross metrics by pair polars makes the block kernel indefinite on nonflat holonomy cycles. Global operator-valued metric assembly, whitening, natural spectral mass, and decoding remain open.",
+      "scope_limit": "An alpha-one entry query is not a normalization-one dense address-transition block encoding. Replacing all positive cross metrics by pair polars makes the block kernel indefinite on nonflat holonomy cycles. Uniform linear assembly gives G/q, but a natural q-scale window, hierarchical/direct whitening, and decoding remain open.",
+      "supplies_hidden_involution_decoder": false,
+      "uniform_polynomial_gate_complexity_proved": true
+    },
+    {
+      "availability": "proved-polynomial-gates-alpha-q-normalization-only",
+      "classical_comparison": "Finite G/q matrices are classically formable and diagonalizable with exponential address width. No all-n quantum/classical separation follows from table-free oracle access.",
+      "handles_overlapping_k_copy_associators": false,
+      "id": "CAP-LINEAR-DENSE-METRIC-ASSEMBLY-ALPHA-Q",
+      "literature_ids": [
+        "bacon-chuang-harrow-schur-2004",
+        "gilyen-su-low-wiebe-qsvt-2018"
+      ],
+      "primitive": "Table-free uniform linear assembly of the addressed cross-map Gram",
+      "proved_scope": "Uniform output-address preparation, one alpha-one addressed cross-map query, and uniform input-address erasure give the exact positive dense signal G/q using O(log q) address gates. Equal-coefficient linear mixing has coefficient matrix 11^*/alpha, so contraction on identical entries proves the sharp lower bound alpha>=q.",
+      "resolves_internal_sn_kronecker_basis": false,
+      "scope_limit": "The compiler has alpha=q=2^Theta(n log n), and no natural Omega(q/poly(n)) retained spectral window is proved. The lower bound applies only to equal-coefficient linear address mixing; hierarchical shorted metrics, nonlinear multi-query routing, direct global polars, the physical PGM, and decoding remain open.",
       "supplies_hidden_involution_decoder": false,
       "uniform_polynomial_gate_complexity_proved": true
     },
@@ -311,6 +327,8 @@
     "all_seven_stable_shape_local_labels_polynomial_proved": true,
     "bounded_support_commutant_block_encoding_polynomial_proved": true,
     "bounded_tail_natural_access_no_go_proved": true,
+    "canonical_linear_global_metric_normalization_is_q": true,
+    "canonical_linear_global_psd_metric_assembly_compiled": true,
     "classical_superpolynomial_separation_proved": false,
     "companion_only_stack_supplies_global_cross_branch_whitening_multiplier": false,
     "diagonal_jm_label_transform_polynomial_proved": true,
@@ -327,13 +345,16 @@
     "kcopy_associator_polynomial_proved": false,
     "known_schur_projector_stack_compiles_orientation_polar": false,
     "known_schur_projector_stack_interfaces_typed": true,
+    "linear_equal_coefficient_dense_assembly_alpha_lower_bound_q": true,
     "multiplicity_counting_implies_coherent_transform": false,
     "natural_cross_orientation_overlap_density_one_proved": true,
+    "natural_retained_spectrum_at_q_over_polynomial_scale_proved": false,
+    "nonlinear_hierarchical_metric_assembly_ruled_out": false,
     "phase_only_pair_polar_global_gram_ansatz_refuted": true,
     "physical_encoded_orientation_polar_compilers_interreducible": true,
     "physical_interface_supplies_addressed_raw_cross_map_block_encoding": true,
     "physical_invariant_to_schur_companion_interface_compiled": true,
-    "reason": "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable family. Complete encoded labels and left/right relabelling are proved on one stable final branch, and its three-copy frame is directly block-encoded, all-n conditioned, and inverse-filterable, but the fixed branch is factorially rare under natural input. The known Schur/QFT/CG plus invariant-projector stack is now typed exactly. Its companion-only closure preserves source branches, but the physical-interface detour supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. Phase-only global assembly is refuted by holonomy-induced indefiniteness. A polynomial-normalized global operator-valued metric assembly or equivalent direct polar, an outcome-information theorem, decoding, and separation remain open.",
+    "reason": "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable family. Complete encoded labels and left/right relabelling are proved on one stable final branch, and its three-copy frame is directly block-encoded, all-n conditioned, and inverse-filterable, but the fixed branch is factorially rare under natural input. The known Schur/QFT/CG plus invariant-projector stack is now typed exactly. Its companion-only closure preserves source branches, but the physical-interface detour supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. Phase-only global assembly is refuted by holonomy-induced indefiniteness. Uniform linear address mixing now compiles the exact PSD Gram G/q and proves that alpha=q is sharp for equal coefficients; it does not supply a natural q-scale retained window. A hierarchical or direct global polar, an outcome-information theorem, decoding, and separation remain open.",
     "schur_branch_encoding_removes_orientation_inverse_square_root": false,
     "schur_branch_merger_polar_equivalence_proved": true,
     "schur_branch_structured_direct_polar_compiled": false,
@@ -363,7 +384,7 @@
     "typical_irrep_uniform_joint_spectral_separation_proved": false,
     "typical_irrep_uniform_recoupling_transfer_proved": false
   },
-  "created_at": "2026-08-25T15:27:02.285220+00:00",
+  "created_at": "2026-08-25T16:21:35.960753+00:00",
   "false_transfer_rules": [
     {
       "from": "exact Holevo/Fano copy lower bound",
@@ -675,7 +696,8 @@
     "addressed_raw_cross_map_block_encoding_normalization": 1.0,
     "bounded_support_commutant_block_encoding_poly_proof_count": 1,
     "bounded_tail_natural_access_no_go_theorem_count": 1,
-    "capability_count": 19,
+    "canonical_linear_global_metric_assembly_compiler_count": 1,
+    "capability_count": 20,
     "diagonal_jm_label_transform_poly_proof_count": 1,
     "direct_gpe_pair_polar_compiler_count": 1,
     "exact_holevo_copy_budget_theorem_count": 1,
@@ -688,13 +710,14 @@
     "kcopy_associator_poly_proof_count": 0,
     "known_schur_projector_stack_global_whitening_multiplier_count": 0,
     "known_schur_projector_stack_scope_boundary_theorem_count": 1,
+    "linear_dense_assembly_alpha_q_lower_bound_theorem_count": 1,
     "maximum_kronecker_multiplicity": 117,
     "maximum_multiplicity_register_bits": 7,
     "maximum_n": 10,
     "maximum_partition_count": 42,
     "phase_only_global_pair_polar_gram_no_go_theorem_count": 1,
     "physical_invariant_schur_companion_interface_count": 1,
-    "proved_polynomial_primitive_count": 12,
+    "proved_polynomial_primitive_count": 13,
     "restricted_multiplicity_classical_match_count": 1,
     "schur_branch_merger_polar_equivalence_theorem_count": 1,
     "schur_dilated_kronecker_carrier_polynomial_count": 1,
@@ -789,5 +812,5 @@
     }
   ],
   "status": "addressed-cross-maps-and-pair-polars-proved-global-metric-polar-open",
-  "summary": "Classified 19 representation primitives and exact finite Kronecker growth through n=10. Separate-to-joint Schur dilation now supplies an encoded multiplicity carrier, the physical interface supplies alpha-one addressed raw cross maps, and GPE supplies direct pair polars. The remaining bottleneck is a positive, polynomial-normalized global metric assembly and polar."
+  "summary": "Classified 20 representation primitives and exact finite Kronecker growth through n=10. Separate-to-joint Schur dilation now supplies an encoded multiplicity carrier, the physical interface supplies alpha-one addressed raw cross maps, and GPE supplies direct pair polars. Uniform linear assembly now gives G/q at sharp alpha=q; the remaining bottleneck is a natural q-scale retained window or a hierarchical/direct global polar."
 }

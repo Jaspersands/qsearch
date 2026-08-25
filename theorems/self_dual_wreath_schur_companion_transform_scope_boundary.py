@@ -711,7 +711,9 @@ def run_schur_companion_transform_scope_boundary() -> SchurCompanionScopeReport:
             "natural_cross_orientation_overlap_density_one_proved": True,
             "natural_high_dimensional_target_mass_proved": True,
             "polynomial_normalized_global_cross_branch_whitening_oracle_compiled": False,
-            "full_global_cross_branch_block_encoding_normalization_charged": False,
+            "full_global_cross_branch_block_encoding_normalization_charged": True,
+            "canonical_linear_global_psd_metric_assembly_compiled": True,
+            "canonical_linear_global_metric_normalization": "q",
             "global_operator_valued_metric_assembly_compiled": False,
             "direct_structured_companion_polar_ruled_out": False,
             "multi_round_companion_transform_ruled_out": False,
@@ -723,8 +725,9 @@ def run_schur_companion_transform_scope_boundary() -> SchurCompanionScopeReport:
             "reason": (
                 "The companion-only stack is branch preserving, while the physical "
                 "interface supplies alpha-one addressed raw cross maps and GPE "
-                "supplies their pair polars. Neither result assembles the global "
-                "positive address kernel or compiles its inverse-square-root polar."
+                "supplies their pair polars. The successor uniform linear theorem "
+                "assembles the positive address kernel as G/q, but no natural q-scale "
+                "window or hierarchical/direct inverse-square-root polar is compiled."
             ),
         },
         status=theorem.status,
@@ -732,7 +735,8 @@ def run_schur_companion_transform_scope_boundary() -> SchurCompanionScopeReport:
             "Falsified the hypothesis that companion-only Schur/CG and invariant-"
             "projector primitives already compile the physical orientation polar. "
             "The physical detour does supply addressed raw cross maps and pair "
-            "polars; global positive metric assembly and whitening remain open."
+            "polars; successor linear assembly gives G/q, while tight natural "
+            "whitening or a hierarchical/direct global polar remains open."
         ),
         falsifiers_triggered=[
             "A Schur--Weyl F-move is not automatically an internal S_n Kronecker/Racah move.",
@@ -766,12 +770,13 @@ def write_schur_companion_transform_scope_boundary_report(
                 ),
                 reason_invalid=(
                     "The companion-only interface is branch preserving. The physical "
-                    "detour supplies raw cross maps, but neither it nor pair GPE "
-                    "assembles the global positive kernel or its H_nu^(+/2) action."
+                    "detour supplies raw cross maps and successor uniform mixing "
+                    "assembles G/q, but neither supplies a natural q-scale window or "
+                    "the H_nu^(+/2) action."
                 ),
                 lesson=(
-                    "Require an explicit polynomial-normalized operator-valued "
-                    "global metric assembly or a direct non-branch-preserving polar; "
+                    "Require a natural q/poly(n) retained spectral window for the "
+                    "linear G/q signal or a direct non-branch-preserving global polar; "
                     "raw entry queries and pair phases are insufficient."
                 ),
                 applies_to=[

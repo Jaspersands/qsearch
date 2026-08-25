@@ -12692,6 +12692,30 @@ class ExperimentRunnerTests(unittest.TestCase):
         record = next(item for item in records if item["id"] == result.result_id)
         self.assertTrue(validation["valid"], validation["issues"])
 
+    def test_self_dual_wreath_addressed_cross_map_linear_assembly_normalization_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"][
+                "linear_dense_assembly_alpha_q_lower_bound_theorem_count"
+            ],
+            1,
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
 
 if __name__ == "__main__":
     unittest.main()

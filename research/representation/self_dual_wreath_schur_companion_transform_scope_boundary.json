@@ -41,11 +41,13 @@
     "addressed_raw_cross_map_block_encoding_normalization_one": true,
     "branch_character_retaining_decoder_ruled_out": false,
     "branch_preserving_stack_closed_under_coherent_composition": true,
+    "canonical_linear_global_metric_normalization": "q",
+    "canonical_linear_global_psd_metric_assembly_compiled": true,
     "classical_separation_proved": false,
     "coherent_gpe_supplies_direct_pair_polar": true,
     "companion_only_stack_supplies_cross_branch_action": false,
     "direct_structured_companion_polar_ruled_out": false,
-    "full_global_cross_branch_block_encoding_normalization_charged": false,
+    "full_global_cross_branch_block_encoding_normalization_charged": true,
     "global_operator_valued_metric_assembly_compiled": false,
     "high_dimensional_hidden_information_proved": false,
     "high_dimensional_schur_f_moves_equal_internal_kronecker_racah": false,
@@ -58,10 +60,10 @@
     "physical_interface_supplies_addressed_raw_cross_map_block_encoding": true,
     "physical_pgm_compiled": false,
     "polynomial_normalized_global_cross_branch_whitening_oracle_compiled": false,
-    "reason": "The companion-only stack is branch preserving, while the physical interface supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. Neither result assembles the global positive address kernel or compiles its inverse-square-root polar.",
+    "reason": "The companion-only stack is branch preserving, while the physical interface supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. The successor uniform linear theorem assembles the positive address kernel as G/q, but no natural q-scale window or hierarchical/direct inverse-square-root polar is compiled.",
     "speedup_claim_allowed": false
   },
-  "created_at": "2026-08-25T15:26:59.073960+00:00",
+  "created_at": "2026-08-25T16:21:32.751078+00:00",
   "falsifiers_triggered": [
     "A Schur--Weyl F-move is not automatically an internal S_n Kronecker/Racah move.",
     "A #BQP invariant-space projector does not expose multiplicity coordinates.",
@@ -452,7 +454,7 @@
     }
   ],
   "status": "companion-only-schur-stack-insufficient-global-whitening-open",
-  "summary": "Falsified the hypothesis that companion-only Schur/CG and invariant-projector primitives already compile the physical orientation polar. The physical detour does supply addressed raw cross maps and pair polars; global positive metric assembly and whitening remain open.",
+  "summary": "Falsified the hypothesis that companion-only Schur/CG and invariant-projector primitives already compile the physical orientation polar. The physical detour does supply addressed raw cross maps and pair polars; successor linear assembly gives G/q, while tight natural whitening or a hierarchical/direct global polar remains open.",
   "theorem": {
     "access_model": "Companion-only Schur/QFT coordinate changes, source and target label controls, and supplied-label invariant membership reflections, before the separate physical-interface detour is admitted",
     "classical_alternative": "Exact character and representation-ring contractions form H_nu and diagonalize the finite controls classically. No polynomial all-n classical polar construction or quantum/classical separation is inferred from this finite computation.",

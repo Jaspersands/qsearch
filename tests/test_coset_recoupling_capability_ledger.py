@@ -73,6 +73,12 @@ class RecouplingCapabilityLedgerTests(unittest.TestCase):
         self.assertTrue(cross_map.uniform_polynomial_gate_complexity_proved)
         self.assertFalse(cross_map.resolves_internal_sn_kronecker_basis)
         self.assertIn("indefinite", cross_map.scope_limit.lower())
+        linear_assembly = capabilities[
+            "CAP-LINEAR-DENSE-METRIC-ASSEMBLY-ALPHA-Q"
+        ]
+        self.assertTrue(linear_assembly.uniform_polynomial_gate_complexity_proved)
+        self.assertFalse(linear_assembly.resolves_internal_sn_kronecker_basis)
+        self.assertIn("alpha=q", linear_assembly.scope_limit.lower())
         self.assertFalse(report.claim_gate["sn_qft_is_open_bottleneck"])
         self.assertTrue(report.claim_gate["exact_holevo_copy_budget_proved"])
         self.assertFalse(report.claim_gate["holevo_copy_budget_constructs_measurement"])
@@ -146,8 +152,29 @@ class RecouplingCapabilityLedgerTests(unittest.TestCase):
         self.assertTrue(
             report.claim_gate["phase_only_pair_polar_global_gram_ansatz_refuted"]
         )
+        self.assertTrue(
+            report.claim_gate[
+                "canonical_linear_global_psd_metric_assembly_compiled"
+            ]
+        )
+        self.assertTrue(
+            report.claim_gate["canonical_linear_global_metric_normalization_is_q"]
+        )
+        self.assertTrue(
+            report.claim_gate[
+                "linear_equal_coefficient_dense_assembly_alpha_lower_bound_q"
+            ]
+        )
         self.assertFalse(
             report.claim_gate["global_operator_valued_metric_assembly_compiled"]
+        )
+        self.assertFalse(
+            report.claim_gate[
+                "natural_retained_spectrum_at_q_over_polynomial_scale_proved"
+            ]
+        )
+        self.assertFalse(
+            report.claim_gate["nonlinear_hierarchical_metric_assembly_ruled_out"]
         )
         self.assertTrue(
             report.claim_gate["natural_cross_orientation_overlap_density_one_proved"]
@@ -233,6 +260,12 @@ class RecouplingCapabilityLedgerTests(unittest.TestCase):
                 "LEMMA-CODE-COSET-COLLECTIVE-COSET-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY"
             ]["status"],
             "proved-addressed-cross-map-and-pair-polar-phase-only-global-gram-refuted",
+        )
+        self.assertEqual(
+            lemmas[
+                "LEMMA-CODE-COSET-COLLECTIVE-COSET-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY"
+            ]["status"],
+            "proved-linear-global-metric-assembly-alpha-q-boundary",
         )
         self.assertEqual(
             lemmas["LEMMA-CODE-COSET-COLLECTIVE-COSET-SN-QFT-SCOPE-SEPARATION"]["status"],

@@ -73,6 +73,8 @@
   ],
   "claim_gate": {
     "addressed_raw_cross_map_block_encoding_normalization_one": true,
+    "canonical_uniform_linear_global_metric_assembly_compiled": true,
+    "canonical_uniform_linear_global_metric_normalization": "q",
     "classical_separation_proved": false,
     "direct_gpe_pair_polar_compiled": true,
     "global_address_transition_kernel_polynomial_normalization_proved": false,
@@ -85,11 +87,11 @@
     "physical_pgm_compiled": false,
     "physical_schur_interface_supplies_addressed_raw_cross_map_block_encoding": true,
     "positive_natural_mass_holonomy_metric_event_proved": false,
-    "reason": "Raw addressed cross maps and their pair polars are polynomially accessible at alpha one, but pair phases alone form an indefinite block kernel on nonflat cycles. The global positive metric assembly and its natural spectral window remain the bottleneck.",
+    "reason": "Raw addressed cross maps and their pair polars are polynomially accessible at alpha one, but pair phases alone form an indefinite block kernel on nonflat cycles. The global positive metric is available from the successor linear theorem only as G/q; a natural q-scale retained window or hierarchical/direct polar remains the bottleneck.",
     "speedup_claim_allowed": false,
     "uniform_coherent_pair_query_without_exponential_table": true
   },
-  "created_at": "2026-08-25T15:26:59.103468+00:00",
+  "created_at": "2026-08-25T16:21:32.781048+00:00",
   "falsifiers_triggered": [
     "The physical-interface/projector sandwich already block-encodes each queried raw cross map at alpha one.",
     "Small pair principal correlations do not obstruct the direct coherent-GPE pair polar.",
@@ -166,8 +168,8 @@
     },
     {
       "obligation": "compile_global_operator_valued_metric_assembly",
-      "resolution": "No coherent PSD assembly of all |J_f^*J_e| factors and pair phases is known.",
-      "resolved": false
+      "resolution": "The successor prepare/query/erase theorem compiles the exact positive signal G/q without an entry table.",
+      "resolved": true
     },
     {
       "obligation": "prove_polynomial_full_kernel_normalization_and_window",
@@ -300,7 +302,7 @@
     }
   ],
   "status": "addressed-cross-map-and-pair-polar-proved-phase-only-global-gram-refuted",
-  "summary": "Corrected the cross-map access boundary: addressed raw J_f^*J_e blocks and direct pair polars are polynomially accessible with normalization one. Falsified the normalization-one phase-only global Gram construction by an exact, tensor-extensive holonomy-induced negative spectrum.",
+  "summary": "Corrected the cross-map access boundary: addressed raw J_f^*J_e blocks and direct pair polars are polynomially accessible with normalization one. Falsified the normalization-one phase-only global Gram construction by an exact, tensor-extensive holonomy-induced negative spectrum; the successor linear theorem assembles the physical metric only at sharp normalization q.",
   "tensor_boundary_records": [
     {
       "copy_count": 10,
@@ -367,7 +369,7 @@
     "addressed_cross_map_identity": "B_f J_f^* E_f E_e J_e B_e^*=B_f J_f^*J_e B_e^* on branch-e input.",
     "block_encoding_circuit": "Decode the e companion, use one Hadamard-LCU ancilla and the reflection 2E_f-I to block-encode E_f=(I+R_f)/2, then encode branch f.",
     "classical_alternative": "Finite cross maps and spectra are classically contractible. No polynomial all-n classical global metric assembly, decoder, or quantum/classical separation follows.",
-    "corrected_bottleneck": "Coherently assemble the positive metric factors |J_f^*J_e| with the GPE pair phases into the global PSD address-transition kernel, then prove polynomial normalization and a useful natural spectral window.",
+    "corrected_bottleneck": "The successor uniform linear mixer assembles the positive metric factors into G/q and proves alpha=q sharp for equal coefficients. Prove a natural q/poly(n) retained window or compile a hierarchical/direct global polar.",
     "direct_pair_polar": "The predecessor coherent-GPE row-swap circuit implements the support polar of each addressed cross map without inverse-correlation amplification.",
     "input_space": "Coherent query masks |e,f>, a vector in the encoded companion branch K_(nu,e), and clean invariant-reflection/Schur-interface ancillas.",
     "natural_relevance": "The addressed oracle and pair polar are uniform for arbitrary coherently supplied Plancherel labels and masks. The S3 holonomy embedding is scalable but is not assigned positive natural Schur mass.",
@@ -384,7 +386,7 @@
     "addressed_cross_map_identity": "B_f J_f^* E_f E_e J_e B_e^*=B_f J_f^*J_e B_e^* on branch-e input.",
     "block_encoding_circuit": "Decode the e companion, use one Hadamard-LCU ancilla and the reflection 2E_f-I to block-encode E_f=(I+R_f)/2, then encode branch f.",
     "classical_alternative": "Finite cross maps and spectra are classically contractible. No polynomial all-n classical global metric assembly, decoder, or quantum/classical separation follows.",
-    "corrected_bottleneck": "Coherently assemble the positive metric factors |J_f^*J_e| with the GPE pair phases into the global PSD address-transition kernel, then prove polynomial normalization and a useful natural spectral window.",
+    "corrected_bottleneck": "The successor uniform linear mixer assembles the positive metric factors into G/q and proves alpha=q sharp for equal coefficients. Prove a natural q/poly(n) retained window or compile a hierarchical/direct global polar.",
     "direct_pair_polar": "The predecessor coherent-GPE row-swap circuit implements the support polar of each addressed cross map without inverse-correlation amplification.",
     "input_space": "Coherent query masks |e,f>, a vector in the encoded companion branch K_(nu,e), and clean invariant-reflection/Schur-interface ancillas.",
     "natural_relevance": "The addressed oracle and pair polar are uniform for arbitrary coherently supplied Plancherel labels and masks. The S3 holonomy embedding is scalable but is not assigned positive natural Schur mass.",

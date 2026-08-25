@@ -1,6 +1,6 @@
 # Repository Map
 
-Q-Search organizes its 747 scientific theorem verification modules within a dedicated `theorems/` package, while keeping core framework engine modules in `core/` and the unified CLI at the repository root.
+Q-Search organizes its 748 scientific theorem verification modules within a dedicated `theorems/` package, while keeping core framework engine modules in `core/` and the unified CLI at the repository root.
 
 ## Entry Points & Core Framework (`core/`)
 

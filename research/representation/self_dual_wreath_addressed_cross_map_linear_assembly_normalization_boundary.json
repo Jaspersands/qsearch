@@ -1,0 +1,430 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Alpha-one addressed entries imply alpha-one dense assembly.",
+      "resolution": "False for equal-coefficient linear mixing: output preparation and input erasure contribute 1/q, and contractivity makes alpha>=q sharp.",
+      "resolved": true
+    },
+    {
+      "objection": "The q^2 entry count forces alpha=q^2.",
+      "resolution": "False. Coherent two-sided address preparation exploits the rank-one coefficient matrix and achieves alpha=q with O(log q) gates.",
+      "resolved": true
+    },
+    {
+      "objection": "Alpha=q makes every global polar exponentially hard.",
+      "resolution": "Not if the retained eigenvalues of G are q/poly(n), or if a structured circuit implements the polar directly. S3 is already a benign finite example.",
+      "resolved": false
+    },
+    {
+      "objection": "The orthogonal flat frame is a representation-specific hardness witness.",
+      "resolution": "It is only an oracle-architecture witness; once G=I is known, its polar is the identity and needs no amplification.",
+      "resolved": true
+    },
+    {
+      "objection": "One-query linear normalization rules out recursive metric assembly.",
+      "resolution": "It does not address products, adaptive/hierarchical routing, shorted metrics, or direct global basis transforms.",
+      "resolved": true
+    }
+  ],
+  "circuit_contract": [
+    {
+      "normalization_amplitude": "q^-1/2",
+      "operation": "Apply k Hadamards to prepare q^-1/2 sum_f |f>.",
+      "polynomial_gate_count": true,
+      "step": "prepare_output_address"
+    },
+    {
+      "normalization": 1.0,
+      "operation": "Apply the alpha-one SELECT_A oracle coherently on (f,e).",
+      "polynomial_gate_count": true,
+      "step": "query_addressed_cross_map"
+    },
+    {
+      "normalization_amplitude": "q^-1/2",
+      "operation": "Project the input work address against q^-1/2 sum_e |e>.",
+      "polynomial_gate_count": true,
+      "step": "erase_input_address"
+    },
+    {
+      "normalization": "alpha=q",
+      "operation": "The two address amplitudes give every block coefficient 1/q.",
+      "polynomial_gate_count": true,
+      "step": "selected_signal"
+    }
+  ],
+  "claim_gate": {
+    "addressed_raw_cross_map_entry_query_normalization_one": true,
+    "canonical_linear_global_metric_normalization_is_q": true,
+    "canonical_linear_global_psd_metric_assembly_compiled": true,
+    "classical_separation_proved": false,
+    "hidden_involution_decoder_proved": false,
+    "linear_dense_assembly_polynomial_normalization_proved": false,
+    "linear_equal_coefficient_dense_assembly_alpha_lower_bound_q": true,
+    "natural_retained_spectrum_at_q_over_polynomial_scale_proved": false,
+    "nonlinear_hierarchical_metric_assembly_ruled_out": false,
+    "orientation_pair_table_required": false,
+    "physical_pgm_compiled": false,
+    "polynomial_global_operator_valued_metric_compiler_proved": false,
+    "reason": "The alpha-one entry oracle compiles the exact PSD global Gram only as G/q under uniform linear address mixing, and alpha=q is sharp for that architecture. Polynomial usefulness now requires a natural q-scale retained window or a hierarchical/direct global polar.",
+    "representation_specific_direct_global_polar_ruled_out": false,
+    "speedup_claim_allowed": false,
+    "uniform_pair_address_prepare_polynomial": true
+  },
+  "coefficient_controls": [
+    {
+      "alpha_lower_bound_saturated": true,
+      "branch_count": 2,
+      "contractive_signal_verified": true,
+      "identical_entry_signal_norm": 1.0,
+      "maximum_uniform_coefficient_residual": 0.0,
+      "optimal_coefficient_matrix_frobenius_norm": 1.0,
+      "optimal_coefficient_matrix_norm": 1.0,
+      "optimal_coefficient_matrix_rank": 1,
+      "optimal_dense_assembly_normalization": 2.0,
+      "ordered_entry_count": 4,
+      "prepare_erase_factorization_residual": 2.220446049250313e-16,
+      "status": "linear-equal-block-normalization-q-sharp",
+      "unscaled_uniform_coefficient_matrix_norm": 2.0
+    },
+    {
+      "alpha_lower_bound_saturated": true,
+      "branch_count": 3,
+      "contractive_signal_verified": true,
+      "identical_entry_signal_norm": 0.9999999999999999,
+      "maximum_uniform_coefficient_residual": 0.0,
+      "optimal_coefficient_matrix_frobenius_norm": 1.0,
+      "optimal_coefficient_matrix_norm": 0.9999999999999999,
+      "optimal_coefficient_matrix_rank": 1,
+      "optimal_dense_assembly_normalization": 3.0,
+      "ordered_entry_count": 9,
+      "prepare_erase_factorization_residual": 3.3306690738754696e-16,
+      "status": "linear-equal-block-normalization-q-sharp",
+      "unscaled_uniform_coefficient_matrix_norm": 3.0
+    },
+    {
+      "alpha_lower_bound_saturated": true,
+      "branch_count": 4,
+      "contractive_signal_verified": true,
+      "identical_entry_signal_norm": 1.0,
+      "maximum_uniform_coefficient_residual": 0.0,
+      "optimal_coefficient_matrix_frobenius_norm": 1.0,
+      "optimal_coefficient_matrix_norm": 1.0,
+      "optimal_coefficient_matrix_rank": 1,
+      "optimal_dense_assembly_normalization": 4.0,
+      "ordered_entry_count": 16,
+      "prepare_erase_factorization_residual": 0.0,
+      "status": "linear-equal-block-normalization-q-sharp",
+      "unscaled_uniform_coefficient_matrix_norm": 4.0
+    },
+    {
+      "alpha_lower_bound_saturated": true,
+      "branch_count": 8,
+      "contractive_signal_verified": true,
+      "identical_entry_signal_norm": 0.9999999999999999,
+      "maximum_uniform_coefficient_residual": 0.0,
+      "optimal_coefficient_matrix_frobenius_norm": 1.0,
+      "optimal_coefficient_matrix_norm": 0.9999999999999999,
+      "optimal_coefficient_matrix_rank": 1,
+      "optimal_dense_assembly_normalization": 8.0,
+      "ordered_entry_count": 64,
+      "prepare_erase_factorization_residual": 2.2204460492503128e-16,
+      "status": "linear-equal-block-normalization-q-sharp",
+      "unscaled_uniform_coefficient_matrix_norm": 7.999999999999999
+    },
+    {
+      "alpha_lower_bound_saturated": true,
+      "branch_count": 16,
+      "contractive_signal_verified": true,
+      "identical_entry_signal_norm": 1.0000000000000002,
+      "maximum_uniform_coefficient_residual": 0.0,
+      "optimal_coefficient_matrix_frobenius_norm": 1.0,
+      "optimal_coefficient_matrix_norm": 1.0000000000000002,
+      "optimal_coefficient_matrix_rank": 1,
+      "optimal_dense_assembly_normalization": 16.0,
+      "ordered_entry_count": 256,
+      "prepare_erase_factorization_residual": 0.0,
+      "status": "linear-equal-block-normalization-q-sharp",
+      "unscaled_uniform_coefficient_matrix_norm": 16.000000000000004
+    }
+  ],
+  "created_at": "2026-08-25T16:21:32.800106+00:00",
+  "falsifiers_triggered": [
+    "Alpha-one entry access does not survive coherent dense address erasure as alpha-one global access.",
+    "The q^2 ordered blocks require only alpha=q, not alpha=q^2, under rank-one two-sided address preparation.",
+    "An exponential linear normalization is not a global-polar lower bound because q-scale spectra and structured direct transforms can bypass it.",
+    "Dense natural support alone does not prove a useful q-scale retained spectral window."
+  ],
+  "headline_metrics": {
+    "addressed_entry_alpha_one_oracle_theorem_count": 1,
+    "canonical_linear_global_metric_assembly_compiler_count": 1,
+    "finite_coefficient_control_count": 5,
+    "finite_control_failure_count": 0,
+    "finite_metric_control_count": 2,
+    "flat_q8_normalized_analysis_minimum_singular_value": 0.35355339059327373,
+    "hierarchical_global_polar_compiler_count": 0,
+    "linear_dense_assembly_alpha_q_lower_bound_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "physical_pgm_compiler_count": 0,
+    "polynomial_normalized_global_metric_assembly_compiler_count": 0,
+    "s3_normalized_gram_minimum_positive_eigenvalue": 0.4999999999999998,
+    "superpolynomial_scaling_row_count": 6,
+    "uniform_pair_prepare_without_entry_table_count": 1
+  },
+  "metric_controls": [
+    {
+      "block_dimension": 3,
+      "branch_count": 3,
+      "coefficient_architecture_strictly_suboptimal_for_instance": false,
+      "coefficient_only_linear_normalization": 3.0,
+      "control_id": "REGULAR-S3-TRANSPOSITION-GRAM",
+      "dense_gram_dimension": 9,
+      "dense_gram_operator_norm": 2.999999999999999,
+      "dense_gram_rank": 5,
+      "direct_instance_normalization_lower_bound": 2.999999999999999,
+      "exact_control_verified": true,
+      "known_structure_specific_polar_bypass": false,
+      "maximum_linear_assembly_residual": 0.0,
+      "maximum_normalized_analysis_gram_residual": 1.6653345369377346e-16,
+      "normalized_analysis_minimum_positive_singular_value": 0.7071067811865475,
+      "normalized_gram_maximum_eigenvalue": 0.9999999999999996,
+      "normalized_gram_minimum_eigenvalue": -7.778395243821615e-17,
+      "normalized_gram_minimum_positive_eigenvalue": 0.4999999999999998,
+      "status": "exact-linear-global-metric-normalized-by-q"
+    },
+    {
+      "block_dimension": 1,
+      "branch_count": 8,
+      "coefficient_architecture_strictly_suboptimal_for_instance": true,
+      "coefficient_only_linear_normalization": 8.0,
+      "control_id": "ORTHOGONAL-FLAT-Q8",
+      "dense_gram_dimension": 8,
+      "dense_gram_operator_norm": 1.0,
+      "dense_gram_rank": 8,
+      "direct_instance_normalization_lower_bound": 1.0,
+      "exact_control_verified": true,
+      "known_structure_specific_polar_bypass": true,
+      "maximum_linear_assembly_residual": 0.0,
+      "maximum_normalized_analysis_gram_residual": 2.7755575615628914e-17,
+      "normalized_analysis_minimum_positive_singular_value": 0.35355339059327373,
+      "normalized_gram_maximum_eigenvalue": 0.125,
+      "normalized_gram_minimum_eigenvalue": 0.125,
+      "normalized_gram_minimum_positive_eigenvalue": 0.125,
+      "status": "exact-linear-global-metric-normalized-by-q"
+    }
+  ],
+  "primary_literature": [
+    {
+      "id": "gilyen-su-low-wiebe-qsvt-2018",
+      "url": "https://arxiv.org/abs/1806.01838",
+      "use": "projected-unitary/block-encoding contractivity and singular-value transformation framework"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "connect_alpha_one_entry_query_to_dense_metric_signal",
+      "resolution": "Uniform prepare/query/erase gives the exact PSD signal G/q without an entry table.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_sharp_linear_equal_coefficient_normalization",
+      "resolution": "The all-ones coefficient matrix has norm q/alpha, so signal contractivity forces alpha>=q and the uniform circuit saturates it.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_natural_retained_eigenvalues_at_q_scale",
+      "resolution": "No Omega(q/poly(n)) useful spectral window or positive hidden-label information mass is proved.",
+      "resolved": false
+    },
+    {
+      "obligation": "compile_hierarchical_or_direct_global_polar",
+      "resolution": "Multi-round shorted metrics, recursive address routing, and direct Racah/Schur transforms remain open.",
+      "resolved": false
+    },
+    {
+      "obligation": "decode_hidden_involution_and_separate_classically",
+      "resolution": "No decoder, success theorem, or classical lower bound follows from metric access alone.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "addressed_entry_query_normalization": 1.0,
+      "coefficient_only_flat_frame_amplification_superpolynomial": false,
+      "dense_linear_assembly_normalization_log2": 48,
+      "flat_frame_normalized_analysis_singular_value_log2": -24.0,
+      "flat_frame_normalized_gram_eigenvalue_log2": -48,
+      "hierarchical_or_direct_global_polar_ruled_out": false,
+      "information_threshold_copy_count": 48,
+      "log2_group_order": 15.29920801838728,
+      "n": 8,
+      "natural_q_scale_retained_spectral_window_proved": false,
+      "orientation_count_decimal": "281474976710656",
+      "orientation_count_log2": 48,
+      "orientation_pair_table_enumerated": false,
+      "pair_address_hadamard_count": 96,
+      "pair_address_qubit_count": 96,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 30.0,
+      "status": "finite-size-benchmark-not-yet-separated",
+      "uniform_pair_prepare_gate_count_polynomial": true
+    },
+    {
+      "addressed_entry_query_normalization": 1.0,
+      "coefficient_only_flat_frame_amplification_superpolynomial": true,
+      "dense_linear_assembly_normalization_log2": 135,
+      "flat_frame_normalized_analysis_singular_value_log2": -67.5,
+      "flat_frame_normalized_gram_eigenvalue_log2": -135,
+      "hierarchical_or_direct_global_polar_ruled_out": false,
+      "information_threshold_copy_count": 135,
+      "log2_group_order": 44.25014046988262,
+      "n": 16,
+      "natural_q_scale_retained_spectral_window_proved": false,
+      "orientation_count_decimal": "43556142965880123323311949751266331066368",
+      "orientation_count_log2": 135,
+      "orientation_pair_table_enumerated": false,
+      "pair_address_hadamard_count": 270,
+      "pair_address_qubit_count": 270,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 40.0,
+      "status": "linear-address-assembly-normalization-superpolynomial",
+      "uniform_pair_prepare_gate_count_polynomial": true
+    },
+    {
+      "addressed_entry_query_normalization": 1.0,
+      "coefficient_only_flat_frame_amplification_superpolynomial": true,
+      "dense_linear_assembly_normalization_log2": 355,
+      "flat_frame_normalized_analysis_singular_value_log2": -177.5,
+      "flat_frame_normalized_gram_eigenvalue_log2": -355,
+      "hierarchical_or_direct_global_polar_ruled_out": false,
+      "information_threshold_copy_count": 355,
+      "log2_group_order": 117.6632636523603,
+      "n": 32,
+      "natural_q_scale_retained_spectral_window_proved": false,
+      "orientation_count_decimal": "73391955711682288371546268649666782105490079653384995959602842860381532034831513858240593699524021969747968",
+      "orientation_count_log2": 355,
+      "orientation_pair_table_enumerated": false,
+      "pair_address_hadamard_count": 710,
+      "pair_address_qubit_count": 710,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 50.0,
+      "status": "linear-address-assembly-normalization-superpolynomial",
+      "uniform_pair_prepare_gate_count_polynomial": true
+    },
+    {
+      "addressed_entry_query_normalization": 1.0,
+      "coefficient_only_flat_frame_amplification_superpolynomial": true,
+      "dense_linear_assembly_normalization_log2": 890,
+      "flat_frame_normalized_analysis_singular_value_log2": -445.0,
+      "flat_frame_normalized_gram_eigenvalue_log2": -890,
+      "hierarchical_or_direct_global_polar_ruled_out": false,
+      "information_threshold_copy_count": 890,
+      "log2_group_order": 295.9951439417241,
+      "n": 64,
+      "natural_q_scale_retained_spectral_window_proved": false,
+      "orientation_count_decimal": "8254602048994769474255309139320571976856989469314398783249386078541779727448825929287769623244643560854287421769642635607536680617229461519539671538483430889193541937484454440136429963694163141453503639190799818814812942074243152169349951543234944945149040326527156224",
+      "orientation_count_log2": 890,
+      "orientation_pair_table_enumerated": false,
+      "pair_address_hadamard_count": 1780,
+      "pair_address_qubit_count": 1780,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 60.0,
+      "status": "linear-address-assembly-normalization-superpolynomial",
+      "uniform_pair_prepare_gate_count_polynomial": true
+    },
+    {
+      "addressed_entry_query_normalization": 1.0,
+      "coefficient_only_flat_frame_amplification_superpolynomial": true,
+      "dense_linear_assembly_normalization_log2": 2151,
+      "flat_frame_normalized_analysis_singular_value_log2": -1075.5,
+      "flat_frame_normalized_gram_eigenvalue_log2": -2151,
+      "hierarchical_or_direct_global_polar_ruled_out": false,
+      "information_threshold_copy_count": 2151,
+      "log2_group_order": 716.161722083622,
+      "n": 128,
+      "natural_q_scale_retained_spectral_window_proved": false,
+      "orientation_count_decimal": "327733377151013857161409830784344729151428531406946514958405107016086232424995949714087681192562337835816001503696277658513050754232111925604456673728541624800883181015327440400141355334249265997953889378920024814108802188755216510917778601612257156832924174547685300991481149179753320676119035806527043737311857459280910444077146705318686713488326760244234352941577746355514042601746118521440320434367367202244222682424509831002286217987701636093567558593844434782789012055540895506682335994062045296909534305968431043189786574922558475831344653051455116460421996062673570866337949286697969748049571570359150057296646367780204820548697301081653248",
+      "orientation_count_log2": 2151,
+      "orientation_pair_table_enumerated": false,
+      "pair_address_hadamard_count": 4302,
+      "pair_address_qubit_count": 4302,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 70.0,
+      "status": "linear-address-assembly-normalization-superpolynomial",
+      "uniform_pair_prepare_gate_count_polynomial": true
+    },
+    {
+      "addressed_entry_query_normalization": 1.0,
+      "coefficient_only_flat_frame_amplification_superpolynomial": true,
+      "dense_linear_assembly_normalization_log2": 5054,
+      "flat_frame_normalized_analysis_singular_value_log2": -2527.0,
+      "flat_frame_normalized_gram_eigenvalue_log2": -5054,
+      "hierarchical_or_direct_global_polar_ruled_out": false,
+      "information_threshold_copy_count": 5054,
+      "log2_group_order": 1683.9962872242147,
+      "n": 256,
+      "natural_q_scale_retained_spectral_window_proved": false,
+      "orientation_count_decimal": "2544474399846491798809866922313605270271639951439126954867784335030186218422503622272300707074167881194193297003335180766993227769134935252868646790629469054217482128091435326924418602574504158720105866465864799737205947569074298236353709871936302931317701098222421556501052504693278251735974435434267652466998339011878041245667366742179342449724456888230186170523987392133617642271314768753770372096460628736457007499013220269004810663156170330658643044584108675199525818986570451398853794612408452282353052448419831660957619826841521394289846546534850283197019834391796861934527791845765699915222528398166220111003160443077270303191359616524818389321759364453997118436772961705454825607317466927314988072915016843737409576001654214797395282326703538535050307672233488062220277682114496121720432511735561392218158214758377563396744207298916090509490015438874883679541954176902598766289714776965313307309019749293142676023724442720769840990230143452092412428255515731642449958082311582541054998910050820902171470710330607407622446960265861613930292391713892055155451172675380003776450756792113452698935942562575717543785296196271004195988536126692893374207206178693665582018676911075862503291453071305919830074998910098445044791459128261403540756849169219879312264171362104280814137932344318182853213842557450969580889532096793104335343487642925057426428455431705008599710175836126627233342607616883841216872784916697304523420823782181962893472670860729363991473413063648683517442012982002396896337392649846509345632681984",
+      "orientation_count_log2": 5054,
+      "orientation_pair_table_enumerated": false,
+      "pair_address_hadamard_count": 10108,
+      "pair_address_qubit_count": 10108,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 80.0,
+      "status": "linear-address-assembly-normalization-superpolynomial",
+      "uniform_pair_prepare_gate_count_polynomial": true
+    },
+    {
+      "addressed_entry_query_normalization": 1.0,
+      "coefficient_only_flat_frame_amplification_superpolynomial": true,
+      "dense_linear_assembly_normalization_log2": 11628,
+      "flat_frame_normalized_analysis_singular_value_log2": -5814.0,
+      "flat_frame_normalized_gram_eigenvalue_log2": -11628,
+      "hierarchical_or_direct_global_polar_ruled_out": false,
+      "information_threshold_copy_count": 11628,
+      "log2_group_order": 3875.166121943203,
+      "n": 512,
+      "natural_q_scale_retained_spectral_window_proved": false,
+      "orientation_count_decimal": "238116549567871274479424778793211234873683275195402801046816075123608444849397432318404483627956730280231729391522424355124292535056789214459992374718624710985620527253122589556211659738935571053010266729753650115604778314587806665318315228595622279054373596321865123342197770712808561060268690521475805346717225080617584063540142151561412359878867385338924069340364041755077026111758672462090045104174016787047421990044704578067093338865274335494625813473672393779943299096177658436731014057007945373665452997880067576208434094965688237687255422571182540998626307251433882238366051824201459422817964836426046251734901190456014230614364286599387734210594037415756901606943084012123230145806063835496048470208675753635552563110275802140678111928199092794554850974304755518002405503811303696199440218419190994628148129178740002211029144792658968361855354611577327552786107512129076985081004320773753987218246612953823140322767847280473278110790969611586229403632893437315445443516236995459788876016002849471061222305051299816763343923033647710358444870732344101297931263260505375836926672864203076302390462708285408490356103624706082778581166871326304169385888426002558877486324336342056971718104224455987858762608925840574720903559858810332648242933209198877930810524392946952103277192348966570397622652230741180462951169787126203153129688556991749749886913458745690305881393549476701375931709972621915554305608231109892995559705063820008499746529862432064950980792473168889502582086026806327836760983429458742364960794424618876075426620251064858569747992478210387094315646288124253947733338363699731305011092588313787000606024476587399197671984880486020001434388216997106193050278521701636631261299077436485338353570273498054496903624429267269445096551281741230285111841547616427930397728943695565153510931592113271842506027147087988250813418988778412011719228496621368582079430677132480794583773037215584326686406538338512961597916981802596983503900554585790378646302187383231261759757867808719742429007094140609557621932982067569955916337830634029275594760849699841050273611347669724612620638216789898428985480149501284752777512326116501259490734409051576677255077426810704976734484075516118017762993030426363761192044443893899207566463019367637685828729904737007337943445752134615804026126388913256600678858675289169421309246042577127513541869040196541485966681917403305648631971739723164184617885337077178548547196569268708611686274417256205233363080288985694735636860180475238240534356920952249543740623395133665290625318877276954526254227504647285715675320059332998208334881909544054300310308931400839577268002947236932365880674294324919485856401423959843514713977601703972251686864975822717660892585475062364584645326844455597258933012683749491057221139746193211502059342314668572796211758282798274103010590765063458730250182604989881158919817283947835466966613110541907189549047676714818413059204266461959519556328881999490722247184833417988800821348325513636253887226281341093892833013430168263990693275098138382684239240415392186885375676620598225098988331387406584025650150456679636643825340124851301517019890854491913402209001588082919782031588658149213214599315492547681117356968165167015181056548623577835411311868794370890410089396449803646210636256598763843436798404360083407726064084479435591073274738560427062370514256928153295109165799673608156969548212822634855576316666459322814203130219998850804696560905261726476982846622575552668964489882932024758973371768815317372702562451456",
+      "orientation_count_log2": 11628,
+      "orientation_pair_table_enumerated": false,
+      "pair_address_hadamard_count": 23256,
+      "pair_address_qubit_count": 23256,
+      "polynomial_benchmark_degree": 10,
+      "polynomial_benchmark_log2": 90.0,
+      "status": "linear-address-assembly-normalization-superpolynomial",
+      "uniform_pair_prepare_gate_count_polynomial": true
+    }
+  ],
+  "status": "addressed-entry-linear-global-assembly-alpha-q-proved",
+  "summary": "Closed the entry-query-to-global-operator implication: table-free uniform linear assembly gives the exact positive metric G/q, and coefficient-mixer contractivity proves the normalization alpha=q is sharp.",
+  "theorem": {
+    "canonical_circuit": "Prepare the output address uniformly, query A_fe, and erase the input address against a uniform state; masks are computed bitwise.",
+    "coefficient_mixer_lower_bound": "Equal coefficients require C=11^*/alpha; contractivity on the identical-entry control gives ||C||=q/alpha<=1, hence alpha>=q.",
+    "exact_signal": "The selected signal block is G/q.",
+    "finite_physical_control": "The regular-S3 transposition Gram saturates ||G||=q=3 and has normalized spectrum {0x4,(1/2)x4,1}.",
+    "flat_frame_stress_control": "For q orthogonal branches G=I, coefficient-only assembly gives I/q and analysis singular amplitude 1/sqrt(q), although an identity-aware direct compiler trivially bypasses it.",
+    "input_oracle": "A coherent alpha-one SELECT oracle for A_fe=J_f^*J_e with both orientation masks retained.",
+    "natural_relevance": "Natural balanced orientation support motivates a dense target but does not prove that its retained eigenvalues are Omega(q/poly(n)).",
+    "scaling": "At k=ceil(3 log2(n!))+2 and q=2^k, uniform address preparation uses O(k) gates but alpha=q is exp(Theta(n log n)).",
+    "scope": "The lower bound applies to uniform coefficient-only linear assembly. It is not an arbitrary-query, hierarchical-circuit, natural-mass, decoding, or physical-PGM lower bound.",
+    "status": "addressed-entry-linear-global-assembly-alpha-q-proved",
+    "surviving_mechanism": "Prove a natural q-scale spectral window, or build a hierarchical/nonlinear representation-specific polar that avoids one global uniform address erasure.",
+    "target_operator": "The dense positive block Gram G=sum_(f,e)|f><e| tensor A_fe.",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "canonical_circuit": "Prepare the output address uniformly, query A_fe, and erase the input address against a uniform state; masks are computed bitwise.",
+    "coefficient_mixer_lower_bound": "Equal coefficients require C=11^*/alpha; contractivity on the identical-entry control gives ||C||=q/alpha<=1, hence alpha>=q.",
+    "exact_signal": "The selected signal block is G/q.",
+    "finite_physical_control": "The regular-S3 transposition Gram saturates ||G||=q=3 and has normalized spectrum {0x4,(1/2)x4,1}.",
+    "flat_frame_stress_control": "For q orthogonal branches G=I, coefficient-only assembly gives I/q and analysis singular amplitude 1/sqrt(q), although an identity-aware direct compiler trivially bypasses it.",
+    "input_oracle": "A coherent alpha-one SELECT oracle for A_fe=J_f^*J_e with both orientation masks retained.",
+    "natural_relevance": "Natural balanced orientation support motivates a dense target but does not prove that its retained eigenvalues are Omega(q/poly(n)).",
+    "scaling": "At k=ceil(3 log2(n!))+2 and q=2^k, uniform address preparation uses O(k) gates but alpha=q is exp(Theta(n log n)).",
+    "scope": "The lower bound applies to uniform coefficient-only linear assembly. It is not an arbitrary-query, hierarchical-circuit, natural-mass, decoding, or physical-PGM lower bound.",
+    "status": "addressed-entry-linear-global-assembly-alpha-q-proved",
+    "surviving_mechanism": "Prove a natural q-scale spectral window, or build a hierarchical/nonlinear representation-specific polar that avoids one global uniform address erasure.",
+    "target_operator": "The dense positive block Gram G=sum_(f,e)|f><e| tensor A_fe.",
+    "theorem_verified": true
+  }
+}

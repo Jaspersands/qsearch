@@ -108,6 +108,12 @@ def test_report_corrects_raw_access_and_kills_only_phase_only_global_gram() -> N
     assert report.claim_gate["direct_gpe_pair_polar_compiled"]
     assert report.claim_gate["phase_only_pair_polar_global_gram_ansatz_refuted"]
     assert report.claim_gate["operator_valued_cross_metric_retention_required"]
+    assert report.claim_gate[
+        "canonical_uniform_linear_global_metric_assembly_compiled"
+    ]
+    assert report.claim_gate[
+        "canonical_uniform_linear_global_metric_normalization"
+    ] == "q"
     assert not report.claim_gate[
         "phase_only_pair_polar_block_kernel_positive_semidefinite"
     ]

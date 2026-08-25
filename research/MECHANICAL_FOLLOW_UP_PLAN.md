@@ -4899,7 +4899,7 @@ artifact under `research/representation/`:
       amplitudes. Preserve the successor correction that the physical-interface
       detour supplies alpha-one addressed raw cross maps and GPE supplies pair
       polars; the companion-only closure still excludes a within-algebra polar.
-      Keep global metric assembly, approximate-circuit lower bound, physical PGM, hidden-information
+      Keep polynomial-normalized/hierarchical global whitening, approximate-circuit lower bound, physical PGM, hidden-information
       theorem, decoder, classical separation, algorithm, and speedup
       false/open. The negative-result writer is already live; routine
       experiment/runner/CLI/README dispatch remains mechanical.
@@ -4912,10 +4912,24 @@ artifact under `research/representation/`:
       flatness criterion and the regular-`S3` spectra: the physical metric Gram
       is PSD while the phase-only pair-polar kernel has two eigenvalues `-1`;
       its tensor negative multiplicity is `(3^k-(-1)^k)/2`. Keep positive
-      natural mass for this witness, global operator-valued metric assembly,
+      natural mass for this witness, polynomial-normalized or hierarchical global metric whitening,
       full-kernel normalization/window, physical PGM, decoder, classical
       separation, algorithm, and speedup false/open. The negative-result
       writer is live; routine dispatch remains mechanical.
+54. `self_dual_wreath_addressed_cross_map_linear_assembly_normalization_boundary.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY`
+    - Writer: `write_linear_assembly_normalization_boundary_report`
+    - Preserve the exact table-free prepare/query/erase signal `G/q`, the
+      coefficient-mixer contraction proof `||11^*/alpha||=q/alpha<=1`, and
+      the sharp equal-coefficient normalization `alpha=q`. Preserve both exact
+      controls: regular-`S3` has normalized positive spectrum
+      `{(1/2)x4,1}`, while the orthogonal flat frame exposes `1/sqrt(q)`
+      normalized-analysis amplitude but has an identity-aware direct bypass.
+      Keep a natural `Omega(q/poly(n))` retained window, nonlinear/hierarchical
+      assembly, direct global polar, physical PGM, decoder, classical
+      separation, algorithm, and speedup false/open. Never promote the scoped
+      linear coefficient-mixer theorem to an arbitrary-query or
+      representation-specific circuit lower bound.
 
 Mechanical actions:
 
@@ -4925,7 +4939,7 @@ Mechanical actions:
   parsers/handlers, clean-registry dispatch tests, and concise README command
   blocks by copying the existing hidden-involution theorem pattern.
 - Refresh `dequantize`, `proofs`, `query-models`, `frontiers`, `conjectures`,
-  `mutate`, the progress snapshot, and `validate` after wiring all fifty-three as one
+  `mutate`, the progress snapshot, and `validate` after wiring all fifty-four as one
   batch.
 - Repair the pre-existing clean-registry defect in
   `write_complete_racah_control_report`: it currently accepts
@@ -4945,7 +4959,7 @@ Mechanical actions:
   any registry update. Restore the existing neighboring writer pattern and
   preserve every current claim gate; this is registry plumbing, not research
   evidence. Run each named clean-registry test before another broad suite.
-- Run the fifty-three focused test files first, then adjacent hidden-involution
+- Run the fifty-four focused test files first, then adjacent hidden-involution
   tests, `python -m compileall -q .`, `node --check site/progress.js`,
   `git diff --check`, and `python qsearch.py validate`.
 - Make no separate commit per theorem.  Include these in the next rare coherent

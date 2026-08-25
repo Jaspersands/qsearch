@@ -461,9 +461,10 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "explicitly bypass strong Fourier sampling no-go barriers."
             ),
             quantum_mechanism=(
-                "Use the alpha-one addressed J_f^*J_e query oracle and direct GPE pair polars to construct a "
-                "polynomial-normalized, holonomy-aware operator-valued global metric assembly or equivalent direct "
-                "orientation polar, followed by a hidden-involution information and outcome-decoder theorem."
+                "Use the alpha-one addressed J_f^*J_e query oracle and direct GPE pair polars beyond the proved "
+                "uniform linear G/q assembly: either establish a natural Omega(q/poly(n)) retained window or build "
+                "a hierarchical, holonomy-aware direct orientation polar, followed by hidden-involution information "
+                "and outcome-decoder theorems."
             ),
             cost_model=(
                 "Count coset-state preparation, number of registers, tensor bond dimension, measurement synthesis, "
@@ -490,7 +491,9 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "Strong Fourier sampling alone is ruled out. The companion-only Schur stack is branch preserving, "
                 "but the physical-interface/projector detour supplies alpha-one addressed raw cross maps and GPE "
                 "supplies their pair polars. Pair phases alone cannot form the global Gram on nonflat cycles: the "
-                "exact S3 kernel is indefinite. Positive metric assembly and whitening remain open."
+                "exact S3 kernel is indefinite. Uniform linear address mixing does form the positive Gram G/q, but "
+                "equal-coefficient contractivity forces alpha=q. A natural q-scale window or hierarchical/direct "
+                "global polar remains open."
             ),
             dequantization_check=(
                 "Check whether each separating observable is equivalent to classical color refinement, code invariants, "
@@ -669,6 +672,7 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "EXP-CODE-SELF-DUAL-WREATH-TRACE-BIASED-COEFFICIENT-RANK-NO-GO",
                 "EXP-CODE-SELF-DUAL-WREATH-SCHUR-COMPANION-TRANSFORM-SCOPE-BOUNDARY",
                 "EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
+                "EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY",
                 "EXP-CODE-TENSOR-MEASUREMENT",
             ],
             notes="High upside but high no-go risk; registry keeps the no-go analysis mandatory.",
@@ -21976,6 +21980,46 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             metrics=["speedup_claim_allowed", "new_quantum_algorithm_count"],
             dependencies=["self_dual_wreath_addressed_cross_map_pair_polar_gram_boundary.py"],
             next_actions=["Run qsearch.py self-dual-wreath-addressed-cross-map-pair-polar-gram-boundary."],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Self Dual Wreath Addressed Cross Map Linear Assembly Normalization Boundary",
+            status="planned",
+            hypothesis=(
+                "The alpha-one addressed cross-map oracle compiles the exact positive dense Gram table-free, but "
+                "uniform equal-coefficient linear address mixing has sharp normalization alpha=q."
+            ),
+            protocol=(
+                "Verify the prepare/query/erase signal G/q, coefficient-mixer contraction lower bound, exact S3 "
+                "normalized spectrum, orthogonal-flat stress frame, and factorial-width scaling while preserving "
+                "the hierarchical/direct-polar scope boundary."
+            ),
+            positive_signal=(
+                "A natural retained Omega(q/poly(n)) spectral window or a hierarchical/direct global polar bypasses "
+                "the one-query equal-coefficient normalization."
+            ),
+            falsifiers=[
+                "Alpha-one addressed entries do not imply alpha-one dense assembly under uniform linear mixing.",
+                "The q^2 ordered blocks require alpha=q rather than alpha=q^2 under two-sided uniform preparation.",
+                "The orthogonal flat-frame witness is not a representation-specific or arbitrary-circuit lower bound.",
+                "Dense natural support alone does not prove a q-scale retained spectral window.",
+            ],
+            metrics=[
+                "canonical_linear_global_metric_assembly_compiler_count",
+                "linear_dense_assembly_alpha_q_lower_bound_theorem_count",
+                "superpolynomial_scaling_row_count",
+                "polynomial_normalized_global_metric_assembly_compiler_count",
+                "new_quantum_algorithm_count",
+            ],
+            dependencies=[
+                "self_dual_wreath_addressed_cross_map_linear_assembly_normalization_boundary.py",
+                "self_dual_wreath_addressed_cross_map_pair_polar_gram_boundary.py",
+                "self_dual_wreath_native_frame_access_boundary.py",
+            ],
+            next_actions=[
+                "Run qsearch.py self-dual-wreath-addressed-cross-map-linear-assembly-normalization-boundary."
+            ],
         ),
     ]
     return candidates, experiments

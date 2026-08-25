@@ -276,6 +276,7 @@ from self_dual_wreath_trace_biased_coefficient_rank_no_go import write_trace_bia
 
 from self_dual_wreath_schur_companion_transform_scope_boundary import write_schur_companion_transform_scope_boundary_report
 from self_dual_wreath_addressed_cross_map_pair_polar_gram_boundary import write_addressed_cross_map_pair_polar_gram_boundary_report
+from self_dual_wreath_addressed_cross_map_linear_assembly_normalization_boundary import write_linear_assembly_normalization_boundary_report
 import argparse
 import json
 from collections import Counter
@@ -1955,6 +1956,24 @@ def command_sdw_addressed_cross_map_pair_polar_gram_boundary(args: argparse.Name
     validation = validate_registry()
     metrics = payload.get("headline_metrics", {})
     print("self_dual_wreath_addressed_cross_map_pair_polar_gram_boundary complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+
+def command_sdw_addressed_cross_map_linear_assembly_normalization_boundary(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_linear_assembly_normalization_boundary_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_linear_assembly_normalization_boundary_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_addressed_cross_map_linear_assembly_normalization_boundary complete")
     print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
     print(f"Registry valid: {validation['valid']}")
     if validation["issues"]:

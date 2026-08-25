@@ -1,6 +1,6 @@
 # Research Agent Handoff
 
-Last updated: 2026-08-24
+Last updated: 2026-08-25
 
 ## Antigravity Mechanical Wiring Completion Note (2026-08-24 - Pass 6)
 
@@ -12082,10 +12082,10 @@ compiles each addressed pair polar directly. Thus the raw cross-map query is
 not open; the companion-only algebra theorem still explains why it cannot be
 obtained without leaving that algebra.
 
-The surviving constructive target is global: assemble all operator-valued
-cross metrics and pair phases into the positive address-transition kernel,
-with polynomial full-kernel normalization and an inverse-polynomial useful
-spectral window on natural mass.
+The surviving constructive target is global. The successor linear theorem
+assembles all operator-valued cross metrics into the positive signal `G/q`;
+what remains is a natural `q/poly(n)` retained spectral window or a
+hierarchical/direct global polar that avoids the single uniform erasure.
 
 No new entangling companion circuit, noncommuting Racah network, multi-round
 branch relocation, or character-retaining decoder is ruled out. No approximate
@@ -12172,13 +12172,79 @@ Experiment ID reserved for mechanical wiring:
 EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY
 ```
 
-**Next high-reasoning task:** construct or falsify a coherent global PSD metric
-assembly from the addressed raw cross-map oracle. The construction must expose
-the address-transition PREPARE/SELECT normalization, retain the positive
-operator factors rather than only pair phases, resolve nonabelian holonomy,
-prove an inverse-polynomial useful spectral window on positive natural PGM
-mass, and state what information its output carries about the hidden
-involution. A finite S3 chart or alpha-one entry query is not enough.
+The successor section charges the linear address-transition PREPARE/SELECT
+normalization exactly. Holonomy-aware hierarchical assembly and its natural
+spectral window remain open.
+
+## Addressed Cross-Map Linear Assembly Normalization Boundary (2026-08-25)
+
+`self_dual_wreath_addressed_cross_map_linear_assembly_normalization_boundary.py`
+closes the exact implication from the alpha-one entry oracle to a dense
+positive operator. Write
+
+```text
+A_fe = J_f^*J_e,
+G = sum_(f,e) |f><e| tensor A_fe,
+q = 2^k.
+```
+
+Preparing the output address uniformly, applying the addressed `A_fe` query,
+and erasing the input address against a uniform state gives every block two
+address amplitudes. The selected signal is therefore exactly
+
+```text
+G/q.
+```
+
+This needs only `2k` Hadamards and bitwise mask controls; no `q^2=4^k` entry
+table is materialized. The normalization is nevertheless sharp for every
+equal-coefficient linear address mixer. Exact `G/alpha` assembly forces the
+coefficient matrix `C=11^*/alpha`. Since a selected unitary block is a
+contraction, the admissible identical-entry control gives
+
+```text
+||C|| = q/alpha <= 1,
+```
+
+hence `alpha>=q`, with equality attained by uniform prepare/erase.
+
+Two exact controls separate normalization from hardness. The regular-`S3`
+physical Gram saturates `||G||=q=3` and
+
+```text
+spec(G/3) = {0,0,0,0, 1/2,1/2,1/2,1/2, 1},
+```
+
+so the finite physical metric has a constant normalized positive edge. For
+`q` orthogonal branches, `G=I`, but coefficient-only assembly exposes `I/q`
+and normalized-analysis singular amplitude `1/sqrt(q)`. The latter is only an
+oracle-architecture stress control: if the identity structure is known, its
+polar is implemented directly.
+
+At `k=ceil(3 log2(n!))+2`, the address circuit has polynomial gate count but
+`alpha=q=exp(Theta(n log n))`. This does not prove the global polar hard.
+Polynomial usefulness would follow from a natural retained spectral window
+`lambda(G)>=q/poly(n)`; alternatively a recursive shorted-metric, nonlinear
+multi-query, or direct representation-specific polar can avoid the single
+uniform address erasure. None is ruled out.
+
+No natural `q`-scale spectral theorem, hierarchical metric compiler, physical
+PGM, hidden-label information theorem, decoder, classical separation,
+algorithm, or speedup is proved. `speedup_claim_allowed` remains false.
+
+Experiment ID:
+
+```text
+EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY
+```
+
+**Next high-reasoning task:** determine whether the natural operator-valued
+Gram has an `Omega(q/poly(n))` retained eigenvalue window on positive
+hidden-label information mass. If not, construct or falsify a genuinely
+hierarchical global polar using recursive/shorted metrics and GPE pair
+transport, with every node normalization and holonomy transition explicit.
+Do not test another single uniform address erasure: this theorem already
+settles that architecture.
 
 ## Resume Commands
 
@@ -12233,6 +12299,7 @@ python self_dual_wreath_native_frame_access_boundary.py
 python self_dual_wreath_pair_transport_native_mass_boundary.py
 python self_dual_wreath_gpe_pair_polar_transport.py
 python self_dual_wreath_gpe_holonomy_resolver_reduction.py
+python theorems/self_dual_wreath_addressed_cross_map_linear_assembly_normalization_boundary.py
 python self_dual_wreath_final_root_natural_common_span.py
 python self_dual_wreath_component_defect_rank_mass.py
 python self_dual_wreath_component_povm_spectral_trim.py
