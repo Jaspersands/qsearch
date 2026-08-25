@@ -12021,6 +12021,82 @@ other failures have the same missing-upsert symptom and are enumerated in
 character-tensor theorem pass; do not infer that the repository-wide suite is
 green.
 
+## Schur-Companion Known-Transform Scope Boundary (2026-08-24)
+
+`self_dual_wreath_schur_companion_transform_scope_boundary.py` completes the
+primary-literature capability audit requested above and falsifies the precise
+hypothesis that the published Schur/QFT/CG plus invariant-projector stack
+already contains the missing orientation-polar compiler.
+
+In a fixed target sector, write the encoded joint-companion source space as
+
+```text
+K_nu = direct_sum_e K_(nu,e),   K_(nu,e)=B_(nu,e)M_(nu,e).
+```
+
+The cited results provide Schur coordinate changes, source/target labels, and
+supplied-label invariant membership reflections. Their proved interface lies
+in the branch-preserving algebra
+
+```text
+A_br = direct_sum_e End(K_(nu,e) tensor W).
+```
+
+This remains true under arbitrary coherent composition inside the access
+model: products, adjoints, label control, workspace extension, and selected
+workspace top blocks still commute with every branch projector `Z_e`. By
+contrast, for
+
+```text
+H_nu[e,f] = Tr(E_(nu,e)E_(nu,f))/d_nu,
+```
+
+any cross entry forces `H_nu^(+/2)` outside `A_br`, because
+`H_nu=((H_nu^(+/2))^+)^2`. Three exact `S3/S4` controls verify cross blocks in
+both operators, the reconstruction identity, and branch-algebra closure. The
+existing target-uniform Plancherel tensor-covering theorem makes cross overlaps
+density one on balanced natural orientation pairs, and the joint-sector
+theorem places `1-o(1)` natural mass on high-dimensional target rows.
+
+The literature boundary is exact and deliberately narrow:
+
+- BCH and the corrected high-dimensional algorithm implement Schur--Weyl
+  transforms and GT/SYT or one-box Pieri `F`-moves, not arbitrary internal
+  `S_n` Specht Kronecker/Racah transitions.
+- The Kronecker and plethysm `#BQP` constructions identify dimensions of
+  invariant-projector images; they do not expose a coherent multiplicity basis
+  or state-dependent cross-branch transition amplitudes.
+- The efficient `S_n` QFT supplies carrier coordinates, not an internal
+  multiplicity multiplier.
+
+The smallest surviving constructive target is now the typed oracle
+
+```text
+coherently block-encode J_e^*J_f (or the equivalent merger polar)
+with polynomial normalization and an inverse-polynomial useful spectral
+window on natural mass.
+```
+
+No new entangling companion circuit, noncommuting Racah network, multi-round
+branch relocation, or character-retaining decoder is ruled out. No approximate
+arbitrary-circuit lower bound, high-dimensional hidden-label information
+theorem, physical PGM, classical separation, algorithm, or speedup is claimed.
+`speedup_claim_allowed` remains false.
+
+Experiment ID reserved for mechanical wiring:
+
+```text
+EXP-CODE-SELF-DUAL-WREATH-SCHUR-COMPANION-TRANSFORM-SCOPE-BOUNDARY
+```
+
+**Next high-reasoning task:** construct or falsify a globally coherent,
+non-branch-preserving Racah network for the explicit `J_e^*J_f` cross maps.
+The construction must specify its companion input basis, SELECT oracle,
+block-encoding normalization, useful spectral window, natural source/target
+mass, and state-dependent output information. Do not begin with another Schur
+coordinate transform or membership projector: this theorem proves that those
+typed primitives remain inside the wrong algebra.
+
 ## Resume Commands
 
 ```bash

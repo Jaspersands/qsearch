@@ -15460,7 +15460,7 @@
       "coset_recoupling_capability_ledger": "research/representation/coset_recoupling_capability_ledger.json"
     },
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-08-24T19:50:37.385208+00:00",
+    "created_at": "2026-08-25T02:55:33.481098+00:00",
     "experiment_id": "EXP-COSET-RECOUPLING-CAPABILITY-LEDGER",
     "falsifiers_triggered": [
       "The S_n QFT is already polynomial and cannot be presented as the missing breakthrough.",
@@ -15468,6 +15468,7 @@
       "#BQP multiplicity counting does not construct a coherent Kronecker basis.",
       "Schur-Weyl Clebsch-Gordan circuits do not automatically solve internal Specht tensor products.",
       "Separate-to-joint Schur dilation carries fixed-source Kronecker multiplicity coherently, but its natural normalized branch merger is the original orientation polar in encoded coordinates.",
+      "The published Schur/QFT/CG plus projector stack is branch preserving and does not supply the cross-source-branch orientation multiplier.",
       "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
       "An encoded stable shape router does not construct a compressed Clebsch channel isometry.",
       "An encoded left/right relabelling isometry does not construct the state-dependent frame filter or decoder.",
@@ -15481,7 +15482,7 @@
     "metrics": {
       "bounded_support_commutant_block_encoding_poly_proof_count": 1,
       "bounded_tail_natural_access_no_go_theorem_count": 1,
-      "capability_count": 17,
+      "capability_count": 18,
       "diagonal_jm_label_transform_poly_proof_count": 1,
       "exact_holevo_copy_budget_theorem_count": 1,
       "exact_stable_nine_shape_sector_classification_count": 1,
@@ -15490,6 +15491,8 @@
       "hidden_involution_decoder_count": 0,
       "internal_kronecker_transform_poly_proof_count": 0,
       "kcopy_associator_poly_proof_count": 0,
+      "known_schur_projector_stack_cross_branch_multiplier_count": 0,
+      "known_schur_projector_stack_scope_boundary_theorem_count": 1,
       "maximum_kronecker_multiplicity": 117,
       "maximum_multiplicity_register_bits": 7,
       "maximum_n": 10,
@@ -15547,8 +15550,8 @@
       "typical_irrep_uniform_encoded_tree_transform_count": 0,
       "unresolved_required_capability_count": 3
     },
-    "status": "dilated-isotypic-routing-available-polar-and-decoder-open",
-    "summary": "Classified 17 representation primitives and exact finite Kronecker growth through n=10. Separate-to-joint Schur dilation now supplies an encoded multiplicity carrier, but no exposed coordinates, orientation polar, or decoder."
+    "status": "known-schur-stack-typed-cross-branch-oracle-polar-and-decoder-open",
+    "summary": "Classified 18 representation primitives and exact finite Kronecker growth through n=10. Separate-to-joint Schur dilation now supplies an encoded multiplicity carrier, but the published Schur/QFT/CG plus projector stack is branch preserving and cannot supply the certified cross-branch orientation multiplier without a new typed Racah/intertwiner primitive."
   },
   {
     "artifacts": {

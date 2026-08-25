@@ -170,6 +170,7 @@
       "EXP-CODE-SELF-DUAL-WREATH-SCHUR-DILATED-MULTIPLICITY-ACCESS",
       "EXP-CODE-SELF-DUAL-WREATH-SPLIT-SECTOR-BRANCH-REGULARITY",
       "EXP-CODE-SELF-DUAL-WREATH-TRACE-BIASED-COEFFICIENT-RANK-NO-GO",
+      "EXP-CODE-SELF-DUAL-WREATH-SCHUR-COMPANION-TRANSFORM-SCOPE-BOUNDARY",
       "EXP-CODE-TENSOR-MEASUREMENT",
       "EXP-DHS-GOWERS-SPECTRUM",
       "EXP-DHS-PHASE-SIEVE",
@@ -753,7 +754,7 @@
     ],
     "measurement_and_decoding": "Use collective measurement candidates over several coset-state registers; decode candidate permutations or invariant separators and verify equivalence classically.",
     "natural_access_analysis": "All representation labels and sectors must arise from naturally sampled coset-state registers. Any conditioned branch must have inverse-polynomial total probability or a proved direct preparation; predetermined bounded-tail Fourier postselection is explicitly disallowed.",
-    "no_go_analysis": "Strong Fourier sampling alone is ruled out for symmetric-group GI-style HSPs; this candidate survives only if it uses genuine collective measurements or leaves the blocked HSP route.",
+    "no_go_analysis": "Strong Fourier sampling alone is ruled out. Published Schur/QFT/CG transforms and invariant-space projectors provide branch isometries, labels, and membership reflections but no normalization-one cross-source-branch multiplier; their proved branch-preserving stack cannot implement the certified cross blocks of H_nu^(+/2). New entangling companion/Racah structure remains open.",
     "notes": "High upside but high no-go risk; registry keeps the no-go analysis mandatory.",
     "ontology_node_ids": [
       "nonabelian-hsp",
@@ -761,12 +762,12 @@
       "code-equivalence"
     ],
     "problem_family": "Linear code equivalence families over increasing block length and finite fields, with controlled automorphism strata and hard classical canonicalization baselines.",
-    "quantum_mechanism": "Search for polynomial-description multi-register observables or tensor-network measurement ansatzes that distinguish coset states beyond individual strong Fourier labels.",
+    "quantum_mechanism": "Search for a polynomial-normalized cross-source-branch J_e^*J_f/Racah oracle or an equivalent direct orientation polar on the Schur companion, followed by a hidden-involution information and outcome decoder theorem.",
     "reduction_or_lower_bound": "Code equivalence embeds as a hidden permutation problem in the symmetric-group HSP frontier, but must explicitly bypass strong Fourier sampling no-go barriers.",
     "status": "active",
     "success_statement": "Conjecture: a restricted but hard code family admits a polynomial-bond collective observable whose distinguishing advantage remains inverse polynomial as length grows.",
     "title": "Collective coset-state observables for code equivalence",
-    "updated_at": "2026-08-24T20:04:53.181108+00:00"
+    "updated_at": "2026-08-25T04:38:49.521260+00:00"
   },
   {
     "classical_baseline": "Generic dihedral hidden-reflection and subset-sum postprocessing baselines, plus all classical attacks legal for any public side information. Explicit phase-family learners are rejection tests for restricted testbeds, not evidence about the full DCP state-input problem.",

@@ -7007,6 +7007,47 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     ),
                 ),
                 LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-SCHUR-COMPANION-KNOWN-TRANSFORM-SCOPE",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "The published Schur/QFT/CG and supplied-label invariant-projector interfaces generate a "
+                        "branch-preserving direct-sum algebra on the Schur companion, while the physical "
+                        "H_nu^(+/2) multiplier has cross-source-branch blocks whenever H_nu does. Thus that known "
+                        "typed stack does not by itself compile the orientation polar."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-COSET-SCHUR-DILATED-MULTIPLICITY-CARRIER",
+                        f"LEMMA-{candidate_id}-COSET-SCHUR-BRANCH-MERGER-POLAR-EQUIVALENCE",
+                        "PO-MEASUREMENT",
+                        "PO-NO-GO",
+                    ],
+                    status=(
+                        "proved-known-transform-stack-branch-preserving-cross-oracle-open"
+                        if int(
+                            capability_metrics.get(
+                                "known_schur_projector_stack_scope_boundary_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        and not int(
+                            capability_metrics.get(
+                                "known_schur_projector_stack_cross_branch_multiplier_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        else "blocked-known-transform-stack-scope-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Type every cited primitive on the internal companion input, verify closure under products, "
+                        "adjoints, coherent label controls, workspaces, and selected top blocks, and independently "
+                        "check a nonzero cross block of H_nu^(+/2). A new non-branch-preserving companion circuit "
+                        "would evade this access-model boundary and must be audited separately."
+                    ),
+                ),
+                LemmaRecord(
                     id=f"LEMMA-{candidate_id}-COSET-INTERNAL-KRONECKER-TRANSFORM",
                     candidate_id=candidate_id,
                     statement=(

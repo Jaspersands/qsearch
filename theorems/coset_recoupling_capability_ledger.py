@@ -33,6 +33,9 @@ from research_registry import (
 from self_dual_wreath_schur_branch_merger_polar_equivalence import (
     run_schur_branch_merger_polar_equivalence,
 )
+from self_dual_wreath_schur_companion_transform_scope_boundary import (
+    run_schur_companion_transform_scope_boundary,
+)
 from symmetric_character import kronecker_coefficient
 
 
@@ -183,6 +186,41 @@ CAPABILITIES = (
             "controlled router does not realize the physical cross-orientation Gram H_nu. A common output-coordinate "
             "isometry would preserve H_nu rather than whiten it. The branch intertwiner, orientation polar, Racah "
             "associator, and decoder remain uncompiled."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-SCHUR-COMPANION-KNOWN-TRANSFORM-STACK",
+        literature_ids=[
+            "beals-symmetric-qft-1997",
+            "bacon-chuang-harrow-schur-2004",
+            "ikenmeyer-subramanian-kronecker-2023",
+            "burchardt-high-dimensional-schur-2025",
+            "christandl-et-al-plethysm-sharp-bqp-2026",
+        ],
+        primitive=(
+            "Published Schur/QFT/CG plus invariant-projector stack on the joint "
+            "companion"
+        ),
+        proved_scope=(
+            "The cited primitives supply polynomial Schur coordinate changes, irrep/source labels, and "
+            "supplied-label invariant membership reflections. Their proved typed interface is branch preserving; "
+            "products, adjoints, coherent label controls, workspace extensions, and selected top blocks remain in "
+            "the direct-sum source-branch algebra."
+        ),
+        availability="proved-typed-stack-insufficient-cross-oracle-open",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "This is a quantum access-model boundary, not a quantum/classical separation or an arbitrary-circuit "
+            "lower bound."
+        ),
+        scope_limit=(
+            "Actual finite H_nu and H_nu^(+/2) controls have nonzero cross-source-branch blocks, and natural "
+            "Plancherel covering makes cross overlaps density one on balanced pairs. The stack therefore does not "
+            "supply the required J_e^*J_f multiplier or orientation polar. New entangling companion circuits, "
+            "noncommuting Racah networks, multi-round transforms, and character-retaining decoders remain open."
         ),
     ),
     RepresentationCapability(
@@ -550,6 +588,9 @@ def build_recoupling_capability_report(
     schur_branch_merger_metrics = (
         run_schur_branch_merger_polar_equivalence().headline_metrics
     )
+    schur_companion_scope_metrics = (
+        run_schur_companion_transform_scope_boundary().headline_metrics
+    )
     unresolved = [
         capability
         for capability in CAPABILITIES
@@ -807,6 +848,20 @@ def build_recoupling_capability_report(
             )
             or 0
         ),
+        "known_schur_projector_stack_scope_boundary_theorem_count": int(
+            schur_companion_scope_metrics.get(
+                "known_transform_stack_scope_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "known_schur_projector_stack_cross_branch_multiplier_count": int(
+            schur_companion_scope_metrics.get(
+                "polynomial_cross_branch_oracle_count",
+                0,
+            )
+            or 0
+        ),
         "growth_record_count": len(growth),
         "maximum_n": max(n_values),
         "maximum_partition_count": max(record.partition_count for record in growth),
@@ -925,6 +980,21 @@ def build_recoupling_capability_report(
                 ),
             },
             {
+                "from": (
+                    "the published Schur/QFT/CG stack together with invariant-space "
+                    "membership projectors"
+                ),
+                "invalid_to": (
+                    "a normalization-one internal cross-source-branch multiplier or "
+                    "orientation polar"
+                ),
+                "reason": (
+                    "The proved interfaces give branch isometries, labels, and membership reflections. Their "
+                    "coherent branch-preserving closure has zero Z_f O Z_e blocks for e!=f, whereas H_nu^(+/2) "
+                    "has certified cross blocks. A new typed J_e^*J_f/Racah primitive is required."
+                ),
+            },
+            {
                 "from": "restricted quantum multiplicity estimator",
                 "invalid_to": "superpolynomial advantage or Shor-level mechanism",
                 "reason": "Many proposed restricted families now have polynomial classical algorithms.",
@@ -965,6 +1035,15 @@ def build_recoupling_capability_report(
                     0,
                 )
             ),
+            "known_schur_projector_stack_interfaces_typed": bool(
+                schur_companion_scope_metrics.get(
+                    "known_transform_stack_scope_theorem_count",
+                    0,
+                )
+            ),
+            "known_schur_projector_stack_supplies_cross_branch_multiplier": False,
+            "known_schur_projector_stack_compiles_orientation_polar": False,
+            "natural_cross_orientation_overlap_density_one_proved": True,
             "schur_branch_encoding_removes_orientation_inverse_square_root": False,
             "schur_branch_structured_direct_polar_compiled": False,
             "diagonal_jm_label_transform_polynomial_proved": True,
@@ -1001,16 +1080,19 @@ def build_recoupling_capability_report(
                 "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable "
                 "family. Complete encoded labels and left/right relabelling are proved on one stable final branch, "
                 "and its three-copy frame is directly block-encoded, all-n conditioned, and inverse-filterable, but "
-                "the fixed branch is factorially rare under natural input. Known primitives still stop before transfer "
-                "to a structured orientation polar on the now-available Schur-dilated companion carrier, an "
-                "outcome-information theorem, hidden-involution decoding, and separation."
+                "the fixed branch is factorially rare under natural input. The known Schur/QFT/CG plus "
+                "invariant-projector stack is now typed exactly: it preserves orthogonal source branches, while "
+                "the required H_nu^(+/2) multiplier crosses those branches on finite controls and natural balanced "
+                "pairs. A new polynomial-normalized J_e^*J_f/Racah oracle or equivalent direct polar, an "
+                "outcome-information theorem, hidden-involution decoding, and separation remain open."
             ),
         },
-        status="dilated-isotypic-routing-available-polar-and-decoder-open",
+        status="known-schur-stack-typed-cross-branch-oracle-polar-and-decoder-open",
         summary=(
             f"Classified {len(CAPABILITIES)} representation primitives and exact finite Kronecker growth through "
             f"n={max(n_values)}. Separate-to-joint Schur dilation now supplies an encoded multiplicity carrier, "
-            "but no exposed coordinates, orientation polar, or decoder."
+            "but the published Schur/QFT/CG plus projector stack is branch preserving and cannot supply the "
+            "certified cross-branch orientation multiplier without a new typed Racah/intertwiner primitive."
         ),
         falsifiers_triggered=[
             "The S_n QFT is already polynomial and cannot be presented as the missing breakthrough.",
@@ -1018,6 +1100,7 @@ def build_recoupling_capability_report(
             "#BQP multiplicity counting does not construct a coherent Kronecker basis.",
             "Schur-Weyl Clebsch-Gordan circuits do not automatically solve internal Specht tensor products.",
             "Separate-to-joint Schur dilation carries fixed-source Kronecker multiplicity coherently, but its natural normalized branch merger is the original orientation polar in encoded coordinates.",
+            "The published Schur/QFT/CG plus projector stack is branch preserving and does not supply the cross-source-branch orientation multiplier.",
             "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
             "An encoded stable shape router does not construct a compressed Clebsch channel isometry.",
             "An encoded left/right relabelling isometry does not construct the state-dependent frame filter or decoder.",

@@ -33,34 +33,34 @@ The central question driving Q-Search is: **Can genuine polynomial or super-poly
 2. **Classical Dequantization**: Many heuristic quantum observables can be simulated efficiently by classical Information-Set Decoding (ISD), Weisfeiler-Leman (WL) graph refinements, sparse Fourier sampling, or lattice BDD heuristics.
 3. **Erased Dead Ends**: Unrecorded negative experiments lead subsequent research into cyclical, redundant investigations.
 
-### The Q-Search Solution: Proof-Gated Defense
+#### The Q-Search Solution: Proof-Gated Defense
 Q-Search enforces a strict **claim-gating policy**:
-- **745 Verified Theorem Modules**: Every hypothesis is codified into an executable verification module with explicit mathematical kill criteria.
+- **746 Verified Theorem Modules**: Every hypothesis is codified into an executable verification module with explicit mathematical kill criteria.
 - **1,211 Dequantization Attacks**: Automated classical attack scanners test every quantum state-access model against correlation attacks, derivative spectra, and algebraic invariant learners.
 - **807 Retained Negative Results**: Every falsified claim or classical collision is permanently recorded in the registry (`research/registry/negative_results.json`).
 - **Speedup Claims Blocked**: The registry actively gates `speedup_claim_allowed = False` until a candidate provably defeats all named classical baselines across asymptotic families.
 
 ---
 
-## Live Research Dashboards
+## Interactive Documentation Pages
 
-Interactive data portals are deployed via GitHub Pages:
+The repository automatically publishes interactive research telemetry and database dashboards via GitHub Pages:
 
-| Dashboard | Description | Live Link |
-|---|---|---|
-| **Live Progress** | Real-time research position, signal pipeline, milestones, and active conjectures | [index.html](https://jaspersands.github.io/qsearch/) |
-| **Research Methodology** | Operating principles, diagnosis of failure modes, and proof-gate contracts | [methodology.html](https://jaspersands.github.io/qsearch/methodology.html) |
+| Dashboard | Description | Live Page |
+| :--- | :--- | :--- |
+| **Progress Overview** | Real-time candidate pipeline, falsifier telemetry, and validation status | [index.html](https://jaspersands.github.io/qsearch/) |
+| **Methodology** | Formal research principles, no-go mechanisms, and claim-gating philosophy | [methodology.html](https://jaspersands.github.io/qsearch/methodology.html) |
 | **Frontier Map** | Machine-readable topological map of active research frontiers and kill criteria | [frontier.html](https://jaspersands.github.io/qsearch/frontier.html) |
 | **Negative Results** | Searchable database of 807 retained no-go theorems and dequantization findings | [negative-results.html](https://jaspersands.github.io/qsearch/negative-results.html) |
 | **Proof Debt** | Live ledger of 24 open proof obligations, 1,184 lemmas, and reduction edges | [proof-debt.html](https://jaspersands.github.io/qsearch/proof-debt.html) |
-| **Repository Map** | Interactive codebase architecture explorer and 745-module taxonomy | [repomap.html](https://jaspersands.github.io/qsearch/repomap.html) |
+| **Repository Map** | Interactive codebase architecture explorer and 746-module taxonomy | [repomap.html](https://jaspersands.github.io/qsearch/repomap.html) |
 
 ---
 
 ## Repository Architecture & Codebase Layout
 
 ### Why is the Root Directory Structured with Flat Modules?
-Q-Search contains **745 scientific verification modules**. The codebase organizes modules into domain-specific packages (`core/` and `theorems/`):
+Q-Search contains **746 scientific verification modules**. The codebase organizes modules into domain-specific packages (`core/` and `theorems/`):
 
 ```text
 quantum-algorithm-search/
@@ -71,7 +71,7 @@ quantum-algorithm-search/
 │   ├── dequantization_checks.py   # Automated classical attack matrix scanner
 │   └── mutation_engine.py         # Automated hypothesis mutation generator
 │
-├── theorems/                      # 745 Scientific Theorem Verification modules
+├── theorems/                      # 746 Scientific Theorem Verification modules
 │   ├── dcp_*.py                   # Dihedral Coset Problem (DHSP) & state-native sieves
 │   ├── coset_*.py, cfi_*.py       # Non-abelian coset observables & S_n representation theory
 │   ├── self_dual_wreath_*.py      # Self-dual wreath product representations & polar audits
@@ -97,7 +97,7 @@ quantum-algorithm-search/
 
 **Benefits of this Architecture:**
 1. **Uncluttered Root**: Only `qsearch.py` and configuration files reside at root.
-2. **Zero Packaging Friction**: All 745 workflows execute seamlessly via `python3 qsearch.py <command>`.
+2. **Zero Packaging Friction**: All 746 workflows execute seamlessly via `python3 qsearch.py <command>`.
 3. **Clean Separation of Concerns**: Core platform orchestration (`core/`) is cleanly separated from domain theorem proofs (`theorems/`).
 
 ---
@@ -183,7 +183,7 @@ python3 -m pytest tests/test_experiment_runner.py
 
 ## Categorized CLI Command Reference
 
-All 745 research workflows are accessible via `python3 qsearch.py <subcommand>`.
+All 746 research workflows are accessible via `python3 qsearch.py <subcommand>`.
 
 ### Core Operating System Commands
 ```bash
@@ -295,6 +295,7 @@ python3 qsearch.py self-dual-wreath-schur-branch-merger-polar-equivalence
 python3 qsearch.py self-dual-wreath-schur-dilated-multiplicity-access
 python3 qsearch.py self-dual-wreath-split-sector-branch-regularity
 python3 qsearch.py self-dual-wreath-trace-biased-coefficient-rank-no-go
+python3 qsearch.py self-dual-wreath-schur-companion-transform-scope-boundary
 ```
 </details>
 

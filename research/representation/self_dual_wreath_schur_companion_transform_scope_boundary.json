@@ -1,0 +1,454 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "High-dimensional Schur F-moves are the missing Racah transform.",
+      "resolution": "Their proved wires are Schur--Weyl GT/SYT and one-box Pieri coupling wires, not arbitrary internal S_n Specht multiplicity wires.",
+      "resolved": true
+    },
+    {
+      "objection": "A #BQP multiplicity projector exposes a basis of its image.",
+      "resolution": "Dimension of a projector image and membership reflection do not supply coordinates or cross-image transition amplitudes.",
+      "resolved": true
+    },
+    {
+      "objection": "Arbitrary coherent label control leaves the branch algebra.",
+      "resolution": "Control changes the within-branch block but has no nonzero Z_f O Z_e block unless a cross-branch primitive is separately supplied.",
+      "resolved": true
+    },
+    {
+      "objection": "The finite offdiagonal controls prove an approximate circuit lower bound.",
+      "resolution": "They do not. The theorem is an exact access-type boundary; no asymptotic approximation lower bound for new structured circuits is claimed.",
+      "resolved": true
+    },
+    {
+      "objection": "Natural target mass proves hidden-involution information.",
+      "resolution": "The target irrep law is hidden-label independent; internal multiplicity information and decoding are separate open gates.",
+      "resolved": false
+    },
+    {
+      "objection": "Finite classical diagonalization supplies an asymptotic dequantization.",
+      "resolution": "Exact finite character contraction is a control and classical alternative, not a polynomial all-n algorithm for the exponentially wide orientation kernel. No separation claim is made in either direction.",
+      "resolved": true
+    }
+  ],
+  "claim_gate": {
+    "actual_orientation_inverse_sqrt_requires_cross_branch_action": true,
+    "branch_character_retaining_decoder_ruled_out": false,
+    "branch_preserving_stack_closed_under_coherent_composition": true,
+    "classical_separation_proved": false,
+    "cross_branch_block_encoding_normalization_charged": false,
+    "direct_structured_companion_polar_ruled_out": false,
+    "high_dimensional_hidden_information_proved": false,
+    "high_dimensional_schur_f_moves_equal_internal_kronecker_racah": false,
+    "known_schur_qft_and_projector_interfaces_typed": true,
+    "known_transform_stack_compiles_orientation_polar": false,
+    "known_transform_stack_supplies_cross_branch_action": false,
+    "multi_round_companion_transform_ruled_out": false,
+    "multiplicity_counting_implies_coherent_basis": false,
+    "natural_cross_orientation_overlap_density_one_proved": true,
+    "natural_high_dimensional_target_mass_proved": true,
+    "physical_pgm_compiled": false,
+    "polynomial_normalized_cross_branch_oracle_compiled": false,
+    "reason": "Known transforms expose Schur coordinates and invariant labels but no normalization-one cross-source-branch operation. Actual orientation whitening has cross blocks, so a new typed Racah/intertwiner oracle or equivalent direct polar remains mandatory.",
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-25T02:55:30.192532+00:00",
+  "falsifiers_triggered": [
+    "A Schur--Weyl F-move is not automatically an internal S_n Kronecker/Racah move.",
+    "A #BQP invariant-space projector does not expose multiplicity coordinates.",
+    "Coherent composition of branch-preserving primitives cannot create a cross-branch top block.",
+    "Finite cross-block witnesses are not arbitrary-circuit or approximation lower bounds."
+  ],
+  "finite_controls": [
+    {
+      "active_orientation_count": 6,
+      "best_branch_diagonal_inverse_sqrt_error": 0.4381091045727691,
+      "branch_workspace_closure_residual": 0.0,
+      "control_id": "S3-INFORMATION-THRESHOLD-CROSS-BRANCH",
+      "cross_branch_multiplier_required": true,
+      "exact_scope_boundary_verified": true,
+      "inverse_sqrt_offdiagonal_frobenius_norm": 0.4381091045727691,
+      "inverse_sqrt_reconstruction_residual": 1.8448067674966725e-15,
+      "kernel_offdiagonal_frobenius_norm": 0.7071067811865476,
+      "known_transform_stack_compiles_polar": false,
+      "labels": [
+        [
+          [
+            3
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        [
+          [
+            3
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_inverse_sqrt_branch_commutator_norm": 0.21905455228638457,
+      "maximum_kernel_branch_commutator_norm": 0.3535533905932738,
+      "maximum_kernel_eigenvalue": 1.4999999999999998,
+      "minimum_positive_kernel_eigenvalue": 0.4999999999999997,
+      "n": 3,
+      "orientation_count": 8,
+      "orientation_kernel_rank": 6,
+      "selected_top_block_closure_residual": 0.0,
+      "status": "known-transform-stack-cross-branch-type-mismatch-verified",
+      "target_irrep_dimension": 2,
+      "target_partition": [
+        2,
+        1
+      ]
+    },
+    {
+      "active_orientation_count": 3,
+      "best_branch_diagonal_inverse_sqrt_error": 0.04620110489026514,
+      "branch_workspace_closure_residual": 0.0,
+      "control_id": "S4-COLLISION-FREE-CROSS-BRANCH-A",
+      "cross_branch_multiplier_required": true,
+      "exact_scope_boundary_verified": true,
+      "inverse_sqrt_offdiagonal_frobenius_norm": 0.04620110489026514,
+      "inverse_sqrt_reconstruction_residual": 9.317583275080338e-16,
+      "kernel_offdiagonal_frobenius_norm": 0.1571348402636772,
+      "known_transform_stack_compiles_polar": false,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            3,
+            1
+          ]
+        ],
+        [
+          [
+            2,
+            2
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_inverse_sqrt_branch_commutator_norm": 0.03266911456621744,
+      "maximum_kernel_branch_commutator_norm": 0.11111111111111109,
+      "maximum_kernel_eigenvalue": 2.012196914294048,
+      "minimum_positive_kernel_eigenvalue": 0.6666666666666664,
+      "n": 4,
+      "orientation_count": 4,
+      "orientation_kernel_rank": 3,
+      "selected_top_block_closure_residual": 0.0,
+      "status": "known-transform-stack-cross-branch-type-mismatch-verified",
+      "target_irrep_dimension": 3,
+      "target_partition": [
+        2,
+        1,
+        1
+      ]
+    },
+    {
+      "active_orientation_count": 3,
+      "best_branch_diagonal_inverse_sqrt_error": 0.046201104890265084,
+      "branch_workspace_closure_residual": 0.0,
+      "control_id": "S4-COLLISION-FREE-CROSS-BRANCH-B",
+      "cross_branch_multiplier_required": true,
+      "exact_scope_boundary_verified": true,
+      "inverse_sqrt_offdiagonal_frobenius_norm": 0.046201104890265084,
+      "inverse_sqrt_reconstruction_residual": 2.262281918971376e-15,
+      "kernel_offdiagonal_frobenius_norm": 0.15713484026367722,
+      "known_transform_stack_compiles_polar": false,
+      "labels": [
+        [
+          [
+            4
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        [
+          [
+            3,
+            1
+          ],
+          [
+            2,
+            1,
+            1
+          ]
+        ]
+      ],
+      "maximum_inverse_sqrt_branch_commutator_norm": 0.032669114566217405,
+      "maximum_kernel_branch_commutator_norm": 0.1111111111111111,
+      "maximum_kernel_eigenvalue": 2.012196914294048,
+      "minimum_positive_kernel_eigenvalue": 0.9878030857059504,
+      "n": 4,
+      "orientation_count": 4,
+      "orientation_kernel_rank": 3,
+      "selected_top_block_closure_residual": 0.0,
+      "status": "known-transform-stack-cross-branch-type-mismatch-verified",
+      "target_irrep_dimension": 3,
+      "target_partition": [
+        3,
+        1
+      ]
+    }
+  ],
+  "headline_metrics": {
+    "branch_algebra_closure_theorem_count": 1,
+    "cross_branch_inverse_sqrt_control_count": 3,
+    "direct_structured_orientation_polar_compiler_count": 0,
+    "finite_control_count": 3,
+    "finite_control_failure_count": 0,
+    "hidden_involution_decoder_count": 0,
+    "known_transform_stack_scope_theorem_count": 1,
+    "maximum_finite_inverse_sqrt_branch_commutator_norm": 0.21905455228638457,
+    "new_quantum_algorithm_count": 0,
+    "polynomial_cross_branch_oracle_count": 0,
+    "primary_literature_scope_count": 5
+  },
+  "primary_literature": [
+    {
+      "id": "beals-symmetric-qft-1997",
+      "not_supplied": "internal Specht tensor-product multiplicity transform",
+      "proved_primitive": "polynomial quantum Fourier transform over S_n",
+      "url": "https://doi.org/10.1145/258533.258548"
+    },
+    {
+      "id": "bacon-chuang-harrow-schur-2004",
+      "not_supplied": "internal S_n Kronecker branch transition",
+      "proved_primitive": "polynomial Schur--Weyl/Clebsch--Gordan transform and irrep-label GPE",
+      "url": "https://arxiv.org/abs/quant-ph/0407082"
+    },
+    {
+      "id": "ikenmeyer-subramanian-kronecker-2023",
+      "not_supplied": "coherent basis or state-dependent transition amplitudes",
+      "proved_primitive": "#BQP dimension of a commuting-projector image",
+      "url": "https://arxiv.org/abs/2307.02389"
+    },
+    {
+      "id": "burchardt-high-dimensional-schur-2025",
+      "not_supplied": "arbitrary internal Specht Kronecker/Racah F-move",
+      "proved_primitive": "high-dimensional Schur transform with explicit Schur--Weyl F-moves",
+      "url": "https://arxiv.org/abs/2509.22640"
+    },
+    {
+      "id": "christandl-et-al-plethysm-sharp-bqp-2026",
+      "not_supplied": "multiplicity-coordinate basis or orientation polar",
+      "proved_primitive": "#BQP multiplicity access from repeated Schur transforms",
+      "url": "https://arxiv.org/abs/2602.08441"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "obligation": "type_known_schur_and_projector_primitives",
+      "resolution": "Primary sources establish Schur--Weyl transforms, label projection, and multiplicity counting, not the internal Specht branch-transition oracle used by the orientation polar.",
+      "resolved": true
+    },
+    {
+      "obligation": "prove_branch_preserving_stack_closure",
+      "resolution": "The direct-sum algebra is closed under products, adjoints, coherent label control, workspace extension, and selected top blocks.",
+      "resolved": true
+    },
+    {
+      "obligation": "show_actual_orientation_multiplier_crosses_branches",
+      "resolution": "Three exact S3/S4 controls have nonzero offdiagonal H_nu and H_nu^(+/2), with equation H=((H^(+/2))^+)^2 verified.",
+      "resolved": true
+    },
+    {
+      "obligation": "transfer_type_mismatch_to_natural_source_family",
+      "resolution": "The existing target-uniform Plancherel tensor-covering theorem makes balanced cross overlaps density one after collision-free conditioning.",
+      "resolved": true
+    },
+    {
+      "obligation": "compile_polynomial_normalized_cross_branch_oracle",
+      "resolution": "No coherent J_e^*J_f block encoding, internal Kronecker/Racah basis transition, or equivalent normalization-one polar is known.",
+      "resolved": false
+    },
+    {
+      "obligation": "charge_cross_oracle_normalization",
+      "resolution": "The cited stack has no cross-source-branch SELECT/block encoding whose alpha can be charged. Any new construction must prove alpha=poly(n) and a useful inverse-polynomial window.",
+      "resolved": false
+    },
+    {
+      "obligation": "prove_high_dimensional_blocks_carry_hidden_information",
+      "resolution": "Natural target mass is proved, but a hidden-label information and outcome-decoding theorem remains absent.",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "collision_free_source_probability_tends_one": true,
+      "direct_non_branch_preserving_companion_circuit_ruled_out": false,
+      "high_dimensional_schur_transform_polynomial": true,
+      "information_threshold_copy_count": 48,
+      "invariant_membership_reflections_polynomial": true,
+      "joint_local_dimension_log2": 144.0,
+      "known_stack_exposes_internal_kronecker_coordinates": false,
+      "known_stack_supplies_cross_branch_multiplier": false,
+      "known_stack_supplies_normalization_one_orientation_polar": false,
+      "n": 8,
+      "natural_balanced_pair_cross_overlap_density_tends_one": true,
+      "natural_high_dimensional_target_mass_tends_one": true,
+      "orientation_log2_width": 48,
+      "status": "known-transform-stack-typed-insufficient-cross-oracle-open",
+      "symmetric_group_qft_polynomial": true
+    },
+    {
+      "collision_free_source_probability_tends_one": true,
+      "direct_non_branch_preserving_companion_circuit_ruled_out": false,
+      "high_dimensional_schur_transform_polynomial": true,
+      "information_threshold_copy_count": 135,
+      "invariant_membership_reflections_polynomial": true,
+      "joint_local_dimension_log2": 540.0,
+      "known_stack_exposes_internal_kronecker_coordinates": false,
+      "known_stack_supplies_cross_branch_multiplier": false,
+      "known_stack_supplies_normalization_one_orientation_polar": false,
+      "n": 16,
+      "natural_balanced_pair_cross_overlap_density_tends_one": true,
+      "natural_high_dimensional_target_mass_tends_one": true,
+      "orientation_log2_width": 135,
+      "status": "known-transform-stack-typed-insufficient-cross-oracle-open",
+      "symmetric_group_qft_polynomial": true
+    },
+    {
+      "collision_free_source_probability_tends_one": true,
+      "direct_non_branch_preserving_companion_circuit_ruled_out": false,
+      "high_dimensional_schur_transform_polynomial": true,
+      "information_threshold_copy_count": 355,
+      "invariant_membership_reflections_polynomial": true,
+      "joint_local_dimension_log2": 1775.0,
+      "known_stack_exposes_internal_kronecker_coordinates": false,
+      "known_stack_supplies_cross_branch_multiplier": false,
+      "known_stack_supplies_normalization_one_orientation_polar": false,
+      "n": 32,
+      "natural_balanced_pair_cross_overlap_density_tends_one": true,
+      "natural_high_dimensional_target_mass_tends_one": true,
+      "orientation_log2_width": 355,
+      "status": "known-transform-stack-typed-insufficient-cross-oracle-open",
+      "symmetric_group_qft_polynomial": true
+    },
+    {
+      "collision_free_source_probability_tends_one": true,
+      "direct_non_branch_preserving_companion_circuit_ruled_out": false,
+      "high_dimensional_schur_transform_polynomial": true,
+      "information_threshold_copy_count": 890,
+      "invariant_membership_reflections_polynomial": true,
+      "joint_local_dimension_log2": 5340.0,
+      "known_stack_exposes_internal_kronecker_coordinates": false,
+      "known_stack_supplies_cross_branch_multiplier": false,
+      "known_stack_supplies_normalization_one_orientation_polar": false,
+      "n": 64,
+      "natural_balanced_pair_cross_overlap_density_tends_one": true,
+      "natural_high_dimensional_target_mass_tends_one": true,
+      "orientation_log2_width": 890,
+      "status": "known-transform-stack-typed-insufficient-cross-oracle-open",
+      "symmetric_group_qft_polynomial": true
+    },
+    {
+      "collision_free_source_probability_tends_one": true,
+      "direct_non_branch_preserving_companion_circuit_ruled_out": false,
+      "high_dimensional_schur_transform_polynomial": true,
+      "information_threshold_copy_count": 2151,
+      "invariant_membership_reflections_polynomial": true,
+      "joint_local_dimension_log2": 15057.0,
+      "known_stack_exposes_internal_kronecker_coordinates": false,
+      "known_stack_supplies_cross_branch_multiplier": false,
+      "known_stack_supplies_normalization_one_orientation_polar": false,
+      "n": 128,
+      "natural_balanced_pair_cross_overlap_density_tends_one": true,
+      "natural_high_dimensional_target_mass_tends_one": true,
+      "orientation_log2_width": 2151,
+      "status": "known-transform-stack-typed-insufficient-cross-oracle-open",
+      "symmetric_group_qft_polynomial": true
+    },
+    {
+      "collision_free_source_probability_tends_one": true,
+      "direct_non_branch_preserving_companion_circuit_ruled_out": false,
+      "high_dimensional_schur_transform_polynomial": true,
+      "information_threshold_copy_count": 5054,
+      "invariant_membership_reflections_polynomial": true,
+      "joint_local_dimension_log2": 40432.0,
+      "known_stack_exposes_internal_kronecker_coordinates": false,
+      "known_stack_supplies_cross_branch_multiplier": false,
+      "known_stack_supplies_normalization_one_orientation_polar": false,
+      "n": 256,
+      "natural_balanced_pair_cross_overlap_density_tends_one": true,
+      "natural_high_dimensional_target_mass_tends_one": true,
+      "orientation_log2_width": 5054,
+      "status": "known-transform-stack-typed-insufficient-cross-oracle-open",
+      "symmetric_group_qft_polynomial": true
+    },
+    {
+      "collision_free_source_probability_tends_one": true,
+      "direct_non_branch_preserving_companion_circuit_ruled_out": false,
+      "high_dimensional_schur_transform_polynomial": true,
+      "information_threshold_copy_count": 11628,
+      "invariant_membership_reflections_polynomial": true,
+      "joint_local_dimension_log2": 104652.0,
+      "known_stack_exposes_internal_kronecker_coordinates": false,
+      "known_stack_supplies_cross_branch_multiplier": false,
+      "known_stack_supplies_normalization_one_orientation_polar": false,
+      "n": 512,
+      "natural_balanced_pair_cross_overlap_density_tends_one": true,
+      "natural_high_dimensional_target_mass_tends_one": true,
+      "orientation_log2_width": 11628,
+      "status": "known-transform-stack-typed-insufficient-cross-oracle-open",
+      "symmetric_group_qft_polynomial": true
+    }
+  ],
+  "status": "known-schur-projector-stack-insufficient-cross-oracle-open",
+  "summary": "Falsified the hypothesis that published Schur/CG and invariant-projector primitives already compile the physical orientation polar: their proved interface is branch preserving, while the required inverse-square-root multiplier crosses natural source branches.",
+  "theorem": {
+    "access_model": "Schur/QFT coordinate changes, source and target label controls, and supplied-label invariant membership reflections, with no oracle having Z_f O Z_e nonzero for e!=f",
+    "classical_alternative": "Exact character and representation-ring contractions form H_nu and diagonalize the finite controls classically. No polynomial all-n classical polar construction or quantum/classical separation is inferred from this finite computation.",
+    "closure_theorem": "Every product, adjoint, coherent label control, and selected workspace top block in A_br=direct_sum_e End(K_e tensor W) commutes with every source-branch projector Z_e.",
+    "input_space": "K_nu=direct_sum_e K_(nu,e), the orthogonal fixed-source subspaces inside the joint Schur companion, with polynomial workspace W",
+    "literature_type_boundary": "Schur--Weyl/Pieri F-moves and #BQP invariant-space projectors do not, by their proved interfaces, furnish internal Specht Kronecker branch transition amplitudes.",
+    "minimal_surviving_oracle": "A coherent polynomial-normalized block encoding of the cross maps J_e^*J_f with an inverse-polynomial useful spectral window, or a direct compiler for the equivalent merger polar.",
+    "natural_relevance": "Existing target-uniform Plancherel covering gives nonzero cross overlaps on a density-one set of balanced natural orientation pairs; the joint-sector theorem puts 1-o(1) mass on large rows.",
+    "normalization_boundary": "The known stack supplies no cross-branch block encoding at any normalization. A surviving construction must state an explicit alpha=poly(n) normalization and an inverse-polynomial useful spectral window before QSVT or amplitude amplification is charged.",
+    "output_space": "the physical invariant span or, equivalently, the normalized Schur-branch merger range from the predecessor equivalence theorem",
+    "required_multiplier": "If H_nu has a cross entry, H_nu^(+/2) is not branch preserving; the orientation polar therefore requires a cross-branch primitive or an equivalent direct non-branch-preserving construction.",
+    "scope": "This rejects only the claim that the cited transform/projector stack already supplies the cross operation. It does not reject new entangling companion circuits, a noncommuting Racah network, multi-round branch relocation, or a character-retaining decoder.",
+    "status": "known-schur-projector-stack-insufficient-cross-oracle-open",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "access_model": "Schur/QFT coordinate changes, source and target label controls, and supplied-label invariant membership reflections, with no oracle having Z_f O Z_e nonzero for e!=f",
+    "classical_alternative": "Exact character and representation-ring contractions form H_nu and diagonalize the finite controls classically. No polynomial all-n classical polar construction or quantum/classical separation is inferred from this finite computation.",
+    "closure_theorem": "Every product, adjoint, coherent label control, and selected workspace top block in A_br=direct_sum_e End(K_e tensor W) commutes with every source-branch projector Z_e.",
+    "input_space": "K_nu=direct_sum_e K_(nu,e), the orthogonal fixed-source subspaces inside the joint Schur companion, with polynomial workspace W",
+    "literature_type_boundary": "Schur--Weyl/Pieri F-moves and #BQP invariant-space projectors do not, by their proved interfaces, furnish internal Specht Kronecker branch transition amplitudes.",
+    "minimal_surviving_oracle": "A coherent polynomial-normalized block encoding of the cross maps J_e^*J_f with an inverse-polynomial useful spectral window, or a direct compiler for the equivalent merger polar.",
+    "natural_relevance": "Existing target-uniform Plancherel covering gives nonzero cross overlaps on a density-one set of balanced natural orientation pairs; the joint-sector theorem puts 1-o(1) mass on large rows.",
+    "normalization_boundary": "The known stack supplies no cross-branch block encoding at any normalization. A surviving construction must state an explicit alpha=poly(n) normalization and an inverse-polynomial useful spectral window before QSVT or amplitude amplification is charged.",
+    "output_space": "the physical invariant span or, equivalently, the normalized Schur-branch merger range from the predecessor equivalence theorem",
+    "required_multiplier": "If H_nu has a cross entry, H_nu^(+/2) is not branch preserving; the orientation polar therefore requires a cross-branch primitive or an equivalent direct non-branch-preserving construction.",
+    "scope": "This rejects only the claim that the cited transform/projector stack already supplies the cross operation. It does not reject new entangling companion circuits, a noncommuting Racah network, multi-round branch relocation, or a character-retaining decoder.",
+    "status": "known-schur-projector-stack-insufficient-cross-oracle-open",
+    "theorem_verified": true
+  }
+}

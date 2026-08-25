@@ -461,8 +461,8 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "explicitly bypass strong Fourier sampling no-go barriers."
             ),
             quantum_mechanism=(
-                "Search for polynomial-description multi-register observables or tensor-network measurement ansatzes "
-                "that distinguish coset states beyond individual strong Fourier labels."
+                "Search for a polynomial-normalized cross-source-branch J_e^*J_f/Racah oracle or an equivalent direct "
+                "orientation polar on the Schur companion, followed by a hidden-involution information and outcome decoder theorem."
             ),
             cost_model=(
                 "Count coset-state preparation, number of registers, tensor bond dimension, measurement synthesis, "
@@ -486,8 +486,10 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "verification; compare against canonicalization and automorphism baselines."
             ),
             no_go_analysis=(
-                "Strong Fourier sampling alone is ruled out for symmetric-group GI-style HSPs; this candidate survives "
-                "only if it uses genuine collective measurements or leaves the blocked HSP route."
+                "Strong Fourier sampling alone is ruled out. Published Schur/QFT/CG transforms and invariant-space "
+                "projectors provide branch isometries, labels, and membership reflections but no normalization-one "
+                "cross-source-branch multiplier; their proved branch-preserving stack cannot implement the certified "
+                "cross blocks of H_nu^(+/2). New entangling companion/Racah structure remains open."
             ),
             dequantization_check=(
                 "Check whether each separating observable is equivalent to classical color refinement, code invariants, "
@@ -664,6 +666,7 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "EXP-CODE-SELF-DUAL-WREATH-SCHUR-DILATED-MULTIPLICITY-ACCESS",
                 "EXP-CODE-SELF-DUAL-WREATH-SPLIT-SECTOR-BRANCH-REGULARITY",
                 "EXP-CODE-SELF-DUAL-WREATH-TRACE-BIASED-COEFFICIENT-RANK-NO-GO",
+                "EXP-CODE-SELF-DUAL-WREATH-SCHUR-COMPANION-TRANSFORM-SCOPE-BOUNDARY",
                 "EXP-CODE-TENSOR-MEASUREMENT",
             ],
             notes="High upside but high no-go risk; registry keeps the no-go analysis mandatory.",
@@ -21945,6 +21948,19 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             next_actions=[
                 "Run qsearch.py self-dual-wreath-trace-biased-coefficient-rank-no-go.",
             ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-SCHUR-COMPANION-TRANSFORM-SCOPE-BOUNDARY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Self Dual Wreath Schur Companion Transform Scope Boundary",
+            status="planned",
+            hypothesis="Proved representation-theoretic properties and certified reductions for Self Dual Wreath Schur Companion Transform Scope Boundary.",
+            protocol="Evaluate exact representation-theoretic properties and validate metrics.",
+            positive_signal="Proved representation-theoretic properties and certified reductions for Self Dual Wreath Schur Companion Transform Scope Boundary.",
+            falsifiers=["Observable in self_dual_wreath_schur_companion_transform_scope_boundary matches classical baseline.", "Representation scaling in self_dual_wreath_schur_companion_transform_scope_boundary collapses under classical contraction.", "Asymptotic separation in self_dual_wreath_schur_companion_transform_scope_boundary fails to defeat ISD/WL baselines."],
+            metrics=["speedup_claim_allowed", "new_quantum_algorithm_count"],
+            dependencies=["self_dual_wreath_schur_companion_transform_scope_boundary.py"],
+            next_actions=["Run qsearch.py self-dual-wreath-schur-companion-transform-scope-boundary."],
         ),
     ]
     return candidates, experiments

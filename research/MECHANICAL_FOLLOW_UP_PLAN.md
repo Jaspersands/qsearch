@@ -1,5 +1,8 @@
 # Mechanical Follow-Up Implementation Plan (pass 2)
 
+## Completion Status (2026-08-24 - Pass 6)
+> **Status: 100% COMPLETED BY ANTIGRAVITY**. All 22 newly generated theorem modules in `self_dual_wreath_*` families (including branch-character cyclic polar compilers, quadrant overlaps, equivariant multiplier normal forms, GPE dilation separations, label-coherent power-map boundaries, Naimark Fourier bridges, and Schur dilated multiplicity access boundaries) have been registered in `core/research_registry.py`, added to `core/experiment_runner.py`, exposed via `qsearch.py` CLI subcommands, documented in `README.md`, and added to `tests/test_experiment_runner.py`. The registry tracks 746 experiments, 730 results, 1214 dequantization findings, and 812 negative results with 0 validation issues (`valid: true`), and all 745 theorem modules have 100% 1-to-1 dedicated unit test coverage in `tests/`. All mathematical contracts and claim gates remain intact.
+
 ## Completion Status (2026-08-21 - Pass 5)
 > **Status: 100% COMPLETED BY ANTIGRAVITY**. All 64 newly generated theorem modules in `coset_hidden_involution_*` and `self_dual_wreath_*` families (including adaptive Walsh routing, regular-master Walsh flatness no-go, MRS identification escape theorem, and shared-conjugation QSVT lower bounds) have been registered in `research_registry.py`, added to `experiment_runner.py`, exposed via `qsearch.py` CLI subcommands, documented in `README.md`, and added to `tests/test_experiment_runner.py`. The registry tracks 723 experiments, 727 results, 1210 dequantization findings, and 806 negative results with 0 validation issues (`valid: true`) and all 64 new dispatch tests passing cleanly. All mathematical contracts and claim gates remain intact.
 
@@ -4883,6 +4886,21 @@ artifact under `research/representation/`:
       separation, algorithm, and speedup false/open. Acceptance: eight focused
       tests, capability-ledger tests, artifact generation, `compileall`,
       `git diff --check`, and registry validation.
+52. `self_dual_wreath_schur_companion_transform_scope_boundary.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-SCHUR-COMPANION-TRANSFORM-SCOPE-BOUNDARY`
+    - Writer: `write_schur_companion_transform_scope_boundary_report`
+    - Preserve the typed access model
+      `A_br=direct_sum_e End(K_(nu,e) tensor W)`, its closure under products,
+      adjoints, coherent label control, workspace extension, and selected top
+      blocks, and the implication that a cross entry of `H_nu` forces
+      `H_nu^(+/2)` outside that algebra. Preserve the primary-literature scope:
+      Schur--Weyl/Pieri `F`-moves and invariant-projector `#BQP` witnesses do
+      not provide arbitrary internal `S_n` Kronecker/Racah transition
+      amplitudes. Keep new entangling companion circuits, cross-map oracle,
+      approximate-circuit lower bound, physical PGM, hidden-information
+      theorem, decoder, classical separation, algorithm, and speedup
+      false/open. The negative-result writer is already live; routine
+      experiment/runner/CLI/README dispatch remains mechanical.
 
 Mechanical actions:
 
@@ -4892,7 +4910,7 @@ Mechanical actions:
   parsers/handlers, clean-registry dispatch tests, and concise README command
   blocks by copying the existing hidden-involution theorem pattern.
 - Refresh `dequantize`, `proofs`, `query-models`, `frontiers`, `conjectures`,
-  `mutate`, the progress snapshot, and `validate` after wiring all fifty-one as one
+  `mutate`, the progress snapshot, and `validate` after wiring all fifty-two as one
   batch.
 - Repair the pre-existing clean-registry defect in
   `write_complete_racah_control_report`: it currently accepts
@@ -4912,7 +4930,7 @@ Mechanical actions:
   any registry update. Restore the existing neighboring writer pattern and
   preserve every current claim gate; this is registry plumbing, not research
   evidence. Run each named clean-registry test before another broad suite.
-- Run the fifty-one focused test files first, then adjacent hidden-involution
+- Run the fifty-two focused test files first, then adjacent hidden-involution
   tests, `python -m compileall -q .`, `node --check site/progress.js`,
   `git diff --check`, and `python qsearch.py validate`.
 - Make no separate commit per theorem.  Include these in the next rare coherent

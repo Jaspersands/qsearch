@@ -61,6 +61,12 @@ class RecouplingCapabilityLedgerTests(unittest.TestCase):
         self.assertTrue(dilated.uniform_polynomial_gate_complexity_proved)
         self.assertFalse(dilated.resolves_internal_sn_kronecker_basis)
         self.assertFalse(dilated.handles_overlapping_k_copy_associators)
+        known_stack = capabilities[
+            "CAP-SCHUR-COMPANION-KNOWN-TRANSFORM-STACK"
+        ]
+        self.assertFalse(known_stack.uniform_polynomial_gate_complexity_proved)
+        self.assertFalse(known_stack.resolves_internal_sn_kronecker_basis)
+        self.assertIn("cross", known_stack.scope_limit.lower())
         self.assertFalse(report.claim_gate["sn_qft_is_open_bottleneck"])
         self.assertTrue(report.claim_gate["exact_holevo_copy_budget_proved"])
         self.assertFalse(report.claim_gate["holevo_copy_budget_constructs_measurement"])
@@ -106,6 +112,22 @@ class RecouplingCapabilityLedgerTests(unittest.TestCase):
         )
         self.assertFalse(
             report.claim_gate["schur_branch_structured_direct_polar_compiled"]
+        )
+        self.assertTrue(
+            report.claim_gate["known_schur_projector_stack_interfaces_typed"]
+        )
+        self.assertFalse(
+            report.claim_gate[
+                "known_schur_projector_stack_supplies_cross_branch_multiplier"
+            ]
+        )
+        self.assertFalse(
+            report.claim_gate[
+                "known_schur_projector_stack_compiles_orientation_polar"
+            ]
+        )
+        self.assertTrue(
+            report.claim_gate["natural_cross_orientation_overlap_density_one_proved"]
         )
         self.assertFalse(
             report.claim_gate["schur_dilation_improves_orientation_gram_conditioning"]
@@ -176,6 +198,12 @@ class RecouplingCapabilityLedgerTests(unittest.TestCase):
                 "LEMMA-CODE-COSET-COLLECTIVE-COSET-SCHUR-BRANCH-MERGER-POLAR-EQUIVALENCE"
             ]["status"],
             "proved-schur-branch-merger-is-orientation-polar-in-encoded-coordinates",
+        )
+        self.assertEqual(
+            lemmas[
+                "LEMMA-CODE-COSET-COLLECTIVE-COSET-SCHUR-COMPANION-KNOWN-TRANSFORM-SCOPE"
+            ]["status"],
+            "proved-known-transform-stack-branch-preserving-cross-oracle-open",
         )
         self.assertEqual(
             lemmas["LEMMA-CODE-COSET-COLLECTIVE-COSET-SN-QFT-SCOPE-SEPARATION"]["status"],
