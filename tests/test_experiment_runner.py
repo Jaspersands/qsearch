@@ -12717,5 +12717,22 @@ class ExperimentRunnerTests(unittest.TestCase):
         self.assertTrue(validation["valid"], validation["issues"])
 
 
+    def test_self_dual_wreath_natural_q_scale_spectral_window_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-NATURAL-Q-SCALE-SPECTRAL-WINDOW-NO-GO")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
 if __name__ == "__main__":
     unittest.main()

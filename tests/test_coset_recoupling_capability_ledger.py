@@ -79,6 +79,12 @@ class RecouplingCapabilityLedgerTests(unittest.TestCase):
         self.assertTrue(linear_assembly.uniform_polynomial_gate_complexity_proved)
         self.assertFalse(linear_assembly.resolves_internal_sn_kronecker_basis)
         self.assertIn("alpha=q", linear_assembly.scope_limit.lower())
+        q_scale_no_go = capabilities[
+            "CAP-NATURAL-Q-SCALE-SPECTRAL-WINDOW-NO-GO"
+        ]
+        self.assertFalse(q_scale_no_go.uniform_polynomial_gate_complexity_proved)
+        self.assertFalse(q_scale_no_go.resolves_internal_sn_kronecker_basis)
+        self.assertIn("hierarchical", q_scale_no_go.scope_limit.lower())
         self.assertFalse(report.claim_gate["sn_qft_is_open_bottleneck"])
         self.assertTrue(report.claim_gate["exact_holevo_copy_budget_proved"])
         self.assertFalse(report.claim_gate["holevo_copy_budget_constructs_measurement"])
@@ -171,6 +177,11 @@ class RecouplingCapabilityLedgerTests(unittest.TestCase):
         self.assertFalse(
             report.claim_gate[
                 "natural_retained_spectrum_at_q_over_polynomial_scale_proved"
+            ]
+        )
+        self.assertTrue(
+            report.claim_gate[
+                "natural_g_over_q_inverse_polynomial_window_positive_mass_falsified"
             ]
         )
         self.assertFalse(
@@ -266,6 +277,12 @@ class RecouplingCapabilityLedgerTests(unittest.TestCase):
                 "LEMMA-CODE-COSET-COLLECTIVE-COSET-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY"
             ]["status"],
             "proved-linear-global-metric-assembly-alpha-q-boundary",
+        )
+        self.assertEqual(
+            lemmas[
+                "LEMMA-CODE-COSET-COLLECTIVE-COSET-NATURAL-Q-SCALE-SPECTRAL-WINDOW-NO-GO"
+            ]["status"],
+            "proved-canonical-g-over-q-natural-polynomial-window-falsified",
         )
         self.assertEqual(
             lemmas["LEMMA-CODE-COSET-COLLECTIVE-COSET-SN-QFT-SCOPE-SEPARATION"]["status"],

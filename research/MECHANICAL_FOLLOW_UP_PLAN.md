@@ -4930,6 +4930,24 @@ artifact under `research/representation/`:
       separation, algorithm, and speedup false/open. Never promote the scoped
       linear coefficient-mixer theorem to an arbitrary-query or
       representation-specific circuit lower bound.
+55. `self_dual_wreath_natural_q_scale_spectral_window_no_go.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-NATURAL-Q-SCALE-SPECTRAL-WINDOW-NO-GO`
+    - Writer: `write_natural_q_scale_spectral_window_no_go_report`
+    - Preserve the deterministic native-mass inequality
+      `mu_S([q/P,infinity))<=P Tr(S^2)/(q Tr(S))`, the exact equal-rank
+      projector identity in terms of average ordered pair overlap, and the
+      frame/Gram nonzero-spectrum equivalence. Preserve the natural theorem:
+      exact sibling second moments, positivity under global-distinct
+      conditioning, a union bound over both siblings and all targets, and
+      uniform orientation-rank concentration give an
+      `O(P delta^-1 p(n)/n!)` high-window mass bound. Keep the finite
+      unconditional `n<=48` controls explicitly pre-asymptotic/vacuous.
+      Preserve the scale distinction: the trace-weighted absolute `S` cutoff
+      appears at `tau/q` in `G/q` and is not falsified. Keep hierarchical
+      shorted metrics, nonlinear/direct polars, physical PGM, decoder,
+      separation, algorithm, and speedup false/open. The experiment and
+      negative-result writer are live; routine CLI/README dispatch remains
+      mechanical.
 
 Mechanical actions:
 
@@ -4939,7 +4957,7 @@ Mechanical actions:
   parsers/handlers, clean-registry dispatch tests, and concise README command
   blocks by copying the existing hidden-involution theorem pattern.
 - Refresh `dequantize`, `proofs`, `query-models`, `frontiers`, `conjectures`,
-  `mutate`, the progress snapshot, and `validate` after wiring all fifty-four as one
+  `mutate`, the progress snapshot, and `validate` after wiring all fifty-five as one
   batch.
 - Repair the pre-existing clean-registry defect in
   `write_complete_racah_control_report`: it currently accepts

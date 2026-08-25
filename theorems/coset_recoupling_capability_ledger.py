@@ -42,6 +42,9 @@ from self_dual_wreath_addressed_cross_map_pair_polar_gram_boundary import (
 from self_dual_wreath_addressed_cross_map_linear_assembly_normalization_boundary import (
     run_linear_assembly_normalization_boundary,
 )
+from self_dual_wreath_natural_q_scale_spectral_window_no_go import (
+    run_natural_q_scale_spectral_window_no_go,
+)
 from symmetric_character import kronecker_coefficient
 
 
@@ -257,7 +260,8 @@ CAPABILITIES = (
         scope_limit=(
             "An alpha-one entry query is not a normalization-one dense address-transition block encoding. Replacing "
             "all positive cross metrics by pair polars makes the block kernel indefinite on nonflat holonomy cycles. "
-            "Uniform linear assembly gives G/q, but a natural q-scale window, hierarchical/direct whitening, and decoding remain open."
+            "Uniform linear assembly gives G/q, but the natural q-scale retained window is now falsified; "
+            "hierarchical/direct whitening and decoding remain open."
         ),
     ),
     RepresentationCapability(
@@ -285,9 +289,38 @@ CAPABILITIES = (
             "all-n quantum/classical separation follows from table-free oracle access."
         ),
         scope_limit=(
-            "The compiler has alpha=q=2^Theta(n log n), and no natural Omega(q/poly(n)) retained spectral window is "
-            "proved. The lower bound applies only to equal-coefficient linear address mixing; hierarchical shorted "
-            "metrics, nonlinear multi-query routing, direct global polars, the physical PGM, and decoding remain open."
+            "The compiler has alpha=q=2^Theta(n log n), and the natural Omega(q/poly(n)) retained trace-mass "
+            "window is now falsified by the exact sibling second moment. The lower bound and mass no-go apply only "
+            "to canonical equal-coefficient linear assembly; hierarchical shorted metrics, nonlinear multi-query "
+            "routing, direct global polars, the physical PGM, and decoding remain open."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-NATURAL-Q-SCALE-SPECTRAL-WINDOW-NO-GO",
+        literature_ids=["aggarwal-elboim-maximal-dimension-2026"],
+        primitive=(
+            "Uniform natural trace-mass no-go for inverse-polynomial functional calculus on G/q"
+        ),
+        proved_scope=(
+            "For K=ceil(c log2(n!))+2 with fixed c>=1, the exact sibling second moment, positivity under "
+            "global-distinct conditioning, a union bound over both siblings and all targets, and uniform "
+            "orientation-rank concentration give native mass above q/P at most "
+            "2P p(n)[(1-1/g)/q+1/g]/[delta p_cf(1-epsilon)]. For polynomial P and delta^-1 this is o(1)."
+        ),
+        availability="proved-natural-mass-no-go-canonical-g-over-q-only",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "The second-moment and partition-count certificate is classically evaluable. It is a scoped quantum-access "
+            "obstruction, not a quantum/classical separation."
+        ),
+        scope_limit=(
+            "This falsifies only a natural Omega(q/poly(n)) retained window for the canonical one-shot G/q "
+            "assembly. An absolute inverse-polynomial cutoff on S appears at inverse-factorial scale in G/q. "
+            "Hierarchical recursive shorted metrics, nonlinear multi-query transforms, direct representation-specific global "
+            "polars, pair-GPE transport, physical PGM implementation, and decoding remain open."
         ),
     ),
     RepresentationCapability(
@@ -664,6 +697,9 @@ def build_recoupling_capability_report(
     linear_assembly_metrics = (
         run_linear_assembly_normalization_boundary().headline_metrics
     )
+    q_scale_window_metrics = (
+        run_natural_q_scale_spectral_window_no_go().headline_metrics
+    )
     unresolved = [
         capability
         for capability in CAPABILITIES
@@ -984,6 +1020,13 @@ def build_recoupling_capability_report(
             )
             or 0
         ),
+        "natural_q_scale_spectral_window_no_go_theorem_count": int(
+            q_scale_window_metrics.get(
+                "natural_uniform_target_q_scale_no_go_theorem_count",
+                0,
+            )
+            or 0
+        ),
         "growth_record_count": len(growth),
         "maximum_n": max(n_values),
         "maximum_partition_count": max(record.partition_count for record in growth),
@@ -1009,6 +1052,7 @@ def build_recoupling_capability_report(
                 ("burchardt-high-dimensional-schur-2025", "https://arxiv.org/abs/2509.22640"),
                 ("yoshida-random-dilation-2025", "https://arxiv.org/abs/2512.21260"),
                 ("christandl-et-al-plethysm-sharp-bqp-2026", "https://arxiv.org/abs/2602.08441"),
+                ("aggarwal-elboim-maximal-dimension-2026", "https://arxiv.org/abs/2605.25995"),
             )
         ],
         capabilities=list(CAPABILITIES),
@@ -1125,6 +1169,19 @@ def build_recoupling_capability_report(
                 ),
             },
             {
+                "from": (
+                    "vanishing natural trace mass at inverse-polynomial eigenvalues of the canonical G/q signal"
+                ),
+                "invalid_to": (
+                    "an arbitrary-circuit, hierarchical-polar, direct-polar, or physical-PGM impossibility theorem"
+                ),
+                "reason": (
+                    "The theorem charges one q-wide normalized analysis. An absolute inverse-polynomial cutoff on S "
+                    "lies at scale 1/(q poly(n)) in G/q and can still be preserved by a tightly normalized "
+                    "hierarchical or direct structured implementation."
+                ),
+            },
+            {
                 "from": "restricted quantum multiplicity estimator",
                 "invalid_to": "superpolynomial advantage or Shor-level mechanism",
                 "reason": "Many proposed restricted families now have polynomial classical algorithms.",
@@ -1219,6 +1276,12 @@ def build_recoupling_capability_report(
             "global_operator_valued_metric_assembly_compiled": False,
             "global_address_transition_kernel_polynomial_normalization_proved": False,
             "natural_retained_spectrum_at_q_over_polynomial_scale_proved": False,
+            "natural_g_over_q_inverse_polynomial_window_positive_mass_falsified": bool(
+                q_scale_window_metrics.get(
+                    "natural_uniform_target_q_scale_no_go_theorem_count",
+                    0,
+                )
+            ),
             "nonlinear_hierarchical_metric_assembly_ruled_out": False,
             "natural_cross_orientation_overlap_density_one_proved": True,
             "schur_branch_encoding_removes_orientation_inverse_square_root": False,
@@ -1261,18 +1324,21 @@ def build_recoupling_capability_report(
                 "invariant-projector stack is now typed exactly. Its companion-only closure preserves source "
                 "branches, but the physical-interface detour supplies alpha-one addressed raw cross maps and GPE "
                 "supplies their pair polars. Phase-only global assembly is refuted by holonomy-induced "
-                "indefiniteness. Uniform linear address mixing now compiles the exact PSD Gram G/q and proves that "
-                "alpha=q is sharp for equal coefficients; it does not supply a natural q-scale retained window. A "
-                "hierarchical or direct global polar, an outcome-information theorem, decoding, and separation remain open."
+                "indefiniteness. Uniform linear address mixing compiles the exact PSD Gram G/q at sharp alpha=q, "
+                "but the exact natural sibling second moment now proves that every inverse-polynomial G/q spectral "
+                "window retains only o(1) trace-weighted mass. The useful absolute S cutoff lies at "
+                "inverse-factorial scale in G/q. A hierarchical or direct global polar, an outcome-information "
+                "theorem, decoding, and separation remain open."
             ),
         },
-        status="addressed-cross-maps-and-pair-polars-proved-global-metric-polar-open",
+        status="canonical-g-over-q-natural-window-falsified-hierarchical-global-polar-open",
         summary=(
             f"Classified {len(CAPABILITIES)} representation primitives and exact finite Kronecker growth through "
             f"n={max(n_values)}. Separate-to-joint Schur dilation now supplies an encoded multiplicity carrier, "
             "the physical interface supplies alpha-one addressed raw cross maps, and GPE supplies direct pair "
-            "polars. Uniform linear assembly now gives G/q at sharp alpha=q; the remaining bottleneck is a natural "
-            "q-scale retained window or a hierarchical/direct global polar."
+            "polars. Uniform linear assembly gives G/q at sharp alpha=q, but the exact natural sibling second "
+            "moment now falsifies every inverse-polynomial retained G/q window. The remaining metric route is a "
+            "genuinely hierarchical or direct representation-specific global polar."
         ),
         falsifiers_triggered=[
             "The S_n QFT is already polynomial and cannot be presented as the missing breakthrough.",
@@ -1282,6 +1348,7 @@ def build_recoupling_capability_report(
             "Separate-to-joint Schur dilation carries fixed-source Kronecker multiplicity coherently, but its natural normalized branch merger is the original orientation polar in encoded coordinates.",
             "The companion-only Schur/QFT/CG plus projector stack is branch preserving, but a physical-interface detour does supply raw addressed cross-map entries.",
             "Normalization-one addressed pair polars cannot replace cross metrics globally: nonflat holonomy makes the phase-only block kernel indefinite.",
+            "Dense natural support and exact low moments do not rescue the canonical G/q assembly: every inverse-polynomial normalized spectral window retains o(1) natural trace mass.",
             "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
             "An encoded stable shape router does not construct a compressed Clebsch channel isometry.",
             "An encoded left/right relabelling isometry does not construct the state-dependent frame filter or decoder.",

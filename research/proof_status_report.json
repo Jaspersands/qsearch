@@ -2,8 +2,8 @@
   "blocking_status_count": 24,
   "candidate_count": 8,
   "counterexample_search_count": 8,
-  "created_at": "2026-08-25T16:25:16.287715+00:00",
-  "lemma_count": 1220,
+  "created_at": "2026-08-25T20:31:55.337791+00:00",
+  "lemma_count": 1226,
   "needs_evidence_count": 0,
   "proof_debt": {
     "counterexample_search_count": 8,
@@ -73,8 +73,8 @@
         "target_claim": "The coset observable is not a disguised classical invariant."
       }
     ],
-    "created_at": "2026-08-25T16:25:16.285134+00:00",
-    "lemma_count": 1220,
+    "created_at": "2026-08-25T20:31:55.334149+00:00",
+    "lemma_count": 1226,
     "lemmas": [
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -2008,6 +2008,20 @@
         "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY",
         "statement": "Uniform output-address preparation, an alpha-one addressed J_f^*J_e query, and uniform input-address erasure compile the exact positive dense Gram G/q without an entry table. For any equal-coefficient linear address mixer, contractivity of 11^*/alpha proves the sharp normalization lower bound alpha>=q.",
         "status": "proved-linear-global-metric-assembly-alpha-q-boundary"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "LEMMA-CODE-COSET-COLLECTIVE-COSET-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY",
+          "PO-NATURAL-ACCESS",
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the deterministic trace-mass inequality and pair-overlap identity, the exact sibling second moment, the 1/p_cf positivity charge, the all-target union bound, uniform leaf-rank lower bound, and factorial asymptotic. Preserve the tau/q scale reconciliation and do not extend the result to hierarchical, nonlinear, direct-polar, PGM, or decoder lower bounds.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-COSET-NATURAL-Q-SCALE-SPECTRAL-WINDOW-NO-GO",
+        "statement": "For the natural final sibling frames, exact second moments, positivity under global-distinct conditioning, a union bound over both siblings and all targets, and uniform leaf-rank concentration force the native trace mass above q/poly(n), equivalently the G/q mass above 1/poly(n), to vanish asymptotically.",
+        "status": "proved-canonical-g-over-q-natural-polynomial-window-falsified"
       },
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -5308,6 +5322,20 @@
       {
         "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
         "depends_on": [
+          "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY",
+          "PO-NATURAL-ACCESS",
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the deterministic trace-mass inequality and pair-overlap identity, the exact sibling second moment, the 1/p_cf positivity charge, the all-target union bound, uniform leaf-rank lower bound, and factorial asymptotic. Preserve the tau/q scale reconciliation and do not extend the result to hierarchical, nonlinear, direct-polar, PGM, or decoder lower bounds.",
+        "id": "LEMMA-HYP-LIT-COSET-OBSERVABLES-COSET-NATURAL-Q-SCALE-SPECTRAL-WINDOW-NO-GO",
+        "statement": "For the natural final sibling frames, exact second moments, positivity under global-distinct conditioning, a union bound over both siblings and all targets, and uniform leaf-rank concentration force the native trace mass above q/poly(n), equivalently the G/q mass above 1/poly(n), to vanish asymptotically.",
+        "status": "proved-canonical-g-over-q-natural-polynomial-window-falsified"
+      },
+      {
+        "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
+        "depends_on": [
           "PO-MEASUREMENT",
           "PO-COMPLEXITY",
           "PO-NO-GO"
@@ -8604,6 +8632,20 @@
       {
         "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
         "depends_on": [
+          "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY",
+          "PO-NATURAL-ACCESS",
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the deterministic trace-mass inequality and pair-overlap identity, the exact sibling second moment, the 1/p_cf positivity charge, the all-target union bound, uniform leaf-rank lower bound, and factorial asymptotic. Preserve the tau/q scale reconciliation and do not extend the result to hierarchical, nonlinear, direct-polar, PGM, or decoder lower bounds.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES-COSET-NATURAL-Q-SCALE-SPECTRAL-WINDOW-NO-GO",
+        "statement": "For the natural final sibling frames, exact second moments, positivity under global-distinct conditioning, a union bound over both siblings and all targets, and uniform leaf-rank concentration force the native trace mass above q/poly(n), equivalently the G/q mass above 1/poly(n), to vanish asymptotically.",
+        "status": "proved-canonical-g-over-q-natural-polynomial-window-falsified"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
+        "depends_on": [
           "PO-MEASUREMENT",
           "PO-COMPLEXITY",
           "PO-NO-GO"
@@ -10657,6 +10699,20 @@
         "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY",
         "statement": "Uniform output-address preparation, an alpha-one addressed J_f^*J_e query, and uniform input-address erasure compile the exact positive dense Gram G/q without an entry table. For any equal-coefficient linear address mixer, contractivity of 11^*/alpha proves the sharp normalization lower bound alpha>=q.",
         "status": "proved-linear-global-metric-assembly-alpha-q-boundary"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
+        "depends_on": [
+          "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY",
+          "PO-NATURAL-ACCESS",
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the deterministic trace-mass inequality and pair-overlap identity, the exact sibling second moment, the 1/p_cf positivity charge, the all-target union bound, uniform leaf-rank lower bound, and factorial asymptotic. Preserve the tau/q scale reconciliation and do not extend the result to hierarchical, nonlinear, direct-polar, PGM, or decoder lower bounds.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE-COSET-NATURAL-Q-SCALE-SPECTRAL-WINDOW-NO-GO",
+        "statement": "For the natural final sibling frames, exact second moments, positivity under global-distinct conditioning, a union bound over both siblings and all targets, and uniform leaf-rank concentration force the native trace mass above q/poly(n), equivalently the G/q mass above 1/poly(n), to vanish asymptotically.",
+        "status": "proved-canonical-g-over-q-natural-polynomial-window-falsified"
       },
       {
         "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
@@ -12718,6 +12774,20 @@
       {
         "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
         "depends_on": [
+          "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY",
+          "PO-NATURAL-ACCESS",
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the deterministic trace-mass inequality and pair-overlap identity, the exact sibling second moment, the 1/p_cf positivity charge, the all-target union bound, uniform leaf-rank lower bound, and factorial asymptotic. Preserve the tau/q scale reconciliation and do not extend the result to hierarchical, nonlinear, direct-polar, PGM, or decoder lower bounds.",
+        "id": "LEMMA-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET-COSET-NATURAL-Q-SCALE-SPECTRAL-WINDOW-NO-GO",
+        "statement": "For the natural final sibling frames, exact second moments, positivity under global-distinct conditioning, a union bound over both siblings and all targets, and uniform leaf-rank concentration force the native trace mass above q/poly(n), equivalently the G/q mass above 1/poly(n), to vanish asymptotically.",
+        "status": "proved-canonical-g-over-q-natural-polynomial-window-falsified"
+      },
+      {
+        "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
+        "depends_on": [
           "PO-MEASUREMENT",
           "PO-COMPLEXITY",
           "PO-NO-GO"
@@ -14775,6 +14845,20 @@
       {
         "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
         "depends_on": [
+          "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY",
+          "PO-NATURAL-ACCESS",
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY",
+          "PO-NO-GO"
+        ],
+        "falsification_test": "Verify the deterministic trace-mass inequality and pair-overlap identity, the exact sibling second moment, the 1/p_cf positivity charge, the all-target union bound, uniform leaf-rank lower bound, and factorial asymptotic. Preserve the tau/q scale reconciliation and do not extend the result to hierarchical, nonlinear, direct-polar, PGM, or decoder lower bounds.",
+        "id": "LEMMA-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET-COSET-NATURAL-Q-SCALE-SPECTRAL-WINDOW-NO-GO",
+        "statement": "For the natural final sibling frames, exact second moments, positivity under global-distinct conditioning, a union bound over both siblings and all targets, and uniform leaf-rank concentration force the native trace mass above q/poly(n), equivalently the G/q mass above 1/poly(n), to vanish asymptotically.",
+        "status": "proved-canonical-g-over-q-natural-polynomial-window-falsified"
+      },
+      {
+        "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
+        "depends_on": [
           "PO-MEASUREMENT",
           "PO-COMPLEXITY",
           "PO-NO-GO"
@@ -15454,7 +15538,7 @@
     },
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
-      "evidence": "Use the alpha-one addressed J_f^*J_e query oracle and direct GPE pair polars beyond the proved uniform linear G/q assembly: either establish a natural Omega(q/poly(n)) retained window or build a hierarchical, holonomy-aware direct orientation polar, followed by hidden-involution information and outcome-decoder theorems.",
+      "evidence": "Use the alpha-one addressed J_f^*J_e query oracle and direct GPE pair polars beyond the proved uniform linear G/q assembly. The natural Omega(q/poly(n)) retained window is now falsified; build a hierarchical shorted-metric or direct holonomy-aware orientation polar that preserves the absolute S cutoff, followed by hidden-involution information and outcome-decoder theorems.",
       "field": "quantum_mechanism",
       "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
       "obligation_id": "PO-MECHANISM",
@@ -15502,7 +15586,7 @@
     },
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
-      "evidence": "Strong Fourier sampling alone is ruled out. The companion-only Schur stack is branch preserving, but the physical-interface/projector detour supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. Pair phases alone cannot form the global Gram on nonflat cycles: the exact S3 kernel is indefinite. Uniform linear address mixing does form the positive Gram G/q, but equal-coefficient contractivity forces alpha=q. A natural q-scale window or hierarchical/direct global polar rem",
+      "evidence": "Strong Fourier sampling alone is ruled out. The companion-only Schur stack is branch preserving, but the physical-interface/projector detour supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. Pair phases alone cannot form the global Gram on nonflat cycles: the exact S3 kernel is indefinite. Uniform linear address mixing does form the positive Gram G/q, but equal-coefficient contractivity forces alpha=q. Exact natural sibling moments now falsify every inverse-polynomi",
       "field": "no_go_analysis",
       "next_action": "Convert this prose obligation into a formal lemma, reduction, or executable check.",
       "obligation_id": "PO-NOGO",

@@ -7739,6 +7739,30 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_wreath_natural_q_scale_spectral_window_no_go.py"
+    ],
+    "falsifiers": [
+      "Observable in self_dual_wreath_natural_q_scale_spectral_window_no_go matches classical baseline.",
+      "Representation scaling in self_dual_wreath_natural_q_scale_spectral_window_no_go collapses under classical contraction.",
+      "Asymptotic separation in self_dual_wreath_natural_q_scale_spectral_window_no_go fails to defeat ISD/WL baselines."
+    ],
+    "hypothesis": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Natural Q Scale Spectral Window No Go.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-NATURAL-Q-SCALE-SPECTRAL-WINDOW-NO-GO",
+    "metrics": [
+      "speedup_claim_allowed",
+      "new_quantum_algorithm_count"
+    ],
+    "next_actions": [
+      "Run qsearch.py self-dual-wreath-natural-q-scale-spectral-window-no-go."
+    ],
+    "positive_signal": "Proved representation-theoretic properties and certified reductions for Self Dual Wreath Natural Q Scale Spectral Window No Go.",
+    "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
+    "status": "planned",
+    "title": "Self Dual Wreath Natural Q Scale Spectral Window No Go"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "self_dual_wreath_natural_unequal_dominance.py",
       "self_dual_wreath_all_unequal_third_moment.py",
       "aggarwal-elboim-maximal-dimension-2026",

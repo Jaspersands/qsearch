@@ -7148,6 +7148,41 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
                     ),
                 ),
                 LemmaRecord(
+                    id=f"LEMMA-{candidate_id}-COSET-NATURAL-Q-SCALE-SPECTRAL-WINDOW-NO-GO",
+                    candidate_id=candidate_id,
+                    statement=(
+                        "For the natural final sibling frames, exact second moments, positivity under global-distinct "
+                        "conditioning, a union bound over both siblings and all targets, and uniform leaf-rank "
+                        "concentration force the native trace mass above q/poly(n), equivalently the G/q mass above "
+                        "1/poly(n), to vanish asymptotically."
+                    ),
+                    depends_on=[
+                        f"LEMMA-{candidate_id}-COSET-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY",
+                        "PO-NATURAL-ACCESS",
+                        "PO-MEASUREMENT",
+                        "PO-COMPLEXITY",
+                        "PO-NO-GO",
+                    ],
+                    status=(
+                        "proved-canonical-g-over-q-natural-polynomial-window-falsified"
+                        if int(
+                            capability_metrics.get(
+                                "natural_q_scale_spectral_window_no_go_theorem_count",
+                                0,
+                            )
+                            or 0
+                        )
+                        > 0
+                        else "blocked-natural-q-scale-window-certificate-missing"
+                    ),
+                    falsification_test=(
+                        "Verify the deterministic trace-mass inequality and pair-overlap identity, the exact sibling "
+                        "second moment, the 1/p_cf positivity charge, the all-target union bound, uniform leaf-rank "
+                        "lower bound, and factorial asymptotic. Preserve the tau/q scale reconciliation and do not "
+                        "extend the result to hierarchical, nonlinear, direct-polar, PGM, or decoder lower bounds."
+                    ),
+                ),
+                LemmaRecord(
                     id=f"LEMMA-{candidate_id}-COSET-INTERNAL-KRONECKER-TRANSFORM",
                     candidate_id=candidate_id,
                     statement=(

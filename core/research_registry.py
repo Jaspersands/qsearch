@@ -462,9 +462,9 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             ),
             quantum_mechanism=(
                 "Use the alpha-one addressed J_f^*J_e query oracle and direct GPE pair polars beyond the proved "
-                "uniform linear G/q assembly: either establish a natural Omega(q/poly(n)) retained window or build "
-                "a hierarchical, holonomy-aware direct orientation polar, followed by hidden-involution information "
-                "and outcome-decoder theorems."
+                "uniform linear G/q assembly. The natural Omega(q/poly(n)) retained window is now falsified; build "
+                "a hierarchical shorted-metric or direct holonomy-aware orientation polar that preserves the "
+                "absolute S cutoff, followed by hidden-involution information and outcome-decoder theorems."
             ),
             cost_model=(
                 "Count coset-state preparation, number of registers, tensor bond dimension, measurement synthesis, "
@@ -492,8 +492,8 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "but the physical-interface/projector detour supplies alpha-one addressed raw cross maps and GPE "
                 "supplies their pair polars. Pair phases alone cannot form the global Gram on nonflat cycles: the "
                 "exact S3 kernel is indefinite. Uniform linear address mixing does form the positive Gram G/q, but "
-                "equal-coefficient contractivity forces alpha=q. A natural q-scale window or hierarchical/direct "
-                "global polar remains open."
+                "equal-coefficient contractivity forces alpha=q. Exact natural sibling moments now falsify every "
+                "inverse-polynomial G/q retained window; hierarchical/direct global polar synthesis remains open."
             ),
             dequantization_check=(
                 "Check whether each separating observable is equivalent to classical color refinement, code invariants, "
@@ -673,6 +673,7 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "EXP-CODE-SELF-DUAL-WREATH-SCHUR-COMPANION-TRANSFORM-SCOPE-BOUNDARY",
                 "EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
                 "EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY",
+                "EXP-CODE-SELF-DUAL-WREATH-NATURAL-Q-SCALE-SPECTRAL-WINDOW-NO-GO",
                 "EXP-CODE-TENSOR-MEASUREMENT",
             ],
             notes="High upside but high no-go risk; registry keeps the no-go analysis mandatory.",
@@ -22020,6 +22021,19 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             next_actions=[
                 "Run qsearch.py self-dual-wreath-addressed-cross-map-linear-assembly-normalization-boundary."
             ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-NATURAL-Q-SCALE-SPECTRAL-WINDOW-NO-GO",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Self Dual Wreath Natural Q Scale Spectral Window No Go",
+            status="planned",
+            hypothesis="Proved representation-theoretic properties and certified reductions for Self Dual Wreath Natural Q Scale Spectral Window No Go.",
+            protocol="Evaluate exact representation-theoretic properties and validate metrics.",
+            positive_signal="Proved representation-theoretic properties and certified reductions for Self Dual Wreath Natural Q Scale Spectral Window No Go.",
+            falsifiers=["Observable in self_dual_wreath_natural_q_scale_spectral_window_no_go matches classical baseline.", "Representation scaling in self_dual_wreath_natural_q_scale_spectral_window_no_go collapses under classical contraction.", "Asymptotic separation in self_dual_wreath_natural_q_scale_spectral_window_no_go fails to defeat ISD/WL baselines."],
+            metrics=["speedup_claim_allowed", "new_quantum_algorithm_count"],
+            dependencies=["self_dual_wreath_natural_q_scale_spectral_window_no_go.py"],
+            next_actions=["Run qsearch.py self-dual-wreath-natural-q-scale-spectral-window-no-go."],
         ),
     ]
     return candidates, experiments

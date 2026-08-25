@@ -173,6 +173,7 @@
       "EXP-CODE-SELF-DUAL-WREATH-SCHUR-COMPANION-TRANSFORM-SCOPE-BOUNDARY",
       "EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY",
       "EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY",
+      "EXP-CODE-SELF-DUAL-WREATH-NATURAL-Q-SCALE-SPECTRAL-WINDOW-NO-GO",
       "EXP-CODE-TENSOR-MEASUREMENT",
       "EXP-DHS-GOWERS-SPECTRUM",
       "EXP-DHS-PHASE-SIEVE",
@@ -756,7 +757,7 @@
     ],
     "measurement_and_decoding": "Use collective measurement candidates over several coset-state registers; decode candidate permutations or invariant separators and verify equivalence classically.",
     "natural_access_analysis": "All representation labels and sectors must arise from naturally sampled coset-state registers. Any conditioned branch must have inverse-polynomial total probability or a proved direct preparation; predetermined bounded-tail Fourier postselection is explicitly disallowed.",
-    "no_go_analysis": "Strong Fourier sampling alone is ruled out. The companion-only Schur stack is branch preserving, but the physical-interface/projector detour supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. Pair phases alone cannot form the global Gram on nonflat cycles: the exact S3 kernel is indefinite. Uniform linear address mixing does form the positive Gram G/q, but equal-coefficient contractivity forces alpha=q. A natural q-scale window or hierarchical/direct global polar remains open.",
+    "no_go_analysis": "Strong Fourier sampling alone is ruled out. The companion-only Schur stack is branch preserving, but the physical-interface/projector detour supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. Pair phases alone cannot form the global Gram on nonflat cycles: the exact S3 kernel is indefinite. Uniform linear address mixing does form the positive Gram G/q, but equal-coefficient contractivity forces alpha=q. Exact natural sibling moments now falsify every inverse-polynomial G/q retained window; hierarchical/direct global polar synthesis remains open.",
     "notes": "High upside but high no-go risk; registry keeps the no-go analysis mandatory.",
     "ontology_node_ids": [
       "nonabelian-hsp",
@@ -764,12 +765,12 @@
       "code-equivalence"
     ],
     "problem_family": "Linear code equivalence families over increasing block length and finite fields, with controlled automorphism strata and hard classical canonicalization baselines.",
-    "quantum_mechanism": "Use the alpha-one addressed J_f^*J_e query oracle and direct GPE pair polars beyond the proved uniform linear G/q assembly: either establish a natural Omega(q/poly(n)) retained window or build a hierarchical, holonomy-aware direct orientation polar, followed by hidden-involution information and outcome-decoder theorems.",
+    "quantum_mechanism": "Use the alpha-one addressed J_f^*J_e query oracle and direct GPE pair polars beyond the proved uniform linear G/q assembly. The natural Omega(q/poly(n)) retained window is now falsified; build a hierarchical shorted-metric or direct holonomy-aware orientation polar that preserves the absolute S cutoff, followed by hidden-involution information and outcome-decoder theorems.",
     "reduction_or_lower_bound": "Code equivalence embeds as a hidden permutation problem in the symmetric-group HSP frontier, but must explicitly bypass strong Fourier sampling no-go barriers.",
     "status": "active",
     "success_statement": "Conjecture: a restricted but hard code family admits a polynomial-bond collective observable whose distinguishing advantage remains inverse polynomial as length grows.",
     "title": "Collective coset-state observables for code equivalence",
-    "updated_at": "2026-08-25T16:19:07.815035+00:00"
+    "updated_at": "2026-08-25T20:34:51.868082+00:00"
   },
   {
     "classical_baseline": "Generic dihedral hidden-reflection and subset-sum postprocessing baselines, plus all classical attacks legal for any public side information. Explicit phase-family learners are rejection tests for restricted testbeds, not evidence about the full DCP state-input problem.",

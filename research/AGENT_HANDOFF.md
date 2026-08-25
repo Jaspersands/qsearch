@@ -12246,6 +12246,112 @@ transport, with every node normalization and holonomy transition explicit.
 Do not test another single uniform address erasure: this theorem already
 settles that architecture.
 
+## Natural Q-Scale Spectral Window No-Go (2026-08-25)
+
+`self_dual_wreath_natural_q_scale_spectral_window_no_go.py` resolves the
+spectral escape left by the canonical linear assembly. For equal-rank leaf
+projectors `E_e`, write
+
+```text
+S = sum_e E_e,
+R^*R = S,
+RR^* = G,
+q = number of leaves.
+```
+
+For the native trace law of `S` and every `P>=1`, the scalar inequality
+`lambda 1_[q/P,infinity)(lambda) <= (P/q)lambda^2` gives
+
+```text
+Tr(S 1_[q/P,infinity)(S))/Tr(S)
+  <= P Tr(S^2)/(q Tr(S))
+  = P [1/q + (1-1/q) h_bar],
+```
+
+where `h_bar` is the average normalized ordered pair overlap. The second
+equality is an exact projector identity. Since `S=R^*R` and `G=RR^*` have the
+same nonzero spectrum, this is exactly the native mass at eigenvalue at least
+`1/P` in `G/q`, or at singular value at least `1/sqrt(P)` in `R/sqrt(q)`.
+
+The natural final sibling frames make the bound decisive. Let `g=n!`, take
+any fixed copy multiplier `c>=1`, and set
+
+```text
+K = ceil(c log2 g)+2,
+q = 2^(K-1),
+alpha = q/g.
+```
+
+The exact independent-Plancherel sibling moment theorem gives
+
+```text
+E Tr(S^2)/D = m2 = alpha(1-1/g)+alpha^2.
+```
+
+Conditioning all `2K` sources to be globally distinct is valid despite the
+unbounded moment observable: positivity gives
+`E[Z|cf] <= E[Z]/p_cf` exactly. Markov plus a union bound over both siblings
+and all `p(n)` targets, followed by the existing simultaneous orientation-rank
+concentration theorem, yields with conditional probability at least
+`1-delta-eta_rank`
+
+```text
+mu_S([q/P,infinity))
+  <= 2 P p(n)/(delta p_cf(1-epsilon))
+     * [(1-1/g)/q + 1/g].
+```
+
+For fixed polynomial `P=n^d` and `delta=n^-s`, global-distinct mass tends to
+one, rank failure tends to zero, and the right side is
+`O(n^(d+s) p(n)/n!)=o(1)`. Thus every inverse-polynomial eigenvalue window of
+the canonical `G/q` signal retains vanishing natural trace-weighted mass,
+uniformly over the two final siblings and every target. Through the exact
+trace-weighted PGM bridge, this is the physically relevant sector-average
+polar mass. The proposed natural `Omega(q/poly(n))` spectral rescue is
+falsified.
+
+Three exact controls protect the scope:
+
+```text
+regular S3: h_bar=1/2, exact q-scale mass=1/3, bound=2/3;
+orthogonal q=8: h_bar=0, exact selected mass=0, bound=1/4;
+identical q=8: h_bar=1, exact selected mass=1, bound=1.
+```
+
+The identical control shows this is not a deterministic prohibition on
+`q`-scale eigenvalues. Natural second-moment coherence is the input that kills
+their trace mass. The finite collision-free probability remains severely
+pre-asymptotic through the recorded `n<=48` sweep, so finite unconditional
+bounds are explicitly marked vacuous; the theorem is asymptotic, while the
+conditional bounds become nonvacuous from `n=32` in the selected controls.
+
+This does **not** contradict the trace-weighted truncation theorem. Its useful
+cutoff is absolute scale `tau=1/poly(n)` on unnormalized `S`; in `G/q` that is
+the exponentially smaller scale `tau/q`, not `1/poly(n)`. The result therefore
+closes only generic inverse-polynomial-resolution functional calculus on the
+single q-wide uniform assembly. Recursive shorted metrics, nonlinear
+multi-query transforms, direct representation-specific global polar
+synthesis, pair-GPE transport, and branch-character-retaining decoders remain
+open. No physical PGM circuit, information theorem, decoder, classical
+separation, algorithm, or speedup is proved. `speedup_claim_allowed` remains
+false.
+
+Artifact and experiment:
+
+```text
+research/representation/self_dual_wreath_natural_q_scale_spectral_window_no_go.json
+EXP-CODE-SELF-DUAL-WREATH-NATURAL-Q-SCALE-SPECTRAL-WINDOW-NO-GO
+```
+
+**Next high-reasoning task:** formalize the first genuinely hierarchical
+final-root polar step. Use the two child frames and their common-span/shorted
+metrics to derive an exact node-local signal normalization, compose it with
+GPE pair transport, and prove either (a) that the absolute `S` cutoff survives
+at polynomial node normalization through the recursion, or (b) that a new
+width/condition/holonomy charge reintroduces a superpolynomial cost. Do not
+return to a single q-wide uniform address erasure or require a hard lower edge;
+both routes are already settled.
+
 ## Resume Commands
 
 ```bash
@@ -12300,6 +12406,7 @@ python self_dual_wreath_pair_transport_native_mass_boundary.py
 python self_dual_wreath_gpe_pair_polar_transport.py
 python self_dual_wreath_gpe_holonomy_resolver_reduction.py
 python theorems/self_dual_wreath_addressed_cross_map_linear_assembly_normalization_boundary.py
+python theorems/self_dual_wreath_natural_q_scale_spectral_window_no_go.py
 python self_dual_wreath_final_root_natural_common_span.py
 python self_dual_wreath_component_defect_rank_mass.py
 python self_dual_wreath_component_povm_spectral_trim.py
