@@ -7642,6 +7642,22 @@ theorem that avoids a `2^Theta(q^2)` family union bound.
   a noncommuting metric control requires a genuine matrix-valued mixer and a
   metric-ratio counterfamily keeps an exponentially small endpoint gap even
   when pair GPE is available.
+- Latest final-root scalar-mixer no-go check: 13 focused tests passed in 0.10
+  seconds; the combined final-root/recursive-GPE/matrix-POVM regression passed
+  37 tests. The natural relative effect has variance `1/(8 alpha)`, so the
+  signed Hadamard is the optimal deterministic scalar endpoint but still has
+  annealed native mean-square error at least `1/128`. A separate exact oracle
+  pair has identical full-support child polars/GPE transports but
+  constant-separated endpoint metrics, proving that coherent positive-metric
+  magnitude access is necessary.
+- Latest final-root metric-access width no-go check: 13 focused tests passed
+  in 0.16 seconds; the affected final-root/native-access/recursive-GPE/
+  matrix-POVM regression passed 56 tests in 18.23 seconds. Exact child polars
+  recover `sqrt(A_s)` only through the inherited raw normalization. Binary
+  stacking has `T^*T=(A+B)/w`, retained singular values at most `4/sqrt(w)`,
+  generic QSVT degree `Omega(sqrt(w))`, and native selected-block probability
+  `(2 alpha+1+o(1))/w`. At `n=48` the recorded QSVT degree and rejection-
+  sampling factor have log2 lower scales about `100.35` and `101.32`.
 - Latest partial-support child-embedding check: 27 affected focused tests
   passed in 47.41 seconds. A sparse leaf-Gram reconstruction exposes a
   globally source-distinct S6 affine plane with a 34-dimensional common span
@@ -12352,6 +12368,171 @@ width/condition/holonomy charge reintroduces a superpolynomial cost. Do not
 return to a single q-wide uniform address erasure or require a hard lower edge;
 both routes are already settled.
 
+## Final-Root Scalar Endpoint Mixer No-Go (2026-08-25)
+
+`self_dual_wreath_final_root_scalar_mixer_no_go.py` resolves the most tempting
+shortcut in that first hierarchical step. After the exact child polars are
+factored out, the final-root endpoint is
+
+```text
+V_C = [sqrt(C); sqrt(I-C)],
+C = (A+B)^(-1/2) A (A+B)^(-1/2).
+```
+
+The proved all-fixed sibling law gives free MP variables `A,B` of common rate
+`alpha in [2,4]`. The free Lukacs property makes `S=A+B` free from `C`. Using
+`tau(A^2)=alpha^2+alpha`, `tau(S)=2 alpha`, and
+`tau(S^2)=4 alpha^2+2 alpha` in the alternating free moment gives
+
+```text
+tau(C)=1/2,
+tau(C^2)=1/4+1/(8 alpha),
+tau((C-tI)^2)=(t-1/2)^2+1/(8 alpha).
+```
+
+Thus `t=1/2`—the signed Hadamard—is the unique best deterministic scalar
+effect, but even it has normalized effect MSE at least `1/32`. For the
+canonical positive Naimark maps,
+
+```text
+(V_C-U_t)^*(V_C-U_t) >= (C-tI)^2/4.
+```
+
+Free Lukacs native weighting therefore gives annealed parent-state
+mean-square error at least
+
+```text
+1/(32 alpha) >= 1/128.
+```
+
+The fixed parent window alone gives the weaker implementation-independent
+effect-to-isometry floor `1/(128 alpha^2)>=1/2048`. Scalar branch phases do
+not help. Branchwise GPE support transports postcompose isometrically and
+preserve the endpoint error exactly.
+
+There is also a strict access-model separation. The two full-support metric
+pairs
+
+```text
+(S_L,S_R)=(I,I),
+(S_L,S_R)=(diag(3,1),diag(1,3))
+```
+
+have identical identity child polars and identical support/GPE transport
+oracles, but their endpoint effects are `I/2` and `diag(3/4,1/4)`. Their
+Naimark maps have constant normalized distance. Hence child polar transport
+alone cannot determine the parent mixer; a coherent oracle for positive
+metric magnitude is information-theoretically necessary.
+
+This does **not** create a new conditioning obstruction. The existing
+free-Jacobi trim keeps the true matrix effect uniformly away from 0 and 1 on
+all but `o(1)` native mass. The final-root bottleneck is now precisely
+tightly normalized structured access to `C`, not scalar balance, a hard edge,
+pair GPE, or the old `q`-wide uniform erasure. Source-adaptive scalar weights,
+earlier-depth endpoint laws, the physical PGM circuit, hidden-label decoder,
+and classical separation remain open. `speedup_claim_allowed` remains false.
+
+Artifact and experiment:
+
+```text
+research/representation/self_dual_wreath_final_root_scalar_mixer_no_go.json
+EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-SCALAR-MIXER-NO-GO
+```
+
+**Next high-reasoning task:** construct or falsify a node-local coherent
+metric-magnitude oracle for the final-root effect `C`. Start from the two
+already-compiled child polars plus their raw child-frame access, charge the
+normalization of `A`, `B`, and `A+B` explicitly, and exploit the constant
+Jacobi bulk edge without reintroducing a `q`-wide address erasure. Only after
+that access model is closed should it be propagated to earlier tree levels.
+
+## Final-Root Raw Metric-Access Width No-Go (2026-08-25)
+
+`self_dual_wreath_final_root_metric_access_width_no_go.py` carries out that
+normalization audit for the canonical raw-child route. Let each child have
+`q` orientation leaves and analyses `R_L,R_R`, with
+
+```text
+A=R_L^*R_L,  B=R_R^*R_R,  S=A+B,
+Q_s=R_s A_s^(-1/2).
+```
+
+Uniform PREPARE/SELECT exposes `R_s/sqrt(q)`. Even with the exact compiled
+child polar,
+
+```text
+Q_s^* R_s/sqrt(q) = sqrt(A_s)/sqrt(q).
+```
+
+The binary LCU therefore gives, for total parent width `w=2q`,
+
+```text
+T = [sqrt(A);sqrt(B)]/sqrt(w),
+T^*T = S/w,
+polar(T) = [sqrt(A);sqrt(B)]S^(-1/2).
+```
+
+The last line is exactly the desired matrix-valued endpoint, and its left
+effect is `C=S^(-1/2)AS^(-1/2)`. Thus the construction is algebraically
+correct. Operationally, however, the existing parent trim
+`0.5I<=S<=16I` puts every singular value of `T` in
+
+```text
+[sqrt(0.5/w), 4/sqrt(w)].
+```
+
+For a bounded QSVT sign polynomial with constant error, the mean-value
+theorem and Bernstein's inequality give
+
+```text
+degree >= (1-epsilon)sqrt(1-sigma^2)/sigma
+       = Omega(sqrt(w)).
+```
+
+The same charge appears directly on the native state:
+
+```text
+p_good = Tr(S^2)/(w Tr(S))
+       = (2 alpha+1+o(1))/w,
+alpha in [2,4].
+```
+
+Quantum rejection sampling therefore also costs `Theta(sqrt(w))`. Under the
+selected natural schedule `q=Theta(n!)`, this is superpolynomial. The common
+`1/sqrt(w)` factor cancels from the mathematical polar, but not from the
+query complexity.
+
+Four exact controls—known flat/Hadamard, diagonal matrix endpoint, rotated
+unknown eigenbasis, and noncommuting child metrics—verify the metric-square-
+root composition, signal Gram, SVD polar, endpoint effect, and native success
+identity. The flat control is deliberately a bypass witness: when the
+Hadamard is known, it is direct, so this remains an access-model lower bound
+rather than an arbitrary-circuit lower bound.
+
+This falsifies normalized raw analysis plus child polar plus binary LCU plus
+generic QSVT/rejection sampling. It does **not** rule out a label-retaining
+representation-specific positive-metric oracle, a direct matrix-POVM Naimark
+dilation, nonlinear multi-query structure outside this black-box model, or
+earlier-level algebraic cancellation. No physical PGM circuit, information
+theorem, decoder, classical separation, algorithm, or speedup is proved.
+`speedup_claim_allowed` remains false.
+
+Artifact and experiment:
+
+```text
+research/representation/self_dual_wreath_final_root_metric_access_width_no_go.json
+EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-METRIC-ACCESS-WIDTH-NO-GO
+```
+
+**Next high-reasoning task:** test the only surviving final-root access escape:
+a representation-specific, label-retaining direct Naimark preparation of
+`[sqrt(A);sqrt(B)]S^(-1/2)` from the physical Schur/QFT/GPE interfaces. Do not
+first expose `R/sqrt(w)` and do not erase a uniform orientation address. Either
+derive a reversible conditional sampler with constant/inverse-polynomial
+normalization, or prove that every such label-retaining purification still
+contains an inverse-width overlap. Then propagate the winning interface to
+earlier nodes.
+
 ## Resume Commands
 
 ```bash
@@ -12407,6 +12588,8 @@ python self_dual_wreath_gpe_pair_polar_transport.py
 python self_dual_wreath_gpe_holonomy_resolver_reduction.py
 python theorems/self_dual_wreath_addressed_cross_map_linear_assembly_normalization_boundary.py
 python theorems/self_dual_wreath_natural_q_scale_spectral_window_no_go.py
+PYTHONPATH=core:theorems python theorems/self_dual_wreath_final_root_scalar_mixer_no_go.py
+PYTHONPATH=core:theorems python theorems/self_dual_wreath_final_root_metric_access_width_no_go.py
 python self_dual_wreath_final_root_natural_common_span.py
 python self_dual_wreath_component_defect_rank_mass.py
 python self_dual_wreath_component_povm_spectral_trim.py

@@ -1,0 +1,354 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Sibling exchangeability forces C=I/2 on the physical bulk.",
+      "resolution": "Exchangeability fixes only tau(C)=1/2. The proved limit has Var(C)=1/(8alpha), uniformly at least 1/32.",
+      "resolved": true
+    },
+    {
+      "objection": "A different scalar branch weight beats the Hadamard.",
+      "resolution": "The exact MSE adds (t-1/2)^2, so t=1/2 is the unique optimum.",
+      "resolved": true
+    },
+    {
+      "objection": "Scalar branch phases or GPE transport cancel the error.",
+      "resolution": "Positive phases maximize overlap with the positive square-root branches; common branchwise isometric transport leaves the error invariant.",
+      "resolved": true
+    },
+    {
+      "objection": "Exact child polar oracles already contain the endpoint metric data.",
+      "resolution": "Polar decomposition discards positive magnitude. Full-support positive syntheses can share identity polars while producing different parent relative effects.",
+      "resolved": true
+    },
+    {
+      "objection": "A nonscalar endpoint implies superpolynomial functional calculus.",
+      "resolution": "No. The retained free-Jacobi bulk is uniformly separated from 0 and 1. Structured normalized access, not conditioning, is the open final-root issue.",
+      "resolved": false
+    },
+    {
+      "objection": "The theorem rules out source-adaptive scalar weights.",
+      "resolution": "The current annealed weak law does not control sample-to-sample fluctuation of the empirical optimal scalar. Such adaptation would itself require a coherent metric statistic.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "all_depth_hierarchical_endpoint_compiler_proved": false,
+    "child_polar_and_support_oracles_determine_endpoint_metric": false,
+    "classical_separation_proved": false,
+    "coherent_metric_magnitude_access_is_necessary": true,
+    "every_deterministic_scalar_endpoint_has_constant_native_error": true,
+    "final_root_matrix_endpoint_is_well_conditioned_after_native_trim": true,
+    "hadamard_is_optimal_deterministic_scalar_endpoint": true,
+    "hidden_involution_decoder_proved": false,
+    "natural_final_root_relative_effect_second_moment_proved": true,
+    "pair_gpe_transport_removes_matrix_endpoint_mixer": false,
+    "physical_pgm_circuit_proved": false,
+    "reason": "The first natural hierarchical endpoint has irreducible constant matrix variance, so neither a Hadamard nor another deterministic scalar splitter can replace it, even after exact GPE child transport. The true matrix effect has a constant retained edge; tightly normalized structured access is the remaining final-root bottleneck.",
+    "source_adaptive_scalar_endpoint_no_go_proved": false,
+    "speedup_claim_allowed": false,
+    "structured_matrix_endpoint_effect_access_proved": false
+  },
+  "created_at": "2026-08-25T23:04:14.611060+00:00",
+  "exact_controls": [
+    {
+      "canonical_naimark_mean_square_error": 0.06814834742186342,
+      "control_id": "symmetric-free-moment-alpha-2",
+      "dimension": 2,
+      "endpoint_completeness_residual": 0.0,
+      "endpoint_isometry_residual": 1.1102230246251565e-16,
+      "exact_endpoint_identities_verified": true,
+      "gpe_transport_invariance_verified": true,
+      "native_canonical_mean_square_error": 0.06814834742186342,
+      "native_window_effect_lower_bound": 0.015625,
+      "parent_maximum_eigenvalue": 4.0,
+      "parent_minimum_eigenvalue": 4.0,
+      "parent_reconstruction_residual": 0.0,
+      "phase_perturbed_native_error": 0.7355866780819462,
+      "positive_phase_alignment_verified": true,
+      "relative_effect_maximum_eigenvalue": 0.75,
+      "relative_effect_mean": 0.5,
+      "relative_effect_minimum_eigenvalue": 0.25,
+      "relative_effect_variance": 0.0625,
+      "scalar_effect_lower_bound_verified": true,
+      "scalar_effect_mean_square_error": 0.0625,
+      "scalar_isometry_residual": 2.220446049250313e-16,
+      "scalar_left_weight": 0.5,
+      "status": "scalar-endpoint-no-go-identities-verified",
+      "transport_invariance_residual": 1.3877787807814457e-17,
+      "transported_native_error": 0.06814834742186343
+    },
+    {
+      "canonical_naimark_mean_square_error": 0.11069702059150653,
+      "control_id": "symmetric-free-moment-alpha-3",
+      "dimension": 2,
+      "endpoint_completeness_residual": 0.0,
+      "endpoint_isometry_residual": 1.1102230246251565e-16,
+      "exact_endpoint_identities_verified": true,
+      "gpe_transport_invariance_verified": true,
+      "native_canonical_mean_square_error": 0.11069702059150655,
+      "native_window_effect_lower_bound": 0.02604166666666667,
+      "parent_maximum_eigenvalue": 6.0,
+      "parent_minimum_eigenvalue": 6.0,
+      "parent_reconstruction_residual": 8.881784197001252e-16,
+      "phase_perturbed_native_error": 0.6852171960503822,
+      "positive_phase_alignment_verified": true,
+      "relative_effect_maximum_eigenvalue": 0.7041241452319316,
+      "relative_effect_mean": 0.5,
+      "relative_effect_minimum_eigenvalue": 0.2958758547680685,
+      "relative_effect_variance": 0.04166666666666668,
+      "scalar_effect_lower_bound_verified": true,
+      "scalar_effect_mean_square_error": 0.10416666666666669,
+      "scalar_isometry_residual": 1.1102230246251565e-16,
+      "scalar_left_weight": 0.25,
+      "status": "scalar-endpoint-no-go-identities-verified",
+      "transport_invariance_residual": 0.0,
+      "transported_native_error": 0.11069702059150655
+    },
+    {
+      "canonical_naimark_mean_square_error": 0.032557829722314115,
+      "control_id": "symmetric-free-moment-alpha-4",
+      "dimension": 2,
+      "endpoint_completeness_residual": 0.0,
+      "endpoint_isometry_residual": 1.1102230246251565e-16,
+      "exact_endpoint_identities_verified": true,
+      "gpe_transport_invariance_verified": true,
+      "native_canonical_mean_square_error": 0.032557829722314115,
+      "native_window_effect_lower_bound": 0.007812500000000002,
+      "parent_maximum_eigenvalue": 8.0,
+      "parent_minimum_eigenvalue": 8.0,
+      "parent_reconstruction_residual": 1.7763568394002505e-15,
+      "phase_perturbed_native_error": 0.71229238182829,
+      "positive_phase_alignment_verified": true,
+      "relative_effect_maximum_eigenvalue": 0.676776695296637,
+      "relative_effect_mean": 0.5000000000000001,
+      "relative_effect_minimum_eigenvalue": 0.3232233047033632,
+      "relative_effect_variance": 0.03125,
+      "scalar_effect_lower_bound_verified": true,
+      "scalar_effect_mean_square_error": 0.03125000000000001,
+      "scalar_isometry_residual": 2.220446049250313e-16,
+      "scalar_left_weight": 0.5,
+      "status": "scalar-endpoint-no-go-identities-verified",
+      "transport_invariance_residual": 6.938893903907228e-18,
+      "transported_native_error": 0.03255782972231412
+    },
+    {
+      "canonical_naimark_mean_square_error": 0.045886491999649906,
+      "control_id": "noncommuting-child-short-metrics",
+      "dimension": 2,
+      "endpoint_completeness_residual": 0.0,
+      "endpoint_isometry_residual": 1.1103481526022028e-15,
+      "exact_endpoint_identities_verified": true,
+      "gpe_transport_invariance_verified": true,
+      "native_canonical_mean_square_error": 0.04645315956962764,
+      "native_window_effect_lower_bound": 0.009070854538773118,
+      "parent_maximum_eigenvalue": 3.7623475382979787,
+      "parent_minimum_eigenvalue": 2.7376524617020195,
+      "parent_reconstruction_residual": 1.6025392107375236e-15,
+      "phase_perturbed_native_error": 0.708756867354048,
+      "positive_phase_alignment_verified": true,
+      "relative_effect_maximum_eigenvalue": 0.6752513253033364,
+      "relative_effect_mean": 0.469902912621359,
+      "relative_effect_minimum_eigenvalue": 0.2645544999393816,
+      "relative_effect_variance": 0.04216797059100769,
+      "scalar_effect_lower_bound_verified": true,
+      "scalar_effect_mean_square_error": 0.04307380525968518,
+      "scalar_isometry_residual": 2.220446049250313e-16,
+      "scalar_left_weight": 0.5,
+      "status": "scalar-endpoint-no-go-identities-verified",
+      "transport_invariance_residual": 2.0816681711721685e-17,
+      "transported_native_error": 0.04645315956962762
+    }
+  ],
+  "falsifiers_triggered": [
+    "Equal-rate exchangeability fixes the endpoint mean but does not make the endpoint effect scalar.",
+    "The signed Hadamard is the best deterministic scalar endpoint and still has constant natural native-state error.",
+    "Exact pair-GPE transport cannot remove a matrix-valued endpoint mixer because branchwise isometric postcomposition preserves its error.",
+    "Child polar and support-transport oracles discard the positive metric magnitude needed to determine the parent endpoint.",
+    "The final-root obstruction is matrix access, not an endpoint hard edge or q-wide normalization loss."
+  ],
+  "headline_metrics": {
+    "all_depth_endpoint_law_count": 0,
+    "child_polar_only_endpoint_access_no_go_count": 1,
+    "exact_control_count": 4,
+    "exact_control_failure_count": 0,
+    "free_jacobi_relative_variance_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "optimal_scalar_endpoint_no_go_theorem_count": 1,
+    "pair_gpe_scalarization_count": 0,
+    "structured_matrix_endpoint_access_count": 0,
+    "uniform_canonical_native_error_floor": 0.0078125,
+    "uniform_scalar_effect_mse_floor": 0.03125,
+    "uniform_window_only_native_error_floor": 0.00048828125
+  },
+  "moment_records": [
+    {
+      "canonical_native_error_lower_bound": 0.015625,
+      "child_aspect": 2.0,
+      "free_jacobi_mean": 0.5,
+      "free_jacobi_second_moment": 0.3125,
+      "free_jacobi_variance": 0.0625,
+      "hadamard_is_optimal_scalar_effect": true,
+      "optimal_scalar_effect_mean_square_error": 0.0625,
+      "optimal_scalar_left_weight": 0.5,
+      "scalar_effect_error_is_constant": true,
+      "scalar_effect_mean_square_error": 0.0625,
+      "scalar_left_weight": 0.5,
+      "status": "free-jacobi-scalar-mixer-constant-error",
+      "window_only_native_error_lower_bound": 0.001953125
+    },
+    {
+      "canonical_native_error_lower_bound": 0.018125000000000002,
+      "child_aspect": 2.5,
+      "free_jacobi_mean": 0.5,
+      "free_jacobi_second_moment": 0.3,
+      "free_jacobi_variance": 0.05,
+      "hadamard_is_optimal_scalar_effect": true,
+      "optimal_scalar_effect_mean_square_error": 0.05,
+      "optimal_scalar_left_weight": 0.5,
+      "scalar_effect_error_is_constant": true,
+      "scalar_effect_mean_square_error": 0.07250000000000001,
+      "scalar_left_weight": 0.35,
+      "status": "free-jacobi-scalar-mixer-constant-error",
+      "window_only_native_error_lower_bound": 0.0018125000000000003
+    },
+    {
+      "canonical_native_error_lower_bound": 0.010416666666666666,
+      "child_aspect": 3.0,
+      "free_jacobi_mean": 0.5,
+      "free_jacobi_second_moment": 0.2916666666666667,
+      "free_jacobi_variance": 0.041666666666666664,
+      "hadamard_is_optimal_scalar_effect": true,
+      "optimal_scalar_effect_mean_square_error": 0.041666666666666664,
+      "optimal_scalar_left_weight": 0.5,
+      "scalar_effect_error_is_constant": true,
+      "scalar_effect_mean_square_error": 0.041666666666666664,
+      "scalar_left_weight": 0.5,
+      "status": "free-jacobi-scalar-mixer-constant-error",
+      "window_only_native_error_lower_bound": 0.0008680555555555555
+    },
+    {
+      "canonical_native_error_lower_bound": 0.0078125,
+      "child_aspect": 4.0,
+      "free_jacobi_mean": 0.5,
+      "free_jacobi_second_moment": 0.28125,
+      "free_jacobi_variance": 0.03125,
+      "hadamard_is_optimal_scalar_effect": true,
+      "optimal_scalar_effect_mean_square_error": 0.03125,
+      "optimal_scalar_left_weight": 0.5,
+      "scalar_effect_error_is_constant": true,
+      "scalar_effect_mean_square_error": 0.03125,
+      "scalar_left_weight": 0.5,
+      "status": "free-jacobi-scalar-mixer-constant-error",
+      "window_only_native_error_lower_bound": 0.00048828125
+    },
+    {
+      "canonical_native_error_lower_bound": 0.030312500000000006,
+      "child_aspect": 4.0,
+      "free_jacobi_mean": 0.5,
+      "free_jacobi_second_moment": 0.28125,
+      "free_jacobi_variance": 0.03125,
+      "hadamard_is_optimal_scalar_effect": true,
+      "optimal_scalar_effect_mean_square_error": 0.03125,
+      "optimal_scalar_left_weight": 0.5,
+      "scalar_effect_error_is_constant": true,
+      "scalar_effect_mean_square_error": 0.12125000000000002,
+      "scalar_left_weight": 0.8,
+      "status": "free-jacobi-scalar-mixer-constant-error",
+      "window_only_native_error_lower_bound": 0.0018945312500000004
+    }
+  ],
+  "polar_only_control": {
+    "child_polar_oracle_residual": 1.1102230246251565e-16,
+    "child_support_oracle_residual": 0.0,
+    "common_output_worst_case_mean_square_lower_bound": 0.01703708685546585,
+    "constant_oracle_indistinguishability_gap_verified": true,
+    "dimension": 2,
+    "distinct_endpoint_effects_verified": true,
+    "endpoint_effect_distance": 0.2500000000000001,
+    "endpoint_isometry_mean_square_distance": 0.0681483474218634,
+    "identical_polar_oracles_verified": true,
+    "metric_ratio": 3.0,
+    "status": "child-polar-only-endpoint-access-falsified",
+    "transported_distance_residual": 0.0
+  },
+  "primary_literature": [
+    {
+      "paper_id": "szpojankowski-free-lukacs-2015",
+      "proves_natural_wreath_joint_freeness": false,
+      "scope": "Free-Poisson Lukacs property: A+B is free from (A+B)^-1/2 A (A+B)^-1/2.",
+      "url": "https://arxiv.org/abs/1403.5300"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "evidence": "Free Lukacs independence plus the alternating fourth-moment identity and MP first/second moments give Var(C)=1/(8alpha).",
+      "obligation": "derive_free_jacobi_second_moment",
+      "resolved": true
+    },
+    {
+      "evidence": "The exact effect MSE is (t-1/2)^2+1/(8alpha), uniquely minimized by the Hadamard weight t=1/2.",
+      "obligation": "optimize_over_deterministic_scalar_mixers",
+      "resolved": true
+    },
+    {
+      "evidence": "Canonical square-root dilation, free Lukacs native weighting, and the independent fixed-window fallback give uniform constants 1/128 and 1/2048.",
+      "obligation": "transfer_effect_error_to_native_endpoint_error",
+      "resolved": true
+    },
+    {
+      "evidence": "Branchwise GPE transports are postcomposition isometries, so they preserve the endpoint difference exactly.",
+      "obligation": "compose_with_pair_gpe_transport",
+      "resolved": true
+    },
+    {
+      "evidence": "The ratio-three exact control has identical identity child-polars/full supports in both instances but constant-separated relative effects and Naimark maps.",
+      "obligation": "determine_whether_child_polars_alone_fix_endpoint",
+      "resolved": true
+    },
+    {
+      "evidence": "The no-go proves the matrix mixer is necessary but supplies no coherent block encoding, square-root dilation, or endpoint classifier.",
+      "obligation": "compile_matrix_valued_endpoint_effect",
+      "resolved": false
+    },
+    {
+      "evidence": "Only the selected final sibling split has the natural free-Jacobi theorem.",
+      "obligation": "extend_node_law_and_access_through_all_depths",
+      "resolved": false
+    }
+  ],
+  "status": "natural-final-root-scalar-endpoint-falsified-matrix-access-open",
+  "summary": "Falsified the scalar final-root shortcut: the natural relative effect has variance 1/(8alpha), the Hadamard is the optimal scalar approximation but still incurs at least 1/128 annealed native mean-square error, and GPE child transport preserves that error.",
+  "theorem": {
+    "canonical_native_error": "After factoring child polars, every scalar-phase endpoint has annealed native mean-square error at least 1/(32alpha)>=1/128; positive phases are optimal.",
+    "free_lukacs_input": "For free Poisson A,B of equal rate, S=A+B is free from C=S^-1/2 A S^-1/2.",
+    "natural_limit_input": "Along every subsequence alpha_n->alpha in [2,4], the proved final sibling law is a pair of free MP(alpha) variables and the fixed parent-window relative effect has the symmetric free-Jacobi limit.",
+    "optimal_scalar_effect": "inf_(0<=t<=1) tau((C-tI)^2)=1/(8alpha), uniquely at t=1/2; exchangeability selects the best scalar but does not make the effect scalar.",
+    "pair_gpe_composition": "Branch-controlled GPE support transports postcompose both endpoint maps isometrically and preserve their mean-square difference exactly.",
+    "polar_only_oracle_boundary": "Two full-support metric pairs have identical identity child polars and support transports but constant-separated endpoint effects; metric magnitude access is necessary.",
+    "relative_second_moment": "tau(C)=1/2 and tau(C^2)=1/4+1/(8alpha), hence Var(C)=1/(8alpha).",
+    "scope": "Selected final-root, annealed natural-state scalar-mixer no-go; no matrix-access lower bound, untrimmed sourcewise edge, all-depth compiler, decoder, or speedup.",
+    "status": "natural-final-root-scalar-endpoint-falsified-matrix-access-open",
+    "surviving_target": "A structured block encoding or direct Naimark dilation of the genuine matrix effect C, with compatible all-depth child support and holonomy access.",
+    "theorem_verified": true,
+    "window_only_native_error": "The fixed parent window alone gives the implementation-independent effect-to-isometry lower bound 1/(128alpha^2)>=1/2048."
+  },
+  "theorem_contract": {
+    "assumptions": [
+      "The existing all-fixed natural sibling joint-freeness theorem.",
+      "The existing fixed parent-window free-Jacobi transfer at selected aspect alpha in [2,4].",
+      "A deterministic scalar endpoint weight t after exact child polars have been factored out.",
+      "Annealed native parent-state mean-square error, with o(1) parent-window trim."
+    ],
+    "failure_modes": [
+      "Instance-dependent scalar weights are not covered unless their concentration is separately proved.",
+      "Matrix-valued endpoint access may still be polynomial because the retained Jacobi spectrum has a constant bulk edge.",
+      "Earlier hierarchy levels do not inherit the final sibling free law automatically.",
+      "No hidden-label information or decoder theorem is supplied."
+    ],
+    "hypothesis": "Equal-rate exchangeable final siblings make the recursive endpoint mixer asymptotically scalar, so a signed Hadamard plus exact GPE child transports implements the final-root polar on natural physical mass.",
+    "normalization": "Node-local parent normalization S^-1/2; no q-wide address erasure and no q-scale signal normalization.",
+    "speedup_claim_allowed": false,
+    "success_criterion": "A scalar shortcut required o(1) native mean-square endpoint error; every deterministic scalar weight has a uniform positive error floor.",
+    "verdict": "falsified"
+  }
+}

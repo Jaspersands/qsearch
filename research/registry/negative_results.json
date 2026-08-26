@@ -81851,6 +81851,28 @@
       "PO-MEASUREMENT",
       "PO-COMPLEXITY"
     ],
+    "claim": "Exact child polars convert normalized raw child analyses into polynomially usable final-root metric access because the common 1/sqrt(w) factor cancels from the endpoint polar.",
+    "evidence": {
+      "exact_binary_metric_signal": "T=[sqrt(A);sqrt(B)]/sqrt(w), T^*T=(A+B)/w",
+      "native_signal_success_probability": "(2alpha+1+o(1))/w",
+      "parent_width": "Theta(n!)",
+      "qsvt_degree_lower_bound": "Omega(sqrt(w))",
+      "representation_specific_metric_oracle_ruled_out": false,
+      "retained_signal_singular_scale": "Theta(w^-1/2)",
+      "speedup_claim_allowed": false
+    },
+    "id": "SCHUR-COMPANION-FINAL-ROOT-RAW-METRIC-ACCESS-SQRT-WIDTH",
+    "lesson": "Do not feed the normalized raw child analysis back through generic polar extraction. A viable hierarchy now requires representation-specific positive-metric preparation or a direct matrix-POVM Naimark dilation at constant/inverse-polynomial normalization.",
+    "reason_invalid": "The factor cancels algebraically but not operationally. The exact signal T has T^*T=S/w; on the retained parent window all singular values are O(w^-1/2), so bounded QSVT polar degree and black-box state-conversion queries are Omega(sqrt(w)) with w=Theta(n!).",
+    "source": "research/representation/self_dual_wreath_final_root_metric_access_width_no_go.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "PO-MECHANISM",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY"
+    ],
     "claim": "Published Schur/CG transforms and invariant-space projectors already contain the cross-branch operation needed for the joint-character orientation polar.",
     "evidence": {
       "cross_branch_inverse_sqrt_control_count": 3,
@@ -81865,6 +81887,29 @@
     "lesson": "Require a natural q/poly(n) retained spectral window for the linear G/q signal or a direct non-branch-preserving global polar; raw entry queries and pair phases are insufficient.",
     "reason_invalid": "The companion-only interface is branch preserving. The physical detour supplies raw cross maps and successor uniform mixing assembles G/q, but neither supplies a natural q-scale window or the H_nu^(+/2) action.",
     "source": "research/representation/self_dual_wreath_schur_companion_transform_scope_boundary.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "PO-MECHANISM",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY"
+    ],
+    "claim": "Equal-rate exchangeable natural final siblings make the recursive endpoint mixer asymptotically scalar, so a signed Hadamard plus exact pair-GPE child transports approximates the final-root polar.",
+    "evidence": {
+      "child_polar_only_endpoint_access_no_go": true,
+      "matrix_endpoint_hard_edge_obstruction_proved": false,
+      "pair_gpe_scalarization_count": 0,
+      "relative_effect_variance": "1/(8alpha)",
+      "speedup_claim_allowed": false,
+      "structured_matrix_endpoint_access_proved": false,
+      "uniform_canonical_native_error_floor": 0.0078125,
+      "uniform_scalar_effect_mse_floor": 0.03125
+    },
+    "id": "SCHUR-COMPANION-NATURAL-FINAL-ENDPOINT-NO-SCALAR-MIXER",
+    "lesson": "Do not scalarize the first natural hierarchical endpoint. Exploit its constant Jacobi bulk edge to build structured matrix-effect access, and keep matrix-valued normalization explicit at every recursive node.",
+    "reason_invalid": "The free-Jacobi relative effect has Var(C)=1/(8alpha). The Hadamard is the optimal deterministic scalar effect, yet its canonical native Naimark error is at least 1/(32alpha)>=1/128; GPE postcomposition preserves the difference.",
+    "source": "research/representation/self_dual_wreath_final_root_scalar_mixer_no_go.json"
   },
   {
     "applies_to": [

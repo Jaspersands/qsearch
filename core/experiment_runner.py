@@ -1503,6 +1503,8 @@ DCP_SUBSET_SUM_CARRY_RELATION_EXPERIMENTS = {
 }
 
 DCP_SUBSET_SUM_MARKER_COSET_EXPERIMENTS = {
+    "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-SCALAR-MIXER-NO-GO",
+    "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-METRIC-ACCESS-WIDTH-NO-GO",
     "EXP-CODE-SELF-DUAL-WREATH-NATURAL-Q-SCALE-SPECTRAL-WINDOW-NO-GO",
     "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-CYCLIC-POLAR-COMPILER",
     "EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-CYCLIC-QUADRANT-OVERLAP",
@@ -2420,6 +2422,8 @@ def supported_experiment_ids() -> list[str]:
         | {"EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-PAIR-POLAR-GRAM-BOUNDARY"}
         | {"EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY"}
         | {"EXP-CODE-SELF-DUAL-WREATH-NATURAL-Q-SCALE-SPECTRAL-WINDOW-NO-GO"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-METRIC-ACCESS-WIDTH-NO-GO"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-SCALAR-MIXER-NO-GO"}
         | DCP_RECURSIVE_DECODER_EXPERIMENTS
         | DCP_RECURRENCE_EXPERIMENTS
         | DCP_SCHEDULE_SEARCH_EXPERIMENTS
@@ -13833,6 +13837,38 @@ def run_experiment(experiment_id: str) -> RunnerResult:
                 )
             except TypeError:
                 payload = write_natural_q_scale_spectral_window_no_go_report()
+            runner_result = RunnerResult(
+                experiment_id, "completed", result_id, payload.get("summary", "")
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-METRIC-ACCESS-WIDTH-NO-GO"
+        ):
+            try:
+                payload = write_final_root_metric_access_width_no_go_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_final_root_metric_access_width_no_go_report()
+            runner_result = RunnerResult(
+                experiment_id, "completed", result_id, payload.get("summary", "")
+            )
+        elif (
+            experiment_id
+            == "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-SCALAR-MIXER-NO-GO"
+        ):
+            try:
+                payload = write_final_root_scalar_mixer_no_go_report(
+                    write_registry=True,
+                    registry_experiment_id=experiment_id,
+                    registry_candidate_id=experiment["candidate_id"],
+                    registry_result_id=result_id,
+                )
+            except TypeError:
+                payload = write_final_root_scalar_mixer_no_go_report()
             runner_result = RunnerResult(
                 experiment_id, "completed", result_id, payload.get("summary", "")
             )

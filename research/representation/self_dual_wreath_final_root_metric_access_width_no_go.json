@@ -1,0 +1,346 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "The common factor 1/sqrt(w) cancels algebraically in the polar.",
+      "resolution": "It cancels in the mathematical polar but remains the queried signal amplitude. QSVT must transform values at +-Theta(w^-1/2), forcing Omega(sqrt(w)) degree.",
+      "resolved": true
+    },
+    {
+      "objection": "The constant Jacobi edge makes raw metric access efficient.",
+      "resolution": "The edge is constant for C and unnormalized S. The available signal is S/w, whose singular scale is still w^-1/2.",
+      "resolved": true
+    },
+    {
+      "objection": "Only exponentially small bad modes cause the charge.",
+      "resolution": "False. Every retained singular value is at most 4/sqrt(w); even a perfectly flat retained frame has the same access suppression.",
+      "resolved": true
+    },
+    {
+      "objection": "The flat Hadamard control proves the endpoint itself is hard.",
+      "resolution": "False. A known Hadamard is direct. The control proves only that the specified black-box raw-signal extraction wastes sqrt(w) queries.",
+      "resolved": true
+    },
+    {
+      "objection": "This rules out every representation-specific metric compiler.",
+      "resolution": "A direct structured Naimark dilation or new constant-normalization metric oracle lies outside the access model.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "all_depth_metric_access_compiler_proved": false,
+    "arbitrary_hierarchical_global_polar_ruled_out": false,
+    "canonical_raw_child_metric_access_is_polynomial": false,
+    "child_polar_recovers_metric_sqrt_at_raw_normalization": true,
+    "classical_separation_proved": false,
+    "direct_matrix_povm_naimark_dilation_proved": false,
+    "exact_final_root_endpoint_is_polar_of_binary_metric_signal": true,
+    "generic_qsvt_polar_requires_sqrt_width_degree": true,
+    "hidden_involution_decoder_proved": false,
+    "native_raw_metric_selection_probability_is_inverse_width": true,
+    "physical_pgm_circuit_proved": false,
+    "reason": "Child polars expose sqrt(A_s) only through the inherited R_s/sqrt(q) signal. Binary stacking exactly recovers the desired endpoint polar but leaves all retained signal singular values Theta(w^-1/2), forcing Omega(sqrt(w)) generic QSVT or rejection-sampling cost at w=Theta(n!).",
+    "representation_specific_metric_magnitude_oracle_proved": false,
+    "retained_endpoint_matrix_bulk_has_constant_edge": true,
+    "retained_raw_metric_signal_has_inverse_sqrt_width_scale": true,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-26T00:31:55.552314+00:00",
+  "exact_controls": [
+    {
+      "bernstein_qsvt_degree_lower_bound": 7.143528539874393,
+      "child_orientation_width": 32,
+      "control_id": "known-flat-hadamard-bypass-control",
+      "dimension": 2,
+      "endpoint_effect_residual": 1.1102230246251565e-16,
+      "endpoint_polar_residual": 1.1102230246251565e-16,
+      "exact_metric_access_factorization_verified": true,
+      "left_child_polar_isometry_residual": 4.440892098500626e-16,
+      "left_metric_square_root_composition_residual": 2.7755575615628914e-17,
+      "native_rejection_sampling_factor": 7.999999999999998,
+      "native_signal_success_probability": 0.015625000000000007,
+      "native_success_identity_residual": 6.938893903907228e-18,
+      "parent_maximum_eigenvalue": 1.0,
+      "parent_minimum_eigenvalue": 1.0,
+      "parent_orientation_width": 64,
+      "qsvt_polar_error": 0.1,
+      "right_child_polar_isometry_residual": 4.440892098500626e-16,
+      "right_metric_square_root_composition_residual": 2.7755575615628914e-17,
+      "signal_gram_residual": 6.938893903907228e-18,
+      "signal_maximum_singular_value": 0.12500000000000003,
+      "signal_minimum_singular_value": 0.12500000000000003,
+      "square_root_width_charge_verified": true,
+      "status": "raw-child-metric-access-sqrt-width-charge-verified"
+    },
+    {
+      "bernstein_qsvt_degree_lower_bound": 10.142484902626181,
+      "child_orientation_width": 64,
+      "control_id": "diagonal-matrix-endpoint-control",
+      "dimension": 2,
+      "endpoint_effect_residual": 1.1102230246251565e-16,
+      "endpoint_polar_residual": 2.220446049250313e-16,
+      "exact_metric_access_factorization_verified": true,
+      "left_child_polar_isometry_residual": 2.220446049250313e-16,
+      "left_metric_square_root_composition_residual": 1.3877787807814457e-17,
+      "native_rejection_sampling_factor": 11.313708498984763,
+      "native_signal_success_probability": 0.0078124999999999965,
+      "native_success_identity_residual": 3.469446951953614e-18,
+      "parent_maximum_eigenvalue": 1.0,
+      "parent_minimum_eigenvalue": 1.0,
+      "parent_orientation_width": 128,
+      "qsvt_polar_error": 0.1,
+      "right_child_polar_isometry_residual": 2.220446049250313e-16,
+      "right_metric_square_root_composition_residual": 1.3877787807814457e-17,
+      "signal_gram_residual": 3.469446951953614e-18,
+      "signal_maximum_singular_value": 0.08838834764831843,
+      "signal_minimum_singular_value": 0.08838834764831843,
+      "square_root_width_charge_verified": true,
+      "status": "raw-child-metric-access-sqrt-width-charge-verified"
+    },
+    {
+      "bernstein_qsvt_degree_lower_bound": 10.142484902626187,
+      "child_orientation_width": 64,
+      "control_id": "rotated-unknown-eigenbasis-control",
+      "dimension": 2,
+      "endpoint_effect_residual": 3.5613045553787573e-16,
+      "endpoint_polar_residual": 2.715736981392032e-16,
+      "exact_metric_access_factorization_verified": true,
+      "left_child_polar_isometry_residual": 9.135655113755772e-16,
+      "left_metric_square_root_composition_residual": 2.9544456363816624e-17,
+      "native_rejection_sampling_factor": 11.313708498984766,
+      "native_signal_success_probability": 0.007812499999999991,
+      "native_success_identity_residual": 8.673617379884035e-18,
+      "parent_maximum_eigenvalue": 1.0,
+      "parent_minimum_eigenvalue": 1.0,
+      "parent_orientation_width": 128,
+      "qsvt_polar_error": 0.1,
+      "right_child_polar_isometry_residual": 8.887816237200692e-16,
+      "right_metric_square_root_composition_residual": 3.4910469474606045e-17,
+      "signal_gram_residual": 9.653552319961744e-18,
+      "signal_maximum_singular_value": 0.08838834764831839,
+      "signal_minimum_singular_value": 0.08838834764831839,
+      "square_root_width_charge_verified": true,
+      "status": "raw-child-metric-access-sqrt-width-charge-verified"
+    },
+    {
+      "bernstein_qsvt_degree_lower_bound": 5.171775598166725,
+      "child_orientation_width": 64,
+      "control_id": "noncommuting-child-metric-control",
+      "dimension": 2,
+      "endpoint_effect_residual": 4.564565708991794e-16,
+      "endpoint_polar_residual": 4.671360641910055e-16,
+      "exact_metric_access_factorization_verified": true,
+      "left_child_polar_isometry_residual": 9.04012627580664e-16,
+      "left_metric_square_root_composition_residual": 8.711942262195381e-17,
+      "native_rejection_sampling_factor": 6.199158104204458,
+      "native_signal_success_probability": 0.026021634615384596,
+      "native_success_identity_residual": 1.734723475976807e-17,
+      "parent_maximum_eigenvalue": 3.7623475382979787,
+      "parent_minimum_eigenvalue": 2.7376524617020195,
+      "parent_orientation_width": 128,
+      "qsvt_polar_error": 0.1,
+      "right_child_polar_isometry_residual": 4.493397231264295e-16,
+      "right_metric_square_root_composition_residual": 5.621082781996773e-17,
+      "signal_gram_residual": 2.9490299091605714e-17,
+      "signal_maximum_singular_value": 0.17144486035735496,
+      "signal_minimum_singular_value": 0.14624605928724033,
+      "square_root_width_charge_verified": true,
+      "status": "raw-child-metric-access-sqrt-width-charge-verified"
+    }
+  ],
+  "falsifiers_triggered": [
+    "Algebraic cancellation of a common normalization in the polar does not cancel its query complexity.",
+    "A binary hierarchical merge does not erase the square-root width already present inside each normalized child analysis.",
+    "The constant free-Jacobi endpoint edge does not make the canonically exposed S/w signal inverse-polynomial.",
+    "Compiled child polars plus raw child PREPARE/SELECT do not provide polynomial final-root metric access through generic QSVT or rejection sampling."
+  ],
+  "headline_metrics": {
+    "all_depth_metric_access_compiler_count": 0,
+    "canonical_raw_metric_qsvt_sqrt_width_no_go_count": 1,
+    "direct_matrix_povm_dilation_count": 0,
+    "exact_control_count": 4,
+    "exact_control_failure_count": 0,
+    "exact_final_root_metric_signal_factorization_count": 1,
+    "native_raw_metric_success_inverse_width_theorem_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "representation_specific_metric_oracle_count": 0,
+    "tail_native_rejection_sampling_factor_log2": 101.31879475063596,
+    "tail_qsvt_degree_lower_bound_log2": 100.34799690655495
+  },
+  "primary_literature": [
+    {
+      "paper_id": "gilyen-su-low-wiebe-qsvt-2019",
+      "scope": "Bounded polynomial singular-value transformation and query-degree correspondence.",
+      "url": "https://arxiv.org/abs/1806.01838"
+    },
+    {
+      "paper_id": "ozols-roetteler-roland-qrs-2013",
+      "scope": "Tight black-box query complexity for coherent amplitude/state resampling.",
+      "url": "https://arxiv.org/abs/1103.2774"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "evidence": "Q_s^*R_s/sqrt(q)=sqrt(A_s)/sqrt(q), and binary stacking gives T^*T=S/w exactly in every control.",
+      "obligation": "derive_exact_child_polar_metric_signal",
+      "resolved": true
+    },
+    {
+      "evidence": "The finite SVD polar agrees with [sqrt(A);sqrt(B)]S^-1/2 and reproduces C as its left effect.",
+      "obligation": "recover_exact_matrix_endpoint_as_signal_polar",
+      "resolved": true
+    },
+    {
+      "evidence": "Mean value plus Bernstein bounds a bounded sign polynomial by degree Omega(1/sigma); sigma<=4/sqrt(w) on the retained window.",
+      "obligation": "charge_generic_qsvt_polar_degree",
+      "resolved": true
+    },
+    {
+      "evidence": "The exact success identity is Tr(S^2)/(wTr(S)); joint free-MP moments give coefficient 2alpha+1.",
+      "obligation": "charge_native_black_box_success",
+      "resolved": true
+    },
+    {
+      "evidence": "No circuit bypassing normalized raw analysis is known. Child polars and GPE support transports discard the required positive magnitude.",
+      "obligation": "construct_representation_specific_metric_magnitude_oracle",
+      "resolved": false
+    },
+    {
+      "evidence": "Only the selected final-root composition is covered.",
+      "obligation": "propagate_metric_access_through_all_tree_levels",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "bernstein_qsvt_degree_lower_bound": 2669238.720681923,
+      "bernstein_qsvt_degree_lower_bound_log2": 21.34799690655487,
+      "child_aspect": 3.363258177057119,
+      "child_orientation_width_decimal": "70368744177664",
+      "group_order_decimal": "20922789888000",
+      "information_threshold_copy_count": 45,
+      "limiting_native_signal_success_probability": 5.4900200681474854e-14,
+      "matrix_endpoint_bulk_well_conditioned": true,
+      "n": 16,
+      "native_rejection_sampling_factor_log2": 22.0250909527872,
+      "parent_orientation_width_decimal": "140737488355328",
+      "raw_metric_access_superpolynomial": true,
+      "representation_specific_metric_oracle_ruled_out": false,
+      "retained_signal_maximum_singular_value": 3.371747880871523e-07,
+      "retained_signal_minimum_singular_value": 5.960464477539063e-08,
+      "selected_copy_count": 47,
+      "status": "canonical-final-root-raw-metric-access-superpolynomial"
+    },
+    {
+      "bernstein_qsvt_degree_lower_bound": 494780232499.2,
+      "bernstein_qsvt_degree_lower_bound_log2": 38.84799690655495,
+      "child_aspect": 3.896942328282133,
+      "child_orientation_width_decimal": "2417851639229258349412352",
+      "group_order_decimal": "620448401733239439360000",
+      "information_threshold_copy_count": 80,
+      "limiting_native_signal_success_probability": 1.8185327242343753e-24,
+      "matrix_endpoint_bulk_well_conditioned": true,
+      "n": 24,
+      "native_rejection_sampling_factor_log2": 39.43174969509008,
+      "parent_orientation_width_decimal": "4835703278458516698824704",
+      "raw_metric_access_superpolynomial": true,
+      "representation_specific_metric_oracle_ruled_out": false,
+      "retained_signal_maximum_singular_value": 1.8189894035458565e-12,
+      "retained_signal_minimum_singular_value": 3.2155493553843715e-13,
+      "selected_copy_count": 82,
+      "status": "canonical-final-root-raw-metric-access-superpolynomial"
+    },
+    {
+      "bernstein_qsvt_degree_lower_bound": 2.5940733853654058e+17,
+      "bernstein_qsvt_degree_lower_bound_log2": 57.84799690655495,
+      "child_aspect": 2.525792893137547,
+      "child_orientation_width_decimal": "664613997892457936451903530140172288",
+      "group_order_decimal": "263130836933693530167218012160000000",
+      "information_threshold_copy_count": 118,
+      "limiting_native_signal_success_probability": 4.5527071393810074e-36,
+      "matrix_endpoint_bulk_well_conditioned": true,
+      "n": 32,
+      "native_rejection_sampling_factor_log2": 58.70134337870597,
+      "parent_orientation_width_decimal": "1329227995784915872903807060280344576",
+      "raw_metric_access_superpolynomial": true,
+      "representation_specific_metric_oracle_ruled_out": false,
+      "retained_signal_maximum_singular_value": 3.469446951953614e-18,
+      "retained_signal_minimum_singular_value": 6.133173666733497e-19,
+      "selected_copy_count": 120,
+      "status": "canonical-final-root-raw-metric-access-superpolynomial"
+    },
+    {
+      "bernstein_qsvt_degree_lower_bound": 5.4401661882658314e+23,
+      "bernstein_qsvt_degree_lower_bound_log2": 78.84799690655495,
+      "child_aspect": 3.5824837880548883,
+      "child_orientation_width_decimal": "2923003274661805836407369665432566039311865085952",
+      "group_order_decimal": "815915283247897734345611269596115894272000000000",
+      "information_threshold_copy_count": 160,
+      "limiting_native_signal_success_probability": 1.3966743805742865e-48,
+      "matrix_endpoint_bulk_well_conditioned": true,
+      "n": 40,
+      "native_rejection_sampling_factor_log2": 79.48527642164287,
+      "parent_orientation_width_decimal": "5846006549323611672814739330865132078623730171904",
+      "raw_metric_access_superpolynomial": true,
+      "representation_specific_metric_oracle_ruled_out": false,
+      "retained_signal_maximum_singular_value": 1.6543612251060553e-24,
+      "retained_signal_minimum_singular_value": 2.9245251020114406e-25,
+      "selected_copy_count": 162,
+      "status": "canonical-final-root-raw-metric-access-superpolynomial"
+    },
+    {
+      "bernstein_qsvt_degree_lower_bound": 1.6134558040738407e+30,
+      "bernstein_qsvt_degree_lower_bound_log2": 100.34799690655495,
+      "child_aspect": 2.071144154033294,
+      "child_orientation_width_decimal": "25711008708143844408671393477458601640355247900524685364822016",
+      "group_order_decimal": "12413915592536072670862289047373375038521486354677760000000000",
+      "information_threshold_copy_count": 203,
+      "limiting_native_signal_success_probability": 1.0000168345082843e-61,
+      "matrix_endpoint_bulk_well_conditioned": true,
+      "n": 48,
+      "native_rejection_sampling_factor_log2": 101.31879475063596,
+      "parent_orientation_width_decimal": "51422017416287688817342786954917203280710495801049370729644032",
+      "raw_metric_access_superpolynomial": true,
+      "representation_specific_metric_oracle_ruled_out": false,
+      "retained_signal_maximum_singular_value": 5.578088954947358e-31,
+      "retained_signal_minimum_singular_value": 9.860761315262648e-32,
+      "selected_copy_count": 205,
+      "status": "canonical-final-root-raw-metric-access-superpolynomial"
+    }
+  ],
+  "status": "final-root-canonical-metric-access-sqrt-width-falsified",
+  "summary": "Derived the exact final-root metric signal from raw child analyses and compiled child polars, then proved that its inherited square-root-width normalization makes generic QSVT and black-box state conversion superpolynomial despite the constant Jacobi endpoint edge.",
+  "theorem": {
+    "binary_node_signal": "A binary branch LCU exposes T=[sqrt(A);sqrt(B)]/sqrt(w), w=2q, with T^*T=(A+B)/w.",
+    "child_polar_composition": "The compiled child polar gives Q_s^*R_s/sqrt(q)=sqrt(A_s)/sqrt(q) exactly.",
+    "exact_endpoint_polar": "polar(T)=[sqrt(A);sqrt(B)](A+B)^-1/2 and its left effect is C=(A+B)^-1/2 A (A+B)^-1/2.",
+    "native_success_probability": "On rho proportional to S, raw signal selection succeeds with Tr(S^2)/(w Tr(S)).",
+    "natural_scaling": "The natural free-MP sibling law gives success (2alpha+1+o(1))/w with alpha in [2,4] and w=Theta(n!).",
+    "physical_relevance": "The trace-weighted PGM bridge identifies the same native state weighting with physical sector-average polar mass.",
+    "qsvt_degree_lower_bound": "Bernstein's inequality forces every bounded QSVT polar polynomial of constant error to have degree Omega(sqrt(w)).",
+    "raw_child_interface": "Each q-leaf child PREPARE/SELECT interface exposes R_s/sqrt(q).",
+    "retained_signal_window": "The fixed parent trim 0.5I<=A+B<=16I becomes singular window [sqrt(0.5/w),4/sqrt(w)] for T.",
+    "scope": "A lower bound for the canonical raw-analysis/child-polar/binary-LCU/QSVT or rejection-sampling access architecture, not for arbitrary structured circuits or the PGM itself.",
+    "status": "final-root-canonical-metric-access-sqrt-width-falsified",
+    "surviving_target": "A representation-specific metric-magnitude oracle or direct matrix-POVM Naimark dilation that does not first expose the uniformly normalized raw analysis signal.",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "assumptions": [
+      "Uniform q-leaf PREPARE/SELECT child analyses R_s/sqrt(q).",
+      "Exact compiled child polar circuits Q_s.",
+      "Binary LCU stacking followed by generic QSVT polar extraction or black-box quantum rejection sampling.",
+      "The existing final-root parent trim 0.5I<=S<=16I on all but o(1) annealed native mass."
+    ],
+    "failure_modes": [
+      "A known flat endpoint can be implemented directly without querying the suppressed raw signal.",
+      "The theorem does not cover a new representation-specific oracle exposing positive metrics at constant normalization.",
+      "The theorem does not exclude direct POVM state preparation or nonlinear structure outside the black-box signal model.",
+      "Earlier nodes may have additional algebraic cancellations not present in this final-root composition."
+    ],
+    "hypothesis": "Compiled child polars convert normalized raw child-frame access into a polynomially normalized final-root metric oracle, after which the constant Jacobi bulk edge makes the matrix endpoint efficient.",
+    "normalization": "The exact binary signal is [sqrt(A);sqrt(B)]/sqrt(w) with total parent width w=2q.",
+    "speedup_claim_allowed": false,
+    "success_criterion": "A polynomial compiler required inverse-polynomial signal singular values or subpolynomial-degree polar extraction; the exact signal has Theta(w^-1/2) singular values and Omega(sqrt(w)) degree.",
+    "verdict": "falsified-for-canonical-raw-access-composition"
+  }
+}
