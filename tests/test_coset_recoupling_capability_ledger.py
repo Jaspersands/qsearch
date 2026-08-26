@@ -85,6 +85,26 @@ class RecouplingCapabilityLedgerTests(unittest.TestCase):
         self.assertFalse(q_scale_no_go.uniform_polynomial_gate_complexity_proved)
         self.assertFalse(q_scale_no_go.resolves_internal_sn_kronecker_basis)
         self.assertIn("hierarchical", q_scale_no_go.scope_limit.lower())
+        addressed_weyl = capabilities[
+            "CAP-FINAL-ROOT-ADDRESSED-WEYL-ASSEMBLY-BOUNDARY"
+        ]
+        self.assertFalse(addressed_weyl.uniform_polynomial_gate_complexity_proved)
+        self.assertFalse(addressed_weyl.supplies_hidden_involution_decoder)
+        self.assertIn("aggregate child", addressed_weyl.scope_limit.lower())
+        recursive_normalization = capabilities[
+            "CAP-RECURSIVE-POLAR-NORMALIZATION-CONSERVATION-BOUNDARY"
+        ]
+        self.assertFalse(
+            recursive_normalization.uniform_polynomial_gate_complexity_proved
+        )
+        self.assertFalse(recursive_normalization.supplies_hidden_involution_decoder)
+        self.assertIn("coefficient-only", recursive_normalization.scope_limit.lower())
+        nodelocal_naimark = capabilities[
+            "CAP-AFFINE-GPE-NODELOCAL-NAIMARK-ACCESS-BOUNDARY"
+        ]
+        self.assertFalse(nodelocal_naimark.uniform_polynomial_gate_complexity_proved)
+        self.assertFalse(nodelocal_naimark.supplies_hidden_involution_decoder)
+        self.assertIn("scalar affine", nodelocal_naimark.scope_limit.lower())
         self.assertFalse(report.claim_gate["sn_qft_is_open_bottleneck"])
         self.assertTrue(report.claim_gate["exact_holevo_copy_budget_proved"])
         self.assertFalse(report.claim_gate["holevo_copy_budget_constructs_measurement"])
@@ -186,6 +206,98 @@ class RecouplingCapabilityLedgerTests(unittest.TestCase):
         )
         self.assertFalse(
             report.claim_gate["nonlinear_hierarchical_metric_assembly_ruled_out"]
+        )
+        self.assertTrue(
+            report.claim_gate["recursive_polar_operator_factors_telescope_exactly"]
+        )
+        self.assertFalse(
+            report.claim_gate["coefficient_only_recursive_normalization_cancels"]
+        )
+        self.assertTrue(
+            report.claim_gate["recursive_normalization_squared_sum_law_proved"]
+        )
+        self.assertFalse(
+            report.claim_gate[
+                "shorted_metrics_cancel_recursive_access_normalization"
+            ]
+        )
+        self.assertTrue(
+            report.claim_gate["shorted_metric_scale_inheritance_proved"]
+        )
+        self.assertFalse(
+            report.claim_gate[
+                "independent_retained_child_trims_automatically_compose"
+            ]
+        )
+        self.assertFalse(
+            report.claim_gate[
+                "normalization_one_local_relative_isometries_compiled"
+            ]
+        )
+        self.assertTrue(
+            report.claim_gate[
+                "scalar_gpe_prepare_select_effect_criterion_proved"
+            ]
+        )
+        self.assertTrue(
+            report.claim_gate[
+                "flat_affine_gpe_child_embedding_normalization_one_proved"
+            ]
+        )
+        self.assertFalse(
+            report.claim_gate[
+                "scalar_gpe_select_compiles_matrix_component_effects"
+            ]
+        )
+        self.assertFalse(
+            report.claim_gate[
+                "support_polar_gpe_transports_determine_endpoint_metric_mixer"
+            ]
+        )
+        self.assertTrue(
+            report.claim_gate[
+                "normalization_one_nested_nodelocal_naimark_contract_proved"
+            ]
+        )
+        self.assertFalse(
+            report.claim_gate[
+                "uniform_endpoint_metric_naimark_dilation_compiled"
+            ]
+        )
+        self.assertFalse(
+            report.claim_gate[
+                "uniform_component_effect_naimark_dilation_compiled"
+            ]
+        )
+        self.assertTrue(
+            report.claim_gate[
+                "positive_component_effect_physical_formula_proved"
+            ]
+        )
+        self.assertTrue(
+            report.claim_gate[
+                "direct_component_naimark_is_restricted_polar_equivalent"
+            ]
+        )
+        self.assertTrue(
+            report.claim_gate[
+                "scalar_positive_address_extraction_alpha_sqrt_width_proved"
+            ]
+        )
+        self.assertFalse(
+            report.claim_gate[
+                "pair_local_cross_data_determine_component_positive_effect"
+            ]
+        )
+        self.assertFalse(
+            report.claim_gate[
+                "natural_small_positive_component_effect_edge_proved"
+            ]
+        )
+        self.assertFalse(
+            report.claim_gate[
+                "direct_schur_racah_component_naimark_compiled"
+            ]
         )
         self.assertTrue(
             report.claim_gate["natural_cross_orientation_overlap_density_one_proved"]

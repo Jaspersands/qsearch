@@ -15142,5 +15142,173 @@
     "run_id": "RUN-EXP-CODE-GOPPA-SCALING-FRONTIER-00470",
     "status": "natural-goppa-scaling-frontier-generated-classical-proof-debt-only",
     "summary": "Generated 13 punctured Goppa/alternant codes through length 160; exact rejections/proof-debt/cap pairs=14/0/1."
+  },
+  {
+    "artifacts": {
+      "code_self_dual_wreath_final_root_addressed_weyl_assembly_boundary": "research/EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-ADDRESSED-WEYL-ASSEMBLY-BOUNDARY.json",
+      "exp_code_self_dual_wreath_final_root_addressed_weyl_assembly_boundary": "research/EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-ADDRESSED-WEYL-ASSEMBLY-BOUNDARY.json",
+      "report": "research/EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-ADDRESSED-WEYL-ASSEMBLY-BOUNDARY.json",
+      "self_dual_wreath_final_root_addressed_weyl_assembly_boundary": "research/EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-ADDRESSED-WEYL-ASSEMBLY-BOUNDARY.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-ADDRESSED-WEYL-ASSEMBLY-BOUNDARY",
+    "falsifier_count": 5,
+    "falsifiers_triggered": [
+      "Two final child labels do not turn alpha-one leaf-pair queries into alpha-one aggregate child access.",
+      "Raw J_f^*J_e blocks and their pair polars are not the globally whitened Weyl blocks J_f^*S^(-1/2)US^(-1/2)J_e.",
+      "One coherent uniform pair query assembles G/w, not G at normalization one.",
+      "The obstruction is not the binary top node: supplied aggregate child square-root maps would close it at constant retained-window condition number.",
+      "The scoped QSVT width lower bound does not rule out hierarchical or representation-specific global polar circuits."
+    ],
+    "metrics": {
+      "addressed_control_count": 3,
+      "compiled_constant_normalization_aggregate_child_map_count": 0,
+      "compiled_endpoint_weyl_pair_count": 0,
+      "conditional_constant_cost_binary_merge_theorem_count": 1,
+      "exact_addressed_leaf_whitened_block_theorem_count": 1,
+      "exact_positive_child_weyl_four_block_theorem_count": 1,
+      "finite_control_failure_count": 0,
+      "largest_finite_width_degree_lower_bound": 7.143528539874395,
+      "minimum_conditional_binary_signal": 0.125,
+      "new_quantum_algorithm_count": 0,
+      "pair_local_global_metric_indeterminacy_theorem_count": 1,
+      "physical_pgm_circuit_count": 0,
+      "two_child_control_count": 3,
+      "uniform_address_width_qsvt_lower_bound_theorem_count": 1,
+      "width_control_count": 5
+    },
+    "recorded_at": "2026-08-26T20:57:38.350393+00:00",
+    "result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-ADDRESSED-WEYL-ASSEMBLY-BOUNDARY",
+    "run_id": "RUN-EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-ADDRESSED-WEYL-ASSEMBLY-BOUNDARY-00471",
+    "status": "final-root-addressed-weyl-requires-global-whitening-binary-merge-conditional",
+    "summary": "Rewrote the final Weyl pair in positive-child and addressed-leaf coordinates, proving that all four blocks share the missing parent inverse metric. The binary top merge is conditionally constant, but the available leaf oracle reaches it only through a sharp width-normalized global signal."
+  },
+  {
+    "artifacts": {
+      "code_self_dual_wreath_recursive_polar_normalization_conservation_boundary": "research/EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-POLAR-NORMALIZATION-CONSERVATION-BOUNDARY.json",
+      "exp_code_self_dual_wreath_recursive_polar_normalization_conservation_boundary": "research/EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-POLAR-NORMALIZATION-CONSERVATION-BOUNDARY.json",
+      "report": "research/EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-POLAR-NORMALIZATION-CONSERVATION-BOUNDARY.json",
+      "self_dual_wreath_recursive_polar_normalization_conservation_boundary": "research/EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-POLAR-NORMALIZATION-CONSERVATION-BOUNDARY.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-POLAR-NORMALIZATION-CONSERVATION-BOUNDARY",
+    "falsifier_count": 5,
+    "falsifiers_triggered": [
+      "Algebraic polar telescoping is not query-normalization cancellation.",
+      "Balanced or multiscale regrouping does not change alpha_root^2=sum_e alpha_e^2.",
+      "A normalization-one child polar leaves sqrt(S_c)/alpha_c when applied to R_c/alpha_c.",
+      "Independently well-conditioned child trims need not represent the parent-retained analysis.",
+      "Normalization-one compatible W_v oracles would close the chain in depth, so no arbitrary hierarchical no-go is established."
+    ],
+    "metrics": {
+      "child_polar_metric_scale_inheritance_theorem_count": 1,
+      "compiled_normalization_one_local_relative_isometry_count": 0,
+      "compiled_orientation_root_polar_count": 0,
+      "exact_support_aware_recursive_polar_telescoping_theorem_count": 1,
+      "finite_control_failure_count": 0,
+      "flat_passive_normalization_no_cancellation_theorem_count": 1,
+      "independent_trim_noncomposability_theorem_count": 1,
+      "largest_finite_nested_qsvt_query_lower_bound": 729,
+      "largest_finite_passive_root_normalization": 8.0,
+      "metric_scale_control_count": 3,
+      "new_quantum_algorithm_count": 0,
+      "normalization_control_count": 2,
+      "orthogonal_hierarchy_control_count": 6,
+      "physical_pgm_circuit_count": 0,
+      "sharp_l2_normalization_conservation_theorem_count": 1,
+      "support_control_count": 3
+    },
+    "recorded_at": "2026-08-26T21:18:58.555228+00:00",
+    "result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-POLAR-NORMALIZATION-CONSERVATION-BOUNDARY",
+    "run_id": "RUN-EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-POLAR-NORMALIZATION-CONSERVATION-BOUNDARY-00472",
+    "status": "recursive-polar-algebra-telescopes-normalization-conserved",
+    "summary": "Separated exact recursive polar algebra from block-encoding access normalization. The factors telescope on support, but coefficient-only assembly has the tree-invariant root scale sqrt(sum_e alpha_e^2), child polars retain that scale, and independent trims require a new compatibility interface."
+  },
+  {
+    "artifacts": {
+      "code_self_dual_wreath_affine_gpe_nodelocal_naimark_access_boundary": "research/EXP-CODE-SELF-DUAL-WREATH-AFFINE-GPE-NODELOCAL-NAIMARK-ACCESS-BOUNDARY.json",
+      "exp_code_self_dual_wreath_affine_gpe_nodelocal_naimark_access_boundary": "research/EXP-CODE-SELF-DUAL-WREATH-AFFINE-GPE-NODELOCAL-NAIMARK-ACCESS-BOUNDARY.json",
+      "report": "research/EXP-CODE-SELF-DUAL-WREATH-AFFINE-GPE-NODELOCAL-NAIMARK-ACCESS-BOUNDARY.json",
+      "self_dual_wreath_affine_gpe_nodelocal_naimark_access_boundary": "research/EXP-CODE-SELF-DUAL-WREATH-AFFINE-GPE-NODELOCAL-NAIMARK-ACCESS-BOUNDARY.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-AFFINE-GPE-NODELOCAL-NAIMARK-ACCESS-BOUNDARY",
+    "falsifier_count": 6,
+    "falsifiers_triggered": [
+      "Uniform coherent GPE transport SELECT is not an input-dependent matrix-POVM amplitude preparation.",
+      "Affine mask support does not imply scalar or uniform component effects.",
+      "Identical support, child-polar, and pair-transport oracles need not determine the endpoint metric mixer.",
+      "Matrix-valued local routers have normalization-one Naimark targets; their obstruction is access, not intrinsic outcome width.",
+      "Independently well-conditioned component trims can destroy the local POVM isometry.",
+      "The finite S6 countercontrol rejects universality but not a typical-node approximation theorem."
+    ],
+    "metrics": {
+      "compiled_all_n_gpe_partial_support_select_count": 0,
+      "compiled_recursive_orientation_polar_count": 0,
+      "compiled_uniform_component_effect_naimark_dilation_count": 0,
+      "compiled_uniform_endpoint_metric_naimark_dilation_count": 0,
+      "endpoint_control_count": 2,
+      "endpoint_scalar_prepare_proportional_metric_criterion_count": 1,
+      "finite_control_failure_count": 0,
+      "matrix_component_scalar_prepare_operator_error": 0.26105238444010315,
+      "matrix_endpoint_scalar_prepare_operator_error": 0.3203644860139346,
+      "metric_blind_endpoint_target_gap": 0.32036448601393447,
+      "metric_blind_gpe_transport_indeterminacy_theorem_count": 1,
+      "natural_affine_matrix_partial_support_countercontrol_count": 1,
+      "new_quantum_algorithm_count": 0,
+      "normalization_one_flat_affine_transport_compiler_theorem_count": 1,
+      "normalization_one_nested_naimark_contract_theorem_count": 1,
+      "parent_trim_propagation_boundary_theorem_count": 1,
+      "physical_pgm_circuit_count": 0,
+      "scalar_prepare_control_count": 2,
+      "scalar_prepare_select_effect_criterion_theorem_count": 1
+    },
+    "recorded_at": "2026-08-26T22:55:20.751964+00:00",
+    "result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-AFFINE-GPE-NODELOCAL-NAIMARK-ACCESS-BOUNDARY",
+    "run_id": "RUN-EXP-CODE-SELF-DUAL-WREATH-AFFINE-GPE-NODELOCAL-NAIMARK-ACCESS-BOUNDARY-00473",
+    "status": "affine-gpe-transports-compile-flat-fibers-matrix-naimark-dilations-open",
+    "summary": "Turned the surviving local relative-isometry route into an exact nested Naimark circuit contract. Flat affine fibers compile at normalization one, but scalar affine/GPE PREPARE-SELECT cannot realize matrix endpoint or component effects; the missing primitives are now the two positive matrix dilations, uniform partial-support SELECT, and parent trim propagation."
+  },
+  {
+    "artifacts": {
+      "code_self_dual_wreath_positive_naimark_access_equivalence_boundary": "research/EXP-CODE-SELF-DUAL-WREATH-POSITIVE-NAIMARK-ACCESS-EQUIVALENCE-BOUNDARY.json",
+      "exp_code_self_dual_wreath_positive_naimark_access_equivalence_boundary": "research/EXP-CODE-SELF-DUAL-WREATH-POSITIVE-NAIMARK-ACCESS-EQUIVALENCE-BOUNDARY.json",
+      "report": "research/EXP-CODE-SELF-DUAL-WREATH-POSITIVE-NAIMARK-ACCESS-EQUIVALENCE-BOUNDARY.json",
+      "self_dual_wreath_positive_naimark_access_equivalence_boundary": "research/EXP-CODE-SELF-DUAL-WREATH-POSITIVE-NAIMARK-ACCESS-EQUIVALENCE-BOUNDARY.json"
+    },
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "experiment_id": "EXP-CODE-SELF-DUAL-WREATH-POSITIVE-NAIMARK-ACCESS-EQUIVALENCE-BOUNDARY",
+    "falsifier_count": 3,
+    "falsifiers_triggered": [
+      "A direct component square-root POVM dilation is an independent easier primitive than the restricted orientation polar once support transports are compiled.",
+      "Exact global metric whitening makes scalar addressed component extraction normalization one.",
+      "A selected raw cross map and its pair polar determine the corresponding canonical component effect."
+    ],
+    "metrics": {
+      "compiled_positive_amplitude_interface_count": 0,
+      "component_control_count": 2,
+      "direct_naimark_restricted_polar_equivalence_theorem_count": 1,
+      "direct_schur_racah_naimark_compiler_count": 0,
+      "endpoint_positive_effect_formula_theorem_count": 1,
+      "finite_control_failure_count": 0,
+      "hierarchical_router_lower_bound_count": 0,
+      "maximum_finite_equivalence_residual": 2.198595519507088e-15,
+      "natural_scaling_record_count": 8,
+      "natural_small_positive_edge_theorem_count": 0,
+      "new_quantum_algorithm_count": 0,
+      "pair_local_component_effect_indeterminacy_theorem_count": 1,
+      "pair_local_selected_effect_operator_gap": 0.2873216088614294,
+      "physical_component_effect_formula_theorem_count": 1,
+      "physical_pgm_compiler_count": 0,
+      "scalar_address_control_count": 2,
+      "scalar_address_sqrt_width_lower_bound_theorem_count": 1,
+      "superpolynomial_flattened_scaling_record_count": 5,
+      "uncompiled_direct_or_aggregate_positive_interface_count": 3
+    },
+    "recorded_at": "2026-08-26T23:26:03.016931+00:00",
+    "result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-POSITIVE-NAIMARK-ACCESS-EQUIVALENCE-BOUNDARY",
+    "run_id": "RUN-EXP-CODE-SELF-DUAL-WREATH-POSITIVE-NAIMARK-ACCESS-EQUIVALENCE-BOUNDARY-00474",
+    "status": "positive-naimark-access-equivalence-and-width-boundary-proved",
+    "summary": "Derived the exact physical positive component and endpoint effects, proved that their direct Naimark dilations are bidirectionally equivalent to the corresponding restricted polars, and closed the scalar addressed-positive shortcut with a sharp sqrt(active-width) normalization even after granting whitening. Current GPE, addressed-pair, and Schur companion interfaces do not supply the missing aggregate positive operation; hierarchical and direct Schur/Racah routes remain open."
   }
 ]

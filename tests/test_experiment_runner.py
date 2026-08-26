@@ -12853,5 +12853,115 @@ class ExperimentRunnerTests(unittest.TestCase):
         self.assertTrue(validation["valid"], validation["issues"])
 
 
+    def test_self_dual_wreath_final_root_addressed_weyl_assembly_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-ADDRESSED-WEYL-ASSEMBLY-BOUNDARY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"][
+                "exact_positive_child_weyl_four_block_theorem_count"
+            ],
+            1,
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_recursive_polar_normalization_conservation_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-POLAR-NORMALIZATION-CONSERVATION-BOUNDARY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"][
+                "sharp_l2_normalization_conservation_theorem_count"
+            ],
+            1,
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_affine_gpe_nodelocal_naimark_access_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-AFFINE-GPE-NODELOCAL-NAIMARK-ACCESS-BOUNDARY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"][
+                "scalar_prepare_select_effect_criterion_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "normalization_one_nested_naimark_contract_theorem_count"
+            ],
+            1,
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
+    def test_self_dual_wreath_positive_naimark_access_equivalence_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-POSITIVE-NAIMARK-ACCESS-EQUIVALENCE-BOUNDARY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"][
+                "physical_component_effect_formula_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "direct_naimark_restricted_polar_equivalence_theorem_count"
+            ],
+            1,
+        )
+        self.assertFalse(record["metrics"]["compiled_positive_amplitude_interface_count"])
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
 if __name__ == "__main__":
     unittest.main()

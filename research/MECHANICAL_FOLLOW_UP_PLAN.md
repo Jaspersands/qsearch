@@ -27,6 +27,69 @@
 > obligations, and acceptance checks before handoff. Exhausting one model's
 > usage is a handoff event, not completion of the research goal.
 
+> **Final-root addressed Weyl assembly boundary completed and wired
+> (2026-08-26):**
+> `EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-ADDRESSED-WEYL-ASSEMBLY-BOUNDARY`
+> is implemented in
+> `theorems/self_dual_wreath_final_root_addressed_weyl_assembly_boundary.py`
+> with its dedicated test and representation artifact. The exact child block
+> is `sqrt(A_s)S^(-1/2)US^(-1/2)sqrt(A_t)` and the exact leaf block is
+> `J_f^*S^(-1/2)US^(-1/2)J_e`; preserve the conclusion that pair-local
+> functional calculus misses the shared parent whitening. Uniform coherent
+> assembly supplies `R/sqrt(w)` or `G/w` and the bounded-QSVT canonical route
+> costs `Omega(sqrt(w))`, while the binary top merge is conditionally easy
+> given constant-normalization aggregate child maps. Do not broaden this to
+> an arbitrary hierarchical-query lower bound. The experiment is seeded,
+> dispatched, exposed as
+> `self-dual-wreath-final-root-addressed-weyl-assembly-boundary`, and listed
+> in the README. The next mathematical task is the recursive normalization
+> recurrence recorded in `research/AGENT_HANDOFF.md`.
+
+> **Recursive polar normalization-conservation boundary completed and wired
+> (2026-08-26):**
+> `EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-POLAR-NORMALIZATION-CONSERVATION-BOUNDARY`
+> is implemented in
+> `theorems/self_dual_wreath_recursive_polar_normalization_conservation_boundary.py`
+> with its dedicated tests and representation artifact. Preserve the exact
+> separation: the Moore--Penrose relative factors telescope algebraically,
+> while coefficient-only PREPARE/SELECT normalizations obey the sharp,
+> tree-independent recurrence `alpha_v^2=sum_c alpha_c^2`; unit leaves still
+> give `alpha_root=sqrt(w)`. A normalization-one child polar retains the scale
+> as `Q_c^*(R_c/alpha_c)=sqrt(S_c)/alpha_c`. Normalized child frames also
+> retain it in shorted coordinates:
+> `Ghat_c=alpha_c^2 G_c` and `Shat_c,K=S_c,K/alpha_c^2`; shorting is not a
+> normalization cancellation. Independently chosen child trims compose only
+> when `direct_sum_c R_c(Pi_c-Pi_v)=0`; local conditioning
+> alone is insufficient. Compatible normalization-one local `W_v` oracles
+> would compile the root in tree depth, so do not broaden the result to an
+> arbitrary hierarchical-query lower bound. The experiment is seeded,
+> dispatched, exposed as
+> `self-dual-wreath-recursive-polar-normalization-conservation-boundary`, and
+> included in the recoupling capability ledger. The next theorem-level task is
+> the uniform structured `W_v` interface audit recorded in
+> `research/AGENT_HANDOFF.md`.
+
+> **Affine/GPE nodelocal Naimark access boundary completed and wired
+> (2026-08-26):**
+> `EXP-CODE-SELF-DUAL-WREATH-AFFINE-GPE-NODELOCAL-NAIMARK-ACCESS-BOUNDARY`
+> is implemented in
+> `theorems/self_dual_wreath_affine_gpe_nodelocal_naimark_access_boundary.py`
+> with a dedicated test and representation artifact. Preserve the exact
+> access criterion: scalar address PREPARE with probability `p_e` followed by
+> GPE partial-isometry SELECT `V_e` produces effect `p_e V_e^*V_e`, so it
+> equals a target component iff `H_e=p_e V_e^*V_e`. Flat scalar affine fibers
+> compile at normalization one, but matrix component effects and
+> nonproportional endpoint short metrics require input-dependent positive
+> Naimark dilations. If endpoint and component dilations are supplied, their
+> nested composition with GPE SELECT has normalization one, no postselection,
+> and additive error. The same parent retained projection must be propagated
+> through both dilations; independent well-conditioned component trims can
+> destroy the POVM sum. Do not broaden the scoped scalar-PREPARE/GPE-SELECT
+> no-go to direct matrix-POVM or Schur/Racah routers, and do not use the finite
+> S6 countercontrol as a typical-mass theorem. The next theorem-level task is
+> the natural high-dimensional component-effect access audit recorded in
+> `research/AGENT_HANDOFF.md`.
+
 > **Newest unwired final-root physical-preparation extension scope boundary
 > (2026-08-26):** mechanically wire
 > `EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PHYSICAL-PREPARATION-EXTENSION-SCOPE-BOUNDARY`
@@ -5052,6 +5115,21 @@ artifact under `research/representation/`:
       separation, algorithm, and speedup false/open. The experiment and
       negative-result writer are live; routine CLI/README dispatch remains
       mechanical.
+56. `self_dual_wreath_positive_naimark_access_equivalence_boundary.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-POSITIVE-NAIMARK-ACCESS-EQUIVALENCE-BOUNDARY`
+    - Writer: `write_positive_naimark_access_equivalence_boundary_report`
+    - Preserve the exact physical component formula
+      `H_e=A^-1/2 X^*F^+E_eF^+X A^-1/2`, the endpoint formula
+      `K_s=M^-1/2A_sM^-1/2`, and the bidirectional normalization-one gauge
+      equivalence between each direct square-root Naimark dilation and its
+      restricted polar. Preserve the sharp scalar-address extraction law
+      `alpha=sqrt(m)` even after whitening is granted, and the fixed-pair
+      countercontrol with selected-effect gap `0.2873216089`. This width
+      boundary uses no small positive effect edge. Keep a hierarchical
+      normalization-one router, compact aggregate Schur/Racah analysis,
+      direct local Naimark transform, physical PGM, decoder, classical
+      separation, algorithm, and speedup false/open. Never count an assumed
+      direct Naimark dilation as an independently compiled positive primitive.
 
 Mechanical actions:
 
@@ -5061,7 +5139,7 @@ Mechanical actions:
   parsers/handlers, clean-registry dispatch tests, and concise README command
   blocks by copying the existing hidden-involution theorem pattern.
 - Refresh `dequantize`, `proofs`, `query-models`, `frontiers`, `conjectures`,
-  `mutate`, the progress snapshot, and `validate` after wiring all fifty-five as one
+  `mutate`, the progress snapshot, and `validate` after wiring all fifty-six as one
   batch.
 - Repair the pre-existing clean-registry defect in
   `write_complete_racah_control_report`: it currently accepts
@@ -5081,7 +5159,7 @@ Mechanical actions:
   any registry update. Restore the existing neighboring writer pattern and
   preserve every current claim gate; this is registry plumbing, not research
   evidence. Run each named clean-registry test before another broad suite.
-- Run the fifty-four focused test files first, then adjacent hidden-involution
+- Run the fifty-five focused test files first, then adjacent hidden-involution
   tests, `python -m compileall -q .`, `node --check site/progress.js`,
   `git diff --check`, and `python qsearch.py validate`.
 - Make no separate commit per theorem.  Include these in the next rare coherent

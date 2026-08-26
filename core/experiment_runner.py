@@ -1150,6 +1150,18 @@ from self_dual_wreath_constant_arity_joint_freeness import write_constant_arity_
 from self_dual_wreath_final_root_common_window_metric import write_final_root_common_window_metric_report
 from self_dual_wreath_final_root_joint_aspect_sharpening import write_final_root_joint_aspect_sharpening_report
 from self_dual_wreath_final_root_relative_jacobi_transfer import write_final_root_relative_jacobi_transfer_report
+from self_dual_wreath_final_root_addressed_weyl_assembly_boundary import (
+    write_final_root_addressed_weyl_assembly_boundary_report,
+)
+from self_dual_wreath_recursive_polar_normalization_conservation_boundary import (
+    write_recursive_polar_normalization_conservation_boundary_report,
+)
+from self_dual_wreath_affine_gpe_nodelocal_naimark_access_boundary import (
+    write_affine_gpe_nodelocal_naimark_access_boundary_report,
+)
+from self_dual_wreath_positive_naimark_access_equivalence_boundary import (
+    write_positive_naimark_access_equivalence_boundary_report,
+)
 from self_dual_wreath_fixed_arity_support_sum_compiler import write_fixed_arity_support_sum_compiler_report
 from self_dual_wreath_flat_holonomy_component_no_go import write_flat_holonomy_component_no_go_report
 from self_dual_wreath_interleaved_target_margin_stability import write_target_margin_stability_report
@@ -2434,6 +2446,10 @@ def supported_experiment_ids() -> list[str]:
         | {"EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PROGRAM-CONTRACTION-NORMALIZATION-NO-GO"}
         | {"EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PURIFICATION-NAIMARK-PROGRAM-BOUNDARY"}
         | {"EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-STATE-PREPARATION-ORACLE-QUERY-BOUNDARY"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-ADDRESSED-WEYL-ASSEMBLY-BOUNDARY"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-AFFINE-GPE-NODELOCAL-NAIMARK-ACCESS-BOUNDARY"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-POSITIVE-NAIMARK-ACCESS-EQUIVALENCE-BOUNDARY"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-POLAR-NORMALIZATION-CONSERVATION-BOUNDARY"}
         | DCP_RECURSIVE_DECODER_EXPERIMENTS
         | DCP_RECURRENCE_EXPERIMENTS
         | DCP_SCHEDULE_SEARCH_EXPERIMENTS
@@ -12256,6 +12272,18 @@ def run_experiment(experiment_id: str) -> RunnerResult:
         ),
         "EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY": (
             write_linear_assembly_normalization_boundary_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-ADDRESSED-WEYL-ASSEMBLY-BOUNDARY": (
+            write_final_root_addressed_weyl_assembly_boundary_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-POLAR-NORMALIZATION-CONSERVATION-BOUNDARY": (
+            write_recursive_polar_normalization_conservation_boundary_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-AFFINE-GPE-NODELOCAL-NAIMARK-ACCESS-BOUNDARY": (
+            write_affine_gpe_nodelocal_naimark_access_boundary_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-POSITIVE-NAIMARK-ACCESS-EQUIVALENCE-BOUNDARY": (
+            write_positive_naimark_access_equivalence_boundary_report
         ),
     }
     if experiment_id in boundary_writers:

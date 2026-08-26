@@ -1,0 +1,429 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A coherent SELECT over all GPE transports automatically produces their normalized child embedding.",
+      "resolution": "Only when every target component effect equals its scalar address probability times the transport's initial support. Matrix square-root amplitudes are input dependent.",
+      "resolved": true
+    },
+    {
+      "objection": "Affine support makes every component weight uniform.",
+      "resolution": "Affine masks constrain addresses, not fiber effects. The companion globally distinct S6 affine plane has nonscalar and noncommuting component effects.",
+      "resolved": true
+    },
+    {
+      "objection": "Uniform generator SELECT is the only missing primitive.",
+      "resolution": "Even granting perfect path SELECT, the endpoint C_s and matrix component sqrt(H_e) dilations remain absent.",
+      "resolved": true
+    },
+    {
+      "objection": "The matrix-valued normal form itself incurs a square-root outcome-count normalization.",
+      "resolution": "False. The nested target is an isometry and composes at normalization one if its two positive Naimark dilations are directly available.",
+      "resolved": true
+    },
+    {
+      "objection": "Well-conditioned independent component trims are safe to reuse.",
+      "resolution": "Conditioning does not preserve the POVM sum. The same parent projection must define all compressed component effects.",
+      "resolved": true
+    },
+    {
+      "objection": "The finite S6 control proves typical natural failure.",
+      "resolution": "Its direct trivial/sign source mechanism has vanishing natural mass. It refutes universality, not an approximate typical-node compiler.",
+      "resolved": true
+    }
+  ],
+  "affine_transport_control": {
+    "active_masks": [
+      1,
+      3,
+      8,
+      10
+    ],
+    "affine_address_qubit_count": 2,
+    "block_encoding_normalization": 1.0,
+    "compiled_isometry_residual": 2.2284891834085947e-16,
+    "controlled_generator_transport_stage_count": 2,
+    "direct_to_compiled_operator_residual": 8.981892944681074e-17,
+    "exact_normalization_one_affine_transport_circuit_verified": true,
+    "fiber_dimension": 2,
+    "hadamard_layer_count": 1,
+    "orientation_label_bit_count": 4,
+    "output_address_retained": true,
+    "output_block_dimension": 3,
+    "path_workspace_uncomputed": true,
+    "postselection_required": false,
+    "status": "normalization-one-affine-hadamard-gpe-transport-circuit"
+  },
+  "claim_gate": {
+    "all_n_component_support_gpe_select_compiled": false,
+    "arbitrary_structured_local_router_lower_bound_proved": false,
+    "classical_separation_proved": false,
+    "flat_affine_gpe_transport_embedding_compiles_at_normalization_one": true,
+    "hidden_involution_decoder_proved": false,
+    "independent_component_trims_preserve_parent_povm": false,
+    "nested_naimark_requires_postselection": false,
+    "normalization_one_nested_naimark_contract_proved": true,
+    "parent_trim_propagation_compiled": false,
+    "physical_pgm_circuit_proved": false,
+    "reason": "Affine/GPE transport SELECT supplies the support partial isometries of a local router, but scalar address amplitudes realize only p_eP_e effects. General natural nodes require endpoint and component matrix-POVM Naimark dilations on a common parent-retained fiber; those remain uncompiled.",
+    "recursive_orientation_polar_compiled": false,
+    "scalar_endpoint_prepare_compiles_nonproportional_short_metrics": false,
+    "scalar_prepare_select_compiles_matrix_component_povm": false,
+    "scalar_prepare_select_effect_criterion_proved": true,
+    "speedup_claim_allowed": false,
+    "support_polar_gpe_transport_oracles_determine_endpoint_mixer": false,
+    "typical_natural_matrix_partial_support_obstruction_proved": false,
+    "uniform_component_effect_naimark_dilation_compiled": false,
+    "uniform_endpoint_metric_naimark_dilation_compiled": false,
+    "universal_scalar_affine_natural_node_compiler_falsified": true
+  },
+  "created_at": "2026-08-26T22:57:33.033021+00:00",
+  "endpoint_controls": [
+    {
+      "best_scalar_effect_residual": 2.220446049250313e-16,
+      "best_scalar_left_probability": 0.5000000000000001,
+      "control_id": "EQUAL-METRIC-HADAMARD",
+      "endpoint_column_isometry_residual": 2.220446049250313e-16,
+      "endpoint_effect_maximum_eigenvalue": 0.5000000000000001,
+      "endpoint_effect_minimum_eigenvalue": 0.5000000000000001,
+      "exact_endpoint_scalar_criterion_verified": true,
+      "fiber_dimension": 2,
+      "metric_commutator_norm": 0.0,
+      "metric_proportionality_residual": 0.0,
+      "proportional_metrics": true,
+      "scalar_endpoint_prepare_compiles_target": true,
+      "status": "proportional-metrics-scalar-endpoint-prepare",
+      "target_to_best_scalar_endpoint_operator_error": 1.1102230246251565e-16
+    },
+    {
+      "best_scalar_effect_residual": 0.30000000000000004,
+      "best_scalar_left_probability": 0.49999999999999994,
+      "control_id": "ANISOTROPIC-MATRIX-ENDPOINT",
+      "endpoint_column_isometry_residual": 1.1102230246251565e-16,
+      "endpoint_effect_maximum_eigenvalue": 0.7999999999999999,
+      "endpoint_effect_minimum_eigenvalue": 0.19999999999999998,
+      "exact_endpoint_scalar_criterion_verified": true,
+      "fiber_dimension": 2,
+      "metric_commutator_norm": 0.0,
+      "metric_proportionality_residual": 1.875,
+      "proportional_metrics": false,
+      "scalar_endpoint_prepare_compiles_target": false,
+      "status": "matrix-endpoint-requires-positive-metric-dilation",
+      "target_to_best_scalar_endpoint_operator_error": 0.3203644860139346
+    }
+  ],
+  "falsifiers_triggered": [
+    "Uniform coherent GPE transport SELECT is not an input-dependent matrix-POVM amplitude preparation.",
+    "Affine mask support does not imply scalar or uniform component effects.",
+    "Identical support, child-polar, and pair-transport oracles need not determine the endpoint metric mixer.",
+    "Matrix-valued local routers have normalization-one Naimark targets; their obstruction is access, not intrinsic outcome width.",
+    "Independently well-conditioned component trims can destroy the local POVM isometry.",
+    "The finite S6 countercontrol rejects universality but not a typical-node approximation theorem."
+  ],
+  "headline_metrics": {
+    "compiled_all_n_gpe_partial_support_select_count": 0,
+    "compiled_recursive_orientation_polar_count": 0,
+    "compiled_uniform_component_effect_naimark_dilation_count": 0,
+    "compiled_uniform_endpoint_metric_naimark_dilation_count": 0,
+    "endpoint_control_count": 2,
+    "endpoint_scalar_prepare_proportional_metric_criterion_count": 1,
+    "finite_control_failure_count": 0,
+    "matrix_component_scalar_prepare_operator_error": 0.26105238444010315,
+    "matrix_endpoint_scalar_prepare_operator_error": 0.3203644860139346,
+    "metric_blind_endpoint_target_gap": 0.32036448601393447,
+    "metric_blind_gpe_transport_indeterminacy_theorem_count": 1,
+    "natural_affine_matrix_partial_support_countercontrol_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "normalization_one_flat_affine_transport_compiler_theorem_count": 1,
+    "normalization_one_nested_naimark_contract_theorem_count": 1,
+    "parent_trim_propagation_boundary_theorem_count": 1,
+    "physical_pgm_circuit_count": 0,
+    "scalar_prepare_control_count": 2,
+    "scalar_prepare_select_effect_criterion_theorem_count": 1
+  },
+  "metric_blind_control": {
+    "common_transport_only_worst_instance_error_lower_bound": 0.16018224300696723,
+    "endpoint_target_operator_gap": 0.32036448601393447,
+    "exact_metric_blind_indeterminacy_verified": true,
+    "fiber_dimension": 2,
+    "first_left_metric_spectrum": [
+      1.0,
+      1.0
+    ],
+    "first_right_metric_spectrum": [
+      1.0,
+      1.0
+    ],
+    "maximum_child_polar_residual": 0.0,
+    "maximum_child_support_projector_residual": 0.0,
+    "maximum_pair_transport_residual": 0.0,
+    "second_left_metric_spectrum": [
+      1.0,
+      4.0
+    ],
+    "second_right_metric_spectrum": [
+      1.0,
+      4.0
+    ],
+    "status": "identical-gpe-transport-oracles-distinct-metric-naimark-targets",
+    "support_polar_transport_oracles_determine_endpoint_mixer": false
+  },
+  "natural_matrix_support_control": {
+    "active_support_is_affine": true,
+    "control_id": "W6-COLLISION-FREE-NONCOMMUTING-PARTIAL-SUPPORT",
+    "direct_finite_source_mechanism_has_positive_asymptotic_native_mass": false,
+    "globally_distinct_sources": true,
+    "matrix_partial_support_required": true,
+    "maximum_component_full_fiber_scalar_residual": 0.7352941176470593,
+    "maximum_cross_child_effect_commutator_norm": 0.0028089887640464074,
+    "n": 6,
+    "scalar_flat_affine_child_embedding_certificate": false,
+    "status": "natural-affine-node-requires-matrix-component-naimark",
+    "universal_scalar_affine_natural_node_compiler_falsified": true
+  },
+  "nested_naimark_control": {
+    "block_encoding_normalization": 1.0,
+    "component_dilation_call_count": 1,
+    "component_effect_dilation_supplied_by_current_gpe_transport_interface": false,
+    "control_id": "NONCOMMUTING-ENDPOINT-AND-MATRIX-COMPONENT-POVM",
+    "controlled_gpe_partial_isometry_select_count": 1,
+    "direct_relation_isometry_residual": 2.373446732708545e-16,
+    "endpoint_dilation_call_count": 1,
+    "endpoint_effect_sum_residual": 3.191891195797325e-16,
+    "endpoint_metric_dilation_supplied_by_current_gpe_transport_interface": false,
+    "error_recurrence": "epsilon_node <= epsilon_endpoint + epsilon_component + epsilon_transport + epsilon_uncompute",
+    "exact_normalization_one_nested_naimark_contract_verified": true,
+    "fiber_dimension": 2,
+    "left_component_count": 3,
+    "maximum_child_effect_sum_residual": 5.820500400676482e-16,
+    "nested_naimark_to_direct_relation_residual": 1.7122765585336976e-16,
+    "output_label_register_count": 2,
+    "path_uncompute_call_count": 1,
+    "postselection_required": false,
+    "right_component_count": 2,
+    "status": "exact-normalization-one-nested-naimark-gpe-select-contract",
+    "workspace_recurrence": "workspace_node <= workspace_endpoint + workspace_component + workspace_transport + O(K)"
+  },
+  "proof_obligations": [
+    {
+      "evidence": "Equations (1)--(4) split the node into endpoint and component positive dilations, controlled GPE partial-isometry SELECT, retained output labels, and path uncompute; the composed normalization is one and errors add.",
+      "obligation": "write_exact_prepare_select_uncompute_contract_for_one_local_router",
+      "resolved": true
+    },
+    {
+      "evidence": "Affine Hadamards create orthogonal address branches and generator transports are isometries, giving exact normalization one without postselection or square-root width amplification.",
+      "obligation": "decide_flat_affine_transport_normalization",
+      "resolved": true
+    },
+    {
+      "evidence": "The selected block effect is necessarily p_eP_e. A symmetric two-outcome matrix POVM has effects diag(1/4,3/4) and diag(3/4,1/4), producing a constant operator error from the best scalar preparation.",
+      "obligation": "decide_scalar_prepare_select_for_matrix_component_effects",
+      "resolved": true
+    },
+    {
+      "evidence": "Two full-support controls have identical identity child polars and pair transports but constant-separated Hadamard and anisotropic endpoint Naimark maps.",
+      "obligation": "decide_whether_gpe_transport_oracles_determine_endpoint_mixer",
+      "resolved": true
+    },
+    {
+      "evidence": "Independent threshold trims turn two effects summing to I into two perfectly conditioned rank-one effects summing to 0.6I; the resulting dilation is not isometric.",
+      "obligation": "propagate_parent_retained_projection_through_local_router",
+      "resolved": true
+    },
+    {
+      "evidence": "Current GPE transport access supplies support partial isometries, not the matrix square-root amplitudes C_s.",
+      "obligation": "compile_uniform_all_n_endpoint_metric_naimark_dilation",
+      "resolved": false
+    },
+    {
+      "evidence": "The natural S6 countercontrol already requires matrix partial supports; no compact all-n effect algebra or direct Naimark transform is known.",
+      "obligation": "compile_uniform_all_n_component_effect_naimark_dilation",
+      "resolved": false
+    },
+    {
+      "evidence": "The finite S6 source mechanism is negligible; no theorem transfers its matrix effect pattern to typical high-dimensional sources.",
+      "obligation": "prove_positive_typical_native_mass_or_negligibility_of_matrix_partial_support_nodes",
+      "resolved": false
+    }
+  ],
+  "scalar_prepare_controls": [
+    {
+      "control_id": "FLAT-FULL-FIBER-TWO-OUTCOME",
+      "every_effect_scalar_on_its_support_with_selected_probability": true,
+      "exact_scalar_prepare_select_criterion_verified": true,
+      "fiber_dimension": 2,
+      "maximum_scalar_on_support_effect_residual": 1.1102230246251565e-16,
+      "outcome_count": 2,
+      "outcome_support_ranks": [
+        2,
+        2
+      ],
+      "scalar_prepare_probabilities": [
+        0.5,
+        0.5
+      ],
+      "scalar_prepare_select_compiles_target": true,
+      "scalar_prepare_select_isometry_residual": 2.220446049250313e-16,
+      "status": "exact-scalar-prepare-select-child-embedding",
+      "target_component_effect_sum_residual": 2.220446049250313e-16,
+      "target_embedding_isometry_residual": 2.220446049250313e-16,
+      "target_to_scalar_prepare_select_operator_error": 1.5700924586837752e-16
+    },
+    {
+      "control_id": "MATRIX-FULL-FIBER-TWO-OUTCOME",
+      "every_effect_scalar_on_its_support_with_selected_probability": false,
+      "exact_scalar_prepare_select_criterion_verified": true,
+      "fiber_dimension": 2,
+      "maximum_scalar_on_support_effect_residual": 0.25,
+      "outcome_count": 2,
+      "outcome_support_ranks": [
+        2,
+        2
+      ],
+      "scalar_prepare_probabilities": [
+        0.5,
+        0.5
+      ],
+      "scalar_prepare_select_compiles_target": false,
+      "scalar_prepare_select_isometry_residual": 2.220446049250313e-16,
+      "status": "matrix-effect-requires-input-dependent-naimark-amplitudes",
+      "target_component_effect_sum_residual": 1.1102230246251565e-16,
+      "target_embedding_isometry_residual": 1.1102230246251565e-16,
+      "target_to_scalar_prepare_select_operator_error": 0.26105238444010315
+    }
+  ],
+  "scaling_records": [
+    {
+      "all_n_compact_component_effect_description_proved": false,
+      "all_n_component_support_gpe_select_proved": false,
+      "conditional_nested_dilation_normalization": 1.0,
+      "conditional_transport_gate_complexity": "O(K poly(n)) given uniform generator transports",
+      "group_order_decimal": "40320",
+      "maximum_affine_transport_stages": 18,
+      "maximum_orientation_address_qubits": 18,
+      "n": 8,
+      "parent_trim_propagation_compiled": false,
+      "polynomial_uniform_component_effect_dilation_proved": false,
+      "polynomial_uniform_endpoint_metric_dilation_proved": false,
+      "recursive_orientation_polar_compiled": false,
+      "selected_copy_count": 18,
+      "status": "natural-nodelocal-matrix-naimark-interface-open"
+    },
+    {
+      "all_n_compact_component_effect_description_proved": false,
+      "all_n_component_support_gpe_select_proved": false,
+      "conditional_nested_dilation_normalization": 1.0,
+      "conditional_transport_gate_complexity": "O(K poly(n)) given uniform generator transports",
+      "group_order_decimal": "20922789888000",
+      "maximum_affine_transport_stages": 47,
+      "maximum_orientation_address_qubits": 47,
+      "n": 16,
+      "parent_trim_propagation_compiled": false,
+      "polynomial_uniform_component_effect_dilation_proved": false,
+      "polynomial_uniform_endpoint_metric_dilation_proved": false,
+      "recursive_orientation_polar_compiled": false,
+      "selected_copy_count": 47,
+      "status": "natural-nodelocal-matrix-naimark-interface-open"
+    },
+    {
+      "all_n_compact_component_effect_description_proved": false,
+      "all_n_component_support_gpe_select_proved": false,
+      "conditional_nested_dilation_normalization": 1.0,
+      "conditional_transport_gate_complexity": "O(K poly(n)) given uniform generator transports",
+      "group_order_decimal": "620448401733239439360000",
+      "maximum_affine_transport_stages": 82,
+      "maximum_orientation_address_qubits": 82,
+      "n": 24,
+      "parent_trim_propagation_compiled": false,
+      "polynomial_uniform_component_effect_dilation_proved": false,
+      "polynomial_uniform_endpoint_metric_dilation_proved": false,
+      "recursive_orientation_polar_compiled": false,
+      "selected_copy_count": 82,
+      "status": "natural-nodelocal-matrix-naimark-interface-open"
+    },
+    {
+      "all_n_compact_component_effect_description_proved": false,
+      "all_n_component_support_gpe_select_proved": false,
+      "conditional_nested_dilation_normalization": 1.0,
+      "conditional_transport_gate_complexity": "O(K poly(n)) given uniform generator transports",
+      "group_order_decimal": "263130836933693530167218012160000000",
+      "maximum_affine_transport_stages": 120,
+      "maximum_orientation_address_qubits": 120,
+      "n": 32,
+      "parent_trim_propagation_compiled": false,
+      "polynomial_uniform_component_effect_dilation_proved": false,
+      "polynomial_uniform_endpoint_metric_dilation_proved": false,
+      "recursive_orientation_polar_compiled": false,
+      "selected_copy_count": 120,
+      "status": "natural-nodelocal-matrix-naimark-interface-open"
+    },
+    {
+      "all_n_compact_component_effect_description_proved": false,
+      "all_n_component_support_gpe_select_proved": false,
+      "conditional_nested_dilation_normalization": 1.0,
+      "conditional_transport_gate_complexity": "O(K poly(n)) given uniform generator transports",
+      "group_order_decimal": "815915283247897734345611269596115894272000000000",
+      "maximum_affine_transport_stages": 162,
+      "maximum_orientation_address_qubits": 162,
+      "n": 40,
+      "parent_trim_propagation_compiled": false,
+      "polynomial_uniform_component_effect_dilation_proved": false,
+      "polynomial_uniform_endpoint_metric_dilation_proved": false,
+      "recursive_orientation_polar_compiled": false,
+      "selected_copy_count": 162,
+      "status": "natural-nodelocal-matrix-naimark-interface-open"
+    },
+    {
+      "all_n_compact_component_effect_description_proved": false,
+      "all_n_component_support_gpe_select_proved": false,
+      "conditional_nested_dilation_normalization": 1.0,
+      "conditional_transport_gate_complexity": "O(K poly(n)) given uniform generator transports",
+      "group_order_decimal": "12413915592536072670862289047373375038521486354677760000000000",
+      "maximum_affine_transport_stages": 205,
+      "maximum_orientation_address_qubits": 205,
+      "n": 48,
+      "parent_trim_propagation_compiled": false,
+      "polynomial_uniform_component_effect_dilation_proved": false,
+      "polynomial_uniform_endpoint_metric_dilation_proved": false,
+      "recursive_orientation_polar_compiled": false,
+      "selected_copy_count": 205,
+      "status": "natural-nodelocal-matrix-naimark-interface-open"
+    }
+  ],
+  "status": "affine-gpe-transports-compile-flat-fibers-matrix-naimark-dilations-open",
+  "summary": "Turned the surviving local relative-isometry route into an exact nested Naimark circuit contract. Flat affine fibers compile at normalization one, but scalar affine/GPE PREPARE-SELECT cannot realize matrix endpoint or component effects; the missing primitives are now the two positive matrix dilations, uniform partial-support SELECT, and parent trim propagation.",
+  "theorem": {
+    "affine_positive_case": "For flat full-fiber affine effects H_e=I/|A|, affine Hadamards and coherent generator transports implement the child embedding at normalization one in dim(A) stages.",
+    "endpoint_scalar_criterion": "Scalar binary preparation compiles the endpoint iff C_L^*C_L=pI, equivalently the two short metrics are proportional on the retained fiber.",
+    "metric_blind_indeterminacy": "Identity support, child-polar, and pair-transport oracles are compatible with both a Hadamard endpoint and a constant-separated matrix endpoint; those oracles do not determine the positive mixer.",
+    "natural_countercontrol": "A globally source-distinct S6 affine node has matrix partial-support effects, falsifying the universal scalar affine compiler even though this finite source mechanism has negligible asymptotic mass.",
+    "nested_naimark_contract": "Endpoint metric dilation, conditional component-effect dilation, GPE partial-isometry SELECT, and path uncompute compose at normalization one with additive error and no postselection.",
+    "recursive_normal_form": "Every local relation is [W_L C_L;-W_R C_R] with W_s=direct_sum_e V_(s,e)sqrt(H_(s,e)).",
+    "scalar_prepare_select_criterion": "Scalar PREPARE probabilities p_e followed by partial-isometry SELECT V_e compile W_s iff H_e=p_e V_e^*V_e for every component.",
+    "scope": "The no-go covers scalar address PREPARE plus support/polar/GPE transport SELECT. It does not rule out input-dependent matrix dilations, direct Schur/Racah routers, or typical-node approximation.",
+    "status": "affine-gpe-transports-compile-flat-fibers-matrix-naimark-dilations-open",
+    "surviving_interface": "Construct compact all-n endpoint and component matrix-POVM Naimark dilations, plus uniform GPE support SELECT, on the parent-propagated retained fiber.",
+    "theorem_verified": true,
+    "trim_contract": "The parent retained projection must be propagated through both positive dilations; independent component trims can destroy the POVM sum despite perfect retained conditioning."
+  },
+  "theorem_contract": {
+    "claim_boundary": "No arbitrary local-router lower bound, typical natural obstruction, physical PGM, decoder, classical separation, or speedup is proved.",
+    "exact_positive_boundary": "The claim is true for flat scalar component effects and proportional endpoint metrics; the affine transport circuit has normalization one and logarithmic transport depth.",
+    "hypothesis": "A uniform scalar affine address PREPARE and coherent GPE pair-transport SELECT suffice to implement every compatible local relative isometry W_v at normalization one.",
+    "negative_boundary": "The claim is false for matrix component effects or a matrix endpoint mixer. Scalar SELECT produces only effects p_eP_e and metric-blind GPE transports do not determine the missing positive amplitudes.",
+    "surviving_circuit_contract": "Supply normalization-one endpoint and component effect Naimark dilations on a common parent-retained fiber, then apply controlled GPE partial isometries and uncompute paths."
+  },
+  "trim_control": {
+    "common_parent_projection_effect_sum_residual": 0.0,
+    "component_count": 2,
+    "exact_parent_trim_propagation_boundary_verified": true,
+    "fiber_dimension": 2,
+    "independent_component_trims_preserve_parent_povm": false,
+    "independently_retained_components_well_conditioned": true,
+    "independently_trimmed_dilation_isometry_residual": 0.3999999999999999,
+    "independently_trimmed_effect_sum_residual": 0.4,
+    "minimum_independently_retained_effect_eigenvalue": 0.6,
+    "status": "parent-projection-must-propagate-through-component-naimark",
+    "trim_threshold": 0.5,
+    "untrimmed_effect_sum_residual": 0.0
+  }
+}

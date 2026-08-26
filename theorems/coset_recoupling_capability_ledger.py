@@ -45,6 +45,18 @@ from self_dual_wreath_addressed_cross_map_linear_assembly_normalization_boundary
 from self_dual_wreath_natural_q_scale_spectral_window_no_go import (
     run_natural_q_scale_spectral_window_no_go,
 )
+from self_dual_wreath_final_root_addressed_weyl_assembly_boundary import (
+    run_final_root_addressed_weyl_assembly_boundary,
+)
+from self_dual_wreath_recursive_polar_normalization_conservation_boundary import (
+    run_recursive_polar_normalization_conservation_boundary,
+)
+from self_dual_wreath_affine_gpe_nodelocal_naimark_access_boundary import (
+    run_affine_gpe_nodelocal_naimark_access_boundary,
+)
+from self_dual_wreath_positive_naimark_access_equivalence_boundary import (
+    run_positive_naimark_access_equivalence_boundary,
+)
 from symmetric_character import kronecker_coefficient
 
 
@@ -321,6 +333,100 @@ CAPABILITIES = (
             "assembly. An absolute inverse-polynomial cutoff on S appears at inverse-factorial scale in G/q. "
             "Hierarchical recursive shorted metrics, nonlinear multi-query transforms, direct representation-specific global "
             "polars, pair-GPE transport, physical PGM implementation, and decoding remain open."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-FINAL-ROOT-ADDRESSED-WEYL-ASSEMBLY-BOUNDARY",
+        literature_ids=[
+            "gilyen-su-low-wiebe-qsvt-2018",
+            "bacon-chuang-harrow-schur-2004",
+        ],
+        primitive=(
+            "Positive-child and addressed-leaf factorization of the final endpoint Weyl pair"
+        ),
+        proved_scope=(
+            "For child metrics A_s and S=A_0+A_1, every positive-coordinate Weyl block is "
+            "sqrt(A_s)S^(-1/2)US^(-1/2)sqrt(A_t), and every leaf block is "
+            "J_f^*S^(-1/2)US^(-1/2)J_e. Uniform coherent leaf assembly exposes R/sqrt(w) or G/w, "
+            "so bounded QSVT inherits an Omega(sqrt(w)) polar degree. Given constant-normalization "
+            "aggregate sqrt(A_s) maps, the binary top merge is width independent."
+        ),
+        availability="proved-global-whitening-boundary-aggregate-child-access-open",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "The factorization and finite controls are classically checkable. The QSVT statement is a scoped "
+            "quantum-access obstruction, not a quantum/classical separation."
+        ),
+        scope_limit=(
+            "Pair-local functional calculus and canonical uniform linear assembly do not compile the shared parent "
+            "whitening. Hierarchical normalization cancellation, constant-normalization aggregate child access, "
+            "direct representation-specific global polars, the physical PGM, and decoding remain open."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-RECURSIVE-POLAR-NORMALIZATION-CONSERVATION-BOUNDARY",
+        literature_ids=[
+            "gilyen-su-low-wiebe-qsvt-2018",
+            "bacon-chuang-harrow-schur-2004",
+        ],
+        primitive=(
+            "Support-aware recursive polar factorization with explicit block-encoding normalization recurrence"
+        ),
+        proved_scope=(
+            "The relative polar factors W_v=[sqrt(S_c)]_c S_v^(-1/2) telescope exactly on Moore--Penrose "
+            "supports. Coefficient-only controlled stacking separately obeys the sharp law "
+            "alpha_v^2=sum_c alpha_c^2, so regrouping unit leaves retains alpha_root=sqrt(w). Child polars "
+            "inherit rather than erase that scale; compressed inverse shorted metrics gain alpha_c^2 while direct "
+            "shorted operators lose alpha_c^2. Independently trimmed children require the exact common-parent "
+            "compatibility condition direct_sum_c R_c(Pi_c-Pi_v)=0."
+        ),
+        availability="proved-normalization-conservation-local-relative-isometry-access-open",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "The identities and finite controls are classically checkable. They separate algebraic factorization from "
+            "quantum access normalization and establish no quantum/classical separation."
+        ),
+        scope_limit=(
+            "The no-cancellation result applies to coefficient-only recursive assembly and literal nested local QSVT. "
+            "Normalization-one compatible W_v oracles would compile in tree depth; structured affine GPE/Schur routers, "
+            "the physical PGM, and decoding remain open."
+        ),
+    ),
+    RepresentationCapability(
+        id="CAP-AFFINE-GPE-NODELOCAL-NAIMARK-ACCESS-BOUNDARY",
+        literature_ids=[
+            "bacon-chuang-harrow-schur-2004",
+            "gilyen-su-low-wiebe-qsvt-2018",
+        ],
+        primitive=(
+            "Exact nested endpoint/component Naimark contract for one recursive affine/GPE local router"
+        ),
+        proved_scope=(
+            "A scalar address PREPARE with probability p_e followed by GPE support-partial-isometry SELECT V_e "
+            "has component effect p_e V_e^*V_e, so it realizes the target child component iff "
+            "H_e=p_e V_e^*V_e. Flat affine fibers compile at normalization one, but matrix component effects and "
+            "nonproportional endpoint short metrics require input-dependent positive Naimark dilations. Supplied endpoint "
+            "and component dilations compose with GPE SELECT at normalization one and additive error."
+        ),
+        availability="proved-scalar-gpe-select-boundary-matrix-naimark-dilations-open",
+        uniform_polynomial_gate_complexity_proved=False,
+        resolves_internal_sn_kronecker_basis=False,
+        handles_overlapping_k_copy_associators=False,
+        supplies_hidden_involution_decoder=False,
+        classical_comparison=(
+            "The effect criterion and finite matrix controls are classically checkable. They specify a quantum access "
+            "interface but prove no quantum/classical separation."
+        ),
+        scope_limit=(
+            "The negative result covers scalar affine PREPARE plus support/polar/GPE transport SELECT. It does not rule "
+            "out compact representation-specific matrix-POVM dilations, direct Schur/Racah routers, or a typical-node "
+            "approximation after a proved negligible trim."
         ),
     ),
     RepresentationCapability(
@@ -700,6 +806,18 @@ def build_recoupling_capability_report(
     q_scale_window_metrics = (
         run_natural_q_scale_spectral_window_no_go().headline_metrics
     )
+    addressed_weyl_metrics = (
+        run_final_root_addressed_weyl_assembly_boundary().headline_metrics
+    )
+    recursive_normalization_metrics = (
+        run_recursive_polar_normalization_conservation_boundary().headline_metrics
+    )
+    nodelocal_naimark_metrics = (
+        run_affine_gpe_nodelocal_naimark_access_boundary().headline_metrics
+    )
+    positive_naimark_access_metrics = (
+        run_positive_naimark_access_equivalence_boundary().headline_metrics
+    )
     unresolved = [
         capability
         for capability in CAPABILITIES
@@ -1027,6 +1145,100 @@ def build_recoupling_capability_report(
             )
             or 0
         ),
+        "final_root_addressed_weyl_global_whitening_boundary_count": int(
+            addressed_weyl_metrics.get(
+                "exact_addressed_leaf_whitened_block_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "final_root_constant_normalization_aggregate_child_compiler_count": int(
+            addressed_weyl_metrics.get(
+                "compiled_constant_normalization_aggregate_child_map_count",
+                0,
+            )
+            or 0
+        ),
+        "recursive_polar_normalization_conservation_theorem_count": int(
+            recursive_normalization_metrics.get(
+                "sharp_l2_normalization_conservation_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "recursive_polar_trim_compatibility_boundary_count": int(
+            recursive_normalization_metrics.get(
+                "independent_trim_noncomposability_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "positive_component_effect_physical_formula_theorem_count": int(
+            positive_naimark_access_metrics.get(
+                "physical_component_effect_formula_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "direct_component_naimark_restricted_polar_equivalence_count": int(
+            positive_naimark_access_metrics.get(
+                "direct_naimark_restricted_polar_equivalence_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "positive_scalar_address_sqrt_width_boundary_count": int(
+            positive_naimark_access_metrics.get(
+                "scalar_address_sqrt_width_lower_bound_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "compiled_positive_component_naimark_interface_count": int(
+            positive_naimark_access_metrics.get(
+                "compiled_positive_amplitude_interface_count",
+                0,
+            )
+            or 0
+        ),
+        "recursive_shorted_metric_scale_inheritance_theorem_count": int(
+            recursive_normalization_metrics.get(
+                "shorted_metric_scale_inheritance_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "normalization_one_local_relative_isometry_compiler_count": int(
+            recursive_normalization_metrics.get(
+                "compiled_normalization_one_local_relative_isometry_count",
+                0,
+            )
+            or 0
+        ),
+        "scalar_gpe_prepare_select_effect_boundary_theorem_count": int(
+            nodelocal_naimark_metrics.get(
+                "scalar_prepare_select_effect_criterion_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "normalization_one_nested_nodelocal_naimark_contract_count": int(
+            nodelocal_naimark_metrics.get(
+                "normalization_one_nested_naimark_contract_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "uniform_nodelocal_matrix_naimark_dilation_compiler_count": int(
+            nodelocal_naimark_metrics.get(
+                "compiled_uniform_endpoint_metric_naimark_dilation_count",
+                0,
+            )
+            + nodelocal_naimark_metrics.get(
+                "compiled_uniform_component_effect_naimark_dilation_count",
+                0,
+            )
+        ),
         "growth_record_count": len(growth),
         "maximum_n": max(n_values),
         "maximum_partition_count": max(record.partition_count for record in growth),
@@ -1283,6 +1495,85 @@ def build_recoupling_capability_report(
                 )
             ),
             "nonlinear_hierarchical_metric_assembly_ruled_out": False,
+            "final_root_addressed_weyl_blocks_require_shared_parent_whitening": bool(
+                addressed_weyl_metrics.get(
+                    "exact_addressed_leaf_whitened_block_theorem_count",
+                    0,
+                )
+            ),
+            "final_root_pair_local_functional_calculus_suffices": False,
+            "final_root_binary_merge_width_independent_given_aggregate_access": bool(
+                addressed_weyl_metrics.get(
+                    "conditional_constant_cost_binary_merge_theorem_count",
+                    0,
+                )
+            ),
+            "final_root_constant_normalization_aggregate_child_access_compiled": False,
+            "recursive_polar_operator_factors_telescope_exactly": bool(
+                recursive_normalization_metrics.get(
+                    "exact_support_aware_recursive_polar_telescoping_theorem_count",
+                    0,
+                )
+            ),
+            "coefficient_only_recursive_normalization_cancels": False,
+            "recursive_normalization_squared_sum_law_proved": bool(
+                recursive_normalization_metrics.get(
+                    "sharp_l2_normalization_conservation_theorem_count",
+                    0,
+                )
+            ),
+            "shorted_metrics_cancel_recursive_access_normalization": False,
+            "shorted_metric_scale_inheritance_proved": bool(
+                recursive_normalization_metrics.get(
+                    "shorted_metric_scale_inheritance_theorem_count",
+                    0,
+                )
+            ),
+            "independent_retained_child_trims_automatically_compose": False,
+            "normalization_one_local_relative_isometries_compiled": False,
+            "scalar_gpe_prepare_select_effect_criterion_proved": bool(
+                nodelocal_naimark_metrics.get(
+                    "scalar_prepare_select_effect_criterion_theorem_count",
+                    0,
+                )
+            ),
+            "flat_affine_gpe_child_embedding_normalization_one_proved": bool(
+                nodelocal_naimark_metrics.get(
+                    "normalization_one_flat_affine_transport_compiler_theorem_count",
+                    0,
+                )
+            ),
+            "scalar_gpe_select_compiles_matrix_component_effects": False,
+            "support_polar_gpe_transports_determine_endpoint_metric_mixer": False,
+            "normalization_one_nested_nodelocal_naimark_contract_proved": bool(
+                nodelocal_naimark_metrics.get(
+                    "normalization_one_nested_naimark_contract_theorem_count",
+                    0,
+                )
+            ),
+            "uniform_endpoint_metric_naimark_dilation_compiled": False,
+            "uniform_component_effect_naimark_dilation_compiled": False,
+            "positive_component_effect_physical_formula_proved": bool(
+                positive_naimark_access_metrics.get(
+                    "physical_component_effect_formula_theorem_count",
+                    0,
+                )
+            ),
+            "direct_component_naimark_is_restricted_polar_equivalent": bool(
+                positive_naimark_access_metrics.get(
+                    "direct_naimark_restricted_polar_equivalence_theorem_count",
+                    0,
+                )
+            ),
+            "scalar_positive_address_extraction_alpha_sqrt_width_proved": bool(
+                positive_naimark_access_metrics.get(
+                    "scalar_address_sqrt_width_lower_bound_theorem_count",
+                    0,
+                )
+            ),
+            "pair_local_cross_data_determine_component_positive_effect": False,
+            "natural_small_positive_component_effect_edge_proved": False,
+            "direct_schur_racah_component_naimark_compiled": False,
             "natural_cross_orientation_overlap_density_one_proved": True,
             "schur_branch_encoding_removes_orientation_inverse_square_root": False,
             "schur_branch_structured_direct_polar_compiled": False,

@@ -285,6 +285,10 @@ from self_dual_wreath_final_root_physical_preparation_extension_scope_boundary i
 from self_dual_wreath_final_root_program_contraction_normalization_no_go import write_final_root_program_contraction_normalization_no_go_report
 from self_dual_wreath_final_root_purification_naimark_program_boundary import write_final_root_purification_naimark_program_boundary_report
 from self_dual_wreath_final_root_state_preparation_oracle_query_boundary import write_final_root_state_preparation_oracle_query_boundary_report
+from self_dual_wreath_final_root_addressed_weyl_assembly_boundary import write_final_root_addressed_weyl_assembly_boundary_report
+from self_dual_wreath_recursive_polar_normalization_conservation_boundary import write_recursive_polar_normalization_conservation_boundary_report
+from self_dual_wreath_affine_gpe_nodelocal_naimark_access_boundary import write_affine_gpe_nodelocal_naimark_access_boundary_report
+from self_dual_wreath_positive_naimark_access_equivalence_boundary import write_positive_naimark_access_equivalence_boundary_report
 import argparse
 import json
 from collections import Counter
@@ -2127,6 +2131,84 @@ def command_sdw_final_root_state_preparation_oracle_query_boundary(args: argpars
     metrics = payload.get("headline_metrics", {})
     print("self_dual_wreath_final_root_state_preparation_oracle_query_boundary complete")
     print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_final_root_addressed_weyl_assembly_boundary(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_final_root_addressed_weyl_assembly_boundary_report(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    print("self_dual_wreath_final_root_addressed_weyl_assembly_boundary complete")
+    print(
+        "Speedup claim allowed: "
+        f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_recursive_polar_normalization_conservation_boundary(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_recursive_polar_normalization_conservation_boundary_report(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    print("self_dual_wreath_recursive_polar_normalization_conservation_boundary complete")
+    print(
+        "Speedup claim allowed: "
+        f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_affine_gpe_nodelocal_naimark_access_boundary(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_affine_gpe_nodelocal_naimark_access_boundary_report(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    print("self_dual_wreath_affine_gpe_nodelocal_naimark_access_boundary complete")
+    print(
+        "Speedup claim allowed: "
+        f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_positive_naimark_access_equivalence_boundary(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_positive_naimark_access_equivalence_boundary_report(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    print("self_dual_wreath_positive_naimark_access_equivalence_boundary complete")
+    print(
+        "Speedup claim allowed: "
+        f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
+    )
     print(f"Registry valid: {validation['valid']}")
     if validation["issues"]:
         print(json.dumps(validation["issues"], indent=2))
@@ -26287,6 +26369,42 @@ def build_parser() -> argparse.ArgumentParser:
     propose = subparsers.add_parser("propose", help="Register proof-gated seed candidates or a candidate JSON file.")
     propose.add_argument("--file", type=Path)
     propose.set_defaults(func=command_propose)
+
+    addressed_weyl = subparsers.add_parser(
+        "self-dual-wreath-final-root-addressed-weyl-assembly-boundary",
+        help="Run the final-root addressed Weyl assembly and global-whitening boundary theorem.",
+    )
+    addressed_weyl.add_argument("--no-registry", action="store_true")
+    addressed_weyl.set_defaults(
+        func=command_sdw_final_root_addressed_weyl_assembly_boundary
+    )
+
+    recursive_normalization = subparsers.add_parser(
+        "self-dual-wreath-recursive-polar-normalization-conservation-boundary",
+        help="Run the recursive polar normalization-conservation and trim-compatibility boundary theorem.",
+    )
+    recursive_normalization.add_argument("--no-registry", action="store_true")
+    recursive_normalization.set_defaults(
+        func=command_sdw_recursive_polar_normalization_conservation_boundary
+    )
+
+    affine_gpe_naimark = subparsers.add_parser(
+        "self-dual-wreath-affine-gpe-nodelocal-naimark-access-boundary",
+        help="Run the affine/GPE scalar-SELECT versus matrix-Naimark local-router boundary theorem.",
+    )
+    affine_gpe_naimark.add_argument("--no-registry", action="store_true")
+    affine_gpe_naimark.set_defaults(
+        func=command_sdw_affine_gpe_nodelocal_naimark_access_boundary
+    )
+
+    positive_naimark = subparsers.add_parser(
+        "self-dual-wreath-positive-naimark-access-equivalence-boundary",
+        help="Run the positive component/endpoint Naimark access-equivalence and scalar-width boundary theorem.",
+    )
+    positive_naimark.add_argument("--no-registry", action="store_true")
+    positive_naimark.set_defaults(
+        func=command_sdw_positive_naimark_access_equivalence_boundary
+    )
 
     validate = subparsers.add_parser("validate", help="Validate candidates and experiments against proof obligations.")
     validate.set_defaults(func=command_validate)

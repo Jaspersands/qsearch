@@ -13036,6 +13036,475 @@ whether even this two-child assembly requires the missing global inverse-
 metric operation. Do not fall back to generic program-state or unspecified
 unitary-extension arguments.
 
+## Final-root addressed Weyl assembly boundary (2026-08-26)
+
+Experiment:
+
+```text
+EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-ADDRESSED-WEYL-ASSEMBLY-BOUNDARY
+```
+
+Artifact:
+
+```text
+research/representation/self_dual_wreath_final_root_addressed_weyl_assembly_boundary.json
+```
+
+The final two-child question has now been decided at the exact access-model
+boundary. Let `R_s` be the two aggregate child analyses,
+`A_s=R_s^*R_s`, and `S=A_0+A_1`. After the child polars are factored, the
+positive-coordinate endpoint is
+
+```text
+T=[sqrt(A_0);sqrt(A_1)]S^(-1/2).
+```
+
+For either logical Weyl generator `U in {X,Z}`, its four child blocks are
+
+```text
+(TUT^*)_(s,t)=sqrt(A_s)S^(-1/2)US^(-1/2)sqrt(A_t).
+```
+
+The row polars of `sqrt(A_s)S^(-1/2)` give a branchwise unitary gauge from
+this formula to the canonical
+`V_C=[sqrt(C);sqrt(I-C)]`, with
+`C=S^(-1/2)A_0S^(-1/2)`. Thus the formula is exactly the requested
+positive-child-metric version of the canonical four-block byproduct.
+
+For leaf inclusions `J_e` and
+`R_s x=direct_sum_(e in E_s)J_e^*x`, the normalization-one addressed oracle
+supplies
+
+```text
+(R_sR_t^*)_(f,e)=J_f^*J_e.
+```
+
+The desired leaf-addressed Weyl block is instead
+
+```text
+J_f^*S^(-1/2)US^(-1/2)J_e.
+```
+
+All four child blocks therefore share the same global parent whitening.
+Pair-local functional calculus cannot supply it: two exact frames can agree
+on a fixed addressed pair and its pair polar while other leaves change the
+selected whitened shift block from `1/2` to `1/sqrt(3)`, a constant gap.
+
+A coherent superposition query does contain all metric entries, but uniform
+assembly exposes only
+
+```text
+R/sqrt(w),       G/w=RR^*/w,       S/w=R^*R/w,
+w=|E_0|+|E_1|.
+```
+
+On the proved retained window `0.5I<=S<=16I`, the analysis singular values
+are in `[sqrt(0.5/w),4/sqrt(w)]`. The sharp coefficient-mixer normalization
+is `w`, and Bernstein's inequality forces bounded-QSVT polar degree
+`Omega(sqrt(w))`. At the selected natural copy count `w=Theta(n!)`, so
+`O(1)` coherent pair queries plus the canonical local/QSVT route do not
+assemble either Weyl generator.
+
+The important positive boundary is equally sharp. If constant-normalization
+block encodings of the two aggregate maps `sqrt(A_s)` are granted, their
+binary LCU has normalization at most `4sqrt(2)` and minimum retained signal
+exactly `1/8`. The top endpoint and both Weyl byproducts then compile in
+`O(log(1/epsilon))` aggregate queries. The binary root itself is not the
+source of the factorial charge; producing the aggregate child maps from leaf
+access is.
+
+Claim boundary:
+
+```text
+positive-child four-block Weyl formula:                         PROVED
+canonical and positive formulas branchwise gauge equivalent:   PROVED
+leaf target is J_f^*S^-1/2 U S^-1/2 J_e:                       PROVED
+pair-local functional calculus suffices:                        FALSE
+uniform coherent assembly signals are R/sqrt(w), G/w:           PROVED
+bounded-QSVT uniform route costs Omega(sqrt(w)):                 PROVED
+binary top merge given aggregate child access:                  POLYNOMIAL
+constant-normalization aggregate child access from leaf oracle: OPEN
+arbitrary nonlinear / representation-specific lower bound:      NOT PROVED
+physical PGM / decoder / classical separation / speedup:        OPEN
+```
+
+Three noncommuting positive-metric controls, three overcomplete addressed
+frame controls, one pair-local indeterminacy witness, five sharp width
+controls, and six natural scaling records pass. The focused and adjacent
+addressed-cross-map, linear-assembly, metric-width, and byproduct suites pass
+72 tests.
+
+**Next high-reasoning task:** audit exact recursive normalization propagation.
+For every binary hierarchy node `v`, derive the factorization
+
+```text
+Q_v = (direct_sum_c Q_c)
+      [sqrt(S_c)]_c S_v^(-1/2),
+S_v=sum_c S_c,
+```
+
+including supports, shorted metrics, and retained trims. Decide whether the
+local endpoint factors telescope into a polynomial-depth global polar using
+only already-compiled child isometries and normalization-one addressed
+sibling queries, or whether every implementation must reintroduce the
+inherited `sqrt(|leaves(v)|)` signal. A positive theorem must exhibit an
+actual block-encoding normalization recurrence and close all workspace
+interfaces. A negative theorem must bind a stated recursive architecture;
+the present one-shot Bernstein bound must not be promoted to an arbitrary
+hierarchical-query lower bound.
+
+## Recursive polar normalization-conservation boundary (2026-08-26)
+
+Experiment:
+
+```text
+EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-POLAR-NORMALIZATION-CONSERVATION-BOUNDARY
+```
+
+Artifact:
+
+```text
+research/representation/self_dual_wreath_recursive_polar_normalization_conservation_boundary.json
+```
+
+The proposed recursive-bookkeeping loophole is now decided. For any node with
+child analyses `R_c`, frames `S_c=R_c^*R_c`, and
+`S_v=sum_c S_c`, Moore--Penrose functional calculus on the actual supports
+gives the exact relative factor
+
+```text
+Q_v=(direct_sum_c Q_c)W_v,
+W_v=[sqrt(S_c)]_c S_v^(-1/2),
+W_v^*W_v=supp(S_v).
+```
+
+These operators telescope exactly through an arbitrary tree, including
+rank-deficient children. Thus a coherent normalization-one oracle for every
+compatible `W_v` would compile the root polar in one call per tree level.
+There is no algebraic obstruction once that interface is supplied.
+
+Access normalization obeys a separate sharp law. If a coefficient-only
+PREPARE/SELECT stack receives child encodings `R_c/alpha_c`, equal unscaled
+parent blocks force address amplitudes `a_c=alpha_c/alpha_v`. Unit norm of the
+address state is therefore equivalent to
+
+```text
+alpha_v^2=sum_c alpha_c^2.
+```
+
+The closed form `alpha_root^2=sum_e alpha_e^2` is independent of balanced,
+left-deep, or multiscale regrouping. Normalization-one leaves still give
+`alpha_root=sqrt(w)`. Supplying child polars does not reset the inherited
+scale:
+
+```text
+Q_c^*(R_c/alpha_c)=sqrt(S_c)/alpha_c.
+```
+
+Shorted sibling coordinates do not change the conclusion. If `U` spans the
+child-range intersection, `G_c=U^*S_c^+U`, and `(S_c)_K` is the direct
+shorted operator, then the normalized child frame gives exactly
+
+```text
+Ghat_c=alpha_c^2 G_c,
+Shat_c,K=(S_c)_K/alpha_c^2.
+```
+
+Equal child normalizations preserve a balance equality only up to their common
+scale. Unequal normalizations can spoil the apparent shorted equality unless
+the factors are explicitly restored. Shorting supplies the correct fractional
+spectral coordinates but not a normalization-one router.
+
+For `w=2^L` orthogonal rank-one leaves, exact local `W_v` factors compose to
+the identity root polar, while generic binary signals `W_v/sqrt(2)` compose
+exactly to `I/sqrt(w)`. Resetting every node with literal local QSVT instead
+inherits the already-proved `q_(ell+1)>=3q_ell` nested-query recurrence. This
+is a stated-architecture result, not a lower bound on arbitrary recursive
+circuits.
+
+Retained supports add another exact interface condition. A parent polar for
+projection `Pi_v` uses `R_c Pi_v`; independently compiled children use
+`R_c Pi_c`. They are reusable iff
+
+```text
+direct_sum_c R_c(Pi_c-Pi_v)=0.
+```
+
+Two perfectly conditioned child trims can each discard eigenvalue `0.4`
+although their parent sum `0.8` lies above the same `0.5` threshold; the
+resulting reused polar differs from the parent-retained polar by operator norm
+one. Per-node conditioning does not certify recursive trim compatibility.
+
+Claim boundary:
+
+```text
+support-aware recursive polar chain rule:                       PROVED
+exact algebraic telescoping through the tree:                    PROVED
+coefficient-only recurrence alpha_v^2=sum_c alpha_c^2:          PROVED
+tree regrouping reduces alpha_root=sqrt(w):                      FALSE
+child polar resets inherited normalization:                     FALSE
+shorted metrics cancel inherited normalization:                 FALSE
+independent well-conditioned trims automatically compose:       FALSE
+supplied compatible alpha-one W_v oracles close in tree depth:   PROVED
+uniform representation-specific alpha-one W_v compiler:         OPEN
+arbitrary hierarchical-query lower bound:                        NOT PROVED
+physical PGM / decoder / classical separation / speedup:         OPEN
+```
+
+Three support-aware trees, two heterogeneous normalization trees, three
+child-metric controls, the trim counterexample, six orthogonal hierarchy
+controls, and six natural factorial-width scaling records pass.
+
+**Next high-reasoning task:** audit the surviving structured local-router
+interface, not the coefficient recurrence again. Starting from
+`self_dual_wreath_gpe_recursive_node_compiler.py`,
+`self_dual_wreath_coherent_gpe_router_boundary.py`,
+`self_dual_wreath_fixed_arity_support_sum_compiler.py`, and the shorted-metric
+theorems, write the exact block-encoding contract for one compatible
+`W_v=[sqrt(S_c)]_cS_v^(-1/2)`. Decide whether affine/GPE child transports plus
+a uniform coherent SELECT implement this `W_v` at normalization one for all
+natural nodes, with the parent projection propagated downward rather than
+independent child trims. A positive theorem must exhibit PREPARE, SELECT,
+uncompute, normalization, workspace, and error recurrences. A negative theorem
+must bind the finite-generator/controlled-GPE interface and preserve the open
+possibility of a new flattened Schur/Racah transform.
+
+## Affine/GPE nodelocal Naimark access boundary (2026-08-26)
+
+Experiment:
+
+```text
+EXP-CODE-SELF-DUAL-WREATH-AFFINE-GPE-NODELOCAL-NAIMARK-ACCESS-BOUNDARY
+```
+
+Artifact:
+
+```text
+research/representation/self_dual_wreath_affine_gpe_nodelocal_naimark_access_boundary.json
+```
+
+The surviving normalization-one local-router interface is now fully typed.
+For a binary node,
+
+```text
+Z=[W_L C_L;-W_R C_R],
+C_s=sqrt(A_s)(A_L+A_R)^(-1/2),
+W_s=direct_sum_e V_(s,e)sqrt(H_(s,e)),
+sum_e H_(s,e)=I.
+```
+
+Pair GPE and affine path networks address the support partial isometries
+`V_(s,e)`. A scalar address PREPARE with probability `p_e`, followed by
+controlled `V_e`, necessarily has component effect
+
+```text
+p_e P_e,  P_e=V_e^*V_e.
+```
+
+It equals the target child component iff
+
+```text
+H_e=p_eP_e
+```
+
+for every outcome. Thus flat full-fiber affine effects `H_e=I/|A|` compile
+exactly by affine Hadamards and coherent generator transports at normalization
+one, with `dim(A)` transport stages, retained output address, path uncompute,
+and no postselection. Matrix or nonscalar partial effects do not.
+
+The binary endpoint has the analogous criterion. Scalar child preparation is
+exact iff
+
+```text
+C_L^*C_L=pI,
+C_R^*C_R=(1-p)I,
+```
+
+equivalently the two short metrics are proportional on the retained fiber.
+Two full-support controls have identical identity child polars, support
+projectors, and pair-GPE transports but endpoint targets separated by
+`0.3203644860` in operator norm. Hence support/polar/transport access does not
+determine the positive mixer.
+
+The positive circuit contract is a nested matrix Naimark transform:
+
+```text
+1. endpoint dilation:       |psi> -> sum_s |s>C_s|psi>
+2. component dilation:      -> sum_(s,e)|s,e>sqrt(H_(s,e))C_s|psi>
+3. GPE support SELECT:      -> sum_(s,e)|s,e>V_(s,e)sqrt(H_(s,e))C_s|psi>
+4. uncompute path workspace while retaining s,e.
+```
+
+Every stage is an isometry on the same parent-retained support. Therefore the
+composition has normalization one, needs no postselection, and satisfies
+
+```text
+epsilon_node <= epsilon_endpoint + epsilon_component
+                + epsilon_transport + epsilon_uncompute.
+```
+
+This contract does not construct the two positive dilations. GPE supplies the
+last partial-isometry SELECT, not `C_s` or `sqrt(H_(s,e))`.
+
+Trim propagation is essential. Two effects `diag(0.4,0.6)` and
+`diag(0.6,0.4)` sum to identity. Independently thresholding each at `0.5`
+leaves perfectly conditioned rank-one effects that sum to `0.6I`, so the
+resulting dilation has isometry defect `0.4`. Every component must instead be
+compressed by the common parent projection.
+
+The globally source-distinct S6 affine-plane control has nonscalar,
+noncommuting matrix partial-support effects. It refutes a universal scalar
+affine compiler, but its direct trivial/sign source mechanism has vanishing
+natural mass and does not refute a typical-node approximation.
+
+Claim boundary:
+
+```text
+scalar PREPARE/SELECT effect criterion H_e=p_eP_e:             PROVED
+flat affine GPE transport embedding at normalization one:      PROVED
+scalar GPE SELECT compiles matrix component effects:           FALSE
+scalar endpoint preparation handles nonproportional metrics:   FALSE
+support/polar/GPE transports determine endpoint mixer:         FALSE
+nested matrix Naimark + GPE SELECT normalization one:           PROVED
+independent component trims preserve parent POVM:               FALSE
+uniform endpoint metric Naimark dilation:                       OPEN
+uniform component-effect Naimark dilation:                      OPEN
+all-n partial-support GPE SELECT:                               OPEN
+typical natural matrix-effect obstruction:                      NOT PROVED
+physical PGM / decoder / classical separation / speedup:        OPEN
+```
+
+Two scalar-effect controls, one affine transport circuit, two endpoint
+controls, one metric-blind pair, one noncommuting nested Naimark circuit, one
+trim counterexample, the companion S6 node, and six natural scaling records
+pass.
+
+**Resolved in the next theorem pass:** attack the positive amplitudes themselves. On a
+natural high-dimensional common fiber, derive the exact physical/Schur form of
+
+```text
+H_(s,e)=W_(s,e)^*W_(s,e)
+```
+
+and the endpoint effects `C_s^*C_s`. Decide whether the addressed cross-Gram,
+Schur multiplicity, or GPE projector interfaces give compact block encodings
+or a direct coherent square-root POVM dilation without first compiling `W_s`
+(which would be circular). A positive theorem must give a reversible label
+algorithm, normalization, retained positive edge, workspace, and native-mass
+recurrence. A negative theorem must bind a stated generic block-encoding or
+finite-generator interface and may use the existing `Omega(delta^-1/4)`
+square-root degree boundary only after proving a small positive effect edge on
+nonnegligible natural mass. Preserve the possibility of a direct Schur/Racah
+Naimark transform.
+
+## Positive Naimark Access Equivalence Boundary
+
+The positive-amplitude pass is complete in
+`self_dual_wreath_positive_naimark_access_equivalence_boundary.py`.
+
+For one child with physical leaf isometries `Q_e`, projectors
+`E_e=Q_eQ_e^*`, frame `F=sum_e E_e`, and common-span isometry `X`, the exact
+component effect is
+
+```text
+A   = X^*F^+X,
+H_e = A^(-1/2) X^*F^+ E_e F^+X A^(-1/2).
+```
+
+Writing
+
+```text
+J = F^(+/2)X A^(-1/2),
+U = R^*F^(+/2),
+B = UJ,
+```
+
+gives the normalized child embedding. If `B_e=V_e sqrt(H_e)` and
+`N=stack_e sqrt(H_e)`, then
+
+```text
+B = (direct_sum_e V_e)N,
+N = (direct_sum_e V_e)^*B
+```
+
+on the active supports. Since the component support transports `V_e` are the
+part already supplied by the GPE/pair-polar stack, a direct square-root POVM
+dilation and the restricted child polar are interconvertible at normalization
+one. A direct Naimark dilation is sufficient, but it is not an independently
+easier primitive unless its circuit is actually constructed.
+
+The binary endpoint obeys the parallel exact formula
+
+```text
+C_s = A_s^(1/2)(A_L+A_R)^(-1/2),
+C_s^*C_s = (A_L+A_R)^(-1/2) A_s (A_L+A_R)^(-1/2).
+```
+
+Its physical rows and canonical two-outcome square-root Naimark map are also
+gauge-equivalent in both directions.
+
+Even granting every `F^+` and `A^(-1/2)` whitening factor for free, scalar
+address extraction of `m` nonzero component blocks has the sharp boundary
+
+```text
+alpha = sqrt(m),
+success = 1/m.
+```
+
+Equal target coefficients require `sqrt(p_e)=1/alpha` for every active
+component, and `sum_e p_e=1` proves the bound. Uniform preparation attains it.
+This is a coefficient-normalization obstruction; it does not invoke an
+exponentially small positive effect edge.
+
+A three-leaf counterpair fixes two selected leaf projectors, their raw cross
+map, their pair polar, and the full frame support, while changing an unqueried
+third leaf. The selected canonical component effect changes by
+`0.2873216089`. Pair-local functional calculus therefore cannot produce the
+global positive component effect.
+
+At fixed jump arity, an early flattened child has `m=Theta(n!)` leaves, so the
+scalar-address/GPE or addressed-extraction route remains superpolynomial. The
+theorem does not rule out a normalization-one hierarchical local router, a
+compact aggregate analysis with polynomial retained singular edge, or a
+direct Schur/Racah Naimark transform.
+
+Claim boundary:
+
+```text
+exact physical component-effect formula:                       PROVED
+direct component Naimark <-> restricted polar:                 PROVED
+exact endpoint-effect formula and Naimark gauge:               PROVED
+scalar addressed extraction alpha=sqrt(active width):          PROVED
+pair-local cross data determine component effect:              FALSE
+current GPE supplies positive component dilation:              FALSE
+current addressed pair oracle supplies global whitening:       FALSE
+natural small positive component edge used/proved:             FALSE
+hierarchical normalization-one router ruled out:               FALSE
+direct Schur/Racah Naimark ruled out/compiled:                  FALSE
+physical PGM / decoder / classical separation / speedup:       OPEN
+```
+
+Two physical component systems, two scalar-address controls, a noncommuting
+endpoint control, the pair-local counterpair, six typed interfaces, and eight
+natural scaling records pass. The focused suite has eighteen tests.
+
+**Next high-reasoning task:** attack the fixed-arity hierarchical interface
+that survives the flattened width boundary. Express the binary local short
+metrics
+
+```text
+A_s=X^*F_s^+X,
+K_s=(A_L+A_R)^(-1/2)A_s(A_L+A_R)^(-1/2)
+```
+
+as explicit Schur/Racah operators on one parent-propagated retained fiber.
+Decide whether their generators close in a `poly(n)`-dimensional algebra with
+a reversible node-label algorithm and a polynomial-normalized block encoding,
+or whether a stated finite-generator/GPE interface is insufficient. A positive
+result must give the two-outcome dilation, retained spectral window, workspace
+and depth recurrence, and native mass. A negative result must stay scoped and
+preserve a direct representation-specific local Naimark transform.
+
 ## Resume Commands
 
 ```bash
@@ -13091,6 +13560,10 @@ python self_dual_wreath_gpe_pair_polar_transport.py
 python self_dual_wreath_gpe_holonomy_resolver_reduction.py
 python theorems/self_dual_wreath_addressed_cross_map_linear_assembly_normalization_boundary.py
 python theorems/self_dual_wreath_natural_q_scale_spectral_window_no_go.py
+PYTHONPATH=core:theorems python theorems/self_dual_wreath_final_root_addressed_weyl_assembly_boundary.py
+PYTHONPATH=core:theorems python theorems/self_dual_wreath_recursive_polar_normalization_conservation_boundary.py
+PYTHONPATH=core:theorems python theorems/self_dual_wreath_affine_gpe_nodelocal_naimark_access_boundary.py
+PYTHONPATH=core:theorems python theorems/self_dual_wreath_positive_naimark_access_equivalence_boundary.py
 PYTHONPATH=core:theorems python theorems/self_dual_wreath_final_root_scalar_mixer_no_go.py
 PYTHONPATH=core:theorems python theorems/self_dual_wreath_final_root_metric_access_width_no_go.py
 python self_dual_wreath_final_root_natural_common_span.py

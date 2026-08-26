@@ -687,6 +687,7 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PHYSICAL-PREPARATION-EXTENSION-SCOPE-BOUNDARY",
                 "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PROGRAM-CONTRACTION-NORMALIZATION-NO-GO",
                 "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-STATE-PREPARATION-ORACLE-QUERY-BOUNDARY",
+                "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-ADDRESSED-WEYL-ASSEMBLY-BOUNDARY",
                 "EXP-CODE-TENSOR-MEASUREMENT",
             ],
             notes="High upside but high no-go risk; registry keeps the no-go analysis mandatory.",
@@ -22190,6 +22191,191 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             metrics=["speedup_claim_allowed", "new_quantum_algorithm_count"],
             dependencies=["self_dual_wreath_final_root_state_preparation_oracle_query_boundary.py"],
             next_actions=["Run qsearch.py self-dual-wreath-final-root-state-preparation-oracle-query-boundary."],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-ADDRESSED-WEYL-ASSEMBLY-BOUNDARY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Final-root addressed Weyl assembly boundary",
+            status="completed-negative-theorem",
+            hypothesis=(
+                "Normalization-one coherent addressed cross-map queries and pair-local functional calculus assemble "
+                "the final two-child conjugated Weyl shift and clock with constant query cost."
+            ),
+            protocol=(
+                "Expand the endpoint Weyl pair through positive child metrics and leaf inclusions, isolate the shared "
+                "parent inverse metric, test pair-local indeterminacy, and apply the sharp uniform-address normalization "
+                "and Bernstein QSVT-degree bound."
+            ),
+            positive_signal=(
+                "A constant-normalization aggregate child-analysis compiler, an exact hierarchical normalization "
+                "cancellation, or a direct representation-specific global orientation polar."
+            ),
+            falsifiers=[
+                "Every leaf target block contains the shared S^(-1/2) parent whitening.",
+                "Uniform coherent assembly exposes R/sqrt(w) or G/w rather than an alpha-one aggregate map.",
+                "Bounded QSVT on the canonical retained-window signal costs Omega(sqrt(w)).",
+                "The binary top merge is conditionally constant once aggregate child maps are supplied.",
+                "No arbitrary-query or representation-specific circuit lower bound is proved.",
+            ],
+            metrics=[
+                "exact_positive_child_weyl_four_block_theorem_count",
+                "exact_addressed_leaf_whitened_block_theorem_count",
+                "uniform_address_width_qsvt_lower_bound_theorem_count",
+                "conditional_constant_cost_binary_merge_theorem_count",
+                "compiled_endpoint_weyl_pair_count",
+                "speedup_claim_allowed",
+            ],
+            dependencies=[
+                "self_dual_wreath_addressed_cross_map_pair_polar_gram_boundary.py",
+                "self_dual_wreath_addressed_cross_map_linear_assembly_normalization_boundary.py",
+                "self_dual_wreath_final_root_metric_access_width_no_go.py",
+                "self_dual_wreath_final_root_byproduct_covariance_no_go.py",
+            ],
+            next_actions=[
+                "Audit the recursive hierarchy for constant-normalization shorted-metric propagation or exact normalization cancellation."
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-POLAR-NORMALIZATION-CONSERVATION-BOUNDARY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Recursive polar normalization conservation boundary",
+            status="completed-negative-theorem",
+            hypothesis=(
+                "Exact recursive polar factorization and tree regrouping automatically cancel the inherited "
+                "square-root orientation-width normalization."
+            ),
+            protocol=(
+                "Prove the support-aware recursive chain rule, derive the sharp coefficient-only normalization "
+                "recurrence, test child-polar metric scale inheritance and trim compatibility, and compare exact "
+                "with passively normalized orthogonal hierarchies."
+            ),
+            positive_signal=(
+                "A uniform representation-specific compiler for compatible normalization-one local relative "
+                "isometries, or a flattened affine GPE/Schur orientation router."
+            ),
+            falsifiers=[
+                "Operator telescoping does not cancel block-encoding normalization metadata.",
+                "Coefficient-only recursive assembly obeys alpha_v^2=sum_c alpha_c^2.",
+                "Child polars retain alpha_c on the positive metric sqrt(S_c)/alpha_c.",
+                "Shorted sibling metrics inherit alpha_c^2 or alpha_c^-2 scaling rather than cancelling it.",
+                "Independently conditioned spectral trims need not compose to the parent-retained analysis.",
+                "No arbitrary hierarchical-query or representation-specific router lower bound is proved.",
+            ],
+            metrics=[
+                "exact_support_aware_recursive_polar_telescoping_theorem_count",
+                "sharp_l2_normalization_conservation_theorem_count",
+                "child_polar_metric_scale_inheritance_theorem_count",
+                "shorted_metric_scale_inheritance_theorem_count",
+                "independent_trim_noncomposability_theorem_count",
+                "flat_passive_normalization_no_cancellation_theorem_count",
+                "compiled_normalization_one_local_relative_isometry_count",
+                "speedup_claim_allowed",
+            ],
+            dependencies=[
+                "self_dual_wreath_hierarchical_polar_tree.py",
+                "self_dual_wreath_sparse_polar_access_composition_no_go.py",
+                "self_dual_wreath_final_root_addressed_weyl_assembly_boundary.py",
+                "self_dual_wreath_graded_frobenius_trim.py",
+                "self_dual_wreath_gpe_recursive_node_compiler.py",
+            ],
+            next_actions=[
+                "Audit whether affine/GPE child embeddings and shorted metrics provide a uniform normalization-one, trim-compatible SELECT for each local relative isometry."
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-AFFINE-GPE-NODELOCAL-NAIMARK-ACCESS-BOUNDARY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Affine/GPE nodelocal Naimark access boundary",
+            status="completed-negative-theorem",
+            hypothesis=(
+                "A uniform scalar affine address PREPARE and coherent GPE pair-transport SELECT implement every "
+                "compatible natural local relative isometry at normalization one."
+            ),
+            protocol=(
+                "Factor one node into endpoint and component positive dilations plus GPE partial-isometry SELECT, "
+                "prove the scalar PREPARE/SELECT effect criterion, and audit affine normalization, metric-blind "
+                "indeterminacy, nested normalization, and parent trim propagation."
+            ),
+            positive_signal=(
+                "A compact all-n endpoint and component matrix-POVM Naimark dilation, together with uniform GPE "
+                "partial-support SELECT on the parent-propagated retained fiber."
+            ),
+            falsifiers=[
+                "Scalar selected components have effects p_eP_e, not general matrix effects H_e.",
+                "Affine mask support does not imply scalar component effects.",
+                "Support, child-polar, and pair-transport oracles do not determine the endpoint metric mixer.",
+                "The exact matrix-valued nested Naimark target has normalization one when its positive dilations are supplied.",
+                "Independent well-conditioned component trims can destroy the parent POVM sum.",
+                "The finite S6 countercontrol refutes universality but not a typical-node approximation theorem.",
+            ],
+            metrics=[
+                "scalar_prepare_select_effect_criterion_theorem_count",
+                "normalization_one_flat_affine_transport_compiler_theorem_count",
+                "endpoint_scalar_prepare_proportional_metric_criterion_count",
+                "metric_blind_gpe_transport_indeterminacy_theorem_count",
+                "normalization_one_nested_naimark_contract_theorem_count",
+                "parent_trim_propagation_boundary_theorem_count",
+                "compiled_uniform_endpoint_metric_naimark_dilation_count",
+                "compiled_uniform_component_effect_naimark_dilation_count",
+                "speedup_claim_allowed",
+            ],
+            dependencies=[
+                "self_dual_wreath_recursive_polar_normalization_conservation_boundary.py",
+                "self_dual_wreath_gpe_recursive_node_compiler.py",
+                "self_dual_wreath_coherent_gpe_router_boundary.py",
+                "self_dual_wreath_partial_support_child_embedding.py",
+                "self_dual_wreath_matrix_povm_recursive_compiler.py",
+            ],
+            next_actions=[
+                "Audit the natural high-dimensional component-effect algebra for a compact Schur/Racah block encoding or direct Naimark dilation of sqrt(H_(s,e)) and C_s, with a retained positive edge or a scoped degree obstruction on positive native mass."
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-POSITIVE-NAIMARK-ACCESS-EQUIVALENCE-BOUNDARY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Positive Naimark access equivalence boundary",
+            status="completed-negative-theorem",
+            hypothesis=(
+                "Existing GPE projectors, addressed cross-Grams, or Schur companion data directly supply the "
+                "positive component and endpoint Naimark amplitudes without compiling the restricted child polar."
+            ),
+            protocol=(
+                "Derive the exact physical component and endpoint effects, prove bidirectional direct-Naimark/"
+                "restricted-polar gauge equivalence, audit scalar address normalization after free whitening, "
+                "construct a pair-local indeterminacy control, and inventory the current typed interfaces."
+            ),
+            positive_signal=(
+                "A compact aggregate Schur/Racah analysis or direct Naimark circuit with reversible labels, "
+                "polynomial normalization, a retained inverse-polynomial singular edge, controlled workspace, "
+                "and parent-compatible trim propagation."
+            ),
+            falsifiers=[
+                "A direct component square-root POVM is not an independent primitive once support transports are compiled.",
+                "Scalar addressed extraction retains sharp square-root active-width normalization even after exact whitening is granted.",
+                "One selected raw cross map and pair polar do not determine its globally whitened component effect.",
+                "No small positive effect edge is used in the width obstruction.",
+                "Hierarchical local and direct Schur/Racah Naimark circuits remain outside the scoped boundary.",
+            ],
+            metrics=[
+                "physical_component_effect_formula_theorem_count",
+                "direct_naimark_restricted_polar_equivalence_theorem_count",
+                "endpoint_positive_effect_formula_theorem_count",
+                "scalar_address_sqrt_width_lower_bound_theorem_count",
+                "pair_local_component_effect_indeterminacy_theorem_count",
+                "compiled_positive_amplitude_interface_count",
+                "natural_small_positive_edge_theorem_count",
+                "speedup_claim_allowed",
+            ],
+            dependencies=[
+                "self_dual_wreath_component_povm_regular_master_reduction.py",
+                "self_dual_wreath_component_direct_naimark_polar_equivalence.py",
+                "self_dual_wreath_addressed_cross_map_pair_polar_gram_boundary.py",
+                "self_dual_wreath_coherent_gpe_router_boundary.py",
+                "self_dual_wreath_affine_gpe_nodelocal_naimark_access_boundary.py",
+            ],
+            next_actions=[
+                "Derive the binary local endpoint effects as explicit Schur/Racah operators on parent-propagated retained fibers and test finite-generator algebra closure with a uniform reversible label circuit."
+            ],
         ),
     ]
     return candidates, experiments
