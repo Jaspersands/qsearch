@@ -280,6 +280,11 @@ from self_dual_wreath_addressed_cross_map_linear_assembly_normalization_boundary
 from self_dual_wreath_natural_q_scale_spectral_window_no_go import write_natural_q_scale_spectral_window_no_go_report
 from self_dual_wreath_final_root_metric_access_width_no_go import write_final_root_metric_access_width_no_go_report
 from self_dual_wreath_final_root_scalar_mixer_no_go import write_final_root_scalar_mixer_no_go_report
+from self_dual_wreath_final_root_byproduct_covariance_no_go import write_final_root_byproduct_covariance_no_go_report
+from self_dual_wreath_final_root_physical_preparation_extension_scope_boundary import write_final_root_physical_preparation_extension_scope_boundary_report
+from self_dual_wreath_final_root_program_contraction_normalization_no_go import write_final_root_program_contraction_normalization_no_go_report
+from self_dual_wreath_final_root_purification_naimark_program_boundary import write_final_root_purification_naimark_program_boundary_report
+from self_dual_wreath_final_root_state_preparation_oracle_query_boundary import write_final_root_state_preparation_oracle_query_boundary_report
 import argparse
 import json
 from collections import Counter
@@ -2031,6 +2036,96 @@ def command_sdw_final_root_scalar_mixer_no_go(args: argparse.Namespace) -> int:
     validation = validate_registry()
     metrics = payload.get("headline_metrics", {})
     print("self_dual_wreath_final_root_scalar_mixer_no_go complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+
+def command_sdw_final_root_byproduct_covariance_no_go(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_final_root_byproduct_covariance_no_go_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_final_root_byproduct_covariance_no_go_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_final_root_byproduct_covariance_no_go complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+
+def command_sdw_final_root_physical_preparation_extension_scope_boundary(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_final_root_physical_preparation_extension_scope_boundary_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_final_root_physical_preparation_extension_scope_boundary_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_final_root_physical_preparation_extension_scope_boundary complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+
+def command_sdw_final_root_program_contraction_normalization_no_go(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_final_root_program_contraction_normalization_no_go_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_final_root_program_contraction_normalization_no_go_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_final_root_program_contraction_normalization_no_go complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+
+def command_sdw_final_root_purification_naimark_program_boundary(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_final_root_purification_naimark_program_boundary_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_final_root_purification_naimark_program_boundary_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_final_root_purification_naimark_program_boundary complete")
+    print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+
+def command_sdw_final_root_state_preparation_oracle_query_boundary(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    try:
+        payload = write_final_root_state_preparation_oracle_query_boundary_report(write_registry=not args.no_registry)
+    except TypeError:
+        payload = write_final_root_state_preparation_oracle_query_boundary_report()
+    validation = validate_registry()
+    metrics = payload.get("headline_metrics", {})
+    print("self_dual_wreath_final_root_state_preparation_oracle_query_boundary complete")
     print(f"Speedup claim allowed: {payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}")
     print(f"Registry valid: {validation['valid']}")
     if validation["issues"]:

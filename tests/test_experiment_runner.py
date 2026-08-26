@@ -12768,5 +12768,90 @@ class ExperimentRunnerTests(unittest.TestCase):
         self.assertTrue(validation["valid"], validation["issues"])
 
 
+    def test_self_dual_wreath_final_root_byproduct_covariance_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-BYPRODUCT-COVARIANCE-NO-GO")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
+    def test_self_dual_wreath_final_root_physical_preparation_extension_scope_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PHYSICAL-PREPARATION-EXTENSION-SCOPE-BOUNDARY")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
+    def test_self_dual_wreath_final_root_program_contraction_normalization_no_go_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PROGRAM-CONTRACTION-NORMALIZATION-NO-GO")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
+    def test_self_dual_wreath_final_root_purification_naimark_program_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PURIFICATION-NAIMARK-PROGRAM-BOUNDARY")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
+    def test_self_dual_wreath_final_root_state_preparation_oracle_query_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment("EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-STATE-PREPARATION-ORACLE-QUERY-BOUNDARY")
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertTrue(validation["valid"], validation["issues"])
+
+
 if __name__ == "__main__":
     unittest.main()

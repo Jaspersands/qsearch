@@ -1,0 +1,321 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "A different Bell or unitary error basis may align with C.",
+      "resolution": "Every orthonormal unitary basis spans M_D and obeys the same depolarizing twirl, so the exact and averaged obstructions are basis independent.",
+      "resolved": true
+    },
+    {
+      "objection": "The two output branches may use different known covariance actions.",
+      "resolution": "The proof assumes only that the combined correction commutes with the branch projector; the two block unitaries may differ arbitrarily.",
+      "resolved": true
+    },
+    {
+      "objection": "Simple spectrum is required for the commutant obstruction.",
+      "resolution": "No. Any nonscalar C has a proper commutant and cannot contain a D^2-element operator basis; a degenerate D=4 control verifies this boundary.",
+      "resolved": true
+    },
+    {
+      "objection": "Compiled child GPE transports remove the correction error.",
+      "resolution": "Isometric postcomposition conjugates every byproduct and preserves the exact block identity and residual norms.",
+      "resolved": true
+    },
+    {
+      "objection": "Rigidity of the two labelled generators proves they are circuit hard.",
+      "resolution": "It proves algebraic completeness only. A representation-specific sparse compiler for the C-dependent branch-mixing pair remains possible.",
+      "resolved": false
+    },
+    {
+      "objection": "The theorem rules out every use of physical row-copy.",
+      "resolution": "It rejects only corrections staying in the final-branch-preserving covariance algebra. A new row-copy-mediated branch mixer lies outside the theorem.",
+      "resolved": false
+    }
+  ],
+  "claim_gate": {
+    "C_dependent_branch_mixing_weyl_generators_compiled": false,
+    "arbitrary_branch_mixing_correction_circuit_ruled_out": false,
+    "arbitrary_program_to_channel_processor_lower_bound_proved": false,
+    "branch_preserving_correction_exists_iff_error_commutes_with_effect": true,
+    "classical_separation_proved": false,
+    "exact_endpoint_conjugated_weyl_block_formula_proved": true,
+    "existing_branch_preserving_row_copy_covariance_supplies_bell_corrections": false,
+    "full_branch_preserving_unitary_error_basis_requires_scalar_effect": true,
+    "hidden_involution_decoder_proved": false,
+    "labelled_weyl_pair_determines_endpoint_up_to_phase": true,
+    "natural_branch_preserving_covariance_has_constant_average_error": true,
+    "physical_pgm_circuit_proved": false,
+    "reason": "The natural endpoint effect is quantitatively nonscalar, so no full Bell error basis can be corrected within the known final-branch-preserving covariance algebra. The required C-dependent branch-mixing generators and whitening remain uncompiled.",
+    "scale_free_whitening_filter_compiled": false,
+    "speedup_claim_allowed": false,
+    "unitary_error_basis_choice_evades_covariance_obstruction": false
+  },
+  "created_at": "2026-08-26T04:52:02.870138+00:00",
+  "exact_controls": [
+    {
+      "average_normalized_commutator_square": 0.0,
+      "average_same_action_branch_covariance_residual_square": 0.0,
+      "child_transport_conjugation_residual": 1.9835803637661446e-16,
+      "control_id": "scalar-d3",
+      "dimension": 3,
+      "effect_commutant_complex_dimension": 9,
+      "effect_distinct_eigenvalue_count": 1,
+      "effect_maximum_eigenvalue": 0.4,
+      "effect_mean": 0.4000000000000001,
+      "effect_minimum_eigenvalue": 0.4,
+      "effect_variance": 3.0814879110195774e-33,
+      "endpoint_output_dimension": 6,
+      "exact_byproduct_and_covariance_boundary_verified": true,
+      "full_branch_preserving_error_basis_possible": true,
+      "maximum_byproduct_block_formula_residual": 0.0,
+      "maximum_correction_identity_residual": 2.47309354569105e-16,
+      "maximum_correction_unitarity_residual": 3.876892548121672e-16,
+      "predicted_average_normalized_commutator_square": 6.162975822039155e-33,
+      "selected_weyl_basis_exact_commuting_error_count": 9,
+      "status": "exact-byproduct-covariance-boundary",
+      "unitary_error_basis_size": 9,
+      "universal_average_branch_preserving_residual_square_lower_bound": 1.5407439555097887e-33
+    },
+    {
+      "average_normalized_commutator_square": 0.12000000000000001,
+      "average_same_action_branch_covariance_residual_square": 0.13450373506620997,
+      "child_transport_conjugation_residual": 1.9006520733117198e-16,
+      "control_id": "diagonal-simple-d3",
+      "dimension": 3,
+      "effect_commutant_complex_dimension": 3,
+      "effect_distinct_eigenvalue_count": 3,
+      "effect_maximum_eigenvalue": 0.8,
+      "effect_mean": 0.5,
+      "effect_minimum_eigenvalue": 0.2,
+      "effect_variance": 0.060000000000000005,
+      "endpoint_output_dimension": 6,
+      "exact_byproduct_and_covariance_boundary_verified": true,
+      "full_branch_preserving_error_basis_possible": false,
+      "maximum_byproduct_block_formula_residual": 0.0,
+      "maximum_correction_identity_residual": 3.510833468576701e-16,
+      "maximum_correction_unitarity_residual": 5.551115123125782e-16,
+      "predicted_average_normalized_commutator_square": 0.12000000000000001,
+      "selected_weyl_basis_exact_commuting_error_count": 3,
+      "status": "exact-byproduct-covariance-boundary",
+      "unitary_error_basis_size": 9,
+      "universal_average_branch_preserving_residual_square_lower_bound": 0.030000000000000002
+    },
+    {
+      "average_normalized_commutator_square": 0.12000000000000001,
+      "average_same_action_branch_covariance_residual_square": 0.13450373506620997,
+      "child_transport_conjugation_residual": 2.339927538370834e-16,
+      "control_id": "rotated-simple-d3",
+      "dimension": 3,
+      "effect_commutant_complex_dimension": 3,
+      "effect_distinct_eigenvalue_count": 3,
+      "effect_maximum_eigenvalue": 0.7999999999999997,
+      "effect_mean": 0.49999999999999983,
+      "effect_minimum_eigenvalue": 0.2000000000000001,
+      "effect_variance": 0.06,
+      "endpoint_output_dimension": 6,
+      "exact_byproduct_and_covariance_boundary_verified": true,
+      "full_branch_preserving_error_basis_possible": false,
+      "maximum_byproduct_block_formula_residual": 8.727676223978772e-17,
+      "maximum_correction_identity_residual": 4.0550162891537274e-15,
+      "maximum_correction_unitarity_residual": 7.203707285879879e-15,
+      "predicted_average_normalized_commutator_square": 0.12,
+      "selected_weyl_basis_exact_commuting_error_count": 1,
+      "status": "exact-byproduct-covariance-boundary",
+      "unitary_error_basis_size": 9,
+      "universal_average_branch_preserving_residual_square_lower_bound": 0.03
+    },
+    {
+      "average_normalized_commutator_square": 0.17999999999999988,
+      "average_same_action_branch_covariance_residual_square": 0.19999999999999993,
+      "child_transport_conjugation_residual": 3.9104147510544015e-16,
+      "control_id": "rotated-degenerate-d4",
+      "dimension": 4,
+      "effect_commutant_complex_dimension": 8,
+      "effect_distinct_eigenvalue_count": 2,
+      "effect_maximum_eigenvalue": 0.7999999999999999,
+      "effect_mean": 0.4999999999999999,
+      "effect_minimum_eigenvalue": 0.19999999999999998,
+      "effect_variance": 0.08999999999999996,
+      "endpoint_output_dimension": 8,
+      "exact_byproduct_and_covariance_boundary_verified": true,
+      "full_branch_preserving_error_basis_possible": false,
+      "maximum_byproduct_block_formula_residual": 1.348892865951648e-16,
+      "maximum_correction_identity_residual": 2.4443128914199133e-15,
+      "maximum_correction_unitarity_residual": 4.218254648224775e-15,
+      "predicted_average_normalized_commutator_square": 0.1799999999999999,
+      "selected_weyl_basis_exact_commuting_error_count": 1,
+      "status": "exact-byproduct-covariance-boundary",
+      "unitary_error_basis_size": 16,
+      "universal_average_branch_preserving_residual_square_lower_bound": 0.04499999999999998
+    }
+  ],
+  "falsifiers_triggered": [
+    "Retained Schur/row-copy labels do not make a complete Bell correction basis branch preserving on a nonscalar endpoint.",
+    "Changing the unitary error basis cannot hide the endpoint variance because every such basis has the same depolarizing second moment.",
+    "Allowing different covariance actions in the two child branches does not evade compression of the branch effect.",
+    "The natural free-Jacobi variance makes the correction obstruction constant on annealed and positive natural mass, not a rare finite pathology.",
+    "The two exact labelled branch-mixing Weyl generators are algebraically complete endpoint data, not a metric-free covariance primitive."
+  ],
+  "headline_metrics": {
+    "C_dependent_branch_mixing_generator_compiler_count": 0,
+    "branch_preserving_correction_commutant_criterion_count": 1,
+    "branch_preserving_full_error_basis_compiler_count": 0,
+    "exact_control_count": 4,
+    "exact_control_failure_count": 0,
+    "exact_endpoint_byproduct_block_formula_theorem_count": 1,
+    "labelled_weyl_pair_algebraic_rigidity_count": 1,
+    "natural_constant_byproduct_covariance_no_go_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "scale_free_whitening_filter_compiler_count": 0,
+    "uniform_annealed_residual_square_floor": 0.015625,
+    "uniform_positive_event_mass_floor": 0.06666666666666667,
+    "uniform_positive_event_residual_square_floor": 0.0078125,
+    "unitary_error_basis_average_covariance_lower_bound_count": 1
+  },
+  "labelled_weyl_rigidity_control": {
+    "clock_conjugate_second_generator_gap": 0.7232308639299247,
+    "common_endpoint_range_residual": 1.9040670115767e-15,
+    "dimension": 4,
+    "joint_weyl_commutant_complex_dimension": 1,
+    "labelled_weyl_pair_fixes_endpoint_up_to_phase": true,
+    "nontrivial_gauge_distance_from_global_phase": 0.511401448248255,
+    "one_generator_does_not_fix_endpoint": true,
+    "shift_conjugate_single_generator_residual": 1.4216632354809834e-15,
+    "status": "labelled-weyl-pair-rigid-up-to-phase"
+  },
+  "natural_records": [
+    {
+      "annealed_average_branch_preserving_residual_square_lower_bound": 0.03125,
+      "child_aspect": 2.0,
+      "full_branch_preserving_unitary_error_basis_asymptotically_possible": false,
+      "limiting_effect_variance": 0.0625,
+      "quantitative_event_average_residual_square_lower_bound": 0.015625,
+      "quantitative_event_probability_lower_bound": 0.14285714285714285,
+      "quantitative_event_variance_threshold": 0.03125,
+      "status": "natural-constant-branch-preserving-byproduct-obstruction",
+      "uniform_annealed_residual_square_floor": 0.015625,
+      "uniform_event_mass_floor": 0.06666666666666667,
+      "uniform_event_residual_square_floor": 0.0078125
+    },
+    {
+      "annealed_average_branch_preserving_residual_square_lower_bound": 0.025,
+      "child_aspect": 2.5,
+      "full_branch_preserving_unitary_error_basis_asymptotically_possible": false,
+      "limiting_effect_variance": 0.05,
+      "quantitative_event_average_residual_square_lower_bound": 0.0125,
+      "quantitative_event_probability_lower_bound": 0.1111111111111111,
+      "quantitative_event_variance_threshold": 0.025,
+      "status": "natural-constant-branch-preserving-byproduct-obstruction",
+      "uniform_annealed_residual_square_floor": 0.015625,
+      "uniform_event_mass_floor": 0.06666666666666667,
+      "uniform_event_residual_square_floor": 0.0078125
+    },
+    {
+      "annealed_average_branch_preserving_residual_square_lower_bound": 0.020833333333333332,
+      "child_aspect": 3.0,
+      "full_branch_preserving_unitary_error_basis_asymptotically_possible": false,
+      "limiting_effect_variance": 0.041666666666666664,
+      "quantitative_event_average_residual_square_lower_bound": 0.010416666666666666,
+      "quantitative_event_probability_lower_bound": 0.09090909090909091,
+      "quantitative_event_variance_threshold": 0.020833333333333332,
+      "status": "natural-constant-branch-preserving-byproduct-obstruction",
+      "uniform_annealed_residual_square_floor": 0.015625,
+      "uniform_event_mass_floor": 0.06666666666666667,
+      "uniform_event_residual_square_floor": 0.0078125
+    },
+    {
+      "annealed_average_branch_preserving_residual_square_lower_bound": 0.017857142857142856,
+      "child_aspect": 3.5,
+      "full_branch_preserving_unitary_error_basis_asymptotically_possible": false,
+      "limiting_effect_variance": 0.03571428571428571,
+      "quantitative_event_average_residual_square_lower_bound": 0.008928571428571428,
+      "quantitative_event_probability_lower_bound": 0.07692307692307693,
+      "quantitative_event_variance_threshold": 0.017857142857142856,
+      "status": "natural-constant-branch-preserving-byproduct-obstruction",
+      "uniform_annealed_residual_square_floor": 0.015625,
+      "uniform_event_mass_floor": 0.06666666666666667,
+      "uniform_event_residual_square_floor": 0.0078125
+    },
+    {
+      "annealed_average_branch_preserving_residual_square_lower_bound": 0.015625,
+      "child_aspect": 4.0,
+      "full_branch_preserving_unitary_error_basis_asymptotically_possible": false,
+      "limiting_effect_variance": 0.03125,
+      "quantitative_event_average_residual_square_lower_bound": 0.0078125,
+      "quantitative_event_probability_lower_bound": 0.06666666666666667,
+      "quantitative_event_variance_threshold": 0.015625,
+      "status": "natural-constant-branch-preserving-byproduct-obstruction",
+      "uniform_annealed_residual_square_floor": 0.015625,
+      "uniform_event_mass_floor": 0.06666666666666667,
+      "uniform_event_residual_square_floor": 0.0078125
+    }
+  ],
+  "primary_literature": [
+    {
+      "paper_id": "werner-tight-teleportation-unitary-error-bases-2000",
+      "scope": "Tight teleportation, maximally entangled bases, Hilbert-Schmidt orthogonal unitary bases, and depolarizing unitary twirls.",
+      "url": "https://arxiv.org/abs/quant-ph/0003070"
+    },
+    {
+      "paper_id": "szpojankowski-free-lukacs-2015",
+      "scope": "Free Lukacs structure used by the preceding final-root theorem to derive the natural free-Jacobi variance.",
+      "url": "https://arxiv.org/abs/1403.5300"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "evidence": "Equation (2) gives all four branch blocks for arbitrary U, hence in particular for the Weyl shift and clock.",
+      "obligation": "derive_exact_endpoint_conjugated_weyl_generators",
+      "resolved": true
+    },
+    {
+      "evidence": "Compression of the branch projector gives the iff criterion [C,U]=0, and an operator basis can satisfy it only for scalar C.",
+      "obligation": "test_branch_preserving_physical_covariance_as_bell_correction_basis",
+      "resolved": true
+    },
+    {
+      "evidence": "The unitary-basis twirl turns the proved free-Jacobi variance into an annealed 1/64 floor and a 1/15-o(1) event with 1/128 floor.",
+      "obligation": "transfer_covariance_obstruction_to_natural_mass",
+      "resolved": true
+    },
+    {
+      "evidence": "The exact block formula still contains sqrt(C), sqrt(I-C), and off-diagonal branch mixing.",
+      "obligation": "compile_C_dependent_branch_mixing_weyl_generators",
+      "resolved": false
+    },
+    {
+      "evidence": "Constructing C itself retains the unresolved S^(-1/2) metric access from the preceding theorem.",
+      "obligation": "compile_scale_free_whitening_filter",
+      "resolved": false
+    },
+    {
+      "evidence": "Only tight unitary-error-basis teleportation with branch-preserving covariance corrections is covered.",
+      "obligation": "rule_out_arbitrary_program_to_channel_processors",
+      "resolved": false
+    }
+  ],
+  "status": "natural-branch-preserving-byproduct-covariance-falsified",
+  "summary": "Derived the exact endpoint-conjugated Weyl blocks and proved a basis-independent constant natural-error obstruction to every branch-preserving covariance correction basis; exact branch mixing remains the only tight-teleportation escape.",
+  "theorem": {
+    "branch_preserving_criterion": "A branch-preserving output unitary Gamma can obey Gamma V_C=V_CU iff [C,U]=0.",
+    "endpoint": "V_C=[sqrt(C);sqrt(I-C)] with V_C^*V_C=I.",
+    "exact_byproduct_formula": "V_C U V_C^* has the four sqrt(C)/sqrt(I-C) blocks in equation (2), and adding I-V_CV_C^* gives a unitary correction.",
+    "labelled_pair_rigidity": "The exact labelled conjugates of the Weyl shift and clock determine the endpoint isometry up to global phase because their joint commutant is scalar.",
+    "natural_consequence": "The free-Jacobi endpoint gives annealed residual squared at least 1/(16alpha)>=1/64 and a >=1/15-o(1) event with residual squared at least 1/128.",
+    "physical_relevance": "Known Schur/QFT/GPE/row-copy covariance is label controlled and final-branch preserving; it cannot furnish a full Bell correction basis on the natural nonscalar endpoint.",
+    "scope": "This is a no-go for branch-preserving covariance corrections, not for arbitrary branch-mixing circuits or programmable processors.",
+    "status": "natural-branch-preserving-byproduct-covariance-falsified",
+    "surviving_route": "Compile the C-dependent branch-mixing generators in equation (2), including whitening, or construct a different non-tight structured program-to-channel transducer.",
+    "theorem_verified": true,
+    "unitary_error_basis_average": "For every Hilbert-Schmidt orthogonal unitary basis, average D^-1||[C,U_a]||_F^2=2Var(C), so average branch-preserving correction residual squared is at least Var(C)/2."
+  },
+  "theorem_contract": {
+    "allowed_correction_architecture": "For each member of an arbitrary D^2-element Hilbert-Schmidt orthogonal unitary error basis, use any output unitary commuting with the final left/right branch projector.",
+    "claim_boundary": "C-dependent branch mixing, arbitrary structured processors, and all-depth recursive compilation remain outside the theorem.",
+    "classical_alternative": "All finite controls and commutant dimensions are classically computable dense linear algebra; no quantum/classical separation follows.",
+    "exact_failure_criterion": "Such a correction exists for logical U iff U lies in comm(C); a complete unitary basis is possible iff C is scalar.",
+    "hypothesis": "The physical generalized-Fourier row-copy and existing label-controlled covariance actions supply the full endpoint Bell correction basis without compiling the matrix-valued final mixer.",
+    "input_output_spaces": "The logical input is H of dimension D; the canonical endpoint maps H to C^2 tensor H; corrections act on the endpoint output.",
+    "natural_input_relevance": "The proved symmetric free-Jacobi endpoint has Var(C)->1/(8alpha), alpha in [2,4], yielding constant annealed and positive-mass residual floors.",
+    "quantitative_failure_criterion": "Average normalized correction residual squared is at least Var(C)/2 for every unitary error basis."
+  }
+}

@@ -1,0 +1,373 @@
+{
+  "adversarial_audit": [
+    {
+      "objection": "Every normalized purification inherits the inverse orientation width.",
+      "resolution": "False. Width cancels from the Schmidt law rho=S/TrS, and bounded condition number gives constant optimal exact conversion probability.",
+      "resolved": true
+    },
+    {
+      "objection": "Constant-success pure-state conversion is already a direct Naimark circuit.",
+      "resolution": "False. The unique successful filter is the missing rho^(-1/2) whitening operation; existence does not compile it.",
+      "resolved": true
+    },
+    {
+      "objection": "The flattened Choi state can simply be teleported onto an arbitrary physical input.",
+      "resolution": "A clean selected Bell outcome has probability 1/D^2. Using all outcomes requires the V-conjugated logical error basis on the output range.",
+      "resolved": true
+    },
+    {
+      "objection": "The metric S alone determines those corrections.",
+      "resolution": "Two exact S=I controls have identical Schmidt spectra but a nonzero cross-Gram obstruction to any shared correction for the shift byproduct.",
+      "resolved": true
+    },
+    {
+      "objection": "The Bell calculation proves every possible Choi-to-channel processor is expensive.",
+      "resolution": "No. A different representation-specific processor or efficiently correctable structured endpoint family remains open.",
+      "resolved": false
+    }
+  ],
+  "bell_transduction_controls": [
+    {
+      "coherent_all_outcome_correction_residual": 1.7385927982130356e-15,
+      "control_id": "weyl-d2",
+      "discarded_label_depolarizing_residual": 3.4855350002249513e-16,
+      "exact_bell_program_boundary_verified": true,
+      "input_dimension": 2,
+      "maximum_bell_link_identity_residual": 1.5531346546082258e-16,
+      "maximum_byproduct_correction_residual": 1.1872569639721654e-15,
+      "maximum_correction_unitarity_residual": 4.5063275978479256e-15,
+      "maximum_error_basis_orthogonality_residual": 1.2246467991473532e-16,
+      "maximum_error_basis_unitarity_residual": 0.0,
+      "maximum_outcome_probability_residual": 6.661338147750939e-16,
+      "output_dimension": 4,
+      "selected_clean_outcome_amplitude_amplification_factor": 2.0,
+      "selected_clean_outcome_probability": 0.25,
+      "status": "exact-choi-program-bell-byproduct-boundary",
+      "unitary_error_basis_size": 4
+    },
+    {
+      "coherent_all_outcome_correction_residual": 2.26978756184916e-15,
+      "control_id": "weyl-d3",
+      "discarded_label_depolarizing_residual": 3.2726348546709133e-16,
+      "exact_bell_program_boundary_verified": true,
+      "input_dimension": 3,
+      "maximum_bell_link_identity_residual": 1.4424306545015728e-16,
+      "maximum_byproduct_correction_residual": 9.471478977957773e-16,
+      "maximum_correction_unitarity_residual": 5.058085359375937e-15,
+      "maximum_error_basis_orthogonality_residual": 1.0235750533041806e-15,
+      "maximum_error_basis_unitarity_residual": 2.220446049250313e-16,
+      "maximum_outcome_probability_residual": 1.3877787807814457e-16,
+      "output_dimension": 6,
+      "selected_clean_outcome_amplitude_amplification_factor": 3.0,
+      "selected_clean_outcome_probability": 0.1111111111111111,
+      "status": "exact-choi-program-bell-byproduct-boundary",
+      "unitary_error_basis_size": 9
+    },
+    {
+      "coherent_all_outcome_correction_residual": 2.3722575139842825e-15,
+      "control_id": "weyl-d4",
+      "discarded_label_depolarizing_residual": 1.1431157524634074e-16,
+      "exact_bell_program_boundary_verified": true,
+      "input_dimension": 4,
+      "maximum_bell_link_identity_residual": 5.999234604158806e-17,
+      "maximum_byproduct_correction_residual": 9.934170063350966e-16,
+      "maximum_correction_unitarity_residual": 8.363416958778074e-15,
+      "maximum_error_basis_orthogonality_residual": 5.551115123125783e-16,
+      "maximum_error_basis_unitarity_residual": 0.0,
+      "maximum_outcome_probability_residual": 9.020562075079397e-17,
+      "output_dimension": 8,
+      "selected_clean_outcome_amplitude_amplification_factor": 4.0,
+      "selected_clean_outcome_probability": 0.0625,
+      "status": "exact-choi-program-bell-byproduct-boundary",
+      "unitary_error_basis_size": 16
+    }
+  ],
+  "claim_gate": {
+    "arbitrary_choi_to_channel_processor_lower_bound_proved": false,
+    "canonical_all_outcome_transduction_requires_conjugated_byproducts": true,
+    "canonical_selected_bell_outcome_probability_is_inverse_dimension_squared": true,
+    "classical_separation_proved": false,
+    "conjugated_byproduct_algebra_compiled": false,
+    "direct_matrix_povm_naimark_dilation_proved": false,
+    "exact_one_sided_flattening_filter_is_unique_whitening": true,
+    "flattened_choi_state_is_an_executable_isometry_oracle": false,
+    "hidden_involution_decoder_proved": false,
+    "inverse_width_overlap_unavoidable_for_purification_state": false,
+    "label_retaining_purification_state_has_constant_success_flattening": true,
+    "physical_pgm_circuit_proved": false,
+    "reason": "Label retention removes the factorial normalization only for mathematical program-state flattening. The uniquely required whitening circuit and a channel transducer with endpoint-dependent byproduct corrections remain uncompiled.",
+    "scale_free_whitening_filter_compiled": false,
+    "speedup_claim_allowed": false
+  },
+  "created_at": "2026-08-26T00:59:51.391076+00:00",
+  "falsifiers_triggered": [
+    "An inverse-width overlap is not unavoidable for a bounded-condition label-retaining purification state.",
+    "Constant-success Choi-state flattening does not by itself supply the endpoint isometry as a circuit.",
+    "The exact one-sided flattening operation is not a new primitive: it is precisely inverse-metric whitening.",
+    "Retaining Bell outcome labels does not erase byproducts; it moves the task to the conjugated logical matrix algebra on ran(V).",
+    "Selecting only the identity Bell outcome reintroduces inverse logical dimension rather than inverse orientation width."
+  ],
+  "flattening_controls": [
+    {
+      "constant_success_without_width_charge_verified": true,
+      "control_id": "flat-maximally-entangled",
+      "endpoint_isometry_residual": 2.220446049250313e-16,
+      "exact_flattening_residual": 0.0,
+      "exact_unique_whitening_filter_verified": true,
+      "filter_optimality_residual": 2.220446049250313e-16,
+      "filter_uniqueness_residual": 1.1102230246251565e-16,
+      "input_dimension": 2,
+      "metric_condition_number": 1.0,
+      "metric_maximum_eigenvalue": 1.0,
+      "metric_minimum_eigenvalue": 1.0,
+      "metric_ratio_success_lower_bound": 1.0,
+      "optimal_filter_operator_norm": 1.0000000000000002,
+      "optimal_flattening_success_probability": 1.0,
+      "output_dimension": 4,
+      "resource_maximum_schmidt_probability": 0.5,
+      "resource_minimum_schmidt_probability": 0.5,
+      "resource_normalization_residual": 0.0,
+      "retained_window_uniform_success_lower_bound": 0.03125,
+      "status": "exact-constant-success-program-state-flattening",
+      "success_norm_identity_residual": 4.440892098500626e-16
+    },
+    {
+      "constant_success_without_width_charge_verified": true,
+      "control_id": "diagonal-conditioned",
+      "endpoint_isometry_residual": 2.220446049250313e-16,
+      "exact_flattening_residual": 3.925231146709438e-17,
+      "exact_unique_whitening_filter_verified": true,
+      "filter_optimality_residual": 0.0,
+      "filter_uniqueness_residual": 1.1102230246251565e-16,
+      "input_dimension": 3,
+      "metric_condition_number": 16.0,
+      "metric_maximum_eigenvalue": 8.0,
+      "metric_minimum_eigenvalue": 0.5,
+      "metric_ratio_success_lower_bound": 0.0625,
+      "optimal_filter_operator_norm": 0.9999999999999999,
+      "optimal_flattening_success_probability": 0.14285714285714285,
+      "output_dimension": 6,
+      "resource_maximum_schmidt_probability": 0.7619047619047619,
+      "resource_minimum_schmidt_probability": 0.047619047619047616,
+      "resource_normalization_residual": 0.0,
+      "retained_window_uniform_success_lower_bound": 0.03125,
+      "status": "exact-constant-success-program-state-flattening",
+      "success_norm_identity_residual": 2.7755575615628914e-17
+    },
+    {
+      "constant_success_without_width_charge_verified": true,
+      "control_id": "rotated-noncommuting-d3",
+      "endpoint_isometry_residual": 1.875611638798403e-15,
+      "exact_flattening_residual": 3.6158328496795425e-16,
+      "exact_unique_whitening_filter_verified": true,
+      "filter_optimality_residual": 0.0,
+      "filter_uniqueness_residual": 6.073988759114445e-16,
+      "input_dimension": 3,
+      "metric_condition_number": 16.000000000000025,
+      "metric_maximum_eigenvalue": 8.00000000000001,
+      "metric_minimum_eigenvalue": 0.4999999999999999,
+      "metric_ratio_success_lower_bound": 0.0624999999999999,
+      "optimal_filter_operator_norm": 1.0,
+      "optimal_flattening_success_probability": 0.1428571428571426,
+      "output_dimension": 6,
+      "resource_maximum_schmidt_probability": 0.7619047619047619,
+      "resource_minimum_schmidt_probability": 0.04761904761904753,
+      "resource_normalization_residual": 4.440892098500626e-16,
+      "retained_window_uniform_success_lower_bound": 0.03125,
+      "status": "exact-constant-success-program-state-flattening",
+      "success_norm_identity_residual": 1.3877787807814457e-16
+    },
+    {
+      "constant_success_without_width_charge_verified": true,
+      "control_id": "rotated-complex-d4",
+      "endpoint_isometry_residual": 2.420104027221753e-15,
+      "exact_flattening_residual": 2.3371102613246507e-16,
+      "exact_unique_whitening_filter_verified": true,
+      "filter_optimality_residual": 2.220446049250313e-16,
+      "filter_uniqueness_residual": 3.5516849206395865e-16,
+      "input_dimension": 4,
+      "metric_condition_number": 16.000000000000036,
+      "metric_maximum_eigenvalue": 8.000000000000004,
+      "metric_minimum_eigenvalue": 0.4999999999999991,
+      "metric_ratio_success_lower_bound": 0.06249999999999986,
+      "optimal_filter_operator_norm": 1.0000000000000002,
+      "optimal_flattening_success_probability": 0.15462255946371734,
+      "output_dimension": 8,
+      "resource_maximum_schmidt_probability": 0.6184902378548699,
+      "resource_minimum_schmidt_probability": 0.038655639865929334,
+      "resource_normalization_residual": 1.1102230246251565e-16,
+      "retained_window_uniform_success_lower_bound": 0.03125,
+      "status": "exact-constant-success-program-state-flattening",
+      "success_norm_identity_residual": 1.1102230246251565e-16
+    }
+  ],
+  "headline_metrics": {
+    "bell_control_count": 3,
+    "bell_control_failure_count": 0,
+    "conjugated_byproduct_algebra_compiler_count": 0,
+    "constant_success_program_state_flattening_theorem_count": 1,
+    "direct_matrix_povm_naimark_circuit_count": 0,
+    "exact_bell_byproduct_boundary_theorem_count": 1,
+    "exact_purification_flattening_normal_form_theorem_count": 1,
+    "flattening_control_count": 4,
+    "flattening_control_failure_count": 0,
+    "inverse_width_purification_state_no_go_count": 0,
+    "metric_only_byproduct_correction_obstruction_count": 1,
+    "new_quantum_algorithm_count": 0,
+    "retained_window_flattening_success_lower_bound": 0.03125,
+    "scale_free_whitening_filter_compiler_count": 0
+  },
+  "metric_only_correction_obstruction": {
+    "common_metric_residual": 0.0,
+    "common_schmidt_spectrum_residual": 0.0,
+    "endpoint_isometry_distance": 0.4595058410947224,
+    "endpoint_program_overlap": 0.94468167200252,
+    "input_dimension": 2,
+    "same_metric_does_not_determine_byproduct_correction_verified": true,
+    "shared_correction_gram_obstruction": 0.10050896200520831,
+    "status": "equal-metric-incompatible-byproduct-corrections"
+  },
+  "primary_literature": [
+    {
+      "paper_id": "vidal-single-copy-entanglement-conversion-1999",
+      "scope": "General optimal probabilistic single-copy pure-state conversion; the filter formula used here is also proved directly.",
+      "url": "https://arxiv.org/abs/quant-ph/9902033"
+    },
+    {
+      "paper_id": "nielsen-chuang-programmable-gate-arrays-1997",
+      "scope": "Exact programmable-gate context; cited only to delimit program-state versus executable-gate claims, not as the theorem's lower-bound engine.",
+      "url": "https://arxiv.org/abs/quant-ph/9703032"
+    }
+  ],
+  "proof_obligations": [
+    {
+      "evidence": "False on the bounded parent window: exact optimal state-flattening success is at least 1/32.",
+      "obligation": "decide_inverse_width_overlap_for_label_retaining_purification_state",
+      "resolved": true
+    },
+    {
+      "evidence": "Full column rank gives the unique filter X=sqrt(p/D)rho^(-1/2), with sharp contraction bound p<=D lambda_min(rho).",
+      "obligation": "characterize_exact_one_sided_flattening_operation",
+      "resolved": true
+    },
+    {
+      "evidence": "The theorem identifies the filter with the unresolved endpoint inverse metric; no circuit is supplied by the existing interfaces.",
+      "obligation": "compile_scale_free_whitening_filter_from_schur_qft_gpe",
+      "resolved": false
+    },
+    {
+      "evidence": "Canonical all-outcome Bell transduction requires controlled W_a with W_aV=VU_a for a full D^2 unitary error basis.",
+      "obligation": "compile_endpoint_conjugated_logical_byproduct_algebra",
+      "resolved": false
+    },
+    {
+      "evidence": "Only the canonical Bell architecture and exact one-sided filters are covered.",
+      "obligation": "prove_lower_bound_for_arbitrary_structured_choi_to_channel_processors",
+      "resolved": false
+    }
+  ],
+  "scaling_records": [
+    {
+      "all_outcome_byproduct_correction_compiled": false,
+      "independent_source_high_row_mass_lower_bound": 0.9545454545454546,
+      "n": 8,
+      "natural_high_row_irrep_dimension_lower_bound_decimal": "10",
+      "natural_high_row_irrep_dimension_lower_bound_log2": 3.321928094887362,
+      "partition_count_decimal": "22",
+      "retained_logical_dimension_same_factorial_exponent_proved": true,
+      "selected_bell_amplification_log2_lower_bound_leading_term": 3.321928094887362,
+      "selected_bell_success_log2_upper_bound_leading_term": -6.643856189774724,
+      "selected_outcome_transduction_superpolynomial": true,
+      "status": "natural-selected-bell-outcome-superpolynomial-byproducts-open"
+    },
+    {
+      "all_outcome_byproduct_correction_compiled": false,
+      "independent_source_high_row_mass_lower_bound": 0.987012987012987,
+      "n": 12,
+      "natural_high_row_irrep_dimension_lower_bound_decimal": "285",
+      "natural_high_row_irrep_dimension_lower_bound_log2": 8.154818109052105,
+      "partition_count_decimal": "77",
+      "retained_logical_dimension_same_factorial_exponent_proved": true,
+      "selected_bell_amplification_log2_lower_bound_leading_term": 8.154818109052105,
+      "selected_bell_success_log2_upper_bound_leading_term": -16.30963621810421,
+      "selected_outcome_transduction_superpolynomial": true,
+      "status": "natural-selected-bell-outcome-superpolynomial-byproducts-open"
+    },
+    {
+      "all_outcome_byproduct_correction_compiled": false,
+      "independent_source_high_row_mass_lower_bound": 0.9956709956709957,
+      "n": 16,
+      "natural_high_row_irrep_dimension_lower_bound_decimal": "19802",
+      "natural_high_row_irrep_dimension_lower_bound_log2": 14.273358529266698,
+      "partition_count_decimal": "231",
+      "retained_logical_dimension_same_factorial_exponent_proved": true,
+      "selected_bell_amplification_log2_lower_bound_leading_term": 14.273358529266698,
+      "selected_bell_success_log2_upper_bound_leading_term": -28.546717058533396,
+      "selected_outcome_transduction_superpolynomial": true,
+      "status": "natural-selected-bell-outcome-superpolynomial-byproducts-open"
+    },
+    {
+      "all_outcome_byproduct_correction_compiled": false,
+      "independent_source_high_row_mass_lower_bound": 0.9993650793650793,
+      "n": 24,
+      "natural_high_row_irrep_dimension_lower_bound_decimal": "500117760",
+      "natural_high_row_irrep_dimension_lower_bound_log2": 28.897692597515665,
+      "partition_count_decimal": "1575",
+      "retained_logical_dimension_same_factorial_exponent_proved": true,
+      "selected_bell_amplification_log2_lower_bound_leading_term": 28.897692597515665,
+      "selected_bell_success_log2_upper_bound_leading_term": -57.79538519503133,
+      "selected_outcome_transduction_superpolynomial": true,
+      "status": "natural-selected-bell-outcome-superpolynomial-byproducts-open"
+    },
+    {
+      "all_outcome_byproduct_correction_compiled": false,
+      "independent_source_high_row_mass_lower_bound": 0.9998802251766679,
+      "n": 32,
+      "natural_high_row_irrep_dimension_lower_bound_decimal": "61440029066998",
+      "natural_high_row_irrep_dimension_lower_bound_log2": 45.804244132127394,
+      "partition_count_decimal": "8349",
+      "retained_logical_dimension_same_factorial_exponent_proved": true,
+      "selected_bell_amplification_log2_lower_bound_leading_term": 45.804244132127394,
+      "selected_bell_success_log2_upper_bound_leading_term": -91.60848826425479,
+      "selected_outcome_transduction_superpolynomial": true,
+      "status": "natural-selected-bell-outcome-superpolynomial-byproducts-open"
+    },
+    {
+      "all_outcome_byproduct_correction_compiled": false,
+      "independent_source_high_row_mass_lower_bound": 0.9999932098891174,
+      "n": 48,
+      "natural_high_row_irrep_dimension_lower_bound_decimal": "23923860447346238981387631",
+      "natural_high_row_irrep_dimension_lower_bound_log2": 84.30665257939833,
+      "partition_count_decimal": "147273",
+      "retained_logical_dimension_same_factorial_exponent_proved": true,
+      "selected_bell_amplification_log2_lower_bound_leading_term": 84.30665257939833,
+      "selected_bell_success_log2_upper_bound_leading_term": -168.61330515879666,
+      "selected_outcome_transduction_superpolynomial": true,
+      "status": "natural-selected-bell-outcome-superpolynomial-byproducts-open"
+    }
+  ],
+  "status": "constant-success-program-flattening-proved-direct-naimark-still-open",
+  "summary": "Proved that well-conditioned label-retaining purification states can be flattened exactly with constant success, then separated that state-conversion fact from direct Naimark implementation by deriving the unique whitening filter and the exact Bell byproduct algebra.",
+  "theorem": {
+    "bell_link": "A normalized endpoint Choi state and Bell outcome a produce VU_a^*|psi>/D with probability 1/D^2.",
+    "byproduct_criterion": "All outcomes are usable iff controlled corrections obey W_aV=VU_a; on ran(V) they implement VU_aV^*.",
+    "exact_filter_normal_form": "FX=sqrt(p/D)V implies uniquely X=sqrt(p/D)rho^(-1/2).",
+    "natural_dimension_consequence": "The prior rank-dense retained-window and high-row theorems give log(D)>=log(d_nu)+o(log(d_nu)) with d_nu>sqrt(n!)/p(n), so selecting one clean Bell outcome is superpolynomial.",
+    "normalized_purification": "F=K/sqrt(TrS)=V sqrt(rho), rho=S/TrS, and ||F||_F=1.",
+    "optimal_success": "X is a contraction iff p<=D lambda_min(rho); equality is attained by X_*=sqrt(lambda_min(rho))rho^(-1/2).",
+    "retained_window_consequence": "If 0.5I<=S<=16I then p_*=D lambda_min(S)/Tr(S)>=1/32, independent of orientation width.",
+    "scope": "This is an exact one-sided-filter theorem and canonical Bell-transduction boundary, not an arbitrary programmable-processor lower bound.",
+    "status": "constant-success-program-flattening-proved-direct-naimark-still-open",
+    "surviving_construction": "Compile scale-free Schmidt whitening plus the conjugated logical byproduct algebra, or provide a different structured Choi-to-channel transducer.",
+    "theorem_verified": true
+  },
+  "theorem_contract": {
+    "access_model": "One normalized operator-state purification F=K/sqrt(TrS), one successful contraction on its Schmidt/input leg, and canonical D-dimensional Bell transduction from a flattened endpoint Choi state.",
+    "claim_boundary": "Alternative structured multi-copy/program processors and representation-specific correction algebras are outside the theorem.",
+    "classical_alternative": "All finite controls are direct dense linear algebra. No polynomial classical contraction or quantum/classical separation is established.",
+    "hypothesis": "Retaining a normalized purification of [sqrt(A);sqrt(B)] bypasses the final-root width charge and by itself supplies a polynomial direct Naimark implementation.",
+    "natural_input_relevance": "The prior rank-dense retained-window and annealed Plancherel high-row theorems give the logical D the same factorial exponent as d_nu>sqrt(n!)/p(n) on asymptotically full natural mass.",
+    "negative_boundary": "The exact filter is uniquely proportional to S^(-1/2), and Bell transduction needs either a 1/D^2 selected outcome or controlled V-conjugated logical byproducts.",
+    "positive_result": "The resource state has optimal exact flattening probability D lambda_min(S)/TrS, at least 1/32 on the retained window; inverse width is not information-theoretically forced at state level."
+  }
+}

@@ -81851,6 +81851,99 @@
       "PO-MEASUREMENT",
       "PO-COMPLEXITY"
     ],
+    "claim": "The known physical row-copy and label-controlled Schur/QFT/GPE covariance can correct a complete Bell error basis while preserving the final left/right branch flag.",
+    "evidence": {
+      "annealed_residual_square_floor": "1/64",
+      "arbitrary_branch_mixing_ruled_out": false,
+      "basis_average": "D^-2 sum_a D^-1||[C,U_a]||_F^2=2Var(C)",
+      "exact_criterion": "Gamma_U branch preserving and Gamma_U V_C=V_CU iff [C,U]=0",
+      "natural_variance": "1/(8alpha), alpha in [2,4]",
+      "positive_event_mass_floor": "1/15-o(1)",
+      "positive_event_residual_square_floor": "1/128",
+      "speedup_claim_allowed": false
+    },
+    "id": "SCHUR-COMPANION-FINAL-ROOT-BRANCH-PRESERVING-BYPRODUCT-COVARIANCE",
+    "lesson": "Do not search for the remaining Bell corrections inside the branch-preserving covariance algebra. A viable tight-teleportation route must compile the C-dependent branch-mixing shift and clock, including the unresolved metric whitening, or change the transduction architecture.",
+    "reason_invalid": "Any such correction for logical U forces [C,U]=0. A D^2-element unitary error basis spans M_D, so exact correction requires scalar C; quantitatively every basis has average residual squared at least Var(C)/2. The natural endpoint has Var(C)->1/(8alpha).",
+    "source": "research/representation/self_dual_wreath_final_root_byproduct_covariance_no_go.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "PO-MECHANISM",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY"
+    ],
+    "claim": "The actual compiled generalized-Fourier row-copy or Schur/QFT/GPE preparation stack is a full endpoint preparation whose non-program columns may already expose V_C X V_C^* and V_C Z V_C^*.",
+    "evidence": {
+      "addressed_cross_map_normalization": 1.0,
+      "all_ancilla_blocks_branch_preserving": true,
+      "assembled_endpoint_weyl_pair": false,
+      "compiled_full_endpoint_preparation_A_V": false,
+      "full_row_copy_unitary": "(F_G^* tensor I) SELECT_s(U_s^*) (P tensor I)",
+      "speedup_claim_allowed": false,
+      "strict_window_target_distance_lower_bound": "delta",
+      "typical_natural_effect_window_proved": false
+    },
+    "id": "SCHUR-COMPANION-FINAL-ROOT-PHYSICAL-PREPARATION-NONPROGRAM-COLUMNS-NO-BYPRODUCT",
+    "lesson": "Do not mine unspecified columns of a nonexistent endpoint-preparation circuit. Use the genuinely available normalization-one addressed cross-map signals to construct the endpoint Weyl blocks, or compile Q_R explicitly.",
+    "reason_invalid": "The complete row-copy unitary commutes with every orientation-branch projector for every uniform-preparation extension, so all selected ancilla blocks are branch preserving. Strict-window endpoint Weyl byproducts have a cross block with minimum singular value at least delta. The endpoint program, whitening filter, and Q_R are not compiled full-domain unitaries in the current stack.",
+    "source": "research/representation/self_dual_wreath_final_root_physical_preparation_extension_scope_boundary.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "PO-MECHANISM",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY"
+    ],
+    "claim": "A normalized label-retaining purification, a supplied reflection about it, or finitely many normalized copies directly expose the endpoint-conjugated Weyl generators at constant normalization.",
+    "evidence": {
+      "amplitude_amplification_factor": "D",
+      "arbitrary_coherent_processor_lower_bound_proved": false,
+      "fixed_copy_bounded_linear_density_contraction_bound": "|c|<=1/D",
+      "flattened_coefficient": "1/D",
+      "program_reflection_traceless_weyl_coefficient": "2/D",
+      "retained_window_bounds": "1/(32D)<=c_*(U)<=32/D",
+      "selected_branch_probability": "1/D^2",
+      "speedup_claim_allowed": false,
+      "unflattened_optimum": "1/||rho^(-1/2) U rho^(-1/2)||"
+    },
+    "id": "SCHUR-COMPANION-FINAL-ROOT-PROGRAM-CONTRACTION-INVERSE-DIMENSION",
+    "lesson": "Charge logical dimension separately from state-flattening success. Any surviving direct route must exploit coherent oracle structure outside bounded linear program-density contractions, and its query/normalization cost must be proved explicitly.",
+    "reason_invalid": "The normalized projector contraction is exactly B_U/D; the optimal unflattened direct insertion has coefficient between lambda_min(rho) and lambda_max(rho), hence between 1/(32D) and 32/D on the retained window; a traceless-Weyl reflection contraction gives 2B_U/D; and every induced-trace-norm-one linear contraction of normalized density copies satisfies |c|<=1/D.",
+    "source": "research/representation/self_dual_wreath_final_root_program_contraction_normalization_no_go.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "PO-MECHANISM",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY"
+    ],
+    "claim": "A label-retaining purification of [sqrt(A);sqrt(B)] is already a direct final-root Naimark compiler once the retained parent metric is well conditioned.",
+    "evidence": {
+      "all_outcome_correction": "W_a V=V U_a",
+      "arbitrary_processor_lower_bound_proved": false,
+      "natural_dimension": "log D>=log d_nu+o(log d_nu), with d_nu>sqrt(n!)/p(n) on rank-dense high natural mass",
+      "optimal_flattening_success": "D lambda_min(S)/Tr(S)",
+      "retained_window_success_lower_bound": "1/32",
+      "selected_bell_probability": "1/D^2",
+      "speedup_claim_allowed": false,
+      "unique_filter": "sqrt(p/D)(S/TrS)^(-1/2)"
+    },
+    "id": "SCHUR-COMPANION-FINAL-ROOT-PURIFICATION-PROGRAM-NOT-NAIMARK-GATE",
+    "lesson": "Charge state flattening and program-to-channel transduction separately. A viable direct Naimark route must compile the whitening operation and either the conjugated logical generators or a different structured transducer; coherent labels alone supply neither.",
+    "reason_invalid": "Bounded conditioning does give constant-success program-state flattening, but its unique exact filter is proportional to rho^(-1/2). Even granting the flattened Choi state, canonical Bell application either selects one 1/D^2 outcome or requires controlled endpoint-conjugated logical byproducts VU_aV^*.",
+    "source": "research/representation/self_dual_wreath_final_root_purification_naimark_program_boundary.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "PO-MECHANISM",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY"
+    ],
     "claim": "Exact child polars convert normalized raw child analyses into polynomially usable final-root metric access because the common 1/sqrt(w) factor cancels from the endpoint polar.",
     "evidence": {
       "exact_binary_metric_signal": "T=[sqrt(A);sqrt(B)]/sqrt(w), T^*T=(A+B)/w",
@@ -81865,6 +81958,29 @@
     "lesson": "Do not feed the normalized raw child analysis back through generic polar extraction. A viable hierarchy now requires representation-specific positive-metric preparation or a direct matrix-POVM Naimark dilation at constant/inverse-polynomial normalization.",
     "reason_invalid": "The factor cancels algebraically but not operationally. The exact signal T has T^*T=S/w; on the retained parent window all singular values are O(w^-1/2), so bounded QSVT polar degree and black-box state-conversion queries are Omega(sqrt(w)) with w=Theta(n!).",
     "source": "research/representation/self_dual_wreath_final_root_metric_access_width_no_go.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "PO-MECHANISM",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY"
+    ],
+    "claim": "Reflection about the normalized endpoint program, or a preparation unitary specified only by its prepared first column, generically supplies a sub-square-root-query constant-normalization block encoding of V_C X V_C^*.",
+    "evidence": {
+      "bare_first_column_promise_well_posed": false,
+      "friendly_extension_query_count": 1,
+      "hard_pair_program_distance": "beta/sqrt(D)",
+      "hard_pair_target_distance": "beta",
+      "particular_structured_preparation_lower_bound_proved": false,
+      "reflection_query_lower_bound": "(1-eta)sqrt(D)/(2alpha)",
+      "robust_preparation_query_lower_bound": "(1-eta)sqrt(D)/alpha",
+      "speedup_claim_allowed": false
+    },
+    "id": "SCHUR-COMPANION-FINAL-ROOT-REFLECTION-AND-ROBUST-PREPARATION-SQRT-D-QUERY",
+    "lesson": "State the complete unitary extension promise. Reflection-only and worst-extension preparation compilers have superpolynomial worst-case cost at natural high-row dimensions, but no typical-endpoint mass bound is proved. A structured physical circuit can survive through explicitly audited action outside its prepared first column.",
+    "reason_invalid": "A canonical pair with one changed effect eigenvalue has program and close-oracle distance beta/sqrt(D) but target byproduct distance beta. Hybrid telescoping forces Omega(sqrt(D)/alpha) queries for reflections and for compilers robust to every preparation extension. Conversely, unconstrained non-first columns can leak a unitary dilation of the target in one query, so the bare preparation promise is not an extension-independent oracle model.",
+    "source": "research/representation/self_dual_wreath_final_root_state_preparation_oracle_query_boundary.json"
   },
   {
     "applies_to": [

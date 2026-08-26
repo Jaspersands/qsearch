@@ -462,9 +462,11 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             ),
             quantum_mechanism=(
                 "Use the alpha-one addressed J_f^*J_e query oracle and direct GPE pair polars beyond the proved "
-                "uniform linear G/q assembly. The natural Omega(q/poly(n)) retained window is now falsified; build "
-                "a hierarchical shorted-metric or direct holonomy-aware orientation polar that preserves the "
-                "absolute S cutoff, followed by hidden-involution information and outcome-decoder theorems."
+                "uniform linear G/q assembly. Label-retaining purification has constant-success endpoint-program "
+                "flattening on the retained window. The branch-preserving covariance shortcut for Bell corrections "
+                "is now falsified by the natural endpoint variance. Compile the two exact C-dependent branch-mixing "
+                "Weyl generators directly from the purification resource without standalone whitening, or construct "
+                "a different non-tight structured transducer, followed by hidden-involution information and decoding."
             ),
             cost_model=(
                 "Count coset-state preparation, number of registers, tensor bond dimension, measurement synthesis, "
@@ -493,7 +495,11 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "supplies their pair polars. Pair phases alone cannot form the global Gram on nonflat cycles: the "
                 "exact S3 kernel is indefinite. Uniform linear address mixing does form the positive Gram G/q, but "
                 "equal-coefficient contractivity forces alpha=q. Exact natural sibling moments now falsify every "
-                "inverse-polynomial G/q retained window; hierarchical/direct global polar synthesis remains open."
+                "inverse-polynomial G/q retained window. Label-retaining purification avoids inverse width only as "
+                "a program state: its unique exact filter is whitening. A canonical clean Bell outcome has probability "
+                "1/D^2, and every branch-preserving correction basis has average residual squared at least Var(C)/2, "
+                "which is at least 1/64 annealed on the natural free-Jacobi endpoint. C-dependent branch mixing, "
+                "alternative structured processors, and hierarchical/direct global polar synthesis remain open."
             ),
             dequantization_check=(
                 "Check whether each separating observable is equivalent to classical color refinement, code invariants, "
@@ -675,7 +681,12 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
                 "EXP-CODE-SELF-DUAL-WREATH-ADDRESSED-CROSS-MAP-LINEAR-ASSEMBLY-NORMALIZATION-BOUNDARY",
                 "EXP-CODE-SELF-DUAL-WREATH-NATURAL-Q-SCALE-SPECTRAL-WINDOW-NO-GO",
                 "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-METRIC-ACCESS-WIDTH-NO-GO",
+                "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-BYPRODUCT-COVARIANCE-NO-GO",
+                "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PURIFICATION-NAIMARK-PROGRAM-BOUNDARY",
                 "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-SCALAR-MIXER-NO-GO",
+                "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PHYSICAL-PREPARATION-EXTENSION-SCOPE-BOUNDARY",
+                "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PROGRAM-CONTRACTION-NORMALIZATION-NO-GO",
+                "EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-STATE-PREPARATION-ORACLE-QUERY-BOUNDARY",
                 "EXP-CODE-TENSOR-MEASUREMENT",
             ],
             notes="High upside but high no-go risk; registry keeps the no-go analysis mandatory.",
@@ -22051,6 +22062,84 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             next_actions=["Run qsearch.py self-dual-wreath-final-root-metric-access-width-no-go."],
         ),
         ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-BYPRODUCT-COVARIANCE-NO-GO",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Final-root byproduct covariance no-go",
+            status="completed-negative-theorem",
+            hypothesis=(
+                "The physical row-copy and label-controlled covariance stack can correct a complete Bell error basis "
+                "while preserving the final endpoint branch flag."
+            ),
+            protocol=(
+                "Derive the exact endpoint-conjugated Weyl blocks, compress arbitrary branch-preserving corrections "
+                "to the matrix effect, average over a general unitary error basis, and transfer natural Jacobi variance."
+            ),
+            positive_signal=(
+                "A direct compiler for the C-dependent branch-mixing Weyl shift and clock, or a non-tight structured "
+                "program-to-channel transducer outside the covariance algebra."
+            ),
+            falsifiers=[
+                "A branch-preserving correction for U exists only when [C,U]=0.",
+                "Every unitary error basis has average normalized commutator square 2Var(C).",
+                "Natural endpoint variance yields an annealed residual-square floor 1/64.",
+                "The theorem does not rule out C-dependent branch-mixing circuits or arbitrary processors.",
+            ],
+            metrics=[
+                "exact_endpoint_byproduct_block_formula_theorem_count",
+                "branch_preserving_correction_commutant_criterion_count",
+                "natural_constant_byproduct_covariance_no_go_count",
+                "C_dependent_branch_mixing_generator_compiler_count",
+                "speedup_claim_allowed",
+            ],
+            dependencies=[
+                "self_dual_wreath_final_root_byproduct_covariance_no_go.py",
+                "self_dual_wreath_final_root_purification_naimark_program_boundary.py",
+                "self_dual_wreath_final_root_scalar_mixer_no_go.py",
+            ],
+            next_actions=[
+                "Test direct block encodings of the C-dependent branch-mixing Weyl generators from the purification resource."
+            ],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PURIFICATION-NAIMARK-PROGRAM-BOUNDARY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Final-root purification Naimark program boundary",
+            status="completed-boundary-theorem",
+            hypothesis=(
+                "A label-retaining purification of [sqrt(A);sqrt(B)] bypasses the final-root width charge and by "
+                "itself supplies a polynomial direct Naimark implementation."
+            ),
+            protocol=(
+                "Derive the sharp one-sided purification-flattening filter and success probability, verify Weyl/Bell "
+                "transduction and its exact correction algebra, and transfer the natural high-row dimension bound."
+            ),
+            positive_signal=(
+                "A representation-specific circuit for scale-free whitening and the endpoint-conjugated Weyl "
+                "generators, or a different polynomial Choi-to-channel transducer."
+            ),
+            falsifiers=[
+                "Inverse width is not unavoidable at program-state level: bounded conditioning gives success at least 1/32.",
+                "The unique exact filter is inverse-metric whitening rather than a free label-retention primitive.",
+                "Canonical clean Bell transduction has probability 1/D^2; all-outcome recovery needs W_aV=VU_a.",
+                "The theorem is not a lower bound for arbitrary structured programmable processors.",
+            ],
+            metrics=[
+                "constant_success_program_state_flattening_theorem_count",
+                "exact_bell_byproduct_boundary_theorem_count",
+                "scale_free_whitening_filter_compiler_count",
+                "conjugated_byproduct_algebra_compiler_count",
+                "speedup_claim_allowed",
+            ],
+            dependencies=[
+                "self_dual_wreath_final_root_purification_naimark_program_boundary.py",
+                "self_dual_wreath_final_root_metric_access_width_no_go.py",
+                "self_dual_wreath_joint_character_purification_access_boundary.py",
+            ],
+            next_actions=[
+                "Derive and test the endpoint-conjugated logical Weyl generators in physical generalized-Fourier row-copy coordinates."
+            ],
+        ),
+        ExperimentRecord(
             id="EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-SCALAR-MIXER-NO-GO",
             candidate_id="CODE-COSET-COLLECTIVE",
             title="Self Dual Wreath Final Root Scalar Mixer No Go",
@@ -22062,6 +22151,45 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             metrics=["speedup_claim_allowed", "new_quantum_algorithm_count"],
             dependencies=["self_dual_wreath_final_root_scalar_mixer_no_go.py"],
             next_actions=["Run qsearch.py self-dual-wreath-final-root-scalar-mixer-no-go."],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PHYSICAL-PREPARATION-EXTENSION-SCOPE-BOUNDARY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Self Dual Wreath Final Root Physical Preparation Extension Scope Boundary",
+            status="completed-negative-theorem",
+            hypothesis="Proved representation-theoretic properties and certified reductions for Self Dual Wreath Final Root Physical Preparation Extension Scope Boundary.",
+            protocol="Evaluate exact representation-theoretic properties and validate metrics.",
+            positive_signal="Proved representation-theoretic properties and certified reductions for Self Dual Wreath Final Root Physical Preparation Extension Scope Boundary.",
+            falsifiers=["Observable in self_dual_wreath_final_root_physical_preparation_extension_scope_boundary matches classical baseline.", "Representation scaling in self_dual_wreath_final_root_physical_preparation_extension_scope_boundary collapses under classical contraction.", "Asymptotic separation in self_dual_wreath_final_root_physical_preparation_extension_scope_boundary fails to defeat ISD/WL baselines."],
+            metrics=["speedup_claim_allowed", "new_quantum_algorithm_count"],
+            dependencies=["self_dual_wreath_final_root_physical_preparation_extension_scope_boundary.py"],
+            next_actions=["Run qsearch.py self-dual-wreath-final-root-physical-preparation-extension-scope-boundary."],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PROGRAM-CONTRACTION-NORMALIZATION-NO-GO",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Self Dual Wreath Final Root Program Contraction Normalization No Go",
+            status="completed-negative-theorem",
+            hypothesis="Proved representation-theoretic properties and certified reductions for Self Dual Wreath Final Root Program Contraction Normalization No Go.",
+            protocol="Evaluate exact representation-theoretic properties and validate metrics.",
+            positive_signal="Proved representation-theoretic properties and certified reductions for Self Dual Wreath Final Root Program Contraction Normalization No Go.",
+            falsifiers=["Observable in self_dual_wreath_final_root_program_contraction_normalization_no_go matches classical baseline.", "Representation scaling in self_dual_wreath_final_root_program_contraction_normalization_no_go collapses under classical contraction.", "Asymptotic separation in self_dual_wreath_final_root_program_contraction_normalization_no_go fails to defeat ISD/WL baselines."],
+            metrics=["speedup_claim_allowed", "new_quantum_algorithm_count"],
+            dependencies=["self_dual_wreath_final_root_program_contraction_normalization_no_go.py"],
+            next_actions=["Run qsearch.py self-dual-wreath-final-root-program-contraction-normalization-no-go."],
+        ),
+        ExperimentRecord(
+            id="EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-STATE-PREPARATION-ORACLE-QUERY-BOUNDARY",
+            candidate_id="CODE-COSET-COLLECTIVE",
+            title="Self Dual Wreath Final Root State Preparation Oracle Query Boundary",
+            status="completed-negative-theorem",
+            hypothesis="Proved representation-theoretic properties and certified reductions for Self Dual Wreath Final Root State Preparation Oracle Query Boundary.",
+            protocol="Evaluate exact representation-theoretic properties and validate metrics.",
+            positive_signal="Proved representation-theoretic properties and certified reductions for Self Dual Wreath Final Root State Preparation Oracle Query Boundary.",
+            falsifiers=["Observable in self_dual_wreath_final_root_state_preparation_oracle_query_boundary matches classical baseline.", "Representation scaling in self_dual_wreath_final_root_state_preparation_oracle_query_boundary collapses under classical contraction.", "Asymptotic separation in self_dual_wreath_final_root_state_preparation_oracle_query_boundary fails to defeat ISD/WL baselines."],
+            metrics=["speedup_claim_allowed", "new_quantum_algorithm_count"],
+            dependencies=["self_dual_wreath_final_root_state_preparation_oracle_query_boundary.py"],
+            next_actions=["Run qsearch.py self-dual-wreath-final-root-state-preparation-oracle-query-boundary."],
         ),
     ]
     return candidates, experiments

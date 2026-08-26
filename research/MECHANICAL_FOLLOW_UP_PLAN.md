@@ -27,6 +27,110 @@
 > obligations, and acceptance checks before handoff. Exhausting one model's
 > usage is a handoff event, not completion of the research goal.
 
+> **Newest unwired final-root physical-preparation extension scope boundary
+> (2026-08-26):** mechanically wire
+> `EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PHYSICAL-PREPARATION-EXTENSION-SCOPE-BOUNDARY`
+> from
+> `theorems/self_dual_wreath_final_root_physical_preparation_extension_scope_boundary.py`.
+> Suggested CLI:
+> `code-wreath-final-root-physical-preparation-extension-scope-boundary`.
+> Dispatch to
+> `write_final_root_physical_preparation_extension_scope_boundary_report`; the
+> seed registry record is already present. Add experiment-runner
+> import/set/dispatch, `qsearch.py` parser/handler, README command, and a
+> clean-registry dispatch test. Preserve the typed result: the complete
+> generalized row-copy unitary and every ancilla block commute with all
+> orientation-branch projectors for every uniform-state preparation extension;
+> a strict-window endpoint Weyl byproduct is distance at least `delta` from
+> this algebra; no compiled full-domain endpoint preparation `A_V` exists in
+> the current stack. Also preserve the positive exception: addressed
+> `J_f^*J_e` block encodings and pair polars exist at normalization one but are
+> not assembled endpoint Weyl blocks. Do not claim typical natural strict-
+> effect mass or rule out new cross-branch circuits. Acceptance: 25 new focused
+> tests, artifact, adjacent oracle/program/byproduct/physical-interface tests,
+> compileall, `node --check`, proof refresh, `git diff --check`, and full
+> validation.
+
+> **Newest unwired final-root state-preparation oracle query boundary
+> (2026-08-26):** mechanically wire
+> `EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-STATE-PREPARATION-ORACLE-QUERY-BOUNDARY`
+> from
+> `theorems/self_dual_wreath_final_root_state_preparation_oracle_query_boundary.py`.
+> Suggested CLI:
+> `code-wreath-final-root-state-preparation-oracle-query-boundary`. Dispatch to
+> `write_final_root_state_preparation_oracle_query_boundary_report`; the seed
+> registry record is already present. Add experiment-runner import/set/dispatch,
+> `qsearch.py` parser/handler, README command, and a clean-registry dispatch
+> test. Preserve the split oracle theorem: a canonical final-root hard pair
+> gives reflection-query lower bound
+> `(1-eta)sqrt(D)/(2alpha)`; compilers correct for every valid preparation
+> extension obey `(1-eta)sqrt(D)/alpha`; but a friendly unconstrained extension
+> can leak a normalization-one target block in one query. Therefore the bare
+> promise `A_V|0>=|V>>/sqrt(D)` is not an extension-independent query model.
+> Do not apply the worst-extension bound to a particular structured
+> Schur/QFT/GPE circuit without auditing its full action. Acceptance: 25 new
+> focused tests, the artifact, adjacent program-contraction/byproduct/
+> purification tests, compileall, `node --check`, proof refresh,
+> `git diff --check`, and full validation.
+
+> **Newest unwired final-root program-contraction normalization no-go
+> (2026-08-26):** mechanically wire
+> `EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PROGRAM-CONTRACTION-NORMALIZATION-NO-GO`
+> from
+> `theorems/self_dual_wreath_final_root_program_contraction_normalization_no_go.py`.
+> Suggested CLI:
+> `code-wreath-final-root-program-contraction-normalization-no-go`. Dispatch to
+> `write_final_root_program_contraction_normalization_no_go_report`; the seed
+> registry record is already present. Add experiment-runner import/set/dispatch,
+> `qsearch.py` parser/handler, README command, and a clean-registry dispatch
+> test. Preserve the exact scope: the normalized projector contraction gives
+> `VUV^*/D`; the unique unflattened direct insertion has sharp coefficient
+> `c_*=1/||rho^(-1/2)U rho^(-1/2)||` in `[1/(32D),32/D]` on the retained
+> window; a traceless-Weyl program-reflection contraction gives `2VUV^*/D`;
+> and any induced-trace-norm-one linear contraction of a fixed number of
+> normalized program density copies satisfies `|c|<=1/D`. Do not turn this
+> into a lower bound for arbitrary coherent state-preparation-oracle circuits,
+> adaptive postselection, or long reflection sequences. Acceptance: 27 new
+> focused tests, the artifact, adjacent purification/byproduct/metric tests,
+> compileall, `node --check`, proof refresh, `git diff --check`, and full
+> validation.
+
+> **Newest unwired final-root byproduct covariance no-go (2026-08-26):**
+> mechanically wire
+> `EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-BYPRODUCT-COVARIANCE-NO-GO`
+> from
+> `theorems/self_dual_wreath_final_root_byproduct_covariance_no_go.py`.
+> Suggested CLI: `code-wreath-final-root-byproduct-covariance-no-go`. The
+> seed registry record is already present. Add the experiment-runner
+> import/set/dispatch, `qsearch.py` parser/handler, README command, and
+> clean-registry dispatch test. Preserve the exact scope: a branch-preserving
+> correction exists iff `[C,U]=0`; every unitary error basis has average
+> correction residual squared at least `Var(C)/2`; the natural annealed floor
+> is `1/64`, with a `1/15-o(1)` event at floor `1/128`. Do not turn this into
+> an arbitrary branch-mixing circuit or programmable-processor lower bound.
+> Acceptance: 18 focused tests, the module artifact, adjacent purification,
+> scalar-mixer, physical-intertwiner, and PGM-closure tests, compileall,
+> `node --check`, proof refresh, `git diff --check`, and full validation.
+
+> **Newest unwired purification--Naimark program boundary (2026-08-25):**
+> mechanically wire
+> `EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PURIFICATION-NAIMARK-PROGRAM-BOUNDARY`
+> from
+> `theorems/self_dual_wreath_final_root_purification_naimark_program_boundary.py`.
+> Suggested CLI:
+> `code-wreath-final-root-purification-naimark-program-boundary`. Dispatch to
+> `write_final_root_purification_naimark_program_boundary_report`; the seed
+> registry record is already present, so add only the experiment-runner
+> import/set/dispatch, `qsearch.py` parser/handler, README command, and
+> clean-registry dispatch test. Preserve the exact split: optimal one-sided Choi flattening succeeds
+> with `p_*=D lambda_min(S)/TrS>=1/32` on the retained window, but the unique
+> filter is inverse-metric whitening; canonical Bell transduction has clean
+> outcome probability `1/D^2` and deterministic all-outcome recovery requires
+> `W_aV=VU_a`. Do not convert this into an arbitrary programmable-processor
+> lower bound. Acceptance: 18 focused tests, the module artifact, adjacent
+> metric/purification/physical-PGM tests, compileall, `node --check`,
+> `git diff --check`, proof refresh, and `python qsearch.py validate`.
+
 > **Newest unwired label-coherent power-map boundary (2026-08-24):**
 > mechanically wire
 > `EXP-CODE-SELF-DUAL-WREATH-BRANCH-CHARACTER-LABEL-COHERENT-POWER-MAP-BOUNDARY`

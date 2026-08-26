@@ -12533,6 +12533,509 @@ normalization, or prove that every such label-retaining purification still
 contains an inverse-width overlap. Then propagate the winning interface to
 earlier nodes.
 
+## Final-Root Purification Is a Constant-Success Program State, Not Yet a Naimark Gate (2026-08-25)
+
+The next surviving access escape has now been resolved at its exact boundary:
+
+```text
+theorems/self_dual_wreath_final_root_purification_naimark_program_boundary.py
+tests/test_self_dual_wreath_final_root_purification_naimark_program_boundary.py
+research/representation/self_dual_wreath_final_root_purification_naimark_program_boundary.json
+EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PURIFICATION-NAIMARK-PROGRAM-BOUNDARY
+```
+
+For
+
+```text
+K=[sqrt(A);sqrt(B)],  S=K^*K,  V=KS^(-1/2),
+F=K/sqrt(TrS)=V sqrt(rho),  rho=S/TrS,
+```
+
+the normalized operator-state purification `F` has a decisive positive
+property. Any successful one-sided filter with exact output `V/sqrt(D)`
+satisfies
+
+```text
+F X = sqrt(p/D) V
+iff
+X = sqrt(p/D) rho^(-1/2).
+```
+
+Consequently `X` is a contraction iff
+
+```text
+p <= p_* = D lambda_min(rho)=D lambda_min(S)/Tr(S),
+```
+
+and equality is attained. On the retained final-root window
+`0.5I<=S<=16I`, `p_*>=1/32`. Thus the proposed theorem that every
+label-retaining purification inherits inverse orientation width is **false**:
+the Choi/program state can be flattened with constant success as a matter of
+finite-dimensional quantum mechanics.
+
+This does not compile the Naimark gate. The exact filter is unique and is
+precisely the unresolved inverse-metric whitening operation. Moreover, even
+granting the flattened state `|V>>/sqrt(D)`, canonical Bell transduction with
+a Weyl error basis gives
+
+```text
+|psi> -> V U_a^* |psi>/D,
+Pr[a]=1/D^2.
+```
+
+Selecting the clean identity outcome costs amplitude amplification `D`.
+Using all outcomes deterministically is possible exactly when controlled
+corrections satisfy
+
+```text
+W_a V = V U_a;
+```
+
+on `ran(V)` they implement the endpoint-conjugated logical algebra
+`V U_a V^*`. Forgetting the outcome without correction gives the completely
+depolarizing state `VV^*/D`. The prior rank-dense retained-window and
+high-row theorems supply
+`log D>=log d_nu+o(log d_nu)` and `d_nu>sqrt(n!)/p(n)` on asymptotically
+full natural mass, so selected-outcome Bell transduction is superpolynomial
+there.
+
+Four flattening controls and three full Weyl/Bell controls pass. A separate
+equal-metric witness has `S_1=S_2=I` and identical Schmidt spectra but a
+nonzero cross-Gram obstruction to one shared shift correction, proving that
+the parent metric alone does not determine the byproduct algebra. This is an
+exact one-sided-filter theorem and a canonical Bell-transduction boundary,
+not an arbitrary programmable-processor lower bound.
+
+Claim boundary:
+
+```text
+constant-success purification-state flattening on retained window: PROVED
+inverse-width overlap unavoidable for purification states:        FALSE
+unique exact one-sided filter is inverse-metric whitening:         PROVED
+scale-free whitening filter from Schur/QFT/GPE:                    OPEN
+selected clean Bell outcome probability:                           1/D^2
+all-outcome Bell byproduct criterion:                              PROVED
+endpoint-conjugated Weyl/byproduct compiler:                       OPEN
+arbitrary structured Choi-to-channel processor lower bound:       OPEN
+direct Naimark / physical PGM / decoder / separation / speedup:    OPEN
+```
+
+**Next high-reasoning task:** attack the minimum executable interface, not
+the program state. In the physical generalized-Fourier row-copy coordinates,
+derive exact formulas for the two logical Weyl generators
+`V X V^*` and `V Z V^*` on `ran(V)`. Determine whether they reduce to sparse
+Schur-label permutations/phases or a recursive child-polar network. A
+positive theorem compiling those two generators, together with a genuinely
+scale-free implementation of the unique whitening filter, would make all
+Bell corrections polynomial. A useful negative theorem must give a scoped
+access-model obstruction for these generators or the whitening filter; it
+must not infer an arbitrary-circuit lower bound from large `D`.
+
+## Natural Matrix Variance Falsifies Branch-Preserving Bell Corrections (2026-08-26)
+
+The physical covariance shortcut for the executable endpoint has now been
+closed at theorem level:
+
+```text
+theorems/self_dual_wreath_final_root_byproduct_covariance_no_go.py
+tests/test_self_dual_wreath_final_root_byproduct_covariance_no_go.py
+research/representation/self_dual_wreath_final_root_byproduct_covariance_no_go.json
+EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-BYPRODUCT-COVARIANCE-NO-GO
+```
+
+After factoring the compiled child polars, write the canonical final mixer as
+
+```text
+V_C=[sqrt(C);sqrt(I-C)].
+```
+
+For any logical Bell error `U`, the exact endpoint-conjugated correction is
+
+```text
+B_U=V_C U V_C^*
+   =[[sqrt(C)U sqrt(C),       sqrt(C)U sqrt(I-C)],
+     [sqrt(I-C)U sqrt(C),     sqrt(I-C)U sqrt(I-C)]].
+```
+
+Adding `I-V_CV_C^*` gives a unitary extension `W_U` satisfying
+`W_UV_C=V_CU`. These are the exact requested Weyl-generator formulas. They
+retain `sqrt(C)`, `sqrt(I-C)`, and generally mix the final branch.
+
+The key covariance theorem allows a different output unitary in each branch.
+If `Gamma_U` preserves the left/right branch projector, then
+
+```text
+Gamma_U V_C=V_CU  iff  [C,U]=0.
+```
+
+Therefore a complete `D^2`-element Hilbert--Schmidt orthogonal unitary error
+basis has branch-preserving corrections iff `C` is scalar. This is
+quantitative and Bell-basis independent. Every unitary error basis obeys
+
+```text
+D^-2 sum_a D^-1 ||[C,U_a]||_F^2 = 2 Var(C),
+D^-2 sum_a D^-1 ||Gamma_a V_C-V_CU_a||_F^2 >= Var(C)/2.
+```
+
+The proved natural free-Jacobi law has `Var(C)->1/(8alpha)` for
+`alpha in [2,4]`. Consequently:
+
+```text
+annealed average branch-preserving residual squared >= 1/(16alpha) >= 1/64;
+event mass >= 1/(4alpha-1)-o(1) >= 1/15-o(1)
+has average residual squared >= 1/(32alpha) >= 1/128.
+```
+
+Thus the known final-branch-preserving Schur/QFT/GPE/row-copy covariance
+cannot furnish a full Bell correction basis on the proved natural final-root
+mass. Changing the error basis does not help. Different actions in the two
+branches do not help. Simple spectrum is not assumed.
+
+Four exact controls cover scalar, diagonal-simple, rotated-simple, and
+rotated-degenerate effects. They verify the four-block formula, unitary
+extension, unitary-basis twirl, commutant dimensions, and invariance under
+compiled child isometries. A separate rigidity control proves that one
+conjugated Weyl generator leaves nontrivial gauge freedom, while the labelled
+shift/clock pair determines `V_C` up to global phase. This is algebraic
+completeness, not circuit hardness.
+
+Claim boundary:
+
+```text
+exact C-dependent endpoint Weyl block formulas:                    PROVED
+branch-preserving correction iff [C,U]=0:                          PROVED
+Bell-basis-independent average residual >=Var(C)/2:                PROVED
+natural annealed residual-square floor 1/64:                       PROVED
+known branch-preserving physical covariance supplies corrections: FALSE
+labelled branch-mixing shift/clock algebraically determine V_C:    PROVED
+C-dependent branch-mixing shift/clock compiler:                    OPEN
+scale-free whitening / alternative non-tight transducer:          OPEN
+arbitrary branch-mixing circuit lower bound:                       NOT PROVED
+physical PGM / decoder / separation / speedup:                     OPEN
+```
+
+## Final-root program-contraction normalization no-go (2026-08-26)
+
+Experiment:
+
+```text
+EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PROGRAM-CONTRACTION-NORMALIZATION-NO-GO
+```
+
+Artifact:
+
+```text
+research/representation/self_dual_wreath_final_root_program_contraction_normalization_no_go.json
+```
+
+The proposed constant-normalization extraction from a normalized endpoint
+program has now been decided for direct density-contraction architectures.
+For any isometry `V:H_D->K`, normalized program
+`|v>=|V>>/sqrt(D)`, and logical unitary `U`, vectorization gives exactly
+
+```text
+Tr_R[(I tensor U^T)|v><v|] = VUV^*/D.
+```
+
+This coefficient is sharp under induced trace-norm contractivity. The input
+program projector, and every finite tensor power of it, has trace norm one;
+`||VUV^*||_1=D`. Hence every linear map `L` with
+`||L||_(1->1)<=1` obeys
+
+```text
+L((|v><v|)^(tensor k))=cVUV^*  =>  |c|<=1/D,
+```
+
+independently of the fixed normalized copy count `k`. The canonical one-copy
+partial trace attains equality.
+
+For the actual unflattened resource `F=V sqrt(rho)`, `rho=S/TrS`, a reference
+insertion `M` obeys `FMF^*=cVUV^*` iff uniquely
+
+```text
+M=c rho^(-1/2) U rho^(-1/2).
+```
+
+The largest contraction coefficient is therefore
+
+```text
+c_*(U)=1/||rho^(-1/2)U rho^(-1/2)||,
+lambda_min(rho) <= c_*(U) <= lambda_max(rho).
+```
+
+On `0.5I<=S<=16I`, this becomes
+
+```text
+1/(32D) <= c_*(U) <= 32/D.
+```
+
+Thus the previously proved constant state-flattening probability does not
+become constant operator normalization. A supplied program reflection
+`R_v=I-2|v><v|` also obeys, for a traceless Weyl error,
+
+```text
+Tr_R[(I tensor U^T)R_v] = -2VUV^*/D.
+```
+
+The canonical `1/D` signal has selected-branch probability `1/D^2`, amplitude
+amplification factor `D`, and bounded sign/polar QSVT degree lower bound
+`(1-epsilon)sqrt(1-D^-2)D`. The prior rank-dense retained-window and high-row
+theorems give `D` the same factorial exponent as
+`d_nu>sqrt(n!)/p(n)` on asymptotically full natural mass.
+
+Claim boundary:
+
+```text
+normalized projector partial trace equals VUV^*/D:                 PROVED
+unique unflattened insertion is inverse-density sandwich:          PROVED
+retained-window direct coefficient is Theta(1/D):                  PROVED
+one-reflection traceless-Weyl partial trace coefficient is 2/D:    PROVED
+fixed-copy bounded linear density contraction has |c|<=1/D:        PROVED
+canonical amplification and bounded-sign degree are Omega(D):      PROVED
+arbitrary state-preparation-oracle query lower bound:               NOT PROVED
+adaptive / long coherent reflection sequence compiler:             OPEN
+representation-specific byproduct block encoding:                  OPEN
+physical PGM / decoder / separation / speedup:                     OPEN
+```
+
+Twenty-seven focused controls test diagonal and rotated dimensions `2,3,4`,
+flat and nonflat density insertions, explicit projector/reflection partial
+traces, copy counts through five, invalid inputs, natural scaling, report
+claim gates, and artifact writing.
+
+**Next high-reasoning task:** move one access level upward and analyze black-box
+coherent state-preparation access. Let `A_V|0>=|V>>/sqrt(D)` and grant
+controlled `A_V`, `A_V^*`, and known Weyl `U`. Either construct a
+representation-respecting block encoding of `VUV^*` with sublinear query and
+normalization cost, or prove an oracle query lower bound (ideally `Omega(D)`)
+for this task by a polynomial/adversary reduction. Explicitly distinguish a
+reflection-only oracle from a fully specified preparation-unitary extension:
+the latter exposes arbitrary extra columns unless the oracle promise fixes
+them. Do not infer this query lower bound merely from the direct contraction
+coefficient or the one-reflection formula.
+
+## Final-root state-preparation oracle query boundary (2026-08-26)
+
+Experiment:
+
+```text
+EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-STATE-PREPARATION-ORACLE-QUERY-BOUNDARY
+```
+
+Artifact:
+
+```text
+research/representation/self_dual_wreath_final_root_state_preparation_oracle_query_boundary.json
+```
+
+The coherent black-box access question is now resolved at its correct scope.
+Both hard instances stay inside the positive canonical endpoint family
+
+```text
+V_C=[sqrt(C);sqrt(I-C)].
+```
+
+Take `C_0=I/2` and let `C_1` change only one diagonal entry from `1/2` to a
+fixed `b in (1/2,1)`. For the fixed Weyl shift `X`, define
+
+```text
+gamma=sqrt(b/2)+sqrt((1-b)/2),
+beta=sqrt(2-2gamma).
+```
+
+Then exactly
+
+```text
+<v_0|v_1> = 1-beta^2/(2D),
+||v_0-v_1|| = beta/sqrt(D),
+||V_0 X V_0^* - V_1 X V_1^*|| = beta,
+```
+
+where `|v_i>=|V_i>>/sqrt(D)`. The corresponding reflection distance is at
+most `2beta/sqrt(D)`. A telescoping hybrid argument therefore proves that an
+`alpha`-normalized block encoder with per-instance error `eta beta/2` needs
+
+```text
+T >= (1-eta)sqrt(D)/(2alpha)
+```
+
+queries to the program reflection. Controlled calls do not help because
+controlled oracle differences have the same operator norm.
+
+The preparation-unitary model splits. The bare promise
+
+```text
+A_i|0>=|v_i>
+```
+
+admits valid close extensions with
+
+```text
+||A_0-A_1||=beta/sqrt(D).
+```
+
+Hence a compiler required to work for every valid unitary extension obeys
+
+```text
+T >= (1-eta)sqrt(D)/alpha,
+```
+
+even with controlled `A_i`, `A_i^*`. But the other columns are otherwise
+unconstrained. A friendly valid extension can place a Julia unitary dilation
+of `V_i X V_i^*` in known columns orthogonal to `|0>`, exposing the target at
+normalization one in a single query. Thus first-column preparation access
+alone does not define extension-independent query complexity.
+
+The prior natural retained-dimension theorem supplies factorially large
+logical dimensions. Thus a compiler uniform over all canonical endpoints has
+superpolynomial worst-case cost at the naturally forced dimension scale. It
+does **not** put the one-coordinate hard pair on typical free-Jacobi mass.
+Typical-endpoint query hardness remains open. The bound is weaker than the
+`Omega(D)` direct-contraction/QSVT cost but applies to arbitrary reflection-
+query sequences, so it is the correct independent black-box claim.
+
+Claim boundary:
+
+```text
+canonical final-root program hard pair at distance beta/sqrt(D):   PROVED
+fixed Weyl byproduct target separation beta:                       PROVED
+reflection-only query lower bound Omega(sqrt(D)/alpha):            PROVED
+all-extension-robust preparation lower bound Omega(sqrt(D)/alpha): PROVED
+bare first-column preparation promise is a well-posed query model: FALSE
+friendly extension can leak normalization-one target in one query: PROVED
+actual structured Schur/QFT/GPE full-unitary lower bound:           NOT PROVED
+actual structured non-program-column block encoding:               OPEN
+typical natural endpoint oracle query lower bound:                  NOT PROVED
+physical PGM / decoder / separation / speedup:                     OPEN
+```
+
+Twenty-five focused tests cover exact hard-pair distances in dimensions
+`2,3,4,5,8,13`, controlled/adjoint-compatible hybrid constants, positive
+canonical endpoints, minimal close extensions, one-query Julia-dilation
+leakage, invalid promises, natural scaling, report gates, and artifact output.
+
+**Next high-reasoning task:** stop treating endpoint preparation as a generic
+oracle and derive the complete typed unitary implemented by the actual
+label-retaining Schur/QFT/GPE construction, including all ancilla, label, and
+workspace inputs—not only its action on `|0>`. Determine whether its
+non-program columns are fixed gauge/workspace, remain branch preserving, or
+contain a constant-normalization block of the conjugated Weyl shift and clock.
+A negative theorem must bind that explicit circuit family or a clearly stated
+extension promise; the worst-extension hybrid bound cannot be imported
+automatically.
+
+## Final-root physical-preparation extension scope boundary (2026-08-26)
+
+Experiment:
+
+```text
+EXP-CODE-SELF-DUAL-WREATH-FINAL-ROOT-PHYSICAL-PREPARATION-EXTENSION-SCOPE-BOUNDARY
+```
+
+Artifact:
+
+```text
+research/representation/self_dual_wreath_final_root_physical_preparation_extension_scope_boundary.json
+```
+
+The full-domain physical circuit audit has now been completed. The actual
+compiled preparation-like circuit is generalized Fourier row-copy, not an
+endpoint-program preparation. On the aligned physical carrier
+
+```text
+H_phys=direct_sum_epsilon H_e,
+U_s=direct_sum_epsilon U_(s,epsilon),
+```
+
+and for any declared full uniform-group preparation unitary `P`, its complete
+action is
+
+```text
+W_P=(F_G^* tensor I)
+    (sum_s |s><s| tensor U_s^*)
+    (P tensor I).
+```
+
+The zero-ancilla column is the already proved row-copy isometry. Crucially,
+the all-column theorem is exact:
+
+```text
+[W_P,I tensor Z_epsilon]=0
+```
+
+for every branch projector and every choice of the nonzero columns of `P`.
+Therefore every selected ancilla block
+
+```text
+(<x| tensor I)W_P(|y> tensor I)
+```
+
+is branch preserving. Products with the known companion-only Schur/QFT/GPE
+workspace algebra remain branch preserving as well. Five full-unitary
+controls use inequivalent uniform-preparation extensions and verify that the
+unused columns change while every branch commutator stays zero.
+
+This algebra cannot contain the endpoint Weyl byproduct. For
+
+```text
+V_C=[sqrt(C);sqrt(I-C)],
+B_U=V_C U V_C^*,
+```
+
+the cross block is
+
+```text
+Z_0 B_U Z_1=sqrt(C)U sqrt(I-C).
+```
+
+If `delta I<=C<=(1-delta)I`, its minimum singular value is at least `delta`.
+Consequently every branch-preserving `O` satisfies
+
+```text
+||B_U-O||>=delta.
+```
+
+Six rotated Weyl shift/clock controls in dimensions `2,3,4` verify this
+strict-window separation.
+
+The typed inventory distinguishes eight interfaces. Full Schur/QFT/GPE,
+row-copy, and global-density block-encoding interfaces exist. The final-root
+`F=V sqrt(rho)` program is only an operator-state/resource contract; its
+unique whitening filter is uncompiled. The physical intertwiner explicitly
+factors the PGM through the still-uncompiled orientation polar `Q_R`. Thus no
+compiled full-domain endpoint preparation `A_V` exists whose unused columns
+can be mined. Assuming one would assume the missing operation.
+
+The audit also preserves the important positive exception: the physical
+detour already block-encodes each addressed `J_f^*J_e` at normalization one,
+and GPE compiles its pair polar. Those are genuine cross-branch signals, but
+they are pair addressed and have not been assembled into the four endpoint
+Weyl blocks or the global merger polar.
+
+Claim boundary:
+
+```text
+complete generalized row-copy full unitary:                       PROVED
+every row-copy ancilla block branch preserving:                    PROVED
+strict-window endpoint Weyl distance from branch algebra >=delta: PROVED
+row-copy unused columns contain endpoint Weyl blocks:              FALSE
+compiled full-domain endpoint preparation A_V exists:             FALSE
+addressed cross-map block encoding at alpha=1:                     PROVED
+addressed cross maps assembled into endpoint Weyl pair:            OPEN
+orientation polar Q_R / physical PGM:                              OPEN
+typical natural strict-effect window:                              NOT PROVED
+decoder / classical separation / speedup:                         OPEN
+```
+
+**Next high-reasoning task:** use the capability that actually crosses
+branches. Rewrite the final two-child four-block Weyl formulas entirely in
+the normalization-one addressed-cross-map oracle language, with their
+positive child metrics retained. Decide whether `O(1)` coherent pair queries
+and local functional calculus assemble `V_C X V_C^*` and `V_C Z V_C^*`, or
+whether even this two-child assembly requires the missing global inverse-
+metric operation. Do not fall back to generic program-state or unspecified
+unitary-extension arguments.
+
 ## Resume Commands
 
 ```bash

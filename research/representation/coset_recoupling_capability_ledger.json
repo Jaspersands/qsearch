@@ -131,6 +131,86 @@
       "uniform_polynomial_gate_complexity_proved": false
     },
     {
+      "availability": "proved-constant-success-program-state-boundary-direct-gate-open",
+      "classical_comparison": "The finite filter and Bell identities are dense linear algebra certificates. They separate quantum access models but prove no quantum/classical runtime separation.",
+      "handles_overlapping_k_copy_associators": false,
+      "id": "CAP-FINAL-ROOT-PURIFICATION-NAIMARK-PROGRAM-BOUNDARY",
+      "literature_ids": [
+        "vidal-single-copy-entanglement-conversion-1999",
+        "nielsen-chuang-programmable-gate-arrays-1997"
+      ],
+      "primitive": "Label-retaining endpoint purification as a Choi program state",
+      "proved_scope": "For K=[sqrt(A);sqrt(B)], S=K^*K, V=KS^(-1/2), and F=K/sqrt(TrS), the unique one-sided exact filter converting F to V/sqrt(D) is sqrt(p/D)(S/TrS)^(-1/2), with sharp success p<=D lambda_min(S)/TrS. The retained 0.5I<=S<=16I window therefore permits constant success at least 1/32 as a state conversion. Canonical Bell transduction has clean-outcome probability 1/D^2 and all-outcome recovery exactly requires the conjugated logical byproducts W_aV=VU_a.",
+      "resolves_internal_sn_kronecker_basis": false,
+      "scope_limit": "The unique filter is the still-uncompiled inverse metric. A flattened Choi state is not an executable endpoint oracle: selected Bell transduction is superpolynomial on natural high-row mass, while deterministic use needs the full endpoint-conjugated logical error algebra. Alternative structured processors, multi-copy protocols, the physical PGM, decoding, and separation remain open.",
+      "supplies_hidden_involution_decoder": false,
+      "uniform_polynomial_gate_complexity_proved": false
+    },
+    {
+      "availability": "proved-natural-constant-no-go-branch-preserving-corrections-only",
+      "classical_comparison": "The commutant, unitary-basis twirl, and finite endpoint blocks are classically checkable linear algebra. This is a scoped access obstruction, not a quantum/classical separation.",
+      "handles_overlapping_k_copy_associators": false,
+      "id": "CAP-FINAL-ROOT-BYPRODUCT-COVARIANCE-NO-GO",
+      "literature_ids": [
+        "werner-tight-teleportation-unitary-error-bases-2000",
+        "szpojankowski-free-lukacs-2015"
+      ],
+      "primitive": "Final-branch-preserving physical covariance as a Bell-byproduct correction algebra",
+      "proved_scope": "For V_C=[sqrt(C);sqrt(I-C)], the endpoint-conjugated logical error has an exact four-block formula. Any output correction preserving the final branch flag can satisfy Gamma_U V_C=V_CU iff [C,U]=0. For every D^2-element Hilbert-Schmidt orthogonal unitary basis, average D^-1||[C,U_a]||_F^2=2Var(C), so average branch-preserving correction residual squared is at least Var(C)/2. The natural free-Jacobi endpoint therefore has annealed floor 1/64 and a 1/15-o(1) event with floor 1/128.",
+      "resolves_internal_sn_kronecker_basis": false,
+      "scope_limit": "This falsifies only Bell corrections assembled inside the known final-branch-preserving Schur/QFT/GPE/row-copy covariance algebra. The exact C-dependent branch-mixing Weyl shift and clock are algebraically complete endpoint data but are not compiled. Alternative non-tight processors, whitening, the physical PGM, decoding, and separation remain open.",
+      "supplies_hidden_involution_decoder": false,
+      "uniform_polynomial_gate_complexity_proved": false
+    },
+    {
+      "availability": "proved-inverse-dimension-no-go-bounded-linear-program-density-contractions",
+      "classical_comparison": "The vectorization, trace-norm, and finite contraction controls are dense linear algebra certificates. This is an architecture boundary, not a quantum/classical separation.",
+      "handles_overlapping_k_copy_associators": false,
+      "id": "CAP-FINAL-ROOT-PROGRAM-CONTRACTION-NORMALIZATION-NO-GO",
+      "literature_ids": [
+        "werner-tight-teleportation-unitary-error-bases-2000",
+        "gilyen-su-low-wiebe-qsvt-2018"
+      ],
+      "primitive": "Normalized endpoint-program contraction into conjugated logical byproducts",
+      "proved_scope": "For |v>=|V>>/sqrt(D), the canonical reference partial trace is exactly VUV^*/D and saturates the induced-trace-norm bound. For the unflattened F=V sqrt(rho), an exact direct insertion is uniquely M=c rho^(-1/2)U rho^(-1/2), with sharp c_*=1/||rho^(-1/2)U rho^(-1/2)|| and 1/(32D)<=c_*<=32/D on the retained window. A supplied program reflection gives coefficient 2/D for traceless Weyl errors. Any induced-trace-norm-one linear contraction of any fixed number of normalized program density copies obeys |c|<=1/D.",
+      "resolves_internal_sn_kronecker_basis": false,
+      "scope_limit": "The no-go covers direct reference-leg insertions, canonical projector/reflection partial traces, and bounded trace-norm linear maps of normalized program densities. It does not cover arbitrary coherent circuits with state-preparation oracle access, adaptive postselection, long reflection sequences, nonlinear oracle synthesis, or representation-specific block encodings. Those routes, the physical PGM, decoding, and separation remain open.",
+      "supplies_hidden_involution_decoder": false,
+      "uniform_polynomial_gate_complexity_proved": false
+    },
+    {
+      "availability": "proved-sqrt-d-query-no-go-reflections-and-robust-preparation-extension-promise-boundary",
+      "classical_comparison": "The canonical hard pair, unitary completions, and hybrid inequalities are classically checkable oracle-model certificates. They establish no quantum/classical separation.",
+      "handles_overlapping_k_copy_associators": false,
+      "id": "CAP-FINAL-ROOT-STATE-PREPARATION-ORACLE-QUERY-BOUNDARY",
+      "literature_ids": [
+        "bennett-bernstein-brassard-vazirani-hybrid-1997",
+        "nielsen-chuang-programmable-gate-arrays-1997"
+      ],
+      "primitive": "Coherent program reflection and full preparation-unitary access to endpoint Choi states",
+      "proved_scope": "Inside the positive canonical family V_C=[sqrt(C);sqrt(I-C)], changing one fixed diagonal entry of C moves the normalized program by beta/sqrt(D) while moving the fixed Weyl-shift byproduct V_C X V_C^* by beta. Hybrid telescoping gives T>=(1-eta)sqrt(D)/(2alpha) for reflection-oracle alpha-normalized block encoders. Valid preparation-unitary extensions can be chosen beta/sqrt(D) apart, giving T>=(1-eta)sqrt(D)/alpha for compilers robust to every extension. Conversely, other valid extensions can encode a Julia dilation of the target in known orthogonal columns and expose normalization one in a single query.",
+      "resolves_internal_sn_kronecker_basis": false,
+      "scope_limit": "The first-column promise A_V|0>=|V>>/sqrt(D) does not define extension-independent query complexity. The lower bound covers reflection-only access and correctness uniform over all valid extensions; it does not cover the particular full action of a structured Schur/QFT/GPE preparation circuit. The natural theorem imports only a factorial logical-dimension scale, not typical free-Jacobi mass for the hard pair. That circuit, typical-endpoint query hardness, physical PGM implementation, decoding, and separation remain open.",
+      "supplies_hidden_involution_decoder": false,
+      "uniform_polynomial_gate_complexity_proved": false
+    },
+    {
+      "availability": "proved-full-row-copy-extension-branch-preserving-endpoint-preparation-absent",
+      "classical_comparison": "The full-unitary commutators, ancilla blocks, strict-window cross-block bounds, and interface inventory are classically checkable typed-access certificates. They establish no quantum/classical separation.",
+      "handles_overlapping_k_copy_associators": false,
+      "id": "CAP-FINAL-ROOT-PHYSICAL-PREPARATION-EXTENSION-SCOPE-BOUNDARY",
+      "literature_ids": [
+        "beals-symmetric-qft-1997",
+        "bacon-chuang-harrow-schur-2004"
+      ],
+      "primitive": "Complete generalized-Fourier row-copy unitary and all-column endpoint-preparation audit",
+      "proved_scope": "For any full uniform-group preparation extension P, the complete row-copy circuit W_P=(F_G^* tensor I)SELECT_s(U_s^*)(P tensor I) commutes with every orientation-branch projector, as does every selected ancilla block and composition with the known companion workspace algebra. If delta I<=C<=(1-delta)I, the endpoint byproduct V_C U V_C^* is distance at least delta from that branch algebra because its cross block sqrt(C)U sqrt(I-C) has minimum singular value at least delta. The compiled stack contains no full-domain endpoint preparation A_V; the final program and whitening are resource/uncompiled interfaces.",
+      "resolves_internal_sn_kronecker_basis": false,
+      "scope_limit": "This closes only the proposal to mine non-program columns of the existing row-copy/Schur/QFT/GPE stack. It does not remove the normalization-one addressed J_f^*J_e cross-map block encodings or their GPE pair polars, and it does not rule out assembling the endpoint Weyl pair from those signals or compiling Q_R. Typical natural strict-effect mass, physical PGM implementation, decoding, and separation remain open.",
+      "supplies_hidden_involution_decoder": false,
+      "uniform_polynomial_gate_complexity_proved": false
+    },
+    {
       "availability": "proved-label-or-projector-only",
       "classical_comparison": "Projection can estimate representation statistics but does not establish a natural-problem separation.",
       "handles_overlapping_k_copy_associators": false,
@@ -351,6 +431,12 @@
     "direct_gpe_pair_polar_compiled": true,
     "exact_bounded_stable_sector_family_proved": true,
     "exact_holevo_copy_budget_proved": true,
+    "final_root_purification_constant_success_state_flattening_proved": true,
+    "final_root_purification_scale_free_whitening_filter_compiled": false,
+    "final_root_purification_choi_program_is_executable_endpoint_oracle": false,
+    "final_root_endpoint_conjugated_byproduct_algebra_compiled": false,
+    "final_root_branch_preserving_byproduct_covariance_no_go_proved": true,
+    "final_root_C_dependent_branch_mixing_weyl_generators_compiled": false,
     "gapped_kronecker_multiplicity_transform_polynomial_proved": false,
     "global_address_transition_kernel_polynomial_normalization_proved": false,
     "global_operator_valued_metric_assembly_compiled": false,
@@ -370,7 +456,7 @@
     "physical_encoded_orientation_polar_compilers_interreducible": true,
     "physical_interface_supplies_addressed_raw_cross_map_block_encoding": true,
     "physical_invariant_to_schur_companion_interface_compiled": true,
-    "reason": "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable family. Complete encoded labels and left/right relabelling are proved on one stable final branch, and its three-copy frame is directly block-encoded, all-n conditioned, and inverse-filterable, but the fixed branch is factorially rare under natural input. The known Schur/QFT/CG plus invariant-projector stack is now typed exactly. Its companion-only closure preserves source branches, but the physical-interface detour supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. Phase-only global assembly is refuted by holonomy-induced indefiniteness. Uniform linear address mixing compiles the exact PSD Gram G/q at sharp alpha=q, but the exact natural sibling second moment now proves that every inverse-polynomial G/q spectral window retains only o(1) trace-weighted mass. The useful absolute S cutoff lies at inverse-factorial scale in G/q. A hierarchical or direct global polar, an outcome-information theorem, decoding, and separation remain open.",
+    "reason": "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable family. Complete encoded labels and left/right relabelling are proved on one stable final branch, and its three-copy frame is directly block-encoded, all-n conditioned, and inverse-filterable, but the fixed branch is factorially rare under natural input. The known Schur/QFT/CG plus invariant-projector stack is typed exactly. Its physical detour supplies alpha-one addressed cross maps and pair polars. Uniform linear address mixing gives G/q at sharp alpha=q, but natural sibling moments falsify every inverse-polynomial G/q window. Label-retaining purification avoids width only as a program state. Its unique flattening filter is whitening, and the natural matrix variance now proves that every full Bell correction basis staying in the final-branch-preserving covariance algebra has constant error. The surviving target is a direct C-dependent branch-mixing Weyl pair or a different structured transducer, followed by information, decoding, and separation.",
     "schur_branch_encoding_removes_orientation_inverse_square_root": false,
     "schur_branch_merger_polar_equivalence_proved": true,
     "schur_branch_structured_direct_polar_compiled": false,
@@ -478,6 +564,16 @@
       "reason": "The theorem charges one q-wide normalized analysis. An absolute inverse-polynomial cutoff on S lies at scale 1/(q poly(n)) in G/q and can still be preserved by a tightly normalized hierarchical or direct structured implementation."
     },
     {
+      "from": "constant-success flattening of a bounded-condition label-retaining endpoint purification",
+      "invalid_to": "an executable direct Naimark isometry or physical PGM circuit",
+      "reason": "The unique exact one-sided filter is proportional to the unresolved inverse metric. Even after flattening, canonical Bell transduction either selects a 1/D^2 clean outcome or implements the endpoint-conjugated logical byproduct algebra."
+    },
+    {
+      "from": "physical row-copy and label-controlled covariance operations",
+      "invalid_to": "a complete final-root Bell correction basis that preserves the endpoint branch flag",
+      "reason": "Branch preservation compresses every exact correction to [C,U]=0. A complete unitary error basis spans M_D, and its average correction residual squared is at least Var(C)/2; the natural endpoint has constant variance."
+    },
+    {
       "from": "restricted quantum multiplicity estimator",
       "invalid_to": "superpolynomial advantage or Shor-level mechanism",
       "reason": "Many proposed restricted families now have polynomial classical algorithms."
@@ -497,6 +593,8 @@
     "The companion-only Schur/QFT/CG plus projector stack is branch preserving, but a physical-interface detour does supply raw addressed cross-map entries.",
     "Normalization-one addressed pair polars cannot replace cross metrics globally: nonflat holonomy makes the phase-only block kernel indefinite.",
     "Dense natural support and exact low moments do not rescue the canonical G/q assembly: every inverse-polynomial normalized spectral window retains o(1) natural trace mass.",
+    "Label retention removes inverse orientation width at the program-state level, but constant-success Choi flattening is not a direct Naimark circuit: it uniquely requires whitening and a channel transducer still needs endpoint-conjugated byproducts.",
+    "The known branch-preserving physical covariance cannot supply those byproducts: every unitary error basis sees average commutator energy 2Var(C), which is constant on the natural final endpoint.",
     "Diagonal YJM tableau labels retain exact Kronecker multiplicity degeneracy.",
     "An encoded stable shape router does not construct a compressed Clebsch channel isometry.",
     "An encoded left/right relabelling isometry does not construct the state-dependent frame filter or decoder.",
@@ -719,10 +817,15 @@
     "bounded_support_commutant_block_encoding_poly_proof_count": 1,
     "bounded_tail_natural_access_no_go_theorem_count": 1,
     "canonical_linear_global_metric_assembly_compiler_count": 1,
-    "capability_count": 21,
+    "capability_count": 23,
     "diagonal_jm_label_transform_poly_proof_count": 1,
     "direct_gpe_pair_polar_compiler_count": 1,
     "exact_holevo_copy_budget_theorem_count": 1,
+    "final_root_purification_program_state_constant_success_count": 1,
+    "final_root_purification_scale_free_whitening_compiler_count": 0,
+    "final_root_endpoint_conjugated_byproduct_compiler_count": 0,
+    "final_root_branch_preserving_byproduct_covariance_no_go_count": 1,
+    "final_root_C_dependent_branch_mixing_generator_compiler_count": 0,
     "exact_stable_nine_shape_sector_classification_count": 1,
     "gapped_kronecker_multiplicity_transform_poly_proof_count": 0,
     "global_operator_valued_metric_assembly_compiler_count": 0,
@@ -836,8 +939,24 @@
     {
       "id": "aggarwal-elboim-maximal-dimension-2026",
       "url": "https://arxiv.org/abs/2605.25995"
+    },
+    {
+      "id": "vidal-single-copy-entanglement-conversion-1999",
+      "url": "https://arxiv.org/abs/quant-ph/9902033"
+    },
+    {
+      "id": "nielsen-chuang-programmable-gate-arrays-1997",
+      "url": "https://arxiv.org/abs/quant-ph/9703032"
+    },
+    {
+      "id": "werner-tight-teleportation-unitary-error-bases-2000",
+      "url": "https://arxiv.org/abs/quant-ph/0003070"
+    },
+    {
+      "id": "szpojankowski-free-lukacs-2015",
+      "url": "https://arxiv.org/abs/1403.5300"
     }
   ],
-  "status": "canonical-g-over-q-natural-window-falsified-hierarchical-global-polar-open",
-  "summary": "Classified 21 representation primitives and exact finite Kronecker growth through n=10. Separate-to-joint Schur dilation now supplies an encoded multiplicity carrier, the physical interface supplies alpha-one addressed raw cross maps, and GPE supplies direct pair polars. Uniform linear assembly gives G/q at sharp alpha=q, but the exact natural sibling second moment now falsifies every inverse-polynomial retained G/q window. The remaining metric route is a genuinely hierarchical or direct representation-specific global polar."
+  "status": "branch-preserving-byproduct-covariance-falsified-C-dependent-branch-mixing-open",
+  "summary": "Classified 23 representation primitives and exact finite Kronecker growth through n=10. Separate-to-joint Schur dilation supplies an encoded carrier, the physical interface supplies addressed cross maps, and GPE supplies pair polars. Canonical G/q access is normalization blocked, while label-retaining purification gives constant-success program-state flattening. The latest theorem closes the apparent covariance correction escape: every full Bell correction basis preserving the final branch flag has average residual squared at least Var(C)/2, hence at least 1/64 annealed on the natural endpoint. The surviving executable interface is the exact C-dependent branch-mixing Weyl pair, or a different structured non-tight transducer."
 }
