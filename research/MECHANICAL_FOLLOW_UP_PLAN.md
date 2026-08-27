@@ -5130,6 +5130,20 @@ artifact under `research/representation/`:
       direct local Naimark transform, physical PGM, decoder, classical
       separation, algorithm, and speedup false/open. Never count an assumed
       direct Naimark dilation as an independently compiled positive primitive.
+57. `self_dual_wreath_hierarchical_endpoint_schur_algebra_boundary.py`
+    - ID: `EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-ENDPOINT-SCHUR-ALGEBRA-BOUNDARY`
+    - Writer: `write_hierarchical_endpoint_schur_algebra_boundary_report`
+    - Preserve the exact operator Schur short
+      `E_s=C_s-B_s^*D_s^+B_s`, the binary endpoint
+      `T_s=sqrt(E_s)(E_L+E_R)^-1/2`, the two-sided edge `a/(2b)`, and the
+      conditional block-encoding identity `YQ=sqrt(a/b)T`. Preserve the
+      full-algebra counterfamily: two PSD generators of condition number at
+      most `3/2` construct all `D^2` matrix units while the endpoint edge
+      stays above `0.4`. This refutes the small-algebra inference, not circuit
+      efficiency. Keep aggregate short-metric access, reversible node/common
+      fiber labels, all-depth native-mass recurrence, direct local Schur/Racah
+      Naimark, physical PGM, decoder, classical separation, algorithm, and
+      speedup false/open.
 
 Mechanical actions:
 
@@ -5139,7 +5153,7 @@ Mechanical actions:
   parsers/handlers, clean-registry dispatch tests, and concise README command
   blocks by copying the existing hidden-involution theorem pattern.
 - Refresh `dequantize`, `proofs`, `query-models`, `frontiers`, `conjectures`,
-  `mutate`, the progress snapshot, and `validate` after wiring all fifty-six as one
+  `mutate`, the progress snapshot, and `validate` after wiring all fifty-seven as one
   batch.
 - Repair the pre-existing clean-registry defect in
   `write_complete_racah_control_report`: it currently accepts
@@ -5159,7 +5173,7 @@ Mechanical actions:
   any registry update. Restore the existing neighboring writer pattern and
   preserve every current claim gate; this is registry plumbing, not research
   evidence. Run each named clean-registry test before another broad suite.
-- Run the fifty-five focused test files first, then adjacent hidden-involution
+- Run the fifty-six focused test files first, then adjacent hidden-involution
   tests, `python -m compileall -q .`, `node --check site/progress.js`,
   `git diff --check`, and `python qsearch.py validate`.
 - Make no separate commit per theorem.  Include these in the next rare coherent

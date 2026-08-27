@@ -13488,7 +13488,7 @@ Two physical component systems, two scalar-address controls, a noncommuting
 endpoint control, the pair-local counterpair, six typed interfaces, and eight
 natural scaling records pass. The focused suite has eighteen tests.
 
-**Next high-reasoning task:** attack the fixed-arity hierarchical interface
+**Resolved in the next theorem pass:** attack the fixed-arity hierarchical interface
 that survives the flattened width boundary. Express the binary local short
 metrics
 
@@ -13504,6 +13504,133 @@ or whether a stated finite-generator/GPE interface is insufficient. A positive
 result must give the two-outcome dilation, retained spectral window, workspace
 and depth recurrence, and native mass. A negative result must stay scoped and
 preserve a direct representation-specific local Naimark transform.
+
+## Hierarchical Endpoint Schur Algebra Boundary
+
+The fixed-arity endpoint pass is complete in
+`self_dual_wreath_hierarchical_endpoint_schur_algebra_boundary.py`.
+
+After quotienting internal child relations, write each operator-valued
+physical/Racah kernel in internal/crossing coordinates as
+
+```text
+G_s = [D_s  B_s; B_s^*  C_s].
+```
+
+The exact short metric on the parent crossing fiber is the Schur short
+
+```text
+E_s = C_s - B_s^*D_s^+B_s.
+```
+
+Equivalently, with coordinate projections `P_I,P_C`, this is the crossing
+block of
+
+```text
+P_CG_sP_C - P_CG_sP_I(P_IG_sP_I)^+P_IG_sP_C.
+```
+
+Thus the binary endpoint is an explicit noncommutative rational Schur/Racah
+operator:
+
+```text
+M   = E_L+E_R,
+T_s = sqrt(E_s)M^(-1/2),
+K_s = M^(-1/2)E_sM^(-1/2).
+```
+
+There is a complete conditional block-encoding compiler. If coherent
+aggregate metric oracles satisfy
+
+```text
+aI <= E_s <= bI
+```
+
+on one parent-propagated retained fiber, define
+
+```text
+R_s = sqrt(E_s)/sqrt(b),
+Q   = sqrt(2a)M^(-1/2),
+Y   = 2^(-1/2)[R_L;R_R].
+```
+
+Then exactly
+
+```text
+YQ = sqrt(a/b) T.
+```
+
+The binary endpoint signal normalization is therefore `sqrt(b/a)`, independent
+of leaf width, and both endpoint effects obey
+
+```text
+K_s >= a/(2b)I,
+I-K_s >= a/(2b)I.
+```
+
+QSVT plus robust oblivious amplification gives a polynomial coherent local
+dilation whenever `beta/a=poly(n)` for the supplied metric normalization
+`beta`. Per-level operator errors and conditional native losses add, so a
+depth-`L` tree needs local error `O(epsilon/L)` and native loss `o(1/L)`.
+
+Fixed arity does not force a small endpoint algebra. For
+
+```text
+A=diag(a_1,...,a_D),
+B=I+eta|v><v|,
+```
+
+with distinct `a_i in [1,3/2]` and uniform `v`, the spectral projections of
+`A` satisfy
+
+```text
+P_i(B-I)P_j = (eta/D)|i><j|.
+```
+
+Two PSD generators of condition number at most `3/2` therefore generate the
+full `D^2`-dimensional matrix algebra. Their endpoint retains a two-sided edge
+above `0.40` in all audited dimensions through `D=16`. Binary outcome count,
+conditioning, and a constant endpoint edge do not imply a
+`poly(n)`-dimensional Racah algebra.
+
+This full-algebra fact is not a quantum circuit lower bound. Succinct
+aggregate block encodings would still compile the endpoint without enumerating
+an algebra basis. The current stack does not supply them: GPE gives leaf
+projectors, addressed access gives one cross block, and finite vertex-kernel
+extraction is an algebraic matrix construction rather than a reversible
+all-`n` node circuit. Existing spectral laws give fixed-level native retention,
+not the all-depth `o(1/L)` recurrence.
+
+Claim boundary:
+
+```text
+operator-valued endpoint Schur-short formula:                  PROVED
+binary endpoint compiler given aggregate metric block encodings: PROVED
+binary endpoint signal normalization sqrt(b/a):               PROVED
+endpoint two-sided edge a/(2b):                               PROVED
+fixed arity + conditioning imply small endpoint algebra:       FALSE
+two well-conditioned generators can generate M_D:             PROVED
+full algebra dimension is a circuit lower bound:               FALSE
+current GPE/addressed pair access supplies aggregate E_s:       FALSE
+uniform reversible node/common-fiber labeler:                  OPEN
+all-depth parent-compatible native-mass recurrence:            OPEN
+direct local Schur/Racah Naimark compiled/ruled out:            OPEN/FALSE
+physical PGM / decoder / classical separation / speedup:       OPEN
+```
+
+Two noncommuting Schur-short systems, two conditional compiler controls, four
+full-algebra controls, six typed interfaces, and eight natural scaling records
+pass. The focused suite has twenty-two tests.
+
+**Next high-reasoning task:** construct or obstruct the exact aggregate metric
+interface. Express the internal/crossing coordinate projections and local
+Racah kernels as reversible functions of affine-flag node labels. Determine
+whether the Schur short can be carried from children to parents with
+`poly(n)` normalization and one common trim, without reassembling all leaf
+addresses. A positive theorem must give the label circuit, block-encoding
+normalization, workspace/query recurrence, and `o(1/L)` conditional native
+loss. A negative theorem must bind a typed local-kernel/Schur-complement oracle
+and preserve a direct local Naimark transform.
 
 ## Resume Commands
 
@@ -13564,6 +13691,7 @@ PYTHONPATH=core:theorems python theorems/self_dual_wreath_final_root_addressed_w
 PYTHONPATH=core:theorems python theorems/self_dual_wreath_recursive_polar_normalization_conservation_boundary.py
 PYTHONPATH=core:theorems python theorems/self_dual_wreath_affine_gpe_nodelocal_naimark_access_boundary.py
 PYTHONPATH=core:theorems python theorems/self_dual_wreath_positive_naimark_access_equivalence_boundary.py
+PYTHONPATH=core:theorems python theorems/self_dual_wreath_hierarchical_endpoint_schur_algebra_boundary.py
 PYTHONPATH=core:theorems python theorems/self_dual_wreath_final_root_scalar_mixer_no_go.py
 PYTHONPATH=core:theorems python theorems/self_dual_wreath_final_root_metric_access_width_no_go.py
 python self_dual_wreath_final_root_natural_common_span.py

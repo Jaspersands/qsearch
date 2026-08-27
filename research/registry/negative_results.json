@@ -82157,6 +82157,29 @@
       "PO-MEASUREMENT",
       "PO-COMPLEXITY"
     ],
+    "claim": "Fixed binary arity and constant short-metric conditioning force a polynomial-dimensional endpoint Schur/Racah algebra.",
+    "evidence": {
+      "aggregate_metric_conditional_compiler_proved": true,
+      "direct_schur_racah_naimark_ruled_out": false,
+      "endpoint_two_sided_edge": 0.4011569301358785,
+      "full_algebra_dimension_is_circuit_lower_bound": false,
+      "generator_count": 2,
+      "largest_verified_algebra_dimension": 256,
+      "maximum_generator_condition_number": 1.5,
+      "speedup_claim_allowed": false
+    },
+    "id": "SCHUR-COMPANION-FIXED-ARITY-WELL-CONDITIONED-NO-POLY-DIMENSIONAL-ENDPOINT-ALGEBRA",
+    "lesson": "Do not enumerate the endpoint algebra. Seek succinct aggregate metric block encodings or a direct local Naimark transform; full algebra dimension alone is not a quantum circuit lower bound.",
+    "reason_invalid": "Two positive generators with spectra in fixed constant windows generate every matrix unit P_i(B-I)P_j and hence all of M_D(C), while their endpoint effect remains uniformly separated from zero and one.",
+    "source": "research/representation/self_dual_wreath_hierarchical_endpoint_schur_algebra_boundary.json"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "PO-MECHANISM",
+      "PO-MEASUREMENT",
+      "PO-COMPLEXITY"
+    ],
     "claim": "Published Schur/CG transforms and invariant-space projectors already contain the cross-branch operation needed for the joint-character orientation polar.",
     "evidence": {
       "cross_branch_inverse_sqrt_control_count": 3,

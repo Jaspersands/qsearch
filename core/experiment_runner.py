@@ -1162,6 +1162,9 @@ from self_dual_wreath_affine_gpe_nodelocal_naimark_access_boundary import (
 from self_dual_wreath_positive_naimark_access_equivalence_boundary import (
     write_positive_naimark_access_equivalence_boundary_report,
 )
+from self_dual_wreath_hierarchical_endpoint_schur_algebra_boundary import (
+    write_hierarchical_endpoint_schur_algebra_boundary_report,
+)
 from self_dual_wreath_fixed_arity_support_sum_compiler import write_fixed_arity_support_sum_compiler_report
 from self_dual_wreath_flat_holonomy_component_no_go import write_flat_holonomy_component_no_go_report
 from self_dual_wreath_interleaved_target_margin_stability import write_target_margin_stability_report
@@ -2450,6 +2453,7 @@ def supported_experiment_ids() -> list[str]:
         | {"EXP-CODE-SELF-DUAL-WREATH-AFFINE-GPE-NODELOCAL-NAIMARK-ACCESS-BOUNDARY"}
         | {"EXP-CODE-SELF-DUAL-WREATH-POSITIVE-NAIMARK-ACCESS-EQUIVALENCE-BOUNDARY"}
         | {"EXP-CODE-SELF-DUAL-WREATH-RECURSIVE-POLAR-NORMALIZATION-CONSERVATION-BOUNDARY"}
+        | {"EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-ENDPOINT-SCHUR-ALGEBRA-BOUNDARY"}
         | DCP_RECURSIVE_DECODER_EXPERIMENTS
         | DCP_RECURRENCE_EXPERIMENTS
         | DCP_SCHEDULE_SEARCH_EXPERIMENTS
@@ -12284,6 +12288,9 @@ def run_experiment(experiment_id: str) -> RunnerResult:
         ),
         "EXP-CODE-SELF-DUAL-WREATH-POSITIVE-NAIMARK-ACCESS-EQUIVALENCE-BOUNDARY": (
             write_positive_naimark_access_equivalence_boundary_report
+        ),
+        "EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-ENDPOINT-SCHUR-ALGEBRA-BOUNDARY": (
+            write_hierarchical_endpoint_schur_algebra_boundary_report
         ),
     }
     if experiment_id in boundary_writers:

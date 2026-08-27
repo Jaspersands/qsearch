@@ -12962,6 +12962,43 @@ class ExperimentRunnerTests(unittest.TestCase):
         self.assertFalse(record["metrics"]["compiled_positive_amplitude_interface_count"])
         self.assertTrue(validation["valid"], validation["issues"])
 
+    def test_self_dual_wreath_hierarchical_endpoint_schur_algebra_boundary_dispatches_from_clean_registry(self):
+        old_cwd = os.getcwd()
+        with tempfile.TemporaryDirectory() as tmp:
+            try:
+                os.chdir(tmp)
+                initialize_seed_registry(overwrite=True)
+                result = run_experiment(
+                    "EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-ENDPOINT-SCHUR-ALGEBRA-BOUNDARY"
+                )
+                records = load_experiment_results()
+                validation = validate_registry()
+            finally:
+                os.chdir(old_cwd)
+
+        self.assertEqual(result.status, "completed")
+        record = next(item for item in records if item["id"] == result.result_id)
+        self.assertEqual(
+            record["metrics"][
+                "operator_valued_schur_short_normal_form_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"][
+                "conditional_binary_endpoint_block_compiler_theorem_count"
+            ],
+            1,
+        )
+        self.assertEqual(
+            record["metrics"]["largest_full_algebra_dimension"],
+            256,
+        )
+        self.assertFalse(
+            record["metrics"]["compiled_aggregate_short_metric_interface_count"]
+        )
+        self.assertTrue(validation["valid"], validation["issues"])
+
 
 if __name__ == "__main__":
     unittest.main()

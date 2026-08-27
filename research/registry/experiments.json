@@ -6507,6 +6507,42 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "self_dual_wreath_vertex_kernel_graded_reduction.py",
+      "self_dual_wreath_common_window_access_boundary.py",
+      "self_dual_wreath_positive_naimark_access_equivalence_boundary.py",
+      "self_dual_wreath_recursive_polar_normalization_conservation_boundary.py",
+      "self_dual_wreath_constant_arity_joint_freeness.py"
+    ],
+    "falsifiers": [
+      "Binary outcome count does not bound endpoint operator-algebra dimension.",
+      "Two constant-conditioned PSD generators can generate all D^2 matrix units while retaining a constant endpoint edge.",
+      "Full algebra dimension alone is not a quantum circuit lower bound when succinct block encodings exist.",
+      "Current addressed pair blocks do not supply the global Schur short or common parent fiber.",
+      "Fixed-level native mass does not imply the all-depth o(1/L) recurrence."
+    ],
+    "hypothesis": "Fixed binary arity and constant short-metric conditioning force a polynomial-dimensional Schur/Racah endpoint algebra or make current GPE/addressed access sufficient for local Naimark compilation.",
+    "id": "EXP-CODE-SELF-DUAL-WREATH-HIERARCHICAL-ENDPOINT-SCHUR-ALGEBRA-BOUNDARY",
+    "metrics": [
+      "operator_valued_schur_short_normal_form_theorem_count",
+      "conditional_binary_endpoint_block_compiler_theorem_count",
+      "endpoint_two_sided_edge_theorem_count",
+      "fixed_arity_small_algebra_implication_refutation_count",
+      "largest_full_algebra_dimension",
+      "compiled_aggregate_short_metric_interface_count",
+      "all_depth_native_mass_recurrence_theorem_count",
+      "speedup_claim_allowed"
+    ],
+    "next_actions": [
+      "Express the internal/crossing coordinate projections and local Racah kernels as reversible functions of affine-flag node labels, then test whether aggregate Schur shorts can be carried upward without returning to leaf-width normalization."
+    ],
+    "positive_signal": "A reversible uniform node/common-fiber labeler and polynomial-normalized block encoding of every aggregate short metric on parent-compatible trims with summable all-depth native loss.",
+    "protocol": "Derive the operator-valued internal/crossing Schur short, factor the binary endpoint into block-encoded roots and a parent inverse root, prove its edge and additive recurrences, construct a full-matrix-algebra counterfamily, and inventory current aggregate metric access.",
+    "status": "completed-conditional-compiler-and-negative-theorem",
+    "title": "Hierarchical endpoint Schur algebra boundary"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "self_dual_wreath_hierarchical_polar_tree.py"
     ],
     "falsifiers": [

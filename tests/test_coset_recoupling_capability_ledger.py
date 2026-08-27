@@ -300,6 +300,41 @@ class RecouplingCapabilityLedgerTests(unittest.TestCase):
             ]
         )
         self.assertTrue(
+            report.claim_gate[
+                "operator_valued_endpoint_schur_short_normal_form_proved"
+            ]
+        )
+        self.assertTrue(
+            report.claim_gate[
+                "binary_endpoint_compiles_given_aggregate_short_metric_access"
+            ]
+        )
+        self.assertFalse(
+            report.claim_gate[
+                "fixed_arity_conditioning_forces_small_endpoint_algebra"
+            ]
+        )
+        self.assertTrue(
+            report.claim_gate[
+                "two_well_conditioned_endpoint_generators_can_generate_full_matrix_algebra"
+            ]
+        )
+        self.assertFalse(
+            report.claim_gate[
+                "full_endpoint_algebra_dimension_is_circuit_lower_bound"
+            ]
+        )
+        self.assertFalse(
+            report.claim_gate[
+                "aggregate_short_metric_block_encoding_compiled"
+            ]
+        )
+        self.assertFalse(
+            report.claim_gate[
+                "all_depth_endpoint_native_mass_recurrence_proved"
+            ]
+        )
+        self.assertTrue(
             report.claim_gate["natural_cross_orientation_overlap_density_one_proved"]
         )
         self.assertFalse(

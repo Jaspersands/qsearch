@@ -289,6 +289,7 @@ from self_dual_wreath_final_root_addressed_weyl_assembly_boundary import write_f
 from self_dual_wreath_recursive_polar_normalization_conservation_boundary import write_recursive_polar_normalization_conservation_boundary_report
 from self_dual_wreath_affine_gpe_nodelocal_naimark_access_boundary import write_affine_gpe_nodelocal_naimark_access_boundary_report
 from self_dual_wreath_positive_naimark_access_equivalence_boundary import write_positive_naimark_access_equivalence_boundary_report
+from self_dual_wreath_hierarchical_endpoint_schur_algebra_boundary import write_hierarchical_endpoint_schur_algebra_boundary_report
 import argparse
 import json
 from collections import Counter
@@ -2205,6 +2206,26 @@ def command_sdw_positive_naimark_access_equivalence_boundary(
     )
     validation = validate_registry()
     print("self_dual_wreath_positive_naimark_access_equivalence_boundary complete")
+    print(
+        "Speedup claim allowed: "
+        f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
+    )
+    print(f"Registry valid: {validation['valid']}")
+    if validation["issues"]:
+        print(json.dumps(validation["issues"], indent=2))
+        return 1
+    return 0
+
+
+def command_sdw_hierarchical_endpoint_schur_algebra_boundary(
+    args: argparse.Namespace,
+) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_hierarchical_endpoint_schur_algebra_boundary_report(
+        write_registry=not args.no_registry
+    )
+    validation = validate_registry()
+    print("self_dual_wreath_hierarchical_endpoint_schur_algebra_boundary complete")
     print(
         "Speedup claim allowed: "
         f"{payload.get('claim_gate', {}).get('speedup_claim_allowed', False)}"
@@ -26404,6 +26425,15 @@ def build_parser() -> argparse.ArgumentParser:
     positive_naimark.add_argument("--no-registry", action="store_true")
     positive_naimark.set_defaults(
         func=command_sdw_positive_naimark_access_equivalence_boundary
+    )
+
+    endpoint_schur = subparsers.add_parser(
+        "self-dual-wreath-hierarchical-endpoint-schur-algebra-boundary",
+        help="Run the operator-valued Schur-short conditional endpoint compiler and full-algebra boundary theorem.",
+    )
+    endpoint_schur.add_argument("--no-registry", action="store_true")
+    endpoint_schur.set_defaults(
+        func=command_sdw_hierarchical_endpoint_schur_algebra_boundary
     )
 
     validate = subparsers.add_parser("validate", help="Validate candidates and experiments against proof obligations.")

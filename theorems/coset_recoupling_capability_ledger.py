@@ -57,6 +57,9 @@ from self_dual_wreath_affine_gpe_nodelocal_naimark_access_boundary import (
 from self_dual_wreath_positive_naimark_access_equivalence_boundary import (
     run_positive_naimark_access_equivalence_boundary,
 )
+from self_dual_wreath_hierarchical_endpoint_schur_algebra_boundary import (
+    run_hierarchical_endpoint_schur_algebra_boundary,
+)
 from symmetric_character import kronecker_coefficient
 
 
@@ -818,6 +821,9 @@ def build_recoupling_capability_report(
     positive_naimark_access_metrics = (
         run_positive_naimark_access_equivalence_boundary().headline_metrics
     )
+    endpoint_schur_algebra_metrics = (
+        run_hierarchical_endpoint_schur_algebra_boundary().headline_metrics
+    )
     unresolved = [
         capability
         for capability in CAPABILITIES
@@ -1201,6 +1207,34 @@ def build_recoupling_capability_report(
             )
             or 0
         ),
+        "operator_valued_endpoint_schur_short_theorem_count": int(
+            endpoint_schur_algebra_metrics.get(
+                "operator_valued_schur_short_normal_form_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "conditional_binary_endpoint_block_compiler_count": int(
+            endpoint_schur_algebra_metrics.get(
+                "conditional_binary_endpoint_block_compiler_theorem_count",
+                0,
+            )
+            or 0
+        ),
+        "fixed_arity_small_endpoint_algebra_refutation_count": int(
+            endpoint_schur_algebra_metrics.get(
+                "fixed_arity_small_algebra_implication_refutation_count",
+                0,
+            )
+            or 0
+        ),
+        "compiled_aggregate_short_metric_interface_count": int(
+            endpoint_schur_algebra_metrics.get(
+                "compiled_aggregate_short_metric_interface_count",
+                0,
+            )
+            or 0
+        ),
         "recursive_shorted_metric_scale_inheritance_theorem_count": int(
             recursive_normalization_metrics.get(
                 "shorted_metric_scale_inheritance_theorem_count",
@@ -1574,6 +1608,28 @@ def build_recoupling_capability_report(
             "pair_local_cross_data_determine_component_positive_effect": False,
             "natural_small_positive_component_effect_edge_proved": False,
             "direct_schur_racah_component_naimark_compiled": False,
+            "operator_valued_endpoint_schur_short_normal_form_proved": bool(
+                endpoint_schur_algebra_metrics.get(
+                    "operator_valued_schur_short_normal_form_theorem_count",
+                    0,
+                )
+            ),
+            "binary_endpoint_compiles_given_aggregate_short_metric_access": bool(
+                endpoint_schur_algebra_metrics.get(
+                    "conditional_binary_endpoint_block_compiler_theorem_count",
+                    0,
+                )
+            ),
+            "fixed_arity_conditioning_forces_small_endpoint_algebra": False,
+            "two_well_conditioned_endpoint_generators_can_generate_full_matrix_algebra": bool(
+                endpoint_schur_algebra_metrics.get(
+                    "fixed_arity_small_algebra_implication_refutation_count",
+                    0,
+                )
+            ),
+            "full_endpoint_algebra_dimension_is_circuit_lower_bound": False,
+            "aggregate_short_metric_block_encoding_compiled": False,
+            "all_depth_endpoint_native_mass_recurrence_proved": False,
             "natural_cross_orientation_overlap_density_one_proved": True,
             "schur_branch_encoding_removes_orientation_inverse_square_root": False,
             "schur_branch_structured_direct_polar_compiled": False,
