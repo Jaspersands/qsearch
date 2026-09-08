@@ -1509,7 +1509,7 @@ def build_recoupling_capability_report(
     )
     # Consume saved diagnostics; building this ledger must not launch ambient scans.
     new_evidence = {}
-    for name in ("source_weighted_support_portfolio", "spectral_label_budget"):
+    for name in ("source_weighted_support_portfolio", "spectral_label_budget", "signed_tensor_access", "encoded_restriction"):
         path = Path(f"research/representation/coset_hidden_involution_{name}.json")
         try:
             new_evidence[name] = json.loads(path.read_text())
@@ -3566,6 +3566,13 @@ def build_recoupling_capability_report(
                 new_evidence["spectral_label_budget"].get("claim_gate", {}).get(
                     "fixed_count_inverse_polynomial_complete_label_route_obstructed", False)),
             "spectral_label_packing_is_generic_circuit_lower_bound": False,
+            "encoded_subgroup_restriction_reduction_derived": bool(new_evidence["encoded_restriction"].get("claim_gate", {}).get(
+                "polynomial_reduction_given_qft_primitives_derived", False)),
+            "encoded_copy_logical_orbit_average_reduction_derived": bool(new_evidence["encoded_restriction"].get("claim_gate", {}).get(
+                "normalized_logical_orbit_average_reduction_derived", False)),
+            "fixed_reference_invariant_identification_obstructed": bool(new_evidence["encoded_restriction"].get("claim_gate", {}).get(
+                "fixed_reference_invariant_identification_obstruction_derived", False)),
+            "encoded_restriction_supplies_target_measurement": False,
             "high_mass_s14_closure_is_typical_mass_theorem": False,
             "covariant_noncentral_carrier_decoder_compiled": False,
             "coherent_global_channel_atom_labeler_compiled": False,

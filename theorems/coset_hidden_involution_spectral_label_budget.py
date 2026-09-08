@@ -20,6 +20,7 @@ from coset_hidden_involution_hyperoctahedral_branching_mass import (
 from coset_hidden_involution_natural_matrix_multiplicity import (
     symmetric_group_involution_count,
 )
+from coset_hidden_involution_paired_tower_missing_label_boundary import partition_number
 from research_registry import utc_now
 
 REPORT_PATH = Path("research/representation/coset_hidden_involution_spectral_label_budget.json")
@@ -93,6 +94,19 @@ one chosen lambda tuple.
     ))
 
 
+def maximum_dimension_tensor_label_mass_bound(degree: int, label_capacity: int) -> Fraction:
+    """Bound under dimension-weighted target law for [lambda_max] tensor itself.
+
+This is not a claim about the postselected physical coset state's target law.
+The exact identities d_max^2>=n!/p(n) and sum_nu d_nu*g=d_max^2 suffice.
+"""
+    tensor_source_label_mass_bound(degree, label_capacity, source="plancherel")
+    return min(Fraction(1), Fraction(
+        label_capacity * symmetric_group_involution_count(degree) * partition_number(degree),
+        math.factorial(degree),
+    ))
+
+
 def _exact_bound_payload(bound: Fraction) -> dict[str, str | float]:
     return {
         "numerator": str(bound.numerator),
@@ -138,6 +152,8 @@ def build_spectral_label_budget(*, half_degrees: tuple[int, ...] = (7, 16, 32, 6
                     "inverse_polynomial_gap_power": power, "observable_count": count,
                     "resolvable_branch_mass_upper_bound": _exact_bound_payload(bound),
                     "conditional_eigenlabel_distribution_assumed_uniform": False,
+                    "maximum_dimension_pair_dimension_law_bound": _exact_bound_payload(
+                        maximum_dimension_tensor_label_mass_bound(n, capacity)),
                 })
     return {
         "created_at": utc_now(),
@@ -151,6 +167,7 @@ def build_spectral_label_budget(*, half_degrees: tuple[int, ...] = (7, 16, 32, 6
             "mass_bound": "q{b<=L} <= min(1,2*L*I_(2m)*J_m^+/(2m)!)",
             "decoding_bound": "E_q min(1,L/b) <= min(1,2*L*I_(2m)*J_m^+/(2m)!)",
             "tensor_mass_bound": "q_coset{g<=L} <= min(1,2^k*L*I_n^(k+1)/(n!)^k)",
+            "maximum_dimension_tensor_bound": "q_dimension{g<=L | lambda_max,lambda_max} <= min(1,L*I_n*p(n)/n!)",
             "asymptotics": "For fixed r,c and delta=m^-c the bound is exp(-0.5*m*log(m)+O(m))",
             "proof_document": "research/SPECTRAL_LABEL_BUDGET.md",
             "evidence_kind": "human-readable-derivation-with-exact-arithmetic-regression-checks",

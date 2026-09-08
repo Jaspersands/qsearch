@@ -1,0 +1,132 @@
+{
+  "created_at": "2026-09-08T05:29:58.149357+00:00",
+  "status": "faithful-signed-tensor-diagram-route-source-negligible",
+  "summary": "The faithful even-partition diagram range k<=m covers exponentially vanishing necessary K-type source mass. A useful signed-tensor approach must handle a nonfaithful quotient or a different embedding.",
+  "derivation_document": "research/SIGNED_TENSOR_ACCESS.md",
+  "literature": [
+    {
+      "url": "https://math.dartmouth.edu/~orellana/hcentpart.pdf",
+      "location": "Theorem 2.1 and Section 3",
+      "scope": "signed permutation tensor powers, not arbitrary Specht restrictions"
+    }
+  ],
+  "finite_controls": [
+    {
+      "rank": 2,
+      "bipartition_count": 5,
+      "tensor_dimension_identities_exact": true,
+      "central_parity_identities_exact": true,
+      "minimum_degree_formula_matches_all_types": true,
+      "degree_at_most_rank_exact_source_mass": "1",
+      "analytic_upper_bound": "1",
+      "source_bound_respected": true
+    },
+    {
+      "rank": 3,
+      "bipartition_count": 10,
+      "tensor_dimension_identities_exact": true,
+      "central_parity_identities_exact": true,
+      "minimum_degree_formula_matches_all_types": true,
+      "degree_at_most_rank_exact_source_mass": "23/24",
+      "analytic_upper_bound": "1",
+      "source_bound_respected": true
+    },
+    {
+      "rank": 4,
+      "bipartition_count": 20,
+      "tensor_dimension_identities_exact": true,
+      "central_parity_identities_exact": true,
+      "minimum_degree_formula_matches_all_types": true,
+      "degree_at_most_rank_exact_source_mass": "191/192",
+      "analytic_upper_bound": "1",
+      "source_bound_respected": true
+    },
+    {
+      "rank": 5,
+      "bipartition_count": 36,
+      "tensor_dimension_identities_exact": true,
+      "central_parity_identities_exact": true,
+      "minimum_degree_formula_matches_all_types": true,
+      "degree_at_most_rank_exact_source_mass": "839/960",
+      "analytic_upper_bound": "1",
+      "source_bound_respected": true
+    },
+    {
+      "rank": 6,
+      "bipartition_count": 65,
+      "tensor_dimension_identities_exact": true,
+      "central_parity_identities_exact": true,
+      "minimum_degree_formula_matches_all_types": true,
+      "degree_at_most_rank_exact_source_mass": "3743/3840",
+      "analytic_upper_bound": "1",
+      "source_bound_respected": true
+    }
+  ],
+  "scaling_records": [
+    {
+      "rank": 8,
+      "maximum_faithful_tensor_degree": 8,
+      "source_coverage_upper_bound": "1",
+      "log2_display": 0.0
+    },
+    {
+      "rank": 16,
+      "maximum_faithful_tensor_degree": 16,
+      "source_coverage_upper_bound": "14662607/14680064",
+      "log2_display": -0.0017166215236663618
+    },
+    {
+      "rank": 32,
+      "maximum_faithful_tensor_degree": 32,
+      "source_coverage_upper_bound": "69007669183950059653/166412404277850931200",
+      "log2_display": -1.2699343649098864
+    },
+    {
+      "rank": 64,
+      "maximum_faithful_tensor_degree": 64,
+      "source_coverage_upper_bound": "1712046374455876540384606422363869525742842576833/2512374330650541165722727895388310672066478080000000",
+      "log2_display": -10.519113938166726
+    },
+    {
+      "rank": 128,
+      "maximum_faithful_tensor_degree": 128,
+      "source_coverage_upper_bound": "1653916790084781577854538399634931975321437471200198222453879541231958598492207887404491483405778048500698842317/335488621721439561180249861862308496758793967442672542249113990220000800607227712216280154693348227461941297152000000000000",
+      "log2_display": -37.56158622807152
+    },
+    {
+      "rank": 256,
+      "maximum_faithful_tensor_degree": 256,
+      "source_coverage_upper_bound": "6167897467322427971987278338197550015571473542332815843990114695774295615037855152193424407527472032940681067651032191169160600930859822818830540749485147284414754807627399098686996639683482210712397097480757526169584083644082105221375999161665482485978311/349486563550490186711161962010568686717393757444949457899401631810953232672439652659845881838558896730968025209669101168280662881868530870389922611568741134994959027895464642055601405686625601012833986433822222942124466075835513948780354610890063473247518720000000000000000000000000000000",
+      "log2_display": -105.48215724417832
+    }
+  ],
+  "headline_metrics": {
+    "exact_degree_controls_passed": 5,
+    "source_mass_scaling_record_count": 6,
+    "coherent_embedding_count": 0,
+    "formal_proof_count": 0
+  },
+  "claim_gate": {
+    "exact_finite_controls_passed": true,
+    "faithful_range_source_coverage_obstruction_derived": true,
+    "all_signed_tensor_algorithms_ruled_out": false,
+    "specht_to_tensor_embedding_compiled": false,
+    "small_parameter_quotient_transform_compiled": false,
+    "speedup_claim_allowed": false
+  },
+  "assumptions": [
+    "Use the signed permutation module of K_m, not a different tensor alphabet.",
+    "Cover the unpostselected h-even K-Plancherel marginal of the branching source.",
+    "Restrict to tensor degrees k<=m where every even orbital diagram remains nonzero.",
+    "K-type reachability is only necessary, not sufficient, for a multiplicity-preserving embedding."
+  ],
+  "falsifiers_triggered": [
+    "Stable diagram labels cannot be assumed to cover typical Specht restriction K-types.",
+    "The signed tensor centralizer is not automatically the target copy algebra."
+  ],
+  "next_experiments": [
+    "Construct the required Specht-to-signed-tensor intertwiner and charge its normalization.",
+    "Work in the physical even-partition quotient at k>m; quantify its Gram kernel and source support.",
+    "Compare an implicit-copy-register algorithm which bypasses explicit tensor embeddings."
+  ]
+}

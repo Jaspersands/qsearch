@@ -1,5 +1,7 @@
 from pathlib import Path
 from dataclasses import replace
+import json
+import hashlib
 
 import numpy as np
 import pytest
@@ -86,3 +88,26 @@ def test_source_portfolio_has_clean_registry_runner_dispatch(tmp_path, monkeypat
     assert calls[0]["registry_experiment_id"] == DEFAULT_EXPERIMENT_ID
     assert any(row["id"] == result.result_id for row in load_experiment_results())
     assert validate_registry()["valid"]
+
+
+def test_portable_six_block_evidence_replays_without_ambient_specht_contraction():
+    root = Path(__file__).resolve().parents[1]
+    directory = root / "research" / "representation"
+    baseline = json.loads((directory / "coset_hidden_involution_high_mass_support_scan.json").read_text())
+    portfolio = json.loads((directory / "coset_hidden_involution_source_weighted_support_portfolio.json").read_text())
+    rows = [(baseline["matrix_evidence"], baseline["support_cutoffs"][-1]["separator_certificate"])]
+    rows.extend((row["matrix_evidence"], row["separator_certificate"]) for row in portfolio["scanned_branches"])
+    assert len(rows) == 6
+    for evidence, certificate in rows:
+        matrices = [np.array(matrix) for matrix in evidence["generators"]]
+        assert len(matrices) == 8
+        assert evidence["provenance"]["schema"] == 2
+        for name, digest in evidence["provenance"]["contraction_source_sha256"].items():
+            assert hashlib.sha256((root / "theorems" / name).read_bytes()).hexdigest() == digest
+        replay = separator_commutant_certificate(matrices, search_trials=0)
+        assert replay.direct_commutant_nullity_at_1e8 == 1
+        assert replay.direct_commutant_nullity_at_1e9 == 1
+        assert replay.scalar_common_commutant_numerically_certified
+        separator = sum(c * a for c, a in zip(certificate["separator_coefficients"], matrices))
+        gap = float(np.min(np.diff(np.linalg.eigvalsh(separator))))
+        assert np.isclose(gap, certificate["minimum_separator_eigenvalue_gap"], rtol=1e-8, atol=1e-12)

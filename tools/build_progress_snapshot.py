@@ -199,6 +199,7 @@ def build_snapshot() -> dict[str, Any]:
         {},
     )
 
+    encoded = read_json(RESEARCH / "representation/coset_hidden_involution_encoded_restriction.json", {})
     blocking = sum(bool(item.get("blocks_speedup_claim", False)) for item in findings)
     updated = latest_artifact_date(
         experiments,
@@ -261,19 +262,14 @@ def build_snapshot() -> dict[str, Any]:
         "updated_at": updated,
         "verdict": {
             "title": "No breakthrough yet",
-            "detail": (
-                "Every speedup claim remains blocked. A complete 25-label stable coupling-tree interface, direct frame "
-                "block encoding, all-n conditioning bound, and polynomial inverse filter are proved. The same audit "
-                "then cuts this branch as an algorithmic route: its natural-input probability is factorially small."
-            ),
+            "detail": "Encoded subgroup access passes finite checks. No target measurement or decoder is supplied; speedup claims remain blocked.",
         },
         "overview": (
-            "The project is a proof and falsification engine, not an algorithm demo. Its strongest constructive result "
-            "is a polynomially filterable three-copy stable frame. Its strongest negative result is more important: "
-            "every predetermined bounded-tail Fourier family has factorially small natural mass. The nonabelian route "
-            "must now turn a finite generator portfolio into an all-n, jointly gapped, decodable transform; the "
-            "single-generator and first two-generator spans have both been exactly falsified, while fixed-coefficient "
-            "TC1 now has an exact simple-spectrum certificate on all 20 n=8 targets."
+            "The current target is a useful measurement, not complete labels for every multiplicity. "
+            "Spectral packing obstructs fixed-count normalized complete labels with inverse-polynomial gaps. "
+            "Two QFTs instead extract a known subgroup carrier with an implicit copy code. Fixed-reference "
+            "invariant identification is limited; binary detection and symmetry-breaking protocols remain "
+            "separate open targets. Numerical checks are not formal proofs."
         ),
         "metrics": {
             "experiments": len(experiments),
@@ -318,58 +314,20 @@ def build_snapshot() -> dict[str, Any]:
             {
                 "title": "Nonabelian coset states",
                 "short_title": "Cosets",
-                "status": "Finite n=8 and n=9 separators proved; algorithm blocked",
+                "status": "Encoded access checked; useful measurement open",
                 "tone": "active",
                 "stage": 3,
                 "summary": (
-                    "One fixed stable family now has complete encoded coupling-tree labels, a direct three-copy frame "
-                    "block encoding, an all-n eigenvalue lower bound, and polynomial inverse filters. Exact access "
-                    "accounting cuts every fixed bounded-tail extension. Exact character moments now show non-scalar "
-                    "bounded-support action on typical blocks, but a fourth-moment certificate kills the first two-generator resolver."
+                    "Two-QFT restriction preserves normalization and supports logical orbit averages without "
+                    "decoding a copy basis. It does not grant the unknown centralizer or a target measurement."
                 ),
                 "evidence": (
-                    f"Encoded labels: {metric(stable_encoded_tree, 'joint_multiplicity_label_count', 0)}/25. "
-                    f"All-n conditioning families: {metric(stable_frame_conditioning, 'all_n_inverse_polynomial_minimum_eigenvalue_theorem_count', 0)}. "
-                    f"Naturally accessible fixed branches: {metric(stable_branch_access, 'natural_input_polynomial_accessible_branch_count', 0)}. "
-                    f"At n=20 the typical-source audit reaches multiplicity "
-                    f"{metric(typical_irrep_transfer, 'maximum_kronecker_multiplicity', 0):,}. "
-                    f"Finite typical non-scalar coverage: "
-                    f"{metric(typical_commutant_moments, 'finite_non_scalar_covered_count', 0)}/"
-                    f"{metric(typical_commutant_moments, 'nontrivial_multiplicity_block_count', 0)} blocks; "
-                    f"covariance-rank>=2: {metric(typical_commutant_moments, 'finite_centered_covariance_rank_two_count', 0)}; "
-                    f"dense n=7 simple tableau blocks: {metric(commutant, 'maximum_nontrivial_multiplicity_label_count', 0)}; "
-                    f"common finite support-three coefficient rules: "
-                    f"{metric(commutant, 'finite_common_low_support_coefficient_rule_count', 0)}; "
-                    f"class-compressed scalar blocks through n={metric(typical_class_contraction, 'maximum_n', 0)}: "
-                    f"{metric(typical_class_contraction, 'total_exact_scalar_block_count', 0)}; "
-                    f"two-generator finite coverage: "
-                    f"{metric(typical_class_contraction, 'finite_portfolio_non_scalar_covered_count', 0)}/"
-                    f"{metric(typical_class_contraction, 'finite_portfolio_block_count', 0)}; "
-                    f"repeated-root collision targets: "
-                    f"{metric(typical_portfolio_collision, 'repeated_zero_eigenvalue_target_count', 0)}; "
-                    f"disjoint-extension repeated-root targets: "
-                    f"{metric(typical_portfolio_collision, 'disjoint_third_generator_repeated_root_target_count', 0)}; "
-                    f"TC1-repaired collision targets: "
-                    f"{metric(typical_third_generator, 'certified_n8_collision_target_repair_count', 0)}; "
-                    f"exact n=8 low-multiplicity coverage: "
-                    f"{metric(typical_third_generator, 'certified_n8_low_multiplicity_simple_spectrum_target_count', 0)}/"
-                    f"{metric(typical_third_generator, 'n8_nontrivial_multiplicity_target_count', 0)}; "
-                    f"fixed-c1 full n=8 coverage: "
-                    f"{metric(typical_high_multiplicity, 'certified_n8_simple_spectrum_target_count', 0)}/"
-                    f"{metric(typical_high_multiplicity, 'n8_nontrivial_multiplicity_target_count', 0)}; "
-                    f"certified n=8 normalized minimum gap: "
-                    f"{metric(typical_separator_gaps, 'n8_certified_minimum_lcu_normalized_gap_lower_bound', 0):.6g}; "
-                    f"fixed-c1 full n=9 coverage: "
-                    f"{metric(typical_n9_full, 'certified_n9_simple_spectrum_target_count', 0)}/"
-                    f"{metric(typical_n9_full, 'n9_nontrivial_multiplicity_target_count', 0)}; "
-                    f"certified n=9 normalized minimum gap: "
-                    f"{metric(typical_n9_full, 'certified_n9_minimum_lcu_normalized_gap_lower_bound', 0):.6g}; "
-                    f"n=10 first-target coverage: "
-                    f"{metric(typical_n10_feasibility, 'certified_n10_simple_spectrum_target_count', 0)}/"
-                    f"{metric(typical_n10_feasibility, 'n10_nontrivial_multiplicity_target_count', 0)}; "
-                    f"uniform gap theorems: {metric(typical_commutant_moments, 'uniform_typical_commutant_gap_theorem_count', 0)}."
+                    f"Finite isometries: {metric(encoded, 'finite_isometry_controls_passed', 0)}. "
+                    f"Repeated copy blocks: {metric(encoded, 'repeated_copy_blocks_verified', 0)}. "
+                    f"Noncommuting encoded blocks: {metric(encoded, 'noncommuting_encoded_copy_blocks', 0)}. "
+                    "No scalable QFT gate implementation or decoder is supplied."
                 ),
-                "next": "Derive an all-n class-algebra recurrence and normalized gap bound, while probing n=10 for the first collision or severe gap collapse.",
+                "next": "Construct a task-relevant logical effect; test information, normalization, and classical simulability.",
             },
         ],
         "milestones": [
@@ -401,50 +359,28 @@ def build_snapshot() -> dict[str, Any]:
                     "multiplicity 17. Degree-28 transfer and class-Fourier contraction extend fixed-c1 separation to "
                     f"{metric(typical_n9_full, 'certified_n9_simple_spectrum_target_count', 0)}/"
                     f"{metric(typical_n9_full, 'n9_nontrivial_multiplicity_target_count', 0)} n=9 targets. All-n, gap, transform, "
-                    "and decoder theorems remain open."
+                    "and decoder questions remain separate; typical complete-label inverse-polynomial gaps are obstructed."
                 ),
             },
         ],
         "active_conjecture": {
             "summary": (
-                "The active conjecture is no longer about the fixed stable family. It asks whether bounded-support "
-                "whether a third bounded-support observable that repairs the certified n=8 repeated-root collisions can extend "
-                "uniformly across sampled partition labels with inverse-polynomial gaps, and feed a branch-weighted "
-                "frame whose outcomes decode the hidden involution. Finite variance and covariance rank are only filters."
+                "Can normalized implicit-copy operations implement useful collective binary detection or "
+                "symmetry-breaking identification? Carrier extraction does not establish this. An older "
+                "local systematic-core proof claim was also withdrawn without refuting the independent global BABA argument."
             ),
             "facts": [
-                {"label": "Stable encoded basis", "value": f"{metric(stable_encoded_tree, 'joint_multiplicity_label_count', 0)}/25 labels"},
-                {"label": "Inverse filters", "value": f"{metric(stable_frame_conditioning, 'polynomial_inverse_square_root_filter_count', 0)} proved families"},
-                {"label": "Stable natural access", "value": f"{metric(stable_branch_access, 'natural_input_polynomial_accessible_branch_count', 0)} viable branches"},
-                {"label": "Bounded-tail route", "value": "Factorial weak-Fourier mass"},
-                {"label": "Typical support", "value": f"{100 * metric(typical_irrep_transfer, 'maximum_kronecker_target_support_fraction', 0.0):.1f}% audited targets"},
-                {"label": "Typical max multiplicity", "value": f"{metric(typical_irrep_transfer, 'maximum_kronecker_multiplicity', 0):,}"},
-                {"label": "Finite non-scalar blocks", "value": f"{metric(typical_commutant_moments, 'finite_non_scalar_covered_count', 0)}/{metric(typical_commutant_moments, 'nontrivial_multiplicity_block_count', 0)}"},
-                {"label": "Finite covariance rank >=2", "value": f"{metric(typical_commutant_moments, 'finite_centered_covariance_rank_two_count', 0)} blocks"},
-                {"label": "Primary scalar blocks", "value": f"{metric(typical_class_contraction, 'total_exact_scalar_block_count', 0)} through n={metric(typical_class_contraction, 'maximum_n', 0)}"},
-                {"label": "Finite portfolio coverage", "value": f"{metric(typical_class_contraction, 'finite_portfolio_non_scalar_covered_count', 0)}/{metric(typical_class_contraction, 'finite_portfolio_block_count', 0)}"},
-                {"label": "Common finite coefficient rules", "value": f"{metric(commutant, 'finite_common_low_support_coefficient_rule_count', 0)} through n=7"},
-                {"label": "Portfolio covariance rank >=2", "value": f"{metric(typical_class_contraction, 'finite_portfolio_covariance_rank_two_count', 0)} blocks"},
-                {"label": "Two-generator collisions", "value": f"{metric(typical_portfolio_collision, 'repeated_zero_eigenvalue_target_count', 0)} exact targets"},
-                {"label": "Disjoint extension collisions", "value": f"{metric(typical_portfolio_collision, 'disjoint_third_generator_repeated_root_target_count', 0)} exact targets"},
-                {"label": "TC1 collision repairs", "value": f"{metric(typical_third_generator, 'certified_n8_collision_target_repair_count', 0)} exact targets"},
-                {"label": "TC1 low-multiplicity coverage", "value": f"{metric(typical_third_generator, 'certified_n8_low_multiplicity_simple_spectrum_target_count', 0)}/{metric(typical_third_generator, 'n8_nontrivial_multiplicity_target_count', 0)} n=8 targets"},
-                {"label": "Fixed-c1 full n=8 coverage", "value": f"{metric(typical_high_multiplicity, 'certified_n8_simple_spectrum_target_count', 0)}/{metric(typical_high_multiplicity, 'n8_nontrivial_multiplicity_target_count', 0)} n=8 targets"},
-                {"label": "n=8 normalized gap lower bound", "value": f"{metric(typical_separator_gaps, 'n8_certified_minimum_lcu_normalized_gap_lower_bound', 0):.6g}"},
-                {"label": "Fixed-c1 full n=9 coverage", "value": f"{metric(typical_n9_full, 'certified_n9_simple_spectrum_target_count', 0)}/{metric(typical_n9_full, 'n9_nontrivial_multiplicity_target_count', 0)} targets"},
-                {"label": "n=9 normalized gap lower bound", "value": f"{metric(typical_n9_full, 'certified_n9_minimum_lcu_normalized_gap_lower_bound', 0):.6g}"},
-                {"label": "n=10 first-target coverage", "value": f"{metric(typical_n10_feasibility, 'certified_n10_simple_spectrum_target_count', 0)}/{metric(typical_n10_feasibility, 'n10_nontrivial_multiplicity_target_count', 0)} targets"},
-                {"label": "n=10 degree-five table", "value": f"{metric(typical_n10_feasibility, 'degree5_naive_temporary_character_table_bytes', 0) / 1e9:.1f} GB"},
-                {"label": "Required portfolio size", "value": f">={metric(typical_portfolio_collision, 'minimum_required_portfolio_generator_count_on_certified_targets', 0)} generators"},
-                {"label": "Uniform typical gaps", "value": f"{metric(typical_commutant_moments, 'uniform_typical_commutant_gap_theorem_count', 0)} proved"},
-                {"label": "Typical uniform transforms", "value": f"{metric(typical_irrep_transfer, 'uniform_typical_label_encoded_tree_transform_count', 0)} proved"},
+                {"label": "Complete fixed-count labels", "value": "Packing obstruction"},
+                {"label": "Encoded access", "value": f"{metric(encoded, 'finite_isometry_controls_passed', 0)} finite controls"},
+                {"label": "Unknown alignment", "value": "Not granted"},
+                {"label": "Target effect", "value": "Open"},
                 {"label": "Hidden decoder", "value": "Open"},
             ],
         },
         "next_actions": [
             {
-                "title": "Attack the all-n separator conjecture",
-                "detail": "The fixed separator survives all 27 n=9 targets and the first 2 n=10 targets, but explicit n=10 contraction reaches 91.7 GB by degree five. Derive a recurrence before extending the ladder.",
+                "title": "Specify the logical target effect",
+                "detail": "Formulate binary detection or a charged symmetry-breaking measurement. Complete typical spectral labels are not the target.",
             },
             {
                 "title": "Keep natural branch mass in every theorem",

@@ -22,6 +22,11 @@ class ProgressSnapshotTests(unittest.TestCase):
         self.assertIn("No breakthrough", snapshot["verdict"]["title"])
         self.assertGreater(snapshot["metrics"]["blocking_findings"], 0)
         self.assertIn("interactively", snapshot["execution_model"])
+        self.assertIn("Spectral packing", snapshot["overview"])
+        self.assertIn("unknown centralizer", snapshot["tracks"][2]["summary"])
+        self.assertIn("logical target effect", snapshot["next_actions"][0]["title"])
+        self.assertLessEqual(len(snapshot["active_conjecture"]["facts"]), 6)
+        self.assertNotIn("Attack the all-n separator", str(snapshot))
 
 
 if __name__ == "__main__":

@@ -6,6 +6,42 @@
     ],
     "blocking_evidence": [
       {
+        "evidence": "The packed label capacity is polynomial, while the exact source mass of such small multiplicities vanishes superpolynomially.",
+        "finding_id": "DEQ-CODE-COSET-COLLECTIVE-BRANCHING-COMPLETE-SPECTRAL-LABEL-CAPACITY",
+        "required_action": "Use a task-relevant coarse measurement, growing-depth hierarchy, or direct transform. This obstruction is not classical dequantization or an HSP circuit lower bound.",
+        "severity": "high"
+      },
+      {
+        "evidence": "It produces an implicit copy code. The logical target effect, physical access transfer and decoder remain unspecified.",
+        "finding_id": "DEQ-CODE-COSET-COLLECTIVE-ENCODED-COPY-TARGET-EFFECT",
+        "required_action": "Use encoded logical access where possible, but charge target-effect construction and unknown-centralizer dependence separately. This is an access or symmetry boundary, not classical dequantization.",
+        "severity": "high"
+      },
+      {
+        "evidence": "All likelihoods coincide within each reference-matching orbit. There are p(m) orbits among (2m-1)!! hypotheses, so success is at most p(m)/(2m-1)!! even with arbitrarily many jointly invariant copies.",
+        "finding_id": "DEQ-CODE-COSET-COLLECTIVE-FIXED-REFERENCE-IDENTIFICATION",
+        "required_action": "This does not obstruct binary class detection, carrier-sensitive or other symmetry-breaking effects, or protocols with different references. Aligned h-even source mass is not a fixed-reference input law. This is an access or symmetry boundary, not classical dequantization.",
+        "severity": "high"
+      },
+      {
+        "evidence": "The exact shortest degree is |beta|+2(|alpha|-alpha_1); degrees at most m cover exponentially vanishing necessary K-type mass under the h-even marginal.",
+        "finding_id": "DEQ-CODE-COSET-COLLECTIVE-SIGNED-TENSOR-ACCESS-COMPLETE-SPECTRAL-LABEL-CAPACITY",
+        "required_action": "Supply a normalized Specht intertwiner and handle the nonfaithful diagram quotient, or use another representation. This is not a no-go for physical signed-tensor circuits.",
+        "severity": "high"
+      },
+      {
+        "evidence": "Four width-(2,3) colorings land in the dependency's unresolved cubic-overlap class. The report previously asserted a universal theorem regardless.",
+        "finding_id": "DEQ-CODE-COSET-COLLECTIVE-SYSTEMATIC-LOCAL-PROOF-GAP",
+        "required_action": "Do not conflate a local proof gap with a refutation of the separate global suffix/surface BABA theorem; replay the retained examples against both arguments. This is an access or symmetry boundary, not classical dequantization.",
+        "severity": "high"
+      },
+      {
+        "evidence": "Under the unpostselected k-register order-two coset source, low-multiplicity branch mass is at most 2^k*L*I_n^(k+1)/(n!)^k, which vanishes for polynomial L and fixed k>=2.",
+        "finding_id": "DEQ-CODE-COSET-COLLECTIVE-TENSOR-COMPLETE-SPECTRAL-LABEL-CAPACITY",
+        "required_action": "Use a task-relevant coarse measurement, growing-depth hierarchy, or direct transform. This obstruction is not classical dequantization or an HSP circuit lower bound.",
+        "severity": "high"
+      },
+      {
         "evidence": "The workbench wrote 2 coset/nonabelian family negative-result record(s).",
         "finding_id": "DEQ-RESULT-CODE-AFFINE-GEOMETRY-SEARCH-LATEST-NEGATIVE-FAMILIES",
         "required_action": "Exclude dequantized families from hypothesis promotion and mutate toward families that survive explicit baselines.",
@@ -1758,6 +1794,12 @@
         "severity": "medium"
       },
       {
+        "evidence": "Triggered falsifiers: Postselection can create linear-in-dimension child flatness from an isotropic parent. | Conditional child flatness is unnecessary for coherent branch-averaged trim error. | The final-root 19/520 aspect yields a constant isotropic-parent cutoff, not a recursive compiler. | Global ideal-prefix flatness still needs native root-state and per-level rank-budget theorems.",
+        "finding_id": "DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-COHERENT-COMPONENT-TRIM-HYBRID-LATEST-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
         "evidence": "Triggered falsifiers: Independent sector decoding is unnecessary in the ideal case and impossible at constant success after dephasing; coherent matrix-coefficient synthesis is the correct target. | An n!-outcome table is not intrinsically required: inverse S_n Fourier synthesis outputs the permutation in O(n log n) bits. | Plancherel sector weights alone are insufficient; row-column Schmidt flatness enters multiplicatively in the exact amplitude. | No speedup follows until physical carrier extraction, flattening, reweighting, and classical separation are proved.",
         "finding_id": "DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-COHERENT-FOURIER-DECODER-LATEST-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
@@ -1952,6 +1994,12 @@
       {
         "evidence": "Triggered falsifiers: Generated weak-invariant collisions are separated by stronger classical code invariants.",
         "finding_id": "DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-COMPRESSED-RACAH-COUPLING-PROBE-CODE-FAMILY-SEARCH-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
+        "evidence": "Triggered falsifiers: A high-dimensional exact conjugate pair is not naturally available with inverse-polynomial probability. | Polynomially many sampled labels do not create a Plancherel birthday match against a stretched-exponential collision law. | The no-go is about exact label matching, not coherent sign-duality operations spread over many sectors.",
+        "finding_id": "DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-CONJUGATE-PAIR-ADMISSION-NO-GO-LATEST-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
         "severity": "medium"
       },
@@ -2994,6 +3042,12 @@
         "severity": "medium"
       },
       {
+        "evidence": "Triggered falsifiers: Collective point activation is not a signed scalar cancellation; it has explicit positive intermediate-channel witnesses. | Explicit stabilizer-element averaging is unnecessary for exact finite witness extraction once the native Fourier amplitude is available. | A positive finite channel remains insufficient for an asymptotic or algorithmic claim.",
+        "finding_id": "DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-POINT-CHILD-STAR-ENERGY-LATEST-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
         "evidence": "Triggered falsifiers: Filtering reduced rows by marker coordinate is not a decoder theorem. | Marker-zero competitors do not by themselves prove affine-CVP failure. | Extended-gcd marker normalization has no shortness guarantee. | Any claimed rescue must provide source coverage and complexity for short affine-coset search.",
         "finding_id": "DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-POINT-CHILD-STAR-RELATIVE-COLLISION-DCP-SUBSET-SUM-MARKER-COSET-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
@@ -3014,6 +3068,18 @@
       {
         "evidence": "Triggered falsifiers: Filtering reduced rows by marker coordinate is not a decoder theorem. | Marker-zero competitors do not by themselves prove affine-CVP failure. | Extended-gcd marker normalization has no shortness guarantee. | Any claimed rescue must provide source coverage and complexity for short affine-coset search.",
         "finding_id": "DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-POINT-CRITICAL-IDENTITY-ATOM-DCP-SUBSET-SUM-MARKER-COSET-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
+        "evidence": "Triggered falsifiers: Intermediate parent labels are not harmless bookkeeping: measuring them can erase every bit of available point signal. | Inverse-polynomial conditional energy does not compensate for factorially rare source admission. | A coherent recoupling witness is not yet a complete MRS-model escape or a decoder.",
+        "finding_id": "DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-POINT-PARENT-COHERENCE-WITNESS-LATEST-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
+        "evidence": "Triggered falsifiers: A separate child-star square-root compiler is not necessary if the full covariant PGM can be implemented. | Removing the child-star prerequisite does not remove the natural orientation multiplicity-inverse bottleneck. | Fine-PGM hardness cannot be promoted into a direct coarse-measurement lower bound.",
+        "finding_id": "DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-POINT-PGM-COARSE-GRAINING-LATEST-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
         "severity": "medium"
       },
@@ -3186,6 +3252,12 @@
         "severity": "medium"
       },
       {
+        "evidence": "Triggered falsifiers: Reusing a complete source pair does not retain order-one correlation after dimension-weighted intermediate labels are measured. | The exact correlation scale is controlled by inverse conjugacy-class sizes and is dominated asymptotically by transpositions. | A viable collective decoder must avoid dephasing multiplicity/Racah paths into classical intermediate labels.",
+        "finding_id": "DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-SHARED-PAIR-RECOUPLING-DECOUPLING-LATEST-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
         "evidence": "Triggered falsifiers: Every fixed nonempty even subset word has uniform base-component marginals. | Short transposition-length probabilities are exact Stirling tails, not fitted trends. | Repeated subset masks are negligible at the certificate moment order. | Distinct masks can remain correlated through shared bridge generators. | Marginal anti-concentration does not imply a joint character-product moment bound. | No frame-norm theorem, coherent measurement, decoder, or classical separation is claimed.",
         "finding_id": "DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-SHORT-WORD-PROFILE-COSET-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
@@ -3248,6 +3320,12 @@
       {
         "evidence": "Triggered falsifiers: Generated weak-invariant collisions are separated by stronger classical code invariants.",
         "finding_id": "DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-SIGN-SYNDROME-UNCONDITIONAL-DECOUPLING-CODE-FAMILY-SEARCH-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
+        "evidence": "Triggered falsifiers: Pairwise source nonadjacency does not force factorially small collective point energy. | Polynomial conditional signal and polynomial natural admission are independent proof obligations. | The next useful mutation must preserve transpose-edge recoupling while moving all source labels into high Plancherel weight.",
+        "finding_id": "DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-SIGN-TWIST-COLLECTIVE-ACTIVATION-LATEST-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
         "severity": "medium"
       },
@@ -3408,6 +3486,12 @@
         "severity": "medium"
       },
       {
+        "evidence": "Triggered falsifiers: The local dependency does not prove every nonempty face primitive or quadratic. | Growing codimension does not create a growing-power face escape. | All-face cancellation forces a block family with fixed surface loss. | Higher-weight departures from block union are primitive constraints.",
+        "finding_id": "DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-SYSTEMATIC-STOPPING-CORE-NO-GO-COSET-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
         "evidence": "Triggered falsifiers: The obsolete real entropy pressure margin substantially overstates the lift. | Identity-frame padding creates no new presentation degrees of freedom. | Power-boundary pruning adds only one free generator and no leading mass. | The exact S3 standard average 1/2 decays to zero in growing S_n. | Every nontrivial nonsign seed target vanishes uniformly by total variation. | One-dimensional sign behavior is not a natural-component rescue.",
         "finding_id": "DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-TARGET-SURVIVAL-SURFACE-SEED-LATEST-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
@@ -3470,6 +3554,12 @@
       {
         "evidence": "Triggered falsifiers: The mere presence of low-dimensional pair carriers does not give them significant natural overlap mass. | Constant conditioning of stacked pair sampling does not imply typical low-cost fiber transport. | Finite pair-mass diagnostics cannot be promoted to an algorithmic lower bound without candidate-fiber alignment analysis.",
         "finding_id": "DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-TRANSPORT-CARRIER-MASS-LATEST-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
+        "evidence": "Triggered falsifiers: Polynomial Young-neighbor degree does not imply inverse-polynomial natural edge mass. | Exact conjugacy is not the only rare local event; one-box proximity to a conjugate shape is also stretched-exponentially rare. | The no-go leaves collective tensor-product recoupling open and must not be generalized beyond source-local edges.",
+        "finding_id": "DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-TRANSPOSE-EDGE-ADMISSION-NO-GO-LATEST-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
         "severity": "medium"
       },
@@ -3548,6 +3638,12 @@
       {
         "evidence": "Triggered falsifiers: Uniform pairwise coherence is not the sharp finite obstruction; carrier-graph sparsity gives much stronger bounds. | The screened S6 nontrivial-carrier sectors cannot produce emergent child intersections despite multiplicities up to seven. | The weighted method cannot exclude a norm-one graph; the known W3 emergent fiber saturates it. | Finite subcriticality does not control the all-depth graph after trivial/sign common-sector quotienting.",
         "finding_id": "DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-WEIGHTED-OVERLAP-EXCLUSION-LATEST-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
+        "evidence": "Triggered falsifiers: Windowed native root flatness is a theorem, not an additional conjecture. | Postselected child flatness remains unnecessary under coherent branch averaging. | The remaining root-state bottleneck is structured spectral-window access at raw 1/N scale. | Final-root flatness and aspect do not imply earlier-level aggregate rank budgets.",
+        "finding_id": "DEQ-RESULT-EXP-CODE-SELF-DUAL-WREATH-WINDOWED-ROOT-FLATNESS-BRIDGE-LATEST-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
         "severity": "medium"
       },
@@ -3786,6 +3882,12 @@
         "severity": "medium"
       },
       {
+        "evidence": "Triggered falsifiers: An exponentially large implicit multiplicity code does not itself require exponentially many qubits or postselection. | Carrier extraction is not an explicit multiplicity-index transform or a hidden-involution measurement.",
+        "finding_id": "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-ENCODED-RESTRICTION-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
         "evidence": "Triggered falsifiers: Generated weak-invariant collisions are separated by stronger classical code invariants.",
         "finding_id": "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-FOULKES-SUPPORT-MASS-PROBE-CODE-FAMILY-SEARCH-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
@@ -3806,6 +3908,12 @@
       {
         "evidence": "Triggered falsifiers: The threshold chi-square signal cannot be dismissed as an exponentially rare likelihood spike. | Constant-copy evidence remains invalid even though logarithmic-copy information is sufficient. | Information-theoretic Helstrom existence does not certify an efficient measurement or speedup.",
         "finding_id": "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-FOURTH-MOMENT-THRESHOLD-LATEST-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
+        "evidence": "Triggered falsifiers: The highest-mass untested S_14 branch is not computationally inaccessible to the fiber trace. | The highest-mass untested S_14 branch does not require support five or six for full copy-algebra generation. | One finite high-mass branch is not an all-rank natural-mass theorem or coherent decoder.",
+        "finding_id": "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-HIGH-MASS-SUPPORT-SCAN-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
         "severity": "medium"
       },
@@ -3912,6 +4020,12 @@
         "severity": "medium"
       },
       {
+        "evidence": "Triggered falsifiers: Full isotypic commutant matrices are unnecessary for exact classical copy-space contraction. | Carrier-width reduction does not remove exponential ambient Specht dimension. | Exact finite copy matrices do not provide a coherent transform, normalized gap theorem, or decoder.",
+        "finding_id": "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-FIBER-TRACE-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
         "evidence": "Triggered falsifiers: Generated weak-invariant collisions are separated by stronger classical code invariants.",
         "finding_id": "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-HARD-MASS-CODE-FAMILY-SEARCH-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
@@ -3924,6 +4038,30 @@
         "severity": "medium"
       },
       {
+        "evidence": "Triggered falsifiers: The finite support threshold sequence 4,5,6 is not evidence of an unbounded-support theorem. | Full orbit-average matrices are unnecessary for classical multiplicity-block generation audits. | Support-six closure on selected S_14 blocks is not a uniform all-rank compiler theorem. | A classical commutant projection is not a coherent source-aware quantum transform.",
+        "finding_id": "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-TWIRL-PROJECTION-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
+        "evidence": "Triggered falsifiers: Experiment has no executable protocol backend yet.",
+        "finding_id": "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-TWIRL-PROJECTION-BLOCKED-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
+        "evidence": "Triggered falsifiers: Filtering reduced rows by marker coordinate is not a decoder theorem. | Marker-zero competitors do not by themselves prove affine-CVP failure. | Extended-gcd marker normalization has no shortness guarantee. | Any claimed rescue must provide source coverage and complexity for short affine-coset search.",
+        "finding_id": "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-TWIRL-PROJECTION-DCP-SUBSET-SUM-MARKER-COSET-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
+        "evidence": "Triggered falsifiers: The finite support threshold sequence 4,5,6 is not evidence of an unbounded-support theorem. | Full orbit-average matrices are unnecessary for classical multiplicity-block generation audits. | Support-six closure on selected S_14 blocks is not a uniform all-rank compiler theorem. | A classical commutant projection is not a coherent source-aware quantum transform.",
+        "finding_id": "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-TWIRL-PROJECTION-LATEST-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
         "evidence": "Triggered falsifiers: Filtering reduced rows by marker coordinate is not a decoder theorem. | Marker-zero competitors do not by themselves prove affine-CVP failure. | Extended-gcd marker normalization has no shortness guarantee. | Any claimed rescue must provide source coverage and complexity for short affine-coset search.",
         "finding_id": "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-NATURAL-MATRIX-MULTIPLICITY-DCP-SUBSET-SUM-MARKER-COSET-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
@@ -3932,6 +4070,12 @@
       {
         "evidence": "Triggered falsifiers: Filtering reduced rows by marker coordinate is not a decoder theorem. | Marker-zero competitors do not by themselves prove affine-CVP failure. | Extended-gcd marker normalization has no shortness guarantee. | Any claimed rescue must provide source coverage and complexity for short affine-coset search.",
         "finding_id": "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-NATURAL-RECOUPLING-BOUNDARY-DCP-SUBSET-SUM-MARKER-COSET-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
+        "evidence": "Triggered falsifiers: Selected low-dimensional support-six controls are not representative of the natural source law. | A finite full copy algebra is not an inverse-polynomial-gap coherent resolver. | Brute-force low-ambient scans cannot establish typical-block support-six generation.",
+        "finding_id": "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-NATURAL-SUPPORT-SIX-MASS-AUDIT-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
         "severity": "medium"
       },
@@ -4038,6 +4182,12 @@
         "severity": "medium"
       },
       {
+        "evidence": "Triggered falsifiers: Stable diagram labels cannot be assumed to cover typical Specht restriction K-types. | The signed tensor centralizer is not automatically the target copy algebra.",
+        "finding_id": "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-SIGNED-TENSOR-ACCESS-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
         "evidence": "Triggered falsifiers: Filtering reduced rows by marker coordinate is not a decoder theorem. | Marker-zero competitors do not by themselves prove affine-CVP failure. | Extended-gcd marker normalization has no shortness guarantee. | Any claimed rescue must provide source coverage and complexity for short affine-coset search.",
         "finding_id": "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-SINGLE-HECKE-ALL-DEGREE-MOMENT-NO-GO-DCP-SUBSET-SUM-MARKER-COSET-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
@@ -4058,6 +4208,18 @@
       {
         "evidence": "Triggered falsifiers: Filtering reduced rows by marker coordinate is not a decoder theorem. | Marker-zero competitors do not by themselves prove affine-CVP failure. | Extended-gcd marker normalization has no shortness guarantee. | Any claimed rescue must provide source coverage and complexity for short affine-coset search.",
         "finding_id": "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-SOURCE-LOCAL-LIKELIHOOD-NO-GO-DCP-SUBSET-SUM-MARKER-COSET-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
+        "evidence": "Triggered falsifiers: The next source-ranked S_14 branches do not require support five or six for full copy-algebra generation. | Finite visible source mass at S_14 is not an all-rank typical-mass or gap-scaling theorem.",
+        "finding_id": "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-SOURCE-WEIGHTED-SUPPORT-PORTFOLIO-FALSIFIERS",
+        "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
+        "severity": "medium"
+      },
+      {
+        "evidence": "Triggered falsifiers: A typical-block complete simple spectrum cannot retain an inverse-polynomial normalized minimum gap. | Per-branch optimized finite separators do not solve the spectral label capacity deficit.",
+        "finding_id": "DEQ-RESULT-EXP-COSET-HIDDEN-INVOLUTION-SPECTRAL-LABEL-BUDGET-FALSIFIERS",
         "required_action": "Either resolve each falsifier with a sharper model distinction or demote the candidate family as a negative result.",
         "severity": "medium"
       },
@@ -4765,7 +4927,7 @@
       }
     ],
     "candidate_id": "CODE-COSET-COLLECTIVE",
-    "created_at": "2026-09-02T20:57:27.248406+00:00",
+    "created_at": "2026-09-08T11:51:08.550602+00:00",
     "id": "CONJ-CODE-COSET-COLLECTIVE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -7289,6 +7451,27 @@
         "summary": "Searched 3 code-family budgets and found 3 weak-invariant collision(s). 3 were rejected by stronger classical invariants; 0 survived implemented baselines."
       },
       {
+        "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-COHERENT-COMPONENT-TRIM-HYBRID-LATEST",
+        "metrics": {
+          "all_level_aggregate_rank_budget_theorem_count": 0,
+          "coherent_branch_trim_theorem_count": 1,
+          "coherent_recursive_trim_compiler_count": 0,
+          "conditional_child_flatness_requirement_count": 0,
+          "finite_control_count": 3,
+          "finite_control_failure_count": 0,
+          "natural_final_root_aggregate_budget_theorem_count": 1,
+          "natural_root_flatness_theorem_count": 0,
+          "new_quantum_algorithm_count": 0,
+          "postselection_flatness_counterfamily_row_count": 10,
+          "scaling_record_count": 8,
+          "tail_branch_probability_times_flatness": 1.0,
+          "tail_inverse_threshold_cost": 1256097339284.2104,
+          "tail_postselection_conditional_flatness": 1023.0019502686264
+        },
+        "status": "child-flatness-gate-replaced-by-root-and-level-rank-budgets",
+        "summary": "Replaced postselected child flatness by a coherent parent-state rank-budget theorem and an ideal-prefix hybrid error ledger."
+      },
+      {
         "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-COHERENT-FOURIER-DECODER-LATEST",
         "metrics": {
           "coherent_dual_row_extraction_count": 0,
@@ -7973,6 +8156,21 @@
         },
         "status": "all-generated-collisions-dequantized",
         "summary": "Searched 3 code-family budgets and found 3 weak-invariant collision(s). 3 were rejected by stronger classical invariants; 0 survived implemented baselines."
+      },
+      {
+        "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-CONJUGATE-PAIR-ADMISSION-NO-GO-LATEST",
+        "metrics": {
+          "distributed_approximate_twist_theorem_count": 0,
+          "exact_conjugate_collision_identity_theorem_count": 1,
+          "finite_control_count": 13,
+          "finite_control_failure_count": 0,
+          "natural_high_weight_recoupling_algorithm_count": 0,
+          "new_quantum_algorithm_count": 0,
+          "polynomial_pool_exact_conjugate_admission_count": 0,
+          "stretched_exponential_admission_no_go_theorem_count": 1
+        },
+        "status": "exact-conjugate-pair-sign-twist-admission-no-go",
+        "summary": "Proved that replacing trivial/sign by an exact high-dimensional conjugate pair only improves factorial rarity to stretched-exponential rarity. The next admissible target is a distributed or approximate twist."
       },
       {
         "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-CONNECTED-CLIFFORD-NORMAL-FORM-DCP-SUBSET-SUM-MARKER-COSET",
@@ -9047,6 +9245,12 @@
         },
         "status": "high-codimension-face-frontier-reduced-to-cubic-overlap",
         "summary": "Reduced high-codimension systematic stopping-code proof debt to uniform S_n control of cubic-overlap face words."
+      },
+      {
+        "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-INTERLEAVED-TARGET-MARGIN-STABILITY-LATEST",
+        "metrics": {},
+        "status": "completed",
+        "summary": ""
       },
       {
         "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-INTERNAL-CLOSURE-GRADED-RESCUE-LATEST",
@@ -11539,6 +11743,21 @@
         "summary": "Proved exact standard and carry-sliced marker-coset radius equivalences. Marker normalization is easy; short marker-one extraction remains exactly the binary subset-sum search problem."
       },
       {
+        "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-POINT-CHILD-STAR-ENERGY-LATEST",
+        "metrics": {
+          "active_finite_child_star_count": 7,
+          "efficient_child_star_measurement_count": 0,
+          "finite_control_count": 3,
+          "finite_control_failure_count": 0,
+          "finite_offdiagonal_recoupling_witness_count": 16,
+          "new_quantum_algorithm_count": 0,
+          "positive_child_star_energy_theorem_count": 1,
+          "scalable_recoupling_magnitude_theorem_count": 0
+        },
+        "status": "positive-child-star-recoupling-witness-theorem",
+        "summary": "Converted point signal into positive Young child-star and parent-pair energies derived from one native Fourier purification. This enables recoupling-witness search without claiming scalable magnitude or access."
+      },
+      {
         "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-POINT-CHILD-STAR-RELATIVE-COLLISION-DCP-SUBSET-SUM-MARKER-COSET",
         "metrics": {
           "basis_marker_gcd_one_theorem_count": 2,
@@ -11601,6 +11820,36 @@
         },
         "status": "marker-filter-reduced-to-original-subset-sum-search",
         "summary": "Proved exact standard and carry-sliced marker-coset radius equivalences. Marker normalization is easy; short marker-one extraction remains exactly the binary subset-sum search problem."
+      },
+      {
+        "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-POINT-PARENT-COHERENCE-WITNESS-LATEST",
+        "metrics": {
+          "all_n_parent_coherence_witness_theorem_count": 1,
+          "coherent_parent_filter_circuit_count": 0,
+          "complete_mrs_transcript_separation_count": 0,
+          "finite_control_count": 3,
+          "finite_control_failure_count": 0,
+          "finite_zero_information_parent_dephasing_count": 1,
+          "natural_inverse_polynomial_coherence_witness_count": 0,
+          "new_quantum_algorithm_count": 0,
+          "parent_energy_pythagorean_theorem_count": 1
+        },
+        "status": "all-n-parent-coherence-resource-proved-natural-admission-open",
+        "summary": "Proved an exact parent-dephasing energy split and an all-n conditional portfolio whose point signal is entirely recoupling coherence. This identifies the resource while retaining source and circuit blockers."
+      },
+      {
+        "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-POINT-PGM-COARSE-GRAINING-LATEST",
+        "metrics": {
+          "child_star_square_roots_avoided_by_inherited_route": 1,
+          "exact_coarse_graining_theorem_count": 1,
+          "finite_control_count": 3,
+          "finite_control_failure_count": 0,
+          "full_multiplicity_inverse_compiler_count": 0,
+          "new_quantum_algorithm_count": 0,
+          "polynomial_point_pgm_circuit_count": 0
+        },
+        "status": "point-pgm-exactly-coarse-grained-full-pgm",
+        "summary": "Proved that the point PGM is exactly the full retained-state PGM with its output coarse-grained by point image. This redirects the inherited route to D_nu inversion while leaving direct coarse bypasses open."
       },
       {
         "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-POLAR-FACTOR-TRANSFER-LATEST",
@@ -12072,6 +12321,12 @@
         "summary": "Proved a universal 4/(n!)^5 residual star-energy bound and a vanishing-coefficient-fraction joint spectral trim for the natural relation metric and grading perturbations."
       },
       {
+        "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-REVERSIBLE-AUTOMATON-FIBER-COLLAPSE-LATEST",
+        "metrics": {},
+        "status": "completed",
+        "summary": ""
+      },
+      {
         "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-SCALE-FREE-ENDPOINT-GRAPH-TRANSFER-BOUNDARY-LATEST",
         "metrics": {
           "abstract_control_count": 3,
@@ -12133,6 +12388,21 @@
         },
         "status": "all-generated-collisions-dequantized",
         "summary": "Searched 3 code-family budgets and found 3 weak-invariant collision(s). 3 were rejected by stronger classical invariants; 0 survived implemented baselines."
+      },
+      {
+        "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-SHARED-PAIR-RECOUPLING-DECOUPLING-LATEST",
+        "metrics": {
+          "coherent_multiplicity_path_information_theorem_count": 0,
+          "dephased_shared_pair_strong_information_resource_count": 0,
+          "exact_chi_square_decoupling_theorem_count": 1,
+          "finite_control_count": 8,
+          "finite_control_failure_count": 0,
+          "natural_collective_decoder_count": 0,
+          "new_quantum_algorithm_count": 0,
+          "shared_pair_joint_character_kernel_theorem_count": 1
+        },
+        "status": "dephased-shared-pair-recoupling-decoupling-proved-coherence-open",
+        "summary": "Solved the shared-source-pair measured-label law exactly and proved it decouples in total variation as O(n^-2). This removes another classical recoupling shortcut and isolates coherent Racah path phases."
       },
       {
         "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-SHORT-WORD-PROFILE-COSET",
@@ -12347,6 +12617,21 @@
         },
         "status": "all-generated-collisions-dequantized",
         "summary": "Searched 3 code-family budgets and found 3 weak-invariant collision(s). 3 were rejected by stronger classical invariants; 0 survived implemented baselines."
+      },
+      {
+        "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-SIGN-TWIST-COLLECTIVE-ACTIVATION-LATEST",
+        "metrics": {
+          "all_n_inverse_polynomial_activation_theorem_count": 1,
+          "conditional_signal_polynomial_exponent": 15,
+          "efficient_point_measurement_count": 0,
+          "finite_direct_formula_validation_count": 1,
+          "natural_source_admission_theorem_count": 0,
+          "new_quantum_algorithm_count": 0,
+          "structural_control_count": 8,
+          "structural_control_failure_count": 0
+        },
+        "status": "sign-twist-polynomial-activation-proved-source-rarity-obstruction",
+        "summary": "Constructed an all-n source-nonadjacent portfolio with exact Theta(n^-15) collective point energy, then identified factorial Plancherel source rarity as the decisive obstruction."
       },
       {
         "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-SIGNED-STEINER-BULK-EDGE-LATEST",
@@ -12899,6 +13184,27 @@
         "summary": "Proved that iterative support-difference peeling, not a complete cube, direct edge cover, or contiguous suffix, exactly trivializes every inserted frame in its closure."
       },
       {
+        "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-SYSTEMATIC-STOPPING-CORE-NO-GO-COSET",
+        "metrics": {
+          "all_depth_systematic_stopping_core_no_go_theorem_count": 0,
+          "control_failure_count": 0,
+          "exact_block_union_branch_control_count": 2,
+          "exhaustive_coloring_audit_failure_count": 1,
+          "exhaustively_checked_normalized_coloring_count": 49864,
+          "exhaustively_checked_proper_coloring_count": 988,
+          "higher_weight_deviation_branch_control_count": 1,
+          "independent_global_controls_verified": 4,
+          "minimum_stored_true_pressure_margin": 0.5963225389711972,
+          "new_quantum_algorithm_count": 0,
+          "nonempty_origin_face_branch_control_count": 2,
+          "stored_branch_control_count": 5,
+          "uniform_true_pressure_margin_lower_bound": 0.0,
+          "unresolved_local_coloring_count": 4
+        },
+        "status": "local-face-proof-audited-uniform-cubic-loss-open",
+        "summary": "The local systematic-core no-go used an unproved cubic-overlap loss. Concrete uncovered colorings still satisfy the independent global BABA bound."
+      },
+      {
         "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-TARGET-SURVIVAL-SURFACE-SEED-LATEST",
         "metrics": {
           "all_depth_power_boundary_reduction_theorem_count": 1,
@@ -13113,6 +13419,20 @@
         },
         "status": "sampled-pair-mass-high-dimensional-fiber-alignment-open",
         "summary": "Exact representation-ring probes show rapidly shrinking low-dimensional pair-overlap mass and force the transport program to prove explicit candidate-fiber alignment with exceptional carriers."
+      },
+      {
+        "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-TRANSPOSE-EDGE-ADMISSION-NO-GO-LATEST",
+        "metrics": {
+          "collective_intermediate_recoupling_no_go_count": 0,
+          "finite_control_count": 13,
+          "finite_control_failure_count": 0,
+          "natural_typical_collective_decoder_count": 0,
+          "new_quantum_algorithm_count": 0,
+          "polynomial_pool_source_edge_admission_count": 0,
+          "source_local_transpose_edge_bound_theorem_count": 1
+        },
+        "status": "source-local-transpose-edge-admission-no-go",
+        "summary": "Closed the natural source-local transpose-edge repair using Young-graph degree and maximal Plancherel mass. Redirected the search to collective intermediate recoupling across typical unmatched labels."
       },
       {
         "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-TWO-COLOR-RETURN-WALK-LATEST",
@@ -13385,6 +13705,25 @@
         },
         "status": "weighted-carrier-graph-exclusion-all-depth-quotient-spectrum-open",
         "summary": "Proved weighted carrier-graph exclusion and certified 1920/1920 affine merges across 30 common-free multiplicity-rich S6 controls; W3 is the exact norm-one boundary case."
+      },
+      {
+        "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-WINDOWED-ROOT-FLATNESS-BRIDGE-LATEST",
+        "metrics": {
+          "all_level_component_rank_budget_theorem_count": 0,
+          "finite_control_count": 3,
+          "finite_control_failure_count": 0,
+          "new_quantum_algorithm_count": 0,
+          "recursive_component_trim_compiler_count": 0,
+          "scaling_failure_count": 0,
+          "scaling_record_count": 8,
+          "structured_window_projector_count": 0,
+          "tail_final_root_component_threshold": 2.4790513891118684e-09,
+          "tail_root_flatness_upper_bound": 736944.4154917583,
+          "tail_windowed_success_lower_bound": 0.7684508445225571,
+          "windowed_root_flatness_bridge_theorem_count": 1
+        },
+        "status": "windowed-root-flatness-proved-structured-window-access-open",
+        "summary": "Converted the existing constant-success PGM spectral window into a constant-flat native root state and final-root component cutoff."
       },
       {
         "experiment_result_id": "RESULT-EXP-CODE-SELF-DUAL-WREATH-WORD-MAP-MIXING-LATEST",
@@ -14060,6 +14399,23 @@
         "summary": "Proved exact standard and carry-sliced marker-coset radius equivalences. Marker normalization is easy; short marker-one extraction remains exactly the binary subset-sum search problem."
       },
       {
+        "experiment_result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-ENCODED-RESTRICTION",
+        "metrics": {
+          "explicit_copy_index_compiler_count": 0,
+          "finite_isometry_controls_passed": 5,
+          "hidden_involution_decoder_count": 0,
+          "maximum_half_degree": 128,
+          "noncommuting_encoded_copy_blocks": 1,
+          "physical_fourier_controls_passed": 1,
+          "postselection_steps": 0,
+          "reference_orbit_controls_passed": 3,
+          "repeated_copy_blocks_verified": 1,
+          "scalable_factorization_trials_passed": 96
+        },
+        "status": "normalized-encoded-restriction-validated-logical-decoder-open",
+        "summary": "Inverse G-QFT, reversible K-coset factorization and K-QFT give a normalized carrier-extraction reduction with an implicit copy code. An explicit copy index or target measurement is not supplied."
+      },
+      {
         "experiment_result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-FOULKES-SUPPORT-MASS-PROBE-CODE-FAMILY-SEARCH",
         "metrics": {
           "bounded_exact_rejection_count": 0,
@@ -14120,6 +14476,31 @@
         },
         "status": "theta-log-class-information-threshold-proved-compiler-open",
         "summary": "Re-derived the published Theta(log |C|) decision sample complexity through an explicit exact fourth-moment identity. The identity rules out rare-spike collapse and sharpens compiler diagnostics, but is not a new sample-complexity theorem."
+      },
+      {
+        "experiment_result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-HIGH-MASS-SUPPORT-SCAN",
+        "metrics": {
+          "coherent_multiplicity_transform_count": 0,
+          "evaluated_representative_count": 8,
+          "exact_symbolic_support_four_certificate_count": 0,
+          "hidden_involution_decoder_count": 0,
+          "highest_mass_untested_s14_block_scan_count": 1,
+          "inverse_polynomial_natural_mass_gap_theorem_count": 0,
+          "new_quantum_algorithm_count": 0,
+          "support_four_direct_commutant_nullity": 1,
+          "support_four_direct_commutant_smallest_nonzero_singular_value": 0.22290817076911043,
+          "support_four_full_copy_algebra_certificate_count": 1,
+          "support_four_generator_graph_bottleneck": 0.1428058930187408,
+          "support_four_inferred_star_algebra_dimension": 676,
+          "support_four_separator_lcu_normalized_gap": 0.0007533315506480507,
+          "support_three_generated_algebra_dimension": 7,
+          "target_branching_multiplicity": 26,
+          "target_copy_algebra_dimension": 676,
+          "target_fraction_of_repeated_natural_mass": 0.008897200987383025,
+          "target_natural_mass_probability": 0.008705357142857143
+        },
+        "status": "highest-mass-s14-block-support-four-numerically-full-asymptotics-open",
+        "summary": "Scanned the highest-mass previously untested repeated S_14 branch; support three remains proper and support four scalar-commutant closure is True."
       },
       {
         "experiment_result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-HYPEROCTAHEDRAL-BRANCHING-MASS-DCP-SUBSET-SUM-MARKER-COSET",
@@ -14389,6 +14770,23 @@
         "summary": "Proved exact standard and carry-sliced marker-coset radius equivalences. Marker normalization is easy; short marker-one extraction remains exactly the binary subset-sum search problem."
       },
       {
+        "experiment_result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-FIBER-TRACE",
+        "metrics": {
+          "carrier_partial_trace_full_twirl_validation_count": 1,
+          "coherent_multiplicity_transform_count": 0,
+          "direct_root_multiplicity_fiber_projection_theorem_count": 1,
+          "hidden_involution_decoder_count": 0,
+          "independent_commutant_projection_validation_count": 1,
+          "maximum_validated_branching_multiplicity": 2,
+          "maximum_validated_full_carrier_dimension": 84,
+          "new_quantum_algorithm_count": 0,
+          "polynomial_typical_ambient_compression_theorem_count": 0,
+          "tableau_fiber_propagation_theorem_count": 1
+        },
+        "status": "matrix-free-copy-fiber-trace-validated-typical-ambient-scaling-open",
+        "summary": "Validated direct signed-YJM multiplicity fibers and carrier partial traces against a full K_4 twirl and an independent S_14 commutant projection."
+      },
+      {
         "experiment_result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-HARD-MASS-CODE-FAMILY-SEARCH",
         "metrics": {
           "bounded_exact_rejection_count": 0,
@@ -14417,6 +14815,81 @@
         },
         "status": "carrier-and-subgroup-label-only-support-route-refuted-finitely",
         "summary": "Proved the carrier-algebra obstruction and verified proper multiplicity support in every finite threshold sector tested. Ordinary group or hyperoctahedral isotypic labels cannot implement the binary support; a commutant/recoupling primitive is mandatory."
+      },
+      {
+        "experiment_result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-TWIRL-PROJECTION",
+        "metrics": {
+          "coherent_commutant_transform_count": 0,
+          "compressed_orbit_representative_method_theorem_count": 1,
+          "exact_signed_sector_full_twirl_validation_count": 1,
+          "finite_control_count": 10,
+          "finite_control_failure_count": 0,
+          "hidden_involution_decoder_count": 0,
+          "hilbert_schmidt_commutant_projection_theorem_count": 1,
+          "maximum_full_representation_dimension_avoided": 4368,
+          "maximum_multiplicity_block_dimension_used": 105,
+          "multiplicity_three_control_count": 1,
+          "multiplicity_three_support_six_full_count": 1,
+          "new_quantum_algorithm_count": 0,
+          "nontrivial_beta_control_count": 3,
+          "nontrivial_beta_support_six_full_count": 3,
+          "rank_five_support_threshold": 5,
+          "rank_seven_control_count": 8,
+          "rank_seven_support_six_full_count": 8,
+          "rank_six_support_threshold": 6,
+          "strict_rank_tracking_support_growth_falsifier_count": 1,
+          "unbounded_support_lower_bound_count": 0,
+          "universal_support_six_generation_theorem_count": 0
+        },
+        "status": "strict-support-growth-falsified-multiplicity-three-and-signed-sectors-close-uniformity-open",
+        "summary": "Extended commutant-projected orbit diagnostics to sparse signed sectors, validated them against an exact full K_4 twirl, and found support-five M_3 and support-four nontrivial-beta closure at rank seven."
+      },
+      {
+        "experiment_result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-TWIRL-PROJECTION-BLOCKED",
+        "metrics": {
+          "implemented": false
+        },
+        "status": "blocked-missing-runner",
+        "summary": "No executable runner is implemented for this experiment yet."
+      },
+      {
+        "experiment_result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-TWIRL-PROJECTION-DCP-SUBSET-SUM-MARKER-COSET",
+        "metrics": {
+          "basis_marker_gcd_one_theorem_count": 2,
+          "carry_sliced_scale_condition_row_count": 5,
+          "exact_marker_kernel_affine_coset_decomposition_count": 2,
+          "exact_witness_radius_equivalence_theorem_count": 2,
+          "polynomial_short_marker_one_decoder_count": 0,
+          "polynomial_unbounded_marker_one_vector_theorem_count": 2,
+          "proved_affine_cvp_easier_than_subset_sum_count": 0,
+          "row_count": 5,
+          "standard_scale_condition_row_count": 5
+        },
+        "status": "marker-filter-reduced-to-original-subset-sum-search",
+        "summary": "Proved exact standard and carry-sliced marker-coset radius equivalences. Marker normalization is easy; short marker-one extraction remains exactly the binary subset-sum search problem."
+      },
+      {
+        "experiment_result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-MULTIPLICITY-TWIRL-PROJECTION-LATEST",
+        "metrics": {
+          "coherent_commutant_transform_count": 0,
+          "compressed_orbit_representative_method_theorem_count": 1,
+          "finite_control_count": 6,
+          "finite_control_failure_count": 0,
+          "hidden_involution_decoder_count": 0,
+          "hilbert_schmidt_commutant_projection_theorem_count": 1,
+          "maximum_full_representation_dimension_avoided": 2002,
+          "maximum_multiplicity_block_dimension_used": 70,
+          "new_quantum_algorithm_count": 0,
+          "rank_five_support_threshold": 5,
+          "rank_seven_control_count": 4,
+          "rank_seven_support_six_full_count": 4,
+          "rank_six_support_threshold": 6,
+          "strict_rank_tracking_support_growth_falsifier_count": 1,
+          "unbounded_support_lower_bound_count": 0,
+          "universal_support_six_generation_theorem_count": 0
+        },
+        "status": "strict-support-growth-extrapolation-falsified-support-six-uniformity-open",
+        "summary": "Built a commutant-projected orbit diagnostic that works directly in multiplicity space, reproduced the support-five/six boundaries, and falsified strict rank-tracking extrapolation on a rank-seven portfolio."
       },
       {
         "experiment_result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-NATURAL-MATRIX-MULTIPLICITY-DCP-SUBSET-SUM-MARKER-COSET",
@@ -14449,6 +14922,31 @@
         },
         "status": "marker-filter-reduced-to-original-subset-sum-search",
         "summary": "Proved exact standard and carry-sliced marker-coset radius equivalences. Marker normalization is easy; short marker-one extraction remains exactly the binary subset-sum search problem."
+      },
+      {
+        "experiment_result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-NATURAL-SUPPORT-SIX-MASS-AUDIT",
+        "metrics": {
+          "ambient_5000_feasible_natural_mass_probability": 0.0009790778280361614,
+          "ambient_5000_feasible_repeated_branch_count": 62,
+          "audited_fraction_of_repeated_natural_mass": 0.04740706355014838,
+          "audited_rank_branch_count": 14,
+          "audited_rank_natural_mass_probability": 0.04638485967479023,
+          "coherent_natural_mass_transform_count": 0,
+          "convenience_selected_natural_mass_probability": 3.0693008123563677e-05,
+          "exact_joint_source_normalization_theorem_count": 1,
+          "hidden_involution_decoder_count": 0,
+          "highest_mass_untested_branch_probability": 0.0069878472222222225,
+          "inverse_polynomial_gap_on_natural_mass_theorem_count": 0,
+          "new_quantum_algorithm_count": 0,
+          "occupied_even_branch_count": 3881,
+          "repeated_branch_count": 2414,
+          "repeated_natural_mass_probability": 0.9784377306078695,
+          "source_ranked_audited_branch_count": 6,
+          "source_ranked_natural_mass_gain": 0.04635416666666667,
+          "uniform_support_six_generation_theorem_count": 0
+        },
+        "status": "source-ranked-controls-cover-visible-but-not-typical-natural-mass",
+        "summary": "Censused 2414 repeated S_14 branches: they carry 0.978438 source mass, while the 14 audited support-six blocks cover only 4.638e-02."
       },
       {
         "experiment_result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-NORMALIZED-LIKELIHOOD-CHARGE-COMMUTATOR-NO-GO-DCP-SUBSET-SUM-MARKER-COSET",
@@ -14715,6 +15213,17 @@
         "summary": "Proved exact standard and carry-sliced marker-coset radius equivalences. Marker normalization is easy; short marker-one extraction remains exactly the binary subset-sum search problem."
       },
       {
+        "experiment_result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-SIGNED-TENSOR-ACCESS",
+        "metrics": {
+          "coherent_embedding_count": 0,
+          "exact_degree_controls_passed": 5,
+          "formal_proof_count": 0,
+          "source_mass_scaling_record_count": 6
+        },
+        "status": "faithful-signed-tensor-diagram-route-source-negligible",
+        "summary": "The faithful even-partition diagram range k<=m covers exponentially vanishing necessary K-type source mass. A useful signed-tensor approach must handle a nonfaithful quotient or a different embedding."
+      },
+      {
         "experiment_result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-SINGLE-HECKE-ALL-DEGREE-MOMENT-NO-GO-DCP-SUBSET-SUM-MARKER-COSET",
         "metrics": {
           "basis_marker_gcd_one_theorem_count": 2,
@@ -14776,6 +15285,42 @@
         },
         "status": "marker-filter-reduced-to-original-subset-sum-search",
         "summary": "Proved exact standard and carry-sliced marker-coset radius equivalences. Marker normalization is easy; short marker-one extraction remains exactly the binary subset-sum search problem."
+      },
+      {
+        "experiment_result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-SOURCE-WEIGHTED-SUPPORT-PORTFOLIO",
+        "metrics": {
+          "baseline_plus_portfolio_natural_mass_probability": 0.04635416666666667,
+          "coherent_multiplicity_transform_count": 0,
+          "exact_symbolic_uniform_support_theorem_count": 0,
+          "hidden_involution_decoder_count": 0,
+          "inverse_polynomial_gap_scaling_theorem_count": 0,
+          "maximum_scanned_branching_multiplicity": 25,
+          "median_finite_lcu_normalized_separator_gap": 0.0011585533456710262,
+          "minimum_finite_lcu_normalized_separator_gap": 0.0007861535128578231,
+          "new_quantum_algorithm_count": 0,
+          "numerically_closed_natural_mass_probability": 0.03764880952380952,
+          "portfolio_fraction_of_repeated_natural_mass": 0.03847849315910949,
+          "portfolio_natural_mass_probability": 0.03764880952380952,
+          "source_ranked_portfolio_branch_count": 5,
+          "source_ranked_support_four_closure_count": 5,
+          "source_ranked_support_four_counterexample_count": 0,
+          "source_ranked_unresolved_branch_count": 0
+        },
+        "status": "source-ranked-s14-portfolio-closes-by-support-four-asymptotics-open",
+        "summary": "Scanned 5 source-ranked repeated S_14 branches covering 0.037649 mass; 5 have numerical closure and 0 remain unresolved."
+      },
+      {
+        "experiment_result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-SPECTRAL-LABEL-BUDGET",
+        "metrics": {
+          "coherent_transform_count": 0,
+          "exact_rational_scaling_record_count": 54,
+          "formal_proof_count": 0,
+          "maximum_half_degree": 256,
+          "scaling_records_below_one_percent": 38,
+          "tensor_source_scaling_record_count": 54
+        },
+        "status": "single-and-fixed-count-gapped-label-route-obstructed",
+        "summary": "Spectral packing and the exact branching source law exclude a fixed number of bounded-norm inverse-polynomial-gap observables as complete typical copy labels. Adaptive label hierarchies and direct transforms remain open."
       },
       {
         "experiment_result_id": "RESULT-EXP-COSET-HIDDEN-INVOLUTION-SPHERICAL-OUTLIER-DEFLATION-CODE-FAMILY-SEARCH",
@@ -15411,7 +15956,7 @@
           "bounded_tail_natural_access_no_go_theorem_count": 1,
           "canonical_cayley_endpoint_effect_count": 1,
           "canonical_linear_global_metric_assembly_compiler_count": 1,
-          "capability_count": 39,
+          "capability_count": 46,
           "carrier_adaptive_holevo_budget_theorem_count": 1,
           "carrier_asymptotically_full_active_racah_mass_theorem_count": 1,
           "carrier_branch_effective_frame_inflation": 1.6123832802999465,
@@ -15451,21 +15996,33 @@
           "conditional_cayley_qsvt_compiler_count": 1,
           "conditional_relative_transfer_graph_compiler_count": 1,
           "diagonal_jm_label_transform_poly_proof_count": 1,
+          "dimensionless_pgm_log_depth_polynomial_cutoff_theorem_count": 1,
+          "dimensionless_pgm_low_spectral_mass_theorem_count": 1,
           "direct_component_naimark_restricted_polar_equivalence_count": 1,
           "direct_gpe_pair_polar_compiler_count": 1,
           "disjoint_pair_branch_pgm_covariance_aware_compiler_count": 0,
           "disjoint_pair_branch_pgm_naive_local_compiler_no_go_count": 1,
           "disjoint_pair_branch_pgm_shared_label_covariance_theorem_count": 1,
+          "disjoint_pair_covariance_dimensionless_frame_theorem_count": 1,
+          "disjoint_pair_covariance_natural_lcu_mean_bound_theorem_count": 1,
+          "disjoint_pair_covariance_positive_edge_theorem_count": 0,
+          "disjoint_pair_covariance_public_block_encoding_compiler_count": 0,
           "exact_centralizer_wreath_cycle_index_theorem_count": 1,
           "exact_holevo_copy_budget_theorem_count": 1,
+          "exact_signed_sector_full_twirl_validation_count": 1,
           "exact_stable_nine_shape_sector_classification_count": 1,
           "final_root_addressed_weyl_global_whitening_boundary_count": 1,
           "final_root_constant_normalization_aggregate_child_compiler_count": 0,
           "fixed_arity_small_endpoint_algebra_refutation_count": 1,
+          "full_threshold_rank_scaled_metric_block_encoding_compiler_count": 0,
           "gapped_kronecker_multiplicity_transform_poly_proof_count": 0,
           "global_operator_valued_metric_assembly_compiler_count": 0,
+          "global_shared_label_metric_access_no_go_count": 0,
           "growth_record_count": 7,
           "hidden_involution_decoder_count": 0,
+          "high_mass_s14_direct_commutant_nullity": 1,
+          "high_mass_s14_support_four_closure_count": 1,
+          "high_mass_s14_target_natural_mass_probability": 0.008705357142857143,
           "internal_kronecker_transform_poly_proof_count": 0,
           "kcopy_associator_poly_proof_count": 0,
           "known_schur_projector_stack_global_whitening_multiplier_count": 0,
@@ -15473,15 +16030,21 @@
           "label_resolved_scalar_star_cayley_compiler_count": 1,
           "label_resolved_scalar_star_naimark_compiler_count": 1,
           "linear_dense_assembly_alpha_q_lower_bound_theorem_count": 1,
+          "local_threshold_metric_product_normalization_no_go_count": 1,
           "maximum_kronecker_multiplicity": 117,
           "maximum_multiplicity_register_bits": 7,
           "maximum_n": 10,
           "maximum_partition_count": 42,
           "mesoscopic_macroscopic_carrier_tail_vanishing_theorem_count": 0,
+          "multiplicity_fiber_full_twirl_validation_count": 1,
+          "multiplicity_fiber_partial_trace_theorem_count": 1,
+          "multiplicity_three_support_six_full_control_count": 1,
+          "multiplicity_twirl_projection_theorem_count": 1,
           "natural_carrier_contextuality_character_reduction_theorem_count": 1,
           "natural_carrier_contextuality_tail_confidence_lower": 1.879210458398558,
           "natural_q_scale_spectral_window_no_go_theorem_count": 1,
           "nested_psd_schur_short_associativity_count": 1,
+          "nontrivial_beta_support_six_full_control_count": 3,
           "normalization_one_affine_node_frame_block_encoding_count": 1,
           "normalization_one_local_relative_isometry_compiler_count": 0,
           "normalization_one_nested_nodelocal_naimark_contract_count": 1,
@@ -15490,16 +16053,20 @@
           "opaque_gamma_spectrum_only_degree_lower_bound_count": 1,
           "operator_valued_endpoint_schur_short_theorem_count": 1,
           "overlapping_pair_label_contextuality_boundary_count": 1,
+          "pair_carrier_exact_natural_marginal_theorem_count": 1,
           "phase_only_global_pair_polar_gram_no_go_theorem_count": 1,
           "physical_invariant_schur_companion_interface_count": 1,
           "physical_w6_scalar_star_compiler_coverage_count": 8,
+          "polynomial_typical_fiber_compression_theorem_count": 0,
           "positive_component_effect_physical_formula_theorem_count": 1,
           "positive_scalar_address_sqrt_width_boundary_count": 1,
           "proved_polynomial_primitive_count": 16,
+          "rank_seven_support_six_full_control_count": 8,
           "recursive_child_gauge_covariance_count": 1,
           "recursive_polar_normalization_conservation_theorem_count": 1,
           "recursive_polar_trim_compatibility_boundary_count": 1,
           "recursive_shorted_metric_scale_inheritance_theorem_count": 1,
+          "repeated_block_natural_mass_probability": 0.9784377306078695,
           "representation_specific_cayley_oracle_count": 0,
           "response_short_endpoint_complementarity_count": 1,
           "restricted_multiplicity_classical_match_count": 1,
@@ -15525,7 +16092,9 @@
           "stable_three_copy_frame_all_n_conditioning_theorem_count": 2,
           "stable_three_copy_frame_block_encoding_count": 1,
           "stable_three_copy_frame_inverse_square_root_filter_count": 2,
+          "strict_rank_tracking_support_growth_falsifier_count": 1,
           "sublinear_carrier_support_mass_vanishing_theorem_count": 1,
+          "support_six_audited_natural_mass_probability": 0.04638485967479023,
           "typical_irrep_class_compressed_maximum_n": 10,
           "typical_irrep_disjoint_third_generator_repeated_root_target_count": 2,
           "typical_irrep_finite_centered_covariance_rank_two_count": 29,
@@ -15558,11 +16127,13 @@
           "typical_irrep_uniform_commutant_non_scalar_theorem_count": 0,
           "typical_irrep_uniform_commutant_simple_spectrum_theorem_count": 0,
           "typical_irrep_uniform_encoded_tree_transform_count": 0,
+          "typical_support_six_gapped_commutant_theorem_count": 0,
           "uniform_nodelocal_matrix_naimark_dilation_compiler_count": 0,
+          "uniform_support_six_generation_theorem_count": 0,
           "unresolved_required_capability_count": 3
         },
         "status": "cayley-endpoint-gauge-normal-form-proved-normalized-racah-oracle-open",
-        "summary": "Classified 39 representation primitives and exact finite Kronecker growth through n=10. Separate-to-joint Schur dilation now supplies an encoded multiplicity carrier, the physical interface supplies alpha-one addressed raw cross maps, and GPE supplies direct pair polars. The actual affine-node average is now block-encoded at normalization one and its common child width cancels algebraically, but separate polynomial-resolution QSVT has vanishing full-sibling mass and vanishing relative common-fiber dimension. The surviving joint endpoint is exactly a scale-free Hermitian Cayley effect; its child gauges telescope, so the preferred target is a normalization-one affine Schur/Racah oracle for that effect plus a root coordinate anchor. Parent-native density and the complete global polar remain open."
+        "summary": "Classified 46 representation primitives and exact finite Kronecker growth through n=10. Separate-to-joint Schur dilation now supplies an encoded multiplicity carrier, the physical interface supplies alpha-one addressed raw cross maps, and GPE supplies direct pair polars. The actual affine-node average is now block-encoded at normalization one and its common child width cancels algebraically, but separate polynomial-resolution QSVT has vanishing full-sibling mass and vanishing relative common-fiber dimension. The surviving joint endpoint is exactly a scale-free Hermitian Cayley effect; its child gauges telescope, so the preferred target is a normalization-one affine Schur/Racah oracle for that effect plus a root coordinate anchor. Parent-native density and the complete global polar remain open."
       },
       {
         "experiment_result_id": "RESULT-EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS-COSET",
@@ -17217,6 +17788,12 @@
         "summary": "Upgraded the low-bit fiber entanglement theorem from fixed polynomial layout dictionaries to every label-adaptive balanced coordinate ordering at once. Polynomial-bond coordinate MPS/QTT preparation is closed on all inverse-polynomial source mass."
       },
       {
+        "experiment_result_id": "RESULT-EXP-DHS-DCP-CARRY-QUADRATIC-EXTENSION-BOUNDARY-LATEST",
+        "metrics": {},
+        "status": "completed",
+        "summary": ""
+      },
+      {
         "experiment_result_id": "RESULT-EXP-DHS-DCP-CNOT-LINEAR-SPLIT-ENTANGLEMENT-NO-GO-LATEST",
         "metrics": {
           "arbitrary_offset_moment_domination_theorem_count": 1,
@@ -17234,6 +17811,12 @@
         },
         "status": "sub-q-four-thirds-cnot-linear-tensor-route-closed-dense-and-nonlinear-routes-open",
         "summary": "Extended the low-bit fiber entanglement no-go from coordinate permutations to every adaptive sub-q^(4/3) CNOT transform in the stated logarithmic regime, with approximate Schmidt rank 2^(q-o(q)) even allowing matrix cancellation."
+      },
+      {
+        "experiment_result_id": "RESULT-EXP-DHS-DCP-LABEL-INCIDENCE-RANK-WIDTH-NO-GO-LATEST",
+        "metrics": {},
+        "status": "completed",
+        "summary": ""
       },
       {
         "experiment_result_id": "RESULT-EXP-DHS-DCP-LINEAR-REPARAMETERIZATION-AFFINE-FLAT-NO-GO-LATEST",
@@ -17256,7 +17839,7 @@
         "summary": "Proved that density-one low-bit fibers contain no affine flat of dimension 8log2(q) or larger with failure 2^-Omega(q log q), uniformly over every adaptive GL(m,2) reparameterization. Any support-contained cancellation-free affine cover is exponential."
       }
     ],
-    "updated_at": "2026-09-02T20:57:27.248406+00:00"
+    "updated_at": "2026-09-08T11:51:08.550602+00:00"
   },
   {
     "assumptions": [
@@ -18684,7 +19267,7 @@
       }
     ],
     "candidate_id": "DHS-GOWERS-SIEVE",
-    "created_at": "2026-09-02T20:57:27.248406+00:00",
+    "created_at": "2026-09-08T11:51:08.550602+00:00",
     "id": "CONJ-DHS-GOWERS-SIEVE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -21397,7 +21980,7 @@
         "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
       }
     ],
-    "updated_at": "2026-09-02T20:57:27.248406+00:00"
+    "updated_at": "2026-09-08T11:51:08.550602+00:00"
   },
   {
     "assumptions": [
@@ -21455,7 +22038,7 @@
       }
     ],
     "candidate_id": "HYP-LIT-COSET-OBSERVABLES",
-    "created_at": "2026-09-02T20:57:27.248406+00:00",
+    "created_at": "2026-09-08T11:51:08.550602+00:00",
     "id": "CONJ-HYP-LIT-COSET-OBSERVABLES",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -21495,7 +22078,7 @@
         "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
       }
     ],
-    "updated_at": "2026-09-02T20:57:27.248406+00:00"
+    "updated_at": "2026-09-08T11:51:08.550602+00:00"
   },
   {
     "assumptions": [
@@ -21585,7 +22168,7 @@
       }
     ],
     "candidate_id": "HYP-LIT-HIDDEN-SHIFT-SIEVE",
-    "created_at": "2026-09-02T20:57:27.248406+00:00",
+    "created_at": "2026-09-08T11:51:08.550602+00:00",
     "id": "CONJ-HYP-LIT-HIDDEN-SHIFT-SIEVE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -21667,7 +22250,7 @@
         "summary": "Audited 40 explicit hidden-shift instances across 10 phase families. 0 instances show Fourier/derivative structure; 16 are critical/high dequantization risk; 40 survive at least one restricted query model. Best DHSP sieve strategy aggressive_doubling reaches v2=7 from 2048 phase labels; explicit phase-state trace reaches v2=7 with 44 survivor states."
       }
     ],
-    "updated_at": "2026-09-02T20:57:27.248406+00:00"
+    "updated_at": "2026-09-08T11:51:08.550602+00:00"
   },
   {
     "assumptions": [
@@ -21767,7 +22350,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
-    "created_at": "2026-09-02T20:57:27.248406+00:00",
+    "created_at": "2026-09-08T11:51:08.550602+00:00",
     "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CANONICALIZATION-RESISTANT-CODES",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -21851,7 +22434,7 @@
         "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
       }
     ],
-    "updated_at": "2026-09-02T20:57:27.248406+00:00"
+    "updated_at": "2026-09-08T11:51:08.550602+00:00"
   },
   {
     "assumptions": [
@@ -21927,7 +22510,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
-    "created_at": "2026-09-02T20:57:27.248406+00:00",
+    "created_at": "2026-09-08T11:51:08.550602+00:00",
     "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-PROMISE-ESCAPE",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -21982,7 +22565,7 @@
         "summary": "Audited 10 graphlet tensor observables across 5 graph pairs. 3 signal(s) collapse to small-pattern classical counts; 3 boundary pair(s) remain without graphlet-tensor signal."
       }
     ],
-    "updated_at": "2026-09-02T20:57:27.248406+00:00"
+    "updated_at": "2026-09-08T11:51:08.550602+00:00"
   },
   {
     "assumptions": [
@@ -22058,7 +22641,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
-    "created_at": "2026-09-02T20:57:27.248406+00:00",
+    "created_at": "2026-09-08T11:51:08.550602+00:00",
     "id": "CONJ-MUT-CAND-CODE-COSET-COLLECTIVE-CFI-WL-HARD-COSET",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -22112,7 +22695,7 @@
         "summary": "Audited 4 hidden-permutation graph pairs. 2 pair survives current classical and low-register tests; 1 control pair is classically distinguished; 2 CFI-style parity benchmark(s) included."
       }
     ],
-    "updated_at": "2026-09-02T20:57:27.248406+00:00"
+    "updated_at": "2026-09-08T11:51:08.550602+00:00"
   },
   {
     "assumptions": [
@@ -22176,7 +22759,7 @@
       }
     ],
     "candidate_id": "MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
-    "created_at": "2026-09-02T20:57:27.248406+00:00",
+    "created_at": "2026-09-08T11:51:08.550602+00:00",
     "id": "CONJ-MUT-CAND-HYP-LIT-COSET-OBSERVABLES-CFI-WL-HARD-COSET",
     "next_actions": [
       "Resolve every blocking finding before promotion.",
@@ -22210,6 +22793,6 @@
         "summary": "Audited 3 code-equivalence pairs. 1 equivalent control pair(s) verified; 2 non-equivalent control pair(s) classically distinguished."
       }
     ],
-    "updated_at": "2026-09-02T20:57:27.248406+00:00"
+    "updated_at": "2026-09-08T11:51:08.550602+00:00"
   }
 ]

@@ -39,6 +39,7 @@ class RecouplingMechanismSynthesisTests(unittest.TestCase):
             "MECH-PROJECTOR-COUNT-DECODER",
             "MECH-PAIR-TREE-RANK-PGM",
             "MECH-RESTRICTED-COMMUTING-CLASS",
+            "MECH-JM-LABEL-MULTIPLICITY-RECOUPLING",
         ):
             self.assertEqual(evaluations[mechanism_id].decision, "rejected")
             self.assertTrue(evaluations[mechanism_id].known_no_go_violations)
@@ -48,6 +49,12 @@ class RecouplingMechanismSynthesisTests(unittest.TestCase):
         full = evaluations["MECH-FULL-RECOUPLING-TRANSITION-DECODER"]
         tensor = evaluations["MECH-TENSOR-ASSOCIATOR-DECODER"]
         commutant = evaluations["MECH-JM-LABEL-MULTIPLICITY-RECOUPLING"]
+        encoded = evaluations["MECH-ENCODED-REFERENCE-SYMMETRY-BREAKING"]
+        self.assertEqual(commutant.decision, "rejected")
+        self.assertIn("Spectral packing", " ".join(commutant.known_no_go_violations))
+        self.assertEqual(encoded.decision, "proposal-only-missing-proof-capabilities")
+        self.assertFalse(encoded.proof_gate_eligible)
+        self.assertIn("CAP-SYMMETRY-BREAKING-LOGICAL-EFFECT", encoded.missing_capabilities)
         self.assertEqual(full.decision, "proposal-only-missing-proof-capabilities")
         self.assertEqual(tensor.decision, "proposal-only-missing-proof-capabilities")
         self.assertFalse(full.proof_gate_eligible)
@@ -61,6 +68,9 @@ class RecouplingMechanismSynthesisTests(unittest.TestCase):
     def test_mutation_proposals_are_explicitly_not_gate_eligible(self):
         proposals = build_recoupling_mutation_proposals()
         self.assertEqual(len(proposals), 3)
+        self.assertFalse(any("JM-LABEL-MULTIPLICITY-RECOUPLING" in item["id"] for item in proposals))
+        encoded = next(item for item in proposals if "ENCODED-REFERENCE" in item["id"])
+        self.assertIn("unknown centralizer", " ".join(encoded["proof_obligations_to_resolve"]))
         for proposal in proposals:
             self.assertFalse(proposal["proof_gate_eligible"])
             self.assertTrue(proposal["typed_stages"])
@@ -68,7 +78,7 @@ class RecouplingMechanismSynthesisTests(unittest.TestCase):
 
     def test_report_promotes_no_undefined_architecture(self):
         report = build_recoupling_mechanism_synthesis_report()
-        self.assertEqual(report.headline_metrics["known_no_go_rejected_count"], 4)
+        self.assertEqual(report.headline_metrics["known_no_go_rejected_count"], 5)
         self.assertEqual(report.headline_metrics["proposal_only_count"], 3)
         self.assertEqual(report.headline_metrics["proof_gate_eligible_count"], 0)
         self.assertEqual(report.headline_metrics["automatically_promoted_candidate_count"], 0)

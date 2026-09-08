@@ -108,6 +108,19 @@ conditional physical multiplicity state is maximally mixed. The uniform
 copy-label average-decoding argument above is NOT transferred to this model.
 For growing k, use the explicit bound instead of a fixed-k asymptotic statement.
 
+There is also a separate argument for the exact maximum-dimension pair used
+in the old finite scans. For lambda maximizing d_lambda, the *dimension*
+target law is q_dim(nu)=d_nu g(lambda,lambda,nu)/d_lambda^2. It obeys
+
+    q_dim{g<=L} <= L I_n/d_lambda^2 <= L I_n p(n)/n!.
+
+The last inequality follows from sum_lambda d_lambda^2=n! and the p(n)
+possible source partitions. For polynomial L the bound vanishes. In
+particular, at least one occupied target has superpolynomial multiplicity,
+so a single normalized complete separator cannot retain inverse-polynomial
+minimum gaps on *every* target of these maximum-dimension sources. This
+argument does not pretend q_dim is the conditional physical coset law.
+
 ### Escape Audit
 
 - **Use multiple observables.** A fixed number does not fix the capacity

@@ -62,6 +62,18 @@ class HypothesisFactoryResult:
 
 MECHANISM_RULES: list[tuple[set[str], dict[str, str]]] = [
     (
+        {"wreath-qft-toolbox", "mackey-qft"},
+        {
+            "mechanism": "Group QFT circuit constructions from Mackey theory and Clifford theory.",
+            "problem_family": "GL2 over finite fields and wreath products F wr S_n with suitable base-group QFT access.",
+            "reduction": "Reduce group Fourier transforms to representation registers and Fourier primitives for constituent groups.",
+            "no_go_barrier": "Efficient group QFT does not provide a subgroup copy decoder, useful HSP measurement, or unknown-centralizer alignment.",
+            "proof_technique": "Mackey-theoretic and Clifford-theoretic representation decompositions.",
+            "open_question": "Project question: which logical effects become accessible after normalized encoded subgroup restriction?",
+            "reusable_abstraction": "QFT primitive contract: basis convention, register width, error, and base-group access costs.",
+        },
+    ),
+    (
         {"diagram-algebra-qft", "large-loop-regime"},
         {
             "mechanism": "Approximate recursive Fourier transforms for partition, Brauer, and walled Brauer algebras.",

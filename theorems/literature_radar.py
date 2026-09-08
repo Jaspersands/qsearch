@@ -29,6 +29,14 @@ class PaperSeed:
 
 DEFAULT_LITERATURE = [
     PaperSeed(
+        id="bruinsma-posta-stokvis-grinko-ozols-qft-toolbox-2026",
+        title="Quantum Fourier transform toolbox",
+        url="https://arxiv.org/abs/2608.28573",
+        year=2026,
+        tags=["wreath-qft-toolbox", "clifford-theory", "mackey-qft"],
+        why_it_matters="Supplies group QFT primitives for wreath products and GL2, not a subgroup copy decoder or HSP measurement.",
+    ),
+    PaperSeed(
         id="foxman-nehoran-ding-semisimple-qft-2026",
         title="Efficient Quantum Fourier Transforms For Semisimple Algebras",
         url="https://arxiv.org/abs/2605.05337",

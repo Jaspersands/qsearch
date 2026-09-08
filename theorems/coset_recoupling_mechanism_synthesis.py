@@ -91,6 +91,10 @@ PRIMITIVES = {
     for item in (
         PrimitiveSpec("PREPARE_COSET_K", "start", "coset_state_k", "CAP-COSET-PREPARATION", True, "Prepare k independent coset states."),
         PrimitiveSpec("SN_QFT_K", "coset_state_k", "fourier_registers_k", "CAP-SN-QFT", True, "Apply the solved S_n QFT registerwise."),
+        PrimitiveSpec("ENCODED_REFERENCE_RESTRICTION", "fourier_registers_k", "encoded_reference_registers", "CAP-ENCODED-K-CARRIER-RESTRICTION", False,
+                      "Conditional two-QFT carrier extraction for a known reference subgroup; primitive/basis contract remains review-pending, not unknown alignment."),
+        PrimitiveSpec("SYMMETRY_BREAKING_LOGICAL_FRAME", "encoded_reference_registers", "measurement_outcome", "CAP-SYMMETRY-BREAKING-LOGICAL-EFFECT", False,
+                      "Construct a source-aware collective effect, retaining carrier or reference correlations needed to break fixed-K invariance."),
         PrimitiveSpec("WEAK_LABEL_MEASUREMENT", "fourier_registers_k", "irrep_labels", "CAP-WEAK-IRREP-PROJECTION", True, "Measure only irrep labels."),
         PrimitiveSpec("PROJECTOR_MULTIPLICITY_STATS", "fourier_registers_k", "multiplicity_statistics", "CAP-KRONECKER-SHARP-BQP", True, "Estimate invariant-space or multiplicity statistics."),
         PrimitiveSpec(
@@ -107,7 +111,7 @@ PRIMITIVES = {
             "pair_coupled_registers",
             "CAP-GAPPED-KRONECKER-MULTIPLICITY-TRANSFORM",
             False,
-            "Resolve a uniformly gapped bounded-support commutant Hamiltonian in each residual multiplicity register.",
+            "Resolve every copy label with one bounded-norm, uniformly inverse-polynomial-gap commutant Hamiltonian; this fixed complete-label primitive is obstructed.",
         ),
         PrimitiveSpec("INTERNAL_KRONECKER_TRANSFORM", "fourier_registers_k", "pair_coupled_registers", "CAP-INTERNAL-SN-KRONECKER-TRANSFORM", False, "Resolve pair irreps and multiplicity bases coherently."),
         PrimitiveSpec("RESTRICTED_MULTIPLICITY_FREE_TRANSFORM", "fourier_registers_k", "pair_coupled_registers", "CAP-RESTRICTED-MULTIPLICITY-ESTIMATION", True, "Use an exceptional multiplicity-free or commuting promise."),
@@ -196,6 +200,22 @@ TEMPLATES = (
         104,
     ),
     MechanismTemplate(
+        "MECH-ENCODED-REFERENCE-SYMMETRY-BREAKING",
+        "Encoded subgroup access with a symmetry-breaking collective effect",
+        ("PREPARE_COSET_K", "SN_QFT_K", "ENCODED_REFERENCE_RESTRICTION",
+         "SYMMETRY_BREAKING_LOGICAL_FRAME", "OUTCOME_DECODER", "CLASSICAL_VERIFY"),
+        "full reduction-backed symmetric involution family",
+        "k=poly(n)", (),
+        (
+            "Verify the normalized two-QFT and physical-column contract, including primitive precision and workspace.",
+            "Specify how the final effect breaks fixed-reference invariance; never grant the unknown centralizer or aligned h-even source law.",
+            "Construct the actual logical effect with source-aware normalization and error, without complete fixed-count spectral labels.",
+            "Derive its outcome law and polynomial hidden-involution decoder, then attack it with legal classical invariants and tensor contractions.",
+            "Binary detection is a separate task and requires its own reduction; it must not be passed off as identification.",
+        ),
+        110,
+    ),
+    MechanismTemplate(
         "MECH-FULL-RECOUPLING-TRANSITION-DECODER",
         "Full coherent recoupling, transition filter, and decoder",
         ("PREPARE_COSET_K", "SN_QFT_K", "INTERNAL_KRONECKER_TRANSFORM", "RACAH_ASSOCIATOR_NETWORK", "TRANSITION_FRAME_FILTER", "OUTCOME_DECODER", "CLASSICAL_VERIFY"),
@@ -243,7 +263,10 @@ def evaluate_template(template: MechanismTemplate) -> MechanismEvaluation:
     if current_type != "verified_solution":
         issues.append(f"mechanism terminates at {current_type}, not verified_solution")
     full_coverage = "full" in template.source_family_scope and "restricted" not in template.source_family_scope
-    if issues or template.known_no_go_violations:
+    violations = list(template.known_no_go_violations)
+    if "KRONECKER_MULTIPLICITY_BASIS" in template.stages:
+        violations.append("Spectral packing obstructs this fixed-count, bounded-norm, inverse-polynomial-gap complete-label primitive on the full source family. Direct transforms and growing-depth hierarchies are different primitives.")
+    if issues or violations:
         decision = "rejected"
         rationale = "Known no-go or typed-interface failure invalidates the architecture."
     elif missing:
@@ -256,7 +279,7 @@ def evaluate_template(template: MechanismTemplate) -> MechanismEvaluation:
         decision = "proof-gate-eligible"
         rationale = "All typed stages and capability proofs are present; submit the full candidate schema."
     proof_gate_eligible = decision == "proof-gate-eligible"
-    priority = template.upside_score - 20 * len(template.known_no_go_violations) - 5 * len(issues)
+    priority = template.upside_score - 20 * len(violations) - 5 * len(issues)
     return MechanismEvaluation(
         id=template.id,
         title=template.title,
@@ -264,7 +287,7 @@ def evaluate_template(template: MechanismTemplate) -> MechanismEvaluation:
         typed_interfaces_valid=not issues,
         interface_issues=issues,
         missing_capabilities=sorted(set(missing)),
-        known_no_go_violations=list(template.known_no_go_violations),
+        known_no_go_violations=violations,
         additional_proof_obligations=list(template.additional_proof_obligations),
         holevo_copy_budget_obligation_attached=True,
         minimum_copy_budget_rule=(
@@ -393,4 +416,23 @@ def write_recoupling_mechanism_synthesis_report(
     payload = asdict(build_recoupling_mechanism_synthesis_report())
     output_path.parent.mkdir(parents=True, exist_ok=True)
     output_path.write_text(json.dumps(payload, indent=2, sort_keys=True))
+    if write_registry:
+        upsert_experiment_result(ExperimentResultRecord(
+            id=registry_result_id or f"RESULT-{registry_experiment_id}",
+            experiment_id=registry_experiment_id, candidate_id=registry_candidate_id,
+            created_at=payload["created_at"], status=payload["status"], summary=payload["summary"],
+            metrics=payload["headline_metrics"], falsifiers_triggered=payload["falsifiers_triggered"],
+            artifacts={"coset_recoupling_mechanism_synthesis": str(output_path)},
+        ))
+        for proposal in payload["mutation_proposals"]:
+            upsert_mutation_proposal(proposal)
+        for evaluation in payload["evaluations"]:
+            if evaluation["decision"].startswith("rejected"):
+                upsert_negative_result(NegativeResultRecord(
+                    id=f"NEG-{evaluation['id']}", source=registry_experiment_id,
+                    claim=evaluation["title"],
+                    reason_invalid=" | ".join(evaluation["known_no_go_violations"] + evaluation["interface_issues"]),
+                    lesson="Reject this specified architecture, not different access models or independently justified routes.",
+                    applies_to=[registry_candidate_id, evaluation["id"]], evidence={"artifact": str(output_path)},
+                ))
     return payload

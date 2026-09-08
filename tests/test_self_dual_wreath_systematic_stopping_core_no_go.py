@@ -89,7 +89,7 @@ def test_exact_block_union_branch_has_fixed_surface_loss(control_id):
     ("information_width", "check_width"),
     ((2, 1), (2, 2), (2, 3), (3, 1), (3, 2), (4, 1)),
 )
-def test_small_systematic_coloring_spaces_exhaust_the_three_branches(
+def test_small_systematic_coloring_spaces_expose_missing_cubic_loss(
     information_width,
     check_width,
 ):
@@ -105,25 +105,44 @@ def test_small_systematic_coloring_spaces_exhaust_the_three_branches(
     assert audit.empty_face_block_rigidity_failure_count == 0
     assert audit.deviation_singleton_failure_count == 0
     assert audit.minimum_distance_failure_count == 0
-    assert audit.branch_exhaustion_failure_count == 0
-    assert audit.exhaustive_classification_verified
+    expected_gaps = 4 if (information_width, check_width) == (2, 3) else 0
+    assert audit.branch_exhaustion_failure_count == expected_gaps
+    assert len(audit.unresolved_colorings) == expected_gaps
+    assert audit.exhaustive_classification_verified == (expected_gaps == 0)
+    if expected_gaps:
+        from self_dual_wreath_systematic_stopping_core_no_go import _origin_face_certificates
+        for table in audit.unresolved_colorings:
+            validate_systematic_coloring(information_width, check_width, table)
+            face, = _origin_face_certificates(information_width, table)
+            assert face.cubic_overlap_frontier
+            assert face.occurrence_profile == (2, 2, 3)
+            assert face.elementary_solution_exponent_loss_lower_bound == 0
 
 
-def test_all_depth_report_closes_only_the_systematic_single_fiber_scope():
+def test_report_withdraws_local_universal_claim_without_refuting_global_route():
     report = _report()
     theorem = report.all_depth_certificate
     assert theorem.arbitrary_information_width
     assert theorem.arbitrary_check_width
-    assert theorem.universal_systematic_core_no_go_verified
+    assert not theorem.universal_systematic_core_no_go_verified
     assert report.headline_metrics[
         "all_depth_systematic_stopping_core_no_go_theorem_count"
-    ] == 1
+    ] == 0
     assert report.headline_metrics[
         "exhaustively_checked_normalized_coloring_count"
     ] == 49_864
-    assert report.headline_metrics["exhaustive_coloring_audit_failure_count"] == 0
+    assert report.headline_metrics["exhaustive_coloring_audit_failure_count"] == 1
+    assert report.headline_metrics["unresolved_local_coloring_count"] == 4
+    assert report.headline_metrics["independent_global_controls_verified"] == 4
     assert report.headline_metrics["control_failure_count"] == 0
-    assert report.headline_metrics["uniform_true_pressure_margin_lower_bound"] == 0.5
+    assert report.headline_metrics["uniform_true_pressure_margin_lower_bound"] == 0
+    assert not report.proof_obligations[0]["resolved"]
+    assert "unproved cubic-overlap" in report.summary
+    for control in report.independent_global_controls:
+        assert control["exact_control_verified"]
+        assert control["all_codeword_identities_forced"]
+        assert control["surface_coefficient_control"]["exact_coefficient_absorption_verified"]
+        assert control["theoretical_true_pressure_margin_lower_bound"] > 1
     for control in report.representative_controls:
         expected = 0.5 * math.log2(
             2**control.information_width
@@ -131,7 +150,7 @@ def test_all_depth_report_closes_only_the_systematic_single_fiber_scope():
         )
         assert control.generic_integer_certificate_margin == pytest.approx(expected)
         assert control.true_pressure_margin_lower_bound >= expected + 0.5 - 1e-12
-    assert report.claim_gate[
+    assert not report.claim_gate[
         "all_systematic_stopping_core_power_boundaries_controlled"
     ]
     assert not report.claim_gate[
@@ -141,3 +160,16 @@ def test_all_depth_report_closes_only_the_systematic_single_fiber_scope():
     assert not report.claim_gate["all_multiple_base_fiber_patterns_controlled"]
     assert not report.claim_gate["natural_component_M4_positive"]
     assert not report.claim_gate["speedup_claim_allowed"]
+    assert not report.claim_gate["local_loss_proof_complete"]
+    assert not report.claim_gate["local_gap_refutes_global_BABA_bound"]
+
+
+def test_writer_records_the_local_proof_gap_from_a_clean_registry(tmp_path, monkeypatch):
+    from self_dual_wreath_systematic_stopping_core_no_go import write_systematic_stopping_core_no_go_report
+    from research_registry import load_negative_results, validate_registry
+    monkeypatch.chdir(tmp_path)
+    payload = write_systematic_stopping_core_no_go_report()
+    assert not payload["claim_gate"]["local_loss_proof_complete"]
+    negative = next(row for row in load_negative_results() if row["id"] == "SYSTEMATIC-LOCAL-CUBIC-LOSS-PROOF-GAP")
+    assert "separate global" in negative["lesson"]
+    assert validate_registry()["valid"]

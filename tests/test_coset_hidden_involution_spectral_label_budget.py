@@ -8,6 +8,7 @@ from coset_hidden_involution_spectral_label_budget import (
     build_spectral_label_budget, necessary_label_rounds, source_label_mass_bound,
     spectral_label_capacity, write_spectral_label_budget_report,
     tensor_source_label_mass_bound,
+    maximum_dimension_tensor_label_mass_bound,
 )
 
 
@@ -151,3 +152,17 @@ def test_tensor_source_scope_is_explicit_and_scaling_obstructs_complete_labels()
     report = build_spectral_label_budget(half_degrees=(16,))
     assert all(not row["conditional_eigenlabel_distribution_assumed_uniform"]
                for row in report["tensor_scaling_records"])
+
+
+def test_maximum_dimension_source_bound_without_postselection_assumption():
+    from symmetric_character import kronecker_coefficient
+    from representation_obstruction import integer_partitions, hook_length_dimension
+    for n in range(3, 9):
+        partitions = integer_partitions(n)
+        source = max(partitions, key=hook_length_dimension)
+        dimension = hook_length_dimension(source)
+        mass = sum(Fraction(hook_length_dimension(target) * g, dimension**2)
+                   for target in partitions
+                   if (g := kronecker_coefficient(source, source, target)) <= 2)
+        assert mass <= maximum_dimension_tensor_label_mass_bound(n, 2)
+    assert maximum_dimension_tensor_label_mass_bound(128, 128**8) < Fraction(1, 10**40)

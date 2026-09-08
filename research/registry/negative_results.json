@@ -54881,6 +54881,35 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "encoded subgroup restriction"
+    ],
+    "claim": "The normalized two-QFT restriction map supplies an explicit multiplicity index and the target hidden-involution measurement.",
+    "evidence": {
+      "artifact": "research/representation/coset_hidden_involution_encoded_restriction.json"
+    },
+    "id": "ENCODED-CARRIER-EXTRACTION-NOT-EXPLICIT-COPY-INDEX-OR-DECODER",
+    "lesson": "Use encoded logical access where possible, but charge target-effect construction and unknown-centralizer dependence separately.",
+    "reason_invalid": "It produces an implicit copy code. The logical target effect, physical access transfer and decoder remain unspecified.",
+    "source": "EXP-COSET-HIDDEN-INVOLUTION-ENCODED-RESTRICTION"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "faithful signed-permutation tensor embeddings"
+    ],
+    "claim": "Faithful signed-tensor diagram bases directly cover typical hidden-involution branching labels.",
+    "evidence": {
+      "artifact": "research/representation/coset_hidden_involution_signed_tensor_access.json",
+      "derivation": "research/SIGNED_TENSOR_ACCESS.md"
+    },
+    "id": "FAITHFUL-SIGNED-TENSOR-DIAGRAM-RANGE-MISSES-TYPICAL-SOURCE",
+    "lesson": "Do not substitute a signed tensor centralizer for Specht restriction. Supply a normalized intertwiner and handle the nonfaithful quotient, or use a different representation.",
+    "reason_invalid": "The exact shortest degree is |beta|+2(|alpha|-alpha_1); degrees at most m cover exponentially vanishing necessary K-type mass under the h-even marginal.",
+    "source": "EXP-COSET-HIDDEN-INVOLUTION-SIGNED-TENSOR-ACCESS"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "PGM condition number",
       "carrier hierarchy"
     ],
@@ -54988,14 +55017,43 @@
       "bounded-support hyperoctahedral commutants",
       "finite multiplicity-space scans"
     ],
-    "claim": "The selected rank-seven support-six closure controls are evidence for behavior on a representative natural source family.",
+    "claim": "The convenience-selected rank-seven support-six closure controls are evidence for behavior on a representative natural source family.",
     "evidence": {
       "artifact": "research/representation/coset_hidden_involution_natural_support_six_mass_audit.json"
     },
     "id": "FINITE-S14-SUPPORT-SIX-CLOSURE-NEGLIGIBLE-NATURAL-MASS",
     "lesson": "Prioritize source-weighted typical blocks or prove a symbolic all-block transfer; stop accumulating convenient low-dimensional examples.",
-    "reason_invalid": "Their exact joint source mass is only 0.00873605015098.",
+    "reason_invalid": "Before source-ranked scans, their exact joint source mass was only 3.06930081236e-05.",
     "source": "EXP-COSET-HIDDEN-INVOLUTION-NATURAL-SUPPORT-SIX-MASS-AUDIT"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "bounded-support hyperoctahedral commutants",
+      "source-ranked finite scans"
+    ],
+    "claim": "Low-support closure on several source-ranked S_14 branches proves a typical-source all-rank commutant theorem.",
+    "evidence": {
+      "artifact": "research/representation/coset_hidden_involution_natural_support_six_mass_audit.json"
+    },
+    "id": "FINITE-S14-VISIBLE-MASS-CLOSURE-NOT-TYPICAL-ASYMPTOTIC-MASS",
+    "lesson": "Continue source-ranked falsification while deriving a uniform symbolic invariant; finite visible mass is target-selection evidence, not asymptotics.",
+    "reason_invalid": "All evidence remains at rank seven and covers only 0.0463848596748 exact source mass.",
+    "source": "EXP-COSET-HIDDEN-INVOLUTION-NATURAL-SUPPORT-SIX-MASS-AUDIT"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "fixed-reference invariant identification"
+    ],
+    "claim": "Measurements invariant under one fixed reference K can identify a uniformly random fixed-point-free hidden involution with constant success.",
+    "evidence": {
+      "artifact": "research/representation/coset_hidden_involution_encoded_restriction.json"
+    },
+    "id": "FIXED-REFERENCE-INVARIANT-IDENTIFICATION-ORBIT-BOUND",
+    "lesson": "This does not obstruct binary class detection, carrier-sensitive or other symmetry-breaking effects, or protocols with different references. Aligned h-even source mass is not a fixed-reference input law.",
+    "reason_invalid": "All likelihoods coincide within each reference-matching orbit. There are p(m) orbits among (2m-1)!! hypotheses, so success is at most p(m)/(2m-1)!! even with arbitrarily many jointly invariant copies.",
+    "source": "EXP-COSET-HIDDEN-INVOLUTION-ENCODED-RESTRICTION"
   },
   {
     "applies_to": [
@@ -62233,17 +62291,27 @@
       "common_child_scale_cancels_from_relative_graph_proved": true,
       "commuting_occupied_supports_force_clique_channels": false,
       "companion_only_stack_supplies_global_cross_branch_whitening_multiplier": false,
+      "complete_fixed_count_gapped_label_route_obstructed": true,
       "conditional_cayley_qsvt_compiler_proved": true,
       "conditional_graph_cs_compiler_given_relative_transfer_proved": true,
       "covariant_noncentral_carrier_decoder_compiled": false,
       "diagonal_jm_label_transform_polynomial_proved": true,
       "diagonal_jm_labels_resolve_multiplicity_basis": false,
+      "dimensionless_pgm_log_depth_polynomial_cutoff_proved": true,
+      "dimensionless_pgm_minimum_positive_edge_requirement_removed": true,
       "direct_component_naimark_is_restricted_polar_equivalent": true,
       "direct_gpe_pair_polar_compiled": true,
       "direct_schur_racah_component_naimark_compiled": false,
       "disjoint_pair_branch_pgm_covariance_aware_compiler_compiled": false,
       "disjoint_pair_branch_pgm_naive_local_compiler_falsified": true,
       "disjoint_pair_branch_pgm_shared_label_covariance_proved": true,
+      "disjoint_pair_covariance_dimensionless_frame_proved": true,
+      "disjoint_pair_covariance_natural_lcu_mean_bound_proved": true,
+      "disjoint_pair_covariance_positive_spectral_edge_proved": false,
+      "disjoint_pair_covariance_public_block_encoding_compiled": false,
+      "encoded_copy_logical_orbit_average_reduction_derived": true,
+      "encoded_restriction_supplies_target_measurement": false,
+      "encoded_subgroup_restriction_reduction_derived": true,
       "exact_bounded_stable_sector_family_proved": true,
       "exact_centralizer_wreath_cycle_index_proved": true,
       "exact_holevo_copy_budget_proved": true,
@@ -62251,13 +62319,19 @@
       "final_root_binary_merge_width_independent_given_aggregate_access": true,
       "final_root_constant_normalization_aggregate_child_access_compiled": false,
       "final_root_pair_local_functional_calculus_suffices": false,
+      "finite_support_six_controls_cover_nonnegligible_natural_mass": true,
       "fixed_arity_conditioning_forces_small_endpoint_algebra": false,
+      "fixed_reference_invariant_identification_obstructed": true,
       "flat_affine_gpe_child_embedding_normalization_one_proved": true,
       "full_endpoint_algebra_dimension_is_circuit_lower_bound": false,
+      "full_threshold_rank_scaled_metric_block_encoding_compiled": false,
       "gapped_kronecker_multiplicity_transform_polynomial_proved": false,
       "global_address_transition_kernel_polynomial_normalization_proved": false,
       "global_operator_valued_metric_assembly_compiled": false,
+      "global_shared_label_metric_access_ruled_out": false,
       "hidden_involution_decoder_proved": false,
+      "high_mass_s14_closure_is_typical_mass_theorem": false,
+      "high_mass_s14_support_four_closure_verified": true,
       "holevo_copy_budget_constructs_measurement": false,
       "identity_and_sublinear_carrier_support_tail_eliminated": true,
       "independent_retained_child_trims_automatically_compose": false,
@@ -62268,9 +62342,13 @@
       "known_schur_projector_stack_interfaces_typed": true,
       "label_resolved_scalar_affine_star_cayley_compiled": true,
       "linear_equal_coefficient_dense_assembly_alpha_lower_bound_q": true,
+      "local_threshold_metric_product_access_falsified": true,
       "logarithmic_fixed_point_carrier_tail_eliminated": true,
       "mesoscopic_macroscopic_carrier_commuting_tail_eliminated": true,
       "multiplicity_counting_implies_coherent_transform": false,
+      "multiplicity_fiber_partial_trace_verified": true,
+      "multiplicity_three_support_six_control_verified": true,
+      "multiplicity_twirl_projection_diagnostic_proved": true,
       "natural_all_depth_scalar_star_channel_labeler_compiled": false,
       "natural_annealed_overlapping_carrier_contextuality_formula_proved": true,
       "natural_cross_orientation_overlap_density_one_proved": true,
@@ -62280,6 +62358,7 @@
       "nested_psd_schur_short_associativity_proved": true,
       "noncommuting_matrix_racah_cayley_compiled": false,
       "nonlinear_hierarchical_metric_assembly_ruled_out": false,
+      "nontrivial_beta_support_six_controls_verified": true,
       "normalization_one_local_relative_isometries_compiled": false,
       "normalization_one_nested_nodelocal_naimark_contract_proved": true,
       "normalized_affine_frame_access_equals_response_access": false,
@@ -62287,6 +62366,7 @@
       "opaque_operator_gamma_uniform_polylog_qsvt_compiled": false,
       "operator_valued_endpoint_schur_short_normal_form_proved": true,
       "overlapping_pair_labels_jointly_classical": false,
+      "pair_carrier_exact_natural_marginal_proved": true,
       "pair_local_cross_data_determine_component_positive_effect": false,
       "parent_common_fiber_native_density_bound_proved": false,
       "parent_conditional_native_loss_o_one_over_depth_proved": false,
@@ -62294,6 +62374,7 @@
       "physical_encoded_orientation_polar_compilers_interreducible": true,
       "physical_interface_supplies_addressed_raw_cross_map_block_encoding": true,
       "physical_invariant_to_schur_companion_interface_compiled": true,
+      "polynomial_typical_fiber_compression_proved": false,
       "positive_component_effect_physical_formula_proved": true,
       "reason": "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable family. Complete encoded labels and left/right relabelling are proved on one stable final branch, and its three-copy frame is directly block-encoded, all-n conditioned, and inverse-filterable, but the fixed branch is factorially rare under natural input. The known Schur/QFT/CG plus invariant-projector stack is now typed exactly. Its companion-only closure preserves source branches, but the physical-interface detour supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. Phase-only global assembly is refuted by holonomy-induced indefiniteness. Uniform linear address mixing compiles the exact PSD Gram G/q at sharp alpha=q, and the exact affine-node representation average has a table-free normalization-one LCU. Equal child width cancels from the abstract endpoint, but separate inverse-polynomial QSVT windows retain only o(1) full-sibling native mass and have o(D) rank. Their intersection therefore has o(1) relative dimension in the positive-mass final common fiber. No parent-native density transfer is proved, so the conditional loss recurrence remains open. The joint endpoint is now reduced further to the canonical Hermitian Cayley contraction D=M^-1/2(E_L-E_R)M^-1/2. Its bounded QSVT roots reproduce the exact binary effects without recovering the polar of T, and child gauges telescope recursively. A representation-specific normalization-one D oracle, physical root coordinate anchor, outcome-information theorem, decoding, and separation remain open.",
       "recursive_normalization_squared_sum_law_proved": true,
@@ -62326,7 +62407,10 @@
       "separate_qsvt_uniform_response_architecture_natural_no_go_proved": true,
       "shorted_metric_scale_inheritance_proved": true,
       "shorted_metrics_cancel_recursive_access_normalization": false,
+      "signed_sector_projection_matches_full_twirl": true,
       "sn_qft_is_open_bottleneck": false,
+      "source_weighted_portfolio_numerical_closure": true,
+      "spectral_label_packing_is_generic_circuit_lower_bound": false,
       "speedup_claim_allowed": false,
       "stable_branch_natural_input_access_polynomial_proved": false,
       "stable_branch_superpolynomial_postselection_obstruction_proved": true,
@@ -62341,6 +62425,7 @@
       "stable_three_copy_frame_all_n_conditioning_proved": true,
       "stable_three_copy_frame_block_encoding_polynomial_proved": true,
       "stable_three_copy_frame_inverse_square_root_filter_polynomial_proved": true,
+      "strict_rank_tracking_support_growth_falsified": true,
       "structured_racah_response_oracle_compiled": false,
       "support_pair_polars_determine_positive_relative_transfer": false,
       "support_polar_gpe_transports_determine_endpoint_metric_mixer": false,
@@ -62348,8 +62433,10 @@
       "typical_irrep_finite_bounded_support_non_scalarity_observed": true,
       "typical_irrep_uniform_joint_spectral_separation_proved": false,
       "typical_irrep_uniform_recoupling_transfer_proved": false,
+      "typical_support_six_inverse_polynomial_gap_proved": false,
       "uniform_component_effect_naimark_dilation_compiled": false,
       "uniform_endpoint_metric_naimark_dilation_compiled": false,
+      "uniform_support_six_generation_proved": false,
       "weighted_commuting_probability_asymptotic_gap_proved": true
     },
     "id": "NEG-COSET-KRONECKER-COUNT-AS-TRANSFORM",
@@ -62642,17 +62729,27 @@
       "common_child_scale_cancels_from_relative_graph_proved": true,
       "commuting_occupied_supports_force_clique_channels": false,
       "companion_only_stack_supplies_global_cross_branch_whitening_multiplier": false,
+      "complete_fixed_count_gapped_label_route_obstructed": true,
       "conditional_cayley_qsvt_compiler_proved": true,
       "conditional_graph_cs_compiler_given_relative_transfer_proved": true,
       "covariant_noncentral_carrier_decoder_compiled": false,
       "diagonal_jm_label_transform_polynomial_proved": true,
       "diagonal_jm_labels_resolve_multiplicity_basis": false,
+      "dimensionless_pgm_log_depth_polynomial_cutoff_proved": true,
+      "dimensionless_pgm_minimum_positive_edge_requirement_removed": true,
       "direct_component_naimark_is_restricted_polar_equivalent": true,
       "direct_gpe_pair_polar_compiled": true,
       "direct_schur_racah_component_naimark_compiled": false,
       "disjoint_pair_branch_pgm_covariance_aware_compiler_compiled": false,
       "disjoint_pair_branch_pgm_naive_local_compiler_falsified": true,
       "disjoint_pair_branch_pgm_shared_label_covariance_proved": true,
+      "disjoint_pair_covariance_dimensionless_frame_proved": true,
+      "disjoint_pair_covariance_natural_lcu_mean_bound_proved": true,
+      "disjoint_pair_covariance_positive_spectral_edge_proved": false,
+      "disjoint_pair_covariance_public_block_encoding_compiled": false,
+      "encoded_copy_logical_orbit_average_reduction_derived": true,
+      "encoded_restriction_supplies_target_measurement": false,
+      "encoded_subgroup_restriction_reduction_derived": true,
       "exact_bounded_stable_sector_family_proved": true,
       "exact_centralizer_wreath_cycle_index_proved": true,
       "exact_holevo_copy_budget_proved": true,
@@ -62660,13 +62757,19 @@
       "final_root_binary_merge_width_independent_given_aggregate_access": true,
       "final_root_constant_normalization_aggregate_child_access_compiled": false,
       "final_root_pair_local_functional_calculus_suffices": false,
+      "finite_support_six_controls_cover_nonnegligible_natural_mass": true,
       "fixed_arity_conditioning_forces_small_endpoint_algebra": false,
+      "fixed_reference_invariant_identification_obstructed": true,
       "flat_affine_gpe_child_embedding_normalization_one_proved": true,
       "full_endpoint_algebra_dimension_is_circuit_lower_bound": false,
+      "full_threshold_rank_scaled_metric_block_encoding_compiled": false,
       "gapped_kronecker_multiplicity_transform_polynomial_proved": false,
       "global_address_transition_kernel_polynomial_normalization_proved": false,
       "global_operator_valued_metric_assembly_compiled": false,
+      "global_shared_label_metric_access_ruled_out": false,
       "hidden_involution_decoder_proved": false,
+      "high_mass_s14_closure_is_typical_mass_theorem": false,
+      "high_mass_s14_support_four_closure_verified": true,
       "holevo_copy_budget_constructs_measurement": false,
       "identity_and_sublinear_carrier_support_tail_eliminated": true,
       "independent_retained_child_trims_automatically_compose": false,
@@ -62677,9 +62780,13 @@
       "known_schur_projector_stack_interfaces_typed": true,
       "label_resolved_scalar_affine_star_cayley_compiled": true,
       "linear_equal_coefficient_dense_assembly_alpha_lower_bound_q": true,
+      "local_threshold_metric_product_access_falsified": true,
       "logarithmic_fixed_point_carrier_tail_eliminated": true,
       "mesoscopic_macroscopic_carrier_commuting_tail_eliminated": true,
       "multiplicity_counting_implies_coherent_transform": false,
+      "multiplicity_fiber_partial_trace_verified": true,
+      "multiplicity_three_support_six_control_verified": true,
+      "multiplicity_twirl_projection_diagnostic_proved": true,
       "natural_all_depth_scalar_star_channel_labeler_compiled": false,
       "natural_annealed_overlapping_carrier_contextuality_formula_proved": true,
       "natural_cross_orientation_overlap_density_one_proved": true,
@@ -62689,6 +62796,7 @@
       "nested_psd_schur_short_associativity_proved": true,
       "noncommuting_matrix_racah_cayley_compiled": false,
       "nonlinear_hierarchical_metric_assembly_ruled_out": false,
+      "nontrivial_beta_support_six_controls_verified": true,
       "normalization_one_local_relative_isometries_compiled": false,
       "normalization_one_nested_nodelocal_naimark_contract_proved": true,
       "normalized_affine_frame_access_equals_response_access": false,
@@ -62696,6 +62804,7 @@
       "opaque_operator_gamma_uniform_polylog_qsvt_compiled": false,
       "operator_valued_endpoint_schur_short_normal_form_proved": true,
       "overlapping_pair_labels_jointly_classical": false,
+      "pair_carrier_exact_natural_marginal_proved": true,
       "pair_local_cross_data_determine_component_positive_effect": false,
       "parent_common_fiber_native_density_bound_proved": false,
       "parent_conditional_native_loss_o_one_over_depth_proved": false,
@@ -62703,6 +62812,7 @@
       "physical_encoded_orientation_polar_compilers_interreducible": true,
       "physical_interface_supplies_addressed_raw_cross_map_block_encoding": true,
       "physical_invariant_to_schur_companion_interface_compiled": true,
+      "polynomial_typical_fiber_compression_proved": false,
       "positive_component_effect_physical_formula_proved": true,
       "reason": "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable family. Complete encoded labels and left/right relabelling are proved on one stable final branch, and its three-copy frame is directly block-encoded, all-n conditioned, and inverse-filterable, but the fixed branch is factorially rare under natural input. The known Schur/QFT/CG plus invariant-projector stack is now typed exactly. Its companion-only closure preserves source branches, but the physical-interface detour supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. Phase-only global assembly is refuted by holonomy-induced indefiniteness. Uniform linear address mixing compiles the exact PSD Gram G/q at sharp alpha=q, and the exact affine-node representation average has a table-free normalization-one LCU. Equal child width cancels from the abstract endpoint, but separate inverse-polynomial QSVT windows retain only o(1) full-sibling native mass and have o(D) rank. Their intersection therefore has o(1) relative dimension in the positive-mass final common fiber. No parent-native density transfer is proved, so the conditional loss recurrence remains open. The joint endpoint is now reduced further to the canonical Hermitian Cayley contraction D=M^-1/2(E_L-E_R)M^-1/2. Its bounded QSVT roots reproduce the exact binary effects without recovering the polar of T, and child gauges telescope recursively. A representation-specific normalization-one D oracle, physical root coordinate anchor, outcome-information theorem, decoding, and separation remain open.",
       "recursive_normalization_squared_sum_law_proved": true,
@@ -62735,7 +62845,10 @@
       "separate_qsvt_uniform_response_architecture_natural_no_go_proved": true,
       "shorted_metric_scale_inheritance_proved": true,
       "shorted_metrics_cancel_recursive_access_normalization": false,
+      "signed_sector_projection_matches_full_twirl": true,
       "sn_qft_is_open_bottleneck": false,
+      "source_weighted_portfolio_numerical_closure": true,
+      "spectral_label_packing_is_generic_circuit_lower_bound": false,
       "speedup_claim_allowed": false,
       "stable_branch_natural_input_access_polynomial_proved": false,
       "stable_branch_superpolynomial_postselection_obstruction_proved": true,
@@ -62750,6 +62863,7 @@
       "stable_three_copy_frame_all_n_conditioning_proved": true,
       "stable_three_copy_frame_block_encoding_polynomial_proved": true,
       "stable_three_copy_frame_inverse_square_root_filter_polynomial_proved": true,
+      "strict_rank_tracking_support_growth_falsified": true,
       "structured_racah_response_oracle_compiled": false,
       "support_pair_polars_determine_positive_relative_transfer": false,
       "support_polar_gpe_transports_determine_endpoint_metric_mixer": false,
@@ -62757,8 +62871,10 @@
       "typical_irrep_finite_bounded_support_non_scalarity_observed": true,
       "typical_irrep_uniform_joint_spectral_separation_proved": false,
       "typical_irrep_uniform_recoupling_transfer_proved": false,
+      "typical_support_six_inverse_polynomial_gap_proved": false,
       "uniform_component_effect_naimark_dilation_compiled": false,
       "uniform_endpoint_metric_naimark_dilation_compiled": false,
+      "uniform_support_six_generation_proved": false,
       "weighted_commuting_probability_asymptotic_gap_proved": true
     },
     "id": "NEG-COSET-RESTRICTED-MULTIPLICITY-AS-BREAKTHROUGH",
@@ -62835,17 +62951,27 @@
       "common_child_scale_cancels_from_relative_graph_proved": true,
       "commuting_occupied_supports_force_clique_channels": false,
       "companion_only_stack_supplies_global_cross_branch_whitening_multiplier": false,
+      "complete_fixed_count_gapped_label_route_obstructed": true,
       "conditional_cayley_qsvt_compiler_proved": true,
       "conditional_graph_cs_compiler_given_relative_transfer_proved": true,
       "covariant_noncentral_carrier_decoder_compiled": false,
       "diagonal_jm_label_transform_polynomial_proved": true,
       "diagonal_jm_labels_resolve_multiplicity_basis": false,
+      "dimensionless_pgm_log_depth_polynomial_cutoff_proved": true,
+      "dimensionless_pgm_minimum_positive_edge_requirement_removed": true,
       "direct_component_naimark_is_restricted_polar_equivalent": true,
       "direct_gpe_pair_polar_compiled": true,
       "direct_schur_racah_component_naimark_compiled": false,
       "disjoint_pair_branch_pgm_covariance_aware_compiler_compiled": false,
       "disjoint_pair_branch_pgm_naive_local_compiler_falsified": true,
       "disjoint_pair_branch_pgm_shared_label_covariance_proved": true,
+      "disjoint_pair_covariance_dimensionless_frame_proved": true,
+      "disjoint_pair_covariance_natural_lcu_mean_bound_proved": true,
+      "disjoint_pair_covariance_positive_spectral_edge_proved": false,
+      "disjoint_pair_covariance_public_block_encoding_compiled": false,
+      "encoded_copy_logical_orbit_average_reduction_derived": true,
+      "encoded_restriction_supplies_target_measurement": false,
+      "encoded_subgroup_restriction_reduction_derived": true,
       "exact_bounded_stable_sector_family_proved": true,
       "exact_centralizer_wreath_cycle_index_proved": true,
       "exact_holevo_copy_budget_proved": true,
@@ -62853,13 +62979,19 @@
       "final_root_binary_merge_width_independent_given_aggregate_access": true,
       "final_root_constant_normalization_aggregate_child_access_compiled": false,
       "final_root_pair_local_functional_calculus_suffices": false,
+      "finite_support_six_controls_cover_nonnegligible_natural_mass": true,
       "fixed_arity_conditioning_forces_small_endpoint_algebra": false,
+      "fixed_reference_invariant_identification_obstructed": true,
       "flat_affine_gpe_child_embedding_normalization_one_proved": true,
       "full_endpoint_algebra_dimension_is_circuit_lower_bound": false,
+      "full_threshold_rank_scaled_metric_block_encoding_compiled": false,
       "gapped_kronecker_multiplicity_transform_polynomial_proved": false,
       "global_address_transition_kernel_polynomial_normalization_proved": false,
       "global_operator_valued_metric_assembly_compiled": false,
+      "global_shared_label_metric_access_ruled_out": false,
       "hidden_involution_decoder_proved": false,
+      "high_mass_s14_closure_is_typical_mass_theorem": false,
+      "high_mass_s14_support_four_closure_verified": true,
       "holevo_copy_budget_constructs_measurement": false,
       "identity_and_sublinear_carrier_support_tail_eliminated": true,
       "independent_retained_child_trims_automatically_compose": false,
@@ -62870,9 +63002,13 @@
       "known_schur_projector_stack_interfaces_typed": true,
       "label_resolved_scalar_affine_star_cayley_compiled": true,
       "linear_equal_coefficient_dense_assembly_alpha_lower_bound_q": true,
+      "local_threshold_metric_product_access_falsified": true,
       "logarithmic_fixed_point_carrier_tail_eliminated": true,
       "mesoscopic_macroscopic_carrier_commuting_tail_eliminated": true,
       "multiplicity_counting_implies_coherent_transform": false,
+      "multiplicity_fiber_partial_trace_verified": true,
+      "multiplicity_three_support_six_control_verified": true,
+      "multiplicity_twirl_projection_diagnostic_proved": true,
       "natural_all_depth_scalar_star_channel_labeler_compiled": false,
       "natural_annealed_overlapping_carrier_contextuality_formula_proved": true,
       "natural_cross_orientation_overlap_density_one_proved": true,
@@ -62882,6 +63018,7 @@
       "nested_psd_schur_short_associativity_proved": true,
       "noncommuting_matrix_racah_cayley_compiled": false,
       "nonlinear_hierarchical_metric_assembly_ruled_out": false,
+      "nontrivial_beta_support_six_controls_verified": true,
       "normalization_one_local_relative_isometries_compiled": false,
       "normalization_one_nested_nodelocal_naimark_contract_proved": true,
       "normalized_affine_frame_access_equals_response_access": false,
@@ -62889,6 +63026,7 @@
       "opaque_operator_gamma_uniform_polylog_qsvt_compiled": false,
       "operator_valued_endpoint_schur_short_normal_form_proved": true,
       "overlapping_pair_labels_jointly_classical": false,
+      "pair_carrier_exact_natural_marginal_proved": true,
       "pair_local_cross_data_determine_component_positive_effect": false,
       "parent_common_fiber_native_density_bound_proved": false,
       "parent_conditional_native_loss_o_one_over_depth_proved": false,
@@ -62896,6 +63034,7 @@
       "physical_encoded_orientation_polar_compilers_interreducible": true,
       "physical_interface_supplies_addressed_raw_cross_map_block_encoding": true,
       "physical_invariant_to_schur_companion_interface_compiled": true,
+      "polynomial_typical_fiber_compression_proved": false,
       "positive_component_effect_physical_formula_proved": true,
       "reason": "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable family. Complete encoded labels and left/right relabelling are proved on one stable final branch, and its three-copy frame is directly block-encoded, all-n conditioned, and inverse-filterable, but the fixed branch is factorially rare under natural input. The known Schur/QFT/CG plus invariant-projector stack is now typed exactly. Its companion-only closure preserves source branches, but the physical-interface detour supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. Phase-only global assembly is refuted by holonomy-induced indefiniteness. Uniform linear address mixing compiles the exact PSD Gram G/q at sharp alpha=q, and the exact affine-node representation average has a table-free normalization-one LCU. Equal child width cancels from the abstract endpoint, but separate inverse-polynomial QSVT windows retain only o(1) full-sibling native mass and have o(D) rank. Their intersection therefore has o(1) relative dimension in the positive-mass final common fiber. No parent-native density transfer is proved, so the conditional loss recurrence remains open. The joint endpoint is now reduced further to the canonical Hermitian Cayley contraction D=M^-1/2(E_L-E_R)M^-1/2. Its bounded QSVT roots reproduce the exact binary effects without recovering the polar of T, and child gauges telescope recursively. A representation-specific normalization-one D oracle, physical root coordinate anchor, outcome-information theorem, decoding, and separation remain open.",
       "recursive_normalization_squared_sum_law_proved": true,
@@ -62928,7 +63067,10 @@
       "separate_qsvt_uniform_response_architecture_natural_no_go_proved": true,
       "shorted_metric_scale_inheritance_proved": true,
       "shorted_metrics_cancel_recursive_access_normalization": false,
+      "signed_sector_projection_matches_full_twirl": true,
       "sn_qft_is_open_bottleneck": false,
+      "source_weighted_portfolio_numerical_closure": true,
+      "spectral_label_packing_is_generic_circuit_lower_bound": false,
       "speedup_claim_allowed": false,
       "stable_branch_natural_input_access_polynomial_proved": false,
       "stable_branch_superpolynomial_postselection_obstruction_proved": true,
@@ -62943,6 +63085,7 @@
       "stable_three_copy_frame_all_n_conditioning_proved": true,
       "stable_three_copy_frame_block_encoding_polynomial_proved": true,
       "stable_three_copy_frame_inverse_square_root_filter_polynomial_proved": true,
+      "strict_rank_tracking_support_growth_falsified": true,
       "structured_racah_response_oracle_compiled": false,
       "support_pair_polars_determine_positive_relative_transfer": false,
       "support_polar_gpe_transports_determine_endpoint_metric_mixer": false,
@@ -62950,8 +63093,10 @@
       "typical_irrep_finite_bounded_support_non_scalarity_observed": true,
       "typical_irrep_uniform_joint_spectral_separation_proved": false,
       "typical_irrep_uniform_recoupling_transfer_proved": false,
+      "typical_support_six_inverse_polynomial_gap_proved": false,
       "uniform_component_effect_naimark_dilation_compiled": false,
       "uniform_endpoint_metric_naimark_dilation_compiled": false,
+      "uniform_support_six_generation_proved": false,
       "weighted_commuting_probability_asymptotic_gap_proved": true
     },
     "id": "NEG-COSET-SCHUR-ENCODING-AS-FREE-BRANCH-POLAR",
@@ -63078,17 +63223,27 @@
       "common_child_scale_cancels_from_relative_graph_proved": true,
       "commuting_occupied_supports_force_clique_channels": false,
       "companion_only_stack_supplies_global_cross_branch_whitening_multiplier": false,
+      "complete_fixed_count_gapped_label_route_obstructed": true,
       "conditional_cayley_qsvt_compiler_proved": true,
       "conditional_graph_cs_compiler_given_relative_transfer_proved": true,
       "covariant_noncentral_carrier_decoder_compiled": false,
       "diagonal_jm_label_transform_polynomial_proved": true,
       "diagonal_jm_labels_resolve_multiplicity_basis": false,
+      "dimensionless_pgm_log_depth_polynomial_cutoff_proved": true,
+      "dimensionless_pgm_minimum_positive_edge_requirement_removed": true,
       "direct_component_naimark_is_restricted_polar_equivalent": true,
       "direct_gpe_pair_polar_compiled": true,
       "direct_schur_racah_component_naimark_compiled": false,
       "disjoint_pair_branch_pgm_covariance_aware_compiler_compiled": false,
       "disjoint_pair_branch_pgm_naive_local_compiler_falsified": true,
       "disjoint_pair_branch_pgm_shared_label_covariance_proved": true,
+      "disjoint_pair_covariance_dimensionless_frame_proved": true,
+      "disjoint_pair_covariance_natural_lcu_mean_bound_proved": true,
+      "disjoint_pair_covariance_positive_spectral_edge_proved": false,
+      "disjoint_pair_covariance_public_block_encoding_compiled": false,
+      "encoded_copy_logical_orbit_average_reduction_derived": true,
+      "encoded_restriction_supplies_target_measurement": false,
+      "encoded_subgroup_restriction_reduction_derived": true,
       "exact_bounded_stable_sector_family_proved": true,
       "exact_centralizer_wreath_cycle_index_proved": true,
       "exact_holevo_copy_budget_proved": true,
@@ -63096,13 +63251,19 @@
       "final_root_binary_merge_width_independent_given_aggregate_access": true,
       "final_root_constant_normalization_aggregate_child_access_compiled": false,
       "final_root_pair_local_functional_calculus_suffices": false,
+      "finite_support_six_controls_cover_nonnegligible_natural_mass": true,
       "fixed_arity_conditioning_forces_small_endpoint_algebra": false,
+      "fixed_reference_invariant_identification_obstructed": true,
       "flat_affine_gpe_child_embedding_normalization_one_proved": true,
       "full_endpoint_algebra_dimension_is_circuit_lower_bound": false,
+      "full_threshold_rank_scaled_metric_block_encoding_compiled": false,
       "gapped_kronecker_multiplicity_transform_polynomial_proved": false,
       "global_address_transition_kernel_polynomial_normalization_proved": false,
       "global_operator_valued_metric_assembly_compiled": false,
+      "global_shared_label_metric_access_ruled_out": false,
       "hidden_involution_decoder_proved": false,
+      "high_mass_s14_closure_is_typical_mass_theorem": false,
+      "high_mass_s14_support_four_closure_verified": true,
       "holevo_copy_budget_constructs_measurement": false,
       "identity_and_sublinear_carrier_support_tail_eliminated": true,
       "independent_retained_child_trims_automatically_compose": false,
@@ -63113,9 +63274,13 @@
       "known_schur_projector_stack_interfaces_typed": true,
       "label_resolved_scalar_affine_star_cayley_compiled": true,
       "linear_equal_coefficient_dense_assembly_alpha_lower_bound_q": true,
+      "local_threshold_metric_product_access_falsified": true,
       "logarithmic_fixed_point_carrier_tail_eliminated": true,
       "mesoscopic_macroscopic_carrier_commuting_tail_eliminated": true,
       "multiplicity_counting_implies_coherent_transform": false,
+      "multiplicity_fiber_partial_trace_verified": true,
+      "multiplicity_three_support_six_control_verified": true,
+      "multiplicity_twirl_projection_diagnostic_proved": true,
       "natural_all_depth_scalar_star_channel_labeler_compiled": false,
       "natural_annealed_overlapping_carrier_contextuality_formula_proved": true,
       "natural_cross_orientation_overlap_density_one_proved": true,
@@ -63125,6 +63290,7 @@
       "nested_psd_schur_short_associativity_proved": true,
       "noncommuting_matrix_racah_cayley_compiled": false,
       "nonlinear_hierarchical_metric_assembly_ruled_out": false,
+      "nontrivial_beta_support_six_controls_verified": true,
       "normalization_one_local_relative_isometries_compiled": false,
       "normalization_one_nested_nodelocal_naimark_contract_proved": true,
       "normalized_affine_frame_access_equals_response_access": false,
@@ -63132,6 +63298,7 @@
       "opaque_operator_gamma_uniform_polylog_qsvt_compiled": false,
       "operator_valued_endpoint_schur_short_normal_form_proved": true,
       "overlapping_pair_labels_jointly_classical": false,
+      "pair_carrier_exact_natural_marginal_proved": true,
       "pair_local_cross_data_determine_component_positive_effect": false,
       "parent_common_fiber_native_density_bound_proved": false,
       "parent_conditional_native_loss_o_one_over_depth_proved": false,
@@ -63139,6 +63306,7 @@
       "physical_encoded_orientation_polar_compilers_interreducible": true,
       "physical_interface_supplies_addressed_raw_cross_map_block_encoding": true,
       "physical_invariant_to_schur_companion_interface_compiled": true,
+      "polynomial_typical_fiber_compression_proved": false,
       "positive_component_effect_physical_formula_proved": true,
       "reason": "Coherent gapped eigenlabel transforms are proved for every nontrivial shape in one bounded stable family. Complete encoded labels and left/right relabelling are proved on one stable final branch, and its three-copy frame is directly block-encoded, all-n conditioned, and inverse-filterable, but the fixed branch is factorially rare under natural input. The known Schur/QFT/CG plus invariant-projector stack is now typed exactly. Its companion-only closure preserves source branches, but the physical-interface detour supplies alpha-one addressed raw cross maps and GPE supplies their pair polars. Phase-only global assembly is refuted by holonomy-induced indefiniteness. Uniform linear address mixing compiles the exact PSD Gram G/q at sharp alpha=q, and the exact affine-node representation average has a table-free normalization-one LCU. Equal child width cancels from the abstract endpoint, but separate inverse-polynomial QSVT windows retain only o(1) full-sibling native mass and have o(D) rank. Their intersection therefore has o(1) relative dimension in the positive-mass final common fiber. No parent-native density transfer is proved, so the conditional loss recurrence remains open. The joint endpoint is now reduced further to the canonical Hermitian Cayley contraction D=M^-1/2(E_L-E_R)M^-1/2. Its bounded QSVT roots reproduce the exact binary effects without recovering the polar of T, and child gauges telescope recursively. A representation-specific normalization-one D oracle, physical root coordinate anchor, outcome-information theorem, decoding, and separation remain open.",
       "recursive_normalization_squared_sum_law_proved": true,
@@ -63171,7 +63339,10 @@
       "separate_qsvt_uniform_response_architecture_natural_no_go_proved": true,
       "shorted_metric_scale_inheritance_proved": true,
       "shorted_metrics_cancel_recursive_access_normalization": false,
+      "signed_sector_projection_matches_full_twirl": true,
       "sn_qft_is_open_bottleneck": false,
+      "source_weighted_portfolio_numerical_closure": true,
+      "spectral_label_packing_is_generic_circuit_lower_bound": false,
       "speedup_claim_allowed": false,
       "stable_branch_natural_input_access_polynomial_proved": false,
       "stable_branch_superpolynomial_postselection_obstruction_proved": true,
@@ -63186,6 +63357,7 @@
       "stable_three_copy_frame_all_n_conditioning_proved": true,
       "stable_three_copy_frame_block_encoding_polynomial_proved": true,
       "stable_three_copy_frame_inverse_square_root_filter_polynomial_proved": true,
+      "strict_rank_tracking_support_growth_falsified": true,
       "structured_racah_response_oracle_compiled": false,
       "support_pair_polars_determine_positive_relative_transfer": false,
       "support_polar_gpe_transports_determine_endpoint_metric_mixer": false,
@@ -63193,8 +63365,10 @@
       "typical_irrep_finite_bounded_support_non_scalarity_observed": true,
       "typical_irrep_uniform_joint_spectral_separation_proved": false,
       "typical_irrep_uniform_recoupling_transfer_proved": false,
+      "typical_support_six_inverse_polynomial_gap_proved": false,
       "uniform_component_effect_naimark_dilation_compiled": false,
       "uniform_endpoint_metric_naimark_dilation_compiled": false,
+      "uniform_support_six_generation_proved": false,
       "weighted_commuting_probability_asymptotic_gap_proved": true
     },
     "id": "NEG-COSET-SN-QFT-AS-MULTICOPY-DECODER",
@@ -67068,90 +67242,72 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
-      "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS"
+      "MECH-JM-LABEL-MULTIPLICITY-RECOUPLING"
     ],
-    "claim": "Recursive pairwise Kronecker tree with spectrum-rank PGM is eligible for promotion as a collective algorithm.",
+    "claim": "YJM label front end with explicit residual multiplicity-space recoupling",
     "evidence": {
-      "decision": "rejected",
-      "stages": [
-        "PREPARE_COSET_K",
-        "SN_QFT_K",
-        "INTERNAL_KRONECKER_TRANSFORM",
-        "SINGLE_TREE_RECOUPLING",
-        "TREE_SPECTRUM_FILTER",
-        "OUTCOME_DECODER",
-        "CLASSICAL_VERIFY"
-      ]
+      "artifact": "research/representation/coset_recoupling_mechanism_synthesis.json"
+    },
+    "id": "NEG-MECH-JM-LABEL-MULTIPLICITY-RECOUPLING",
+    "lesson": "Reject this specified architecture, not different access models or independently justified routes.",
+    "reason_invalid": "Spectral packing obstructs this fixed-count, bounded-norm, inverse-polynomial-gap complete-label primitive on the full source family. Direct transforms and growing-depth hierarchies are different primitives.",
+    "source": "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "MECH-PAIR-TREE-RANK-PGM"
+    ],
+    "claim": "Recursive pairwise Kronecker tree with spectrum-rank PGM",
+    "evidence": {
+      "artifact": "research/representation/coset_recoupling_mechanism_synthesis.json"
     },
     "id": "NEG-MECH-PAIR-TREE-RANK-PGM",
-    "lesson": "Compose only typed, scope-matched primitives and retain every unproved circuit or decoder as proof debt.",
+    "lesson": "Reject this specified architecture, not different access models or independently justified routes.",
     "reason_invalid": "The two-copy rank-only mixed-state PGM formula is false on S_3. | At k=3, overlapping pair class sums satisfy an all-n nonzero commutator and do not share one tree basis.",
-    "source": "research/representation/coset_recoupling_mechanism_synthesis.json"
+    "source": "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS"
   },
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
-      "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS"
+      "MECH-PROJECTOR-COUNT-DECODER"
     ],
-    "claim": "Kronecker projector statistics as a decoder is eligible for promotion as a collective algorithm.",
+    "claim": "Kronecker projector statistics as a decoder",
     "evidence": {
-      "decision": "rejected",
-      "stages": [
-        "PREPARE_COSET_K",
-        "SN_QFT_K",
-        "PROJECTOR_MULTIPLICITY_STATS",
-        "STATISTICS_DECODER",
-        "CLASSICAL_VERIFY"
-      ]
+      "artifact": "research/representation/coset_recoupling_mechanism_synthesis.json"
     },
     "id": "NEG-MECH-PROJECTOR-COUNT-DECODER",
-    "lesson": "Compose only typed, scope-matched primitives and retain every unproved circuit or decoder as proof debt.",
+    "lesson": "Reject this specified architecture, not different access models or independently justified routes.",
     "reason_invalid": "Multiplicity counting or label projection does not construct state-dependent recoupling amplitudes.",
-    "source": "research/representation/coset_recoupling_mechanism_synthesis.json"
+    "source": "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS"
   },
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
-      "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS"
+      "MECH-QFT-WEAK-LABELS"
     ],
-    "claim": "Registerwise QFT and weak label decoding is eligible for promotion as a collective algorithm.",
+    "claim": "Registerwise QFT and weak label decoding",
     "evidence": {
-      "decision": "rejected",
-      "stages": [
-        "PREPARE_COSET_K",
-        "SN_QFT_K",
-        "WEAK_LABEL_MEASUREMENT",
-        "LABEL_DECODER",
-        "CLASSICAL_VERIFY"
-      ]
+      "artifact": "research/representation/coset_recoupling_mechanism_synthesis.json"
     },
     "id": "NEG-MECH-QFT-WEAK-LABELS",
-    "lesson": "Compose only typed, scope-matched primitives and retain every unproved circuit or decoder as proof debt.",
+    "lesson": "Reject this specified architecture, not different access models or independently justified routes.",
     "reason_invalid": "Strong/weak Fourier sampling is already obstructed on GI-relevant symmetric HSP instances.",
-    "source": "research/representation/coset_recoupling_mechanism_synthesis.json"
+    "source": "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS"
   },
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
-      "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS"
+      "MECH-RESTRICTED-COMMUTING-CLASS"
     ],
-    "claim": "Multiplicity-free or commuting-class recoupling is eligible for promotion as a collective algorithm.",
+    "claim": "Multiplicity-free or commuting-class recoupling",
     "evidence": {
-      "decision": "rejected",
-      "stages": [
-        "PREPARE_COSET_K",
-        "SN_QFT_K",
-        "RESTRICTED_MULTIPLICITY_FREE_TRANSFORM",
-        "SINGLE_TREE_RECOUPLING",
-        "TREE_SPECTRUM_FILTER",
-        "OUTCOME_DECODER",
-        "CLASSICAL_VERIFY"
-      ]
+      "artifact": "research/representation/coset_recoupling_mechanism_synthesis.json"
     },
     "id": "NEG-MECH-RESTRICTED-COMMUTING-CLASS",
-    "lesson": "Compose only typed, scope-matched primitives and retain every unproved circuit or decoder as proof debt.",
+    "lesson": "Reject this specified architecture, not different access models or independently justified routes.",
     "reason_invalid": "Exceptional commuting classes do not cover the full natural reduction family. | Many restricted multiplicity instances have polynomial classical algorithms.",
-    "source": "research/representation/coset_recoupling_mechanism_synthesis.json"
+    "source": "EXP-COSET-RECOUPLING-MECHANISM-SYNTHESIS"
   },
   {
     "applies_to": [
@@ -83771,6 +83927,20 @@
   {
     "applies_to": [
       "CODE-COSET-COLLECTIVE",
+      "systematic local-face proof"
+    ],
+    "claim": "The local face classification proves uniform loss for every systematic stopping core.",
+    "evidence": {
+      "artifact": "research/representation/self_dual_wreath_systematic_stopping_core_no_go.json"
+    },
+    "id": "SYSTEMATIC-LOCAL-CUBIC-LOSS-PROOF-GAP",
+    "lesson": "Do not conflate a local proof gap with a refutation of the separate global suffix/surface BABA theorem; replay the retained examples against both arguments.",
+    "reason_invalid": "Four width-(2,3) colorings land in the dependency's unresolved cubic-overlap class. The report previously asserted a universal theorem regardless.",
+    "source": "EXP-CODE-SELF-DUAL-WREATH-SYSTEMATIC-STOPPING-CORE-NO-GO"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
       "PO-DEQUANTIZATION",
       "PO-FALSIFIERS"
     ],
@@ -83959,6 +84129,21 @@
     "lesson": "Build a recursive full rank-scaled metric access theorem before promoting truncation robustness to an end-to-end compiler.",
     "reason_invalid": "The threshold ensemble includes residual singleton factors and higher shared-label cumulants beyond two pair blocks.",
     "source": "EXP-CODE-SELF-DUAL-WREATH-DIMENSIONLESS-PGM-TRUNCATION-BRIDGE"
+  },
+  {
+    "applies_to": [
+      "CODE-COSET-COLLECTIVE",
+      "complete tensor-multiplicity spectral labels"
+    ],
+    "claim": "A fixed number of polynomial-gap normalized spectra labels every typical Kronecker multiplicity direction.",
+    "evidence": {
+      "artifact": "research/representation/coset_hidden_involution_spectral_label_budget.json",
+      "derivation": "research/SPECTRAL_LABEL_BUDGET.md"
+    },
+    "id": "TYPICAL-KRONECKER-COMPLETE-SEPARATOR-PACKING-OBSTRUCTION",
+    "lesson": "Finite selected-partition spectra are not typical-source evidence. Growing-depth and task-specific measurements remain open; conditional copy states need not be uniform.",
+    "reason_invalid": "Under the unpostselected k-register order-two coset source, low-multiplicity branch mass is at most 2^k*L*I_n^(k+1)/(n!)^k, which vanishes for polynomial L and fixed k>=2.",
+    "source": "EXP-COSET-HIDDEN-INVOLUTION-SPECTRAL-LABEL-BUDGET"
   },
   {
     "applies_to": [

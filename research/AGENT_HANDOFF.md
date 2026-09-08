@@ -2,7 +2,68 @@
 
 Last updated: 2026-09-08
 
+2026-09-09 follow-up: the typed mutation engine now rejects the fixed-count
+complete gapped separator primitive and proposes encoded reference access
+with an explicitly missing symmetry-breaking effect/decoder. Its writer's
+registry integration is repaired (13 focused synthesis/mutation tests pass).
+The new `proof-routes` subsystem implements the contract semantics below;
+see `research/PROOF_ROUTES.md`. Ten pinned claims currently have zero
+unsupported assertions and four unresolved claims. This is not a mathematical
+proof checker, and most historical modules remain unaudited. Never repin
+changed evidence solely to make validation green.
+
+Latest combined verification: 192 tests passed in 162.34 seconds across the
+representation/access, local/global proof-boundary, literature, synthesis,
+mutation, provenance, registry I/O, conjecture and progress suites. Python
+compilation, website JavaScript syntax and diff whitespace checks passed.
+The earlier complete-suite run still documents unresolved repository-wide
+failures; these focused successes do not replace a clean full-suite result.
+`literature`, `proofs`, `proof-routes`, `dequantize`, `query-models`, `frontiers`,
+`conjectures`, `mutate`, the recoupling capability ledger, and the new live
+experiment workflows have been exercised. Known stale test expectations and
+missing registry writes remain in other historical modules.
+
 ## Current Decision: Spectral Label Packing
+
+Follow-up: `research/SIGNED_TENSOR_ACCESS.md` and
+`coset-hidden-involution-signed-tensor-access` derive the exact signed-tensor
+degree and source-coverage bound. The faithful even-diagram range is k<=m,
+not merely the paper's stronger convenient n>=2k regime. Even this larger
+faithful range misses typical required K-types. Physical tensor quotients
+remain valid and are NOT ruled out. The small rank-six control covers over
+97% while the rank-128 upper bound is below 2^-37, another warning against
+extrapolating finite coverage.
+
+The positive lead is implemented as a conditional access reduction:
+`research/ENCODED_RESTRICTION.md` and `coset-hidden-involution-encoded-restriction`.
+Five finite isometry controls include a repeated S8 code with noncommuting
+normalized orbit averages. The physical S4 QFT convention is independently
+checked. No postselection, explicit copy decoder, target PGM, or scalable
+gate-level QFT implementation is supplied. Fixed-reference invariant
+identification is bounded by p(m)/(2m-1)!!; this is not a binary decision
+no-go. Reference-odd source mass is one half whenever h differs from h0.
+Next: task-relevant binary effects or charged symmetry-breaking protocols,
+not more basis diagnostics.
+
+### Verification Debt for the Follow-On Agent
+
+The complete suite in `tmp/astra-full-tests.log` finished with 5761 passes,
+199 failures and 6 errors (22412 seconds). Do not report it as all-green.
+Most failures concern writers accepting `write_registry` but returning
+without upserting results/scaling records, for example
+`theorems/character_decoder_search.py:624`. Six errors read a C++ kernel
+from the wrong `theorems/tools/` path. Mechanical repairs must preserve IDs,
+scoped negatives and assertions. Some failures need mathematical review:
+the systematic stopping-core trichotomy reports four unclassified colorings
+at information width 2, check width 3. Other failures include stale symmetric
+double-evaluation proof expectations, missing status fields, and undefined
+`shape` in the tetrahedral physical-label control. Triage before changing gates.
+
+The systematic local-proof inconsistency is now repaired. Its four missing
+colorings are retained, its universal local gate is false, and its writer
+upserts a scoped proof-gap negative. Each example separately passes the
+existing global suffix/surface BABA reduction. Do not reopen the single-fiber
+BABA direction because of this local gap. See `research/LOCAL_PROOF_GAP_AUDIT.md`.
 
 This entry supersedes older requests below to prove an inverse-polynomial
 minimum gap for one complete typical-block separator. Read
@@ -27,6 +88,14 @@ Do not substitute dense eigendecomposition plus binary eigenvector labels.
 Distinguish a commutator superoperator's gap above its fixed space from a
 separator's minimum adjacent eigenvalue gap. They answer different questions.
 The former may stay large while the latter must shrink.
+
+The same module now separately derives the tensor/Kronecker source bound
+`q_coset{g<=L} <= 2^k L I_n^(k+1)/(n!)^k`. For fixed k>=2 and polynomial L,
+this vanishes. It applies before postselection, not conditional on a chosen
+maximum-dimension partition. In particular, do not confuse the older
+TT1+TC1 finite exact root certificates with a viable typical complete-label
+gap target. Conditional physical tensor multiplicity states are not assumed
+uniform; only the low-dimensional branch-mass bound transfers.
 
 ## Antigravity Mechanical Wiring Completion Note (2026-08-24 - Pass 6)
 

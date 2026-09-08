@@ -19,6 +19,13 @@ from research_registry import (
 
 
 class LiteraturePipelineTests(unittest.TestCase):
+    def test_wreath_qft_toolbox_is_not_extracted_as_an_hsp_decoder(self):
+        records = {record.id: record for record in extract_literature_records(refresh_arxiv=False)}
+        record = records["bruinsma-posta-stokvis-grinko-ozols-qft-toolbox-2026"]
+        self.assertIn("Clifford", record.proof_technique)
+        self.assertIn("does not", record.no_go_barrier)
+        self.assertIn("Project question", record.open_question)
+
     def test_literature_extraction_produces_structured_mechanism_records(self):
         records = extract_literature_records(refresh_arxiv=False)
         self.assertGreaterEqual(len(records), 10)

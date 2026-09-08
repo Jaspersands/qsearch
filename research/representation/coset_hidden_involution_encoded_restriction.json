@@ -1,0 +1,1490 @@
+{
+  "created_at": "2026-09-08T11:39:40.549265+00:00",
+  "status": "normalized-encoded-restriction-validated-logical-decoder-open",
+  "summary": "Inverse G-QFT, reversible K-coset factorization and K-QFT give a normalized carrier-extraction reduction with an implicit copy code. An explicit copy index or target measurement is not supplied.",
+  "derivation_document": "research/ENCODED_RESTRICTION.md",
+  "finite_controls": [
+    {
+      "partition": [
+        3,
+        1
+      ],
+      "fixed_column": 0,
+      "input_dimension": 3,
+      "group_order": 24,
+      "subgroup_order": 8,
+      "matching_count": 3,
+      "embedding_isometry_residual": 4.015833371894913e-16,
+      "subgroup_qft_unitarity_residual": 2.736844319847769e-16,
+      "blocks": [
+        {
+          "alpha": [
+            2
+          ],
+          "beta": [],
+          "carrier_dimension": 1,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 3,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 1.6577560941089964e-16,
+          "intertwining_residual": 1.6425017517271856e-16,
+          "logical_action": {
+            "orbit_average_count": 8,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            1,
+            1
+          ],
+          "beta": [],
+          "carrier_dimension": 1,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 3,
+          "isotypic_rank": 1,
+          "code_rank": 1,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 2.2955236104497527e-16,
+          "intertwining_residual": 2.840792176903222e-16,
+          "logical_action": {
+            "orbit_average_count": 8,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 1.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            1
+          ],
+          "beta": [
+            1
+          ],
+          "carrier_dimension": 2,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 6,
+          "isotypic_rank": 2,
+          "code_rank": 1,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 4.002966042486721e-16,
+          "intertwining_residual": 3.0675033956933415e-16,
+          "logical_action": {
+            "orbit_average_count": 8,
+            "carrier_identity_tensor_logical_action_residual": 2.4892478870757317e-16,
+            "maximum_logical_operator_norm": 1.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [],
+          "beta": [
+            2
+          ],
+          "carrier_dimension": 1,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 3,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 6.339068121343288e-17,
+          "intertwining_residual": 5.996141160425225e-17,
+          "logical_action": {
+            "orbit_average_count": 8,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [],
+          "beta": [
+            1,
+            1
+          ],
+          "carrier_dimension": 1,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 3,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 4.165963972119312e-17,
+          "intertwining_residual": 3.5603338711461906e-17,
+          "logical_action": {
+            "orbit_average_count": 8,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        }
+      ],
+      "finite_normalization_and_covariance_verified": true
+    },
+    {
+      "partition": [
+        2,
+        2
+      ],
+      "fixed_column": 0,
+      "input_dimension": 2,
+      "group_order": 24,
+      "subgroup_order": 8,
+      "matching_count": 3,
+      "embedding_isometry_residual": 1.584265834680792e-16,
+      "subgroup_qft_unitarity_residual": 2.736844319847769e-16,
+      "blocks": [
+        {
+          "alpha": [
+            2
+          ],
+          "beta": [],
+          "carrier_dimension": 1,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 3,
+          "isotypic_rank": 1,
+          "code_rank": 1,
+          "code_projector_residual": 4.440892098500626e-16,
+          "carrier_identity_tensor_code_residual": 4.772613250265732e-16,
+          "intertwining_residual": 1.5700924586837752e-16,
+          "logical_action": {
+            "orbit_average_count": 8,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.9999999999999996,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            1,
+            1
+          ],
+          "beta": [],
+          "carrier_dimension": 1,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 3,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 2.7347197235542297e-17,
+          "intertwining_residual": 2.7347197235542297e-17,
+          "logical_action": {
+            "orbit_average_count": 8,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            1
+          ],
+          "beta": [
+            1
+          ],
+          "carrier_dimension": 2,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 6,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 0.0,
+          "intertwining_residual": 0.0,
+          "logical_action": {
+            "orbit_average_count": 8,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [],
+          "beta": [
+            2
+          ],
+          "carrier_dimension": 1,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 3,
+          "isotypic_rank": 1,
+          "code_rank": 1,
+          "code_projector_residual": 8.881784197001252e-16,
+          "carrier_identity_tensor_code_residual": 9.421490071218155e-16,
+          "intertwining_residual": 1.3597399555105182e-16,
+          "logical_action": {
+            "orbit_average_count": 8,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 1.0000000000000009,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [],
+          "beta": [
+            1,
+            1
+          ],
+          "carrier_dimension": 1,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 3,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 3.526897382830558e-16,
+          "intertwining_residual": 3.526897382830558e-16,
+          "logical_action": {
+            "orbit_average_count": 8,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        }
+      ],
+      "finite_normalization_and_covariance_verified": true
+    },
+    {
+      "partition": [
+        3,
+        2,
+        1
+      ],
+      "fixed_column": 0,
+      "input_dimension": 16,
+      "group_order": 720,
+      "subgroup_order": 48,
+      "matching_count": 15,
+      "embedding_isometry_residual": 1.5968982868740967e-14,
+      "subgroup_qft_unitarity_residual": 4.0768561261568983e-16,
+      "blocks": [
+        {
+          "alpha": [
+            3
+          ],
+          "beta": [],
+          "carrier_dimension": 1,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 15,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 2.7541731362573073e-16,
+          "intertwining_residual": 1.8533649151617282e-16,
+          "logical_action": {
+            "orbit_average_count": 13,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            2,
+            1
+          ],
+          "beta": [],
+          "carrier_dimension": 2,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 30,
+          "isotypic_rank": 2,
+          "code_rank": 1,
+          "code_projector_residual": 4.440892098500626e-16,
+          "carrier_identity_tensor_code_residual": 9.537207947148432e-16,
+          "intertwining_residual": 6.485003751643019e-16,
+          "logical_action": {
+            "orbit_average_count": 13,
+            "carrier_identity_tensor_logical_action_residual": 4.025803917966565e-16,
+            "maximum_logical_operator_norm": 0.9999999999999996,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            1
+          ],
+          "beta": [],
+          "carrier_dimension": 1,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 15,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 2.6589282367450873e-16,
+          "intertwining_residual": 2.007834710299262e-16,
+          "logical_action": {
+            "orbit_average_count": 13,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            2
+          ],
+          "beta": [
+            1
+          ],
+          "carrier_dimension": 3,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 45,
+          "isotypic_rank": 3,
+          "code_rank": 1,
+          "code_projector_residual": 2.220446049250313e-16,
+          "carrier_identity_tensor_code_residual": 2.3756569342397907e-15,
+          "intertwining_residual": 6.883666324140908e-16,
+          "logical_action": {
+            "orbit_average_count": 13,
+            "carrier_identity_tensor_logical_action_residual": 8.703589149854614e-16,
+            "maximum_logical_operator_norm": 1.0000000000000002,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            1,
+            1
+          ],
+          "beta": [
+            1
+          ],
+          "carrier_dimension": 3,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 45,
+          "isotypic_rank": 3,
+          "code_rank": 1,
+          "code_projector_residual": 8.881784197001252e-16,
+          "carrier_identity_tensor_code_residual": 2.9789145929107706e-15,
+          "intertwining_residual": 5.915475456086117e-16,
+          "logical_action": {
+            "orbit_average_count": 13,
+            "carrier_identity_tensor_logical_action_residual": 4.589142881916405e-16,
+            "maximum_logical_operator_norm": 0.9999999999999991,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            1
+          ],
+          "beta": [
+            2
+          ],
+          "carrier_dimension": 3,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 45,
+          "isotypic_rank": 3,
+          "code_rank": 1,
+          "code_projector_residual": 2.220446049250313e-16,
+          "carrier_identity_tensor_code_residual": 2.57244067186493e-15,
+          "intertwining_residual": 6.794499402947734e-16,
+          "logical_action": {
+            "orbit_average_count": 13,
+            "carrier_identity_tensor_logical_action_residual": 5.521010608965988e-16,
+            "maximum_logical_operator_norm": 1.0000000000000002,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            1
+          ],
+          "beta": [
+            1,
+            1
+          ],
+          "carrier_dimension": 3,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 45,
+          "isotypic_rank": 3,
+          "code_rank": 1,
+          "code_projector_residual": 3.3306690738754696e-16,
+          "carrier_identity_tensor_code_residual": 2.1026429183299046e-15,
+          "intertwining_residual": 6.469016504712866e-16,
+          "logical_action": {
+            "orbit_average_count": 13,
+            "carrier_identity_tensor_logical_action_residual": 7.498301261603789e-16,
+            "maximum_logical_operator_norm": 0.9999999999999997,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [],
+          "beta": [
+            3
+          ],
+          "carrier_dimension": 1,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 15,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 2.823358051530003e-16,
+          "intertwining_residual": 2.2831983568374895e-16,
+          "logical_action": {
+            "orbit_average_count": 13,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [],
+          "beta": [
+            2,
+            1
+          ],
+          "carrier_dimension": 2,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 30,
+          "isotypic_rank": 2,
+          "code_rank": 1,
+          "code_projector_residual": 1.1102230246251565e-16,
+          "carrier_identity_tensor_code_residual": 1.3371943444755203e-15,
+          "intertwining_residual": 7.024033084847202e-16,
+          "logical_action": {
+            "orbit_average_count": 13,
+            "carrier_identity_tensor_logical_action_residual": 4.2707633286837955e-16,
+            "maximum_logical_operator_norm": 0.9999999999999999,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [],
+          "beta": [
+            1,
+            1,
+            1
+          ],
+          "carrier_dimension": 1,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 15,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 2.0246460498598953e-16,
+          "intertwining_residual": 1.4455680386948288e-16,
+          "logical_action": {
+            "orbit_average_count": 13,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        }
+      ],
+      "finite_normalization_and_covariance_verified": true
+    },
+    {
+      "partition": [
+        3,
+        2,
+        1
+      ],
+      "fixed_column": 5,
+      "input_dimension": 16,
+      "group_order": 720,
+      "subgroup_order": 48,
+      "matching_count": 15,
+      "embedding_isometry_residual": 1.4884439102504527e-14,
+      "subgroup_qft_unitarity_residual": 4.0768561261568983e-16,
+      "blocks": [
+        {
+          "alpha": [
+            3
+          ],
+          "beta": [],
+          "carrier_dimension": 1,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 15,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 3.4467771255028355e-16,
+          "intertwining_residual": 2.3382251979218136e-16,
+          "logical_action": {
+            "orbit_average_count": 13,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            2,
+            1
+          ],
+          "beta": [],
+          "carrier_dimension": 2,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 30,
+          "isotypic_rank": 2,
+          "code_rank": 1,
+          "code_projector_residual": 8.881784197001252e-16,
+          "carrier_identity_tensor_code_residual": 8.556744380870201e-16,
+          "intertwining_residual": 5.538685985371159e-16,
+          "logical_action": {
+            "orbit_average_count": 13,
+            "carrier_identity_tensor_logical_action_residual": 4.716223250918458e-16,
+            "maximum_logical_operator_norm": 0.9999999999999991,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            1
+          ],
+          "beta": [],
+          "carrier_dimension": 1,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 15,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 2.306661638366367e-16,
+          "intertwining_residual": 1.6066633272306985e-16,
+          "logical_action": {
+            "orbit_average_count": 13,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            2
+          ],
+          "beta": [
+            1
+          ],
+          "carrier_dimension": 3,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 45,
+          "isotypic_rank": 3,
+          "code_rank": 1,
+          "code_projector_residual": 4.440892098500626e-16,
+          "carrier_identity_tensor_code_residual": 1.6504428065350692e-15,
+          "intertwining_residual": 6.742241788342077e-16,
+          "logical_action": {
+            "orbit_average_count": 13,
+            "carrier_identity_tensor_logical_action_residual": 4.6548720575902e-16,
+            "maximum_logical_operator_norm": 0.9999999999999996,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            1,
+            1
+          ],
+          "beta": [
+            1
+          ],
+          "carrier_dimension": 3,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 45,
+          "isotypic_rank": 3,
+          "code_rank": 1,
+          "code_projector_residual": 8.881784197001252e-16,
+          "carrier_identity_tensor_code_residual": 2.495548989702939e-15,
+          "intertwining_residual": 6.047927194967621e-16,
+          "logical_action": {
+            "orbit_average_count": 13,
+            "carrier_identity_tensor_logical_action_residual": 2.7958942545406166e-16,
+            "maximum_logical_operator_norm": 0.9999999999999991,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            1
+          ],
+          "beta": [
+            2
+          ],
+          "carrier_dimension": 3,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 45,
+          "isotypic_rank": 3,
+          "code_rank": 1,
+          "code_projector_residual": 9.992007221626409e-16,
+          "carrier_identity_tensor_code_residual": 3.081767070689265e-15,
+          "intertwining_residual": 6.949241736228178e-16,
+          "logical_action": {
+            "orbit_average_count": 13,
+            "carrier_identity_tensor_logical_action_residual": 2.812539982536777e-16,
+            "maximum_logical_operator_norm": 0.999999999999999,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            1
+          ],
+          "beta": [
+            1,
+            1
+          ],
+          "carrier_dimension": 3,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 45,
+          "isotypic_rank": 3,
+          "code_rank": 1,
+          "code_projector_residual": 3.3306690738754696e-16,
+          "carrier_identity_tensor_code_residual": 2.608388233936831e-15,
+          "intertwining_residual": 6.120092058657914e-16,
+          "logical_action": {
+            "orbit_average_count": 13,
+            "carrier_identity_tensor_logical_action_residual": 9.02903523638255e-16,
+            "maximum_logical_operator_norm": 0.9999999999999997,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [],
+          "beta": [
+            3
+          ],
+          "carrier_dimension": 1,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 15,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 3.2495920343570515e-16,
+          "intertwining_residual": 2.727468712338365e-16,
+          "logical_action": {
+            "orbit_average_count": 13,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [],
+          "beta": [
+            2,
+            1
+          ],
+          "carrier_dimension": 2,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 30,
+          "isotypic_rank": 2,
+          "code_rank": 1,
+          "code_projector_residual": 2.220446049250313e-16,
+          "carrier_identity_tensor_code_residual": 1.2798546485409915e-15,
+          "intertwining_residual": 5.835392922676435e-16,
+          "logical_action": {
+            "orbit_average_count": 13,
+            "carrier_identity_tensor_logical_action_residual": 3.4540400987309887e-16,
+            "maximum_logical_operator_norm": 0.9999999999999997,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [],
+          "beta": [
+            1,
+            1,
+            1
+          ],
+          "carrier_dimension": 1,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 15,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 2.1698731908989669e-16,
+          "intertwining_residual": 1.411141587756506e-16,
+          "logical_action": {
+            "orbit_average_count": 13,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        }
+      ],
+      "finite_normalization_and_covariance_verified": true
+    },
+    {
+      "partition": [
+        4,
+        2,
+        2
+      ],
+      "fixed_column": 0,
+      "input_dimension": 56,
+      "group_order": 40320,
+      "subgroup_order": 384,
+      "matching_count": 105,
+      "embedding_isometry_residual": 2.1815861636912723e-14,
+      "subgroup_qft_unitarity_residual": 6.821529945641585e-15,
+      "blocks": [
+        {
+          "alpha": [
+            4
+          ],
+          "beta": [],
+          "carrier_dimension": 1,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 105,
+          "isotypic_rank": 1,
+          "code_rank": 1,
+          "code_projector_residual": 1.9984014443252818e-15,
+          "carrier_identity_tensor_code_residual": 4.232356809193923e-15,
+          "intertwining_residual": 3.545537483637112e-15,
+          "logical_action": {
+            "orbit_average_count": 15,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.999999999999998,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            3,
+            1
+          ],
+          "beta": [],
+          "carrier_dimension": 3,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 315,
+          "isotypic_rank": 3,
+          "code_rank": 1,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 1.4413396278656897e-14,
+          "intertwining_residual": 9.760852428158233e-15,
+          "logical_action": {
+            "orbit_average_count": 15,
+            "carrier_identity_tensor_logical_action_residual": 2.2523437397194554e-15,
+            "maximum_logical_operator_norm": 1.0000000000000007,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            2,
+            2
+          ],
+          "beta": [],
+          "carrier_dimension": 2,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 210,
+          "isotypic_rank": 2,
+          "code_rank": 1,
+          "code_projector_residual": 1.1102230246251565e-15,
+          "carrier_identity_tensor_code_residual": 4.861947447782293e-15,
+          "intertwining_residual": 2.3503342894615268e-15,
+          "logical_action": {
+            "orbit_average_count": 15,
+            "carrier_identity_tensor_logical_action_residual": 7.12029913460068e-16,
+            "maximum_logical_operator_norm": 0.9999999999999996,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            2,
+            1,
+            1
+          ],
+          "beta": [],
+          "carrier_dimension": 3,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 315,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 1.7237263727928555e-15,
+          "intertwining_residual": 1.1862700849988516e-15,
+          "logical_action": {
+            "orbit_average_count": 15,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "beta": [],
+          "carrier_dimension": 1,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 105,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 3.032701624969415e-16,
+          "intertwining_residual": 2.595253103965523e-16,
+          "logical_action": {
+            "orbit_average_count": 15,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            3
+          ],
+          "beta": [
+            1
+          ],
+          "carrier_dimension": 4,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 420,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 7.62620032064391e-16,
+          "intertwining_residual": 5.255020816255358e-16,
+          "logical_action": {
+            "orbit_average_count": 15,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            2,
+            1
+          ],
+          "beta": [
+            1
+          ],
+          "carrier_dimension": 8,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 840,
+          "isotypic_rank": 8,
+          "code_rank": 1,
+          "code_projector_residual": 1.5543122344752192e-15,
+          "carrier_identity_tensor_code_residual": 2.5995435210535844e-14,
+          "intertwining_residual": 1.7486593213162028e-15,
+          "logical_action": {
+            "orbit_average_count": 15,
+            "carrier_identity_tensor_logical_action_residual": 6.868609581385592e-15,
+            "maximum_logical_operator_norm": 0.9999999999999984,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            1,
+            1,
+            1
+          ],
+          "beta": [
+            1
+          ],
+          "carrier_dimension": 4,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 420,
+          "isotypic_rank": 4,
+          "code_rank": 1,
+          "code_projector_residual": 4.440892098500626e-16,
+          "carrier_identity_tensor_code_residual": 1.0010845597216172e-14,
+          "intertwining_residual": 1.6363070179492173e-15,
+          "logical_action": {
+            "orbit_average_count": 15,
+            "carrier_identity_tensor_logical_action_residual": 1.7626835695217845e-15,
+            "maximum_logical_operator_norm": 0.9999999999999996,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            2
+          ],
+          "beta": [
+            2
+          ],
+          "carrier_dimension": 6,
+          "expected_copy_dimension": 2,
+          "encoded_multiplicity_ambient_dimension": 630,
+          "isotypic_rank": 12,
+          "code_rank": 2,
+          "code_projector_residual": 2.224153335151748e-15,
+          "carrier_identity_tensor_code_residual": 2.3852067075446847e-14,
+          "intertwining_residual": 2.1866044110660004e-15,
+          "logical_action": {
+            "orbit_average_count": 15,
+            "carrier_identity_tensor_logical_action_residual": 6.771715559369351e-15,
+            "maximum_logical_operator_norm": 1.0000000000000022,
+            "maximum_logical_commutator_norm": 0.09316949906249151,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            2
+          ],
+          "beta": [
+            1,
+            1
+          ],
+          "carrier_dimension": 6,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 630,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 1.299911046239185e-15,
+          "intertwining_residual": 9.33732446618113e-16,
+          "logical_action": {
+            "orbit_average_count": 15,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            1,
+            1
+          ],
+          "beta": [
+            2
+          ],
+          "carrier_dimension": 6,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 630,
+          "isotypic_rank": 6,
+          "code_rank": 1,
+          "code_projector_residual": 3.3306690738754696e-16,
+          "carrier_identity_tensor_code_residual": 1.862317115555733e-14,
+          "intertwining_residual": 1.899631940950895e-15,
+          "logical_action": {
+            "orbit_average_count": 15,
+            "carrier_identity_tensor_logical_action_residual": 2.9230971416609906e-15,
+            "maximum_logical_operator_norm": 0.9999999999999996,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            1,
+            1
+          ],
+          "beta": [
+            1,
+            1
+          ],
+          "carrier_dimension": 6,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 630,
+          "isotypic_rank": 6,
+          "code_rank": 1,
+          "code_projector_residual": 1.4432899320127035e-15,
+          "carrier_identity_tensor_code_residual": 1.9038413035485742e-14,
+          "intertwining_residual": 1.6135620662876089e-15,
+          "logical_action": {
+            "orbit_average_count": 15,
+            "carrier_identity_tensor_logical_action_residual": 3.354663464757296e-15,
+            "maximum_logical_operator_norm": 0.9999999999999986,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            1
+          ],
+          "beta": [
+            3
+          ],
+          "carrier_dimension": 4,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 420,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 8.368040358717737e-16,
+          "intertwining_residual": 6.029077008135547e-16,
+          "logical_action": {
+            "orbit_average_count": 15,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            1
+          ],
+          "beta": [
+            2,
+            1
+          ],
+          "carrier_dimension": 8,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 840,
+          "isotypic_rank": 8,
+          "code_rank": 1,
+          "code_projector_residual": 1.3322676295501878e-15,
+          "carrier_identity_tensor_code_residual": 3.549591653466652e-14,
+          "intertwining_residual": 2.124604799094463e-15,
+          "logical_action": {
+            "orbit_average_count": 15,
+            "carrier_identity_tensor_logical_action_residual": 1.1351177219017066e-14,
+            "maximum_logical_operator_norm": 0.9999999999999987,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [
+            1
+          ],
+          "beta": [
+            1,
+            1,
+            1
+          ],
+          "carrier_dimension": 4,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 420,
+          "isotypic_rank": 4,
+          "code_rank": 1,
+          "code_projector_residual": 2.220446049250313e-16,
+          "carrier_identity_tensor_code_residual": 1.2228258435523336e-14,
+          "intertwining_residual": 2.0028174289911575e-15,
+          "logical_action": {
+            "orbit_average_count": 15,
+            "carrier_identity_tensor_logical_action_residual": 2.806585260122055e-15,
+            "maximum_logical_operator_norm": 0.9999999999999998,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [],
+          "beta": [
+            4
+          ],
+          "carrier_dimension": 1,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 105,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 1.711804720360327e-16,
+          "intertwining_residual": 1.2764126768126168e-16,
+          "logical_action": {
+            "orbit_average_count": 15,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [],
+          "beta": [
+            3,
+            1
+          ],
+          "carrier_dimension": 3,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 315,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 1.1261420429614207e-15,
+          "intertwining_residual": 8.292641344206619e-16,
+          "logical_action": {
+            "orbit_average_count": 15,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [],
+          "beta": [
+            2,
+            2
+          ],
+          "carrier_dimension": 2,
+          "expected_copy_dimension": 1,
+          "encoded_multiplicity_ambient_dimension": 210,
+          "isotypic_rank": 2,
+          "code_rank": 1,
+          "code_projector_residual": 8.881784197001252e-16,
+          "carrier_identity_tensor_code_residual": 9.268742626681368e-15,
+          "intertwining_residual": 2.54167856209647e-15,
+          "logical_action": {
+            "orbit_average_count": 15,
+            "carrier_identity_tensor_logical_action_residual": 2.6737749986109074e-15,
+            "maximum_logical_operator_norm": 1.0000000000000018,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [],
+          "beta": [
+            2,
+            1,
+            1
+          ],
+          "carrier_dimension": 3,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 315,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 1.183232020187116e-15,
+          "intertwining_residual": 7.452901239735943e-16,
+          "logical_action": {
+            "orbit_average_count": 15,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        },
+        {
+          "alpha": [],
+          "beta": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "carrier_dimension": 1,
+          "expected_copy_dimension": 0,
+          "encoded_multiplicity_ambient_dimension": 105,
+          "isotypic_rank": 0,
+          "code_rank": 0,
+          "code_projector_residual": 0.0,
+          "carrier_identity_tensor_code_residual": 2.346377856342836e-16,
+          "intertwining_residual": 1.6722564715331538e-16,
+          "logical_action": {
+            "orbit_average_count": 15,
+            "carrier_identity_tensor_logical_action_residual": 0.0,
+            "maximum_logical_operator_norm": 0.0,
+            "maximum_logical_commutator_norm": 0.0,
+            "normalization_factor": 1
+          }
+        }
+      ],
+      "finite_normalization_and_covariance_verified": true
+    }
+  ],
+  "physical_fourier_control": {
+    "group": "S_4",
+    "coset_column_convention_residual": 1.0256498143640477e-16,
+    "qft_unitarity_residual": 8.524184015495132e-16,
+    "reference_parity_controls": [
+      {
+        "hidden_involution": [
+          1,
+          0,
+          3,
+          2
+        ],
+        "aligned": true,
+        "reference_odd_mass": 2.3060119682007148e-17,
+        "predicted_reference_odd_mass": 0.0
+      },
+      {
+        "hidden_involution": [
+          2,
+          3,
+          0,
+          1
+        ],
+        "aligned": false,
+        "reference_odd_mass": 0.5,
+        "predicted_reference_odd_mass": 0.5
+      },
+      {
+        "hidden_involution": [
+          3,
+          2,
+          1,
+          0
+        ],
+        "aligned": false,
+        "reference_odd_mass": 0.5,
+        "predicted_reference_odd_mass": 0.5
+      }
+    ],
+    "physical_convention_and_alignment_distinction_verified": true
+  },
+  "reference_orbit_controls": [
+    {
+      "half_degree": 2,
+      "hypotheses": 3,
+      "orbit_count": 2,
+      "orbits": [
+        {
+          "orbit_type": [
+            1,
+            1
+          ],
+          "size": 1,
+          "formula_size": 1
+        },
+        {
+          "orbit_type": [
+            2
+          ],
+          "size": 2,
+          "formula_size": 2
+        }
+      ],
+      "partition_classification_verified": true,
+      "identification_upper_bound": "2/3",
+      "binary_decision_ruled_out": false
+    },
+    {
+      "half_degree": 3,
+      "hypotheses": 15,
+      "orbit_count": 3,
+      "orbits": [
+        {
+          "orbit_type": [
+            1,
+            1,
+            1
+          ],
+          "size": 1,
+          "formula_size": 1
+        },
+        {
+          "orbit_type": [
+            2,
+            1
+          ],
+          "size": 6,
+          "formula_size": 6
+        },
+        {
+          "orbit_type": [
+            3
+          ],
+          "size": 8,
+          "formula_size": 8
+        }
+      ],
+      "partition_classification_verified": true,
+      "identification_upper_bound": "1/5",
+      "binary_decision_ruled_out": false
+    },
+    {
+      "half_degree": 4,
+      "hypotheses": 105,
+      "orbit_count": 5,
+      "orbits": [
+        {
+          "orbit_type": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "size": 1,
+          "formula_size": 1
+        },
+        {
+          "orbit_type": [
+            2,
+            1,
+            1
+          ],
+          "size": 12,
+          "formula_size": 12
+        },
+        {
+          "orbit_type": [
+            2,
+            2
+          ],
+          "size": 12,
+          "formula_size": 12
+        },
+        {
+          "orbit_type": [
+            3,
+            1
+          ],
+          "size": 32,
+          "formula_size": 32
+        },
+        {
+          "orbit_type": [
+            4
+          ],
+          "size": 48,
+          "formula_size": 48
+        }
+      ],
+      "partition_classification_verified": true,
+      "identification_upper_bound": "1/21",
+      "binary_decision_ruled_out": false
+    }
+  ],
+  "reference_identification_scaling": [
+    {
+      "half_degree": 4,
+      "fixed_reference_identification_upper_bound": "1/21",
+      "log2_upper_bound": -4.392317422778761
+    },
+    {
+      "half_degree": 8,
+      "fixed_reference_identification_upper_bound": "2/184275",
+      "log2_upper_bound": -16.491500832858044
+    },
+    {
+      "half_degree": 16,
+      "fixed_reference_identification_upper_bound": "1/830730666504375",
+      "log2_upper_bound": -49.56137414106163
+    },
+    {
+      "half_degree": 32,
+      "fixed_reference_identification_upper_bound": "1/13447787194343201528605150907973518203125",
+      "log2_upper_bound": -133.304492595311
+    },
+    {
+      "half_degree": 64,
+      "fixed_reference_identification_upper_bound": "446/42189311251223636616102982264345971921216984318903665829565358731027803079446412181596267402496337890625",
+      "log2_upper_bound": -335.4345714089482
+    },
+    {
+      "half_degree": 128,
+      "fixed_reference_identification_upper_bound": "930712/1398343562875971791972627035461820917855846357474064684689734778403919418043041574247592245236602748034416555474464491846419931912129355959920191069144704645836073060600572156247288351374057185455794388899092485989778726219370114617049694061279296875",
+      "log2_upper_bound": -807.8158392079478
+    }
+  ],
+  "scalable_factorization_controls": [
+    {
+      "half_degree": 4,
+      "passed": 16,
+      "trials": 16
+    },
+    {
+      "half_degree": 8,
+      "passed": 16,
+      "trials": 16
+    },
+    {
+      "half_degree": 16,
+      "passed": 16,
+      "trials": 16
+    },
+    {
+      "half_degree": 32,
+      "passed": 16,
+      "trials": 16
+    },
+    {
+      "half_degree": 64,
+      "passed": 16,
+      "trials": 16
+    },
+    {
+      "half_degree": 128,
+      "passed": 16,
+      "trials": 16
+    }
+  ],
+  "access_contract": {
+    "input": "A V_lambda state with known K left action, standard row encoding and a computable fixed column.",
+    "quantum_primitives": [
+      "QFT over S_(2m)",
+      "QFT over C2 wr S_m",
+      "reversible permutation/matching arithmetic"
+    ],
+    "postselection_steps": 0,
+    "normalization_loss": 1,
+    "resource_bound": "QFT_G cost + QFT_K cost + poly(m); O(m log m) register space up to primitive workspaces.",
+    "dense_control_cost_is_not_quantum_cost": true,
+    "output": "mu, carrier row, and an encoded multiplicity subspace inside (K-column, K-left-coset) registers."
+  },
+  "headline_metrics": {
+    "finite_isometry_controls_passed": 5,
+    "repeated_copy_blocks_verified": 1,
+    "noncommuting_encoded_copy_blocks": 1,
+    "physical_fourier_controls_passed": 1,
+    "reference_orbit_controls_passed": 3,
+    "scalable_factorization_trials_passed": 96,
+    "maximum_half_degree": 128,
+    "postselection_steps": 0,
+    "explicit_copy_index_compiler_count": 0,
+    "hidden_involution_decoder_count": 0
+  },
+  "claim_gate": {
+    "finite_encoded_isometry_verified": true,
+    "polynomial_reduction_given_qft_primitives_derived": true,
+    "normalized_logical_orbit_average_reduction_derived": true,
+    "physical_real_symmetric_column_convention_verified": true,
+    "fixed_reference_invariant_identification_obstruction_derived": true,
+    "binary_decision_ruled_out_by_reference_bound": false,
+    "qft_gate_circuits_implemented_in_this_module": false,
+    "explicit_copy_basis_compiled": false,
+    "target_pgm_effect_compiled": false,
+    "unknown_hidden_centralizer_access_granted": false,
+    "speedup_claim_allowed": false
+  },
+  "falsifiers_triggered": [
+    "An exponentially large implicit multiplicity code does not itself require exponentially many qubits or postselection.",
+    "Carrier extraction is not an explicit multiplicity-index transform or a hidden-involution measurement."
+  ],
+  "next_experiments": [
+    "Derive a source-aware logical target effect from normalized orbit averages without a complete spectral label requirement.",
+    "Specify a binary decision effect or a symmetry-breaking/multiple-reference identification protocol with its full information and resource budget.",
+    "Use the physical Fourier convention without importing the aligned h-even law into an unknown reference frame."
+  ]
+}

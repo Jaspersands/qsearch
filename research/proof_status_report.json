@@ -2,8 +2,8 @@
   "blocking_status_count": 24,
   "candidate_count": 8,
   "counterexample_search_count": 8,
-  "created_at": "2026-09-03T08:31:01.025738+00:00",
-  "lemma_count": 1249,
+  "created_at": "2026-09-08T19:57:19.131313+00:00",
+  "lemma_count": 1259,
   "needs_evidence_count": 0,
   "proof_debt": {
     "counterexample_search_count": 8,
@@ -73,8 +73,8 @@
         "target_claim": "The coset observable is not a disguised classical invariant."
       }
     ],
-    "created_at": "2026-09-03T08:31:01.023177+00:00",
-    "lemma_count": 1249,
+    "created_at": "2026-09-08T19:57:19.127547+00:00",
+    "lemma_count": 1259,
     "lemmas": [
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -313,7 +313,7 @@
         "falsification_test": "Scan all feasible repeated blocks and then prove natural-mass coverage and spectral gaps; compile a reversible source-aware transform rather than extrapolating from finite classical diagnostics.",
         "id": "LEMMA-CODE-COSET-COLLECTIVE-UNIFORM-SUPPORT-SIX-NATURAL-COMMUTANT",
         "statement": "Support-at-most-six hyperoctahedral orbit sums generate every naturally occupied repeated commutant block with inverse-polynomial resolving gaps and coherent source access.",
-        "status": "blocked-finite-controls-negligible-natural-mass-uniformity-gap-and-access-open"
+        "status": "blocked-strict-growth-falsified-support-six-uniformity-gap-and-access-open"
       },
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -324,8 +324,8 @@
         ],
         "falsification_test": "Enumerate all even bipartitions, verify exact integer normalization of 2 d_lambda d_mu b/14!, and sum the mass of only independently verified support-six controls.",
         "id": "LEMMA-CODE-COSET-COLLECTIVE-NATURAL-SUPPORT-SIX-MASS-CENSUS",
-        "statement": "The exact h-even S_14 branching law is normalized, repeated blocks carry dominant source mass, and the currently audited support-six blocks carry negligible source mass.",
-        "status": "proved-finite-support-six-controls-negligible-natural-mass"
+        "statement": "The exact h-even S_14 branching law is normalized, repeated blocks carry dominant source mass, with audited support-six coverage measured separately from any asymptotic claim.",
+        "status": "proved-exact-finite-source-law-normalization"
       },
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -350,7 +350,7 @@
         "falsification_test": "Compare with a full K_4 Reynolds twirl and an independent nontrivial-beta S_14 commutant projection, including fiber rank, propagation, and orthogonality residuals.",
         "id": "LEMMA-CODE-COSET-COLLECTIVE-MULTIPLICITY-FIBER-PARTIAL-TRACE",
         "statement": "A signed YJM root fiber, seminormal carrier propagation, and equal-weight transport compute the exact copy-space partial trace without constructing a full isotypic basis.",
-        "status": "proved-exact-multiplicity-fiber-partial-trace"
+        "status": "proved-multiplicity-fiber-partial-trace-identity"
       },
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -373,7 +373,7 @@
         "falsification_test": "Recompute all support-three matrices and the support-four witness subset; require both a connected separator graph and direct commutator nullity one with stable numerical margins.",
         "id": "LEMMA-CODE-COSET-COLLECTIVE-HIGH-MASS-S14-SUPPORT-FOUR-CLOSURE",
         "statement": "On the highest-mass previously untested repeated S_14 branch, support-at-most-three orbit sums are proper while a support-four subset has scalar common commutant.",
-        "status": "proved-finite-numerical-high-mass-s14-support-four-closure"
+        "status": "numerically-supported-high-mass-s14-support-four-closure"
       },
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -383,10 +383,127 @@
           "PO-COMPLEXITY",
           "PO-SUCCESS"
         ],
-        "falsification_test": "Scan source-ranked branches across growing rank and prove concentration plus a uniform normalized gap lower bound; one sub-one-percent finite block is insufficient.",
+        "falsification_test": "Require source concentration and a coherent adaptive-label or direct-transform contract; a fixed number of complete normalized spectra is obstructed by spectral packing.",
         "id": "LEMMA-CODE-COSET-COLLECTIVE-TYPICAL-LOW-SUPPORT-GAPPED-COMMUTANT",
-        "statement": "A fixed bounded-support family generates multiplicity algebras with inverse-polynomial LCU-normalized resolving gaps on one-minus-o(1) hidden-involution source mass.",
+        "statement": "A bounded-support family supports a scalable adaptive coarse-label hierarchy or direct transform on one-minus-o(1) hidden-involution source mass, with normalization accounted for.",
         "status": "blocked-one-finite-block-no-mass-or-gap-scaling-theorem"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "LEMMA-CODE-COSET-COLLECTIVE-HIGH-MASS-S14-SUPPORT-FOUR-CLOSURE"
+        ],
+        "falsification_test": "Recompute gauge-bound checkpoint matrices and cross-check graph connectivity against direct nullity; require exact arithmetic for a proof.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-SOURCE-WEIGHTED-S14-SUPPORT-PORTFOLIO",
+        "statement": "A finite source-ranked portfolio has numerical support-four scalar-commutant witnesses, not an asymptotic transform.",
+        "status": "numerically-supported-source-ranked-portfolio"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-FAMILY",
+          "PO-INPUT-MODEL",
+          "PO-MEASUREMENT"
+        ],
+        "falsification_test": "Independently verify the source law, endpoint packing, and dimension-sum bound. Do not extend to incomplete labels, growing-depth hierarchies, or arbitrary circuits.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-SPECTRAL-LABEL-CAPACITY-OBSTRUCTION",
+        "statement": "A fixed count of bounded-norm inverse-polynomial-gap joint observables cannot completely label typical branching multiplicities under q=2*d_lambda*d_mu*b/|G|.",
+        "status": "derived-scoped-packing-obstruction-review-pending"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "LEMMA-CODE-COSET-COLLECTIVE-SPECTRAL-LABEL-CAPACITY-OBSTRUCTION",
+          "PO-COMPLEXITY",
+          "PO-SUCCESS"
+        ],
+        "falsification_test": "Specify reversible projector access, per-node outcome capacity, accumulated error and surviving information; reject dense eigendecomposition disguised as a compiler.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-ADAPTIVE-COARSE-LABEL-COMPILER",
+        "statement": "A polynomial-depth source-aware hierarchy retains task-relevant hidden-involution information without complete single-separator spectral resolution.",
+        "status": "blocked-no-coherent-coarse-label-hierarchy-or-decoder"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-INPUT-MODEL",
+          "PO-MEASUREMENT",
+          "PO-SUCCESS"
+        ],
+        "falsification_test": "Check the Plancherel tensor law and rho_h^tensor(k)<=2^k I/|G|^k. Do not carry the unconditioned mass bound through postselection or assume uniform conditional copy labels.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-TENSOR-SPECTRAL-LABEL-CAPACITY",
+        "statement": "For unpostselected fixed-k order-two coset input, q{g<=L} <= 2^k L I_n^(k+1)/(n!)^k; complete typical fixed-count gapped spectra are obstructed for k>=2.",
+        "status": "derived-scoped-tensor-packing-review-pending"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-FAMILY",
+          "PO-INPUT-MODEL",
+          "PO-SUCCESS"
+        ],
+        "falsification_test": "Verify all cross-box moves, central parity, faithful diagram threshold and the parity-conditioned Plancherel first-row bound. Do not transfer to another tensor alphabet or rule out physical quotients.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-SIGNED-TENSOR-SOURCE-ACCESS",
+        "statement": "The signed-tensor minimum degree is |beta|+2(|alpha|-alpha_1); tensor degrees k<=m cover exponentially vanishing necessary K-type source mass.",
+        "status": "derived-signed-tensor-coverage-obstruction-review-pending"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "LEMMA-CODE-COSET-COLLECTIVE-SIGNED-TENSOR-SOURCE-ACCESS",
+          "PO-MEASUREMENT",
+          "PO-COMPLEXITY"
+        ],
+        "falsification_test": "Account for multiplicity capacity, the diagram Gram kernel and implementable coherent access; type reachability is not an embedding.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-SIGNED-TENSOR-QUOTIENT-INTERTWINER",
+        "statement": "An explicit normalized Specht-to-signed-tensor intertwiner and source-aware quotient transform preserve the required multiplicity spaces.",
+        "status": "blocked-no-normalized-source-aware-quotient-intertwiner"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-INPUT-MODEL",
+          "PO-QUANTUM-MECHANISM",
+          "PO-COMPLEXITY"
+        ],
+        "falsification_test": "Check Fourier row/column conventions, the bijection g=k*t, normalized intertwining, repeated-copy codes and QFT primitive costs. This is not an explicit copy decoder.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-ENCODED-RESTRICTION-ACCESS",
+        "statement": "For known K, inverse G-QFT, reversible left-coset factoring and K-QFT extract the K carrier with normalized implicit multiplicity access.",
+        "status": "derived-encoded-restriction-review-pending"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-INPUT-MODEL",
+          "PO-MEASUREMENT",
+          "PO-SUCCESS"
+        ],
+        "falsification_test": "Verify likelihood constancy on reference-matching orbits and uniform prior. Do not transfer to carrier-sensitive effects, quantum memory across different references, or binary decision.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-FIXED-REFERENCE-IDENTIFICATION",
+        "statement": "Globally K-invariant effects cannot identify a uniform hidden matching with success above p(m)/(2m-1)!!, regardless of copy count. Binary class detection is not excluded.",
+        "status": "derived-reference-orbit-bound-review-pending"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "LEMMA-CODE-COSET-COLLECTIVE-ENCODED-RESTRICTION-ACCESS",
+          "PO-MEASUREMENT",
+          "PO-SUCCESS"
+        ],
+        "falsification_test": "Reject implicit access as a substitute for an actual effect; audit any discarded carrier and candidate-controlled alignment or aggregation.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-ENCODED-TARGET-EFFECT",
+        "statement": "The encoded copy code supports an efficient task-relevant multi-copy effect with physical coset access and unknown-centralizer alignment fully charged.",
+        "status": "blocked-no-symmetry-resolved-logical-target-measurement"
+      },
+      {
+        "candidate_id": "CODE-COSET-COLLECTIVE",
+        "depends_on": [
+          "PO-NO-GO",
+          "PO-COMPLEXITY"
+        ],
+        "falsification_test": "Replay the four width-(2,3) colorings in the systematic-core report. Check missing local loss and independent global certificates separately; do not reopen single-fiber BABA solely from this gap.",
+        "id": "LEMMA-CODE-COSET-COLLECTIVE-SYSTEMATIC-LOCAL-CUBIC-LOSS",
+        "statement": "The local face proof needs a uniform cubic-overlap loss; its historical universal no-go flag was unsupported. The separate global suffix/surface BABA proof bypasses this dependency.",
+        "status": "blocked-local-cubic-loss-superseded-by-independent-global-route"
       },
       {
         "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -15266,7 +15383,7 @@
         "candidate_id": "CODE-COSET-COLLECTIVE",
         "claim_blocked": "PO-DEQUANTIZATION",
         "debt_type": "dequantization",
-        "evidence": "The workbench wrote 2 coset/nonabelian family negative-result record(s). | The workbench wrote 2 coset/nonabelian family negative-result record(s). | The workbench wrote 5 coset/nonabelian family negative-result record(s).",
+        "evidence": "The packed label capacity is polynomial, while the exact source mass of such small multiplicities vanishes superpolynomially. | It produces an implicit copy code. The logical target effect, physical access transfer and decoder remain unspecified. | All likelihoods coincide within each reference-matching orbit. There are p(m) orbits among (2m-1)!! hypotheses, so success is at most p(m)/(2m-1)!! even with arbitrarily many jointly invariant copies.",
         "id": "DEBT-CODE-COSET-COLLECTIVE-PO-DEQUANTIZATION",
         "priority_score": 100,
         "required_resolution": "Resolve dequantization findings or demote the candidate to a negative/blocked result."
@@ -15774,13 +15891,226 @@
       "candidate_id": "CODE-COSET-COLLECTIVE",
       "claim_blocked": "PO-DEQUANTIZATION",
       "debt_type": "dequantization",
-      "evidence": "The workbench wrote 2 coset/nonabelian family negative-result record(s). | The workbench wrote 2 coset/nonabelian family negative-result record(s). | The workbench wrote 5 coset/nonabelian family negative-result record(s).",
+      "evidence": "The packed label capacity is polynomial, while the exact source mass of such small multiplicities vanishes superpolynomially. | It produces an implicit copy code. The logical target effect, physical access transfer and decoder remain unspecified. | All likelihoods coincide within each reference-matching orbit. There are p(m) orbits among (2m-1)!! hypotheses, so success is at most p(m)/(2m-1)!! even with arbitrarily many jointly invariant copies.",
       "id": "DEBT-CODE-COSET-COLLECTIVE-PO-DEQUANTIZATION",
       "priority_score": 100,
       "required_resolution": "Resolve dequantization findings or demote the candidate to a negative/blocked result."
     }
   },
   "proof_debt_count": 24,
+  "proof_route_audit": {
+    "claim_count": 10,
+    "claims": [
+      {
+        "asserted_level": "unresolved",
+        "id": "CUBIC-LOCAL-LOSS",
+        "routes": [],
+        "scope": {
+          "conclusion": "every nonempty cubic-overlap face has uniform symmetric-group solution-exponent loss at least one half",
+          "domain": "all normalized proper binary face-color triples at growing check width",
+          "input_model": "explicit ordered codeword relators; n grows with code width",
+          "quantifier": "universal"
+        },
+        "support_rank": 0,
+        "supported_level": "unresolved",
+        "unsupported_assertion": false
+      },
+      {
+        "asserted_level": "unresolved",
+        "id": "LOCAL-SYSTEMATIC-BOUND",
+        "routes": [
+          {
+            "id": "local-face",
+            "support_rank": 0,
+            "supported_level": "unresolved"
+          }
+        ],
+        "scope": {
+          "conclusion": "the local face/deviation/block proof gives a uniform one-half exponent loss",
+          "domain": "single-base-fiber BABA marked presentations from binary codes of size 2^r and distance at least two with a systematic information set",
+          "input_model": "explicit ordered codeword relators; n grows with code width",
+          "quantifier": "universal"
+        },
+        "support_rank": 0,
+        "supported_level": "unresolved",
+        "unsupported_assertion": false
+      },
+      {
+        "asserted_level": "derived-review-pending",
+        "id": "SUFFIX-ELIMINATION",
+        "routes": [
+          {
+            "id": "suffix-entropy",
+            "support_rank": 3,
+            "supported_level": "derived-review-pending"
+          }
+        ],
+        "scope": {
+          "conclusion": "suffix witnesses permit at least r triangular appended-generator eliminations",
+          "domain": "single-base-fiber BABA marked presentations from binary codes of size 2^r and distance at least two",
+          "input_model": "explicit ordered codeword relators; n grows with code width",
+          "quantifier": "universal"
+        },
+        "support_rank": 3,
+        "supported_level": "derived-review-pending",
+        "unsupported_assertion": false
+      },
+      {
+        "asserted_level": "derived-review-pending",
+        "id": "SURFACE-ABSORPTION",
+        "routes": [
+          {
+            "id": "nielsen",
+            "support_rank": 3,
+            "supported_level": "derived-review-pending"
+          }
+        ],
+        "scope": {
+          "conclusion": "the invertible Nielsen substitution absorbs the coefficient into the fixed genus-two relation",
+          "domain": "all coefficient words disjoint from the five surface generators",
+          "input_model": "explicit ordered codeword relators; n grows with code width",
+          "quantifier": "universal"
+        },
+        "support_rank": 3,
+        "supported_level": "derived-review-pending",
+        "unsupported_assertion": false
+      },
+      {
+        "asserted_level": "derived-review-pending",
+        "id": "GLOBAL-BABA-BOUND",
+        "routes": [
+          {
+            "id": "global",
+            "support_rank": 3,
+            "supported_level": "derived-review-pending"
+          }
+        ],
+        "scope": {
+          "conclusion": "solution exponent is at most d+4 by global suffix/surface elimination",
+          "domain": "single-base-fiber BABA marked presentations from binary codes of size 2^r and distance at least two",
+          "input_model": "explicit ordered codeword relators; n grows with code width",
+          "quantifier": "universal"
+        },
+        "support_rank": 3,
+        "supported_level": "derived-review-pending",
+        "unsupported_assertion": false
+      },
+      {
+        "asserted_level": "derived-review-pending",
+        "id": "SYSTEMATIC-BABA-BOUND",
+        "routes": [
+          {
+            "id": "old-local",
+            "support_rank": 0,
+            "supported_level": "unresolved"
+          },
+          {
+            "id": "independent-global",
+            "support_rank": 3,
+            "supported_level": "derived-review-pending"
+          }
+        ],
+        "scope": {
+          "conclusion": "a uniform solution-exponent loss of at least one half holds",
+          "domain": "single-base-fiber BABA marked presentations from binary codes of size 2^r and distance at least two with a systematic information set",
+          "input_model": "explicit ordered codeword relators; n grows with code width",
+          "quantifier": "universal"
+        },
+        "support_rank": 3,
+        "supported_level": "derived-review-pending",
+        "unsupported_assertion": false
+      },
+      {
+        "asserted_level": "derived-review-pending",
+        "id": "ENCODED-RESTRICTION",
+        "routes": [
+          {
+            "id": "two-qft",
+            "support_rank": 3,
+            "supported_level": "derived-review-pending"
+          }
+        ],
+        "scope": {
+          "conclusion": "normalized carrier extraction with an implicit copy code costs two group QFTs plus polynomial reversible arithmetic",
+          "domain": "known K=C2 wr S_m inside S_(2m)",
+          "input_model": "real Young-basis physical Fourier column; efficient compatible group QFT primitives supplied",
+          "quantifier": "universal"
+        },
+        "support_rank": 3,
+        "supported_level": "derived-review-pending",
+        "unsupported_assertion": false
+      },
+      {
+        "asserted_level": "derived-review-pending",
+        "id": "FIXED-REFERENCE-IDENTIFICATION-BOUND",
+        "routes": [
+          {
+            "id": "orbit-likelihood",
+            "support_rank": 3,
+            "supported_level": "derived-review-pending"
+          }
+        ],
+        "scope": {
+          "conclusion": "average exact identification success is at most p(m)/(2m-1)!!",
+          "domain": "uniform fixed-point-free involutions in S_(2m)",
+          "input_model": "any copy count; complete final POVM invariant under one known reference K",
+          "quantifier": "universal"
+        },
+        "support_rank": 3,
+        "supported_level": "derived-review-pending",
+        "unsupported_assertion": false
+      },
+      {
+        "asserted_level": "unresolved",
+        "id": "BINARY-DETECTION-IMPOSSIBLE",
+        "routes": [],
+        "scope": {
+          "conclusion": "efficient binary detection is impossible",
+          "domain": "identity versus uniform hidden-involution class mixture",
+          "input_model": "physical coset states",
+          "quantifier": "universal"
+        },
+        "support_rank": 0,
+        "supported_level": "unresolved",
+        "unsupported_assertion": false
+      },
+      {
+        "asserted_level": "unresolved",
+        "id": "HIDDEN-INVOLUTION-DECODER",
+        "routes": [],
+        "scope": {
+          "conclusion": "a polynomial-time hidden-involution decoder with bounded error exists",
+          "domain": "full reduction-backed hidden-involution family",
+          "input_model": "physical coset-state samples",
+          "quantifier": "universal"
+        },
+        "support_rank": 0,
+        "supported_level": "unresolved",
+        "unsupported_assertion": false
+      }
+    ],
+    "issues": [
+      {
+        "claim_id": "LOCAL-SYSTEMATIC-BOUND",
+        "code": "unresolved-premise",
+        "detail": "CUBIC-LOCAL-LOSS",
+        "route_id": "local-face"
+      },
+      {
+        "claim_id": "SYSTEMATIC-BABA-BOUND",
+        "code": "unresolved-premise",
+        "detail": "LOCAL-SYSTEMATIC-BOUND",
+        "route_id": "old-local"
+      }
+    ],
+    "mathematical_truth_verified": false,
+    "schema_version": 1,
+    "scope": "Declared dependency and provenance audit only. Attestations remain research assertions, not machine-checked proofs.",
+    "speedup_claim_allowed": false,
+    "status": "declared-assertions-consistent-with-contracts",
+    "unresolved_claim_count": 4,
+    "unsupported_assertion_count": 0
+  },
   "proof_status_count": 104,
   "records": [
     {
@@ -15873,7 +16203,7 @@
     },
     {
       "candidate_id": "CODE-COSET-COLLECTIVE",
-      "evidence": "The workbench wrote 2 coset/nonabelian family negative-result record(s). | The workbench wrote 2 coset/nonabelian family negative-result record(s). | The workbench wrote 5 coset/nonabelian family negative-result record(s).",
+      "evidence": "The packed label capacity is polynomial, while the exact source mass of such small multiplicities vanishes superpolynomially. | It produces an implicit copy code. The logical target effect, physical access transfer and decoder remain unspecified. | All likelihoods coincide within each reference-matching orbit. There are p(m) orbits among (2m-1)!! hypotheses, so success is at most p(m)/(2m-1)!! even with arbitrarily many jointly invariant copies.",
       "field": "dequantization_check",
       "next_action": "Resolve dequantization findings or demote the candidate to a negative/blocked result.",
       "obligation_id": "PO-DEQUANTIZATION",

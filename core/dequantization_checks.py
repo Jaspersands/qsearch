@@ -11681,17 +11681,40 @@ def findings_from_negative_results(candidates: list[dict[str, Any]], negative_re
     findings: list[DequantizationFinding] = []
     anti_patterns = []
     for item in negative_results:
-        if item.get("id") == "TYPICAL-MULTIPLICITY-SINGLE-GAPPED-SEPARATOR-PACKING-OBSTRUCTION":
+        access_boundaries = {
+            "SYSTEMATIC-LOCAL-CUBIC-LOSS-PROOF-GAP": "SYSTEMATIC-LOCAL-PROOF-GAP",
+            "ENCODED-CARRIER-EXTRACTION-NOT-EXPLICIT-COPY-INDEX-OR-DECODER": "ENCODED-COPY-TARGET-EFFECT",
+            "FIXED-REFERENCE-INVARIANT-IDENTIFICATION-ORBIT-BOUND": "FIXED-REFERENCE-IDENTIFICATION",
+        }
+        if item.get("id") in access_boundaries:
+            for candidate in candidates:
+                if candidate["id"] in item.get("applies_to", []):
+                    findings.append(DequantizationFinding(
+                        id=f"DEQ-{candidate['id']}-{access_boundaries[item['id']]}",
+                        created_at=now, target_type="candidate", target_id=candidate["id"], severity="high",
+                        claim_under_test=item["claim"], evidence=item["reason_invalid"],
+                        required_action=item["lesson"] + " This is an access or symmetry boundary, not classical dequantization.",
+                        blocks_speedup_claim=True,
+                    ))
+        packing_ids = {
+            "TYPICAL-MULTIPLICITY-SINGLE-GAPPED-SEPARATOR-PACKING-OBSTRUCTION": "BRANCHING",
+            "TYPICAL-KRONECKER-COMPLETE-SEPARATOR-PACKING-OBSTRUCTION": "TENSOR",
+            "FAITHFUL-SIGNED-TENSOR-DIAGRAM-RANGE-MISSES-TYPICAL-SOURCE": "SIGNED-TENSOR-ACCESS",
+        }
+        if item.get("id") in packing_ids:
             for candidate in candidates:
                 if candidate["id"] not in item.get("applies_to", []):
                     continue
                 findings.append(DequantizationFinding(
-                    id=f"DEQ-{candidate['id']}-COMPLETE-SPECTRAL-LABEL-CAPACITY",
+                    id=f"DEQ-{candidate['id']}-{packing_ids[item['id']]}-COMPLETE-SPECTRAL-LABEL-CAPACITY",
                     created_at=now, target_type="candidate", target_id=candidate["id"],
                     severity="high",
-                    claim_under_test="A fixed number of normalized inverse-polynomial-gap observables supplies complete typical multiplicity labels.",
+                    claim_under_test=item.get("claim", "A fixed number of normalized inverse-polynomial-gap observables supplies complete typical multiplicity labels."),
                     evidence=item["reason_invalid"],
-                    required_action="Use a task-relevant coarse measurement, growing-depth hierarchy, or direct transform. This obstruction is not classical dequantization or an HSP circuit lower bound.",
+                    required_action=(
+                        "Supply a normalized Specht intertwiner and handle the nonfaithful diagram quotient, or use another representation. This is not a no-go for physical signed-tensor circuits."
+                        if packing_ids[item["id"]] == "SIGNED-TENSOR-ACCESS" else
+                        "Use a task-relevant coarse measurement, growing-depth hierarchy, or direct transform. This obstruction is not classical dequantization or an HSP circuit lower bound."),
                     blocks_speedup_claim=True,
                 ))
         evidence = item.get("evidence", {})

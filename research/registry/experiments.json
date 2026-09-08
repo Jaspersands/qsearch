@@ -14186,7 +14186,7 @@
       "All-face cancellation forces a block family with fixed surface loss.",
       "Higher-weight departures from block union are primitive constraints."
     ],
-    "hypothesis": "Proved an all-codimension actual-presentation no-go for every systematic nonpeelable stopping-core power-boundary family.",
+    "hypothesis": "The local-face proof may omit unresolved cubic-overlap colorings; test them against the separate global BABA argument.",
     "id": "EXP-CODE-SELF-DUAL-WREATH-SYSTEMATIC-STOPPING-CORE-NO-GO",
     "metrics": [
       "all_depth_systematic_stopping_core_no_go_theorem_count",
@@ -14205,10 +14205,10 @@
     "next_actions": [
       "Run qsearch.py systematic-stopping-core-no-go."
     ],
-    "positive_signal": "Proved an all-codimension actual-presentation no-go for every systematic nonpeelable stopping-core power-boundary family.",
+    "positive_signal": "A verified missing case or independent global certificate with accurate dependency scope.",
     "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
     "status": "planned",
-    "title": "Exp Code Self Dual Wreath Systematic Stopping Core No Go"
+    "title": "Systematic local-face proof gap and independent global check"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
@@ -16383,6 +16383,32 @@
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",
     "dependencies": [
+      "efficient symmetric and wreath-product QFT primitives",
+      "canonical matching transversal"
+    ],
+    "falsifiers": [
+      "normalization or covariance fails",
+      "postselection is hidden",
+      "the unknown centralizer is assumed known"
+    ],
+    "hypothesis": "Carrier extraction does not require explicit multiplicity labels.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-ENCODED-RESTRICTION",
+    "metrics": [
+      "finite_isometry_controls_passed",
+      "repeated_copy_blocks_verified"
+    ],
+    "next_actions": [
+      "test logical orbit-average action",
+      "specify a task-relevant effect and its information budget"
+    ],
+    "positive_signal": "Logical target-effect access on the implicit copy code with charged physical alignment.",
+    "protocol": "Check inverse G-QFT, reversible left-coset factorization and K-QFT as a normalized intertwiner.",
+    "status": "ready",
+    "title": "Normalized encoded subgroup restriction"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
       "coset_hidden_involution_foulkes_support_mass_probe.py"
     ],
     "falsifiers": [
@@ -17585,6 +17611,31 @@
     "protocol": "Evaluate exact representation-theoretic properties and validate metrics.",
     "status": "planned",
     "title": "Coset Hidden Involution Shared Conjugation Qsvt Lower Bound"
+  },
+  {
+    "candidate_id": "CODE-COSET-COLLECTIVE",
+    "dependencies": [
+      "https://math.dartmouth.edu/~orellana/hcentpart.pdf",
+      "exact h-even K-Plancherel marginal"
+    ],
+    "falsifiers": [
+      "the degree formula disagrees with exact paths",
+      "faithful-range source mass vanishes"
+    ],
+    "hypothesis": "A faithful signed-tensor centralizer representation covers typical required K-types.",
+    "id": "EXP-COSET-HIDDEN-INVOLUTION-SIGNED-TENSOR-ACCESS",
+    "metrics": [
+      "exact_degree_controls_passed",
+      "source_mass_scaling_record_count"
+    ],
+    "next_actions": [
+      "construct a normalized Specht-to-tensor intertwiner",
+      "audit quotient access when tensor degree exceeds rank"
+    ],
+    "positive_signal": "A source-preserving nonfaithful quotient or an alternative tensor embedding.",
+    "protocol": "Check the exact signed-tensor Bratteli graph and source marginal; apply a first-row tail bound.",
+    "status": "ready",
+    "title": "Signed-tensor diagram access and natural source coverage"
   },
   {
     "candidate_id": "CODE-COSET-COLLECTIVE",

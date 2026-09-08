@@ -37,6 +37,16 @@ commuting operators. This is not an HSP or general circuit lower bound.
 The next useful target is an adaptive coarse-label hierarchy or direct
 source-aware transform, not another fitted global separator.
 See [the derivation, assumptions, and attempted refutations](research/SPECTRAL_LABEL_BUDGET.md).
+The follow-up [signed-tensor access audit](research/SIGNED_TENSOR_ACCESS.md)
+also shows why the faithful diagram regime misses typical required K-types.
+It leaves physical quotient representations and implicit copy registers open.
+The [encoded restriction workbench](research/ENCODED_RESTRICTION.md) now checks
+normalized two-QFT carrier extraction, noncommuting logical orbit averages,
+and physical coset-register conventions. Its reference-orbit audit bounds
+fixed-reference invariant **identification**, not binary class detection.
+The [proof-route audit](research/PROOF_ROUTES.md) now checks scoped dependency
+contracts and pinned evidence. It catches unsupported assertions without
+pretending to check mathematical truth or cover the entire repository.
 
 Source-ranked S_14 scans remain **numerical algebra diagnostics**. Reports now
 retain generator matrices and separator coefficients for replay; caches are
@@ -274,6 +284,9 @@ python3 qsearch.py coset-hidden-involution-multiplicity-fiber-trace
 python3 qsearch.py coset-hidden-involution-high-mass-support-scan
 python3 qsearch.py coset-hidden-involution-source-weighted-support-portfolio
 python3 qsearch.py coset-hidden-involution-spectral-label-budget
+python3 qsearch.py coset-hidden-involution-signed-tensor-access
+python3 qsearch.py coset-hidden-involution-encoded-restriction
+python3 qsearch.py proof-routes
 python3 qsearch.py run EXP-COSET-HIDDEN-INVOLUTION-SPECTRAL-LABEL-BUDGET
 python3 qsearch.py coset-hidden-involution-natural-support-six-mass-audit
 python3 qsearch.py cfi-code-reduction

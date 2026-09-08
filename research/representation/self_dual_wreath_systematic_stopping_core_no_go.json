@@ -2,7 +2,7 @@
   "adversarial_audit": [
     {
       "objection": "High codimension permits a growing-power local word.",
-      "resolution": "False: every face generator occurs at most three times, and cubic overlap is explicitly primitive.",
+      "resolution": "Every face generator occurs at most three times, excluding growing proper powers, but this does not prove cubic overlap primitive.",
       "resolved": true
     },
     {
@@ -12,8 +12,8 @@
     },
     {
       "objection": "A systematic nonlinear code can saturate actual pressure.",
-      "resolution": "Not in this family: the all-depth upper bound restores at least one half exponent for arbitrary r,d and proper f.",
-      "resolved": true
+      "resolution": "This local argument is incomplete. A separate global suffix/surface argument addresses the family without assuming a cubic-face theorem.",
+      "resolved": false
     }
   ],
   "all_depth_certificate": {
@@ -26,24 +26,27 @@
     "graph_code_formula": "C_f={(x,f(x)):x in F_2^r}, f(0)=0, f proper",
     "higher_weight_deviation_case": "A first deviation from block union yields W(U)^-1W(f(x)) with a symmetric-difference generator occurring once, hence primitive.",
     "minimum_information_width": 2,
-    "nonempty_origin_face_case": "Every nonempty W(A)^-1W(B)^-1W(C) is primitive or quadratic and loses at least one half exponent.",
-    "status": "all-depth-systematic-stopping-core-pressure-no-go",
-    "symmetric_group_solution_exponent_upper_bound_formula": "d+4.5+o(1)",
-    "true_margin_lower_bound_formula": "0.5+0.5*log2(2^r/(2^r-1))",
-    "uniform_true_margin_lower_bound": 0.5,
-    "universal_systematic_core_no_go_verified": true
+    "nonempty_origin_face_case": "Once-occurring and quadratic words have local loss; cubic overlap has no uniform loss certificate in the dependency.",
+    "status": "local-face-proof-incomplete-global-suffix-route-separate",
+    "symmetric_group_solution_exponent_upper_bound_formula": "conditional on uniform cubic-overlap loss: d+4.5+o(1)",
+    "true_margin_lower_bound_formula": "conditional on uniform cubic-overlap loss: 0.5+0.5*log2(2^r/(2^r-1))",
+    "uniform_true_margin_lower_bound": 0.0,
+    "universal_systematic_core_no_go_verified": false
   },
   "claim_gate": {
     "all_multiple_base_fiber_patterns_controlled": false,
     "all_non_systematic_stopping_codes_controlled": false,
-    "all_systematic_stopping_core_power_boundaries_controlled": true,
+    "all_systematic_stopping_core_power_boundaries_controlled": false,
     "generic_integer_margin_uniformly_positive": false,
+    "independent_global_controls_verified": true,
+    "local_gap_refutes_global_BABA_bound": false,
+    "local_loss_proof_complete": false,
     "natural_component_M4_positive": false,
-    "reason": "Every systematic graph-code boundary has a primitive, quadratic, or fixed-surface relation restoring at least half an exponent.",
+    "reason": "The local universal loss is not established. Preserve the separate global suffix/surface route and distinguish proof gaps from counterexamples.",
     "speedup_claim_allowed": false,
     "systematic_stopping_core_actual_pressure_survives": false
   },
-  "created_at": "2026-08-11T16:11:11.332101+00:00",
+  "created_at": "2026-09-08T11:54:25.015574+00:00",
   "exhaustive_small_width_audits": [
     {
       "branch_exhaustion_failure_count": 0,
@@ -59,7 +62,8 @@
       "nonempty_origin_face_branch_count": 1,
       "normalized_coloring_count": 8,
       "proper_coloring_count": 1,
-      "status": "exhaustive-systematic-coloring-trichotomy-verified"
+      "status": "exhaustive-systematic-coloring-trichotomy-verified",
+      "unresolved_colorings": []
     },
     {
       "branch_exhaustion_failure_count": 0,
@@ -75,7 +79,8 @@
       "nonempty_origin_face_branch_count": 20,
       "normalized_coloring_count": 64,
       "proper_coloring_count": 21,
-      "status": "exhaustive-systematic-coloring-trichotomy-verified"
+      "status": "exhaustive-systematic-coloring-trichotomy-verified",
+      "unresolved_colorings": []
     },
     {
       "branch_exhaustion_failure_count": 4,
@@ -91,7 +96,97 @@
       "nonempty_origin_face_branch_count": 296,
       "normalized_coloring_count": 512,
       "proper_coloring_count": 301,
-      "status": "systematic-coloring-trichotomy-counterexample-found"
+      "status": "systematic-coloring-local-loss-proof-incomplete",
+      "unresolved_colorings": [
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0
+          ]
+        ],
+        [
+          [
+            0,
+            0,
+            0
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1
+          ],
+          [
+            0,
+            1,
+            0
+          ]
+        ]
+      ]
     },
     {
       "branch_exhaustion_failure_count": 0,
@@ -107,7 +202,8 @@
       "nonempty_origin_face_branch_count": 1,
       "normalized_coloring_count": 128,
       "proper_coloring_count": 1,
-      "status": "exhaustive-systematic-coloring-trichotomy-verified"
+      "status": "exhaustive-systematic-coloring-trichotomy-verified",
+      "unresolved_colorings": []
     },
     {
       "branch_exhaustion_failure_count": 0,
@@ -123,7 +219,8 @@
       "nonempty_origin_face_branch_count": 663,
       "normalized_coloring_count": 16384,
       "proper_coloring_count": 663,
-      "status": "exhaustive-systematic-coloring-trichotomy-verified"
+      "status": "exhaustive-systematic-coloring-trichotomy-verified",
+      "unresolved_colorings": []
     },
     {
       "branch_exhaustion_failure_count": 0,
@@ -139,34 +236,1030 @@
       "nonempty_origin_face_branch_count": 1,
       "normalized_coloring_count": 32768,
       "proper_coloring_count": 1,
-      "status": "exhaustive-systematic-coloring-trichotomy-verified"
+      "status": "exhaustive-systematic-coloring-trichotomy-verified",
+      "unresolved_colorings": []
     }
   ],
   "falsifiers_triggered": [
-    "Systematic nonlinear stopping codes do not saturate actual pressure.",
+    "The local dependency does not prove every nonempty face primitive or quadratic.",
     "Growing codimension does not create a growing-power face escape.",
     "All-face cancellation forces a block family with fixed surface loss.",
     "Higher-weight departures from block union are primitive constraints."
   ],
   "headline_metrics": {
-    "all_depth_systematic_stopping_core_no_go_theorem_count": 1,
+    "all_depth_systematic_stopping_core_no_go_theorem_count": 0,
     "control_failure_count": 0,
     "exact_block_union_branch_control_count": 2,
     "exhaustive_coloring_audit_failure_count": 1,
     "exhaustively_checked_normalized_coloring_count": 49864,
     "exhaustively_checked_proper_coloring_count": 988,
     "higher_weight_deviation_branch_control_count": 1,
+    "independent_global_controls_verified": 4,
     "minimum_stored_true_pressure_margin": 0.5963225389711972,
     "new_quantum_algorithm_count": 0,
     "nonempty_origin_face_branch_control_count": 2,
     "stored_branch_control_count": 5,
-    "uniform_true_pressure_margin_lower_bound": 0.5
+    "uniform_true_pressure_margin_lower_bound": 0.0,
+    "unresolved_local_coloring_count": 4
   },
+  "independent_global_controls": [
+    {
+      "all_codeword_identities_forced": true,
+      "all_unpruned_codeword_relations_present": true,
+      "code_size": 4,
+      "code_width": 5,
+      "codimension": 3,
+      "common_different_suffix_relations_present": true,
+      "control_id": "LOCAL-GAP-2-3-0",
+      "different_support_size": 4,
+      "eliminated_appended_generator_count": 2,
+      "exact_control_verified": true,
+      "information_dimension": 2,
+      "minimum_distance": 2,
+      "reducer_remaining_generator_count": 7,
+      "reducer_solution_exponent_certificate_source": "single-orientable-surface-genus-1",
+      "reducer_solution_exponent_upper_bound": 6.0,
+      "reducer_true_pressure_margin": 2.207518749639422,
+      "reference_removed_codeword": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "residual_appended_generator_upper_bound": 3,
+      "residual_target_word": [
+        -13,
+        -12,
+        13,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        -8,
+        -10,
+        8,
+        10,
+        -13,
+        12,
+        13
+      ],
+      "same_support_size": 3,
+      "split_relation_present": true,
+      "status": "all-codimension-single-fiber-BABA-core-subleading",
+      "suffix_branch_certificate": {
+        "anchor": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "average_forced_bound_verified": true,
+        "average_suffix_forced_coordinate_count": 3.0,
+        "entropy_chain_rule_value": 2.0,
+        "entropy_chain_rule_verified": true,
+        "entropy_codimension": 3.0,
+        "exact_suffix_branch_elimination_verified": true,
+        "explicit_anchor_bound_verified": true,
+        "frame_position_count": 5,
+        "status": "exact-integer-suffix-branch-generator-bound",
+        "suffix_branch_coordinates": [
+          4,
+          5
+        ],
+        "suffix_branch_witnesses": [
+          [
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1,
+            1
+          ]
+        ],
+        "suffix_forced_coordinates": [
+          1,
+          2,
+          3
+        ],
+        "suffix_forced_incidence_count": 12,
+        "support": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "support_size": 4,
+        "universal_finite_group_generator_upper_bound": 3
+      },
+      "suffix_elimination_steps": [
+        {
+          "anchor": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "coordinate_one_based": 4,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            1,
+            3,
+            4
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            1,
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "coordinate_one_based": 5,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            2,
+            4,
+            5
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            0,
+            1,
+            0,
+            1,
+            1
+          ]
+        }
+      ],
+      "support_difference_peeling_stalls_on_full_core": true,
+      "support_entropy_bits": 1.792481250360578,
+      "surface_coefficient_control": {
+        "coefficient_free_surface_word": [
+          -4,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          -5,
+          4,
+          5
+        ],
+        "coefficient_word": [
+          6,
+          7,
+          8
+        ],
+        "exact_coefficient_absorption_verified": true,
+        "inverse_nielsen_recovers_original": true,
+        "marked_surface_word": [
+          -4,
+          -8,
+          -7,
+          -6,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          6,
+          7,
+          8,
+          -5,
+          4,
+          5
+        ],
+        "nielsen_generator": 3,
+        "nielsen_image": [
+          3,
+          -8,
+          -7,
+          -6
+        ],
+        "orientable_surface_genus": 2,
+        "status": "arbitrary-coefficient-word-absorbed-into-genus-two-surface",
+        "transformed_surface_word": [
+          -4,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          -5,
+          4,
+          5
+        ]
+      },
+      "theoretical_remaining_generator_upper_bound": 8,
+      "theoretical_solution_exponent_upper_bound": 7.0,
+      "theoretical_true_pressure_margin_lower_bound": 1.2075187496394229
+    },
+    {
+      "all_codeword_identities_forced": true,
+      "all_unpruned_codeword_relations_present": true,
+      "code_size": 4,
+      "code_width": 5,
+      "codimension": 3,
+      "common_different_suffix_relations_present": true,
+      "control_id": "LOCAL-GAP-2-3-1",
+      "different_support_size": 4,
+      "eliminated_appended_generator_count": 2,
+      "exact_control_verified": true,
+      "information_dimension": 2,
+      "minimum_distance": 2,
+      "reducer_remaining_generator_count": 7,
+      "reducer_solution_exponent_certificate_source": "single-orientable-surface-genus-1",
+      "reducer_solution_exponent_upper_bound": 6.0,
+      "reducer_true_pressure_margin": 2.207518749639422,
+      "reference_removed_codeword": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "residual_appended_generator_upper_bound": 3,
+      "residual_target_word": [
+        -13,
+        -12,
+        13,
+        -8,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        8,
+        -13,
+        12,
+        13
+      ],
+      "same_support_size": 3,
+      "split_relation_present": true,
+      "status": "all-codimension-single-fiber-BABA-core-subleading",
+      "suffix_branch_certificate": {
+        "anchor": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "average_forced_bound_verified": true,
+        "average_suffix_forced_coordinate_count": 3.0,
+        "entropy_chain_rule_value": 2.0,
+        "entropy_chain_rule_verified": true,
+        "entropy_codimension": 3.0,
+        "exact_suffix_branch_elimination_verified": true,
+        "explicit_anchor_bound_verified": true,
+        "frame_position_count": 5,
+        "status": "exact-integer-suffix-branch-generator-bound",
+        "suffix_branch_coordinates": [
+          4,
+          5
+        ],
+        "suffix_branch_witnesses": [
+          [
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "suffix_forced_coordinates": [
+          1,
+          2,
+          3
+        ],
+        "suffix_forced_incidence_count": 12,
+        "support": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            1,
+            1
+          ]
+        ],
+        "support_size": 4,
+        "universal_finite_group_generator_upper_bound": 3
+      },
+      "suffix_elimination_steps": [
+        {
+          "anchor": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "coordinate_one_based": 4,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            1,
+            3,
+            4
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            1,
+            0,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "coordinate_one_based": 5,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "support_difference_peeling_stalls_on_full_core": true,
+      "support_entropy_bits": 1.792481250360578,
+      "surface_coefficient_control": {
+        "coefficient_free_surface_word": [
+          -4,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          -5,
+          4,
+          5
+        ],
+        "coefficient_word": [
+          6,
+          7,
+          8
+        ],
+        "exact_coefficient_absorption_verified": true,
+        "inverse_nielsen_recovers_original": true,
+        "marked_surface_word": [
+          -4,
+          -8,
+          -7,
+          -6,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          6,
+          7,
+          8,
+          -5,
+          4,
+          5
+        ],
+        "nielsen_generator": 3,
+        "nielsen_image": [
+          3,
+          -8,
+          -7,
+          -6
+        ],
+        "orientable_surface_genus": 2,
+        "status": "arbitrary-coefficient-word-absorbed-into-genus-two-surface",
+        "transformed_surface_word": [
+          -4,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          -5,
+          4,
+          5
+        ]
+      },
+      "theoretical_remaining_generator_upper_bound": 8,
+      "theoretical_solution_exponent_upper_bound": 7.0,
+      "theoretical_true_pressure_margin_lower_bound": 1.2075187496394229
+    },
+    {
+      "all_codeword_identities_forced": true,
+      "all_unpruned_codeword_relations_present": true,
+      "code_size": 4,
+      "code_width": 5,
+      "codimension": 3,
+      "common_different_suffix_relations_present": true,
+      "control_id": "LOCAL-GAP-2-3-2",
+      "different_support_size": 4,
+      "eliminated_appended_generator_count": 2,
+      "exact_control_verified": true,
+      "information_dimension": 2,
+      "minimum_distance": 2,
+      "reducer_remaining_generator_count": 7,
+      "reducer_solution_exponent_certificate_source": "single-orientable-surface-genus-1",
+      "reducer_solution_exponent_upper_bound": 6.0,
+      "reducer_true_pressure_margin": 2.207518749639422,
+      "reference_removed_codeword": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "residual_appended_generator_upper_bound": 3,
+      "residual_target_word": [
+        -13,
+        -12,
+        13,
+        -10,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        10,
+        -8,
+        10,
+        8,
+        -10,
+        -13,
+        12,
+        13
+      ],
+      "same_support_size": 3,
+      "split_relation_present": true,
+      "status": "all-codimension-single-fiber-BABA-core-subleading",
+      "suffix_branch_certificate": {
+        "anchor": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "average_forced_bound_verified": true,
+        "average_suffix_forced_coordinate_count": 3.0,
+        "entropy_chain_rule_value": 2.0,
+        "entropy_chain_rule_verified": true,
+        "entropy_codimension": 3.0,
+        "exact_suffix_branch_elimination_verified": true,
+        "explicit_anchor_bound_verified": true,
+        "frame_position_count": 5,
+        "status": "exact-integer-suffix-branch-generator-bound",
+        "suffix_branch_coordinates": [
+          4,
+          5
+        ],
+        "suffix_branch_witnesses": [
+          [
+            1,
+            1,
+            1,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1,
+            1
+          ]
+        ],
+        "suffix_forced_coordinates": [
+          1,
+          2,
+          3
+        ],
+        "suffix_forced_incidence_count": 12,
+        "support": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            0,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        ],
+        "support_size": 4,
+        "universal_finite_group_generator_upper_bound": 3
+      },
+      "suffix_elimination_steps": [
+        {
+          "anchor": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "coordinate_one_based": 4,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            1,
+            1,
+            1,
+            1,
+            0
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "coordinate_one_based": 5,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            2,
+            4,
+            5
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            0,
+            1,
+            0,
+            1,
+            1
+          ]
+        }
+      ],
+      "support_difference_peeling_stalls_on_full_core": true,
+      "support_entropy_bits": 1.792481250360578,
+      "surface_coefficient_control": {
+        "coefficient_free_surface_word": [
+          -4,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          -5,
+          4,
+          5
+        ],
+        "coefficient_word": [
+          6,
+          7,
+          8
+        ],
+        "exact_coefficient_absorption_verified": true,
+        "inverse_nielsen_recovers_original": true,
+        "marked_surface_word": [
+          -4,
+          -8,
+          -7,
+          -6,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          6,
+          7,
+          8,
+          -5,
+          4,
+          5
+        ],
+        "nielsen_generator": 3,
+        "nielsen_image": [
+          3,
+          -8,
+          -7,
+          -6
+        ],
+        "orientable_surface_genus": 2,
+        "status": "arbitrary-coefficient-word-absorbed-into-genus-two-surface",
+        "transformed_surface_word": [
+          -4,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          -5,
+          4,
+          5
+        ]
+      },
+      "theoretical_remaining_generator_upper_bound": 8,
+      "theoretical_solution_exponent_upper_bound": 7.0,
+      "theoretical_true_pressure_margin_lower_bound": 1.2075187496394229
+    },
+    {
+      "all_codeword_identities_forced": true,
+      "all_unpruned_codeword_relations_present": true,
+      "code_size": 4,
+      "code_width": 5,
+      "codimension": 3,
+      "common_different_suffix_relations_present": true,
+      "control_id": "LOCAL-GAP-2-3-3",
+      "different_support_size": 4,
+      "eliminated_appended_generator_count": 2,
+      "exact_control_verified": true,
+      "information_dimension": 2,
+      "minimum_distance": 2,
+      "reducer_remaining_generator_count": 7,
+      "reducer_solution_exponent_certificate_source": "single-orientable-surface-genus-2",
+      "reducer_solution_exponent_upper_bound": 6.0,
+      "reducer_true_pressure_margin": 2.207518749639422,
+      "reference_removed_codeword": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "residual_appended_generator_upper_bound": 3,
+      "residual_target_word": [
+        -13,
+        -12,
+        13,
+        -10,
+        -8,
+        -5,
+        -3,
+        -4,
+        3,
+        4,
+        5,
+        10,
+        8,
+        10,
+        8,
+        -10,
+        -8,
+        -13,
+        12,
+        13
+      ],
+      "same_support_size": 3,
+      "split_relation_present": true,
+      "status": "all-codimension-single-fiber-BABA-core-subleading",
+      "suffix_branch_certificate": {
+        "anchor": [
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "average_forced_bound_verified": true,
+        "average_suffix_forced_coordinate_count": 3.0,
+        "entropy_chain_rule_value": 2.0,
+        "entropy_chain_rule_verified": true,
+        "entropy_codimension": 3.0,
+        "exact_suffix_branch_elimination_verified": true,
+        "explicit_anchor_bound_verified": true,
+        "frame_position_count": 5,
+        "status": "exact-integer-suffix-branch-generator-bound",
+        "suffix_branch_coordinates": [
+          4,
+          5
+        ],
+        "suffix_branch_witnesses": [
+          [
+            1,
+            1,
+            0,
+            1,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        ],
+        "suffix_forced_coordinates": [
+          1,
+          2,
+          3
+        ],
+        "suffix_forced_incidence_count": 12,
+        "support": [
+          [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          [
+            0,
+            1,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            0,
+            1,
+            1,
+            1
+          ],
+          [
+            1,
+            1,
+            0,
+            1,
+            0
+          ]
+        ],
+        "support_size": 4,
+        "universal_finite_group_generator_upper_bound": 3
+      },
+      "suffix_elimination_steps": [
+        {
+          "anchor": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "coordinate_one_based": 4,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            1,
+            2,
+            4
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            1,
+            1,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "anchor": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "coordinate_one_based": 5,
+          "exact_triangular_elimination_verified": true,
+          "greater_generator_occurrence_count": 0,
+          "higher_suffix_equal": true,
+          "pivot_flipped": true,
+          "pivot_occurrence_count": 1,
+          "raw_relative_relation": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "status": "exact-suffix-triangular-pivot",
+          "witness": [
+            0,
+            1,
+            1,
+            1,
+            1
+          ]
+        }
+      ],
+      "support_difference_peeling_stalls_on_full_core": true,
+      "support_entropy_bits": 1.792481250360578,
+      "surface_coefficient_control": {
+        "coefficient_free_surface_word": [
+          -4,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          -5,
+          4,
+          5
+        ],
+        "coefficient_word": [
+          6,
+          7,
+          8
+        ],
+        "exact_coefficient_absorption_verified": true,
+        "inverse_nielsen_recovers_original": true,
+        "marked_surface_word": [
+          -4,
+          -8,
+          -7,
+          -6,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          6,
+          7,
+          8,
+          -5,
+          4,
+          5
+        ],
+        "nielsen_generator": 3,
+        "nielsen_image": [
+          3,
+          -8,
+          -7,
+          -6
+        ],
+        "orientable_surface_genus": 2,
+        "status": "arbitrary-coefficient-word-absorbed-into-genus-two-surface",
+        "transformed_surface_word": [
+          -4,
+          -3,
+          1,
+          -2,
+          -1,
+          2,
+          3,
+          -5,
+          4,
+          5
+        ]
+      },
+      "theoretical_remaining_generator_upper_bound": 8,
+      "theoretical_solution_exponent_upper_bound": 7.0,
+      "theoretical_true_pressure_margin_lower_bound": 1.2075187496394229
+    }
+  ],
   "proof_obligations": [
     {
       "obligation": "classify_all_systematic_stopping_core_power_boundaries",
-      "resolution": "The local-face, higher-deviation, and exact-block branches are mutually exhaustive and each has a uniform solution loss.",
-      "resolved": true
+      "resolution": "Local cubic-overlap loss is missing; do not infer it from finite Whitehead controls. Consult the separate global suffix/surface argument.",
+      "resolved": false
     },
     {
       "obligation": "classify_non_systematic_stopping_codes",
@@ -467,13 +1560,13 @@
       "true_pressure_margin_lower_bound": 1.0963225389711972
     }
   ],
-  "status": "systematic-stopping-core-no-go-certificate-failure",
-  "summary": "Proved an all-codimension actual-presentation no-go for every systematic nonpeelable stopping-core power-boundary family.",
+  "status": "local-face-proof-audited-uniform-cubic-loss-open",
+  "summary": "The local systematic-core no-go used an unproved cubic-overlap loss. Concrete uncovered colorings still satisfy the independent global BABA bound.",
   "theorem_contract": {
-    "pressure_conclusion": "Every systematic power-boundary core has true crossing margin strictly above 1/2 although the generic margin tends to zero.",
+    "pressure_conclusion": "The claimed universal local proof is incomplete. Independent global suffix/surface reduction covers the concrete local-gap examples.",
     "scope_limit": "Non-systematic codes, multiple base fibers, other frame/leaf patterns, and target-representation asymptotics remain open.",
     "systematic_scope": "Every normalized proper coloring f:F_2^r->F_2^d and its full graph-code support, with one row pruned on the other support side.",
     "three_branch_exhaustion": "A nonempty origin face, a higher block-union deviation, or exact global block union exhausts every proper systematic coloring.",
-    "uniform_solution_loss": "The three branches lose at least 1/2, 1, and 1 exponent respectively beyond the generic d+5 solution bound."
+    "uniform_solution_loss": "The nonempty-face branch still includes cubic overlap without a uniform local loss theorem. The other two branches retain their bounds."
   }
 }

@@ -1504,6 +1504,8 @@ from phase_state_workbench import write_hidden_shift_workbench
 from problem_ontology import write_problem_ontology
 from projective_geometry_code_search import ProjectiveGeometrySearchSpec, write_projective_geometry_code_search
 from proof_tracker import write_proof_status_report
+from proof_provenance import write_proof_route_audit
+from proof_provenance_seed import initialize_proof_routes
 from proof_work_queue import write_proof_work_queue
 from query_model_ledger import write_query_model_ledger
 from quasi_cyclic_canonicalization import write_qc_canonicalization_report
@@ -1562,6 +1564,8 @@ from coset_hidden_involution_source_weighted_support_portfolio import (
     write_source_weighted_support_portfolio_report,
 )
 from coset_hidden_involution_spectral_label_budget import write_spectral_label_budget_report
+from coset_hidden_involution_signed_tensor_access import write_signed_tensor_access_report
+from coset_hidden_involution_encoded_restriction import write_encoded_restriction_report
 from coset_hidden_involution_natural_support_six_mass_audit import (
     write_natural_support_six_mass_audit,
 )
@@ -18644,6 +18648,17 @@ def command_trends(args: argparse.Namespace) -> int:
     return 0
 
 
+def command_proof_routes(args: argparse.Namespace) -> int:
+    if args.initialize:
+        initialize_proof_routes()
+    report = write_proof_route_audit()
+    print(f"Proof-route contracts: {report['claim_count']}")
+    print(f"Unsupported assertions: {report['unsupported_assertion_count']}")
+    print(f"Unresolved claims: {report['unresolved_claim_count']}")
+    print("Contract audit only; mathematical truth and speedup claims are not certified.")
+    return int(report["unsupported_assertion_count"] > 0)
+
+
 def command_proofs(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     report = write_proof_status_report()
@@ -19551,6 +19566,22 @@ def command_coset_hidden_involution_source_weighted_support_portfolio(args: argp
 def command_coset_hidden_involution_spectral_label_budget(args: argparse.Namespace) -> int:
     initialize_seed_registry(overwrite=False)
     payload = write_spectral_label_budget_report(write_registry=not args.no_registry)
+    print(payload["summary"])
+    print(json.dumps(payload["headline_metrics"], indent=2))
+    return 0 if validate_registry()["valid"] else 1
+
+
+def command_coset_hidden_involution_signed_tensor_access(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_signed_tensor_access_report(write_registry=not args.no_registry)
+    print(payload["summary"])
+    print(json.dumps(payload["headline_metrics"], indent=2))
+    return 0 if validate_registry()["valid"] else 1
+
+
+def command_coset_hidden_involution_encoded_restriction(args: argparse.Namespace) -> int:
+    initialize_seed_registry(overwrite=False)
+    payload = write_encoded_restriction_report(write_registry=not args.no_registry)
     print(payload["summary"])
     print(json.dumps(payload["headline_metrics"], indent=2))
     return 0 if validate_registry()["valid"] else 1
@@ -26766,6 +26797,9 @@ def build_parser() -> argparse.ArgumentParser:
     proofs = subparsers.add_parser("proofs", help="Build per-candidate proof-obligation status records.")
     proofs.add_argument("--verbose", action="store_true")
     proofs.set_defaults(func=command_proofs)
+    proof_routes = subparsers.add_parser("proof-routes", help="Audit scoped proof dependencies and pinned evidence; not mathematical proof checking.")
+    proof_routes.add_argument("--initialize", action="store_true", help="Create the curated initial manifest once; never overwrite existing evidence pins.")
+    proof_routes.set_defaults(func=command_proof_routes)
 
     reductions = subparsers.add_parser(
         "reductions",
@@ -26994,6 +27028,14 @@ def build_parser() -> argparse.ArgumentParser:
                                          help="Audit the exact source-mass capacity of normalized spectral labels.")
     label_budget.add_argument("--no-registry", action="store_true")
     label_budget.set_defaults(func=command_coset_hidden_involution_spectral_label_budget)
+    signed_access = subparsers.add_parser("coset-hidden-involution-signed-tensor-access",
+                                          help="Audit signed-tensor diagram degrees against natural K-type source mass.")
+    signed_access.add_argument("--no-registry", action="store_true")
+    signed_access.set_defaults(func=command_coset_hidden_involution_signed_tensor_access)
+    encoded_access = subparsers.add_parser("coset-hidden-involution-encoded-restriction",
+                                           help="Verify normalized subgroup carrier extraction with an implicit copy code.")
+    encoded_access.add_argument("--no-registry", action="store_true")
+    encoded_access.set_defaults(func=command_coset_hidden_involution_encoded_restriction)
     parser_coset_hidden_involution_natural_support_six_mass_audit = subparsers.add_parser(
         "coset-hidden-involution-natural-support-six-mass-audit",
         help="Measure exact natural-source coverage of finite support-six multiplicity controls and rank untested high-mass blocks.",

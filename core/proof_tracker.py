@@ -413,6 +413,9 @@ SOURCE_WEIGHTED_SUPPORT_PORTFOLIO_PATH = Path(
 SPECTRAL_LABEL_BUDGET_PATH = Path(
     "research/representation/coset_hidden_involution_spectral_label_budget.json"
 )
+SIGNED_TENSOR_ACCESS_PATH = Path(
+    "research/representation/coset_hidden_involution_signed_tensor_access.json"
+)
 NATURAL_SUPPORT_SIX_MASS_AUDIT_PATH = Path(
     "research/representation/"
     "coset_hidden_involution_natural_support_six_mass_audit.json"
@@ -1557,7 +1560,79 @@ def _spectral_label_budget_lemmas(candidate_id: str) -> list[LemmaRecord]:
             status="blocked-no-coherent-coarse-label-hierarchy-or-decoder",
             falsification_test="Specify reversible projector access, per-node outcome capacity, accumulated error and surviving information; reject dense eigendecomposition disguised as a compiler.",
         ),
+        LemmaRecord(
+            id=f"LEMMA-{candidate_id}-TENSOR-SPECTRAL-LABEL-CAPACITY",
+            candidate_id=candidate_id,
+            statement="For unpostselected fixed-k order-two coset input, q{g<=L} <= 2^k L I_n^(k+1)/(n!)^k; complete typical fixed-count gapped spectra are obstructed for k>=2.",
+            depends_on=["PO-INPUT-MODEL", "PO-MEASUREMENT", "PO-SUCCESS"],
+            status=("derived-scoped-tensor-packing-review-pending"
+                    if budget.get("claim_gate", {}).get("unpostselected_tensor_source_complete_label_route_obstructed", False)
+                    else "blocked-tensor-label-budget-missing"),
+            falsification_test="Check the Plancherel tensor law and rho_h^tensor(k)<=2^k I/|G|^k. Do not carry the unconditioned mass bound through postselection or assume uniform conditional copy labels.",
+        ),
     ]
+
+
+def _signed_tensor_access_lemmas(candidate_id: str) -> list[LemmaRecord]:
+    try:
+        report = json.loads(SIGNED_TENSOR_ACCESS_PATH.read_text())
+    except (OSError, ValueError):
+        report = {}
+    gate = report.get("claim_gate", {})
+    derived = bool(gate.get("exact_finite_controls_passed", False)
+                   and gate.get("faithful_range_source_coverage_obstruction_derived", False))
+    return [LemmaRecord(
+        id=f"LEMMA-{candidate_id}-SIGNED-TENSOR-SOURCE-ACCESS", candidate_id=candidate_id,
+        statement="The signed-tensor minimum degree is |beta|+2(|alpha|-alpha_1); tensor degrees k<=m cover exponentially vanishing necessary K-type source mass.",
+        depends_on=["PO-FAMILY", "PO-INPUT-MODEL", "PO-SUCCESS"],
+        status="derived-signed-tensor-coverage-obstruction-review-pending" if derived else "blocked-signed-tensor-access-audit-missing",
+        falsification_test="Verify all cross-box moves, central parity, faithful diagram threshold and the parity-conditioned Plancherel first-row bound. Do not transfer to another tensor alphabet or rule out physical quotients.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-SIGNED-TENSOR-QUOTIENT-INTERTWINER", candidate_id=candidate_id,
+        statement="An explicit normalized Specht-to-signed-tensor intertwiner and source-aware quotient transform preserve the required multiplicity spaces.",
+        depends_on=[f"LEMMA-{candidate_id}-SIGNED-TENSOR-SOURCE-ACCESS", "PO-MEASUREMENT", "PO-COMPLEXITY"],
+        status="blocked-no-normalized-source-aware-quotient-intertwiner",
+        falsification_test="Account for multiplicity capacity, the diagram Gram kernel and implementable coherent access; type reachability is not an embedding.",
+    )]
+
+
+def _encoded_restriction_lemmas(candidate_id: str) -> list[LemmaRecord]:
+    try:
+        report = json.loads(Path("research/representation/coset_hidden_involution_encoded_restriction.json").read_text())
+    except (OSError, ValueError):
+        report = {}
+    gate = report.get("claim_gate", {})
+    checked = bool(gate.get("finite_encoded_isometry_verified", False)
+                   and gate.get("polynomial_reduction_given_qft_primitives_derived", False))
+    return [LemmaRecord(
+        id=f"LEMMA-{candidate_id}-ENCODED-RESTRICTION-ACCESS", candidate_id=candidate_id,
+        statement="For known K, inverse G-QFT, reversible left-coset factoring and K-QFT extract the K carrier with normalized implicit multiplicity access.",
+        depends_on=["PO-INPUT-MODEL", "PO-QUANTUM-MECHANISM", "PO-COMPLEXITY"],
+        status="derived-encoded-restriction-review-pending" if checked else "blocked-encoded-restriction-evidence-missing",
+        falsification_test="Check Fourier row/column conventions, the bijection g=k*t, normalized intertwining, repeated-copy codes and QFT primitive costs. This is not an explicit copy decoder.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-FIXED-REFERENCE-IDENTIFICATION", candidate_id=candidate_id,
+        statement="Globally K-invariant effects cannot identify a uniform hidden matching with success above p(m)/(2m-1)!!, regardless of copy count. Binary class detection is not excluded.",
+        depends_on=["PO-INPUT-MODEL", "PO-MEASUREMENT", "PO-SUCCESS"],
+        status="derived-reference-orbit-bound-review-pending" if gate.get("fixed_reference_invariant_identification_obstruction_derived", False) else "blocked-reference-orbit-audit-missing",
+        falsification_test="Verify likelihood constancy on reference-matching orbits and uniform prior. Do not transfer to carrier-sensitive effects, quantum memory across different references, or binary decision.",
+    ), LemmaRecord(
+        id=f"LEMMA-{candidate_id}-ENCODED-TARGET-EFFECT", candidate_id=candidate_id,
+        statement="The encoded copy code supports an efficient task-relevant multi-copy effect with physical coset access and unknown-centralizer alignment fully charged.",
+        depends_on=[f"LEMMA-{candidate_id}-ENCODED-RESTRICTION-ACCESS", "PO-MEASUREMENT", "PO-SUCCESS"],
+        status="blocked-no-symmetry-resolved-logical-target-measurement",
+        falsification_test="Reject implicit access as a substitute for an actual effect; audit any discarded carrier and candidate-controlled alignment or aggregation.",
+    )]
+
+
+def _systematic_local_proof_gap_lemmas(candidate_id: str) -> list[LemmaRecord]:
+    return [LemmaRecord(
+        id=f"LEMMA-{candidate_id}-SYSTEMATIC-LOCAL-CUBIC-LOSS", candidate_id=candidate_id,
+        statement="The local face proof needs a uniform cubic-overlap loss; its historical universal no-go flag was unsupported. The separate global suffix/surface BABA proof bypasses this dependency.",
+        depends_on=["PO-NO-GO", "PO-COMPLEXITY"],
+        status="blocked-local-cubic-loss-superseded-by-independent-global-route",
+        falsification_test="Replay the four width-(2,3) colorings in the systematic-core report. Check missing local loss and independent global certificates separately; do not reopen single-fiber BABA solely from this gap.",
+    )]
 
 
 def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
@@ -1671,6 +1746,9 @@ def lemma_templates(candidate: dict[str, Any]) -> list[LemmaRecord]:
         records.extend(_multiplicity_fiber_trace_lemmas(candidate_id))
         records.extend(_high_mass_support_scan_lemmas(candidate_id))
         records.extend(_spectral_label_budget_lemmas(candidate_id))
+        records.extend(_signed_tensor_access_lemmas(candidate_id))
+        records.extend(_encoded_restriction_lemmas(candidate_id))
+        records.extend(_systematic_local_proof_gap_lemmas(candidate_id))
     if kind == "coset-state":
         try:
             covariant_frame = (
@@ -11872,6 +11950,9 @@ def build_proof_status_report() -> dict[str, Any]:
     blocking = [record for record in records if record["status"] in blocking_statuses]
     needs_evidence = [record for record in records if record["status"] == "needs-experiment-evidence"]
     proof_debt = build_proof_debt_records(records)
+    from proof_provenance import MANIFEST_PATH, audit_proof_routes
+    provenance = audit_proof_routes(json.loads(MANIFEST_PATH.read_text())) if MANIFEST_PATH.exists() else None
+    dependency_blocked = bool(provenance and provenance["unsupported_assertion_count"])
     return {
         "created_at": utc_now(),
         "candidate_count": len(load_candidates()),
@@ -11882,7 +11963,8 @@ def build_proof_status_report() -> dict[str, Any]:
         "lemma_count": proof_debt["lemma_count"],
         "reduction_edge_count": proof_debt["reduction_edge_count"],
         "counterexample_search_count": proof_debt["counterexample_search_count"],
-        "status": "proof-blocked" if blocking else "proof-obligations-textually-satisfied",
+        "status": "proof-blocked" if blocking or dependency_blocked else "proof-obligations-textually-satisfied",
+        "proof_route_audit": provenance,
         "proof_debt": proof_debt,
         "records": records,
     }

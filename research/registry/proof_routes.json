@@ -1,0 +1,350 @@
+{
+  "schema_version": 1,
+  "scope": "Curated review-pending route attestations, not formal proofs or exhaustive repository coverage.",
+  "claims": [
+    {
+      "id": "CUBIC-LOCAL-LOSS",
+      "scope": {
+        "domain": "all normalized proper binary face-color triples at growing check width",
+        "input_model": "explicit ordered codeword relators; n grows with code width",
+        "conclusion": "every nonempty cubic-overlap face has uniform symmetric-group solution-exponent loss at least one half",
+        "quantifier": "universal"
+      },
+      "asserted_level": "unresolved",
+      "routes": []
+    },
+    {
+      "id": "LOCAL-SYSTEMATIC-BOUND",
+      "scope": {
+        "domain": "single-base-fiber BABA marked presentations from binary codes of size 2^r and distance at least two with a systematic information set",
+        "input_model": "explicit ordered codeword relators; n grows with code width",
+        "conclusion": "the local face/deviation/block proof gives a uniform one-half exponent loss",
+        "quantifier": "universal"
+      },
+      "asserted_level": "unresolved",
+      "routes": [
+        {
+          "id": "local-face",
+          "conclusion_evidence": [
+            "E-LOCAL-SYSTEMATIC-BOUND-local"
+          ],
+          "premises": [
+            "CUBIC-LOCAL-LOSS"
+          ],
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "id": "SUFFIX-ELIMINATION",
+      "scope": {
+        "domain": "single-base-fiber BABA marked presentations from binary codes of size 2^r and distance at least two",
+        "input_model": "explicit ordered codeword relators; n grows with code width",
+        "conclusion": "suffix witnesses permit at least r triangular appended-generator eliminations",
+        "quantifier": "universal"
+      },
+      "asserted_level": "derived-review-pending",
+      "routes": [
+        {
+          "id": "suffix-entropy",
+          "conclusion_evidence": [
+            "E-SUFFIX-ELIMINATION-source"
+          ],
+          "premises": [],
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "id": "SURFACE-ABSORPTION",
+      "scope": {
+        "domain": "all coefficient words disjoint from the five surface generators",
+        "input_model": "explicit ordered codeword relators; n grows with code width",
+        "conclusion": "the invertible Nielsen substitution absorbs the coefficient into the fixed genus-two relation",
+        "quantifier": "universal"
+      },
+      "asserted_level": "derived-review-pending",
+      "routes": [
+        {
+          "id": "nielsen",
+          "conclusion_evidence": [
+            "E-SURFACE-ABSORPTION-source"
+          ],
+          "premises": [],
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "id": "GLOBAL-BABA-BOUND",
+      "scope": {
+        "domain": "single-base-fiber BABA marked presentations from binary codes of size 2^r and distance at least two",
+        "input_model": "explicit ordered codeword relators; n grows with code width",
+        "conclusion": "solution exponent is at most d+4 by global suffix/surface elimination",
+        "quantifier": "universal"
+      },
+      "asserted_level": "derived-review-pending",
+      "routes": [
+        {
+          "id": "global",
+          "conclusion_evidence": [
+            "E-GLOBAL-BABA-BOUND-source"
+          ],
+          "premises": [
+            "SUFFIX-ELIMINATION",
+            "SURFACE-ABSORPTION"
+          ],
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "id": "SYSTEMATIC-BABA-BOUND",
+      "scope": {
+        "domain": "single-base-fiber BABA marked presentations from binary codes of size 2^r and distance at least two with a systematic information set",
+        "input_model": "explicit ordered codeword relators; n grows with code width",
+        "conclusion": "a uniform solution-exponent loss of at least one half holds",
+        "quantifier": "universal"
+      },
+      "asserted_level": "derived-review-pending",
+      "routes": [
+        {
+          "id": "old-local",
+          "conclusion_evidence": [
+            "E-SYSTEMATIC-BABA-BOUND-local"
+          ],
+          "premises": [
+            "LOCAL-SYSTEMATIC-BOUND"
+          ],
+          "diagnostics": []
+        },
+        {
+          "id": "independent-global",
+          "conclusion_evidence": [
+            "E-SYSTEMATIC-BABA-BOUND-global"
+          ],
+          "premises": [
+            "GLOBAL-BABA-BOUND"
+          ],
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "id": "ENCODED-RESTRICTION",
+      "scope": {
+        "domain": "known K=C2 wr S_m inside S_(2m)",
+        "input_model": "real Young-basis physical Fourier column; efficient compatible group QFT primitives supplied",
+        "conclusion": "normalized carrier extraction with an implicit copy code costs two group QFTs plus polynomial reversible arithmetic",
+        "quantifier": "universal"
+      },
+      "asserted_level": "derived-review-pending",
+      "routes": [
+        {
+          "id": "two-qft",
+          "conclusion_evidence": [
+            "E-ENCODED-RESTRICTION-derivation",
+            "E-ENCODED-RESTRICTION-source"
+          ],
+          "premises": [],
+          "diagnostics": [
+            "E-ENCODED-RESTRICTION-diagnostic"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "FIXED-REFERENCE-IDENTIFICATION-BOUND",
+      "scope": {
+        "domain": "uniform fixed-point-free involutions in S_(2m)",
+        "input_model": "any copy count; complete final POVM invariant under one known reference K",
+        "conclusion": "average exact identification success is at most p(m)/(2m-1)!!",
+        "quantifier": "universal"
+      },
+      "asserted_level": "derived-review-pending",
+      "routes": [
+        {
+          "id": "orbit-likelihood",
+          "conclusion_evidence": [
+            "E-FIXED-REFERENCE-IDENTIFICATION-BOUND-derivation"
+          ],
+          "premises": [],
+          "diagnostics": []
+        }
+      ]
+    },
+    {
+      "id": "BINARY-DETECTION-IMPOSSIBLE",
+      "scope": {
+        "domain": "identity versus uniform hidden-involution class mixture",
+        "input_model": "physical coset states",
+        "conclusion": "efficient binary detection is impossible",
+        "quantifier": "universal"
+      },
+      "asserted_level": "unresolved",
+      "routes": []
+    },
+    {
+      "id": "HIDDEN-INVOLUTION-DECODER",
+      "scope": {
+        "domain": "full reduction-backed hidden-involution family",
+        "input_model": "physical coset-state samples",
+        "conclusion": "a polynomial-time hidden-involution decoder with bounded error exists",
+        "quantifier": "universal"
+      },
+      "asserted_level": "unresolved",
+      "routes": []
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E-LOCAL-SYSTEMATIC-BOUND-local",
+      "path": "theorems/self_dual_wreath_systematic_stopping_core_no_go.py",
+      "sha256": "fec578228b0b706dcff444a84d0bf0bdac26e4dd08191fe9051618033eae180b",
+      "claim_id": "LOCAL-SYSTEMATIC-BOUND",
+      "scope": {
+        "domain": "single-base-fiber BABA marked presentations from binary codes of size 2^r and distance at least two with a systematic information set",
+        "input_model": "explicit ordered codeword relators; n grows with code width",
+        "conclusion": "the local face/deviation/block proof gives a uniform one-half exponent loss",
+        "quantifier": "universal"
+      },
+      "level": "derived-review-pending",
+      "predicates": []
+    },
+    {
+      "id": "E-SUFFIX-ELIMINATION-source",
+      "path": "theorems/self_dual_wreath_frame_subword_entropy.py",
+      "sha256": "d5760db4e63a17c6817a33796f9299eb5bb921ce69a513fe10f180623196cfdb",
+      "claim_id": "SUFFIX-ELIMINATION",
+      "scope": {
+        "domain": "single-base-fiber BABA marked presentations from binary codes of size 2^r and distance at least two",
+        "input_model": "explicit ordered codeword relators; n grows with code width",
+        "conclusion": "suffix witnesses permit at least r triangular appended-generator eliminations",
+        "quantifier": "universal"
+      },
+      "level": "derived-review-pending",
+      "predicates": []
+    },
+    {
+      "id": "E-SURFACE-ABSORPTION-source",
+      "path": "theorems/self_dual_wreath_codimension_two_universal_no_go.py",
+      "sha256": "a4a27156340662715877a53467ced41d0e713d3b60d07f92ff33da355b5fe868",
+      "claim_id": "SURFACE-ABSORPTION",
+      "scope": {
+        "domain": "all coefficient words disjoint from the five surface generators",
+        "input_model": "explicit ordered codeword relators; n grows with code width",
+        "conclusion": "the invertible Nielsen substitution absorbs the coefficient into the fixed genus-two relation",
+        "quantifier": "universal"
+      },
+      "level": "derived-review-pending",
+      "predicates": []
+    },
+    {
+      "id": "E-GLOBAL-BABA-BOUND-source",
+      "path": "theorems/self_dual_wreath_all_codimension_baba_no_go.py",
+      "sha256": "ca92a86cae51917f1bbd1768bf62a6f2345ef7f4bd358f7bf3a097bd6c43da95",
+      "claim_id": "GLOBAL-BABA-BOUND",
+      "scope": {
+        "domain": "single-base-fiber BABA marked presentations from binary codes of size 2^r and distance at least two",
+        "input_model": "explicit ordered codeword relators; n grows with code width",
+        "conclusion": "solution exponent is at most d+4 by global suffix/surface elimination",
+        "quantifier": "universal"
+      },
+      "level": "derived-review-pending",
+      "predicates": []
+    },
+    {
+      "id": "E-SYSTEMATIC-BABA-BOUND-local",
+      "path": "theorems/self_dual_wreath_systematic_stopping_core_no_go.py",
+      "sha256": "fec578228b0b706dcff444a84d0bf0bdac26e4dd08191fe9051618033eae180b",
+      "claim_id": "SYSTEMATIC-BABA-BOUND",
+      "scope": {
+        "domain": "single-base-fiber BABA marked presentations from binary codes of size 2^r and distance at least two with a systematic information set",
+        "input_model": "explicit ordered codeword relators; n grows with code width",
+        "conclusion": "a uniform solution-exponent loss of at least one half holds",
+        "quantifier": "universal"
+      },
+      "level": "derived-review-pending",
+      "predicates": []
+    },
+    {
+      "id": "E-SYSTEMATIC-BABA-BOUND-global",
+      "path": "theorems/self_dual_wreath_all_codimension_baba_no_go.py",
+      "sha256": "ca92a86cae51917f1bbd1768bf62a6f2345ef7f4bd358f7bf3a097bd6c43da95",
+      "claim_id": "SYSTEMATIC-BABA-BOUND",
+      "scope": {
+        "domain": "single-base-fiber BABA marked presentations from binary codes of size 2^r and distance at least two with a systematic information set",
+        "input_model": "explicit ordered codeword relators; n grows with code width",
+        "conclusion": "a uniform solution-exponent loss of at least one half holds",
+        "quantifier": "universal"
+      },
+      "level": "derived-review-pending",
+      "predicates": []
+    },
+    {
+      "id": "E-ENCODED-RESTRICTION-diagnostic",
+      "path": "research/representation/coset_hidden_involution_encoded_restriction.json",
+      "sha256": "4e664e60923eba1e23c6819071216325dc4116ff4e6bf915e0c6cb7360b3a011",
+      "claim_id": "ENCODED-RESTRICTION",
+      "scope": {
+        "domain": "known K=C2 wr S_m inside S_(2m)",
+        "input_model": "real Young-basis physical Fourier column; efficient compatible group QFT primitives supplied",
+        "conclusion": "normalized carrier extraction with an implicit copy code costs two group QFTs plus polynomial reversible arithmetic",
+        "quantifier": "universal"
+      },
+      "level": "observed",
+      "predicates": [
+        {
+          "pointer": "/claim_gate/finite_encoded_isometry_verified",
+          "equals": true
+        },
+        {
+          "pointer": "/claim_gate/physical_real_symmetric_column_convention_verified",
+          "equals": true
+        }
+      ]
+    },
+    {
+      "id": "E-ENCODED-RESTRICTION-derivation",
+      "path": "research/ENCODED_RESTRICTION.md",
+      "sha256": "ad22edbede6cef526e0b32de428a940f1b6d01ee59832af12758cea613fbceb0",
+      "claim_id": "ENCODED-RESTRICTION",
+      "scope": {
+        "domain": "known K=C2 wr S_m inside S_(2m)",
+        "input_model": "real Young-basis physical Fourier column; efficient compatible group QFT primitives supplied",
+        "conclusion": "normalized carrier extraction with an implicit copy code costs two group QFTs plus polynomial reversible arithmetic",
+        "quantifier": "universal"
+      },
+      "level": "derived-review-pending",
+      "predicates": []
+    },
+    {
+      "id": "E-ENCODED-RESTRICTION-source",
+      "path": "theorems/coset_hidden_involution_encoded_restriction.py",
+      "sha256": "860f78a00cc0e2c0efeee9bfc5bc60149d0cc8e3b781b520cd74b61fb7a01eae",
+      "claim_id": "ENCODED-RESTRICTION",
+      "scope": {
+        "domain": "known K=C2 wr S_m inside S_(2m)",
+        "input_model": "real Young-basis physical Fourier column; efficient compatible group QFT primitives supplied",
+        "conclusion": "normalized carrier extraction with an implicit copy code costs two group QFTs plus polynomial reversible arithmetic",
+        "quantifier": "universal"
+      },
+      "level": "derived-review-pending",
+      "predicates": []
+    },
+    {
+      "id": "E-FIXED-REFERENCE-IDENTIFICATION-BOUND-derivation",
+      "path": "research/ENCODED_RESTRICTION.md",
+      "sha256": "ad22edbede6cef526e0b32de428a940f1b6d01ee59832af12758cea613fbceb0",
+      "claim_id": "FIXED-REFERENCE-IDENTIFICATION-BOUND",
+      "scope": {
+        "domain": "uniform fixed-point-free involutions in S_(2m)",
+        "input_model": "any copy count; complete final POVM invariant under one known reference K",
+        "conclusion": "average exact identification success is at most p(m)/(2m-1)!!",
+        "quantifier": "universal"
+      },
+      "level": "derived-review-pending",
+      "predicates": []
+    }
+  ]
+}

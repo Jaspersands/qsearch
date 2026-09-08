@@ -8,7 +8,7 @@
     "undefined_circuit_boxes_promoted": false,
     "undercharged_mechanism_promoted": false
   },
-  "created_at": "2026-07-15T11:12:39.689789+00:00",
+  "created_at": "2026-09-08T11:56:13.675108+00:00",
   "evaluations": [
     {
       "additional_proof_obligations": [],
@@ -134,12 +134,14 @@
         "Block-encode the state-dependent transition filter with controlled conditioning.",
         "Decode the hidden involution and beat legal graph/code baselines on the source family."
       ],
-      "decision": "proposal-only-missing-proof-capabilities",
+      "decision": "rejected",
       "full_source_family_coverage": true,
       "holevo_copy_budget_obligation_attached": true,
       "id": "MECH-JM-LABEL-MULTIPLICITY-RECOUPLING",
       "interface_issues": [],
-      "known_no_go_violations": [],
+      "known_no_go_violations": [
+        "Spectral packing obstructs this fixed-count, bounded-norm, inverse-polynomial-gap complete-label primitive on the full source family. Direct transforms and growing-depth hierarchies are different primitives."
+      ],
       "minimum_copy_budget_rule": "k >= ceil([log2|C|-h2(epsilon)-epsilon*log2(|C|-1)]/chi_1), with chi_1 from the exact involution character formula",
       "missing_capabilities": [
         "CAP-GAPPED-KRONECKER-MULTIPLICITY-TRANSFORM",
@@ -147,9 +149,9 @@
         "CAP-KCOPY-RACAH-ASSOCIATOR",
         "CAP-STATE-TRANSITION-FILTER"
       ],
-      "priority_score": 104,
+      "priority_score": 84,
       "proof_gate_eligible": false,
-      "rationale": "The architecture targets the right interface but names unimplemented proof-critical primitives.",
+      "rationale": "Known no-go or typed-interface failure invalidates the architecture.",
       "stages": [
         "PREPARE_COSET_K",
         "SN_QFT_K",
@@ -161,6 +163,40 @@
         "CLASSICAL_VERIFY"
       ],
       "title": "YJM label front end with explicit residual multiplicity-space recoupling",
+      "typed_interfaces_valid": true
+    },
+    {
+      "additional_proof_obligations": [
+        "Verify the normalized two-QFT and physical-column contract, including primitive precision and workspace.",
+        "Specify how the final effect breaks fixed-reference invariance; never grant the unknown centralizer or aligned h-even source law.",
+        "Construct the actual logical effect with source-aware normalization and error, without complete fixed-count spectral labels.",
+        "Derive its outcome law and polynomial hidden-involution decoder, then attack it with legal classical invariants and tensor contractions.",
+        "Binary detection is a separate task and requires its own reduction; it must not be passed off as identification."
+      ],
+      "decision": "proposal-only-missing-proof-capabilities",
+      "full_source_family_coverage": true,
+      "holevo_copy_budget_obligation_attached": true,
+      "id": "MECH-ENCODED-REFERENCE-SYMMETRY-BREAKING",
+      "interface_issues": [],
+      "known_no_go_violations": [],
+      "minimum_copy_budget_rule": "k >= ceil([log2|C|-h2(epsilon)-epsilon*log2(|C|-1)]/chi_1), with chi_1 from the exact involution character formula",
+      "missing_capabilities": [
+        "CAP-ENCODED-K-CARRIER-RESTRICTION",
+        "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
+        "CAP-SYMMETRY-BREAKING-LOGICAL-EFFECT"
+      ],
+      "priority_score": 110,
+      "proof_gate_eligible": false,
+      "rationale": "The architecture targets the right interface but names unimplemented proof-critical primitives.",
+      "stages": [
+        "PREPARE_COSET_K",
+        "SN_QFT_K",
+        "ENCODED_REFERENCE_RESTRICTION",
+        "SYMMETRY_BREAKING_LOGICAL_FRAME",
+        "OUTCOME_DECODER",
+        "CLASSICAL_VERIFY"
+      ],
+      "title": "Encoded subgroup access with a symmetry-breaking collective effect",
       "typed_interfaces_valid": true
     },
     {
@@ -239,42 +275,42 @@
   ],
   "headline_metrics": {
     "automatically_promoted_candidate_count": 0,
-    "highest_survivor_priority_score": 104,
+    "highest_survivor_priority_score": 110,
     "holevo_copy_budget_rule_count": 1,
-    "known_no_go_rejected_count": 4,
-    "mechanism_count": 7,
+    "known_no_go_rejected_count": 5,
+    "mechanism_count": 8,
     "minimum_missing_capability_count": 2,
-    "primitive_count": 17,
+    "primitive_count": 19,
     "proof_gate_eligible_count": 0,
     "proposal_only_count": 3,
-    "typed_interface_valid_count": 7,
+    "typed_interface_valid_count": 8,
     "undercharged_mechanism_promoted_count": 0
   },
   "mutation_proposals": [
     {
-      "created_at": "2026-07-15T11:12:39.689761+00:00",
+      "created_at": "2026-09-08T11:56:13.675084+00:00",
       "formalization_status": "typed-architecture-proof-capabilities-missing",
-      "id": "MUTATE-CODE-COSET-COLLECTIVE-JM-LABEL-MULTIPLICITY-RECOUPLING",
+      "id": "MUTATE-CODE-COSET-COLLECTIVE-ENCODED-REFERENCE-SYMMETRY-BREAKING",
       "linked_blockers": [
         "DEQ-COSET-SOLVED-QFT-COUNTING-NOT-RECOUPLING-DECODER",
         "DEQ-COSET-K3-SINGLE-RECOUPLING-BASIS-OBSTRUCTED",
         "DEQ-COSET-EXPLICIT-TWO-COPY-TRANSITIONS-FACTORIAL"
       ],
       "mutation_type": "typed-recoupling-mechanism",
-      "new_hypothesis": "YJM label front end with explicit residual multiplicity-space recoupling",
-      "priority_score": 104,
+      "new_hypothesis": "Encoded subgroup access with a symmetry-breaking collective effect",
+      "priority_score": 110,
       "proof_debts_targeted": [
-        "CAP-GAPPED-KRONECKER-MULTIPLICITY-TRANSFORM",
+        "CAP-ENCODED-K-CARRIER-RESTRICTION",
         "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
-        "CAP-KCOPY-RACAH-ASSOCIATOR",
-        "CAP-STATE-TRANSITION-FILTER"
+        "CAP-SYMMETRY-BREAKING-LOGICAL-EFFECT"
       ],
       "proof_gate_eligible": false,
       "proof_obligations_to_resolve": [
-        "Prove an inverse-polynomial LCU-normalized gap for the commutant Hamiltonian on all source sectors.",
-        "Prove polynomial Racah/associator moves between overlapping subset coupling trees.",
-        "Block-encode the state-dependent transition filter with controlled conditioning.",
-        "Decode the hidden involution and beat legal graph/code baselines on the source family."
+        "Verify the normalized two-QFT and physical-column contract, including primitive precision and workspace.",
+        "Specify how the final effect breaks fixed-reference invariance; never grant the unknown centralizer or aligned h-even source law.",
+        "Construct the actual logical effect with source-aware normalization and error, without complete fixed-count spectral labels.",
+        "Derive its outcome law and polynomial hidden-involution decoder, then attack it with legal classical invariants and tensor contractions.",
+        "Binary detection is a separate task and requires its own reduction; it must not be passed off as identification."
       ],
       "rationale": "The architecture targets the right interface but names unimplemented proof-critical primitives.",
       "rejection_filters": [
@@ -284,26 +320,23 @@
         "Reject if classical invariant or tensor-network contraction reproduces the outcome."
       ],
       "required_modules": [
-        "CAP-GAPPED-KRONECKER-MULTIPLICITY-TRANSFORM",
+        "CAP-ENCODED-K-CARRIER-RESTRICTION",
         "CAP-HIDDEN-INVOLUTION-OUTCOME-DECODER",
-        "CAP-KCOPY-RACAH-ASSOCIATOR",
-        "CAP-STATE-TRANSITION-FILTER"
+        "CAP-SYMMETRY-BREAKING-LOGICAL-EFFECT"
       ],
       "source_candidate_id": "CODE-COSET-COLLECTIVE",
       "status": "proposal",
       "typed_stages": [
         "PREPARE_COSET_K",
         "SN_QFT_K",
-        "DIAGONAL_JM_LABEL_TRANSFORM",
-        "KRONECKER_MULTIPLICITY_BASIS",
-        "RACAH_ASSOCIATOR_NETWORK",
-        "TRANSITION_FRAME_FILTER",
+        "ENCODED_REFERENCE_RESTRICTION",
+        "SYMMETRY_BREAKING_LOGICAL_FRAME",
         "OUTCOME_DECODER",
         "CLASSICAL_VERIFY"
       ]
     },
     {
-      "created_at": "2026-07-15T11:12:39.689773+00:00",
+      "created_at": "2026-09-08T11:56:13.675095+00:00",
       "formalization_status": "typed-architecture-proof-capabilities-missing",
       "id": "MUTATE-CODE-COSET-COLLECTIVE-FULL-RECOUPLING-TRANSITION-DECODER",
       "linked_blockers": [
@@ -353,7 +386,7 @@
       ]
     },
     {
-      "created_at": "2026-07-15T11:12:39.689777+00:00",
+      "created_at": "2026-09-08T11:56:13.675098+00:00",
       "formalization_status": "typed-architecture-proof-capabilities-missing",
       "id": "MUTATE-CODE-COSET-COLLECTIVE-TENSOR-ASSOCIATOR-DECODER",
       "linked_blockers": [
@@ -414,6 +447,22 @@
       "role": "Apply the solved S_n QFT registerwise."
     },
     {
+      "available_with_uniform_proof": false,
+      "capability_id": "CAP-ENCODED-K-CARRIER-RESTRICTION",
+      "id": "ENCODED_REFERENCE_RESTRICTION",
+      "input_type": "fourier_registers_k",
+      "output_type": "encoded_reference_registers",
+      "role": "Conditional two-QFT carrier extraction for a known reference subgroup; primitive/basis contract remains review-pending, not unknown alignment."
+    },
+    {
+      "available_with_uniform_proof": false,
+      "capability_id": "CAP-SYMMETRY-BREAKING-LOGICAL-EFFECT",
+      "id": "SYMMETRY_BREAKING_LOGICAL_FRAME",
+      "input_type": "encoded_reference_registers",
+      "output_type": "measurement_outcome",
+      "role": "Construct a source-aware collective effect, retaining carrier or reference correlations needed to break fixed-K invariance."
+    },
+    {
       "available_with_uniform_proof": true,
       "capability_id": "CAP-WEAK-IRREP-PROJECTION",
       "id": "WEAK_LABEL_MEASUREMENT",
@@ -443,7 +492,7 @@
       "id": "KRONECKER_MULTIPLICITY_BASIS",
       "input_type": "jm_labelled_registers",
       "output_type": "pair_coupled_registers",
-      "role": "Resolve a uniformly gapped bounded-support commutant Hamiltonian in each residual multiplicity register."
+      "role": "Resolve every copy label with one bounded-norm, uniformly inverse-polynomial-gap commutant Hamiltonian; this fixed complete-label primitive is obstructed."
     },
     {
       "available_with_uniform_proof": false,
@@ -535,10 +584,10 @@
     }
   ],
   "ranked_survivors": [
-    "MECH-JM-LABEL-MULTIPLICITY-RECOUPLING",
+    "MECH-ENCODED-REFERENCE-SYMMETRY-BREAKING",
     "MECH-FULL-RECOUPLING-TRANSITION-DECODER",
     "MECH-TENSOR-ASSOCIATOR-DECODER"
   ],
   "status": "typed-mutations-ranked-no-proof-gate-eligible-mechanism",
-  "summary": "Evaluated 7 typed collective-measurement architectures, rejected 4 known-invalid shortcuts, and retained 3 proof-capability research proposals without promoting candidates."
+  "summary": "Evaluated 8 typed collective-measurement architectures, rejected 5 known-invalid shortcuts, and retained 3 proof-capability research proposals without promoting candidates."
 }

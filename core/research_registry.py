@@ -12631,11 +12631,11 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
         ExperimentRecord(
             id="EXP-CODE-SELF-DUAL-WREATH-SYSTEMATIC-STOPPING-CORE-NO-GO",
             candidate_id="CODE-COSET-COLLECTIVE",
-            title="Exp Code Self Dual Wreath Systematic Stopping Core No Go",
+            title="Systematic local-face proof gap and independent global check",
             status="planned",
-            hypothesis="Proved an all-codimension actual-presentation no-go for every systematic nonpeelable stopping-core power-boundary family.",
+            hypothesis="The local-face proof may omit unresolved cubic-overlap colorings; test them against the separate global BABA argument.",
             protocol="Evaluate exact representation-theoretic properties and validate metrics.",
-            positive_signal="Proved an all-codimension actual-presentation no-go for every systematic nonpeelable stopping-core power-boundary family.",
+            positive_signal="A verified missing case or independent global certificate with accurate dependency scope.",
             falsifiers=["Systematic nonlinear stopping codes do not saturate actual pressure.", "Growing codimension does not create a growing-power face escape.", "All-face cancellation forces a block family with fixed surface loss.", "Higher-weight departures from block union are primitive constraints."],
             metrics=["all_depth_systematic_stopping_core_no_go_theorem_count", "stored_branch_control_count", "exhaustively_checked_normalized_coloring_count", "exhaustively_checked_proper_coloring_count", "exhaustive_coloring_audit_failure_count", "control_failure_count", "nonempty_origin_face_branch_control_count", "higher_weight_deviation_branch_control_count", "exact_block_union_branch_control_count", "minimum_stored_true_pressure_margin", "uniform_true_pressure_margin_lower_bound", "new_quantum_algorithm_count"],
             dependencies=[
@@ -21192,6 +21192,28 @@ def seed_candidate_records() -> tuple[list[CandidateRecord], list[ExperimentReco
             ],
         ),
         ExperimentRecord(
+            id="EXP-COSET-HIDDEN-INVOLUTION-SIGNED-TENSOR-ACCESS",
+            candidate_id="CODE-COSET-COLLECTIVE", title="Signed-tensor diagram access and natural source coverage",
+            status="ready", hypothesis="A faithful signed-tensor centralizer representation covers typical required K-types.",
+            protocol="Check the exact signed-tensor Bratteli graph and source marginal; apply a first-row tail bound.",
+            positive_signal="A source-preserving nonfaithful quotient or an alternative tensor embedding.",
+            falsifiers=["the degree formula disagrees with exact paths", "faithful-range source mass vanishes"],
+            metrics=["exact_degree_controls_passed", "source_mass_scaling_record_count"],
+            dependencies=["https://math.dartmouth.edu/~orellana/hcentpart.pdf", "exact h-even K-Plancherel marginal"],
+            next_actions=["construct a normalized Specht-to-tensor intertwiner", "audit quotient access when tensor degree exceeds rank"],
+        ),
+        ExperimentRecord(
+            id="EXP-COSET-HIDDEN-INVOLUTION-ENCODED-RESTRICTION",
+            candidate_id="CODE-COSET-COLLECTIVE", title="Normalized encoded subgroup restriction",
+            status="ready", hypothesis="Carrier extraction does not require explicit multiplicity labels.",
+            protocol="Check inverse G-QFT, reversible left-coset factorization and K-QFT as a normalized intertwiner.",
+            positive_signal="Logical target-effect access on the implicit copy code with charged physical alignment.",
+            falsifiers=["normalization or covariance fails", "postselection is hidden", "the unknown centralizer is assumed known"],
+            metrics=["finite_isometry_controls_passed", "repeated_copy_blocks_verified"],
+            dependencies=["efficient symmetric and wreath-product QFT primitives", "canonical matching transversal"],
+            next_actions=["test logical orbit-average action", "specify a task-relevant effect and its information budget"],
+        ),
+        ExperimentRecord(
             id="EXP-COSET-HIDDEN-INVOLUTION-SPECTRAL-LABEL-BUDGET",
             candidate_id="CODE-COSET-COLLECTIVE",
             title="Spectral label capacity under the natural branching source law",
@@ -23693,6 +23715,20 @@ def import_legacy_negative_results(root: Path) -> int:
 def validate_registry() -> dict[str, Any]:
     candidates = load_candidates()
     issues = []
+    from proof_provenance import MANIFEST_PATH, audit_proof_routes
+    proof_route_count = 0
+    if MANIFEST_PATH.exists():
+        try:
+            audit = audit_proof_routes(json.loads(MANIFEST_PATH.read_text()))
+            proof_route_count = audit["claim_count"]
+            for row in audit["claims"]:
+                if row["unsupported_assertion"]:
+                    issues.append({"candidate_id": "research-proof-routes", "obligation_id": "PROOF-PROVENANCE",
+                                   "field": row["id"], "message": f"Unsupported {row['asserted_level']} assertion; current support is {row['supported_level']}.",
+                                   "hard_reject": True})
+        except (OSError, ValueError, TypeError, KeyError, AttributeError) as error:
+            issues.append({"candidate_id": "research-proof-routes", "obligation_id": "PROOF-PROVENANCE",
+                           "field": "proof_routes", "message": f"Invalid proof-route manifest: {error}", "hard_reject": True})
     for candidate in candidates:
         for issue in validate_candidate_record(candidate):
             issues.append({"candidate_id": candidate.get("id", "unknown"), **issue_to_dict(issue)})
@@ -23755,6 +23791,7 @@ def validate_registry() -> dict[str, Any]:
             )
     return {
         "candidate_count": len(candidates),
+        "proof_route_claim_count": proof_route_count,
         "experiment_count": len(load_experiments()),
         "experiment_result_count": len(load_experiment_results()),
         "dequantization_check_count": len(load_dequantization_checks()),

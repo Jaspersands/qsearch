@@ -1,4 +1,4 @@
-"""All-codimension pressure no-go for systematic stopping cores.
+"""Audit of the incomplete local-face proof for systematic stopping cores.
 
 Let ``f:F_2^r -> F_2^d`` be normalized by ``f(0)=0`` and proper on every
 hypercube edge.  Its graph
@@ -17,8 +17,9 @@ square ``i<j``, the remaining check relator is
 
     W(f(e_i))^-1 W(f(e_j))^-1 W(f(e_i+e_j)).
 
-The high-codimension face theorem proves that every nonempty such word is
-primitive or quadratic, hence loses at least half an ``S_n`` exponent.
+The high-codimension face module leaves cubic-overlap words unresolved.
+It does NOT prove every nonempty word primitive or quadratic. Four width
+(r,d)=(2,3) colorings expose this missing case in the local loss argument.
 
 If all origin face words vanish, the singleton colors are disjoint
 reverse-ordered blocks and every pair color is their union.  If any higher
@@ -28,15 +29,16 @@ map is exactly the exceptional block-union coloring; its split/zero-row
 subpresentation has exponent at most ``d+4`` even with unused interleaved
 checks.
 
-Therefore every systematic stopping core in this family has solution exponent
-at most ``d+4.5+o(1)`` and crossing-pressure margin at least
+If the missing uniform cubic loss were established, this local argument
+would give solution exponent at most ``d+4.5+o(1)`` and margin at least
 
     1/2 + (1/2) log2(2^r/(2^r-1)) > 1/2.
 
-The generic integer suffix certificate has vanishing margin, so this is an
-actual-presentation theorem.  Non-systematic codes, multiple projected base
-fibers, other marked patterns, and target-representation asymptotics remain
-open.  No quantum speedup is claimed.
+This local proof is superseded by the separate global suffix/surface
+argument in self_dual_wreath_all_codimension_baba_no_go. The four unresolved
+local examples are checked against that independent route here. Failure of
+this local proof is not a counterexample to the global BABA result and not
+evidence for quantum advantage.
 """
 
 from __future__ import annotations
@@ -141,6 +143,7 @@ class SystematicColoringExhaustiveAudit:
     deviation_singleton_failure_count: int
     minimum_distance_failure_count: int
     branch_exhaustion_failure_count: int
+    unresolved_colorings: list[tuple[Assignment, ...]]
     exhaustive_classification_verified: bool
     status: str
 
@@ -152,6 +155,7 @@ class SystematicStoppingCoreNoGoReport:
     representative_controls: list[SystematicStoppingCoreControl]
     exhaustive_small_width_audits: list[SystematicColoringExhaustiveAudit]
     all_depth_certificate: SystematicStoppingCoreAllDepthCertificate
+    independent_global_controls: list[dict[str, Any]]
     proof_obligations: list[dict[str, str | bool]]
     adversarial_audit: list[dict[str, str | bool]]
     headline_metrics: dict[str, int | float]
@@ -395,6 +399,7 @@ def audit_systematic_coloring_space(
     deviation_failures = 0
     distance_failures = 0
     branch_failures = 0
+    unresolved = []
     zero = (0,) * check_width
     for tail in itertools.product(colors, repeat=vertex_count - 1):
         table = (zero, *tail)
@@ -437,6 +442,8 @@ def audit_systematic_coloring_space(
             classified = True
         if not classified:
             branch_failures += 1
+            if len(unresolved) < 8:
+                unresolved.append(table)
     exhaustive = (
         proper_count > 0
         and nonempty_count + deviation_count + exact_block_count == proper_count
@@ -459,11 +466,12 @@ def audit_systematic_coloring_space(
         deviation_singleton_failure_count=deviation_failures,
         minimum_distance_failure_count=distance_failures,
         branch_exhaustion_failure_count=branch_failures,
+        unresolved_colorings=unresolved,
         exhaustive_classification_verified=exhaustive,
         status=(
             "exhaustive-systematic-coloring-trichotomy-verified"
             if exhaustive
-            else "systematic-coloring-trichotomy-counterexample-found"
+            else "systematic-coloring-local-loss-proof-incomplete"
         ),
     )
 
@@ -591,8 +599,8 @@ def systematic_stopping_core_all_depth_certificate(
             "base generators plus d check generators."
         ),
         nonempty_origin_face_case=(
-            "Every nonempty W(A)^-1W(B)^-1W(C) is primitive or quadratic and "
-            "loses at least one half exponent."
+            "Once-occurring and quadratic words have local loss; cubic overlap "
+            "has no uniform loss certificate in the dependency."
         ),
         all_origin_faces_empty_rigidity=(
             "All empty origin faces force nonempty disjoint reverse-ordered "
@@ -606,16 +614,16 @@ def systematic_stopping_core_all_depth_certificate(
             "If no deviation occurs, covering or gapped block-union theorems give "
             "solution exponent at most d+4."
         ),
-        symmetric_group_solution_exponent_upper_bound_formula="d+4.5+o(1)",
+        symmetric_group_solution_exponent_upper_bound_formula="conditional on uniform cubic-overlap loss: d+4.5+o(1)",
         generic_margin_formula="0.5*log2(2^r/(2^r-1))",
         true_margin_lower_bound_formula=(
-            "0.5+0.5*log2(2^r/(2^r-1))"
+            "conditional on uniform cubic-overlap loss: 0.5+0.5*log2(2^r/(2^r-1))"
         ),
-        uniform_true_margin_lower_bound=0.5,
+        uniform_true_margin_lower_bound=0.0,
         arbitrary_information_width=True,
         arbitrary_check_width=True,
-        universal_systematic_core_no_go_verified=True,
-        status="all-depth-systematic-stopping-core-pressure-no-go",
+        universal_systematic_core_no_go_verified=False,
+        status="local-face-proof-incomplete-global-suffix-route-separate",
     )
 
 
@@ -645,6 +653,13 @@ def run_systematic_stopping_core_no_go() -> SystematicStoppingCoreNoGoReport:
     exact = all(row.exact_control_verified for row in controls) and all(
         row.exhaustive_classification_verified for row in exhaustive_audits
     )
+    from self_dual_wreath_all_codimension_baba_no_go import audit_all_codimension_baba_code
+    global_controls = []
+    for audit in exhaustive_audits:
+        for index, table in enumerate(audit.unresolved_colorings):
+            code = systematic_graph_code(audit.information_width, audit.check_width, table)
+            global_controls.append(asdict(audit_all_codimension_baba_code(
+                f"LOCAL-GAP-{audit.information_width}-{audit.check_width}-{index}", code)))
     return SystematicStoppingCoreNoGoReport(
         created_at=utc_now(),
         theorem_contract={
@@ -657,12 +672,12 @@ def run_systematic_stopping_core_no_go() -> SystematicStoppingCoreNoGoReport:
                 "global block union exhausts every proper systematic coloring."
             ),
             "uniform_solution_loss": (
-                "The three branches lose at least 1/2, 1, and 1 exponent "
-                "respectively beyond the generic d+5 solution bound."
+                "The nonempty-face branch still includes cubic overlap without "
+                "a uniform local loss theorem. The other two branches retain their bounds."
             ),
             "pressure_conclusion": (
-                "Every systematic power-boundary core has true crossing margin "
-                "strictly above 1/2 although the generic margin tends to zero."
+                "The claimed universal local proof is incomplete. Independent "
+                "global suffix/surface reduction covers the concrete local-gap examples."
             ),
             "scope_limit": (
                 "Non-systematic codes, multiple base fibers, other frame/leaf "
@@ -672,13 +687,14 @@ def run_systematic_stopping_core_no_go() -> SystematicStoppingCoreNoGoReport:
         representative_controls=controls,
         exhaustive_small_width_audits=exhaustive_audits,
         all_depth_certificate=theorem,
+        independent_global_controls=global_controls,
         proof_obligations=[
             {
                 "obligation": "classify_all_systematic_stopping_core_power_boundaries",
                 "resolved": theorem.universal_systematic_core_no_go_verified,
                 "resolution": (
-                    "The local-face, higher-deviation, and exact-block branches are "
-                    "mutually exhaustive and each has a uniform solution loss."
+                    "Local cubic-overlap loss is missing; do not infer it from finite "
+                    "Whitehead controls. Consult the separate global suffix/surface argument."
                 ),
             },
             {
@@ -704,8 +720,8 @@ def run_systematic_stopping_core_no_go() -> SystematicStoppingCoreNoGoReport:
                 "objection": "High codimension permits a growing-power local word.",
                 "resolved": True,
                 "resolution": (
-                    "False: every face generator occurs at most three times, and "
-                    "cubic overlap is explicitly primitive."
+                    "Every face generator occurs at most three times, excluding "
+                    "growing proper powers, but this does not prove cubic overlap primitive."
                 ),
             },
             {
@@ -718,14 +734,16 @@ def run_systematic_stopping_core_no_go() -> SystematicStoppingCoreNoGoReport:
             },
             {
                 "objection": "A systematic nonlinear code can saturate actual pressure.",
-                "resolved": True,
+                "resolved": False,
                 "resolution": (
-                    "Not in this family: the all-depth upper bound restores at "
-                    "least one half exponent for arbitrary r,d and proper f."
+                    "This local argument is incomplete. A separate global suffix/surface "
+                    "argument addresses the family without assuming a cubic-face theorem."
                 ),
             },
         ],
         headline_metrics={
+            "unresolved_local_coloring_count": sum(row.branch_exhaustion_failure_count for row in exhaustive_audits),
+            "independent_global_controls_verified": sum(row["exact_control_verified"] for row in global_controls),
             "all_depth_systematic_stopping_core_no_go_theorem_count": int(
                 theorem.universal_systematic_core_no_go_verified
             ),
@@ -762,6 +780,9 @@ def run_systematic_stopping_core_no_go() -> SystematicStoppingCoreNoGoReport:
             "new_quantum_algorithm_count": 0,
         },
         claim_gate={
+            "local_loss_proof_complete": exact and theorem.universal_systematic_core_no_go_verified,
+            "independent_global_controls_verified": bool(global_controls) and all(row["exact_control_verified"] for row in global_controls),
+            "local_gap_refutes_global_BABA_bound": False,
             "generic_integer_margin_uniformly_positive": False,
             "all_systematic_stopping_core_power_boundaries_controlled": (
                 theorem.universal_systematic_core_no_go_verified
@@ -772,21 +793,19 @@ def run_systematic_stopping_core_no_go() -> SystematicStoppingCoreNoGoReport:
             "natural_component_M4_positive": False,
             "speedup_claim_allowed": False,
             "reason": (
-                "Every systematic graph-code boundary has a primitive, quadratic, "
-                "or fixed-surface relation restoring at least half an exponent."
+                "The local universal loss is not established. Preserve the separate "
+                "global suffix/surface route and distinguish proof gaps from counterexamples."
             ),
         },
         status=(
-            "all-systematic-stopping-cores-falsified-by-local-or-surface-loss"
-            if exact
-            else "systematic-stopping-core-no-go-certificate-failure"
+            "local-face-proof-audited-uniform-cubic-loss-open"
         ),
         summary=(
-            "Proved an all-codimension actual-presentation no-go for every "
-            "systematic nonpeelable stopping-core power-boundary family."
+            "The local systematic-core no-go used an unproved cubic-overlap loss. "
+            "Concrete uncovered colorings still satisfy the independent global BABA bound."
         ),
         falsifiers_triggered=[
-            "Systematic nonlinear stopping codes do not saturate actual pressure.",
+            "The local dependency does not prove every nonempty face primitive or quadratic.",
             "Growing codimension does not create a growing-power face escape.",
             "All-face cancellation forces a block family with fixed surface loss.",
             "Higher-weight departures from block union are primitive constraints.",
@@ -804,13 +823,38 @@ def write_systematic_stopping_core_no_go_report(
     registry_result_id: str = "",
     **kwargs: Any,
 ) -> dict[str, Any]:
-    path = path
-    output_path = path
-    for _k in ("write_registry", "registry_experiment_id", "registry_candidate_id", "registry_result_id"):
-        kwargs.pop(_k, None)
     report = asdict(run_systematic_stopping_core_no_go())
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(report, indent=2, sort_keys=True) + "\n")
+    if write_registry:
+        from research_registry import (ExperimentRecord, ExperimentResultRecord, NegativeResultRecord,
+                                       upsert_experiment, upsert_experiment_result, upsert_negative_result,
+                                       initialize_seed_registry)
+        initialize_seed_registry(overwrite=False)
+        upsert_experiment(ExperimentRecord(
+            id=registry_experiment_id, candidate_id=registry_candidate_id,
+            title="Systematic local-face proof gap and independent global check", status=report["status"],
+            hypothesis="The local-face proof omits unresolved cubic-overlap colorings, without refuting the global BABA bound.",
+            protocol="Enumerate normalized colorings, retain missing local-loss cases, and replay them through global suffix/surface elimination.",
+            positive_signal="A correctly scoped proof dependency or an exact counterexample to it.",
+            falsifiers=["a universal local gate remains true with unclassified words", "a local proof gap is mistaken for a global counterexample"],
+            metrics=list(report["headline_metrics"]),
+            dependencies=["self_dual_wreath_high_codimension_face_word_frontier.py", "self_dual_wreath_all_codimension_baba_no_go.py"],
+            next_actions=["verify the global suffix/surface argument independently", "do not spend more local-face search on the already covered single-fiber BABA scope"],
+        ))
+        upsert_experiment_result(ExperimentResultRecord(
+            id=registry_result_id or f"RESULT-{registry_experiment_id}", experiment_id=registry_experiment_id,
+            candidate_id=registry_candidate_id, created_at=report["created_at"], status=report["status"],
+            summary=report["summary"], metrics=report["headline_metrics"], falsifiers_triggered=report["falsifiers_triggered"],
+            artifacts={"self_dual_wreath_systematic_stopping_core_no_go": str(path)},
+        ))
+        upsert_negative_result(NegativeResultRecord(
+            id="SYSTEMATIC-LOCAL-CUBIC-LOSS-PROOF-GAP", source=registry_experiment_id,
+            claim="The local face classification proves uniform loss for every systematic stopping core.",
+            reason_invalid="Four width-(2,3) colorings land in the dependency's unresolved cubic-overlap class. The report previously asserted a universal theorem regardless.",
+            lesson="Do not conflate a local proof gap with a refutation of the separate global suffix/surface BABA theorem; replay the retained examples against both arguments.",
+            applies_to=[registry_candidate_id, "systematic local-face proof"], evidence={"artifact": str(path)},
+        ))
     return report
 
 
